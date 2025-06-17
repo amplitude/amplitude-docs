@@ -4,8 +4,8 @@ blueprint: section
 title: 'Web Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1745620371
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1750176866
 nav_title: web_experiment
 template: landing-page-experiment
 landing_page_content:
@@ -37,16 +37,6 @@ landing_page_content:
     cta: 'Target your Web Experiment'
     external_link: false
     entries_field: 671d5f19-2b8a-463a-95be-f81de05e0860
-    type: card
-    enabled: true
-  -
-    id: m2apjx8k
-    icon: brand-stickers/icon-targeting-purple.svg
-    card_title: 'Pages in Web Experiments'
-    card_content: 'Precisely control where your experiment variants apply on your website with Pages.'
-    cta: 'Learn about Pages'
-    external_link: false
-    entries_field: 8f2a1b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c
     type: card
     enabled: true
   -
