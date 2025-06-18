@@ -1,57 +1,93 @@
-## Amplitude Web Experimentation Platform
+# Amplitude Web Experimentation
 
-Amplitude Web Experimentation is a client-side A/B testing and multi-armed bandit experimentation platform that enables teams to run experiments on web applications without requiring code changes. The platform centers around a Visual Editor that allows users to create and modify experiments through a point-and-click interface, making experimentation accessible to non-technical team members while providing advanced customization options for developers.
+Amplitude Web Experimentation is a client-side A/B testing and feature flagging platform that enables teams to run experiments on websites without requiring code deployments. The system provides a Visual Editor for creating experiments through point-and-click interface, supports custom code injection, and offers comprehensive targeting and tracking capabilities.
 
-## Product Architecture and Feature Relationships
+## Core Features and Use Cases
 
-The Web Experimentation platform operates through several interconnected components:
+The platform supports multiple experiment types including A/B tests and multi-armed bandit experiments. Key capabilities include:
 
-**Core Implementation Layer**: The foundation consists of a standalone JavaScript script served from Amplitude's CDN (`cdn.amplitude.com`) with regional endpoints for US and EU data centers. The script implements dynamic sizing (79KB base + ~1KB per experiment flag) and includes anti-flicker functionality to prevent visual artifacts during experiment loading.
+- **Visual Editor**: No-code experiment creation through DOM manipulation, allowing element changes (display, visibility, text, background, positioning)
+- **Custom Code Actions**: JavaScript, CSS, and HTML injection with utility functions like `waitForElement` and cleanup mechanisms for single-page applications
+- **URL Redirects**: Client-side redirects with query parameter retention and session history evaluation
+- **Advanced Targeting**: Page-level and audience-level targeting with local and remote evaluation
+- **Performance Optimization**: Dynamic script sizing, two-layer caching, and synchronous local evaluation
 
-**Visual Editor and Actions System**: The Visual Editor serves as the primary interface for experiment creation, enabling users to define variant actions including element modifications (display, visibility, text, background, positioning), URL redirects with query parameter retention, and custom code injection (JavaScript, CSS, HTML). The system provides utility functions like `waitForElement` and `utils.remove` for DOM manipulation and cleanup in single-page applications.
+## Product Relationships and Architecture
 
-**Targeting and Evaluation Engine**: The platform implements a two-tier targeting system combining page targeting (URL matching with operators like URL Matches, URL Matches Exactly, URL Matches Pattern) and audience targeting. Browser properties enable local evaluation for immediate variant assignment, while user properties require remote evaluation with anti-flicker overlay protection.
+### Script Implementation and Integration
+The Web Experimentation system operates through a standalone JavaScript SDK that can be implemented synchronously or asynchronously. The script includes anti-flicker snippets to prevent visual artifacts during experiment loading. CDN distribution supports both US (`cdn.amplitude.com`) and EU data centers with Content Security Policy requirements.
 
-**Integration and Data Pipeline**: The system integrates with third-party Customer Data Platforms through plugins (Segment, Tealium, custom IntegrationPlugin interface) and supports various implementation methods including WordPress plugins, Shopify apps, and Google Tag Manager custom HTML tags.
+### Third-Party Integrations
+The platform integrates with Customer Data Platforms through:
+- **Segment Integration**: Query parameter-based integration
+- **Tealium iQ**: Tag management system integration  
+- **Custom IntegrationPlugin Interface**: Extensible integration framework via `experimentIntegration` window variable
+- **CMS Platforms**: Native WordPress plugins, Shopify App integration, and Google Tag Manager custom HTML tag support
+
+### Targeting and Evaluation System
+The targeting system operates on two levels:
+- **Page Targeting**: URL-based evaluation using operators (URL Matches, URL Contains, URL Starts With) that controls where experiments run
+- **Audience Targeting**: User segmentation using browser properties (local evaluation) and user properties (remote evaluation with Amplitude ID resolution)
 
 ## Key Nomenclature and Definitions
 
-**Variant Actions**: Specific modifications applied to web pages when users are assigned to experiment variants, including visual changes and behavioral modifications.
+### Experiment Components
+- **Flag Key**: Unique identifier for experiments used in tracking events
+- **Variants**: Different versions of the experiment including control and treatment groups
+- **Variant Actions**: Specific modifications applied by each variant (element changes, redirects, custom code)
+- **Bucketing**: Algorithm that assigns users to variants based on Device ID and rollout percentage
 
-**Anti-Flicker Snippet**: Code that prevents visual artifacts by hiding page content until experiment evaluation completes, essential for maintaining user experience during synchronous script loading.
+### Targeting Concepts
+- **Page Scope**: URL patterns that define where experiment variants apply
+- **Rollout Percentage**: Traffic allocation control for experiment participation
+- **Anti-flicker Overlay**: Mechanism to prevent visual artifacts during experiment evaluation
+- **Property Canonicalization**: Standardization of targeting properties for consistent evaluation
 
-**Bucketing**: The process of distributing users across experiment variants based on Device ID, with configurable rollout percentages controlling overall experiment exposure.
+### Performance Metrics
+- **Dynamic Script Sizing**: Base 79KB + ~1KB per active flag
+- **Cache Strategy**: 60-second max-age with stale-while-revalidate for CDN and browser caching
+- **Synchronous Evaluation**: <1ms local evaluation time for experiment assignment
 
-**Impression Events**: Tracking events fired when users are exposed to experiments, transformed from internal `$impression` events to `[Experiment] Impression` events with flag_key and variant properties for analysis.
+## Broader Product Ecosystem Integration
 
-**Local vs Remote Evaluation**: Local evaluation uses browser properties for immediate variant assignment, while remote evaluation requires server communication for user property-based targeting, introducing potential display delays.
+### Amplitude Analytics Integration
+Web Experimentation integrates deeply with Amplitude's analytics platform through:
+- **Impression Event Tracking**: Automatic transformation from `$impression` to `[Experiment] Impression` events with flag_key and variant properties
+- **User Property Setting**: Experiment participation stored as user properties for analysis
+- **Behavioral Cohorts**: Integration with Amplitude's user segmentation for audience targeting
 
-**IntegrationPlugin**: Interface enabling custom third-party integrations for passing user properties and receiving experiment data in non-Amplitude analytics environments.
-
-## Ecosystem Integration
-
-Web Experimentation integrates deeply with the broader Amplitude ecosystem while maintaining flexibility for external analytics platforms. The platform connects with Amplitude's Browser SDK for seamless user identification and event tracking, while supporting third-party CDPs through standardized integration patterns. Content Management System integrations (WordPress, Shopify) and tag management solutions (Google Tag Manager) enable deployment across diverse technical environments.
-
-The experimentation workflow emphasizes integration with production development cycles through post-experiment migration recommendations, where winning variants are implemented directly in production code rather than maintained as permanent experiment configurations.
+### Data Pipeline and Analysis
+The system supports comprehensive experiment analysis through:
+- **Impression Volume Estimation**: Formula-based calculation (MTU × experiments × page views)
+- **Statistical Significance**: Built-in analysis capabilities for experiment results
+- **Third-party CDP Events**: Exposure event forwarding to external analytics platforms
 
 ## API Endpoints and Technical Implementation
 
-**CDN Endpoints**:
-- US: `https://cdn.amplitude.com/libs/experiment-js-client-{version}.script.js`
-- EU: `https://cdn.eu.amplitude.com/libs/experiment-js-client-{version}.script.js`
+### Script Installation
+```html
+<!-- Synchronous Implementation -->
+<script src="https://cdn.amplitude.com/script/API_KEY/web-experiment.js"></script>
 
-**Key JavaScript APIs**:
-- `waitForElement()`: Utility for DOM element detection in dynamic applications
-- `utils.remove()`: Cleanup function for single-page application experiment removal
-- `window.experimentIntegration`: Global variable for third-party integration configuration
+<!-- Asynchronous with Anti-flicker -->
+<script>
+  // Anti-flicker snippet implementation
+</script>
+```
 
-**Performance Characteristics**:
-- Synchronous local evaluation: <1ms response time
-- CDN caching: 60-second max-age with stale-while-revalidate
-- Dynamic script sizing scales linearly with active experiment count
+### Utility Functions
+- `waitForElement()`: Asynchronous DOM element waiting utility
+- `utils.remove()`: Cleanup function for single-page application teardown
+- Session storage and local storage access for targeting
 
-**Content Security Policy Requirements**:
-- `script-src` allowlist for CDN domains
-- `Cross-Origin-Opener-Policy: unsafe-none` for proper functionality
+### Content Security Policy Requirements
+```
+script-src: cdn.amplitude.com
+Cross-Origin-Opener-Policy: unsafe-none
+```
 
-The platform emphasizes performance optimization through intelligent caching, minimal payload sizing, and synchronous evaluation capabilities, while providing comprehensive tracking through impression volume estimation formulas (MTU × experiments × page views) for capacity planning and cost management.
+## Post-Experiment Workflow
+
+The platform emphasizes migration of winning variants to production code rather than running experiments at 100% traffic allocation. The recommended workflow includes statistical analysis, production implementation, experiment deactivation, and removal of experiment logic to reduce technical debt and improve performance. This approach minimizes clientside overhead and page load execution time while reducing impression volume costs.
+
+The system is designed for Growth and Enterprise plans, with specific features like custom code actions and advanced integrations available at higher tiers.

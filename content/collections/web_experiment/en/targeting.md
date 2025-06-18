@@ -7,27 +7,13 @@ updated_at: 1729195990
 ---
 Web Experiments target both pages and audiences. Amplitude evaluates page targeting first, then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
 
+Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where experiment variants apply on your website. Pages define the conditions under which a web experiment should apply, including targeting conditions to match specific URLs and visual editor URLs for previewing experiments.
+
 {{partial:admonition type='note'}}
 See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
-## Page targeting
 
-By default, a new Web Experiment targets the URL set on creation. This is the same URL that both the visual editor and Test & Preview tool use. To target multiple pages on your site, configure additional targeting rules.
-
-Include or exclude pages from targeting with a matching **operator** and a **value**. Amplitude recommends excluding pages only if your inclusion rules target multiple pages. For example, you could include all blog posts in an experiment, then exclude the most important posts to avoid any negative impact your variant may have.
-
-### Page matching operators
-
-| Operator | Description | Examples |
-| --- | --- | --- |
-| URL Matches | Match the page URL, ignore query parameters or hash fragments. | `https://example.com/pricing` <br /> ✅ https://example.com/pricing#details <br /> ❌https://example.com/pricing/enterprise |
-| URL Matches Exactly | Match the full page URL exactly. | `https://example.com/pricing?utm_source=facebook` <br /> ❌https://example.com/pricing <br /> ❌ https://example.com/pricing?utm_source=tiktok |
-| URL Matches Pattern | Match the full page URL, including wildcards (`*`). | `https://example.com/blog/*` <br /> ✅ https://example.com/blog/my-first-post <br /> ✅ https://example.com/blog/my-second-post#get-started |
-| URL Contains | Match the full page URL, where the URL contains a specific substring. | `/blog/my-first` <br /> ✅ https://example.com/blog/my-first-post <br /> ❌ https://example.com/blog/my-second-post |
-| URL Starts With | Match the full page URL, where the URL starts with an exact substring. | `https://example.com/blog` <br /> ✅ https://example.com/blog/my-first-post <br />❌ https://example.com/pricing |
-| URL Ends WIth | Match the full page URL, where the URL ends with an exact substring. | `/blog/my-first-post` <br /> ✅ https://example.com/blog/my-first-post <br /> ❌ https://example.com/blog/my-first-post#get-started |
-| URL Matches Regex | Match the full page URL with a regular expression you define. | [Learn Regex](https://www.regular-expressions.info/quickstart.html) <br /> [Test Regex](https://regex101.com/) |
 
 ## Audience targeting
 

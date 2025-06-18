@@ -10,7 +10,9 @@ this_article_will_help_you:
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
-Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
+Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
+
+Web Experiments use [**Pages**](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
 
 {{partial:admonition type='note'}}
 See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
@@ -27,7 +29,7 @@ Keep in mind that creating and running a web experiment is different than in fea
 To set up a web experiment, follow these steps:
 
 1. In Amplitude Experiment, navigate to *Experiments > Create Experiment > Web Experiment*.
-2. In the *New Experiment* modal, give your experiment a name. Enter the URL of a page this experiment targets—Amplitude must be instrumented on that page—and select the appropriate project from the drop-down.
+2. In the *New Experiment* modal, give your experiment a name. Enter the URL of a page this experiment targets—Amplitude must be instrumented on that page—and select the appropriate project from the drop-down. This URL will be used to create your first [Page](/docs/web-experiment/pages).
 3. If the script is present on the page you specified, Amplitude Experiment opens the page in the [Visual Editor](#the-visual-editor), as a new variant in your experiment.
 
     You have two options for the treatment variant action: [element changes](/docs/web-experiment/actions#element-changes) or [URL redirect](/docs/web-experiment/actions#url-redirect).
@@ -51,12 +53,12 @@ To set up a web experiment, follow these steps:
 7. Repeat this process for each element you want to change for your experiment.
 8. If needed, click *+* to add another variant.
 9. When you’re done, click *Continue*.
-10. Next, [define your experiment’s goals](/docs/feature-experiment/workflow/define-goals).
-11. In the *Pages* tab, edit the rules to [target additional pages](/docs/web-experiment/targeting#page-targeting) for this experiment. If you're only targeting the page you originally set on creation, you can skip this step. From the *Include pages where* dropdown, specify how you want Amplitude Experiment to identify these pages.
+10. Next, [define your experiment's goals](/docs/feature-experiment/workflow/define-goals).
+11. In the *Pages* tab, configure which [Pages](/docs/web-experiment/pages) your experiment should target. You can create new Pages or reuse existing saved Pages. If you're only targeting the page you originally set on creation, you can skip this step. From the *Include pages where* dropdown, specify how you want Amplitude Experiment to identify these pages.
 
     ![web-exp-4.png](/docs/output/img/workflow/web-exp-4.png)
 
-    Use the same pattern to exclude experiment from the pages you select.
+    Use the same pattern to exclude experiment from the pages you select. Learn more about [managing Pages](/docs/web-experiment/pages) for precise experiment targeting.
 
 12. Next, target the users you want to include in this experiment. If you're familiar with feature experiment targeting, Web Experiment [audience targeting](/docs/web-experiment/targeting#audience-targeting) works differently.
 13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment.
