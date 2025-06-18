@@ -5,7 +5,7 @@ title: 'Web Experiment actions'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195880
 ---
-Actions define how variants modify your site. Actions relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
+Actions define how variants modify your site. Actions relate to variants rather than a specific page, and can be scoped to specific [Pages](/docs/web-experiment/pages) to control exactly where they apply.
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
 
@@ -34,10 +34,12 @@ URL redirects retain any query parameters on the original page URL. For example,
 ## Custom code
 
 {{partial:admonition type="note"}}
-Custom code is available on **Growth** and **Enterprise** plans only.
+Custom code is available on **Growth** and **Enterprise** plans only.
 {{/partial:admonition}}
 
-Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in was the visual editor doesn't support.
+Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in ways the visual editor doesn't support.
+
+Custom code can be scoped to specific [Pages](/docs/web-experiment/pages) using the **"Apply to"** dropdown, allowing you to run different code depending on which Page is active.
 
 {{partial:admonition type="tip"}}
 Custom code can be used in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text, then a non-technical user could use the visual editor to edit the placeholder text without touching the custom code.

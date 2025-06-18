@@ -4,8 +4,8 @@ blueprint: section
 title: 'Web Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1745620371
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1750176866
 nav_title: web_experiment
 template: landing-page-experiment
 landing_page_content:
