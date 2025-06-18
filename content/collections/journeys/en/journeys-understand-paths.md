@@ -61,7 +61,7 @@ To create a new Journeys chart, follow these steps:
 
 5. In the *Measured As* module, specify whether you want this chart to measure by uniques or event totals.
 6. In the *Segment by* module, [specify the users you’d like to include in this analysis](/docs/analytics/charts/build-charts-add-user-segments).
-7. In the chart area, set your preferred **bucket below threshold**. This threshold sets a lower boundary for node visibility in your chart. In other words, if the percentage of users who took a particular path is **lower** than the bucket below threshold, Amplitude doesn't display that path.
+7. In the chart area, click **+ More Events** to load more events into the the chart. By default, Amplitude loads the top five events by number of users.
 8. Your chart appears. If you want to hide noisy events, show only specific events, show custom events, or collapse repeated events, click the *Filter Events* dropdown and make your selections.
 
 {{partial:admonition type='note'}}
