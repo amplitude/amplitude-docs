@@ -76,7 +76,7 @@ Create a [Kinesis stream](https://docs.aws.amazon.com/streams/latest/dev/introdu
 
 #### 2. Create an IAM role
 
-Create an [IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) that gives Amplitude permission to **write** directly to your AWS Kinesis Stream.
+Create an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) that gives Amplitude permission to **write** directly to your AWS Kinesis Stream.
 <!-- vale Amplitude.TooWordy = NO -->
 - For Account ID, specify: 358203115967. This is Amplitude's AWS account used to export events.
 - Finalize the role without assigning any policies.
@@ -99,7 +99,7 @@ Create an [IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_cr
 
 #### 3. Create an IAM policy
 
-1. Create an [IAM Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to give Amplitude permission to write to your Kinesis Stream.
+1. Create an [IAM Policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to give Amplitude permission to write to your Kinesis Stream.
 2. Select the **Create Policy from JSON** option and use the following template policy in the Policy Document field. Be sure to change the {account-id} to your account-id, and replace {region} and {stream-name} with the applicable values. Also replace {role-name} with the role just created.
 
     ```json

@@ -15,7 +15,7 @@ summary: "Get data that's displayed on the dashboard graphs in JSON format via t
 ---
 ## Considerations
 
-- You may have to URL encode special characters in the names of event types, event properties, and user properties. For example, encode `Play Song` as `Play%20Song`. Use the [W3Schools encoding reference](http://www.w3schools.com/tags/ref_urlencode.asp) for help.
+- You may have to URL encode special characters in the names of event types, event properties, and user properties. For example, encode `Play Song` as `Play%20Song`. Use the [W3Schools encoding reference](https://www.w3schools.com/tags/ref_urlencode.asp) for help.
 - Some examples in this article use backslash syntax to escape characters when using cURL. If you aren't using cURL, then don't encode your request with backslash escape characters.
 - The Dashboard REST API time zone is the same as your Amplitude project's time zone.
 
@@ -1054,7 +1054,7 @@ Retrieves unbounded Retention for Any Active Event with "watch_tutorial" return 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
-curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210801&end=20210831&rm=rolling'
+curl --location -g --request GET 'https://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210801&end=20210831&rm=rolling'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
@@ -1074,7 +1074,7 @@ Retrieves weekly N-day retention for any active event with "watch_tutorial" retu
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
-curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=7'
+curl --location -g --request GET 'https://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=7'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
@@ -1094,7 +1094,7 @@ Get monthly N-day retention for active event with another event return for a per
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
-curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=30'
+curl --location -g --request GET 'https://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=30'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}

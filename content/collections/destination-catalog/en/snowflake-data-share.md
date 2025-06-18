@@ -41,7 +41,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Warehouse Destinations section, click **Snowflake Data Share**.
 3. Under *Access Data via Snowflake Data Share*, enter the following information:
-      - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `http://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
+      - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `https://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
       - **Org Name**: This is the name of your Snowflake organization.
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
 

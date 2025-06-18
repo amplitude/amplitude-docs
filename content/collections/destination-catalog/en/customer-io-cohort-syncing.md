@@ -17,7 +17,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713560928
 ---
-[Customer.io](http://customer.io/) is a messaging platform that allows marketers to turn ideas into powerful automated message campaigns. [Customer.io](http://customer.io/)'s logic-based tools help you capture every edge case and connect to the real people in your audience.
+[Customer.io](https://customer.io/) is a messaging platform that allows marketers to turn ideas into powerful automated message campaigns. [Customer.io](https://customer.io/)'s logic-based tools help you capture every edge case and connect to the real people in your audience.
 
 {{partial:admonition type="note" heading="Send Amplitude events to Customer.io"}}
 This integration sends Amplitude cohorts to Customer.io. There is a separate integration to send Amplitude events. See [Send events to Customer.io](/docs/data/destination-catalog/customer-io) for information.
