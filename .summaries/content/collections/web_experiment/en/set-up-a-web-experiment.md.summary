@@ -1,21 +1,19 @@
-**Summary:** This documentation explains how to set up Amplitude Web Experiments using the Visual Editor to create A/B tests and multi-armed bandit experiments without code changes, covering element modifications, URL redirects, page targeting rules, audience targeting, and testing workflows.
+**Summary:** This documentation explains how to set up Amplitude Web Experiments using the Visual Editor to create A/B tests without code changes, including element modifications, page targeting configuration, and audience targeting setup.
 
 **Keywords:**
 - Amplitude Web Experiment
 - Visual Editor
-- A/B testing
-- multi-armed bandit experiments
+- A/B testing without code
+- multi-armed bandit experiment
+- Pages targeting
 - element changes
 - URL redirect
-- page targeting rules
+- Web Experiment script implementation
 - audience targeting
 - CSS style properties
-- DOM selector
+- HTML editing
+- selector configuration
 - Navigation mode
-- test instrumentation mode
-- variant preview
-- Web Experiment script implementation
-- inline CSS editing
-- HTML content modification
-- experiment goals definition
-- statistical preferences configuration
+- Test & Preview functionality
+- experiment variants
+- DOM tree manipulation

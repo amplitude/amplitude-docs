@@ -1,10 +1,10 @@
-**Summary:** Documentation landing page for Web Experiment feature covering A/B testing, multivariate testing, and multi-armed bandit experiments with no-code implementation, one-line code installation, targeting capabilities, performance optimization, impression tracking, and post-experiment workflows.
+**Summary:** Documentation landing page for Web Experiment feature covering A/B testing, multivariate testing, and Multi-armed bandit experiments with no-code implementation, including one-line code installation, targeting capabilities, performance optimization, impression tracking, and post-experiment workflows.
 
 **Keywords:**
 - Web Experiment
 - A/B testing
 - multivariate experiments
-- multi-armed bandit
+- Multi-armed bandit
 - no-code experimentation
 - one-line code installation
 - experiment targeting
@@ -13,4 +13,3 @@
 - web performance optimization
 - conversion optimization
 - personalized messages
-- calls to action

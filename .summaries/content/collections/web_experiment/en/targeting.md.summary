@@ -1,18 +1,26 @@
-**Summary:** This documentation covers Web Experiment targeting configuration including page targeting with URL matching operators (URL Matches, URL Matches Exactly, URL Matches Pattern, etc.) and audience targeting using browser properties (local evaluation) and user properties (remote evaluation with anti-flicker overlay), plus bucketing behavior for variant distribution and rollout percentages.
+**Summary:** This documentation covers Web Experiment targeting functionality including page targeting evaluation, audience targeting with browser properties (local) and user properties (remote), anti-flicker overlay behavior, and bucketing/variant distribution logic with rollout percentage controls.
 
 **Keywords:**
 - Web Experiment targeting
-- page targeting rules
-- URL matching operators
-- URL Matches Pattern wildcards
+- page targeting evaluation
 - audience targeting
 - browser properties local evaluation
 - user properties remote evaluation
 - anti-flicker overlay
-- bucketing variant distribution
-- rollout percentages
+- bucketing algorithm
+- variant distribution
+- rollout percentage
 - Device ID bucketing
-- IntegrationPlugin custom properties
+- IntegrationPlugin
 - Amplitude ID resolution
-- behavioral cohorts targeting
-- page display delay timeout
+- user enrichment
+- behavioral cohorts
+- page display latency
+- session storage
+- local storage
+- URL query parameters
+- UTM parameter targeting
+- user agent targeting
+- cookie targeting
+- geolocation targeting
+- property canonicalization
