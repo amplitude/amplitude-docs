@@ -216,6 +216,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - Form interactions
 - File downloads
 - Element interactions
+- Frustration interactions
 - Network tracking
 
 
@@ -228,6 +229,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks dead clicks and rage clicks. Default value is `false`. See [Track frustration interactions](#track-frustration-interactions) for more information and configuration options.                                                                                                                      |
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables network tracking. If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
@@ -250,6 +252,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
     formInteractions: false,
     fileDownloads: false,
     elementInteractions: false,
+    frustrationInteractions: false,
   },
 });
 
@@ -644,6 +647,37 @@ These two events capture properties that describe the corresponding element and 
 - `[Amplitude] Element Aria Label`
 - `[Amplitude] Element Parent Label`
 <!-- vale on-->
+{{/partial:collapse}}
+
+### Track frustration interactions
+
+You can enable frustration interaction tracking to capture dead clicks and rage clicks. Review our page on [Autocapture privacy and security](/docs/data/autocapture#privacy-and-security) for more information about the data collected with these events. 
+
+Set `config.autocapture.frustrationInteractions` to `true` to enable dead click and rage click tracking (default `false`)
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    frustrationInteractions: true, //[tl! highlight]
+  },
+});
+```
+
+#### Advanced configuration for frustration interactions
+
+Use the advanced configuration to control frustration interaction tracking.
+
+{{partial:collapse name="Tracking frustration interaction options"}}
+
+| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.frustrationInteractions.deadClicks` | Optional. `boolean or object`         | Enable dead click tracking (default `true`) |
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements should have dead clicks tracked. By default, this is set to `[TODO: FILL ME IN WHEN READY]`        |
+| `config.autocapture.frustrationInteractions.rageClicks` | Optional. `boolean or object`         | Enable rage click tracking (default `true`) |
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements should have rage clicks tracked on. By default, this is set to `[TODO: FILL ME IN WHEN READY]`        |
+| `config.autocapture.frustrationInteractions.pageUrlAllowlist`     | Optional. `(string\|RegExp)[]` | Defines the URL, URLs, or URL pattern on which Amplitude tracks element click and change events. By default, element interactions will be captured on any URL if undefined.                                                                                                            |
+| `config.autocapture.frustrationInteractions.dataAttributePrefix`  | Optional. `(string\|RegExp)[]` | Allows the SDK to capture data attributes as an event property. By default, this is set to `data-amp-track`.                                                                                                                                                                           |
+
 {{/partial:collapse}}
 
 ### Track network requests
