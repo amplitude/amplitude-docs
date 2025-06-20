@@ -680,6 +680,33 @@ Use the advanced configuration to control frustration interaction tracking.
 
 {{/partial:collapse}}
 
+
+{{partial:collapse name="Element interaction events"}} 
+When you enable frustration interactions for Autocapture, Amplitude sends two events
+
+- `[Amplitude] Dead Click`
+- `[Amplitude] Rage Click`
+
+Dead click events capture the same properties as `[Amplitude] Element Clicked` plus:
+
+<!-- vale off-->
+- `[Amplitude] X`
+- `[Amplitude] Y`
+<!-- vale on-->
+
+Rage click events capture the same properties as `[Amplitude] Element Clicked` plus:
+
+<!-- vale off-->
+- `'[Amplitude] Begin Time'`
+- `'[Amplitude] End Time'`
+- `'[Amplitude] Duration'`
+- `'[Amplitude] Clicks'`
+- `'[Amplitude] Click Count'`
+<!-- vale on-->
+
+{{/partial:collapse}}
+
+
 ### Track network requests
 
 Track when network requests fail (supports XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
