@@ -681,7 +681,7 @@ Use the advanced configuration to control frustration interaction tracking.
 {{/partial:collapse}}
 
 
-{{partial:collapse name="Element interaction events"}} 
+{{partial:collapse name="Frustration interaction events"}} 
 When you enable frustration interactions for Autocapture, Amplitude sends two events
 
 - `[Amplitude] Dead Click`
