@@ -8,7 +8,9 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
-## Requirements
+
+
+## Requirements {.web-only-tag}
 
 The Guides and Surveys Android SDK requires:
 
