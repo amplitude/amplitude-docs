@@ -77,6 +77,7 @@ public/hot
 public/storage
 public/docs/css/*
 public/vendor/statamic
+public/docs/md
 public/docs/js/*
 **/.DS_Store
 
