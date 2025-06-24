@@ -73,7 +73,7 @@ val bootOptions = AmplitudeBootOptions(
 amplitudeEngagement.boot(bootOptions)
 ```
 
-## Enable screen tracking
+### Enable screen tracking (optional)
 
 {{partial:admonition type="author" heading="Required?"}}
 Is this required? What is the scope and can you expand on the use?
@@ -202,5 +202,46 @@ if (context is Application) {
 override fun onTerminate() {
     super.onTerminate()
     amplitudeEngagement.cleanup()
+}
+```
+
+## Simulate Guides and Surveys for preview
+
+To use preview mode to test a guide or survey in your app, configure a custom URL scheme in your.
+
+### Locate the mobile URL scheme
+
+In Amplitude, navigate to your Project's settings.
+
+On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+
+### Add the URL scheme in Android Studio
+
+Add the following intent filter to the main activity to your project's `AndroidManifest.xml` file:
+
+```xml
+<activity android:name=".MainActivity">
+    <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- Add your URL scheme from Amplitude Dashboard here -->
+    <!-- ex: android:scheme="amp-12345" -->
+    <data android:scheme="<your-unique-scheme-id>" />
+    </intent-filter>
+</activity>
+```
+
+### URL handling for preview links
+
+{{partial:admonition type="author" heading="Can you expand on this, if necessary?"}}
+Where does this go, etc.
+{{/partial:admonition}}
+
+```kotlin
+// In your Activity
+override fun onNewIntent(intent: Intent?) {
+    super.onNewIntent(intent)
+    amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```

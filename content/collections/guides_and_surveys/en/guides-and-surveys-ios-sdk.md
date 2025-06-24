@@ -74,7 +74,22 @@ let bootOptions = AmplitudeBootOptions(
 amplitudeEngagement.boot(options: bootOptions)
 ```
 
+### Enable screen tracking (optional)
+
+```swift
+// Track screen views to trigger guides based on screens
+amplitudeEngagement.screen("HomeScreen")
+```
+
 ## Manage themes
+
+Configure the visual theme mode if your app supports light and dark modes.
+
+
+```swift
+// Set the theme mode
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+```
 
 ## Register a callback
 
@@ -84,13 +99,63 @@ amplitudeEngagement.boot(options: bootOptions)
 
 ## Reset
 
+Reset a guide or survey to a specific step.
+
+```swift
+amplitudeEngagement.reset(key = "GUIDE_KEY", stepIndex = 0)
+```
+
+| Parameter  | Type                    | Description                                           |
+| ---------- | ----------------------- | ----------------------------------------------------- |
+| `key`       | `string` | Required. The guide or survey's key.                                                    |
+| `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
+
+
 ## List
+
+Retrieve a list of all live guides and surveys along with their status.
+
+```swift
+val guidesAndSurveys = amplitudeEngagement.list()
+```
 
 ## Show
 
+Display a specific guide or survey. Ignores any targeting rules and limits except for page targeting.
+
+```kotlin
+amplitudeEngagement.show(key = "GUIDE_KEY")
+```
+
+| Parameter  | Type                    | Description                                           |
+| ---------- | ----------------------- | ----------------------------------------------------- |
+| `key`       | `string` | Required. The guide or survey's key.                                                    |
+
+
 ## Forward event
 
+If you don't use the plugin, but want to trigger Guides using events.
+
+```swift
+// In your AppDelegate or SceneDelegate
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    if amplitudeEngagement.handleUrl(url) {
+        return true
+    }
+    // Handle other URL schemes
+    return false
+}
+```
+
 ## Close all
+
+Close all active guides and surveys.
+
+```kotlin
+amplitudeEngagement.closeAll()
+```
+
+
 
 ## Simulate Guides and Surveys for preview
 
