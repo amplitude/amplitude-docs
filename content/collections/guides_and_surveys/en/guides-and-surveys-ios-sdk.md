@@ -8,6 +8,13 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
+{{partial:admonition type="author" heading="Required info"}}
+These details in the confluence were much more sparse than Android.
+
+- Is there a minimum version of Analytics-Swift that users must have?
+- Please share details about any options listed below, or that they aren't available in iOS.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -15,7 +22,7 @@ The Guides and Surveys iOS SDK requires:
 * User devices on iOS 15 or higher
 * Swift 5.9+
 
-## Installation
+## Install and initialize the SDK
 
 Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -35,7 +42,7 @@ pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Initialize the SDK
+### Initialize the SDK
 
 ```swift
 import AmplitudeEngagementSwift
@@ -52,7 +59,7 @@ let amplitude = Amplitude(configuration: configuration)
 amplitude.add(plugin: amplitudeEngagement.getPlugin())
 ```
 
-## Boot the SDK
+### Boot the SDK
 
 ```swift
 // Basic boot with user ID
@@ -66,6 +73,24 @@ let bootOptions = AmplitudeBootOptions(
 )
 amplitudeEngagement.boot(options: bootOptions)
 ```
+
+## Manage themes
+
+## Register a callback
+
+## Router configuration
+
+## Localization
+
+## Reset
+
+## List
+
+## Show
+
+## Forward event
+
+## Close all
 
 ## Simulate Guides and Surveys for preview
 
@@ -98,3 +123,6 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
     return false
 }
 ```
+
+## Troubleshoot your installation
+
