@@ -193,7 +193,7 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
 5. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
-6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks. Daily syncs can be set to run at a certain hour in the day, and Weekly or Monthly syncs can be set to run at a specific day and hour.
+6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
 7. Enter a descriptive name for this instance of the source.
 8. The source appears in the Sources list for your workspace.
 
