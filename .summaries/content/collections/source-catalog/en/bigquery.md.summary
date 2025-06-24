@@ -1,24 +1,24 @@
 ## Summary
-This documentation covers BigQuery Data Import integration for Amplitude, detailing how to ingest BigQuery data (events, user properties, group properties) into Amplitude projects using service accounts, GCS buckets, and SQL queries with support for full sync and time-based import methods.
+This documentation covers BigQuery Data Import integration for ingesting BigQuery data into Amplitude projects, including prerequisites (GCS bucket, Service Account with specific BigQuery and Cloud Storage roles), configuration options (Full Sync vs Time-based import), mandatory data fields for events/user properties/group properties, and SQL query requirements for handling STRUCT types and JSON properties fields.
 
 ## Keywords
 - BigQuery Data Import
-- Amplitude integration
 - GCS bucket offloading
 - Service Account permissions
-- BigQuery Job User
-- BigQuery Data Viewer
-- Storage Admin
-- time-based import
-- full sync import
-- monotonically increasing timestamp
-- STRUCT data type
-- event_properties JSON
-- user_properties JSON
-- group_properties JSON
+- BigQuery Job User role
+- BigQuery Data Viewer role
+- Storage Admin role
+- Time-based import
+- Full Sync import
+- STRUCT type columns
+- JSON_EXTRACT_SCALAR function
+- event_properties JSON formatting
+- user_properties JSON formatting
+- group_properties JSON formatting
+- RECORD type REPEATED mode
 - BigQuery export statement limitations
 - INFORMATION_SCHEMA restrictions
-- JSON_EXTRACT_SCALAR function
+- monotonically increasing timestamp
 - warehouse import tool
-- IP allowlist requirements
-- mandatory data fields validation
+- BigQuery SQL helper
+- JSON string field reconstruction
