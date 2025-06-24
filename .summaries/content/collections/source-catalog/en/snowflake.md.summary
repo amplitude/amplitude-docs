@@ -6,28 +6,29 @@ This documentation covers Amplitude's Snowflake data warehouse integration that 
 
 - Snowflake data warehouse integration
 - Change Data Capture (CDC)
-- Mirror Sync strategy
-- Append Only Sync
-- Timestamp import strategy
+- Mirror Sync with insert/update/delete operations
+- Append Only Sync strategy
+- Timestamp-based import
 - Full Sync strategy
-- ABORT_DETACHED_QUERY setting
+- Event data ingestion
+- User properties sync
+- Group properties sync
+- Profile data mirroring
 - Key pair authentication
 - Password authentication
 - S3 Storage Integration
-- DATA_RETENTION_TIME_IN_DAYS
-- Event deduplication insert_id
-- User properties sync
-- Group properties sync
-- Profile data import
-- VARIANT JSON objects
+- ABORT_DETACHED_QUERY configuration
+- DATA_RETENTION_TIME_IN_DAYS setting
+- VARIANT JSON data type
 - OBJECT_CONSTRUCT function
-- EPOCH_MILLISECOND extraction
-- Regional IP allowlist
-- Query timeout handling
-- Exponential backoff retry
+- EPOCH_MILLISECOND timestamp conversion
+- insert_id deduplication
+- Snowflake IP allowlist
+- 12-hour query timeout limit
+- 1B events batch size limit
 - INFORMATION_SCHEMA permissions
 - JWT token authentication
-- Materialized views optimization
-- Clustering keys performance
-- 12-hour query limit
-- 1B events batch limit
+- Exponential backoff retry mechanism
+- Snowflake streams and views
+- Time Travel feature
+- Enrichment services toggle
