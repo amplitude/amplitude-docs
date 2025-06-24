@@ -34,5 +34,3 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, w
 - trackingOptions
 - serverZone
 - EU data residency
-- visual labeling
-- unified SDK
