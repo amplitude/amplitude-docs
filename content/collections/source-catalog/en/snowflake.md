@@ -45,7 +45,7 @@ Amplitude's Data Warehouse Import sometimes processes events in parallel, so tim
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Long running queries"}}
-To ensure that your import queries aren't canceled, set `ABORT_DETACHED_QUERY` to `FALSE` at the account level.
+To ensure your import queries aren’t canceled, Amplitude sets `ABORT_DETACHED_QUERY = FALSE` at the session level.
 {{/partial:admonition}}
 
 ## Add and configure the Snowflake source
@@ -547,7 +547,7 @@ When a Snowflake query times out, Amplitude automatically retries the query usin
 
 Amplitude attempts up to 8 retries (9 total attempts including the initial query) before marking an import job as failed. Each retry attempt starts fresh, ensuring a consistent approach to retrieving your data.
 
-### Why should I set ABORT_DETACHED_QUERY to FALSE?
+### Why is ABORT_DETACHED_QUERY set to FALSE?
 
 Setting `ABORT_DETACHED_QUERY = FALSE` at the account level prevents Snowflake from silently canceling import queries that run longer than 5 minutes. Without this setting:
 
