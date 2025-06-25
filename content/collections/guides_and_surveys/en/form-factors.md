@@ -32,7 +32,7 @@ A subtle nudge that appears near a contextually relevant element. Popovers are g
 
 Popovers offer the same customization options as modals.
 
-### Pin {.web-only-tag}
+### Pin
 
 A persistent marker that stays on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
@@ -54,6 +54,16 @@ Banners are available in the Banner template, and contain one step.
 
 Banners are full-width blocks that show on either the top or bottom of the page. Use banners for longer-term announcements, status updates, or time-sensitive promotions.
 
+### Checklist {.tag .web}
+
+Checklists provide a 
+
+### Tour
+
+Tours provide...
+
+
+
 ## Properties
 
 These properties apply across form factors, enabling you to customize your guide components. Options available to each property may differ across form factors.
@@ -65,7 +75,7 @@ Position controls where the guide appears on screen.
 | Form factor | Options                                                                                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Popover     | Top right, top left, bottom right, bottom left, center                                                                                                                                                                                                                                    |
-| Modal       | Center                                                                                                                                                                                                                                                                                    |
+| Modal       | Center, full width (Mobile only)                                                                                                                                                                                                                                                                                    |
 | Pins        | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip     | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
 | Banner      | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |

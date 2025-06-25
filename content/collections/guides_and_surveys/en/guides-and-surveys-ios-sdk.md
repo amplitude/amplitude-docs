@@ -81,6 +81,22 @@ amplitudeEngagement.boot(options: bootOptions)
 amplitudeEngagement.screen("HomeScreen")
 ```
 
+### Enable element targeting
+
+Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
+
+```swift
+// Swift UI
+
+MySwiftView {
+
+}
+.amplitudeView("MySwiftView")
+
+let myView = MyUIKitView(...)
+myView.accessibilityIdentifier = "MyView"
+```
+
 ## Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.

@@ -1029,13 +1029,12 @@ img.expandable-image {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
- .prose > .web-only-tag {
+ .prose > .tag {
     position: relative;
     display: inline-block;
   }
   
-  .prose > .web-only-tag::after {
-    content: "Web Only";
+  .prose > .tag::after {
     position: relative;
     top: -2px;
     /* right: -15px; */
@@ -1054,102 +1053,31 @@ img.expandable-image {
     
     /* Amplitude Design System Colors */
     background-color: #FFFFFF;
-    color: #1E40AF; /* Blue 700 */
+ /* Blue 700 */
     border-color: #3B82F6; /* Blue 500 */
     background-repeat: no-repeat;
     background-position: 6px center;
     background-size: 12px 12px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E40AF' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
     padding-left: 22px;
     
     /* Styling */
     border-radius: 8px;
     box-sizing: border-box;
     border: 1px solid;
-    
-    /* Transitions */
-    /* transition: all 0.2s ease-in-out;
-    opacity: 1;
-    visibility: visible; */
-  }
-  
-  /* Hover effects */
-  
-  /* Variant: Subtle */
-  .prose > .web-only-tag--subtle::after {
-    background-color: #F3F4F6; /* Gray 100 */
-    color: #374151; /* Gray 700 */
-    border-color: #E5E7EB; /* Gray 200 */
-  }
-  
-  
-  /* Variant: Outline */
-  .prose > .web-only-tag--outline::after {
-    background-color: #FFFFFF;
-    color: #1E40AF; /* Blue 700 */
-    border-color: #3B82F6; /* Blue 500 */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  }
-  
 
-  
-  /* Dark theme variant */
-  .dark .prose > .web-only-tag::after {
-    background-color: #1F2937; /* Gray 800 */
-    color: #93C5FD; /* Blue 300 */
-    border-color: #374151; /* Gray 700 */
-  }
-  
-
-  
-  /* Size variants */
-  .prose > .web-only-tag--sm::after {
-    height: 20px;
-    padding: 2px 6px;
-    font-size: 11px;
-    line-height: 16px;
-  }
-  
-  .prose > .web-only-tag--md::after {
-    height: 28px;
-    padding: 6px 10px;
-    font-size: 13px;
-    line-height: 16px;
-  }
-  
-  /* Position variants */
-  .prose > .web-only-tag--left::after {
-    right: auto;
-    left: -8px;
-    transform: translateX(-100%);
-  }
-  
-  
-  .prose > .web-only-tag--top::after {
-    top: -8px;
-    right: 0;
-    transform: translateY(-100%);
-  }
-
-  
-  .prose > .web-only-tag--bottom::after {
-    top: auto;
-    bottom: -8px;
-    right: 0;
-    transform: translateY(100%);
   }
   
   
   
   /* Responsive behavior */
   @media (max-width: 640px) {
-    .prose > .web-only-tag::after {
+    .prose > .tag::after {
       font-size: 11px;
       padding: 3px 6px;
       height: 22px;
     }
     
-    .prose > .web-only-tag--md::after {
+    .prose > .tag--md::after {
       font-size: 12px;
       padding: 4px 8px;
       height: 24px;
@@ -1158,7 +1086,19 @@ img.expandable-image {
   
   /* Hide on very small screens if needed */
   @media (max-width: 480px) {
-    .prose > .web-only-tag--hide-mobile::after {
+    .prose > .tag--hide-mobile::after {
       display: none;
     }
   }
+
+.web::after {
+    content: "Web only";
+    color: #1E40AF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E40AF' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
+}
+
+.mobile::after {
+    content: "Mobile only";
+    color: #0f4f73;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%230f4f73"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40H280Zm0-80h400v-720H280v720Zm0 0v-720 720Zm200-600q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>');
+}

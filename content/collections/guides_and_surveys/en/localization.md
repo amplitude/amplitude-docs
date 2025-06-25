@@ -7,7 +7,7 @@ landing: false
 
 Localization enables you to serve guides and surveys in different languages without creating a new guide or survey for each language.
 
-## Feature availability {.web-only-tag}
+## Feature availability {.tag .web}
 
 Guides and Surveys localization is available to accounts with access to Guides and Surveys that are on Growth or Enterprise plans. For more information, see the [Pricing page](https://amplitude.com/pricing).
 
@@ -15,7 +15,7 @@ Guides and Surveys localization is available to accounts with access to Guides a
 
 Enabling localization on Guides or Surveys requires updates to your SDK implementation and Project settings.
 
-### SDK updates {.web-only-tag}
+### SDK updates {.tag .mobile}
 
 Specify the user's locale during [SDK initialization](/docs/guides-and-surveys/sdk).
 
