@@ -16,7 +16,7 @@ The Resource Center settings option applies to the Resource Center as a whole, i
 From the Settings page you can specify:
 
 # Resource Center targeting
-Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply on either the [source content](docs/guides-and-services/resource-center-source-content) or the [Resource Center sets](docs/guides-and-serveys/resource-center-targeting-recommendation-sets).
+Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply on either the [source content](/docs/guides-and-services/resource-center-source-content) or the [Resource Center sets](/docs/guides-and-serveys/resource-center-targeting-recommendation-sets).
 
 You would use this targeting if, for example, you only wanted the widget to appear to users in specific geographies or for users with specific job titles. 
 
@@ -28,7 +28,7 @@ The general settings let you specify the following:
 - **Autopilot**: Automatically suggests articles and information based on what page your user is on when they click the Resource Center icon. It is recommended that you turn on Autopilot as it can save you effort to create resource recommendations for each of your pages. 
 
 ## Quick links  
-The Quick links section adds permanent links to the bottom of the Resource Center widget. Typically, these links can be links to your main website, specific guides or surveys, videos, additional information, or similar. 
+The Quick links section adds permanent links to the bottom of the Resource Center widget. These are links to your main website, specific guides or surveys, videos, opening a support chat widget, or similar. 
 
 The Quck links section also lets you create a primary call to action (CTA) button that encourages user interaction. Typically, this button links to customer support or some sort of contact information. 
 
@@ -91,10 +91,10 @@ You can also specify the specific CSS or XPath selector in the field.
 {{/partial:admonition}}: 
 
 ### With Code
-You can use the Guides and Surveys [SDK] (docs/guides-and-surveys/sdk) to directly code the launcher you want. 
+You can use the Guides and Surveys [SDK] (/docs/guides-and-surveys/sdk) to directly code the launcher you want. 
 
 ## Theme
-You can specify a color theme for the Resource Center widget. If you have previously created a theme for your Guides and Surveys, that theme appears as an option for the Resource Center. 
+You can specify a theme for the Resource Center widget. If you have previously created a theme for your Guides and Surveys, that theme appears as an option for the Resource Center. 
 
-For more information about creating themes, go to [Themes] (docs/guides-and-surveys/themes).
+For more information about creating themes, go to [Themes] (/docs/guides-and-surveys/themes).
 

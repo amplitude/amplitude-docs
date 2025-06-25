@@ -14,6 +14,7 @@ The source content you select should be either specific external videos or inter
 - The Resource Center requires that you add documentation repositories and videos separately. 
 - Each documentation source requires slightly different information to successfully add it to the Resource Center. Follow the onscreen prompts for required fields.
 - If you do not see your specific documentation repository as an option, select the Website option to sync to a public website.
+- You can also suggest Resource Center content integrations through a Survey that is sent to Amplitude.
 
 **To add documentation content to the Resource Center** 
 1. Go to **Guides and Surveys > Content**.
@@ -32,8 +33,7 @@ The source content you select should be either specific external videos or inter
    - Manual
    - Daily
    - Weekly
-7. In the Default visibility field, decide if you want draft articles to be visible to your users.
-By default, this is set so that draft articles are visibile.
+7. In the Default visibility field, decide if you want newly created articles to be Published (visible) or Draft (hidden). By default, this is set to Draft. 
 8. Specify if you want to target this repository to specific users.
    - If you are targeting the content, you must specify the segments you want. For more information, go to [Setup and Targeting](/docs/guides_and_surveys/setup-and-target)
 9. Click **Add source**.
@@ -52,11 +52,11 @@ This title will be what your users see in the link.
     - Vimeo
     - Vidyard
     - Wisteria
-    - Locally hosted .MP4 files
+    - Remotely hosted .MP4 files
 6. Click Add video.
 7. Repeat until you have added all of your videos.
 
-After you have added your content sources, you can create your [Resource Center recommendation sets](docs/guides-and-surveys/resource-center-recommendation-sets).
+After you have added your content sources, you can create your [Resource Center recommendation sets](/docs/guides-and-surveys/resource-center-recommendation-sets).
 
 # Managing Source content
 As your organization grows and evolves, your source content will naturally also grow and change. For this reason, it is important for you to keep the content that is available in the Resource Center up to date with the source repositories. You can specify how frequently you want the Resource Center to automatically sync with your source content. You can also only sync to your source content when you manually trigger the sync. 
