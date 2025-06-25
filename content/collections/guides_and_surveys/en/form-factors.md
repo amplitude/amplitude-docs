@@ -32,7 +32,7 @@ A subtle nudge that appears near a contextually relevant element. Popovers are g
 
 Popovers offer the same customization options as modals.
 
-### Pin
+### Pin {.web-only-tag}
 
 A persistent marker that stays on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 

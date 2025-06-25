@@ -2284,10 +2284,11 @@ line-height: 1.25rem;
     display: inline-block;
   }.prose > .web-only-tag::after {
     content: "Web Only";
-    position: absolute;
-    top: 5px;
-    right: -15px;
+    position: relative;
+    top: -2px;
+    /* right: -15px; */
     transform: translateX(100%);
+    margin-left: 1rem;
     
     /* Dimensions */
     height: 24px;
