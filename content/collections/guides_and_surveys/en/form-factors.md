@@ -66,7 +66,6 @@ Click the three dot menu to access format settings.
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Open by default | Enables the pin to open without user interaction. If disabled, users must click or tap the pin to open it. |
 | Show mask <br/> {.tag .web .zero} | Enables a background mask when the pin is open to help draw the user's focus. |
-
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content. |
 | Actions bar <br/> {.tag .web .zero}  | Updates the placement and layout of the guide's buttons. |
 | Click outside to close | Enables users to click or tap outside of the modal to dismiss it. |
