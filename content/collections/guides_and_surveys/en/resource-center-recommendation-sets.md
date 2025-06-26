@@ -19,6 +19,7 @@ You can create multiple recommendation sets for specific pages or you can create
 If you don’t currently know how detailed you want your recommendation sets, use the Resource Center [Autopilot](/docs/guides-and-services/resource-center-autopilot) feature. This lets Amplitude determine which articles may be most relevant for users.
 {{/partial:admonition}}
 
+**To create a recommendation set**
 1. Click **Create New**. 
 2. Enter a name for the Resource Center recommendation set. Choose something that is short and descriptive. All sets must be named. 
 3. On the Build tab, click the link drop-down icon to select the action you want. You can create any of the following: 
