@@ -517,7 +517,7 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 | `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
 | `[Amplitude] Target Class` | The canonical name of the target view class. |
 | `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
-| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. This property is optional for Compose elements. |
 | `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
 | `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
 | `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
@@ -526,7 +526,35 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 {{/partial:collapse}}
 
 {{partial:admonition type="info" heading="Support for Jetpack Compose"}}
-Amplitude supports tracking user interactions with UI elements implemented in Jetpack Compose. To track interactions, add a `Modifier.testTag` to the `@Composable` functions of the elements that you want to track.
+Amplitude automatically tracks user interactions with all clickable UI elements implemented in Jetpack Compose. The `Modifier.testTag` is optional and can be added to `@Composable` functions to provide additional identification in the `[Amplitude] Target Tag` property. If no `testTag` is provided, the element will still be tracked with other available properties.
+
+**Using testTag for Better Element Identification**
+
+While `testTag` is optional, it's highly recommended for identifying specific Compose views that were clicked. The `testTag` property provides several benefits:
+
+- **Precise Element Identification**: Helps you distinguish between similar UI elements (like multiple buttons or cards) in your analytics data
+- **Stable Tracking**: Provides a consistent identifier that won't change when UI structure or styling is modified
+- **Easier Analysis**: Makes it simpler to filter and analyze interactions with specific elements in Amplitude charts
+- **Cross-Platform Consistency**: Allows you to maintain consistent element naming across different platforms
+
+```kotlin
+// Example: Adding testTag for better identification
+Button(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("login_button")
+) {
+    Text("Log In")
+}
+
+Card(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("product_card_${product.id}")
+) {
+    // Card content
+}
+```
+
+When these elements are clicked, the `[Amplitude] Target Tag` property will contain the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
 {{/partial:admonition}}
 
 ## User groups
