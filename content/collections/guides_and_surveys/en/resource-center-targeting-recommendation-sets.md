@@ -1,24 +1,24 @@
 ---
 id: a297263e-d953-4a8c-bd42-6194a56459ae
 blueprint: guides_and_survey
-title: 'Resource Center Targeting'
+title: 'Targeting Recommendation Sets'
 this_article_will_help_you:
   - 'Create targeting segments for Resource Center recommendation sets'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750952306
+updated_at: 1750961177
 ---
 Targeting in the Resource Center is exactly the same as targeting in the rest of Amplitude. For more information, go to [Setup and Targeting] (docs/guides-and-surveys/setup-and-target).
 
 Some things to keep in mind: 
 - If you have specified targeting on your content source, that targeting takes precedence before the entry targeting. 
-    - For example, if you designate source content as only applicable for people in the European Union (EU), users outside of that region will not be able to access that content. 
-- If source content has been targeted to a specific segment but has been added as a specific link in the Resource Center, the link title may be visible to non-targeted users.
-    - In this situation, the content is still restricted to the targeted group, but the link titles may be visible to all users.
+    - For example, if you designate source content as only applicable for people in the European Union (EU), that content will not appear in search results for users outside of that region. 
+- If source content has been targeted to a specific segment but has been added as part of a recommendation set with a different targeting, the targeting for the recommendation set takes precedence.
 
-1. For the resource entry you want, click the **Setup** tab.
+**To target a specific recommendation set**
+1. For the resource entry you want, click **Setup**.
 2. In the Targeting section, click **Targeted Users** and then specify your segments.
 3. Under the Page targeting section, specify whether you want the entries to be available on any page or only on specific pages.
 4. If you only want content to be available on specific pages, click **On specific pages** and then specify the specific pages you want.
-5. Specify the priority level that you want your content to appear. By default, all entries are set to Medium priority level.
+5. Specify the priority level. By default, all entries are set to Medium priority level.
 6. Click **Save**.
