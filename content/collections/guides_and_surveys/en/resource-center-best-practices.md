@@ -13,5 +13,4 @@ updated_at: 1750799190
 - The priority level assigned to the source decides which article appears first. 
 - If both articles have the same priority level, then the article that was most recently synced is given higher priority.
 - There is functionality that lets you scrape content from a public website. However, websites with a lot of rich content or complex formatting may not reproduce exactly as expected. 
-- Be careful when deleting articles from your content repository. There isn’t a way to recover that information and any future sync will ignore that specific article. It is often better to unpublish an article and leave it in Draft mode. 
-
+- If you want to remove an article from being visible to your users, set that article to Draft or otherwise unpublish it.
