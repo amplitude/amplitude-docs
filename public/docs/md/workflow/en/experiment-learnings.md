@@ -113,6 +113,10 @@ If desired, adjust the experiment’s **confidence level**. The default is 95%. 
 Lowering your experiment’s confidence level makes it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
 {{/partial:admonition}}
 
+### Group By
+
+Oftentimes, you run an experiment and want to know if the experiment effected different users differently. In other words, if there are heterogeneous treatment effects or not. One way to do this is to filter for Platform = iOS and then Platform = Android and then Platform = Web. Instead of having to do so many clicks you can just group by Platform. Read [this](docs/analytics/charts/group-by) for more information. The group by is not saved so if you refresh it will go away.
+
 ## Diagnostics card
 
 The Diagnostics card provides information about how your experiment is delivering. It shows charts about:
