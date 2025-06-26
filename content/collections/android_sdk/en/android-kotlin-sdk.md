@@ -21,6 +21,10 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
+## System requirements
+
+The Android Kotlin SDK supports Android API level 21 (Android 5.0 Lollipop) and higher.
+
 ## Install the SDK
 
 Amplitude recommends using Android Studio as an IDE and Gradle to manage dependencies.
