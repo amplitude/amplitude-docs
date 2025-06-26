@@ -5,9 +5,8 @@ title: 'Resource Center Source Content'
 this_article_will_help_you:
   - 'Include source content into the Resource Center.'
 landing: false
-parent: 20749d99-c2d4-4576-80a3-24233897706c
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750786988
+updated_at: 1750952282
 ---
 The source content you select should be either specific external videos or internal help (documentation) repositories. Documentation repositories are typically more useful as they provide a large selection of information that is widely applicable to each page with which your users interact. 
 
@@ -70,4 +69,3 @@ Within the sync of your source content, you can manage some aspects of the conte
 **To manage source content within the Resource center**
 1. Go to **Guides and Surveys > Content**.
 2. Click the source content you want.
-

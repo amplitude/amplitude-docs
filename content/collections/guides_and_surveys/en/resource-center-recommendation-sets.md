@@ -1,12 +1,12 @@
 ---
 id: 13b804be-b238-462d-9c36-cf406267b312
 blueprint: guides_and_survey
-title: 'Creating Recommendation Sets'
+title: 'Resource Center Recommendation Sets'
 this_article_will_help_you:
   - 'Create recommendation sets and links for the Resource Center.'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750787722
+updated_at: 1750952567
 ---
 Recommendation sets are customizable links and resources that you can embed throughout your website that help your users with information as they need it. You can think of them like personalized landing pages for your Resource Center. For example, you could create unique recommendation sets for:
 Advanced articles targeted towards your power users.

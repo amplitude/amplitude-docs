@@ -5,9 +5,8 @@ title: 'Resource Center Settings'
 this_article_will_help_you:
   - 'Manage Resource Center settings and overall look and feel of the widget.'
 landing: false
-parent: 20749d99-c2d4-4576-80a3-24233897706c
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750795374
+updated_at: 1750952315
 ---
 The Resource Center settings option applies to the Resource Center as a whole, including the widget itself, all entries, and the sources you have defined. 
 
@@ -97,4 +96,3 @@ You can use the Guides and Surveys [SDK] (/docs/guides-and-surveys/sdk) to direc
 You can specify a theme for the Resource Center widget. If you have previously created a theme for your Guides and Surveys, that theme appears as an option for the Resource Center. 
 
 For more information about creating themes, go to [Themes] (/docs/guides-and-surveys/themes).
-
