@@ -1,15 +1,15 @@
 ---
 id: e5b38789-2785-4fcc-bff1-2c50979c3546
 blueprint: guides_and_survey
-title: 'Resource Center Autopilot'
+title: Autopilot
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750952337
+updated_at: 1750961197
 this_article_will_help_you:
-  - 'Understand the smart Autopilot features for Resource Center.'
+  - 'Understand the smart Autopilot features for Resource Center'
 ---
-Autopilot for Resource Center recommendation sets can automatically surface useful articles to your users depending on where they are in your website. It provides a smart fallback if no recommendation sets have been created for any specific page. By using Autopilot, you do not have to manually create recommendation sets yourself. You can let Autopilot pull content from your repositories. This reduces the amount of setup and maintenance time for the Resource Center as a whole. 
+Autopilot for Resource Center recommendation sets automatically surfaces useful articles to your users depending on where they are in your website. It provides a smart fallback if no recommendation sets have been created for any specific page. By using Autopilot, you do not have to manually create recommendation sets yourself. Autopilot will pull content from your repositories. This reduces the amount of setup and maintenance time for the Resource Center as a whole. 
 
-Autopilot uses semantic search to power the recommendations it provides from each page. These smart recommendations analyze the page from which users interact with the Resource Center icon and then scan your content repositories for relevant or useful information. For example, if your users are on a sign-up page, Autopilot might surface a video that illustrates the sign up process. 
+Autopilot uses semantic search to power the recommendations it provides from each page. These smart recommendations analyze the page and then scan your content repositories for relevant or useful information. For example, if your users are on a sign-up page, Autopilot might surface a video that illustrates the sign up process. 
 
-You can enable Autopilot from the [Resource Center Settings](/docs/guides-and-surveys/resource-center-settings) page.
+Autopilot is enabled by default from the [Resource Center Settings](/docs/guides-and-surveys/resource-center-settings) page.
