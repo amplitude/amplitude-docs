@@ -33,7 +33,7 @@ The Quick links section adds permanent links to the bottom of the Resource Cente
 The Quck links section also lets you create a primary call to action (CTA) button that encourages user interaction. Typically, this button links to customer support or some sort of contact information. 
 
 **To add a quick link**
-1. Set the Quick links enable slider to **On**.
+1. Set the Quick links enable to **On**.
 2. Click the **Add link** button.
 3. Click the **Link** icon to specify what type of link you want.
 4. Enter the link URL.
