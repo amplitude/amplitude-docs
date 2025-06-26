@@ -1,0 +1,19 @@
+title: 'User Sessions'
+template: default
+layout: layout
+mount: c26659a0-6a19-4533-9fd2-36a4380671c1
+revisions: false
+route: '/analytics/charts/user-sessions/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false
