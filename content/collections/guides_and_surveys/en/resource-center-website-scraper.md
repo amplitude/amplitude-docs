@@ -26,7 +26,7 @@ There are two options when specifying the exact URLs you want to include:
     - This method may not find all applicable links.
 - **Upload**: Uploads a CSV or XML site map file of the specific URLs you want to include.  
     - Use this method if you want to specify the exact URL links and pages that should form the source repository.
-    - By providing the sitemap, you are hard-coding the source repository and it will not automatically incorporate any new articles unless those articles are added manually to the source repository. 
+    - By providing the sitemap, you are hard-coding the source repository and preventing it from automatically incorporating any new articles. New articles are then added manually. 
     - CSV and XML files don't need to have any special formatting associated with the URLs. We recommend that you use a sitemap.
 ## Advanced options
 If you click the **Advanced** link beneath the URL section, you can access the following options: 
@@ -34,19 +34,19 @@ If you click the **Advanced** link beneath the URL section, you can access the f
 - **Exclude these URL paths**: Lets you filter the source repository even further by specifically excluding certain URLs from the source repository. This is useful if, for example, you want to exclude your company’s blog posts from the source repository. 
 - **Override default selectors**: Lets you specify only the content selectors that you want to include or lets you ignore website elements. For more information review the following sections.
 
-### Content selectors
+#### Content selectors
 The website scraper, by default, pulls in all information about a page, not just the main content. This can include the page header, metadata, and other information. This means that not only is the main content of a page pulled into a Resource Center article, but extraneous content can also appear in the Resource Center articles. Amplitude does use heuristics to identify and remove as much extraneous content as possible, but some content may still be visible in the article. You can use the content selectors to help target and identify content to add to the Resource Center article. 
 
 Selectors override what the scraper considers the main content is on your page. The website scraper uses the selector to pull only content associated with that selector. You can create multiple selectors to target different pieces of content. 
 
-When you have multiple selectors, the website scraper looks for each selector in the order that you created it. If no selectors are found in a specific URL link, the website scraper defaults pulls information based on Amplitude heuristics.   
+When you have multiple selectors, the website scraper looks for each selector in the order that you created it. If no selectors are found in a specific URL link, the website scraper saves information based on Amplitude heuristics.   
 
-### Ignore elements
+#### Ignore elements
 The ignore elements selectors lets you remove content from the final output of a Resource Center article. For example, you may not want to include tooltips, images, or sidebars that, while useful on your website, are not relevant in a Resource Center article. 
 
-As with the main content selectors, you can add multiple ignore selectors and the website scraper looks for each one in the order that they were created. If no ignore selectors are found in a URL link, the website scraper includes all content. 
+As with the main content selectors, you can add multiple ignore selectors and the website scraper looks for each one in the order that they appear. If no ignore selectors are found in a URL link, the website scraper includes all content. 
 
-# Re-syncing excluded pages
+## Re-syncing excluded pages
 There are some pages that the website scraper automatically ignores. These typically include landing pages or pages that only contain links and no other text. Usually, these types of pages don't contain information suitable for a Resource Center article and can be safely removed from the source repository.
 However, occasionally, you may want to re-include these pages to be active in your source repository. 
 

@@ -15,7 +15,7 @@ Recommendation sets are customizable, in-time articles and information embedded 
 
 You can create multiple recommendation sets for specific pages or you can create a single recommendation set for your entire site. It's up to you how detailed you want to be. 
 
-{{partial:admonition type="" heading=""}}
+{{partial:admonition type="note" heading=""}}
 If you don’t currently know how detailed you want your recommendation sets, use the Resource Center [Autopilot](/docs/guides-and-surveys/resource-center-autopilot) feature. This lets Amplitude decide which articles may be most relevant for users.
 {{/partial:admonition}}
 

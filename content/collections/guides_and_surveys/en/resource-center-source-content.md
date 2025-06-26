@@ -12,7 +12,7 @@ The source content you select should be either internal help (documentation) rep
 
 - The Resource Center requires that you add documentation repositories and videos separately. 
 - Each documentation source requires slightly different information to successfully add it to the Resource Center. Follow the onscreen prompts for required fields.
-- If you do not see your specific documentation repository as an option, select the [Website](/docs/guides-and-surveys/resource-center-website-scraper) option to sync to a public website.
+- If you don't see your specific documentation repository as an option, select the [Website](/docs/guides-and-surveys/resource-center-website-scraper) option to sync to a public website.
 - You can also suggest Resource Center content integrations through a Survey that's sent to Amplitude.
 
 **To add documentation content to the Resource Center** 
@@ -41,7 +41,7 @@ This title is what your users see in the link.
 After you have added your content sources, create your [Resource Center recommendation sets](/docs/guides-and-surveys/resource-center-recommendation-sets).
 
 # Managing source content
-As your organization grows and evolves, your source content will also grown and change. For this reason, keep the content that's available in the Resource Center up-to-date with your source repositories. Specify how frequently you want the Resource Center to automatically sync with your source content. Alternately, decide to manually trigger the sync as needed. 
+As your organization grows and evolves, your source content also grows and changes. For this reason, keep the content that's available in the Resource Center up-to-date with your source repositories. Specify how frequently you want the Resource Center to automatically sync with your source content. Alternately, decide to manually trigger the sync as needed. 
 
 Within the sync of your source content, you can manage some aspects of the content from the Resource Center:
 - Remove specific articles from appearing in the Resource Center.
