@@ -8,19 +8,13 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
-{{partial:admonition type="author" heading="Required info"}}
-These details in the confluence were much more sparse than Android.
-
-- Is there a minimum version of Analytics-Swift that users must have?
-- Please share details about any options listed below, or that they aren't available in iOS.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
+* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.0.13+
 
 ## Install and initialize the SDK
 
@@ -58,6 +52,16 @@ let configuration = Configuration(
 let amplitude = Amplitude(configuration: configuration)
 amplitude.add(plugin: amplitudeEngagement.getPlugin())
 ```
+
+#### Configuration options
+
+| Parameter    | Type                                                                                              | Description                                                                                                                                                               |
+| ------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`     | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
+| `serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
+| `locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
+
 
 ### Boot the SDK
 
@@ -108,8 +112,6 @@ amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 ```
 
 ## Register a callback
-
-## Router configuration
 
 ## Localization
 
@@ -171,8 +173,6 @@ Close all active guides and surveys.
 amplitudeEngagement.closeAll()
 ```
 
-
-
 ## Simulate Guides and Surveys for preview
 
 To use preview mode to test a guide or survey in your app, configure a custom URL scheme in your.
@@ -204,6 +204,4 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
     return false
 }
 ```
-
-## Troubleshoot your installation
 
