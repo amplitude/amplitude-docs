@@ -95,16 +95,7 @@ amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 
 ## Register a callback
 
-{{partial:admonition type="author" heading="Does Android support router callbacks?"}}
-See web sdk [here](/docs/guides-and-surveys/sdk#register-a-callback)
-{{/partial:admonition}}
 
-
-## Localization
-
-{{partial:admonition type="author" heading="Does Android support localization?"}}
-See web sdk [here](/docs/guides-and-surveys/sdk#localization)
-{{/partial:admonition}}
 
 ## Reset
 
@@ -186,10 +177,6 @@ Add the following intent filter to the main activity to your project's `AndroidM
 ```
 
 ### URL handling for preview links
-
-{{partial:admonition type="author" heading="Can you expand on this, if necessary?"}}
-Where does this go, etc.
-{{/partial:admonition}}
 
 ```kotlin
 // In your Activity
