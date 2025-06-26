@@ -1,26 +1,23 @@
 **Summary:**
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven with `com.amplitude:analytics-android` dependency, configuration options like `flushIntervalMillis`, `flushQueueSize`, and `autocapture` settings, event tracking with `track()` and `identify()` methods, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, user groups, revenue tracking, plugins system, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with network connectivity checking.
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven with package `com.amplitude:analytics-android`, configuration options like `flushQueueSize`/`flushIntervalMillis`, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (`track()`, `identify()`, `revenue()`), plugin system with enrichment/destination types, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with network connectivity checking.
 
 **Keywords:**
-- Android-Kotlin SDK
-- com.amplitude:analytics-android
-- Gradle Maven installation
-- flushIntervalMillis flushQueueSize
-- autocapture AutocaptureOption
-- track() identify() methods
-- sessions app lifecycles screen views deep links element interactions
-- BaseEvent Revenue Identify classes
-- plugins enrichment destination
-- NetworkTrackingPlugin OkHttp
-- COPPA control
-- advertising ID ADID app set ID
-- useAdvertisingIdForDeviceId useAppSetIdForDeviceId
-- TrackingOptions locationListening
-- offline mode ACCESS_NETWORK_STATE
-- AndroidNetworkConnectivityCheckerPlugin
-- ServerZone EU data residency
-- deviceId userId sessionId
-- groupIdentify setGroup
-- EventOptions EventCallBack
-- minTimeBetweenSessionsMillis
-- TelephonyManager networkOperatorName
+- android-kotlin-sdk
+- analytics-android
+- amplitude-kotlin
+- gradle-maven-installation
+- flushQueueSize-flushIntervalMillis
+- autocapture-sessions-app-lifecycles
+- screen-views-fragment-views
+- deep-links-element-interactions
+- track-identify-revenue-methods
+- plugin-system-enrichment-destination
+- advertising-id-app-set-id
+- coppa-control-tracking-options
+- location-tracking-network-connectivity
+- offline-mode-network-state
+- session-management-device-id-lifecycle
+- user-groups-group-identify
+- okhttp-network-tracking-plugin
+- jetpack-compose-element-tracking
+- proguard-obfuscation-configuration
