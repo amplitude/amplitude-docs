@@ -40,7 +40,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/5874857623707'
 
 `SPLIT(referrer_url, "/", 2)`
 
-この式は、例えば、値「<https://www.google.com/search?q=amplitude>」を、値「[www.google.com](http://www.google.com)」に変換します。" しかし、これをさらに簡素化して、単に「google」だけにしたらどうなるでしょうか？これは、別のSPLIT関数内でSPLIT関数の結果をラップすることによって、実行できます。結果として出てくる数式は次のようになります:
+この式は、例えば、値「<https://www.google.com/search?q=amplitude>」を、値「[www.google.com](https://www.google.com)」に変換します。" しかし、これをさらに簡素化して、単に「google」だけにしたらどうなるでしょうか？これは、別のSPLIT関数内でSPLIT関数の結果をラップすることによって、実行できます。結果として出てくる数式は次のようになります:
 
 `SPLIT(SPLIT(referrer_url, "/", 2), ".", 1)`
 

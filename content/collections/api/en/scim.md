@@ -11,7 +11,7 @@ lede: |-
   The User Management API in Amplitude provides a programmatic solution to provisioning and
    group management through a public API. This enables administrators to manage their organizations at scale and integrate the provisioning process with other tools, including Identity Providers.
 
-  This guide provides detailed documentation on the specific routes supported by Amplitude's implementation of the [System for Cross-domain Identity Management (SCIM) 2.0 Standard](http://www.simplecloud.info/#Specification). This guide pays specific attention to any details useful for debugging issues with a SCIM integration.
+  This guide provides detailed documentation on the specific routes supported by Amplitude's implementation of the [System for Cross-domain Identity Management (SCIM) 2.0 Standard](https://www.simplecloud.info/#Specification). This guide pays specific attention to any details useful for debugging issues with a SCIM integration.
 
   For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision).
 updated_by: 6ca93b88-2d10-44dd-9995-d5f1b5d9151a
