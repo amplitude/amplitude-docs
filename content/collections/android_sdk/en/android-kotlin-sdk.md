@@ -526,16 +526,16 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 {{/partial:collapse}}
 
 {{partial:admonition type="info" heading="Support for Jetpack Compose"}}
-Amplitude automatically tracks user interactions with all clickable UI elements implemented in Jetpack Compose. The `Modifier.testTag` is optional and can be added to `@Composable` functions to provide additional identification in the `[Amplitude] Target Tag` property. If no `testTag` is provided, the element will still be tracked with other available properties.
+Amplitude tracks user interactions with all clickable UI elements implemented in Jetpack Compose. `Modifier.testTag` is optional. Add it to `@Composable` functions to provide additional identification in the `[Amplitude] Target Tag` property. If no `testTag` is provided, Amplitude tracks the element with other available properties.
 
-**Using testTag for Better Element Identification**
+#### Use testTag for better element identification
 
-While `testTag` is optional, it's highly recommended for identifying specific Compose views that were clicked. The `testTag` property provides several benefits:
+While `testTag` is optional, Amplitude recommends that you identify specific Compose views that users clicked. The `testTag` property provides several benefits:
 
-- **Precise Element Identification**: Helps you distinguish between similar UI elements (like multiple buttons or cards) in your analytics data
-- **Stable Tracking**: Provides a consistent identifier that won't change when UI structure or styling is modified
-- **Easier Analysis**: Makes it simpler to filter and analyze interactions with specific elements in Amplitude charts
-- **Cross-Platform Consistency**: Allows you to maintain consistent element naming across different platforms
+- **Precise Element Identification**: Helps distinguish between similar UI elements (like multiple buttons or cards) in your analytics data.
+- **Stable Tracking**: Provides a consistent identifier that doesn't change when you update or modify the UI structure or styling.
+- **Easier Analysis**: Enables easier filtering and analysis of interactions with specific elements in Amplitude charts.
+- **Cross-Platform Consistency**: Helps you to maintain consistent element naming across different platforms.
 
 ```kotlin
 // Example: Adding testTag for better identification
@@ -554,7 +554,7 @@ Card(
 }
 ```
 
-When these elements are clicked, the `[Amplitude] Target Tag` property will contain the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
+When a user clicks these elements, the `[Amplitude] Target Tag` property contains the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
 {{/partial:admonition}}
 
 ## User groups
