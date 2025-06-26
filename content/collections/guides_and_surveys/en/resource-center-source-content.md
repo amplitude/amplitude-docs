@@ -53,4 +53,4 @@ Within the sync of your source content, you can manage some aspects of the conte
 1. Go to **Guides and Surveys > Content**.
 2. Click the source content you want.
 3. In the new page, select individual articles.
-4. Specify if you want to set them to Draft (unpublish) or re-sync them to the source.
+4. Specify if you want to set them to **Draft** (unpublish) or re-sync them to the source.
