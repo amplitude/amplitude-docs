@@ -3,9 +3,11 @@ id: 9d6bb290-f46f-4a43-8fda-86c49a0f0886
 blueprint: guides_and_survey
 title: 'Resource Center Website Scraper'
 landing: false
-parent: 20749d99-c2d4-4576-80a3-24233897706c
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750884598
+updated_at: 1750952375
+this_article_will_help_you:
+  - '- Set up the Website scraper'
+  - '- Understand what you can do with the Website scraper'
 ---
 The Website source repository lets you scrape a public-facing website to pull in articles that may be useful for your users. Because there are such a wide variety of websites and rich content that can be included in any specific page, read the following information carefully when using this content source. Otherwise, your articles may not appear as useful to your users. 
 
@@ -50,4 +52,4 @@ However, occasionally, you may want to re-include these pages to be active in yo
 1. Go to **Guides and Surveys > Content** and select the source repository you want. 
 2. Click the **Sync errors** tab. 
 3. Search through the excluded pages and select the ones you want to re-include.
-4. Click the **Force Sync and Publish** button. 
+4. Click the **Force Sync and Publish** button.

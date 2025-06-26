@@ -1,13 +1,12 @@
 ---
 id: a297263e-d953-4a8c-bd42-6194a56459ae
 blueprint: guides_and_survey
-title: 'Resource Center Targeting Recommendation Sets'
+title: 'Resource Center Targeting'
 this_article_will_help_you:
   - 'Create targeting segments for Resource Center recommendation sets'
 landing: false
-parent: 20749d99-c2d4-4576-80a3-24233897706c
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750794992
+updated_at: 1750952306
 ---
 Targeting in the Resource Center is exactly the same as targeting in the rest of Amplitude. For more information, go to [Setup and Targeting] (docs/guides-and-surveys/setup-and-target).
 

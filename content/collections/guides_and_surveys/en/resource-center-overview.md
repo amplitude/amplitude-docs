@@ -4,7 +4,7 @@ blueprint: guides_and_survey
 title: 'Resource Center Overview'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750951836
+updated_at: 1750952234
 this_article_will_help_you:
   - 'Understand the basic concepts of the Resource Center'
 ---
