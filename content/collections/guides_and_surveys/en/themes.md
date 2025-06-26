@@ -14,6 +14,10 @@ Themes ensure that every in-product message matches your colors, typography, and
 
 From buttons to borders, animations to background colors, you're in control of how users view guides and surveys.
 
+{{partial:admonition type="note" heading="Themes differ by platform"}}
+Guides and Surveys on web and mobile have different themes. Themes aren't compatible across platform.
+{{/partial:admonition}}
+
 ## Create a new theme
 
 To create a new Guides and Surveys theme:
