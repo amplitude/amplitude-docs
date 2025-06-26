@@ -15,21 +15,21 @@ The Resource Center settings option applies to the Resource Center as a whole, i
 From the Settings page:
 
 ## Resource Center targeting
-Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply on either the [source content](/docs/guides-and-services/resource-center-source-content) or the [Resource Center sets](/docs/guides-and-serveys/resource-center-targeting-recommendation-sets).
+Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply on either the [source content](/docs/guides-and-surveys/resource-center-source-content) or the [Resource Center sets](/docs/guides-and-surveys/resource-center-targeting-recommendation-sets).
 
 You would use this targeting if, for example, you only wanted the widget to appear to users in specific geographies or for users with specific job titles. 
 
-The other types of targeting you may have applied are still in effect. Because of this, it is recommended that you do not try to restrict the widget, recommendation sets, and source content at the same time until you are very familiar with how your users may interact with the Resource Center recommendations. By using all three types of targeting at the same time, you risk restricting content from users that you want to receive recommendations from the Resource Center. 
+The other types of targeting you may have applied are still in effect. Because of this, don't try to restrict the widget, recommendation sets, and source content at the same time until you are very familiar with how your users may interact with the Resource Center recommendations. By using all three types of targeting at the same time, you risk restricting content from users who need to receive recommendations from the Resource Center. 
 
 ### General
 The general settings let you specify the following:
-- **Enable Resource Center**: Turns the entire widget on or off. If this is turned off, the widget, and all recommendations, are not visible to any of your users. 
-- **Autopilot**: Automatically suggests articles and information based on what page your user is on when they click the Resource Center icon. By default, Autopilot is turned on. It is recommended that you leave Autopilot enabled. 
+- **Enable Resource Center**: Turns the entire widget on or off. If this is set to Off, the Resource Center isn't available for your users. 
+- **Autopilot**: Automatically suggests articles and information based on what page your user is on when they click the Resource Center icon. By default, Autopilot is set to On. 
 
 ### Quick links  
 The Quick links section adds permanent links to the bottom of the Resource Center widget. These are links to your main website, specific guides or surveys, videos, opening a support chat widget, or similar. 
 
-The Quck links section also provides a primary call to action (CTA) button that encourages user interaction.  
+The Quick links section also provides a primary call to action (CTA) button that encourages user interaction.  
 
 **To add a quick link**
 1. Set the Quick links enable to **On**.
@@ -37,7 +37,7 @@ The Quck links section also provides a primary call to action (CTA) button that 
 3. Click **Link** to specify what type of link you want.
 4. Enter the link URL.
 5. In the Label field, enter the name of the link. 
-6. The label is what your users will see.
+
 7. Click **Save Changes**.
 
 **To add a CTA button**
