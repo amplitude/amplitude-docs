@@ -16,7 +16,7 @@ Resource center is a widget that integrates directly into the [Guides and Survey
 
 Content for your Resource Center can be external or publicly available documentation repositories, articles, videos, or third-party chat modules.
 
-{{partial:admonition type="" heading=""}}
+{{partial:admonition type="note" heading=""}}
 Resource Center is implemented through the Guides and Surveys SDK. 
 {{/partial:admonition}}
 
