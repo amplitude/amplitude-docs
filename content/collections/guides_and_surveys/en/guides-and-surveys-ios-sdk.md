@@ -113,7 +113,9 @@ amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 
 ## Register a callback
 
-## Localization
+{{partial:admonition type="author" heading="Waiting on a code sample"}}
+Code sample goes here...
+{{/partial:admonition}}
 
 ## Reset
 
