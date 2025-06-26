@@ -54,7 +54,7 @@ See the CleverTap [documentation](https://www.google.com/url?q=https://docs.clev
 5. Paste your CleverTap Passcode (Taken from the CleverTap platform).
 6. Enter your CleverTap Region (aps3, eu1, in1, sg1, mec1, us1). Click [here](https://developer.clevertap.com/docs/idc#api) to identify your region.
 7. Select an Amplitude user property that corresponds to your CleverTap identity, from the left dropdown.
-8. (Optional) Under **Create & Update users**, make sure the toggle is enabled if you want to send over users and their properties in real time whenever a user is created or user property is updated in Amplitude.
+8. (Optional) Under **Send users**, make sure the toggle is enabled if you want to send over users and their properties in real time whenever a user is created or user property is updated in Amplitude.
 9. Under **Send Events**, make sure the toggle is enabled ("Events are sent to CleverTap") if you want to stream events to CleverTap. When enabled, events are automatically forwarded to CleverTap when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
 10. In **Select and Filter** events choose which events you want to send. Choose only the events you need in CleverTap. [Transformed events](https://www.google.com/url?q=https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure%23:~:text%3DAmplitude%2520Data%27s%2520transformations%2520feature%2520allows,them%2520to%2520all%2520historical%2520data.&sa=D&source=docs&ust=1692357097348525&usg=AOvVaw227AdCLFf9uo9MvuP2FKqY) aren't supported.
 11. When finished, enable the destination and Save.
