@@ -1,79 +1,94 @@
 ## Amplitude Android SDK Product Suite
 
-The Amplitude Android SDK ecosystem consists of multiple SDKs and tools designed for comprehensive analytics tracking in Android applications. The product suite includes a legacy maintenance SDK, a modern Kotlin-based SDK, and code generation tools for type-safe event tracking.
+The Amplitude Android SDK ecosystem consists of multiple SDKs and tools designed for comprehensive analytics tracking in Android applications. The product suite includes both legacy and modern implementations, with a focus on transitioning users to the latest Kotlin-based architecture.
 
 ## Product Relationships and Architecture
 
-### Core SDKs
-The ecosystem centers around two primary SDKs:
+The Android SDK ecosystem is structured around three main components:
 
-**Legacy Android SDK** (`com.amplitude:android-sdk`) - The original maintenance-mode SDK supporting Java and Kotlin applications with traditional event logging patterns using `logEvent()` methods and JSONObject-based event properties.
+**Core SDKs:**
+- **Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The latest, actively maintained SDK with modern architecture
+- **Android SDK** (`com.amplitude:android-sdk`) - Legacy SDK in maintenance mode, supporting existing implementations
+- **Ampli Wrapper** - Code generation tool that creates strongly-typed APIs on top of the core SDKs
 
-**Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The modern, actively developed SDK built specifically for Kotlin with enhanced features including plugin architecture, autocapture capabilities, and improved API design using `track()` methods.
-
-### Code Generation Layer
-**Ampli Wrapper** - A code generation tool that creates strongly typed APIs on top of either SDK, generating client code from Amplitude Data tracking plans to provide compile-time schema enforcement and IDE autocompletion.
-
-### Migration Path
-The ecosystem includes comprehensive migration tooling to transition from the legacy SDK to the Kotlin SDK, including automatic data migration via `migrateLegacyData` configuration and API mapping documentation.
+**Migration Path:**
+The product suite follows a clear evolution path from the legacy Android SDK to the modern Kotlin implementation, with dedicated migration tooling and documentation to facilitate the transition.
 
 ## Key Nomenclature and Definitions
 
-### Event Tracking Concepts
-- **track()** - Primary method for logging events in the Kotlin SDK
-- **logEvent()** - Legacy method for event logging in the maintenance SDK
-- **identify()** - Method for setting user properties and identification
-- **groupIdentify()** - Method for setting group-level properties
-- **revenue()** - Specialized tracking for revenue events with Google Play Store verification
+**Core Tracking Methods:**
+- `track()` - Primary event tracking method in Kotlin SDK
+- `logEvent()` - Legacy event tracking method in maintenance SDK
+- `identify()` - User property management
+- `groupIdentify()` - Group-level property management
+- `setGroup()` - User-to-group association
+- `logRevenueV2()` - Revenue event tracking with verification
 
-### Configuration and Management
-- **flushQueueSize/flushIntervalMillis** - Batch processing controls for event transmission
-- **TrackingOptions** - Configuration object for disabling specific data collection
-- **LoadOptions/LoadClientOptions** - Ampli-specific configuration for SDK initialization
-- **EventOptions** - Per-event configuration including destination routing
+**Configuration Parameters:**
+- `flushIntervalMillis` - Batching interval for event transmission
+- `flushQueueSize` - Event queue size before automatic flush
+- `sessionTimeoutMillis` - Session timeout duration
+- `minTimeBetweenSessionsMillis` - Minimum time between session boundaries
+- `instanceName` - Identifier for multiple SDK instances
 
-### Architecture Components
-- **Plugin System** - Extensible architecture with enrichment and destination plugin types
-- **DestinationPlugin** - Plugins that route events to specific endpoints
-- **MiddlewarePayload** - Data structure for event processing middleware
-- **Autocapture** - Automatic tracking of sessions, app lifecycles, screen views, and user interactions
+**Device Identification:**
+- **ADID** (Advertising ID) - Google advertising identifier via `useAdvertisingIdForDeviceId`
+- **App Set ID** - Privacy-focused device identifier via `useAppSetIdForDeviceId`
+- `setUserId()` - Custom user identification
+- `setDeviceId()` - Custom device identification
 
-### Identity and Device Management
-- **deviceId** - Unique device identifier, can use App Set ID
-- **ADID** - Advertising ID tracking with privacy controls
-- **sessionTimeoutMillis** - Session boundary configuration
-- **groupType/groupName** - Group-based analytics organization
+**Data Management:**
+- `migrateLegacyData` - Configuration for transitioning data from legacy SDK
+- `TrackingOptions` - Privacy controls and data collection preferences
+- `COPPA` compliance - Children's privacy protection controls
 
 ## Broader Product Ecosystem Integration
 
-The Android SDKs integrate with several Amplitude platform components:
+**Amplitude Data Integration:**
+The Ampli Wrapper integrates with Amplitude Data's tracking plan system, generating code from centralized schema definitions. This ensures consistency across platforms and provides compile-time validation.
 
-**Amplitude Data** - The tracking plan management system that defines event schemas used by Ampli for code generation via `ampli pull` and `ampli status` commands.
+**Plugin Architecture:**
+The Kotlin SDK implements a plugin system supporting:
+- **Enrichment Plugins** - Data enhancement before transmission
+- **Destination Plugins** - Custom data routing and processing
+- **NetworkTrackingPlugin** - Network state monitoring
+- **AndroidNetworkConnectivityCheckerPlugin** - Offline mode management
 
-**Amplitude HTTP v2 API** - The backend ingestion endpoint that receives events from both SDKs, with support for EU data residency through `setServerZone` configuration.
+**Data Residency:**
+Both SDKs support EU data residency through `serverZone` configuration, enabling compliance with regional data protection requirements.
 
-**Google Play Store Integration** - Revenue verification system for validating in-app purchase events through `logRevenueV2` methods.
+## API Endpoints and CLI Tools
 
-**Network and Connectivity** - Integration with OkHTTP for network requests, offline mode support with network state monitoring, and SSL pinning capabilities through `PinnedAmplitudeClient`.
+**Ampli CLI Commands:**
+- `ampli pull` - Downloads latest tracking plan and generates typed code
+- `ampli status` - Validates local implementation against tracking plan
 
-## API Endpoints and CLI Commands
+**HTTP API Integration:**
+- Amplitude HTTP v2 API - Backend service for event ingestion
+- Revenue verification through Google Play Store API integration
 
-### CLI Commands
-- `ampli pull` - Downloads latest tracking plan and generates typed client code
-- `ampli status` - Validates local implementation against tracking plan schema
+**Configuration Options:**
+```kotlin
+// Kotlin SDK Configuration
+Configuration(
+    flushIntervalMillis = 30000,
+    flushQueueSize = 30,
+    minTimeBetweenSessionsMillis = 300000
+)
 
-### Configuration Methods
-- `setServerZone()` - Configure EU data residency
-- `enableForegroundTracking()` - Enable automatic session management
-- `enableCoppaControl()` - Enable COPPA compliance mode
-- `enableLocationListening()` - Enable automatic location tracking
-- `setOffline()` - Control offline mode behavior
-- `setUseDynamicConfig()` - Enable dynamic configuration updates
+// Autocapture Options
+AutocaptureOption.SESSIONS
+AutocaptureOption.APP_LIFECYCLES  
+AutocaptureOption.SCREEN_VIEWS
+AutocaptureOption.DEEP_LINKS
+AutocaptureOption.ELEMENT_INTERACTIONS
+```
 
-### Package Dependencies
-- **Legacy**: `com.amplitude:android-sdk` via Maven Central
-- **Modern**: `com.amplitude:analytics-android` via Maven Central
-- **Required**: OkHTTP dependency for network operations
-- **Integration**: AndroidManifest.xml permissions and ProGuard configuration exceptions
+**Advanced Features:**
+- **Location Tracking** - GPS-based event enrichment via `locationListening`
+- **SSL Pinning** - Enhanced security through `PinnedAmplitudeClient`
+- **Middleware Support** - Custom event processing pipeline
+- **Jetpack Compose Integration** - Modern UI framework support with `testTag`
+- **ProGuard Compatibility** - Code obfuscation support with proper configuration
 
-The ecosystem supports advanced features including Jetpack Compose element tracking, network connectivity monitoring, and comprehensive privacy controls through COPPA compliance and granular tracking options.
+The ecosystem provides comprehensive analytics capabilities while maintaining backward compatibility and offering clear migration paths for existing implementations.
