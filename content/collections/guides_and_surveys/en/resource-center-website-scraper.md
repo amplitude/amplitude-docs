@@ -15,10 +15,10 @@ The Website source repository lets you scrape a public-facing website to pull in
 If your documentation repositories are managed through a platform for which there is an integration, use the integration. The dedicated Resource Center integrations offers a better end-to-end experience. The website scraper is a powerful tool, but one that should be considered a fallback option.
 {{/partial:admonition}}
 
-# Website options
+## Website options
 The website scraper provides unique options when it comes to setting up the source details. Use this information in conjunction with the procedure in the main Source Repository page.
 
-## Extract from URLs
+### Extract from URLs
 There are two options when specifying the exact URLs you want to include:
 - **URLs**: Directly include as many URLs as you want. You can specify specific links or your entire website. Click the Add URL button to add each link. 
     - For each URL entered, Amplitude recursively pulls as many links as possible attached to those sites.
@@ -28,7 +28,7 @@ There are two options when specifying the exact URLs you want to include:
     - Use this method if you want to specify the exact URL links and pages that should form the source repository.
     - By providing the sitemap, you are hard-coding the source repository and preventing it from automatically incorporating any new articles. New articles are then added manually. 
     - CSV and XML files don't need to have any special formatting associated with the URLs. We recommend that you use a sitemap.
-## Advanced options
+### Advanced options
 If you click the **Advanced** link beneath the URL section, you can access the following options: 
 - **Only include these URL paths**: Lets you filter the source repository even further by only including specific URLs. This is most useful when adding entire websites. 
 - **Exclude these URL paths**: Lets you filter the source repository even further by specifically excluding certain URLs from the source repository. This is useful if, for example, you want to exclude your company’s blog posts from the source repository. 
