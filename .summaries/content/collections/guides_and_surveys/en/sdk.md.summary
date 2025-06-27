@@ -1,27 +1,29 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys SDK implementation, including installation methods (Amplitude Browser SDK plugin, third-party analytics integration, Google Tag Manager), initialization with `init()` and `boot()` functions, user identification requirements (user_id/device_id), event forwarding with `forwardEvent()`, and SDK methods like theme management, callbacks, router configuration, localization, and troubleshooting.
+**Summary:** This documentation covers the Amplitude Guides and Surveys SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, with methods for initialization, boot process, theme management, callbacks, routing, and localization.
 
 **Keywords:**
 - Amplitude Guides and Surveys SDK
 - @amplitude/engagement-browser
 - engagement.init()
 - engagement.boot()
-- window.engagement
-- user_id device_id identification
-- forwardEvent() event tracking
-- third-party analytics integration
-- Segment analytics integration
-- Browser SDK 2.0 plugin
+- BootOptions
+- InitOptions
+- EndUser
+- Integration
+- forwardEvent()
+- serverZone EU/US
+- serverUrl/cdnUrl proxy
+- ThemeMode
+- setRouter SPA
+- updateLanguage localization
 - engagement.gs.show()
 - engagement.gs.reset()
 - engagement.gs.list()
 - engagement.gs.closeAll()
-- addCallback() method
-- setThemeMode() lightMode darkMode
-- setRouter() SPA configuration
-- updateLanguage() localization
-- InitOptions BootOptions
-- serverZone EU US
+- addCallback()
+- Segment analytics integration
+- Google Tag Manager template
 - Content Security Policy CSP
-- Google Tag Manager GTM
-- _debugStatus() troubleshooting
-- amplitude.add() plugin integration
+- user_id/device_id
+- event-based triggers
+- _debugStatus()
+- amplitude.add(window.engagement.plugin())
