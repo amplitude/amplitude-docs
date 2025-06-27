@@ -5,6 +5,36 @@ namespace Safe;
 use Safe\Exceptions\DatetimeException;
 
 /**
+ * This is the procedural version of
+ * DateTime::__construct.
+ *
+ * Unlike the DateTime constructor, it will return
+ * FALSE instead of an exception if the passed in
+ * datetime string is invalid.
+ *
+ * @param null|string $datetime
+ * @param \DateTimeZone|null $timezone
+ * @return \DateTime Returns a new DateTime instance.
+ * Procedural style returns FALSE on failure.
+ * @throws DatetimeException
+ *
+ */
+function date_create(?string $datetime = "now", ?\DateTimeZone $timezone = null): \DateTime
+{
+    error_clear_last();
+    if ($timezone !== null) {
+        $safeResult = \date_create($datetime, $timezone);
+    } else {
+        $safeResult = \date_create($datetime);
+    }
+    if ($safeResult === false) {
+        throw DatetimeException::createFromPhpError();
+    }
+    return $safeResult;
+}
+
+
+/**
  * Returns associative array with detailed info about given date/time.
  *
  * @param string $format Documentation on how the format is used, please
@@ -730,11 +760,12 @@ function idate(string $format, ?int $timestamp = null): int
  * 1970-2000. On systems where time_t is a 32bit signed integer, as
  * most common today, the valid range for year
  * is somewhere between 1901 and 2038.
- * @return false|int mktime returns the Unix timestamp of the arguments
+ * @return int mktime returns the Unix timestamp of the arguments
  * given.
+ * @throws DatetimeException
  *
  */
-function mktime(int $hour, ?int $minute = null, ?int $second = null, ?int $month = null, ?int $day = null, ?int $year = null)
+function mktime(int $hour, ?int $minute = null, ?int $second = null, ?int $month = null, ?int $day = null, ?int $year = null): int
 {
     error_clear_last();
     if ($year !== null) {
@@ -749,6 +780,9 @@ function mktime(int $hour, ?int $minute = null, ?int $second = null, ?int $month
         $safeResult = \mktime($hour, $minute);
     } else {
         $safeResult = \mktime($hour);
+    }
+    if ($safeResult === false) {
+        throw DatetimeException::createFromPhpError();
     }
     return $safeResult;
 }
