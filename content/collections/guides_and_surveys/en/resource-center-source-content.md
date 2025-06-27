@@ -40,7 +40,7 @@ This title is what your users see in the link.
 
 After you have added your content sources, create your [Resource Center recommendation sets](/docs/guides-and-surveys/resource-center-recommendation-sets).
 
-# Managing source content
+## Managing source content
 As your organization grows and evolves, your source content also grows and changes. For this reason, keep the content that's available in the Resource Center up-to-date with your source repositories. Specify how frequently you want the Resource Center to automatically sync with your source content. Alternately, decide to manually trigger the sync as needed. 
 
 Within the sync of your source content, you can manage some aspects of the content from the Resource Center:

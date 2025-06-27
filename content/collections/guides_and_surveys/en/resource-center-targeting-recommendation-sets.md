@@ -8,7 +8,7 @@ landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750969378
 ---
-Targeting in the Resource Center is exactly the same as targeting in the rest of Amplitude. For more information, go to [Setup and Targeting] (docs/guides-and-surveys/setup-and-target).
+Targeting in the Resource Center is exactly the same as targeting in the rest of Amplitude. For more information, go to [Setup and Targeting](docs/guides-and-surveys/setup-and-target).
 
 Some things to keep in mind: 
 - If you have specified targeting on your content source, that targeting takes precedence before the entry targeting. 
