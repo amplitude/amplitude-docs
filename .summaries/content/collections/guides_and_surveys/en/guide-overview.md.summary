@@ -1,18 +1,17 @@
-**Summary:** This documentation page provides an overview of in-product guides functionality, explaining their purpose as non-intrusive user engagement tools and describing five available guide templates (Tour, Announcement, Checklists, Banners, Tooltips) with their specific use cases.
+**Summary:** This documentation page provides an overview of in-product guides functionality, explaining their behavioral triggers, strike detection, and rate-limiting mechanisms, along with available guide templates including Tours, Announcements, Checklists, Banners, and Tooltips.
 
 **Keywords:**
 - in-product guides
-- guide templates
 - behavioral triggers
 - strike detection
 - rate-limiting mechanisms
-- Tour template
-- Announcement template
+- guide templates
+- Tours template
+- Announcements template
 - Checklists template
 - Banners template
 - Tooltips template
-- user nudging
-- feature exploration
+- guides_and_survey blueprint
+- landing_blurb
 - step-by-step instructions
-- blueprint guides_and_survey
-- section guides
+- product onboarding

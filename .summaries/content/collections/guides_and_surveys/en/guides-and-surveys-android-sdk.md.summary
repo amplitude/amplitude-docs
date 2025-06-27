@@ -1,0 +1,20 @@
+**Summary:** This documentation covers the Amplitude Guides and Surveys Android SDK for deploying in-app guides and surveys, including installation via gradle dependencies, initialization with AmplitudeEngagement class, boot configuration with user properties, screen tracking for targeting, and methods like show(), reset(), list(), and preview mode setup with custom URL schemes.
+
+**Keywords:**
+- AmplitudeEngagement
+- amplitude-engagement-android
+- Android API Level 24
+- Kotlin 1.8.22
+- AmplitudeInitOptions
+- AmplitudeBootOptions
+- AmplitudeEndUser
+- screen tracking
+- ThemeMode
+- forwardEvent
+- preview mode
+- URL scheme configuration
+- AndroidManifest.xml
+- handlePreviewLinkIntent
+- serverZone EU/US
+- guide targeting rules
+- survey deployment

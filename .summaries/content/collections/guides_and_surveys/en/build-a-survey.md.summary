@@ -1,17 +1,23 @@
-**Summary:** This documentation covers building surveys in a platform that shares features with guide builders, focusing on four unique survey block types (Rating with Stars/Labels/Emoji/NPS variants), conditional logic for dynamic response branching, and survey-specific form factors (modal, popover, pin).
+**Summary:** This documentation covers building surveys with four unique block types (Rating, Long answer, Short answer, List) that support conditional logic for dynamic response paths, using a subset of guide form factors (modal, popover, pin) with specific rating types including Stars, NPS, Emoji, and Rating labels.
 
 **Keywords:**
 - survey blocks
 - rating block types
+- conditional logic
+- NPS (Net Promoter Score)
 - stars rating
 - emoji rating
-- NPS (Net Promoter Score)
 - rating labels
-- conditional logic
-- survey branching
-- form factors (modal, popover, pin)
-- required rating settings
+- long answer block
+- short answer block
+- list block
+- multiple choice
+- ARIA label
+- pre-fill key
+- user property
+- randomize order
+- other option
 - survey targeting
+- form factors (modal, popover, pin)
+- survey branching
 - dynamic responses
-- followup questions
-- survey builder
