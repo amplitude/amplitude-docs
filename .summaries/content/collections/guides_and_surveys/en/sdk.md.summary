@@ -1,29 +1,20 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, with methods for initialization, boot process, theme management, callbacks, routing, and localization.
+**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, with methods for initialization, boot, event forwarding, theme management, localization, and guide/survey control.
 
 **Keywords:**
-- Amplitude Guides and Surveys SDK
+- Amplitude Guides and Surveys Web SDK
 - @amplitude/engagement-browser
-- engagement.init()
-- engagement.boot()
-- BootOptions
-- InitOptions
-- EndUser
-- Integration
-- forwardEvent()
-- serverZone EU/US
-- serverUrl/cdnUrl proxy
-- ThemeMode
-- setRouter SPA
-- updateLanguage localization
-- engagement.gs.show()
-- engagement.gs.reset()
-- engagement.gs.list()
-- engagement.gs.closeAll()
-- addCallback()
+- engagement.init() and engagement.boot()
+- Browser SDK 2 plugin integration
+- Third-party analytics provider integration
 - Segment analytics integration
 - Google Tag Manager template
-- Content Security Policy CSP
-- user_id/device_id
-- event-based triggers
-- _debugStatus()
-- amplitude.add(window.engagement.plugin())
+- forwardEvent() for event-based triggers
+- setThemeMode() for light/dark themes
+- updateLanguage() for localization
+- Content Security Policy (CSP) directives
+- Single Page Application (SPA) router configuration
+- addCallback() for button actions
+- gs.show(), gs.reset(), gs.list(), gs.closeAll() methods
+- InitOptions and BootOptions configuration
+- serverZone EU/US configuration
+- proxy setup with serverUrl and cdnUrl

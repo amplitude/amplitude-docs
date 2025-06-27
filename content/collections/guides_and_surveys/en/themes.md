@@ -3,8 +3,8 @@ id: 614cd6a1-ed04-4be0-924e-bf6f4fa6f58e
 blueprint: guides_and_survey
 title: Themes
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738949395
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1750979108
 landing: true
 landing_blurb: 'Discover how themes can enforce your brand identity in the guides and surveys you create.'
 ---
@@ -13,6 +13,10 @@ Guides and Surveys should match your branding and feel like part of your product
 Themes ensure that every in-product message matches your colors, typography, and aesthetic. Whether it's a subtle guide, or a full page survey, it should look and feel like an extension of your product, not a random popup.
 
 From buttons to borders, animations to background colors, you're in control of how users view guides and surveys.
+
+{{partial:admonition type="note" heading="Themes differ by platform"}}
+Guides and Surveys on web and mobile have different themes. Themes aren't compatible across platform.
+{{/partial:admonition}}
 
 ## Create a new theme
 
@@ -39,7 +43,7 @@ At the top of the viewer, toggle between the [brand](#brand-controls) and [compo
 Use the Theme Editor to customize elements of your brand and style. 
 
 {{partial:admonition type="tip" heading="CSS properties"}}
-Configure your branding using the same values you defined in your site's CSS. For example, specify font size in px, em, rem, or percent values.
+![](statamic://asset::help_center_conversions::guides-surveys/web-only.svg){.inline .my-0} Configure your branding using the same values you defined in your site's CSS. For example, specify font size in px, em, rem, or percent values.
 {{/partial:admonition}}
 
 ### Accent
