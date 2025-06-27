@@ -1,8 +1,0 @@
-title: 'Academy Content'
-sites:
-  - en
-propagate: false
-revisions: false
-date_behavior:
-  past: public
-  future: private
