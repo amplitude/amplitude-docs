@@ -28,12 +28,12 @@ Customize your modal with the following:
 
 Click the three dot menu to access format settings.
 
-| Setting        | Description                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content. |
-| Actions bar <br/> {.tag .web .zero}  | Updates the placement and layout of the guide's buttons. |
-| Click outside to close | Enables users to click or tap outside of the modal to dismiss it. |
-| Text animation <br/> {.tag .web .zero}  | Enables the modal's text to animate in with a typewriter effect. |
+| Setting                                | Description                                                       |
+| -------------------------------------- | ----------------------------------------------------------------- |
+| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
+| Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
+| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
+| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.  |
 
 
 
@@ -45,13 +45,13 @@ Popovers offer the same customization options as modals.
 
 Click the three dot menu to access format settings.
 
-| Setting        | Description                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content. |
-| Actions bar <br/> {.tag .web .zero}  | Updates the placement and layout of the guide's buttons. |
-| Click outside to close | Enables users to click or tap outside of the modal to dismiss it. |
-| Z-index <br/> {.tag .web .zero} | Specify a custom z-index value for the popover. |
-| Text animation <br/> {.tag .web .zero}  | Enables the modal's text to animate in with a typewriter effect. |
+| Setting                                | Description                                                       |
+| -------------------------------------- | ----------------------------------------------------------------- |
+| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
+| Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
+| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
+| Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                   |
+| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.  |
 
 
 ### Pin
@@ -62,16 +62,16 @@ Pins offer different customization options than modals or popovers. Toggle betwe
 
 Click the three dot menu to access format settings.
 
-| Setting        | Description                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Open by default | Enables the pin to open without user interaction. If disabled, users must click or tap the pin to open it. |
-| Show mask <br/> {.tag .web .zero} | Enables a background mask when the pin is open to help draw the user's focus. |
-| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content. |
-| Actions bar <br/> {.tag .web .zero}  | Updates the placement and layout of the guide's buttons. |
-| Click outside to close | Enables users to click or tap outside of the modal to dismiss it. |
-| Z-index <br/> {.tag .web .zero} | Specify a custom z-index value for the popover. |
-| Text animation <br/> {.tag .web .zero}  | Enables the modal's text to animate in with a typewriter effect. |
-| Advanced trigger | Enables advancing the guide to another step when the the user interacts with the element you specify. |
+| Setting                                  | Description                                                                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Open by default                          | Enables the pin to open without user interaction. If disabled, users must click or tap the pin to open it. |
+| Show mask <br/> {.tag .web .zero}        | Enables a background mask when the pin is open to help draw the user's focus.                              |
+| Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
+| Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
+| Click outside to close                   | Enables users to click or tap outside of the modal to dismiss it.                                          |
+| Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
+| Text animation <br/> {.tag .web .zero}   | Enables the modal's text to animate in with a typewriter effect.                                           |
+| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
 
 ### Tooltip
@@ -82,6 +82,17 @@ Tooltips are available in the Tooltip template, and contain one step.
 
 Tooltips are like pins, but reveal only when a user clicks, taps, or hovers their cursor over it. Tooltips are great for giving inline details about a feature while saving valuable UI real estate.
 
+| Setting                                  | Description                                                                                           |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                   |
+| Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
+| Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
+| Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
+| Text animation <br/> {.tag .web .zero}   | Enables the modal's text to animate in with a typewriter effect.                                      |
+| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify. |
+| Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
+| Marker                                   | Select the appearance of the marker that launches the tooltip.                                        |
+
 ### Banner 
 
 {{partial:admonition type="tip" heading=""}}
@@ -89,6 +100,14 @@ Banners are available in the Banner template, and contain one step.
 {{/partial:admonition}}
 
 Banners are full-width blocks that show on either the top or bottom of the page. Use banners for longer-term announcements, status updates, or time-sensitive promotions.
+
+| Setting                                | Description                                                                                                  |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Sticky <br/> {.tag .web .zero}         | Keeps the banner visible while the user scrolls.                                                             |
+| Display style <br/> {.tag .web .zero}  | Controls the way in which the banner interacts with the page's content. Mobile banners support overlay only. |
+| Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                                                              |
+| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.                                             |
+
 
 ### Checklist {.tag .web}
 
@@ -102,14 +121,14 @@ These properties apply across form factors, enabling you to customize your guide
 
 Position controls where the guide appears on screen.
 
-| Form factor | Options                                                                                                                                                                                                                                                                                   |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Popover     | Top right, top left, bottom right, bottom left, center                                                                                                                                                                                                                                    |
-| Modal       | Center                                                                                                                                                                                                                                                                                 |
-| Pins        | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
-| Tooltip     | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
-| Banner      | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
-| Checklist header <br/> {.tag .web .zero} | Bottom left or Bottom right, in relation to the page. |
+| Form factor                              | Options                                                                                                                                                                                                                                                                                   |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Popover                                  | Top right, top left, bottom right, bottom left, center                                                                                                                                                                                                                                    |
+| Modal                                    | Center                                                                                                                                                                                                                                                                                    |
+| Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
+| Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
+| Banner                                   | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
+| Checklist header <br/> {.tag .web .zero} | Bottom left or Bottom right, in relation to the page.                                                                                                                                                                                                                                     |
 
 ### Steps
 

@@ -1,17 +1,25 @@
 ---
+# Moved to SDK Section
 id: 1b0ba36a-6b55-40cb-98f8-13931435966d
 blueprint: get-started
-title: 'Cookies and consent management'
+title: 'Cookies and consent management (Legacy JavaScript SDK)'
 landing: false
+published: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719952775
+updated_at: 1733428775
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
 ---
-This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France).  
+{{partial:admonition type="warning" heading="Legacy JavaScript SDK"}}
+This guide covers the behavior with the legacy JavaScript SDK. **For new implementations, use [Browser SDK 2 cookies and consent management guide](/docs/sdks/analytics/browser/cookies-and-consent-management)** which covers the current TypeScript SDK.
 
-{{partial:admonition type="warning" heading="Compatibility with Browser SDK"}}
-The guide covers the behavior with the legacy JavaScript SDK that's the most used client browser SDK with Amplitude Analytics for current Amplitude users. New customers must use the new TypeScript SDK. 
+New customers must use the new TypeScript SDK (Browser SDK 2). Existing customers should consider migrating to Browser SDK 2 for the latest features and improvements.
+{{/partial:admonition}}
+
+This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France) when using the legacy JavaScript SDK.
+
+{{partial:admonition type="info" heading="Recommended migration"}}
+For the most up-to-date cookies and consent management features, migrate to [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) and use the [Browser SDK 2 cookies and consent management guide](/docs/sdks/analytics/browser/cookies-and-consent-management).
 {{/partial:admonition}}
 
 ## Amplitude cookies
