@@ -15,7 +15,7 @@ The source content you select should be either internal help (documentation) rep
 - If you don't see your specific documentation repository as an option, select the [Website](/docs/guides-and-surveys/resource-center-website-scraper) option to sync to a public website.
 - You can also suggest Resource Center content integrations through a Survey that's sent to Amplitude.
 
-**To add documentation content to the Resource Center** 
+### Add documentation content to the Resource Center 
 1. Go to **Guides and Surveys > Content**.
 2. On the Sources tab, click **Add source**.
 3. Select the source where your documentation resides.
@@ -27,7 +27,7 @@ The source content you select should be either internal help (documentation) rep
    - If you are targeting the content, you must specify the segments you want. For more information, go to [Setup and Targeting](/docs/guides_and_surveys/setup-and-target)
 9. Click **Add source**.
 
-**To add video content to the Resource Center**
+### Add video content to the Resource Center**
 1. Go to **Guides and Surveys > Content > Videos**.
 2. Click **Add source**.
 3. In the Status drop-down, specify the status of the video. Statuses can be one of:
