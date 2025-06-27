@@ -1,4 +1,4 @@
-**Summary:** This documentation provides an overview of the Resource Center widget that integrates with the Guides and Surveys SDK, appearing as a clickable help icon with search functionality, recommended content, quick links, and call-to-action buttons sourced from external documentation repositories.
+**Summary:** This documentation provides an overview of the Resource Center widget that integrates with the Guides and Surveys SDK, explaining its core features (search functionality, recommended content, quick links, call-to-action button) and the required setup process including content specification, link creation, targeting configuration, and settings management.
 
 **Keywords:**
 - Resource Center widget
@@ -9,9 +9,10 @@
 - quick links
 - call to action button
 - external documentation repositories
-- content sourcing
+- content source configuration
 - recommendation sets
 - targeting and priority levels
 - Resource Center settings
 - publicly available documentation
 - third-party chat modules
+- widget setup process
