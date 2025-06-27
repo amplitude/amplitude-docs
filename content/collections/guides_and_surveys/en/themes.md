@@ -3,8 +3,8 @@ id: 614cd6a1-ed04-4be0-924e-bf6f4fa6f58e
 blueprint: guides_and_survey
 title: Themes
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738949395
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1750979108
 landing: true
 landing_blurb: 'Discover how themes can enforce your brand identity in the guides and surveys you create.'
 ---
@@ -43,7 +43,7 @@ At the top of the viewer, toggle between the [brand](#brand-controls) and [compo
 Use the Theme Editor to customize elements of your brand and style. 
 
 {{partial:admonition type="tip" heading="CSS properties"}}
-Configure your branding using the same values you defined in your site's CSS. For example, specify font size in px, em, rem, or percent values.
+![](statamic://asset::help_center_conversions::guides-surveys/web-only.svg){.inline .my-0} Configure your branding using the same values you defined in your site's CSS. For example, specify font size in px, em, rem, or percent values.
 {{/partial:admonition}}
 
 ### Accent

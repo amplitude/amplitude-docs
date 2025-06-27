@@ -25,20 +25,8 @@ yarn add @react-native-async-storage/async-storage
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading="Async storage"}}
-Explicitly adding `@react-native-async-storage/async-storage` ensures 
+Explicitly adding `@react-native-async-storage/async-storage` ensures the native module links correctly, since the `engagement` native module uses it.
 {{/partial:admonition}}
-
-Add the source for the `AmplitudeEngagementSwift pod to your Podfile.
-
-```ruby
-target '<your appname>' do
-  ...
-
-  pod "AmplitudeEngagementSwift", :git => "https://github.com/amplitude/Amplitude-Engagement-Swift"
-
-  ...
-end
-```
 
 Run `pod install` in the `ios` directory.
 
@@ -50,6 +38,7 @@ bundle exec pod install
 ## Initialize the SDK
 
 ```js
+//index.js
 import {Linking} from 'react-native';
 
 import { init, add } from '@amplitude/analytics-react-native';

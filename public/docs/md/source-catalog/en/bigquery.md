@@ -69,7 +69,7 @@ To add BigQuery as a data source in your Amplitude project, follow these steps.
     - Type of import:
           - Full Sync: Amplitude periodically imports the entire dataset, regardless of whether the data is already imported. This is good for data sets where the row data changes over time, but there is no easy way to tell which rows have changed. Otherwise, the more efficient option would be a time-based import. This option isn't supported for ingesting event data.
           - Time-based: Amplitude periodically ingests the most recent rows in the data, as determined by the provided Timestamp column. The first import ingests all available data, and later imports ingest any data with timestamps after the time of the most recent import. To use this option, include the timestamp column in the output of your SQL statement.
-    - Frequency: Choose from several scheduling options ranging from five minutes to one month (when this is selected, ingestion happens on the first of the month).
+    - Frequency: Choose from several scheduling options ranging from five minutes to one month. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
     - SQL query: This is the code for the query Amplitude uses to ingest the right data.
 6. After you've set your configuration options, click **Test SQL** to see how the data is coming through from your BigQuery instance. If there are any errors, they appear under the Test SQL button.
 7. If there are no errors, click **Finish**. You get a notification indicating you've successfully enabled the new BigQuery source. Finally, you're redirected to the Sources listing page, where you can see the newly created BigQuery source.
