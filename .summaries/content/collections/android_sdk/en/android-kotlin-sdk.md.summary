@@ -1,23 +1,28 @@
 **Summary:**
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven with package `com.amplitude:analytics-android`, configuration options like `flushQueueSize`/`flushIntervalMillis`, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (`track()`, `identify()`, `revenue()`), plugin system with enrichment/destination types, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with network connectivity checking.
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (track/identify/revenue), user/group management, plugins system, and advanced features like ADID/App Set ID device identification, location tracking, and offline mode with ACCESS_NETWORK_STATE permission.
 
 **Keywords:**
-- android-kotlin-sdk
-- analytics-android
-- amplitude-kotlin
-- gradle-maven-installation
-- flushQueueSize-flushIntervalMillis
-- autocapture-sessions-app-lifecycles
-- screen-views-fragment-views
-- deep-links-element-interactions
-- track-identify-revenue-methods
-- plugin-system-enrichment-destination
-- advertising-id-app-set-id
-- coppa-control-tracking-options
-- location-tracking-network-connectivity
-- offline-mode-network-state
-- session-management-device-id-lifecycle
-- user-groups-group-identify
-- okhttp-network-tracking-plugin
-- jetpack-compose-element-tracking
-- proguard-obfuscation-configuration
+- Android-Kotlin SDK
+- com.amplitude:analytics-android
+- Gradle Maven installation
+- flushIntervalMillis flushQueueSize batching
+- autocapture AutocaptureOption
+- sessions app lifecycles screen views deep links element interactions
+- track identify revenue BaseEvent
+- setUserId setDeviceId reset
+- groups groupIdentify setGroup
+- plugins enrichment destination
+- NetworkTrackingPlugin OkHttp
+- ADID useAdvertisingIdForDeviceId
+- App Set ID useAppSetIdForDeviceId
+- play-services-ads-identifier play-services-appset
+- TrackingOptions COPPA
+- location tracking locationListening
+- offline mode ACCESS_NETWORK_STATE
+- AndroidNetworkConnectivityCheckerPlugin
+- minTimeBetweenSessionsMillis
+- serverZone EU data residency
+- Jetpack Compose testTag
+- TelephonyManager networkOperatorName
+- ProGuard obfuscation
+- multiple instances instanceName
