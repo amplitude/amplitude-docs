@@ -66,11 +66,20 @@ tree:
         id: cd14e2f3-9100-4bf7-9b8c-9637f27709e4
         entry: f422c82d-a9d7-404a-8f56-211e014453c6
       -
+        id: c129b008-f602-4e02-a9ea-7ce586fef907
+        entry: 7771a16f-7edf-4cec-9098-3e9b23ca6dfb
+      -
+        id: fc0e04ad-6de0-463f-add4-6a13a5a2636a
+        entry: 0ab649dd-1a05-47d3-9d56-f476f141030f
+      -
+        id: 03a48928-9ccd-4407-b897-911ec2705698
+        entry: b623aa10-2002-4cf6-8bc1-0597f6e380fe
+      -
         id: 6535e10e-2534-4d3e-8ef7-cbd72bf4f943
         entry: 9efa3729-a771-4659-ab24-710758c53755
   -
-    id: dc35acc1-3214-4daf-9211-819bb3b31268
-    entry: 6256c202-9b37-499f-ba00-750b6e0be99f
+    id: 84e1cb78-0179-4dea-ae75-fb9cffa1ac22
+    title: 'Resource Center'
     children:
       -
         id: bf3940b6-03f7-4c99-bc18-b2dfde31e6fb

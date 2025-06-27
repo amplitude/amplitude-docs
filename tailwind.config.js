@@ -171,6 +171,9 @@ module.exports ={
             typography: {
                 DEFAULT: {
                     css: {
+                        td: {
+                            'vertical-align': 'top'
+                        },
                         code: {
                             'color': '#2a2f45',
                             'background': '#f7fafc',
