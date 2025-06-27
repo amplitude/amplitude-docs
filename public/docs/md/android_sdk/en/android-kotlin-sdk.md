@@ -21,6 +21,10 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
+## System requirements
+
+The Android Kotlin SDK supports Android API level 21 (Android 5.0 Lollipop) and higher.
+
 ## Install the SDK
 
 Amplitude recommends using Android Studio as an IDE and Gradle to manage dependencies.
@@ -481,17 +485,12 @@ After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Ope
 
 Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
 
-{{partial:admonition type="note" heading=""}}
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
-{{/partial:admonition}}
-
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
-  @OptIn(ExperimentalAmplitudeFeature::class)
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
@@ -501,7 +500,6 @@ val amplitude = Amplitude(
   )
 )
 ```
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is marked as `@ExperimentalAmplitudeFeature`. To enable this feature, apply the `@OptIn(ExperimentalAmplitudeFeature::class)` annotation to the configuration.
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
