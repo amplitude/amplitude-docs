@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329348
 ---
-In an experiment, think of each variant or metric you include as its own hypothesis. For example, whaen you add a new variant, you put forth the hypothesis that changes you include in that variant should have a detectable impact on the experiment’s results. 
+In an experiment, think of each variant or metric you include as its own hypothesis. For example, when you add a new variant, you put forth the hypothesis that changes you include in that variant should have a detectable impact on the experiment’s results. 
 
 The simplest experiments have only a single hypothesis. Single-hypothesis tests can yield valuable insights. However, it’s often more efficient or enlightening to include more than one metric or variant, or **multiple hypotheses**.
 

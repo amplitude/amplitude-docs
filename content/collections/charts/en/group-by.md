@@ -60,3 +60,19 @@ For formulas *with* a group-by, Amplitude ranks the groups by the largest overal
 {{partial:admonition type='note'}}
 If group-by pruning occurs with multiple formula terms combined with operators, formulas may take longer to load because Amplitude runs additional queries to make sure that all formula terms are querying the same groups.
 {{/partial:admonition}}
+
+## Group By in Experiment
+
+Everything in this doc so far is for analytics chart excluding experiment results. In Experiment end to end and experiment results, Amplitude limits the number of group by groups returned to 10 per metric. The rows are sorted by the sum of exposures across all the variants. Some rows may have "(none)" which means the property is missing. For more information, see [FAQ: Unexpected values in user counts](/docs/faq/unexpected-values-in-user-counts). The group by is applied to the exposure event.
+
+On the statistics side of things, people may worry about [multiple hypothesis testing](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing) when using a group by. Amplitude doesn't make corrections for using a group by because it doesn't know how many hypothesis tests you plan to do in the analysis. You could look at 1 group by value or you could look at 10 group by values. 
+
+Group-bys provide a more exploratory analysis, and if you adjust for multiple hypothesis testings it will increase the difficulty in reaching statistical significance. If you think you have a false positive, try to split your experiment into to date ranges, and do all the peeking and hypothesis testing you want on one dataset, then see if you can reproduce those results on the second date range. Think of this like doing a [train-test split](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/) when you are training a Machine Learning model where you do the hyperparameter tuning on the training set and then evaluate the model on the unseen test set so you get an unbiased error estimate.
+
+### Limitations
+
+If the value of the property you group by changes between the exposure event and the metric event, you may see a conversion rate higher than 100%. For example, if you group by `Country` and see the row `Country = Spain`, the denominator is unique number of exposures in Spain and the numerator is people who did the metric event in Spain. 
+
+As a result, you may see conversion rates greater than 100% since someone can do a metric event in Spain but never do the exposure event in Spain. They would count toward the numerator but not the denominator. 
+
+The opposite is also true where the numerator gets undercounted instead of overcounted. If you group by `Platform` and look at the `Platform = Web` row and the exposure event has `Platform = web` and the metric event has `Platform != web`, those metric events aren't counted in the numerator.
