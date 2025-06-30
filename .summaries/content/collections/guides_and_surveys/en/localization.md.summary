@@ -1,14 +1,15 @@
-**Summary:** This documentation covers Guides and Surveys localization functionality, including SDK initialization with locale parameters, Project Settings configuration for language management, and XLIFF file-based translation workflows for serving multilingual guides and surveys.
+**Summary:** This documentation covers Guides and Surveys localization functionality, including SDK initialization with locale parameters, Project settings configuration for language management, and translation workflows using both web interface and .xliff file methods for serving multilingual content.
 
 **Keywords:**
 - Guides and Surveys localization
 - SDK locale initialization
-- XLIFF translation files
-- Project Settings language configuration
 - engagement.plugin locale parameter
+- Project Settings language configuration
+- .xliff translation files
 - translatable strings
-- translation template download
 - locale code language resolution
-- fallback behavior configuration
-- multilingual guide preview
-- Growth/Enterprise plan feature
+- translation fallback behavior
+- Growth and Enterprise plan feature
+- multilingual guide survey content
+- trans-unit XML translation tags
+- language picker canvas interface
