@@ -64,16 +64,16 @@ The languages you set in Project settings appear as languages in the *Localizati
 
 To add or edit a translation, you have two options.
 
-1. Use the web interface to add or edit translations. This is the recommended default method.
-2. Use the xliff file to add or edit translations. This is the recommended method if you want to integrate with a custom translation workflow.
+- Use the web interface to add or edit translations. Amplitude recommends this method.
+- Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
 
 ### Use the web interface
 
-Use the language picker on the canvas to toggle between available languages. Any changes you make to a guide or survey's text will be saved for the selected language.
+Use the language picker on the canvas to toggle between available languages. Changes you make to a guide or survey's text is saved for the selected language.
 
 ### Use xliff files
 
-Alternatively, if you want to integrate with your own translation workflow, you can download an xliff file for each language.
+Alternatively, if you want to integrate with your own translation workflow, you can download an .xliff file for each language.
 
 1. Complete the guide or survey's steps in the default language.
 2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
