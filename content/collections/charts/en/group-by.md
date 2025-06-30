@@ -75,4 +75,4 @@ If the value of the property you group by changes between the exposure event and
 
 As a result, you may see conversion rates greater than 100% since someone can do a metric event in Spain but never do the exposure event in Spain. They would count toward the numerator but not the denominator. 
 
-The opposite is also true where the numerator gets undercounted instead of overcounted. If you group by `Platform` and look at the `Platform = Web` row and the exposure event has `Platform = web` and the metric event has `Platform != web`, those metric events aren't counted in the numerator.
+The opposite is also true where the numerator gets undercounted instead of overcounted. If you group by `Platform` and look at the `Platform = Web` row and the exposure event has `Platform = Web` and the metric event has `Platform != Web`, those metric events aren't counted in the numerator.
