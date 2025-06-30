@@ -118,7 +118,7 @@ Lowering your experiment’s confidence level makes it more likely that your exp
 Oftentimes, you run an experiment and want to know if the experiment effected different users differently. In other words, if there are heterogeneous treatment effects or not. One way to do this is to filter for `Platform = iOS` and then `Platform = Android` and then `Platform = Web`. Grouping results by `Platform` achieves the same result, with fewer clicks. For more information, see [Group-bys: How Amplitude prunes and orders chart results](/docs/analytics/charts/group-by) for more information.
 
 {{partial:admonition type="note"}}
-Group-by settings on the dashboard are temporary. Refreshing the dashboard resets any groups you define.
+Group-by settings on the dashboard are temporary. Refreshing the dashboard resets any group-bys you define.
 {{/partial:admonition}}
 
 ## Diagnostics card
