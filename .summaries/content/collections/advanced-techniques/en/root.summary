@@ -16,44 +16,40 @@ The platform operates through multiple interconnected components that work toget
 
 ## Key Nomenclature and Definitions
 
-**Sticky Bucketing**: A deterministic hashing algorithm that maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change, preventing variant jumping and ensuring treatment consistency.
+**Sticky Bucketing**: A deterministic hashing algorithm that maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change, preventing variant jumping and ensuring user experience consistency.
 
-**Sample Ratio Mismatch (SRM)**: A data quality issue where actual variant allocation differs from expected traffic allocation, often caused by instrumentation errors, mid-experiment changes, or variant jumping.
+**Sample Ratio Mismatch (SRM)**: A data quality issue where actual variant allocation differs from expected traffic allocation, often caused by instrumentation errors, mid-experiment changes, or authentication patterns affecting user distribution.
 
-**Exposure Events**: Events that indicate when users are actually exposed to experiment variants, distinct from assignment events. Custom exposure events can be configured for specific measurement scenarios.
+**Exposure Events**: Events that indicate when users are actually exposed to experiment variants, distinct from assignment events. These can be custom events occurring mid-funnel or default events triggered by flag evaluation.
 
 **Cumulative Exposures Graph**: A visualization showing exposure event accumulation over time, with slope changes indicating exposure rate variations. Increasing slopes show steady growth, decreasing slopes indicate slowing exposure rates, and inflection points reveal traffic allocation or targeting changes.
 
-**Variant Jumping**: When users switch between experiment variants during an experiment, potentially caused by inconsistent bucketing keys, authentication state changes, or sticky bucketing modifications.
+**Winsorization**: A statistical technique for outlier mitigation that caps extreme values at specified percentiles rather than removing them entirely, preserving sample size while reducing noise.
 
-**Winsorization**: A statistical technique for handling outliers by capping extreme values at specified percentiles rather than removing them entirely, available for various metric types including totals, sum of property, and average of property metrics.
-
-**Multiple Hypothesis Testing**: Statistical correction applied when testing multiple variants or metrics simultaneously, using Bonferroni correction to control family-wise error rates and prevent inflated false positive rates.
+**Multiple Hypothesis Testing**: Statistical correction applied when testing multiple variants or metrics simultaneously, using Bonferroni correction to control family-wise error rates and prevent false positive inflation.
 
 ## Broader Product Ecosystem Integration
 
-Amplitude Experiment operates as part of a larger experimentation and analytics ecosystem:
+Amplitude Experiment integrates with several external systems and deployment architectures:
 
-**SDK Integration**: The platform supports multiple SDK implementations including JavaScript Server SDK (`@amplitude/experiment-node-server`) and Client SDK (`@amplitude/experiment-js-client`) for server-side rendering scenarios, enabling seamless variant delivery across different deployment architectures.
+**AWS CloudFront Integration**: The platform supports reverse proxy configuration through AWS CloudFront to bypass domain blocking, using specific cache policies (CachingDisabled, AllViewExceptHostHeader, CORS-with-preflight-and-SecurityHeadersPolicy) and the `/v1/vardata` endpoint for evaluation requests.
 
-**Infrastructure Integration**: Advanced deployment scenarios include AWS CloudFront reverse proxy configuration for bypassing domain blocking, with specific cache policies (CachingDisabled, AllViewExceptHostHeader, CORS-with-preflight-and-SecurityHeadersPolicy) and API endpoint routing (`/v1/vardata`).
+**Server-Side Rendering (SSR)**: Implementation involves coordinating JavaScript Server SDK (`@amplitude/experiment-node-server`) and Client SDK (`@amplitude/experiment-js-client`), with server-side variant fetching and client initialization using pre-fetched variants for seamless user experiences.
 
-**Analytics Platform Connection**: Deep integration with Amplitude Analytics enables sophisticated metric analysis, including funnel analyses with mid-funnel exposure events, threshold metrics using funnel counting, and advanced outlier detection using statistical methods and visualization tools.
-
-**Enterprise Features**: Advanced capabilities like holdout groups, mutual exclusion groups, flag prerequisites, and sticky bucketing are available on Enterprise plans, providing sophisticated experiment orchestration for large-scale programs.
+**Split URL Testing**: Enables A/B testing through URL redirects without developer involvement, requiring Experiment SDK script tags in HTML `<head>` sections and Analytics SDK for event tracking, with limitations including local evaluation mode and User bucketing unit requirements.
 
 ## API Endpoints and Technical Implementation
 
-**Primary API Endpoints**:
-- `/v1/vardata` - Core variant data retrieval endpoint used for CloudFront proxy testing and variant fetching
-- Evaluation servers: `api.lab.amplitude.com` and `api.lab.eu.amplitude.com` for different regional deployments
+**Primary Evaluation Endpoint**: `/v1/vardata` - Used for variant data retrieval and can be tested through CloudFront proxy configurations.
 
-**SDK Methods**:
-- `ExperimentServer.fetchV2()` - Server-side variant fetching for SSR implementations
+**SDK Integration Points**:
+- `ExperimentServer.fetchV2()` - Server-side variant fetching
 - `ExperimentClient.initialVariants` - Client-side initialization with pre-fetched variants
+- `[Experiment] Exposure` events - Default exposure tracking
+- `Experiment Assignment` events - Debugging sticky bucketing and variant assignments
 
-**Configuration APIs**: JSON-based import/export functionality for experiment chart settings, including schema fields like `variants`, `bucketingGroupType`, `userProperty`, `exposureEvent`, and `metrics` arrays.
+**Configuration APIs**: JSON import/export functionality supports programmatic chart configuration with schema including variants arrays, bucketingGroupType, userProperty, exposureEvent, and metrics definitions.
 
-**Split URL Testing**: Requires Experiment SDK script tag placement in HTML `<head>` section with Analytics SDK for event tracking, supporting low-code visual experimentation scenarios.
+**Advanced Metric Analysis**: The platform supports complex funnel analyses with mid-funnel exposure events, threshold metrics using funnel counting, and multi-event conversion tracking with experiment flag key filtering to reduce statistical noise.
 
-The platform emphasizes statistical rigor through automatic multiple hypothesis testing correction, comprehensive outlier detection and mitigation strategies, and sophisticated traffic management systems that enable complex experimental designs while maintaining data quality and statistical validity.
+The documentation emphasizes enterprise-scale considerations including traffic management complexity, statistical rigor through multiple hypothesis testing corrections, and sophisticated debugging approaches using cumulative exposure analysis and data quality monitoring.
