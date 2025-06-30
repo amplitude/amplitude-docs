@@ -7,7 +7,7 @@ landing: false
 
 Localization enables you to serve guides and surveys in different languages without creating a new guide or survey for each language.
 
-## Feature availability {.tag .web}
+## Feature availability
 
 Guides and Surveys localization is available to accounts with access to Guides and Surveys that are on Growth or Enterprise plans. For more information, see the [Pricing page](https://amplitude.com/pricing).
 
@@ -15,7 +15,7 @@ Guides and Surveys localization is available to accounts with access to Guides a
 
 Enabling localization on Guides or Surveys requires updates to your SDK implementation and Project settings.
 
-### SDK updates {.tag .mobile}
+### SDK updates
 
 Specify the user's locale during [SDK initialization](/docs/guides-and-surveys/sdk).
 
@@ -62,10 +62,22 @@ The default language is English and, for now, only Amplitude support can change 
 
 The languages you set in Project settings appear as languages in the *Localization* section on the *Setup* tab in your guide or survey.
 
-To add a translation:
+To add or edit a translation, you have two options.
+
+- Use the web interface to add or edit translations. Amplitude recommends this method.
+- Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
+
+### Use the web interface
+
+Use the language picker on the canvas to toggle between available languages. Changes you make to a guide or survey's text is saved for the selected language.
+
+### Use xliff files
+
+Alternatively, if you want to integrate with your own translation workflow, you can download an .xliff file for each language.
 
 1. Complete the guide or survey's steps in the default language.
 2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
+
     {{partial:admonition type="tip" heading="Adding translations to the xliff files"}}
     Guides and Surveys template files add untranslated content to `<source>` tags in a .xliff file. The content in these tags shouldn't change. Add translations to the `<target>` tags, like "Terminer" below:
     ```xml
@@ -79,7 +91,7 @@ To add a translation:
 4. After you upload a translation file, use the language picker on the canvas to toggle between available languages.
 
     {{partial:admonition type="tip" heading="Update translations"}}
-    Make updates to translations inline, on the appropriate step of the guide or survey. Amplitude adds updates you make here to the template file to ensure it stays in sync.
+    Even after you upload a translation file, you can still make updates to translations inline, on the appropriate step of the guide or survey. Amplitude adds updates you make here to the template file to ensure it stays in sync.
     {{/partial:admonition}}
 
 ### Preview a translation
