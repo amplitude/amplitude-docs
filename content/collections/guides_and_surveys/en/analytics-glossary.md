@@ -109,10 +109,10 @@ glossary:
           1. The user clicks the _Done_ button in a checklist.
           2. The user clicks the button on the last step with a button.
           3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
-          4. On a survey, the user clicks _Complete_.
+          4. On a survey, the user clicks _Complete_ or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
 
-          This event doesn't fire on Tooltips.
+          This event doesn't fire on Tooltips. For surveys, this is equivalent to the "Survey Completed" event.
     type: event_set
     enabled: true
   -
@@ -146,13 +146,21 @@ glossary:
       -
         id: m6zendv4
         event_name: 'Survey Submitted'
-        event_description: 'A user submitted a survey response.'
-        event_specific_properties: '`Survey Response` string. The user’s response'
+        event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
+        event_specific_properties: '`Survey Response` string. The user's response'
       -
         id: m6zeobhf
         event_name: 'Survey Abandoned'
         event_description: 'A user dismissed a survey when a response input was not empty.'
-        event_specific_properties: '`Survey Response` string. The user’s draft response'
+        event_specific_properties: '`Survey Response` string. The user's draft response'
+      -
+        
+        event_name: 'Survey Step Completed'
+        event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
+      -
+        
+        event_name: 'Survey Completed'
+        event_description: 'A user completed the last step of a survey. This event fires when a user finishes the entire survey by completing the final step.'
     type: event_set
     enabled: true
 ---
