@@ -12,7 +12,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730484422
 ---
-#### This article will help you:
+#### This article helps you:
 
 * Display your dashboards as charts, KPIs, or tables
 * Add target metrics to your dashboards
