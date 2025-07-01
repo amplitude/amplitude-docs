@@ -1,18 +1,23 @@
-**Summary:** This documentation explains Amplitude's Journeys chart visualizations (Pathfinder and Journey Map) for analyzing user path flows, including their shared functionality for event filtering, property expansion, conversion windows, and cohort creation, plus key differences from legacy Pathfinder/Journeys chart logic regarding conversion window handling and percentage calculations.
+**Summary:** This documentation explains Amplitude's Journeys chart visualizations (Pathfinder and Journey Map) for analyzing user path flows, including their differences from legacy versions, conversion window logic changes, and capabilities like event filtering, property expansion, and cohort creation from user paths.
 
 **Keywords:**
 - Journeys chart visualizations
 - Pathfinder visualization
 - Journey Map visualization
-- user path analysis
-- event property filtering
-- conversion window logic
-- cohort creation from events
-- funnel conversion from Pathfinder
-- session start/end events
-- legacy Pathfinder differences
-- event sequence branching
-- dropped off users
-- path percentage calculations
-- event expansion by property
-- Any Event property filtering
+- User path analysis
+- Event sequences
+- Conversion window logic
+- Event properties filtering
+- Path branching
+- Drop-off analysis
+- Session start/end events
+- Cohort creation from paths
+- Legacy Pathfinder migration
+- Event expansion by property
+- Path percentage calculations
+- Funnel conversion from Pathfinder
+- User journey flow analysis
+- Event filtering and exclusion
+- Repeated event handling
+- Path progression timing
+- Amplitude session tracking
