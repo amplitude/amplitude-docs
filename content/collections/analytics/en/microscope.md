@@ -75,6 +75,11 @@ By showing user paths, it becomes clear that after triggering the `Select Song o
 
 ![microscope_3.png](/docs/output/img/analytics/microscope-3.png)
 
+{{partial:admonition type="note" heading=""}}
+Microscope actions such as `View user streams` and `Create cohort` are not supported for dropoff user paths in the Pathfinder or Journey maps.
+{{/partial:admonition}}
+
+
 ## View user streams
 
 When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can see individual user streams in aggregate by selecting *View User Streams*. All a user's events within the date range of the data point are visible here, as well as:
