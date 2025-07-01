@@ -67,7 +67,7 @@ Select the page in the the URL redirect variant's settings. Scoping the redirect
 
 ## Technical details
 
-* Experiment evaluates pages after bucketing. This ensures that a page's varient impacts only users who are in the experiment. 
+* Experiment evaluates pages after bucketing. This ensures that a page's variant impacts only users who are in the experiment. 
 
 * Amplitude deactivates pages that conflict with other pages in your experiment. 
 
