@@ -101,11 +101,6 @@ Keep the following potential issues in mind as you build out the integration.
 
 Your TikTok Ads Manager account requires administrator privileges. This level of permission allows Amplitude to add and remove users from specific user lists in TikTok Ads.
 
-### Import job ingests no data
-
-...
-
-
 ### Daily ad metric discrepancies
 
 Amplitude imports TikTok Ads data once per day, and always for the previous calendar day. The import happens as a daily batch, and isn't available in real time or for hour-by-hour analysis
