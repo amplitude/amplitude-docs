@@ -29,9 +29,7 @@ Daily Ad Metrics includes the following user properties, which you can use for c
 * `utm_content`
 
 {{partial:admonition type="note" heading="UTM parameters require manual setup"}}
-X Ads doesn't populate UTM parameters by default. To ensure these fields appear in Amplitude, add the UTM parameters to ad URLs with [tracking templates](https://support.google.com/google-ads/answer/6305348) or another method. 
-
-Autotagging with `gclid` doesn't populate UTM fields. Some campaign types, like [Performance Max](https://support.google.com/google-ads/answer/10724817) don't allow URL level control, so UTM values don't consistently appear.
+X Ads doesn't populate UTM parameters by default. To ensure these fields appear in Amplitude, add the UTM parameters to ad URLs.
 {{/partial:admonition}}
 
 ## Preqrequisites
@@ -47,16 +45,16 @@ To enable the integration in Amplitude:
 
 1. Navigate to Data Sources and find **X Ads**.
 2. Enter a **Display Name** for the connection.
-3. Select the TikTok Ads account from which you want to import data.
+3. Select the X Ads account from which you want to import data.
 4. Choose to import historical data from a period you specify, up to one year. Amplitude backfills this data, and continues daily imports.
-5. Select the number of days to wait for X Ads data to finalize before import.
+5. Select the number of days to wait for X Ads data to complete before import.
    * **1 Day**: Faster data availability, but higher risk of underreporting clicks, spend, or impressions due to late corrections from X Ads.
    * **3 Days**: Slower data availability, but more accurate metrics as X Ads may retroactively adjust for bot traffic, delayed conversions, or attribution changes.
 6. Click **Save** to create the integration.
 
 ## Analyze your data
 
-After you import your TikTok Ads data, analyze campaign performance in the Ad Performance dashboard in [Out-of-the-box Marketing Analytics](/docs/analytics/ootb-marketing-analytics).
+After you import your X Ads data, analyze campaign performance in the Ad Performance dashboard in [Out-of-the-box Marketing Analytics](/docs/analytics/ootb-marketing-analytics).
 
 ## Supported properties
 
@@ -97,3 +95,29 @@ If your X Ads URL contains UTM parameters, Amplitude captures the following user
 | `utm_term`     | The search term or keyword from UTM tracking.  |
 
 ## Common issues
+
+Keep the following potential issues in mind as you build out the integration.
+
+### Insufficient permissions
+
+Your X Ads Manager account requires administrator privileges. This level of permission allows Amplitude to add and remove users from specific user lists in X Ads.
+
+### Daily ad metric discrepancies
+
+X Ads may update advertising metrics several days after the original interaction. This can happen for different reasons, including delayed conversion attribution or the removal of invalid traffic. For example, a user clicks on an ad today, but doesn't complete the conversion for a few days. Upon conversion, X retroactively attributes that conversion to the click from a few days ago.
+
+X can also exclude clicks it detects as fraudulent or non-human. This can result in lower reported impressions or spend. These updates impact key metrics like conversions, cost, and impressions.
+
+Amplitude imports X Ads data once per day, and always for the previous calendar day. The import happens as a daily batch, and isn't available in real time or for hour-by-hour analysis
+
+If X revises campaign data after Amplitude’s import complets, those changes don't appear automatically. To ensure the most accurate reporting, trigger a manual [backfill](/docs/data/data-backfill) to refresh metrics for the affected time period.
+
+Consider this a you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in X Ads.
+
+### Ad event's don't map to users
+
+X Ads doesn't export user level identifiers like device ID, email address, or user ID. As a result, Daily Ad Metrics event's don't link to use profiles in Amplitude, they aren't associated with known users across other product events.
+
+While these events may appear in a user stream with a synthetic identifier (like X Ads device ID), this doesn't mean identity resolution was successful. Amplitude treats the events as standalone entries, which aren't suitable for user-level reporting.
+
+Daily Ad Metrics events work best for campaign level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
