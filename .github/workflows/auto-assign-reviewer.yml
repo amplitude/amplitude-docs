@@ -1,59 +1,57 @@
-name: Assign rotating reviewer from team
+name: Assign rotating on-call reviewer
 
 on:
   pull_request:
     types: [opened, reopened, ready_for_review]
 
-permissions:
-  pull-requests: write
-  contents: read
-
 jobs:
   assign-reviewer:
     runs-on: ubuntu-latest
     steps:
-      - name: Get team members and assign reviewer
+      - name: Assign on-call reviewer
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ONCALL_BOT_TOKEN }}
           script: |
-            const teamSlug = 'dev-docs';
+            const teamSlug = 'dev-docs';  // Your team slug (e.g., 'oncall-reviewers')
             const org = context.repo.owner;
+            const prNumber = context.payload.pull_request.number;
             const prAuthor = context.payload.pull_request.user.login;
+
+            core.info(`Fetching team members from ${org}/${teamSlug}`);
 
             // Get team members
             const { data: members } = await github.rest.teams.listMembersInOrg({
-            org,
-            team_slug: teamSlug,
-            per_page: 100
+              org,
+              team_slug: teamSlug,
+              per_page: 100
             });
 
-            if (members.length === 0) {
-            core.warning(`No members found in team ${teamSlug}`);
-            return;
+            if (!members || members.length === 0) {
+              core.setFailed(`No members found in team ${teamSlug}`);
+              return;
             }
 
-            // Build list of usernames, excluding the PR author
+            // Exclude PR author
             const reviewers = members
-            .map(member => member.login)
-            .filter(username => username !== prAuthor);
+              .map(member => member.login)
+              .filter(username => username !== prAuthor);
 
             if (reviewers.length === 0) {
-            core.warning(`Only member in team is PR author (${prAuthor}). No fallback reviewer.`);
-            return;
+              core.warning(`PR author (${prAuthor}) is the only team member. Skipping assignment.`);
+              return;
             }
 
-            // Rotate by week number
-            const currentWeek = Math.floor((new Date().getTime() / 1000 / 60 / 60 / 24 / 7));
+            // Determine reviewer based on calendar week
+            const currentWeek = Math.floor(Date.now() / 1000 / 60 / 60 / 24 / 7);
             const reviewerIndex = currentWeek % reviewers.length;
             const reviewer = reviewers[reviewerIndex];
 
-            core.info(`Assigning @${reviewer} as rotating reviewer (excluding author @${prAuthor})`);
+            core.info(`Assigning reviewer @${reviewer} (week ${currentWeek})`);
 
             await github.rest.pulls.requestReviewers({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: context.payload.pull_request.number,
-            reviewers: [reviewer],
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+              reviewers: [reviewer]
             });
-
