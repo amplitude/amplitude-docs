@@ -1,15 +1,23 @@
-**Summary:** This documentation covers Web Experiment Pages functionality, which controls URL targeting and variant scoping through page targeting rules (URL Matches, URL Contains, URL Starts With, etc.) and manages where experiment variants apply using Visual Editor, custom code, or URL redirect variants.
+**Summary:** This documentation covers Web Experiment Pages functionality, which controls URL targeting and variant scoping through page targeting rules (URL Matches, URL Contains, URL Starts With, etc.) and manages where experiment variants apply using Visual Editor, custom code, and URL redirect variants.
 
 **Keywords:**
 - Web Experiment Pages
 - URL targeting conditions
 - page targeting rules
-- URL Matches operators
 - Visual Editor URL
 - variant scoping
-- page scope management
-- URL redirect variants
+- URL Matches operators
+- URL Matches Exactly
+- URL Matches Pattern
+- URL Contains
+- URL Starts With
+- URL Ends With
+- URL Matches Regex
+- Visual Editor variants
 - custom code variants
-- experiment bucketing evaluation
+- URL redirect variants
+- experiment bucketing
 - page conflict detection
-- Visual Editor preview session
+- wildcard URL matching
+- query parameters
+- hash fragments
