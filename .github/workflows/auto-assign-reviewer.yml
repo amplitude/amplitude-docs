@@ -11,7 +11,7 @@ jobs:
       - name: Assign on-call reviewer
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.ONCALL_BOT_TOKEN }}
+          github-token: ${{ secrets.ON_CALL_BOT }}
           script: |
             const teamSlug = 'dev-docs';  // Your team slug (e.g., 'oncall-reviewers')
             const org = context.repo.owner;
