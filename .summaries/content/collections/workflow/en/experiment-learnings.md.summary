@@ -1,18 +1,23 @@
-**Summary:** This documentation covers the experiment analysis workflow in Amplitude Experiment, detailing how to interpret experimental results through various cards including Filter, Data Quality, Summary, Analysis, and Diagnostics cards, with specific focus on statistical significance thresholds (100 users + 25 conversions for binary metrics, 100 users for non-binary metrics) and p-value calculations.
+**Summary:** This documentation covers Amplitude Experiment's analysis interface for interpreting A/B test results, including statistical significance determination, filtering capabilities (date/segment/property), and various analysis cards (Summary, Data Quality, Analysis, Diagnostics) that display p-values, confidence intervals, and experiment performance metrics.
 
 **Keywords:**
-- Amplitude Experiment analysis workflow
-- statistical significance thresholds
-- p-value confidence intervals
-- binary metrics vs non-binary metrics
-- experiment results cards (Filter, Data Quality, Summary, Analysis, Diagnostics)
+- Amplitude Experiment analysis
+- statistical significance
+- p-values confidence intervals
+- A/B test results interpretation
+- experiment variants analysis
+- binary metrics non-binary metrics
+- 100 users 25 conversions threshold
+- Filter card segment filter
 - variant jumping exclusion
-- sample ratio mismatch (SRM) detection
-- A/B/n testing control vs treatment comparison
-- sequential test vs T-test statistical methods
 - remote evaluation feature experiments
 - multi-armed bandit experiments
-- experiment results chart filtering
-- assignment events vs exposure events
-- anonymous exposures tracking
-- exposures without assignments troubleshooting
+- Data Quality card recommendations
+- Summary card hypothesis validation
+- Analysis card experiment results charts
+- Diagnostics card assignment exposure events
+- sample ratio mismatch SRM detection
+- sequential test T-test statistical preferences
+- group-by heterogeneous treatment effects
+- experiment notifications Slack integration
+- Experiment Results chart Analytics integration
