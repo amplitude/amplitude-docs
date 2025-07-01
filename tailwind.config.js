@@ -174,6 +174,10 @@ module.exports ={
                         td: {
                             'vertical-align': 'top'
                         },
+                        'td p': {
+                            marginTop: '0',
+                            marginBottom: '0'
+                        },
                         code: {
                             'color': '#2a2f45',
                             'background': '#f7fafc',
