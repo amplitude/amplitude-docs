@@ -17,7 +17,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const teamSlug = 'oncall-reviewers';
+            const teamSlug = 'dev-docs';
             const org = context.repo.owner;
             const prAuthor = context.payload.pull_request.user.login;
 
