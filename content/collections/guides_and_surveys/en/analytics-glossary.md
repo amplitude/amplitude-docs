@@ -147,18 +147,18 @@ glossary:
         id: m6zendv4
         event_name: 'Survey Submitted'
         event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
-        event_specific_properties: '`Survey Response` string. The user's response'
+        event_specific_properties: "`Survey Response` string. The user's response"
       -
         id: m6zeobhf
         event_name: 'Survey Abandoned'
         event_description: 'A user dismissed a survey when a response input was not empty.'
-        event_specific_properties: '`Survey Response` string. The user's draft response'
+        event_specific_properties: "`Survey Response` string. The user's draft response"
       -
-        
+        id: 
         event_name: 'Survey Step Completed'
         event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
       -
-        
+        id: 
         event_name: 'Survey Completed'
         event_description: 'A user completed the last step of a survey. This event fires when a user finishes the entire survey by completing the final step.'
     type: event_set
