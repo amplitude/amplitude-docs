@@ -1,0 +1,26 @@
+**Summary:** This documentation covers Amplitude's TikTok Ads integration that imports daily ad spend, click, and impression data as "Daily Ad Metrics" events with properties like ad_metrics.cost, ad_metrics.impressions, and campaign_id, but doesn't map to individual user profiles due to lack of user-level identifiers from TikTok Ads API.
+
+**Keywords:**
+- TikTok Ads integration
+- Daily Ad Metrics event
+- ad_metrics.cost
+- ad_metrics.impressions
+- ad_metrics.conversions
+- ad_metrics.clicks
+- campaign_id
+- ad_group_id
+- UTM parameters
+- landing_page_url
+- TikTok Business Center
+- Ad Performance dashboard
+- Out-of-the-box Marketing Analytics
+- Customer Acquisition Cost (CAC)
+- Return on Ad Spend (ROAS)
+- Daily batch import
+- No user-level identifiers
+- Campaign-level analysis
+- TikTok Ads Manager account
+- Administrator privileges
+- Data latency
+- Synthetic identifier
+- Identity resolution
