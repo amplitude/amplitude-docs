@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Heatmaps functionality in Amplitude's Session Replay feature, which provides visual representations of user engagement through click maps, selector maps, and scroll maps for web-based applications, requiring Session Replay Browser SDK Plugin 1.7.0+ or Standalone SDK 1.14.0+ and available only for Growth/Enterprise plans.
+**Summary:** This documentation covers Heatmaps functionality in Amplitude's Session Replay feature, which provides visual representations of user engagement through click maps, selector maps, and scroll maps for web-based applications, requiring Session Replay Browser SDK Plugin 1.7.0+ or Standalone SDK 1.14.0+ with specific URL matching options and Microscope analysis capabilities.
 
 **Keywords:**
 - Heatmaps
@@ -6,15 +6,18 @@
 - Click map
 - Selector map  
 - Scroll map
-- Browser SDK Plugin 1.7.0
-- Session Replay Standalone SDK 1.14.0
-- Microscope feature
+- Microscope
+- Session Replay Browser SDK Plugin
+- Session Replay Standalone SDK
 - URL matching patterns
-- Growth Enterprise plans
+- Behavioral cohorts
 - Web-based session replays
-- Behavioral Cohorts
 - Device identifiers
 - Sample rate limitations
+- Growth and Enterprise plans
 - Anonymized session replay
-- Viewport scroll depth
-- Interactive elements ranking
+- Average page fold
+- Scroll depth analysis
+- Element ranking
+- Heat visualization
+- User engagement patterns
