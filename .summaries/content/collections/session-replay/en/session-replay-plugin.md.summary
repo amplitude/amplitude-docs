@@ -9,18 +9,16 @@ This documentation covers the Session Replay Browser SDK Plugin (@amplitude/plug
 - DOM capture and diff processing
 - sampleRate configuration
 - privacyConfig masking
-- Unified SDK session replay
-- amplitude.add() plugin installation
-- IndexedDB storage (storeType)
 - Shadow DOM support
-- CSS stylesheet inlining
-- EU data residency serverZone
-- DSAR API session replay metadata
-- User Privacy API deletion
+- IndexedDB storage (storeType)
+- amplitude.add() and amplitude.remove()
 - performanceConfig idle compression
 - experimental.useWebWorker
 - forceSessionTracking
-- amplitude.remove() disable collection
-- Session Start/End events
-- Device ID session matching
-- Canvas/WebGL capture limitations
+- EU data residency serverZone
+- DSAR API session replay metadata
+- User Privacy API deletion
+- CSS stylesheet inlining
+- requestIdleCallback API
+- Unified SDK initAll
+- amplitude.createInstance() multiple instances
