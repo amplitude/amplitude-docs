@@ -111,12 +111,6 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 ```
 
-## Register a callback
-
-{{partial:admonition type="author" heading="Waiting on a code sample"}}
-Code sample goes here...
-{{/partial:admonition}}
-
 ## Reset
 
 Reset a guide or survey to a specific step.
@@ -173,7 +167,7 @@ amplitudeEngagement.closeAll()
 
 ## Simulate Guides and Surveys for preview
 
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme in your.
+To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
 
 ### Locate the mobile URL scheme
 
