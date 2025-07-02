@@ -167,7 +167,7 @@ amplitudeEngagement.closeAll()
 
 ## Simulate Guides and Surveys for preview
 
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme in your.
+To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
 
 ### Locate the mobile URL scheme
 
