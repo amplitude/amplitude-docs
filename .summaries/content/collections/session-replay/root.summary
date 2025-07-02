@@ -71,20 +71,22 @@ The Session Replay ecosystem follows a modular architecture with distinct integr
 
 Session Replay uses IndexedDB for browser storage with configurable `storeType` options. The system implements diff-based processing to minimize data volume, with compression algorithms and idle state optimization through `performanceConfig`. Data retention and transmission are managed through configurable flush intervals and quota management (HTTP 402/429 status handling).
 
+## Monitoring and Debugging
+
+The **Session Replay Ingestion Monitor** provides real-time tracking of ingestion health with HTTP status code monitoring (200, 429, 402) and invalid session ID detection. The system integrates with DSAR API for data subject access requests and User Privacy API for data deletion compliance.
+
 ## Broader Product Ecosystem Integration
 
-Session Replay operates as a core component within Amplitude's analytics ecosystem, integrating with:
+Session Replay operates as a core component within Amplitude's digital analytics platform, integrating with:
 
-**Amplitude Analytics**: Native plugin architecture provides seamless event correlation and user journey analysis when combined with traditional analytics tracking.
+**Amplitude Analytics**: Primary integration through plugin architecture, sharing session and device identifiers for unified user journey analysis.
 
-**Third-Party Analytics Platforms**: Standalone SDKs and wrapper plugins enable Session Replay deployment alongside Segment, Rudderstack, and other analytics providers while maintaining data correlation capabilities.
+**Third-party Analytics Platforms**: Segment, Rudderstack, and other customer data platforms through wrapper plugins and standalone SDK implementations.
 
-**Cookie Management Platforms**: Built-in CMP integration ensures compliance with privacy regulations through automated consent management and opt-out controls.
+**Tag Management Systems**: Google Tag Manager integration enables deployment through existing tag management workflows.
 
-**Data Subject Rights APIs**: Integration with DSAR API and User Privacy API enables automated compliance with GDPR data access and deletion requests.
+**Privacy and Compliance Tools**: Cookie Management Platform integration and GDPR compliance through automated data subject request handling.
 
-## Monitoring and Enterprise Features
+## Enterprise Features
 
-The **Session Replay Ingestion Monitor** provides real-time tracking of ingestion health with HTTP status code monitoring (200, 429, 402) and invalid session ID detection. Enterprise capabilities include remote configuration precedence, organizational privacy settings management, behavioral cohort analysis, and EU data residency compliance through dedicated server zones.
-
-Advanced performance features include WebWorker processing for browser optimization, CSS stylesheet inlining for accurate visual reconstruction, and configurable sampling rates for cost management and performance optimization.
+Advanced capabilities include remote configuration precedence, organizational privacy settings management, behavioral cohort analysis, and EU data residency compliance. The platform supports Shadow DOM capture, CSS stylesheet inlining, and experimental WebWorker processing for performance optimization.
