@@ -4,17 +4,19 @@
 - Amplitude user roles
 - organization-level permissions
 - project-level permissions
-- Viewer Member Manager Admin roles
+- permission groups
+- Viewer role permissions
+- Member role permissions
+- Manager role permissions
+- Admin role permissions
 - discoverable vs undiscoverable content
 - behavioral cohorts
-- saved segments
 - custom events
 - team spaces
 - Visual Labeling
-- permission groups
-- API keys secret keys
+- API keys access
 - derived properties
 - Guides and Surveys
 - content ownership transfer
 - sampling settings
-- Enterprise customers
+- Enterprise customers permissions
