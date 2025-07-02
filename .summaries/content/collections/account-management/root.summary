@@ -34,6 +34,6 @@ Key technical interfaces include:
 - **Dashboard Rest API/HTTP API**: Analytics data access and manipulation
 - **Webhook endpoints**: Real-time monitor notifications and custom integrations
 
-The platform supports SDK implementation for Session Replay capture, with configurable sample rates and user privacy controls. Currency conversion and time zone settings are managed at the project level, affecting dashboard formatting and notebook revenue visualization across the analytics interface.
+The platform supports SDK implementation for Session Replay capture, with configurable sample rates and user privacy controls. Currency conversion and time zone settings are managed at the project level, affecting dashboard formatting and notebook visualizations without modifying underlying data integrity.
 
 This comprehensive account management system enables organizations to scale their analytics operations while maintaining data governance, security, and compliance requirements across complex multi-project deployments.
