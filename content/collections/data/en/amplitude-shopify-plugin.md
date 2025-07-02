@@ -85,7 +85,7 @@ The method you use to install the Shopify plugin depends on if you have an exist
 3. Find the Project's API key and copy it.
 4. Return to the Amplitude Settings screen in Shopify, enter the API key, and click **Connect**.
 
-### Conffigure Session Replay sample rates
+### Configure Session Replay sample rates
 
 1. Log in to Amplitude as a manager and navigate to your organization's settings.
 2. click **Session Replay & Heatmaps** in the sidebar.

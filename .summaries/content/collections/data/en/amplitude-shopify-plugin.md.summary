@@ -6,14 +6,14 @@
 - Browser SDK integration
 - Session Replay sampling
 - Web Experiment
-- Anti-flicker snippet
 - Marketing attribution tracking
 - Checkout page limitations
-- Product viewed events
-- Cart tracking events
-- Checkout flow events
+- Anti-flicker snippet
 - theme.liquid file
-- Shopify App Store installation
+- Shopify Web Pixels API
+- Product viewed/added/removed events
+- Checkout started/completed events
+- Order created event
+- User ID email/phone mapping
+- Performance impact 167kb
 - API key configuration
-- Web Pixels API
-- Shopify checkout restrictions
