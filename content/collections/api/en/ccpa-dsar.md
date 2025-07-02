@@ -209,7 +209,7 @@ Content-Length: 83
 
 ### Response
 
-When successful, the call returns a `202 Accepted` response and `requestID`. Use the `requestID` to poll the job status.
+When successful, the call returns a `202 Accepted` response and `requestId`. Use the `requestId` to poll the job status.
 
 ```json
 {
@@ -279,7 +279,7 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 | `status` | **staging**: not started  <br>**submitted**: in progress  <br>**done**: job completed and download URLs populated  <br>**failed**: job failed, may need to retry  <br> |
 | `failReason` | String. If the job failed, contains Information about the failure. |
 | `urls` | Array of strings. A list of download URLs for the data. |
-| `expires` | Data. The date that the output download links expire. |
+| `expires` | Date. The date that the output download links expire. |
 
 ## Get output files
 
