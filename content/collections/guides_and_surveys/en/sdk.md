@@ -53,7 +53,7 @@ For additional configuration, supply `InitOptions` to the `plugin` function. See
 
 
 
-### Other Amplitude SDK's and third-party analytics providers 
+### Other Amplitude SDK's and third-party analytics providers
 
 If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
 But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
@@ -449,6 +449,32 @@ engagement.forwardEvent(event: Event): void
 | --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
+
+## Set User Properties
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+
+The `_setUserProperties()` method is not necessary if properties are already shared via `amplitude.identify()`.
+
+{{partial:admonition type="tip" heading=""}}
+User properties must be loaded during the current client-side session and before the guide or survey is displayed. Properties shared on prior sessions are not available.
+{{/partial:admonition}}
+
+```js
+engagement._setUserProperties(userProperties: Record<string, any>): void
+```
+
+| Parameter        | Type                      | Description                                                                                                                        |
+| ---------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `userProperties` | `Record<string, any>`     | Required. An object containing user properties as key-value pairs. These properties can be referenced in guides and surveys content. |
+### Example usage
+```js
+// Supply user properties manually via engagement SDK
+const userProperties = {firstName: 'john'}
+engagement._setUserProperties(userProperties)
+
+// For testing, view the current user properties
+engagement._.user.user_properties
+```
 
 ## Close all
 
