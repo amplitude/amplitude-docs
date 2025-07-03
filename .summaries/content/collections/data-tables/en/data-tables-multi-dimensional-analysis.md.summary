@@ -1,17 +1,26 @@
-**Summary:** This documentation covers Amplitude's Data Tables feature for multi-dimensional analysis, including setup procedures for adding events/metrics, implementing group-by properties with nested breakdowns, applying user segments, and transposing rows/columns for flexible data visualization.
+## Summary
+This documentation covers Amplitude's Data Tables feature for multi-dimensional analysis, including creating tables with multiple metrics and group-by properties, using conversion metrics, transposing rows/columns, and various data manipulation options like filtering, sorting, and attribution modeling.
 
-**Keywords:**
-- Data Tables multi-dimensional analysis
-- group-by properties nested breakdowns
-- events metrics columns setup
-- user segments cohorts creation
-- attribution models UTM source
-- Formula Metric Event Segmentation
-- transpose rows columns functionality
+## Keywords
+- Data Tables
+- multi-dimensional analysis
+- multi-metric analysis
+- group-by properties
+- nested group-by
+- top-level group-by
+- Formula Metric
+- conversion metrics
+- transpose rows columns
+- attribution modeling
+- Event Segmentation
+- user segments
+- cohort creation
+- time dimension group-by
+- Session Totals metric
+- Uniques metric
 - period over period comparison
-- time dimension group-by constraints
-- display options relative percentages
-- data bars cells visualization
-- filter property values inline
-- Uniques metric type calculations
-- Session Totals metric logic
+- CSV export
+- display options
+- Relative % for totals
+- Data bars in cells
+- Color % delta
