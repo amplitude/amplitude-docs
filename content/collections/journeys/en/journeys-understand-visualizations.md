@@ -22,9 +22,9 @@ In any of these analyses, you can:
 
 You can also hide noisy events, only show specific events, collapse repeated events, and view custom events. Any settings you change while viewing one visualization carry over to the others.
 
-Start and end sessions are also defined the same for all Journeys visualizations, and don't allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude generates a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/docs/data/sources/instrument-track-sessions). 
+Start and end sessions are also defined the same for all Journeys visualizations, and don't allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude generates a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/docs/data/sources/instrument-track-sessions). In fact, no microscope actions, such as `view user streams` or `Create cohort` are available for dropeed off users in the Pathfinder or Journey Maps . 
 
-Finally, in any Journeys visualization, you can remove an event, expand an event by property, filter by sequences that include the event and property pair, or create a cohort from an event. Just click the event and select the option you want from the menu that appears.
+Finally, in any Journeys visualization, you can remove an event, expand an event by property, filter by sequences that include the event and property pair, or create a cohort from an event. Click the event and select the option you want from the menu that appears.
 
 {{partial:admonition type='note'}}
 To [access your legacy Pathfinder, Pathfinder Users, and Journeys charts, see our Help Center article linked here](/docs/analytics/charts/journeys/journeys-understand-paths).
