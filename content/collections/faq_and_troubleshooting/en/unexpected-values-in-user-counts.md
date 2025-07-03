@@ -66,7 +66,7 @@ For server-side events, location property values are determined either by GeoIP 
 {{partial:collapse name="Why is my device property showing a `(none)` value?"}}
 Amplitude determines `[Amplitude] Device family` and `[Amplitude] Device type` by grabbing `device_brand`, `device_manufacturer`, and `device_model` strings directly from your user's device and then mapping these strings to our repository of device types.
 
-With each new phone model that comes out globally, there may be some device types that have not yet been mapped. In these cases, `[Amplitude]Device type` will be `(none)`.
+With each new phone model that comes out globally, there may be some device types that have not yet been mapped. In these cases, `[Amplitude] Device type` will be `(none)`.
 
 Outside of device mapping, server-side events may also have null device information if these fields (`platform`, `os_name`, `os_version`, `device_brand`, `device_manufacturer`, `device_model`, and `carrier`) were not updated together. Setting any of these fields will automatically reset all of the other property values to null if they are not also explicitly set for the same event.
 {{/partial:collapse}}

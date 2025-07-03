@@ -242,12 +242,16 @@ These examples assume you use the variable `sessionReplayTracking` in your initi
 
 Call `amplitude.remove('sessionReplayTracking')` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
 
-To restart replay collection, call `amplitude.add('sessionReplayTracking')` to re-add the plugin.
+To restart replay collection, call `amplitude.add(sessionReplayTracking)` to re-add the plugin.
+
+{{partial:admonition type='note'}}
+Remember that `amplitude.add()` takes in an object of type `Plugin` as a parameter and `amplitude.remove()` takes in a string as a parameter which is the name of the plugin you want to remove. 
+{{/partial:admonition}}
 
 {{partial:admonition type='note'}}
 Always wait for `amplitude.add()` to finish before invoking `amplitude.remove()`. If you don't, you may get an error in the console: `TypeError: Cannot read properties of undefined (reading 'teardown')`. Use the `promise` property to do this, as shown in either of these examples:
 
-```
+```js
 await amplitude.add(sessionReplayTracking).promise;
 await amplitude.remove(sesionReplayTracking.name).promise;
 ```
@@ -291,10 +295,10 @@ The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about 
  "event_type": "first_event",
  "server_upload_time": "2020-02-18 01:00:00.234567",
  "device_id": "your device id",
- "user_properties": { ... }
+ "user_properties": { ... },
  "event_properties": {
  "[Amplitude] Session Replay ID": "cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244"
- }
+ },
  "session_id": 1699922971244,
 }
 ```

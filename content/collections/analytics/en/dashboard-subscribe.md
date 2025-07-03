@@ -19,13 +19,13 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 To subscribe to a dashboard—either your own, or someone else's—follow these steps: 
 
 1. From within the dashboard you want to subscribe to, click *Subscribe*. The *Subscribe to Dashboard Reports* modal opens.
-2. In the *Email* tab, your name appears in the *Subscribe yourself* or *Add new subscribers* field. Set your preferred update frequency and click *Add*.  
+2. In the *Email* tab, your name appears in the *Subscribe yourself* or *Add new subscribers* field. Set your preferred update frequency and click *Add*. For optimal performance, emailed dashboards contain images of the first eight charts on the dashboard. To view all charts, recipients can click through to the full dashboard.
   
   {{partial:admonition type='note'}}
-  If you own or co-own the dashboard, you can also add other subscribers, the *Subscribe yourself* field appears as *Add subscribers*; there, you can add subscribers other than yourself.
+  If you own or co-own the dashboard, you can add other subscribers, the *Subscribe yourself* field appears as *Add subscribers*; there, you can add subscribers other than yourself.
   {{/partial:admonition}}
 
-3. To subscribe a Slack channel to the dashboard, click the *Slack* tab. In the *Add new subscriber(s)* field, enter the names of the Slack channels you want to subscribe to this dashboard. Notifications take the form of automated recurring dashboard PDFs, paired with a link back to the dashboard, sent to Slack channels you designate.
+1. To subscribe a Slack channel to the dashboard, click the *Slack* tab. In the *Add new subscriber(s)* field, enter the names of the Slack channels you want to subscribe to this dashboard. Notifications take the form of automated recurring dashboard PDFs, paired with a link back to the dashboard, sent to Slack channels you designate.
 
 
 ![DB_Reports_Sample.png](/docs/output/img/analytics/db-reports-sample-png.png)
