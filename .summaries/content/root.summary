@@ -1,90 +1,47 @@
-Amplitude is a comprehensive product analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of multiple interconnected products that work together to deliver end-to-end analytics, experimentation, and user engagement capabilities.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with advanced tools for understanding user behavior, optimizing product experiences, and driving data-informed decision making across web and mobile applications.
 
 ## Core Product Architecture
 
-**Amplitude Analytics** serves as the foundational analytics engine, providing event tracking, user behavior analysis, and business intelligence through various chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Lifecycle, Stickiness, Personas, Revenue LTV, Impact Analysis, Engagement Matrix, Data Tables, Compass, and Experiment Results. Each chart type offers specialized visualization and analysis capabilities for different aspects of user behavior and business metrics.
+The platform consists of four primary product areas: **Analytics** (behavioral analysis and reporting), **Experiment** (feature flagging and A/B testing), **Data** (customer data platform and integrations), and **Session Replay** (user session recording and analysis). These products work together through a unified data layer that processes events, user properties, and behavioral patterns to deliver actionable insights.
 
-**Amplitude Experiment** is the feature flagging and A/B testing platform that enables controlled rollouts, multivariate testing, and advanced experimentation techniques. It includes experiment theory, workflow management, advanced techniques, troubleshooting capabilities, and "under the hood" technical implementation details.
+The analytics engine centers around **Charts** - specialized visualization and analysis tools including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Personas, Lifecycle, Stickiness, Revenue LTV, Impact Analysis, Engagement Matrix, Data Tables, and Compass. Each chart type serves specific analytical use cases, from basic event tracking to sophisticated cohort analysis and revenue attribution modeling.
 
-**Amplitude Session Replay** captures and analyzes user sessions to provide visual insights into user interactions and identify friction points in the user experience.
+## Product Relationships and Feature Integration
 
-**Amplitude Guides and Surveys** delivers in-product user engagement through contextual guidance and feedback collection mechanisms.
+**Amplitude Analytics** serves as the foundational layer, collecting and processing user behavioral data through comprehensive SDK instrumentation across platforms (Browser, iOS, Android, React Native, Flutter, Unity, Unreal, Node.js, Python, Java, Go). The **Ampli** wrapper provides type-safe event tracking with code generation capabilities for consistent implementation across development teams.
 
-## Multi-Platform SDK Ecosystem
+**Amplitude Experiment** builds upon the analytics foundation to deliver feature flagging, A/B testing, and advanced experimentation capabilities. It includes experiment design tools, statistical analysis engines, results visualization, and integration with the analytics platform for comprehensive impact measurement. The experiment workflow encompasses hypothesis formation, variant configuration, audience targeting, and statistical significance testing.
 
-The platform supports comprehensive instrumentation through dedicated SDKs across multiple platforms:
+**Amplitude Data** (CDP) functions as the central data orchestration layer, managing data ingestion through the **Source Catalog**, data activation through the **Destination Catalog**, audience creation and management, and warehouse-native analytics capabilities. This enables organizations to unify customer data across touchpoints and activate insights through downstream marketing and operational systems.
 
-**Analytics SDKs** include Browser SDK, Android SDK, iOS SDK, React Native SDK, Flutter SDK, Node.js SDK, Python SDK, Java SDK, Go SDK, Unity SDK, and Unreal SDK. Each SDK provides platform-specific implementation with routes following the pattern `/sdks/analytics/{platform}/{slug}`.
-
-**Experiment SDKs** offer feature flagging and experimentation capabilities across platforms with dedicated documentation at `/sdks/experiment-sdks/{slug}`.
-
-**Ampli** provides a code-generation tool that creates type-safe analytics implementations, ensuring data quality and consistency across development teams with documentation at `/sdks/ampli/{slug}`.
-
-## Data Management and Customer Data Platform (CDP)
-
-The **CDP** functionality includes comprehensive data management through Sources (data ingestion), Destinations (data activation), and Audiences (user segmentation). The Source Catalog and Destination Catalog provide extensive integration options with third-party platforms, categorized by integration types and supporting various data flow patterns.
-
-**Warehouse-native Amplitude** enables organizations to run Amplitude analytics directly on their existing data warehouse infrastructure, providing flexibility and data sovereignty.
-
-**PII Integrations** handle personally identifiable information with appropriate privacy and compliance controls.
-
-## API Infrastructure
-
-The platform provides extensive API access through:
-- **Analytics API** (`/apis/analytics/{slug}`) for programmatic access to analytics data
-- **Experiment APIs** (`/apis/experiment/{slug}`) for feature flag and experiment management
-- **Guides and Surveys API** (`/apis/guides-and-surveys/{slug}`) for in-product experience management
-
-## Administrative and Enterprise Features
-
-**Account Management** provides organizational controls, user management, and access permissions through `/admin/account-management/{slug}`.
-
-**Single Sign-on** enables enterprise authentication integration via `/admin/single-sign-on/{slug}`.
-
-**Billing and Use** offers usage monitoring and billing management at `/admin/billing-use/{slug}`.
+**Session Replay** captures and reconstructs user interactions for qualitative analysis, complementing quantitative analytics with visual context for understanding user behavior patterns, identifying friction points, and validating experiment results.
 
 ## Key Nomenclature and Definitions
 
-**Events** are discrete user actions tracked within applications, forming the foundation of all analytics.
+**Events** represent discrete user actions or system occurrences that are tracked and analyzed. Events contain properties (attributes describing the event context) and are associated with users through unique identifiers.
 
-**Properties** are attributes associated with events or users that enable segmentation and analysis.
+**Metrics** are quantitative measurements derived from event data, including Uniques (distinct user counts), Event totals (occurrence frequencies), Session totals, PROPSUM (property value summations), and PROPCOUNT (property occurrence counts).
 
-**Cohorts** are user segments defined by shared characteristics or behaviors.
+**Cohorts** and **Audiences** represent user segments created based on behavioral criteria, demographic attributes, or calculated properties. These segments can be used for analysis, experimentation, and activation across integrated platforms.
 
-**Funnels** represent sequential user journeys through defined conversion paths.
+**Experiments** encompass feature flags, A/B tests, and multivariate tests with statistical frameworks for measuring impact on key metrics. Experiment configurations include variant definitions, traffic allocation, audience targeting, and success criteria.
 
-**Retention** measures user return behavior over specified time periods.
+**Attribution Models** distribute conversion credit across multiple touchpoints using algorithms like First Touch, Last Touch, Linear, U-Shaped, and Data-Driven Markov chain approaches for marketing campaign analysis.
 
-**Experiments** are controlled tests comparing different user experiences or feature variations.
+**Session Metrics** include bounce rates, exit rates, entry rates, and time-based calculations derived from user session boundaries (typically 30-minute timeout windows between events).
 
-**Feature Flags** enable dynamic feature control without code deployments.
+## Broader Product Ecosystem Integration
 
-**Segments** are filtered user groups based on properties or behaviors.
+Amplitude integrates extensively with external platforms through its **Partner** ecosystem, supporting marketing tools, customer success platforms, data warehouses, and business intelligence solutions. The **APIs** (Analytics API, Experiment APIs, Guides and Surveys API) enable programmatic access to platform functionality for custom integrations and automated workflows.
 
-## Content Organization and Localization
+**Guides and Surveys** extends the platform with in-product messaging and feedback collection capabilities, enabling organizations to gather qualitative insights alongside quantitative behavioral data.
 
-The platform supports **multi-site architecture** with English (`en`) and Japanese (`jp`) localization. Japanese translation content is specifically managed through dedicated collections with specialized routing and navigation injection.
+The platform supports enterprise requirements through **Single Sign-On** integration, **Account Management** tools, **Billing and Use** monitoring, and comprehensive **Admin** controls for user permissions, project management, and organizational governance.
 
-**Academy Content** provides educational resources and best practices for platform usage.
+## Technical Implementation and Access Patterns
 
-**FAQ and Troubleshooting** offers comprehensive support documentation for common issues and questions.
+The platform exposes functionality through multiple interfaces: web-based analytics dashboards, REST APIs for programmatic access, SDK implementations for event tracking, and CSV export capabilities for data extraction. Route patterns follow consistent structures like `/analytics/charts/{chart-type}/{slug}`, `/sdks/{platform}/{slug}`, `/apis/{product}/{slug}`, and `/data/{feature}/{slug}`.
 
-**Migration** documentation assists users transitioning from other analytics platforms.
+**Migration** tools and documentation support transitions from other analytics platforms, while **FAQ and Troubleshooting** resources provide implementation guidance. The platform includes specialized troubleshooting for experiment implementation and **PII Integrations** for handling sensitive data requirements.
 
-**Partners** section details integration partnerships and third-party collaborations.
-
-## Advanced Analytics Capabilities
-
-**Legacy Charts** maintain backward compatibility with previous visualization formats while newer chart types provide enhanced functionality.
-
-**Other Charts** encompass specialized visualization types for specific use cases.
-
-The platform implements sophisticated **date behavior** controls with public/private visibility for past and future content, enabling staged content releases and time-sensitive documentation.
-
-## Navigation and Information Architecture
-
-Content is organized through hierarchical navigation with injected navigation titles including `analytics`, `experiment`, `data`, `apis`, `admin`, `get_started`, `developers`, `session_replay`, `web_experiment`, and specialized categories for different product areas.
-
-**Preview targets** enable content preview functionality with automatic refresh capabilities, supporting content management workflows and quality assurance processes.
-
-The platform uses **mount points** (UUID-based identifiers) to link related content collections, enabling complex content relationships and cross-referencing capabilities throughout the documentation ecosystem.
+**Academy Content** and educational resources support user onboarding and advanced technique development, with **Japanese Translation** support for international deployments.
