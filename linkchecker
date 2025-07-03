@@ -2,7 +2,7 @@
 
 # Rebuild the site
 npm run build
-php please ssg:generate --workers=4
+yes | php please ssg:generate --workers=4
 
 # Run the link checker on the local site
 if [ "$1" = "external" ]; then
