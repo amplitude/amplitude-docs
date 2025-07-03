@@ -41,7 +41,7 @@ Amplitude supports two types of cohorts: **behavioral** and **predictive**. 
 
 Behavioral cohorts are perfect for engagement-based targeting when you want to reach users at specific stages of your user lifecycle: perhaps they added something to their cart but didn't purchase in the last 24 hours, for example, or they’ve recently activated a subscription.
 
-[**Predictive** cohorts](/docs/cdp/audiences/predictions-build) are clusters of users grouped together based on the actions Amplitude anticipates they may take in the future. Create a predictive cohort by segmenting users by their percentile likelihood: for example, whether they're in the top 10% likelihood to activate, or bottom 25% likelihood to churn. 
+[**Predictive** cohorts](/docs/data/audiences/predictions-build) are clusters of users grouped together based on the actions Amplitude anticipates they may take in the future. Create a predictive cohort by segmenting users by their percentile likelihood: for example, whether they're in the top 10% likelihood to activate, or bottom 25% likelihood to churn. 
 
 Use these cohorts for activation, retention, or engagement based marketing when you want to drive users to the next stage of a user lifecycle: this would include cohorts of users likely to subscribe next week, or users likely to watch a second show next week.
 
@@ -49,7 +49,7 @@ All customers on an Amplitude Growth or Enterprise plan have access to unlimited
 
 ### Computations
 
-[Computations](/docs/cdp/audiences/computations) work by transforming an event or event property into a computed user property. You can use the computed property as a configurable filter in any Amplitude chart for analysis, or as a personalization tool by syncing it to an external destination.
+[Computations](/docs/data/audiences/computations) work by transforming an event or event property into a computed user property. You can use the computed property as a configurable filter in any Amplitude chart for analysis, or as a personalization tool by syncing it to an external destination.
 
 For example, segmenting your users by the number of purchases they’ve made is possible with cohorts. However, you’d have to create a different cohort to correspond to each possible number of purchases. To streamline the process, you could use computations to create a new, computed property that stores this information as a single integer, for each user. Then segment your users based on their values for this property, taking one step to do what would have taken several before.
 
@@ -61,7 +61,7 @@ In Amplitude Activation, the insightful use of **predictions** and **recommendat
 
 ### Predictions
 
-When you [specify a predictive goal](/docs/cdp/audiences/predictions), like a user’s likelihood to subscribe or watch a second show, Recommend leverages all your historical behavioral data to predict future performance based on past performance. Every user has an individual probability to reach your specified goal in the next seven days, recalculated every hour.
+When you [specify a predictive goal](/docs/data/audiences/predictions), like a user’s likelihood to subscribe or watch a second show, Recommend leverages all your historical behavioral data to predict future performance based on past performance. Every user has an individual probability to reach your specified goal in the next seven days, recalculated every hour.
 
 Accuracy metrics and predicted-vs-actuals are always front-and-center. You can explore and build cohorts by percentile of user probability. And you can analyze which behaviors and user properties were most important to the prediction for distinguishing high vs low probability users.
 
@@ -71,7 +71,7 @@ Predictions are only available to Amplitude Activation customers.
 
 ### Recommendations
 
-Once you’ve identified a predictive goal for your users, the next step is making the [recommendations](/docs/cdp/audiences/recommendations) that are most likely to drive users to reach it. Once you’ve specified which event / event property combinations you’re interested in, Amplitude’s AutoML system figures out which items are most likely to maximize each user’s predictive goal, and then get those items in front of the user. The entire process takes minutes instead of weeks, with minimal to no code.
+Once you’ve identified a predictive goal for your users, the next step is making the [recommendations](/docs/data/audiences/recommendations) that are most likely to drive users to reach it. Once you’ve specified which event / event property combinations you’re interested in, Amplitude’s AutoML system figures out which items are most likely to maximize each user’s predictive goal, and then get those items in front of the user. The entire process takes minutes instead of weeks, with minimal to no code.
 
 Recommendations are only available to Amplitude Activation customers.
 
@@ -81,7 +81,7 @@ Amplitude Activation delivers data with manual or automated **syncs**, and with 
 
 ### Syncs
 
-When you [sync your cohorts to a destination](/docs/cdp/audiences/third-party-syncs), like Facebook or Braze, all the userIDs/emails/mobileIDs in your Amplitude cohort are exported to that destination.
+When you [sync your cohorts to a destination](/docs/data/audiences/third-party-syncs), like Facebook or Braze, all the userIDs/emails/mobileIDs in your Amplitude cohort are exported to that destination.
 
 Amplitude supports three types of syncs for cohorts, properties, computations and predictions: **on-demand**, **automated**, and **real-time**. On-demand syncs are ad-hoc, one-time syncs, useful for audience testing and one-off campaigns. Automated syncs happen on a daily or hourly cadence—so as your cohort audience membership changes, or the underlying predicted probabilities of the user change, Amplitude Activation automatically adjust their cohort membership in connected destinations as well. Real-time syncs update each minute and are ideal for interactive use cases where a rapid update is required. No more CSV downloads or manual syncs required—whenever your users take an action in your app, they’ll be automatically synced to your respective ad, email, or testing platform.
 

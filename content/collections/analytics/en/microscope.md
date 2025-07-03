@@ -22,7 +22,7 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 ## Before you begin
 
 * Microscope streams only highlight events selected in the chart's [Events Module](/docs/analytics/charts/build-charts-add-events) that occur during the date range selected.
-* *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](docs/analytics/account-level-reporting).
+* *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](/docs/analytics/account-level-reporting).
 * **Custom formula charts don't support Microscope.** If you use [custom formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) in Event Segmentation or Data Table charts, Microscope functionality isn't available for those data points.
 
 ## Use Microscope
