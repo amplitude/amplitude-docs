@@ -53,7 +53,7 @@ jobs:
             }
 
             // Determine reviewer based on calendar week
-            const currentWeek = getISOWeekNumber());
+            const currentWeek = getISOWeekNumber();
             const reviewerIndex = currentWeek % reviewers.length;
             const reviewer = reviewers[reviewerIndex];
 
