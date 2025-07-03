@@ -111,16 +111,17 @@ engagement.boot(options: BootOptions): Promise<void>
 | Parameter              | Type                           | Description                                                                                                                               |
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                   |
-| `options.integrations` | `Array<Integration>`           | Optional. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. |
+| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
 
 ```js
 await window.engagement.boot({
   user: {
     // Guides and Surveys requires at least one of user_id or device_id for user identification
-    user_id: 'USER_ID', //[tl! ~~:1]
+    user_id: 'USER_ID', 
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
