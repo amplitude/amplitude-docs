@@ -102,6 +102,17 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com');
 amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 ```
 
+{{partial:admonition type="warning" heading=""}}
+When using the SDK in an [Angular](https://angular.dev/) app with [Zone.js](https://angular.dev/api/core/NgZone), invoke `init` [outside of the Angular zone](https://angular.dev/api/core/NgZone#runOutsideAngular).
+
+```javascript
+runOutsideAngular(function () { amplitude.init(...args); })
+```
+
+The Angular zone overwrites certain DOM functions that, when invoked by [Amplitude autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture), causes some user interactions to break
+{{/partial:admonition}}
+
+
 ## Configure the SDK
 
 {{partial:collapse name="SDK configuration options"}}
