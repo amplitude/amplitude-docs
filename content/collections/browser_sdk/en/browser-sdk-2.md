@@ -906,13 +906,12 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 #### Metrics captured
 
-The web vitals autocapture feature captures the following Core Web Vitals metrics:
-
-- **INP (Interaction to Next Paint)**: Measures responsiveness by observing the latency of all interactions a user makes with the page
-- **LCP (Largest Contentful Paint)**: Measures loading performance by marking the time when the largest content element becomes visible
-- **FCP (First Contentful Paint)**: Measures loading performance by marking the time when the first content element becomes visible  
-- **CLS (Cumulative Layout Shift)**: Measures visual stability by quantifying unexpected layout shifts
-- **TTFB (Time to First Byte)**: Measures server response time by tracking the time between the request start and the first byte of the response
+The web vitals autocapture feature captures the following Core Web Vitals metrics
+- [INP](https://web.dev/articles/inp) 
+- [TTFB](https://web.dev/articles/ttfb)
+- [LCP](https://web.dev/articles/lcp)
+- [FCP](https://web.dev/articles/fcp)
+- [CLS](https://web.dev/articles/cls)
 
 #### Event properties
 
@@ -925,17 +924,12 @@ The `[Amplitude] Web Vitals` event includes the following properties:
 | `[Amplitude] Page Path` | The pathname of the current page |
 | `[Amplitude] Page Title` | The title of the current page |
 | `[Amplitude] Page URL` | The URL of the current page without query parameters |
-| `[Amplitude] LCP` | Largest Contentful Paint metric data (if available) |
-| `[Amplitude] FCP` | First Contentful Paint metric data (if available) |
-| `[Amplitude] INP` | Interaction to Next Paint metric data (if available) |
-| `[Amplitude] CLS` | Cumulative Layout Shift metric data (if available) |
-| `[Amplitude] TTFB` | Time to First Byte metric data (if available) |
+| `[Amplitude] LCP` | [Largest Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#lcpmetric) (if available) |
+| `[Amplitude] FCP` | [First Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#fcpmetric) (if available) |
+| `[Amplitude] INP` | [Interaction to Next Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#inpmetric) (if available) |
+| `[Amplitude] CLS` | [Cumulative Layout Shift](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#clsmetric) (if available) |
+| `[Amplitude] TTFB` | [Time to First Byte](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#ttfbmetric) (if available) |
 
-Each metric object contains performance data including the value, rating ("good", "needs-improvement", or "poor"), and timing information.
-
-{{partial:admonition type="note" heading="Web Vitals Plugin vs Autocapture"}}
-If you need more advanced configuration options for web vitals tracking, consider using the standalone [Web Vitals Plugin](/docs/sdks/analytics/browser/web-vitals-plugin) instead of the autocapture option.
-{{/partial:admonition}}
 
 ## Track an event
 
