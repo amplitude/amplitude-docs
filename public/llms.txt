@@ -1,0 +1,149 @@
+# Amplitude Documentation
+
+> Comprehensive documentation for Amplitude's digital analytics platform, including product analytics, experimentation, customer data platform (CDP), and developer resources. Learn how to instrument tracking, analyze user behavior, run experiments, and integrate with 180+ tools.
+
+## Getting Started
+Essential guides for new users to set up Amplitude and start tracking analytics
+- [Creating Your Account and Projects](/get-started/set-up-account/): Step-by-step guide to create your Amplitude account, set up organizations, and configure your first project
+- [Getting Data Into Amplitude](/get-started/get-data-in/): Learn how to send your first events using SDKs, APIs, or third-party integrations
+- [Selecting Your Events and Actions](/get-started/select-events/): Understand how to choose and structure events that align with your business goals
+- [Identifying Your Users](/get-started/identify-users/): Best practices for user identification, user properties, and identity resolution
+- [Creating Your First Chart](/get-started/first-chart/): Build your first event segmentation chart and explore basic analytics features
+- [Amplitude Quick Wins](/get-started/quick-wins/): Fast-track guide to get immediate value from Amplitude's core features
+
+## Core Analytics
+Amplitude's main analytics features for understanding user behavior and product usage
+- [Product Analytics Overview](/analytics/product-analytics/): Introduction to Amplitude's analytics capabilities, workflows, and key concepts
+- [Event Segmentation Charts](/analytics/charts/event-segmentation/event-segmentation-charts/): Analyze event volumes, active users, and property distributions over time
+- [Funnel Analysis](/analytics/charts/funnel-analysis/funnel-chart/): Track conversion rates and identify drop-off points in multi-step processes
+- [Retention Analysis](/analytics/charts/retention-analysis/retention-analysis/): Measure user retention and understand long-term engagement patterns
+- [User Journeys](/analytics/charts/journeys/): Visualize common paths users take through your product
+- [Cohorts](/analytics/cohorts/): Create and manage groups of users based on shared behaviors or properties
+- [Session Replay](/analytics/session-replay/): Watch recordings of user sessions to understand behavior and debug issues
+- [Ask Amplitude (AI)](/analytics/ask-amplitude/): Use natural language to query your data and generate insights automatically
+
+## Data Management
+Tools and best practices for organizing, governing, and maintaining data quality
+- [Data Planning Best Practices](/data/data-planning-playbook/): Framework for planning your analytics implementation and taxonomy
+- [Amplitude Data Overview](/data/amplitude-data/): Central hub for data governance, quality monitoring, and schema management
+- [Tracking Plans](/data/tracking-plans/): Create and enforce consistent event schemas across teams and platforms
+- [Schema Configuration](/data/define-and-edit-your-schema/): Define event and user properties, set data types, and manage your taxonomy
+- [Data Governance](/data/data-governance/): Control data access, manage privacy settings, and ensure compliance
+- [Transformations](/data/transformations/): Enrich, filter, and modify events in real-time before storage
+- [Autocapture](/data/autocapture/): Automatically collect user interactions without manual instrumentation
+- [AI Data Assistant](/data/ai-data-assistant/): Get AI-powered recommendations for data quality and tracking improvements
+
+## Developer Resources
+SDKs, APIs, and tools for developers to integrate Amplitude into their applications
+
+### SDKs - Analytics
+Client and server-side libraries for sending events to Amplitude
+- [Browser SDK Guide](/sdks/browser-2/): JavaScript/TypeScript SDK for web applications with autocapture and performance tracking
+- [iOS SDK (Swift)](/sdks/ios-swift/): Native Swift SDK for iOS apps with offline support and crash tracking
+- [Android SDK (Kotlin)](/sdks/android-kotlin/): Native Kotlin SDK for Android apps with lifecycle tracking
+- [React Native SDK](/sdks/typescript-react-native/): Cross-platform SDK for React Native applications
+- [Node.js SDK](/sdks/typescript-node/): Server-side SDK for Node.js applications and backend services
+- [Python SDK](/sdks/python/): Server-side SDK for Python applications and data pipelines
+- [Go SDK](/sdks/go/): High-performance server-side SDK for Go applications
+- [Java SDK](/sdks/java/): Server-side SDK for Java applications and microservices
+
+### SDKs - Experiment
+Libraries for implementing feature flags and A/B tests in your applications
+- [JavaScript Web SDK](/experiment/sdks/javascript-sdk/): Feature flagging and experimentation for web applications
+- [React Native SDK](/experiment/sdks/react-native-sdk/): A/B testing and feature flags for React Native apps
+- [Node.js SDK](/experiment/sdks/nodejs-sdk/): Server-side experimentation and feature management
+- [iOS SDK](/experiment/sdks/ios-sdk/): Native experimentation SDK for iOS applications
+- [Android SDK](/experiment/sdks/android-sdk/): Native experimentation SDK for Android applications
+
+### APIs
+RESTful endpoints for programmatic access to Amplitude's features and data
+- [HTTP API v2](/api/http-api-v2/): RESTful API for sending events, managing users, and querying data
+- [Batch Event Upload API](/api/events/): High-throughput endpoint for bulk event ingestion
+- [Export API](/api/export-api/): Export raw event data for custom analysis or warehouse loading
+- [User Profile API](/api/user-profile/): Query and update individual user profiles and properties
+- [Dashboard REST API](/api/dashboard-rest-api/): Programmatically manage charts, dashboards, and saved queries
+- [Behavioral Cohorts API](/api/behavioral-cohorts/): Create and manage cohorts via API
+- [Experiment Management API](/experiment/api/management-api/): Manage experiments, flags, and deployments programmatically
+- [Experiment Evaluation API](/experiment/api/evaluation-api/): Server-side flag evaluation and variant assignment
+
+### Development Tools
+CLI tools and utilities to streamline the development workflow
+- [Ampli (Type-Safe Code Generation)](/ampli/): Generate strongly-typed tracking code from your tracking plan
+- [Ampli CLI](/ampli/cli/): Command-line interface for Ampli workflow and CI/CD integration
+- [SDK Quickstart Guide](/sdks/sdk-quickstart/): Get started with any Amplitude SDK in under 5 minutes
+- [SDK Troubleshooting](/sdks/sdk-troubleshooting/): Common issues, debugging tips, and validation tools
+
+## Experimentation & Feature Flags
+A/B testing platform for running experiments and managing feature rollouts
+- [Experiment Overview](/experiment/experiment-on-amplitude/): Introduction to Amplitude's experimentation platform and capabilities
+- [Feature Flags](/experiment/feature-flags/): Implement feature toggles for gradual rollouts and instant rollbacks
+- [Running Your First Experiment](/experiment/guides/getting-started/create-a-flag/): Step-by-step guide to launch your first A/B test
+- [Experiment Analysis](/experiment/experiment-analysis/): Statistical methods, p-values, and confidence intervals explained
+- [Local vs Remote Evaluation](/experiment/local-remote-evaluation/): Choose between client-side and server-side flag evaluation
+- [Advanced Techniques](/experiment/advanced-techniques/): Multi-armed bandits, mutual exclusion, and targeting strategies
+
+## Integrations
+Connect Amplitude with your existing tools and data infrastructure
+
+### Popular Sources
+Import data from third-party platforms and data warehouses into Amplitude
+- [Segment](/source-catalog/segment/): Import events and user traits from Segment's customer data platform
+- [mParticle](/source-catalog/mparticle/): Stream mobile and web events from mParticle
+- [Google Tag Manager](/source-catalog/google-tag-manager/): Deploy Amplitude tracking through GTM containers
+- [Snowflake](/source-catalog/snowflake/): Import historical data and sync user properties from Snowflake
+- [Google BigQuery](/source-catalog/bigquery/): Load events and user data from BigQuery datasets
+- [Amazon S3](/source-catalog/amazon-s3/): Batch import events from S3 buckets using JSON or CSV
+- [Shopify](/source-catalog/shopify/): Track e-commerce events and customer behavior from Shopify stores
+
+### Popular Destinations
+Export cohorts and data from Amplitude to marketing and analytics tools
+- [Braze](/destination-catalog/braze/): Sync cohorts and user properties for targeted messaging campaigns
+- [Google Ads](/destination-catalog/google-ads/): Create custom audiences for retargeting and lookalike campaigns
+- [Facebook Ads](/destination-catalog/facebook-ads/): Export cohorts for Facebook and Instagram advertising
+- [HubSpot](/destination-catalog/hubspot/): Enrich CRM contacts with product usage data and behavioral cohorts
+- [Salesforce](/destination-catalog/salesforce/): Sync product analytics data to Sales Cloud and Marketing Cloud
+- [Slack](/destination-catalog/slack/): Send alerts and reports to Slack channels
+- [Snowflake](/destination-catalog/snowflake-cohort/): Export cohorts and aggregated data to Snowflake
+
+### CDP (Customer Data Platform)
+Unify customer data across all touchpoints and activate audiences
+- [CDP Overview](/cdp/overview/): Unify customer data across sources and activate audiences
+- [Sources Setup](/cdp/sources/): Configure data ingestion from websites, apps, and cloud services
+- [Destinations Setup](/cdp/destinations/): Send unified profiles and events to marketing and analytics tools
+- [Audiences](/audiences/): Build dynamic segments with predictive scores and recommendations
+
+## Warehouse Native
+Analyze data directly from your cloud data warehouse using Amplitude's interface
+- [Amplitude + Snowflake](/warehouse_native_amplitude/snowflake/): Query your Snowflake data directly in Amplitude charts
+- [Amplitude + BigQuery](/warehouse_native_amplitude/bigquery/): Analyze BigQuery data using Amplitude's UI and features
+- [Amplitude + Databricks](/warehouse_native_amplitude/databricks/): Connect Databricks lakehouse for unified analytics
+- [Amplitude + Redshift](/warehouse_native_amplitude/redshift/): Leverage Redshift data in Amplitude visualizations
+- [dbt Integration](/warehouse_native_amplitude/dbt/): Use dbt models as data sources for Amplitude analytics
+
+## Administration
+Manage users, security, permissions, and account settings
+- [User Management](/admin/account-management/user-mgmt/): Add team members, set roles, and manage permissions
+- [API Keys and Secrets](/admin/account-management/api-keys-and-secrets/): Generate and manage API credentials for different environments
+- [Single Sign-On (SSO)](/admin/single-sign-on/sso/): Configure SAML, OAuth, and enterprise authentication
+- [Data Security & Privacy](/admin/data-security-and-privacy/): Security certifications, encryption, and compliance features
+- [Account Settings](/admin/account-management/account-settings/): Configure organization preferences, billing, and data retention
+
+## Support Resources
+Help articles, troubleshooting guides, and educational content
+- [FAQ](/faq_and_troubleshooting/faq/): Answers to frequently asked questions about features and functionality
+- [Data Discrepancies](/faq_and_troubleshooting/data-discrepancies/): Understand and resolve common data inconsistency issues
+- [Troubleshooting Guide](/faq_and_troubleshooting/troubleshooting/): Debug tracking issues, API errors, and integration problems
+- [Amplitude Limits](/faq_and_troubleshooting/limits/): Rate limits, data volumes, and plan restrictions
+- [Amplitude Academy](/academy_content/): Free courses and certifications for analytics and experimentation
+
+## Optional
+Additional resources for specialized use cases and advanced features
+- [Marketing Analytics](/analytics/marketing-analytics/): Attribution modeling, campaign analysis, and marketing dashboards
+- [Guides & Surveys](/guides_and_surveys/): In-app messaging, onboarding flows, and user feedback collection
+- [Release Notes](/release-notes/): Latest feature updates, improvements, and deprecations
+- [Legacy SDKs](/sdks/legacy/): Documentation for deprecated SDK versions
+- [Migration Guides](/sdks/migration/): Upgrade paths between SDK versions and platforms
+- [Under the Hood (Technical Deep Dives)](/under-the-hood/): Architecture, algorithms, and performance optimizations
+- [Advanced Experiment Techniques](/advanced-techniques/): Statistical deep dives and complex experiment designs
+- [Partner Integrations Directory](/source-catalog/): Complete list of 180+ supported integrations
+- [API Changelog](/api/changelog/): Historical changes and version updates for all APIs
