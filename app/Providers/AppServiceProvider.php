@@ -9,6 +9,8 @@ use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 use App\Markdown\Copy\TorchlightWithCopyExtension;
+use Statamic\StaticSite\SSG;
+
 
 class AppServiceProvider extends ServiceProvider
 {
