@@ -1,54 +1,46 @@
 ## Amplitude CDP (Customer Data Platform)
 
-Amplitude CDP is a comprehensive customer data platform that enables organizations to collect, process, and activate customer data across multiple touchpoints. The platform serves as a central hub for data ingestion, transformation, and distribution to various downstream systems and applications.
+Amplitude CDP is a comprehensive customer data platform that enables organizations to collect, process, and activate customer data across multiple touchpoints. The platform serves as a central hub for data ingestion, transformation, and distribution to support personalized customer experiences and data-driven decision making.
 
 ## Product Architecture and Feature Relationships
 
 The Amplitude CDP consists of three core components that work together to create a complete data activation pipeline:
 
-**Sources** serve as the data ingestion layer, collecting customer behavioral data from various touchpoints and applications. This data forms the foundation for all downstream processing and activation.
+**Sources** serve as the data ingestion layer, collecting customer data from various touchpoints and channels. This data flows into the platform where it becomes available for segmentation and analysis.
 
-**Audiences** represents the segmentation and personalization engine, powered by Amplitude Activation's self-serve platform. This component transforms raw behavioral data into actionable customer segments through:
-- Behavioral and predictive cohorts based on user actions and patterns
-- Computations that generate computed user properties for enhanced segmentation
-- AutoML-powered predictions that calculate percentile likelihood scores for predictive goals
-- Recommendation engines for personalized content delivery
+**Audiences** represents the segmentation and personalization engine, powered by Amplitude Activation. This component transforms raw data into actionable customer segments through behavioral cohorts, predictive cohorts, and computations. The audience engine leverages AutoML capabilities to generate predictions and recommendations that enable 1:1 personalization.
 
-**Destinations** function as the data export and activation layer, enabling seamless integration with third-party platforms through a modal-based configuration workflow accessible via the Connections section.
+**Destinations** function as the data activation layer, enabling the export and synchronization of processed data and audience segments to third-party platforms and external systems for campaign execution and personalization delivery.
 
 ## Key Nomenclature and Definitions
 
-**Cohorts**: Segmented groups of users based on shared behavioral patterns or predictive characteristics
-- *Behavioral cohorts*: Segments based on historical user actions and engagement patterns
-- *Predictive cohorts*: Forward-looking segments created using machine learning models
+**Behavioral Cohorts**: Customer segments created based on observed user actions and engagement patterns within the platform.
 
-**Computations**: Calculated metrics that derive new user properties from existing behavioral data, enabling more sophisticated segmentation
+**Predictive Cohorts**: Forward-looking customer segments generated using machine learning models to identify users likely to perform specific actions or exhibit certain behaviors.
 
-**Predictions**: AutoML-generated models that assign percentile likelihood scores to users for achieving specific predictive goals
+**Computations**: Data processing operations that transform raw customer data into meaningful metrics and derived attributes.
 
-**Syncs**: Data delivery mechanisms that enable real-time or batch data transfer to external systems
-- *Real-time syncs*: Immediate data delivery for time-sensitive use cases
-- *Automated syncs*: Scheduled batch transfers for regular data updates
-- *On-demand syncs*: Manual data exports triggered by user action
+**Predictions**: AutoML-generated forecasts about customer behavior, enabling proactive personalization and targeting strategies.
 
-**UserID Export**: The process of extracting specific user identifiers for targeted campaigns or analysis
+**Cohort Syncs**: The mechanism for delivering audience segments to external platforms, available in three modes:
+- On-demand syncs for immediate data transfer
+- Automated syncs for scheduled regular updates  
+- Real-time syncs for continuous data streaming
 
-## Ecosystem Integration and APIs
+**Predictive Goals**: Specific business outcomes or user behaviors that the platform optimizes for when generating predictive cohorts and recommendations.
 
-The Amplitude CDP integrates into the broader Amplitude ecosystem through multiple API endpoints and data interfaces:
+## API and Integration Capabilities
 
-**Cohorts API**: Enables programmatic access to audience segments for external applications and marketing platforms
+The platform provides programmatic access through two primary APIs:
 
-**Profile API**: Provides real-time access to individual user profiles and computed properties
+**Cohorts API**: Enables external systems to retrieve audience segment definitions and membership data, facilitating integration with marketing automation and campaign management tools.
 
-The platform supports destination syncing to various third-party platforms through the Connections interface, allowing organizations to activate their segmented audiences across their entire marketing and product technology stack.
+**Profile API**: Provides access to individual customer profiles and attributes, supporting real-time personalization use cases and customer service applications.
 
-## Business Impact and Use Cases
+## Ecosystem Integration and Business Impact
 
-The platform is designed to deliver measurable business outcomes, with documented conversion lift improvements of 15-30% through 1:1 personalization capabilities. Primary use cases include:
-- Real-time audience segmentation for marketing campaigns
-- Predictive modeling for customer lifecycle optimization
-- Cross-platform data synchronization for unified customer experiences
-- Automated personalization based on behavioral patterns and predictions
+Amplitude CDP integrates seamlessly with the broader Amplitude ecosystem, leveraging the company's analytics foundation to power advanced segmentation and personalization capabilities. The platform is designed to deliver measurable business outcomes, with documented conversion lift improvements of 15-30% through its personalization features.
 
-The self-serve nature of the platform enables both technical and non-technical users to create sophisticated audience segments and activate them across multiple channels without requiring extensive engineering resources.
+The CDP serves as a bridge between data collection and activation, enabling organizations to move beyond basic analytics into actionable customer engagement. By combining behavioral analysis with predictive modeling, the platform supports both reactive segmentation based on past actions and proactive targeting based on predicted future behaviors.
+
+The destination sync capabilities ensure that insights and segments generated within Amplitude can be operationalized across the entire marketing and customer experience technology stack, creating a unified approach to customer data activation.

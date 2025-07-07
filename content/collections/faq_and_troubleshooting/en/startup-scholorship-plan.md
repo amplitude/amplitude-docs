@@ -29,7 +29,7 @@ To qualify, your company must meet the following criteria:
 {{partial:collapse name="What’s included in the Amplitude Startup Scholarship?"}}
 You’ll get 200,000 [MTUs](/docs/admin/billing-use/mtu-guide)—more than enough data to get you to product-market fit. You also get full access to features on our paid Growth plan, including Behavioral Cohorts, Pathfinder, advanced collaboration features, and more.
 
-Request access to add-ons like [Insights](/docs/analytics/account-level-reporting) and [Portfolio](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) by emailing [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
+Request access to add-ons like [Insights](/docs/analytics/account-level-reporting) and [Portfolio](/docs/data/cross-project-analysis) by emailing [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
 {{/partial:collapse}}
 
 

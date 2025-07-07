@@ -83,4 +83,4 @@ By default, Amplitude selects the primary metric in experiment results. You can 
 
 ## Group By
 
-There are more resources on group by in experiment [here](docs/analytics/charts/group-by) and [here](docs/feature-experiment/workflow/experiment-learnings).
+There are more resources on group by in experiment [here](/docs/analytics/charts/group-by) and [here](/docs/feature-experiment/workflow/experiment-learnings).

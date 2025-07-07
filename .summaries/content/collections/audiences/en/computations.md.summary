@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude Computations, a segmentation tool that transforms events or event properties into computed user properties for filtering and personalization, supporting three types: event count, aggregation, and first/last value properties that can be synced to external destinations like Braze and S3.
+**Summary:** This documentation covers Amplitude Computations, a US-region-only segmentation tool that transforms events or event properties into computed user properties (event count, aggregation, first/last value types) for chart filtering and external destination syncing for personalization campaigns.
 
 **Keywords:**
 - Amplitude Computations
@@ -6,13 +6,16 @@
 - event count computation
 - aggregation computation
 - first/last value computation
-- segmentation tool
-- personalization campaigns
-- external destination sync
-- Braze integration
-- Profile API sync
-- S3 sync
-- cohorts vs computations
 - US region only
-- event property transformation
-- user property filtering
+- segmentation tool
+- external destination syncing
+- personalization campaigns
+- Braze integration
+- Profile API
+- S3 sync
+- Event Segmentation charts
+- Funnel Analysis
+- Retention Analysis
+- composition charts
+- cohort filtering
+- user property transformation

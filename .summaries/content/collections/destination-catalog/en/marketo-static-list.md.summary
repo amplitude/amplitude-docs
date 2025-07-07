@@ -12,6 +12,6 @@
 - Read-write Assets permissions
 - API-only user
 - Launchpoint service
-- marketing automation
+- marketing automation integration
 - cohort size limit 3000000
-- case-sensitive email values
+- sync cadence configuration

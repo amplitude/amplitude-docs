@@ -1,19 +1,18 @@
-**Summary:**
-This documentation covers Amplitude's account-level reporting feature (Accounts add-on) that enables group-level analytics instead of individual user reporting, including group types, behavioral cohorts, Microscope integration, and dynamic group properties with Salesforce integration.
+**Summary:** This documentation covers Amplitude's account-level reporting feature using the Accounts add-on, which enables group-level analytics for aggregated units like accounts, order IDs, or charts instead of individual users, including group-level funnel analysis, behavioral cohorts, Microscope integration, and dynamic group properties.
 
 **Keywords:**
 - Amplitude Accounts add-on
 - group-level reporting
 - account-level analytics
 - event-level vs user-level groups
-- Segmentation Module group selection
-- group behavioral cohorts
-- Microscope account analysis
-- Group Identify API
+- group-level behavioral cohorts
+- group-level funnel analysis
+- Microscope with groups
 - dynamic group properties
-- Salesforce integration group properties
+- Group Identify API
+- Salesforce integration groups
 - User Look-up Account toggle
-- funnel analysis group conversion
-- Event Segmentation group charts
+- Segmentation Module groups dropdown
+- group property limit 1000
+- five group types per project
 - Plus Growth Enterprise plans
-- group types instrumentation limit

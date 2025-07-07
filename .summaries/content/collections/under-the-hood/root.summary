@@ -1,56 +1,66 @@
-Amplitude Experiment is a sophisticated A/B testing and feature flagging platform that combines advanced statistical methods with high-performance infrastructure to enable comprehensive experimentation capabilities. The platform serves as a critical component of the broader Amplitude analytics ecosystem, providing organizations with tools to run controlled experiments, manage feature flags, and analyze results using cutting-edge statistical techniques.
+Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that enables data-driven product decisions through controlled experimentation. The platform combines deterministic user assignment algorithms, sophisticated statistical analysis using mSPRT (Mixture Sequential Probability Ratio Test), and high-performance global infrastructure to deliver both remote and local evaluation capabilities for running experiments at scale.
 
-## Core Architecture and Evaluation Modes
+## Product Architecture and Feature Relationships
 
-The platform operates through two distinct evaluation paradigms: **remote evaluation** for server-side experiments and **local evaluation** for client-side implementations. This dual-mode architecture enables flexible deployment strategies while maintaining consistent user experiences across different application contexts.
+The platform operates on a multi-layered architecture with distinct evaluation modes and interconnected systems:
 
-The underlying randomization system employs deterministic assignment using the murmur3_x86_32 hash algorithm, processing a combination of bucketing salt and amplitude_id to ensure consistent user assignment across sessions. This two-stage process first determines experiment inclusion through mod 100 operations against percentage rollout, then assigns specific variants using floor division with weighted ranges (0-42949672).
+**Evaluation Infrastructure**: Amplitude Experiment supports both remote and local evaluation modes. Remote evaluation provides real-time flag resolution through API calls with global CDN caching, while local evaluation enables client-side caching and offline capabilities through specialized SDKs for Node.js, Go, and JVM environments. This dual approach allows teams to optimize for either real-time flexibility or performance depending on use case requirements.
 
-## Advanced Statistical Framework
+**User Assignment System**: The core assignment mechanism uses a deterministic randomization algorithm based on murmur3 hash of "bucketingSalt/amplitude_id". This system performs two-stage user assignment: first determining experiment inclusion via modulo 100 operations against percentage rollout thresholds, then executing variant assignment through floor division calculations with weighted ranges extending to 42949672, ensuring consistent user experiences across sessions while maintaining statistical randomization.
 
-A key differentiator is the implementation of **mixture sequential probability ratio test (mSPRT)** for statistical inference, enabling experiments to be terminated early without predetermined sample sizes while maintaining statistical validity. This approach contrasts with traditional T-test methodologies and supports both binary and continuous metrics through Central Limit Theorem applications.
+**Event Tracking Pipeline**: The platform automatically generates two distinct event types - assignment events triggered by `fetch()` or `evaluate()` method calls, and exposure events triggered when the `variant()` method is accessed. These events create experiment user properties following the format `[Experiment] <flag_key>` that flow into the broader analytics ecosystem for downstream analysis and segmentation.
 
-The sequential testing framework handles outliers appropriately and enables valid statistical inference at any viewing time, significantly improving experimentation efficiency compared to fixed-horizon testing approaches.
+**Flag Dependencies and Advanced Targeting**: The system supports sophisticated experiment design through flag dependencies that define evaluation order relationships, enabling flag prerequisites, mutual exclusion groups, and holdout groups with specific variant handling. Dynamic targeting capabilities leverage real-time user segmentation based on user properties and behavioral cohorts, though with important caching behavior considerations for performance optimization.
 
-## Infrastructure and Performance Optimization
+## Key Nomenclature and Definitions
 
-The platform leverages a globally distributed infrastructure built on **Fastly CDN** for edge caching and **AWS services** including Application Load Balancer (ALB), RDS, and DynamoDB. This architecture spans multiple geographic regions (us-west-2, eu-central-1) and supports identity resolution, user metadata storage, and behavioral cohorts processing with high availability.
+**Assignment Events**: Automatically tracked events generated when `fetch()` or `evaluate()` methods are invoked, indicating a user has been assigned to an experiment variant but not necessarily exposed to the treatment.
 
-Performance optimization occurs through multiple layers:
-- Client-side variant caching with automatic invalidation
-- Local defaults implementation for offline scenarios
-- CDN caching with 60-minute TTL
-- Sub-100ms latency for cached requests globally
-- Automatic cache invalidation upon deployment changes
+**Exposure Events**: Events triggered specifically when the `variant()` method is accessed, representing actual user exposure to experimental treatments. These utilize the `$exposure` event type and are critical for accurate experiment analysis.
 
-## Key Nomenclature and Operational Concepts
+**Bucketing Salt**: A unique identifier combined with amplitude_id in the murmur3 hash function to ensure deterministic but randomized user assignment across different experiments, preventing assignment correlation between unrelated tests.
 
-**Assignment Events** are automatically triggered by `fetch()` or `evaluate()` API calls, tracking when users are assigned to experiment variants, while **Exposure Events** are triggered by `variant()` method access, indicating actual feature interaction and user engagement.
+**mSPRT (Mixture Sequential Probability Ratio Test)**: The statistical methodology underlying experiment analysis that allows for early experiment termination without predetermined sample sizes while maintaining statistical validity, contrasting with traditional fixed-sample T-test approaches.
 
-**Flag Dependencies** define evaluation order relationships that enable sophisticated experimental designs including prerequisites, mutual exclusion groups, and holdout configurations. These dependencies support complex traffic allocation scenarios while maintaining deterministic assignment behavior.
+**Flag Dependencies**: Hierarchical relationships between flags that control evaluation order and enable complex experiment scenarios including prerequisites, mutual exclusion rules, and holdout group management.
 
-**Experiment User Properties** are stored in the format `[Experiment] <flag_key>` and enable downstream analysis and segmentation within the broader Amplitude platform ecosystem.
+**Dynamic Targeting**: Real-time user segmentation capabilities based on user properties and behavioral cohorts, with performance implications due to caching behavior that teams must consider in implementation.
 
-**Bucketing Salt** works in conjunction with amplitude_id to ensure deterministic hash-based user assignment, providing consistency across sessions and platforms.
+**Monthly Tracked Users (MTU)**: The billing model component where experiment exposure events contribute to Amplitude's usage calculations, managed through exposure tracking providers and insert_id deduplication to optimize event volume.
 
-## Analytics and Measurement Framework
+## Broader Product Ecosystem Integration
 
-The Experiment Analysis system processes multiple metric types including unique conversions, event totals, property value calculations, and funnel conversions. The calculation engine handles exposure events (E), metric events (M), event totals (T), property sums (S), and property averages (A) to generate comprehensive insights.
+Amplitude Experiment integrates deeply with Amplitude's analytics and data platform:
 
-Funnel analysis capabilities track chronological event progression using FM (funnel users) and FT (funnel totals) metrics, enabling complex conversion path analysis while maintaining user-level granularity for detailed behavioral understanding.
+**Analytics Integration**: Experiment events flow seamlessly into Amplitude Analytics, creating experiment user properties that enable comprehensive user journey analysis, segmentation, and cohort creation based on experimental participation and outcomes.
 
-## SDK Integration and API Endpoints
+**Behavioral Cohorts**: The platform leverages Amplitude's behavioral cohort computation system, which updates hourly, enabling sophisticated user targeting based on historical user actions and engagement patterns across the product ecosystem.
 
-The platform provides multiple SDK implementations including Node.js, Go, and JVM variants supporting both remote and local evaluation modes. Core API methods include:
+**Identity Resolution**: Built-in identity resolution capabilities manage user metadata and cross-device tracking, ensuring consistent experiment experiences as users interact across different platforms and sessions.
 
-- `fetch()` and `evaluate()` for variant assignment and user bucketing
-- `variant()` for accessing assigned variants and triggering exposure tracking
-- Automatic event tracking with configurable exposure tracking providers
+**Data Infrastructure**: Experiment data integrates with Amplitude's broader data infrastructure, enabling export to data warehouses, integration with business intelligence tools, and incorporation into broader product analytics workflows.
 
-Event deduplication is managed through insert_id mechanisms, and the system integrates with Monthly Tracked Users (MTU) billing models while efficiently managing event volume.
+## Infrastructure and Performance Architecture
 
-## Ecosystem Integration and Behavioral Targeting
+The platform operates on a globally distributed, high-availability infrastructure:
 
-Amplitude Experiment integrates deeply with the broader Amplitude analytics platform, utilizing behavioral cohorts computed hourly and supporting dynamic targeting based on user properties and historical behavior patterns. The platform handles complex dependency chains between flags and experiments while maintaining performance through intelligent caching strategies.
+**Content Delivery Network**: Fastly CDN provides global edge caching with 60-minute TTL for experiment configurations, ensuring low-latency access to experiment data worldwide with automatic cache invalidation on deployment changes.
 
-The system automatically assigns experiment user properties for downstream analysis within the Amplitude ecosystem, enabling sophisticated segmentation and behavioral analysis workflows. This integration supports both server-side and client-side experiment implementations while maintaining data consistency across the entire analytics pipeline.
+**Cloud Infrastructure**: Built on AWS services including Application Load Balancer (ALB) for traffic distribution, RDS for relational data storage, and DynamoDB for experiment configuration storage, with primary data centers in us-west-2 and eu-central-1.
+
+**Performance Characteristics**: Cache hit latencies typically achieve sub-100ms response times globally, while local evaluation SDKs provide sub-millisecond performance through client-side caching and local computation capabilities.
+
+## API Methods and Technical Implementation
+
+**Core SDK Methods**:
+- `fetch()`: Retrieves experiment assignments from remote servers and triggers assignment event tracking
+- `evaluate()`: Performs local evaluation using cached experiment configurations and triggers assignment events
+- `variant()`: Accesses assigned variant values and triggers exposure event tracking for analysis
+
+**Analysis Calculations**: The platform employs specific statistical formulas for experiment analysis:
+- Unique conversions calculated as count of users with both exposure and conversion metric events
+- Event totals computed as sum of metric events for users with exposure events
+- Property value analysis including sum and average calculations of metric event properties
+- Funnel conversion analysis using chronological event processing with FM (funnel users) and FT (funnel totals) metrics
+
+**Performance Optimization**: The system emphasizes performance through local defaults implementation, client-side variant caching, and network call optimization while maintaining statistical rigor through sequential testing methodologies that enable faster decision-making compared to traditional fixed-sample approaches.

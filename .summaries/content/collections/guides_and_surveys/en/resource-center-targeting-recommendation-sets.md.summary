@@ -1,12 +1,13 @@
-**Summary:** This documentation explains how to configure targeting for Resource Center recommendation sets in Amplitude, covering the precedence rules between content source targeting and recommendation set targeting, and the step-by-step process for setting up user segments and page-specific targeting.
+**Summary:** This documentation explains how to configure targeting for Resource Center recommendation sets in Amplitude, covering the precedence rules between content source targeting and recommendation set targeting, and the step-by-step process for setting up segment-based and page-specific targeting with priority levels.
 
 **Keywords:**
 - Resource Center recommendation sets
 - recommendation set targeting
 - content source targeting precedence
-- user segment targeting
-- page-specific targeting
-- priority level configuration
+- segment targeting
+- page targeting configuration
+- priority levels
+- targeted users segments
+- specific pages targeting
+- entry targeting
 - Amplitude targeting
-- resource entry setup
-- targeted users configuration

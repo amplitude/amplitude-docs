@@ -1,61 +1,47 @@
-## Product Overview
+## Amplitude Migration Documentation Suite
 
-Amplitude's Migration Documentation provides comprehensive guidance for transitioning from major analytics and customer data platforms to Amplitude's analytics and CDP (Customer Data Platform) ecosystem. The migration suite supports transitions from Adobe Analytics, Google Analytics (GA4), Mixpanel, mParticle, and Segment, offering both low-code automated solutions and complete implementation replacement strategies.
+This documentation collection provides comprehensive migration pathways from major analytics and customer data platforms to Amplitude's analytics and CDP ecosystem. The suite covers four primary migration scenarios: Adobe Analytics, Google Analytics (GA4), Mixpanel, and mParticle/Segment, each addressing distinct data model transformations and implementation strategies.
 
-## Product Relationships and Features
+## Product Relationships and Migration Architecture
 
-The migration documentation centers around two core Amplitude products:
+The migration documentation follows a consistent three-tier approach across all platforms:
 
-**Amplitude Analytics Platform**: The primary destination for analytics migrations, featuring an event-centric data model that contrasts with traditional page-view or session-based tracking. This platform includes specialized tools like the Ingestion Debugger, User Lookup validation, Event Explorer Chrome extension, and Component Manager for replicating analysis workflows.
+**Data Model Transformation Layer**: Each migration guide addresses fundamental differences between source platform data structures and Amplitude's event-centric schema. Adobe Analytics requires mapping from eVars/props/success events to Amplitude events, while Google Analytics GA4 transitions from gtag-based tracking to Amplitude's event model. Mixpanel migrations involve converting super properties to user properties, and Segment/mParticle migrations focus on CDP-to-CDP data pipeline transitions.
 
-**Amplitude CDP (Customer Data Platform)**: The target for customer data platform migrations, providing Sources and Destinations architecture that replaces traditional tag management and data routing systems. The CDP integrates with Amplitude's analytics while maintaining independent data flow capabilities.
+**Implementation Layer**: All guides provide SDK-specific implementation patterns covering Browser SDK 2.0, iOS Swift SDK, and Android Kotlin SDK with direct code mapping examples (e.g., `mixpanel.track()` to `amplitude.logEvent()`, `gtag()` to `amplitude.track()`). Tag management system integrations are addressed through Adobe Launch extensions, Google Tag Manager templates, and Tealium configurations.
 
-The migration paths utilize Amplitude's SDK ecosystem across multiple platforms:
-- Browser SDK 2.0 with specialized plugins (Google Analytics Event Forwarder)
-- iOS Swift SDK for native mobile implementations  
-- Android Kotlin SDK for Android applications
-- Server-side APIs including the Batch Event Upload API for historical data migration
+**Validation and Data Continuity Layer**: Each migration path includes validation tools (Ingestion Debugger, User Lookup, Event Explorer Chrome extension) and historical data backfill strategies using Batch Event Upload API and platform-specific export mechanisms.
 
 ## Key Nomenclature and Definitions
 
-**Data Model Transformation**: The migration process fundamentally shifts from platform-specific schemas to Amplitude's event-centric model. Adobe's eVars, props, and success events convert to Amplitude events and properties. Google Analytics' gtag events map to amplitude.track() calls. Mixpanel's mixpanel.track() becomes amplitude.logEvent().
+**Event-Centric Data Model**: Amplitude's core architectural principle where all user interactions are captured as discrete events with associated properties, contrasting with Adobe's variable-based model (eVars/props) and other platforms' mixed approaches.
 
-**User Identity Resolution**: Critical mapping concepts include device_id and user_id resolution, visitor ID mapping from Adobe, and user identification migration across platforms. The setUserId() method standardizes user tracking across migrated implementations.
+**Tracking Plan**: Amplitude's schema governance system that replaces Adobe's Solution Design Reference (SDR) and provides structured event taxonomy management across all migration scenarios.
 
-**Configuration Architecture**: 
-- **Sources and Destinations**: Amplitude CDP's data routing framework replacing traditional integrations
-- **Tracking Plans**: Amplitude's schema validation system for maintaining data quality
-- **Solution Design Reference (SDR)**: Documentation framework for mapping legacy analytics implementations
+**User Identification Mapping**: Critical process for maintaining user continuity across platforms, involving device_id and user_id resolution, Adobe visitor ID mapping, and CDP identity graph preservation.
 
-**Migration Methods**:
-- **Low-code Migration**: Automated forwarding solutions like the Google Analytics Event Forwarder plugin
-- **Complete Replacement**: Full SDK implementation with code-level changes
-- **Historical Backfill**: Batch data migration using Export APIs and Batch Event Upload API
+**Sources and Destinations**: Amplitude CDP terminology for data ingestion points (Sources) and data activation endpoints (Destinations), central to mParticle and Segment migration workflows.
 
-## Ecosystem Integration
+**API Key vs Platform-Specific Keys**: Authentication token mapping from source platforms (write_key for Segment, app_key for mParticle, Measurement ID for GA4) to Amplitude's api_key system.
 
-The migration documentation positions Amplitude as a comprehensive replacement for fragmented analytics and CDP ecosystems. The platform integrates with existing tag management systems (Adobe Launch, Tealium, Google Tag Manager) during transition periods while providing native alternatives through Amplitude's CDP.
+## Broader Product Ecosystem Integration
 
-Professional Services support complex enterprise migrations, particularly for historical data migration and GDPR compliance requirements. The ecosystem supports multi-environment deployment patterns with workspace and project mapping from legacy platforms.
+The migration suite positions Amplitude as a comprehensive analytics and CDP replacement capable of handling enterprise-scale data transitions. Integration touchpoints include:
 
-## Technical Implementation
+**Customer Data Platform (CDP) Capabilities**: Direct competition with Segment and mParticle through native source/destination management, supporting multi-environment deployment patterns and maintaining existing data activation workflows.
 
-**API Endpoints and Methods**:
-- `amplitude.track()` - Primary event tracking method replacing platform-specific calls
-- `amplitude.identify()` - User property management replacing mixpanel.register() and similar methods
-- `amplitude.logEvent()` - Event logging for mobile implementations
-- `groupIdentify()` - Group-level property management for B2B use cases
-- Batch Event Upload API - Historical data migration endpoint
+**Enterprise Analytics Replacement**: Positioning against Adobe Analytics through Component Manager tool integration, Analysis Workspace replication capabilities, and enterprise data warehouse connectivity via Adobe Data Feeds backfill processes.
 
-**Authentication and Configuration**:
-- API key management replacing write_key (Segment) and app_key configurations
-- Service account authentication for data export processes
-- Measurement ID tracking for Google Analytics transitions
+**Tag Management Ecosystem**: Native integrations with major tag management systems (Adobe Launch, Google Tag Manager, Tealium) enabling gradual migration strategies without complete implementation overhauls.
 
-**Validation Tools**:
-- Ingestion Debugger for real-time data validation
-- Event Explorer Chrome extension for implementation testing
-- User Lookup for identity resolution verification
-- Component Manager for analysis workflow migration
+## API Endpoints and Technical Implementation
 
-The migration suite includes specialized import tools (Mixpanel import tool) and supports BigQuery Import for GA4 data (beta), providing multiple pathways for data transition based on technical requirements and organizational constraints.
+**Batch Event Upload API**: Primary endpoint for historical data migration across all platforms, supporting bulk data transfer from Adobe Data Feeds, Mixpanel Export API, BigQuery exports, and CDP data exports.
+
+**Analytics HTTP v2 API**: Core ingestion endpoint for real-time event streaming, replacing platform-specific APIs (Adobe Analytics Data Insertion API, GA4 Measurement Protocol, Mixpanel HTTP API).
+
+**Mixpanel Import Tool**: Dedicated migration utility with service account authentication, GDPR compliance features, and Time to Live (TTL) configuration for automated historical data transfer.
+
+**Google Analytics Event Forwarder Plugin**: Low-code migration tool enabling parallel data collection during transition periods, automatically forwarding GA4 events to Amplitude without code modifications.
+
+The documentation suite emphasizes Professional Services support for complex enterprise migrations, multi-platform data validation processes, and comprehensive testing frameworks to ensure data integrity throughout migration processes.

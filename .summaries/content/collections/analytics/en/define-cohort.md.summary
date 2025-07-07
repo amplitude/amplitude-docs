@@ -10,14 +10,14 @@
 - historical count
 - count in interval
 - temporal parameters
-- during/since/within clauses
+- during since within
 - user property conditions
 - group-level cohorts
-- inclusion/exclusion conditions
-- and/or logical operators
-- stickiness analysis
+- inclusion exclusion conditions
+- and or clauses
 - cohort parameters
-- event frequency comparison
+- event frequency filtering
+- stickiness analysis
 - numerical property values
 - group types instrumentation
-- cohort detail page
+- Amplitude Analytics cohorts
