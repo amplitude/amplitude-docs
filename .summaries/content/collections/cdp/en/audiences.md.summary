@@ -6,17 +6,13 @@
 - behavioral cohorts
 - predictive cohorts
 - computations
-- computed user properties
 - predictions AutoML
 - recommendations
-- cohort syncs
-- real-time syncs
-- automated syncs
+- cohort syncs (on-demand, automated, real-time)
 - Cohorts API
 - Profile API
 - 1:1 personalization
-- conversion lift
+- conversion lift optimization
+- user segmentation
 - predictive goals
-- percentile likelihood
-- userID export
-- destination syncing
+- third-party destination syncs

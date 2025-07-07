@@ -1,20 +1,21 @@
-**Summary:** Documents Amplitude's Out-of-the-Box (OOTB) metrics feature that provides synced, consistent definitions for marketing analytics metrics like Visitors, Page Views, Bounce Rate, and session-based metrics using the `[Amplitude] Page Viewed` event, with editing capabilities through Data Tables and Event Segmentation charts.
+**Summary:** Documents Amplitude's Out-of-the-Box (OOTB) metrics feature that provides synced, consistent metric definitions across projects, including 8 marketing analytics metrics based on `[Amplitude] Page Viewed` events, with editing capabilities through Data Tables and Event Segmentation charts.
 
 **Keywords:**
 - Out-of-the-Box metrics (OOTB)
 - `[Amplitude] Page Viewed` event
-- marketing analytics metrics
+- Marketing analytics metrics
 - Visitors metric
 - Page Views metric
-- Bounce Rate
-- Entry Rate
-- Exit Rate
-- Page Views per Session
-- Session Entries
-- Session Exits
+- Bounce Rate metric
+- Entry Rate metric
+- Exit Rate metric
+- Page Views per Session metric
+- Session Entries metric
+- Session Exits metric
+- Data Table charts
 - Event Segmentation charts
-- Data Tables
-- synced metric definitions
-- metric editing workflow
+- Synced metric definitions
+- Cross-project metric consistency
 - Manager role permissions
-- cross-project consistency
+- Metric definition editing
+- Marketing Analytics settings

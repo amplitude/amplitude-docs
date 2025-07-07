@@ -1,22 +1,24 @@
 ## Summary
-This documentation explains how to create and manage behavioral cohorts in Amplitude, which are user groups defined by specific actions performed within a time period, including creation through the Cohorts tab or Microscope feature, importing from CSV files, and comparing cohorts using segmentation modules and interval cohorts.
+This documentation covers behavioral cohorts in Amplitude, which are user groups defined by specific actions taken within a time period, including creation methods through the Cohorts tab and Microscope feature, file imports, cohort comparisons, and management features like archiving and exporting.
 
 ## Keywords
 - behavioral cohorts (行動別コホート)
 - Amplitude cohorts
-- user segmentation
-- event-based filtering
-- Microscope cohort creation
-- CSV cohort import
+- Microscope feature
+- cohort creation
+- event-based user segmentation
+- CSV file import
+- cohort comparison
 - interval cohorts
 - inline behavioral cohorts
-- cohort comparison
-- segmentation module
-- user property clauses
 - group-level cohorts
-- cohort synchronization
-- cohort export
-- Enterprise Growth Scholarship plans
-- Amplitude Activation
 - cohort archiving
+- cohort export
+- user property clauses
+- segmentation module
+- cohort synchronization
+- Amplitude Activation
 - cohort ownership transfer
+- static cohorts
+- predictive cohorts
+- Enterprise Growth Scholarship plans

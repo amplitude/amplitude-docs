@@ -1,20 +1,20 @@
-**Summary:** This documentation covers the Session Replay iOS Plugin installation and configuration for iOS applications already instrumented with Amplitude iOS Swift SDK or legacy iOS SDK, including setup instructions, masking options, sampling configuration, and integration requirements.
+**Summary:** This documentation covers the Session Replay iOS Plugin installation and configuration for iOS applications already instrumented with Amplitude iOS Swift SDK or legacy iOS SDK, including setup via Swift Package Manager/CocoaPods, plugin initialization with AmplitudeSwiftSessionReplayPlugin, and configuration options like sampleRate and enableRemoteConfig.
 
 **Keywords:**
 - Session Replay iOS Plugin
 - AmplitudeSwiftSessionReplayPlugin
 - AmplitudeiOSSessionReplayMiddleware
 - iOS Swift SDK integration
-- view tree capture
-- sampleRate configuration
 - Swift Package Manager
-- CocoaPods installation
+- CocoaPods
+- sampleRate configuration
+- enableRemoteConfig
+- view tree capture
 - amplitude.add(plugin:)
 - amplitude.remove(plugin:)
-- enableRemoteConfig
+- iOS/iPadOS platform
+- session replay sampling
 - user opt-out
+- remote configuration
 - EU data residency
 - AmplitudeSessionReplay-iOS repository
-- iOS/iPadOS applications
-- session recording
-- replay collection disable

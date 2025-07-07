@@ -1,57 +1,62 @@
-Amplitude Activation is an AI-powered customer segmentation and personalization platform that transforms user behavioral data into actionable insights for targeted marketing campaigns. The platform leverages machine learning models to predict user behavior, create dynamic audience segments, generate personalized recommendations, and synchronize these insights to external marketing tools for campaign execution.
+## Amplitude Activation: AI-Powered Audience Segmentation and Personalization Platform
+
+Amplitude Activation is a comprehensive audience segmentation and personalization platform that leverages machine learning and AI to transform user behavior data into actionable insights for marketing campaigns and user engagement optimization. The platform operates primarily in the US region and focuses on predictive analytics rather than traditional historical behavior analysis.
 
 ## Core Product Architecture and Feature Relationships
 
-The platform operates through four interconnected modules that form a complete customer activation workflow:
+The platform consists of four interconnected modules that work together to create a complete audience intelligence workflow:
 
-**Computations** function as the foundational data transformation layer, converting raw events and event properties into computed user properties. These include event count computations (frequency tracking), aggregation computations (sum/average calculations), and first/last value computations (temporal property capture). These computed properties serve as inputs for other modules and enable basic segmentation capabilities.
+**Computations** serve as the foundational data transformation layer, converting raw events and event properties into computed user properties through three computation types: event count, aggregation, and first/last value computations. These computed properties feed into other platform modules and can be synced to external destinations for campaign activation.
 
-**Predictions** utilize transformer-based sequence models to analyze behavioral patterns and forecast future user actions. The system processes up to 128 events per user to generate predictive cohorts based on likelihood percentiles, creating probabilistic user segments that can be leveraged across the platform for targeting.
+**Predictions** utilize transformer-based sequence models to generate probabilistic scores for user likelihood to perform future actions. The prediction engine analyzes user activity sequences, event properties, and user properties to create predictive cohorts that can be used across the platform's other features.
 
-**Recommendations** employ AutoML clustering algorithms with hourly retraining cycles to generate personalized content suggestions and next-best actions. The system creates dynamic recommendations based on real-time user behavior patterns and can be accessed via the Profile API.
+**Recommendations** employ AutoML clustering algorithms to deliver personalized item suggestions through three recommendation types: Top Trending, Most Popular, and AI Based recommendations. The system supports assortment personalization, next-best action optimization, and cross-sell campaigns.
 
-**Third-Party Syncs** serve as the distribution mechanism, enabling real-time, automated, or on-demand synchronization of cohorts, properties, computations, and predictions to external marketing platforms through a comprehensive destination catalog.
+**Third-Party Syncs** provide the activation layer, enabling cohorts, properties, computations, and predictions to be synchronized with external marketing platforms through on-demand, automated, and real-time sync mechanisms.
 
 ## Key Nomenclature and Definitions
 
-**Cohorts**: Dynamic user segments based on behavioral patterns, predictions, or computed properties that can be synchronized to external destinations for campaign targeting.
+**Cohorts**: User segments defined by specific behavioral criteria or predictive characteristics that serve as the foundation for targeting and analysis.
 
-**Predictive Cohorts**: Machine learning-generated user segments based on likelihood percentiles to perform specific future actions, created using transformer-based sequence models.
+**Computed User Properties**: Transformed data points derived from events or event properties, categorized as event count computations (frequency-based), aggregation computations (sum/average calculations), or first/last value computations (temporal data points).
 
-**Outcome Events**: Target behaviors that the platform optimizes for, such as purchases, conversions, or engagement actions that serve as training targets for ML models.
+**Predictive Cohorts**: Machine learning-generated user segments based on probabilistic scoring of future behavior likelihood rather than historical patterns.
 
-**Exposure Events**: Trigger events indicating when a user has been exposed to a recommendation or campaign element, used for performance measurement and attribution.
+**Starting Cohort**: The initial user population used to train prediction models and define the scope of predictive analysis.
 
-**Feature Importance Rankings**: ML-generated scores indicating which events and user properties most strongly predict desired outcomes, providing interpretability for model decisions.
+**Outcome Events**: Target behaviors or actions that the platform optimizes for in predictions and recommendations.
 
-**Real-time Sync (RTS)**: Immediate synchronization capability for pushing audience updates to external platforms without delay.
+**Exposure Events**: User interactions that trigger recommendation delivery or prediction scoring.
 
-## Ecosystem Integration and Platform Connectivity
+**Feature Importance Rankings**: Model interpretability metrics that identify which events and user properties most significantly influence prediction accuracy.
 
-Amplitude Activation integrates with the broader Amplitude analytics ecosystem, leveraging behavioral data from Amplitude Analytics to power its AI models. The platform connects to external marketing tools through its destination catalog, supporting major platforms including:
+**AUC (Area Under Curve)**: Model performance metric measuring the prediction system's ability to distinguish between users who will and won't perform target actions.
 
-- **Customer Engagement Platforms**: Braze, Iterable for campaign execution and messaging
-- **Advertising Platforms**: Facebook Custom Audiences, Google Customer Lists for paid media targeting
-- **Data Infrastructure**: S3 for data export and analysis workflows
-- **Content Personalization**: Movable Ink for dynamic content delivery
+**Relative Lift**: Performance measurement comparing predictive cohort results against baseline or control group performance.
 
-The platform supports bidirectional sync capabilities, enabling campaign performance data to flow back into Amplitude for closed-loop optimization and lift measurement analysis.
+## Integration with Broader Product Ecosystem
+
+Amplitude Activation integrates deeply with the broader Amplitude analytics ecosystem, leveraging Event Segmentation charts, Funnel Analysis, and Retention Analysis for model training and performance validation. The platform requires a minimum of 100,000 Monthly Active Users (MAU) and supports user populations between 1,000 and 10 million users for optimal model performance.
+
+The system connects with major marketing platforms including Braze, Iterable, Facebook Custom Audiences, and Google Customer Lists through its sync infrastructure. Integration with Amplitude's core analytics platform enables seamless data flow from behavioral tracking to predictive modeling to campaign activation.
 
 ## API Endpoints and Technical Implementation
 
-**Profile API**: Primary REST endpoint for retrieving recommendations and user properties
-- Authentication via Secret Key authorization
-- Supports user_id and device_id parameter queries
-- Returns JSON responses with rec_id, is_control, and items fields for recommendation delivery
+**Profile API**: Primary endpoint for retrieving recommendations and user data
+- REST endpoint authentication using Secret Keys
+- Supports user_id and device_id query parameters
+- Returns JSON responses with rec_id, is_control, and items fields
+- Enables real-time personalization for connected content systems
 
-**Sync Management APIs**: Programmatic control over cohort and property synchronization
-- On-demand sync triggering capabilities
-- Automated sync scheduling configuration
-- CSV export functionality for sync history analysis and monitoring
+**Sync Management**: Automated workflows for cohort and property synchronization
+- CSV export capabilities for sync history analysis
+- User identifier mapping with amplitude_id resolution
+- Incremental change tracking for real-time sync (RTS) operations
+- Error handling for unresolved mapping and partner rejection scenarios
 
-**Event Tracking Integration**: Measurement endpoints for recommendation performance
-- [Recs] Recommendation Event tracking for outcome measurement
-- UTM parameter support for campaign attribution analysis
-- Funnel conversion analysis with statistical significance testing
+**Event Tracking**: Integration points for outcome and exposure event measurement
+- [Recs] Recommendation Event for tracking recommendation performance
+- UTM parameter tracking for campaign attribution
+- Statistical significance testing for A/B test validation
 
-The platform operates with specific technical constraints including US region availability for computations, monthly active user thresholds for predictions activation, and hourly retraining cycles for recommendations optimization. Performance benchmarks typically demonstrate 5-20% lift over traditional behavioral cohorts through AI-powered audience segmentation and personalization capabilities.
+The platform emphasizes workflow optimization across communication frequency targeting, dynamic pricing strategies, and content personalization campaigns, with built-in control group management and lift measurement capabilities for campaign performance analysis.

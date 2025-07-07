@@ -1,21 +1,22 @@
-**Summary:** Amplitude's Microscope feature enables detailed inspection of chart data points by hovering/clicking to access options like creating cohorts, viewing user streams, showing user paths, session replays, and conversion driver analysis, with limitations including no support for custom formula charts and 30-day maximum for user paths.
+**Summary:** Amplitude's Microscope feature enables detailed inspection of chart data points by hovering/clicking to access options like View User Streams, Show User Paths, cohort creation, session replay integration, and conversion driver analysis for funnel charts.
 
 **Keywords:**
 - Microscope feature
 - data point inspection
-- user streams analysis
-- user paths visualization
+- View User Streams
+- Show User Paths
+- Pathfinder Users report
 - cohort creation from data points
 - session replay integration
-- conversion drivers exploration
-- Pathfinder Users report
+- conversion drivers analysis
 - funnel drop-off analysis
 - Event Segmentation charts
+- Funnel Analysis charts
+- Journeys charts
 - custom formula charts limitation
 - account-level reporting groups
-- feature flag user targeting
-- Journeys chart creation
-- 30-day date range restriction
+- user activity streams
+- zoom in granularity
+- guide and survey targeting
 - CSV user download
-- group_id and group_name properties
-- Autocapture events with sparkle icons
+- 30-day date range limit

@@ -24,10 +24,6 @@ To export all values of an event and its event properties, you can use Amplitude
 
 If your data exceeds the size limitation of the Export API, consider using the self-service Amazon S3 Export option (described below) instead.
 
-## Query Add-on: Amplitude SQL / Snowflake ETL
-
-With the [Query](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) add-on, you can perform SQL-like queries in an Amplitude-maintained Snowflake instance. For customers who have an existing relationship with Snowflake, Amplitude can also share data from an Amplitude-managed Snowflake account to a customer-managed Snowflake account. This add-on is only available for Growth and Enterprise accounts, and would require an additional purchase on top of a paid plan.
-
 ## Amazon S3 Export
 
 You can integrate Amplitude with Amazon S3 to export your event data to an Amazon S3 bucket This integration is available in all accounts, including accounts with free plans. Learn more about [Amazon S3 Export](/docs/data/destination-catalog/amazon-s3).
