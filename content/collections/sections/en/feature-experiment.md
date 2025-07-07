@@ -7,7 +7,7 @@ updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1729024562
 nav_title: experiment
 template: landing-page-experiment
-current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow
+current-collection: experiment|advanced-techniques|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow|experiment-integrations|experiment-troubleshooting|under-the-hood|workflow
 exclude_from_sitemap: false
 hide_helpful: true
 landing_page_content:
