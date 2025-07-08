@@ -2,96 +2,76 @@
 
 Amplitude Session Replay is a comprehensive user behavior analytics solution that captures and reconstructs user interactions across web, mobile (iOS/Android), and React Native applications. The product provides visual insights through session recordings, heatmaps, and behavioral analytics while maintaining robust privacy controls and compliance features.
 
-## Product Architecture and Integration Patterns
+## Product Architecture and Integration Ecosystem
 
-Session Replay operates through multiple integration patterns designed to accommodate different analytics architectures:
+Session Replay operates through multiple SDK implementations designed to integrate with existing analytics infrastructures:
 
-**Native Amplitude Integrations:**
-- **Browser SDK Plugin** (`@amplitude/plugin-session-replay-browser`) for sites using Amplitude Browser SDK 2
-- **iOS Plugin** (`AmplitudeSwiftSessionReplayPlugin`) for iOS Swift SDK integration
-- **Android Plugin** (`SessionReplayPlugin`) for Android-Kotlin SDK integration
-- **React Native Plugin** (`@amplitude/plugin-session-replay-react-native`) for React Native applications
+**Core SDK Types:**
+- **Plugin Architecture**: Integrates with existing Amplitude SDKs (Browser SDK 2, iOS Swift SDK, Android-Kotlin SDK)
+- **Middleware Integration**: Works with maintenance/legacy Amplitude SDKs (iOS SDK 8.21.0+, Android SDK 2.40.1+)
+- **Standalone SDKs**: Independent implementations for third-party analytics providers
+- **Third-Party Wrappers**: Specialized integrations for Segment, Rudderstack, and Google Tag Manager
 
-**Middleware Implementations:**
-- **iOS Middleware** (`AmplitudeiOSSessionReplayMiddleware`) for maintenance iOS SDK (8.21.0+)
-- **Android Middleware** (`SessionReplayMiddleware`) for maintenance Android SDK (2.40.1+)
+**Platform Coverage:**
+- Web browsers via `@amplitude/plugin-session-replay-browser` and standalone SDK
+- iOS/iPadOS through Swift plugins and middleware
+- Android via plugins and middleware
+- React Native with `@amplitude/plugin-session-replay-react-native`
+- Google Tag Manager through GTM Web Template
+- Segment integration via Actions, Classic Device-mode, and Cloud-mode destinations
 
-**Standalone SDKs:**
-- **Browser Standalone SDK** (`@amplitude/session-replay-browser`) for non-Amplitude analytics providers
-- **iOS Standalone SDK** for third-party analytics integration
-- **Android Standalone SDK** for external analytics platforms
+## Key Features and Capabilities
 
-**Third-Party Analytics Integrations:**
-- **Segment Integration** supporting Amplitude Actions, Classic Device-mode, and Cloud-mode destinations
-- **Rudderstack Integration** with Cloud-mode configuration
-- **Google Tag Manager (GTM)** implementation via GTM Web Template
+**Session Recording**: Captures DOM interactions, view tree changes (mobile), and user behaviors through diff-based replay construction. Web implementations use DOM capture with shadow DOM support, while mobile platforms employ view tree capture and diffing.
 
-## Core Features and Capabilities
+**Heatmaps**: Provides click maps, selector maps, and scroll maps for web-based applications, requiring Browser SDK Plugin 1.7.0+ or Standalone SDK 1.14.0+. Available exclusively for Growth/Enterprise plans with viewport scroll depth and behavioral cohort analysis.
 
-**Session Recording:**
-Session Replay captures DOM interactions through view tree capture and diff-based reconstruction, storing data in IndexedDB with configurable compression. The system tracks user interactions, form inputs, clicks, and navigation patterns while maintaining session continuity across page loads.
+**Privacy and Masking**: Implements three masking levels (Conservative, Light, Medium) with CSS selector-based overrides. Features include PII masking, form field masking, and the `AmpMaskView` component for React Native. Web implementations support `.amp-block` class exclusion and data attribute selectors.
 
-**Heatmaps:**
-Available for Growth/Enterprise plans, Heatmaps provide visual engagement analytics through:
-- **Click Maps** showing interaction hotspots
-- **Selector Maps** displaying element-specific engagement
-- **Scroll Maps** revealing viewport scroll depth and average page fold metrics
-
-**Privacy and Masking:**
-The system implements three masking levels:
-- **Conservative**: Maximum data protection with extensive PII masking
-- **Light**: Minimal masking for basic privacy compliance
-- **Medium**: Balanced approach between insights and privacy
-
-Custom masking supports CSS selector-based overrides, `AmpMaskView` components for React Native, and `.amp-block` class exclusions.
+**User-Generated Content Filtering**: The `ugcFilterRules` feature uses glob patterns within `interactionConfig` to sanitize sensitive content in URLs during recording, with selector/replacement pattern matching for anonymizing user IDs and sensitive parameters.
 
 ## Key Nomenclature and Technical Concepts
 
-**Session Management:**
-- **Session ID**: Unique identifier linking replay data to analytics sessions
-- **Device ID**: Cross-session user identifier for behavioral continuity
-- **Sample Rate**: Percentage-based recording frequency control (0.0-1.0)
+**Session Management**: 
+- `sessionId` and `deviceId` synchronization across analytics providers
+- `analytics_session_id` cookie for Segment integration
+- Manual session management for standalone implementations
+- `getSessionReplayProperties()` method for event property injection
 
-**Configuration Parameters:**
-- **`sampleRate`**: Controls recording frequency to manage data volume and costs
-- **`enableRemoteConfig`**: Enables server-side configuration management
-- **`serverZone`**: Supports EU data residency requirements
-- **`optOut`**: User consent and privacy control mechanism
-- **`forceSessionTracking`**: Ensures session continuity for replay correlation
+**Configuration Parameters**:
+- `sampleRate`: Controls recording frequency and performance impact
+- `privacyConfig`/`maskLevel`: Defines data masking strictness
+- `enableRemoteConfig`: Enables server-side configuration management
+- `serverZone`: Supports EU data residency requirements
+- `optOut`: Provides user consent controls
 
-**Privacy Controls:**
-- **`privacyConfig`**: Comprehensive masking configuration object
-- **`maskLevel`**: Predefined privacy protection levels
-- **`ugcFilterRules`**: Glob pattern-based URL sanitization for user-generated content
-- **Consent Management Platform (CMP)**: Integration for GDPR and privacy regulation compliance
+**Storage and Performance**:
+- IndexedDB storage (`storeType`) for web implementations
+- `requestIdleCallback` performance optimization
+- Webworker compression for efficient data processing
+- `shouldInlineStylesheet` for CSS asset handling
 
-**Data Processing:**
-- **DOM Capture**: Real-time document structure recording
-- **Diff Processing**: Incremental change detection for efficient storage
-- **IndexedDB Storage**: Client-side data persistence before transmission
-- **WebWorker Processing**: Experimental background processing for performance optimization
+## API Endpoints and Methods
 
-## Ecosystem Integration and Data Flow
+**Core SDK Methods**:
+- `amplitude.add(plugin)` / `amplitude.remove(plugin)` for plugin management
+- `sessionReplay.init()`, `setSessionId()`, `setDeviceId()` for standalone implementations
+- `start()` / `stop()` recording controls
+- `flush()` for manual data transmission
+- `addEventMiddleware()` / `removeEventMiddleware()` for middleware management
 
-Session Replay integrates with Amplitude's broader analytics ecosystem through standardized event properties and session correlation:
+**Integration-Specific APIs**:
+- `createSegmentActionsPlugin()` for Segment wrapper
+- `AmplitudeSegmentSessionReplayPlugin` for iOS Segment integration
+- `SessionReplayMiddleware` for Android middleware
+- GTM Web Template configuration through Google Tag Manager interface
 
-**Event Correlation:**
-All recorded sessions inject `[Amplitude] Session Replay ID` properties into analytics events, enabling correlation between quantitative metrics and qualitative replay data. The `getSessionReplayProperties()` method provides programmatic access to replay metadata for custom event tagging.
+## Monitoring and Compliance
 
-**Monitoring and Debugging:**
-The **Session Replay Ingestion Monitor** tracks ingestion health through HTTP status monitoring:
-- **Status 200**: Successful replay data ingestion
-- **Status 429**: Rate limiting and throttling alerts
-- **Status 402**: Quota exceeded notifications
-- **Invalid Session IDs**: Implementation debugging assistance
+**Ingestion Monitor**: Tracks session replay ingestion status with HTTP status code monitoring (200, 429, 402) and invalid session ID detection for implementation debugging.
 
-**Data Residency and Compliance:**
-EU data residency support through `serverZone` configuration ensures GDPR compliance, while DSAR (Data Subject Access Request) API integration provides user data deletion capabilities. The system supports comprehensive consent management through CMP integration and cookie banner controls.
+**Privacy Compliance**: Comprehensive consent management with Cookie Management Platform (CMP) integration, GDPR compliance features, privacy policy disclosure templates, and DSAR API support for data subject access requests.
 
-**API Integration Points:**
-- **`amplitude.add(plugin)`** and **`amplitude.remove(plugin)`**: Plugin lifecycle management
-- **`sessionReplay.start()`** and **`sessionReplay.stop()`**: Programmatic recording control
-- **`setSessionId()`** and **`setDeviceId()`**: Manual session correlation for standalone implementations
-- **`flush()`**: Immediate data transmission for critical session boundaries
+**Remote Configuration**: Server-side control over sampling rates, masking levels, and feature enablement with precedence rules for SDK vs UI conflict resolution.
 
-The product architecture supports both automatic session tracking through native SDK integration and manual session management for complex analytics environments, providing flexibility while maintaining data integrity and user privacy compliance.
+The product integrates seamlessly with Amplitude's broader analytics ecosystem while providing flexibility for organizations using third-party analytics providers through standalone SDKs and wrapper implementations.
