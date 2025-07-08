@@ -126,7 +126,7 @@ Clicking on an account takes you to that account’s page, where you can view th
 Find the account’s most recent properties in the top panel. Set the account's properties with one of the following:
 
 - the [Group Identify API](/docs/apis/analytics/group-identify)
-- the [Salesforce integration](/docs/data/source-catalog/salesforce)
+- the [Salesforce integration](/docs/data/source-catalog/salesforce-group)
 - Event Segmentation to create dynamic properties. 
 
 Use these properties to describe the account as whole (for example, `30 day active users`, `account manager`, `plan type`, or `renewal date`)

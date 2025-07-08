@@ -41,6 +41,7 @@ Recommended role for third parties, if you don't want them creating content that
 * Set custom [monitors](/docs/analytics/insights) and subscribe to them
 * Share content they create with others
 * View Guides and Surveys
+* Create and view [Heatmaps](/docs/session-replay/heatmaps)
 
 Viewers:
 * Can't create anything that's discoverable, including saved segments

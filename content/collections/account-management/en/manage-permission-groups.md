@@ -13,9 +13,9 @@ ai_summary: 'With permission groups in Amplitude, you can assign multiple users 
 ---
 With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization. 
 
-For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. Anyone assigned to a group will have the permission level you assigned to the group. Users can be assigned to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
+For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. Anyone assigned to a group receives the permission level you assigned to the group. Users can be assigned to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
 
-Amplitude will grant the highest level of permissions assigned to a user. If a user is assigned to a group, they will inherit its project permissions. If a user has their own set of project permissions, their new set of permissions will be a combination of the two, with projects taking on the highest role.
+Amplitude will grant the highest level of permissions assigned to a user. If a user is assigned to a group, they inherit its project permissions. If a user has their own set of project permissions, their new set of permissions are a combination of the two, with projects taking on the highest role.
 
 ### Feature availability
 

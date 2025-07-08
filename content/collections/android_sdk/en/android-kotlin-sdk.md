@@ -21,6 +21,10 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
+## System requirements
+
+The Android Kotlin SDK supports Android API level 21 (Android 5.0 Lollipop) and higher.
+
 ## Install the SDK
 
 Amplitude recommends using Android Studio as an IDE and Gradle to manage dependencies.
@@ -274,6 +278,7 @@ val amplitude = Amplitude(
         +appLifecycles		  // or `+AutocaptureOption.APP_LIFECYCLES`
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
+        +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
     }
   )
 )
@@ -481,17 +486,12 @@ After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Ope
 
 Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
 
-{{partial:admonition type="note" heading=""}}
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
-{{/partial:admonition}}
-
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
-  @OptIn(ExperimentalAmplitudeFeature::class)
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
@@ -501,7 +501,6 @@ val amplitude = Amplitude(
   )
 )
 ```
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is marked as `@ExperimentalAmplitudeFeature`. To enable this feature, apply the `@OptIn(ExperimentalAmplitudeFeature::class)` annotation to the configuration.
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
@@ -523,7 +522,7 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 | `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
 | `[Amplitude] Target Class` | The canonical name of the target view class. |
 | `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
-| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. This property is optional for Compose elements. |
 | `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
 | `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
 | `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
@@ -532,7 +531,35 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 {{/partial:collapse}}
 
 {{partial:admonition type="info" heading="Support for Jetpack Compose"}}
-Amplitude supports tracking user interactions with UI elements implemented in Jetpack Compose. To track interactions, add a `Modifier.testTag` to the `@Composable` functions of the elements that you want to track.
+Amplitude tracks user interactions with all clickable UI elements implemented in Jetpack Compose. `Modifier.testTag` is optional. Add it to `@Composable` functions to provide additional identification in the `[Amplitude] Target Tag` property. If no `testTag` is provided, Amplitude tracks the element with other available properties.
+
+#### Use testTag for better element identification
+
+While `testTag` is optional, Amplitude recommends that you identify specific Compose views that users clicked. The `testTag` property provides several benefits:
+
+- **Precise Element Identification**: Helps distinguish between similar UI elements (like multiple buttons or cards) in your analytics data.
+- **Stable Tracking**: Provides a consistent identifier that doesn't change when you update or modify the UI structure or styling.
+- **Easier Analysis**: Enables easier filtering and analysis of interactions with specific elements in Amplitude charts.
+- **Cross-Platform Consistency**: Helps you to maintain consistent element naming across different platforms.
+
+```kotlin
+// Example: Adding testTag for better identification
+Button(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("login_button")
+) {
+    Text("Log In")
+}
+
+Card(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("product_card_${product.id}")
+) {
+    // Card content
+}
+```
+
+When a user clicks these elements, the `[Amplitude] Target Tag` property contains the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
 {{/partial:admonition}}
 
 ## User groups

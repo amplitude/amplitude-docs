@@ -24,6 +24,7 @@ Cohorts created from within Microscope will be static under the following scenar
 * Composition with cross property values
 * Retention if you have multiple returning events
 * Usage interval view in retention
+* Retention with calendar alignment for charts of weekly or higher intervals
 * Funnels with exclusion events
 * Funnels that hold a property constant
 * Funnels with Combine Events Inline

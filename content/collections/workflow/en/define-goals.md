@@ -10,7 +10,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ai_summary: 'You tell Amplitude Experiment what metric you want to track in the Goals section. Your recommendation metric decides if your experiment is a success. Choose a metric that reflects the user behavior you aim to affect. Avoid defaulting to revenue metrics. You can set multiple metrics for an experiment, including non-recommended ones. Use the Enable Recommendation option for recommendations. Define your metrics in the experiment panel. Create custom metrics if needed. Choose the exposure event to track user interactions accurately. Use the Amplitude exposure event for reliable data. Follow these steps to set up metrics for your experiment.'
 ---
-An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **recommendation metric** to be, as well as define any **secondary metrics**. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
+An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
 There’s a lot riding on your recommendation metric, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/docs/feature-experiment/workflow/add-variants) improve dramatically:
 
@@ -45,7 +45,7 @@ If you don’t want to use any of the metrics in the drop-down list, you can cre
 3. Click *Select event …* to choose the metric event, which is the event that best represents that metric. Then click *Create*.
 
 {{partial:admonition type='note'}}
-By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
+By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments, for up to two months.
 {{/partial:admonition}}
 
 ## Define the exposure event

@@ -13,7 +13,7 @@ academy_course:
   - 3161a9ef-14ce-41e6-80d1-9d13e5017d86
 ai_summary: "In Amplitude, cohorts group users based on shared traits. There are predictive and behavioral cohorts. Behavioral cohorts organize users by actions within a time frame. They help analyze user engagement and its impact on business goals. Available on Plus plans, they let you segment data in Amplitude charts for insights. By selecting 'Cohort' in the Segmentation Module, you can choose and analyze cohorts. With the Accounts add-on, you can use group-level cohorts. To start, define a new cohort."
 ---
-In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/cdp/audiences/predictions) and **behavioral cohorts**. 
+In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/data/audiences/predictions) and **behavioral cohorts**. 
 
 ### Feature availability
 

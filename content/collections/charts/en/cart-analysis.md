@@ -59,8 +59,8 @@ Here's a brief overview of the more important ideas that make cart analysis work
 * **Sibling property**: These are two or more child properties tied to the same parent event or user property. In the example above, `sku` and `price` are sibling properties.
 * **Property splitting**: This is the processing method Amplitude uses to split out nested child properties from parent properties in your data, after ingestion has occurred. The property splitting process preserves the parent properties.  
   
-{{partial:admonition type='note'}}
-Child properties count toward your property volume counts.
+{{partial:admonition type='note' heading="Child property limits"}}
+Child properties count toward your Event Property limit of 2000.
 {{/partial:admonition}}
 
 For advanced cart analysis operations on arrays of data, you can also use [parallel operators in derived properties](/docs/data/derived-properties#parallel-operators). These operators allow you to perform calculations like sums, products, and comparisons across sibling properties within the same parent array.

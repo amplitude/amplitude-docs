@@ -32,7 +32,7 @@ Each segment can filter by property or cohort, and can have multiple filters. Fo
 When you add more than one segment to your targeting, Amplitude `OR`s each segment. This means that if a user belongs to *any* segment, Amplitude shows them the guide or survey.
 {{/partial:admonition}}
 
-### Send a link to a guide
+### Send a link to a guide {.tag .web}
 
 Send users a link to your guide to target them more directly. From the guide builder, expand the menu next to the Save button, and click Share link.
 
@@ -61,10 +61,11 @@ Amplitude provides the following options to trigger an experience.
 | None                 | The experience doesn't appear by default. Select this option if you use the SDK to launch the experience, the CTA in another guide or survey to launch, or any other method of external trigger. |
 | Immediately          | The experience appears as soon as the page loads.                                                                                                                                                |
 | When element appears | Launches the experience when a specified element appears on screen. Enter a CSS Selector or XPath path expression, or click *Test and Preview* to launch the visual selector.                    |
+| When element clicked | Launches the experience when a the user interacts with the specified element. Enter a CSS Selector or XPath path expression, or click *Test and Preview* to launch the visual selector.                    |
 | After time on page   | Specify a delay (in minutes or seconds) that a user must spend on the page before they see the experience.                                                                                       |
-| Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
-| Rage click           | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
-| User confusion       | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
+| Smart delay <br/> {.tag .web .zero}         | Show the experience after the user completes their current task.                                                                                                                                 |
+| Rage click <br/> {.tag .web .zero}           | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
+| User confusion <br/> {.tag .web .zero}      | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
 | On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.                                                                                                                           |
 
 ### Where
@@ -121,7 +122,7 @@ Access guide settings with the gear icon at the top of the builder.
 | Setting           | Description                                                                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Dismissable       | Gives users an option to dismiss the guide.                                                                                          |
-| Snoozable         | Allow the user to snooze the guide for the specified duration.                                                                       |
+| Snoozable <br/> {.tag .web .zero}         | Allow the user to snooze the guide for the specified duration.                                                                       |
 | Label             | The snooze button’s text.                                                                                                            |
 | Duration          | How long the snooze lasts. The guide doesn't re-appear for the user until at least that much time has passed.                        |
 | Show on all steps | If disabled, the guide’s first step is the only step with a snooze option.                                                           |
