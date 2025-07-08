@@ -1,47 +1,60 @@
 ## Amplitude Experiment Results
 
-Amplitude Experiment Results is an analytics feature designed for customers using non-Amplitude feature flagging platforms who want to leverage Amplitude's advanced statistical analysis capabilities for A/B test evaluation. The product enables comprehensive experiment analysis through Amplitude's interface by connecting external feature flag data with Amplitude's event tracking and statistical modeling.
+Amplitude Experiment Results is an analytics feature that enables Analytics customers using external feature flagging platforms to leverage Amplitude's A/B test analysis capabilities. The product serves as a bridge between third-party feature flagging systems and Amplitude's analytics engine, allowing organizations to analyze experiments conducted through external platforms while maintaining their existing tooling infrastructure.
 
-## Product Architecture and Feature Relationships
+## Product Relationships and Feature Integration
 
-The Experiment Results system operates through several interconnected components:
+The Experiment Results feature operates within a hybrid architecture model, connecting external feature flagging platforms to Amplitude's core analytics infrastructure. The system centers around the **Experiment Results Chart**, which serves as the primary interface for visualization and analysis.
 
-**Core Analysis Engine**: The Experiment Results chart serves as the primary interface for A/B test analysis, processing exposure events and variant configurations to generate statistical insights.
+The workflow integrates several key components:
+- **Exposure Event Configuration** tracks when users encounter different experiment variants
+- **Variant Management** defines control and treatment groups for experiments
+- **Metric Analysis** configures performance measurement parameters
+- **Statistical Analysis Engine** applies various statistical methods for significance testing
 
-**Metric System**: The platform supports multiple metric types that work together to provide comprehensive experiment evaluation:
-- Unique conversions and event totals for basic counting metrics
-- Sum/average property value calculations for numerical analysis
-- Funnel conversion metrics for multi-step process optimization
-- Retention metrics for long-term user behavior analysis
-- Formula metrics for custom calculations combining multiple data points
-
-**Statistical Framework**: Two primary statistical approaches are supported - Sequential testing for continuous monitoring and T-tests for fixed-horizon analysis, both enhanced with CUPED (Controlled-experiment Using Pre-Experiment Data) support for variance reduction.
+The feature leverages Amplitude's existing **Primary Metric module** and event tracking infrastructure, creating a unified analysis environment regardless of the underlying feature flagging platform.
 
 ## Key Nomenclature and Definitions
 
-**Exposure Events**: The foundational data points that indicate when users encounter different experiment variants, serving as the basis for all statistical calculations.
+**Core Experiment Concepts:**
+- **Exposure Events**: Events indicating user exposure to specific experiment variants
+- **Exposure Attribution Window**: Time period for attributing user actions to experiment exposure
+- **Variants**: Different feature versions being tested (control groups and treatment groups)
+- **Cumulative Exposure Tracking**: Monitoring total users exposed to each variant over time
 
-**Variants**: Different versions of features being tested, including control groups, with each variant representing a distinct experimental condition.
+**Metric Classifications:**
+- **Unique Conversions**: Distinct user count performing specific actions
+- **Event Totals**: Total occurrences of specific events
+- **Sum/Average Property Value**: Aggregated numerical values from event properties
+- **Funnel Conversion**: Completion percentage for action sequences
+- **Retention Metrics**: User return behavior over specified periods
+- **Formula Metrics**: Custom calculations combining multiple data points
 
-**Attribution Window**: The time period during which user actions are attributed to their exposure to specific experiment variants.
+**Statistical Methodologies:**
+- **Sequential Testing**: Continuous monitoring with early stopping capabilities
+- **T-test**: Traditional statistical hypothesis testing
+- **CUPED (Controlled-experiment Using Pre-Experiment Data)**: Variance reduction technique
+- **Confidence Interval Charts**: Visual statistical uncertainty representation
 
-**Formula Functions**: A comprehensive set of statistical functions including:
-- `UNIQUES`: Count distinct users using HyperLogLog algorithm
-- `TOTALS`: Sum event occurrences
-- `PROPSUM/PROPAVG/PROPCOUNT/PROPMAX/PROPMIN`: Property-based calculations
-- `CONVERSIONRATE/CONVERSIONAVG`: Conversion-focused metrics
-- `REVENUETOTAL`: Revenue aggregation
+## Formula Metrics System
 
-**Statistical Measures**: The system calculates variance, covariance, confidence intervals, and p-values to determine statistical significance and provide reliable experiment insights.
+The formula metrics functionality provides advanced analytical capabilities through specific computational functions:
 
-## Ecosystem Integration
+**Core Functions:**
+- `UNIQUES`: Distinct user counting using HyperLogLog algorithm
+- `TOTALS`: Event occurrence summation
+- `PROPSUM`: Property value aggregation
+- `PROPAVG`: Property value averaging
+- `PROPCOUNT`: Event counting with specific property values
+- `PROPMAX/PROPMIN`: Property value extremes identification
+- `REVENUETOTAL`: Revenue-specific aggregation calculations
 
-Experiment Results functions as a bridge between external feature flagging platforms and Amplitude's analytics ecosystem. It integrates with:
+The system performs comprehensive statistical analysis including variance calculations, mean computations, p-value determinations, confidence interval generation, and covariance analysis for robust experiment evaluation.
 
-**Analytics Platform**: Leverages Amplitude's core event tracking infrastructure to capture and process experiment data alongside standard product analytics.
+## Broader Product Ecosystem Integration
 
-**Feature Flag Platforms**: Connects with non-Amplitude feature flagging tools, allowing organizations to maintain their existing experimentation infrastructure while gaining access to Amplitude's statistical analysis capabilities.
+Experiment Results functions as a strategic component within Amplitude's analytics ecosystem by extending platform capabilities to customers with diverse technology stacks. The feature enables **platform reach extension** by accommodating external feature flagging tools while providing access to Amplitude's advanced analytics.
 
-**Metrics Framework**: Utilizes Amplitude's broader metrics system, enabling experiment results to be contextualized within overall product performance and user behavior patterns.
+The integration strategy supports **hybrid architectures** where organizations can maintain preferred feature flagging platforms while centralizing experiment analysis through Amplitude. This approach leverages Amplitude's core infrastructure including event tracking, user segmentation, and statistical analysis engines.
 
-The system supports both primary and secondary metrics configuration, allowing experimenters to define key success criteria while monitoring for potential negative impacts across other important business metrics. Cumulative exposure tracking and confidence interval charts provide ongoing visibility into experiment performance and statistical reliability throughout the test duration.
+The product represents Amplitude's broader strategy of providing comprehensive analytics solutions that integrate with existing customer technology rather than requiring complete platform migration. This positioning allows organizations to benefit from Amplitude's sophisticated experiment analysis capabilities while preserving their established feature flagging workflows and tooling investments.
