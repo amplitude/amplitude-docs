@@ -11,7 +11,7 @@ academy_course:
   - 498134e3-190a-4b58-b148-2a94ef5bc069
 ai_summary: "You can install the SDK on your website or application to get started with Amplitude's Guides and Surveys. The Overview tab offers insights into engagement, interactions, and user behavior. You can filter analysis based on date range, segment, or property condition. Track views and completions over time, total guide views, recent guides performance, total survey responses, recent survey performance, rage closes, and interactions to optimize user engagement. The data helps you understand how users interact with your Guides and Surveys in real time."
 ---
-Before you get started with Guides and Surveys, install the [SDK](/docs/guides-and-surveys/sdk) on your website or application.
+Before you get started with Guides and Surveys, install one of the available SDKs, depending on where you want to display Guides and Surveys.
 
 Click Guides and Surveys in the left navigation in Amplitude to get started.
 
@@ -64,3 +64,12 @@ Amplitude considers a guide or survey that was rapidly dismissed or exited to be
 ![](statamic://asset::help_center_conversions::guides-surveys/interactions.png)
 
 Provides a realtime feed that shows how users are interacting with your Guides and Surveys. Use this data to track engagement patterns and make optimizations.
+
+## Supported apps
+
+Guides and Surveys supports web, iOS, Android, and React Native apps. Select the target app / environment when you create a new guide or survey.
+
+### Enable or disable apps
+
+Guides and Surveys has a project-level setting where you can enable or disable different environments or "apps". Enabling an app causes it to appear as an option when you create a new guide or survey.
+

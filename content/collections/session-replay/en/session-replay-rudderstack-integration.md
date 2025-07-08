@@ -10,7 +10,7 @@ instrumentation_guide: true
 platform: 'third-party integration'
 public: true
 package_name: '@amplitude/session-replay-browser'
-full_details: true
+full_details: false
 description: "Choose this option if you use Rudderstack for your site's analytics."
 ai_summary: "Amplitude's technical documentation guides you on integrating Rudderstack and Amplitude's Session Replay. You'll need the latest Session Replay SDK version. Install the wrapper with npm or yarn, including the Amplitude Session Replay SDK. Use the `sessionReplayOptions` for configuration. The integration with Rudderstack updates event architecture to include the Amplitude `Session Replay ID`. Amplitude maps Rudderstack IDs to Amplitude IDs. Remember, Session Replay isn't compatible with ad blockers. For troubleshooting, check the \"Session Replay Standalone SDK | Troubleshooting\" section."
 ---

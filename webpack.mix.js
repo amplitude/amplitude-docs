@@ -37,6 +37,11 @@ mix.postCss('resources/docs/css/algolia.css', 'public/docs/css', [
     require('autoprefixer'),
     ]);
 
+mix.copyDirectory(
+    'content/collections',
+    'public/docs/md'
+);
+
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({
         test: /\.js$/,

@@ -1,10 +1,10 @@
 ---
 id: f422c82d-a9d7-404a-8f56-211e014453c6
 blueprint: guides_and_survey
-title: 'Guides and Surveys SDK'
+title: 'Guides and Surveys Web SDK'
 landing: true
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1744921299
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1750710864
 landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
 ai_summary: "Amplitude's Guides and Surveys SDK allows you to deploy interactive guides and surveys on your website or application. You can install the SDK using different options based on your existing Amplitude setup. Additionally, the SDK enables you to initialize, boot, manage themes, register callbacks, configure routers, and localize content for a more tailored user experience. Verify installation and initialization, and make necessary adjustments if your organization has a strict Content Security Policy. The SDK also provides functionality to work with third-party analytics providers and Google Tag Manager for seamless integration."
 ---
@@ -64,16 +64,38 @@ But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to
 Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel, locale: string }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string }): void
 ```
 
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                    |
 | `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                       |
+| `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU) |
+| `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU) |
 | `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
 | `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.      |
+
+##### Example: Basic initialization
+
+```js
+engagement.init("YOUR_API_KEY", {
+  serverZone: "US",
+  logLevel: LogLevel.Warn
+});
+```
+
+##### Example: Initialization with proxy
+
+For [proxy setups](/docs/guides-and-surveys/proxy), specify both `serverUrl` and `cdnUrl`:
+
+```js
+engagement.init("YOUR_API_KEY", {
+  serverUrl: "https://your-proxy-domain.cloudfront.net",
+  cdnUrl: "https://your-proxy-domain.cloudfront.net"
+});
+```
 
 After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
@@ -90,16 +112,17 @@ engagement.boot(options: BootOptions): Promise<void>
 | Parameter              | Type                           | Description                                                                                                                               |
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                   |
-| `options.integrations` | `Array<Integration>`           | Optional. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. |
+| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
 
 ```js
 await window.engagement.boot({
   user: {
     // Guides and Surveys requires at least one of user_id or device_id for user identification
-    user_id: 'USER_ID', //[tl! ~~:1]
+    user_id: 'USER_ID', 
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {

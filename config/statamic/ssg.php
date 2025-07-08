@@ -45,6 +45,7 @@ return [
         public_path('docs/css') => 'docs/css',
         public_path('docs/js') => 'docs/js',
         public_path('docs/fonts') => 'docs/fonts',
+        public_path('docs/md') => 'docs/md',
     ],
 
     'symlinks' => [

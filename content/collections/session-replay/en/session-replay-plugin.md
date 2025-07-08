@@ -11,7 +11,7 @@ instrumentation_guide: true
 platform: browser
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 package_name: '@amplitude/plugin-session-replay-browser'
-full_details: true
+full_details: false
 public: true
 description: 'Use the Session Replay plugin if you instrument your site with Amplitude Browser SDK 2.'
 ai_summary: "The article explains how to set up Session Replay using Amplitude's Browser SDK plugin. It covers minimizing performance impact, capturing DOM changes for replays, installation steps, supported browsers, and configurations like sample rate, privacy settings, and debugging. You can install the plugin with npm or yarn, and configure it using the Unified SDK or Plugin configuration. It also mentions session tracking, masking data, EU data residency settings, and sampling rates. Be aware of compatibility issues with Google Tag Manager and ensure proper initialization to avoid mismatches in Device ID or Session ID."
@@ -136,6 +136,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 | --------------------------- | --------- | -------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sampleRate`                | `number`  | No       | `0`         | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. This field isn't required because Session Replay supports [Remote Configuration](/docs/admin/account-management/account-settings#session-replay-settings) of settings including Sample Rate. |
 | `privacyConfig`             | `object`  | No       | `undefined` | Supports advanced masking configurations with CSS selectors.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `applyBackgroundColorToBlockedElements` | `boolean` | No | `false` | If true, applies a background color to blocked elements for visual masking. This helps visualize which elements are blocked from being captured in the replay. |
 | `debugMode`                 | `boolean` | No       | `false`     | Adds additional debug event property to help debug instrumentation issues (such as mismatching apps). Only recommended for debugging initial setup, and not recommended for production.                                                                                                                                                                                                                                                                                                                           |
 | `configServerUrl`           | `string`  | No       | `undefined` | Specifies the endpoint URL to fetch remote configuration. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                                                                                                                                        |
 | `trackServerUrl`            | `string`  | No       | `undefined` | Specifies the endpoint URL to send session replay data. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -242,12 +243,16 @@ These examples assume you use the variable `sessionReplayTracking` in your initi
 
 Call `amplitude.remove('sessionReplayTracking')` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
 
-To restart replay collection, call `amplitude.add('sessionReplayTracking')` to re-add the plugin.
+To restart replay collection, call `amplitude.add(sessionReplayTracking)` to re-add the plugin.
+
+{{partial:admonition type='note'}}
+Remember that `amplitude.add()` takes in an object of type `Plugin` as a parameter and `amplitude.remove()` takes in a string as a parameter which is the name of the plugin you want to remove. 
+{{/partial:admonition}}
 
 {{partial:admonition type='note'}}
 Always wait for `amplitude.add()` to finish before invoking `amplitude.remove()`. If you don't, you may get an error in the console: `TypeError: Cannot read properties of undefined (reading 'teardown')`. Use the `promise` property to do this, as shown in either of these examples:
 
-```
+```js
 await amplitude.add(sessionReplayTracking).promise;
 await amplitude.remove(sesionReplayTracking.name).promise;
 ```
@@ -291,10 +296,10 @@ The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about 
  "event_type": "first_event",
  "server_upload_time": "2020-02-18 01:00:00.234567",
  "device_id": "your device id",
- "user_properties": { ... }
+ "user_properties": { ... },
  "event_properties": {
  "[Amplitude] Session Replay ID": "cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244"
- }
+ },
  "session_id": 1699922971244,
 }
 ```

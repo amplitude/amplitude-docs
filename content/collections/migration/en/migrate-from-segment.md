@@ -19,7 +19,7 @@ Review the offerings that are available for Segment and how that stacks up to Am
 | Segment                                                 | Amplitude                                                                             |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | [Connections](https://segment.com/product/connections/) | [Sources](/docs/data/source-catalog) & [Destinations](/docs/data/destination-catalog) |
-| [Profiles](https://segment.com/product/profiles/)       | [Audiences](/docs/cdp/audiences)                                                      |
+| [Profiles](https://segment.com/product/profiles/)       | [Audiences](/docs/data/audiences)                                                      |
 | [Protocols](https://segment.com/product/protocols/)     | [Data Management](/docs/data)                                                          |
 
 {{partial:admonition type="info" heading="Recommended best practice"}}

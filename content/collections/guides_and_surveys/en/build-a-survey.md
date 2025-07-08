@@ -53,6 +53,44 @@ For example, if you have a question with a five point scale, you can use the fol
 
 This logic asks a followup question to users who gave a 1-3, and shows a thank you message to users who gave a 4 or 5.
 
+### Long answer
+
+The Long answer block provides users space to provide unstructured feedback.
+
+Click the gear icon in the Long answer block to access more settings.
+
+| Setting                 | Description                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| Required                | Enable to require the user to enter a rating.                                |
+| ARIA label                 | Provide a label to help screen readers understand the input's purpose.                |
+
+### Short answer
+
+The Short answer block provides users space to provide unstructured feedback.
+
+Click the gear icon in the Short answer block to access more settings.
+
+| Setting                 | Description                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| Required                | Enable to require the user to enter a rating.                                |
+| ARIA label                 | Provide a label to help screen readers understand the input's purpose.                |
+| Pre-fill key | Populate the input with a user property that you specify, using the ingested name of the property, for example `device_type`. If the user property isn't found for a specific user, nothing populates in the field. |
+
+### List
+
+Lists provide a multiple choice input, enabling users to choose a response from a list that you define.
+
+Click the gear icon in the List block to access more settings.
+
+| Setting      | Description                                                                                                                                                                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required     | Enable to require the user to enter a rating.                                                                                                                                                                       |
+| ARIA label   | Provide a label to help screen readers understand the input's purpose.                                                                                                                                              |
+| Multiple choice | Enables users to select more than one option. Changes the block's form elements from radio buttons to checkboxes.
+| Randomize order <br/> {.tag .web .zero} | Randomizes the order in which items appear in the list each time it displays to a user. |
+| "Other" option <br/> {.tag .web .zero} | Provides users the option to select `Other` as a result, and optionally supply a written answer. |
+
+
 ## Setup and target your survey
 
 Setup and targeting of surveys works the same as for [guides](/docs/guides-and-surveys/guides/setup-and-target). Follow those instructions for your survey.

@@ -195,6 +195,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | `loggerProvider`            | `Logger`  | No       | `Logger`        | Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination.                                                                                                                                                                                                                                                                                            |
 | `serverZone`                | `string`  | No       | `US`            | EU or US. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.                                                                                                                                                                                                                                                                                   |
 | `privacyConfig`             | `object`  | No       | `undefined`     | Supports advanced masking configurations with CSS selectors.                                                                                                                                                                                                                                                                                                                                        |
+| `applyBackgroundColorToBlockedElements` | `boolean` | No | `false` | If true, applies a background color to blocked elements for visual masking. This helps visualize which elements are blocked from being captured in the replay. |
 | `debugMode`                 | `boolean` | No       | `false`         | Adds additional debug event property to help debug instrumentation issues (such as mismatching apps). Only recommended for debugging initial setup, and not recommended for production.                                                                                                                                                                                                      |
 | `configServerUrl`           | `string`  | No       | `undefined`     | Specifies the endpoint URL to fetch remote configuration. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                   |
 | `trackServerUrl`            | `string`  | No       | `undefined`     | Specifies the endpoint URL to send session replay data. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                 |
@@ -300,10 +301,10 @@ The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about 
  "event_type": "first_event",
  "server_upload_time": "2020-02-18 01:00:00.234567",
  "device_id": "your device id",
- "user_properties": { ... }
+ "user_properties": { ... },
  "event_properties": {
  "[Amplitude] Session Replay ID": "cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244"
- }
+ },
  "session_id": 1699922971244,
 }
 ```
