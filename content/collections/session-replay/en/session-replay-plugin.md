@@ -34,7 +34,7 @@ Session Replay captures changes to a page's Document Object Model (DOM), includi
 
 ## Before you begin
 
-Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-browser/CHANGELOG.md ) on GitHub.
+Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/plugin-session-replay-browser/CHANGELOG.md) on GitHub.
 
 The Session Replay Plugin requires that:
 
@@ -113,7 +113,7 @@ You can also add the code directly to the `<head>` of your site. With this metho
 
 ```html
 <script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.0-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.4.0-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.19.3-min.js.gz"></script>
 <script>
 const sessionReplayTracking = window.sessionReplay.plugin();
 window.amplitude.add(sessionReplayTracking);
