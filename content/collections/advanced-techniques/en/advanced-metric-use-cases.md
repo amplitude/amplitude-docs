@@ -27,7 +27,7 @@ Follow these steps to use your experiment's metrics in a [Funnel Analysis chart]
 
   ![](/docs/output/img/advanced-techniques/20464390610203.png)
 
-5. Click *+ Performed* to add filters with your experiment's flag key and variant.
+5. Click *+ Performed* to add filters with your experiment's flag key and variant. If you have restarted your experiment, add an experiment key filter.
 6. Set the date range for *any time since* to match the start date of your experiment.
 
 The results of your Funnel Analysis chart may vary slightly from those of your experiment. This is because funnel analyses and experiments don't handle users who [variant jump](/docs/feature-experiment/troubleshooting/variant-jumping) the same way. 
