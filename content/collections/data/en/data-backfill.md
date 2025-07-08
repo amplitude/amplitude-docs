@@ -7,6 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/analytics/data-backfill-guide
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721925960
+ai_summary: 'You can import historical data to Amplitude yourself using the Batch Event Upload API. Consider keeping historical data separate from live data. Connect historical and live data by matching user IDs. Be cautious of data mismatches and user ID issues. Amplitude has daily and batch limits. Review the Batch API for backfilling best practices. Use "$skip_user_properties_sync" to control user property updates. Events with timestamps 30 days or older may take up to 48 hours to appear. Backfill preexisting users accurately with timestamped events.'
 ---
 You can import historical data to Amplitude yourself using the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload). 
 

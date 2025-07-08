@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895468
+ai_summary: 'In Amplitude, properties give extra context about users and events. User properties describe individual users, like device type or location, while event properties are specific to an event, such as a community joined. You can set default and custom user properties. Amplitude updates user properties with each event, reflecting current values. You can update user properties before or after sending events. Event properties are characteristics of user-triggered events. Use properties to analyze data effectively. You can hide properties and Amplitude auto-deletes user properties without recent event data.'
 ---
 In Amplitude, properties are attributes that provide additional context around your users and the events they trigger. There are two types of properties in Amplitude:
 

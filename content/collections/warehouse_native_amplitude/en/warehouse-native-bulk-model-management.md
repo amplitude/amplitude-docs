@@ -8,6 +8,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 36df5bf6-28d6-4b56-9bba-1c675073870d
 updated_at: 1728602881
+ai_summary: 'Bulk Model Management in Amplitude allows you to manage multiple native models in your warehouse at once using a YAML configuration file. You can create or edit models for events, user properties, group properties, and event properties. Make sure to correctly name models in your configuration file for updates to apply accurately. You can download an example configuration file from Amplitude, define your models in YAML, and upload the file to apply changes. The configuration file specifies the structure and details of your data models for efficient management.'
 ---
 Bulk Model Management helps you manage your warehouse native models. Instead of managing one model at a time, you can create or edit multiple models with one configuration file.
 

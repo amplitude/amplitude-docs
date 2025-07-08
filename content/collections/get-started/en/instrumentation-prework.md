@@ -9,6 +9,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716572424
 this_article_will_help_you:
   - 'Determine how best to instrument Amplitude based off of your business goals'
+ai_summary: "In Amplitude, your success depends on defining your business goals, understanding user tracking, organizing events, and resisting the urge to track everything at once. Focus on essential events aligned with your goals, limit properties to 20 per event, and consider combining web and mobile data for cross-platform projects. For more information, check out the provided links on event taxonomy, user tracking, and project setup FAQs. This will help you maximize Amplitude's potential in achieving your business objectives."
 ---
 Much of your Amplitude experience depends on the decisions you make during the instrumentation process. To lay the foundation for a successful instrumentation, there are a few things you must do first.
 

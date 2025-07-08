@@ -4,6 +4,7 @@ blueprint: web_experiment
 title: 'Web Experiment targeting'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195990
+ai_summary: "You can target pages and audiences in Amplitude Web Experiments. Page targeting lets you specify URLs to include or exclude. Audience targeting lets you focus on specific users. Browser properties like new users, device category, and user agent can be used for local targeting. Remote targeting includes enriched user properties and historical data. Amplitude also handles page display delays and user bucketing, ensuring consistent experiences. Upgrading to the Plus plan unlocks more advanced features. Remember, increasing rollout doesn't change the experience for users already in the experiment."
 ---
 Web Experiments target both pages and audiences. Amplitude evaluates page targeting first, then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
 

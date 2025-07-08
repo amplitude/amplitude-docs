@@ -163,6 +163,7 @@ glossary:
         event_description: 'A user completed the last step of a survey. This event fires when a user finishes the entire survey by completing the final step.'
     type: event_set
     enabled: true
+ai_summary: 'The Amplitude technical documentation explains how to categorize guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. It provides a glossary of properties, types, and descriptions for events. This documentation helps you understand how to structure and differentiate guide and survey-related events in Amplitude for effective data analysis.'
 ---
 Amplitude prefixes guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. 
 

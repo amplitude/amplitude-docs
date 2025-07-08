@@ -11,6 +11,7 @@ this_article_will_help_you:
   - 'Create and work with new branches of your tracking plan'
   - 'Merge your work back into the `main` branch'
   - "Delete an old branch when it's no longer useful to you"
+ai_summary: 'In Amplitude Data, you can work with branches, which are snapshots of your tracking plan. The main branch is like your production plan, while you can create your own branches to make changes. You can publish changes to create new versions of your plan and merge them back to the main branch. You can also create and delete branches, work on them, and copy changes to testing environments. Make sure to keep your branches updated and merge them back into main when ready. Remember to refresh your branch with any changes from main.'
 ---
 If you've worked with Git, branches in Amplitude Data should look familiar to you. A **branch** is like a point-in-time snapshot of the tracking plan created for you and your team. You can make your own changes to it without those changes being immediately visible to everyone else, and only merge them back into the main tracking plan when you're ready.
 

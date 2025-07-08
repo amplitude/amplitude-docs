@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730484422
+ai_summary: 'You can display your dashboards as charts, KPIs, or tables, add target metrics to your charts, and view your dashboards in full-screen mode. You have the option to switch between display modes for your charts, show summary metrics for specific charts, add target metrics with optional target dates, and enter full-screen mode for better visibility on TV screens or shared monitors. Remember, only the dashboard owner can change the display mode of the included charts.'
 ---
 #### This article will help you:
 

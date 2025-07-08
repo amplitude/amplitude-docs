@@ -9,8 +9,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102534
+ai_summary: "You can conduct a T-test in Amplitude to compare means of two data populations. Amplitude uses Welch's T-test with specific dataset assumptions. T-tests can be two-sided (any change) or one-sided (increase or decrease). Access T-test settings in Amplitude Experiment to choose test type and metric direction. Ensure you meet the sample size before running a T-test. Manage sample size needed using Cumulative Exposure graph. Reaching the sample size doesn't guarantee statistical significance; results may not be significant if lift is smaller than MDE."
 ---
-
 A T-test is the **comparison of means** amongst two populations of data to decide if the difference is statistically significant. Amplitude uses the [Welch's T-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), which comes with a few assumptions about your dataset:
 
 * The [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) applies to the metric.

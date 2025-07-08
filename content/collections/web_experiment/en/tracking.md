@@ -4,6 +4,7 @@ blueprint: web_experiment
 title: 'Web Experiment event tracking'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195928
+ai_summary: 'Web Experiment utilizes impression events for analysis and billing. You need to track impression events with the Web Experiment script for experiment analysis. Impression events in Amplitude involve setting user properties based on flag key and variant. When tracking impressions through a third-party CDP, events are transformed for consistency. Amplitude estimates impressions per experiment based on monthly tracked users, experiments, and page views. This estimation helps you manage and target impressions effectively to optimize your experiments.'
 ---
 Web Experiment uses impression events for analysis and billing purposes. Impression events are tracked by the Web Experiment script through the [integration](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp). Tracking impression events is required for experiment analysis.
 

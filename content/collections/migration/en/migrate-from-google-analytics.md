@@ -5,8 +5,8 @@ title: 'Migrate from Google Analytics'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719511444
+ai_summary: "You can migrate from Google Analytics (GA4) to Amplitude by adjusting your tracking implementation to align with Amplitude's event structure and capabilities. Amplitude offers a low-code Google Analytics event forwarding plugin and a migration guide to help you transition smoothly. Additionally, Amplitude is working on a beta version of BigQuery Import for GA4. By contacting Amplitude Support, you can join the beta program. The Google Analytics Event Forwarder plugin listens for Google Analytics events and sends corresponding events to Amplitude, making the migration process easier for you."
 ---
-
 If you're considering migrating from Google Analytics (GA4) to Amplitude for your analytics user tracking, read this guide to learn more about the options available to you.
 
 Migrating from the Google Analytics (GA4) SDK to the Amplitude SDK requires you to adjust your tracking implementation to align with Amplitude's event structure and capabilities.

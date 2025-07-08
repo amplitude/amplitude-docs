@@ -13,6 +13,7 @@ landing: true
 landing_blurb: 'Interpret the results of your User Sessions chart'
 academy_course:
   - 24571d68-a5a0-45de-990c-770f42c06073
+ai_summary: 'The User Sessions chart in Amplitude helps you analyze user engagement, frequency, and segment differences. You can interpret the chart based on chosen metrics and segment data. The chart displays session data with filters by segment, like country or carrier. A data table below shows detailed session or event data. Amplitude records sessions server-side or client-side (mobile or web). Filtering events for the User Sessions chart involves property and session filters, where property filters are applied before session filters. Ensure events include session ID for the chart to display data accurately.'
 ---
 The [User Sessions chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) can help answer questions about your product's users: such as, user frequency, user engagement length, and the differences of those metrics based on user segments.
 

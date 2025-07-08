@@ -6,8 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1723477635
+ai_summary: 'A cohort in Amplitude is a group of users used for advanced audience targeting in experiments. You can target user cohorts in remote or local evaluation. Remote evaluation syncs cohorts to Amplitude Experiment, while local evaluation syncs to Experiment Local Evaluation. Remote is good for behavior-based targeting with some delay, while local is for up-to-date server-side SDKs. Cohorts only support user IDs for now. Server-side SDKs can target cohorts with proper configuration. Troubleshooting tips include checking SDK versions, sync settings, cohort content, and user info. Target users effectively by understanding and using cohort targeting features.'
 ---
-
 A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. That said, cohorts aren't always the best solution for targeting, so understanding how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) vs [remote](/docs/feature-experiment/remote-evaluation) evaluation is important.
 
 Experiment cohort targeting currently only supports targeting **user** cohorts.

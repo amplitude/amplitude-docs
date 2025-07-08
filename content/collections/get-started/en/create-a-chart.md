@@ -10,6 +10,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726001698
+ai_summary: 'Charts are essential in Amplitude analysis. You can create charts by selecting a chart type under *Create > Chart*. This feature is available on all Amplitude plans but has limitations on Starter plans. You can save up to ten charts and query one year of data on a Starter plan, while a Plus plan allows querying two years of data. Add events, properties, and user segments to your chart for valuable insights. You can save, manage, and share your charts using various options. Zoom in on a chart by selecting a section, and reset the view as needed. Explore further by organizing your work with spaces.'
 ---
 **Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create > Chart*, then select a new chart type from the Charts fly-out.
 

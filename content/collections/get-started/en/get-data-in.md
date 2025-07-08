@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571412
+ai_summary: 'Amplitude Analytics uses data from your product or third-party sources to create analyses. You need an API key to send data to Amplitude. The Browser SDK is a common method for web products. Involving developers may be necessary. Various APIs like Identify, Dashboard, and Export are available. Resources like the Developer Center and Academy are helpful. Your data becomes visible once events are sent. You can utilize Amplitude SDKs and APIs like HTTP and Behavioral Cohorts. Your Success Manager can assist with questions.'
 ---
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 

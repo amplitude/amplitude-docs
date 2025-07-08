@@ -8,6 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715106743
 nav_title: developers
+ai_summary: "Some Amplitude SDK versions allow you to enable dynamic configuration for your apps based on users' location. Consider using it if you have users in Mainland China. You can send users from different regions to specific servers and adjust server URLs dynamically. To use dynamic configuration, you need to enable the feature explicitly by setting the `useDynamicConfig` flag in your code for iOS, Android, Flutter, JavaScript, React Native, or Unity."
 ---
 Some Amplitude SDK versions (iOS 5.3.0+, Android 2.28.0+, JavaScript 8.9.0+, React Native, Unity, and Flutter) let you set your apps to use dynamic configuration.
 

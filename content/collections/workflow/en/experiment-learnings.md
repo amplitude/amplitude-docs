@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Understand and interpret those results'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714516898
+ai_summary: "You've designed an experiment in Amplitude and now need to analyze the results. In the *Analysis* card, you can quickly see if your hypothesis was correct and view detailed results by variant. Use the *Filter* card to refine your analysis by date, segment, and property. The *Data Quality* card helps ensure accurate results. The *Summary* card summarizes your experiment's hypothesis and statistical significance. The *Diagnostics* card provides insights into your experiment's performance. Set up notifications for experiment updates. Reflect on your results, learn from them, and decide on next steps for further experimentation or implementation."
 ---
 You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to see if your hypothesis was correct.
 

@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1723653124
+ai_summary: '**Ampli** creates a simplified wrapper for the **Amplitude SDK** based on your tracking plan in **Amplitude Data**. The **Ampli Wrapper** ensures accuracy by enforcing event and property values, enabling autocompletion, and providing type checks during development. Visit the [Amplitude Developer Center](https://www.docs.developers.amplitude.com/data/ampli/) to explore using Ampli for easier and more reliable event tracking.'
 ---
 **Ampli** dynamically generates a light-weight wrapper for the **Amplitude SDK** based on your analytics tracking plan in **Amplitude Data** making event tracking easier and less error-prone.
 

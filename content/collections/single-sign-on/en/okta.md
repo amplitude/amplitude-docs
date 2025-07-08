@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up single sign-on using Okta'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363492
+ai_summary: 'Amplitude offers single sign-on integration with Okta for specific plan users. To set up SSO, you need to be an org admin and configure Okta. Follow these steps to configure SSO: Create an app integration in Okta, set up SAML settings, and upload the metadata file in Amplitude settings. This enables you to use SSO seamlessly between Amplitude and Okta for easier access management.'
 ---
 Amplitude provides a single sign-on integration with Okta for customers on Scholarship, Growth, or Enterprise plans.
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724881324
+ai_summary: 'Amplitude helps you understand customer behavior in your e-commerce store. The Ecommerce Report template shows how customers find your store and tracks visits. You can customize this template into a dashboard to share insights with others. Select events like page views and actions like adding to cart to track in your dashboard. Save your customized dashboard to start using it. Explore more about dashboards and templates in Amplitude to enhance your analytics capabilities.'
 ---
 Understanding how many and where your customers are coming from is crucial for any business, but particularly those in the e-commerce sector. Amplitude helps you understand how many customers are finding your store, how effective different campaigns are at creating new revenue, and which channels drive the most engagement.
 

@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717101918
 landing: true
 landing_blurb: 'Use the features of the Measured As Module to customize your analysis'
+ai_summary: 'This article explains how you can use rolling averages, rolling windows, cumulative sums, real-time segmentation, and period-over-period comparisons in Amplitude to analyze event segmentation data effectively. Rolling averages help smooth out chart fluctuations, rolling windows display aggregated data, cumulative sums show running totals, real-time segmentation provides up-to-date data, and period-over-period comparisons allow you to compare data across different time frames. By applying these features in your analysis, you can gain valuable insights into user behavior and trends within your product usage data.'
 ---
 This article explores some of the more advanced features available to you as you interpret your event segmentation analyses. For a primer on the basics, [see part one](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1).
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715292146
+ai_summary: 'You can control user privacy notifications in Amplitude to manage emails sent for data deletion requests. This feature works at the project level and requires admin privileges. Admins can manage different notification types like job creation, job completion, unset violation, or all notifications. Each notification must have at least one recipient. This feature is available on all Amplitude plans. To set up user privacy notifications, go to project settings, navigate to user privacy notifications, adjust settings for team members, and add new ones if needed. For more details, check the User Privacy API documentation.'
 ---
 In order to comply with GDPR and other user privacy regulations, Amplitude will send emails when we receive and process user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
 

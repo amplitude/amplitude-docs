@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715294338
+ai_summary: 'With permission groups in Amplitude, you can assign multiple users sets of permissions based on group membership, making provisioning and managing your organization more efficient. Users inherit the highest permission level assigned to them, either individually or through groups. You can create, edit, and manage groups, assign groups when inviting new users, and decide between assigning permissions via groups or individually. Integration with third-party identity and access management software is possible. Groups simplify scaling permissions and organizing user access. Make informed decisions on assigning permissions to ensure smooth management.'
 ---
 With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization. 
 

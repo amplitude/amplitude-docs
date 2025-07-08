@@ -1113,3 +1113,6 @@ img.expandable-image {
     opacity: .75;
 
 }
+.ai-summary p {
+    margin: 0px;
+}

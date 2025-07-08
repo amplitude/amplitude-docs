@@ -6,10 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001351507-Get-the-most-
 this_article_will_help_you:
   - 'Understand the value of a funnel analysis in Amplitude'
   - 'Plan and design your Funnel Analysis chart'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717102322
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748972111
 landing: true
 landing_blurb: 'Plan and design your Funnel Analysis chart'
+ai_summary: "Funnel analysis in Amplitude tracks user actions in your product to improve engagement. You can easily set up insightful funnels with the Journeys feature. Identify and design funnels by tracking specific events in sequences. Use features like Pathfinder and Compass to understand user paths. Customize funnel conversion modes to analyze user behavior. Build and interpret funnel analysis to improve retention. Create cohorts and message users to encourage desired actions. Utilize Amplitude's features to enhance user engagement and retention. Start building your own funnel analysis now."
 ---
 Funnel analysis has become the cornerstone of event-based analytics. A **funnel** is a series of steps a user takes as part of the experience of using your product. Product managers often try to encourage users to navigate these funnels in order to demonstrate product value and to increase engagement. Amplitude considers a user to have **converted** through a step in the funnel if they trigger the event in the order you've specified.
 

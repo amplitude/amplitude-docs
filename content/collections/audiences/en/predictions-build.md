@@ -11,6 +11,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715119140
+ai_summary: 'Predictions in Amplitude help you segment users based on future actions. You can build predictions by defining starting cohorts and future outcomes. Analyze predictions to understand user likelihood and model performance. Use feature importance to identify key events and properties. Ensure data accuracy for a reliable model. Save predictions as cohorts for future use in campaigns. Analyze predictive cohorts for behavioral trends and user comparisons. Use prediction-derived cohorts for various analyses like event segmentation and engagement matrices. Optimize sample size and detection to improve targeting accuracy.'
 ---
 Predictions allow you to segment your users based on their likelihood to perform specific events or actions in the future.
 

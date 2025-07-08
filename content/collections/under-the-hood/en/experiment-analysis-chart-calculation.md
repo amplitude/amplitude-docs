@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Understand the counting logic Amplitude uses when calculating these values'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329186
+ai_summary: 'Understanding how Amplitude calculates values in your Experiment Analysis charts helps you interpret your experiments accurately. Inputs like unique users exposed, triggered metric events, and property values are used in formulas to derive unique conversions, event totals, and more. For example, if you have four users exposed to an experiment, and two trigger a metric event, the unique conversion rate would be 50%. Knowing this data helps you avoid misinterpretations and make informed decisions based on accurate experiment results.'
 ---
 Knowing how the values in your Experiment Analysis charts are calculated can help you understand what your experiments are really telling you, so you can avoid making potentially costly interpretation errors.
 

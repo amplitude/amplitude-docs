@@ -6,8 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1729791421
+ai_summary: "Shopify is a platform for creating online stores. The Amplitude Shopify Plugin lets you analyze data from your store, including user behavior and ROI. The plugin captures default events and Shopify's standard events. It adds a script to your site's pages to enable features like Session Replay and Web Experiment. The plugin weighs ~167kb and may slightly impact page performance. You can install it with or without an existing Amplitude organization. Without an organization, install the plugin from the Shopify App Store and create an Amplitude account. With an existing organization, connect your Shopify store to the desired project using the provided API key."
 ---
-
 [Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, customize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
 
 The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you to bring data from your Shopify store into Amplitude, unlocking valuable insights from funnel analytics, user behavior trends and charts, ROI analysis, Session Replay and more.

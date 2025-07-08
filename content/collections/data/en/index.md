@@ -11,6 +11,7 @@ related_articles:
   - 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1709246244
+ai_summary: 'Amplitude Data offers governance tools for building a data catalog and ensuring data quality. You can plan and define events, properties, and taxonomy standards, and use the Ampli developer toolkit for tracking. Data Management tools help manage ingested data by improving discoverability, cleaning up data, enriching data, and monitoring data in real-time. Amplitude provides intelligent recommendations and automation through Data Assistant to enhance data quality efficiently. Planning directly in Amplitude ensures an up-to-date plan for your company, avoiding outdated spreadsheets or wiki pages.'
 ---
 To get the most out of Amplitude, building a data catalog your team understands and trusts is critical. Amplitude Data provides governance tools to help you define, track, verify, and improve your data across the platform.
 

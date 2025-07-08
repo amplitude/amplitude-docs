@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1723653071
+ai_summary: "To effectively use Amplitude, you need to identify and track events and properties. Create a clear taxonomy to make analysis easier and avoid data gaps. Amplitude allows you to track users, events, and properties. Define your business objectives and metrics, then break them down to understand user paths. Optimize your events and properties by ensuring consistency and capturing necessary details. Use Amplitude's features to create and refine your plan. Explore industry-specific best practices guides for tailored insights. Follow these steps to enhance your product analytics with Amplitude."
 ---
 Using Amplitude effectively requires you to first identify the events and properties you want to track. Designing a solid, scalable taxonomy can help make your analyses easier, avoid data gaps, and prevent future data issues.
 

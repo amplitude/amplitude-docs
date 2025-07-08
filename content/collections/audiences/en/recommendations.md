@@ -11,6 +11,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121430
+ai_summary: "Amplitude's AutoML generates personalized recommendations to drive users towards predictive goals. Activation's machine learning algorithm groups similar users to suggest items that increase conversion likelihood. Recommendations are optimized for user-based personalization, best suited for ecommerce, marketplace, and B2C companies. Amplitude Activation focuses on improving in-product experiences for engagement, conversions, and LTV. Recommendations require tracking outcome, exposure events, and item properties. Recommendations support assortment, next-best action, and cross-sell personalization. Work with your Amplitude CSM to ensure data requirements are met. Recommendations are exclusive to Amplitude Activation customers."
 ---
 Once you’ve identified a predictive goal for your users, the next step is making the **recommendations** that are most likely to drive users to reach it. Amplitude’s AutoML determines which items are most likely to maximize each user’s predictive goal, and then places those items in front of the user.
 

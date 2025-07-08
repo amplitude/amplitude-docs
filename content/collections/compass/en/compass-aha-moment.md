@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732569584
 landing: true
 landing_blurb: 'Build a Compass chart to identify user behaviors that best predict retention'
+ai_summary: "Discover your users' \"a-ha\" moments to drive growth. Facebook's example shows adding seven friends in 10 days led to higher retention. Use Amplitude's Compass chart to identify key user behaviors for sustainable growth. Available on Growth and Enterprise plans. Set up the chart to analyze user data and improve product performance. Understand how different events impact user retention. Customize cohorts and analyze results to drive growth. Save and add your Compass report to a dashboard for easy access. Learn more about interpreting your Compass chart in the Help Center."
 ---
 One of the key steps in driving growth is discovering what your users' "a-ha" moments are. An "a-ha" moment happens when a **new user** makes the decision—consciously or unconsciously—to become an **active user** of your product.
 

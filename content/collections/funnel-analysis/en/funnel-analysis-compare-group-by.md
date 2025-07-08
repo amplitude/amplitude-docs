@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Quickly compare a group-by value to that of a baseline property'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015077
+ai_summary: 'Funnel charts in Amplitude let you compare a group-by property to another baseline property. By selecting a value for comparison in the *Compare* dropdown, you can analyze conversion percentage differences in the visual and breakdown table. Keep in mind limitations like only being available for Conversion and Conversion Over Time, applicable to Compare to Property Value or Compare to Past, and a maximum of two Segment group-bys.'
 ---
 Funnel charts allow you to compare a group-by property to another baseline property. Once your Funnel chart has a Segment property group-by, click the *Compare* dropdown to choose a value for comparison.
 

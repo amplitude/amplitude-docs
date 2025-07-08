@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329332
+ai_summary: 'This documentation covers advanced use cases for analyzing experiment results in Amplitude. It explains how to create a funnel analysis based on experiment metrics, analyze experiment data with Amplitude Analytics metrics, and filter experiment results based on a subset of users. It also introduces the concept of threshold metrics, where success is defined by users performing an event multiple times. By following the steps provided, you can gain deeper insights into your experiment data and make informed decisions based on the results.'
 ---
 This article reviews advanced use cases that you may face while analyzing your experiment's results. 
 

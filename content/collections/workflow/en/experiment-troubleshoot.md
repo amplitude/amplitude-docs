@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Fix any issues yourself, without contacting Amplitude support'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517153
+ai_summary: 'You can troubleshoot experiment issues in Amplitude by ensuring device and user IDs align, enabling flags, assigning proper variant names, and setting correct events. Sync old properties to new ones, address targeting delays, and understand why users may not see assigned variants. Users may not log events past assignment due to blockers or leaving the app. Troubleshooting may involve backend server requests, user ID changes, or delayed targeting. Ensure accurate user tracking for successful experiment outcomes.'
 ---
 You may experience unexpected issues with creating and rolling out an experiment or flag. This can happen for a few different reasons, several of which appear below.
 

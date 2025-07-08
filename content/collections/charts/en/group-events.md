@@ -1,9 +1,10 @@
 ---
-title: "Group two or more events together as a single step in the Events module"
-source: "https://help.amplitude.com/hc/en-us/articles/360041885332-Group-two-or-more-events-together-as-a-single-step-in-the-Events-module"
 id: df93561f-a99b-4dd8-aa69-47f48229b3ae
+blueprint: chart
+title: 'Group two or more events together as a single step in the Events module'
+source: 'https://help.amplitude.com/hc/en-us/articles/360041885332-Group-two-or-more-events-together-as-a-single-step-in-the-Events-module'
+ai_summary: 'You can create custom events in Amplitude to analyze specific sequences of user actions. By grouping multiple events with an `OR` clause, you can track when users perform any of those actions. Custom events can be used in various analysis charts, but remember that they have limitations. Only certain roles can create custom events, and editing them may affect existing charts. To create a custom event, select the events you want to combine and set any necessary filters. Once created, you can use the custom event in different charts to analyze user behavior more effectively.'
 ---
-
 Sometimes, you may need to create an analysis in which a particular step of the process can be any of a selection of specific events. For example, this analysis is interested in users who, after receiving a push notification, **either** played a song **or** searched for one as their next step: 
 
 ![events_in_this_order.png](/docs/output/img/charts/events-in-this-order-png.png)

@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742510992
+ai_summary: 'Heatmaps in Amplitude provide visual representations of user engagement on your website. You can analyze event patterns, identify trends, and optimize high-traffic areas. Different map types include Click map, Selector map, and Scroll map. Heatmaps are available on Growth and Enterprise plans with the Session Replay addon. Prerequisites include using web-based session replays and specific SDK versions. You can create a heatmap by selecting the type, URL, segment, and device type. Heatmaps help you understand user interactions through click, selector, and scroll views. You can analyze user actions, watch replays, and create cohorts to improve user experience.'
 ---
 Heatmaps uses Session Replay to provide a visual representation of user engagement on your website or application over time. Analyze patterns of events to identify trends, anomalies, and areas of your product that drive the most engagement.
 

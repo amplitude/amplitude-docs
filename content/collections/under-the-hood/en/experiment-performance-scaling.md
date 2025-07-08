@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Learn more about implementation recommendations to ensure the best experience'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329160
+ai_summary: "To run a successful experimentation program, you need a robust identity resolution system, user metadata access, and behavioral cohorts. Amplitude Experiment provides all three. For the best results, make individual user requests to Amplitude Experiment's endpoint. Use local defaults and client-side SDKs for improved performance. The architecture relies on Fastly CDN and reliable AWS services for high availability."
 ---
 In order to run a powerful, insight-generating experimentation program, you’ll need three things:
 

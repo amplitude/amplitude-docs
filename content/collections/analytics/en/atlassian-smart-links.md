@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397241
+ai_summary: 'You can now easily include previews of your Amplitude charts in Confluence, Trello, or Jira by pasting the chart URL and selecting how you want the preview to display. This feature, called Smart Links by Atlassian, supports all Amplitude chart types except Personas, Pathfinder, Data Tables, and Experiment Results. Simply copy the chart URL, paste it into your document or ticket, and choose the display format. To disconnect from Smart Links, go to your Atlassian account settings and manage the "Atlassian Links - Amplitude" section.'
 ---
 You can now include previews of your Amplitude charts in Confluence documents or Jira tickets. Just paste the chart URL into Confluence, Trello, or Jira, and choose whether you'd like the preview to display inline or as a card. Atlassian calls this feature [Smart Links](https://community.atlassian.com/t5/Confluence-articles/Smart-Links-a-richer-way-to-hyperlink/ba-p/1412786).
 

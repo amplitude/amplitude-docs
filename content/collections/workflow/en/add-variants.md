@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Add additional code to your variants, to create more dynamic user experiences'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514203
+ai_summary: "You can create and manage variants in Amplitude Experiment to compare against your control, customize traffic distribution, and set rollout percentages. You can add multiple variants but should keep them limited for statistical significance. Amplitude allows for stratified sampling to manage bias and provides options for customizing traffic distribution per segment. Make sure to set your rollout percentage to determine the users included in the experiment. Finally, you can finalize your experiment's statistical settings before moving on to the rollout phase."
 ---
 The next step in designing your experiment is to create at least one variant. Amplitude Experiment compares your variants with the **control**, which is usually your product’s current user experience. This way, Experiment measures the performance of the variant against a known quantity, the performance of your app today.
 

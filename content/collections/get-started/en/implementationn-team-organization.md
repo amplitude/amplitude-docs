@@ -10,6 +10,14 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716572397
 this_article_will_help_you:
   - 'Identify and understand team roles that are critical to successfully using Amplitude'
+ai_summary: |-
+  In preparing to use Amplitude, you assign three key roles to your team:
+
+  1. **Project Lead:** Main contact with Amplitude, organizes training, drives adoption.
+  2. **Data Governor:** Designs tracking plan, ensures data quality, aligns business goals.
+  3. **Instrumentation Lead:** Instruments new events, guides developers, validates data.
+
+  Each role has specific tasks and responsibilities to help your team effectively implement and utilize Amplitude for tracking and analyzing data.
 ---
 As you prepare to implement Amplitude, it's important to assign these three roles to the members of your implementation team:
 

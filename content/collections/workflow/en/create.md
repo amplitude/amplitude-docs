@@ -12,6 +12,7 @@ landing: true
 landing_blurb: 'Create a new experiment in Amplitude.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
+ai_summary: "In the design phase, your decisions are crucial for your experiment's success. By clarifying your experiment's purpose and goals upfront, you increase the chances of getting valuable insights. To start a new experiment, install an SDK or use the evaluation REST API. Follow these steps: create an experiment, choose A/B Test or Multi-Armed Bandit, set up experiment details like name and project, and optionally, define keys, evaluation mode, and bucketing unit. Finally, click 'Create.' For example, in a hypothesis testing experiment, set a direction and minimum goal for your metric. Continue to define your experiment's goals."
 ---
 The decisions you make in the **design** phase set the stage for your experiment’s success. By putting more thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 

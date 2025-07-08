@@ -5,9 +5,8 @@ title: Guides
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273216
+ai_summary: "You can access technical documentation for Amplitude features. The content includes information on children, titles, and landing blurbs. This documentation serves as a resource for you to understand and utilize the various aspects of Amplitude's functionality."
 ---
-
-
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
 {{ children}}
 <a href="{{ url }}">
