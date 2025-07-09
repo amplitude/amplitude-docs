@@ -456,7 +456,7 @@ Set user properties for the current session. These properties can be used as var
 If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 
 {{partial:admonition type="tip" heading=""}}
-User properties must be loaded during the current client-side session and before the guide or survey is displayed. Properties shared on prior sessions are not available.
+Ensure that user properties load during the current client-side session and before the guide or survey displays. Properties shared from prior sessions aren't available.
 {{/partial:admonition}}
 
 ```js
