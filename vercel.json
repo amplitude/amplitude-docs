@@ -1,4 +1,12 @@
 {
+  "headers":[
+    {
+      "source": "/docs/md/(.*)\\.md",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown" }
+      ]
+    }
+  ],
   "trailingSlash": false,
   "redirects": [
     {

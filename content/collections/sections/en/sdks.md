@@ -4,7 +4,7 @@ blueprint: section
 title: SDKs
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-
+current-collection: ampli|python_sdk|android_sdk|browser_sdk|flutter_sdk|ios_sdk|go_sdk|java_sdk|node_js_sdk|react_native_sdk|unity_sdk|unreal_sdk
 updated_at: 1738697036
 nav_title: developers
 exclude_from_sitemap: false
