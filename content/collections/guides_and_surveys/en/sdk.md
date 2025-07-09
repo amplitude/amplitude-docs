@@ -450,7 +450,7 @@ engagement.forwardEvent(event: Event): void
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
 
-## Set User Properties
+## Set user properties
 Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
 
 The `_setUserProperties()` method is not necessary if properties are already shared via `amplitude.identify()`.
