@@ -623,6 +623,8 @@ track('Button Clicked').promise.then((result) => {
 
 Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying event properties (enrichment type) or sending to third-party APIs (destination type). A plugin is an object with methods `setup()` and `execute()`.
 
+For Session Replay integration with Segment, see the [Session Replay React Native Segment Integration](/docs/session-replay/session-replay-react-native-segment-integration) guide.
+
 ### add
 
 The `add` method adds a plugin to Amplitude. Plugins can help processing and sending events.
