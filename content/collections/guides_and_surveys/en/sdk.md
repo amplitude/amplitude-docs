@@ -453,7 +453,7 @@ engagement.forwardEvent(event: Event): void
 ## Set user properties
 Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
 
-The `_setUserProperties()` method is not necessary if properties are already shared via `amplitude.identify()`.
+If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 
 {{partial:admonition type="tip" heading=""}}
 User properties must be loaded during the current client-side session and before the guide or survey is displayed. Properties shared on prior sessions are not available.
