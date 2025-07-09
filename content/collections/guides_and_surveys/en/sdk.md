@@ -369,7 +369,9 @@ const MyComponent = () => {
   }, []);
 };
 ```
-
+{{partial:admonition type="note" heading="Update URL behavior"}}
+After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
 ## Localization
 
 Set the `locale` option during initialization to localize a guide or survey.
