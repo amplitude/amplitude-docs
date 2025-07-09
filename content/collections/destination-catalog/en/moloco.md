@@ -18,7 +18,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713480427
 ---
 
-[Moloco](https://www.linkedin.com/company/moloco/) is a machine learning company that provides performance solutions for digital advertising. Their products include the Moloco Cloud DSP for mobile advertising and the Moloco Commerce Media (MCM) for online retailers. Both products are powered by Moloco's machine-learning engine, which optimizes campaigns and provides personalized recommendations to customers.
+[Moloco](https://www.linkedin.com/company/moloco/) is a machine learning company that provides performance solutions for digital advertising. Their products include the Moloco Commerce Media (MCM) for online retailers and the Moloco Ads (DSP) for mobile advertising. Both products are powered by Moloco's machine-learning engine, which optimizes campaigns and provides personalized recommendations to customers.
 
 This integration lets you stream events and event properties from Amplitude to [Moloco Commerce Media (MCM)](https://www.moloco.com/solutions/moloco-commerce-media).
 
