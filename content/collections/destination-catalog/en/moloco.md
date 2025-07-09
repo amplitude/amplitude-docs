@@ -18,17 +18,17 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713480427
 ---
 
-[Moloco](https://www.linkedin.com/company/moloco/) is a machine learning company that provides performance solutions for digital advertising. Their products include the Moloco Cloud DSP for mobile advertising and the Moloco Commerce Media (MCM) for online retailers. Both products are powered by Moloco's machine-learning engine, which optimizes campaigns and provides personalized recommendations to customers.
+[Moloco](https://www.linkedin.com/company/moloco/) is a machine learning company that provides performance solutions for digital advertising. Their products include the Moloco Commerce Media (MCM) for online retailers and the Moloco Ads (DSP) for mobile advertising. Both products are powered by Moloco's machine-learning engine, which optimizes campaigns and provides personalized recommendations to customers.
 
-This integration lets you stream events and event properties from Amplitude to Moloco Commerce Media (MCM).
+This integration lets you stream events and event properties from Amplitude to [Moloco Commerce Media (MCM)](https://www.moloco.com/solutions/moloco-commerce-media).
 
 ## Considerations
 
 Keep these things in mind when sending events to Moloco Commerce Media (MCM):
 
 - You must enable this integration in each Amplitude project you want to use it in.
-- The Amplitude integration is only compatible with Moloco Commerce Media (MCM). 
-- You need a Moloco Commerce Media (MCM) account to enable this integration.
+- The Amplitude integration is only compatible with Moloco Commerce Media (MCM).
+- **Important**: You need a Moloco Commerce Media (MCM) account to enable this integration. If you don't have one, contact [Moloco](https://www.moloco.com/contact-us).
 - Amplitude matches the **user ID** to the ID field within Moloco Commerce Media (MCM) to associated events. If a user with that ID doesn't exist within Moloco Commerce Media (MCM), Amplitude creates one. Make sure that the Amplitude `user_id` field matches the Moloco **Identity ID** to avoid user duplication.
 - Amplitude sends all user properties along with the event.
 
