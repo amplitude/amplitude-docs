@@ -466,7 +466,8 @@ engagement._setUserProperties(userProperties: Record<string, any>): void
 | Parameter        | Type                      | Description                                                                                                                        |
 | ---------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `userProperties` | `Record<string, any>`     | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
-### Example usage
+### Example
+
 ```js
 // Supply user properties manually via engagement SDK
 const userProperties = {firstName: 'john'}
