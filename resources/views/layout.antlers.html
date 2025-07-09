@@ -28,6 +28,7 @@
   {{/if}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
   <link href="{{ mix src='/docs/css/site.css' }}" rel="stylesheet">
+  <link href="{{ mix src='/docs/css/prism.css' }}" rel="stylesheet">
   <link href="{{ mix src='/docs/css/algolia.css' }}" rel="stylesheet">
   <script src="{{ mix src='/docs/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
@@ -129,7 +130,7 @@
 {{if environment == 'production' }}
 {{partial:partials/kapa-script}}
 {{/if}}
-<script src="{{ mix src='/docs/js/site.js' }}"></script>
+<script src="{{ mix src='/docs/js/prism.js' }}"></script>
 <script src="{{ mix src='/docs/js/statuspage.js' }}"></script>
 {{if environment == "production"}}
 {{partial:partials/cookie-control}}

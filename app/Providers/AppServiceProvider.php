@@ -7,8 +7,6 @@ use Statamic\Statamic;
 use Statamic\Facades\Markdown;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
-use Torchlight\Commonmark\V2\TorchlightExtension;
-use App\Markdown\Copy\TorchlightWithCopyExtension;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,9 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Markdown::addExtensions(function () {
-            return [new TorchlightWithCopyExtension, new HeadingPermalinkExtension];
-        });
+
     }
 }
 

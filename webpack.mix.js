@@ -16,6 +16,7 @@ mix.js('resources/docs/js/api-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-table.js', 'public/docs/js')
+mix.js('resources/docs/js/prism.js', 'public/docs/js')
 //mix.js('resources/docs/js/interactive-flags-table.js', 'public/docs/js')
 mix.js('resources/docs/js/statuspage.js', 'public/docs/js')
 
@@ -37,6 +38,12 @@ mix.postCss('resources/docs/css/algolia.css', 'public/docs/css', [
     require('autoprefixer'),
     ]);
 
+mix.postCss('resources/docs/css/prism.css', 'public/docs/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('autoprefixer'),
+    ]);
 mix.copyDirectory(
     'content/collections',
     'public/docs/md'
