@@ -12,7 +12,7 @@ updated_at: 1721758941
 ---
 In Amplitude, the User Management API provides a programmatic solution to provisioning and group management through a public API. With it, you can quickly and easily manage your organizations at scale and integrate the provisioning process with other tools, including identity providers.
 
-The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
+The User Management API follows the [SCIM 2.0 Standard.](https://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
 
 {{partial:admonition type='note'}}
 For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](/docs/apis/analytics/scim). It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
