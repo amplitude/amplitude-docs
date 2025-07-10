@@ -24,7 +24,7 @@ full_details: true
 The React Native SDK lets you send events to Amplitude.
 
 {{partial:admonition type="note" heading="React Native support"}}
-Since [React-Native](https://github.com/facebook/react-native) doesn't provide stable release versioning, ensuring backward compatibility is challenging, especially as React-Native itself isn't backward compatible and might introduce breaking changes across different versions. You can check [here](https://github.com/react-native-community/cli#compatibility) for more details. Therefore, Amplitude supports only the latest version of React-Native.
+Because [React-Native](https://github.com/facebook/react-native) doesn't provide stable release versioning, ensuring backward compatibility is challenging. Additionally, React-Native itself isn't backward compatible and may introduce breaking changes across different versions. Check the React-Native [compatibility list](https://github.com/react-native-community/cli#compatibility) for more details. Amplitude supports only the latest version of React-Native.
 {{/partial:admonition}}
 
 ## Compatibility matrix
@@ -97,7 +97,7 @@ init(API_KEY, 'user@amplitude.com', {
 ## Configure the SDK
 
 {{partial:admonition type="note" heading="Web vs. mobile"}}
-The configuration of the SDK is shared across web and mobile platforms, but many of these options simply don't apply when running the SDK on native platforms (for example iOS, Android). For example, when the SDK is run on web, the identity is stored in the browser cookie by default, whereas on native platforms identity is stored in async storage.
+The configuration of the SDK is shared across web and mobile platforms. However, many of these options simply don't apply when running the SDK on native platforms (for example iOS, Android). For example, when the SDK is run on web, the identity is stored in the browser cookie by default, whereas on native platforms identity is stored in async storage.
 {{/partial:admonition}}
 
 {{partial:collapse name="Configuration options"}}
