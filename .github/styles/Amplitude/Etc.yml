@@ -1,0 +1,6 @@
+extends: existence
+message: Don't use '%s'. Start the sentence with 'for example' instead.
+level: warning
+scope: raw
+raw:
+  - (?<!\w)etc\.

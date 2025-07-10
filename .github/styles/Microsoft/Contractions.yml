@@ -47,4 +47,4 @@ swap:
   'where is(?!\.)': where's
   'where''s(?=\.)': where is
 
-  will not: won't
+#  will not: won't

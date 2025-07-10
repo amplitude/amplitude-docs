@@ -12,6 +12,8 @@ exceptions:
   - ASP
   - CLI
   - CPU
+# MZ-7/10/2025
+  - CDN
   - CSS
   - CSV
   - DEBUG
@@ -53,7 +55,7 @@ exceptions:
   - SVG
   - TBD
   - TCP
-  - TODO
+#  - TODO
   - URI
   - URL
   - USB
