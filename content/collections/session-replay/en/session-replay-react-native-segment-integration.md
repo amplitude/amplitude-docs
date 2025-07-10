@@ -101,29 +101,29 @@ The Segment Session Replay Plugin automatically:
 ### Event Processing
 
 The plugin processes the following Segment event types:
-- `TrackEvent`: Adds session replay properties to track events
-- `ScreenEvent`: Adds session replay properties to screen events
+- `TrackEvent`: Adds session replay properties to track events.
+- `ScreenEvent`: Adds session replay properties to screen events.
 
 For these events, the plugin:
-- Extracts session ID from event properties or Amplitude integration data
-- Extracts device ID from event context or anonymous ID
-- Adds session replay properties to the event before sending to Segment
+- Extracts session ID from event properties or Amplitude integration data.
+- Extracts device ID from event context or anonymous ID.
+- Adds session replay properties to the event before sending to Segment.
 
 ### Session ID Extraction
 
 The plugin extracts session IDs in the following order of priority:
 
-1. From Amplitude integration data: `event.integrations['Actions Amplitude'].session_id`
-2. From event properties: `event.properties.session_id`
-3. Defaults to `-1` if no session ID is found
+1. From Amplitude integration data: `event.integrations['Actions Amplitude'].session_id`.
+2. From event properties: `event.properties.session_id`.
+3. Defaults to `-1` if no session ID is found.
 
 ### Device ID Extraction
 
 The plugin extracts device IDs in the following order of priority:
 
-1. From event context: `event.context.device.id`
-2. From anonymous ID: `event.anonymousId`
-3. Defaults to `null` if no device ID is found
+1. From event context: `event.context.device.id`.
+2. From anonymous ID: `event.anonymousId`.
+3. Defaults to `null` if no device ID is found.
 
 ## Advanced Usage
 
@@ -164,7 +164,7 @@ const sessionReplayPlugin = createSegmentSessionReplayPlugin(sessionReplayConfig
 ## Important Notes
 
 {{partial:admonition type="warning" heading="Amplitude Session Plugin Required"}}
-This plugin requires the `@segment/analytics-react-native-plugin-amplitude-session` plugin to extract session IDs from Amplitude integration data. Make sure to add this plugin to your Segment client **before** adding the session replay plugin.
+This plugin requires the `@segment/analytics-react-native-plugin-amplitude-session` plugin to extract session IDs from Amplitude integration data. Make sure to add this plugin to your Segment client before adding the session replay plugin.
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="API Key Matching"}}
@@ -177,25 +177,25 @@ The Amplitude API key used in the session replay plugin configuration must match
 
 If session replay properties aren't being added to your events:
 
-1. Verify that the Amplitude Session Plugin is added before the Session Replay Plugin
-2. Check that your Segment events are of type `track` or `screen`
-3. Ensure the session replay plugin is properly initialized
+1. Verify that the Amplitude Session Plugin is added before the Session Replay Plugin.
+2. Check that your Segment events are of type `track` or `screen`.
+3. Ensure the session replay plugin is properly initialized.
 
 ### Session ID Not Found
 
 If the plugin can't extract session IDs:
 
-1. Verify that the Amplitude Session Plugin is properly configured
-2. Check that your Segment Amplitude destination is set up correctly
-3. Ensure events include the required Amplitude integration data
+1. Verify that the Amplitude Session Plugin is properly configured.
+2. Check that your Segment Amplitude destination is set up correctly.
+3. Ensure events include the required Amplitude integration data.
 
 ### Device ID Issues
 
 If device ID extraction fails:
 
-1. Check that your Segment events include device information in the context
-2. Verify that anonymous ID is properly set in Segment
-3. Consider manually setting the device ID in the plugin configuration
+1. Check that your Segment events include device information in the context.
+2. Verify that anonymous ID is properly set in Segment.
+3. Consider manually setting the device ID in the plugin configuration.
 
 For additional troubleshooting, see the [Session Replay React Native SDK Plugin troubleshooting guide](/docs/session-replay/session-replay-react-native-sdk-plugin).
 
