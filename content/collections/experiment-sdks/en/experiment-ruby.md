@@ -437,22 +437,29 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
 
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class for parsing and interacting with Amplitude identity cookies. This ensures the Device ID on the server matches the one set on the client.
 
 ```ruby
 require 'amplitude-experiment'
+require 'securerandom'
 
-# grab amp device id if present
+# Get the cookie name for the Amplitude API key
+# Use new_format: true for Browser SDK 2.0 cookies
 amp_cookie_name = AmplitudeExperiment::AmplitudeCookie.cookie_name('amplitude-api-key')
+# For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.cookie_name('amplitude-api-key', new_format: true)
 device_id = nil
+
+# Try to get device ID from existing cookie
 unless cookies[amp_cookie_name].nil?
   device_id = AmplitudeExperiment::AmplitudeCookie.parse(cookies[amp_cookie_name]).device_id
+  # For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.parse(cookies[amp_cookie_name], new_format: true).device_id
 end
 
+# If no device ID found, generate a new one and set the cookie
 if device_id.nil?
-  # deviceId doesn't exist, set the Amplitude Cookie
   device_id = SecureRandom.uuid
   amp_cookie_value = AmplitudeExperiment::AmplitudeCookie.generate(device_id)
+  # For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.generate(device_id, new_format: true)
   cookies[amp_cookie_name] = {
     value: amp_cookie_value,
     domain: '.your-domain.com', # this should be the same domain used by the Amplitude JS SDK
@@ -461,3 +468,5 @@ if device_id.nil?
   }
 end
 ```
+
+
