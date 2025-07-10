@@ -11,6 +11,8 @@ package_link: 'https://www.npmjs.com/package/@amplitude/ampli'
 ---
 Ampli is Amplitude's command line app. It works hand-in-hand with the Amplitude Data web app and enables developers to correctly instrument tracking code in their apps.
 
+# This is not allowed in Here
+
 ## Install Ampli
 
 Install Ampli from Homebrew or npm.
