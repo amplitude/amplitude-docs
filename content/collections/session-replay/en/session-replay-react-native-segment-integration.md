@@ -11,14 +11,14 @@ platform: mobile
 public: true
 description: "Choose this option if you use Segment's Amplitude (Actions) destination to send analytics data to Amplitude from your React Native app."
 ---
-This article covers the installation of Session Replay using the Session Replay React Native Segment plugin (currently in beta). If your React Native app is already instrumented with Segment using their Analytics React Native library and Amplitude (Actions) destination, use this option.
+This article covers the installation of Session Replay using the Session Replay React Native Segment plugin. If your React Native app is already instrumented with Segment using their Analytics React Native library and Amplitude (Actions) destination, use this option.
 
-If your app is already instrumented with an [Amplitude React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk), use the [Session Replay React Native SDK Plugin](/docs/session-replay/session-replay-react-native-sdk-plugin).
+If your app is instrumented with an [Amplitude React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk), use the [Session Replay React Native SDK Plugin](/docs/session-replay/session-replay-react-native-sdk-plugin).
 
-If you use Segment using other options, choose the [standalone implementation](/docs/session-replay/session-replay-react-native-sdk-plugin).
+If you use Segment using other options, use the [standalone implementation](/docs/session-replay/session-replay-react-native-sdk-plugin).
 
 {{partial:admonition type="tip" heading="Report issues"}}
-To report issues with Session Replay for React Native, see the [Amplitude-TypeScript GitHub repository](https://github.com/amplitude/Amplitude-TypeScript).
+To report issues with Session Replay for React Native, review [Amplitude-TypeScript GitHub repository](https://github.com/amplitude/Amplitude-TypeScript).
 {{/partial:admonition}}
 
 ## Before you begin
