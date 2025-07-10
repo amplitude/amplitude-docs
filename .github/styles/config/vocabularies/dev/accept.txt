@@ -145,7 +145,6 @@ postback
 prepends
 preprocessor
 Productboard
-Productboard
 ProGuard
 Pushwoosh
 Qualtrics
@@ -255,3 +254,5 @@ Heatmap
 Heatmaps
 Scrollmap
 Viewport
+[Ff]ullscreen
+[Dd]escope
