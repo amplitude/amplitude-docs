@@ -10,7 +10,7 @@ tokens:
   - birth defect
   - crippled
   - differently abled
-  - disabled
+#  - disabled
   - dumb
   - handicapped
   - handicaps
@@ -20,7 +20,7 @@ tokens:
   - maimed
   - mentally handicapped
   - missing a limb
-  - mute
+ # - mute
   - non-verbal
   - normal person
   - sight-impaired

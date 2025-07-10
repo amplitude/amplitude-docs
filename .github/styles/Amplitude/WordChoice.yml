@@ -14,11 +14,11 @@ swap:
   desire(d)?: want|need
   dummy: placeholder|mock|stub
   first-class: primary|default
-  grandfather(ed)?: legacy|expempt
+  grandfather(ed)?: legacy|exempt
   grayed-out: disabled|inactive
   kill: end|cancel|stop
   sanity-check: validate|final check
-  see: go to|navigate to
+  see: go to|navigate to|review
   terminate: end|cancel|stop
   
   
