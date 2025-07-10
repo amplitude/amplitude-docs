@@ -1,13 +1,17 @@
-**Summary:** This documentation covers advanced metric analysis techniques in Amplitude Experiment, specifically creating funnel analyses with experiment metrics where exposure events occur mid-funnel, and implementing threshold metrics using funnel counting for multi-event conversions.
+**Summary:** This documentation covers advanced metric analysis techniques in Amplitude Experiment, specifically creating funnel analyses based on experiment metrics (where exposure events occur mid-funnel) and implementing threshold metrics that require multiple event occurrences for conversion counting.
 
 **Keywords:**
 - Amplitude Experiment metrics
-- funnel analysis with exposure events
-- experiment conversion funnel
+- funnel analysis experiment integration
+- exposure event timing
+- post-exposure metric counting
 - variant jumping handling
 - threshold metrics
-- multi-event conversions
+- multiple event conversion requirements
+- experiment statistical significance
+- funnel conversion rate measurement
 - experiment flag key filtering
-- statistical significance noise reduction
-- funnel counting by uniques
-- post-exposure metric events
+- variant filtering
+- experiment date range configuration
+- multiple hypothesis testing
+- conversion funnel steps

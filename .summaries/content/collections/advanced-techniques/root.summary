@@ -1,49 +1,89 @@
-Amplitude Experiment is an enterprise-grade feature flagging and A/B testing platform designed for sophisticated experimentation at scale. The platform enables organizations to conduct controlled experiments, manage feature rollouts, and perform complex statistical analyses through a comprehensive suite of advanced techniques and methodologies.
+# Amplitude Experiment Advanced Techniques
 
-## Product Architecture and Feature Relationships
+Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that enables organizations to run sophisticated experiments and manage feature rollouts. The advanced techniques documentation covers complex experimentation scenarios, statistical analysis methods, and enterprise-level features for optimizing experiment design and data quality.
 
-The platform operates through a multi-layered architecture with distinct evaluation modes and traffic management systems. **Local evaluation flags** utilize Device ID bucketing and execute server-side with streamlined targeting capabilities, while **remote evaluation flags** support complex targeting rules and leverage Amplitude ID for bucketing decisions. Migration between these modes requires careful consideration of bucketing behavior changes and deployment implications.
+## Product Relationships and Feature Integration
 
-The **traffic management system** forms the core of experiment orchestration, implementing sophisticated allocation mechanisms through holdout groups, mutual exclusion groups, and sticky bucketing algorithms. Holdout groups systematically exclude user percentages to measure cumulative program impact, while mutual exclusion groups prevent cross-contamination between related experiments. These systems interact multiplicatively, creating compounded effects where users in multiple holdout groups experience reduced traffic exposure (e.g., dual 5% holdouts result in 90.25% effective traffic).
+The platform operates through multiple interconnected components that work together to provide a complete experimentation solution:
 
-**Flag dependencies and prerequisites** enable complex experiment orchestration through dependency chains, where dependent flags require prerequisite flags to maintain specific variant values. This architecture supports chained testing scenarios while preventing circular dependencies, available exclusively on enterprise plans.
+**Core Evaluation Infrastructure:**
+- **Local vs Remote Evaluation**: Experiments can run in local evaluation mode (using Device ID bucketing for faster performance) or remote evaluation mode (with full targeting capabilities)
+- **Server and Client SDKs**: The platform supports both server-side rendering through `@amplitude/experiment-node-server` and client-side implementation via `@amplitude/experiment-js-client`
+- **Evaluation Endpoints**: Primary API endpoints include `/v1/vardata` for variant data retrieval
 
-The platform maintains deep **analytics integration** with Amplitude Analytics, providing seamless metric analysis, outlier detection, and data visualization capabilities. Chart configurations can be imported and exported as JSON between Experiment and Analytics, ensuring consistency across analysis workflows.
+**Traffic Management System:**
+- **Mutual Exclusion Groups**: Prevent users from being exposed to multiple related experiments simultaneously to avoid interaction effects
+- **Holdout Groups**: Exclude specified user percentages from experiments to measure long-term cumulative impact and experimentation program lift
+- **Sticky Bucketing**: Maintains consistent variant assignments even when targeting criteria or rollout percentages change
 
-## Core Nomenclature and Technical Definitions
+**Advanced Experiment Types:**
+- **Split URL Testing**: Enables A/B testing through URL redirects without developer involvement
+- **Flag Prerequisites**: Creates dependencies between feature flags where evaluation requires prerequisite flags to have specific variant values
 
-**Sticky Bucketing** represents a deterministic hashing algorithm that maintains consistent variant assignments for users despite changes to experiment targeting criteria, percentage rollout, or rollout weights. This prevents variant jumping and ensures user experience consistency throughout experiment lifecycles.
+## Key Nomenclature and Definitions
 
-**Sample Ratio Mismatch (SRM)** identifies critical data quality issues where actual variant allocation deviates from expected traffic distribution. Common causes include instrumentation errors, mid-experiment configuration changes, or authentication patterns that systematically affect user distribution across variants.
+**Bucketing and Assignment:**
+- **Bucketing Key**: The identifier used for user assignment (Device ID for local evaluation, Amplitude ID for remote)
+- **Variant Jumping**: When users switch between experiment variants due to configuration changes
+- **Sticky Bucketing**: Feature that prevents variant jumping by maintaining consistent assignments
+- **Traffic Allocation**: Percentage of users exposed to experiments, can be multiplicative across multiple holdout groups
 
-**Exposure Events** distinguish between user assignment and actual variant exposure, capturing when users genuinely encounter experiment variants rather than merely being assigned to them. These can be custom mid-funnel events or default events triggered by flag evaluation.
+**Statistical Analysis:**
+- **Sample Ratio Mismatch (SRM)**: Deviation from expected variant allocation ratios, indicating potential data quality issues
+- **Multiple Hypothesis Testing**: Statistical challenge addressed through Bonferroni correction for family-wise error rate control
+- **Cumulative Exposures**: Time-series graphs showing user exposure patterns with various slope interpretations
+- **Inflection Points**: Changes in exposure graph slopes indicating traffic allocation or targeting modifications
 
-**Cumulative Exposures Graph** provides temporal visualization of exposure event accumulation, with slope variations indicating exposure rate changes. Increasing slopes demonstrate steady growth, decreasing slopes reveal slowing exposure rates, and inflection points highlight traffic allocation or targeting modifications.
+**Metrics and Measurement:**
+- **Exposure Events**: Tracking when users encounter experiment variants, can be custom or assignment-based
+- **Threshold Metrics**: Require multiple event occurrences before counting conversions
+- **Funnel Analysis**: Experiment metrics integrated into conversion funnel measurement
+- **Winsorization**: Outlier mitigation technique available in Enterprise plans
 
-**Winsorization** implements statistical outlier mitigation by capping extreme values at specified percentiles rather than removing observations entirely, preserving sample size while reducing statistical noise.
+**Data Quality and Analysis:**
+- **Outlier Detection**: Statistical methods including standard deviations, boxplots, and percentiles
+- **Log Transforms**: Mathematical transformations for handling skewed data distributions
+- **FREQPERCENTILE, PROPSUM, TOTALS Formulas**: Amplitude-specific calculation methods for different metric types
 
-**Multiple Hypothesis Testing** applies statistical corrections when evaluating multiple variants or metrics simultaneously, utilizing Bonferroni correction to control family-wise error rates and prevent false positive inflation.
+## Broader Product Ecosystem Integration
 
-## Ecosystem Integration and Deployment Architecture
+Amplitude Experiment integrates deeply with the broader Amplitude ecosystem:
 
-Amplitude Experiment integrates with diverse external systems and deployment patterns. **AWS CloudFront integration** enables reverse proxy configuration to bypass domain blocking, utilizing specific cache policies including CachingDisabled, AllViewExceptHostHeader, and CORS-with-preflight-and-SecurityHeadersPolicy configurations with the `/v1/vardata` endpoint for evaluation requests.
+**Analytics Integration:**
+- Seamless data flow between Experiment and Analytics platforms
+- JSON import/export functionality for chart settings and configurations
+- Shared event tracking through Analytics SDK for comprehensive measurement
 
-**Server-Side Rendering (SSR)** implementations coordinate the JavaScript Server SDK (`@amplitude/experiment-node-server`) with the Client SDK (`@amplitude/experiment-js-client`), enabling server-side variant fetching and client initialization using pre-fetched variants for seamless user experiences.
+**Enterprise Features:**
+- Flag prerequisites and dependencies available on Enterprise plans
+- Advanced holdout group functionality with mutual exclusion capabilities
+- Enhanced statistical analysis tools and outlier detection methods
 
-**Split URL Testing** facilitates A/B testing through URL redirects without developer intervention, requiring Experiment SDK script tags in HTML `<head>` sections and Analytics SDK for event tracking, though limited to local evaluation mode and User bucketing unit requirements.
+**Infrastructure and Deployment:**
+- AWS CloudFront integration for reverse proxy setup to bypass domain blocking
+- Support for content management systems and low-code implementations
+- Server-side rendering capabilities for seamless user experiences
+
+**Data Quality and Debugging:**
+- Comprehensive debugging tools through cumulative assignment charts and exposure analysis
+- Event stream monitoring via Experiment Assignment events
+- Integration with Amplitude's Microscope tool for detailed data investigation
 
 ## API Endpoints and Technical Implementation
 
-The primary **evaluation endpoint** `/v1/vardata` handles variant data retrieval and supports CloudFront proxy configurations for enhanced reliability and performance.
+**Primary API Endpoints:**
+- `/v1/vardata` - Core endpoint for variant data retrieval and testing
+- Evaluation servers: `api.lab.amplitude.com` and `api.lab.eu.amplitude.com`
 
-**SDK Integration Points** include:
-- `ExperimentServer.fetchV2()` for server-side variant fetching
-- `ExperimentClient.initialVariants` for client-side initialization with pre-fetched variants
-- `[Experiment] Exposure` events for default exposure tracking
-- `Experiment Assignment` events for debugging sticky bucketing and variant assignments
+**SDK Integration:**
+- `@amplitude/experiment-node-server` for server-side implementation
+- `@amplitude/experiment-js-client` for client-side functionality
+- Script tag implementation in `<head>` section for split URL testing
 
-**Configuration APIs** support JSON import/export functionality for programmatic chart configuration, with schemas encompassing variants arrays, bucketingGroupType, userProperty, exposureEvent, and comprehensive metrics definitions.
+**Configuration Methods:**
+- JSON schema structure with fields including variants, bucketingGroupType, userProperty, metrics, and exposureEvent
+- Dependencies card for configuring flag prerequisites
+- Mutex and Holdouts tab for traffic management
+- Statistical settings toggle for multiple hypothesis testing corrections
 
-**Advanced Metric Analysis** capabilities include complex funnel analyses with mid-funnel exposure events, threshold metrics using funnel counting methodologies, and multi-event conversion tracking with experiment flag key filtering to reduce statistical noise and improve signal detection.
-
-The platform emphasizes enterprise-scale considerations including sophisticated traffic management complexity, statistical rigor through multiple hypothesis testing corrections, and advanced debugging approaches utilizing cumulative exposure analysis and comprehensive data quality monitoring systems.
+The platform provides enterprise-grade experimentation capabilities with sophisticated statistical analysis, traffic management, and data quality assurance features, making it suitable for organizations running complex, large-scale experimentation programs.
