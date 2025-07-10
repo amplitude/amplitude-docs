@@ -1,45 +1,50 @@
 ## Amplitude Product Ecosystem
 
-Amplitude is a comprehensive digital analytics and product intelligence platform consisting of four core products: Analytics, Data, Experiment, and Session Replay. The platform provides organizations with tools to understand user behavior, manage data pipelines, conduct feature experimentation, and analyze user interactions through session recordings.
+Amplitude is a comprehensive digital analytics and experimentation platform consisting of four core products: **Analytics**, **Data**, **Experiment**, and **Session Replay**. The platform provides organizations with end-to-end capabilities for understanding user behavior, managing data pipelines, conducting experiments, and analyzing user interactions through session recordings.
 
 ## Product Architecture and Relationships
 
 The Amplitude ecosystem is built around a unified data foundation that connects four specialized products:
 
-**Amplitude Analytics** serves as the core behavioral analytics engine, enabling teams to track user interactions, analyze conversion funnels, and understand product usage patterns through event-based data collection.
+**Amplitude Analytics** serves as the core behavioral analytics engine, enabling organizations to track, measure, and analyze user interactions across digital properties. This product forms the foundation for data-driven decision making and user behavior insights.
 
-**Amplitude Data** functions as the data management layer, providing capabilities for data warehouse integration, event property management, and user property tracking to ensure consistent data governance across the platform.
+**Amplitude Data** functions as the data management and pipeline orchestration layer, handling data ingestion, transformation, and routing to various destinations including data warehouses. This product ensures data quality and accessibility across the organization.
 
-**Amplitude Experiment** delivers feature flag management and A/B testing capabilities, allowing teams to safely deploy features and measure their impact on user behavior and business metrics.
+**Amplitude Experiment** provides feature flagging and A/B testing capabilities, allowing teams to safely deploy features and measure their impact. This product integrates closely with Analytics to provide comprehensive experiment analysis.
 
-**Amplitude Session Replay** captures and analyzes user session recordings, providing visual insights into user interactions and helping identify usability issues and optimization opportunities.
+**Amplitude Session Replay** captures and analyzes user session recordings, providing qualitative insights to complement the quantitative data from Analytics. This product helps teams understand the "why" behind user behaviors identified in analytics data.
 
 ## Technical Implementation Framework
 
-The platform operates through two primary technical interfaces:
+The platform is accessible through multiple technical interfaces:
 
-**Amplitude SDKs** provide client-side integration capabilities, with the Browser SDK 2 being a prominent implementation for web applications. The SDKs handle event tracking, user identification, and data transmission to Amplitude's servers.
+**SDKs (Software Development Kits)** provide client-side integration capabilities, with the Browser SDK 2 being prominently featured for web applications. The SDK architecture supports extensive configuration options including:
+- `instanceName` parameter for multi-instance deployments
+- `flushIntervalMillis`, `flushQueueSize`, and `flushMaxRetries` for data transmission optimization
+- `logLevel` and `loggerProvider` for debugging and monitoring
+- `serverUrl` and `serverZone` (EU/US) for data residency compliance
+- `transportProvider` with `FetchTransport` and `useBatch` parameter for network optimization
+- Privacy controls through `optOut` boolean and `minIdLength` settings
 
-**Amplitude APIs** enable server-side integrations and programmatic access to platform functionality, supporting data ingestion, user management, and analytics queries.
+**APIs** provide server-side integration and programmatic access to platform functionality, enabling custom integrations and automated workflows.
 
-## Key Technical Nomenclature
+## Key Nomenclature and Concepts
 
-**Event Properties**: Attributes that describe specific user actions or behaviors, providing contextual information about what users do within applications.
+**Event Properties** and **User Properties** form the core data model, capturing what users do (events) and who they are (user attributes). This distinction is fundamental to how Amplitude organizes and analyzes behavioral data.
 
-**User Properties**: Persistent attributes associated with individual users, enabling segmentation and personalization based on user characteristics.
+**Feature Flags** enable controlled feature rollouts and experimentation, allowing teams to decouple deployment from release and conduct sophisticated A/B tests.
 
-**Instance Configuration**: SDK setup parameters including:
-- `instanceName`: Identifier for specific SDK instances
-- `flushIntervalMillis`: Timing configuration for data transmission
-- `flushQueueSize`: Batch size settings for event processing
-- `serverZone`: Geographic routing (EU/US) for data residency compliance
-- `transportProvider`: Network layer configuration for data transmission
-- `logLevel`: Debugging and monitoring verbosity settings
-- `serverUrl`: Custom endpoint configuration
-- `useBatch`: API optimization setting for bulk data operations
+**Session Replay Browser** refers to the client-side component that captures user interactions for later analysis, with specific configuration parameters for the `amplitude-session-replay-browser` package.
+
+**Data Warehouse Analysis** represents the integration capabilities that allow Amplitude to work with existing data infrastructure, supporting modern data stack architectures.
 
 ## Documentation Architecture
 
-The documentation system utilizes a component-based architecture with reusable UI elements including tabs, collapse sections, and admonition blocks. The platform supports multiple content blueprints (page, home) with configurable navigation options (`hide_toc`, `hide_side-nav`) and structured content organization through collections and templates.
+The documentation system utilizes a component-based architecture with reusable elements:
+- **Tabs partial** for organizing content by programming language (js/ts)
+- **Collapse partial** for managing detailed configuration tables
+- **Admonition blocks** with semantic types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting important information
 
-The documentation includes practical implementation examples, particularly for the session-replay-browser package, demonstrating real-world configuration scenarios and integration patterns for developers implementing Amplitude across web applications.
+The documentation follows a blueprint-based content management system with structured metadata, author tracking, and publication status controls. The homepage serves as a product showcase with curated popular content, while maintaining clean navigation through `hide_toc` and `hide_side-nav` configurations.
+
+This technical documentation framework supports both developer-focused implementation guides and business-oriented product explanations, reflecting Amplitude's position as a platform that serves both technical implementers and business stakeholders in the analytics and experimentation workflow.

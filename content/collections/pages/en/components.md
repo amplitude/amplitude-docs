@@ -4,7 +4,6 @@ blueprint: page
 title: 'Site components'
 package: "@amplitude/session-replay-browser"
 ---
-{{partial:bundle-size :package_name="package"}}
 
 
 ## Tabs

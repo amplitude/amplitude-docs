@@ -1,56 +1,74 @@
-## Ampli: Type-Safe Analytics SDK Generator and Validation Platform
+## Ampli: Type-Safe Analytics Instrumentation Platform
 
-Ampli is Amplitude's code generation and validation platform that creates strongly-typed analytics SDKs from tracking plan definitions. It bridges the gap between data governance and developer implementation by generating type-safe wrapper libraries that ensure analytics instrumentation matches predefined tracking plans in Amplitude Data.
+Ampli is Amplitude's type-safe analytics instrumentation solution that generates strongly-typed tracking libraries from Amplitude Data tracking plans. The platform eliminates manual JSON object creation for event tracking by providing autocomplete-enabled method calls and compile-time validation, ensuring analytics implementations match defined tracking specifications.
 
 ## Product Architecture and Feature Relationships
 
-The Ampli ecosystem consists of three core components that work together to provide end-to-end analytics implementation governance:
+The Ampli ecosystem consists of three interconnected components that work together to provide end-to-end type-safe analytics:
 
-**Ampli CLI** serves as the primary interface for developers, providing commands for initialization (`ampli init`), code generation (`ampli pull`), validation (`ampli status`), and source control management (`ampli checkout`). The CLI integrates with Amplitude Data workspaces to synchronize tracking plan definitions with local development environments.
+**Ampli CLI** serves as the central orchestration tool that connects Amplitude Data tracking plans with local development environments. It generates platform-specific tracking libraries (Browser, Node.js, iOS, Android) and provides validation capabilities through commands like `ampli pull`, `ampli status`, and `ampli checkout`.
 
-**Ampli Wrapper** is the generated strongly-typed API layer that replaces manual JSON object creation with autocomplete-enabled method calls. Generated via `ampli pull`, these wrappers provide compile-time validation and runtime type safety for event tracking implementations.
+**Ampli Wrapper** is the generated strongly-typed API layer that replaces manual event tracking with method-based calls. Instead of constructing JSON objects, developers use generated methods like `ampli.songPlayed()` or `ampli.productViewed()` that correspond directly to tracking plan definitions.
 
-**Source Control Integration** enables parallel management of tracking plan branches alongside Git branches, allowing teams to coordinate data schema changes with code changes through branch-based workflows and CI/CD validation.
+**Migration and Integration Framework** enables progressive adoption from existing Amplitude SDK implementations through three phases: SDK-only, hybrid SDK+Ampli using `ampli.load({ client: { instance: amplitude }})`, and full Ampli-only implementation.
 
 ## Key Nomenclature and Definitions
 
-**Tracking Plan**: The centralized schema definition in Amplitude Data that specifies event names, properties, and validation rules for analytics implementation.
+**Tracking Plan**: The source-of-truth schema definition in Amplitude Data that specifies event structures, properties, and validation rules
 
-**Ampli Wrapper**: The generated, strongly-typed SDK that provides methods like `ampli.songPlayed()` or `ampli.track(new SongPlayed())` instead of manual JSON construction.
+**Ampli Wrapper**: The generated strongly-typed API that provides method-based event tracking with compile-time validation
 
-**Data Branch**: Tracking plan branches in Amplitude Data that parallel Git branches, enabling coordinated schema and code evolution.
+**Data Branch**: Version control branches within Amplitude Data tracking plans that parallel Git branches for coordinated development workflows
 
-**Implementation Status**: The validation state of analytics instrumentation against tracking plan definitions, verified through `ampli status` commands.
+**ampli.json**: Configuration file that defines source directories, API keys, instance names, and tracking plan references for CLI operations
 
-**ampli.json**: The local configuration file that defines workspace connections, source mappings, and generation settings for the Ampli CLI.
+**Source Code Instrumentation**: The process of validating that implemented analytics code matches the defined tracking plan specifications
 
-## Ecosystem Integration and Migration Strategy
+**Instance Name**: Parameter for supporting multiple Ampli configurations within monorepo or multi-environment setups
 
-Ampli supports progressive migration from existing Amplitude SDK implementations through a three-phase approach:
+## Broader Product Ecosystem Integration
 
-1. **SDK-only**: Traditional Amplitude SDK usage with manual event tracking
-2. **Hybrid**: Combined implementation using `ampli.load({ client: { instance: amplitude }})` to leverage existing SDK instances while introducing type safety
-3. **Ampli-only**: Full migration to generated wrapper methods with complete type safety and validation
+Ampli integrates deeply with Amplitude's data governance and analytics platform ecosystem:
 
-The platform integrates with broader development workflows through CI/CD validation, supporting GitHub Actions and Bitbucket Pipelines via Docker containers (`amplitudeinc/ampli`, `amplitudeinc/ampli-all`) for automated tracking plan compliance verification.
+**Amplitude Data Integration**: Ampli serves as the implementation layer for Amplitude Data's tracking plan governance, ensuring that defined schemas are correctly implemented in production code.
+
+**CI/CD Pipeline Integration**: Through Docker containers (`amplitudeinc/ampli`, `amplitudeinc/ampli-all`) and environment variable configuration (`AMPLI_TOKEN`), Ampli validates analytics implementations in GitHub Actions, Bitbucket Pipelines, and other CI systems.
+
+**Multi-Platform SDK Generation**: Ampli generates platform-specific implementations that integrate with underlying Amplitude SDKs (`@amplitude/analytics-browser`, mobile SDKs) while providing the type-safe abstraction layer.
+
+**Version Control Coordination**: The source control workflow enables parallel development of tracking plan changes and code implementation through branch coordination commands like `ampli status --is-merged` and `ampli status --is-latest`.
 
 ## API Endpoints and Command Line Interface
 
-**Core CLI Commands:**
-- `ampli pull`: Generates type-safe SDK from tracking plan definitions
-- `ampli status`: Validates implementation against tracking plan with linting capabilities
-- `ampli status --is-merged/--is-latest`: Checks branch synchronization status
-- `ampli checkout`: Switches between tracking plan branches
-- `ampli configure`: Sets up workspace and authentication
-- `ampli init`: Initializes new Ampli project configuration
+### Core CLI Commands
 
-**Installation Methods:**
-- Homebrew: `brew install ampli`
-- npm: `@amplitude/ampli` package
-- Docker: `amplitudeinc/ampli` and `amplitudeinc/ampli-all` containers
+**Installation and Setup**:
+- `npm install -g @amplitude/ampli` or Homebrew installation
+- `ampli pull` - Downloads and generates tracking library from Amplitude Data
+- `ampli configure` - Sets up authentication and workspace configuration
 
-**Authentication:**
-- AMPLI_TOKEN environment variable for CI/CD integration
-- API token creation through Amplitude Data workspace settings
+**Development Workflow**:
+- `ampli status` - Verifies source code against tracking plan definitions
+- `ampli checkout <branch>` - Switches to different tracking plan branch
+- `ampli init` - Initializes new Ampli configuration
 
-The platform supports monorepo architectures and provides branch-based tracking plan management with enforcement capabilities for coordinating data schema changes with code deployments through automated CI pipeline integration.
+**CI/CD Integration**:
+- `ampli status --is-merged` - Validates branch merge status for CI checks
+- `ampli status --is-latest` - Confirms implementation uses latest tracking plan version
+
+### Configuration Parameters
+
+**CLI Flags**:
+- `--update` - Forces regeneration of tracking library
+- `--omit-api-keys` / `--include-api-keys` - Controls API key inclusion in generated code
+- `sourceDir` - Specifies source code directory for validation
+- `instanceName` - Enables multiple Ampli configurations per project
+
+### Generated API Methods
+
+**Event Tracking**:
+- `ampli.track(new EventName())` - Type-safe event tracking with validation
+- `ampli.eventName()` - Direct method calls for defined events
+- `ampli.load()` - Initialization with optional existing Amplitude client integration
+
+The platform supports both standalone implementation and hybrid integration with existing Amplitude SDK installations, enabling teams to adopt type-safe analytics incrementally while maintaining existing instrumentation.

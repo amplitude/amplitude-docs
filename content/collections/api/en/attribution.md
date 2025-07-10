@@ -13,6 +13,8 @@ lede: "The Attribution API is for sending attribution campaign events (identifie
 api_status: ga
 summary: 'Send attribution campaign events (identified by `idfa`, `idfv`, or `adid`) that contain attribution information.'
 ---
+OCR systems do something that.
+
 ## Considerations
 
 - When Amplitude can't match attribution events to an existing user, they're held for up to 72 hours for potential user matching. If an event isn't logged for a matching user within 72 hours of receiving the attribution data, then Amplitude **drops the attribution data**.

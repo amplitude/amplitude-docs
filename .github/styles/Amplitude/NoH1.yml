@@ -1,0 +1,7 @@
+extends: existence
+message: "Don't use H1 headings ('#') in document body. Use H2 ('##') or lower."
+level: error
+scope: raw
+nonword: true
+tokens:
+  - '^#\s+.*'

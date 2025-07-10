@@ -1,13 +1,16 @@
-**Summary:** This documentation explains how to interpret Amplitude's Lifecycle chart analysis, covering the Growth view's histogram with active user segments (new, current, resurrected) and dormant users, plus alternative Dormant and Pulse chart views with their specific metrics and formulas.
+**Summary:** This documentation explains how to interpret Amplitude's Lifecycle chart analysis, covering the Growth histogram view with active user segments (new, current, resurrected in blue buckets) versus dormant users (red buckets), plus alternative Dormant and Pulse chart views with specific ratio calculations for user growth tracking.
 
 **Keywords:**
 - Lifecycle chart interpretation
 - Growth histogram view
 - Active user segmentation (new, current, resurrected)
 - Dormant users analysis
-- Pulse ratio calculation
+- Blue buckets vs red buckets
 - Usage intervals (daily, weekly, monthly)
+- Pulse ratio calculation
+- Dormant chart view
 - Breakdown table export
-- Chart view switching
-- User retention metrics
+- User growth tracking
 - Amplitude analytics
+- CSV export functionality
+- Pulse formula: (new + resurrected) / dormant

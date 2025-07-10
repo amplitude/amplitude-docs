@@ -1,0 +1,6 @@
+extends: existence
+message: Remove '%s'. Documentation represents the current state of the product.
+level: error
+ignorecase: true
+tokens:
+  - Currently
