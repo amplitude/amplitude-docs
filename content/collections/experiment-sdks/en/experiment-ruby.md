@@ -437,7 +437,7 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
 
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class for parsing and interacting with Amplitude identity cookies. This ensures the Device ID on the server matches the one set on the client.
+If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
 
 ```ruby
 require 'amplitude-experiment'
