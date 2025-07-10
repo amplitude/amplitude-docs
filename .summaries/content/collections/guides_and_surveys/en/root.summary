@@ -2,55 +2,48 @@ Amplitude Guides and Surveys is a comprehensive in-product user experience platf
 
 ## Core Product Architecture
 
-The platform consists of two primary components: **Guides** for interactive user onboarding and **Surveys** for feedback collection. Guides support five distinct form factors (Modal, Popover, Pin, Tooltip, Banner, and Checklist) with multi-step functionality and interactive blocks including buttons, images, and videos. Surveys utilize four unique block types (Rating, Long answer, Short answer, List) with conditional logic for dynamic response paths, supporting specialized rating types including Stars, NPS, Emoji, and Rating labels.
+The platform consists of three primary components that work together to deliver personalized user experiences:
 
-The **Resource Center** serves as an intelligent content hub that integrates with the Guides and Surveys SDK, providing search functionality, recommended content, quick links, and call-to-action buttons. It features an Autopilot system that uses semantic search algorithms to automatically generate content recommendations from external documentation repositories.
+**Guides** provide interactive in-product guidance through five distinct form factors: Modal (overlay dialogs), Popover (contextual bubbles), Pin (persistent elements), Tooltip (hover information), Banner (notification bars), and Checklist (task lists). These guides support multi-step experiences with advanced customization including z-index positioning, text animations with typewriter effects, and interactive blocks containing buttons, images, and videos.
 
-## Technical Implementation
+**Surveys** enable targeted feedback collection using four specialized block types: Rating blocks (supporting Stars, NPS, Emoji, and custom Rating labels), Long answer blocks for detailed responses, Short answer blocks for brief input, and List blocks for multiple choice options. The survey system implements conditional logic for dynamic response paths and supports pre-filling with user properties.
 
-The platform operates through multi-platform SDKs supporting web (@amplitude/engagement-browser), iOS (AmplitudeEngagement), Android (amplitude-engagement-android), and React Native (@amplitude/plugin-engagement-react-native). The web SDK integrates with the Amplitude Browser SDK via `amplitude.add(window.engagement.plugin())` and supports third-party analytics providers like Segment and Google Tag Manager.
+**Resource Center** functions as an intelligent help widget that integrates external documentation repositories, provides semantic search capabilities, displays recommended content through Autopilot automation, and offers quick links with customizable call-to-action buttons. The Resource Center can scrape website content, manage article visibility through draft/published states, and serve personalized landing pages.
 
-Key SDK methods include:
-- `engagement.init()` and `engagement.boot()` for initialization
-- `engagement.gs.show()`, `engagement.gs.reset()`, `engagement.gs.list()`, `engagement.gs.closeAll()` for guide management
-- `setThemeMode()`, `addCallback()`, `setRouter()`, `updateLanguage()` for customization
+## Multi-Platform SDK Implementation
 
-The platform supports proxy configurations through AWS CloudFront with dual origins (cdn.amplitude.com for static assets, gs.amplitude.com for API requests with /sdk/ prefix) to circumvent domain blocking.
+The platform provides native SDKs across multiple platforms with consistent initialization patterns:
 
-## Key Nomenclature and Definitions
+**Web SDK** (`@amplitude/engagement-browser`) integrates with the Amplitude Browser SDK through `engagement.init()` and `engagement.boot()` methods, supporting third-party analytics providers like Segment and Google Tag Manager integration. Key methods include `forwardEvent()` for event-based triggers, `setThemeMode()` for appearance management, and `addCallback()` for custom button actions.
 
-**Lifecycle UUID**: Unique identifier for tracking user interactions across guide/survey sessions
-**Step ID/Step Index**: Sequential identifiers for multi-step experiences
-**Variant ID**: A/B testing identifier for experiment tracking
-**Strike Detection**: Behavioral trigger mechanism with rate-limiting
-**Smart Delay**: Intelligent timing trigger based on user behavior patterns
-**Rage Click**: Detection system for user frustration indicators
-**Microscope Integration**: Session replay functionality for detailed user interaction analysis
-**Recommendation Sets**: Customizable content collections for Resource Center personalization
-**Autopilot**: Automated content recommendation system using semantic search
+**iOS SDK** (`AmplitudeEngagement`) supports Swift Package Manager and CocoaPods installation, utilizing `accessibilityIdentifier` for element targeting and `amplitudeView` for pin/tooltip guides. The SDK provides `AmplitudeBootOptions` for user/device ID configuration and supports custom URL schemes for preview mode.
 
-## Targeting and Experimentation
+**Android SDK** (`amplitude-engagement-android`) requires Android API Level 24+ and Kotlin 1.8.22+, implementing `AmplitudeEngagement` class initialization with `AmplitudeBootOptions` and `AmplitudeEndUser` configuration. The SDK includes screen tracking capabilities and AndroidManifest.xml intent filter setup for preview functionality.
 
-The platform provides sophisticated targeting capabilities through user segmentation (All Users vs Targeted Users with property/cohort filtering), trigger conditions (element appearance/clicks, time delays, smart delay, rage click, user confusion, event tracking), and page targeting rules using CSS selectors and XPath expressions. Priority levels (Urgent/High/Medium/Low) with tiebreaker logic manage multiple eligible experiences.
+**React Native SDK** (`@amplitude/plugin-engagement-react-native`) provides deep linking support through `handleURL()` method and integrates with `@react-native-async-storage/async-storage` for persistence.
 
-Amplitude Experiment integration enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and comprehensive analytics through the insights dashboard. The system tracks experiment exposure events and provides performance metrics including completion rates and time-based analysis.
+## Advanced Targeting and Experimentation
 
-## Analytics and Insights
+The platform implements sophisticated targeting mechanisms through user segmentation (All Users vs Targeted Users with property/cohort filtering) and behavioral triggers including element appearance/clicks, time delays, smart delay, rage click detection, user confusion detection, and custom event tracking. Page targeting supports URL matching patterns with CSS selector and XPath expressions.
 
-The platform generates comprehensive analytics through Amplitude events including Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed. The analytics system provides aggregate data analysis with type-specific insights (NPS scoring with promoters/detractors/passives classification), filtering capabilities, and time-based engagement charts with rolling window analysis (hourly, daily, weekly, monthly, quarterly).
+**Amplitude Experiment Integration** enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event tracking, and performance analytics through the insights dashboard. Experiments support treatment vs control groups with configurable rollout percentages.
 
-Individual response analysis is available through the Responses tab with sorting, filtering, and column pinning capabilities. Real-time interaction feeds and rage close percentage tracking provide immediate user behavior insights.
+## Analytics and Performance Monitoring
 
-## Customization and Localization
+The platform provides comprehensive analytics through Amplitude event tracking with standardized properties including Lifecycle UUID, Step ID, Step Index, and Variant ID for A/B testing. Key events include Guide Engaged/Completed/Dismissed, Survey Submitted/Abandoned/Completed, and Tooltip Marker Viewed, with rage close detection and debug mode filtering.
 
-The Themes system enables comprehensive branding customization through the Theme Editor with Brand controls and Component editor sections, supporting accent colors, Google Fonts typography, form controls styling, widget dimensions, CSS properties configuration, and animation settings. Platform-specific themes support both web and mobile implementations.
+**Survey Analysis Features** include the Insights tab for aggregate data with NPS scoring (promoters/detractors/passives), type-specific insights, and filtering capabilities. The Responses tab enables individual user response analysis with sorting, filtering, and column pinning options. Time-based engagement charts integrate with Microscope for session replay analysis.
 
-Localization functionality supports multilingual content through SDK locale initialization, Project settings language configuration, and translation workflows using both web interface and .xliff file methods. The system provides locale code language resolution with translation fallback behavior.
+## Localization and Customization
 
-## Permissions and Access Control
+The platform supports multilingual deployment through SDK locale initialization and Project settings configuration. Translation workflows utilize both web interface and .xliff file methods for serving localized content with fallback behavior and language resolution.
 
-The platform implements a three-tier permission system (Viewer, Member, Manager) that overrides base Amplitude user roles, providing granular access control for viewing, editing drafts, publishing, and running experiments. The system supports per-project role assignment through the Guides and Surveys > Permissions interface with five access levels: No access, Viewer, Member, Manager, and Administrator.
+**Themes System** provides comprehensive branding customization through the Theme Editor with Brand controls and Component editor sections. Customization options include accent colors, Google Fonts typography, form controls styling, widget dimensions, CSS properties configuration, and animation settings for platform-specific deployment.
 
-## Content Management
+## Permission Management and Deployment
 
-The Resource Center supports multiple content sources including documentation repositories and video content with Website scraper functionality for URL extraction through direct URLs or CSV/XML sitemap upload. Advanced filtering options include URL path inclusion/exclusion and content selector overrides for targeting specific page elements. The system provides sync error management with Force Sync and Publish capabilities for automatically excluded pages.
+The platform implements a five-tier permission system (No access, Viewer, Member, Manager, Administrator) that overrides base Amplitude user roles, providing granular access control for viewing, editing drafts, publishing, and running experiments. Content management supports Draft/Published/Schedule status with priority levels (Urgent/High/Medium/Low) and display limits with cooldown periods.
+
+**Testing and Preview Capabilities** include preview mode for condition verification (trigger, limit, throttle), troubleshooting tools with Reset User History and Ignore Throttle Limits options, and live testing through cohort targeting with manual event triggering.
+
+The platform integrates with proxy configurations using AWS CloudFront for domain blocking circumvention, supports Content Security Policy (CSP) nonce configuration, and provides serverZone options for EU/US data residency compliance.
