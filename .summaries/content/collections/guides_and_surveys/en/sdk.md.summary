@@ -1,37 +1,22 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers like Segment, and Google Tag Manager, with methods for initialization, boot process, theme management, callbacks, routing, and localization.
+**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, with methods for initialization, boot process, theme management, callbacks, routing, and localization.
 
 **Keywords:**
-- @amplitude/engagement-browser
-- engagement.init()
-- engagement.boot()
+- Amplitude Guides and Surveys Web SDK
+- @amplitude/engagement-browser package
+- engagement.init() and engagement.boot() methods
 - amplitude.add(window.engagement.plugin())
-- BootOptions
-- InitOptions
-- EndUser
-- Integration
-- forwardEvent
-- serverZone
-- serverUrl
-- cdnUrl
-- user_id
-- device_id
-- user_properties
-- event_type
-- event_properties
-- setThemeMode
-- addCallback
-- setRouter
-- updateLanguage
-- engagement.gs.show()
-- engagement.gs.reset()
-- engagement.gs.list()
-- engagement.gs.closeAll()
-- Content Security Policy (CSP)
+- InitOptions and BootOptions configuration
+- third-party analytics integrations
 - Segment analytics integration
 - Google Tag Manager template
-- single page application (SPA)
-- proxy setups
-- localization locale
-- targeting resolution
-- event-based triggers
-- _debugStatus()
+- Content Security Policy (CSP) nonce
+- serverZone EU/US configuration
+- proxy setup serverUrl/cdnUrl
+- forwardEvent() for event-based triggers
+- setThemeMode() lightMode/darkMode
+- addCallback() for button actions
+- setRouter() for SPA navigation
+- updateLanguage() localization
+- engagement.gs.show() and engagement.gs.reset()
+- user_id and device_id identification
+- event_type and event_properties tracking
