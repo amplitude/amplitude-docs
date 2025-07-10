@@ -423,27 +423,34 @@ $config = \AmplitudeExperiment\RemoteEvaluationConfig::builder()
 
 ## Access Amplitude cookies
 
-If you use the Amplitude Analytics SDK on the client-side, the PHP server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This helps ensure that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the PHP server SDK provides an `AmplitudeCookie` class for parsing and interacting with Amplitude identity cookies. This ensures the Device ID on the server matches the one set on the client.
 
 ```php
 <?php
-// Grab amp device id if present
-$ampCookieName = AmplitudeCookie::cookieName('amplitude-api-key');
-$deviceId = null;
+use AmplitudeExperiment\AmplitudeCookie;
 
-if (!empty($_COOKIE[$ampCookieName])) {
-    $parsedCookie = AmplitudeCookie::parse($_COOKIE[$ampCookieName]);
-    $deviceId = $parsedCookie['deviceId'];
+// Get the cookie name for the Amplitude API key
+// For Browser SDK 2.0 cookies, use true as second parameter:
+// $amp_cookie_name = AmplitudeCookie::cookieName('amplitude-api-key', true);
+$amp_cookie_name = AmplitudeCookie::cookieName('amplitude-api-key');
+$device_id = null;
+
+// Try to get device ID from existing cookie
+if (isset($_COOKIE[$amp_cookie_name])) {
+  $cookie_data = AmplitudeCookie::parse($_COOKIE[$amp_cookie_name]);
+  // For Browser SDK 2.0: AmplitudeCookie::parse($_COOKIE[$amp_cookie_name], true);
+  $device_id = $cookie_data['deviceId'];
 }
 
-if ($deviceId === null) {
-    // deviceId doesn't exist, set the Amplitude Cookie
-    $deviceId = bin2hex(random_bytes(16));
-    $ampCookieValue = AmplitudeCookie::generate($deviceId);
-    setcookie($ampCookieName, $ampCookieValue, [
-        'domain' => '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
-        'httponly' => false,
-        'secure' => false,
-    ]);
+// If no device ID found, generate a new one and set the cookie
+if ($device_id === null) {
+  $device_id = uniqid('', true);
+  $amp_cookie_value = AmplitudeCookie::generate($device_id);
+  // For Browser SDK 2.0: AmplitudeCookie::generate($device_id, true);
+  setcookie($amp_cookie_name, $amp_cookie_value, [
+    'domain' => '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
+    'httponly' => false,
+    'secure' => false
+  ]);
 }
 ```
