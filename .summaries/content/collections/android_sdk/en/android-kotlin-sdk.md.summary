@@ -1,28 +1,25 @@
 **Summary:**
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (track/identify/revenue), user/group management, plugins system, and advanced features like ADID/App Set ID device identification, location tracking, and offline mode with ACCESS_NETWORK_STATE permission.
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (track/identify/revenue), user/group management, plugins system, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with ACCESS_NETWORK_STATE permission.
 
 **Keywords:**
 - Android-Kotlin SDK
 - com.amplitude:analytics-android
 - Gradle Maven installation
-- flushIntervalMillis flushQueueSize batching
+- flushIntervalMillis flushQueueSize
 - autocapture AutocaptureOption
 - sessions app lifecycles screen views deep links element interactions
 - track identify revenue BaseEvent
 - setUserId setDeviceId reset
-- groups groupIdentify setGroup
 - plugins enrichment destination
-- NetworkTrackingPlugin OkHttp
-- ADID useAdvertisingIdForDeviceId
-- App Set ID useAppSetIdForDeviceId
+- COPPA control
+- advertising ID ADID useAdvertisingIdForDeviceId
+- app set ID useAppSetIdForDeviceId
 - play-services-ads-identifier play-services-appset
-- TrackingOptions COPPA
-- location tracking locationListening
-- offline mode ACCESS_NETWORK_STATE
+- TrackingOptions locationListening
+- ACCESS_NETWORK_STATE offline mode
 - AndroidNetworkConnectivityCheckerPlugin
 - minTimeBetweenSessionsMillis
 - serverZone EU data residency
-- Jetpack Compose testTag
-- TelephonyManager networkOperatorName
-- ProGuard obfuscation
-- multiple instances instanceName
+- OkHttp NetworkTrackingPlugin
+- Jetpack Compose element tracking
+- proguard configuration
