@@ -71,6 +71,7 @@ This is where you’ll read through individual responses to see exactly what use
 On the responses tab, you can:
 
 * View individual responses: See exactly what each user submitted.
+* Export responses: Export a CSV of survey responses.
 * Sort & filter: Organize responses by date, user ID, or specific answers.
 * Pin important columns: Keep key data points visible while scrolling.
 * Adjust date ranges: Look at responses over the past 7, 30, 60, or 90 days.
