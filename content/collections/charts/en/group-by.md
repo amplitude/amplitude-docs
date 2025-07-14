@@ -61,7 +61,7 @@ For formulas *with* a group-by, Amplitude ranks the groups by the largest overal
 If group-by pruning occurs with multiple formula terms combined with operators, formulas may take longer to load because Amplitude runs additional queries to make sure that all formula terms are querying the same groups.
 {{/partial:admonition}}
 
-## Group by in Experiment
+## Group by in Experiment (Open Beta)
 
 Everything in this doc so far is for analytics chart excluding experiment results. In Experiment end to end and experiment results, Amplitude limits the number of group by groups returned to 10 per metric. The rows are sorted by the sum of exposures across all the variants. Some rows may have "(none)" which means the property is missing. For more information, see [FAQ: Unexpected values in user counts](/docs/faq/unexpected-values-in-user-counts). The group by is applied to the exposure event.
 
