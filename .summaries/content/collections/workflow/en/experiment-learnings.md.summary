@@ -1,23 +1,22 @@
-**Summary:** This documentation covers Amplitude Experiment's analysis interface for interpreting A/B test results, including statistical significance determination, filtering capabilities (date/segment/property), and various analysis cards (Summary, Data Quality, Analysis, Diagnostics) that display p-values, confidence intervals, and experiment performance metrics.
+**Summary:** This documentation covers the experiment analysis workflow in Amplitude Experiment, detailing how to interpret experimental results through various cards including Filter, Data Quality, Summary, Analysis, and Diagnostics cards, with features for statistical significance testing, p-values, confidence intervals, segment filtering, and experiment result visualization.
 
 **Keywords:**
-- Amplitude Experiment analysis
-- statistical significance
-- p-values confidence intervals
-- A/B test results interpretation
-- experiment variants analysis
-- binary metrics non-binary metrics
-- 100 users 25 conversions threshold
-- Filter card segment filter
-- variant jumping exclusion
-- remote evaluation feature experiments
-- multi-armed bandit experiments
+- Amplitude Experiment analysis workflow
+- statistical significance testing
+- p-values and confidence intervals
+- binary metrics vs non-binary metrics
+- experiment results visualization
+- Filter card segment filtering
 - Data Quality card recommendations
 - Summary card hypothesis validation
 - Analysis card experiment results charts
-- Diagnostics card assignment exposure events
-- sample ratio mismatch SRM detection
-- sequential test T-test statistical preferences
-- group-by heterogeneous treatment effects
-- experiment notifications Slack integration
-- Experiment Results chart Analytics integration
+- Diagnostics card variant jumping
+- Remote evaluation feature experiments
+- multi-armed bandit experiments
+- sample ratio mismatch (SRM)
+- sequential test vs T-test
+- experiment notifications and Slack integration
+- exposures without assignments troubleshooting
+- A/B/n testing confidence intervals
+- experiment group-by functionality
+- cumulative exposure tracking
