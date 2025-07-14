@@ -76,15 +76,17 @@ Use the language picker on the canvas to toggle between available languages. Cha
 
 AI localization automatically translates your guide or survey content using artificial intelligence. This feature provides quick, automated translations for all your project's supported languages.
 
-To use AI localization:
+This feature provides quick, automated translations for all your project's supported languages.
+
+#### To use AI localization
 
 1. Complete the guide or survey's steps in the default language.
 2. In the *Localization* section on the *Setup* tab, you have two AI translation options:
-   - **Translate All Languages**: Automatically translate your content into all supported languages configured in your project settings.
-   - **Translate Selected Language**: Automatically translate your content for a specific language.
+   - **Translate All Languages**: Translate your content into all languages set in your project settings.
+   - **Translate Selected Language**: Translate your content for a single language.
 
 {{partial:admonition type="note"}}
-AI-generated translations provide a quick starting point but may require manual review and editing for accuracy, especially for technical terms or brand-specific language. You can edit AI translations using the web interface after they're generated.
+AI-generated translations provide a starting point but may require manual review and editing for accuracy, especially for technical terms or brand-specific language. You can edit AI translations using the web interface after Amplitude generates them.
 {{/partial:admonition}}
 
 ### Use xliff files
