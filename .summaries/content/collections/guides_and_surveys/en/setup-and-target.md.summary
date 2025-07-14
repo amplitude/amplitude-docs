@@ -1,28 +1,17 @@
 ## Summary
-This documentation covers the Setup and Targeting configuration for Amplitude Guides and Surveys, detailing user targeting options (All Users vs Targeted Users with property/cohort filtering), trigger conditions (element appearance/clicks, time delays, smart delay, rage click, user confusion, event tracking), page targeting rules, priority levels, display limits, status management (Draft/Published/Schedule), and active state behavior with tiebreaker logic for multiple eligible experiences.
+This documentation covers the Setup and Targeting configuration for Amplitude Guides and Surveys, detailing user targeting options (All Users vs Targeted Users with segments, rollout percentages, and cohort filtering), trigger mechanisms (element appearance/clicks, time delays, smart delay, rage click, user confusion, event tracking), page targeting rules, priority levels, display limits, status management (Draft/Published/Schedule), and active state behavior with tiebreaker logic for multiple eligible experiences.
 
 ## Keywords
 - Amplitude Guides and Surveys
-- user targeting segments
-- property and cohort filtering
-- trigger conditions
-- element appearance triggers
-- element click triggers
-- smart delay trigger
-- rage click detection
-- user confusion detection
-- event tracking triggers
-- CSS selector targeting
-- XPath expressions
-- page targeting rules
-- URL matching patterns
-- priority levels (Urgent/High/Medium/Low)
-- display limits and cooldown
-- guide status management
-- Draft/Published/Schedule status
-- active state behavior
-- tiebreaker logic
+- user targeting and segmentation
+- rollout percentage and bucketing unit
+- trigger mechanisms (element appearance, element clicked, smart delay, rage click, user confusion)
+- CSS Selector and XPath targeting
+- page targeting rules (URL matches, contains, regex)
+- priority levels (Urgent, High, Medium, Low)
+- display limits and cooldown periods
+- guide status management (Draft, Published, Schedule)
+- active state and tiebreaker logic
 - dismissable and snoozable settings
 - step counter functionality
-- visual selector tool
-- query parameter sharing
+- query parameter link sharing
