@@ -9,7 +9,7 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714516898
 ---
-You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to see if your hypothesis was correct.
+You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to check if your hypothesis was correct.
 
 In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
 
@@ -95,7 +95,7 @@ At the top of the Analysis card is an overview that explains how your experiment
 * Event totals
 * Mean value over time
 
-For more information, see [Dig deeper into experimentation data with Experiment Results](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper#interpret-your-results.)
+For more information, review [Dig deeper into experimentation data with Experiment Results](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper#interpret-your-results.)
 
 {{partial:admonition type="tip" heading="Chart filtering"}}
 The Experiment Results chart on the Activity tab responds to the selections you make in the [Filter card](#filter-card).
@@ -104,10 +104,10 @@ The Experiment Results chart on the Activity tab responds to the selections you 
 Click *Open in Chart* to open a copy of the Experiment Results in a new chart.
     
 {{partial:admonition type='note'}}
-If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
+If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead view the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
 {{/partial:admonition}}
 
-If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
+If needed, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
   
 {{partial:admonition type='note'}}
 Lowering your experiment’s confidence level makes it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
@@ -115,7 +115,11 @@ Lowering your experiment’s confidence level makes it more likely that your exp
 
 ### Group by
 
-Oftentimes, you run an experiment and want to know if the experiment effected different users differently. In other words, if there are heterogeneous treatment effects or not. One way to do this is to filter for `Platform = iOS` and then `Platform = Android` and then `Platform = Web`. Grouping results by `Platform` achieves the same result, with fewer clicks. For more information, see [Group-bys: How Amplitude prunes and orders chart results](/docs/analytics/charts/group-by) for more information.
+{{partial:admonition type="beta" heading="Experiment group-bys"}}
+Group-bys in Experiment charts is a Beta feature, and may result in slower query performance. For more information, review [Limitations](#limitations).
+{{/partial:admonition}}
+
+Oftentimes, you run an experiment and want to know if the experiment effected different users differently. In other words, if there are heterogeneous treatment effects or not. One way to do this is to filter for `Platform = iOS` and then `Platform = Android` and then `Platform = Web`. Grouping results by `Platform` achieves the same result, with fewer clicks. For more information, review [Group-bys: How Amplitude prunes and orders chart results](/docs/analytics/charts/group-by) for more information.
 
 {{partial:admonition type="note"}}
 Group-by settings on the dashboard are temporary. Refreshing the dashboard resets any group-bys you define.
@@ -140,7 +144,7 @@ Your preferred notification settings allow you to receive experiment updates by 
 
 ![experiment notification settings.png](/docs/output/img/workflow/experiment-notification-settings-png.png)
 
-Click the check box next to the desired notification:
+Click the check box next to the notification:
 
 * **Experiment about to start:** Amplitude sends this notification when your scheduled experiment is about to start.
 * **Experiment end reached:** Amplitude sends this notification when your experiment is complete.
