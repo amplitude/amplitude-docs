@@ -17,11 +17,9 @@ Amplitude CDP’s cohort webhook allows you to receive cohort updates to your we
 
 - You must enable this integration in each Amplitude project you want to use it in.
 - You need a paid Amplitude plan to use Cohort Webhooks.
-- Cohort sync will attempt to send the cohort add/remove batches to the destination and each batch is expected to be processed by the destination within 1-2 sec (including network latency).
-    - This will ensure that cohort system gets a success 200 OK from the webhook server within the retry limits.
-    - Failure to respond back within this time would lead to cohort sync call timing out and attempting a retry which could lead to duplicate payloads being processed by the server.
-- It's always recommended to test the webhook endpoint latency with tools like postman to make sure responses are within the acceptable time window.
-- If the payload processing is supposed to take longer, then an async api will be better suited where the response is sent back immediately and the payload is processed async on the webhook server (using in-memory queues, etc).
+- Cohort Webhook sends add/remove batches to the destination, and each batch is expected to be processed within 1–2 seconds (including network latency) to ensure Amplitude receives a 200 OK response within retry limits. If the destination doesn’t respond in time, the call will time out and retry, which may result in duplicate payloads being processed.
+- It’s recommended to test the destination endpoint latency using tools like Postman to confirm responses are within the expected window.
+- If processing takes longer, use an async API pattern that returns a 200 OK immediately and handles the payload asynchronously (e.g. with in-memory queues).
 
 ## Setup
 
