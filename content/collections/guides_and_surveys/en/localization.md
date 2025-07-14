@@ -62,14 +62,36 @@ The default language is English and, for now, only Amplitude support can change 
 
 The languages you set in Project settings appear as languages in the *Localization* section on the *Setup* tab in your guide or survey.
 
-To add or edit a translation, you have two options.
+To add or edit a translation, you have three options.
 
 - Use the web interface to add or edit translations. Amplitude recommends this method.
+- Use AI localization to automatically translate your content. Amplitude recommends this method for quick, automated translations.
 - Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
 
 ### Use the web interface
 
 Use the language picker on the canvas to toggle between available languages. Changes you make to a guide or survey's text is saved for the selected language.
+
+### Use AI localization
+
+AI localization automatically translates your guide or survey content using Claude. Amplitude takes the strings from the default language and attempts to: 
+
+- Maintain the original meaning and tone
+- Make the translations natural and user-friendly
+- Preserve HTML tags, formatting, and special characters
+
+This feature provides quick, automated translations for all your project's supported languages.
+
+#### To use AI localization
+
+1. Complete the guide or survey's steps in the default language.
+2. In the *Localization* section on the *Setup* tab, you have two AI translation options:
+   - **Translate All Languages**: Translate your content into all languages set in your project settings.
+   - **Translate Selected Language**: Translate your content for a single language.
+
+{{partial:admonition type="note"}}
+AI-generated translations provide a starting point but may require manual review and editing for accuracy, especially for technical terms or brand-specific language. You can edit AI translations using the web interface after Amplitude generates them.
+{{/partial:admonition}}
 
 ### Use xliff files
 
