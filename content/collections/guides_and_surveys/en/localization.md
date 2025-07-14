@@ -74,7 +74,11 @@ Use the language picker on the canvas to toggle between available languages. Cha
 
 ### Use AI localization
 
-AI localization automatically translates your guide or survey content using artificial intelligence. This feature provides quick, automated translations for all your project's supported languages.
+AI localization automatically translates your guide or survey content using Claude. We take the strings from the default language and attempt to do the following: 
+
+- Maintain the original meaning and tone
+- Make the translations natural and user-friendly
+- Preserve HTML tags, formatting, and special characters
 
 This feature provides quick, automated translations for all your project's supported languages.
 
