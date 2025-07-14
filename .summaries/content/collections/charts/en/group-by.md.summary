@@ -1,18 +1,18 @@
 ## Summary
-This documentation explains Amplitude's group-by feature for Event Segmentation charts, covering result limits (100 for single group-by, 500 for double group-by), ordering prioritization by metric type, and special handling in Experiment results with 10-group limits and multiple hypothesis testing considerations.
+This documentation explains Amplitude's group-by feature for categorizing events in charts, including result limits (100 for single group-by, 500 for double group-by), ordering prioritization by metric type in the Breakdown Table, and beta group-by functionality in Experiment with 10-group limits and multiple hypothesis testing considerations.
 
 ## Keywords
 - group-by categorization
-- Event Segmentation charts
-- result limits pruning
-- 100 single group-by limit
-- 500 double group-by limit
 - Breakdown Table ordering
-- metric-based prioritization
-- formula group ordering
-- Experiment results 10-group limit
-- exposure event grouping
+- result pruning limits
+- single group-by 100 limit
+- double group-by 500 limit
+- metric ordering prioritization
+- Experiment group-by beta
 - multiple hypothesis testing
+- exposure event grouping
 - conversion rate calculations
-- property value changes
-- train-test split methodology
+- formula group ranking
+- property value aggregation
+- unique users ordering
+- total events ordering
