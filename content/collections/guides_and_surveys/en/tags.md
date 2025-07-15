@@ -10,31 +10,30 @@ landing_blurb: "Use custom tags to organize and manage your guides and surveys m
 ---
 Tags help you organize and manage your guides and surveys by creating custom labels that make it easy to categorize, search, and coordinate your content across teams.
 
-## The purpose of tags
+## Key benefits
 
-Tags are custom labels you can add to your guides and surveys to help organize them. They're especially useful when you have many active guides and surveys running simultaneously across different teams or campaigns.
+- **Better organization**: Group related guides and surveys together.
+- **Improved searchability**: Find specific content using tag filters.
+- **Team coordination**: Make it easier for teams to manage their guides and surveys.
+- **Bulk management**: Apply changes to multiple guides or surveys at the same time.
+- **Event tracking**: Tags are automatically included as a property on all guide and survey events.
 
-### Key benefits
+## Adding tags
 
-- **Better organization**: Group related guides and surveys together
-- **Improved searchability**: Quickly find specific content using tag filters
-- **Team coordination**: Make it easier for teams to manage their guides and surveys
-- **Bulk management**: Apply changes to multiple guides or surveys at once
-- **Event tracking**: Tags are automatically included as a property on all guide and survey events
+##### Add tags to an individual guide or survey
 
-## Creating and managing tags
+1. In the guide or survey editor, click the Tags control under the title.
+2. Select an existing tag, or enter a new one.
 
-### Creating tags
+##### Add existing tags to multiple guides or surveys
 
-You can create tags when creating or editing a guide or survey:
-1. In the guide or survey editor, find the **Tags** section
-2. Type your tag name in the text field
-3. Press Enter or click the **Add** button
-4. Your tag is now created and applied
+1. From the list view, select the guides or surveys to which you want to apply a tag.
+2. Click **Assign Tags** in the table header.
+3. Select the tags you want to apply.
 
 ### Tag naming best practices
 
-- Use descriptive, consistent names (e.g., "onboarding", "feature-announcement", "user-feedback")
+- Use descriptive, consistent names (for example, `onboarding`, `feature-announcement`, `user-feedback`)
 - Keep tags concise but meaningful
 - Use lowercase with hyphens for multi-word tags
 - Establish naming conventions across your team
@@ -42,58 +41,34 @@ You can create tags when creating or editing a guide or survey:
 ### Renaming tags and editing description
 
 To rename a tag or update its description:
-1. Go to your guides list view or surveys list view
-2. Click on the table settings icon, and make sure Tags is selected
-3. Hover over a cell in the Tags column and click the edit icon
+
+1. Navigate to the guides list view or surveys list view.
+2. Ensure you enable the Tags column in table settings.
+3. Hover over a cell in the Tags column and click edit.
 4. Click the edit icon and update the name and/or description
 5. Save
 
-The tag will be updated across all guides and surveys where it's used.
-
-## Using tags to organize guides and surveys
-
-### Applying tags to guides and surveys
-
-**When creating new content or editing existing content:**
-1. In the guide or survey creation detail page, click the **Add** tags button
-2. Either select existing tags from the dropdown or create new ones
-3. You can apply multiple tags to a single guide or survey
-
-**When viewing your list of guides or surveys:**
-1. Click on the table settings icon, and make sure Tags is selected
-2. Hover over a cell in the Tags column and click the edit icon
-2. Add or remove tags as needed
+The tag updates across all guides and surveys where it's used.
 
 ### Tag best practices for organization
 
 Come up with a system of tags that makes sense for your team. For example you might run with the following:
-- **Campaign tags**: Use tags like "spring-campaign", "product-launch" for time-bound initiatives
-- **Feature tags**: Tag content related to specific features (e.g., "analytics", "billing", "onboarding")
-- **Team tags**: Identify ownership with tags like "growth-team", "product-team"
+
+- **Campaign tags**: Use tags like `spring-campaign`, `product-launch` for time-bound initiatives.
+- **Feature tags**: Tag content related to specific features (for example, `analytics`, `billing`, `onboarding`).
+- **Team tags**: Identify ownership with tags like `growth-team`, `product-team`.
 
 ## Searching and filtering by tags
 
-### In the guides list view
-
-1. Navigate to your **Guides** list
-2. Click on the table settings icon, and make sure Tags is selected
-3. Use the **Add Filter** dropdown at the top of the list
-4. Select **Tags**
-5. Choose one or more tags from the available options
-6. The list will update to show only guides with the selected tags
-
-### In the surveys list view
-
-1. Navigate to your **Surveys** list
-2. Click on the table settings icon, and make sure Tags is selected
-3. Use the **Add Filter** dropdown at the top of the list
-4. Select **Tags**
-5. Choose one or more tags from the available options
-6. The list will update to show only guides with the selected tags
+1. Navigate to the Guides or Surveys list view.
+2. Ensure that the Tags columnn is visible.
+3. Click **Add Filter** and select **Tags**.
+4. Choose one or more tags from the available options.
+5. The list updates to show only guides with the selected tags.
 
 ### Advanced filtering
 
-You can combine tag filters with other filters. For example, applying a team tag and a feature tag to a specific guide.
+Combine tag filters with other filters. For example, applying a team tag and a feature tag to a specific guide.
 
 ## Bulk operations with tags
 
