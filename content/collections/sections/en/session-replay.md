@@ -8,6 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743537777
 nav_title: session_replay
 hide_toc: false
+current-collection: session-replay
 academy_course:
   - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---

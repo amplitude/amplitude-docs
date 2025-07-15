@@ -1,14 +1,19 @@
-**Summary:** This is an overview landing page for Amplitude Data that covers data integration with tech stacks, cross-device identity resolution, and customer/product data management, serving as an entry point to data quality improvement tools within Amplitude's analytics platform.
+**Summary:** This is an overview landing page for Amplitude Data that covers data integration with tech stacks, cross-device identity resolution, and customer/product data control, serving as the main entry point for data-related documentation sections including warehouse native, CDP, audiences, sources, and destination catalogs.
 
 **Keywords:**
 - Amplitude Data
 - data integration
-- tech stack integration
 - identity resolution
 - cross-device tracking
-- customer data management
+- tech stack integration
+- customer data control
 - product data management
+- warehouse native
+- CDP (Customer Data Platform)
+- audiences
+- sources
+- destination catalog
+- PII integrations
+- source catalog
+- landing page template
 - data quality tools
-- warehouse native amplitude
-- analytics platform
-- landing page overview

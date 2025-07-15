@@ -1,4 +1,4 @@
-**Summary:** Landing page for Amplitude Experiment documentation covering feature flagging, A/B testing, multivariate experiments, Multi-armed Bandit experiments, web experimentation, SDKs, and APIs with navigation to specific documentation sections.
+**Summary:** Landing page for Amplitude Experiment documentation covering feature flagging, A/B testing, multivariate experiments, Multi-armed Bandit experiments, web experimentation, SDKs, and APIs with organized navigation to experiment-related documentation sections.
 
 **Keywords:**
 - Amplitude Experiment
@@ -11,5 +11,6 @@
 - experiment APIs
 - landing-page-experiment template
 - remote configuration
-- product optimization
-- experimentation solution
+- experiment results
+- experiment integrations
+- experiment troubleshooting

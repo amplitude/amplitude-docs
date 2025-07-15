@@ -1,11 +1,14 @@
-**Summary:** Documentation landing page for Amplitude onboarding that guides users through initial setup including organization creation, data ingestion, and first chart creation using the landing-page template.
+**Summary:** This is a landing page documentation for Amplitude's "Get Started" section that guides new users through initial setup including organization creation, data ingestion, and first chart creation, using the landing-page template with navigation across get-started, instrumentation, and migration collections.
 
 **Keywords:**
 - Amplitude onboarding
+- landing-page template
 - organization creation
 - data ingestion setup
-- chart creation tutorial
-- landing-page template
+- first chart creation
 - get-started collection
-- initial platform setup
-- user onboarding flow
+- instrumentation collection
+- migration collection
+- nav_title get_started
+- blueprint section
+- current-collection navigation
