@@ -9,14 +9,16 @@
 - third-party analytics integrations
 - Segment analytics integration
 - Google Tag Manager template
-- Content Security Policy (CSP) nonce
-- serverZone EU/US configuration
-- proxy setup serverUrl/cdnUrl
-- forwardEvent() for event-based triggers
-- setThemeMode() lightMode/darkMode
-- addCallback() for button actions
-- setRouter() for SPA navigation
-- updateLanguage() localization
+- engagement.forwardEvent() for event tracking
 - engagement.gs.show() and engagement.gs.reset()
+- ThemeMode (lightMode, darkMode, auto)
+- engagement.setRouter() for SPA routing
+- Content Security Policy (CSP) nonce
+- engagement.addCallback() registration
+- engagement.updateLanguage() localization
+- engagement._setUserProperties() method
+- serverZone (US/EU) configuration
+- proxy setup with serverUrl and cdnUrl
+- window.engagement global object
 - user_id and device_id identification
-- event_type and event_properties tracking
+- event-based triggers with forwardEvent
