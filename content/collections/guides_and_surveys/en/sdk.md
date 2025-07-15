@@ -472,6 +472,33 @@ engagement.forwardEvent(event: Event): void
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
 
+## Set user properties
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+
+If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
+
+{{partial:admonition type="tip" heading=""}}
+Ensure that user properties load during the current client-side session and before the guide or survey displays. Properties shared from prior sessions aren't available.
+{{/partial:admonition}}
+
+```js
+engagement._setUserProperties(userProperties: Record<string, any>): void
+```
+
+| Parameter        | Type                      | Description                                                                                                                        |
+| ---------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `userProperties` | `Record<string, any>`     | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
+### Example
+
+```js
+// Supply user properties manually via engagement SDK
+const userProperties = {firstName: 'john'}
+engagement._setUserProperties(userProperties)
+
+// For testing, view the current user properties
+engagement._.user.user_properties
+```
+
 ## Close all
 
 Close all active guides and surveys.
