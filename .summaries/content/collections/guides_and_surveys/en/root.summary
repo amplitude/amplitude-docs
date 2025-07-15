@@ -28,13 +28,13 @@ The platform provides comprehensive SDK support across multiple platforms:
 
 **Targeting Configuration** supports user segmentation through "All Users" vs "Targeted Users" with rollout percentages, cohort filtering, and bucketing units. **Page Targeting Rules** utilize URL matching (contains, regex) and CSS Selector/XPath targeting for precise element identification.
 
-**Priority Levels** (Urgent, High, Medium, Low) determine display precedence when multiple experiences are eligible, with **Tiebreaker Logic** resolving conflicts. **Display Limits** and **Cooldown Periods** control frequency and timing of experience delivery.
+**Priority Levels** (Urgent, High, Medium, Low) determine display precedence when multiple experiences are eligible, with **Tiebreaker Logic** resolving conflicts. **Display Limits** and **Cooldown Periods** control frequency and timing.
 
 ## Analytics and Experimentation
 
-The platform provides comprehensive analytics through **Amplitude Event Tracking** with specific events including Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed. The **Insights Tab** offers aggregate metrics and trends with NPS-specific breakdowns and Microscope integration for session replays.
+The platform provides comprehensive analytics through **Amplitude Event Tracking** with specific events including Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed. **Rage Closed Events** track user frustration patterns.
 
-**Amplitude Experiment Integration** enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and performance analytics through the insights dashboard. Experiments support treatment vs control groups with configurable rollout percentages.
+**Amplitude Experiment Integration** enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and insights dashboard analytics. The **Insights Tab** provides aggregate metrics and trends with NPS-specific breakdowns and Microscope integration for session replays.
 
 **Survey Analysis** includes the Responses tab for individual user response data with CSV export functionality and filtering capabilities. Time-based analysis supports hourly, daily, and weekly engagement trend tracking.
 
@@ -46,16 +46,10 @@ The platform provides comprehensive analytics through **Amplitude Event Tracking
 
 ## Permissions and Access Control
 
-The platform implements a **Three-tier Permission System** that overrides base Amplitude user roles: Viewer (read-only access), Member (draft editing), and Manager/Administrator (publishing and experiment execution). The **Roles and Permissions** interface provides granular access control for viewing, editing drafts, publishing, and running experiments within the Guides and Surveys module.
+The platform implements a **Three-tier Permission System** that overrides base Amplitude user roles: Viewer (read-only access), Member (draft editing), and Manager (publishing and experiments). **Role-based Access Control** provides granular permissions for viewing, editing drafts, publishing, and running experiments within the Guides and Surveys module.
 
 ## Content Management and Resource Center
 
-**Resource Center Content Management** supports multiple source types including documentation repositories and video content with sync options and visibility settings. The **Website Scraper** feature enables URL extraction through direct URLs or CSV/XML sitemap upload, with advanced filtering options and content selector overrides.
+**Resource Center Content Management** supports documentation repositories and video sources with sync options, draft/published visibility states, and Website scraper functionality for URL extraction through direct URLs or CSV/XML sitemap upload. **Recommendation Sets** create customizable in-time articles with various action types including visit link, click element, run callback, open third-party chat, show guide/survey, open article, and play video.
 
-**Recommendation Sets** create customizable in-time articles with various action types including visit link, click element, run callback, open third-party chat, show guide/survey, open article, and play video. **Autopilot** automatically generates content recommendations using semantic search to surface relevant articles based on page context.
-
-## Testing and Quality Assurance
-
-**Preview Mode** allows developers to verify trigger, limit, and throttle conditions before launch, with troubleshooting capabilities including Reset User History, Ignore Throttle Limits, and manual event triggering. **Live Testing** utilizes cohort targeting for real-world validation, while the **Test & Preview** interface provides condition status indicators and debugging tools.
-
-The platform integrates seamlessly with existing analytics infrastructure while providing specialized tools for in-product user experience optimization, making it a comprehensive solution for user onboarding, engagement, and feedback collection across web and mobile applications.
+**Content Targeting** operates through precedence rules between content source targeting and recommendation set targeting, with segment-based and page-specific targeting configuration supporting priority levels and targeted user segments.
