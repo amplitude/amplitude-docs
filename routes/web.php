@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::statamic('json', 'json', [
+Route::statamic('/docs/json', 'json', [
     'content_type' => 'json',
     'layout' => 'blank'
    
+]);
+
+Route::statamic('/docs/llms.txt', 'llms',[
+    'content_type' => 'text/plain',
+    'layout' => 'blank'
 ]);
 
 Route::permanentRedirect('/docs/cdp/audiences', '/docs/data/audiences');
@@ -28,3 +33,4 @@ Route::permanentRedirect('/docs/cdp/audiences/recommendations', '/docs/data/audi
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-build', '/docs/data/audiences/recommendations-build');
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-use', '/docs/data/audiences/recommendations-use');
 Route::permanentRedirect('/docs/cdp/audiences/third-party-syncs', '/docs/data/audiences/third-party-syncs');
+

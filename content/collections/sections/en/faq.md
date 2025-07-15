@@ -12,6 +12,7 @@ landing_page_content:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719950905
+current-collection: faq_and_troubleshooting
 template: faq-list
 nav_title: faq
 ---
