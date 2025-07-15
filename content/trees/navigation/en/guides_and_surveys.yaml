@@ -18,6 +18,9 @@ tree:
     id: 362fa313-2299-48ba-a0ca-974d292f11b1
     entry: 185ee92c-69ab-465b-84f1-35d4da01c2d7
   -
+    id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
+    entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
+  -
     id: 6c5428c2-6e5b-424b-b470-adb40f091f37
     title: Guides
     children:
@@ -52,12 +55,6 @@ tree:
       -
         id: a4e706d9-b14a-4b6d-bc53-78a0acb418f8
         entry: 62b666ba-914a-4449-8754-142521b44544
-  -
-    id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
-    entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
-  -
-    id: 4262a721-5861-4f52-b1aa-d0247a01ac4a
-    entry: 7ef047c1-1a3c-4e94-a3c1-a69a81e0cc4e
   -
     id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
     entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
@@ -111,3 +108,6 @@ tree:
   -
     id: ef3f247a-faac-4803-97e8-a3c099d8e111
     entry: ba2e2bbb-396d-4f49-9c59-66fab5476120
+  -
+    id: b6805f8e-abda-4323-a8d1-97b173a015a2
+    entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
