@@ -9,6 +9,9 @@ updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961188
 ---
 The Resource Center settings option applies to the Resource Center as a whole. 
+
+##### To access the Settings page
+
 From the Resource Center main page, click **Settings**. 
 
 ## Targeting
@@ -29,15 +32,16 @@ The Quick links section adds permanent links to the bottom of the Resource Cente
 The Quick links section also provides a primary call to action (CTA) button that encourages user interaction.  
 
 **To add a quick link**
+
 1. Set the Quick links enable to **On**.
 2. Click **Add link**.
 3. Click **Link** to specify what type of link you want.
 4. Enter the link URL.
 5. In the Label field, enter the name of the link. 
-
 7. Click **Save Changes**.
 
 **To add a CTA button**
+
 1. Click the Primary CTA slider to **On**.
 2. In the CTA Label field, enter the name of the CTA.
 3. Click **Link** to specify what type of link you want.
@@ -90,6 +94,5 @@ Alternately, specify the specific CSS or XPath selector in the field.
 Use the Guides and Surveys [SDK](/docs/guides-and-surveys/sdk) to directly code the launcher you want. 
 
 ## Theme
-Specify a theme for the Resource Center widget. If you have previously created a theme for your Guides and Surveys, that theme appears as an option for the Resource Center. 
-
+Specify a theme for the Resource Center widget. If you previously created a theme for your Guides and Surveys, your theme appears as an option for the Resource Center. 
 For more information about creating themes, go to [Themes](/docs/guides-and-surveys/themes).

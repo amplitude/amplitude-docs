@@ -45,7 +45,8 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+/node_modules/
+/vendor/
 
 # Optional npm cache directory
 .npm
@@ -85,4 +86,7 @@ public/docs/js/*
 **/node_modules
 
 public/docs/js/site.js
+
+
+
 

@@ -51,7 +51,7 @@ Conversely, your company is **less likely to benefit** from predictions if you:
 * Are in the B2B space, or
 * Lack a marketing team
 
-When you’re ready to get to work with predictive cohorts, be sure to read our articles on [building predictions](/docs/cdp/audiences/predictions-build) and [using your predictions in campaigns](/docs/cdp/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Activation builds predictions and how they work.
+When you’re ready to get to work with predictive cohorts, be sure to read our articles on [building predictions](/docs/data/audiences/predictions-build) and [using your predictions in campaigns](/docs/data/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Activation builds predictions and how they work.
 
 ## How predictions work
 
@@ -70,4 +70,4 @@ These variables are processed through the transformer encoder, a powerful and ad
 
 The model then calculates a probabilistic score for every user in the starting cohort, measuring how likely they are to perform the action you’re interested in at some point in the specified period (seven, 30, 60, or 90 days). As the model is constantly learning and reacting to the potential skewing effects of seasonal data, each user’s probability score will be recalculated daily or hourly, depending on your specifications.
 
-Ready to get started? Keep reading to find out [how to build a prediction](/docs/cdp/audiences/predictions-build) and [use predictions in your campaigns](/docs/cdp/audiences/predictions-use).
+Ready to get started? Keep reading to find out [how to build a prediction](/docs/data/audiences/predictions-build) and [use predictions in your campaigns](/docs/data/audiences/predictions-use).

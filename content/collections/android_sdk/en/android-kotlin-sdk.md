@@ -440,7 +440,7 @@ After enabling this setting, Amplitude will track both `[Amplitude] Screen Viewe
 {{partial:collapse name="Event properties descriptions"}}
 | Event property | Description |
 | --- | --- |
-| `[Amplitude] Screen Name` | The activity label, application label, or activity name (in order of priority). |
+| `[Amplitude] Screen Name` | The activity title, activity label, activity name, activity class name, or application name (in order of priority). |
 | `[Amplitude] Fragment Class` | The fully qualified class name of the viewed fragment. |
 | `[Amplitude] Fragment Identifier` | The resource ID of the fragment as defined in the layout XML. |
 | `[Amplitude] Fragment Tag` | The unique identifier assigned to the fragment during a transaction. |

@@ -53,7 +53,7 @@ For additional configuration, supply `InitOptions` to the `plugin` function. See
 
 
 
-### Other Amplitude SDK's and third-party analytics providers 
+### Other Amplitude SDK's and third-party analytics providers
 
 If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
 But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
@@ -63,7 +63,7 @@ But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to
 Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
 ```
 
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
@@ -75,6 +75,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: s
 | `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
 | `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.      |
+| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined` |
 
 ##### Example: Basic initialization
 
@@ -96,6 +97,16 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
+##### Example: Initialization with CSP nonce
+
+For Content Security Policy (CSP) compliance, include a nonce value:
+
+```js
+engagement.init("YOUR_API_KEY", {
+  nonce: "YOUR_NONCE"
+});
+```
+
 After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
 #### Boot user
@@ -111,16 +122,17 @@ engagement.boot(options: BootOptions): Promise<void>
 | Parameter              | Type                           | Description                                                                                                                               |
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                   |
-| `options.integrations` | `Array<Integration>`           | Optional. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. |
+| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
 
 ```js
 await window.engagement.boot({
   user: {
     // Guides and Surveys requires at least one of user_id or device_id for user identification
-    user_id: 'USER_ID', //[tl! ~~:1]
+    user_id: 'USER_ID',
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
@@ -300,6 +312,14 @@ media-src: https://*.amplitude.com;
 style-src: https://*.amplitude.com;
 ```
 
+For environments with stricter CSP requirements that block inline styles, you can use the `nonce` parameter during initialization. This allows Guides and Surveys to execute necessary inline styles by including your CSP nonce value:
+
+```js
+engagement.init("YOUR_API_KEY", {
+  nonce: "YOUR_NONCE"
+});
+```
+
 
 ## Manage themes
 
@@ -368,7 +388,9 @@ const MyComponent = () => {
   }, []);
 };
 ```
-
+{{partial:admonition type="note" heading="Update URL behavior"}}
+After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
 ## Localization
 
 Set the `locale` option during initialization to localize a guide or survey.

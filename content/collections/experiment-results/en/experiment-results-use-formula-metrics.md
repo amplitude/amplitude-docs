@@ -101,37 +101,6 @@ Returns the average of the property values you're grouping by. This function is 
 
 * **Event:** Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
-### CONVERSIONRATE (closed beta)
-
-**Syntax:** `CONVERSIONRATE(array of events, conversion window, latency offset)`
-
-* **Array of Events:** Refer to the events in the funnel.
-* **Conversion window:** Refers to the conversion window of the funnel. The unit is in seconds.
-* **Latency Offset** (optional): Refers to latency in the data ingestion to Amplitude. The unit is in seconds.
-
-{{partial:admonition type='note'}}
-This function is supported for Experiment metrics only, and is currently only available to certain customers. To gain access, contact your Amplitude Customer Success Manager.
-{{/partial:admonition}}
-
-Returns the conversion rate (< 1) from 1st event to nth event of the array. This function internally uses Funnel Query to get the conversion rate.
-
-![](/docs/output/img/experiment-results/23576087044507)
-
-### CONVERSIONAVG (closed beta)
-
-**Syntax:** `CONVERSIONAVG(array of events, conversion window, latency offset)`
-
-* **Array of Events:** Refer to the events in the funnel.
-* **Conversion window:** Refers to the conversion window of the funnel. The unit is in seconds.
-* **Latency Offset** (optional): Refers to latency in the data ingestion to Amplitude. The unit is in seconds.
-
-{{partial:admonition type='note'}}
-This function is supported for Experiment metrics only, and is currently only available to certain customers. To gain access, contact your Amplitude Customer Success Manager. 
-
-This function only works when grouping by a numerical property on the last event.
-{{/partial:admonition}}
-
-Returns the average value of the given property among all the users who completed the conversion. This function internally uses Funnel Query to get the average value among the converted users.
 
 ### PROPCOUNT
 

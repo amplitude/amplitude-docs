@@ -24,7 +24,7 @@ Use the following map types, depending on your use case,
 
 ### Feature availability
 
-Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon.
+Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon. All users with [View permissions](/docs/account-management/user-roles-permissions) can create Heat Maps.
 
 {{partial:admonition type="note" heading="Legacy organizations"}}
 If you see a message that states **Heatmaps isn’t available for your organization**, contact [Amplitude Support](https://gethelp.amplitude.com) for assitance enabling Heatmaps. Legacy organizations require manual enablement, and may require an increase in property limit.

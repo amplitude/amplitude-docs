@@ -22,7 +22,7 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 ## Before you begin
 
 * Microscope streams only highlight events selected in the chart's [Events Module](/docs/analytics/charts/build-charts-add-events) that occur during the date range selected.
-* *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](docs/analytics/account-level-reporting).
+* *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](/docs/analytics/account-level-reporting).
 * **Custom formula charts don't support Microscope.** If you use [custom formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) in Event Segmentation or Data Table charts, Microscope functionality isn't available for those data points.
 
 ## Use Microscope
@@ -74,6 +74,11 @@ To analyze what users are doing instead of triggering the `Purchase Song or Vide
 By showing user paths, it becomes clear that after triggering the `Select Song or Video` event, many users trigger either the `Download Song or Video` event or the `Play Song or Video` event. Now we can hypothesize ways to improve the product's purchase flow—like sending users an in-app message to purchase a subscription at exactly the right moment.
 
 ![microscope_3.png](/docs/output/img/analytics/microscope-3.png)
+
+{{partial:admonition type="note" heading=""}}
+Microscope actions such as `View user streams` and `Create cohort` are not supported for dropoff user paths in the Pathfinder or Journey maps.
+{{/partial:admonition}}
+
 
 ## View user streams
 

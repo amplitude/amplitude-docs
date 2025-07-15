@@ -1,6 +1,0 @@
-extends: existence
-message: "Don't use '%s' unless space is limited."
-ignorecase: true
-level: warning
-tokens:
-  - '\w+- and \w+-'
