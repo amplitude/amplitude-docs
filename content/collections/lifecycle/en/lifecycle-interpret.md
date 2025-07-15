@@ -27,7 +27,7 @@ Earlier, we mentioned that all your **active users** would fall into one of thre
 
 ![Screenshot 2023-08-08 at 12.01.00 PM.png](/docs/output/img/lifecycle/screenshot-2023-08-08-at-12-01-00-pm-png.png)
 
-We also have **dormant users**, represented by the red bar. A dormant user is one who did not log the event you've specified, but who was had logged the specified event during the previous time period (day, week, or month). For example, a user who was active on January 1st but **not** active on January 2nd would be considered a dormant user on January 2nd.
+We also have **dormant users**, represented by the red bar. A dormant user is one who didn't log the event you've specified, but who was had logged the specified event during the previous time period (day, week, or month). For example, a user who was active on January 1st but **not** active on January 2nd would be considered a dormant user on January 2nd.
 
 ### Breakdown table
 

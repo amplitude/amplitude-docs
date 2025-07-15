@@ -80,3 +80,7 @@ These charts are also helpful when [learning from your end-to-end experiment](/d
 {{partial:admonition type='note'}}
 By default, Amplitude selects the primary metric in experiment results. You can choose a different metric in the *Analysis* module. Click the dropdown in the metric table to see its results. 
 {{/partial:admonition}}
+
+## Group By
+
+There are more resources on group by in experiment [here](/docs/analytics/charts/group-by) and [here](/docs/feature-experiment/workflow/experiment-learnings).

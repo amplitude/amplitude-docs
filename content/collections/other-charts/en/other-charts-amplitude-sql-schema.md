@@ -1,6 +1,7 @@
 ---
 id: b0dbd2cc-9051-4a25-aaf3-5fd9219686b3
 blueprint: other-chart
+published: false
 title: 'Amplitude SQL: Table schema and field shortcuts'
 source: 'https://help.amplitude.com/hc/en-us/articles/20460581705243-Amplitude-SQL-Table-schema-and-field-shortcuts'
 this_article_will_help_you:
