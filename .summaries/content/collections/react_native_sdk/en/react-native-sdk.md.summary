@@ -1,41 +1,44 @@
 ## Summary
 
-This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with @amplitude/analytics-react-native package, initialization with API keys, event tracking, user properties management, revenue tracking, and advanced features like plugins, custom HTTP clients, and advertising identifiers (ADID, IDFV, IDFA, AppSetId).
+This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with required @react-native-async-storage/async-storage dependency, initialization with API keys, configuration options (batching, EU data residency, logging), event tracking, user properties management via Identify operations, group properties, revenue tracking, and advanced features like plugins, custom HTTP clients, and advertising identifiers (ADID, IDFV, IDFA, AppSetId).
 
 ## Keywords
 
 - @amplitude/analytics-react-native
 - React Native SDK
 - @react-native-async-storage/async-storage
-- TypeScript analytics
-- event tracking
-- user properties
+- npm install
+- yarn add
+- expo install
+- pod install
+- init() function
+- track() events
 - Identify operations
-- revenue tracking
-- Revenue interface
-- group properties
-- groupIdentify
 - setUserId
 - setDeviceId
-- setSessionId
-- flush events
+- flushQueueSize
+- flushIntervalMillis
+- serverZone EU
+- useBatch
 - trackingOptions
-- plugins
+- Revenue interface
+- groupIdentify
+- setGroup
 - EnrichmentPlugin
 - DestinationPlugin
-- HTTP V2 API
-- batch API
-- serverZone EU
-- advertising identifiers
-- ADID
-- IDFV
-- IDFA
-- AppSetId
-- OTA updates
-- Expo compatibility
-- React Native CLI
-- pod install
-- gradle compatibility
-- migrateLegacyData
 - transportProvider
-- logLevel debugging
+- logLevel
+- sessionTimeout
+- migrateLegacyData
+- ADID tracking
+- IDFV tracking
+- IDFA tracking
+- AppSetId tracking
+- play-services-appset
+- play-services-ads-identifier
+- HTTP V2 API
+- TypeScript support
+- compatibility matrix
+- Gradle compatibility
+- OTA updates
+- Expo support

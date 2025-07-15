@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the Session Replay React Native Segment Plugin integration for React Native apps using Segment's Analytics library with Amplitude (Actions) destination, including installation, configuration with SessionReplayConfig options, and event processing for TrackEvent and ScreenEvent types.
+
+**Keywords:**
+- Session Replay React Native Segment Plugin
+- @amplitude/segment-session-replay-plugin-react-native
+- Segment Analytics React Native library
+- Amplitude (Actions) destination
+- AmplitudeSessionPlugin
+- SessionReplayConfig
+- createSegmentSessionReplayPlugin
+- session ID extraction
+- device ID extraction
+- TrackEvent and ScreenEvent processing
+- @segment/analytics-react-native-plugin-amplitude-session
+- sampleRate configuration
+- enableRemoteConfig
+- autoStart option
+- Amplitude integration data
+- event.integrations['Actions Amplitude'].session_id
