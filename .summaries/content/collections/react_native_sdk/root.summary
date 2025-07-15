@@ -34,8 +34,8 @@ The migration path flows from the maintenance SDK to the current SDK, with autom
 **Data Management Classes:**
 - `Identify`: Provides operations for user property management (set, add, remove, unset)
 - `Revenue`: Handles e-commerce tracking with product details and revenue amounts
-- `EnrichmentPlugin`: Modifies events before transmission
-- `DestinationPlugin`: Custom event routing and processing
+- `EnrichmentPlugin`: Modifies events before sending to add context or validation
+- `DestinationPlugin`: Custom event routing and processing destinations
 
 **Mobile-Specific Identifiers:**
 - `ADID`: Android Advertising ID for attribution tracking
@@ -49,33 +49,30 @@ The React Native SDK integrates with Amplitude's broader analytics ecosystem thr
 
 **Amplitude Data Integration**: The Ampli wrapper connects directly to Amplitude Data's tracking plan management system, enabling teams to define event schemas centrally and generate type-safe tracking code using commands like `ampli pull` and `ampli status`.
 
-**Server Infrastructure**: The SDK communicates with Amplitude's HTTP V2 API endpoints, supporting both US and EU data residency requirements through the `serverZone` configuration. The batch API endpoint optimizes network usage for high-volume applications.
+**Cross-Platform Consistency**: The SDK maintains API compatibility with other Amplitude SDKs while adapting to React Native's specific requirements, including async storage dependencies and platform-specific native module integration.
 
-**Cross-Platform Consistency**: The SDK maintains API compatibility with other Amplitude SDKs while providing React Native-specific optimizations, ensuring consistent analytics implementation across web, mobile, and server-side applications.
+**Backend Infrastructure**: Events flow through Amplitude's HTTP V2 API endpoints, with configurable data residency options supporting both US and EU server zones for compliance requirements.
 
-**Privacy and Compliance Framework**: Integration with mobile advertising frameworks (Google Play Services, iOS AdSupport) enables privacy-compliant attribution tracking while supporting COPPA compliance controls for applications serving minors.
+**Plugin Architecture**: The SDK supports extensibility through EnrichmentPlugin and DestinationPlugin interfaces, allowing integration with third-party tools, custom analytics pipelines, and data transformation workflows.
 
-## API Endpoints and Command Line Tools
+## Technical Implementation Details
 
-**SDK API Methods:**
-- `amplitude.init(API_KEY, 'user@amplitude.com', options)`
-- `amplitude.track('Button Clicked', { buttonColor: 'primary' })`
-- `amplitude.identify(identifyObj.set('location', 'LAX'))`
-- `amplitude.revenue().setProductId('com.company.productId').setPrice(3.99)`
+**Installation and Setup:**
+```bash
+npm install @amplitude/analytics-react-native @react-native-async-storage/async-storage
+# or
+yarn add @amplitude/analytics-react-native @react-native-async-storage/async-storage
+# iOS additional step
+cd ios && pod install
+```
 
-**Ampli CLI Commands:**
-- `ampli pull`: Downloads latest tracking plan and generates typed tracking methods
-- `ampli status`: Validates local implementation against tracking plan schema
+**Core API Usage:**
+- Event tracking: `track('Event Name', { property: 'value' })`
+- User identification: `identify(new Identify().set('property', 'value'))`
+- Revenue tracking: `revenue(new Revenue().setPrice(10.99).setProductId('product_123'))`
+- Group analytics: `groupIdentify('company', 'amplitude', new Identify().set('plan', 'enterprise'))`
 
-**Configuration Examples:**
-- EU Data Residency: `{ serverZone: 'EU' }`
-- Batch Processing: `{ useBatch: true }`
-- Session Control: `{ trackingSessionEvents: true, sessionTimeout: 1800000 }`
+**Advanced Configuration:**
+The SDK supports comprehensive configuration including COPPA compliance controls, custom HTTP transport providers, session timeout management, and advertising identifier tracking with appropriate privacy controls. Platform-specific features include Android Gradle compatibility matrices and iOS bridging header requirements for native module integration.
 
-**Installation Commands:**
-- `npm install @amplitude/analytics-react-native @react-native-async-storage/async-storage`
-- `yarn add @amplitude/analytics-react-native @react-native-async-storage/async-storage`
-- `expo install @amplitude/analytics-react-native @react-native-async-storage/async-storage`
-- `cd ios && pod install` (for iOS native dependencies)
-
-The SDK supports extensive customization through plugin architecture, custom HTTP transport providers, and granular tracking controls, making it suitable for applications ranging from simple event tracking to complex, enterprise-grade analytics implementations with strict privacy and performance requirements.
+The SDK maintains backward compatibility while providing migration utilities and supports both over-the-air (OTA) updates through Expo and traditional React Native deployment workflows.

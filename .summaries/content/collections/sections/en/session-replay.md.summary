@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's Session Replay feature for analyzing user behavior through visual session recordings, including access methods via User Look-Up, charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions, Experiments), and homepage widgets, with filtering capabilities by cohorts, events, properties, and session duration.
+**Summary:** This documentation covers Amplitude's Session Replay feature for analyzing user behavior through visual session recordings, including accessing replays from User Look-Up, charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions, Experiments), and homepage widgets, with search/filtering capabilities and integration with dashboards/notebooks.
 
 **Keywords:**
 - Session Replay
@@ -10,6 +10,8 @@
 - Journeys
 - User Sessions
 - Experiment charts
+- Pathfinder
+- Journey Map
 - Autocapture events
 - Page Viewed
 - Element Clicked
@@ -19,10 +21,9 @@
 - custom session definitions
 - account-level reporting
 - portfolio view
-- ingestion throttling
-- 429 throttling errors
-- Ingestion Monitor
-- HTML element masking
+- HTML elements masking
 - Canvas WebGL
 - iFrames
-- Lottie Animations
+- throttle errors
+- ingestion delay
+- Plans & Billing
