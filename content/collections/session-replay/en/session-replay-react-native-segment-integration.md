@@ -13,12 +13,20 @@ description: "Choose this option if you use Segment's Amplitude (Actions) destin
 ---
 This article covers the installation of Session Replay using the Session Replay React Native Segment plugin. If your React Native app is already instrumented with Segment using their Analytics React Native library and Amplitude (Actions) destination, use this option.
 
-If your app is instrumented with an [Amplitude React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk), use the [Session Replay React Native SDK Plugin](/docs/session-replay/session-replay-react-native-sdk-plugin).
+If you instrument your app with an [Amplitude React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk), use the [Session Replay React Native SDK Plugin](/docs/session-replay/session-replay-react-native-sdk-plugin).
 
 If you use Segment using other options, use the [standalone implementation](/docs/session-replay/session-replay-react-native-sdk-plugin).
 
 {{partial:admonition type="tip" heading="Report issues"}}
 To report issues with Session Replay for React Native, review [Amplitude-TypeScript GitHub repository](https://github.com/amplitude/Amplitude-TypeScript).
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Amplitude Session Plugin Required"}}
+This plugin requires the `@segment/analytics-react-native-plugin-amplitude-session` plugin to extract session IDs from Amplitude integration data. Make sure to add this plugin to your Segment client before adding the session replay plugin.
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading="API Key Matching"}}
+The Amplitude API key used in the session replay plugin configuration must match the API key configured in your Segment Amplitude (Actions) destination.
 {{/partial:admonition}}
 
 ## Before you begin
@@ -80,14 +88,14 @@ await segmentClient.add(createSegmentSessionReplayPlugin(sessionReplayConfig));
 
 The plugin accepts a `SessionReplayConfig` object with the following options:
 
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `apiKey` | `string` | Yes | - | Your Amplitude API key. This must match the API key used with your Segment Amplitude destination. |
-| `deviceId` | `string` | No | - | The device ID to use for session replay. If not provided, the plugin will extract it from Segment event context. |
-| `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. |
-| `enableRemoteConfig` | `boolean` | No | `true` | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings). |
-| `logLevel` | `LogLevel` | No | `LogLevel.Warn` | Use this option to set the log level for the Session Replay plugin. |
-| `autoStart` | `boolean` | No | `true` | Use this option to control whether Session Replay starts automatically when initialized. If set to `false`, manually call the `start()` method to begin capture. |
+| Name                 | Type       | Required | Default         | Description                                                                                                                                                                                                                             |
+| -------------------- | ---------- | -------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`             | `string`   | Yes      | -               | Your Amplitude API key. This must match the API key used with your Segment Amplitude destination.                                                                                                                                       |
+| `deviceId`           | `string`   | No       | -               | The device ID to use for session replay. If not provided, the plugin extracts it from Segment event context.                                                                                                                        |
+| `sampleRate`         | `number`   | No       | `0`             | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. |
+| `enableRemoteConfig` | `boolean`  | No       | `true`          | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings).                                                                                                              |
+| `logLevel`           | `LogLevel` | No       | `LogLevel.Warn` | Use this option to set the log level for the Session Replay plugin.                                                                                                                                                                     |
+| `autoStart`          | `boolean`  | No       | `true`          | Use this option to control whether Session Replay starts automatically when initialized. If set to `false`, manually call the `start()` method to begin capture.                                                                        |
 
 ## How it works
 
@@ -98,7 +106,7 @@ The Segment Session Replay Plugin automatically:
 3. **Enriches Events**: Adds session replay properties to `track` and `screen` events before they're sent to Segment.
 4. **Manages Lifecycle**: Handles start/stop operations for session replay based on plugin lifecycle.
 
-### Event Processing
+### Event processing
 
 The plugin processes the following Segment event types:
 - `TrackEvent`: Adds session replay properties to track events.
@@ -109,7 +117,7 @@ For these events, the plugin:
 - Extracts device ID from event context or anonymous ID.
 - Adds session replay properties to the event before sending to Segment.
 
-### Session ID Extraction
+### Session ID extraction
 
 The plugin extracts session IDs in the following order of priority:
 
@@ -117,7 +125,7 @@ The plugin extracts session IDs in the following order of priority:
 2. From event properties: `event.properties.session_id`.
 3. Defaults to `-1` if no session ID is found.
 
-### Device ID Extraction
+### Device ID extraction
 
 The plugin extracts device IDs in the following order of priority:
 
@@ -125,11 +133,13 @@ The plugin extracts device IDs in the following order of priority:
 2. From anonymous ID: `event.anonymousId`.
 3. Defaults to `null` if no device ID is found.
 
-## Advanced Usage
+## Advanced topics
 
-### Manual Control
+This section provides examples for more advanced use cases.
 
-You can manually control the session replay plugin after initialization:
+### Manual control
+
+Manually control the session replay plugin after initialization:
 
 ```js
 import { createSegmentSessionReplayPlugin } from '@amplitude/segment-session-replay-plugin-react-native';
@@ -145,7 +155,7 @@ await sessionReplayPlugin.start();
 await sessionReplayPlugin.stop();
 ```
 
-### Custom Configuration
+### Custom configuration
 
 For more advanced configurations, you can pass additional session replay options:
 
@@ -161,32 +171,24 @@ const sessionReplayConfig = {
 const sessionReplayPlugin = createSegmentSessionReplayPlugin(sessionReplayConfig);
 ```
 
-## Important Notes
-
-{{partial:admonition type="warning" heading="Amplitude Session Plugin Required"}}
-This plugin requires the `@segment/analytics-react-native-plugin-amplitude-session` plugin to extract session IDs from Amplitude integration data. Make sure to add this plugin to your Segment client before adding the session replay plugin.
-{{/partial:admonition}}
-
-{{partial:admonition type="note" heading="API Key Matching"}}
-The Amplitude API key used in the session replay plugin configuration must match the API key configured in your Segment Amplitude (Actions) destination.
-{{/partial:admonition}}
-
 ## Troubleshooting
 
-### Session Replay Properties Not Added
 
-If session replay properties aren't being added to your events:
 
-1. Verify that the Amplitude Session Plugin is added before the Session Replay Plugin.
+### Session replay properties not added
+
+If session replay properties aren't added to your events:
+
+1. Verify that the Amplitude Session Plugin appears before the Session Replay Plugin.
 2. Check that your Segment events are of type `track` or `screen`.
-3. Ensure the session replay plugin is properly initialized.
+3. Ensure the session replay plugin initializes.
 
-### Session ID Not Found
+### Session ID not found
 
 If the plugin can't extract session IDs:
 
-1. Verify that the Amplitude Session Plugin is properly configured.
-2. Check that your Segment Amplitude destination is set up correctly.
+1. Verify that the you configured the Amplitude Session Plugin correctly.
+2. Check that you configured Segment Amplitude destination correctly.
 3. Ensure events include the required Amplitude integration data.
 
 ### Device ID Issues
@@ -197,18 +199,4 @@ If device ID extraction fails:
 2. Verify that anonymous ID is properly set in Segment.
 3. Consider manually setting the device ID in the plugin configuration.
 
-For additional troubleshooting, see the [Session Replay React Native SDK Plugin troubleshooting guide](/docs/session-replay/session-replay-react-native-sdk-plugin).
-
-{{partial:partials/session-replay/sr-retention}}
-
-### DSAR API
-
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property.
-
-### Data deletion
-
-Session Replay uses Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
-
-### Bot filter
-
-Session Replay uses the same [block filter](/docs/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
+For additional troubleshooting, review the [Session Replay React Native SDK Plugin troubleshooting guide](/docs/session-replay/session-replay-react-native-sdk-plugin).
