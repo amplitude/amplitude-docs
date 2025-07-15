@@ -19,7 +19,7 @@ If your application already uses the Amplitude React Native SDK, use the [Sessio
 
 ## Before you begin
 
-Use the latest version of the Session Replay React Native SDK above version 0.0.1-beta.1. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-react-native/CHANGELOG.md) on GitHub.
+Use the latest version of the Session Replay React Native SDK above version 0.0.1-beta.1. For more information, review the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-react-native/CHANGELOG.md) on GitHub.
 
 ## Quickstart
 
@@ -58,22 +58,22 @@ await init(config);
 
 Pass the configuration on initialization of the Session Replay SDK.
 
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `apiKey` | `string` | Yes | `undefined` | Your Amplitude API key for authentication and data routing. |
-| `deviceId` | `string` | No | `null` | Device identifier that matches the device ID sent with Amplitude events. Must match the Device ID passed as event properties to Amplitude. |
-| `sessionId` | `number` | No | `-1` | Session identifier that matches the session ID sent with Amplitude events. Must match the Session ID passed as event properties to Amplitude. |
-| `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `enableRemoteConfig` | `boolean` | No | `true` | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings). |
-| `logLevel` | `LogLevel` | No | `LogLevel.Warn` | Use this option to set the log level for the Session Replay SDK. |
-| `autoStart` | `boolean` | No | `true` | Use this option to control whether Session Replay starts automatically when initialized. If set to `false`, manually call the `start()` method to begin capture. |
-| `maskLevel` | `MaskLevel` | No | `MaskLevel.Medium` | Level of masking applied to sensitive content. Options: `MaskLevel.Light`, `MaskLevel.Medium`, `MaskLevel.Conservative`. |
-| `optOut` | `boolean` | No | `false` | Whether to opt out of session replay collection. |
-| `serverZone` | `'US' \| 'EU'` | No | `'US'` | Server zone for data processing. Set to `'EU'` for EU data residency. |
+| Name                 | Type           | Required | Default            | Description                                                                                                                                                                                                                                                                                                          |
+| -------------------- | -------------- | -------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`             | `string`       | Yes      | `undefined`        | Your Amplitude API key for authentication and data routing.                                                                                                                                                                                                                                                          |
+| `deviceId`           | `string`       | No       | `null`             | Device identifier that matches the device ID sent with Amplitude events. Must match the Device ID passed as event properties to Amplitude.                                                                                                                                                                           |
+| `sessionId`          | `number`       | No       | `-1`               | Session identifier that matches the session ID sent with Amplitude events. Must match the Session ID passed as event properties to Amplitude.                                                                                                                                                                        |
+| `sampleRate`         | `number`       | No       | `0`                | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `enableRemoteConfig` | `boolean`      | No       | `true`             | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings).                                                                                                                                                                                           |
+| `logLevel`           | `LogLevel`     | No       | `LogLevel.Warn`    | Use this option to set the log level for the Session Replay SDK.                                                                                                                                                                                                                                                     |
+| `autoStart`          | `boolean`      | No       | `true`             | Use this option to control whether Session Replay starts automatically when initialized. If set to `false`, manually call the `start()` method to begin capture.                                                                                                                                                     |
+| `maskLevel`          | `MaskLevel`    | No       | `MaskLevel.Medium` | Level of masking applied to sensitive content. Options: `MaskLevel.Light`, `MaskLevel.Medium`, `MaskLevel.Conservative`.                                                                                                                                                                                             |
+| `optOut`             | `boolean`      | No       | `false`            | Whether to opt out of session replay collection.                                                                                                                                                                                                                                                                     |
+| `serverZone`         | `'US' \| 'EU'` | No       | `'US'`             | Server zone for data processing. Set to `'EU'` for EU data residency.                                                                                                                                                                                                                                                |
 
 ## Methods
 
-### init()
+### init
 
 Initialize the Session Replay SDK with your configuration.
 
@@ -89,7 +89,7 @@ const config: SessionReplayConfig = {
 await init(config);
 ```
 
-### start()
+### start
 
 Start recording session replay. Use this method if you initialized the SDK with `autoStart: false` or if you previously called `stop()`.
 
@@ -99,7 +99,7 @@ import { start } from '@amplitude/session-replay-react-native';
 await start();
 ```
 
-### stop()
+### stop
 
 Stop recording session replay.
 
@@ -109,9 +109,9 @@ import { stop } from '@amplitude/session-replay-react-native';
 await stop();
 ```
 
-### setSessionId()
+### setSessionId
 
-Update the session identifier. Call this method whenever the session ID changes to ensure session replay data is properly correlated with your analytics events.
+Update the session identifier. Call this method whenever the session ID changes to ensure session replay data correlates with your analytics events.
 
 ```js
 import { setSessionId } from '@amplitude/session-replay-react-native';
@@ -119,9 +119,9 @@ import { setSessionId } from '@amplitude/session-replay-react-native';
 await setSessionId(Date.now());
 ```
 
-### setDeviceId()
+### setDeviceId
 
-Update the device identifier. Call this method whenever the device ID changes to ensure session replay data is properly correlated with your analytics events.
+Update the device identifier. Call this method whenever the device ID changes to ensure session replay data correlates with your analytics events.
 
 ```js
 import { setDeviceId } from '@amplitude/session-replay-react-native';
@@ -131,7 +131,7 @@ await setDeviceId('new-device-id');
 await setDeviceId(null);
 ```
 
-### getSessionId()
+### getSessionId
 
 Get the current session identifier from the Session Replay SDK.
 
@@ -142,7 +142,7 @@ const sessionId = await getSessionId();
 console.log('Current session ID:', sessionId);
 ```
 
-### getSessionReplayProperties()
+### getSessionReplayProperties
 
 Get session replay properties that should be attached to Amplitude events. These properties help correlate events with session recordings.
 
@@ -153,7 +153,7 @@ const properties = await getSessionReplayProperties();
 console.log('Session replay properties:', properties);
 ```
 
-### flush()
+### flush
 
 Flush any pending session replay data to the server. Forces immediate upload of recorded session data that may be buffered locally.
 
@@ -233,8 +233,8 @@ import { WebView } from 'react-native-webview';
 
 // ...
 
-<AmpMaskView mask="amp-unmask" style={{ flex: 1 }}>
-    <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
+<AmpMaskView mask="amp-unmask" style={ flex: 1 }>
+    <WebView source={ uri: 'https://reactnative.dev/' } style={ flex: 1 } />
 </AmpMaskView>
 ```
 
@@ -299,35 +299,3 @@ const config: SessionReplayConfig = {
 
 await init(config);
 ```
-
-{{partial:partials/session-replay/sr-retention}}
-
-### DSAR API
-
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
-
-```json
-{
- "amplitude_id": 123456789,
- "app": 12345,
- "event_time": "2020-02-15 01:00:00.123456",
- "event_type": "first_event",
- "server_upload_time": "2020-02-18 01:00:00.234567",
- "device_id": "your device id",
- "user_properties": { ... }
- "event_properties": {
- "[Amplitude] Session Replay ID": "cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244"
- }
- "session_id": 1699922971244,
-}
-```
-
-### Data deletion
-
-Session Replay uses Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
-
-When you delete the Amplitude project on which you use Session Replay, Amplitude deletes that replay data.
-
-### Bot filter
-
-Session Replay uses the same [block filter](/docs/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
