@@ -1,34 +1,38 @@
 ## Summary
 
-This documentation covers Amplitude's Snowflake data warehouse integration that supports bidirectional data sync with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) and handles multiple data types (events, user properties, group properties, profiles) with Change Data Capture (CDC) capabilities for real-time data mirroring.
+This documentation covers Amplitude's Snowflake data warehouse integration for importing events, user properties, group properties, and profiles into Amplitude projects, supporting four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) with Change Data Capture (CDC) capabilities and specific SQL query requirements for data transformation.
 
 ## Keywords
 
 - Snowflake data warehouse integration
 - Change Data Capture (CDC)
-- Mirror Sync with insert/update/delete operations
-- Append Only Sync strategy
-- Timestamp-based import
+- Mirror Sync import strategy
+- Append Only Sync
+- Timestamp import strategy
 - Full Sync strategy
-- Event data ingestion
-- User properties sync
-- Group properties sync
-- Profile data mirroring
+- ABORT_DETACHED_QUERY setting
+- S3 Storage Integration with Stage
 - Key pair authentication
 - Password authentication
-- S3 Storage Integration
-- ABORT_DETACHED_QUERY configuration
-- DATA_RETENTION_TIME_IN_DAYS setting
-- VARIANT JSON data type
+- Event properties VARIANT JSON
+- User properties sync
+- Group properties sync
+- Profile data import
+- SQL query transformation
 - OBJECT_CONSTRUCT function
-- EPOCH_MILLISECOND timestamp conversion
-- insert_id deduplication
-- Snowflake IP allowlist
-- 12-hour query timeout limit
-- 1B events batch size limit
+- EPOCH_MILLISECOND extraction
+- Data retention settings
+- Insert_id deduplication
+- Snowflake streams
 - INFORMATION_SCHEMA permissions
 - JWT token authentication
-- Exponential backoff retry mechanism
-- Snowflake streams and views
-- Time Travel feature
-- Enrichment services toggle
+- Query timeout handling
+- Exponential backoff retry
+- DATA_RETENTION_TIME_IN_DAYS
+- Enrichment services
+- ID resolution
+- Location resolution
+- User Privacy API
+- Clustering keys optimization
+- Materialized views
+- Micro-partitions
