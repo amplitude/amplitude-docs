@@ -84,10 +84,10 @@ engagement.init("API_KEY", {
 
 ## Troubleshooting common proxy issues
 
-| Issue | Symptoms | Cause | Solution |
-
-| **Preview mode doesn't work** | Preview mode fails to load or display guides properly | Path pattern configured with specific paths instead of wildcard pattern `/sdk/*` (e.g., using `/sdk/config`) | Ensure the path pattern is set to `/sdk/*` exactly as specified in step 4. Preview mode makes requests to `/sdk/admin/config`, which won't be proxied with specific paths. |
-| **Guides don't persist dismissal or completion state** | Guides reappear on the next session even after being dismissed or completed | Allowed HTTP methods don't include `POST`, which is required for state updates | Verify that allowed HTTP methods in step 4 include `POST` along with other required methods: `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE`. Without POST, the SDK can't send requests to `/state` endpoint to update user interaction state. |
+| Issue                                              | Symptoms                                                                    | Cause                                                                                                        | Solution                                                                                                                                                                                                                                      |
+| -------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Preview mode doesn't work                          | Preview mode fails to load or display guides properly                       | Path pattern configured with specific paths instead of wildcard pattern `/sdk/*` (for example, using `/sdk/config`) | Set the path pattern to `/sdk/*` exactly as specified in step 4. Preview mode makes requests to `/sdk/admin/config`, which won't be proxied with specific paths.                                                                    |
+| Guides don't persist dismissal or completion state | Guides reappear on the next session even after being dismissed or completed | Allowed HTTP methods don't include `POST`, which is required for state updates                               | Verify that allowed HTTP methods in step 4 include `POST` along with other required methods: `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE`. Without POST, the SDK can't send requests to `/state` endpoint to update user interaction state. |
 
 ### General debugging steps
 
