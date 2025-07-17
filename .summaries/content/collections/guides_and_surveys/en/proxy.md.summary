@@ -1,14 +1,16 @@
-**Summary:** Documents how to configure AWS CloudFront as a reverse proxy for Amplitude Guides and Surveys, using a single distribution with two origins (cdn.amplitude.com for static assets and gs.amplitude.com for API requests with /sdk/ prefix) to circumvent domain blocking while maintaining low latency.
+## Summary
+This documentation explains how to configure AWS CloudFront as a reverse proxy for Amplitude's Guides and Surveys service, setting up a unified distribution with two origins (cdn.amplitude.com for static assets and gs.amplitude.com for API requests) and specific cache behaviors including the critical `/sdk/*` path pattern for API routing.
 
-**Keywords:**
+## Keywords
 - AWS CloudFront reverse proxy
 - Guides and Surveys API proxy
-- cdn.amplitude.com static assets
-- gs.amplitude.com API requests
-- /sdk/ path prefix routing
-- dual origin CloudFront distribution
-- engagement SDK serverUrl cdnUrl configuration
-- domain blocking circumvention
-- CachingDisabled vs CachingOptimized policies
-- AllViewerExceptHostHeader origin policy
-- CORS-with-preflight-and-SecurityHeadersPolicy
+- cdn.amplitude.com origin
+- gs.amplitude.com origin
+- `/sdk/*` path pattern
+- cache behaviors configuration
+- serverUrl and cdnUrl initialization
+- engagement SDK proxy setup
+- AllViewerExceptHostHeader policy
+- CachingDisabled for API requests
+- preview mode `/sdk/admin/config` endpoint
+- HTTP methods POST for state persistence
