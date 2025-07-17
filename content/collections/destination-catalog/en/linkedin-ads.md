@@ -33,7 +33,7 @@ Streaming events from Amplitude to LinkedIn Ads enables the following use cases,
 
 ## Setup
 
-1. In the Amplitude integrations catalog, find and click the Linked In Ads destination.
+1. In the Amplitude integrations catalog, find and click the LinkedIn Ads destination.
 2. Enter a unique **Sync name** to help distinguish this integration from others you might have.
 3. Authenticate with LinkedIn. Select an existing OAuth connection, or create a new one.
 4. Enter your LinkedIn Ads **Conversion ID**.
