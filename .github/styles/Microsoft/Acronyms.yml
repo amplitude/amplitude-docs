@@ -60,6 +60,8 @@ exceptions:
   - URL
   - USB
   - UTF
+# MZ 7/17/2025  
+  - UUID
   - XML
   - XSS
   - YAML
