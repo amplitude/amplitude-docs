@@ -42,7 +42,7 @@ Streaming events from Amplitude to LinkedIn Ads enables the following use cases,
   * **SHA256 Email**: Your identifiers are SHA256 hashed email addresses. Values of this type must be lower case and have no whitespace.
   * **LinkedIn First Party Ads Tracking UUID**: Your identifiers are LinkedIn tracking IDs that you capture in your site or app.
   * **Acxiom ID**: Your identifiers come from Acxiom identity resolution, and you pass those as users properties in Amplitude.
-  * **Oracle Moat ID**: Your identifiers come from Oracale's Moat ad measurement platform.
+  * **Oracle Moat ID**: Your identifiers come from Oracle's Moat ad measurement platform.
 
 6. Select and map the user identifier. Select the Amplitude user property that matches the ID type you selected in step 5. For example, you might select `User ID`, `Device ID`, or a custom property like `hashed_email`. Amplitude links this property to LinkedIn's `ID Value` and ensures LinkedIn associates events with the correct user.
 7. Select the events you want to send to LinkedIn. You can send all events, but Amplitude recommends that you choose events that best correlate to campaign performance. Optionally turn the toggle off to send no events.
