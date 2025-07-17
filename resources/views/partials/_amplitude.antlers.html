@@ -1,6 +1,5 @@
 <script src="https://cdn.amplitude.com/script/{{config:app:analytics-key}}.js"></script>
 <script src="https://cdn.amplitude.com/script/{{config:app:analytics-key}}.engagement.js"></script>
-<script>amplitude.add(window.engagement.plugin())</script>
 
 <script>
     window.amplitude.add(window.sessionReplay.plugin({
@@ -11,6 +10,8 @@
         "autocapture": true
     });
      
+    window.amplitude.add(window.engagement.plugin())
+    
     function checkAuthenticatedUser() {
         try {
             const AMP_PREFIX = 'AMP_';
