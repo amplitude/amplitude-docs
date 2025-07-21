@@ -9,9 +9,8 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1753114211
+updated_at: 1753137993
 ---
-
 Amplitude Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation.
 
 With Experiment, you can modify and configure product experiences for unique audiences through:
@@ -115,7 +114,7 @@ If you change the bucketing, users may be able to switch between variants in yo
 If you want, you can send a payload with your variant. A payload is a JSON-coded set of variables that can be used to remotely change flags and experiments without requiring a manual code change. Because you can send a payload with your control, it is not necessary to create a variant for the control itself. 
 
 A payload is added to the Payload field when creating a variant. A payload looks similar to: 
-```
+```json
 {
   "layout": "cards",
   "titlePosition": "above",
@@ -163,9 +162,17 @@ The following code examples describe the code for a feature flag and a JSON payl
 
 {{partial:tabs tabs="Feature flag, JSON payload"}}
 {{partial:tab name="Feature flag"}}
-```json
+
+```js
 export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
-  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null)
+  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null) | {
+    layout: 'cards' | 'list' | 'carousel';
+    titlePosition: 'above' | 'below' | 'center';
+    gradient: boolean;
+    showDescription: boolean;
+    cardCount: number; 
+  }>(null);
+
   useEffect(() => {
     getBlogLayoutFlag().then((flag) => {
       console.log(':magic_wand: Received Flag from Amplitude:', flag)
@@ -182,11 +189,12 @@ export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
         })
       }
     })
-  }, [])
+  }, []);
+
 ```
 {{/partial:tab}}
 {{partial:tab name="JSON payload"}}
-```json
+```js
 export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
   try {
     // In dev, clear any stale flags so you always start fresh
@@ -230,10 +238,3 @@ export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
-
-
-
-
-
-
-
