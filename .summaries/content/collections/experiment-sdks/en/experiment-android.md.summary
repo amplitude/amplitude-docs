@@ -1,34 +1,26 @@
 ## Summary
 
-This documentation covers Amplitude Experiment's client-side Android SDK implementation, including installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access, exposure tracking, and configuration options for features like automatic exposure tracking, bootstrapping, and user/exposure tracking providers.
+This documentation covers Amplitude Experiment's Client-side Android SDK implementation, detailing installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods, variant fetching, exposure tracking, and configuration options including bootstrapping and provider interfaces.
 
 ## Keywords
 
 - Amplitude Experiment Android SDK
-- client-side Android implementation
-- Maven Central installation
-- experiment-android-client
+- experiment-android-client Maven dependency
 - ExperimentClient initialization
-- DEPLOYMENT_KEY configuration
+- initializeWithAmplitudeAnalytics
 - remote evaluation fetch()
 - local evaluation start()
 - variant() method
-- automatic exposure tracking
-- ExposureTrackingProvider interface
-- ExperimentUserProvider interface
-- Amplitude Analytics integration
-- Segment Analytics integration
-- bootstrapping initialVariants
-- initialFlags configuration
 - ExperimentUser builder
-- flag key variant access
-- exposure event tracking
+- exposure tracking provider
+- ExperimentConfig configuration
+- deployment key authentication
+- automatic exposure tracking
+- user provider interface
+- Segment integration
+- bootstrapping initialVariants
 - Source.INITIAL_VARIANTS
-- fetchOnStart configuration
-- pollOnStart local evaluation
-- ServerZone.EU data center
-- ExperimentConfig builder
-- Future<ExperimentClient> async operations
-- account-level bucketing groups
-- payload JSONObject casting
-- clear() variants cache
+- pollOnStart flag configurations
+- fetchOnStart behavior
+- ExposureTrackingProvider interface
+- Kotlin Android implementation

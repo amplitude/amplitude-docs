@@ -1,13 +1,15 @@
-**Summary:** This documentation explains how Amplitude computes funnel analysis charts, covering event ordering options (any order, this order, exact order), segmentation behavior that applies to the first funnel step, and filter application rules including group-by filters and the "holding property constant" feature.
+**Summary:** This documentation explains how Amplitude computes funnel analysis with three event ordering options (any order, this order, exact order), segmentation behavior that applies user properties from the first funnel step, and filtering nuances including Segmentation Module filters applying only to first events and group-by filters with "holding property constant" functionality.
 
 **Keywords:**
 - funnel analysis computation
 - event ordering (any order, this order, exact order)
 - funnel segmentation first step
+- Segmentation Module filters
+- Events Module individual step filters
 - group-by filters
 - holding property constant
-- conversion path calculation
-- Events Module ordering
-- Segmentation Module filters
-- funnel step filtering
-- ordered funnels conversion counting
+- unique users metric
+- conversion path events
+- funnel step segmentation
+- event property grouping
+- user property segmentation

@@ -1,19 +1,13 @@
-**Summary:** This documentation covers integrating Amplitude analytics with Slack, including account connection via Personal Settings, link unfurling for chart previews, comment notifications with @ mentions, Amplitude Data project notifications for tracking plan changes, and team space connections to Slack channels.
+**Summary:** This documentation covers integrating Amplitude analytics with Slack, including account connection, chart link unfurling, comment notifications, Amplitude Data project tracking plan updates, and team space notifications to specific Slack channels.
 
 **Keywords:**
-- Slack integration
-- Amplitude analytics
-- link unfurling
-- chart previews
+- Amplitude Slack integration
+- chart link unfurling
+- Amplitude Data project notifications
+- tracking plan branch changes
+- team space Slack notifications
 - comment notifications
-- @ mentions
-- Amplitude Data project
-- tracking plan notifications
-- team spaces
-- branch changes
-- version publishing
-- Personal Settings connection
-- EU data center
-- Pathfinder exclusions
-- Compass exclusions
-- Persona exclusions
+- EU data center Slack app
+- Pathfinder Compass Persona charts
+- branch created deleted merged approved
+- version published notifications

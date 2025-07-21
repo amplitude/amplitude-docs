@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Experiment iOS SDK for client-side feature flag evaluation, including installation via CocoaPods/SPM, initialization with Amplitude Analytics or third-party integrations, remote evaluation via fetch(), local evaluation via start(), variant access, and exposure tracking with custom providers.
+This documentation covers the Amplitude Experiment iOS SDK for client-side feature flag evaluation, including installation via CocoaPods/SPM, initialization with Amplitude Analytics integration, remote/local evaluation through fetch() and start() methods, variant access with automatic exposure tracking, and provider interfaces for custom user management and analytics integration.
 
 ## Keywords
 
@@ -9,24 +9,28 @@ This documentation covers the Amplitude Experiment iOS SDK for client-side featu
 - CocoaPods AmplitudeExperiment
 - Swift Package Manager Experiment
 - ExperimentClient initialization
-- remote evaluation fetch()
-- local evaluation start()
+- fetch() remote evaluation
+- start() local evaluation
 - variant() flag access
-- exposure tracking provider
-- ExperimentUser builder
-- deployment key authentication
-- ExperimentConfig builder
 - automatic exposure tracking
-- user provider interface
+- ExposureTrackingProvider interface
+- ExperimentUserProvider interface
 - Amplitude Analytics integration
-- Segment integration
+- initializeWithAmplitudeAnalytics()
+- deployment key authentication
+- ExperimentUser object
 - flag configurations bootstrapping
 - initialVariants configuration
-- fetchOnStart pollOnStart
-- ExposureTrackingProvider protocol
-- ExperimentUserProvider protocol
-- serverZone EU datacenter
+- serverZone EU data center
+- Segment integration
 - account-level bucketing
 - group properties
-- variant payload access
+- payload variant data
 - fallback variants
+- exposure events tracking
+- automaticExposureTracking configuration
+- fetchOnStart behavior
+- pollOnStart flag updates
+- instanceName configuration
+- ExperimentConfigBuilder
+- Swift implementation

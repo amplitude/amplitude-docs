@@ -5,10 +5,6 @@ id: 8a84c13d-eec2-4ad3-a0f8-2d5242390af9
 published: false
 ---
 
-{{partial:admonition type='note'}}
-This chart will be merged into the new Journeys experience. This article will remain live for as long as legacy Pathfinder Users charts remain accessible. [Learn about the new Journeys experience with support for top user paths here](/docs/analytics/charts/journeys/journeys-understand-paths).
-{{/partial:admonition}}
-
 Amplitude's **Pathfinder Users** chart shows you the "paths" your users are taking through your product. Just specify an event you're interested in, and Amplitude will tell you the steps your users took to get there, or the events they fired afterwards. It's a handy way to identify the natural pathways in your product, and can help generate strategies for guiding the user experience in a new or more effective direction.
 
 {{partial:admonition type='note'}}
