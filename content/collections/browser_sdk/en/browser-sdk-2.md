@@ -671,6 +671,28 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
+When you enable this setting, Amplitude tracks the `[Amplitude] Network Request` event whenever the application makes a network request.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] URL` | The URL of the network request with sensitive information masked. |
+| `[Amplitude] URL Query` | The query parameters of the URL. |
+| `[Amplitude] URL Fragment` | The fragment identifier of the URL. |
+| `[Amplitude] Request Method` | The HTTP method used for the request (GET, POST, etc.). |
+| `[Amplitude] Status Code` | The HTTP status code of the response. |
+| `[Amplitude] Error Code` | The local error code if the request failed with out a status code. |
+| `[Amplitude] Error Message` | The local error message if the request failed with out a status code. |
+| `[Amplitude] Start Time` | The timestamp when the request started, in milliseconds since Unix epoch. |
+| `[Amplitude] Completion Time` | The timestamp when the request completed, in milliseconds since Unix epoch. |
+| `[Amplitude] Duration` | The duration of the request in milliseconds. |
+| `[Amplitude] Request Body Size` | The size of the request body in bytes. |
+| `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+
+{{/partial:collapse}}
+
+
+
 #### Advanced configuration for network tracking
 
 Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
