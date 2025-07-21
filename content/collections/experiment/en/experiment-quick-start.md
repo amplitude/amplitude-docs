@@ -46,6 +46,10 @@ Install the Amplitude SDK with the Experiment client. For example, through javas
 
 npm install @amplitude/analytics-browser @amplitude/experiment-browser
 
-import * as amplitude from '@amplitude/analytics-browser'; import { Experiment } from '@amplitude/experiment-browser'; amplitude.init('AMPLITUDE_API_KEY');  const experiment = Experiment.initialize('EXPERIMENT_API_KEY'); await experiment.start();
+import * as amplitude from '@amplitude/analytics-browser'; 
+import { Experiment } from '@amplitude/experiment-browser'; 
+amplitude.init('AMPLITUDE_API_KEY');  
+const experiment = Experiment.initialize('EXPERIMENT_API_KEY'); 
+await experiment.start();
 ```
 
