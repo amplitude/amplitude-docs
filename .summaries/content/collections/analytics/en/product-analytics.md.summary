@@ -1,16 +1,20 @@
-**Summary:** Amplitude's Out-of-the-box Product Analytics provides four pre-built views (Product Overview, Onboarding, Feature Engagement, Retention) for tracking user engagement metrics with configurable active events, retention intervals, onboarding funnels, and feature definitions using tracked events or Feature Flags.
+**Summary:** Amplitude's Out-of-the-box Product Analytics provides pre-configured views for tracking user engagement metrics including active users, retention, conversion funnels, and feature engagement matrices, with customizable settings for active events, retention intervals, onboarding funnels, and breakdown properties across four main views (Product Overview, Onboarding, Feature Engagement, Retention).
 
 **Keywords:**
 - Amplitude Product Analytics
-- out-of-the-box analytics views
-- active event configuration
-- retention intervals
+- out-of-the-box analytics
+- active users tracking
+- retention intervals configuration
 - onboarding funnel events
 - feature engagement matrix
 - breakdown properties
+- `[Amplitude] Any Active Event`
 - usage interval analysis
 - Feature Flags integration
+- Value Moment events
+- conversion funnel analysis
+- engagement matrix adoption frequency
+- retention over time analysis
+- product analytics views
 - role-based edit permissions
 - Starter Plus Growth Enterprise plans
-- conversion funnel tracking
-- engagement matrix adoption frequency

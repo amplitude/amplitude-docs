@@ -19,6 +19,4 @@ This documentation covers the Session Replay Standalone SDK for browser applicat
 - privacyConfig masking
 - serverZone EU configuration
 - optOut configuration
-- unified SDK integration
-- IndexedDB storage
-- DSAR API support
+- unified SDK alternative
