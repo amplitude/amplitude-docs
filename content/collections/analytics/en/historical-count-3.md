@@ -41,7 +41,7 @@ Then all of the following must occur for the user to appear in the chart:
 * `event_b` occurred within the specified time period
 * `event_a` (the occurrance within the specified time period) happened before the second occurrence of `event_b`
 
-If either of the events occurred outside of the specified date range, or if `event_a` did not occur before the seccond instance of `event_b` within the timeframe, then the user isn't considered to be converted.
+If either of the events occurred outside of the specified date range, or if `event_a` did not occur before the seccond instance of `event_b` within the timeframe, then the user isn't included.
 
 {{partial:admonition type='note'}}
 When using [Historical Count filters](/docs/analytics/historical-count-1) on the same events that happen within the same second, users appear to have dropped off. This is because the [funnel query](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
@@ -53,7 +53,7 @@ Historical Count and behavioral cohorts are related but separate concepts in Amp
 
 A behavior cohort can define a group of users who took a specific action with a certain frequency within a specific time period. For example, users who completed a workout five times in the last 30 days. A fitness company might want to know which of its users fit this description, as it may be their definition of a recent power user.
 
-Conversely, Historical Count allows you to pinpoint a user’s fifth workout. So if they completed only two workouts in the last 30 days, but had also completed three workouts prior to that, the most recent workout was actually their fifth. This is an important distinction, as a user’s fifth workout overall could also mark an important milestone in their overall user lifecycle in that they have now transitioned into a long-term group of users.
+Conversely, Historical Count allows you to pinpoint a user’s fifth workout. So if they completed only two workouts in the last 30 days, but had also completed three workouts before that, the most recent workout was actually their fifth. This is an important distinction, as a user’s fifth workout overall could also mark an important milestone in their overall user lifecycle in that they have now transitioned into a long-term group of users.
 
 Amplitude allows users to combine the power of both, by creating a cohort with historical count as a condition. You can also see the cohort population over time as well.
 
