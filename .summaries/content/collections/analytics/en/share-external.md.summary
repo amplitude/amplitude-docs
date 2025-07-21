@@ -1,20 +1,15 @@
-**Summary:** This documentation covers Amplitude's external sharing functionality for creating public links and embed codes to share charts, dashboards, and notebooks with stakeholders outside the organization, including password protection, expiration settings, and admin controls for Growth and Enterprise plans.
+**Summary:** This documentation covers Amplitude's external sharing functionality for creating public links and embed codes to share charts, dashboards, and notebooks with stakeholders outside the organization, including password protection, expiration settings, and management through Organization Settings > Content Access.
 
 **Keywords:**
 - public links
 - external sharing
-- embed code
-- stakeholder sharing
+- embed code generation
+- Organization Settings Content Access
+- password protection expiration dates
 - Growth Enterprise plans
-- password protection
-- expiration dates
-- Content Access settings
 - unauthenticated users
-- Journeys chart limitations
-- experiment results restrictions
-- chart caching
-- Organization Settings
-- admin permissions
-- Slack unfurling
 - revoke links
-- 404 redirect
+- Journeys charts limitation
+- experiment results charts restriction
+- Slack unfurling integration
+- WordPress Confluence embedding

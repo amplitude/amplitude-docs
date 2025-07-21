@@ -1,47 +1,41 @@
 ## Amplitude Journeys: User Path Analysis and Conversion Tracking
 
-Amplitude Journeys is a comprehensive user path analysis platform that combines legacy Journeys and Pathfinder Users charts to provide deep insights into user conversion paths and behavioral flows within digital products. The platform enables product teams to visualize, analyze, and optimize user journeys between key product transition points through advanced path exploration and detailed conversion analysis.
+Amplitude Journeys is a comprehensive user path analysis tool that enables product teams to visualize and understand how users navigate through their applications. The product combines legacy Journeys and Pathfinder Users functionality into a unified charting system that tracks user conversion paths between key product transition points, providing insights into user behavior patterns, drop-off points, and conversion optimization opportunities.
 
-## Product Architecture and Feature Relationships
+## Core Features and Visualization Modes
 
-Journeys operates through two primary visualization modes that work in tandem:
+Journeys operates through two primary visualization modes, each serving distinct analytical purposes:
 
-**Pathfinder Visualization** serves as the high-level exploration interface, providing broad path discovery capabilities for understanding overall user flow patterns. This visualization excels at identifying common user routes, drop-off points, and branching behaviors across the product experience.
+**Pathfinder Visualization** functions as a high-level exploration tool for broad user journey analysis, enabling teams to identify overall flow patterns and major conversion paths through their product ecosystem.
 
-**Journey Map** functions as the detailed analysis layer, offering granular path comparison capabilities with sophisticated filtering and segmentation options. This mode enables precise conversion window settings, detailed event filtering, and property-based path expansion for deep-dive analysis.
+**Journey Map Visualization** provides detailed path comparison capabilities, allowing for granular analysis of specific user routes and conversion sequences with enhanced filtering and segmentation options.
 
-The platform integrates seamlessly with Amplitude's broader analytics ecosystem, allowing users to create cohorts directly from identified user paths and convert Pathfinder analyses into funnel charts for further conversion optimization.
+Both visualization modes support flexible counting methodologies, offering analysis based on either unique user counts or total event counts, accommodating different analytical needs and use cases.
 
 ## Key Nomenclature and Definitions
 
-**Conversion Paths**: The sequence of events users take between defined starting and ending points in the product experience.
+**Conversion Paths** represent the sequential flow of user actions between defined start and end points, capturing the actual routes users take through product experiences rather than idealized funnel flows.
 
-**Starting Event**: The initial touchpoint or action that begins the user journey analysis.
+**Conversion Windows** define the time boundaries within which user actions are considered part of a cohesive journey, supporting both session-based windows (tied to Amplitude's session tracking) and clock-time windows for more flexible temporal analysis.
 
-**Ending Event**: The target conversion point or final action in the analyzed user path.
+**Event Expansion** allows analysts to break down events by specific properties, enabling deeper segmentation of user paths based on contextual attributes like feature variations, user segments, or interaction types.
 
-**Between Events**: Intermediate actions that occur within the defined user journey, providing context for path progression.
+**Path Branching** visualizes the divergent routes users take from common starting points, highlighting where user journeys split and the relative popularity of different continuation paths.
 
-**Conversion Window**: The time parameter that defines the allowable duration for users to complete the journey from start to end.
+**Drop-off Analysis** identifies points in user journeys where significant user attrition occurs, providing insights into potential friction points or optimization opportunities.
 
-**Event Expansion by Property**: The capability to break down events by specific properties to understand how different user segments or contexts affect path progression.
+## Product Ecosystem Integration
 
-**Path Segmentation**: The ability to filter and analyze specific user cohorts or behavioral patterns within the broader journey data.
+Journeys integrates deeply with Amplitude's broader analytics ecosystem, leveraging the platform's event tracking infrastructure and session management capabilities. The tool connects with Amplitude's cohort creation functionality, enabling users to generate audience segments directly from identified user paths for targeted analysis or activation campaigns.
 
-**Uniques vs Totals Counting**: Measurement methodology distinguishing between unique users taking paths versus total instances of path completion.
+The product supports seamless conversion to funnel analysis, allowing teams to transition from exploratory path analysis to structured conversion measurement. This integration bridges the gap between open-ended user journey exploration and hypothesis-driven conversion optimization.
 
-**Session-based Analysis**: Path tracking that respects user session boundaries for more accurate behavioral understanding.
+Journeys also incorporates Amplitude's event filtering and property-based segmentation capabilities, enabling analysts to focus on specific user behaviors, exclude irrelevant actions, and analyze paths within defined user segments or feature contexts.
 
-**Clock Time Analysis**: Time-based path analysis that considers real-world timing constraints and user behavior patterns.
+## Advanced Analytical Capabilities
 
-## Ecosystem Integration and Migration
+The platform handles complex user journey scenarios including repeated event handling, where users may perform the same action multiple times within a conversion window, and path progression timing analysis that reveals the temporal patterns of user navigation.
 
-Journeys represents an evolution of Amplitude's path analysis capabilities, specifically migrating and enhancing functionality from legacy Journeys and Pathfinder Users charts. This consolidation provides users with a unified interface while maintaining backward compatibility and familiar analytical workflows.
+Event filtering and exclusion capabilities allow analysts to remove noise from user paths, focusing on meaningful interactions while maintaining the integrity of the overall journey flow. Property-based expansion enables detailed breakdowns of user paths based on contextual attributes, supporting sophisticated segmentation and comparative analysis.
 
-The platform integrates with Amplitude's session tracking system to provide accurate user journey mapping and supports cohort creation workflows that feed into other Amplitude analysis tools. The conversion from Pathfinder visualizations to funnel analysis creates a seamless analytical pipeline for conversion optimization efforts.
-
-## Analysis Capabilities and Methodologies
-
-The platform supports both session-based and clock time analysis methodologies, allowing teams to choose the most appropriate measurement framework for their specific use cases. Event filtering and exclusion capabilities enable precise path definition, while repeated event handling ensures accurate representation of user behavior patterns.
-
-Path percentage calculations provide quantitative insights into conversion rates and drop-off points, while drop-off analysis identifies specific friction points in the user experience. The platform's ability to handle event sequences with property-based expansion allows for sophisticated segmentation and behavioral analysis across different user contexts and product variations.
+The system calculates path percentage distributions, providing quantitative insights into the relative popularity of different user routes and enabling data-driven prioritization of optimization efforts. Session start and end event tracking ensures accurate journey boundary definition, particularly important for products with complex multi-session user experiences.
