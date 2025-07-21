@@ -9,6 +9,9 @@ tree:
     id: e22942d7-1c79-47c7-9d5d-31883651d00c
     entry: 614cd6a1-ed04-4be0-924e-bf6f4fa6f58e
   -
+    id: c7cc0ea8-86ba-41e3-8e65-af6fb5faf35b
+    entry: 5db1bc0e-871d-4cc3-b429-9ca7f5f34c2d
+  -
     id: ad52c7aa-af7f-4141-aa85-c1953f5f1dc3
     entry: 3fc426d8-2e6e-4345-83cd-fe4935c330bb
   -
@@ -20,6 +23,9 @@ tree:
   -
     id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
     entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
+  -
+    id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
+    entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
   -
     id: 6c5428c2-6e5b-424b-b470-adb40f091f37
     title: Guides
@@ -55,9 +61,6 @@ tree:
       -
         id: a4e706d9-b14a-4b6d-bc53-78a0acb418f8
         entry: 62b666ba-914a-4449-8754-142521b44544
-  -
-    id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
-    entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
   -
     id: 974a4b9e-3e00-438f-8c09-0a2e47329ee5
     title: 'Instrument Guides and Surveys'
