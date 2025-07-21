@@ -1,7 +1,7 @@
 **Summary:** This documentation covers the Themes feature for Amplitude's Guides and Surveys, which allows customization of branding elements including colors, typography, form controls, cards, widget dimensions, and animations through a Theme Editor with Brand controls and Component editor sections.
 
 **Keywords:**
-- Amplitude Guides and Surveys Themes
+- Amplitude Guides and Surveys
 - Theme Editor
 - Brand controls
 - Component editor
@@ -16,7 +16,7 @@
 - Background colors
 - Border colors
 - Focus ring customization
-- Theme publishing workflow
+- Shadow configuration
+- Corner radius settings
 - Platform-specific themes (web/mobile)
-- Brand identity enforcement
-- In-product messaging appearance
+- Theme publishing workflow

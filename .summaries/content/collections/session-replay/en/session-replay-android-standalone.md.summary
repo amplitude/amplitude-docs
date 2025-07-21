@@ -1,18 +1,19 @@
-**Summary:** Documents the Session Replay Android Standalone SDK for developers using third-party analytics providers instead of Amplitude's Android SDK, covering initialization with manual session/device ID management, configuration options including sampleRate and maskLevel, and integration requirements for tracking session replay properties.
+**Summary:** Documents the Session Replay Android Standalone SDK for developers using third-party analytics providers instead of Amplitude's Android SDK, covering initialization with manual session/device ID management, configuration options including sample rates and privacy masking, and integration requirements for matching Session ID and Device ID with Amplitude events.
 
 **Keywords:**
 - Session Replay Android Standalone SDK
 - third-party analytics provider integration
 - manual session ID management
 - device ID synchronization
+- SessionReplay class initialization
 - getSessionReplayProperties method
 - setSessionId and setDeviceId methods
 - flush method for data transmission
 - sampleRate configuration
 - maskLevel privacy settings
-- ServerZone EU data residency
 - optOut user consent
+- serverZone EU data residency
+- remote configuration enablement
+- Maven Central dependency
+- session timestamp requirements
 - AmplitudeSessionReplay-Android repository
-- Maven Central session-replay-android artifact
-- SessionReplay class initialization
-- remote configuration enableRemoteConfig

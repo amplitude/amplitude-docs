@@ -1,15 +1,19 @@
-**Summary:** Documents Amplitude's self-service data deletion feature that allows Growth and Enterprise plan users with Administrator privileges to permanently delete events and properties from projects through a task-based queue system, with scanning limits of 1B events/month (Growth) or 10B events/month (Enterprise).
+**Summary:** Documents Amplitude's self-service data deletion feature that allows Growth and Enterprise plan users with Administrator privileges to permanently delete specific events and properties from Amplitude projects through a task-based interface, with scanning limits of 1B events/month for Growth and 10B events/month for Enterprise plans.
 
 **Keywords:**
 - self-service data deletion
-- deletion task queue
-- event deletion
-- property deletion (event properties, user properties)
-- Administrator privileges requirement
-- Growth plan 1 billion events scanning limit
-- Enterprise plan 10 billion events scanning limit
-- server upload time UTC
-- Organization settings
 - permanent data removal
-- deletion clauses (up to 5)
-- non-cancellable deletion requests
+- deletion task creation
+- event deletion
+- property deletion
+- event properties
+- user properties
+- Administrator privileges
+- Growth plan scanning limits
+- Enterprise plan scanning limits
+- server upload time UTC
+- deletion queue
+- Organization settings
+- User Privacy API
+- GDPR CCPA compliance
+- project data management

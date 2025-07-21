@@ -287,6 +287,7 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
+
 {{partial:partials/session-replay/sr-retention}}
 
 ### DSAR API

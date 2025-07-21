@@ -1,18 +1,16 @@
-**Summary:** Documents Amplitude's split URL testing feature for A/B testing that redirects visitors to different URLs without developer involvement, requiring Experiment SDK script tag in `<head>` section and Analytics SDK for event tracking, with configuration limits including local evaluation mode, User bucketing unit, deviceID keys, and all users audience.
+**Summary:** Documents Amplitude's URL redirect testing feature for A/B testing that redirects visitors to different URLs without developer involvement, using a script tag in the `<head>` section and requiring the Amplitude Analytics SDK for event tracking.
 
 **Keywords:**
-- split URL testing
 - URL redirect testing
 - Amplitude Experiment SDK
-- script tag head section
-- Analytics SDK event tracking
-- local evaluation mode
-- User bucketing unit
-- deviceID keys
-- all users audience
-- CMS Wordpress variants
+- script tag implementation
+- head section integration
+- Amplitude Analytics SDK
+- CMS testing (WordPress)
 - multi-armed bandits
-- visual experimentation
-- low-code implementation
-- project API key deployment
-- redirect behavior preview
+- local evaluation mode
+- deviceID bucketing
+- visual experimentation limits
+- low-code A/B testing
+- redirect variants
+- conversion optimization testing
