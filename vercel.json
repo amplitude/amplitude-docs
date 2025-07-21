@@ -9,6 +9,11 @@
   ],
   "trailingSlash": false,
   "redirects": [
+        {
+      "source": "/docs/faq/startup-scholorship-plan",
+      "destination": "/docs/faq/startup-scholarship-plan",
+      "statusCode": 301
+    },
     {
       "source": "/docs/get-started/cookies-and-consent-management",
       "destination": "/docs/sdks/analytics/browser/cookies-and-consent-management",
