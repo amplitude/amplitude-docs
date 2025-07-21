@@ -10,14 +10,18 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397215
 ---
-You can easily turn your dashboards into templates, which allow teams to efficiently and confidently recreate their common analyses and share best practices with just a few clicks. Save time when repeating common analyses and make it simpler for new team members to measure impact.
+You can turn your dashboards into templates, which allow teams to efficiently and confidently recreate their common analyses and share best practices with just a few clicks. Save time when repeating common analyses and make it simpler for new team members to measure impact.
 
 To designate a dashboard as a template, follow these steps:
 
 1. In your dashboard, click *More* and select *Tag as Template* from the dropdown menu.
 2. In the *Templatize Dashboard* modal, set the discoverability toggle to on or off, depending on your preferences, and add any instructions you’d like to communicate to users of the template. If you choose not to add your own instructions, Amplitude uses the default boilerplate. Then click *Save*.
 
-Here's what you can expect to see once you've templatized your dashboard:
+{{partial:admonition type="note" heading="Permissions"}}
+Only dashboard owners or editors can create a template from a dashboard.
+{{/partial:admonition}}
+
+Here's what you can expect to see when you templatize your dashboard:
 
 * The dashboard carries a template icon;
 * The dashboard includes the template instructions you added in Step 2 above;
@@ -37,4 +41,4 @@ Some common use cases for templates in Amplitude include:
 * **B2B or partner use-cases:** Create different dashboards segmented by customer account or partner
 * **Amplitude new user onboarding:** Templates for the above use cases to help onboard new Amplitude users by acclimating them to the types of analyses most often performed by their new teams.
 
-For more information on templates, see [this article in our Help Center.](/docs/analytics/templates)
+For more information on templates, review [Templates: Re-use your analyses](/docs/analytics/templates).
