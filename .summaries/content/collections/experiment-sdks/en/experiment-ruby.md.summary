@@ -7,16 +7,12 @@
 - deployment key initialization
 - AmplitudeExperiment::User object
 - fetch_async callback method
-- LocalEvaluationConfig cohort_sync_config
-- AssignmentConfig automatic tracking
+- LocalEvaluationConfig flag_config_polling_interval_millis
 - CohortSyncConfig api_key secret_key
-- flag_config_polling_interval_millis
-- AmplitudeCookie parse device_id
-- ServerZone::US ServerZone::EU
-- fetch_timeout_millis fetch_retries
+- AssignmentConfig automatic tracking
+- AmplitudeCookie parse generate
+- server_zone EU US configuration
+- cohort_sync_config local targeting
 - bootstrap flag configuration
-- group_properties account-level bucketing
-- start() evaluate() methods
-- variant.value flag access
-- Ruby 2.0+ compatibility
-- darwin/amd64 linux/arm64 architecture support
+- fetch_timeout_millis retry configuration
+- evaluate method flag_keys parameter
