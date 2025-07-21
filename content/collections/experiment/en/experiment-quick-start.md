@@ -159,7 +159,77 @@ Repeat the steps above in your flag to create additional variations and payloads
 After you have completed designing your experiment, click **Start Experiment** to begin. 
 
 ## Code examples
-The following code examples describe how a feature flag could be created as well as how a JSON payload can be organized:
+The following code examples describe the code for a feature flag and a JSON payload:
+
+{{partial:tabs tabs="Feature flag, JSON payload"}}
+{{partial:tab name="Feature flag"}}
+```json
+export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
+  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null)
+  useEffect(() => {
+    getBlogLayoutFlag().then((flag) => {
+      console.log(':magic_wand: Received Flag from Amplitude:', flag)
+      if (flag) {
+        setLayoutFlag(flag)
+      } else {
+        console.log(':warning: No flag returned, falling back to default layout')
+        setLayoutFlag({
+          layout: 'cards',
+          titlePosition: 'above',
+          gradient: false,
+          showDescription: true,
+          cardCount: 3,
+        })
+      }
+    })
+  }, [])
+```
+{{/partial:tab}}
+{{partial:tab name="JSON payload"}}
+```json
+export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
+  try {
+    // In dev, clear any stale flags so you always start fresh
+    if (process.env.NODE_ENV === 'development') {
+      localStorage.clear()
+      console.warn(' Cleared localStorage in dev mode')
+    }
+    // Initialize/start the experiment SDK
+    await experiment.start()
+    // Grab the variant for our blog layout test
+    const variant = experiment.variant('blog_post_layout')
+    console.log(':movie_camera: Full Variant Object:', variant)
+    // Some payloads come in `payload`, some in `value`
+    const value = variant?.payload ?? variant?.value
+    console.log(' Cleaned Flag Payload:', value)
+    // If there's no usable object, fall back to defaults
+    if (!value || typeof value !== 'object' || Object.keys(value).length === 0) {
+      console.warn( No valid layout flag found, using fallback layout')
+      return {
+        layout:       'carousel',
+        titlePosition:'above',
+        gradient:     false,
+        showDescription: true,
+        cardCount:    3,
+      }
+    }
+    // Otherwise assume it's our LayoutFlag shape
+    return value as LayoutFlag
+  } catch (error) {
+    console.error(' Error fetching blog layout flag:', error)
+    // On error, also fall back
+    return {
+      layout:       'carousel',
+      titlePosition:'above',
+      gradient:     false,
+      showDescription: true,
+      cardCount:    3,
+    }
+  }
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 
 
