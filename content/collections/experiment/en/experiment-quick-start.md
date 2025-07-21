@@ -164,6 +164,16 @@ The following code examples describe the code for a feature flag and a JSON payl
 {{partial:tab name="Feature flag"}}
 
 ```js
+import { useState, useEffect } from 'react'
+import { getBlogLayoutFlag } from '../services/featureFlags'  // Adjust to wherever you fetch your Amplitude flag
+import type { BlogPost } from '../types'
+type LayoutFlag = {
+  layout: 'cards' | 'list' | 'carousel'
+  titlePosition: 'above' | 'below' | 'center'
+  gradient: boolean
+  showDescription: boolean
+  cardCount: number
+}
 export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
   const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null) | {
     layout: 'cards' | 'list' | 'carousel';
@@ -190,19 +200,34 @@ export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
       }
     })
   }, []);
+   if (!layoutFlag) {
+    // you might render a loader here
+    return null
+  }
+  // Render your posts according to layoutFlag...
+  return (
+    <div>
+      {/* e.g. layoutFlag.layout === 'cards' ? <CardGrid posts={posts} /> : ... */}
+    </div>
+  )
+}
 
 ```
 {{/partial:tab}}
 {{partial:tab name="JSON payload"}}
 ```js
+// services/featureFlags.ts
+import { experiment } from '@amplitude/experiment-js'  // adjust import to your SDK
+import type { LayoutFlag } from '../types'             // reuse the same LayoutFlag type
+
 export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
   try {
-    // In dev, clear any stale flags so you always start fresh
+    // In dev, clear any stale flags
     if (process.env.NODE_ENV === 'development') {
       localStorage.clear()
       console.warn(' Cleared localStorage in dev mode')
     }
-    // Initialize/start the experiment SDK
+    // Initialize the experiment SDK
     await experiment.start()
     // Grab the variant for our blog layout test
     const variant = experiment.variant('blog_post_layout')
@@ -221,7 +246,7 @@ export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
         cardCount:    3,
       }
     }
-    // Otherwise assume it's our LayoutFlag shape
+    // Otherwise assume it's Amplitude's LayoutFlag shape
     return value as LayoutFlag
   } catch (error) {
     console.error(' Error fetching blog layout flag:', error)
