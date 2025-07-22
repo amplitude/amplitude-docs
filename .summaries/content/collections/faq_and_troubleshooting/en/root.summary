@@ -52,7 +52,7 @@ Amplitude's ecosystem consists of several interconnected products:
 
 **Third-Party Integrations:**
 - Segment integration supporting both cloud-mode and device-mode connections
-- Support for third-party website builders (Wix, Squarespace) through code injection
+- Support for third-party site builders (Wix, Squarespace) through code injection
 - Attribution partner integrations (Appsflyer, Adjust, Branch, Singular)
 
 ## Advanced Features and Functionality
@@ -69,14 +69,15 @@ Amplitude's ecosystem consists of several interconnected products:
 
 Amplitude offers tiered pricing plans:
 - **Starter/Free Plan**: Basic analytics with limited MTU
-- **Plus Plan**: Enhanced features with 1.2x overage pricing and MTU guardrails (1,000 events per MTU)
-- **Growth Plan**: Advanced features including Behavioral Cohorts, Pathfinder, SSO
-- **Enterprise Plan**: Full feature access with custom data retention and advanced security compliance
-
-**Startup Scholarship Plan** provides qualifying startups (under $10M funding, fewer than 20 employees) with one year of free Growth plan access including 200,000 MTUs.
+- **Plus Plan**: Enhanced features with 1.2x overage pricing and MTU guardrails
+- **Growth Plan**: Advanced features including Behavioral Cohorts, Pathfinder, and custom data retention
+- **Enterprise Plan**: Full feature access with SSO and advanced security compliance
+- **Startup Scholarship**: One-year free Growth plan access for qualifying startups
 
 ## Security and Compliance
 
-Amplitude maintains enterprise-grade security standards including SOC2 Type 2, GDPR, HIPAA, and CCPA compliance. The platform provides Data Processing Addendum (DPA) support, Customer Trust Portal access, and operates a Bug Bounty program for vulnerability management.
+The platform maintains SOC2 Type 2, GDPR, HIPAA, and CCPA compliance with comprehensive data processing agreements. Privacy features include the User Privacy API for GDPR compliance and configurable data retention policies. A Bug Bounty program and Customer Trust Portal provide additional security transparency.
 
-The platform's data governance includes User Privacy API for GDPR compliance, immutable data architecture for audit trails, and comprehensive access controls through SSO integration for Growth and Enterprise plans.
+## Common Integration Challenges
+
+Documentation extensively covers troubleshooting scenarios including data discrepancies with other platforms (particularly Google Analytics session tracking differences), mobile attribution event mapping issues, Firefox tracking protection blocking, and iOS 14 IDFA opt-in impacts on device identification and attribution matching.

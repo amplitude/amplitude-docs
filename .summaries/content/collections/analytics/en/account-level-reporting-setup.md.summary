@@ -6,13 +6,11 @@
 - Amplitude SDKs
 - Identify API groups key
 - HTTP API groups key
-- event-level groups
 - Segment Group Type Trait
 - Segment Group Value Trait
 - Group Identify API
+- group types limit
 - group properties
-- five group types limit
-- chart control panel dropdown
-- server-side data sending
-- group instrumentation
+- event-level groups
 - user-group association
+- chart control panel dropdown

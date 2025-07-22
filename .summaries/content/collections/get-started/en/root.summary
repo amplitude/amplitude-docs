@@ -1,82 +1,79 @@
-Amplitude is a comprehensive event-based product analytics platform designed to help organizations understand user behavior, optimize engagement, and drive product growth through data-driven insights.
+Amplitude is a comprehensive event-based product analytics platform designed to help businesses understand user behavior, optimize engagement, and drive growth through data-driven insights. The platform provides real-time tracking, analysis, and visualization of user interactions across web, mobile, and cross-platform applications.
 
-## Core Product Overview
+## Core Product Architecture and Features
 
-Amplitude Analytics serves as the central product offering, providing real-time user behavior tracking through an event-based architecture. The platform captures user interactions as events with associated properties, enabling detailed analysis of user journeys, feature adoption, conversion rates, and retention patterns. Key capabilities include automated event tracking through Autocapture, customizable dashboards, pre-built analytical templates, and cross-platform user identification.
+Amplitude's analytics ecosystem centers around several key components:
 
-The platform supports multiple data ingestion methods including client-side SDKs (Browser, iOS, Android), server-side APIs (HTTP API v2, Identify API), and third-party integrations. Real-time event streaming provides immediate visibility into user actions, while the User Activity tab enables debugging and QA validation of instrumentation.
+**Analytics Dashboard and Home Page**: The central hub featuring real-time event streams, quick chart creation via Event Segmentation, template gallery access, and product overview metrics. Users can create charts through the Create > Chart menu with plan-specific limitations (Starter plans limited to 10 charts and 1-year data queries).
 
-## Product Architecture and Feature Relationships
+**Data Collection and Instrumentation**: Multiple ingestion methods including Browser SDK (2.10.0+), iOS/Android SDKs, HTTP API v2, third-party integrations, and various specialized APIs (Identify API, Attribution API, Export API, Behavioral Cohorts API). The platform supports both client-side and server-side data sources with project-level API key initialization.
 
-### Analytics Core Components
-- **Amplitude Home Page**: Central dashboard providing product metrics overview, real-time event streams, quick chart creation via Event Segmentation, and template gallery access
-- **Spaces**: Organizational system for content management with personal workspaces and shared collaboration spaces (plan-restricted: Starter 1 space, Plus 3 spaces, unlimited for higher tiers)
-- **Charts and Dashboards**: Customizable visualization tools with plan limitations (Starter plans limited to 10 charts, 1-year data queries)
-- **Template Gallery**: Pre-built analytical templates including Feature Adoption Report, Conversion Report, User Activity Report, and Ecommerce Report
+**Autocapture Technology**: Automated event tracking for web, iOS, and Android platforms capturing Page viewed events, Element clicked tracking, Form started/submitted events, marketing attribution, UTM parameters, and application lifecycle events without manual instrumentation.
 
-### Data Collection and Management
-- **Autocapture**: Automated event tracking for web (Browser SDK 2.10.0+), iOS, and Android platforms, capturing page views, form interactions, element clicks/changes, and session events
-- **Session Replay**: Integrated recording capability with configurable sample rates and Session Replay ID tracking
-- **Cross-Platform Tracking**: Unified user identification across iOS, Android, and web platforms using shared API keys
+**Template System**: Pre-built analysis templates including Ecommerce Report, Feature Adoption Report, Conversion Report, and User Activity Report, accessible through the Template Gallery and convertible to customizable dashboards.
 
-### User Identification System
-The platform employs a three-tier identification system:
-- **Device IDs**: Platform-specific identifiers (IDFV for iOS, generated IDs for web/Android)
-- **Amplitude IDs**: Internal user identifiers prefixed with "amp_"
-- **User IDs**: Custom identifiers for authenticated users, enabling cross-device event reconciliation
+**Spaces and Organization**: Content organization system with personal workspaces, shared spaces for collaboration, and folder structures. Plan restrictions apply (Starter: 1 space, Plus: 3 spaces, unlimited for other plans).
 
 ## Key Nomenclature and Definitions
 
-### Event Architecture
-- **Events**: User actions tracked with verb+noun naming conventions (e.g., "Page Viewed", "Item Added")
+**User Identification System**:
+- **Amplitude ID**: Platform-generated unique identifier
+- **Device ID**: Platform-specific identifiers (IDFV for iOS, Advertising Identifier)
+- **User ID**: Custom business-defined identifier for cross-device tracking
+
+**Event Architecture**:
+- **Events**: User actions tracked with verb+noun naming conventions
 - **Event Properties**: Contextual data attached to events (maximum 20 properties per event)
 - **User Properties**: Persistent attributes describing user characteristics
 - **Inactive Events**: Events excluded from active user calculations
-- **Event ID**: Unique identifier for deduplication using client event time and device ID matching
 
-### User Metrics
-- **Active Users**: Users who triggered any non-inactive event within specified timeframes
-- **Monthly Tracked Users (MTU)**: Billing metric for unique users per month
-- **Session Management**: Platform-specific timeouts (5 minutes mobile, 30 minutes web)
-- **Session ID**: Millisecond timestamp since epoch UTC
+**Session Management**:
+- **Session Timeout**: 5 minutes for mobile, 30 minutes for web
+- **Session ID**: Milliseconds since epoch UTC timestamp
+
+**Analytics Metrics**:
+- **Monthly Tracked Users (MTU)**: Billing metric for active users
+- **Active Users**: Users triggering non-inactive events
 - **Retention**: User return behavior analysis
-- **Stickiness**: Frequency of user engagement within periods
+- **Stickiness**: Engagement frequency measurement
+- **Behavioral Cohorts**: User groups based on shared behaviors
 
-### Analytics Constructs
-- **Behavioral Cohorts**: User segments based on shared behaviors
-- **Funnels**: Sequential event analysis for conversion tracking
-- **Any Active Event**: Aggregate of all non-inactive events
-- **Any Event**: Includes all events regardless of active status
+## Product Ecosystem Integration
 
-## Broader Product Ecosystem Integration
+Amplitude operates within a broader analytics and optimization ecosystem through:
 
-### SDK and API Ecosystem
-- **Browser SDK**: Primary web tracking with JavaScript snippet installation and amplitude.init() configuration
-- **Mobile SDKs**: iOS Swift SDK and Android Kotlin SDK with platform-specific autocapture
-- **HTTP API v2**: Server-side event ingestion with 7-day insert_id retention for deduplication
-- **Identify API**: User property management and updates
-- **Export API**: Data extraction in JSON format
-- **Attribution API**: Campaign and marketing attribution
-- **Behavioral Cohorts API**: Programmatic cohort management
+**Implementation Team Structure**: Three critical roles including Project Lead (coordinates adoption), Data Governor (designs tracking plans and taxonomy), and Instrumentation Lead (implements SDK events and validates data sources).
 
-### Data Privacy and Compliance
-- **Cookie Management**: AMP_ prefixed first-party cookies with consent management through deferInitialization
-- **GDPR/CNIL Compliance**: Opt-out mechanisms via setOptOut() and enableTracking() methods
-- **Storage Options**: Configurable cookie settings including disableCookies, cookieExpiration, and localStorage alternatives
+**Cross-Platform Strategy**: Supports both unified cross-platform instrumentation (single API key across iOS, Android, web) and separate platform approaches depending on user crossover analysis needs and platform-specific behaviors.
 
-### Integration Capabilities
-- **Third-Party Platforms**: Native integrations including Optimizely for A/B testing
-- **UTM Parameter Tracking**: Automatic campaign attribution through utm_source and related parameters
-- **MaxMind GeoIP**: Automatic location property derivation from IP addresses
-- **Content Security Policy (CSP)**: Compatible implementation for secure environments
+**A/B Testing Integration**: Native AB Test View functionality with user property association for experiment variations, supporting both per-experiment and unified property strategies, with Optimizely integration capabilities.
 
-## Implementation Workflow and Team Structure
+**Compliance and Privacy**: GDPR/CNIL compliance features including consent management, opt-out mechanisms, cookie management with AMP_ prefixes, and deferInitialization options for consent platforms.
 
-The platform requires three key implementation roles:
-- **Project Lead**: Coordinates with Success Managers and drives organizational adoption
-- **Data Governor**: Designs tracking plans, maintains data taxonomy, and ensures data quality
-- **Instrumentation Lead**: Implements SDK events and validates data sources
+## API Endpoints and Technical Implementation
 
-The recommended implementation follows a structured approach: business goal definition, event taxonomy planning using spreadsheet templates, cross-platform vs. separate-platform project decisions, SDK instrumentation, and ongoing optimization through the 6-step Amplitude workflow (critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, and engagement matrix analysis).
+**Primary APIs**:
+- HTTP API v2 for server-side event ingestion with insert_id deduplication (7-day retention)
+- Identify API for user property updates
+- Dashboard REST API for programmatic access
+- Export API for JSON data extraction
+- Attribution API for campaign data
+- Behavioral Cohorts API for segment management
 
-Browser compatibility targets analytics.amplitude.com with support for browsers maintaining >0.5% market share, explicitly excluding Internet Explorer 11 and undead browsers, ensuring modern web standard compliance across the analytics interface.
+**SDK Implementation**:
+- Browser SDK initialization via `amplitude.init()` with JavaScript snippet
+- iOS Swift SDK with autocapture capabilities
+- Android Kotlin SDK with lifecycle tracking
+- Element interaction configuration through `elementInteractions`
+
+**Key Configuration Options**:
+- `deferInitialization` for consent management
+- `disableCookies` for cookieless tracking
+- `setOptOut()` and `enableTracking()` for privacy controls
+- `cookieExpiration` and `sameSiteCookie` for cookie management
+
+## Workflow Optimization and Analysis
+
+Amplitude promotes a 6-step optimization workflow: critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, and engagement matrix analysis, followed by ongoing cohort comparison and A/B testing.
+
+The platform supports industry-specific event taxonomies across ecommerce, B2B/SaaS, finance, media, healthcare, and gaming sectors, with recommended events and properties tailored to common business questions in each vertical. Quality assurance processes include real-time event verification through User Activity tabs, monthly event limit handling, and sophisticated deduplication logic using event ID/client event time/device ID matching.

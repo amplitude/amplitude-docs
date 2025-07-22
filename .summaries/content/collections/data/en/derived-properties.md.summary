@@ -6,9 +6,8 @@
 - Enterprise plans
 - retroactive property creation
 - formula editor
-- PROPERTY function
+- PROPERTY() function
 - REGEXEXTRACT
-- SPLIT function
 - PARALLEL_PRODUCT
 - cart analysis
 - string functions

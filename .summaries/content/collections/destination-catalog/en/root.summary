@@ -1,6 +1,6 @@
 ## Amplitude Destination Catalog
 
-Amplitude's destination catalog represents a comprehensive ecosystem of data integration endpoints that enable organizations to activate their behavioral analytics data across marketing, customer engagement, experimentation, and data infrastructure platforms. The catalog encompasses over 100 destination integrations spanning multiple categories and integration patterns.
+Amplitude's destination catalog represents a comprehensive ecosystem of data integration endpoints that enable organizations to activate their behavioral analytics data across marketing, customer engagement, experimentation, and business intelligence platforms. The catalog encompasses over 100 destination integrations spanning multiple categories and integration patterns.
 
 ### Core Integration Architecture
 
@@ -8,45 +8,46 @@ The destination catalog operates through three primary integration patterns:
 
 **Event Streaming Destinations** forward real-time user events and properties from Amplitude to external platforms using APIs like HTTP V2 and Identify API. These integrations typically require authentication tokens, support event filtering, and maintain user property synchronization with configurable delivery mechanisms.
 
-**Cohort Sync Destinations** export behavioral audience segments from Amplitude to marketing and engagement platforms. These integrations enable targeting specific user groups based on analytics-driven segmentation, supporting various sync cadences (real-time, hourly, daily, scheduled) and user identifier mapping strategies.
+**Cohort Sync Destinations** export behavioral audience segments from Amplitude to marketing and engagement platforms. These integrations enable targeting specific user groups based on behavioral patterns, supporting various sync cadences (real-time, hourly, daily, scheduled) and user identifier mapping strategies.
 
-**Raw Data Export Destinations** provide comprehensive data warehouse and cloud storage integrations for exporting complete event datasets, merged user profiles, and historical data with features like automatic backfills, deduplication, and schema management.
+**Raw Data Export Destinations** provide comprehensive data warehouse and cloud storage integrations for analytics and business intelligence use cases, supporting recurring exports, historical backfills, and structured data schemas.
 
-### Key Platform Categories
+### Key Integration Categories
 
-**Marketing Automation & Customer Engagement** platforms including Braze, Customer.io, Klaviyo, HubSpot, Mailchimp, and Salesforce Marketing Cloud enable cohort-driven campaign targeting and real-time behavioral event triggering for personalized messaging across email, SMS, push notifications, and in-app channels.
+**Marketing Automation & Customer Engagement** platforms including Braze, Customer.io, Klaviyo, Mailchimp, HubSpot, and Salesforce Marketing Cloud enable behavioral trigger campaigns, personalized messaging, and lifecycle marketing workflows through both event streaming and cohort synchronization.
 
-**Advertising & Attribution Networks** such as Facebook Ads, Google Ads, TikTok Ads, LinkedIn Ads, and AppsFlyer support audience creation from behavioral cohorts with specific identifier requirements (IDFA, GAID, email hashing) and conversion tracking through pixel integrations and server-to-server event forwarding.
+**Advertising & Attribution Networks** such as Facebook Ads, Google Ads, TikTok Ads, LinkedIn Ads, and AppsFlyer support audience targeting, conversion tracking, and attribution measurement through cohort exports and event forwarding with specific identifier requirements (IDFA, GAID, email hashing).
 
-**Experimentation & Feature Management** platforms including Optimizely, LaunchDarkly, Split, and Statsig leverage Amplitude cohorts for experiment targeting and feature flag segmentation, enabling behavior-based experimentation workflows.
+**Experimentation & Feature Management** platforms including Optimizely, LaunchDarkly, Split, and Statsig leverage Amplitude cohorts for experiment targeting and feature flag segmentation, enabling behavior-driven experimentation workflows.
 
-**Data Infrastructure & Warehousing** destinations encompass Amazon S3, Google BigQuery, Snowflake, Amazon Redshift, and cloud storage solutions with comprehensive schema management, partitioning strategies, and automated sync processes for analytics data lakes.
+**Data Warehouses & Cloud Storage** destinations like Snowflake, Google BigQuery, Amazon S3, and Azure Blob Storage provide comprehensive data export capabilities with structured schemas, partitioning strategies, and deduplication mechanisms for analytics and business intelligence.
 
-**Customer Success & Product Analytics** integrations with platforms like Planhat, Productboard, and various feedback collection tools enable combining quantitative behavioral data with qualitative insights for product development and customer health scoring.
+**Customer Success & Product Analytics** integrations with platforms like Planhat, Productboard, and various in-app messaging tools enable product-led growth strategies and customer health monitoring.
 
 ### Authentication & Configuration Patterns
 
-Most destinations require platform-specific authentication mechanisms including API keys, OAuth tokens, service account credentials, and endpoint configurations. Common setup patterns involve:
+Destinations employ various authentication mechanisms including API keys, OAuth flows, service account credentials, and bearer tokens. Common configuration requirements include:
 
-- **User Identifier Mapping** between Amplitude's user_id/amplitude_id and destination platform identifiers (email, external_id, device_id)
-- **Property Field Mapping** for synchronizing user properties and event attributes across platforms
-- **Sync Cadence Configuration** with options for real-time, scheduled, or manual synchronization
-- **Event Filtering** capabilities for selective data forwarding based on event types and properties
+- **User Identifier Mapping** between Amplitude user_id/properties and destination platform identifiers
+- **Event Filtering** for selective data forwarding based on event types and properties  
+- **Sync Cadence Configuration** for cohort destinations (real-time, scheduled, one-time)
+- **Field Mapping** for user properties, event properties, and custom attributes
+- **Rate Limiting & Error Handling** with retry mechanisms and delivery metrics
 
-### Technical Implementation Details
+### Data Schemas & Payload Structures
 
-**API Endpoints** vary by destination but commonly include REST APIs with specific rate limits, request size constraints (typically 2MB), and retry mechanisms with exponential backoff for handling 429 throttling and 5xx errors.
+Event streaming destinations typically receive Amplitude's Export API JSON format containing fields like amplitude_id, user_id, event_type, event_properties, user_properties, and timestamp information. Cohort destinations receive user lists with cohort membership indicators, while warehouse destinations support comprehensive schemas with VARIANT/SUPER data types for JSON fields.
 
-**Data Formats** primarily use JSON schema with platform-specific transformations, supporting Apache FreeMarker templating for custom payload generation in webhook destinations.
+### Enterprise & Compliance Features
 
-**Security Requirements** include IP allowlisting for warehouse destinations, SHA256 hashing for advertising platforms, and encrypted credential storage with role-based access controls.
+The destination catalog includes enterprise-grade features such as IP allowlisting, VPC security group configuration, encryption support (KMS), service account-based authentication, and compliance with data residency requirements across different cloud regions and data centers.
 
-### Specialized Integration Features
+### API Endpoints & Technical Implementation
 
-**Cohort Webhooks** provide custom endpoint integration with configurable payloads using Apache FreeMarker templating, enabling organizations to build custom activation workflows with in_cohort boolean flags and message_id deduplication.
+Key technical endpoints include:
+- Amplitude Export API for event data formatting
+- Behavioral Cohorts API for audience segmentation
+- User Profile API for real-time user data access
+- Various destination-specific APIs (Braze HTTP V2, Google Ads Upload Click Conversions, Facebook Custom Audiences, etc.)
 
-**Bidirectional Integrations** with platforms like Braze, Intercom, and VWO support both data export from Amplitude and import of external platform data for comprehensive cross-platform analytics.
-
-**Real-time Streaming** capabilities enable immediate event forwarding for time-sensitive use cases like fraud detection, personalization engines, and customer support workflows.
-
-The destination catalog represents Amplitude's commitment to data activation across the modern marketing and product technology stack, enabling organizations to leverage behavioral analytics insights across their entire customer engagement ecosystem while maintaining data governance and technical reliability standards.
+The destination catalog represents Amplitude's comprehensive approach to data activation, enabling organizations to leverage behavioral analytics insights across their entire technology stack through standardized integration patterns, robust authentication mechanisms, and flexible configuration options.
