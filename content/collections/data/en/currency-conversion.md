@@ -14,10 +14,8 @@ updated_at: 1753202057
 
 Currency conversion lets you analyze multi-currency revenue data in Amplitude. With currency conversion, you can:
 - Send Amplitude transaction data with local currency codes.
-- Utilize revenue data for insight generation or decision making without first needing to manually pre-convert data into a single currency.
-- Run queries based on a series of lookup tables that are connected to daily exchange rates to convert transaction amounts based on transaction dates and daily exchange rates. You can use the primary currency set at the project level (for example, convert all global currencies to USD).
-
-Amplitude uses the daily exchange rate from the time of transaction or purchase event. For example, if one of your customers makes a purchase on January 1, 2025, Amplitude uses the daily exchange rate from January 1, 2025.
+- Use revenue data for insight generation or decision making without first needing to manually pre-convert data into a single currency.
+- Run queries based on a series of lookup tables connected to daily exchange rates to convert transaction amounts based on transaction dates and daily exchange rates. You can use the primary currency set at the project level (for example, convert all global currencies to USD).
 
 ## Enabling converstion
-To enable currency con
+To enable currency conversion 
