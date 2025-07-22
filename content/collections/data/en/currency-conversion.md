@@ -16,6 +16,8 @@ Currency conversion lets you analyze multi-currency revenue data in Amplitude. W
 - Use revenue data for insight generation or decision making without first needing to manually pre-convert data into a single currency.
 - Run queries based on a series of lookup tables connected to daily exchange rates to convert transaction amounts based on transaction dates and daily exchange rates. You can use the primary currency set at the project level (for example, convert all global currencies to USD).
 
+Currency conversion is only available on Enterprise plans or with the Govern Add-On. Go to [Pricing](https://amplitude.com/pricing) for more details.
+
 You can control where you view currency-converted data throughout Amplitude. Target currencies are configurable at the project level through project settings. This means that you can use both converted and non-converted values for `$revenue` and `$price` fields. You can also:
 
 - Send standard `$revenue` and `$price` fields or map your own custom fields (or cart properties) into the conversion logic.
