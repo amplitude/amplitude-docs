@@ -2,41 +2,44 @@ Amplitude is a comprehensive digital analytics platform that provides organizati
 
 ## Product Architecture and Feature Relationships
 
-The platform's core architecture centers around **Organizations** as the top-level entity, containing multiple **Projects** that serve as isolated data environments. Each project maintains its own API keys, secret keys, session definitions, time zones, and currency display settings. The **Portfolio** feature enables Enterprise customers to perform cross-project analysis by creating Views that merge up to 5 projects (expandable to 10) using user ID/device ID matching and the User Mapping API for aliasing different user identifiers.
+The platform's core architecture centers around **Organizations** as the top-level entity, containing multiple **Projects** that serve as isolated data environments. Each project maintains its own API keys, secret keys, session definitions, time zones, and currency display settings. The **Portfolio** feature enables Enterprise customers to perform cross-project analysis by creating Views that merge up to 5 projects (expandable to 10) using user ID/device ID matching and the User Mapping API for aliasing.
 
 User management operates through a sophisticated **role-based permission system** with four hierarchical levels: Viewer, Member, Manager, and Admin. These roles control access to organization-level settings, project-level configurations, content creation capabilities, and administrative functions. **Permission Groups** (Enterprise-only) enable bulk user management by assigning project permissions to multiple users simultaneously, with the system automatically granting the highest permission level when users have overlapping assignments.
 
-Data management features include **Scale** (dynamic behavioral sampling for Enterprise plans) which samples events based on user identity to manage costs while maintaining analysis accuracy through upsampling metrics. The **self-service data deletion** capability allows Growth and Enterprise administrators to permanently remove specific events and properties, with scanning limits of 1B events/month for Growth and 10B events/month for Enterprise plans.
+Data management features include **Scale** (dynamic behavioral sampling for Enterprise plans), **self-service data deletion** capabilities for GDPR/CCPA compliance, and comprehensive **notification systems** for privacy regulation compliance. The platform integrates with identity providers through **SCIM 2.0 provisioning** and supports SSO configuration for enterprise authentication workflows.
 
 ## Key Nomenclature and Definitions
 
-**API Keys and Secret Keys**: Project-specific authentication credentials managed through self-service interfaces, with support for up to 50 active keys per project and permanent key operations including creation, revocation, and deletion.
+**API Keys and Secret Keys**: Project-specific authentication credentials managed through self-service interfaces, with support for up to 50 active keys per project and permanent key operations for legacy systems.
 
-**SCIM 2.0 Provisioning**: System for Cross-domain Identity Management integration using the User Management API, supporting programmatic user and group management with identity providers like Okta.
+**Dynamic Behavioral Sampling (Scale)**: Enterprise feature that samples events based on user identity to manage costs for high-volume customers while maintaining analysis accuracy through upsampling metrics.
 
-**Session Replay**: Capture functionality with configurable sample rates and SDK implementation requirements, managed through organizational settings.
+**Views**: Portfolio feature components that merge multiple projects into unified analysis displays using user/device ID matching.
 
-**Dynamic Behavioral Sampling**: The Scale feature's algorithmic framework that samples events based on user identity while preserving complete user event streams and providing upsampling metrics for analysis accuracy.
+**Session Replay**: Capture functionality with configurable sample rates and privacy controls, integrated into organizational settings.
 
-**Views**: Portfolio feature components that merge multiple projects into unified displays for cross-project analysis.
+**User Mapping API**: Service enabling cross-project user identity aliasing for Portfolio analysis.
 
-**Webhooks**: Custom monitor integration endpoints that automatically send triggered notifications when KPI-affecting user behavior changes occur (Enterprise Insights package).
+**Permission Groups**: Enterprise-level user management constructs that assign project permissions to multiple users through group membership.
 
-## Product Ecosystem Integration
+**Team Spaces**: Collaborative workspaces with integrated permission inheritance and content organization capabilities.
 
-Amplitude integrates with external systems through multiple touchpoints. **SSO configuration** enables identity provider integration for user authentication, while **SCIM provisioning** facilitates automated user lifecycle management. The platform supports **Slack integration** for notifications and collaborative workflows, and provides **webhook endpoints** for real-time monitor notifications to external systems.
+## Broader Product Ecosystem Integration
 
-The **User Privacy API** handles GDPR and CCPA compliance through automated data deletion workflows, with configurable email notifications for Job Creation, Job Completion, and Unset Violation events. **Session Replay** functionality integrates with SDK implementations to capture user interactions with configurable sampling rates.
+Amplitude integrates extensively with external systems through multiple touchpoints. The **User Management API** and **SCIM 2.0 provisioning** enable programmatic user lifecycle management, particularly with identity providers like Okta. **Webhooks** allow Enterprise customers to send triggered monitor notifications to external endpoints when KPI-affecting behavioral changes occur.
 
-## API Endpoints and Technical Implementation
+The platform supports **Slack integration** for notifications and collaboration, while **SSO configuration** enables enterprise authentication workflows. **CSV export capabilities** and **Usage reports dashboard** provide data portability and consumption analytics.
 
-Key API components include:
+Revenue analysis capabilities integrate with **Revenue LTV charts**, **Event Segmentation revenue metrics**, and **Data Tables** with configurable currency display units that affect visualization without modifying underlying data values.
 
-- **User Management API**: Handles SCIM 2.0 provisioning, user lifecycle management, and permission group operations
-- **User Privacy API**: Manages data deletion requests and privacy compliance workflows  
-- **User Mapping API**: Enables cross-project user identity aliasing for Portfolio Views
-- **Webhook endpoints**: Custom monitor integration for real-time notifications
+## API Endpoints and Technical Interfaces
 
-The platform supports **CSV export functionality**, **Revenue LTV charts**, **Event Segmentation revenue metrics**, and **Data Tables** with configurable currency display units. Administrative functions include **API key rotation**, **session definition configuration**, **query time sampling**, and **project deletion workflows** managed through CSM support tickets for organizational changes.
+Key technical interfaces include:
 
-**Team Spaces** provide collaborative environments with inherited permissions from groups, while **Visual Labeling**, **Guides and Surveys**, and **behavioral cohorts** offer advanced analysis and user engagement capabilities restricted by role-based permissions.
+- **User Management API**: Programmatic user and group management with SCIM 2.0 support
+- **User Privacy API**: Self-service data deletion and GDPR compliance workflows  
+- **User Mapping API**: Cross-project user identity aliasing for Portfolio functionality
+- **Webhook endpoints**: Custom monitor notifications for real-time behavioral change alerts
+- **SCIM API**: Identity provider integration with support for userName, givenName, familyName, email, and active attributes
+
+The platform operates through web-based interfaces accessed via **Organization settings** menus, with specific sections for Members & Groups, Projects, Access and SSO Settings, and Provisioning Settings. Administrative functions require appropriate role permissions, with scanning limits of 1B events/month for Growth plans and 10B events/month for Enterprise plans for data deletion operations.

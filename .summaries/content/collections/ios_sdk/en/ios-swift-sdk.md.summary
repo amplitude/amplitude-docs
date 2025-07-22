@@ -1,28 +1,26 @@
-## Summary
+**Summary:**
+This documentation covers the Amplitude Analytics iOS Swift SDK (AmplitudeSwift package), including installation via CocoaPods/SPM/Carthage, initialization with Configuration class, event tracking with BaseEvent, identify operations, autocapture features (sessions, app lifecycles, screen views, element interactions, network tracking), user groups, group identify, revenue tracking, custom user/device IDs, plugins system, and advanced topics like offline mode and Apple privacy manifest requirements.
 
-This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for both Swift and Objective-C, including installation via CocoaPods/SPM/Carthage, autocapture features (sessions, app lifecycles, screen views, element interactions, network requests), revenue tracking, user groups, plugins system, and Apple privacy manifest compliance.
-
-## Keywords
-
-- iOS Swift SDK
+**Keywords:**
 - AmplitudeSwift package
-- CocoaPods Swift Package Manager Carthage installation
-- autocapture sessions app lifecycles screen views element interactions network requests
-- Configuration API key initialization
-- track events identify user properties
-- revenue tracking productId quantity price
-- user groups groupType groupName setGroup
-- plugins enrichment destination PluginType
-- custom storage provider Storage protocol
-- device ID IDFV UUID lifecycle
-- session tracking minTimeBetweenSessionsMillis
-- offline mode NetworkConnectivityCheckerPlugin
-- COPPA control enableCoppaControl
-- TrackingOptions disable tracking fields
-- Apple privacy manifest NSPrivacyTracking NSPrivacyCollectedDataTypes
-- frustration interactions rage clicks dead clicks
-- InteractionsOptions RageClickOptions DeadClickOptions
-- remote configuration enableAutoCaptureRemoteConfig
-- UIKit SwiftUI element interaction tracking
-- network tracking captureRules ignoreHosts statusCodeRange
-- migration guide maintenance SDK migrateLegacyData
+- iOS Swift SDK
+- CocoaPods SPM Carthage installation
+- Configuration class initialization
+- BaseEvent tracking
+- Identify operations
+- AutocaptureOptions (sessions, appLifecycles, screenViews, elementInteractions, networkTracking)
+- NetworkTrackingOptions captureRules
+- UIControl UIGestureRecognizer tracking
+- Revenue tracking
+- Plugin system (enrichment, destination)
+- DestinationPlugin class
+- TrackingOptions COPPA control
+- NetworkConnectivityCheckerPlugin offline mode
+- Apple privacy manifest NSPrivacyTracking
+- IDFV device ID lifecycle
+- flushQueueSize flushIntervalMillis
+- minTimeBetweenSessionsMillis
+- enableAutoCaptureRemoteConfig
+- migrateLegacyData maintenance SDK
+- UIKit SwiftUI support
+- Objective-C Swift language support
