@@ -33,6 +33,22 @@ You can set both rollout percentage and bucketing unit for your user segments. F
 When you add more than one segment to your targeting, Amplitude `OR`s each segment. This means that if a user belongs to *any* segment, Amplitude shows them the guide or survey.
 {{/partial:admonition}}
 
+### Session properties
+
+Session properties provide an additional layer of targeting restrictions for guides and surveys. When a guide or survey is triggered and has session property conditions, all configured session property conditions must be met for the experience to display to the user.
+
+Session properties are set dynamically through the SDK using the `setSessionProperty` method and can change throughout a user's session. When a session property value changes, the SDK automatically evaluates whether any guides or surveys can now be shown, making them effective with the "Immediately" trigger.
+
+Common use cases for session properties include:
+
+- **User can belongs to multiple orgs**: Control guide visibility based on specific features of the user's current organization. (`isFeatureEnabled: true`)
+- **Progress tracking**: Show guides based on user progression (`onboardingStep: 3`)
+- **Dynamic state that shouldn't persist as a user property**: React to real-time user behavior or application state
+
+{{partial:admonition type="note" heading="Feature availability"}}
+Session properties are currently a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
+{{/partial:admonition}}
+
 ### Send a link to a guide {.tag .web}
 
 Send users a link to your guide to target them more directly. From the guide builder, expand the menu next to the Save button, and click Share link.
