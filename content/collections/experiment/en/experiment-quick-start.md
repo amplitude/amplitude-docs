@@ -21,7 +21,7 @@ With Experiment, you can modify and configure product experiences for unique aud
 
 Amplitude Experiment enables experimentation through feature flags. Feature flags are switches that let you modify your product's experience without having to change code. Experiment and feature flags use the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
 
-Setting up an experiment is a multi-stage process and is comprised of the following procedures:
+Setting up an experiment is a multi-stage process encompassing the following procedures:
 1. Installing and setting up SDKs and deployments
 2. Creating feature flags
 3. Selecting the deployment and creating a payload
@@ -29,7 +29,7 @@ Setting up an experiment is a multi-stage process and is comprised of the follow
 5. Designing experiments
 
 {{partial:admonition type="warning" heading=""}}
-This quick start guide contains only the basic information needed to implement Experiment. Make sure you review the entire set of [Experiment documentation](docs/feature-experiment) to understand the full complexity and features of Experiment.
+This quick start guide contains only the basic information needed to implement Experiment. Review the entire set of [Experiment documentation](docs/feature-experiment) to understand the full complexity and features of the product.
 {{/partial:admonition}}
 
 ## Prerequisites
@@ -42,6 +42,7 @@ Before you can begin using experiments, you must first:
 ## Setting up the SDK
 
 Install the Amplitude SDK with the Experiment client. For example, through javascript:
+
 ```bash
 
 npm install @amplitude/analytics-browser @amplitude/experiment-browser
@@ -55,15 +56,15 @@ await experiment.start();
 
 ## Setting up a deployment
 
-Experiment uses the same projects that are required for Amplitude Analytics. As a best practice, create one project for each product and each environment. Because [flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) only exist within a single project, duplicate these objects across projects for the same product.
+Experiment uses the same projects as Amplitude Analytics. As a best practice, create one project for each product and each environment. Because [flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) only exist within a single project, you must duplicate these objects across projects within the same product.
 
-In Amplitude Experiment, a deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. On creation, experiment deployments are assigned a randomly-generated deployment key which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
+In Amplitude Experiment, a deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. On creation, experiment deployments are assigned a randomly generated deployment key which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
 
 {{partial:admonition type="note" heading="Client vs. server deployments"}}
-Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs, and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
+Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
 {{/partial:admonition}}
 
-Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started, but using explicit deployments for each platform or service is the best practice for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application. Each deployment receives a unique key for use in your application.
+Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started, but use explicit deployments for each platform or service for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application. Each deployment receives a unique key for use in your application.
 
 ##### To create a deploymnet
 1. Go to _Experiments > Deployments_.
@@ -75,18 +76,18 @@ Deployments belong to Amplitude Analytics projects, and a project can have multi
 For full details go to [Configure your experiment](/docs/feature-experiment/workflow/configure)
 
 ##  Creating a new flag
-A flag is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
+A flag is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them after you’ve collected enough data, or for rolling out new features (and rolling them back, if needed).
 
 ##### To create a new feature flag
 1. Go to _Experiment > Feature Flags_. 
 2. Click **Create Feature Flag**.
-3. In the Create Flag modal, choose the project that includes this flag from the Projects drop-down menu and then give your flag a name. 
+3. In the Create Flag section, choose the project that includes this flag from the Projects drop-down menu and then give your flag a name. 
 Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
-4. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment. Select either _Remote_ or _Local_. 
+4. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment. Select either **Remote** or **Local**. 
 5. Specify the **bucketing unit** you want to use for this experiment.  
   
     {{partial:admonition type='tip'}}
-    The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+    The best bucketing unit is typically the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
     {{/partial:admonition}}
 6. Click **Create**. 
 Experiment opens a blank template for your flag.
@@ -113,7 +114,7 @@ If you change the bucketing, users may be able to switch between variants in yo
  {{partial:admonition type='note'}}
 If you want, you can send a payload with your variant. A payload is a JSON-coded set of variables that can be used to remotely change flags and experiments without requiring a manual code change. Because you can send a payload with your control, it is not necessary to create a variant for the control itself. 
 
-A payload is added to the Payload field when creating a variant. A payload looks similar to: 
+Add JSON content to the Payload field when creating a variant. Payload content is similar to: 
 ```json
 {
   "layout": "cards",
@@ -126,7 +127,7 @@ A payload is added to the Payload field when creating a variant. A payload looks
 {{/partial:admonition}}
 
 ##  Finalizing the flag
-After you have set up the flag, associated it to a deployment, and set up your variants, payloads, and targeted your users, it's time to finalize the feature flag. 
+After you have set up the flag, associated it to a deployment, and set up your variants or payloads, and targeted your users, the feature flag must be finalized. 
 Finalizing the flag means that you must activate and convert the flag to an actual experiment. 
 
 ##### To finalize a feature flag
@@ -135,7 +136,7 @@ Finalizing the flag means that you must activate and convert the flag to an actu
 3. From the Activate flag dropdown, select **Convert to experiment**.
 
 ## Designing the experiment
-After your flag has been converted to an experiment, you must finalize the experiment. This includes:
+After your flag is converted to an experiment, you must finalize the experiment. This includes:
 - Set a goal for the experiment
 - Set up any further variations and payloads
 
