@@ -85,7 +85,7 @@ amplitudeEngagement.boot(options: bootOptions)
 amplitudeEngagement.screen("HomeScreen")
 ```
 
-### Enable element targeting
+### Enable element targeting (optional)
 
 Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
 
