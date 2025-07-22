@@ -122,6 +122,10 @@ Limits ensure you don't bombard users with your messaging.
 | Stop showing when dismissed | Once the user dismisses the experience, they won’t see it again. This option requires `Stop showing when completed`.                                                              |
 | Cooldown                    | When enabled, specify the maximum number of times a user can see the experience in the specified time range. This option requires that `Stop showing when dismissed` is disabled. |
 
+## Localization
+
+Localization enables you to serve guides in different languages without creating a new guide or survey for each language. Click [here](/docs/guides-and-surveys/localization) for more details.
+
 ## Status
 
 Statuses enable you to manage when your guide displays.
