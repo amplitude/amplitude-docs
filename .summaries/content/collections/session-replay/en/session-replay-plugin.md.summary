@@ -10,15 +10,15 @@ This documentation covers the Session Replay Browser SDK Plugin (@amplitude/plug
 - privacyConfig masking
 - amplitude.add() and amplitude.remove()
 - IndexedDB storage (storeType)
-- shadow DOM support
-- session tracking enablement
+- Shadow DOM support
 - EU data residency serverZone
 - requestIdleCallback performance optimization
 - webworker compression
-- shouldInlineStylesheet
 - forceSessionTracking
-- User Privacy API integration
-- DSAR API metadata
-- CSS asset loading issues
-- Device ID matching requirements
-- Browser SDK 2.0 compatibility
+- Session Start/Session End events
+- DSAR API session replay metadata
+- CSS stylesheet inlining
+- User Privacy API deletion
+- Multiple Amplitude instances
+- Browser SDK session tracking
+- Remote configuration support
