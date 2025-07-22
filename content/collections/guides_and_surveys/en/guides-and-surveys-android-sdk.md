@@ -84,6 +84,54 @@ Required for screen targeting and the Time on Screen trigger.
 amplitudeEngagement.screen("HomeScreen")
 ```
 
+### Enable element targeting
+
+Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
+
+#### Jetpack Compose
+
+You can tag Jetpack Compose views by using Amplitude Engagement's modifier `.amplitudeView`. You will need to pass your instance of `AmplitudeEngagement` as a parameter to `.amplitudeView`. This can be done by setting up a `CompositionLocalProvider` and accessing it in your view hierarchy or by passing your instance as a parameter to your composable views.
+
+```kotlin
+// Jetpack Compose Tagging
+
+@Composable
+fun MyView() {
+    // Use your instance of Amplitude Engagement by creating a Composition context or passing as a param
+    val engagement = LocalEngagement.current
+
+    Box() {
+        Button(modifier = Modifier.amplitudeView(engagement, "my-button"))
+    }
+}
+```
+
+#### Non-Jetpack Compose
+
+We also supports non-Jetpack Compose views. The SDK uses the `tag`, `contentDescription`, or `resourceName` fields to check for a matching selector. Note: Only one of these is required to be set.
+
+This can be done with your existing layout XMLs or programmatically by setting the properties on the view instance.
+
+```xml
+<!-- in my_layout.xml -->
+<LinearLayout>
+    <Button
+        <!-- Set either contentDescription or tag to your desired selector -->
+        android:contentDescription="my-button"
+        android:tag="my-button" />
+</LinearLayout>
+```
+
+```kotlin
+// Non Jetpack Compose Programmatic Tagging
+val button = Button(this)
+
+// Set the contentDescription
+button.contentDescription = "my-button"
+// Or, set the tag
+button.tag = "my-button"
+```
+
 ## Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
