@@ -16,6 +16,7 @@ For example, you could create a user property to display the user's first name s
 
 ![A guide modal built to include the user property property.fistName](statamic://asset::help_center_conversions::guides-surveys/personalize-with-variables.jpeg)
 
+
 ##### To include personalized variables into a guide or survey
 
 1. Open an existing guide or survey or create a new one.
