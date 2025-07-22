@@ -1,88 +1,71 @@
-Amplitude Data is a comprehensive data governance and management platform that serves as the centralized control layer for analytics instrumentation across the entire data lifecycle. The platform enables organizations to create structured tracking plans, generate type-safe code, monitor data quality in real-time, and transform data for analysis while maintaining strict governance standards.
+Amplitude Data is a comprehensive data governance and management platform that provides tools for planning, implementing, and maintaining analytics instrumentation across the entire data lifecycle. The platform serves as a centralized data catalog that enables organizations to create structured tracking plans, generate type-safe code, and ensure data quality through automated monitoring and validation.
 
-## Core Product Architecture
+## Core Product Architecture and Features
 
-Amplitude Data functions as the governance backbone for Amplitude's analytics ecosystem, integrating seamlessly with multiple components:
+**Data Planning and Instrumentation**
+Amplitude Data centers around tracking plans - structured schemas that define events, event properties, user properties, and groups. The platform supports a Git-like branching workflow where teams can create feature branches, make changes collaboratively, and merge back to main after stakeholder reviews. The Ampli Developer Tools generate type-safe tracking libraries from these plans, providing autocompletion and compile-time validation for multiple SDKs including Browser, Android, iOS, React Native, Unity, Flutter, Node.js, Go, Python, and Java.
 
-- **Amplitude Analytics**: The primary analytics platform where Data-managed tracking plans and schemas are enforced
-- **Amplitude SDKs**: Comprehensive client-side (Browser, iOS, Android, React Native, Unity, Flutter) and server-side (Node.js, Python, Java, Go) SDKs that implement tracking plans
-- **Ampli Developer Tools**: Advanced code generation toolkit that creates type-safe wrappers based on tracking plans
-- **Third-party Integrations**: Extensive source catalog for data ingestion and destination catalog for real-time event streaming
+**Data Ingestion and Sources**
+The platform supports both client-side SDKs (Browser, Android, iOS, React Native, Unity, Flutter) and server-side SDKs (Node.js, Go, Python, Java) for data collection. Integration extends to third-party sources through the source catalog, cloud storage imports (Amazon S3, Google Cloud Storage), data warehouse connections (Snowflake, Databricks), and specialized plugins for Shopify and WordPress. The HTTP V2 API and Batch Event Upload API provide direct ingestion capabilities with specific limits (500K events per device ID daily, 100 batches/1000 events per second).
 
-## Key Features and Capabilities
-
-### Data Planning and Schema Management
-The platform's foundation rests on **tracking plans** - sophisticated schemas that define events, event properties, user properties, and groups with precise specifications. Users develop tracking plans through a Git-like branch-based workflow that enables collaborative development with merge requests, team reviews, and comprehensive version management. The system supports **property groups** for efficient bulk management of related properties across multiple events, streamlining schema maintenance.
-
-### Code Generation and Implementation
-**Ampli** serves as the primary developer toolkit, automatically generating type-safe tracking libraries from tracking plans. Key commands include `ampli pull` for syncing tracking plans with local development environments and `ampli status --is-merged` for validating implementation status against published plans. This approach ensures compile-time validation, IDE autocompletion, and eliminates runtime tracking errors.
-
-### Data Quality and Observability
-The **Observe feature** provides comprehensive real-time monitoring of event streams against tracking plans, automatically surfacing data quality issues including schema violations, missing properties, and incorrect data types. The platform categorizes all events as Valid, Invalid, Unexpected, or Out of Date, enabling proactive data quality management and immediate issue resolution.
-
-### Data Transformation and Enhancement
-Amplitude Data offers sophisticated transformation capabilities:
-- **Derived Properties**: Enterprise-level computed properties using advanced formulas and functions
-- **Custom Events**: Complex event combinations using OR clauses for nuanced analysis
-- **Transformations**: Retroactive event structure modifications through merging, renaming, and hiding operations
-- **Lookup Tables**: CSV-based property enrichment with external data sources for enhanced context
-
-### Advanced Data Management
-- **Profiles**: Deep integration with data warehouses (Snowflake, Databricks, S3) using Change Data Capture (CDC) for real-time customer profile synchronization
-- **Data Mutability**: Full support for INSERT, UPDATE, DELETE operations through configurable Mirror Sync strategies
-- **Time-to-Live (TTL)**: Granular data retention policies configurable at organization and project levels
+**Data Transformation and Enhancement**
+Amplitude Data provides several mechanisms for data enhancement:
+- **Derived Properties**: Enterprise-only feature for creating new properties retroactively using formulas with functions like REGEXEXTRACT, SPLIT, DATE_TIME_FORMATTER
+- **Transformations**: Retroactive modification of event data structure including merging events/properties, renaming values, and hiding data
+- **Custom Events**: Combining multiple existing events with OR clauses for analysis
+- **Lookup Tables**: CSV-based property enrichment with 100MB/1M row limits
+- **Channels**: Retroactive property classifiers based on UTM and referrer data for acquisition tracking
 
 ## Key Nomenclature and Definitions
 
-**Tracking Plan**: The central schema definition containing comprehensive event specifications, properties, and their relationships
-**Sources**: SDK configurations within tracking plans that define data collection methodologies and parameters
-**Branches**: Development environments for tracking plan changes, mirroring Git-style version control workflows
-**Property Groups**: Curated collections of related properties that can be efficiently applied across multiple events
-**Schema Violations**: Systematic discrepancies between ingested data and tracking plan definitions, automatically categorized as "unexpected" or "rejected"
-**Ampli**: The sophisticated code generation tool that creates type-safe SDK wrappers with full IDE integration
-**Autocapture**: Intelligent automatic collection of user interactions without manual instrumentation requirements
-**Visual Labeling**: No-code interface enabling event creation through direct website element interaction
+**Events and Properties**
+- **Events**: User actions or occurrences tracked in the system (e.g., "Product Viewed", "Checkout Completed")
+- **Event Properties**: Attributes specific to individual events at the time they occurred
+- **User Properties**: Attributes of users that persist and update over time (device type, location, User ID)
+- **Group Properties**: Account-level properties available with the Accounts add-on
 
-## Data Ingestion and Processing
+**Data Management Concepts**
+- **Tracking Plan**: Structured schema defining all events and properties for a project
+- **Sources**: SDK configurations within tracking plans that generate type-safe code
+- **Property Groups**: Collections of event properties that can be bulk-applied to multiple events
+- **Schema Violations**: Unplanned event types, properties, or property values that can be marked as unexpected or rejected
+- **Active vs Inactive Events**: Status affecting whether events count toward active user metrics
 
-The platform supports multiple sophisticated ingestion methods:
-- **Client-side SDKs** optimized for browser and mobile applications with offline support
-- **Server-side SDKs** designed for high-throughput backend event tracking
-- **HTTP V2 API** and **Batch Event Upload API** for direct system integration with rate limiting
-- **Third-party sources** through an extensive, configurable source catalog
-
-Data processing includes automatic enrichment with precise location data via MaxMind GeoIP, comprehensive user agent parsing for detailed device information, and configurable schema validation with granular options to mark violations as unexpected or reject them entirely based on business requirements.
-
-## Integration Ecosystem
-
-### Source Integrations
-The comprehensive source catalog enables seamless data ingestion from numerous platforms, featuring sophisticated converter configurations for transforming external data formats into Amplitude events using the flexible `convertToAmplitudeFunc` structure with custom mapping capabilities.
-
-### Destination Streaming
-Advanced event streaming capabilities provide real-time forwarding of behavioral data to downstream tools with stringent p95 latency targets of 60 seconds. The platform supports flexible cohort synchronization with multiple cadences (one-time, scheduled, real-time) and streaming transformations for pre-processed data delivery.
-
-### Developer Tools Integration
-- **Chrome Extension** (Event Explorer/Instrumentation Explorer) for comprehensive real-time debugging and validation
-- **Jira Integration** for automated issue creation and tracking during tracking plan changes
-- **CSV Import/Export** for efficient bulk tracking plan management and migration
-
-## Access Control and Governance
-
-**Data Access Control (DAC)** provides Enterprise-level security through sophisticated property classification systems (PII, revenue, sensitive) and granular group-based permissions. The platform enforces comprehensive restrictions across charts, exports, and API access while maintaining strict data governance standards and compliance requirements.
-
-## API Endpoints and Commands
-
-Critical API endpoints include:
-- **Taxonomy API**: Full CRUD operations for events, properties, and categories with versioning
-- **HTTP V2 API**: High-performance real-time event ingestion with batching support
-- **Batch Event Upload API**: Historical data backfill capabilities with 500K events per device ID daily limits
-
-Essential CLI commands:
-- `ampli pull`: Synchronize tracking plan to local development environment with conflict resolution
-- `ampli status --is-merged`: Comprehensive validation of implementation against published tracking plan
+**Advanced Features**
+- **Autocapture**: Automatic capture of user interactions (clicks, page views, form interactions) with minimal setup
+- **Visual Labeling**: No-code event creation through DOM element selection on websites
+- **Data Access Control (DAC)**: Enterprise feature for managing access to sensitive data through property classification and group-based permissions
+- **Profiles**: Integration of customer profile data from warehouses using Change Data Capture (CDC)
 
 ## Product Ecosystem Integration
 
-Amplitude Data operates as the central nervous system within the broader Amplitude ecosystem, providing the foundational data governance layer that ensures consistency across Analytics, Experiment, and other Amplitude products. The platform's tracking plans serve as the single source of truth for event definitions, enabling seamless data flow between products while maintaining data quality and governance standards.
+**Analytics Integration**
+Amplitude Data serves as the foundation for Amplitude Analytics, providing the schema and data quality layer. Events and properties defined in Data flow into Analytics for behavioral analysis, with features like cross-project analysis through portfolios that combine up to 5 source projects.
 
-The platform operates on a sophisticated freemium model with distinct feature tiers (Starter/Plus/Growth/Enterprise) that provide graduated access to advanced capabilities including derived properties, cross-project analysis portfolios, advanced governance features, and enterprise-grade security controls. This tiered approach enables organizations to scale their data governance capabilities as their analytics maturity and requirements evolve.
+**Experiment Integration**
+The platform integrates with Amplitude Experiment through dedicated Experiment SDKs and the Evaluation API, enabling feature flagging and A/B testing with the same instrumentation foundation.
+
+**Warehouse and Infrastructure**
+Data Mutability features enable bidirectional sync with warehouses through Mirror Sync strategies supporting INSERT, UPDATE, and DELETE operations. The platform connects to Snowflake (CDC), Databricks (CDF), and Amazon S3 with specific change tracking requirements.
+
+**Third-Party Ecosystem**
+Destination event streaming enables real-time data sharing to downstream tools with p95 latency targets of 60 seconds. The platform supports cohort synchronization with marketing platforms through one-time, scheduled, or real-time sync cadences.
+
+## API Endpoints and Command Line Tools
+
+**Core APIs**
+- **HTTP V2 API**: Primary endpoint for event ingestion
+- **Batch Event Upload API**: Bulk historical data import with specific rate limits
+- **Taxonomy API**: CRUD operations for categories, event types, and properties
+- **Evaluation API**: Server-side experiment evaluation
+- **User Privacy API**: GDPR/CCPA compliance for data deletion
+
+**Ampli CLI Commands**
+- `ampli pull`: Generate tracking libraries from tracking plans
+- `ampli status --is-merged`: Check branch merge status for deployment validation
+
+**Configuration and Management**
+The platform provides extensive configuration through project settings covering General, Environments, Integrations, API Tokens, and Schema Settings. Role-based permissions (Admin/Manager/Member/Viewer) control access to different features, with Enterprise organizations having additional Data Access Control capabilities.
+
+**Monitoring and Observability**
+The Observe feature automatically monitors event streams against tracking plans, surfacing data quality issues without code changes. The AI Data Assistant provides automated suggestions for tracking plan improvements based on event volume and query patterns. Chrome extension debugging tools (Event Explorer/Instrumentation Explorer) enable real-time SDK instrumentation validation.

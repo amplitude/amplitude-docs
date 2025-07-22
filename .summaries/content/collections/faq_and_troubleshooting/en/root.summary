@@ -2,46 +2,50 @@ Amplitude is a comprehensive digital analytics platform that provides product te
 
 ## Core Product Architecture and Features
 
-Amplitude's analytics platform is built on an event-based architecture that captures user interactions as discrete events with associated properties. The system supports multiple data ingestion methods including SDKs for mobile (iOS, Android) and web platforms, server-side APIs (HTTP V2 API, Batch Event Upload API), and third-party integrations like Segment. The platform maintains immutable data storage with pre-aggregated hourly, daily, weekly, and monthly datasets to ensure consistent reporting and performance.
+Amplitude's analytics platform is built on an event-based architecture that captures user interactions as discrete events with associated properties. The system supports multiple data ingestion methods including SDKs for mobile (iOS, Android) and web platforms, server-side APIs (HTTP V2 API, Batch Event Upload API), and third-party integrations like Segment. The platform maintains immutable data storage with pre-aggregated hourly, daily, weekly, and monthly datasets to ensure consistent reporting and historical data integrity.
 
-The product suite includes several key analytical chart types: Event Segmentation for measuring user actions and conversions, Funnel Analysis for tracking multi-step user journeys, Retention Analysis for measuring user return behavior, User Composition for analyzing user demographics and properties, Data Tables for multi-dimensional analysis, and Personas for behavioral clustering. Additionally, Amplitude Experiment provides A/B testing capabilities with statistical significance testing using both sequential testing and T-test methodologies.
+The platform offers several key analytical chart types: Event Segmentation for measuring user actions and behaviors, Funnel Analysis for conversion tracking, Retention Analysis for user engagement measurement, User Composition for demographic analysis, Data Tables for multi-dimensional analysis, and Personas for behavioral clustering using Non-Negative Matrix Factorization (NMF) algorithms.
+
+## Experimentation and Testing Capabilities
+
+Amplitude Experiment provides A/B testing functionality with advanced statistical methodologies. The platform supports both sequential testing (with always-valid p-values) and traditional T-test approaches, offering features like mutual exclusion groups to prevent users from being assigned to multiple experiments simultaneously. The system calculates duration estimates using statistical significance thresholds, means, variances, and exposure data, with a 40-day estimation cap.
+
+## Data Management and Governance
+
+Amplitude Data serves as the governance layer, implementing tracking plans that manage event and property schemas. The system enforces instrumentation limits of 2000 event types, 2000 event properties, and 1000 user properties per project. Data governance includes the ability to hide, block, or delete events and properties, with blocking preventing data ingestion while hiding only affects UI visibility.
+
+The platform includes sophisticated user identity management through Device IDs, User IDs, and Amplitude IDs, with automatic user profile merging capabilities. Session tracking varies by platform, with mobile SDKs using 30-second/30-event batching thresholds and configurable timeout windows.
 
 ## Key Nomenclature and Definitions
 
-**User Identification**: Amplitude uses multiple identifier types including User ID (custom identifier), Device ID (platform-specific like Android UUID or iOS IDFV/IDFA), and Amplitude ID (internal identifier). The platform supports user profile merging between anonymous and known users.
+**Monthly Tracked Users (MTUs)**: The primary billing metric representing unique users who perform at least one event in a calendar month, with a standard limit of 1,000 events per MTU.
 
-**Event Structure**: Events consist of event names, event properties (contextual data), and user properties (persistent user attributes). The platform enforces instrumentation limits of 2000 event types, 2000 event properties, and 1000 user properties per project.
+**Behavioral Cohorts**: Dynamic or static user groups based on behavioral criteria, exportable via the Behavioral Cohorts API with propKeys parameters for detailed user property inclusion.
 
-**Session Management**: Sessions are tracked with configurable timeout windows (30 minutes for web, 5 minutes for mobile by default) and can be customized through SDK configuration parameters like `flushIntervalMillis`, `flushQueueSize`, `eventUploadPeriodSeconds`, and `eventUploadThreshold`.
+**Channel Classifier**: A feature for defining acquisition channels using utm_medium and referring_domain properties to track traffic sources, available to Growth/Enterprise users with org admin/manager permissions.
 
-**Data Governance**: Amplitude Data provides tracking plan management with options to hide, block, or delete events and properties. Hidden events remain in data but are removed from UI dropdowns, blocked events prevent future ingestion, and deleted events remove both ingestion and UI access.
+**Transformations**: Event and property merging capabilities that allow retroactive data schema modifications while maintaining chart compatibility through Find & Replace functionality.
 
-## Statistical and Experimentation Features
+**Attribution API**: Mobile attribution system with a 72-hour mapping window for IDFA/IDFV/ADID identifiers, requiring pre-existing users with matching advertising IDs.
 
-Amplitude Experiment implements sophisticated statistical methodologies including sequential testing with always-valid p-values and traditional T-tests. The platform calculates statistical significance using 5% false positive rates with minimum sample size requirements (25 conversions + 100 exposures for unique metrics, 100 exposures for totals). Mutual exclusion groups prevent users from being assigned to multiple experiments simultaneously through slot allocation percentages and assignment order operations.
+## Integration Ecosystem
 
-Duration estimates predict experiment completion using sequential testing parameters, means, variances, and exposure rates, with a 40-day estimation cap. The system supports both absolute and relative lift calculations for treatment vs control comparisons.
+Amplitude integrates extensively with third-party platforms including marketing attribution providers (Appsflyer, Adjust, Branch, Singular), website builders (Wix, Squarespace), and data pipeline tools like Segment. The platform supports proxy server configurations to handle browser tracking protection (particularly Firefox) and offers webhook integrations for custom implementations.
 
-## Data Management and Export Capabilities
+For data export, the platform provides the Export API for JSON format exports and Amazon S3 Export integration for bulk data transfers. CSV exports have varying limits: Event Segmentation and Retention Analysis support 300 group-by values, while Data Tables support up to 10,000 baseline limits.
 
-The platform provides multiple data export options including the Export API for JSON format exports, Amazon S3 Export integration for bulk data transfers, and CSV exports with varying limits (10,000 rows for Data Tables, 300 group-by limits for Funnel Analysis and Retention Analysis). The Behavioral Cohorts API enables programmatic cohort management with `propKeys` parameters for property inclusion.
-
-Monthly event volume limits are enforced on a calendar month basis with overage fees at 1.2x rates for Plus plan users. The system includes MTU (Monthly Tracked Users) guardrails with 1,000 events per MTU limits to prevent abuse.
-
-## Integration and Technical Implementation
-
-Amplitude supports various integration patterns including direct SDK implementation, third-party website builders (Wix Tracking Tools & Analytics, Squarespace Code Injection), and webhook/HTTP API fallbacks. The platform addresses browser compatibility issues like Firefox tracking protection through proxy server configurations.
-
-For mobile attribution, the Attribution API provides a 72-hour mapping window for IDFA/IDFV/ADID identifiers, requiring pre-existing users with matching advertising IDs. iOS 14 IDFA opt-in requirements affect device identification and attribution matching capabilities.
-
-## API Endpoints and Technical Specifications
+## API Endpoints and Technical Implementation
 
 Key API endpoints include:
 - **HTTP V2 API**: Real-time event ingestion with 30 events/second throttling limits
 - **Batch Event Upload API**: Bulk data processing for backfills and high-volume scenarios
 - **Export API**: Raw event data extraction in JSON format
 - **Behavioral Cohorts API**: Cohort management and export functionality
-- **Attribution API**: Mobile attribution event mapping
-- **Identity API**: User profile management and merging
+- **Identity API**: User profile management and property updates
+- **Attribution API**: Mobile attribution event processing
 
-The platform implements EPUS (events per user per second) and EPDS (events per device per second) rate limiting to ensure system stability and fair resource allocation across customers.
+## Plan Structure and Compliance
+
+Amplitude offers multiple plan tiers: Starter (free), Plus, Growth, and Enterprise, each with different MTU limits and feature availability. The Startup Scholarship plan provides qualifying startups (less than $10M funding, fewer than 20 employees) with one year of free Growth plan access including 200,000 MTUs.
+
+The platform maintains comprehensive security and privacy compliance including SOC2 Type 2, GDPR, HIPAA, and CCPA standards, with Data Processing Addendum (DPA) availability and Customer Trust Portal access for enterprise customers.
