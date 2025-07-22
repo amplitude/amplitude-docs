@@ -13,10 +13,6 @@ updated_at: 1718137658
 ---
 When you begin sending revenue events to Amplitude, you can choose from a handful of different configuration options.
 
-{{partial:admonition type='note'}}
-Amplitude currently **does not support currency conversion**. All revenue data should be normalized to your currency of choice **before** being sent to Amplitude. 
-{{/partial:admonition}}
-
 All revenue events that send revenue as [revenue properties](#revenue-properties) will appear in the [Revenue LTV](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization) chart (including both verified and unverified events). See the following documentation for more information on sending revenue events:
 
 * [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk)
