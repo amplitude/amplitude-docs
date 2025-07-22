@@ -1,14 +1,17 @@
-**Summary:** This documentation explains Amplitude's datepicker functionality including offset settings, exclude options for incomplete intervals, and time input granularity features for Event Segmentation and Funnel Analysis charts.
+**Summary:** This documentation covers Amplitude's datepicker functionality for selecting analysis timeframes, including offset configuration for incomplete intervals, exclude options for specific days/intervals, time input granularity for Event Segmentation and Funnel Analysis charts, and preset management for predefined time ranges.
 
 **Keywords:**
-- Amplitude datepicker
-- offset functionality
-- exclude current day/week/month
-- incomplete interval handling
-- dotted line incomplete data
+- datepicker
+- timeframe selection
+- offset configuration
+- incomplete intervals
+- exclude functionality
 - time input granularity
 - Event Segmentation charts
 - Funnel Analysis charts
-- Advanced Settings dropdown
-- Since/Between date selection
-- Last x days/weeks/months
+- preset management
+- rolling windows
+- batch ingestion system
+- fiscal periods
+- project-level presets
+- default preset configuration
