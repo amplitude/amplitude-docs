@@ -27,6 +27,9 @@ tree:
     id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
     entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
   -
+    id: 3231c037-60bc-4922-903a-d60bdc586907
+    entry: a7fcd596-5113-4061-b1fc-4df208fbd744
+  -
     id: 6c5428c2-6e5b-424b-b470-adb40f091f37
     title: Guides
     children:
