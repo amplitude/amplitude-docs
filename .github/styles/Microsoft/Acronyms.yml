@@ -45,6 +45,8 @@ exceptions:
   - POST
   - RAM
   - REPL
+# MZ 7/22/2025 
+  - REST
   - RSA
   - SCM
   - SCSS

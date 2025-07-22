@@ -1,0 +1,20 @@
+**Summary:** This documentation covers the complete workflow for setting up Amplitude Experiment, including SDK installation, deployment configuration, feature flag creation with variants and JSON payloads, experiment design with goals and metrics, and code implementation examples for both feature flags and payload-based experiments.
+
+**Keywords:**
+- Amplitude Experiment SDK
+- experiment deployment configuration
+- feature flag creation workflow
+- experiment variants and payloads
+- bucketing unit configuration
+- evaluation mode (Remote/Local)
+- experiment goals and metrics
+- minimum detectable effect (MDE)
+- user segment targeting
+- experiment randomization
+- bucketing salt
+- client-side vs server-side deployments
+- JSON payload implementation
+- experiment activation process
+- A/B testing workflow
+- progressive feature delivery
+- experiment conversion from flags
