@@ -1,23 +1,18 @@
-## Summary
-This documentation covers Amplitude's Visual Labeling feature, which enables non-technical users to create labeled events through a no-code interface by clicking elements on websites with Autocapture enabled, requiring Browser SDK 2.10.0+ with `config.autocapture.elementInteractions` set to true.
+**Summary:** Visual Labeling enables no-code creation of labeled events through Amplitude Data's visual interface by clicking DOM elements on websites with Autocapture enabled, requiring Browser SDK 2.10.0+ with `config.autocapture.elementInteractions` set to true.
 
-## Keywords
+**Keywords:**
 - Visual Labeling
 - labeled events
 - Autocapture
 - Browser SDK 2.10.0
 - config.autocapture.elementInteractions
-- no-code event creation
-- element interactions
-- visual labeling toolbar
-- visual labeling overlay
+- DOM element selection
 - Element clicked events
 - Element changed events
-- event duplication detection
-- labeled event repair
-- DOM changes
+- no-code event creation
+- visual labeling toolbar
+- event definition repair
 - Cross-Origin-Opener-Policy
-- event volume impact
 - Labeled Events tab
-- event streaming limitations
-- CSP cross-tab communication
+- event duplication detection
+- AI generated event names
