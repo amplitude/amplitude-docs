@@ -11,7 +11,8 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753137993
 ---
-Amplitude Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation.
+
+Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation.
 
 With Experiment, you can modify and configure product experiences for unique audiences through:
 
@@ -19,7 +20,7 @@ With Experiment, you can modify and configure product experiences for unique aud
 * **Progressive feature delivery:** Pre-plan and stage new features for beta testers, a percentage of your users, or even specific target audiences.
 * **Dynamic in-product experiences:** Deploy and adapt custom experiences at scale.
 
-Amplitude Experiment enables experimentation through feature flags. Feature flags are switches that let you modify your product's experience without having to change code. Experiment and feature flags use the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
+Experiment enables experimentation through feature flags. Feature flags are switches that let you modify your product's experience without having to change code. Experiments and feature flags use the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
 
 Setting up an experiment is a multi-stage process encompassing the following procedures:
 1. Installing and setting up SDKs and deployments
@@ -33,9 +34,10 @@ This quick start guide contains only the basic information needed to implement E
 {{/partial:admonition}}
 
 ## Prerequisites
-Before you can begin using experiments, you must first:
 
-- Have access to the [Experiment SDK](/docs/sdks/experiment-sdks).
+Before you can begin using experiments:
+
+- Confirm you have developer write access to the [Experiment SDK](/docs/sdks/experiment-sdks).
 - Make sure you have access to the Experiment feature. 
 - Ensure you have developer access to the application where you'll integrate your feature flags.
 
@@ -66,7 +68,8 @@ Deployments are either client or server deployments. Use client-side deployments
 
 Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started, but use explicit deployments for each platform or service for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application. Each deployment receives a unique key for use in your application.
 
-##### To create a deploymnet
+##### To create a deployment
+
 1. Go to _Experiments > Deployments_.
 2. Click **Create Deployment**.
 3. Select the project you want from the dropdown list.
@@ -76,9 +79,11 @@ Deployments belong to Amplitude Analytics projects, and a project can have multi
 For full details go to [Configure your experiment](/docs/feature-experiment/workflow/configure)
 
 ##  Creating a new flag
+
 A flag is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them after you’ve collected enough data, or for rolling out new features (and rolling them back, if needed).
 
 ##### To create a new feature flag
+
 1. Go to _Experiment > Feature Flags_. 
 2. Click **Create Feature Flag**.
 3. In the Create Flag section, choose the project that includes this flag from the Projects drop-down menu and then give your flag a name. 
@@ -102,6 +107,7 @@ If you change the bucketing, users may be able to switch between variants in yo
  A variant exists within a flag or an experiment, and represents a variable experience for a user. Variants comprise the actual A/B changes that you want to experiment with. All feature flags must contain at least one variant. You can add as many variants as you want to a flag. 
 
  ##### To add a variant
+
  1. Go to your _Experiment > Feature Flags_ and select your flag.
  2. In the Variants section, click the **plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
@@ -127,22 +133,26 @@ Add JSON content to the Payload field when creating a variant. Payload content i
 {{/partial:admonition}}
 
 ##  Finalizing the flag
-After you have set up the flag, associated it to a deployment, and set up your variants or payloads, and targeted your users, the feature flag must be finalized. 
-Finalizing the flag means that you must activate and convert the flag to an actual experiment. 
+
+After you set up the flag, associate it to a deployment, set up your variants or payloads, and target your users, finalize the feature flag. 
+Finalizing the flag activates and converts the flag to an actual experiment. 
 
 ##### To finalize a feature flag
+
 1. Go to your feature flag.
 2. Click **Activate flag**.
 3. From the Activate flag dropdown, select **Convert to experiment**.
 
 ## Designing the experiment
-After your flag is converted to an experiment, you must finalize the experiment. This includes:
+
+After you convert your flag to an experiment, finalize the experiment. To finalize an experiment:
 - Set a goal for the experiment
 - Set up any further variations and payloads
 
-Adding goals (or metrics) lets you track the success rate of your experiment. All experiments should have at least one goal. You’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
+Adding goals (or metrics) lets you track the success rate of your experiment. All experiments should have at least one goal. Tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
 ##### To add a goal
+
 1. Open your experiment and navigate to the Goals section.
 2. Select your recommended metric from the Metric dropdown or create a custom metric. 
 2. Select the metric type: 
@@ -153,12 +163,15 @@ Adding goals (or metrics) lets you track the success rate of your experiment. Al
 5. To add secondary metrics, click **Add Metric** and repeat this process for each additional metric you want to include.
 
 ##### To add additional variations and payloads
+
 Repeat the steps above in your flag to create additional variations and payloads.
 
 ## Starting your experiment
+
 After you have completed designing your experiment, click **Start Experiment** to begin. 
 
 ## Code examples
+
 The following code examples describe the code for a feature flag and a JSON payload:
 
 {{partial:tabs tabs="Feature flag, JSON payload"}}
@@ -215,7 +228,7 @@ export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
 
 ```
 {{/partial:tab}}
-{{partial:tab name="JSON payload"}}
+{{partial:tab name="Payload"}}
 ```js
 // services/featureFlags.ts
 import { experiment } from '@amplitude/experiment-js'  // adjust import to your SDK
