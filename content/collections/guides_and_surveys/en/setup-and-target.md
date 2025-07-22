@@ -112,7 +112,7 @@ Use the priority to rank the importance of a guide or survey relative to others 
 When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. Amplitude breaks prioritization ties by the experience that was seen most recently, then by the experience that was created most recently.
 {{/partial:admonition}}
 
-### Limits
+## Limits
 
 Limits ensure you don't bombard users with your messaging. 
 
