@@ -156,10 +156,6 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | Screen viewed            | Captures when a user views a screen in your app.                             | Screen name                          |
 | Element Interacted       | Captures when a user interacts with the UI elements in your app.             | Element properties                   |
 | Network request          | Captures when a the app makes a network request.                             | URL, request method, status code, etc. |
-| Rage Click               | Captures when a user rapidly clicks the same element multiple times.         | Click coordinates, timing, duration, element properties |
-| Dead Click               | Captures when a user clicks an element but no meaningful response occurs.    | Click coordinates, element properties |
-
-*Experimental feature available through System Programming Interface (SPI) for iOS.
 
 ### User properties
 
