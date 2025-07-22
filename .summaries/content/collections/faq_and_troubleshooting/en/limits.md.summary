@@ -1,24 +1,22 @@
 ## Summary
-This documentation covers Amplitude's data ingestion and visualization limits including monthly event volume limits, instrumentation limits (2000 event types, 2000 event properties, 1000 user properties), chart-specific constraints for Event Segmentation and other analytics charts, and CSV export restrictions with varying group-by limits across different chart types.
+This documentation covers Amplitude's data ingestion and query limits including monthly event volume limits with overage fees and account blocking policies, instrumentation limits for event types (2000), event properties (2000), and user properties (1000) that affect data indexing and querying, chart-specific date range and segmentation limits, and CSV export row limits that vary by chart type.
 
 ## Keywords
 - monthly event volume limits
+- overage fees
+- account blocking policy
 - instrumentation limits
 - event types limit 2000
 - event properties limit 2000
 - user properties limit 1000
+- data indexing restrictions
+- string character limit 1024
 - Event Segmentation chart limits
 - inline behavioral cohorts 3-year range
-- string character limit 1024
-- CSV export group-by limits
-- breakdown table 100 property values
-- Funnel Analysis 300 limit
-- Retention Analysis 300 limit
-- Data Tables 10000 baseline limit
-- overage fees
-- account blocking
-- indexing stoppage
-- Export API
-- microscope 1 million rows
-- date range limits by visualization scale
-- orange/red warning indicators
+- breakdown table 30 segments
+- CSV export row limits
+- group-by limits
+- Export API raw data access
+- Amplitude Data event type deletion
+- orange red warning indicators
+- microscope download users 1 million rows

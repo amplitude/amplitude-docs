@@ -1,18 +1,21 @@
-**Summary:** This documentation covers organization and project management in Amplitude, including user approval workflows, project settings configuration (API keys, secret keys, session definitions, time zones), project deletion, organization name/URL changes, and API/secret key rotation processes.
+## Summary
+This documentation covers organization and project management in Amplitude, including user approval workflows, project configuration settings (API keys, secret keys, session definitions, time zones, query sampling), and procedures for deleting projects or modifying organization details through CSM contact or support tickets.
 
-**Keywords:**
+## Keywords
 - Amplitude organization management
 - project settings configuration
 - API key secret key rotation
+- user approval provisioning
 - session definition configuration
 - query time sampling
 - project deletion workflow
-- user approval provisioning
 - organization URL name change
-- time zone project settings
-- Dashboard Rest API HTTP API
+- CSM support ticket process
 - project ID API key secret key
+- time zone configuration
+- currency display settings
+- user downloads feature
+- event properties user properties
+- annotations tab insights tab
 - admin manager permissions
-- CSM support requests
-- event types properties counts
-- currency display revenue metrics
+- Growth Enterprise customer support
