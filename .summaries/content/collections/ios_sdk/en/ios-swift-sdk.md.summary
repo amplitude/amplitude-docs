@@ -1,24 +1,28 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for both Swift and Objective-C, including autocapture features for sessions, app lifecycles, screen views, element interactions, and network requests.
+This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for both Swift and Objective-C, including installation via CocoaPods/SPM/Carthage, autocapture features (sessions, app lifecycles, screen views, element interactions, network requests), revenue tracking, user groups, plugins system, and Apple privacy manifest compliance.
 
 ## Keywords
 
-- Amplitude Analytics iOS Swift SDK
+- iOS Swift SDK
 - AmplitudeSwift package
 - CocoaPods Swift Package Manager Carthage installation
-- autocapture sessions app lifecycles screen views element interactions network tracking
-- Configuration API key instanceName storageProvider logLevel flushIntervalMillis
-- track events identify user properties revenue tracking
-- UIKit SwiftUI UIControl UIGestureRecognizer
-- user groups groupType groupName setGroup groupIdentify
-- custom userId deviceId IDFV UUID
+- autocapture sessions app lifecycles screen views element interactions network requests
+- Configuration API key initialization
+- track events identify user properties
+- revenue tracking productId quantity price
+- user groups groupType groupName setGroup
 - plugins enrichment destination PluginType
-- session tracking minTimeBetweenSessionsMillis sessionId
-- TrackingOptions COPPA control IDFA carrier location
+- custom storage provider Storage protocol
+- device ID IDFV UUID lifecycle
+- session tracking minTimeBetweenSessionsMillis
 - offline mode NetworkConnectivityCheckerPlugin
+- COPPA control enableCoppaControl
+- TrackingOptions disable tracking fields
 - Apple privacy manifest NSPrivacyTracking NSPrivacyCollectedDataTypes
-- migration guide maintenance SDK legacy data
+- frustration interactions rage clicks dead clicks
+- InteractionsOptions RageClickOptions DeadClickOptions
 - remote configuration enableAutoCaptureRemoteConfig
-- storage provider PersistentStorage custom storage
-- troubleshooting debugging log levels callback
+- UIKit SwiftUI element interaction tracking
+- network tracking captureRules ignoreHosts statusCodeRange
+- migration guide maintenance SDK migrateLegacyData

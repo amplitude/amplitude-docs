@@ -96,6 +96,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
 | `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, network requests, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
 | `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, Autocapture settings are updateable remotely after initialization.                                                                      | `true` |
+| `interactionsOptions`          | Configuration options for frustration interaction tracking (rage clicks and dead clicks). See [InteractionsOptions](#interactionsoptions) for more information.                                           | `InteractionsOptions()` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -206,6 +207,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 | `appLifecycles` | `AutocaptureOptions` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked include: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
+| `frustrationInteractions` | `AutocaptureOptions` | No | **Experimental feature** - Enables frustration interaction tracking including rage clicks and dead clicks. This feature is available through System Programming Interface (SPI) and isn't part of the public API. When you enable this option, Amplitude automatically detects and tracks user frustration behaviors. Event properties tracked include: `[Amplitude] Begin Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Clicks`, `[Amplitude] Click Count`, `[Amplitude] X`, `[Amplitude] Y`, plus standard element properties. Go to [Track frustration interactions](#track-frustration-interactions) for more information. |
 | `networkTracking` | `AutocaptureOptions` | No | Enables network tracking. If the option is set, Amplitude tracks network requests. Event properties tracked include: `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. See [Track network requests](#track-network-requests) for more information. |
 
 {{/partial:collapse}}
@@ -620,6 +622,140 @@ After enabling this setting, Amplitude tracks the `[Amplitude] Element Interacte
 
 {{partial:admonition type="info" heading=""}}
 Currently, Amplitude does not supports tracking user interactions with UI elements in SwiftUI.
+{{/partial:admonition}}
+
+### Track frustration interactions
+
+{{partial:admonition type="warning" heading="Experimental Feature"}}
+Frustration interactions tracking is an experimental feature available through System Programming Interface (SPI) and isn't part of the public API. This feature may change or Amplitude may remove it in future versions.
+{{/partial:admonition}}
+
+Amplitude can automatically detect and track user frustration behaviors including rage clicks and dead clicks. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(Frustration) import AmplitudeSwift
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.frustrationInteractions]];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Rage click detection
+
+Rage clicks occur when a user rapidly clicks on the same element multiple times, indicating frustration. The SDK automatically detects rage clicks when:
+
+- A user clicks on the same element (within a 50-point range) at least 3 times
+- The clicks occur within a 1-second time window
+
+When detected, Amplitude tracks a `[Amplitude] Rage Click` event with detailed information about the clicking behavior.
+
+#### Dead click detection
+
+Dead clicks occur when a user clicks on an element but no meaningful response happens (no DOM changes or navigation). The SDK automatically detects dead clicks when:
+
+- A user clicks on an element
+- No UI changes are detected within 3 seconds after the click
+
+When detected, Amplitude tracks a `[Amplitude] Dead Click` event.
+
+{{partial:collapse name="Rage Click Event Properties"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Begin Time` | ISO 8601 timestamp when the first click occurred |
+| `[Amplitude] End Time` | ISO 8601 timestamp when the last click occurred |
+| `[Amplitude] Duration` | Time between first and last click in milliseconds |
+| `[Amplitude] Clicks` | Array of click objects with X, Y coordinates and timestamps |
+| `[Amplitude] Click Count` | Total number of clicks detected |
+| `[Amplitude] X` | X-coordinate of the first click |
+| `[Amplitude] Y` | Y-coordinate of the first click |
+| Plus all standard element interaction properties (Action, Target View Class, etc.) |
+{{/partial:collapse}}
+
+{{partial:collapse name="Dead Click Event Properties"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] X` | X-coordinate of the click |
+| `[Amplitude] Y` | Y-coordinate of the click |
+| Plus all standard element interaction properties (Action, Target View Class, etc.) |
+{{/partial:collapse}}
+
+#### Configure frustration interactions
+
+You can customize the behavior of frustration interaction tracking using `InteractionsOptions`:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(Frustration) import AmplitudeSwift
+
+let interactionsOptions = InteractionsOptions(
+    rageClick: RageClickOptions(enabled: true),
+    deadClick: DeadClickOptions(enabled: true)
+)
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions,
+    interactionsOptions: interactionsOptions
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPRageClickOptions *rageClickOptions = [[AMPRageClickOptions alloc] initWithEnabled:YES];
+AMPDeadClickOptions *deadClickOptions = [[AMPDeadClickOptions alloc] initWithEnabled:YES];
+AMPInteractionsOptions *interactionsOptions = [[AMPInteractionsOptions alloc] initWithRageClick:rageClickOptions deadClick:deadClickOptions];
+
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.frustrationInteractions]];
+configuration.interactionsOptions = interactionsOptions;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="InteractionsOptions"}}
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `rageClick` | Configuration for rage click detection | `RageClickOptions(enabled: true)` |
+| `deadClick` | Configuration for dead click detection | `DeadClickOptions(enabled: true)` |
+{{/partial:collapse}}
+
+#### Ignore specific views
+
+You can exclude specific views from frustration interaction tracking:
+
+**UIKit:**
+```swift
+// Ignore both rage click and dead click detection
+button.amp_ignoreInteractionEvent(rageClick: true, deadClick: true)
+
+// Ignore only rage click detection
+button.amp_ignoreInteractionEvent(rageClick: true, deadClick: false)
+```
+
+**SwiftUI:**
+```swift
+Button("Tap Me") {
+    // Button action
+}
+.amp_ignoreInteractionEvent(rageClick: true, deadClick: true)
+```
+
+{{partial:admonition type="note" heading=""}}
+Frustration interaction tracking requires iOS 13.0+ and is only available for UIKit and SwiftUI applications.
 {{/partial:admonition}}
 
 ## User groups
