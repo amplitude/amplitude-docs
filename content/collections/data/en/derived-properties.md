@@ -44,7 +44,7 @@ As long as the formula you entered is valid, you can test the results in the spa
 
 ## Derived property use cases
 
-Taking our previous referrer URL example, you can write a formula using string operators that looks like this:
+Taking the previous referrer URL example, you can write a formula using string operators that looks like this:
 
 `SPLIT(PROPERTY('referrer_url','event'), "/", 2)`
 
