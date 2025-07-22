@@ -86,11 +86,11 @@ amplitudeEngagement.screen("HomeScreen")
 
 ### Enable element targeting (optional)
 
-Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
+Pin and tooltip guides require the ability for the SDK to target specific elements on screen. 
 
 #### Jetpack Compose
 
-You can tag Jetpack Compose views by using Amplitude Engagement's modifier `.amplitudeView`. You will need to pass your instance of `AmplitudeEngagement` as a parameter to `.amplitudeView`. This can be done by setting up a `CompositionLocalProvider` and accessing it in your view hierarchy or by passing your instance as a parameter to your composable views.
+Use Amplitude Engagement's `.amplitudeView` modifier to tag Jetpack Compose views. Pass your instance of `AmplitudeEngagement` as a parameter to `.amplitudeView`. Configure a `CompositionLocalProvider` and access it in your view hierarchy or pass your instance as a parameter to your composable views.
 
 ```kotlin
 // Jetpack Compose Tagging
@@ -108,9 +108,9 @@ fun MyView() {
 
 #### Non-Jetpack Compose
 
-We also supports non-Jetpack Compose views. The SDK uses the `tag`, `contentDescription`, or `resourceName` fields to check for a matching selector. Note: Only one of these is required to be set.
+Guides and Surveys also supports non-Jetpack Compose views. The SDK uses the `tag`, `contentDescription`, or `resourceName` fields to check for a matching selector. You need to set only one of these.
 
-This can be done with your existing layout XMLs or programmatically by setting the properties on the view instance.
+Configure this in your existing layout XMLs or programmatically by setting the properties on the view instance.
 
 ```xml
 <!-- in my_layout.xml -->
