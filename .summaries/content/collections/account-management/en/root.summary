@@ -1,40 +1,42 @@
-Amplitude is a comprehensive digital analytics platform that provides organizations with behavioral analytics, user tracking, and data management capabilities. The platform operates on a hierarchical structure with organizations containing multiple projects, where each project represents a distinct data collection and analysis environment with its own API keys, user permissions, and configuration settings.
+Amplitude is a comprehensive digital analytics platform that provides organizations with behavioral data analysis capabilities through a multi-tiered account management system. The platform operates on a hierarchical structure with organizations containing multiple projects, where each project represents a distinct data collection and analysis environment with its own API keys, event tracking, and user segmentation capabilities.
 
 ## Product Architecture and Feature Relationships
 
-The platform centers around a multi-tiered organizational structure where **Organizations** serve as the top-level container for **Projects**. Each project maintains independent data streams, API configurations, and user access controls. The **Portfolio** feature enables Enterprise customers to perform cross-project analysis by creating Views that merge up to 5-10 projects using user ID/device ID matching and the User Mapping API for aliasing.
+The platform's core architecture centers around **Organizations** as the top-level entity, containing multiple **Projects** that serve as isolated data environments. Each project maintains its own API keys, secret keys, session definitions, time zones, and currency display settings. The **Portfolio** feature enables Enterprise customers to perform cross-project analysis by creating Views that merge up to 5 projects (expandable to 10) using user ID/device ID matching and the User Mapping API for aliasing different user identifiers.
 
-User management operates through a role-based permission system with four hierarchical levels: **Viewer** (read-only access), **Member** (content creation), **Manager** (advanced features and API access), and **Admin** (full organizational control). **Permission Groups** allow Enterprise customers to assign project permissions to multiple users simultaneously, with the system granting the highest permission level when users have overlapping assignments.
+User management operates through a sophisticated **role-based permission system** with four hierarchical levels: Viewer, Member, Manager, and Admin. These roles control access to organization-level settings, project-level configurations, content creation capabilities, and administrative functions. **Permission Groups** (Enterprise-only) enable bulk user management by assigning project permissions to multiple users simultaneously, with the system automatically granting the highest permission level when users have overlapping assignments.
 
-Data management features include **Scale** (dynamic behavioral sampling for high-volume Enterprise customers), **Self-Service Data Deletion** (permanent event/property removal with GDPR/CCPA compliance), and **Session Replay** settings with configurable sample rates. The platform supports **SCIM 2.0 provisioning** through the User Management API for automated user/group management and identity provider integration.
+Data management features include **Scale** (dynamic behavioral sampling for Enterprise plans) which samples events based on user identity to manage costs while maintaining analysis accuracy through upsampling metrics. The **self-service data deletion** capability allows Growth and Enterprise administrators to permanently remove specific events and properties, with scanning limits of 1B events/month for Growth and 10B events/month for Enterprise plans.
 
 ## Key Nomenclature and Definitions
 
-**API Keys and Secret Keys**: Project-specific authentication credentials managed through self-service interfaces, with support for up to 50 active keys per project and 6-hour deletion timeframes.
+**API Keys and Secret Keys**: Project-specific authentication credentials managed through self-service interfaces, with support for up to 50 active keys per project and permanent key operations including creation, revocation, and deletion.
 
-**Dynamic Behavioral Sampling**: The Scale feature's algorithmic approach to sampling events based on user identity while maintaining analysis accuracy through upsampling metrics.
+**SCIM 2.0 Provisioning**: System for Cross-domain Identity Management integration using the User Management API, supporting programmatic user and group management with identity providers like Okta.
 
-**Views**: Portfolio's data source merging mechanism that combines multiple projects into unified analytical displays.
+**Session Replay**: Capture functionality with configurable sample rates and SDK implementation requirements, managed through organizational settings.
 
-**Permission Groups**: Enterprise-only feature enabling bulk user permission management through group membership assignments.
+**Dynamic Behavioral Sampling**: The Scale feature's algorithmic framework that samples events based on user identity while preserving complete user event streams and providing upsampling metrics for analysis accuracy.
 
-**Webhooks**: Custom monitor notification endpoints that trigger when KPI-affecting behavioral changes occur, available to Enterprise Insights package customers.
+**Views**: Portfolio feature components that merge multiple projects into unified displays for cross-project analysis.
 
-**Session Definition**: Project-level configuration determining how user sessions are calculated and measured across the platform.
+**Webhooks**: Custom monitor integration endpoints that automatically send triggered notifications when KPI-affecting user behavior changes occur (Enterprise Insights package).
 
-## Broader Product Ecosystem Integration
+## Product Ecosystem Integration
 
-The platform integrates extensively with external systems through multiple APIs: the **Dashboard Rest API** and **HTTP API** for programmatic access, the **User Management API** for SCIM provisioning, and the **User Privacy API** for compliance-driven data operations. **SSO configuration** enables identity provider integration, while **Slack integration** provides notification and collaboration capabilities.
+Amplitude integrates with external systems through multiple touchpoints. **SSO configuration** enables identity provider integration for user authentication, while **SCIM provisioning** facilitates automated user lifecycle management. The platform supports **Slack integration** for notifications and collaborative workflows, and provides **webhook endpoints** for real-time monitor notifications to external systems.
 
-Revenue analytics capabilities include configurable **currency display units** affecting Revenue LTV charts, Event Segmentation metrics, and Data Tables visualization without modifying underlying data values. The platform supports **Team Spaces** for collaborative analytics and maintains **discoverable vs undiscoverable content** classifications for access control.
+The **User Privacy API** handles GDPR and CCPA compliance through automated data deletion workflows, with configurable email notifications for Job Creation, Job Completion, and Unset Violation events. **Session Replay** functionality integrates with SDK implementations to capture user interactions with configurable sampling rates.
 
 ## API Endpoints and Technical Implementation
 
-Key technical interfaces include:
-- **User Management API** for SCIM 2.0 provisioning and programmatic user management
-- **User Privacy API** for GDPR/CCPA compliance and data deletion requests
-- **Dashboard Rest API** and **HTTP API** for general platform integration
-- **User Mapping API** for cross-project user aliasing in Portfolio Views
-- **Webhook endpoints** for custom monitor notifications
+Key API components include:
 
-The platform operates with specific technical constraints: Growth plans support 1B events/month scanning limits for data deletion, Enterprise plans support 10B events/month, and Portfolio Views can merge 5 projects by default (expandable to 10 with account team approval). Session Replay capture includes SDK implementation requirements and configurable sample rate controls for performance optimization.
+- **User Management API**: Handles SCIM 2.0 provisioning, user lifecycle management, and permission group operations
+- **User Privacy API**: Manages data deletion requests and privacy compliance workflows  
+- **User Mapping API**: Enables cross-project user identity aliasing for Portfolio Views
+- **Webhook endpoints**: Custom monitor integration for real-time notifications
+
+The platform supports **CSV export functionality**, **Revenue LTV charts**, **Event Segmentation revenue metrics**, and **Data Tables** with configurable currency display units. Administrative functions include **API key rotation**, **session definition configuration**, **query time sampling**, and **project deletion workflows** managed through CSM support tickets for organizational changes.
+
+**Team Spaces** provide collaborative environments with inherited permissions from groups, while **Visual Labeling**, **Guides and Surveys**, and **behavioral cohorts** offer advanced analysis and user engagement capabilities restricted by role-based permissions.
