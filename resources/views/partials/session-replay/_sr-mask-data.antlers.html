@@ -20,6 +20,21 @@ In the event of a conflict, Session Replay defers to the remote setting. For exa
 
 In this example, `.selector-1` has a local setting and a remote setting. The result follows the remote setting, and overrides the setting in the SDK or plugin implementation.
 
+Specify elements to block or mask in the `privacyConfig` object during configuration.
+
+```js
+// This configuration blocks .no-track and #ads, sets the default mask level,
+// and defines the mask and unmask selectors.
+await sessionReplay.init(AMPLITUDE_API_KEY, {
+  privacyConfig: {
+    blockSelector: ['.no-track', '#ads'],
+    defaultMaskLevel: 'medium',
+    maskSelector: ['.sensitive-data', '.user-email'],
+    unmaskSelector: ['.public-info', '#main-content']
+  }
+}).promise;
+```
+
 #### CSS selectors
 
 Session Replay's configuration supports many types of [CSS Selector](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors). Specify an element tag (`h1` or `textarea`), a class name (`.hidden`) or a data attribute.
