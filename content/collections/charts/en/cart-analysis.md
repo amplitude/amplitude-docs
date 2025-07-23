@@ -7,7 +7,7 @@ this_article_will_help_you:
 ---
 The cart analysis feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
-Once you set everything up, you have access and analyze these object arrays from within your chart. 
+After set up, you have access and analyze these object arrays from within your chart. 
 
 Likely use cases include:
 
@@ -67,8 +67,10 @@ For advanced cart analysis operations on arrays of data, you can also use [paral
 
 Property splitting must be enabled before you can use object arrays for cart analysis. You can complete the process in Amplitude Data.
 
-{{partial:admonition type='note'}}
 Only project managers and admins can enable splitting. Portfolio projects don't support splitting.
+
+{{partial:admonition type="tip" heading=""}}
+It is recommended to enable both the `amplitude.Revenu()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
 {{/partial:admonition}}
 
 To enable property splitting, follow these steps:
