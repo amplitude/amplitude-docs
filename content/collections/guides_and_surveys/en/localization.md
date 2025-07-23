@@ -116,7 +116,7 @@ There are a number of ways to add localized content to your guide or survey:
 - Use AI localization to automatically translate your content. Amplitude recommends this method for quick, automated translations.
 - Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
 
-{{partial:tabs tabs="Web interface, AI localization, XLIFF file upload "}}
+{{partial:tabs tabs="Web interface, AI localization, XLIFF file upload"}}
 {{partial:tab name="Web interface"}}
 The web interface is the most direct method of adding localized content to a guide or survey. The web interface is the preferred way of adding localized content to a guide or survey because it offers a direct relationship to each text string. 
 
