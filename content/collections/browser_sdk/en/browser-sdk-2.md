@@ -164,8 +164,8 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-{{partial:admonition type="note" heading="Data residency"}}
-To send data to Amplitude's EU servers, use `https://app.eu.amplitude.com` to create your project, and use the API key from that project.
+{{partial:admonition type="note" heading="Data residency requirement"}}
+To send data to Amplitude's EU servers, your organization must use the EU data storage region, which you set during signup. 
 {{/partial:admonition}}
 
 ### Debugging
