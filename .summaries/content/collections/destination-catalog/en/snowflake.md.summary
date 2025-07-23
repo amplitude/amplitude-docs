@@ -1,30 +1,23 @@
-**Summary:** This documentation covers the Snowflake destination integration for Amplitude, detailing bidirectional data sync setup including recurring exports, historical data backfills, authentication methods (password and key pair), IP allowlisting requirements, and comprehensive event/merged user table schemas with specific Snowflake data types.
+**Summary:** This documentation covers the Snowflake destination integration for Amplitude, detailing bidirectional data sync setup, recurring exports, historical data backfills, IP allowlisting requirements, and comprehensive event/merged user table schemas with VARIANT columns for JSON data.
 
 **Keywords:**
 - Snowflake destination integration
 - Amplitude event data export
 - recurring syncs setup
 - historical data backfill
+- IP allowlist requirements
 - key pair authentication
 - password authentication
-- IP allowlisting requirements
-- micro-batch files
-- 5-minute intervals
-- warehouse destinations
-- merged Amplitude IDs
-- raw events export
+- warehouse computation costs
 - event table schema
 - merged user table schema
-- VARIANT data type
-- TIMESTAMP_NTZ columns
-- amplitude_id field
-- client_event_time
+- VARIANT columns
+- micro-batch files
+- amplitude_id merging
+- client_event_time vs event_time
 - server_received_time
-- event_properties VARIANT
-- user_properties VARIANT
-- Snowflake credentials configuration
-- warehouse size optimization
-- computation costs reduction
-- auto suspend settings
+- ORGNAME-ACCOUNTNAME format
+- JWT token authentication
+- warehouse destinations
 - data warehouse integration
-- cloud-based data warehousing
+- Snowflake credentials configuration

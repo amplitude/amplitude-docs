@@ -1,27 +1,23 @@
-**Summary:** This documentation covers Amplitude Data's derived properties feature (Enterprise-only) that allows retroactive creation of event and user properties using formulas with functions and operators, computed on-the-fly without affecting raw data, including string/math/date/array/conditional functions and parallel operators for cart analysis.
+## Summary
+This documentation covers Amplitude Data's derived properties feature, which allows Enterprise users to create new event and user properties retroactively using formulas with functions and operators applied to existing properties, computed on-the-fly without affecting raw data.
 
-**Keywords:**
+## Keywords
 - derived properties
 - Amplitude Data
 - Enterprise plans
-- retroactive property creation
+- tracking plan properties
 - formula editor
 - PROPERTY() function
-- REGEXEXTRACT
-- PARALLEL_PRODUCT
+- string functions (REGEXEXTRACT, SPLIT, CONCAT)
+- math functions (SUM, MULTIPLY, DIVIDE)
+- date/time functions (DATE_TO_LONG, TIME_TO_LONG)
+- array functions (ITEM_COUNT, GREATEST, LEAST)
+- conditional operators (IF, AND, OR, SWITCH)
+- parallel operators (PARALLEL_SUM, PARALLEL_PRODUCT)
 - cart analysis
-- string functions
-- math operators
-- date/time functions
-- array functions
-- conditional operators
-- tracking plan properties
 - main branch requirement
-- Unix timestamps milliseconds
-- Java SimpleDateFormat
-- set operators
-- parallel operators
-- cart properties
-- formula validation
 - property references limit
-- query performance impact
+- Java SimpleDateFormat
+- Unix timestamps milliseconds
+- group properties
+- lookup properties

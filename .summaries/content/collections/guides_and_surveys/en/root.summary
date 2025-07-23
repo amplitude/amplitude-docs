@@ -1,47 +1,71 @@
-Amplitude Guides and Surveys is a comprehensive in-product user experience platform that serves as an alternative to traditional popups, designed to improve user onboarding, engagement, and feedback collection. The platform enables product teams, growth teams, and product marketing teams to create interactive guides and surveys that enhance retention, activation, and engagement metrics throughout the user journey.
+Amplitude Guides and Surveys is a comprehensive in-product user experience platform that serves as an alternative to traditional popups, designed to improve user onboarding, engagement, and feedback collection. The platform enables product teams, growth teams, and product marketing teams to create contextual, interactive experiences that drive retention, activation, and engagement metrics through targeted user guidance and survey collection.
 
-## Core Product Components
+## Core Product Architecture
 
 The platform consists of three primary components that work together to deliver personalized user experiences:
 
-**Guides** provide interactive in-product guidance through five distinct form factors: Modal, Popover, Pin, Tooltip, Banner, and Checklist. These guides support multi-step navigation, advanced triggers, and various interactive blocks including buttons, images, and videos. Available templates include Tours for step-by-step instructions, Announcements for feature highlights, Checklists for task completion, Banners for persistent messaging, and Tooltips for contextual help.
+**Guides** provide interactive user onboarding and engagement through five distinct form factors: Modal (overlay dialogs), Popover (contextual callouts), Pin (persistent elements), Tooltip (hover information), Banner (page-wide notifications), and Checklist (task-oriented workflows). Each form factor supports multi-step functionality, advanced triggers, and customizable actions including visit link, click element, show guide, and run callback functions.
 
-**Surveys** enable targeted feedback collection using four unique block types: Rating (with Stars, NPS, Emoji, and Rating labels), Long answer, Short answer, and List blocks. Surveys support conditional logic for dynamic response paths and utilize a subset of guide form factors (modal, popover, pin). Key templates include NPS surveys, User feedback collection, and Rating surveys for measuring customer satisfaction.
+**Surveys** enable targeted feedback collection through four specialized block types: Rating blocks (supporting Stars, NPS, Emoji, and Rating labels), Long answer blocks, Short answer blocks, and List blocks with multiple choice options. Surveys support conditional logic for dynamic response paths and utilize a subset of guide form factors (modal, popover, pin) for deployment.
 
-**Resource Center** functions as a help widget that integrates with the Guides and Surveys SDK, providing search functionality, recommended content, quick links, and call-to-action buttons. It features Autopilot functionality that uses semantic search algorithms to automatically generate content recommendations from external documentation repositories.
+**Resource Center** functions as an intelligent help widget that integrates with the Guides and Surveys SDK, providing search functionality, recommended content, quick links, and call-to-action buttons. The Resource Center features Autopilot, which uses semantic search algorithms to automatically generate content recommendations from documentation repositories based on page context.
 
-## Key Architecture and Integration
+## SDK Implementation and Platform Support
 
-The platform operates through dedicated SDKs for multiple platforms including Web (@amplitude/engagement-browser), iOS (AmplitudeEngagement), Android (amplitude-engagement-android), and React Native (@amplitude/plugin-engagement-react-native). The core initialization pattern involves `engagement.init()` and `engagement.boot()` methods with configuration options for user identification, theme management, and event forwarding.
+The platform supports multi-platform deployment through dedicated SDKs:
 
-Integration capabilities extend to third-party analytics providers including Segment, Google Tag Manager, and native Amplitude Analytics. The system supports proxy configurations through AWS CloudFront with specific origins (cdn.amplitude.com for static assets, gs.amplitude.com for API requests) and critical `/sdk/*` path patterns for API routing.
+- **Web SDK**: `@amplitude/engagement-browser` package with methods like `engagement.init()`, `engagement.boot()`, `engagement.gs.show()`, and `engagement.gs.reset()`
+- **Android SDK**: `AmplitudeEngagement` class with gradle dependencies, requiring Android API Level 24+ and Kotlin 1.8.22+
+- **iOS SDK**: Swift Package Manager/CocoaPods installation with `AmplitudeEngagement` initialization and `accessibilityIdentifier` targeting
+- **React Native SDK**: `@amplitude/plugin-engagement-react-native` package with deep linking support via `handleURL()` method
 
-## Targeting and Personalization Framework
+All SDKs support screen tracking, element targeting, theme management (LIGHT/DARK/SYSTEM modes), preview mode configuration, and event forwarding for analytics integration.
 
-The platform employs sophisticated targeting mechanisms including user segmentation (All Users vs Targeted Users), rollout percentages with bucketing units, and cohort filtering. Trigger mechanisms encompass element appearance/clicks, time delays, smart delay, rage click detection, user confusion patterns, and event-based tracking using CSS Selector and XPath targeting.
+## Key Nomenclature and Definitions
 
-Page targeting utilizes URL matching patterns (contains, matches, regex) while priority levels (Urgent, High, Medium, Low) manage display precedence. The system implements display limits, cooldown periods, and active state management with tiebreaker logic for handling multiple eligible experiences.
+**Lifecycle UUID**: Unique identifier tracking user interaction sessions across guides and surveys
+**Step ID and Step Index**: Sequential identifiers for multi-step experience navigation
+**Variant ID**: A/B testing configuration identifier for experiment management
+**Strike Detection**: Behavioral trigger mechanism that monitors user interaction patterns
+**Rate-limiting**: Throttling system preventing experience over-exposure
+**Smart Delay**: Intelligent timing mechanism that optimizes experience delivery based on user behavior
+**Rage Click**: Trigger mechanism detecting user frustration through rapid clicking patterns
+**Bucketing Unit**: User segmentation mechanism for rollout percentage targeting
+**Recommendation Sets**: Curated content collections for Resource Center personalization
+**Semantic Search**: AI-powered content discovery algorithm for automatic recommendations
 
-## Analytics and Experimentation
+## Targeting and Experimentation Framework
 
-Amplitude Experiment integration enables A/B testing and multi-armed bandit experiments on guides and surveys through variant configuration and exposure event handling. The analytics framework tracks comprehensive event properties including Lifecycle UUID, Step ID, Variant ID for A/B testing, and specific events like Guide Engaged, Guide Step Completed, Survey Submitted, and Survey Abandoned.
+The platform provides sophisticated targeting capabilities through multiple mechanisms:
 
-Analysis capabilities include the Insights tab for aggregate metrics and trends with NPS-specific breakdowns, Microscope integration for session replays, and the Responses tab for individual user response data with CSV export functionality and filtering capabilities.
+**User Targeting** supports "All Users" or "Targeted Users" with segment-based filtering, rollout percentages, and cohort integration. **Trigger Mechanisms** include element appearance/clicks, time delays, smart delay, rage click detection, user confusion patterns, and event tracking integration.
+
+**Page Targeting** utilizes URL matching (exact matches, contains, regex patterns) with CSS Selector and XPath targeting for precise element identification. **Priority Levels** (Urgent, High, Medium, Low) manage experience precedence with tiebreaker logic for multiple eligible experiences.
+
+**Amplitude Experiment Integration** enables A/B testing and multi-armed bandit experiments with variant configuration, exposure event handling, and performance analytics through the insights dashboard.
+
+## Analytics and Measurement
+
+The platform integrates deeply with Amplitude Analytics, tracking comprehensive event schemas including:
+
+**Common Events**: Viewed, Dismissed, Completed with properties like Lifecycle UUID, Step ID, and Variant ID
+**Guide-Specific Events**: Guide Engaged, Guide Step Completed, Tooltip Marker Viewed, Rage Closed
+**Survey-Specific Events**: Survey Submitted, Survey Abandoned with response data capture
+
+Analytics integration supports third-party providers including Segment, Google Tag Manager, and custom implementations through `forwardEvent()` methods. The Insights tab provides aggregate metrics, NPS breakdowns, completion trends, and Microscope integration for session replay analysis.
 
 ## Content Management and Localization
 
-The platform supports comprehensive content management through templates that serve as reusable starting points, tags for organizational structure, and themes for brand customization. The Theme Editor provides Brand controls and Component editor sections for customizing colors, typography, form controls, cards, widget dimensions, and animations.
+**Templates** provide reusable starting points for guides and surveys with pre-configured designs and placeholder content. **Tags** enable organizational structure with bulk operations and filtering capabilities. **Themes** allow comprehensive branding customization through the Theme Editor with Brand controls and Component editor sections.
 
-Localization functionality includes SDK locale initialization, Project settings for language management, and three translation methods: web interface editing, AI-powered translation using Claude, and XLIFF file workflow integration with translation fallback behavior.
+**Localization** supports multi-language content delivery through SDK locale configuration, project language settings, fallback behavior management, and content translation via web interface, AI localization (Claude), or XLIFF file upload workflows.
 
-## Permission System and Testing
+## Permissions and Access Control
 
-A granular five-tier permission system (No access, Viewer, Member, Manager, Administrator) overrides base user roles to control access to viewing, editing drafts, publishing, and running experiments. The system provides project-level permission management through the Guides and Surveys > Permissions interface.
+The platform implements a three-tier permission system (Viewer, Member, Manager) that overrides base Amplitude user roles, providing granular access control for viewing, editing drafts, publishing, and running experiments. Administrator roles maintain full access across all functionality.
 
-Testing capabilities include preview mode for verifying trigger, limit, and throttle conditions before launch, with troubleshooting tools like Reset User History, Ignore Throttle Limits, and manual event triggering. Live testing utilizes cohort targeting for real-world validation.
+## Infrastructure and Deployment
 
-## API Endpoints and Technical Implementation
+**Proxy Configuration** supports AWS CloudFront setup as reverse proxy with dual origins (cdn.amplitude.com for static assets, gs.amplitude.com for API requests) and specific cache behaviors for the critical `/sdk/*` path pattern. **Server Zones** support US/EU data residency requirements with configurable `serverUrl` and `cdnUrl` parameters.
 
-Key technical endpoints include `/sdk/admin/config` for preview mode configuration and various SDK methods such as `engagement.gs.show()`, `engagement.gs.reset()`, `engagement.forwardEvent()`, `engagement.setRouter()` for SPA routing, and `engagement.updateLanguage()` for localization. Mobile implementations utilize platform-specific methods like `AmplitudeEngagement.boot()` for iOS and `getPlugin().handleURL()` for React Native deep linking.
-
-The platform supports Content Security Policy (CSP) nonce configuration, serverZone selection (US/EU), and comprehensive callback registration through `engagement.addCallback()` for custom instrumentation and integration workflows.
+The platform integrates with Content Security Policy (CSP) through nonce configuration and supports Single Page Application (SPA) routing through `engagement.setRouter()` methods for seamless user experience delivery across modern web architectures.

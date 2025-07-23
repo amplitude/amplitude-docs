@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Amplitude's currency conversion feature for multi-currency revenue analysis, including OOTB derived properties (Currency Converted Revenue/Price), CURRENCY_CONVERT function usage, ISO 4217 currency codes, project-level target currency configuration, and integration with $revenue/$price/$currency event properties.
+
+**Keywords:**
+- currency conversion
+- multi-currency revenue data
+- CURRENCY_CONVERT function
+- Currency Converted Revenue derived property
+- Currency Converted Price derived property
+- ISO 4217 currency codes
+- $currency property
+- $revenue property
+- $price property
+- target currency configuration
+- project settings currency
+- OOTB derived properties
+- custom derived properties
+- cart properties conversion
+- daily exchange rates
+- Enterprise plans currency features
