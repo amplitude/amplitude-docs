@@ -43,11 +43,7 @@ While cohort export for portfolio projects is supported for all destinations, wh
 
 ## Create a Portfolio view
 
-Admins and managers in an organization can access and create the Portfolio view by clicking the Settings icon
-
-![gear_icon_for_settings.png](/docs/output/img/account-management/gear-icon-for-settings-png.png)
-
-and navigating to *Organization settings > Projects > Create Portfolio View*. A modal appears; in it, you can name the portfolio view and set user permissions.
+Admins and managers in an organization can access and create the Portfolio view by clicking the **Settings** icon and navigating to *Organization settings > Projects > Create Portfolio View*. A modal appears; in it, you can name the portfolio view and set user permissions.
 
 At this point, you can connect multiple projects into this cross-project view. Just click *Update Source Projects* to select the projects that should merge into a single view. 
 
