@@ -5,7 +5,7 @@ id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
 this_article_will_help_you:
   - 'Unlock new insights by analyzing Amplitude data as object arrays'
 ---
-Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
+The cart analysis feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
 Once you set everything up, you have access and analyze these object arrays from within your chart. 
 
@@ -23,7 +23,7 @@ Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysi
 
 ### Feature availability
 
-This feature is available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
+This feature is available to users on Growth and Enterprise plans. Go to [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
