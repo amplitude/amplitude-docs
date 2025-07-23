@@ -1,4 +1,4 @@
-**Summary:** This documentation covers fundamental chart operations in Amplitude including sharing charts, customizing Y-axis settings (including dual Y-axis for event segmentation), adding custom legend labels, chart caching times based on query intervals (real-time, hourly, daily, weekly, monthly), annotations and releases functionality, and keyboard shortcuts for chart creation workflows.
+**Summary:** This documentation covers fundamental chart operations in Amplitude including sharing charts, customizing Y-axis settings (including dual Y-axis for event segmentation), adding custom legend labels, chart caching times based on query intervals (real-time, hourly, daily, weekly, monthly), annotations/releases functionality, and keyboard shortcuts for chart creation workflows.
 
 **Keywords:**
 - Amplitude charts
@@ -8,15 +8,18 @@
 - chart caching times
 - real-time queries
 - hourly/daily/weekly/monthly queries
-- chart templates
-- custom legend labels
-- annotations
+- chart annotations
 - releases
 - keyboard shortcuts
+- chart templates
+- custom legend labels
 - chart sharing
 - dashboard integration
 - notebook integration
 - project switching
 - chart type switching
 - CSV downloads
-- cache intervals
+- time series charts
+- chart definition
+- event selector
+- group-by functionality

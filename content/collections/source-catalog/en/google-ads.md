@@ -100,11 +100,11 @@ For more information, see [About access levels in your Google Ads Account](https
 
 Google Ads may update advertising metrics several days after the original interaction. This can happen for several reasons, including delayed conversion attribution or the removal of invalid traffic. For instance, a user may click on an ad today but complete a conversion a few days later, which Google then attributes retroactively. Google may later exclude clicks it detects as fraudulent or non-human, resulting in lower reported impressions or spend. These updates can affect key metrics such as conversions, cost, and impressions.
 
-Amplitude imports Google Ads data once per day, and always for the **previous calendar day**. Because Amplitude schedules this import as a daily batch, the data isn't available in real time and you can't use it for hour-by-hour analysis. If Google revises campaign data after Amplitude’s import has completed, those changes don't reflect automatically. To ensure the most accurate reporting, trigger a manual backfill to refresh metrics for the affected time period.
+Amplitude imports Google Ads data once per day, and always for the **previous calendar day**. Because Amplitude schedules this import as a daily batch, the data isn't available in real time and you can't use it for hour-by-hour analysis. If Google revises campaign data after Amplitude’s import has completed, those changes don't reflect automatically.
 
 This behavior is important to consider when analyzing campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in Google Ads.
 
-For more information, see [About data freshness](https://support.google.com/google-ads/answer/2544985?hl=en) in Google's documentation.
+For more information, review [About data freshness](https://support.google.com/google-ads/answer/2544985?hl=en) in Google's documentation.
 
 ### Ad events don't map to Users
 
