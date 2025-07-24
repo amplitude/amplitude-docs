@@ -127,6 +127,9 @@ By default, this is **English**.
 4. Update the individual strings with your translated content.
 All content is automatically associated with the langauge displayed in the language toggle.
 
+{{partial:admonition type="note" heading=""}}
+When entering lists in Surveys, the items must be in the same order each time you add content. Each list option is mapped to a specific ID number that matches the original text string to the translated one. Inconsistent ordering can result in the data being collected incorrectly. 
+{{/partial:admonition}}
 {{/partial:tab}}
 {{partial:tab name="AI localization"}}
 AI localization automatically translates your guide or survey content using [Claude](https://claude.ai/login?returnTo=%2F%3F). Amplitude takes the strings from the default language and attempts to: 
