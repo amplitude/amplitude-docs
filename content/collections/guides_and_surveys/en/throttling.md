@@ -11,7 +11,7 @@ updated_at: 1753372962
 ---
 Throttling is a way to slow down the rate at which a guide or a survey appears for your user. Depending on how many guides, surveys, or nudges you have created, it's important to set limits on how many appear for each user or how often users experience them. You don't want users to feel overwhelmed or annoyed during their experience on your site.
 
-Throttling works identically for both Guides and Surveys. However, the throttling settings for Guides and for Surveys must be set separately. This gives you more overall flexibility in how your guides or surveys appear.
+Throttling works identically for both Guides and Surveys. However, the throttling settings for guides and for surveys are separate. This gives you more overall flexibility in how your guides or surveys appear.
 
 {{partial:admonition type="tip" heading=""}}
 The throttling settings you set are applied globally to all of your guides or your surveys. You can further specify how and when your guides or surveys appear by modifying the Limits section for each guide or survey.
