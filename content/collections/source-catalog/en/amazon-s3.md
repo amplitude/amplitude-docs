@@ -81,7 +81,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
 
     - `external_id` : unique identifiers used when Amplitude assumes the role. You can generate it with help from [third party tools](https://www.uuidgenerator.net/). Example external id can be `vzup2dfp-5gj9-8gxh-5294-sd9wsncks7dc`.
 
-    - Amplitude US region
+    - Trust policy for Amplitude US region
 
     ``` json hl_lines="7 12"
     {
@@ -105,7 +105,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
     }
     ```
 
-   - Amplitude EU region
+   - Trust policy for Amplitude EU region
 
    ``` json hl_lines="7 12"
    {
