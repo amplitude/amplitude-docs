@@ -921,6 +921,10 @@ amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); //[tl! highli
 
 The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
 
+{{partial:admonition type="tip" heading=""}}
+It is recommended to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
+{{/partial:admonition}}
+
 To track revenue from a user, call revenue each time a user generates revenue. In this example, the user purchased 3 units of a product at $3.99.
 
 ```ts

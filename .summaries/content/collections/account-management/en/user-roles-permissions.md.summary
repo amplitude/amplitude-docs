@@ -1,10 +1,9 @@
-**Summary:** This documentation covers Amplitude's user role hierarchy (Viewer, Member, Manager, Admin) and their specific permissions for organization-level and project-level access control, including content creation, data source management, and administrative capabilities.
+**Summary:** This documentation covers Amplitude's user role hierarchy (Viewer, Member, Manager, Admin) and their specific permissions for accessing analytics features, managing content, and administering organizations, including project-level permissions for Enterprise customers.
 
 **Keywords:**
 - Amplitude user roles
 - organization-level permissions
 - project-level permissions
-- permission groups
 - Viewer role permissions
 - Member role permissions
 - Manager role permissions
@@ -14,9 +13,10 @@
 - custom events
 - team spaces
 - Visual Labeling
+- permission groups
 - API keys access
 - derived properties
 - Guides and Surveys
 - content ownership transfer
 - sampling settings
-- Enterprise customers permissions
+- Enterprise customers

@@ -1,43 +1,50 @@
 **Summary:**
-This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API keys, autocapture configuration for tracking page views/sessions/forms/file downloads/element interactions/network requests, event tracking methods, user properties management, revenue tracking, and advanced features like cross-domain tracking, offline mode, and remote configuration.
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends analytics events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API keys, comprehensive autocapture functionality (attribution, page views, sessions, form interactions, file downloads, element interactions, network tracking), event tracking, user properties management, revenue tracking, and advanced features like cross-domain tracking, offline mode, and remote configuration.
 
 **Keywords:**
 - @amplitude/analytics-browser
 - Browser SDK 2
 - HTTP V2 API
 - autocapture
-- pageViews tracking
-- sessions tracking
-- formInteractions tracking
-- fileDownloads tracking
-- elementInteractions tracking
-- networkTracking
-- marketing attribution
+- attribution tracking
 - UTM parameters
-- click ID parameters
+- click IDs
+- page view tracking
+- session tracking
+- form interactions
+- file downloads
+- element interactions
+- network tracking
+- sendBeacon
 - cross-domain tracking
-- sendBeacon transport
-- Content Security Policy (CSP)
-- cookie management
-- AMP cookie prefix
-- offline mode
-- remote configuration
-- fetchRemoteConfig
 - deviceId
 - sessionId
-- userId
-- revenue tracking
 - user properties
+- Identify interface
+- revenue tracking
+- Revenue interface
 - group properties
-- plugins system
+- plugins
 - enrichment plugin
 - destination plugin
+- offline mode
+- remote configuration
+- CSP (Content Security Policy)
+- cookie management
+- AMP cookie prefix
+- marketing attribution
+- SPA (Single Page Application)
+- trackHistoryChanges
+- excludeReferrers
 - flushIntervalMillis
 - flushQueueSize
+- transport types (fetch, xhr, beacon)
+- instanceName
+- serverZone EU/US
+- logLevel debugging
 - trackingOptions
 - identityStorage
-- serverZone EU
-- Visual labeling
-- Identify operations
-- ampDeviceId URL parameter
-- ampSessionId URL parameter
+- localStorage
+- sessionStorage
+- minIdLength
+- optOut

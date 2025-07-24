@@ -1,21 +1,17 @@
-**Summary:** This documentation provides an overview of Amplitude Experiment's workflow-driven behavioral experimentation platform, covering the complete process for creating A/B tests and feature flags, including hypothesis creation, variant configuration, user allocation with bucketing units, statistical significance analysis using sequential testing or T-test models, and integration via Experiment SDK or REST API.
+**Summary:** This documentation provides a comprehensive overview of Amplitude Experiment's workflow-driven behavioral experimentation platform, covering the complete processes for creating A/B tests and feature flags, including hypothesis creation, variant configuration, user allocation, statistical analysis with sequential testing (defaulting over T-test), and experiment lifecycle management.
 
 **Keywords:**
-- Amplitude Experiment
+- Amplitude Experiment platform
 - A/B testing workflow
-- feature flags
-- sequential testing statistical model
-- T-test analysis
-- bucketing units
+- Feature flags deployment
+- Sequential testing statistical model
+- Treatment variants and control groups
+- Bucketing units (user, organization, company_id)
 - SUTVA (Stable Unit Treatment Value Assumption)
-- treatment variants
-- control groups
-- statistical significance
-- hypothesis creation
-- Experiment SDK
-- REST API integration
-- user allocation
-- progressive feature delivery
-- Accounts add-on bucketing
-- experiment briefs
-- variant configuration
+- Statistical significance analysis
+- Experiment SDK and REST API
+- Progressive feature delivery
+- Hypothesis-driven experimentation
+- User allocation and segmentation
+- Experiment archiving and restoration
+- Accounts add-on group bucketing
