@@ -35,11 +35,9 @@ You only need to connect your Slack organization to your experiment notification
 ## Experiment activities that generate alerts
 You can specify if you want to receive alerts for all, or some, of the following experiment activities:
 
-- My scheduled experiment is about to start
-- My experiment is ready for a decision
-- My experiment requires attention
-- My experiment has automated rollout or allocation changes
-- Someone adds me as an editor to their flag or experiment
+- Flags created, updated, or deleted
+- A specific flag status has been reached
+- Deployments created or deleted
 
 ## Setting up an alert
 
