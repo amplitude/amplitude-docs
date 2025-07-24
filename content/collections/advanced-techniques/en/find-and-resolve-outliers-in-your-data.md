@@ -66,8 +66,6 @@ Without the outlier, the p-value is basically 0; with the outlier, the p-value i
 
 Remember that this is the distribution of the population, and not the distribution of the sample mean. 
 
-
-
 {{partial:admonition type='note'}}
 Instead of using means, you can use percentiles such as the median, which are more resistant to outliers.
 {{/partial:admonition}}
