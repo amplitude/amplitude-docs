@@ -43,7 +43,7 @@ Recommended role for third parties, if you don't want them creating content that
 * Create and view [Heatmaps](/docs/session-replay/heatmaps)
 
 Viewers:
-* Can't create anything that's discoverable, including saved segments
+* Can't save discoverable content such as chart, dashboards, notebooks, cohorts, or saved segments
 * Can't create shareable links
 * Can't export data to third-party integration partners
 * Can't create a guide or survey
