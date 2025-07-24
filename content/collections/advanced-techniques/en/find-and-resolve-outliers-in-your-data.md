@@ -72,7 +72,7 @@ Instead of using means, you can use percentiles such as the median, which are mo
 
 ## Resolve outliers in your data
 
-Some options to address long-tailed distributions are winsorization, removing outliers, bootstrapping, and non-parametric tests. Winsorization and removing outliers reduce the skew, allowing a smaller sample size where the sample mean approximates a normal distribution (i.e. the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem)).
+Some options to address long-tailed distributions are winsorization, removing outliers, bootstrapping, and non-parametric tests. Winsorization and removing outliers reduce the skew, allowing a smaller sample size where the sample mean approximates a normal distribution (for example, the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem)).
 
 Often, the best approach to handling outliers depends on the type of metric you’re using. This section discusses some options for several common metric types.
 
