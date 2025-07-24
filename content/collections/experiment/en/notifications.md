@@ -46,4 +46,13 @@ If you want to send notificaitons through webhooks, you can specify your webhook
 2. Click **Alerts** in the top right.
 3. Specify the project that you want.
 4. Set the scope. You can select one of:
-    - **All In the Project**: Receive notifications forr all 
+    - **All In the Project**: Receive notifications for all experiments in the project.
+    - **By Deployment**: Receive notificaitons for all experiments in your entire deployment.
+    If you are receiving alerts by deployment, you must specify the deployment by ID number.
+    - **By Tag**: Receive notificaitons only for experiments that have been tagged with specific labels. 
+    For more information about tags, go to[ Web Experiment Implementation](/docs/web-experiment/implementation#tag-managers). 
+5. Choose how you want to receive your notifications:
+    - If you're using Slack, click the dropdown to choose the channel for your alerts.
+    - If you're using a Webhook, enter the URL and your signing key.
+6. Name your alert.
+7. Click **Create Alert**.
