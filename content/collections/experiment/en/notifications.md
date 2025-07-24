@@ -32,6 +32,15 @@ You only need to connect your Slack organization to your experiment notification
 3. Click **Connect To Slack**.
 4. Click **Allow** to confirm that you want to connect Amplitude to Slack.
 
+## Experiment activities that generate alerts
+You can specify if you want to receive alerts for all, or some, of the following experiment activities:
+
+- My scheduled experiment is about to start
+- My experiment is ready for a decision
+- My experiment requires attention
+- My experiment has automated rollout or allocation changes
+- Someone adds me as an editor to their flag or experiment
+
 ## Setting up an alert
 
 After you have connected your Slack organization to. Amplitude, you can create notifications for your experiments. 
@@ -49,7 +58,7 @@ If you want to send notificaitons through webhooks, you can specify your webhook
     - **All In the Project**: Receive notifications for all experiments in the project.
     - **By Deployment**: Receive notificaitons for all experiments in your entire deployment.
     If you are receiving alerts by deployment, you must specify the deployment by ID number.
-    - **By Tag**: Receive notificaitons only for experiments that have been tagged with specific labels. 
+    - **By Tag**: Receive notificaitons only for experiments tagged with specific labels. 
     For more information about tags, go to[ Web Experiment Implementation](/docs/web-experiment/implementation#tag-managers). 
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
