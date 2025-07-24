@@ -14,12 +14,12 @@ Throttling is a way to slow down the rate at which a guide or a survey appears f
 Throttling works identically for both Guides and Surveys. However, the throttling settings for guides and for surveys are separate. This gives you more overall flexibility in how your guides or surveys appear.
 
 {{partial:admonition type="tip" heading=""}}
-The throttling settings you set are applied globally to all of your guides or your surveys. You can further specify how and when your guides or surveys appear by modifying the Limits section for each guide or survey.
+Your throttling settings apply globally to all guides or surveys in the list. You can further specify how and when your guides or surveys appear by modifying the Limits section for each guide or survey.
 {{/partial:admonition}}
 
 ##### To set the throttling for Guides or Surveys
 
-1. Go to *Guides and Surveys > Guides* or *Guides and Surveys > Surveys.*
+1. Go to *Guides and Surveys > Guides* or go to *Guides and Surveys > Surveys.*
 2. Click the **settings** icon for the list of artifacts.
 3. Turn throttling **On**.
 4. Set the throttling. You can set:
