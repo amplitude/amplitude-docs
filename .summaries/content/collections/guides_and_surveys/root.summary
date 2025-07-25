@@ -32,38 +32,33 @@ The platform consists of three core components that work together to deliver per
 
 Guides and Surveys integrates deeply with the broader Amplitude ecosystem through multiple touchpoints:
 
-**Analytics Integration**: Events are automatically tracked in Amplitude Analytics with comprehensive event properties including Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed events. Integration with Microscope provides session replay capabilities for analyzing user interactions.
+**Analytics Integration** - Native integration with Amplitude analytics for comprehensive event tracking, including guide/survey interactions, completions, and user behavior patterns. Events include Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed.
 
-**Amplitude Experiment Integration**: Supports A/B testing and multi-armed bandit experiments on guides and surveys with variant configuration, exposure event handling, and performance analytics through the insights dashboard.
+**Amplitude Experiment** - Full A/B testing and multi-armed bandit experiment support for optimizing guide and survey performance, with variant configuration and exposure event handling.
 
-**Third-party Integrations**: Compatible with Segment analytics, Google Tag Manager, and other analytics providers through the `forwardEvent()` method for event tracking.
+**Microscope Integration** - Session replay functionality for analyzing user interactions with guides and surveys in real-time.
 
-**Multi-platform SDK Support**: Unified experience across web (`@amplitude/engagement-browser`), iOS (AmplitudeEngagement-Swift), Android (amplitude-engagement-android), and React Native (`@amplitude/plugin-engagement-react-native`) platforms.
+**Third-party Analytics** - Support for Segment analytics integration and Google Tag Manager for organizations using external analytics platforms.
 
-## API Endpoints and Technical Implementation
+## Technical Implementation
 
-**Core SDK Methods**:
-- `engagement.init()` and `engagement.boot()` for initialization
-- `engagement.gs.show()` and `engagement.gs.reset()` for guide management
-- `engagement.forwardEvent()` for event tracking
-- `engagement.setRouter()` for single-page application routing
-- `engagement.updateLanguage()` for localization
+**SDK Installation and Configuration:**
+- Web: `@amplitude/engagement-browser` package with `engagement.init()` and `engagement.boot()` methods
+- iOS: Swift Package Manager/CocoaPods installation with `AmplitudeEngagement` class
+- Android: Gradle dependencies with `AmplitudeEngagement` and API Level 24+ support
+- React Native: `@amplitude/plugin-engagement-react-native` with deep linking support
 
-**Mobile SDK Methods**:
-- `AmplitudeEngagement.initialize()` with API key configuration
-- `boot()` with user/device ID and properties
-- `show()`, `reset()`, `list()` for guide management
-- `handlePreviewLinkIntent()` for preview mode testing
+**Key API Methods:**
+- `engagement.gs.show()` - Display specific guides/surveys
+- `engagement.gs.reset()` - Clear user history
+- `engagement.forwardEvent()` - Track custom events for triggers
+- `engagement.setRouter()` - SPA routing integration
+- `engagement.updateLanguage()` - Localization support
+- `handlePreviewLinkIntent()` - Preview mode configuration
 
-**Resource Center API Patterns**:
-- `/sdk/*` path pattern for API routing through proxy configurations
-- `/sdk/admin/config` endpoint for preview mode functionality
-- Website scraper functionality for content repository synchronization
+**Proxy Configuration:**
+AWS CloudFront reverse proxy setup with two origins (cdn.amplitude.com for static assets, gs.amplitude.com for API requests) and specific cache behaviors for the `/sdk/*` path pattern.
 
-**Configuration Options**:
-- ServerZone selection (US/EU) for data residency
-- Proxy setup with `serverUrl` and `cdnUrl` for enterprise deployments
-- Content Security Policy (CSP) nonce support for security compliance
-- Theme management with `ThemeMode` (lightMode, darkMode, auto)
+The platform includes comprehensive targeting capabilities with user segmentation, rollout percentages, cohort filtering, page targeting rules using CSS selectors and XPath, priority levels (Urgent, High, Medium, Low), and display limits. Content personalization is achieved through client-side user property variables, theme customization, and localization support with AI-powered translation capabilities and XLIFF file upload workflows.
 
-The platform includes comprehensive permission management with five access levels (No access, Viewer, Member, Manager, Administrator), localization support through SDK locale configuration and XLIFF file workflows, and advanced targeting capabilities using segments, cohorts, page rules, and priority levels. Testing is facilitated through preview mode with condition verification, and the system supports template creation for reusable guide and survey configurations.
+Permission management operates on a five-tier system (No access, Viewer, Member, Manager, Administrator) that overrides base Amplitude user roles, providing granular control over viewing, editing, publishing, and experiment execution capabilities within the Guides and Surveys module.

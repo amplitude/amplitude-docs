@@ -1,69 +1,82 @@
-Amplitude Guides and Surveys is a comprehensive in-product user experience platform that enables product teams to create contextual user guidance, collect feedback, and improve onboarding through interactive guides, targeted surveys, and a centralized resource center. The platform integrates deeply with Amplitude's analytics ecosystem while supporting multi-platform deployment across web, iOS, Android, and React Native applications.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools for product analytics, feature experimentation, customer data management, and user engagement. The platform serves as an integrated ecosystem for understanding user behavior, optimizing product experiences, and driving growth through data-driven decision making.
 
 ## Product Architecture and Feature Relationships
 
-The platform consists of three interconnected core components:
+The Amplitude ecosystem consists of several interconnected products that work together to provide end-to-end analytics and optimization capabilities:
 
-**Guides** serve as the primary user onboarding and feature discovery mechanism, offering five distinct form factors: Modal (overlay dialogs), Popover (contextual bubbles), Pin (persistent elements), Tooltip (hover information), and Banner (top/bottom bars). Each form factor supports multi-step experiences with customizable positioning and interactive blocks including buttons, images, and videos. Guides utilize five template types (Tour, Announcement, Checklists, Banners, Tooltips) and incorporate sophisticated behavioral triggers, strike detection for interaction pattern analysis, and rate-limiting mechanisms to optimize user experience.
+**Amplitude Analytics** forms the core foundation, providing event tracking, user behavior analysis, and comprehensive reporting through various chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Lifecycle, Stickiness, Personas, Compass, Data Tables, Impact Analysis, Engagement Matrix, Revenue LTV, and Experiment Results. These charts enable deep behavioral analysis and business intelligence across the entire user journey.
 
-**Surveys** enable targeted feedback collection through four specialized block types: Rating (Stars, NPS, Emoji, Rating labels), Long answer, Short answer, and List blocks. Surveys support conditional logic for dynamic response paths and utilize a subset of guide form factors (modal, popover, pin). Analysis capabilities include aggregate metrics through the Insights tab and granular individual response data via the Responses tab.
+**Amplitude Experiment** delivers feature flagging and A/B testing capabilities with advanced techniques, experiment theory, workflow management, and troubleshooting tools. It integrates seamlessly with analytics for measuring experiment impact and includes specialized SDKs for implementation across platforms.
 
-**Resource Center** functions as an integrated help widget that works with the Guides and Surveys SDK to provide search functionality, recommended content, quick links, and call-to-action buttons. The Resource Center features Autopilot functionality that leverages semantic search to automatically generate content recommendations from documentation repositories.
+**Amplitude Session Replay** captures and analyzes user interactions in real-time, providing visual context to complement quantitative analytics data.
+
+**Amplitude Guides and Surveys** enables in-product user engagement through contextual guidance, feedback collection, and onboarding experiences.
+
+**Customer Data Platform (CDP)** manages data ingestion, transformation, and activation through source and destination catalogs, audience management, and warehouse-native capabilities.
 
 ## Key Nomenclature and Definitions
 
-**AmplitudeEngagement** - The core SDK class responsible for initializing and managing guides and surveys across all supported platforms
+**Collections** - Organizational structures that group related documentation content, each with specific routing patterns, templates, and navigation contexts
 
-**Form Factors** - Visual presentation styles that determine how content appears to users: Modal, Popover, Pin, Tooltip, Banner, and Checklist
+**Mount Points** - UUID-based identifiers that link collections to specific content hierarchies and enable content organization across the platform
 
-**Behavioral Triggers** - Event-based activation mechanisms including element appearance/clicks, time delays, smart delay, rage click detection, user confusion patterns, and custom event tracking
+**Navigation Titles (nav_title)** - Categorical identifiers that group collections under common navigation sections (analytics, experiment, data, apis, etc.)
 
-**Strike Detection** - Advanced system for tracking and analyzing user interaction patterns to optimize guide timing, relevance, and effectiveness
+**Blade** - Product-specific branding identifiers (e.g., "Amplitude Experiment", "Amplitude Session Replay") that provide context for feature attribution
 
-**Rate-limiting/Throttling** - Sophisticated controls for managing guide and survey frequency per user across different time periods (day/week/month/session) to prevent user fatigue
+**Route Patterns** - URL structures that define how content is organized and accessed, using slug-based hierarchies like `/analytics/charts/{chart-type}/{slug}`
 
-**Lifecycle UUID** - Unique identifier system for tracking user progression through complete guide and survey experiences
+**Preview Targets** - Configuration for content preview functionality with permalink generation and refresh capabilities
 
-**Variant ID** - Identifier used for A/B testing and experimentation within Amplitude Experiment integration
+**Date Behavior** - Content visibility rules that control when documentation becomes public (past) or remains private (future)
 
-**Recommendation Sets** - Curated collections of articles and content for the Resource Center, configurable with advanced targeting rules and priority levels
+**Sites and Propagation** - Multi-language support configuration, particularly for English ('en') and Japanese ('jp') content localization
 
-## Broader Product Ecosystem Integration
+**Taxonomies** - Classification systems for organizing content, particularly integration categories for source and destination catalogs
 
-Guides and Surveys integrates comprehensively with Amplitude's product ecosystem:
+**Structure Root** - Hierarchical organization indicator that determines parent-child relationships in content navigation
 
-**Analytics Integration**: Automatic event tracking in Amplitude Analytics with detailed event properties including Guide Engaged, Guide Step Completed, Survey Submitted, Survey Abandoned, and Tooltip Marker Viewed events. Integration with Microscope provides session replay capabilities for analyzing user interactions with guides and surveys.
+## Product Ecosystem Integration
 
-**Amplitude Experiment Integration**: Full support for A/B testing and multi-armed bandit experiments on guides and surveys, including variant configuration, exposure event handling, and performance analytics through the insights dashboard.
+The platform operates as a unified ecosystem where each component enhances the others:
 
-**Third-party Integrations**: Compatible with Segment analytics, Google Tag Manager, and other analytics providers through the `forwardEvent()` method for comprehensive event tracking across platforms.
+**Analytics SDKs** provide instrumentation across multiple platforms including Browser, Android, iOS, React Native, Flutter, Node.js, Python, Java, Go, Unity, and Unreal, with the Ampli wrapper providing type-safe analytics implementation.
 
-**Multi-platform SDK Support**: Unified experience across web (`@amplitude/engagement-browser`), iOS (AmplitudeEngagement-Swift), Android (amplitude-engagement-android), and React Native (`@amplitude/plugin-engagement-react-native`) platforms with consistent API patterns.
+**APIs** enable programmatic access to Analytics, Experiment, and Guides and Surveys functionality, supporting custom integrations and automated workflows.
 
-## API Endpoints and Technical Implementation
+**Data Management** encompasses source catalog integrations for data ingestion, destination catalog for data activation, audience management for user segmentation, and PII handling for privacy compliance.
 
-**Core SDK Methods**:
-- `engagement.init()` and `engagement.boot()` for platform initialization
-- `engagement.gs.show()` and `engagement.gs.reset()` for guide lifecycle management
-- `engagement.forwardEvent()` for cross-platform event tracking
-- `engagement.setRouter()` for single-page application routing integration
-- `engagement.updateLanguage()` for dynamic localization support
+**Administrative Functions** include account management, billing and usage monitoring, single sign-on integration, and comprehensive user permission management.
 
-**Mobile SDK Methods**:
-- `AmplitudeEngagement.initialize()` with API key configuration
-- `boot()` with user/device ID and properties for session initialization
-- `show()`, `reset()`, `list()` for comprehensive guide management
-- `handlePreviewLinkIntent()` for preview mode testing and validation
+**Partner Ecosystem** extends platform capabilities through third-party integrations and specialized use cases.
 
-**Resource Center API Patterns**:
-- `/sdk/*` path pattern for API routing through proxy configurations
-- `/sdk/admin/config` endpoint for preview mode functionality
-- Website scraper functionality for automated content repository synchronization
+## Technical Implementation
 
-**Configuration Options**:
-- ServerZone selection (US/EU) for data residency compliance
-- Proxy setup with `serverUrl` and `cdnUrl` for enterprise deployments
-- Content Security Policy (CSP) nonce support for security compliance
-- Theme management with `ThemeMode` (lightMode, darkMode, auto) for user preference alignment
+**SDK Routes and Endpoints:**
+- Analytics SDKs: `/sdks/analytics/{platform}/{slug}`
+- Experiment SDKs: `/sdks/experiment-sdks/{slug}`
+- Ampli wrapper: `/sdks/ampli/{slug}`
+- API documentation: `/apis/{product}/{slug}`
 
-The platform includes comprehensive permission management with five distinct access levels (No access, Viewer, Member, Manager, Administrator), extensive localization support through SDK locale configuration and XLIFF file workflows, and advanced targeting capabilities using segments, cohorts, page rules, and priority levels. Testing is facilitated through preview mode with condition verification, and the system supports template creation for reusable guide and survey configurations across organizations.
+**Chart-Specific Routes:**
+- Event Segmentation: `/analytics/charts/event-segmentation/{slug}`
+- Funnel Analysis: `/analytics/charts/funnel-analysis/{slug}`
+- Retention Analysis: `/analytics/charts/retention-analysis/{slug}`
+- User Sessions: `/analytics/charts/user-sessions/{slug}`
+- Journeys: `/analytics/charts/journeys/{slug}`
+- And specialized routes for each chart type
+
+**Data Management Endpoints:**
+- Source Catalog: `/data/source-catalog/{slug}`
+- Destination Catalog: `/data/destination-catalog/{slug}`
+- Audiences: `/data/audiences/{slug}`
+- Warehouse-native: `/data/warehouse-native/{slug}`
+
+**Administrative Routes:**
+- Account Management: `/admin/account-management/{slug}`
+- Billing: `/admin/billing-use/{slug}`
+- Single Sign-on: `/admin/single-sign-on/{slug}`
+
+The platform supports comprehensive content management with revision control disabled across most collections, indicating a focus on current documentation rather than historical versioning. Multi-site support enables localization, with specific collections designated for Japanese translation and content propagation controls.
+
+The documentation architecture reflects a mature, enterprise-grade platform with extensive SDK support, comprehensive API coverage, and sophisticated data management capabilities. The organizational structure facilitates both developer implementation and business user adoption through clear separation of technical documentation, user guides, administrative functions, and educational content.

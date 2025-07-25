@@ -14,7 +14,7 @@ The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
-* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.0.13+
+* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
 
 ## Install and initialize the SDK
 
