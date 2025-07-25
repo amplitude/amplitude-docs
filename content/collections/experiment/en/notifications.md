@@ -18,7 +18,7 @@ You can set up notifications (alerts) for your experiments. These notifications 
 This page discusses setting up and maintaining notification alerts through Slack channels and webhooks. For information on setting up email or Slack direct message alerts, go to [Account Settings Notifications](docs/admin/account-management/account-settings#notifications) or [Integrate Slack](/docs/analytics/integrate-slack) to know how to manage your Slack workspace integration. 
 
 {{partial:admonition type="note" heading=""}}
-You must have [Manager permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. Talk to your Admin if you need different permissions.
+You must have [Manager permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. However, you only need Viewer permissions to receive notifications. Talk to your Admin if you need different permissions.
 {{/partial:admonition}}
 
 Specify if you want to receive notifications for projects, deployments, or only for specific tags to a specific Slack channel or webhook.
