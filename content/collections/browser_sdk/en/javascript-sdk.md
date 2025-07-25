@@ -186,7 +186,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `secureCookie` | `boolean`. If `true`, the amplitude cookie will be set with the Secure flag. | `false` |
 | `sessionTimeout` | `number`. The time between logged events before a new session starts in milliseconds. | `30 minutes` |
 | `storage` | `string`. Storage for metadata. Options are `cookies`, `localStorage`, `sessionStorage`, or `none`. Sets storage strategy. Will override `disableCookies` option. | `Empty String` |
-| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. Please check [here](/docs/#disable-tracking-specific-fields) for more details. |
+| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. |
 | `transport` | `string`. `http` or `beacon`. Network transport mechanism used to send events. | `http` |
 | `unsetParamsReferrerOnNewSession` | `boolean`. If `false`, the existing `referrer` and `utm_parameter` values will be carried through each new session. If set to `true`, the `referrer` and `utm_parameter` user properties, which include `referrer`, `referring_domain`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, and `utm_content`, will be set to `null` upon instantiating a new session. Note: This only works if `includeReferrer` or `includeUtm` is set to `true`. | `false` |
 | `unsentKey` | `string`. localStorage key that stores unsent events. | `amplitude_unsent` |
@@ -837,7 +837,7 @@ There are two ways to address this issue:
 
 ### Dynamic configuration
 
-Beginning with version 8.9.0, you can configure your apps to use [dynamic configuration](../../dynamic-configuration/).
+Beginning with version 8.9.0, you can configure your apps to use dynamic configuration.
  This feature finds the best server URL automatically based on app users' location.
 
 To use, set `useDynamicConfig` to `true`.

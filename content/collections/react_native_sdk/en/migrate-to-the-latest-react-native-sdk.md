@@ -278,7 +278,7 @@ The maintenance React Native SDK supports setting an advertising ID as device ID
 
 ### COPPA 
 
-You can enable COPPA control by `enableCoppaControl()` in maintenance React Native SDK. The latest React Native SDK doesn't support that API but you can still enable COPPA using `config.trackingOptions` or an [Enrichment Plugin](../#enrichment-type-plugin) to remove identifying information from being tracked.
+You can enable COPPA control by `enableCoppaControl()` in maintenance React Native SDK. The latest React Native SDK doesn't support that API but you can still enable COPPA using `config.trackingOptions` or an [Enrichment Plugin](/docs/sdks/analytics/react-native/react-native-sdk#enrichment-type-plugin-example) to remove identifying information from being tracked.
 
 * Learn how to enable IDFA, IDFV, ADID, and AppSetId in the [Advertising Identifiers](/docs/sdks/analytics/react-native/react-native-sdk#advertising-identifiers) documentation.
 * You can turn off IP address tracking by setting `config.trackingOptions.ipAddress` to `false`
