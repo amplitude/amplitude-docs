@@ -88,9 +88,14 @@ Please see our Help Center article about [how to manage your Slack integration i
 
 ### Notifications
 
-In the Notifications area, you can to change your Slack and email notification settings for Amplitude's [collaboration features](/docs/analytics/charts/chart-basics). Here, you can enable or disable email notifications relating to you, your organization, or your spaces.
+In the Notifications area, you can to change your Slack direct message and email notification settings for Amplitude's [collaboration features](/docs/analytics/charts/chart-basics). Here, you can enable or disable notification alerts relating to you, your organization, or your spaces.
 
 ![new_notifications.png](/docs/output/img/account-management/new-notifications-png.png)
+
+{{partial:admonition type="tip" heading=""}}
+You can also set notification alerts for your experiments to be sent to either a dedicated Slack channel or to a unique webhook. Got to [Experiment Notifications](/docs/experiment/notifications) for more information.
+
+{{/partial:admonition}}
 
 ### Year in review
 

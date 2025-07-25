@@ -1,7 +1,7 @@
 ---
 id: e39f9287-bec8-4403-ba60-8b04da56b5f9
 blueprint: experiment
-title: Notifications
+title: Notifications through Slack Channel or Webhook
 this_article_will_help_you:
   - 'Understand the type of notifications you can set for experiments'
   - 'Create notification alerts for your experiments'
@@ -10,22 +10,24 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753390854
 ---
-You can set up notifications (alerts) for your experiments. These notifications can push alerts when your experiments transition status, when they start or end, or when major changes occur.
+You can set up notifications (alerts) for your experiments. These notifications can push alerts when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
 
-You specify if you want to receive notifications for projects, deployments, or only for specific tags.
+- Email / Slack direct messages
+- Slack channel notifications / webhooks
 
- You can receive notifications through: 
+This page discusses setting up and maintaining notification alerts through Slack channels and webhooks. For information on setting up email or Slack direct message alerts, go to [Account Settings Notifications](docs/admin/account-management/account-settings#notifications) or [Integrate Slack](/docs/analytics/integrate-slack) to know how to manage your Slack workspace integration. 
 
-- Slack
-- Webhook
+{{partial:admonition type="note" heading=""}}
+You must have [Manager permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. Talk to your Admin if you need different permissions.
+{{/partial:admonition}}
 
-For Slack, you must specify the Slack organization you want and then you can specify specific channels. Use different channels if you want to receive notifications for different projects or notificaitons by tag. 
+Specify if you want to receive notifications for projects, deployments, or only for specific tags to a specific Slack channel or webhook.
 
 When setting notifications through webhook, you must provide the URL and valid [signing key](https://docs.knock.app/developer-tools/outbound-webhooks/overview#verifying-the-signature).
 
-##### To connect a Slack organization to your experiment notifications
+##### To connect a Slack workspace to your experiment notifications
 
-You only need to connect your Slack organization to your experiment notifications once.
+You only need to connect your Slack workspace to your experiment notifications once.
 
 1. Go to *Experiment > Experiments*. 
 2. Click **Alerts** in the top right.
@@ -36,7 +38,7 @@ You only need to connect your Slack organization to your experiment notification
 You can specify if you want to receive alerts for all, or some, of the following experiment activities:
 
 - Flags created, updated, or deleted
-- A specific flag status has been reached
+- A specific flag status is achieved
 - Deployments created or deleted
 
 ## Setting up an alert
@@ -57,7 +59,6 @@ If you want to send notificaitons through webhooks, you can specify your webhook
     - **By Deployment**: Receive notificaitons for all experiments in your entire deployment.
     If you are receiving alerts by deployment, you must specify the deployment by ID number.
     - **By Tag**: Receive notificaitons only for experiments tagged with specific labels. 
-    For more information about tags, go to[ Web Experiment Implementation](/docs/web-experiment/implementation#tag-managers). 
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
     - If you're using a Webhook, enter the URL and your signing key.
