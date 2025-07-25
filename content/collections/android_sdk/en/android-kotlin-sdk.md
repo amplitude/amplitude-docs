@@ -57,7 +57,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 {{partial:collapse name="Configuration options"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
-| `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](./#device-id-lifecycle). | `null` |
+| `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](#device-id-lifecycle). | `null` |
 | `flushIntervalMillis` | `Int`. The amount of time SDK will attempt to upload the unsent events to the server or reach `flushQueueSize` threshold. The value is in milliseconds. | `30000` |
 | `flushQueueSize` | `Int`. SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `flushIntervalMillis` interval. | `30` |
 | `flushMaxRetries` | `Int`. Maximum retry times. | `5` |
@@ -79,14 +79,14 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
 | `enableCoppaControl` | `Boolean`. Whether to enable COPPA control for tracking options. | `false` |
 | `instanceName` | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. | `$default_instance` |
-| `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](../android) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
-| `offline` | `Boolean \| AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](./#offline-mode) | `false` |
+| `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](/docs/sdks/analytics/android/android-sdk) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
+| `offline` | `Boolean \| AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](#offline-mode) | `false` |
 | `storageProvider` | `StorageProvider`. Implements `StorageProvider` interface to store events. | `AndroidStorageProvider` |
 | `identifyInterceptStorageProvider` | `StorageProvider`. Implements `StorageProvider` interface for identify event interception and volume optimization. | `AndroidStorageProvider` |
 | `identityStorageProvider` | `IdentityStorageProvider`. Implements `IdentityStorageProvider` to store user id and device id. | `FileIdentityStorageProvider` |
 | `loggerProvider` | `LoggerProvider`. Implements `LoggerProvider` interface to emit log messages to desired destination. | `AndroidLoggerProvider` |
 | `newDeviceIdPerInstall` | Whether to generate different a device id every time when the app is installed regardless of devices. It's legacy configuration only to keep compatible with the old Android SDK. It works the same as `useAdvertisingIdForDeviceId`. | `false` |
-| `locationListening` | Whether to enable Android location service. Learn more [here](./#location-tracking). | `true` |
+| `locationListening` | Whether to enable Android location service. Learn more [here](#location-tracking). | `true` |
 
 {{/partial:collapse}}
 
@@ -996,7 +996,7 @@ Ensure that the configuration and payload are accurate and check for any unusual
 ### Log
 
 - Set the [log level](#log-level) to debug to collect useful information during debugging.
-- Customize `loggerProvider` class from the `LoggerProvider` and implement your own logic, such as logging error message in server in a production environment. For more information, see [Set log callback](#set-log-callback).
+- Customize `loggerProvider` class from the `LoggerProvider` and implement your own logic, such as logging error message in server in a production environment.
 
 
 ### Plugins
@@ -1024,7 +1024,7 @@ Due to the way in which Amplitude manages sessions, there are scenarios where th
 
 - If a user doesn't return to the app, Amplitude does not track a session end event to correspond with a session start event.
 - If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-- If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
+- If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/skipuserpropertiessync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 
@@ -1451,7 +1451,7 @@ String deviceId = amplitude.getDeviceId();
 {{/partial:tab}}
 {{/partial:tabs}}
 
-To set the device, see to [custom device ID](#custom-device-id).
+To set the device, see to [custom device ID](#custom-device-identifierentifier).
 
 ### Location tracking
 

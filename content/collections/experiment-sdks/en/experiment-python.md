@@ -231,7 +231,7 @@ pip install amplitude-experiment
 
 
 {{partial:admonition type="tip" heading="Quick start"}}
-1. [Initialize the local evaluation client.](#initialize_1)
+1. [Initialize the local evaluation client.](#initialize)
 2. [Start the local evaluation client.](#start)
 3. [Evaluate a user.](#evaluate)
 
@@ -262,7 +262,7 @@ variants = experiment.evaluate_v2(user)
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```python
@@ -275,7 +275,7 @@ Experiment.initialize_local(api_key, config = None) : LocalEvaluationClient
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
+Use the `flag_config_polling_interval_millis` [configuration](#configuration) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
 
 #### Configuration
@@ -319,7 +319,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Start
 
-Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration_1) interval.
+Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration) interval.
 
 ```python
 start()
@@ -336,7 +336,7 @@ experiment.start()
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
+Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}
 
 ```python

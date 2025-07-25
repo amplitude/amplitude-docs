@@ -1,20 +1,21 @@
-**Summary:**
-This documentation covers Amplitude Experiment's JVM SDK for server-side Java/Kotlin implementations, supporting both remote evaluation (fetching variants via API) and local evaluation (client-side flag evaluation with config polling/streaming and cohort sync capabilities).
+**Summary:** Documentation for Amplitude Experiment's JVM SDK supporting both Java and Kotlin server-side implementations with remote and local evaluation modes, including cohort targeting, flag streaming, automatic assignment tracking, and account-level bucketing features.
 
 **Keywords:**
 - Amplitude Experiment JVM SDK
 - Java Kotlin server-side
 - remote evaluation fetch variants
-- local evaluation flag configs
-- deployment key initialization
+- local evaluation client
+- deployment key configuration
 - ExperimentUser builder
-- RemoteEvaluationClient LocalEvaluationClient
-- flag config polling streaming
+- flag streaming updates
 - cohort sync targeting
 - assignment tracking
+- CompletableFuture fetch
+- LocalEvaluationClient RemoteEvaluationClient
+- experiment.evaluate() experiment.fetch()
 - ServerZone EU data center
-- Maven Gradle implementation
-- CompletableFuture async
-- start stop evaluate methods
 - CohortSyncConfig AssignmentConfiguration
-- group-level bucketing analysis
+- account-level bucketing groups
+- flag config polling
+- variant value access
+- Maven Gradle installation

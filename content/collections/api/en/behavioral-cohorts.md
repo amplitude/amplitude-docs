@@ -523,7 +523,7 @@ The response is a JSON object with this schema:
 
 | Parameter | Type                                             | Description    |
 | --------- | ------------------------------------------------ | -------------- |
-| error     | [error json](#update-cohort-error-response-json) | Error details. |
+| error     | [error json](#upload-cohort-error-response-json) | Error details. |
 
 #### Upload cohort error response JSON
 

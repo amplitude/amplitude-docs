@@ -1,26 +1,47 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mode), which provides event tracking, user identification, and analytics capabilities for web browsers, including installation via snippet/npm/yarn, initialization with API keys, event logging with properties, user property management through Identify objects, revenue tracking, and advanced features like cross-domain tracking, UTM parameter capture, and sendBeacon transport.
+This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mode), which provides event tracking, user identification, and analytics capabilities for web browsers, including installation via snippet/npm/yarn, initialization with API keys, event logging with properties, user property management through Identify objects, revenue tracking, and advanced features like cross-domain tracking, UTM parameter capture, and sendBeacon support.
 
 ## Keywords
 
-- amplitude-js npm package
-- JavaScript SDK maintenance mode
+- amplitude-js
+- JavaScript SDK
+- maintenance SDK
 - Browser SDK 2.0 migration
-- amplitude.getInstance() initialization
-- logEvent() method
-- Identify object user properties
-- Revenue tracking logRevenueV2()
-- Cross-domain tracking deviceId
-- UTM parameters includeUtm
+- amplitude.getInstance()
+- logEvent
+- Identify object
+- setUserId
+- deviceId
+- sessionId
+- Revenue tracking
+- logRevenueV2
+- UTM parameters
+- includeUtm
+- includeReferrer
+- includeGclid
+- includeFbclid
+- cross-domain tracking
 - sendBeacon transport
+- trackingOptions
+- batchEvents
+- eventUploadThreshold
+- serverZone EU
+- groupIdentify
+- setGroup
+- cookieForceUpgrade
+- disableCookies
 - amp_ cookie prefix
-- trackingOptions configuration
-- sessionTimeout 30 minutes
-- eventUploadThreshold batching
-- serverZone EU data residency
-- CORS policy issues
-- requireJS integration
+- RequireJS integration
 - Content Security Policy CSP
+- navigator.sendBeacon
+- onExitPage callback
 - deviceIdFromUrlParam
 - saveParamsReferrerOncePerSession
+- logEventWithGroups
+- setOptOut
+- regenerateDeviceId
+- Google Tag Manager GTM
+- first-touch attribution
+- last-touch attribution
+- multi-touch attribution

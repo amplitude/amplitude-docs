@@ -1,44 +1,26 @@
-**Summary:** This documentation covers the HTTP V2 API for sending event data directly from servers to Amplitude's analytics platform, including request/response formats, authentication via API key, rate limiting, event deduplication, and comprehensive field specifications for event tracking.
+## Summary
 
-**Keywords:**
+This documentation page describes the HTTP V2 API for sending event data directly from servers to Amplitude's HTTP V2 endpoint, which replaces the deprecated HTTP API. It covers request/response formats, event payload structure, upload limits, data validation rules, error handling, and includes comprehensive examples for different request types.
+
+## Keywords
+
 - HTTP V2 API
-- event ingestion
-- server-to-server tracking
-- api_key authentication
-- event deduplication
-- insert_id
-- device_id validation
-- user_id validation
-- rate limiting
-- throttling
-- batch upload
-- event_type
-- user_properties
-- event_properties
-- group_properties
-- revenue tracking
-- session_id
+- server-to-server event ingestion
+- event payload structure
+- user_id and device_id requirements
+- event_type and event_properties
+- user_properties and group_properties
+- insert_id deduplication
+- upload limits and throttling
 - min_id_length option
 - language field mapping
-- payload size limits
-- 413 payload too large
-- 429 too many requests
-- silenced devices
-- partner integrations
-- partner_id
-- IDFA handling
-- milliseconds since epoch
-- JSON request body
-- Content-Type application/json
-- api2.amplitude.com endpoint
-- api.eu.amplitude.com endpoint
-- event array
-- options parameter
-- events_ingested response
-- server_upload_time
-- eps_threshold
-- throttled_devices
-- throttled_users
-- WAF blocking
-- sanctioned regions
+- revenue tracking fields
+- session_id and event_id
+- API key authentication
+- request/response examples
+- error codes 400/403/413/429/500
+- events per second (EPS) limits
+- device silencing and throttling
+- JSON request body validation
+- partner integration support
 - tracking plan properties

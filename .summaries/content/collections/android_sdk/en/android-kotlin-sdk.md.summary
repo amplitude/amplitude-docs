@@ -1,25 +1,36 @@
-**Summary:**
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, tracking methods (track/identify/revenue), user/group management, plugins system, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with ACCESS_NETWORK_STATE permission.
+## Summary
 
-**Keywords:**
-- Android-Kotlin SDK
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features (sessions, app lifecycles, screen views, deep links, element interactions), tracking methods (track, identify, revenue), user/device ID management, plugins system, and advanced features like offline mode and network tracking plugin.
+
+## Keywords
+
+- android-kotlin-sdk
 - com.amplitude:analytics-android
-- Gradle Maven installation
-- flushIntervalMillis flushQueueSize
-- autocapture AutocaptureOption
-- sessions app lifecycles screen views deep links element interactions
-- track identify revenue BaseEvent
-- setUserId setDeviceId reset
-- plugins enrichment destination
-- COPPA control
-- advertising ID ADID useAdvertisingIdForDeviceId
-- app set ID useAppSetIdForDeviceId
-- play-services-ads-identifier play-services-appset
-- TrackingOptions locationListening
-- ACCESS_NETWORK_STATE offline mode
-- AndroidNetworkConnectivityCheckerPlugin
+- gradle-maven-installation
+- flushIntervalMillis
+- flushQueueSize
+- autocapture-options
+- AutocaptureOption.SESSIONS
+- AutocaptureOption.APP_LIFECYCLES
+- AutocaptureOption.SCREEN_VIEWS
+- AutocaptureOption.DEEP_LINKS
+- AutocaptureOption.ELEMENT_INTERACTIONS
+- track-identify-revenue
+- deviceId-userId-management
+- advertising-id-ADID
+- app-set-id
+- plugins-enrichment-destination
+- NetworkTrackingPlugin
+- OkHttp-interceptor
+- offline-mode
+- ACCESS_NETWORK_STATE
+- TrackingOptions
+- COPPA-control
+- session-tracking
 - minTimeBetweenSessionsMillis
-- serverZone EU data residency
-- OkHttp NetworkTrackingPlugin
-- Jetpack Compose element tracking
-- proguard configuration
+- jetpack-compose-support
+- element-interactions-tracking
+- configuration-options
+- serverZone-EU
+- batch-API
+- proguard-exceptions

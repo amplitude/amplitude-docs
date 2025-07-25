@@ -1,74 +1,62 @@
 ## Amplitude Python SDK
 
-The Amplitude Python SDK is a comprehensive analytics tracking solution for Python 3.6+ applications that enables developers to send events, user properties, and revenue data to Amplitude's analytics platform. The SDK consists of two main components: the core Python SDK (`amplitude-analytics`) and the Ampli wrapper, which provides strongly-typed event tracking through code generation.
+The Amplitude Python SDK is a comprehensive analytics solution for Python applications (3.6+) that enables event tracking and user analytics through Amplitude's platform. The SDK consists of two main components: the core Python SDK (`amplitude-analytics`) and the Ampli wrapper, which provides strongly-typed event tracking through code generation.
 
-### Core Components and Features
+## Product Relationship and Architecture
 
-**Python SDK (`amplitude-analytics`)**
-The foundational SDK provides event tracking capabilities through a flexible client that supports both individual event sending and batch operations. Key features include configurable flush behavior, retry mechanisms, plugin architecture, and comprehensive user and group management.
+The Python SDK ecosystem operates on two levels:
 
-**Ampli Wrapper**
-A code generation layer that creates strongly-typed event classes from Amplitude Data tracking plans, ensuring type safety and reducing implementation errors. The wrapper uses the `@amplitude/ampli` CLI tool for code generation and management.
+**Core SDK (`amplitude-analytics`)**: The foundational package that provides direct event tracking capabilities with flexible configuration options and a plugin-based architecture for extensibility.
 
-### Product Relationships and Architecture
+**Ampli Wrapper**: A higher-level abstraction that generates strongly-typed event classes from Amplitude Data tracking plans, providing compile-time safety and better developer experience while leveraging the core SDK underneath.
 
-The two components work in a layered architecture:
-- **Ampli Wrapper** sits on top of the core Python SDK, providing type safety and code generation
-- **Core Python SDK** handles the underlying event transmission, batching, and plugin management
-- Both components share common configuration options and event structures
-- The Ampli wrapper generates event classes that ultimately use the core SDK's `BaseEvent` structure
+The relationship follows a layered approach where Ampli acts as a type-safe interface generator that ultimately utilizes the core SDK's event transmission capabilities.
 
-### Key Nomenclature and Definitions
+## Key Nomenclature and Definitions
 
-**Event Management:**
-- `BaseEvent`: Core event structure containing event_type, user_id, device_id, and event_properties
-- `EventOptions`: Configuration for individual events including device_id overrides
-- `flush()`: Method to immediately send queued events to Amplitude
+**BaseEvent**: The fundamental event structure used for tracking user actions and behaviors in the core SDK.
 
-**User and Group Management:**
-- `Identify`: Operations for setting user properties (set, add, append, prepend, remove, unset)
-- `set_group()`: Associates users with specific groups using group_type and group_name
-- `group_identify()`: Sets properties on user groups
-- `user_id` and `device_id`: Primary user identification methods
+**Ampli**: The code generation wrapper that creates strongly-typed event classes from tracking plans defined in Amplitude Data.
 
-**Configuration:**
-- `LoadOptions`/`LoadClientOptions`: Initialization configuration for Ampli wrapper
-- `flush_queue_size`: Number of events to batch before auto-flushing
-- `flush_interval_millis`: Time interval for automatic queue flushing
-- `flush_max_retries`: Retry attempts for failed requests
-- `server_zone`: Geographic server selection (US/EU)
-- `use_batch`: Toggle between batch API and individual event endpoints
+**LoadOptions/LoadClientOptions**: Configuration objects used during Ampli initialization to specify SDK behavior and client settings.
 
-**Revenue Tracking:**
-- `Revenue`: Interface for tracking monetary transactions with product_id, quantity, price, and revenue_type
+**EventOptions**: Configuration parameters for individual events, including `device_id`, `user_id`, and other event-specific metadata.
 
-**Plugin System:**
-- `EventPlugin`: Base plugin interface for event processing
-- `DestinationPlugin`: Plugins that send events to external destinations
-- `PluginType.ENRICHMENT`: Plugins that modify events before transmission
+**Identify Operations**: User property management system supporting operations like `set()`, `add()`, `append()`, `pre_insert()`, and `post_insert()` for updating user attributes.
 
-### Ecosystem Integration
+**Revenue Interface**: Specialized tracking system for monetary transactions with fields like `product_id`, `revenue_type`, and revenue amounts.
 
-The Python SDK integrates into Amplitude's broader analytics ecosystem through:
-- **Amplitude Data**: Provides tracking plan management and code generation for the Ampli wrapper
-- **HTTP API Endpoints**: Events are sent to `httpapi` endpoints with support for both individual and batch transmission
-- **Storage Providers**: Pluggable storage system including `InMemoryStorageProvider` for event queuing
-- **Multi-language SDK Family**: Shares common patterns and concepts with other Amplitude SDKs
+**Plugin System**: Extensible architecture supporting `PluginType.ENRICHMENT` and `DestinationPlugin` for customizing event processing and routing.
 
-### CLI and API Operations
+**StorageProvider**: Abstraction layer for event persistence, with `InMemoryStorageProvider` as the default implementation.
 
-**Ampli CLI Commands:**
-- `ampli pull`: Downloads and generates typed event classes from tracking plans
-- `ampli status`: Verifies implementation status against tracking plan
+## Product Ecosystem Integration
 
-**Core SDK Methods:**
-- `track()`: Send events with optional EventOptions and callback functions
-- `identify()`: Set user properties using Identify operations
-- `group_identify()`: Manage group properties
-- `flush()`: Force immediate transmission of queued events
+The Python SDK integrates into Amplitude's broader analytics ecosystem through multiple touchpoints:
 
-**Installation:**
-- Core SDK: `pip install amplitude-analytics`
-- Ampli CLI: `npm install -g @amplitude/ampli`
+- **Amplitude Data**: Provides the source tracking plans that Ampli uses for code generation
+- **Amplitude Analytics Platform**: Receives events through both batch API and httpapi endpoints
+- **Multi-environment Support**: Handles different server zones and deployment configurations
+- **Cross-platform Consistency**: Maintains API parity with other Amplitude SDKs while respecting Python conventions
 
-The SDK supports both synchronous and asynchronous operations with comprehensive error handling, retry logic, and callback support for monitoring event transmission success.
+## API Endpoints and CLI Commands
+
+**CLI Commands (Ampli)**:
+- `ampli pull`: Downloads and generates strongly-typed event classes from tracking plans
+- `ampli status`: Verifies the current state and synchronization of generated code
+
+**Core SDK Methods**:
+- `track()`: Primary event tracking method accepting BaseEvent objects
+- `identify()`: Updates user properties using Identify operations
+- `group_identify()`: Manages group-level properties and associations
+- `set_group()`: Associates users with specific groups using `group_type` and `group_name`
+- `flush()`: Forces immediate transmission of queued events
+
+**Configuration Parameters**:
+- `flush_queue_size`: Controls batch size for event transmission
+- `flush_interval_millis`: Sets automatic flush timing intervals
+- `flush_max_retries`: Defines retry behavior for failed transmissions
+- `use_batch`: Toggles between batch API and individual event transmission
+- `server_zone`: Specifies geographic routing for data residency requirements
+
+The SDK supports both synchronous and asynchronous operations with callback functions for handling transmission results and error states, making it suitable for various Python application architectures from simple scripts to complex web applications.

@@ -1,25 +1,25 @@
 ## Summary
-This documentation covers the Marketing Analytics Browser SDK (@amplitude/marketing-analytics-browser), a maintenance-mode TypeScript SDK that extends the Browser SDK with marketing channel attribution tracking, UTM parameter capture, referrer tracking, click ID monitoring, and automated page view events for single-page applications.
+This documentation covers the Marketing Analytics Browser SDK (@amplitude/marketing-analytics-browser), a maintenance-mode SDK that extends the Browser SDK with marketing channel attribution tracking, UTM parameter capture, referrer tracking, click ID tracking, and page view analytics for single-page applications.
 
 ## Keywords
 - Marketing Analytics Browser SDK
 - @amplitude/marketing-analytics-browser
-- UTM parameter tracking
+- UTM parameters tracking
 - marketing attribution
 - first-touch attribution
 - multi-touch attribution
-- click ID parameters (gclid, fbclid, dclid, etc.)
+- click ID parameters (gclid, fbclid, dclid)
 - referrer tracking
 - page view tracking
 - trackHistoryChanges
-- attribution.resetSessionOnNewCampaign
-- campaign parameter tracking
-- maintenance SDK
-- Browser SDK extension
-- TypeScript SDK
-- single page application tracking
-- excludeReferrers configuration
+- resetSessionOnNewCampaign
 - attribution.disabled
-- pageViewTracking configuration
-- trackOn attribution
+- excludeReferrers
+- pageViewTracking.trackOn
+- campaign parameter tracking
+- single page application tracking
+- maintenance SDK
+- Browser SDK 2.0 migration
 - Ampli integration
+- CDN script loader
+- batch API configuration

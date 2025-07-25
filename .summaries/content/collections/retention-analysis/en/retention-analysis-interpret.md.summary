@@ -8,11 +8,11 @@
 - cohort entry date
 - retention view vs change over time
 - starting event and return event
-- user retention measurement methods
+- user cohort analysis
 - retention calculation methods
 - custom retention brackets
-- Amplitude Analytics retention
+- Microscope feature integration
+- 24-hour windows vs calendar dates
 - retention data table breakdown
 - weighted averages retention
-- user cohort analysis
-- retention percentage calculation
+- usage interval view

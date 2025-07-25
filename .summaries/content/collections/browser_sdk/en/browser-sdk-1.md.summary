@@ -1,31 +1,34 @@
 ## Summary
 
-This documentation covers Amplitude Browser SDK 1.x (maintenance mode), a TypeScript/JavaScript analytics SDK for tracking events to Amplitude using HTTP V2 API, featuring initialization, event tracking, user properties, revenue tracking, plugins, and default event tracking for page views, sessions, form interactions, and file downloads.
+This documentation covers the Browser SDK 1 (maintenance mode) for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API with features like default event tracking (page views, sessions, form interactions, file downloads), user properties management, revenue tracking, and plugin architecture for extensibility.
 
 ## Keywords
 
-- Browser SDK 1.x
+- Browser SDK 1
 - @amplitude/analytics-browser
 - HTTP V2 API
-- TypeScript JavaScript analytics
-- maintenance mode SDK
-- amplitude.init()
-- amplitude.track()
-- deviceId userId sessionId
-- cookie management AMP prefix
+- maintenance mode
+- JavaScript TypeScript
 - default event tracking
 - page views sessions form interactions file downloads
-- revenue tracking Revenue interface
-- user properties Identify interface
-- plugins enrichment destination
-- web attribution plugin
-- sendBeacon transport
-- cross-domain tracking
+- deviceId userId minIdLength
 - flushQueueSize flushIntervalMillis
-- trackingOptions configuration
-- serverZone EU US
-- minIdLength validation
-- cookie storage localStorage
-- session timeout management
+- sendBeacon transport
+- Identify operations set setOnce add append prepend
+- Revenue interface productId price quantity
+- plugin architecture enrichment destination
+- web attribution plugin
+- cookie management AMP prefix
+- cross-domain tracking
 - CSP content security policy
-- CORS cross-origin requests
+- trackingOptions optional tracking
+- user groups setGroup
+- session tracking sessionTimeout
+- batch API useBatch
+- EU data residency serverZone
+- logLevel debugging
+- opt-out setOptOut
+- reset anonymize users
+- custom HTTP client transportProvider
+- callback Promise interface
+- multiple instances createInstance

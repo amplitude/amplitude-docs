@@ -1,16 +1,17 @@
-**Summary:** This documentation provides a comprehensive reference for configuring data converters for Amazon S3 Import and Google Cloud Storage (GCS) imports, covering the `convertToAmplitudeFunc` configuration structure, list operators (path, any, value, dict, array, condition, ifelse), boolean operators, time conversion functions, and JSON manipulation operators used to transform source data into Amplitude events.
+**Summary:** This documentation provides a comprehensive reference for converter configuration used in Amazon S3 Import and Google Cloud Storage (GCS) data ingestion, covering the convertToAmplitudeFunc transformation rules, skip_user_properties_sync parameter, and extensive list/boolean/integer/JSON operators for data transformation during cloud storage imports.
 
 **Keywords:**
 - convertToAmplitudeFunc
+- skip_user_properties_sync
 - Amazon S3 Import converter
 - GCS converter configuration
-- $skip_user_properties_sync
+- parquet file ingestion
 - list operators (path, any, value, dict, array, condition, ifelse)
-- boolean operators (and, or, not, equals, contains)
+- boolean operators (bool, not, and, or, equals, contains)
 - time conversion operators (iso_time_to_ms, int96_time_to_ms, parse_time_to_ms)
-- JSON operators (parse_json_element, merge_dicts, flatten_dict)
+- JSON transformation operators (parse_json_element, merge_dicts, flatten_dict)
 - string operators (concat, replace_with, split, lowercase)
-- parquet file processing
 - keyValidatorConfig filterPattern
 - user property operations
-- event transformation rules
+- batch historical data import
+- cloud storage source transformation

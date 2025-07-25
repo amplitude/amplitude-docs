@@ -1,18 +1,19 @@
 **Summary:**
-This documentation covers the Amplitude Analytics Flutter SDK v4, which enables event tracking from Flutter applications to Amplitude using HTTP V2 API, including installation, configuration, event tracking, user identification, revenue tracking, and platform-specific setup for iOS, macOS, Android, and web.
+This documentation covers the Amplitude Analytics Flutter SDK version 4, which enables event tracking from Flutter applications to Amplitude using HTTP V2 API, including installation requirements (Kotlin 1.9.22, Gradle 8.2), platform-specific setup for iOS/macOS/Web, configuration options, and tracking methods for events, user identification, revenue, and default events like sessions and app lifecycles.
 
 **Keywords:**
 - amplitude_flutter
 - Flutter SDK v4
+- Kotlin 1.9.22
+- Gradle 8.2
 - HTTP V2 API
 - BaseEvent tracking
 - Identify operations
 - Revenue tracking
 - DefaultTrackingOptions
-- session tracking
-- app lifecycle events
-- deep link tracking
-- user groups
+- sessions tracking
+- app lifecycles
+- deep links tracking
 - groupIdentify
 - setUserId
 - setDeviceId
@@ -21,13 +22,8 @@ This documentation covers the Amplitude Analytics Flutter SDK v4, which enables 
 - flushIntervalMillis
 - ServerZone.eu
 - useBatch
-- trackingOptions
-- Kotlin 1.9.22
-- Gradle 8.2
-- Browser SDK 2 interoperability
-- CocoaPods dependencies
+- Browser SDK 2 integration
+- CocoaPods installation
 - pubspec.yaml
-- amplitude.track()
-- amplitude.identify()
-- amplitude.revenue()
-- amplitude.reset()
+- deviceId validation
+- userId validation

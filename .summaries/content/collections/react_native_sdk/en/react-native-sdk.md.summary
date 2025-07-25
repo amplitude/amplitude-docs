@@ -1,44 +1,35 @@
 ## Summary
 
-This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with required @react-native-async-storage/async-storage dependency, initialization with API keys, configuration options (batching, EU data residency, logging), event tracking, user properties management via Identify operations, group properties, revenue tracking, and advanced features like plugins, custom HTTP clients, and advertising identifiers (ADID, IDFV, IDFA, AppSetId).
+This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with required @react-native-async-storage/async-storage dependency, initialization with API keys, configuration options (batching, EU data residency, logging), event tracking, user properties management via Identify operations, group properties, revenue tracking, session/user/device ID management, opt-out functionality, optional tracking settings, plugin system for enrichment and destination types, and advanced topics like custom HTTP clients, location tracking, advertising identifiers (ADID, AppSetId, IDFV, IDFA), and OTA update considerations.
 
 ## Keywords
 
 - @amplitude/analytics-react-native
-- React Native SDK
 - @react-native-async-storage/async-storage
-- npm install
-- yarn add
+- React Native SDK
+- TypeScript analytics
+- npm package installation
 - expo install
-- pod install
-- init() function
-- track() events
-- Identify operations
-- setUserId
-- setDeviceId
-- flushQueueSize
+- pod install iOS
+- init() API key initialization
+- flushQueueSize batching
 - flushIntervalMillis
-- serverZone EU
-- useBatch
-- trackingOptions
-- Revenue interface
-- groupIdentify
-- setGroup
-- EnrichmentPlugin
-- DestinationPlugin
-- transportProvider
-- logLevel
-- sessionTimeout
-- migrateLegacyData
-- ADID tracking
-- IDFV tracking
-- IDFA tracking
-- AppSetId tracking
-- play-services-appset
-- play-services-ads-identifier
+- serverZone EU data residency
+- track() event logging
+- Identify user properties
+- setOnce, add, prepend, append operations
+- setGroup() user groups
+- groupIdentify() group properties
+- Revenue interface tracking
+- setUserId, setDeviceId, setSessionId
+- reset() user logout
+- setOptOut() tracking disable
+- trackingOptions configuration
+- EnrichmentPlugin, DestinationPlugin
+- Transport interface
+- ADID, AppSetId, IDFV, IDFA advertising identifiers
+- play-services-appset dependency
 - HTTP V2 API
-- TypeScript support
-- compatibility matrix
-- Gradle compatibility
-- OTA updates
-- Expo support
+- compatibility matrix React Native versions
+- Gradle Android configuration
+- OTA over-the-air updates

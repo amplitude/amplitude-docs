@@ -12,23 +12,20 @@ This documentation covers the Google Tag Manager (GTM) template for Amplitude An
 - form interaction tracking
 - file downloads tracking
 - marketing attribution tracking
-- event streaming
-- raw events integration
 - user properties identification
 - group properties management
 - revenue tracking
 - device ID management
 - session ID management
-- cross-domain tracking
 - EU data residency
+- cross-domain tracking
 - breaking changes checklist
-- legacy page view properties
+- legacy Marketing Analytics SDK migration
+- user agent parser changes
 - subdomain attribution tracking
-- user agent parser
-- instance name configuration
-- tag sequencing
-- plugin integration
-- flush events
+- GTM variable configuration
+- event streaming integration
+- flush events buffer
 - opt-out tracking
-- cookie management
-- deferred initialization
+- custom plugins
+- instance name configuration

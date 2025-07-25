@@ -10,13 +10,13 @@
 - setUserProperties to identify()
 - clearUserProperties removal
 - logRevenue() to revenue()
-- Configuration object migration
-- migrateLegacyData
+- Configuration object initialization
+- migrateLegacyData flag
 - HTTP V2 API endpoint
 - minIdLength configuration
 - trackingSessionEvents
 - COPPA control migration
-- Device ID lifecycle
-- Advertising ID tracking
-- Plugin architecture
+- device ID generation
+- advertising ID tracking
+- plugin architecture
 - v1.3.4 data migration

@@ -8,14 +8,16 @@ This documentation covers the Behavioral Cohorts API (v3/v5) which provides endp
 - cohort download asynchronous workflow
 - cohort upload BY_AMP_ID BY_USER_ID
 - cohort membership incremental updates
-- request_id polling status
+- request_id polling mechanism
 - Amazon S3 pre-signed URLs
 - cohort sync metadata
-- Growth Enterprise plan rate limits
-- 2 million user cohort size limit
-- cohort_id discoverable cohorts
+- API rate limits 500 requests per month
+- concurrency limit 5 requests
+- maximum cohort size 2 million users
+- HTTP basic authentication
+- /api/3/cohorts and /api/5/cohorts endpoints
+- cohort_id and app_id parameters
 - user properties propKeys inclusion
 - ADD REMOVE membership operations
 - skip_invalid_ids parameter
-- existing_cohort_id replacement
-- count_group User ID types
+- Growth Enterprise plan restrictions
