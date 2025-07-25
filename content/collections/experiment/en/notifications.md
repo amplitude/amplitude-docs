@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753390854
 ---
-You can set up notifications (alerts) for your experiments. These notifications can push alerts when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
+You can set up notification alerts for your experiments. Amplitude sends these notifications when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
 
 - Email / Slack direct messages
 - Slack channel notifications / webhooks
