@@ -19,7 +19,7 @@ Your throttling settings apply globally to all guides or surveys in the list. Yo
 
 ##### To set the throttling for Guides or Surveys
 
-1. Go to *Guides and Surveys > Guides* or go to *Guides and Surveys > Surveys.*
+1. Go to *Guides and Surveys* and then select either *Guides* or *Surveys*.
 2. Click the **settings** icon for the list of artifacts.
 3. Turn throttling **On**.
 4. Set the throttling. You can set:
