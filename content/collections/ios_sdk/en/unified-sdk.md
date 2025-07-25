@@ -137,7 +137,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Experiment Configuration
 
-The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](../experiment-sdks/experiment-ios).
+The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](/docs/sdks/experiment-sdks/experiment-ios).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
