@@ -83,7 +83,7 @@ The synchronous script above provides the best experience for your users. If you
         sc.onerror = function () {st.remove()};
         h.insertBefore(sc, d.currentScript || h.lastChild);
       }
-    } catch {console.error(e)}
+    } catch(e) {console.error(e)}
   })(document, document.head);
 </script>
 ```
@@ -114,7 +114,7 @@ The synchronous script above provides the best experience for your users. If you
         sc.onerror = function () {st.remove()};
         h.insertBefore(sc, d.currentScript || h.lastChild);
       }
-    } catch {console.error(e)}
+    } catch(e) {console.error(e)}
   })(document, document.head);
 </script>
 ```
