@@ -396,7 +396,7 @@ After you configure the router with `setRouter()`, update the URL behavior setti
 Set the `locale` option during initialization to localize a guide or survey.
 
 * If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
-* If you use a  [third-party analytics provider](#third-party-analytics-provider), set it in `options` within the `engagement.init()` method.
+* If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
 
 To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
 
