@@ -1,84 +1,93 @@
 ## Amplitude Android SDK Product Suite
 
-The Amplitude Android SDK ecosystem consists of multiple SDKs and tools designed for comprehensive analytics tracking in Android applications. The product suite includes both legacy and modern implementations, with a focus on transitioning users to the latest Kotlin-based architecture.
+The Amplitude Android SDK ecosystem consists of multiple SDKs and tools designed for comprehensive analytics tracking in Android applications. The suite includes both legacy and modern implementations, with a focus on transitioning to Kotlin-based solutions while maintaining backward compatibility.
 
 ## Product Relationships and Architecture
 
 The Android SDK ecosystem is structured around three main components:
 
 **Core SDKs:**
-- **Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The latest, actively maintained SDK with modern architecture
-- **Android SDK** (`com.amplitude:android-sdk`) - Legacy SDK in maintenance mode, supporting existing implementations
-- **Ampli Wrapper** - Code generation tool that creates strongly-typed APIs on top of the core SDKs
+- **Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The modern, actively developed SDK serving as the primary analytics solution
+- **Android SDK** (`com.amplitude:android-sdk`) - The legacy Java-based SDK currently in maintenance mode
+- **Ampli Wrapper** - A code generation layer that creates strongly typed APIs on top of the core SDKs
 
 **Migration Path:**
-The ecosystem follows a clear upgrade path from the legacy Android SDK to the modern Android-Kotlin SDK, with dedicated migration tooling and documentation to facilitate the transition.
+The ecosystem follows a clear upgrade path from the legacy Android SDK to the modern Android-Kotlin SDK, with built-in migration utilities and compatibility layers to ensure smooth transitions.
 
 ## Key Nomenclature and Definitions
 
 **Core Tracking Methods:**
-- `track()` - Primary event tracking method in the modern SDK
-- `logEvent()` - Legacy event tracking method (maintenance SDK)
+- `track()` - Primary event tracking method in the modern SDK (replaces legacy `logEvent()`)
 - `identify()` - User property management and identification
 - `groupIdentify()` - Group-level property management
-- `setGroup()` - Group association for users
-- `flush()` - Force immediate event transmission
+- `setGroup()` - User-to-group association
+- `logRevenueV2()` - Revenue tracking with Google Play Store verification
 
-**Configuration Concepts:**
-- **flushIntervalMillis** - Time interval for automatic event batching
-- **flushQueueSize** - Number of events to batch before transmission
-- **sessionTimeoutMillis** - Session expiration timeout
-- **minTimeBetweenSessionsMillis** - Minimum time between session starts
-- **migrateLegacyData** - Configuration for data migration during SDK upgrade
+**Configuration Parameters:**
+- `flushIntervalMillis` - Time interval for batching events before sending
+- `flushQueueSize` - Number of events to batch before automatic flushing
+- `sessionTimeoutMillis` - Duration before session expiration
+- `minTimeBetweenSessionsMillis` - Minimum gap between sessions
+- `migrateLegacyData` - Configuration flag for data migration from legacy SDK
 
-**Autocapture Features:**
-- **AutocaptureOption** - Configuration for automatic event collection
-- Session tracking, app lifecycle events, screen views, deep links, and element interactions
+**Autocapture Options:**
+- `AutocaptureOption.SESSIONS` - Automatic session tracking
+- `AutocaptureOption.APP_LIFECYCLES` - Application state change tracking
+- `AutocaptureOption.SCREEN_VIEWS` - Screen navigation tracking
+- `AutocaptureOption.DEEP_LINKS` - Deep link interaction tracking
+- `AutocaptureOption.ELEMENT_INTERACTIONS` - UI element interaction tracking
 
-**Advanced Features:**
-- **TrackingOptions** - Granular control over data collection
-- **COPPA control** - Compliance features for children's privacy
-- **EU data residency** - Regional data storage via `serverZone`
-- **Advertising ID (ADID)** and **App Set ID** - Device identification methods
+**Identity Management:**
+- `deviceId` - Device-specific identifier
+- `userId` - User-specific identifier
+- `ADID` - Advertising ID for attribution
+- `App Set ID` - Google Play Services identifier
 
-## Product Ecosystem Integration
+## Broader Product Ecosystem Integration
+
+The Android SDK suite integrates with several Amplitude ecosystem components:
 
 **Amplitude Data Integration:**
-The Ampli Wrapper integrates with Amplitude Data's tracking plan system, generating code that enforces event schemas and provides autocompletion. This creates a workflow where:
-1. Tracking plans are defined in Amplitude Data
-2. `ampli pull` command generates strongly-typed code
-3. `ampli status` command validates implementation compliance
+- **Tracking Plans** - Schema definition and enforcement through Ampli
+- **Data Validation** - Real-time schema validation and type safety
+- **Code Generation** - Automated SDK wrapper generation via `ampli CLI`
 
-**Plugin Architecture:**
-The modern Android-Kotlin SDK implements a plugin system supporting:
-- **Enrichment plugins** - Data enhancement before transmission
-- **Destination plugins** - Custom event routing and processing
-- **NetworkTrackingPlugin** - Network request monitoring
-- **AndroidNetworkConnectivityCheckerPlugin** - Offline mode management
+**Infrastructure Integration:**
+- **EU Data Residency** - `setServerZone` configuration for GDPR compliance
+- **Batch API** - HTTP v2 API for efficient data transmission
+- **Plugin Architecture** - Extensible system for enrichment and destination plugins
 
-**Third-party Integrations:**
-- **Google Play Services** integration for advertising ID and app set ID
-- **OkHttp** dependency for network operations
-- **Jetpack Compose** support for UI element tracking
-- **ProGuard** configuration for code obfuscation compatibility
+**Development Tools:**
+- **Ampli CLI Commands:**
+  - `ampli pull` - Downloads latest tracking plan and generates code
+  - `ampli status` - Validates implementation against tracking plan
+- **Network Tracking Plugin** - OkHttp interceptor for network request monitoring
+- **ProGuard Support** - Code obfuscation compatibility
 
-## API Endpoints and CLI Commands
+## API Endpoints and Technical Implementation
 
-**Ampli CLI Commands:**
-- `ampli pull` - Downloads and generates tracking code from Amplitude Data
-- `ampli status` - Validates tracking implementation against schema
-
-**Key SDK Methods:**
-- `Amplitude.getInstance().track(eventType, eventProperties)`
-- `Amplitude.getInstance().identify(identifyObject)`
-- `Amplitude.getInstance().setUserId(userId)`
-- `Amplitude.getInstance().setDeviceId(deviceId)`
-- `Amplitude.getInstance().logRevenueV2(revenue)` (legacy SDK)
+**Package Dependencies:**
+- Modern SDK: `com.amplitude:analytics-android` (Gradle/Maven)
+- Legacy SDK: `com.amplitude:android-sdk` (Maven Central)
+- OkHTTP dependency required for network operations
 
 **Configuration Classes:**
-- `LoadOptions` and `LoadClientOptions` - Ampli initialization configuration
-- `EventOptions` - Per-event configuration options
-- `BaseEvent` - Event structure for the modern SDK
-- `MiddlewarePayload` - Legacy SDK middleware system
+- `LoadOptions` / `LoadClientOptions` - Ampli initialization configuration
+- `EventOptions` - Per-event configuration and metadata
+- `TrackingOptions` - Privacy and compliance controls
+- `DestinationPlugin` - Custom data routing configuration
 
-The ecosystem supports both Maven and Gradle dependency management, with specific package identifiers for each SDK variant and comprehensive documentation for ProGuard configuration and Android manifest permissions.
+**Privacy and Compliance:**
+- `enableCoppaControl()` - COPPA compliance enforcement
+- `TrackingOptions` - Granular tracking disable controls
+- Location tracking via `enableLocationListening()`
+- SSL pinning through `PinnedAmplitudeClient`
+
+**Advanced Features:**
+- **Offline Mode** - `setOffline()` for network-disconnected operation
+- **Middleware Support** - `MiddlewarePayload` for data transformation
+- **Dynamic Configuration** - `setUseDynamicConfig()` for remote configuration
+- **Jetpack Compose Support** - Native integration with modern Android UI framework
+- **Revenue Verification** - Google Play Store receipt validation
+
+The ecosystem emphasizes type safety, developer experience, and comprehensive analytics coverage while maintaining flexibility for custom implementations and compliance requirements.

@@ -1,28 +1,32 @@
 **Summary:**
-This documentation covers Amplitude Analytics Flutter SDK 3 (maintenance mode), which is a cross-platform wrapper around native Android, iOS, and JavaScript SDKs, supporting event tracking, user properties, revenue tracking, and user groups with Dart-specific configuration options and Flutter web support.
+This documentation covers the Amplitude Analytics Flutter SDK 3 (maintenance mode), which is a wrapper around native Android, iOS, and JavaScript SDKs, supporting event tracking, user properties, revenue tracking, and user groups with Dart language integration and cross-platform compatibility including Flutter web support.
 
 **Keywords:**
 - amplitude_flutter
 - Flutter SDK 3
 - maintenance mode
-- Dart programming language
+- Dart language
 - cross-platform analytics
 - amplitude_flutter package
 - pub.dev
 - Android iOS JavaScript wrapper
-- event tracking logEvent
-- user properties Identify
-- revenue tracking logRevenue
-- user groups setGroup groupIdentify
-- COPPA control
-- device ID management
+- event tracking
+- user properties
+- Identify class
+- revenue tracking
+- user groups
 - session tracking
-- Flutter web support
+- COPPA control
+- advertising ID
+- device ID
+- user ID
 - dynamic configuration
 - EU data residency
-- batch event upload
-- advertising ID IDFA
-- opt-out tracking
-- Kotlin Gradle compatibility
+- server zone
+- Flutter web support
+- Gradle compatibility
+- Kotlin version
 - dart:js_interop
-- amplitude-8.12.0-min.gz.js
+- batch event upload
+- opt out tracking
+- migration guide Flutter 4.0

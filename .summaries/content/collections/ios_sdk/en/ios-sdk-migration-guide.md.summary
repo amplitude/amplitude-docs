@@ -1,18 +1,25 @@
-**Summary:** This documentation covers migrating from the maintenance iOS SDK (Amplitude-iOS) to the new iOS Swift SDK (Amplitude-Swift), detailing dependency updates, API changes from instance-based to configuration-object initialization, event tracking method migrations from logEvent to track(), user property management through identify() API, and data migration from SQLite to PersistentStorage with plugin architecture replacing middleware.
+**Summary:** This documentation provides a comprehensive migration guide for upgrading from the maintenance iOS SDK (Amplitude-iOS) to the new iOS Swift SDK (Amplitude-Swift), covering dependency updates, API changes, configuration differences, and data migration procedures. The guide includes detailed code examples for both Swift and Objective-C implementations, highlighting key differences like the removal of instance() calls, new Configuration object usage, plugin architecture replacing middleware, and HTTP v2 API endpoint changes.
 
 **Keywords:**
-- Amplitude-iOS maintenance SDK migration
-- Amplitude-Swift plugin architecture
+- iOS SDK migration
+- Amplitude-iOS to Amplitude-Swift
+- AmplitudeSwift package
 - Configuration object initialization
-- instance() method removal
-- logEvent to track() API migration
-- HTTP v1 to v2 API endpoint
-- SQLite to PersistentStorage migration
+- instance() removal
+- plugin architecture
+- HTTP v2 API endpoint
+- PersistentStorage vs SQLite
 - ConsoleLogger vs AMPLITUDE_LOG
-- identify() API user properties
+- logEvent to track API
+- identify API changes
+- groupIdentify migration
+- revenue tracking changes
+- IDFA collection plugin
 - migrateLegacyData configuration
-- IDFA/IDFV plugin implementation
-- BaseEvent tracking
-- flushQueueSize configuration
 - minIdLength identifier validation
-- CocoaPods Swift Package Manager Carthage
+- flush vs uploadEvents
+- callback functions
+- Swift Package Manager
+- CocoaPods migration
+- Carthage dependency
+- data migration procedures

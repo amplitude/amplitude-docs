@@ -1,78 +1,86 @@
 # Amplitude iOS SDK Product Suite
 
-The Amplitude iOS SDK ecosystem is a comprehensive analytics, experimentation, and user behavior tracking platform designed specifically for iOS development. The suite encompasses multiple interconnected SDKs that have evolved from a legacy Objective-C foundation to a modern Swift-first architecture, culminating in a unified SDK that combines analytics, experimentation, and session replay capabilities.
+The Amplitude iOS SDK product suite delivers comprehensive analytics, experimentation, and session replay capabilities for iOS applications through multiple SDK offerings. The suite encompasses a maintenance iOS SDK (Amplitude-iOS), a modern iOS Swift SDK (Amplitude-Swift), a unified SDK wrapper, and the Ampli code generation tool for type-safe event tracking.
 
 ## Product Relationships and Architecture
 
-The iOS SDK ecosystem follows a clear evolutionary architecture with three primary SDK generations:
+The iOS SDK ecosystem consists of four interconnected components operating in a hierarchical migration and integration model:
 
-**Legacy Foundation (Amplitude-iOS)**
-The maintenance-mode Amplitude-iOS SDK serves as the foundational layer, built on Objective-C/Swift with instance-based initialization patterns and SQLite storage systems. This SDK established the core analytics functionality and API patterns that subsequent generations have refined.
+**Core SDKs:**
+- **Maintenance iOS SDK (Amplitude-iOS)**: Legacy SDK in maintenance mode supporting both Swift and Objective-C with traditional initialization patterns
+- **iOS Swift SDK (Amplitude-Swift)**: Modern replacement featuring enhanced plugin architecture, improved performance, and configuration-based initialization
+- **Unified SDK (AmplitudeUnified)**: Beta wrapper integrating Analytics, Experiment, and Session Replay SDKs with unified identity management and cross-product synchronization
 
-**Modern Core (Amplitude-Swift)**
-Amplitude-Swift represents the modern Swift-first evolution, introducing a plugin architecture that replaces the legacy middleware system. It features configuration-object initialization patterns, PersistentStorage systems replacing SQLite, and BaseEvent objects that modernize the event tracking paradigm beyond the legacy `logEvent()` method.
+**Development Tools:**
+- **Ampli Wrapper**: Code generation tool creating strongly-typed event tracking methods from Amplitude tracking plans, compatible with all core SDKs
 
-**Unified Platform (Amplitude Unified SDK)**
-The beta Unified SDK serves as a comprehensive wrapper that integrates Analytics, Experiment, and Session Replay SDKs under a single initialization and identity management system. This represents the convergence of Amplitude's entire iOS product suite into a cohesive development experience.
-
-**Development Toolchain (Ampli)**
-The Ampli code generation tool creates strongly-typed event tracking methods from Amplitude tracking plans, providing compile-time safety and consistency across both legacy and modern SDK implementations.
+The architectural progression flows from maintenance SDK → Swift SDK → unified SDK, with Ampli serving as an overlay tool for type-safe implementation across any SDK choice. The unified SDK represents the convergence point for organizations requiring multiple Amplitude products with synchronized user identity and session management.
 
 ## Key Nomenclature and Definitions
 
-**Core Architecture Components**
-- **BaseEvent**: Modern event tracking objects in Amplitude-Swift that replace legacy `logEvent()` method calls
-- **Configuration**: Object-based initialization system that replaces instance-based SDK setup patterns
-- **Plugin Architecture**: Extensible system supporting enrichment and destination plugins, superseding the legacy middleware approach
-- **PersistentStorage**: Modern storage abstraction replacing direct SQLite implementation
-- **AutocaptureOptions**: Automated tracking configuration covering sessions, app lifecycles, screen views, and element interactions
+**Core Analytics Concepts:**
+- **Event Tracking**: Primary analytics function using `track()` (Swift SDK) or `logEvent()` (maintenance SDK) for behavioral data capture
+- **User Identification**: Associating events with users via `identify()` method with user properties for demographic and behavioral segmentation
+- **Device ID Management**: Automatic device identification using IDFA (Identifier for Advertisers), IDFV (Identifier for Vendor), or custom identifiers
+- **Session Tracking**: Automatic user session lifecycle management with configurable timeout periods via `minTimeBetweenSessionsMillis`
+- **Revenue Tracking**: Specialized event type for purchase and transaction data using dedicated `revenue()` methods
 
-**Identity and User Management**
-- **Identify**: User property management using `AMPIdentify` class (legacy) or `Identify` operations (modern)
-- **setGroup/groupIdentifyWithGroupType**: Group analytics functionality enabling organizational user segmentation
-- **IDFA/IDFV**: Apple identifier tracking implemented through plugin-based architecture
-- **migrateLegacyData**: Automatic data migration capability from legacy SDK implementations
+**Technical Architecture:**
+- **Plugin System**: Modern architecture in Swift SDK replacing middleware pattern, supporting enrichment plugins (data modification) and destination plugins (data routing)
+- **Autocapture**: Automatic tracking of sessions, app lifecycles, screen views, element interactions, and network requests without manual instrumentation
+- **Storage Providers**: Configurable data persistence mechanisms (PersistentStorage in Swift SDK vs SQLite in maintenance SDK)
+- **Tracking Plans**: Schema definitions for events that generate type-safe code via Ampli, ensuring implementation consistency
 
-**Event and Revenue Tracking**
-- **AMPRevenue**: Dedicated revenue tracking class for e-commerce analytics integration
-- **EventOptions**: Per-event configuration including deviceId, price, and quantity parameters
-- **TrackingOptions**: Privacy and compliance controls including COPPA compliance and selective data collection
-
-**Performance and Transmission Controls**
-- **flushQueueSize/flushIntervalMillis**: Batch processing controls governing event transmission timing
-- **minTimeBetweenSessionsMillis**: Session boundary definition parameters
-- **eventUploadThreshold/eventUploadPeriodSeconds**: Upload timing and batching configuration
-- **NetworkConnectivityCheckerPlugin**: Offline mode support and network state management
+**Configuration Objects:**
+- **Configuration**: Main SDK setup object replacing direct initialization parameters, centralizing all SDK behavior controls
+- **TrackingOptions**: Granular controls for device property collection (IP address, platform data, carrier information)
+- **LoadOptions**: Ampli-specific configuration for code generation, validation rules, and runtime behavior
 
 ## Broader Product Ecosystem Integration
 
-The iOS SDK suite integrates deeply with Amplitude's comprehensive analytics and experimentation platform through multiple integration points:
+The iOS SDK suite integrates deeply with Amplitude's comprehensive analytics and optimization platform:
 
-**Analytics Platform Integration**
-The SDKs connect to Amplitude's analytics infrastructure via HTTP v2 API endpoints (upgraded from v1 in legacy implementations), supporting EU data residency through `setServerZone` configuration and real-time event tracking with robust offline mode capabilities.
+**Data Pipeline Integration:**
+- Events transmit to Amplitude's HTTP v2 API endpoints (`api2.amplitude.com`) for processing and analysis
+- EU data residency support via `serverZone` configuration routing to European infrastructure
+- Real-time and batch data transmission with configurable flush policies (`flushQueueSize`, `flushIntervalMillis`)
 
-**Experimentation Platform**
-Integration with Amplitude's Experiment platform occurs through the Unified SDK, exposing methods like `amplitude.experiment.fetch()`, `variant()`, and `exposure()` for feature flag management and A/B testing. Remote configuration support is enabled through `enableAutoCaptureRemoteConfig` settings.
+**Cross-Product Synchronization:**
+- Unified SDK maintains consistent user identity across Analytics, Experiment, and Session Replay products
+- Shared user properties, device identifiers, and session management across all integrated products
+- Synchronized configuration inheritance and tracking option propagation
 
-**Session Replay Capabilities**
-The iOS-exclusive Session Replay SDK integration provides user session recording through `startRecording()` and `stopRecording()` controls, with configurable sampling rates via `sessionSampleRate` and `scrollSampleRate` parameters.
+**Privacy and Compliance Framework:**
+- Apple Privacy Manifest compliance with NSPrivacyTracking declarations for App Store requirements
+- COPPA (Children's Online Privacy Protection Act) compliance controls for applications serving minors
+- Comprehensive opt-out mechanisms and data control features for GDPR/CCPA compliance
+- SSL certificate pinning support for enhanced security in enterprise environments
 
-**Privacy and Compliance Framework**
-The ecosystem addresses Apple's privacy requirements through Privacy Manifest compliance with `NSPrivacyTracking` declarations, COPPA compliance controls via TrackingOptions, and SSL pinning for secure data transmission.
+## API Endpoints and Implementation Details
 
-## API Endpoints and Implementation Methods
+**Installation Methods:**
+- CocoaPods: `pod 'AmplitudeSwift'` (modern) or `pod 'Amplitude'` (maintenance)
+- Swift Package Manager: Direct GitHub repository integration with version pinning
+- Carthage: Binary framework distribution for modular dependency management
 
-**Package Management Integration**
-- CocoaPods: `pod 'Amplitude'` (legacy), `pod 'AmplitudeSwift'` (modern), `pod 'AmplitudeUnified'` (unified)
-- Swift Package Manager: Direct GitHub repository integration across all SDK variants
-- Carthage: Binary framework distribution support
+**Core API Methods:**
+- Event tracking: `amplitude.track("EventName", eventProperties: properties)`
+- User identification: `amplitude.identify(identify)` with user property objects
+- Revenue tracking: `amplitude.revenue(revenue)` for monetization analytics
+- Group management: `amplitude.setGroup(groupType: "team", groupName: "engineering")` for B2B analytics
+- Session control: `amplitude.flush()` for immediate data transmission bypassing queue limits
 
-**Command Line Interface**
-- Ampli CLI: `@amplitude/ampli` npm package for tracking plan code generation
-- `ampli pull`: Downloads strongly-typed event definitions from tracking plans
-- `ampli status`: Provides tracking plan verification and synchronization status
+**Ampli CLI Commands:**
+- `ampli pull`: Generate type-safe tracking code from centrally managed tracking plans
+- `ampli status`: Verify implementation compliance against tracking plan specifications
+- Installation: `npm install -g @amplitude/ampli` for global CLI access
 
-**Platform and Framework Support**
-The ecosystem provides comprehensive coverage across iOS, tvOS, and watchOS platforms, with support for iOS Extensions and App Clips. Integration spans both UIKit and SwiftUI frameworks while maintaining Objective-C and Swift language interoperability.
+**Critical Configuration Parameters:**
+- `flushQueueSize`: Event count threshold triggering automatic transmission (default varies by SDK)
+- `flushIntervalMillis`: Time-based transmission interval for batching optimization
+- `minTimeBetweenSessionsMillis`: Session timeout configuration defining session boundaries
+- `minIdLength`: Minimum user/device ID validation length for data quality
+- `migrateLegacyData`: Automatic data migration flag when upgrading from maintenance SDK
+- `serverZone`: Geographic data routing control (`US` or `EU`)
 
-The architecture enables developers to transition seamlessly from legacy implementations through modern Swift-first approaches to the unified platform, while maintaining backward compatibility and providing clear migration paths throughout the ecosystem evolution.
+The SDK suite provides comprehensive debugging through configurable log levels (`LogLevel.DEBUG`, `LogLevel.WARN`), offline mode support for network-constrained environments with local queuing, and extensive customization options for enterprise deployments requiring specific data handling, custom storage providers, or advanced privacy controls.

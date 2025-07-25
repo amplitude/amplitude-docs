@@ -5,14 +5,21 @@ This documentation covers Amplitude analytics platform setup including instrumen
 - Amplitude instrumentation
 - SDK configuration options
 - User properties operations
-- Group types account-level reporting
-- Session tracking sessionTimeout
-- Event naming conventions case-sensitive
+- Account-level reporting
+- Group types
+- Session tracking
 - Data backfilling
-- batchEvents eventUploadThreshold
+- Event naming conventions
+- batchEvents
+- sessionTimeout
 - minTimeBetweenSessions
-- session_id insert_id HTTP API
+- eventUploadThreshold
+- insert_id
+- session_id
 - Identify API
-- optOut offline saveEvents
-- savedMaxCount
-- Third-party integrations Segment mParticle Tealium
+- Third-party integrations (Segment, mParticle, Tealium)
+- User ID tracking
+- Device ID tracking
+- Amplitude ID
+- Testing project setup
+- Production environment separation

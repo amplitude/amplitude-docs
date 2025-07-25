@@ -308,7 +308,7 @@ end
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```ruby
@@ -321,7 +321,7 @@ AmplitudeExperiment.initialize_local(api_key)
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
+Use the `flag_config_polling_interval_millis` [configuration](#configuration) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
 
 #### Configuration
@@ -358,7 +358,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `callback`  | Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `nil` |
 | `server_zone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `server_url` | The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `nil`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
+| `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
 | `storage_provider` | Used to create storage instance to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorageProvider` |
 | `opt_out`  | Opt out option. If set to `True`, client doesn't process and send events. | `False` |
 
@@ -374,7 +374,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Start
 
-Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration_1) interval.
+Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration) interval.
 
 ```ruby
 start
@@ -391,7 +391,7 @@ experiment.start
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start`](#start). You must give evaluate a user object argument, and can you can optionally pass it an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
 {{/partial:admonition}}
 
 ```ruby

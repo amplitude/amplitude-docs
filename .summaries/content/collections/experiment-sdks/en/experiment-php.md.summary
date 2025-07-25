@@ -17,7 +17,8 @@
 - GuzzleHTTPClient configuration
 - PSR logger interface
 - composer installation
-- flag configurations bootstrap
-- account-level bucketing
-- group properties
 - server-side evaluation
+- flag configurations
+- user properties
+- group properties
+- account-level bucketing

@@ -31,7 +31,7 @@ You can send data to Amplitude through SDKs, or through a third party:
 
 Amplitude has many APIs you can use in conjunction with the platform
 
-See all the [API references](./docs/apis/analytics). 
+See all the [API references](/docs/apis/analytics). 
 
 ## Amplitude schema
 

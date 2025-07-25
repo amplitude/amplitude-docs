@@ -1,26 +1,23 @@
-**Summary:**
-This documentation covers the Amplitude Analytics iOS Swift SDK (AmplitudeSwift package), including installation via CocoaPods/SPM/Carthage, initialization with Configuration class, event tracking with BaseEvent, identify operations, autocapture features (sessions, app lifecycles, screen views, element interactions, network tracking), user groups, group identify, revenue tracking, custom user/device IDs, plugins system, and advanced topics like offline mode and Apple privacy manifest requirements.
+## Summary
 
-**Keywords:**
+This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for both Swift and Objective-C, including installation via CocoaPods/SPM/Carthage, autocapture features (sessions, app lifecycles, screen views, element interactions, network requests), revenue tracking, user groups, plugins system, and Apple privacy manifest compliance.
+
+## Keywords
+
+- Amplitude Analytics iOS Swift SDK
 - AmplitudeSwift package
-- iOS Swift SDK
-- CocoaPods SPM Carthage installation
-- Configuration class initialization
-- BaseEvent tracking
-- Identify operations
-- AutocaptureOptions (sessions, appLifecycles, screenViews, elementInteractions, networkTracking)
-- NetworkTrackingOptions captureRules
-- UIControl UIGestureRecognizer tracking
-- Revenue tracking
-- Plugin system (enrichment, destination)
-- DestinationPlugin class
-- TrackingOptions COPPA control
-- NetworkConnectivityCheckerPlugin offline mode
+- CocoaPods Swift Package Manager Carthage installation
+- autocapture sessions app lifecycles screen views element interactions network tracking
+- UIKit SwiftUI event tracking
+- identify user properties revenue tracking
+- plugins enrichment destination
+- COPPA control IDFA IDFV device ID
+- offline mode network connectivity
 - Apple privacy manifest NSPrivacyTracking
-- IDFV device ID lifecycle
-- flushQueueSize flushIntervalMillis
-- minTimeBetweenSessionsMillis
-- enableAutoCaptureRemoteConfig
-- migrateLegacyData maintenance SDK
-- UIKit SwiftUI support
-- Objective-C Swift language support
+- user groups group identify
+- session tracking minTimeBetweenSessionsMillis
+- TrackingOptions disable tracking
+- storage provider custom storage
+- log level debugging troubleshooting
+- migration guide maintenance SDK
+- unified SDK Analytics Experiment Session Replay

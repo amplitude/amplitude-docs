@@ -5,18 +5,19 @@
 - remote evaluation
 - local evaluation
 - deployment key
-- experiment-go-server
-- variant fetching
-- flag configuration polling
-- cohort sync configuration
-- assignment tracking
-- flag streaming
-- ServerZone configuration
-- EU data center
-- user evaluation
-- flag variants
 - experiment.User
+- client.Fetch()
+- client.EvaluateV2()
+- flag variants
 - CohortSyncConfig
+- StreamUpdates
 - AssignmentConfig
 - FlagConfigPollingInterval
-- StreamUpdates
+- ServerZone (USServerZone/EUServerZone)
+- github.com/amplitude/experiment-go-server
+- experiment.Variant
+- flag streaming
+- cohort targeting
+- user properties
+- group properties
+- account-level bucketing

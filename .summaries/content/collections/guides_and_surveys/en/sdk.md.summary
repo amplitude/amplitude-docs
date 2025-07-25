@@ -1,24 +1,22 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, with methods for initialization, boot process, theme management, callbacks, routing, and localization.
+**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including setup with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, plus API methods for theme management, callbacks, routing, localization, and user interaction control.
 
 **Keywords:**
 - Amplitude Guides and Surveys Web SDK
 - @amplitude/engagement-browser package
 - engagement.init() and engagement.boot() methods
-- amplitude.add(window.engagement.plugin())
-- InitOptions and BootOptions configuration
-- third-party analytics integrations
+- Amplitude Browser SDK plugin integration
+- third-party analytics provider integration
 - Segment analytics integration
 - Google Tag Manager template
-- engagement.forwardEvent() for event tracking
-- engagement.gs.show() and engagement.gs.reset()
-- ThemeMode (lightMode, darkMode, auto)
+- engagement.forwardEvent() for event-based triggers
+- engagement.setThemeMode() for light/dark themes
+- engagement.addCallback() for custom callbacks
 - engagement.setRouter() for SPA routing
-- Content Security Policy (CSP) nonce
-- engagement.addCallback() registration
-- engagement.updateLanguage() localization
-- engagement._setUserProperties() method
-- serverZone (US/EU) configuration
+- engagement.updateLanguage() for localization
+- engagement.gs.show() and engagement.gs.reset() methods
+- Content Security Policy (CSP) nonce support
+- serverZone EU/US configuration
 - proxy setup with serverUrl and cdnUrl
-- window.engagement global object
 - user_id and device_id identification
-- event-based triggers with forwardEvent
+- window.engagement global object
+- InitOptions and BootOptions configuration
