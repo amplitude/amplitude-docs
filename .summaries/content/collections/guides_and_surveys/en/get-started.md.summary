@@ -1,17 +1,15 @@
-**Summary:** This documentation covers the Guides and Surveys feature in Amplitude, detailing the Overview tab dashboard with metrics like views/completions over time, rage closes, and real-time interactions, plus SDK installation for web, iOS, Android, and React Native platforms.
+**Summary:** This documentation covers the Guides and Surveys feature in Amplitude, detailing the Overview tab dashboard with analytics charts for guide/survey performance metrics including views, completions, rage closes, and real-time interactions, plus SDK installation requirements for web, iOS, Android, and React Native platforms.
 
 **Keywords:**
 - Guides and Surveys
 - Overview tab dashboard
-- Views and completions metrics
-- Rage closes percentage
+- SDK installation
+- Views and completions charts
+- Rage closes metric
+- Survey responses analytics
 - Real-time interactions feed
 - Microscope integration
-- Filter card segmentation
-- SDK installation
 - Multi-platform support (web, iOS, Android, React Native)
+- Filter card functionality
+- Performance tracking metrics
 - Project-level app settings
-- Survey responses tracking
-- Guide performance analytics
-- In-product guidance
-- User engagement metrics
