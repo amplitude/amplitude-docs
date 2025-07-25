@@ -92,7 +92,7 @@ Along with the basic configuration options, you can configure attribution.
 |`config.attribution.initialEmptyValue`| `string`. Customize the initial empty value for attribution related user properties to any string value. | `EMPTY` |
 |`config.attribution.resetSessionOnNewCampaign`| `boolean`. Whether to reset user sessions when a new campaign is detected. Note a new| `false` |
 |`config.attribution.trackNewCampaigns`| `boolean`. Whether tracking new campaigns on the current session. | `false` | 
-|`config.attribution.trackPageViews`| `boolean`. Whether track page view on attribution. Note that `config.defaultTracking.pageViews` has higher priority over this configuration. Learn more about it [here](./#tracking-page-views). | `false` |
+|`config.attribution.trackPageViews`| `boolean`. Whether track page view on attribution. Note that `config.defaultTracking.pageViews` has higher priority over this configuration. Learn more about it [here](#advanced-configuration-for-tracking-page-views). | `false` |
 
 {{/partial:collapse}}
 
@@ -308,7 +308,7 @@ Amplitude tracks the following information with page view events.
 |`event_properties.[Amplitude] Page Path`| `string`. The page path. | location.path or ''.|
 |`event_properties.[Amplitude] Page Title`| `string`. The page title. | document.title or ''.|
 |`event_properties.[Amplitude] Page URL`| `string`. The value of page URL. | location.href.split('?')[0] or ''.|
-|`event_properties.${CampaignParam}`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#tracking-default-events) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
+|`event_properties.${CampaignParam}`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](#track-default-events) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
 
 See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
@@ -950,9 +950,9 @@ If you [set the logger to "Debug" level](#debug-mode), and see track calls in th
 
 There are two ways to address this issue:
 
-1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](#use-sendbeacon) section.
 
-2. To make track() synchronous, [add the `await` keyword](./#callback) before the call.
+2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
 
 ## Advanced topics
 

@@ -504,7 +504,7 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                                              |
 | `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | document.title or ''.                                             |
 | `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
-| `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`.                     |
+| `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
 | `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
@@ -1202,7 +1202,7 @@ Amplitude recommends using a proxy server to avoid this situation.
 
 #### Cookies related
 
-Here is the [information](./#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
+Here is the [information](#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
 
 #### CORS
 
@@ -1224,7 +1224,7 @@ If you [set the logger to "Debug" level](#debugging), and see track calls in the
 
 There are two ways to address this issue:
 
-1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](#use-sendbeacon) section.
 
 2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
 
@@ -1404,7 +1404,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](/docs/sdks/analytics/browser/browser-sdk-2#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
