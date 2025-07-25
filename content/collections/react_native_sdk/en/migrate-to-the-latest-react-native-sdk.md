@@ -103,9 +103,9 @@ The latest React Native SDK instance accepts a configuration object during upon 
 
 |@amplitude/react-native|@amplitude/analytics-react-native|
 |-|-|
-| `enableCoppaControl()` | Refer to [COPPA](./#coppa) section for more details |
-| `disableCoppaControl()` | Refer to [COPPA](./#coppa) section for more details |
-| `setAdvertisingIdForDeviceId()` | No configuration to set ADID as device ID. But ADID is still tracked by default as `config.trackingOptions.adid` defaults to `true`. To learn more about how device ID is initialized [here](./#device-id).  |
+| `enableCoppaControl()` | Refer to [COPPA](#coppa) section for more details |
+| `disableCoppaControl()` | Refer to [COPPA](#coppa) section for more details |
+| `setAdvertisingIdForDeviceId()` | No configuration to set ADID as device ID. But ADID is still tracked by default as `config.trackingOptions.adid` defaults to `true`. To learn more about how device ID is initialized [here](#device-id).  |
 | `setAppSetIdForDeviceId()` | No configuration to set App Set ID as device ID. But the latest React Native SDK will track it in a newly released version soon. |
 | `setOptOut()` | both `setOptOut()` and `config.optOut` are supported |
 | `trackingSessionEvents()` | `config.trackingSessionEvents` |
