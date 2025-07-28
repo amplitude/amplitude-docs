@@ -2,6 +2,7 @@
 id: 5416910c-32f8-4e80-be0f-88a10509c029
 blueprint: session-replay
 title: 'Session Replay Wrapper for Rudderstack'
+published: false
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
