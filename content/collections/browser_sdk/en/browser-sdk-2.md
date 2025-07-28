@@ -228,6 +228,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - File downloads
 - Element interactions
 - Network tracking
+- Web vitals
 
 
 {{partial:collapse name="Autocapture options"}}
@@ -240,6 +241,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables network tracking. If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -261,6 +263,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
     formInteractions: false,
     fileDownloads: false,
     elementInteractions: false,
+    webVitals: false,
   },
 });
 
@@ -715,6 +718,47 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
 
 {{/partial:collapse}}
+
+### Track web vitals
+
+Track Core Web Vitals performance metrics automatically. When enabled, Amplitude captures web performance metrics and sends them as `[Amplitude] Web Vitals` events when the browser tab first becomes hidden (when users navigate away, close the tab, or switch tabs).
+
+Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    webVitals: true, //[tl! highlight]
+  },
+});
+```
+
+#### Metrics captured
+
+The web vitals autocapture feature captures the following Core Web Vitals metrics
+- [INP](https://web.dev/articles/inp) 
+- [TTFB](https://web.dev/articles/ttfb)
+- [LCP](https://web.dev/articles/lcp)
+- [FCP](https://web.dev/articles/fcp)
+- [CLS](https://web.dev/articles/cls)
+
+#### Event properties
+
+The `[Amplitude] Web Vitals` event includes the following properties:
+
+| Property | Description |
+|----------|-------------|
+| `[Amplitude] Page Domain` | The hostname of the current page |
+| `[Amplitude] Page Location` | The full URL of the current page |
+| `[Amplitude] Page Path` | The pathname of the current page |
+| `[Amplitude] Page Title` | The title of the current page |
+| `[Amplitude] Page URL` | The URL of the current page without query parameters |
+| `[Amplitude] LCP` | [Largest Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#lcpmetric) (if available) |
+| `[Amplitude] FCP` | [First Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#fcpmetric) (if available) |
+| `[Amplitude] INP` | [Interaction to Next Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#inpmetric) (if available) |
+| `[Amplitude] CLS` | [Cumulative Layout Shift](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#clsmetric) (if available) |
+| `[Amplitude] TTFB` | [Time to First Byte](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#ttfbmetric) (if available) |
+
 
 ## Track an event
 
