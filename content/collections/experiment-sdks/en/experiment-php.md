@@ -172,7 +172,7 @@ Implements evaluation of variants for a user through [local evaluation](/docs/fe
 
 {{partial:admonition type="tip" heading="Quick start"}}
  1. [Initialize the local evaluation client.](#initialize-local-evaluation)
- 2. [Fetch flag configs for the local evaluation client.](#refreshFlagConfigs)
+ 2. [Fetch flag configs for the local evaluation client.](#refreshflagconfigs)
  3. [Evaluate a user.](#evaluate)
 
  ```php
@@ -210,7 +210,7 @@ initializeLocal(string $apiKey, ?LocalEvaluationConfig $config = null): LocalEva
 | Parameter | Requirement | Description |
 | --- | --- | --- |
 | `apiKey` | required | The server [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags to evaluate for the user. |
-| `config` | optional | The client [configuration](#configuration_1) used to customize SDK client behavior. |
+| `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 #### Configuration
 
@@ -254,7 +254,7 @@ Return flag configs currently used in the client.
 getFlagConfigs(): array
 ```
 
-Flag configs returned can be used to reduce start up time by [bootstrapping](#configuration_1) the local evaluation client.
+Flag configs returned can be used to reduce start up time by [bootstrapping](#configuration) the local evaluation client.
 
 ```php
 <?php
@@ -263,10 +263,10 @@ $client->getFlagConfigs();
 
 ### Evaluate
 
-Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags fetched on [`refreshFlagConfigs()`](#refreshFlagConfigs). Give `evaluate()` a user object argument. Optionally pass an array of flag keys if you require only a specific subset of required flag variants.
+Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags fetched on [`refreshFlagConfigs()`](#refreshflagconfigs). Give `evaluate()` a user object argument. Optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when you call `evaluate()`.
+Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when you call `evaluate()`.
 {{/partial:admonition}}
 
 ```php
@@ -359,7 +359,7 @@ class DefaultAssignmentTrackingProvider implements AssignmentTrackingProvider {
 | `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
 | `serverZone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `serverUrl` | The API endpoint URL that events are sent to. Automatically selected by `serverZone` and `useBatch`. If this field is set with a string value instead of `null`, then `serverZone` and `useBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `useBatch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
+| `useBatch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
 | `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
 | `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
@@ -402,7 +402,7 @@ Local and remote evaluation clients can be configured to use a custom HTTP clien
 
 ### GuzzleHTTPClient
 
-The default Guzzle client can be configured via the `guzzleClientConfig` option in [`RemoteEvaluationConfig`](#configuration) and [`LocalEvaluationConfig`](#configuration_1).
+The default Guzzle client can be configured via the `guzzleClientConfig` option in [`RemoteEvaluationConfig`](#configuration) and [`LocalEvaluationConfig`](#configuration).
 
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
@@ -423,27 +423,34 @@ $config = \AmplitudeExperiment\RemoteEvaluationConfig::builder()
 
 ## Access Amplitude cookies
 
-If you use the Amplitude Analytics SDK on the client-side, the PHP server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This helps ensure that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the PHP server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This ensures that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
 
 ```php
 <?php
-// Grab amp device id if present
-$ampCookieName = AmplitudeCookie::cookieName('amplitude-api-key');
-$deviceId = null;
+use AmplitudeExperiment\AmplitudeCookie;
 
-if (!empty($_COOKIE[$ampCookieName])) {
-    $parsedCookie = AmplitudeCookie::parse($_COOKIE[$ampCookieName]);
-    $deviceId = $parsedCookie['deviceId'];
+// Get the cookie name for the Amplitude API key
+// For Browser SDK 2.0 cookies, use true as second parameter:
+// $amp_cookie_name = AmplitudeCookie::cookieName('amplitude-api-key', true);
+$amp_cookie_name = AmplitudeCookie::cookieName('amplitude-api-key');
+$device_id = null;
+
+// Try to get device ID from existing cookie
+if (isset($_COOKIE[$amp_cookie_name])) {
+  $cookie_data = AmplitudeCookie::parse($_COOKIE[$amp_cookie_name]);
+  // For Browser SDK 2.0: AmplitudeCookie::parse($_COOKIE[$amp_cookie_name], true);
+  $device_id = $cookie_data['deviceId'];
 }
 
-if ($deviceId === null) {
-    // deviceId doesn't exist, set the Amplitude Cookie
-    $deviceId = bin2hex(random_bytes(16));
-    $ampCookieValue = AmplitudeCookie::generate($deviceId);
-    setcookie($ampCookieName, $ampCookieValue, [
-        'domain' => '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
-        'httponly' => false,
-        'secure' => false,
-    ]);
+// If no device ID found, generate a new one and set the cookie
+if ($device_id === null) {
+  $device_id = uniqid('', true);
+  $amp_cookie_value = AmplitudeCookie::generate($device_id);
+  // For Browser SDK 2.0: AmplitudeCookie::generate($device_id, true);
+  setcookie($amp_cookie_name, $amp_cookie_value, [
+    'domain' => '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
+    'httponly' => false,
+    'secure' => false
+  ]);
 }
 ```

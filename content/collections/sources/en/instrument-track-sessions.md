@@ -13,18 +13,22 @@ updated_at: 1726162729
 ---
 In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
 
-{{partial:admonition type='note'}}
-You may also find [this video](https://academy.amplitude.com/how-long-do-users-spend-in-my-product/1091393) on User Sessions helpful.
-{{/partial:admonition}}
+## How Amplitude defines sessions
 
-## How Amplitude defines "sessions"
-
-Generally, a session is the period of time a user has your app in the foreground or has your website open. The specifics differ slightly between mobile and web applications:
+A session is the period of time a user has your app in the foreground or has your website open. The specifics differ slightly between mobile and web applications:
 
 * For **mobile**, a session begins when the app moves into the foreground; it ends when the app goes into the background and fires no events for at least five minutes. All events sent within five minutes of each other count towards the current session. You can define your own session expiration time with  `setMinTimeBetweenSessionsMillis(timeout)`, where the timeout input is in milliseconds.
 * On a **browser**, a session begins when the website loads and the SDK is initialized; it ends when the last event is triggered. Web sessions time out after 30 minutes by default. All events fired within 30 minutes of each other count as part of the same session. Customize this timeout window can with the [Browser SDK configuration options](/docs/sdks/analytics/browser/browser-sdk-2).
 
 Amplitude automatically generates a session ID for each new session; that ID is the session's start time in milliseconds since **epoch** (also known as the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)). All events within the same session share the same session ID. If you are using Amplitude's SDKs, this happens automatically. If you send data to Amplitude through the HTTP API, explicitly set the [session ID](/docs/apis/analytics/http-v2) field to track sessions.
+
+### Session count
+
+To count the number of sessions, Amplitude filters for events marked as "active," then applies the project's session definition onto the filtered events. 
+ 
+Amplitude uses that session definition to group user events into sessions, then count the total amount of grouped up sessions.
+
+For more information about setting a project's session definition, review [Manage Organizations and Projects](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information).
 
 ## How Amplitude tracks your sessions
 
@@ -48,7 +52,7 @@ For example, consider a session that begins on May 17th at 8:00 PM and ends on M
 
 By default, Amplitude tracks `Start Session` and `End Session` events using the beginning and ending times of each session by session ID. Amplitude also uses session ID to calculate session lengths. If you use session IDs, Amplitude doesn't add extra events to your monthly event volume limit.
 
-That said, if tracking`Start Session` and`End Session` events is critical to your analysis outside of session lengths, you can easily turn on tracking for these events by adding this line of code before initializing the SDK:
+If tracking`Start Session` and`End Session` events is critical to your analysis outside of session lengths, you can turn on tracking for these events by adding this line of code before initializing the SDK:
 
 For Android:
 
@@ -85,7 +89,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 
 You can also log events as out-of-session by setting the session ID to `-1`. Out-of-session events aren't considered part of the current session. Because they don't extend the current session, they can be useful if you're logging events triggered by push notifications.
 
-Out-of-session events are normally server-side events received by Amplitude (see our [HTTP API](/docs/apis/analytics/http-v2) documentation for more details). These events appear in a user's event stream as disconnected green squares.
+Out-of-session events are normally server-side events received by Amplitude (view the [HTTP API](/docs/apis/analytics/http-v2) documentation for more details). These events appear in a user's event stream as disconnected green squares.
 
 ![SessionId](statamic://asset::help_center_conversions::sources/sessionid-neg1-png.png)
 
@@ -106,15 +110,16 @@ To set a custom session definition, follow these steps:
 3. Click *Session Definitions*. The Session Definitions modal appears.
 4. Click *Custom Session Definition*.
 5. Next, choose the specifications for any of three conditions that define the custom session:
-	* **Session property**: Click *Select property...* to choose the event or user property you want to use for grouping sessions.
+   	
+    * **Session property**: Click *Select property...* to choose the event or user property you want to use for grouping sessions.
     * **Starting Event and Ending Event**: Click on *Starting Event* or *Ending Event* to choose the events that signifies the beginning and end of a session. The triggering of the ending event ends a session if it occurs before the timeout interval has elapsed.
-    * **Session timeout**: Enter the default timeout interval in minutes. Amplitude counts all events from the same user prior to the interval you specify as being part of a single session. We recommend a default of 30 minutes.
+    * **Session timeout**: Enter the default timeout interval in minutes. Amplitude counts all events from the same user before the interval you specify as being part of a single session. Amplitude recommends a default of 30 minutes.
 
-You can define one condition or multiple conditions, but be aware that **all** conditions you specify must be met for Amplitude to count a session. If you don't define any of these conditions, Amplitude uses session ID as the session-defining property.
+    Define one condition or multiple conditions, but be aware that all conditions you specify must be met for Amplitude to count a session. If you don't define any of these conditions, Amplitude uses session ID as the session-defining property.
 
-1. Finally, enter the confirmation phrase and click *Save*.
+6. Finally, enter the confirmation phrase and click *Save*.
 
-![customSessionDefinition.png](/docs/output/img/sources/customsessiondefinition-png.png)
+
 
 {{partial:admonition type='note'}}
 Changing the session definition applies to **all User Session, Funnel Analysis, Journeys charts, as well as the session metric, in your project**. Be sure you understand what the impacts might be before setting or changing a custom session definition.
