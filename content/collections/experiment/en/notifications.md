@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753390854
 ---
-You can set up notification alerts for your experiments or for individual feature flags. Amplitude sends these notifications when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
+You can set up notification alerts for your Web and Feature experiments or for individual feature flags. Amplitude sends these notifications when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
 
 - Email / Slack direct messages
 - Slack channel notifications / webhooks
@@ -20,7 +20,7 @@ This page discusses setting up and maintaining notification alerts through Slack
 All other experiment alerts are sent either through email or Slack direct message. For more information on these other types of notification, go to [Account Settings Notifications](/docs/feature-experiment/workflow/experiment-learnings#interpret-notifications) or [Integrate Slack](/docs/analytics/integrate-slack) to know how to manage your Slack workspace integration. 
 
 {{partial:admonition type="note" heading=""}}
-You must have [Member permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. You do not need any permissions to receive notifications if you also a member of the dedicated slack channel or webhook. However, you must have Viewer permissions to open the notification for more details. Talk to your Admin if you need different permissions.
+You must have [Member permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. You don't need any permissions to receive notifications if you also a member of the dedicated slack channel or webhook. However, you must have Viewer permissions to open the notification for more details. Talk to your Admin if you need different permissions.
 {{/partial:admonition}}
 
 ##### To connect a Slack workspace to your experiment notifications
@@ -42,20 +42,34 @@ You can specify if you want to receive alerts for the following experiment activ
 
 After you have connected your Slack organization to Amplitude, you can create notifications for your experiments. 
 
-{{partial:admonition type="note" heading=""}}
-If you want to send notifications through webhooks, you must provide the URL and valid [signing key](https://docs.knock.app/developer-tools/outbound-webhooks/overview#verifying-the-signature). You can specify your webhook at the same time that you create the alert.
-{{/partial:admonition}}
+If you want to send notifications through webhooks, you must provide the URL and valid [signing key](https://docs.knock.app/developer-tools/outbound-webhooks/overview#verifying-the-signature). You can specify your webhook at the same time that you create the alert. 
+
+Webhook schema:
+```json
+{
+  "flagId":"{{flagId}}",
+  "flagName":"{{flagName}}",
+  "scope":"{{scope}}",
+  "scopeParam":"{{scopeParam}}",
+  "scopeParamName":"{{scopeParamName}}",
+  "action":"{{action}}",
+  "modifiedBy":"{{modifiedBy}}",
+  "flag":"{{flag}}",
+  "oldFlag":"{{oldFlag}}"
+  }
+```
 
 ##### To set up an alert
 
-1. Go to *Experiment > Experiments*. 
+1. Go to *Experiment* and then click *Experiments*. 
+You can also access alerts by going to *Settings > Organization settings > Experiment* and then clicking **Add alert**. 
 2. Click **Alerts** in the top right.
 3. Specify the project that you want.
 4. Set the scope. You can select one of:
     - **All In the Project**: Receive notifications for all experiments in the project.
     - **By Deployment**: Receive notifications for all experiments in your entire deployment.
-    If you are receiving alerts by deployment, you must specify the deployment by ID number.
-    - **By Tag**: Receive notificaitons only for experiments and flags tagged with specific labels. 
+    If you are receiving alerts by deployment, you must specify the deployment by API key. Go to [Deployments](/docs/feature-experiment/data-model#deployments) for more information.
+    - **By Tag**: Receive notifications only for experiments and flags tagged with specific labels. 
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
     - If you're using a Webhook, enter the URL and your signing key.
