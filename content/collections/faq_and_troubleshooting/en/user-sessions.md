@@ -25,7 +25,7 @@ If you want these events to be considered part of a session, the [session ID](/d
 
 **Potential cause #2: You're tracking the Start Session event, but no other events**
 
-If your project permits sending start or end session events (which you can enable using [Android SDK](https://help.amplitude.com/hc/en-us/articles/115002935588-Android-SDK-Installation#track-sessions) or [iOS SDK](https://help.amplitude.com/hc/en-us/articles/115002278527-iOS-SDK-Installation#track-sessions)), anytime your app launches in the foreground, it will send a `Start
+If your project permits sending start or end session events (which you can enable using [Android SDK](https://help.amplitude.com/hc/en-us/articles/115002935588-Android-SDK-Installation#tracking-sessions) or [iOS SDK](https://help.amplitude.com/hc/en-us/articles/115002278527-iOS-SDK-Installation#tracking-sessions)), anytime your app launches in the foreground, it will send a `Start
  Session` to Amplitude. If Amplitude receives no other events to log after this, it sets the [session length](/docs/data/sources/instrument-track-sessions) to zero.
 
 Amplitude's [Microscope](/docs/analytics/microscope) feature lets you examine a given user’s activity, so you can quickly determine whether either of these potential causes is the issue.

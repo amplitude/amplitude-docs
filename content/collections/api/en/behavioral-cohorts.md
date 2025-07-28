@@ -26,7 +26,6 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
     2. Poll the cohort status.
     3. Download the file.
 - There is limit on Cohort Download to request a single cohort: 60 requests per 10 minutes per app, and 4 parallel request per minute per app.
-- Amplitude limits single requests to 100,000 identifiers
 
 ## Get all cohorts
 
@@ -523,7 +522,7 @@ The response is a JSON object with this schema:
 
 | Parameter | Type                                             | Description    |
 | --------- | ------------------------------------------------ | -------------- |
-| error     | [error json](#upload-cohort-error-response-json) | Error details. |
+| error     | [error json](#update-cohort-error-response-json) | Error details. |
 
 #### Upload cohort error response JSON
 

@@ -1862,7 +1862,7 @@ To send data to Amplitude HTTP V2 API, a `Content-Type` header must be set to `a
 | Name                                     | Description                                                                                                                                  |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_key`                                | <span class="required">Required</span>. String. Amplitude project API key.                                                                   |
-| `events` | <span class="required">Required</span>. []. Array of Events to upload. |
+| [`events`](#keys-for-the-event-argument) | <span class="required">Required</span>. []. Array of Events to upload. |
 | [`options`](#options)                    | <span class="optional">Optional</span>. []. Object.         |
 
 #### Event array keys

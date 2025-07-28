@@ -102,8 +102,8 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `useBatch`                     | Whether to use batch api.                                                                                                                                                                                   | `false`                                  |
 | `trackingOptions`              | Options to control the values tracked in SDK.                                                                                                                                                               | `enable`                                 |
 | `enableCoppaControl`           | Whether to enable COPPA control for tracking options.                                                                                                                                                       | `false`                                  |
-| `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID).                                                                                                          | `true`                                   |
-| `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](#offline-mode).                                                                                                         | `false`                                  |
+| `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](../ios) data (events, user/device ID).                                                                                                          | `true`                                   |
+| `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](./#offline-mode).                                                                                                         | `false`                                  |
 | `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1, no cleanup occurs.    | `-1`                                     |
 
 {{/partial:collapse}}
@@ -983,7 +983,7 @@ Due to the way in which Amplitude manages sessions, there are scenarios where th
 
 * If a user doesn't return to the app, Amplitude does not track a session end event to correspond with a session start event.
 * If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/skipuserpropertiessync) in the Converter Configuration Reference article to learn more.
+* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 
@@ -1231,7 +1231,7 @@ NSString *deviceId = [amplitude getDeviceId];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-To set the device, see [custom device ID](#custom-device-identifierentifier).
+To set the device, see [custom device ID](#custom-device-id).
 
 ### Location tracking
 
