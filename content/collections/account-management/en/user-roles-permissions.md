@@ -59,6 +59,7 @@ Recommended for the majority of Amplitude users in your organization. Members ha
 * Edit [releases](/docs/analytics/releases)
 * Label events with [Visual Labeling](/docs/data/visual-labeling)
 * Edit unpublished guides or surveys. 
+* Create and manager experiment notification alerts
 
 {{partial:admonition type="note" heading=""}}
 Members can't search for undiscoverable content.
