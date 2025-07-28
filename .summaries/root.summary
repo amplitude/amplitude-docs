@@ -1,76 +1,97 @@
-## Amplitude Analytics and Experimentation Platform
-
-Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools for product analytics, feature experimentation, user behavior analysis, and data management. The platform consists of multiple interconnected products including Analytics, Experiment, Session Replay, Guides and Surveys, and a Customer Data Platform (CDP).
+Amplitude is a comprehensive product analytics and experimentation platform that provides organizations with behavioral analytics, user tracking, feature experimentation, and data management capabilities. The platform serves businesses from Growth to Enterprise tiers, offering sophisticated user behavior analysis, A/B testing, feature flags, and cross-project insights through a unified analytics ecosystem.
 
 ## Product Architecture and Feature Relationships
 
-**Core Analytics Platform:**
-The foundation centers around Amplitude Analytics, which provides behavioral analytics through multiple chart types and visualization tools. The analytics engine supports event segmentation, funnel analysis, retention analysis, user journey mapping, and cohort analysis through specialized chart types including Event Segmentation, Funnel Analysis, Retention Analysis, Journeys, Lifecycle, Stickiness, Personas, Revenue LTV, Impact Analysis, Engagement Matrix, User Sessions, Data Tables, and Compass.
+The Amplitude ecosystem operates on a hierarchical structure where **Organizations** contain multiple **Projects**, each representing distinct product analytics implementations. Projects serve as primary data containers housing events, user properties, and behavioral data streams that feed into various analytics modules.
 
-**Experimentation Framework:**
-Amplitude Experiment provides feature flagging and A/B testing capabilities with deep integration into the analytics platform. The experimentation framework includes advanced techniques, experiment theory, workflow management, and specialized experiment results charts. The system supports both client-side and server-side experimentation with comprehensive SDK coverage.
+**Amplitude Analytics** forms the core foundation, providing behavioral tracking through multiple chart types including Event Segmentation, Funnel Analysis, Retention Analysis, Revenue LTV, User Sessions, Lifecycle, Stickiness, Compass, Personas, Journeys, Impact Analysis, Engagement Matrix, Data Tables, and Experiment Results. These charts leverage shared user identification systems (user_id, device_id) and event data for comprehensive behavioral analysis.
 
-**Data Infrastructure:**
-The Customer Data Platform (CDP) manages data ingestion, transformation, and activation through source and destination catalogs. The platform supports warehouse-native implementations, audience management, and extensive third-party integrations. Data flows through the system via APIs, SDKs, and direct database connections.
+**Amplitude Experiment** integrates deeply with Analytics, sharing project structures and leveraging historical user data for enhanced targeting. The experimentation platform operates through deployments (client-side and server-side configurations) that contain feature flags and experiments utilizing consistent bucketing algorithms based on murmur3 hashing. The platform supports both remote evaluation (server-side processing with advanced targeting) and local evaluation (client-side processing for sub-millisecond performance).
 
-**User Experience Tools:**
-Session Replay captures and reconstructs user interactions, while Guides and Surveys enables in-product messaging and feedback collection. These tools integrate with the core analytics platform to provide comprehensive user behavior insights.
+**Customer Data Platform (CDP)** capabilities include source and destination catalogs, audience management, and warehouse-native functionality. The platform provides data integration through various sources and destinations, with PII handling capabilities and comprehensive data governance features.
+
+**Session Replay** integrates directly into organizational settings, allowing administrators to configure sample rates and manage session capture at the project level. **Guides and Surveys** extends beyond analytics into user engagement and feedback collection.
 
 ## Key Nomenclature and Definitions
 
-**Analytics Concepts:**
-- **Events** - User actions tracked within applications (clicks, page views, purchases)
-- **Properties** - Attributes associated with events (user properties, event properties)
-- **Cohorts** - User segments based on shared characteristics or behaviors
-- **Funnels** - Sequential user journey analysis through defined conversion steps
-- **Retention** - User return behavior analysis over time periods
-- **Segmentation** - Event analysis broken down by user or event properties
+**Core Analytics Concepts:**
+- **Events**: User actions tracked within applications
+- **Properties**: Attributes associated with events or users
+- **Cohorts**: User segments based on behavioral criteria
+- **Funnels**: Sequential user journey analysis
+- **Retention**: User return behavior measurement
+- **Segmentation**: Event-based behavioral analysis
 
 **Experimentation Terminology:**
-- **Feature Flags** - Boolean toggles controlling feature availability
-- **Variants** - Different versions of features being tested
-- **Allocation** - Percentage of users exposed to experiments
-- **Statistical Significance** - Confidence level in experiment results
-- **Lift** - Percentage improvement in key metrics
+- **Bucketing Units**: Entity level for randomization (user_id, device_id, group identifiers)
+- **Variants**: Different versions of features with associated values and JSON payloads
+- **Allocation**: Percentage of users exposed to experiments
+- **Exposure Events**: Tracked when users encounter feature flag variants
+- **Assignment Events**: Server-side tracking of variant assignments
+- **CUPED**: Controlled-experiment Using Pre-Experiment Data for variance reduction
+- **Sequential Testing**: Statistical methodology allowing continuous monitoring without Type 1 error inflation
+- **Sticky Bucketing**: Ensures users remain in same variant across sessions
+- **Minimum Detectable Effect (MDE)**: Smallest reliably detectable metric change
+
+**Organizational Structure:**
+- **Organizations**: Top-level administrative boundary containing projects, users, billing
+- **Projects**: Individual analytics implementations with dedicated API keys
+- **Views**: Portfolio-created merged displays of multiple projects for cross-project analysis
+- **Permission Groups**: Enterprise bulk user permission management
+- **Team Spaces**: Collaborative workspaces for sharing analytics content
+- **Deployments**: Experiment configurations with unique access keys
 
 **Data Management:**
-- **Sources** - Data input connections (SDKs, APIs, third-party integrations)
-- **Destinations** - Data output connections (warehouses, marketing tools, analytics platforms)
-- **Transformations** - Data processing rules applied during ingestion
-- **Schemas** - Data structure definitions for events and properties
+- **Dynamic Behavioral Sampling**: Scale feature's algorithmic event volume management
+- **User Mapping API**: Cross-project user identity aliasing
+- **SCIM 2.0 Provisioning**: Programmatic user and group management
 
-**SDK Architecture:**
-- **Analytics SDKs** - Core tracking libraries for various platforms
-- **Experiment SDKs** - Feature flag and experimentation libraries
-- **Ampli** - Type-safe analytics implementation tool
-- **Session Replay Plugins** - User session recording capabilities
+## Product Ecosystem Integration
 
-## Broader Product Ecosystem Integration
+**Portfolio Functionality** enables Enterprise customers to perform cross-project analysis by creating Views that merge up to 5 projects (expandable to 10) into unified displays. This leverages user ID/device ID matching and the User Mapping API for aliasing different identifiers across project boundaries.
 
-**Multi-Product Synergy:**
-The platform operates as an integrated ecosystem where analytics data informs experimentation decisions, session replay provides qualitative context for quantitative metrics, and guides/surveys enable direct user feedback collection. Experiment results automatically flow into analytics charts, while session replay data correlates with analytics events through shared session identifiers.
+**Scale Feature** provides dynamic behavioral sampling for ultra-high volume Enterprise customers, implementing algorithmic sampling based on user identity while maintaining analysis accuracy through upsampling metrics.
 
-**Data Flow Architecture:**
-Data ingestion occurs through multiple pathways including client-side SDKs (Browser, iOS, Android, React Native, Flutter, Unity, Unreal), server-side SDKs (Node.js, Python, Java, Go), and direct API integrations. The Analytics API (`/apis/analytics/`) handles event ingestion, while the Experiment APIs (`/apis/experiment/`) manage feature flag configurations and assignments.
+The platform integrates with identity providers through **SSO provisioning** and **SCIM 2.0** support, enabling enterprise-grade user management workflows. **Slack integration** and **custom webhooks** provide notification delivery for collaborative analytics and real-time alerting.
 
-**Third-Party Integration Ecosystem:**
-The platform maintains extensive integration catalogs with hundreds of sources and destinations. Source integrations include marketing platforms, customer support tools, and business applications. Destination integrations enable data activation across marketing automation, business intelligence, and operational systems.
+**Ampli** provides type-safe analytics implementation with code generation for multiple programming languages, ensuring consistent event tracking across development teams.
 
 ## API Endpoints and Technical Implementation
 
-**Core API Routes:**
-- `/apis/analytics/` - Event ingestion and analytics data retrieval
-- `/apis/experiment/` - Feature flag management and assignment
-- `/apis/guides-and-surveys/` - In-product messaging and survey management
-- `/sdks/analytics/` - Analytics SDK documentation and implementation guides
-- `/sdks/experiment-sdks/` - Experimentation SDK resources
-- `/sdks/ampli/` - Type-safe analytics implementation tools
+**Analytics APIs:**
+- Analytics REST API v2.0 for event ingestion and data retrieval
+- User Privacy API for GDPR/CCPA compliance and data deletion
+- User Management API for SCIM 2.0 provisioning
+- User Mapping API for cross-project identity aliasing
 
-**SDK Implementation Patterns:**
-Analytics SDKs follow consistent patterns across platforms with methods like `track()`, `identify()`, `setUserProperties()`, and `flush()`. Experiment SDKs provide `fetch()`, `variant()`, and `exposure()` methods for feature flag management. Session Replay integrates through plugins with methods like `getSessionReplayProperties()` and privacy controls.
+**Experiment APIs:**
+- Experiment REST API for flag evaluation and variant assignment
+- Management API for permission and configuration management
+- Exposure tracking through Analytics REST API v2.0
 
-**Administrative and Management Tools:**
-The platform includes comprehensive administrative capabilities through `/admin/` routes covering account management, billing and usage monitoring, and single sign-on configuration. Migration tools (`/migration/`) support platform transitions, while troubleshooting resources (`/faq/`) provide implementation guidance.
+**SDK Implementations:**
+Multiple SDKs available for analytics and experimentation:
+- **Analytics SDKs**: Browser, Android, iOS, React Native, Flutter, Node.js, Python, Java, Go, Unity, Unreal
+- **Experiment SDKs**: TypeScript, Kotlin, Objective-C, Swift, Python, and others
 
-**Internationalization and Accessibility:**
-The platform supports multiple languages with dedicated Japanese translation collections and localized content delivery. The system maintains accessibility standards and provides comprehensive documentation across all supported languages and regions.
+**Key SDK Methods:**
+- `.track()`: Event tracking in Analytics SDKs
+- `.variant()`: Experiment variant retrieval and exposure tracking
+- User context passing through SDK initialization
+
+**Configuration Endpoints:**
+- Deployment-specific access keys for authentication
+- Multi-user deployment support for complex organizational structures
+- Self-service key management with 50 active key limits
+
+## Administrative and Compliance Features
+
+**User Roles**: Four-tier hierarchy (Viewer, Member, Manager, Admin) with project-level permissions for granular access control. Enterprise customers can implement Permission Groups for bulk user management.
+
+**Data Management**: Self-service data deletion for Growth (1B events/month) and Enterprise (10B events/month) customers, with user privacy notifications for GDPR compliance including Job Creation, Completion, and Unset Violation notifications.
+
+**Monitoring and Alerting**: Custom monitors with webhook integration for KPI-affecting behavior changes, Slack notifications for experiment results, and comprehensive diagnostic monitoring including sample ratio mismatch detection.
+
+**International Support**: Currency display unit configuration, session definition configuration, time zone settings, and Japanese translation support for global implementations.
+
+The platform supports enterprise-scale implementations with features like mutual exclusion groups, holdout controls, advanced statistical methodologies, and comprehensive integration capabilities across the modern data stack.
