@@ -28,7 +28,7 @@ To power Ask Amplitude, Amplitude may send the following data to the Amazon Bedr
 
 ### Your data and information
 
-Amplitude sends the conversation thread history between you and Ask Amplitude to the Amazon Bedrock API, including the data outlined above. Amazon Bedrock doesn't train its models on your Amplitude data, and any of your data that's sent to Amazon Bedrock is deleted within 30 days. 
+Amplitude sends the conversation thread history between you and Ask Amplitude to the Amazon Bedrock API, including the data outlined above. Amazon Bedrock doesn't train its models on your Amplitude data. Amazon Bedrock deletes any data sent by Amplitude within 30 days.
 
 ## Chart creation with Ask Amplitude
 
@@ -44,7 +44,7 @@ Yes, there are three scenarios where Amplitude may send property values to Amazo
 
 1. **Filter Selection**: To choose values for filters, Ask Amplitude looks at possible values. This uses the same metadata as when you select a value from the property dropdown in charts. For example when you ask "How many users signed up on the free plan?," Amplitude would check the values of the `plan` property.
 2. **Suggestion Generation**:  Uses the same mechanics as the first scenario. For example, when you ask a question, and Ask Amplitude suggests `Filter by Country = United States` as a follow up.
-3. **User Input + Chat History**: Ask Amplitude sends all user-typed input  to Amazon Bedrock, so if specific property values are described, Ask Amplitude sends them to Amazon Bedrock
+3. **User Input + Chat History**: Ask Amplitude sends all user-typed input  to Amazon Bedrock, so if specific property values are described, Ask Amplitude sends them to Amazon Bedrock.
 
 Amplitude pays to guarantee Amazon Bedrock doesn't store or train on any data that's sent to their API from Ask Amplitude.
 
