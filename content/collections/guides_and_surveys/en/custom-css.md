@@ -18,104 +18,104 @@ Use CSS class selectors to target Guides and Surveys elements:
 
 ```css
 /* Target banner container */
-.amplitude-banner-container {
+.amplitude-engagement-banner-container {
   background-color: #f0f0f0;
 }
 
 /* Target modal overlay */
-[data-amplitude-modal-overlay] {
+[data-amplitude-engagement-modal-overlay] {
   background-color: rgba(0, 0, 0, 0.8);
 }
 ```
 
 ### Form factor containers
 
-| Form Factor   | Selector                           |
-| ------------- | ---------------------------------- |
-| Banner        | `.amplitude-banner-container`      |
-| Modal         | `.amplitude-modal-container`       |
-| Modal overlay | `[data-amplitude-modal-overlay]`   |
-| Popover       | `.amplitude-popover-container`     |
-| Tooltip       | `.amplitude-tooltip-content`       |
-| Pin           | `.amplitude-pin`                   |
-| Checklist     | `.amplitude-checklist`             |
+| Form Factor   | Selector                                    |
+| ------------- | ------------------------------------------- |
+| Banner        | `.amplitude-engagement-banner-container`    |
+| Modal         | `.amplitude-engagement-modal-container`     |
+| Modal overlay | `[data-amplitude-engagement-modal-overlay]` |
+| Popover       | `.amplitude-engagement-popover-container`   |
+| Tooltip       | `.amplitude-engagement-tooltip-content`     |
+| Pin           | `.amplitude-engagement-pin`                 |
+| Checklist     | `.amplitude-engagement-checklist`           |
 
 ### Common elements
 
-| Element      | Selector                |
-| ------------ | ----------------------- |
-| Close button | `.amplitude-close`      |
-| Image        | `.amplitude-image`      |
-| Beacon       | `.amplitude-beacon`     |
+| Element      | Selector                       |
+| ------------ | ------------------------------ |
+| Close button | `.amplitude-engagement-close`  |
+| Image        | `.amplitude-engagement-image`  |
+| Beacon       | `.amplitude-engagement-beacon` |
 
 ### Banner-specific elements
 
-| Element               | Selector                           |
-| --------------------- | ---------------------------------- |
-| Banner body           | `.amplitude-banner-body`           |
-| Banner title          | `.amplitude-banner-title`          |
-| Banner content        | `.amplitude-banner-content`        |
-| Banner actions        | `.amplitude-banner-actions`        |
-| Banner close button   | `.amplitude-banner-close-button`   |
+| Element             | Selector                                    |
+| ------------------- | ------------------------------------------- |
+| Banner body         | `.amplitude-engagement-banner-body`         |
+| Banner title        | `.amplitude-engagement-banner-title`        |
+| Banner content      | `.amplitude-engagement-banner-content`      |
+| Banner actions      | `.amplitude-engagement-banner-actions`      |
+| Banner close button | `.amplitude-engagement-banner-close-button` |
 
 ### Tooltip-specific elements
 
-| Element                | Selector                              |
-| ---------------------- | ------------------------------------- |
-| Tooltip content        | `.amplitude-tooltip-content`          |
-| Tooltip marker (image) | `.amplitude-tooltip-marker__image`    |
-| Tooltip marker (icon)  | `.amplitude-tooltip-marker__icon`     |
-| Tooltip marker (beacon)| `.amplitude-tooltip-marker__beacon`   |
+| Element                 | Selector                                       |
+| ----------------------- | ---------------------------------------------- |
+| Tooltip content         | `.amplitude-engagement-tooltip-content`        |
+| Tooltip marker (image)  | `.amplitude-engagement-tooltip-marker__image`  |
+| Tooltip marker (icon)   | `.amplitude-engagement-tooltip-marker__icon`   |
+| Tooltip marker (beacon) | `.amplitude-engagement-tooltip-marker__beacon` |
 
 ### Pin-specific elements
 
-| Element     | Selector                   |
-| ----------- | -------------------------- |
-| Pin         | `.amplitude-pin`           |
-| Pin beacon  | `.amplitude-pin-beacon`    |
-| Pin content | `.amplitude-pin-content`   |
-| Pin arrow   | `.amplitude-pin-arrow`     |
-| Pin mask    | `.amplitude-pin-mask`      |
+| Element     | Selector                            |
+| ----------- | ----------------------------------- |
+| Pin         | `.amplitude-engagement-pin`         |
+| Pin beacon  | `.amplitude-engagement-pin-beacon`  |
+| Pin content | `.amplitude-engagement-pin-content` |
+| Pin arrow   | `.amplitude-engagement-pin-arrow`   |
+| Pin mask    | `.amplitude-engagement-pin-mask`    |
 
 ### Checklist-specific elements
 
-| Element                                  | Selector                                        |
-| ---------------------------------------- | ----------------------------------------------- |
-| Checklist                                | `.amplitude-checklist`                          |
-| Checklist header                         | `.amplitude-checklist-header`                   |
-| Checklist title                          | `.amplitude-checklist-title`                    |
-| Checklist subtitle                       | `.amplitude-checklist-subtitle`                 |
-| Checklist progress                       | `.amplitude-checklist-progress`                 |
-| Checklist close button                   | `.amplitude-checklist-close-button`             |
-| Checklist item header (expanded)         | `.amplitude-checklist-item-header__expanded`    |
-| Checklist item header (collapsed)        | `.amplitude-checklist-item-header__collapsed`   |
-| Checklist item body                      | `.amplitude-checklist-item-body`                |
-| Checklist item content                   | `.amplitude-checklist-item-content`             |
-| Checklist item buttons                   | `.amplitude-checklist-item-buttons`             |
-| Checklist item button (primary)          | `.amplitude-checklist-item-button__primary`     |
-| Checklist item button (secondary)        | `.amplitude-checklist-item-button__secondary`   |
+| Element                           | Selector                                                 |
+| --------------------------------- | -------------------------------------------------------- |
+| Checklist                         | `.amplitude-engagement-checklist`                        |
+| Checklist header                  | `.amplitude-engagement-checklist-header`                 |
+| Checklist title                   | `.amplitude-engagement-checklist-title`                  |
+| Checklist subtitle                | `.amplitude-engagement-checklist-subtitle`               |
+| Checklist progress                | `.amplitude-engagement-checklist-progress`               |
+| Checklist close button            | `.amplitude-engagement-checklist-close-button`           |
+| Checklist item header (expanded)  | `.amplitude-engagement-checklist-item-header__expanded`  |
+| Checklist item header (collapsed) | `.amplitude-engagement-checklist-item-header__collapsed` |
+| Checklist item body               | `.amplitude-engagement-checklist-item-body`              |
+| Checklist item content            | `.amplitude-engagement-checklist-item-content`           |
+| Checklist item buttons            | `.amplitude-engagement-checklist-item-buttons`           |
+| Checklist item button (primary)   | `.amplitude-engagement-checklist-item-button__primary`   |
+| Checklist item button (secondary) | `.amplitude-engagement-checklist-item-button__secondary` |
 
 ### Buttons and actions
 
-| Element                | Selector                           |
-| ---------------------- | ---------------------------------- |
-| CTA button             | `.amplitude-cta-button`            |
-| CTA button (primary)   | `.amplitude-cta-button__primary`   |
-| CTA button (secondary) | `.amplitude-cta-button__secondary` |
-| Banner actions         | `.amplitude-banner-actions`        |
+| Element                | Selector                                      |
+| ---------------------- | --------------------------------------------- |
+| CTA button             | `.amplitude-engagement-cta-button`            |
+| CTA button (primary)   | `.amplitude-engagement-cta-button__primary`   |
+| CTA button (secondary) | `.amplitude-engagement-cta-button__secondary` |
+| Banner actions         | `.amplitude-engagement-banner-actions`        |
 
 ### Form elements (Survey elements)
 
-| Element               | Selector                          |
-| --------------------- | --------------------------------- |
-| List                  | `.amplitude-list`                 |
-| List dropdown         | `.amplitude-list-dropdown`        |
-| Rating                | `.amplitude-rating`               |
-| Rating (emojis)       | `.amplitude-rating__emojis`       |
-| Text input            | `.amplitude-text-input`           |
-| Short text input      | `.amplitude-short-text-input`     |
-| Checkbox option       | `.amplitude-checkbox-option`      |
-| Radio option          | `.amplitude-radio-option`         |
+| Element          | Selector                                 |
+| ---------------- | ---------------------------------------- |
+| List             | `.amplitude-engagement-list`             |
+| List dropdown    | `.amplitude-engagement-list-dropdown`    |
+| Rating           | `.amplitude-engagement-rating`           |
+| Rating (emojis)  | `.amplitude-engagement-rating__emojis`   |
+| Text input       | `.amplitude-engagement-text-input`       |
+| Short text input | `.amplitude-engagement-short-text-input` |
+| Checkbox option  | `.amplitude-engagement-checkbox-option`  |
+| Radio option     | `.amplitude-engagement-radio-option`     |
 
 ## Usage
 
@@ -123,18 +123,18 @@ Use CSS class selectors to target Guides and Surveys elements:
 
 ```css
 /* Style banner background */
-.amplitude-banner-container {
+.amplitude-engagement-banner-container {
   background: linear-gradient(to right, #667eea, #764ba2);
 }
 
 /* Customize CTA button appearance */
-.amplitude-cta-button {
+.amplitude-engagement-cta-button {
   border-radius: 8px;
   text-transform: uppercase;
 }
 
 /* Style close button hover state */
-.amplitude-close:hover {
+.amplitude-engagement-close:hover {
   opacity: 0.7;
 }
 ```
@@ -143,17 +143,18 @@ Use CSS class selectors to target Guides and Surveys elements:
 
 ```css
 /* Style banners with custom background */
-.amplitude-banner-container {
+.amplitude-engagement-banner-container {
   background: linear-gradient(to right, #667eea, #764ba2);
 }
 
 /* Style primary CTA buttons in banners */
-.amplitude-banner-container .amplitude-cta-button__primary {
+.amplitude-engagement-banner-container
+  .amplitude-engagement-cta-button__primary {
   width: 100%;
 }
 
 /* Style checklist progress bars */
-.amplitude-checklist-progress {
+.amplitude-engagement-checklist-progress {
   background-color: #f5f5f5;
 }
 ```
@@ -165,7 +166,7 @@ Use CSS class selectors to target Guides and Surveys elements:
 You may need to use `!important` to override default styles:
 
 ```css
-.amplitude-banner-container {
+.amplitude-engagement-banner-container {
   background-color: #custom-color !important;
 }
 ```
