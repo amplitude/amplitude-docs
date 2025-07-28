@@ -46,7 +46,7 @@ You can specify if you want to receive alerts for all, or some, of the following
 After you have connected your Slack organization to. Amplitude, you can create notifications for your experiments. 
 
 {{partial:admonition type="note" heading=""}}
-If you want to send notificaitons through webhooks, you can specify your webhook at the same time that you create the alert.
+If you want to send notifications through webhooks, you can specify your webhook at the same time that you create the alert.
 {{/partial:admonition}}
 
 ##### To set up an alert
@@ -56,7 +56,7 @@ If you want to send notificaitons through webhooks, you can specify your webhook
 3. Specify the project that you want.
 4. Set the scope. You can select one of:
     - **All In the Project**: Receive notifications for all experiments in the project.
-    - **By Deployment**: Receive notificaitons for all experiments in your entire deployment.
+    - **By Deployment**: Receive notifications for all experiments in your entire deployment.
     If you are receiving alerts by deployment, you must specify the deployment by ID number.
     - **By Tag**: Receive notificaitons only for experiments tagged with specific labels. 
 5. Choose how you want to receive your notifications:
