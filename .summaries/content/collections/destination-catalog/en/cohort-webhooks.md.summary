@@ -10,8 +10,7 @@
 - in_cohort boolean flag
 - message_id deduplication
 - computed_time cohort sync
+- custom header configuration
 - async API pattern recommendations
 - 200 OK response requirements
-- cohort add/remove batches
-- custom payload transformation
-- marketing automation integration
+- cohort export sync cadence
