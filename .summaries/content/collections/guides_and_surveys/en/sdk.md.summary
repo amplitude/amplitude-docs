@@ -1,36 +1,26 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK implementation, including installation methods (Amplitude Browser SDK plugin, third-party analytics integration, GTM), initialization with `init()` and `boot()` functions, and SDK methods like `forwardEvent()`, `setThemeMode()`, `addCallback()`, and `setRouter()` for SPA navigation.
+## Summary
 
-**Keywords:**
-- @amplitude/engagement-browser
-- engagement.init()
-- engagement.boot()
-- window.engagement
-- BootOptions
-- InitOptions
-- forwardEvent()
-- setThemeMode()
-- addCallback()
-- setRouter()
-- engagement.gs.show()
-- engagement.gs.reset()
-- engagement.gs.list()
-- engagement.gs.closeAll()
-- _setUserProperties()
-- updateLanguage()
-- serverZone
-- serverUrl
-- cdnUrl
-- nonce
-- CSP
-- integrations
-- user_id
-- device_id
-- event_type
-- event_properties
-- ThemeMode
-- Segment analytics
-- Google Tag Manager
-- SPA router
-- localization
-- targeting resolution
-- _debugStatus()
+This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers like Segment, and Google Tag Manager, with methods for initialization, user management, theming, localization, and programmatic control of guides and surveys.
+
+## Keywords
+
+- Amplitude Guides and Surveys Web SDK
+- @amplitude/engagement-browser package
+- engagement.init() and engagement.boot() methods
+- Amplitude Browser SDK plugin integration
+- Segment analytics integration
+- Google Tag Manager template
+- engagement.forwardEvent() for event-based triggers
+- ThemeMode (lightMode, darkMode, auto)
+- engagement.setRouter() for SPA routing
+- engagement.gs.show() and engagement.gs.reset()
+- Content Security Policy (CSP) nonce support
+- serverZone (US/EU) configuration
+- engagement._setUserProperties() method
+- engagement.setSessionProperty() method
+- InitOptions and BootOptions configuration
+- window.engagement global object
+- user_id and device_id identification
+- engagement.addCallback() for button actions
+- engagement.updateLanguage() for localization
+- proxy setup with serverUrl and cdnUrl

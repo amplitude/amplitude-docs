@@ -499,6 +499,34 @@ engagement._setUserProperties(userProperties)
 engagement._.user.user_properties
 ```
 
+## Set session properties
+
+Set session properties for the current session. Session properties provide an additional way to restrict when guides and surveys are triggered. At the time of trigger, the configured session property conditions must be met for the guide or survey to display.
+
+When a session property changes, the SDK checks if there are any guides or surveys that can now be shown. This means session properties work with the "immediately" trigger and display content as soon as the session property conditions become true.
+
+```js
+engagement.setSessionProperty(key: string, value: any): void
+```
+
+| Parameter | Type      | Description                                              |
+| --------- | --------- | -------------------------------------------------------- |
+| `key`     | `string`  | Required. The session property key to set.              |
+| `value`   | `any` | Required. The value to set for the session property.    |
+
+{{partial:admonition type="note" heading="Feature availability"}}
+Session properties are a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
+{{/partial:admonition}}
+
+### Example
+
+```js
+// Various session properties to control guide/survey targeting
+window.engagement.setSessionProperty("subscriptionTier", "premium");
+window.engagement.setSessionProperty("isFeatureXEnabled", true);
+window.engagement.setSessionProperty("userScore", 85);
+```
+
 ## Close all
 
 Close all active guides and surveys.
