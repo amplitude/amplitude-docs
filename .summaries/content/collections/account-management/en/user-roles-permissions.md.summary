@@ -1,22 +1,17 @@
 **Summary:** This documentation covers Amplitude's user role hierarchy (Viewer, Member, Manager, Admin) and their specific permissions for accessing analytics features, managing content, and administering organizations, including project-level permissions for Enterprise customers.
 
 **Keywords:**
-- Amplitude user roles
-- organization-level permissions
+- user roles permissions
+- Amplitude organization admin
 - project-level permissions
-- Viewer role permissions
-- Member role permissions
-- Manager role permissions
-- Admin role permissions
-- discoverable vs undiscoverable content
-- behavioral cohorts
-- custom events
-- team spaces
-- Visual Labeling
-- permission groups
-- API keys access
-- derived properties
-- Guides and Surveys
+- viewer member manager admin roles
+- discoverable undiscoverable content
+- behavioral cohorts dashboards
+- permission groups Enterprise
+- Visual Labeling custom events
+- team spaces saved segments
+- API keys secret keys
+- Guides Surveys access
 - content ownership transfer
-- sampling settings
-- Enterprise customers
+- derived properties management
+- sampling settings organization
