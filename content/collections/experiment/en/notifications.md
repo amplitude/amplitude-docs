@@ -10,10 +10,10 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753390854
 ---
-You can set up notification alerts for your Web and Feature experiments or for individual feature flags. Amplitude sends these notifications when your experiments transition status, when they start or end, or when major changes occur. There are two ways to receive notifications:
+You can set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
 
-- Email / Slack direct messages
-- Slack channel notifications / webhooks
+- **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ration mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
+- **Slack channel notifications / webhooks**: Sends notifications for any changes to an active flag configuration thhat generates a new history version or when flags are activated or deactivated.
 
 This page discusses setting up and maintaining notification alerts through Slack channels and webhooks. Only notifications created through the Experiment Alerts function are sent in this way. 
 
