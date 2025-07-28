@@ -403,9 +403,9 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10` |
-| `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10000` |
-| `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `true` |
+| `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `10` |
+| `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `10000` |
+| `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `true` |
 
 **CohortSyncConfig**
 
@@ -457,7 +457,7 @@ public void stop();
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfiguration`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+Set [`assignmentConfiguration`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}

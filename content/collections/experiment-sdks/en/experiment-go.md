@@ -236,7 +236,7 @@ func Initialize(apiKey string, config *Config) *Client
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `StreamUpdates` [configuration](#configuration) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. The time for SDK to receive the update after saving is generally under one second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration) to set the time flag configs take to update once modified (default 30s), as well for fallback.
+Use the `StreamUpdates` [configuration](#configuration-1) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. The time for SDK to receive the update after saving is generally under one second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration-1) to set the time flag configs take to update once modified (default 30s), as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -267,7 +267,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `CacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
-| [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [`Config`](/docs/sdks/analytics/go/go-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
 
@@ -301,7 +301,7 @@ if err != nil {
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`AssignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
+Set [`AssignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
 {{/partial:admonition}}
 
 ```go

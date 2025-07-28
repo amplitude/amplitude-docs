@@ -98,7 +98,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Analytics Configuration
 
-The Unified SDK provides a simplified configuration interface for the Analytics SDK. For a complete list of configuration options, see the [Analytics SDK documentation](/docs/sdks/analytics/ios/ios-swift-sdk#configure-the-sdk).
+The Unified SDK provides a simplified configuration interface for the Analytics SDK. For a complete list of configuration options, see the [Analytics SDK documentation](./ios-swift-sdk#configure-the-sdk).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -137,7 +137,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Experiment Configuration
 
-The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](/docs/sdks/experiment-sdks/experiment-ios).
+The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](../experiment-sdks/experiment-ios).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -211,7 +211,7 @@ The Unified SDK provides access to all the functionality of the individual SDKs 
 
 ### Analytics
 
-The Unified SDK exposes all the Analytics SDK functionality directly. For a complete list of methods, see the [Analytics SDK documentation](/docs/sdks/analytics/ios/ios-swift-sdk).
+The Unified SDK exposes all the Analytics SDK functionality directly. For a complete list of methods, see the [Analytics SDK documentation](./ios-swift-sdk).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}

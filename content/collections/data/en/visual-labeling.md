@@ -35,11 +35,6 @@ To use Visual Labeling to create new labeled events, follow these steps:
 2. Enter the URL of the site or application you want to label, and click _Start Labeling_. Amplitude opens your website or app in a new tab, with the visual labeling toolbar at the top of the page.
 3. Click an element you want to label, the visual labeling overlay appears. Click _Navigate_ to navigate to a different part of site that you want to label.
 4. In the visual labeling overlay, enter a name, description, and category for your labeled event. Select if tracking should happen when a user clicks the element, or when it changes. Visual labeling uses the `clicked` event by default. Refine the definition and select filters as needed. When you're done, click _Save_. If you have labeled events that have the same definition, a warning appears to help you avoid duplication.
-
-   {{partial:admonition type="tip" heading="AI generated event names"}}
-   If your organization enables Amplitude's AI features, Visual Labeler automatically recommends event names and definitions based on the element you click.
-   {{/partial:admonition}}
-
 5. Amplitude saves the labeled event and displays a confirmation with an option to view the labeled event. Visual Labeling prevents saving events with duplicate names or definitions.
 6. Repeat steps three through five for each event you want to label.
 7. When you're done labeling, return to Amplitude. Here, you can manually update the tag, text, selector, and page URL of each labeled event.

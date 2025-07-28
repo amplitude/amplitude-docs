@@ -10,7 +10,9 @@ updated_at: 1721925973
 ---
 This reference covers examples and operators for the Amazon S3 Import and GCS converter configuration. Read the [S3 guide](/docs/data/source-catalog/amazon-s3) or the [GCS guide](/docs/data/source-catalog/google-cloud-storage) for more information.
 
-## skip_user_properties_sync
+## Considerations
+
+### `$skip_user_properties_sync`
 
 Because many cloud storage source imports are batch uploads of historical data, it may not make sense to sync the latest user properties for historical events. Because of this, `$skip_user_properties_sync` is set to `true` by default. If you want to include user properties with your events, you must set it to `false` in the converter. 
 

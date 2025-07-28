@@ -16,7 +16,7 @@ There are some limits to the amount of data that you can send to Amplitude.
 All organizations have a monthly event volume limit. Your company's signed agreement with Amplitude specifies the limit that applies to you, and you can see it in your Settings.   
 
 {{partial:admonition type='note'}}
-Identify and Group Identify calls don't count against total event volume.
+ Identify and Group Identify calls do **NOT** count against total event volume.
 {{/partial:admonition}}
 
 Customers who exceed these limits may be subject to overage fees. If you're close to exceeding this limit, Amplitude alerts you through email and in-product notifications. Email alerts automatically go out to users with the Admin role when you reach certain percentages of your limit (80%, 90%, 100%, and 110% for paid plans).
@@ -116,6 +116,6 @@ The baseline group-by limit for Data Tables is 10,000, with some exceptions:
 
 * The limit is 300 with a conversion metric
 * The limit is 100 with a session metric
-* The limit is 20 with attribution
+* The limit is 10 with attribution
 
 For any combination of these exceptions, the limit is the lowest limit included in the combination. For example, if a group-by includes both a conversion metric and attribution, the limit is 10.

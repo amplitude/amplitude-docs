@@ -14,7 +14,7 @@ The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
-* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
+* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.0.13+
 
 ## Install and initialize the SDK
 
@@ -85,7 +85,7 @@ amplitudeEngagement.boot(options: bootOptions)
 amplitudeEngagement.screen("HomeScreen")
 ```
 
-### Enable element targeting (optional)
+### Enable element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
 
