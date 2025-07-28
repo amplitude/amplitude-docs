@@ -1,22 +1,36 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including setup with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, plus API methods for theme management, callbacks, routing, localization, and user interaction control.
+**Summary:** This documentation covers the Amplitude Guides and Surveys Web SDK implementation, including installation methods (Amplitude Browser SDK plugin, third-party analytics integration, GTM), initialization with `init()` and `boot()` functions, and SDK methods like `forwardEvent()`, `setThemeMode()`, `addCallback()`, and `setRouter()` for SPA navigation.
 
 **Keywords:**
-- Amplitude Guides and Surveys Web SDK
-- @amplitude/engagement-browser package
-- engagement.init() and engagement.boot() methods
-- Amplitude Browser SDK plugin integration
-- third-party analytics provider integration
-- Segment analytics integration
-- Google Tag Manager template
-- engagement.forwardEvent() for event-based triggers
-- engagement.setThemeMode() for light/dark themes
-- engagement.addCallback() for custom callbacks
-- engagement.setRouter() for SPA routing
-- engagement.updateLanguage() for localization
-- engagement.gs.show() and engagement.gs.reset() methods
-- Content Security Policy (CSP) nonce support
-- serverZone EU/US configuration
-- proxy setup with serverUrl and cdnUrl
-- user_id and device_id identification
-- window.engagement global object
-- InitOptions and BootOptions configuration
+- @amplitude/engagement-browser
+- engagement.init()
+- engagement.boot()
+- window.engagement
+- BootOptions
+- InitOptions
+- forwardEvent()
+- setThemeMode()
+- addCallback()
+- setRouter()
+- engagement.gs.show()
+- engagement.gs.reset()
+- engagement.gs.list()
+- engagement.gs.closeAll()
+- _setUserProperties()
+- updateLanguage()
+- serverZone
+- serverUrl
+- cdnUrl
+- nonce
+- CSP
+- integrations
+- user_id
+- device_id
+- event_type
+- event_properties
+- ThemeMode
+- Segment analytics
+- Google Tag Manager
+- SPA router
+- localization
+- targeting resolution
+- _debugStatus()
