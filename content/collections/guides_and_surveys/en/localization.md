@@ -142,3 +142,71 @@ Localization is supported for the following copy:
 * Survey list "other" option placeholder
 * Survey list input options
 * Video URL
+{{/partial:collapse}}
+
+### Translating content
+
+There are a number of ways to add localized content to your guide or survey:
+
+- Use the web interface to add or edit translations. Amplitude recommends this method.
+- Use AI localization to automatically translate your content. Amplitude recommends this method for quick, automated translations.
+- Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
+
+{{partial:tabs tabs="Web interface, AI localization, XLIFF file upload"}}
+{{partial:tab name="Web interface"}}
+The web interface is the most direct method of adding localized content to a guide or survey. The web interface is the preferred way of adding localized content to a guide or survey because it offers a direct relationship to each text string. 
+
+1. Click the **Build** tab of your guide or survey.
+2. In the upper-right of the screen, click the language toggle.
+By default, this is **English**.
+3. Select the language you want. 
+4. Update the individual strings with your translated content.
+All content is automatically associated with the langauge displayed in the language toggle.
+
+
+{{/partial:tab}}
+{{partial:tab name="AI localization"}}
+AI localization automatically translates your guide or survey content using [Claude](https://claude.ai/login?returnTo=%2F%3F). Amplitude takes the strings from the default language and attempts to: 
+
+- Maintain the original meaning and tone.
+- Make the translations natural and user-friendly.
+- Preserve HTML tags, formatting, and special characters.
+
+This feature provides quick, automated translations for all your project's supported languages. However, Amplitude cannot guarantee the accuracy of AI-translated strings. Therefore, it's highly recommended to manually review AI-translated content before publishing your guide or survey to your users. You can edit AI translations using the web interface.
+
+##### To use AI localization
+
+1. Complete the guide or survey's steps in the default language.
+2. In the Localization section of the Setup tab, select one of the following:
+   - **Translate All Languages**: Translate your content into all languages set in your project settings.
+   - **Translate Selected Language**: Translate your content for a single language.
+
+{{/partial:tab}}
+{{partial:tab name="XLIFF file upload"}}
+If you want to integrate with your own translation workflow, you can download an [.xliff](https://en.wikipedia.org/wiki/XLIFF) file for each language.
+
+##### To upload an XLIFF file
+1. Create the guide or survey in the default language.
+2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
+
+    {{partial:admonition type="tip" heading="Adding translations to the xliff files"}}
+    Guides and Surveys template files add untranslated content to `<source>` tags in an .xliff file. The content in these tags shouldn't change. Add translations to the `<target>` tags. For example:
+    ```xml
+        <trans-unit id="done_label">
+            <source>Finish</source>
+            <target>Terminer</target>
+        </trans-unit>
+    ```
+    {{/partial:admonition}}
+3. Create translations to your target languages with the template file and upload a translated .xliff file for each language. If you don't upload a file for a language, Guides and Surveys follows the specified fallback setting for a missing translation.
+4. After you upload an .xliff file, review the content by toggling through the language picker.
+
+    {{partial:admonition type="tip" heading="Update translations"}}
+   After you upload a translation .xliff file, you can still make updates to localized content on the appropriate step of the guide or survey. Amplitude adds updates that you make to the uploaded .xliff file to ensure it stays in sync.
+    {{/partial:admonition}}
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Preview a translation
+
+When you preview a localized guide or survey, the preview bar displays translation-based issues that may prevent the guide or survey from showing.
