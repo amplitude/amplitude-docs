@@ -2,6 +2,10 @@ tree:
   -
     id: 6ce771a2-2023-491f-aa33-3bd334daacfa
     entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
+    children:
+      -
+        id: 1bad217f-262f-4326-a9fe-4ca32db686b8
+        entry: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
   -
     id: e22eb181-a0e9-4c79-b1b9-8a3e2e275104
     title: 'Feature Flags'
@@ -68,6 +72,10 @@ tree:
       -
         id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
         title: 'Experiment Goals'
+        children:
+          -
+            id: 27510f77-6da7-44f2-a853-178f8f80987a
+            entry: 18cba191-177e-4f7c-abcb-f5375c155c71
       -
         id: 7258b125-7c7c-4299-ba0e-31f188e3517c
         entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
@@ -79,6 +87,15 @@ tree:
     id: fe2ac0eb-274f-4af5-b146-1d467c9edd0e
     title: 'Creating Experiments'
     children:
+      -
+        id: 3687a9d2-bf40-4280-8220-12b885d702b2
+        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
+      -
+        id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
+        entry: 5c091ba2-f202-4972-9e9f-4a9af712730d
+      -
+        id: a978b4c7-f702-4e27-b042-3369a199110e
+        entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
       -
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
@@ -125,6 +142,9 @@ tree:
           -
             id: 3bd44a68-1b42-42c0-99bd-bffd3a553525
             entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
+      -
+        id: 1018898c-9ca7-45e5-9180-18a048b5cec1
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: d5b6a5f1-c999-4645-88e6-08fcce202918
     title: 'Testing Experiments'
@@ -132,6 +152,9 @@ tree:
       -
         id: 45493c66-cbea-4f55-84b7-9131ef5094c4
         entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+      -
+        id: 779c43fa-d73c-483c-946d-076ea8b9545f
+        entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'
@@ -151,10 +174,32 @@ tree:
       -
         id: 7f2d6e47-fa61-4e4d-9ab9-45ac511dba3d
         entry: e05c2f18-2f1f-4391-ae18-cc1248444688
+      -
+        id: ccff772e-23a6-4420-a01b-b22f5afd7f6d
+        entry: 2e357f69-a007-4912-8603-5e568d6ddcb8
+      -
+        id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
+        title: 'Understand the cumulative exposures graph'
+        children:
+          -
+            id: 80dccec2-db6b-4563-b8b8-51788500c723
+            entry: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
+            title: 'Increasing and decreasing slopes'
+          -
+            id: c645f1f2-5e16-40e4-a24f-ec475d26ad32
+            entry: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
+            title: 'Divergent lines'
+          -
+            id: e05b14be-4608-493e-9e68-5c56f0003390
+            entry: 6b86591a-0640-488d-b94c-5973aea3308b
+            title: 'Inflection points and flattened slopes'
   -
     id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
     title: Troubleshooting
     children:
+      -
+        id: ba6c0ec7-5642-48f2-b4f6-f1c1e454167b
+        entry: 29db4e07-fe88-46f9-8f21-76c7b6d77142
       -
         id: 017ee388-a2b0-4610-a05d-a29927eeb42e
         entry: 71dedb3e-eb17-4ed1-9df0-bcbc78a2e6a2
@@ -175,6 +220,10 @@ tree:
         id: 90ff8151-b864-4782-abdd-65b81d1c26ca
         title: 'Experiment SDKs'
         url: /docs/sdks/experiment-sdks
+        children:
+          -
+            id: e2cf6857-5740-4894-8121-e9ff81d9814d
+            entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
       -
         id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
         title: 'Experiment APIs'
@@ -213,47 +262,3 @@ tree:
     title: 'Experiment workflows'
     data:
       open_collapsed: false
-    children:
-      -
-        id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
-        entry: 5c091ba2-f202-4972-9e9f-4a9af712730d
-      -
-        id: a978b4c7-f702-4e27-b042-3369a199110e
-        entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
-      -
-        id: 779c43fa-d73c-483c-946d-076ea8b9545f
-        entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
-      -
-        id: ccff772e-23a6-4420-a01b-b22f5afd7f6d
-        entry: 2e357f69-a007-4912-8603-5e568d6ddcb8
-      -
-        id: ba6c0ec7-5642-48f2-b4f6-f1c1e454167b
-        entry: 29db4e07-fe88-46f9-8f21-76c7b6d77142
-      -
-        id: 3687a9d2-bf40-4280-8220-12b885d702b2
-        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
-      -
-        id: 27510f77-6da7-44f2-a853-178f8f80987a
-        entry: 18cba191-177e-4f7c-abcb-f5375c155c71
-      -
-        id: e2cf6857-5740-4894-8121-e9ff81d9814d
-        entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
-      -
-        id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
-        title: 'Understand the cumulative exposures graph'
-        children:
-          -
-            id: 80dccec2-db6b-4563-b8b8-51788500c723
-            entry: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
-            title: 'Increasing and decreasing slopes'
-          -
-            id: c645f1f2-5e16-40e4-a24f-ec475d26ad32
-            entry: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
-            title: 'Divergent lines'
-          -
-            id: e05b14be-4608-493e-9e68-5c56f0003390
-            entry: 6b86591a-0640-488d-b94c-5973aea3308b
-            title: 'Inflection points and flattened slopes'
-  -
-    id: 1018898c-9ca7-45e5-9180-18a048b5cec1
-    entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
