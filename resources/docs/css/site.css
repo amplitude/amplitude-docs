@@ -1113,3 +1113,8 @@ img.expandable-image {
     opacity: .75;
 
 }
+
+.prose ol ol {
+    list-style: lower-alpha;
+    list-style-type: lower-alpha;
+}
