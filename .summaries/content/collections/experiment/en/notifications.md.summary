@@ -1,19 +1,18 @@
-**Summary:** This documentation covers setting up notification alerts for Web and Feature experiments through Slack channels and webhooks, including Slack workspace integration, webhook schema configuration with signing keys, and alert scoping options (project-wide, deployment-based, or tag-based filtering).
+**Summary:** This documentation covers setting up Slack channel and webhook notifications for Amplitude experiments and feature flags, including configuration for flag creation/updates/deletion events, webhook schema with flagId/flagName/scope parameters, and alert scoping by project/deployment/tag.
 
 **Keywords:**
-- experiment notifications
-- Slack channel alerts
+- Slack channel notifications
 - webhook notifications
-- feature flags alerts
-- experiment alerts configuration
-- Slack workspace integration
-- webhook schema
-- signing key verification
-- alert scoping
-- deployment-based alerts
-- tag-based filtering
-- sample-ratio mismatch (SRM)
+- experiment alerts
+- feature flag notifications
 - flag configuration changes
-- experiment history versions
+- sample-ratio mismatch (SRM)
+- statsig recommendation metrics
+- webhook signing key
+- flag history versions
+- deployment API key
+- alert scoping
 - Member permissions
-- API key deployment
+- Experiment Alerts function
+- webhook schema flagId
+- flag activation/deactivation
