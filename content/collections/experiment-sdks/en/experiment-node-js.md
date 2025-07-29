@@ -258,7 +258,7 @@ initializeLocal(apiKey: string, config?: LocalEvaluationConfig): LocalEvaluation
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `streamUpdates` [configuration](#configuration_1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration_1) as well for fallback.
+Use the `streamUpdates` [configuration](#configuration) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration) as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -290,7 +290,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
 
@@ -321,7 +321,7 @@ await experiment.start();
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
+Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
 {{/partial:admonition}}
 
 ```js
