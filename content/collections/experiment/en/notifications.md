@@ -45,17 +45,18 @@ After you have connected your Slack organization to Amplitude, you can create no
 If you want to send notifications through webhooks, you must provide the URL and valid [signing key](https://docs.knock.app/developer-tools/outbound-webhooks/overview#verifying-the-signature). You can specify your webhook at the same time that you create the alert. 
 
 Webhook schema:
-```
+
+```json
 {
-  "flagId":"{{flagId}}",
-  "flagName":"{{flagName}}",
-  "scope":"{{scope}}",
-  "scopeParam":"{{scopeParam}}",
-  "scopeParamName":"{{scopeParamName}}",
-  "action":"{{action}}",
-  "modifiedBy":"{{modifiedBy}}",
-  "flag":"{{flag}}",
-  "oldFlag":"{{oldFlag}}"
+  "flagId":"{flagId}",
+  "flagName":"{flagName}",
+  "scope":"{scope}",
+  "scopeParam":"{scopeParam}",
+  "scopeParamName":"{scopeParamName}",
+  "action":"{action}",
+  "modifiedBy":"{modifiedBy}",
+  "flag":"{flag}",
+  "oldFlag":"{oldFlag}"
   }
 ```
 
