@@ -136,6 +136,9 @@ tree:
         id: 779c43fa-d73c-483c-946d-076ea8b9545f
         entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
       -
+        id: 54317436-52f8-4031-b753-a361edd89b2b
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
+      -
         id: ccff772e-23a6-4420-a01b-b22f5afd7f6d
         entry: 2e357f69-a007-4912-8603-5e568d6ddcb8
       -
@@ -175,9 +178,6 @@ tree:
             id: e05b14be-4608-493e-9e68-5c56f0003390
             entry: 6b86591a-0640-488d-b94c-5973aea3308b
             title: 'Inflection points and flattened slopes'
-      -
-        id: 54317436-52f8-4031-b753-a361edd89b2b
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: e67e82c0-c298-4d72-bd01-6e42a7e97826
     title: Integrations

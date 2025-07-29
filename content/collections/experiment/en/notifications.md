@@ -1,16 +1,16 @@
 ---
 id: e39f9287-bec8-4403-ba60-8b04da56b5f9
 blueprint: experiment
-title: Notifications through Slack Channel or Webhook
+title: 'Notifications through Slack Channel or Webhook'
 this_article_will_help_you:
   - 'Understand the type of notifications you can set for experiments'
   - 'Create notification alerts for your experiments'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1753390854
+updated_at: 1753814210
 ---
-You can set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
+Set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
 
 - **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ratio mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
 - **Slack channel notifications / webhooks**: Sends notifications for any changes to an active flag configuration that generates a new history version or when flags are activated or deactivated.
@@ -45,6 +45,7 @@ After you have connected your Slack organization to Amplitude, you can create no
 If you want to send notifications through webhooks, you must provide the URL and valid [signing key](https://docs.knock.app/developer-tools/outbound-webhooks/overview#verifying-the-signature). You can specify your webhook at the same time that you create the alert. 
 
 Webhook schema:
+
 ```json
 {
   "flagId": number
