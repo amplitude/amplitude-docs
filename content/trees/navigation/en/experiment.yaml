@@ -201,7 +201,7 @@ tree:
         entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: e67e82c0-c298-4d72-bd01-6e42a7e97826
-    title: Integrations
+    title: 'Experiment Integrations'
     children:
       -
         id: 91587dda-6cea-4de4-981f-3e346a936598
@@ -270,8 +270,3 @@ tree:
       -
         id: dee1f568-8623-4fe9-8df3-89158307d151
         entry: ec448015-b432-434a-93a0-6392b4474d67
-  -
-    id: 9360179b-3944-4058-ab65-89d3f8baf60b
-    title: 'Experiment workflows'
-    data:
-      open_collapsed: false
