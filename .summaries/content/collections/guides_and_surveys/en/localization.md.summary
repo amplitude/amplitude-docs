@@ -1,18 +1,18 @@
-**Summary:** This documentation covers the localization feature for Guides and Surveys, which enables serving content in multiple languages through SDK locale configuration, project language settings, fallback behavior configuration, and content translation via web interface, AI localization, or XLIFF file upload.
+**Summary:** This documentation covers the localization feature for Guides and Surveys, detailing SDK configuration with locale parameters, project settings for multi-language support, and content translation methods including web interface, AI localization with Claude, and XLIFF file workflows.
 
 **Keywords:**
 - Guides and Surveys localization
 - SDK locale initialization
-- engagement.plugin locale configuration
-- Project Settings language support
-- fallback behavior translation unavailable
-- fallback behavior translation outdated
-- translatable strings guide survey
-- AI localization Claude translation
-- XLIFF file upload translation workflow
-- language toggle web interface
-- locale code language resolution
-- Growth Enterprise plan localization
+- amplitude.add(window.engagement.plugin({locale}))
+- engagement.init(apiKey, {locale})
+- Project Settings localization tab
+- fallback behavior configuration
+- translatable strings
+- AI localization with Claude
+- XLIFF file upload workflow
 - translation template download
-- survey list option mapping
-- default language English setting
+- language toggle interface
+- locale code resolution
+- Growth and Enterprise plans
+- translation outdated behavior
+- translation unavailable behavior
