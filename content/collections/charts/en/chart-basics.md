@@ -65,7 +65,7 @@ By default, the Y-axis name comes from the measurement that's displayed. For exa
 
 To help the data fit more cleanly on the chart, you can set minimum and maximum values. By default, a chart's Y-axis starts at zero. Sometimes, your data might be in a small range, but with higher value.
 
-In the examples below, the chart on the left uses the default axis values, and the chart on the right has the minimum set to `10000` and the maximum set to `15000`.
+In the examples below, the chart on the left uses the default axis values, and the chart on the right has the minimum set to `10000` and the maximum set to `16000`.
 
 ![](statamic://asset::help_center_conversions::event-segmentation/y-axis-scale.png)
 
