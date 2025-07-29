@@ -41,9 +41,10 @@ Recommended role for third parties, if you don't want them creating content that
 * Share content they create with others
 * View Guides and Surveys
 * Create and view [Heatmaps](/docs/session-replay/heatmaps)
+* Open project details from notification alerts
 
 Viewers:
-* Can't create anything that's discoverable, including saved segments
+* Can't save discoverable content such as chart, dashboards, notebooks, cohorts, or saved segments
 * Can't create shareable links
 * Can't export data to third-party integration partners
 * Can't create a guide or survey
@@ -58,6 +59,7 @@ Recommended for the majority of Amplitude users in your organization. Members ha
 * Edit [releases](/docs/analytics/releases)
 * Label events with [Visual Labeling](/docs/data/visual-labeling)
 * Edit unpublished guides or surveys. 
+* Create and manager experiment notification alerts
 
 {{partial:admonition type="note" heading=""}}
 Members can't search for undiscoverable content.
