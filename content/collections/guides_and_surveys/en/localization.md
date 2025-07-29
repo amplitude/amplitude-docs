@@ -116,7 +116,7 @@ There are a number of ways to add localized content to your guide or survey:
 - Use AI localization to automatically translate your content. Amplitude recommends this method for quick, automated translations.
 - Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
 
-{{partial:tabs tabs="Web interface, AI localization, XLIFF file upload "}}
+{{partial:tabs tabs="Web interface, AI localization, XLIFF file upload"}}
 {{partial:tab name="Web interface"}}
 The web interface is the most direct method of adding localized content to a guide or survey. The web interface is the preferred way of adding localized content to a guide or survey because it offers a direct relationship to each text string. 
 
@@ -127,9 +127,7 @@ By default, this is **English**.
 4. Update the individual strings with your translated content.
 All content is automatically associated with the langauge displayed in the language toggle.
 
-{{partial:admonition type="note" heading=""}}
-When entering lists in Surveys, the items must be in the same order each time you add content. Each list option is mapped to a specific ID number that matches the original text string to the translated one. Inconsistent ordering can result in the data being collected incorrectly. 
-{{/partial:admonition}}
+
 {{/partial:tab}}
 {{partial:tab name="AI localization"}}
 AI localization automatically translates your guide or survey content using [Claude](https://claude.ai/login?returnTo=%2F%3F). Amplitude takes the strings from the default language and attempts to: 
