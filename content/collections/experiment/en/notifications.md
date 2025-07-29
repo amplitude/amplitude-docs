@@ -1,16 +1,16 @@
 ---
 id: e39f9287-bec8-4403-ba60-8b04da56b5f9
 blueprint: experiment
-title: Notifications through Slack Channel or Webhook
+title: 'Notifications through Slack Channel or Webhook'
 this_article_will_help_you:
   - 'Understand the type of notifications you can set for experiments'
   - 'Create notification alerts for your experiments'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1753390854
+updated_at: 1753813622
 ---
-You can set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
+Set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
 
 - **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ration mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
 - **Slack channel notifications / webhooks**: Sends notifications for any changes to an active flag configuration thhat generates a new history version or when flags are activated or deactivated.
