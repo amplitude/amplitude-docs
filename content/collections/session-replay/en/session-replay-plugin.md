@@ -182,7 +182,6 @@ const sessionReplayTracking = window.sessionReplay.plugin({
  forceSessionTracking: true, // Enable capture of Session Start and Session End events
  sampleRate: 1, // 100% sample rate, should reduce for production traffic. 
 }); 
-
 ```
 
 Amplitude requires at least one event in any captured session to enable playback of the replay.
