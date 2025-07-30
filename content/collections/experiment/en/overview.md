@@ -93,15 +93,15 @@ To learn more about how to design, roll out, and learn from experiments, check o
  Now that you better understand the experiment workflow, consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
 {{/partial:admonition}}
 
-## Creating a feature flag: an overview
+## Creating a feature flag
 
 If, on the other hand, you’re planning a phased feature rollout instead, your workflow is even simpler. Because you’re not asking a question about user behavior in your product, you don’t need to worry about creating a hypothesis, picking a metric, or analyzing your results. All you have to do is create a **feature flag**.
 
 {{partial:admonition type='note'}}
-Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
+Experiments and flags may seem similar. However, the difference is that an experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
 {{/partial:admonition}}
 
-Once you’ve configured your deployment, go straight to creating your variants. The basic idea—i.e., a new and different product experience that some users see but others do not—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
+After you’ve configured your deployment, create your variants. Instead of exploring how different user segments react to different user experiences, you’ll choose which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
 
 You’ll still allocate users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
 
@@ -110,3 +110,19 @@ Check out this article to [learn more about feature flags and how they work in A
 ## Delete old experiments and flags
 
 Deleting experiments and feature flags you no longer need is simple. You'll find both options from the "more" menu in the top right of your experiment. Click the three dots to open the menu and choose either *Deactivate flag* or, if you'd prefer to archive the experiment, *Archive*.
+
+You can also bulk archive flags and experiments. In the Archive view, select all flags and experiments that you want to archive and then confirm that you want to archive them. 
+
+If you are archiving an experiment, Amplitude automatically identifies all associated flags across your projects and asks if you want to archive them at the same time as the experiment. 
+
+### Restoring archived experiments and flags
+
+If you have archived experiments and flags, you can restore them. 
+
+All archived content is stored in the Archived tab of either the Experiments or Feature Flags page. 
+
+#### To restore experiments or feature flags
+
+1. Navigate to either *Experiment > Experiments > Archived* or *Experiment > Feature Flags > Archived*.
+2. Select the archived experiments or feature flags you want to restore.
+3. Click **Restore**.
