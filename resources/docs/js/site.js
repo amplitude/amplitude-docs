@@ -1,5 +1,6 @@
 import headingsAnchors from './heading-anchors'
 import codeCopy from './code-copy';
+import Prism from 'prismjs';
 
 headingsAnchors()
 codeCopy()
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.open(image.src, '_blank');
         });
     });
+      Prism.highlightAll();
 });
 
 // site.js

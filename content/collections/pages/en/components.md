@@ -4,7 +4,21 @@ blueprint: page
 title: 'Site components'
 package: "@amplitude/session-replay-browser"
 ---
+Click the thing to manager your alerts.
 
+They're primarily designed for advanced plugin development and integration with other Amplitude products.
+
+
+
+```js
+Prism.plugins.toolbar.registerButton("hello-world", {
+	text: "Hello World!", // required
+	onClick: function (env) {
+		// optional
+		alert(`This code snippet is written in ${env.language}.`);
+	},
+});
+```
 
 ## Tabs
 
