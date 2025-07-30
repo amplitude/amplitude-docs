@@ -39,6 +39,27 @@ Once the experiment is running, the button changes to read *Complete Experiment*
 
 You can always revisit this decision after you've made it.
 
+## What happens when your experiment ends?
+
+If you roll out your experiment to all users:
+
+* Percentage rollouts are set to 100%
+* Sticky bucketing is set to false
+* The rollout weights change, to 1 for the variant you're rolling out and to 0 for all other variants
+
+If you roll out your experiment to "custom," the automatic changes listed above don't occur. Apply changes manually after confirming your rollout decision.
+
+You can also roll out to "only the targeted users". You may want to use this option because if your experiment targeted only U.S. users and you saw a 5% lift, it does not mean that those results will generalize and if you roll out the experiment to all users you will see a lift of 5%. It could be that the lift on U.S. users is 5% and the lift on all other users is -2%. 
+
+If you roll back your experiment:
+
+* Amplitude turns the flag off
+* Percentage rollouts are set to 0%
+
+If you opt to continue running, your experiment, you can enter a new end date.
+
+Now that you’ve rolled out your experiment, the next step is to [learn from it](/docs/feature-experiment/workflow/experiment-learnings).
+
 {{partial:admonition type='note'}}
 You may receive the warning "Unable to analyze this metric, check your metric definition or refresh this page" before launching an experiment or using a particular metric for the first time. This doesn't prevent you from running your experiment and testing your chosen parameters. 
 {{/partial:admonition}}
@@ -58,22 +79,3 @@ After rollout, you’ll be able to track how many of your users have been expose
 This is a useful way to QA the assignment process. If you notice that one variant is enrolling significantly more or significantly fewer users than you expected, it could mean an issue you should investigate.
 
 If you do spot some outliers or anomalies that concern you, click *Root Cause Analysis* to conduct a deep dive into the potential causes. To learn more about how the Root Cause Analysis feature works, [see this article in the Help Center](/docs/analytics/root-cause-analysis).
-
-## What happens when your experiment ends?
-
-If you roll out your experiment to all users:
-
-* Percentage rollouts are set to 100%
-* Sticky bucketing is set to false
-* The rollout weights change, to 1 for the variant you're rolling out and to 0 for all other variants
-
-If you roll out your experiment to "custom," the automatic changes listed above don't occur. Apply changes manually after confirming your rollout decision.
-
-If you roll back your experiment:
-
-* Amplitude turns the flag off
-* Percentage rollouts are set to 0%
-
-If you opt to continue running, your experiment, you can enter a new end date.
-
-Now that you’ve rolled out your experiment, the next step is to [learn from it](/docs/feature-experiment/workflow/experiment-learnings).
