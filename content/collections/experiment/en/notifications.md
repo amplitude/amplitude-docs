@@ -33,6 +33,10 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 3. Click **Connect To Slack**.
 4. Click **Allow** to confirm that you want to connect Amplitude to Slack.
 
+{{partial:admonition type="note" heading=""}}
+If you see a slack channel id instead of a slack channel name, make sure you have connected Amplitude and Slack. If you have already done that then make sure you are a member of the slack channel. You can reach out to the person who created the alert (which is in the "created" column of the table) to add you to the slack channel.
+{{/partial:admonition}}
+
 ## Experiment activities that generate alerts
 You can specify if you want to receive alerts for the following experiment activities:
 
@@ -49,7 +53,7 @@ Webhook schema:
 ```json
 {
   "flagId": number
-  "flagName": string
+  "flagName": string (Note: that this is the flag key and not the flag name. If you want the flag name do `flag.name`)
   "scope": "exp_deployment" | "project" | "exp_tags"
   "scopeParam": number | undefined
   "scopeParamName": string | undefined
