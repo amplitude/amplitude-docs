@@ -85,7 +85,6 @@ The Summary card displays a badge labeled *Significant* if the experiment reache
 
 ![summary.png](/docs/output/img/workflow/summary-png.png)
 
-
 ## Analysis card
 
 At the top of the Analysis card is an overview that explains how your experiment performed, broken down by metric and variant. Below that, a collection of experiment results charts, which you can analyze by metric, display information about:
@@ -140,11 +139,9 @@ For more control, open any of these charts in the chart build.
 
 ## Interpret notifications
 
-Your preferred notification settings allow you to receive experiment updates by email or [Slack](/docs/analytics/integrate-slack). 
+You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/experiment/notifications) to set up these notification alerts. 
 
-![experiment notification settings.png](/docs/output/img/workflow/experiment-notification-settings-png.png)
-
-Click the check box next to the notification:
+You can set up a notification for the following events:
 
 * **Experiment about to start:** Amplitude sends this notification when your scheduled experiment is about to start.
 * **Experiment end reached:** Amplitude sends this notification when your experiment is complete.
