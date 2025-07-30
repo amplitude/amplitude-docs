@@ -1,10 +1,10 @@
-Guides and Surveys should match your brand and feel like part of your product. While [Themes](/docs/guides-and-surveys/themes) provide broad control over appearance, Custom CSS gives you fine-grained control over specific elements using CSS class selectors.
+[Themes](/docs/guides-and-surveys/themes) provide comprehensive control over the appearance of your guides and surveys. Custom CSS offers additional fine-grained control for specific styling needs that themes can't address. However, themes remain the recommended approach for most customizations, offering better flexibility and backward compatibility.
 
 {{partial:admonition type="note" heading="Web SDK only"}}
 Custom CSS is only available for the web SDK. Mobile SDKs (iOS, Android, React Native) don't support custom CSS.
 {{/partial:admonition}}
 
-## Overview
+## Overview (Beta)
 
 The Guides and Surveys SDK adds CSS classes to form factor elements, allowing you to target them with CSS. These selectors:
 
