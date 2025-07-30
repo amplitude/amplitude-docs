@@ -53,7 +53,7 @@ Webhook schema:
 ```json
 {
   "flagId": number
-  "flagName": string (Note: that this is the flag key and not the flag name. If you want the flag name do `flag.name`)
+  "flagName": string (This is the flag key and not the flag name. If you want the flag name, use `flag.name`)
   "scope": "exp_deployment" | "project" | "exp_tags"
   "scopeParam": number | undefined
   "scopeParamName": string | undefined
@@ -73,7 +73,7 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 4. Set the scope. You can select one of:
     - **All In the Project**: Receive notifications for all experiments and flags in the project.
     - **By Deployment**: Receive notifications for all experiments and flags in your entire deployment.
-    If you are receiving alerts by deployment, you must specify the deployment by the label. Go to [Deployments](/docs/feature-experiment/data-model#deployments) for more information. Remember that Web Experiments and Guides and Surverys experiments have the Project API Key deployment.
+    If you are receiving alerts by deployment, you must specify the deployment by the label. Go to [Deployments](/docs/feature-experiment/data-model#deployments) for more information. Remember that Web Experiments and Guides and Surveys experiments have the Project API Key deployment.
     - **By Tag**: Receive notifications only for experiments and flags tagged with specific labels. 
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
