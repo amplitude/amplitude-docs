@@ -2,9 +2,9 @@
 
 Amplitude provides a comprehensive suite of REST APIs for analytics data ingestion, user management, data export, and platform administration. The platform serves as a complete analytics solution with APIs spanning data collection, user behavior analysis, cohort management, and compliance operations.
 
-## Product Architecture and Feature Relationships
+## Product Architecture and Relationships
 
-The Amplitude API ecosystem is organized around several core functional areas:
+The Amplitude API ecosystem is structured around several core functional areas:
 
 **Data Ingestion Layer:**
 - **HTTP V2 API** (`/2/httpapi`) - Primary server-to-server event ingestion endpoint
@@ -19,19 +19,22 @@ The Amplitude API ecosystem is organized around several core functional areas:
 - **User Profile API** (`profile-api.amplitude.com/v1/userprofile`) - Real-time user profile data with recommendations and computed properties
 
 **User and Cohort Management:**
-- **Behavioral Cohorts API** (v3/v5) - Cohort creation, export, and membership management with S3 integration
-- **User Mapping API** (`/usermap`) - Cross-project user identity resolution via Portfolio add-on
+- **Behavioral Cohorts API** (v3/v5) - Asynchronous cohort operations with S3 integration and 2M user limits
+- **User Mapping API** (`/usermap`) - Cross-project user aliasing for Portfolio add-on
 - **SCIM 2.0 API** - Enterprise user provisioning and group management
 
 **Data Enhancement and Configuration:**
-- **Lookup Table API** (v1 deprecated, v3 current) - CSV-based property augmentation with 100MB/1M row limits
+- **Lookup Table API** (v1/v3) - CSV-based property augmentation with 100MB/1M row limits
 - **Taxonomy API** - Enterprise event schema management with property classifications
 - **Chart Annotations API** (`/api/2/annotations`) - Programmatic chart annotation management
 - **Releases API** (`/api/2/release`) - Product release tracking and deployment integration
 
 **Compliance and Privacy:**
 - **User Privacy API** (`/api/2/deletions/users`) - GDPR/CCPA user data deletion with 30-day scheduling
-- **CCPA DSAR API** - Data Subject Access Request processing with asynchronous file generation
+- **CCPA DSAR API** - Data Subject Access Request processing with asynchronous workflows
+
+**Monitoring and Operations:**
+- **Event Streaming Metrics API** - Delivery metrics for event streams with 90-day retention
 
 ## Key Nomenclature and Definitions
 
@@ -39,57 +42,75 @@ The Amplitude API ecosystem is organized around several core functional areas:
 - `amplitude_id` - Amplitude's internal user identifier
 - `user_id` - Customer-defined user identifier
 - `device_id` - Device-specific identifier
-- `session_id` - User session identifier
-- `app_id`/`api_key` - Project authentication credentials
+- `session_id` - Session tracking identifier
+- `insert_id` - Event deduplication identifier
 
 **Mobile Attribution IDs:**
-- `idfa` (Identifier for Advertiser) - iOS advertising identifier
-- `idfv` (Identifier for Vendor) - iOS vendor identifier  
-- `adid` (Google ADID) - Android advertising identifier
-- `android_app_set_id` - Android app set identifier
-
-**Event Structure:**
-- `event_type` - Name of the tracked event
-- `event_properties` - Event-specific metadata
-- `user_properties` - User-level attributes
-- `group_properties` - Group-level attributes (Accounts add-on)
-- `insert_id` - Deduplication identifier
+- `idfa` - iOS Identifier for Advertiser
+- `idfv` - iOS Identifier for Vendor
+- `adid` - Google Android Advertising ID
+- `android_app_set_id` - Android App Set ID
 
 **Property Operations:**
 - `$set`, `$setOnce`, `$add`, `$append`, `$prepend`, `$unset` - Standard property modification operations
-- `$preInsert`, `$postInsert`, `$remove` - Advanced list manipulation operations
+- `$preInsert`, `$postInsert`, `$remove` - Advanced array manipulation operations
 - `$identify`, `$groupidentify` - Special event types for property updates
 
-**API Infrastructure:**
-- Rate limiting measured in EPS (Events Per Second) and EPDS/EPUS (Events Per Device/User per Second)
-- Cost-based rate limiting for query APIs
-- Asynchronous processing with `request_id` polling patterns
-- HTTP Basic authentication vs. secret key authentication
+**API Parameters:**
+- `api_key` - Project-level authentication
+- `app_id` - Project identifier
+- `group_type`/`group_value` - Group identification for Accounts add-on
+- `sync_id` - Event streaming destination identifier
+- `cohort_id` - Behavioral cohort identifier
 
-## Product Ecosystem Integration
+**Rate Limiting and Constraints:**
+- EPS (Events Per Second) - Rate limiting metric
+- EPDS/EPUS - Events Per Device/User per Second
+- Cost-based rate limiting - Enterprise API throttling model
 
-The APIs integrate into a cohesive analytics platform supporting multiple deployment patterns:
+## Ecosystem Integration
 
-**Regional Infrastructure:**
-- Primary endpoints: `api2.amplitude.com`, `api.amplitude.com`
+The Amplitude API platform integrates with broader analytics and marketing technology stacks through several mechanisms:
+
+**Authentication Models:**
+- HTTP Basic Authentication (most APIs)
+- API Key authentication (ingestion APIs)
+- Secret Key authentication (User Profile API)
+- SCIM Key authentication (SCIM API)
+
+**Regional Data Residency:**
+- Standard endpoints: `api2.amplitude.com`, `api.amplitude.com`
 - EU residency: `api.eu.amplitude.com`
 - Specialized endpoints: `profile-api.amplitude.com`, `data-api.amplitude.com`
 
-**Plan-Based Feature Access:**
-- Core ingestion and export available across plans
-- **Accounts Add-on**: Group Identify API, group-level analytics
-- **Portfolio Add-on**: User Mapping API for cross-project identity resolution
-- **Enterprise Plan**: Taxonomy API, SCIM provisioning, advanced cohort features
-- **Activation Plan**: User Profile API with recommendations and computed properties
+**Enterprise Features:**
+- Portfolio add-on for cross-project user mapping
+- Accounts add-on for group-level analytics
+- Growth/Enterprise plans for advanced cohort operations
+- Activation plan for User Profile API access
 
 **Integration Patterns:**
-- **Real-time Data Collection**: HTTP V2 API with SDK fallback patterns
-- **Batch Processing**: Batch Event Upload for historical data migration
-- **Analytics Workflows**: Dashboard REST API for embedded analytics
-- **Identity Resolution**: Combined use of Identify, Group Identify, and User Mapping APIs
-- **Compliance Automation**: Privacy and DSAR APIs for regulatory requirements
+- Asynchronous workflows with polling (DSAR, Cohorts, Event Streaming Metrics)
+- S3 pre-signed URLs for large data transfers
+- Webhook-style attribution with 72-hour matching windows
+- Real-time profile enrichment for personalization
 
-**Data Flow Architecture:**
-Events flow through ingestion APIs → internal processing → availability via export/query APIs, with lookup tables providing real-time property augmentation and cohorts enabling user segmentation across the platform.
+## Key API Endpoints and Operations
 
-The platform supports both push (ingestion) and pull (export/query) patterns, with asynchronous processing for large operations and real-time APIs for immediate data access needs.
+**Primary Ingestion:**
+- `POST api2.amplitude.com/2/httpapi` - Event ingestion
+- `POST api2.amplitude.com/batch` - Bulk event upload
+- `POST api2.amplitude.com/identify` - User property updates
+- `POST api2.amplitude.com/attribution` - Attribution events
+
+**Data Access:**
+- `GET api.amplitude.com/api/2/export` - Raw data export
+- `GET profile-api.amplitude.com/v1/userprofile` - User profiles
+- Various Dashboard REST endpoints for analytics queries
+
+**Management Operations:**
+- `GET/POST api.amplitude.com/api/3/cohorts` - Cohort management
+- `GET/POST/PUT/DELETE data-api.amplitude.com/api/3/lookup_table` - Lookup tables
+- `GET/POST/PUT/DELETE api.amplitude.com/api/2/taxonomy` - Schema management
+
+The platform supports comprehensive analytics workflows from data collection through analysis, user management, and compliance, with enterprise-grade features for large-scale deployments and strict data governance requirements.

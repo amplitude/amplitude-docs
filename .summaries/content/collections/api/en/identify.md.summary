@@ -1,16 +1,15 @@
-**Summary:** Documents Amplitude's Identify API for setting User ID to Device ID mappings and updating user properties without sending events, using POST requests to api2.amplitude.com/identify with identification parameter containing user_properties operations like $set, $setOnce, $add, $append, $prepend, $unset, $preInsert, $postInsert, and $remove.
+**Summary:** Documents Amplitude's Identify API for setting User ID to Device ID mappings and updating user properties without sending events, using POST requests to api2.amplitude.com/identify with api_key and identification parameters containing user_properties operations like $set, $setOnce, $add, $append, $prepend, $unset, $preInsert, $postInsert, and $remove.
 
 **Keywords:**
 - Identify API
 - user_properties operations
 - $set $setOnce $add $append $prepend $unset $preInsert $postInsert $remove
-- identification parameter
-- Device ID User ID mapping
 - api2.amplitude.com/identify endpoint
-- user property updates without events
+- Device ID User ID mapping
+- identification parameter
+- user properties without events
 - HTTP status 429 throttling
 - form-data x-www-form-urlencoded
-- groups parameter Enterprise Accounts add-on
-- non-retroactive property updates
+- groups parameter Enterprise Accounts
+- non-retroactive updates
 - ISO 8601 date format
-- monthly event count exclusion
