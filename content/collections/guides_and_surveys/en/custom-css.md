@@ -1,12 +1,22 @@
-[Themes](/docs/guides-and-surveys/themes) provide comprehensive control over the appearance of your guides and surveys. Custom CSS offers additional fine-grained control for specific styling needs that themes can't address. However, themes remain the recommended approach for most customizations, offering better flexibility and backward compatibility.
+---
+id: 7f642b6c-723e-4a61-8fca-94c859eac7fc
+blueprint: guides_and_survey
+title: 'Custom CSS'
+---
 
-{{partial:admonition type="note" heading="Web SDK only"}}
-Custom CSS is only available for the web SDK. Mobile SDKs (iOS, Android, React Native) don't support custom CSS.
+{{partial:admonition type="beta" heading=""}}
+This is a Beta feature. Functionality may change without notice.
 {{/partial:admonition}}
 
-## Overview (Beta)
+Amplitude provides two options for customizing the look and feel of your guides and surveys. [Themes](/docs/guides-and-surveys/themes) provide control over the appearance of your guides and surveys. Custom CSS offers additional fine-grained control for specific styling needs that themes can't address. Amplitude recommends using themes for most customizations, as they offer better flexibility and backward compatibility.
 
-The Guides and Surveys SDK adds CSS classes to form factor elements, allowing you to target them with CSS. These selectors:
+{{partial:admonition type="note" heading="Web SDK only"}}
+Custom CSS is available for the web SDK. Mobile SDKs (iOS, Android, React Native) don't support custom CSS.
+{{/partial:admonition}}
+
+## Overview
+
+The Guides and Surveys SDK adds CSS classes to form factor elements, enabling you to target them with CSS. These selectors:
 
 - Provide stable targets for custom styling
 - Focus on container and parent elements
@@ -117,7 +127,9 @@ Use CSS class selectors to target Guides and Surveys elements:
 | Checkbox option  | `.amplitude-engagement-checkbox-option`  |
 | Radio option     | `.amplitude-engagement-radio-option`     |
 
-## Usage
+## Using class selectors
+
+Use class selectors for basic styling, or to target specific form factors.
 
 ### Basic styling
 
@@ -160,6 +172,8 @@ Use CSS class selectors to target Guides and Surveys elements:
 ```
 
 ## Important considerations
+
+Keep the following considerations in mind as you implement custom CSS. 
 
 ### Specificity
 
