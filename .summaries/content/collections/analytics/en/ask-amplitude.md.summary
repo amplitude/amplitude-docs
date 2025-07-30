@@ -1,17 +1,17 @@
-**Summary:** Ask Amplitude is a conversational AI interface that uses OpenAI's LLM API to help users create/edit charts, search content, and navigate Amplitude through natural language queries, with specific data sharing policies including chart metadata, taxonomy information, and aggregated results being sent to OpenAI.
+**Summary:** Ask Amplitude is a conversational AI interface that uses Amazon Bedrock LLM API to help users create/edit charts, search content, and navigate Amplitude through natural language queries, with specific data sharing policies including chart metadata, taxonomy information, and aggregated results being sent to Amazon Bedrock.
 
 **Keywords:**
 - Ask Amplitude
 - conversational interface
-- OpenAI API integration
+- Amazon Bedrock API
 - Large Language Model (LLM)
 - natural language chart creation
-- data taxonomy
 - chart definition metadata
-- property values filtering
+- taxonomy information
+- event data aggregation
 - conversation thread history
-- BAA compatibility restrictions
+- property values filtering
 - data governance integration
-- filter selection mechanics
-- suggestion generation
-- iterative analytics workflow
+- BAA compatibility restrictions
+- chart editing capabilities
+- dashboard search functionality
