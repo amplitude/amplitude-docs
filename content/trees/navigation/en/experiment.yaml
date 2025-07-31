@@ -6,6 +6,9 @@ tree:
       -
         id: 1bad217f-262f-4326-a9fe-4ca32db686b8
         entry: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
+      -
+        id: 114b9adc-59e4-4342-87b9-8539de3e69d8
+        title: 'Feature vs Web Experiments'
   -
     id: e22eb181-a0e9-4c79-b1b9-8a3e2e275104
     title: 'Feature Flags'
@@ -59,6 +62,9 @@ tree:
             id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
             entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
       -
+        id: dfe1ce09-74b3-4f43-accf-512c9ead0756
+        title: 'Reduce chance of error'
+      -
         id: e800f234-086d-4267-91de-cd688afc9bd5
         title: 'Group Experiments'
         children:
@@ -74,11 +80,39 @@ tree:
         title: 'Experiment Goals'
         children:
           -
+            id: d7dabc7c-392c-4a45-b31f-a4d329d9caf7
+            title: 'Primary Metric'
+          -
+            id: 64340d08-f076-4338-8746-b379f972bb20
+            title: 'Secondary Metric'
+          -
+            id: f28b54bf-4eeb-48ce-b443-3c0228ca8a39
+            title: 'Guardrail vs success'
+          -
+            id: f840954b-5dd4-4416-b96a-49c1ef7fe001
+            title: Direction
+          -
             id: 27510f77-6da7-44f2-a853-178f8f80987a
             entry: 18cba191-177e-4f7c-abcb-f5375c155c71
       -
         id: 7258b125-7c7c-4299-ba0e-31f188e3517c
         entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
+      -
+        id: fbb6a6ab-5cd6-4a56-9dce-c09c9d397b01
+        title: 'Experiment Rollout'
+      -
+        id: 0c7cd69f-f8c4-4c99-88ab-03074032e5b5
+        title: 'Exposure events'
+        children:
+          -
+            id: 2feddc71-3f0c-4c01-8eea-e28c13f003d5
+            title: 'Custom Exposure'
+          -
+            id: 26da71b4-1ff3-4e13-bd8c-80923423867c
+            title: 'Proxy Exposure'
+      -
+        id: 459e7fd0-d099-4e34-afb2-3ddce21c676f
+        title: Bucketing
       -
         id: 826a6258-d974-4154-a50a-ef95dc2f3ad5
         entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
@@ -96,6 +130,9 @@ tree:
       -
         id: a978b4c7-f702-4e27-b042-3369a199110e
         entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
+      -
+        id: 1018898c-9ca7-45e5-9180-18a048b5cec1
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
       -
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
@@ -142,19 +179,19 @@ tree:
           -
             id: 3bd44a68-1b42-42c0-99bd-bffd3a553525
             entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
-      -
-        id: 1018898c-9ca7-45e5-9180-18a048b5cec1
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: d5b6a5f1-c999-4645-88e6-08fcce202918
     title: 'Testing Experiments'
     children:
       -
-        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
-        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+        id: eb15cac6-924a-454f-b654-389b56b91d20
+        title: 'Define Testers'
       -
         id: 779c43fa-d73c-483c-946d-076ea8b9545f
         entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
+      -
+        id: 73637f2a-c73a-42cc-9820-b12101f5194d
+        title: 'Test and Preview Web Experiments'
       -
         id: 54317436-52f8-4031-b753-a361edd89b2b
         entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
@@ -230,6 +267,9 @@ tree:
     title: 'Instrument Experiment'
     children:
       -
+        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
+        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+      -
         id: 90ff8151-b864-4782-abdd-65b81d1c26ca
         title: 'Experiment SDKs'
         url: /docs/sdks/experiment-sdks
@@ -270,3 +310,15 @@ tree:
       -
         id: dee1f568-8623-4fe9-8df3-89158307d151
         entry: ec448015-b432-434a-93a0-6392b4474d67
+      -
+        id: bb6406fa-d060-4d29-9a0e-5bb0beab7ed3
+        title: Attribution
+      -
+        id: 1ee9b3ff-2b9d-4514-aae2-0ff2583c8641
+        title: Window
+      -
+        id: 97008fb9-e865-471e-b2f7-4fc42b715661
+        title: Winsorization
+      -
+        id: 08b06799-767b-49bb-a465-72eb37b64d2e
+        title: CUPED
