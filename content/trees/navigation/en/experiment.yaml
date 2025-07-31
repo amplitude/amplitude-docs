@@ -237,13 +237,6 @@ tree:
         id: 54317436-52f8-4031-b753-a361edd89b2b
         entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
-    id: e67e82c0-c298-4d72-bd01-6e42a7e97826
-    title: 'Experiment Integrations'
-    children:
-      -
-        id: 91587dda-6cea-4de4-981f-3e346a936598
-        entry: 401dbba7-8405-4a22-96ff-5161ec1c969e
-  -
     id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
     title: Troubleshooting
     children:
