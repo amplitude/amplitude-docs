@@ -6,17 +6,52 @@ tree:
     id: 3474a0be-7ff6-45af-a11e-bfd432c799fa
     entry: e2e25f59-3bfc-4b09-bcd0-bdf0f97854bb
   -
-    id: e22942d7-1c79-47c7-9d5d-31883651d00c
-    entry: 614cd6a1-ed04-4be0-924e-bf6f4fa6f58e
+    id: 974a4b9e-3e00-438f-8c09-0a2e47329ee5
+    title: Instrumentation
+    children:
+      -
+        id: cd14e2f3-9100-4bf7-9b8c-9637f27709e4
+        entry: f422c82d-a9d7-404a-8f56-211e014453c6
+      -
+        id: c129b008-f602-4e02-a9ea-7ce586fef907
+        entry: 7771a16f-7edf-4cec-9098-3e9b23ca6dfb
+      -
+        id: fc0e04ad-6de0-463f-add4-6a13a5a2636a
+        entry: 0ab649dd-1a05-47d3-9d56-f476f141030f
+      -
+        id: 03a48928-9ccd-4407-b897-911ec2705698
+        entry: b623aa10-2002-4cf6-8bc1-0597f6e380fe
+      -
+        id: 6535e10e-2534-4d3e-8ef7-cbd72bf4f943
+        entry: 9efa3729-a771-4659-ab24-710758c53755
+  -
+    id: 460e8266-7989-4192-a80f-c80355358b43
+    title: Customization
+    children:
+      -
+        id: e22942d7-1c79-47c7-9d5d-31883651d00c
+        entry: 614cd6a1-ed04-4be0-924e-bf6f4fa6f58e
+      -
+        id: 1b5efb31-885f-4737-bc12-c0fa125e2fe0
+        entry: 7f642b6c-723e-4a61-8fca-94c859eac7fc
+      -
+        id: 3231c037-60bc-4922-903a-d60bdc586907
+        entry: a7fcd596-5113-4061-b1fc-4df208fbd744
+  -
+    id: c7cc0ea8-86ba-41e3-8e65-af6fb5faf35b
+    entry: 5db1bc0e-871d-4cc3-b429-9ca7f5f34c2d
   -
     id: ad52c7aa-af7f-4141-aa85-c1953f5f1dc3
     entry: 3fc426d8-2e6e-4345-83cd-fe4935c330bb
   -
+    id: d8ec199c-95a1-4144-a809-c1f9e781ab59
+    entry: dbc8fb29-c647-4b15-b9d5-7467e1acd1f7
+  -
     id: 78d24f80-297a-4d50-a6df-4a84b98486b9
     entry: d402c648-6218-4450-b216-0439206e1206
   -
-    id: 362fa313-2299-48ba-a0ca-974d292f11b1
-    entry: 185ee92c-69ab-465b-84f1-35d4da01c2d7
+    id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
+    entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
   -
     id: 6c5428c2-6e5b-424b-b470-adb40f091f37
     title: Guides
@@ -53,31 +88,6 @@ tree:
         id: a4e706d9-b14a-4b6d-bc53-78a0acb418f8
         entry: 62b666ba-914a-4449-8754-142521b44544
   -
-    id: 4262a721-5861-4f52-b1aa-d0247a01ac4a
-    entry: 7ef047c1-1a3c-4e94-a3c1-a69a81e0cc4e
-  -
-    id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
-    entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
-  -
-    id: 974a4b9e-3e00-438f-8c09-0a2e47329ee5
-    title: 'Instrument Guides and Surveys'
-    children:
-      -
-        id: cd14e2f3-9100-4bf7-9b8c-9637f27709e4
-        entry: f422c82d-a9d7-404a-8f56-211e014453c6
-      -
-        id: c129b008-f602-4e02-a9ea-7ce586fef907
-        entry: 7771a16f-7edf-4cec-9098-3e9b23ca6dfb
-      -
-        id: fc0e04ad-6de0-463f-add4-6a13a5a2636a
-        entry: 0ab649dd-1a05-47d3-9d56-f476f141030f
-      -
-        id: 03a48928-9ccd-4407-b897-911ec2705698
-        entry: b623aa10-2002-4cf6-8bc1-0597f6e380fe
-      -
-        id: 6535e10e-2534-4d3e-8ef7-cbd72bf4f943
-        entry: 9efa3729-a771-4659-ab24-710758c53755
-  -
     id: 84e1cb78-0179-4dea-ae75-fb9cffa1ac22
     title: 'Resource Center'
     children:
@@ -105,6 +115,12 @@ tree:
       -
         id: 29c752f5-4f45-4e52-afba-736a91479070
         entry: 9d6bb290-f46f-4a43-8fda-86c49a0f0886
+  -
+    id: 362fa313-2299-48ba-a0ca-974d292f11b1
+    entry: 185ee92c-69ab-465b-84f1-35d4da01c2d7
+  -
+    id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
+    entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
   -
     id: ef3f247a-faac-4803-97e8-a3c099d8e111
     entry: ba2e2bbb-396d-4f49-9c59-66fab5476120
