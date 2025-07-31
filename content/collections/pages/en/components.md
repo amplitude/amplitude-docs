@@ -10,16 +10,6 @@ They're primarily designed for advanced plugin development and integration with 
 
 
 
-```js
-Prism.plugins.toolbar.registerButton("hello-world", {
-	text: "Hello World!", // required
-	onClick: function (env) {
-		// optional
-		alert(`This code snippet is written in ${env.language}.`);
-	},
-});
-```
-
 ## Tabs
 
 Uses two partials, `tabs` and `tab`. `tabs` provides the wrapper and sets the tab names. `tab` renders the individual tab content. 

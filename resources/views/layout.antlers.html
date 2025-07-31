@@ -26,11 +26,28 @@
   {{else}}
   {{partial:partials/schema/webpage}}
   {{/if}}
+    <style>
+    /* Prism’s critical code-block styles only */
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #2a2a2a;
+      background: #f5f2f0;
+      font-family:"IBM Plex Mono", Consolas, Menlo, monospace;
+      font-size: 0.9em;
+      white-space: pre;
+      /* …etc, just the essentials… */
+    }
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
   <link href="{{ mix src='/docs/css/site.css' }}" rel="stylesheet">
   <link href="{{ mix src='/docs/css/algolia.css' }}" rel="stylesheet">
   <link href="{{ mix src='/docs/css/dracula-prism.css' }}" rel="stylesheet">
-
+<style>
+      pre[class*="language-"] code p {
+  all: unset;        /* removes default block-level margins/padding */
+  display: inline;   /* flow as if it were plain text */
+}
+</style>
   <script src="{{ mix src='/docs/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
