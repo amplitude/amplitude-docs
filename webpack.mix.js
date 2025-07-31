@@ -18,7 +18,7 @@ mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-table.js', 'public/docs/js')
 //mix.js('resources/docs/js/interactive-flags-table.js', 'public/docs/js')
 mix.js('resources/docs/js/statuspage.js', 'public/docs/js')
-mix.js('resources/docs/js/prism.js', 'public/docs/js')
+// mix.js('resources/docs/js/prism.js', 'public/docs/js')
 
 
     
@@ -49,6 +49,10 @@ mix.copyDirectory(
     'content/collections',
     'public/docs/md'
 );
+mix.copyDirectory(
+    'resources/docs/js/components',
+    'public/docs/js/components'
+)
 
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({

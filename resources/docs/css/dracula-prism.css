@@ -103,6 +103,10 @@ code[class*="language-"] ::selection
   background-color: var(--selection);
 }
 
+pre[class*="language-"] {
+  padding-top: 1rem;
+}
+
 /* Line numbers */
 
 pre.line-numbers 
@@ -158,13 +162,20 @@ div.code-toolbar
   position: relative;
 }
 
+.code-toolbar pre {
+  padding-top: 2.5em;
+}
+
 div.code-toolbar > .toolbar 
 {
   position: absolute;
-  top: 0.3em;
-  right: 0.2em;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  top: 0.5em;    /* tweak to vertically center in your new padding */
+  left: 0.5em;   /* same horizontal inset as your code padding/gutter */
+  right: 0.5em;  /* stretch to full width minus insets */
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  z-index: 1;
 }
 
 div.code-toolbar:hover > .toolbar 
@@ -174,8 +185,11 @@ div.code-toolbar:hover > .toolbar
 
 div.code-toolbar > .toolbar .toolbar-item 
 {
-  display: inline-block;
-  padding-right: 20px;
+  color: #6272a4;                    /* white text */
+  font-size: 12px;             /* smaller label */
+  letter-spacing: 0.05em;         /* tighten letters slightly */
+  border: none;                   /* remove default button border */
+  font-family: "IBM Plex Mono";
 }
 
 div.code-toolbar > .toolbar a 
@@ -198,14 +212,26 @@ div.code-toolbar > .toolbar button
 }
 
 div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
-div.code-toolbar > .toolbar span 
+div.code-toolbar > .toolbar button
 {
   color: var(--foreground);
   font-size: 0.8em;
   padding: 0.5em;
-  background: var(--comment);
+  background: none;
   border-radius: 0.5em;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.copy-to-clipboard-button{
+  opacity: .6;
+  transition: opacity 0.2s;
+}
+
+.copy-to-clipboard-button:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+  
 }
 
 div.code-toolbar > .toolbar a:hover,
@@ -217,7 +243,20 @@ div.code-toolbar > .toolbar span:focus
 {
   color: inherit;
   text-decoration: none;
-  background-color: var(--green);
+  background-color: none;
+}
+
+.code-toolbar .toolbar-item[data-button="show-language"] button {
+  background-color: #2b6cb0;      /* blue background */
+  color: #6272a4;                    /* white text */
+  border-radius: 0.25rem;         /* rounded corners */
+  padding: 0.25em 0.5em;          /* a bit of breathing room */
+  font-size: 12px;             /* smaller label */
+  font-weight: 600;               /* semi-bold */
+  text-transform: uppercase;      /* LANGUAGE → LANGUAGE */
+  letter-spacing: 0.05em;         /* tighten letters slightly */
+  border: none;                   /* remove default button border */
+  font-family: "IBM Plex Mono";
 }
 
 /* Remove text shadow for printing */
@@ -239,6 +278,7 @@ pre[class*="language-"]
   text-shadow: none;
   font-family: "IBM Plex Mono",
     monospace;
+  font-size: 14px;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -263,6 +303,7 @@ pre[class*="language-"]
   background: var(--background);
   border-radius: 0.5em;
   padding: 1em;
+  padding-top: 2.5em;
   margin: 0.5em 0;
   overflow: auto;
   height: auto;
@@ -583,3 +624,32 @@ pre[class*="language-"]
   background-color: var(--red-30);
 }
  
+
+/* Ensure each toolbar-item can position tooltips */
+.code-toolbar .toolbar-item {
+  position: relative;
+}
+
+/* Tooltip styling */
+.copy-tooltip {
+  position: absolute;
+  top: -1.5em;       /* float above the button */
+  right: 0;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.copy-tooltip.fade-out {
+  opacity: 0;
+  transform: translateY(-0.5em);
+}
+
+.code-toolbar pre::-webkit-scrollbar {
+  height: 3px;              /* ← make the bar itself shorter */
+}

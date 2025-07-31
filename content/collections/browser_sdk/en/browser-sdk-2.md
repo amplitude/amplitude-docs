@@ -88,7 +88,7 @@ To prevent instrumentation issues, device IDs and user IDs must be strings with 
 
 This SDK requires initialization before you can instrument any events and requires your Amplitude project's API key. You can pass an optional `userID` and `config` object in this call.
 
-```ts
+```js
 // Option 1, initialize with Amplitude API key only
 amplitude.init(AMPLITUDE_API_KEY);
 
@@ -293,7 +293,7 @@ There are five different standard UTM parameters:
 
 Here is an example URL with UTM parameters:
 
-```curl
+```bash
 https://www.amplitude.com/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link
 ```
 
