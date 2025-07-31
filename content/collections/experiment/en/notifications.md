@@ -59,10 +59,14 @@ Webhook schema:
   "scopeParamName": string | undefined
   "action": "created" | "deleted" | "updated"
   "modifiedBy": string
-  "flag": schema is defined [here](docs/apis/experiment/experiment-management-api-flags#get-details)
-  "oldFlag": schema is defined [here](docs/apis/experiment/experiment-management-api-flags#get-details)
+  "flag": JSON
+  "oldFlag": JSON
   }
 ```
+
+{{partial:admonition type="note" heading="JSON Schemas"}}
+View the JSON schema for the `flag` and `oldFlag` parameters in the [Experiment Management API Flag Endpoints](/docs/apis/experiment/experiment-management-api-flags#get-details) documentation.
+{{/partial:admonition}}
 
 ##### To set up an alert
 
