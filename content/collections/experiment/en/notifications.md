@@ -12,7 +12,7 @@ updated_at: 1753814210
 ---
 Set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
 
-- **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ration mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
+- **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ratio mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
 - **Slack channel notifications / webhooks**: Sends notifications for any changes to an active flag configuration that generates a new history version or when flags are activated or deactivated.
 
 This page discusses setting up and maintaining notification alerts through Slack channels and webhooks. Only notifications created through the Experiment Alerts function are sent in this way. 
@@ -20,7 +20,7 @@ This page discusses setting up and maintaining notification alerts through Slack
 All other experiment alerts are sent either through email or Slack direct message. For more information on these other types of notification, go to [Account Settings Notifications](/docs/feature-experiment/workflow/experiment-learnings#interpret-notifications) or [Integrate Slack](/docs/analytics/integrate-slack) to know how to manage your Slack workspace integration. 
 
 {{partial:admonition type="note" heading=""}}
-You must have [Member permissions](/docs/admin/account-management/user-roles-permissions) to set up any notification alerts. You don't need any permissions to receive notifications if you also a member of the dedicated slack channel or webhook. However, you must have Viewer permissions to open the notification for more details. Talk to your Admin if you need different permissions.
+You must have [Member permissions](/docs/admin/account-management/user-roles-permissions) to create/edit/delete any notification alerts. You don't need any permissions to receive notifications if you also a member of the dedicated slack channel or webhook. However, you must have Viewer permissions to open the notification for more details. Talk to your Admin if you need different permissions.
 {{/partial:admonition}}
 
 ##### To connect a Slack workspace to your experiment notifications
@@ -32,6 +32,10 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 2. Click **Alerts** in the top right.
 3. Click **Connect To Slack**.
 4. Click **Allow** to confirm that you want to connect Amplitude to Slack.
+
+{{partial:admonition type="note" heading=""}}
+If you see a slack channel id instead of a slack channel name, make sure you have connected Amplitude and Slack. If you have already done that then make sure you are a member of the slack channel. You can reach out to the person who created the alert (which is in the "created" column of the table) to add you to the slack channel.
+{{/partial:admonition}}
 
 ## Experiment activities that generate alerts
 You can specify if you want to receive alerts for the following experiment activities:
@@ -48,17 +52,21 @@ Webhook schema:
 
 ```json
 {
-  "flagId":"{flagId}",
-  "flagName":"{flagName}",
-  "scope":"{scope}",
-  "scopeParam":"{scopeParam}",
-  "scopeParamName":"{scopeParamName}",
-  "action":"{action}",
-  "modifiedBy":"{modifiedBy}",
-  "flag":"{flag}",
-  "oldFlag":"{oldFlag}"
+  "flagId": number
+  "flagName": string (This is the flag key and not the flag name. If you want the flag name, use `flag.name`)
+  "scope": "exp_deployment" | "project" | "exp_tags"
+  "scopeParam": number | undefined
+  "scopeParamName": string | undefined
+  "action": "created" | "deleted" | "updated"
+  "modifiedBy": string
+  "flag": JSON
+  "oldFlag": JSON
   }
 ```
+
+{{partial:admonition type="note" heading="JSON Schemas"}}
+View the JSON schema for the `flag` and `oldFlag` parameters in the [Experiment Management API Flag Endpoints](/docs/apis/experiment/experiment-management-api-flags#get-details) documentation.
+{{/partial:admonition}}
 
 ##### To set up an alert
 
@@ -67,9 +75,9 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 2. Click **Alerts** in the top right.
 3. Specify the project that you want.
 4. Set the scope. You can select one of:
-    - **All In the Project**: Receive notifications for all experiments in the project.
-    - **By Deployment**: Receive notifications for all experiments in your entire deployment.
-    If you are receiving alerts by deployment, you must specify the deployment by API key. Go to [Deployments](/docs/feature-experiment/data-model#deployments) for more information.
+    - **All In the Project**: Receive notifications for all experiments and flags in the project.
+    - **By Deployment**: Receive notifications for all experiments and flags in your entire deployment.
+    If you are receiving alerts by deployment, you must specify the deployment by the label. Go to [Deployments](/docs/feature-experiment/data-model#deployments) for more information. Remember that Web Experiments and Guides and Surveys experiments have the Project API Key deployment.
     - **By Tag**: Receive notifications only for experiments and flags tagged with specific labels. 
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
