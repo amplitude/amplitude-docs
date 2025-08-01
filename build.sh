@@ -23,6 +23,8 @@ rm composer-setup.php
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
 
+
+# BUILD ASSETS
 mix --production
 
 # GENERATE APP KEY
