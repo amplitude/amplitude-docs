@@ -49,10 +49,10 @@ mix.copyDirectory(
     'content/collections',
     'public/docs/md'
 );
-mix.copyDirectory(
-    'resources/docs/js/components',
-    'public/docs/js/components'
-)
+// mix.copyDirectory(
+//     'resources/docs/js/components',
+//     'public/docs/js/components'
+// )
 
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({
