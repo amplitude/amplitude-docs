@@ -1254,6 +1254,23 @@ Starting from `v2.8.0`, the SDK can automatically get session ID from the URL to
 
 If the `deviceId` and `sessionId` aren't set in `init('API_KEY', null, { deviceId: 'custom-device-id', sessionId: 1716245958483 })`, the SDK automatically falls back to using the URL parameters respectively.
 
+#### Evaluation window with ampTimestamp
+
+{{partial:admonition type="note" heading=""}}
+This feature requires @amplitude/analytics-browser@2.21.1 and above.
+{{/partial:admonition}}
+
+To improve security and prevent the use of stale session or device IDs, you can include an `ampTimestamp` parameter that acts as an evaluation window. The SDK only uses `ampSessionId` and `ampDeviceId` URL parameters if the `ampTimestamp` value is in the future (greater than the current time).
+
+For example:
+```
+www.example.com?ampDeviceId=device_id&ampSessionId=session_id&ampTimestamp=1640995500000
+```
+
+When `ampTimestamp` expires (is less than the current time), the SDK ignores the `ampSessionId` and `ampDeviceId` parameters. It falls back to generating new values or using stored values from cookies. If `ampTimestamp` isn't provided, the SDK behaves as before for backward compatibility.
+
+This feature ensures that cross-domain tracking parameters remain valid only for a limited time window. This prevents potential security issues from long-lived URLs with embedded tracking parameters.
+
 It's recommended to follow the same session ID format as the Browser SDK by using `Date.now()`. Because the SDK checks whether an event is in session every time an event is tracked. For example, 
 
 ```typescript
