@@ -12,7 +12,6 @@ import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-groovy';
-import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-python';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
@@ -44,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             window.open(image.src, '_blank');
         });
     });
-
-    Prism.highlightAll();
     
 
     document
@@ -78,9 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// site.js
-
-// site.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('copy-md');
@@ -149,4 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.removeChild(ta);
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Your Prism.js initialization code here
+    // This code will run after the initial HTML document has been completely loaded and parsed
+    Prism.highlightAll();
 });
