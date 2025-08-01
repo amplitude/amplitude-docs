@@ -23,6 +23,8 @@ rm composer-setup.php
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
 
+npm run build
+
 # GENERATE APP KEY
 php artisan key:generate
 
