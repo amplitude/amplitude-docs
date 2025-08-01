@@ -384,7 +384,7 @@ Set `config.autocapture.attribution` to `false` to disable marketing attribution
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    attribution: false, //[tl! highlight]
+    attribution: false, 
   },
 });
 ```
@@ -462,7 +462,7 @@ Set `config.autocapture.pageViews` to `false` to disable page view tracking.
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    pageViews: false, //[tl! highlight]
+    pageViews: false, 
   },
 });
 ```
@@ -485,7 +485,7 @@ For example, you can configure Amplitude to track page views only when the URL p
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    pageViews: { //[tl! highlight:2]
+    pageViews: { 
       trackOn: () => {
         return window.location.pathname.includes('home');
       },
@@ -521,7 +521,7 @@ You can opt out of tracking session events by setting `config.autocapture.sessio
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    sessions: false, //[tl! highlight]
+    sessions: false, 
   },
 });
 ```
@@ -544,7 +544,7 @@ Set `config.autocapture.formInteractions` to `false` to disable form interaction
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    formInteractions: false, //[tl! highlight]
+    formInteractions: false, 
   },
 });
 ```
@@ -574,7 +574,7 @@ Set `config.autocapture.elementInteractions` to `true` to enable element click a
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    elementInteractions: true, //[tl! highlight]
+    elementInteractions: true, 
   },
 });
 ```
@@ -666,7 +666,7 @@ Set `config.autocapture.networkTracking` to `true` to enable network request tra
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    networkTracking: true, //[tl! highlight]
+    networkTracking: true, 
   },
 });
 ```
@@ -791,7 +791,7 @@ This method sets the value of a user property. For example, you can set a role p
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.set('location', 'LA'); //[tl! highlight]
+identifyEvent.set('location', 'LA'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -801,7 +801,7 @@ This method sets the value of a user property only one time. Subsequent calls us
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.setOnce('initial-location', 'SF'); //[tl! highlight]
+identifyEvent.setOnce('initial-location', 'SF'); 
 identify(identifyEvent);
 ```
 
@@ -811,7 +811,7 @@ This method increments a user property by a numerical value. If the user propert
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.add('travel-count', 1); //[tl! highlight]
+identifyEvent.add('travel-count', 1); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -825,7 +825,7 @@ This method prepends a value or values to a user property array. If the user pro
 
 ```ts
 const identifyEvent = new Identify();
-identifyEvent.prepend('visited-locations', 'LAX'); //[tl! highlight]
+identifyEvent.prepend('visited-locations', 'LAX'); 
 identify(identifyEvent);
 ```
 
@@ -835,7 +835,7 @@ This method appends a value or values to a user property array. If the user prop
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.append('visited-locations', 'SFO'); //[tl! highlight]
+identifyEvent.append('visited-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -845,7 +845,7 @@ This method post-inserts a value or values to a user property if it doesn't exis
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.postInsert('unique-locations', 'SFO'); //[tl! highlight]
+identifyEvent.postInsert('unique-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -855,7 +855,7 @@ This method removes a value or values to a user property if it exists in the use
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.remove('unique-locations', 'JFK') //[tl! highlight]
+identifyEvent.remove('unique-locations', 'JFK') 
 amplitude.identify(identifyEvent);
 ```
 
@@ -914,7 +914,7 @@ const groupType = 'plan';
 const groupName = 'enterprise';
 const groupIdentifyEvent = new amplitude.Identify()
 groupIdentifyEvent.set('key1', 'value1');
-amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); //[tl! highlight]
+amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); 
 ```
 
 ## Track revenue
