@@ -13,6 +13,7 @@ import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-groovy';
 import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-dart';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
 import 'prismjs/plugins/show-language/prism-show-language';     
