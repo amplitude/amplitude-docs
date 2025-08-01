@@ -992,7 +992,7 @@ Add a deployment to an experiment.
 
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                 |
 | -------------------------------------- | ----------- | ------ | ------------------------------------------- |
-| `deployments`                          | Required    | object | Contains an string array of deployment ids. |
+| `deployments`                          | Required    | string array | Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
