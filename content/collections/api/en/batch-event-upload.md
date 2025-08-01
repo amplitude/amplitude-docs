@@ -97,7 +97,7 @@ These properties belong to the request's body.
           "DataMonster"
         ]
       },
-      "app_version": "2.1.3", //[tl! collapse:start]
+      "app_version": "2.1.3", 
       "platform": "iOS",
       "os_name": "Android",
       "os_version": "4.2.2",
@@ -124,7 +124,7 @@ These properties belong to the request's body.
       "android_id": "BCCE52E7-03EE-321A-B3D4-E57123966239",
       "event_id": 23,
       "session_id": 1396381378123,
-      "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841" //[tl! collapse:end]
+      "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841" 
     }
   ]
 }

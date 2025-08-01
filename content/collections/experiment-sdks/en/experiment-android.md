@@ -223,14 +223,14 @@ The Amplitude Experiment SDK is set up to integrate seamlessly with the Amplitud
 {{partial:tab name="Java"}}
 ```java
 Amplitude.getInstance().init("API_KEY");
-ExperimentClient experiment = Experiment.initializeWithAmplitudeAnalytics( //[tl! ~~]
+ExperimentClient experiment = Experiment.initializeWithAmplitudeAnalytics( 
     context, "DEPLOYMENT_KEY", new ExperimentConfig());
 ```
 {{/partial:tab}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
 Amplitude.getInstance().init("API_KEY")
-val experiment = Experiment.initializeWithAmplitudeAnalytics( //[tl! ~~]
+val experiment = Experiment.initializeWithAmplitudeAnalytics( 
     context,
     "DEPLOYMENT_KEY",
     ExperimentConfig(),

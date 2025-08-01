@@ -44,7 +44,7 @@ import {Linking} from 'react-native';
 import { init, add } from '@amplitude/analytics-react-native';
 import { getPlugin, handleURL } from '@amplitude/plugin-engagement-react-native';
 
-init('<<< YOUR API KEY HERE >>>'); //[tl! ~~]
+init('<<< YOUR API KEY HERE >>>'); 
 add(getPlugin());
 
 Linking.getInitialURL().then(async (url) => {

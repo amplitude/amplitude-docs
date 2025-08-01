@@ -1,5 +1,25 @@
 import headingsAnchors from './heading-anchors'
 import codeCopy from './code-copy';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-sql';
+import 'prismjs/components/prism-go';
+import 'prismjs/components/prism-kotlin';
+import 'prismjs/components/prism-swift';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-groovy';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-dart';
+import 'prismjs/plugins/autoloader/prism-autoloader';
+import 'prismjs/plugins/toolbar/prism-toolbar';                 
+import 'prismjs/plugins/show-language/prism-show-language';     
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'; 
+
+
 
 headingsAnchors()
 codeCopy()
@@ -24,11 +44,38 @@ document.addEventListener('DOMContentLoaded', function () {
             window.open(image.src, '_blank');
         });
     });
+    
+
+    document
+    .querySelectorAll('.copy-to-clipboard-button')
+    .forEach(button => {
+      // 1) clear out the old text
+      button.textContent = '';
+      // 2) inject your SVG
+      button.insertAdjacentHTML('afterbegin', `
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#B7B7B7">
+          <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/>
+        </svg>
+      `);
+      const container = button.parentElement;
+      container.style.position = container.style.position || 'relative';
+
+      // c) Attach click handler to show “Copied!” tooltip
+      button.addEventListener('click', () => {
+        const tip = document.createElement('span');
+        tip.className = 'copy-tooltip';
+        tip.textContent = 'Copied!';
+        container.appendChild(tip);
+
+        // after a short delay, fade out and remove
+        setTimeout(() => {
+          tip.classList.add('fade-out');
+          tip.addEventListener('transitionend', () => tip.remove());
+        }, 800);
+      });
+    });
 });
 
-// site.js
-
-// site.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('copy-md');
@@ -97,4 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.removeChild(ta);
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Your Prism.js initialization code here
+    // This code will run after the initial HTML document has been completely loaded and parsed
+    Prism.highlightAll();
 });

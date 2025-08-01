@@ -18,7 +18,7 @@ The Guides and Surveys Android SDK requires:
 
 ## Install and initialize the SDK
 
-Add the following depenedencies to your application's `build.gradle.kts` file:
+Add the following dependencies to your application's `build.gradle.kts` file:
 
 ```kotlin
 dependencies {

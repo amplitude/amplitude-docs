@@ -218,7 +218,7 @@ Session Replay provides an option for opt-out configuration. This prevents Ampli
 ```js
 // Pass a boolean value to indicate a users opt-out status
 await sessionReplay.init(AMPLITUDE_API_KEY, {
- optOut: true, //[tl! ~~]
+ optOut: true, 
 }).promise;
 ```
 
@@ -229,7 +229,7 @@ Session Replay is available to Amplitude Customers who use the EU data center. S
 ```js
 // For European users, set the serverZone to "EU" 
 await sessionReplay.init(AMPLITUDE_API_KEY, {
- serverZone: "EU", //[tl! ~~]
+ serverZone: "EU", 
 }).promise;
 ```
 
@@ -240,7 +240,7 @@ By default, Session Replay captures 0% of sessions for replay. Use the `sampleRa
 ```js
 // This configuration samples 1% of all sessions
 await sessionReplay.init(AMPLITUDE_API_KEY, {
- sampleRate: 0.01 //[tl! ~~]
+ sampleRate: 0.01 
 }).promise;
 
 ```

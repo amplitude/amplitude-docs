@@ -41,7 +41,7 @@
 	"Torchlight Annotation": {
 		"prefix": "torch",
 		"body": [
-			"//[tl! $1]"
+			"
 		],
 		"description": "Torchlight Annotation"
 	},

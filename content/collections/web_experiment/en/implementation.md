@@ -64,9 +64,9 @@ The synchronous script above provides the best experience for your users. If you
 <script>
   (function(d, h){
     // TODO: Replace API_KEY with your API key.
-    var apiKey = "API_KEY"; //[tl! ~~]
+    var apiKey = "API_KEY"; 
     // TODO: Set a timeout in milliseconds for the anti-flicker.
-    var timeout = 1000; //[tl! ~~]
+    var timeout = 1000; 
     // Hides the page and loads the script. Shows page if script fails to load,
     // otherwise the script shows the page.
     var id = "amp-exp-css";
@@ -95,9 +95,9 @@ The synchronous script above provides the best experience for your users. If you
 <script>
   (function(d, h){
     // TODO: Replace API_KEY with your API key.
-    var apiKey = "API_KEY"; //[tl! ~~]
+    var apiKey = "API_KEY"; 
     // TODO: Set a timeout in milliseconds for the anti-flicker.
-    var timeout = 1000; //[tl! ~~]
+    var timeout = 1000; 
     // Hides the page and loads the script. Shows page if script fails to load,
     // otherwise the script shows the page.
     var id = "amp-exp-css";

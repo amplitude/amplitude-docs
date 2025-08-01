@@ -194,7 +194,7 @@ If the instance returns empty, your Segment middleware may not have populated th
 ```js
 segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
     const storedSessionId = getStoredSessionId()
-    setTimeout(() => { //[tl! ~~:2]
+    setTimeout(() => { 
       ... // Rest of the Segment integrations code
     }, 0) 
     next(payload)
