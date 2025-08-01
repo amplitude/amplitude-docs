@@ -619,7 +619,7 @@ Create a new variant for a flag
 | `key`                                  | Required    | string | The variant key.                                      |
 | `description`                          | Optional    | string | Description for the variant.                          |
 | `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -689,7 +689,7 @@ Edit a variant for a flag.
 | `key`                                  | Optional    | string | The variant key.                                                                                                      |
 | `description`                          | Optional    | string | Description for the variant.                                                                                          |
 | `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. This value replaces the existing value for the variant payload. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
 
 ### Response
@@ -1110,7 +1110,7 @@ The `variants` field contains these objects.
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
 | -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
 | `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `name`                                 | Optional    | string | The variant name.                                     |
 | `description`                          | Optional    | string | The variant description.                              |
 
