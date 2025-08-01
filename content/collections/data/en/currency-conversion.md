@@ -18,6 +18,10 @@ Currency conversion lets you analyze multi-currency revenue data in Amplitude. W
 
 Currency conversion is only available on Enterprise plans or with the Govern Add-On. Go to [Pricing](https://amplitude.com/pricing) for more details.
 
+{{partial:admonition type="note" heading=""}}
+Amplitude performs currency conversion using the exchange rates from the preceding day to ensure consistency in reporting. Exchange rates are sourced daily from [ExchangeRate API](https://www.exchangerate-api.com/).
+{{/partial:admonition}}
+
 You can control where you view currency-converted data throughout Amplitude. Target currencies are configurable at the project level through project settings. This means that you can use both converted and non-converted values for `$revenue` and `$price` fields. You can also:
 
 - Send standard `$revenue` and `$price` fields or map your own custom fields (or cart properties) into the conversion logic.
@@ -82,7 +86,7 @@ All options are in standard [ISO 4217](https://www.iban.com/currency-codes) 3-di
 
 ## Property selectors
 
-You can selet both OOTB and custom derived properties when you are [building charts.](/docs/get-started/create-a-chart). 
+You can select both OOTB and custom derived properties when you are [building charts.](/docs/get-started/create-a-chart). 
 
 ##### To select currency conversion properties in a chart
 
