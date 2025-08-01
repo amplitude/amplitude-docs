@@ -5,6 +5,8 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-kotlin';
 import 'prismjs/components/prism-swift';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-json';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
 import 'prismjs/plugins/show-language/prism-show-language';     
@@ -35,10 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.open(image.src, '_blank');
         });
     });
-    Prism.plugins.autoloader.languages_path='https://unpkg.com/prismjs/components/';
-    Prism.plugins.autoloader.loadLanguages(
-      ['kotlin', 'swift'],() => Prism.highlightAll()
-    );
+
     Prism.highlightAll();
     
 
