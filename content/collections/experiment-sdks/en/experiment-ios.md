@@ -215,7 +215,7 @@ The Amplitude Experiment SDK is set up to integrate seamlessly with the Amplitud
 
 ```swift
 Amplitude.instance().initializeApiKey("API_KEY")
-let experiment = Experiment.initializeWithAmplitudeAnalytics( //[tl! ~~]
+let experiment = Experiment.initializeWithAmplitudeAnalytics( 
     apiKey: "DEPLOYMENT_KEY",
     config: ExperimentConfigBuilder().build()
 )
