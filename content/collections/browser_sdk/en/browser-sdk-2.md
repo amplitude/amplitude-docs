@@ -45,7 +45,6 @@ When you use the script loader and enable Autocapture, Browser SDK track interac
 ```bash
 # Install Analytics SDK only
 npm install @amplitude/analytics-browser
-
 # Or install Unified SDK to get access to all Amplitude products
 npm install @amplitude/unified
 ```
@@ -53,7 +52,6 @@ Import Amplitude into your project
 ```js
 // If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
-
 // If using Unified SDK
 import * as amplitude from '@amplitude/unified';
 ```
@@ -62,7 +60,6 @@ import * as amplitude from '@amplitude/unified';
 ```bash
 # Install Analytics SDK only
 yarn add @amplitude/analytics-browser
-
 # Or install Unified SDK to get access to all Amplitude products
 yarn add @amplitude/unified
 ```
@@ -70,7 +67,6 @@ Import Amplitude into your project
 ```js
 // If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
-
 // If using Unified SDK
 import * as amplitude from '@amplitude/unified';
 ```
@@ -88,7 +84,7 @@ To prevent instrumentation issues, device IDs and user IDs must be strings with 
 
 This SDK requires initialization before you can instrument any events and requires your Amplitude project's API key. You can pass an optional `userID` and `config` object in this call.
 
-```ts
+```js
 // Option 1, initialize with Amplitude API key only
 amplitude.init(AMPLITUDE_API_KEY);
 
@@ -293,7 +289,7 @@ There are five different standard UTM parameters:
 
 Here is an example URL with UTM parameters:
 
-```curl
+```bash
 https://www.amplitude.com/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link
 ```
 
@@ -384,7 +380,7 @@ Set `config.autocapture.attribution` to `false` to disable marketing attribution
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    attribution: false, //[tl! highlight]
+    attribution: false, 
   },
 });
 ```
@@ -462,7 +458,7 @@ Set `config.autocapture.pageViews` to `false` to disable page view tracking.
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    pageViews: false, //[tl! highlight]
+    pageViews: false, 
   },
 });
 ```
@@ -485,7 +481,7 @@ For example, you can configure Amplitude to track page views only when the URL p
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    pageViews: { //[tl! highlight:2]
+    pageViews: { 
       trackOn: () => {
         return window.location.pathname.includes('home');
       },
@@ -521,7 +517,7 @@ You can opt out of tracking session events by setting `config.autocapture.sessio
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    sessions: false, //[tl! highlight]
+    sessions: false, 
   },
 });
 ```
@@ -544,7 +540,7 @@ Set `config.autocapture.formInteractions` to `false` to disable form interaction
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    formInteractions: false, //[tl! highlight]
+    formInteractions: false, 
   },
 });
 ```
@@ -574,7 +570,7 @@ Set `config.autocapture.elementInteractions` to `true` to enable element click a
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    elementInteractions: true, //[tl! highlight]
+    elementInteractions: true, 
   },
 });
 ```
@@ -666,7 +662,7 @@ Set `config.autocapture.networkTracking` to `true` to enable network request tra
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   autocapture: {
-    networkTracking: true, //[tl! highlight]
+    networkTracking: true, 
   },
 });
 ```
@@ -791,7 +787,7 @@ This method sets the value of a user property. For example, you can set a role p
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.set('location', 'LA'); //[tl! highlight]
+identifyEvent.set('location', 'LA'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -801,7 +797,7 @@ This method sets the value of a user property only one time. Subsequent calls us
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.setOnce('initial-location', 'SF'); //[tl! highlight]
+identifyEvent.setOnce('initial-location', 'SF'); 
 identify(identifyEvent);
 ```
 
@@ -811,7 +807,7 @@ This method increments a user property by a numerical value. If the user propert
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.add('travel-count', 1); //[tl! highlight]
+identifyEvent.add('travel-count', 1); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -825,7 +821,7 @@ This method prepends a value or values to a user property array. If the user pro
 
 ```ts
 const identifyEvent = new Identify();
-identifyEvent.prepend('visited-locations', 'LAX'); //[tl! highlight]
+identifyEvent.prepend('visited-locations', 'LAX'); 
 identify(identifyEvent);
 ```
 
@@ -835,7 +831,7 @@ This method appends a value or values to a user property array. If the user prop
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.append('visited-locations', 'SFO'); //[tl! highlight]
+identifyEvent.append('visited-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -845,7 +841,7 @@ This method post-inserts a value or values to a user property if it doesn't exis
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.postInsert('unique-locations', 'SFO'); //[tl! highlight]
+identifyEvent.postInsert('unique-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -855,7 +851,7 @@ This method removes a value or values to a user property if it exists in the use
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.remove('unique-locations', 'JFK') //[tl! highlight]
+identifyEvent.remove('unique-locations', 'JFK') 
 amplitude.identify(identifyEvent);
 ```
 
@@ -914,7 +910,7 @@ const groupType = 'plan';
 const groupName = 'enterprise';
 const groupIdentifyEvent = new amplitude.Identify()
 groupIdentifyEvent.set('key1', 'value1');
-amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); //[tl! highlight]
+amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); 
 ```
 
 ## Track revenue
