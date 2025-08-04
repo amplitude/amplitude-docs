@@ -1,76 +1,67 @@
 ## Amplitude Node.js SDK Ecosystem
 
-The Amplitude Node.js SDK ecosystem provides comprehensive analytics tracking capabilities for server-side JavaScript and TypeScript applications. The ecosystem consists of two main SDK versions and strongly-typed wrapper solutions designed to integrate with Amplitude's analytics platform for event tracking, user identification, and data management.
+The Amplitude Node.js SDK ecosystem provides comprehensive analytics tracking capabilities for Node.js applications through multiple SDK variants and code generation tools. The ecosystem centers around event tracking, user identification, and analytics data collection with strong TypeScript support and flexible configuration options.
 
 ## Product Relationships and Architecture
 
-The ecosystem is structured around two primary SDK implementations:
+The ecosystem consists of four interconnected components:
 
-**Legacy SDK (`@amplitude/node`)**: The original TypeScript-based SDK in maintenance mode, featuring middleware-based event processing, batch uploading with `maxCachedEvents` and `uploadIntervalInSec` configurations, and `logEvent()` method for event tracking.
+**Core SDKs:**
+- **@amplitude/analytics-node** - The current, actively maintained Node.js SDK built on HTTP V2 API with modern plugin architecture
+- **@amplitude/node** - The legacy maintenance-mode SDK with middleware-based architecture
 
-**Current SDK (`@amplitude/analytics-node`)**: The actively developed SDK with modern plugin architecture, enhanced configuration options, and `track()` method replacing `logEvent()`. This SDK supports both HTTP V2 API and batch API endpoints with configurable transport providers.
+**Code Generation Tools:**
+- **Ampli Wrapper** - Available in two variants that generate strongly-typed tracking APIs from Amplitude Data tracking plans, supporting both legacy and current SDK runtimes
 
-**Ampli Wrapper Layer**: Both SDKs can be enhanced with Ampli Wrapper implementations that generate strongly-typed APIs from Amplitude Data tracking plans. The wrapper provides compile-time type safety and schema validation for event properties.
+The relationship flows from tracking plan definition in Amplitude Data → Ampli CLI code generation → strongly-typed wrapper integration → underlying SDK implementation → event transmission to Amplitude servers.
 
 ## Key Nomenclature and Definitions
 
-**Core Tracking Methods**:
-- `init()`: SDK initialization with API key and configuration
-- `track()`/`logEvent()`: Primary event tracking methods
-- `identify()`: User property management and identification
-- `setGroup()`/`groupIdentify()`: User group assignment and group property management
-- `flush()`: Force immediate event transmission
+**Core Tracking Concepts:**
+- **Event Tracking**: Primary analytics data collection through `track()` (current) or `logEvent()` (legacy) methods
+- **User Identification**: User property management via `identify()` with Identify operations (set, setOnce, add, prepend, append, remove)
+- **Group Analytics**: Organization-level tracking using `groupIdentify()` with groupType and groupName parameters
+- **Revenue Tracking**: Monetization analytics through Revenue interface implementation
 
-**Configuration Parameters**:
-- `flushQueueSize`/`maxCachedEvents`: Batch size thresholds for event transmission
-- `flushIntervalMillis`/`uploadIntervalInSec`: Time-based batching intervals
-- `serverZone`: EU data residency configuration
-- `minIdLength`: Minimum character requirements for user and device IDs
-- `useBatch`: Toggle between HTTP V2 API and batch API endpoints
+**Configuration Parameters:**
+- **flushIntervalMillis/uploadIntervalInSec**: Batching frequency for event transmission
+- **flushQueueSize/maxCachedEvents**: Buffer size before forced transmission
+- **serverZone**: Data residency control (EU/US)
+- **useBatch**: Batch API endpoint utilization toggle
+- **minIdLength**: User ID validation threshold
 
-**Extensibility Systems**:
-- **Middleware** (legacy): Event processing chain with `MiddlewarePayload` objects
-- **Plugins** (current): Modern architecture with `EnrichmentPlugin` and `DestinationPlugin` interfaces
-
-**Ampli-Specific Concepts**:
-- **Tracking Plan**: Schema definitions from Amplitude Data platform
-- **Strongly Typed Events**: Generated event classes with property validation
-- **Event Schemas**: Compile-time enforcement of event structure
+**Architecture Components:**
+- **Plugin System** (current): EnrichmentPlugin and DestinationPlugin with PluginType enumeration
+- **Middleware Chain** (legacy): Event processing pipeline using MiddlewarePayload
+- **Transport Layer**: Configurable HTTP transport with custom transportProvider support
 
 ## Broader Product Ecosystem Integration
 
-The Node.js SDK ecosystem integrates with several Amplitude platform components:
+The Node.js SDK ecosystem integrates with Amplitude's broader analytics platform through multiple touchpoints:
 
-**Amplitude Data Platform**: Provides tracking plan definitions that generate strongly-typed Ampli wrapper code through the CLI workflow.
+**Amplitude Data Integration**: Ampli Wrapper connects directly to Amplitude Data tracking plans, enabling schema-driven development with `ampli pull` for code generation and `ampli status` for validation.
 
-**Ampli CLI**: Command-line tool for managing tracking plan synchronization with `ampli pull` for downloading schemas and `ampli status` for validation.
+**API Infrastructure**: Both SDKs utilize Amplitude's HTTP V2 API with batch processing capabilities, connecting to api2.amplitude.com (US) or analytics.eu.amplitude.com (EU) endpoints.
 
-**Analytics Infrastructure**: Events flow through Amplitude's HTTP V2 API or batch API endpoints, with support for EU data residency through `serverUrl` configuration.
-
-**Revenue Analytics**: Dedicated `Revenue` interface for e-commerce tracking with product-specific properties.
+**Development Workflow**: The ecosystem supports comprehensive development practices through TypeScript definitions, JSDoc annotations, Prettier linting integration, and migration tooling between SDK versions.
 
 ## API Endpoints and CLI Commands
 
-**CLI Operations**:
-- `ampli pull`: Downloads latest tracking plan schemas
-- `ampli status`: Validates local implementation against tracking plan
+**Ampli CLI Operations:**
+- `ampli pull` - Downloads and generates strongly-typed tracking code from tracking plans
+- `ampli status` - Validates local implementation against tracking plan schemas
 
-**SDK Initialization Patterns**:
-```javascript
-// Current SDK
-amplitude.init('API_KEY', configuration)
+**Core SDK Methods:**
+- Initialization: `init(apiKey, config)` (current) or constructor-based (legacy)
+- Event tracking: `track(eventType, eventProperties, eventOptions)` or `logEvent(event)`
+- User management: `identify(userId, identifyEvent)` with Identify operations
+- Group analytics: `groupIdentify(groupType, groupName, identifyEvent)`
+- Revenue tracking: Revenue interface with price, quantity, productId properties
+- Utility methods: `flush()`, `setOptOut()`, `createInstance()`
 
-// Legacy SDK  
-new AmplitudeClient('API_KEY', configuration)
-```
+**Configuration APIs:**
+- Plugin registration: `add(plugin)` with EnrichmentPlugin/DestinationPlugin
+- Middleware attachment: `addEventMiddleware(middleware)` (legacy)
+- Instance management: `createInstance()` for multi-tenant applications
 
-**Event Tracking APIs**:
-- Current: `amplitude.track(eventType, eventProperties, eventOptions)`
-- Legacy: `client.logEvent(event)`
-
-**Configuration Endpoints**:
-- Default: `https://api2.amplitude.com/2/httpapi`
-- EU Residency: `https://api.eu.amplitude.com/2/httpapi`
-- Batch API: Configurable through `transportProvider`
-
-The ecosystem supports multiple deployment patterns including single-instance and multi-instance configurations, with comprehensive debugging through `logLevel` settings and opt-out capabilities via `setOptOut()` methods. Migration tooling facilitates transitions from legacy to current SDK implementations while maintaining backward compatibility for existing tracking implementations.
+The ecosystem provides comprehensive analytics tracking capabilities with strong typing, flexible architecture, and seamless integration with Amplitude's broader analytics platform.

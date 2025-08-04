@@ -1,13 +1,15 @@
 ## Summary
 
-This documentation covers the Amplitude Experiment React Native SDK for client-side feature flag evaluation, including installation with @react-native-async-storage/async-storage dependency, initialization methods for Amplitude Analytics integration vs third-party analytics, remote evaluation via fetch(), local evaluation via start(), variant access with automatic exposure tracking, and configuration options for server zones, bootstrapping, and custom providers.
+This documentation covers the Amplitude Experiment React Native SDK for client-side feature flag evaluation, including installation with @react-native-async-storage/async-storage dependency, initialization methods for Amplitude Analytics integration vs third-party analytics, remote evaluation via fetch(), local evaluation via start(), variant access with automatic exposure tracking, and configuration options for server zones, fallback variants, and custom providers.
 
 ## Keywords
 
-- Experiment React Native SDK
-- @amplitude/experiment-react-native-client
+- experiment-react-native-client
 - @react-native-async-storage/async-storage
 - initializeWithAmplitudeAnalytics
+- ExperimentClient
+- ExperimentConfig
+- deployment key
 - remote evaluation
 - local evaluation
 - fetch() method
@@ -15,20 +17,27 @@ This documentation covers the Amplitude Experiment React Native SDK for client-s
 - variant() method
 - exposure tracking
 - ExperimentUser
-- deployment key
 - automaticExposureTracking
+- exposureTrackingProvider
+- userProvider
+- serverZone
+- fallbackVariant
+- initialVariants
+- Source.InitialVariants
 - fetchOnStart
 - pollOnStart
-- serverZone configuration
-- initialVariants bootstrapping
-- Source.InitialVariants
+- automaticFetchOnAmplitudeIdentityChange
+- instanceName
 - ExperimentUserProvider
 - ExposureTrackingProvider
-- HttpClient interface
+- HttpClient
+- pod install iOS
 - Expo support
-- iOS pod install
-- automaticFetchOnAmplitudeIdentityChange
-- account-level bucketing
-- group properties
-- fallbackVariant
-- instanceName configuration
+- group-level bucketing
+- account-level analysis
+- bootstrapping
+- server-side rendering
+- cacheReady()
+- clear() method
+- all() variants
+- exposure() manual tracking

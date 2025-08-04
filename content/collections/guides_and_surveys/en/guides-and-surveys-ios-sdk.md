@@ -30,7 +30,7 @@ Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
-```podfile
+```
 pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 ```
 {{/partial:tab}}
@@ -41,11 +41,10 @@ pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 ```swift
 import AmplitudeEngagementSwift
 
-// Initialize the SDK
+
 let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
 
-// (optional) Add the plugin to your Amplitude instance 
-// (needed for event-based triggers to work)
+
 let configuration = Configuration(
   apiKey: API_KEY
 )
@@ -70,10 +69,11 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
+
 let bootOptions = AmplitudeBootOptions(
-    user_id: "USER_ID",
-    device_id: "DEVICE_ID",
-    user_properties: ["key": "value"]
+  user_id: "USER_ID",
+  device_id: "DEVICE_ID",
+  user_properties: ["key": "value"]
 )
 amplitudeEngagement.boot(options: bootOptions)
 ```

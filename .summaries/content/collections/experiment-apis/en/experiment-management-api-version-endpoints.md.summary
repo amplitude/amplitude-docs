@@ -1,19 +1,18 @@
-## Summary
-Documents the Experiment Management API's GET /api/1/versions endpoint for retrieving paginated lists of experiment and feature flag versions with time-based filtering, returning flagConfig objects with targeting segments, rollout weights, and bucketing configuration.
+**Summary:** Documents the Experiment Management API's GET /api/1/versions endpoint for retrieving paginated version history of experiments and feature flags, including query parameters for time-based filtering (ISO 8601 format), pagination controls, and detailed flagConfig objects with targeting segments and rollout configurations.
 
-## Keywords
+**Keywords:**
 - Experiment Management API
 - GET /api/1/versions endpoint
-- flagConfig object
+- version history retrieval
+- flagConfig objects
 - targetSegments conditions
-- rolloutWeights
-- bucketingKey amplitude_id
-- evaluationMode remote
+- rolloutPercentage rolloutWeights
+- bucketingKey bucketingSalt bucketingUnit
+- evaluationMode variants
 - ISO 8601 time filtering
-- cursor pagination
+- cursor-based pagination
 - management-api-key authentication
 - experiment.amplitude.com
-- version creation time descending
-- rolloutPercentage
-- bucketingSalt
-- deployments array
+- createdAt createdBy version fields
+- deployments projectId
+- feature flag versioning

@@ -1,17 +1,12 @@
-**Summary:** Documentation page demonstrating reusable UI components and partials for the Amplitude session-replay-browser package, including tabs, collapse sections, and admonition blocks with configuration examples showing JavaScript/TypeScript code samples and API configuration parameters.
+**Summary:** This documentation page covers site components for the Amplitude Session Replay Browser package, demonstrating Swift SDK initialization methods including basic boot with user ID and advanced boot with AmplitudeBootOptions configuration for user properties and device identification.
 
 **Keywords:**
 - @amplitude/session-replay-browser
-- partials system
-- tabs partial
-- collapse partial  
-- admonition partial
-- flushIntervalMillis
-- flushQueueSize
-- logLevel configuration
-- serverZone EU/US
-- transportProvider
-- useBatch API
-- LogLevel.Debug
-- FetchTransport
-- instanceName parameter
+- amplitudeEngagement.boot
+- AmplitudeBootOptions
+- Swift SDK initialization
+- user_id configuration
+- device_id setup
+- user_properties mapping
+- session replay components
+- Amplitude engagement SDK

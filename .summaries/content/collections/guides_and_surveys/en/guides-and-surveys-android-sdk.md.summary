@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys Android SDK for deploying in-app guides and surveys, including installation via gradle dependencies, initialization with AmplitudeEngagement class, element targeting for Jetpack Compose using .amplitudeView modifier and non-Compose views using contentDescription/tag properties, screen tracking, and preview mode configuration with custom URL schemes.
+**Summary:** This documentation covers the Amplitude Guides and Surveys Android SDK for deploying in-app guides and surveys, including installation via gradle dependencies, initialization with AmplitudeEngagement class, element targeting for Jetpack Compose using .amplitudeView modifier and non-Compose views using contentDescription/tag properties, screen tracking, theme management, and preview mode configuration with custom URL schemes.
 
 **Keywords:**
 - AmplitudeEngagement
@@ -6,17 +6,18 @@
 - Jetpack Compose
 - .amplitudeView modifier
 - contentDescription targeting
+- tag targeting
 - screen tracking
+- ThemeMode.DARK/LIGHT/SYSTEM
 - AmplitudeBootOptions
 - AmplitudeEndUser
-- ThemeMode
-- forwardEvent
 - handlePreviewLinkIntent
-- URL scheme configuration
-- AndroidManifest.xml intent filter
-- pin guides
-- tooltip guides
-- element targeting
+- forwardEvent
+- URL scheme mobile
+- AndroidManifest.xml intent-filter
 - Android API Level 24
 - Kotlin 1.8.22
-- build.gradle.kts dependencies
+- amplitude-analytics-android dependency
+- pin guides
+- tooltip guides
+- CompositionLocalProvider

@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys React Native SDK implementation, including installation of the @amplitude/plugin-engagement-react-native package, initialization with deep linking support via handleURL, and plugin booting with user/device IDs.
+**Summary:** This documentation covers the Amplitude Guides and Surveys React Native SDK implementation, including installation of the `@amplitude/plugin-engagement-react-native` package, initialization with deep linking support via `handleURL()`, and plugin booting with user/device IDs.
 
 **Keywords:**
 - @amplitude/plugin-engagement-react-native
@@ -8,8 +8,8 @@
 - boot() method
 - deep linking configuration
 - URL scheme mobile
-- React Native SDK
-- Guides and Surveys deployment
 - Linking.addEventListener
 - pod install
+- engagement plugin
+- React Native SDK
 - user ID device ID initialization
