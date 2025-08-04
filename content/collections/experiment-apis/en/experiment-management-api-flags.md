@@ -619,7 +619,7 @@ Create a new variant for a flag
 | `key`                                  | Required    | string | The variant key.                                      |
 | `description`                          | Optional    | string | Description for the variant.                          |
 | `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -689,7 +689,7 @@ Edit a variant for a flag.
 | `key`                                  | Optional    | string | The variant key.                                                                                                      |
 | `description`                          | Optional    | string | Description for the variant.                                                                                          |
 | `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. This value replaces the existing value for the variant payload. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
 
 ### Response
@@ -956,7 +956,7 @@ Add a deployment for a flag.
 
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                 |
 | -------------------------------------- | ----------- | ------ | ------------------------------------------- |
-| `deployments`                          | Required    | object | Contains an string array of deployment ids. |
+| `deployments`                          | Required    | string array | Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -1040,7 +1040,7 @@ Edit a flag.
 | `bucketingUnit`                        | Optional    | string       | Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis.                                                                                          |
 | `evaluationMode`                       | Optional    | string       | Evaluation mode for the flag, either `local` or `remote`.                                                                                                                                                  |
 | `rolloutPercentage`                    | Optional    | number       | Rollout percentage for non-targeted users. Range 0 - 100.                                                                                                                                                  |
-| `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information. When `targetSegments` object is provided, it will replace existing target segments. Note: cohorts are not supported at the moment. |
+| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
 | `enabled`                              | Optional    | boolean      | Property to activate or deactivate flag.                                                                                                                                                                   |
 | `archive`                              | Optional    | boolean      | Property to archive or unarchive flag.                                                                                                                                                                     |
 | `tags`                                 | Optional    | string array | A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first.                     |
@@ -1099,7 +1099,7 @@ Create a new flag.
 | `variants`                             | Optional    | object array | Array of [`variants`](#variants).                                                                                                                                         |
 | `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
 | `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
-| `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
+| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
 | `deployments`                          | Optional    | string array | Array of deployments that the flag should be assigned to.                                                                                                                 |
 | `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
 
@@ -1110,7 +1110,7 @@ The `variants` field contains these objects.
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
 | -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
 | `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `name`                                 | Optional    | string | The variant name.                                     |
 | `description`                          | Optional    | string | The variant description.                              |
 

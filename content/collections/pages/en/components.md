@@ -6,7 +6,6 @@ package: "@amplitude/session-replay-browser"
 ---
 
 
-
 ## test
 
 ```swift
