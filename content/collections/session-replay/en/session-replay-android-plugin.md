@@ -84,7 +84,7 @@ val amplitude = Amplitude(Configuration(
 
 // Create and Install Session Replay Plugin
 // Recording will be handled automatically
-val sessionReplayPlugin = SessionReplayPlugin(sampleRate = 1.0) //[tl! ~~]
+val sessionReplayPlugin = SessionReplayPlugin(sampleRate = 1.0) 
 amplitude.add(sessionReplayPlugin)
 
 // Send replay data to the server
@@ -116,7 +116,7 @@ val amplitude = Amplitude.getInstance()
     .setFlushEventsOnClose(true)
 
 // Create Session Replay Middleware
-val sessionReplayMiddleware = SessionReplayMiddleware(amplitude, sampleRate = 1.0) //[tl! ~~]
+val sessionReplayMiddleware = SessionReplayMiddleware(amplitude, sampleRate = 1.0) 
 
 // Add session replay middleware
 // Recording will be handled automatically

@@ -79,8 +79,8 @@ Update build.gradle to remove the maintenance Android SDK and add the latest And
 
 ```java
 dependencies {
-  implementation 'com.amplitude:android-sdk:2.+' //[tl! --]
-  implementation 'com.squareup.okhttp3:okhttp:4.2.2' //[tl! ++:1]
+  implementation 'com.amplitude:android-sdk:2.+' 
+  implementation 'com.squareup.okhttp3:okhttp:4.2.2' 
   implementation 'com.amplitude:analytics-android:1.+'
 }
 ```
@@ -96,13 +96,13 @@ Initialize the SDK with a valid Amplitude API Key and Android application contex
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
-import com.amplitude.api.Amplitude //[tl! --:1]
+import com.amplitude.api.Amplitude 
 import com.amplitude.api.AmplitudeClient
-import com.amplitude.android.Amplitude //[tl! ++]
+import com.amplitude.android.Amplitude 
 
-val client = Amplitude.getInstance() //[tl! --:1]
+val client = Amplitude.getInstance() 
   .initialize(getApplicationContext(), "YOUR_API_KEY")
-val client = Amplitude( //[tl! ++:5]
+val client = Amplitude( 
     Configuration(
         apiKey = "YOUR_API_KEY",
         context = getApplicationContext()
@@ -112,13 +112,13 @@ val client = Amplitude( //[tl! ++:5]
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
-import com.amplitude.api.Amplitude; //[tl! --:1]
+import com.amplitude.api.Amplitude; 
 import com.amplitude.api.AmplitudeClient;
-import com.amplitude.android.Amplitude; //[tl! ++]
+import com.amplitude.android.Amplitude; 
 
-AmplitudeClient client = Amplitude.getInstance() //[tl! --:1]
+AmplitudeClient client = Amplitude.getInstance() 
   .initialize(getApplicationContext(), "YOUR_API_KEY");
-Amplitude client =  new Amplitude(new Configuration( //[tl! ++:3]
+Amplitude client =  new Amplitude(new Configuration( 
     apiKey = "YOUR_API_KEY",
     context = getApplicationContext()
 ));
@@ -153,10 +153,10 @@ The `logEvent()` API maps to `track()`. The `eventProperties` is `JSONObject` ty
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
-import org.json.JSONException //[tl! --:1]
+import org.json.JSONException 
 import org.json.JSONObject
 
-val eventProperties = JSONObject() //[tl! --:7]
+val eventProperties = JSONObject() 
 try {
   eventProperties.put("buttonColor", "primary")
 } catch (e: JSONException) {
@@ -165,7 +165,7 @@ try {
 }
 client.logEvent("Button Clicked", eventProperties)
 
-client.track( //[tl! ++:3]
+client.track( 
     "Button Clicked",
     mutableMapOf<String, Any?>("buttonColor" to "primary")
 )
@@ -173,10 +173,10 @@ client.track( //[tl! ++:3]
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
-import org.json.JSONException; //[tl! --:1]
+import org.json.JSONException; 
 import org.json.JSONObject;
 
-JSONObject eventProperties = new JSONObject(); //[tl! --:7]
+JSONObject eventProperties = new JSONObject(); 
 try {
   eventProperties.put("buttonColor", "primary");
 } catch (JSONException e) {
@@ -185,7 +185,7 @@ try {
 }
 client.logEvent("Button Clicked", eventProperties);
 
-client.track("Button Clicked", new HashMap()  //[tl! ++:2]
+client.track("Button Clicked", new HashMap()  
     put("buttonColor", "primary");
 );
 ```
@@ -201,8 +201,8 @@ You can disable flushing by setting `flushEventsOnClose` to `false`.
 You can also force the SDK to upload unsent events. The `uploadEvents()` API maps to `flush()`.
 
 ```kotlin
-client.uploadEvents() //[tl! --]
-client.flush() //[tl! ++]
+client.uploadEvents() 
+client.flush() 
 ```
 
 ### Set user properties
@@ -260,8 +260,8 @@ val revenue = Revenue()
 revenue.productId = "com.company.productId"
 revenue.price = 3
 revenue.quantity = 2
-client.logRevenueV2(revenue) //[tl! --]
-client.revenue(revenue) //[tl! ++]
+client.logRevenueV2(revenue) 
+client.revenue(revenue) 
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
@@ -270,8 +270,8 @@ Revenue revenue = new Revenue()
 revenue.setProductId("com.company.productId");
 revenue.setPrice(3);
 revenue.setQuantity(2); 
-client.logRevenueV2(revenue); //[tl! --]
-client.revenue(revenue); //[tl! ++]
+client.logRevenueV2(revenue); 
+client.revenue(revenue); 
 ```
 {{/partial:tab}}
 {{/partial:tabs}}

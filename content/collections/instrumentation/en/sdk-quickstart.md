@@ -325,7 +325,7 @@ sdk:
               Configuration(
                   apiKey = AMPLITUDE_API_KEY,
                   context = applicationContext,
-                  serverZone = ServerZone.EU //[tl! ~~]
+                  serverZone = ServerZone.EU 
               )
           )
           ```
@@ -350,7 +350,7 @@ sdk:
           Amplitude amplitude =  new Amplitude(new Configuration(
               apiKey = AMPLITUDE_API_KEY,
               context = applicationContext,
-              serverZone = ServerZone.EU //[tl! ~~]
+              serverZone = ServerZone.EU 
           ));
 
           ```
@@ -547,7 +547,7 @@ sdk:
           let amplitude = Amplitude(
               Configuration(
                   apiKey: "YOUR-API-KEY",
-                  serverZone: ServerZone.EU //[tl! ~~]
+                  serverZone: ServerZone.EU 
               )
           )
           ```
@@ -568,7 +568,7 @@ sdk:
           @import AmplitudeSwift;
 
           AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"YOUR-API-KEY"];
-          configuration.serverZone = AMPServerZoneEU; //[tl! ~~]
+          configuration.serverZone = AMPServerZoneEU; 
           Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
           ```
     send_data_grid:
@@ -819,7 +819,7 @@ sdk:
       from amplitude import Amplitude
 
       amplitude = Amplitude(AMPLITUDE_API_KEY)
-      amplitude.configuration.server_zone = 'EU' //[tl! ~~]
+      amplitude.configuration.server_zone = 'EU' 
       ```
     send_data_instructions: |-
       ```python

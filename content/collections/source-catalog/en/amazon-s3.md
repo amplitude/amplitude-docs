@@ -79,8 +79,9 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
 1. Create a new IAM role, for example: `AmplitudeReadRole`.
 2. Go to **Trust Relationships** for the role and add Amplitude’s account to the trust relationship policy to allow Amplitude to assume the role using the following example.
 
-    - `amplitude_account`: `358203115967` for Amplitude US data center. `202493300829` for Amplitude EU data center. 
     - `external_id` : unique identifiers used when Amplitude assumes the role. You can generate it with help from [third party tools](https://www.uuidgenerator.net/). Example external id can be `vzup2dfp-5gj9-8gxh-5294-sd9wsncks7dc`.
+
+    - Trust policy for Amplitude US region
 
     ``` json hl_lines="7 12"
     {
@@ -89,18 +90,44 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::<amplitude_account>:root" //[tl! ~~]
+            "AWS": "arn:aws:iam::358203115967:role/k8s_prod_cargo",
+            "AWS": "arn:aws:iam::358203115967:role/k8s_prod_falcon",
+            "AWS": "arn:aws:iam::358203115967:role/vacuum_iam_role" 
           },
           "Action": "sts:AssumeRole",
           "Condition": {
             "StringEquals": {
-              "sts:ExternalId": "<external_id>" //[tl! ~~]
+              "sts:ExternalId": "<external_id>" 
             }
           }
         }
       ]
     }
     ```
+
+   - Trust policy for Amplitude EU region
+
+   ``` json hl_lines="7 12"
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Principal": {
+            "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_cargo",
+            "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_falcon",
+            "AWS": "arn:aws:iam::202493300829:role/vacuum_iam_role" 
+         },
+         "Action": "sts:AssumeRole",
+         "Condition": {
+           "StringEquals": {
+             "sts:ExternalId": "<external_id>" 
+           }
+         }
+       }
+     ]
+   }
+   ```
 
 3. Create a new IAM policy, for example, `AmplitudeS3ReadOnlyAccess`. Use the entire example code that follows, but be sure to update **<>** in highlighted text.
 
@@ -125,7 +152,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "*" //[tl! ~~]
+                "*" 
               ]
             }
           }
@@ -138,7 +165,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/*" 
           ]
         },
         {
@@ -149,7 +176,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]
@@ -174,7 +201,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "<prefix>*" //[tl! ~~]
+                "<prefix>*" 
               ]
             }
           }
@@ -187,7 +214,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/<prefix>*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/<prefix>*" 
           ]
         },
         {
@@ -198,7 +225,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]
