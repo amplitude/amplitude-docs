@@ -1,23 +1,17 @@
-**Summary:** Documentation page demonstrating reusable UI components and partials for the Amplitude session-replay-browser package, including tabs (js/ts), collapse tables, and admonition blocks with various types (note, info, warning, example, tip, alpha, beta, deprecated).
+**Summary:** Documentation page demonstrating reusable UI components and partials for the Amplitude session-replay-browser package, including tabs, collapse sections, and admonition blocks with configuration examples showing JavaScript/TypeScript code samples and API configuration parameters.
 
 **Keywords:**
-- site-components
-- amplitude-session-replay-browser
-- tabs-partial
-- collapse-partial
-- admonition-partial
-- instanceName-parameter
+- @amplitude/session-replay-browser
+- partials system
+- tabs partial
+- collapse partial  
+- admonition partial
 - flushIntervalMillis
 - flushQueueSize
-- flushMaxRetries
-- logLevel-configuration
-- loggerProvider
-- minIdLength
-- optOut-boolean
-- serverUrl-configuration
-- serverZone-EU-US
+- logLevel configuration
+- serverZone EU/US
 - transportProvider
-- useBatch-parameter
+- useBatch API
+- LogLevel.Debug
 - FetchTransport
-- LogLevel-enum
-- component-documentation-template
+- instanceName parameter

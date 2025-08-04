@@ -5,7 +5,7 @@ title: 'Site components'
 package: "@amplitude/session-replay-browser"
 ---
 
-
+Rollouts provide ae thing.
 ## Tabs
 
 Uses two partials, `tabs` and `tab`. `tabs` provides the wrapper and sets the tab names. `tab` renders the individual tab content. 
