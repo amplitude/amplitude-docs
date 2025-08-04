@@ -18,6 +18,5 @@
 - variant inclusions limit (500)
 - bulk user operations
 - flag dependencies
-- amplitude_id bucketing
 - experiment.amplitude.com API
 - management-api-key authentication
