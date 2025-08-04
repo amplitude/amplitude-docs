@@ -1,68 +1,49 @@
-## Amplitude Experiment Platform
-
-Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that enables organizations to manage experiments, feature flags, and traffic allocation through both evaluation and management APIs. The platform supports both remote and local evaluation modes, allowing teams to control feature rollouts, conduct experiments, and manage user targeting at scale.
+Amplitude Experiment is a comprehensive feature flagging and experimentation platform that enables teams to manage feature rollouts, A/B tests, and controlled experiments through both evaluation and management APIs. The platform supports both remote and local evaluation modes, allowing flexibility in how feature flags and experiments are delivered to applications.
 
 ## Product Architecture and Feature Relationships
 
-The Amplitude Experiment platform consists of two primary API layers that work together to provide complete experimentation capabilities:
+The Amplitude Experiment ecosystem consists of two primary API layers:
 
-**Evaluation API** serves as the runtime engine, providing real-time variant assignments through the `/v1/vardata` endpoint for remote evaluation and flag configuration downloads via `/v1/flags` for local evaluation. This API uses deployment key authentication and supports regional deployments across US and EU servers.
+**Evaluation API** serves as the runtime engine, providing real-time variant assignments through the `/v1/vardata` endpoint for remote evaluation and flag configuration downloads via `/v1/flags` for local evaluation. This API uses deployment key authentication and supports regional deployments across US (`api.lab.amplitude.com`) and EU (`api.lab.eu.amplitude.com`) servers.
 
-**Management API** functions as the control plane, offering comprehensive CRUD operations across six core entity types: flags, experiments, mutex groups, holdouts, deployments, and versions. This API uses management API key authentication and provides programmatic control over the entire experiment lifecycle.
+**Management API** provides comprehensive administrative control over the experimentation infrastructure through six core endpoint categories: flags, experiments, mutex groups, holdouts, deployments, and versions. This API uses management API key authentication with Bearer token authorization and enforces rate limiting at 100 requests per second with 100,000 daily limits.
 
-The relationship between these APIs follows a configuration-to-execution pattern where the Management API defines experiment parameters, targeting rules, and traffic allocation, while the Evaluation API delivers these configurations to client applications for real-time decision making.
+The platform's traffic allocation system operates through a hierarchical structure where **mutex groups** manage experiment traffic allocation using slot-based assignment, preventing traffic overlap between competing experiments. **Holdout groups** enable control group management by excluding specified user percentages from all experiments, supporting statistical validity. **Deployments** serve as assignment targets that both experiments and flags can be deployed to, supporting client and server deployment types.
 
 ## Key Nomenclature and Definitions
 
-**Experiments and Flags**: Experiments represent A/B tests with statistical analysis capabilities, while flags are feature toggles for controlling feature availability. Both support variants (different versions/treatments) and can be assigned to deployments.
-
-**Deployments**: Environment-specific configurations (client/server types) that experiments and flags can be assigned to, enabling environment-based rollout control.
-
-**Variants**: Different treatments or versions within an experiment or flag, each containing payload data and rollout weights for traffic distribution.
-
-**Bucketing Configuration**: The mechanism for user assignment including bucketing keys (typically `amplitude_id` or `device_id`), bucketing salt for randomization, and rollout percentages for traffic control.
+**Bucketing Configuration**: Core mechanism for user assignment using `bucketingKey` (typically `amplitude_id`), `bucketingSalt` for randomization, and `rolloutPercentage` for traffic control. Supports sticky bucketing to ensure consistent user experiences across sessions.
 
 **Evaluation Modes**: 
-- **Remote evaluation**: Server-side variant assignment through API calls
+- **Remote evaluation**: Real-time API calls to retrieve variant assignments
 - **Local evaluation**: Client-side evaluation using downloaded flag configurations
 
-**Traffic Management Entities**:
-- **Mutex Groups**: Ensure mutually exclusive experiment participation through slot-based traffic allocation
-- **Holdout Groups**: Control groups excluded from experiments for measuring overall impact
-- **Target Segments**: User targeting rules based on cohorts, properties, and conditions
+**Experiment States**: Lifecycle management through planning, running, and decision-made states, with decisions including rollout, rollback, or continue-running options.
 
-**User Inclusions/Exclusions**: Manual user assignment mechanisms supporting up to 500 individual user overrides per variant.
+**Variant Management**: Each experiment or flag contains multiple variants with configurable payloads, rollout weights, and targeting segments. Supports individual user inclusions/exclusions with limits of 500 variant inclusions.
 
-## Ecosystem Integration
+**Target Segments**: Advanced targeting capabilities using segment conditions, cohort targeting, and individual user targeting for precise audience control.
 
-The Amplitude Experiment platform integrates deeply with the broader Amplitude analytics ecosystem through several mechanisms:
+## Broader Product Ecosystem Integration
 
-**Event Tracking**: The `X-Amp-Exp-Track` header enables automatic generation of `[Experiment] Assignment` events, feeding experiment data into Amplitude's analytics pipeline for statistical analysis and reporting.
+Amplitude Experiment integrates deeply with the broader Amplitude analytics ecosystem through automatic event tracking. The platform generates `[Experiment] Assignment` events when the `X-Amp-Exp-Track` header is included, enabling seamless integration with Amplitude's analytics and behavioral tracking capabilities.
 
-**User Identification**: The platform leverages Amplitude's user identification system using `user_id`, `device_id`, and `amplitude_id` for consistent user bucketing and cross-platform experiment tracking.
-
-**Regional Architecture**: Supports data residency requirements with dedicated EU endpoints (`api.lab.eu.amplitude.com`, `experiment-eu.amplitude.com`) alongside standard US endpoints.
-
-**Versioning System**: Maintains complete audit trails of experiment and flag changes through the versions API, enabling rollback capabilities and change tracking.
+The versioning system maintains complete audit trails of flag and experiment configurations through the `/api/1/versions` endpoint, supporting time-based filtering and cursor pagination for historical analysis. This enables teams to track configuration changes and their impact on user behavior through Amplitude's analytics platform.
 
 ## API Endpoints and Technical Implementation
 
-**Evaluation API Endpoints**:
-- `GET /v1/vardata` - Retrieve variant assignments for remote evaluation
+**Primary Evaluation Endpoints**:
+- `GET /v1/vardata` - Retrieve variant assignments with user context
 - `GET /v1/flags` - Download flag configurations for local evaluation
 
-**Management API Endpoints** (all under `/api/1/`):
-- **Flags**: `/flags` - Complete CRUD operations for feature flags
-- **Experiments**: `/experiments` - Full experiment lifecycle management  
-- **Deployments**: `/deployments` - Environment configuration management
-- **Mutex Groups**: `/mutexs` - Traffic allocation and experiment exclusivity
-- **Holdouts**: `/holdouts` - Control group management
-- **Versions**: `/versions` - Configuration change history
+**Management API Structure**:
+- `/api/1/deployments` - Deployment CRUD operations
+- `/api/1/experiments` - Experiment lifecycle management  
+- `/api/1/flags` - Feature flag operations
+- `/api/1/holdouts` - Holdout group management
+- `/api/1/mutexs` - Mutex group traffic allocation
+- `/api/1/versions` - Configuration version history
 
-**Authentication Methods**:
-- Evaluation API: `Api-Key` header with deployment keys
-- Management API: `Authorization: Bearer <management-api-key>`
+Authentication follows a dual-key approach: deployment keys for evaluation APIs and management API keys for administrative operations. The platform supports cursor-based pagination across all list endpoints using `nextCursor` parameters, ensuring efficient data retrieval for large-scale implementations.
 
-**Rate Limiting**: Management API enforces 100 requests per second with 100,000 daily request limits, while supporting cursor-based pagination for large dataset retrieval.
-
-The platform's technical architecture supports enterprise-scale experimentation with comprehensive targeting capabilities, statistical rigor through holdout groups and mutex controls, and flexible deployment options across client and server environments.
+Regional deployment support includes dedicated EU residency servers for compliance requirements, while maintaining feature parity across geographic regions. The platform's architecture supports both real-time experimentation needs and comprehensive administrative control, making it suitable for enterprise-scale feature management and experimentation programs.
