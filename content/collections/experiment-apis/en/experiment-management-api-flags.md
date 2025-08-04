@@ -277,7 +277,7 @@ curl --request GET \
             "rolloutWeights": {
                 "on": 1
             },
-            "targetSegments": [ //[tl! collapse:start]
+            "targetSegments": [ 
                 {
                     "name": "Segment 1",
                     "conditions": [
@@ -298,10 +298,10 @@ curl --request GET \
                 }
             ]
         }
-    },  //[tl! collapse:end]
+    },  
     {
         "createdAt": "2023-07-29T03:32:39.494Z",
-        "createdBy": <userId>, //[tl! collapse:start]
+        "createdBy": <userId>, 
         "version": 2,
         "flagConfig": {
             "id": <id>,
@@ -374,7 +374,7 @@ curl --request GET \
             "targetSegments": []
         }
     }
-] //[tl! collapse:end]
+] 
 ```
 
 {{/partial:tab}}
@@ -1040,7 +1040,7 @@ Edit a flag.
 | `bucketingUnit`                        | Optional    | string       | Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis.                                                                                          |
 | `evaluationMode`                       | Optional    | string       | Evaluation mode for the flag, either `local` or `remote`.                                                                                                                                                  |
 | `rolloutPercentage`                    | Optional    | number       | Rollout percentage for non-targeted users. Range 0 - 100.                                                                                                                                                  |
-| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information. When `targetSegments` object is provided, it will replace existing target segments. Note: cohorts are not supported at the moment. |
+| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
 | `enabled`                              | Optional    | boolean      | Property to activate or deactivate flag.                                                                                                                                                                   |
 | `archive`                              | Optional    | boolean      | Property to archive or unarchive flag.                                                                                                                                                                     |
 | `tags`                                 | Optional    | string array | A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first.                     |

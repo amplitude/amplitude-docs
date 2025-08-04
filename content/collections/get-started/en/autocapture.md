@@ -124,20 +124,20 @@ The iOS SDK enables session tracking, and disables application lifecycle, screen
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions, .networkTracking] //[tl! ~~]
+    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions, .networkTracking] 
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[  //[tl! ~~]
-    AMPAutocaptureOptions.sessions,  //[tl! ~~]
-    AMPAutocaptureOptions.appLifecycles,  //[tl! ~~]
-    AMPAutocaptureOptions.screenViews,  //[tl! ~~]
-    AMPAutocaptureOptions.elementInteractions,  //[tl! ~~]
-    AMPAutocaptureOptions.networkTracking  //[tl! ~~]
-]]; //[tl! ~~]
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[  
+    AMPAutocaptureOptions.sessions,  
+    AMPAutocaptureOptions.appLifecycles,  
+    AMPAutocaptureOptions.screenViews,  
+    AMPAutocaptureOptions.elementInteractions,  
+    AMPAutocaptureOptions.networkTracking  
+]]; 
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -180,13 +180,13 @@ Amplitude(
 	Configuration(
 	 apiKey = AMPLITUDE_API_KEY,
 		context = applicationContext,
-		autocapture = autocaptureOptions { //[tl! ~~]
+		autocapture = autocaptureOptions { 
           +sessions               // or `+Autocapture.SESSIONS` [tl! ~~]
           +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` [tl! ~~]
           +deepLinks              // or `+Autocapture.DEEP_LINKS` [tl! ~~]
           +screenViews            // or `+Autocapture.SCREEN_VIEWS` [tl! ~~]
           +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` [tl! ~~]
-    	} //[tl! ~~]
+    	} 
 	)
 )
 ```
@@ -194,12 +194,12 @@ Amplitude(
 {{partial:tab name="Java"}}
 ```java
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
-configuration.getAutocapture().addAll(Arrays.asList( //[tl! ~~]
-    AutocaptureOption.APP_LIFECYCLES, //[tl! ~~]
-    AutocaptureOption.DEEP_LINKS, //[tl! ~~]
-    AutocaptureOption.SCREEN_VIEWS, //[tl! ~~]
-    AutocaptureOption.ELEMENT_INTERACTIONS //[tl! ~~]
-)); //[tl! ~~]
+configuration.getAutocapture().addAll(Arrays.asList( 
+    AutocaptureOption.APP_LIFECYCLES, 
+    AutocaptureOption.DEEP_LINKS, 
+    AutocaptureOption.SCREEN_VIEWS, 
+    AutocaptureOption.ELEMENT_INTERACTIONS 
+)); 
 
 Amplitude amplitude = new Amplitude(configuration);
 ```

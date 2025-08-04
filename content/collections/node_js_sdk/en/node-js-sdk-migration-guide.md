@@ -70,8 +70,8 @@ Update package.json to uninstall the maintenance Node.js SDK and install the lat
 ```json
 {
   "dependencies": {
-    "@amplitude/node": "*", //[tl! --]
-    "@amplitude/analytics-node": "^1", //[tl! ++]
+    "@amplitude/node": "*", 
+    "@amplitude/analytics-node": "^1", 
   }
 }
 ```
@@ -89,12 +89,12 @@ The maintenance Node.js SDK only supports namespace import. The latest Node.js S
 To initialize the SDK, call `init()`, with a valid Amplitude API Key and configuration parameters.
 
 ```js
-import * as Amplitude from '@amplitude/node' //[tl! --]
-import { init } from '@amplitude/analytics-node'; //[tl! ++]
+import * as Amplitude from '@amplitude/node' 
+import { init } from '@amplitude/analytics-node'; 
 
 var options = {};
-const client = Amplitude.init(AMPLITUDE_API_KEY, options); //[tl! --]
-init(API_KEY, options); //[tl! ++]
+const client = Amplitude.init(AMPLITUDE_API_KEY, options); 
+init(API_KEY, options); 
 ```
 
 ### Configuration
@@ -121,14 +121,14 @@ The latest Node.js SDK configuration comes in a different shape. Some configurat
 The `logEvent()` API maps to `track()`.
 
 ```js
-import { track } from '@amplitude/analytics-node'; //[tl! ++]
+import { track } from '@amplitude/analytics-node'; 
 
 const eventProperties = {
     buttonColor: 'primary',
 };
 
-client.logEvent({ //[tl! --]
-track({ //[tl! ++:3]
+client.logEvent({ 
+track({ 
   event_type: 'Button Clicked',
   user_id: 'user@amplitude.com',
   event_properties: eventProperties
@@ -140,10 +140,10 @@ track({ //[tl! ++:3]
 The `flush()` API remains the same.
 
 ```js
-import { flush } from '@amplitude/analytics-node'; //[tl! ++]
+import { flush } from '@amplitude/analytics-node'; 
 
-client.flush(); //[tl! --]
-flush(); //[tl! ++]
+client.flush(); 
+flush(); 
 ```
 
 ### Identify
@@ -151,13 +151,13 @@ flush(); //[tl! ++]
 The `identify()` API is very similar but has a different signature. The [maintenance Node.js SDK](https://github.com/amplitude/Amplitude-Node/blob/2ef295e1fb698286d606ea4a2ccbbfdc4ba3fdc8/packages/node/src/nodeClient.ts#L142) has a signature `(userId: string | null, deviceId: string | null, identify: Identify)` while the [latest Node.js SDK](https://github.com/amplitude/Amplitude-TypeScript/blob/8f4ea010279fb21190a2c0595d4ae8a7d9e987ce/packages/analytics-core/src/core-client.ts#L62) has a signature `(identify: Identify, eventOptions?: EventOptions)`. Learn more about what `EventOptions` include [here](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_node.Types.EventOptions.html).
 
 ```js
-import { identify, Identify } from '@amplitude/analytics-node'; //[tl! ++]
+import { identify, Identify } from '@amplitude/analytics-node'; 
 
 const identifyObj = new Identify();
 identifyObj.set('location', 'LAX');
 
-client.identify('user@amplitude.com',null,identifyObj); //[tl! --]
-identify(identifyObj, { //[tl! ++:2]
+client.identify('user@amplitude.com',null,identifyObj); 
+identify(identifyObj, { 
 user_id: 'user@amplitude.com',
 });
 ```
@@ -167,25 +167,25 @@ user_id: 'user@amplitude.com',
 Middlewares map to [plugins](/docs/sdks/analytics/node/node-js-sdk#plugins) in the latest Node.js SDK. Here are two types of plugins, enrichment plugins and destination plugins. Here is an example of logging event information.
 
 ```js
-+ import { add } from '@amplitude/analytics-node'; //[tl! ++:1]
++ import { add } from '@amplitude/analytics-node'; 
 + import { NodeConfig, EnrichmentPlugin, Event, PluginType } from '@amplitude/analytics-types';
 
-- const loggingMiddleware: Middleware = (payload, next) => { //[tl! --:2]
+- const loggingMiddleware: Middleware = (payload, next) => { 
 - console.log(`[amplitude] event=${payload.event} extra=${payload.extra}`);
 - next(payload);
 }
 
-+ export class AddLogEventPlugin implements EnrichmentPlugin { //[tl! ++:3]
++ export class AddLogEventPlugin implements EnrichmentPlugin { 
 + name = 'log-event';
 + type = PluginType.ENRICHMENT as const;
 + config?: NodeConfig;
 
-+ async setup(config: NodeConfig): Promise<undefined> { //[tl! ++:3]
++ async setup(config: NodeConfig): Promise<undefined> { 
 + this.config = config;
 + return;
 + }
 
-+ async execute(event: Event): Promise<Event> { //[tl! ++:4]
++ async execute(event: Event): Promise<Event> { 
 + console.log(`[amplitude] event=${event}`);
 + return event;
 + }
@@ -196,8 +196,8 @@ Middlewares map to [plugins](/docs/sdks/analytics/node/node-js-sdk#plugins) in t
 The `addEventMiddleware()` API maps to `add()`.
 
 ```js
-+ import { add } from '@amplitude/analytics-node'; //[tl! ++]
++ import { add } from '@amplitude/analytics-node'; 
 
-- client.addEventMiddleware(new Middleware()) //[tl! --]
-+ add(new Plugin()); //[tl! ++]
+- client.addEventMiddleware(new Middleware()) 
++ add(new Plugin()); 
 ```
