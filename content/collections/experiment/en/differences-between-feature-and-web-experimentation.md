@@ -74,14 +74,16 @@ The following tables describe which Experiment functionality is available for Fe
 This is an interrupting sentence to break apart the collapsed sections...
 
 {{partial:collapse name="Experiment types"}}
-|  |  |  |  |  |
+
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
 | A/B |  |  | X |
 | Multi-Armed Bandit |  |   | X |
+
 {{/partial:collapse}}
 
 {{partial:collapse name="Goals"}}
+
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
@@ -94,9 +96,11 @@ This is an interrupting sentence to break apart the collapsed sections...
 | CUPED | X |   |  |
 | Attribution | X |   |  |
 | Window | X |   |  |
+
 {{/partial:collapse}}
 
 {{partial:collapse name="Targets"}}
+
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
@@ -104,9 +108,11 @@ This is an interrupting sentence to break apart the collapsed sections...
 | Stratified Sampling |  |   | X |
 | Rollout |   |   | X |
 | Sticky Bucketing |  |   | X |
+
 {{/partial:collapse}}
 
 {{partial:collapse name="QA"}}
+
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
@@ -114,9 +120,11 @@ This is an interrupting sentence to break apart the collapsed sections...
 | Dependencies | X |   |  |
 | Testers | X  |   |   |
 | Sticky Bucketing |  |   | X |
+
 {{/partial:collapse}}
 
 {{partial:collapse name="Analysis"}}
+
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
@@ -125,8 +133,6 @@ This is an interrupting sentence to break apart the collapsed sections...
 | Anonymous Exposures |   |   |  X |
 | Exposures without Assignments |  |   | X |
 | Rollout options |   |   | X |
+
 {{/partial:collapse}}
 
-{{partial:admonition type="" heading=""}}
-
-{{/partial:admonition}}
