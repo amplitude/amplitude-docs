@@ -23,7 +23,7 @@ With Experiment, you can modify and configure product experiences for unique aud
 * **Dynamic in-product experiences:** Deploy and adapt custom experiences at scale.
 
 There are two categories of experiments:
-* **Feature Experients**: Uses feature flags to display or hide functionality or A/B options from your customers.
+* **Feature Experiments**: Uses feature flags to display or hide functionality or A/B options from your customers.
 * **Web Experiments**: Uses a Web editor to let you make direct changes to your website.
 
 ## Feature Flags and Web Editor differences
@@ -40,16 +40,7 @@ Web experiments use pages to control where your experiments variants apply on yo
 
 ### Functional Availability
 
-The following table describes which Experiment functionality is available for Feature experimentation, Web experimentation, or both: 
-
-| Functionality   | Feature Experiment  | Web Experiment | Both |
-| --------------- | --------------------| -------------- | ---- |
-| **Create Experiement** |                  |                |  X   |   
-| Project         |                     |                |  X   |
-| Template        |       X             |                |      |
-| Recommended Settings |                 |               |   X  |
-| Link            |                     |                 |  X  |
-| Tag             |       X             |                 |     |
+For in depth information about what functionality is available for Feature, Web, or both types of experimentation, go to [Differences Between Feature and Web Experimentation](/docs/experiment/differences-between-feature-and-web-experimentation).
 
 
 This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
