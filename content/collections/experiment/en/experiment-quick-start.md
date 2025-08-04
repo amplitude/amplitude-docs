@@ -100,7 +100,7 @@ Experiment opens a blank template for your flag.
 7. Choose the deployment you want from the Deployment dropdown menu. 
 8. (*Optional*) Click **Advanced Settings** to modify the [bucketing salt](/docs/feature-experiment/implementation#consistent-bucketing) options. 
 {{partial:admonition type="note" heading=""}}
-If you change the bucketing, users may be able to switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing unless you know what you're doing. For more information, go to [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
+If you change the bucketing salt, users will switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing salt unless you know what you're doing. For more information, go to [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
 {{/partial:admonition}} 
  
  ## Creating variations
