@@ -92,12 +92,12 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Principal": {
             "AWS": "arn:aws:iam::358203115967:role/k8s_prod_cargo",
             "AWS": "arn:aws:iam::358203115967:role/k8s_prod_falcon",
-            "AWS": "arn:aws:iam::358203115967:role/vacuum_iam_role" //[tl! ~~]
+            "AWS": "arn:aws:iam::358203115967:role/vacuum_iam_role" 
           },
           "Action": "sts:AssumeRole",
           "Condition": {
             "StringEquals": {
-              "sts:ExternalId": "<external_id>" //[tl! ~~]
+              "sts:ExternalId": "<external_id>" 
             }
           }
         }
@@ -116,12 +116,12 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
          "Principal": {
             "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_cargo",
             "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_falcon",
-            "AWS": "arn:aws:iam::202493300829:role/vacuum_iam_role" //[tl! ~~]
+            "AWS": "arn:aws:iam::202493300829:role/vacuum_iam_role" 
          },
          "Action": "sts:AssumeRole",
          "Condition": {
            "StringEquals": {
-             "sts:ExternalId": "<external_id>" //[tl! ~~]
+             "sts:ExternalId": "<external_id>" 
            }
          }
        }
@@ -152,7 +152,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "*" //[tl! ~~]
+                "*" 
               ]
             }
           }
@@ -165,7 +165,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/*" 
           ]
         },
         {
@@ -176,7 +176,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]
@@ -201,7 +201,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "<prefix>*" //[tl! ~~]
+                "<prefix>*" 
               ]
             }
           }
@@ -214,7 +214,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/<prefix>*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/<prefix>*" 
           ]
         },
         {
@@ -225,7 +225,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]

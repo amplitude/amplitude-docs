@@ -44,7 +44,7 @@ If you use npm or yarn to add the Browser SDK, update the Browser SDK package, a
 {
   "dependencies": {
     "@amplitude/analytics-browser": "^2.10.0", // make sure the minimum version is 2.10.0
-    "@amplitude/plugin-autocapture-browser": "0.9.0", //[tl! --]
+    "@amplitude/plugin-autocapture-browser": "0.9.0", 
   }
 }
 ```
@@ -53,13 +53,13 @@ In your script, remove references to the Autocapture plugin.
 
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
-import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser'; //[tl! --]
+import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser'; 
  
-amplitude.init(AMPLITUDE_API_KEY); //[tl! --]
-amplitude.init(AMPLITUDE_API_KEY, { //[tl! ++: 4]
+amplitude.init(AMPLITUDE_API_KEY); 
+amplitude.init(AMPLITUDE_API_KEY, { 
   autocapture: {
     elementInteractions: true,
   },
 });
-amplitude.add(autocapturePlugin()); //[tl! --]
+amplitude.add(autocapturePlugin()); 
 ```

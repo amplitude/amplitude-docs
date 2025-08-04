@@ -1,75 +1,37 @@
-## Product Overview
+The React Native SDK for Amplitude is a comprehensive analytics tracking solution designed for React Native applications, offering strongly-typed event tracking capabilities through both current and maintenance SDK versions. The platform provides robust analytics infrastructure with advanced user management, data enrichment, and flexible configuration options.
 
-The React Native SDK for Amplitude is a comprehensive analytics tracking solution that enables React Native applications to collect, manage, and send user behavior data to Amplitude's analytics platform. The SDK provides strongly-typed event tracking capabilities with support for both JavaScript and TypeScript development environments, featuring a dual-component architecture with the main SDK (`@amplitude/analytics-react-native`) and the Ampli Wrapper for schema-driven development.
+## Product Architecture and Core Components
 
-## Product Relationships and Feature Integration
+The SDK operates through three foundational pillars: event tracking, user management, and data enrichment. Event tracking utilizes the `track()` method for custom event logging with properties, while user management leverages the Identify class for property operations including `setOnce`, `add`, `prepend`, and `append`. The architecture employs a sophisticated plugin system supporting EnrichmentPlugin and DestinationPlugin types, enabling data transformation and custom destination routing through Amplitude's HTTP V2 API.
 
-The React Native SDK operates as part of a layered analytics ecosystem with distinct but interconnected components:
+The platform features a configurable Transport interface for custom HTTP client implementations and includes advanced capabilities such as revenue tracking via the Revenue interface, group analytics through `setGroup()` and `groupIdentify()` methods, and comprehensive session management with configurable tracking parameters.
 
-**Core SDK Layer**: The foundational `@amplitude/analytics-react-native` package provides basic event tracking, user identification, and data persistence capabilities through React Native's AsyncStorage.
+## SDK Versions and Migration Framework
 
-**Ampli Wrapper Layer**: Generates strongly-typed APIs based on Amplitude Data tracking plans, creating a schema-driven development experience that enforces data consistency and validation at compile time.
+The product maintains two distinct SDK versions: the current `@amplitude/analytics-react-native` and the maintenance `@amplitude/react-native` version. The migration framework includes automated tooling and API method transitions, where legacy methods like `getInstance()/init()` become `init()`, `logEvent()` transforms to `track()`, and `uploadEvents()` becomes `flush()`. Starting with v1.3.4, automatic data migration is available through the `migrateLegacyData` configuration option, facilitating seamless transitions from HTTP V1 to HTTP V2 API endpoints.
 
-**Migration Bridge**: The SDK maintains compatibility with legacy implementations through the maintenance version (`@amplitude/react-native`) and provides automatic data migration capabilities starting from v1.3.4.
+## Ampli Integration and Code Generation
 
-**Plugin Architecture**: Supports extensibility through two primary plugin types - EnrichmentPlugin for data enhancement and DestinationPlugin for custom data routing, enabling developers to customize data processing workflows.
+The Ampli Wrapper generates strongly-typed APIs based on Amplitude Data tracking plans, supporting JavaScript ES6 and TypeScript 2.1+ with CJS module packaging. Core Ampli methods include `ampli.load()` for initialization, `ampli.identify()` for user identification, `ampli.track()` for schema-validated event tracking, and `ampli.flush()` for immediate data transmission. The Ampli CLI provides essential commands including `ampli pull` for downloading tracking plans and `ampli status` for validation checking.
 
-## Key Nomenclature and Definitions
+## Key Nomenclature and Configuration Framework
 
-**Core SDK Methods and Concepts:**
-- `init()`: SDK initialization with API key and configuration parameters
-- `track()`: Primary event logging method (supersedes legacy `logEvent()`)
-- `identify()`: User property management using Identify operations
-- `flush()`: Immediate event upload trigger (replaces `uploadEvents()`)
-- `reset()`: User data clearing for logout scenarios
+**Configuration Parameters**: The SDK employs `flushQueueSize` and `flushIntervalMillis` for batching behavior control, `serverZone` for EU data residency compliance, `trackingOptions` for optional data collection configuration, and `migrateLegacyData` for automatic legacy SDK data migration.
 
-**Configuration Parameters:**
-- `flushQueueSize`: Batch size control for event uploads
-- `flushIntervalMillis`: Automatic upload frequency timing
-- `serverZone`: EU data residency compliance configuration
-- `trackingOptions`: Device-specific data collection controls
-- `migrateLegacyData`: Legacy SDK data migration enablement
+**User Identity Management**: User management utilizes `setUserId()`, `setDeviceId()`, and `setSessionId()` for identity control, while the `reset()` method handles user logout scenarios and `setOptOut()` provides tracking disable functionality.
 
-**User and Event Management:**
-- **Identify Operations**: `setOnce`, `add`, `prepend`, `append` for granular user property manipulation
-- **Group Management**: `setGroup()` and `groupIdentify()` for user segmentation and group-level analytics
-- **Revenue Interface**: Dedicated e-commerce tracking with revenue-specific properties
-- **Session Management**: `setUserId`, `setDeviceId`, `setSessionId` for user lifecycle tracking
+**Advertising Identifiers**: The platform supports comprehensive advertising identifier tracking including ADID (Android Advertising ID), AppSetId, IDFV (iOS Identifier for Vendors), and IDFA (iOS Identifier for Advertisers), with specific dependency requirements such as `play-services-appset`.
 
-**Ampli-Specific Terminology:**
-- **Tracking Plan**: Schema definitions in Amplitude Data that generate type-safe APIs
-- **Event Schemas**: Strongly-typed event definitions with built-in property validation
-- **CJS Module**: CommonJS packaging format for generated Ampli wrapper distribution
+## Installation and Platform Integration
 
-## Broader Product Ecosystem Integration
+Installation requires the core package plus `@react-native-async-storage/async-storage` for data persistence. Platform-specific setup includes `pod install` for iOS environments and Gradle configuration for Android platforms. The SDK maintains detailed compatibility matrices for React Native versions and Android Gradle Plugin versions, ensuring broad platform support.
 
-The React Native SDK serves as a critical bridge between mobile applications and Amplitude's comprehensive analytics platform. It integrates with multiple ecosystem layers:
+## Advanced Analytics Features
 
-**Amplitude Data Integration**: Connects directly with Amplitude's schema management system, enabling tracking plan synchronization and strongly-typed API generation through the Ampli CLI workflow.
+The platform provides COPPA control through `enableCoppaControl()`, EU data residency via server zone configuration, and OTA (over-the-air) update considerations. Location tracking and advertising identifier collection are configurable through tracking options, while the plugin system enables custom data enrichment and destination routing.
 
-**Platform-Specific Integrations**: Interfaces with native mobile capabilities including advertising identifiers (ADID, AppSetId, IDFV, IDFA), location services, and platform-specific storage mechanisms.
+Revenue tracking utilizes dedicated Revenue objects with properties for price, quantity, and product identification. Group analytics enable tracking of user groups and group-level properties through specialized identify operations, supporting complex organizational analytics scenarios.
 
-**Enterprise Features**: Supports advanced compliance requirements through EU data residency controls, COPPA compliance modes, and privacy-focused opt-out mechanisms.
+## Broader Ecosystem Integration
 
-**Development Ecosystem**: Integrates seamlessly with React Native development workflows, supporting standard package managers (npm, yarn, expo), platform-specific build systems (iOS pod install, Android Gradle Plugin), and over-the-air (OTA) update scenarios.
-
-## API Endpoints and Command Line Interface
-
-**Primary SDK API Methods:**
-- `ampli.load()`: Ampli wrapper initialization with configuration parameters
-- `ampli.identify()`: Type-safe user property updates through wrapper interface
-- `ampli.track()`: Strongly-typed event transmission via wrapper
-- `ampli.flush()`: Forced event upload through wrapper layer
-
-**CLI Command Interface:**
-- `ampli pull`: Downloads latest tracking plan schemas from Amplitude Data
-- `ampli status`: Verifies synchronization status between local schemas and Amplitude Data
-
-**Configuration and Control APIs:**
-- `setOptOut()`: Privacy compliance through tracking disablement
-- `enableCoppaControl()`: COPPA compliance mode activation
-- `setEventUploadThreshold()`: Batch upload trigger configuration
-- `setEventUploadPeriodMillis()`: Automatic upload interval timing
-
-**Network and Transport Layer:**
-The SDK communicates through Amplitude's HTTP V2 API endpoints for data transmission, with support for custom Transport implementations to accommodate specialized networking requirements. Advanced integrations include advertising identifier collection (requiring additional dependencies like play-services-appset for Android) and location tracking capabilities for enhanced user analytics and segmentation.
+The React Native SDK integrates seamlessly with Amplitude's broader analytics ecosystem, communicating with Amplitude's HTTP V2 API infrastructure and supporting the company's data governance framework through tracking plans and schema validation. The SDK's plugin architecture and Transport interface enable integration with custom analytics pipelines and third-party data destinations, positioning it as a flexible component within larger data analytics architectures.

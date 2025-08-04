@@ -1685,7 +1685,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "is_array_type": false,
             "is_hidden": false,
             "classifications": ["PII"]
-        }, //[tl! collapse:start]
+        }, 
         {
             "user_property": "event_id",
             "description": null,
@@ -1755,7 +1755,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "is_array_type": false,
             "is_hidden": false,
             "classifications": []
-        } //[tl! collapse:end]
+        } 
     ]
 }
 ```

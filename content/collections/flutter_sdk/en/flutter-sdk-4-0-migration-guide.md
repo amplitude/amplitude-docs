@@ -70,18 +70,18 @@ Flutter SDK 4.0 offers an API to instrument events. To migrate to Flutter SDK 4.
 Like all other calls, `instance()` is removed. Flutter SDK 4.0 uses the Configuration object to set the configuration. See [Configuration](#configuration) for more information.
 
 ```dart
-import 'package:amplitude_flutter/amplitude.dart'; //[tl! --:1]
+import 'package:amplitude_flutter/amplitude.dart'; 
 import 'package:amplitude_flutter/identify.dart';
-import 'package:amplitude_flutter/amplitude.dart'; //[tl! ++:1]
+import 'package:amplitude_flutter/amplitude.dart'; 
 import 'package:amplitude_flutter/configuration.dart';
 
 // Create the instance and initialize SDK
-final Amplitude amplitude = Amplitude.getInstance(instanceName: "project"); //[tl! --:4]
+final Amplitude amplitude = Amplitude.getInstance(instanceName: "project"); 
 amplitude.setServerUrl("https://your.endpoint.com")
 amplitude.setServerZone("US")
 amplitude.trackingSessionEvents(true)
 amplitude.init(widget.apiKey);
-final Amplitude amplitude = Amplitude(Configuration( //[tl! ++:8]
+final Amplitude amplitude = Amplitude(Configuration( 
     apiKey: "YOUR-API-KEY",
     serverUrl: "https://your.endpoint.com",
     serverZone: ServerZone.eu,
@@ -130,15 +130,15 @@ Flutter SDK 4.0 uses a unified `track` API to replace the following `logEvent` A
 The `logEvent()` API maps to `track()`.
 
 ```dart
-amplitude.logEvent('BUTTON_CLICKED'); //[tl! --]
-amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED')); //[tl! ++]
+amplitude.logEvent('BUTTON_CLICKED'); 
+amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED')); 
 ```
 
 ### logEvent() with event properties
 
 ```dart
-amplitude.logEvent('BUTTON_CLICKED', {"Hover Time": "100ms"}); //[tl! --]
-amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', eventProperties: {"Hover Time": "100ms"})); //[tl! ++]
+amplitude.logEvent('BUTTON_CLICKED', {"Hover Time": "100ms"}); 
+amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', eventProperties: {"Hover Time": "100ms"})); 
 ```
 
 ### logEvent() with outOfSession
@@ -146,8 +146,8 @@ amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', eventProperties: {"
 `logEvent()` receives an optional boolean argument `outOfSession`. The new `track()` API doesn't support it. You can still track an event as out-of-session by setting `event.sessionId = -1`.
 
 ```dart
-amplitude.logEvent("BUTTON_CLICKED", outOfSession: true); //[tl! --]
-amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', sessionId: -1)); //[tl! ++]
+amplitude.logEvent("BUTTON_CLICKED", outOfSession: true); 
+amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', sessionId: -1)); 
 ```
 
 ### uploadEvents()
@@ -155,8 +155,8 @@ amplitude.track(event: BaseEvent(eventType:'BUTTON_CLICKED', sessionId: -1)); //
 The `uploadEvents()` API maps to `flush()`.
 
 ```dart
-amplitude.uploadEvents(); //[tl! --]
-amplitude.flush(); //[tl! ++]
+amplitude.uploadEvents(); 
+amplitude.flush(); 
 ```
 
 ## Set user properties
@@ -188,8 +188,8 @@ The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforc
 The `clearUserProperties` API has been removed, but you can now use the unified `identify` API to remove user properties.
 
 ```dart
-amplitude.clearUserProperties(); //[tl! --]
-final Identify identify = Identify() //[tl! ++:2]
+amplitude.clearUserProperties(); 
+final Identify identify = Identify() 
   ..clearAll();
 amplitude.identify(identify);
 ```
@@ -199,12 +199,12 @@ amplitude.identify(identify);
 The `setUserProperties` API has been removed, but you can now use the unified `identify` API to add user properties.
 
 ```dart
-- Map<String, dynamic> userProps = { //[tl! --:4]
+- Map<String, dynamic> userProps = { 
 -   'gender': 'female',
 -   'age': '20'
 - };
 - amplitude.setUserProperties(userProperties);
-+ final Identify identify = Identify() //[tl! ++:3]
++ final Identify identify = Identify() 
 +                          ..set('gender','female')
 +                          ..set('age',20);
 + amplitude.identify(identify);
@@ -218,8 +218,8 @@ You can now make an identify call on `amplitude` without calling `instance()`.
 final Identify identify = Identify()
                           ..set('gender','female')
                           ..set('age',20);
-Amplitude.getInstance().identify(identify); //[tl! --]
-amplitude.identify(identify); //[tl! ++]
+Amplitude.getInstance().identify(identify); 
+amplitude.identify(identify); 
 ```
 
 ## Set group properties
@@ -230,11 +230,11 @@ You can now make an identify call on `amplitude` without calling `instance()`.
 
 ```dart
 // set group with a single group name
-Amplitude.getInstance().setGroup("orgId", "15"); //[tl! --]
-amplitude.setGroup("orgId", "15");//[tl! ++]
+Amplitude.getInstance().setGroup("orgId", "15"); 
+amplitude.setGroup("orgId", "15");
 // set group with multiple group names
-Amplitude.getInstance().setGroup("sport", ["tennis", "soccer"]); //[tl! --]
-amplitude.setGroup("sport", ["tennis", "soccer"]); //[tl! ++]
+Amplitude.getInstance().setGroup("sport", ["tennis", "soccer"]); 
+amplitude.setGroup("sport", ["tennis", "soccer"]); 
 ```
 
 #### groupIdentify()
@@ -245,8 +245,8 @@ You can now make an identify call on `amplitude` without calling `instance()`.
 final Identify identify = Identify()
                           ..set("gender", "female")
                           ..set("age", 20);
-Amplitude.getInstance().groupIdentify("groupType", "groupValue", identify); //[tl! --]
-amplitude.groupIdentify("groupType", "groupValue", identify); //[tl! ++]
+Amplitude.getInstance().groupIdentify("groupType", "groupValue", identify); 
+amplitude.groupIdentify("groupType", "groupValue", identify); 
 ```
 
 ## Tracking revenue
@@ -254,13 +254,13 @@ amplitude.groupIdentify("groupType", "groupValue", identify); //[tl! ++]
 `logRevenue()` and `logRevenueAmount()` are replaced by `revenue()`.
 
 ```dart
-String productId = "product001"; //[tl! --:5]
+String productId = "product001"; 
 int quantity = 2;
 double price = 20;
 double amount = 35;
 amplitude.logRevenue(productId, quantity, price);
 amplitude.logRevenueAmount(amount);
-final Revenue revenue = Revenue() //[tl! ++:4]
+final Revenue revenue = Revenue() 
   ..price = 3.99
   ..quantity = 3
   ..productId = "com.company.productId";

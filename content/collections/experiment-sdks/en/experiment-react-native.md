@@ -226,7 +226,7 @@ import * as amplitude from '@amplitude/analytics-browser';
 import { Experiment } from '@amplitude/experiment-js-client';
 
 amplitude.init('API_KEY');
-const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY'); //[tl! ~~]
+const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY'); 
 ```
 
 When you use the integration initializer, it configures implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.

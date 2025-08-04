@@ -1,26 +1,33 @@
 ## Summary
 
-This documentation covers Amplitude Experiment's Client-side Android SDK implementation, detailing installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods, variant fetching, exposure tracking, and configuration options including bootstrapping and provider interfaces.
+This documentation covers Amplitude Experiment's client-side Android SDK implementation, including installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access, exposure tracking, and configuration options for features like automatic exposure tracking, user providers, and bootstrapping with initial variants or flag configurations.
 
 ## Keywords
 
 - Amplitude Experiment Android SDK
-- experiment-android-client Maven dependency
+- client-side Android implementation
+- Maven Central installation
+- experiment-android-client
 - ExperimentClient initialization
-- initializeWithAmplitudeAnalytics
+- deployment key configuration
 - remote evaluation fetch()
 - local evaluation start()
 - variant() method
-- ExperimentUser builder
-- exposure tracking provider
-- ExperimentConfig configuration
-- deployment key authentication
 - automatic exposure tracking
-- user provider interface
+- ExperimentUser builder
+- ExperimentConfig options
+- Amplitude Analytics integration
 - Segment integration
-- bootstrapping initialVariants
-- Source.INITIAL_VARIANTS
-- pollOnStart flag configurations
-- fetchOnStart behavior
 - ExposureTrackingProvider interface
-- Kotlin Android implementation
+- ExperimentUserProvider interface
+- flag configurations bootstrapping
+- initialVariants configuration
+- Source.INITIAL_VARIANTS
+- ServerZone.EU configuration
+- fetchOnStart behavior
+- pollOnStart flag updates
+- account-level bucketing
+- group properties
+- variant payload JSONObject
+- exposure() manual tracking
+- clear() variants cache

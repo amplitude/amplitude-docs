@@ -277,7 +277,7 @@ curl --request GET \
             "rolloutWeights": {
                 "on": 1
             },
-            "targetSegments": [ //[tl! collapse:start]
+            "targetSegments": [ 
                 {
                     "name": "Segment 1",
                     "conditions": [
@@ -298,10 +298,10 @@ curl --request GET \
                 }
             ]
         }
-    },  //[tl! collapse:end]
+    },  
     {
         "createdAt": "2023-07-29T03:32:39.494Z",
-        "createdBy": <userId>, //[tl! collapse:start]
+        "createdBy": <userId>, 
         "version": 2,
         "flagConfig": {
             "id": <id>,
@@ -374,7 +374,7 @@ curl --request GET \
             "targetSegments": []
         }
     }
-] //[tl! collapse:end]
+] 
 ```
 
 {{/partial:tab}}

@@ -97,7 +97,7 @@ curl --request GET \
                     ]
                 }
             },
-            { //[tl! collapse:start]
+            { 
                 "createdAt": "2023-07-29T03:32:39.494Z",
                 "createdBy": <userId>,
                 "version": 2,
@@ -171,7 +171,7 @@ curl --request GET \
                     },
                     "targetSegments": []
                 }
-            } //[tl! collapse:end]
+            } 
         ]
     }
 ```

@@ -1,21 +1,19 @@
-**Summary:** This documentation covers migrating from Amplitude's maintenance Node.js SDK (`@amplitude/node`) to the latest Node.js SDK (`@amplitude/analytics-node`), detailing API changes including initialization with `init()`, event tracking with `track()` replacing `logEvent()`, configuration object differences, and middleware-to-plugins architecture conversion.
+**Summary:** This migration guide documents the transition from Amplitude's maintenance Node.js SDK (`@amplitude/node`) to the latest Node.js SDK (`@amplitude/analytics-node`), detailing API changes including initialization with `init()`, configuration object differences, `logEvent()` to `track()` mapping, `identify()` signature changes, and middleware to plugins architecture conversion.
 
 **Keywords:**
 - @amplitude/node
 - @amplitude/analytics-node
 - Node.js SDK migration
 - init() initialization
-- track() API
-- logEvent() replacement
+- logEvent() to track() mapping
+- identify() signature changes
 - middleware to plugins conversion
+- flushQueueSize configuration
 - EnrichmentPlugin
 - DestinationPlugin
-- identify() signature changes
 - EventOptions
-- flushQueueSize
-- flushIntervalMillis
-- transportProvider
 - plugin architecture
-- namespace import
-- named import
-- configuration object migration
+- HTTP V2 API
+- Batch API support
+- transportProvider
+- flushIntervalMillis

@@ -1,18 +1,16 @@
-**Summary:** Documentation for migrating from Amplitude's maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Kotlin-based Android SDK (`com.amplitude:analytics-android`), covering dependency updates, API changes from `logEvent()` to `track()`, configuration mapping, and data migration with `migrateLegacyData` setting.
+**Summary:** This documentation page provides migration instructions from Amplitude's maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Android-Kotlin SDK (`com.amplitude:analytics-android`), covering dependency updates, API changes from `logEvent()` to `track()`, configuration mapping, and data migration with the `migrateLegacyData` setting.
 
 **Keywords:**
-- amplitude-android-sdk-migration
-- com.amplitude:android-sdk
-- com.amplitude:analytics-android
-- logEvent-to-track-migration
-- amplitude-kotlin-sdk
-- migrateLegacyData-configuration
-- amplitude-http-v2-api
-- android-sdk-plugin-architecture
-- amplitude-maintenance-sdk
-- flushIntervalMillis-flushQueueSize
-- amplitude-revenue-verification
-- minIdLength-configuration
-- RemnantDataMigration
-- amplitude-identify-groupIdentify
-- sessionTimeoutMillis-migration
+- android-sdk maintenance SDK migration
+- analytics-android kotlin SDK
+- com.amplitude:android-sdk to com.amplitude:analytics-android
+- logEvent() to track() API migration
+- migrateLegacyData configuration
+- HTTP V1 to V2 API endpoint migration
+- JSONObject to Map<String,Any?> eventProperties
+- flushIntervalMillis flushQueueSize configuration
+- minIdLength identifier validation
+- plugin architecture middleware replacement
+- RemnantDataMigration legacy data transfer
+- uploadEvents() to flush() mapping
+- sessionTimeoutMillis foreground tracking changes

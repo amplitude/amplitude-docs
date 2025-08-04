@@ -1,28 +1,26 @@
 ## Summary
 
-This SDK quickstart documentation provides installation, initialization, and basic usage instructions for Amplitude Analytics SDKs across 11 platforms: Browser (JavaScript/TypeScript), Node.js, Android (Kotlin/Java), iOS (Swift/Objective-C), JRE (Java/Kotlin), Python, React Native, Flutter, Go, Unity, and Unreal Engine. Each platform section includes package manager installation commands, API key initialization with optional EU data residency configuration, event tracking with properties, and Ampli code generation examples.
+This SDK quickstart documentation provides installation, initialization, and basic usage instructions for Amplitude Analytics SDKs across 11 platforms: Browser, Node.js, Android, iOS, JRE, Python, React Native, Flutter, Go, Unity, and Unreal Engine. Each platform section includes package manager installation commands, API key initialization with optional EU data residency configuration, event tracking with properties, and Ampli code generation examples.
 
 ## Keywords
 
 - Amplitude Analytics SDK
 - multi-platform quickstart
-- JavaScript Browser SDK @amplitude/analytics-browser
-- Node.js SDK @amplitude/analytics-node
-- Android Kotlin SDK com.amplitude:analytics-android
-- iOS Swift SDK AmplitudeSwift
-- JRE Java SDK com.amplitude:java-sdk
-- Python SDK amplitude-analytics
-- React Native SDK @amplitude/analytics-react-native
-- Flutter SDK amplitude_flutter
-- Go SDK analytics-go
-- Unity plugin amplitude-unity.unitypackage
-- Unreal Engine AmplitudeUnreal
+- @amplitude/analytics-browser
+- @amplitude/analytics-node
+- @amplitude/analytics-react-native
+- amplitude-analytics Python
+- analytics-android Kotlin/Java
+- AmplitudeSwift iOS
+- amplitude-flutter
+- analytics-go
+- Unity analytics plugin
+- Unreal Engine analytics
 - amplitude.init() initialization
 - amplitude.track() event tracking
-- EU data residency ServerZone.EU
+- EU data residency ServerZone
 - Ampli code generation
 - event properties tracking
 - user identification
-- npm yarn CocoaPods installation
 - API key configuration
-- cross-platform analytics integration
+- NPM/Yarn/CocoaPods installation

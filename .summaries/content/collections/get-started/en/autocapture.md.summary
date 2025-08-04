@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's Autocapture feature for web (Browser SDK 2.10.0+), iOS, and Android platforms, detailing SDK installation, initialization with elementInteractions configuration, automatic event tracking (Page viewed, Element clicked, Form submitted, etc.), marketing attribution capture, visual labeling capabilities, and CSP requirements.
+**Summary:** This documentation covers Amplitude's Autocapture feature for web (Browser SDK 2.10.0+), iOS, and Android platforms, detailing SDK installation, initialization with elementInteractions configuration, and automatic event tracking including Page viewed, Element clicked, Form submitted, Application lifecycle events, and Screen viewed events with visual labeling capabilities.
 
 **Keywords:**
 - Amplitude Autocapture
@@ -8,17 +8,16 @@
 - Page viewed events
 - Element clicked tracking
 - Form started/submitted events
-- marketing attribution
-- UTM parameters
-- Content Security Policy (CSP)
+- Application lifecycle events
+- Screen viewed tracking
 - iOS Swift SDK autocapture
 - Android Kotlin SDK autocapture
 - Session tracking
-- Screen viewed events
-- Application lifecycle events
-- Deep link tracking
+- UTM attribution parameters
+- Content Security Policy (CSP)
+- Element interaction properties
 - Network request tracking
-- @amplitude/analytics-browser
+- Deep link opened events
 - autocapturePlugin
-- Element hierarchy properties
-- Session Replay ID
+- @amplitude/analytics-browser
+- autocaptureOptions configuration

@@ -1,22 +1,24 @@
 ## Summary
-This documentation covers migrating from Flutter SDK 3.0 to 4.0, detailing breaking changes including dependency updates (iOS 13.0 minimum, Browser SDK 2 snippet), API changes (logEvent() to track(), uploadEvents() to flush()), Configuration object replacement of setter methods, and minimum identifier length requirements for HTTP V2 API.
+This migration guide documents the upgrade from Flutter SDK 3.0 to 4.0, covering breaking changes including removal of `instance()` calls, Configuration object initialization, API method renames (`logEvent()` to `track()`, `uploadEvents()` to `flush()`), iOS platform requirement bump to 13.0, and Browser SDK 2 snippet replacement for Flutter Web.
 
 ## Keywords
 - Flutter SDK 4.0 migration
-- amplitude_flutter dependency update
-- iOS 13.0 minimum platform
-- Browser SDK 2 snippet replacement
-- Configuration object immutable
-- logEvent() to track() API change
-- uploadEvents() to flush() migration
-- BaseEvent eventType parameter
-- HTTP V2 API minIdLength requirement
+- amplitude_flutter v3 to v4 upgrade
+- Configuration object initialization
 - instance() method removal
-- identify() API unified approach
-- revenue() replaces logRevenue()
-- sessionId -1 outOfSession
+- logEvent to track API migration
+- uploadEvents to flush migration
+- iOS 13.0 platform requirement
+- Browser SDK 2 snippet replacement
+- BaseEvent eventType parameter
+- Revenue API changes
+- logRevenue to revenue migration
 - clearUserProperties removal
-- regenerateDeviceId unsupported
+- setUserProperties removal
+- regenerateDeviceId removal
+- minIdLength configuration
+- HTTP V2 API endpoint migration
+- sessionId -1 outOfSession
 - DefaultTrackingOptions sessions
-- ServerZone configuration
+- serverZone ServerZone.eu
 - flushQueueSize flushIntervalMillis

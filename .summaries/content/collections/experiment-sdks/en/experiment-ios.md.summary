@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Experiment iOS SDK for client-side feature flag evaluation, including installation via CocoaPods/SPM, initialization with Amplitude Analytics integration, remote/local evaluation through fetch() and start() methods, variant access with automatic exposure tracking, and provider interfaces for custom user management and analytics integration.
+This documentation covers the Amplitude Experiment iOS SDK for client-side feature flag evaluation, including installation via CocoaPods/SPM, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access with automatic exposure tracking, and provider interfaces for user management and exposure tracking.
 
 ## Keywords
 
@@ -9,28 +9,24 @@ This documentation covers the Amplitude Experiment iOS SDK for client-side featu
 - CocoaPods AmplitudeExperiment
 - Swift Package Manager Experiment
 - ExperimentClient initialization
-- fetch() remote evaluation
-- start() local evaluation
-- variant() flag access
-- automatic exposure tracking
+- remote evaluation fetch()
+- local evaluation start()
+- variant() automatic exposure tracking
+- ExperimentUser builder
+- deployment key authentication
 - ExposureTrackingProvider interface
 - ExperimentUserProvider interface
 - Amplitude Analytics integration
-- initializeWithAmplitudeAnalytics()
-- deployment key authentication
-- ExperimentUser object
+- Segment Analytics integration
+- ExperimentConfig builder
 - flag configurations bootstrapping
 - initialVariants configuration
 - serverZone EU data center
-- Segment integration
 - account-level bucketing
-- group properties
-- payload variant data
+- group properties evaluation
 - fallback variants
+- payload access casting
 - exposure events tracking
-- automaticExposureTracking configuration
-- fetchOnStart behavior
-- pollOnStart flag updates
+- fetchOnStart pollOnStart
+- automaticExposureTracking
 - instanceName configuration
-- ExperimentConfigBuilder
-- Swift implementation

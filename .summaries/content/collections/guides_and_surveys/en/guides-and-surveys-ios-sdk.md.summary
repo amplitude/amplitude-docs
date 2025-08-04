@@ -1,20 +1,15 @@
-**Summary:** This documentation covers the Amplitude Guides and Surveys iOS SDK for deploying in-app guides and surveys, including Swift Package Manager/CocoaPods installation, AmplitudeEngagement initialization with API key configuration, boot methods with user/device ID, screen tracking, element targeting with accessibilityIdentifier, and preview mode setup with custom URL schemes.
+**Summary:** This documentation covers the Amplitude Guides and Surveys iOS SDK implementation, including Swift Package Manager/CocoaPods installation, AmplitudeEngagement initialization with iOS Swift SDK plugin integration, screen tracking, element targeting with accessibilityIdentifier, and preview mode configuration with custom URL schemes.
 
 **Keywords:**
-- AmplitudeEngagement iOS SDK
+- AmplitudeEngagementSwift
+- iOS Swift SDK plugin integration
 - Swift Package Manager CocoaPods installation
 - AmplitudeEngagement initialization
-- boot() method user_id device_id
-- screen() tracking method
-- accessibilityIdentifier element targeting
-- amplitudeView SwiftUI modifier
-- ThemeMode.DARK LIGHT SYSTEM
-- reset() stepIndex parameter
-- show() guide key method
-- forwardEvent() event_type
-- URL scheme mobile preview
-- handleUrl() method
-- iOS 15 Swift 5.9 requirements
-- AmplitudeBootOptions configuration
-- pin tooltip guides
-- serverZone EU US configuration
+- screen tracking amplitudeView
+- element targeting accessibilityIdentifier
+- ThemeMode configuration
+- boot options user_id device_id
+- preview mode URL scheme handling
+- Swift 5.9 iOS 15 requirements
+- forwardEvent closeAll methods
+- Amplitude-Engagement-Swift repository
