@@ -97,7 +97,7 @@ You can configure the server zone when initializing the client for sending data 
 {{partial:admonition type="note" heading=""}}
 For EU data residency, the project must be set up inside Amplitude EU. You must initialize the SDK with the API key from Amplitude EU.
 
-```
+```js
 import * as amplitude from '@amplitude/analytics-node';
 
 amplitude.init(API_KEY, {

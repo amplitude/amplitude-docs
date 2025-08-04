@@ -256,3 +256,5 @@ Scrollmap
 Viewport
 [Ff]ullscreen
 [Dd]escope
+[Tt]ooltips?\b
+[Rr]ollouts?\b

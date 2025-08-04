@@ -1782,6 +1782,7 @@ video {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }.prose p:has(img) {
     margin: 0;
+    margin-bottom: 1rem;
     background: #F4F5F6;
     padding: 2rem;
     border-radius: 8px;
@@ -2350,6 +2351,9 @@ line-height: 1.25rem;
     margin-top: 1px;
     opacity: .75;
 
+}.prose ol ol {
+    list-style: lower-alpha;
+    list-style-type: lower-alpha;
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
