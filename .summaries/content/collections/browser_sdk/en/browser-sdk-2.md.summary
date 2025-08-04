@@ -1,43 +1,43 @@
 **Summary:**
-This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends analytics events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API keys, autocapture configuration for tracking page views/sessions/forms/file downloads/element interactions/network requests, event tracking methods, user properties management, revenue tracking, and advanced features like cross-domain tracking, offline mode, and remote configuration.
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API keys, comprehensive autocapture configuration (attribution, page views, sessions, form interactions, file downloads, element interactions, network tracking), event tracking, user properties management, revenue tracking, plugins system, and advanced features like cross-domain tracking, offline mode, and remote configuration.
 
 **Keywords:**
 - @amplitude/analytics-browser
 - Browser SDK 2
 - HTTP V2 API
 - autocapture
-- pageViews tracking
-- sessions tracking
-- formInteractions tracking
-- fileDownloads tracking
-- elementInteractions tracking
-- networkTracking
-- marketing attribution
+- attribution tracking
 - UTM parameters
-- click ID parameters
+- page view tracking
+- session tracking
+- form interactions
+- file downloads
+- element interactions
+- network tracking
+- sendBeacon
 - cross-domain tracking
-- ampDeviceId URL parameter
-- ampSessionId URL parameter
-- sendBeacon transport
-- Content Security Policy CSP
 - cookie management
-- AMP cookie prefix
 - offline mode
 - remote configuration
-- fetchRemoteConfig
-- deviceId minIdLength
+- CSP (Content Security Policy)
+- marketing attribution
+- deviceId
+- sessionId
+- userId
+- revenue tracking
+- user properties
+- group properties
+- plugins system
+- enrichment plugins
+- destination plugins
 - flushIntervalMillis
 - flushQueueSize
-- identityStorage localStorage
 - trackingOptions
+- identityStorage
 - serverZone EU
 - Visual labeling
-- revenue tracking
-- user groups
-- group properties
-- plugins enrichment destination
-- Identify operations
-- sessionTimeout
-- cookieOptions domain
-- excludeReferrers
-- resetSessionOnNewCampaign
+- SPA (Single Page Application)
+- Zone.js Angular
+- AMP cookies
+- localStorage
+- sessionStorage

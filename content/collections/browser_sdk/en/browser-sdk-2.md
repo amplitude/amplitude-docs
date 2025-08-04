@@ -1158,6 +1158,22 @@ amplitude.add(myDestinationPlugin('https://custom.url.com'));
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### Available plugins
+
+Amplitude provides several official plugins to extend the Browser SDK functionality:
+
+#### Page URL enrichment plugin
+
+The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) automatically adds page URL-related properties to all events. Properties such as: current page information, previous page location, and page type classification.
+
+```ts
+import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
+
+const pageUrlEnrichment = pageUrlEnrichmentPlugin();
+amplitude.add(pageUrlEnrichment);
+amplitude.init(API_KEY);
+```
+
 ## Troubleshooting and debugging
 
 Debugging in a browser can help you identify problems related to your code's implementation, as well as potential issues within the SDKs you're using. Here's a basic guide on how to use the browser's built-in Developer Tools (DevTools) for debugging.
