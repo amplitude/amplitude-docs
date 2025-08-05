@@ -123,7 +123,7 @@ In addition to moving elements up or down, click **Move** to enter preview mode.
 
 As you hover over valid positions, the editor displays a preview of the layout after you move the element.
 
-When you click a valid position to place the element, click **Apply** to confirm its new placement.
+Choose a valid position on the screen to place the element and then click Apply to confirm the placement.
 
 For more precise control, use the **Layout** section of in the expanded drawer. This option lets you place elements relative to another DOM element.
 
