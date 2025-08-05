@@ -104,17 +104,11 @@ tree:
     title: 'Creating Experiments'
     children:
       -
-        id: 3687a9d2-bf40-4280-8220-12b885d702b2
-        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
-      -
         id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
         entry: 5c091ba2-f202-4972-9e9f-4a9af712730d
       -
         id: a978b4c7-f702-4e27-b042-3369a199110e
         entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
-      -
-        id: 1018898c-9ca7-45e5-9180-18a048b5cec1
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
       -
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
@@ -179,6 +173,12 @@ tree:
           -
             id: 3bd44a68-1b42-42c0-99bd-bffd3a553525
             entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
+      -
+        id: 3687a9d2-bf40-4280-8220-12b885d702b2
+        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
+      -
+        id: 1018898c-9ca7-45e5-9180-18a048b5cec1
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: d5b6a5f1-c999-4645-88e6-08fcce202918
     title: 'Testing Experiments'
