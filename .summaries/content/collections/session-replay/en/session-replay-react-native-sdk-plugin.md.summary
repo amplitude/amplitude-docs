@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the installation and configuration of the Session Replay React Native SDK plugin (@amplitude/plugin-session-replay-react-native), including setup with the Amplitude React Native SDK, configuration options like sampleRate and enableRemoteConfig, data masking with AmpMaskView components, and session recording controls.
+**Summary:** This documentation covers the installation and configuration of the Session Replay React Native SDK plugin (@amplitude/plugin-session-replay-react-native), including setup with the Amplitude React Native SDK, configuration options like sampleRate and enableRemoteConfig, data masking with AmpMaskView components, and troubleshooting Android NullPointerException crashes.
 
 **Keywords:**
 - @amplitude/plugin-session-replay-react-native
@@ -10,10 +10,11 @@
 - sampleRate configuration
 - enableRemoteConfig
 - autoStart option
+- serverZone EU
 - start()/stop() methods
+- NullPointerException Android
 - WebView tracking
-- EU data residency serverZone
 - remote configuration
-- session recording controls
-- data masking components
-- mobile session replay
+- session replay sampling
+- DSAR API
+- User Privacy API
