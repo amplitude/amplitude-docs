@@ -36,8 +36,14 @@ jobs:
     - name: Build Assets
       run: npm run prod
 
-    - name: Build Static Site
-      run: APP_URL=${{ vars.APP_URL }} php please ssg:generate --workers=4
+    - name: Setup Environment
+      run: |
+        cp .env.example .env 2>/dev/null || touch .env
+        echo "APP_URL=${{ vars.APP_URL }}" >> .env
+        echo "STATAMIC_LICENSE_KEY=${{ secrets.STATAMIC_LICENSE_KEY }}" >> .env
+        
+    - name: Build Static Site  
+      run: php please ssg:generate --workers=4
 
     - name: Start Local Server
       run: |
