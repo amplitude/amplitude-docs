@@ -34,7 +34,7 @@ jobs:
       run: npm install
 
     - name: Build Assets
-      run: npm run build
+      run: npm run prod
 
     - name: Build Static Site
       run: APP_URL=${{ vars.APP_URL }} php please ssg:generate --workers=4
