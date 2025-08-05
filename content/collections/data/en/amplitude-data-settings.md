@@ -13,8 +13,8 @@ updated_at: 1725397992
 
 In the Settings page, you can:
 
-- Name your project, and specify the naming conventions you’ll use for events and properties
-- Specify whether you’ll require team reviews for all changes to main
+- Name your project, and specify the naming conventions you use for events and properties
+- Specify whether you require team reviews for all changes to main
 - Set the Amplitude projects for your environments
 - Add integrations
 - Generate API tokens
@@ -87,7 +87,7 @@ Be sure to click _Copy to clipboard_ now, as you won’t be able to retrieve the
 
 ## Schema Settings
 
-Sometimes, Amplitude Data might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,**and it means the received data isn't accounted for in your schema. This is usually the result of failing to plan for that particular data type or value when you first set up your schema.
+Sometimes, Amplitude Data might receive data from your app that it doesn't know what to do with. This is usually the result of a schema violation, and it means the received data isn't accounted for in your schema. This is usually the result of failing to plan for that particular data type or value when you first set up your schema.
 
 You can tell Amplitude how to handle these situations by configuring your schema settings.
 

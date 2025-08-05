@@ -13,6 +13,6 @@
 - Releases API
 - time-series chart markers
 - release adoption analysis
+- new events detection
+- Platform user property
 - HTTP Batch API integration
-- project settings configuration
-- backfilled data limitations
