@@ -84,7 +84,11 @@ The following tables describe which Experiment functionality is available for Fe
 
 {{partial:collapse name="Goals"}}
 
+<<<<<<< Updated upstream
 x
+=======
+|  |  |  |  |  |
+>>>>>>> Stashed changes
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
 | Primary Metric |  |  | X |
