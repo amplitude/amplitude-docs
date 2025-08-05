@@ -5,5 +5,5 @@
             class="transform transistion duration-100 absolute right-4" x-ref="animatedItem"
             :class="{'rotate-90': expanded, 'rotate-0': !expanded}">
             {{svg src="/docs/assets/general/icon-chevron-down.svg" class="rotate-[270deg]"}}</span></summary>
-    <div class="p-4 mt-4 bg-white overflow-x-scroll detail">{{ slot | markdown | strip_tags('br') }}</div>
+    <div @click.stop class="p-4 mt-4 bg-white overflow-x-scroll detail">{{ slot | antlers | strip_tags('br') }}</div>
 </details>
