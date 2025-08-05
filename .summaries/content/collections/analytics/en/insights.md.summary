@@ -1,15 +1,16 @@
-**Summary:** This documentation covers Amplitude's Insights alerts feature that uses Prophet machine learning to detect anomalies in product metrics, including automatic alerts for instrumented events, custom alerts with confidence intervals, and smart alerts for Event Segmentation and Funnel Analysis charts with daily/hourly frequencies.
+**Summary:** This documentation covers Amplitude's Insights alerts feature that uses Prophet machine learning to detect anomalies in product metrics, including automatic alerts (for events with 100+ daily volume), custom alerts, and smart alerts with 99% confidence intervals, available for Event Segmentation and Funnel Analysis charts with daily/hourly frequency.
 
 **Keywords:**
 - Amplitude Insights alerts
 - Prophet machine learning anomaly detection
-- Event Segmentation alerts
-- Funnel Analysis alerts
-- automatic alerts instrumented events
-- custom alerts confidence intervals
+- automatic alerts 100 events per day threshold
+- custom alerts confidence intervals 95% 98% 99%
 - smart alerts 99% confidence interval
-- daily hourly frequency charts
-- alert notifications Slack integration
-- server_upload_time filter
+- Event Segmentation chart alerts
+- Funnel Analysis chart alerts
+- daily hourly frequency alerts
 - 120 training days automatic monitors
-- chart ownership alert permissions
+- server_upload_time filter
+- Slack integration notifications
+- chart owner permissions alerts
+- rolling window 7-day 30-day KPIs

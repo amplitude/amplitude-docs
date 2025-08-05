@@ -7,14 +7,12 @@
 - server-side tracking
 - Amplitude SDKs
 - Ampli instrumentation
-- cloud storage integration
-- event streaming
-- tracking plan creation
-- event and property selection
+- tracking plans
+- event properties
 - data taxonomy
 - naming conventions
-- environment separation
-- development vs production projects
-- data lifecycle management
-- destination catalog
+- development vs production environments
+- cloud storage integration
+- event streaming
 - data planning playbook
+- destination catalog

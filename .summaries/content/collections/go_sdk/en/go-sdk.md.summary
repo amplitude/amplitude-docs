@@ -3,14 +3,14 @@
 **Keywords:**
 - amplitude analytics-go SDK
 - Go event tracking
-- amplitude.NewClient initialization
 - FlushQueueSize FlushInterval batching
-- amplitude.Event tracking
-- amplitude.Identify user properties
-- SetGroup user groups
+- amplitude.Event UserID DeviceID EventType
+- amplitude.Identify user properties operations
+- SetGroup GroupIdentify user groups
 - amplitude.Revenue tracking
-- enrichment destination plugins
-- amplitude.Config ServerZone UseBatch
+- Plugin enrichment destination types
+- amplitude.NewClient amplitude.NewConfig
+- ServerZone EU US batch API
 - RetryBaseInterval FlushMaxRetries
-- StorageFactory InMemoryStorage
+- InMemoryStorage MaxStorageCapacity
 - github.com/amplitude/analytics-go package

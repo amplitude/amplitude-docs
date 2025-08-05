@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to interpret Amplitude's Stickiness chart analysis, covering non-cumulative vs cumulative measurement modes, the Metrics Module, breakdown data tables, and creating behavioral cohorts from stickiness results.
+**Summary:** This documentation explains how to interpret Amplitude's Stickiness chart analysis, covering non-cumulative vs cumulative measurement modes, the Metrics Module interface, breakdown data tables, and creating behavioral cohorts from stickiness results.
 
 **Keywords:**
 - Stickiness chart interpretation
@@ -12,4 +12,4 @@
 - X-axis day buckets
 - Weekly/monthly time frames
 - Microscope integration
-- User percentage calculations
+- Product usage habits analysis

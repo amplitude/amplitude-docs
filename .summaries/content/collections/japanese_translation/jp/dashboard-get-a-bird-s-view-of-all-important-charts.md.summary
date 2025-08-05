@@ -1,25 +1,25 @@
 ## Summary
-This documentation covers Amplitude dashboard functionality in Japanese, including creating, editing, and sharing dashboards that aggregate multiple charts into single views, with features like cross-project chart comparison, behavioral cohorts, bulk filtering by date ranges and user segments, target metrics, comments, subscriptions, and template creation.
+This documentation covers Amplitude dashboard functionality in Japanese, including creating, editing, and sharing dashboards that aggregate multiple charts and cross-project data into single views, with features like behavioral cohorts, bulk filtering, target metrics, subscriptions, and template conversion.
 
 ## Keywords
 - Amplitude dashboard
 - Japanese translation (jp)
-- chart aggregation
-- cross-project charts
 - behavioral cohorts
-- bulk filtering
-- date range filtering
-- user segment filtering
+- cross-project charts
+- bulk filtering (date range, user segments)
 - target metrics
 - dashboard subscriptions
-- dashboard templates
-- KPI visualization
-- canonical dashboards
-- TV mode
-- dashboard comments
+- email reports
+- CSV exports
+- template dashboards
+- official/canonical dashboards
+- TV mode/full-screen display
 - Slack integration
-- CSV export
-- PDF export
+- dashboard comments
+- KPI visualization
+- event segmentation charts
+- conversion funnel charts
+- user session charts
+- Growth/Enterprise plan features
 - dashboard caching
-- Growth/Enterprise plans
-- Scholarship plan features
+- PDF/PNG export

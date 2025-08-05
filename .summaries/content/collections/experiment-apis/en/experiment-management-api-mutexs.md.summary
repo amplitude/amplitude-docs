@@ -1,19 +1,18 @@
-**Summary:** Documents the Amplitude Experiment Management API endpoints for mutex groups, covering CRUD operations including list, get details, edit mutex group, edit mutex group slots, and create operations with specific parameters for bucketing, evaluation modes, and slot configurations.
+**Summary:** Documents the Experiment Management API endpoints for mutex groups, including operations to list, get details, edit mutex groups and slots, and create new mutex groups with traffic allocation percentages, bucketing configuration, and experiment/holdout assignments.
 
 **Keywords:**
-- Amplitude Experiment Management API
 - mutex groups
-- mutex endpoints
+- experiment management API
+- traffic allocation slots
 - bucketing configuration
-- evaluation modes (local/remote)
-- slot management
-- experiment slots
+- evaluation mode (local/remote)
+- bucketing key and salt
+- experiment assignments
 - holdout groups
-- bucketing salt
-- bucketing key
-- traffic percentage allocation
-- experiment dependencies
-- cohort targeting
-- individual user targeting
+- percentage-based traffic splitting
+- slot index management
 - mutex group archiving
-- slot index operations
+- individual user targeting
+- cohort assignments
+- variant keys
+- cursor-based pagination

@@ -1,22 +1,23 @@
 ## Summary
-This Japanese documentation explains how to build, analyze, and create cohorts from AI-powered forecasts in Amplitude Activation, including defining starting cohorts, future outcomes, evaluating model accuracy metrics, and using feature importance rankings.
+This Japanese documentation explains how to build, analyze, and create cohorts from predictive forecasts in Amplitude Activation, including model accuracy evaluation, feature importance analysis, and converting predictions into targetable user cohorts.
 
 ## Keywords
 - Amplitude Activation
 - 予測 (forecasts/predictions)
-- コホート (cohorts)
 - 予測コホート (predictive cohorts)
-- 機能の重要性 (feature importance)
-- コンバージョン率 (conversion rate)
-- パーセンタイル (percentiles)
-- 真の陽性率 (true positive rate)
-- 偽の陽性率 (false positive rate)
 - 開始コホート (starting cohort)
 - 未来の結果 (future outcomes)
-- 予測エクスプローラ (prediction explorer)
-- Amplitude Analytics
+- コンバージョン率 (conversion rate)
+- パーセンタイル (percentiles)
+- 機能の重要性 (feature importance)
+- 真の陽性率 (true positive rate)
+- 偽の陽性率 (false positive rate)
 - 曲線の下の領域 (area under curve)
-- Japanese translation
-- AI predictions
-- cohort transitions
-- model accuracy evaluation
+- コホート移行 (cohort transition)
+- 予測エクスプローラ (prediction explorer)
+- ターゲティングキャンペーン (targeting campaigns)
+- 統計的有意性 (statistical significance)
+- Amplitude Analytics
+- イベントセグメンテーション
+- パスファインダー
+- エンゲージメントマトリクス

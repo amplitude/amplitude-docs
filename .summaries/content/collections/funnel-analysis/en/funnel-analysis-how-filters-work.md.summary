@@ -1,15 +1,17 @@
-**Summary:** Documents how filters and group-by functionality work in Amplitude's Funnel Analysis charts, specifically explaining that Segmentation Module filters apply only to the first event while individual event filters can be added per step, and detailing group-by behavior for user properties and event properties with "holding property constant" logic.
+**Summary:** This documentation explains how filters and group-by functionality work specifically in Amplitude's Funnel Analysis charts, covering how Segmentation Module filters apply only to the first event, individual step filtering in the Events module, group-by filter behavior with "holding property constant" option, and event property grouping limitations.
 
 **Keywords:**
-- Funnel Analysis filters
-- Segmentation Module
-- first event filtering
-- Events module individual filters
+- Funnel Analysis chart filters
+- Segmentation Module filtering
+- Events module step filtering
 - group-by filters
 - holding property constant
-- Unique Users metric
+- first event filter application
 - event property grouping
-- conversion distribution
+- Unique Users metric
 - property value bucketing
-- funnel entry conditions
-- step-specific filtering
+- conversion distribution
+- funnel step segmentation
+- Genre_Type property
+- item_id grouping
+- "did not reach step" segment

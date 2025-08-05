@@ -1,15 +1,15 @@
-**Summary:** Documentation for implementing user consent and privacy compliance for Amplitude's Session Replay feature, covering privacy policy disclosures, cookie banner integration with Consent Management Platforms (CMPs), and SDK consent controls for GDPR and other privacy regulations.
+**Summary:** This documentation provides best practices for managing user consent and privacy compliance when implementing Amplitude's Session Replay technology, including privacy policy disclosure requirements, cookie banner integration with Consent Management Platforms (CMPs), and sample language for GDPR and other privacy regulation compliance.
 
 **Keywords:**
-- Session Replay consent management
-- Amplitude Session Replay privacy policy
-- Cookie banner CMP integration
-- GDPR Session Replay compliance
-- First-party Session Replay cookies
-- Privacy policy disclosure templates
-- Session Replay SDK consent controls
-- User interaction tracking consent
-- Analytics cookies categorization
-- Custom masking privacy settings
-- Data retention configuration
-- Opt-out mechanisms
+- Session Replay user consent
+- privacy policy disclosure requirements
+- cookie banner integration
+- Consent Management Platform (CMP)
+- GDPR compliance
+- first-party cookies categorization
+- analytics cookies classification
+- privacy regulation compliance
+- data masking options
+- configurable data retention
+- opt-out mechanisms
+- session replay privacy settings

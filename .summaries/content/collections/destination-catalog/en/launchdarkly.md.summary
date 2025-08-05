@@ -1,17 +1,16 @@
-**Summary:** This documentation describes the Amplitude-LaunchDarkly cohort syncing integration that exports Amplitude user cohorts to LaunchDarkly's feature management platform for creating targeted feature flags, requiring LaunchDarkly access tokens, client-side IDs, and user identifier mapping between platforms.
+**Summary:** This documentation describes the LaunchDarkly destination integration that enables syncing Amplitude cohorts to LaunchDarkly's feature management platform for creating targeted feature flags based on user segments, requiring LaunchDarkly access tokens, client-side IDs, and user identifier mapping between platforms.
 
 **Keywords:**
-- LaunchDarkly integration
-- Amplitude cohort export
+- LaunchDarkly destination integration
+- Amplitude cohort syncing
 - Feature flags targeting
-- Cohort syncing
 - LaunchDarkly access token
-- Client-side ID
+- Client-side ID configuration
 - User identifier mapping
 - LaunchDarkly segments
 - Feature management platform
-- Experimentation integration
+- Cohort export workflow
 - Writer role permissions
-- API version configuration
-- Sync cadence settings
-- Targeting rules
+- API version selection
+- Sync cadence configuration
+- LaunchDarkly user key mapping

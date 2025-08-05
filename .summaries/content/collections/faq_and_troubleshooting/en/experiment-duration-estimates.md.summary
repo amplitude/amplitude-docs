@@ -18,7 +18,6 @@
 - conversion rate
 - standard error
 - real-time simulations
-- exposures per day calculation
 - guardrail metric
 - success metric
-- statistical assumptions
+- p-value hypothesis testing

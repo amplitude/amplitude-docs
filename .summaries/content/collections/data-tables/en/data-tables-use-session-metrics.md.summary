@@ -7,13 +7,14 @@ This documentation explains how to use session metrics (bounce rate, exit rate, 
 - bounce rate calculation
 - exit rate
 - entry rate
-- group-by properties
+- group-by property
 - Page View events
+- active events
+- session totals
+- PROPCOUNT session IDs
 - single-page sessions
-- session totals vs PROPCOUNT
 - Growth Enterprise plans
-- active events computation
-- Browser SDK
 - Marketing Space
+- Browser SDK
 - custom session definitions
 - Event Segmentation comparison

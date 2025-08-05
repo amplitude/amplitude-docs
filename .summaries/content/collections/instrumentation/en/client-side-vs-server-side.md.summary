@@ -1,26 +1,28 @@
-**Summary:** Documentation explaining the differences between Amplitude's client-side SDKs (Browser, Android, iOS, React Native, Unity, Flutter) and server-side SDKs (Node.js, Go, Python, Java) for event tracking, including their respective API endpoints (HTTP V2 API, Batch event upload, Evaluation API) and guidance on choosing between client-side, server-side, hybrid, or third-party source implementations.
+**Summary:** Documentation comparing Amplitude's client-side SDKs (mobile, web browser, desktop apps running on user devices) versus server-side SDKs (Node.js, Go, Python, Java running on servers) and third-party data sources, including API endpoints like HTTP V2 API and Batch event upload for custom implementations.
 
 **Keywords:**
 - client-side SDKs
 - server-side SDKs
 - HTTP V2 API
-- Batch event upload API
+- Batch event upload
 - Evaluation API
 - Browser SDK
 - Android SDK
 - iOS SDK
-- React Native SDK
 - Node.js SDK
 - Go SDK
 - Python SDK
 - Java SDK
+- React Native
 - Unity Plugin
-- Flutter SDK
-- Unreal SDK
-- third-party sources
-- hybrid instrumentation
-- event tracking
-- source catalog
-- Analytics SDKs
-- Experiment SDKs
+- Flutter
 - Marketing Analytics Browser
+- Unreal
+- third-party sources
+- Source catalog
+- hybrid instrumentation approach
+- API endpoints
+- custom solutions
+- user device execution
+- server execution
+- multi-user environments

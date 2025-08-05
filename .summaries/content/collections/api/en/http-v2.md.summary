@@ -1,26 +1,22 @@
-## Summary
+**Summary:** Documents the HTTP V2 API for sending event data directly from servers to Amplitude's endpoint, including request/response formats, authentication via API key, upload limits, event deduplication with insert_id, and comprehensive field specifications for events, user properties, and groups.
 
-This documentation page describes the HTTP V2 API for sending event data directly from servers to Amplitude's HTTP V2 endpoint, which replaces the deprecated HTTP API. It covers request/response formats, event payload structure, upload limits, data validation rules, error handling, and includes comprehensive examples for different request types.
-
-## Keywords
-
+**Keywords:**
 - HTTP V2 API
-- server-to-server event ingestion
-- event payload structure
-- user_id and device_id requirements
+- api2.amplitude.com/2/httpapi
+- server-side event ingestion
+- API key authentication
+- event deduplication
+- insert_id
+- device_id and user_id validation
+- upload limits and throttling
 - event_type and event_properties
 - user_properties and group_properties
-- insert_id deduplication
-- upload limits and throttling
-- min_id_length option
-- language field mapping
 - revenue tracking fields
 - session_id and event_id
-- API key authentication
-- request/response examples
-- error codes 400/403/413/429/500
-- events per second (EPS) limits
-- device silencing and throttling
-- JSON request body validation
+- min_id_length option
+- language field mapping
 - partner integration support
-- tracking plan properties
+- batch upload limits
+- millisecond timestamps
+- JSON request body
+- 200/400/413/429 response codes

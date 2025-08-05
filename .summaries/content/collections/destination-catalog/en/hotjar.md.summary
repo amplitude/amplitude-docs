@@ -1,13 +1,13 @@
-**Summary:** Documents the Hotjar destination integration using Amplitude's SDK plugin architecture, including a TypeScript DestinationPlugin template that forwards Amplitude events to Hotjar's browser tracking code and handles user identification.
+**Summary:** Documents the Hotjar destination integration using Amplitude's SDK plugin architecture to forward events from Amplitude to Hotjar's behavioral analytics platform, including a TypeScript DestinationPlugin template that handles event forwarding and user identification.
 
 **Keywords:**
 - Hotjar destination plugin
-- Amplitude DestinationPlugin
+- Amplitude SDK plugin architecture
+- DestinationPlugin implementation
 - event-streaming integration
-- Hotjar browser tracking code
+- behavioral analytics forwarding
 - TypeScript plugin template
-- hj.init() and hj.identify()
-- user behavior analytics
-- SDK plugin architecture
-- event forwarding
-- behavioral analytics integration
+- hj.init and hj.identify methods
+- browser tracking code integration
+- $identify event handling
+- user experience insights

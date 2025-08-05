@@ -1,23 +1,19 @@
 ## Summary
-This Japanese documentation explains Amplitude's unique user tracking system using device ID, user ID, and Amplitude ID for accurate user identification across anonymous browsing, login/logout states, and multiple devices, including user merging scenarios and cross-domain tracking implementation.
+This Japanese documentation explains Amplitude's unique user tracking system using device ID, user ID, and Amplitude ID combinations, including user merging scenarios, cross-domain tracking setup, and how Amplitude ID assignment works across different authentication states and devices.
 
 ## Keywords
-- Amplitude ID generation
+- Amplitude ID assignment
 - device ID tracking
-- user ID assignment
+- user ID merging
 - anonymous user tracking
-- user merging logic
-- cross-domain tracking setup
+- cross-domain tracking
 - IDFA iOS advertising identifier
 - AdID Android advertising identifier
+- user merging scenarios
 - setUserId method
 - amplitude.options.deviceId
-- JavaScript SDK version 6.1.0
-- Redshift data immutability
+- Redshift user merging limitations
 - Snowflake Query addon
 - event ID counting
 - user property overwriting
-- UUID generation
-- IDFV identifier
-- private browsing mode
-- cookie persistence
+- Japanese translation documentation

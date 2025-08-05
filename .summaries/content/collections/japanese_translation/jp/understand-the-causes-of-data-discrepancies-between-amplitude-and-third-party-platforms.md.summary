@@ -2,15 +2,17 @@
 
 **Keywords:**
 - Amplitude data discrepancies
-- Google Analytics session comparison
-- Mixpanel data differences
-- timezone alignment troubleshooting
+- Google Analytics comparison
+- Mixpanel comparison
 - session timeout windows
 - user merging differences
-- bot filtering discrepancies
-- campaign source session expiration
+- timezone alignment
+- bot filtering
+- metric definitions
+- campaign source changes
 - midnight session rollover
-- event tracking alignment
-- metric definition variations
-- Amplitude SDK session defaults
-- Japanese translation documentation
+- event tracking differences
+- session limits
+- Japanese translation
+- third-party platform integration
+- analytics platform comparison

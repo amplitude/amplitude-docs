@@ -1,22 +1,18 @@
-**Summary:** This documentation covers the experiment analysis workflow in Amplitude Experiment, detailing how to interpret experimental results through various cards including Filter, Data Quality, Summary, Analysis, and Diagnostics cards, with features for statistical significance testing, p-values, confidence intervals, segment filtering, and experiment notifications.
+**Summary:** This documentation covers Amplitude Experiment's analysis interface for interpreting A/B test results, including statistical significance determination, filtering capabilities (date/segment/property), data quality validation, and diagnostic charts for tracking assignment events, exposure events, and variant jumping issues.
 
 **Keywords:**
-- Amplitude Experiment analysis workflow
-- statistical significance testing
-- p-values confidence intervals
-- experiment results interpretation
-- Filter card segment filtering
-- Data Quality card recommendations
-- Summary card hypothesis validation
-- Analysis card experiment results charts
-- Diagnostics card variant jumping
-- binary metrics non-binary metrics
-- 100 users 25 conversions threshold
+- Amplitude Experiment analysis
+- statistical significance p-values
+- confidence intervals binary metrics
+- experiment results filtering
+- variant jumping detection
+- assignment exposure conversion
+- sample ratio mismatch (SRM)
+- A/B/n testing control treatment
+- sequential test T-test
+- experiment notifications Slack webhook
 - remote evaluation feature experiments
 - multi-armed bandit experiments
-- sample ratio mismatch SRM detection
-- experiment notifications Slack webhook
-- sequential test T-test statistical preferences
-- group-by heterogeneous treatment effects
-- exposures without assignments
-- experiment results chart filtering
+- experiment results charts
+- data quality recommendations
+- anonymous exposures diagnostics

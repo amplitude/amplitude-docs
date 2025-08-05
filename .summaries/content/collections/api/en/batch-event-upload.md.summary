@@ -16,6 +16,9 @@ Documents the Batch Event Upload API for uploading large amounts of event data t
 - event_properties user_properties
 - insert_id deduplication
 - session_id event tracking
+- group_properties accounts addon
+- min_id_length options
+- events_ingested response
+- silenced_devices throttled_devices
 - HTTP API format compatibility
 - application/json content-type
-- events plural key format

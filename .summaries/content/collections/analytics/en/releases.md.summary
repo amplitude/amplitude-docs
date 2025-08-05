@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's Releases feature for tracking product changes, including automated release detection using semantic versioning and Version user properties for Growth/Enterprise plans, manual release creation for Plus plans, and the Release Timeline view for analyzing user adoption and impact metrics.
+**Summary:** This documentation covers Amplitude's Releases feature for tracking product changes, including automated release creation for Growth/Enterprise plans using semantic versioning and Version user properties, manual release creation for Plus plans, and the Release Timeline view for analyzing user adoption and impact metrics.
 
 **Keywords:**
 - Amplitude Releases feature
@@ -7,14 +7,12 @@
 - Version user property
 - app_version user property
 - Growth Enterprise Plus plans
-- manual release creation
 - Release Timeline view
 - release report metrics
-- HTTP Batch API
+- manual release creation
 - Releases API
 - time-series chart markers
-- product change tracking
-- user adoption analysis
-- release visibility settings
-- new events detection
-- backfilled data exclusion
+- release adoption analysis
+- HTTP Batch API integration
+- project settings configuration
+- backfilled data limitations

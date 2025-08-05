@@ -1,18 +1,18 @@
-**Summary:** This documentation explains how to use Amplitude's Experiment Results feature to analyze A/B tests from third-party or homegrown feature flagging platforms, covering the setup of exposure events, metric definitions (unique conversions, event totals, funnel conversion, formula metrics), variant configuration, and interpretation of statistical results through sequential testing and confidence intervals.
+**Summary:** This documentation covers Amplitude's Experiment Results feature, which allows Analytics customers using non-Amplitude feature flagging platforms to leverage Amplitude's A/B test analysis tools by creating experiments with exposure events, variants, and success metrics including funnel conversions, formulas, and statistical testing methods.
 
 **Keywords:**
 - Experiment Results chart
 - A/B test analysis
 - exposure events
 - variant configuration
-- metric types (unique conversions, event totals, sum/average property value, funnel conversion, formula metrics)
-- sequential testing
-- confidence intervals
+- metric types (unique conversions, event totals, sum/average property value, funnel conversion, formula)
 - statistical significance
-- cumulative exposure
-- third-party feature flagging platforms
-- exposure attribution window
-- primary/secondary metrics
-- control variant
-- T-test vs Sequential test
-- mean over time analysis
+- sequential testing vs T-test
+- confidence interval charts
+- cumulative exposure tracking
+- performance by variant analysis
+- mean over time visualization
+- non-Amplitude feature flagging integration
+- experiment exposure attribution window
+- primary and secondary metrics
+- control variant setup

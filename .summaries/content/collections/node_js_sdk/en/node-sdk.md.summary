@@ -1,21 +1,22 @@
-**Summary:** This documentation covers the Amplitude Node.js SDK (@amplitude/node) written in TypeScript for backend services, detailing initialization with API keys, configuration options including batching behavior with maxCachedEvents and uploadIntervalInSec, event logging using logEvent with HTTP V2 API constraints, EU data residency setup, and middleware implementation for event processing chains.
+**Summary:** This documentation covers the Amplitude Node.js SDK (@amplitude/node) written in TypeScript for backend services, detailing initialization with API keys, configuration options (batching, retry handling, logging), event sending via HTTP V2 API with user_id/device_id requirements, EU data residency setup, and middleware implementation for event processing chains.
 
 **Keywords:**
 - @amplitude/node
 - Node.js SDK
 - TypeScript backend SDK
-- logEvent method
 - HTTP V2 API
-- maxCachedEvents configuration
-- uploadIntervalInSec batching
-- middleware chain
+- logEvent method
+- maxCachedEvents batching
+- uploadIntervalInSec
+- retryTimeouts configuration
+- user_id device_id validation
+- minIdLength parameter
+- EU data residency serverUrl
+- middleware chain processing
 - MiddlewarePayload
 - client.addEventMiddleware()
 - batch event upload API
-- EU data residency serverUrl
-- user_id device_id validation
-- minIdLength parameter
-- retryTimeouts configuration
-- client.flush() method
+- api2.amplitude.com/2/httpapi
 - event_type field requirement
-- maintenance SDK status
+- client.flush() method
+- Amplitude.init() initialization

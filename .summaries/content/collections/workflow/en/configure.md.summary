@@ -1,4 +1,4 @@
-**Summary:** This documentation covers configuring Amplitude Experiment by creating deployments (client-side vs server-side) with access keys and installing Experiment SDKs, including user context handling for variant assignment and targeting rules.
+**Summary:** This documentation covers configuring Amplitude Experiment by creating deployments (client-side vs server-side) with generated access keys and installing Experiment SDKs, including details on user context objects for variant assignment and targeting rules.
 
 **Keywords:**
 - Amplitude Experiment configuration
@@ -13,7 +13,6 @@
 - user identifiers
 - user_id and device_id
 - rule-based user segments
-- user_properties object
 - REST API flag evaluation
 - offline mode variants
 - multi-user deployment

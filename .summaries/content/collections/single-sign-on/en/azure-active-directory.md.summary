@@ -1,15 +1,13 @@
-**Summary:** This documentation provides step-by-step instructions for configuring SAML-based single sign-on integration between Amplitude and Microsoft Azure Active Directory, including Azure portal configuration, Entity ID/Assertion Consumer Service URL setup, and metadata XML file exchange.
+**Summary:** This documentation provides step-by-step instructions for configuring SAML-based single sign-on integration between Amplitude and Microsoft Azure Active Directory, including Azure portal configuration, Entity ID/ACS URL setup, metadata XML download, and Amplitude SSO settings upload.
 
 **Keywords:**
 - Microsoft Azure Active Directory
 - SAML SSO integration
 - Entity ID
-- Assertion Consumer Service URL
-- Azure portal configuration
-- Enterprise applications
-- Metadata XML file
+- Assertion Consumer Service URL (ACS URL)
+- Metadata XML download
+- Azure Enterprise applications
 - user.mail identifier
-- Identity Provider setup
-- Amplitude SSO settings
-- Organization admin requirements
-- Azure app gallery
+- Identity Provider configuration
+- Amplitude SSO settings upload
+- Azure portal configuration

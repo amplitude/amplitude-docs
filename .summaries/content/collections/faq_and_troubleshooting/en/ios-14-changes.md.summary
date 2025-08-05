@@ -10,4 +10,4 @@
 - Outbound integration match rates
 - User tracking logged-in vs anonymous
 - Attribution provider IDFA dependency
-- Apple tracking permission prompt
+- iOS SDK device identifier options

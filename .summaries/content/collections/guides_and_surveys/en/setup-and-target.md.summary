@@ -1,16 +1,17 @@
 ## Summary
-This documentation covers the Setup and Targeting configuration for Amplitude Guides and Surveys, detailing user targeting options (All Users vs Targeted Users with segments, rollout percentages, and bucketing units), trigger mechanisms (immediate, element-based, time delays, smart delay, rage click, user confusion, event-based), page targeting rules, priority settings, display limits, localization, status management, and active state behavior with tiebreaker logic.
+This documentation covers Amplitude's Guides and Surveys targeting and triggering configuration, including user segmentation, rollout percentages, trigger types (element appearance/clicks, time delays, rage clicks, user confusion, event tracking), session properties, page targeting with URL matching patterns, priority levels, display limits, localization, status management, and active state behavior with tiebreaker rules.
 
 ## Keywords
 - Amplitude Guides and Surveys
 - user targeting and segmentation
 - rollout percentage and bucketing unit
-- trigger mechanisms (smart delay, rage click, user confusion)
-- session properties and setSessionProperty SDK method
-- CSS selector and XPath targeting
-- page targeting with URL matching patterns
-- priority tiebreaker logic
-- active state management
-- cooldown limits and dismissal rules
+- trigger types (element appears, element clicked, smart delay, rage click, user confusion, on event tracked)
+- session properties setSessionProperty
+- CSS Selector and XPath targeting
+- URL matching patterns and regex
+- priority levels (Urgent, High, Medium, Low)
+- cooldown limits and dismissal behavior
+- active state and tiebreaker rules
 - localization support
-- visual selector and element-based triggers
+- visual selector and query parameters
+- page targeting include/exclude rules

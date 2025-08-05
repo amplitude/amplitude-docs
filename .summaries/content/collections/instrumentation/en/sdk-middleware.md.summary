@@ -1,21 +1,27 @@
-**Summary:** Documents SDK Middleware functionality for Amplitude maintenance SDKs, which allows running custom code sequences on every event for enrichment, transformation, filtering, and routing, but has been replaced by Plugins in latest SDK versions.
+**Summary:** Documents SDK Middleware functionality for Maintenance SDKs that allows running custom code sequences on every event for enrichment, transformation, filtering, and routing, with detailed function signatures, payload structure, and implementation examples across Android, Node.js, React Native, iOS, and Java platforms.
 
 **Keywords:**
 - SDK Middleware
+- Maintenance SDKs
 - MiddlewarePayload
 - MiddlewareNext
 - addEventMiddleware
 - event enrichment
 - event transformation
 - event filtering
-- maintenance SDKs
-- payload customization
-- event_type
-- event_properties
-- user_id
-- device_id
+- payload.event
+- payload.extra
+- next() function
+- middleware chain
 - PII removal
+- event-level groups
 - third-party routing
-- Ampli v1
-- event level groups
-- client-side validation
+- Android SDK middleware
+- Node.js SDK middleware
+- iOS SDK middleware
+- Java SDK middleware
+- React Native SDK middleware
+- Ampli v1 middleware
+- event_properties modification
+- user_properties middleware
+- device_id middleware

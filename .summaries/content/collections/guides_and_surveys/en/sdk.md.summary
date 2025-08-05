@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers like Segment, and Google Tag Manager, with methods for initialization, user management, theming, localization, and programmatic control of guides and surveys.
+This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers (like Segment), and Google Tag Manager, with methods for initialization, user management, theming, localization, and programmatic control of guides and surveys.
 
 ## Keywords
 
@@ -8,19 +8,19 @@ This documentation covers the Amplitude Guides and Surveys Web SDK installation 
 - @amplitude/engagement-browser package
 - engagement.init() and engagement.boot() methods
 - Amplitude Browser SDK plugin integration
+- third-party analytics provider integration
 - Segment analytics integration
 - Google Tag Manager template
 - engagement.forwardEvent() for event-based triggers
-- ThemeMode (lightMode, darkMode, auto)
-- engagement.setRouter() for SPA routing
-- engagement.gs.show() and engagement.gs.reset()
 - Content Security Policy (CSP) nonce support
-- serverZone (US/EU) configuration
-- engagement._setUserProperties() method
-- engagement.setSessionProperty() method
-- InitOptions and BootOptions configuration
-- window.engagement global object
-- user_id and device_id identification
+- engagement.setThemeMode() for light/dark themes
 - engagement.addCallback() for button actions
+- engagement.setRouter() for SPA navigation
 - engagement.updateLanguage() for localization
+- engagement.gs.show() and engagement.gs.reset() methods
+- engagement.setSessionProperty() for targeting
+- engagement._setUserProperties() for content variables
+- serverZone EU/US configuration
 - proxy setup with serverUrl and cdnUrl
+- user_id and device_id requirements
+- InitOptions and BootOptions configuration

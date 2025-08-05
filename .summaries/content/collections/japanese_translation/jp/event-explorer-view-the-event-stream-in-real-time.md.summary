@@ -1,17 +1,18 @@
-**Summary:** This documentation explains Amplitude's Event Explorer feature for viewing real-time event streams in Japanese, covering user identification methods (IP address, user ID, device ID), QA implementation workflows, and adding events directly to Amplitude charts for taxonomy validation and instrumentation debugging.
+**Summary:** This documentation explains Amplitude's Event Explorer feature for viewing real-time event streams in Japanese, covering user identification methods (IP address, user ID, device ID), QA implementation workflows, and adding events directly to Amplitude charts from the live stream interface.
 
 **Keywords:**
 - Event Explorer (イベントエクスプローラ)
-- real-time event stream (リアルタイムイベントストリーム)
+- real-time event stream
 - Amplitude charts
 - user identification methods
 - IP address search
-- user ID and device ID lookup
-- instrumentation QA
-- taxonomy validation
+- user ID lookup
+- device ID targeting
+- event taxonomy
+- QA implementation
+- instrumentation debugging
 - event properties selection
+- live event monitoring
 - Japanese translation documentation
 - user lookup functionality
-- Chrome extension debugger
-- iOS/Android SDK debugging
-- event filtering workflows
+- event stream visualization

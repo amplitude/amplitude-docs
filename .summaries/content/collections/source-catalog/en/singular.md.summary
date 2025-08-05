@@ -1,13 +1,13 @@
-**Summary:** This documentation describes the Singular attribution platform integration that sends marketing attribution data to Amplitude via the Attribution API, enabling non-technical teams to analyze marketing channel performance and user retention without requiring Amplitude-side configuration.
+**Summary:** This documentation covers the Singular attribution platform integration with Amplitude, which uses the Amplitude Attribution API to send raw-events data and help marketing teams identify channels and features that drive user retention and engagement.
 
 **Keywords:**
 - Singular attribution platform
 - Amplitude Attribution API
-- marketing channel attribution
 - raw-events integration type
+- marketing channel attribution
+- user retention tracking
+- engagement analytics
 - partner-maintained integration
-- user retention analysis
+- attribution category
 - marketing stack unification
 - media sources attribution
-- external partner setup
-- attribution tracking

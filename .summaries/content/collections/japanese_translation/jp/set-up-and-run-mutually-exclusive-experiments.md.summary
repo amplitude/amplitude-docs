@@ -5,12 +5,11 @@
 - mutually exclusive experiments
 - mutual exclusion groups
 - traffic allocation slots
-- experiment groups
-- bucketing
+- experiment bucketing
 - holdout groups
 - slot assignment
-- experiment traffic distribution
-- concurrent experiment management
-- user assignment integrity
+- experiment groups tab
 - evaluation mode
-- bucket key configuration
+- bucket key
+- cross-experiment effects
+- traffic distribution percentages

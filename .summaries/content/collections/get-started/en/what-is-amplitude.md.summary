@@ -1,16 +1,16 @@
-**Summary:** This documentation page introduces Amplitude as an event-based product analytics platform, explaining core concepts including events, event properties, users, user properties, and sessions with practical examples from a music player application.
+**Summary:** This introductory documentation explains Amplitude as an event-based product analytics platform, defining core concepts including events, event properties, users, user properties, and sessions with practical examples from a music player app.
 
 **Keywords:**
 - event-based analytics
 - product analytics platform
 - user behavior tracking
 - events and event properties
-- users and user properties
-- sessions and session IDs
-- unique user identification
+- user identification and user properties
+- session tracking and session IDs
 - device IDs and user IDs
 - Amplitude IDs
-- user engagement and retention
-- real-time behavior analysis
+- unique user tracking
+- real-time user behavior analysis
+- user engagement and retention metrics
 - SDK session management
 - HTTP API session handling

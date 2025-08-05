@@ -12,11 +12,11 @@ This documentation covers Amplitude's Data Mutability features that enable INSER
 - enrichment services disabled
 - user ID required
 - insert_id unique identifier
-- change tracking configuration
+- change tracking
 - event volume counting
 - User Privacy API
 - GDPR CCPA compliance
-- cutoff migration strategy
+- cutoff strategy migration
 - chronological order processing
-- idempotency design
-- DATA_RETENTION_TIME_IN_DAYS
+- idempotency
+- data retention requirements

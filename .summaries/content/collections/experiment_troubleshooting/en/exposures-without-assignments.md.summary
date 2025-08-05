@@ -2,14 +2,14 @@
 
 **Keywords:**
 - Exposures without Assignments chart
-- Amplitude Experiment Diagnostics
+- Diagnostics card
 - assignment event vs exposure event
 - fetch() and variant() calls
 - identity mismatch debugging
-- device ID and user ID switching
+- user ID and device ID switching
 - account switching on same device
 - fallback variant exposures
 - rule-based targeting criteria
 - mutually exclusive experiments
-- local evaluation exclusions
+- local evaluation exclusion
 - user streams analytics debugging

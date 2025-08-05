@@ -1,34 +1,30 @@
 ## Summary
 
-This documentation covers the Browser SDK 1 (maintenance mode) for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API with features like default event tracking (page views, sessions, form interactions, file downloads), user properties management, revenue tracking, and plugin architecture for extensibility.
+This documentation covers Amplitude Browser SDK 1.x (maintenance mode), a TypeScript/JavaScript analytics SDK for tracking events in web browsers using the HTTP V2 API, with features including default event tracking (page views, sessions, form interactions, file downloads), user properties management, revenue tracking, plugin system, and cookie-based cross-domain tracking.
 
 ## Keywords
 
-- Browser SDK 1
+- Browser SDK 1.x
 - @amplitude/analytics-browser
 - HTTP V2 API
-- maintenance mode
-- JavaScript TypeScript
+- TypeScript JavaScript analytics
+- maintenance mode SDK
 - default event tracking
-- page views sessions form interactions file downloads
-- deviceId userId minIdLength
-- flushQueueSize flushIntervalMillis
-- sendBeacon transport
-- Identify operations set setOnce add append prepend
-- Revenue interface productId price quantity
-- plugin architecture enrichment destination
+- page view tracking
+- session tracking
+- form interaction tracking
+- file download tracking
+- user properties Identify operations
+- revenue tracking Revenue interface
+- plugin system enrichment destination
 - web attribution plugin
 - cookie management AMP prefix
-- cross-domain tracking
+- cross-domain tracking deviceId
+- sendBeacon transport
+- flushQueueSize flushIntervalMillis
+- user groups groupType groupName
+- custom device ID setDeviceId
+- opt-out tracking setOptOut
 - CSP content security policy
-- trackingOptions optional tracking
-- user groups setGroup
-- session tracking sessionTimeout
-- batch API useBatch
-- EU data residency serverZone
-- logLevel debugging
-- opt-out setOptOut
-- reset anonymize users
-- custom HTTP client transportProvider
-- callback Promise interface
-- multiple instances createInstance
+- trackingOptions configuration
+- serverZone EU data residency

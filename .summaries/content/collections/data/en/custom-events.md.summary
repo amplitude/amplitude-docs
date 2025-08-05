@@ -15,8 +15,9 @@
 - Experiment Results
 - Compass charts
 - [Custom] prefix
-- Redshift querying limitations
-- event property instrumentation
+- event properties
+- user properties
+- Redshift limitations
 - transformed events
 - Plus Growth Enterprise plans
 - admin manager member permissions

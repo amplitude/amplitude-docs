@@ -1,19 +1,20 @@
-**Summary:** Documents Amplitude Experiment's remote evaluation feature that fetches variants from evaluation servers with user enrichment capabilities including Amplitude ID resolution, IP geolocation, property canonicalization, cohort membership targeting, and user properties from historical analytics data.
+**Summary:** Documents Amplitude Experiment's remote evaluation feature that fetches variants from evaluation servers with advanced targeting capabilities including Amplitude ID resolution, IP geolocation, property canonicalization, cohort membership, and user enrichment using historical analytics data.
 
 **Keywords:**
 - remote evaluation
 - Amplitude Experiment evaluation servers
 - variant fetching
 - Amplitude ID resolution
-- user enrichment
 - IP geolocation targeting
 - property canonicalization
 - cohort membership targeting
+- user enrichment
+- historical analytics data
 - sticky bucketing
-- behavioral cohorts
-- user properties merge priority
-- race conditions analytics ingestion
-- hourly cohort sync
+- client-side evaluation
+- server-side evaluation
 - targeting segments
 - consistent bucketing
-- client-side server-side evaluation
+- user properties merge priority
+- race conditions
+- hourly cohort sync

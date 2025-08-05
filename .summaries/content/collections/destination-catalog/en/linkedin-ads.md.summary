@@ -1,18 +1,18 @@
-**Summary:** This documentation covers the LinkedIn Ads destination integration for streaming Amplitude events to LinkedIn's advertising platform, including OAuth authentication, conversion ID configuration, and mapping user identifiers (SHA256 email, LinkedIn First Party Ads Tracking UUID, Acxiom ID, Oracle Moat ID) for targeting and conversion tracking.
+**Summary:** Documents the LinkedIn Ads destination integration for streaming Amplitude events to LinkedIn's advertising platform, covering OAuth authentication, conversion ID configuration, user identifier mapping (SHA256 email, LinkedIn First Party Ads Tracking UUID, Acxiom ID, Oracle Moat ID), and conversion value property mapping for campaign optimization and retargeting.
 
 **Keywords:**
 - LinkedIn Ads destination integration
-- Amplitude event streaming
 - OAuth authentication
-- LinkedIn Ads conversion ID
+- Conversion ID configuration
 - SHA256 email hashing
 - LinkedIn First Party Ads Tracking UUID
 - Acxiom ID mapping
 - Oracle Moat ID
-- conversion value mapping
-- currency code properties
-- ad-networks integration
-- behavioral retargeting
-- conversion tracking
-- campaign optimization
-- user identifier mapping
+- Conversion value property mapping
+- Currency code mapping
+- Event streaming to ad networks
+- Campaign retargeting
+- Conversion tracking
+- User identifier mapping
+- Ad network destination
+- LinkedIn advertising platform

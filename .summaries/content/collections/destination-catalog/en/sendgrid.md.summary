@@ -5,9 +5,9 @@
 - cohort syncing
 - API key Full Access Restricted Access Marketing permissions
 - email first name last name field mapping
-- duplicate emails sync errors
+- duplicate email sync errors
 - 85 character cohort name limit
-- case-insensitive email handling
-- raw-events cohorts integration type
-- customer-engagement category
+- SendGrid contact creation
+- email case sensitivity
+- cohort export validation
 - transactional marketing email platform

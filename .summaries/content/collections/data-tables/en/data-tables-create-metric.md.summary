@@ -1,17 +1,15 @@
-**Summary:** Documentation for creating reusable metrics in Amplitude Analytics that can be used in Event Segmentation charts and Data Tables, covering metric types (Event Segmentation, Revenue, Formula, Funnels), project-wide sharing, and role-based permissions for verification and deletion.
+**Summary:** This documentation explains how to create and configure reusable metrics in Amplitude Analytics for Event Segmentation charts and Data Tables, including metric types (Event Segmentation, Revenue, Formula, and Funnels), permission requirements for verification and deletion, and management options for project-wide shared metrics.
 
 **Keywords:**
-- Amplitude metrics creation
+- Amplitude Analytics metrics
 - Event Segmentation charts
 - Data Tables metrics
-- Revenue metrics
-- Formula metrics
-- Funnels metrics
-- Project-wide metric sharing
-- Metric verification/officiation
-- Manager and admin permissions
+- reusable analysis objects
+- metric types (Event Segmentation, Revenue, Formula, Funnels)
+- project-wide shared metrics
+- metric verification/officiation
 - Growth and Enterprise plans
-- Custom formulas
-- Event total metrics visualization
-- Metric deletion permissions
-- Administrator role requirements
+- custom formulas
+- metric permissions (managers, administrators)
+- event total metrics visualization
+- metric deletion and editing

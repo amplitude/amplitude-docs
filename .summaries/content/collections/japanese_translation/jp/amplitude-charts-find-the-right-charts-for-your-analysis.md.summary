@@ -1,4 +1,4 @@
-**Summary:** This Japanese documentation page provides an overview of Amplitude's chart types and their optimal use cases, covering user analysis charts (Event Segmentation, Data Tables, User Composition, User Sessions, Personas, Experiment Results), conversion charts (Funnel Analysis, Engagement Matrix, Impact Analysis, Pathfinder, Pathfinder Users), retention charts (Retention, Stickiness, Compass, Lifecycle), and monetization charts (Revenue LTV).
+**Summary:** This Japanese documentation page provides an overview of Amplitude's chart types and their optimal use cases, covering user analysis charts (Event Segmentation, Data Tables, User Composition, User Sessions, Personas, Experiment Results), conversion analysis charts (Funnel Analysis, Engagement Matrix, Impact Analysis, Pathfinder, Pathfinder Users), retention analysis charts (Retention, Stickiness, Compass, Lifecycle), and monetization charts (Revenue LTV).
 
 **Keywords:**
 - Amplitude charts
@@ -8,16 +8,15 @@
 - Retention analysis
 - User Sessions
 - Personas clustering
-- Pathfinder user journey
+- Pathfinder event sequences
 - Engagement Matrix
 - Impact Analysis
-- Stickiness metrics
+- Stickiness measurement
 - Compass long-term retention
-- Lifecycle categorization
+- Lifecycle user categorization
 - Revenue LTV
 - A/B testing
-- User behavior analytics
-- Conversion optimization
-- User segmentation
+- User properties segmentation
 - Session-based metrics
-- Cohort analysis
+- Conversion optimization
+- User behavior analysis

@@ -1,13 +1,13 @@
-**Summary:** This documentation describes the Amplitude to Userlist event streaming integration that syncs cohorts and behavioral data from Amplitude to Userlist's email automation platform, enabling SaaS companies to trigger automated campaigns based on user actions tracked in Amplitude using the Userlist Push API Key.
+**Summary:** This documentation covers the Amplitude to Userlist event streaming integration that syncs cohorts and behavioral data from Amplitude to Userlist's email automation platform, requiring a Push API Key and user_id matching to avoid duplication.
 
 **Keywords:**
 - Userlist event streaming integration
 - Amplitude cohort sync
 - Push API Key authentication
+- user_id field matching
 - SaaS email automation
-- user_id matching
 - behavioral targeting campaigns
-- company-level event triggers
 - event properties filtering
-- paid Userlist plan requirement
-- user duplication prevention
+- company-level data tracking
+- onboarding email triggers
+- marketing automation destination

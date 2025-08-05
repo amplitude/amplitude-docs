@@ -5,9 +5,9 @@
 - data structure video walkthrough
 - event tracking implementation
 - instrumentation best practices
+- Loom embedded video
 - developer implementation guide
 - product manager instrumentation
 - Amplitude SDK setup
-- event tracking errors prevention
-- Loom embedded video
-- instrumentation guidelines
+- event data modeling
+- instrumentation errors prevention

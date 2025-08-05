@@ -1,18 +1,18 @@
-**Summary:** This documentation covers Amplitude Notebooks functionality for creating analytical reports with mixed content including text blocks, charts, videos, and metrics to communicate data insights and analysis context to teams, with features for drag-and-drop editing, markdown formatting, and chart integration.
+**Summary:** This documentation covers Amplitude Notebooks functionality for creating analytical reports with mixed content including text blocks, charts, images, videos, and metric trackers, focusing on content creation, editing workflows, drag-and-drop rearrangement, and rich text/markdown formatting capabilities.
 
 **Keywords:**
 - Amplitude Notebooks
-- analytical reports
 - chart takeaways
 - summary metrics
-- text blocks formatting
-- markdown support
-- drag-and-drop content
 - metric trackers
 - callout boxes
+- rich text formatting
+- markdown formatting
+- drag-and-drop rearrangement
 - cohort integration
 - BMP image format limitation
 - Personas charts
 - Pathfinder Users charts
-- rich text editor
-- hosted images clipboard
+- clipboard image pasting
+- analytical reporting
+- mixed content documents

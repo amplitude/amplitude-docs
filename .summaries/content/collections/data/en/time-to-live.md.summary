@@ -1,16 +1,16 @@
-**Summary:** Documents Amplitude Data's Time-to-Live (TTL) feature for configuring event data retention periods at organization and project levels, including Enterprise plan requirements, irreversible data deletion warnings, and admin configuration steps through Organization Settings.
+**Summary:** Documents Amplitude Data's Time-to-Live (TTL) feature for configuring event data retention periods at organization and project levels, with daily deletion jobs and irreversible data loss warnings for Enterprise plan customers.
 
 **Keywords:**
 - Time-to-Live (TTL)
 - event data retention
 - organization-level TTL configuration
 - project-level TTL override
+- daily deletion jobs
 - Enterprise plan feature
 - irreversible data deletion
-- daily deletion job
-- retention period
+- retention period settings
 - Organization Settings TTL tab
-- Amplitude Admin permissions
+- Amplitude server date determination
+- backfill data retention impact
 - 24-hour cancellation window
-- backfill data retention
-- chart data zeroing
+- 30-day initial deletion period

@@ -1,19 +1,21 @@
-**Summary:** This documentation explains how to build warehouse-native data models in Amplitude, covering supported data types (events, user properties, group properties with mandatory fields like unique ID and timestamps), data modeling approaches (one event per table vs. multiple events), and the step-by-step process for creating models using Table Selection or SQL Query options in Snowflake.
+**Summary:** This documentation explains how to build warehouse-native data models in Amplitude, covering supported data types (Events, User properties current/historical, Group properties current/historical, Event properties), data modeling approaches (one event per table vs. multiple events per table), and the step-by-step process for creating models using Table Selection or SQL Query options in Snowflake.
 
 **Keywords:**
 - warehouse-native Amplitude
 - data model creation
 - fact table events
 - dimensional tables properties
-- TIMESTAMP_NTZ
 - user properties current historical
 - group properties current historical
 - event properties
-- Table Selection SQL Query
-- Snowflake integration
-- identity spaces
-- MTU count
+- TIMESTAMP_NTZ
+- unique ID mandatory fields
+- start time end time
 - one event per table approach
-- multiple event types single table
-- Amplitude Data Add Models
-- column mapping configuration
+- multiple events single table
+- identity spaces
+- Table Selection SQL Query
+- Snowflake instance
+- column mapping
+- MTU count
+- Analytics uniques counting

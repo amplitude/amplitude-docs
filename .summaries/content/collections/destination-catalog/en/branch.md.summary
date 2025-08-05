@@ -1,17 +1,18 @@
-**Summary:** Documents the Amplitude to Branch event streaming integration that forwards Amplitude events to Branch as custom events with a 40-character name limit, supporting mobile attribution through deep linking data transfer and requiring Branch Key authentication with specific user identification mapping (Developer ID, Browser Fingerprint ID, IDFA/IDFV, Android ID/AAID).
+**Summary:** This documentation describes Amplitude's Branch streaming integration for forwarding Amplitude events to Branch as custom events, including setup requirements for Branch Key authentication, user identification mapping (Developer ID, Browser Fingerprint ID, IDFA/IDFV, Android ID/AAID), and property mapping configuration with a 40-character event name limit.
 
 **Keywords:**
 - Branch streaming integration
-- event forwarding destination
 - Branch Key authentication
+- event forwarding destination
 - Branch custom events
-- 40-character event name limit
 - Developer ID mapping
 - Browser Fingerprint ID
-- IDFA/IDFV identification
-- Android ID/AAID mapping
-- mobile attribution platform
-- deep linking data transfer
-- transformed events not supported
-- Branch custom data properties
+- IDFA IDFV mapping
+- Android ID AAID mapping
+- user identification mapping
+- Branch properties mapping
+- 40-character event name limit
 - mobile measurement platform
+- deep linking integration
+- raw-events streaming
+- transformed events not supported

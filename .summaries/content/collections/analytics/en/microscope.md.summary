@@ -13,10 +13,11 @@
 - Event Segmentation charts
 - Funnel Analysis charts
 - Journeys charts
-- custom formula charts limitation
 - account-level reporting groups
+- custom formula limitations
 - user activity streams
-- zoom in granularity
-- guide and survey targeting
+- feature flag targeting
+- guide and survey creation
+- zoom in functionality
 - CSV user download
 - 30-day date range limit

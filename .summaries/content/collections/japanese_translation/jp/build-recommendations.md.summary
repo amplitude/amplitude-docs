@@ -1,19 +1,19 @@
 ## Summary
-This documentation explains how to create and configure personalization recommendations in Amplitude Activation, covering the complete workflow from defining outcome cohorts and result events to building item catalogs with exposure events and event properties, plus interpretation of confidence scores and common configuration mistakes.
+This Japanese documentation explains how to create personalized recommendations in Amplitude Activation, covering the step-by-step process of defining outcome events, building item catalogs from exposure events and event properties, configuring holdout groups for control measurement, and interpreting confidence scores and recommendation results.
 
 ## Keywords
 - Amplitude Activation
-- personalization recommendations
-- outcome cohorts
-- result events
-- exposure events
-- event properties
-- item catalog
-- confidence score
-- holdout groups
-- static lists
-- dynamic recommendations
-- SKU properties
-- conversion optimization
-- recommendation training
+- 推奨 (recommendations)
+- パーソナライゼーションキャンペーン (personalization campaigns)
+- コホート選択 (cohort selection)
+- 結果イベント (outcome events)
+- エクスポージャーイベント (exposure events)
+- イベントプロパティ (event properties)
+- アイテムカタログ (item catalog)
+- 信頼スコア (confidence score)
+- ホールドアウト (holdout)
+- 静的リスト (static list)
+- ダイナミック推奨 (dynamic recommendations)
 - Japanese translation
+- build recommendations
+- personalization algorithm training

@@ -10,11 +10,9 @@
 - Session Replay Standalone SDK 1.14.0
 - Microscope feature
 - URL matching patterns
-- Web-based session replays
 - Growth Enterprise plans
-- Behavioral cohorts
+- Web-based session replays
+- Behavioral Cohorts
 - Device identifiers
-- Sample rate limitations
+- Session Replay retention period
 - Anonymized session replay
-- Viewport scroll depth
-- Average page fold

@@ -1,21 +1,20 @@
 ## Summary
-This documentation explains Amplitude Feature Experiment's holdout groups functionality for excluding user percentages from experiments to measure long-term cumulative impact and experimentation program lift, including creation, management, analysis through Experiment Results charts, and advanced use cases with mutual exclusion groups.
+This documentation covers Amplitude Feature Experiment's holdout groups functionality for excluding users from experiments to measure long-term cumulative impact and experimentation program lift, including creation, management, analysis through Experiment Results charts, and advanced use cases with mutual exclusion groups.
 
 ## Keywords
-- Amplitude Feature Experiment
 - holdout groups
-- experiment exclusion
-- statistical significance
-- cumulative experiment impact
-- Enterprise plans
+- Amplitude Feature Experiment
+- user exclusion
 - holdout percentage
 - bucketing key
 - evaluation mode
 - Mutex and Holdouts tab
 - Experiment Results chart
-- T-test analysis
 - mutual exclusion groups
 - traffic distribution
+- statistical significance
+- Enterprise plans
 - cohort inclusion/exclusion
-- flag dependencies
-- experimentation program lift
+- T-test analysis
+- experiment integrity
+- cumulative impact measurement

@@ -1,22 +1,21 @@
-**Summary:** This documentation covers the Google Analytics 4 (GA4) integration for importing GA4 data into Amplitude via BigQuery linking, including prerequisites for BigQuery setup, GCS bucket configuration, service account permissions, and the three-step import process with specific handling for GA4's 72-hour daily export delays and 24-hour streaming export delays.
+**Summary:** This documentation covers the Google Analytics 4 (GA4) integration for importing GA4 data into Amplitude via BigQuery linking, including prerequisites for BigQuery setup, GCS bucket configuration, service account permissions, the three-step data import process (GA4→BigQuery→GCS→Amplitude), table selection configuration for daily/streaming exports, and BigQuery SQL best practices for handling STRUCT types and JSON properties fields.
 
 **Keywords:**
-- Google Analytics 4 (GA4)
-- BigQuery linking
-- GCS bucket
-- Service Account permissions
-- BigQuery Job User
-- BigQuery Data Viewer
-- Storage Admin
-- GA4 export delays
-- 72-hour daily export delay
-- 24-hour streaming export delay
-- catch-up importing strategy
-- STRUCT type columns
-- event_properties transformation
-- user_properties transformation
+- GA4 BigQuery integration
+- Google Analytics 4 import
+- BigQuery linking setup
+- GCS bucket configuration
+- Service account permissions
+- BigQuery Job User role
+- Storage Admin permissions
+- Daily vs streaming table exports
+- 72-hour delay daily exports
+- 24-hour delay streaming exports
+- Catch-up importing strategy
+- STRUCT type properties fields
+- event_properties user_properties
 - JSON_EXTRACT_SCALAR function
 - RECORD type REPEATED mode
-- BigQuery SQL customization
+- BigQuery SQL transformation
 - projectId.datasetName.tableName format
 - Amplitude HTTP V2 API compatibility

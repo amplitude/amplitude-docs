@@ -14,9 +14,6 @@ This Japanese documentation explains Amplitude's permission groups feature for E
 - organization admin (組織管理者)
 - project roles (プロジェクトロール)
 - user management (ユーザー管理)
-- permission assignment scenarios (権限割り当てシナリオ)
-- third-party identity management
-- group creation workflow
-- member addition/removal
-- permission level changes
-- hybrid permission management
+- member addition/removal (メンバー追加/削除)
+- permission level changes (権限レベル変更)
+- hybrid permission assignment (ハイブリッド権限割り当て)

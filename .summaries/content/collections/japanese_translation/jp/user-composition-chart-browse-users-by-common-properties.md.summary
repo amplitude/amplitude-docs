@@ -1,20 +1,18 @@
-**Summary:** This documentation explains the User Composition Chart feature in Amplitude, which displays active user breakdowns based on a single user property rather than events, allowing analysis of user segments by property values including "latest values," "all values," and "cross-property values" with results shown in pie charts or bar graphs.
+**Summary:** This documentation explains the User Composition Chart in Amplitude, which displays active user breakdowns based on a single user property with grouped visualization, including configuration steps for composition modules, segment filtering, and measurement options (latest values, all values, cross-property values).
 
 **Keywords:**
 - User Composition Chart
-- ユーザーコンポジションチャート
 - user property breakdown
-- active user analysis
-- latest values (直近の値)
-- all values (すべての値)
-- cross-property values (クロスプロパティ値)
-- Segment By module
+- active users analysis
 - composition module
-- user property values
-- breakdown data table
-- microscope feature
-- CSV export
-- Japanese translation
+- segment filtering
+- latest values vs all values
+- cross-property values
+- user segments
 - Amplitude charts
-- user segmentation
-- property-based analysis
+- microscope functionality
+- breakdown data table
+- CSV export
+- user property values
+- grouped visualization
+- Japanese translation documentation

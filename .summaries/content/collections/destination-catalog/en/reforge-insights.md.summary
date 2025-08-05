@@ -1,13 +1,13 @@
-**Summary:** This documentation describes the Reforge Insights destination integration for syncing Amplitude cohorts to analyze qualitative feedback from specific user groups, requiring API key authentication and email-based user mapping for cohort synchronization.
+**Summary:** This documentation covers the Reforge Insights destination integration for syncing Amplitude cohorts to analyze qualitative feedback from specific user groups, including setup steps for both platforms and the cohort syncing process with email-based user mapping.
 
 **Keywords:**
 - Reforge Insights destination
-- Amplitude cohorts sync
+- Amplitude cohorts syncing
 - qualitative feedback analysis
-- cohort syncing integration
-- API key authentication
-- email user mapping
 - external cohort sources
-- product insights extraction
+- email-based user mapping
+- cohort sync cadence
+- partner integration API key
+- Reforge workspace integration
 - user property mapping
-- sync cadence configuration
+- cohort destination setup

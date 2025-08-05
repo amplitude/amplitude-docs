@@ -3,13 +3,12 @@
 **Keywords:**
 - CleverTap source integration
 - raw-events integration
-- retention cloud
+- retention cloud data ingestion
 - CleverTap Enterprise plan
-- Amplitude API key setup
+- Amplitude API key configuration
 - data center region selection
 - user ID mapping (Identity, Phone, Email)
-- device ID mapping
-- CleverTap dashboard configuration
+- device ID mapping (CleverTap)
+- CleverTap dashboard Partners section
 - marketing automation source
-- event data ingestion
-- CleverTap export functionality
+- CleverTap export setup

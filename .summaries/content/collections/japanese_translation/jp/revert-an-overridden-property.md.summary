@@ -2,13 +2,13 @@
 This Japanese documentation explains how to revert overridden properties in Amplitude Data back to their original versions, covering the process for specific events, property groups, and bulk reversion operations through the Events table and Property Groups interface.
 
 ## Keywords
-- Amplitude Data
 - overridden properties revert
-- property groups management
+- Amplitude Data property management
 - event properties table
+- property groups override
 - tracking plan cleanup
+- original version restoration
+- Manage Override dropdown
+- Used By tab bulk operations
+- Compare To Original functionality
 - Japanese translation documentation
-- Manage Override functionality
-- Used By tab
-- bulk revert operations
-- Compare To Original feature

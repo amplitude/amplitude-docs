@@ -1,29 +1,45 @@
-Amplitude is a comprehensive digital analytics and product intelligence platform that provides organizations with tools to understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of four core products that work together to deliver end-to-end product analytics capabilities.
+## Amplitude Product Ecosystem
 
-## Core Product Suite
+Amplitude is a comprehensive digital analytics and product intelligence platform consisting of four core products: Analytics, Data, Experiment, and Session Replay. The platform provides organizations with tools to understand user behavior, optimize product experiences, and drive data-driven decision making through event tracking, experimentation, and user session analysis.
 
-**Amplitude Analytics** serves as the foundational product for behavioral analytics, enabling teams to track, measure, and analyze user interactions across digital products. It provides deep insights into user journeys, conversion funnels, and product performance metrics.
+## Product Architecture and Relationships
 
-**Amplitude Data** functions as the data management and governance layer, ensuring data quality, consistency, and accessibility across the organization. It handles data ingestion, transformation, and distribution to various downstream systems including data warehouses.
+The Amplitude ecosystem is built around a unified data foundation that connects four primary products:
 
-**Amplitude Experiment** delivers feature flagging and experimentation capabilities, allowing teams to safely deploy features, run A/B tests, and make data-driven product decisions through controlled rollouts and statistical analysis.
+**Amplitude Analytics** serves as the core analytics engine, providing behavioral analytics and user journey insights through event tracking and custom analysis capabilities.
 
-**Amplitude Session Replay** captures and reconstructs user sessions, providing visual insights into user behavior patterns, identifying friction points, and enabling teams to understand the qualitative aspects of user interactions.
+**Amplitude Data** functions as the data integration layer, enabling connections with data warehouses and external systems to centralize product data across the organization.
 
-## Integration Architecture
+**Amplitude Experiment** delivers feature flag management and A/B testing capabilities, allowing teams to safely deploy and test new features with controlled user segments.
 
-The platform operates through a multi-layered integration approach utilizing both SDKs and APIs. **Amplitude SDKs** provide client-side integration capabilities across various platforms and programming languages, enabling seamless data collection from web, mobile, and server-side applications. The **Amplitude APIs** offer programmatic access to platform functionality, supporting data ingestion, querying, and management operations.
+**Amplitude Session Replay** captures and analyzes user session recordings, providing visual insights into user interactions and behavior patterns on web applications.
 
-The **Session Replay Browser package** (@amplitude/session-replay-browser) represents a specialized component that integrates with the broader Amplitude ecosystem. It utilizes the amplitudeEngagement.boot method for initialization, supporting both basic configuration with user_id parameters and advanced setup through AmplitudeBootOptions. This configuration system allows for comprehensive user property mapping, device identification, and session tracking customization.
+These products work together through shared user identification, event data, and analytics infrastructure, creating a cohesive product intelligence platform.
 
-## Key Technical Components
+## Key Nomenclature and Definitions
 
-The platform's technical architecture centers around event-based data collection and analysis. Core concepts include **event properties** for capturing interaction metadata, **user properties** for maintaining user state and characteristics, and **device identification** for cross-session user tracking. The **Browser SDK 2** represents the latest iteration of web-based data collection capabilities.
+**Event Properties vs User Properties**: The platform distinguishes between event-level attributes (event properties) that describe specific user actions and user-level attributes (user properties) that describe user characteristics and persist across sessions.
 
-Feature flagging functionality enables controlled feature releases and experimentation workflows, while data warehouse integration capabilities ensure that Amplitude data can be synchronized with existing data infrastructure and analytics tools.
+**User Tracking and Identification**: The system uses `user_id` and `device_id` parameters to track and identify users across sessions and devices, enabling cohort analysis and user journey mapping.
 
-## Developer Integration Points
+**Session Replay Components**: Browser-based components that capture user interactions, specifically the `@amplitude/session-replay-browser` package for web applications.
 
-The platform provides multiple integration pathways through its SDK and API ecosystem. The Swift SDK demonstrates typical initialization patterns, while the session replay components showcase advanced configuration options for user tracking and device management. The documentation structure suggests comprehensive API endpoint coverage and command-line interface support, though specific endpoints are not detailed in the current directory structure.
+**SDK Initialization**: The platform uses boot methods like `amplitudeEngagement.boot()` with configuration objects such as `AmplitudeBootOptions` to initialize tracking across different platforms.
 
-The platform's modular architecture allows organizations to implement individual products independently or as an integrated suite, with data flowing seamlessly between Analytics, Data, Experiment, and Session Replay components to provide a unified view of product performance and user behavior.
+**Custom Formulas**: Advanced analytics capabilities that allow users to create custom calculations and metrics beyond standard event counting.
+
+## Integration Points and Implementation
+
+The platform provides multiple integration methods:
+
+**Browser SDK 2**: The primary web SDK for client-side event tracking and session replay implementation, supporting both basic and advanced initialization patterns.
+
+**Swift SDK**: Mobile SDK supporting iOS applications with similar initialization patterns using `AmplitudeBootOptions` for configuration.
+
+**Data Warehouse Integration**: Direct connections to enterprise data warehouses for bi-directional data flow and advanced analytics.
+
+The SDKs support flexible configuration through options objects that handle user properties mapping, device identification, and session management across different platforms and environments.
+
+## Developer Resources
+
+The platform maintains separate documentation sections for **Amplitude APIs** and **Amplitude SDKs**, indicating a clear separation between server-side API integrations and client-side SDK implementations. The documentation structure suggests comprehensive coverage of both programmatic access through APIs and embedded tracking through various platform-specific SDKs.

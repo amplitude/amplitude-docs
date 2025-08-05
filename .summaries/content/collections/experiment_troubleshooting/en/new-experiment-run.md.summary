@@ -1,18 +1,17 @@
-**Summary:** Documents the process for creating new experiment runs in Amplitude Experiment, including configuration changes like experiment key updates, bucketing salt randomization, and sticky bucketing behavior, with specific SDK version requirements for experiment restart support.
+**Summary:** This documentation explains how to create new experiment runs in Amplitude Experiment to exclude previous user data when instrumentation issues affected data quality, covering the creation process, configuration changes (experiment key, dates, bucketing salt, sticky bucketing, decisions), and SDK version requirements for experiment key support.
 
 **Keywords:**
-- experiment run restart
+- new experiment run
+- experiment restart
+- Amplitude Experiment
 - experiment key property
 - bucketing salt randomization
-- sticky bucketing disable
+- sticky bucketing
 - exposure event tracking
-- Evaluation API experiment_key
-- SDK experiment restart support
-- variant expKey property
-- stale evaluated users
 - experiment configuration changes
+- Evaluation API experiment_key
+- SDK version requirements
+- variant expKey property
+- user data exclusion
+- instrumentation issues
 - analysis range selection
-- JavaScript SDK v1.10.2
-- Android SDK v1.10.0
-- iOS SDK v1.11.0
-- React Native SDK v1.2.0

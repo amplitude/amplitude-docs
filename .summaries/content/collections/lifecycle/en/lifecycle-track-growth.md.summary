@@ -1,10 +1,10 @@
-**Summary:** Documents Amplitude's Lifecycle chart feature for tracking user base growth by categorizing active users into new, current, and resurrected segments, with configuration options for events, user segments, and usage intervals in the Events, Segmentation, and Metrics modules.
+**Summary:** Documents Amplitude's Lifecycle chart feature that analyzes user base growth by categorizing active users into new, current, and resurrected segments, plus tracking dormant users over configurable usage intervals around critical events or any instrumented event.
 
 **Keywords:**
 - Lifecycle chart
-- user base growth tracking
+- user base growth analysis
 - new current resurrected users
-- dormant inactive users
+- dormant users segmentation
 - critical event analysis
 - usage interval configuration
 - Events Module starting event
@@ -12,5 +12,5 @@
 - Metrics Module usage interval
 - retention lifecycle framework
 - Growth Enterprise plans only
-- active vs dormant user buckets
-- engagement retention analysis
+- active users categorization
+- engagement retention tracking

@@ -1,66 +1,49 @@
-# Amplitude API Documentation Suite
+## Amplitude API Platform
 
-Amplitude offers a comprehensive API ecosystem spanning Analytics, Experiment, and Guides & Surveys products, providing developers with robust tools for event tracking, feature flagging, A/B testing, and user engagement across web, mobile, and server environments.
+Amplitude operates a comprehensive API platform spanning Analytics, Experiment, and Guides & Surveys products, unified through a sophisticated multi-tiered authentication system designed for both individual developers and enterprise customers.
 
 ## Product Architecture and Relationships
 
-The API suite is structured around three core product verticals that work together to provide a complete customer analytics and experimentation platform:
+The platform consists of three core product verticals that work in concert:
 
-**Analytics APIs** serve as the foundation, handling event ingestion, user tracking, and data analysis. These APIs power real-time event collection from client applications and provide server-side access to analytics data and reporting capabilities.
+**Analytics APIs** form the foundational data layer, handling event ingestion, user behavior tracking, and reporting capabilities. These APIs serve as the primary data collection and analysis engine for the entire platform.
 
-**Experiment APIs** build upon the analytics foundation to deliver feature flagging and A/B testing functionality. These APIs enable dynamic feature rollouts, experiment management, and statistical analysis of test results, with tight integration to analytics event data.
+**Experiment APIs** build upon the analytics foundation to provide feature flagging and A/B testing functionality. They leverage analytics data to measure experiment performance, calculate statistical significance, and track behavioral changes across user cohorts.
 
-**Guides and Surveys APIs** leverage user analytics data to deliver targeted in-app messaging, user onboarding flows, and feedback collection mechanisms. These APIs coordinate with analytics data to trigger contextual user experiences.
+**Guides and Surveys APIs** create user engagement touchpoints through in-app messaging, onboarding flows, and feedback collection mechanisms. These tools generate interaction data that feeds back into the analytics system, creating a closed-loop engagement and measurement cycle.
 
-Each product area maintains dedicated API collections with specialized endpoints while sharing common authentication patterns and organizational structures, enabling seamless data flow between analytics tracking, experimentation, and user engagement workflows.
+## Authentication and Credential Management
 
-## Authentication and Credential Management Framework
+Amplitude implements a role-based, multi-credential authentication framework accessed through the Organization Settings interface at analytics.amplitude.com:
 
-Amplitude implements a sophisticated multi-tiered authentication system with six distinct credential types, each serving specific security and functional requirements:
+**API Keys** - Public, client-side credentials for Analytics projects, managed through the Projects interface with rotation capabilities for enhanced security.
 
-**Project API Key** - Public identifier for client-side event ingestion in browsers and mobile applications, designed for safe exposure in client code
+**Secret Keys** - Private, server-side credentials requiring Manager role permissions, designed for secure Analytics API operations where credential exposure must be minimized.
 
-**Project Secret Key** - Private server-side credential with enhanced security restrictions, used for administrative operations and sensitive data access
+**Deployment Keys** - Experiment-specific credentials that operate independently from Analytics credentials, enabling isolated feature flag management and experiment deployment workflows.
 
-**Deployment Key** - Experiment-specific authentication token for retrieving feature flag configurations and experiment assignments
+**Management API Keys** - Organization-level administrative credentials providing cross-project and cross-product operational capabilities for enterprise management scenarios.
 
-**Management API Key** - Organization-level administrative credential providing access to project management, user administration, and cross-project operations
+**Data API Tokens** - Specialized credentials for data export and integration operations, offering controlled access to raw analytics datasets for external system integration.
 
-**Data API Token** - Specialized authentication for data export operations, analytics queries, and reporting functionality
+**SCIM Keys** - Enterprise identity management credentials supporting automated user provisioning and directory service integration.
 
-**SCIM Key** - Identity provisioning credential for automated user lifecycle management and directory service integration
+## Key Nomenclature and Definitions
 
-## Key Nomenclature and Technical Definitions
+**Organization Settings** - Central administrative dashboard accessible via analytics.amplitude.com for credential lifecycle management and organizational configuration.
 
-**Blueprint** - Template system defining the structure and metadata schema for API documentation pages, enabling consistent documentation generation across product areas
+**Projects Interface** - Project-scoped configuration environment where API credentials are generated, rotated, and managed at the individual project level.
 
-**Collection** - Organizational unit grouping related API endpoints and documentation, with specific collections including `collection:api` (Analytics), `collection:experiment-apis` (Experiment), and `collection:guides_and_surveys_api` (Guides & Surveys)
+**Role-based Access Control** - Permission hierarchy where Manager roles gate access to sensitive operations like secret key generation and organizational settings.
 
-**Organization Settings** - Administrative interface accessible via analytics.amplitude.com providing centralized credential management and project configuration
+**Key Rotation** - Security mechanism enabling periodic credential refresh without service interruption, supporting compliance and security best practices.
 
-**Projects Interface** - Project-scoped configuration area within Organization Settings where API credentials are generated and managed
+**Public vs Private Key Classification** - Security taxonomy distinguishing client-safe credentials (public) from server-only credentials (private) based on exposure risk profiles.
 
-**Manager Role** - Required permission level for accessing sensitive operations including secret key generation, credential rotation, and administrative functions
+## Ecosystem Integration and Scalability
 
-**Key Rotation** - Security capability enabling periodic updates of authentication credentials without service interruption
+The API architecture demonstrates a data-centric integration model where Analytics APIs serve as the central nervous system, with Experiment and Guides & Surveys APIs functioning as specialized extensions that both consume and contribute data to the core analytics engine.
 
-**Public vs Private Keys** - Security classification distinguishing client-safe credentials (public) from server-only credentials (private) based on exposure risk and operational scope
+The authentication system scales from individual developer workflows (project-level credentials) to enterprise deployments (organization-level credentials with SCIM integration), indicating support for diverse customer segments from startups to large enterprises requiring sophisticated identity management and multi-project coordination.
 
-## Ecosystem Integration and Platform Architecture
-
-The API framework integrates deeply with Amplitude's analytics.amplitude.com web platform, creating a unified ecosystem where API credentials, project configuration, and data visualization converge. The Organization Settings interface serves as the central hub for credential management, requiring Manager-level permissions to access sensitive authentication materials.
-
-The documentation infrastructure employs a content management system utilizing blueprints and collections to enable dynamic API endpoint discovery and automated documentation generation. This system supports real-time updates to API specifications and maintains consistency across the multi-product API surface.
-
-Data flows between products through shared organizational and project contexts, enabling analytics events to trigger experiment assignments, which can then activate targeted guides and surveys based on user behavior patterns and experiment cohorts.
-
-## Access Patterns and Security Model
-
-Authentication credential access follows a structured hierarchy:
-
-- **Organization Settings > Projects** interface provides the primary access point for API and secret key management
-- **Role-based access control** restricts sensitive credential generation to users with Manager permissions or higher
-- **Project-scoped authentication** ensures most API operations are contained within specific project boundaries
-- **Organization-level credentials** enable cross-project administrative operations and user management
-
-The security model emphasizes credential separation by use case, with public keys designed for client-side event ingestion where exposure risk is acceptable, while private keys and tokens are restricted to server-side environments for administrative functions, data export, and sensitive operations. This tiered approach enables secure client-side analytics implementation while maintaining strict controls over administrative and data access capabilities.
+The unified credential management through Organization Settings suggests operational efficiency for customers using multiple Amplitude products, while the specialized credential types (Deployment Keys, Data API Tokens) indicate product-specific optimization for distinct use cases and security requirements.

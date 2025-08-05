@@ -1,21 +1,20 @@
-**Summary:** This documentation explains the differences between user properties (attributes of individual users like device type, location, User ID) and event properties (attributes of specific events at the time they occurred) in Amplitude, covering how Amplitude updates user properties over time, applies them to events through three methods, and handles property value changes with historical data preservation.
+**Summary:** This documentation explains the differences between user properties (attributes of individual users like device type, location, User ID) and event properties (attributes of specific events at the time they occurred) in Amplitude, covering how user properties update over time, persist across events, and can create overlapping values when changed, plus how to hide properties and automatic 14-month deletion policies.
 
 **Keywords:**
 - user properties
-- event properties
+- event properties  
 - Amplitude SDKs
-- property value updates
-- historical data preservation
+- user property updates
+- property value persistence
 - Identify API
-- HTTP API
+- HTTP API user properties
+- property value overlap
+- event-based platform
+- automatic property deletion
+- 14-month retention policy
 - custom user properties
 - default user properties
-- event stream
-- property overlap
-- user property table
 - property hiding
-- automatic deletion
-- 14-month retention
-- property value persistence
-- retroactive updates
-- user segments
+- user property table
+- individual event stream
+- property value retroactivity

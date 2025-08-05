@@ -1,13 +1,13 @@
-**Summary:** This documentation covers the Adjust attribution integration that uses Amplitude's Attribution API to send real-time user attribution data, requiring Advertising ID (IDFA/IDFV/ADID) matching and supporting user segmentation by ad parameters with a 72-hour attribution event retention window.
+**Summary:** This documentation covers the Adjust attribution integration that uses Amplitude's Attribution API to send real-time user attribution data, requiring Advertising ID (IDFA/IDFV/ADID) matching and supporting 72-hour attribution event holding for user matching.
 
 **Keywords:**
 - Adjust attribution integration
 - Attribution API
 - Advertising ID matching
 - IDFA/IDFV/ADID
-- 72-hour attribution retention
-- Real-time attribution data
-- Ad group segmentation
-- Attribution event matching
-- Android/iOS SDK advertising ID
+- 72-hour attribution event holding
+- Real-time attribution data streaming
+- Ad group and network segmentation
+- Attribution event user matching
+- Android/iOS SDK advertising ID configuration
 - Attribution data privacy stripping

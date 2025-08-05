@@ -1,23 +1,26 @@
-**Summary:** This documentation covers Amplitude's Google Ads source integration that imports campaign-level spend, click, and impression data as Daily Ad Metrics events through daily batch ingestion, including setup requirements for Google Ads Customer ID/Manager ID, UTM parameter configuration for CAC/ROAS calculations, and analysis through the Ad Performance dashboard.
+**Summary:** This documentation covers Amplitude's Google Ads integration that imports campaign-level spend, click, and impression data as "Daily Ad Metrics" events through batch ingestion, including setup requirements for Google Ads Customer ID/Manager ID, UTM parameter configuration for CAC/ROAS calculations, and analysis through the Ad Performance dashboard.
 
 **Keywords:**
-- Google Ads source integration
+- Google Ads integration
 - Daily Ad Metrics event
 - Google Ads Customer ID
 - Google Ads Manager ID (MCC)
 - UTM parameters (utm_source, utm_medium, utm_campaign, utm_content, utm_term)
-- Campaign-level metrics ingestion
+- Campaign-level metrics
 - Ad Performance dashboard
 - CAC (Customer Acquisition Cost)
 - ROAS (Return on Ad Spend)
+- Batch ingestion process
 - ad_metrics.impressions
 - ad_metrics.clicks
 - ad_metrics.cost
+- ad_metrics.conversions
 - ad_account_id property
-- Schema enforcement compatibility
+- Schema enforcement
 - Tracking templates
 - Final URL Suffix
 - Performance Max campaigns
-- Daily batch ingestion process
-- Campaign-level reporting (not user-level)
-- Browser SDK v2 UTM capture
+- Browser SDK v2
+- Marketing Analytics
+- Campaign performance analysis
+- Google Ads API permissions

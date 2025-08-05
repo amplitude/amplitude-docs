@@ -1,4 +1,4 @@
-**Summary:** This documentation explains Amplitude's array operators (is, is not, contains, does not contain, set is, set is not, set contains, set does not contain) used when building charts and filtering event data, providing visual diagrams to illustrate the behavior of equals, set contains, and set equals operators with their negations.
+**Summary:** This documentation explains Amplitude's array operators (`is`, `is not`, `contains`, `does not contain`, `set is`, `set is not`, `set contains`, `set does not contain`) used when building charts and filtering events, providing visual diagrams to illustrate the behavior of equals, set contains, and set equals operators with their negations.
 
 **Keywords:**
 - array operators
@@ -6,8 +6,10 @@
 - event filtering
 - set contains operator
 - set equals operator
-- contains vs does not contain
-- is vs is not operators
-- chart building filters
-- event property filtering
-- operator behavior diagrams
+- is/is not operators
+- contains/does not contain
+- chart building
+- event analysis
+- operator visualization
+- set operations
+- boolean logic operators

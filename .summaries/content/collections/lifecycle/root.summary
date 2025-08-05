@@ -1,52 +1,43 @@
-# Amplitude Lifecycle Chart
+## Amplitude Lifecycle Chart
 
-Amplitude's Lifecycle chart is a comprehensive user growth tracking and retention analysis tool available exclusively on Growth and Enterprise plans. This feature provides deep insights into user base evolution by categorizing users into distinct behavioral segments and visualizing their engagement patterns over time.
+Amplitude's Lifecycle chart is a comprehensive user growth analysis tool available exclusively on Growth and Enterprise plans that provides deep insights into user base evolution by categorizing users into distinct behavioral segments over configurable time intervals.
 
-## Core Product Features and Functionality
+## Core Product Features
 
-The Lifecycle chart operates as a sophisticated user segmentation and growth analysis system that tracks how users interact with critical events within defined usage intervals. The primary functionality centers around categorizing users into four distinct behavioral buckets:
+The Lifecycle chart analyzes user engagement patterns by segmenting active users into four primary categories:
+- **New users**: First-time users performing the tracked event
+- **Current users**: Users who performed the event in both current and previous intervals
+- **Resurrected users**: Previously dormant users who have returned to activity
+- **Dormant users**: Previously active users who haven't performed the event in the current interval
 
-- **New Users**: First-time users performing the tracked event
-- **Current Users**: Users who performed the event in both current and previous periods  
-- **Resurrected Users**: Previously dormant users who have returned to perform the event
-- **Dormant Users**: Users who performed the event in previous periods but not in the current period
-
-The system offers three distinct visualization modes: Growth histogram view (the primary interface), Dormant chart view, and Pulse chart view, each providing different analytical perspectives on user lifecycle patterns.
+The analysis can be configured around any instrumented event or critical events, with flexible usage intervals (daily, weekly, monthly) to match business requirements.
 
 ## Product Architecture and Module Integration
 
-The Lifecycle chart integrates across three core Amplitude modules, creating a unified analysis framework:
+The Lifecycle chart integrates seamlessly with Amplitude's core module ecosystem:
 
-**Events Module** serves as the foundation by defining the starting event or critical action that determines user engagement. This module establishes the behavioral trigger that categorizes users into lifecycle segments.
-
-**Segmentation Module** enables targeted analysis by allowing users to focus on specific user cohorts or demographic segments, providing granular control over which user populations are included in the lifecycle analysis.
-
-**Metrics Module** controls the temporal framework through usage interval configuration, supporting daily, weekly, and monthly analysis periods that determine how user behavior is measured and categorized across time periods.
+- **Events Module**: Defines the starting event for lifecycle analysis, which can be any instrumented event or critical business events
+- **Segmentation Module**: Enables user segment filtering to focus analysis on specific user cohorts
+- **Metrics Module**: Configures usage intervals (daily, weekly, monthly) that determine the temporal framework for user categorization
 
 ## Key Nomenclature and Definitions
 
-**Active User Segments** represent engaged users and are visualized in blue buckets within the Growth histogram view, encompassing new, current, and resurrected user categories.
+**Usage Intervals**: Configurable time periods (daily, weekly, monthly) that define the temporal boundaries for user activity analysis
 
-**Dormant Users** represent disengaged users shown in red buckets, indicating users who have stopped performing the tracked critical event.
+**Growth Histogram View**: The primary visualization displaying active user segments as stacked bars with dormant users shown separately, providing a comprehensive view of user base composition over time
 
-**Usage Intervals** define the temporal measurement framework (daily, weekly, monthly) that determines how user behavior is categorized across time periods.
+**Dormant Chart View**: Alternative visualization focusing specifically on users who have become inactive, tracking the flow from active to dormant states
 
-**Pulse Ratio** represents a key growth metric calculated as: (new users + resurrected users) / dormant users, providing a quantitative measure of user base health and growth momentum.
+**Pulse Chart View**: Specialized view that calculates engagement ratios using the formula: (New + Current + Resurrected Users) / (New + Current + Resurrected + Dormant Users), providing a normalized engagement metric
 
-**Growth Histogram View** serves as the primary visualization interface, displaying the distribution of users across lifecycle segments over time.
+**Breakdown Table**: Exportable data table containing detailed user counts and percentages for each lifecycle segment
 
-**Breakdown Table** provides detailed data export functionality, allowing users to extract lifecycle analysis data in CSV format for further analysis.
+## Broader Product Ecosystem Integration
 
-## Ecosystem Integration and Analytical Framework
+The Lifecycle chart functions as a critical component within Amplitude's retention and engagement analytics suite, complementing user journey analysis and cohort tracking capabilities. It provides foundational insights that inform user acquisition strategies, retention optimization, and churn prevention initiatives.
 
-The Lifecycle chart functions as a critical component within Amplitude's broader retention and engagement analysis ecosystem. It operates within the retention lifecycle framework, providing foundational insights that complement other Amplitude analytics tools. The system's integration with Events, Segmentation, and Metrics modules demonstrates its role as a central analytical hub that leverages Amplitude's core data infrastructure.
+The tool's integration with Amplitude's segmentation capabilities allows for sophisticated user base analysis, enabling product teams to understand growth patterns across different user segments and optimize engagement strategies accordingly.
 
-The tool's export capabilities through CSV functionality enable integration with external business intelligence systems and reporting workflows, extending its utility beyond Amplitude's native interface.
+## Chart Interpretation and Analysis
 
-## Analytical Methodologies and Use Cases
-
-The Lifecycle chart supports multiple analytical approaches through its three visualization modes. The Growth histogram view provides comprehensive user distribution analysis, while the Dormant chart view focuses specifically on user churn patterns. The Pulse chart view emphasizes growth momentum through ratio-based calculations.
-
-Primary use cases include user base growth tracking, retention analysis, engagement pattern identification, and churn prediction. The system enables businesses to understand user lifecycle progression, identify critical engagement periods, and measure the effectiveness of retention strategies.
-
-The combination of visual analysis tools and quantitative metrics like the Pulse ratio provides both immediate insights and deeper analytical capabilities for understanding user behavior patterns and predicting future growth trends.
+The product offers multiple visualization perspectives through switchable chart views, each optimized for different analytical needs. The Growth view emphasizes overall user base composition, while the Dormant view highlights churn patterns, and the Pulse view provides normalized engagement metrics for comparative analysis across different time periods or user segments.

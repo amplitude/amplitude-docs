@@ -1,68 +1,65 @@
-## Amplitude Java SDK Product Suite
+## Amplitude Java SDK
 
-The Amplitude Java SDK is a comprehensive analytics tracking solution for Java applications (Java 6+) that enables developers to instrument event tracking and user analytics. The SDK consists of two primary components: the core Java SDK for JRE programs and Ampli, a code generation wrapper that provides strongly-typed event tracking.
+The Amplitude Java SDK is a comprehensive analytics solution for Java applications running on JRE 6+ environments, designed to track user events and behaviors with robust configuration options and type-safe implementations. The SDK provides two primary approaches: a core Java SDK for flexible event tracking and an Ampli wrapper that generates strongly-typed code from Amplitude Data tracking plans.
 
-## Product Architecture and Component Relationships
+## Product Relationship and Architecture
 
-### Core Java SDK (JRE)
-The foundational `com.amplitude:java-sdk` provides the base analytics functionality with flexible event tracking capabilities. It supports both individual event logging and batch mode operations, utilizing Amplitude's HTTP V2 API for data transmission. The SDK handles user identification, session tracking, device information collection, and group-based analytics.
+The Java SDK ecosystem consists of two complementary components that work together to provide comprehensive analytics capabilities:
 
-### Ampli Wrapper
-Ampli serves as an enhanced layer built on top of the core Java SDK, generating strongly-typed event tracking code from Amplitude Data tracking plans. This wrapper eliminates runtime errors by providing compile-time validation of event schemas and properties, ensuring data consistency across development teams.
+**Core Java SDK (`com.amplitude:java-sdk`)**: The foundational analytics library that handles event collection, batching, and transmission to Amplitude's HTTP V2 API. This SDK provides the underlying infrastructure for event tracking, user identification, and data transmission.
 
-The relationship between these components follows a layered architecture:
-- **Ampli** (Type-safe wrapper layer)
-- **Core Java SDK** (Base analytics engine)
-- **Amplitude HTTP V2 API** (Backend service)
+**Ampli Wrapper (`com.amplitude.ampli`)**: A code generation layer built on top of the core SDK that creates strongly-typed event tracking methods from Amplitude Data tracking plans. The Ampli wrapper uses the `ampli CLI` to generate type-safe event classes and methods, ensuring consistency between tracking implementation and data schema definitions.
 
 ## Key Nomenclature and Definitions
 
-### Core SDK Terminology
-- **Event Logging**: Primary method for tracking user actions via `logEvent()` method
-- **Batch Mode**: Efficient data transmission by grouping multiple events using `useBatchMode()`
-- **Event Upload Threshold**: Configurable limit triggering automatic event transmission via `setEventUploadThreshold()`
-- **Flush Operations**: Manual or automatic sending of queued events with configurable timeout periods
-- **Group Functionality**: Organizational event tracking using `groupType` and `groupName` parameters
-- **Middleware**: Extensible processing pipeline using `MiddlewarePayload` and `MiddlewareNext` interfaces
+**Event Tracking Concepts**:
+- **Event Properties**: Custom data attached to events using JSONObject structures
+- **User Properties**: Persistent attributes associated with users across sessions
+- **Group Identification**: Associating users with organizational entities using `setGroup(groupType, groupName)`
+- **Device Information**: Hardware and software context data attached to events
+- **Session ID**: Unique identifiers for user interaction sessions
 
-### Ampli-Specific Terminology
-- **Tracking Plan**: Schema definition source for code generation in Amplitude Data
-- **LoadOptions/LoadClientOptions**: Configuration objects for Ampli initialization
-- **Strongly-typed Events**: Generated event classes (e.g., `SongPlayed`) with predefined properties
-- **Identify Builder**: Type-safe user property assignment interface
-- **EventOptions**: Event-level configuration including `MiddlewareExtra` data
-- **Ampli CLI**: Command-line tool for code generation and implementation verification
+**Configuration Components**:
+- **LoadOptions/LoadClientOptions**: Configuration objects for SDK initialization and behavior
+- **EventOptions**: Per-event configuration including middleware and custom properties
+- **MiddlewareExtra**: Additional context data passed through the middleware pipeline
+- **AmplitudeCallbacks**: Response handlers for server communication results
+
+**Operational Elements**:
+- **Batch Mode**: Automatic event grouping and transmission optimization
+- **Event Upload Threshold**: Configurable limit triggering automatic event transmission
+- **Event Upload Period**: Time-based intervals for automatic event flushing
+- **Flush Operations**: Manual and automatic queue processing and transmission
 
 ## Broader Product Ecosystem Integration
 
-The Java SDK integrates into Amplitude's comprehensive analytics platform ecosystem. It connects with:
+The Java SDK integrates into Amplitude's comprehensive analytics platform through several key touchpoints:
 
-### Amplitude Data Platform
-- **Tracking Plans**: Central schema management for consistent event definitions
-- **Data Validation**: Server-side verification of event structure and properties
-- **Cross-platform Consistency**: Unified event schemas across mobile, web, and server implementations
+**Amplitude Data Integration**: The Ampli wrapper connects directly to Amplitude Data tracking plans, enabling schema-driven development where event structures are defined centrally and code is generated automatically using `ampli CLI pull` commands.
 
-### Development Workflow Integration
-- **CI/CD Pipeline**: Ampli CLI enables automated code generation and validation
-- **Multi-language Support**: Consistent API patterns across Amplitude's SDK family
-- **Enterprise Features**: HTTP proxy support, custom server endpoints, and batch processing for high-volume applications
+**HTTP V2 API Connectivity**: All event data flows through Amplitude's HTTP V2 API infrastructure, supporting batch transmission, custom headers, proxy configurations, and comprehensive error handling.
 
-## API Endpoints and Command Line Interface
+**Cross-Platform Consistency**: The SDK maintains compatibility with Amplitude's broader multi-platform ecosystem while providing Java-specific optimizations for JRE environments.
 
-### Core SDK Configuration Methods
-- `setServerUrl()`: Custom endpoint configuration
-- `setEventUploadThreshold()`: Batch size management
-- `setEventUploadPeriodMillis()`: Automatic flush timing
-- `logEvent()`: Primary event tracking method
-- `setGroup()`: Group-level event association
+## API Endpoints and Command Line Operations
 
-### Ampli CLI Commands
-- `ampli pull`: Downloads generated wrapper code from tracking plans
-- `ampli status`: Validates implementation completeness against tracking plan requirements
+**CLI Operations**:
+- `ampli pull`: Downloads and generates strongly-typed event classes from tracking plans
+- `ampli status`: Verifies implementation completeness and schema compliance
 
-### Event Types
-- **$identify**: User property updates
-- **$groupidentify**: Group property modifications
-- **Custom Events**: Application-specific tracking with flexible property schemas
+**Core SDK Methods**:
+- Event logging with properties, groups, and user data attachment
+- `flush()`: Manual queue processing and transmission
+- User identification and property management
+- Group association using `setGroup()` operations
+- Device information configuration and session management
 
-The SDK supports both Gradle dependency management and direct JAR file integration, accommodating various Java development environments while maintaining consistent functionality across deployment scenarios.
+**Configuration APIs**:
+- API key initialization for project association
+- Batch mode and threshold configuration
+- HTTP proxy and custom header setup
+- Middleware pipeline implementation for event processing
+- Callback registration for server response handling
+- Thread pool and timeout management
+
+The SDK supports installation through standard Java dependency management systems (Maven/Gradle) and direct JAR file integration, with comprehensive configuration options for enterprise environments including proxy support, custom headers, and advanced batching strategies.

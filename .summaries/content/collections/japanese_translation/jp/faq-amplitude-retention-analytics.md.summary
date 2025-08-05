@@ -1,17 +1,15 @@
-**Summary:** This Japanese FAQ documentation explains Amplitude retention analytics calculations, covering weighted averages for data points, "Return On" vs "Return On or Later" measurement types, breakdown table discrepancies, incomplete data handling with asterisks, custom bracket functionality for extending beyond 12-month limits, and upward retention curve behavior.
+**Summary:** This Japanese FAQ documentation explains Amplitude's retention analytics calculations, covering weighted averages for data points, return-on vs return-on-or-after measurement types, breakdown table discrepancies with unique user deduplication, and troubleshooting retention curve anomalies and incomplete data periods.
 
 **Keywords:**
 - Amplitude retention analytics
 - weighted average calculation
-- Return On (リターン時点)
-- Return On or Later (リターン時点またはそれ以降)
-- breakdown table discrepancies
+- return-on retention measurement
+- return-on-or-after retention
 - unique user deduplication
-- incomplete data points asterisks
-- custom bracket feature
-- 12-month data limit
-- upward retention curve
+- breakdown table discrepancies
+- retention curve upward trends
+- incomplete data points
+- custom brackets feature
 - Japanese FAQ documentation
-- retention measurement types
-- data point calculations
-- user cohort analysis
+- retention event calculations
+- 12-month data limitation

@@ -1,14 +1,16 @@
-**Summary:** Portfolio enables cross-project analysis in Amplitude Enterprise by creating Views that merge multiple projects (up to 5, or 10 with account team approval) into a single display, using user ID/device ID matching and optional User Mapping API for aliasing different user IDs across projects.
+**Summary:** Portfolio enables cross-project analysis in Amplitude Enterprise by creating Views that merge multiple projects (up to 5, or 10 with account team approval) into a single display, using user ID/device ID matching and the User Mapping API for aliasing different user IDs across projects while maintaining project-specific user property silos.
 
 **Keywords:**
 - Portfolio cross-project analysis
-- Views data source merging
+- Amplitude Views
 - Enterprise plans only
+- User ID device ID matching
 - User Mapping API aliasing
-- user ID device ID matching
-- user properties per-project silos
-- cohort export portfolio projects
-- Organization settings Create Portfolio View
-- global user ID mapping
-- five project limit
-- cross-product user journey
+- Project-specific user property silos
+- Cross-product user journey
+- Portfolio view creation
+- Organization settings Projects
+- Cohort export device_id user_id
+- Global user ID merging
+- Five project limit
+- Admin manager permissions

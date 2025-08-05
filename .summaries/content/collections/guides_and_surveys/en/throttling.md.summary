@@ -1,14 +1,13 @@
-**Summary:** This documentation explains how to configure throttling settings for guides and surveys to control the rate and frequency at which they appear to users, including setting limits and time periods (day/week/month/session) through the Guides and Surveys interface.
+**Summary:** Documents the throttling feature for guides and surveys, which controls the rate and frequency at which these artifacts appear to users through configurable limits and time periods (day/week/month/session), with separate throttling settings for guides versus surveys.
 
 **Keywords:**
 - throttling configuration
 - guides and surveys throttling
-- user experience rate limiting
-- throttling limits and periods
-- global throttling settings
-- session-based throttling
-- guide appearance frequency
-- survey display control
-- Guides and Surveys interface
+- artifact appearance limits
+- time period settings (day/week/month/session)
 - throttling settings separation
-- artifact limits configuration
+- user experience rate limiting
+- global throttling settings
+- Limits section configuration
+- guides and surveys management
+- artifact display frequency control

@@ -8,11 +8,11 @@
 - GET /api/1/deployments
 - POST /api/1/deployments
 - PATCH /api/1/deployments
-- deployment types client server
-- deployment label validation
+- client deployment type
+- server deployment type
 - deployment archiving
-- experiment.amplitude.com
+- deployment label editing
+- experiment.amplitude.com/api/1/deployments
 - management-api-key authentication
 - deployment projectId
 - deployment soft delete
-- cursor pagination deployments

@@ -7,12 +7,10 @@
 - raw-events integration
 - cohorts integration
 - amp_user_id unique_arg
-- US/EU region endpoints
+- US/EU regional endpoints
 - api.amplitude.com/sendgrid
 - api.eu.amplitude.com/sendgrid
-- [Sendgrid] event prefix
-- sendgrid library
-- Mail Settings configuration
-- HTTP Post URL
+- email marketing attribution
+- transactional email tracking
+- SendGrid Mail Settings
 - customer communication platform
-- email delivery tracking

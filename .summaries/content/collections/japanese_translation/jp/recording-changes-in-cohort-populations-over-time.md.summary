@@ -4,16 +4,13 @@
 - cohort population over time chart
 - behavioral cohorts
 - dynamic cohorts
-- user count tracking
-- time series analysis
-- cohort size changes
+- cohort size tracking
+- time series cohort analysis
 - power user cohorts
-- active events threshold
 - cohort definition criteria
-- static cohorts limitations
-- CSV import cohorts
-- microscope chart creation
-- user property restrictions
-- OR clause limitations
-- Japanese translation
-- Amplitude analytics
+- user count visualization
+- cohort detail page
+- static vs dynamic cohorts
+- CSV import limitations
+- OR clause restrictions
+- user property constraints

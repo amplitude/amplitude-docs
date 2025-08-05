@@ -9,8 +9,9 @@
 - event replacement parameters
 - 新規ユーザー (new user events)
 - アクティブイベント (active events)
+- conversion dropoff analysis
 - user path analysis
-- conversion time analysis
-- dashboard customization
-- template カスタマイズ
-- コンバージョンレポートテンプレート
+- template customization workflow
+- dashboard creation from templates
+- conversion rate tracking over time
+- user journey funnel analysis

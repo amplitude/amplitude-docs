@@ -1,20 +1,20 @@
-## Summary
-This documentation explains Amplitude's Revenue Long-Term Value (LTV) chart for analyzing new user monetization over 12-month periods, including setup with `[Amplitude] Any Revenue Event`, revenue properties like `$revenue` and `$price`, and metrics like ARPU/ARPPU calculations.
+**Summary:** Documents Amplitude's Revenue LTV chart for analyzing new user monetization using revenue events like `[Amplitude] Any Revenue Event` with `$revenue` property, supporting measures like Total Revenue, New Paying Users, ARPU, and ARPPU with up to 12-month lookback periods.
 
-## Keywords
+**Keywords:**
 - Revenue LTV chart
 - `[Amplitude] Any Revenue Event`
 - `$revenue` property
-- `$price`, `$productId`, `$quantity`, `$revenueType`, `$eventProperties`
-- `logRevenueV2()` SDK method
+- `logRevenueV2()`
 - ARPU (average revenue per user)
 - ARPPU (average revenue per paying user)
+- New Paying Users
+- Total Revenue measure
+- revenue event properties (`$price`, `$productId`, `$quantity`, `$revenueType`, `$eventProperties`)
 - new user monetization
 - revenue authentication system
 - in-app purchases (IAPs)
-- currency conversion
-- paying users segmentation
-- 12-month time horizon
+- cumulative revenue analysis
+- 12-month lookback
 - Growth and Enterprise plans
-- cumulative total revenue
-- new user cohorts
+- currency conversion
+- product array tracking

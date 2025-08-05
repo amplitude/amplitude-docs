@@ -1,16 +1,15 @@
-**Summary:** Documents how to mark a step as optional in Amplitude's Funnel Analysis charts, allowing conversion tracking when users skip non-essential steps, with specific limitations including only middle steps being eligible and only one optional step permitted at a time.
+**Summary:** Documents how to mark a middle step as optional in Amplitude Funnel Analysis charts using the "More Options" control, which creates dual funnel visualizations comparing conversion rates with and without the optional step, subject to specific limitations around step positioning, reordering, and event configurations.
 
 **Keywords:**
-- Funnel Analysis optional step
-- Amplitude conversion tracking
-- funnel step configuration
-- optional event marking
-- Conversion Over Time charts
-- funnel step limitations
-- middle step optional
-- dotted line side control
-- group-by events restriction
-- funnel reordering constraints
+- Amplitude Funnel Analysis
+- optional step configuration
+- More Options side control
 - dual funnel visualization
-- conversion take-aways
+- conversion rate comparison
+- Conversion Over Time charts
+- middle step limitations
+- dotted line UI indicator
+- group-by restrictions
+- event reordering constraints
+- in-line custom events
 - breakdown table scenarios

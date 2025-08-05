@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's legacy Pathfinder User Chart feature for analyzing user paths and event sequences in products, including configuration of start/end events, session-based path tracking, property expansion, and user segmentation with session_id requirements for HTTP API implementations.
+**Summary:** This documentation covers Amplitude's legacy Pathfinder User Chart feature for analyzing user paths and event sequences in products, including configuration with start/end events, session-based tracking, property expansion, and user segmentation - noting it's being merged into the new Journeys experience and doesn't support custom events in Amplitude 2.0.
 
 **Keywords:**
 - Pathfinder User Chart
@@ -7,12 +7,12 @@
 - event sequences
 - session-based tracking
 - session_id requirement
-- HTTP API implementation
-- event path configuration
-- start/end events
+- start/end event configuration
 - property expansion
 - user segmentation
+- Journeys experience migration
 - custom events not supported
-- inactive events hidden
+- HTTP API integration
+- event_time ordering
 - 30-day analysis limit
 - Japanese translation documentation

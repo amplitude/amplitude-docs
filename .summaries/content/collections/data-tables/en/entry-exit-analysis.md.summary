@@ -1,4 +1,4 @@
-**Summary:** Documents Entry/Exit Analysis feature in Amplitude's Data Tables that applies entry (first) or exit (last) session dimensions to metrics, supporting Uniques, Event totals, Session totals, and PROPSUM metric types with specific processing flows for extracting first/last property values from active events within sessions.
+**Summary:** Documents Entry/Exit Analysis feature in Amplitude's Data Tables that applies entry (first) or exit (last) session dimensions to metrics, supporting Uniques, Event totals, Session totals, and PROPSUM metric types with specific processing flow for extracting first/last property values from active events in sessions.
 
 **Keywords:**
 - Entry/Exit Analysis
@@ -14,6 +14,7 @@
 - session-based metrics
 - Entry semantics
 - Exit semantics
+- Attribution analysis
 - Session Entries
 - Session Exits
 - non-null property values

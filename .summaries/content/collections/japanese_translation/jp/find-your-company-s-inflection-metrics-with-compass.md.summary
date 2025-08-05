@@ -1,22 +1,24 @@
-**Summary:** This Japanese documentation explains how to use Amplitude's Compass feature to identify inflection metrics that predict user retention or conversion by analyzing correlations between user behaviors and target outcomes, covering statistical measures like PPV, sensitivity, NPV, and specificity with contingency matrix examples.
+**Summary:** This Japanese documentation explains how to use Amplitude's Compass feature to identify inflection metrics that predict user retention or conversion, covering statistical concepts like PPV (positive predictive value), sensitivity, NPV (negative predictive value), and specificity for analyzing user behavior thresholds.
 
 **Keywords:**
-- Amplitude Compass
+- Compass chart
 - inflection metrics (変曲指標)
 - retention prediction
-- conversion analysis
+- conversion prediction
 - base cohort (ベースコホート)
 - target cohort (ターゲットコホート)
-- positive predictive value (PPV)
+- threshold percentage (しきい値を超える割合)
+- PPV (positive predictive value/正の予測値)
 - sensitivity (感度)
-- negative predictive value (NPV)
+- NPV (negative predictive value/負の予測値)
 - specificity (特異性)
+- true positive (真陽性)
+- false positive (偽陽性)
+- true negative (真陰性)
+- false negative (偽陰性)
 - contingency matrix
-- correlation coefficient
-- true positive/negative
-- false positive/negative
-- threshold analysis
-- user behavior correlation
-- Japanese translation
-- statistical analysis
+- correlation coefficient (相関係数)
+- performance window days
+- event frequency thresholds
+- user behavior analysis
 - A/B testing validation

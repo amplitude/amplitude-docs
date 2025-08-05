@@ -1,18 +1,19 @@
-**Summary:** Documents the Compass chart feature in Amplitude Analytics that identifies user behaviors predicting retention by analyzing correlations between events performed by new users and their likelihood to become active users, available only on Growth and Enterprise plans.
+**Summary:** This documentation explains how to build and configure Amplitude's Compass chart, which identifies user behaviors that predict retention by analyzing correlations between base cohorts (like New Users) and target cohorts (like 2nd Week Retention) within specified time ranges.
 
 **Keywords:**
 - Compass chart
+- a-ha moments
 - user retention prediction
-- a-ha moments discovery
-- correlation analysis
 - base cohort
 - target cohort
-- new user behavior analysis
-- Growth Enterprise plans only
-- 2nd week retention
+- correlation analysis
 - heat map view
-- user churn prediction
-- behavioral correlation scoring
-- cohort-based analysis
-- retention forecasting
-- user activation patterns
+- range of first use
+- pre-set retention cohorts
+- [Amplitude] 2nd Week Retention
+- [Amplitude] 3rd Week Retention
+- [Amplitude] 4th Month Retention
+- Growth and Enterprise plans
+- user behavior correlation
+- retention analysis
+- cohort-based analytics

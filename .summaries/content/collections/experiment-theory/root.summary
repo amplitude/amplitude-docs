@@ -1,61 +1,37 @@
-# Amplitude Experiment Statistical Analysis Framework
-
-Amplitude Experiment is a comprehensive A/B testing and Multi-Armed Bandit experimentation platform that provides rigorous statistical analysis capabilities for data-driven decision making. The platform centers around Welch's T-test methodology and emphasizes proper experimental design, statistical significance testing, and risk assessment throughout the experiment lifecycle.
+Amplitude Experiment is a comprehensive statistical analysis platform designed for A/B testing and Multi-Armed Bandit experiments, providing data-driven experimentation capabilities through sophisticated statistical methodologies while maintaining accessibility across different technical skill levels.
 
 ## Product Architecture and Feature Relationships
 
-The statistical analysis framework operates through three integrated phases that form a cohesive experimentation workflow:
+The platform operates through two interconnected experimental methodologies sharing common configuration interfaces. The **A/B Testing Infrastructure** employs Welch's T-test as its statistical engine, supporting both two-sided and one-sided testing approaches. This integrates seamlessly with the **Multi-Armed Bandit system**, which provides dynamic traffic allocation based on real-time performance signals for scenarios requiring adaptive optimization.
 
-**Experiment Configuration Layer**: The Settings tab serves as the primary entry point, housing the Goals panel where users define critical statistical parameters. This includes configuring recommendation metrics (primary success indicators) and guardrail metrics (safety measures), along with setting MDE values and sample size requirements that drive the entire experimental approach.
+The **Goals panel** and **Analysis Settings** serve as the central configuration hub, where statistical preferences cascade across all experimental components. The **MDE (Minimum Detectable Effect) configuration** directly integrates with the **T-test duration estimator**, delivering real-time sample size calculations and comprehensive experiment planning capabilities.
 
-**Statistical Processing Engine**: At the core lies Welch's T-test implementation, which handles both binary conversion metrics and continuous value metrics without assuming equal variances between groups. The engine supports configurable hypothesis testing approaches through two-sided testing (bidirectional change detection) and one-sided testing (directional change detection with reduced sample requirements).
+Metric architecture operates through two distinct classification systems: **recommendation metrics** function as primary success measures, while **guardrail metrics** serve as protective measures against negative impacts. Each category requires different MDE considerations and specialized statistical treatment protocols.
 
-**Real-time Analysis and Monitoring**: The platform provides continuous experiment tracking through the Cumulative Exposure graph and integrated duration estimator, allowing teams to monitor progress toward statistical significance. The Analysis Settings Stats Preferences enable organizational customization of statistical approaches and significance thresholds.
+## Core Nomenclature and Statistical Definitions
 
-## Core Nomenclature and Statistical Concepts
+**Minimum Detectable Effect (MDE)** represents the smallest meaningful change in a metric that an experiment can reliably detect, forming the foundation for sample size calculations and experiment duration planning across all testing scenarios.
 
-**MDE (Minimum Detectable Effect)**: The smallest meaningful change in a metric that warrants detection with statistical confidence. This parameter directly determines required sample sizes and experiment duration, serving as the foundation for experimental power calculations.
+**Welch's T-test** serves as the primary statistical methodology for experimental result analysis, specifically engineered to handle unequal variances between experimental groups while maintaining rigorous statistical standards.
 
-**Welch's T-test**: The primary statistical hypothesis testing method that accommodates unequal variances between experimental groups, making it robust for diverse metric types and sample distributions.
+**Sample Size Target/Samples Per Variant Needed** defines calculated thresholds determining minimum user requirements per experimental variant to achieve statistical significance for specified MDE parameters.
 
-**Sample Size Threshold**: The calculated minimum number of users required per variant to achieve statistical significance, derived from MDE specifications, baseline conversion rates, and configured confidence levels.
+**Two-sided vs One-sided Testing** distinguishes between statistical approaches where two-sided tests detect bidirectional changes (increases or decreases), while one-sided tests focus exclusively on detecting changes in predetermined directions.
 
-**Control Mean**: The baseline performance metric from the control group that serves as the reference point for calculating relative improvements and determining statistical significance.
+**Sequential Testing** provides an alternative statistical methodology to traditional fixed-sample T-testing, enabling continuous monitoring capabilities and early stopping decision frameworks.
 
-**Statistical Risk Framework**: 
-- **False Positive Rate**: The probability of incorrectly detecting an effect when none exists
-- **False Negative Rate**: The probability of missing a real effect that actually exists
+**Central Limit Theorem Assumptions** establish the statistical foundation underlying T-test validity, requiring sufficient sample sizes for proper distribution assumptions and reliable statistical inference.
 
-**Testing Directionality**:
-- **Two-sided Testing**: Detects changes in either positive or negative directions
-- **One-sided Testing**: Focuses on detecting changes in a predetermined direction with reduced sample size requirements
+## Ecosystem Integration and Platform Connectivity
 
-## Ecosystem Integration and Methodology
+The statistical analysis framework functions as the analytical backbone for Amplitude's broader experimentation ecosystem, connecting experiment design, execution, and analysis phases through integrated workflow systems. The **duration estimator** and **Cumulative Exposure graph** provide real-time experiment monitoring capabilities that integrate with broader product analytics and organizational decision-making systems.
 
-The statistical framework integrates with broader experimentation practices through several methodological components:
+Platform architecture supports both **binary metrics** (conversion-based measurements) and **continuous metrics** (value-based measurements), enabling comprehensive analysis across diverse business objectives and KPI frameworks. This flexibility facilitates integration across multiple product areas, including user acquisition, retention optimization, revenue enhancement, and feature adoption analysis.
 
-**Central Limit Theorem Application**: The platform leverages fundamental statistical theory to ensure reliable results across varying metric types and sample sizes, incorporating built-in safeguards for minimum sample requirements to maintain statistical validity.
+**Business risk assessment** capabilities integrate MDE configuration with organizational decision-making processes, ensuring statistical rigor aligns with business impact thresholds and strategic resource allocation decisions.
 
-**Sequential vs. Fixed Testing Approaches**: While Welch's T-test represents the primary fixed-sample methodology, the platform acknowledges alternative sequential testing approaches for organizations requiring different statistical frameworks.
+## Technical Implementation and Interface Components
 
-**Business Risk Integration**: The system balances statistical rigor with business practicality by enabling customization of significance thresholds and effect size requirements based on the potential impact and risk tolerance of experimental changes.
+The system operates through the **Settings tab** interface, providing user access to the **Goals panel** for metric configuration and **Analysis Settings Stats Preferences** for statistical parameter definition. The **T-test duration estimator** delivers algorithmic sample size calculations based on MDE specifications, current traffic patterns, and desired statistical power requirements.
 
-**Resource Planning Integration**: Tools like the T-test duration estimator and Samples Per Variant Needed calculations integrate experiment planning with resource allocation, enabling teams to forecast timelines and capacity requirements before experiment launch.
-
-## Configuration Interfaces and Implementation
-
-**Primary Configuration Pathway**: 
-Settings tab → Goals panel → Analysis Settings Stats Preferences
-
-**Core Configuration Parameters**:
-- Statistical test methodology selection (two-sided/one-sided)
-- Sample size threshold specifications per variant
-- MDE value definitions across different metric types
-- Organizational significance level preferences
-
-**Monitoring and Analysis Interfaces**:
-- **Cumulative Exposure Graph**: Real-time progress tracking toward statistical significance
-- **Sample Size Target Indicators**: Visual progress indicators for sample collection
-- **Duration Estimator**: Predictive timeline calculations for experiment completion
-
-The platform enforces a design-first methodology, requiring teams to establish MDE parameters, statistical approaches, and risk tolerance during the configuration phase. This ensures that experimental results achieve both statistical validity and business relevance, with the statistical framework providing the mathematical foundation for reliable experimentation at scale.
+The platform automatically processes **false positive/negative rate** calculations and provides comprehensive guidance on **sample size threshold** requirements, ensuring experiments maintain statistical validity while optimizing for practical business constraints and organizational timeline requirements. This automated approach reduces technical complexity while preserving statistical rigor across all experimental implementations.

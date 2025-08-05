@@ -12,4 +12,7 @@
 - environment-specific branch filtering
 - sparkline volume indicators
 - JavaScript runtime checks
-- Plus/Growth/Enterprise plan availability
+- missing properties detection
+- data type mismatches
+- Plus/Growth/Enterprise plans
+- automatic background monitoring

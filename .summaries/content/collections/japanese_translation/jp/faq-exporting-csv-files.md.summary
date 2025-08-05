@@ -1,15 +1,15 @@
-**Summary:** This Japanese FAQ documentation covers common issues with CSV file exports from Amplitude analytics, including Event Segmentation chart export formatting, property value limitations, user property discrepancies between charts and CSV exports, and leading space removal settings.
+**Summary:** This Japanese FAQ documentation covers CSV file export functionality in Amplitude, specifically addressing Event Segmentation chart exports, property value limitations, user property value differences between charts and CSV exports, and leading space removal settings in exported files.
 
 **Keywords:**
 - CSV export
-- Event Segmentation chart
+- Event Segmentation charts
 - Japanese translation
 - user properties
 - event properties
-- Microscope download
+- Microscope downloads
 - leading spaces removal
-- export limitations
-- property values
-- site settings toggle
-- Amplitude analytics
-- data export formatting
+- Personal settings
+- Site Settings toggle
+- property value limitations
+- breakdown data table
+- export structure

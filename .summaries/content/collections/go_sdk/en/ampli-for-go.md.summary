@@ -1,22 +1,19 @@
-**Summary:** Documentation for Ampli Go SDK wrapper that generates strongly-typed tracking libraries from Amplitude Data tracking plans, covering installation via `go get github.com/amplitude/analytics-go`, CLI usage with `@amplitude/ampli`, and implementation including Load(), Identify(), Track(), and Flush() methods with builder patterns for type-safe event tracking.
+**Summary:** This documentation covers the Ampli wrapper for Go SDK, which generates strongly-typed tracking libraries from Amplitude Data tracking plans, including installation via `go get github.com/amplitude/analytics-go`, CLI usage with `ampli pull/status` commands, and implementation of Load(), Identify(), Track(), and Flush() methods with builder patterns.
 
 **Keywords:**
-- Ampli Go SDK
-- amplitude/analytics-go
-- @amplitude/ampli CLI
-- strongly typed tracking library
+- Ampli wrapper Go SDK
+- analytics-go package
 - Amplitude Data tracking plan
 - ampli pull command
-- ampli status verification
+- ampli status command
 - LoadOptions configuration
-- Identify() user properties
-- Track() event methods
+- Identify() method
+- Track() strongly-typed events
 - Builder pattern
 - EventOptions
-- amplitude.EventOptions
-- Flush() queued events
+- Flush() method
 - ampli.Instance
-- Go package wrapper
-- type-safe event tracking
-- SongPlayed event example
-- ampli.json configuration
+- NewClientConfig
+- amplitude.EventOptions
+- Go package generation
+- CLI installation npm/brew

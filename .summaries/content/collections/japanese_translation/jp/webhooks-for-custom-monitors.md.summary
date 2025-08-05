@@ -1,18 +1,21 @@
-**Summary:** This documentation explains how to configure webhooks for custom monitors in Amplitude Analytics, including setup steps for sending triggered monitor alerts to external endpoints and specific instructions for Slack integration using incoming webhooks.
+**Summary:** This documentation explains how to configure webhooks for custom monitors in Amplitude, including setup steps for sending triggered monitor alerts to external endpoints and specific instructions for integrating with Slack channels using Slack app webhook URLs.
 
 **Keywords:**
-- Amplitude webhooks
-- カスタムモニター (custom monitors)
+- webhooks
+- custom monitors
+- カスタムモニター
+- Amplitude alerts
 - Slack integration
-- incoming webhooks
-- monitor alerts
-- KPI notifications
 - webhook endpoints
 - organizational settings
 - Japanese translation
-- Enterprise plan feature
-- Insights package
+- KPI monitoring
 - real-time notifications
+- Insights package
+- Enterprise plan
 - triggered monitors
-- webhook payload
 - Slack app configuration
+- incoming webhooks
+- webhook URL
+- payload messages
+- custom alerts

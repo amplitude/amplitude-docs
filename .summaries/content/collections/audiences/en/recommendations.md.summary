@@ -1,21 +1,21 @@
-**Summary:** This documentation explains Amplitude Activation's AutoML recommendations feature that uses machine learning clustering to personalize item recommendations (products, articles, shows) for user-based digital commerce, covering three personalization types: assortment, next-best action, and cross-sell optimization.
+**Summary:** This documentation explains Amplitude Activation's AutoML recommendations feature that uses machine learning clustering and hourly retraining to provide user-based personalization for ecommerce, marketplace, and B2C companies through assortment, next-best action, and cross-sell recommendation types.
 
 **Keywords:**
 - Amplitude Activation
 - AutoML recommendations
 - machine learning clustering
 - user-based personalization
+- predictive goal
 - outcome event
 - exposure event
 - event property
-- assortment personalization
+- assortment recommendations
 - next-best action
-- cross-sell optimization
-- predictive goal
+- cross-sell personalization
+- hourly algorithm retraining
+- standard event properties
 - conversion funnel
-- digital commerce
-- ecommerce marketplace
+- ecommerce personalization
+- B2C recommendations
 - product carousel
 - SKU recommendations
-- standard event properties
-- user propensity conversion

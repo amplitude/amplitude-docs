@@ -1,17 +1,19 @@
 **Summary:**
-This Japanese FAQ documentation explains why users appear in "(none)" groups or have unexpected values when grouping by event or user properties in Amplitude analytics, covering event properties, user properties (custom, location via MaxMind GeoIP, and device properties), and the event-time property value assignment logic.
+This Japanese FAQ documentation explains why users appear in "(none)" groups or have unexpected values when grouping by event or user properties in Amplitude analytics, covering event-level querying behavior, property implementation timing, GeoIP location detection using MaxMind, and device property mapping issues.
 
 **Keywords:**
 - Japanese translation documentation
-- Amplitude analytics grouping
-- null values "(none)" buckets
-- event properties event-time values
-- user properties historical assignment
-- MaxMind GeoIP location properties
-- device property mapping
-- event-based analytics platform
-- property implementation timing
-- server-side vs client-side events
-- HTTP API property fields
-- device family device type mapping
-- property value deduplication logic
+- Amplitude analytics platform
+- Event-based analytics querying
+- Null property values grouping
+- Event properties implementation timing
+- User properties historical application
+- GeoIP location detection
+- MaxMind database integration
+- Device property mapping
+- Server-side vs client-side events
+- Property value bucketing logic
+- Event-level property attribution
+- Custom user properties behavior
+- Location properties accuracy
+- Device family classification

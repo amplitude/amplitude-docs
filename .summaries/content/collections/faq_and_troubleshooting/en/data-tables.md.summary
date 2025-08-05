@@ -2,16 +2,15 @@
 
 **Keywords:**
 - Data Tables chart
-- unique metric group-by aggregation
-- overall value sum discrepancy
+- group-by clause aggregation
+- unique metric sum discrepancies
 - attribution model pruning
 - caching inconsistencies
 - CSV export limits
 - 10,000 rows limit
 - formula metric null values
 - horizontal scrolling limitations
-- column header editing
-- PDF PNG export bounded box
+- PDF/PNG export bounded box
+- column header editing restrictions
 - multi-dimensional analysis
-- group-by clause behavior
 - metric column visibility

@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude Experiment's sticky bucketing feature for feature experiments, which maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change, and includes configuration steps, use cases, and debugging methods using Experiment Assignment events.
+This documentation explains Amplitude Experiment's sticky bucketing feature, which maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change, and is only available for feature experiments (not flags).
 
 ## Keywords
 - sticky bucketing
@@ -12,12 +12,10 @@ This documentation explains Amplitude Experiment's sticky bucketing feature for 
 - percentage rollout
 - targeting criteria
 - rollout weights
-- Experiment Assignment events
-- event stream debugging
+- experiment assignment events
 - flag evaluation
-- treatment variant
-- control variant
-- off variant
 - bucketing delivery settings
-- dynamic cohort targeting
+- off variant
+- treatment control groups
+- experiment debugging
 - flag version tracking

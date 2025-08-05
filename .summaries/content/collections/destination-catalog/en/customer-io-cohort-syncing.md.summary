@@ -1,15 +1,17 @@
-**Summary:** Documents the Customer.io cohort synchronization integration that sends Amplitude user cohorts to Customer.io's messaging platform for targeted marketing campaigns, requiring Tracking API Key, Site ID, and App API Key authentication with specific setup steps for both platforms.
+**Summary:** Documents the Customer.io cohort synchronization integration that sends Amplitude user cohorts to Customer.io's messaging platform for targeted marketing campaigns, requiring Tracking API Key, Site ID, and App API Key authentication with pre-existing users in Customer.io.
 
 **Keywords:**
 - Customer.io cohort sync
 - Amplitude cohorts destination
-- Tracking API Key
-- Site ID
-- App API Key
-- Customer.io segments
-- marketing automation integration
-- cohort synchronization
-- Customer.io messaging platform
+- Tracking API Key authentication
+- Site ID configuration
+- App API Key setup
+- Customer.io Segments integration
+- Marketing automation cohorts
+- User behavior targeting
+- Cohort sync cadence
 - EU data center region
-- paid plans requirement
-- user existence prerequisite
+- Customer.io messaging platform
+- Automated message campaigns
+- Paid plan requirement
+- Pre-existing users validation

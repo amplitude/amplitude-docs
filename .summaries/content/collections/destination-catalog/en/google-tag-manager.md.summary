@@ -3,13 +3,13 @@
 **Keywords:**
 - Amplitude Destination Plugin
 - Google Tag Manager integration
-- GTMPlugin implementation
-- dataLayer event forwarding
-- browser snippet setup
-- container ID configuration
+- GTM dataLayer
 - event-streaming destination
-- PluginType.DESTINATION
+- browser snippet implementation
+- GTM container ID
+- DestinationPlugin interface
+- window.dataLayer
 - @amplitude/analytics-browser
-- window.dataLayer.push
-- gtm.js script injection
 - marketing-analytics integration
+- real-time event forwarding
+- GTM plugin setup

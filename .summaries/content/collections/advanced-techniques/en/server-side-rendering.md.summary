@@ -1,7 +1,8 @@
-**Summary:** Documents implementing server-side rendering with Amplitude Experiment using both JavaScript Server SDK (@amplitude/experiment-node-server) and JavaScript Client SDK (@amplitude/experiment-js-client) together, including server initialization, variant fetching per request, and client SDK initialization with pre-fetched variants.
+**Summary:** Documents implementing server-side rendering with Amplitude Experiment using both JavaScript Server SDK (@amplitude/experiment-node-server) and JavaScript Client SDK (@amplitude/experiment-js-client) together, including server initialization, variant fetching per request, and client SDK initialization with initialVariants for seamless SSR experience.
 
 **Keywords:**
-- server-side rendering
+- server-side rendering (SSR)
+- Amplitude Experiment
 - JavaScript Server SDK
 - JavaScript Client SDK
 - @amplitude/experiment-node-server
@@ -11,7 +12,5 @@
 - fetchV2
 - initialVariants
 - variant fetching
-- server initialization
-- client initialization
+- dual SDK implementation
 - experiment-node-server demo app
-- seamless SSR experience

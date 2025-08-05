@@ -1,4 +1,4 @@
-**Summary:** Documents Amplitude Analytics' query time sampling feature that optimizes chart performance by analyzing a 10% random user sample and up-sampling results using inverse sampling methods, with configuration options for individual funnel charts, project-wide defaults, and dashboard-level sampling controls.
+**Summary:** This documentation explains Amplitude Analytics' query time sampling feature that optimizes chart performance by analyzing a 10% random user sample and up-sampling results using inverse sampling methods, with configuration options for individual funnel charts, project-wide defaults, and dashboard-level sampling controls.
 
 **Keywords:**
 - query time sampling
@@ -12,4 +12,4 @@
 - dashboard sampling toggle
 - sampled data limitations
 - cohort creation restrictions
-- statistical extrapolation
+- performance optimization

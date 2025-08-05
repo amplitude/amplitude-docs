@@ -1,0 +1,65 @@
+name: Build and Deploy Statamic Site
+
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2' # Adjust as needed
+        extensions: bcmath, ctype, exif, json, mbstring, openssl, pdo, tokenizer, xml, gd
+        tools: composer, php-cs-fixer
+
+    - name: Install Dependencies
+      run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install NPM Dependencies
+      run: npm install
+
+    - name: Build Assets
+      run: npm run build 
+
+    - name: Build Static Site
+      run: APP_URL=${{ vars.APP_URL }} php please ssg:generate --workers=4
+    
+    - name: Fix permissions
+      run: |
+        chmod -c -R +rX "storage/app/static" | while read line; do
+        echo "::warning title=Invalid file permissions automatically fixed::$line"
+        done
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@main
+      with:
+        path: storage/app/static
+  
+  deploy:
+    needs: build
+
+    permissions:
+        pages: write
+        id-token: write
+
+    environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+        
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action

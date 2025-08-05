@@ -1,9 +1,8 @@
-**Summary:** This documentation covers the standalone React Native Session Replay SDK (@amplitude/session-replay-react-native) for implementing session recording without the Amplitude Analytics SDK, including installation, configuration options like sampleRate and maskLevel, methods for session management (init, start, stop, setSessionId), and data masking using AmpMaskView components.
+**Summary:** This documentation covers the standalone Session Replay React Native SDK (@amplitude/session-replay-react-native) for implementing session recording without the Amplitude Analytics SDK, including installation, configuration options like maskLevel and sampleRate, methods like init/start/stop/setSessionId, and features for masking sensitive data with AmpMaskView components.
 
 **Keywords:**
 - @amplitude/session-replay-react-native
 - standalone SDK
-- React Native session replay
 - SessionReplayConfig
 - MaskLevel
 - AmpMaskView
@@ -11,13 +10,18 @@
 - amp-unmask
 - amp-block
 - sampleRate
-- deviceId correlation
-- sessionId synchronization
+- deviceId
+- sessionId
+- autoStart
+- enableRemoteConfig
+- setSessionId
+- setDeviceId
 - getSessionReplayProperties
+- flush
 - WebView tracking
 - EU data residency
-- remote configuration
-- optOut
-- flush method
-- autoStart
 - serverZone
+- optOut
+- remote configuration
+- session quota
+- beta version 0.0.1-beta.1

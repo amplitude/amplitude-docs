@@ -1,15 +1,15 @@
-**Summary:** This is the main landing page for Amplitude's API documentation that provides an overview of available APIs including Analytics/Data APIs, Experiment APIs, and Guides/Surveys Translation API, along with authentication resources and Postman collection integration.
+**Summary:** This is the main landing page for Amplitude's API documentation, providing an overview and navigation to Analytics/Data APIs, Experiment APIs, and Guides/Surveys Translation API, along with authentication resources and Postman collection integration.
 
 **Keywords:**
 - Amplitude APIs
-- Analytics Data APIs
+- Analytics and Data APIs
 - Experiment APIs
-- Guides Surveys Translation API
+- Guides and Surveys Translation API
 - API authentication
-- Amplitude keys tokens
+- Amplitude keys and tokens
 - Postman collection
+- API documentation landing page
 - SCIM token
 - org_api_key
 - org_secret_key
-- API documentation landing page
-- current-collection metadata
+- API overview page

@@ -1,44 +1,68 @@
 ## Amplitude Analytics Flutter SDK
 
-The Amplitude Analytics Flutter SDK is a comprehensive analytics solution that enables Flutter applications to track user events, behaviors, and revenue data. The SDK has evolved through multiple versions, with version 4 representing a significant architectural shift from a native wrapper approach to a unified HTTP V2 API implementation.
+The Amplitude Analytics Flutter SDK is a comprehensive analytics solution that enables Flutter applications to track user events, behaviors, and revenue data. The SDK has evolved through multiple versions, with version 4 being the current release and version 3 in maintenance mode. The SDK provides cross-platform support for iOS, Android, macOS, and web applications, offering both native performance and Flutter-specific integrations.
 
-## Product Versions and Evolution
+## Product Relationships and Architecture
 
-**Flutter SDK 3 (Maintenance Mode)**: A wrapper-based architecture around native Android, iOS, and JavaScript SDKs that provides cross-platform analytics capabilities through Dart language integration. This version maintains compatibility with existing Flutter web applications and legacy implementations.
+The Flutter SDK ecosystem consists of three distinct implementations:
 
-**Flutter SDK 4 (Current)**: A modernized implementation using Amplitude's HTTP V2 API directly, eliminating the wrapper architecture for improved performance and consistency. This version requires updated platform requirements including Kotlin 1.9.22, Gradle 8.2, and iOS 13.0+.
+**Flutter SDK v4** represents the modern, native implementation built specifically for Flutter applications. It communicates directly with Amplitude's HTTP V2 API and provides optimized performance with minimal dependencies.
 
-## Core Features and Capabilities
+**Flutter SDK v3** (maintenance mode) functions as a wrapper around Amplitude's native Android, iOS, and JavaScript SDKs, providing compatibility with existing native implementations while offering Flutter-specific APIs.
 
-The SDK provides comprehensive event tracking through `BaseEvent` objects, user identification via `setUserId()` and `setDeviceId()`, revenue tracking with dedicated Revenue API, and user property management through `Identify` operations. Default tracking capabilities include automatic session management, app lifecycle events, and deep link tracking through `DefaultTrackingOptions`.
+**Migration pathway** exists between versions, with comprehensive tooling and documentation to upgrade from v3 to v4, including API method mappings and configuration changes.
 
-Advanced features encompass user grouping with `groupIdentify()`, batch event processing via `useBatch`, configurable data residency through `ServerZone.eu`, and COPPA compliance controls. The SDK supports dynamic configuration, advertising ID collection, and comprehensive opt-out tracking mechanisms.
+The web implementation integrates with Browser SDK 2, ensuring consistent analytics behavior across Flutter web applications and traditional web implementations.
 
 ## Key Nomenclature and Definitions
 
-**BaseEvent**: Core event object containing event data and metadata for tracking user interactions
-**Identify**: Operation class for managing user properties and attributes
-**Revenue**: Specialized tracking object for monetary transactions and revenue attribution
-**DefaultTrackingOptions**: Configuration object controlling automatic event collection (sessions, app lifecycles, deep links)
-**ServerZone**: Geographic data residency configuration (US/EU)
-**deviceId/userId**: Primary user identification mechanisms with validation requirements
-**flushQueueSize/flushIntervalMillis**: Batch processing configuration parameters
-**minIdLength**: Validation parameter for user and device identifiers
+**BaseEvent**: The fundamental event object in SDK v4 that encapsulates all trackable user interactions, replacing the previous event structure from v3.
 
-## API Methods and Configuration
+**Configuration Object**: Centralized configuration system introduced in v4 that replaces individual setter methods, managing SDK behavior including flush intervals, queue sizes, and server endpoints.
 
-Core tracking methods include `track()` for event logging (migrated from `logEvent()`), `flush()` for immediate event upload (migrated from `uploadEvents()`), and `revenue()` for monetary tracking. Configuration involves `Configuration` object initialization replacing direct `instance()` calls, with parameters for batch processing, server zones, and tracking options.
+**DefaultTrackingOptions**: Automated tracking configuration that controls which default events (sessions, app lifecycles, deep links) are automatically captured without explicit instrumentation.
 
-Platform-specific setup requires CocoaPods installation for iOS/macOS and Browser SDK 2 snippet integration for Flutter Web. The SDK integrates through `pubspec.yaml` dependency management and supports both pub.dev distribution and local development workflows.
+**ServerZone**: Geographic routing configuration that directs data to specific Amplitude data centers (US or EU) for compliance and performance optimization.
 
-## Migration and Compatibility
+**Identify Operations**: User property management system that handles setting, updating, and clearing user attributes through dedicated identify calls.
 
-The migration from SDK 3 to 4 involves significant breaking changes including API method renames, configuration object restructuring, and platform requirement updates. Key migration points include replacing `instance()` patterns with `Configuration` objects, updating method calls (`logEvent()` → `track()`, `uploadEvents()` → `flush()`), and implementing Browser SDK 2 snippets for web applications.
+**Revenue Tracking**: Specialized event type for tracking monetary transactions with built-in validation and formatting for financial data.
 
-Session management changes include `sessionId -1` for out-of-session events, while removed functionality includes `clearUserProperties()`, `setUserProperties()`, `logRevenue()`, and `regenerateDeviceId()` methods that require alternative implementation approaches.
+**Group Analytics**: Enterprise feature enabling user segmentation and group-level analytics through groupIdentify operations.
 
 ## Ecosystem Integration
 
-The Flutter SDK integrates within Amplitude's broader analytics ecosystem, supporting HTTP V2 API endpoints for unified data collection and processing. Cross-platform compatibility ensures consistent tracking across Android, iOS, and web platforms while maintaining data consistency through centralized API architecture.
+The Flutter SDK integrates into Amplitude's broader analytics ecosystem through several key touchpoints:
 
-The SDK supports enterprise features including EU data residency compliance, batch processing optimization, and comprehensive user privacy controls, positioning it as a scalable solution for applications requiring robust analytics capabilities across diverse deployment environments.
+**HTTP V2 API**: SDK v4 communicates directly with Amplitude's modern HTTP V2 API endpoints, ensuring optimal performance and feature compatibility with the latest platform capabilities.
+
+**Cross-Platform Consistency**: The SDK maintains behavioral consistency with Amplitude's native Android, iOS, and JavaScript SDKs while providing Flutter-specific optimizations and APIs.
+
+**Browser SDK Interoperability**: Flutter web applications can seamlessly integrate with existing Browser SDK 2 implementations, enabling hybrid deployment scenarios.
+
+**Enterprise Features**: The SDK supports advanced enterprise capabilities including COPPA compliance controls, custom server zones for data residency, and group analytics for organizational tracking.
+
+## Technical Implementation Details
+
+**Installation Requirements**: SDK v4 requires Kotlin 1.9.22+ and Gradle 8.2+ for Android builds, with CocoaPods integration for iOS/macOS platforms.
+
+**Core API Methods**:
+- `amplitude.track()` - Event tracking (replaces `logEvent()` from v3)
+- `amplitude.identify()` - User property management
+- `amplitude.revenue()` - Revenue event tracking (replaces `logRevenue()`)
+- `amplitude.flush()` - Manual event upload (replaces `uploadEvents()`)
+- `amplitude.reset()` - User session reset
+
+**Configuration Parameters**:
+- `flushQueueSize` / `flushIntervalMillis` - Event batching and upload timing
+- `minIdLength` - User ID validation requirements
+- `serverZone` / `serverUrl` - Data routing and custom endpoints
+- `sessionId: -1` - Out-of-session event tracking
+
+**Platform-Specific Features**:
+- iOS 13.0+ minimum platform requirement for v4
+- Android deep link tracking through DefaultTrackingOptions
+- Flutter web integration with Browser SDK 2 snippet replacement
+- macOS support through CocoaPods integration
+
+The SDK provides comprehensive session management, automatic app lifecycle tracking, and configurable default event collection, making it suitable for applications ranging from simple mobile apps to complex enterprise analytics implementations.

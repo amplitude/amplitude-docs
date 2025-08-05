@@ -3,11 +3,11 @@
 **Keywords:**
 - Chart Cleanup feature
 - organizational settings
-- bulk chart management
-- saved charts deletion
-- admin chart permissions
-- 60-day chart viewing metrics
+- bulk delete charts
+- saved charts management
+- admin permissions
+- 60-day view tracking
 - cross-project chart visibility
 - chart filtering by owner/space/project
-- Amplitude admin tools
-- chart lifecycle management
+- confirmation modal deletion
+- organizational-level metrics

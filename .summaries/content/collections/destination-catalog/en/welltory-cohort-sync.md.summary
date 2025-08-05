@@ -1,13 +1,13 @@
-**Summary:** This documentation describes the Welltory Cohort Sync destination integration that enables sending user cohorts from Amplitude to Welltory's in-app content personalization platform, including setup steps for API key configuration and cohort synchronization workflows.
+**Summary:** This documentation describes the Welltory Cohort Sync destination integration that enables sending user cohorts from Amplitude to Welltory's in-app content personalization platform, including API key configuration and cohort synchronization setup.
 
 **Keywords:**
-- Welltory Cohort Sync
-- destination integration
+- Welltory cohort sync
+- Amplitude destination integration
 - cohort synchronization
 - in-app content personalization
 - API key configuration
 - partner-maintained integration
-- Amplitude Data Catalog
 - user ID mapping
 - sync cadence
-- cohort destinations
+- Welltory support team
+- destination catalog

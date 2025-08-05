@@ -12,7 +12,8 @@ This documentation explains troubleshooting missing mobile attribution events in
 - attribution event mapping
 - advertising ID tracking
 - mobile attribution partners
-- attribution event ingestion
-- user opt-out advertising tracking
-- HTTP API advertising ID instrumentation
-- Identity API profile creation
+- attribution event dropping
+- iOS SDK IDFV device_id
+- HTTP API Identity API
+- user profile creation
+- attribution troubleshooting

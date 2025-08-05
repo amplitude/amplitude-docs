@@ -2,7 +2,7 @@
 
 **Keywords:**
 - Amplitude Experiment
-- Analytics
+- Amplitude Analytics  
 - experiment chart settings
 - JSON import/export
 - Copy flag as JSON
@@ -20,3 +20,4 @@
 - segment conditions
 - userPropertyValue
 - unit of analysis
+- MDE (Minimum Detectable Effect)

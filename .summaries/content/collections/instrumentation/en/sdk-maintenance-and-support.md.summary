@@ -1,4 +1,4 @@
-**Summary:** This documentation defines the maintenance and support lifecycle policy for Amplitude SDKs and Tools, covering four phases (Developer Preview/Beta, GA, Maintenance, End-of-Support) with versioning using X.Y.Z format and includes a comprehensive version support matrix tracking SDK lifecycle phases, GA dates, and maintenance transitions.
+**Summary:** This documentation defines the maintenance and support lifecycle policy for Amplitude SDKs and Tools, covering four phases (Developer Preview/Beta, GA, Maintenance, End-of-Support) with versioning using X.Y.Z format and includes a comprehensive version support matrix tracking multiple SDKs across platforms like Android, iOS, TypeScript, Flutter, Unity, and others through their lifecycle phases.
 
 **Keywords:**
 - SDK maintenance lifecycle
@@ -13,20 +13,16 @@
 - Amplitude-TypeScript
 - Amplitude-Swift
 - Amplitude-Android
-- Amplitude-JavaScript
 - Amplitude-Flutter
-- Amplitude-Python
 - Amplitude-Java
-- Amplitude-iOS
-- Amplitude-Node
+- Amplitude-Python
 - Chrome Event Explorer
-- amplitude-browser-sdk-gtm-template
-- analytics-go
-- unity-plugin
-- Amplitude-Unreal
-- Amplitude-ReactNative
+- Unity plugin
+- Unreal plugin
+- React Native SDK
+- Node.js SDK
+- GTM template
 - package managers npm CocoaPods Maven PyPI
-- GitHub repository archiving
-- operating system dependencies
-- language runtime dependencies
-- third party library dependencies
+- operating system runtime dependencies
+- 6-month dependency support policy
+- 12-month maintenance duration

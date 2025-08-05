@@ -7,7 +7,7 @@
 - Contact Key mapping
 - server-to-server API integration
 - client ID client secret subdomain
-- cohort syncing destination
-- marketing automation integration
-- data extension attributes
-- Growth Enterprise customers
+- cohort attribute mapping
+- Marketing Cloud contact synchronization
+- data extension setup
+- API Integration package permissions

@@ -1,4 +1,4 @@
-**Summary:** This FAQ documentation explains why Amplitude analytics charts show "(none)" values when grouping by event or user properties, covering how null values occur due to event-based querying, property instrumentation timing, GeoIP location mapping limitations, and device property mapping issues.
+**Summary:** This FAQ documentation explains why Amplitude analytics charts show "(none)" values when grouping by event or user properties, covering how null values occur due to event-based querying, property instrumentation timing, GeoIP lookup failures, and device mapping issues.
 
 **Keywords:**
 - (none) bucket grouping

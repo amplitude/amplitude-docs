@@ -1,9 +1,8 @@
-## Summary
-This documentation covers SDK troubleshooting and debugging for Amplitude instrumentation, addressing common issues like events not appearing in Amplitude, privacy settings affecting IP addresses, Client Event Time discrepancies, device family parsing problems, user_properties race conditions, and inaccurate event timestamps.
+**Summary:** This documentation covers SDK troubleshooting for Amplitude instrumentation, addressing common issues like events not appearing in Amplitude, privacy settings affecting IP addresses, Client Event Time discrepancies, device family parsing problems, user_properties race conditions, and inaccurate event timestamps.
 
-## Keywords
+**Keywords:**
 - SDK troubleshooting
-- Amplitude debugging
+- Amplitude instrumentation debugging
 - API key validation
 - flushQueueSize
 - flushIntervalMillis
@@ -17,13 +16,10 @@ This documentation covers SDK troubleshooting and debugging for Amplitude instru
 - device family parsing
 - Navigator.userAgent
 - IP address privacy
-- HTTP API V1
-- HTTP API V2
+- HTTP API V1/V2
 - server_upload_time
 - client_upload_time
 - Enrichment Plugin
 - flush() method
-- ua-parser-js library
-- Chrome user-agent reduction
 - partition logic
-- event timestamps
+- ua-parser-js library

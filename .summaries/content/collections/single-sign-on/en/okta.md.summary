@@ -3,11 +3,11 @@
 **Keywords:**
 - Okta SAML 2.0 integration
 - Amplitude SSO configuration
-- ACS URL (Assertion Consumer Service)
+- ACS URL (Assertion Consumer Service URL)
 - Entity ID audience URL
 - IdP metadata XML upload
 - Okta admin dashboard app integration
-- Organization settings Access & SSO
+- Organization settings Access & SSO Settings
 - Single Sign-On settings
-- SAML application username email
 - Identity provider metadata
+- SAML settings configuration

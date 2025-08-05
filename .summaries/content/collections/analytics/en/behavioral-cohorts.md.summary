@@ -4,12 +4,12 @@
 - behavioral cohorts
 - Amplitude cohorts
 - user segmentation
-- cohort definition
-- Plus Growth Enterprise plans
-- predictive cohorts
 - Segmentation Module
-- group-level cohorts
-- Accounts add-on
 - cohort recomputation
-- user traits
-- event-based grouping
+- Plus Growth Enterprise plans
+- Accounts add-on
+- group-level cohorts
+- predictive cohorts
+- user actions time period
+- cohort refresh
+- chart segmentation

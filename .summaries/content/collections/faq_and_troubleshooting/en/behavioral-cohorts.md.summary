@@ -1,15 +1,17 @@
-**Summary:** This FAQ documentation covers troubleshooting and usage questions for Amplitude's Behavioral Cohorts feature, including user property grouping with "most recently" clauses, CSV upload requirements for cohort creation, dynamic vs static cohort limitations, event count filtering, negative event filtering with "didn't" clauses, and cohort export via the Behavioral Cohorts API.
+**Summary:** This FAQ documentation covers troubleshooting and usage questions for Amplitude's Behavioral Cohorts feature, including user property filtering with "most recently" clauses, CSV upload requirements for cohort creation, dynamic vs static cohort limitations, event count filtering, negative event filtering with "didn't" clauses, and cohort export via the Behavioral Cohort API.
 
 **Keywords:**
 - Behavioral Cohorts
 - most recently user property clauses
-- CSV cohort upload format
-- Amplitude IDs vs user IDs
+- CSV cohort upload formatting
 - dynamic cohorts vs static cohorts
-- cohort population over time
+- population over time support
 - event count filtering
 - didn't clause negative filtering
-- Behavioral Cohort API
-- cohort export with propKeys parameter
+- Behavioral Cohort API export
+- props parameter
+- propKeys parameter
+- Amplitude ID and User ID
+- cohort definition modification
 - retention chart cohorts
 - Microscope static cohorts

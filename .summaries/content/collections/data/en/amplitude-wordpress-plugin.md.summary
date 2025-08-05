@@ -11,11 +11,8 @@
 - API key authentication
 - Sample rate configuration
 - Event volume impact
-- Default event tracking advanced
-- Form started/submitted events
-- File downloaded tracking
+- Default Event Tracking (DET)
+- Auto-instrumentation
+- Form tracking events
 - Page viewed events
-- Session start/end tracking
-- High cardinality events
-- WordPress plugin installation
-- Open beta feature
+- Session events

@@ -1,23 +1,20 @@
-**Summary:** This FAQ documentation covers Funnel Analysis chart functionality in Amplitude, including counting methods (unique users vs event totals), conversion windows (24-hour vs calendar dates), revenue attribution, time-to-convert calculations, funnel ordering options (any order, exact order), and data export limitations.
+**Summary:** This FAQ documentation covers Funnel Analysis chart functionality in Amplitude, including counting methods (unique users vs event totals), conversion windows (24-hour vs calendar dates), revenue attribution, time-to-convert calculations, funnel ordering options (This Order, Any Order, Exact Order), and data export limitations.
 
 **Keywords:**
 - Funnel Analysis chart
 - unique users vs event totals counting
+- Holding Property Constant feature
 - 24-hour conversion window
 - earliest-longest logic
-- Holding Property Constant feature
-- Session ID property
-- revenue attribution final step
+- revenue property calculation
 - Conversion Over Time funnel
-- Event Segmentation vs Funnel differences
-- median time to convert calculation
-- approximate algorithm
-- Show User Paths
+- median time to convert algorithm
+- funnel ordering (This Order, Any Order, Exact Order)
 - array property holding constant
-- Any Order funnel requirements
-- Exact Order funnel millisecond resolution
 - Microscope cohort creation
-- dynamic vs static cohorts
-- segment filter first event only
+- segment filter first step application
 - CSV export 300 group-by limit
-- Dashboard REST API 1000 limit
+- Dashboard REST API funnel export
+- millisecond resolution
+- exclusion constraints
+- Session ID constant holding

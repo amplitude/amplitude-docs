@@ -1,15 +1,17 @@
-**Summary:** Documents how Amplitude handles simultaneous events in funnel analysis by rounding timestamps to the nearest second and treating events within the same second as potentially occurring in any order, with options to enable millisecond resolution for precise event ordering.
+**Summary:** Documents how Amplitude handles simultaneous events in funnel analysis by rounding timestamps to the nearest second and treating events within the same second as interchangeable in funnel order, with options to enable millisecond resolution for precise event ordering.
 
 **Keywords:**
 - simultaneous events
 - funnel analysis
 - millisecond resolution
 - event ordering
-- one-second window
 - timestamp rounding
-- Historical Count filters
+- one-second window
 - exact order funnel
-- Any Event funnel steps
+- Historical Count filters
+- funnel conversion
+- same event types
+- Any Event funnel step
 - mutually exclusive conditions
-- event deduplication
-- conversion tracking
+- Measured As module
+- Advanced dropdown

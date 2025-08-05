@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to build Event Segmentation charts in Amplitude Analytics, covering the Events Module for selecting events and properties, the Measured As Module for choosing metrics like unique users or event totals, the Segmentation Module for defining user segments, and Y-axis customization including dual Y-axis support for line charts.
+**Summary:** This documentation explains how to build Event Segmentation charts in Amplitude Analytics, covering the Events Module for selecting events and properties, the Measured As Module for choosing metrics like unique users or event totals, the Segmentation Module for defining user segments, and Y-axis customization features including dual Y-axis support for line charts.
 
 **Keywords:**
 - Event Segmentation chart
@@ -17,3 +17,4 @@
 - Group segment by
 - Custom Y-axis modal
 - line charts
+- event filtering

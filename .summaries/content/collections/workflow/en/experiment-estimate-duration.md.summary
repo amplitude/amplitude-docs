@@ -10,12 +10,14 @@
 - confidence level
 - control mean
 - standard deviation
-- power
+- power analysis
 - minimum detectable effect (MDE)
 - 2-sided test
 - 1-sided test
 - proxy exposure event
-- primary metric
 - conversion metrics
+- numerical metrics
 - false positives
 - true positives
+- primary metric
+- Amplitude Experiment

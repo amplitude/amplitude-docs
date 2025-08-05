@@ -6,11 +6,11 @@
 - HTTP Basic authentication
 - app_id parameter
 - chart_id parameter
-- date annotation (YYYY-MM-DD)
-- global vs chart-specific annotations
-- POST annotation creation
-- GET annotation retrieval
-- Project ID
-- calendar date horizontal axis
-- feature release annotations
-- marketing campaign annotations
+- YYYY-MM-DD date format
+- global annotations
+- chart-specific annotations
+- annotation CRUD operations
+- Amplitude charts
+- calendar date annotations
+- POST annotations creation
+- GET annotations retrieval

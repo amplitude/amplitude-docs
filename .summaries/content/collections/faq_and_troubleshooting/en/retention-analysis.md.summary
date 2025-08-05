@@ -1,4 +1,4 @@
-**Summary:** This FAQ documentation covers calculation methods and troubleshooting for Amplitude's Retention Analysis chart, explaining weighted average calculations for "Return On" vs "Return On or After" retention types, asterisked incomplete data points, and common issues like upward retention curves and denominator changes.
+**Summary:** This FAQ documentation covers calculation methods and troubleshooting for Amplitude's Retention Analysis chart, explaining weighted average calculations, "Return On" vs "Return On or After" retention types, asterisked incomplete data periods, and common issues with retention curve interpretation.
 
 **Keywords:**
 - Retention Analysis chart
@@ -6,10 +6,11 @@
 - Return On retention
 - Return On or After retention
 - unique users counting
-- asterisked incomplete data points
+- asterisked incomplete data
 - retention curve upward trend
-- breakdown table user counts
+- breakdown table user totals
 - custom bracket feature
 - denominator changes over time
-- starting event and return event
 - 12 months/365 days data limit
+- starting event and return event
+- deduplicated user calculation

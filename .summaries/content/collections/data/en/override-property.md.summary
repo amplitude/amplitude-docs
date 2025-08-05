@@ -1,13 +1,12 @@
-**Summary:** Documents the process of overriding property definitions in Amplitude Data to customize properties for specific events or property groups without modifying the original shared property version, including step-by-step instructions for both event-level and property group-level overrides.
+**Summary:** This documentation explains how to override property definitions in Amplitude Data to customize properties for specific events or property groups without affecting the original shared property version, including step-by-step procedures for both event-level and property group-level overrides.
 
 **Keywords:**
-- property override
-- Amplitude Data
+- Amplitude Data property override
 - event property customization
-- property groups
-- original property version
-- event details panel
-- property definition inheritance
-- event properties table
 - property group override
-- shared property modifications
+- shared property definitions
+- event details panel
+- property groups table
+- override revert functionality
+- event properties table
+- property inheritance behavior

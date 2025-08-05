@@ -1,4 +1,4 @@
-**Summary:** Documents how to build a usage interval analysis in Amplitude, which measures time between return events (critical events) only, unlike standard retention analysis that measures time between starting and return events.
+**Summary:** This documentation explains how to build a usage interval analysis in Amplitude, which measures time between return events (critical events) only, unlike standard retention analysis that measures time between starting and return events.
 
 **Keywords:**
 - usage interval analysis
@@ -10,6 +10,6 @@
 - Segmentation Module
 - user segment
 - property filters
-- Performed event filters
-- tabular view results
+- Performed event criteria
+- tabular results view
 - Amplitude analytics

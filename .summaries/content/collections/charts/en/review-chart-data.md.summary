@@ -8,10 +8,9 @@
 - summary column
 - series selection
 - CSV export
-- chart data analysis
+- chart data visualization
 - Segmentation charts
 - User Sessions charts
-- breakdown by filtering
+- breakdown by dropdown
 - column sorting
-- data visualization
-- chart interaction
+- data table interaction

@@ -17,4 +17,4 @@
 - EnrichmentPlugin destination plugin
 - setGroup() organization grouping
 - EventOptions Amplitude fields
-- npm yarn installation
+- .prettierignore eslint-disable

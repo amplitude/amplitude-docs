@@ -5,17 +5,17 @@
 - AmplitudeSwift pod installation
 - Swift Package Manager Amplitude-Swift
 - Carthage Amplitude integration
-- Ampli CLI pull command
-- LoadOptions configuration
+- ampli pull command
 - strongly typed event tracking
-- SongPlayed event example
-- identify user properties
-- setGroup groupType groupName
-- EventOptions deviceId price quantity
-- flush queue management
+- LoadOptions configuration
+- Ampli.instance.load()
+- Ampli.instance.identify()
+- Ampli.instance.track()
+- SongPlayed event class
+- EventOptions deviceId
 - ampli status verification
 - Swift Objective-C tracking plan
-- @amplitude/ampli npm package
-- flushQueueSize flushInterval
-- Ampli.instance.client access
-- tracking plan code generation
+- Ampli CLI installation
+- flush() method implementation
+- setGroup() functionality
+- type-safe analytics events

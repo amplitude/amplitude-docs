@@ -1,26 +1,21 @@
 ## Summary
-This documentation page provides a comprehensive glossary of Amplitude analytics terminology, defining key concepts like user identification (Amplitude ID, Device ID, User ID), event tracking (events, event properties, inactive events), user metrics (active users, MTU, retention, stickiness), and session management with specific timeout intervals (5 minutes mobile, 30 minutes web).
+This documentation page defines core Amplitude analytics terminology including user identification systems (Amplitude ID, Device ID, User ID), event tracking concepts (events, event properties, sessions), user metrics (active users, MTU, retention), and platform-specific behaviors like session timeouts (5 minutes mobile, 30 minutes web).
 
 ## Keywords
 - Amplitude ID
 - Device ID (IDFV, Advertising Identifier)
 - User ID
-- Event ID
 - Event properties
 - User properties
-- Inactive events
+- Session timeout (5 minutes mobile, 30 minutes web)
 - Monthly tracked user (MTU)
 - Active user
-- Session timeout (5 minutes mobile, 30 minutes web)
-- Session ID (milliseconds since epoch UTC)
+- Inactive events
 - Behavioral cohort
-- Funnel
-- Retention
-- Stickiness
-- Amplitude Data
-- identifierForVendor (IDFV)
-- amplitude_id
-- Any Active Event
-- Any Event
-- Top Events for Segment
-- Top Global Events
+- Event ID counter
+- Session ID milliseconds epoch
+- Amplitude Data configuration
+- Retention metrics
+- Stickiness measurement
+- Funnel analysis
+- amplitude_id unique user counting

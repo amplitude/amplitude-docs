@@ -1,4 +1,4 @@
-**Summary:** Documentation for adding descriptions to events and properties in Amplitude analytics, covering active events in tracking plans, event properties (both global and event-specific), user properties, and group properties through the Events and Properties navigation interface.
+**Summary:** Documentation for adding descriptions to Amplitude events and properties through the UI, covering active events in tracking plans, event properties (both global and event-specific), user properties, and group properties with step-by-step navigation instructions.
 
 **Keywords:**
 - Amplitude event descriptions
@@ -6,9 +6,10 @@
 - User property descriptions
 - Group property descriptions
 - Global event property
-- Event-specific property
-- Active events tracking plan
-- Events Details panel
-- Properties navigation
-- Event property pairs
-- Amplitude analytics metadata
+- Event-specific property description
+- Tracking plan events
+- Active events only
+- Properties flyout panel
+- Event Properties navigation
+- User Properties navigation
+- Group Properties navigation

@@ -1,17 +1,16 @@
-**Summary:** This documentation describes the Datazoom source integration that sends raw, standardized video streaming events to Amplitude through a connector-based setup requiring API key configuration and Data Pipe creation in Datazoom's platform.
+**Summary:** This documentation describes the Datazoom integration for Amplitude, which enables video publishers to send raw, standardized video streaming events from Datazoom's real-time data pipeline into Amplitude for video analytics and viewer behavior insights.
 
 **Keywords:**
-- Datazoom source integration
-- video streaming events
-- raw-events integration type
-- Amplitude API key setup
-- Datazoom connector configuration
-- Data Pipe setup
-- video publisher data pipeline
-- streaming video analytics
-- Datazoom Data Collector
-- sampling rate configuration
-- redirect standard fields
-- real-time video data integration
-- distributed video architecture
+- Datazoom integration
+- video streaming analytics
+- raw video events
+- real-time video data pipeline
+- video publisher analytics
+- streaming video content data
+- Datazoom connector setup
+- video observability solutions
 - standardized video events
+- Data Pipe configuration
+- video session sampling
+- streaming architecture data
+- video viewer behavior tracking

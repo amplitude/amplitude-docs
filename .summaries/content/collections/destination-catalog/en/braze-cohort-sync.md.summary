@@ -1,4 +1,4 @@
-**Summary:** This documentation describes the Braze Cohort Sync destination integration that enables sending Amplitude cohorts to Braze using Data Import Key, REST API endpoint, and App Group REST API Key authentication, supporting one-time, scheduled, and real-time sync cadences with email notifications for job status.
+**Summary:** This documentation covers the Braze Cohort Sync destination integration that enables sending Amplitude cohorts to Braze using Data Import Key, REST API endpoint, and App Group REST API Key authentication, supporting one-time, scheduled, and real-time sync cadences with email notifications for job status.
 
 **Keywords:**
 - Braze cohort sync
@@ -7,12 +7,12 @@
 - App Group REST API Key
 - Braze endpoint configuration
 - User alias mapping
-- Cohort sync cadence
+- Cohort sync cadences
 - Real-time sync
 - Scheduled sync
 - Braze segments
 - Partner Integrations
 - User matching
 - Email notifications
-- Third-party destinations
+- Third-party cohort syncing
 - Marketing automation integration

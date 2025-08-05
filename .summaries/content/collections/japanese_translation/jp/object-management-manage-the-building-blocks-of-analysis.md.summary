@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's Object Management feature for centrally managing reusable analysis objects including custom events, metrics, and segments, with capabilities for creation, editing, bulk deletion, duplicate detection, and "official" designation workflows.
+**Summary:** This documentation covers Amplitude's Object Management feature for centrally managing reusable analysis objects including custom events, metrics, and segments, with capabilities for creating, updating, bulk deletion, and marking objects as "official" for validation.
 
 **Keywords:**
 - Amplitude Object Management
@@ -7,12 +7,11 @@
 - 指標 (metrics)
 - セグメント (segments)
 - コホート (cohorts)
-- 公式指定 (official designation)
+- 公式オブジェクト (official objects)
 - 一括削除 (bulk deletion)
-- 重複検出 (duplicate detection)
-- L30Dクエリボリューム (L30D query volume)
+- L30D query volume
+- object ownership permissions
+- duplicate object detection
 - チャートで開く (open in chart)
-- オブジェクトドロワー (object drawer)
-- 権限管理 (permission management)
-- 類似オブジェクト (similar objects)
-- Japanese translation documentation
+- object drawer interface
+- reusable building blocks

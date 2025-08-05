@@ -1,4 +1,4 @@
-**Summary:** This Japanese documentation explains how Amplitude calculates funnel conversions using first-touch attribution logic, covering scenarios with holding constant functions, split-by functions, unique user counting logic, and the differences between funnel analysis and event segmentation charts.
+**Summary:** This Japanese documentation explains Amplitude's funnel conversion calculation methodology, specifically covering first-touch attribution scenarios, unique user counting logic with earliest/longest conversion prioritization, and the differences between funnel analysis and event segmentation charts in terms of filter application and user journey measurement.
 
 **Keywords:**
 - Amplitude funnel conversion calculation
@@ -9,9 +9,10 @@
 - conversion window (コンバージョンウィンドウ)
 - lookback window (ルックバックウィンドウ)
 - unique user counting logic (ユニークユーザーカウントのロジック)
-- earliest/longest conversion (最先/最長のコンバージョン)
-- event totals counting
+- earliest/longest conversion (最先/最長コンバージョン)
+- event totals counting (イベント合計)
 - funnel vs event segmentation
 - user segmentation panel filtering
 - landing page attribution
+- conversion sequence prioritization
 - Japanese translation documentation

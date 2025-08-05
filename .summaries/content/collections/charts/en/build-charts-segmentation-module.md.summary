@@ -1,17 +1,17 @@
-**Summary:** This documentation covers advanced features of Amplitude's Segmentation Module for building complex user segments, including pasting comma-separated property values, renaming segments, creating inline behavioral cohorts with the "+ Performed" feature, and using historical count functionality in Event Segmentation charts.
+**Summary:** This documentation covers advanced features of Amplitude's Segmentation Module, including creating inline behavioral cohorts with the "+ Performed" clause, pasting comma-separated property values for bulk selection, renaming segments with complex property definitions, and using historical count functionality across Event Segmentation charts.
 
 **Keywords:**
 - Segmentation Module
-- behavioral cohorts
-- inline cohorts
-- + Performed feature
+- inline behavioral cohorts
+- + Performed clause
 - comma-separated property values
+- bulk property selection
 - segment renaming
 - Event Segmentation chart
 - historical count
 - user properties
-- property values dropdown
+- behavioral cohort creation
+- freeform value selection
 - Save Segment functionality
-- freeform values
+- property value dropdown
 - chart labels
-- user segments

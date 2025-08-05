@@ -1,18 +1,17 @@
-**Summary:** This documentation covers creating and managing public links for sharing Amplitude charts, dashboards, and notebooks with external stakeholders, including password protection, expiration settings, embed code generation for external documents, and enterprise-level permission controls for public link creation.
+**Summary:** This documentation covers creating and managing public links for sharing Amplitude charts, dashboards, and notebooks with external stakeholders, including password protection, expiration settings, embed code generation, and Slack integration features.
 
 **Keywords:**
 - public links (公開リンク)
 - external stakeholders sharing
-- charts dashboards notebooks
+- Amplitude charts dashboards notebooks
 - embed code generation
-- password protection
-- expiration settings
+- password protection expiration
 - content access management
-- enterprise plan permissions
-- unauthenticated users
-- WordPress Confluence Wiki embedding
+- Enterprise plan permissions
 - Slack visual link expansion
-- 404 redirect
-- 10-minute caching
-- content ownership permissions
+- unauthenticated user access
+- WordPress Confluence Wiki embedding
 - cohort sharing
+- 404 redirect disabled links
+- content owner administrator permissions
+- 10-minute chart caching

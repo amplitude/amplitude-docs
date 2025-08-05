@@ -1,4 +1,4 @@
-**Summary:** This documentation page provides an overview of in-product guides functionality, explaining their behavioral triggers, strike detection, and rate-limiting mechanisms, along with available guide templates including Tours, Announcements, Checklists, Banners, and Tooltips.
+**Summary:** This documentation page provides an overview of in-product guides functionality, explaining their behavioral triggers, strike detection, and rate-limiting mechanisms, along with available guide templates including tours, announcements, checklists, banners, and tooltips.
 
 **Keywords:**
 - in-product guides
@@ -6,12 +6,11 @@
 - strike detection
 - rate-limiting mechanisms
 - guide templates
-- Tours template
-- Announcements template
-- Checklists template
-- Banners template
-- Tooltips template
+- tour template
+- announcement template
+- checklists template
+- banners template
+- tooltips template
 - guides_and_survey blueprint
-- landing_blurb
-- step-by-step instructions
-- product onboarding
+- user nudging
+- task completion guidance

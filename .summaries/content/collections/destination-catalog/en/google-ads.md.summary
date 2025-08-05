@@ -1,15 +1,13 @@
-**Summary:** This documentation covers Amplitude Data's Google Ads event streaming integration that uses the Google Ads Upload Click Conversions API to stream Amplitude events directly to Google Ads, requiring Google Click ID (gclid) and Conversion Date Time properties for conversion tracking and attribution.
+**Summary:** This documentation covers Amplitude's Google Ads event streaming integration that uses the Google Ads Upload Click Conversions API to stream Amplitude event data to Google Ads, requiring gclid parameters and Google Cloud Service Account authentication for conversion tracking.
 
 **Keywords:**
 - Google Ads event streaming integration
 - Upload Click Conversions API
-- Google Click ID (gclid) parameter
-- Conversion Date Time properties
+- gclid parameter tracking
 - Google Cloud Service Account authentication
 - Google Ads Customer ID configuration
-- Google Ads Conversion Action ID
-- domain-wide delegation OAuth scope
-- conversion tracking attribution
-- Amplitude event_type mapping
-- offline conversion recording
-- ad click attribution
+- Conversion Action ID mapping
+- domain-wide delegation OAuth
+- click conversion tracking
+- Amplitude event streaming destination
+- Google Ads conversion attribution

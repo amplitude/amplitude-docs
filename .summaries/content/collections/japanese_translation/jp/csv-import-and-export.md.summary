@@ -1,4 +1,4 @@
-**Summary:** This documentation covers CSV import and export functionality for Amplitude Data tracking plan schemas, including bulk operations for downloading/uploading event types, event properties, and user properties, with specific workflows for bulk approval/blocking of schema elements using status columns.
+**Summary:** This documentation covers CSV import and export functionality for Amplitude Data tracking plan schemas, including bulk operations for approving/blocking events and properties by modifying schema status columns (unexpected, added, deleted, blocked) and uploading modified CSV files.
 
 **Keywords:**
 - Amplitude Data
@@ -6,13 +6,14 @@
 - tracking plan schema
 - bulk schema operations
 - event types
-- event properties  
+- event properties
 - user properties
 - schema status columns
-- bulk approval blocking
+- unexpected events
+- added events
+- deleted events
+- blocked events
 - taxonomy CSV
-- イベントスキーマステータス (event schema status)
-- プロパティスキーマステータス (property schema status)
-- Japanese translation documentation
-- schema download upload
-- unexpected events approval
+- schema approval workflow
+- イベントスキーマステータス
+- プロパティスキーマステータス

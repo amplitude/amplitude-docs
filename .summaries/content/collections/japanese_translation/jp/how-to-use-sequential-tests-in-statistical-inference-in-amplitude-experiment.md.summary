@@ -24,15 +24,13 @@ This documentation explains how Amplitude Experiment uses sequential testing (sp
 - relative lift
 - confidence intervals
 - statistical power
-- type 1 error
-- randomized controlled trials
+- early stopping
 - treatment variants
 - control variants
+- randomized controlled trials
 - likelihood ratio
-- p-value calculations
-- early experiment termination
+- type 1 error
+- statistical significance
+- conversion rates
 - novelty effects
-- conversion lag analysis
-- funnel charts
-- variant allocation
-- symmetric temporal changes
+- funnel analysis

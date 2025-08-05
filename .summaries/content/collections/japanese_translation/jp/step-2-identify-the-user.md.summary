@@ -4,15 +4,14 @@
 - Amplitude user identification
 - device ID
 - Amplitude ID  
-- user ID setup
-- Japanese translation
-- instrumentation series
+- user ID (ユーザーID)
+- Japanese translation (jp)
 - user tracking
 - anonymous events merging
 - cross-device event correlation
 - user ID immutability
 - case sensitivity
-- backend data merging
+- instrumentation setup
 - unique user identification
-- account creation tracking
-- login tracking
+- backend event merging
+- user profile creation

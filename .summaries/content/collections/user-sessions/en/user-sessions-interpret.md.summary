@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to interpret User Sessions charts in Amplitude, covering chart visualization with segmentation by properties like Country and Carrier, the breakdown table with CSV export functionality, and three distinct session recording methods (server-side via HTTP API v2 with session_id, client-side mobile with 5-minute timeout, client-side web with 30-minute timeout).
+**Summary:** This documentation explains how to interpret User Sessions charts in Amplitude, covering chart visualization with segmentation by properties like Country and Carrier, the breakdown table for session/event data, and three session recording methods (server-side via HTTP API v2 with session_id, client-side mobile with 5-minute timeout, client-side web with 30-minute timeout).
 
 **Keywords:**
 - User Sessions chart interpretation
@@ -7,9 +7,9 @@
 - client-side web 30-minute session timeout
 - breakdown table segmentation
 - property filters before session filters
-- CSV export functionality
-- Carrier and Country segmentation
-- out-of-session events session ID -1
+- Add to Cart event sessions
+- Country and Carrier segmentation
+- out-of-session flag -1
 - custom session property
-- session length calculation
-- Add to Cart event filtering
+- milliseconds since epoch session tracking
+- Export CSV session data

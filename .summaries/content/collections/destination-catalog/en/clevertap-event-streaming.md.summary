@@ -1,17 +1,18 @@
-**Summary:** This documentation describes the Amplitude to CleverTap event streaming integration that forwards user events and properties from Amplitude to CleverTap in real-time, requiring CleverTap Account ID, Passcode, and Region configuration with support for event filtering and user property mapping.
+**Summary:** This documentation describes the Amplitude to CleverTap event streaming destination integration that forwards Amplitude events and user properties to CleverTap in real-time, requiring CleverTap Account ID, Passcode, and Region configuration with support for event filtering and user property mapping.
 
 **Keywords:**
-- CleverTap event streaming integration
-- Amplitude to CleverTap data forwarding
-- CleverTap Account ID and Passcode authentication
+- CleverTap event streaming destination
+- Amplitude to CleverTap integration
+- CleverTap Account ID and Passcode
 - CleverTap Region configuration (aps3, eu1, in1, sg1, mec1, us1)
-- Real-time event streaming destination
-- User property mapping to CleverTap identity
+- Real-time event forwarding
+- User property mapping
 - Event filtering and selection
+- CleverTap identity mapping
 - 2MB request size limit
-- 429 response handling
+- 429 rate limiting responses
 - Send users toggle
 - Send events toggle
-- Retention cloud integration
-- Customer engagement campaigns
 - Transformed events not supported
+- Customer retention campaigns
+- Churn prevention analytics

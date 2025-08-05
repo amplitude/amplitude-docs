@@ -10,6 +10,9 @@
 - Export API JSON format
 - Identify Forwarding
 - sts:AssumeRole
-- user_id event_name created_at
-- arn:aws:iam role format
+- stream region configuration
+- role ARN format
 - iam:SimulatePrincipalPolicy
+- user_id event_name created_at
+- Trust Relationships policy
+- AWS Kinesis stream setup

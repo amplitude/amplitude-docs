@@ -11,4 +11,5 @@
 - project timezone settings
 - Event Segmentation chart
 - data discrepancies
-- event totals comparison
+- event totals
+- date range filtering

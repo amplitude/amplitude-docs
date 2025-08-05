@@ -1,16 +1,17 @@
-**Summary:** This documentation covers Amplitude's settings page interface in Japanese, detailing organization-level configurations, personal profile settings, notification management for Slack/email, event volume limits and alerts, CSV export options, and annual activity review features accessible through the settings icon.
+**Summary:** This Japanese documentation page describes Amplitude's settings page interface, covering organization-wide settings, personal profile configuration, notification management, and annual review features accessible through the settings icon.
 
 **Keywords:**
 - Amplitude settings page
 - Japanese translation documentation
-- Organization admin permissions
-- Event volume limits and alerts
+- Organization settings configuration
+- User profile management
+- Event volume limits tracking
 - Slack integration settings
-- CSV export leading whitespace removal
-- Personal profile configuration
-- Notification management
+- Email notification preferences
+- CSV export whitespace removal
 - Annual activity review
-- Organization ID and URL settings
-- SSO and identity provider management
-- User privacy notifications
-- Content access control
+- Admin manager permissions
+- SSO identity provider settings
+- Event usage alerts
+- Site customization toggles
+- Collaboration notifications

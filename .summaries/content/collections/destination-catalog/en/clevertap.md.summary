@@ -1,14 +1,16 @@
-**Summary:** This documentation describes the CleverTap (Cohort Sync) destination integration that allows sending Amplitude audience cohorts to CleverTap for personalized messaging campaigns, requiring Account ID, Account Pass code, region selection, and user ID mapping configuration.
+**Summary:** This documentation covers the CleverTap destination integration for syncing Amplitude cohorts to CleverTap's retention cloud platform, requiring Account ID and Account Pass code authentication with region selection and user ID mapping configuration.
 
 **Keywords:**
 - CleverTap cohort sync
-- Amplitude destination integration
-- Account ID and Account Pass code authentication
+- retention cloud integration
+- Account ID authentication
+- Account Pass code
 - CleverTap region selection
-- User ID mapping (Amplitude to CleverTap User ID, Anonymous ID)
-- Cohort sync cadence configuration
-- Retention cloud messaging
-- Personalized engagement campaigns
-- A/B testing with cohort data
-- Paid plan requirement
-- Project-level integration enablement
+- user ID mapping
+- Anonymous ID mapping
+- CleverTap User ID
+- cohort sync cadence
+- messaging destination
+- personalized campaigns
+- retention analysis
+- A/B testing cohorts

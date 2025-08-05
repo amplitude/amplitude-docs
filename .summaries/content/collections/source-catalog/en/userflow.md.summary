@@ -8,9 +8,8 @@
 - onboarding behavior analysis
 - raw-events integration type
 - cohorts integration type
-- behavioral analytics
-- user segmentation
+- behavioral analytics segmentation
 - customer-engagement category
-- bidirectional data flow
-- staging/production environment separation
-- partner-maintained integration
+- bidirectional data streaming
+- environment separation (staging/production)
+- no-code user experience tools

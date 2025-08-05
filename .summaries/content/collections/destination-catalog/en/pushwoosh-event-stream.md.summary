@@ -1,18 +1,17 @@
-**Summary:** Documents the Pushwoosh Event Stream destination integration that streams Amplitude events and user properties to Pushwoosh for push notifications, in-app messages, and cross-channel campaigns, requiring Pushwoosh API Key and App Code with 2MB request size limits and 429 error handling.
+**Summary:** This documentation covers the Pushwoosh Event Stream destination integration that streams user events and properties from Amplitude to Pushwoosh in real-time for push notifications, in-app messages, and cross-channel campaigns, requiring API Key, App Code, and user ID mapping configuration.
 
 **Keywords:**
 - Pushwoosh Event Stream destination
-- event-streaming integration
-- customer-engagement platform
-- push notifications
-- in-app messages
-- cross-channel campaigns
-- Pushwoosh API Key
-- Pushwoosh App Code
-- 2MB request limit
-- 429 error handling
-- real-time user property sync
-- behavioral triggered messages
+- real-time event streaming integration
+- push notifications and in-app messaging
+- Pushwoosh API Key and App Code authentication
+- user property mapping and user ID correspondence
+- behavioral triggered campaigns
+- Create & Update users toggle
+- Send Events configuration
+- 2MB request size limit
+- 429 rate limiting handling
+- customer engagement destination
+- cross-channel triggered campaigns
+- personalized push notifications
 - transformed events not supported
-- user property mapping
-- cart abandonment campaigns

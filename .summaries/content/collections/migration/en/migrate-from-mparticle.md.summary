@@ -3,15 +3,19 @@
 **Keywords:**
 - mParticle migration
 - Amplitude CDP migration
-- SDK implementation migration
+- SDK implementation updates
 - Browser SDK 2
 - iOS Swift SDK
 - Android Kotlin SDK
 - Sources and Destinations configuration
-- Identify, Track, Group methods
-- Event validation
-- Data connections migration
-- API key vs app_key
-- Project vs Workspace mapping
+- Identity/Identify mapping
+- Event tracking migration
+- Group functionality
+- Data validation tools
 - Migration checklist
-- Multi-environment deployment
+- mParticle Connections
+- Amplitude Analytics
+- Customer Data Platform
+- Multi-environment configuration
+- Tracking plan updates
+- Downstream data consumers

@@ -19,6 +19,6 @@ This migration guide documents the upgrade from Flutter SDK 3.0 to 4.0, covering
 - minIdLength configuration
 - HTTP V2 API endpoint migration
 - sessionId -1 outOfSession
-- DefaultTrackingOptions sessions
-- serverZone ServerZone.eu
 - flushQueueSize flushIntervalMillis
+- DefaultTrackingOptions sessions
+- serverZone serverUrl configuration

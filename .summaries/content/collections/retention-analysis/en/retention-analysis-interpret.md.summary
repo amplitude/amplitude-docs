@@ -10,9 +10,8 @@
 - starting event and return event
 - user cohort analysis
 - retention calculation methods
-- custom retention brackets
+- custom time brackets
 - Microscope feature integration
 - 24-hour windows vs calendar dates
-- retention data table breakdown
 - weighted averages retention
-- usage interval view
+- incomplete data asterisk indicators

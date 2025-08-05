@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Google Cloud Storage destination integration for Amplitude, detailing the setup process including GCS service account creation with required storage permissions, recurring data export configuration for raw events and merged user IDs, manual backfill capabilities, and the specific JSON schema formats for exported event data and merged Amplitude ID files.
+**Summary:** This documentation covers the Google Cloud Storage destination integration for Amplitude, detailing the setup process including GCS service account creation with required storage permissions, recurring data export configuration for raw events and merged user IDs, manual backfill capabilities, and the specific JSON schema formats for exported hourly partitioned files.
 
 **Keywords:**
 - Google Cloud Storage (GCS)
@@ -6,17 +6,15 @@
 - storage.buckets.get
 - storage.objects.create
 - JSON format export
-- merged Amplitude IDs
+- hourly data partitioning
 - raw events export
-- hourly data sync
+- merged Amplitude IDs
+- server_upload_time
+- amplitude_id
+- projectID_yyyy-MM-dd_H#partitionInteger.json.gz
+- zipped archive JSON
 - backfill functionality
-- server_upload_time partitioning
-- zipped archive JSON files
-- amplitude_id schema
-- merged_amplitude_id
-- projectID file naming
 - storage admin role
 - bucket policies
-- event_properties schema
-- user_properties schema
-- UTC ISO-8601 timestamp
+- recurring sync
+- event filtering conditions

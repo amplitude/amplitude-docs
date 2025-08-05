@@ -7,8 +7,7 @@
 - unlisted items `is:unlisted` parameter
 - official content blue checkmark
 - search filters: archived, templates, spaces, item types, editors, projects, last edited date
-- manager administrator permissions
-- discoverable/non-discoverable items
+- manager administrator permissions unlisted content
 - real-time search results
+- discoverable/non-discoverable items
 - Japanese translation documentation
-- user roles permissions integration

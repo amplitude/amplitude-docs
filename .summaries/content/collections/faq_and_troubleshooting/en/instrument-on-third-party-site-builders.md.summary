@@ -6,11 +6,9 @@
 - Squarespace Code Injection
 - Squarespace Code Block
 - JavaScript SDK snippet
-- header placement
-- body placement
+- header code placement
 - logEvent calls
 - user properties
 - webhooks HTTP v2 API
 - custom code embedding
-- site-wide code injection
-- per-page code injection
+- site builder instrumentation

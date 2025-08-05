@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to change an event's activity status between active and inactive in Amplitude, which affects whether events count toward active user metrics and dashboard calculations, with changes applied immediately and retroactively to historical data.
+**Summary:** This documentation explains how to change an event's activity status between active and inactive in Amplitude, which affects active user metrics and dashboard calculations, with changes applied immediately and retroactively to historical data.
 
 **Keywords:**
 - event activity status

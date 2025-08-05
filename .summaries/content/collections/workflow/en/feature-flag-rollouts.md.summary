@@ -8,12 +8,12 @@ This documentation explains how to create and deploy feature flags in Amplitude 
 - deployment configuration
 - bucketing unit selection
 - remote vs local evaluation mode
-- variant creation and weights
+- variant creation and weighting
 - user segment targeting
 - rollout percentage controls
-- bucketing salt
+- bucketing salt configuration
+- rule-based user segments
 - flag activation process
-- Rule Based User Segments
 - Optimizely flag migration
 - experiment SDK integration
 - evaluation REST API

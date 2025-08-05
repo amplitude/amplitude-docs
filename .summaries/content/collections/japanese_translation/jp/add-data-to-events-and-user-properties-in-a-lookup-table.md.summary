@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's lookup table feature for enriching events and user properties by mapping imported CSV data to ingested properties, including creation, updating, and deletion processes in Amplitude Data with specific limitations of 100MB/1M rows.
+**Summary:** This documentation covers Amplitude's lookup table feature for enriching events and user properties by mapping imported CSV data to ingested properties, including setup, updates, and deletion processes for lookup tables in Amplitude Data.
 
 **Keywords:**
 - Amplitude lookup table
@@ -11,6 +11,7 @@
 - Amplitude Data source configuration
 - closed beta feature
 - Enterprise plan Govern addon
-- exact match case-sensitive mapping
-- 100MB 1M row limitations
-- Japanese translation documentation
+- 100MB 100万行 limit
+- case-sensitive exact matching
+- プロパティ値 bulk changes
+- データエンリッチ functionality

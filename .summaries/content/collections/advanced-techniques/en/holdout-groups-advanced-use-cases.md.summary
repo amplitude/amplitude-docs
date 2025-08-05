@@ -7,8 +7,8 @@
 - traffic distribution
 - experiment traffic allocation
 - holdout percentage
-- traffic limits
 - Amplitude Experiment
-- experiment evaluation
+- traffic limits
+- experiment rollout
+- user evaluation
 - multiplicative traffic reduction
-- slot-based traffic splitting

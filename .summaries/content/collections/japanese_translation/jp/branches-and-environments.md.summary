@@ -1,7 +1,7 @@
-## Summary
-This Japanese documentation page explains Amplitude Data's branch and environment system for tracking plans, covering branch creation, version publishing, environment-specific actions, and merging workflows back to the main branch.
+**Summary:**
+This Japanese documentation explains Amplitude Data's branch and environment system for tracking plans, covering branch creation, version publishing, environment-specific actions, and merging branches back to main.
 
-## Keywords
+**Keywords:**
 - Amplitude Data
 - tracking plan branches
 - Japanese translation

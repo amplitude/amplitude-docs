@@ -1,18 +1,19 @@
-**Summary:** This documentation covers the HubSpot-Amplitude integration quickstart guide, detailing setup steps for tracking user behavior, syncing cohorts to HubSpot, configuring product-qualified lead (PQL) scoring, automating outreach workflows, and embedding Amplitude charts in HubSpot dashboards.
+**Summary:** This documentation covers the HubSpot-Amplitude integration quickstart guide, detailing the setup process for tracking user behavior, syncing cohorts to HubSpot, configuring product-qualified lead (PQL) scoring, and embedding Amplitude charts in HubSpot dashboards for behavioral analytics and lead management.
 
 **Keywords:**
 - HubSpot integration
-- Amplitude tracking code snippet
-- cohort sync destination
+- Amplitude tracking
+- cohort sync
 - product-qualified lead (PQL) scoring
-- HubSpot workflow automation
+- behavioral insights
+- lead scoring tool
+- HubSpot workflows
 - Session Replay
 - Autocapture
-- behavioral cohorts
-- lead scoring tool
-- HubSpot App Marketplace
-- chart embedding
-- workflow enrollment triggers
 - HubSpot Enterprise plan
-- CMS integration
-- dashboard external content
+- workflow enrollment triggers
+- external content embedding
+- chart URL format
+- HubSpot App Marketplace
+- behavioral cohorts
+- destination catalog

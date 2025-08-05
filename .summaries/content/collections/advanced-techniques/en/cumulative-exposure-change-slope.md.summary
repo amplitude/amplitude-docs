@@ -1,18 +1,19 @@
 ## Summary
-This documentation explains how to interpret cumulative exposure graphs in Amplitude Experiment, specifically focusing on increasing slopes (steady growth) and decreasing slopes (slowing exposure rates over time), including analysis of static cohorts, sticky bucketing effects, and duration estimation implications.
+This documentation explains how to interpret cumulative exposure graphs in Amplitude Experiment, specifically focusing on increasing slopes (steady growth) and decreasing slopes (slowing exposure rates over time), including causes like static cohorts and implications for experiment duration estimation.
 
 ## Keywords
 - cumulative exposures graph
 - Amplitude Experiment
-- exposure events
 - increasing slope
 - decreasing slope
+- exposure events
+- experiment variants
 - static cohorts
 - sticky bucketing
 - duration estimator
-- variant exposure rates
-- experiment targeting
-- hourly versus daily analysis
-- step function patterns
-- sample size calculation
-- exposure flattening
+- sample size calculator
+- hourly versus daily settings
+- incomplete data dotted lines
+- step function exposures
+- steady state users
+- traffic allocation

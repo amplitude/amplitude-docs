@@ -1,17 +1,17 @@
-**Summary:** This documentation covers Amplitude Experiment's performance metrics and CDN caching behavior for both remote and local evaluation modes, including latency benchmarks across geographic regions, cache TTL of 60 minutes, cache invalidation on deployment changes, and dynamic targeting considerations for user properties and behavioral cohorts.
+**Summary:** This documentation covers Amplitude Experiment's performance metrics and CDN caching behavior for both remote and local evaluation modes, including latency benchmarks across geographic regions, cache hit/miss performance data, TTL settings, cache invalidation rules, and dynamic targeting considerations for user properties and behavioral cohorts.
 
 **Keywords:**
 - Amplitude Experiment evaluation modes
-- remote evaluation performance
-- local evaluation benchmarks
-- Fastly CDN caching
-- cache TTL 60 minutes
-- cache invalidation deployment
-- us-west-2 eu-central-1 data centers
-- dynamic targeting cache considerations
-- behavioral cohorts hourly computation
-- Node.js Go JVM SDK performance
-- cache hit miss latency
-- user properties caching
-- deployment flag updates
-- geographic latency metrics
+- Remote evaluation CDN caching
+- Local evaluation performance benchmarks
+- Fastly CDN cache hits/misses
+- Geographic latency metrics (us-west-2, eu-central-1)
+- 60-minute TTL cache expiration
+- Cache invalidation on deployment updates
+- Dynamic targeting cache considerations
+- Behavioral cohorts hourly computation
+- User properties cache staleness
+- SDK performance (Node.js, Go, JVM)
+- Flag configuration pre-fetching
+- Cache key user information
+- Deployment-based cache invalidation

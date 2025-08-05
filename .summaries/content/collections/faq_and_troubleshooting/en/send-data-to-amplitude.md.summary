@@ -1,4 +1,4 @@
-**Summary:** This FAQ documentation covers Amplitude's data ingestion limits and event volume management, including monthly event volume calculations, the 2000 event type per project limit, and strategies for reducing usage through blocking/deleting events and properties.
+**Summary:** This FAQ documentation covers Amplitude's data ingestion limits and event volume management, including monthly event volume calculations, the 2000 event type per project limit, and methods to reduce usage through blocking/deleting events and properties.
 
 **Keywords:**
 - monthly event volume limit
@@ -16,3 +16,5 @@
 - Amplitude Data
 - calendar month basis
 - per-project limits
+- blocked user IDs
+- device IDs filtering

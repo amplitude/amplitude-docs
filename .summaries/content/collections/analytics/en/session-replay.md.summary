@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's Session Replay feature for web applications, which provides qualitative user session recordings that sync with event streams and can be accessed through charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions), User Lookup, or the homepage widget, with 90-day default retention and limitations including no support for custom session definitions, canvas elements, or mobile native apps.
+**Summary:** This documentation covers Amplitude's Session Replay feature for web applications, which provides qualitative user session recordings that sync with event streams and can be accessed through charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions), User Lookup, or the homepage widget, with 90-day default retention and limitations including web-only support and exclusion of canvas/WebGL elements.
 
 **Keywords:**
 - Session Replay
@@ -11,11 +11,13 @@
 - Journeys Pathfinder
 - User Sessions charts
 - Session Replay ID property
-- Web applications only
-- Custom session definitions unsupported
+- Web application recordings
 - Canvas WebGL limitations
 - 90-day retention period
 - Growth Enterprise plans
 - Autocapture events
 - Page Viewed Element Clicked
-- Account-level reporting excluded
+- Custom session definitions unsupported
+- Homepage widget
+- Qualitative insights
+- Session replay modal

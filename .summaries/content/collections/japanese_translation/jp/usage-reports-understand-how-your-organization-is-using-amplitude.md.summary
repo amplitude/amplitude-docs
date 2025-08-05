@@ -1,5 +1,5 @@
 **Summary:**
-This documentation explains Amplitude's Usage Reports feature for Enterprise and Growth plan customers, covering user metrics tracking (active users, engagement depth, learning content sharing) and event usage analytics across organizational projects, with export capabilities for PDF/PNG reports and CSV/JSON event usage data.
+This documentation explains Amplitude's Usage Reports feature for Enterprise and Growth plan customers, covering user metrics tracking (active users, engagement depth, learning content sharing) and event usage reporting across organizational projects with CSV/JSON export capabilities.
 
 **Keywords:**
 - Usage Reports
@@ -8,12 +8,12 @@ This documentation explains Amplitude's Usage Reports feature for Enterprise and
 - active users engagement
 - learning content sharing
 - weekly learning users
-- event usage analytics
+- event usage reporting
 - cross-project view
 - query counting
 - CSV JSON export
 - organizational analytics
-- project-level usage
+- admin manager permissions
 - content usage panels
 - KPI metrics
-- admin manager permissions
+- chart dashboard notebook usage

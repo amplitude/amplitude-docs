@@ -14,12 +14,7 @@ This documentation covers Amplitude analytics platform setup including instrumen
 - sessionTimeout
 - minTimeBetweenSessions
 - eventUploadThreshold
-- insert_id
-- session_id
+- HTTP API session_id insert_id
 - Identify API
-- Third-party integrations (Segment, mParticle, Tealium)
-- User ID tracking
-- Device ID tracking
-- Amplitude ID
-- Testing project setup
-- Production environment separation
+- Device IDs user IDs
+- Third-party integrations Segment mParticle Tealium

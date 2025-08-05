@@ -8,8 +8,9 @@
 - contextual guides
 - user activation analysis
 - guide engagement metrics
+- Identity ID matching
+- product-led onboarding
 - everboarding
-- Identity ID mapping
-- user_id synchronization
-- onboarding step correlation
 - guide progress events
+- step auto-completion
+- user_id synchronization
