@@ -54,6 +54,7 @@ jobs:
           --sitemap-path /docs/sitemap-docs.xml \
           --output markdown-issues.json \
           --concurrency 5 \
+          --ignore-file .crawlerignore \
           --verbose
       continue-on-error: true
       id: crawler
@@ -127,7 +128,8 @@ jobs:
 
     # Slack Notifications
     - name: Send Slack Summary
-      if: always() && (github.event_name == 'push' || github.event_name == 'schedule') && secrets.SLACK_WEBHOOK_URL
+      if: always() && (github.event_name == 'push' || github.event_name == 'schedule')
+      continue-on-error: true
       uses: 8398a7/action-slack@v3
       with:
         status: custom
@@ -174,7 +176,8 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     - name: Send Detailed Slack Report
-      if: always() && steps.crawler.outcome == 'failure' && (github.event_name == 'push' || github.event_name == 'schedule') && secrets.SLACK_WEBHOOK_URL
+      if: always() && steps.crawler.outcome == 'failure' && (github.event_name == 'push' || github.event_name == 'schedule')
+      continue-on-error: true
       uses: actions/github-script@v7
       with:
         script: |
