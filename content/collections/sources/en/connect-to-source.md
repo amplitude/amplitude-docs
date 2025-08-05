@@ -23,12 +23,12 @@ The *Sources* panel includes two tabs, *Sources List* and *Ingestion Debugge
 
 The *Sources List* tab shows you a list of the active data sources for a project, the activity status of each source, and the event volume sent from that source in the last 30 days. 
 
-The Ingestion Debugger is a trio of charts showing data for successful requests, events and identify counts, and error requests for the endpoints you specify. You can specify a timeframe of either the last 3 hours or the last 90 days.
+The Ingestion Debugger is a trio of charts showing data for successful requests, events and identify counts, and error requests for the endpoints you specify. You can specify a time frame of either the last 3 hours or the last 90 days.
 
 Below the Ingestion Debugger is the list of throttled users and devices. Here you can see a list of which users and device IDs have been throttled in the last 30 minutes, as well as a list of silenced device IDs.
 
 {{partial:admonition type='note'}}
- Throttled user IDs and device IDs will only appear in the Ingestion Debugger for users with Manager permissions or higher. User with Member and Viewer permissions will not see anything in this section.
+ Throttled user IDs and device IDs will only appear in the Ingestion Debugger for users with Manager permissions or higher. User with Member and Viewer permissions won't see anything in this section.
 {{/partial:admonition}}
 
 ## Add a data source
