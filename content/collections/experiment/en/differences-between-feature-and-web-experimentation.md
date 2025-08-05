@@ -25,8 +25,8 @@ Web experiments use pages to control where your experiments variants apply on yo
 The following tables describe which Experiment functionality is available for Feature experimentation, Web experimentation, or both: 
 
 {{partial:collapse name="Planning"}}
-|  |  |  |  |  |
-| --- | --- | --- | --- | --- |
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
 | Client-side or Server-side implementation | X |  |  |
 | Local or remote evaluation |  |   | X |
@@ -48,6 +48,7 @@ The following tables describe which Experiment functionality is available for Fe
 | Proxy Exposure | X |  |   |
 | **Bucketing Salt** |  |   |   |
 | Bucketing salt  |  X |  |   |
+
 {{/partial:collapse}}
 
 
@@ -69,12 +70,11 @@ The following tables describe which Experiment functionality is available for Fe
 | Traffic estimate per day | X |  |   |
 | Control mean estimator | X  |   |   |
 | Power duration estimator | X |  |   |
+
 {{/partial:collapse}}
 
-This is an interrupting sentence to break apart the collapsed sections...
-
 {{partial:collapse name="Experiment types"}}
-
+|  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
 | A/B |  |  | X |
@@ -84,7 +84,7 @@ This is an interrupting sentence to break apart the collapsed sections...
 
 {{partial:collapse name="Goals"}}
 
-|  |  |  |  |  |
+x
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** | **Both** |
 | Primary Metric |  |  | X |
