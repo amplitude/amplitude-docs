@@ -2,46 +2,55 @@ Amplitude Experiment is a comprehensive behavioral experimentation and feature f
 
 ## Core Product Architecture
 
-The platform operates on a hierarchical data model consisting of organizations, projects, deployments, flags/experiments, variants, and users. Deployments serve as the primary configuration layer, available in client-side and server-side types, each with unique deployment keys for SDK authentication. The system supports two primary evaluation modes: remote evaluation for advanced targeting capabilities and local evaluation for sub-millisecond performance.
+Amplitude Experiment operates on a hierarchical data model consisting of organizations, projects, deployments, flags/experiments, variants, and users. The platform offers two primary evaluation modes:
 
-Remote evaluation leverages Amplitude's evaluation servers to provide sophisticated targeting features including Amplitude ID resolution, IP geolocation, property canonicalization, cohort membership targeting, and user enrichment using historical analytics data. Local evaluation runs the evaluation logic directly within SDKs, achieving sub-millisecond performance but with limited targeting capabilities compared to remote evaluation.
+**Remote Evaluation** provides advanced targeting capabilities by fetching variants from Amplitude's evaluation servers, supporting Amplitude ID resolution, IP geolocation, property canonicalization, cohort membership targeting, and user enrichment using historical analytics data. This mode enables sticky bucketing and comprehensive user targeting but requires network requests.
+
+**Local Evaluation** runs evaluation logic directly within SDKs, achieving sub-millisecond performance by eliminating network requests. However, it has limited targeting capabilities compared to remote evaluation, lacking Amplitude ID resolution, user enrichment, and sticky bucketing features.
 
 ## Key Features and Capabilities
 
-The platform distinguishes between feature flags and experiments, where experiments include statistical analysis and hypothesis testing while feature flags focus purely on progressive feature delivery. Experiments support multiple statistical models including sequential testing and T-test analysis, with comprehensive metrics tracking through primary success metrics, secondary metrics, and guardrail metrics.
+The platform supports comprehensive **A/B testing workflows** including hypothesis formation, metric selection (primary success metrics, secondary metrics, and guardrail metrics), variant creation with JSON payloads, and statistical analysis using either sequential testing or T-test models. Experiments can be bucketed by user, organization, or custom identifiers like company_id through the Accounts add-on.
 
-Variant management utilizes a sophisticated bucketing system with consistent hashing using murmur3 algorithms, bucketing salt for randomization, and allocation percentages for traffic distribution. The evaluation process includes pre-targeting steps such as flag dependencies, mutual exclusion groups, holdout groups, sticky bucketing, and individual inclusions before final variant assignment.
+**Feature flags** enable progressive feature delivery without metrics tracking, allowing teams to control feature rollouts through variant assignment and payload-based configuration. Both client-side and server-side deployments are supported with distinct deployment keys and evaluation modes.
 
-## Targeting and Segmentation
+**Cohort targeting** integrates with Amplitude Analytics through hourly synchronization, supporting both static and dynamic user cohorts. Remote evaluation syncs to the Amplitude Experiment destination, while local evaluation requires the Experiment Local Evaluation destination and server-side SDK support with user IDs.
 
-Amplitude Experiment provides extensive targeting capabilities through user segments, cohort targeting, and dimensional analysis. Cohort targeting supports both static and dynamic user cohorts with hourly synchronization to either the Amplitude Experiment destination (remote evaluation) or Experiment Local Evaluation destination (local evaluation, server-side SDKs only). The platform includes dimensional analysis features for filtering QA users and internal traffic from experiment results.
+## Statistical Analysis and Measurement
 
-## Analysis and Monitoring
+The **Analysis view** provides comprehensive statistical measurements including relative performance lift calculations, confidence intervals, statistical significance (p-values), and absolute value conversions. The platform supports advanced statistical techniques like CUPED variance reduction, sequential testing, and Bonferroni correction for multiple comparison adjustments.
 
-The Analysis view provides comprehensive statistical measurements including relative performance lift calculations, confidence intervals, statistical significance p-values, and absolute value conversions. The platform supports CUPED variance reduction, Bonferroni correction for multiple comparisons, and sample ratio mismatch (SRM) detection to ensure experiment validity.
+**Dimensional Analysis** enables filtering of QA users and internal traffic from experiment results through the "Exclude testers" functionality, allowing teams to analyze clean user segments and maintain statistical significance.
 
-Notification systems integrate with Slack channels and webhooks for real-time alerts on flag lifecycle events, experiment status changes, and statistical anomalies. Alert scoping can be configured by project, deployment, or tags with webhook schema validation using signing keys.
+## Implementation and Evaluation Process
 
-## SDK Integration and Implementation
+The evaluation implementation follows a systematic process: pre-targeting steps (activation checks, flag dependencies, individual inclusions, sticky bucketing), targeting segment evaluation, and consistent bucketing using murmur3 hashing with bucketing salt and allocation percentages. This ensures consistent variant assignment and prevents sample ratio mismatch (SRM) issues.
 
-The platform provides multi-platform SDK support including TypeScript/JavaScript, Kotlin, Objective-C, Swift, and Python with comprehensive configuration options. SDKs support automatic exposure tracking, session management, and event tracking through the BaseEvent class. Server-side SDKs offer additional capabilities for cohort targeting and local evaluation.
+**Exposure tracking** captures user interactions with feature flag variants through the Analytics REST API v2.0 or automatic tracking via client-side Experiment SDKs, enabling comprehensive exposure analysis and experiment evaluation.
 
-Key API endpoints include the Analytics REST API v2.0 for exposure tracking and the Management API for programmatic experiment management. SDK configuration utilizes cohortSyncConfig for cohort synchronization with API keys, secret keys, and deployment keys for authentication.
+## Key Nomenclature and Definitions
 
-## Access Control and Permissions
-
-The platform implements project-level permissions that operate independently from Analytics permissions, featuring role-based access control with Viewer, Member, Manager, and Admin roles. Flag-level access controls provide granular restrictions on experiment editing capabilities, with Enterprise customers having access to Management API bypass functionality.
-
-## Key Nomenclature
-
-- **Bucketing Units**: User identifiers (user_id, device_id, or custom group properties with Accounts add-on)
-- **Allocation**: Traffic percentage assigned to experiments
-- **Payload Variables**: JSON configuration data passed with variants
-- **Exposure Events**: Tracking events when users see experiment variants
+- **Deployment Keys**: Authentication tokens for client-side and server-side deployments
+- **Bucketing Units**: The entity level for experiment assignment (user_id, device_id, group properties)
+- **Variants**: Experiment treatments with value and payload properties in kebab-case formatting
+- **Allocation**: Percentage of users exposed to experiments
+- **Payload Variables**: JSON configuration data passed with variant assignments
 - **Assignment Events**: Server-side tracking of variant assignments
-- **Enrollment Events**: Initial user entry into experiments
+- **Exposure Events**: Client-side tracking of user interactions with variants
+- **Mutual Exclusion Groups**: Preventing users from participating in conflicting experiments
+- **Holdout Groups**: Control populations excluded from experiments
 - **SUTVA**: Stable Unit Treatment Value Assumption for experiment validity
-- **MDE**: Minimum Detectable Effect for statistical power calculations
-- **Variant Jumping**: Undesired changes in user variant assignments
 
-The platform integrates seamlessly with the broader Amplitude ecosystem, leveraging Analytics project structures, user cohorts, and historical behavioral data to enhance targeting precision and experimental insights.
+## API Endpoints and Integration
+
+The platform provides REST API endpoints for experiment management, with the Management API offering Enterprise customers the ability to bypass project-level permissions. SDK initialization is supported across multiple platforms (TypeScript/JavaScript, Kotlin, Objective-C, Swift, Python) with configuration options for tracking, session management, and event handling.
+
+Key API methods include `experiment.start()` for initialization, `experiment.variant()` for variant retrieval, and `client.track()` for event tracking with BaseEvent class structure requiring user_id/device_id and supporting event_properties objects.
+
+## Permissions and Governance
+
+The platform implements **project-level permissions** independent from Analytics permissions, featuring role-based access control (Viewer, Member, Manager, Admin) and flag-level access controls for restricting experiment editing capabilities. **Notifications** can be configured through Slack channels and webhooks with alert scoping by project, deployment, or tags for flag lifecycle events.
+
+## Broader Ecosystem Integration
+
+Amplitude Experiment integrates deeply with the Amplitude Analytics ecosystem, leveraging historical user data for enrichment, cohort membership, and ID resolution. The platform supports the Accounts add-on for organization-level bucketing and maintains consistency with Amplitude's broader data model and user identification systems.
