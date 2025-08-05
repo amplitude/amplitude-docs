@@ -6,8 +6,10 @@
         "watch": "mix watch",
         "prod": "mix --production",
         "crawl": "node crawler.js",
-        "crawl:local": "node crawler.js --base-url http://amplitude --verbose",
-        "crawl:production": "node crawler.js --base-url https://amplitude.com"
+        "crawl:local": "node crawler.js --base-url http://localhost:8000 --verbose",
+        "crawl:local:ignore": "node crawler.js --base-url http://localhost:8000 --verbose --ignore-file .crawlerignore",
+        "crawl:production": "node crawler.js --base-url https://amplitude.com",
+        "crawl:production:ignore": "node crawler.js --base-url https://amplitude.com --ignore-file .crawlerignore"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.7",

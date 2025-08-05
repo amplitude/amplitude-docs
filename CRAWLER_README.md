@@ -57,6 +57,21 @@ npm run crawl:production
 node crawler.js --base-url https://your-production-site.com
 ```
 
+### Ignoring Pages
+```bash
+# Use ignore file (recommended)
+npm run crawl:local:ignore
+
+# Ignore specific URLs
+node crawler.js --ignore-url "/docs/test-page" --ignore-url "/docs/sandbox"
+
+# Ignore URL patterns
+node crawler.js --ignore-pattern "/docs/admin/*" --ignore-pattern "*/draft/*"
+
+# Combine ignore methods
+node crawler.js --ignore-file .crawlerignore --ignore-url "/docs/temp"
+```
+
 ## Command Line Options
 
 | Option | Description | Default |
@@ -66,7 +81,61 @@ node crawler.js --base-url https://your-production-site.com
 | `--output` | Output file for report | `markdown-issues.json` |
 | `--concurrency` | Number of concurrent requests | `10` |
 | `--timeout` | Request timeout in milliseconds | `30000` |
+| `--ignore-pattern` | URL pattern to ignore (supports wildcards) | none |
+| `--ignore-url` | Specific URL to ignore | none |
+| `--ignore-file` | File containing ignore patterns/URLs | none |
 | `--verbose` | Enable verbose logging | `false` |
+
+## Ignore Configuration
+
+### Ignore File Format
+
+Create a `.crawlerignore` file (or any filename) with patterns and URLs to skip:
+
+```
+# Lines starting with # are comments
+# Empty lines are ignored
+
+# Ignore specific URLs (exact matches)
+/docs/test-page
+/docs/sandbox
+
+# Ignore URL patterns using wildcards
+/docs/admin/*          # Ignore all URLs starting with /docs/admin/
+/docs/*/test-*        # Ignore test pages in any subdirectory
+**/draft/**           # Ignore draft pages at any level
+
+# Ignore file types
+*.pdf
+*.zip
+
+# Ignore entire sections
+/docs/jp/*            # Ignore Japanese documentation
+```
+
+### Pattern Matching
+
+- `*` matches any characters
+- `?` matches single character  
+- `**/` matches any directory levels
+- Patterns are anchored (must match from start to end)
+- Both absolute URLs and relative paths work
+
+### Example Ignore Scenarios
+
+```bash
+# Ignore all test/example pages
+node crawler.js --ignore-pattern "*/test-*" --ignore-pattern "*/example*"
+
+# Ignore specific documentation sections
+node crawler.js --ignore-pattern "/docs/admin/*" --ignore-pattern "/docs/internal/*"
+
+# Ignore non-English content
+node crawler.js --ignore-pattern "/docs/jp/*" --ignore-pattern "/docs/es/*"
+
+# Use ignore file for complex rules
+node crawler.js --ignore-file .crawlerignore
+```
 
 ## Detection Patterns
 
@@ -106,8 +175,11 @@ The crawler generates a JSON report with the following structure:
   "summary": {
     "totalUrls": 150,
     "totalErrors": 2,
+    "totalSkipped": 12,
     "totalIssues": 5,
     "urlsWithIssues": 3,
+    "ignorePatterns": ["/docs/admin/*", "*/draft/*"],
+    "ignoreUrls": ["/docs/test-page"],
     "issuesByType": [
       {
         "type": "tables",
@@ -130,7 +202,11 @@ The crawler generates a JSON report with the following structure:
   },
   "issuesByUrl": {
     "https://amplitude.com/docs/some-page": [/* array of issues for this URL */]
-  }
+  },
+  "skippedUrls": [
+    "https://amplitude.com/docs/admin/settings",
+    "https://amplitude.com/docs/test-page"
+  ]
 }
 ```
 

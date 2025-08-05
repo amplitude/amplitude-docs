@@ -17,9 +17,20 @@ class MarkdownCrawler {
         this.outputFile = options.outputFile || 'markdown-issues.json';
         this.verbose = options.verbose || false;
         
+        // URL ignore patterns and configuration
+        this.ignorePatterns = options.ignorePatterns || [];
+        this.ignoreUrls = options.ignoreUrls || [];
+        this.ignoreFile = options.ignoreFile || null;
+        
+        // Load ignore patterns from file if specified
+        if (this.ignoreFile) {
+            this.loadIgnoreFile();
+        }
+        
         this.results = {
             crawled: 0,
             errors: 0,
+            skipped: 0,
             markdownIssues: [],
             summary: {}
         };
@@ -27,6 +38,7 @@ class MarkdownCrawler {
         this.urlQueue = [];
         this.activeRequests = 0;
         this.processedUrls = new Set();
+        this.skippedUrls = new Set();
         
         // Markdown detection patterns
         this.markdownPatterns = {
@@ -138,7 +150,26 @@ class MarkdownCrawler {
             }
             
             this.log(`Found ${urls.length} URLs in sitemap`);
-            return urls;
+            
+            // Filter out ignored URLs
+            const originalCount = urls.length;
+            const filteredUrls = [];
+            
+            for (const url of urls) {
+                if (this.shouldIgnoreUrl(url)) {
+                    this.skippedUrls.add(url);
+                    this.log(`Ignoring URL: ${url}`, 'debug');
+                } else {
+                    filteredUrls.push(url);
+                }
+            }
+            
+            const skippedCount = originalCount - filteredUrls.length;
+            if (skippedCount > 0) {
+                this.log(`Filtered out ${skippedCount} ignored URLs, ${filteredUrls.length} remaining`);
+            }
+            
+            return filteredUrls;
             
         } catch (error) {
             throw new Error(`Failed to fetch sitemap: ${error.message}`);
@@ -295,8 +326,11 @@ class MarkdownCrawler {
         this.results.summary = {
             totalUrls: this.results.crawled,
             totalErrors: this.results.errors,
+            totalSkipped: this.results.skipped || this.skippedUrls.size,
             totalIssues: this.results.markdownIssues.length,
             urlsWithIssues: Object.keys(issuesByUrl).length,
+            ignorePatterns: this.ignorePatterns,
+            ignoreUrls: this.ignoreUrls,
             issuesByType: Object.keys(issuesByType).map(type => ({
                 type,
                 count: issuesByType[type].length,
@@ -307,7 +341,8 @@ class MarkdownCrawler {
         return {
             ...this.results,
             issuesByType,
-            issuesByUrl
+            issuesByUrl,
+            skippedUrls: Array.from(this.skippedUrls)
         };
     }
 
@@ -324,9 +359,20 @@ class MarkdownCrawler {
     printSummary(report) {
         console.log('\n=== MARKDOWN CRAWL SUMMARY ===');
         console.log(`Crawled URLs: ${report.summary.totalUrls}`);
+        console.log(`Skipped URLs: ${report.summary.totalSkipped || 0}`);
         console.log(`Errors: ${report.summary.totalErrors}`);
         console.log(`Total Issues: ${report.summary.totalIssues}`);
         console.log(`URLs with Issues: ${report.summary.urlsWithIssues}`);
+        
+        if (report.summary.totalSkipped > 0) {
+            console.log(`\nIgnore Configuration:`);
+            if (report.summary.ignorePatterns && report.summary.ignorePatterns.length > 0) {
+                console.log(`  Patterns: ${report.summary.ignorePatterns.join(', ')}`);
+            }
+            if (report.summary.ignoreUrls && report.summary.ignoreUrls.length > 0) {
+                console.log(`  URLs: ${report.summary.ignoreUrls.slice(0, 3).join(', ')}${report.summary.ignoreUrls.length > 3 ? '...' : ''}`);
+            }
+        }
         
         if (report.summary.issuesByType.length > 0) {
             console.log('\nIssues by Type:');
@@ -349,6 +395,76 @@ class MarkdownCrawler {
         }
         
         console.log(`\nExit code: ${report.summary.totalIssues > 0 ? 1 : 0}`);
+    }
+
+    loadIgnoreFile() {
+        try {
+            const fs = require('fs');
+            if (fs.existsSync(this.ignoreFile)) {
+                const content = fs.readFileSync(this.ignoreFile, 'utf8');
+                const lines = content.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#'));
+                
+                lines.forEach(line => {
+                    if (line.startsWith('/') || line.includes('*') || line.includes('?')) {
+                        // Pattern
+                        this.ignorePatterns.push(line);
+                    } else {
+                        // Exact URL
+                        this.ignoreUrls.push(line);
+                    }
+                });
+                
+                this.log(`Loaded ${lines.length} ignore rules from ${this.ignoreFile}`);
+            }
+        } catch (error) {
+            this.log(`Warning: Could not load ignore file ${this.ignoreFile}: ${error.message}`, 'warn');
+        }
+    }
+
+    shouldIgnoreUrl(url) {
+        // Check exact URL matches
+        if (this.ignoreUrls.includes(url)) {
+            return true;
+        }
+        
+        // Check URL without base for exact matches
+        const relativeUrl = url.replace(this.baseUrl, '');
+        if (this.ignoreUrls.includes(relativeUrl)) {
+            return true;
+        }
+        
+        // Check patterns
+        for (const pattern of this.ignorePatterns) {
+            if (this.matchesPattern(url, pattern) || this.matchesPattern(relativeUrl, pattern)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    matchesPattern(url, pattern) {
+        // Convert glob-like patterns to regex
+        let regexPattern = pattern
+            .replace(/\*/g, '.*')  // * matches any characters
+            .replace(/\?/g, '.')   // ? matches single character
+            .replace(/\//g, '\\/'); // Escape forward slashes
+        
+        // Anchor the pattern
+        if (!regexPattern.startsWith('^')) {
+            regexPattern = '^' + regexPattern;
+        }
+        if (!regexPattern.endsWith('$')) {
+            regexPattern = regexPattern + '$';
+        }
+        
+        try {
+            const regex = new RegExp(regexPattern);
+            return regex.test(url);
+        } catch (error) {
+            this.log(`Invalid ignore pattern: ${pattern}`, 'warn');
+            return false;
+        }
     }
 }
 
@@ -376,6 +492,17 @@ async function main() {
                 break;
             case 'timeout':
                 options.timeout = parseInt(value);
+                break;
+            case 'ignore-pattern':
+                if (!options.ignorePatterns) options.ignorePatterns = [];
+                options.ignorePatterns.push(value);
+                break;
+            case 'ignore-url':
+                if (!options.ignoreUrls) options.ignoreUrls = [];
+                options.ignoreUrls.push(value);
+                break;
+            case 'ignore-file':
+                options.ignoreFile = value;
                 break;
             case 'verbose':
                 options.verbose = true;
