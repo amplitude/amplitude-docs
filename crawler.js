@@ -179,19 +179,37 @@ class MarkdownCrawler {
     detectMarkdownIssues(html, url) {
         const issues = [];
         
-        // Remove script and style content to avoid false positives
-        const cleanHtml = html
+        // Remove content that should be ignored for markdown detection
+        let cleanHtml = html
+            // Remove script and style content
             .replace(/<script[\s\S]*?<\/script>/gi, '')
             .replace(/<style[\s\S]*?<\/style>/gi, '')
-            .replace(/<!--[\s\S]*?-->/gi, '');
+            // Remove HTML comments
+            .replace(/<!--[\s\S]*?-->/gi, '')
+            // Remove title tag content
+            .replace(/<title[\s\S]*?<\/title>/gi, '')
+            // Remove code blocks and inline code (where markdown syntax is intentional)
+            .replace(/<code[\s\S]*?<\/code>/gi, '')
+            .replace(/<pre[\s\S]*?<\/pre>/gi, '')
+            // Remove content inside these elements where markdown might be examples
+            .replace(/<textarea[\s\S]*?<\/textarea>/gi, '')
+            .replace(/<kbd[\s\S]*?<\/kbd>/gi, '')
+            // Remove data attributes that might contain markdown-like syntax
+            .replace(/\sdata-[^=]*="[^"]*"/gi, '')
+            // Remove content inside elements with classes that suggest code/examples
+            .replace(/<[^>]*class="[^"]*code[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi, '')
+            .replace(/<[^>]*class="[^"]*example[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi, '')
+            .replace(/<[^>]*class="[^"]*sample[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi, '');
         
         for (const [patternName, pattern] of Object.entries(this.markdownPatterns)) {
             const matches = cleanHtml.match(pattern.regex);
             
             if (matches) {
-                // Filter out false positives for tables
+                let filteredMatches = matches;
+                
+                // Special filtering for different pattern types
                 if (patternName === 'tables') {
-                    const filteredMatches = matches.filter(match => {
+                    filteredMatches = matches.filter(match => {
                         // Exclude table matches that are already inside proper HTML tables
                         const tableContext = cleanHtml.indexOf(match);
                         const beforeMatch = cleanHtml.substring(Math.max(0, tableContext - 200), tableContext);
@@ -199,22 +217,38 @@ class MarkdownCrawler {
                         
                         return !(beforeMatch.includes('<table') || afterMatch.includes('</table>'));
                     });
-                    
-                    if (filteredMatches.length > 0) {
-                        issues.push({
-                            type: patternName,
-                            description: pattern.description,
-                            count: filteredMatches.length,
-                            samples: filteredMatches.slice(0, 3),
-                            url: url
-                        });
-                    }
-                } else {
+                } else if (patternName === 'codeBlocks') {
+                    // For code blocks, check if they're not already in <pre> or similar
+                    filteredMatches = matches.filter(match => {
+                        const codeContext = cleanHtml.indexOf(match);
+                        const beforeMatch = cleanHtml.substring(Math.max(0, codeContext - 100), codeContext);
+                        const afterMatch = cleanHtml.substring(codeContext, Math.min(cleanHtml.length, codeContext + 100));
+                        
+                        // Skip if it's inside HTML that suggests it's intentional
+                        return !(
+                            beforeMatch.includes('<pre') || 
+                            afterMatch.includes('</pre>') ||
+                            beforeMatch.includes('class="highlight"') ||
+                            beforeMatch.includes('class="language-')
+                        );
+                    });
+                } else if (patternName === 'links') {
+                    // For links, check if they're not inside <a> tags already
+                    filteredMatches = matches.filter(match => {
+                        const linkContext = cleanHtml.indexOf(match);
+                        const beforeMatch = cleanHtml.substring(Math.max(0, linkContext - 50), linkContext);
+                        const afterMatch = cleanHtml.substring(linkContext, Math.min(cleanHtml.length, linkContext + 50));
+                        
+                        return !(beforeMatch.includes('<a ') || afterMatch.includes('</a>'));
+                    });
+                }
+                
+                if (filteredMatches.length > 0) {
                     issues.push({
                         type: patternName,
                         description: pattern.description,
-                        count: matches.length,
-                        samples: matches.slice(0, 3),
+                        count: filteredMatches.length,
+                        samples: filteredMatches.slice(0, 3),
                         url: url
                     });
                 }
