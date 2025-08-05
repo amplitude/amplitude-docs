@@ -179,42 +179,109 @@ class MarkdownCrawler {
     detectMarkdownIssues(html, url) {
         const issues = [];
         
-        // Remove script and style content to avoid false positives
-        const cleanHtml = html
-            .replace(/<script[\s\S]*?<\/script>/gi, '')
-            .replace(/<style[\s\S]*?<\/style>/gi, '')
-            .replace(/<!--[\s\S]*?-->/gi, '');
+        // Enhanced HTML content filtering using a more robust approach
+        let cleanHtml = html;
+        
+        // First, remove content from tags that should be completely ignored
+        const tagsToRemove = [
+            'script', 'style', 'title', 'code', 'pre', 'textarea', 'kbd'
+        ];
+        
+        for (const tag of tagsToRemove) {
+            // Use a more robust regex that handles attributes and nested content
+            const regex = new RegExp(`<${tag}[^>]*>[\\s\\S]*?<\\/${tag}>`, 'gi');
+            cleanHtml = cleanHtml.replace(regex, '');
+        }
+        
+        // Remove HTML comments
+        cleanHtml = cleanHtml.replace(/<!--[\s\S]*?-->/gi, '');
+        
+        // Remove data attributes that might contain markdown-like syntax
+        cleanHtml = cleanHtml.replace(/\sdata-[^=]*="[^"]*"/gi, '');
+        
+        // Remove content inside elements with code-related classes
+        const codeClassPatterns = [
+            /<[^>]*class="[^"]*\bcode\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
+            /<[^>]*class="[^"]*\bexample\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
+            /<[^>]*class="[^"]*\bsample\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
+            /<[^>]*class="[^"]*\bhighlight\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
+            /<[^>]*class="[^"]*\blanguage-[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi
+        ];
+        
+        for (const pattern of codeClassPatterns) {
+            cleanHtml = cleanHtml.replace(pattern, '');
+        }
+        
+        // Additional function to check if a match is inside a code context
+        function isInCodeContext(html, matchIndex) {
+            const before = html.substring(0, matchIndex);
+            const after = html.substring(matchIndex);
+            
+            // Count opening and closing code tags before the match
+            const codeOpenBefore = (before.match(/<code[^>]*>/gi) || []).length;
+            const codeCloseBefore = (before.match(/<\/code>/gi) || []).length;
+            
+            // If there are more opening tags than closing tags, we're inside a code block
+            if (codeOpenBefore > codeCloseBefore) {
+                return true;
+            }
+            
+            // Check for other code-related contexts
+            const codeContexts = [
+                /<pre[^>]*>/gi,
+                /<code[^>]*>/gi,
+                /class="[^"]*\b(highlight|language-|code|example|sample)\b[^"]*"/gi
+            ];
+            
+            const contextWindow = before.substring(Math.max(0, before.length - 200));
+            return codeContexts.some(pattern => pattern.test(contextWindow));
+        }
         
         for (const [patternName, pattern] of Object.entries(this.markdownPatterns)) {
-            const matches = cleanHtml.match(pattern.regex);
+            const matches = [];
+            let match;
+            const regex = new RegExp(pattern.regex.source, pattern.regex.flags);
             
-            if (matches) {
-                // Filter out false positives for tables
+            while ((match = regex.exec(cleanHtml)) !== null) {
+                const matchIndex = match.index;
+                
+                // Check if this match is in a code context
+                if (!isInCodeContext(html, matchIndex)) {
+                    matches.push(match[0]);
+                }
+                
+                // Prevent infinite loop for global regexes
+                if (!pattern.regex.global) break;
+            }
+            
+            if (matches.length > 0) {
+                let filteredMatches = matches;
+                
+                // Special filtering for different pattern types
                 if (patternName === 'tables') {
-                    const filteredMatches = matches.filter(match => {
-                        // Exclude table matches that are already inside proper HTML tables
+                    filteredMatches = matches.filter(match => {
                         const tableContext = cleanHtml.indexOf(match);
                         const beforeMatch = cleanHtml.substring(Math.max(0, tableContext - 200), tableContext);
                         const afterMatch = cleanHtml.substring(tableContext, Math.min(cleanHtml.length, tableContext + 200));
                         
                         return !(beforeMatch.includes('<table') || afterMatch.includes('</table>'));
                     });
-                    
-                    if (filteredMatches.length > 0) {
-                        issues.push({
-                            type: patternName,
-                            description: pattern.description,
-                            count: filteredMatches.length,
-                            samples: filteredMatches.slice(0, 3),
-                            url: url
-                        });
-                    }
-                } else {
+                } else if (patternName === 'links') {
+                    filteredMatches = matches.filter(match => {
+                        const linkContext = cleanHtml.indexOf(match);
+                        const beforeMatch = cleanHtml.substring(Math.max(0, linkContext - 50), linkContext);
+                        const afterMatch = cleanHtml.substring(linkContext, Math.min(cleanHtml.length, linkContext + 50));
+                        
+                        return !(beforeMatch.includes('<a ') || afterMatch.includes('</a>'));
+                    });
+                }
+                
+                if (filteredMatches.length > 0) {
                     issues.push({
                         type: patternName,
                         description: pattern.description,
-                        count: matches.length,
-                        samples: matches.slice(0, 3),
+                        count: filteredMatches.length,
+                        samples: filteredMatches.slice(0, 3),
                         url: url
                     });
                 }
