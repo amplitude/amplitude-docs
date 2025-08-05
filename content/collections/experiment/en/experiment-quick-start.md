@@ -12,7 +12,7 @@ updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753137993
 ---
 
-Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation. 
+Feature Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation. 
 
 With Experiment, you can modify and configure product experiences for unique audiences through:
 
@@ -49,10 +49,10 @@ Install the Amplitude SDK with the Experiment client. For example:
 npm install @amplitude/analytics-browser @amplitude/experiment-browser
 ```
 
-```bash
+```ts
 import * as amplitude from '@amplitude/analytics-browser'; 
 import { Experiment } from '@amplitude/experiment-browser'; 
-amplitude.init('AMPLITUDE_API_KEY');  
+amplitude.init('DEPLOYMENT_API_KEY');  
 const experiment = Experiment.initialize('EXPERIMENT_API_KEY'); 
 await experiment.start();
 ```
@@ -87,7 +87,7 @@ A flag is a way for you to enable or disable a function or feature in your produ
 
 1. Go to *Experiment > Feature Flags*. 
 2. Click **Create Feature Flag**.
-3. In the Create Flag section, choose the project that includes this flag from the Projects drop-down menu and then give your flag a name. 
+3. In the Create Flag section, select the project you want from the dropdown list and then give your flag a name. 
 Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 4. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment. Select either **Remote** or **Local**. 
 5. Specify the **bucketing unit** you want to use for this experiment.  
@@ -110,10 +110,10 @@ If you change the bucketing salt, users will switch between variants in your ex
 
  ##### To add a variant
 
- 1. Go to your *Experiment > Feature Flags* and select your flag.
+ 1. Go to *Experiment > Feature Flags* and select your flag.
  2. In the Variants section, click the **Plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
- 4. In the Assignment section, define the **user segments** that'll receieve your new feature.
+ 4. In the Assignment section, define the **user segments** that'll receive your new feature.
     1. Specify the percentage of users who'll receive the variant.
     Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
     2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
