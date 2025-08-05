@@ -5,6 +5,18 @@ title: 'Site components'
 package: "@amplitude/session-replay-browser"
 ---
 
+{{partial:admonition type="warning" heading="test"}}
+Here's some **formatted** *text*. And `this`.
+
+```js
+import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
+
+const pageUrlEnrichment = pageUrlEnrichmentPlugin();
+amplitude.add(pageUrlEnrichment);
+amplitude.init(API_KEY);
+```
+{{/partial:admonition}}
+
 
 ## test
 
