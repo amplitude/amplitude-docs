@@ -10,24 +10,6 @@ tree:
         id: 7fdccdec-2267-4c69-a624-10aa31405026
         entry: d002d2ad-3a7f-41f7-aec9-0df7db9fb90b
   -
-    id: e22eb181-a0e9-4c79-b1b9-8a3e2e275104
-    title: 'Feature Flags'
-    children:
-      -
-        id: 890e96c2-aa13-4451-8379-6fd5024dcf87
-        title: 'Flag dependencies'
-        children:
-          -
-            id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
-            entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
-            title: 'How flag dependencies work'
-      -
-        id: 15fcf5be-505a-44db-9b00-e4f687435164
-        entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
-      -
-        id: 2bda6737-066a-4283-8252-720d24a19573
-        entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
-  -
     id: 4395cf69-ddb7-4127-9192-ff9c20777a07
     title: 'Experiment Planning'
     children:
@@ -137,6 +119,24 @@ tree:
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
         children:
+          -
+            id: e22eb181-a0e9-4c79-b1b9-8a3e2e275104
+            title: 'Feature Flags'
+            children:
+              -
+                id: 890e96c2-aa13-4451-8379-6fd5024dcf87
+                title: 'Flag dependencies'
+                children:
+                  -
+                    id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
+                    entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
+                    title: 'How flag dependencies work'
+              -
+                id: 15fcf5be-505a-44db-9b00-e4f687435164
+                entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
+              -
+                id: 2bda6737-066a-4283-8252-720d24a19573
+                entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
           -
             id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
             entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
