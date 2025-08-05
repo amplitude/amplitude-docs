@@ -146,9 +146,7 @@ The initializer returns a singleton instance, so subsequent initializations for 
 ```swift
 let experiment = Experiment.initializeWithAmplitudeAnalytics(
     apiKey: "DEPLOYMENT_KEY",
-    config: ExperimentConfigBuilder()
-    .instanceName("myCustomInstance")  // case-sensitive name matching your Analytics instance
-    .build()
+    config: ExperimentConfigBuilder().build()
 )
 ```
 {{/partial:tab}}
@@ -170,7 +168,6 @@ let experiment = Experiment.initialize(
     apiKey: "DEPLOYMENT_KEY",
     config: ExperimentConfigBuilder()
         .exposureTrackingProvider(ExposureTracker())
-        .instanceName("myCustomInstance")  // case-sensitive name matching your Analytics instance
         .build()
 )
 ```

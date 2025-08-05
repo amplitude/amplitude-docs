@@ -309,7 +309,6 @@ ul.nav li::marker {
 
 .prose p:has(img) {
     margin: 0;
-    margin-bottom: 1rem;
     background: #F4F5F6;
     padding: 2rem;
     border-radius: 8px;

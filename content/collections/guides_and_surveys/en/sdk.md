@@ -66,16 +66,16 @@ Call `init` to  fully initialize the bundle and register `engagement` on the glo
 engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
 ```
 
-| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                                    |
-| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                                       |
+| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                    |
+| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                       |
 | `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU) |
 | `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU) |
-| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                 |
-| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                         |
-| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                      |
-| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`   |
+| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
+| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.      |
+| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined` |
 
 ##### Example: Basic initialization
 
@@ -119,9 +119,9 @@ The final step before guides and surveys can show to your end-users is to call `
 engagement.boot(options: BootOptions): Promise<void>
 ```
 
-| Parameter              | Type                           | Description                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                                                                                                                                                                                             |
+| Parameter              | Type                           | Description                                                                                                                               |
+| ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                   |
 | `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
 
 ```js
@@ -170,7 +170,7 @@ analytics.ready(() => {
       // User Provider: Guides and Surveys requires either user_id or device_id for user identification
       user_id: analytics.user().id(),
       device_id: analytics.user().anonymousId(),
-      user_properties: analytics.user().traits(),
+      user_properties: {},
     },
     integrations: [
       {
@@ -396,7 +396,7 @@ After you configure the router with `setRouter()`, update the URL behavior setti
 Set the `locale` option during initialization to localize a guide or survey.
 
 * If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
-* If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
+* If you use a  [third-party analytics provider](#third-party-analytics-provider), set it in `options` within the `engagement.init()` method.
 
 To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
 
@@ -485,9 +485,9 @@ Ensure that user properties load during the current client-side session and befo
 engagement._setUserProperties(userProperties: Record<string, any>): void
 ```
 
-| Parameter        | Type                  | Description                                                                                                                     |
-| ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `userProperties` | `Record<string, any>` | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
+| Parameter        | Type                      | Description                                                                                                                        |
+| ---------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `userProperties` | `Record<string, any>`     | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
 ### Example
 
 ```js
@@ -497,34 +497,6 @@ engagement._setUserProperties(userProperties)
 
 // For testing, view the current user properties
 engagement._.user.user_properties
-```
-
-## Set session properties
-
-Set session properties for the current session. Session properties provide an additional way to restrict when guides and surveys are triggered. At the time of trigger, the configured session property conditions must be met for the guide or survey to display.
-
-When a session property changes, the SDK checks if there are any guides or surveys that can now be shown. This means session properties work with the "immediately" trigger and display content as soon as the session property conditions become true.
-
-```js
-engagement.setSessionProperty(key: string, value: any): void
-```
-
-| Parameter | Type      | Description                                              |
-| --------- | --------- | -------------------------------------------------------- |
-| `key`     | `string`  | Required. The session property key to set.              |
-| `value`   | `any` | Required. The value to set for the session property.    |
-
-{{partial:admonition type="note" heading="Feature availability"}}
-Session properties are a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
-{{/partial:admonition}}
-
-### Example
-
-```js
-// Various session properties to control guide/survey targeting
-window.engagement.setSessionProperty("subscriptionTier", "premium");
-window.engagement.setSessionProperty("isFeatureXEnabled", true);
-window.engagement.setSessionProperty("userScore", 85);
 ```
 
 ## Close all
