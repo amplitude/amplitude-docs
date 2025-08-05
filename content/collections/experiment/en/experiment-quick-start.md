@@ -46,13 +46,14 @@ Before you can begin using experiments:
 Install the Amplitude SDK with the Experiment client. For example:
 
 ```bash
-
 npm install @amplitude/analytics-browser @amplitude/experiment-browser
+```
 
+```ts
 import * as amplitude from '@amplitude/analytics-browser'; 
 import { Experiment } from '@amplitude/experiment-browser'; 
 amplitude.init('AMPLITUDE_API_KEY');  
-const experiment = Experiment.initialize('EXPERIMENT_API_KEY'); 
+const experiment = Experiment.initialize('DEPLOYMENT_API_KEY'); 
 await experiment.start();
 ```
 
@@ -86,7 +87,7 @@ A flag is a way for you to enable or disable a function or feature in your produ
 
 1. Go to *Experiment > Feature Flags*. 
 2. Click **Create Feature Flag**.
-3. In the Create Flag section, choose the project that includes this flag from the Projects drop-down menu and then give your flag a name. 
+3. In the Create Flag section, select the project yoou want from the dropdown list and then give your flag a name. 
 Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 4. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment. Select either **Remote** or **Local**. 
 5. Specify the **bucketing unit** you want to use for this experiment.  
@@ -112,8 +113,8 @@ If you change the bucketing salt, users will switch between variants in your ex
  1. Go to your *Experiment > Feature Flags* and select your flag.
  2. In the Variants section, click the **Plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
- 4. In the Assignment section, define the **user segments** that will experience your new feature.
-    1. Specify the percentage of users who will receive the variant.
+ 4. In the Assignment section, define the **user segments** you want to experience your new feature. For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience)
+    1. Specify the percentage of users receiving the variant.
     Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
     2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
  5. Click **Apply**.
@@ -175,106 +176,114 @@ After you have completed designing your experiment, click **Start Experiment** t
 
 The following code examples describe the code for a feature flag and a JSON payload:
 
-{{partial:tabs tabs="Feature flag, JSON payload"}}
+{{partial:tabs tabs="Feature flag, Payload"}}
 {{partial:tab name="Feature flag"}}
 
 ```js
-import { useState, useEffect } from 'react'
-import { getBlogLayoutFlag } from '../services/featureFlags'  // Adjust to wherever you fetch your Amplitude flag
-import type { BlogPost } from '../types'
+import { useState, useEffect } from 'react';
+import { getBlogLayoutFlag } from '../services/featureFlags'; // Adjust to wherever you fetch your Amplitude flag
+import type { BlogPost } from '../types';
+
 type LayoutFlag = {
-  layout: 'cards' | 'list' | 'carousel'
-  titlePosition: 'above' | 'below' | 'center'
-  gradient: boolean
-  showDescription: boolean
-  cardCount: number
-}
+  layout: 'cards' | 'list' | 'carousel';
+  titlePosition: 'above' | 'below' | 'center';
+  gradient: boolean;
+  showDescription: boolean;
+  cardCount: number;
+};
+
 export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
-  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null) | {
-    layout: 'cards' | 'list' | 'carousel';
-    titlePosition: 'above' | 'below' | 'center';
-    gradient: boolean;
-    showDescription: boolean;
-    cardCount: number; 
-  }>(null);
+  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null);
 
   useEffect(() => {
     getBlogLayoutFlag().then((flag) => {
-      console.log(':magic_wand: Received Flag from Amplitude:', flag)
+      console.log(':magic_wand: Received Flag from Amplitude:', flag);
       if (flag) {
-        setLayoutFlag(flag)
+        setLayoutFlag(flag);
       } else {
-        console.log(':warning: No flag returned, falling back to default layout')
+        console.log(':warning: No flag returned, falling back to default layout');
         setLayoutFlag({
           layout: 'cards',
           titlePosition: 'above',
           gradient: false,
           showDescription: true,
           cardCount: 3,
-        })
+        });
       }
-    })
+    });
   }, []);
-   if (!layoutFlag) {
-    // you might render a loader here
-    return null
+
+  if (!layoutFlag) {
+    // You might render a loader here
+    return null;
   }
+
   // Render your posts according to layoutFlag...
   return (
     <div>
       {/* e.g. layoutFlag.layout === 'cards' ? <CardGrid posts={posts} /> : ... */}
     </div>
-  )
+  );
 }
 
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Payload"}}
+
 ```js
 // services/featureFlags.ts
-import { experiment } from '@amplitude/experiment-js'  // adjust import to your SDK
-import type { LayoutFlag } from '../types'             // reuse the same LayoutFlag type
+import { experiment } from '@amplitude/experiment-js';  // adjust import to your SDK
+import type { LayoutFlag } from '../types';              // reuse the same LayoutFlag type
 
 export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
   try {
     // In dev, clear any stale flags
     if (process.env.NODE_ENV === 'development') {
-      localStorage.clear()
-      console.warn(' Cleared localStorage in dev mode')
+      localStorage.clear();
+      console.warn('Cleared localStorage in dev mode');
     }
+
     // Initialize the experiment SDK
-    await experiment.start()
+    await experiment.start();
+
     // Grab the variant for our blog layout test
-    const variant = experiment.variant('blog_post_layout')
-    console.log(':movie_camera: Full Variant Object:', variant)
+    const variant = experiment.variant('blog_post_layout');
+    console.log(':movie_camera: Full Variant Object:', variant);
+
     // Some payloads come in `payload`, some in `value`
-    const value = variant?.payload ?? variant?.value
-    console.log(' Cleaned Flag Payload:', value)
+    const value = variant?.payload ?? variant?.value;
+    console.log('Cleaned Flag Payload:', value);
+
     // If there's no usable object, fall back to defaults
     if (!value || typeof value !== 'object' || Object.keys(value).length === 0) {
-      console.warn( No valid layout flag found, using fallback layout')
+      console.warn('No valid layout flag found, using fallback layout');
       return {
-        layout:       'carousel',
-        titlePosition:'above',
-        gradient:     false,
+        layout: 'carousel',
+        titlePosition: 'above',
+        gradient: false,
         showDescription: true,
-        cardCount:    3,
-      }
+        cardCount: 3,
+      };
     }
+
     // Otherwise assume it's Amplitude's LayoutFlag shape
-    return value as LayoutFlag
+    return value as LayoutFlag;
+
   } catch (error) {
-    console.error(' Error fetching blog layout flag:', error)
+    console.error('Error fetching blog layout flag:', error);
+
     // On error, also fall back
     return {
-      layout:       'carousel',
-      titlePosition:'above',
-      gradient:     false,
+      layout: 'carousel',
+      titlePosition: 'above',
+      gradient: false,
       showDescription: true,
-      cardCount:    3,
-    }
+      cardCount: 3,
+    };
   }
-}
+};
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
