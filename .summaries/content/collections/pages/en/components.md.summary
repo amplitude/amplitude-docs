@@ -1,12 +1,16 @@
-**Summary:** This documentation page covers site components for the Amplitude Session Replay Browser package, demonstrating Swift SDK initialization methods including basic boot with user ID and advanced boot with AmplitudeBootOptions configuration for user properties and device identification.
+**Summary:** This documentation page covers site components for the @amplitude/session-replay-browser package, demonstrating JavaScript pageUrlEnrichmentPlugin integration and Swift AmplitudeBootOptions configuration with user_id, device_id, and user_properties parameters.
 
 **Keywords:**
 - @amplitude/session-replay-browser
-- amplitudeEngagement.boot
+- pageUrlEnrichmentPlugin
+- @amplitude/plugin-page-url-enrichment-browser
 - AmplitudeBootOptions
-- Swift SDK initialization
-- user_id configuration
-- device_id setup
-- user_properties mapping
-- session replay components
-- Amplitude engagement SDK
+- amplitudeEngagement.boot
+- user_id
+- device_id
+- user_properties
+- amplitude.add
+- amplitude.init
+- API_KEY
+- Swift SDK integration
+- JavaScript plugin integration
