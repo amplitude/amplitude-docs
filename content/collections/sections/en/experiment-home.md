@@ -7,7 +7,11 @@ exclude_from_sitemap: false
 nav_title: experiment
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 updated_at: 1754409434
+=======
+updated_at: 1754419243
+>>>>>>> Stashed changes
 =======
 updated_at: 1754419243
 >>>>>>> Stashed changes
@@ -24,7 +28,10 @@ landing_page_content:
     type: card
     enabled: true
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   -
     id: mdyq37pt
     icon: brand-stickers/icon-compliance-blue.svg
@@ -54,5 +61,8 @@ landing_page_content:
     entries_field: eeaf3cb1-5593-4fc4-a220-3ad4d73e8c82
     type: card
     enabled: true
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ---
