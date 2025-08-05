@@ -46,7 +46,7 @@ The Quick links section also provides a primary call to action (CTA) button that
 2. In the CTA Label field, enter the name of the CTA.
 3. Click **Link** to specify what type of link you want.
 4. Enter the link URL.
-5. Click** Save Changes**.
+5. Click **Save Changes**.
 
 ### Text customization
 The Text customization section lets you customize the text on the Resource Center itself. You can specify customized content for: 
