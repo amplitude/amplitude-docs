@@ -46,9 +46,10 @@ Before you can begin using experiments:
 Install the Amplitude SDK with the Experiment client. For example:
 
 ```bash
-
 npm install @amplitude/analytics-browser @amplitude/experiment-browser
+```
 
+```bash
 import * as amplitude from '@amplitude/analytics-browser'; 
 import { Experiment } from '@amplitude/experiment-browser'; 
 amplitude.init('AMPLITUDE_API_KEY');  
@@ -175,106 +176,116 @@ After you have completed designing your experiment, click **Start Experiment** t
 
 The following code examples describe the code for a feature flag and a JSON payload:
 
-{{partial:tabs tabs="Feature flag, JSON payload"}}
+{{partial:tabs tabs="Feature flag, Payload"}}
 {{partial:tab name="Feature flag"}}
 
 ```js
-import { useState, useEffect } from 'react'
-import { getBlogLayoutFlag } from '../services/featureFlags'  // Adjust to wherever you fetch your Amplitude flag
-import type { BlogPost } from '../types'
+import { useState, useEffect } from 'react';
+import { getBlogLayoutFlag } from '../services/featureFlags'; // Adjust to wherever you fetch your Amplitude flag
+import type { BlogPost } from '../types';
+
 type LayoutFlag = {
-  layout: 'cards' | 'list' | 'carousel'
-  titlePosition: 'above' | 'below' | 'center'
-  gradient: boolean
-  showDescription: boolean
-  cardCount: number
-}
+  layout: 'cards' | 'list' | 'carousel';
+  titlePosition: 'above' | 'below' | 'center';
+  gradient: boolean;
+  showDescription: boolean;
+  cardCount: number;
+};
+
 export default function BlogPostLayoutClient({ posts }: { posts: BlogPost[] }) {
-  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null) | {
-    layout: 'cards' | 'list' | 'carousel';
-    titlePosition: 'above' | 'below' | 'center';
-    gradient: boolean;
-    showDescription: boolean;
-    cardCount: number; 
-  }>(null);
+  const [layoutFlag, setLayoutFlag] = useState<LayoutFlag | null>(null);
 
   useEffect(() => {
     getBlogLayoutFlag().then((flag) => {
-      console.log(':magic_wand: Received Flag from Amplitude:', flag)
+      console.log(':magic_wand: Received Flag from Amplitude:', flag);
+
       if (flag) {
-        setLayoutFlag(flag)
+        setLayoutFlag(flag);
       } else {
-        console.log(':warning: No flag returned, falling back to default layout')
+        console.log(':warning: No flag returned, falling back to default layout');
         setLayoutFlag({
           layout: 'cards',
           titlePosition: 'above',
           gradient: false,
           showDescription: true,
           cardCount: 3,
-        })
+        });
       }
-    })
+    });
   }, []);
-   if (!layoutFlag) {
-    // you might render a loader here
-    return null
+
+  if (!layoutFlag) {
+    // You might render a loader here
+    return null;
   }
+
   // Render your posts according to layoutFlag...
   return (
     <div>
       {/* e.g. layoutFlag.layout === 'cards' ? <CardGrid posts={posts} /> : ... */}
     </div>
-  )
+  );
 }
 
 ```
 {{/partial:tab}}
+
 {{partial:tab name="Payload"}}
+
 ```js
 // services/featureFlags.ts
-import { experiment } from '@amplitude/experiment-js'  // adjust import to your SDK
-import type { LayoutFlag } from '../types'             // reuse the same LayoutFlag type
+import { experiment } from '@amplitude/experiment-js'; // Adjust import to your SDK
+import type { LayoutFlag } from '../types';             // Reuse the same LayoutFlag type
 
 export const getBlogLayoutFlag = async (): Promise<LayoutFlag> => {
   try {
     // In dev, clear any stale flags
     if (process.env.NODE_ENV === 'development') {
-      localStorage.clear()
-      console.warn(' Cleared localStorage in dev mode')
+      localStorage.clear();
+      console.warn('Cleared localStorage in dev mode');
     }
+
     // Initialize the experiment SDK
-    await experiment.start()
+    await experiment.start();
+
     // Grab the variant for our blog layout test
-    const variant = experiment.variant('blog_post_layout')
-    console.log(':movie_camera: Full Variant Object:', variant)
+    const variant = experiment.variant('blog_post_layout');
+    console.log(':movie_camera: Full Variant Object:', variant);
+
     // Some payloads come in `payload`, some in `value`
-    const value = variant?.payload ?? variant?.value
-    console.log(' Cleaned Flag Payload:', value)
+    const value = variant?.payload ?? variant?.value;
+    console.log('Cleaned Flag Payload:', value);
+
     // If there's no usable object, fall back to defaults
     if (!value || typeof value !== 'object' || Object.keys(value).length === 0) {
-      console.warn( No valid layout flag found, using fallback layout')
+      console.warn('No valid layout flag found, using fallback layout');
       return {
-        layout:       'carousel',
-        titlePosition:'above',
-        gradient:     false,
-        showDescription: true,
-        cardCount:    3,
-      }
+        layout:           'carousel',
+        titlePosition:    'above',
+        gradient:         false,
+        showDescription:  true,
+        cardCount:        3,
+      };
     }
+
     // Otherwise assume it's Amplitude's LayoutFlag shape
-    return value as LayoutFlag
+    return value as LayoutFlag;
+
   } catch (error) {
-    console.error(' Error fetching blog layout flag:', error)
+    console.error('Error fetching blog layout flag:', error);
+
     // On error, also fall back
     return {
-      layout:       'carousel',
-      titlePosition:'above',
-      gradient:     false,
-      showDescription: true,
-      cardCount:    3,
-    }
+      layout:           'carousel',
+      titlePosition:    'above',
+      gradient:         false,
+      showDescription:  true,
+      cardCount:        3,
+    };
   }
-}
+};
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
+
