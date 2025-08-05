@@ -13,13 +13,15 @@ This documentation covers the Session Replay Android Plugin installation and con
 - maskLevel privacy
 - amplitude.add()
 - amplitude.remove()
-- flushEventsOnClose
-- Session Replay ID property
-- remote configuration
-- Jetpack Compose support
-- WebView limitations
-- MapView limitations
-- EU data residency
 - Maven Central dependency
 - com.amplitude:plugin-session-replay-android
 - com.amplitude:middleware-session-replay-android
+- Session Replay ID property
+- optOut setting
+- flushEventsOnClose
+- Jetpack Compose support
+- WebView limitations
+- MapView limitations
+- device identifier requirement
+- remote configuration
+- EU data residency

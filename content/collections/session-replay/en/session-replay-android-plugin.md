@@ -13,7 +13,7 @@ description: 'Choose this option if you use an Amplitude Android SDK to instrume
 ---
 This article covers the installation of Session Replay using the Android SDK plugin. If your app is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-android-standalone).
 
-{{partial:partials/session-replay/sr-android-performance}}
+{{partial:partials/session-replay/sr-android-performance | markdown}}
 
 Session Replay captures changes to an app's **view tree**. The view tree includes the main view and all child views recursively. It then replays these changes to build a video-like replay. 
 
