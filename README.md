@@ -31,7 +31,7 @@ Statamic is built on a PHP framework / ecosystem called [Laravel](https://larave
 
 ### Set your .env file
 
-Rename the file `.env.example` to `.env`.
+Reach out in `#amplitude-docs` to request the contents of your .env file.
 
 ### Command line
 
