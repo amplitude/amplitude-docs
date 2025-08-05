@@ -1271,7 +1271,7 @@ When `ampTimestamp` expires (is less than the current time), the SDK ignores the
 
 This feature ensures that cross-domain tracking parameters remain valid only for a limited time window. This prevents potential security issues from long-lived URLs with embedded tracking parameters.
 
-It's recommended to follow the same session ID format as the Browser SDK by using `Date.now()`. Because the SDK checks whether an event is in session every time an event is tracked. For example, 
+Amplitude recommends that you follow the same session ID format as the Browser SDK using `Date.now()` because the SDK checks if an event is in session every time it tracks an event. For example:
 
 ```typescript
 // if session ID is set to 12345
@@ -1286,7 +1286,7 @@ amplitude.track("event")
 
 ### Use sendBeacon
 
-Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
+Unlike standard network requests, `sendBeacon` sends events in the background, even if the user closes the browser or leaves the page.
 
 {{partial:admonition type="warning" heading=""}}
 `sendBeacon` sends events in the background. As a result, events dispatched by `sendBeacon` don't return server responses. Keep the following in mind if you use `sendBeacon`:
