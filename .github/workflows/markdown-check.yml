@@ -1,13 +1,11 @@
 name: Check for Unrendered Markdown
 
 on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
   schedule:
     # Run daily at 2 AM UTC
     - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allow manual triggers
 
 jobs:
   markdown-check:
@@ -15,15 +13,6 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-        extensions: bcmath, ctype, exif, json, mbstring, openssl, pdo, tokenizer, xml, gd
-
-    - name: Install PHP Dependencies
-      run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -33,137 +22,35 @@ jobs:
     - name: Install NPM Dependencies
       run: npm install
 
-    - name: Build Assets
-      run: npm run prod
-
-    - name: Setup Environment
-      run: |
-        # Create .env file with proper defaults
-        touch .env
-        
-        # Set APP_URL with proper fallback and scheme validation
-        APP_URL="${{ vars.APP_URL }}"
-        
-        # If APP_URL is empty or doesn't have a scheme, provide a default
-        if [ -z "$APP_URL" ] || [[ ! "$APP_URL" =~ ^https?:// ]]; then
-          echo "APP_URL not properly set, using default for static generation"
-          APP_URL="https://amplitude.com"
-        fi
-        
-        echo "APP_URL=$APP_URL" >> .env
-        echo "STATAMIC_LICENSE_KEY=${{ secrets.STATAMIC_LICENSE_KEY }}" >> .env
-        
-        # Debug: Show what we're using
-        echo "Using APP_URL: $APP_URL"
-        
-    - name: Build Static Site  
-      run: |
-        # Generate static site with environment
-        if [ -z "${{ secrets.STATAMIC_LICENSE_KEY }}" ]; then
-          echo "No Statamic license key found. Using testing mode."
-          echo "yes" | php please ssg:generate --workers=4
-        else
-          echo "Using provided Statamic license key."
-          php please ssg:generate --workers=4
-        fi
-
-    - name: Start Local Server
-      run: |
-        cd storage/app/static
-        python3 -m http.server 8000 &
-        echo $! > server.pid
-        sleep 5
-      shell: bash
-
     - name: Run Markdown Crawler
       run: |
         node crawler.js \
-          --base-url http://localhost:8000 \
+          --base-url https://amplitude.com \
           --sitemap-path /docs/sitemap-docs.xml \
           --output markdown-issues.json \
-          --concurrency 5 \
+          --concurrency 10 \
           --ignore-file .crawlerignore \
           --verbose
       continue-on-error: true
       id: crawler
 
-    - name: Stop Local Server
-      run: |
-        if [ -f storage/app/static/server.pid ]; then
-          kill $(cat storage/app/static/server.pid) || true
-          rm storage/app/static/server.pid
-        fi
-      shell: bash
-
     - name: Upload Markdown Issues Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: markdown-issues-report
+        name: markdown-issues-report-${{ github.run_number }}
         path: markdown-issues.json
-
-    - name: Comment PR with Results
-      if: github.event_name == 'pull_request' && always()
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const fs = require('fs');
-          
-          try {
-            const report = JSON.parse(fs.readFileSync('markdown-issues.json', 'utf8'));
-            
-            let comment = '## 🔍 Markdown Rendering Check\n\n';
-            
-            if (report.summary.totalIssues === 0) {
-              comment += '✅ **No unrendered markdown detected!**\n\n';
-              comment += `- URLs crawled: ${report.summary.totalUrls}\n`;
-              comment += `- Errors: ${report.summary.totalErrors}\n`;
-            } else {
-              comment += `❌ **Found ${report.summary.totalIssues} potential markdown rendering issues**\n\n`;
-              comment += `- URLs crawled: ${report.summary.totalUrls}\n`;
-              comment += `- URLs with issues: ${report.summary.urlsWithIssues}\n`;
-              comment += `- Errors: ${report.summary.totalErrors}\n\n`;
-              
-              comment += '### Issues by Type:\n';
-              report.summary.issuesByType.forEach(issue => {
-                comment += `- **${issue.type}**: ${issue.count} occurrences (${issue.description})\n`;
-              });
-              
-              comment += '\n### Sample Issues:\n';
-              Object.keys(report.issuesByUrl).slice(0, 3).forEach(url => {
-                comment += `\n**${url}**:\n`;
-                report.issuesByUrl[url].forEach(issue => {
-                  comment += `- ${issue.type}: ${issue.count} occurrences\n`;
-                  if (issue.samples && issue.samples.length > 0) {
-                    const sample = issue.samples[0].substring(0, 100);
-                    comment += `  - Sample: \`${sample}${issue.samples[0].length > 100 ? '...' : ''}\`\n`;
-                  }
-                });
-              });
-              
-              comment += '\n📄 Download the full report from the workflow artifacts.';
-            }
-            
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
-          } catch (error) {
-            console.log('Could not read markdown issues report:', error.message);
-          }
 
     # Slack Notifications
     - name: Send Slack Summary
-      if: always() && (github.event_name == 'push' || github.event_name == 'schedule')
+      if: always()
       continue-on-error: true
       uses: 8398a7/action-slack@v3
       with:
         status: custom
         custom_payload: |
           {
-            "text": ":mag: Markdown Rendering Check Results",
+            "text": ":mag: Daily Markdown Check Results",
             "attachments": [
               {
                 "color": "${{ steps.crawler.outcome == 'success' && 'good' || 'danger' }}",
@@ -180,11 +67,11 @@ jobs:
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Repository:*\n${{ github.repository }}"
+                        "text": "*Site:*\nhttps://amplitude.com"
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Branch:*\n${{ github.ref_name }}"
+                        "text": "*Repository:*\n${{ github.repository }}"
                       },
                       {
                         "type": "mrkdwn",
@@ -192,7 +79,7 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Workflow:*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+                        "text": "*Report:*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
                       }
                     ]
                   }
@@ -204,7 +91,7 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     - name: Send Detailed Slack Report
-      if: always() && steps.crawler.outcome == 'failure' && (github.event_name == 'push' || github.event_name == 'schedule')
+      if: always() && steps.crawler.outcome == 'failure'
       continue-on-error: true
       uses: actions/github-script@v7
       with:
@@ -223,7 +110,7 @@ jobs:
               
               let sampleIssues = '';
               Object.keys(report.issuesByUrl).slice(0, 3).forEach(url => {
-                const shortUrl = url.replace('http://localhost:8000', '').substring(0, 50);
+                const shortUrl = url.replace('https://amplitude.com', '').substring(0, 50);
                 sampleIssues += `\n*${shortUrl}*:\n`;
                 report.issuesByUrl[url].forEach(issue => {
                   sampleIssues += `  • ${issue.type}: ${issue.count} occurrences\n`;
@@ -231,7 +118,7 @@ jobs:
               });
               
               const payload = {
-                text: "📋 Detailed Markdown Issues Report",
+                text: "📋 Daily Markdown Issues Report",
                 attachments: [
                   {
                     color: "danger",
@@ -240,7 +127,7 @@ jobs:
                         type: "section",
                         text: {
                           type: "mrkdwn",
-                          text: `*Summary:*\n• URLs crawled: ${report.summary.totalUrls}\n• URLs with issues: ${report.summary.urlsWithIssues}\n• Total issues: ${report.summary.totalIssues}\n• Errors: ${report.summary.totalErrors}`
+                          text: `*Summary:*\n• URLs crawled: ${report.summary.totalUrls}\n• URLs with issues: ${report.summary.urlsWithIssues}\n• Total issues: ${report.summary.totalIssues}\n• Errors: ${report.summary.totalErrors}\n• Skipped: ${report.summary.totalSkipped || 0}`
                         }
                       },
                       {
@@ -315,5 +202,6 @@ jobs:
     - name: Fail if Issues Found
       if: steps.crawler.outcome == 'failure'
       run: |
-        echo "❌ Markdown rendering issues detected. Check the report for details."
-        exit 1 
+        echo "❌ Markdown rendering issues detected on production site."
+        echo "Check the report for details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        exit 1
