@@ -23,7 +23,7 @@ For example, imagine two holdout groups: 
 
 Since **experiment A** is part of both holdout groups (1 and 2), it will receive the majority of the total traffic: 
 
-0.95 \* 0.95 = 0.9025 (90.25%)
+`0.95 * 0.95 = 0.9025 (90.25%)`
 
 Instead of adding an experiment to multiple holdout groups, create a single group with all the relevant experiments instead. This will allow for a more even distribution of traffic across experiments. 
 
@@ -40,7 +40,7 @@ For example, imagine the following holdout group and mutual exclusion group: 
 
 In this scenario, experiment A receives about half of the total traffic:
 
-0.95 \* 0.5 = 0.475 (47.5%)
+`0.95 * 0.5 = 0.475 (47.5%)`
 
 Using holdout groups with mutual exclusion isn't forbidden, but be cautious of the potential traffic limits as you plan and roll out your experiments. 
 

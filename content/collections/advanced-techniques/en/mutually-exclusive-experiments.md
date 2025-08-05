@@ -73,7 +73,7 @@ For example, consider the following two mutual exclusion groups:
 * Mutual exclusion group 1 has experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
 * Mutual exclusion group 2 has experiment A in slot 1 and experiment C in slot 2, where each experiment receives 50% of the traffic
 
-In this case, experiment A will receive 0.5 \* 0.5 = 0.25, or 25% of the total traffic.
+In this case, experiment A will receive `0.5 * 0.5 = 0.25`, or 25% of the total traffic.
 
 Instead of adding an experiment to multiple mutual exclusion groups, create a group that includes all the relevant experiments instead; here, that group would contain experiments A, B, and C.
 
@@ -84,6 +84,6 @@ For example, consider the following holdout group and mutual exclusion group: 
 * The holdout group contains experiment A, with a holdout percentage of 5%
 * The mutual exclusion group contains experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
 
-In this case, experiment A will receive 0.95 \* 0.5 = 0.475, or 47.5% of the total traffic.
+In this case, experiment A will receive `0.95 * 0.5 = 0.475`, or 47.5% of the total traffic.
 
 Learn more in this article about [working with holdout groups in Amplitude Experiment.](/docs/feature-experiment/advanced-techniques/holdout-groups-exclude-users)
