@@ -137,13 +137,12 @@ Add JSON content to the Payload field when creating a variant. Payload content i
 ##  Finalizing the flag
 
 After you set up the flag, associate it to a deployment, set up your variants or payloads, and target your users, finalize the feature flag. 
-Finalizing the flag activates and converts the flag to an actual experiment. 
+Finalizing the flag activates it and makes it available. 
 
 ##### To finalize a feature flag
 
 1. Go to your feature flag.
 2. Click **Activate flag**.
-3. From the Activate flag dropdown, select **Convert to experiment**.
 
 ## Designing the experiment
 
