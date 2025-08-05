@@ -113,10 +113,10 @@ If you change the bucketing salt, users will switch between variants in your ex
  1. Go to *Experiment > Feature Flags* and select your flag.
  2. In the Variants section, click the **Plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
- 4. In the Assignment section, define the **user segments** that'll receive your new feature.
-    1. Specify the percentage of users who'll receive the variant.
+ 4. In the Assignment section, define the **user segments** that'll receive your new feature. Go to [Define the Audience](/docs/feature-experiment/workflow/define-audience) for information about segmenting.
+    a. Specify the percentage of users who'll receive the variant.
     Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
-    2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
+    b. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
  5. Click **Apply**.
  
  {{partial:admonition type='note'}}
