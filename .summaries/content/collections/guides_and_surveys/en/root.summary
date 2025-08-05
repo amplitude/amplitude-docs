@@ -54,6 +54,6 @@ The platform includes a comprehensive permission system with five access levels 
 
 **Themes** provide extensive customization capabilities through the Theme Editor, including Brand controls for colors and typography, Component editor for form controls and widget dimensions, and platform-specific theme configurations for web and mobile.
 
-**Proxy Configuration** supports AWS CloudFront setup for enterprise deployments, with specific cache behaviors for the critical `/sdk/*` path pattern and separate origins for static assets (`cdn.amplitude.com`) and API requests (`gs.amplitude.com`).
+**Proxy Configuration** supports AWS CloudFront setup with specific cache behaviors for the critical `/sdk/*` path pattern, enabling enterprise-grade deployment with proper API routing and static asset delivery.
 
-The platform integrates seamlessly with the broader Amplitude ecosystem, supporting Microscope integration for session replays, comprehensive event forwarding to analytics providers, and Content Security Policy (CSP) compliance with nonce support for enterprise security requirements.
+The platform integrates seamlessly with the broader Amplitude ecosystem, leveraging existing user properties, event tracking, and analytics infrastructure while providing specialized engagement and feedback collection capabilities that complement core product analytics workflows.

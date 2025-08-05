@@ -104,9 +104,9 @@ Pass the following configuration options when you initialize the Session Replay 
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 | `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
 
-{{partial:partials/session-replay/sr-remote-config-test}}
+{{partial:partials/session-replay/sr-remote-config-test | markdown}}
 
-{{partial:partials/session-replay/sr-android-mask-data}}
+{{partial:partials/session-replay/sr-android-mask-data | markdown}}
 
 ### User opt-out
 
@@ -121,7 +121,7 @@ val sessionReplay = SessionReplay(
 )
 ```
 
-{{partial:partials/session-replay/sr-eu-data-residency}}
+{{partial:partials/session-replay/sr-eu-data-residency | markdown}}
 
 ```kotlin
 // Set serverZone to EU
@@ -132,7 +132,7 @@ val sessionReplay = SessionReplay(
 )
 ```
 
-{{partial:partials/session-replay/sr-sampling-rate}}
+{{partial:partials/session-replay/sr-sampling-rate | markdown}}
 
 ```kotlin
 // This configuration samples 1% of all sessions

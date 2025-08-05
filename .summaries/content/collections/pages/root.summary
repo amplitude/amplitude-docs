@@ -1,57 +1,44 @@
-# Amplitude Digital Analytics Platform
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, manage data, conduct experiments, and monitor user sessions. The platform consists of four core products that work together to deliver end-to-end product intelligence capabilities.
 
-Amplitude is a comprehensive digital analytics and product intelligence platform that provides organizations with tools to understand user behavior, optimize product experiences, and drive data-driven decision making. The platform consists of four core products: Analytics, Data, Experiment, and Session Replay, all built around a unified data foundation that enables cohesive product intelligence across the entire user journey.
+## Core Product Suite
 
-## Product Architecture and Relationships
+**Amplitude Analytics** serves as the foundational analytics engine, enabling organizations to track, measure, and analyze user interactions across digital products. It provides behavioral analytics capabilities to understand user journeys and product performance.
 
-The Amplitude ecosystem operates through four interconnected products that share user identification, event data, and analytics infrastructure:
+**Amplitude Data** functions as the data management layer, handling data integration, warehousing, and governance. It ensures data quality and provides connectivity between various data sources and the broader Amplitude ecosystem.
 
-**Amplitude Analytics** functions as the core behavioral analytics engine, providing user journey insights through event tracking and custom analysis capabilities. It serves as the foundation for understanding user interactions and product performance.
+**Amplitude Experiment** delivers feature flagging and A/B testing capabilities, allowing teams to safely deploy features, conduct controlled experiments, and make data-driven product decisions.
 
-**Amplitude Data** operates as the central data integration layer, enabling bidirectional connections with data warehouses and external systems to centralize product data across organizations. This creates a unified data foundation that powers all other platform components.
+**Amplitude Session Replay** captures and reconstructs user sessions, providing visual insights into user behavior and enabling teams to identify usability issues and optimization opportunities.
 
-**Amplitude Experiment** delivers feature flag management and A/B testing capabilities, allowing teams to safely deploy and test new features with controlled user segments. It integrates directly with the analytics layer to measure experiment impact.
+## Technical Integration Architecture
 
-**Amplitude Session Replay** captures and analyzes user session recordings, providing visual insights into user interactions and behavior patterns specifically for web applications. This complements the quantitative analytics with qualitative behavioral data.
+The platform provides multiple integration pathways through SDKs and APIs. The SDK ecosystem includes browser-based JavaScript implementations and native mobile SDKs (Swift for iOS). Key integration components include:
 
-These products work together through shared data models and user identification systems, creating a cohesive platform where insights from one product inform decisions in others.
+- **Browser SDK 2**: The primary JavaScript SDK for web applications
+- **Session Replay Browser Package** (`@amplitude/session-replay-browser`): Specialized SDK for capturing user sessions
+- **Plugin Architecture**: Extensible system including plugins like `pageUrlEnrichmentPlugin` from `@amplitude/plugin-page-url-enrichment-browser`
 
-## Key Nomenclature and Definitions
+## Key Technical Nomenclature
 
-**Event Properties vs User Properties**: The platform maintains a critical distinction between event-level attributes that describe specific user actions and user-level attributes that describe persistent user characteristics across sessions.
+**User Identification System**: The platform uses a dual-identifier approach with `user_id` (for authenticated users) and `device_id` (for device-level tracking), supplemented by `user_properties` for additional user context.
 
-**User Identification System**: Uses `user_id` and `device_id` parameters for tracking users across sessions and devices, enabling cohort analysis and comprehensive user journey mapping.
+**Event Architecture**: Distinguishes between event properties (describing specific actions) and user properties (describing user characteristics), enabling granular behavioral analysis.
 
-**Session Replay Components**: Browser-based tracking components, specifically the `@amplitude/session-replay-browser` package, designed for web application user interaction capture.
+**Initialization Pattern**: SDKs follow a consistent initialization pattern using `amplitude.init(API_KEY)` followed by plugin registration via `amplitude.add()` and service activation through methods like `amplitudeEngagement.boot()`.
 
-**SDK Initialization**: Utilizes boot methods such as `amplitudeEngagement.boot()` with configuration objects like `AmplitudeBootOptions` to initialize tracking across different platforms and environments.
+**Configuration Objects**: Platform uses structured configuration objects like `AmplitudeBootOptions` to manage SDK initialization parameters and service settings.
 
-**Custom Formulas**: Advanced analytics capabilities that extend beyond standard event counting, allowing users to create sophisticated custom calculations and metrics.
+## Ecosystem Integration
 
-**Blueprint System**: Template-based content management architecture using structured templates for consistent documentation and interface layouts.
+The platform integrates with data warehouse systems, enabling bidirectional data flow between Amplitude and enterprise data infrastructure. Custom formulas and analysis capabilities allow for advanced behavioral analytics beyond standard event tracking.
 
-## Integration Points and Implementation
+The documentation architecture supports multiple output formats including JSON APIs and LLM-optimized text formats, indicating integration capabilities with modern AI and automation workflows.
 
-The platform provides multiple SDK and API integration methods:
+## API and Command Structure
 
-**Browser SDK 2**: The primary web SDK for client-side event tracking and session replay implementation, supporting both basic and advanced initialization patterns with flexible configuration options.
+While specific API endpoints aren't detailed in the available documentation, the platform follows standard initialization patterns:
+- `amplitude.init(API_KEY)` for SDK initialization
+- `amplitude.add(plugin)` for plugin registration  
+- `amplitudeEngagement.boot(options)` for service activation
 
-**Swift SDK**: Mobile SDK for iOS applications that follows similar initialization patterns using `AmplitudeBootOptions` for platform-specific configuration.
-
-**Data Warehouse Integration**: Enterprise-grade direct connections enabling bidirectional data flow between Amplitude and existing data infrastructure for advanced analytics workflows.
-
-**API and SDK Architecture**: Maintains separate documentation sections for Amplitude APIs (server-side integrations) and Amplitude SDKs (client-side implementations), indicating clear separation of concerns between programmatic access and embedded tracking.
-
-The SDKs support flexible configuration through options objects that handle user properties mapping, device identification, and session management across different platforms and environments.
-
-## Global Product Ecosystem
-
-Amplitude operates as a global platform with comprehensive internationalization support:
-
-**Localization Framework**: Implements sophisticated content management with region-specific documentation portals, including dedicated Japanese localization with `jp-home.md` entry points and localized navigation systems.
-
-**Content Management System**: Features UUID-based content identification, publishing workflows with draft and published states, origin tracking for translation management, and integrated SEO controls through sitemap configuration.
-
-**Multi-Regional Strategy**: Maintains content consistency across global markets while accommodating local language requirements and cultural preferences through customizable interface elements and region-specific user experience controls.
-
-The platform's documentation architecture supports comprehensive developer resources across multiple languages while maintaining synchronization with global product updates and feature releases, ensuring consistent access to analytics capabilities, SDK implementations, and data management workflows regardless of geographic location.
+The platform maintains a plugin-based architecture allowing for modular functionality extension, with specialized plugins for URL enrichment, session replay, and other behavioral tracking capabilities.
