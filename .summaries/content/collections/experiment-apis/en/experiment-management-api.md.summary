@@ -1,7 +1,6 @@
-## Summary
-Documents Amplitude's Experiment Management API for programmatically creating and controlling feature flags and experiments, including authentication with management API keys, rate limiting (100 req/sec, 100k daily), and CRUD operations across six endpoint categories (flags, experiments, mutex groups, holdouts, deployments, versions).
+**Summary:** Documents Amplitude's Experiment Management API for programmatically creating and controlling feature flags and experiments, including authentication with management API keys, rate limiting (100 req/sec, 100k daily), and CRUD operations across six endpoint categories (flags, experiments, mutex groups, holdouts, deployments, versions).
 
-## Keywords
+**Keywords:**
 - Experiment Management API
 - feature flags programmatic control
 - management API key authentication

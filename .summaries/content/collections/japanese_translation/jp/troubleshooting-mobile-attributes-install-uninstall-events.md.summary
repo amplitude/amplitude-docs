@@ -2,19 +2,16 @@
 This documentation explains troubleshooting mobile attribution events (install/uninstall) in Amplitude, focusing on how the Attribution API maps events from mobile attribution partners using advertising IDs (IDFA/IDFV/ADID) to existing Amplitude users within a 72-hour retention window.
 
 **Keywords:**
-- mobile attribution events
 - Attribution API
-- advertising IDs (IDFA/IDFV/ADID)
+- mobile attribution events
+- IDFA IDFV ADID advertising IDs
 - 72-hour retention window
 - amplitude_attribution_ids
-- mobile attribution partners (Appsflyer/Adjust/Branch/Singular)
-- device_id mapping
-- user_id mapping
-- amplitude_id
-- install/uninstall events
+- mobile attribution partners
+- Appsflyer Adjust Branch Singular
+- device_id user_id amplitude_id mapping
+- install uninstall events
 - advertising ID tracking
-- iOS SDK IDFV
-- HTTP API attribution
-- ID API profile creation
-- attribution event mapping
-- mobile SDK instrumentation
+- iOS SDK IDFV device_id
+- HTTP API ID API
+- attribution event mapping workflow

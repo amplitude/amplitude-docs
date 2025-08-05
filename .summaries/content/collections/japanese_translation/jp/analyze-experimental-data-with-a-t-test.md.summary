@@ -1,23 +1,17 @@
-## Summary
-This documentation explains how to use T-tests in Amplitude Experiment for analyzing experimental data, covering Welch's T-test implementation, one-tailed vs two-tailed testing options, sample size requirements, and the configuration process through the Plan and Analyze tabs.
+**Summary:** This documentation explains how to use T-tests in Amplitude Experiment for analyzing experimental data, covering Welch's T-test implementation, one-tailed vs two-tailed testing options, sample size requirements, and the configuration process through the Plan and Analyze tabs.
 
-## Keywords
-- Amplitude Experiment
-- T-test (T検定)
-- Welch's T-test
-- one-tailed test (片側検定)
-- two-tailed test (両側検定)
-- sequential testing (逐次検定)
-- sample size calculation
-- Central Limit Theorem
+**Keywords:**
+- Amplitude Experiment T-test
+- Welch's T-test implementation
+- one-tailed vs two-tailed testing
+- sequential testing alternative
+- sample size requirements
+- Central Limit Theorem assumptions
 - Experiment Results chart
-- Plan tab
-- Analyze tab
-- statistical significance
+- Plan tab and Analyze tab configuration
 - duration estimation tool
 - Cumulative Exposure graph
 - Sample Size Target
+- statistical significance thresholds
 - MDE (Minimum Detectable Effect)
-- false positive rate
-- false negative rate
-- confidence interval
+- false positive and false negative rates

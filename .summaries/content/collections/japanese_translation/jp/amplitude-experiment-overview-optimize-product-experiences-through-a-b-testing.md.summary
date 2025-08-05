@@ -1,5 +1,5 @@
 **Summary:**
-This Japanese documentation page explains Amplitude Experiment's A/B testing platform, covering the complete workflow for creating product experiments and feature flags, including hypothesis creation, variant configuration, user allocation, statistical analysis with sequential testing, and experiment archival processes.
+This Japanese documentation page explains Amplitude Experiment's A/B testing platform, covering the complete workflow for creating product experiments and feature flags, including hypothesis creation, variant configuration, user assignment, statistical analysis with sequential testing, and experiment archival processes.
 
 **Keywords:**
 - Amplitude Experiment
@@ -9,17 +9,15 @@ This Japanese documentation page explains Amplitude Experiment's A/B testing pla
 - feature flags
 - hypothesis creation
 - variant configuration
-- user allocation
+- user assignment
 - sequential testing (逐次検定)
 - statistical significance
 - experiment archival
 - SDK integration
 - REST API
 - bucketing units
-- SUTVA (Stable Unit Treatment Value Assumption)
+- SUTVA assertion
 - progressive feature delivery
 - onboarding funnel optimization
-- experiment metrics selection
+- experiment metrics
 - control groups
-- バリアント (variants)
-- 仮説ステートメント (hypothesis statements)

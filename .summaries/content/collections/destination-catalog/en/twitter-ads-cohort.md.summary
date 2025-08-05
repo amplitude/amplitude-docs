@@ -1,5 +1,5 @@
 ## Summary
-This documentation describes the Twitter Ads cohort destination integration that enables syncing Amplitude user cohorts to Twitter Ads for audience creation, requiring OAuth authentication and supporting multiple user identifiers including Device ID, Email, Handle, X ID, and Phone Number with automatic SHA256 hashing.
+This documentation describes the Twitter Ads cohort destination integration that syncs Amplitude user cohorts to Twitter Ads for audience creation, requiring OAuth authentication and supporting multiple user identifiers (Device ID, Email, Handle, X ID, Phone Number) with automatic SHA256 hashing for compliance.
 
 ## Keywords
 - Twitter Ads cohort destination
@@ -7,14 +7,12 @@ This documentation describes the Twitter Ads cohort destination integration that
 - Twitter Ads audience creation
 - OAuth authentication Twitter
 - Device ID mapping
-- Email SHA256 hashing
-- X handle identifier
-- X ID (Twitter ID)
-- Phone number hashing
+- SHA256 hashing compliance
+- X ID Twitter ID
+- Handle synchronization
 - Twitter Ads Developer Portal
-- Standard access permissions
-- Audience manager Twitter
-- 24-48 hour sync population
+- Standard access requirements
+- 24-48 hour population delay
 - 100 member minimum threshold
 - Ad networks integration
-- Personalized campaign targeting
+- User identifier matching

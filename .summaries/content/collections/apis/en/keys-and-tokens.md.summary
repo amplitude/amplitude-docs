@@ -2,17 +2,17 @@
 
 **Keywords:**
 - Amplitude API authentication
-- Project API Key
-- Project Secret Key
-- Deployment Key client-side server-side
+- Project API Key rotation
+- Secret Key management
+- Experiment Deployment Keys
+- client-side vs server-side keys
 - Management API Key
-- Data API Token
+- Data API Tokens
 - SCIM Key provisioning
-- Experiment deployment authentication
-- Analytics project keys
-- Key rotation capabilities
-- Org-level API Key
-- Public vs private keys
-- Authentication scope permissions
-- Browser mobile app ingestion
-- Feature experiment data model
+- org-level API credentials
+- key rotation capabilities
+- public vs private key security
+- Analytics project authentication
+- Experiment flag management
+- Data API authorization
+- Enterprise SCIM integration

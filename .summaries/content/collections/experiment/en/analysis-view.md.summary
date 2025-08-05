@@ -9,6 +9,5 @@
 - statistical significance p-value
 - recommendation metric vs secondary metrics
 - control vs treatment analysis
-- unique conversions percentage
-- aggregate events per exposure
-- experiment success evaluation
+- absolute value conversions percentage
+- experiment exposures denominator

@@ -5,14 +5,13 @@
 - platform comparison
 - session timeout windows
 - timezone alignment UTC
-- user merging
-- bot filtering
+- user merging identifiers
+- bot filtering scrapers
 - Google Analytics sessions
 - midnight session rollover
 - campaign-based expiration
 - session event limits
-- unique user tracking
 - metric definitions
-- web scrapers blocking
-- 30-minute session threshold
-- 5-minute mobile session
+- Amplitude SDKs
+- 30-minute web timeout
+- 5-minute mobile timeout

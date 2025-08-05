@@ -1,14 +1,15 @@
-**Summary:** This documentation explains statistical significance calculations for Amplitude's A/B testing in funnel charts, covering improvement over baseline ratios, unique conversions vs totals, and the differences between sequential testing (Amplitude Experiment) and two-tailed T-tests (Funnel Analysis) with 5% false positive rates and minimum sample size requirements.
+**Summary:** This documentation explains statistical significance calculations for A/B testing in Amplitude's funnel analysis charts, covering improvement over baseline ratios, unique conversions vs totals, and the differences between sequential testing and two-tailed T-tests with 5% false positive rates and minimum sample size requirements.
 
 **Keywords:**
 - statistical significance
-- A/B testing funnel charts
+- A/B testing funnel analysis
 - improvement over baseline calculation
 - unique conversions vs totals
 - sequential testing vs two-tailed T-test
 - false positive rate 5%
 - minimum sample size requirements
-- Amplitude Experiment vs Funnel Analysis
-- p-value thresholds
-- conversion ratio calculations
-- statistical methods comparison
+- 30 samples threshold
+- five conversions minimum
+- p-value calculations
+- Experiment Results chart
+- Amplitude Experiment end-to-end

@@ -7,9 +7,11 @@
 - activation experiences
 - onboarding checklists
 - API key authentication
-- user and group level sync
-- partner-maintained destination
-- customer-engagement category
+- App ID configuration
+- user-level and group-level sync
 - paid plans requirement
-- account user mapping
+- partner-maintained integration
+- customer engagement platform
+- Bento dashboard setup
 - sync cadence configuration
+- existing account requirement

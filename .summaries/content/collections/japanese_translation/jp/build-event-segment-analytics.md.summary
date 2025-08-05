@@ -6,7 +6,7 @@ This Japanese documentation explains how to build Event Segment Analytics in Amp
 - Amplitude event segmentation charts
 - Japanese translation documentation
 - User segments (ユーザーセグメント)
-- Event properties and filters
+- Event properties filtering
 - Measurement options (測定方法)
 - Unique users (ユニーク数)
 - Event totals (イベント数)
@@ -15,7 +15,8 @@ This Japanese documentation explains how to build Event Segment Analytics in Amp
 - Property value calculations
 - Custom formulas (カスタム数式)
 - Microscope functionality
-- Group segment by user properties
 - Inline custom events
+- Group segment by user properties
+- Active/inactive events
 - Filter by properties
-- Performed events criteria
+- Performed events filtering

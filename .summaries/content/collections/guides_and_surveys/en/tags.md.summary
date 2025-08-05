@@ -5,15 +5,18 @@
 - guides and surveys organization
 - tag filters
 - bulk tag operations
-- Tags control editor
-- Assign Tags functionality
-- guides list view
-- surveys list view
-- Tags column table settings
+- Tags column
+- list view interface
 - tag naming conventions
-- tag renaming interface
-- bulk-apply tag updates
-- event tracking properties
+- Assign Tags button
+- tag renaming
+- tag description editing
 - campaign tags
 - feature tags
 - team tags
+- Add Filter functionality
+- bulk-apply tag updates
+- event tracking properties
+- guides list view
+- surveys list view
+- table header controls

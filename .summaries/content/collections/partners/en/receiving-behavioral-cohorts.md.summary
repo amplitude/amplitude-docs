@@ -1,5 +1,5 @@
 ## Summary
-This documentation describes Amplitude's behavioral cohort syncing system that exports user cohorts to partner platforms via REST API using two integration patterns: list-based (creating/updating user lists) and property-based (setting user traits/properties), with basic authentication, configurable batch sizes, and automatic retry mechanisms.
+This documentation describes Amplitude's behavioral cohort syncing system that exports user cohorts to partner platforms via REST API using two integration patterns: list-based (creating/updating user lists) and property-based (setting user traits/properties), with basic authentication, configurable batching (default 1000 users), and automatic retry logic with exponential backoff.
 
 ## Keywords
 - Amplitude behavioral cohorts
@@ -7,10 +7,12 @@ This documentation describes Amplitude's behavioral cohort syncing system that e
 - list-based cohort integration
 - property-based cohort integration
 - basic authentication api_key
-- bulk API batching
+- bulk API batching 1000 users
 - exponential backoff retry
-- user traits properties
 - cohort membership sync
-- identify type requests
-- batch update endpoints
+- user traits properties
 - list creation add remove APIs
+- identify type requests
+- full sync incremental sync
+- 4 threads concurrent requests
+- hourly daily sync scheduling

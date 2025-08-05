@@ -1,4 +1,4 @@
-**Summary:** Documents Amplitude's behavior offset feature for segmenting users based on behaviors across two distinct time periods within behavioral cohorts, including rolling windows, offset configuration, and in-line cohort creation with specific event frequency requirements.
+**Summary:** Documents Amplitude's behavior offset feature for segmenting users based on behaviors across two distinct time periods within behavioral cohorts, including rolling windows, offset configuration, and in-line cohort creation with specific operator and event frequency settings.
 
 **Keywords:**
 - behavior offset
@@ -13,6 +13,6 @@
 - during cohorts
 - in each cohorts
 - Segmentation Module
-- event frequency
-- daily offsets
 - Growth and Enterprise plans
+- daily offsets
+- event frequency operators

@@ -1,45 +1,30 @@
 **Summary:**
-This documentation covers the Amplitude Analytics Unity SDK, which is a plugin that wraps the Amplitude iOS and Android SDKs for Unity projects (2019.3.11+), supporting installation via Unity Package Manager or manual download, configuration options including EU data residency and COPPA compliance, event tracking with properties, user property management with Identify operations, revenue tracking with verification, session handling, and advanced features like IDFA/GPS setup for iOS and advertising ID configuration for Android.
+This documentation covers the Amplitude Analytics Unity SDK, a plugin that integrates Amplitude iOS and Android SDKs into Unity projects (2019.3.11+), including installation via Unity Package Manager or manual download, configuration options for batching behavior and server zones, event tracking with properties, user property management through Identify operations, revenue tracking with verification, session handling, and advanced features like COPPA control, IDFA/GPS setup for iOS, and dynamic configuration.
 
 **Keywords:**
 - Unity SDK
 - amplitude-unity.unitypackage
-- Unity Package Manager
-- Git URL installation
-- ProGuard obfuscation
+- Unity Package Manager installation
+- ProGuard obfuscation rules
 - unity-jar-resolver
 - OkHTTP dependency
-- Android API 21 compatibility
-- iOS XCode simulator
-- Device SDK vs Simulator SDK
 - AmplitudeServerZone.EU
-- setServerZone()
-- setEventUploadPeriodSeconds()
-- setMinTimeBetweenSessionsMillis()
-- useAdvertisingIdForDeviceId()
-- useAppSetIdForDeviceId()
-- enableCoppaControl()
-- setTrackingOptions()
+- setEventUploadPeriodSeconds
+- setMinTimeBetweenSessionsMillis
 - Identify operations
-- setUserProperty()
-- setOnce()
-- addUserProperty()
-- appendUserProperty()
-- clearUserProperties()
-- setGroup()
-- logEventWithGroups()
-- logRevenue()
-- trackSessionEvents()
-- outOfSession events
-- IDFA tracking
-- GPS location tracking
+- setUserProperty
+- setOnce
+- append operations
+- logRevenue verification
+- session_id tracking
+- trackSessionEvents
+- COPPA control
+- useAdvertisingIdForDeviceId
+- useAppSetIdForDeviceId
+- iOS IDFA setup
 - CustomIdfa.m
 - CustomGPS.m
 - DllImport
-- setIdfaBlock()
-- setLocationInfoBlock()
-- Info.plist configuration
-- Privacy - Tracking Usage Description
-- Location Usage Description
-- setUseDynamicConfig()
-- setOptOut()
+- setUseDynamicConfig
+- Android API 21 compatibility
+- Build Settings platform selection

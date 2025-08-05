@@ -1,18 +1,22 @@
 ## Summary
-This documentation explains the Amplitude Experiment Analysis view interface, detailing the statistical columns (significance, relative performance, absolute values, confidence intervals) and their interpretations for evaluating A/B test results in Japanese.
+This documentation explains the Experiment Analysis view in Amplitude Experiment, detailing the statistical columns in the Analysis card including significance, relative performance, absolute values, and confidence intervals for comparing treatment variants against control groups.
 
 ## Keywords
-- Amplitude Experiment Analysis view
-- experiment statistical significance
-- relative performance lift
-- confidence intervals interpretation
-- A/B testing metrics
-- variant performance comparison
-- control vs treatment analysis
-- unique conversion percentages
-- exposure user calculations
-- primary and secondary metrics
-- Japanese experiment documentation
-- statistical hypothesis testing
-- p-value significance
-- experiment visualization charts
+- Amplitude Experiment
+- Experiment Analysis view
+- Analysis card
+- statistical significance
+- relative performance
+- relative lift
+- confidence intervals
+- treatment variants
+- control groups
+- p-value
+- primary metrics
+- secondary metrics
+- unique conversions
+- absolute performance
+- exposure users
+- statistical testing
+- experiment visualization
+- Japanese translation documentation

@@ -1,4 +1,4 @@
-**Summary:** This Japanese documentation page covers user and permission management in Amplitude, including inviting new users through the Members page, configuring team assignments and project-level permissions, enabling access requests, modifying user roles, changing email addresses through account recreation, and transferring content ownership between users including bulk ownership transfer functionality.
+**Summary:** This Japanese documentation page covers user management and permissions in Amplitude, including inviting new users through the Members page, configuring team assignments and project-level permissions, enabling access requests, modifying user roles, changing email addresses through account recreation, and transferring content ownership between users including bulk ownership transfer functionality.
 
 **Keywords:**
 - Amplitude user management
@@ -7,14 +7,14 @@
 - User invitation workflow
 - Project-level permissions
 - Team assignments
-- User roles and permissions
+- User roles modification
 - Access request functionality
 - Email address changes
 - Content ownership transfer
 - Bulk ownership transfer
-- User deletion process
-- Organization management
+- Organization administration
 - Admin and manager permissions
-- Enterprise groups functionality
+- User deletion process
+- Group permissions inheritance
 - Default project settings
 - Team spaces configuration

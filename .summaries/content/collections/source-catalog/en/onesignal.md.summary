@@ -1,16 +1,14 @@
-**Summary:** This documentation describes the OneSignal integration with Amplitude, enabling bidirectional data flow for customer messaging analytics - OneSignal can send messaging events (sent, clicked, viewed, confirmed delivery) across push notifications, email, SMS, and in-app channels to Amplitude, while Amplitude cohort data can be sent to OneSignal for targeted messaging campaigns.
+**Summary:** This documentation describes the OneSignal integration with Amplitude, enabling bidirectional data flow for cohort-based targeted messaging and ingesting OneSignal messaging events (sent, clicked, viewed, confirmed delivery) across push notifications, email, SMS, and in-app channels into Amplitude analytics.
 
 **Keywords:**
 - OneSignal integration
 - customer messaging platform
-- push notifications
-- email SMS in-app messages
-- messaging events (sent, clicked, viewed, confirmed delivery)
-- Amplitude cohort data
-- bidirectional integration
-- cohorts and raw-events integration type
-- customer engagement
+- cohort data targeting
+- messaging events ingestion
+- push notifications analytics
+- email SMS in-app messaging
+- sent clicked viewed confirmed delivery events
+- customer engagement integration
 - event volume quota
-- mobile push web push
+- bidirectional data flow
 - messaging campaign analytics
-- partner-maintained integration

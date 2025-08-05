@@ -4,13 +4,11 @@
 - Amplitude Data tracking plan
 - event property governance
 - hide block delete events
-- instrumentation limit 2000 events
+- instrumentation limit 2000 event types
 - monthly event volume limit
 - data ingestion blocking
 - chart dropdowns availability
 - Pathfinder Personas charts
-- data exports blocking
-- tracking plan management
-- event property visibility
-- Govern interface
 - drop filter invalid data
+- tracking plan management
+- event property visibility controls

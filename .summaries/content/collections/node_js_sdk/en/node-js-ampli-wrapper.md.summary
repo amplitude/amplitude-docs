@@ -5,20 +5,15 @@
 - @amplitude/analytics-node
 - @amplitude/ampli CLI
 - JavaScript TypeScript tracking
-- CJS module
-- ampli.load()
-- ampli.identify()
-- ampli.track()
-- ampli.flush()
-- strongly typed events
-- SongPlayed event class
-- EnrichmentPlugin
+- ampli.load() initialization
+- ampli.identify() user properties
+- ampli.track() event methods
+- ampli.flush() queued events
+- strongly typed event classes
+- CJS module packaging
 - ampli pull command
-- ampli status command
-- JSDoc type checking
-- Prettier linting
-- groupType groupName
-- EventNameProperties
-- EventOptions
+- ampli status verification
+- EnrichmentPlugin architecture
 - @amplitude/node migration
+- JSDoc type checking
 - Amplitude Data tracking plan

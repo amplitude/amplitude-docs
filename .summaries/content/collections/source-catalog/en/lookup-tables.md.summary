@@ -1,16 +1,19 @@
-**Summary:** Amplitude's Lookup Tables integration enables importing CSV data to map and enrich existing event/user properties, with support for creation through UI (Data Sources) or Lookup Table API, including Portfolio-specific workflow through Lookup Properties tab.
+**Summary:** Amplitude's Lookup Tables integration enables importing CSV data to map and enrich existing event/user properties, with setup through Data Sources catalog or Lookup Properties tab (Portfolio), and management via Lookup Table API for property enhancement and bulk updates.
 
 **Keywords:**
 - Lookup Tables integration
 - CSV data import
 - property mapping
 - event property enrichment
-- user property enhancement
-- Lookup Table API
-- Portfolio Lookup Properties
-- SKU mapping
-- case-sensitive exact matching
+- user property mapping
 - Data Sources catalog
-- lookup property creation
+- Lookup Properties tab
+- Portfolio integration
+- Lookup Table API
+- property value mapping
+- SKU mapping
+- bulk property updates
+- case-sensitive matching
 - CSV column headers
-- property value bulk update
+- primary key column
+- property filtering

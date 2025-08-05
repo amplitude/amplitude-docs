@@ -1,7 +1,6 @@
-**Summary:** This documentation explains how Amplitude tracks users, events, and sessions for marketing analytics, covering channel classifiers that apply sequential rules to determine marketing channels for individual events, session-based metrics (totals, entries, exits), and attribution models (first-touch and last-touch) that credit marketing channels for conversion events.
+**Summary:** This documentation explains how Amplitude tracks users, events, and sessions for marketing analytics, covering channel classifiers that apply rules to individual events at query time, session-based metrics (totals, entries, exits), and attribution models (first-touch and last-touch) that credit marketing channels for conversion events.
 
 **Keywords:**
-- Amplitude Analytics sessions
 - channel classifiers
 - attribution models
 - first-touch attribution
@@ -9,11 +8,12 @@
 - session entries
 - session exits
 - session totals
-- marketing channel classification
 - UTM parameters
 - referrer values
+- marketing channel classification
+- query time rule application
+- conversion tracking
+- lookback window
+- touch point analysis
 - event-level attribution
-- sequential rule execution
-- query-time channel assignment
-- lookback window attribution
-- conversion touch points
+- session-based metrics

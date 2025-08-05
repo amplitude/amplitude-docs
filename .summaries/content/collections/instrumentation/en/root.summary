@@ -1,62 +1,64 @@
-## Amplitude Instrumentation SDK Ecosystem
+## Amplitude Instrumentation Platform
 
-Amplitude provides a comprehensive instrumentation platform centered around Analytics and Experiment SDKs that enable event tracking, user analytics, and feature experimentation across multiple platforms. The ecosystem consists of client-side SDKs (Browser, Android, iOS, React Native, Unity, Flutter, Unreal), server-side SDKs (Node.js, Go, Python, Java), and supporting tools for type-safe implementation and debugging.
+Amplitude provides a comprehensive instrumentation platform for analytics and experimentation across multiple platforms and environments. The platform consists of Analytics SDKs for event tracking, Experiment SDKs for feature flagging and A/B testing, and supporting tools like Ampli for type-safe code generation.
 
 ## Product Architecture and Relationships
 
-The instrumentation ecosystem operates on a multi-layered architecture:
+The instrumentation platform operates on a multi-layered architecture:
 
-**Core SDK Layer**: Analytics SDKs handle event tracking via HTTP V2 API and Batch event upload API, while Experiment SDKs manage feature flags through the Evaluation API. Both SDK types support dynamic configuration with the `useDynamicConfig` flag for automatic server URL selection based on user location.
+**Core Analytics SDKs** support 11+ platforms including Browser, Node.js, Android (Kotlin/Java), iOS (Swift), JRE, Python, React Native, Flutter, Go, Unity, and Unreal Engine. These SDKs handle event collection, batching, and transmission to Amplitude's ingestion endpoints.
 
-**Code Generation Layer**: Ampli serves as the primary code generation tool, creating type-safe wrappers around Amplitude SDKs based on tracking plans defined in Amplitude Data. The Ampli CLI provides commands like `ampli pull` for generating wrappers and `ampli status` for verifying instrumentation completeness.
+**Ampli Code Generation Tool** sits above the Analytics SDKs, generating type-safe wrappers based on tracking plans defined in Amplitude Data. Ampli creates platform-specific code that provides compile-time validation and IntelliSense support for event tracking.
 
-**Extension Layer**: SDK functionality extends through two mechanisms - Middleware (legacy maintenance SDKs) and Plugins (current SDK versions). Both enable event enrichment, transformation, filtering, and third-party routing through custom code execution.
+**SDK Extensions** include middleware (for Maintenance SDKs) and plugins (for newer SDKs) that enable custom event processing, enrichment, filtering, and routing to third-party services like Segment, Hotjar, Google Analytics, and FullStory.
 
-**Integration Layer**: Destination plugins facilitate routing to third-party services including Segment, Hotjar, Google Analytics, and FullStory, while enrichment plugins handle event modification and PII removal.
+**Experiment SDKs** provide feature flag evaluation and A/B testing capabilities, working alongside Analytics SDKs to track experiment exposures and outcomes.
 
 ## Key Nomenclature and Definitions
 
-**Ampli**: Code generation tool that creates type-safe analytics wrappers with methods like `ampli.load()` and `ampli.track()` based on tracking plan schemas.
+**Client-side vs Server-side SDKs**: Client-side SDKs (Browser, Android, iOS, React Native, Unity, Flutter, Unreal) run on user devices, while server-side SDKs (Node.js, Go, Python, Java) run on servers and support multi-user environments.
 
-**Tracking Plan**: Schema definition in Amplitude Data that specifies event structure, properties, and validation rules for consistent instrumentation.
+**SDK Lifecycle Phases**: 
+- Developer Preview/Beta: Early access versions
+- General Availability (GA): Production-ready releases
+- Maintenance: Legacy versions receiving critical updates only
+- End-of-Support (EOL): No longer supported
 
-**SDK Middleware**: Legacy extension system using `MiddlewarePayload` and `MiddlewareNext` interfaces, accessible via `addEventMiddleware()` for event processing pipelines.
+**Middleware vs Plugins**: Middleware (Maintenance SDKs) and Plugins (newer SDKs) both enable event processing extensions, with plugins offering setup() and execute() methods for enrichment and destination routing.
 
-**SDK Plugins**: Current extension system with `setup()` and `execute()` methods, categorized as `PluginType.ENRICHMENT` for event modification or `PluginType.DESTINATION` for third-party routing.
+**Dynamic Configuration**: Automatic server URL selection based on user location using the `useDynamicConfig` flag, optimizing data routing globally.
 
-**Dynamic Configuration**: Feature using `useDynamicConfig` flag for automatic server endpoint selection, particularly beneficial for Mainland China users requiring region-specific ingestion.
+## Core APIs and Endpoints
 
-**Client Event Time vs Client Upload Time**: Timestamp differentiation where Client Event Time represents when events occurred versus when they were transmitted to Amplitude servers.
-
-## Broader Product Ecosystem Integration
-
-The instrumentation platform integrates with Amplitude's broader analytics ecosystem through multiple touchpoints:
-
-**Data Pipeline**: Events flow through HTTP V2 API and Batch event upload API to Amplitude's ingestion layer, with support for EU data residency via ServerZone configuration.
-
-**Feature Management**: Experiment SDKs connect to Amplitude's experimentation platform, enabling A/B testing and feature flag management alongside analytics tracking.
-
-**Data Governance**: Tracking plans in Amplitude Data provide schema enforcement and validation, ensuring data quality across instrumentation implementations.
-
-**Third-Party Ecosystem**: Destination plugins enable data sharing with external platforms while maintaining Amplitude as the primary analytics source.
-
-## API Endpoints and Command Line Tools
-
-**Primary APIs**:
-- HTTP V2 API: Real-time event ingestion for client-side SDKs
-- Batch event upload API: Bulk event processing for server-side implementations  
-- Evaluation API: Feature flag and experiment configuration retrieval
+**Analytics SDK Methods**:
+- `amplitude.init()` - Initialize SDK with API key and configuration
+- `amplitude.track()` - Send events with properties
+- `amplitude.identify()` - Set user properties
+- `amplitude.flush()` - Force immediate event transmission
 
 **Ampli CLI Commands**:
-- `ampli pull`: Generate type-safe wrappers from tracking plans
-- `ampli status`: Verify instrumentation coverage and implementation status
+- `ampli pull` - Generate type-safe wrappers from tracking plans
+- `ampli status` - Verify event instrumentation against tracking plan
+- `ampli.load()` - Initialize generated wrapper
+- `ampli.songPlayed()` - Example type-safe event method
 
-**Core SDK Methods**:
-- `amplitude.init()`: SDK initialization with API key and configuration
-- `amplitude.track()`: Event tracking with properties and user context
-- `amplitude.add()`: Plugin registration for extended functionality
-- `flush()`: Manual event transmission for debugging
+**HTTP Endpoints**:
+- HTTP V2 API - Direct event ingestion
+- Batch event upload - Bulk event submission
+- Evaluation API - Feature flag evaluation
 
-## SDK Lifecycle and Maintenance
+**Configuration Options**:
+- `flushQueueSize` - Events per batch
+- `flushIntervalMillis` - Batch transmission interval
+- `ServerZone.EU` - EU data residency
+- `useDynamicConfig` - Enable automatic server selection
 
-The platform follows a structured four-phase lifecycle: Developer Preview/Beta, General Availability (GA), Maintenance, and End-of-Support. Version management uses X.Y.Z semantic versioning across all SDKs, with comprehensive support matrices tracking lifecycle phases, GA dates, and maintenance transitions for each platform-specific implementation.
+## Integration Patterns
+
+**Package Manager Installation**: SDKs distribute via platform-native package managers (npm, CocoaPods, Maven, PyPI, Unity Package Manager).
+
+**Third-party Integrations**: Destination plugins and middleware enable routing to analytics platforms, customer data platforms, and marketing tools while maintaining Amplitude as the primary analytics backbone.
+
+**Debugging and Troubleshooting**: Comprehensive debugging covers API key validation, event timing discrepancies, device identification, user property race conditions, and privacy-related IP address handling.
+
+The platform maintains backward compatibility through a structured maintenance policy with 6-month dependency support windows and 12-month maintenance phases, ensuring enterprise-grade stability while enabling continuous innovation.

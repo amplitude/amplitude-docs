@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's data tables feature for multidimensional analysis, including setup procedures, metric configuration, groupby properties with nested grouping capabilities, filtering options, result limits (100 top-level groups, 500 for multiple groupings), sorting logic, CSV export limitations, and row/column transposition functionality for Japanese users.
+**Summary:** This documentation covers Amplitude's data tables feature for multidimensional analysis, including setup procedures, metric configuration, groupby properties with nested grouping, filtering capabilities, result limits (100 top-level groups, 500 for multiple groupings), sorting logic, CSV export limitations, and row/column transposition functionality.
 
 **Keywords:**
 - Amplitude data tables
@@ -13,9 +13,9 @@
 - CSV export limits
 - result limits (100/500 rows)
 - sorting logic
-- transposition functionality
-- Japanese translation
+- transpose functionality
 - time properties
+- inline filters
 - cohort creation
-- dashboard REST API
+- Japanese translation
 - Enterprise/Growth/Scholarship plans

@@ -1,19 +1,19 @@
-## Summary
-This documentation covers the Amplitude Unified SDK for Swift (beta), which provides a wrapper interface for integrating Analytics SDK (AmplitudeSwift), Experiment SDK, and Session Replay SDK together with unified identity management and synchronized user properties across all three products.
+**Summary:**
+This documentation covers the Amplitude Unified SDK for Swift (beta), which is a wrapper around Analytics SDK (AmplitudeSwift), Experiment SDK, and Session Replay SDK, providing unified initialization, configuration, and identity management across all three products with automatic synchronization of user/device IDs.
 
-## Keywords
-- Amplitude Unified SDK
-- AmplitudeUnified Swift package
-- Analytics SDK AmplitudeSwift wrapper
+**Keywords:**
+- AmplitudeUnified Swift SDK
+- unified wrapper SDK
+- AmplitudeSwift Analytics SDK
 - Experiment SDK integration
 - Session Replay SDK iOS-only
 - unified identity management
-- CocoaPods Swift Package Manager installation
+- CocoaPods Swift Package Manager
 - AnalyticsConfig ExperimentPlugin.Config SessionReplayPlugin.Config
-- amplitude.experiment.fetch() variant() exposure()
-- amplitude.sessionReplay startRecording() stopRecording()
-- TrackingOptions autocapture sessions appLifecycles screenViews
-- flushQueueSize flushIntervalMillis minTimeBetweenSessionsMillis
-- sessionSampleRate scrollSampleRate
-- serverZone instanceName migration guide
-- beta SDK testing phase
+- amplitude.experiment.fetch() amplitude.experiment.variant()
+- amplitude.sessionReplay startRecording stopRecording
+- unified user properties cache
+- beta SDK testing
+- migration from individual SDKs
+- automatic identity synchronization
+- iOS macOS tvOS watchOS visionOS platform detection

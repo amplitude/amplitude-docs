@@ -1,118 +1,114 @@
 # Amplitude Product Ontology and Summary
 
-## High-Level Overview
+## High-Level Product Overview
 
-Amplitude is a comprehensive digital analytics platform that provides product teams with tools to understand user behavior, optimize product experiences, and drive business growth. The platform consists of several interconnected products:
+Amplitude is a comprehensive digital analytics platform that provides product analytics, experimentation, and customer data management capabilities. The platform consists of several interconnected products:
 
 **Core Products:**
-- **Amplitude Analytics** - The primary analytics platform for tracking user behavior, creating charts, and generating insights
-- **Amplitude Data** - Data governance and tracking plan management system
+- **Amplitude Analytics** - Event-based product analytics platform for user behavior analysis
 - **Amplitude Experiment** - A/B testing and feature flag management platform  
-- **Amplitude Activation** - Personalization and user targeting platform with AI-powered recommendations and predictions
+- **Amplitude Data** - Data governance and tracking plan management system
+- **Amplitude Activation** - Personalization and audience targeting platform
 
 **Key Features:**
-- Event-based analytics with comprehensive chart types (Event Segmentation, Funnel Analysis, Retention, Cohorts, etc.)
-- Real-time data processing and visualization
-- Advanced user segmentation and behavioral cohorts
-- Cross-platform tracking and analysis
-- Machine learning-powered insights and predictions
+- Real-time event tracking and user analytics
+- Advanced segmentation and cohort analysis
+- Funnel analysis and conversion optimization
+- Retention and lifecycle analysis
+- Revenue tracking and LTV analysis
+- Machine learning-powered predictions and recommendations
+- Cross-platform data integration and management
 
 ## Product Relationships and Architecture
 
-### Data Flow and Integration
-The products work together in a unified ecosystem:
+The Amplitude ecosystem is built around a unified data foundation where:
 
-1. **Data Collection Layer**: Amplitude Data manages tracking plans and data governance, ensuring consistent data collection across all touchpoints
-2. **Analytics Layer**: Amplitude Analytics processes and visualizes the collected data through various chart types and analysis tools
-3. **Experimentation Layer**: Amplitude Experiment uses the analytics data to power A/B tests and feature flags
-4. **Activation Layer**: Amplitude Activation leverages analytics insights to create personalized user experiences
+1. **Amplitude Data** serves as the central data governance layer, managing tracking plans, schemas, and data quality across all products
+2. **Amplitude Analytics** provides the core analytical capabilities, consuming data managed by Amplitude Data
+3. **Amplitude Experiment** leverages Analytics data for experiment analysis while maintaining independent user assignment logic
+4. **Amplitude Activation** uses Analytics insights to create predictive cohorts and personalized recommendations
 
-### Cross-Product Features
-- **Cohorts** can be created in Analytics and used across Experiment and Activation
-- **Events and Properties** defined in Data are used throughout all products
-- **User Identification** (Amplitude ID, Device ID, User ID) is consistent across the platform
-- **Real-time data streaming** enables immediate insights and personalization
+The products integrate through:
+- Shared user identification systems (Amplitude ID, Device ID, User ID)
+- Common event and property schemas managed in Amplitude Data
+- Cross-product cohort sharing and synchronization
+- Unified APIs and SDK implementations
 
 ## Key Nomenclature and Definitions
 
-### Core Concepts
-- **Events**: User actions tracked in the product (e.g., "Button Clicked", "Page Viewed")
-- **Properties**: Attributes that provide context to events (Event Properties) or describe users (User Properties)
-- **Amplitude ID**: Unique identifier automatically generated for each user
-- **Device ID**: Identifier for specific devices/browsers
-- **User ID**: Custom identifier set by the customer to track known users
+**Core Concepts:**
+- **Events** - User actions tracked in the system (active vs inactive events)
+- **Properties** - Attributes describing events (event properties) or users (user properties)
+- **Amplitude ID** - Unique identifier automatically assigned to users
+- **Device ID** - Platform-specific device identifier (IDFV, ADID, etc.)
+- **User ID** - Custom identifier set by developers for authenticated users
+- **MTU (Monthly Tracked Users)** - Billing metric for unique users per calendar month
 
-### Analytics Terms
-- **Active Users**: Users who performed at least one active event in a given time period
-- **Cohorts**: Groups of users defined by shared characteristics or behaviors
-- **Retention**: Measurement of users returning to perform actions over time
-- **Funnel**: Sequential steps users take toward a conversion goal
-- **Segmentation**: Breaking down data by specific properties or user groups
+**Analytics Terms:**
+- **Cohorts** - User segments defined by behavioral criteria or properties
+- **Funnels** - Multi-step conversion analysis
+- **Retention** - User return behavior analysis
+- **Stickiness** - Frequency of user engagement
+- **Segmentation** - Breaking down metrics by user or event properties
 
-### Data Management
-- **Tracking Plan**: Centralized specification of all events and properties to be collected
-- **Schema**: Structure defining expected data types and validation rules
-- **Branches**: Isolated environments for testing tracking plan changes
-- **Transformations**: Retroactive modifications to event data structure
+**Experimentation Terms:**
+- **Variants** - Different versions in A/B tests
+- **Exposure Events** - When users see experiment variations
+- **Assignment Events** - When users are bucketed into experiments
+- **Sticky Bucketing** - Consistent user assignment across experiment changes
+- **Sequential Testing** - Statistical method for early experiment conclusions
 
-### Experimentation
-- **Variants**: Different versions of a feature being tested
-- **Exposure Events**: When users are shown an experiment variant
-- **Statistical Significance**: Confidence level that results are not due to chance
-- **Sticky Bucketing**: Ensuring users remain in the same variant throughout an experiment
+**Data Management Terms:**
+- **Tracking Plan** - Centralized schema defining events and properties
+- **Branches** - Version control for tracking plan changes
+- **Transformations** - Retroactive data structure modifications
+- **Derived Properties** - Computed properties from existing data
 
 ## Broader Product Ecosystem Integration
 
-### SDK and API Integration
-Amplitude provides comprehensive integration options:
-- **Native SDKs** for iOS, Android, JavaScript, React Native, Flutter, Unity
-- **Server-side SDKs** for Node.js, Python, Java, Go, PHP
-- **HTTP API** for direct data transmission
-- **Partner Integrations** with Segment, mParticle, Shopify, and others
+Amplitude integrates extensively with the broader product development and marketing ecosystem:
 
-### Third-Party Destinations
-The platform supports data synchronization with:
-- **Advertising Platforms**: Facebook, Google Ads, TikTok
-- **Email/Marketing**: Braze, Iterable, Mailchimp
-- **Data Warehouses**: Snowflake, BigQuery, Redshift
-- **Business Intelligence**: Tableau, Looker, PowerBI
+**Development Integration:**
+- SDK support for iOS, Android, JavaScript, React Native, and server-side platforms
+- CI/CD integration through Ampli CLI for type-safe event tracking
+- Git-like workflow for tracking plan management
+- Integration with development tools like Jira for issue tracking
 
-### Enterprise Features
-- **Single Sign-On (SSO)** with SAML 2.0 support
-- **SCIM Provisioning** for automated user management
-- **Permission Groups** for granular access control
-- **Cross-Project Analysis** through Portfolio addon
-- **Custom SQL** queries via Amplitude Query
+**Marketing and Business Tools:**
+- Third-party destination syncing (Facebook, Google, Braze, Iterable)
+- CRM and email platform integrations
+- Attribution partner integrations (Appsflyer, Adjust, Branch)
+- Business intelligence tool connections (Snowflake, Redshift)
+
+**Collaboration Platforms:**
+- Slack integration for notifications and chart sharing
+- Notion embedding for documentation
+- Miro integration for collaborative analysis
+- Atlassian Smart Links for Confluence and Jira
 
 ## API Endpoints and Command Line Tools
 
-### Key API Endpoints
-- **HTTP API v2**: `https://api2.amplitude.com/2/httpapi` - Event ingestion
-- **Export API**: `https://amplitude.com/api/2/export` - Raw data export
-- **Cohort API**: `https://amplitude.com/api/3/cohorts` - Cohort management
-- **Profile API**: `https://profile-api.amplitude.com/v1/userprofile` - User profile data
-- **Identify API**: `https://api2.amplitude.com/identify` - User property updates
-- **Attribution API**: `https://api2.amplitude.com/attribution` - Mobile attribution events
+**Key APIs:**
+- **HTTP API v2** - Primary data ingestion endpoint
+- **Export API** - Raw event data extraction
+- **Cohort API** - Programmatic cohort management
+- **Profile API** - User profile and recommendation serving
+- **Identify API** - User property updates
+- **Group Identify API** - Account-level property management
+- **Attribution API** - Mobile attribution event mapping
+- **Taxonomy API** - Schema management
+- **User Privacy API** - GDPR compliance and data deletion
 
-### Command Line Tools
-- **Ampli CLI**: Command-line interface for Amplitude Data
-  - `ampli pull` - Download tracking plan
-  - `ampli status` - Check implementation status
-  - `ampli push` - Upload changes to tracking plan
+**Command Line Tools:**
+- **Ampli CLI** - Type-safe tracking library generation and validation
+  - `ampli pull` - Download tracking plan to local environment
+  - `ampli status` - Validate implementation against tracking plan
+  - `ampli push` - Upload implementation status
 
-### Experiment-Specific Endpoints
-- **Flag Evaluation**: `https://api.lab.amplitude.com/v1/vardata` - Get experiment variants
-- **Assignment Events**: Automatic tracking of user experiment assignments
-- **Exposure Events**: Track when users see experiment variants
+**Key Endpoints:**
+- Event ingestion: `https://api2.amplitude.com/2/httpapi`
+- Experiment evaluation: Various deployment-specific endpoints
+- Profile API: `https://profile-api.amplitude.com/v1/userprofile`
+- Cohort sync: Destination-specific endpoints
 
-## Platform Capabilities Summary
-
-Amplitude serves as a complete digital analytics and optimization platform that enables product teams to:
-
-1. **Understand User Behavior** through comprehensive event tracking and analysis
-2. **Optimize Product Experiences** via A/B testing and feature flags
-3. **Personalize User Journeys** using AI-powered recommendations and predictions
-4. **Maintain Data Quality** through centralized governance and validation
-5. **Scale Analytics Programs** with enterprise-grade security and administration features
-
-The platform's strength lies in its integrated approach, where data governance, analytics, experimentation, and personalization work together to provide a complete view of the user journey and enable data-driven product decisions.
+The platform emphasizes self-service analytics while providing enterprise-grade data governance, making it suitable for organizations ranging from startups to large enterprises across various industries including eCommerce, SaaS, gaming, media, and financial services.

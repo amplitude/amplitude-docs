@@ -3,16 +3,15 @@
 **Keywords:**
 - sample ratio mismatch (SRM)
 - variant allocation
-- Amplitude Experiment
-- exposure events
+- Amplitude Experiment troubleshooting
+- exposure events vs assignment events
 - variant jumping
 - sticky bucketing
-- assignment to exposure funnel
 - variant distribution weights
-- analysis window
-- fallback variant
-- individual allocation
-- client-side SDKs
-- local evaluation
+- analysis window alignment
+- assignment to exposure funnel
+- fallback variant exposure tracking
+- individual user allocation
+- client-side SDK exposure tracking
 - cumulative exposures graph
-- experiment diagnostics
+- experiment diagnostics card

@@ -1,22 +1,28 @@
-**Summary:** This documentation covers Amplitude Experiment's Python SDK for server-side feature flag evaluation, supporting both remote evaluation (fetch_v2) and local evaluation (evaluate_v2) modes, with Python 3.6+ compatibility, cohort targeting via CohortSyncConfig, automatic assignment tracking, and AmplitudeCookie utilities for client-server device ID synchronization.
+## Summary
+This documentation covers Amplitude Experiment's Python SDK for server-side feature flag evaluation, supporting both remote evaluation (fetching variants via API) and local evaluation (client-side evaluation with flag config polling), including cohort targeting, assignment tracking, and Amplitude cookie integration.
 
-**Keywords:**
-- amplitude-experiment Python SDK
-- remote evaluation fetch_v2
-- local evaluation evaluate_v2
+## Keywords
+- Amplitude Experiment Python SDK
+- remote evaluation
+- local evaluation
+- fetch_v2()
+- evaluate_v2()
 - RemoteEvaluationClient
 - LocalEvaluationClient
-- deployment key initialization
-- CohortSyncConfig cohort targeting
-- AssignmentConfig automatic tracking
-- AmplitudeCookie device ID parsing
 - flag config polling
-- fetch_async_v2 asynchronous
-- User object variants
-- ServerZone.US ServerZone.EU
+- cohort sync
+- assignment tracking
+- AmplitudeCookie
+- deployment key
+- variant fetching
 - flag_config_polling_interval_millis
-- cohort_sync_config api_key secret_key
-- Browser SDK 2.0 new_format
-- group properties bucketing
-- start() evaluate_v2() methods
+- CohortSyncConfig
+- AssignmentConfig
+- ServerZone.US/EU
+- User object
+- device_id
+- user_properties
+- group_properties
+- fetch_async_v2()
+- start() method
 - pip install amplitude-experiment

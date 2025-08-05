@@ -12,4 +12,5 @@
 - EU data residency
 - cookie migration logic
 - amplitude-gtm-template
-- backwards compatibility breaking changes
+- client-side tracking
+- GTM template deprecation

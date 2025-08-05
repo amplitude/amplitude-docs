@@ -12,5 +12,6 @@
 - 1 million rows limit
 - Sources configuration
 - Growth Enterprise plans
-- exact match requirements
-- bulk property filtering
+- exact match mapping
+- bulk property changes
+- Amplitude Data sources

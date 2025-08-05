@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the process of setting up third-party platforms as data export destinations in Amplitude Data's CDP, including navigation through the Destinations tab in the Connections section and the modal-based configuration workflow.
+**Summary:** This documentation covers the process of setting up third-party platforms as data export destinations in Amplitude Data's CDP, including accessing the Destinations tab in the Connections section and configuring destination-specific connection parameters through modal dialogs.
 
 **Keywords:**
 - Amplitude Data
@@ -9,4 +9,5 @@
 - Connections section
 - Add Destination
 - destination configuration modal
-- data sharing workflow
+- data sharing
+- export setup

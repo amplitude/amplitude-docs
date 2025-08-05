@@ -6,8 +6,8 @@
 - Organization Settings navigation
 - Projects interface
 - Manager role permissions
-- API credentials location
+- API credential location
 - analytics.amplitude.com
 - project-specific authentication
-- security restrictions secret keys
-- API key copying process
+- secret key generation
+- role-based access control

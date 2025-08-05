@@ -1,13 +1,13 @@
-**Summary:** This documentation page defines a Statamic collection entry for surveys using the "guides_and_survey" blueprint, featuring a responsive grid layout that displays child survey entries as clickable cards with titles and landing blurbs.
+**Summary:** This documentation page defines a Surveys collection template using Statamic CMS with a responsive grid layout that displays child survey items as clickable cards with titles and landing blurbs rendered in Markdown.
 
 **Keywords:**
-- Statamic collection entry
-- guides_and_survey blueprint
-- children loop iteration
-- responsive grid layout (md:grid-cols-2, lg:grid-cols-3)
-- survey cards display
+- Statamic CMS
+- surveys collection
+- children loop
+- responsive grid layout
+- md:grid-cols-2 lg:grid-cols-3
 - landing_blurb markdown rendering
-- hover shadow transitions
-- Gellix font family
-- amp-gray-600 color scheme
-- clickable survey navigation
+- hover:shadow-lg transition
+- Gellix font
+- guides_and_survey blueprint
+- card-based UI components

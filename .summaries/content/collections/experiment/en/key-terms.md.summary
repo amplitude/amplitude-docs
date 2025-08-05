@@ -1,31 +1,28 @@
-## Summary
-This documentation page provides a comprehensive glossary of key experimentation and A/B testing terminology specific to Amplitude Experiment, including statistical concepts like CUPED variance reduction, sequential testing, Bonferroni correction, and experiment-specific terms like allocation, payload variables, exposure events, and guardrail metrics.
+**Summary:** This documentation page provides a comprehensive glossary of key experimentation terms for Amplitude Experiment, defining statistical concepts like CUPED variance reduction, sequential testing, Bonferroni correction, and experiment-specific terminology including allocation, payload variables, exposure events, and guardrail metrics.
 
-## Keywords
+**Keywords:**
 - Amplitude Experiment glossary
-- A/B testing terminology
 - CUPED variance reduction
 - Sequential testing
 - Bonferroni correction
+- Assignment Event
+- Enrollment event
+- Exposure Event
+- Payload variables
+- Guardrail metrics
+- Primary success metric
+- Secondary success metric
+- Minimum detectable effect (MDE)
+- Target lift
 - Statistical power
 - Confidence interval
 - p-value
 - T-test
 - Type 1 error
 - Type 2 error
-- Allocation percentage
-- Payload variables
-- Exposure Event
-- Assignment Event
-- Enrollment event
-- Guardrail metrics
-- Primary success metric
-- Secondary success metric
-- Minimum detectable effect (MDE)
-- Target lift
-- Sample size calculation
 - Baseline conversion rate
-- Experiment audience targeting
+- Sample size calculation
+- Allocation percentage
+- Audience targeting
+- Controlled experiment
 - Statistical significance
-- False positive rate
-- Multiple comparisons problem

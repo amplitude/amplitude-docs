@@ -12,9 +12,9 @@
 - duration estimator
 - Cumulative Exposure graph
 - Sample Size Target
-- Central Limit Theorem
+- Central Limit Theorem assumptions
 - binary and continuous metrics
-- false positive rate
-- false negative rate
 - MDE (Minimum Detectable Effect)
 - sequential testing alternative
+- false positive/negative rates
+- statistical significance

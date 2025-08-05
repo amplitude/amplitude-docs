@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to interpret Personas chart cluster cards and event tables to identify user behavioral patterns, including cluster bubble charts, user counts, target cohort percentages, and event frequency analysis with standard deviation metrics for persona naming.
+**Summary:** This documentation explains how to interpret Personas chart cluster cards and event tables to identify user behavioral patterns, including cluster bubble charts, user counts, target cohort percentages, and the dual-section event table showing above/below average event frequencies with standard deviation metrics.
 
 **Keywords:**
 - Personas chart interpretation
@@ -7,11 +7,11 @@
 - target cohort percentage
 - behavioral cohort export
 - event table analysis
-- average events per cluster
+- average event frequency
 - standard deviation metrics
-- persona identification
-- cluster sorting
-- event frequency patterns
+- cluster sorting functionality
+- user persona identification
+- above/below average event patterns
 - tracking plan event hiding
-- user clustering analysis
-- personas report generation
+- top 100 events clustering
+- cluster quantity optimization

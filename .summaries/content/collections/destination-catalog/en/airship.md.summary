@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude-Airship integration for cohort syncing, enabling behavioral segmentation from Amplitude analytics to be targeted with Airship's push notifications and in-app messaging, requiring UAChannelID mapping and SDK integration for both platforms.
+**Summary:** This documentation covers the Amplitude-Airship integration for cohort syncing, enabling behavioral segmentation from Amplitude to be targeted with Airship's push notifications and in-app messaging using UAChannelID mapping and the "Amplitude" tag group.
 
 **Keywords:**
 - Airship integration
@@ -7,12 +7,10 @@
 - behavioral cohort
 - push notifications
 - in-app messaging
-- customer engagement
-- Auto Channel ID
 - Amplitude tag group
+- Auto Channel ID
+- customer engagement
 - Message Composer
-- SDK integration
-- Identify API
-- channel ID linking
 - Amplitude Activation
-- real-time data streaming
+- channel ID mapping
+- tag groups

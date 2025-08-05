@@ -10,4 +10,6 @@
 - cohort sync cadence
 - scheduled cohort syncs
 - per-project integration
-- Amplitude Data Catalog
+- destination catalog
+- Amplitude to Intercom
+- cohort additions and removals

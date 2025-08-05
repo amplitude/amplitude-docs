@@ -1,53 +1,54 @@
-Amplitude's Funnel Analysis is a comprehensive conversion tracking and optimization tool that enables product teams to analyze user journeys through multi-step processes, identify drop-off points, and understand conversion drivers. The product provides sophisticated event sequencing analysis with flexible ordering options, statistical testing capabilities, and deep integration with Amplitude's broader analytics ecosystem.
+Amplitude's Funnel Analysis is a comprehensive conversion tracking and optimization tool that enables product teams to analyze user journeys through defined sequences of events, identify drop-off points, and understand what drives successful conversions versus user abandonment.
 
-## Core Product Architecture
+## Core Product Overview
 
-Funnel Analysis operates through two primary modules: the **Events Module** for defining funnel steps and the **Segmentation Module** for user filtering and grouping. The system tracks user progression through defined event sequences, computing conversions using first-touch attribution with unique user counting logic that selects either the earliest or longest conversion path per user.
+Funnel Analysis charts track user progression through sequential steps in a product experience, measuring conversion rates between each step and providing insights into user behavior patterns. The tool supports multiple analysis modes including basic conversion tracking, time-based analysis, A/B testing, and advanced statistical correlation analysis to identify conversion drivers.
 
-The product supports three distinct event ordering modes:
+## Key Features and Relationships
+
+**Chart Building and Configuration:**
+The funnel creation process centers around the Events Module for defining sequential steps and the Segmentation Module for user targeting. Users can configure conversion order options (This Order, Any Order, Exact Order) to control how strictly the event sequence must be followed. The tool supports combining multiple events into single funnel steps through inline event combination, and allows marking middle steps as optional to create dual funnel visualizations.
+
+**Analysis and Comparison Capabilities:**
+The platform provides multiple comparison modes including A/B testing functionality for Growth Enterprise plans, baseline segment comparisons, and the ability to compare up to three events within a single conversion step. The Compare functionality integrates with group-by segment properties to show conversion percentage differences through microscope hover tooltips and breakdown tables.
+
+**Advanced Analytics Integration:**
+Funnel Analysis integrates deeply with other Amplitude features including Pathfinder for user journey exploration, Compass for correlation analysis, and Microscope for cohort creation. The Conversion Drivers feature uses Matthews correlation coefficients to identify behaviors that correlate with successful conversions or drop-offs.
+
+## Key Nomenclature and Definitions
+
+**Conversion Order Modes:**
 - **This Order**: Events must occur in the specified sequence
 - **Any Order**: Events can occur in any sequence within the conversion window
-- **Exact Order**: Events must occur in precise sequence without intervening events
+- **Exact Order**: Events must occur in exact sequence with no intervening events
 
-## Key Features and Capabilities
+**Counting Methods:**
+- **Unique Users**: Standard user-based counting
+- **Hold Properties Constant**: Changes counting to unique user-property pairs, enabling session-based analysis using `[Amplitude]Session ID`
 
-**Event Combination and Comparison**: Users can combine multiple events into single funnel steps using inline event combination, and compare up to three events within individual conversion steps through the Compare Event functionality. The system supports temporary chart-specific event combinations without permanent storage.
+**Statistical Concepts:**
+- **First-touch Attribution**: Conversion attribution based on earliest qualifying event sequence
+- **Conversion Window**: Time period within which funnel steps must be completed
+- **Matthews Correlation**: Statistical measure used in conversion drivers analysis
+- **95% Significance Threshold**: Statistical significance requirement for A/B testing
 
-**Statistical Analysis and A/B Testing**: The platform provides built-in A/B testing capabilities for comparing funnel performance between user segments, including statistical significance calculations with 95% confidence thresholds, p-value computations, and improvement over baseline metrics. This functionality requires Growth or Enterprise plans.
+## Product Ecosystem Integration
 
-**Conversion Driver Analysis**: The Microscope feature identifies events and behaviors that correlate with conversions or drop-offs using Matthews correlation, Pearson correlation, and phi coefficient calculations. This provides correlation scores, frequency metrics, and event property analysis to distinguish between causation and correlation.
-
-**Advanced Configuration Options**:
-- **Hold Properties Constant**: Changes counting from unique users to unique user-property pairs, enabling session-based analysis using [Amplitude]Session ID
-- **Optional Steps**: Allows marking middle funnel steps as optional, enabling conversion tracking when users skip non-essential steps
-- **Conversion Windows**: Configurable time windows for tracking user progression through funnels
-- **Millisecond Resolution**: Precise event ordering for handling simultaneous events
+Funnel Analysis serves as a central hub connecting multiple Amplitude capabilities. It feeds behavioral cohorts into retention analysis, integrates with push notification partners like Airship and Kahuna for re-engagement campaigns, and connects with Amplitude Experiment for A/B testing workflows. The tool supports CSV data export for external analysis and dashboard integration with filtering capabilities.
 
 ## Technical Implementation
 
-**API and Data Handling**: The system handles simultaneous events by rounding timestamps to the nearest second, with optional millisecond resolution for precise ordering. Event property filters can be applied at individual step levels, while Segmentation Module filters apply only to the first funnel event.
+**API and Configuration:**
+- Segmentation Module filters apply only to first funnel events
+- Events Module supports individual step filtering
+- Group-by filters work with "holding property constant" functionality
+- Millisecond resolution available for precise event ordering
+- Historical Count filters for advanced event handling
 
-**Filtering and Segmentation Logic**: User property segmentation applies specifically to the first funnel step, using property values from when the initial event was triggered. The "holding property constant" functionality enables event property grouping and session-based funnel analysis.
+**Data Processing:**
+- Simultaneous events handled by rounding timestamps to nearest second
+- Event property grouping with bucketing limitations
+- User property segmentation applied specifically to first funnel step
+- Conversion computation uses earliest/longest conversion selection logic
 
-**Chart Types and Visualization**: Multiple visualization modes include conversion over time analysis, time to convert histograms, frequency analysis, and striped bar drop-off visualization. The system provides takeaway metrics including total conversion rates, largest drop-off steps, and slowest conversion steps.
-
-## Integration Ecosystem
-
-Funnel Analysis integrates deeply with Amplitude's broader product suite:
-- **Pathfinder**: For analyzing user paths and drop-off points
-- **Compass**: For correlation analysis of conversion factors
-- **Amplitude Experiment**: For A/B testing integration
-- **Partner Integrations**: Airship and Kahuna for push notification optimization
-- **Data Export**: CSV export capabilities for external analysis
-
-## Nomenclature and Definitions
-
-**Conversion Window**: Time period within which users must complete the funnel sequence
-**Lookback Window**: Historical period for analyzing funnel entry points
-**First-Touch Attribution**: Attribution model assigning conversion credit to the first qualifying event sequence
-**Unique User-Property Pairs**: Counting method when holding properties constant, treating each user-property combination as distinct
-**Conversion Drivers**: Events or behaviors statistically correlated with funnel completion or abandonment
-**Baseline Segment**: Reference group for A/B testing comparisons
-**Optional Step**: Non-essential funnel step that users can skip while still converting
-
-The product serves as Amplitude's primary tool for conversion optimization, enabling product teams to understand user behavior patterns, identify optimization opportunities, and measure the impact of product changes on user conversion rates across complex multi-step user journeys.
+The platform handles complex scenarios like simultaneous events, property value segmentation, and various filtering combinations while maintaining statistical accuracy for conversion analysis and optimization workflows.

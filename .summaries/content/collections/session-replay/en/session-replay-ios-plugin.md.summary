@@ -13,8 +13,8 @@
 - amplitude.add(plugin:)
 - amplitude.remove(plugin:)
 - iOS/iPadOS platform
-- session replay sampling
-- user opt-out
+- session replay collection
 - remote configuration
+- user opt-out
 - EU data residency
 - AmplitudeSessionReplay-iOS repository

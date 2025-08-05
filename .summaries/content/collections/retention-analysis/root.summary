@@ -1,74 +1,65 @@
-## Amplitude Retention Analysis
+# Amplitude Retention Analysis
 
-Amplitude's Retention Analysis is a comprehensive analytics tool designed to measure and analyze user return behavior patterns over time. The system enables product teams to understand user engagement and product stickiness by tracking when users return after performing initial actions, supporting multiple measurement methodologies, time intervals, and segmentation capabilities for deep behavioral insights.
+Amplitude Retention Analysis is a comprehensive user behavior analytics tool that measures how users return to and engage with products over time. The system tracks user interactions with specific events across multiple time intervals, providing insights into user engagement patterns, behavioral cohorts, and long-term product stickiness through sophisticated retention measurement methodologies.
 
-## Product Relationships and Feature Integration
+## Product Architecture and Feature Relationships
 
-The Retention Analysis chart integrates with several core Amplitude modules to provide comprehensive user behavior analysis:
+The Retention Analysis system operates as a central component within Amplitude's analytics ecosystem, integrating with multiple core modules:
 
-**Core Module Integration:**
-- **Events Module**: Configures starting events (triggering events) and up to two return events for analysis
-- **Segmentation Module**: Enables user segment filtering and property-based analysis  
-- **Microscope Feature**: Provides detailed breakdown tables and denominator value analysis for incomplete data scenarios
-- **Lifecycle Chart**: Integrates with usage interval analysis for comprehensive user journey mapping
+**Events Module Integration**: Defines the foundation of retention measurement through starting events (triggering events that establish cohort entry) and return events (subsequent actions measured for retention calculation). The system supports the "Any Event" option for flexible event selection and can compare up to two return events simultaneously.
 
-**Analysis Views:**
-- **Retention View**: Standard cohort-based retention measurement
-- **Change Over Time View**: Temporal analysis of retention pattern evolution
-- **Usage Interval View**: Frequency-based analysis of user engagement patterns
-- **Breakdown Table**: Tabular representation of retention data with weighted averages
+**Segmentation Module Connection**: Enables sophisticated user filtering through segment-based analysis and property-based breakdowns, allowing for granular cohort analysis and demographic-specific retention insights.
 
-## Key Nomenclature and Definitions
+**Microscope Feature**: Provides detailed denominator values and cohort-specific deep-dive analysis, offering transparency into the underlying data that drives retention calculations.
 
-**Core Retention Concepts:**
-- **Starting Event/Triggering Event**: The initial user action that defines cohort entry
-- **Return Event**: The subsequent action(s) used to measure user return behavior
-- **Cohort Entry Date**: The timestamp when a user first performs the starting event
-- **Usage Interval**: Time-based measurement of user engagement frequency
+**Lifecycle Charts Integration**: Utilizes retention data to feed broader user journey analysis, with median return period calculations from usage interval analysis supporting lifecycle visualization.
 
-**Retention Measurement Types:**
-- **Return On or After (Unbounded)**: Measures users who return on or after specified time intervals
-- **Return On (N-Day)**: Measures users who return on exact specified days
-- **Return On Custom**: Uses custom-defined time brackets for retention measurement
+**Return On Custom Charts**: Leverages usage interval insights to configure flexible custom time bracket analysis, extending beyond standard daily/weekly/monthly intervals.
 
-**Time-Based Definitions:**
-- **Day Zero Retained**: Users who perform return events within the first 24-hour window
-- **Next-Day Retained**: Users who return in subsequent daily intervals
-- **Week Zero/Month Zero Retained**: Weekly and monthly equivalents of initial retention periods
-- **24-Hour Window vs Calendar Dates**: Two distinct time calculation methodologies
+## Core Nomenclature and Analytical Framework
 
-**Analysis Components:**
-- **Critical Event**: Events specifically measured in usage interval analysis
-- **Median Frequency**: Statistical measure of user engagement patterns (daily/weekly/monthly)
-- **Inflection Point**: Key moments in retention curves indicating behavior changes
-- **Active/Inactive Events**: Event state classifications for analysis purposes
+**Fundamental Retention Concepts:**
+- **Starting Event/Triggering Event**: The initial user action that defines when users enter a cohort for retention measurement
+- **Return Event**: The subsequent user action measured to determine retention behavior
+- **Critical Event**: Specific events used exclusively in usage interval analysis (limited to return events only)
+- **Cohort Entry Date**: The precise timestamp when users first trigger the starting event, establishing their baseline for retention measurement
 
-## Broader Product Ecosystem Integration
+**Retention Measurement Methodologies:**
+- **Return On or After (Unbounded)**: Measures whether users return on or after specified time intervals, providing cumulative retention insights
+- **Return On (N-Day)**: Measures exact-day return behavior using either 24-hour windows or strict calendar date boundaries
+- **Return On Custom**: Employs custom time brackets for flexible retention measurement beyond standard intervals
+- **Usage Interval Analysis**: Measures time between return events exclusively, excluding starting events from frequency calculations
 
-The Retention Analysis system operates as a central component within Amplitude's analytics ecosystem, connecting user behavior measurement with broader product intelligence capabilities. The system integrates with timezone project settings for accurate temporal analysis and supports multiple cohort entry scenarios for complex user journey mapping.
+**Temporal Calculation Methods:**
+- **Rolling 24-Hour Windows**: Default calculation method using hourly timestamp rounding for consistent interval measurement
+- **Strict Calendar Dates**: Alternative method using project timezone calendar boundaries for date-based analysis
+- **Day Zero/Week Zero/Month Zero**: Baseline measurements for immediate retention behavior
+- **Sequential Interval Tracking**: Progressive measurement (Day 1, Day 7, Day 30, etc.) for comprehensive retention analysis
 
-The analysis framework supports both rolling time windows and strict calendar date calculations, enabling teams to choose measurement methodologies that align with their product's usage patterns. Integration with segmentation capabilities allows for sophisticated user group analysis, while property filtering enables granular behavior examination.
+**Analysis Visualization Options:**
+- **Retention View**: Standard cohort-based retention percentage display with tabular and visual chart representations
+- **Change Over Time View**: Temporal analysis showing how retention patterns evolve across different time periods
+- **Usage Interval View**: Median frequency analysis requiring events on at least two different days for statistical validity
 
-**Usage Interval Analysis Integration**: This specialized analysis type focuses exclusively on measuring time between return events (critical events), distinguishing it from standard retention analysis that measures time between starting and return events. This provides complementary insights into user engagement frequency and product usage patterns.
+## Product Ecosystem Integration and Data Flow
 
-## Technical Implementation Details
+Retention Analysis serves as a foundational analytics component that both consumes and provides data across Amplitude's platform. The system feeds calculated median return periods into Lifecycle chart creation, enabling comprehensive user journey visualization. Usage interval insights support Return On Custom chart configuration, allowing analysts to create sophisticated custom retention measurements.
 
-**Time Calculation Methodology:**
-- Timestamp rounding down to the nearest hour for consistent bucketing
-- Support for both rolling 24-hour windows (default) and strict calendar dates
-- Cohort bucketing based on project timezone settings
-- Hourly vs daily basis calculations depending on analysis requirements
+The system's cohort bucketing behavior intelligently handles multiple events per user, preventing double-counting while maintaining analytical accuracy. Integration with project-wide timezone settings ensures consistent temporal analysis across all retention measurements, while weighted average calculations provide statistically sound overall retention metrics.
 
-**Data Processing:**
-- Incomplete data exclusion from denominator calculations in Microscope view
-- Mathematical formulas for cohort entry date versus overall retention calculations
-- Retention percentage calculations with automatic adjustment for data completeness
-- Support for multiple cohort entries and new user retention filtering
+## Technical Implementation and API Structure
 
-**Analysis Requirements:**
-- Events must occur on at least two different days for inclusion in usage interval analysis
-- "Any Event" option available for broad behavioral analysis
-- Grouped by functionality for organized event selection
-- Property filtering through Performed event filters in tabular view results
+**Mathematical Calculation Engine:**
+- **Cohort-specific retention formula**: (Users who returned in interval N) / (Users in cohort who could have returned)
+- **Overall retention calculation**: Aggregated calculation across all cohorts with appropriate statistical weighting
+- **Usage interval frequency**: Median calculation requiring minimum two-day event occurrence for validity
 
-The system provides weighted averages for retention calculations and supports custom retention brackets for specialized analysis scenarios, making it adaptable to diverse product analytics requirements across different industries and use cases.
+**Time Interval Processing:**
+- **Daily retention**: Supports both 24-hour periods and calendar day boundaries based on configuration
+- **Weekly retention**: 7-day intervals calculated from individual cohort entry dates
+- **Monthly retention**: 30-day periods with appropriate calendar alignment and timezone consideration
+
+**Data Quality and Accuracy Features:**
+The system maintains analytical integrity through several mechanisms: incomplete data periods are marked with asterisk indicators, incomplete intervals are excluded from denominator calculations, and the system provides clear visibility into data completeness. Timezone conversion operates through project settings, ensuring consistent temporal analysis across global user bases.
+
+The retention calculation engine handles edge cases such as users triggering multiple events per day, cross-timezone user behavior, and varying data collection periods, providing robust and reliable retention insights for product teams making data-driven decisions about user engagement and product development.

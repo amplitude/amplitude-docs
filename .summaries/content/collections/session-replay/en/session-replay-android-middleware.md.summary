@@ -10,6 +10,7 @@
 - amplitude.uploadEvents()
 - setFlushEventsOnClose
 - stopRecording/startRecording methods
-- middleware-session-replay-android dependency
-- Maven Central integration
+- Maven Central middleware-session-replay-android
 - Android SDK version 2.40.1+
+- middleware implementation
+- session replay sampling

@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Web Experiment targeting functionality including page targeting evaluation, audience targeting with browser properties (local) and user properties (remote), anti-flicker overlay behavior, and bucketing/variant distribution logic with rollout percentage controls.
+**Summary:** This documentation covers Web Experiment targeting functionality including page targeting evaluation, audience targeting with browser properties (local) and user properties (remote), bucketing logic with rollout/distribution, and anti-flicker overlay behavior with 1-second timeout for remote property evaluation.
 
 **Keywords:**
 - Web Experiment targeting
@@ -7,20 +7,16 @@
 - browser properties local evaluation
 - user properties remote evaluation
 - anti-flicker overlay
-- bucketing algorithm
-- variant distribution
-- rollout percentage
-- Device ID bucketing
-- IntegrationPlugin
+- bucketing rollout distribution
+- Device ID consistency
 - Amplitude ID resolution
-- user enrichment
+- IP geolocation
 - behavioral cohorts
-- page display latency
+- user enrichment
+- IntegrationPlugin
 - session storage
 - local storage
-- URL query parameters
+- document.referrer
 - UTM parameter targeting
-- user agent targeting
-- cookie targeting
-- geolocation targeting
-- property canonicalization
+- variant distribution
+- page display latency

@@ -3,15 +3,14 @@
 **Keywords:**
 - Meta Pixel streaming integration
 - Amplitude Activation
-- Conversions API
+- Conversions API Access Token
 - Meta Pixel ID
-- Meta Pixel Conversions API Access Token
 - Customer Information Parameters
 - Custom Data Parameters
 - External ID mapping
-- Event forwarding
-- Property hashing
-- Ad networks destination
-- Event streaming
+- Event streaming destination
 - Meta developer account
-- Rate limiting
+- Property hashing
+- Real-time event forwarding
+- Ad networks integration
+- Facebook Marketing API

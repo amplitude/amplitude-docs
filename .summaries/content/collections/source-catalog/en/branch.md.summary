@@ -1,15 +1,15 @@
-**Summary:** This documentation covers the Branch integration with Amplitude, which uses the Amplitude Attribution API to send mobile deep linking data and attribution information between the platforms for mobile app growth analytics and marketing measurement.
+**Summary:** This documentation covers the Branch integration with Amplitude, which uses the Amplitude Attribution API to send mobile deep linking data and attribution information from Branch's mobile measurement platform to Amplitude for growth analytics and marketing channel measurement.
 
 **Keywords:**
 - Branch integration
 - Amplitude Attribution API
 - mobile deep linking platform
 - attribution tools
-- raw-events integration
-- event-streaming integration
 - mobile measurement
+- raw-events integration
+- event-streaming
 - marketing channel attribution
-- app growth analytics
-- real-time user data sharing
-- mobile activity insights
-- cross-platform analysis
+- mobile app growth analytics
+- deep linking data transfer
+- Branch.io connector
+- mobile attribution tracking

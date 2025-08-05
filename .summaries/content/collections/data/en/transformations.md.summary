@@ -3,13 +3,15 @@
 **Keywords:**
 - Amplitude Data transformations
 - retroactive event data modification
-- merge events and properties
+- merge events transformation
+- merge event properties
+- merge user properties
 - rename property values
 - hide property values
-- query time transformations
-- main branch only
-- event property merging
-- user property merging
-- transformation editing and deletion
-- raw data preservation
-- Snowflake Redshift unaffected
+- query time transformation
+- main branch transformations
+- Snowflake Redshift raw data preservation
+- transformation undo delete
+- custom vs transformed events
+- event property distinguisher
+- transformation visibility toggle

@@ -1,23 +1,26 @@
-**Summary:** This Japanese documentation explains how to leverage predictive cohorts for targeted marketing campaigns, covering three campaign types (inclusion criteria, dynamic pricing, content personalization), campaign setup with cohort synchronization to destinations like Facebook/Google/Braze/Iterable, and measuring campaign results using lift analysis and relative lift comparisons between variant and control groups.
+**Summary:** This Japanese documentation explains how to leverage predictive cohorts for targeted marketing campaigns, covering three campaign types (inclusion criteria, dynamic pricing, content personalization), campaign setup with cohort synchronization to destinations like Facebook/Google/Braze/Iterable, and measuring campaign results using lift analysis and relative lift calculations in Amplitude.
 
 **Keywords:**
-- predictive cohorts (予測に基づくコホート)
-- campaign targeting (キャンペーンターゲティング)
-- cohort synchronization (コホート同期)
-- inclusion criteria campaigns (インクルージョン基準型キャンペーン)
-- dynamic pricing campaigns (動的価格設定型キャンペーン)
-- content personalization campaigns (コンテンツパーソナライゼーション型キャンペーン)
-- inverse pricing principle (インバース価格の原則)
-- lift analysis (リフト分析)
-- relative lift (相対的なリフト)
-- control groups/holdout groups (コントロールグループ/ホールアウト)
+- predictive cohorts
+- campaign targeting
+- cohort synchronization
+- inclusion criteria campaigns
+- dynamic pricing campaigns
+- content personalization
+- inverse pricing principle
+- lift analysis
+- relative lift calculations
+- holdout groups
+- multivariate testing
 - Facebook custom audiences
 - Google customer lists
 - Braze segments
 - Iterable user lists
-- conversion optimization (コンバージョン最適化)
-- campaign measurement (キャンペーン測定)
-- statistical significance (統計的有意)
 - UTM parameters
-- bidirectional sync (双方向同期)
-- organic conversion rates (オーガニックコンバージョン率)
+- bidirectional sync
+- CSV cohort upload
+- event segmentation
+- funnel charts
+- organic conversion rates
+- statistical significance
+- campaign attribution windows

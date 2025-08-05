@@ -5,14 +5,13 @@
 - Japanese translation documentation
 - chart creation workflow
 - save modal dialog
-- chart management options
-- visibility settings (リスト非表示)
-- export formats PNG PDF CSV
-- shared links (共有リンク)
-- notebook integration
-- chart archiving
-- zoom functionality
 - dashboard integration
-- chart flyout selection
-- 詳細 dropdown menu
-- ノートブックビュー
+- notebook integration
+- chart visibility settings
+- export formats PNG PDF CSV
+- shared links functionality
+- chart archiving process
+- zoom rectangle selection
+- chart management dropdown menu
+- organization member permissions
+- admin manager access rights

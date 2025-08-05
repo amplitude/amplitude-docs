@@ -6,12 +6,12 @@ This Japanese documentation explains how to create inline custom events using OR
 - funnel charts
 - event segmentation analytics
 - OR logic
-- event combination
 - Japanese translation
 - Amplitude analytics
 - closed beta feature
-- temporary event grouping
+- event combination
+- temporary custom events
 - chart controls
-- event properties filtering
+- event properties
 - custom event saving
-- イベントインラインを結合
+- microscopies limitations

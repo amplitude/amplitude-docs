@@ -1,56 +1,41 @@
 ## Amplitude Experiment Statistical Analysis Framework
 
-Amplitude Experiment provides a comprehensive statistical analysis platform for A/B testing and Multi-Armed Bandit experiments, built around rigorous statistical methodologies to ensure reliable experiment results. The platform emphasizes proper experimental design, statistical significance testing, and risk assessment to help teams make data-driven decisions.
+Amplitude Experiment provides a comprehensive statistical analysis platform for A/B testing and Multi-Armed Bandit experiments, built around rigorous statistical methodologies and configurable testing parameters. The platform enables data-driven experimentation through sophisticated statistical tools while maintaining accessibility for practitioners across different technical backgrounds.
 
 ## Product Relationships and Feature Integration
 
-The statistical analysis capabilities in Amplitude Experiment are tightly integrated across the experiment lifecycle:
+The statistical analysis framework operates through two primary experimental methodologies that share common configuration interfaces but serve different use cases:
 
-**Experiment Design Phase**: Users configure experiments through the Settings tab, where they define statistical parameters including MDE (Minimum Detectable Effect), sample size requirements, and metric types. The Goals panel serves as the primary configuration interface for setting up both recommendation metrics (primary success indicators) and guardrail metrics (safety measures).
+**A/B Testing Infrastructure** utilizes Welch's T-test as the core statistical engine, providing both two-sided and one-sided testing capabilities. This connects directly to the **Multi-Armed Bandit system**, which offers an alternative approach for scenarios requiring dynamic traffic allocation based on performance signals.
 
-**Statistical Testing Engine**: The platform employs Welch's T-test as its core statistical method, supporting both binary and continuous metrics. Users can configure two-sided testing (detecting changes in either direction) or one-sided testing (detecting changes in a specific direction) based on their experimental hypotheses.
+The **Goals panel** and **Analysis Settings** form the central configuration hub, where users define statistical preferences that cascade across all experimental components. The **MDE (Minimum Detectable Effect) configuration** integrates with the **T-test duration estimator** to provide real-time sample size calculations and experiment planning capabilities.
 
-**Analysis and Monitoring**: Real-time experiment monitoring is provided through the Cumulative Exposure graph and duration estimator, which track progress toward statistical significance. The Analysis Settings Stats Preferences allow teams to customize their statistical approach based on organizational requirements.
+**Metric classification** operates through two distinct categories: **recommendation metrics** (primary success measures) and **guardrail metrics** (protective measures against negative impacts), each requiring different MDE considerations and statistical treatment.
 
 ## Key Nomenclature and Definitions
 
-**MDE (Minimum Detectable Effect)**: The smallest meaningful change in a metric that an experiment should be able to detect with statistical confidence. This directly influences required sample sizes and experiment duration.
+**Minimum Detectable Effect (MDE)**: The smallest meaningful change in a metric that an experiment should be able to detect, serving as the foundation for sample size calculations and experiment duration planning.
 
-**Welch's T-test**: The statistical method used for hypothesis testing, which doesn't assume equal variances between groups and is suitable for both binary conversion metrics and continuous value metrics.
+**Welch's T-test**: The primary statistical method for analyzing experimental results, designed to handle unequal variances between experimental groups while maintaining statistical rigor.
 
-**Sample Size Threshold**: The minimum number of users per variant required to achieve statistical significance, calculated based on the MDE, baseline conversion rates, and desired confidence levels.
+**Sample Size Target/Samples Per Variant Needed**: Calculated thresholds determining the minimum number of users required in each experimental variant to achieve statistical significance for the specified MDE.
 
-**Two-sided vs One-sided Testing**: Two-sided tests detect changes in either direction (increases or decreases), while one-sided tests focus on detecting changes in a specific direction, requiring smaller sample sizes but with directional assumptions.
+**Two-sided vs One-sided Testing**: Statistical approaches where two-sided tests detect changes in either direction (increase or decrease), while one-sided tests focus on detecting changes in a specific direction only.
 
-**Control Mean**: The baseline performance metric from the control group, used as the reference point for calculating relative improvements and statistical significance.
+**Sequential Testing**: An alternative statistical methodology mentioned as an option to traditional fixed-sample T-testing, allowing for continuous monitoring and early stopping decisions.
 
-**False Positive/Negative Rates**: Statistical risks where false positives represent incorrectly detecting an effect that doesn't exist, while false negatives represent missing a real effect.
+**Central Limit Theorem Assumptions**: The statistical foundation underlying T-test validity, requiring sufficient sample sizes for proper distribution assumptions.
 
-## Ecosystem Integration and Methodology
+## Broader Product Ecosystem Integration
 
-Amplitude Experiment's statistical framework integrates with broader experimentation best practices through several key components:
+The statistical analysis framework serves as the analytical backbone for Amplitude's broader experimentation platform, connecting experiment design, execution, and analysis phases through integrated workflows. The **duration estimator** and **Cumulative Exposure graph** provide real-time experiment monitoring capabilities that feed into broader product analytics and decision-making systems.
 
-**Central Limit Theorem Application**: The platform leverages statistical theory to ensure reliable results across different metric types and sample sizes, with built-in safeguards for minimum sample requirements.
+The platform supports both **binary metrics** (conversion-based) and **continuous metrics** (value-based), enabling comprehensive analysis across different business objectives and KPI types. This flexibility allows integration with various product areas, from user acquisition and retention to revenue optimization and feature adoption.
 
-**Sequential Testing Alternative**: While Welch's T-test is the primary method, the platform acknowledges alternative approaches for teams requiring different statistical methodologies.
+**Business risk assessment** capabilities integrate MDE configuration with organizational decision-making processes, ensuring statistical rigor aligns with business impact thresholds and resource allocation decisions.
 
-**Risk Assessment Framework**: The system helps teams balance business risk against statistical rigor by allowing customization of significance thresholds and effect size requirements based on the potential impact of experimental changes.
+## Technical Implementation Details
 
-**Duration and Resource Planning**: Integrated tools like the T-test duration estimator and Samples Per Variant Needed calculations help teams plan experiment timelines and resource allocation before launching tests.
+The system operates through the **Settings tab** interface, where users access the **Goals panel** for metric configuration and **Analysis Settings Stats Preferences** for statistical parameter definition. The **T-test duration estimator** provides algorithmic sample size calculations based on MDE specifications, current traffic patterns, and desired statistical power.
 
-## Configuration and Implementation
-
-**Primary Configuration Path**: Settings tab → Goals panel → Analysis Settings Stats Preferences
-
-**Key Configuration Parameters**:
-- Statistical test type (two-sided/one-sided)
-- Sample size thresholds per variant
-- MDE values for different metric types
-- Significance level preferences
-
-**Monitoring Interfaces**:
-- Cumulative Exposure graph for real-time progress tracking
-- Sample Size Target indicators
-- Duration estimator for experiment planning
-
-The platform emphasizes proper experimental design upfront, requiring teams to thoughtfully consider their MDE, statistical approach, and risk tolerance before launching experiments, ensuring that results will be both statistically valid and business-relevant.
+The platform automatically handles **false positive/negative rate** calculations and provides guidance on **sample size threshold** requirements, ensuring experiments maintain statistical validity while optimizing for practical business constraints and timeline requirements.

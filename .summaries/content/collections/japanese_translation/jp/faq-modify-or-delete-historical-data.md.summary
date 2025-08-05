@@ -1,4 +1,4 @@
-**Summary:** This Japanese FAQ documentation explains how to modify or delete historical data in Amplitude, covering immutable data architecture limitations, event modification workarounds using Export API and Batch API, Identify API behavior for user properties, event deletion restrictions with blocking options, and historical data backfill processes.
+**Summary:** This Japanese FAQ documentation explains how to modify or delete historical data in Amplitude, covering immutable data architecture limitations, Export API and Batch API workarounds for data cleaning, Identify API behavior for user properties, event blocking procedures, and historical data backfill processes.
 
 **Keywords:**
 - Japanese translation FAQ
@@ -7,9 +7,8 @@
 - Export API data export
 - Batch API data upload
 - Identify API user properties
-- event deletion blocking
+- event blocking and deletion
 - data backfill guide
 - pre-aggregated user events
 - user event streams
-- project data migration
-- self-data backfill
+- data cleaning workflows

@@ -1,23 +1,23 @@
 ## Summary
-The Export API enables developers to export project event data from Amplitude servers using HTTP basic authentication with GET requests to `/api/2/export`, supporting date range queries with a 4GB size limit and returning zipped JSON files containing event objects with detailed schema including user properties, device information, and timestamps.
+The Export API enables developers to export project event data from Amplitude servers using HTTP basic authentication, with endpoints at `/api/2/export` that return zipped JSON files containing event objects with detailed schema including user_id, event_type, device properties, and timestamps.
 
 ## Keywords
 - Export API
 - event data export
 - server_upload_time
 - YYYYMMDDTHH format
+- zipped JSON files
 - HTTP basic authentication
-- /api/2/export endpoint
-- zipped JSON response
+- api/2/export endpoint
 - 4GB size limit
 - UTC timestamps
+- event_type
+- user_id
 - amplitude_id
+- device_id
 - event_properties
 - user_properties
 - group_properties
-- device_id
-- session_id
-- cross-project view limitations
 - Amazon S3 export fallback
-- 365 day query limit
-- 2 hour data availability delay
+- cross-project view limitation
+- 365 days max query period

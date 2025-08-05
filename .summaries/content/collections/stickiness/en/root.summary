@@ -7,40 +7,44 @@ Amplitude Stickiness is a product analytics feature that measures user engagemen
 The Stickiness feature integrates with several core Amplitude components:
 
 - **Event System**: Leverages Amplitude's event instrumentation to track user actions and behaviors
-- **Segmentation Module**: Imports saved user segments and creates new behavioral cohorts based on stickiness results
-- **User Properties**: Groups and filters users by demographic or behavioral attributes
-- **Microscope Integration**: Provides detailed drill-down capabilities for deeper user behavior analysis
-- **Metrics Module**: Offers measurement modes and analytical frameworks for interpreting engagement data
+- **User Segmentation Module**: Enables filtering and grouping users based on properties and saved segments
+- **Metrics Module**: Provides the interface for configuring measurement modes and analyzing results
+- **Microscope Integration**: Allows drill-down analysis of specific user behaviors
+- **Behavioral Cohorts**: Enables creation of user groups based on stickiness patterns for further analysis
 
-The feature supports both chart creation and interpretation workflows, allowing users to build stickiness analyses and extract actionable insights from the results.
+The feature supports both weekly and monthly time frame analysis, with options for non-cumulative and cumulative measurement modes to provide different perspectives on user engagement habits.
 
 ## Key Nomenclature and Definitions
 
-**Stickiness Chart**: A visualization showing user engagement frequency over time, displaying how many days users performed specific events within weekly or monthly periods
+**Stickiness Chart**: A visualization showing how frequently users perform specific events over time periods, typically displayed as frequency buckets on the x-axis
 
-**Non-cumulative vs Cumulative Measurement**: 
-- Non-cumulative: Shows exact frequency (e.g., users who performed an event exactly 3 days)
-- Cumulative: Shows minimum frequency (e.g., users who performed an event 3+ days)
+**Non-cumulative Stickiness**: Measures exact frequency of event occurrence (e.g., users who performed an event exactly 3 times)
 
-**X-axis Day Buckets**: Time period divisions (weekly/monthly) that segment the analysis timeframe
+**Cumulative Stickiness**: Measures minimum frequency thresholds (e.g., users who performed an event at least 3 times)
 
-**Any Event Selection**: Option to analyze stickiness across all user events rather than specific actions
+**Event Properties**: Filters applied to events to analyze specific variations or conditions of user actions
 
-**Behavioral Cohorts**: User groups created based on stickiness patterns and engagement frequency
+**Any Event**: A selection option that allows analysis across all tracked events rather than specific event types
 
-**Power User Analysis**: Identification of highly engaged users through frequent event performance
+**Power User Analysis**: Identification of highly engaged users based on high-frequency event performance
+
+**X-axis Day Buckets**: Time-based groupings that show frequency distribution across different engagement levels
+
+**Breakdown Data Table**: Detailed tabular view of stickiness results showing specific metrics and user counts
 
 **Change Over Time View**: Temporal analysis showing how stickiness patterns evolve across different time periods
 
-**Breakdown Data Table**: Detailed tabular view of stickiness results with user percentage calculations
-
 ## Product Ecosystem Integration
 
-Stickiness functions as a specialized retention and engagement analysis tool within Amplitude's broader product analytics platform. It connects to:
+Stickiness operates as part of Amplitude's broader product analytics suite, connecting user behavior measurement with retention analysis and cohort creation. The feature serves as a bridge between raw event data and actionable user insights, enabling product teams to:
 
-- **Event Tracking Infrastructure**: Relies on properly instrumented events to measure user behavior frequency
-- **User Segmentation System**: Both consumes existing segments and produces new behavioral cohorts
-- **Retention Analytics**: Complements other retention measurement tools by focusing on engagement frequency rather than simple return visits
-- **Product Analytics Suite**: Integrates with other Amplitude charts and analysis tools for comprehensive user behavior understanding
+- Identify engagement patterns that correlate with long-term retention
+- Create targeted user segments based on usage frequency
+- Measure the effectiveness of product changes on user engagement habits
+- Develop data-driven strategies for increasing user stickiness and product adoption
 
-The feature supports the complete analytics workflow from data collection through insight generation, enabling product teams to identify engagement patterns, create targeted user segments, and optimize for increased user stickiness and retention.
+The integration with saved segments and user property grouping allows for sophisticated analysis across different user demographics and behavioral characteristics, while the behavioral cohort creation capability enables teams to act on stickiness insights through targeted campaigns and product optimizations.
+
+## Technical Implementation
+
+The Stickiness feature utilizes Amplitude's existing event instrumentation infrastructure, requiring no additional API endpoints or command line invocations beyond standard Amplitude event tracking. Analysis is conducted through the web interface using the Metrics Module, with results exportable through standard Amplitude data export mechanisms and integration points with the broader analytics platform.

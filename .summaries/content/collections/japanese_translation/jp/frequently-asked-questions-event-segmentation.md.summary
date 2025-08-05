@@ -1,24 +1,24 @@
 **Summary:**
-This Japanese FAQ documentation covers common questions about Event Segmentation charts in Amplitude Analytics, including user property analysis, date range selection, chart type differences (line vs bar), new user definitions, Active% calculations, property averages, custom formulas, DAU/MAU ratios, data export methods, and troubleshooting issues like incomplete data and glob matching filters.
+This Japanese FAQ documentation covers common questions about Event Segmentation charts in Amplitude Analytics, including chart configuration, data analysis techniques, custom formulas (like DAU/MAU calculations using ROLLWIN), user property filtering, data visualization differences between line and bar charts, and troubleshooting issues like incomplete data errors and glob matching filters.
 
 **Keywords:**
 - Event Segmentation charts
 - Japanese translation documentation
-- user properties analysis
+- Amplitude Analytics FAQ
 - group by and where clauses
-- line chart vs bar chart differences
-- new user definitions
-- Active% calculations
-- property value averages
-- custom formulas and ratios
-- DAU/MAU calculations
-- ROLLWIN custom formulas
+- line chart vs bar chart data visualization
+- new users definition
+- Active% calculation formula
+- custom formulas and ROLLWIN function
+- DAU/MAU ratio calculations
 - inline cohorts
-- microscope user downloads
-- CSV export functionality
-- incomplete data errors
-- glob match filtering
+- user list downloads
+- microscope feature
+- property value averaging
+- glob matching filters
 - account-based filtering
+- incomplete data errors
+- user properties vs event properties
+- CSV export functionality
 - breakdown table limitations
 - data processing delays
-- property value restrictions

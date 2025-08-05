@@ -3,18 +3,15 @@
 **Keywords:**
 - TikTok Ads Event Streaming Integration
 - TikTok Events API
-- SHA256 encryption
+- SHA256 encryption identifiers
 - Amplitude to TikTok data streaming
-- Pixel ID configuration
-- Access Token setup
-- Test Event Code
-- TikTok Ads identifiers mapping
-- External ID, Email, Phone Number mapping
-- TikTok Click ID, Cookie ID
-- AddPaymentInfo, AddToCart, CompletePayment events
-- InitiateCheckout, ViewContent, CompleteRegistration
-- E.164 phone format
+- TikTok Pixel ID configuration
+- E.164 phone number format
 - ISO 4217 currency codes
-- Content ID, Content Category mapping
-- Price, Quantity, Value properties
-- business-api.tiktok.com/open_api/v1.3/event/track/
+- TikTok predefined events (AddToCart, CompletePayment, InitiateCheckout)
+- TikTok Click ID mapping
+- Test Event Code validation
+- Content Type Product/Product Group
+- Real-time behavioral data sync
+- Ad targeting audience insights
+- Event property mapping (Price, Quantity, Content ID, Currency, Value)

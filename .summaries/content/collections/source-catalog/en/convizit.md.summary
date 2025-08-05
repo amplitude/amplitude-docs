@@ -1,15 +1,15 @@
-**Summary:** Documents the Convizit source integration that automatically captures website user behavior data and sends it to Amplitude as raw events with pre-structured event names and properties, including setup via account manager coordination and data delivery every 30 minutes.
+**Summary:** Documents the Convizit source integration that automatically captures website click events and sends them to Amplitude as raw events with pre-structured event names and properties, including setup via Convizit account manager and field mapping for insert_id, user_id, event_type, and event_properties.
 
 **Keywords:**
 - Convizit source integration
 - AI-based Digital Experience Data Platform
-- automatic user behavior data collection
+- automatic website click capture
 - raw-events integration type
-- website integration category
 - 30-minute data delivery interval
-- pre-structured event naming
 - insert_id field mapping
+- event_type pre-naming
+- event_properties enrichment
 - plan.source field identification
 - partner-maintained integration
-- account manager setup process
+- Convizit account manager setup
 - User Look-Up event verification

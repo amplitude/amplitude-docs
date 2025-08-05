@@ -1,14 +1,17 @@
-**Summary:** This documentation explains how to modify display names for events and user properties in Amplitude Data's tracking plan, covering the benefits of using readable display names and step-by-step procedures for updating them through the Amplitude UI without affecting raw data.
+**Summary:** This documentation explains how to modify display names for events and user properties in Amplitude Data's tracking plan, covering the UI workflow for updating display names through the Events and Properties screens while noting that changes only affect the Amplitude UI display and not the underlying raw data.
 
 **Keywords:**
 - Amplitude Data
-- display names (表示名)
-- tracking plan (トラッキングプラン)
-- event properties
-- user properties (ユーザープロパティ)
-- Japanese translation
-- Amplitude UI
+- display names
+- tracking plan
+- event display names
+- user property display names
+- Events screen
+- Properties screen
+- User Properties tab
+- active events
 - custom events exclusion
+- UI display modification
 - raw data preservation
-- event screen navigation
-- properties tab
+- Japanese translation
+- トラッキングプラン

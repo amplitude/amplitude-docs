@@ -1,35 +1,29 @@
-Amplitude's Account Management system provides comprehensive organizational and project administration capabilities for managing analytics implementations across different plan tiers. The platform operates on a hierarchical structure with organizations containing multiple projects, where users are assigned specific roles (Viewer, Member, Manager, Admin) that determine their access levels and administrative capabilities.
+Amplitude's Account Management system provides comprehensive organizational and project administration capabilities for analytics platform governance. The system operates on a hierarchical structure with organization-level settings that cascade to individual projects, supporting multi-project environments through Portfolio views and cross-project analysis capabilities.
 
-## Core Features and Capabilities
+## Core Product Architecture
 
-The account management system centers around organizational settings accessible through the Settings page, which serves as the primary control hub for both organizational and project-level configurations. Key features include project management with API key and secret key rotation, user permission management through role-based access control, billing and usage monitoring with MTU (Monthly Tracked Users) and event limits, and Session Replay configuration with sample rate controls.
+The account management framework centers around Organizations as the top-level entity, containing multiple Projects that can be managed individually or collectively. Projects serve as data containers with distinct API keys, secret keys, and configuration settings including session definitions, time zones, currency display units, and sampling parameters. The Portfolio feature enables Enterprise customers to create Views that merge up to 5-10 projects for cross-project analysis using User ID/Device ID matching and the User Mapping API for user aliasing across projects.
 
-For Enterprise customers, advanced features include Portfolio for cross-project analysis, SCIM 2.0 provisioning for automated user management, permission groups for bulk access control, and the Scale feature for dynamic behavioral sampling to manage ultra-high volume event processing.
+## User Management and Access Control
 
-## Product Relationships and Architecture
+The platform implements a four-tier role hierarchy: Viewer, Member, Manager, and Admin, with escalating permissions for content access, creation, and administrative functions. Enterprise plans support Permission Groups for bulk user provisioning and project-level permission assignment, with the system granting the highest permission level when users have multiple role assignments. User provisioning integrates with SCIM 2.0 protocols through the User Management API, supporting identity providers like Okta with core schema fields including userName, givenName, familyName, email, and active status.
 
-The account management system integrates tightly with Amplitude's broader analytics platform. Projects serve as containers for analytics data, each with dedicated API keys, secret keys, and configuration settings including time zones, currency display units, and session definitions. The Portfolio feature enables Enterprise customers to create Views that merge up to 5 projects (or 10 with approval) for cross-project analysis using user ID/device ID matching and the User Mapping API for aliasing.
+## Key Administrative Features
 
-User management operates at both organizational and project levels, with Enterprise customers having access to project-level permissions and permission groups. The system integrates with identity providers through SSO and SCIM provisioning, supporting automated user lifecycle management through the User Management API.
+**API Key Management**: Enterprise organizations access self-service key management through Organization Settings, allowing Managers and Admins to create, revoke, and delete API keys and secret keys with Key ID identifiers, subject to 50 active key limits and 6-hour deletion propagation periods.
 
-## Key Nomenclature and Definitions
+**Data Volume Control**: The Scale feature provides dynamic behavioral sampling for Enterprise plans, implementing user identity-based sampling to manage costs for high-volume customers while maintaining analysis accuracy through upsampling metrics and preserving complete user event streams.
 
-**Organizations** represent the top-level entity containing multiple projects and users. **Projects** are individual analytics implementations with unique API keys, secret keys, and configuration settings. **Views** in Portfolio context refer to merged displays of multiple projects for cross-project analysis.
+**Privacy and Compliance**: Self-service data deletion capabilities allow Growth and Enterprise Administrator users to permanently remove specific events and properties, with scanning limits of 1B events/month (Growth) and 10B events/month (Enterprise). The system includes GDPR compliance notifications for data deletion requests with configurable email alerts for Job Creation, Job Completion, and Unset Violation events.
 
-**User Roles** follow a hierarchical structure: Viewers have read-only access to discoverable content, Members can create and edit their own content, Managers have additional administrative capabilities including user management, and Admins have full organizational control including billing and advanced settings.
+## Technical Integration Points
 
-**Permission Groups** (Enterprise only) allow bulk assignment of project permissions to multiple users. **Dynamic Behavioral Sampling** through the Scale feature samples events based on user identity while maintaining analysis accuracy through upsampling metrics.
+**Webhooks**: Enterprise customers can configure webhook endpoints for custom monitor notifications, automatically triggering external system alerts when KPI-related behavioral changes occur.
 
-## Ecosystem Integration
+**Session Replay Configuration**: Project-level settings include Session Replay sample rate configuration and capture toggles for user session recording management.
 
-The account management system integrates with multiple Amplitude products and external systems. It connects with Amplitude Experiment through app-level permissions, supports Slack integration for notifications and collaboration, and integrates with identity providers like Okta through SCIM 2.0 provisioning.
+**Currency and Localization**: Projects support currency display unit configuration affecting Revenue LTV charts, Event Segmentation revenue metrics, and Data Tables without modifying underlying data values.
 
-The User Management API and SCIM API enable programmatic user and group management, while the User Privacy API supports GDPR and CCPA compliance through automated data deletion workflows. Session Replay integration allows configuration of capture settings and sample rates at the project level.
+## Operational Workflows
 
-## API Endpoints and Technical Implementation
-
-Key API integrations include the **User Management API** for programmatic user lifecycle management, **SCIM API** for identity provider integration, **User Privacy API** for data deletion requests, and **User Mapping API** for Portfolio cross-project user aliasing.
-
-The system supports webhook configurations for custom monitors, allowing Enterprise customers to send triggered monitor notifications to external endpoints when KPI-affecting behavior changes occur. Self-service key management enables Managers and Admins to create, revoke, and delete API keys and secret keys through the Organization Settings interface, with a limit of 50 active keys per organization.
-
-Data deletion capabilities include self-service permanent removal of specific events and properties, with scanning limits of 1B events/month for Growth plans and 10B events/month for Enterprise plans. The system maintains audit trails and provides notification workflows for privacy regulation compliance, including Job Creation, Job Completion, and Unset Violation notifications.
+The system supports bulk operations including user invitation through the Members & Groups settings page, content ownership transfer for charts, dashboards, and cohorts, and email domain migration processes. Project deletion and organization URL modifications require Customer Success Manager contact or support ticket submission. The platform maintains project-specific user property silos while enabling global user ID merging through the Portfolio functionality, supporting comprehensive cross-product user journey analysis within the broader Amplitude analytics ecosystem.

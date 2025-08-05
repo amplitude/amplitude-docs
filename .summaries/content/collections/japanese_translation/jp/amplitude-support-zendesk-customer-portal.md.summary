@@ -5,11 +5,11 @@
 - Amplitude support requests
 - Japanese translation documentation
 - help.amplitude.com/hc/en-us
-- サインイン (sign-in)
-- サインアップ (sign-up)
-- パスワードを取得 (password reset)
 - マイアクティビティ (My Activity)
 - support ticket management
-- customer portal registration
-- Zendesk account creation
+- account registration process
+- password reset functionality
+- customer portal login
 - support request viewing
+- ticket status tracking
+- cc'd requests visibility

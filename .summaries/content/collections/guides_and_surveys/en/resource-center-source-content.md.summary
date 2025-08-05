@@ -7,10 +7,9 @@
 - sync options configuration
 - draft vs published visibility
 - content targeting segments
-- Website scraper option
-- Guides and Surveys Content tab
-- recommendation sets
+- website scraper integration
 - source content management
 - automatic sync frequency
-- article visibility control
-- sync history and errors
+- Guides and Surveys module
+- recommendation sets
+- content status management

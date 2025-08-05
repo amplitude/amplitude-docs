@@ -10,38 +10,32 @@ This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mo
 - Browser SDK 2.0 migration
 - amplitude.getInstance()
 - logEvent
-- Identify object
 - setUserId
-- deviceId
-- sessionId
+- Identify object
 - Revenue tracking
 - logRevenueV2
 - UTM parameters
 - includeUtm
 - includeReferrer
-- includeGclid
-- includeFbclid
 - cross-domain tracking
+- deviceIdFromUrlParam
 - sendBeacon transport
+- amp_ cookies
 - trackingOptions
-- batchEvents
+- sessionTimeout
 - eventUploadThreshold
+- batchEvents
 - serverZone EU
 - groupIdentify
-- setGroup
-- cookieForceUpgrade
-- disableCookies
-- amp_ cookie prefix
-- RequireJS integration
+- setUserProperties
+- setDeviceId
+- amplitude.init()
+- snippet installation
+- requireJS integration
+- Google Tag Manager
 - Content Security Policy CSP
 - navigator.sendBeacon
-- onExitPage callback
-- deviceIdFromUrlParam
-- saveParamsReferrerOncePerSession
-- logEventWithGroups
-- setOptOut
-- regenerateDeviceId
-- Google Tag Manager GTM
-- first-touch attribution
-- last-touch attribution
-- multi-touch attribution
+- localStorage fallback
+- COPPA control
+- dynamic configuration
+- useDynamicConfig

@@ -3,20 +3,19 @@
 **Keywords:**
 - GCS Import
 - Google Cloud Storage integration
-- Amplitude Data Sources
 - service account permissions
 - converter configuration
 - guided converter creation
 - JSON converter rules
 - storage.buckets.get permissions
 - storage.objects permissions
-- HTTP API v2 spec
 - date prefix format YYYY/MM/DD/HH
-- bucket organization requirements
-- event properties mapping
+- HTTP API v2 spec mapping
+- event properties ingestion
 - user properties ingestion
-- group properties import
-- compression configuration
-- file pattern matching
-- warehouse sources
-- storage admin role
+- group properties ingestion
+- bucket organization requirements
+- transformation modal
+- Data Preview section
+- converter file compression
+- GCSPrefix folder structure

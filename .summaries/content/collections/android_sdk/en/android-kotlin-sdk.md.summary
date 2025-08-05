@@ -1,36 +1,27 @@
-## Summary
-
+**Summary:**
 This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features (sessions, app lifecycles, screen views, deep links, element interactions), tracking methods (track, identify, revenue), user/device ID management, plugins system, and advanced features like offline mode and network tracking plugin.
 
-## Keywords
-
-- android-kotlin-sdk
+**Keywords:**
+- Android-Kotlin SDK
 - com.amplitude:analytics-android
-- gradle-maven-installation
-- flushIntervalMillis
-- flushQueueSize
-- autocapture-options
-- AutocaptureOption.SESSIONS
-- AutocaptureOption.APP_LIFECYCLES
-- AutocaptureOption.SCREEN_VIEWS
-- AutocaptureOption.DEEP_LINKS
-- AutocaptureOption.ELEMENT_INTERACTIONS
-- track-identify-revenue
-- deviceId-userId-management
-- advertising-id-ADID
-- app-set-id
-- plugins-enrichment-destination
-- NetworkTrackingPlugin
-- OkHttp-interceptor
-- offline-mode
-- ACCESS_NETWORK_STATE
-- TrackingOptions
-- COPPA-control
-- session-tracking
+- Gradle Maven installation
+- flushIntervalMillis flushQueueSize
+- autocapture AutocaptureOption
+- sessions app lifecycles screen views
+- deep links element interactions
+- track identify revenue methods
+- userId deviceId management
+- advertising ID ADID
+- app set ID
+- plugins enrichment destination
+- NetworkTrackingPlugin OkHttp
+- offline mode ACCESS_NETWORK_STATE
+- TrackingOptions COPPA control
+- ServerZone EU data residency
 - minTimeBetweenSessionsMillis
-- jetpack-compose-support
-- element-interactions-tracking
-- configuration-options
-- serverZone-EU
-- batch-API
-- proguard-exceptions
+- identifyBatchIntervalMillis
+- useAdvertisingIdForDeviceId
+- useAppSetIdForDeviceId
+- locationListening
+- migrateLegacyData
+- instanceName multiple instances

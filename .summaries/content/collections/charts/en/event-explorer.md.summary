@@ -9,7 +9,9 @@
 - user ID and device ID lookup
 - event properties visualization
 - Add Event to Chart functionality
-- User Lookup integration
-- Instrumentation Explorer Chrome plugin
 - batched events processing
 - Identify events exclusion
+- User Lookup integration
+- Instrumentation Explorer Chrome plugin
+- event stream filtering
+- live event monitoring

@@ -7,12 +7,9 @@
 - IAB/ABC International Spiders & Bots List
 - ユーザーエージェント (user agents)
 - Legacy JavaScript SDK
-- TypeScript Browser SDK
-- HTTP API
-- Batch API
-- クローラー (crawlers)
-- スクレーパー (scrapers)
-- 未認証Webサイト (unauthenticated websites)
-- データ取り込み除外 (data ingestion exclusion)
+- TypeScript Browser SDK v1.10.0
+- HTTP API/Batch API
+- クローラー・スクレーパー (crawlers/scrapers)
 - メインブランチ (main branch)
-- フィルター設定フライアウトパネル (filter settings flyout panel)
+- フィルター適用環境 (filter application environment)
+- データ取り込み除外 (data ingestion exclusion)

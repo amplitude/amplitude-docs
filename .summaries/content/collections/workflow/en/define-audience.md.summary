@@ -8,10 +8,11 @@
 - cohort-based targeting
 - user properties targeting
 - custom user properties
-- segment evaluation rules
+- segment matching priority
+- cohort hourly sync
 - caching expiration behavior
 - transformed properties limitation
-- real-time property evaluation
+- real-time user property evaluation
 - SDK context passing
 - REST API context
-- experiment variants setup
+- experiment design panel

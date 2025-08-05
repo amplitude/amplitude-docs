@@ -1,13 +1,14 @@
-**Summary:** This FAQ documentation explains CSV export functionality in Amplitude, covering how Event Segmentation chart breakdown data tables determine CSV structure, user property value differences between charts and Microscope exports (event-time vs current values), and the "Always Remove Leading Spaces from Export" toggle in Personal Settings.
+**Summary:** This FAQ documentation explains CSV export functionality in Amplitude, covering how Event Segmentation chart breakdown data tables determine CSV structure, user property value differences between charts and Microscope CSV exports (event-time vs current values), and the "Always Remove Leading Spaces from Export" toggle in Personal Settings.
 
 **Keywords:**
 - CSV export
 - Event Segmentation chart
 - breakdown data table
-- Microscope export
+- Microscope CSV download
 - user property values
 - event-time property values
 - leading spaces removal
 - Personal Settings toggle
+- Always Remove Leading Spaces from Export
 - property value discrepancies
 - chart vs CSV differences

@@ -3,17 +3,16 @@
 **Keywords:**
 - sequential testing
 - mixture sequential probability ratio test (mSPRT)
-- statistical inference
 - hypothesis testing
 - null hypothesis
 - alternative hypothesis
 - early experiment termination
+- statistical inference
+- A/B testing
 - randomized control trial
 - treatment variants
-- A/B testing methodology
-- likelihood ratios
-- mixing distribution
-- weight function H
 - binary metrics
 - continuous metrics
 - Central Limit Theorem
+- outliers
+- conversion rate testing

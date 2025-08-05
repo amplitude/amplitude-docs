@@ -1,4 +1,4 @@
-**Summary:** This documentation covers CSV import and export functionality in Amplitude Data for managing tracking plan schemas, including events, event properties, and user properties with detailed field schemas and branching workflow integration.
+**Summary:** This documentation covers CSV import and export functionality in Amplitude Data for managing tracking plan schemas, including events, event properties, and user properties with detailed field schemas, branching workflow, and template requirements.
 
 **Keywords:**
 - CSV import export
@@ -11,8 +11,7 @@
 - event visibility settings
 - array properties validation
 - regex property validation
-- tracking plan bulk changes
-- import branch creation
+- tracking plan template
 - property required status
 - event activity status
-- object types (Event, Property Group)
+- import branch creation

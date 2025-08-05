@@ -12,9 +12,8 @@
 - identify calls
 - e-commerce events
 - Global Configs section
-- MetaRouter dashboard
-- analyticsjs event specs
+- Default parameters
 - anonymous ID tracking
-- User ID identification
-- input/output key mapping
-- Default parameters configuration
+- user ID identification
+- MetaRouter dashboard setup
+- pipeline deployment

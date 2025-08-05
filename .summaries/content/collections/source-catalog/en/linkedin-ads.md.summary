@@ -1,5 +1,5 @@
 ## Summary
-This documentation covers Amplitude's LinkedIn Ads integration that imports campaign-level metrics (spend, clicks, impressions) as "Daily Ad Metrics" events with properties like `ad_metrics.impressions`, `ad_metrics.clicks`, `campaign_id`, and UTM parameters for ad performance analysis.
+This documentation covers Amplitude's LinkedIn Ads integration that imports campaign-level metrics (spend, clicks, impressions) as Daily Ad Metrics events with properties like `ad_metrics.impressions`, `ad_metrics.clicks`, and UTM parameters, requiring LinkedIn Ads Admin access for OAuth authentication and daily batch imports.
 
 ## Keywords
 - LinkedIn Ads integration
@@ -9,19 +9,16 @@ This documentation covers Amplitude's LinkedIn Ads integration that imports camp
 - ad_metrics.cost
 - campaign_id
 - ad_group_id
-- UTM parameters
-- campaign-level metrics
-- OAuth connection
-- LinkedIn Ads Manager
-- Admin privileges
-- Out-of-the-box Marketing Analytics
+- OAuth LinkedIn Ads Manager
+- Admin privileges requirement
+- UTM parameters automatic population
+- Dynamic UTM tracking
+- LinkedIn reporting API
+- Campaign-level metrics import
+- Daily batch import
 - Ad Performance dashboard
-- daily batch import
-- backfill
-- synthetic identifier
-- LinkedIn Ads device ID
-- dynamic UTM tracking
-- retrospective updates
-- campaign analysis
-- ROAS (Return on Ad Spend)
-- CAC (Customer Acquisition Cost)
+- Out-of-the-box Marketing Analytics
+- Data backfill for metric discrepancies
+- Non-user-level ad events
+- Synthetic identifier LinkedIn Ads device ID
+- Campaign analysis exclusion from funnels

@@ -7,17 +7,24 @@ This documentation covers Amplitude Data's derived properties feature, which all
 - Enterprise plans
 - tracking plan properties
 - formula editor
-- PROPERTY() function
-- string functions (REGEXEXTRACT, SPLIT, CONCAT)
-- math functions (SUM, MULTIPLY, DIVIDE)
-- date/time functions (DATE_TO_LONG, TIME_TO_LONG)
-- array functions (ITEM_COUNT, GREATEST, LEAST)
-- conditional operators (IF, AND, OR, SWITCH)
-- parallel operators (PARALLEL_SUM, PARALLEL_PRODUCT)
-- cart analysis
+- PROPERTY function
+- REGEXEXTRACT
+- SPLIT function
+- CONCAT
+- DATE_TIME_FORMATTER
+- PARALLEL_PRODUCT
+- cart properties
+- string functions
+- math functions
+- conditional operators
+- array functions
 - main branch requirement
 - property references limit
 - Java SimpleDateFormat
 - Unix timestamps milliseconds
-- group properties
-- lookup properties
+- set operators
+- parallel operators
+- ITEM_COUNT
+- EXTRACT_FROM_DICT
+- EVENT_HOUR_OF_DAY
+- glob match operators

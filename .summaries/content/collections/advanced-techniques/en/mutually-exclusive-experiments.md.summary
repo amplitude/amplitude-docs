@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to configure mutually exclusive experiments in Amplitude Experiment using mutual exclusion groups, which prevent users from being exposed to multiple related experiments simultaneously to avoid interaction effects and data contamination.
+This documentation explains how to configure mutually exclusive experiments in Amplitude Experiment using mutual exclusion groups, which prevent users from being exposed to multiple related experiments simultaneously to avoid interaction effects and maintain data integrity.
 
 ## Keywords
 - mutually exclusive experiments

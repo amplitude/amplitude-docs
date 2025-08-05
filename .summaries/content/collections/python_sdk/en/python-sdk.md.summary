@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude Python SDK (amplitude-analytics package) for sending events to Amplitude, including initialization with API keys, configuration options like flush_queue_size and flush_interval_millis, event tracking with BaseEvent, user properties management via Identify operations, user groups with set_group(), revenue tracking with Revenue interface, and plugin system for extending SDK behavior.
+**Summary:** This documentation covers the Amplitude Python SDK (amplitude-analytics package) for sending events to Amplitude, including installation via pip, client initialization with API key, configuration options like flush_queue_size and flush_interval_millis, event tracking with BaseEvent, user properties management via Identify operations, user groups with set_group(), group properties with group_identify(), revenue tracking with Revenue interface, and plugin system for enrichment and destination types.
 
 **Keywords:**
 - amplitude-analytics
@@ -11,22 +11,20 @@
 - set_group()
 - group_identify()
 - Revenue interface
-- EventOptions
-- user_id
-- device_id
+- EventPlugin
+- DestinationPlugin
+- PluginType.ENRICHMENT
 - server_zone
 - use_batch
 - StorageProvider
 - InMemoryStorageProvider
-- callback function
-- plugin system
-- PluginType.ENRICHMENT
-- DestinationPlugin
-- group_type
-- group_name
+- EventOptions
+- user_id
+- device_id
 - product_id
 - revenue_type
+- group_type
+- group_name
 - pre_insert
 - post_insert
-- batch API
-- httpapi endpoint
+- timeline.process

@@ -1,21 +1,17 @@
-**Summary:** Documents Amplitude's time spent analysis feature for data tables, which calculates duration between consecutive events with a 30-minute timeout window and supports custom metrics like time spent per user/page/session using page view events with group-by property resets.
+**Summary:** Documents Amplitude's time spent analysis feature for data tables, which calculates duration between consecutive events using a 30-minute timeout window and supports custom metrics like time spent per user/page/session with group-by property resets.
 
 **Keywords:**
 - time spent analysis
 - consecutive events duration
 - 30 minute timeout window
-- custom metrics
-- Growth Enterprise plan
 - group-by property reset
 - page view events
+- custom metrics
+- Growth Enterprise plan
+- data tables integration
+- TimeSpent formula syntax
+- session bounce behavior
 - primitive page view event
 - [Amplitude] Page View
-- Event Name filter
-- custom page view event
-- TimeSpent(PV) formula
-- Uniques(PV) denominator
-- SessionTotals metric
-- data tables integration
-- time unit configuration
-- bounce session behavior
-- last page view exclusion
+- time spent per user/page/session
+- metric denominator dependency

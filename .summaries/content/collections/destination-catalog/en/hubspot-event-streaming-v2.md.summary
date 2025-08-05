@@ -1,7 +1,6 @@
-## Summary
-This documentation covers the HubSpot event streaming v2 destination integration that forwards Amplitude events and properties to HubSpot as custom events, requiring HubSpot Enterprise subscription and supporting up to 50 custom properties per event with p95 latency target of 60 seconds.
+**Summary:** This documentation covers the HubSpot event streaming v2 destination integration that forwards Amplitude events and properties to HubSpot as custom events, requiring HubSpot Enterprise subscription and supporting up to 50 custom properties per event with p95 latency target of 60 seconds.
 
-## Keywords
+**Keywords:**
 - HubSpot event streaming v2
 - Amplitude destination integration
 - custom events forwarding
@@ -14,6 +13,6 @@ This documentation covers the HubSpot event streaming v2 destination integration
 - workflow automation triggers
 - User Token Email Object ID identifiers
 - re-authentication permissions
-- internal event name mapping
+- Internal Event Name mapping
 - custom report builder
 - attribution reports

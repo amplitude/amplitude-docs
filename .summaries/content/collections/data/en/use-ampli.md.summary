@@ -1,4 +1,4 @@
-**Summary:** Documents Ampli, a code generation tool that creates type-safe wrappers for the Amplitude SDK based on analytics tracking plans in Amplitude Data, providing autocompletion and compile-time validation for event tracking.
+**Summary:** This page documents Ampli, a code generation tool that creates type-safe wrappers for the Amplitude SDK based on analytics tracking plans in Amplitude Data, providing autocompletion and compile-time validation for event tracking.
 
 **Keywords:**
 - Ampli wrapper
@@ -12,4 +12,4 @@
 - compile-time validation
 - event names enforcement
 - property values validation
-- developer tools
+- developer tools integration

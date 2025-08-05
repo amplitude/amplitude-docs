@@ -1,5 +1,4 @@
-**Summary:**
-This documentation covers Amplitude's User and Account Lookup feature for searching individual user event data, including user property searches, event stream visualization, and instrumentation troubleshooting with detailed timestamp fields (client_event_time, server_received_time, event_time).
+**Summary:** This documentation covers Amplitude's User and Account Lookup feature for searching individual user event data, including user property searches, event stream visualization, and instrumentation troubleshooting with detailed timestamp handling (client_event_time, server_received_time, event_time calculations).
 
 **Keywords:**
 - User and Account Lookup
@@ -9,12 +8,14 @@ This documentation covers Amplitude's User and Account Lookup feature for search
 - Amplitude instrumentation troubleshooting
 - client_event_time
 - server_received_time
-- event_time
-- server_upload_time
-- user profile
+- event_time calculation
+- user ID search
+- device ID search
+- Amplitude ID
 - live event updates
-- raw JSON event data
 - session grouping
-- funnel and segmentation charts
+- raw JSON event data
 - UUID event identifier
+- funnel and segmentation charting
 - gp prefix search syntax
+- revenue property aggregation

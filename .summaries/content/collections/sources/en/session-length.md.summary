@@ -10,4 +10,4 @@
 - inactive events exclusion
 - deleted events exclusion
 - session tracking
-- device logged events
+- event filtering

@@ -1,20 +1,22 @@
 **Summary:**
-This Japanese documentation explains how to integrate Slack with Amplitude Analytics and Amplitude Data, covering account linking, Slack app installation for US/EU data centers, automatic link unfurling for charts/dashboards, comment notifications with @mentions, and team space subscriptions for real-time tracking plan updates.
+This Japanese documentation explains how to integrate Slack with Amplitude analytics platform, covering account linking, Slack app installation, link unfurling for charts/dashboards, comment notifications with @mentions, and connecting Amplitude Data project tracking plans to Slack channels for real-time branch and publishing updates.
 
 **Keywords:**
 - Slack integration
-- Amplitude Analytics
-- Amplitude Data
+- Amplitude analytics
 - Japanese documentation (jp)
-- link unfurling
-- comment notifications
+- Link unfurling
+- Comment notifications
 - @mentions
-- team spaces
-- tracking plan updates
+- Team Spaces
+- Amplitude Data project
+- Tracking plan updates
+- Branch changes
+- Publishing notifications
 - EU data center
+- Chart previews
+- Dashboard linking
+- Real-time notifications
 - Slack app installation
-- real-time notifications
-- branch changes
-- published versions
-- chart previews
-- dashboard linking
+- Account authentication
+- Channel subscription

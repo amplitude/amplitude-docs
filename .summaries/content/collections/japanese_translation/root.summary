@@ -1,85 +1,83 @@
-Amplitude is a comprehensive digital analytics platform designed to help product teams understand user behavior, optimize experiences, and drive business growth through data-driven insights and experimentation.
+# Amplitude Japanese Translation Documentation
 
-## Core Product Suite
+This directory contains Japanese language documentation for Amplitude's digital analytics platform. The Japanese translation covers the complete product suite and maintains the same comprehensive structure as the English documentation.
 
-The platform consists of four interconnected products that work together as a unified ecosystem:
+## Product Overview (製品概要)
 
-**Amplitude Analytics** serves as the primary analytics engine, providing event-based tracking and visualization through various chart types including Event Segmentation, Funnel Analysis, Retention Analysis, and Cohort Analysis. It processes real-time data to generate actionable insights about user behavior patterns.
+The Japanese documentation translates Amplitude's full digital analytics ecosystem, including:
 
-**Amplitude Data** functions as the data governance and tracking plan management system, ensuring data quality and consistency across all touchpoints. It provides centralized schema management, validation rules, and tracking plan specifications.
+**Core Products (主要製品):**
+- **Amplitude Analytics (アナリティクス)** - イベントベースの製品分析プラットフォーム
+- **Amplitude Experiment (実験)** - A/Bテストと機能フラグ管理
+- **Amplitude Data (データ)** - データガバナンスとトラッキングプラン管理
+- **Amplitude Activation (アクティベーション)** - パーソナライゼーションとオーディエンスターゲティング
 
-**Amplitude Experiment** delivers A/B testing and feature flag management capabilities, enabling teams to test product changes and measure their impact on user behavior and business metrics.
+## Localized Product Relationships
 
-**Amplitude Activation** powers personalization and user targeting through AI-driven recommendations and predictions, allowing teams to create tailored user experiences based on behavioral insights.
+The Japanese documentation maintains the same product architecture while adapting terminology for Japanese users:
 
-## Product Integration and Data Flow
+- **統合データ基盤** - Unified data foundation concepts
+- **クロスプロダクト連携** - Cross-product integration workflows  
+- **共有ユーザー識別システム** - Shared user identification systems
+- **API・SDK統合** - API and SDK integration patterns
 
-The products operate through a layered architecture where data flows seamlessly between components:
+## Japanese Nomenclature and Definitions
 
-The **Data Collection Layer** (Amplitude Data) manages tracking plans and governance, ensuring consistent event and property definitions across all products. The **Analytics Layer** (Amplitude Analytics) processes this data through various analysis tools and visualizations. The **Experimentation Layer** (Amplitude Experiment) leverages analytics data to power tests and feature flags, while the **Activation Layer** (Amplitude Activation) uses insights to drive personalized experiences.
+**Core Concepts (基本概念):**
+- **イベント** - User actions and behaviors tracked in the system
+- **プロパティ** - Event and user attributes (イベントプロパティ/ユーザープロパティ)
+- **Amplitude ID** - システム自動割り当てユーザー識別子
+- **デバイスID** - Platform-specific device identifiers
+- **ユーザーID** - Developer-defined custom user identifiers
+- **MTU (月間追跡ユーザー数)** - Monthly billing metric
 
-Cross-product functionality includes shared cohorts that can be created in Analytics and used across Experiment and Activation, unified user identification systems, and real-time data streaming that enables immediate insights and personalization.
+**Analytics Terms (分析用語):**
+- **コホート** - Behavioral user segments
+- **ファネル** - Multi-step conversion analysis
+- **リテンション** - User return behavior metrics
+- **セグメンテーション** - Data breakdown by user/event properties
+- **スティッキネス** - User engagement frequency analysis
 
-## Key Nomenclature and Definitions
+**Experimentation Terms (実験用語):**
+- **バリアント** - A/B test variations
+- **エクスポージャーイベント** - Experiment exposure tracking
+- **アサインメントイベント** - User bucketing events
+- **スティッキーバケッティング** - Consistent user assignment
+- **シーケンシャルテスト** - Early statistical conclusion methods
 
-**Core Data Concepts:**
-- **Events**: Tracked user actions (e.g., "Button Clicked", "Page Viewed")
-- **Properties**: Contextual attributes for events (Event Properties) or users (User Properties)
-- **Amplitude ID**: Automatically generated unique user identifier
-- **Device ID**: Device/browser-specific identifier
-- **User ID**: Customer-defined identifier for known users
+## Japanese Market Integration
 
-**Analytics Terminology:**
-- **Active Users**: Users performing at least one active event in a time period
-- **Cohorts**: User groups defined by shared characteristics or behaviors
-- **Retention**: Measurement of user return behavior over time
-- **Funnel**: Sequential user steps toward conversion goals
-- **Segmentation**: Data breakdown by specific properties or user groups
+The documentation addresses Japan-specific integration requirements:
 
-**Data Management Terms:**
-- **Tracking Plan**: Centralized specification of events and properties
-- **Schema**: Data structure definitions with validation rules
-- **Branches**: Isolated environments for testing tracking changes
-- **Transformations**: Retroactive event data modifications
+**Development Platforms (開発プラットフォーム):**
+- iOS/Android SDK implementations with Japanese documentation
+- JavaScript/React Native integration guides
+- Server-side tracking for Japanese web architectures
 
-**Experimentation Concepts:**
-- **Variants**: Different feature versions being tested
-- **Exposure Events**: User interactions with experiment variants
-- **Statistical Significance**: Confidence levels for result validity
-- **Sticky Bucketing**: Consistent user variant assignment throughout experiments
+**Business Tool Integrations (ビジネスツール連携):**
+- Japanese marketing platform connections
+- Local CRM and email service integrations  
+- Japan-specific attribution partner support
+- Business intelligence tool compatibility
 
-## Ecosystem Integration and APIs
+**Collaboration Tools (コラボレーションツール):**
+- Slack integration with Japanese language support
+- Documentation embedding in Japanese business tools
+- Workflow integration with Japanese development practices
 
-Amplitude integrates extensively with external platforms through multiple channels:
+## API Documentation and CLI Tools
 
-**SDK Support** includes native SDKs for iOS, Android, JavaScript, React Native, Flutter, Unity, and server-side SDKs for Node.js, Python, Java, Go, PHP, plus direct HTTP API access and partner integrations with Segment, mParticle, and Shopify.
+**Localized API References:**
+- **HTTP API v2** - データ取り込みエンドポイント
+- **Export API** - 生イベントデータ抽出
+- **Cohort API** - プログラマティックコホート管理
+- **Profile API** - ユーザープロファイルと推奨配信
+- **User Privacy API** - GDPR準拠とデータ削除
 
-**Third-Party Destinations** enable data synchronization with advertising platforms (Facebook, Google Ads, TikTok), email/marketing tools (Braze, Iterable, Mailchimp), data warehouses (Snowflake, BigQuery, Redshift), and business intelligence platforms (Tableau, Looker, PowerBI).
+**Command Line Tools (コマンドラインツール):**
+- **Ampli CLI** - タイプセーフトラッキングライブラリ生成
+  - `ampli pull` - トラッキングプランのローカル環境ダウンロード
+  - `ampli status` - トラッキングプランに対する実装検証
+  - `ampli push` - 実装ステータスのアップロード
 
-**Enterprise Features** include Single Sign-On (SSO) with SAML 2.0, SCIM provisioning for automated user management, granular permission groups, cross-project analysis through Portfolio addon, and custom SQL queries via Amplitude Query.
-
-## API Endpoints and Command Line Tools
-
-**Primary API Endpoints:**
-- `https://api2.amplitude.com/2/httpapi` - HTTP API v2 for event ingestion
-- `https://amplitude.com/api/2/export` - Export API for raw data export
-- `https://amplitude.com/api/3/cohorts` - Cohort API for cohort management
-- `https://profile-api.amplitude.com/v1/userprofile` - Profile API for user profile data
-- `https://api2.amplitude.com/identify` - Identify API for user property updates
-- `https://api2.amplitude.com/attribution` - Attribution API for mobile attribution events
-
-**Experiment-Specific Endpoints:**
-- `https://api.lab.amplitude.com/v1/vardata` - Flag evaluation for experiment variants
-- Automatic assignment event tracking for user experiment assignments
-- Exposure event tracking when users interact with experiment variants
-
-**Ampli CLI Commands:**
-- `ampli pull` - Download tracking plan specifications
-- `ampli status` - Check implementation status against tracking plan
-- `ampli push` - Upload tracking plan changes
-
-## Platform Capabilities
-
-Amplitude enables product teams to understand user behavior through comprehensive event tracking and analysis, optimize product experiences via A/B testing and feature flags, personalize user journeys using AI-powered recommendations and predictions, maintain data quality through centralized governance and validation, and scale analytics programs with enterprise-grade security and administration features.
-
-The platform's integrated approach ensures that data governance, analytics, experimentation, and personalization work cohesively to provide complete user journey visibility and enable data-driven product decisions across the entire product development lifecycle.
+The Japanese documentation ensures that Japanese-speaking teams can fully leverage Amplitude's capabilities while maintaining consistency with global product standards and terminology. This localization supports Japan's significant digital product development market and enables seamless adoption across Japanese organizations of all sizes.

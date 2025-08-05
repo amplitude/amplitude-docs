@@ -1,22 +1,18 @@
-**Summary:** This Japanese documentation explains journey visualizations in Amplitude Analytics, covering three chart types: Pathfinder (default flow diagram showing user paths), Journey Map (conversion timing and friction analysis), and Top User Paths (ranked path frequency analysis), with functionality for event filtering, property expansion, cohort creation, and conversion window analysis.
+**Summary:** This Japanese documentation explains journey visualizations in Amplitude Analytics, covering three chart types: Pathfinder (default flow diagram showing user paths), Journey Map (conversion timing and friction analysis), and Top User Paths (ranked path frequency analysis). The page details path reading methodology, event filtering, property expansion, conversion windows, and key differences from legacy Pathfinder and Journey chart logic including event collapsing behavior and conversion window handling.
 
 **Keywords:**
 - journey visualizations
 - pathfinder chart
 - journey map
 - top user paths
-- conversion window
 - event filtering
 - property expansion
-- cohort creation
+- conversion windows
+- path analysis
+- event collapsing
+- legacy pathfinder differences
 - flow diagram
-- user path analysis
-- dropoff analysis
-- event sequences
+- user friction analysis
+- cohort creation
 - Japanese translation
 - Amplitude Analytics
-- legacy pathfinder differences
-- event collapsing
-- path frequency ranking
-- user friction analysis
-- conversion timing

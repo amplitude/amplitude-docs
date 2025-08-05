@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) with installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user properties management via AMPIdentify class, revenue tracking with AMPRevenue, and advanced features including session tracking, user groups, middleware, COPPA compliance, SSL pinning, and Apple privacy manifest requirements.
+This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) with installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user property management via AMPIdentify class, revenue tracking with AMPRevenue, session handling, and advanced features including EU data residency, COPPA compliance, IDFA/IDFV device ID management, middleware support, and Apple privacy manifest requirements.
 
 ## Keywords
 
@@ -8,22 +8,19 @@ This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) wit
 - CocoaPods Carthage Swift Package Manager installation
 - AMPIdentify class user properties
 - AMPRevenue revenue tracking
+- IDFA IDFV device ID lifecycle
+- CTTelephonyNetworkInfo carrier tracking deprecated iOS 16
+- EU data residency setServerZone
 - defaultTracking sessions appLifecycles screenViews deepLinks
-- IDFA IDFV device ID tracking
-- CTTelephonyNetworkInfo carrier tracking iOS 16 deprecated
-- setUserId setDeviceId logEvent withEventProperties
-- groupIdentifyWithGroupType setGroup
-- minTimeBetweenSessionsMillis session management
 - AMPTrackingOptions disable tracking fields
-- setServerZone EU data residency
-- enableCoppaControl COPPA compliance
-- SSL pinning AMPLITUDE_SSL_PINNING preprocessor macro
-- setOptOut privacy opt-out
-- setOffline offline mode
-- middleware AMPMiddlewarePayload
+- COPPA enableCoppaControl
+- SSL pinning AMPLITUDE_SSL_PINNING
 - tvOS watchOS iOS extensions App Clips
-- Apple privacy manifest NSPrivacyTracking NSPrivacyCollectedDataTypes
-- eventUploadThreshold eventUploadPeriodSeconds configuration
-- useDynamicConfig dynamic server URL
-- outOfSession events
-- Objective-C Swift code examples
+- middleware AMPMiddlewarePayload
+- Apple privacy manifest NSPrivacyTracking
+- setUserId setDeviceId regenerateDeviceId
+- logEvent withEventProperties outOfSession
+- groupIdentifyWithGroupType setGroup
+- minTimeBetweenSessionsMillis eventUploadThreshold
+- setServerUrl useDynamicConfig setOffline
+- objective-c swift implementation

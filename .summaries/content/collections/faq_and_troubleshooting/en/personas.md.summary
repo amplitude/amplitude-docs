@@ -4,11 +4,11 @@
 - Personas chart clustering
 - K-Means algorithm limitations
 - Non-Negative Matrix Factorization (NMF)
+- behavioral clustering
 - high-dimensional event data
 - outlier handling
-- behavioral clustering
 - dimension reduction
-- behavior space
-- user event frequencies
-- hierarchical clusters
-- event types clustering
+- behavior space projection
+- user behavioral patterns
+- hierarchical clustering
+- event frequency normalization

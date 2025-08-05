@@ -1,14 +1,14 @@
-**Summary:** This documentation describes the Radar-to-Amplitude integration for ingesting geofencing and location tracking events as raw events, enabling analysis of location-based user behavior without requiring Amplitude-side configuration.
+**Summary:** This documentation covers the Radar-to-Amplitude integration for ingesting geofencing and location tracking events as raw events, enabling analysis of location-based user behavior through Radar's SDKs and APIs with setup handled entirely through Radar's platform.
 
 **Keywords:**
 - Radar geofencing platform
-- location-based events ingestion
+- location tracking events
 - raw-events integration type
-- geofencing analytics
-- location tracking data
-- partner-maintained integration
-- real-time location data
-- location-triggered user behavior
 - geofencing SDKs and APIs
+- location-based user behavior
 - pickup and delivery tracking
-- location verification events
+- location-triggered notifications
+- store locators
+- address autocomplete
+- partner-maintained integration
+- real-time location data ingestion

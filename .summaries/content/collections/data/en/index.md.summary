@@ -1,4 +1,4 @@
-**Summary:** This documentation page provides an overview of Amplitude Data's governance tools for data catalog management, covering planning/instrumentation features (data plans, Ampli developer toolkit, type-safe tracking libraries) and data management capabilities (metadata enrichment, data transformation, custom events, derived properties, data observability, and Data Assistant automation).
+**Summary:** This documentation page provides an overview of Amplitude Data's governance tools for data catalog management, covering planning/instrumentation features (data plans, Ampli developer toolkit, type-safe tracking library) and data management capabilities (metadata enrichment, data transformation, custom events, lookup properties, derived properties, and real-time data observability).
 
 **Keywords:**
 - Amplitude Data
@@ -6,13 +6,14 @@
 - data planning workflow
 - Ampli developer toolkit
 - type-safe tracking library
-- data observability
+- data management tools
 - metadata enrichment
 - data transformation
 - custom events creation
-- derived properties
 - lookup properties
-- Data Assistant automation
+- derived properties
+- data observability
+- real-time data monitoring
+- Data Assistant
 - taxonomy standards
-- data quality monitoring
-- real-time data comparison
+- data quality governance

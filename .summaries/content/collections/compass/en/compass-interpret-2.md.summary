@@ -1,18 +1,14 @@
-**Summary:** This documentation explains correlation metrics in Amplitude Compass charts, including correlation score categorization (Highly/Moderately/Slightly/Not Predictive), correlation calculation between event triggers and user retention, and the process for creating cohorts from Compass results with contingency tables and detailed statistics.
+**Summary:** This documentation explains correlation metrics in Amplitude Compass charts, including correlation score categorization (Highly/Moderately/Slightly/Not Predictive based on thresholds), and describes how to create cohorts from Compass results with contingency table analysis for user retention prediction.
 
 **Keywords:**
-- Amplitude Compass correlation
-- correlation score categorization
+- Amplitude Compass correlation analysis
+- correlation score thresholds categorization
 - positive predictive value (PPV)
 - negative predictive value (NPV)
-- contingency table
-- cohort creation from Compass
-- correlation thresholds
-- binary random variables
-- Matthews correlation
-- Pearson correlation
-- phi coefficient
-- true positives/false positives/false negatives/true negatives
-- Any Active Event
-- user retention correlation
-- inflection metrics
+- contingency table true positives false negatives
+- cohort creation from Compass results
+- binary random variables correlation
+- user retention prediction metrics
+- Any Active Event cohort comparison
+- correlation table detailed statistics
+- Matthews Pearson phi coefficient correlation

@@ -7,11 +7,9 @@
 - exposure events counting
 - metric event triggers
 - property value aggregation
-- funnel conversion metrics
-- unique user counting logic
-- event totals calculation
+- funnel conversion logic
+- unique user counting (E, M, FM)
+- event totals (T, FT)
+- property sums and averages (S, A)
 - Japanese translation documentation
-- statistical experiment analysis
-- A/B testing metrics
-- user exposure tracking
-- sequential event analysis
+- experiment interpretation methodology

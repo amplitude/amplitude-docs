@@ -7,8 +7,7 @@
 - HTTP API v2
 - Segment Debugger
 - status code 200 validation
+- event instrumentation limits
+- Amplitude Instrumentation Debugger Chrome extension
 - event batching thresholds
-- Amplitude Instrumentation Debugger
-- measurement limits troubleshooting
-- event blocking and deletion
-- Japanese translation documentation
+- Japanese troubleshooting documentation

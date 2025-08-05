@@ -1,19 +1,19 @@
-## Summary
-This documentation explains multiple hypothesis testing in Amplitude Experiments, covering the multiple comparisons problem and Bonferroni correction implementation for controlling false positive rates when testing multiple variants or metrics in A/B experiments.
+**Summary:**
+This documentation explains multiple hypothesis testing in Amplitude Experiments, covering the multiple comparisons problem and Bonferroni correction implementation for primary and secondary metrics across treatment variants, including p-value adjustments and false positive rate control.
 
-## Keywords
+**Keywords:**
 - multiple hypothesis testing
-- Amplitude Experiments
 - Bonferroni correction
 - multiple comparisons problem
 - false positive rate
-- family-wise error rate
 - p-value adjustment
 - primary metrics
 - secondary metrics
 - treatment variants
+- family-wise error rate
 - statistical significance
-- A/B testing variants
-- hypothesis correction layers
+- null hypothesis
+- Amplitude Experiments
+- hypothesis testing multiplicity
 - corrected p-values
 - uncorrected p-values

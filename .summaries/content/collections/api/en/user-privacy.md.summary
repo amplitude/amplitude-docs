@@ -1,18 +1,17 @@
-**Summary:** Documents the User Privacy API for GDPR/CCPA compliance, enabling programmatic deletion of user data via amplitude_ids or user_ids with batch processing, rate limiting (1 req/sec, 100 users per request), and 30-day deletion scheduling with job status tracking.
+**Summary:** Documents the User Privacy API for GDPR/CCPA compliance, enabling programmatic deletion of user data via POST requests to `/api/2/deletions/users` with support for both project-level and organization-wide deletions using `delete_from_org` parameter.
 
 **Keywords:**
 - User Privacy API
 - GDPR CCPA compliance
+- `/api/2/deletions/users` endpoint
 - amplitude_ids user_ids deletion
-- /api/2/deletions/users endpoint
 - delete_from_org parameter
 - ignore_invalid_ids parameter
-- batch deletion jobs
-- 30-day deletion scheduling
-- job status tracking (staging/submitted/done)
-- rate limiting 1 req/sec 100 users
 - HTTP basic authentication
-- warehouse CDC reingest prevention
-- setOptOut method
-- project-level organization-level deletion
-- admin email notifications
+- batch deletion jobs
+- deletion job status (staging, submitted, done)
+- rate limit 1 request per second
+- 100 users per request limit
+- 30-day deletion timeline
+- warehouse CDC reingest warning
+- setOptOut() method reference

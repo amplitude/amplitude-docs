@@ -1,4 +1,4 @@
-**Summary:** Documents the process for combining multiple events into a single event slot within Funnel Analysis charts using inline event combination, including adding custom events, applying event property filters, and managing temporary chart-specific events without permanent storage.
+**Summary:** Documents the process of combining multiple events into a single event slot within Funnel Analysis charts using inline event combination, including adding custom events, applying event property filters, and managing temporary chart-specific events without permanent storage.
 
 **Keywords:**
 - funnel analysis
@@ -11,6 +11,6 @@
 - event combinations
 - inline comparison
 - microscope limitations
-- user journeys
+- user journeys exclusion
 - conversion drivers
 - user paths

@@ -11,8 +11,8 @@
 - reject data ingestion
 - validation errors panel
 - schema subscribers
-- unexpected data handling
 - Amplitude Data settings
+- unexpected data handling
 - schema validation
 - event property rejection
-- schema violation notifications
+- 24-hour validation errors

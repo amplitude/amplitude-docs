@@ -1,16 +1,16 @@
-## Summary
-This Japanese documentation explains how to create and manage holdout groups in Amplitude Experiment to exclude specific user percentages from experiments, particularly for measuring long-term cumulative effects of multiple experiments and preventing statistical significance issues.
+**Summary:** This Japanese documentation explains how to create and manage holdout groups in Amplitude Experiment to exclude specific user percentages from experiments, particularly for measuring long-term cumulative effects of multiple experiments and preventing statistical significance issues.
 
-## Keywords
+**Keywords:**
 - Amplitude Experiment holdout groups
 - Japanese translation documentation
 - experiment user exclusion
 - holdout percentage configuration
 - experiment traffic allocation
 - statistical significance measurement
-- experiment bucketing consistency
+- long-term experiment impact analysis
+- experiment group management
+- bucketing consistency
 - mutual exclusion groups interaction
 - experiment results chart analysis
-- long-term variant impact measurement
 - T-test statistical method
 - exposure event configuration

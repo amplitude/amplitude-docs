@@ -1,4 +1,4 @@
-**Summary:** This documentation describes the Amplitude to Moloco Commerce Media (MCM) event streaming integration, which streams events and properties to Moloco's machine learning-powered advertising platform using REST API authentication and supports specific event types like ADD_TO_CART, PURCHASE, and SEARCH with required field mappings.
+**Summary:** This documentation describes the Amplitude to Moloco Commerce Media (MCM) event streaming integration, which streams events and properties to Moloco's machine learning-powered advertising platform using REST API authentication and requires specific event types like ADD_TO_CART, PURCHASE, and SEARCH with corresponding required fields.
 
 **Keywords:**
 - Moloco Commerce Media (MCM)
@@ -6,10 +6,8 @@
 - REST API Key authentication
 - Platform ID configuration
 - ADD_TO_CART, PURCHASE, SEARCH event types
-- user_id to Identity ID matching
-- ITEM_PAGE_VIEW, ADD_TO_WISHLIST events
-- revenue_amount, items field mapping
-- page_id, search_query properties
-- behavioral retargeting
+- user_id to Identity ID mapping
+- items, revenue, search_query required fields
 - machine learning advertising optimization
+- behavioral retargeting
 - real-time user segmentation

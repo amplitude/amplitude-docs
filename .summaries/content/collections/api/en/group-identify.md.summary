@@ -1,15 +1,19 @@
-**Summary:** Documents the Group Identify API for setting and updating group properties in Amplitude, supporting group-level analytics through the Accounts add-on with operations like $set, $setOnce, $add, $append, $prepend, and $unset on group_properties.
+**Summary:** Documents the Group Identify API for setting and updating group properties in Amplitude, supporting operations like $set, $setOnce, $add, $append, $prepend, and $unset on group_type and group_value parameters with limits of 5 unique group types, 10 total groups per event, and 1024 group identifies per request.
 
 **Keywords:**
 - Group Identify API
-- group_properties operations
-- group_type and group_value parameters
+- group_type
+- group_value  
+- group_properties
+- $set operation
+- $setOnce operation
+- $add operation
+- $append operation
+- $prepend operation
+- $unset operation
 - Accounts add-on
-- group-level analytics
+- api2.amplitude.com/groupidentify
 - identification parameter
-- $set, $setOnce, $add, $append, $prepend, $unset operations
-- /groupidentify endpoint
-- group segments
-- api2.amplitude.com
 - 1024 group identifies limit
 - 5 unique group types limit
+- 10 total groups per event

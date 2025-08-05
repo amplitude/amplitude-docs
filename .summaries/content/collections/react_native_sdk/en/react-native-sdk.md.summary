@@ -1,35 +1,32 @@
 ## Summary
 
-This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with required @react-native-async-storage/async-storage dependency, initialization with API keys, configuration options (batching, EU data residency, logging), event tracking, user properties management via Identify operations, group properties, revenue tracking, session/user/device ID management, opt-out functionality, optional tracking settings, plugin system for enrichment and destination types, and advanced topics like custom HTTP clients, location tracking, advertising identifiers (ADID, AppSetId, IDFV, IDFA), and OTA update considerations.
+This documentation covers the React Native SDK for Amplitude analytics, detailing installation, initialization, configuration, and event tracking capabilities. It includes specific compatibility requirements for React Native versions, native module dependencies like @react-native-async-storage/async-storage, and platform-specific features like advertising identifiers (ADID, IDFV, IDFA, AppSetId) and carrier tracking limitations on iOS 16+.
 
 ## Keywords
 
 - @amplitude/analytics-react-native
-- @react-native-async-storage/async-storage
 - React Native SDK
-- TypeScript analytics
-- npm package installation
-- expo install
+- @react-native-async-storage/async-storage
 - pod install iOS
-- init() API key initialization
-- flushQueueSize batching
-- flushIntervalMillis
+- compatibility matrix
+- Gradle Android Gradle Plugin
+- track events
+- identify user properties
+- revenue tracking
+- group properties
+- advertising identifiers ADID IDFV IDFA AppSetId
+- carrier tracking iOS 16
+- OTA updates over the air
+- Expo support
+- plugins enrichment destination
+- flush events
+- session tracking
+- trackingOptions
 - serverZone EU data residency
-- track() event logging
-- Identify user properties
-- setOnce, add, prepend, append operations
-- setGroup() user groups
-- groupIdentify() group properties
-- Revenue interface tracking
-- setUserId, setDeviceId, setSessionId
-- reset() user logout
-- setOptOut() tracking disable
-- trackingOptions configuration
-- EnrichmentPlugin, DestinationPlugin
-- Transport interface
-- ADID, AppSetId, IDFV, IDFA advertising identifiers
-- play-services-appset dependency
 - HTTP V2 API
-- compatibility matrix React Native versions
-- Gradle Android configuration
-- OTA over-the-air updates
+- batch API useBatch
+- transportProvider custom HTTP client
+- location_lat location_lng
+- migrateLegacyData maintenance SDK
+- CTCarrier serviceSubscriberCellularProviders deprecated
+- play-services-appset play-services-ads-identifier

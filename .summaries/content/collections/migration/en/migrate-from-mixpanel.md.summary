@@ -13,11 +13,10 @@
 - historical data migration
 - super properties to user properties
 - mixpanel.register() to amplitude.identify()
-- Professional Services migration
-- SDK instrumentation mapping
 - Mixpanel Export API integration
 - service account authentication
-- GDPR compliance
-- user privacy API
-- Time to Live (TTL)
+- Professional Services migration
+- SDK instrumentation mapping
 - client-side and server-side tracking
+- Time to Live (TTL) configuration
+- User Privacy API compliance

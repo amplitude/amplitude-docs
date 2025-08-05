@@ -2,18 +2,19 @@
 
 **Keywords:**
 - self-service data deletion
-- permanent data removal
-- deletion task creation
+- deletion task
 - event deletion
 - property deletion
 - event properties
 - user properties
 - Administrator privileges
-- Growth plan scanning limits
-- Enterprise plan scanning limits
+- Growth plan
+- Enterprise plan
+- scanning limits
+- billion events per month
+- Organization settings
 - server upload time UTC
 - deletion queue
-- Organization settings
 - User Privacy API
 - GDPR CCPA compliance
-- project data management
+- permanent data removal

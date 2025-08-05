@@ -18,9 +18,6 @@ This documentation describes Amplitude's Warehouse-native Bulk Model Management 
 - FieldMapping object
 - multiEventConfig
 - Snowflake integration
-- apiVersion metadata spec
+- apiVersion warehouse/models/v1
 - model name unique identifier
-- database schema table
-- eventTime userId groupId eventId
-- startTime endTime
-- eventJoinField
+- database schema table configuration

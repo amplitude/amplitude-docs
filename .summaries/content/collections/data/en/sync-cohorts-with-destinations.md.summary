@@ -11,7 +11,7 @@
 - marketing automation platforms
 - cohort sync limitations
 - funnel retention stickiness cohort types
-- Facebook Ads Google Ads Twitter Ads destinations
-- 1,000,000 user limit
+- Facebook Ads Google Ads Twitter Ads exclusions
+- 1,000,000 user limit real-time
 - sync job queuing
-- cohort updates export
+- destination catalog integration

@@ -7,9 +7,9 @@
 - rolling windows
 - offset parameters
 - segmentation module
-- time period analysis
-- user segmentation
+- time period segmentation
 - cohort comparison
+- user behavior analysis
 - event frequency operators
 - rolling over fields
 - current period events
@@ -20,4 +20,3 @@
 - customer milestone tracking
 - re-engagement campaigns
 - churn prevention
-- subscription analysis

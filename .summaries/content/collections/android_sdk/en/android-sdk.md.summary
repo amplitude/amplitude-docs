@@ -1,28 +1,35 @@
-**Summary:**
-This documentation covers the Amplitude Analytics Android SDK (maintenance mode), which supports Java and Kotlin for tracking events, user properties, revenue, and sessions in Android applications. The SDK provides core functionality including event logging with properties, user identification, group tracking, revenue verification through Google Play Store, session management with foreground tracking, and various configuration options like EU data residency, offline mode, SSL pinning, and middleware support.
+## Summary
 
-**Keywords:**
+This documentation covers the Amplitude Analytics Android SDK (maintenance mode), which supports Java and Kotlin for tracking events, user properties, revenue, and sessions in Android applications. The SDK provides core functionality including event logging with properties, user identification, group tracking, revenue verification through Google Play/Amazon stores, session management with foreground tracking, and various configuration options like EU data residency, offline mode, SSL pinning, and middleware support.
+
+## Keywords
+
 - Amplitude Analytics Android SDK
 - maintenance SDK
 - Java Kotlin support
-- com.amplitude:android-sdk
-- Maven Central package
-- event logging JSONObject
-- user properties Identify operations
-- revenue tracking logRevenueV2
-- Google Play Store revenue verification
-- session management enableForegroundTracking
-- advertising ID ADID tracking
-- App Set ID deviceId
-- group identification groupType groupName
-- EU data residency setServerZone
+- AmplitudeClient initialization
+- enableForegroundTracking
+- logEvent with JSONObject properties
+- Identify user properties operations
+- Revenue tracking logRevenueV2
+- Google Play revenue verification
+- Amazon store revenue verification
+- session tracking sessionTimeoutMillis
+- setUserId custom user ID
+- setGroup groupType groupName
+- groupIdentify API
 - TrackingOptions disable tracking
-- COPPA compliance enableCoppaControl
+- Android Advertising ID ADID
+- App Set ID useAppSetIdForDeviceId
+- deviceId lifecycle management
 - location tracking enableLocationListening
-- SSL pinning PinnedAmplitudeClient
-- middleware MiddlewarePayload
-- offline mode setOffline
+- EU data residency setServerZone
 - dynamic configuration setUseDynamicConfig
+- SSL pinning PinnedAmplitudeClient
+- offline mode setOffline
+- middleware MiddlewarePayload
+- COPPA control enableCoppaControl
+- out-of-session events
+- event batching eventUploadThreshold
 - OkHTTP dependency requirement
-- AndroidManifest.xml permissions
-- ProGuard obfuscation exceptions
+- AndroidManifest.xml INTERNET permission

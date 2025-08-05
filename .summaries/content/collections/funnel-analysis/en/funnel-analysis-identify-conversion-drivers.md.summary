@@ -1,25 +1,20 @@
 ## Summary
-This documentation explains Amplitude's conversion drivers feature for funnel analysis, which identifies events and behaviors that correlate with user conversions or drop-offs between funnel steps, providing correlation scores, frequency metrics, and event property analysis for users on Growth and Enterprise plans.
+This documentation covers Amplitude's conversion drivers feature for funnel analysis, which identifies behaviors and events that correlate with user conversions or drop-offs between funnel steps, including correlation scores, frequency metrics, and event property analysis capabilities.
 
 ## Keywords
 - conversion drivers
 - funnel analysis
 - correlation score
-- Microscope
-- step controller
-- events table
-- conversion metric
+- Microscope feature
+- conversion metrics
 - drop-off analysis
-- event properties
+- event properties expansion
 - Matthews correlation
-- Pearson correlation
-- phi coefficient
 - confusion matrix
-- true positives
-- false positives
-- Growth plan
-- Enterprise plan
-- Amplitude Experiment
-- causation vs correlation
+- true positives/false negatives
 - conversion window
-- property expansion
+- funnel steps
+- Growth and Enterprise plans
+- Amplitude Experiment integration
+- event frequency analysis
+- time between steps metric

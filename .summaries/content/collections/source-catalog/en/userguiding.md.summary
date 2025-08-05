@@ -1,15 +1,15 @@
-**Summary:** Documents the Userguiding integration with Amplitude for tracking user onboarding analytics, requiring only an Amplitude API key to connect a single Userguiding environment to a single Amplitude project for analyzing interactive walkthroughs and onboarding funnels.
+**Summary:** This documentation describes the Userguiding integration with Amplitude, a no-code user onboarding platform that sends interactive walkthrough events to Amplitude using API key authentication for analyzing user onboarding funnels and retention metrics.
 
 **Keywords:**
 - Userguiding integration
-- user onboarding platform
+- no-code user onboarding platform
 - interactive walkthroughs
-- no-code onboarding
-- Amplitude API key setup
+- user adoption and churn reduction
+- Amplitude API key authentication
+- single environment to single project connection
 - onboarding funnels
-- activation metrics
-- retention funnels
-- user adoption tracking
-- churn reduction analytics
-- single environment connection
-- Collaboration category source
+- activation funnels
+- retention metrics
+- user onboarding experience analysis
+- Userguiding dashboard integrations
+- walkthrough event tracking

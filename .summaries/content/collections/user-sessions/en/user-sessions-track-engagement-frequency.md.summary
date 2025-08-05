@@ -21,10 +21,11 @@
 - Average Events per Sessions
 - Total Events Across Sessions
 - Distribution buckets
-- Segment By module
 - session IDs
 - EVENTTOTALS formula
 - SESSIONTOTALS formula
 - HIST formula
 - PROPSUM formula
 - UNIQUES formula
+- Segment By module
+- Measured As Module

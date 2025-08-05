@@ -1,18 +1,18 @@
-**Summary:** This documentation describes the Amplitude to Extole event streaming destination integration that sends real-time user behavior events from Amplitude to Extole's Customer-Led Growth platform to trigger advocacy campaigns, refer-a-friend programs, and customer activation initiatives. The integration requires mapping Amplitude user_id to email addresses in Extole, uses access tokens for authentication, and supports event filtering with a 2MB request size limit.
+**Summary:** This documentation describes the Amplitude to Extole event streaming destination integration that sends real-time user behavior events from Amplitude to Extole's Customer-Led Growth platform to trigger advocacy campaigns, refer-a-friend programs, and customer activation initiatives. The integration requires mapping Amplitude user_id to email addresses in Extole and uses access tokens for authentication.
 
 **Keywords:**
 - Extole destination integration
 - Customer-Led Growth platform
-- event streaming destination
-- refer-a-friend campaigns
-- advocacy marketing automation
+- Event streaming destination
+- Refer-a-friend campaigns
+- Advocacy program triggers
 - Extole access token authentication
-- user_id email mapping
+- User_id email mapping
 - Event Live View
-- customer acquisition campaigns
-- behavioral segmentation triggers
-- Extole Security Center
-- 2MB request limit
-- event properties filtering
-- challenge programs
-- surprise-and-delight campaigns
+- Customer acquisition campaigns
+- Behavioral segment personalization
+- Surprise-and-Delight programs
+- Friends-and-Family campaigns
+- Challenge rewards programs
+- Extole API integration
+- Word-of-mouth marketing automation

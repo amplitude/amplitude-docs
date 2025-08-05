@@ -2,18 +2,19 @@
 
 **Keywords:**
 - Amplitude Shopify Plugin
-- Shopify standard events
-- Browser SDK integration
-- Session Replay sampling
+- Shopify App Store integration
+- Amplitude Browser SDK
+- Session Replay
 - Web Experiment
-- Marketing attribution tracking
-- Shopify checkout limitations
-- Anti-flicker snippet
-- theme.liquid modification
-- Shopify Web Pixels API
-- Product viewed/added/removed events
-- Checkout started/completed events
-- Order created events
-- User ID email/phone mapping
+- Shopify standard events
+- checkout tracking
+- product viewed events
+- cart events
+- marketing attribution
+- anti-flicker snippet
+- theme.liquid
+- Shopify checkout page limitations
 - API key configuration
-- Third-party checkout restrictions
+- sample rate configuration
+- Web Pixels API
+- Shopify commerce platform

@@ -1,18 +1,18 @@
-**Summary:** This Japanese documentation page explains how Amplitude automatically tracks user properties through SDKs, including geolocation data derived from IP addresses using MaxMind database, device information, and behavioral cohorts, with specific limitations for server-side data transmission and segmentation capabilities.
+**Summary:** This Japanese documentation page explains Amplitude SDK's automatic user property tracking, including default properties with amplitude logo prefixes, MaxMind GeoIP location detection, server-side data limitations, and behavioral cohort integration.
 
 **Keywords:**
 - Amplitude SDK user properties
 - Japanese translation documentation
 - MaxMind GeoIP location tracking
 - 自動トラッキング (automatic tracking)
-- server-side data transmission limitations
+- amplitude logo prefix
+- server-side data limitations
 - behavioral cohorts (行動コホート)
-- device ID and user ID properties
-- revenue event tracking
-- Identify API manual configuration
-- JavaScript SDK device family tracking
-- IP address geolocation mapping
+- device ID tracking
+- revenue event verification
+- Identify API integration
 - DMA (designated market area)
-- carrier and platform detection
-- application version tracking
-- amplitude logo prefix properties
+- JavaScript SDK device family
+- user property segmentation
+- IP address geolocation
+- amplitude ID generation

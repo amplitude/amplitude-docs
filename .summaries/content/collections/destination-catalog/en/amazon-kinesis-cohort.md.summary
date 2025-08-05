@@ -1,22 +1,17 @@
-## Summary
-This documentation describes Amplitude Data's AWS Kinesis Cohort integration for streaming behavioral cohort membership updates to Kinesis streams, including JSON payload structure with cohort_name, cohort_id, in_cohort boolean, computed_time, message_id, and users array, plus setup instructions for IAM roles and stream configuration.
+**Summary:** This documentation describes Amplitude's Amazon Kinesis Cohort integration that streams behavioral cohort membership updates to AWS Kinesis Data Streams, including JSON payload structure with cohort_id, in_cohort boolean, computed_time, and user batches, plus setup instructions for IAM roles and stream configuration.
 
-## Keywords
-- Amazon Kinesis cohort integration
-- Amplitude Data cohort streaming
-- behavioral cohorts sync
-- Kinesis stream destination
+**Keywords:**
+- Amazon Kinesis Data Streams
+- Amplitude cohort sync
+- behavioral cohorts
 - cohort membership updates
-- JSON payload structure
-- cohort_name and cohort_id fields
-- in_cohort boolean flag
-- computed_time epoch timestamp
-- message_id unique identifier
-- users array with user_properties
-- IAM role configuration
+- AWS IAM role configuration
 - Kinesis stream setup
+- JSON payload structure
+- cohort_id and in_cohort fields
+- real-time cohort sync
+- Amplitude Data destination
 - AWS account ID 358203115967
 - kinesis:PutRecord permissions
-- real-time cohort sync
 - cohort sync cadences
-- Amplitude Activation integration
+- user_properties mapping

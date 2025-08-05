@@ -1,13 +1,15 @@
-**Summary:** This documentation describes the Apphud integration that sends in-app subscription events and revenue data to Amplitude to enrich user profiles, requiring SDK setup for both platforms and user ID matching between Apphud and Amplitude.
+**Summary:** This documentation describes the Apphud integration that sends in-app subscription events and revenue data to Amplitude as raw events, requiring SDK integration on both platforms and user ID matching between Apphud and Amplitude for subscription management analytics.
 
 **Keywords:**
 - Apphud integration
 - in-app subscription events
 - subscription revenue data
-- user profile enrichment
-- Apphud SDK
+- raw-events integration type
+- subscription-management category
 - user ID matching
-- subscription management
-- raw events integration
-- mobile app revenue analytics
+- Apphud SDK
+- mobile app subscriptions
+- revenue data platform
 - partner-maintained integration
+- beta status
+- subscription analytics

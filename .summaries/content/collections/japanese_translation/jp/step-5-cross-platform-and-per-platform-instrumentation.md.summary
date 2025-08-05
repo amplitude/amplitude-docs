@@ -1,4 +1,4 @@
-**Summary:** This Japanese documentation explains cross-platform versus per-platform instrumentation strategies for Amplitude analytics implementation, covering when to use shared API keys across iOS/Android/Web platforms versus separate API keys, including considerations for user crossover analysis, platform-specific differences, update cycles, and production/test data separation.
+**Summary:** This Japanese documentation explains Step 5 of Amplitude's instrumentation series, covering the decision between cross-platform instrumentation (single API key across iOS/Android/Web) versus per-platform instrumentation (separate API keys), including guidance on when to use each approach and the importance of separating production and test data.
 
 **Keywords:**
 - cross-platform instrumentation
@@ -6,12 +6,12 @@
 - API key strategy
 - iOS Android Web platforms
 - user crossover analysis
-- funnel retention charts
 - platform-specific tracking
-- update cycle differences
 - production test data separation
-- Amplitude SDK HTTP API
-- Segment mParticle integration
+- Amplitude SDK integration
+- HTTP API implementation
 - instrumentation errors debugging
-- unified dashboard view
-- platform engagement analysis
+- update cycle differences
+- funnel retention analysis
+- user behavior tracking
+- Japanese translation documentation

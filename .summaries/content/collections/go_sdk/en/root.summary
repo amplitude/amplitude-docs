@@ -1,82 +1,66 @@
-## Amplitude Go SDK
+The Amplitude Go SDK is a comprehensive analytics solution for Go applications that enables event tracking and user analytics through Amplitude's platform. The SDK provides both a core analytics library and an enhanced Ampli wrapper that generates strongly-typed tracking code from predefined data schemas.
 
-The Amplitude Go SDK provides comprehensive event tracking capabilities for Go applications through two primary components: the core analytics-go SDK and the Ampli wrapper for strongly-typed tracking. The SDK enables developers to send behavioral analytics data to Amplitude's platform with features including batching, retry mechanisms, user identification, revenue tracking, and extensible plugin architecture.
+## Core Components and Features
+
+The primary component is the **analytics-go** package (`github.com/amplitude/analytics-go`), which serves as the foundation for sending events from Go applications to Amplitude's analytics platform. The SDK supports comprehensive event tracking including user events, revenue tracking, user property management, and group analytics.
+
+The **Ampli wrapper** extends the core SDK by generating strongly-typed tracking libraries from Amplitude Data tracking plans. This approach ensures type safety and consistency across tracking implementations by automatically generating Go code that matches predefined event schemas.
 
 ## Product Relationships and Architecture
 
-The Go SDK ecosystem consists of two complementary products:
+The two main products work in a complementary hierarchy:
 
-**Core Analytics-Go SDK** (`github.com/amplitude/analytics-go`) serves as the foundational library providing direct event tracking capabilities with flexible configuration options and plugin extensibility.
+1. **Core Go SDK (analytics-go)** - Provides the fundamental analytics infrastructure including client initialization, event batching, retry logic, and plugin extensibility
+2. **Ampli Wrapper** - Builds on top of the core SDK to provide schema-driven, type-safe event tracking through code generation
 
-**Ampli Go Wrapper** builds upon the core SDK to provide a strongly-typed interface generated from Amplitude Data tracking plans. Ampli acts as a code-generation layer that creates type-safe event tracking methods, reducing implementation errors and ensuring consistency with predefined tracking schemas.
-
-The relationship follows a layered architecture where Ampli wraps the core SDK functionality while adding compile-time type safety and schema validation through generated code.
+The Ampli wrapper internally uses the core SDK's `amplitude.NewClient` and configuration systems while adding its own abstraction layer through methods like `ampli.Instance.Load()`, `ampli.Instance.Track()`, and `ampli.Instance.Identify()`.
 
 ## Key Nomenclature and Definitions
 
 **Core SDK Terminology:**
-- `amplitude.NewClient()` - Primary initialization method for SDK instances
-- `amplitude.Event` - Base event structure for tracking user actions
-- `amplitude.Identify` - User property management operations
-- `amplitude.Revenue` - Specialized tracking for monetary transactions
-- `amplitude.Config` - Configuration object for SDK behavior customization
-- `FlushQueueSize/FlushInterval` - Batching parameters controlling event transmission
-- `ServerZone` - Geographic routing configuration for data residency
-- `StorageFactory` - Pluggable storage backend interface
+- `amplitude.Event` - Primary event structure containing UserID, DeviceID, EventType, and event properties
+- `amplitude.Identify` - User property management operations for setting, adding, and manipulating user attributes
+- `amplitude.Revenue` - Specialized event type for tracking monetary transactions
+- `FlushQueueSize`/`FlushInterval` - Batching configuration parameters controlling when events are sent to Amplitude
+- `ServerZone` - Geographic routing configuration (EU/US) for data residency compliance
+- `Plugin` - Extensibility mechanism with enrichment and destination plugin types
 
 **Ampli-Specific Terminology:**
-- `ampli.Instance` - Generated wrapper instance providing type-safe methods
-- `@amplitude/ampli` CLI - Code generation tool for creating tracking libraries
-- `ampli pull` - Command to generate tracking code from Data tracking plans
-- `ampli status` - Verification command for tracking plan synchronization
-- `LoadOptions` - Configuration for Ampli wrapper initialization
-- `EventOptions` - Per-event configuration parameters
-- Builder Pattern - Method chaining approach for event construction
-
-**Shared Concepts:**
-- Tracking Plan - Schema definition in Amplitude Data platform
-- Enrichment Plugins - Middleware for event data augmentation
-- Destination Plugins - Output handlers for event routing
+- `ampli pull` - CLI command to generate tracking code from Amplitude Data tracking plans
+- `ampli status` - CLI command to verify tracking plan synchronization
+- `LoadOptions` - Configuration object for initializing the Ampli wrapper
+- `EventOptions` - Per-event configuration using builder patterns
+- Strongly-typed events - Generated event methods that enforce schema compliance at compile time
 
 ## Ecosystem Integration
 
-The Go SDK integrates into Amplitude's broader analytics ecosystem through several touchpoints:
+The Go SDK integrates into Amplitude's broader analytics ecosystem through several key touchpoints:
 
-**Amplitude Data Platform Integration:** Ampli connects directly to Amplitude Data tracking plans, enabling schema-driven development where tracking specifications defined in the web interface generate corresponding Go code structures.
+- **Amplitude Data** - The Ampli wrapper connects directly to Amplitude's schema management platform to generate type-safe tracking code
+- **Batch API** - Events are sent to Amplitude's ingestion endpoints with configurable server zones for data residency
+- **Plugin Architecture** - Supports extensibility through enrichment plugins (data transformation) and destination plugins (routing to multiple endpoints)
+- **Storage Layer** - Includes `InMemoryStorage` with `MaxStorageCapacity` for local event persistence and retry handling
 
-**Multi-Language SDK Consistency:** The Go SDK follows patterns established across Amplitude's SDK ecosystem, providing consistent APIs and configuration options across different programming languages.
-
-**Plugin Architecture:** The extensible plugin system allows integration with external systems through enrichment plugins (data transformation) and destination plugins (alternative data routing), enabling hybrid analytics architectures.
-
-**Cloud Infrastructure:** Configuration options like `ServerZone` and `UseBatch` enable integration with Amplitude's global infrastructure, supporting data residency requirements and optimized ingestion patterns.
-
-## API Endpoints and Command Line Interface
+## API Endpoints and CLI Commands
 
 **CLI Commands:**
-- `ampli pull` - Generates strongly-typed tracking library from Data tracking plans
-- `ampli status` - Validates local tracking implementation against remote schemas
-- `@amplitude/ampli` - Primary CLI tool for Ampli workflow management
+- `ampli pull` - Downloads and generates tracking code from Amplitude Data tracking plans
+- `ampli status` - Validates current tracking implementation against the tracking plan
+- Installation via `npm install -g @amplitude/ampli` or `brew install ampli`
 
 **Core SDK Methods:**
-- `amplitude.NewClient(apiKey)` - Client initialization
-- `client.Track(event)` - Event tracking
-- `client.Identify(identify)` - User property updates
-- `client.SetGroup(groupType, groupName)` - User group assignment
-- `client.Revenue(revenue)` - Revenue event tracking
-- `client.Flush()` - Force immediate event transmission
+- `amplitude.NewClient()` - Client initialization with API key
+- `amplitude.NewConfig()` - Configuration object creation
+- `client.Track()` - Event tracking
+- `client.Identify()` - User property operations
+- `client.SetGroup()` - User group assignment
+- `client.GroupIdentify()` - Group property management
+- `client.Flush()` - Force event transmission
 
 **Ampli Wrapper Methods:**
-- `ampli.Load(LoadOptions)` - Initialize Ampli instance
-- `ampli.Identify(userId, identify, options)` - Type-safe user identification
-- `ampli.Track(userId, event, options)` - Type-safe event tracking with generated methods
-- `ampli.Flush()` - Flush queued events through underlying SDK
+- `ampli.Instance.Load()` - Initialize Ampli with configuration
+- `ampli.Instance.Track()` - Send strongly-typed events
+- `ampli.Instance.Identify()` - User identification with type safety
+- `ampli.Instance.Flush()` - Force event transmission through wrapper
 
-**Configuration Parameters:**
-- `FlushQueueSize` - Batch size threshold
-- `FlushInterval` - Time-based batching interval
-- `FlushMaxRetries` - Retry attempt limits
-- `RetryBaseInterval` - Exponential backoff configuration
-- `UseBatch` - HTTP batching endpoint selection
-- `StorageFactory` - Custom storage backend specification
-
-The SDK supports both synchronous and asynchronous operation modes with configurable batching, retry logic, and storage backends, making it suitable for high-throughput server applications and resource-constrained environments.
+The SDK includes sophisticated batching and retry mechanisms controlled by parameters like `RetryBaseInterval`, `FlushMaxRetries`, and supports both synchronous and asynchronous event processing patterns.

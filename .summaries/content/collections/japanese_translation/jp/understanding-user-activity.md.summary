@@ -1,16 +1,18 @@
-**Summary:** This documentation explains how to create and customize user activity reports in Amplitude Analytics using Japanese translation templates, covering the conversion process from templates to dashboards and event replacement configurations for tracking user engagement metrics.
+**Summary:** This Japanese documentation explains how to create and customize user activity reports in Amplitude Analytics using templates, including converting templates to dashboards and replacing default events like "new user" and "any active event" with custom events.
 
 **Keywords:**
 - Amplitude Analytics
+- user activity report template
 - Japanese translation (jp)
-- User activity reports
-- Template customization
-- Dashboard conversion
-- Event replacement dropdown
-- Active user metrics
-- Session time tracking
-- New user events
-- User engagement frequency
-- Template-to-dashboard workflow
-- Project replacement dropdown
-- Blueprint: japanese_translation
+- dashboard conversion
+- template customization
+- new user event replacement
+- any active event replacement
+- active users metrics
+- session duration analytics
+- user engagement frequency
+- template to dashboard workflow
+- event substitution parameters
+- user retention analysis
+- device family breakdown
+- platform segmentation

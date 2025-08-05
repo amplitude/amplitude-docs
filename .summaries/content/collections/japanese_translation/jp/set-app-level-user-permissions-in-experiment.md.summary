@@ -8,9 +8,9 @@
 - viewer member manager admin roles
 - experiments flags environments
 - mutual exclusion groups
-- Japanese translation
 - プロジェクトアクセスの管理
-- 権限のマトリクス
-- ターゲット環境
-- バリアント割り当て
-- 相互排反グループ
+- Japanese translation
+- independent Analytics permissions
+- target environments
+- variants assignments
+- user role management

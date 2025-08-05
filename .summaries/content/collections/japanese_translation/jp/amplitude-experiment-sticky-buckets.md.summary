@@ -1,4 +1,4 @@
-**Summary:** This documentation explains Amplitude Experiment's sticky buckets feature, which ensures users remain in the same experiment variant even when targeting criteria, rollout percentages, or weightings change, using deterministic hashing algorithms and user property evaluation flow.
+**Summary:** This documentation explains Amplitude Experiment's sticky buckets feature, which ensures users remain in the same experiment variant even when targeting criteria, rollout percentages, or variant weights change, using deterministic hashing algorithms and user property evaluation flow.
 
 **Keywords:**
 - Amplitude Experiment sticky buckets
@@ -9,11 +9,10 @@
 - rollout percentage changes
 - user property evaluation
 - experiment assignment events
-- flag version tracking
-- bucketing allocation
-- experiment deployment
-- local evaluation targeting
-- cumulative exposures graph
-- user experience consistency
 - バリアントジャンピング (variant jumping)
-- スティッキーバケット (sticky buckets)
+- スティッキーバケット configuration
+- experiment evaluation flow
+- flag version tracking
+- deployment targeting
+- cumulative exposures graph
+- local evaluation capabilities

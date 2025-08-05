@@ -6,10 +6,10 @@
 - OR logic grouping
 - funnel analysis steps
 - event properties filtering
-- カスタムイベント (custom events Japanese)
-- イベントモジュール (Events module Japanese)
-- conversion step analysis
-- event segmentation compatibility
-- Redshift query limitations
-- admin/manager/member permissions
-- chart type restrictions (funnel, retention, lifecycle, stickiness, impact, pathfinder, compass)
+- カスタムイベント作成
+- イベントモジュール
+- Data section navigation
+- chart compatibility limitations
+- Redshift query restrictions
+- event property querying requirements
+- プッシュ通知 conversion analysis

@@ -3,11 +3,11 @@
 **Keywords:**
 - @amplitude/unified package
 - initAll() initialization method
-- Browser Unified SDK beta
+- Browser Unified SDK
 - Analytics Experiment Session Replay integration
-- track identify experiment sessionReplay functions
-- serverZone instanceName shared configuration
+- shared configuration options
+- serverZone instanceName parameters
+- track identify experiment sessionReplay methods
+- beta release status
+- bundle size optimization
 - sampleRate session replay configuration
-- unified TypeScript JavaScript SDK
-- single entry point initialization
-- bundle size individual product installation

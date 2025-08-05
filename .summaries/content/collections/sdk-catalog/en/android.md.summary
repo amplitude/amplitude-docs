@@ -1,21 +1,22 @@
-**Summary:** This documentation covers the Amplitude Kotlin Android SDK configuration options and batching behavior, including device ID management, flush parameters, session tracking, server zones, COPPA compliance, and data migration from the legacy Android SDK.
+**Summary:** This documentation covers the Kotlin Android SDK for Amplitude analytics, detailing configuration options like flush intervals, queue sizes, device ID handling, session tracking, and batching behavior for event transmission to Amplitude servers.
 
 **Keywords:**
-- Amplitude Kotlin Android SDK
+- Kotlin Android SDK
+- Amplitude analytics
 - flushIntervalMillis
 - flushQueueSize
-- deviceId generation
+- deviceId configuration
+- batch API mode
+- session tracking
+- trackingSessionEvents
+- defaultTracking options
+- serverZone US/EU
 - useAdvertisingIdForDeviceId
 - useAppSetIdForDeviceId
-- ServerZone.US/ServerZone.EU
-- migrateLegacyData
-- trackingSessionEvents
-- defaultTracking
-- minTimeBetweenSessionsMillis
-- useBatch API
 - COPPA control
+- migrateLegacyData
 - AndroidStorageProvider
-- FileIdentityStorageProvider
-- instanceName isolation
-- batch event upload API
-- AndroidNetworkConnectivityCheckerPlugin
+- identifyBatchIntervalMillis
+- minTimeBetweenSessionsMillis
+- event upload threshold
+- Configuration class

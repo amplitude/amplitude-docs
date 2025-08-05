@@ -1,5 +1,5 @@
 **Summary:**
-This Japanese documentation explains how to interpret Amplitude's retention analysis charts, covering three retention measurement methods: "return on or after" (unbounded), "return on" (N-day), and "return on (custom)" with custom brackets, plus viewing retention vs. change over time.
+This Japanese documentation explains how to interpret Amplitude's retention analysis charts, covering three retention measurement methods: "return on or after" (unbounded), "return on" (N-day), and "return on (custom)" with custom brackets, plus retention vs. change-over-time views.
 
 **Keywords:**
 - Japanese translation
@@ -12,11 +12,11 @@ This Japanese documentation explains how to interpret Amplitude's retention anal
 - custom retention brackets
 - cohort entry date
 - retention measurement methods
-- retention views
-- change over time analysis
+- change-over-time view
 - retention calculation
+- user cohorts
 - retention charts interpretation
-- コホートエントリー日 (cohort entry date)
-- リターンオンまたはアフター
-- リターンオン
-- カスタムブラケット
+- retention views
+- retention brackets
+- weighted average retention
+- microscope functionality

@@ -5,12 +5,12 @@
 - Firebase App ID
 - Measurement Protocol API Secret
 - App Instance ID mapping
-- Event streaming integration
-- Amplitude Activation
+- Amplitude Activation streaming
+- Event forwarding GA4
 - User property forwarding
-- Google Analytics 4 parameters
 - Firebase mobile integration
-- GA4 User Properties
+- GA4 parameters
 - non_personalized_ads
 - HTTP V2 API
 - Identify API
+- User ID mapping

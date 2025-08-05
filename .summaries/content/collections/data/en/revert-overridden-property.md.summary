@@ -7,7 +7,7 @@
 - property groups override management
 - "Revert To Original" functionality
 - "Manage Override" dropdown
-- bulk revert operations
-- "Used By" tab overrides
+- "Used By" tab bulk operations
 - event property details panel
 - "Compare To Original" feature
+- tracking plan consistency maintenance

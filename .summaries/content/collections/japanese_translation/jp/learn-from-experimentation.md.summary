@@ -2,21 +2,16 @@
 
 **Keywords:**
 - Amplitude Experiment
+- Japanese translation (jp)
 - A/B testing analysis
-- statistical significance
-- p-values
-- confidence intervals
-- exposure events
-- assignment events
-- Analysis panel
-- summary badges
-- sequential testing
-- t-test
-- null hypothesis
-- alpha threshold
-- cumulative exposures graph
-- binary metrics
-- non-binary metrics
-- control variants
-- Japanese translation
-- experiment rollback
+- Statistical significance
+- p-values and alpha threshold
+- Exposure events vs assignment events
+- Analysis panel interface
+- Summary badges (有意/有意差なし)
+- Sequential testing vs t-testing
+- Confidence intervals
+- Binary vs non-binary metrics
+- Cumulative exposures graph
+- Control variant comparison
+- Experiment rollback functionality

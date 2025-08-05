@@ -1,15 +1,16 @@
-**Summary:** This documentation provides a comprehensive guide for planning data taxonomy in Amplitude, covering the fundamentals of users, events, and properties, along with a three-step process for defining business objectives, breaking down key metrics, and optimizing event/property structures for effective analytics implementation.
+**Summary:** This documentation provides a comprehensive playbook for planning data taxonomy in Amplitude, covering the fundamentals of users, events, and properties, along with a three-step process for defining business objectives, breaking down key metrics, and optimizing event/property structure for effective analytics implementation.
 
 **Keywords:**
-- Amplitude taxonomy planning
-- Event properties vs user properties
-- Data tracking plan strategy
-- Event naming conventions
-- Business objectives metrics
-- Funnel conversion tracking
-- Product ID property consistency
-- Title Case event naming
-- Noun + Past Tense Verb syntax
-- Property definitions scalability
-- Industry-specific analytics guides
-- Amplitude Data CSV import
+- data taxonomy planning
+- Amplitude events and properties
+- user tracking and reconciliation
+- event naming conventions
+- event properties vs user properties
+- business objectives mapping
+- funnel conversion tracking
+- property consistency across events
+- tracking plan optimization
+- Title Case naming convention
+- noun + past tense verb syntax
+- holding constant feature
+- industry-specific taxonomy guides

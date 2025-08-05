@@ -1,4 +1,4 @@
-**Summary:** This documentation describes the Plotline (Cohort Sync) destination integration that enables syncing user cohorts from Amplitude to Plotline for configuring in-app nudges, requiring API key authentication and user_id field mapping to avoid user duplication.
+**Summary:** This documentation covers the Plotline (Cohort Sync) destination integration that enables sending Amplitude user cohorts to Plotline for configuring in-app nudges, requiring API key authentication and user_id mapping between platforms.
 
 **Keywords:**
 - Plotline cohort sync
@@ -9,8 +9,8 @@
 - cohort synchronization
 - customer engagement
 - feature adoption
-- user duplication prevention
-- no-code integration
-- slideouts hotspots tooltips
 - onboarding flows
 - in-app surveys
+- slideouts hotspots tooltips
+- no-code platform
+- user duplication prevention

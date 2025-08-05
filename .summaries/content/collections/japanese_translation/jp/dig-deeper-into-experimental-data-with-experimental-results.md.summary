@@ -1,28 +1,16 @@
-**Summary:** This documentation explains Amplitude's Experimental Results feature for analyzing A/B tests using third-party or custom feature flagging platforms while leveraging Amplitude's analytics tools, requiring proper instrumentation of metric events and exposure events for variant delivery tracking.
+**Summary:** This documentation explains Amplitude's Experimental Results feature for analyzing A/B tests using third-party or custom feature flagging platforms while leveraging Amplitude's analytics tools, covering setup of primary/secondary metrics, exposure events, experiment variants, and statistical analysis interpretation.
 
 **Keywords:**
-- Amplitude Experiment
-- Experimental Results
-- A/B testing analysis
-- feature flagging platforms
-- third-party feature flags
-- exposure events
-- exposure tracking
-- variant delivery
-- metric instrumentation
-- primary metrics
-- secondary metrics
-- statistical significance
-- sequential testing
-- T-test
+- Amplitude Experimental Results
+- A/B test analysis
+- third-party feature flagging platforms
+- exposure events tracking
+- experiment variants configuration
+- primary metrics secondary metrics
+- statistical significance testing
+- sequential testing vs T-test
+- cumulative exposure analysis
+- metric types (unique conversion, event totals, property values, funnel conversion, formula metrics)
+- variant performance comparison
 - confidence intervals
-- cumulative exposure
-- experiment variants
-- control variant
-- conversion metrics
-- funnel conversion
-- formula metrics
-- statistical preferences
-- sample size calculation
-- p-value calculation
-- MDE (Minimum Detectable Effect)
+- Japanese translation documentation

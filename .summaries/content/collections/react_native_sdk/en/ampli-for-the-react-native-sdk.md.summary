@@ -16,13 +16,13 @@ This documentation covers the Ampli Wrapper for React Native SDK, which generate
 - ampli.flush()
 - ampli pull command
 - ampli status command
-- EnrichmentPlugin
 - JavaScript ES6
 - TypeScript 2.1
-- event schemas
-- user properties
-- setGroup()
+- EnrichmentPlugin
 - AmplitudeClient
-- API Key configuration
+- event schemas
+- autocompletion
+- songPlayed event
+- groupType groupName
 - deviceId
-- event properties validation
+- API Key configuration

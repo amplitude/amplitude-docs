@@ -1,19 +1,19 @@
-**Summary:** This documentation covers Resource Center settings configuration including widget-level targeting, general settings (enable/disable, autopilot), quick links with CTA buttons, text customization options, launcher configuration (pre-built icon, custom element, or SDK-based), and theme application for the Resource Center widget.
+**Summary:** This documentation covers Resource Center settings configuration including widget-level targeting, general settings (enable/disable, autopilot), quick links and CTA buttons, text customization options, launcher configuration (pre-built icon, custom element, or SDK-based), and theme application for the Resource Center widget.
 
 **Keywords:**
 - Resource Center settings
 - widget targeting
-- autopilot recommendations
+- autopilot functionality
 - quick links configuration
-- CTA button setup
+- primary CTA button
 - text customization
 - launcher configuration
 - pre-built icon
 - custom element targeting
 - CSS selector
 - XPath selector
+- z-index positioning
 - Guides and Surveys SDK
 - Resource Center theme
-- widget enable/disable
-- z-index positioning
-- recommendation sets targeting
+- recommendation sets
+- source content targeting

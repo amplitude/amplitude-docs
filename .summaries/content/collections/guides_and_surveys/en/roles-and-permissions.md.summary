@@ -6,8 +6,6 @@
 - permission levels (No access, Viewer, Member, Manager, Administrator)
 - draft vs published guides/surveys access
 - experiment execution permissions
-- Guides and Surveys > Permissions navigation
 - Manage Project Access
 - per-project role assignment
-- user access management
-- blueprint: guides_and_survey
+- Guides and Surveys > Permissions navigation

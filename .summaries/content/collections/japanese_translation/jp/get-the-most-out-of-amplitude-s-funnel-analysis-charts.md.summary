@@ -1,18 +1,18 @@
 **Summary:**
-This Japanese documentation explains how to maximize Amplitude's funnel analysis charts, covering funnel event identification, design considerations (任意の順序 vs この順序 modes), conversion window settings, cohort comparison using microscope functionality, and actionable insights for improving conversion rates through push notifications and user engagement flows.
+This Japanese documentation explains how to maximize Amplitude's funnel analysis charts, covering funnel event identification, design considerations (任意の順序 vs この順序 modes), conversion period settings, cohort comparison using microscope functionality, and actionable insights for improving conversion rates through push notifications and user engagement flows.
 
 **Keywords:**
 - ファネル分析 (funnel analysis)
 - コンバージョン率 (conversion rate)
 - 任意の順序モード (any order mode)
 - この順序モード (this order mode)
-- コンバージョン期間 (conversion window)
 - マイクロスコープ (microscope)
 - パスファインダー (pathfinder)
 - コンパス (compass)
 - コホート比較 (cohort comparison)
 - プッシュ通知 (push notifications)
 - イベントプロパティ分布 (event property distribution)
+- コンバージョン期間 (conversion period)
 - ユーザーフロー (user flow)
 - リテンション (retention)
 - eコマース購入ファネル (ecommerce purchase funnel)

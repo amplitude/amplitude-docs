@@ -1,4 +1,4 @@
-**Summary:** This FAQ documentation covers troubleshooting for Amplitude's User Sessions chart and session tracking, including issues with empty charts due to invalid session IDs, zero-length sessions from out-of-session events or Start Session events without follow-up events, and mobile SDK session timeout behavior.
+**Summary:** This FAQ documentation covers troubleshooting User Sessions charts and session tracking in Amplitude, including issues with empty charts due to invalid session IDs, zero-length sessions from out-of-session events or Start Session events without follow-up events, and session timeout behavior for mobile SDKs.
 
 **Keywords:**
 - User Sessions chart
@@ -8,14 +8,16 @@
 - Start Session event
 - End Session event
 - session timeout
-- mobile SDK session tracking
-- Android SDK iOS SDK
+- mobile SDKs
 - HTTP API sessions
 - client_event_time
-- epoch time session ID
-- custom session definition
+- epoch time
 - session length calculation
+- custom session definition
+- Android SDK session tracking
+- iOS SDK session tracking
 - Amplitude Microscope
-- tracking plan event blocking
-- 5-minute session timeout
-- server-side Segment integration
+- session gaps
+- five minute timeout
+- retroactive session changes
+- Segment integration session ID

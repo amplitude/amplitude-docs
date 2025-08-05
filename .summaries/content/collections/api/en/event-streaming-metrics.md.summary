@@ -3,17 +3,14 @@
 **Keywords:**
 - event-streaming-metrics-summary
 - sync_id parameter
-- delivery metrics
+- delivery metrics monitoring
+- event stream delivery rates
+- latencyInSeconds p95
+- eventsDelivered eventsNotDelivered
+- successOnFirstAttempt successAfterRetry
+- eventsExpired eventsDiscarded
 - time_period aggregation
-- eventsDelivered
-- eventsNotDelivered
-- deliveryRate
-- latencyInSeconds
-- successOnFirstAttempt
-- successAfterRetry
-- eventsExpired
-- eventsDiscarded
+- 90-day retention threshold
 - 4-hour minute-level accuracy
-- 90-day retention
 - streaming destination monitoring
-- p95 latency
+- delivery-metrics-summary endpoint

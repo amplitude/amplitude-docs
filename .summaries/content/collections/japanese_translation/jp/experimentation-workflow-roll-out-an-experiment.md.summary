@@ -2,16 +2,16 @@
 
 **Keywords:**
 - 実験ワークフロー (experimentation workflow)
-- 実験を開始 button
-- バリアント (variants)
-- トラフィック割り当て (traffic allocation)
-- パーセンテージロールアウト
+- 実験を開始 (start experiment)
+- 実験完了 (complete experiment)
+- バリアントロールアウト (variant rollout)
+- パーセンテージロールアウト (percentage rollout)
 - スティッキーバケット (sticky bucket)
-- fetch() function
-- 自動露出イベント (auto exposure events)
-- 統計的有意性 (statistical significance)
-- 勝利バリアント (winning variant)
-- ロールアウト/ロールバック
 - フラグ検定 (flag testing)
+- fetch() function
+- 自動露出イベント (automatic exposure events)
+- ロールバック (rollback)
+- 統計的有意性 (statistical significance)
 - Amplitude experimentation
-- Japanese translation documentation
+- Japanese translation
+- トグルスイッチ (toggle switch)

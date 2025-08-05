@@ -1,15 +1,17 @@
-**Summary:** This documentation describes the Sprig integration for Amplitude, which automatically sends in-product survey response data (CSAT, NPS) to Amplitude as raw events, requiring matching user_id values between platforms and using Amplitude's project API key for setup.
+**Summary:** This documentation describes the Sprig integration for Amplitude, which automatically sends in-product survey response data (CSAT, NPS) from Sprig to Amplitude as raw events, requiring matching user_id values between platforms for correlation analysis of user satisfaction and product behavior.
 
 **Keywords:**
 - Sprig integration
 - in-product surveys
 - survey response data
-- raw-events integration type
-- qualitative-feedback category
-- user_id matching requirement
-- project API key authentication
 - CSAT surveys
 - NPS surveys
+- qualitative feedback integration
+- raw-events integration type
+- user_id matching requirement
+- Sprig Identity ID
 - survey data ingestion
-- product development lifecycle research
-- user satisfaction correlation analysis
+- satisfaction correlation analysis
+- product usage analytics
+- Amplitude API key setup
+- partner-maintained integration

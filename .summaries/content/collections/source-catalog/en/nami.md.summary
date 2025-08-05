@@ -1,16 +1,17 @@
-**Summary:** This documentation covers the Nami source integration for Amplitude, enabling ingestion of subscription management and paywall analytics data from Nami's no-code paywall platform through raw-events integration type, requiring matching user identifiers and a paid Nami plan.
+**Summary:** This documentation covers the Nami integration for Amplitude, enabling ingestion of subscription management and paywall events from Nami's no-code paywall platform, requiring matching user identifiers and a paid Nami plan for real-time revenue analytics data flow.
 
 **Keywords:**
-- Nami source integration
-- subscription management integration
-- raw-events integration type
+- Nami integration
+- subscription management events
 - no-code paywalls
-- in-app purchases and subscriptions
+- raw-events integration type
+- in-app purchases
+- subscription revenue analytics
 - paywall design tools
-- real-time revenue analytics
-- Nami.ml dashboard
-- subscription monetization
-- mobile app monetization
-- connected TV devices
 - user identifier matching
-- paid Nami plan requirement
+- Nami.ml dashboard
+- real-time revenue tracking
+- monetization optimization
+- subscription management tools
+- connected TV devices
+- customer conversion campaigns

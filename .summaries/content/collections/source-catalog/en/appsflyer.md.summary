@@ -1,13 +1,15 @@
-**Summary:** This documentation describes the AppsFlyer source integration with Amplitude, which uses the Attribution API to send mobile attribution data and supports event-streaming, raw-events, and cohorts integration types with specific considerations for ADID matching and 72-hour attribution windows.
+**Summary:** This documentation covers the AppsFlyer-Amplitude integration that uses the Attribution API to send mobile attribution data to Amplitude, with specific requirements for Advertising ID (IDFA/IDFV/ADID) matching and a 72-hour attribution window for user matching.
 
 **Keywords:**
-- AppsFlyer
+- AppsFlyer integration
 - Attribution API
-- mobile attribution
-- ADID/IDFA matching
+- Advertising ID matching
+- IDFA/IDFV/ADID
 - 72-hour attribution window
-- event-streaming integration
-- cohorts export
+- Mobile attribution data
+- Event streaming integration
+- User cohort export
 - SRN restrictions
-- advertising ID privacy
-- mobile advertising analytics
+- Attribution event matching
+- Raw events integration
+- Mobile advertising attribution

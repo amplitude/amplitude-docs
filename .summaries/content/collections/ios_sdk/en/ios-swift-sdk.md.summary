@@ -12,12 +12,13 @@ This documentation covers the Amplitude Analytics iOS Swift SDK, which provides 
 - identify user properties revenue tracking
 - plugins enrichment destination
 - COPPA control IDFA IDFV device ID
-- offline mode network connectivity
 - Apple privacy manifest NSPrivacyTracking
+- offline mode network connectivity
 - user groups group identify
 - session tracking minTimeBetweenSessionsMillis
-- TrackingOptions disable tracking
+- trackingOptions disable tracking
 - storage provider custom storage
-- log level debugging troubleshooting
 - migration guide maintenance SDK
-- unified SDK Analytics Experiment Session Replay
+- flushQueueSize flushIntervalMillis
+- serverZone useBatch configuration
+- Swift Objective-C dual language support

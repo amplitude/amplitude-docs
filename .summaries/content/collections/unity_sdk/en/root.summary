@@ -1,31 +1,87 @@
 ## Amplitude Analytics Unity SDK
 
-The Amplitude Analytics Unity SDK is a cross-platform analytics solution that enables Unity developers to integrate Amplitude's event tracking and user analytics capabilities into their games and applications. The SDK serves as a wrapper around Amplitude's native iOS and Android SDKs, providing a unified interface for Unity projects while maintaining platform-specific optimizations.
+The Amplitude Analytics Unity SDK is a comprehensive analytics plugin that bridges Amplitude's native iOS and Android SDKs with Unity game development environments. The SDK supports Unity 2019.3.11 and later versions, providing developers with robust event tracking, user analytics, and revenue monitoring capabilities within their Unity projects.
 
-### Core Features and Capabilities
+## Product Features and Relationships
 
-The Unity SDK supports comprehensive analytics functionality including event tracking with custom properties, user property management through Identify operations, revenue tracking with built-in verification, session management, and advanced device identification features. The SDK is compatible with Unity 2019.3.11 and later versions, supporting both iOS and Android platforms with specific optimizations for each.
+The Unity SDK serves as a wrapper around Amplitude's core mobile SDKs, offering:
 
-### Installation and Integration
+**Core Analytics Functionality:**
+- Event tracking with custom properties and metadata
+- User property management through Identify operations
+- Revenue tracking with built-in verification systems
+- Session management and tracking
+- Real-time and batched event transmission
 
-The SDK offers flexible installation methods through Unity Package Manager using Git URLs or manual installation via the amplitude-unity.unitypackage file. The integration includes automatic dependency management through unity-jar-resolver for Android projects and handles platform-specific requirements like OkHTTP dependencies and Android API 21 compatibility. For iOS projects, the SDK manages XCode simulator compatibility and Device SDK vs Simulator SDK configurations.
+**Platform Integration:**
+- Seamless integration with Unity's development workflow
+- Native iOS and Android SDK utilization for optimal performance
+- Cross-platform compatibility with unified API surface
+- Support for Unity Package Manager and manual installation methods
 
-### Configuration and Data Management
+**Advanced Configuration Options:**
+- Server zone selection (US/EU) via `AmplitudeServerZone.EU`
+- Batching behavior control through `setEventUploadPeriodSeconds`
+- Session timeout configuration with `setMinTimeBetweenSessionsMillis`
+- Dynamic configuration capabilities via `setUseDynamicConfig`
 
-Configuration options include EU data residency support through AmplitudeServerZone.EU and setServerZone() methods, COPPA compliance via enableCoppaControl(), and customizable upload intervals using setEventUploadPeriodSeconds(). Session management is handled through setMinTimeBetweenSessionsMillis() and trackSessionEvents() functionality, with support for outOfSession events when needed.
+## Key Nomenclature and Definitions
 
-### User and Event Tracking
+**Installation Components:**
+- `amplitude-unity.unitypackage` - Main SDK package file
+- `unity-jar-resolver` - Dependency management system for Android builds
+- `OkHTTP dependency` - Network communication library for Android
 
-The SDK provides comprehensive user property management through Identify operations including setUserProperty(), setOnce(), addUserProperty(), appendUserProperty(), and clearUserProperties(). Group analytics are supported via setGroup() and logEventWithGroups() methods. Revenue tracking is implemented through logRevenue() with built-in verification capabilities.
+**Configuration Parameters:**
+- `AmplitudeServerZone.EU` - European data residency server selection
+- `setEventUploadPeriodSeconds` - Controls frequency of event batch uploads
+- `setMinTimeBetweenSessionsMillis` - Defines session timeout thresholds
+- `trackSessionEvents` - Enables automatic session start/end tracking
 
-### Device Identification and Privacy
+**User Management Operations:**
+- `Identify operations` - User property modification framework
+- `setUserProperty` - Direct user attribute assignment
+- `setOnce` - One-time user property setting
+- `append operations` - Additive user property modifications
 
-Advanced device identification features include advertising ID configuration through useAdvertisingIdForDeviceId() and useAppSetIdForDeviceId() for Android, and IDFA tracking setup for iOS using CustomIdfa.m implementations. Privacy controls are managed through setTrackingOptions(), setOptOut(), and platform-specific privacy configurations in Info.plist including "Privacy - Tracking Usage Description" and "Location Usage Description" entries.
+**Privacy and Compliance:**
+- `COPPA control` - Children's Online Privacy Protection Act compliance
+- `useAdvertisingIdForDeviceId` - iOS advertising identifier usage
+- `useAppSetIdForDeviceId` - Android App Set ID implementation
+- `iOS IDFA setup` - iOS Identifier for Advertisers configuration
 
-### Platform-Specific Features
+**Platform-Specific Components:**
+- `CustomIdfa.m` - iOS advertising identifier implementation
+- `CustomGPS.m` - iOS location services integration
+- `DllImport` - Native code integration mechanism
+- `ProGuard obfuscation rules` - Android code protection configuration
 
-iOS-specific functionality includes IDFA and GPS location tracking through CustomIdfa.m and CustomGPS.m files, DllImport configurations, and setIdfaBlock()/setLocationInfoBlock() methods. Android-specific features include ProGuard obfuscation support, advertising ID management, and app set ID utilization for enhanced user tracking while maintaining privacy compliance.
+## Broader Product Ecosystem Integration
 
-### Dynamic Configuration and Optimization
+The Unity SDK operates as a critical component within Amplitude's multi-platform analytics ecosystem. It maintains API consistency with Amplitude's native mobile SDKs while adapting to Unity's development paradigms. The SDK integrates with:
 
-The SDK supports dynamic configuration through setUseDynamicConfig() for runtime optimization and includes built-in performance features for efficient data transmission and storage. The architecture ensures seamless integration with Unity's development workflow while maintaining the full feature set of Amplitude's native mobile SDKs.
+- **Amplitude's Data Infrastructure:** Events flow through the same ingestion pipelines as native mobile applications
+- **Cross-Platform Analytics:** Unified user tracking across Unity games and traditional mobile applications
+- **Revenue Analytics:** Integration with Amplitude's revenue verification and tracking systems
+- **Privacy Frameworks:** Compliance with global privacy regulations through COPPA controls and advertising identifier management
+
+## Technical Implementation Details
+
+**Installation Methods:**
+- Unity Package Manager integration for streamlined dependency management
+- Manual `.unitypackage` installation for custom deployment scenarios
+
+**Platform Configuration:**
+- Android API 21+ compatibility requirements
+- Build Settings platform selection for iOS/Android deployment
+- ProGuard rule configuration for Android release builds
+
+**Revenue Tracking:**
+- `logRevenue verification` system for transaction validation
+- Integration with platform-specific purchase verification systems
+
+**Session Management:**
+- Automatic `session_id tracking` across application lifecycle
+- Configurable session timeout and event batching parameters
+
+The SDK provides a comprehensive analytics solution specifically tailored for Unity developers, maintaining the full feature set of Amplitude's analytics platform while adapting to game development workflows and cross-platform deployment requirements.

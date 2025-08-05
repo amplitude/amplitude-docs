@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to set up webhooks for custom monitors in Amplitude, allowing Enterprise customers to automatically send triggered monitor notifications to external endpoints when KPI-affecting user behavior changes occur.
+**Summary:** This documentation explains how to set up webhooks for custom monitors in Amplitude, allowing Enterprise customers to automatically send triggered monitor notifications to external endpoints when KPI-related user behavior changes occur.
 
 **Keywords:**
 - webhooks custom monitors

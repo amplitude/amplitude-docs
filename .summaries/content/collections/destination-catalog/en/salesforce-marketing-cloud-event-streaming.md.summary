@@ -1,21 +1,18 @@
-## Summary
-This documentation covers the Salesforce Marketing Cloud Event Streaming destination integration, detailing setup procedures for Server-to-Server API integration, Data Extension configuration, Event Definition Key creation, and Contact Key/Email mapping requirements for streaming behavioral events and user properties from Amplitude to SFMC.
+**Summary:** This documentation covers the Salesforce Marketing Cloud Event Streaming destination integration, detailing setup procedures for both platforms including API integration configuration, Data Extension creation, Event Definition Key setup, and optional event/identify forwarding with Contact Key and Email mapping requirements.
 
-## Keywords
+**Keywords:**
 - Salesforce Marketing Cloud Event Streaming
 - SFMC Event Definition Key
-- Data Extension configuration
-- Server-to-Server API integration
+- Data Extension creation
 - Contact Key mapping
 - Email mapping
-- Journey Builder integration
+- API Integration Server-to-Server
+- Client ID Client Secret Subdomain
 - TriggeredSendDataExtension template
+- Journey Builder Event Sources
+- Contact Builder Attribute Group
+- SubscriberKey EmailAddress columns
 - SFMC User Data Extension Key
-- API Event creation
-- Client ID/Client Secret authentication
-- Subdomain configuration
-- Event forwarding setup
-- Identify forwarding
-- Contact Builder attribute mapping
-- REST API rate limits
-- Marketing automation destination
+- event forwarding identify forwarding
+- Authentication Base URI
+- marketing automation destination

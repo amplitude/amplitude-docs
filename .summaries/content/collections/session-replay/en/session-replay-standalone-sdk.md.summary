@@ -22,4 +22,4 @@ This documentation covers the Session Replay Standalone SDK for browser applicat
 - IndexedDB storage
 - CSS stylesheet inlining
 - webworker compression
-- DSAR API support
+- DSAR API compliance

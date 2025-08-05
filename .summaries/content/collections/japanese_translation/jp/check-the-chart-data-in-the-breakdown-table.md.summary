@@ -1,15 +1,15 @@
-**Summary:** This documentation explains how to use and manipulate the breakdown table feature in Amplitude Analytics charts, including sorting columns, modifying summary columns with row aggregates, selecting series visibility, changing breakdown limits (1-30), and exporting data to CSV format.
+**Summary:** This documentation explains how to use and manipulate the breakdown table (内訳表) in Amplitude Analytics charts, including sorting table fields, modifying summary columns with row aggregates, controlling series visibility, adjusting breakdown limits (1-30), and exporting data to CSV format.
 
 **Keywords:**
-- breakdown table
+- breakdown table (内訳表)
 - Amplitude Analytics charts
-- row aggregates (平均値, 中央値, 変更, 合計)
+- row aggregates (行集計)
 - fixed columns sorting
-- series selection checkboxes
-- breakdown limits 1-30
+- series visibility control
 - CSV export functionality
-- chart data visualization
+- breakdown limits configuration
 - segmentation charts
 - user session charts
-- column sorting ascending/descending
-- search functionality in tables
+- table field manipulation
+- chart data visualization
+- summary column modification

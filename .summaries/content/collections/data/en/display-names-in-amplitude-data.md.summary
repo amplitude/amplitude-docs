@@ -1,17 +1,18 @@
-**Summary:** This documentation explains how to customize display names for events and user properties in Amplitude Data's tracking plan interface, and how to control event visibility across different areas of the Amplitude UI without affecting raw ingested data.
+**Summary:** This documentation explains how to modify display names for events and user properties in Amplitude Data's UI, and how to control event visibility across different areas of the platform, with specific restrictions based on event types (default, transformed, live, planned, unexpected, blocked, deleted events).
 
 **Keywords:**
 - Amplitude Data display names
-- event display name customization
+- event display name modification
 - user property display names
 - tracking plan events
 - event visibility settings
-- Amplitude UI event management
-- ingested event names
-- event type visibility controls
-- transformed events
-- live events
-- blocked events
-- event streams hiding
-- Properties screen user properties tab
-- Events screen display name editing
+- Events screen navigation
+- User Properties tab
+- event type restrictions
+- default events vs transformed events
+- live events vs planned events
+- unexpected events and blocked events
+- event streams visibility
+- Modify permission tracking plan
+- ingested name vs display name
+- Amplitude UI customization

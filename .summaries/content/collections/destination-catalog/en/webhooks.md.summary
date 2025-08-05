@@ -1,18 +1,20 @@
-**Summary:** Documents Amplitude's Webhooks Streaming destination for forwarding events and users to custom webhook URLs with configurable headers, payload customization using Apache FreeMarker templates, retry mechanisms with 9 attempts over 4 hours, and support for both default Amplitude format and custom JSON schema transformations.
+**Summary:** This documentation covers Amplitude's Webhooks Streaming destination that forwards Amplitude events and users to custom webhook URLs with configurable headers, payload customization using Apache FreeMarker templates, retry mechanisms with 9 attempts over 4 hours, and supports both event streaming and user forwarding with JSON schema transformation capabilities.
 
 **Keywords:**
 - Webhooks Streaming destination
 - Apache FreeMarker templating
-- Event streaming payload customization
-- User forwarding webhook
-- Amplitude retry mechanism
-- Custom webhook headers
-- FreeMarker Template Language (FTL)
+- Event forwarding payload customization
+- User forwarding configuration
+- Webhook retry mechanism
 - JSON schema transformation
-- Event time format conversion
+- FreeMarker Templating Language (FTL)
+- Custom webhook headers
+- Event streaming integration
+- Amplitude event format
+- Amplitude user format
 - Webhook URL endpoint
-- 5xx error retry policy
+- Event time format conversion
+- ISO-8601 datetime formatting
+- Exponential retry with jitter
+- 5xx error handling
 - 429 throttling retry
-- Exponential backoff retry
-- Content-Type application/json
-- User-Agent Amplitude/Webhook/1.0

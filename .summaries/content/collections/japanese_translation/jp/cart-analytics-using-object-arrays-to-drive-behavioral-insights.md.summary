@@ -6,18 +6,19 @@ This documentation explains Amplitude's Cart Analytics feature for analyzing obj
 - object arrays
 - property splitting
 - Amplitude Data
-- parent properties
-- child properties
-- sibling properties
+- parent property
+- child property
+- sibling property
 - cross-property filters
 - parallel filters
 - item match
 - collection match
-- Event Segmentation charts
-- Funnel Analysis charts
+- Event Segmentation
+- Funnel Analysis
 - ecommerce analytics
-- shopping cart flow
 - behavioral insights
-- nested attributes
-- property drawer
-- split tab
+- shopping cart flow
+- SKU analysis
+- product performance
+- conversion rates
+- basket size analysis

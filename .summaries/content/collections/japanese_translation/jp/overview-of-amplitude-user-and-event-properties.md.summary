@@ -10,10 +10,9 @@ This Japanese documentation explains Amplitude's user properties and event prope
 - Property update mechanisms
 - Event property attributes
 - Identify API calls
-- Property value persistence
 - User property table updates
-- Event-based analytics platform
 - Property hiding functionality
-- User property definitions
-- Event property segmentation
-- Property value historical data
+- Event-based analytics platform
+- Property value persistence
+- User profile property values
+- Event stream property application

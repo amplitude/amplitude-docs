@@ -1,19 +1,17 @@
-## Summary
-This documentation explains Amplitude's funnel conversion computation logic, including first-touch attribution scenarios, unique user counting with earliest/longest conversion selection, and the differences between Funnel and Event Segmentation chart calculations.
+**Summary:** This documentation explains Amplitude's funnel conversion computation logic, including first-touch attribution scenarios, unique user counting with earliest/longest conversion selection, and the differences between Funnel and Event Segmentation chart calculations.
 
-## Keywords
+**Keywords:**
 - funnel conversion computation
 - first-touch attribution
 - hold property constant
 - group conversions by
 - earliest/longest conversion logic
 - unique user counts
-- session_id bucketing
 - conversion window
-- lookback window
+- session_id bucketing
 - funnel entry point
 - Event Segmentation vs Funnel charts
 - broken down by function
 - user session pairings
-- event totals counting
-- conversion path attribution
+- conversion attribution
+- lookback window

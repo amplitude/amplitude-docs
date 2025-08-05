@@ -1,15 +1,14 @@
-**Summary:** Documentation for Amplitude's event streaming integration with Kameleoon A/B testing platform, covering setup requirements including REST API key and sitecode configuration, rate limits for goal creation (50/10s, 1000/60min), 1MB event size limits, and user_id matching between platforms.
+**Summary:** Documents the Amplitude to Kameleoon event streaming destination integration for A/B testing and experimentation, including setup requirements for REST API key and sitecode, rate limits for goal creation (50/10s, 1000/60min), 1MB event size limits, and user_id matching between platforms.
 
 **Keywords:**
-- Kameleoon integration
-- A/B testing platform
-- event streaming destination
-- REST API key configuration
-- sitecode setup
+- Kameleoon destination integration
+- A/B testing experimentation platform
+- Event streaming destination
+- REST API key authentication
+- Sitecode configuration
+- Goal creation rate limits
 - user_id matching
-- goal creation rate limits
+- Event properties filtering
 - 1MB event size limit
-- experimentation platform
-- feature management
-- event properties filtering
-- paid plan requirement
+- Amplitude tracking plan re-implementation
+- Optimization campaign targeting

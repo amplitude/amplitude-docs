@@ -1,23 +1,20 @@
-**Summary:** Documentation guide for selecting events to track in Amplitude analytics, covering event planning strategies, industry-specific event taxonomies (ecommerce, B2B/SaaS, finance, media, healthcare, gaming), and recommended events/properties for common business questions across different sectors.
+**Summary:** This documentation page provides guidance on selecting and planning events for Amplitude analytics implementation, including recommended event counts, essential event categories, and industry-specific event taxonomies with required properties for content/media, ecommerce, B2B/SaaS, finance, healthcare, and gaming sectors.
 
 **Keywords:**
-- Amplitude event tracking
-- Event taxonomy planning
-- Industry-specific analytics events
-- Product analytics event selection
-- Event properties configuration
+- event tracking planning
+- Amplitude taxonomy creation
+- industry-specific event properties
+- tracking plan development
+- event segmentation analysis
+- funnel analysis setup
+- retention analysis events
+- user sessions tracking
+- revenue LTV events
 - B2B SaaS analytics events
-- Ecommerce tracking events
-- Gaming analytics events
-- Healthcare analytics events
-- Finance analytics events
-- Media analytics events
-- Funnel Analysis charts
-- Event Segmentation charts
-- User Sessions analytics
-- Retention Analysis
-- Revenue LTV tracking
-- utm_source tracking
-- Trial conversion tracking
-- Page View events
-- User property configuration
+- ecommerce conversion tracking
+- gaming level completion events
+- healthcare appointment scheduling
+- media content consumption tracking
+- utm_source property tracking
+- trial conversion funnels
+- pathfinder user journeys

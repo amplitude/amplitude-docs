@@ -1,17 +1,17 @@
-**Summary:** This documentation covers the Amplitude Experiment Evaluation Proxy, a Docker-based service that enables local evaluation on unsupported platforms, automatically tracks assignment events with 24-hour deduplication, and enhances local evaluation with hourly cohort syncing, configured via YAML or environment variables and deployed as stateless instances behind load balancers.
+**Summary:** This documentation covers the Amplitude Experiment Evaluation Proxy, a Docker-based service that enables local evaluation on unsupported platforms, automatically tracks assignment events with 24-hour deduplication, and provides cohort targeting with hourly sync capabilities.
 
 **Keywords:**
 - Amplitude Experiment Evaluation Proxy
 - local evaluation infrastructure
-- assignment event tracking deduplication
-- cohort targeting sync
 - Docker deployment amplitudeinc/evaluation-proxy
-- Kubernetes Helm chart evaluation-proxy-helm
 - Redis persistent storage configuration
-- YAML configuration projects apiKey secretKey managementKey
+- Kubernetes Helm chart deployment
+- assignment event deduplication
+- cohort targeting hourly sync
+- YAML configuration projects array
+- API key secret key management key
 - flagSyncIntervalMillis maxCohortSize
-- stateless service port 3546
 - EU data residency serverUrl cohortServerUrl
-- management API key deployment updates
-- remote Evaluation API endpoints
-- unsupported platform enablement
+- port 3546 HTTP evaluation endpoints
+- stateless load balancer deployment
+- minikube docker compose examples

@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to compare up to three events within a single conversion step in Amplitude's Funnel Analysis charts using the "Compare Event" option from the Options flyout menu, with support for conversion and conversion over time metrics across different order options.
+**Summary:** This documentation explains how to compare up to three events within a single conversion step in Amplitude's Funnel Analysis charts by using the "Compare Event" option from the Options flyout menu after building the funnel.
 
 **Keywords:**
 - Funnel Analysis chart
@@ -6,10 +6,11 @@
 - Options flyout menu
 - conversion step
 - step-specific conversion rates
+- conversion metrics
 - conversion over time metrics
-- order options (any order, this order, exact order)
-- dashboard filters
-- funnel metrics
 - three events per step
 - two steps comparison
-- Amplitude analytics
+- order options (any order, this order, exact order)
+- dashboard filters limitation
+- chart switching behavior
+- funnel metrics

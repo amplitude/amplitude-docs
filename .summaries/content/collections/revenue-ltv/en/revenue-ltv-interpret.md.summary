@@ -1,16 +1,16 @@
-**Summary:** Documents how to interpret Revenue LTV charts in Amplitude Analytics, explaining cohort-based calculations for new user monetization analysis, cumulative revenue tracking across time periods, and potential data drops near timeframe endpoints due to insufficient user tenure.
+**Summary:** This documentation explains how to interpret Revenue LTV charts in Amplitude, which analyze monetization for new-user cohorts only, including how cumulative revenue calculations work across time periods, cohort grouping logic, and potential data drops near timeframe endpoints due to insufficient user tenure.
 
 **Keywords:**
 - Revenue LTV chart interpretation
-- new user monetization analysis
-- cohort-based revenue calculations
-- cumulative revenue tracking
+- new-user monetization analysis
+- cohort-based revenue calculation
+- cumulative revenue measurement
 - ARPU (Average Revenue Per User)
 - ARPPU (Average Revenue Per Paying User)
-- Day Zero measurement methodology
-- single cohort treatment
-- breakdown table expansion
+- Day Zero calculation logic
+- 48th hour revenue tracking
+- cohort breakdown table
 - timeframe endpoint data drops
-- 48th hour revenue calculation
+- single cohort treatment
 - daily frequency breakdown
-- Amplitude Analytics revenue charts
+- Amplitude first event trigger

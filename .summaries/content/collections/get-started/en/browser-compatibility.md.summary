@@ -3,14 +3,11 @@
 **Keywords:**
 - browser compatibility
 - analytics.amplitude.com
-- product website
+- product website support
 - browser market share 0.5%
-- Firefox versions
-- Chrome versions
-- Edge versions
-- Safari versions
+- Firefox Chrome Edge Safari versions
 - Internet Explorer 11 exclusion
 - undead browsers
-- Op_mini
-- browser support matrix
-- Amplitude SDKs
+- Op_mini compatibility
+- browser usage requirements
+- Amplitude SDKs browser support

@@ -12,5 +12,5 @@
 - API authentication token
 - Push groups functionality
 - User deactivation
-- SCIM core user schema
-- SCIM core group schema
+- SCIM schema attributes
+- SSO configuration

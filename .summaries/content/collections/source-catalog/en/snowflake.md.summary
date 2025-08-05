@@ -10,29 +10,23 @@ This documentation covers Amplitude's Snowflake data warehouse integration for i
 - Append Only Sync
 - Timestamp import strategy
 - Full Sync strategy
-- ABORT_DETACHED_QUERY setting
-- S3 Storage Integration with Stage
-- Key pair authentication
-- Password authentication
-- Event properties VARIANT JSON
+- Event data ingestion
 - User properties sync
 - Group properties sync
 - Profile data import
-- SQL query transformation
+- SQL query mapping
 - OBJECT_CONSTRUCT function
 - EPOCH_MILLISECOND extraction
-- Data retention settings
-- Insert_id deduplication
-- Snowflake streams
-- INFORMATION_SCHEMA permissions
-- JWT token authentication
-- Query timeout handling
-- Exponential backoff retry
+- Storage Integration with Stage
+- Key pair authentication
+- Password authentication
 - DATA_RETENTION_TIME_IN_DAYS
-- Enrichment services
-- ID resolution
-- Location resolution
-- User Privacy API
-- Clustering keys optimization
-- Materialized views
-- Micro-partitions
+- ABORT_DETACHED_QUERY setting
+- insert_id deduplication
+- VARIANT JSON data type
+- TIMESTAMP_NTZ format
+- Snowflake IP allowlist
+- 12-hour query timeout
+- 1B events batch limit
+- Enrichment services disable
+- User Privacy API compatibility

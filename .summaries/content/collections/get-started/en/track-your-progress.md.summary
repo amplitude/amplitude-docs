@@ -1,15 +1,16 @@
-**Summary:** This documentation explains QA processes for Amplitude instrumentation implementation, including real-time event verification through the User Activity tab, monthly event limit handling with data accessibility restrictions, and Amplitude's deduplication logic using event ID/client event time/device ID matching with 7-day insert_id retention for HTTP API.
+**Summary:** This documentation explains QA processes for Amplitude instrumentation implementation, including real-time event verification through the User Activity tab, monthly event limit handling with data accessibility restrictions, and Amplitude's deduplication system using event ID/client event time/device ID matching with 7-day insert_id retention for HTTP API.
 
 **Keywords:**
 - Amplitude instrumentation QA
 - User Activity tab debugging
 - real-time event verification
-- device ID event stream
+- device ID user ID tracking
+- event stream validation
 - monthly event limits
 - data accessibility restrictions
-- event deduplication logic
+- event deduplication system
 - insert_id field
-- HTTP API deduplication
-- client event time matching
-- 7-day event retention
+- HTTP API v2
+- client event time
+- 7-day retention window
 - duplicate event handling

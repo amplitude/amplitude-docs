@@ -2,11 +2,11 @@
 
 **Keywords:**
 - Qualtrics Experience Management
-- survey response data ingestion
+- survey response ingestion
 - raw-events integration type
 - cohorts integration type
 - qualitative-feedback category
-- email address User_ID mapping
+- email User_ID mapping
 - Survey ID and API key authentication
 - JSON payload configuration
 - Qualtrics workflows setup

@@ -5,12 +5,9 @@
 - User Profile API destination
 - personalized content generation
 - customer engagement integration
-- cohort targeting
-- user properties sync
+- behavioral cohorts targeting
 - computed user properties
-- recommendations API
-- behavioral cohorts
-- ML-driven personalization
+- ML-driven recommendations
 - API endpoint configuration
-- PII restrictions
-- paid plans requirement
+- Data Sources integration
+- PII response limitations

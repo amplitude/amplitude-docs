@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's destination event streaming feature that enables real-time sharing of behavioral data to downstream marketing, sales, and infrastructure tools with configuration-based filtering, retry mechanisms, and monitoring capabilities including p95 latency targets of 60 seconds.
+**Summary:** This documentation covers Amplitude's destination event streaming feature that enables real-time sharing of behavioral data to downstream marketing, sales, and infrastructure tools with configuration-based filtering, retry mechanisms, 60-second p95 latency targets, and billing based on distinct event volume across multiple destinations.
 
 **Keywords:**
 - destination event streaming
@@ -7,11 +7,13 @@
 - p95 latency 60 seconds
 - exponential backoff retry
 - Event Streaming Debugger UI
-- user properties string formatting
-- reserved keywords _all _identify
+- user properties string format
 - cohort syncing vs event streaming
 - webhook streaming integration
-- Amplitude Integration Portal
+- Amplitude IP addresses
+- reserved keywords _all _identify
+- Braze streaming
+- Iterable streaming
 - real-time conversion events
-- Braze Iterable streaming destinations
-- IP addresses US EU data centers
+- configuration-based filtering
+- downstream tools integration

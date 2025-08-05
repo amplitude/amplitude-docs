@@ -7,26 +7,18 @@
 - JAR file installation
 - API key initialization
 - batch mode configuration
-- HTTP V2 API
-- event logging
-- user properties
-- device information
-- session tracking
-- group functionality
-- middleware implementation
-- AmplitudeCallbacks
+- HTTP V2 API events
 - event upload threshold
-- flush timeout
-- HTTP proxy configuration
-- JSONObject
-- setServerUrl
-- useBatchMode
-- setEventUploadThreshold
-- setEventUploadPeriodMillis
-- logEvent method
-- groupType groupName
-- event-level groups
-- $identify event
-- $groupidentify event
-- MiddlewarePayload
-- MiddlewareNext
+- event upload period milliseconds
+- JSONObject event properties
+- user properties tracking
+- group identification
+- device information setting
+- session ID tracking
+- AmplitudeCallbacks server response
+- middleware payload processing
+- proxy configuration
+- flush timeout settings
+- minimum ID length validation
+- custom headers configuration
+- thread pool shutdown

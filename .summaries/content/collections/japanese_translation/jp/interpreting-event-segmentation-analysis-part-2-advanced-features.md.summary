@@ -11,7 +11,8 @@
 - CUMSUM function
 - weighted averages
 - data smoothing
-- unique user deduplication
-- time interval analysis
-- Amplitude analytics
+- unique user counting
 - Japanese translation documentation
+- Amplitude analytics
+- chart interpretation
+- advanced analytics features

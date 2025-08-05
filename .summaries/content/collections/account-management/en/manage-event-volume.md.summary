@@ -12,7 +12,7 @@
 - Amplitude ID sampling
 - PROPCOUNT exclusion
 - sampling accuracy benchmarks
-- DAU volume sampling
-- event volume management
+- DAU sampling rates
+- percent error confidence intervals
 - Admin permissions sampling
-- algorithmic sampling framework
+- event volume management

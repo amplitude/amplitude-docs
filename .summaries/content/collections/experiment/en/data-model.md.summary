@@ -11,7 +11,9 @@
 - user_id and device_id requirements
 - group properties and group_properties
 - Accounts add-on groups
-- kebab-case and snake_case formatting
+- kebab-case variant formatting
 - Amplitude Analytics project structure
-- remote evaluation and local evaluation
-- bucketing key and Amplitude ID resolution
+- remote evaluation
+- local evaluation
+- bucketing key
+- Amplitude ID resolution

@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers cookies and consent management for Amplitude's legacy JavaScript SDK, including cookie structure, local storage options, opt-out mechanisms, and GDPR/CNIL compliance requirements. It details the AMP_ prefixed cookies, deferInitialization option for consent management, and various storage configuration options like disableCookies and cookieExpiration.
+This documentation covers cookies and consent management for Amplitude's legacy JavaScript SDK, including cookie structure, local storage options, opt-out mechanisms, and GDPR/CNIL compliance requirements. It details the AMP_ prefixed cookies, deferInitialization option for consent management, storage configuration options, and specific guidance for French CNIL exemption requirements.
 
 ## Keywords
 
@@ -9,18 +9,18 @@ This documentation covers cookies and consent management for Amplitude's legacy 
 - deferInitialization
 - enableTracking()
 - setOptOut()
-- disableCookies
 - cookieExpiration
-- amplitude_unsent localStorage
+- disableCookies
+- localStorage fallback
+- amplitude_unsent events
+- GDPR consent management
 - CNIL France exemption
-- GDPR compliance
-- consent management platform
 - first-party cookies
-- deviceId sessionId tracking
-- clearStorage() method
-- cookieForceUpgrade
-- sameSiteCookie secureCookie
-- Browser SDK 2 migration
-- amplitude_cookie_test
+- cookieStorage options
+- metadata storage
 - cross-domain tracking
-- metadata storage abstraction
+- deviceIdFromURLParam
+- clearStorage() method
+- amplitude_cookie_test
+- Browser SDK 2 migration
+- consent management platforms

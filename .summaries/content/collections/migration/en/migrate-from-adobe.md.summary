@@ -3,22 +3,22 @@ This documentation provides a comprehensive guide for migrating from Adobe Analy
 
 ## Keywords
 - Adobe Analytics migration
-- Adobe eVars props mapping
-- Amplitude event-centric data model
+- Adobe eVars props success events
+- Amplitude event properties user properties
 - Adobe Launch extension
-- Solution Design Reference (SDR)
-- Adobe success events conversion
-- Tealium integration
-- Google Tag Manager templates
-- Segment mParticle CDP
+- Tealium Google Tag Manager integration
+- Solution Design Reference (SDR) mapping
 - Adobe Data Feeds backfill
-- Batch Event Upload API
-- Ingestion Debugger
-- User Lookup validation
+- Ingestion Debugger User Lookup
 - Event Explorer Chrome extension
-- Adobe visitor ID mapping
-- Amplitude tracking plan
+- Adobe visitor ID to Amplitude ID
+- Adobe hits to Amplitude events
+- Batch Event Upload API
+- Tracking plan Ampli wrapper
 - Adobe Analysis Workspace replication
 - Component Manager tool
-- Adobe tag management systems
-- Historical data warehouse export
+- Data warehouse sources
+- Client-side server-side SDKs
+- Adobe segments to Amplitude cohorts
+- Revenue tracking event properties
+- Session metrics bounce rate

@@ -9,8 +9,6 @@
 - eventUploadPeriodSeconds eventUploadThreshold
 - Android Kotlin SDK iOS SDK configuration
 - Batch API server-side integration delays
-- user profile merging
-- anonymous profile known profile
-- user ID device ID Amplitude ID
-- event upload frequency
-- cellular WiFi connection delays
+- anonymous user profile merging
+- user ID device ID Amplitude ID tracking
+- event upload frequency configuration

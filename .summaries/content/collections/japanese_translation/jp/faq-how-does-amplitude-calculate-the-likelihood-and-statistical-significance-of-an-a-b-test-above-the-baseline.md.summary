@@ -1,16 +1,15 @@
-**Summary:**
-This Japanese FAQ documentation explains Amplitude's A/B testing statistical calculations, covering Bayesian methods for likelihood estimation using normal distribution assumptions and error functions (erf), plus two-sided t-tests with 5% false positive rates and minimum sample size requirements (30 samples, 5 conversions, 5 non-conversions per variant) for statistical significance determination.
+**Summary:** This Japanese FAQ documentation explains Amplitude's A/B test statistical calculations, including Bayesian methods for calculating likelihood above baseline using error functions (erf) and normal distribution assumptions, plus two-sided t-tests with 5% false positive rate and minimum sample size requirements (30 samples, 5 conversions, 5 non-conversions per variant) for statistical significance determination.
 
 **Keywords:**
 - Amplitude A/B testing statistical calculations
-- Bayesian likelihood estimation
-- Two-sided t-test statistical significance
+- Bayesian likelihood calculation above baseline
 - Error function (erf) numerical approximation
-- Normal distribution variance calculations
+- Normal distribution (Gaussian) variance assumptions
+- Two-sided t-test statistical significance
 - 5% false positive rate threshold
-- Minimum sample size requirements
-- Baseline vs variant comparison
-- Cumulative distribution functions
+- Minimum sample size requirements (30 samples, 5 conversions)
+- Cumulative distribution function
 - Japanese FAQ documentation
-- Statistical significance thresholds
-- Conversion rate analysis
+- Variant vs baseline performance comparison
+- Statistical significance threshold 95%
+- Amplitude Experiment false positive rate configuration

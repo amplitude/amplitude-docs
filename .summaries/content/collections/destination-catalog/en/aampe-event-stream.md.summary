@@ -11,7 +11,7 @@
 - Aampe User ID mapping
 - bearer token authentication
 - compose.aampe.com integration
-- messaging category destination
+- messaging integration category
 - hyper-personalized messages
 - event filtering criteria
-- user properties transmission
+- user properties sync toggle

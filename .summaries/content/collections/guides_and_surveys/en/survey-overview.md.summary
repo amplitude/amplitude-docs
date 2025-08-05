@@ -1,13 +1,15 @@
-**Summary:** Documentation overview for survey functionality that explains survey templates (NPS, User feedback, Rating) and their use cases for collecting targeted user feedback, positioned as an alternative to guides with different template options.
+**Summary:** This documentation page provides an overview of survey functionality, explaining how surveys collect user feedback and describing three available survey templates: NPS (Net Promoter Score), User feedback, and Rating templates with their specific use cases.
 
 **Keywords:**
+- surveys
 - survey templates
-- NPS survey
+- NPS template
+- Net Promoter Score
+- User feedback template
+- Rating template
 - user feedback collection
-- rating survey
-- survey creation
 - customer satisfaction measurement
-- survey vs guides
-- blueprint guides_and_survey
-- survey overview documentation
+- survey creation
+- blank survey
+- guides_and_survey blueprint
 - targeted feedback collection

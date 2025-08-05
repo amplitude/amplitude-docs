@@ -1,4 +1,4 @@
-**Summary:** This documentation explains Amplitude's spaces collaboration feature, covering how to join existing spaces, move content between spaces, create shortcuts for multi-space content sharing, manage space member permissions (can edit/add/view), and integrate with Slack for team notifications.
+**Summary:** This documentation covers Amplitude's spaces collaboration feature, including joining spaces, moving content between spaces, creating shortcuts for multi-space content sharing, managing member permissions (can edit/add/view), Slack channel integration for notifications, and the permission hierarchy where project-level permissions override space-level permissions.
 
 **Keywords:**
 - Amplitude spaces collaboration
@@ -6,8 +6,8 @@
 - content shortcuts multi-space sharing
 - move content between spaces
 - Slack integration notifications
-- project-level permissions override
-- space permissions can edit can add can view
+- project-level vs space-level permissions
+- can edit can add can view permissions
 - team space creation restrictions
-- archive space permissions
+- space archiving permissions
 - Growth Enterprise plan enhanced controls

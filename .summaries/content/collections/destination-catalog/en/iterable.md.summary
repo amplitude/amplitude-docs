@@ -1,15 +1,15 @@
-**Summary:** This documentation describes Amplitude's event streaming integration with Iterable, a cross-channel marketing platform, enabling real-time forwarding of Amplitude events and user data to Iterable using API key authentication and configurable property mappings.
+**Summary:** This documentation describes Amplitude's event streaming integration with Iterable, a cross-channel marketing platform, covering setup prerequisites (Iterable API Key), configuration of user ID mappings (User ID/Email), event forwarding with filtering requirements, and user property synchronization through HTTP V2 API or Identify API.
 
 **Keywords:**
 - Iterable event streaming integration
 - Amplitude Activation destination
-- cross-channel marketing platform
 - Iterable API Key authentication
-- event forwarding configuration
-- user property mappings
-- Iterable user ID mapping
-- Iterable data fields
-- campaign metrics ingestion
+- User ID mapping configuration
+- Email identifier mapping
+- Event forwarding filtering
+- Iterable data fields synchronization
 - HTTP V2 API user updates
 - Identify API integration
-- marketing automation destination
+- Campaign ID Template ID properties
+- Cross-channel marketing automation
+- Transformed properties limitations

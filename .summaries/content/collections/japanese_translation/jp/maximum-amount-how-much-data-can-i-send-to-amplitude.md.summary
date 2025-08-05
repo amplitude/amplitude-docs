@@ -8,12 +8,11 @@
 - Event properties limit 2000  
 - User properties limit 1000
 - String character limit 1024
-- Account blocking conditions
-- Starter plan 100K MTU
-- Growth Enterprise 10M events
+- Account blocking threshold
 - CSV export limits 10000 rows
-- Redshift data export
+- Redshift columnarization 50 properties
+- Segmentation module limits
+- Date picker range restrictions
+- Growth plan Enterprise plan Starter plan
 - Event indexing停止
-- プロジェクトごと上限
-- イベントボリューム制限
-- インストルメンテーション上限
+- Japanese translation content

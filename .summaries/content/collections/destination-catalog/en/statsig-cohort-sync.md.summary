@@ -2,12 +2,12 @@
 
 **Keywords:**
 - Statsig cohort sync
-- experimentation platform integration
-- Statsig API key configuration
 - Amplitude cohorts export
-- Statsig Segments
-- feature management targeting
+- Statsig API key
+- experimentation platform integration
+- feature management destination
+- Statsig console segments
 - cohort sync cadence
-- Statsig Console setup
-- destination catalog cohorts
-- product experimentation
+- 15 minute sync updates
+- Statsig segments documentation
+- product experimentation targeting

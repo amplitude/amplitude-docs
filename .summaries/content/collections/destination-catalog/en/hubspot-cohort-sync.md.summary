@@ -3,15 +3,15 @@
 **Keywords:**
 - HubSpot Cohort Sync
 - Amplitude cohorts
-- contact lists targeting
-- Email user_id mapping
-- Contact ID user_id mapping
+- HubSpot contact lists
+- Email and Contact ID mapping
 - OAuth authentication
 - scheduled cohort syncs
-- amplitude_ prefix naming
-- user identifier matching
+- amplitude_ prefix
+- user_id mapping options
 - cohort sync discrepancies
-- silent user exclusion
-- marketing automation destination
 - HubSpot contacts section
-- incremental sync updates
+- marketing automation destination
+- long data type format
+- silent user exclusion
+- CSV file validation

@@ -1,21 +1,17 @@
-**Summary:** This documentation explains how to create charts in Amplitude Analytics, covering the chart creation workflow from the Create > Chart menu, plan-specific limitations (Starter plans limited to 10 charts and 1-year data queries), and chart management features including save modal options, More dropdown menu actions (unlisted, export, archive, etc.), and zoom functionality.
+**Summary:** This documentation covers creating charts in Amplitude Analytics, including the Create > Chart workflow, chart type selection from the Charts fly-out, plan-specific restrictions (Starter plan 10-chart limit, 1-year data query vs Plus plan 2-year limit), and chart management features like Save modal, More dropdown options (Unlisted, Export, Archive, etc.), and zoom functionality.
 
 **Keywords:**
 - Amplitude charts creation
-- Create > Chart menu
-- Charts fly-out
-- Starter plan limitations
-- 10 charts limit
-- data query restrictions
-- Save modal
+- Create > Chart workflow
+- Charts fly-out panel
+- Starter plan chart limitations
+- Plus plan data querying
+- Save modal dialog
 - More dropdown menu
-- unlisted charts visibility
-- chart export options
+- chart archiving shared links
+- notebook fly-out panel
+- chart zoom functionality
+- unlisted chart visibility
 - PNG PDF CSV export
-- shared links
-- chart archiving
-- notebook integration
-- zoom functionality
-- Reset zoom
-- events properties user segments
-- dashboard integration
+- chart revert restore
+- spaces folders organization

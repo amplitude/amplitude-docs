@@ -5,7 +5,7 @@
 - Amplitude user roles override
 - Viewer Member Manager Administrator roles
 - draft editing permissions
-- publishing permissions
+- publish permissions
 - experiment running access
-- granular access control
+- role-based access control
 - Guides and Surveys module permissions

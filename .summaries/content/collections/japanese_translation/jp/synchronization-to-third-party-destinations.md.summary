@@ -1,4 +1,4 @@
-**Summary:** This documentation covers Amplitude's synchronization feature for exporting cohorts, recommendations, user properties, and computed properties to third-party destinations, supporting both on-demand and automated sync types with hourly or daily cadences for advertising, email, experimentation, and data platforms.
+**Summary:** This documentation covers Amplitude's synchronization feature for exporting cohorts, recommendations, user properties, and computed properties to third-party destinations, supporting both on-demand and automated sync schedules (hourly/daily) with step-by-step setup instructions and sync history monitoring.
 
 **Keywords:**
 - Amplitude synchronization
@@ -9,15 +9,14 @@
 - computed properties sync
 - on-demand sync
 - automated sync
-- hourly cadence
-- daily cadence
+- hourly sync cadence
+- daily sync cadence
+- sync history
+- sync errors
 - advertising platforms
 - email platforms
 - experimentation platforms
-- data platforms
-- sync creation modal
-- sync history
-- sync errors
-- CSV download
-- audience membership
-- prediction probability
+- data destinations
+- CSV download alternative
+- audience membership updates
+- prediction probability sync

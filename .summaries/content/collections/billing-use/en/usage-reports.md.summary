@@ -1,20 +1,24 @@
 ## Summary
-This documentation covers Amplitude's usage reports feature that provides organization-level analytics on Amplitude platform adoption, including user metrics, content usage tracking, and event query analysis across projects, available only to Growth/Enterprise plan admins and managers.
+This documentation covers Amplitude's usage reports feature that provides organizational analytics on Amplitude platform adoption, including User Metrics tab with active users, engagement depth, and content usage charts, plus Event Usage tab with downloadable CSV/JSON reports showing event query counts and ingestion metrics across all projects.
 
 ## Keywords
 - usage reports
-- organization analytics
-- user metrics tab
-- event usage tab
+- User Metrics tab
+- Event Usage tab
+- organizational analytics
+- active users chart
 - weekly learning users
 - broadcasted learnings
-- query counts
-- event ingestion tracking
-- Growth Enterprise plans
-- organization settings
-- admin manager permissions
+- depth of engagement
+- content usage panel
+- event query counts
+- CSV/JSON export
 - cross-project views
 - pathfinder analysis
-- CSV JSON export
-- chart dashboard notebook usage
-- depth of engagement metrics
+- event ingestion metrics
+- Growth and Enterprise plans
+- organization settings
+- admin permissions
+- chart types usage
+- dashboard consumption
+- notebook sharing

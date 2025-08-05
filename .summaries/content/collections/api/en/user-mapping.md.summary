@@ -11,7 +11,7 @@
 - unmap parameter
 - amplitude_id
 - mapped_from mapped_to
-- api.amplitude.com/usermap
 - batch limits 2000 requests
 - rate limits 50 events per second
-- JSON mapping object
+- api.amplitude.com/usermap
+- amplitude.com/api/2/usermap

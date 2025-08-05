@@ -1,22 +1,22 @@
-## Summary
-Documents Amplitude's streaming transformations feature that enables streaming pre-existing transformed events and properties (Custom Events, Derived Properties, Transformed Events, Transformed Properties) to destinations, with configuration through Amplitude Data Catalog's Destinations tab and event/property selection filters.
+**Summary:** Documents Amplitude's streaming transformations feature that enables streaming pre-existing transformed events and properties (Custom Events, Derived Properties, Transformed Events, Transformed Properties) to destinations, with setup instructions for configuring sync filters and property selection in the Destinations catalog.
 
-## Keywords
+**Keywords:**
 - streaming transformations
-- Amplitude Data Catalog
-- Destinations tab
 - Custom Events
-- Derived Properties
+- Derived Properties  
 - Transformed Events
 - Transformed Properties
-- event streaming sync
+- event streaming destinations
+- sync configuration
+- Amplitude Data catalog
 - Server Secret Key
+- event filters
+- property selection
 - AppsFlyer integration
 - Braze integration
 - lookup properties
 - channel classifiers
-- event volume streaming limit
-- p95 latency 60s
+- streaming volume limits
 - taxonomy transformations
-- sync filters
-- event streaming destinations
+- p95 latency 60s
+- Data Warehouse destinations exclusion

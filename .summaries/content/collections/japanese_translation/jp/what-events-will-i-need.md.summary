@@ -1,16 +1,21 @@
-# Summary
-This documentation page provides industry-specific guidance on which events and properties to track in Amplitude, offering examples of common business questions and the corresponding analytics charts needed to answer them. It covers general tracking recommendations plus specific event tracking suggestions for eCommerce, B2B/SaaS, Financial, Media, Healthcare, and Gaming industries.
+**Summary:** This Japanese documentation provides industry-specific guidance for identifying essential events and properties to track in Amplitude analytics, covering general analytics plus specialized recommendations for eCommerce, B2B/SaaS, financial services, media, healthcare, and gaming industries with corresponding chart types and implementation details.
 
-# Keywords
-- event tracking recommendations
-- industry-specific analytics
-- tracking plan guidance
-- eCommerce events
-- B2B/SaaS events
-- financial services tracking
-- media analytics
-- healthcare analytics
-- gaming analytics
-- conversion tracking
-- user retention metrics
-- revenue analysis
+**Keywords:**
+- Amplitude event tracking
+- Japanese translation documentation
+- Industry-specific analytics events
+- Event segmentation charts
+- Funnel analysis implementation
+- User session tracking
+- Revenue LTV analysis
+- eCommerce product tracking
+- B2B SaaS key events
+- Financial services analytics
+- Media subscription tracking
+- Healthcare appointment analytics
+- Gaming level completion tracking
+- UTM source properties
+- User retention analysis
+- Conversion rate optimization
+- Event properties configuration
+- Group types and user properties

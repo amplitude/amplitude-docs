@@ -3,11 +3,11 @@
 **Keywords:**
 - OneLogin SAML 2.0 integration
 - Amplitude SSO configuration
-- SAML metadata upload
-- OneLogin Apps configuration
+- SAML metadata file upload
+- OneLogin Apps dropdown
 - Amplitude org ID setup
 - ACS URL configuration
-- Identity Provider setup
 - Access & SSO Settings
-- OneLogin Display Name
-- SAML metadata file download
+- Identity Provider selection
+- OneLogin Configuration tab
+- SAML Metadata download

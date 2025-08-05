@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to build Amplitude's Retention Analysis chart, which measures user return behavior by comparing starting events to return events with configurable time intervals (daily/weekly/monthly), supporting up to two return events, user segmentation, property filtering, and usage interval analysis.
+**Summary:** This documentation explains how to build Amplitude's Retention Analysis chart, which measures user return behavior by comparing starting events to return events with configurable time intervals (daily/weekly/monthly), supporting up to two return events and user segmentation filters.
 
 **Keywords:**
 - Retention Analysis chart
@@ -10,10 +10,9 @@
 - Segmentation Module
 - breakdown table
 - user segment filtering
-- property filtering
-- Any Event option
-- grouped by functionality
+- event properties filtering
+- grouped by user properties
 - active/inactive events
-- time period analysis
+- time period date picker
+- Any Event option
 - retention rates comparison
-- usage interval analysis

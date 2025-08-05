@@ -1,5 +1,5 @@
 ## Summary
-This Japanese FAQ documentation covers Amplitude's event and property transformation features, specifically addressing how saved charts behave when events are merged, bulk updating procedures, property consolidation priority rules, and transformation reversal processes.
+This Japanese FAQ documentation covers Amplitude's event and property transformation features, specifically addressing how saved charts behave when events are merged, bulk updating procedures, property consolidation priority rules, and transformation reversal effects.
 
 ## Keywords
 - Amplitude transformation
@@ -11,5 +11,6 @@ This Japanese FAQ documentation covers Amplitude's event and property transforma
 - retroactive transformations
 - Japanese FAQ
 - event querying
-- chart dropdown behavior
+- chart dropdown visibility
 - property value priority
+- transformation limitations

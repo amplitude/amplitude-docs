@@ -5,7 +5,7 @@
 - cohort export
 - feature flags
 - experimentation destination
-- API key configuration
+- API key authentication
 - workspace ID
 - environment ID
 - traffic type ID
