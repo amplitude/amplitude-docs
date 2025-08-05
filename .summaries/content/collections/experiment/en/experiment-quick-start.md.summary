@@ -9,16 +9,12 @@ This documentation covers the complete workflow for setting up Amplitude Experim
 - deployment configuration
 - bucketing unit
 - evaluation mode (Remote/Local)
-- user segments
 - experiment goals
 - minimum detectable effect
-- client-side vs server-side deployments
+- user segments
 - bucketing salt
-- experiment randomization
+- client-side vs server-side deployments
+- experiment activation
 - A/B testing workflow
+- behavioral experimentation platform
 - progressive feature delivery
-- experiment.start()
-- experiment.variant()
-- deployment API key
-- flag activation
-- experiment conversion
