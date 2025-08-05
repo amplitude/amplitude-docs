@@ -41,18 +41,18 @@ To add a new data source, follow these steps:
   
 Just follow the instructions you see on the screen to complete the setup process for your data source.
 
-## Source Notifications
+## Source notifications
 
 Notifications alert you when you have an issue with your source. By default, new sources notify the creator and Admins.
 
-### Editing your Notifications:
+### Editing your notifications
 
 1. In the left-hand rail, click *Sources*.
 2. Look for the source you wish to configure notifications for. When you find it, click it.
 3. Look for the *Notifications Button* with an email icon on the right side of your screen. When you hover over it, you should see *Manage Notifications*. Click the button.
 4. You can *Subscribe* or *Unsubscribe* yourself. You can also *Manage Notifications* to add or remove other email addresses.
 
-### Adding Notifications to Slack
+### Adding notifications to Slack
 
 1. Follow [this guide](https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V) to set up an email for your Slack channel or DM
 2. Now, follow *Editing your Notifications* above to add that email to your source's notifications.
