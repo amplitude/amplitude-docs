@@ -10,12 +10,12 @@ this_article_will_help_you:
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
-Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
+Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to create experiments without engineering resources.
 
 Web Experiments use [**Pages**](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
 
 {{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+Review [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
 ## Before you begin
@@ -44,7 +44,7 @@ To set up a web experiment, follow these steps:
 5. Click the element you want to change.
 6. The editing toolbar opens beside the selected element with quick actions such as editing the element’s content, or [move element](/docs/web-experiment/set-up-a-web-experiment#move).
 
-    ![web-exp-2.png](/docs/output/img/workflow/web-exp-2.png)
+    ![](statamic://asset::help_center_conversions::workflow/web-exp-2-update.png)
 
     Clicking the expand icon opens the drawer allowing you to edit CSS style properties. When you're done, click *Apply*.
 
@@ -56,7 +56,7 @@ To set up a web experiment, follow these steps:
 10. Next, [define your experiment's goals](/docs/feature-experiment/workflow/define-goals).
 11. In the *Pages* tab, configure which [Pages](/docs/web-experiment/pages) your experiment should target. You can create new Pages or reuse existing saved Pages. If you're only targeting the page you originally set on creation, you can skip this step. From the *Include pages where* dropdown, specify how you want Amplitude Experiment to identify these pages.
 
-    ![web-exp-4.png](/docs/output/img/workflow/web-exp-4.png)
+    ![](statamic://asset::help_center_conversions::workflow/web-exp-2-update.png)
 
     Use the same pattern to exclude experiment from the pages you select. Learn more about [managing Pages](/docs/web-experiment/pages) for precise experiment targeting.
 
@@ -116,6 +116,16 @@ The CSS tab lets you define any CSS property and value, which apply inline to th
 The HTML tab lets you edit the HTML contents of the selected element.
 
 ### Move
+
+Using the toolbar, move selected elements within the page's DOM structure to adjust its visual placement on the page. 
+
+In addition to moving elements up or down, click **Move** to enter preview mode. This enables you to explore different element placements on the page.
+
+As you hover over valid positions, the editor displays a preview of the layout after you move the element.
+
+When you click a valid position to place the element, click **Apply** to confirm its new placement.
+
+For more precise control, use the **Layout** section of in the expanded drawer. This option lets you place elements relative to another DOM element.
 
 Move the selected element up or down in the DOM tree to adjust its placement relative to its current node.
 
