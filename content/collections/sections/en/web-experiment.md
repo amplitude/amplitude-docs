@@ -6,7 +6,7 @@ title: 'Web Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1759789918
+updated_at: 1754408649
 current-collection: web_experiment
 nav_title: web_experiment
 template: landing-page-experiment
