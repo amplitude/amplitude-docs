@@ -1,18 +1,16 @@
-**Summary:** This documentation explains how to configure Amplitude's schema settings to handle three types of schema violations: unplanned event types, unplanned event/user properties, and unplanned property values, with options to either mark as unexpected or reject the data, plus validation error monitoring and subscriber notifications.
+**Summary:** This documentation explains how to configure Amplitude's schema settings to handle three types of schema violations: unplanned event types, unplanned event/user properties, and unplanned property values, with options to either "Mark As Unexpected" or "Reject" each violation type.
 
 **Keywords:**
-- Amplitude schema violations
+- schema violations
 - unplanned event types
 - unplanned event properties
 - unplanned user properties
 - unplanned property values
-- schema settings configuration
-- mark as unexpected
-- reject data ingestion
+- Mark As Unexpected
+- Reject schema violations
 - validation errors panel
-- schema subscribers
-- Amplitude Data settings
-- unexpected data handling
-- schema validation
-- event property rejection
-- 24-hour validation errors
+- schema settings configuration
+- Amplitude Data schema
+- event ingestion handling
+- property value type mismatches
+- schema subscribers notifications
