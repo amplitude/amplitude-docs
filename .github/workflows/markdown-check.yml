@@ -38,12 +38,34 @@ jobs:
 
     - name: Setup Environment
       run: |
-        cp .env.example .env 2>/dev/null || touch .env
-        echo "APP_URL=${{ vars.APP_URL }}" >> .env
+        # Create .env file with proper defaults
+        touch .env
+        
+        # Set APP_URL with proper fallback and scheme validation
+        APP_URL="${{ vars.APP_URL }}"
+        
+        # If APP_URL is empty or doesn't have a scheme, provide a default
+        if [ -z "$APP_URL" ] || [[ ! "$APP_URL" =~ ^https?:// ]]; then
+          echo "APP_URL not properly set, using default for static generation"
+          APP_URL="https://amplitude.com"
+        fi
+        
+        echo "APP_URL=$APP_URL" >> .env
         echo "STATAMIC_LICENSE_KEY=${{ secrets.STATAMIC_LICENSE_KEY }}" >> .env
         
+        # Debug: Show what we're using
+        echo "Using APP_URL: $APP_URL"
+        
     - name: Build Static Site  
-      run: php please ssg:generate --workers=4
+      run: |
+        # Generate static site with environment
+        if [ -z "${{ secrets.STATAMIC_LICENSE_KEY }}" ]; then
+          echo "No Statamic license key found. Using testing mode."
+          echo "yes" | php please ssg:generate --workers=4
+        else
+          echo "Using provided Statamic license key."
+          php please ssg:generate --workers=4
+        fi
 
     - name: Start Local Server
       run: |
