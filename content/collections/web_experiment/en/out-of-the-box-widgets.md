@@ -36,11 +36,11 @@ All changes are visible in real-time through the Visual Editor.
 
 ### Customizing placement of your widgets
 
-Banners and buttons can both be moved around your website:
+Banners and buttons are both movable around your website:
 - Banners can appear at the top or bottom of a page. 
-- Buttons can be moved freely around the page. When set, the buttons "snap" to a grid layout. 
+- Buttons can appear almost anwhere on the page. When set, the buttons "snaps" to a grid layout. 
 
-You cannot customize the location of the pop-up modal. It appears in the center of your page.
+You can't customize the location of the pop-up modal. It appears in the center of your page.
 
 ### AI styling
 When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want. 
