@@ -1,13 +1,14 @@
-**Summary:** This documentation covers the process of setting up third-party platforms as data export destinations in Amplitude Data's CDP, including accessing the Destinations tab in the Connections section and configuring destination-specific connection parameters through modal dialogs.
+**Summary:** This documentation covers Amplitude Data's destination management functionality, including adding third-party data export destinations, configuring destination notifications for creators and admins, and integrating notifications with Slack channels through email forwarding.
 
 **Keywords:**
-- Amplitude Data
-- CDP destinations
+- Amplitude Data destinations
 - data export destinations
-- third-party platforms
-- Destinations tab
+- third-party platform integration
+- destination notifications
 - Connections section
-- Add Destination
+- Destinations tab
+- notification management
+- Slack integration
+- email notifications
 - destination configuration modal
-- data sharing
-- export setup
+- Subscribe/Unsubscribe notifications
