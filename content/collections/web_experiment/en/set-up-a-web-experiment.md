@@ -93,8 +93,6 @@ When you’re making modifications to your site in the Visual Editor, your actua
 
 When you click on an element, the editing toolbar opens beside the selected element with quick actions such as editing the element’s content, or [move element](/docs/web-experiment/set-up-a-web-experiment#move). On apply, these changes are then added to the current variant.
 
-![web-exp-2.png](/docs/output/img/workflow/web-exp-2.png)
-
 Find CSS style properties, inline CSS, and HTML in the drawer, accessible from the toolbar. When you're done, click *Apply*.
 
 ![web-exp-3.png](/docs/output/img/workflow/web-exp-3.png)
