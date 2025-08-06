@@ -2,8 +2,8 @@
 id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
 title: 'Set up a web experiment'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1743537935
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1754501567
 this_article_will_help_you:
   - 'Understand the difference between a Web Experiment and a feature experiment'
   - 'Build a Web Experiment using the Visual Editor'
@@ -44,7 +44,7 @@ To set up a web experiment, follow these steps:
 5. Click the element you want to change.
 6. The editing toolbar opens beside the selected element with quick actions such as editing the element’s content, or [move element](/docs/web-experiment/set-up-a-web-experiment#move).
 
-    ![](statamic://asset::help_center_conversions::workflow/web-exp-2-update.png)
+    ![](statamic://asset::help_center_conversions::workflow/web-exp-2-update.png)    
 
     Clicking the expand icon opens the drawer allowing you to edit CSS style properties. When you're done, click *Apply*.
 
