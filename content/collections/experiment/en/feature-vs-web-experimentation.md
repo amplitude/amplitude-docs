@@ -10,15 +10,11 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1754343232
 ---
-Feature experimentation is done through the use of feature flags. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](docs/feature-experiment/workflow/feature-flag-rollouts).
+You can create experiments using either Feature Experiment or Web Experiment. 
 
-{{partial:admonition type='note'}}
-Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
-{{/partial:admonition}}
+Feature experimentation uses feature flags to create the variants you want. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Experiment. Typically, feature flags need a little more advanced knowledge of your code to successfully use them for experimentation. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
 
-Web experimentation is done through a visual editor. This editor is recommended for A/B or multi-armed banded experimentation. With the visual editor, you can select and alter web elements such as directly altering content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, to create experiments without engineering resources. 
-
-Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site.
+Web experimentation uses a visual editor to create variations of your web site. This editor is recommended for A/B or multi-armed banded experimentation. With the visual editor, you can select and alter web elements such as directly altering content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, create experiments without engineering resources. Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site. For more information on how to create experiments with the web editor, go to [Setting up a Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 ### Functional Availability
 
@@ -70,6 +66,7 @@ The following tables describe which Experiment functionality is available for Fe
 | Traffic estimate per day | X |  |   |
 | Control mean estimator | X  |   |   |
 | Power duration estimator | X |  |   |
+| OOTB web editor widgets |   |  X |  | 
 
 {{/partial:collapse}}
 
