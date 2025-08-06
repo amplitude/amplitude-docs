@@ -34,5 +34,5 @@ Notifications alert you when you have an issue with your destination. By default
 
 ### Adding notifications to Slack
 
-1. Follow [this guide](https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V) to set up an email for your Slack channel or DM
+1. Follow [this guide](https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V) to set up an email for your Slack channel or DM.
 2. Now, follow *Editing your Notifications* above to add that email to your destination's notifications.
