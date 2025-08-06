@@ -37,4 +37,4 @@ By default, you can edit the following aspects of any widget:
 All changes are visible in real-time through the Visual Editor
 
 ### AI styling
-When you click the AI styler button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want. 
+When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want. 
