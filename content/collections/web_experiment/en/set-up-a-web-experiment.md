@@ -56,7 +56,7 @@ To set up a web experiment, follow these steps:
 10. Next, [define your experiment's goals](/docs/feature-experiment/workflow/define-goals).
 11. In the *Pages* tab, configure which [Pages](/docs/web-experiment/pages) your experiment should target. You can create new Pages or reuse existing saved Pages. If you're only targeting the page you originally set on creation, you can skip this step. From the *Include pages where* dropdown, specify how you want Amplitude Experiment to identify these pages.
 
-    ![](statamic://asset::help_center_conversions::workflow/web-exp-2-update.png)
+    ![web-exp-4.png](/docs/output/img/workflow/web-exp-4.png)
 
     Use the same pattern to exclude experiment from the pages you select. Learn more about [managing Pages](/docs/web-experiment/pages) for precise experiment targeting.
 
