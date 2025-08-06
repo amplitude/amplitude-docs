@@ -37,4 +37,4 @@ Additionally, you can also manage notifications to add or remove other email add
 ### Adding notifications to Slack
 
 1. Follow [this guide](https://slack.com/help/articles/206819278-Send-emails-to-Slack#h_01F4WDZG8RTCTNAMR4KJ7D419V) to set up an email for your Slack channel or DM.
-2. After your Slack/email integration is set up, you can edit your n[otifications](#editing-your-notifications) to add that email to your destination's notifications.
+2. After your Slack/email integration is complete, you can edit your [notifications](#editing-your-notifications) to add that email to your destination's notifications.
