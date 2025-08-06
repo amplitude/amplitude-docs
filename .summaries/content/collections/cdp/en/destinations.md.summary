@@ -1,14 +1,15 @@
-**Summary:** This documentation covers Amplitude Data's destination management functionality, including adding third-party data export destinations, configuring destination notifications for creators and admins, and integrating notifications with Slack channels through email forwarding.
+**Summary:** This documentation covers configuring third-party data export destinations in Amplitude Data, including the setup process through the Destinations tab and managing email/Slack notifications for destination issues.
 
 **Keywords:**
 - Amplitude Data destinations
 - data export destinations
 - third-party platform integration
-- destination notifications
-- Connections section
 - Destinations tab
+- Connections section
+- destination notifications
 - notification management
 - Slack integration
 - email notifications
-- destination configuration modal
-- Subscribe/Unsubscribe notifications
+- destination setup workflow
+- Add Destination button
+- Manage Notifications settings
