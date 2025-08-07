@@ -1,12 +1,13 @@
 ---
 id: 2cc93767-a20b-4741-a07f-1939ec508e79
+published: false
 blueprint: web_experiment
 title: 'Out-of-the-box Widgets'
 this_article_will_help_you:
   - 'Understand what OOTB widgets are'
   - 'Use OOTB widgets to create experiments'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1754494815
+updated_at: 1754605831
 ---
 Out-of-the-box (OOTB) widgets are tools that let you create your web experiments with a minimum of styling or set up. By reducing the time and effort to set up an experiment, you can implement your experiments faster and with more frequency. OOTB widgets maintain brand consistency through saved design presets or auto applied styling. OOTB widgets enable you to test site elements without engineers and without affecting the underlying code of the website. OOTB widgets are available through the Visual Editor for Web Experiment. For more information on the Visual Editor and setting up a web experiment, go to [The Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). 
 
@@ -38,9 +39,9 @@ All changes are visible in real-time through the Visual Editor.
 
 Banners and buttons are both movable around your website:
 - Banners can appear at the top or bottom of a page. 
-- Buttons can appear almost anwhere on the page. When set, the buttons "snaps" to a grid layout. 
+- Buttons can appear almost anywhere on the page. When set, the buttons "snaps" to a grid layout. 
 
 You can't customize the location of the pop-up modal. It appears in the center of your page.
 
 ### AI styling
-When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want. 
+When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want.
