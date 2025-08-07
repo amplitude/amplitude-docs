@@ -1,77 +1,78 @@
 ## Amplitude Experiment SDK Suite
 
-Amplitude Experiment is a comprehensive feature flagging and experimentation platform that provides SDKs across multiple programming languages and platforms for both client-side and server-side implementations. The platform enables A/B testing, feature rollouts, and dynamic configuration management through a unified experimentation framework.
+Amplitude Experiment is a comprehensive feature flagging and experimentation platform that provides SDKs across multiple programming languages and platforms for both client-side and server-side implementations. The platform enables A/B testing, feature rollouts, and dynamic configuration management through a unified evaluation system.
 
 ## Product Architecture and Relationships
 
-The Experiment SDK ecosystem consists of three primary evaluation modes:
+The Experiment SDK ecosystem is built around two primary evaluation modes:
 
-**Remote Evaluation**: SDKs fetch pre-computed variant assignments from Amplitude's servers via API calls. This approach is typically used for client-side implementations where flag logic evaluation happens server-side, reducing client complexity and ensuring consistent bucketing.
+**Remote Evaluation**: Client applications fetch pre-computed variant assignments from Amplitude's servers via API calls. This approach is typically used for client-side implementations where evaluation logic remains server-controlled.
 
-**Local Evaluation**: SDKs download flag configurations and perform evaluation logic locally. This server-side approach offers lower latency and reduced API dependency, with automatic flag config polling/streaming and cohort synchronization capabilities.
+**Local Evaluation**: Applications download flag configurations and perform evaluation logic locally. This mode supports real-time flag config polling, streaming updates, and cohort targeting capabilities, making it suitable for high-performance server-side implementations.
 
-**Evaluation Proxy**: A Docker-based service that enables local evaluation on unsupported platforms, providing assignment event deduplication and cohort targeting capabilities.
+The **Evaluation Proxy** serves as a bridge component, enabling local evaluation capabilities on platforms without native SDK support through a Docker-based service that provides HTTP endpoints for flag evaluation.
 
-The SDKs are categorized into client-side implementations (Android, iOS, JavaScript, React Native) and server-side implementations (Go, JVM, Node.js, PHP, Python, Ruby), with the Evaluation Proxy serving as a bridge solution.
+## Platform Coverage and Integration Patterns
+
+### Client-Side SDKs
+- **Mobile**: Android (Kotlin/Java), iOS (Swift/Objective-C), React Native
+- **Web**: JavaScript (browser), with SSR support
+- **Integration Methods**: 
+  - Native Amplitude Analytics integration via `initializeWithAmplitudeAnalytics()`
+  - Third-party analytics (Segment, mParticle) through provider interfaces
+  - Standalone implementation with custom tracking
+
+### Server-Side SDKs
+- **Languages**: Node.js, Python, Ruby, PHP, Go, JVM (Java/Kotlin)
+- **Capabilities**: Both remote and local evaluation modes, cohort targeting, assignment tracking
+- **Enterprise Features**: EU data residency, custom HTTP clients, advanced configuration options
 
 ## Key Nomenclature and Definitions
 
-**Deployment Key**: Authentication credential used to initialize SDK clients and associate them with specific Amplitude projects and environments.
+**Deployment Key**: Authentication credential that identifies the experiment environment and determines available flag configurations.
 
-**Variants**: The different experiences or configurations returned by feature flags, containing key-value payload data that applications use to modify behavior.
+**Variants**: The different experiences or values that users can receive for a given feature flag, accessed via `variant()` methods across SDKs.
 
-**ExperimentUser**: User context object containing identifiers (user_id, device_id), properties (user_properties, group_properties), and group memberships used for flag evaluation and bucketing.
+**ExperimentUser**: User context object containing `device_id`, `user_id`, `user_properties`, and `group_properties` used for flag evaluation and targeting.
 
-**Flag Configurations**: Server-side definitions of feature flags including targeting rules, allocation percentages, and variant definitions that determine user bucketing.
+**Exposure Tracking**: Automatic or manual logging of when users are exposed to experiment variants, enabling accurate experiment analysis.
 
-**Exposure Tracking**: Automatic or manual event logging when users are exposed to flag variants, enabling experiment analysis and statistical significance calculations.
+**Cohort Targeting**: Advanced targeting capability that syncs user cohorts from Amplitude Analytics for precise audience segmentation in local evaluation mode.
 
-**Cohort Targeting**: Advanced targeting capability that allows flags to target users based on behavioral cohorts defined in Amplitude Analytics, with periodic synchronization.
+**Bootstrapping**: Pre-loading initial flag configurations or variants to reduce latency, implemented through `initialVariants` or `initialFlags` configuration.
 
-**Bootstrapping**: Initialization technique using `initialVariants` or `initialFlags` to provide immediate flag values before remote fetching completes, often used for server-side rendering scenarios.
+**Flag Configurations**: The complete rule set and targeting logic for feature flags, downloaded and cached for local evaluation.
 
-## Broader Product Ecosystem Integration
+## Ecosystem Integration and Data Flow
 
-Amplitude Experiment integrates deeply with the Amplitude Analytics ecosystem through several mechanisms:
+The Experiment platform integrates deeply with the broader Amplitude ecosystem:
 
-**Amplitude Analytics SDK Integration**: Client-side SDKs offer `initializeWithAmplitudeAnalytics()` methods that automatically share user context and device IDs between analytics and experimentation, ensuring consistent user identification.
+**Analytics Integration**: Native integration with Amplitude Analytics automatically handles exposure event tracking and user identity management. The `AmplitudeCookie` utility enables device ID consistency across web implementations.
 
-**Third-Party Analytics Support**: SDKs provide integration interfaces for Segment, mParticle, and other analytics platforms through `ExposureTrackingProvider` interfaces, enabling experiment data collection in existing analytics stacks.
+**Data Residency**: EU data center support through `serverZone` configuration ensures compliance with regional data requirements.
 
-**Amplitude Cookie Integration**: Server-side SDKs include `AmplitudeCookie` utilities for parsing device IDs from Amplitude Analytics cookies, maintaining user identity consistency across client and server implementations.
+**Assignment Tracking**: Automatic assignment event logging with 24-hour deduplication prevents duplicate experiment exposures from skewing results.
 
-**Account-Level Analysis**: Support for group-level bucketing with account-level analysis, enabling B2B experimentation scenarios where decisions are made at organization levels.
+**Provider Interfaces**: Standardized interfaces (`ExperimentUserProvider`, `ExposureTrackingProvider`) enable custom user management and analytics integration patterns.
 
-## API Endpoints and Key Methods
+## Technical Implementation Patterns
 
-**Client-Side SDKs** (Android, iOS, JavaScript, React Native):
-- `fetch()`: Remote evaluation method that retrieves pre-computed variants
-- `start()`: Local evaluation initialization with flag config download
-- `variant(flagKey)`: Access variant for specific flag with automatic exposure tracking
-- `exposure(flagKey, variant)`: Manual exposure event tracking
-- `clear()`: Clear cached variants and reset client state
+### Common API Patterns
+- **Initialization**: `ExperimentClient.initialize()` or `initializeWithAmplitudeAnalytics()`
+- **Remote Evaluation**: `fetch()` or `fetchV2()` methods retrieve variants from API
+- **Local Evaluation**: `start()` method initializes local evaluation with config polling
+- **Variant Access**: `variant(flagKey)` returns experiment assignments
+- **Evaluation**: `evaluate()` or `evaluateV2()` performs local flag evaluation
 
-**Server-Side SDKs** (Go, JVM, Node.js, PHP, Python, Ruby):
-- `fetch()` / `fetchV2()`: Remote evaluation variant retrieval
-- `evaluate()` / `evaluateV2()`: Local evaluation with flag configs
-- `start()`: Initialize local evaluation client with config polling
-- `refreshFlagConfigs()`: Manual flag configuration refresh
+### Configuration Management
+- **Polling**: `flagConfigPollingIntervalMillis` controls config refresh frequency
+- **Streaming**: `streamUpdates` enables real-time flag configuration updates
+- **Timeouts**: `fetchTimeoutMillis` and retry configurations for network resilience
+- **Cohort Sync**: `CohortSyncConfig` manages audience targeting data synchronization
 
-**Evaluation Proxy**:
-- Docker deployment: `amplitudeinc/evaluation-proxy`
-- HTTP endpoints on port 3546 for evaluation requests
-- Redis integration for persistent storage and deduplication
+### Deployment Options
+- **Docker**: Evaluation Proxy available as `amplitudeinc/evaluation-proxy` image
+- **Kubernetes**: Helm chart deployment support for containerized environments
+- **Package Managers**: Native distribution through npm, CocoaPods, Maven Central, PyPI, RubyGems, Composer, and Go modules
 
-## Configuration and Deployment Options
-
-**Server Zones**: Support for EU data residency through `ServerZone.EU` configuration, with separate `serverUrl` and `cohortServerUrl` endpoints.
-
-**Polling and Streaming**: Configurable flag config updates via `flagConfigPollingIntervalMillis` or real-time `streamUpdates` for immediate flag changes.
-
-**Timeout and Retry**: Comprehensive timeout (`fetchTimeoutMillis`) and retry (`fetchRetries`) configuration for robust network handling.
-
-**Cohort Sync**: Advanced targeting through `CohortSyncConfig` with `maxCohortSize` limits and hourly synchronization intervals.
-
-**Assignment Tracking**: Automatic experiment exposure logging through `AssignmentConfig` with 24-hour deduplication and configurable tracking providers.
-
-The SDK suite provides comprehensive language coverage with consistent APIs, enabling organizations to implement experimentation across their entire technology stack while maintaining unified user experiences and reliable data collection.
+The platform supports both stateless and stateful deployment patterns, with Redis persistence for the Evaluation Proxy and local caching capabilities across all SDKs to ensure high availability and performance.
