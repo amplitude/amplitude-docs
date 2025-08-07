@@ -9,7 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717435427
 landing_blurb: 'See how Amplitude Experiment is structured.'
 ---
-At the top level in Amplitude is your **organization**. Within an organization, Amplitude Experiment follows the **project** structure defined by Amplitude Analytics. In short, all Experiment data must be associated with an Amplitude Analytics project.
+At the top level in Amplitude is called you Organization. Within an organization, Amplitude Experiment follows the project structure defined by Amplitude Analytics. In short, all Experiment data must be associated with an Amplitude Analytics project.
 
 [Flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) all live within an Amplitude project.
 
@@ -17,30 +17,30 @@ At the top level in Amplitude is your **organization**. Within an organization, 
 
 ## Projects
 
-Experiment uses the same projects which are required for Amplitude Analytics. As a best practice, create a project per product and per environment. Because [flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) only exist within a single project, duplicate these objects across projects for the same product.
+Experiment uses the same projects as Amplitude Analytics. As a best practice, create a project for each product and for each environment. Because [flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) only exist within a single project, duplicate these objects across projects for the same product.
 
 {{partial:admonition type="tip" heading="Copy a flag to another project"}}
-When developing a new feature with an experiment, you can create the experiment in the dev environment project to develop and test that the implementation is correct, then copy the experiment into the prod project to run the experiment in prod.
+When developing a new feature with an experiment, create the experiment in the dev environment project to develop and test that the implementation is correct. Then, copy the experiment into the prod project to run the experiment in prod.
 {{/partial:admonition}}
 
 
-In Amplitude Experiment, a deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. On creation, experiment deployments have an associated randomly generated **deployment key** which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
+A deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. Deployment keys are randomly generated. On creation, experiment deployments are assigned an associated deployment key which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
 
 {{partial:admonition type="note" heading="Client vs. server deployments"}}
-Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs, and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
+Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
 {{/partial:admonition}}
 
 ## Deployments
 
-Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started, but using explicit deployments for each platform or service is the best practice for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application.
+Deployments belong to Analytics projects, and a project can have multiple deployments. Name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started. However, using explicit deployments for each platform or service is better for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application.
 
 Add deployments to [Flags and Experiments](/docs/feature-experiment/workflow/feature-flag-rollouts#create-a-new-flag) in the same project. When Experiment's evaluation servers receive a request to fetch variants for a user, Experiment uses the deployment key to look up all associated flags and experiments for evaluation.
 
 ## Flags and experiments
 
-Experiment uses feature flags and experiments to serve a variable experience to a user. Flags and experiments are identified by the **flag key**, are associated with `0-n` [deployments](#deployments), and contain `1-k` [variants](#variants). The **evaluation mode** (local or remote) determines whether the flag or experiment can be [locally evaluated](/docs/feature-experiment/local-evaluation) and may limit the targeting capabilities for the flag if set to local.
+Experiment uses feature flags and experiments to serve a variable experience to a user. Flags and experiments are identified by the flag key, are associated with `0-n` [deployments](#deployments), and contain `1-k` [variants](#variants). The evaluation mode (local or remote) determines whether the flag or experiment can be [locally evaluated](/docs/feature-experiment/local-evaluation) and may limit the targeting capabilities for the flag if set to local.
 
-Feature flags and experiments share the same underlying data model, and you can migrate from one to the other retroactively. The most visible difference comes in the product interface: experiments guide you through an experiment lifecycle and give you the ability to define success metrics and perform analysis. Flags are more bare-bones, and don't include special planning and analysis sections.
+Feature flags and experiments share the same underlying data model, and you can migrate from one to the other retroactively. The most visible difference comes in the product interface: experiments guide you through an experiment lifecycle and give you the ability to define success metrics and perform analysis. Flags contain more basic functionality, and don't include special planning and analysis sections.
 
 ### Flags
 
