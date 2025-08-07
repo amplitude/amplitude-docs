@@ -255,7 +255,6 @@ Experiment's integration with Segment Analytics must be configured manually. The
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
-`SegmentExposureTrackingProvider.java`
 ```java
 class SegmentExposureTrackingProvider implements ExposureTrackingProvider {
     private Analytics analytics;
