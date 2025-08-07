@@ -14,7 +14,7 @@ You can create experiments using either Feature Experiment or Web Experiment.
 
 Feature experimentation uses feature flags to create the variants you want. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Experiment. Typically, feature flags need a little more advanced knowledge of your code to successfully use them for experimentation. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
 
-Web experimentation uses a visual editor to create variations of your web site. This editor is recommended for A/B or multi-armed banded experimentation. With the visual editor, you can select and alter web elements such as directly altering content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, create experiments without engineering resources. Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site. For more information on how to create experiments with the web editor, go to [Setting up a Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
+Web experimentation uses a visual editor to create variations of your web site. With the visual editor, you can select directly alter content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, create experiments without engineering resources. Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site. For more information on how to create experiments with the web editor, go to [Setting up a Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 ### Functional Availability
 
@@ -67,6 +67,8 @@ The following tables describe which Experiment functionality is available for Fe
 | Control mean estimator | X  |   |   |
 | Power duration estimator | X |  |   |
 | OOTB web editor widgets |   |  X |  | 
+| Project-level user permissions |  |   | X |
+| Notifications through Slack channel or webhook |  |   | X |
 
 {{/partial:collapse}}
 
