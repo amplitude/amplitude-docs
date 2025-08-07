@@ -15,7 +15,7 @@ Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation
 Local evaluation happens outside of Amplitude, which means advanced targeting and identity resolution powered by Amplitude Analytics isn't supported. That said, local evaluation allows you to perform consistent bucketing with target segments, which is often enough.
 
 {{partial:admonition type="warning" heading="Client-side local evaluation"}}
-When using client-side local evaluation it is important to note that all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has effectively been leaked to all clients, regardless of user.
+When using client-side local evaluation it's important to note that all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has effectively been leaked to all clients, regardless of user.
 {{/partial:admonition}}
 
 | <div class='big-column'>Feature</div> | Remote Evaluation | Local Evaluation |
@@ -29,7 +29,7 @@ When using client-side local evaluation it is important to note that all data us
 
 ### Cohort targeting
 
-Server-side SDKs can target cohorts if configured to do so. **Only User IDs can be targeted by local evaluation cohorts.**
+Server-side SDKs can target cohorts if configured to do so. Only User IDs can be targeted by local evaluation cohorts.
 
 | SDK | Cohort Targeting | Version |
 | --- | :---: | --- |
@@ -42,21 +42,21 @@ Server-side SDKs can target cohorts if configured to do so. **Only User IDs can 
 
 ## Implementation
 
-Local evaluation is just [evaluation](/docs/feature-experiment/implementation)--a function which takes a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) as input, and outputs a [variant](/docs/feature-experiment/data-model#variants).
+Local evaluation is just [evaluation](/docs/feature-experiment/implementation). It's a function which takes a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) as input and outputs a [variant](/docs/feature-experiment/data-model#variants).
 
-![](statamic://asset::help_center_conversions::experiment/local-evaluation.drawio.svg)
+![Diagram describing the local evaluation workflow.](statamic://asset::help_center_conversions::experiment/local-evaluation.drawio.svg)
 
-The SDK loads flag configuration updates from the server on startup and stores them in memory for access prior to each evaluation. After startup, the SDK begins polling for flag configuration updates from the server.
+The SDK loads flag configuration updates from the server on startup and stores them in memory for access before each evaluation. After startup, the SDK begins polling for flag configuration updates from the server.
 
 {{partial:admonition type="tip" heading="Edge evaluation"}}
-The local evaluation Node.js SDK can be run in edge worker/functions which support JavaScript and a distributed store. Contact your representative or email [experiment@amplitude.com](mailto:experiment@amplitude.com) to learn more.
+The local evaluation Node.js SDK can run in edge worker/functions which support JavaScript and a distributed store. Contact your representative or email [experiment@amplitude.com](mailto:experiment@amplitude.com) to learn more.
 {{/partial:admonition}}
 
 ### Exposure and assignment tracking
 
 Local evaluation SDKs track evaluations differently on the client-side vs on the server-side.
 
-- Client-side SDKs track an [**exposure event**](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
+- Client-side SDKs track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
 - Server-side SDKs track an **assignment event** (if configured to do so) when a user is evaluated.
 
 Server-side local evaluation experiments often set the Assignment event as a heuristic for Exposure.
