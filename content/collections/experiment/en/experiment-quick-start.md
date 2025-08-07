@@ -113,11 +113,7 @@ If you change the bucketing salt, users will switch between variants in your ex
  1. Go to your *Experiment > Feature Flags* and select your flag.
  2. In the Variants section, click the **Plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
- 4. In the Assignment section, define the **user segments** you want to experience your new feature. For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience)
-    1. Specify the percentage of users receiving the variant.
-    Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
-    2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
- 5. Click **Apply**.
+ 4. Click **Apply**.
  
  {{partial:admonition type='note'}}
 If you want, you can send a payload with your variant. A payload is a JSON-coded set of variables that can remotely change flags and experiments without requiring a manual code change. Because you can send a payload with your control, it's not necessary to create a variant for the control itself. 
@@ -133,6 +129,13 @@ Add JSON content to the Payload field when creating a variant. Payload content i
 }
 ```
 {{/partial:admonition}}
+
+## Add Targeting to the flag
+
+In the Assignment section, define the **user segments** you want to experience your new feature. For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience)
+    1. Specify the percentage of users receiving the variant.
+    Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
+    2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
 
 ##  Finalizing the flag
 
