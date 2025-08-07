@@ -97,7 +97,7 @@ murmur3_x86_32("bucketing_salt/bucketing_value")
 
 ### Allocation bucketing
 
-A user is determined to be allocated if the [hash](#hashing) value modulo 100 is less than the allocation configured in the segment.
+Users are considered allocated if the [hash](#hashing) value modulo 100 is less than the allocation configured in the segment.
 
 ```text
 murmur3_x86_32("bucketing_salt/bucketing_value") % 100
@@ -105,10 +105,10 @@ murmur3_x86_32("bucketing_salt/bucketing_value") % 100
 
 ### Variant bucketing
 
-After a user is allocated, variant bucketing determines which variant the user should receive. Variants are associated with values between 0 and 42949672, based on their weights.
+After users are allocated, variant bucketing determines which variant the user should receive. Variants are associated with values between 0 and 42949672, based on their weights.
 
 ```text
 floor(murmur3_x86_32("bucketing_salt/bucketing_value") / 100)
 ```
 
-For example, if variant `A` has weight 1, and variant `B` has weight 1, `A` would be associated with values in the interval `[0, 21474835]`, and variant `B` would be associated with values in the interval `[21474836, 42949672]`.
+For example, if variant `A` has weight 1, and variant `B` has weight 1, variant `A` is associated with values in the interval `[0, 21474835]`, and variant `B` is associated with values in the interval `[21474836, 42949672]`.
