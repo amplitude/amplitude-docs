@@ -45,8 +45,8 @@ Unless you specify otherwise, Amplitude Experiment splits traffic evenly between
 
 Sometimes, you may want to spread traffic differently for each user segment you’ve included:
 
-* Segment 1: Country = USA || 80% treatment, 20% control
-* Segment 2: Country = Canada || 50% treatment, 50% control
+* Segment 1: `Country = USA || 80% treatment, 20% control`
+* Segment 2: `Country = Canada || 50% treatment, 50% control`
 
 This can introduce bias into your experiment results. You should generally adhere to **uniform allocation ratios** across all user segments in an experiment. 
 

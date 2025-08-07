@@ -44,9 +44,9 @@ To begin tracking user behavior, add the one-line code snippet from Amplitude to
 
 ### Connect HubSpot
 
-1. From Amplitude Data, navigate to *Catalog > Sources*, search for `HubSpot`, and select *HubSpot Quickstart*.
-2. Select your CMS, and specify if you're on a [HubSpot Enterprise plan](https://knowledge.hubspot.com/account/manage-your-hubspot-subscription).
-3. The integration provides customized HubSpot configuration instructions based on your selection. When you complete the steps in HubSpot, click *Next*.
+1. From Amplitude Data, navigate to *Catalog > Sources*, search for `HubSpot`, and select *HubSpot CMS*.
+2. Click *Connect to HubSpot* to allow Amplitude access to your portal.
+3. Select your CMS, and follow the instructions to install. If you use HubSpot as your CMS, you can select to automatically install Amplitude's script on the domains you select.
 4. Send test events from your website or CMS to verify your instrumentation.
 
 ### Sync the cohort to HubSpot
