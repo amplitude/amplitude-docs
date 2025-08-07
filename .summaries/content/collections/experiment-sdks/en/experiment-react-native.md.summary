@@ -8,36 +8,25 @@ This documentation covers the Amplitude Experiment React Native SDK for client-s
 - @react-native-async-storage/async-storage
 - initializeWithAmplitudeAnalytics
 - ExperimentClient
-- ExperimentConfig
-- deployment key
-- remote evaluation
-- local evaluation
-- fetch() method
-- start() method
-- variant() method
-- exposure tracking
+- fetch() remote evaluation
+- start() local evaluation
+- variant() exposure tracking
 - ExperimentUser
-- automaticExposureTracking
+- ExperimentConfig
 - exposureTrackingProvider
 - userProvider
-- serverZone
-- fallbackVariant
-- initialVariants
-- Source.InitialVariants
+- deployment key
+- serverZone EU data center
+- automaticExposureTracking
 - fetchOnStart
 - pollOnStart
-- automaticFetchOnAmplitudeIdentityChange
+- initialVariants bootstrapping
+- Source.InitialVariants
+- fallbackVariant
 - instanceName
-- ExperimentUserProvider
-- ExposureTrackingProvider
-- HttpClient
-- pod install iOS
+- HttpClient interface
 - Expo support
-- group-level bucketing
-- account-level analysis
-- bootstrapping
-- server-side rendering
-- cacheReady()
-- clear() method
-- all() variants
+- pod install iOS
 - exposure() manual tracking
+- clear() variants cache
+- cacheReady() async storage
