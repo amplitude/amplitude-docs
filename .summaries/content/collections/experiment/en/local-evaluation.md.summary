@@ -1,4 +1,4 @@
-**Summary:** Documents local evaluation for Amplitude Experiment feature flags, which runs evaluation logic in SDKs rather than making network requests, achieving sub-millisecond performance but with limited targeting capabilities compared to remote evaluation (no Amplitude ID resolution, user enrichment, or sticky bucketing).
+**Summary:** This documentation covers local evaluation in Amplitude Experiment, which runs evaluation logic in the SDK rather than making network requests, providing sub-millisecond performance but with limited targeting capabilities compared to remote evaluation (no Amplitude ID resolution, user enrichment, or sticky bucketing).
 
 **Keywords:**
 - local evaluation
@@ -8,12 +8,12 @@
 - targeting segments
 - individual inclusions
 - cohort targeting server-side
+- assignment events vs exposure events
 - flag configuration polling
-- exposure events client-side
-- assignment events server-side
-- Amplitude ID resolution limitations
-- user enrichment limitations
-- sticky bucketing limitations
+- client-side data leakage warning
 - edge evaluation Node.js
 - performance benchmarks
-- client-side data leakage warning
+- cold start times
+- Amplitude ID resolution limitations
+- user enrichment restrictions
+- sticky bucketing unavailable
