@@ -40,8 +40,8 @@ To update your existing destinations to IAM roles, delete the existing connectio
 
 1. In the Amazon S3 console, go to the S3 bucket and navigate to **Permissions → Bucket Policy.** Paste the Amplitude bucket policy into the Amazon S3 console.
 2. Optionally, you can also set the following two parameters for your buckets:
-    - **Require suffix**: When set, this allows users to append a string at the end of every file exported to S3.
-    - **User property**: You can select a single user property to sync along with each user as an extra column in each file exported.
+   - **Require suffix**: When set, this allows users to append a string at the end of every file exported to S3.
+   - **User property**: You can select a single user property to sync along with each user as an extra column in each file exported.  
 
 ## Send a cohort
 
@@ -52,8 +52,8 @@ After you connect the S3 bucket to Amplitude, you can sync any cohort to that bu
 3. Select **Amazon S3**, then click **Next**.
 4. Select the S3 location. This is what you named the bucket when setting up the integration.
 5. (Optional). Set the following two optional parameters:
-      - **User Property**: Here, you can append a user property to each user exported in this cohort. The user property appears as a column in the exported CSV file.
-      - **Routing Key**: Enter a string to be appended to the end of the cohort file name in S3.
+   - **User Property**: Here, you can append a user property to each user exported in this cohort. The user property appears as a column in the exported CSV file.
+   - **Routing Key**: Enter a string to be appended to the end of the cohort file name in S3.
 6. Choose a sync cadence. 
 7. When finished, click **Sync**.
 
