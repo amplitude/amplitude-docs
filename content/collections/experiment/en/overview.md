@@ -15,21 +15,33 @@ landing_blurb: 'Learn the value of experimentation in your product.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
 ---
-For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
+Amplitude Experiment is a workflow-driven behavioral experimentation platform that lets you modify large sections of your customer's experience. This lets you test different aspects of the user journey and make changes as you receive and review the data generated from the experiment. 
+With Experiment, you can modify and configure product experiences for unique audiences through:
 
-Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates your roadmaps**, letting you focus on making better decisions and building better products.
+* **Product experimentation**: Improve key KPIs by running experiments and A/B tests to onboard new users, reduce friction for checkout experiences, roll out new features, and more.
+* **Progressive feature delivery:** Pre-plan and stage new features for beta testers, a percentage of your users, or even specific target audiences.
+* **Dynamic in-product experiences:** Deploy and adapt custom experiences at scale.
 
-With Experiment, you can easily **modify and configure product experiences** for unique audiences through:
+There are two categories of experiments:
+* **Feature Experiments**: Uses feature flags to display or hide functionality or A/B options from your customers.
+* **Web Experiments**: Uses a Web editor to let you make direct changes to your website.
 
-* **Product experimentation**: Improve key KPIs by **running experiments and A/B tests** to onboard new users, reduce friction for checkout experiences, roll out new features, and more.
-* **Progressive feature delivery:** Pre-plan and **stage new features** for beta testers, a percentage of your users, or even specific target audiences.
-* **Dynamic in-product experiences:** Deploy and adapt **custom experiences** at scale.
+## Feature Flags and Web Editor differences
 
-Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
+Feature experimentation is done through the use of feature flags. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](docs/feature-experiment/workflow/feature-flag-rollouts).
 
 {{partial:admonition type='note'}}
 Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
 {{/partial:admonition}}
+
+Web experimentation is done through a visual editor. This editor is recommended for A/B or multi-armed banded experimentation. With the visual editor, you can select and alter web elements such as directly altering content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, to create experiments without engineering resources. 
+
+Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site.
+
+### Functional Availability
+
+For in depth information about what functionality is available for Feature, Web, or both types of experimentation, go to [Differences Between Feature and Web Experimentation](/docs/experiment/differences-between-feature-and-web-experimentation).
+
 
 This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
 

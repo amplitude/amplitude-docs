@@ -7,8 +7,8 @@ tree:
         id: 1bad217f-262f-4326-a9fe-4ca32db686b8
         entry: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
       -
-        id: 114b9adc-59e4-4342-87b9-8539de3e69d8
-        title: 'Feature vs Web Experiments'
+        id: 7fdccdec-2267-4c69-a624-10aa31405026
+        entry: d002d2ad-3a7f-41f7-aec9-0df7db9fb90b
   -
     id: 4395cf69-ddb7-4127-9192-ff9c20777a07
     title: 'Experiment Planning'
