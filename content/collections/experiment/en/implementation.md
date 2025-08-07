@@ -16,7 +16,7 @@ Evaluation refers to the act of determining which variant, if any, a user is buc
 
 ## Pre-targeting
 
-The pre-targeting steps may decide the evaluated variant prior to targeting segments.
+The pre-targeting steps may decide the evaluated variant before targeting segments.
 
 ### Activation
 
@@ -28,7 +28,7 @@ For simple on/off flags, Amplitude recommends using the [all users segment](#all
 
 ### Flag dependencies
 
-A flag may define a [dependency](/docs/feature-experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are currently utilized to implement [mutual exclusion groups](/docs/feature-experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
+A flag may define a [dependency](/docs/feature-experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are utilized to implement [mutual exclusion groups](/docs/feature-experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 {{partial:admonition type="example" heading=""}}
 For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant `on`.
@@ -37,7 +37,7 @@ For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant 
 * Flag-2 (50% `control`, 50% `treatment`)
     * Depends on Flag-1=`on`
 
-The dependency ensures that Flag-1 will always be evaluated before Flag-2. Further, if Flag-1 evaluates to `on`, then Flag-2 will be fully evaluated. If Flag-1 does not evaluate to a variant, or to a variant other than `on`, the evaluation of Flag-2 fails the dependency check and no variant is assigned.
+The dependency ensures that Flag-1 will always be evaluated before Flag-2. Further, if Flag-1 evaluates to `on`, then Flag-2 will be fully evaluated. If Flag-1 doesn't evaluate to a variant, or to a variant other than `on`, the evaluation of Flag-2 fails the dependency check and no variant is assigned.
 
 In this example, 50% of evaluated users will be assigned a variant for Flag-2.
 {{/partial:admonition}}
@@ -50,10 +50,10 @@ Inclusions allow you to force bucket specific users (identified by either their 
 
 
 {{partial:admonition type="warning" heading=""}}
-Sticky bucketing should be used with care. Even if sticky bucketing is disabled, [consistent bucketing](#consistent-bucketing) means that users are still bucketed into the same variant given that the user and targeting rules remain static. Changing targeting rules on an active flag with sticky bucketing enabled may cause a [sample ratio mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), which may skew experiment results.
+Use sticky bucketing with care. Even if sticky bucketing is disabled, [consistent bucketing](#consistent-bucketing) means that users are still bucketed into the same variant given that the user and targeting rules remain static. Changing targeting rules on an active flag with sticky bucketing enabled may cause a [sample ratio mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), which may skew experiment results.
 {{/partial:admonition}}
 
-If sticky bucketing is enabled, a user will always get evaluated to the same previously bucketed variant, regardless of the current targeting. Sticky bucketing doesn't apply if the user hasn't been bucketed into a variant.
+If sticky bucketing is enabled, a user always gets evaluated to the same previously bucketed variant, regardless of the current targeting. Sticky bucketing doesn't apply if the user hasn't yet been bucketed into a variant.
 
 ## Targeting segments
 
@@ -65,7 +65,7 @@ A [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments
 
 ## All users segment
 
-The all users segment captures all users who don't match a [targeting segment](#targeting-segments) (if any are added). Users are bucketed into a variant (or no variant) via [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights.
+The all users segment captures all users who don't match a [targeting segment](#targeting-segments) (if any). Users are bucketed into a variant (or no variant) through [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights.
 
 ## Consistent bucketing
 
