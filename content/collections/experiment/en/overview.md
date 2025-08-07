@@ -25,27 +25,27 @@ With Experiment, you can easily **modify and configure product experiences** for
 * **Progressive feature delivery:** Pre-plan and **stage new features** for beta testers, a percentage of your users, or even specific target audiences.
 * **Dynamic in-product experiences:** Deploy and adapt **custom experiences** at scale.
 
-Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
+Experiment enables all this through flags. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
 
 {{partial:admonition type='note'}}
-Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
+Amplitude Experiment defaults to a sequential testing statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
 {{/partial:admonition}}
 
-This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
+This article provides a high-level overview of the Amplitude Experiment workflow:
 
 ## Creating an experiment: an overview
 
 Many experimentation programs fail in the first step of the process—nobody can **articulate the problem** experimentation is supposed to solve. If you can’t explain—in clear, simple language—why you’re running an experiment, you can’t realistically hope to learn anything useful from it. 
 
-Before doing anything else, spend some time coming up with a strong mission statement for your experiment. It should, at the very least, answer these two questions: What’s the problem, and how can running an experiment help you solve it? The effort you put in at this stage will pay big dividends later.
+Before doing anything else, spend some time coming up with a strong mission statement for your experiment. It should answer the following questions: What’s the problem, and how can running an experiment help you solve it? The effort you put in at this stage will pay big dividends later.
 
-Once you’ve done that, you’re ready to **configure your experiment**. This means creating a new deployment (or choosing one you’ve created earlier) for the experiment, and installing the SDK you’ll be using.
+After you’ve done that, you’re ready to configure your experiment. This means creating a new deployment (or choosing one you’ve created earlier) for the experiment, and installing the SDK you’ll be using.
 
 ### Create a hypothesis
 
 Next, reach back to the mission statement you came up with for your experiment. This will serve as the foundation for your experiment’s **hypothesis**. What’s a hypothesis? Think of it as a prediction of how your experiment is likely to turn out. This is how you’ll know if your experiment succeeds or fails.
 
-But this **problem** statement is only the first part of a hypothesis. There are two others: a proposed **solution**, and a predicted **result**. The first is essentially a description of the changes you want to make to fix your problem—for example, consolidate two steps of the onboarding process into one—while the second is what you expect the results to be: i.e., “decrease onboarding churn by 20%.”
+But this **problem** statement is only the first part of a hypothesis. There are two others: a proposed **solution**, and a predicted **result**. The first is essentially a description of the changes you want to make to fix your problem—for example, consolidate two steps of the onboarding process into one—while the second is what you expect the results to be: for example, “decrease onboarding churn by 20%.”
 
 Here’s an example of a hypothesis statement:
 
