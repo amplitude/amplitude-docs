@@ -11,7 +11,7 @@ instrumentation_guide: true
 platform: browser
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 package_name: '@amplitude/plugin-session-replay-browser'
-full_details: false
+full_details: true
 public: true
 description: 'Use the Session Replay plugin if you instrument your site with Amplitude Browser SDK 2.'
 ---
@@ -19,8 +19,7 @@ description: 'Use the Session Replay plugin if you instrument your site with Amp
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
-This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk). For more information about the Browser SDK, see 
-[Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
+This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk). For more information about the Browser SDK, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 {{partial:admonition type="info" heading="Session Replay and performance"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
@@ -109,17 +108,21 @@ initAll('YOUR_API_KEY', {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than once, you may see mismatches in Device ID or Session ID.
+You can also add the code directly to the `<head>` of your site. The implementation depends on the way you instrument your site. If you call `analytics-browser-#.##.##.js.gz` directly, use the Legacy script. If you call `AMPLITUDE_API_KEY.js`, use the Unified script
 
-```html
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.0-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.19.3-min.js.gz"></script>
-<script>
-const sessionReplayTracking = window.sessionReplay.plugin();
-window.amplitude.add(sessionReplayTracking);
-window.amplitude.init(API_KEY)
-</script>
-```
+Be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than once, you may have mismatches in Device ID or Session ID.
+
+{{partial:tabs tabs="Legacy script, Unified script"}}
+{{partial:tab name="Legacy script"}}
+{{partial:partials/code/snippet autocapture="false" unified="false" session_replay="true"}}
+
+{{/partial:tab}}
+{{partial:tab name="Unified script"}}
+{{partial:partials/code/snippet autocapture="false" unified="true" session_replay="true"}}
+
+{{/partial:tab}}
+{{/partial:tabs}}
+
 
 {{partial:admonition type="info" heading=""}}
 Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.

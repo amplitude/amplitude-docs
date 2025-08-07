@@ -5,47 +5,34 @@ title: 'Site components'
 package: "@amplitude/session-replay-browser"
 ---
 
-{{partial:admonition type="warning" heading="test"}}
-Here's some **formatted** *text*. And `this`.
+## Unified with Autocapture, and Session Replay
 
-```js
-import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
+{{partial:partials/code/snippet autocapture="true" unified="true" session_replay="true"}}
 
-const pageUrlEnrichment = pageUrlEnrichmentPlugin();
-amplitude.add(pageUrlEnrichment);
-amplitude.init(API_KEY);
-```
-{{/partial:admonition}}
+## Unified with autocapture
 
+{{partial:partials/code/snippet autocapture="true" unified="true"}}
 
-## test
+## Unified with session replay
 
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
+{{partial:partials/code/snippet autocapture="false" unified="true" session_replay="true"}}
 
-// Advanced boot with options
+## Unified only
 
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:partials/code/snippet autocapture="false" unified="true"}}
 
-More content **here**
+## Legacy with Autocapture, and Session Replay
 
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
+{{partial:partials/code/snippet autocapture="true" unified="false" session_replay="true"}}
 
-// Advanced boot with options
+## Legacy with autocapture
 
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:partials/code/snippet autocapture="true" unified="false"}}
+
+## Legacy with session replay
+
+{{partial:partials/code/snippet autocapture="false" unified="false" session_replay="true"}}
+
+## Legacy only
+
+{{partial:partials/code/snippet autocapture="false" unified="false"}}
