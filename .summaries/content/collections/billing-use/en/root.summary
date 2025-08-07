@@ -1,54 +1,64 @@
-## Amplitude Billing and Usage Management System
+## Product Overview
 
-Amplitude provides a comprehensive billing and usage management system designed to help organizations monitor, track, and optimize their analytics platform consumption across different subscription tiers.
+Amplitude's billing and usage management system provides comprehensive tracking and reporting capabilities for organizations using the analytics platform. The system operates on a Monthly Tracked Users (MTU) billing model for Scholarship, Starter, and Plus plans, with sophisticated usage monitoring and reporting features available across different plan tiers.
 
-## Core Products and Features
+## Product Relationships and Features
 
-### Monthly Tracked Users (MTU) Billing Model
-The primary billing mechanism for Amplitude's Scholarship, Starter, and Plus plans centers around Monthly Tracked Users (MTU). This system calculates billing based on unique users tracked within monthly periods, with sophisticated user identification and merging capabilities that consolidate anonymous users with identified users through user ID mapping and identify calls.
+The billing system consists of two primary components that work in tandem:
 
-### Usage Reports and Analytics
-Amplitude offers organizational-level usage reports exclusively for Growth and Enterprise plans, providing detailed insights into platform adoption and consumption patterns. These reports enable administrators to understand how their organization utilizes Amplitude's analytics capabilities.
+**MTU Billing Engine**: Handles the core billing calculations based on Monthly Tracked Users, implementing complex user identification and event attribution logic. This system manages quota enforcement, user ID merging, and synthetic MTU calculations.
 
-## Product Relationships and Integration
+**Usage Reports System**: Provides organization-level analytics and monitoring capabilities through two main interfaces - User Metrics and Event Usage tabs. This system offers visibility into platform adoption and resource consumption patterns.
 
-The billing system operates through two interconnected components:
-
-**MTU Calculation Engine**: Processes user tracking data in UTC time, handles user ID consolidation, manages anonymous user merging, and calculates synthetic MTUs when events-per-MTU limits are exceeded (1,000 events per MTU threshold).
-
-**Usage Reporting Dashboard**: Provides organizational analytics through User Metrics and Event Usage tabs, offering both visual charts and downloadable CSV/JSON reports for comprehensive usage analysis.
+These components integrate to provide both billing accuracy and usage transparency, allowing organizations to understand their Amplitude consumption patterns while ensuring proper billing calculations.
 
 ## Key Nomenclature and Definitions
 
-**Monthly Tracked Users (MTU)**: Unique users tracked within a monthly billing period, serving as the primary billing unit for lower-tier plans.
+**Monthly Tracked Users (MTU)**: The primary billing metric representing unique users tracked within a calendar month, calculated using UTC time boundaries.
 
-**Synthetic MTUs**: Additional billing units calculated when events exceed the 1,000 events per MTU threshold, ensuring fair usage pricing.
+**User ID Merging/Consolidation**: Process where anonymous users are merged with identified users through identify calls, affecting MTU counts and billing calculations.
 
-**User ID Consolidation**: Process of merging anonymous users with identified users through user mapping and identify calls.
+**Synthetic MTUs**: Additional MTU units calculated when events-per-MTU ratios exceed the 1,000 events per MTU threshold, ensuring billing accuracy for high-event-volume users.
 
-**Events Per MTU Limit**: Billing control mechanism that triggers synthetic MTU calculations when event volume exceeds predefined thresholds.
+**Drop Filters**: Data filtering mechanisms that can create discrepancies between ingested events and billable MTUs.
 
-**Drop Filters**: Data filtering mechanisms that can create billing discrepancies by affecting MTU calculations.
+**Backfilled Events**: Historical events that impact MTU calculations when processed, potentially affecting billing for past periods.
 
-**Backfilled Events**: Historical events that impact MTU calculations and billing when imported into the system.
+**Event Query Counts**: Metrics tracking how events are queried and analyzed within Amplitude's analytics features.
 
-## Broader Product Ecosystem Integration
+**Active Users Chart**: Visualization showing user engagement patterns within the organization's Amplitude usage.
 
-The billing and usage system integrates with Amplitude's broader analytics platform through several touchpoints:
+**Depth of Engagement**: Metrics measuring how extensively users interact with Amplitude's features and content.
 
-- **Event Ingestion Pipeline**: Processes all incoming events for MTU calculation and usage tracking
-- **User Identity Management**: Handles user ID merging and anonymous user consolidation across the platform
-- **Quota Enforcement System**: Manages account blocking for free plan overages and sampling ineligibility for MTU pricing violations
-- **Administrative Controls**: Provides organization settings and admin permissions for usage report access
-- **Analytics Features**: Excludes specific event types like [Experiment] Exposure events from billing calculations
+## Ecosystem Integration
+
+The billing and usage system integrates deeply with Amplitude's broader analytics platform:
+
+- **Plan Tier Integration**: Different features are available based on subscription levels (Scholarship, Starter, Plus, Growth, Enterprise)
+- **Permission System**: Usage reports require admin/manager permissions, indicating integration with Amplitude's role-based access control
+- **Analytics Features**: The system tracks usage across charts, dashboards, notebooks, pathfinder analysis, and cohort definitions
+- **Data Pipeline**: Integrates with event ingestion, user identification systems, and data processing workflows
+- **Export Capabilities**: Provides CSV/JSON export functionality for external analysis and reporting
 
 ## Technical Implementation Details
 
-The system operates without specific API endpoints or command line invocations mentioned in the documentation, but includes:
+**Billing Calculations**: 
+- UTC-based monthly billing cycles
+- Real-time MTU quota enforcement with account blocking for free plan overages
+- User mapping through identify calls
+- Exclusion of [Experiment] Exposure events from MTU calculations
 
-- **UTC Time-based Billing Cycles**: Ensures consistent global billing calculations
-- **Cross-project Views**: Enables usage tracking across multiple projects within an organization
-- **CSV/JSON Export Functionality**: Allows programmatic access to usage data for external analysis
-- **Real-time Quota Monitoring**: Provides immediate feedback on usage limits and potential overages
+**Usage Monitoring**:
+- Cross-project usage views
+- Event volume ingestion tracking
+- Custom events and metrics monitoring
+- Weekly learning user analytics
+- Broadcasted learnings tracking
 
-The billing system supports various chart types usage tracking, dashboard consumption monitoring, and notebook sharing analytics, providing comprehensive visibility into how organizations consume Amplitude's analytics capabilities while maintaining fair and transparent billing practices.
+**Data Access**:
+- Downloadable usage reports in CSV/JSON formats
+- Organization-level analytics dashboards
+- Content usage panels with detailed breakdowns
+- Event query count tracking across all platform features
+
+The system ensures billing accuracy while providing transparency into platform usage, supporting both financial management and adoption optimization for Amplitude customers.

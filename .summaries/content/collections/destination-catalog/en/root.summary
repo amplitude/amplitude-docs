@@ -12,42 +12,48 @@ The destination catalog operates on three primary integration patterns:
 
 **Warehouse Destinations** provide bulk data export capabilities to cloud storage and data warehouse platforms, supporting recurring syncs, historical backfills, and structured data schemas for analytics and machine learning workflows.
 
-### Key Platform Categories
+### Key Product Relationships
 
-**Marketing Automation & CRM**: Integrations with platforms like HubSpot, Salesforce Marketing Cloud, Braze, Customer.io, and Iterable enable sophisticated lifecycle marketing campaigns driven by behavioral triggers and cohort membership.
+The destination catalog integrates deeply with Amplitude's core analytics platform through several key components:
 
-**Advertising Networks**: Destinations for Facebook Ads, Google Ads, TikTok Ads, LinkedIn Ads, and Snapchat enable first-party behavioral data activation for audience targeting, conversion tracking, and campaign optimization.
+- **Amplitude Activation** powers real-time streaming integrations with platforms like Braze, Customer.io, and Intercom
+- **Behavioral Cohorts** serve as the foundation for audience targeting across advertising networks (Facebook Ads, Google Ads, TikTok Ads) and marketing platforms
+- **User Profile API** enables personalized content generation through integrations like Movable Ink
+- **Export API** provides standardized JSON formatting for warehouse and storage destinations
 
-**Product Experience Platforms**: Integrations with tools like Appcues, CommandBar, Userflow, and Chameleon power personalized in-app experiences, onboarding flows, and feature adoption campaigns based on user behavior patterns.
+### Authentication and Configuration Patterns
 
-**Experimentation & Feature Management**: Platforms like Optimizely, LaunchDarkly, Split, and Statsig receive cohort data for targeted experiments and feature flag rollouts based on behavioral segmentation.
+Destinations employ various authentication methods including OAuth (HubSpot, Facebook Ads), API keys (most platforms), bearer tokens, and service account credentials (Google Cloud, AWS). Common configuration requirements include:
 
-**Data Infrastructure**: Cloud platforms including Amazon S3, Google Cloud Storage, Snowflake, BigQuery, and Azure Blob Storage support enterprise data workflows with configurable export formats and scheduling.
+- User identifier mapping (user_id, email, device IDs, platform-specific identifiers)
+- Field mapping for user properties and event parameters
+- Sync cadence configuration (real-time, scheduled intervals)
+- Event and property filtering capabilities
 
-### Authentication & Configuration Patterns
+### Major Platform Categories
 
-Most destinations require platform-specific authentication credentials:
-- **API Keys**: Simple token-based authentication for platforms like Braze, Mixpanel, and Intercom
-- **OAuth**: Secure authorization flows for platforms like Google Ads, Facebook Ads, and HubSpot
-- **Service Accounts**: Cloud platform integrations using JSON key files or IAM roles
-- **Custom Tokens**: Platform-specific authentication like Amplitude API keys or bearer tokens
+**Marketing Automation**: Braze, Customer.io, HubSpot, Klaviyo, Mailchimp, Marketo enable cohort-based email campaigns and lifecycle messaging
 
-User identifier mapping is critical across integrations, supporting various ID types including email addresses, user IDs, device identifiers (IDFA, GAID), and platform-specific IDs with automatic hashing for PII protection where required.
+**Advertising Networks**: Facebook Ads, Google Ads, TikTok Ads, LinkedIn Ads, Snapchat Ads support audience targeting with device identifiers (IDFA, GAID) and hashed PII
 
-### Data Transformation & Filtering
+**Customer Engagement**: Intercom, Zendesk, Appcues, Chameleon enable in-app messaging and support workflows based on behavioral triggers
 
-Destinations support sophisticated data transformation capabilities:
-- **Event Filtering**: Selective forwarding of specific events based on event names or properties
-- **Property Mapping**: Custom field mapping between Amplitude properties and destination schemas  
-- **Template Customization**: Apache FreeMarker templating for webhook payloads and custom data formats
-- **Schema Transformation**: Automatic conversion between Amplitude's event format and destination-specific schemas
+**Data Infrastructure**: Amazon S3, Google BigQuery, Snowflake, Azure Blob Storage provide scalable data export with structured schemas and partitioning
 
-### Rate Limiting & Delivery Guarantees
+**Experimentation Platforms**: Optimizely, LaunchDarkly, Split, Statsig enable feature flag targeting based on behavioral cohorts
 
-The platform implements robust delivery mechanisms with platform-specific rate limiting, retry logic with exponential backoff, and delivery status monitoring. Most integrations support 2MB request limits with 429 rate limiting responses and automatic retry mechanisms.
+### Technical Implementation Details
 
-### Enterprise Features
+**API Endpoints**: Destinations utilize platform-specific APIs such as Braze's `/users/track` endpoint, Google Ads Upload Click Conversions API, and TikTok Events API
 
-Advanced capabilities include IP allowlisting for secure data transfer, custom webhook endpoints with configurable headers, historical data backfills, and comprehensive audit logging. Data export formats support JSON, CSV, and platform-specific schemas with automatic compression and partitioning.
+**Data Formats**: Most integrations support JSON payloads with standardized schemas including `amplitude_id`, `user_id`, `event_properties`, and `user_properties` fields
 
-The destination catalog represents Amplitude's commitment to enabling comprehensive customer data activation across the modern marketing and product technology stack, providing the infrastructure for data-driven customer experiences at scale.
+**Rate Limiting**: Platforms implement various limits (e.g., TikTok Ads: 24 calls/day/audience, MoEngage: 10k events/app/minute)
+
+**Data Processing**: Warehouse destinations support micro-batch processing, deduplication functions, and automatic integrity checks with backfill capabilities
+
+### Broader Ecosystem Integration
+
+The destination catalog positions Amplitude as a central behavioral data hub within the modern data stack. By providing standardized connectors to marketing clouds (Salesforce Marketing Cloud), CDPs (Segment), attribution platforms (AppsFlyer, Adjust), and business intelligence tools, Amplitude enables organizations to create unified customer experiences across all touchpoints while maintaining data consistency and governance.
+
+The catalog's extensive coverage of both B2C marketing tools and B2B customer success platforms (Planhat, Productboard) demonstrates Amplitude's versatility across different business models and use cases, from e-commerce personalization to SaaS product adoption optimization.

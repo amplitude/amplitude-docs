@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the React Native SDK for Amplitude analytics, detailing installation, initialization, configuration, and event tracking capabilities. It includes specific compatibility requirements for React Native versions, native module dependencies like @react-native-async-storage/async-storage, and platform-specific features like advertising identifiers (ADID, IDFV, IDFA, AppSetId) and carrier tracking limitations on iOS 16+.
+This documentation covers the React Native SDK for Amplitude analytics, detailing installation, initialization, configuration, and event tracking functionality. It includes specific compatibility requirements for React Native versions, native module dependencies like @react-native-async-storage/async-storage, and platform-specific features like advertising identifiers (ADID, IDFV, IDFA, AppSetId) and carrier detection.
 
 ## Keywords
 
@@ -10,23 +10,26 @@ This documentation covers the React Native SDK for Amplitude analytics, detailin
 - pod install iOS
 - compatibility matrix
 - Gradle Android Gradle Plugin
-- track events
-- identify user properties
-- revenue tracking
-- group properties
-- advertising identifiers ADID IDFV IDFA AppSetId
-- carrier tracking iOS 16
-- OTA updates over the air
-- Expo support
+- init() initialization
+- track() events
+- identify() user properties
+- revenue() tracking
+- setUserId setDeviceId setSessionId
+- flush() event buffer
+- TrackingOptions optional tracking
+- ADID IDFV IDFA AppSetId advertising identifiers
+- carrier detection iOS Android
 - plugins enrichment destination
-- flush events
-- session tracking
-- trackingOptions
+- Transport HTTP client
 - serverZone EU data residency
-- HTTP V2 API
-- batch API useBatch
-- transportProvider custom HTTP client
-- location_lat location_lng
+- useBatch batch API
+- flushQueueSize flushIntervalMillis
 - migrateLegacyData maintenance SDK
-- CTCarrier serviceSubscriberCellularProviders deprecated
-- play-services-appset play-services-ads-identifier
+- trackingSessionEvents
+- Expo OTA updates
+- location_lat location_lng
+- groupIdentify group properties
+- setOptOut opt out tracking
+- reset user logout
+- logLevel debugging
+- storageProvider cookieStorage

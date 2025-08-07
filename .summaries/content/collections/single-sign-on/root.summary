@@ -1,62 +1,57 @@
-## Amplitude Single Sign-On (SSO)
+## Amplitude Single Sign-On (SSO) Product Overview
 
-Amplitude's Single Sign-On solution is a SAML 2.0-based authentication system that enables organizations to centrally manage user access through existing identity providers. Available on Growth and Enterprise plans, the SSO implementation supports just-in-time (JIT) provisioning for automatic user onboarding and integrates with Amplitude's organizational access control framework.
+Amplitude's Single Sign-On solution is a SAML 2.0-based authentication system that enables organizations to integrate their existing identity providers with Amplitude's analytics platform. The SSO implementation supports major enterprise identity providers and includes just-in-time user provisioning capabilities, available for Growth and Enterprise plan customers.
 
-## Supported Identity Providers and Integration Architecture
+## Product Architecture and Feature Relationships
 
-The SSO system provides dedicated integration pathways for five major identity providers plus custom SAML 2.0 compliant providers:
+The SSO system operates through a standardized SAML 2.0 integration pattern across all supported identity providers. Each integration follows a consistent configuration workflow:
 
-**Primary Supported Providers:**
-- **Auth0** - SAML2 addon configuration with client creation
-- **Microsoft Azure Active Directory** - Enterprise applications integration
-- **G Suite (Google Workspace)** - SAML apps configuration through admin console
-- **Okta** - SAML 2.0 app integration via admin dashboard
-- **OneLogin** - Direct SAML 2.0 configuration with org ID requirements
+1. **Identity Provider Configuration**: Setting up the Amplitude application within the IdP's management console
+2. **SAML Parameter Exchange**: Configuring Entity ID and Assertion Consumer Service (ACS) URL
+3. **Metadata Integration**: Downloading IdP metadata and uploading to Amplitude's organizational settings
+4. **Authentication Flow**: SAML assertion processing with email resolution for user identification
 
-**Custom Provider Support:**
-- **Other/Custom Providers** - Generic SAML 2.0 compliant identity provider integration through manual configuration
+The system supports both pre-configured integrations for major providers and a flexible "Other" option for custom SAML 2.0 compliant identity providers.
 
-## Key Nomenclature and Technical Components
+## Key Nomenclature and Definitions
 
-**Core SAML Configuration Elements:**
-- **Entity ID** - Unique identifier for the Amplitude service provider in SAML exchanges
-- **Assertion Consumer Service URL (ACS URL)** - Endpoint where SAML assertions are posted after authentication
-- **Identity Provider (IdP) Metadata** - XML configuration file containing provider-specific authentication parameters
-- **Application Callback URL** - Provider-specific redirect endpoint for post-authentication routing
+**SAML 2.0**: Security Assertion Markup Language standard used for authentication and authorization
+**Entity ID**: Unique identifier for the service provider (Amplitude) in SAML transactions
+**Assertion Consumer Service (ACS) URL**: Endpoint where SAML assertions are posted after authentication
+**Identity Provider (IdP)**: External authentication service (Auth0, Azure AD, G Suite, Okta, OneLogin)
+**Service Provider (SP)**: Amplitude acting as the service receiving authentication assertions
+**IdP Metadata**: XML configuration file containing identity provider settings and certificates
+**Just-in-Time (JIT) Provisioning**: Automatic user account creation upon first successful SSO authentication
+**SAML Assertion**: Authentication response containing user identity and attribute information
 
-**Authentication Flow Components:**
-- **SAML 2.0 Assertions** - Authentication tokens containing user identity information
-- **Email Claim Resolution** - Process for extracting user email addresses from SAML assertions using xmlsoap.org identity claims
-- **Just-in-Time (JIT) Provisioning** - Automatic user account creation upon first successful authentication
+## Supported Identity Providers and Integrations
+
+**Auth0**: Requires SAML2 addon configuration within Auth0 clients, with certificate metadata exchange through Auth0's Usage tab
+
+**Microsoft Azure Active Directory**: Integration through Azure Enterprise applications with user.mail identifier mapping
+
+**G Suite**: Configuration via Google Admin console SAML apps with IDP metadata download capabilities
+
+**Okta**: SAML 2.0 app integration through Okta admin dashboard with IdP metadata XML generation
+
+**OneLogin**: App setup through OneLogin's application catalog with SAML metadata file export
+
+**Custom Providers**: "Other" option supporting any SAML 2.0 compliant identity provider through manual metadata file upload
 
 ## Product Ecosystem Integration
 
-The SSO system operates as a centralized authentication layer within Amplitude's organizational access control framework. It manages user authentication while preserving existing project-level permissions and user role assignments. The solution provides organizational-level access control without disrupting granular project permissions for authenticated users, maintaining the separation between authentication (who you are) and authorization (what you can access).
+The SSO system integrates with Amplitude's broader organizational management framework through:
 
-## Configuration Management
+- **Organization Settings**: Central configuration hub accessed via Access & SSO Settings
+- **Project Permissions**: SSO authentication inherits existing project-level access controls
+- **User Management**: Email-based user resolution using SAML assertion attributes (xmlsoap.org identity claims)
+- **Plan Restrictions**: Feature availability tied to Growth and Enterprise subscription tiers
 
-**Administrative Interface:**
-- **Navigation Path:** Organization Settings > Access & SSO Settings
-- **Required Permissions:** Organization administrator privileges
-- **Configuration Method:** Identity Provider dropdown selection with metadata file upload
+## Configuration Endpoints and Management
 
-**Integration Workflow Pattern:**
-1. **Provider-Side Configuration:**
-   - Create/configure application integration in identity provider
-   - Set Entity ID and ACS URL parameters
-   - Generate and download IdP metadata XML
+All SSO configurations are managed through Amplitude's web interface at:
+- **Primary Configuration Path**: Organization Settings > Access & SSO Settings > Single Sign-On
+- **Identity Provider Selection**: Dropdown menu with pre-configured options plus "Other" for custom providers
+- **Metadata Upload Interface**: File upload system for IdP metadata XML/certificate files
 
-2. **Amplitude-Side Configuration:**
-   - Navigate to Access & SSO Settings
-   - Select appropriate identity provider from dropdown
-   - Upload IdP metadata file
-   - Complete SSO activation
-
-## Technical Specifications
-
-- **Protocol Support:** SAML 2.0 compliant authentication
-- **User Identification:** Email-based user resolution from SAML assertions
-- **Provisioning:** Automatic just-in-time user creation
-- **Metadata Format:** Standard SAML IdP metadata XML files
-- **Authentication Flow:** Service Provider-initiated SAML authentication
-- **Plan Availability:** Growth and Enterprise plans
+The system does not expose direct API endpoints for SSO configuration, relying instead on web-based administrative interfaces for security and compliance purposes.

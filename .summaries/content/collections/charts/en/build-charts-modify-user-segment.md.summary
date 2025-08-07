@@ -1,15 +1,17 @@
-**Summary:** This documentation explains how to modify user segments in Amplitude charts by adding filters with user properties and behavioral cohorts, covering filter operators (is, contains, starts with, set is, set contains, glob match), OR/AND clause logic, and property value matching at event time.
+**Summary:** This documentation explains how to modify user segments in Amplitude charts by adding filters with user properties and behavioral cohorts, covering filter operators like `is`, `contains`, `set is`, `set contains`, `glob match`, and the creation of OR/AND clauses for precise segment definitions.
 
 **Keywords:**
 - user segment modification
 - Amplitude Segmentation Module
-- filter operators (is, contains, starts with, set is, set contains, glob match)
+- filter operators (is, contains, set is, set contains, glob match)
 - user properties filtering
 - behavioral cohorts
-- OR clause multiple values
-- AND clause additional filters
-- event-time property values
 - array operators
-- Device ID, Event ID, Session ID exact values
-- glob matching wildcards
+- OR clause segment filtering
+- AND clause segment filtering
 - segment definition refinement
+- property values filtering
+- Device ID segmentation
+- Event ID filtering
+- glob pattern matching
+- array set matching

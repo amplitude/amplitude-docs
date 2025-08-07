@@ -1,59 +1,68 @@
 ## Amplitude Data Tables Product Overview
 
-Amplitude Data Tables is a comprehensive multi-dimensional analytics platform that enables advanced data analysis through customizable metrics, attribution modeling, and session-based insights. The product serves as a powerful extension to Amplitude Analytics, providing sophisticated analytical capabilities for marketing attribution, user behavior analysis, and performance measurement across web and mobile applications.
+Amplitude Data Tables is a comprehensive multi-dimensional analytics platform that enables advanced data analysis through customizable metrics, attribution modeling, and session-based insights. The product serves as a powerful extension to Amplitude Analytics, providing sophisticated analytical capabilities for marketing attribution, user behavior analysis, and conversion optimization.
 
-## Product Relationships and Feature Integration
+## Product Features and Relationships
 
-Data Tables operates as a central hub connecting multiple analytical components:
+**Core Analytics Engine**
+Data Tables centers around creating and analyzing custom metrics across multiple dimensions. The platform supports four primary metric types: Event Segmentation, Revenue, Formula, and Funnels. These metrics can be combined with up to five top-level group-by properties and nested secondary group-bys to create complex multi-dimensional analyses.
 
-**Core Metric System**: Data Tables integrates with Event Segmentation charts through reusable metrics that can be shared project-wide. These metrics include Event Segmentation, Revenue, Formula, and Funnel types, with verification capabilities for Growth and Enterprise plans.
+**Attribution Analysis Framework**
+The attribution system provides eight pre-built models (First Touch, Last Touch, Linear, Participation, U-Shaped, J-Shaped, Inverse J-Shaped, and Data Driven using Markov chains) plus custom attribution model creation. This framework integrates with UTM source tracking and supports configurable lookback windows with property value exclusions for precise marketing channel analysis.
 
-**Attribution Engine**: The multi-touch attribution system works seamlessly with Data Tables to provide comprehensive marketing analysis through eight pre-built models (First Touch, Last Touch, Linear, Participation, U-Shaped, J-Shaped, Inverse J-Shaped, and Data Driven using Markov chains) plus custom attribution capabilities.
+**Session Analytics Suite**
+Session metrics (bounce rate, exit rate, entry rate, entries, exits) work in conjunction with Entry/Exit Analysis to provide comprehensive user journey insights. The Time Spent Analysis feature calculates duration between consecutive events using a 30-minute timeout window, enabling detailed engagement measurement.
 
-**Session Analytics**: Session metrics (bounce rate, exit rate, entry rate, entries, exits) integrate with Page View events and custom session definitions, while Entry/Exit Analysis applies session dimensions to various metric types.
-
-**Time Analysis**: Time spent analysis connects with consecutive event tracking and integrates with group-by properties for granular duration measurements.
+**Data Management and Export**
+The platform includes robust data handling with specific limits for different analysis types and comprehensive CSV export capabilities with the Dashboard REST API supporting programmatic access.
 
 ## Key Nomenclature and Definitions
 
-**Metrics**: Reusable analysis objects that can be Event Segmentation, Revenue, Formula, or Funnel types, shareable across projects with verification capabilities.
+**Metrics and Dimensions**
+- **Reusable Metrics**: Project-wide shared analysis objects that can be verified/officiated by managers and administrators
+- **Group-by Properties**: Dimensional attributes used to segment data, supporting both top-level and nested configurations
+- **Active Events**: Events that contribute to session-based calculations and time spent analysis
+- **Attribution Touch Points**: Marketing interaction points used in multi-touch attribution modeling
 
-**Group-by Properties**: Dimensional analysis parameters supporting up to five top-level group-bys with nested secondary group-bys for multi-dimensional segmentation.
+**Session Concepts**
+- **Session Totals**: Aggregate metrics calculated at the session level using PROPCOUNT of session IDs
+- **Entry/Exit Semantics**: First and last property values extracted from active events within sessions
+- **Bounce Rate**: Single-page sessions calculated based on Page View events and group-by properties
 
-**Attribution Models**: Mathematical frameworks for credit distribution across touchpoints, including linear weighting, participation-based, curve-based (U-Shaped, J-Shaped), and machine learning-driven (Data Driven) approaches.
+**Attribution Models**
+- **Data Driven Attribution**: Advanced modeling using Markov chains for probabilistic attribution
+- **Lookback Window**: Configurable time period for attribution analysis
+- **Custom Attribution Models**: User-defined attribution logic with specific weighting and exclusion rules
 
-**Session Metrics**: Calculated values based on session boundaries including bounce rate (single-page sessions), entry/exit rates, and session totals using PROPCOUNT of session IDs.
+## Product Ecosystem Integration
 
-**Active Events**: Events that contribute to session-based calculations and time spent analysis, filtered for non-null property values.
+Data Tables operates as a central analytics hub within the broader Amplitude ecosystem, specifically designed for Growth and Enterprise plan users. The platform integrates with:
 
-**Lookback Windows**: Configurable time periods for attribution analysis with property value exclusion capabilities.
+**Amplitude Analytics Core**: Extends Event Segmentation charts with advanced multi-dimensional capabilities and custom metric creation
 
-**TimeSpent Formula**: Custom metric syntax for calculating duration between consecutive events with 30-minute timeout windows and group-by property resets.
+**Marketing Analytics**: Provides specialized UTM source attribution and marketing channel analysis through the Marketing Space integration
 
-## Broader Product Ecosystem Integration
+**Browser SDK Integration**: Leverages Page View events and custom session definitions for web analytics
 
-Data Tables integrates with several Amplitude ecosystem components:
-
-**Amplitude Analytics**: Serves as the foundational platform providing Event Segmentation charts and core analytical infrastructure.
-
-**Marketing Space**: Leverages UTM source attribution and marketing channel analysis for campaign performance measurement.
-
-**Browser SDK**: Provides Page View event tracking essential for session metrics and time spent analysis.
-
-**Dashboard REST API**: Enables programmatic access with specific row limits (1000 for event segmentation metrics).
-
-**Cohort Creation**: Supports user segmentation based on Data Tables analysis results with CSV export capabilities.
+**Dashboard and API Layer**: Supports programmatic access through the Dashboard REST API with 1000-row limits for automated reporting and data integration
 
 ## Technical Specifications and Limits
 
-**Result Limits**: 100 rows for single group-by analysis, 500 for multiple group-by, 20 for attribution metrics.
+**Analysis Limits**
+- Single group-by: 100 results
+- Multiple group-by: 500 results  
+- Attribution metrics: 20 maximum
+- Nested group-by configurations supported
 
-**Export Capabilities**: CSV export with varying limits - 10,000 rows for event segmentation, 300 for funnel metrics, 100 for session metrics, 20 for attribution analysis.
+**Export Capabilities**
+- Event segmentation: 10,000 row limit
+- Funnel metrics: 300 row limit
+- Session metrics: 100 row limit
+- Attribution: 20 row limit
+- Dashboard REST API: 1000 row limit
 
-**API Integration**: Dashboard REST API supports up to 1000 rows for event segmentation metrics.
+**Formula Syntax**
+The platform supports TimeSpent formula syntax for custom time-based metrics, with automatic group-by property resets and session bounce behavior handling.
 
-**Plan Requirements**: Session metrics and advanced features require Growth or Enterprise plans.
-
-**Processing Logic**: Sorting reorders existing results without fetching new data, maintaining performance while providing flexible data presentation options.
-
-The platform supports both absolute numbers and relative percentage analysis with visual enhancements including data bars, color coding, and period-over-period comparisons, while maintaining read-only status for transposed table configurations.
+**Data Processing**
+Time spent calculations use consecutive event duration with 30-minute timeout windows, while attribution models support various weighting schemes across acquisition touchpoints with configurable property value exclusions.

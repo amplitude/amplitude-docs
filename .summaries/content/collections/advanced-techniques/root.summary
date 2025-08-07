@@ -1,53 +1,51 @@
-Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that enables organizations to run controlled experiments and manage feature rollouts at scale. The platform provides both local and remote evaluation modes, sophisticated traffic allocation mechanisms, and advanced statistical analysis capabilities for measuring experiment impact.
+Amplitude Experiment is a comprehensive A/B testing and feature flag platform that enables sophisticated experimentation workflows with advanced statistical analysis, traffic management, and evaluation capabilities. The platform supports both local and remote evaluation modes, providing flexibility for different deployment scenarios while maintaining statistical rigor and data integrity.
 
-## Core Product Architecture and Features
+## Product Architecture and Feature Relationships
 
-Amplitude Experiment operates through a dual-SDK architecture supporting both server-side and client-side implementations. The platform offers local evaluation flags for high-performance scenarios using device ID bucketing, and remote evaluation flags with more sophisticated targeting capabilities using Amplitude ID bucketing. The system supports server-side rendering through combined use of the JavaScript Server SDK (@amplitude/experiment-node-server) and JavaScript Client SDK (@amplitude/experiment-js-client), enabling seamless variant delivery across different rendering contexts.
+The platform operates through several interconnected components that work together to deliver comprehensive experimentation capabilities:
 
-The platform includes URL redirect testing capabilities for low-code A/B testing scenarios, requiring only the Experiment SDK script tag in the HTML head section and Analytics SDK for event tracking. For enterprise deployments requiring domain bypass, AWS CloudFront reverse proxy configurations are supported with specific cache policies (CachingDisabled, AllViewExceptHostHeader, CORS-with-preflight-and-SecurityHeadersPolicy) targeting evaluation servers at api.lab.amplitude.com and api.lab.eu.amplitude.com.
+**Evaluation Infrastructure**: The core evaluation system supports both local and remote evaluation modes. Local evaluation flags use Device ID bucketing and run server-side with limited targeting capabilities, while remote evaluation flags support more complex targeting rules and use Amplitude ID bucketing. The system includes proxy support through AWS CloudFront for bypassing domain blocking, with specific cache policies (CachingDisabled, AllViewExceptHostHeader, CORS-with-preflight-and-SecurityHeadersPolicy) and testing via the `/v1/vardata` endpoint.
 
-## Advanced Traffic Management and User Assignment
+**Traffic Management System**: Advanced traffic control is achieved through multiple layers including holdout groups (which exclude users to measure long-term cumulative impact), mutual exclusion groups (preventing users from exposure to multiple related experiments), and sophisticated traffic allocation mechanisms. Multiple holdout groups compound traffic reduction (e.g., 0.95 * 0.95 = 90.25%), while mutual exclusion groups further limit experiment traffic allocation.
 
-Amplitude Experiment provides sophisticated traffic control through multiple mechanisms. Sticky bucketing ensures consistent variant assignments for users even when experiment parameters change, using deterministic hashing algorithms to prevent variant jumping. This feature is exclusive to feature experiments and maintains assignment consistency across targeting criteria modifications, percentage rollout changes, and rollout weight adjustments.
+**Statistical Analysis Engine**: The platform implements robust statistical methods including Bonferroni correction for multiple hypothesis testing, sample ratio mismatch (SRM) detection, and outlier identification using standard deviations, boxplots, and percentiles. Advanced metric analysis supports funnel analyses with mid-funnel exposure events and threshold metrics using funnel counting for multi-event conversions.
 
-The platform supports mutually exclusive experiments through mutual exclusion groups, preventing users from simultaneous exposure to related experiments to avoid interaction effects. Holdout groups enable long-term impact measurement by excluding specified user percentages from experimentation programs. These systems can compound, where multiple holdout groups multiply traffic reduction (e.g., 0.95 * 0.95 = 90.25% remaining traffic), and mutual exclusion groups further constrain available experiment slots.
-
-Flag prerequisites create dependency chains between experiments, requiring prerequisite flags to have specific variant values before dependent flags can evaluate. This Enterprise feature supports both local and remote evaluation modes while preventing circular dependencies.
-
-## Statistical Analysis and Data Quality
-
-The platform implements Bonferroni correction for multiple hypothesis testing, automatically adjusting p-values when testing multiple variants or metrics to control family-wise error rates. This correction applies to primary metrics with multiple treatments and secondary metrics with multiple treatments or metrics.
-
-Sample Ratio Mismatch (SRM) detection identifies allocation discrepancies through cumulative assignment charts and exposure charts, helping diagnose instrumentation errors, mid-experiment traffic changes, variant jumping, and sticky bucketing modifications. The system provides comprehensive data quality monitoring through exposure event analysis and variant distribution tracking.
-
-Advanced outlier detection and mitigation techniques include statistical methods using standard deviations, boxplots, and percentiles, with visualization approaches and mitigation strategies like winsorization and log transforms for different metric types (totals, sum of property, average of property, funnel metrics).
+**Dependency Management**: Flag prerequisites (Enterprise feature) enable complex dependency chains between feature flags and experiments, where evaluation requires prerequisite flags to have specific variant values. This supports release groups patterns and chained mutual exclusion groups while preventing circular dependencies.
 
 ## Key Nomenclature and Definitions
 
-**Evaluation Modes**: Local evaluation (device ID bucketing, high performance) vs. remote evaluation (Amplitude ID bucketing, advanced targeting)
+**Sticky Bucketing**: A deterministic hashing algorithm that maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change. Only available for feature experiments, not flags.
 
-**Bucketing Systems**: Sticky bucketing (consistent assignment), variant jumping (assignment changes), bucketing keys (Device ID vs. Amplitude ID)
+**Variant Jumping**: The phenomenon where users switch between experiment variants due to changes in experiment configuration, prevented by sticky bucketing.
 
-**Traffic Control**: Mutual exclusion groups (prevent simultaneous experiments), holdout groups (exclude users for impact measurement), traffic allocation percentages
+**Sample Ratio Mismatch (SRM)**: A data quality issue where the observed ratio of users in experiment variants doesn't match the expected allocation, often caused by instrumentation errors or mid-experiment configuration changes.
 
-**Metrics and Analysis**: Exposure events (experiment entry tracking), assignment events (variant allocation tracking), cumulative exposures graphs (exposure pattern visualization), funnel analysis with mid-funnel exposure events
+**Exposure Events**: Events that indicate when a user has been exposed to an experiment variant, critical for accurate metric calculation and can be custom-defined or automatically generated.
 
-**Statistical Concepts**: Sample Ratio Mismatch (SRM), Bonferroni correction, multiple hypothesis testing, family-wise error rate, winsorization
+**Bucketing Key**: The identifier used to assign users to variants, typically Device ID for local evaluation or Amplitude ID for remote evaluation.
 
-## API Endpoints and Technical Integration
+**Evaluation Mode**: Determines whether flag evaluation happens locally (server-side with cached rules) or remotely (via API calls with full targeting capabilities).
 
-The platform exposes the `/v1/vardata` endpoint for variant data retrieval, commonly used for testing CloudFront proxy configurations. Server-side implementations utilize the `fetchV2` method for variant retrieval, while client-side SDKs support `initialVariants` for SSR scenarios.
+**Winsorization**: A statistical technique for handling outliers by capping extreme values at specified percentiles rather than removing them entirely.
 
-Chart settings can be imported/exported as JSON between Amplitude Experiment and Analytics, with schema including variants arrays, bucketingGroupType, userProperty, exposureEvent, experimentStartDate/EndDate, and metrics arrays. The [Experiment] Exposure event serves as the default exposure tracking mechanism.
+## Broader Product Ecosystem Integration
 
-## Advanced Use Cases and Patterns
+Amplitude Experiment integrates deeply with the broader Amplitude ecosystem, particularly Amplitude Analytics for comprehensive data analysis. The platform supports JSON import/export of experiment chart settings between Experiment and Analytics, enabling seamless workflow transitions. Key integration points include:
 
-The platform supports complex funnel analyses where exposure events occur mid-funnel, requiring careful variant jumping consideration and threshold metrics implementation using funnel counting for multi-event conversions. Cumulative exposure graph interpretation reveals experiment health through slope analysis (increasing for steady growth, decreasing for slowing exposure), inflection points indicating traffic allocation changes, and divergent lines showing staggered rollouts or caching effects.
+**Analytics Integration**: Experiment Results charts can be exported as JSON with schema including variants, bucketingGroupType, userProperty, metrics, and exposureEvent fields. Advanced outlier detection leverages Analytics features like FREQPERCENTILE, PROPSUM, and PERCENTILE formulas across different metric types.
 
-URL redirect testing enables visual experimentation and CMS variant testing with configuration limits including local evaluation mode requirements, User bucketing units, deviceID keys, and all users audience targeting. The system integrates with WordPress and other content management systems for low-code experimentation scenarios.
+**Server-Side Rendering Support**: Dual SDK implementation using both JavaScript Server SDK (@amplitude/experiment-node-server) and JavaScript Client SDK (@amplitude/experiment-js-client) with initialVariants for seamless SSR experiences.
 
-## Product Ecosystem Integration
+**Visual Experimentation**: URL redirect testing capabilities enable A/B testing with visitor redirection to different URLs, requiring minimal developer involvement but with specific constraints including local evaluation mode and User bucketing unit limitations.
 
-Amplitude Experiment integrates deeply with the broader Amplitude ecosystem, particularly with Amplitude Analytics for event tracking and metric calculation. The platform leverages Amplitude's user identification and segmentation capabilities, utilizing Amplitude IDs for advanced targeting in remote evaluation mode. Chart configurations and analysis results can be seamlessly shared between Experiment and Analytics platforms, enabling comprehensive user journey analysis and experiment impact measurement across the entire product analytics stack.
+## API Endpoints and Technical Implementation
 
-This comprehensive experimentation platform serves organizations requiring sophisticated A/B testing capabilities, advanced statistical analysis, and enterprise-grade traffic management across web, mobile, and server-side applications.
+Key technical interfaces include:
+
+- `/v1/vardata` endpoint for testing CloudFront proxy configurations
+- ExperimentServer and ExperimentClient classes for dual SDK implementation
+- fetchV2 method for server-side variant retrieval
+- Script tag deployment in `<head>` section for URL redirect testing
+- JSON schema support for experiment configuration import/export
+
+The platform emphasizes data quality through comprehensive debugging tools including cumulative exposure graphs with slope analysis, inflection point detection, and divergent line interpretation to identify issues like traffic allocation changes, targeting criteria modifications, and the risks of Simpson's paradox from mid-experiment adjustments.
