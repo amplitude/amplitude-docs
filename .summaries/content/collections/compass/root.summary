@@ -1,45 +1,46 @@
-Amplitude Compass is an advanced behavioral analytics product that identifies user actions predictive of retention and conversion through sophisticated statistical correlation analysis. The platform helps product teams discover critical "a-ha moments" and inflection metrics by analyzing relationships between early user behaviors and long-term engagement outcomes.
+Amplitude Compass is an advanced predictive analytics feature that identifies user behaviors correlating with retention and conversion outcomes through sophisticated statistical analysis. The product enables organizations to discover critical "a-ha moments" and inflection metrics by analyzing relationships between user actions and long-term engagement patterns.
 
-## Core Product Architecture
+## Core Features and Product Architecture
 
 **Compass Chart Engine**
-The primary interface is the Compass chart, which performs correlation analysis between base cohorts (typically new users) and target cohorts (retained users at specific intervals). The system generates interactive heat map visualizations displaying correlation strengths across event frequency buckets and temporal windows, enabling teams to identify optimal user behavior patterns.
+The primary component is the Compass chart, which performs correlation analysis between base cohorts (typically new users) and target cohorts (retained users at specific intervals). The system generates interactive heat map visualizations displaying correlation strengths across event frequency buckets and configurable time windows.
 
-**Retention Cohort Integration**
-Compass leverages pre-built Amplitude retention cohorts as analytical targets:
+**Pre-built Retention Cohort Integration**
+Compass leverages Amplitude's standardized retention cohorts as target metrics:
 - [Amplitude] 2nd Week Retention
 - [Amplitude] 3rd Week Retention  
 - [Amplitude] 4th Month Retention
 
-These standardized cohorts serve as outcome metrics for measuring behavioral predictive power within configurable performance windows.
+These cohorts serve as outcome variables for measuring predictive power of user behaviors within customizable "range of first use" and "performance days window" parameters.
 
 **Statistical Analysis Framework**
-The product employs multiple statistical methodologies including:
-- Positive Predictive Value (PPV) and Negative Predictive Value (NPV)
-- Sensitivity and specificity calculations
-- Matthews Pearson phi coefficient correlation
-- Contingency matrix analysis with comprehensive classification metrics
-- 95% confidence interval significance testing
+The product employs multiple statistical measures including correlation scores, Positive Predictive Value (PPV), sensitivity, Negative Predictive Value (NPV), and specificity. Analysis utilizes contingency matrices calculating true positive/negative ratios and Type I/Type II error rates with 95% confidence intervals for statistical significance validation.
 
-## Key Terminology and Definitions
+## Key Nomenclature and Definitions
 
-**Base Cohort**: Initial user segment under analysis (e.g., New Users cohort)
-**Target Cohort**: Desired outcome population (e.g., users demonstrating 2-week retention)
-**Range of First Use**: Temporal boundary defining the analysis window for initial user behaviors
-**Inflection Metrics**: Specific user actions demonstrating strong statistical correlation with retention/conversion outcomes
-**Performance Days Window**: Time period measuring the relationship between user actions and target outcomes
-**Event Frequency Buckets**: Segmentation methodology grouping user actions by occurrence frequency for correlation analysis
-**Correlation Score Categorization**: Statistical thresholds classifying predictive strength as Highly/Moderately/Slightly/Not Predictive
-**Contingency Matrix**: Statistical framework analyzing true positives, false negatives, true negatives, and false positives in behavioral prediction
+**Base Cohort**: Initial user segment under analysis (e.g., New Users)
+**Target Cohort**: Desired outcome group representing successful retention/conversion
+**Correlation Score Classification**:
+- Highly Predictive: ≥ 0.4
+- Moderately Predictive: 0.3-0.4  
+- Slightly Predictive: Below 0.3
+- Not Predictive: Near-zero correlation
 
-## Product Ecosystem Position
+**Inflection Metrics**: User behaviors demonstrating strong predictive correlation with retention outcomes
+**A-ha Moments**: Critical user experiences significantly increasing long-term engagement likelihood
+**Contingency Matrix**: Statistical framework analyzing true positives, false positives, true negatives, and false negatives
+**Event Frequency Buckets**: Segmented ranges of user action frequency for granular correlation analysis
+**Range of First Use**: Time window for capturing initial user behaviors
+**Performance Days Window**: Period for measuring target outcome achievement
 
-Compass functions as a specialized predictive analytics layer within the Amplitude platform, exclusively available to Growth and Enterprise tier customers. The product bridges descriptive behavioral analytics with predictive modeling capabilities, enabling data-driven product optimization strategies.
+## Product Ecosystem Integration
 
-**Workflow Integration**
-The system supports seamless transitions from insight discovery to actionable implementation through direct cohort creation from analysis results. Teams can identify predictive behaviors, generate statistical confidence measures, and immediately create targeted user segments for engagement campaigns or A/B testing initiatives.
+Compass operates as a specialized analytics module within Amplitude's platform architecture, available exclusively on Growth and Enterprise subscription tiers. The product leverages Amplitude's core event tracking infrastructure, cohort management system, and user segmentation capabilities to deliver predictive insights.
 
-**Statistical Rigor**
-Compass emphasizes statistical validity through correlation vs. causation analysis, Type I/Type II error considerations, and comprehensive confidence interval reporting. The platform generates detailed correlation tables with full statistical context, supporting evidence-based decision making for feature development, user onboarding optimization, and retention strategy refinement.
+**Statistical Methodologies**
+The system implements Matthews correlation and Pearson correlation analysis with binary random variables correlation techniques. All statistical outputs include confidence intervals ensuring reliable business decision-making support.
 
-The product serves as a critical component in the modern product analytics stack, transforming raw user event data into actionable behavioral insights that directly inform product strategy and user experience improvements.
+**Visualization and Operationalization**
+Heat map visualizations provide intuitive interpretation of complex correlation data, displaying relationships between event frequency and retention outcomes across time dimensions. Organizations can generate actionable user segments directly from Compass results, enabling targeted cohort creation based on identified predictive behaviors for campaign optimization and product development initiatives.
+
+The product integrates seamlessly with Amplitude's broader analytics ecosystem, allowing correlation insights to inform segmentation strategies, A/B testing frameworks, and user journey optimization across the platform's analytical capabilities.

@@ -1,54 +1,39 @@
-# Amplitude Experiment
-
-Amplitude Experiment is a comprehensive experimentation and feature flag platform that enables teams to run A/B tests, multi-armed bandit experiments, and manage feature rollouts. The platform supports both traditional hypothesis-driven testing and automated optimization through machine learning algorithms, providing statistical analysis tools and real-time traffic allocation capabilities.
+Amplitude Experiment is a comprehensive experimentation and feature flag platform that enables teams to run A/B tests, multi-armed bandit experiments, and manage feature rollouts. The platform supports both traditional hypothesis-driven A/B testing and automated optimization through machine learning algorithms, providing statistical analysis tools and real-time traffic allocation capabilities.
 
 ## Product Architecture and Feature Relationships
 
 The platform operates through a hierarchical structure where **experiments** and **feature flags** are deployed through **deployments** (client-side or server-side) that generate unique access keys for SDK integration. Each experiment contains multiple **variants** with configurable traffic distribution, targeting specific **user segments** defined by cohorts, user properties, or custom attributes.
 
-The experimentation workflow follows a structured pipeline: experiment creation → audience definition → goal configuration → variant setup → delivery configuration → statistical preferences → testing/launch → analysis. Feature flags follow a simplified path focused on rollout management rather than statistical testing.
+The experimentation workflow follows a structured pipeline: experiment creation → audience definition → variant configuration → goal setting → statistical preference configuration → testing/QA → launch → analysis. Feature flags follow a simplified path focused on rollout management rather than statistical testing.
 
-**Multi-armed bandit experiments** represent an advanced capability that uses Thompson sampling to automatically reallocate traffic toward better-performing variants based on a primary optimization metric, contrasting with traditional A/B tests that maintain fixed traffic allocation until statistical significance is reached.
+**Evaluation modes** form a core architectural decision, with **Remote evaluation** providing real-time targeting updates through API calls, while **Local evaluation** offers faster performance by downloading experiment configurations to client applications. The **bucketing unit** (User ID, Device ID, Company ID, etc.) determines how traffic is allocated across variants.
 
 ## Key Nomenclature and Definitions
 
-**Bucketing Unit**: The entity used for experiment assignment (User ID, Device ID, Company ID, etc.), following the Stable Unit Treatment Value Assumption (SUTVA)
+**Variants** represent different experiment treatments, including a control baseline and treatment variations, each containing names, values (slugified for SDK consumption), and JSON payloads for complex configurations.
 
-**Variants**: Different versions of an experiment including control/baseline and treatment variants, each with names, values (slugified for SDK consumption), payloads (JSON), and traffic allocation percentages
+**Bucketing** refers to the process of assigning users to experiment variants based on the bucketing unit and allocation ratios. **Rollout percentage** controls what portion of eligible users enter the experiment, while **traffic distribution** determines how bucketed users are split between variants.
 
-**Exposure Event**: Triggered when `.variant()` method is called, indicating actual user interaction with the experiment, distinct from assignment events
+**Assignment events** track when users are bucketed into experiments, while **exposure events** (triggered by `.variant()` SDK calls) indicate actual feature interaction. The **Amplitude exposure event** is automatically generated when SDKs request variant assignments.
 
-**Evaluation Modes**: 
-- **Remote Evaluation**: Server-side variant determination with real-time targeting
-- **Local Evaluation**: Client-side evaluation using cached rules and configurations
+**User segments** define targeting criteria through cohorts (synced hourly), user properties (cached), or custom properties (real-time evaluation). **Stratified sampling** enables non-uniform allocation ratios across different user segments.
 
-**User Segments**: Rule-based targeting criteria using cohorts (hourly sync), user properties (real-time), or custom properties for experiment eligibility
+**Statistical significance** is determined through p-values and confidence intervals, with support for **Sequential testing** (continuous monitoring) or **T-tests** (fixed sample size). **CUPED** (Controlled-experiment Using Pre-Experiment Data) provides variance reduction, while **Bonferroni correction** addresses multiple hypothesis testing.
 
-**Rollout Percentage**: Controls what portion of eligible users enter the experiment bucketing process
+## Broader Product Ecosystem Integration
 
-**Statistical Methods**:
-- **CUPED**: Variance reduction technique using pre-exposure data
-- **Sequential Testing**: Continuous monitoring vs traditional T-test approaches
-- **Bonferroni Correction**: Multiple hypothesis testing adjustment
+Amplitude Experiment integrates deeply with the Amplitude Analytics platform, leveraging existing user identification, event tracking, and cohort management capabilities. **User context objects** containing user_id, device_id, and custom properties flow between systems for consistent targeting and analysis.
 
-## Product Ecosystem Integration
+The platform supports **multi-user deployments** for enterprise scenarios and provides **mutual exclusion groups** to prevent experiment interference. **Holdouts** enable measuring cumulative experiment impact across multiple tests.
 
-Amplitude Experiment integrates deeply with the broader Amplitude analytics ecosystem, leveraging user cohorts, behavioral data, and event tracking for targeting and analysis. The platform connects through:
-
-- **Amplitude SDKs**: Multi-language client libraries for variant retrieval and exposure tracking
-- **REST API**: Programmatic flag evaluation and configuration management
-- **Analytics Integration**: Automatic exposure event generation and conversion tracking
-- **Notification Systems**: Slack webhooks for experiment status and statistical significance alerts
-
-The platform supports enterprise features including mutual exclusion groups, holdout testing, and advanced statistical preferences, positioning it as both a standalone experimentation tool and an integrated component of Amplitude's product analytics suite.
+**QA testers** can be designated using specific user IDs, device IDs, or cohort membership for pre-launch validation through **Test Instrumentation**. **Root Cause Analysis** provides post-launch diagnostics for variant assignment monitoring.
 
 ## API Endpoints and Technical Integration
 
-Key technical touchpoints include:
-- **`.variant()` method**: Primary SDK method for variant retrieval and exposure event triggering
-- **Evaluation REST API**: Server-side flag evaluation for non-SDK implementations
-- **Deployment Access Keys**: Authentication tokens generated per deployment for SDK configuration
-- **User Context Objects**: Required data structures containing user identifiers and properties for targeting
-- **Test Instrumentation**: QA testing framework using designated tester assignments with user/device/cohort IDs
+The platform exposes a **REST API for flag evaluation** alongside comprehensive **Experiment SDKs** for various programming languages. The primary integration point is the `.variant()` method call that retrieves variant assignments and triggers exposure tracking.
 
-The platform emphasizes both ease of use for product teams and technical flexibility for engineering teams, supporting offline mode variants, multi-user deployments, and comprehensive diagnostic tools including Root Cause Analysis for variant assignment monitoring and Sample Ratio Mismatch (SRM) detection.
+**Deployment access keys** authenticate SDK requests, with separate keys generated for client-side and server-side deployments. The system supports both **online mode** (real-time API calls) and **offline mode** (cached variant assignments) for different performance requirements.
+
+**CDN caching** may introduce targeting delays, while **sticky bucketing** ensures consistent user experiences across sessions. **Variant jumping** detection helps identify bucketing inconsistencies that could compromise experiment validity.
+
+The platform includes **Slack webhook notifications** for statistical significance alerts and provides **duration estimator** tools for sample size calculations based on minimum detectable effect (MDE), power analysis, and historical conversion rates.

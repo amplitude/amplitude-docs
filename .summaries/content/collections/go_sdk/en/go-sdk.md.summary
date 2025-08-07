@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude Go SDK (analytics-go) for sending events from Go applications, including installation, initialization with API keys, configuration options for batching and retry behavior, event tracking, user properties management through Identify operations, user groups, revenue tracking, and extensibility through enrichment and destination plugins.
+**Summary:** This documentation covers the Amplitude Go SDK (analytics-go) for sending events from Go applications, including installation, initialization with API keys, configuration options for batching behavior, event tracking, user properties management through Identify operations, user groups, revenue tracking, and extensibility through enrichment and destination plugins.
 
 **Keywords:**
 - amplitude analytics-go SDK
@@ -8,9 +8,12 @@
 - amplitude.Identify user properties operations
 - SetGroup GroupIdentify user groups
 - amplitude.Revenue tracking
-- Plugin enrichment destination types
-- amplitude.NewClient amplitude.NewConfig
-- ServerZone EU US batch API
-- RetryBaseInterval FlushMaxRetries
-- InMemoryStorage MaxStorageCapacity
+- amplitude.Client initialization
+- ServerZone EU US data residency
+- UseBatch batch API mode
+- plugin system enrichment destination
+- StorageFactory InMemoryStorage
+- RetryBaseInterval RetryThrottledInterval
+- ConnectionTimeout MaxStorageCapacity
+- MinIDLength configuration
 - github.com/amplitude/analytics-go package

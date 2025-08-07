@@ -1,27 +1,30 @@
-**Summary:**
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features (sessions, app lifecycles, screen views, deep links, element interactions), tracking methods (track, identify, revenue), user/device ID management, plugins system, and advanced features like offline mode and network tracking plugin.
+## Summary
 
-**Keywords:**
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, detailing installation via Gradle/Maven (com.amplitude:analytics-android), configuration options including batching behavior, EU data residency, and autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, event tracking methods (track, identify, revenue), user management (setUserId, setDeviceId, reset), plugin system for enrichment and destination plugins, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, offline mode, and multiple SDK instances.
+
+## Keywords
+
 - Android-Kotlin SDK
 - com.amplitude:analytics-android
 - Gradle Maven installation
+- Configuration options
 - flushIntervalMillis flushQueueSize
+- ServerZone.EU data residency
 - autocapture AutocaptureOption
-- sessions app lifecycles screen views
-- deep links element interactions
+- sessions app lifecycles screen views deep links element interactions
 - track identify revenue methods
-- userId deviceId management
-- advertising ID ADID
-- app set ID
-- plugins enrichment destination
+- BaseEvent eventProperties
+- setUserId setDeviceId reset
+- Plugin enrichment destination
 - NetworkTrackingPlugin OkHttp
+- COPPA control enableCoppaControl
+- useAdvertisingIdForDeviceId useAppSetIdForDeviceId
+- play-services-ads-identifier play-services-appset
+- TrackingOptions disable tracking
+- locationListening Android location services
 - offline mode ACCESS_NETWORK_STATE
-- TrackingOptions COPPA control
-- ServerZone EU data residency
-- minTimeBetweenSessionsMillis
-- identifyBatchIntervalMillis
-- useAdvertisingIdForDeviceId
-- useAppSetIdForDeviceId
-- locationListening
-- migrateLegacyData
-- instanceName multiple instances
+- multiple instances instanceName
+- minTimeBetweenSessionsMillis session timeout
+- EventOptions sessionId out-of-session
+- Logger.LogMode debug levels
+- Android API level 21 minimum requirement

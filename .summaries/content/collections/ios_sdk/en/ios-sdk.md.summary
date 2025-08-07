@@ -1,26 +1,26 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) with installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user property management via AMPIdentify class, revenue tracking with AMPRevenue, session handling, and advanced features including EU data residency, COPPA compliance, IDFA/IDFV device ID management, middleware support, and Apple privacy manifest requirements.
+This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) with support for Swift and Objective-C, including installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user properties management via AMPIdentify class, revenue tracking with AMPRevenue, session handling, and advanced features like middleware, SSL pinning, COPPA compliance, and Apple privacy manifest requirements.
 
 ## Keywords
 
 - Amplitude Analytics iOS SDK
+- Swift Objective-C support
 - CocoaPods Carthage Swift Package Manager installation
-- AMPIdentify class user properties
+- AMPIdentify user properties
 - AMPRevenue revenue tracking
-- IDFA IDFV device ID lifecycle
-- CTTelephonyNetworkInfo carrier tracking deprecated iOS 16
-- EU data residency setServerZone
 - defaultTracking sessions appLifecycles screenViews deepLinks
-- AMPTrackingOptions disable tracking fields
-- COPPA enableCoppaControl
-- SSL pinning AMPLITUDE_SSL_PINNING
-- tvOS watchOS iOS extensions App Clips
+- IDFA IDFV device ID tracking
+- AMPTrackingOptions privacy controls
+- setUserId setDeviceId session management
+- EU data residency server zones
+- CTTelephonyNetworkInfo carrier tracking iOS 16 deprecated
 - middleware AMPMiddlewarePayload
+- SSL pinning AMPLITUDE_SSL_PINNING
+- COPPA enableCoppaControl
 - Apple privacy manifest NSPrivacyTracking
-- setUserId setDeviceId regenerateDeviceId
-- logEvent withEventProperties outOfSession
-- groupIdentifyWithGroupType setGroup
-- minTimeBetweenSessionsMillis eventUploadThreshold
-- setServerUrl useDynamicConfig setOffline
-- objective-c swift implementation
+- tvOS watchOS iOS extensions App Clips
+- offline mode setOffline
+- dynamic configuration useDynamicConfig
+- group identify setGroup logEventWithGroups
+- out-of-session events minTimeBetweenSessionsMillis

@@ -1,95 +1,91 @@
-## Product Overview
+Amplitude's Source Catalog is a comprehensive data integration ecosystem comprising over 70 connectors that enable businesses to centralize customer data from diverse platforms into Amplitude's behavioral analytics infrastructure. The catalog serves as the foundational data ingestion layer for creating unified customer data platforms that combine behavioral analytics, marketing attribution, revenue tracking, and customer engagement data.
 
-Amplitude's Source Catalog is a comprehensive data integration ecosystem comprising over 70 connectors that centralize customer data from diverse platforms into Amplitude's analytics infrastructure. The catalog enables businesses to unify behavioral data, marketing attribution, revenue metrics, and customer engagement signals across their entire technology stack, creating a foundation for advanced analytics, experimentation, and growth optimization.
+## Integration Architecture and Data Flow Patterns
 
-## Integration Architecture and Product Relationships
+The source catalog operates on four primary integration types that define data flow mechanisms into Amplitude:
 
-The Source Catalog operates on four core integration types that define data flow patterns:
+**Raw-Events Integration** functions as the core behavioral data streaming mechanism, capturing user actions, system events, and custom tracking data in real-time while maintaining complete event fidelity for comprehensive behavioral analysis.
 
-**Raw-Events Integration** serves as the primary data ingestion mechanism, streaming behavioral events directly into Amplitude's analytics pipeline for real-time user journey analysis and product analytics across mobile, web, and backend systems.
+**Cohorts Integration** enables bidirectional data synchronization, allowing Amplitude to both ingest data and export behavioral cohorts back to source platforms, creating closed-loop marketing optimization and personalized customer experience workflows.
 
-**Cohorts Integration** enables bidirectional data exchange, allowing Amplitude to both ingest user segments and export behavioral cohorts to external platforms for targeted marketing campaigns and personalized user experiences.
+**Attribution Integration** leverages Amplitude's Attribution API to process marketing attribution data, requiring Advertising ID matching (IDFA/IDFV/ADID) and supporting configurable attribution windows (typically 72 hours) for cross-platform user identification.
 
-**Event-Streaming Integration** provides real-time data synchronization capabilities, particularly valuable for attribution tracking and immediate behavioral response systems across marketing and engagement platforms.
+**Event-Streaming Integration** provides real-time data synchronization capabilities supporting both inbound data ingestion and outbound event streaming for comprehensive customer data pipeline creation.
 
-**Attribution Integration** handles specialized marketing attribution data through Amplitude's Attribution API, requiring Advertising ID matching (IDFA/IDFV/ADID) and supporting 72-hour attribution windows for cross-platform user identification.
+## Data Warehouse and Enterprise ETL Ecosystem
 
-## Key Nomenclature and Definitions
+The catalog includes sophisticated enterprise-grade data warehouse integrations:
 
-**Mirror Sync vs. Append Only Strategies**: Mirror Sync maintains exact data replication with updates and deletions, while Append Only continuously adds new records without modification of existing data.
+**Amazon S3 Import** provides bidirectional synchronization with configurable strategies including Mirror Sync and Append Only modes, utilizing IAM role authentication, converter configuration for property mapping, and supporting multiple file formats (JSON/CSV/parquet) with chronological processing requirements.
 
-**Change Data Capture (CDC)**: Advanced data warehouse functionality that tracks and processes only modified records, optimizing sync performance and reducing computational overhead.
+**BigQuery Data Import** utilizes Google Cloud Storage bucket offloading with Service Account permissions requiring BigQuery Job User, Data Viewer, and Storage Admin roles. It supports Full Sync and Time-based import strategies with SQL transformation capabilities for handling STRUCT types and JSON properties fields.
 
-**Attribution API**: Amplitude's specialized endpoint for mobile attribution tracking that requires Advertising ID matching protocols and supports attribution event holding for delayed user matching.
+**Snowflake Integration** offers four distinct import strategies: Full Sync, Timestamp, Append Only Sync, and Mirror Sync with Change Data Capture (CDC) capabilities. It supports key pair authentication and requires SQL query transformations using functions like OBJECT_CONSTRUCT and EPOCH_MILLISECOND extraction.
 
-**Daily Ad Metrics Events**: Standardized event format for advertising platform data with consistent properties including `ad_metrics.impressions`, `ad_metrics.clicks`, and `ad_metrics.cost` for unified marketing performance analysis.
+**Databricks Integration** leverages Change Data Feed (CDF) for delta sync operations, requiring all-purpose compute clusters, personal access tokens (PAT), and Unity Catalog permissions for comprehensive data warehouse connectivity.
 
-**Universal Data Object (UDO)**: Tealium's standardized data layer format that enables consistent data mapping across tag management implementations.
+## Marketing Attribution and Advertising Platform Integration
 
-**Traffic Type Mapping**: Split.io's method for aligning feature flag traffic segments with Amplitude user identities for experimentation tracking.
+The catalog extensively covers marketing attribution platforms following standardized integration patterns:
 
-## Data Warehouse and Enterprise Integrations
+**Advertising Platforms** including Facebook Ads, Google Ads, LinkedIn Ads, TikTok Ads, and X Ads import campaign-level metrics as "Daily Ad Metrics" events with standardized properties: `ad_metrics.impressions`, `ad_metrics.clicks`, `ad_metrics.cost`, and `ad_metrics.conversions`. These integrations require UTM parameter configuration for Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS) calculations.
 
-Enterprise-grade data warehouse connectors form the catalog's backbone, supporting sophisticated data transformation and bulk ingestion:
+**Mobile Attribution Platforms** including AppsFlyer, Adjust, Branch, Kochava, and Singular utilize Amplitude's Attribution API for real-time mobile attribution data processing, requiring Advertising ID matching and supporting configurable attribution windows for cross-platform user matching.
 
-**Amazon S3 Import** provides bidirectional sync with IAM role authentication, supporting JSON/CSV/parquet formats with configurable converter settings for complex data mapping scenarios.
+## Customer Engagement and Marketing Automation
 
-**BigQuery Data Import** leverages Google Cloud Platform through GCS bucket offloading, requiring specific service account permissions (BigQuery Job User, Data Viewer, Storage Admin) and supporting STRUCT type handling for nested data structures.
+The catalog encompasses comprehensive customer engagement platform integrations:
 
-**Snowflake Integration** offers the most advanced data warehouse connectivity with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync), VARIANT JSON data type support, and advanced SQL query transformations.
+**Email Marketing Platforms** such as Mailchimp, SendGrid, and HubSpot import standardized email campaign events (SENT, DELIVERED, OPEN, CLICK, BOUNCE) with user mapping based on email addresses and webhook-based real-time event streaming capabilities.
 
-**Databricks Integration** utilizes Change Data Feed (CDF) for delta sync operations, requiring all-purpose compute clusters and supporting both personal access tokens and service principal authentication methods.
+**Marketing Automation Platforms** including Braze, Iterable, Leanplum, and MoEngage support bidirectional data flow, enabling campaign event ingestion and behavioral cohort export for personalized multi-channel marketing campaigns across email, SMS, push notifications, and in-app messaging.
 
-## Marketing Attribution Ecosystem
+**Customer Support Platforms** like Intercom synchronize conversational data and customer interaction events using OAuth authentication, supporting multiple event topics including conversation, contact, user, and visitor events.
 
-The catalog extensively covers marketing attribution and advertising platforms:
+## Subscription and Revenue Analytics Integration
 
-**Advertising Platform Integrations** (Facebook Ads, Google Ads, LinkedIn Ads, TikTok Ads, X Ads) import campaign-level metrics as standardized "Daily Ad Metrics" events, enabling Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS) calculations.
+The catalog provides specialized integrations for subscription and revenue tracking:
 
-**Mobile Attribution Platforms** (AppsFlyer, Adjust, Branch, Kochava, Singular) utilize the Attribution API for real-time mobile attribution tracking with specific Advertising ID matching protocols.
+**Subscription Management Platforms** including RevenueCat, Adapty, Apphud, and Nami stream subscription monetization events, in-app purchase data, and revenue analytics, requiring user ID matching for comprehensive subscription lifecycle analysis.
 
-**Marketing Automation Platforms** (Braze, HubSpot, Iterable, Leanplum, SendGrid) provide comprehensive customer engagement tracking through email, SMS, push notification, and in-app messaging events, often supporting bidirectional cohort sharing.
+**Payment Processing** through Stripe integration imports revenue events via webhooks, supporting events like `payment_intent.succeeded`, `invoice.payment_succeeded`, and `checkout.session.completed` with user ID mapping priority and currency normalization capabilities.
 
-## Customer Data Platform Integrations
+## Product Analytics and User Experience Integration
 
-Major CDP integrations serve as data aggregation and distribution hubs:
+The catalog encompasses product experience and user onboarding platforms:
 
-**Segment Integration** provides bidirectional data flow through both Amplitude (Actions) and Classic destinations, supporting client-side bundled integration and complete SDK function mappings (track, identify, screen, alias, group).
+**User Onboarding Tools** including Userflow, Userguiding, Bento, and Candu stream product tour events, onboarding guide completion data, and user activation metrics for analyzing onboarding funnel performance and user adoption patterns.
 
-**mParticle Integration** enables raw event data ingestion across multiple platforms (Android, iOS, Unity, JavaScript) for consolidated analytics.
+**Survey and Feedback Platforms** including Qualtrics, Sprig, Survicate, and Blitzllama import survey response data, CSAT/NPS scores, and qualitative feedback for correlation analysis between user satisfaction and product behavior.
 
-**Tealium Integration** offers dual methods through iQ Tag Management (TIQ) and AudienceStream Universal Data Hub with UDO configuration.
+**Experimentation Platforms** like Optimizely, Split, and Taplytics export A/B testing data, feature flag impressions, and experiment variation assignments for comprehensive experimentation analysis.
 
-## Revenue and Subscription Analytics
+## Key Nomenclature and Technical Definitions
 
-Specialized integrations focus on monetization tracking:
+**Change Data Capture (CDC)**: Real-time data synchronization mechanism that captures and streams database changes for incremental data updates.
 
-**RevenueCat Integration** connects mobile app subscription infrastructure with behavioral analytics for cross-platform subscription lifecycle analysis.
+**Converter Configuration**: Data transformation layer that maps source platform properties to Amplitude event properties, enabling field mapping and property enrichment.
 
-**Stripe Integration** imports revenue events through webhooks, supporting payment_intent.succeeded, invoice.payment_succeeded, and other financial transaction events with user ID mapping.
+**Attribution Windows**: Time-based matching periods (commonly 72 hours) used for correlating marketing touchpoints with user conversion events across platforms.
 
-**Mobile Subscription Platforms** (Adapty, Apphud, Nami) provide specialized in-app purchase and subscription lifecycle tracking for mobile app economy optimization.
+**User Identity Mapping**: Multi-identifier matching system supporting user_id, device_id, email addresses, amplitudeUserId, and customerUserId with priority-based matching logic.
 
-## Experimentation and User Experience
+**Cohort Export**: Behavioral audience segmentation capability that exports user groups from Amplitude to external platforms for targeted marketing campaigns.
 
-**Optimizely Integration** syncs behavioral cohorts and experiment data through custom JSON analytics integration, supporting both Web Experimentation and Feature Experimentation.
+## Technical Implementation Patterns
 
-**Split Integration** imports feature flag traffic impression data with traffic type mapping for experimentation tracking.
+**Authentication Methods** include API key configuration, OAuth flows, Service Account setup, and webhook authentication, with many integrations supporting both US and EU data residency requirements.
 
-**User Onboarding Platforms** (Userflow, Userguiding, Bento, Chameleon) track product tour completion and user activation events for product-led growth optimization.
+**Data Processing Modes** vary between real-time streaming for attribution and engagement platforms, and daily batch imports for advertising platforms with specific data latency characteristics.
 
-## API Endpoints and Technical Implementation
+**API Endpoints and Technical Specifications** include:
+- `api.amplitude.com/sendgrid` for SendGrid webhook integration
+- `api.amplitude.com/iterable` for Iterable campaign data
+- Attribution API endpoints for mobile attribution platforms
+- HTTP V2 API for server-side integrations and data warehouse imports
 
-**Attribution API**: Primary endpoint for mobile attribution data ingestion requiring Advertising ID matching and supporting 72-hour attribution windows.
+The catalog supports various SDK integrations including JavaScript, iOS, Android, React Native, and Unity SDKs with specific configuration requirements for cross-platform user tracking and session management.
 
-**Webhook Endpoints**: Various integrations utilize webhook authentication for real-time data streaming, particularly for revenue platforms like Stripe and engagement platforms.
+## Product Ecosystem Integration
 
-**OAuth Flows**: Complex integrations like Intercom, HubSpot, and advertising platforms require OAuth authentication with specific scope configurations.
-
-**Service Account Authentication**: Enterprise data warehouse integrations utilize service account credentials with granular permission requirements for secure data access.
-
-## Broader Product Ecosystem Integration
-
-The Source Catalog integrates seamlessly with Amplitude's broader analytics ecosystem, feeding data into Amplitude Analytics for behavioral analysis, Amplitude Experiment for feature flagging and experimentation, and Amplitude Audiences for cohort creation and activation. The unified data foundation enables cross-product functionality including behavioral cohort export, experiment result analysis, and comprehensive customer journey mapping across the entire Amplitude Digital Optimization System.
-
-The catalog's comprehensive coverage spans the complete customer data lifecycle from acquisition attribution through engagement tracking to revenue optimization, creating a unified analytics foundation that supports data-driven decision making across marketing, product, and growth teams.
+Within Amplitude's broader product ecosystem, the Source Catalog serves as the foundational data ingestion layer that feeds into Amplitude's core analytics platform, enabling comprehensive customer journey analysis, behavioral segmentation, and data-driven decision making. The bidirectional nature of many integrations creates closed-loop optimization workflows where behavioral insights from Amplitude can be operationalized across marketing, product, and customer engagement platforms, establishing a unified customer data platform architecture for enterprise-scale analytics operations.
