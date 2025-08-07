@@ -456,15 +456,15 @@ revenue(event);
 
 ### Revenue interface
 
-|Name | Description |
-|-----|-------|
-|`product_id` | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to null. |
-|`quantity` | Required. Int. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1|
-|`price` | Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to null. |
-|`revenue_type` | Optional, but required for revenue verification. String. The revenue type (for example tax, refund, income).  Defaults to null.|
-|`receipt`| Optional. String. The receipt identifier of the revenue. Defaults to null|
-|`receipt_sig`| Optional, but required for revenue verification. String. The receipt signature of the revenue. Defaults to null.|
-|`properties`| Optional. JSONObject. An object of event properties to include in the revenue event. Defaults to null.
+| Name           | Description                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `product_id`   | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to null. |
+| `quantity`     | Required. Int. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1                                       |
+| `price`        | Required. Double. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to null.     |
+| `revenue_type` | Optional, but required for revenue verification. String. The revenue type (for example tax, refund, income).  Defaults to null.          |
+| `receipt`      | Optional. String. The receipt identifier of the revenue. Defaults to null                                                                |
+| `receipt_sig`  | Optional, but required for revenue verification. String. The receipt signature of the revenue. Defaults to null.                         |
+| `properties`   | Optional. JSONObject. An object of event properties to include in the revenue event. Defaults to null.                                   |
 
 ## Flush the event buffer
 
