@@ -1,44 +1,53 @@
-Amplitude is a comprehensive digital analytics and experimentation platform that provides behavioral analytics, customer data management, and product optimization tools for businesses to understand and improve user experiences across their digital products.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides behavioral analytics, customer data management, and AI-powered insights to help product teams optimize user experiences and drive growth. The platform combines analytics, experimentation, customer data platform (CDP) capabilities, and AI automation into an integrated ecosystem for data-driven product development.
 
-## Core Product Suite
+## Product Architecture and Feature Relationships
 
-The platform consists of six primary products that work together to provide end-to-end analytics and optimization capabilities:
+The Amplitude ecosystem consists of several interconnected products that work together to provide end-to-end analytics and optimization capabilities:
 
-**Amplitude Analytics** serves as the foundational behavioral analytics platform, offering AI-powered automation for product growth analysis. It includes specialized analysis types such as funnel analysis, retention analysis, event segmentation, user sessions, revenue LTV tracking, engagement matrices, impact analysis, user personas, stickiness analysis, user journeys, and data tables with compass and charts functionality.
+**Core Analytics Platform**: Amplitude Analytics serves as the foundation, offering behavioral analytics with specialized analysis types including funnel analysis, retention analysis, event segmentation, user sessions, revenue LTV tracking, engagement matrix, impact analysis, user personas, stickiness analysis, and user journeys. The platform includes data visualization through charts and tables, plus the Compass feature for guided insights.
 
-**Amplitude Data** functions as a customer data platform (CDP) natively integrated with analytics, focusing on data quality improvement, audience discovery, and behavioral data synchronization across technology stacks. It provides cross-device identity resolution, warehouse-native capabilities, and comprehensive customer/product data control.
+**Experimentation Suite**: Amplitude Experiment provides feature flagging, A/B testing, multivariate experiments, and Multi-armed Bandit experiments. This integrates with Web Experiment for no-code experimentation with one-line JavaScript implementation, targeting capabilities, and performance optimization.
 
-**Amplitude Experiment** enables feature flagging and experimentation through A/B testing, multivariate experiments, and Multi-armed Bandit experiments. It supports both programmatic implementation via SDKs/APIs and no-code web experimentation with one-line JavaScript installation.
+**Customer Data Platform**: Amplitude CDP offers native analytics integration with data quality tools, audience discovery, and behavioral data synchronization across tech stacks. It includes cross-device identity resolution and comprehensive customer/product data control.
 
-**Session Replay** provides qualitative insights from quantitative data by recording user sessions viewable from User Look-Up, various chart types (Event Segmentation, Funnel Analysis, Journeys, User Sessions, Experiments), and the homepage, with event stream synchronization and advanced filtering capabilities.
+**AI-Powered Intelligence**: Amplitude Agents serves as an AI analytics assistant providing real-time data interpretation, proactive recommendations, workflow automation, and anomaly detection, connecting analytics with experimentation and engagement tools.
 
-**Guides and Surveys** offers an alternative to popup components for user onboarding and feedback collection, designed to improve product metrics like retention, activation, and engagement throughout the user journey.
+**User Engagement Tools**: Amplitude Guides and Surveys provides in-product communication alternatives to popup components for user onboarding, feedback collection, and improving retention, activation, and engagement metrics.
 
-**Web Experiment** specifically focuses on no-code A/B testing, multivariate testing, and multi-armed bandit experiments with targeting capabilities, performance optimization, impression tracking, and post-experiment workflows.
+**Session Analysis**: Session Replay captures qualitative insights from quantitative data, recording user sessions viewable from User Look-Up, charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions, Experiments), with event stream synchronization and filtering capabilities.
 
 ## Key Nomenclature and Definitions
 
-The platform uses several core concepts:
-- **Event Segmentation**: Analysis of user actions and behaviors
-- **Funnel Analysis**: Tracking user progression through defined steps
-- **Retention Analysis**: Measuring user return behavior over time
-- **Revenue LTV**: Lifetime value tracking and analysis
-- **Cross-device Identity Resolution**: Connecting user behavior across multiple devices
-- **Behavioral Data**: User interaction data collected across digital touchpoints
-- **Multi-armed Bandit**: Algorithmic approach to experiment optimization
-- **Impression Tracking**: Recording when users are exposed to experiments
-- **Ampli CLI/Wrapper**: Code-generated SDK for type-safe tracking plan implementation
+**Events and Tracking**: The platform centers around event-based analytics, with autocapture events including Page Viewed, Element Clicked, and Element Changed events. Custom session definitions allow for flexible user journey tracking.
+
+**Analysis Types**: Specialized analysis methods include funnel analysis (conversion tracking), retention analysis (user return patterns), event segmentation (behavior categorization), user sessions (interaction sequences), and revenue LTV (lifetime value calculations).
+
+**Experimentation Terms**: Feature flagging enables controlled feature rollouts, while A/B testing compares variants, multivariate testing examines multiple variables simultaneously, and Multi-armed Bandit experiments automatically optimize traffic allocation.
+
+**Data Management**: Identity resolution connects user interactions across devices, while audiences represent user segments for targeting. Sources and destinations manage data flow, with PII integrations handling sensitive data appropriately.
+
+**SDK Architecture**: Client-side vs server-side implementation options are available, with the Ampli CLI and Ampli Wrapper providing type-safe tracking plan implementation through code-generated SDKs with static type checking and autocomplete.
+
+## Broader Product Ecosystem Integration
+
+Amplitude integrates extensively with external systems through multiple touchpoints:
+
+**API Infrastructure**: The platform provides Analytics/Data APIs, Experiment APIs, and Guides/Surveys Translation API, with authentication through org_api_key, org_secret_key, and SCIM tokens. Postman collection integration facilitates API testing and implementation.
+
+**SDK Ecosystem**: Comprehensive SDK support includes Analytics SDKs, Experiment SDKs, Session Replay SDKs, and Guides/Surveys SDKs across multiple platforms and programming languages.
+
+**Data Integration**: Warehouse native capabilities and CDP functionality enable seamless integration with existing data infrastructure, while sources and destinations manage data flow across the tech stack.
+
+**Administrative Features**: The Admin section covers billing, account management, and single sign-on capabilities, with partner integrations extending platform functionality.
 
 ## Technical Implementation
 
-The platform provides comprehensive API coverage including Analytics/Data APIs, Experiment APIs, and Guides/Surveys Translation API, with authentication through various key types (org_api_key, org_secret_key, SCIM tokens). Postman collection integration is available for API testing and development.
+**Web Experiment Implementation**: Requires only one-line JavaScript installation for no-code experimentation, with impression tracking and targeting capabilities built-in.
 
-SDK support spans both client-side and server-side implementations, with specialized SDKs for Analytics, Experiment, Session Replay, and Guides/Surveys. The Ampli CLI and Ampli Wrapper provide type-safe tracking plan implementation with static type checking and autocomplete functionality.
+**Session Replay Technical Details**: Includes replay throttling, ingestion monitoring for 429 throttling errors, account-level reporting limitations, and specific limitations around Canvas WebGL and iFrame capture.
 
-## Administrative and Support Infrastructure
+**Data Quality Tools**: The platform includes ingestion monitoring, data validation, and quality assessment tools integrated with the CDP functionality.
 
-The platform includes robust administrative capabilities covering billing, account management, and single sign-on integration. A comprehensive FAQ and troubleshooting library provides support across all products and features. Partner integrations extend the platform's capabilities through third-party connections.
+**Developer Resources**: Comprehensive SDK documentation, API references, troubleshooting guides, and FAQ sections support technical implementation across the platform's various products and features.
 
-## Product Ecosystem Integration
-
-Amplitude's architecture emphasizes native integration between its analytics and CDP capabilities, enabling seamless data flow between behavioral analysis and customer data management. The experimentation tools integrate directly with analytics for comprehensive performance measurement, while Session Replay provides qualitative context to quantitative insights. The platform supports warehouse-native deployments and extensive third-party integrations through its partner ecosystem, positioning it as a central hub for product analytics and optimization workflows.
+The platform serves product teams, growth teams, and developers with tools ranging from no-code analytics and experimentation to sophisticated API integrations and custom SDK implementations, all unified under a single analytics and optimization ecosystem.

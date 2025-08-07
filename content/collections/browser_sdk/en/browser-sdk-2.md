@@ -39,7 +39,7 @@ Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-s
 {{partial:tabs tabs="Script loader, npm, yarn"}}
 {{partial:tab name="Script loader"}}
 When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
-{{partial:partials/code/snippet autocapture="true" unified="true"}}
+{{partial:partials/code/snippet autocapture="true" unified="false"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash

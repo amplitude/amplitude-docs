@@ -1,0 +1,42 @@
+## Product Overview
+
+This is a comprehensive AI-powered agent system designed to provide specialized assistance across web analytics, user experience optimization, and business intelligence domains. The system consists of six distinct AI agents, each with focused expertise in critical areas of digital product management and conversion optimization.
+
+## Core Agent Portfolio
+
+The system deploys six specialized agents operating under a unified framework:
+
+**Best Practices Agent** - Delivers industry standards guidance and recommended methodologies for web analytics and optimization implementations.
+
+**Dashboard Summary Agent** - Provides analytical insights and data interpretation capabilities, transforming complex dashboard metrics into actionable intelligence.
+
+**Optimize Website Conversion Agent** - Focuses exclusively on conversion rate optimization strategies, offering tactical recommendations for improving user conversion paths.
+
+**Privacy and Security Agent** - Handles compliance frameworks, data protection protocols, and security-related guidance for analytics implementations.
+
+**Session Replay Deep Research Agent** - Specializes in behavioral data analysis through user session recordings, providing deep insights into user interaction patterns.
+
+**Setup and Onboarding Agent** - Manages initial system configuration, implementation guidance, and user onboarding workflows.
+
+## System Architecture and Relationships
+
+All agents operate within a standardized `blueprint: agent` framework, indicating a unified underlying architecture with distributed specialization. The system maintains centralized governance through shared administrative oversight while enabling autonomous operation within each agent's domain expertise. The agents function as complementary components covering the complete web analytics lifecycle - from initial implementation through ongoing optimization and compliance management.
+
+## Key Nomenclature and Definitions
+
+**Agent** - Domain-specific AI assistants with specialized knowledge bases and response capabilities
+**Blueprint** - The foundational framework defining agent structure, capabilities, and operational parameters
+**Session Replay** - User interaction recording technology enabling behavioral analysis and UX optimization
+**Conversion Optimization** - Systematic improvement of website elements to maximize desired user actions and business outcomes
+**Dashboard Summary** - Analytical interpretation and synthesis of complex metrics data into digestible insights
+
+## Ecosystem Integration
+
+The agent system functions as an intelligent advisory layer within a broader web analytics and optimization platform ecosystem. Integration points include:
+
+- **Analytics Platform Integration** - Dashboard summary and session replay agents suggest direct connectivity with analytics data sources
+- **Compliance Management** - Privacy and security agent indicates integration with regulatory frameworks and data governance systems  
+- **Implementation Support** - Setup and onboarding agent connects with technical configuration and deployment processes
+- **Optimization Workflows** - Conversion optimization agent integrates with A/B testing platforms and experimentation frameworks
+
+The modular architecture enables scalable, context-aware assistance that democratizes access to expert-level knowledge across digital optimization disciplines. Users can access specialized guidance without requiring deep domain expertise, while the system maintains consistency through its unified blueprint framework. This approach supports both tactical implementation needs and strategic optimization initiatives within enterprise web analytics environments.

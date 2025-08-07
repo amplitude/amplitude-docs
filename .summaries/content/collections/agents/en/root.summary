@@ -1,0 +1,29 @@
+This directory contains documentation for an AI-powered agent system designed to provide specialized assistance across various aspects of web analytics, user experience optimization, and business intelligence. The product appears to be a collection of intelligent agents, each focused on specific domains of expertise within digital product management and optimization.
+
+## Product Overview
+
+The agents system consists of six specialized AI agents that serve distinct functions in web analytics and conversion optimization:
+
+- **Best Practices Agent**: Provides guidance on industry standards and recommended approaches
+- **Dashboard Summary Agent**: Delivers analytical insights and data interpretation from dashboard metrics
+- **Optimize Website Conversion Agent**: Focuses specifically on conversion rate optimization strategies and tactics
+- **Privacy and Security Agent**: Handles compliance, data protection, and security-related inquiries
+- **Session Replay Deep Research Agent**: Specializes in analyzing user session recordings and behavioral data
+- **Setup and Onboarding Agent**: Assists with initial configuration, implementation, and user onboarding processes
+
+## Product Relationships and Architecture
+
+All agents share a common blueprint structure (`blueprint: agent`), indicating they operate within a unified agent framework. Each agent maintains its own unique identifier and is managed by the same system administrator, suggesting centralized governance with distributed expertise. The agents appear to work complementarily, covering the full lifecycle of web analytics implementation from initial setup through ongoing optimization.
+
+## Key Nomenclature and Definitions
+
+- **Agent**: Specialized AI assistants with domain-specific expertise
+- **Blueprint**: The underlying framework or template that defines agent structure and capabilities
+- **Session Replay**: Technology for recording and analyzing user interactions on websites
+- **Conversion Optimization**: The practice of improving website elements to increase desired user actions
+
+## Ecosystem Integration
+
+The agents system integrates into a broader web analytics and optimization platform, likely serving as an intelligent layer that helps users navigate complex data analysis, implementation challenges, and strategic decision-making. The presence of dashboard summary and session replay agents suggests integration with analytics platforms, while the privacy and security agent indicates compliance management capabilities.
+
+The system appears designed to democratize access to expert-level knowledge across different aspects of digital optimization, allowing users to receive specialized guidance without requiring deep domain expertise in each area. The modular agent approach enables scalable, context-aware assistance that can adapt to specific user needs and use cases.
