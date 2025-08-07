@@ -26,7 +26,7 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze
 - For more details on using this integration in Braze, see the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
 - Amplitude sends email alerts for job success and failures, keeping you informed about the status of your cohort syncs.
-- Braze does not accept external ids for identified users, which means it is recommended to use more than one mapping to identify users.
+- Braze doesn't accept external ids for identified users, which means it's recommended to use more than one mapping to identify users.
 
 ## Prerequisites
 
