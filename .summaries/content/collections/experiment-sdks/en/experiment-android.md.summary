@@ -1,33 +1,31 @@
 ## Summary
 
-This documentation covers Amplitude Experiment's client-side Android SDK implementation, including installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access, exposure tracking, and configuration options for features like automatic exposure tracking, user providers, and bootstrapping with initial variants or flag configurations.
+This documentation covers Amplitude Experiment's Client-side Android SDK implementation, including installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access, and configuration options for exposure tracking, user providers, and bootstrapping with initial variants or flag configurations.
 
 ## Keywords
 
 - Amplitude Experiment Android SDK
-- client-side Android implementation
-- Maven Central installation
-- experiment-android-client
+- experiment-android-client Maven dependency
 - ExperimentClient initialization
-- deployment key configuration
+- initializeWithAmplitudeAnalytics
 - remote evaluation fetch()
 - local evaluation start()
 - variant() method
-- automatic exposure tracking
 - ExperimentUser builder
-- ExperimentConfig options
-- Amplitude Analytics integration
-- Segment integration
 - ExposureTrackingProvider interface
 - ExperimentUserProvider interface
+- deployment key authentication
+- automatic exposure tracking
+- Kotlin Android implementation
 - flag configurations bootstrapping
-- initialVariants configuration
 - Source.INITIAL_VARIANTS
-- ServerZone.EU configuration
-- fetchOnStart behavior
-- pollOnStart flag updates
-- account-level bucketing
-- group properties
-- variant payload JSONObject
-- exposure() manual tracking
-- clear() variants cache
+- ExperimentConfig builder
+- Segment integration
+- user provider interface
+- exposure tracking provider
+- fetchOnStart configuration
+- pollOnStart local evaluation
+- serverZone EU data center
+- initialVariants bootstrapping
+- initialFlags JSON configuration
+- automaticFetchOnAmplitudeIdentityChange
