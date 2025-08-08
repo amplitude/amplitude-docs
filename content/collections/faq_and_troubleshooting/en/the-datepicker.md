@@ -60,10 +60,6 @@ Exclude specific days is only supported for the following time ranges:
 Exclude specific days doesn't work with Period over Period analysis and it doesn't work with `realtime` intervals.
 {{/partial:admonition}}
 
-#### Caveats and notes
-
-* 
-
 #### How Amplitude handles excluded days
 
 When you exclude days, Amplitude:
