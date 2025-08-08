@@ -5,13 +5,15 @@
 - timeframe selection
 - offset configuration
 - incomplete intervals
-- exclude functionality
+- exclude specific days
 - time input granularity
 - Event Segmentation charts
 - Funnel Analysis charts
+- rolling window calculations
 - preset management
-- rolling windows
-- batch ingestion system
-- fiscal periods
 - project-level presets
-- default preset configuration
+- Since/Between date ranges
+- Last x days/weeks/months
+- batch ingestion system
+- Period over Period analysis
+- realtime intervals
