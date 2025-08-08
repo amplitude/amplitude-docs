@@ -12,7 +12,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731622844
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
-In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
+In an Experiment Results chart, using a formula metric offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
 
 * at least one event, and
 * a mathematical operation through which the events interact with each other.
