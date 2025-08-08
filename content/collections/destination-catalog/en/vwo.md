@@ -53,11 +53,11 @@ To integrate VWO with your Amplitude account:
 
    This integration provides three options. You can enable one or more of these options based on your specific tracking and targeting needs. Click on the linked text for more information about each option, including its benefits and how it works.
 
-   1. If you want to send VWO Test and Personalize campaign data to Amplitude, select [Enable sending VWO campaign data to Amplitude**](#send-vwo-campaign-data-to-amplitude).
+   1. If you want to send VWO Test and Personalize campaign data to Amplitude, select [Enable sending VWO campaign data to Amplitude](#send-vwo-campaign-data-to-amplitude).
 
-   2. If you want to send VWO survey data to Amplitude, select [*Enable sending VWO insights data to Amplitude**](#send-vwo-insights-\(surveys\)-data-to-amplitude).
+   2. If you want to send VWO survey data to Amplitude, select [Enable sending VWO insights data to Amplitude](#send-vwo-insights-\(surveys\)-data-to-amplitude).
 
-   3. If you want to import Amplitude cohorts in VWO and target visitor data, select [**Enable use of Amplitude cohorts for visitor targeting**](#use-amplitude-cohorts-in-vwo-for-visitor-targeting).  
+   3. If you want to import Amplitude cohorts in VWO and target visitor data, select [Enable use of Amplitude cohorts for visitor targeting](#use-amplitude-cohorts-in-vwo-for-visitor-targeting).  
 4. Click **Save**.
 
 {{partial:admonition type="note" heading=""}}
