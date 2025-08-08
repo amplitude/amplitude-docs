@@ -2,9 +2,8 @@
 
 **Keywords:**
 - datepicker
-- timeframe selection
 - offset configuration
-- incomplete intervals
+- incomplete interval exclusion
 - exclude specific days
 - time input granularity
 - Event Segmentation charts
@@ -12,8 +11,8 @@
 - rolling window calculations
 - preset management
 - project-level presets
-- Since/Between date ranges
+- Since/Between timeframes
 - Last x days/weeks/months
-- batch ingestion system
-- Period over Period analysis
 - realtime intervals
+- Period over Period analysis
+- fiscal periods
