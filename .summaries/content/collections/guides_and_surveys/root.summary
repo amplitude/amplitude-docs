@@ -4,11 +4,11 @@ Amplitude Guides and Surveys is a comprehensive in-product user engagement platf
 
 The platform consists of three primary components that work together to deliver personalized user experiences:
 
-**Guides** are interactive, multi-step experiences designed for user onboarding, feature announcements, and task completion guidance. They support five distinct form factors: Modal (overlay dialogs), Popover (contextual bubbles), Pin (persistent markers), Tooltip (hover-triggered help), Banner (page-wide notifications), and Checklist (task-oriented workflows). Guides utilize behavioral triggers including element appearance/clicks, time delays, rage click detection, user confusion patterns, and custom event tracking.
+**Guides** are interactive, multi-step experiences designed for user onboarding, feature announcements, and task completion guidance. They support five distinct form factors: Modal (overlay dialogs), Popover (contextual bubbles), Pin (persistent markers), Tooltip (hover-triggered help), Banner (page-wide notifications), and Checklist (task-oriented workflows). Guides utilize behavioral triggers including element appearance/clicks, time delays, rage clicks, user confusion detection, and custom event tracking.
 
 **Surveys** focus on feedback collection through four specialized block types: Rating (Stars, NPS, Emoji, Rating labels), Long answer, Short answer, and List (multiple choice). Surveys support conditional logic for dynamic response branching and utilize a subset of guide form factors (modal, popover, pin). The platform provides comprehensive analytics through the Insights tab for aggregate metrics and the Responses tab for individual user data, with CSV export capabilities up to 10,000 responses.
 
-**Resource Center** functions as a help widget that integrates with the Guides and Surveys SDK, providing search functionality, recommended content, quick links, and call-to-action buttons. It features an Autopilot system that uses semantic search algorithms to automatically generate article recommendations by analyzing page content and surfacing relevant materials from configured content repositories.
+**Resource Center** functions as a help widget that integrates with the Guides and Surveys SDK, providing search functionality, recommended content, quick links, and call-to-action buttons. It features an Autopilot system that uses semantic search algorithms to automatically generate article recommendations by analyzing page content and surfacing relevant articles from content repositories.
 
 ## Multi-Platform SDK Implementation
 
@@ -26,17 +26,17 @@ The platform supports comprehensive cross-platform deployment through dedicated 
 
 The platform employs sophisticated targeting mechanisms including user segmentation, session properties via `setSessionProperty()`, page targeting with URL matching patterns, and priority levels (urgent, high, medium, low). The system supports rollout percentage bucketing, display limits with cooldown periods, and active state management with tiebreaker rules.
 
-**Personalization** is achieved through the "Personalize with Variables" feature, which dynamically inserts client-side user properties into guide and survey text blocks with configurable fallback values. The platform supports comprehensive localization through SDK locale configuration, XLIFF file workflows, and AI-powered translation using Claude.
+**Personalization** is achieved through the "Personalize with Variables" feature, which dynamically inserts client-side user properties into guide and survey text blocks with configurable fallback values. The platform supports comprehensive localization through SDK locale configuration, XLIFF file translation workflows, and AI-powered localization using Claude.
 
 ## Analytics and Experimentation
 
 The analytics framework tracks comprehensive event properties including Lifecycle UUID for event grouping, Step ID and Step Index for navigation tracking, and Variant ID for A/B testing. Key events include Survey Submitted, Survey Abandoned, Guide Completed, Guide Dismissed, Tooltip Marker Viewed, and Rage Closed detection.
 
-**Amplitude Experiment integration** enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and insights dashboard analytics for treatment vs. control performance tracking.
+**Amplitude Experiment integration** enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and insights dashboard analytics for treatment vs control performance tracking.
 
 ## Key Nomenclature and Definitions
 
-**Form Factors**: The visual presentation modes (Modal, Popover, Pin, Tooltip, Banner, Checklist) that determine how content appears to users.
+**Form Factors**: The visual presentation modes (Modal, Popover, Pin, Tooltip, Banner, Checklist) that determine how guides and surveys appear to users.
 
 **Lifecycle UUID**: A unique identifier that groups related events within a single guide or survey interaction session.
 
@@ -46,16 +46,16 @@ The analytics framework tracks comprehensive event properties including Lifecycl
 
 **Recommendation Sets**: Customizable collections of articles and information for the Resource Center that can be embedded as personalized landing pages.
 
-**Autopilot**: An intelligent recommendation system that uses semantic search to automatically surface relevant content when dedicated recommendation sets aren't configured.
+**Autopilot**: An intelligent recommendation system that uses semantic search to automatically surface relevant content based on page analysis.
 
 **Conditional Logic**: Dynamic response branching in surveys that adapts subsequent questions based on user responses.
 
 ## Enterprise Features and Management
 
-The platform includes a comprehensive permission system with five access levels (No access, Viewer, Member, Manager, Administrator) that override base Amplitude user roles. The **Themes** feature enables extensive branding customization through a Theme Editor with Brand controls and Component editor sections, supporting platform-specific themes for web and mobile.
+The platform includes a comprehensive permission system with five access levels (No access, Viewer, Member, Manager, Administrator) that override base Amplitude user roles. The **Templates** system enables creation of reusable starting points for guides and surveys with visibility management and theme inheritance.
 
-**Template System** provides reusable starting points for guides and surveys, with visibility management and integration into the Create Guide/Survey workflow. The platform supports **Custom CSS** styling (web SDK only, beta feature) with specific CSS class selectors for targeting form factors and survey elements.
+**Themes** provide extensive customization capabilities through a Theme Editor with Brand controls and Component editor sections, supporting platform-specific themes for web and mobile with CSS property configuration for colors, typography, form controls, and animations.
 
-**Testing and Preview** capabilities include preview mode for condition verification, cohort targeting for live testing, and comprehensive debugging tools with condition status indicators and manual event triggering.
+**Proxy Configuration** supports AWS CloudFront setup as a reverse proxy with specific origins (cdn.amplitude.com for static assets, gs.amplitude.com for API requests) and critical `/sdk/*` path patterns for API routing.
 
-The Resource Center includes advanced content management through **Website Scraper** functionality for URL extraction, CSV/XML sitemap upload, content selector overrides, and sync error management. **Source Content** configuration supports documentation repositories and video sources with draft/published visibility states and automatic sync frequency options.
+The platform integrates seamlessly with the broader Amplitude ecosystem, supporting serverZone EU/US configuration, Content Security Policy (CSP) nonce support, and comprehensive event forwarding for behavioral analytics and user journey tracking.
