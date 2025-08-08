@@ -31,7 +31,7 @@ When using Since or the Last x days, weeks, or months options, you can also choo
 
 To exclude the incomplete time interval from your chart, click +Exclude in the datepicker and select the Incomplete Interval option. The current date is no longer framed in a dotted line and is excluded from your analysis. 
 
-Uncheck Incomplete Interval to revert this setting. Use the same process to exclude or include the current week, current month or current quarter.
+Deselect Incomplete Interval to revert this setting. Use the same process to exclude or include the current week, current month or current quarter.
 
 {{partial:admonition type="note" heading=""}}
 Amplitude doesn't support using offset and exclude at the same time.
@@ -39,28 +39,41 @@ Amplitude doesn't support using offset and exclude at the same time.
 
 ### Exclude specific days
 
-You can exclude specific days of the week from your analysis. This isideal for organizations that operate on custom schedules. For example:
-
-* Retailers can exclude Sundays when stores aren't open
-
-* SaaS companies can omit weekends to focus on workweek behavior
+You can exclude specific days of the week from your analysis. This is ideal for organizations that operate on custom schedules. For example, retailers can exclude Sundays when stores aren't open or SaaS companies can omit weekends to focus on workweek behavior.
 
 This exclusion affects not only chart visuals but also metric calculations like averages and rolling windows.
+
+Exclude specific days is only supported on the following chart types: 
+
+* Segmentation
+* Funnels
+* Data Tables
+* Retention
+* Sessions
+
+Exclude specific days is only supported for the following time ranges:
+
+* Last
+* Since
+
+{{partial:admonition type="tip" heading=""}}
+Exclude specific days doesn't work with Period over Period analysis and it doesn't work with `realtime` intervals.
+{{/partial:admonition}}
+
+#### Caveats and notes
+
+* 
 
 #### How Amplitude handles excluded days
 
 When you exclude days, Amplitude:
 
-* Removes the day and its value from the data window but still count it toward the window size. 
-* Ignores the dropped day's value in the average calculation.
-
-This means:
-
-* A 5-day rolling window remains a 5-day window.
-
-* If you exclude one of those days(for example, Sunday), Amplitude ignores its value.
-
-* Amplitude calculates the average using only the included days’ values.
+* Exclude days removes the days from the calculations and from the chart visualization.
+* For averages, the calculation is done on the valid days in the window. For example, if you are looking at the range Sunday - Saturday (7 days) with Wednesday removed:
+    * For non-average time series analysis, the data shows as normal with Wednesday removed.
+    * For aggregate data analysis, the data doesn't count the Wednesday in the aggregation,
+* For averaging analysis (such as the rolling window), Amplitude doesn't count the dropped days in the numerator or the denominator. If you have a 7-day rolling window, the data point is treated as a 0 and divide average based on the valid days in the window (6 days in this example).
+* For non-daily or non-hourly intervals analysis, no data is removed from the chart or the table. However, the data still has the underlying days removed.
 
 This method avoids artificially low averages and maintains consistent windowing on charts.
 
