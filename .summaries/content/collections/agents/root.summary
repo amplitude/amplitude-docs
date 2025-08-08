@@ -1,42 +1,59 @@
 ## Product Overview
 
-This is a comprehensive AI-powered agent system designed to provide specialized assistance across web analytics, user experience optimization, and business intelligence domains. The system consists of six distinct AI agents, each with focused expertise in critical areas of digital product management and conversion optimization.
+This is an AI-powered web analytics and conversion optimization platform built around specialized intelligent agents that provide automated insights and recommendations. The platform combines session replay technology, conversion optimization tools, and AI-driven analysis to help businesses understand and improve website performance through autonomous analytical modules.
 
-## Core Agent Portfolio
+## Agent Architecture and Feature Relationships
 
-The system deploys six specialized agents operating under a unified framework:
+The platform operates through three core specialized AI agents that work in concert:
 
-**Best Practices Agent** - Delivers industry standards guidance and recommended methodologies for web analytics and optimization implementations.
+**Session Replay Deep Research Agent** serves as the behavioral analysis engine, processing user session recordings to identify friction points, map user journeys, and extract behavioral insights from actual user interactions.
 
-**Dashboard Summary Agent** - Provides analytical insights and data interpretation capabilities, transforming complex dashboard metrics into actionable intelligence.
+**Website Conversion Optimization Agent** functions as the performance optimization engine, analyzing conversion funnels and identifying specific opportunities to improve conversion rates across different customer touchpoints and user flows.
 
-**Optimize Website Conversion Agent** - Focuses exclusively on conversion rate optimization strategies, offering tactical recommendations for improving user conversion paths.
+**Dashboard Summary Agent** acts as the data synthesis layer, aggregating insights from the other agents and multiple data sources to provide executive-level KPIs and digestible performance summaries.
 
-**Privacy and Security Agent** - Handles compliance frameworks, data protection protocols, and security-related guidance for analytics implementations.
-
-**Session Replay Deep Research Agent** - Specializes in behavioral data analysis through user session recordings, providing deep insights into user interaction patterns.
-
-**Setup and Onboarding Agent** - Manages initial system configuration, implementation guidance, and user onboarding workflows.
-
-## System Architecture and Relationships
-
-All agents operate within a standardized `blueprint: agent` framework, indicating a unified underlying architecture with distributed specialization. The system maintains centralized governance through shared administrative oversight while enabling autonomous operation within each agent's domain expertise. The agents function as complementary components covering the complete web analytics lifecycle - from initial implementation through ongoing optimization and compliance management.
+These agents operate autonomously but share data and insights, creating a comprehensive analytical ecosystem where behavioral insights from session replay inform conversion optimization strategies, while dashboard summaries provide oversight across all analytical domains.
 
 ## Key Nomenclature and Definitions
 
-**Agent** - Domain-specific AI assistants with specialized knowledge bases and response capabilities
-**Blueprint** - The foundational framework defining agent structure, capabilities, and operational parameters
-**Session Replay** - User interaction recording technology enabling behavioral analysis and UX optimization
-**Conversion Optimization** - Systematic improvement of website elements to maximize desired user actions and business outcomes
-**Dashboard Summary** - Analytical interpretation and synthesis of complex metrics data into digestible insights
+**Agents**: Autonomous AI-powered analytical modules that specialize in specific domains of web analytics, operating independently to generate insights and recommendations within their area of expertise.
 
-## Ecosystem Integration
+**Blueprint**: The structural template system using "agent" blueprint architecture that defines content organization, metadata structure, and documentation framework for agent-specific functionality.
 
-The agent system functions as an intelligent advisory layer within a broader web analytics and optimization platform ecosystem. Integration points include:
+**Session Replay**: Recording and reconstruction technology that captures user interactions on websites, enabling detailed post-session behavioral analysis and user experience evaluation.
 
-- **Analytics Platform Integration** - Dashboard summary and session replay agents suggest direct connectivity with analytics data sources
-- **Compliance Management** - Privacy and security agent indicates integration with regulatory frameworks and data governance systems  
-- **Implementation Support** - Setup and onboarding agent connects with technical configuration and deployment processes
-- **Optimization Workflows** - Conversion optimization agent integrates with A/B testing platforms and experimentation frameworks
+**Deep Research**: Advanced analytical processing that extends beyond surface-level metrics to provide comprehensive behavioral pattern analysis and actionable insights.
 
-The modular architecture enables scalable, context-aware assistance that democratizes access to expert-level knowledge across digital optimization disciplines. Users can access specialized guidance without requiring deep domain expertise, while the system maintains consistency through its unified blueprint framework. This approach supports both tactical implementation needs and strategic optimization initiatives within enterprise web analytics environments.
+**Conversion Optimization**: Systematic analysis and improvement of user conversion paths, focusing on identifying and removing barriers to desired user actions.
+
+## Product Ecosystem Integration
+
+The platform integrates multiple layers of functionality:
+
+**Data Collection Layer** captures user interactions, conversion events, website performance metrics, and behavioral data across all customer touchpoints.
+
+**AI Processing Layer** houses the specialized agents that process different aspects of collected data, with each agent maintaining domain expertise while sharing relevant insights with other system components.
+
+**Presentation Layer** includes dashboard systems and reporting interfaces that surface insights from various agents in contextually appropriate formats for different stakeholder needs.
+
+**Security Framework** provides enterprise-grade privacy controls, data protection compliance, secure transmission protocols, and access management systems.
+
+## Implementation Framework
+
+The platform includes structured onboarding and configuration processes:
+
+- Agent-specific setup procedures for configuring tracking parameters and analytical focus areas
+- Conversion goal establishment and KPI customization aligned with business objectives  
+- Privacy protocol configuration ensuring compliance with data protection requirements
+- Integration workflows for connecting with existing analytics and business intelligence systems
+
+## Operational Best Practices
+
+The system incorporates guidance for optimal agent utilization:
+
+- Agent configuration and parameter tuning for specific business contexts and analytical requirements
+- Data interpretation methodologies that leverage multi-agent insights for comprehensive understanding
+- Integration strategies for incorporating agent insights into existing decision-making workflows
+- Performance optimization approaches for maximizing analytical accuracy and actionable insight generation
+
+This agent-based architecture enables simultaneous AI-driven analysis across multiple dimensions of web analytics, providing comprehensive digital experience insights while maintaining specialized focus through domain-specific agents that operate both independently and collaboratively.
