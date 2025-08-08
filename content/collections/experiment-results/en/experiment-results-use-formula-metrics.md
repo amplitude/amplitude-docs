@@ -14,28 +14,21 @@ landing_blurb: 'Understand the different kinds of formula metrics supported by t
 ---
 In an Experiment Results chart, using a formula metric offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
 
-* at least one event, and
-* a mathematical operation through which the events interact with each other.
+* At least one event, and
+* A mathematical operation through which the events interact with each other.
 
-If you've used [custom formulas in Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas), this should be familiar to you. If not, take a minute to go back and read over that article before proceeding.
+If you've used [custom formulas in Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas), this should be familiar to you. If not, take review that article before proceeding.
 
 ## Create a formula metric
 
-To add a formula metric to your Experiment Results chart, follow these steps:
+##### To add a formula metric to your Experiment Results chart
 
-1. In the Primary Metric module, click *+ Add Metric* and choose a formula from the *Formula* drop down options.
-
-  ![select_formula.png](/docs/output/img/experiment-results/select-formula-png.png)
-
-2. Click *+ Define single-use metric*, then select *Formula* from the *Metric Type* dropdown in the modal that appears.  
-  
-  ![Screenshot 2023-07-31 at 2.13.04 PM.png](/docs/output/img/experiment-results/untitled-metric.png)
-
-3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
-
-2. In the *Formula* box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#supported-formula-functions), or [here for an explanation of formula syntax](#formula-syntax).
-
-3. Add a name for this new formula metric. Click *Apply* when you're done. The metric now appears in your Experiment Results chart.
+1. In the Primary Metric module, click *Add Metric* and choose a formula from the Formula dropdown options.
+2. Click *Define single-use metric*, then select *Formula* from the Metric Type dropdown.  
+3. Click *Select event...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
+4. In the Formula box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#supported-formula-functions), or [here for an explanation of formula syntax](#formula-syntax).
+5. Add a name for this new formula metric. Click *Apply* when you're done. 
+The metric now appears in your Experiment Results chart.
 
 You can also view this metric in the [object management center](/docs/data/object-management).
 
@@ -46,24 +39,18 @@ Experiment Results supports the formula functions listed here:
 ### UNIQUES
 
 **Syntax**: `UNIQUES(event)`
-
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
-
 Returns the number of unique users who triggered the event. 
 
 ### TOTALS
 
 **Syntax**: `TOTALS(event)`
-
-* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
-
-Returns the total number of times users triggered the event.
+* **Event**: Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module. Returns the total number of times users triggered the event.
 
 ### PROPSUM
 
 **Syntax**: `PROPSUM(event)`
-
-* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
+* **Event**: Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
@@ -72,7 +59,6 @@ Returns the sum of the property values you're grouping the specified event by.
 ### PROPAVG
 
 **Syntax**: `PROPAVG(event)`
-
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
