@@ -17,7 +17,7 @@ Amplitude Experiment creates your initial variant; by default, and names it `tre
 
 To add additional variants, follow these steps:
 
-1. Click *+ Add a variant*. The *Create Variant* panel opens.
+1. Click **Add a variant**. The Create Variant panel opens.
 2. Give your variant a name and a value. Value is a string, that by default, is a slugified version of the variant name.
 
     {{partial:admonition type="tip" heading="Use variant value in your code"}}
@@ -31,11 +31,11 @@ To add additional variants, follow these steps:
 
     Paste or type your code into the window. 
 
-5. Click *Apply*.
+5. Click **Apply**.
 
-There is **no limit to the number of variants** you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to a handful of variants, at most.
+There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to a handful of variants, at most.
 
-Amplitude Experiment uses the first variant listed as the control. You can change this by dragging a different variant to the top of the list. Whichever variant you label *A* when your experiment launches is the control.
+Amplitude Experiment uses the first variant listed as the control. You can change this by dragging a different variant to the top of the list. Whichever variant you label as **A** when your experiment launches is the control.
 
 ## Distribute traffic to your variations
 
@@ -48,19 +48,19 @@ Sometimes, you may want to spread traffic differently for each user segment you�
 * Segment 1: `Country = USA || 80% treatment, 20% control`
 * Segment 2: `Country = Canada || 50% treatment, 50% control`
 
-This can introduce bias into your experiment results. You should generally adhere to **uniform allocation ratios** across all user segments in an experiment. 
+This can introduce bias into your experiment results. In general, adhere to uniform allocation ratios across all user segments in an experiment. 
 
 Non-uniform allocation ratios often happen inadvertently, when users change their rollouts and variants while an experiment is running.
 
-Amplitude Experiment gives you the option to use stratified sampling (for example, non-uniform allocation ratios) if you need it. Just switch the *Allow rollout controls per segment* toggle to On. (This option will only be visible if you've selected [*Targeted Users*](/docs/feature-experiment/workflow/define-audience).)
+Amplitude Experiment gives you the option to use stratified sampling (for example, non-uniform allocation ratios) if you need it. Just switch the Allow rollout controls per segment toggle to **On**. (This option is only visible if you've selected [**Targeted Users**](/docs/feature-experiment/workflow/define-audience).)
 
 This switch is visible only for experiments, and not for feature flags. Amplitude disables it while your experiment is active.
 
-When you’re ready, click Continue to move on to the rollout phase.
+Click **Continue** to move on to the rollout phase.
 
 ## Rollout percentage
 
-The next step is to set the **rollout percentage** for this experiment. This is the percentage of the users included in the experiment’s user segments who take part in the experiment. Find it in the *Rollout* section of the experiment design panel.
+The next step is to set the rollout percentage for this experiment. This is the percentage of the users included in the experiment’s user segments who take part in the experiment. Find it in the Rollout section of the experiment design panel.
 
 Manually enter the percentage of your audience that should be eligible for bucketing into the experiment. If you roll your experiment out to less than 100% of your users, the balance sees your default product experience, and aren't included in any experiment calculations.
 
