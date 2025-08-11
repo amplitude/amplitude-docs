@@ -156,7 +156,7 @@ The template in the screenshot can correspond to the above payload depending on 
 
 # Release Internally
 
-If you would like to test within your org, click **Release Internally**. This will allow anyone within your org to use the integration you defined. Please allow up to 5 minutes for changes to take effect. 
+To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. Allow up to 5 minutes for changes to take effect. 
 
 ## Submit
 
