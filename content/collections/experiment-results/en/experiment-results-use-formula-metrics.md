@@ -23,11 +23,11 @@ If you've used [custom formulas in Event Segmentation](/docs/analytics/charts/ev
 
 ##### To add a formula metric to your Experiment Results chart
 
-1. In the Primary Metric module, click *Add Metric* and choose a formula from the Formula dropdown options.
-2. Click *Define single-use metric*, then select *Formula* from the Metric Type dropdown.  
-3. Click *Select event...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
-4. In the Formula box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#supported-formula-functions), or [here for an explanation of formula syntax](#formula-syntax).
-5. Add a name for this new formula metric. Click *Apply* when you're done. 
+1. In the Primary Metric module, click **Add Metric** and choose a formula from the Formula dropdown options.
+2. Click **Define single-use metric**, then select *Formula* from the Metric Type dropdown.  
+3. Click **Select event...** to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
+4. In the Formula box, enter the formula for calculating your formula metric. Click [here](#supported-formula-functions)  for a list of formulas Experiment Results supports, or [here](#formula-syntax) or an explanation of formula syntax.
+5. Add a name for this new formula metric and then click **Apply**. 
 The metric now appears in your Experiment Results chart.
 
 You can also view this metric in the [object management center](/docs/data/object-management).
@@ -39,7 +39,7 @@ Experiment Results supports the formula functions listed here:
 ### UNIQUES
 
 **Syntax**: `UNIQUES(event)`
-* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
+* **Event**: Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 Returns the number of unique users who triggered the event. 
 
 ### TOTALS
@@ -59,7 +59,8 @@ Returns the sum of the property values you're grouping the specified event by.
 ### PROPAVG
 
 **Syntax**: `PROPAVG(event)`
-* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
+
+* **Event**: Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
@@ -69,7 +70,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 **Syntax**: `PROPCOUNT(event)`
 
-* Event: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
+* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
    
    Returns the number of distinct property values for the property the event is grouped by.
 
@@ -77,28 +78,28 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPMAX
 
-**Syntax:** `PROPMAX(event)`
+**Syntax**: `PROPMAX(event)`
 
-* **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
+* **Event**: Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
 ### PROPMIN
 
 **Syntax**: `PROPMIN(event)`
 
-* **Event:** Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
+* **Event**: Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
 
 ### PROPCOUNT
 
-**Syntax:** `PROPCOUNT(event)`
+**Syntax**: `PROPCOUNT(event)`
 
-* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
+* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
 
-Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula retrieves the number of different departments covering all the items for which details were viewed:
+Returns the number of distinct property values for the property by which the event is grouped. In this setup, the formula retrieves the number of different departments covering all the items for which details were viewed:
 
 ![propcount_sidecontrols.png](/docs/output/img/experiment-results/propcount-sidecontrols-png.png)
 
-`PROPCOUNT` is an **estimate** of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
+`PROPCOUNT` is an estimate of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
 
 {{partial:admonition type="note" heading=""}}
 `PROPCOUNT` supports only numeric event properties in Experiment.
@@ -106,9 +107,9 @@ Returns the number of distinct property values for the property the event is gro
 
 ### REVENUETOTAL
 
-**Syntax:** `$:REVENUETOTAL(event)`
+**Syntax**: `$:REVENUETOTAL(event)`
 
-* **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Event card. 
+* **Event**: Refers to the revenue event. This must be a letter that corresponds to an event in the Event card. 
 * This function only works if you are grouping by a numerical property on the event. 
 
 Returns the aggregate sum of the property, formatted as a currency. It's the same as `PROPSUM(event)`. The `$:` prefix is optional. Its presence ensures the output format is a currency.
@@ -129,7 +130,7 @@ Before getting into how calculations of formula metrics work with experiment dat
 
 For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. It then applies the arithmetic operators to the results of these individual functions.   
 
-Imagine you've defined a formula metric as `TOTALS(A) + TOTALS(B)`. Amplitude calculates the variances and means of both components of this metric, as well as the covariance.
+For example: You've defined a formula metric as `TOTALS(A) + TOTALS(B)`. Amplitude calculates the variances and means of both components of this metric, as well as the covariance.
 
 If you set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statements hold:
 
@@ -154,6 +155,6 @@ If you set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statemen
     Variance: ![](/docs/output/img/experiment-results/23576087077403){.inline}
     Mean: `E[X / Y] = E[X] / E[Y]`
 
-Once you have the mean and variance of the formula metric, you can calculate the confidence interval chart and the p-values.
+After you have the mean and variance of the formula metric, you can calculate the confidence interval chart and the p-values.
 
 `Formula / Metric: TOTALS(A) / TOTALS(B)`
