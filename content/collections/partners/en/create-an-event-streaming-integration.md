@@ -154,7 +154,7 @@ The template in the screenshot can correspond to the above payload depending on 
       - **DECLARED:** All declared parameters in the *Create Parameters* section.
       - **USED:** All parameters used either in the URL, headers and event body.
 
-# Release Internally
+## Release Internally
 
 To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. Allow up to 5 minutes for changes to take effect. 
 
