@@ -774,15 +774,15 @@ Each revenue event has fields available, and each field has a corresponding set 
 Like `logEvent`, you can attach event properties for each call to `logRevenueV2` . However, these event properties only appear in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart and not in the Revenue charts.
 
 <!-- vale Vale.Spelling = NO-->
-| Name  | Description  |
-| --- | --- |
-| `productId` | Optional. NSString. An identifier for the product. Amplitude recommends something like the "Google Play Store product ID". Defaults to `null`. |
-| `quantity`| Required. NSInteger. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1. |
-| `price` | Required. NSNumber. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
-| `revenueType` | Optional, but required for revenue verification. NSString. The revenue type. For example tax, refund, income. Defaults to `null`. |
-| `receipt`  | Optional, but required for revenue verification. NSData. Defaults to `null` |
-| `receiptSignature` | Optional, but required for revenue verification. Defaults to `null`. |
-| `eventProperties`| Optional. NSDictionary. An object of event properties to include in the revenue event. Defaults to `null`. |
+| Name               | Description                                                                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `productId`        | Optional. NSString. An identifier for the product. Amplitude recommends something like the "Google Play Store product ID". Defaults to `null`. |
+| `quantity`         | Required. NSInteger. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1.                                      |
+| `price`            | Required. NSNumber. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to `null`.       |
+| `revenueType`      | Optional, but required for revenue verification. NSString. The revenue type. For example tax, refund, income. Defaults to `null`.              |
+| `receipt`          | Optional, but required for revenue verification. NSData. Defaults to `null`                                                                    |
+| `receiptSignature` | Optional, but required for revenue verification. Defaults to `null`.                                                                           |
+| `eventProperties`  | Optional. NSDictionary. An object of event properties to include in the revenue event. Defaults to `null`.                                     |
 <!-- vale Vale.Spelling = YES -->
 
 {{partial:admonition type="note" heading=""}}
