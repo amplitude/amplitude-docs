@@ -7,12 +7,12 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718575288
 ---
-The Contentful plugin for Amplitude Experiment enables businesses to create variations of content in Contentful, and use Experiment to control which variant users see, and track performance of those variants.
+The Contentful plugin for Amplitude Experiment enables businesses to create variations of content in Contentful, and use Experiment to control which variant users experience, and track performance of those variants.
 
 ## Features
 
-- Run A/B tests on Amplitude Experiment and author content in Contentful
-- Read different properties (refreshed every 5 seconds) from Amplitude Experiment and build your content around this information
+- Run A/B tests on Amplitude Experiment and author content in Contentful.
+- Read different properties (refreshed every 5 seconds) from Amplitude Experiment and build your content around this information.
 
 ## Requirements
 
@@ -26,40 +26,46 @@ To use the plugin, ensure you have the following:
 
 Complete the following steps in Contentful and Amplitude to add and activate the Contentful plugin for Amplitude Experiment.
 
-### Install the plugin
+##### Install the plugin
 
 1. Install the [plugin](https://www.contentful.com/marketplace/app/amplitude-experiment/) from the Contentful marketplace.
-2. In the plugin configuration, enter the data center, Org URL and Management API key you created in Experiment. Click **Install to selected environments**.
-3. Click **Save** to complete the plugin setup.
+2. In the plugin configuration, enter the data center, Org URL and Management API key you created in Experiment. 
+3. Click **Install to selected environments**.
+4. Click **Save** to complete the plugin setup.
 
 When you enable the plugin, a `Variant Container` content model appears on the Content Model tab.
 
-### Add a variant container to one of your content models
+### Adding a variant container to one of your content models
 
 The variant container in Contentful works with Amplitude Experiment to decide which variant of your experiment displays to each user.
 
 For best results, Amplitude recommends you a **Reference** content type to hold experiments. In the Reference content type
 
-To add a variant container:
+##### To add a variant container
 
 1. Open the content model of the page to which you'll add the variant container.
-2. Click **+ Add field**. Select a **Reference** field.
+2. Click **Add field**. Select a **Reference** field.
 3. Provide a name for the field. For best results, enter a name that corresponds with the purpose of the field. For example, `Hero Banner` or `Demo CTA`.
-4. Select **One reference** as the Type. Click **Add and configure.**
-5. On the Name and field ID tab of the field configuration, select **Accept only specified entry type**, and select **Variant container**. This ensures consistency with the Contentful API response when it serves page content.
-6. Click **Confirm** to create the field, and click **Save** to update the content model.
+4. Select **One reference** as the Type. 
+5. Click **Add and configure.**
+6. On the Name and field ID tab of the field configuration, select **Accept only specified entry type**, and then select **Variant container**. 
+This ensures consistency with the Contentful API response when it serves page content.
+7. Click **Confirm** to create the field and then click **Save** to update the content model.
 
-### Add content
+### Adding content
 
 After you configure the variant container and reference field, open the page on which you want to add an experiment.
 
+##### To add content to your experiment
+
 1. In the Content editor, select the page.
-2. Find the field you created in the previous step. It should have an **+ Add content** selector. Select **Variant Container** as the content to add.
-3. In the field configuration, enter the **Flag Key** of the experiment. The Flag Key field shows matching keys as you type.
-4. When you select the Flag Key, any variants associated with that key appear in the **Variants** section.
-5. For each variant, select to **Link an existing entry** or **Create new content type** to populate the variant.
-6. Click **Publish** to publish the variant container.
-7. Click **Publish** to publish the updated page with the experiment enabled.
+2. Find the field you created in the previous step and click the associated **Add content** selector. 
+3. Select **Variant Container** as the content to add.
+4. In the field configuration, enter the **Flag Key** of the experiment. The Flag Key field shows matching keys as you type.
+5. When you select the Flag Key, any variants associated with that key appear in the **Variants** section.
+6. For each variant, select either **Link an existing entry** or **Create new content type** to populate the variant.
+7. Click **Publish** to publish the variant container.
+8. Click **Publish** to publish the updated page with the experiment enabled.
 
 ### Integrate with your front end
 
@@ -171,12 +177,12 @@ Contentful returns JSON when a user requests the page.
 }
 ```
 
-The `experiment` object contains helpful metadata about the experiment. To render the front end and include the experiment, use the `meta` and `variationsCollection` objects. Amplitude Experiment delivers the variant identifier, and matches it to an option in the `meta` object. After the variant is set, you can:
+The `experiment` object contains helpful metadata about the experiment. To render the front end and include the experiment, use the `meta` and `variationsCollection` objects. Amplitude Experiment delivers the variant identifier, and matches it to an option in the `meta` object. After you set the variant, you can:
 
 - Iterate through items in the `variationsCollection` object to show the variation with the matching ID. 
 - Make a direct call to Contentful with the variant ID to avoid searching through the array.
 
-For more information, see the following React / Typescript example:
+For more information, review the following React / Typescript example:
 
 ```typescript
 import { Experiment } from '@amplitude/experiment-js-client';

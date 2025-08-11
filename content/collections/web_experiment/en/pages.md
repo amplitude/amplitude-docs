@@ -39,7 +39,7 @@ To update a page definition, navigate to the Pages tab of the Experiment Setup f
 
 ## Manage page scope for variants
 
-In a web experiment, you can scope each vairant to a specific page to ensure that the variants changes apply only where you intend. This is the case for all variant types.
+In a web experiment, you can scope each variant to a specific page to ensure that the variants changes apply only where you intend. This is the case for all variant types.
 
 ### Visual editor
 
