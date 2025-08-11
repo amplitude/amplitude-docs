@@ -12,7 +12,7 @@ Amplitude's Web Experimentation requires a standalone script that you must add t
 The script tracks [impression events](/docs/web-experiment/tracking#impressions) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
 
 {{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
 ## Add the experiment script
@@ -55,7 +55,7 @@ Cross-Origin-Opener-Policy: unsafe-none
 
 ### Async script with anti-flicker snippet
 
-The synchronous script above provides the best experience for your users. If you need to load the script asynchronously, include the following anti-flicker snippet which masks elements on the page until all changes are applied. Replace `API_KEY` with your project's API key and optionally set the timeout to remove the anti-flicker mask.
+The synchronous script above provides the best experience for your users. If you need to load the script asynchronously, include the following anti-flicker snippet. This snippet masks elements on the page until all changes are applied. Replace `API_KEY` with your project's API key and optionally set the timeout to remove the anti-flicker mask.
 
 {{partial:tabs tabs="US Data Center, EU Data Center"}}
 {{partial:tab name="US Data Center"}}
@@ -122,9 +122,9 @@ The synchronous script above provides the best experience for your users. If you
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Integrate with a third-party CDP
+### Integrate with a third-party customer data platform
 
-If you use a CDP other than Amplitude to send events, set up an integration to provide user identity information and track events. If you don't set up an integration, the script assumes you have Amplitude Browser SDK installed on the same site.
+If you use a customer data platform (CDP) other than Amplitude to send events, set up an integration to provide user identity information and track events. If you don't set up an integration, the script assumes you have Amplitude Browser SDK installed on the same site.
 
 The Web Experiment script supports common CDP integrations through an `integration` query parameter in the  script URL.
 
@@ -176,7 +176,7 @@ window.experimentIntegration = {
 
 ## Content management systems
 
-Amplitude Web Experiment supports any CMS that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
+Amplitude Web Experiment supports any content management system (CMS) that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
 
 ### Wordpress
 
@@ -192,12 +192,12 @@ The method Shopify uses to loads Amplitude's Shopify app causes flickering. To a
 
 ## Tag managers
 
-Tag managers, like Google Tag Manager load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web Experiment script directly to the page takes time. Amplitude recommends against using tag managers in production.
+Tag managers, such as Google Tag Manager, load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web Experiment script directly to the page takes time. Amplitude recommends against using tag managers in production.
 
 ### Google Tag Manager (GTM)
 
 {{partial:admonition type="warning" heading="Causes Flicker"}}
-Implementing Web Experiment with a tag manager will cause flicker. Only use a tag manager when getting started, if adding the script to the site is out of the question in the short-term.
+Implementing Web Experiment with a tag manager causes flicker. Only use a tag manager when getting started, if adding the script to the site isn't possible.
 {{/partial:admonition}}
 
 Use a [custom HTML tag](https://support.google.com/tagmanager/answer/6107167) to add the script using GTM.
