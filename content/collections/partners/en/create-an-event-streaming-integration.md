@@ -147,7 +147,7 @@ The template in the screenshot can correspond to the above payload depending on 
 
 ## Preview and test
 
-1. Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude via the Testing Tab. The Destination Preview form is identical to what users of the integration wil see. Fill in the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
+1. Before  you submit your configuration for review, test the mock payload that you expect to receive from Amplitude from the Testing Tab. The Destination Preview form is identical to what users of the integration will see. Fill in the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
 
 2. Click **Test Connection** to  open the testing modal.  **Test Connection** is available after you enter all required parameters. This enables you to customize your payload. Click **Send Test Event**, any responses from the endpoint you specified appear on the right. 
 3. If you see any errors, check the parameters table to make sure all declared parameters are used.
