@@ -4,16 +4,19 @@
 - Amplitude Experiment data model
 - deployment keys
 - client-side deployments
-- server-side deployments
-- evaluation mode (local/remote)
+- server-side deployments  
 - flag key
+- evaluation mode
+- local evaluation
+- remote evaluation
 - variant value and payload
 - user_id and device_id requirements
-- group properties and group_properties
-- Accounts add-on groups
-- kebab-case variant formatting
-- Amplitude Analytics project structure
-- remote evaluation
-- local evaluation
+- group properties
+- Accounts add-on
 - bucketing key
 - Amplitude ID resolution
+- user_properties object
+- group_properties object
+- kebab-case variant formatting
+- Evaluation REST API
+- project API key
