@@ -38,7 +38,7 @@ All changes are visible in real-time through the Visual Editor.
 
 Banners and buttons are both movable around your website:
 - Banners can appear at the top or bottom of a page. 
-- Buttons can appear almost anwhere on the page. When set, the buttons "snaps" to a grid layout. 
+- Buttons can appear almost anywhere on the page. When set, the buttons "snaps" to a grid layout. 
 
 You can't customize the location of the pop-up modal. It appears in the center of your page.
 
