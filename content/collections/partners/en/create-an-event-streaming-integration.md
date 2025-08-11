@@ -147,16 +147,16 @@ The template in the screenshot can correspond to the above payload depending on 
 
 ## Preview and test
 
-1. Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. On the right side of the configuration page, follow these steps to preview and test your configuration.
-    Configure the test integration instance and click **Save**:
-      - **API Endpoint:** `https://localhost:3000`
-      - **REST API Key:** Enter the API key from the Amplitude project.
+1. Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude via the Testing Tab. The Destination Preview form is identical to what users of the integration wil see. Fill in the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
 
-2. Click the **Test Payload** to generate a cURL command. Copy and paste this cURL command into your Command Line Interface (CLI).
+2. Click the **Test Connection** to generate a open the testing modal. Note that the **Test Connection** button will not be available until all of the required parameters are filled in. This will allow you to customize your payload. Click **Send Test Event**, any responses from the endpoint you specified will appear on the right. 
 3. If you see any errors, check the parameters table to make sure all declared parameters are used.
-
       - **DECLARED:** All declared parameters in the *Create Parameters* section.
       - **USED:** All parameters used either in the URL, headers and event body.
+
+# Release Internally
+
+If you would like to test within your org, click **Release Internally**. This will allow anyone within your org to use the integration you defined. Please allow up to 5 minutes for changes to take effect. 
 
 ## Submit
 
