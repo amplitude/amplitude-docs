@@ -12,9 +12,6 @@ The Amplitude Integration Portal is your gateway to enhancing collaboration and 
 
 With the Integration Portal, partners gain access to a range of tools and resources that simplify and speed up the integration process. These tools typically include comprehensive documentation, code samples, and best practices, which guide developers through the necessary steps for integration.
 
-{{partial:admonition type='note'}}
-Access to the Integration Portal is by invitation only, and requires a minimum of three identifiable potential customers. These can be either existing or prospective Amplitude customers.
-{{/partial:admonition}}
 
 ## Getting started 
 
@@ -29,7 +26,7 @@ Amplitude aims to make it easy for partners like yourself to self-define and add
 
 This Integration Portal suits partners who want to build these kinds of integrations:
 
-- [Event Ingestion](/docs/partners/create-an-event-ingestion-integration) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app.
+<!-- - [Event Ingestion](/docs/partners/create-an-event-ingestion-integration) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app. -->
 - [Cohorts](/docs/partners/create-a-cohort-syncing-integration) - Build your own Amplitude Data Destination cohort tile to enable users to sync cohorts (audiences) from Amplitude to your platform through a series of REST API calls.
 - [Event Streaming](/docs/partners/create-an-event-streaming-integration) - Build your own Amplitude Event Streaming tile to let your users forward events in real time from Amplitude. 
 
@@ -45,8 +42,8 @@ To get started, you need to do the following:
 Here are the high-level steps to having your integration listed within the Amplitude app. 
 
 1. **Go to the Integration Portal**: In Amplitude, navigate to the **My Settings** page and click **Integration Portal**. If you don't see this option, send an email to [integrations@amplitude.com](mailto:integrations@amplitude.com) with your [Org ID](/docs/admin/account-management/account-settings), and the Amplitude Product Development team will provide you access.
-2. **Configure your integration**: Once you have finalized your testing, click **Submit** via the Integration Portal and it will notify the Amplitude Engineering team to review your integration.
-3. **Amplitude Engineering team reviews integration**: During the review process, the Amplitude team validates the integration which could take up to 2 weeks. During this process, Amplitude may reach out to you if the team has questions.
+2. **Configure your integration**: Once you have finalized your testing, click **Submit** via the Integration Portal and it will notify the Amplitude Engineering team to review your integration. Clicking **Release internally** will make the integration available to members of your organization. 
+3. **Amplitude Engineering team reviews integration**: During the review process, the Amplitude team validates the integration. During this process, Amplitude may reach out to you if the team has questions.
     - **Cohort destination integration:** Provide a test account to integrations@amplitude.com. Typically the Amplitude team syncs a test cohort from Amplitude to your platform as part of the validation process.
     - **Streaming destination integration:** Provide a test account to integrations@amplitude.com. Typically the Amplitude team sends a test event from Amplitude to your platform as part of the validation process.
 4. **Integration goes live in Amplitude**: After Amplitude approves the integration, it's automatically deployed and enabled for your organization. You can then see a tile within the Amplitude app on the source or destination page depending on the integration type.
