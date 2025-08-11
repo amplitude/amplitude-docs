@@ -18,10 +18,10 @@ The OOTB widgets library includes:
 - **Banner with a button**: A notification or messaging message that also includes a CTA button. This widget combines both a CTA button as well as messaging. Typically, banners with buttons announce a specific action you want your customers to perform. For example, applying a promo code to a shopping cart. 
 - **Modal pop-up**: A pop-up modal that appears on your page after a specified amount of time. Modals typically also include CTA buttons and messaging. A pop-up modal typically appears after a few seconds and encourages your customers to take an action. For example, encouraging new users to sign up for an account. 
 
-You can also save your customized widgets to the library for future use. For example, if you create a notification banner that announces a quarterly sale, you can save that customized message so that it can be reused as needed. All saved widgets are available to everyone in your organization who have permission to create experiments.
+You can also save your customized widgets to the library for future use. For example, if you create a notification banner that announces a quarterly sale, you can save that customized message and reuse it as needed. All saved widgets are available to everyone in your organization who have permission to create experiments.
 
 {{partial:admonition type="note" heading=""}}
-Key integrations are tracked by default. You don't need to set up additional tagging for OOTB widgets for basic analysis.
+By default, key integrations are already tracked. You don't need to set up additional tagging for OOTB widgets for basic analysis.
 {{/partial:admonition}}
 
 ## Editing widgets
