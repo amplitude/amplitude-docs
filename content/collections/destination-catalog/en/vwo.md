@@ -26,10 +26,10 @@ By integrating VWO with Amplitude, you can:
 
 ## Prerequisites
 
-| Requirement | Description |
-| ----- | ----- |
-| VWO account | A VWO account with access to experimentation data. |
-| Amplitude account | An active Amplitude account. |
+| Requirement       | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| VWO account       | A VWO account with access to experimentation data. |
+| Amplitude account | An active Amplitude account.                      ` |
 
 {{partial:admonition type="warning" heading="US region only"}}
 This integration isn't available in the EU region.
@@ -53,18 +53,22 @@ To integrate VWO with your Amplitude account:
 
    This integration provides three options. You can enable one or more of these options based on your specific tracking and targeting needs. Click on the linked text for more information about each option, including its benefits and how it works.
 
-   1. If you want to send VWO Test and Personalize campaign data to Amplitude**,** select [**Enable sending VWO campaign data to Amplitude**](#send-vwo-campaign-data-to-amplitude).
+   1. If you want to send VWO Test and Personalize campaign data to Amplitude, select [Enable sending VWO campaign data to Amplitude](#send-vwo-campaign-data-to-amplitude).
 
-   2. If you want to send VWO survey data to Amplitude, select [**Enable sending VWO insights data to Amplitude**](#send-vwo-insights-\(surveys\)-data-to-amplitude).
+   2. If you want to send VWO survey data to Amplitude, select [Enable sending VWO insights data to Amplitude](#send-vwo-insights-\(surveys\)-data-to-amplitude).
 
-   3. If you want to import Amplitude cohorts in VWO and target visitor data, select [**Enable use of Amplitude cohorts for visitor targeting**](#use-amplitude-cohorts-in-vwo-for-visitor-targeting).  
+   3. If you want to import Amplitude cohorts in VWO and target visitor data, select [Enable use of Amplitude cohorts for visitor targeting](#use-amplitude-cohorts-in-vwo-for-visitor-targeting).  
 4. Click **Save**.
 
-| INFO: For all options listed above, once the integration is configured at the account level from the Integrations section, it is configured by default for all new VWO testing campaigns and surveys. To configure it for your existing campaigns, select the campaign, go to Configuration \> Integrations, and select Amplitude. |
-| :---- |
+{{partial:admonition type="note" heading=""}}
+For all options listed above, after you configure at the account level from the Integrations section, it's configured by default for all new VWO testing campaigns and surveys. To configure it for your existing campaigns, select the campaign, go to *Configuration > Integrations*, and select Amplitude. 
+{{/partial:admonition}}
 
-![image3](https://static.wingify.com/gcp/uploads/2025/03/unnamed-1.png) <br /> <br/> Similarly, to configure it for existing surveys, go to Insights \> Surveys. Select the Surveys campaign, go to Settings \> Others \> Integrate with third-party products \> select Amplitude. <br /> <br/> ![image4](https://static.wingify.com/gcp/uploads/2025/03/unnamed-3.png) |
-| :---- |
+![image3](https://static.wingify.com/gcp/uploads/2025/03/unnamed-1.png)
+
+Similarly, to configure it for existing surveys, go to *Insights > Surveys*. Select the Surveys campaign, go to *Settings > Others > Integrate with third-party products > select Amplitude*.
+
+![image4](https://static.wingify.com/gcp/uploads/2025/03/unnamed-3.png)
 
 ## Send VWO campaign data to Amplitude
 
@@ -72,19 +76,27 @@ This option lets you send VWO Test and Personalize campaign data to Amplitude. T
 
 The data from VWO is sent to Amplitude with the following specifics:
 
-```
-"user_properties": { "$set": { "VWO-Test-ID-#":"[varName]" }}
+```json
+"user_properties": { 
+   "$set": { 
+      "VWO-Test-ID-#":"[varName]" 
+   }
+}
 
-"event_properties": { "VWO-Test-ID-#":"[varName]" } 
+"event_properties": { 
+   "VWO-Test-ID-#":"[varName]" 
+} 
 
 ```
-Where \# is the *campaign ID* and *varName* is the variation name in VWO. For more information on how to retrieve the corresponding visitor data, refer to [View reports in Amplitude](#view-reports-in-amplitude).
+Where `#` is the campaign ID and `varName` is the variation name in VWO. For more information on how to retrieve the corresponding visitor data, refer to [View reports in Amplitude](#view-reports-in-amplitude).
 
 ### View reports in Amplitude
 
 To view VWO visitor data reports in your Amplitude dashboard, you must create an event. Here’s how you can create one:
 
-**NOTE**: If you want to view the report for an existing event, go to **My Workspace** \> **Saved Content** and select the chart for which to view the report.
+{{partial:admonition type="note" heading=""}}
+If you want to view the report for an existing event, go to **My Workspace** \> **Saved Content** and select the chart for which to view the report.
+{{/partial:admonition}}
 
 1. Log in to your Amplitude account.  
 2. On the Amplitude dashboard, from the top panel, go to **Create** \> **Chart** \> **Segmentation**.
@@ -96,14 +108,19 @@ To view VWO visitor data reports in your Amplitude dashboard, you must create an
    ![image](https://static.wingify.com/gcp/uploads/2025/03/unnamed-5.png)  
 4. Create a segment for **Variation-1** where the user property is **VWO-Test-ID-(XX) \= Variation-1**.
 
-   **NOTE**: To find your Test ID, log in to your VWO account. Go to the testing dashboard and select the test. Go to **Settings** \> **Summary.** Scroll down to the **Other Information** section and check the **Campaign ID**.
+   {{partial:admonition type="note" heading=""}}
+      To find your Test ID, log in to your VWO account. Go to the testing dashboard and select the test. Go to **Settings** \> **Summary.** Scroll down to the **Other Information** section and check the **Campaign ID**.
+   {{/partial:admonition}}
 
-   ![image](https://static.wingify.com/gcp/uploads/2025/03/unnamed-6.png)
+      ![image](https://static.wingify.com/gcp/uploads/2025/03/unnamed-6.png)
 
-   The report is displayed in the right panel.  
+      The report is displayed in the right panel.  
+
 5. To save the chart, click **Save**.
 
-   **NOTE**: If you notice a visitor's event property or custom user property getting counted under *none* or showing an unexpected value, refer to [Unexpected values in user counts](https://help.amplitude.com/hc/en-us/articles/360016257391-FAQ-User-counted-under-none-or-an-unexpected-value).
+   {{partial:admonition type="note" heading=""}}
+   If you notice a visitor's event property or custom user property getting counted under *none* or showing an unexpected value, refer to [Unexpected values in user counts](https://help.amplitude.com/hc/en-us/articles/360016257391-FAQ-User-counted-under-none-or-an-unexpected-value).
+   {{/partial:admonition}}
 
 ## Send VWO Insights (Surveys) data to Amplitude
 
@@ -121,6 +138,7 @@ VWO sends the survey data to Amplitude when a visitor attends your survey. This 
 4. To view the number of answers **question-wise**, click **Select property** in the **Overall** cell and select **QuestionText**.
 
    ![image](https://static.wingify.com/gcp/uploads/2025/03/unnamed-9.png)  
+   
 5. Additionally, you can view the breakdown of the number **answer-wise** by grouping each question by **Answer**.
 
    ![image](https://static.wingify.com/gcp/uploads/2025/03/unnamed-10.png)
@@ -179,13 +197,15 @@ Configuring a VWO destination in Amplitude enables the transfer of cohort data f
    ![](https://static.wingify.com/gcp/uploads/2025/03/unnamed-12.png)  
 4. Define how frequently you want the sync to execute.
 
-   **NOTE**: We recommend using the **Enable Scheduled Sync** option, which ensures that any new data added to the segment is pushed to VWO. However, if you need only the current data and do not require any new data to be moved to VWO, you can choose **One-Time Sync**.
+      {{partial:admonition type="note" heading=""}}
+      Amplitude recommends using the **Enable Scheduled Sync** option, which ensures that any new data added to the segment is pushed to VWO. However, if you need only the current data and do not require any new data to be moved to VWO, you can choose **One-Time Sync**.
+      {{/partial:admonition}}
 
-   Select the frequency and click **Sync**.
+      Select the frequency and click **Sync**.
 
-   ![](https://static.wingify.com/gcp/uploads/2025/03/unnamed-13.png)
+      ![](https://static.wingify.com/gcp/uploads/2025/03/unnamed-13.png)
 
-Once you connect the Amplitude cohort with the VWO Amplitude destination, you must complete the rest of the procedure in VWO to complement the inbound transfer of cohort data from Amplitude to VWO.
+After you connect the Amplitude cohort with the VWO Amplitude destination, you must complete the rest of the procedure in VWO to complement the inbound transfer of cohort data from Amplitude to VWO.
 
 ### Import Amplitude Audience into VWO
 
@@ -201,12 +221,13 @@ Before you start, ensure you have [enabled the use of Amplitude cohorts for visi
 
    A confirmation toast appears on the screen once the cohort is added successfully.
 
-**NOTE**:  
+ 
 
-* After you add the cohort, VWO takes around 24 hours to sync the data into VWO. After that, the data is synced once every 24 hours. However, if required, you can manually sync the cohorts' data anytime by clicking the **Sync all** link above the list of imported cohorts. You can also sync an individual cohort list by clicking on the corresponding vertical ellipsis (**⋮**) \> **Sync**.
+After you add the cohort, VWO takes around 24 hours to sync the data into VWO. After that, the data is synced once every 24 hours. However, if required, you can manually sync the cohorts' data anytime by clicking the **Sync all** link above the list of imported cohorts. You can also sync an individual cohort list by clicking on the corresponding vertical ellipsis (**⋮**) \> **Sync**.
 
   ![](https://static.wingify.com/gcp/uploads/2025/03/Amplitude-copy.png)  
-* The synced data has an hour-long lag. **For example**, if the data is synced at 4 PM, the system receives all the data collected up until 3 PM.
+
+The synced data has an hour-long lag. **For example**, if the data is synced at 4 PM, the system receives all the data collected up until 3 PM.
 
 Once you have completed these steps, you can target a VWO campaign using Amplitude cohorts.
 

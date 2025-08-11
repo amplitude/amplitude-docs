@@ -87,11 +87,13 @@ All events that have ever been included in Amplitude are part of both files. Thi
 * **# of Users**: Total number of users who have ever queried an event
 * **# of Charts**: Total count of all charts that have ever included the event in their definitions
 * **# of Cohorts**: Total count of cohorts that have ever included the event in their definitions
-* **User IDs**: A list of the email addresses \*
-* **Chart IDs**: A list of the chart IDs \*
-* **Cohort IDs**: A list of the cohort IDs \*
+* **User IDs**: A list of the email addresses
+* **Chart IDs**: A list of the chart IDs
+* **Cohort IDs**: A list of the cohort IDs
 
-\* These lists detail the counts of the previous three columns. They can be very long, often exceeding the cell size limit in spreadsheets.
+{{partial:admonition type="warning" heading=""}}
+User IDs, Chart IDs, and Cohort IDs list detail of the counts of the previous three columns. As a result, these columns can exceed cell size limits in spreadsheets.
+{{/partial:admonition}}
 
 #### JSON fields and definitions
 

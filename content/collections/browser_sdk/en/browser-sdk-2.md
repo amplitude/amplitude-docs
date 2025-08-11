@@ -918,7 +918,7 @@ amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent);
 The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
 
 {{partial:admonition type="tip" heading=""}}
-It is recommended to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
+Amplitude recommends to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
 {{/partial:admonition}}
 
 To track revenue from a user, call revenue each time a user generates revenue. In this example, the user purchased 3 units of a product at $3.99.
@@ -937,8 +937,8 @@ amplitude.revenue(event);
 | Name           | Description                                                                                                             | Default Value |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `product_id`   | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
-| `quantity`     | Required. `number`. The quantity of products purchased. Note: revenue = quantity \* price.                              | `1`           |
-| `price`        | Required. `number`. The price of the products purchased, and this can be negative. Note: revenue = quantity \* price.   | `null`        |
+| `quantity`     | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                              | `1`           |
+| `price`        | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.   | `null`        |
 | `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).         | `null`        |
 | `receipt`      | Optional. `string`. The receipt identifier of the revenue.                                                              | `null`        |
 | `receipt_sig`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                        | `null`        |

@@ -7,23 +7,21 @@ exclude_from_sitemap: false
 updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1723477635
 ---
-
-A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. That said, cohorts aren't always the best solution for targeting, so understanding how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) vs [remote](/docs/feature-experiment/remote-evaluation) evaluation is important.
-
-Experiment cohort targeting currently only supports targeting **user** cohorts.
+A cohort is a static or dynamic set of users or groups defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. That said, cohorts aren't always the best solution for targeting, so understanding how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) or [remote](/docs/feature-experiment/remote-evaluation) evaluation is important.
 
 ## Remote evaluation
 
-When you target a cohort in a remote evaluation flag, the cohort is automatically synced to the *Amplitude Experiment* destination. For dynamic cohorts, this sync runs hourly by default. This means that dynamic cohorts targeted in remote evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, users are targeted within an hour of performing the event--not immediately after.
+When you target a cohort in a remote evaluation flag, the cohort is automatically synced to the Amplitude Experiment destination. For dynamic cohorts, this sync runs hourly by default. This means that dynamic cohorts targeted in remote evaluation aren't real-time. For example, if you target a cohort of users or groups who performed a `Sign Up` event, users are targeted within an hour of performing the event.
 
 Cohorts targeted for remote evaluation may have a propagation delay on the initial sync or large change, depending on the size of the difference. For example, the first sync of 10-million-user cohort is likely to take a lot more time than later syncs.
 
-**Use remote evaluation cohort targeting if...**
+Use remote evaluation cohort targeting if:
 
 - You are targeting users based on user behavior or properties that aren't available in Experiment targeting segments.
 - You are ok with some targeting delay introduced by cohort sync intervals.
+- You want to target groups.
 
-**Don't use remote evaluation cohort targeting if...**
+Don't use remote evaluation cohort targeting if:
 
 - Users must be targeted in real-time.
 
@@ -32,13 +30,12 @@ Cohorts targeted for remote evaluation may have a propagation delay on the initi
 Local evaluation flags and experiment that are deployed to up-to-date server-side SDKs can also target cohorts. When you target a cohort in a local evaluation flag, the cohort is automatically synced to the *Experiment Local Evaluation* destination. For dynamic cohorts, this sync runs hourly by default. This means that dynamic cohorts targeted in local evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, users will be targeted within an hour of performing the event--not immediately after.
 
 {{partial:admonition type="note" heading="Cohorts only support User IDs"}}
-Local evaluation cohorts currently only sync **user IDs** to the SDKs. This means that to target cohorts in local evaluation flags, you **must** include a user ID in the user object passed to the evaluate function.
+Local evaluation cohorts only sync user IDs to the SDKs. This means that to target cohorts in local evaluation flags, you must include a user ID in the user object passed to the evaluate function.
 {{/partial:admonition}}
 
 ### SDK Support
 
-Server-side SDKs can target cohorts if configured to do so. Client-side SDKs don't currently support local evaluation cohort targeting.
-
+Server-side SDKs can target cohorts if configured to do so.
 On initialization, configure the cohort sync configuration with the project API and secret key to enable local evaluation
 cohort downloading and targeting.
 
