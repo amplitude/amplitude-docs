@@ -277,16 +277,16 @@ client.Revenue(revenueObj, amplitude.EventOptions{UserID: "user-id"})
 
 ### Revenue Interface
 
-Name |  Type  |Description | Default
------|-------|--------------|--------
-ProductID (optional) | string | An identifier for the product. Amplitude recommends something like the Google Play Store product ID. | ""
-Quantity (optional) | int| The quantity of products purchased. Note: Revenue = Quantity * Price | 0
-Price (optional *required for revenue data if the revenue field isn't set) | float64 | The price of the products purchased. You can use negative values to indicate refunds. Note: Revenue = Quantity * Price | 0
-RevenueType (optional) | string| The revenue type (for example, tax, refund, income). | ""
-Receipt (optional) | string| The receipt identifier of the revenue. | ""
-ReceiptSig (optional) | string| The receipt signature of the revenue. | ""
-Properties (optional) | map[string]interface{}| An map of event properties to include in the revenue event.| nil
-Revenue (optional) | float64 | Use negative values to indicate refunds. Note: Revenue = Quantity * Price | 0
+| Name                                                                       | Type                   | Description                                                                                                            | Default |
+| -------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------- |
+| ProductID (optional)                                                       | string                 | An identifier for the product. Amplitude recommends something like the Google Play Store product ID.                   | ""      |
+| Quantity (optional)                                                        | int                    | The quantity of products purchased. `Revenue = Quantity * Price`                                                         | 0       |
+| Price (optional *required for revenue data if the revenue field isn't set) | float64                | The price of the products purchased. You can use negative values to indicate refunds. `Revenue = Quantity * Price` | 0       |
+| RevenueType (optional)                                                     | string                 | The revenue type (for example, tax, refund, income).                                                                   | ""      |
+| Receipt (optional)                                                         | string                 | The receipt identifier of the revenue.                                                                                 | ""      |
+| ReceiptSig (optional)                                                      | string                 | The receipt signature of the revenue.                                                                                  | ""      |
+| Properties (optional)                                                      | map[string]interface{} | An map of event properties to include in the revenue event.                                                            | nil     |
+| Revenue (optional)                                                         | float64                | Use negative values to indicate refunds. `Revenue = Quantity * Price `                                             | 0       |
 
 ## Flush
 

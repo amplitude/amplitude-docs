@@ -27,8 +27,8 @@ Standard deviation can be sensitive to outliers. As skew in the distribution inc
 
 Boxplots are another way to identify outliers. Boxplots involve calculating the "inner fences" for outliers using the 25th percentile (Q1) and the 75th percentile (Q3):
 
-* Upper Bound: 75th percentile + 1.5 * (75th percentile - 25th percentile)
-* Lower Bound: 25th percentile - 1.5 * (75th percentile - 25th percentile)
+* Upper Bound: `75th percentile + 1.5 * (75th percentile - 25th percentile)`
+* Lower Bound: `25th percentile - 1.5 * (75th percentile - 25th percentile)`
 
 [See this article for a more advanced version that takes skewed distributions into account](https://www.sciencedirect.com/science/article/abs/pii/S0167947307004434).
 
