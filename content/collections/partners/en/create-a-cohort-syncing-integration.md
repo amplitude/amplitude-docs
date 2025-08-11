@@ -221,6 +221,10 @@ Use the `$list_id` you retrieved to test the add to add users and remove users e
 
 You can also test end to end with the **Test Endpoint** button in the Test Integration section, which will automatically run all necessary tests. 
 
+# Release Internally
+
+To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. The integration should be instantly available once you do this. 
+
 ### Submit your integration
 
 After you have finalized your testing, click **Submit** to submit your integration to the Amplitude team. The review process should take about one week. When Amplitude approves you integration, you're notified via email and can see your integration tile in the Destination section of Amplitude.
