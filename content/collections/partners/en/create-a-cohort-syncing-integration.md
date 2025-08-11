@@ -189,14 +189,21 @@ Instead of creating every single status code, failure reasons, error message, an
 
 ### Preview & test endpoint
 
-Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. On the right side of the configuration page, follow these steps to preview and test your configuration.
+Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. In Testing Tab, follow these steps to preview and test your configuration.
 
-Configure the test integration instance: 
+In the Testing tab, the Destination Settings is identical to what users of your integration will see. This form is used to control the parameters you have defined in the headers of the payload. 
 
-1. **Provide a valid Project ID in your organization for testing**: Select your project.
-2. **Name**: Enter a name for the integration. This is just for testing this instance of the integration and doesn't change your integration's public name. 
-3. **API Key**: Enter the API key from the Amplitude project.
-4. **Key**: Choose which Amplitude User Properties to map to your target ID.
+To generate users, you can upload a CSV or click regenerate which will generate users based on your configurations. The CSV must have an Operation column which must be either add or remove. Any parameters used in the List Creation payload must also be the same across all rows in the CSV. The CSV must also have columns for each of the parameters used. 
+
+Here is a sample CSV that can be used for the default configurations: 
+
+```
+operation,user_id_field_amplitude,amp_cohort_name,amp_cohort_id
+add,user123,Unified Cohort,unified_cohort_001
+add,user456,Unified Cohort,unified_cohort_001
+remove,user789,Unified Cohort,unified_cohort_001
+add,john.doe@example.com,Unified Cohort,unified_cohort_001
+```
 
 Check the variables table to make sure all variables are accounted for and resolve any errors.
 
@@ -211,6 +218,8 @@ After you click **Test Endpoint**, you should get a success response. Retrieve t
 The `{listId: $list_id}` is the expected response for list creation API call. To change the structure, change the *Path to List ID in the response* value in the list creation configuration.
 
 Use the `$list_id` you retrieved to test the add to add users and remove users endpoints.
+
+You can also test end to end with the **Test Endpoint** button in the Test Integration section, which will automatically run all necessary tests. 
 
 ### Submit your integration
 
