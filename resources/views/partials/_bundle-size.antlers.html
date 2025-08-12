@@ -16,7 +16,12 @@
                     <path d="M12 22V12"></path>
                 </svg>
                 <h3 class="font-medium text-amp-gray-900 text-sm m-0">
-                    <a href="https://npmjs.com/package/{{package_name}}" target="_blank">Package Information {{_bundlephobia_success}}</a>
+                    <a href="https://npmjs.com/package/{{package_name}}" target="_blank">Package Information</a>
+                    {{ if _bundlephobia_cached }}
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded" title="Data from cache{{ if _bundlephobia_cache_time }} ({{ _bundlephobia_cache_time }}){{ /if }}">Cached</span>
+                    {{ else }}
+                        <span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded" title="Fresh data{{ if _bundlephobia_fetch_time }} ({{ _bundlephobia_fetch_time }}){{ /if }}">Live</span>
+                    {{ /if }}
                 </h3>
             </div>
             <div class="space-y-2.5">
@@ -97,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         try {
             let data;
+            let dataSource = 'unknown';
             
             // Only try Laravel API if NOT in static build
             if (!isStatic) {
@@ -105,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (response.ok) {
                         data = await response.json();
                         if (data._bundlephobia_success) {
-                            updateBundleSuccess(card, data);
+                            dataSource = data._bundlephobia_cached ? 'laravel-cache' : 'laravel-live';
+                            updateBundleSuccess(card, data, dataSource);
                             return;
                         }
                     }
@@ -126,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         version: directData.version || 'Latest',
                         size_gzip_kb: directData.gzip ? Math.round(directData.gzip / 1024 * 100) / 100 : 'N/A'
                     };
-                    updateBundleSuccess(card, transformedData);
+                    dataSource = 'bundlephobia-direct';
+                    updateBundleSuccess(card, transformedData, dataSource);
                     return;
                 }
             }
@@ -140,15 +148,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    function updateBundleSuccess(card, data) {
+    function updateBundleSuccess(card, data, source) {
         card.querySelector('.bundle-version').innerHTML = 
             `<div class="font-medium text-amp-gray-900">${data.version}</div>`;
         card.querySelector('.bundle-size').innerHTML = 
             `<div class="font-medium text-amp-gray-900">${data.size_gzip_kb} kB</div>`;
         
+        // Add source indicator
+        const sourceIndicator = getSourceIndicator(source, data);
+        card.querySelector('h3').innerHTML += sourceIndicator;
+        
         // Mark as loaded
         card.removeAttribute('data-bundle-loader');
         card.setAttribute('data-bundle-loaded', 'true');
+    }
+    
+    function getSourceIndicator(source, data) {
+        switch (source) {
+            case 'laravel-cache':
+                return '<span class="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded" title="Data from Laravel cache">Cached</span>';
+            case 'laravel-live':
+                return '<span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded" title="Fresh data from Laravel">Live</span>';
+            case 'bundlephobia-direct':
+                return '<span class="ml-2 text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded" title="Direct from BundlePhobia API">Direct</span>';
+            default:
+                return '';
+        }
     }
     
     function showBundleError(card, packageName, errorMessage) {
