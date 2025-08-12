@@ -22,6 +22,16 @@ class BundlePhobia extends Tags
     }
 
     /**
+     * Get cache key with build isolation
+     */
+    protected function getCacheKey($package): string
+    {
+        // Include build ID to prevent cross-deployment cache pollution
+        $buildId = env('BUILD_ID', env('VERCEL_GIT_COMMIT_SHA', 'local'));
+        return "bundle_phobia:{$buildId}:{$package}";
+    }
+
+    /**
      * The {{ bundle_phobia }} tag.
      *
      * @return string|array
@@ -29,15 +39,18 @@ class BundlePhobia extends Tags
     public function index()
     {
         $package = $this->params->get('package');
-        $forceRefresh = $this->params->get('debug', false); // Add this parameter
         
         if (empty($package)) {
             return $this->getFallbackData('Package name is required');
         }
 
+        // Remove the forced test data now that we've confirmed the system works
+        // if ($package === '@amplitude/analytics-browser') { ... }
+
         // Use the new cache key method
         $cacheKey = $this->getCacheKey($package);
-        $cached = !$forceRefresh ? Cache::get($cacheKey) : null;
+        $timestampKey = $cacheKey . ':timestamp';
+        $cached = Cache::get($cacheKey);
         
         // Enhanced logging
         Log::info('BundlePhobia cache check', [
@@ -58,9 +71,8 @@ class BundlePhobia extends Tags
             
             // Add cache metadata with more details
             $cached['_bundlephobia_cached'] = true;
-            $cached['_bundlephobia_cache_time'] = Cache::get($cacheKey . ':timestamp', 'unknown');
-            $cached['_bundlephobia_cache_key'] = $cacheKey;
-            $cached['_bundlephobia_debug'] = $forceRefresh ? 'forced-refresh' : 'normal';
+            $cached['_bundlephobia_cache_time'] = Cache::get($timestampKey, 'unknown');
+            $cached['_bundlephobia_cache_driver'] = config('cache.default');
             return $cached;
         }
 
@@ -87,7 +99,7 @@ class BundlePhobia extends Tags
                 
                 // Store data and timestamp
                 Cache::put($cacheKey, $data, $cacheDuration);
-                Cache::put($cacheKey . ':timestamp', now()->toISOString(), $cacheDuration);
+                Cache::put($timestampKey, now()->toISOString(), $cacheDuration);
                 
                 // Add metadata for fresh data
                 $data['_bundlephobia_cached'] = false;
@@ -107,13 +119,35 @@ class BundlePhobia extends Tags
                 'is_ssg_build' => $this->isSSGBuild()
             ]);
             
-            // Cache failure for shorter time to prevent repeated API calls
+            // Check for stale cache that we can use as fallback
+            $staleKey = "bundle_phobia_stale:{$package}"; // Different key for long-term cache
+            $staleData = Cache::get($staleKey);
+            
+            if ($staleData && $staleData['_bundlephobia_success']) {
+                Log::info('BundlePhobia using stale cache as fallback', [
+                    'package' => $package,
+                    'stale_version' => $staleData['version'] ?? 'unknown'
+                ]);
+                
+                // Mark as cached and stale
+                $staleData['_bundlephobia_cached'] = true;
+                $staleData['_bundlephobia_stale'] = true;
+                $staleData['_bundlephobia_cache_time'] = 'stale';
+                $staleData['_bundlephobia_error'] = $e->getMessage();
+                
+                return $staleData;
+            }
+            
+            // No stale cache available, return error fallback
             $fallback = $this->getFallbackData($e->getMessage());
-            Cache::put($cacheKey, $fallback, 300); // 5 minutes
-            Cache::put($cacheKey . ':timestamp', now()->toISOString(), 300);
+            
+            // Cache failure for shorter time (5 minutes)
+            Cache::put($cacheKey, $fallback, 300);
+            Cache::put($timestampKey, now()->toISOString(), 300);
             
             $fallback['_bundlephobia_cached'] = false;
             $fallback['_bundlephobia_fetch_time'] = now()->toISOString();
+            $fallback['_bundlephobia_cache_driver'] = config('cache.default');
             
             return $fallback;
         }
@@ -125,9 +159,9 @@ class BundlePhobia extends Tags
     protected function isSSGBuild(): bool
     {
         return app()->runningInConsole() || 
-               in_array(config('app.env'), ['production', 'preview']) || // Add 'preview' here
+               in_array(config('app.env'), ['production', 'preview']) ||
                isset($_ENV['STATAMIC_SSG_BUILD']) ||
-               isset($_ENV['VERCEL']); // Detect Vercel environment
+               isset($_ENV['VERCEL']);
     }
 
     /**
@@ -140,22 +174,6 @@ class BundlePhobia extends Tags
      */
     protected function fetchBundleData(string $package, int $timeout = 10): ?array
     {
-        // Temporarily add this at the start of fetchBundleData for testing
-        if ($package === '@amplitude/analytics-browser') {
-            Log::info('TESTING: Forcing fake fresh data for @amplitude/analytics-browser');
-            return [
-                'name' => '@amplitude/analytics-browser',
-                'version' => 'TEST-' . now()->format('H:i:s'), // This should change each build
-                'size' => 50000,
-                'size_kb' => 48.83,
-                'size_gzip_kb' => 15.2,
-                'gzip' => 15564,
-                '_bundlephobia_success' => true,
-                '_bundlephobia_package' => $package,
-                '_bundlephobia_test' => 'FORCED_DATA'
-            ];
-        }
-
         $base = "https://bundlephobia.com/api/size";
         
         // Add cache-busting parameters
@@ -184,7 +202,6 @@ class BundlePhobia extends Tags
             'status' => $response->status(),
             'successful' => $response->successful(),
             'failed' => $response->failed(),
-            'headers' => $response->headers(),
             'body_size' => strlen($response->body())
         ]);
 
@@ -203,8 +220,6 @@ class BundlePhobia extends Tags
             'data_keys' => array_keys($data ?? []),
             'version' => $data['version'] ?? 'missing',
             'size' => $data['size'] ?? 'missing',
-            'gzip' => $data['gzip'] ?? 'missing',
-            'raw_data' => $data // This might be large, but we need to see what we're getting
         ]);
         
         if (empty($data) || !isset($data['size'])) {
@@ -224,6 +239,10 @@ class BundlePhobia extends Tags
         $data['_bundlephobia_package'] = $package;
         $data['_bundlephobia_api_url'] = $url;
         $data['_bundlephobia_api_timestamp'] = now()->toISOString();
+        
+        // Store successful data in long-term stale cache
+        $staleKey = "bundle_phobia_stale:{$package}";
+        Cache::put($staleKey, $data, 86400 * 7); // Keep for 7 days as stale fallback
         
         Log::info('BundlePhobia processed final data', [
             'package' => $package,
@@ -290,12 +309,5 @@ class BundlePhobia extends Tags
             return "Cache cleared for package: {$package}";
         }
         return "Package parameter required";
-    }
-
-    protected function getCacheKey($package): string
-    {
-        // Include build ID to prevent cross-deployment cache pollution
-        $buildId = env('BUILD_ID', env('VERCEL_GIT_COMMIT_SHA', 'local'));
-        return "bundle_phobia:{$buildId}:{$package}";
     }
 }
