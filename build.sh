@@ -23,6 +23,14 @@ rm composer-setup.php
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
 
+
+echo "=== CACHE DEBUG ==="
+echo "Cache directory contents:"
+ls -la storage/framework/cache/ || echo "No cache directory"
+echo "Environment variables:"
+env | grep -E "(CACHE|APP_)" || echo "No relevant env vars"
+echo "==================="
+
 # Force clean slate
 rm -rf storage/framework/cache/*
 rm -rf bootstrap/cache/*
