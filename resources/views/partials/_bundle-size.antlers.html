@@ -50,9 +50,13 @@
                 Cached: {{ _bundlephobia_cached ? 'Yes' : 'No' }}<br>
                 {{ if _bundlephobia_cache_time }}Cache Time: {{ _bundlephobia_cache_time }}<br>{{ /if }}
                 {{ if _bundlephobia_fetch_time }}Fetch Time: {{ _bundlephobia_fetch_time }}<br>{{ /if }}
+                {{ if _bundlephobia_api_timestamp }}API Call Time: {{ _bundlephobia_api_timestamp }}<br>{{ /if }}
+                {{ if _bundlephobia_api_url }}API URL: {{ _bundlephobia_api_url }}<br>{{ /if }}
                 Cache Driver: {{ _bundlephobia_cache_driver }}<br>
                 Success: {{ _bundlephobia_success ? 'Yes' : 'No' }}<br>
-                Environment: {{ config:app:env }}
+                Environment: {{ config:app:env }}<br>
+                Version: {{ version }}<br>
+                Size: {{ size_gzip_kb }} kB
             </div>
         {{ /if }}
     </div>

@@ -140,11 +140,53 @@ class BundlePhobia extends Tags
      */
     protected function fetchBundleData(string $package, int $timeout = 10): ?array
     {
-        $base = "https://bundlephobia.com/api/size?package=";
+        // Temporarily add this at the start of fetchBundleData for testing
+        if ($package === '@amplitude/analytics-browser') {
+            Log::info('TESTING: Forcing fake fresh data for @amplitude/analytics-browser');
+            return [
+                'name' => '@amplitude/analytics-browser',
+                'version' => 'TEST-' . now()->format('H:i:s'), // This should change each build
+                'size' => 50000,
+                'size_kb' => 48.83,
+                'size_gzip_kb' => 15.2,
+                'gzip' => 15564,
+                '_bundlephobia_success' => true,
+                '_bundlephobia_package' => $package,
+                '_bundlephobia_test' => 'FORCED_DATA'
+            ];
+        }
+
+        $base = "https://bundlephobia.com/api/size";
+        
+        // Add cache-busting parameters
+        $params = [
+            'package' => $package,
+            '_t' => time(), // Cache buster
+            '_build' => env('BUILD_ID', 'unknown')
+        ];
+        
+        $url = $base . '?' . http_build_query($params);
+        
+        Log::info('BundlePhobia API request with cache busting', [
+            'package' => $package,
+            'url' => $url,
+            'params' => $params,
+            'timeout' => $timeout,
+            'timestamp' => now()->toISOString()
+        ]);
         
         $response = Http::timeout($timeout)
             ->retry(2, 1000) // Retry twice with 1 second delay
-            ->get($base . $package);
+            ->get($url);
+
+        Log::info('BundlePhobia API response', [
+            'package' => $package,
+            'status' => $response->status(),
+            'successful' => $response->successful(),
+            'failed' => $response->failed(),
+            'headers' => $response->headers(),
+            'body_size' => strlen($response->body())
+        ]);
 
         if ($response->failed()) {
             throw new \Exception("API request failed with status: " . $response->status());
@@ -156,7 +198,20 @@ class BundlePhobia extends Tags
 
         $data = $response->json();
         
+        Log::info('BundlePhobia API parsed data', [
+            'package' => $package,
+            'data_keys' => array_keys($data ?? []),
+            'version' => $data['version'] ?? 'missing',
+            'size' => $data['size'] ?? 'missing',
+            'gzip' => $data['gzip'] ?? 'missing',
+            'raw_data' => $data // This might be large, but we need to see what we're getting
+        ]);
+        
         if (empty($data) || !isset($data['size'])) {
+            Log::warning('BundlePhobia API returned invalid data', [
+                'package' => $package,
+                'data' => $data
+            ]);
             return null;
         }
 
@@ -167,6 +222,15 @@ class BundlePhobia extends Tags
         // Add metadata to help templates handle the response
         $data['_bundlephobia_success'] = true;
         $data['_bundlephobia_package'] = $package;
+        $data['_bundlephobia_api_url'] = $url;
+        $data['_bundlephobia_api_timestamp'] = now()->toISOString();
+        
+        Log::info('BundlePhobia processed final data', [
+            'package' => $package,
+            'final_version' => $data['version'] ?? 'missing',
+            'final_size_gzip_kb' => $data['size_gzip_kb'],
+            'processed_timestamp' => $data['_bundlephobia_api_timestamp']
+        ]);
         
         return $data;
     }
