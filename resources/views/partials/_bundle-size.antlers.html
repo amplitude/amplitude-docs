@@ -42,7 +42,7 @@
     <div class="rounded-lg border text-card-foreground bg-amp-gray-50 border-amp-gray-200 shadow-sm mb-8" 
          data-bundle-package="{{package_name}}" 
          data-bundle-loader="true"
-         data-is-static="{{ env:STATAMIC_SSG_BUILD }}">
+         data-is-static="{{ config:app:static-build }}">
         <div class="p-4">
             <div class="flex items-center gap-2 mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     bundleCards.forEach(async (card) => {
         const packageName = card.dataset.bundlePackage;
-        const isStatic = card.dataset.isStatic === 'true';
+        const isStatic = card.dataset.isStatic === '1' || card.dataset.isStatic === 'true';
         
         try {
             let data;
