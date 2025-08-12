@@ -39,6 +39,9 @@ class BundlePhobia extends Tags
         $cached = Cache::get($cacheKey);
         
         if ($cached !== null) {
+            // Add cache metadata
+            $cached['_bundlephobia_cached'] = true;
+            $cached['_bundlephobia_cache_time'] = Cache::get($cacheKey . ':timestamp', 'unknown');
             return $cached;
         }
 
@@ -51,7 +54,15 @@ class BundlePhobia extends Tags
             if ($data) {
                 // Cache longer during SSG build, shorter in development
                 $cacheDuration = $this->isSSGBuild() ? 86400 : 3600; // 24h vs 1h
+                
+                // Store data and timestamp
                 Cache::put($cacheKey, $data, $cacheDuration);
+                Cache::put($cacheKey . ':timestamp', now()->toISOString(), $cacheDuration);
+                
+                // Add metadata for fresh data
+                $data['_bundlephobia_cached'] = false;
+                $data['_bundlephobia_fetch_time'] = now()->toISOString();
+                
                 return $data;
             }
             
@@ -68,6 +79,10 @@ class BundlePhobia extends Tags
             // Cache failure for shorter time to prevent repeated API calls
             $fallback = $this->getFallbackData($e->getMessage());
             Cache::put($cacheKey, $fallback, 300); // 5 minutes
+            Cache::put($cacheKey . ':timestamp', now()->toISOString(), 300);
+            
+            $fallback['_bundlephobia_cached'] = false;
+            $fallback['_bundlephobia_fetch_time'] = now()->toISOString();
             
             return $fallback;
         }
@@ -136,7 +151,11 @@ class BundlePhobia extends Tags
             '_bundlephobia_success' => false,
             '_bundlephobia_error' => $reason,
             '_bundlephobia_package' => $this->params->get('package', 'unknown'),
+            'size' => $this->params->get('fallback_size', 0),
+            'size_kb' => $this->params->get('fallback_size_kb', 0),
+            'size_gzip_kb' => $this->params->get('fallback_gzip_kb', 0),
             'name' => $this->params->get('package'),
+            'version' => $this->params->get('fallback_version', 'unknown'),
         ];
     }
 
@@ -171,6 +190,7 @@ class BundlePhobia extends Tags
         if ($package) {
             $cacheKey = "bundle_phobia:" . $package;
             Cache::forget($cacheKey);
+            Cache::forget($cacheKey . ':timestamp');
             return "Cache cleared for package: {$package}";
         }
         return "Package parameter required";
