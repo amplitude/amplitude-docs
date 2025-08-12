@@ -1,12 +1,11 @@
 ---
 id: 494972be-95b9-48c6-91e1-f3ce85dc5bbd
-published: false
 blueprint: section
 title: Agents
 author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1754598540
+updated_at: 1755017469
 nav_title: agents
 ---
 Amplitude Agents are always on, and available to help you interpret analytics data, recommend next actions, and automate your workflows. 
