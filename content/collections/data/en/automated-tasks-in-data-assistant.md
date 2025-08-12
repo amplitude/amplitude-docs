@@ -69,9 +69,12 @@ If Amplitude detects events that meet a task’s criteria, those suggested tasks
 
 Click the banner to turn on automation for future matching events.
 
-## Working with automated tasks
-Automated Tasks offers a number of different interactions:
+## Removing an automation
+You can remove any automation you set up. 
 
-* **Notify you of events that can be deleted**: In this scenario, all the events that Automated Tasks has identified as being able to be deleted are visible for your review. You review the list and then manually delete the events that you want. 
-* **Notify you that events have been deleted**: In this scenario, Automated Tasks has found and deleted events that are no longer needed. This notification is to let you know that those events have been removed. You can manually recover deleted events if you want. 
-* **Fully automate the removal of events**: In this scenario, Automated Tasks finds and removes events that are no longer needed and will not send you a notification that they were deleted. You can manually recover deleted events if you want.
+##### To remove an automated task
+1. Go to *Data > Assistant > Automated Tasks*. 
+2. Click **View Automation** for the automation you want to remove. 
+3. In the automated task window, click the **three-dot** option menu. 
+4. Click **Remove Automation**.
+5. Confirm whether or not you want to also remove any pending changes from the task and then click **Remove**.
