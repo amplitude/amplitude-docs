@@ -35,8 +35,8 @@ class BundlePhobia extends Tags
             return $this->getFallbackData('Package name is required');
         }
 
-        // Check cache first (unless forcing refresh)
-        $cacheKey = "bundle_phobia:" . $package;
+        // Use the new cache key method
+        $cacheKey = $this->getCacheKey($package);
         $cached = !$forceRefresh ? Cache::get($cacheKey) : null;
         
         // Enhanced logging
@@ -44,10 +44,9 @@ class BundlePhobia extends Tags
             'package' => $package,
             'cache_key' => $cacheKey,
             'cache_exists' => $cached !== null,
-            'cache_driver' => config('cache.default'),
+            'build_id' => env('BUILD_ID', 'unknown'),
+            'vercel_commit' => env('VERCEL_GIT_COMMIT_SHA', 'unknown'),
             'environment' => app()->environment(),
-            'is_console' => app()->runningInConsole(),
-            'timestamp' => now()->toISOString()
         ]);
         
         if ($cached !== null) {
@@ -126,8 +125,9 @@ class BundlePhobia extends Tags
     protected function isSSGBuild(): bool
     {
         return app()->runningInConsole() || 
-               config('app.env') === 'production' ||
-               isset($_ENV['STATAMIC_SSG_BUILD']);
+               in_array(config('app.env'), ['production', 'preview']) || // Add 'preview' here
+               isset($_ENV['STATAMIC_SSG_BUILD']) ||
+               isset($_ENV['VERCEL']); // Detect Vercel environment
     }
 
     /**
@@ -226,5 +226,12 @@ class BundlePhobia extends Tags
             return "Cache cleared for package: {$package}";
         }
         return "Package parameter required";
+    }
+
+    protected function getCacheKey($package): string
+    {
+        // Include build ID to prevent cross-deployment cache pollution
+        $buildId = env('BUILD_ID', env('VERCEL_GIT_COMMIT_SHA', 'local'));
+        return "bundle_phobia:{$buildId}:{$package}";
     }
 }

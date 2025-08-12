@@ -41,13 +41,27 @@
                 </div>
             </div>
         </div>
+        
+        {{# Add debug info in preview/development #}}
+        {{ if config:app:debug || config:app:env == 'preview' }}
+            <div class="text-xs text-gray-500 mt-2 p-2 bg-gray-100 rounded">
+                <strong>Debug Info:</strong><br>
+                Package: {{ _bundlephobia_package }}<br>
+                Cached: {{ _bundlephobia_cached ? 'Yes' : 'No' }}<br>
+                {{ if _bundlephobia_cache_time }}Cache Time: {{ _bundlephobia_cache_time }}<br>{{ /if }}
+                {{ if _bundlephobia_fetch_time }}Fetch Time: {{ _bundlephobia_fetch_time }}<br>{{ /if }}
+                Cache Driver: {{ _bundlephobia_cache_driver }}<br>
+                Success: {{ _bundlephobia_success ? 'Yes' : 'No' }}<br>
+                Environment: {{ config:app:env }}
+            </div>
+        {{ /if }}
     </div>
 {{ else }}
     {{# Server-side data failed - use client-side loading as fallback #}}
     <div class="rounded-lg border text-card-foreground bg-amp-gray-50 border-amp-gray-200 shadow-sm mb-8" 
          data-bundle-package="{{package_name}}" 
          data-bundle-loader="true"
-         data-is-static="{{ config:app:static-build }}">
+         data-environment="{{ config:app:env }}">
         <div class="p-4">
             <div class="flex items-center gap-2 mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -98,14 +112,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     bundleCards.forEach(async (card) => {
         const packageName = card.dataset.bundlePackage;
-        const isStatic = card.dataset.isStatic === '1' || card.dataset.isStatic === 'true';
+        const environment = card.dataset.environment;
         
         try {
             let data;
             let dataSource = 'unknown';
             
-            // Only try Laravel API if NOT in static build
-            if (!isStatic) {
+            // Only try Laravel API in local/development (NOT preview/production)
+            if (environment === 'local' || environment === 'development') {
                 try {
                     const response = await fetch(`/api/bundle-phobia?package=${encodeURIComponent(packageName)}`);
                     if (response.ok) {
@@ -119,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 } catch (apiError) {
                     console.warn('Laravel API not available, falling back to direct BundlePhobia API');
                 }
+            } else {
+                console.log(`Skipping Laravel API for environment: ${environment}`);
             }
             
             // Direct BundlePhobia API (works in all environments)
@@ -183,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="m-0 mb-2"><strong>Bundle size information temporarily unavailable.</strong></p>
                 <p class="m-0 text-xs text-amp-gray-600">
                     Visit <a href="https://bundlephobia.com/package/${packageName}" target="_blank" class="text-amp-blue-600 underline">BundlePhobia</a> 
-                    or <a href="https://npmjs.com/package/${packageName}" target="_blank" class="text-amp-blue-600 underline">npm</a> 
+                    or <a href="https://npmjs.com/package/${packageName}" target="_blank" class="text-app-blue-600 underline">npm</a> 
                     for current package details.
                 </p>
             </div>
