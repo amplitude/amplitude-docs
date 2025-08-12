@@ -136,11 +136,7 @@ class BundlePhobia extends Tags
             '_bundlephobia_success' => false,
             '_bundlephobia_error' => $reason,
             '_bundlephobia_package' => $this->params->get('package', 'unknown'),
-            'size' => $this->params->get('fallback_size', 0),
-            'size_kb' => $this->params->get('fallback_size_kb', 0),
-            'size_gzip_kb' => $this->params->get('fallback_gzip_kb', 0),
             'name' => $this->params->get('package'),
-            'version' => $this->params->get('fallback_version', 'unknown'),
         ];
     }
 
