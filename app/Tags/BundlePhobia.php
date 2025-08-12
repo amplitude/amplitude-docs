@@ -29,19 +29,39 @@ class BundlePhobia extends Tags
     public function index()
     {
         $package = $this->params->get('package');
+        $forceRefresh = $this->params->get('debug', false); // Add this parameter
         
         if (empty($package)) {
             return $this->getFallbackData('Package name is required');
         }
 
-        // Check cache first
+        // Check cache first (unless forcing refresh)
         $cacheKey = "bundle_phobia:" . $package;
-        $cached = Cache::get($cacheKey);
+        $cached = !$forceRefresh ? Cache::get($cacheKey) : null;
+        
+        // Enhanced logging
+        Log::info('BundlePhobia cache check', [
+            'package' => $package,
+            'cache_key' => $cacheKey,
+            'cache_exists' => $cached !== null,
+            'cache_driver' => config('cache.default'),
+            'environment' => app()->environment(),
+            'is_console' => app()->runningInConsole(),
+            'timestamp' => now()->toISOString()
+        ]);
         
         if ($cached !== null) {
-            // Add cache metadata
+            Log::info('BundlePhobia using cached data', [
+                'package' => $package,
+                'cached_version' => $cached['version'] ?? 'unknown',
+                'cached_success' => $cached['_bundlephobia_success'] ?? false
+            ]);
+            
+            // Add cache metadata with more details
             $cached['_bundlephobia_cached'] = true;
             $cached['_bundlephobia_cache_time'] = Cache::get($cacheKey . ':timestamp', 'unknown');
+            $cached['_bundlephobia_cache_key'] = $cacheKey;
+            $cached['_bundlephobia_debug'] = $forceRefresh ? 'forced-refresh' : 'normal';
             return $cached;
         }
 
@@ -49,9 +69,20 @@ class BundlePhobia extends Tags
         $timeout = $this->isSSGBuild() ? 30 : 10; // Longer timeout during build
         
         try {
+            Log::info('BundlePhobia attempting fresh fetch', [
+                'package' => $package,
+                'timeout' => $timeout
+            ]);
+            
             $data = $this->fetchBundleData($package, $timeout);
             
             if ($data) {
+                Log::info('BundlePhobia fresh fetch successful', [
+                    'package' => $package,
+                    'version' => $data['version'] ?? 'unknown',
+                    'size' => $data['size_gzip_kb'] ?? 'unknown'
+                ]);
+                
                 // Cache longer during SSG build, shorter in development
                 $cacheDuration = $this->isSSGBuild() ? 86400 : 3600; // 24h vs 1h
                 
@@ -62,6 +93,7 @@ class BundlePhobia extends Tags
                 // Add metadata for fresh data
                 $data['_bundlephobia_cached'] = false;
                 $data['_bundlephobia_fetch_time'] = now()->toISOString();
+                $data['_bundlephobia_cache_driver'] = config('cache.default');
                 
                 return $data;
             }
@@ -69,7 +101,7 @@ class BundlePhobia extends Tags
             return $this->getFallbackData('API returned empty data');
             
         } catch (\Exception $e) {
-            Log::warning('BundlePhobia API error', [
+            Log::error('BundlePhobia fetch failed', [
                 'package' => $package,
                 'error' => $e->getMessage(),
                 'environment' => app()->environment(),

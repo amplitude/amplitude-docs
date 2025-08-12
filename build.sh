@@ -23,12 +23,22 @@ rm composer-setup.php
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
 
+# Force clean slate
+rm -rf storage/framework/cache/*
+rm -rf bootstrap/cache/*
+php artisan cache:clear --quiet
 
 # BUILD ASSETS
 mix --production
 
 # GENERATE APP KEY
 php artisan key:generate
+
+# CLEAR ALL CACHES BEFORE BUILD
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
 
 # BUILD STATIC SITE
 php please stache:warm -n -q
