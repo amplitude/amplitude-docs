@@ -44,14 +44,15 @@
         
         {{# Add debug info in preview/development #}}
         {{ if config:app:debug || config:app:env == 'preview' }}
-            <div class="text-xs text-gray-500 mt-2 p-2 bg-gray-100 rounded">
+            <div class="text-xs text-gray-500 mt-2 p-2 {{ if _bundlephobia_stale }}bg-orange-100{{ else }}bg-gray-100{{ /if }} rounded">
                 <strong>Debug Info:</strong><br>
                 Package: {{ _bundlephobia_package }}<br>
                 Cached: {{ _bundlephobia_cached ? 'Yes' : 'No' }}<br>
+                {{ if _bundlephobia_stale }}<strong class="text-orange-600">⚠️ Using stale data (API unavailable)</strong><br>{{ /if }}
                 {{ if _bundlephobia_cache_time }}Cache Time: {{ _bundlephobia_cache_time }}<br>{{ /if }}
                 {{ if _bundlephobia_fetch_time }}Fetch Time: {{ _bundlephobia_fetch_time }}<br>{{ /if }}
                 {{ if _bundlephobia_api_timestamp }}API Call Time: {{ _bundlephobia_api_timestamp }}<br>{{ /if }}
-                {{ if _bundlephobia_api_url }}API URL: {{ _bundlephobia_api_url }}<br>{{ /if }}
+                {{ if _bundlephobia_error }}Error: {{ _bundlephobia_error }}<br>{{ /if }}
                 Cache Driver: {{ _bundlephobia_cache_driver }}<br>
                 Success: {{ _bundlephobia_success ? 'Yes' : 'No' }}<br>
                 Environment: {{ config:app:env }}<br>

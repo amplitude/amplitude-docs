@@ -23,14 +23,6 @@ rm composer-setup.php
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
 
-
-echo "=== CACHE DEBUG ==="
-echo "Cache directory contents:"
-ls -la storage/framework/cache/ || echo "No cache directory"
-echo "Environment variables:"
-env | grep -E "(CACHE|APP_)" || echo "No relevant env vars"
-echo "==================="
-
 # Force clean slate - prevent cross-deployment cache pollution
 rm -rf storage/framework/cache/*
 rm -rf bootstrap/cache/*
@@ -45,12 +37,6 @@ mix --production
 
 # GENERATE APP KEY
 php artisan key:generate
-
-# CLEAR ALL CACHES BEFORE BUILD
-php artisan cache:clear
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
 
 # BUILD STATIC SITE
 php please stache:warm -n -q
