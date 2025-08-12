@@ -31,10 +31,14 @@ echo "Environment variables:"
 env | grep -E "(CACHE|APP_)" || echo "No relevant env vars"
 echo "==================="
 
-# Force clean slate
+# Force clean slate - prevent cross-deployment cache pollution
 rm -rf storage/framework/cache/*
 rm -rf bootstrap/cache/*
 php artisan cache:clear --quiet
+
+# Set unique build identifier to prevent cache collisions
+export BUILD_ID="${VERCEL_GIT_COMMIT_SHA:-$(date +%s)}"
+echo "Using BUILD_ID: $BUILD_ID"
 
 # BUILD ASSETS
 mix --production
