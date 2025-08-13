@@ -33,7 +33,7 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
 | Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
-| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.  |
+| Text animation                         | Enables the modal's text to animate in with a typewriter effect.  |
 
 
 
@@ -45,13 +45,13 @@ Popovers offer the same customization options as modals.
 
 Click the three dot menu to access format settings.
 
-| Setting                                | Description                                                       |
-| -------------------------------------- | ----------------------------------------------------------------- |
-| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
-| Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
-| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
-| Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                   |
-| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.  |
+| Setting                                | Description                                                        |
+| -------------------------------------- | ------------------------------------------------------------------ |
+| Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
+| Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
+| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it.  |
+| Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
+| Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
 
 ### Pin
@@ -70,7 +70,7 @@ Click the three dot menu to access format settings.
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
 | Click outside to close                   | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
-| Text animation <br/> {.tag .web .zero}   | Enables the modal's text to animate in with a typewriter effect.                                           |
+| Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
 
@@ -88,7 +88,7 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
 | Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
-| Text animation <br/> {.tag .web .zero}   | Enables the modal's text to animate in with a typewriter effect.                                      |
+| Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                     |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify. |
 | Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
 | Marker                                   | Select the appearance of the marker that launches the tooltip.                                        |
@@ -106,7 +106,7 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 | Sticky <br/> {.tag .web .zero}         | Keeps the banner visible while the user scrolls.                                                             |
 | Display style <br/> {.tag .web .zero}  | Controls the way in which the banner interacts with the page's content. Mobile banners support overlay only. |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                                                              |
-| Text animation <br/> {.tag .web .zero} | Enables the modal's text to animate in with a typewriter effect.                                             |
+| Text animation                         | Enables the banner's text to animate in with a typewriter effect.                                            |
 
 
 ### Checklist {.tag .web}
