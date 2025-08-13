@@ -69,23 +69,13 @@ To see an example of what a finished setup modal looks like in Amplitude, naviga
 
 The configuration page has two sections.  
 
-- The **Configuration** section on the left is where you configure your payload and what you expect to receive from Amplitude.
-- The **Preview Integration** section summarizes your configurations, including your setup modal screen for your integration, parameters, and payload.
+- The **Configuration** tab is where you configure your payload and what you expect to receive from Amplitude.
+- The **Testing** tab summarizes your configurations, including your setup modal screen for your integration, parameters, and payload. It also allows you to test your configuration using a custom payload. 
 
 
-## Select connection information
+## Integration Name
 
-You must add connection information before you can configure the specifics of your integration.
-
-1. In Amplitude, navigate to **Settings > Developer Portal**.
-2. Click **Add Connection Info**.
-3. Enter the connection info:
-
-      - **Display Name:** The display name of the integration. This is the name that appears in the Integration Catalog and on your integration tile.
-      - **Category:** Choose a category. The Integration Catalog uses the category in filters.
-      - **Summary:** A brief overview of your product.
-      - **Full Description:** Detailed description of your integration. Include some common use cases so users understand why they should use the integration.
-      - **Integration Logo:** Upload your integration logo in PNG format.
+This determines what users will see in the catalog page. Note that the name must be globally unique to all other event streaming integrations. 
 
 ## Create parameters
 
