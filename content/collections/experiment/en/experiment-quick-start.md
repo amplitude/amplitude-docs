@@ -132,10 +132,11 @@ Add JSON content to the Payload field when creating a variant. Payload content i
 
 ## Add Targeting to the flag
 
-In the Assignment section, define the **user segments** you want to experience your new feature. For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience)
+In the Assignment section, define the user segments that you want to experience your new feature. Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users). For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience). 
+
+##### To add targeting
     1. Specify the percentage of users receiving the variant.
-    Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
-    2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
+    2. To define a user segment, go to the Rule Based User Segments section and click **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
 
 ##  Finalizing the flag
 
