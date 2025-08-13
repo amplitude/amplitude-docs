@@ -12,6 +12,10 @@ tree:
       -
         id: 174b47f9-ffca-40af-bb9d-78a15d49fb1b
         entry: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
+        children:
+          -
+            id: cc45a42c-43e3-453f-a63f-7734832573af
+            entry: 5757d120-a967-40f9-bc00-ab4839b2eee1
       -
         id: 01fcdf37-aa52-472c-abbe-80885ecf7976
         entry: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
