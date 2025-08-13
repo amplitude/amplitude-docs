@@ -36,7 +36,7 @@ This determines what users will see in the catalog page. Note that the name must
 The configuration page has two sections.  
 
 - The **Configuration** tab is where you configure your payload and what you expect to receive from Amplitude.
-- The **Testing Integration** tab summarizes your configurations, including the **Destination Settings** form which is a preview for your integrations, variables, and payload.  You can also test your integration functionality from this tab.
+- The **Testing Integration** tab summarizes your configurations, including the **Destination Settings** form which is a preview for your integrations, variables, and payload. You can also test your integration functionality from this tab.
 
 The next several sections walk through configuration and testing options.
 
