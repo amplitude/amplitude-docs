@@ -73,9 +73,9 @@ The configuration page has two sections.  
 - The **Testing** tab summarizes your configurations, including your setup modal screen for your integration, parameters, and payload. It also allows you to test your configuration using a custom payload. 
 
 
-## Integration Name
+## Integration name
 
-This determines what users will see in the catalog page. Note that the name must be globally unique to all other event streaming integrations. 
+This determines what users see on the catalog page. The name must be globally unique to all other event streaming integrations. 
 
 ## Create parameters
 
@@ -137,14 +137,14 @@ The template in the screenshot can correspond to the above payload depending on 
 
 ## Preview and test
 
-1. Before  you submit your configuration for review, test the mock payload that you expect to receive from Amplitude from the Testing Tab. The Destination Preview form is identical to what users of the integration will see. Fill in the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
+1. Before  you submit your configuration for review, test the mock payload that you expect to receive from Amplitude on the Testing Tab. The Destination Preview form is identical to what users of the integration see. Enter the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
 
-2. Click **Test Connection** to  open the testing modal.  **Test Connection** is available after you enter all required parameters. This enables you to customize your payload. Click **Send Test Event**, any responses from the endpoint you specified appear on the right. 
+2. Click **Test Connection** to  open the testing modal. **Test Connection** is available after you enter all required parameters. This enables you to customize your payload. Click **Send Test Event**, any responses from the endpoint you specified appear on the right. 
 3. If you see any errors, check the parameters table to make sure all declared parameters are used.
       - **DECLARED:** All declared parameters in the *Create Parameters* section.
       - **USED:** All parameters used either in the URL, headers and event body.
 
-## Release Internally
+## Release internally
 
 To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. Allow up to 5 minutes for changes to take effect. 
 
