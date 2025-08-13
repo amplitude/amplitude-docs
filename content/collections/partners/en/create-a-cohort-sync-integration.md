@@ -12,22 +12,9 @@ landing_blurb: 'Learn the basics of creating a cohort syncing integration.'
 This guide assumes that you've completed the prerequisites for building partner integrations listed in [Amplitude Integration Portal](/docs/partners/integration-portal)
 {{/partial:admonition}}
 
-This guide walks through the basics of creating a cohort syncing integration with Amplitude. 
+This guide walks through the basics of creating a cohort sync integration with Amplitude. 
 
-This doc uses a list-based integration in its examples. If you create a property-based cohort integration, some steps may be slightly different than you see here. 
-
-## Connection information
-
-Add connection information before you configure the specifics of your integration.
-
-1. Navigate to **Settings > Developer Portal**.
-2. Click **Add Connection Info**.
-3. Enter the connection info: 
-      - **Display Name**: The display name of the integration. This is the name that appears in the Integration Catalog and on your integration tile.
-      - **Category**: Choose a category. The Integration Catalog  uses the category in filters.
-      - **Summary**: A brief overview of your product.
-      - **Full Description**: Detailed description of your integration. Include some common use cases so users understand why they should use the integration. 
-      - **Integration Logo**: Upload your integration logo in PNG format.
+This doc uses a list-based integration in its examples. If you create a property-based cohort syn integration, some steps may be slightly different than you see here. 
 
 ## Integration setup
 
@@ -40,12 +27,16 @@ The first step is to configure the integration tile that appears on the Amplitud
       - **Property-based cohort integration**: A property-based cohort integration works best with systems that represent cohort membership as a custom user property, such as a boolean flag or a tag. Amplitude invokes the update API when cohort membership changes to update the user property. Although you don't need to use the list creation API, some manual steps may be required to create the customer user property.
 4. Click **Next** to configure the destination.
 
+## Integration Name
+
+This determines what users will see in the catalog page. Note that the name must be globally unique to all other cohort sync integrations. 
+
 ## Configuration
 
 The configuration page has two sections.  
 
-- The **Configuration** section on the left is where you configure your payload and what you expect to receive from Amplitude.
-- The **Testing Integration** section summarizes your configurations, including your setup modal screen for your integrations, variables, and payload.
+- The **Configuration** tab is where you configure your payload and what you expect to receive from Amplitude.
+- The **Testing Integration** tab summarizes your configurations, including the **Destination Settings** form which is a preview for your integrations, variables, and payload.  You can also test your integration functionality from this tab.
 
 The next several sections walk through configuration and testing options.
 
@@ -210,6 +201,8 @@ Check the variables table to make sure all variables are accounted for and resol
 - **DECLARED**: All declared variables in the "Authentication calls, Custom Fields and Mapping Fields section"
 - **USED**:  All variables that are used either in the list users endpoint, add users endpoint, and remove users endpoint.
 - **PRE-DEFINED**: There are some pre-defined variables that Amplitude replaces values for.
+
+To modify the headers use the **Destination Settings** form which can be seen on both the **Configuration** and **Testing** tab. 
 
 Check your headers and payloads and when ready, click **Test Endpoint** to send a test API call to the predefined endpoint. You can also see the response/error for easy debugging.
 
