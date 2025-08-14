@@ -9,7 +9,7 @@ updated_at: 1718647169
 landing_blurb: 'Learn how to create an event ingestion integration with Amplitude.'
 ---
 {{partial:admonition type="note" heading="Prework requirements"}}
-This guide assumes that you've completed the prerequisites for building partner integrations listed in [Amplitude Integration Portal](/docs/partners/integration-portal)
+This guide assumes that you've completed the prerequisites for building partner integrations listed in [Amplitude Integration Portal](/docs/partners/integration-portal). Note that creating an event injestion integration is disabled by default. To enable it please reach out to integrations@amplitude.com.
 {{/partial:admonition}}
 
 
