@@ -1,79 +1,70 @@
 ## Amplitude Analytics Platform - Other Charts Collection
 
-This documentation covers specialized chart types within Amplitude's analytics platform, focusing on advanced querying capabilities and user composition analysis tools designed for enterprise-level data exploration and visualization.
+This collection represents Amplitude's advanced analytics capabilities that extend beyond standard event tracking, providing specialized tools for custom data exploration and user-centric analysis within the broader analytics ecosystem.
 
-### Product Overview and Key Features
+## High-Level Product Overview
 
-The "other-charts" collection encompasses advanced analytical tools that extend beyond standard event-based analytics:
+The Other Charts collection encompasses three core analytical capabilities designed for advanced users requiring deeper data access and specialized analysis patterns. **Amplitude SQL** provides direct SQL querying capabilities against event data stored in Snowflake databases, enabling custom analysis beyond pre-built chart types. **User Composition charts** shift focus from event-driven analytics to user property analysis, examining user demographics and characteristics rather than behavioral patterns. The **SQL Schema documentation** serves as the technical foundation, defining data structures and field mappings that enable both custom querying and standardized data access.
 
-**Amplitude SQL** - A powerful custom querying interface that enables direct SQL access to Amplitude data stored in Snowflake databases, providing enterprise users with unlimited flexibility for complex data analysis and custom visualizations.
+Key use cases include custom cohort analysis through SQL queries, demographic segmentation via user composition charts, and advanced data exploration for users requiring flexibility beyond standard analytics interfaces. The platform targets Growth and Enterprise customers with the Query add-on, indicating positioning as premium analytical capabilities.
 
-**User Composition Charts** - Specialized visualization tools that analyze user segments based on user properties rather than event behaviors, offering insights into user demographics and characteristics across different property dimensions.
+## Product Relationships and Feature Integration
 
-### Product Relationships and Feature Integration
+Amplitude SQL functions as the platform's custom query engine, bridging pre-built analytics with flexible data exploration needs. It operates on a 30-minute data loading cycle, ensuring near real-time access while maintaining query performance against Snowflake infrastructure.
 
-**Amplitude SQL Integration**
-- **Database Backend**: Leverages Snowflake as the underlying data warehouse
-- **Schema Abstraction**: Provides simplified table shortcuts (`$events`, `$date`, `$amplitude_id`) that map to complex underlying database structures
-- **Real-time Data Pipeline**: Maintains 30-minute data loading intervals for near real-time analysis
-- **Enterprise Integration**: Requires Growth/Enterprise plans with Query add-on subscription
+User Composition charts complement the platform's event-driven analytics by focusing on user properties rather than event behaviors. This creates a dual analytical approach where standard charts analyze what users do, while User Composition examines who users are based on their attributes and characteristics.
 
-**User Composition Analysis**
-- **Property-Based Segmentation**: Complements event-driven analytics by focusing on user characteristics
-- **Microscope Integration**: Connects with Amplitude's user-level analysis tools for deeper investigation
-- **Modular Architecture**: Utilizes Composition By, Segment By, and Measured As modules for flexible analysis configuration
+The SQL Schema documentation underpins both capabilities, providing the structural foundation that enables SQL querying while also supporting general data access patterns across the platform. This schema serves as the contract between Amplitude's event collection system and analytical interfaces.
 
-### Key Nomenclature and Definitions
+Notably, Portfolio Views integration is absent for SQL charts, indicating these tools are designed for individual project analysis rather than cross-project reporting, distinguishing them from standard analytics that support portfolio-level insights.
 
-**Database Schema Components**
-- **`$events` table**: Core data structure containing all user interactions and properties
-- **`amplitude_id`**: Primary user identifier that handles user merging and identity resolution
-- **`merged_amplitude_id`**: Reference field for tracking user identity consolidation
-- **VARIANT data type**: Snowflake's flexible JSON-like data structure for storing dynamic properties
+## Key Nomenclature and Definitions
 
-**Field Shortcuts and Conventions**
-- **`$date`**: Datepicker integration shortcut for time-based filtering
-- **`$amplitude_id`**: User identification shortcut that automatically handles merged user scenarios
-- **Property Prefixes**: `user_properties` and `event_properties` prefixes for accessing custom data attributes
+**$events table**: The primary data repository containing all event records, accessible through simplified shorthand syntax in Amplitude SQL queries, abstracting the underlying Snowflake table structure.
 
-**Measurement Types**
-- **Most Recent Value**: Analyzes users based on their latest property value
-- **All Values**: Considers all historical property values for each user
-- **Cross Property Values**: Examines relationships between multiple user properties
+**Field shortcuts** provide predefined aliases for common query patterns:
+- `$date`: Integrates with datepicker functionality for time-based filtering
+- `$events`: References the main events table
+- `$amplitude_id`: Manages user identification including merged user scenarios
 
-**Temporal Data Fields**
-- **`event_time`**: Client-side timestamp of when event occurred
-- **`client_event_time`**: Original client timestamp before processing
-- **`server_received_time`**: Server-side timestamp when event was received
-- **UTC standardization**: All timestamps normalized to UTC for consistency
+**Property Classification** distinguishes data types through schema prefixes:
+- `user_properties`: User-associated attributes (demographics, account information)
+- `event_properties`: Event-specific attributes tied to individual actions
 
-### Broader Product Ecosystem Integration
+**User Composition Measurement Types**:
+- **Most Recent Value**: Analyzes users based on their latest property values
+- **All Values**: Includes complete historical property value sets
+- **Cross Property Values**: Examines relationships and combinations between multiple user properties
 
-**Platform Architecture**
-- **Snowflake Data Warehouse**: Serves as the centralized data repository for all Amplitude analytics
-- **Query Add-on Licensing**: Represents premium tier functionality requiring additional subscription
-- **Regional Limitations**: EU region currently unsupported for SQL functionality, indicating geographic data governance considerations
+**Merged Users**: Amplitude's identity resolution system tracked through `merged_amplitude_id` fields, maintaining data integrity when user identities are consolidated across devices or sessions.
 
-**User Identity Management**
-- **Merged Users System**: Sophisticated user identity resolution that consolidates multiple user identifiers
-- **Session Tracking**: Integration with session management for behavioral analysis
-- **Device and Location Intelligence**: Comprehensive device fingerprinting and geographic data collection
+**VARIANT Data Types**: Snowflake's flexible data structure handling dynamic event and user property schemas, enabling schema evolution without breaking existing queries.
 
-**Visualization and Analysis Tools**
-- **Time Series Capabilities**: Native support for temporal data visualization
-- **Portfolio Views**: Integration limitations indicate specialized use cases for certain chart types
-- **Segmentation Modules**: Modular approach to user analysis allowing flexible configuration
+## Broader Product Ecosystem Integration
 
-### Technical Implementation Details
+Amplitude SQL integrates directly with Snowflake infrastructure, requiring specific plan tiers (Growth/Enterprise with Query add-on) and geographic availability (EU restrictions apply), indicating infrastructure and compliance considerations within the broader product architecture.
 
-**API and Query Interface**
-- **SQL Syntax**: Standard SQL querying with Amplitude-specific shortcuts and functions
-- **Schema Shortcuts**: Simplified table references (`$events`) that abstract complex underlying structures
-- **Property Access Patterns**: Standardized prefixing system for accessing user and event properties
+The User Composition functionality leverages the same user property infrastructure powering segmentation and cohort analysis across the platform, ensuring consistency in user attribute handling while providing specialized analytical interfaces.
 
-**Data Types and Storage**
-- **VARIANT Fields**: Flexible JSON-like storage for dynamic property data
-- **Advertising Identifiers**: Support for mobile advertising IDs (ADID/IDFA) for attribution analysis
-- **Geographic Data**: Latitude/longitude storage for location-based analysis
+Data loading operates on standardized 30-minute cycles, aligning with platform-wide data processing schedules while balancing real-time access needs with query performance requirements.
 
-This collection represents Amplitude's advanced analytics capabilities, providing enterprise users with both flexible SQL querying tools and specialized user composition analysis features that complement the platform's core event-driven analytics functionality.
+The absence of Portfolio Views support for SQL charts suggests architectural decisions prioritizing individual project analysis over cross-project reporting, distinguishing advanced analytical tools from standard dashboard capabilities.
+
+## Technical Implementation and API Access
+
+**Database Access**: SQL queries execute against Snowflake databases using the `$events` table schema, with direct SQL syntax support enabling complex analytical operations beyond standard chart capabilities.
+
+**Temporal Data Handling**: Multiple timestamp fields support different analytical requirements:
+- `event_time`: Client-side event timestamp for user experience analysis
+- `client_event_time`: Original client timestamp preserving user timezone context
+- `server_received_time`: Server processing timestamp in UTC for system analysis
+
+**User Identification System**: Multi-layered identifier support including:
+- `user_id`: Business logic user identification
+- `amplitude_id`: Platform-specific user tracking
+- `adid`/`idfa`: Advertising identifier integration
+- `session_id`: Session-based analysis capabilities
+
+**Geographic Analysis**: Location tracking through `latitude`/`longitude` fields enables geographic segmentation and analysis within SQL query contexts.
+
+**Data Structure**: VARIANT data types accommodate flexible event and user property schemas, supporting dynamic property addition without schema migration requirements, enabling rapid feature development and custom property implementation.
