@@ -15,7 +15,7 @@ The User Composition chart shows the breakdown of active users based on a single
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. View the[pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on **all Amplitude plans**. View the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
