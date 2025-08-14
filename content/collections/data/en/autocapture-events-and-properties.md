@@ -7,18 +7,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1755187204
----
----
-id: 5757d120-a967-40f9-bc00-ab4839b2eee1
-blueprint: data
-title: 'Autocapture Events and Properties'
-this_article_will_help_you:
-  - 'Understand the specific events and properties used in Autocapture'
-landing: false
-exclude_from_sitemap: false
-updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1755187039
+updated_at: 1755188049
 ---
 This page contains best practices for the various aspects of Autocapture. Remember that every implementation is unique and these best practices are only recommendations. 
 ## Sessions
@@ -95,7 +84,7 @@ The default configuration is designed to capture user interactions with interact
 | Property Name           | Description |
 |-------------------------|-------------|
 | **Element ID** | The `id` attribute of the HTML element.<br>Example: if the clicked element is `<a id="myID">Home</a>` <br> The property value is `myID` |
-| **Element Class** | The `class` attribute of the HTML element.<br>Example: if the clicked element is `<a class="myClass">Home</a>` <br> The property valude is `myClass` |
+| **Element Class** | The `class` attribute of the HTML element.<br>Example: if the clicked element is `<a class="myClass">Home</a>` <br> The property value is `myClass` |
 | **Element Tag** | The tag name of the HTML element.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `a` |
 | **Element Text** | The text content (`innerText`) of the HTML element. Only applies to the Element Clicked event.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `Home` |
 | **Element Href** | The `href` attribute, specifying the URL for a link. Only applies to `<a>` tags on the Element Clicked event.<br>Example: if the clicked element is `<a href="https://www.amplitude.com">Home</a>` <br> The property value is `https://www.amplitude.com` |
@@ -114,11 +103,10 @@ The default configuration is designed to capture user interactions with interact
 ### Element Changed
 Captures form element interactions, such as changes to a dropdown or inputs text into a text box.
 
-
 | Property Name           | Description |
 |-------------------------|-------------|
 | **Element ID** | The `id` attribute of the HTML element.<br>Example: if the clicked element is `<a id="myID">Home</a>` <br> The property value is `myID` |
-| **Element Class** | The `class` attribute of the HTML element.<br>Example: if the clicked element is `<a class="myClass">Home</a>` <br> The property valude is `myClass` |
+| **Element Class** | The `class` attribute of the HTML element.<br>Example: if the clicked element is `<a class="myClass">Home</a>` <br> The property value is `myClass` |
 | **Element Tag** | The tag name of the HTML element.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `a` |
 | **Element Text** | The text content (`innerText`) of the HTML element. Only applies to the Element Clicked event.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `Home` |
 | **Element Href** | The `href` attribute, specifying the URL for a link. Only applies to `<a>` tags on the Element Clicked event.<br>Example: if the clicked element is `<a href="https://www.amplitude.com">Home</a>` <br> The property value is `https://www.amplitude.com` |
