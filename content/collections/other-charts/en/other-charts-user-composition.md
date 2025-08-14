@@ -40,7 +40,7 @@ To build your own user composition analysis, follow these steps:
 5. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 2 through 4.
 6. In the *Measured As* Module, specify the user property **values** you're most interested in seeing:
 
-    * ***Most Recent Value*** will only consider your users' **most recent values of that property.** This value will be drawn from a user's most recent active event.Users may only appear in **one** bucket when *Most Recent Value* is selected.
+    * ***Most Recent Value*** will only consider your users' **most recent values of that property.** This value will be drawn from a user's most recent active event. Users may only appear in **one** bucket when *Most Recent Value* is selected.
     * ***All Values*** will include **every value your active users have had** for the property in question during the time frame of your analysis. Remember that the User Composition chart only includes active users, so user property values tied to inactive events will not be returned.
     * ***Cross Property Values*** will show sets of properties that active users have had within the time range selected. These **buckets are mutually exclusive**; users can only fall into one bucket.
 
