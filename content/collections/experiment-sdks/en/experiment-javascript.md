@@ -87,7 +87,7 @@ await experiment.fetch();
 
 // (3) Lookup a flag's variant.
 const variant = experiment.variant('FLAG_KEY');
-if (variant?.value === 'on') {
+if (variant.value === 'on') {
     // Flag is on
 } else {
     // Flag is off
@@ -116,7 +116,7 @@ await experiment.fetch();
 
 // (3) Lookup a flag's variant.
 const variant = experiment.variant('FLAG_KEY');
-if (variant?.value === 'on') {
+if (variant.value === 'on') {
     // Flag is on
 } else {
     // Flag is off
@@ -158,7 +158,7 @@ await experiment.fetch(user);
 
 // (3) Lookup a flag's variant.
 const variant = experiment.variant('FLAG_KEY');
-if (variant?.value === 'on') {
+if (variant.value === 'on') {
     // Flag is on
 } else {
     // Flag is off
@@ -494,7 +494,7 @@ When determining which variant a user has been bucketed into, you'll want to com
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>');
-if (variant?.value === 'on') {
+if (variant.value === 'on') {
     // Flag is on
 } else {
     // Flag is off
@@ -506,7 +506,7 @@ A variant may also be configured with a dynamic [payload](/docs/feature-experime
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>');
-if (variant?.value === 'on') {
+if (variant.value === 'on') {
     const payload = variant.payload;
 }
 ```
@@ -516,9 +516,9 @@ A `null` variant `value` means that the user hasn't been bucketed into a variant
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>', { value: 'control' });
-if (variant?.value === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant?.value === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
@@ -563,9 +563,9 @@ const variant = experiment.variant('<FLAG_KEY>');
 // Do other things...
 
 experiment.exposure('<FLAG_KEY>');
-if (variant?.value === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant?.value === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
