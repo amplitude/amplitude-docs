@@ -2,8 +2,7 @@
 
 **Keywords:**
 - User Composition chart
-- user properties breakdown
-- active users analysis
+- user properties analysis
 - user segments
 - Composition By Module
 - Segment By Module
@@ -11,8 +10,8 @@
 - Most Recent Value
 - All Values
 - Cross Property Values
+- active users breakdown
+- property values buckets
 - non-event-driven analysis
 - user property values
-- top 13 values buckets
 - mutually exclusive buckets
-- Microscope integration
