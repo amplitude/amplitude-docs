@@ -25,8 +25,6 @@ You must have [Member permissions](/docs/admin/account-management/user-roles-per
 
 ##### To connect a Slack workspace to your experiment notifications
 
-You only need to connect your Slack workspace to your experiment notifications once.
-
 1. Go to *Experiment* and then click *Experiments*. 
 You can also access alerts by going to *Settings > Organization settings > Experiment* and then clicking **Add alert**. 
 2. Click **Alerts** in the top right.
@@ -34,7 +32,7 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 4. Click **Allow** to confirm that you want to connect Amplitude to Slack.
 
 {{partial:admonition type="note" heading=""}}
-If you see a slack channel id instead of a slack channel name, make sure you have connected Amplitude and Slack. If you have already done that then make sure you are a member of the slack channel. You can reach out to the person who created the alert (which is in the "created" column of the table) to add you to the slack channel.
+If a slack channel id instead of a slack channel name appears, make sure you have connected Amplitude to your Slack. If you have already done that then make sure you are a member of the slack channel. You can reach out to the person who created the alert (displayed in the Created column of the table) to add you to the slack channel.
 {{/partial:admonition}}
 
 ## Experiment activities that generate alerts

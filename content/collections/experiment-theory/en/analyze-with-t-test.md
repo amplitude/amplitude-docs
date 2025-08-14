@@ -21,7 +21,11 @@ A T-test is the comparison of means amongst two populations of data to decide if
 T-test supports many of the same options as a Z-test.
 {{/partial:admonition}}
 
-Conduct a T-test as either **two-sided** (which looks for any change in the metric, in either direction) or **one-sided** (which looks for an increase or a decrease, but not both). T-tests also work for both binary and continuous metrics.
+Conduct a T-test as either:
+* **two-sided**:  Looks for any change in the metric, in either direction.
+* **one-sided**: Looks for an increase or a decrease, but not both. 
+
+T-tests also work for both binary and continuous metrics.
 
 A two-sided test doesn't explicitly state a statistically significant increase or decrease, while a one-sided test does. If you select Increase, the upper confidence interval bound is positive infinity. For Decrease, the lower confidence interval bound is negative infinity.
 
@@ -31,7 +35,7 @@ If you have yet to run your experiment or your sample size is large enough, use 
 
 ## Analyze your data with the T-test
 
-You can access the T-test settings from the Settings tab. The settings required depend on the type of T-test that you'd like to run (one-sided or two-sided) and the direction you'd like the metric to move in (increase for up or decrease for down). To set your T-test's settings:
+You can access the T-test settings from the Settings tab. The settings required depend on the type of T-test that you'd like to run and the direction you'd like the metric to move. To set your T-test's settings:
 
 1. Edit the Goals panel and select **Increase** or **Decrease** for your metric.
 2. Open the Analysis Settings panel. 
@@ -51,7 +55,7 @@ If you're unsure of the sample size to enter in Samples Per Variant, use Amplitu
 
 You need to reach a minimum sample size before you run a T-test. Experiment warns you if your data set is too small. 
 
-You can find more information on your sample size requirements in the Cumulative Exposure graph and its corresponding table. The graph shows a constant, dotted line named Sample Size Target, which is the total number of users needed for each variant. The table next to the graph highlights the Exposure Remaining, which is the number of users needed by each variant. This information can confirm not only the number of users needed before running the T-test, but also provide an estimate of the time you need to complete the experiment before using a T-test to interpret your results.
+You can find more information on your sample size requirements in the Cumulative Exposure graph and its corresponding table. The graph shows a constant, dotted line named Sample Size Target, which is the total number of users needed for each variant. The table next to the graph highlights the Exposure Remaining, which is the number of users needed by each variant. This information can confirm not only the number of users needed before running the T-test, but also provides an estimate of the time you need to complete the experiment before using a T-test to interpret your results.
 
 ![](/docs/output/img/experiment-theory/RM3egRnbjtRu6omQuMOnWLzB454XqT8c0Zggca7cXJGi3BM6utiLZjfABHlMD3LEQi3rkWuz1DWXwinwVTJeZ3WQ40aAi9qhQAFzhO769-nlNFWRhYzAhzOVPTk0UHO6k323AO60QDFVCgcZE-AThMY)
 

@@ -177,13 +177,13 @@ tree:
       -
         id: 73637f2a-c73a-42cc-9820-b12101f5194d
         title: 'Test and Preview Web Experiments'
-      -
-        id: 54317436-52f8-4031-b753-a361edd89b2b
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'
     children:
+      -
+        id: a6f5263f-a486-4a61-ab5b-2f8fa08b0e0d
+        entry: 48014e0e-3130-40cc-ba15-946d6a16b51b
       -
         id: 707402a6-d5fb-4432-915a-32c1f59f457a
         entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
@@ -218,9 +218,6 @@ tree:
             id: e05b14be-4608-493e-9e68-5c56f0003390
             entry: 6b86591a-0640-488d-b94c-5973aea3308b
             title: 'Inflection points and flattened slopes'
-      -
-        id: 54317436-52f8-4031-b753-a361edd89b2b
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
   -
     id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
     title: Troubleshooting
