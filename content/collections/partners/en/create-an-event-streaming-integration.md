@@ -69,23 +69,13 @@ To see an example of what a finished setup modal looks like in Amplitude, naviga
 
 The configuration page has two sections.  
 
-- The **Configuration** section on the left is where you configure your payload and what you expect to receive from Amplitude.
-- The **Preview Integration** section summarizes your configurations, including your setup modal screen for your integration, parameters, and payload.
+- The **Configuration** tab is where you configure your payload and what you expect to receive from Amplitude.
+- The **Testing** tab summarizes your configurations, including your setup modal screen for your integration, parameters, and payload. It also allows you to test your configuration using a custom payload. 
 
 
-## Select connection information
+## Integration name
 
-You must add connection information before you can configure the specifics of your integration.
-
-1. In Amplitude, navigate to **Settings > Developer Portal**.
-2. Click **Add Connection Info**.
-3. Enter the connection info:
-
-      - **Display Name:** The display name of the integration. This is the name that appears in the Integration Catalog and on your integration tile.
-      - **Category:** Choose a category. The Integration Catalog uses the category in filters.
-      - **Summary:** A brief overview of your product.
-      - **Full Description:** Detailed description of your integration. Include some common use cases so users understand why they should use the integration.
-      - **Integration Logo:** Upload your integration logo in PNG format.
+This determines what users see on the catalog page. The name must be globally unique to all other event streaming integrations. 
 
 ## Create parameters
 
@@ -147,16 +137,16 @@ The template in the screenshot can correspond to the above payload depending on 
 
 ## Preview and test
 
-1. Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. On the right side of the configuration page, follow these steps to preview and test your configuration.
-    Configure the test integration instance and click **Save**:
-      - **API Endpoint:** `https://localhost:3000`
-      - **REST API Key:** Enter the API key from the Amplitude project.
+1. Before  you submit your configuration for review, test the mock payload that you expect to receive from Amplitude on the Testing Tab. The Destination Preview form is identical to what users of the integration see. Enter the parameters you defined in this form to use as test values. You can also configure mapped properties and filters on this form. 
 
-2. Click the **Test Payload** to generate a cURL command. Copy and paste this cURL command into your Command Line Interface (CLI).
+2. Click **Test Connection** to  open the testing modal. **Test Connection** is available after you enter all required parameters. This enables you to customize your payload. Click **Send Test Event**, any responses from the endpoint you specified appear on the right. 
 3. If you see any errors, check the parameters table to make sure all declared parameters are used.
-
       - **DECLARED:** All declared parameters in the *Create Parameters* section.
       - **USED:** All parameters used either in the URL, headers and event body.
+
+## Release internally
+
+To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. Allow up to 5 minutes for changes to take effect. 
 
 ## Submit
 
