@@ -687,7 +687,23 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 
 {{/partial:collapse}}
 
+#### JSON body capturing
 
+When you enable network tracking, you can capture and filter JSON request and response bodies using the `.json()` method on Request and Response wrappers. This method allows you to selectively include or exclude specific JSON properties for privacy and security.
+
+The `.json()` method accepts two parameters:
+- `allow: string[]` - Array of property names to include in the captured JSON
+- `exclude: string[]` - Array of property names to exclude from the captured JSON
+
+```ts
+// Example: Capture only specific properties from request/response bodies
+const requestJson = await request.json(['userId', 'action'], ['password', 'token']);
+const responseJson = await response.json(['status', 'data'], ['sensitive_info']);
+```
+
+{{partial:admonition type="note" heading="JSON parsing behavior"}}
+The `.json()` method attempts to parse the body text as JSON. If the body isn't valid JSON or is empty, the method returns `null` without throwing an error.
+{{/partial:admonition}}
 
 #### Advanced configuration for network tracking
 
