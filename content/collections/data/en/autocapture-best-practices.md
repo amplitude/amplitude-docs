@@ -5,10 +5,9 @@ title: 'Autocapture Events and Properties'
 this_article_will_help_you:
   - 'Understand the specific events and properties used in Autocapture'
 landing: false
-parent: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1755125611
+updated_at: 1755185163
 ---
 This page contains best practices for the various aspects of Autocapture. Remember that every implementation is unique and these best practices are only recommendations. 
 ## Sessions
@@ -101,10 +100,9 @@ The property value would be: Home
 | **Element Href**         | The href attribute, specifying the URL for a link. Only applies to <a> tags on the Element Clicked event.
 For example, if the element clicked was:
 <a href=”https://www.amplitude.com”>Home</a>
-The property value would be: https://www.amplitude.com
- |
-| Element Position Left     |     |
-| Element Position Top      |     |
+The property value is: https://www.amplitude.com |
+| **Element Position Left**    |  Captures the distance of the element from the left of the screen view, in pixels. <br> For example, a value of 600 means the element clicked was 600 pixels from the left of the screen view.   |
+| **Element Position Top**      |     |
 | **Viewport Height**       |     |
 | Viewport Width            |     |
 | Page URL                  |     |
@@ -114,4 +112,3 @@ The property value would be: https://www.amplitude.com
 | Element Attributes        |     |
 | Element ARIA Label        |      |
 | Element Parent Label      |     |
-
