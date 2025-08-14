@@ -121,3 +121,5 @@ Captures form element interactions, such as changes to a dropdown or inputs text
 | **Element Attributes** | Captures unique attributes associated with click events through the `dataAttributePrefix` setting.<br>Example: if there is a unique attribute on your HTML elements used by your testing frame work such as `<a data-testid="feature-start">Start</a>` <br> A property on the click exists such as `[Amplitude] Element Attributes.id` with a value of `feature-start` |
 | **Element Aria Label** | The `aria-label` of the element, used for interactive elements without visible text. These can further define your click events. <br>Example: if the clicked event is `<button aria-label="Close" onclick="myDialog.close()"></button>` <br> The value is `Close` |
 | **Element Parent Label** | The text label in the parent element (or upper ancestors if not found in one-level parent) of the element. <br>Example: if the clicked element is `<div><span>Amplitude</span><a id="myID">Home</a></div>` <br> The value is `Amplitude` |
+
+
