@@ -25,7 +25,6 @@ This documentation covers the Amplitude Experiment JavaScript SDK for client-sid
 - mParticle integration
 - bootstrapping variants
 - initialVariants
-- initialFlags
 - Source.InitialVariants
 - automatic exposure tracking
 - ExperimentUser
