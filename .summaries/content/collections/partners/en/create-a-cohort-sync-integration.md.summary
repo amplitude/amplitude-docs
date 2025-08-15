@@ -22,5 +22,5 @@ This documentation provides a comprehensive guide for creating cohort sync integ
 - $amplitude_cohort_name variable
 - CSV upload testing
 - endpoint testing
-- API payload configuration
-- user identifier mapping
+- Release Internally
+- API payload editor
