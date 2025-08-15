@@ -19,6 +19,7 @@ When you create a new guide, you can start with a blank guide, or use a template
 | ------------ | ------------------------------------------------------------------------------------------------------ |
 | Tour         | Guide users to explore your product.                                                                   |
 | Announcement | Tell your users something, like information about a product changes, company updates, or new features. |
-| Checklists <br/> {.tag .web .zero}   | Help your users complete tasks by showing them step-by-step instructions.                              |
+| Checklists <br/> {.tag .web .zero} | Help your users complete tasks by showing them step-by-step instructions.        |
+| Carousel <br/> {.tag .mobile .zero} | Highlight your app's key features with a swipe-able onboarding carousel.        |
 | Banners      | Highlight important messages or alerts.                                                                |
 | Tooltips     | Provide quick tips or additional context, related to a specific element on screen.                     |
