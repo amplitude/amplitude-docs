@@ -196,7 +196,7 @@ remove,user789,Unified Cohort,unified_cohort_001
 add,john.doe@example.com,Unified Cohort,unified_cohort_001
 ```
 
-Check the variables table to make sure all variables are accounted for and resolve any errors. Ensure that all declared fields are non empty. 
+Check the parameters table to make sure all variables are accounted for and resolve any errors. Ensure that all declared fields are non empty. 
 
 - **DECLARED**: All declared variables in the "Authentication calls, Custom Fields and Mapping Fields section"
 - **USED**:  All variables that are used either in the list users endpoint, add users endpoint, and remove users endpoint.
