@@ -12,9 +12,9 @@ updated_at: 1723072454
 landing_blurb: "Enable non-technical Amplitude users to create events with Visual Labeling."
 ---
 
-After enabling [Autocapture](/docs/data/autocapture) on your site, you can begin to create **labeled events** by clicking specific elements on your site, using Amplitude Data's visual labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
+After enabling [Autocapture](/docs/data/autocapture) on your site, you can begin to create labeled events by clicking specific elements on your site using Amplitude Data's visual labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
 
-Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the _Labeled Events_ tab, instead of involving your engineering team.
+Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the Labeled Events tab, instead of involving your engineering team.
 
 ## Feature availability
 
