@@ -1,53 +1,83 @@
-Amplitude Data is a comprehensive data governance and management platform that provides tools for planning, implementing, and maintaining analytics instrumentation across web and mobile applications. The platform serves as a centralized data catalog that enables organizations to create structured tracking plans, generate type-safe code, and monitor data quality in real-time.
+Amplitude Data is a comprehensive data governance and management platform that provides tools for planning, implementing, and maintaining analytics instrumentation across the entire data lifecycle. The platform serves as a centralized data catalog that enables organizations to create structured tracking plans, generate type-safe code, and ensure data quality through real-time monitoring and validation.
 
-## Core Product Architecture
+## Core Product Architecture and Features
 
-Amplitude Data operates as the governance layer for Amplitude's analytics ecosystem, built around several interconnected components:
+Amplitude Data operates around several key components that work together to provide end-to-end data governance:
 
-**Tracking Plans** serve as the foundational schema definition system, allowing teams to define events, event properties, user properties, and group properties in a structured format. These plans support branching workflows similar to Git, enabling collaborative development with features like merge requests, team reviews, and environment-specific deployments.
+**Tracking Plans and Schema Management**: The platform centers on tracking plans - structured schemas that define events, event properties, user properties, and group properties. These plans serve as the source of truth for analytics implementation and support branching workflows for collaborative development. Users can create events with detailed metadata including descriptions, data types (string, number, boolean, array, enum, const, any), and validation rules.
 
-**Ampli Developer Tools** generate type-safe, auto-generated tracking libraries from tracking plans, providing compile-time validation and autocompletion for developers. The Ampli CLI (`ampli pull`, `ampli status --is-merged`) integrates with existing development workflows to ensure instrumentation consistency.
+**Ampli Developer Toolkit**: A code generation system that creates type-safe wrappers for Amplitude SDKs based on tracking plans. The Ampli CLI (`ampli pull`, `ampli status --is-merged`) generates autocompletion-enabled code that provides compile-time validation and prevents instrumentation errors.
 
-**Data Ingestion and Validation** occurs through multiple pathways including client-side SDKs (Browser, Android, iOS, Unity, Flutter, React Native), server-side SDKs (Node.js, Go, Python, Java), and third-party integrations. The platform supports both HTTP V2 API and Batch Event Upload API endpoints for different ingestion patterns.
+**Data Ingestion and Sources**: The platform supports multiple data ingestion methods including client-side SDKs (Browser, Android, iOS, Unity, Flutter, React Native), server-side SDKs (Node.js, Go, Python, Java), HTTP V2 API, Batch Event Upload API, and third-party integrations. It includes specialized plugins for Shopify and WordPress with advanced Autocapture capabilities.
 
-## Key Features and Capabilities
+**Real-time Data Validation and Observability**: The Observe feature automatically monitors event streams and validates them against tracking plans, categorizing events as Unexpected, Valid, Invalid, or Out of Date. This provides runtime validation without code changes and includes SDK source attribution and environment-specific filtering.
 
-**Schema Management** provides comprehensive control over data structure through configurable schema violation handling. Organizations can choose to either "Mark As Unexpected" or "Reject" three types of violations: unplanned event types, unplanned properties, and unplanned property values.
+## Data Transformation and Enhancement
 
-**Data Transformation and Enhancement** includes several powerful features:
-- **Derived Properties** enable retroactive property creation using formulas with functions like REGEXEXTRACT, SPLIT, CONCAT, and DATE_TIME_FORMATTER
-- **Custom Events** combine multiple existing events with OR clauses for flexible analysis
-- **Lookup Tables** enrich data by mapping CSV imports (up to 100MB/1M rows) to existing properties
-- **Transformations** allow retroactive data structure modifications including event merging, property renaming, and value hiding
+Amplitude Data provides several mechanisms for enhancing and transforming data:
 
-**Real-time Monitoring and Observability** through the Observe feature automatically validates incoming events against tracking plans, categorizing them as Unexpected, Valid, Invalid, or Out of Date. The platform provides source attribution, property type validation, and environment-specific filtering.
+**Derived Properties**: Enterprise-level feature enabling retroactive creation of new properties using formulas with functions like REGEXEXTRACT, SPLIT, CONCAT, DATE_TIME_FORMATTER, and CURRENCY_CONVERT. These are computed on-the-fly without affecting raw data.
 
-## Data Access and Security
+**Transformations**: Query-time modifications that allow merging events/properties, renaming property values, and hiding values to fix implementation mistakes retroactively without altering raw data in warehouses.
 
-**Data Access Control (DAC)** enables Enterprise organizations to classify properties as PII, revenue, or sensitive data, with group-based permissions through the Groups framework. Restrictions apply across charts, cohorts, dashboards, exports, and the Taxonomy API.
+**Custom Events**: Combine multiple existing events with OR clauses to track related user activities across various chart types, with specific limitations around Redshift querying.
 
-**Data Mutability** supports INSERT, UPDATE, and DELETE operations through Mirror Sync strategies across Snowflake (CDC), Databricks (CDF), and Amazon S3 integrations, enabling compliance with GDPR and CCPA requirements.
+**Lookup Tables**: Enable enrichment of event and user properties by importing CSV data sources (up to 100MB/1M rows) with case-sensitive exact matching for property value transformation.
 
-## Integration Ecosystem
+## Data Quality and Governance
 
-**Source Integrations** include native SDKs, third-party platforms (Segment, mParticle, Tealium), cloud storage imports (Amazon S3, Google Cloud Storage), and specialized plugins for WordPress and Shopify that provide advanced autocapture capabilities.
+The platform includes comprehensive data quality controls:
 
-**Destination Streaming** enables real-time behavioral data forwarding to downstream tools with 60-second p95 latency targets, exponential backoff retry mechanisms, and configuration-based filtering. The platform supports streaming of transformed events including Custom Events, Derived Properties, and Transformed Properties.
+**Schema Violation Handling**: Configurable responses to unplanned event types, properties, and property values with options to "Mark As Unexpected" or "Reject" violations.
 
-**Cohort Synchronization** provides three sync cadences: one-time, scheduled (hourly/daily), and real-time (every minute) to third-party destinations including ad networks and marketing automation platforms.
+**Data Access Control (DAC)**: Enterprise feature for managing access to sensitive data by classifying properties as PII, revenue, or sensitive data with group-based permissions through the Groups framework.
 
-## Advanced Analytics Features
+**Filtering and Blocking**: Drop filters for query-time filtering and block filters for ingestion-time blocking, including bot traffic filtering using IAB/ABC International Spiders and Bots List.
 
-**Cross-Project Analysis** through portfolios combines up to 5 source projects with schema ranking for conflict resolution. **Currency Conversion** provides multi-currency revenue analysis using ISO 4217 currency codes and ExchangeRate API integration. **Channels** create retroactive property classifiers based on UTM and referrer data for acquisition tracking.
+**AI Data Assistant**: Automatically generates prioritized suggestions for tracking plan improvements based on event volume and query counts analysis.
 
-**Autocapture** automatically captures user interactions (clicks, page views, sessions, form interactions) across Browser SDK, iOS Swift SDK, and Android-Kotlin SDK with visual labeling capabilities and privacy protections for sensitive elements.
+## Key Nomenclature and Definitions
 
-## API and Developer Tools
+**Events**: User actions or occurrences tracked in the system, categorized as active/inactive affecting user metrics calculations.
 
-The **Taxonomy API** enables CRUD operations for categories, event types, event properties, and user properties. The **Chrome Extension Debugger** provides real-time instrumentation debugging with event parameter viewing and SDK configuration access.
+**Event Properties**: Attributes specific to individual events at the time they occurred, with support for property groups for bulk management.
 
-**Time-to-Live (TTL)** configuration manages data retention at organization and project levels with daily deletion jobs. **CSV Import/Export** functionality supports bulk tracking plan management with detailed field schemas and branching workflows.
+**User Properties**: Persistent attributes of users that update over time and persist across events, with operations including set, setOnce, unset, add, append, prepend.
 
-The platform integrates with development workflows through **Jira Integration** for automatic issue creation on feature branch changes, and supports **Git Integration** for tracking plan versioning and deployment management.
+**Group Properties**: Account-level properties for B2B analytics requiring the Accounts add-on.
 
-Amplitude Data represents a comprehensive solution for organizations requiring enterprise-grade data governance, combining planning tools, real-time validation, flexible transformation capabilities, and extensive integration options within a collaborative, version-controlled environment.
+**Sources**: SDK implementations or data ingestion points configured within tracking plans.
+
+**Branches**: Isolated environments for tracking plan development with merge capabilities back to main branch.
+
+**Property Override**: Customization of shared property definitions for specific events or property groups without affecting the original version.
+
+## Integration and Ecosystem
+
+Amplitude Data integrates extensively with the broader Amplitude ecosystem and external tools:
+
+**Analytics Integration**: Direct integration with Amplitude Analytics for cross-project analysis through portfolios (up to 5 source projects) with schema ranking for conflict resolution.
+
+**Warehouse Integrations**: Support for Snowflake, Databricks, and Amazon S3 with Change Data Capture (CDC) and Change Data Feed (CDF) capabilities for data mutability operations (INSERT, UPDATE, DELETE).
+
+**Destination Event Streaming**: Real-time behavioral data forwarding to downstream marketing and sales tools with 60-second p95 latency targets and configuration-based filtering.
+
+**Third-party Integrations**: Cohort synchronization with various cadences (one-time, scheduled hourly/daily, real-time minute-by-minute) and extensive source catalog for data ingestion.
+
+**Development Tools**: Chrome extension for debugging (Amplitude Instrumentation Explorer), Jira integration for automatic issue creation, and Git integration for branch management.
+
+## API Endpoints and Technical Implementation
+
+Key API endpoints and technical components include:
+
+- **HTTP V2 API**: Client-side event ingestion
+- **Batch Event Upload API**: Server-side and historical data import with limits of 500K events per device ID daily
+- **Evaluation API**: For Amplitude Experiment integration  
+- **Taxonomy API**: CRUD operations for categories, event types, and properties
+- **User Privacy API**: GDPR/CCPA compliance for user deletion
+
+**Configuration Options**: SDKs support various configuration parameters including `batchEvents`, `sessionTimeout`, `minTimeBetweenSessions`, `eventUploadThreshold`, `cssSelectorAllowlist`, `pageUrlAllowlist`, and `trackingOptions`.
+
+**Autocapture Capabilities**: Automatic capture of user interactions (Element Clicked, Element Changed, Page Viewed, Session events) with visual labeling for no-code event creation and privacy protections for sensitive elements.
+
+The platform supports various plan tiers (Starter, Plus, Growth, Enterprise) with different feature limitations and capabilities, particularly around advanced features like derived properties, data access control, and unlimited branching.
