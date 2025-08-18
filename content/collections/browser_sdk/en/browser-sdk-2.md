@@ -736,7 +736,7 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: <br>- `*` matches any key <br>- `**` matches any number of keys. <br> Maintains the structure of the original JSON. | `[]` |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
 | `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
 
 {{/partial:collapse}}
