@@ -1,86 +1,76 @@
-## Amplitude Analytics and Experimentation Platform
+# Amplitude Digital Analytics and Experimentation Platform
 
-Amplitude is a comprehensive digital analytics and experimentation platform designed for product teams to analyze user behavior, conduct feature experiments, manage customer data, and drive user engagement. The platform integrates multiple specialized products into a unified ecosystem for end-to-end product intelligence and optimization.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides product analytics, feature experimentation, customer data management, and user engagement tools. The platform serves product teams, developers, marketers, and data analysts with integrated solutions for understanding user behavior, running experiments, and optimizing digital experiences.
 
-## Product Architecture and Component Relationships
+## Product Architecture and Relationships
 
-The Amplitude ecosystem consists of five core product areas that share data models and integrate seamlessly:
+The Amplitude ecosystem consists of four core product areas that work together through shared data infrastructure:
 
-**Analytics Core** serves as the foundational behavioral analysis engine, featuring specialized chart types for different analytical use cases:
-- Event Segmentation for granular user action analysis
-- Funnel Analysis for conversion optimization
-- Retention Analysis for engagement measurement
-- User Sessions and Journeys for behavioral path analysis
-- Revenue LTV for monetization insights
-- Advanced cohort analysis through Compass, Lifecycle, Personas, and Stickiness charts
-- Engagement Matrix and Impact Analysis for sophisticated behavioral modeling
+**Analytics Core** - The foundational product analytics platform featuring multiple chart types (Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Lifecycle, Personas, Stickiness, Compass, Data Tables, Engagement Matrix, Impact Analysis, Revenue LTV) and legacy chart support. Analytics integrates with all other products through shared event data and user identification.
 
-**Amplitude Experiment** provides feature flagging and A/B testing capabilities with native analytics integration, including statistical analysis frameworks, advanced targeting mechanisms, dedicated experiment chart types, and comprehensive workflow management for the complete experimentation lifecycle.
+**Amplitude Experiment** - Feature flagging and A/B testing platform with advanced statistical analysis, including experiment theory, workflow management, results analysis, troubleshooting tools, and "under the hood" technical implementation details. Experiment leverages Analytics data for user segmentation and measurement.
 
-**Session Replay** captures and analyzes user session recordings to provide qualitative insights complementing quantitative analytics data.
+**Customer Data Platform (CDP)** - Data infrastructure including sources, destinations, audiences, warehouse-native capabilities, and PII management. The CDP serves as the data backbone connecting all products and external systems.
 
-**Guides and Surveys** enables in-product messaging and feedback collection for user engagement and research initiatives.
+**Amplitude Session Replay** - User session recording and analysis tool that captures user interactions for qualitative analysis, complementing quantitative analytics data.
 
-**Customer Data Platform (CDP)** manages comprehensive data operations including source/destination catalogs for integration, audience segmentation, data governance with PII management, and warehouse-native capabilities for existing data infrastructure.
+**Amplitude Guides and Surveys** - User engagement platform for in-product messaging, onboarding flows, and feedback collection.
 
-## Technical Nomenclature and System Architecture
+## Key Nomenclature and Technical Definitions
 
-**Collections Structure** - Documentation follows a hierarchical organization with routing patterns like `/analytics/charts/{chart-type}/{slug}` and `/feature-experiment/{category}/{slug}`, enabling systematic content discovery.
+**Collections** - Content organization structure using YAML configuration files that define routing (`route`), navigation injection (`inject.nav_title`), mounting relationships (`mount`), site propagation (`sites`, `propagate`), and content structure (`structure.root`).
 
-**Mount Points** - Collections utilize UUID-based mount identifiers to create cross-references and relationships between documentation sections across the platform.
+**SDKs (Software Development Kits)** - Client libraries for data collection across platforms including Browser, Android, iOS, React Native, Flutter, Node.js, Python, Java, Go, Unity, and Unreal Engine. Each SDK collection uses standardized routing patterns like `/sdks/analytics/{platform}/{slug}`.
 
-**Navigation Injection** - Each collection injects specific navigation contexts (`nav_title`) including `analytics`, `experiment`, `data`, and `apis` for contextual browsing experiences.
+**APIs** - RESTful interfaces for Analytics, Experiment, and Guides and Surveys with dedicated endpoint documentation under `/apis/{product}/{slug}` routing.
 
-**Blade Architecture** - Product-specific functionality and branding injection system with collections tagged for individual products like "Amplitude Experiment", "Amplitude Session Replay", and "Amplitude Guides and Surveys".
+**Ampli** - Code generation tool that creates type-safe tracking libraries from Amplitude Data tracking plans, available across multiple programming languages and platforms.
 
-**Site Propagation** - Multi-language documentation support with English (`en`) as primary language and Japanese (`jp`) translations, featuring controlled propagation settings across collections.
+**Mounting System** - Content management architecture using unique identifiers (UUIDs) to link collections, enabling content reuse and hierarchical organization.
 
-**Preview Targets** - All collections support live preview functionality with automatic refresh capabilities for real-time documentation updates.
+**Navigation Injection** - Systematic content categorization using `nav_title` values like `analytics`, `experiment`, `data`, `apis`, `analytics_sdks`, `experiment_sdks` for consistent site navigation.
 
-## SDK and API Implementation Framework
+**Blade System** - Product branding mechanism that applies specific product context (e.g., "Amplitude Experiment", "Amplitude Session Replay", "Amplitude Guides and Surveys") to content sections.
 
-**Analytics SDK Ecosystem** provides comprehensive instrumentation across platforms:
-- **Web Implementation**: Browser SDK with advanced autocapture and attribution capabilities
-- **Mobile Platforms**: Native SDKs for iOS, Android, React Native, and Flutter
-- **Server-Side Integration**: SDKs for Node.js, Python, Java, and Go
-- **Gaming Platforms**: Specialized SDKs for Unity and Unreal Engine
-- **Ampli Code Generation**: Type-safe tracking implementation generator that creates strongly-typed SDKs from data schemas
+## Content Management and Routing Architecture
 
-**Experiment SDKs** deliver dedicated feature flagging and experimentation capabilities with consistent experiment evaluation across all supported platforms.
+The platform uses a sophisticated content management system with hierarchical routing:
 
-**API Endpoints** expose RESTful interfaces for:
-- Analytics data ingestion and querying (`/apis/analytics/`)
-- Experiment configuration and evaluation (`/apis/experiment/`)
-- Guides and Surveys management (`/apis/guides-and-surveys/`)
+**Root-Level Sections** (`/`) - Primary product areas and getting started content
 
-## Enterprise and Administrative Capabilities
+**Product-Specific Routes** - Dedicated paths for each product area:
+- Analytics: `/analytics/{slug}` and `/analytics/charts/{chart-type}/{slug}`
+- Experiment: `/feature-experiment/{slug}` with specialized paths for theory, workflow, advanced techniques, and troubleshooting
+- Data/CDP: `/data/{slug}` with specialized paths for sources, audiences, destinations, and warehouse-native features
+- APIs: `/apis/{product}/{slug}`
+- SDKs: `/sdks/{product}/{platform}/{slug}`
 
-**Account Management** provides organization-level controls for user access, permissions, and resource allocation across the platform.
+**Administrative Content** - Account management (`/admin/account-management/{slug}`), billing (`/admin/billing-use/{slug}`), and single sign-on (`/admin/single-sign-on/{slug}`)
 
-**Single Sign-On (SSO)** enables enterprise authentication integration for secure, centralized access management.
+**Support Infrastructure** - FAQ and troubleshooting (`/faq/{slug}`), migration guides (`/migration/{slug}`), and partner documentation (`/partners/{slug}`)
 
-**Billing and Usage** offers consumption monitoring and billing management for enterprise deployments with usage-based pricing models.
+## API Endpoints and Technical Integration
 
-**Data Governance** implements PII handling, compliance controls, and configurable data retention policies for regulatory compliance.
+**Analytics API** (`/apis/analytics/{slug}`) - RESTful endpoints for event ingestion, user properties, cohort management, and data export
 
-## Integration and Partner Ecosystem
+**Experiment APIs** (`/apis/experiment/{slug}`) - Feature flag management, experiment configuration, variant assignment, and results retrieval
 
-**Source Catalog** contains pre-built integrations for data ingestion from various platforms and services, organized by integration type and data source category.
+**Guides and Surveys API** (`/apis/guides-and-surveys/{slug}`) - In-product messaging, survey creation, response collection, and targeting management
 
-**Destination Catalog** provides data export and activation integrations for marketing automation, analytics platforms, and business intelligence tools.
+**SDK Integration Patterns** - Standardized initialization, event tracking, user identification, and configuration across all client libraries with platform-specific implementation details
 
-**Partners Program** encompasses third-party integrations and professional services ecosystem for extended platform capabilities.
+## Broader Ecosystem Integration
 
-**Experiment Integrations** offer platform-specific integrations for feature flag delivery and experiment analysis across different technology stacks.
+Amplitude integrates with the broader marketing and product technology stack through:
 
-## Onboarding and Migration Support
+**Source Catalog** - Pre-built integrations for data ingestion from various platforms, organized by integration categories and accessible via `/data/source-catalog/{slug}`
 
-**Get Started** workflows provide comprehensive onboarding experiences for new users and organizations with guided setup processes.
+**Destination Catalog** - Data export integrations to external systems, marketing tools, and data warehouses via `/data/destination-catalog/{slug}`
 
-**Migration Guides** offer platform-specific assistance for users transitioning from other analytics or experimentation platforms, including data migration strategies.
+**Partner Ecosystem** - Third-party integrations and certified partner solutions documented under `/partners/{slug}`
 
-**Academy Content** delivers educational resources and implementation best practices for analytics methodology and experimentation frameworks.
+**Warehouse-Native Architecture** - Direct integration with cloud data warehouses, enabling analysis without data movement
 
-**FAQ and Troubleshooting** provides self-service support resources with platform-specific troubleshooting guides and common implementation patterns.
+**PII Management** - Privacy-compliant data handling with specialized integrations for sensitive data processing
 
-The Amplitude platform architecture emphasizes unified data models across products, enabling teams to adopt individual components while maintaining cross-product insights and analytical continuity. The modular design supports both standalone product usage and integrated workflows for comprehensive product intelligence operations.
+The platform supports multi-language documentation (English and Japanese), comprehensive troubleshooting resources, migration tooling for platform transitions, and extensive educational content through Academy materials. The architecture emphasizes developer experience through comprehensive SDK documentation, API references, and integration guides while providing business users with detailed feature documentation and best practices.
