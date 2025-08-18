@@ -726,6 +726,8 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | Name |  Description | Default Value |
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | **Experimental.** URL patterns to allow for network capture. Supports string (exact match) or regular expressions (pattern match). For example, `["https://example.com/path", /path\/to/]` to match specific URLs or patterns. `urls` takes precedence over `hosts`. | `["*"]` (all URLs) |
+| `methods` | **Experimental.** HTTP methods to allow for network capture. For example, `["GET", "POST"]` to capture only GET and POST requests, or `["*"]` to capture all methods. | `["*"]` (all methods) |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
 | `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
 | `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
@@ -736,7 +738,7 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: <br>- `*` matches any key <br>- `**` matches any number of keys. <br> Maintains the structure of the original JSON. | `[]` |
 | `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
 
 {{/partial:collapse}}
