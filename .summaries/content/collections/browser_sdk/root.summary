@@ -108,4 +108,13 @@ amplitude.init('API_KEY', 'user@example.com', options)
 - Configurable retry mechanisms
 - Local storage fallbacks for event persistence
 
-The Browser SDK ecosystem represents Amplitude's comprehensive approach to web analytics, providing migration paths from legacy implementations while introducing modern features like autocapture, unified product integration, and enhanced privacy controls. The modular plugin architecture enables extensibility while maintaining performance and compliance with modern web standards.
+## Broader Product Ecosystem Integration
+
+The Browser SDK serves as the foundational web analytics layer within Amplitude's broader product ecosystem, integrating with:
+
+**Amplitude Data** - Provides tracking plan governance and validation through Ampli wrapper generation
+**Amplitude Experiment** - A/B testing platform accessible through the unified SDK
+**Amplitude Session Replay** - User session recording capabilities integrated via unified SDK
+**Marketing Analytics** - Campaign attribution and UTM tracking specialized functionality
+
+The ecosystem represents Amplitude's comprehensive approach to web analytics, providing migration paths from legacy implementations while introducing modern features like autocapture, unified product integration, and enhanced privacy controls. The modular plugin architecture enables extensibility while maintaining performance and compliance with modern web standards.
