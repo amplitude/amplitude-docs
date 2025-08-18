@@ -711,7 +711,7 @@ The `.json()` method attempts to parse the body text as JSON. If the body isn't 
 
 #### Header filtering and privacy
 
-When you enable header capture, Amplitude automatically filters sensitive headers for privacy and security. Forbidden headers like `authorization`, `cookie`, and other sensitive headers are automatically excluded from capture, even if specified in the allowlist.
+When you enable header capture, Amplitude automatically filters sensitive headers for privacy and security. Headers that are considered forbidden such as  `authorization`, `cookie`, and other sensitive headers are automatically excluded from capture, even if specified in the allowlist.
 
 If you configure header capture with `captureSafeHeaders: true`, Amplitude captures common, non-sensitive headers like `Content-Type`, `Content-Length`, `Accept`, and others that don't contain sensitive information.
 
