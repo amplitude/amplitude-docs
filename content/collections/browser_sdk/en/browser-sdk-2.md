@@ -694,8 +694,8 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 When you enable network tracking, you can capture and filter JSON request and response bodies using the `.json()` method on Request and Response wrappers. This method allows you to selectively include or exclude specific JSON properties for privacy and security.
 
 The `.json()` method accepts two parameters:
-- `allow: string[]` - Array of property names to include in the captured JSON
-- `exclude: string[]` - Array of property names to exclude from the captured JSON
+- `allow: string[]`: Array of property names to include in the captured JSON
+- `exclude: string[]`: Array of property names to exclude from the captured JSON
 
 ```ts
 // Example: Capture only specific properties from request/response bodies
@@ -736,7 +736,7 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: <br>- `*` matches any key <br>- `**` matches any number of keys. <br> Maintains the structure of the original JSON. | `[]` |
 | `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
 
 {{/partial:collapse}}
@@ -766,7 +766,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-This configuration captures network requests to `api.example.com` with status codes 400-599, and includes specific JSON properties from request and response bodies while excluding sensitive information.
+This configuration captures network requests to `api.example.com` with status codes 400-599 and includes specific JSON properties from request and response bodies while excluding sensitive information.
 
 ## Track an event
 
