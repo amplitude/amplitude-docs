@@ -20,12 +20,20 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, w
 - ampDeviceId
 - ampSessionId
 - ampTimestamp
-- Content Security Policy (CSP)
 - cookie management
 - AMP prefix cookies
+- Content Security Policy
+- CSP
 - offline mode
 - remote configuration
 - fetchRemoteConfig
+- plugins system
+- enrichment plugin
+- destination plugin
+- revenue tracking
+- user properties
+- Identify interface
+- group properties
 - flushIntervalMillis
 - flushQueueSize
 - deviceId
@@ -34,14 +42,20 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, w
 - trackingOptions
 - identityStorage
 - serverZone
-- plugins system
-- enrichment plugin
-- destination plugin
-- revenue tracking
-- user groups
-- group properties
-- Identify interface
+- EU data residency
 - Visual labeling
-- Angular Zone.js
-- script loader
-- unified SDK
+- cssSelectorAllowlist
+- actionClickAllowlist
+- pageUrlAllowlist
+- excludeReferrers
+- resetSessionOnNewCampaign
+- trackHistoryChanges
+- instanceName
+- logLevel
+- minIdLength
+- optOut
+- useBatch
+- transport
+- fetch
+- xhr
+- beacon
