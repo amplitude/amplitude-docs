@@ -20,5 +20,3 @@
 - segments and variants metadata
 - evaluationMode and flagType
 - target audience evaluation
-- bootstrapping client-side SDKs
-- initialFlags configuration

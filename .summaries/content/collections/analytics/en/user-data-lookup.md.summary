@@ -16,5 +16,6 @@
 - cohort membership
 - portfolio project limits
 - live event updates
-- funnel segmentation charts
 - user history tabs
+- timestamp adjustment logic
+- 60-second cutoff rule

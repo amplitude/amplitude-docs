@@ -1,15 +1,17 @@
-**Summary:** This documentation covers configuring and managing source content for Amplitude's Resource Center, including adding documentation repositories and videos as sources, setting sync options and visibility settings, and managing content through draft/published states.
+**Summary:** This documentation covers configuring and managing source content for Amplitude's Resource Center, including adding documentation repositories and videos through the Guides and Surveys > Content interface, with sync options, visibility controls, user targeting via segments, and content management features like draft/published status controls.
 
 **Keywords:**
 - Resource Center source content
-- documentation repositories
-- video content sources
+- Guides and Surveys Content interface
+- documentation repositories sync
+- video content integration
+- Website scraper option
 - sync options configuration
-- draft vs published visibility
-- content targeting segments
-- website scraper integration
-- source content management
-- automatic sync frequency
-- Guides and Surveys module
+- Draft vs Published visibility
+- user targeting segments
 - recommendation sets
-- content status management
+- source content management
+- manual sync triggers
+- article unpublishing
+- sync history tracking
+- content status controls

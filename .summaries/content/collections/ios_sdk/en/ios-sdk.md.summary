@@ -1,26 +1,25 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics iOS SDK (maintenance mode) with support for Swift and Objective-C, including installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user properties management via AMPIdentify class, revenue tracking with AMPRevenue, session handling, and advanced features like middleware, SSL pinning, COPPA compliance, and Apple privacy manifest requirements.
+This documentation covers the Amplitude Analytics iOS SDK (maintenance status) with installation via CocoaPods/Carthage/Swift Package Manager, initialization with API keys, event tracking with properties, user properties management via AMPIdentify class, revenue tracking with AMPRevenue, and advanced features including session tracking, user groups, IDFA/IDFV handling, EU data residency, offline mode, middleware, and Apple privacy manifest requirements.
 
 ## Keywords
 
 - Amplitude Analytics iOS SDK
-- Swift Objective-C support
 - CocoaPods Carthage Swift Package Manager installation
-- AMPIdentify user properties
+- AMPIdentify class user properties
 - AMPRevenue revenue tracking
-- defaultTracking sessions appLifecycles screenViews deepLinks
-- IDFA IDFV device ID tracking
-- AMPTrackingOptions privacy controls
-- setUserId setDeviceId session management
-- EU data residency server zones
+- IDFA IDFV advertiser ID device ID
 - CTTelephonyNetworkInfo carrier tracking iOS 16 deprecated
+- defaultTracking sessions appLifecycles screenViews deepLinks
+- setServerZone EU data residency
+- AMPTrackingOptions disable tracking
+- groupIdentifyWithGroupType user groups
+- minTimeBetweenSessionsMillis session management
+- eventUploadThreshold eventUploadPeriodSeconds batching
+- setOptOut privacy controls
 - middleware AMPMiddlewarePayload
-- SSL pinning AMPLITUDE_SSL_PINNING
-- COPPA enableCoppaControl
 - Apple privacy manifest NSPrivacyTracking
 - tvOS watchOS iOS extensions App Clips
+- SSL pinning COPPA control
 - offline mode setOffline
-- dynamic configuration useDynamicConfig
-- group identify setGroup logEventWithGroups
-- out-of-session events minTimeBetweenSessionsMillis
+- Swift Objective-C supported languages
