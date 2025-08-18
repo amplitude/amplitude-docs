@@ -15,7 +15,7 @@ summary: 'Fetch a user profile, which include user properties, computed properti
 
 ## Availability
 
-User Profile API requires an Activation plan. For more information, see the [pricing page](https://amplitude.com/pricing).
+User Profile API requires an Activation plan. For more information, review the [pricing page](https://amplitude.com/pricing).
 
 {{partial:admonition type="warning" heading="Unavailable in EU Region"}}
 This API is unsupported for customers in Amplitude's EU data processing region.
@@ -293,6 +293,10 @@ Authorization: Api-Key 1234567890
 ## Get cohort IDs
 
 Retrieves a user's cohort IDs.
+Before you can use `get cohort IDs`, the following prerequisites must be satisfied:
+
+* Cohorts must be synced to the User Profile API.
+* 
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
