@@ -1,1 +1,32 @@
-Stub
+**Summary:**
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, detailing installation via script loader/npm/yarn, initialization with API keys, autocapture configuration for tracking attribution/page views/sessions/forms/file downloads/element interactions/network requests, event tracking, user properties management, revenue tracking, plugins system, and advanced features like cross-domain tracking, sendBeacon transport, CSP configuration, cookie management, offline mode, and remote configuration.
+
+**Keywords:**
+- @amplitude/analytics-browser
+- Browser SDK 2
+- JavaScript TypeScript analytics
+- autocapture configuration
+- marketing attribution tracking
+- UTM parameters click IDs
+- page view tracking trackHistoryChanges
+- session tracking sessionTimeout
+- form interactions tracking
+- file downloads tracking
+- element interactions tracking cssSelectorAllowlist
+- network tracking captureRules statusCodeRange
+- sendBeacon transport
+- cross-domain tracking ampDeviceId ampSessionId
+- cookie management AMP prefix
+- offline mode flushIntervalMillis
+- remote configuration fetchRemoteConfig
+- plugins enrichment destination
+- revenue tracking Revenue interface
+- user properties Identify interface
+- CSP Content Security Policy
+- deviceId userId sessionId
+- flushQueueSize flushIntervalMillis
+- trackingOptions identityStorage
+- serverZone EU data residency
+- logLevel debugging
+- HTTP V2 API
+- minIdLength validation
