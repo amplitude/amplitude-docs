@@ -12,11 +12,16 @@
 - actionClickAllowlist
 - pageUrlAllowlist
 - data-amp-track- attributes
-- precision tracking
-- taxonomy management
+- Precision tracking
+- Taxonomy management
 - PII protection
-- sensitive elements filtering
-- contenteditable attribute
-- textContent capture
-- event volume optimization
-- labeled events tab
+- Sensitive elements filtering
+- Event volume optimization
+- Labeled events
+- Session tracking
+- Page view tracking
+- Form interactions
+- File downloads
+- Marketing attribution
+- Screen views
+- Application installs
