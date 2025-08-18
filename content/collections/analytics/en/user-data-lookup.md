@@ -55,8 +55,6 @@ You can choose up to ten events from a user's event stream to view in a funnel o
 1. Check the boxes next to the events you'd like to visualize in a chart.
 2. Click *Create Chart* and choose *Segmentation* or *Funnel* to visualize the user's event stream data.
 
-![event_stream_to_chart.png](/docs/output/img/analytics/event_stream_to_chart.png)
-
 {{partial:admonition type="note" heading=""}}
 Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
