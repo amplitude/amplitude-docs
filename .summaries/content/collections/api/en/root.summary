@@ -1,99 +1,41 @@
 ## Amplitude Analytics API Suite
 
-Amplitude provides a comprehensive suite of REST APIs for analytics data ingestion, user management, data export, and privacy compliance. The platform serves as a product analytics solution with robust server-side integration capabilities, supporting both real-time event tracking and batch data operations.
+Amplitude provides a comprehensive suite of REST APIs for analytics data ingestion, user management, data export, and platform configuration. The API ecosystem supports both real-time event streaming and batch processing workflows, with enterprise-grade features for data governance, privacy compliance, and cross-project analytics.
 
-## Product Architecture and Feature Relationships
+## Core Data Ingestion APIs
 
-The API ecosystem is organized around several core functional areas:
+The **HTTP V2 API** (`/2/httpapi`) serves as the primary server-side event ingestion endpoint, supporting real-time event streaming with comprehensive field specifications including event_type, user_properties, group_properties, and revenue tracking. The **Batch Event Upload API** (`/batch`) handles large-scale data ingestion with JSON payloads up to 20MB and rate limiting of 1000 events per second per device/user ID.
 
-**Data Ingestion Layer:**
-- **HTTP V2 API** (`/2/httpapi`) serves as the primary event ingestion endpoint, supporting real-time server-side event tracking with comprehensive field specifications
-- **Batch Event Upload API** (`/batch`) handles large-scale data uploads up to 20MB with rate limiting of 1000 events per second per device/user ID
-- **Identify API** (`/identify`) manages user property updates and Device ID to User ID mappings without generating events
-- **Group Identify API** (`/groupidentify`) handles group-level property management for account-based analytics
-- **Attribution API** (`/attribution`) processes attribution campaign events using advertising identifiers (idfa, idfv, adid, android_app_set_id)
+The **Identify API** (`/identify`) manages User ID to Device ID mappings and user property updates without triggering events, supporting operations like $set, $setOnce, $add, $append, $prepend, $unset, $preInsert, $postInsert, and $remove. The **Group Identify API** (`/groupidentify`) extends this functionality to group-level properties with support for up to 5 unique group types and 10 total groups per event.
 
-**Data Access and Export Layer:**
-- **Export API** (`/api/2/export`) provides bulk event data export in zipped JSON format with 4GB size limits
-- **Dashboard REST API** offers structured access to analytics data including user metrics, funnels, retention, and revenue analytics
-- **User Profile API** (`profile-api.amplitude.com/v1/userprofile`) retrieves comprehensive user profiles including computed properties and predictions
+## Data Export and Analytics APIs
 
-**User and Privacy Management:**
-- **User Privacy API** (`/api/2/deletions/users`) handles GDPR/CCPA compliance through programmatic user data deletion
-- **CCPA DSAR API** provides Data Subject Access Request functionality with asynchronous processing
-- **User Mapping API** (`/usermap`) enables cross-project user identity resolution through the Portfolio add-on
-- **SCIM 2.0 API** supports enterprise user provisioning and group management
+The **Export API** (`/api/2/export`) enables bulk event data extraction in zipped JSON format with 4GB size limits and 365-day maximum query periods. The **Dashboard REST API** provides programmatic access to Amplitude's analytics capabilities including event segmentation, funnel analysis, retention analysis, user activity metrics, and revenue analytics through JSON-formatted endpoints.
 
-**Configuration and Metadata Management:**
-- **Taxonomy API** (Enterprise) provides programmatic event schema management including categories, event types, and properties
-- **Behavioral Cohorts API** (v3/v5) manages user cohort operations with asynchronous download capabilities
-- **Lookup Table API** (v1/v2) enables CSV-based property augmentation through static data mappings
-- **Chart Annotations API** (`/api/2/annotations`) supports programmatic chart annotation management
-- **Releases API** (`/api/2/release`) integrates deployment workflows with product release tracking
+The **User Profile API** (`profile-api.amplitude.com/v1/userprofile`) retrieves comprehensive user profiles including computed properties, cohort memberships, recommendations, and prediction propensities, requiring an Activation plan and secret key authentication.
 
-## Key Nomenclature and Definitions
+## User Management and Privacy APIs
 
-**Core Identifiers:**
-- `amplitude_id`: Internal Amplitude user identifier
-- `user_id`: Customer-defined user identifier
-- `device_id`: Device-specific identifier
-- `session_id`: Session tracking identifier
-- `insert_id`: Event deduplication identifier
+The **User Privacy API** (`/api/2/deletions/users`) handles GDPR/CCPA compliance through programmatic user data deletion with 30-day processing timelines and organization-wide deletion capabilities. The **CCPA DSAR API** provides Data Subject Access Request functionality through an asynchronous three-step process (request → poll → download) with 14.4K cost/hour rate limits and 3-day SLA completion.
 
-**Event Structure:**
-- `event_type`: Classification of user action
-- `event_properties`: Event-specific metadata
-- `user_properties`: User-level attributes
-- `group_properties`: Account/organization-level attributes (Accounts add-on)
+The **User Mapping API** (`/usermap`) supports cross-project user identity resolution through the Portfolio add-on, enabling global_user_id mapping across multiple Amplitude projects.
 
-**Property Operations:**
-- `$set`, `$setOnce`, `$add`, `$append`, `$prepend`, `$unset`, `$preInsert`, `$postInsert`, `$remove`: User property manipulation operations
+## Enterprise Configuration APIs
 
-**API Infrastructure:**
-- Primary endpoint: `api2.amplitude.com`
-- EU residency endpoint: `api.eu.amplitude.com`
-- Profile API: `profile-api.amplitude.com`
-- Data API: `data-api.amplitude.com`
+The **SCIM 2.0 API** enables automated user provisioning and group management with Identity Provider integrations (Okta, JumpCloud), supporting standard SCIM operations with 100 requests/minute rate limiting.
 
-**Rate Limiting and Throttling:**
-- Standard rate limits with 429 response codes
-- Cost-per-query model for certain endpoints
-- Concurrent request limits (typically 5 requests)
-- Device/user-specific throttling mechanisms
+The **Taxonomy API** provides Enterprise users with programmatic event schema management, supporting CRUD operations for categories, event types, properties, and classifications (PII, SENSITIVE, REVENUE) with Data Access Controls integration.
 
-## Product Ecosystem Integration
+## Specialized Feature APIs
 
-The API suite integrates with Amplitude's broader analytics platform through several key mechanisms:
+The **Behavioral Cohorts API** (v3/v5) manages user cohort operations through asynchronous workflows, supporting cohort downloads, uploads, and incremental updates with 2 million user limits and Amazon S3 pre-signed URL delivery.
 
-**Plan-Based Feature Access:**
-- Growth and Enterprise plans unlock advanced features like Behavioral Cohorts API
-- Portfolio add-on enables cross-project user mapping
-- Accounts add-on provides group-level analytics capabilities
-- Activation plan required for User Profile API access
+The **Lookup Table API** (v3) enables CSV-based property augmentation with 100MB file limits and 1,000,000 row capacity, supporting both incremental updates and full overrides through multipart/form-data uploads.
 
-**Authentication Patterns:**
-- HTTP Basic Authentication using API keys for most endpoints
-- Secret key authentication for sensitive operations like User Profile API
-- SCIM-specific authentication using `scim_key`
-- Organization-level API keys for admin operations
+The **Attribution API** processes advertising attribution events using platform-specific identifiers (idfa, idfv, adid, android_app_set_id) with 72-hour matching windows. The **Releases API** (`/api/2/release`) integrates deployment workflows with chart annotations for release tracking.
 
-**Data Flow Architecture:**
-The platform follows a hub-and-spoke model where:
-- Ingestion APIs feed the central event store
-- Export APIs provide data egress capabilities
-- Management APIs control metadata and configuration
-- Privacy APIs ensure compliance across all data stores
+## Authentication and Rate Limiting
 
-**Integration Points:**
-- Identity Provider integration through SCIM 2.0
-- Amazon S3 integration for large file operations
-- Webhook and streaming integrations for real-time data delivery
-- Cross-project data sharing through Portfolio features
+All APIs use HTTP Basic authentication with API keys or secret keys, depending on the endpoint. Rate limiting varies by API, with common patterns including cost-per-query models, concurrent request limits (typically 5), and per-second throttling. EU data residency is supported through dedicated endpoints (api.eu.amplitude.com) for applicable services.
 
-**Operational Considerations:**
-- Asynchronous processing patterns for large operations (cohort downloads, DSAR requests)
-- Polling mechanisms for long-running operations using `request_id`
-- Comprehensive error handling with specific HTTP status codes
-- Data retention policies (90-day limits for streaming metrics, 365-day limits for exports)
-
-The API ecosystem supports both real-time analytics use cases and batch processing workflows, with robust enterprise features for compliance, user management, and cross-project analytics coordination.
+The **Event Streaming Metrics API** provides delivery monitoring for streaming destinations with sync_id-based tracking and 90-day retention for delivery metrics including latency, success rates, and failure categorization.

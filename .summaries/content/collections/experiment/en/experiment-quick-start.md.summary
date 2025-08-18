@@ -1,20 +1,20 @@
 ## Summary
-This documentation covers the complete workflow for setting up Amplitude Experiment, including SDK installation, deployment configuration, feature flag creation with variants and payloads, user targeting through rule-based segments, and experiment design with goal metrics and minimum detectable effects.
+This documentation covers the complete setup process for Amplitude Experiment, including SDK installation, deployment configuration, feature flag creation with variants and payloads, targeting rules, and experiment design with goals and metrics.
 
 ## Keywords
 - Amplitude Experiment SDK
-- deployment configuration
 - feature flags
-- variants and payloads
+- deployments
+- variants
+- payloads
 - bucketing unit
-- bucketing salt
-- rule-based user segments
+- evaluation mode (Remote/Local)
+- targeting rules
+- user segments
 - experiment goals
 - minimum detectable effect
 - client-side vs server-side deployments
-- evaluation mode (Remote/Local)
+- bucketing salt
 - JSON payloads
 - experiment activation
-- goal metrics (Success/Guardrail)
-- progressive feature delivery
-- behavioral experimentation platform
+- A/B testing workflow
