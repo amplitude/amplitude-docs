@@ -516,9 +516,9 @@ A `null` variant `value` means that the user hasn't been bucketed into a variant
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>', { value: 'control' });
-if (variant === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
@@ -563,9 +563,9 @@ const variant = experiment.variant('<FLAG_KEY>');
 // Do other things...
 
 experiment.exposure('<FLAG_KEY>');
-if (variant === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
