@@ -278,7 +278,6 @@ val amplitude = Amplitude(
         +appLifecycles		  // or `+AutocaptureOption.APP_LIFECYCLES`
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
-        +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
     }
   )
 )
