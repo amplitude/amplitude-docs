@@ -1,23 +1,21 @@
-**Summary:** This documentation covers implementing Amplitude's Web Experimentation standalone script, including synchronous/asynchronous script installation with anti-flicker snippets, multi-page application support with session storage persistence for visual editor and preview modes, third-party CDP integrations (Segment, Tealium, custom IntegrationPlugin), and CMS/tag manager implementations.
+**Summary:** This documentation covers implementing Amplitude's Web Experimentation standalone script, including synchronous/asynchronous script installation with anti-flicker snippets, CDN endpoints for US/EU data centers, third-party CDP integrations (Segment, Tealium, custom IntegrationPlugin), and CMS/tag manager implementations with flickering considerations.
 
 **Keywords:**
 - Web Experimentation script
 - anti-flicker snippet
-- visual editor mode
-- preview mode session storage
-- multi-page application support
-- IntegrationPlugin interface
-- Segment integration
-- Tealium integration
-- Content Security Policy script-src
-- Cross-Origin-Opener-Policy
 - impression events tracking
 - Browser SDK integration
-- synchronous vs asynchronous loading
-- Wordpress plugin
-- Shopify App
-- Google Tag Manager GTM
-- custom HTML tag
-- session storage persistence
-- URL parameter extraction
-- cdn.amplitude.com script loading
+- cdn.amplitude.com/cdn.eu.amplitude.com
+- Content Security Policy script-src
+- Cross-Origin-Opener-Policy
+- IntegrationPlugin interface
+- Segment integration query parameter
+- Tealium iQ/AudienceStream
+- experimentIntegration window variable
+- WordPress/Shopify plugins
+- Google Tag Manager custom HTML tag
+- visual editor flickering
+- synchronous/asynchronous script loading
+- experiment user object
+- third-party CDP integration
+- theme.liquid file
