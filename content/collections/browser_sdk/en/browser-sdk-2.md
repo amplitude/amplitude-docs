@@ -684,10 +684,36 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 | `[Amplitude] Duration` | The duration of the request in milliseconds. |
 | `[Amplitude] Request Body Size` | The size of the request body in bytes. |
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| `[Amplitude] Request Body` | The captured JSON request body (when you configure a `requestBody` capture rule). |
+| `[Amplitude] Response Body` | The captured JSON response body (when you configure a `responseBody` capture rule). |
+| `[Amplitude] Request Headers` | The captured request headers (when you configure a `requestHeaders` capture rule). |
+| `[Amplitude] Response Headers` | The captured response headers (when you configure a `responseHeaders` capture rule). |
 
 {{/partial:collapse}}
 
+#### JSON body capturing
 
+When you enable network tracking, you can capture and filter JSON request and response bodies using the `.json()` method on Request and Response wrappers. This method allows you to selectively include or exclude specific JSON properties for privacy and security.
+
+The `.json()` method accepts two parameters:
+- `allow: string[]`: Array of property names to include in the captured JSON
+- `exclude: string[]`: Array of property names to exclude from the captured JSON
+
+```ts
+// Example: Capture only specific properties from request/response bodies
+const requestJson = await request.json(['userId', 'action'], ['password', 'token']);
+const responseJson = await response.json(['status', 'data'], ['sensitive_info']);
+```
+
+{{partial:admonition type="note" heading="JSON parsing behavior"}}
+The `.json()` method attempts to parse the body text as JSON. If the body isn't valid JSON, is empty, or you don't provide an `allow` parameter, the method returns `null` without throwing an error.
+{{/partial:admonition}}
+
+#### Header filtering and privacy
+
+When you enable header capture, Amplitude automatically filters sensitive headers for privacy and security. Headers that are considered forbidden such as  `authorization`, `cookie`, and other sensitive headers are automatically excluded from capture, even if specified in the allowlist.
+
+If you configure header capture with `captureSafeHeaders: true`, Amplitude captures common, non-sensitive headers like `Content-Type`, `Content-Length`, `Accept`, and others that don't contain sensitive information.
 
 #### Advanced configuration for network tracking
 
@@ -709,8 +735,90 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
+| `requestHeaders` | **Experimental.** Configuration for capturing request headers. Review [HeaderCaptureRule](#headercapturerule) for details. | `undefined` |
+| `responseHeaders` | **Experimental.** Configuration for capturing response headers. Review [HeaderCaptureRule](#headercapturerule) for details. | `undefined` |
+| `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
+| `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
 
 {{/partial:collapse}}
+
+{{partial:collapse name="BodyCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: <br>- `*` matches any key <br>- `**` matches any number of keys. <br> Maintains the structure of the original JSON. | `[]` |
+| `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="HeaderCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | Array of header names to capture from request/response headers. Exact match only. | `[]` |
+| `captureSafeHeaders` | Captures all safe headers automatically. If `true`, Amplitude captures safe headers also with any headers specified in the allowlist. Safe headers include common, non-sensitive headers like `Content-Type` and `Content-Length`. | `false` |
+
+{{/partial:collapse}}
+
+#### Example: Capture request and response bodies
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    networkTracking: {
+      captureRules: [
+        {
+          hosts: ['api.example.com'],
+          statusCodeRange: '400-599',
+          requestBody: {
+            allowlist: ['userId', 'action', 'metadata'],
+            blocklist: ['password', 'token']
+          },
+          responseBody: {
+            allowlist: ['status', 'data', 'message'],
+            blocklist: ['internalId', 'debug']
+          }
+        }
+      ]
+    }
+  }
+});
+```
+
+This configuration captures network requests to `api.example.com` with status codes 400-599 and includes specific JSON properties from request and response bodies while excluding sensitive information.
+
+#### Example: Capture request and response headers
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    networkTracking: {
+      captureRules: [
+        {
+          hosts: ['api.example.com'],
+          statusCodeRange: '400-599',
+          requestHeaders: {
+            allowlist: ['Content-Type', 'User-Agent'],
+            captureSafeHeaders: true
+          },
+          responseHeaders: {
+            allowlist: ['X-Rate-Limit-Remaining'],
+            captureSafeHeaders: false
+          }
+        }
+      ]
+    }
+  }
+});
+```
+
+This configuration captures network requests to `api.example.com` with status codes 400-599 and includes:
+- Request headers: `Content-Type`, `User-Agent`, plus all safe headers
+- Response headers: Only `X-Rate-Limit-Remaining` (safe headers excluded)
+
+{{partial:admonition type="warning" heading="Experimental feature"}}
+Header capture functionality is experimental and may change in future versions. Use with caution in production environments.
+{{/partial:admonition}}
 
 ## Track an event
 

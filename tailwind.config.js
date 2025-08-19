@@ -211,6 +211,7 @@ module.exports ={
                         h4: {
                             'font-weight': '400',
                             'cursor': 'pointer',
+                            'font-size': '18px',
                         },
                         h5: {
                             'font-weight': '400',

@@ -20,6 +20,7 @@ return [
     'analytics-key' => env('AMPLITUDE_API_KEY'),
     'algolia-key' => env('ALGOLIA_API_KEY'),
     'algolia-app' => env('ALGOLIA_APP'),
+    'static-build' => env('STATAMIC_SSG_BUILD', false),
 
     /*
     |--------------------------------------------------------------------------

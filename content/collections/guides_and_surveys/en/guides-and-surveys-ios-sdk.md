@@ -87,16 +87,18 @@ amplitudeEngagement.screen("HomeScreen")
 
 ### Enable element targeting
 
-Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
+Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app, give the element a unique identifier.
 
 ```swift
 // Swift UI
-
 MySwiftView {
-
+    // Content
 }
-.amplitudeView("MySwiftView")
+.amplitudeView("MySwiftView", onTrigger: {
+    // Optional code to run with click element action
+}
 
+// UIKit
 let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
