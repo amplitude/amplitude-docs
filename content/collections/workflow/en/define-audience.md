@@ -10,21 +10,21 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726005676
 landing: false
 ---
-Now that you’ve defined the events that make up your experiment, you’ll need to define who's eligible for bucketing into the experiment. In the Audience section of the experiment design panel, you can choose to open eligibility up to all users, or you can target specific groups of users.
+Now that you’ve defined the events that make up your experiment, define who's eligible for bucketing into the experiment. In the Audience section of the experiment design panel, you can choose to open eligibility up to all users, or you can target specific groups of users.
 
 {{partial:admonition type='note'}}
 Users still must trigger the exposure event before entering the experiment, no matter what choice you make here.
 {{/partial:admonition}}
 
-Targeting groups of users is useful if you’d like to limit experiment exposure to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (like power users). To do so, you’ll define a user segment to target, by selecting *Targeted Users* and clicking into Segment 1. Then follow the same steps you’d use to [build a user segment](/docs/analytics/charts/build-charts-add-events) in Amplitude Analytics:
+Targeting groups of users to limit experiment exposure to users in geographical locations, specific demographic groups, or who meet certain usage thresholds in your product (like power users). To do so, define a user segment to target, by selecting *Targeted Users* and clicking into Segment 1. Then follow the same steps you’d use to [build a user segment](/docs/analytics/charts/build-charts-add-events) in Amplitude Analytics:
 
-* To target your experiment based on **cohorts,** select *Cohort* and choose a cohort you already created in Amplitude Analytics. Amplitude evaluates and updates cohort once an hour.
-* To target based on **user properties** from Amplitude Analytics, select the user property you're interested in and enter the appropriate values. User properties come from the end user profile maintained by Amplitude Analytics, and update based on your analytics instrumentation. (If you need to evaluate user properties in real-time, add the value of the user property to the context you pass to the SDK or REST API.)
-* To target based on **custom user properties** (like properties that don't exist in Amplitude), type the user property name into the dropdown and enter values to match on for the property. (Rules containing custom user properties can only evaluate against values explicitly defined in the context passed to the SDK or REST API, since Amplitude doesn't know about these properties otherwise.)
+* To target your experiment based on cohorts select **Cohort** and choose a cohort you already created in Amplitude Analytics. Amplitude evaluates and updates cohort once an hour.
+* To target based on user properties from Amplitude Analytics, select the user property you're interested in and enter the appropriate values. User properties come from the end user profile maintained by Amplitude Analytics, and update based on your analytics instrumentation. (If you need to evaluate user properties in real-time, add the value of the user property to the context you pass to the SDK or REST API.)
+* To target based on custom user properties (like properties that don't exist in Amplitude), type the user property name into the dropdown and enter values to match on for the property. (Rules containing custom user properties can only evaluate against values explicitly defined in the context passed to the SDK or REST API, since Amplitude doesn't know about these properties otherwise.)
 
-Add more segments by clicking *+ Add Segment*.
+Add more segments by clicking **Add Segment**.
 
-All Amplitude user properties and cohorts are available to use in defining user segments. Note that the value for any user property included in a rule-based user segment is always the **most recent value** received by Amplitude. 
+All Amplitude user properties and cohorts are available to use in defining user segments. Note that the value for any user property included in a rule-based user segment is always the most recent value received by Amplitude. 
 
 {{partial:admonition type='note'}}
 Amplitude Experiment doesn't support the use of transformed properties in targeting.
@@ -35,5 +35,15 @@ There is no limit on the number of user segments you can include here. Any user 
 {{partial:admonition type='note'}}
 Caching expiration differs with the properties you use to define user segments. All user properties always include the latest values your product has sent, defaulting to the most recent value if Amplitude hasn't received your product’s data. Cohorts sync every hour.
 {{/partial:admonition}}
+
+### Boolean logic in segments
+Amplitude applies Boolean `AND` logic to conditions within the same segment. These conditions are evaluated as `if, else if`. For example, you have two Segments:
+
+Segment 1: Users in India and who access your site through the Web.
+Segment 2: Users who use Android devices and access your website through the mobile browser.
+
+Using Boolean logic, both conditions for a segment must be met to include users in the experiment. If users access your website but aren't located in India, they're not included in Segment 1. Likewise, if users access your site through an iOS device, they aren't included in Segment 2. 
+
+The `if, else if` evaluation means that a user is evaluated if they meet the conditions for Segment 1. If not, they're evaluated if they meet the conditions for Segment 2. 
 
 The next step is [setting up your experiment’s variants](/docs/feature-experiment/workflow/add-variants).

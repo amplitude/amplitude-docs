@@ -92,7 +92,7 @@ GET /v1/flags
 
 The Flags API allows you to download flag configurations for local evaluations. This is useful for bootstrapping client-side local evaluation SDKs with `initialFlags` or running evaluation using external flag configuration storage like edge environments.
 
-The data model returned by this API is different from what you may see in the [management API](/docs/apis/experiment/experiment-management-api) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
+The data model returned by this API is different from what you may experience in the [management API](/docs/apis/experiment/experiment-management-api) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
 
 ### Flags query parameters
 
@@ -108,7 +108,7 @@ The data model returned by this API is different from what you may see in the [m
 
 ### Flags response
 
-The evaluation API returns a JSON array of objects where each object represents a flag or experiment. For example, here is a very basic response with a single flag.
+The evaluation API returns a JSON array of objects where each object represents a flag or experiment. For example, here is a basic response with a single flag.
 
 ```json
 [
@@ -148,5 +148,5 @@ The evaluation API returns a JSON array of objects where each object represents 
 
 | Status Code | Description |
 | ----------- | ----------- |
-| 200  | A successful request returns a `200` response with an array of flag configurations. Use the [example](#flags-example) below to try the API from your browser or copy a curl. |
+| 200  | A successful request returns a `200` response with an array of flag configurations. |
 | 401 | If the request doesn't include a valid API key, it returns a `401` response. |
