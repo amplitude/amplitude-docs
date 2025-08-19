@@ -100,8 +100,16 @@ fun MyView() {
     // Use your instance of Amplitude Engagement by creating a Composition context or passing as a param
     val engagement = LocalEngagement.current
 
-    Box() {
-        Button(modifier = Modifier.amplitudeView(engagement, "my-button"))
+    Box {
+        Button(
+            modifier = Modifier.amplitudeView(
+                engagement, 
+                tag = "my-button",
+                onTrigger = {
+                    // Optional code to run with click element action
+                }
+            )
+        )
     }
 }
 ```
