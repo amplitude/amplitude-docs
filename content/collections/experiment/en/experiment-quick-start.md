@@ -12,7 +12,7 @@ updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753137993
 ---
 
-Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation. 
+Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation.
 
 With Experiment, you can modify and configure product experiences for unique audiences through:
 
@@ -67,7 +67,7 @@ In Amplitude Experiment, a deployment serves a group of flags or experiments for
 Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
 {{/partial:admonition}}
 
-Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started. You may find it useful to use explicit deployments for each platform or service for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application. Each deployment receives a unique key for use in your application.
+Deployments belong to Amplitude Analytics projects, and a project can have multiple deployments. Amplitude recommends that you name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started. Try to use explicit deployments for each platform or service for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application. Each deployment receives a unique key for use in your application.
 
 ##### To create a deployment
 
@@ -87,7 +87,7 @@ A flag is a way for you to enable or disable a function or feature in your produ
 
 1. Go to *Experiment > Feature Flags*. 
 2. Click **Create Feature Flag**.
-3. In the Create Flag section, select the project yoou want from the dropdown list and then give your flag a name. 
+3. In the Create Flag section, select the project you want from the dropdown list and then give your flag a name. 
 Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 4. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment. Select either **Remote** or **Local**. 
 5. Specify the **bucketing unit** you want to use for this experiment.  
@@ -101,7 +101,7 @@ Experiment opens a blank template for your flag.
 7. Choose the deployment you want from the Deployment dropdown menu. 
 8. (*Optional*) Click **Advanced Settings** to modify the [bucketing salt](/docs/feature-experiment/implementation#consistent-bucketing) options. 
 {{partial:admonition type="note" heading=""}}
-If you change the bucketing salt, users will switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing salt unless you know what you're doing. For more information, go to [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
+If you change the bucketing salt, users can switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing salt unless you know what you're doing. For more information, go to [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
 {{/partial:admonition}} 
  
  ## Creating variations
@@ -113,11 +113,7 @@ If you change the bucketing salt, users will switch between variants in your ex
  1. Go to your *Experiment > Feature Flags* and select your flag.
  2. In the Variants section, click the **Plus** icon to create a variant.
  3. Enter the name, value, and description of your variant.
- 4. In the Assignment section, define the **user segments** you want to experience your new feature. For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience)
-    1. Specify the percentage of users receiving the variant.
-    Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
-    2. To define a user segment, go to the Rule Based User Segments section and click into **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
- 5. Click **Apply**.
+ 4. Click **Apply**.
  
  {{partial:admonition type='note'}}
 If you want, you can send a payload with your variant. A payload is a JSON-coded set of variables that can remotely change flags and experiments without requiring a manual code change. Because you can send a payload with your control, it's not necessary to create a variant for the control itself. 
@@ -134,6 +130,14 @@ Add JSON content to the Payload field when creating a variant. Payload content i
 ```
 {{/partial:admonition}}
 
+## Add Targeting to the flag
+
+In the Assignment section, define the user segments that you want to experience your new feature. Defining a user segment limits your rollout to users in specific geographical locations, certain demographic groups, or who meet certain usage thresholds in your product (for example power users). For more information on segmenting, go to [Define your Audience](/docs/feature-experiment/workflow/define-audience). 
+
+##### To add targeting
+1. Specify the percentage of users receiving the variant.
+2. To define a user segment, go to the Rule Based User Segments section and click **Segment 1**. Then follow the same steps you’d use to build a [user segment](/docs/analytics/charts/build-charts-modify-user-segment) in Amplitude Analytics.
+
 ##  Finalizing the flag
 
 After you set up the flag, associate it to a deployment, set up your variants or payloads, and target your users, finalize the feature flag. 
@@ -146,7 +150,9 @@ Finalizing the flag activates it and makes it available.
 
 ## Designing the experiment
 
-After you convert your flag to an experiment, finalize the experiment. To finalize an experiment:
+You can directly create an experiment or convert an existing flag to an experiment. 
+
+Remember when designing your experiment: 
 - Set a goal for the experiment
 - Set up any further variations and payloads
 
@@ -160,7 +166,7 @@ Adding goals (or metrics) lets you track the success rate of your experiment. Al
     - A Success metric states the goal changes by the goal amount and direction. 
     - A Guardrail metric states the goal won't change by the goal amount and direction.
 3. Specify whether you’re expecting the metric to increase or decrease.
-4. (_Optional_) Set the minimally acceptable goal for the experiment, otherwise known as the [minimum detectable effect](/docs/feature-experiment/experiment-theory/experiment-set-mde). This is the minimum amount of difference between the control and the variant there should be for the experiment to be considered a positive result.
+4. (_Optional_) Set the minimally acceptable goal for the experiment, otherwise known as the [minimum detectable effect](/docs/feature-experiment/experiment-theory/experiment-set-mde). This is the minimum amount of difference between the control and the variant for the experiment to be considered a positive result.
 5. To add secondary metrics, click **Add Metric** and repeat this process for each additional metric you want to include.
 
 ##### To add additional variations and payloads
