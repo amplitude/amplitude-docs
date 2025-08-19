@@ -12,22 +12,9 @@ landing_blurb: 'Learn the basics of creating a cohort syncing integration.'
 This guide assumes that you've completed the prerequisites for building partner integrations listed in [Amplitude Integration Portal](/docs/partners/integration-portal)
 {{/partial:admonition}}
 
-This guide walks through the basics of creating a cohort syncing integration with Amplitude. 
+This guide walks through the basics of creating a cohort sync integration with Amplitude. 
 
-This doc uses a list-based integration in its examples. If you create a property-based cohort integration, some steps may be slightly different than you see here. 
-
-## Connection information
-
-Add connection information before you configure the specifics of your integration.
-
-1. Navigate to **Settings > Developer Portal**.
-2. Click **Add Connection Info**.
-3. Enter the connection info: 
-      - **Display Name**: The display name of the integration. This is the name that appears in the Integration Catalog and on your integration tile.
-      - **Category**: Choose a category. The Integration Catalog  uses the category in filters.
-      - **Summary**: A brief overview of your product.
-      - **Full Description**: Detailed description of your integration. Include some common use cases so users understand why they should use the integration. 
-      - **Integration Logo**: Upload your integration logo in PNG format.
+This doc uses a list-based integration in its examples. If you create a property-based cohort syn integration, some steps may be slightly different than you see here. 
 
 ## Integration setup
 
@@ -40,12 +27,16 @@ The first step is to configure the integration tile that appears on the Amplitud
       - **Property-based cohort integration**: A property-based cohort integration works best with systems that represent cohort membership as a custom user property, such as a boolean flag or a tag. Amplitude invokes the update API when cohort membership changes to update the user property. Although you don't need to use the list creation API, some manual steps may be required to create the customer user property.
 4. Click **Next** to configure the destination.
 
+## Integration Name
+
+This determines what users will see in the catalog page. Note that the name must be globally unique to all other cohort sync integrations. 
+
 ## Configuration
 
 The configuration page has two sections.  
 
-- The **Configuration** section on the left is where you configure your payload and what you expect to receive from Amplitude.
-- The **Testing Integration** section summarizes your configurations, including your setup modal screen for your integrations, variables, and payload.
+- The **Configuration** tab is where you configure your payload and what you expect to receive from Amplitude.
+- The **Testing Integration** tab summarizes your configurations, including the **Destination Settings** form which is a preview for your integrations, variables, and payload. You can also test your integration functionality from this tab.
 
 The next several sections walk through configuration and testing options.
 
@@ -194,20 +185,29 @@ Instead of creating every single status code, failure reasons, error message, an
 
 ### Preview & test endpoint
 
-Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. On the right side of the configuration page, follow these steps to preview and test your configuration.
+Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. In Testing Tab, follow these steps to preview and test your configuration.
 
-Configure the test integration instance: 
+In the Testing tab, the Destination Settings is identical to what users of your integration will see. This form is used to control the parameters you have defined in the headers of the payload. 
 
-1. **Provide a valid Project ID in your organization for testing**: Select your project.
-2. **Name**: Enter a name for the integration. This is just for testing this instance of the integration and doesn't change your integration's public name. 
-3. **API Key**: Enter the API key from the Amplitude project.
-4. **Key**: Choose which Amplitude User Properties to map to your target ID.
+To generate users, you can upload a CSV or click regenerate which will generate users based on your configurations. The CSV must have an Operation column which must be either add or remove. Any parameters used in the List Creation payload must also be the same across all rows in the CSV. The CSV must also have columns for each of the parameters used. 
 
-Check the variables table to make sure all variables are accounted for and resolve any errors.
+Here is a sample CSV that can be used for the default configurations: 
+
+```
+operation,user_id_field_amplitude,amp_cohort_name,amp_cohort_id
+add,user123,Unified Cohort,unified_cohort_001
+add,user456,Unified Cohort,unified_cohort_001
+remove,user789,Unified Cohort,unified_cohort_001
+add,john.doe@example.com,Unified Cohort,unified_cohort_001
+```
+
+Check the parameters table to make sure all variables are accounted for and resolve any errors. Ensure that all declared fields are non empty. 
 
 - **DECLARED**: All declared variables in the "Authentication calls, Custom Fields and Mapping Fields section"
 - **USED**:  All variables that are used either in the list users endpoint, add users endpoint, and remove users endpoint.
 - **PRE-DEFINED**: There are some pre-defined variables that Amplitude replaces values for.
+
+To modify the headers use the **Destination Settings** form which can be seen on both the **Configuration** and **Testing** tab. 
 
 Check your headers and payloads and when ready, click **Test Endpoint** to send a test API call to the predefined endpoint. You can also see the response/error for easy debugging.
 
@@ -216,6 +216,12 @@ After you click **Test Endpoint**, you should get a success response. Retrieve t
 The `{listId: $list_id}` is the expected response for list creation API call. To change the structure, change the *Path to List ID in the response* value in the list creation configuration.
 
 Use the `$list_id` you retrieved to test the add to add users and remove users endpoints.
+
+You can also test end to end with the **Test Endpoint** button in the Test Integration section, which will automatically run all necessary tests. 
+
+## Release Internally
+
+To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. The integration should be instantly available once you do this. 
 
 ### Submit your integration
 

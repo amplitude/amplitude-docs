@@ -81,7 +81,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
 
     - `external_id` : unique identifiers used when Amplitude assumes the role. You can generate it with help from [third party tools](https://www.uuidgenerator.net/). Example external id can be `vzup2dfp-5gj9-8gxh-5294-sd9wsncks7dc`.
 
-    - Trust policy for Amplitude US region
+    - Trust policy for Amplitude US and EU regions:
 
     ``` json hl_lines="7 12"
     {
@@ -90,9 +90,9 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::358203115967:role/k8s_prod_cargo",
-            "AWS": "arn:aws:iam::358203115967:role/k8s_prod_falcon",
-            "AWS": "arn:aws:iam::358203115967:role/vacuum_iam_role" 
+        "AWS": ["arn:aws:iam::358203115967:role/k8s_prod_cargo",
+        "arn:aws:iam::358203115967:role/k8s_prod_falcon",
+        "arn:aws:iam::358203115967:role/vacuum_iam_role" ]
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -104,30 +104,6 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
       ]
     }
     ```
-
-   - Trust policy for Amplitude EU region
-
-   ``` json hl_lines="7 12"
-   {
-     "Version": "2012-10-17",
-     "Statement": [
-       {
-         "Effect": "Allow",
-         "Principal": {
-            "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_cargo",
-            "AWS": "arn:aws:iam::202493300829:role/k8s_prod-eu_falcon",
-            "AWS": "arn:aws:iam::202493300829:role/vacuum_iam_role" 
-         },
-         "Action": "sts:AssumeRole",
-         "Condition": {
-           "StringEquals": {
-             "sts:ExternalId": "<external_id>" 
-           }
-         }
-       }
-     ]
-   }
-   ```
 
 3. Create a new IAM policy, for example, `AmplitudeS3ReadOnlyAccess`. Use the entire example code that follows, but be sure to update **<>** in highlighted text.
 
