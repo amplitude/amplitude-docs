@@ -79,6 +79,19 @@ Test each variant at least once, and testing on more than one page if your exper
 
 If you don't see your changes, **you may need to wait up to 60 seconds** for caches to refresh. If the changes don't appear correctly after that time, there might be something wrong with the configuration.
 
+### Preview mode for multi-page applications
+
+When you open a preview link, the experiment preview state persists as you navigate between pages, allowing you to test experiments that span multiple pages without losing the preview context.
+
+Key features of multi-page preview mode:
+
+- **Persistent preview state**: Preview mode automatically persists across page navigation using session storage.
+- **Preview indicator**: A dismissible modal appears in the top-right corner showing which experiment flags are active in preview mode.
+- **Clean URLs**: Preview parameters are automatically removed from the URL while maintaining the preview state in the background.
+- **Cross-page testing**: Navigate between pages while maintaining the same experiment variant.
+
+The preview mode remains active until you close the browser tab or the session expires. This makes it easier to test comprehensive experiments that involve user flows across multiple pages, such as checkout processes, onboarding sequences, or multi-step forms.
+
 {{partial:admonition type="warning" heading="Ad blockers"}}
 Ad blocking plugins or extensions may prevent you from testing and previewing your experiment.
 {{/partial:admonition}}
@@ -90,6 +103,16 @@ The Visual Editor loads the site located at the URL specified on experiment crea
 {{partial:admonition type='note'}}
 When you’re making modifications to your site in the Visual Editor, your actual site remains as-is until you launch the experiment. Nothing you do here appears on your site in real time.
 {{/partial:admonition}}
+
+### Multi-page application support
+
+When you navigate between pages during a visual editing session, the editor automatically maintains your editing context using session storage. This means you can:
+
+- Navigate between different pages of your site while staying in visual editor mode.
+- Make changes across multiple pages in a single editing session.
+- Continue editing after page refreshes or navigation events.
+
+The session persists until you close the browser tab or explicitly exit the visual editor. This makes it easier to create comprehensive experiments that span multiple pages of your application.
 
 When you click on an element, the editing toolbar opens beside the selected element with quick actions such as editing the element’s content, or [move element](/docs/web-experiment/set-up-a-web-experiment#move). On apply, these changes are then added to the current variant.
 

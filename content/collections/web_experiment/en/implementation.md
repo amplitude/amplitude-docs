@@ -53,6 +53,32 @@ Cross-Origin-Opener-Policy: unsafe-none
 {{/partial:tabs}}
 {{/partial:admonition}}
 
+## Multi-page application support
+
+The Web Experiment script provides enhanced support for multi-page applications through automatic state persistence using session storage.
+
+## Visual editor mode for multi-page applications
+
+The Web Experiment script automatically detects and maintains visual editor mode when users move between pages in multi-page applications. The script uses session storage to persist the visual editor state, allowing seamless editing experiences when users navigate between pages.
+
+The visual editor mode activates when:
+- The URL contains the `VISUAL_EDITOR=true` parameter (traditional method)
+- Session storage contains valid visual editor session data (new multi-page support)
+
+This enhancement ensures that the visual editor remains active throughout your editing session, even when moving to different pages or refreshing the browser.
+
+### Preview mode for multi-page applications
+
+Preview mode also supports seamless operation across multi-page applications. When users access a preview link with experiment parameters, the script:
+
+1. **Extracts preview parameters**: Reads experiment flags and variants from URL parameters (for example, `?PREVIEW=true&flagKey=variant`).
+2. **Stores in session storage**: Persists the preview state in session storage for cross-page access.
+3. **Cleans the URL**: Removes preview parameters from the URL to maintain clean navigation.
+4. **Shows preview indicator**: Displays a dismissible modal indicating which experiments are active in preview mode.
+5. **Maintains state**: Preserves preview mode as users navigate between pages until the session ends.
+
+This allows users to test experiments that span multiple pages without losing the preview context, making it easier to validate complex user flows and multi-step processes.
+
 ### Async script with anti-flicker snippet
 
 The synchronous script above provides the best experience for your users. If you need to load the script asynchronously, include the following anti-flicker snippet which masks elements on the page until all changes are applied. Replace `API_KEY` with your project's API key and optionally set the timeout to remove the anti-flicker mask.
