@@ -1,14 +1,13 @@
-**Summary:** This documentation defines analytics event properties and event types for Amplitude's Guides and Surveys feature, including common properties like Lifecycle UUID and Step ID, plus specific events for guide completion, survey submission, and user interactions with tooltips and checklists.
+**Summary:** This documentation defines the analytics event schema and properties for Amplitude's Guides and Surveys feature, including common event properties (Key, Lifecycle UUID, Step ID, Variant ID) and specific events for guides (Guide Viewed, Guide Completed, Guide Dismissed) and surveys (Survey Submitted, Survey Abandoned, Survey Completed).
 
 **Keywords:**
 - Amplitude Guides and Surveys analytics
-- Lifecycle UUID event grouping
-- Step ID and Step Index properties
-- Variant ID for A/B testing
-- Survey Submitted and Survey Abandoned events
-- Guide completed and Guide dismissed events
-- Tooltip Marker Viewed tracking
-- Rage closed event detection
+- Guide events (Guide Viewed, Guide Completed, Guide Dismissed, Guide Engaged, Guide Rage closed)
+- Survey events (Survey Submitted, Survey Abandoned, Survey Completed, Survey Step Completed)
+- Event properties (Lifecycle UUID, Step ID, Step Index, Variant ID, Is From Debug Mode)
+- Tooltip Marker Viewed
+- Pin Target Not Found
 - Survey Response property
-- Debug Mode filtering
-- Event property data types (string, boolean, number, json)
+- Analytics event schema
+- Guide/survey lifecycle tracking
+- Step completion tracking
