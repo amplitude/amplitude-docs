@@ -174,9 +174,9 @@ glossary:
         id: m6zdxx5e
         event_name: Survey Completed
         event_description: |-
-          Indicates a survey is complete, through one of the following:
+          Indicates a survey is complete through one of the following:
 
-          1. The user clicks the _Done_ button in a checklist.
+          1. The user clicks the **Done** button in a checklist.
           2. The user clicks the button on the last step with a button.
           3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
           4. On a survey, the user clicks _Complete_ or finishes the last step.
