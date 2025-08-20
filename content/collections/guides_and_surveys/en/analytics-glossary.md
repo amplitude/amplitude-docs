@@ -12,15 +12,34 @@ glossary:
     glossary_section_description: 'All Guides and Surveys events include the following event properties.'
     glossary_row:
       -
-        id: m6zctcnn
-        event_name: Key
+        id: m6zdnd7g
+        event_name: App Type
         data_type: string
-        event_description: 'A unique identifier for the guide or survey.'
+        event_description: 'The app type for the guide or survey. Possible values: "ios", "android", "react native", "web".'
       -
         id: m6zd3t6w
         event_name: 'Is From Debug Mode'
         data_type: boolean
         event_description: 'True when the event was sent from preview mode. Use this property to filter administrative activity.'
+      -
+        id: m6zdl8nm
+        event_name: 'Is Last Step'
+        data_type: boolean
+        event_description: 'True when the event occured on the last step of a guide or survey. False otherwise.'
+      -
+        id: m6zctcnn
+        event_name: Key
+        data_type: string
+        event_description: 'A unique identifier for the guide or survey.'
+      -
+        id: m6zbea5t
+        event_name: Page
+        data_type: object
+        event_description: |-
+          Details about the page the user was on for the guide or survey event. Current object keys: 
+          - "domain" (string): Page domain, e.g. "example.com" 
+          - "path" (string): URL path, e.g. "/example-path/123"
+          - "title" (string): Page title, e.g. "Dashboard"
       -
         id: m6zkam1u
         event_name: 'Lifecycle UUID'
@@ -31,10 +50,10 @@ glossary:
 
           Lifecycle UUID is useful for analyzing events for a given guide/survey across multiple app sessions.
       -
-        id: m6zd4uip
-        event_name: Page
-        data_type: json
-        event_description: 'Details about the page of the guide or survey on which the event occured.'
+        id: m6zdhv36
+        event_name: 'Localization Language'
+        data_type: string
+        event_description: 'The language code for localization.'
       -
         id: m6zdjd6s
         event_name: 'Step ID'
@@ -51,15 +70,25 @@ glossary:
         data_type: string
         event_description: 'The title of the step.'
       -
-        id: m6zdl8nm
-        event_name: 'Is Last Step'
-        data_type: boolean
-        event_description: 'True when the event occured on the last step of a guide or survey. False otherwise.'
+        id: m6z0sdk1
+        event_name: Tags
+        data_type: array
+        event_description: 'The list of tags on the guide or survey.'
+      -
+        id: m6z37ck
+        event_name: Title
+        data_type: string
+        event_description: 'The title of the guide or survey.'
       -
         id: m6zdm2az
         event_name: Type
         data_type: string
         event_description: '`None` if guide, `Survey` if survey.'
+      -
+        id: m6zd4uip
+        event_name: Page
+        data_type: json
+        event_description: 'Details about the page of the guide or survey on which the event occured.'
       -
         id: m6zdmm45
         event_name: 'Variant ID'
@@ -69,14 +98,93 @@ glossary:
         id: m6zdndpe
         event_name: Version
         data_type: number
-        event_description: 'The version identifier for the guide or survey.'
+        event_description: 'The version identifier.'
+      
     type: glossary_set
     enabled: true
+  -
+    id: m6zcactu
+    glossary_section_title: 'Event-specific event properties'
+    glossary_section_description: 'Only certain Guides and Surveys events include the following event properties.'
+    glossary_row:
+      -
+        id: me3fr0ot
+        event_name: Engagement
+        data_type: object
+        event_description: |-
+          Relevant events: "Guide Engaged", "Survey Engaged"
+          
+          Object with details about the type of engagement. Current keys:
+          - "type" (string): The type of engagement. Possible values: "cta", "link", "survey_focused".
+          - "level" (string): For CTA engagement events, the type of CTA engaged. Possible values: "primary", "secondary", "tertiary".
+          - "url" (string): For link engagement events, the URL of the link that the user clicked.
+      -
+        id: me3giant
+        event_name: Was Completed Via CTA
+        data_type: boolean
+        event_description: |- 
+          Relevant events: "Guide Step Completed", "Survey Step Completed"
+
+          True if the step was completed via one of the step's CTA's.
+      -
+        id: me3gi415
+        event_name: Snooze Duration
+        data_type: number
+        event_description: |-
+          Relevant events: "Guide Snoozed", "Survey Snoozed"
+
+          Duration of the snooze in ms.
+      -
+        id: me3lh510
+        event_name: Survey Response
+        data_type: any
+        event_description: |-
+          Relevant events: "Survey Submitted", "Survey Abandoned"
+
+          The user's response. Can be a number, string, or array, depending on the question type.
+
+          For list surveys, this property indicates the survey indices as shown in the survey's Build tab. E.g., [0,3] corresponds to the user selecting the first and fourth options as shown in the survey's Build tab. These indices are particularly useful when randomizing the list order.
+      -
+        id: me3lh143
+        event_name: Survey Response Array
+        data_type: array
+        event_description: |-
+          Relevant events: "Survey Submitted", "Survey Abandoned"
+
+          The user's response. Useful if the question is a list with multi-select. Example: ["Option 1", "Option 3"]
+      -
+        id: me3lh999
+        event_name: Survey Response Other
+        data_type: string
+        event_description: |-
+          Relevant events: "Survey Submitted", "Survey Abandoned"
+
+          The user's input for the "other" field. Useful if the question is a list with the setting "Other option" enabled.
+      -
+        id: me3lh650
+        event_name: Survey Response Number
+        data_type: number
+        event_description: |-
+          Relevant events: "Survey Submitted", "Survey Abandoned"
+
+          The user's response. Useful if the question type is rating.
+      -
+        id: me3lh732
+        event_name: Survey Response String
+        data_type: string
+        event_description: |-
+          Relevant events: "Survey Submitted", "Survey Abandoned"
+
+          The user's response. Useful if the question type is: long text, short text, or list.
   -
     id: m6zem80w
     glossary_section_title: 'Guides events'
     glossary_section_description: 'Events for guides.'
     event_row:
+      -
+        id: maraocn2
+        event_name: 'Guide Tooltip Icon Viewed'
+        event_description: 'The tooltip icon was seen by a user.'
       -
         id: maraos0d
         event_name: 'Guide Viewed'
@@ -89,17 +197,9 @@ glossary:
           - from experience x, step y
           - share link
       -
-        id: maraocn2
-        event_name: 'Tooltip Marker Viewed'
-        event_description: 'The tooltip marker was seen by a user.'
-      -
         id: maraos11
         event_name: Guide Dismissed
         event_description: 'A user dismissed a guide.'
-      -
-        id: marao0ds
-        event_name: 'Guide Rage closed'
-        event_description: 'The guide was closed within two seconds of appearing.'
       -
         id: maraowcp
         event_name: Guide Completed
@@ -114,9 +214,9 @@ glossary:
 
           This event doesn't fire on Tooltips.
       -
-        id: maraomyn
-        event_name: 'Guide Engaged'
-        event_description: 'The user clicked or interacted with a guide.'
+        id: marao0ds
+        event_name: 'Guide Rage Closed'
+        event_description: 'The guide was dismissed within two seconds of appearing.'
       -
         id: maraq2mj
         event_name: 'Guide Step Completed'
@@ -126,8 +226,12 @@ glossary:
         event_name: 'Guide Snoozed'
         event_description: 'The user snoozed a step of the guide.'
       -
+        id: maraomyn
+        event_name: 'Guide Engaged'
+        event_description: 'The user clicked or interacted with a guide.'
+      -
         id: marawlk9
-        event_name: 'Pin Target Not Found'
+        event_name: 'Error: Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
 
     type: event_set
@@ -159,17 +263,9 @@ glossary:
           - from experience x, step y
           - share link
       -
-        id: m6zdwrsc
-        event_name: 'Tooltip Marker Viewed'
-        event_description: 'The tooltip marker was seen by a user.'
-      -
         id: m6zdx7xw
         event_name: Survey Dismissed
         event_description: 'A user dismissed a survey.'
-      -
-        id: m6zdxj4f
-        event_name: 'Survey Rage closed'
-        event_description: 'The survey was closed within two seconds of appearing.'
       -
         id: m6zdxx5e
         event_name: Survey Completed
@@ -184,20 +280,24 @@ glossary:
 
           This event doesn't fire on Tooltips.
       -
+        id: m6zdxj4f
+        event_name: 'Survey Rage Closed'
+        event_description: 'The survey was dismissed within two seconds of appearing.'
+      -
         id: 
         event_name: 'Survey Step Completed'
         event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
-      -
-        id: m6zdxl1d
-        event_name: 'Survey Engaged'
-        event_description: 'The user clicked or interacted with a survey.'
       -
         id: m6zdxs0d
         event_name: 'Survey Snoozed'
         event_description: 'The user snoozed a step of the survey.'
       -
+        id: m6zdxl1d
+        event_name: 'Survey Engaged'
+        event_description: 'The user clicked or interacted with a survey.'
+      -
         id: m6zdxcvn
-        event_name: 'Pin Target Not Found'
+        event_name: 'Error: Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
     type: event_set
     enabled: true
