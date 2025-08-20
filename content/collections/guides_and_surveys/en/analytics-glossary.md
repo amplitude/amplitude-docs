@@ -103,7 +103,7 @@ glossary:
     type: glossary_set
     enabled: true
   -
-    id: m6zcactu
+    id: m6zd0g31
     glossary_section_title: 'Event-specific event properties'
     glossary_section_description: 'Only certain Guides and Surveys events include the following event properties.'
     glossary_row:
