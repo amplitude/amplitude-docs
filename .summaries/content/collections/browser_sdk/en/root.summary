@@ -1,111 +1,81 @@
 ## Amplitude Browser SDK Product Ecosystem
 
-Amplitude's Browser SDK is a comprehensive analytics platform for web applications that has evolved through multiple generations, currently centered around Browser SDK 2.0 as the primary offering. The ecosystem provides strongly-typed event tracking, user analytics, marketing attribution, and advanced features like autocapture and session replay through a modular plugin architecture.
+The Amplitude Browser SDK is a comprehensive analytics tracking solution for web applications, offering multiple SDK versions and specialized tools for event tracking, user analytics, and marketing attribution. The ecosystem centers around strongly-typed JavaScript/TypeScript SDKs that integrate with Amplitude's HTTP V2 API for robust web analytics.
 
-## Product Relationships and Evolution
+## Product Architecture and Relationships
 
-The Browser SDK ecosystem consists of three main SDK generations with clear migration paths:
+### Core SDK Offerings
 
-**Legacy JavaScript SDK (amplitude-js)** - The original maintenance-mode SDK that uses the getInstance() pattern and older HTTP API endpoints. This SDK is being phased out in favor of newer versions.
+**Browser SDK 2.0** (`@amplitude/analytics-browser`) represents the current flagship offering, featuring built-in autocapture functionality for comprehensive user interaction tracking including page views, sessions, form interactions, file downloads, element interactions, and network requests. This SDK includes integrated marketing attribution tracking with automatic UTM parameter capture, referrer tracking, and click ID collection (gclid, fbclid, dclid).
 
-**Browser SDK 1.0** - An intermediate version that introduced the modern plugin architecture and HTTP V2 API while maintaining some legacy compatibility patterns.
+**Browser SDK 1.0** operates in maintenance mode, providing the foundational analytics capabilities without the advanced autocapture features of version 2.0. Both SDKs utilize the HTTP V2 API and support TypeScript/JavaScript implementations.
 
-**Browser SDK 2.0 (@amplitude/analytics-browser)** - The current flagship SDK featuring built-in autocapture, consolidated marketing attribution, simplified configuration, and server-side user agent parsing.
+**Legacy JavaScript SDK** (`amplitude-js`) remains available in maintenance mode for existing implementations, though migration to Browser SDK 2.0 is recommended for new projects.
 
-**Specialized Extensions:**
-- **Marketing Analytics Browser SDK** - A maintenance-mode extension focused on automatic UTM parameter tracking and campaign attribution
-- **Browser Unified SDK (@amplitude/unified)** - A beta integration layer that provides unified access to Analytics, Experiment, and Session Replay through a single initialization point
+### Specialized Extensions
+
+**Marketing Analytics Browser SDK** (`@amplitude/marketing-analytics-browser`) extends the core Browser SDK with enhanced marketing attribution capabilities, though it's now in maintenance mode with functionality consolidated into Browser SDK 2.0's default tracking features.
+
+**Unified SDK** (`@amplitude/unified`) provides a single initialization point for Analytics, Experiment, and Session Replay products through the `initAll()` method, optimizing bundle size and configuration management across the Amplitude product suite.
+
+### Code Generation and Type Safety
+
+**Ampli Wrappers** generate strongly-typed APIs from Amplitude Data tracking plans, available for Browser SDK 1.0, 2.0, and JavaScript SDK implementations. These wrappers use the Ampli CLI with `ampli pull` and `ampli status` commands to synchronize tracking schemas and provide compile-time type checking for event properties.
 
 ## Key Nomenclature and Definitions
 
-**Ampli Wrapper** - Code generation tool that creates strongly-typed JavaScript/TypeScript APIs from Amplitude Data tracking plans, available for all SDK versions with CLI commands (`ampli pull`, `ampli status`) and core methods (`load()`, `identify()`, `track()`, `flush()`)
+### Core Tracking Concepts
 
-**Autocapture** - Built-in functionality in Browser SDK 2.0+ that automatically tracks user interactions including:
-- Page views and navigation changes
-- Form submissions and interactions  
-- File downloads
-- Element interactions (clicks, changes)
-- Network requests
-- Marketing attribution (UTM parameters, click IDs)
+- **deviceId**: Persistent identifier stored in cookies with AMP_ prefix and API key suffix
+- **userId**: User-specific identifier for cross-session tracking
+- **sessionId**: Temporary identifier for user session management
+- **Autocapture**: Automatic tracking of user interactions without manual instrumentation
+- **Default Tracking**: Built-in event collection for attribution, page views, sessions, and interactions
 
-**Plugin Architecture** - Extensible system supporting two plugin types:
-- **Enrichment Plugins** - Modify events before sending (e.g., user agent parsing, URL enrichment)
-- **Destination Plugins** - Handle event delivery and storage
+### Cookie and Storage Management
 
-**Cookie Management** - Persistent storage system using `AMP_{api_key}` naming convention for:
-- `deviceId` - Unique device identifier
-- `sessionId` - Session tracking
-- `userId` - User identification (Base64 encoded)
-- Marketing cookies with `AMP_MKTG_` prefix for UTM parameters and click IDs
+The SDK implements a sophisticated cookie system using the `AMP_{api_key}` naming convention for first-party cookies. Marketing attribution data uses `AMP_MKTG_{api_key}` prefixes. The `identityStorage` configuration supports multiple storage backends including cookies, localStorage, sessionStorage, or none for cookieless implementations.
 
-**Identity Storage Options** - Configurable storage mechanisms:
-- `cookies` (default) - Browser cookies with configurable expiration
-- `localStorage` - Persistent browser storage
-- `sessionStorage` - Session-scoped storage  
-- `none` - Memory-only storage
+### Plugin Architecture
 
-## Core API Methods and Configuration
+The SDK employs a plugin system with two primary types:
+- **Enrichment Plugins**: Modify event data before transmission
+- **Destination Plugins**: Handle event delivery to endpoints
 
-**Initialization:**
-```javascript
-amplitude.init('API_KEY', 'user@example.com', options)
-```
+Notable plugins include the Page URL Enrichment plugin for automatic URL property addition and the deprecated Autocapture plugin (functionality now built into Browser SDK 2.0).
 
-**Event Tracking:**
-- `track(eventType, eventProperties)` - Log custom events
-- `identify(identifyObject)` - Set user properties
-- `revenue(revenueObject)` - Track revenue events
-- `flush()` - Force send queued events
+### Event Tracking Methods
 
-**User Management:**
-- `setUserId(userId)` - Set user identifier
-- `setDeviceId(deviceId)` - Set device identifier  
-- `setGroup(groupType, groupName)` - Set user groups
-- `reset()` - Clear user data and generate new device ID
+Core API methods include:
+- `track()`: Log custom events with properties
+- `identify()`: Set user properties using Identify objects
+- `flush()`: Force immediate event transmission
+- `load()`/`init()`: SDK initialization with configuration
+- `setGroup()`: Assign users to groups for organizational tracking
 
-**Configuration Options:**
-- `serverZone` - Data residency (US/EU)
-- `flushQueueSize` - Batch size for event sending
-- `flushIntervalMillis` - Automatic flush interval
-- `sessionTimeout` - Session expiration time
-- `trackingOptions` - Control which properties to track
-- `cookieOptions` - Cookie configuration (expiration, domain, secure, sameSite)
+## Integration Patterns and Configuration
 
-## Plugin Ecosystem
+### Consent Management and GDPR Compliance
 
-**Built-in Plugins:**
-- **Web Attribution Plugin** - Marketing attribution tracking
-- **Autocapture Plugin** - Automatic interaction tracking (deprecated standalone, now built-in)
+The SDK provides comprehensive consent management through deferred initialization patterns, supporting GDPR compliance and CNIL France exemptions for first-party analytics cookies. The `deferInitialization` option combined with `enableTracking()` enables consent-first implementations.
 
-**Official Extension Plugins:**
-- `@amplitude/plugin-user-agent-enrichment-browser` - Server-side user agent parsing
-- `@amplitude/plugin-page-url-enrichment-browser` - Automatic page URL property enrichment
+### Transport and Performance Options
 
-## Compliance and Privacy Features
+Multiple transport mechanisms support various deployment scenarios:
+- **sendBeacon**: Browser-native reliable event transmission
+- **fetch/xhr**: Standard HTTP transport methods
+- **Batch processing**: Configurable via `flushQueueSize` and `flushIntervalMillis`
 
-**Consent Management:**
-- Deferred initialization patterns for GDPR compliance
-- `optOut` functionality to disable tracking
-- Cookie-less operation modes
-- CNIL France exemption support for first-party analytics cookies
+### Cross-Domain and Attribution Tracking
 
-**Data Controls:**
-- 13-month cookie expiration limits
-- 25-month data retention policies
-- Cross-domain tracking controls
-- Content Security Policy (CSP) compatibility
-- User Privacy API integration
+Advanced features include cross-domain tracking via shared deviceId parameters, UTM parameter preservation, and campaign-based session management through `resetSessionOnNewCampaign` configuration.
 
-## Transport and Delivery
+### Content Security Policy and Security
 
-**Transport Methods:**
-- `sendBeacon` - Browser beacon API for reliable delivery
-- `xhr` - Standard XMLHttpRequest
-- `fetch` - Modern fetch API
+The SDK supports Content Security Policy (CSP) implementations with configurable security headers and provides secure cookie options including `sameSite` and `secure` flags for enhanced privacy protection.
 
-**Offline Support:**
-- Automatic event queuing during network outages
-- Configurable retry mechanisms
-- Local storage fallbacks for event persistence
+## Migration Pathways
 
-The Browser SDK ecosystem represents Amplitude's comprehensive approach to web analytics, providing migration paths from legacy implementations while introducing modern features like autocapture, unified product integration, and enhanced privacy controls. The modular plugin architecture allows for extensibility while maintaining performance and compliance with modern web standards.
+The documentation provides comprehensive migration guides for transitioning between SDK versions, addressing breaking changes in API methods, configuration options, and architectural differences. Key migration paths include moving from the legacy JavaScript SDK to Browser SDK 2.0, upgrading from Browser SDK 1.0 to 2.0, and consolidating Marketing Analytics SDK functionality into the unified Browser SDK 2.0 offering.
+
+The ecosystem emphasizes backward compatibility where possible while encouraging adoption of the latest Browser SDK 2.0 for optimal feature availability and long-term support.
