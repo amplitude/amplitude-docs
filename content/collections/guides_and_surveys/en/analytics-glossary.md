@@ -73,14 +73,84 @@ glossary:
     type: glossary_set
     enabled: true
   -
-    id: m6zdth1m
-    glossary_section_title: 'Generic events'
-    glossary_section_description: 'These events occur for both guides and surveys'
+    id: m6zem80w
+    glossary_section_title: 'Guides events'
+    glossary_section_description: 'Events for guides.'
     event_row:
       -
+        id: maraos0d
+        event_name: 'Guide Viewed'
+        event_description: 'A guide is viewed by a user.'
+        event_specific_properties: |-
+          The json source of the experience. Can be one of:
+          - trigger
+          - SDK
+          - active experience
+          - from experience x, step y
+          - share link
+      -
+        id: maraocn2
+        event_name: 'Tooltip Marker Viewed'
+        event_description: 'The tooltip marker was seen by a user.'
+      -
+        id: maraos11
+        event_name: Guide Dismissed
+        event_description: 'A user dismissed a guide.'
+      -
+        id: marao0ds
+        event_name: 'Guide Rage closed'
+        event_description: 'The guide was closed within two seconds of appearing.'
+      -
+        id: maraowcp
+        event_name: Guide Completed
+        event_description: |-
+          Indicates a guide is complete, through one of the following:
+
+          1. The user clicks the _Done_ button in a checklist.
+          2. The user clicks the button on the last step with a button.
+          3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
+          4. On a survey, the user clicks _Complete_ or finishes the last step.
+          5. On a list or rating survey with no question on the last step, the user selects any option.
+
+          This event doesn't fire on Tooltips.
+      -
+        id: maraomyn
+        event_name: 'Guide Engaged'
+        event_description: 'The user clicked or interacted with a guide.'
+      -
+        id: maraq2mj
+        event_name: 'Guide Step Completed'
+        event_description: 'The user completed a step or portion of the guide.'
+      -
+        id: maraj2dk
+        event_name: 'Guide Snoozed'
+        event_description: 'The user snoozed a step of the guide.'
+      -
+        id: marawlk9
+        event_name: 'Pin Target Not Found'
+        event_description: 'The target selector for the pin was not found.'
+
+    type: event_set
+    enabled: true
+  -
+    id: m6zemxyi
+    glossary_section_title: 'Survey events'
+    glossary_section_description: 'Events for surveys.'
+    event_row:
+      -
+        id: m6zendv4
+        event_name: 'Survey Submitted'
+        event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
+        event_specific_properties: "`Survey Response` string. The user's response"
+      -
+        id: m6zeobhf
+        event_name: 'Survey Abandoned'
+        event_description: 'A user dismissed a survey when a response input was not empty.'
+        event_specific_properties: "`Survey Response` string. The user's draft response"
+      -
         id: m6zdu2th
-        event_name: Viewed
-        event_description: 'A guide or survey is viewed by a users.'
+        event_name: 'Survey Viewed'
+        event_description: 'A survey is viewed by a user.'
         event_specific_properties: |-
           The json source of the experience. Can be one of:
           - trigger
@@ -94,17 +164,17 @@ glossary:
         event_description: 'The tooltip marker was seen by a user.'
       -
         id: m6zdx7xw
-        event_name: Dismissed
-        event_description: 'A user dismissed a guide or survey.'
+        event_name: Survey Dismissed
+        event_description: 'A user dismissed a survey.'
       -
         id: m6zdxj4f
-        event_name: 'Rage closed'
-        event_description: 'The guide or survey was closed within two seconds of appearing.'
+        event_name: 'Survey Rage closed'
+        event_description: 'The survey was closed within two seconds of appearing.'
       -
         id: m6zdxx5e
-        event_name: Completed
+        event_name: Survey Completed
         event_description: |-
-          Indicates a guide or survey is complete, through one of the following:
+          Indicates a survey is complete, through one of the following:
 
           1. The user clicks the _Done_ button in a checklist.
           2. The user clicks the button on the last step with a button.
@@ -112,59 +182,27 @@ glossary:
           4. On a survey, the user clicks _Complete_ or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
 
-          This event doesn't fire on Tooltips. For surveys, this is equivalent to the "Survey Completed" event.
-    type: event_set
-    enabled: true
-  -
-    id: m6zem80w
-    glossary_section_title: 'Guide-specific events'
-    glossary_section_description: 'Guide-specific events are only relevant to guides.'
-    event_row:
-      -
-        id: m6zemhhp
-        event_name: 'Guide completed'
-        event_description: 'The user made it through all steps of the guide.'
-      -
-        id: marap59c
-        event_name: 'Guide dismissed'
-        event_description: 'The user clicked to dismiss or close a guide'
-      -
-        id: maraomyn
-        event_name: 'Guide Engaged'
-        event_description: 'The user clicked or interacted with a guide.'
-      -
-        id: maraq2mj
-        event_name: 'Guide Step Completed'
-        event_description: 'The user completed a step or portion of the guide.'
-    type: event_set
-    enabled: true
-  -
-    id: m6zemxyi
-    glossary_section_title: 'Survey-specific events'
-    glossary_section_description: 'Survey-specific events are only relevant to surveys.'
-    event_row:
-      -
-        id: m6zendv4
-        event_name: 'Survey Submitted'
-        event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
-        event_specific_properties: "`Survey Response` string. The user's response"
-      -
-        id: m6zeobhf
-        event_name: 'Survey Abandoned'
-        event_description: 'A user dismissed a survey when a response input was not empty.'
-        event_specific_properties: "`Survey Response` string. The user's draft response"
+          This event doesn't fire on Tooltips.
       -
         id: 
         event_name: 'Survey Step Completed'
         event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
       -
-        id: 
-        event_name: 'Survey Completed'
-        event_description: 'A user completed the last step of a survey. This event fires when a user finishes the entire survey by completing the final step.'
+        id: m6zdxl1d
+        event_name: 'Survey Engaged'
+        event_description: 'The user clicked or interacted with a survey.'
+      -
+        id: m6zdxs0d
+        event_name: 'Survey Snoozed'
+        event_description: 'The user snoozed a step of the survey.'
+      -
+        id: m6zdxcvn
+        event_name: 'Pin Target Not Found'
+        event_description: 'The target selector for the pin was not found.'
     type: event_set
     enabled: true
 ---
-Amplitude prefixes guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. 
+Amplitude prefixes Guides and Surveys both events and event properties with `[Guides-Surveys]`. 
 
 
 {{glossary}}
