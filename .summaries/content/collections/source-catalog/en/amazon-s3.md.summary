@@ -16,7 +16,7 @@
 - JSON/CSV/parquet file formats
 - AWS external ID
 - bucket prefix configuration
-- chronological file ordering
-- converter language JSON mapping
-- HTTP V2 API event format
-- Identify API integration
+- converter language
+- data type mapping
+- chronological file processing
+- regional IP addresses (US/EU)
