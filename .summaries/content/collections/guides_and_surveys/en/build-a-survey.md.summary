@@ -2,19 +2,24 @@
 
 **Keywords:**
 - survey blocks
-- rating block types
-- conditional logic branching
-- NPS Net Promoter Score
-- stars rating scale
-- emoji rating
-- long answer block
-- short answer block
-- list block multiple choice
-- ARIA label accessibility
-- pre-fill key user properties
+- Rating block
+- conditional logic
+- NPS (Net Promoter Score)
+- Long answer block
+- Short answer block
+- List block
+- rating types
+- Stars rating
+- Emoji rating
+- Rating labels
+- survey branching
+- multiple choice
+- ARIA label
+- pre-fill key
 - randomize order
-- other option
+- Other option
+- form factors (modal, popover, pin)
+- user feedback capture
 - survey targeting
-- form factors modal popover pin
-- required field validation
-- survey builder experience
+- required fields
+- checkboxes vs radio buttons
