@@ -537,7 +537,7 @@ engagement.gs.closeAll(): void
 
 ## Preview mode for desktop apps
 
-If you are using the SDK within a desktop framework there is extra instrumentation required to support previewing Guides & Surveys.
+If you are using the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
 
 The Amplitude dashboard will pass your app a special query parameter through a deep link (for example, `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call the `_startNudgeDebug` SDK method with it.
 
