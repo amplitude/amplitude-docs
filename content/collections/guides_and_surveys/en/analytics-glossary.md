@@ -6,11 +6,11 @@ landing: false
 updated_by: 4870994b-20b1-4b89-b813-42091eaf6cb7
 updated_at: 1747430252
 glossary:
-  -
-    id: m6zctaju
-    glossary_section_title: 'Common Guides and Surveys event properties'
-    glossary_section_description: 'All Guides and Surveys events include the following event properties.'
-    glossary_row:
+      -
+        id: m6zctaju
+        glossary_section_title: 'Common Guides and Surveys event properties'
+        glossary_section_description: 'All Guides and Surveys events include the following event properties.'
+        glossary_row:
       -
         id: m6zctcnn
         event_name: Key
@@ -70,13 +70,13 @@ glossary:
         event_name: Version
         data_type: number
         event_description: 'The version identifier for the guide or survey.'
-    type: glossary_set
-    enabled: true
-  -
-    id: m6zem80w
-    glossary_section_title: 'Guides events'
-    glossary_section_description: 'Events for guides.'
-    event_row:
+        type: glossary_set
+        enabled: true
+      -
+        id: m6zem80w
+        glossary_section_title: 'Guides events'
+        glossary_section_description: 'Events for guides.'
+        event_row:
       -
         id: maraos0d
         event_name: 'Guide Viewed'
@@ -129,14 +129,13 @@ glossary:
         id: marawlk9
         event_name: 'Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
-
-    type: event_set
-    enabled: true
-  -
-    id: m6zemxyi
-    glossary_section_title: 'Survey events'
-    glossary_section_description: 'Events for surveys.'
-    event_row:
+        type: event_set
+        enabled: true
+      -
+        id: m6zemxyi
+        glossary_section_title: 'Survey events'
+        glossary_section_description: 'Events for surveys.'
+        event_row:
       -
         id: m6zendv4
         event_name: 'Survey Submitted'
@@ -199,8 +198,8 @@ glossary:
         id: m6zdxcvn
         event_name: 'Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
-    type: event_set
-    enabled: true
+        type: event_set
+        enabled: true
 ---
 Amplitude prefixes Guides and Surveys both events and event properties with `[Guides-Surveys]`. 
 
