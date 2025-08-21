@@ -102,80 +102,80 @@ glossary:
       
     type: glossary_set
     enabled: true
-  -
-    id: m6zd0g31
-    glossary_section_title: 'Event-specific event properties'
-    glossary_section_description: 'Only certain Guides and Surveys events include the following event properties.'
-    glossary_row:
-      -
-        id: me3fr0ot
-        event_name: Engagement
-        data_type: object
-        event_description: |-
-          Relevant events: "Guide Engaged", "Survey Engaged"
+  # -
+  #   id: m6zd0g31
+  #   glossary_section_title: 'Event-specific event properties'
+  #   glossary_section_description: 'Only certain Guides and Surveys events include the following event properties.'
+  #   glossary_row:
+      # -
+      #   id: me3fr0ot
+      #   event_name: Engagement
+      #   data_type: object
+      #   event_description: |-
+      #     Relevant events: "Guide Engaged", "Survey Engaged"
           
-          Object with details about the type of engagement. Current keys:
-          - "type" (string): The type of engagement. Possible values: "cta", "link", "survey_focused".
-          - "level" (string): For CTA engagement events, the type of CTA engaged. Possible values: "primary", "secondary", "tertiary".
-          - "url" (string): For link engagement events, the URL of the link that the user clicked.
-      -
-        id: me3giant
-        event_name: Was Completed Via CTA
-        data_type: boolean
-        event_description: |- 
-          Relevant events: "Guide Step Completed", "Survey Step Completed"
+      #     Object with details about the type of engagement. Current keys:
+      #     - "type" (string): The type of engagement. Possible values: "cta", "link", "survey_focused".
+      #     - "level" (string): For CTA engagement events, the type of CTA engaged. Possible values: "primary", "secondary", "tertiary".
+      #     - "url" (string): For link engagement events, the URL of the link that the user clicked.
+      # -
+      #   id: me3giant
+      #   event_name: Was Completed Via CTA
+      #   data_type: boolean
+      #   event_description: |- 
+      #     Relevant events: "Guide Step Completed", "Survey Step Completed"
 
-          True if the step was completed via one of the step's CTA's.
-      -
-        id: me3gi415
-        event_name: Snooze Duration
-        data_type: number
-        event_description: |-
-          Relevant events: "Guide Snoozed", "Survey Snoozed"
+      #     True if the step was completed via one of the step's CTA's.
+      # -
+      #   id: me3gi415
+      #   event_name: Snooze Duration
+      #   data_type: number
+      #   event_description: |-
+      #     Relevant events: "Guide Snoozed", "Survey Snoozed"
 
-          Duration of the snooze in ms.
-      -
-        id: me3lh510
-        event_name: Survey Response
-        data_type: any
-        event_description: |-
-          Relevant events: "Survey Submitted", "Survey Abandoned"
+      #     Duration of the snooze in ms.
+      # -
+      #   id: me3lh510
+      #   event_name: Survey Response
+      #   data_type: any
+      #   event_description: |-
+      #     Relevant events: "Survey Submitted", "Survey Abandoned"
 
-          The user's response. Can be a number, string, or array, depending on the question type.
+      #     The user's response. Can be a number, string, or array, depending on the question type.
 
-          For list surveys, this property indicates the survey indices as shown in the survey's Build tab. E.g., [0,3] corresponds to the user selecting the first and fourth options as shown in the survey's Build tab. These indices are particularly useful when randomizing the list order.
-      -
-        id: me3lh143
-        event_name: Survey Response Array
-        data_type: array
-        event_description: |-
-          Relevant events: "Survey Submitted", "Survey Abandoned"
+      #     For list surveys, this property indicates the survey indices as shown in the survey's Build tab. E.g., [0,3] corresponds to the user selecting the first and fourth options as shown in the survey's Build tab. These indices are particularly useful when randomizing the list order.
+      # -
+      #   id: me3lh143
+      #   event_name: Survey Response Array
+      #   data_type: array
+      #   event_description: |-
+      #     Relevant events: "Survey Submitted", "Survey Abandoned"
 
-          The user's response. Useful if the question is a list with multi-select. Example: ["Option 1", "Option 3"]
-      -
-        id: me3lh999
-        event_name: Survey Response Other
-        data_type: string
-        event_description: |-
-          Relevant events: "Survey Submitted", "Survey Abandoned"
+      #     The user's response. Useful if the question is a list with multi-select. Example: ["Option 1", "Option 3"]
+      # -
+      #   id: me3lh999
+      #   event_name: Survey Response Other
+      #   data_type: string
+      #   event_description: |-
+      #     Relevant events: "Survey Submitted", "Survey Abandoned"
 
-          The user's input for the "other" field. Useful if the question is a list with the setting "Other option" enabled.
-      -
-        id: me3lh650
-        event_name: Survey Response Number
-        data_type: number
-        event_description: |-
-          Relevant events: "Survey Submitted", "Survey Abandoned"
+      #     The user's input for the "other" field. Useful if the question is a list with the setting "Other option" enabled.
+      # -
+      #   id: me3lh650
+      #   event_name: Survey Response Number
+      #   data_type: number
+      #   event_description: |-
+      #     Relevant events: "Survey Submitted", "Survey Abandoned"
 
-          The user's response. Useful if the question type is rating.
-      -
-        id: me3lh732
-        event_name: Survey Response String
-        data_type: string
-        event_description: |-
-          Relevant events: "Survey Submitted", "Survey Abandoned"
+      #     The user's response. Useful if the question type is rating.
+      # -
+      #   id: me3lh732
+      #   event_name: Survey Response String
+      #   data_type: string
+      #   event_description: |-
+      #     Relevant events: "Survey Submitted", "Survey Abandoned"
 
-          The user's response. Useful if the question type is: long text, short text, or list.
+      #     The user's response. Useful if the question type is: long text, short text, or list.
   -
     id: m6zem80w
     glossary_section_title: 'Guides events'
@@ -190,12 +190,17 @@ glossary:
         event_name: 'Guide Viewed'
         event_description: 'A guide is viewed by a user.'
         event_specific_properties: |-
-          The json source of the experience. Can be one of:
+          `Source` (json): Explains why the guide was viewed.
+          
+          `Source.type` (string): Values:
+          - nudge
           - trigger
-          - SDK
-          - active experience
-          - from experience x, step y
-          - share link
+          - sdk
+          - share_link
+          - active
+          - debug
+
+          `Source.properties.triggerType` (string): Details the trigger's type.
       -
         id: maraos11
         event_name: Guide Dismissed
@@ -221,14 +226,24 @@ glossary:
         id: maraq2mj
         event_name: 'Guide Step Completed'
         event_description: 'The user completed a step or portion of the guide.'
+        event_specific_properties: |-
+          `Was Completed Via CTA` (boolean): True if the step was completed via one of the step's CTA's.
       -
         id: maraj2dk
         event_name: 'Guide Snoozed'
         event_description: 'The user snoozed a step of the guide.'
+        event_specific_properties: "`Snooze Duration` (number): Duration of the snooze in ms"
       -
         id: maraomyn
         event_name: 'Guide Engaged'
         event_description: 'The user clicked or interacted with a guide.'
+        event_specific_properties: |-
+          `Engagement` (object): Object with details about the type of engagement. 
+          
+          Current keys:
+          - `type` (string): The type of engagement. Possible values: "cta", "link", "survey_focused".
+          - `level` (string): For CTA engagement events, the type of CTA engaged. Possible values: "primary", "secondary", "tertiary".
+          - `url` (string): For link engagement events, the URL of the link that the user clicked.
       -
         id: marawlk9
         event_name: 'Error: Pin Target Not Found'
@@ -245,23 +260,46 @@ glossary:
         id: m6zendv4
         event_name: 'Survey Submitted'
         event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
-        event_specific_properties: "`Survey Response` string. The user's response"
+        event_specific_properties: |-
+          `Survey Response` (number | string | array): The user's response. The value type depends on the question type. For list surveys, this property indicates the survey indices as shown in the survey's Build tab. E.g., [0,3] corresponds to the user selecting the first and fourth options as shown in the survey's Build tab. These indices are particularly useful when randomizing the list order.
+
+          `Survey Response Array` (array): The user's response as an array. Useful if the question is a list with multi-select. Example: ["Option 1", "Option 3"]
+
+          `Survey Response Number` (number): The user's response as a number. Useful if the question type is rating.
+
+          `Survey Response String` (string): The user's response as a string. Useful if the question type is: long text, short text, or list.
+
+          `Survey Response Other` (string): The user's input for the "other" field. Useful if the question is a list with the setting "Other option" enabled.
       -
         id: m6zeobhf
         event_name: 'Survey Abandoned'
         event_description: 'A user dismissed a survey when a response input was not empty.'
-        event_specific_properties: "`Survey Response` string. The user's draft response"
+        event_specific_properties: |-
+          `Survey Response` (number | string | array): The user's response. The value type depends on the question type. For list surveys, this property indicates the survey indices as shown in the survey's Build tab. E.g., [0,3] corresponds to the user selecting the first and fourth options as shown in the survey's Build tab. These indices are particularly useful when randomizing the list order.
+
+          `Survey Response Array` (array): The user's response as an array. Useful if the question is a list with multi-select. Example: ["Option 1", "Option 3"]
+
+          `Survey Response Number` (number): The user's response as a number. Useful if the question type is rating.
+
+          `Survey Response String` (string): The user's response as a string. Useful if the question type is: long text, short text, or list.
+
+          `Survey Response Other` (string): The user's input for the "other" field. Useful if the question is a list with the setting "Other option" enabled.
       -
         id: m6zdu2th
         event_name: 'Survey Viewed'
         event_description: 'A survey is viewed by a user.'
         event_specific_properties: |-
-          The json source of the experience. Can be one of:
+          `Source` (json): Explains why the survey was viewed.
+          
+          `Source.type` (string): Values:
+          - nudge
           - trigger
-          - SDK
-          - active experience
-          - from experience x, step y
-          - share link
+          - sdk
+          - share_link
+          - active
+          - debug
+
+          `Source.properties.triggerType` (string): Details the trigger's type.
       -
         id: m6zdx7xw
         event_name: Survey Dismissed
@@ -287,14 +325,24 @@ glossary:
         id: 
         event_name: 'Survey Step Completed'
         event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
+        event_specific_properties: |-
+          `Was Completed Via CTA` (boolean): True if the step was completed via one of the step's CTA's.
       -
         id: m6zdxs0d
         event_name: 'Survey Snoozed'
         event_description: 'The user snoozed a step of the survey.'
+        event_specific_properties: "`Snooze Duration` (number): Duration of the snooze in ms
       -
         id: m6zdxl1d
         event_name: 'Survey Engaged'
         event_description: 'The user clicked or interacted with a survey.'
+        event_specific_properties: |-
+          `Engagement` (object): Object with details about the type of engagement. 
+          
+          Current keys:
+          - `type` (string): The type of engagement. Possible values: "cta", "link", "survey_focused".
+          - `level` (string): For CTA engagement events, the type of CTA engaged. Possible values: "primary", "secondary", "tertiary".
+          - `url` (string): For link engagement events, the URL of the link that the user clicked.
       -
         id: m6zdxcvn
         event_name: 'Error: Pin Target Not Found'
