@@ -63,7 +63,7 @@ glossary:
         id: m6zdjxxu
         event_name: 'Step Index'
         data_type: number
-        event_description: `The relative zero-based index of the step.`
+        event_description: 'The relative zero-based index of the step.'
       -
         id: m6zdkozf
         event_name: 'Step Title'
