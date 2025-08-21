@@ -37,16 +37,16 @@ glossary:
         data_type: object
         event_description: |-
           Details about the page the user was on for the guide or survey event. Current object keys: 
-          - "domain" (string): Page domain, e.g. "example.com" 
-          - "path" (string): URL path, e.g. "/example-path/123"
-          - "title" (string): Page title, e.g. "Dashboard"
+          - "domain" (string): Page domain, for example: `example.com` 
+          - "path" (string): URL path, for example: `/example-path/123
+          - "title" (string): Page title, for example: `Dashboard`
       -
         id: m6zkam1u
         event_name: 'Lifecycle UUID'
         data_type: string
         event_description: |-
           Enables grouping of Guides and Surveys events by lifecycle.
-          A guide's or survey’s "lifecycle" starts when it is triggered and ends when it is completed or dismissed. Lifecycle is independent of the application sessions.
+          A guide's or survey’s lifecycle starts when it is triggered and ends when it is completed or dismissed. Lifecycle is independent of the application sessions.
 
           Lifecycle UUID is useful for analyzing events for a given guide/survey across multiple app sessions.
       -
