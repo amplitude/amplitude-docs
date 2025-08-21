@@ -4,10 +4,11 @@
 - Amplitude Guides and Surveys analytics
 - Guide events (Guide Viewed, Guide Completed, Guide Dismissed, Guide Engaged, Guide Rage closed)
 - Survey events (Survey Submitted, Survey Abandoned, Survey Completed, Survey Step Completed)
-- Event properties (Lifecycle UUID, Step ID, Step Index, Variant ID, Is From Debug Mode)
-- Tooltip Marker Viewed
-- Pin Target Not Found
+- Lifecycle UUID event grouping
+- Step ID and Step Index properties
+- Variant ID for A/B testing
+- Tooltip Marker Viewed events
+- Pin Target Not Found events
 - Survey Response property
-- Analytics event schema
-- Guide/survey lifecycle tracking
-- Step completion tracking
+- Debug Mode filtering
+- Event schema documentation
