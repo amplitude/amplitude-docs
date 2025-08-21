@@ -13,7 +13,7 @@ glossary:
     glossary_row:
       -
         id: m6zdnd7g
-        event_name: App Type
+        event_name: 'App Type'
         data_type: string
         event_description: 'The app type for the guide or survey. Possible values: "ios", "android", "react native", "web".'
       -
@@ -28,18 +28,18 @@ glossary:
         event_description: 'True when the event occured on the last step of a guide or survey. False otherwise.'
       -
         id: m6zctcnn
-        event_name: Key
+        event_name: 'Key'
         data_type: string
         event_description: 'A unique identifier for the guide or survey.'
       -
         id: m6zbea5t
-        event_name: Page
+        event_name: 'Page'
         data_type: object
         event_description: |-
           Details about the page the user was on for the guide or survey event. Current object keys: 
-          - "domain" (string): Page domain, for example: `example.com` 
-          - "path" (string): URL path, for example: `/example-path/123
-          - "title" (string): Page title, for example: `Dashboard`
+          - "domain" (string): Page domain, for example: "example.com" 
+          - "path" (string): URL path, for example: "/example-path/123"
+          - "title" (string): Page title, for example: "Dashboard"
       -
         id: m6zkam1u
         event_name: 'Lifecycle UUID'
@@ -63,7 +63,7 @@ glossary:
         id: m6zdjxxu
         event_name: 'Step Index'
         data_type: number
-        event_description: "The step's relative zero-based index."
+        event_description: `The step's relative zero-based index.`
       -
         id: m6zdkozf
         event_name: 'Step Title'
@@ -71,22 +71,22 @@ glossary:
         event_description: 'The title of the step.'
       -
         id: m6z0sdk1
-        event_name: Tags
+        event_name: 'Tags'
         data_type: array
         event_description: 'The list of tags on the guide or survey.'
       -
         id: m6z37ck
-        event_name: Title
+        event_name: 'Title'
         data_type: string
         event_description: 'The title of the guide or survey.'
       -
         id: m6zdm2az
-        event_name: Type
+        event_name: 'Type'
         data_type: string
         event_description: '`None` if guide, `Survey` if survey.'
       -
         id: m6zd4uip
-        event_name: Page
+        event_name: 'Page'
         data_type: json
         event_description: 'Details about the page of the guide or survey on which the event occured.'
       -
@@ -96,7 +96,7 @@ glossary:
         event_description: 'A unique identifier for the guide or survey variant. Useful for analyzing guide or survey experiments.'
       -
         id: m6zdndpe
-        event_name: Version
+        event_name: 'Version'
         data_type: number
         event_description: 'The version identifier.'
       
@@ -129,18 +129,18 @@ glossary:
           `Source.properties.triggerType` (string): Details the trigger's type.
       -
         id: maraos11
-        event_name: Guide Dismissed
+        event_name: 'Guide Dismissed'
         event_description: 'A user dismissed a guide.'
       -
         id: maraowcp
-        event_name: Guide Completed
+        event_name: 'Guide Completed'
         event_description: |-
           Indicates a guide is complete, through one of the following:
 
-          1. The user clicks the _Done_ button in a checklist.
+          1. The user clicks the **Done** button in a checklist.
           2. The user clicks the button on the last step with a button.
           3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
-          4. On a survey, the user clicks _Complete_ or finishes the last step.
+          4. On a survey, the user clicks **Complete** or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
 
           This event doesn't fire on Tooltips.
@@ -228,11 +228,11 @@ glossary:
           `Source.properties.triggerType` (string): Details the trigger's type.
       -
         id: m6zdx7xw
-        event_name: Survey Dismissed
+        event_name: 'Survey Dismissed'
         event_description: 'A user dismissed a survey.'
       -
         id: m6zdxx5e
-        event_name: Survey Completed
+        event_name: 'Survey Completed'
         event_description: |-
           Indicates a survey is complete through one of the following:
 
