@@ -545,10 +545,10 @@ Review below for specific framework examples.
 
 ### Electron
 
-Here is a minimal example to implement within Electron:
-- Register an inter-process communication function during preload
-- In the main process: listen for and parse the `gs-debug-id` query parameter
-- In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK
+Use the following as a minimal example on how to implement Guides & Surveys within Electron:
+1. Register an inter-process communication function during preload.
+2. In the main process: listen for and parse the `gs-debug-id` query parameter.
+3. In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK.
 
 {{partial:tabs tabs="main.js, preload.js, renderer.js"}}
 {{partial:tab name="main.js"}}
@@ -609,7 +609,7 @@ window.electronAPI.startEngagementDebug((data) => {
 
 ## Troubleshoot your installation
 
-If your Guides and Surveys instrumentation doesn't work, verify the following topics.
+If your Guides and Surveys instrumentation doesn't work, verify the following topics:
 
 ### Verify Guides and Surveys is installed
 
