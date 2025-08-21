@@ -318,7 +318,7 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 | `ko_click_id` | Kochava click identifier                                  |
 | `li_fat_id`   | LinkedIn click identifier                                 |
 | `msclkid`     | Microsoft click identifier                                |
-| `rtd_cid`     | Reddit click identifier                                   |
+| `rdt_cid`     | Reddit click identifier                                   |
 | `ttclid`      | TikTok click identifier                                   |
 | `twclid`      | Twitter click identifier                                  |
 
@@ -1457,7 +1457,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 | `twclid`                           | Twitter Click Identifier from URL parameter                                                                                      |
 | `wbraid`                           | Google Click Identifier for iOS device from App to Web                                                                           |
 | `li_fat_id`                        | LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics                                  |
-| `rtd_cid`                          | Reddit Click Identifier                                                                                                          |
+| `rdt_cid`                          | Reddit Click Identifier                                                                                                          |
 
 {{/partial:collapse}}
 

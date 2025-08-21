@@ -1,5 +1,5 @@
 **Summary:**
-This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API key and configuration options, autocapture functionality for tracking attribution/page views/sessions/forms/downloads/element interactions/network requests, event tracking methods, user properties management, revenue tracking, plugins system, and advanced features like cross-domain tracking, sendBeacon transport, CSP configuration, cookie management, offline mode, and remote configuration.
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API key and configuration options, autocapture functionality for tracking attribution/page views/sessions/forms/downloads/element interactions/network requests, event tracking methods, user properties management, revenue tracking, plugins system, and advanced features like cross-domain tracking, offline mode, and remote configuration.
 
 **Keywords:**
 - @amplitude/analytics-browser
@@ -15,47 +15,31 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, w
 - file downloads
 - element interactions
 - network tracking
-- sendBeacon transport
+- sendBeacon
 - cross-domain tracking
+- deviceId
+- sessionId
 - ampDeviceId
 - ampSessionId
 - ampTimestamp
 - cookie management
 - AMP prefix cookies
-- Content Security Policy
-- CSP
+- marketing attribution
 - offline mode
 - remote configuration
-- fetchRemoteConfig
+- CSP Content Security Policy
 - plugins system
 - enrichment plugin
 - destination plugin
 - revenue tracking
 - user properties
-- Identify interface
 - group properties
+- Identify interface
 - flushIntervalMillis
 - flushQueueSize
-- deviceId
-- userId
-- sessionId
+- serverZone EU
 - trackingOptions
-- identityStorage
-- serverZone
-- EU data residency
-- Visual labeling
-- cssSelectorAllowlist
-- actionClickAllowlist
-- pageUrlAllowlist
-- excludeReferrers
-- resetSessionOnNewCampaign
-- trackHistoryChanges
-- instanceName
-- logLevel
+- identityStorage localStorage
 - minIdLength
-- optOut
-- useBatch
-- transport
-- fetch
-- xhr
-- beacon
+- instanceName
+- logLevel debugging
