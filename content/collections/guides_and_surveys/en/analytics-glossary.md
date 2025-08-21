@@ -153,7 +153,7 @@ glossary:
         event_name: 'Guide Step Completed'
         event_description: 'The user completed a step or portion of the guide.'
         event_specific_properties: |-
-          `Was Completed Via CTA` (boolean): True if the step was completed via one of the step's CTA's.
+          `Was Completed Via CTA` (boolean): True if the step was completed through one of the step's CTA's.
       -
         id: maraj2dk
         event_name: 'Guide Snoozed'
