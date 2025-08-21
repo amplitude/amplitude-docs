@@ -124,7 +124,7 @@ The iOS SDK enables session tracking, and disables application lifecycle, screen
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions, .networkTracking] 
+    autocapture: [.sessions, .appLifecycles, .screenViews, .networkTracking] 
 ))
 ```
 {{/partial:tab}}
@@ -135,7 +135,6 @@ configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnio
     AMPAutocaptureOptions.sessions,  
     AMPAutocaptureOptions.appLifecycles,  
     AMPAutocaptureOptions.screenViews,  
-    AMPAutocaptureOptions.elementInteractions,  
     AMPAutocaptureOptions.networkTracking  
 ]]; 
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
@@ -185,7 +184,6 @@ Amplitude(
           +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` [tl! ~~]
           +deepLinks              // or `+Autocapture.DEEP_LINKS` [tl! ~~]
           +screenViews            // or `+Autocapture.SCREEN_VIEWS` [tl! ~~]
-          +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` [tl! ~~]
     	} 
 	)
 )
@@ -197,8 +195,7 @@ Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicatio
 configuration.getAutocapture().addAll(Arrays.asList( 
     AutocaptureOption.APP_LIFECYCLES, 
     AutocaptureOption.DEEP_LINKS, 
-    AutocaptureOption.SCREEN_VIEWS, 
-    AutocaptureOption.ELEMENT_INTERACTIONS 
+    AutocaptureOption.SCREEN_VIEWS
 )); 
 
 Amplitude amplitude = new Amplitude(configuration);
