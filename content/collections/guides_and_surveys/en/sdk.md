@@ -535,6 +535,78 @@ Close all active guides and surveys.
 engagement.gs.closeAll(): void
 ```
 
+## Preview mode for desktop apps
+
+If you are using our SDK within a desktop framework there is extra instrumentation required to support previewing Guides & Surveys.
+
+The Amplitude dashboard will pass your app a special query parameter via deep link (e.g. `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call our `_startNudgeDebug` SDK method with it.
+
+See below for specific framework examples.
+
+### Electron
+
+Here is a very minimal example to implement within Electron:
+- Register an inter-process communication (IPC) function during preload
+- In the main process: listen for and parse the `gs-debug-id` query parameter
+- In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK
+
+{{partial:tabs tabs="main.js, preload.js, renderer.js"}}
+{{partial:tab name="main.js"}}
+```javascript
+const { app } = require('electron');
+
+// Handle deep link on macOS
+app.on('open-url', (event, url) => {
+  const parsedUrl = new URL(url);
+  const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+  if (debugId) {
+    mainWindow.webContents.send('start-engagement-debug', {
+      debugId: debugId,
+    });
+  }
+});
+
+// Handle deep link on Windows/Linux
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+  // Find the deep link URL in command line arguments
+  const url = commandLine.find(arg => arg.startsWith(PROTOCOL + '://'));
+
+  if (url) {
+    const parsedUrl = new URL(url);
+    const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+    if (debugId) {
+      mainWindow.webContents.send('start-engagement-debug', {
+        debugId: debugId,
+      });
+    }
+  }
+});
+```
+{{/partial:tab}}
+{{partial:tab name="preload.js"}}
+```javascript
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  startEngagementDebug: (callback) => {
+    ipcRenderer.on('start-engagement-debug', (_event, data) => callback(data));
+  },
+});
+```
+{{/partial:tab}}
+{{partial:tab name="renderer.js"}}
+```javascript
+window.electronAPI.startEngagementDebug((data) => {
+  window.engagement._startNudgeDebug({
+    nudge: { variantId: Number(data.debugId) }
+  });
+});
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Troubleshoot your installation
 
 If your Guides and Surveys instrumentation doesn't work, verify the following topics.
