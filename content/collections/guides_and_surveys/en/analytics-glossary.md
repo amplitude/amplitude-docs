@@ -6,11 +6,11 @@ landing: false
 updated_by: 4870994b-20b1-4b89-b813-42091eaf6cb7
 updated_at: 1747430252
 glossary:
-  -
-    id: m6zctaju
-    glossary_section_title: 'Common Guides and Surveys event properties'
-    glossary_section_description: 'All Guides and Surveys events include the following event properties.'
-    glossary_row:
+      -
+        id: m6zctaju
+        glossary_section_title: 'Common Guides and Surveys event properties'
+        glossary_section_description: 'All Guides and Surveys events include the following event properties.'
+        glossary_row:
       -
         id: m6zctcnn
         event_name: Key
@@ -27,7 +27,7 @@ glossary:
         data_type: string
         event_description: |-
           Enables grouping of Guides and Surveys events by lifecycle.
-          A guide's or survey’s "lifecycle" starts when it is triggered and ends when it is completed or dismissed. Lifecycle is independent of the application sessions.
+          A guide's or survey's "lifecycle" starts when it is triggered and ends when it is completed or dismissed. Lifecycle is independent of the application sessions.
 
           Lifecycle UUID is useful for analyzing events for a given guide/survey across multiple app sessions.
       -
@@ -70,17 +70,86 @@ glossary:
         event_name: Version
         data_type: number
         event_description: 'The version identifier for the guide or survey.'
-    type: glossary_set
-    enabled: true
-  -
-    id: m6zdth1m
-    glossary_section_title: 'Generic events'
-    glossary_section_description: 'These events occur for both guides and surveys'
-    event_row:
+        type: glossary_set
+        enabled: true
+      -
+        id: m6zem80w
+        glossary_section_title: 'Guides events'
+        glossary_section_description: 'Events for guides.'
+        event_row:
+      -
+        id: maraos0d
+        event_name: 'Guide Viewed'
+        event_description: 'A guide is viewed by a user.'
+        event_specific_properties: |-
+          The json source of the experience. Can be one of:
+          - trigger
+          - SDK
+          - active experience
+          - from experience x, step y
+          - share link
+      -
+        id: maraocn2
+        event_name: 'Tooltip Marker Viewed'
+        event_description: 'The tooltip marker was seen by a user.'
+      -
+        id: maraos11
+        event_name: Guide Dismissed
+        event_description: 'A user dismissed a guide.'
+      -
+        id: marao0ds
+        event_name: 'Guide Rage closed'
+        event_description: 'The guide was closed within two seconds of appearing.'
+      -
+        id: maraowcp
+        event_name: Guide Completed
+        event_description: |-
+          Indicates a guide is complete, through one of the following:
+
+          1. The user clicks the _Done_ button in a checklist.
+          2. The user clicks the button on the last step with a button.
+          3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
+          4. On a survey, the user clicks _Complete_ or finishes the last step.
+          5. On a list or rating survey with no question on the last step, the user selects any option.
+
+          This event doesn't fire on Tooltips.
+      -
+        id: maraomyn
+        event_name: 'Guide Engaged'
+        event_description: 'The user clicked or interacted with a guide.'
+      -
+        id: maraq2mj
+        event_name: 'Guide Step Completed'
+        event_description: 'The user completed a step or portion of the guide.'
+      -
+        id: maraj2dk
+        event_name: 'Guide Snoozed'
+        event_description: 'The user snoozed a step of the guide.'
+      -
+        id: marawlk9
+        event_name: 'Pin Target Not Found'
+        event_description: 'The target selector for the pin was not found.'
+        type: event_set
+        enabled: true
+      -
+        id: m6zemxyi
+        glossary_section_title: 'Survey events'
+        glossary_section_description: 'Events for surveys.'
+        event_row:
+      -
+        id: m6zendv4
+        event_name: 'Survey Submitted'
+        event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
+        event_specific_properties: "`Survey Response` string. The user's response"
+      -
+        id: m6zeobhf
+        event_name: 'Survey Abandoned'
+        event_description: 'A user dismissed a survey when a response input was not empty.'
+        event_specific_properties: "`Survey Response` string. The user's draft response"
       -
         id: m6zdu2th
-        event_name: Viewed
-        event_description: 'A guide or survey is viewed by a users.'
+        event_name: 'Survey Viewed'
+        event_description: 'A survey is viewed by a user.'
         event_specific_properties: |-
           The json source of the experience. Can be one of:
           - trigger
@@ -94,77 +163,188 @@ glossary:
         event_description: 'The tooltip marker was seen by a user.'
       -
         id: m6zdx7xw
-        event_name: Dismissed
-        event_description: 'A user dismissed a guide or survey.'
+        event_name: Survey Dismissed
+        event_description: 'A user dismissed a survey.'
       -
         id: m6zdxj4f
-        event_name: 'Rage closed'
-        event_description: 'The guide or survey was closed within two seconds of appearing.'
+        event_name: 'Survey Rage closed'
+        event_description: 'The survey was closed within two seconds of appearing.'
       -
         id: m6zdxx5e
-        event_name: Completed
+        event_name: Survey Completed
         event_description: |-
-          Indicates a guide or survey is complete, through one of the following:
+          Indicates a survey is complete through one of the following:
 
-          1. The user clicks the _Done_ button in a checklist.
+          1. The user clicks the **Done** button in a checklist.
           2. The user clicks the button on the last step with a button.
           3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
           4. On a survey, the user clicks _Complete_ or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
 
-          This event doesn't fire on Tooltips. For surveys, this is equivalent to the "Survey Completed" event.
-    type: event_set
-    enabled: true
-  -
-    id: m6zem80w
-    glossary_section_title: 'Guide-specific events'
-    glossary_section_description: 'Guide-specific events are only relevant to guides.'
-    event_row:
+          This event doesn't fire on Tooltips.
       -
-        id: m6zemhhp
-        event_name: 'Guide completed'
-        event_description: 'The user made it through all steps of the guide.'
-      -
-        id: marap59c
-        event_name: 'Guide dismissed'
-        event_description: 'The user clicked to dismiss or close a guide'
-      -
-        id: maraomyn
-        event_name: 'Guide Engaged'
-        event_description: 'The user clicked or interacted with a guide.'
-      -
-        id: maraq2mj
-        event_name: 'Guide Step Completed'
-        event_description: 'The user completed a step or portion of the guide.'
-    type: event_set
-    enabled: true
-  -
-    id: m6zemxyi
-    glossary_section_title: 'Survey-specific events'
-    glossary_section_description: 'Survey-specific events are only relevant to surveys.'
-    event_row:
-      -
-        id: m6zendv4
-        event_name: 'Survey Submitted'
-        event_description: 'A user provided input and completed a step in a survey. This event fires when a user submits their response for any step of the survey.'
-        event_specific_properties: "`Survey Response` string. The user's response"
-      -
-        id: m6zeobhf
-        event_name: 'Survey Abandoned'
-        event_description: 'A user dismissed a survey when a response input was not empty.'
-        event_specific_properties: "`Survey Response` string. The user's draft response"
-      -
-        id: 
+        id: m6zdxl2d
         event_name: 'Survey Step Completed'
         event_description: 'A user completed a step in a survey and advanced to the next step. This event fires when a user progresses from one step to another within the survey.'
       -
-        id: 
-        event_name: 'Survey Completed'
-        event_description: 'A user completed the last step of a survey. This event fires when a user finishes the entire survey by completing the final step.'
-    type: event_set
-    enabled: true
+        id: m6zdxl1d
+        event_name: 'Survey Engaged'
+        event_description: 'The user clicked or interacted with a survey.'
+      -
+        id: m6zdxs0d
+        event_name: 'Survey Snoozed'
+        event_description: 'The user snoozed a step of the survey.'
+      -
+        id: m6zdxcvn
+        event_name: 'Pin Target Not Found'
+        event_description: 'The target selector for the pin was not found.'
+        type: event_set
+        enabled: true
+      -
+        id: rc001
+        glossary_section_title: 'Resource Center events'
+        glossary_section_description: 'Events for Resource Center interactions.'
+        event_row:
+      -
+        id: rc002
+        event_name: 'Resource Center Opened'
+        event_description: 'The Resource Center is opened by a user.'
+        event_specific_properties: 
+      -
+        id: rc003
+        event_name: 'Resource Center Closed'
+        event_description: 'The Resource Center is closed by a user.'
+        event_specific_properties: 
+      -
+        id: rc004
+        event_name: 'Resource Center Article Viewed'
+        event_description: 'A user views a piece of content in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc005
+        event_name: 'Resource Center Article Link Copied'
+        event_description: 'A user copies the link to a document in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc006
+        event_name: 'Resource Center Article Link Clicked'
+        event_description: 'A user clicks a link within a piece of content in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+          - "Destination" string. The destination URL of the link.
+      -
+        id: rc007
+        event_name: 'Resource Center Article Scrolled'
+        event_description: 'A user scrolls through a piece of content in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc008
+        event_name: 'Resource Center Video Viewed'
+        event_description: 'A user views a video within the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc009
+        event_name: 'Resource Center Video Played'
+        event_description: 'A user clicks the play button of a video in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc010
+        event_name: 'Resource Center Video Paused'
+        event_description: 'A user clicks the pause button of a video in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+      -
+        id: rc011
+        event_name: 'Resource Center Video Closed'
+        event_description: 'A user closes or stops a video within the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+          - "Duration" number. The duration in milliseconds that the video was viewed.
+      -
+        id: rc012
+        event_name: 'Resource Center Article Closed'
+        event_description: 'A user closes or navigates away from a piece of content in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the article.
+          - "URL" string. The URL of the article.
+          - "Source Key string. The source key of the article (if available).
+          - "Duration" number. The duration in milliseconds that the video was viewed.
+      -
+        id: rc013
+        event_name: 'Resource Center Search'
+        event_description: 'A user executes a search in the Resource Center.'
+        event_specific_properties: |-
+          - "Input Text" string. The search query text.
+          - "Results Count" number. The number of search results.
+      -
+        id: rc014
+        event_name: 'Resource Center Result Clicked'
+        event_description: 'A user clicks on a search result in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the clicked result.
+          - "Excerpt" string. The excerpt of the clicked result.
+          - "Type" string. The type of the clicked result (for example: 'document', 'video', 'resource', 'nudge').
+          - "Source Key" string. The source key of the clicked result (if available).
+          - "Position" number. The position of the clicked result in the list.
+      -
+        id: rc015
+        event_name: 'Resource Center Recommendation Set Shown'
+        event_description: 'A recommendation set is displayed in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the recommendation set.
+          - "Key" string. The key of the recommendation set.
+          - "Is Default" boolean. Whether the recommendation set is the default set.
+      -
+        id: rc016
+        event_name: 'Resource Center Recommendation Clicked'
+        event_description: 'A user clicks on an item in a recommendation set in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the clicked recommendation.
+          - "Type" string. The type of the clicked recommendation (fir example: 'document', 'video', 'link', 'nudge').
+          - "URL" string. The URL of the clicked recommendation (if available).
+          - "Key" string. The key of the clicked recommendation (if available).
+          - "Source Key" string. The source key of the clicked recommendation (if available).
+          - "Position" number. The position of the clicked recommendation in the list.
+          - "Recommendation Set Key" string. The key of the recommendation set that contains the clicked recommendation.
+          - "Is Default" boolean. Whether the recommendation set is the default set.
+          - "Is Autopilot" boolean. Whether the recommendation is an autopilot recommendation.
+      -
+        id: rc017
+        event_name: 'Resource Center Quick Link Clicked'
+        event_description: 'A user clicks on an item in the additional resources section (quick links) in the Resource Center.'
+        event_specific_properties: |-
+          - "Title" string. The title of the clicked quick link.
+          - "Type" string. The type of the clicked quick link (for example: 'document', 'video', 'link', 'nudge').
+          - "URL" string. The URL of the clicked quick link (if available).
+          - "Key" string. The key of the clicked quick link (if available).
+          - "Source Key" string. The source key of the clicked quick link (if available).
+          - "Position" number. The position of the clicked quick link in the list.
+          - "Is Default" boolean. Whether the quick link is in the default set.
+        type: event_set
+        enabled: true
 ---
-Amplitude prefixes guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. 
+Amplitude prefixes Guides and Surveys both events and event properties with `[Guides-Surveys]`. 
 
 
 {{glossary}}
