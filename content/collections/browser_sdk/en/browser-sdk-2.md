@@ -318,7 +318,7 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 | `ko_click_id` | Kochava click identifier                                  |
 | `li_fat_id`   | LinkedIn click identifier                                 |
 | `msclkid`     | Microsoft click identifier                                |
-| `rtd_cid`     | Reddit click identifier                                   |
+| `rdt_cid`     | Reddit click identifier                                   |
 | `ttclid`      | TikTok click identifier                                   |
 | `twclid`      | Twitter click identifier                                  |
 
@@ -686,8 +686,6 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
 | `[Amplitude] Request Body` | The captured JSON request body (when you configure a `requestBody` capture rule). |
 | `[Amplitude] Response Body` | The captured JSON response body (when you configure a `responseBody` capture rule). |
-| `[Amplitude] Request Headers` | The captured request headers (when you configure a `requestHeaders` capture rule). |
-| `[Amplitude] Response Headers` | The captured response headers (when you configure a `responseHeaders` capture rule). |
 
 {{/partial:collapse}}
 
@@ -709,12 +707,6 @@ const responseJson = await response.json(['status', 'data'], ['sensitive_info'])
 The `.json()` method attempts to parse the body text as JSON. If the body isn't valid JSON, is empty, or you don't provide an `allow` parameter, the method returns `null` without throwing an error.
 {{/partial:admonition}}
 
-#### Header filtering and privacy
-
-When you enable header capture, Amplitude automatically filters sensitive headers for privacy and security. Headers that are considered forbidden such as  `authorization`, `cookie`, and other sensitive headers are automatically excluded from capture, even if specified in the allowlist.
-
-If you configure header capture with `captureSafeHeaders: true`, Amplitude captures common, non-sensitive headers like `Content-Type`, `Content-Length`, `Accept`, and others that don't contain sensitive information.
-
 #### Advanced configuration for network tracking
 
 Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
@@ -735,8 +727,6 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestHeaders` | **Experimental.** Configuration for capturing request headers. Review [HeaderCaptureRule](#headercapturerule) for details. | `undefined` |
-| `responseHeaders` | **Experimental.** Configuration for capturing response headers. Review [HeaderCaptureRule](#headercapturerule) for details. | `undefined` |
 | `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
 | `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
 
@@ -746,17 +736,8 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: <br>- `*` matches any key <br>- `**` matches any number of keys. <br> Maintains the structure of the original JSON. | `[]` |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
 | `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
-
-{{/partial:collapse}}
-
-{{partial:collapse name="HeaderCaptureRule"}}
-
-| Name |  Description | Default Value |
-| --- | --- | --- |
-| `allowlist` | Array of header names to capture from request/response headers. Exact match only. | `[]` |
-| `captureSafeHeaders` | Captures all safe headers automatically. If `true`, Amplitude captures safe headers also with any headers specified in the allowlist. Safe headers include common, non-sensitive headers like `Content-Type` and `Content-Length`. | `false` |
 
 {{/partial:collapse}}
 
@@ -786,39 +767,6 @@ amplitude.init(AMPLITUDE_API_KEY, {
 ```
 
 This configuration captures network requests to `api.example.com` with status codes 400-599 and includes specific JSON properties from request and response bodies while excluding sensitive information.
-
-#### Example: Capture request and response headers
-
-```ts
-amplitude.init(AMPLITUDE_API_KEY, {
-  autocapture: {
-    networkTracking: {
-      captureRules: [
-        {
-          hosts: ['api.example.com'],
-          statusCodeRange: '400-599',
-          requestHeaders: {
-            allowlist: ['Content-Type', 'User-Agent'],
-            captureSafeHeaders: true
-          },
-          responseHeaders: {
-            allowlist: ['X-Rate-Limit-Remaining'],
-            captureSafeHeaders: false
-          }
-        }
-      ]
-    }
-  }
-});
-```
-
-This configuration captures network requests to `api.example.com` with status codes 400-599 and includes:
-- Request headers: `Content-Type`, `User-Agent`, plus all safe headers
-- Response headers: Only `X-Rate-Limit-Remaining` (safe headers excluded)
-
-{{partial:admonition type="warning" heading="Experimental feature"}}
-Header capture functionality is experimental and may change in future versions. Use with caution in production environments.
-{{/partial:admonition}}
 
 ## Track an event
 
@@ -1509,7 +1457,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 | `twclid`                           | Twitter Click Identifier from URL parameter                                                                                      |
 | `wbraid`                           | Google Click Identifier for iOS device from App to Web                                                                           |
 | `li_fat_id`                        | LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics                                  |
-| `rtd_cid`                          | Reddit Click Identifier                                                                                                          |
+| `rdt_cid`                          | Reddit Click Identifier                                                                                                          |
 
 {{/partial:collapse}}
 
