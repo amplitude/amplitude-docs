@@ -689,24 +689,6 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 
 {{/partial:collapse}}
 
-#### JSON body capturing
-
-When you enable network tracking, you can capture and filter JSON request and response bodies using the `.json()` method on Request and Response wrappers. This method allows you to selectively include or exclude specific JSON properties for privacy and security.
-
-The `.json()` method accepts two parameters:
-- `allow: string[]`: Array of property names to include in the captured JSON
-- `exclude: string[]`: Array of property names to exclude from the captured JSON
-
-```ts
-// Example: Capture only specific properties from request/response bodies
-const requestJson = await request.json(['userId', 'action'], ['password', 'token']);
-const responseJson = await response.json(['status', 'data'], ['sensitive_info']);
-```
-
-{{partial:admonition type="note" heading="JSON parsing behavior"}}
-The `.json()` method attempts to parse the body text as JSON. If the body isn't valid JSON, is empty, or you don't provide an `allow` parameter, the method returns `null` without throwing an error.
-{{/partial:admonition}}
-
 #### Advanced configuration for network tracking
 
 Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
@@ -729,6 +711,8 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
 | `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
 | `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
+| `requestHeaders` | **Experimental.** capture request headers. If `true`, captures safe headers. If `false`, no headers are captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | **Experimental.** capture response headers. If `true`, captures safe headers. If `false`, no headers are captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 
@@ -741,32 +725,93 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 {{/partial:collapse}}
 
-#### Example: Capture request and response bodies
+#### Safe headers
 
-```ts
-amplitude.init(AMPLITUDE_API_KEY, {
-  autocapture: {
-    networkTracking: {
-      captureRules: [
-        {
-          hosts: ['api.example.com'],
-          statusCodeRange: '400-599',
-          requestBody: {
-            allowlist: ['userId', 'action', 'metadata'],
-            blocklist: ['password', 'token']
-          },
-          responseBody: {
-            allowlist: ['status', 'data', 'message'],
-            blocklist: ['internalId', 'debug']
-          }
-        }
-      ]
+When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captures only safe headers and excludes sensitive ones that may contain authentication credentials or personally identifiable information.
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+
+{{/partial:collapse}}
+
+#### Network body capture
+
+If a network request or response body is JSON, you can capture part of the response body by configuring `networkTracking.responseHeaders.allowlist` and `networkTracking.responseHeaders.blocklist`, and you can capture part of the request body by configuring `networkTracking.requestHeaders.allowlist` and `networkTracking.requestHeaders.blocklist`. 
+
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (e.g.: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture, `excludelist` tells the client to exclude fields from capture (by default, nothing is captured)
+
+Example request/response body
+
+```json
+{
+  "a": "A",
+  "b": {
+    "c": "C",
+    "d": {
+      "e": "E",
+      "f": "F"
     }
-  }
-});
+  },
+  "g": "G"
+}
 ```
 
-This configuration captures network requests to `api.example.com` with status codes 400-599 and includes specific JSON properties from request and response bodies while excluding sensitive information.
+| allowlist | Captured Result |
+| --- | --- |
+| `a` | `{ "a": "A" }` |
+| `a/b/*` | `{ "a": { "b": { "c": "C" } } }` |
+| `b/c` | `{ "b": { "c": "C" } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } } }` |
+| `b/d/*` | `{ "b": { "d": { "e": "E", "f": "F" } } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } }` |
+| `*` | `{ "a": "A", "g": "G" }` |
 
 ## Track an event
 
