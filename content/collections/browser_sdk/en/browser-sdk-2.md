@@ -709,8 +709,8 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestBody` | **Experimental.** capture fields in request body (see BodyCaptureRule). | `undefined` |
-| `responseBody` | **Experimental.** capture fields in response body (see BodyCaptureRule). | `undefined` |
+| `requestBody` | **Experimental.** capture fields in request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | **Experimental.** capture fields in response body (go to  #BodyCaptureRule). | `undefined` |
 | `requestHeaders` | **Experimental.** capture request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 | `responseHeaders` | **Experimental.** capture response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
