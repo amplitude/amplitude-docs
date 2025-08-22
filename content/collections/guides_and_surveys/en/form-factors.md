@@ -58,11 +58,18 @@ Click the three dot menu to access format settings.
 
 Pins are persistent markers that remain on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
-Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the Show mask. 
+Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**. 
 
 To help link the target element to the pinned message, each message contains a pin arrow. Pin arrows offer a visual link between the highlighted feature and the message that appears when users click the pin. Depending on where you place your pinned message, the arrow points towards the targeted element you select. For example, if your target element is to the left of the pinned message, the pin arrow appears on the left the of message and points towards the target element. 
 
-If the location of your pinned message makes it incompatible with directly pointing the arrow to the target element, the pin arrow automatically tries a different location. For example, if the element is moved to the left side of the page, the pinned message can't then be displayed on the left of the element. In this situation, the pinned message displays on the right of the element and the pin arrow automatically adjusts to point towards the element. 
+Pin messages can use the following position settings:
+- Auto
+- Top of target
+- Bottom of target
+- Left of target
+- Right of target
+
+This setting specifies where the pin message should render with respect to its target. For example, if the position is set to "Left of target", Amplitude tries to show the pin left of the target element. If the location of the target element is incompatible with the specified position, then Amplitude automatically tries a different location. For example, if the element is on the far-left side of the page, then the pin can't render left of the element. In this situation, Amplitude attempts to render the pin above, below, or to the right of the target element. In the case where the pin can't be displayed in any of the four positions, the pin isn't rendered.
 
 Click the three dot menu for the pin to access format settings.
 
