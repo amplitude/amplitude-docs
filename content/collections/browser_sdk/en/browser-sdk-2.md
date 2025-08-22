@@ -709,10 +709,10 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
-| `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
-| `requestHeaders` | **Experimental.** capture request headers. If `true`, captures safe headers. If `false`, no headers are captured. If an array of strings, captures the specified headers. | `false` |
-| `responseHeaders` | **Experimental.** capture response headers. If `true`, captures safe headers. If `false`, no headers are captured. If an array of strings, captures the specified headers. | `false` |
+| `requestBody` | **Experimental.** capture fields in request body (see BodyCaptureRule). | `undefined` |
+| `responseBody` | **Experimental.** capture fields in response body (see BodyCaptureRule). | `undefined` |
+| `requestHeaders` | **Experimental.** capture request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | **Experimental.** capture response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 
@@ -785,7 +785,7 @@ When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captur
 
 If a network request or response body is JSON, you can capture part of the response body by configuring `networkTracking.responseHeaders.allowlist` and `networkTracking.responseHeaders.blocklist`, and you can capture part of the request body by configuring `networkTracking.requestHeaders.allowlist` and `networkTracking.requestHeaders.blocklist`. 
 
-The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (e.g.: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture, `excludelist` tells the client to exclude fields from capture (by default, nothing is captured)
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (e.g.: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
 
 Example request/response body
 
