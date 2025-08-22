@@ -783,7 +783,7 @@ When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captur
 
 #### Network body capture
 
-If a network request or response body is JSON, you can capture part of the response body by configuring `networkTracking.responseHeaders.allowlist` and `networkTracking.responseHeaders.blocklist`, and you can capture part of the request body by configuring `networkTracking.requestHeaders.allowlist` and `networkTracking.requestHeaders.blocklist`. 
+If a network request or response body is JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`, and you can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
 
 The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (e.g.: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
 
