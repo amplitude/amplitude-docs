@@ -70,6 +70,8 @@ glossary:
         event_name: Version
         data_type: number
         event_description: 'The version identifier for the guide or survey.'
+        type: glossary_set
+        enabled: true
       -
         id: m6zem80w
         glossary_section_title: 'Guides events'
@@ -127,6 +129,8 @@ glossary:
         id: marawlk9
         event_name: 'Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
+        type: event_set
+        enabled: true
       -
         id: m6zemxyi
         glossary_section_title: 'Survey events'
@@ -194,7 +198,8 @@ glossary:
         id: m6zdxcvn
         event_name: 'Pin Target Not Found'
         event_description: 'The target selector for the pin was not found.'
-        
+        type: event_set
+        enabled: true
       -
         id: rc001
         glossary_section_title: 'Resource Center events'
@@ -336,6 +341,8 @@ glossary:
           - "Source Key" string. The source key of the clicked quick link (if available).
           - "Position" number. The position of the clicked quick link in the list.
           - "Is Default" boolean. Whether the quick link is in the default set.
+        type: event_set
+        enabled: true
 ---
 Amplitude prefixes Guides and Surveys both events and event properties with `[Guides-Surveys]`. 
 
