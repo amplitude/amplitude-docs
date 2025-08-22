@@ -67,7 +67,7 @@ The marketing campaign cookie stores attribution data including:
 
 - UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`)
 - Referrer information (`referrer`, `referring_domain`)
-- Click IDs (`gclid`, `fbclid`, `dclid`, `gbraid`, `wbraid`, `ko_click_id`, `msclkid`, `ttclid`, `twclid`, `li_fat_id`, `rtd_cid`)
+- Click IDs (`gclid`, `fbclid`, `dclid`, `gbraid`, `wbraid`, `ko_click_id`, `msclkid`, `ttclid`, `twclid`, `li_fat_id`, `rdt_cid`)
 
 ### Cookie size
 
