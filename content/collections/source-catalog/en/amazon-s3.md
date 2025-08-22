@@ -54,7 +54,7 @@ The files you want to send to Amplitude must follow some basic requirements:
 - Files contain events, with one event per line.
 - Files are uploaded in the events’ chronological order.
 - Filenames are unique.
-- File size must be greater than 1MB and smaller than 1GB. For customers with large event volumes, Amplitude recommends file sizes close to 500MB for optimal performance.
+- File size must be greater than 1MB and smaller than 5GB. For customers with large event volumes, Amplitude recommends file sizes close to 500MB for optimal performance.
 - Files are compressed or uncompressed JSON, CSV, or parquet files.
 - For Mirror Sync, which supports mutations, the following constraints exist:
   - Mutations to events require a user ID. If a row doesn't contain a user ID, Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode.
