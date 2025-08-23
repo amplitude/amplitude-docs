@@ -60,9 +60,7 @@ Pins are persistent markers that remain on screen until a user interacts with it
 
 Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**. 
 
-To help link the target element to the pinned message, each message contains a pin arrow. Pin arrows offer a visual link between the highlighted feature and the message that appears when users click the pin. Depending on where you place your pinned message, the arrow points towards the targeted element you select. For example, if your target element is to the left of the pinned message, the pin arrow appears on the left the of message and points towards the target element. 
-
-Pin messages can use the following position settings:
+Pins can use the following position settings:
 - Auto
 - Top of target
 - Bottom of target
