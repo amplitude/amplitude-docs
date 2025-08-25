@@ -711,10 +711,10 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
 | `methods` | The HTTP methods to capture. e.g.: `["POST", "PUT", "DELETE"]` | `['*']` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestBody` | **Experimental.** capture fields in request body (go to #BodyCaptureRule). | `undefined` |
-| `responseBody` | **Experimental.** capture fields in response body (go to  #BodyCaptureRule). | `undefined` |
-| `requestHeaders` | **Experimental.** capture request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
-| `responseHeaders` | **Experimental.** capture response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `requestBody` | **Experimental.** Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | **Experimental.** Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
+| `requestHeaders` | **Experimental.** Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | **Experimental.** Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 
@@ -785,9 +785,9 @@ When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captur
 
 #### Network body capture
 
-If a network request or response body is JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`, and you can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
+If a network request or response body is in JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`. You can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
 
-The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (e.g.: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (For example: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
 
 Example request/response body
 
@@ -817,20 +817,20 @@ Example request/response body
 
 ## Track an event
 
-Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+Events represent how users interact with your application. For example, the Button Clicked event might be an action you want to track.
 
 ```ts
-// Track a basic event
+// Track a basic event.
 amplitude.track('Button Clicked');
 
-// Track events with optional properties
+// Track events with optional properties.
 const eventProperties = {
   buttonColor: 'primary',
 };
 amplitude.track('Button Clicked', eventProperties);
 ```
 
-You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
+You can also pass a `BaseEvent` object to `track`. For more information, review the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
 
 ```ts
 const event_properties = {
