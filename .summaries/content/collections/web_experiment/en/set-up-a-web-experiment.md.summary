@@ -1,4 +1,4 @@
-**Summary:** This documentation explains how to set up Amplitude Web Experiments using the Visual Editor to create A/B tests without code changes, including element modifications, URL redirects, Pages targeting, audience targeting, and testing/preview functionality.
+**Summary:** This documentation explains how to set up Amplitude Web Experiments using the Visual Editor to create A/B tests without code changes, including element modifications, URL redirects, Pages targeting, audience configuration, and testing/preview functionality.
 
 **Keywords:**
 - Amplitude Web Experiment
@@ -15,6 +15,6 @@
 - selector configuration
 - Navigation mode
 - test and preview functionality
+- DOM element manipulation
 - experiment variants
-- DOM manipulation
-- inline CSS editing
+- site setup panel
