@@ -88,10 +88,10 @@ The default configuration is designed to capture user interactions with interact
 | **Element Tag** | The tag name of the HTML element.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `a` |
 | **Element Text** | The text content (`innerText`) of the HTML element. Only applies to the Element Clicked event.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `Home` |
 | **Element Href** | The `href` attribute, specifying the URL for a link. Only applies to `<a>` tags on the Element Clicked event.<br>Example: if the clicked element is `<a href="https://www.amplitude.com">Home</a>` <br> The property value is `https://www.amplitude.com` |
-| **Element Position Left** | Captures the distance of the element from the left of the screen view (in pixels).<br>Example: a value of `600` means the clicked element was 600px from the left of the view screen. |
-| **Element Position Top** | Captures the distance of the element from the top of the screen view (in pixels).<br>Example: a value of `400` means the clicked element was 400px from the top of the view screen. |
-| **Viewport Height** | Captures the height (in pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `900` means the viewport had a height of `900` pixels. |
-| **Viewport Width** | Captures the width (in pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `1200` means the viewport had a width of `1200` pixels. |
+| **Element Position Left** | Captures the distance of the element from the left of the screen view (pixels).<br>Example: a value of `600` means the clicked element was 600px from the left of the view screen. |
+| **Element Position Top** | Captures the distance of the element from the top of the screen view (pixels).<br>Example: a value of `400` means the clicked element was 400px from the top of the view screen. |
+| **Viewport Height** | Captures the height (pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `900` means the viewport had a height of `900` pixels. |
+| **Viewport Width** | Captures the width (pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `1200` means the viewport had a width of `1200` pixels. |
 | **Page URL** | Captures the URL of the page where the element was clicked.<br>Example: a value of `https://www.amplitude.com` means that the clicked element was on this page. |
 | **Page Title** | Captures the page title of the page where the element was clicked.<br>Example: if the page where the element was clicked has `<title>Amplitude</title>` <br> The value is: `Amplitude` |
 | **Element Hierarchy** | Captures DOM elements and attributes of the element clicked and its parent or sibling elements. Used for visual labeling. |
@@ -110,10 +110,10 @@ Captures form element interactions, such as changes to a dropdown or inputs text
 | **Element Tag** | The tag name of the HTML element.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `a` |
 | **Element Text** | The text content (`innerText`) of the HTML element. Only applies to the Element Clicked event.<br>Example: if the clicked element is `<a href="#">Home</a>` <br> The property value is `Home` |
 | **Element Href** | The `href` attribute, specifying the URL for a link. Only applies to `<a>` tags on the Element Clicked event.<br>Example: if the clicked element is `<a href="https://www.amplitude.com">Home</a>` <br> The property value is `https://www.amplitude.com` |
-| **Element Position Left** | Captures the distance of the element from the left of the screen view (in pixels).<br>Example: a value of `600` means the clicked element was 600px from the left of the view screen. |
-| **Element Position Top** | Captures the distance of the element from the top of the screen view (in pixels).<br>Example: a value of `400` means the clicked element was 400px from the top of the view screen. |
-| **Viewport Height** | Captures the height (in pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `900` means the viewport had a height of `900` pixels. |
-| **Viewport Width** | Captures the width (in pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `1200` means the viewport had a width of `1200` pixels. |
+| **Element Position Left** | Captures the distance of the element from the left of the screen view (pixels).<br>Example: a value of `600` means the clicked element was 600px from the left of the view screen. |
+| **Element Position Top** | Captures the distance of the element from the top of the screen view (pixels).<br>Example: a value of `400` means the clicked element was 400px from the top of the view screen. |
+| **Viewport Height** | Captures the height (pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `900` means the viewport had a height of `900` pixels. |
+| **Viewport Width** | Captures the width (pixels) of the viewport when the element was clicked (not related to the element itself).<br>Example: a value of `1200` means the viewport had a width of `1200` pixels. |
 | **Page URL** | Captures the URL of the page where the element was clicked.<br>Example: a value of `https://www.amplitude.com` means that the clicked element was on this page. |
 | **Page Title** | Captures the page title of the page where the element was clicked.<br>Example: if the page where the element was clicked has `<title>Amplitude</title>` <br> The value is: `Amplitude` |
 | **Element Hierarchy** | Captures DOM elements and attributes of the element clicked and its parent or sibling elements. Used for visual labeling. |
