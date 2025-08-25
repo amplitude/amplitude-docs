@@ -1,18 +1,19 @@
 ## Summary
-This documentation covers Amplitude's Guides and Surveys setup and targeting configuration, including user segmentation, trigger options (element appearance/clicks, time delays, rage clicks, user confusion, event tracking), session properties, page targeting with URL matching patterns, priority levels, display limits, localization, status management (draft/published/scheduled), and active state behavior with tiebreaker rules.
+This documentation covers the Setup and Targeting configuration for Amplitude Guides and Surveys, detailing user targeting options (All Users vs Targeted Users with segments, rollout percentages, and bucketing units), trigger mechanisms (element appearance/clicks, time delays, smart delay, rage click, user confusion, event tracking), page targeting rules, priority settings, display limits, localization, status management, and active state behavior with tiebreaker logic.
 
 ## Keywords
 - Amplitude Guides and Surveys
 - user targeting and segmentation
-- trigger conditions (element appears, element clicked, time delay, smart delay, rage click, user confusion, event tracking)
-- session properties setSessionProperty
-- page targeting URL matching patterns
-- priority levels (urgent, high, medium, low)
-- display limits and cooldown
-- active state and tiebreaker rules
-- localization multi-language
-- status management (draft, published, scheduled)
-- CSS selector XPath targeting
-- rollout percentage bucketing
-- dismissable snoozable settings
-- step counter guide navigation
+- rollout percentage and bucketing unit
+- trigger mechanisms (element appearance, element clicks, time delays, smart delay, rage click, user confusion, event tracking)
+- CSS Selector and XPath targeting
+- session properties (setSessionProperty)
+- page targeting rules (URL matching patterns)
+- priority levels (Urgent, High, Medium, Low)
+- display limits and cooldown periods
+- guide active state and tiebreaker logic
+- localization support
+- status management (Draft, Published, Schedule)
+- dismissable and snoozable settings
+- visual selector and query parameters
+- temporarily hide conditions
