@@ -10,15 +10,16 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1754950505
 ---
-Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature, which helps you improve your tracking plan with actionable, prioritized suggestions.
+Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature, which helps you improve your tracking plan with actionable, prioritized suggestions. 
+
+Automated tasks is only available on Enterprise plans. Go to the [pricing](https://amplitude.com/pricing) page for more details.
 
 Automated Tasks takes the recommendations provided by the Data Assistant and transforms those recommendations into actions. Automated. tasks can perform certain types of tasks automatically. This means no manual review required. 
 
 Automated tasks can run daily and help you maintain a clean, consistent tracking plan. 
 
-## Feature availability
-
-Automated tasks is only available on Enterprise plans. Go to the [pricing](https://amplitude.com/pricing) page for more details.
+You can access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
+If you have active automations, the Automated Tasks home page displays your active automations as well as a current count of the events that have been managed by the automation. If you don't have any active automations, you have the opportunity to set them up. 
 
 ## Types of automated tasks
 
@@ -70,11 +71,11 @@ If Amplitude detects events that meet a task’s criteria, those suggested tasks
 Click the banner to turn on automation for future matching events.
 
 ## Removing an automation
-You can remove any automation you set up. 
+You can remove any current automation. When removing an automation, you can specify if you want to affect any pending changes or to only affect future changes.  
 
 ##### To remove an automated task
 1. Go to *Data > Assistant > Automated Tasks*. 
 2. Click **View Automation** for the automation you want to remove. 
 3. In the automated task window, click the **three-dot** option menu. 
 4. Click **Remove Automation**.
-5. Confirm whether or not you want to also remove any pending changes from the task and then click **Remove**.
+5. Confirm whether you want to also remove any pending changes from the task and then click **Remove**.
