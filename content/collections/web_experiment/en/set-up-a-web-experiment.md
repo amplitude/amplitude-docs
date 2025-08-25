@@ -117,7 +117,7 @@ The HTML tab lets you edit the HTML contents of the selected element.
 
 Using the toolbar, move selected elements within the page's DOM structure to adjust its visual placement on the page. 
 
-In addition to moving elements up or down, click **Move** to enter preview mode. This enables you to explore different element placements on the page.
+In addition to moving elements up or down, click **Rearrange** to enter preview mode. This enables you to explore different element placements on the page.
 
 As you hover over valid positions, the editor displays a preview of the layout after you move the element.
 
