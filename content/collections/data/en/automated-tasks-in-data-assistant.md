@@ -10,13 +10,11 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1754950505
 ---
-Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature, which helps you improve your tracking plan with actionable, prioritized suggestions. 
+Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature, helping to improve your tracking plan with actionable, prioritized suggestions. Automated Tasks takes the recommendations provided by the Data Assistant and transforms those recommendations into actions by performing specific tasks automatically. This means that you don't have to manually review every single task suggested by the Data Assistant. 
 
 Automated tasks is only available on Enterprise plans. Go to the [pricing](https://amplitude.com/pricing) page for more details.
 
-Automated Tasks takes the recommendations provided by the Data Assistant and transforms those recommendations into actions. Automated. tasks can perform certain types of tasks automatically. This means no manual review required. 
-
-Automated tasks can run daily and help you maintain a clean, consistent tracking plan. 
+After they have been created, automated tasks run daily. 
 
 You can access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
 If you have active automations, the Automated Tasks home page displays your active automations as well as a current count of the events that have been managed by the automation. If you don't have any active automations, you have the opportunity to set them up. 
@@ -46,6 +44,15 @@ This task removes accidental or one-time test events that can negatively impact 
 When the automated task finds events that match those criteria, it automatically deletes those events. After they're deleted, those one-time testing events no longer appear in the event dropdown menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
+
+### Recovering deleted events
+You can recover any deleted event at any time.
+
+##### To recover a deleted event
+  
+1. Go to *Data > Events*.
+2. Click **Deleted events**.
+3. Select the event you want and click **Restore**.
 
 ## Setting up an automated task
 
