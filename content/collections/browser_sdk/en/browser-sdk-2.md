@@ -707,7 +707,8 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | Defines the URL, URLs, or URL pattern to capture. By default captures all URLs. eg. `[/https:\/\/example.com\/api\/*/, 'https://example.com/api/stauts']` | `['*']` |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
 | `requestBody` | **Experimental.** capture fields in request body (go to #BodyCaptureRule). | `undefined` |
 | `responseBody` | **Experimental.** capture fields in response body (go to  #BodyCaptureRule). | `undefined` |
