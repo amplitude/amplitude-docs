@@ -1087,7 +1087,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 |`twclid`|Twitter Click Identifier from URL parameter|
 |`wbraid`|Google Click Identifier for iOS device from App to Web|
 |`li_fat_id`|LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics|
-|`rtd_cid`|Reddit Click Identifier| 
+|`rdt_cid`|Reddit Click Identifier| 
 
 {{/partial:collapse}}
 

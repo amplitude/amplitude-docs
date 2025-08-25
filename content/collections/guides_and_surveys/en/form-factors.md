@@ -56,16 +56,25 @@ Click the three dot menu to access format settings.
 
 ### Pin
 
-A persistent marker that stays on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
+Pins are persistent markers that remain on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
-Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen, or add an advanced trigger.
+Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**. 
 
-Click the three dot menu to access format settings.
+Pins can use the following position settings:
+- Auto
+- Top of target
+- Bottom of target
+- Left of target
+- Right of target
+
+This setting specifies where the pin message should render with respect to its target. For example, if the position is set to "Left of target", Amplitude tries to show the pin left of the target element. If the location of the target element is incompatible with the specified position, then Amplitude automatically tries a different location. For example, if the element is on the far-left side of the page, then the pin can't render left of the element. In this situation, Amplitude attempts to render the pin above, below, or to the right of the target element. In the case where the pin can't be displayed in any of the four positions, the pin isn't rendered.
+
+Click the three dot menu for the pin to access format settings.
 
 | Setting                                  | Description                                                                                                |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Open by default                          | Enables the pin to open without user interaction. If disabled, users must click or tap the pin to open it. |
-| Show mask <br/> {.tag .web .zero}        | Enables a background mask when the pin is open to help draw the user's focus.                              |
+| Show mask                                | Enables a background mask when the pin is open to help draw the user's focus.                              |
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
 | Click outside to close                   | Enables users to click or tap outside of the modal to dismiss it.                                          |
