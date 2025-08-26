@@ -10,14 +10,14 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1755299403
 ---
-Autocapture remote configuration lets you make adjustments to your implementation to pull in additional metadata that you need into Analytics. Remote configuration is typically used after your initial implementation of Autocapture is live. Use Remove Configuration after you analyze your first data capture and you discover what adjustments to make in the type of data you want. 
+Autocapture Remote Configuration lets you make adjustments to your implementation and pull additional metadata into Amplitude. You can use Remote Configuration either when you are setting up [Autocapture](/docs/data/autocapture) or after Autocapture is running. Use Remote Configuration after you analyze your first data capture and you discover what adjustments to make in the type of data you want. 
 
 With remote configuration you can:
 
 * Modify the SDK settings to adjust which events you want to capture. Such as:
-  * Turn specific Autocapture events on or off.
-  * Configure Autocapture events such as allowed elements or allowed pages and add sub-configurations.
-  * Capture additional properties such as page referrer or page URL across all events.
+  * Turning specific Autocapture events on or off.
+  * Configuring Autocapture events such as allowed elements or allowed pages and add sub-configurations.
+  * Capturing additional properties such as page referrer or page URL across all events.
 
 ## Setting up remote configuration
 
