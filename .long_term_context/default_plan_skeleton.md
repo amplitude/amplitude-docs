@@ -22,6 +22,7 @@ This plan should be synced with the progress that I make. I should check off ite
 - [ ] For GitHub PRs: Consider if this is an internal bug fix that may not need documentation updates (see `.long_term_context/assessment_patterns_for_internal_fixes.md`)
 - [ ] For link issues: Review `.long_term_context/link_fix_patterns.md` for handling partial templates and documenting fixes when source content isn't accessible
 - [ ] Use `rewrite_with_client_voice` for new content before applying patches or creating new files
+- [ ] If I find a good example that fits existing patterns in `.long_term_context/`, consider updating those pattern files with the new example and commit to main
 
 (Add specific files that I'd want to update and edit here)
 
