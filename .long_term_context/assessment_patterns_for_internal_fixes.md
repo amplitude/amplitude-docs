@@ -33,3 +33,15 @@ If answers are all "no" to user-impacting changes and "yes" to docs remaining va
 
 Example indicators: HTML test pages, debugging utilities, developer tools, CI/CD improvements.
 
+## XMLHttpRequest Response Handling Pattern
+
+**PR #1276** (amplitude/Amplitude-TypeScript - catch response text exception) demonstrated that network infrastructure bug fixes typically don't need docs updates when they:
+
+1. **Fix browser compatibility issues** - Handle edge cases like `InvalidStateError` when accessing `responseText`
+2. **Improve internal error handling** - Better parsing of XMLHttpRequest responses with different `responseType` values
+3. **Are in analytics-core infrastructure** - Changes in `src/network-observer.ts` or similar internal SDK components
+4. **Don't change user configuration** - Users still use the same `networkTracking: true` and capture rule APIs
+5. **Add comprehensive test coverage** - Include extensive unit tests for new error handling scenarios
+
+Key indicator: Changes focus on `createXhrJsonParser`, `ResponseWrapperXhr`, type safety improvements, and browser-specific error handling rather than new configuration options or user-facing APIs.
+
