@@ -159,7 +159,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If (a) the rating request is unsuccessful and (b) the app identifier is provided in the survey configuration, then we fall back to the platform’s app store page. |
 
 {{partial:admonition type='note'}}
-Native app review display is controlled by [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) or [Google](https://developer.android.com/guide/playcore/in-app-review) and isn't guaranteed.
+[Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
 
 #### Image
