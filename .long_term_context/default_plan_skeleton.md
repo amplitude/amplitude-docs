@@ -19,6 +19,7 @@ This plan should be synced with the progress that I make. I should check off ite
 - [ ] Review `.long_term_context/doc_platform_instructions.md` for any information about how to make good updates to the docs platform
 - [ ] Review `.long_term_context/past_feedback_from_teammates.md` to ensure that past mistakes are not repeated
 - [ ] Check again for any other files in .long_term_context/ that might contain learnings I've written down from previous triggers that might be helpful during writing.
+- [ ] For GitHub PRs: Consider if this is an internal bug fix that may not need documentation updates (see `.long_term_context/assessment_patterns_for_internal_fixes.md`)
 - [ ] Use `rewrite_with_client_voice` for new content before applying patches or creating new files
 
 (Add specific files that I'd want to update and edit here)
