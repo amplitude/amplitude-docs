@@ -1,4 +1,8 @@
 ---
+###
+# Don't manually update this file. Install a local version of the site as described in the README
+# Use the form in the control panel
+###
 id: ba2e2bbb-396d-4f49-9c59-66fab5476120
 blueprint: guides_and_survey
 title: 'Analytics Glossary'
