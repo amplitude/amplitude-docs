@@ -10,7 +10,7 @@ landing_blurb: 'Autocapture is the fastest way to capture information about your
 academy_course:
   - fcefbf26-273d-49a9-adbf-89440c8cb48b
 ---
-Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled via our Browser SDK, Autocapture captures user interactions on your digital products with a single code snippet. It's a great way to get started and uncover insights quickly.
+Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. After it's enabled through the Browser SDK, Autocapture captures user interactions on your digital products with a single code snippet. It lets you get started and uncover insights with minimal setup activity.
 
 ## Availability
 
@@ -23,10 +23,10 @@ Autocapture is available for all Amplitude plans.
 
 Amplitude offers two primary ways to capture events:
 
-* Autocapture allows you to automatically collect a predefined set of events and properties in a standardized taxonomy using our SDKs.
-* Precision tracking allows you to instrument events and properties specific to your business needs and desired analyses.
+* Autocapture allows you to automatically collect a predefined set of events and properties in a standardized taxonomy using Amplitude SDKs.
+* Precision tracking allows you to instrument events and properties specific to your business needs and wanted analyses.
 
-With Autocapture, you get out of the box analytics with minimal engineering. From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. This solution is the best option to help you get up and running quickly.
+With Autocapture, you get out of the box analytics with minimal engineering. From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. Autocapture lets you focus on speed when setting up your analysis.
 
 When you want to drill deeper into specific actions in your application requiring additional metadata, or have some events (like a purchase event) that may be core to your business, Amplitude provides precision tracking. Precise tracking in code allows you to send these events with a robust set of properties to perform even deeper analyses.
 
@@ -54,12 +54,12 @@ Keeping your taxonomy clean and organized is essential to ensuring users can fin
 
 Some additional things to know about your labeled events:
 
-* Labeled events have a separate tab within Data > Events to help you manage them differently from your raw ingested events. Here, you can see who created the labeled events and when they were created.
+* Labeled events have a separate tab within *Data > Events* to help you manage them differently from your raw ingested events. This tab displays who created the labeled events as well the creation date for each event.
 * Labeled events have a different icon in the event dropdown so you and your users can distinguish them from other events.
 
 ## Privacy and security
 
-For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions can vary greatly. There's no one-size-fits-all solution that will work in every situation.
+For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions may vary. There's no one-size-fits-all solution that works in every situation.
 
 Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
 
