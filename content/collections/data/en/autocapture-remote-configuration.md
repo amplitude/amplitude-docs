@@ -24,9 +24,16 @@ With remote configuration you can:
 Remote configuration 
 
 ##### To set up remote configuration for autocapture
-1. Go to *Data > Settings > Autocapture > Manage what gets captured*. 
-2. Click the dropdown to select the elements you want to capture.
-   You can select new elements to capture or deselect elements that you no longer want to capture.
-3. Click **Apply**.
-   Customizable options for the elements you selected appear.
-4. Click into the setting options for each element and specify the information you want to capture.
+1. Go to *Data > Settings > Autocapture*. 
+2. Specify which elements you want to capture. By default, all elements are captured. You can select any of:
+   * **File downloads**: Track when a user clicks an anchor or `<a>` tag linked to a file. 
+   * **Form Interactions**: Track a user's interaction with the form element.
+   * **Sessions**: Track the period of time that a user has your website open. Amplitude tracks both start and end events.
+   * **Page Views**: Tack when a user navigates to a page.
+   * **Element Interactions**: Track when users click on links, buttons, inputs and so on.
+3. For Element Interactions, you can specify the following additional aspects:
+   * **CSS Selector Allowlist**: CSS selectors that specify which elements on the page should always be tracked.
+   * **Action Click Allowlist**: Additional CSS selectors that must be tracked which clicked.
+   * **Page URL Allowlist**: Defines the URL(s) or URL patter on which Amplitude tracks element click and change events.
+   * **Data Attribute Prefix**: Lets the SDK capture data attributes as an event property. 
+4. Click **Save Changes**.
