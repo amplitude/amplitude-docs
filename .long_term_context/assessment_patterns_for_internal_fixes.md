@@ -21,3 +21,15 @@ Based on PR #1274 (amplitude/Amplitude-TypeScript - consumption check fix), lear
 
 If answers are all "no" to user-impacting changes and "yes" to docs remaining valid, likely no updates needed.
 
+## Testing Infrastructure Pattern
+
+**PR #1275** (amplitude/Amplitude-TypeScript - test page for feature flags) established that testing infrastructure PRs typically don't need docs updates when they:
+
+1. **Add files to test directories** - Files in `test-server/`, `test/`, or similar directories
+2. **Are for developer debugging** - Include debugging hooks like `debugger` statements or `window.amplitude` exposure
+3. **Use 'chore:' prefix** - Indicates maintenance/internal work rather than user-facing features
+4. **Test existing functionality** - Load and display existing APIs without adding new ones
+5. **Don't affect production code paths** - Internal tooling that doesn't change how users interact with the SDK
+
+Example indicators: HTML test pages, debugging utilities, developer tools, CI/CD improvements.
+
