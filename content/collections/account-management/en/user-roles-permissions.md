@@ -40,7 +40,7 @@ Recommended role for third parties, if you don't want them creating content that
 * Set custom [monitors](/docs/analytics/insights) and subscribe to them
 * Share content they create with others
 * View Guides and Surveys
-* Create and view [Heatmaps](/docs/session-replay/heatmaps)
+* View [Heatmaps](/docs/session-replay/heatmaps)
 * Open project details from notification alerts
 
 Viewers:
@@ -80,6 +80,7 @@ Recommended for users who need access to all content created within Amplitude (d
 * Add and edit data sources and data destinations
 * Transfer ownership of content they don't own
 * Create, modify, delete derived properties
+* Create, update, and delete [Heatmaps](/docs/session-replay/heatmaps)
 * Full access to Guides and Surveys
 
 ### Admin
