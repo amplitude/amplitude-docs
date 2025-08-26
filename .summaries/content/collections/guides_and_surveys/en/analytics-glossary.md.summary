@@ -1,23 +1,19 @@
-**Summary:** This analytics glossary documents Amplitude event tracking for Guides and Surveys, including common event properties (App Type, Lifecycle UUID, Step ID, Variant ID) and specific events for guides (Guide Viewed, Guide Completed, Guide Engaged), surveys (Survey Submitted, Survey Abandoned), and Resource Center interactions (Resource Center Opened, Article Viewed, Search events).
+**Summary:** This page documents the complete analytics event schema for Guides and Surveys functionality, including common event properties (App Type, Lifecycle UUID, Step ID, etc.), specific guide events (Guide Viewed, Guide Completed, Guide Engaged), survey events (Survey Submitted, Survey Abandoned), and Resource Center interaction events, all prefixed with `[Guides-Surveys]` in Amplitude.
 
 **Keywords:**
-- Amplitude analytics events
-- Guides and Surveys tracking
-- Lifecycle UUID
-- Guide Viewed event
-- Guide Completed event
-- Guide Engaged event
-- Survey Submitted event
-- Survey Abandoned event
+- Guides and Surveys analytics events
+- Amplitude event tracking
+- Guide Viewed, Guide Completed, Guide Dismissed
+- Survey Submitted, Survey Abandoned, Survey Response
 - Resource Center events
-- Step ID and Step Index
-- Variant ID for A/B testing
-- App Type property (ios, android, react native, web)
-- Survey Response properties
-- CTA engagement tracking
-- Pin Target Not Found error
-- Source.type and triggerType
+- Lifecycle UUID
+- Step ID, Step Index, Variant ID
+- App Type (ios, android, react native, web)
+- Is From Debug Mode
+- Survey Response Array, Survey Response Number
+- CTA engagement levels (primary, secondary, tertiary)
+- Pin Target Not Found errors
 - Snooze Duration
-- Debug Mode filtering
-- Event properties data types
-- Resource Center search and recommendations
+- Source.type (nudge, trigger, sdk, share_link)
+- Resource Center article interactions
+- Event properties data types (string, boolean, number, object, array, json)
