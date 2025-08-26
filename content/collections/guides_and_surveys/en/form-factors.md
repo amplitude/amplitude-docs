@@ -156,7 +156,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Go forward    | Advance to the next step in the guide.                                                                                                                                            |
 | Go to step    | Go to the specified step in the guide.                                                                                                                                            |
 | Run callback  | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
-| Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If (a) the rating request is unsuccessful and (b) the app identifier is provided in the survey configuration, then we fall back to the platform’s app store page. |
+| Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
 {{partial:admonition type='note'}}
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
