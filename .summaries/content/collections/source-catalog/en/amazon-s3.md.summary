@@ -16,7 +16,6 @@
 - JSON/CSV/parquet file formats
 - AWS external ID
 - bucket prefix configuration
-- converter language
-- data type mapping
-- chronological file processing
-- regional IP addresses (US/EU)
+- converter file mapping
+- chronological file upload
+- file size requirements (1MB-5GB)
