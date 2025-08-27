@@ -18,6 +18,10 @@ summary: 'Upload large amounts of event data.'
 ---
 ## Considerations
 
+{{partial:admonition type="note" heading="Rate limiting"}}
+Amplitude rate limits individual users (by Amplitude ID) that update their user properties more than 1800 times per hour. This limit applies to user property syncing and not event ingestion. Amplitude continues to ingest events, but may drop user property updates for that user.
+{{/partial:admonition}}
+
 - The JSON serialized payload must not exceed 20MB in size.
 - To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event has a device or user ID that's too short, the ID value is dropped from the event. If an event doesn't have a user or device ID, it may cause the API to reject the upload with a 400 error. You can change the minimum ID length using the `options` property.
 - Each API key can send up to 1000 events per second for any individual device ID or user ID. If you exceed that rate, the API rejects the upload, and gives a 429 response. Check the response summary for more information.

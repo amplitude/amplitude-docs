@@ -19,6 +19,10 @@ summary: 'Send data directly from your server to the HTTP V2 endpoint.'
 ## Considerations
 Keep the following in mind as you use the HTTP V2 API.
 
+{{partial:admonition type="note" heading="Rate limiting"}}
+Amplitude rate limits individual users (by Amplitude ID) that update their user properties more than 1800 times per hour. This limit applies to user property syncing and not event ingestion. Amplitude continues to ingest events, but may drop user property updates for that user.
+{{/partial:admonition}}
+
 ### Upload limit
 
 **For Starter plan customers:**
