@@ -96,8 +96,8 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           },
           "Action": "sts:AssumeRole",
           "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "<external_id>" 
+          "StringEquals": {
+          "sts:ExternalId": "<external_id>" 
             }
           }
         }
@@ -117,13 +117,13 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
                  "arn:aws:iam::202493300829:role/k8s_prod_falcon",
                  "arn:aws:iam::202493300829:role/vacuum_iam_role" ]
       }, 
-         },
          "Action": "sts:AssumeRole",
          "Condition": {
-           "StringEquals": {
-             "sts:ExternalId": "<external_id>" 
+         "StringEquals": {
+         "sts:ExternalId": "<external_id>" 
            }
          }
+       }
      ]
    }
    ``` 
