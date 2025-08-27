@@ -1,21 +1,18 @@
-**Summary:** This documentation covers Amazon S3 Import integration for Amplitude, detailing how to configure bidirectional data sync between S3 buckets and Amplitude projects, including IAM role setup, converter configuration for event/user/group property mapping, and support for both Mirror Sync and Append Only import strategies.
+**Summary:** This documentation covers Amazon S3 Import integration for Amplitude, detailing how to configure S3 buckets with IAM roles, set up converter configurations for event/user/group property data ingestion, and enable continuous file discovery with optional S3 event notifications for near-real-time import.
 
 **Keywords:**
 - Amazon S3 Import
-- Amplitude S3 integration
-- IAM role configuration
+- S3 bucket configuration
+- IAM role ARN and external ID
 - converter configuration
-- Mirror Sync vs Append Only
-- S3 bucket permissions
+- Mirror Sync vs Append Only Sync
+- S3 event notifications
 - insert_id deduplication
-- event data ingestion
-- user properties sync
-- group properties sync
-- S3 event notification
+- file requirements (JSON/CSV/parquet)
+- user properties and group properties import
 - mutation operations (INSERT/UPDATE/DELETE)
-- JSON/CSV/parquet file formats
-- AWS external ID
-- bucket prefix configuration
-- converter file mapping
-- chronological file upload
-- file size requirements (1MB-5GB)
+- bucket prefix and region settings
+- continuous file discovery
+- converter language and SOURCE_DESCRIPTION
+- trust relationship policy
+- AmplitudeS3ReadOnlyAccess policy
