@@ -35,13 +35,16 @@ Example indicators: HTML test pages, debugging utilities, developer tools, CI/CD
 
 ## XMLHttpRequest Response Handling Pattern
 
-**PR #1276** (amplitude/Amplitude-TypeScript - catch response text exception) demonstrated that network infrastructure bug fixes typically don't need docs updates when they:
+**PR #1276** (amplitude/Amplitude-TypeScript - handle XHR responseType JSON) demonstrated that network infrastructure bug fixes typically don't need docs updates when they:
 
-1. **Fix browser compatibility issues** - Handle edge cases like `InvalidStateError` when accessing `responseText`
-2. **Improve internal error handling** - Better parsing of XMLHttpRequest responses with different `responseType` values
+1. **Fix browser compatibility issues** - Handle edge cases like `InvalidStateError` when accessing `responseText` property
+2. **Improve internal error handling** - Better parsing of XMLHttpRequest responses with different `responseType` values ('json', 'text', etc.)
 3. **Are in analytics-core infrastructure** - Changes in `src/network-observer.ts` or similar internal SDK components
 4. **Don't change user configuration** - Users still use the same `networkTracking: true` and capture rule APIs
 5. **Add comprehensive test coverage** - Include extensive unit tests for new error handling scenarios
+6. **Create internal utility functions** - Like `createXhrJsonParser()` that handle response type differences transparently
 
-Key indicator: Changes focus on `createXhrJsonParser`, `ResponseWrapperXhr`, type safety improvements, and browser-specific error handling rather than new configuration options or user-facing APIs.
+Key indicators: Changes focus on `createXhrJsonParser`, `ResponseWrapperXhr`, type safety improvements, and browser-specific error handling rather than new configuration options or user-facing APIs. The fix specifically addresses the fact that `xhr.responseText` throws `InvalidStateError` when `responseType` is not 'string' or '', requiring different approaches to access response data.
+
+**Additional confirmed example**: PR #1276 adds `responseType` property to interfaces, creates robust JSON parsing function using `structuredClone()` for safety, and removes deprecated `text()` method while maintaining backward compatibility for all documented network capture functionality.
 
