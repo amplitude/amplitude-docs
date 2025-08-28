@@ -68,20 +68,15 @@ Select the page in the the URL redirect variant's settings. Scoping the redirect
 ## Technical details
 
 * Experiment evaluates pages after bucketing. This ensures that a page's variant impacts only users who are in the experiment. 
-
 * Amplitude deactivates pages that conflict with other pages in your experiment. 
 
 ## Known limitations
 
 * Pages aren't supported in:
-
   * Feature Flags
   * Experiment Templates
   * Management API
-  * Experiments converted to templates or flags
-
+  * Experiments converted to templates or flags.
 * You can't delete or archive a page.
-
-* Amplitude doesn't include pages in universal search or experiment table views
-
-* Pages don't appear in alerts or notifications
+* Amplitude doesn't include pages in universal search or experiment table views.
+* Pages don't appear in alerts or notifications.
