@@ -38,6 +38,9 @@ mix --production
 # GENERATE APP KEY
 php artisan key:generate
 
+# BUILD GLOSSARY JSON
+php artisan glossary:generate-json
+
 # BUILD STATIC SITE
 php please stache:warm -n -q
 php please ssg:generate --workers=4
