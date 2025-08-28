@@ -6,7 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 nav_title: experiment
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1756420936
+updated_at: 1756421971
 current-collection: experiment|advanced-techniques|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow|experiment_integrations|experiment_troubleshooting|under-the-hood|workflow|web_experiment
 landing_page_content:
   -
@@ -60,13 +60,13 @@ landing_page_content:
     entries_field: a07f325e-1e4a-4b62-a360-d21686c8a8ac
   -
     id: mevzjrcy
-    card_title: 'Troubleshoot Experiments'
-    card_content: 'Learn what to do if something goes wrong with your experiment.'
-    cta: 'Troubleshoot your experiment'
+    card_title: 'Experiment APIs'
+    card_content: 'Learn about Experiment APIs.'
+    cta: 'Learn about Experiment APIs'
     external_link: false
     type: card
     enabled: true
     icon: brand-stickers/icon-helpcenter-blue.svg
-    entries_field: 29db4e07-fe88-46f9-8f21-76c7b6d77142
+    entries_field: de81c9f1-331d-4177-b7da-e947101992b4
 template: landing-page-experiment
 ---
