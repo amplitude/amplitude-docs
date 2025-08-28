@@ -10,9 +10,9 @@ this_article_will_help_you:
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
-Web Experiment lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) without creating new code. This lets less-technical users create experiments without engineering resources.
+Web Experiment lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) without new code. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to create experiments without engineering resources.
 
-Web Experiments use [**Pages**](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
+Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
 
 {{partial:admonition type='note'}}
 Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
@@ -71,7 +71,7 @@ After the experiment is set, you can define the experiment's [goals](/docs/featu
 5. Click **Save and Close** to finish creating your Web Experiment.
 
 {{partial:admonition type="tip" heading="Create a new run of an existing experiment"}}
-If you have an experiment that you need to re-run, review [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
+If you have an experiment that you need to re-run, go to [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
 {{/partial:admonition}}
 
 ## Testing and previewing your web experiment
