@@ -46,6 +46,7 @@ return [
         public_path('docs/js') => 'docs/js',
         public_path('docs/fonts') => 'docs/fonts',
         public_path('docs/md') => 'docs/md',
+        public_path('docs/glossary-data.json') => 'docs/glossary-data.json',
     ],
 
     'symlinks' => [
