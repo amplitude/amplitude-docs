@@ -9,6 +9,7 @@ tree:
       -
         id: 7fdccdec-2267-4c69-a624-10aa31405026
         entry: d002d2ad-3a7f-41f7-aec9-0df7db9fb90b
+        title: 'Feature and Web Experiment Use Cases'
   -
     id: 4395cf69-ddb7-4127-9192-ff9c20777a07
     title: 'Experiment Planning'
