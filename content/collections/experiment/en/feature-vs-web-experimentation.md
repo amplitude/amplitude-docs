@@ -11,8 +11,6 @@ updated_at: 1756412125
 ---
 You can create experiments using either Feature Experiment or Web Experiment. Depending on your needs for any particular experiment and the results you want to generate, you'll select Feature or Web Experiment to design your experiment. 
 
-
-
 ## Feature Experiment use cases
 
 Feature Experiment is most useful for Product experts, Data Engineering and Operations, and Data Analysts. These roles focus on deep knowledge of specific products or data repositories. Their goals are to:
