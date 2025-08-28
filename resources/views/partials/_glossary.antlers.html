@@ -103,11 +103,17 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .properties-content.expanded {
   max-height: 9999px;
   opacity: 1;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #DEDFE2;
 }
 
 /* Button Hover Effects */
@@ -323,7 +329,7 @@ class GlossaryRenderer {
       </div>`;
 
     const expandedProperties = event.related_properties_count > 0 ? `
-      <div id="props-${event.id}" class="properties-content mt-6 bg-amp-gray-50 rounded-xl p-6 border border-amp-gray-100">
+      <div id="props-${event.id}" class="properties-content bg-amp-gray-50 rounded-xl">
         <div class="mb-4">
           <h4 class="text-lg font-medium text-amp-gray-900 mb-2">Event Properties</h4>
           <p class="text-sm text-amp-gray-600">The following properties are available for this event:</p>
