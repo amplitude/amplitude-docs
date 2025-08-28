@@ -240,7 +240,7 @@ class GlossaryRenderer {
   }
 
   async loadData() {
-    const response = await fetch('/glossary-data.json');
+    const response = await fetch('/docs/glossary-data.json');
     if (!response.ok) throw new Error('Failed to fetch data');
     this.data = await response.json();
     this.filteredEvents = this.data.events;
