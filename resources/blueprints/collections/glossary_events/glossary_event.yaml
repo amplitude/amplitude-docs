@@ -63,13 +63,14 @@ tabs:
           -
             handle: related_properties
             field:
-              mode: select
               collections:
                 - glossary_properties
               type: entries
               display: 'Related Properties'
               localizable: false
               width: 50
+              query_scopes:
+                - non_core_properties
   sidebar:
     display: Sidebar
     sections:
