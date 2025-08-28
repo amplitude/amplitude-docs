@@ -48,3 +48,15 @@ Key indicators: Changes focus on `createXhrJsonParser`, `ResponseWrapperXhr`, ty
 
 **Additional confirmed example**: PR #1276 adds `responseType` property to interfaces, creates robust JSON parsing function using `structuredClone()` for safety, and removes deprecated `text()` method while maintaining backward compatibility for all documented network capture functionality.
 
+## Marketing Cookie Internal Implementation Pattern
+
+**PR #208** (amplitude/experiment-js-client - expire marketing cookie after session) demonstrated that internal cookie management changes typically don't need docs updates when they:
+
+1. **Affect internal-only mechanisms** - Marketing cookies used to pass props between SDK components (experiment-js-client to analytics SDK)
+2. **Have no user-facing documentation** - Feature not mentioned in any user guides, configuration docs, or troubleshooting materials
+3. **Change internal behavior only** - Removes `expirationDays: 365` from `setMarketingCookie()` function, making cookies session-only instead of persistent
+4. **Don't affect user APIs** - No changes to how users configure or interact with the SDK
+5. **Are implementation improvements** - Rationale: "Marketing cookies should expire after session, as they are only used to pass props to analytics SDK and should not be persisted"
+
+Key indicators: Changes in `packages/experiment-tag/src/util/cookie.ts`, internal utility functions like `setMarketingCookie()`, cookie lifetime adjustments for internal data flow rather than user-configurable settings. The functionality being changed (marketing cookies) has zero mentions in existing documentation, confirming it's purely internal infrastructure.
+
