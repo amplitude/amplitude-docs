@@ -5,10 +5,9 @@ title: 'Feature and Web Experiment Functional Comparison'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1756412115
+updated_at: 1756412669
 ---
-
-The following tables describe which Experiment functionality is available for Feature experimentation, Web experimentation, or both: 
+The following tables describe which Experiment functionality is available for Feature experimentation, Web experimentation, or both. For more information on the differences and use cases between Feature and Web Experiment, go to [Feature and Web Experiment Use Cases](/docs/feature-experiment/feature-vs-web-experimentation).
 
 {{partial:collapse name="Planning"}}
 |  |  |  |  |
