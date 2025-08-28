@@ -9,7 +9,12 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 The Guides and Surveys React Native SDK requires:
 
-* The [React Native architecture](https://reactnative.dev/architecture/landing-page)
+* The ["new" React Native architecture](https://reactnative.dev/architecture/landing-page)
+* React Native 0.79.2+
+* Android Gradle 8.7.2+
+* Gradle 8+
+* iOS 15+
+* Swift 5.9+
 
 ## Install the SDK
 
