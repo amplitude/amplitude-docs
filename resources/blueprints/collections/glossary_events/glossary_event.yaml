@@ -1,0 +1,83 @@
+title: 'Glossary Event'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: product_area
+            field:
+              options:
+                -
+                  key: experiment
+                  value: null
+                -
+                  key: 'session replay'
+                  value: null
+                -
+                  key: 'guides & surveys'
+                  value: null
+              type: select
+              display: 'Product Area'
+              localizable: false
+              width: 50
+              multiple: true
+              instructions: 'Supply a value if the event is applicable to only one product area.'
+          -
+            handle: platform
+            field:
+              options:
+                -
+                  key: all
+                  value: null
+                -
+                  key: web
+                  value: null
+                -
+                  key: ios
+                  value: null
+                -
+                  key: android
+                  value: null
+              type: select
+              display: Platform
+              localizable: false
+              width: 50
+              multiple: true
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+              width: 50
+          -
+            handle: related_properties
+            field:
+              mode: select
+              collections:
+                - glossary_properties
+              type: entries
+              display: 'Related Properties'
+              localizable: false
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
