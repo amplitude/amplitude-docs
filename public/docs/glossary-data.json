@@ -1,7 +1,7 @@
 {
-    "generated_at": "2025-08-28T23:12:29.652101Z",
-    "events_count": 16,
-    "properties_count": 57,
+    "generated_at": "2025-08-29T18:20:50.146424Z",
+    "events_count": 18,
+    "properties_count": 73,
     "events": [
         {
             "id": "5848c866-b674-4fbc-a295-28bee88d1de6",
@@ -11,6 +11,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -22,6 +23,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -33,6 +35,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -44,6 +47,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -54,6 +58,7 @@
             "platform": [
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -61,7 +66,10 @@
             "id": "0ed55f9b-71f0-44ca-a124-285820fb79f5",
             "title": "Element Changed",
             "description": "Autocaptured change to form element (if enabled)",
-            "platform": [],
+            "platform": [
+                "web"
+            ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -72,6 +80,7 @@
             "platform": [
                 "web"
             ],
+            "product_area": [],
             "related_properties": [
                 {
                     "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
@@ -246,6 +255,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -258,6 +268,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -268,6 +279,7 @@
             "platform": [
                 "web"
             ],
+            "product_area": [],
             "related_properties": [
                 {
                     "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
@@ -367,6 +379,7 @@
             "platform": [
                 "web"
             ],
+            "product_area": [],
             "related_properties": [
                 {
                     "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
@@ -439,6 +452,7 @@
             "platform": [
                 "web"
             ],
+            "product_area": [],
             "related_properties": [
                 {
                     "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
@@ -505,12 +519,185 @@
             "related_properties_count": 7
         },
         {
+            "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+            "title": "Guide Tooltip Icon Viewed",
+            "description": "User saw guide tooltip icon",
+            "platform": [
+                "all"
+            ],
+            "product_area": [
+                "guides & surveys"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+            "title": "Guide Viewed",
+            "description": "Guide displayed to user",
+            "platform": [
+                "all"
+            ],
+            "product_area": [
+                "guides & surveys"
+            ],
+            "related_properties": [
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d83f9668-b8d4-4a09-88d1-0a2d2e703fda",
+                    "title": "Page",
+                    "description": "Object: domain, path, title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string",
+                        "object"
+                    ]
+                },
+                {
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "1a3b20e5-bf76-4fdb-9dff-126a5d60e989",
+                    "title": "Source",
+                    "description": "JSON why displayed: type (nudge, trigger, sdk, share_link, active, debug), properties.triggerType",
+                    "property_type": "event",
+                    "data_type": [
+                        "object"
+                    ]
+                }
+            ],
+            "related_properties_count": 16
+        },
+        {
             "id": "589bf092-c617-4e80-9345-64e669f2a2f3",
             "title": "Network Request",
             "description": "Network request tracked (if enabled)",
             "platform": [
                 "ios"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -521,6 +708,7 @@
             "platform": [
                 "web"
             ],
+            "product_area": [],
             "related_properties": [
                 {
                     "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
@@ -648,6 +836,7 @@
                 "ios",
                 "android"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         },
@@ -660,6 +849,7 @@
                 "android",
                 "web"
             ],
+            "product_area": [],
             "related_properties": [],
             "related_properties_count": 0
         }

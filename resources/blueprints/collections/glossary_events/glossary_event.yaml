@@ -32,6 +32,7 @@ tabs:
               width: 50
               multiple: true
               instructions: 'Supply a value if the event is applicable to only one product area.'
+              listable: true
           -
             handle: platform
             field:

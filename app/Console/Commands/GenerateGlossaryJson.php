@@ -60,6 +60,7 @@ class GenerateGlossaryJson extends Command
                     'title' => $event->get('title'),
                     'description' => $event->get('description'),
                     'platform' => $event->get('platform', []),
+                    'product_area' => $event->get('product_area', []),
                     'related_properties' => $relatedProperties,
                     'related_properties_count' => count($relatedProperties),
                 ];
