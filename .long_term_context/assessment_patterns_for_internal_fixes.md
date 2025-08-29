@@ -62,6 +62,21 @@ Key indicators: Changes in `packages/experiment-tag/src/experiment.ts` moving `s
 
 **Confirmed pattern**: When UI timing changes improve reliability without changing the fundamental user interaction model, existing documentation typically remains accurate and no updates are needed.
 
+## Remote Config Testing Infrastructure Pattern
+
+**PR #1277** (amplitude/Amplitude-TypeScript - playwright remote config smoke tests) confirmed that testing infrastructure for already-documented features typically doesn't need docs updates when they:
+
+1. **Test existing documented functionality** - The `fetchRemoteConfig` option is already comprehensively documented in Browser SDK docs with usage examples and Data settings explanations
+2. **Add test infrastructure only** - Creates `packages/e2e-remote-config/` with E2E tests and `test-server/remote-config-test.html` for manual testing
+3. **Use "chore:" prefix** - Indicates internal maintenance work rather than user-facing features
+4. **Include debugging utilities** - Test page includes extensive logging, status updates, and debugging hooks for developers
+5. **Don't change production APIs** - No changes to how users configure or call `amplitude.init()` with `fetchRemoteConfig: true`
+6. **Update dependencies for testing** - Playwright version updates and nx workspace tools are for internal development workflow improvements
+
+Key indicators: E2E test files in `packages/e2e-remote-config/test/e2e/`, test HTML pages in `test-server/`, dependency updates in `package.json` for testing tools, and comprehensive test coverage of existing documented API (`fetchRemoteConfig: true`). The functionality being tested has full documentation coverage in Browser SDK configuration tables, Remote configuration sections, and Data settings pages.
+
+**Confirmed example**: Remote config functionality is already documented starting with SDK 2.16.1 where `fetchRemoteConfig` defaults to `true`, with detailed usage examples and server-side behavior explanations. Testing infrastructure validates this existing functionality without exposing new user-facing APIs or configuration options.
+
 ## New User-Facing Feature Identification Pattern
 
 **PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
