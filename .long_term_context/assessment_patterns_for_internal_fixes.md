@@ -62,6 +62,24 @@ Key indicators: Changes in `packages/experiment-tag/src/experiment.ts` moving `s
 
 **Confirmed pattern**: When UI timing changes improve reliability without changing the fundamental user interaction model, existing documentation typically remains accurate and no updates are needed.
 
+## New User-Facing Feature Identification Pattern
+
+**PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
+
+1. **Add new API parameters** - New `pageUrlExcludelist` property in ElementInteractionsOptions and FrustrationInteractionsOptions interfaces
+2. **Follow existing paradigms** - Excludelist complements existing allowlist pattern, making it intuitive for users
+3. **Change user implementation patterns** - Users can now configure exclusion patterns in addition to inclusion patterns
+4. **Include comprehensive type support** - Supports strings, RegExp patterns, and {pattern: string} objects
+5. **Have precedence rules** - Excludelist takes precedence over allowlist, requiring clear documentation of behavior
+
+**Key Documentation Areas for New Config Options:**
+- Main SDK configuration reference tables
+- Code examples showing usage patterns
+- Behavioral notes about precedence and interaction with existing options
+- General product overview docs for consistency
+
+**Autocapture Documentation Location Pattern**: As of Browser SDK 2.10.0+, main autocapture documentation lives in Browser SDK 2 docs, not the deprecated standalone autocapture plugin documentation. Always check both locations but prioritize the main SDK docs.
+
 ## Marketing Cookie Internal Implementation Pattern
 
 **PR #208** (amplitude/experiment-js-client - expire marketing cookie after session) demonstrated that internal cookie management changes typically don't need docs updates when they:
