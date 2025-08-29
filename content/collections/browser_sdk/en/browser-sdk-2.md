@@ -108,6 +108,10 @@ runOutsideAngular(function () { amplitude.init(...args); })
 The Angular zone overwrites certain DOM functions that, when invoked by [Amplitude autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture), causes some user interactions to break
 {{/partial:admonition}}
 
+{{partial:admonition type="info" heading="Next.js Integration"}}
+For detailed instructions on integrating Amplitude with Next.js applications, including both client-side and server-side setups, see the [Next.js Installation Guide](/docs/sdks/analytics/browser/nextjs-installation-guide).
+{{/partial:admonition}}
+
 
 ## Configure the SDK
 
