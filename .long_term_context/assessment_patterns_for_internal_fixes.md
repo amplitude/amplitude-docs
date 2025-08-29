@@ -48,6 +48,20 @@ Key indicators: Changes focus on `createXhrJsonParser`, `ResponseWrapperXhr`, ty
 
 **Additional confirmed example**: PR #1276 adds `responseType` property to interfaces, creates robust JSON parsing function using `structuredClone()` for safety, and removes deprecated `text()` method while maintaining backward compatibility for all documented network capture functionality.
 
+## Preview Modal Timing Internal Fix Pattern
+
+**PR #209** (amplitude/experiment-js-client - show preview modal on applyVariants) demonstrated that UI timing adjustments typically don't need docs updates when they:
+
+1. **Change internal timing without changing user experience** - Modal moved from SDK initialization to `applyVariants()` method call, but still appears automatically during preview workflow
+2. **Are follow-up fixes to recently documented features** - Previous PR #205 documented the preview modal; this fixes timing behavior
+3. **Add internal reliability improvements** - Added duplicate modal prevention by checking for existing `amp-preview-modal` ID in DOM
+4. **Don't change user-facing APIs or configuration** - Users still call `applyVariants()` the same way, preview URLs work identically
+5. **Existing documentation remains accurate** - "appears automatically when SDK detects preview flags" statement still true
+
+Key indicators: Changes in `packages/experiment-tag/src/experiment.ts` moving `showPreviewModeModal()` calls between methods, adding DOM element ID attributes for better tracking, duplicate prevention logic. The user experience is unchanged - modal still appears during preview workflow, just at a slightly different moment in the SDK lifecycle.
+
+**Confirmed pattern**: When UI timing changes improve reliability without changing the fundamental user interaction model, existing documentation typically remains accurate and no updates are needed.
+
 ## Marketing Cookie Internal Implementation Pattern
 
 **PR #208** (amplitude/experiment-js-client - expire marketing cookie after session) demonstrated that internal cookie management changes typically don't need docs updates when they:
