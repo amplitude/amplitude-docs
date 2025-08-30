@@ -77,6 +77,20 @@ Key indicators: E2E test files in `packages/e2e-remote-config/test/e2e/`, test H
 
 **Confirmed example**: Remote config functionality is already documented starting with SDK 2.16.1 where `fetchRemoteConfig` defaults to `true`, with detailed usage examples and server-side behavior explanations. Testing infrastructure validates this existing functionality without exposing new user-facing APIs or configuration options.
 
+## Dead Click Detection Internal Fix Pattern
+
+**PR #1278** (amplitude/Amplitude-TypeScript - fix dead click on visibility hidden) confirmed that dead click detection improvements typically don't need docs updates when they:
+
+1. **Improve internal reliability without changing user APIs** - Adds `VisibilityChangeObservable` internally to track document visibility changes, but users don't interact with this directly
+2. **Fix false positive detection logic** - Prevents dead click events when page visibility changes after click (indicating navigation), reducing incorrect event triggering
+3. **Are purely internal implementation changes** - Changes in `src/autocapture/track-dead-click.ts`, `src/frustration-plugin.ts` without exposing new configuration options
+4. **Don't change autocapture usage patterns** - Users still configure dead click tracking the same way through existing allowlist/excludelist options
+5. **Existing documentation remains accurate** - Current dead click references (like in amplitude-data-settings.md) continue to be correct since users can still control dead click volume through allowlists
+
+Key indicators: Changes add internal observables (`VisibilityChangeObservable`), modify internal event detection logic, add comprehensive test coverage for edge cases, but don't expose new user-facing configuration options. The fundamental user experience (configuring autocapture dead click detection) remains unchanged while accuracy improves behind the scenes.
+
+**Summary**: Dead click detection is an internal autocapture feature where logic improvements don't require documentation updates as long as the user configuration methods and expected behavior remain consistent.
+
 ## New User-Facing Feature Identification Pattern
 
 **PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
