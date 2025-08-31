@@ -91,6 +91,20 @@ Key indicators: Changes add internal observables (`VisibilityChangeObservable`),
 
 **Summary**: Dead click detection is an internal autocapture feature where logic improvements don't require documentation updates as long as the user configuration methods and expected behavior remain consistent.
 
+## Swift Package Manager Build Configuration Pattern
+
+**PR #78** (amplitude/experiment-ios-client - Swift 6.2 manifest compiles in Swift 6 language mode) confirmed that Swift Package Manager build configuration fixes typically don't need docs updates when they:
+
+1. **Fix internal build/compilation issues** - Adds `swiftSettings: [.swiftLanguageMode(.v5)]` to Package@swift-6.2.swift to prevent Swift 6 language mode compilation errors
+2. **Are transparent to users** - Users continue using the same installation methods (Package URL, CocoaPods) without any changes to their workflow  
+3. **Don't change user-facing APIs** - No changes to SDK initialization, configuration options, or method signatures
+4. **Follow up on toolchain updates** - Resolves compatibility issues introduced by Swift toolchain version updates (follow-up to PR #76 which added Swift 6.2 manifest)
+5. **Handle language mode compatibility** - Internal Swift Package Manager configuration that manages compilation settings automatically
+
+Key indicators: Changes in `Package@swift-6.2.swift` files, `swiftSettings` configuration, Swift language mode specifications, build error fixes that don't affect the public API. The fix specifically addresses Swift Package Manager's default behavior where swift-tools-version 6.0+ compiles targets in Swift 6 language mode by default, requiring explicit v5 language mode settings for compatibility.
+
+**Summary**: Swift Package Manager configuration files (Package@swift-X.Y.swift) are internal build system files that users don't interact with directly. Changes to these files that fix compilation or build issues typically don't require documentation updates since installation instructions and usage patterns remain unchanged.
+
 ## New User-Facing Feature Identification Pattern
 
 **PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
