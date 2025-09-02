@@ -1,5 +1,6 @@
 ---
 id: 2b8c08a3-e185-4719-950d-a1696d3cee5e
+published: false
 blueprint: glossary_event
 title: 'End Session'
 platform:

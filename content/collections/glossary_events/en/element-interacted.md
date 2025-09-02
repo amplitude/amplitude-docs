@@ -1,5 +1,6 @@
 ---
 id: 73196c71-eb33-432b-8c74-6461ce45c4b5
+published: false
 blueprint: glossary_event
 title: 'Element Interacted'
 platform:

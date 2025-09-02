@@ -1,5 +1,6 @@
 ---
 id: 0ed55f9b-71f0-44ca-a124-285820fb79f5
+published: false
 blueprint: glossary_event
 title: 'Element Changed'
 description: 'Autocaptured change to form element (if enabled)'

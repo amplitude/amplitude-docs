@@ -1,5 +1,6 @@
 ---
 id: a2a874dc-bdf4-42a4-9820-cb48de4609cf
+published: false
 blueprint: glossary_event
 title: 'File Downloaded'
 platform:

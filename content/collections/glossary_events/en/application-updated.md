@@ -1,5 +1,6 @@
 ---
 id: 2708db45-537e-40f7-bfcd-007e62aa9bae
+published: false
 blueprint: glossary_event
 title: 'Application Updated'
 platform:

@@ -1,5 +1,6 @@
 ---
 id: 589bf092-c617-4e80-9345-64e669f2a2f3
+published: false
 blueprint: glossary_event
 title: 'Network Request'
 platform:

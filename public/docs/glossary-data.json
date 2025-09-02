@@ -1,540 +1,12 @@
 {
-    "generated_at": "2025-08-29T18:20:50.146424Z",
-    "events_count": 18,
-    "properties_count": 73,
+    "generated_at": "2025-09-02T17:56:13.266921Z",
+    "events_count": 4,
+    "properties_count": 74,
     "events": [
         {
-            "id": "5848c866-b674-4fbc-a295-28bee88d1de6",
-            "title": "Application Backgrounded",
-            "description": "App backgrounded",
-            "platform": [
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "d1458a63-b883-424b-96a1-b01ec9cb9729",
-            "title": "Application Installed",
-            "description": "First open after install",
-            "platform": [
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "c7a25caa-ba30-401f-9f34-5b82e6b8fe96",
-            "title": "Application Opened",
-            "description": "App foregrounded\/launched",
-            "platform": [
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "2708db45-537e-40f7-bfcd-007e62aa9bae",
-            "title": "Application Updated",
-            "description": "First open after update",
-            "platform": [
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "10b360d0-eaf3-4b88-8486-75662b1682e8",
-            "title": "Deep Link Opened",
-            "description": "Deep link open (if enabled)",
-            "platform": [
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "0ed55f9b-71f0-44ca-a124-285820fb79f5",
-            "title": "Element Changed",
-            "description": "Autocaptured change to form element (if enabled)",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "4642ac01-2e9c-4e45-a320-83e96759dba3",
-            "title": "Element Clicked",
-            "description": "Autocaptured click on page element (if enabled)",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [
-                {
-                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
-                    "title": "Event Historical Count",
-                    "description": "Nth instance before filters (user-level)",
-                    "property_type": "event",
-                    "data_type": [
-                        "number"
-                    ]
-                },
-                {
-                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
-                    "title": "Event Day of Week",
-                    "description": "Day name of event time (e.g., Monday)",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
-                    "title": "Session Replay ID",
-                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
-                    "title": "Session Recorded",
-                    "description": "True if event occurred in a recorded session",
-                    "property_type": "event",
-                    "data_type": [
-                        "boolean"
-                    ]
-                },
-                {
-                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
-                    "title": "Server Upload Delay Time",
-                    "description": "ms between server upload and event time",
-                    "property_type": "event",
-                    "data_type": [
-                        "integer"
-                    ]
-                },
-                {
-                    "id": "b67aac04-57fe-4bcc-b239-9ef9863397d4",
-                    "title": "Element Aria Label",
-                    "description": "ARIA label of element",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "929a6bd8-a609-4dc5-8763-10540dfcfae0",
-                    "title": "Element Class",
-                    "description": "CSS class(es)",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "1c1d706b-a212-4f70-a5aa-993756c78ed0",
-                    "title": "Element Hierarchy",
-                    "description": "DOM hierarchy descriptor",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "45823273-e0c5-4515-87c8-5a4f29555845",
-                    "title": "Element Href",
-                    "description": "Href for anchor elements",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "b48967bf-39c8-4478-86df-46bdcf35cdeb",
-                    "title": "Element ID",
-                    "description": "DOM id",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "530a8fbf-5258-4330-aafa-bac99ba09a38",
-                    "title": "Element Parent Label",
-                    "description": "Label of parent element",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "5699429c-a12b-4ace-97f9-0479dd8a5ed5",
-                    "title": "Element Position Left",
-                    "description": "X position",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "3d907a88-3109-4e61-a348-34d7a05d4e6b",
-                    "title": "Element Position Top",
-                    "description": "Y position",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "e8f6d2e8-daad-4ad3-93c0-9f63a6fba174",
-                    "title": "Element Selector",
-                    "description": "CSS selector",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "efd10b88-ea1c-40da-a75e-9cdb21abb68e",
-                    "title": "Element Tag",
-                    "description": "HTML tag name",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "939dc403-8add-45f2-9e6e-a97797c59d8a",
-                    "title": "Element Text",
-                    "description": "Visible text",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "95ec2d95-7d16-4ea6-a145-95b241fd9ddd",
-                    "title": "Viewport Height",
-                    "description": "Viewport height px",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "261924d1-461e-4ecf-89f8-55e007d26394",
-                    "title": "Viewport Width",
-                    "description": "Viewport width px",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                }
-            ],
-            "related_properties_count": 18
-        },
-        {
-            "id": "73196c71-eb33-432b-8c74-6461ce45c4b5",
-            "title": "Element Interacted",
-            "description": "UI control\/gesture interaction (if enabled)",
-            "platform": [
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "2b8c08a3-e185-4719-950d-a1696d3cee5e",
-            "title": "End Session",
-            "description": "Autocaptured when a session ends",
-            "platform": [
-                "web",
-                "ios",
-                "android"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "a2a874dc-bdf4-42a4-9820-cb48de4609cf",
-            "title": "File Downloaded",
-            "description": "Autocaptured when clicking a link to a file",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [
-                {
-                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
-                    "title": "Event Day of Week",
-                    "description": "Day name of event time (e.g., Monday)",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
-                    "title": "Event Historical Count",
-                    "description": "Nth instance before filters (user-level)",
-                    "property_type": "event",
-                    "data_type": [
-                        "number"
-                    ]
-                },
-                {
-                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
-                    "title": "Event Hour of Day",
-                    "description": "Hour 0–23 of event time",
-                    "property_type": "event",
-                    "data_type": []
-                },
-                {
-                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
-                    "title": "Server Upload Delay Time",
-                    "description": "ms between server upload and event time",
-                    "property_type": "event",
-                    "data_type": [
-                        "integer"
-                    ]
-                },
-                {
-                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
-                    "title": "Session Recorded",
-                    "description": "True if event occurred in a recorded session",
-                    "property_type": "event",
-                    "data_type": [
-                        "boolean"
-                    ]
-                },
-                {
-                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
-                    "title": "Session Replay ID",
-                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "95b4cc41-d640-4b53-9cfa-0ecaef7be4a4",
-                    "title": "File Extension",
-                    "description": "Downloaded file extension",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "c524cc60-ea45-457a-a155-30973ff1c53a",
-                    "title": "File Name",
-                    "description": "Downloaded file name",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "6e9d10ae-4e78-4a93-8b04-fa635908f849",
-                    "title": "Link Text",
-                    "description": "Anchor text clicked",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "f2c62c10-28e2-4ff0-902c-dc7d96b29f31",
-                    "title": "Link URL",
-                    "description": "Link URL",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                }
-            ],
-            "related_properties_count": 10
-        },
-        {
-            "id": "01bcbd6c-1006-468e-a907-040097ef0b60",
-            "title": "Form Started",
-            "description": "Autocaptured on first interaction with a form",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [
-                {
-                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
-                    "title": "Event Day of Week",
-                    "description": "Day name of event time (e.g., Monday)",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
-                    "title": "Event Historical Count",
-                    "description": "Nth instance before filters (user-level)",
-                    "property_type": "event",
-                    "data_type": [
-                        "number"
-                    ]
-                },
-                {
-                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
-                    "title": "Event Hour of Day",
-                    "description": "Hour 0–23 of event time",
-                    "property_type": "event",
-                    "data_type": []
-                },
-                {
-                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
-                    "title": "Server Upload Delay Time",
-                    "description": "ms between server upload and event time",
-                    "property_type": "event",
-                    "data_type": [
-                        "integer"
-                    ]
-                },
-                {
-                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
-                    "title": "Session Replay ID",
-                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
-                    "title": "Session Recorded",
-                    "description": "True if event occurred in a recorded session",
-                    "property_type": "event",
-                    "data_type": [
-                        "boolean"
-                    ]
-                },
-                {
-                    "id": "260b9630-3134-47ff-abf5-ee5a3b642e35",
-                    "title": "Form Destination",
-                    "description": "Form action target URL",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                }
-            ],
-            "related_properties_count": 7
-        },
-        {
-            "id": "0e94b65f-8a28-4d55-bc7b-b1cf9a564c50",
-            "title": "Form Submitted",
-            "description": "Autocaptured when a form is submitted",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [
-                {
-                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
-                    "title": "Event Day of Week",
-                    "description": "Day name of event time (e.g., Monday)",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
-                    "title": "Event Historical Count",
-                    "description": "Nth instance before filters (user-level)",
-                    "property_type": "event",
-                    "data_type": [
-                        "number"
-                    ]
-                },
-                {
-                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
-                    "title": "Event Hour of Day",
-                    "description": "Hour 0–23 of event time",
-                    "property_type": "event",
-                    "data_type": []
-                },
-                {
-                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
-                    "title": "Session Replay ID",
-                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
-                    "title": "Session Recorded",
-                    "description": "True if event occurred in a recorded session",
-                    "property_type": "event",
-                    "data_type": [
-                        "boolean"
-                    ]
-                },
-                {
-                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
-                    "title": "Server Upload Delay Time",
-                    "description": "ms between server upload and event time",
-                    "property_type": "event",
-                    "data_type": [
-                        "integer"
-                    ]
-                },
-                {
-                    "id": "260b9630-3134-47ff-abf5-ee5a3b642e35",
-                    "title": "Form Destination",
-                    "description": "Form action target URL",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
-                    ]
-                }
-            ],
-            "related_properties_count": 7
-        },
-        {
-            "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
-            "title": "Guide Tooltip Icon Viewed",
-            "description": "User saw guide tooltip icon",
-            "platform": [
-                "all"
-            ],
-            "product_area": [
-                "guides & surveys"
-            ],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
-            "title": "Guide Viewed",
-            "description": "Guide displayed to user",
+            "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+            "title": "Guide Completed",
+            "description": "Guide completed (multiple completion paths)",
             "platform": [
                 "all"
             ],
@@ -542,6 +14,236 @@
                 "guides & surveys"
             ],
             "related_properties": [
+                {
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
                 {
                     "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
                     "title": "App Type",
@@ -579,13 +281,2231 @@
                     ]
                 },
                 {
-                    "id": "d83f9668-b8d4-4a09-88d1-0a2d2e703fda",
-                    "title": "Page",
-                    "description": "Object: domain, path, title",
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
                     "property_type": "event",
                     "data_type": [
-                        "string",
-                        "object"
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                }
+            ],
+            "related_properties_count": 40,
+            "core_properties": [
+                {
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                }
+            ],
+            "core_properties_count": 26,
+            "product_specific_properties": [
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                }
+            ],
+            "product_specific_properties_count": 14,
+            "event_specific_properties": [],
+            "event_specific_properties_count": 0,
+            "property_sets": [
+                {
+                    "id": "7661aa62-ce58-4c11-85dc-d689b5cd2654",
+                    "title": "Core properties",
+                    "properties": [
+                        {
+                            "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                            "title": "event_type",
+                            "description": "The name of the event.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                            "title": "user_id",
+                            "description": "A customer-defined stable user identifier.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                            "title": "device_id",
+                            "description": "A unique identifier for the user's device.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                            "title": "session_id",
+                            "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                            "title": "event_id",
+                            "description": "Optional integer counter to disambiguate events with same timestamp.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                            "title": "insert_id",
+                            "description": "Unique deduplication key for an event.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                            "title": "time (client_event_time)",
+                            "description": "Client upload timestamp (ISO).",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                            "title": "server_upload_time",
+                            "description": "Server ingestion timestamp (ISO)",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                            "title": "amplitude_id",
+                            "description": "Amplitude’s internal numeric user identifier on the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                            "title": "app",
+                            "description": "Amplitude project\/application ID",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                            "title": "library",
+                            "description": "SDK\/library identifier used to send the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                            "title": "ip_address",
+                            "description": "IP seen at ingestion (used for GeoIP)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                            "title": "location_lat",
+                            "description": "Latitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                            "title": "location_lng",
+                            "description": "Longitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                            "title": "country",
+                            "description": "GeoIP-derived country",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                            "title": "city",
+                            "description": "GeoIP-derived city",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                            "title": "region",
+                            "description": "GeoIP-derived region\/state",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                            "title": "dma",
+                            "description": "GeoIP-derived DMA",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                            "title": "os_name",
+                            "description": "Client OS or browser name",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                            "title": "os_version",
+                            "description": "OS\/browser version",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                            "title": "platform",
+                            "description": "Platform (Web, iOS, Android, etc.)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                            "title": "device_family",
+                            "description": "Device family (e.g., iPhone, Android)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                            "title": "device_type",
+                            "description": "Specific device type\/model (when available)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                            "title": "groups",
+                            "description": "Group dictionary applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                            "title": "event_properties",
+                            "description": "Dictionary of event-scoped properties",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                            "title": "user_properties",
+                            "description": "Dictionary of user-scoped properties applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "892d19ea-e859-45b3-99be-fd828ced75bd",
+                    "title": "Guides and Surveys default",
+                    "properties": [
+                        {
+                            "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                            "title": "App Type",
+                            "description": "ios | android | react native | web",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                            "title": "Is From Debug Mode",
+                            "description": "True if sent from preview\/debug",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                            "title": "Is Last Step",
+                            "description": "True if last step in flow",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                            "title": "Key",
+                            "description": null,
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                            "title": "Lifecycle UUID",
+                            "description": "Lifecycle identifier across sessions",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                            "title": "Localization Language",
+                            "description": "Language code",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                            "title": "Step ID",
+                            "description": "Numeric step id",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                            "title": "Step Index",
+                            "description": "Zero-based index",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                            "title": "Step Title",
+                            "description": "Step Title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                            "title": "Tags",
+                            "description": "Array of tags applied",
+                            "property_type": "event",
+                            "data_type": [
+                                "array"
+                            ]
+                        },
+                        {
+                            "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                            "title": "Title",
+                            "description": "Guide\/survey title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                            "title": "Type",
+                            "description": "None=Guide; 'Survey'=survey",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                            "title": "Variant ID",
+                            "description": "Variant key for A\/B of content",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                            "title": "Version",
+                            "description": "Content version number",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+            "title": "Guide Dismissed",
+            "description": "User dismissed a guide",
+            "platform": [
+                "all"
+            ],
+            "product_area": [
+                "guides & surveys"
+            ],
+            "related_properties": [
+                {
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                }
+            ],
+            "related_properties_count": 40,
+            "core_properties": [
+                {
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                }
+            ],
+            "core_properties_count": 26,
+            "product_specific_properties": [
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                }
+            ],
+            "product_specific_properties_count": 14,
+            "event_specific_properties": [],
+            "event_specific_properties_count": 0,
+            "property_sets": [
+                {
+                    "id": "7661aa62-ce58-4c11-85dc-d689b5cd2654",
+                    "title": "Core properties",
+                    "properties": [
+                        {
+                            "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                            "title": "event_type",
+                            "description": "The name of the event.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                            "title": "user_id",
+                            "description": "A customer-defined stable user identifier.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                            "title": "device_id",
+                            "description": "A unique identifier for the user's device.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                            "title": "session_id",
+                            "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                            "title": "event_id",
+                            "description": "Optional integer counter to disambiguate events with same timestamp.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                            "title": "insert_id",
+                            "description": "Unique deduplication key for an event.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                            "title": "time (client_event_time)",
+                            "description": "Client upload timestamp (ISO).",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                            "title": "server_upload_time",
+                            "description": "Server ingestion timestamp (ISO)",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                            "title": "amplitude_id",
+                            "description": "Amplitude’s internal numeric user identifier on the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                            "title": "app",
+                            "description": "Amplitude project\/application ID",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                            "title": "library",
+                            "description": "SDK\/library identifier used to send the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                            "title": "ip_address",
+                            "description": "IP seen at ingestion (used for GeoIP)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                            "title": "location_lat",
+                            "description": "Latitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                            "title": "location_lng",
+                            "description": "Longitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                            "title": "country",
+                            "description": "GeoIP-derived country",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                            "title": "city",
+                            "description": "GeoIP-derived city",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                            "title": "region",
+                            "description": "GeoIP-derived region\/state",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                            "title": "dma",
+                            "description": "GeoIP-derived DMA",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                            "title": "os_name",
+                            "description": "Client OS or browser name",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                            "title": "os_version",
+                            "description": "OS\/browser version",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                            "title": "platform",
+                            "description": "Platform (Web, iOS, Android, etc.)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                            "title": "device_family",
+                            "description": "Device family (e.g., iPhone, Android)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                            "title": "device_type",
+                            "description": "Specific device type\/model (when available)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                            "title": "groups",
+                            "description": "Group dictionary applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                            "title": "event_properties",
+                            "description": "Dictionary of event-scoped properties",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                            "title": "user_properties",
+                            "description": "Dictionary of user-scoped properties applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "892d19ea-e859-45b3-99be-fd828ced75bd",
+                    "title": "Guides and Surveys default",
+                    "properties": [
+                        {
+                            "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                            "title": "App Type",
+                            "description": "ios | android | react native | web",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                            "title": "Is From Debug Mode",
+                            "description": "True if sent from preview\/debug",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                            "title": "Is Last Step",
+                            "description": "True if last step in flow",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                            "title": "Key",
+                            "description": null,
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                            "title": "Lifecycle UUID",
+                            "description": "Lifecycle identifier across sessions",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                            "title": "Localization Language",
+                            "description": "Language code",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                            "title": "Step ID",
+                            "description": "Numeric step id",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                            "title": "Step Index",
+                            "description": "Zero-based index",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                            "title": "Step Title",
+                            "description": "Step Title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                            "title": "Tags",
+                            "description": "Array of tags applied",
+                            "property_type": "event",
+                            "data_type": [
+                                "array"
+                            ]
+                        },
+                        {
+                            "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                            "title": "Title",
+                            "description": "Guide\/survey title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                            "title": "Type",
+                            "description": "None=Guide; 'Survey'=survey",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                            "title": "Variant ID",
+                            "description": "Variant key for A\/B of content",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                            "title": "Version",
+                            "description": "Content version number",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+            "title": "Guide Tooltip Icon Viewed",
+            "description": "User saw guide tooltip icon",
+            "platform": [
+                "all"
+            ],
+            "product_area": [
+                "guides & surveys"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0,
+            "core_properties": [],
+            "core_properties_count": 0,
+            "product_specific_properties": [],
+            "product_specific_properties_count": 0,
+            "event_specific_properties": [],
+            "event_specific_properties_count": 0,
+            "property_sets": []
+        },
+        {
+            "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+            "title": "Guide Viewed",
+            "description": "Guide displayed to user",
+            "platform": [
+                "all"
+            ],
+            "product_area": [
+                "guides & surveys"
+            ],
+            "related_properties": [
+                {
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
                     ]
                 },
                 {
@@ -679,7 +2599,7 @@
                     ]
                 },
                 {
-                    "id": "1a3b20e5-bf76-4fdb-9dff-126a5d60e989",
+                    "id": "0475c074-99f4-4156-9062-370d5579becb",
                     "title": "Source",
                     "description": "JSON why displayed: type (nudge, trigger, sdk, share_link, active, debug), properties.triggerType",
                     "property_type": "event",
@@ -688,170 +2608,751 @@
                     ]
                 }
             ],
-            "related_properties_count": 16
-        },
-        {
-            "id": "589bf092-c617-4e80-9345-64e669f2a2f3",
-            "title": "Network Request",
-            "description": "Network request tracked (if enabled)",
-            "platform": [
-                "ios"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "4beaf3fe-1fde-4959-bbc8-6671a75bcc8b",
-            "title": "Page Viewed",
-            "description": "Autocaptured on page load",
-            "platform": [
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [
+            "related_properties_count": 41,
+            "core_properties": [
                 {
-                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
-                    "title": "Event Day of Week",
-                    "description": "Day name of event time (e.g., Monday)",
+                    "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                    "title": "event_type",
+                    "description": "The name of the event.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                    "title": "user_id",
+                    "description": "A customer-defined stable user identifier.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                    "title": "device_id",
+                    "description": "A unique identifier for the user's device.",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                    "title": "session_id",
+                    "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                    "title": "event_id",
+                    "description": "Optional integer counter to disambiguate events with same timestamp.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                    "title": "insert_id",
+                    "description": "Unique deduplication key for an event.",
+                    "property_type": "core",
+                    "data_type": []
+                },
+                {
+                    "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                    "title": "time (client_event_time)",
+                    "description": "Client upload timestamp (ISO).",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                    "title": "server_upload_time",
+                    "description": "Server ingestion timestamp (ISO)",
+                    "property_type": "core",
+                    "data_type": [
+                        "timestamp"
+                    ]
+                },
+                {
+                    "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                    "title": "amplitude_id",
+                    "description": "Amplitude’s internal numeric user identifier on the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                    "title": "app",
+                    "description": "Amplitude project\/application ID",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                    "title": "library",
+                    "description": "SDK\/library identifier used to send the event",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                    "title": "ip_address",
+                    "description": "IP seen at ingestion (used for GeoIP)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                    "title": "location_lat",
+                    "description": "Latitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                    "title": "location_lng",
+                    "description": "Longitude (if provided)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                    "title": "country",
+                    "description": "GeoIP-derived country",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                    "title": "city",
+                    "description": "GeoIP-derived city",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                    "title": "region",
+                    "description": "GeoIP-derived region\/state",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                    "title": "dma",
+                    "description": "GeoIP-derived DMA",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                    "title": "os_name",
+                    "description": "Client OS or browser name",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                    "title": "os_version",
+                    "description": "OS\/browser version",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                    "title": "platform",
+                    "description": "Platform (Web, iOS, Android, etc.)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                    "title": "device_family",
+                    "description": "Device family (e.g., iPhone, Android)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                    "title": "device_type",
+                    "description": "Specific device type\/model (when available)",
+                    "property_type": "core",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                    "title": "groups",
+                    "description": "Group dictionary applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                    "title": "event_properties",
+                    "description": "Dictionary of event-scoped properties",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                },
+                {
+                    "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                    "title": "user_properties",
+                    "description": "Dictionary of user-scoped properties applied at event time",
+                    "property_type": "core",
+                    "data_type": [
+                        "dictionary"
+                    ]
+                }
+            ],
+            "core_properties_count": 26,
+            "product_specific_properties": [
+                {
+                    "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                    "title": "App Type",
+                    "description": "ios | android | react native | web",
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
-                    "title": "Event Hour of Day",
-                    "description": "Hour 0–23 of event time",
-                    "property_type": "event",
-                    "data_type": []
-                },
-                {
-                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
-                    "title": "Event Historical Count",
-                    "description": "Nth instance before filters (user-level)",
-                    "property_type": "event",
-                    "data_type": [
-                        "number"
-                    ]
-                },
-                {
-                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
-                    "title": "Server Upload Delay Time",
-                    "description": "ms between server upload and event time",
-                    "property_type": "event",
-                    "data_type": [
-                        "integer"
-                    ]
-                },
-                {
-                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
-                    "title": "Session Recorded",
-                    "description": "True if event occurred in a recorded session",
+                    "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                    "title": "Is From Debug Mode",
+                    "description": "True if sent from preview\/debug",
                     "property_type": "event",
                     "data_type": [
                         "boolean"
                     ]
                 },
                 {
-                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
-                    "title": "Session Replay ID",
-                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                    "title": "Is Last Step",
+                    "description": "True if last step in flow",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                    "title": "Key",
+                    "description": null,
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "c4374047-7e96-48e1-8e9a-a405fba492d8",
-                    "title": "Page Counter",
-                    "description": "Nth page view within session",
+                    "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                    "title": "Lifecycle UUID",
+                    "description": "Lifecycle identifier across sessions",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                    "title": "Localization Language",
+                    "description": "Language code",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                    "title": "Step ID",
+                    "description": "Numeric step id",
                     "property_type": "event",
                     "data_type": [
                         "number"
                     ]
                 },
                 {
-                    "id": "77a65178-5126-4afd-9bff-dfc4abddf8dc",
-                    "title": "Page Domain",
-                    "description": "Domain where event occurred",
+                    "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                    "title": "Step Index",
+                    "description": "Zero-based index",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                    "title": "Step Title",
+                    "description": "Step Title",
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "7e325fa6-60ca-4d47-a79e-a252c8506ad5",
-                    "title": "Page Location",
-                    "description": "Full URL including query string",
+                    "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                    "title": "Tags",
+                    "description": "Array of tags applied",
+                    "property_type": "event",
+                    "data_type": [
+                        "array"
+                    ]
+                },
+                {
+                    "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                    "title": "Title",
+                    "description": "Guide\/survey title",
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "81ea8aee-09db-4054-affd-be31ee273171",
-                    "title": "Page Path",
-                    "description": "URL path",
+                    "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                    "title": "Type",
+                    "description": "None=Guide; 'Survey'=survey",
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "8b0df410-7760-415e-9c95-db5e1fae5edc",
-                    "title": "Page Title",
-                    "description": "Document title",
+                    "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                    "title": "Variant ID",
+                    "description": "Variant key for A\/B of content",
                     "property_type": "event",
                     "data_type": [
                         "string"
                     ]
                 },
                 {
-                    "id": "4e6edea1-b4a1-40d7-87e8-f1fd4f2dc8ae",
-                    "title": "Page URL",
-                    "description": "URL without query string",
+                    "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                    "title": "Version",
+                    "description": "Content version number",
                     "property_type": "event",
                     "data_type": [
-                        "string"
-                    ]
-                },
-                {
-                    "id": "d1e41f47-07e0-4ecb-92c8-871aa64402a9",
-                    "title": "Referrer",
-                    "description": "Referring URL\/domain",
-                    "property_type": "event",
-                    "data_type": [
-                        "string"
+                        "number"
                     ]
                 }
             ],
-            "related_properties_count": 13
-        },
-        {
-            "id": "5b1e1af5-7b71-46a2-8e85-06308a9b2766",
-            "title": "Screen Viewed",
-            "description": "Screen view autocapture",
-            "platform": [
-                "ios",
-                "android"
+            "product_specific_properties_count": 14,
+            "event_specific_properties": [
+                {
+                    "id": "0475c074-99f4-4156-9062-370d5579becb",
+                    "title": "Source",
+                    "description": "JSON why displayed: type (nudge, trigger, sdk, share_link, active, debug), properties.triggerType",
+                    "property_type": "event",
+                    "data_type": [
+                        "object"
+                    ]
+                }
             ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
-        },
-        {
-            "id": "e737ff1b-5aa4-4b7a-aed1-e07b7785d379",
-            "title": "Start Session",
-            "description": "Autocaptured when a new session starts",
-            "platform": [
-                "ios",
-                "android",
-                "web"
-            ],
-            "product_area": [],
-            "related_properties": [],
-            "related_properties_count": 0
+            "event_specific_properties_count": 1,
+            "property_sets": [
+                {
+                    "id": "7661aa62-ce58-4c11-85dc-d689b5cd2654",
+                    "title": "Core properties",
+                    "properties": [
+                        {
+                            "id": "1aaa6a9d-a56e-46e3-9aca-0f4e7fd5762b",
+                            "title": "event_type",
+                            "description": "The name of the event.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c9a4b0c4-bf13-4ce7-808e-f509b8063d21",
+                            "title": "user_id",
+                            "description": "A customer-defined stable user identifier.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ae3cfd94-6409-4bc1-bb6c-96aba0cb631e",
+                            "title": "device_id",
+                            "description": "A unique identifier for the user's device.",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "65d26b8a-576a-4032-b9d1-5cfb051a00cd",
+                            "title": "session_id",
+                            "description": "Session start time in ms since epoch; shared by all events in the session; -1 = out-of-session",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "051b3a51-291a-4e36-92ec-742ca2bd2c58",
+                            "title": "event_id",
+                            "description": "Optional integer counter to disambiguate events with same timestamp.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "11fde0e3-b501-4d8d-a78a-c47ae0d44d0e",
+                            "title": "insert_id",
+                            "description": "Unique deduplication key for an event.",
+                            "property_type": "core",
+                            "data_type": []
+                        },
+                        {
+                            "id": "8921afe1-354e-4662-abcc-ccfea8a9b8a9",
+                            "title": "time (client_event_time)",
+                            "description": "Client upload timestamp (ISO).",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "4b89e815-50db-4bfd-83f5-b807a842bd39",
+                            "title": "server_upload_time",
+                            "description": "Server ingestion timestamp (ISO)",
+                            "property_type": "core",
+                            "data_type": [
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "id": "0410ec04-441f-4eae-8c3b-70dfcbbafb74",
+                            "title": "amplitude_id",
+                            "description": "Amplitude’s internal numeric user identifier on the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "6f677f75-2c74-4374-b3d3-7c9759af725a",
+                            "title": "app",
+                            "description": "Amplitude project\/application ID",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "317ce2c9-8142-46e6-b59b-a0afbbefc7f2",
+                            "title": "library",
+                            "description": "SDK\/library identifier used to send the event",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "894c5943-2a07-42f6-9026-31ecb38a164f",
+                            "title": "ip_address",
+                            "description": "IP seen at ingestion (used for GeoIP)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d699b398-dbd1-444a-ba5c-351676a28cfa",
+                            "title": "location_lat",
+                            "description": "Latitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f59a1ae7-37d6-4365-97fa-6970e003593d",
+                            "title": "location_lng",
+                            "description": "Longitude (if provided)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "13fda0c4-d773-452d-a91a-e37ad09b7552",
+                            "title": "country",
+                            "description": "GeoIP-derived country",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f3ad35a1-f8cd-4840-8f4a-a52767d1b625",
+                            "title": "city",
+                            "description": "GeoIP-derived city",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "920bedc0-fbe5-471a-b296-ae09a9744878",
+                            "title": "region",
+                            "description": "GeoIP-derived region\/state",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9f2d55c8-c248-4dfa-a4fe-1c2e701f24d8",
+                            "title": "dma",
+                            "description": "GeoIP-derived DMA",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9a138f43-eac0-460b-bac7-51e7b30b45d4",
+                            "title": "os_name",
+                            "description": "Client OS or browser name",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "971f8add-be94-4f5a-a36a-309f54507be2",
+                            "title": "os_version",
+                            "description": "OS\/browser version",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "fa83ee0a-ef02-49a5-a25c-60eaf15add29",
+                            "title": "platform",
+                            "description": "Platform (Web, iOS, Android, etc.)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "4fe6408e-9492-4b2b-a59f-dd87c0a1c398",
+                            "title": "device_family",
+                            "description": "Device family (e.g., iPhone, Android)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "664b9a3a-89b6-4298-bbd2-98cabdae18af",
+                            "title": "device_type",
+                            "description": "Specific device type\/model (when available)",
+                            "property_type": "core",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "9d03314a-0806-4960-ac76-5170c287a37d",
+                            "title": "groups",
+                            "description": "Group dictionary applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "fce15cfc-dc98-423d-882d-461c061a9fbb",
+                            "title": "event_properties",
+                            "description": "Dictionary of event-scoped properties",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        },
+                        {
+                            "id": "ace9a246-ab61-4638-ae2e-d7ec72c875b3",
+                            "title": "user_properties",
+                            "description": "Dictionary of user-scoped properties applied at event time",
+                            "property_type": "core",
+                            "data_type": [
+                                "dictionary"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "892d19ea-e859-45b3-99be-fd828ced75bd",
+                    "title": "Guides and Surveys default",
+                    "properties": [
+                        {
+                            "id": "562f84fc-6736-46c3-adbb-17e989892d9a",
+                            "title": "App Type",
+                            "description": "ios | android | react native | web",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "f25500a7-89a3-48e4-acad-288d11385272",
+                            "title": "Is From Debug Mode",
+                            "description": "True if sent from preview\/debug",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fd9f38d4-7535-42bf-80af-71130bfc1802",
+                            "title": "Is Last Step",
+                            "description": "True if last step in flow",
+                            "property_type": "event",
+                            "data_type": [
+                                "boolean"
+                            ]
+                        },
+                        {
+                            "id": "fa301598-2795-4a11-96b6-94c1409a4f62",
+                            "title": "Key",
+                            "description": null,
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "7b5e5b48-107a-4b09-9fcc-2904c1ef866e",
+                            "title": "Lifecycle UUID",
+                            "description": "Lifecycle identifier across sessions",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "d0165f0b-b4e9-4ee5-ad4a-dd657ea9fc53",
+                            "title": "Localization Language",
+                            "description": "Language code",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "02051c69-d7da-4314-a0f8-3a2c80032edd",
+                            "title": "Step ID",
+                            "description": "Numeric step id",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "f7691304-4e0c-4f22-8b48-08dfb61225a6",
+                            "title": "Step Index",
+                            "description": "Zero-based index",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        },
+                        {
+                            "id": "ac44b17b-33ae-4ffe-b695-d72bc290eee9",
+                            "title": "Step Title",
+                            "description": "Step Title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "c0e08a8f-0b39-4d49-bff0-ebfa776064c5",
+                            "title": "Tags",
+                            "description": "Array of tags applied",
+                            "property_type": "event",
+                            "data_type": [
+                                "array"
+                            ]
+                        },
+                        {
+                            "id": "5d42fc41-5985-4f20-b7df-8d133c1cdf25",
+                            "title": "Title",
+                            "description": "Guide\/survey title",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "75853e72-4024-4c02-b3c0-d49768c5ff78",
+                            "title": "Type",
+                            "description": "None=Guide; 'Survey'=survey",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "5fd9774a-a5e1-4df9-901e-c2471d5d1765",
+                            "title": "Variant ID",
+                            "description": "Variant key for A\/B of content",
+                            "property_type": "event",
+                            "data_type": [
+                                "string"
+                            ]
+                        },
+                        {
+                            "id": "ffd9aaa4-36fa-45da-b43d-18b6ecb432d9",
+                            "title": "Version",
+                            "description": "Content version number",
+                            "property_type": "event",
+                            "data_type": [
+                                "number"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

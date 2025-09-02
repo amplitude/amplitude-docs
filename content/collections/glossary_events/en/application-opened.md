@@ -1,5 +1,6 @@
 ---
 id: c7a25caa-ba30-401f-9f34-5b82e6b8fe96
+published: false
 blueprint: glossary_event
 title: 'Application Opened'
 platform:
