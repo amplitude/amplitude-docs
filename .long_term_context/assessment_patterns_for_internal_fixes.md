@@ -185,3 +185,18 @@ Key indicators: Changes in build configuration files (`rollup.config.js`, webpac
 
 **Summary**: Build system changes that improve module loading compatibility are transparent to users when they don't introduce new configuration options or change documented installation/usage patterns. Existing documentation remains accurate since user-facing behavior is unchanged.
 
+## Cross-SDK Attribution Coordination Pattern (Added 2025-09-02)
+
+**PR #1280** (amplitude/Amplitude-TypeScript - "Use original marketing cookies set by web experiment pre-redirect") established that cross-SDK coordination fixes typically don't need docs updates when they:
+
+1. **Coordinate between SDKs internally** - Uses MKTG_ORIGINAL cookie coordination between experiment-js-client and Amplitude-TypeScript without exposing coordination details to users
+2. **Fix attribution data loss during redirects** - Solves referrer loss when web experiments use `location.replace()` by preserving original campaign data
+3. **Don't change user configuration patterns** - Users continue using same attribution autocapture and web experiment setup without modification
+4. **Complete a two-part internal fix** - Works with related PR (experiment-js-client #206) to set/read coordination cookies transparently
+5. **Improve data accuracy behind-the-scenes** - Better attribution tracking happens automatically without user awareness or action required
+6. **Don't expose coordination mechanisms** - MKTG_ORIGINAL cookie usage is internal implementation detail not documented for user configuration
+
+Key indicators: Changes in `packages/analytics-client-common/src/attribution/web-attribution.ts` that add internal storage keys (`webExpStorageKey`), modify `fetchCampaign()` logic to check for coordination cookies first, and implement automatic cleanup of temporary cookies. The fix operates transparently during web experiment redirects to preserve attribution data that was previously lost due to `location.replace()` behavior.
+
+**Assessment Pattern**: Multi-SDK coordination fixes that solve data loss issues are internal improvements when they don't change user APIs, configuration options, or require user action. Users simply experience improved data accuracy without needing to modify their implementation.
+
