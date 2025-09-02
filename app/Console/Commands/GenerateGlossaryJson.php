@@ -104,12 +104,16 @@ class GenerateGlossaryJson extends Command
 
         $this->info("🎯 Found {$events->count()} published events");
 
+        // Generate search index for fast client-side search
+        $searchIndex = $this->generateSearchIndex($events);
+        
         // Generate clean output data
         $outputData = [
             'generated_at' => now()->toISOString(),
             'events_count' => $events->count(),
             'properties_count' => $allProperties->count(),
             'events' => $events->toArray(),
+            'search_index' => $searchIndex,
         ];
 
         // Write to file
@@ -126,5 +130,66 @@ class GenerateGlossaryJson extends Command
             $this->error("❌ Failed to write file: {$outputPath}");
             return 1;
         }
+    }
+
+    private function generateSearchIndex($events)
+    {
+        $terms = [];
+        $eventIndex = [];
+
+        foreach ($events as $event) {
+            $eventId = $event['id'];
+            
+            // Store lightweight event data for search results
+            $eventIndex[$eventId] = [
+                'title' => $event['title'],
+                'description' => $event['description'],
+                'platform' => $event['platform'],
+                'product_area' => $event['product_area'],
+            ];
+
+            // Index searchable text
+            $searchableText = strtolower(implode(' ', [
+                $event['title'],
+                $event['description'],
+                implode(' ', $event['platform']),
+                implode(' ', $event['product_area']),
+            ]));
+
+            // Extract words and create term index
+            $words = array_unique(preg_split('/\W+/', $searchableText, -1, PREG_SPLIT_NO_EMPTY));
+            
+            foreach ($words as $word) {
+                if (strlen($word) >= 2) { // Only index words 2+ characters
+                    if (!isset($terms[$word])) {
+                        $terms[$word] = [];
+                    }
+                    
+                    // Calculate relevance score based on where the word appears
+                    $score = 1;
+                    if (stripos($event['title'], $word) !== false) {
+                        $score += 3; // Title matches are more important
+                    }
+                    if (stripos($event['description'], $word) !== false) {
+                        $score += 2; // Description matches are moderately important
+                    }
+                    
+                    $terms[$word][] = [
+                        'id' => $eventId,
+                        'score' => $score
+                    ];
+                }
+            }
+        }
+
+        // Sort terms by frequency (most common first for faster lookups)
+        uksort($terms, function($a, $b) use ($terms) {
+            return count($terms[$b]) - count($terms[$a]);
+        });
+
+        return [
+            'terms' => $terms,
+            'events' => $eventIndex
+        ];
     }
 }
