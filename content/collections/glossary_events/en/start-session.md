@@ -1,5 +1,6 @@
 ---
 id: e737ff1b-5aa4-4b7a-aed1-e07b7785d379
+published: false
 blueprint: glossary_event
 title: 'Start Session'
 platform:

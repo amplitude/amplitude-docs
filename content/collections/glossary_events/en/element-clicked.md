@@ -1,5 +1,6 @@
 ---
 id: 4642ac01-2e9c-4e45-a320-83e96759dba3
+published: false
 blueprint: glossary_event
 title: 'Element Clicked'
 platform:

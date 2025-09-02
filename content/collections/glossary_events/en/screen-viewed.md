@@ -1,5 +1,6 @@
 ---
 id: 5b1e1af5-7b71-46a2-8e85-06308a9b2766
+published: false
 blueprint: glossary_event
 title: 'Screen Viewed'
 platform:
