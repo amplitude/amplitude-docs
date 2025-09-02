@@ -18,12 +18,12 @@ Choose from more than 20 custom formulas to plot the metrics you need. You can p
 This article explains the mechanics of custom formulas, with examples of formulas you can use right now.
 
 {{partial:admonition type='note'}}
-While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
+While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, go to [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
 ### Feature availability
 
-This feature is available to users on **Plus**, **Growth**, and **Enterprise plans** only. Go to the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on Plus, Growth, and Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Formula syntax
 
@@ -41,7 +41,7 @@ For example, the letter A in the formula `UNIQUES(A)` refers to the event `View
 
 You can also write a formula that consists of events, grouping each event by a property or properties. However, for the formula to be valid, the properties must have matching values across all events you are segmenting.
 
-For example, if you have an event called `Page Name`, the following property values would **not** match:
+For example, if you have an event called `Page Name`, the following property values would not match:
 
 * `Tutorial` and `TUTORIAL` (the matching is case sensitive)
 * `1` and `1.0` (non-matching characters)
@@ -102,7 +102,7 @@ Function formulas let you query on a mathematical function for a particular even
 
 * **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 
-The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it displays in decimal fraction form. This setup displays the percentage of active users who have triggered the `View Item Details` event.
+The `ACTIVE` formula returns the percentage of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it displays in decimal fraction form. This setup displays the percentage of active users who have triggered the `View Item Details` event.
 
 ![custom_formulas_active.png](/docs/output/img/event-segmentation/custom-formulas-active-png.png)
 
@@ -122,7 +122,7 @@ For example, the following setup shows the average revenue per active user of a 
 As described in the screenshot above, the `$:` prefix is optional. Its presence ensures the output format is a currency.
 
 {{partial:admonition type='note'}}
- ARPAU can't be used in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
+ You can't use ARPAU in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
 {{/partial:admonition}}
 
 ### AVG
@@ -343,7 +343,7 @@ For example, the following setup shows the total number of sessions by day over 
 
 **Syntax**: SEMANTICTOTALS(event, semantic)
 * **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
-* **Semantic**: Defines how totals are calculated when grouping by array properties. Supported values are:
+* **Semantic**: Defines how totals are calculated when grouped by array properties. Supported values are:
   * `UNIQUE_ARRAY_VALUES`: Counts unique events by de-duplicating array property values.
   * `ALL_VALUES`: Counts all items within the array property without de-duplication.
 
