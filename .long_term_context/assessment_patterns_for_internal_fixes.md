@@ -156,3 +156,18 @@ Key indicators: Changes in `packages/experiment-tag/src/util/cookie.ts`, interna
 
 **Assessment Pattern**: Infrastructure PRs that add user-facing configuration (env vars, config options) are NOT internal fixes and require comprehensive documentation updates, even when the core functionality (Redis usage) already exists. Users need to understand new deployment options and make informed configuration decisions.
 
+## AMD Module Loading Build Configuration Pattern (Added 2025-09-02)
+
+**PR #210** (amplitude/experiment-js-client - fix AMD module loading) confirmed that build configuration fixes typically don't need docs updates when they:
+
+1. **Change only internal build configuration** - Modifies `rollup.config.js` build settings without exposing new user APIs
+2. **Fix module loading compatibility** - Changes exports from 'named' to 'auto' and adds global mode settings for better AMD support
+3. **Don't change user installation methods** - Users continue using same npm, yarn, script tag installation patterns
+4. **Don't expose new configuration options** - No new SDK initialization parameters, methods, or user-controllable settings
+5. **Keep existing APIs unchanged** - All documented SDK methods (initialize, fetch, variant, etc.) work identically
+6. **Address internal compatibility only** - AMD module loading improvements happen behind-the-scenes without user action required
+
+Key indicators: Changes in build configuration files (`rollup.config.js`, webpack configs), module export formats (`exports: 'auto'`), global mode settings (`globals: {}`), build bundling improvements that don't affect the public API. These changes improve compatibility across different module loading systems (AMD, CommonJS, ES modules) without requiring users to modify their integration patterns.
+
+**Summary**: Build system changes that improve module loading compatibility are transparent to users when they don't introduce new configuration options or change documented installation/usage patterns. Existing documentation remains accurate since user-facing behavior is unchanged.
+
