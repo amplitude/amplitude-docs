@@ -1,12 +1,12 @@
 ---
-id: fa301598-2795-4a11-96b6-94c1409a4f62
+id: 494ea869-0ea4-4a2f-a5d8-c15fc5e7671d
 blueprint: glossary_property
-title: Key
+title: URL
 property_type: event
 data_type:
   - string
 product: 'guides & surveys'
+description: 'Article URL'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756838441
-description: 'Unique identifier for the step or recommendation'
+updated_at: 1756837586
 ---
