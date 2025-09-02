@@ -105,6 +105,20 @@ Key indicators: Changes in `Package@swift-6.2.swift` files, `swiftSettings` conf
 
 **Summary**: Swift Package Manager configuration files (Package@swift-X.Y.swift) are internal build system files that users don't interact with directly. Changes to these files that fix compilation or build issues typically don't require documentation updates since installation instructions and usage patterns remain unchanged.
 
+## Basic Auth URL Stripping Internal Privacy Fix Pattern
+
+**PR #1279** (amplitude/Amplitude-TypeScript - strip out basic auth from url) confirmed that internal privacy/security improvements typically don't need docs updates when they:
+
+1. **Improve existing documented privacy behavior** - Existing Browser SDK docs already promise `[Amplitude] URL` contains "sensitive information masked"
+2. **Affect purely internal classes** - NetworkObserver class is not mentioned in any user-facing documentation or APIs
+3. **Don't change user configuration** - Users continue using same `networkTracking: true` configuration and capture rules
+4. **Method visibility changes are for testing only** - Made `handleNetworkRequestEvent` public to enable unit testing, but method is internal to SDK
+5. **Implement better security without changing API surface** - Strips `username:password@` from URLs using `new URL()` parsing before logging network events
+
+Key indicators: Changes in `src/network-observer.ts`, URL parsing logic using `new URL()` constructor, test coverage for basic auth stripping (e.g., `https://username:password@api.example.com/data` → `https://api.example.com/data`), no changes to user-facing network tracking configuration options or event property schemas. The functionality being improved (network request URL capture) already has documented privacy promises that this change better fulfills.
+
+**Summary**: When internal implementation improvements enhance privacy/security to better fulfill existing documented promises without changing user-facing APIs or behavior, documentation updates are typically not needed.
+
 ## New User-Facing Feature Identification Pattern
 
 **PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
