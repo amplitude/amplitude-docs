@@ -250,8 +250,9 @@ class GlossaryRenderer {
   constructor() {
     this.data = null;
     this.filteredEvents = [];
-    this.openProperties = new Set();
     this.isLocal = {{ config:app:env == "local" ? "true" : "false" }};
+    this.currentExpandedEvent = null; // Track single expanded event for memory efficiency
+    this.searchTimeout = null;
     this.init();
   }
 
@@ -270,7 +271,37 @@ class GlossaryRenderer {
   async loadData() {
     const response = await fetch('/docs/glossary-data.json');
     if (!response.ok) throw new Error('Failed to fetch data');
-    this.data = await response.json();
+    const rawData = await response.json();
+    
+    // Keep only essential data for rendering, store full property data separately
+    this.data = {
+      events_count: rawData.events_count,
+      properties_count: rawData.properties_count,
+      events: rawData.events.map(event => ({
+        id: event.id,
+        title: event.title,
+        description: event.description,
+        platform: event.platform || [],
+        product_area: event.product_area || [],
+        total_count: (event.core_properties_count || 0) + 
+                    (event.product_specific_properties_count || 0) + 
+                    (event.event_specific_properties_count || 0)
+      }))
+    };
+    
+    // Store full property data separately for lazy loading (keeps memory separate)
+    this.propertiesData = new Map();
+    rawData.events.forEach(event => {
+      this.propertiesData.set(event.id, {
+        core_properties: event.core_properties || [],
+        core_properties_count: event.core_properties_count || 0,
+        product_specific_properties: event.product_specific_properties || [],
+        product_specific_properties_count: event.product_specific_properties_count || 0,
+        event_specific_properties: event.event_specific_properties || [],
+        event_specific_properties_count: event.event_specific_properties_count || 0
+      });
+    });
+    
     this.filteredEvents = this.data.events;
     this.updateStats();
   }
@@ -282,12 +313,14 @@ class GlossaryRenderer {
     if (this.filteredEvents.length === 0) {
       content.style.display = 'none';
       emptyState.style.display = 'block';
-    } else {
-      content.style.display = 'block';
-      emptyState.style.display = 'none';
-      content.innerHTML = this.filteredEvents.map(event => this.renderEvent(event)).join('');
+      return;
     }
+
+    content.style.display = 'block';
+    emptyState.style.display = 'none';
     
+    // Render minimal event cards without properties content
+    content.innerHTML = this.filteredEvents.map(event => this.renderEvent(event)).join('');
     this.updateStats();
   }
 
@@ -325,7 +358,6 @@ class GlossaryRenderer {
     }).join('');
 
     const productAreaBadges = event.product_area && event.product_area.length > 0 ? event.product_area.map(area => {
-      // Convert to title case and handle special characters
       const displayName = area.replace(/&/g, '&amp;').split(' ').map(word => 
         word.charAt(0).toUpperCase() + word.slice(1)
       ).join(' ');
@@ -336,7 +368,6 @@ class GlossaryRenderer {
       </span>`;
     }).join('') : '';
 
-    // Add floating edit link for individual events (only in local)
     const eventEditLink = this.isLocal ? `
       <a href="/cp/collections/glossary_events/entries/${event.id}/edit" 
          target="_blank"
@@ -350,12 +381,7 @@ class GlossaryRenderer {
       </a>
     ` : '';
 
-    // Calculate total properties across all three types
-    const totalProperties = (event.core_properties_count || 0) + 
-                          (event.product_specific_properties_count || 0) + 
-                          (event.event_specific_properties_count || 0);
-
-    const propertiesButton = totalProperties > 0 ? `
+    const propertiesButton = event.total_count > 0 ? `
       <button 
         onclick="glossary.toggleProperties('${event.id}')"
         id="btn-${event.id}"
@@ -364,7 +390,7 @@ class GlossaryRenderer {
         <svg id="icon-${event.id}" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-        <span id="btn-text-${event.id}">View Properties (${totalProperties})</span>
+        <span id="btn-text-${event.id}">View Properties (${event.total_count})</span>
       </button>
     ` : `<div class="text-sm text-amp-gray-500 italic flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -373,18 +399,10 @@ class GlossaryRenderer {
         No properties
       </div>`;
 
-    const expandedProperties = totalProperties > 0 ? `
-      <div id="props-${event.id}" class="properties-content bg-amp-gray-50 rounded-xl">
-        ${this.renderSeparatedProperties(event)}
-      </div>
-    ` : '';
-
     return `
       <div class="event-card bg-white rounded-xl p-6 border edit-container" data-event-title="${event.title}" id="card-${event.id}">
         ${eventEditLink}
-        <!-- Desktop Layout -->
         <div class="event-grid">
-          <!-- Event Name & Platforms -->
           <div class="flex flex-col justify-center space-y-3">
             <div>
               <h3 class="text-lg font-semibold text-amp-gray-900 mb-2">${event.title}</h3>
@@ -395,41 +413,94 @@ class GlossaryRenderer {
             </div>
           </div>
           
-          <!-- Properties Button -->
           <div class="flex lg:justify-center items-center">
             ${propertiesButton}
           </div>
           
-          <!-- Description -->
           <div class="flex items-center">
             <p class="text-amp-gray-700 leading-relaxed">${event.description}</p>
           </div>
         </div>
         
-        <!-- Mobile Layout (hidden on desktop) -->
         <div class="lg:hidden mt-4 pt-4 border-t border-amp-gray-100">
           ${propertiesButton}
         </div>
         
-        <!-- Expanded Properties -->
-        ${expandedProperties}
+        <!-- Properties container - empty until expanded -->
+        <div id="props-${event.id}" class="properties-content bg-amp-gray-50 rounded-xl"></div>
       </div>
     `;
   }
 
-  renderSeparatedProperties(event) {
-    const hasCoreProperties = event.core_properties && event.core_properties.length > 0;
-    const hasProductProperties = event.product_specific_properties && event.product_specific_properties.length > 0;
-    const hasEventProperties = event.event_specific_properties && event.event_specific_properties.length > 0;
+  toggleProperties(eventId) {
+    const props = document.getElementById(`props-${eventId}`);
+    const btn = document.getElementById(`btn-text-${eventId}`);
+    const icon = document.getElementById(`icon-${eventId}`);
+    const card = document.getElementById(`card-${eventId}`);
+    const isExpanded = props.classList.contains('expanded');
+    
+    // Close any other expanded event first (memory conservation)
+    if (this.currentExpandedEvent && this.currentExpandedEvent !== eventId) {
+      this.collapseEvent(this.currentExpandedEvent);
+    }
+    
+    if (isExpanded) {
+      this.collapseEvent(eventId);
+      this.currentExpandedEvent = null;
+    } else {
+      this.expandEvent(eventId);
+      this.currentExpandedEvent = eventId;
+    }
+  }
+
+  collapseEvent(eventId) {
+    const props = document.getElementById(`props-${eventId}`);
+    const btn = document.getElementById(`btn-text-${eventId}`);
+    const icon = document.getElementById(`icon-${eventId}`);
+    const card = document.getElementById(`card-${eventId}`);
+    const event = this.data.events.find(e => e.id === eventId);
+
+    props.classList.remove('expanded');
+    card.classList.remove('expanded');
+    btn.textContent = `View Properties (${event.total_count})`;
+    icon.style.transform = 'rotate(0deg)';
+    
+    // Clear DOM content after animation to free memory
+    setTimeout(() => {
+      if (!props.classList.contains('expanded')) {
+        props.innerHTML = '';
+      }
+    }, 300);
+  }
+
+  expandEvent(eventId) {
+    const props = document.getElementById(`props-${eventId}`);
+    const btn = document.getElementById(`btn-text-${eventId}`);
+    const icon = document.getElementById(`icon-${eventId}`);
+    const card = document.getElementById(`card-${eventId}`);
+
+    // Load properties data from separate storage
+    const eventData = this.propertiesData.get(eventId);
+    if (eventData) {
+      props.innerHTML = this.renderSeparatedProperties(eventId, eventData);
+    }
+
+    props.classList.add('expanded');
+    card.classList.add('expanded');
+    btn.textContent = 'Hide Properties';
+    icon.style.transform = 'rotate(90deg)';
+  }
+
+  renderSeparatedProperties(eventId, eventData) {
+    const hasCoreProperties = eventData.core_properties && eventData.core_properties.length > 0;
+    const hasProductProperties = eventData.product_specific_properties && eventData.product_specific_properties.length > 0;
+    const hasEventProperties = eventData.event_specific_properties && eventData.event_specific_properties.length > 0;
     
     if (!hasCoreProperties && !hasProductProperties && !hasEventProperties) {
       return '<p class="text-amp-gray-500 italic">No properties available for this event.</p>';
     }
     
-    // Create unique tab container ID for this event
-    const tabContainerId = `tabs-${event.id}`;
-    
-    // Determine default active tab (priority: Event-Specific > Product-Specific > Core)
+    const tabContainerId = `tabs-${eventId}`;
     let defaultActiveTab = '';
     if (hasEventProperties) defaultActiveTab = 'event';
     else if (hasProductProperties) defaultActiveTab = 'product';
@@ -446,7 +517,7 @@ class GlossaryRenderer {
         <div class="flex border-b border-amp-gray-200 mb-6">
     `;
     
-    // Event-Specific Properties Tab (show first if available)
+    // Event-Specific Properties Tab
     if (hasEventProperties) {
       output += `
         <button 
@@ -461,7 +532,7 @@ class GlossaryRenderer {
             </svg>
           </div>
           <span>Event-Specific</span>
-          <span class="px-2 py-1 text-xs bg-amp-light-purple-900 text-amp-light-purple-300 rounded-full">${event.event_specific_properties.length}</span>
+          <span class="px-2 py-1 text-xs bg-amp-light-purple-900 text-amp-light-purple-300 rounded-full">${eventData.event_specific_properties.length}</span>
         </button>
       `;
     }
@@ -481,7 +552,7 @@ class GlossaryRenderer {
             </svg>
           </div>
           <span>Product-Specific</span>
-          <span class="px-2 py-1 text-xs bg-amp-blue-100 text-amp-blue-700 rounded-full">${event.product_specific_properties.length}</span>
+          <span class="px-2 py-1 text-xs bg-amp-blue-100 text-amp-blue-700 rounded-full">${eventData.product_specific_properties.length}</span>
         </button>
       `;
     }
@@ -501,7 +572,7 @@ class GlossaryRenderer {
             </svg>
           </div>
           <span>Core Properties</span>
-          <span class="px-2 py-1 text-xs bg-amp-gray-100 text-amp-gray-700 rounded-full">${event.core_properties.length}</span>
+          <span class="px-2 py-1 text-xs bg-amp-gray-100 text-amp-gray-700 rounded-full">${eventData.core_properties.length}</span>
         </button>
       `;
     }
@@ -524,7 +595,7 @@ class GlossaryRenderer {
           <div class="mb-4">
             <p class="text-sm text-amp-gray-600">Properties unique to this specific event:</p>
           </div>
-          ${this.renderProperties(event.event_specific_properties)}
+          ${this.renderProperties(eventData.event_specific_properties)}
         </div>
       `;
     }
@@ -540,7 +611,7 @@ class GlossaryRenderer {
           <div class="mb-4">
             <p class="text-sm text-amp-gray-600">Properties that apply to this product area:</p>
           </div>
-          ${this.renderProperties(event.product_specific_properties)}
+          ${this.renderProperties(eventData.product_specific_properties)}
         </div>
       `;
     }
@@ -556,7 +627,7 @@ class GlossaryRenderer {
           <div class="mb-4">
             <p class="text-sm text-amp-gray-600">Standard properties available across all events:</p>
           </div>
-          ${this.renderProperties(event.core_properties)}
+          ${this.renderProperties(eventData.core_properties)}
         </div>
       `;
     }
@@ -610,32 +681,6 @@ class GlossaryRenderer {
     `;
   }
 
-  toggleProperties(eventId) {
-    const props = document.getElementById(`props-${eventId}`);
-    const btn = document.getElementById(`btn-text-${eventId}`);
-    const icon = document.getElementById(`icon-${eventId}`);
-    const card = document.getElementById(`card-${eventId}`);
-    const isExpanded = props.classList.contains('expanded');
-    
-    if (isExpanded) {
-      // Collapse
-      props.classList.remove('expanded');
-      card.classList.remove('expanded');
-      const event = this.data.events.find(e => e.id === eventId);
-      const totalProperties = (event.core_properties_count || 0) + 
-                            (event.product_specific_properties_count || 0) + 
-                            (event.event_specific_properties_count || 0);
-      btn.textContent = `View Properties (${totalProperties})`;
-      icon.style.transform = 'rotate(0deg)';
-    } else {
-      // Expand  
-      props.classList.add('expanded');
-      card.classList.add('expanded');
-      btn.textContent = 'Hide Properties';
-      icon.style.transform = 'rotate(90deg)';
-    }
-  }
-
   switchTab(containerId, tabName) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -663,11 +708,21 @@ class GlossaryRenderer {
       const value = e.target.value.toLowerCase();
       clearBtn.style.display = value ? 'flex' : 'none';
       
-      this.filteredEvents = this.data.events.filter(event =>
-        event.title.toLowerCase().includes(value)
-      );
+      // Clear previous timeout
+      if (this.searchTimeout) clearTimeout(this.searchTimeout);
       
-      this.render();
+      // Debounce search and close any expanded properties
+      this.searchTimeout = setTimeout(() => {
+        if (this.currentExpandedEvent) {
+          this.collapseEvent(this.currentExpandedEvent);
+          this.currentExpandedEvent = null;
+        }
+        
+        this.filteredEvents = value 
+          ? this.data.events.filter(event => event.title.toLowerCase().includes(value))
+          : this.data.events;
+        this.render();
+      }, 300);
     });
     
     clearBtn.addEventListener('click', () => {
