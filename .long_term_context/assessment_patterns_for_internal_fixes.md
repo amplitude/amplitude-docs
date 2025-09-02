@@ -135,3 +135,24 @@ Key indicators: Changes in `Package@swift-6.2.swift` files, `swiftSettings` conf
 
 Key indicators: Changes in `packages/experiment-tag/src/util/cookie.ts`, internal utility functions like `setMarketingCookie()`, cookie lifetime adjustments for internal data flow rather than user-configurable settings. The functionality being changed (marketing cookies) has zero mentions in existing documentation, confirming it's purely internal infrastructure.
 
+
+
+## Infrastructure PR Documentation Pattern (Added 2025-09-02)
+
+**PR #23** (amplitude/evaluation-proxy - Redis Cluster support) confirmed that infrastructure PRs adding user-facing configuration options clearly require documentation updates when they:
+
+1. **Add new environment variables** - New `AMPLITUDE_REDIS_USE_CLUSTER` environment variable that users must understand and configure
+2. **Add new YAML configuration options** - New `useCluster` field in redis configuration section that changes behavior  
+3. **Provide new deployment capabilities** - Redis Cluster support alongside existing single-node Redis requires user choice between modes
+4. **Include performance characteristics changes** - Large cohort optimizations affect user experience and deployment decisions
+5. **Follow existing configuration patterns** - New options follow established boolean flag patterns with sensible defaults
+
+**Key Documentation Areas for Infrastructure Configuration PRs:**
+- Environment variables reference tables
+- YAML/JSON configuration option tables  
+- Example configurations showing different deployment modes
+- Behavioral notes about when to use different options
+- Performance implications that affect user deployment decisions
+
+**Assessment Pattern**: Infrastructure PRs that add user-facing configuration (env vars, config options) are NOT internal fixes and require comprehensive documentation updates, even when the core functionality (Redis usage) already exists. Users need to understand new deployment options and make informed configuration decisions.
+
