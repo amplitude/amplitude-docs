@@ -1,5 +1,5 @@
 {
-    "generated_at": "2025-09-02T18:56:01.243199Z",
+    "generated_at": "2025-09-02T22:29:44.791904Z",
     "events_count": 31,
     "properties_count": 91,
     "events": [
@@ -2149,8 +2149,10 @@
         {
             "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
             "title": "Guide Step Completed",
-            "description": null,
-            "platform": [],
+            "description": "User completed a guide step",
+            "platform": [
+                "all"
+            ],
             "product_area": [
                 "guides & surveys"
             ],
@@ -10336,5 +10338,1487 @@
             ],
             "event_specific_properties_count": 1
         }
-    ]
+    ],
+    "search_index": {
+        "terms": {
+            "all": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 1
+                },
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 1
+                },
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 1
+                },
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 1
+                },
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 1
+                },
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 1
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 1
+                },
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 1
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 1
+                },
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 1
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 1
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 1
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 1
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 1
+                },
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 1
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 1
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 1
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 1
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 1
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 1
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 1
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 1
+                },
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 1
+                },
+                {
+                    "id": "e4b0b766-deac-4941-a715-95f675796300",
+                    "score": 1
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 1
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 1
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 1
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 1
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 1
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 1
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 1
+                }
+            ],
+            "guides": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 1
+                },
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 1
+                },
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 1
+                },
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 1
+                },
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 1
+                },
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 1
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 1
+                },
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 1
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 1
+                },
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 1
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 1
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 1
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 1
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 1
+                },
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 1
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 1
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 1
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 1
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 1
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 1
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 1
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 1
+                },
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 1
+                },
+                {
+                    "id": "e4b0b766-deac-4941-a715-95f675796300",
+                    "score": 1
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 1
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 1
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 1
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 1
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 1
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 1
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 1
+                }
+            ],
+            "surveys": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 1
+                },
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 1
+                },
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 1
+                },
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 1
+                },
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 1
+                },
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 1
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 1
+                },
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 1
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 1
+                },
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 1
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 1
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 1
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 1
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 1
+                },
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 1
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 1
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 1
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 1
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 1
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 1
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 1
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 1
+                },
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 1
+                },
+                {
+                    "id": "e4b0b766-deac-4941-a715-95f675796300",
+                    "score": 1
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 1
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 1
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 1
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 1
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 1
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 1
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 1
+                }
+            ],
+            "user": [
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 3
+                },
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 3
+                },
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 3
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 3
+                },
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 3
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 3
+                },
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 3
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 3
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 3
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 3
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 3
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 3
+                }
+            ],
+            "resource": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 4
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 4
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 4
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 6
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 6
+                },
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 6
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 4
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 4
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 6
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 4
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 4
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 4
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 4
+                }
+            ],
+            "center": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 4
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 4
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 4
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 6
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 6
+                },
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 6
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 4
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 4
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 6
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 4
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 4
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 4
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 4
+                }
+            ],
+            "survey": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 4
+                },
+                {
+                    "id": "e4b0b766-deac-4941-a715-95f675796300",
+                    "score": 6
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 6
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 4
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 6
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 6
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 4
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 6
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 6
+                }
+            ],
+            "guide": [
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 6
+                },
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 6
+                },
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 4
+                },
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 6
+                },
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 6
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 6
+                },
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 6
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 6
+                }
+            ],
+            "dismissed": [
+                {
+                    "id": "17512f2f-b1e6-4a9e-882a-a83c043ba927",
+                    "score": 6
+                },
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 3
+                },
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                },
+                {
+                    "id": "d94c3c74-aff6-4258-b07e-ed32352832aa",
+                    "score": 6
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 3
+                }
+            ],
+            "step": [
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 3
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 6
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 3
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 6
+                },
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 3
+                }
+            ],
+            "viewed": [
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 4
+                },
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 4
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 6
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 6
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 4
+                }
+            ],
+            "completed": [
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 6
+                },
+                {
+                    "id": "a9ba5c92-db43-4823-82e2-ea22ce984114",
+                    "score": 6
+                },
+                {
+                    "id": "e4b0b766-deac-4941-a715-95f675796300",
+                    "score": 6
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 4
+                }
+            ],
+            "link": [
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 3
+                },
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 6
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 6
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 3
+                }
+            ],
+            "closed": [
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 4
+                },
+                {
+                    "id": "607b422a-b0bc-4bea-b783-81cf41995758",
+                    "score": 6
+                },
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 6
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 4
+                }
+            ],
+            "to": [
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 3
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 3
+                },
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 3
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 3
+                }
+            ],
+            "article": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 4
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 4
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 4
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 4
+                }
+            ],
+            "content": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 3
+                },
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 3
+                },
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 3
+                },
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 3
+                }
+            ],
+            "video": [
+                {
+                    "id": "200d7a0b-c607-4b05-a7a3-423268c8a495",
+                    "score": 6
+                },
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 6
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 6
+                },
+                {
+                    "id": "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6",
+                    "score": 6
+                }
+            ],
+            "in": [
+                {
+                    "id": "ccc127dd-1491-49a4-ae0e-78a0bdcf6014",
+                    "score": 3
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 3
+                },
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 3
+                }
+            ],
+            "engaged": [
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 4
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 4
+                }
+            ],
+            "interacted": [
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 3
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 3
+                }
+            ],
+            "cta": [
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 3
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 3
+                }
+            ],
+            "focused": [
+                {
+                    "id": "c165e75e-7726-4aa5-becd-545e3ba357a1",
+                    "score": 3
+                },
+                {
+                    "id": "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae",
+                    "score": 3
+                }
+            ],
+            "rage": [
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 4
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 4
+                }
+            ],
+            "quickly": [
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 3
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 3
+                }
+            ],
+            "2s": [
+                {
+                    "id": "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca",
+                    "score": 3
+                },
+                {
+                    "id": "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a",
+                    "score": 3
+                }
+            ],
+            "snoozed": [
+                {
+                    "id": "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b",
+                    "score": 6
+                },
+                {
+                    "id": "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71",
+                    "score": 6
+                }
+            ],
+            "displayed": [
+                {
+                    "id": "20f64b52-8f94-4068-9e6a-7728a6ec8768",
+                    "score": 3
+                },
+                {
+                    "id": "589a184e-c9c1-47b3-966c-8f86c4c4e176",
+                    "score": 3
+                }
+            ],
+            "clicked": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 6
+                },
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 6
+                }
+            ],
+            "recommendation": [
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 6
+                },
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 6
+                }
+            ],
+            "on": [
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 3
+                },
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 3
+                }
+            ],
+            "error": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 4
+                }
+            ],
+            "pin": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 6
+                }
+            ],
+            "target": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 4
+                }
+            ],
+            "not": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 6
+                }
+            ],
+            "found": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 6
+                }
+            ],
+            "pinned": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 3
+                }
+            ],
+            "element": [
+                {
+                    "id": "0f4c7be1-b796-4485-bdd8-b6c99a0140d9",
+                    "score": 3
+                }
+            ],
+            "multiple": [
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 3
+                }
+            ],
+            "completion": [
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 3
+                }
+            ],
+            "paths": [
+                {
+                    "id": "8958d5ae-23fa-4dec-8349-13964cb96ab9",
+                    "score": 3
+                }
+            ],
+            "tooltip": [
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 6
+                }
+            ],
+            "icon": [
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 6
+                }
+            ],
+            "saw": [
+                {
+                    "id": "5e7d5ba0-c894-4c4f-9001-5fcbbd932947",
+                    "score": 3
+                }
+            ],
+            "within": [
+                {
+                    "id": "ebabaece-0697-4cab-8ca8-51eeff08bd81",
+                    "score": 3
+                }
+            ],
+            "copied": [
+                {
+                    "id": "6e1eb61d-88c7-4658-902a-e160c74a1470",
+                    "score": 6
+                }
+            ],
+            "scrolled": [
+                {
+                    "id": "1882bf60-74d6-4801-a5d5-ce63c5055d59",
+                    "score": 6
+                }
+            ],
+            "opened": [
+                {
+                    "id": "5cd22562-e816-4ad8-b0dc-3b29fe9f0143",
+                    "score": 6
+                }
+            ],
+            "an": [
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 3
+                }
+            ],
+            "item": [
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 3
+                }
+            ],
+            "recommendations": [
+                {
+                    "id": "de3dd676-699f-4f26-acc8-a40ab544b83f",
+                    "score": 3
+                }
+            ],
+            "set": [
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 6
+                }
+            ],
+            "shown": [
+                {
+                    "id": "3affb21e-ba60-499b-94aa-0199d66ebb3a",
+                    "score": 6
+                }
+            ],
+            "search": [
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 6
+                }
+            ],
+            "searched": [
+                {
+                    "id": "8a4d05fe-a0cf-4b8e-8143-127dea696751",
+                    "score": 3
+                }
+            ],
+            "paused": [
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 4
+                }
+            ],
+            "pressed": [
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 3
+                }
+            ],
+            "pause": [
+                {
+                    "id": "c64f26fa-e015-413e-895d-f170faa0afc8",
+                    "score": 6
+                }
+            ],
+            "played": [
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 4
+                }
+            ],
+            "presed": [
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 3
+                }
+            ],
+            "play": [
+                {
+                    "id": "4921b030-5f72-4045-a543-853dfc855ef4",
+                    "score": 6
+                }
+            ],
+            "abandoned": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 4
+                }
+            ],
+            "with": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                }
+            ],
+            "non": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                }
+            ],
+            "empty": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                }
+            ],
+            "response": [
+                {
+                    "id": "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb",
+                    "score": 3
+                }
+            ],
+            "advanced": [
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 3
+                }
+            ],
+            "next": [
+                {
+                    "id": "6885f497-fb00-414f-a53b-103a801378f4",
+                    "score": 3
+                }
+            ],
+            "submitted": [
+                {
+                    "id": "85e344f1-ca53-489c-8ea4-cdfebecb71da",
+                    "score": 6
+                }
+            ]
+        },
+        "events": {
+            "0f4c7be1-b796-4485-bdd8-b6c99a0140d9": {
+                "title": "Error: Pin Target Not Found",
+                "description": "Pinned element not found",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "8958d5ae-23fa-4dec-8349-13964cb96ab9": {
+                "title": "Guide Completed",
+                "description": "Guide completed (multiple completion paths)",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "17512f2f-b1e6-4a9e-882a-a83c043ba927": {
+                "title": "Guide Dismissed",
+                "description": "User dismissed a guide",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "c165e75e-7726-4aa5-becd-545e3ba357a1": {
+                "title": "Guide Engaged",
+                "description": "User interacted (CTA\/link\/focused)",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "a0e4b527-edb3-4f7c-b1f9-c13bd3e269ca": {
+                "title": "Guide Rage Closed",
+                "description": "Guide quickly dismissed (<~2s)",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "bbe9ef97-f47f-463e-bcc9-7439c2b68a1b": {
+                "title": "Guide Snoozed",
+                "description": "User snoozed a guide step",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "a9ba5c92-db43-4823-82e2-ea22ce984114": {
+                "title": "Guide Step Completed",
+                "description": "User completed a guide step",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "5e7d5ba0-c894-4c4f-9001-5fcbbd932947": {
+                "title": "Guide Tooltip Icon Viewed",
+                "description": "User saw guide tooltip icon",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "20f64b52-8f94-4068-9e6a-7728a6ec8768": {
+                "title": "Guide Viewed",
+                "description": "Guide displayed to user",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "ebabaece-0697-4cab-8ca8-51eeff08bd81": {
+                "title": "Resource Center Article Link Clicked",
+                "description": "Clicked link within content",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "6e1eb61d-88c7-4658-902a-e160c74a1470": {
+                "title": "Resource Center Article Link Copied",
+                "description": "Copied link to content",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "1882bf60-74d6-4801-a5d5-ce63c5055d59": {
+                "title": "Resource Center Article Scrolled",
+                "description": "Scrolled content",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "ccc127dd-1491-49a4-ae0e-78a0bdcf6014": {
+                "title": "Resource Center Article Viewed",
+                "description": "Viewed content in Resource Center",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "607b422a-b0bc-4bea-b783-81cf41995758": {
+                "title": "Resource Center Closed",
+                "description": "Closed Resource Center",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "5cd22562-e816-4ad8-b0dc-3b29fe9f0143": {
+                "title": "Resource Center Opened",
+                "description": "Opened Resource Center",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "de3dd676-699f-4f26-acc8-a40ab544b83f": {
+                "title": "Resource Center Recommendation Clicked",
+                "description": "Clicked an item in recommendations",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "3affb21e-ba60-499b-94aa-0199d66ebb3a": {
+                "title": "Resource Center Recommendation Set Shown",
+                "description": "Shown recommendation set",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "8a4d05fe-a0cf-4b8e-8143-127dea696751": {
+                "title": "Resource Center Search",
+                "description": "Searched in Resource Center",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "200d7a0b-c607-4b05-a7a3-423268c8a495": {
+                "title": "Resource Center Video Closed",
+                "description": "Closed a video",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "c64f26fa-e015-413e-895d-f170faa0afc8": {
+                "title": "Resource Center Video Paused",
+                "description": "Pressed Pause on a video",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "4921b030-5f72-4045-a543-853dfc855ef4": {
+                "title": "Resource Center Video Played",
+                "description": "Presed play on a video",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6": {
+                "title": "Resource Center Video Viewed",
+                "description": "Viewed a video",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "0cd38e84-8b1a-4c1a-a1ad-7c89dbc8fecb": {
+                "title": "Survey Abandoned",
+                "description": "User dismissed with non-empty response",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "e4b0b766-deac-4941-a715-95f675796300": {
+                "title": "Survey Completed",
+                "description": "Survey completed",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "d94c3c74-aff6-4258-b07e-ed32352832aa": {
+                "title": "Survey Dismissed",
+                "description": "User dismissed a survey",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "f779b53c-7f2a-4f28-bbaf-efa5f7afe6ae": {
+                "title": "Survey Engaged",
+                "description": "User interacted (CTA\/link\/focused)",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "dfe0fe20-6baa-4c0c-b9ad-c30cc1aee74a": {
+                "title": "Survey Rage Closed",
+                "description": "Survey quickly dismissed (<~2s)",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "9176ebc7-f737-4a48-bc2e-f2b9d1a17e71": {
+                "title": "Survey Snoozed",
+                "description": "User snoozed a survey step",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "6885f497-fb00-414f-a53b-103a801378f4": {
+                "title": "Survey Step Completed",
+                "description": "User advanced to next step",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "85e344f1-ca53-489c-8ea4-cdfebecb71da": {
+                "title": "Survey Submitted",
+                "description": "User submitted a survey step",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            },
+            "589a184e-c9c1-47b3-966c-8f86c4c4e176": {
+                "title": "Survey Viewed",
+                "description": "Survey displayed to user",
+                "platform": [
+                    "all"
+                ],
+                "product_area": [
+                    "guides & surveys"
+                ]
+            }
+        }
+    }
 }

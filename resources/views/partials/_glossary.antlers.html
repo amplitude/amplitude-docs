@@ -47,6 +47,8 @@
   <!-- Content will be populated by JavaScript -->
   <div id="glossary-content" class="space-y-4" style="display: none;"></div>
   
+
+  
   <!-- Empty State -->
   <div id="empty-state" class="text-center py-16" style="display: none;">
     <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amp-gray-100 flex items-center justify-center">
@@ -243,24 +245,41 @@
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Search loading state */
+.search-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
 </style>
 
 <script>
-class GlossaryRenderer {
+class StaticGlossaryRenderer {
   constructor() {
     this.data = null;
-    this.filteredEvents = [];
+    this.events = [];
+    this.isSearching = false;
+    this.currentQuery = '';
     this.isLocal = {{ config:app:env == "local" ? "true" : "false" }};
-    this.currentExpandedEvent = null; // Track single expanded event for memory efficiency
+    this.currentExpandedEvent = null;
+    this.propertiesCache = new Map();
     this.searchTimeout = null;
     this.init();
   }
 
   async init() {
     try {
-      await this.loadData();
-      this.render();
+      // Load everything from one consolidated file
+      const response = await fetch('/docs/glossary-data.json');
+      this.data = await response.json();
+      
+      // Set events from loaded data
+      this.events = this.data.events;
+      
       this.setupSearch();
+      this.render();
       this.hideLoading();
     } catch (error) {
       console.error('Failed to load glossary:', error);
@@ -268,49 +287,59 @@ class GlossaryRenderer {
     }
   }
 
-  async loadData() {
-    const response = await fetch('/docs/glossary-data.json');
-    if (!response.ok) throw new Error('Failed to fetch data');
-    const rawData = await response.json();
-    
-    // Keep only essential data for rendering, store full property data separately
-    this.data = {
-      events_count: rawData.events_count,
-      properties_count: rawData.properties_count,
-      events: rawData.events.map(event => ({
-        id: event.id,
-        title: event.title,
-        description: event.description,
-        platform: event.platform || [],
-        product_area: event.product_area || [],
-        total_count: (event.core_properties_count || 0) + 
-                    (event.product_specific_properties_count || 0) + 
-                    (event.event_specific_properties_count || 0)
-      }))
-    };
-    
-    // Store full property data separately for lazy loading (keeps memory separate)
-    this.propertiesData = new Map();
-    rawData.events.forEach(event => {
-      this.propertiesData.set(event.id, {
-        core_properties: event.core_properties || [],
-        core_properties_count: event.core_properties_count || 0,
-        product_specific_properties: event.product_specific_properties || [],
-        product_specific_properties_count: event.product_specific_properties_count || 0,
-        event_specific_properties: event.event_specific_properties || [],
-        event_specific_properties_count: event.event_specific_properties_count || 0
+
+
+  performSearch(query) {
+    if (!query || query.length < 2) {
+      return [];
+    }
+
+    const queryWords = query.toLowerCase().split(/\W+/).filter(word => word.length >= 2);
+    const eventScores = new Map();
+    const searchIndex = this.data.search_index;
+
+    // Find events containing query terms using the pre-built index
+    queryWords.forEach(word => {
+      // Exact matches
+      if (searchIndex.terms[word]) {
+        searchIndex.terms[word].forEach(match => {
+          const eventId = match.id;
+          const score = match.score;
+          eventScores.set(eventId, (eventScores.get(eventId) || 0) + score);
+        });
+      }
+
+      // Partial matches for autocomplete-like behavior
+      Object.keys(searchIndex.terms).forEach(indexWord => {
+        if (indexWord.startsWith(word) && indexWord !== word) {
+          searchIndex.terms[indexWord].forEach(match => {
+            const eventId = match.id;
+            const score = Math.floor(match.score / 2); // Lower score for partial matches
+            eventScores.set(eventId, (eventScores.get(eventId) || 0) + score);
+          });
+        }
       });
     });
-    
-    this.filteredEvents = this.data.events;
-    this.updateStats();
+
+    // Convert to results array - get full event data from this.data.events
+    const eventIds = Array.from(eventScores.keys());
+    const results = this.data.events
+      .filter(event => eventIds.includes(event.id))
+      .map(event => ({
+        ...event,
+        score: eventScores.get(event.id)
+      }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 50); // Limit results
+
+    return results;
   }
 
   render() {
     const content = document.getElementById('glossary-content');
     const emptyState = document.getElementById('empty-state');
 
-    if (this.filteredEvents.length === 0) {
+    if (this.events.length === 0) {
       content.style.display = 'none';
       emptyState.style.display = 'block';
       return;
@@ -319,27 +348,9 @@ class GlossaryRenderer {
     content.style.display = 'block';
     emptyState.style.display = 'none';
     
-    // Render minimal event cards without properties content
-    content.innerHTML = this.filteredEvents.map(event => this.renderEvent(event)).join('');
+    // Render events efficiently
+    content.innerHTML = this.events.map(event => this.renderEvent(event)).join('');
     this.updateStats();
-  }
-
-  updateStats() {
-    const statsContainer = document.getElementById('stats');
-    const eventCount = document.getElementById('event-count');
-    const filteredCount = document.getElementById('filtered-count');
-    
-    if (this.data) {
-      statsContainer.style.display = 'flex';
-      eventCount.textContent = `${this.data.events.length} events`;
-      
-      if (this.filteredEvents.length !== this.data.events.length) {
-        filteredCount.textContent = `${this.filteredEvents.length} filtered`;
-        filteredCount.style.display = 'inline-block';
-      } else {
-        filteredCount.style.display = 'none';
-      }
-    }
   }
 
   renderEvent(event) {
@@ -381,7 +392,12 @@ class GlossaryRenderer {
       </a>
     ` : '';
 
-    const propertiesButton = event.total_count > 0 ? `
+    // Calculate total properties from the three separate counts
+    const totalProperties = (event.core_properties_count || 0) + 
+                           (event.product_specific_properties_count || 0) + 
+                           (event.event_specific_properties_count || 0);
+
+    const propertiesButton = totalProperties > 0 ? `
       <button 
         onclick="glossary.toggleProperties('${event.id}')"
         id="btn-${event.id}"
@@ -390,7 +406,7 @@ class GlossaryRenderer {
         <svg id="icon-${event.id}" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-        <span id="btn-text-${event.id}">View Properties (${event.total_count})</span>
+        <span id="btn-text-${event.id}">View Properties (${totalProperties})</span>
       </button>
     ` : `<div class="text-sm text-amp-gray-500 italic flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -432,7 +448,7 @@ class GlossaryRenderer {
     `;
   }
 
-  toggleProperties(eventId) {
+  async toggleProperties(eventId) {
     const props = document.getElementById(`props-${eventId}`);
     const btn = document.getElementById(`btn-text-${eventId}`);
     const icon = document.getElementById(`icon-${eventId}`);
@@ -448,7 +464,7 @@ class GlossaryRenderer {
       this.collapseEvent(eventId);
       this.currentExpandedEvent = null;
     } else {
-      this.expandEvent(eventId);
+      await this.expandEvent(eventId);
       this.currentExpandedEvent = eventId;
     }
   }
@@ -458,11 +474,16 @@ class GlossaryRenderer {
     const btn = document.getElementById(`btn-text-${eventId}`);
     const icon = document.getElementById(`icon-${eventId}`);
     const card = document.getElementById(`card-${eventId}`);
-    const event = this.data.events.find(e => e.id === eventId);
+    const event = this.events.find(e => e.id === eventId);
+
+    // Calculate total properties from the three separate counts
+    const totalProperties = (event.core_properties_count || 0) + 
+                           (event.product_specific_properties_count || 0) + 
+                           (event.event_specific_properties_count || 0);
 
     props.classList.remove('expanded');
     card.classList.remove('expanded');
-    btn.textContent = `View Properties (${event.total_count})`;
+    btn.textContent = `View Properties (${totalProperties})`;
     icon.style.transform = 'rotate(0deg)';
     
     // Clear DOM content after animation to free memory
@@ -473,22 +494,60 @@ class GlossaryRenderer {
     }, 300);
   }
 
-  expandEvent(eventId) {
+  async expandEvent(eventId) {
     const props = document.getElementById(`props-${eventId}`);
     const btn = document.getElementById(`btn-text-${eventId}`);
     const icon = document.getElementById(`icon-${eventId}`);
     const card = document.getElementById(`card-${eventId}`);
 
-    // Load properties data from separate storage
-    const eventData = this.propertiesData.get(eventId);
+    // Show loading state
+    props.innerHTML = this.createLoadingSpinner();
+    props.classList.add('expanded');
+
+    // Load properties data from consolidated data
+    const eventData = await this.loadEventProperties(eventId);
     if (eventData) {
       props.innerHTML = this.renderSeparatedProperties(eventId, eventData);
+    } else {
+      props.innerHTML = '<p class="text-red-500 p-4">Failed to load properties</p>';
     }
 
-    props.classList.add('expanded');
     card.classList.add('expanded');
     btn.textContent = 'Hide Properties';
     icon.style.transform = 'rotate(90deg)';
+  }
+
+  async loadEventProperties(eventId) {
+    // Check cache first
+    if (this.propertiesCache.has(eventId)) {
+      return this.propertiesCache.get(eventId);
+    }
+
+    try {
+      // Find the event in our already-loaded data
+      const eventData = this.data.events.find(event => event.id === eventId);
+      
+      if (eventData) {
+        // Cache the result
+        this.propertiesCache.set(eventId, eventData);
+        return eventData;
+      } else {
+        console.error(`Event ${eventId} not found in loaded data`);
+        return null;
+      }
+    } catch (error) {
+      console.error(`Failed to load properties for event ${eventId}:`, error);
+      return null;
+    }
+  }
+
+  createLoadingSpinner() {
+    return `
+      <div class="flex items-center justify-center p-8">
+        <div class="animate-spin rounded-full h-6 w-6 border-2 border-amp-gray-200 border-t-amp-blue-500"></div>
+        <span class="ml-2 text-amp-gray-600">Loading properties...</span>
+      </div>
+    `;
   }
 
   renderSeparatedProperties(eventId, eventData) {
@@ -705,32 +764,76 @@ class GlossaryRenderer {
     const clearBtn = document.getElementById('clear-btn');
     
     input.addEventListener('input', (e) => {
-      const value = e.target.value.toLowerCase();
+      const value = e.target.value.trim();
       clearBtn.style.display = value ? 'flex' : 'none';
-      
+
       // Clear previous timeout
       if (this.searchTimeout) clearTimeout(this.searchTimeout);
-      
-      // Debounce search and close any expanded properties
+
+      // Show loading state for search
+      if (value.length >= 2) {
+        document.getElementById('glossary-content').classList.add('search-loading');
+      }
+
+      // Debounce search requests (faster since it's client-side)
       this.searchTimeout = setTimeout(() => {
-        if (this.currentExpandedEvent) {
-          this.collapseEvent(this.currentExpandedEvent);
-          this.currentExpandedEvent = null;
+        if (value.length >= 2) {
+          const results = this.performSearch(value);
+          this.displaySearchResults(results, value);
+        } else if (value.length === 0) {
+          this.clearSearch();
         }
-        
-        this.filteredEvents = value 
-          ? this.data.events.filter(event => event.title.toLowerCase().includes(value))
-          : this.data.events;
-        this.render();
-      }, 300);
+        document.getElementById('glossary-content').classList.remove('search-loading');
+      }, 150);
     });
-    
+
     clearBtn.addEventListener('click', () => {
       input.value = '';
       clearBtn.style.display = 'none';
-      this.filteredEvents = this.data.events;
-      this.render();
+      this.clearSearch();
     });
+  }
+
+  displaySearchResults(results, query) {
+    this.events = results;
+    this.isSearching = true;
+    this.currentQuery = query;
+    this.render();
+    this.updateStats(`${results.length} search results for "${query}"`);
+  }
+
+  clearSearch() {
+    this.isSearching = false;
+    this.currentQuery = '';
+    this.events = this.data.events; // Reset to all events
+    this.render();
+  }
+
+
+
+  updateStats(customMessage = null) {
+    const statsContainer = document.getElementById('stats');
+    const eventCount = document.getElementById('event-count');
+    const filteredCount = document.getElementById('filtered-count');
+    
+    if (customMessage) {
+      statsContainer.style.display = 'flex';
+      eventCount.textContent = customMessage;
+      filteredCount.style.display = 'none';
+    } else if (this.data && this.events.length > 0) {
+      statsContainer.style.display = 'flex';
+      
+      if (this.isSearching) {
+        eventCount.textContent = `${this.events.length} results`;
+        filteredCount.textContent = `of ${this.data.events_count} total events`;
+        filteredCount.style.display = 'inline-block';
+      } else {
+        eventCount.textContent = `${this.data.events_count} events`;
+        filteredCount.style.display = 'none';
+      }
+    } else {
+      statsContainer.style.display = 'none';
+    }
   }
 
   hideLoading() {
@@ -746,6 +849,6 @@ class GlossaryRenderer {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  window.glossary = new GlossaryRenderer();
+  window.glossary = new StaticGlossaryRenderer();
 });
 </script>

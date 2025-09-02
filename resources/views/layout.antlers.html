@@ -78,7 +78,8 @@
     }
   </style>
   {{partial:partials/_amplitude}}
-
+<!-- Preload consolidated glossary data -->
+<link rel="preload" href="/docs/glossary-data.json" as="fetch" crossorigin>
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
   <div x-data="{ sidebarOpen: false }" class="container prose">
