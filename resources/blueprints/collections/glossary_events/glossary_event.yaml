@@ -61,15 +61,15 @@ tabs:
               display: Description
               localizable: false
           -
-            handle: default_properties
+            handle: core_properties
             field:
               collections:
                 - property_sets
               type: entries
-              display: 'Default Properties'
+              display: 'Core Properties'
               localizable: false
               width: 50
-              default: '7661aa62-ce58-4c11-85dc-d689b5cd2654'  # ID of "Core properties" set
+              default: 7661aa62-ce58-4c11-85dc-d689b5cd2654
               instructions: 'Core properties are automatically applied. Add additional sets if needed.'
           -
             handle: related_properties
@@ -82,6 +82,15 @@ tabs:
               width: 50
               query_scopes:
                 - non_core_properties
+          -
+            handle: product_properties
+            field:
+              collections:
+                - property_sets
+              type: entries
+              display: 'Product properties'
+              localizable: false
+              width: 50
   sidebar:
     display: Sidebar
     sections:

@@ -25,7 +25,7 @@
           id="search-input"
           type="text" 
           placeholder="Search events..." 
-          class="block w-full pl-12 pr-12 py-3 border border-amp-gray-200 rounded-lg bg-white text-amp-gray-900 placeholder-amp-gray-500 focus:outline-none focus:ring-2 focus:ring-amp-blue-500 focus:border-amp-blue-500 transition-colors"
+          class="search-input block w-full pl-12 pr-12 py-3 border border-amp-gray-200 rounded-lg bg-white text-amp-gray-900 placeholder-amp-gray-500 focus:outline-none focus:ring-2 focus:ring-amp-blue-500 focus:border-amp-blue-500 transition-colors"
         >
         <div id="clear-btn" class="absolute inset-y-0 right-0 pr-4 flex items-center" style="display: none;">
           <button class="text-amp-gray-400 hover:text-amp-gray-600 transition-colors p-1 rounded">
@@ -41,7 +41,7 @@
   <!-- Loading State -->
   <div id="loading" class="flex flex-col items-center justify-center py-16">
     <div class="animate-spin rounded-full h-8 w-8 border-2 border-amp-gray-200 border-t-amp-blue-500"></div>
-    <span class="mt-3 text-amp-gray-600">Loading events...</span>
+    <span class="mt-3 text-amp-gray-600 loading-text">Loading events...</span>
   </div>
 
   <!-- Content will be populated by JavaScript -->
@@ -57,7 +57,7 @@
     <h3 class="text-lg font-medium text-amp-gray-900 mb-2">No events found</h3>
     <p class="text-amp-gray-600">Try adjusting your search terms</p>
   </div>
-  
+   
   <!-- Error State -->
   <div id="error" class="text-center py-16" style="display: none;">
     <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-error-red-light flex items-center justify-center">
@@ -114,6 +114,8 @@
   margin-top: 1.5rem;
   padding: 1.5rem;
   border: 1px solid #DEDFE2;
+  border-radius: 0.75rem;
+  background-color: #FAFBFC;
 }
 
 /* Button Hover Effects */
@@ -147,6 +149,32 @@
 
 .loading-text {
   animation: pulse-blue 1.5s ease-in-out infinite;
+}
+
+/* Tab System Styles */
+.tab-button {
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-button.active {
+  border-bottom-color: #1e61f0;
+  color: #1e61f0;
+  background-color: rgba(30, 97, 240, 0.05);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Grid */
@@ -250,7 +278,7 @@ class GlossaryRenderer {
   render() {
     const content = document.getElementById('glossary-content');
     const emptyState = document.getElementById('empty-state');
-    
+
     if (this.filteredEvents.length === 0) {
       content.style.display = 'none';
       emptyState.style.display = 'block';
@@ -322,7 +350,12 @@ class GlossaryRenderer {
       </a>
     ` : '';
 
-    const propertiesButton = event.related_properties_count > 0 ? `
+    // Calculate total properties across all three types
+    const totalProperties = (event.core_properties_count || 0) + 
+                          (event.product_specific_properties_count || 0) + 
+                          (event.event_specific_properties_count || 0);
+
+    const propertiesButton = totalProperties > 0 ? `
       <button 
         onclick="glossary.toggleProperties('${event.id}')"
         id="btn-${event.id}"
@@ -331,7 +364,7 @@ class GlossaryRenderer {
         <svg id="icon-${event.id}" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-        <span id="btn-text-${event.id}">View Properties (${event.related_properties_count})</span>
+        <span id="btn-text-${event.id}">View Properties (${totalProperties})</span>
       </button>
     ` : `<div class="text-sm text-amp-gray-500 italic flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -340,13 +373,9 @@ class GlossaryRenderer {
         No properties
       </div>`;
 
-    const expandedProperties = event.related_properties_count > 0 ? `
+    const expandedProperties = totalProperties > 0 ? `
       <div id="props-${event.id}" class="properties-content bg-amp-gray-50 rounded-xl">
-        <div class="mb-4">
-          <h4 class="text-lg font-medium text-amp-gray-900 mb-2">Event Properties</h4>
-          <p class="text-sm text-amp-gray-600">The following properties are available for this event:</p>
-        </div>
-        ${this.renderProperties(event.related_properties)}
+        ${this.renderSeparatedProperties(event)}
       </div>
     ` : '';
 
@@ -386,6 +415,158 @@ class GlossaryRenderer {
         ${expandedProperties}
       </div>
     `;
+  }
+
+  renderSeparatedProperties(event) {
+    const hasCoreProperties = event.core_properties && event.core_properties.length > 0;
+    const hasProductProperties = event.product_specific_properties && event.product_specific_properties.length > 0;
+    const hasEventProperties = event.event_specific_properties && event.event_specific_properties.length > 0;
+    
+    if (!hasCoreProperties && !hasProductProperties && !hasEventProperties) {
+      return '<p class="text-amp-gray-500 italic">No properties available for this event.</p>';
+    }
+    
+    // Create unique tab container ID for this event
+    const tabContainerId = `tabs-${event.id}`;
+    
+    // Determine default active tab (priority: Event-Specific > Product-Specific > Core)
+    let defaultActiveTab = '';
+    if (hasEventProperties) defaultActiveTab = 'event';
+    else if (hasProductProperties) defaultActiveTab = 'product';
+    else if (hasCoreProperties) defaultActiveTab = 'core';
+    
+    let output = `
+      <div class="property-tabs" id="${tabContainerId}">
+        <div class="mb-4">
+          <h4 class="text-lg font-medium text-amp-gray-900 mb-2">Event Properties</h4>
+          <p class="text-sm text-amp-gray-600">Properties are organized by their scope and application:</p>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <div class="flex border-b border-amp-gray-200 mb-6">
+    `;
+    
+    // Event-Specific Properties Tab (show first if available)
+    if (hasEventProperties) {
+      output += `
+        <button 
+          class="tab-button flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 border-transparent hover:text-amp-blue-600 hover:border-amp-blue-300 transition-colors ${defaultActiveTab === 'event' ? 'active' : ''}"
+          data-tab="event"
+          data-container="${tabContainerId}"
+          onclick="glossary.switchTab('${tabContainerId}', 'event')"
+        >
+          <div class="w-4 h-4 rounded-full bg-amp-light-purple-400 flex items-center justify-center">
+            <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span>Event-Specific</span>
+          <span class="px-2 py-1 text-xs bg-amp-light-purple-900 text-amp-light-purple-300 rounded-full">${event.event_specific_properties.length}</span>
+        </button>
+      `;
+    }
+    
+    // Product-Specific Properties Tab
+    if (hasProductProperties) {
+      output += `
+        <button 
+          class="tab-button flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 border-transparent hover:text-amp-blue-600 hover:border-amp-blue-300 transition-colors ${defaultActiveTab === 'product' ? 'active' : ''}"
+          data-tab="product"
+          data-container="${tabContainerId}"
+          onclick="glossary.switchTab('${tabContainerId}', 'product')"
+        >
+          <div class="w-4 h-4 rounded-full bg-amp-blue-600 flex items-center justify-center">
+            <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <span>Product-Specific</span>
+          <span class="px-2 py-1 text-xs bg-amp-blue-100 text-amp-blue-700 rounded-full">${event.product_specific_properties.length}</span>
+        </button>
+      `;
+    }
+    
+    // Core Properties Tab
+    if (hasCoreProperties) {
+      output += `
+        <button 
+          class="tab-button flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 border-transparent hover:text-amp-blue-600 hover:border-amp-blue-300 transition-colors ${defaultActiveTab === 'core' ? 'active' : ''}"
+          data-tab="core"
+          data-container="${tabContainerId}"
+          onclick="glossary.switchTab('${tabContainerId}', 'core')"
+        >
+          <div class="w-4 h-4 rounded-full bg-amp-gray-600 flex items-center justify-center">
+            <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 12l2 2 4-4"></path>
+            </svg>
+          </div>
+          <span>Core Properties</span>
+          <span class="px-2 py-1 text-xs bg-amp-gray-100 text-amp-gray-700 rounded-full">${event.core_properties.length}</span>
+        </button>
+      `;
+    }
+    
+    output += `
+        </div>
+        
+        <!-- Tab Content -->
+        <div class="tab-content">
+    `;
+    
+    // Event-Specific Properties Content
+    if (hasEventProperties) {
+      output += `
+        <div 
+          class="tab-panel ${defaultActiveTab === 'event' ? 'active' : ''}" 
+          data-tab="event"
+          data-container="${tabContainerId}"
+        >
+          <div class="mb-4">
+            <p class="text-sm text-amp-gray-600">Properties unique to this specific event:</p>
+          </div>
+          ${this.renderProperties(event.event_specific_properties)}
+        </div>
+      `;
+    }
+    
+    // Product-Specific Properties Content
+    if (hasProductProperties) {
+      output += `
+        <div 
+          class="tab-panel ${defaultActiveTab === 'product' ? 'active' : ''}" 
+          data-tab="product"
+          data-container="${tabContainerId}"
+        >
+          <div class="mb-4">
+            <p class="text-sm text-amp-gray-600">Properties that apply to this product area:</p>
+          </div>
+          ${this.renderProperties(event.product_specific_properties)}
+        </div>
+      `;
+    }
+    
+    // Core Properties Content
+    if (hasCoreProperties) {
+      output += `
+        <div 
+          class="tab-panel ${defaultActiveTab === 'core' ? 'active' : ''}" 
+          data-tab="core"
+          data-container="${tabContainerId}"
+        >
+          <div class="mb-4">
+            <p class="text-sm text-amp-gray-600">Standard properties available across all events:</p>
+          </div>
+          ${this.renderProperties(event.core_properties)}
+        </div>
+      `;
+    }
+    
+    output += `
+        </div>
+      </div>
+    `;
+    
+    return output;
   }
 
   renderProperties(properties) {
@@ -440,7 +621,11 @@ class GlossaryRenderer {
       // Collapse
       props.classList.remove('expanded');
       card.classList.remove('expanded');
-      btn.textContent = `View Properties (${this.data.events.find(e => e.id === eventId).related_properties_count})`;
+      const event = this.data.events.find(e => e.id === eventId);
+      const totalProperties = (event.core_properties_count || 0) + 
+                            (event.product_specific_properties_count || 0) + 
+                            (event.event_specific_properties_count || 0);
+      btn.textContent = `View Properties (${totalProperties})`;
       icon.style.transform = 'rotate(0deg)';
     } else {
       // Expand  
@@ -449,6 +634,25 @@ class GlossaryRenderer {
       btn.textContent = 'Hide Properties';
       icon.style.transform = 'rotate(90deg)';
     }
+  }
+
+  switchTab(containerId, tabName) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    // Remove active class from all tabs and panels in this container
+    const allButtons = container.querySelectorAll('.tab-button');
+    const allPanels = container.querySelectorAll('.tab-panel');
+    
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    allPanels.forEach(panel => panel.classList.remove('active'));
+    
+    // Add active class to selected tab and panel
+    const activeButton = container.querySelector(`[data-tab="${tabName}"]`);
+    const activePanel = container.querySelector(`[data-tab="${tabName}"].tab-panel`);
+    
+    if (activeButton) activeButton.classList.add('active');
+    if (activePanel) activePanel.classList.add('active');
   }
 
   setupSearch() {

@@ -1,0 +1,19 @@
+---
+id: c64f26fa-e015-413e-895d-f170faa0afc8
+blueprint: glossary_event
+title: 'Resource Center Video Paused'
+product_area:
+  - 'guides & surveys'
+platform:
+  - all
+description: 'Pressed Pause on a video'
+core_properties:
+  - 7661aa62-ce58-4c11-85dc-d689b5cd2654
+related_properties:
+  - fae16c5f-829d-4525-a06c-e5f9f06ebbf8
+  - 494ea869-0ea4-4a2f-a5d8-c15fc5e7671d
+  - 069be744-05b0-40a0-8f68-3c3f6396c922
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1756838187
+duplicated_from: b3dbcc2a-8bb8-4a08-bcb1-d7fb86377ee6
+---
