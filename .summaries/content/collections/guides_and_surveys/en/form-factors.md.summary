@@ -1,20 +1,18 @@
-**Summary:** This documentation covers the five form factors available for Amplitude Guides and Surveys (Modal, Popover, Pin, Tooltip, Banner, and Checklist), detailing their customization properties including position settings, multi-step configurations, and interactive blocks (buttons, images, videos) with specific actions like visit link, click element, show guide/survey, and run callback functions.
+**Summary:** This documentation covers the five form factors available for Amplitude Guides and Surveys (Modal, Popover, Pin, Tooltip, Banner, and Checklist), detailing their customization properties including position settings, layout options, z-index controls, text animation, and interactive blocks (buttons, images, videos) with specific button actions like visit link, click element, show guide/survey, and callback functions.
 
 **Keywords:**
-- Amplitude Guides and Surveys
-- form factors (Modal, Popover, Pin, Tooltip, Banner, Checklist)
-- position settings (top right, bottom left, center, auto positioning)
-- content layout and actions bar
-- z-index customization
-- text animation and typewriter effect
-- click outside to close
-- show mask and background overlay
-- advanced trigger functionality
-- multi-step guide configuration
-- button CTA actions (visit link, click element, show guide, show survey, run callback)
-- image and video blocks (YouTube, Vimeo, Loom, Vidyard, MP4)
-- sticky banner display
-- inline vs overlay display styles
-- target element positioning
-- callback function integration
-- SDK instrumentation
+- Amplitude Guides Surveys form factors
+- Modal Popover Pin Tooltip Banner Checklist
+- Content layout Actions bar z-index
+- Text animation typewriter effect
+- Click outside to close Show mask
+- Open by default Advanced trigger
+- Position alignment target element
+- Button CTA actions visit link click element
+- Show guide show survey go back go forward
+- Run callback register callback
+- Submit app store rating request
+- Image Movie blocks YouTube Vimeo Loom Vidyard MP4
+- Sticky banner Display style inline overlay
+- Multi-step guides contextual help
+- Web mobile platform tags
