@@ -7,9 +7,9 @@ source: 'https://www.docs.developers.amplitude.com/experiment/general/experiment
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716917513
 ---
-Amplitude Experiment's *end-to-end* platform relies on two events, [assignment](#assignment-events) and [exposure](#exposure-events), and an [experiment user property](#experiment-user-properties) per experiment, to enable experiment analysis, monitoring, and debugging.
+Amplitude Experiment's end-to-end platform relies on two events, [assignment](#assignment-events) and [exposure](#exposure-events), and an [experiment user property](#experiment-user-properties) for each experiment. These events and properties enable experiment analysis, monitoring, and debugging.
 
-Amplitude recommends you to use **Amplitude defined exposure or assignment events** as your experiment's exposure event to ensure the correct [experiment user property](#experiment-user-properties) is set when the exposure is ingested. Custom exposure events may be ingested before the experiment user property is set, which don't count in experiment analysis.
+Use the Amplitude-defined exposure or assignment events as your experiment's exposure event to ensure that the correct [experiment user property](#experiment-user-properties) is set when the exposure is ingested. Custom exposure events might be ingested before the experiment user property is set and, therefore, won't count in experiment analysis.
 
 <table>
     <tbody>
@@ -20,16 +20,16 @@ Amplitude recommends you to use **Amplitude defined exposure or assignment event
         <tr>
             <td>
                 <ul>
-                <li>Tracked when Experiment <strong>assigns</strong> a user as a result of a remote evaluation  (<code>fetch()</code>) or server-side local evaluation (<code>evaluate()</code>).</li>
-                <li>Contains assignment information for <b>one or more</b> flags and experiments.</li>
+                <li>Tracked when Experiment assigns a user because of a remote evaluation  (<code>fetch()</code>) or server-side local evaluation (<code>evaluate()</code>).</li>
+                <li>Contains assignment information for one or more flags and experiments.</li>
                 <li>Useful for monitoring and debugging, or as an exposure heuristic for server-side experiments.</li>
                 <li>Sets experiment user properties for all evaluated flags or experiments.</li>
                 </ul>
             </td>
             <td>
                 <ul>
-                <li>Tracked when the user is <b>exposed</b> to a variant, generally on the client-side when a variant is accessed from the SDK (<code>variant()</code>).</li>
-                <li>Contains exposure information for a <b>single</b> flag or experiment.</li>
+                <li>Tracked when the user is exposed to a variant. Typically on the client-side when a variant is accessed from the SDK (<code>variant()</code>).</li>
+                <li>Contains exposure information for a single flag or experiment.</li>
                 <li>Used as the exposure event for client-side experiments.</li>
                 <li>Sets the experiment user property for the exposed flags or experiment</li>
                 </ul>
@@ -52,7 +52,7 @@ The format of the user property is, `[Experiment] <flag_key>` and the value is t
 
 ## Assignment events
 
-Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/feature-experiment/remote-evaluation), or [local evaluation](/docs/feature-experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a **heuristic exposure event** for server-side experiments, to **monitor** a flag or experiment while active, and to **debug** any issues. For server-side experiments where client-side exposure tracking isn't possible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
+Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/feature-experiment/remote-evaluation), or [local evaluation](/docs/feature-experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a heuristic exposure event for server-side experiments, to monitor a flag or experiment while active, and to debug any issues. For server-side experiments where client-side exposure tracking isn't possible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
 
 You shouldn't need to track assignment events manually.
 
@@ -161,3 +161,17 @@ Client-side Experiment SDKs support automatic exposure tracking through an expos
 ### Exposure tracking example
 
 {{partial:partials/experiment/interactive-exposure-tracking-table}}
+
+### Proxy exposure events
+
+Proxy exposure events are a selected analytics event used to model traffic and baseline conversion before an experiment runs. They primarily power the duration estimator and related calculations. They aren’t the same as actual exposure or assignment events used during analysis after an experiment is live.
+
+A proxy exposure event is a normal analytics event you choose that best represents when a user may be exposed to your experiment experience. Amplitude uses historical traffic to estimate experiment duration and set baselines when the flag is inactive. The [duration estimator](/docs/feature-experiment/workflow/experiment-estimate-duration) explicitly relies on the proxy exposure event’s recent traffic. The “control mean” baseline is computed based on users who completed the proxy exposure event over the previous seven days prior to starting.
+
+The activity log tracks when proxy exposure is changed so that configuration changes are visible in the flag history.
+
+In analysis parameters, proxy exposure events are stored as a single `ExposureEvent`-shaped object (distinct from the array of actual exposure events). 
+
+{{partial:admonition type="tip" heading="Proxy events with Experiment SDK"}}
+If you use Experiment SDKs and call `.variant()` or configure the ExposureTrackingProvider, Amplitude can automatically track exposure events. Alternatively, you can call `exposure()` to explicitly log exposures using the cached variant. However, this doesn't automatically create or set the proxy exposure. You must select a normal analytics event as your proxy. 
+{{/partial:admonition}}
