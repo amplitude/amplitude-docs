@@ -506,7 +506,12 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
 
 
-See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+Review [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+
+{{partial:admonition type="Warning" heading=""}}
+If you want Autocapture to include page views for multi-step forms that dynamically update and, therefore, do not refresh the URL with each step, you must use hash elements for Single Page Applications (SPAs). Autocapture does not capture the individual dynamic components automatically. Tools such as Google Tag Manager (GTM) can help you [apply hashes to the URL](https://support.google.com/tagmanager/answer/7679410?hl=en) of the SPA between steps. Autocapture can then ingest the different steps as users proceed through the form.
+
+{{/partial:admonition}}
 
 ### Track sessions
 
