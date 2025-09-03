@@ -1,0 +1,14 @@
+# DWH docs
+content/collections/source-catalog/en/amazon-s3.md @amplitude/dwh
+content/collections/source-catalog/en/google-cloud-storage.md @amplitude/dwh
+content/collections/source-catalog/en/databricks.md @amplitude/dwh
+content/collections/source-catalog/en/ga4.md @amplitude/dwh
+content/collections/source-catalog/en/bigquery.md @amplitude/dwh
+content/collections/source-catalog/en/snowflake.md @amplitude/dwh
+content/collections/destination-catalog/en/snowflake-data-share.md @amplitude/dwh
+content/collections/destination-catalog/en/snowflake.md @amplitude/dwh
+content/collections/destination-catalog/en/amazon-s3.md @amplitude/dwh
+content/collections/destination-catalog/en/google-bigquery.md @amplitude/dwh
+content/collections/destination-catalog/en/amazon-redshift.md @amplitude/dwh
+content/collections/destination-catalog/en/azure-blob-storage.md @amplitude/dwh
+content/collections/destination-catalog/en/google-cloud-storage.md @amplitude/dwh
