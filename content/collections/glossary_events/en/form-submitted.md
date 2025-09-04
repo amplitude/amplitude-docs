@@ -1,13 +1,12 @@
 ---
 id: 0e94b65f-8a28-4d55-bc7b-b1cf9a564c50
-published: false
 blueprint: glossary_event
 title: 'Form Submitted'
 platform:
   - web
 description: 'Autocaptured when a form is submitted'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756412255
+updated_at: 1757015568
 related_properties:
   - 240f93a3-1244-414f-8f30-8ecfd8be83ba
   - 78703d32-ec59-437c-9d75-fcb069a38fd4
@@ -16,4 +15,6 @@ related_properties:
   - c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc
   - 6ce15d74-a5e0-464f-a82e-fd0d8b602134
   - 260b9630-3134-47ff-abf5-ee5a3b642e35
+core_properties:
+  - 7661aa62-ce58-4c11-85dc-d689b5cd2654
 ---

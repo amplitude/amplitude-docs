@@ -2,7 +2,7 @@
   <div 
     :class="[
       'event-card bg-white rounded-xl p-6 border edit-container transition-all duration-200',
-      isExpanded ? 'expanded border-amp-blue-500 shadow-lg' : 'border-amp-gray-200 hover:border-amp-blue-500 hover:shadow-md hover:-translate-y-0.5'
+      isExpanded ? 'expanded border-amp-blue-500 shadow-lg' : 'border-amp-gray-200 hover:border-amp-blue-500 hover:shadow-md'
     ]"
     :data-event-id="event.id" 
     :data-event-title="event.title"
@@ -107,9 +107,6 @@ const totalProperties = computed(() => {
   transition: all 0.2s ease-in-out;
 }
 
-.event-card.expanded {
-  transform: translateY(0);
-}
 
 /* Responsive Grid */
 @media (min-width: 1024px) {

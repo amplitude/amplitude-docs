@@ -1,6 +1,5 @@
 ---
 id: b260b71b-1117-4fa7-ba66-703491531345
-published: false
 blueprint: glossary_event
 title: 'Resource Center Article Closed'
 product_area:
