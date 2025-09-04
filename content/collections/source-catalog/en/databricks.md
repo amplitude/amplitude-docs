@@ -283,4 +283,4 @@ Depending on your company's network policy, you may need to add the following IP
         - The specific table version has been vacuumed and corresponding data files have been deleted.
     - **Solution**:
         - Create a new source which starts importing from the latest table version.
-        - If you want to reuse the same source and skip the table version, reach out to Amplitude support for help.
+        - If you want to reuse the same source and skip the table version, contact [Amplitude Support](https://gethelp.amplitude.com).
