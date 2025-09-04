@@ -278,7 +278,7 @@ Depending on your company's network policy, you may need to add the following IP
 8. ```
    [DELTA_MISSING_CHANGE_DATA] Error getting change data for range [2 , 3] as change data was not recorded for version [2]
    ```
-    - **Root cause**: This means Amplitude wasn't able to retrieve data from table for a specific version range. It occurs because:
+    - **Root cause**: This means Amplitude couldn't retrieve data from the table for a specific version range. It occurs because:
         - Change data feed(CDF) was enabled after the specific table version, so the change data does not exist for the range.
         - The specific table version has been vacuumed and corresponding data files have been deleted.
     - **Solution**:
