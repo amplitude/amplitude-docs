@@ -23,6 +23,10 @@ const props = defineProps({
     type: Number,
     default: 0
   },
+  propertiesCount: {
+    type: Number,
+    default: 0
+  },
   filteredCount: {
     type: Number,
     default: 0
@@ -34,11 +38,28 @@ const props = defineProps({
   currentQuery: {
     type: String,
     default: ''
+  },
+  viewType: {
+    type: String,
+    default: 'events', // 'events' or 'properties'
+    validator: (value) => ['events', 'properties'].includes(value)
   }
 })
 
+const totalCount = computed(() => {
+  return props.viewType === 'properties' ? props.propertiesCount : props.eventsCount
+})
+
+const entityName = computed(() => {
+  return props.viewType === 'properties' ? 'properties' : 'events'
+})
+
+const entityNameSingular = computed(() => {
+  return props.viewType === 'properties' ? 'property' : 'event'
+})
+
 const shouldShow = computed(() => {
-  return props.eventsCount > 0 || props.filteredCount > 0
+  return totalCount.value > 0 || props.filteredCount > 0
 })
 
 const primaryText = computed(() => {
@@ -47,13 +68,13 @@ const primaryText = computed(() => {
   } else if (props.isSearching) {
     return `${props.filteredCount} results`
   } else {
-    return `${props.eventsCount} events`
+    return `${totalCount.value} ${entityName.value}`
   }
 })
 
 const secondaryText = computed(() => {
-  if (props.isSearching && props.eventsCount > 0) {
-    return `of ${props.eventsCount} total events`
+  if (props.isSearching && totalCount.value > 0) {
+    return `of ${totalCount.value} total ${entityName.value}`
   }
   return ''
 })
