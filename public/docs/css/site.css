@@ -1156,6 +1156,11 @@ video {
   margin-top: auto;
 }.box-border {
   box-sizing: border-box;
+}.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }.block {
   display: block;
 }.inline-block {
@@ -1245,11 +1250,16 @@ video {
   width: 2rem;
 }.w-80 {
   width: 20rem;
+}.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }.w-full {
   width: 100%;
 }.w-max {
   width: -moz-max-content;
   width: max-content;
+}.min-w-0 {
+  min-width: 0px;
 }.min-w-\[712px\] {
   min-width: 712px;
 }.max-w-12 {
@@ -1413,6 +1423,10 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }.self-start {
   align-self: flex-start;
 }.self-end {
@@ -1488,6 +1502,9 @@ video {
 }.border-amp-light-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(193 224 254 / var(--tw-border-opacity));
+}.border-amp-light-purple-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(66 43 220 / var(--tw-border-opacity));
 }.border-amp-light-purple-500 {
   --tw-border-opacity: 1;
   border-color: rgb(201 194 245 / var(--tw-border-opacity));
@@ -1543,6 +1560,9 @@ video {
 }.bg-amp-light-blue-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 249 255 / var(--tw-bg-opacity));
+}.bg-amp-light-purple-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 12 75 / var(--tw-bg-opacity));
 }.bg-amp-light-purple-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(41 25 151 / var(--tw-bg-opacity));
@@ -1812,6 +1832,12 @@ video {
 }.text-amp-light-purple-300 {
   --tw-text-opacity: 1;
   color: rgb(66 43 220 / var(--tw-text-opacity));
+}.text-amp-light-purple-700 {
+  --tw-text-opacity: 1;
+  color: rgb(222 218 249 / var(--tw-text-opacity));
+}.text-amp-light-purple-800 {
+  --tw-text-opacity: 1;
+  color: rgb(233 230 251 / var(--tw-text-opacity));
 }.text-amp-light-purple-900 {
   --tw-text-opacity: 1;
   color: rgb(244 243 253 / var(--tw-text-opacity));
@@ -2753,6 +2779,9 @@ line-height: 1.25rem;
 }.hover\:text-amp-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(90 94 104 / var(--tw-text-opacity));
+}.hover\:text-amp-gray-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(57 58 64 / var(--tw-text-opacity));
 }.hover\:text-amp-red-800:hover {
   --tw-text-opacity: 1;
   color: rgb(251 186 186 / var(--tw-text-opacity));

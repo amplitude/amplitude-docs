@@ -33,22 +33,29 @@ const props = defineProps({
   query: {
     type: String,
     default: ''
+  },
+  entityType: {
+    type: String,
+    default: 'events',
+    validator: (value) => ['events', 'properties'].includes(value)
   }
 })
 
 const emit = defineEmits(['clear-search'])
 
+const entityName = computed(() => props.entityType)
+
 const title = computed(() => {
-  return props.isSearching ? 'No events found' : 'No events available'
+  return props.isSearching ? `No ${entityName.value} found` : `No ${entityName.value} available`
 })
 
 const message = computed(() => {
   if (props.isSearching && props.query) {
-    return `No events match "${props.query}". Try adjusting your search terms.`
+    return `No ${entityName.value} match "${props.query}". Try adjusting your search terms.`
   } else if (props.isSearching) {
     return 'Try adjusting your search terms or filters'
   } else {
-    return 'There are no events to display'
+    return `There are no ${entityName.value} to display`
   }
 })
 </script>

@@ -54,6 +54,7 @@ tabs:
               localizable: false
               width: 50
               multiple: true
+              listable: true
           -
             handle: description
             field:

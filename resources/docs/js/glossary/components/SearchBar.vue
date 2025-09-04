@@ -9,9 +9,8 @@
       <input 
         v-model="searchValue"
         type="text" 
-        placeholder="Search events..." 
+        :placeholder="placeholder" 
         class="search-input block w-full pl-12 pr-12 py-3 border border-amp-gray-200 rounded-lg bg-white text-amp-gray-900 placeholder-amp-gray-500 focus:outline-none focus:ring-2 focus:ring-amp-blue-500 focus:border-amp-blue-500 transition-colors"
-        @input="handleInput"
         @keydown.escape="handleClear"
       >
       <div 
@@ -39,6 +38,10 @@ const props = defineProps({
   query: {
     type: String,
     default: ''
+  },
+  placeholder: {
+    type: String,
+    default: 'Search events...'
   }
 })
 
@@ -52,10 +55,6 @@ const searchValue = computed({
     emit('update:query', value)
   }
 })
-
-const handleInput = () => {
-  // The v-model already handles the input, this is for additional side effects if needed
-}
 
 const handleClear = () => {
   emit('update:query', '')
