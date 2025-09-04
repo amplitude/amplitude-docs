@@ -38,7 +38,7 @@ tabs:
               type: select
               display: 'Data type'
               localizable: false
-              width: 50
+              width: 33
               options:
                 -
                   key: string
@@ -83,7 +83,15 @@ tabs:
               type: select
               display: Product
               localizable: false
-              width: 50
+              width: 33
+          -
+            handle: autocapture
+            field:
+              type: toggle
+              display: Autocapture
+              instructions: 'Is this property part of Autocaptured events?'
+              localizable: false
+              width: 33
           -
             handle: description
             field:
