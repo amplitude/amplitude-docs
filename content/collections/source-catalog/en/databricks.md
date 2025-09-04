@@ -274,3 +274,13 @@ Depending on your company's network policy, you may need to add the following IP
       - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or is restarting during the connection attempt.
       - Review cluster auto-start and auto-termination settings to ensure clusters can restart quickly when needed.
       - Monitor for resource limits in Databricks (such as concurrent connection caps or cluster capacity issues) and adjust quotas if necessary.
+
+8. ```
+   [DELTA_MISSING_CHANGE_DATA] Error getting change data for range [2 , 3] as change data was not recorded for version [2]
+   ```
+    - **Root cause**: This means Amplitude couldn't retrieve data from the table for a specific version range. It occurs because:
+        - Change data feed(CDF) was enabled after the specific table version, so the change data doesn't exist for the range.
+        - The specific table version has been vacuumed and corresponding data files have been deleted.
+    - **Solution**:
+        - Create a new source which starts importing from the latest table version.
+        - If you want to reuse the same source and skip the table version, contact [Amplitude Support](https://gethelp.amplitude.com).
