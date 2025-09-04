@@ -76,19 +76,17 @@ import com.amplitude.android.Configuration
 import com.amplitude.android.plugins.SessionReplayPlugin
 
 // Initialize Amplitude Analytics SDK instance
-val amplitude = Amplitude(Configuration(
-    apiKey = API_KEY,
-    context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(sessions = true),
-))
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = API_KEY,
+        context = applicationContext
+    )
+)
 
 // Create and Install Session Replay Plugin
 // Recording will be handled automatically
 val sessionReplayPlugin = SessionReplayPlugin(sampleRate = 1.0) 
 amplitude.add(sessionReplayPlugin)
-
-// Send replay data to the server
-amplitude.flush()
 ```
 {{/partial:tab}}
 {{partial:tab name="Legacy SDK"}}
