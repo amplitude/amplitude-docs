@@ -92,3 +92,6 @@ public/docs/js/site.js
 
 markdown-issues.json
 .vscode/mcp.json
+
+# Don't commit the glossary data json
+public/docs/glossary-data.json
