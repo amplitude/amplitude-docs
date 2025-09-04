@@ -50,3 +50,32 @@ This pattern can be referenced for similar manual documentation requests involvi
 - Always cross-reference with detailed SDK documentation for completeness
 
 This pattern can be referenced for similar manual documentation requests involving missing event documentation or autocapture table updates.
+
+# Key Learnings from Swift SDK Network Tracking PR Documentation
+
+## Major SDK Feature Enhancement Pattern
+PR #320 (amplitude/Amplitude-Swift) demonstrated a significant user-facing feature addition that required comprehensive documentation updates:
+
+### New API Surface Documentation Requirements:
+1. **Multiple new configuration structures** - URLPattern enum, CaptureHeader struct, CaptureBody struct
+2. **Enhanced existing API constructors** - CaptureRule with expanded parameters
+3. **New event properties** - Request/response headers and body content
+4. **Security considerations** - Important for APIs that capture sensitive data like headers/bodies
+5. **SPI (System Programming Interface) usage** - Required @_spi(NetworkTracking) import for enhanced features
+
+### Documentation Strategy for Complex SDK Features:
+- **Start with existing structure** - Built upon existing NetworkTrackingOptions documentation
+- **Use enhanced/marked additions** - Clearly marked new parameters with '**Enhanced:**' labels  
+- **Provide comprehensive examples** - Both basic and advanced usage patterns
+- **Include security warnings** - Critical for features that can expose sensitive data
+- **Document all new event properties** - Users need to know what data will be captured
+
+### Key Documentation Areas:
+- Enhanced configuration tables showing new parameters
+- New struct/enum documentation with code examples
+- Updated event properties tables
+- Security and privacy considerations section
+- Comprehensive code examples showing both basic and advanced usage
+
+This pattern should be applied to similar SDK enhancement PRs that add significant new user-facing configuration capabilities.
+
