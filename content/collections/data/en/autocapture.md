@@ -85,9 +85,17 @@ To prevent capturing the text, add the attribute `data-amp-mask` to the element.
 ```html
 <div data-amp-mask>John Doe</div>
 ```
-The above example still tracks the click on the button. However, the text content "John Doe" doesn't appear in the Autocapture data. This exclusion works on the SDK level. 
+The above example still tracks the click on the div. However, the text content "John Doe" doesn't appear in the Autocapture data. This exclusion works on the SDK level. 
 
-Precise text works recursively so that any text contained in an element is masked such as: `*****`. 
+Precise text works recursively so that any text contained in an element is masked. For example: 
+
+```html
+<div data-am-mask>
+  John Doe
+  <div>Jane Doe</div>
+  </div>
+```
+In the above example, both names are masked with `*****`.
 
 #### Email address masking
 
@@ -117,7 +125,7 @@ For example, if you include the following attribute:
 
 ```html
 <div data-amp-mask-attributes="name">
-     <span customername="John D">Account</span>
+     <span name="John D">Account</span>
 </div>
 ```
 on a button or link, the name "John D" isn't captured. 
