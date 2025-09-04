@@ -1,13 +1,12 @@
 ---
 id: 4642ac01-2e9c-4e45-a320-83e96759dba3
-published: false
 blueprint: glossary_event
 title: 'Element Clicked'
 platform:
   - web
 description: 'Autocaptured click on page element (if enabled)'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756412661
+updated_at: 1757015497
 related_properties:
   - 78703d32-ec59-437c-9d75-fcb069a38fd4
   - 240f93a3-1244-414f-8f30-8ecfd8be83ba
@@ -27,4 +26,6 @@ related_properties:
   - 939dc403-8add-45f2-9e6e-a97797c59d8a
   - 95ec2d95-7d16-4ea6-a145-95b241fd9ddd
   - 261924d1-461e-4ecf-89f8-55e007d26394
+core_properties:
+  - 7661aa62-ce58-4c11-85dc-d689b5cd2654
 ---

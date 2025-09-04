@@ -62,7 +62,7 @@
         </div>
 
         <!-- Properties Filter -->
-        <div class="filter-group">
+        <!-- <div class="filter-group">
           <label class="block text-sm font-medium text-amp-gray-700 mb-2">Properties</label>
           <div class="flex flex-wrap gap-2">
             <button
@@ -99,7 +99,7 @@
               Without Properties
             </button>
           </div>
-        </div>
+        </div> -->
 
         <!-- Clear Filters -->
         <div v-if="hasActiveFilters" class="filter-group">

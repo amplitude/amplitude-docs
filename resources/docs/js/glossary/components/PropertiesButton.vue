@@ -2,7 +2,7 @@
   <button 
     v-if="totalProperties > 0"
     @click="$emit('click')"
-    class="properties-btn inline-flex items-center gap-2 text-amp-blue-600 text-sm font-medium hover:text-amp-blue-800 focus:outline-none underline-offset-2 hover:underline transition-all duration-200 hover:translate-x-0.5"
+    class="properties-btn inline-flex items-center gap-2 text-amp-blue-600 text-sm font-medium hover:text-amp-blue-800 focus:outline-none underline-offset-2 hover:underline transition-all duration-200"
   >
     <svg 
       :class="[
