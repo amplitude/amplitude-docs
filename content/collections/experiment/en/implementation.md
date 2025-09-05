@@ -23,7 +23,7 @@ The pre-targeting steps may decide the evaluated variant before targeting segmen
 A flag may be active or inactive. Inactive flags never return a variant as a result of evaluation.
 
 {{partial:admonition type="note" heading="Best practice"}}
-For simple on/off flags, Amplitude recommends using the [all users segment](#all-users-segment) allocation set to either 100% or 0% rather than using the activation toggle to control traffic. The activation toggle should be used to sunset a feature that has been fully rolled out or rolled back after the flag's instrumentation has been removed.
+For simple on/off flags, Amplitude recommends using the [all users segment](#all-users-segment) allocation set to either 100% or 0% rather than using the Activate/Deactivate flag button to control traffic. Use the Activate/Deactivate button to remove flags for a feature that has been fully launched. Or, use the button to remove a flag after the flag's instrumentation has been removed.
 {{/partial:admonition}}
 
 ### Flag dependencies
@@ -44,7 +44,9 @@ In this example, 50% of evaluated users will be assigned a variant for Flag-2.
 
 ### Individual inclusions
 
-Inclusions allow you to force bucket specific users (identified by either their user ID or device ID) into a variant. This feature is primarily used for development purposes. For example, if you are the developer on a new multi-variate feature and you want to test each variant in your application, add your user or device ID to the inclusions and refresh the application.
+Inclusions let you to force-bucket specific users (identified by either their user ID or device ID) into a variant. This feature is primarily used for development purposes. 
+
+For example, if you are the developer on a new multi-variate feature and you want to test each variant in your application, add your user or device ID to the *Targeting > Testers* section of your experiment and refresh the application.
 
 ### Sticky bucketing
 
@@ -72,7 +74,7 @@ Amplitude Experiment's bucketing is consistent based on the user, bucketing key,
 
 | <div class='med-big-column'> Input </div> | Description |
 | --- | --- |
-| Bucketing Key | The key which determines which user property value to use as the bucketing value. The bucketing value is what's actually used as input to the [hashing](#hashing) function. |
+| Bucketing Key | The key which determines which user property value to use as the bucketing value. The bucketing value is what's actually used as input to the [hashing](#hashing) function. By default, the bucketing key is set to bucket by User ID. |
 | Bucketing Salt | A string which is concatenated to the bucketing value before [hashing](#hashing). The bucketing salt is randomly generated when the flag or experiment is created and used indefinitely unless explicitly updated. |
 | Allocation | The percentage of all users included in the segment who should receive a variant. Used in the [allocation bucketing](#allocation-bucketing) step. |
 | Variant Weights | A weight given for each variant. Applied only to the percentage included by the allocation percentage. Used in the [variant bucketing](#variant-bucketing) step. |
