@@ -4,7 +4,7 @@ This plan should be synced with the progress that I make. I should check off ite
 
 ## Initial Assessment   
 - [ ] Run `tree -a -L 2 -I .git`. This'll serve two purposes: 1. to show me the files I've created or have been created for me in .long_term_context/ while processing other triggers and 2. to show me the top-level docs repo structure, so I understand the overall structure of the docs repo.
-- [ ] Read `.long_term_context/product_overview.md` and `.long_term_context/doc_workflow/client_instructions.md` to understand the product and client preferences. If there are other files in .long_term_context/ that I think I should read before diving into research, dig in there too.   
+- [ ] Read `.long_term_context/product_knowledge/product_overview.md` and `.long_term_context/doc_workflow/client_instructions.md` to understand the product and client preferences. If there are other files in .long_term_context/ that I think I should read before diving into research, dig in there too.   
 - [ ] Review the content of the trigger event, including files in `$WORKING_NOTES/trigger_assets/`, updating the plan along the way with notes about what might need to be updated.   
 
 ## Context Review
