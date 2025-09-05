@@ -22,7 +22,7 @@ Your throttling settings apply globally to all guides or surveys in the list. Yo
 ##### To set the throttling for Guides or Surveys
 
 1. Go to *Guides and Surveys* and then select either *Guides* or *Surveys*.
-2. Click the **settings** icon for the list of artifacts.
+2. Click the **Settings** icon for the list of artifacts.
 3. Turn throttling **On**.
 4. Set the throttling. You can set:
     - **Limit**: The number of guides or surveys that appear.
@@ -40,8 +40,8 @@ Control the delay between when sequential guides can trigger for the same user. 
 ##### To set time between sequential guides
 
 1. Go to *Guides and Surveys* and then select either *Guides* or *Surveys*.
-2. Click the **settings** icon for the list of artifacts.
-3. In the **Time between** section, enter the delay period.
+2. Click the **Settings** icon for the list of artifacts.
+3. In the Time Between section, enter the delay period.
 4. Select the time unit from the dropdown:
     - Minute
     - Hour
@@ -63,36 +63,36 @@ Before using advanced throttles, ensure your guides and surveys have [tags](/doc
 ##### To set up advanced throttles
 
 1. Go to *Guides and Surveys* and then select either *Guides* or *Surveys*.
-2. Click the **settings** icon for the list of artifacts.
-3. In the **Advanced Throttles** section, click **Add throttle**.
+2. Click the **Settings** icon for the list of artifacts.
+3. In the Advanced Throttles section, click **Add throttle**.
 4. Configure your advanced throttle:
-    - **Limit**: The maximum number of guides/surveys for this tag group
-    - **Tags**: Select one or more tags to group guides/surveys
-    - **Period**: Choose the time period (Day/Week/Month/Session)
+    - **Limit**: The maximum number of guides/surveys for this tag group.
+    - **Tags**: Select one or more tags to group guides/surveys.
+    - **Period**: Choose the time period (Day/Week/Month/Session).
 5. Click **Save Changes**.
 
 ### Advanced throttle examples
 
-**Campaign throttling**: Limit `product-launch` tagged guides to 3 per day
-**Feature throttling**: Limit `onboarding` tagged content to 5 per session
-**Team coordination**: Limit `growth-team` guides to 2 per week
+**Campaign throttling**: Limit `product-launch` tagged guides to three (3) for each day.
+**Feature throttling**: Limit `onboarding` tagged content to five (5) for each session.
+**Team coordination**: Limit `growth-team` guides to two (2) for each week.
 
 {{partial:admonition type="tip" heading=""}}
-Advanced throttles work alongside your global throttling settings. The most restrictive limit applies. For example, if global throttling allows 10 guides per day but an advanced throttle limits `onboarding` guides to 2 per day, users will see at most 2 onboarding guides daily.
+Advanced throttles work alongside your global throttling settings. The most restrictive limit applies. For example, if global throttling allows 10 guides each day but an advanced throttle limits `onboarding` guides to two (2) each day, users receive, at most, two (2) onboarding guides daily.
 {{/partial:admonition}}
 
 ### Multiple advanced throttles
 
 You can create multiple advanced throttles for different tag combinations. This enables sophisticated throttling strategies:
 
-- Urgent announcements: `urgent` + `announcement` tags - 1 per day
-- Onboarding flow: `onboarding` tag - 3 per session
-- Feature updates: `feature-update` tag - 2 per week
+- **Urgent announcements**: `urgent` + `announcement` tags - 1 each day
+- **Onboarding flow**: `onboarding` tag - 3 each session
+- **Feature updates**: `feature-update` tag - 2 each week
 
 ### Managing advanced throttles
 
-To edit or remove an advanced throttle:
+##### To edit or remove an advanced throttle:
 
-1. Navigate to the throttling settings
-2. Find the advanced throttle you want to modify
-3. Click the edit icon to modify settings or the remove icon to delete
+1. Navigate to the throttling settings.
+2. Find the advanced throttle you want to modify.
+3. Click the **Edit** icon to modify settings or the **Remove** icon to delete the throttle.
