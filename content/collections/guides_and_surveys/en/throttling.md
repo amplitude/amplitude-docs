@@ -89,9 +89,3 @@ You can create multiple advanced throttles for different tag combinations. This 
 - **Onboarding flow**: `onboarding` tag - 3 each session
 - **Feature updates**: `feature-update` tag - 2 each week
 
-
-##### To edit or remove an advanced throttle:
-
-1. Navigate to the throttling settings.
-2. Find the advanced throttle you want to modify.
-3. Click the **Edit** icon to modify settings or the **Remove** icon to delete the throttle.
