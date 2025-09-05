@@ -119,6 +119,21 @@ Key indicators: Changes in `src/network-observer.ts`, URL parsing logic using `n
 
 **Summary**: When internal implementation improvements enhance privacy/security to better fulfill existing documented promises without changing user-facing APIs or behavior, documentation updates are typically not needed.
 
+## Cross-SDK Integration Coordination Pattern
+
+**PR #321** (amplitude/Amplitude-Swift - expose trackAppOpenedEvent for Flutter SDK) confirmed that cross-SDK integration changes typically don't need docs updates when they:
+
+1. **Enable cross-platform SDK coordination** - Made `trackAppOpenedEvent` function public solely for Flutter SDK to call, not for Swift SDK users
+2. **Address platform-specific reliability issues** - Solves Flutter iOS lifecycle tracking unreliability on cold starts through direct function access
+3. **Don't change user-facing behavior** - Swift SDK users continue using same `appLifecycles` autocapture configuration without modification
+4. **Keep existing documentation accurate** - All current lifecycle tracking docs remain correct since user configuration and behavior is unchanged
+5. **Are purely internal coordination mechanisms** - The exposed function serves Flutter SDK's internal needs rather than providing new Swift SDK features
+6. **Don't require user action or awareness** - Cross-SDK coordination happens transparently without users needing to understand or configure the integration
+
+Key indicators: Changes in SDK utility classes (like `DefaultEventUtils.swift`) that change method visibility (`internal` to `public`) specifically for other SDKs to consume, PR descriptions mentioning Flutter SDK integration or coordination, no changes to user-facing configuration APIs, existing autocapture documentation continues to apply without modification.
+
+**Summary**: Cross-SDK integration changes that expose internal functions for platform coordination don't require documentation updates when they're transparent to users and don't change how users configure or interact with the individual SDKs.
+
 ## New User-Facing Feature Identification Pattern
 
 **PR #1264** (amplitude/Amplitude-TypeScript - pageUrlExcludelist autocapture feature) confirmed that new configuration options clearly require documentation updates when they:
