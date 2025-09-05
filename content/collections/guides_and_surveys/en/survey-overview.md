@@ -21,5 +21,5 @@ Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/
 | User feedback | Define your own questions to collect detailed input from your users.                                                     |
 | Rating        | Gather initial reactions to help you evaluate product experiences.                                                       |
 | Carousel <br/> {.tag .mobile .zero} | Highlight your app's key features with a swipe-able onboarding carousel.                           |
-| Banner Survey        | Any custom survey experiences with the Banner formfactor                                                          |
+| Banner Survey        | Any custom survey experiences with the Banner form factor                                                          |
 | Tooltip Survey        | Any custom survey experiences with the Banner formfactor                                                         |
