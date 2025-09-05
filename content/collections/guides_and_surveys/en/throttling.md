@@ -89,7 +89,6 @@ You can create multiple advanced throttles for different tag combinations. This 
 - **Onboarding flow**: `onboarding` tag - 3 each session
 - **Feature updates**: `feature-update` tag - 2 each week
 
-### Managing advanced throttles
 
 ##### To edit or remove an advanced throttle:
 
