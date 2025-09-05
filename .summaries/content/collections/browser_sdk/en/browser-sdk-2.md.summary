@@ -13,7 +13,7 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, d
 - form interactions tracking
 - file downloads tracking
 - element interactions tracking cssSelectorAllowlist
-- network tracking NetworkTrackingOptions
+- network request tracking NetworkTrackingOptions
 - sendBeacon transport
 - cross-domain tracking ampDeviceId ampSessionId
 - cookie management AMP prefix
@@ -21,14 +21,10 @@ This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, d
 - remote configuration fetchRemoteConfig
 - plugins enrichment destination
 - revenue tracking Revenue interface
-- user properties Identify interface
+- user properties Identify operations
+- group properties groupIdentify
 - Content Security Policy CSP
-- script loader installation
-- HTTP V2 API
-- deviceId userId sessionId
-- flushQueueSize flushIntervalMillis
-- trackingOptions identityStorage
+- identityStorage localStorage
+- trackingOptions configuration
+- flushQueueSize batching behavior
 - serverZone EU data residency
-- logLevel debugging
-- excludeReferrers attribution
-- Visual labeling element interactions
