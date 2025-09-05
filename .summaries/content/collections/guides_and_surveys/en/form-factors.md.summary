@@ -1,18 +1,16 @@
-**Summary:** This documentation covers the five form factors available for Amplitude Guides and Surveys (Modal, Popover, Pin, Tooltip, Banner, and Checklist), detailing their customization properties including position settings, layout options, z-index controls, text animation, and interactive blocks (buttons, images, videos) with specific button actions like visit link, click element, show guide/survey, and callback functions.
+**Summary:** This documentation covers the five form factors available for Amplitude Guides and Surveys (Modal, Popover, Pin, Tooltip, Banner, and Checklist), detailing their customization properties including position settings, layout options, button actions, and format settings like z-index, text animation, and click-outside-to-close behavior.
 
 **Keywords:**
-- Amplitude Guides Surveys form factors
-- Modal Popover Pin Tooltip Banner Checklist
-- Content layout Actions bar z-index
-- Text animation typewriter effect
-- Click outside to close Show mask
-- Open by default Advanced trigger
-- Position alignment target element
-- Button CTA actions visit link click element
-- Show guide show survey go back go forward
-- Run callback register callback
-- Submit app store rating request
-- Image Movie blocks YouTube Vimeo Loom Vidyard MP4
-- Sticky banner Display style inline overlay
-- Multi-step guides contextual help
-- Web mobile platform tags
+- Amplitude Guides and Surveys
+- form factors (Modal, Popover, Pin, Tooltip, Banner, Checklist)
+- position settings (top/bottom of target, auto positioning)
+- layout options (classic, horizontal split, vertical split)
+- button actions (visit link, click element, show guide/survey, run callback)
+- format settings (z-index, text animation, click outside to close)
+- content alignment and actions bar
+- show mask and overlay options
+- sticky banner behavior
+- advanced trigger functionality
+- app store rating request (mobile)
+- blocks (Button CTA, image, video)
+- multi-step guide navigation
