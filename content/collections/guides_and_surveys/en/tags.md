@@ -76,7 +76,7 @@ From the guides list view or surveys list view, you can select multiple rows and
 
 ## Tags and throttling
 
-Tags are importat in [advanced throttling](/docs/guides-and-surveys/throttling#advanced-throttles). Use tags to create sophisticated rate-limiting strategies for different categories of guides and surveys.
+Tags are important in [advanced throttling](/docs/guides-and-surveys/throttling#advanced-throttles). Use tags to create sophisticated rate-limiting strategies for different categories of guides and surveys.
 
 ### Throttling use cases with tags
 
