@@ -318,7 +318,7 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 | `ko_click_id` | Kochava click identifier                                  |
 | `li_fat_id`   | LinkedIn click identifier                                 |
 | `msclkid`     | Microsoft click identifier                                |
-| `rtd_cid`     | Reddit click identifier                                   |
+| `rdt_cid`     | Reddit click identifier                                   |
 | `ttclid`      | TikTok click identifier                                   |
 | `twclid`      | Twitter click identifier                                  |
 
@@ -684,10 +684,10 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 | `[Amplitude] Duration` | The duration of the request in milliseconds. |
 | `[Amplitude] Request Body Size` | The size of the request body in bytes. |
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| `[Amplitude] Request Body` | The captured JSON request body (when you configure a `requestBody` capture rule). |
+| `[Amplitude] Response Body` | The captured JSON response body (when you configure a `responseBody` capture rule). |
 
 {{/partial:collapse}}
-
-
 
 #### Advanced configuration for network tracking
 
@@ -707,27 +707,130 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | Defines the URL, URLs, or URL pattern to capture. By default captures all URLs. eg. `[/https:\/\/example.com\/api\/*/, 'https://example.com/api/status']` | `['*']` |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
+| `methods` | The HTTP methods to capture. e.g.: `["POST", "PUT", "DELETE"]` | `['*']` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
+| `requestBody` | **Experimental.** Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | **Experimental.** Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
+| `requestHeaders` | **Experimental.** Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | **Experimental.** Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 
+{{partial:collapse name="BodyCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
+| `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
+
+{{/partial:collapse}}
+
+#### Safe headers
+
+When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captures only safe headers and excludes sensitive ones that may contain authentication credentials or personally identifiable information.
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+
+{{/partial:collapse}}
+
+#### Network body capture
+
+If a network request or response body is in JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`. You can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
+
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (For example: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
+
+Example request/response body
+
+```json
+{
+  "a": "A",
+  "b": {
+    "c": "C",
+    "d": {
+      "e": "E",
+      "f": "F"
+    }
+  },
+  "g": "G"
+}
+```
+
+| allowlist | Captured Result |
+| --- | --- |
+| `a` | `{ "a": "A" }` |
+| `a/b/*` | `{ "a": { "b": { "c": "C" } } }` |
+| `b/c` | `{ "b": { "c": "C" } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } } }` |
+| `b/d/*` | `{ "b": { "d": { "e": "E", "f": "F" } } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } }` |
+| `*` | `{ "a": "A", "g": "G" }` |
+
 ## Track an event
 
-Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+Events represent how users interact with your application. For example, the Button Clicked event might be an action you want to track.
 
 ```ts
-// Track a basic event
+// Track a basic event.
 amplitude.track('Button Clicked');
 
-// Track events with optional properties
+// Track events with optional properties.
 const eventProperties = {
   buttonColor: 'primary',
 };
 amplitude.track('Button Clicked', eventProperties);
 ```
 
-You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
+You can also pass a `BaseEvent` object to `track`. For more information, review the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
 
 ```ts
 const event_properties = {
@@ -1401,7 +1504,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 | `twclid`                           | Twitter Click Identifier from URL parameter                                                                                      |
 | `wbraid`                           | Google Click Identifier for iOS device from App to Web                                                                           |
 | `li_fat_id`                        | LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics                                  |
-| `rtd_cid`                          | Reddit Click Identifier                                                                                                          |
+| `rdt_cid`                          | Reddit Click Identifier                                                                                                          |
 
 {{/partial:collapse}}
 
