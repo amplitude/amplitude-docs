@@ -57,7 +57,7 @@ This setting applies to sequential guides triggering for the same user. For exam
 Advanced throttles let you set additional rate limits for guides or surveys grouped by tags. This gives you granular control over how different categories of content appear to users.
 
 {{partial:admonition type="important" heading="Prerequisites"}}
-Before using advanced throttles, ensure your guides and surveys have [tags](/docs/guides-and-surveys/tags) applied. Tags are required to group content for advanced throttling.
+Before using advanced throttles, ensure your guides and surveys have [tags](/docs/guides-and-surveys/tags) applied. While tags aren’t strictly required, they’re recommended, since advanced throttling can leverage them to create more specific rate limits for different types of guides.
 {{/partial:admonition}}
 
 ##### To set up advanced throttles
