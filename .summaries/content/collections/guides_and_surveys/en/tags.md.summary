@@ -1,22 +1,18 @@
-**Summary:** This documentation covers the tags feature for organizing guides and surveys, including adding tags individually or in bulk, tag naming conventions, renaming/editing tags through the list view interface, filtering by tags, and bulk operations for tag management.
+**Summary:** This documentation covers the tags system for organizing guides and surveys, including tag creation, bulk management operations, filtering capabilities, and integration with advanced throttling for rate-limiting strategies.
 
 **Keywords:**
-- tags feature
+- tags system
 - guides and surveys organization
-- tag filters
+- tag filtering
 - bulk tag operations
-- Tags column
-- list view interface
+- advanced throttling integration
 - tag naming conventions
-- Assign Tags button
-- tag renaming
-- tag description editing
 - campaign tags
 - feature tags
 - team tags
-- Add Filter functionality
-- bulk-apply tag updates
+- throttling rate-limiting
+- tag-based filtering
+- bulk management
 - event tracking properties
 - guides list view
 - surveys list view
-- table header controls

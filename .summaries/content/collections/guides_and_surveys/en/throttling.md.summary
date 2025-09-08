@@ -1,13 +1,16 @@
-**Summary:** Documents the throttling feature for guides and surveys, which controls the rate and frequency at which these artifacts appear to users through configurable limits and time periods (day/week/month/session), with separate throttling settings for guides versus surveys.
+**Summary:** This documentation covers throttling configuration for guides and surveys, including global rate limiting (limit/period settings), time delays between sequential guides, and advanced throttling using tags for granular control over different content categories.
 
 **Keywords:**
 - throttling configuration
-- guides and surveys throttling
-- artifact appearance limits
-- time period settings (day/week/month/session)
-- throttling settings separation
-- user experience rate limiting
+- guides and surveys rate limiting
 - global throttling settings
-- Limits section configuration
-- guides and surveys management
-- artifact display frequency control
+- time between sequential guides
+- advanced throttles with tags
+- limit and period configuration
+- tag-based throttling
+- session-based throttling
+- campaign throttling
+- onboarding flow throttling
+- feature update throttling
+- multiple advanced throttles
+- restrictive limit application
