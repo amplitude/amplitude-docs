@@ -1,13 +1,13 @@
 ---
 id: 5b4dadf8-14b7-4669-8636-f3105393214c
 blueprint: advanced-technique
-title: 'Find and resolve outliers in your data'
+title: 'Winsorization in Experiment'
 this_article_will_help_you:
   - 'Find outliers in your data that may skew your results'
   - 'Apply various techniques to mitigate or eliminate the negative effects of outliers'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1728509681
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1757364888
 ---
 Outliers are data points that occur on the far fringes of a dataset. These data points typically rest far from measurements of central tendency like the mean, and can easily skew an analysis. 
 
@@ -187,4 +187,4 @@ Like Winsorization, Amplitude Experiment also supports log transforms as an alte
 
 When enabled, Amplitude Experiment applies the log transformation at a per-metric level. It uses logarithm with base `e`. Experiment uses `ln(1+x)` to deal with the case where `x = 0`.` x` is the metrics value for a particular user. If `1+x <= 0`, Experiment returns `0` for the metric value for that individual user. 
 
-If you enable both winsorization and log transform, winsorization applies first and then the log transform. 
+If you enable both winsorization and log transform, winsorization applies first and then the log transform.
