@@ -27,28 +27,28 @@ The new [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) combines A
 
 ## Install the SDK
 
-{{partial:tabs tabs="CocoaPods, Swift Package Manager, Carthage"}}
-{{partial:tab name="CocoaPods"}}
-1. Add the dependency to your `Podfile`:
-
-    ```bash
-    pod 'AmplitudeSwift', '~> 1.0'
-    ```
-2. Run `pod install` in the project directory.
-{{/partial:tab}}
+{{partial:tabs tabs="Swift Package Manager, CocoaPods, Carthage"}}
 {{partial:tab name="Swift Package Manager"}}
-1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
-2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar. 
-3. Xcode automatically resolves to the latest version. Or you can select a specific version. 
-4. Click the "Next" button to confirm the addition of the package as a dependency. 
+1. Navigate to *File > Swift Package Manager > Add Package Dependency*. 
+2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar.
+3. Select a specific version or let Xcode automatically resolve to the latest version. 
+4. Click **Next** to confirm the addition of the package as a dependency.
 5. Build your project to make sure the package is properly integrated.
+{{/partial:tab}}
+{{partial:tab name="CocoaPods"}}
+    1. Add the dependency to your `Podfile`:
+
+        ```bash
+        pod 'AmplitudeSwift', '~> 1.0'
+        ```
+    2. Run `pod install` in the project directory.
 {{/partial:tab}}
 {{partial:tab name="Carthage"}}
 Add the following line to your `Cartfile`.
 ```bash
 github "amplitude/Amplitude-Swift" ~> 1.0
 ```
-Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
+Go to the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -105,6 +105,8 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](../ios) data (events, user/device ID).                                                                                                          | `true`                                   |
 | `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](./#offline-mode).                                                                                                         | `false`                                  |
 | `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1, no cleanup occurs.    | `-1`                                     |
+| `networkTrackingOptions`       | Available in `1.12.0+`. Options to control the network tracking.                                                                                                                                           | `NetworkTrackingOptions.default`          |
+| `interactionsOptions`           | **Experimental**. Available in `1.14.0+`. Options to control the interaction tracking.                                                                                                                                           | `InteractionsOptions.default`          |
 
 {{/partial:collapse}}
 
@@ -198,6 +200,10 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 - App lifecycles
 - Screen views
 - Element interactions
+- Frustration interactions
+  - Rage clicks
+  - Dead clicks
+- Network requests
 
 {{partial:collapse name="Autocapture options"}}
 | Name | Type | Enabled by default | Description |
@@ -207,6 +213,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 | `networkTracking` | `AutocaptureOptions` | No | Enables network tracking. If the option is set, Amplitude tracks network requests. Event properties tracked include: `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. See [Track network requests](#track-network-requests) for more information. |
+| `frustrationInteractions` | `AutocaptureOptions` | No | **Experimental**. Available in `1.14.0+`. Enables frustration interaction tracking. If the option is set, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` element and `UIGestureRecognizer`. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Go to [Track frustration interactions](#track-frustration-interactions) for more information. |
 
 {{/partial:collapse}}
 
@@ -621,6 +628,110 @@ After enabling this setting, Amplitude tracks the `[Amplitude] Element Interacte
 {{partial:admonition type="info" heading=""}}
 Currently, Amplitude does not supports tracking user interactions with UI elements in SwiftUI.
 {{/partial:admonition}}
+
+### Track frustration interactions
+
+Available in version `1.14.0+`.
+
+Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
+
+{{partial:admonition type="note" heading=""}}
+The `AutocaptureOptions.frustrationInteractions` option is available as a beta release for early feedback. You can enable it by adding `@_spi(Frustration)` import to your code.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(Frustration) import Amplitude-Swift
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The `interactionsOptions` configuration accepts an `InteractionsOptions` object to configure the options for capturing rage clicks and dead clicks.
+
+{{partial:collapse name="InteractionsOptions"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `rageClick` | The options for capturing rage clicks. | `RageClickOptions()` |
+| `rageClick.enabled` | Whether to capture rage clicks. | `true` |
+| `deadClick` | The options for capturing dead clicks. | `DeadClickOptions()` |
+| `deadClick.enabled` | Whether to capture dead clicks. | `true` |
+
+{{/partial:collapse}}
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(Frustration) import Amplitude-Swift
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions,
+    interactionsOptions: .init(
+        rageClick: .init(enabled: true),
+        deadClick: .init(enabled: true)
+    )
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+Rage Click is a user interaction that occurs four (4) or more times in 1 second on the same element and the distance between each adjacent click is no more than 50 points.
+
+When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Begin Time` | The timestamp when the interaction began in ISO 8601 format. |
+| `[Amplitude] End Time` | The timestamp when the interaction ended in ISO 8601 format. |
+| `[Amplitude] Duration` | The duration of the interaction in milliseconds. |
+| `[Amplitude] Click Count` | The number of clicks that occurred. |
+| `[Amplitude] Clicks` | The array of clicks that occurred. |
+| `[Amplitude] Clicks[].X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Time` | The timestamp of the click in ISO 8601 format. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target View Class` | The name of the target view class. |
+| `[Amplitude] Target Text` | The title of the target `UIControl` element. |
+| `[Amplitude] Target Accessibility Label` | The accessibility label of the target element. |
+| `[Amplitude] Target Accessibility Identifier` | The accessibility identifier of the target element. |
+| `[Amplitude] Action Method` | The name of the function or method that triggered when the interaction occurs. |
+| `[Amplitude] Gesture Recognizer` | The name of the `UIGestureRecognizer` class that recognizes the interaction. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | Go to [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+Dead Click is a tap on an interactive element that resulted in no visible change in the following three (3) seconds. 
+
+When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
+
+{{partial:admonition type="note" heading="Requirements"}}
+Dead clicks requires the Amplitude Session Replay iOS Plugin version `0.5.0` or higher installed and running. Go to [Session Replay iOS Plugin](/docs/session-replay/session-replay-ios-plugin) for more information.
+{{/partial:admonition}}
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target View Class` | The name of the target view class. |
+| `[Amplitude] Target Text` | The title of the target `UIControl` element. |
+| `[Amplitude] Target Accessibility Label` | The accessibility label of the target element. |
+| `[Amplitude] Target Accessibility Identifier` | The accessibility identifier of the target element. |
+| `[Amplitude] Action Method` | The name of the function or method that triggered when the interaction occurs. |
+| `[Amplitude] Gesture Recognizer` | The name of the `UIGestureRecognizer` class that recognizes the interaction. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | Go to [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
 
 ## User groups
 
