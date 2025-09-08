@@ -13,7 +13,7 @@ exclude_from_sitemap: false
 platform: browser
 ---
 
-This guide covers the installation and setup of Amplitude Browser SDK in Next.js applications, including both client-side and server-side configurations.
+This guide covers the installation and setup of Amplitude's Browser SDK in Next.js applications and includes instructions for both client-side and server-side configurations.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This guide covers the installation and setup of Amplitude Browser SDK in Next.js
 ## Installation
 
 {{partial:admonition type="info" heading="Unified SDK Recommended"}}
-The [Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) provides access to Analytics, Experiment, and Session Replay in a single package. It's the recommended approach for new Next.js projects.
+The [Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) provides access to Analytics, Experiment, and Session Replay in a single package. Amplitude recommends this approach for new Next.js projects.
 {{/partial:admonition}}
 
 Install the Amplitude SDK using your package manager:
@@ -59,11 +59,13 @@ pnpm add @amplitude/analytics-browser
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Client-Side Setup
+## Client-side setup
+
+Follow the instructions in this section to configure Amplitude on the client.
 
 ### App Router (Next.js 13+)
 
-Create an Amplitude provider component to initialize the SDK on the client side:
+Create an Amplitude provider component to initialize the SDK on the client side.
 
 {{partial:tabs tabs="Unified SDK, Analytics SDK"}}
 {{partial:tab name="Unified SDK"}}
@@ -204,7 +206,7 @@ export const useAmplitude = () => {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Add the provider to your root layout:
+Add the provider to your root layout.
 
 ```typescript
 // app/layout.tsx
@@ -227,9 +229,9 @@ export default function RootLayout({
 }
 ```
 
-### Pages Router (Legacy)
+### Pages router (legacy)
 
-For the Pages Router, initialize Amplitude in `_app.tsx`:
+For the Pages Router, initialize Amplitude in `_app.tsx`.
 
 {{partial:tabs tabs="Unified SDK, Analytics SDK"}}
 {{partial:tab name="Unified SDK"}}
@@ -292,7 +294,7 @@ export default MyApp;
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Using Amplitude in Components
+### Using Amplitude in components
 
 With the App Router setup:
 
@@ -323,17 +325,19 @@ export function TrackingButton() {
 }
 ```
 
-## Server-Side Setup
+## Server-side setup
 
-### Server Components and API Routes
+Follow the instructions in this section to configure Amplitude on the server.
 
-For server-side tracking, use the Node.js SDK instead of the Browser SDK:
+### Server components and API routes
+
+For server-side tracking, use the Node.js SDK instead of the Browser SDK.
 
 ```bash
 npm install @amplitude/analytics-node
 ```
 
-Create a server-side Amplitude client:
+Create a server-side Amplitude client.
 
 ```typescript
 // lib/amplitude-server.ts
@@ -384,7 +388,7 @@ export async function identifyServerUser(
 }
 ```
 
-Use in API routes:
+Add the server-side client to API routes.
 
 ```typescript
 // app/api/track/route.ts (App Router)
@@ -424,7 +428,9 @@ export default async function handler(
 
 ## Best Practices
 
-### 1. Environment Variables
+Keep the following best practices in mind as you build your integration.
+
+### Environment variables
 
 Store your API keys in environment variables:
 
@@ -438,7 +444,7 @@ AMPLITUDE_API_KEY=your_server_api_key
 Only use `NEXT_PUBLIC_` prefix for client-side API keys. Server-side API keys should never be exposed to the client.
 {{/partial:admonition}}
 
-### 2. User Identification
+### User identification
 
 Identify users after authentication:
 
@@ -487,9 +493,9 @@ const handleLogin = async (email: string, userId: string) => {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### 3. Automatic Page View Tracking
+### Automatic page view tracking
 
-Amplitude's autocapture feature automatically tracks page views in Next.js applications. No custom implementation needed!
+Amplitude's autocapture feature automatically tracks page views in Next.js applications.
 
 {{partial:tabs tabs="Unified SDK, Analytics SDK"}}
 {{partial:tab name="Unified SDK"}}
@@ -517,10 +523,10 @@ amplitude.init(apiKey, undefined, {
 {{/partial:tabs}}
 
 {{partial:admonition type="info" heading="Page View Configuration"}}
-Autocapture intelligently detects Next.js route changes and tracks them as page views. For advanced configuration, see [Track page views](/docs/sdks/analytics/browser/browser-sdk-2#track-page-views).
+Autocapture intelligently detects Next.js route changes and tracks them as page views. For advanced configuration, review [Track page views](/docs/sdks/analytics/browser/browser-sdk-2#track-page-views).
 {{/partial:admonition}}
 
-### 4. Session Replay Integration
+### Session Replay integration
 
 Capture user sessions to understand behavior and debug issues:
 
@@ -576,7 +582,7 @@ sessionReplay.init(apiKey, {
 Session Replay provides visual playback of user sessions. Learn more in the [Session Replay documentation](/docs/session-replay).
 {{/partial:admonition}}
 
-### 5. Leveraging Autocapture and Custom Events
+### Use Autocapture and custom events
 
 Use Amplitude's autocapture to automatically track common interactions:
 
@@ -591,7 +597,7 @@ amplitude.initAll(apiKey, {
       pageViews: true,
       formInteractions: true,
       fileDownloads: true,
-      elementInteractions: true, // Tracks clicks on buttons, links, etc.
+      elementInteractions: true, // Tracks clicks on buttons, links, and more.
     },
   },
 });
@@ -606,7 +612,7 @@ amplitude.init(apiKey, undefined, {
     pageViews: true,
     formInteractions: true,
     fileDownloads: true,
-    elementInteractions: true, // Tracks clicks on buttons, links, etc.
+    elementInteractions: true, // Tracks clicks on buttons, links, and more.
   },
 });
 ```
@@ -658,10 +664,10 @@ export function ProductCard({ product }: { product: Product }) {
 ```
 
 {{partial:admonition type="tip" heading="Autocapture vs Custom Events"}}
-Autocapture handles standard interactions like clicks, form submissions, and page views. Use custom events for business-specific actions like "Product Added to Cart" or "Subscription Upgraded".
+Autocapture handles standard interactions like clicks, form submissions, and page views. Use custom events for business-specific actions like "Product Added to Cart" or "Subscription Upgraded."
 {{/partial:admonition}}
 
-### 6. Visual Labeling for Next.js
+### Visual Labeling for Next.js
 
 Use Amplitude's Visual Labeling to tag elements directly in your browser without code changes:
 
@@ -691,10 +697,10 @@ amplitude.init(apiKey, undefined, {
 {{/partial:tabs}}
 
 {{partial:admonition type="tip" heading="Visual Labeling"}}
-Visit your Next.js app with the [Amplitude Chrome Extension](https://chrome.google.com/webstore/detail/amplitude-event-explorer/hjfgajkjlmjcbnbmghbljjkbkhniagkh) to visually label elements and create custom events without writing code. See [Visual Labeling documentation](/docs/data/visual-labeling).
+Visit your Next.js app with the [Amplitude Chrome Extension](https://chrome.google.com/webstore/detail/amplitude-event-explorer/hjfgajkjlmjcbnbmghbljjkbkhniagkh) to visually label elements and create custom events without writing code. Review the [Visual Labeling documentation](/docs/data/visual-labeling).
 {{/partial:admonition}}
 
-### 7. Middleware Integration
+### Middleware integration
 
 Track server-side events using Next.js middleware:
 
@@ -722,9 +728,9 @@ export const config = {
 };
 ```
 
-### 8. Session Management
+### Session management
 
-Handle user sessions properly:
+Ensure you handle user sessions correctly.
 
 {{partial:tabs tabs="Unified SDK, Analytics SDK"}}
 {{partial:tab name="Unified SDK"}}
@@ -785,7 +791,7 @@ export function handleUserSession() {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### 9. TypeScript Support
+### TypeScript support
 
 Create type-safe event tracking:
 
@@ -835,7 +841,7 @@ export function useTypedTracking() {
 }
 ```
 
-### 10. Testing
+### Testing
 
 Mock Amplitude in tests:
 
@@ -908,7 +914,7 @@ describe('TrackingButton', () => {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### 11. Performance Optimization
+### Performance optimization
 
 Optimize SDK initialization and loading:
 
@@ -982,9 +988,12 @@ Check browser console for Amplitude logs:
 - Configuration issues
 - Network request status
 
-## Common Issues and Solutions
+## Common issues and solutions
 
-### 1. Window is not defined
+
+
+### Window is not defined
+
 Always check for browser environment before using Browser SDK:
 ```typescript
 if (typeof window !== 'undefined') {
@@ -992,16 +1001,20 @@ if (typeof window !== 'undefined') {
 }
 ```
 
-### 2. Duplicate Events
-Ensure SDK is initialized only once using React hooks properly:
+### Duplicate events
+
+Ensure you initialize the SDK one time using React hooks:
+
 ```typescript
 useEffect(() => {
   // Initialization code
 }, []); // Empty dependency array
 ```
 
-### 3. Missing User Context
-Set user ID after authentication and clear on logout:
+### Missing user context
+
+Set the user ID after authentication and clear it on logout:
+
 ```typescript
 // After auth
 amplitude.setUserId(userId);
@@ -1010,7 +1023,7 @@ amplitude.setUserId(userId);
 amplitude.reset();
 ```
 
-## Additional Resources
+## Additional resources
 
 - [Browser SDK 2 Documentation](/docs/sdks/analytics/browser/browser-sdk-2)
 - [Next.js Documentation](https://nextjs.org/docs)
