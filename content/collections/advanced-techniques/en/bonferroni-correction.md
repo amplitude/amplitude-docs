@@ -1,14 +1,14 @@
 ---
 id: cf260863-11d8-434d-a2de-22c8256e83b6
 blueprint: advanced-technique
-title: 'Multiple hypothesis testing'
+title: 'Bonferroni Correction'
 source: 'https://help.amplitude.com/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment'
 this_article_will_help_you:
   - 'Understand the differences between multiple hypothesis testing and single-hypothesis testing'
   - 'Learn how Amplitude combats potential problems with multiple hypothesis testing'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329348
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1757367724
 ---
 In an experiment, think of each variant or metric you include as its own hypothesis. For example, when you add a new variant, you put forth the hypothesis that changes you include in that variant should have a detectable impact on the experiment’s results. 
 
@@ -64,4 +64,4 @@ Amplitude Experiment performs Bonferroni corrections on both the number of treat
 * Bonferroni applies to the primary metric when there is more than one treatment.
 * Bonferroni applies to the secondary metric if there are multiple secondary metrics or multiple treatments.
 
-In either case, Amplitude places an info icon in the significance column when you apply Bonferroni correction. The tooltip shows the corrected and uncorrected p-value. 
+In either case, Amplitude places an info icon in the significance column when you apply Bonferroni correction. The tooltip shows the corrected and uncorrected p-value.
