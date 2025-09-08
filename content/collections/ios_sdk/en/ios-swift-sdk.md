@@ -631,7 +631,7 @@ Currently, Amplitude does not supports tracking user interactions with UI elemen
 
 ### Track frustration interactions
 
-**Experimental**. Available in `1.14.0+`.
+Available in version `1.14.0+`.
 
 Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
 
@@ -652,7 +652,7 @@ let amplitude = Amplitude(configuration: Configuration(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-`interactionsOptions` configuration accepts an `InteractionsOptions` object to configure the options for capturing rage clicks and dead clicks.
+The `interactionsOptions` configuration accepts an `InteractionsOptions` object to configure the options for capturing rage clicks and dead clicks.
 
 {{partial:collapse name="InteractionsOptions"}}
 | Name |  Description | Default Value |
@@ -681,21 +681,21 @@ let amplitude = Amplitude(configuration: Configuration(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-**Rage Click** is a user interaction that occurs 4 or more times in 1 second on the same element, and the distance between each adjacent click is no more than 50 points.
+Rage Click is a user interaction that occurs four (4) or more times in 1 second on the same element and the distance between each adjacent click is no more than 50 points.
 
 When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
 {{partial:collapse name="Event Properties Descriptions"}}
 | Event property | Description |
 | --- | --- |
-| `[Amplitude] Begin Time` | The timestamp when the interaction began, in ISO 8601 format. |
-| `[Amplitude] End Time` | The timestamp when the interaction ended, in ISO 8601 format. |
+| `[Amplitude] Begin Time` | The timestamp when the interaction began in ISO 8601 format. |
+| `[Amplitude] End Time` | The timestamp when the interaction ended in ISO 8601 format. |
 | `[Amplitude] Duration` | The duration of the interaction in milliseconds. |
 | `[Amplitude] Click Count` | The number of clicks that occurred. |
 | `[Amplitude] Clicks` | The array of clicks that occurred. |
 | `[Amplitude] Clicks[].X` | The x-coordinate of the click from the top-left corner of the screen. |
 | `[Amplitude] Clicks[].Y` | The y-coordinate of the click from the top-left corner of the screen. |
-| `[Amplitude] Clicks[].Time` | The timestamp of the click, in ISO 8601 format. |
+| `[Amplitude] Clicks[].Time` | The timestamp of the click in ISO 8601 format. |
 | `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
 | `[Amplitude] Target View Class` | The name of the target view class. |
 | `[Amplitude] Target Text` | The title of the target `UIControl` element. |
@@ -708,12 +708,12 @@ When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
 {{/partial:collapse}}
 
-**Dead Click** is a tap on an interactive element that resulted in no visible change in the following 3 seconds. 
+Dead Click is a tap on an interactive element that resulted in no visible change in the following three (3) seconds. 
 
 When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
 
 {{partial:admonition type="note" heading="Requirements"}}
-Dead clicks requires the **Amplitude Session Replay iOS Plugin** version `0.5.0` or higher installed and running. See [Session Replay iOS Plugin](/docs/session-replay/session-replay-ios-plugin) for more information.
+Dead clicks requires the Amplitude Session Replay iOS Plugin version `0.5.0` or higher installed and running. Go to [Session Replay iOS Plugin](/docs/session-replay/session-replay-ios-plugin) for more information.
 {{/partial:admonition}}
 
 {{partial:collapse name="Event Properties Descriptions"}}
