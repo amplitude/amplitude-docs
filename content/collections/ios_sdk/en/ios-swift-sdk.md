@@ -29,10 +29,10 @@ The new [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) combines A
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods, Carthage"}}
 {{partial:tab name="Swift Package Manager"}}
-1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency.
+1. Navigate to *File > Swift Package Manager > Add Package Dependency*. 
 2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar.
-3. Xcode automatically resolves to the latest version. Or you can select a specific version.
-4. Click the "Next" button to confirm the addition of the package as a dependency.
+3. Select a specific version or let Xcode automatically resolve to the latest version. 
+4. Click **Next** to confirm the addition of the package as a dependency.
 5. Build your project to make sure the package is properly integrated.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
@@ -48,7 +48,7 @@ Add the following line to your `Cartfile`.
 ```bash
 github "amplitude/Amplitude-Swift" ~> 1.0
 ```
-Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
+Go to the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
 {{/partial:tab}}
 {{/partial:tabs}}
 
