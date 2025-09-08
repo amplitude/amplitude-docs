@@ -631,7 +631,7 @@ Currently, Amplitude does not supports tracking user interactions with UI elemen
 
 ### Track frustration interactions
 
-Available in version `1.14.0+`.
+**Experimental**. Available in version `1.14.0+`.
 
 Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
 
