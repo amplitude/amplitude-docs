@@ -1,24 +1,28 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for both Swift and Objective-C, including installation via CocoaPods/SPM/Carthage, autocapture features (sessions, app lifecycles, screen views, element interactions, network requests), revenue tracking, user groups, plugins system, and Apple privacy manifest compliance.
+This documentation covers the Amplitude Analytics iOS Swift SDK, which provides event tracking, user identification, and analytics capabilities for iOS applications with support for Swift and Objective-C, including installation via Swift Package Manager/CocoaPods/Carthage, autocapture features for sessions/app lifecycles/screen views/network requests/element interactions, revenue tracking, user groups, plugins system, and Apple privacy manifest compliance.
 
 ## Keywords
 
-- Amplitude Analytics iOS Swift SDK
+- iOS Swift SDK
 - AmplitudeSwift package
-- CocoaPods Swift Package Manager Carthage installation
-- autocapture sessions app lifecycles screen views element interactions network tracking
-- UIKit SwiftUI event tracking
-- identify user properties revenue tracking
+- Swift Package Manager CocoaPods Carthage installation
+- autocapture sessions app lifecycles screen views network requests element interactions
+- frustration interactions rage clicks dead clicks
+- UIKit SwiftUI support
+- revenue tracking
+- user groups groupIdentify
 - plugins enrichment destination
-- COPPA control IDFA IDFV device ID
-- Apple privacy manifest NSPrivacyTracking
-- offline mode network connectivity
-- user groups group identify
+- identify operations set setOnce unset add append prepend
+- device ID IDFV UUID lifecycle
 - session tracking minTimeBetweenSessionsMillis
-- trackingOptions disable tracking
-- storage provider custom storage
+- offline mode NetworkConnectivityCheckerPlugin
+- COPPA control tracking options
+- Apple privacy manifest NSPrivacyTracking NSPrivacyCollectedDataTypes
+- custom storage provider
+- IDFA advertiser ID tracking
+- network tracking URLSession swizzling
+- element interaction UIControl UIGestureRecognizer swizzling
+- remote configuration enableAutoCaptureRemoteConfig
 - migration guide maintenance SDK
-- flushQueueSize flushIntervalMillis
-- serverZone useBatch configuration
-- Swift Objective-C dual language support
+- troubleshooting debugging logLevel
