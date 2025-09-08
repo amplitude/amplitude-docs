@@ -31,6 +31,7 @@ Click the three dot menu to access format settings.
 | Setting                                | Description                                                       |
 | -------------------------------------- | ----------------------------------------------------------------- |
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
+| Content alignment <br/> {.tag .web .zero} | Changes the alignment of the title and body text.              |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
 | Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
 | Text animation                         | Enables the modal's text to animate in with a typewriter effect.  |
@@ -48,6 +49,7 @@ Click the three dot menu to access format settings.
 | Setting                                | Description                                                        |
 | -------------------------------------- | ------------------------------------------------------------------ |
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
+| Content alignment <br/> {.tag .web .zero} | Changes the alignment of the title and body text.               |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
 | Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
@@ -58,7 +60,7 @@ Click the three dot menu to access format settings.
 
 Pins are persistent markers that remain on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
-Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**. 
+Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**.
 
 Pins can use the following position settings:
 - Auto
@@ -76,6 +78,7 @@ Click the three dot menu for the pin to access format settings.
 | Open by default                          | Enables the pin to open without user interaction. If disabled, users must click or tap the pin to open it. |
 | Show mask                                | Enables a background mask when the pin is open to help draw the user's focus.                              |
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
+| Content alignment <br/> {.tag .web .zero} | Changes the alignment of the title and body text.                                               |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
 | Click outside to close                   | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
@@ -94,6 +97,7 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Setting                                  | Description                                                                                           |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                   |
+| Content alignment <br/> {.tag .web .zero} | Changes the alignment of the title and body text.                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
 | Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
@@ -102,7 +106,7 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
 | Marker                                   | Select the appearance of the marker that launches the tooltip.                                        |
 
-### Banner 
+### Banner
 
 {{partial:admonition type="tip" heading=""}}
 Banners are available in the Banner template, and contain one step.
@@ -165,6 +169,11 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Go forward    | Advance to the next step in the guide.                                                                                                                                            |
 | Go to step    | Go to the specified step in the guide.                                                                                                                                            |
 | Run callback  | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
+| Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
+
+{{partial:admonition type='note'}}
+[Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
+{{/partial:admonition}}
 
 #### Image
 
