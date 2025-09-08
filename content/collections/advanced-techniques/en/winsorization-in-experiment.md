@@ -7,7 +7,7 @@ this_article_will_help_you:
   - 'Apply various techniques to mitigate or eliminate the negative effects of outliers'
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1757364888
+updated_at: 1757365670
 ---
 Outliers are data points that occur on the far fringes of a dataset. These data points typically rest far from measurements of central tendency like the mean, and can easily skew an analysis. 
 
