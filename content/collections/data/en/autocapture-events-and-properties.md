@@ -50,9 +50,10 @@ This page contains information about the events and event properties that Autoca
 | **Link URL**         | The link address of the file download. |
 
 ## Form Interactions
+Autocapture can capture forms constructed with the `<form>` tags.
 
 ### Form Started
-Captures when a user initially interacts with a form element within a form, which includes modifications to a text input, radio button, or a dropdown. Autocapture can capture forms constructed with the `<form>` tags.
+Captures when a user initially interacts with a form element within a form, which includes modifications to a text input, radio button, or a dropdown. 
 
 | Property Name | Description |
 |------------|----------|
@@ -61,7 +62,7 @@ Captures when a user initially interacts with a form element within a form, whic
 | **Form Name**          | The name attribute of the form element.  |
 
 ### Form Submitted
-Captures when a user submits the form. Autocapture can capture forms constructed with the `<form>` tags.
+Captures when a user submits the form. 
 
 | Property Name | Description |
 |------------|----------|
