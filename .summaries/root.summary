@@ -1,0 +1,61 @@
+## Amplitude Collections Framework
+
+Amplitude Collections is a content management and documentation framework that organizes product information across multiple domains, with a primary focus on SDK integrations and data source management. The framework provides structured content delivery for Amplitude's developer-facing documentation and product catalogs.
+
+## Product Architecture and Feature Relationships
+
+The Collections framework operates through two primary content domains:
+
+**Framework Integrations Collection** serves as the organizational structure for SDK and framework documentation, utilizing a dynamic routing system that generates URLs following the pattern `/sdks/frameworks/{slug}`. This collection manages multilingual content delivery with English language support and implements content lifecycle management through date-based visibility controls.
+
+**Source Catalog Collection** functions as Amplitude's comprehensive data integration platform, focusing on external data ingestion capabilities. The catalog currently centers on enterprise-grade Databricks integration, providing real-time data synchronization between external data systems and Amplitude's behavioral analytics platform.
+
+## Core Nomenclature and Technical Definitions
+
+**Collections**: Content organization units that group related documentation and product information under unified management policies
+
+**Propagation Control**: Content inheritance mechanism controlled by the `propagate: false` setting, preventing automatic content distribution across collection hierarchies
+
+**Preview Targets**: Dynamic content preview system enabling real-time documentation updates through refresh-enabled URL endpoints
+
+**Route Templates**: Dynamic URL generation patterns using slug-based parameterization for scalable content delivery
+
+**Change Data Feed (CDF)**: Databricks-native technology enabling incremental data synchronization by tracking Delta Lake table modifications
+
+**Mirror Sync vs Append Only Sync**: Two fundamental synchronization paradigms - Mirror Sync maintains exact data replicas with full CRUD operations, while Append Only Sync optimizes for continuous data ingestion without modification capabilities
+
+**Unity Catalog Integration**: Enterprise data governance layer requiring specific authentication and permission configurations for secure data access
+
+## Broader Ecosystem Integration
+
+The Collections framework integrates with multiple layers of Amplitude's product ecosystem:
+
+**Content Management Layer**: The framework provides structured content delivery for developer documentation, SDK guides, and integration tutorials through template-driven rendering and multilingual support.
+
+**Data Integration Layer**: The Source Catalog connects external data systems (primarily Databricks) with Amplitude's core analytics platform, enabling unified behavioral data analysis across organizational data sources.
+
+**Authentication and Security Layer**: Integration with enterprise authentication systems including Personal Access Tokens (PAT) and Service Principal authentication for production-grade security.
+
+**Analytics Platform Integration**: Imported data flows into Amplitude's behavioral analytics engine, connecting with User Privacy APIs and event volume management systems.
+
+## Technical Implementation Specifications
+
+### Content Management APIs
+- **Route Generation**: `/sdks/frameworks/{slug}` pattern for dynamic content delivery
+- **Template System**: Default template with custom layout rendering
+- **Content Lifecycle**: Date-based visibility controls with `past: public, future: private` policies
+
+### Data Integration Endpoints
+- **Authentication Methods**: 
+  - `databricks-pat-authentication` for development environments
+  - `service-principal-authentication` for production deployments
+- **Connection Protocol**: JDBC-based connectivity with IP allowlist security
+- **Synchronization Modes**: Configurable Mirror Sync and Append Only Sync operations
+
+### Infrastructure Requirements
+- **Databricks Cluster**: All-Purpose Compute Cluster requirement for data processing
+- **Permissions**: Unity Catalog Data Reader minimum access level
+- **Data Processing**: SQL transformation engine for real-time data manipulation
+- **Network Security**: IP allowlist configuration for secure external connectivity
+
+The Collections framework represents Amplitude's unified approach to content management and data integration, providing developers and enterprises with structured access to both documentation resources and powerful data synchronization capabilities through a cohesive, scalable platform architecture.

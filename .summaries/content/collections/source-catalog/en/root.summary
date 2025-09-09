@@ -1,0 +1,54 @@
+## Amplitude Source Catalog - Databricks Integration
+
+The Amplitude Source Catalog provides data import capabilities from external platforms into Amplitude's analytics ecosystem. The catalog currently features a sophisticated Databricks integration that enables organizations to seamlessly import behavioral data, user attributes, and group properties from their Databricks data lakehouse environment.
+
+## Core Product Architecture
+
+The Source Catalog operates as Amplitude's data ingestion layer, designed to connect external data sources with Amplitude's behavioral analytics platform. The Databricks source represents a enterprise-grade integration that leverages modern data lakehouse capabilities to provide real-time data synchronization.
+
+### Databricks Source Integration
+
+The Databricks source utilizes **Databricks Change Data Feed (CDF)** technology to enable incremental data synchronization. This integration supports importing three primary data types:
+- **Events**: Behavioral tracking data for user actions and interactions
+- **User Properties**: Attributes and characteristics associated with individual users  
+- **Group Properties**: Organizational or cohort-level attributes
+
+## Key Technical Components
+
+### Authentication & Security
+The integration supports two authentication methods:
+- **Personal Access Tokens (PAT)**: Individual user-based authentication
+- **Service Principal Authentication**: Enterprise service account authentication for production environments
+
+### Infrastructure Requirements
+- **All-Purpose Compute Cluster**: Required cluster type for data processing
+- **Unity Catalog Permissions**: Proper access controls for data governance
+- **Data Reader Permission**: Minimum permission level for accessing source tables
+- **IP Allowlist Requirements**: Network security configurations for secure connectivity
+
+### Synchronization Mechanisms
+The platform offers two distinct sync modes:
+- **Mirror Sync**: Maintains an exact replica of source data with support for updates and deletions
+- **Append Only Sync**: Continuously adds new records without modifying existing data
+
+### Data Processing Capabilities
+- **SQL Transformation**: Built-in SQL-based data transformation engine
+- **Delta Sync Support**: Incremental updates using change data capture
+- **Table Versioning**: Support for Databricks Delta Lake versioning
+- **JDBC Connection**: Standard database connectivity protocol
+
+## Integration Architecture
+
+The Databricks source integrates with Amplitude's broader data ecosystem through:
+- **User Privacy API**: Ensures compliance with data privacy regulations and user consent management
+- **Sync Frequency Configuration**: Customizable data refresh intervals based on business requirements
+- **Event Volume Impact**: Intelligent handling of high-volume data streams to optimize performance
+
+## Technical Implementation
+
+The integration establishes connectivity through JDBC connections to Databricks clusters, utilizing the Change Data Feed functionality to track and synchronize data changes. The system monitors table versions and applies transformations through SQL queries before importing data into Amplitude's analytics engine.
+
+### Cluster Access Modes
+The integration requires specific cluster access configurations to ensure proper permissions and security boundaries when accessing Unity Catalog-managed data sources.
+
+This source catalog integration enables enterprises to leverage their existing Databricks data infrastructure while gaining access to Amplitude's advanced behavioral analytics capabilities, creating a unified view of user behavior across their entire data ecosystem.
