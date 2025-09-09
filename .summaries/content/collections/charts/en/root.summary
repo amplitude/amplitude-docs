@@ -1,78 +1,88 @@
-Amplitude Analytics is a comprehensive product analytics platform that enables organizations to understand user behavior through event tracking, segmentation, and advanced analytics. The platform provides a suite of chart types and analytical tools designed to help teams make data-driven decisions about user acquisition, conversion, retention, and monetization.
+Amplitude Analytics is a comprehensive product analytics platform that provides a suite of chart types and analysis tools for understanding user behavior, conversion patterns, and product performance. The platform enables organizations to analyze event data, user segments, and behavioral patterns through various specialized chart types and visualization tools.
 
-## Core Chart Types and Analytics Capabilities
+## Core Chart Types and Analysis Tools
 
-The platform offers 15+ distinct chart types organized around key business objectives:
+The platform offers 15+ distinct chart types organized around four primary use cases:
 
-**User Understanding & Segmentation:**
-- **Event Segmentation**: Core chart for counting and filtering events to understand user behavior patterns
-- **User Sessions**: Analyzes session-based user behavior and engagement patterns
-- **Data Tables**: Multi-metric comparison and breakdown views for comprehensive event analysis
-- **User Composition**: Demographic and behavioral user breakdowns
+**Know Your Users:**
+- **Event Segmentation**: Count and filter events to understand user behavior patterns
+- **Data Tables**: Compare and break down events and metrics in tabular format
+- **User Sessions**: Analyze session-based user behavior and engagement
+- **Event Explorer**: Real-time event stream visualization for taxonomy exploration and instrumentation QA
 
-**Conversion Analysis:**
-- **Funnel Analysis**: Tracks conversion rates and drop-off points across user journeys
-- **Journeys**: Visualizes user path sequences and navigation patterns
-- **Experiment Results**: A/B testing analysis with statistical significance testing
+**Convert Your Users:**
+- **Funnel Analysis**: Track conversion rates and drop-off points across user journeys
+- **Journeys**: Analyze sequences of user actions and path analysis
 
-**Retention & Engagement:**
-- **Retention Analysis**: Measures user return behavior and long-term engagement
-- **Stickiness**: Analyzes event frequency within time intervals to identify habit-forming behaviors
-- **Lifecycle**: Categorizes users as New, Current, Resurrected, or Dormant
-- **Engagement Matrix**: Maps feature usage by breadth and frequency
+**Retain Your Users:**
+- **Retention Analysis**: Measure how often users return to the product
+- **Stickiness**: Analyze frequency of event performance within time intervals
+- **Lifecycle**: Categorize users as New, Current, Resurrected, or Dormant
+- **Engagement Matrix**: Understand feature engagement by breadth and frequency
 
 **Advanced Analytics:**
-- **Personas**: Machine learning-based user clustering and behavioral segmentation
-- **Impact Analysis**: Correlates feature engagement with downstream behavior changes
-- **Compass**: Identifies behavioral thresholds that predict retention and growth
-- **Revenue LTV**: Lifetime value analysis and monetization tracking
+- **Personas**: Cluster users based on behavioral similarities using machine learning
+- **Experiment Results**: Analyze A/B test outcomes with statistical significance
+- **Impact Analysis**: Measure how engagement with one feature affects other behaviors
+- **Compass**: Identify behavioral thresholds that predict retention and growth
+- **Revenue LTV**: Analyze lifetime value and monetization patterns
 
 ## Key Platform Components and Architecture
 
-**Events Module**: Central component for event selection, filtering, and configuration. Supports wildcard search with glob match operators, default Amplitude events (Top Global Events, Any Active Event, New User), and custom event grouping with OR logic.
+**Events Module**: Central component for event selection and configuration, supporting:
+- Default Amplitude events (Top Global Events, Any Active Event, New User)
+- Wildcard search with glob match operators
+- Event property filtering and grouping
+- Custom event creation through OR logic grouping
 
-**Segmentation Module**: Advanced user targeting system supporting behavioral cohorts, user property filtering, and complex segment definitions using AND/OR clause logic. Enables inline cohort creation and bulk property value selection.
+**Segmentation Module**: Advanced user segmentation capabilities including:
+- User categories (any users, active users, new users)
+- Filter by clauses with user properties
+- Behavioral cohort creation with "+ Performed" clause
+- Inline cohort definitions and saved segment functionality
 
-**Event Explorer**: Real-time event stream visualization tool for taxonomy exploration, instrumentation QA, and live event monitoring by user ID, device ID, or IP address.
+**Measured As Module**: Defines how events are quantified and analyzed across different chart types.
 
 ## Core Nomenclature and Definitions
 
-**Array Operators**: Filtering logic including `is`, `is not`, `contains`, `does not contain`, `set is`, `set is not`, `set contains`, `set does not contain` for precise event and property matching.
+**Array Operators**: Set of filtering operators including `is`, `is not`, `contains`, `does not contain`, `set is`, `set is not`, `set contains`, `set does not contain` for precise event and property filtering.
 
-**Group-by Functionality**: Categorization system with result limits (100 for single group-by, 500 for double group-by) and intelligent ordering by metric priority.
+**Group-by Functionality**: Categorization feature with specific limits:
+- Single group-by: 100 value limit
+- Double group-by: 500 value limit
+- Results ordered by metric priority (uniques, totals, frequency)
 
-**Cart Analysis**: E-commerce-specific feature for analyzing object arrays with property splitting, supporting cross-property vs parallel filtering semantics.
+**Cart Analysis**: Specialized feature for e-commerce analytics using object arrays with property splitting, supporting cross-property and parallel filtering semantics.
 
-**Query Time Sampling**: Performance optimization using 10% random user sampling with inverse sampling methods for large-scale analysis.
+**Query Time Sampling**: Performance optimization feature using 10% random user sampling with inverse sampling methods for up-scaling results.
 
-**Behavioral Cohorts**: User segments defined by specific action sequences, created inline or saved for reuse across charts.
+**Breakdown Table**: Interactive data review interface supporting column sorting, summary aggregation, series selection, and CSV export capabilities.
 
-## Data Management and Performance
+## Integration and Ecosystem
 
-The platform implements sophisticated caching mechanisms with different durations based on time intervals:
-- Realtime queries: No caching
-- Hourly/Daily: Short-term caching
-- Weekly/Monthly/Quarterly/Yearly: Extended caching periods
-- Dashboard and API calls have separate cache optimization
+The platform integrates with broader data infrastructure through:
+- **Amplitude Data**: Configuration hub for property splitting and data management
+- **Identify API**: User property management with append() and set() methods
+- **REST API**: Programmatic access with specific cache times and data limits
+- **Snowflake Integration**: Direct querying through Amplitude SQL
+- **Chrome Plugin**: Instrumentation Explorer for real-time debugging
 
-Data pruning automatically manages large result sets, with CSV exports supporting up to 10,000 values and Dashboard REST API supporting up to 20,000 values.
+## Plan-Based Feature Access
 
-## Integration and Extensibility
+Features are tiered across Starter, Plus, Growth, and Enterprise plans, with advanced analytics capabilities like Personas, Impact Analysis, and Compass typically available on higher-tier plans. Organization-level customization features (custom color themes, default settings) are available on Growth/Enterprise plans.
 
-**API Integration**: Comprehensive REST API for programmatic access to chart data and configurations, with specific caching behaviors for API calls.
+## Performance and Caching
 
-**Amplitude Data Integration**: Deep integration with Amplitude's data management layer for property splitting, custom event creation, and advanced filtering capabilities.
+The platform implements sophisticated caching strategies based on time intervals:
+- Realtime, hourly, daily, weekly, monthly, quarterly, and yearly intervals
+- Chart-specific cache times optimized for different analysis patterns
+- CSV export limits (10,000 rows) and Dashboard REST API limits (20,000 rows)
 
-**Chrome Plugin**: Instrumentation Explorer for real-time event validation and debugging.
+## API Endpoints and Commands
 
-**Multi-Project Support**: Organization-level settings for theme management, default configurations, and cross-project analytics.
-
-## Enterprise and Collaboration Features
-
-**Plan-Based Access**: Feature availability across Starter, Plus, Growth, and Enterprise tiers, with advanced features like Personas, Impact Analysis, and Revenue LTV restricted to higher tiers.
-
-**Customization Options**: Custom color themes (8-16 colors), organization-level defaults, dual Y-axis support, and custom legend labeling.
-
-**Sharing and Export**: Comprehensive sharing capabilities, CSV export functionality, and dashboard integration with collaborative features including annotations and releases.
-
-The platform serves as a complete analytics ecosystem where events flow through various chart types, each optimized for specific analytical use cases, while maintaining consistent filtering, segmentation, and performance optimization across all components.
+Key interface elements include:
+- Keyboard shortcuts: Shift+e (Event Segmentation), Shift+f (Funnel), Shift+g (other charts)
+- Lightning bolt icon for sampling configuration
+- "+ Performed" clause for behavioral cohort creation
+- "Add Event to Chart" functionality from Event Explorer
+- Bulk property selection through comma-separated value pasting

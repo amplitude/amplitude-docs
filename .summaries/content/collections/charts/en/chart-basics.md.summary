@@ -1,23 +1,20 @@
-**Summary:** This documentation covers Amplitude chart customization and management features including chart templates, sharing capabilities, Y-axis customization with dual Y-axis support for Event Segmentation charts, custom legend labels, project switching, and detailed chart caching times based on time intervals (realtime, hourly, daily, weekly, monthly, quarterly, yearly) with different cache durations for standalone charts versus dashboards/CSV/REST API calls.
+**Summary:** This documentation covers fundamental chart operations in Amplitude including sharing charts, customizing Y-axis settings (including dual Y-axis for Event Segmentation), adding custom legend labels, chart caching times based on intervals (realtime, hourly, daily, weekly, monthly), annotations with date ranges and categories, and keyboard shortcuts for chart creation.
 
 **Keywords:**
-- Amplitude charts
 - Event Segmentation charts
 - Y-axis customization
 - dual Y-axis
+- chart caching intervals
+- realtime hourly daily weekly monthly quarterly yearly intervals
 - chart templates
-- chart caching times
-- time intervals (realtime, hourly, daily, weekly, monthly, quarterly, yearly)
-- dashboard cache times
-- CSV export caching
-- REST API cache
 - custom legend labels
-- chart sharing
-- annotations
-- releases
-- keyboard shortcuts
+- annotations date ranges
+- annotation categories
+- keyboard shortcuts Shift+e Shift+f Shift+g
+- dashboard notebook integration
+- chart sharing modal
+- CSV export caching
+- REST API cache times
+- releases annotations
 - project switching
-- chart types switching
-- Dynamic Group Property
-- Monitors (Enterprise feature)
-- collaboration features
+- chart type switching
