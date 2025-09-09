@@ -1,6 +1,6 @@
 ## Amplitude Experiment Evaluation Proxy
 
-Amplitude Experiment Evaluation Proxy is a stateless microservice that extends Amplitude's experimentation platform to environments lacking native SDK support. This infrastructure component bridges the gap between unsupported platforms and Amplitude's remote Evaluation APIs, enabling local evaluation capabilities while preserving the performance and analytical benefits of server-side experimentation.
+The Amplitude Experiment Evaluation Proxy is a stateless microservice that extends Amplitude's experimentation platform to environments lacking native SDK support. This infrastructure component bridges the gap between unsupported platforms and Amplitude's remote Evaluation APIs, enabling local evaluation capabilities while preserving the performance and analytical benefits of server-side experimentation.
 
 ## Core Architecture and Deployment
 
@@ -36,23 +36,7 @@ The proxy exposes HTTP endpoints that mirror Amplitude's native SDK interfaces, 
 - Cohort-based targeting rule access
 - Local evaluation execution with cached experiment configurations
 
-## Key Nomenclature and Definitions
-
-**Evaluation Proxy**: The stateless microservice that enables local evaluation capabilities for platforms without native SDK support
-
-**Local Evaluation**: The process of determining experiment variants locally rather than through remote API calls, reducing latency while maintaining experiment integrity
-
-**Assignment Tracking**: Automated event logging that records when users are assigned to experiment variants, with built-in deduplication to prevent analytical inaccuracies
-
-**Cohort Synchronization**: The hourly process of updating large user segment data to enable sophisticated audience targeting in experiments
-
-**Flag Sync**: The configurable process of synchronizing experiment flag states and configurations with Amplitude's backend services
-
-**Deduplication Logic**: 24-hour temporal window mechanism that prevents duplicate assignment events from being recorded
-
-**Management API Key**: Authentication credential required for secure communication between the proxy and Amplitude's backend services
-
-## Product Ecosystem Integration
+## Product Ecosystem Positioning
 
 Within Amplitude's experimentation ecosystem, the Evaluation Proxy functions as a critical infrastructure extension that democratizes access to Amplitude Experiment's capabilities across diverse technology stacks. It maintains full compatibility with core Amplitude experimentation features:
 

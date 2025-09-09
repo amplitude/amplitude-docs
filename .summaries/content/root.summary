@@ -1,43 +1,64 @@
-Amplitude Collections is a comprehensive bidirectional data integration platform that serves as the central data synchronization hub between Amplitude's behavioral analytics platform and enterprise data warehouses. The platform enables organizations to create complete data enrichment pipelines by importing raw behavioral data for processing within Amplitude's analytics engine, then exporting the enhanced, identity-resolved data back to their data warehouse for broader business intelligence applications.
+## Amplitude Experiment Evaluation Proxy
 
-## Product Architecture and Component Relationships
+Amplitude Experiment Evaluation Proxy is a stateless microservice that extends Amplitude's experimentation platform to environments lacking native SDK support. This infrastructure component bridges the gap between unsupported platforms and Amplitude's remote Evaluation APIs, enabling local evaluation capabilities while preserving the performance and analytical benefits of server-side experimentation.
 
-The Collections ecosystem operates through two interconnected integration layers that form a unified data pipeline architecture:
+## Core Architecture and Deployment
 
-The **Source Catalog** functions as the upstream data ingestion engine, connecting major cloud data warehouses including Databricks and Snowflake to Amplitude's analytics platform. This component handles the systematic import of events, user properties, group properties, and complete user profiles through standardized connectors that share common authentication, synchronization, and transformation capabilities.
+The proxy operates as a lightweight, containerized service deployable through multiple orchestration methods:
 
-The **Destination Catalog** serves as the downstream data export engine, enabling automated transfer of processed behavioral analytics data and resolved user identity information from Amplitude back to enterprise data warehouses. Currently implemented for Snowflake with a micro-batch processing architecture that supports both historical backfills and incremental synchronization patterns.
+- **Docker Deployment**: Available as `amplitudeinc/evaluation-proxy` container image
+- **Kubernetes Integration**: Production-ready deployment via Helm charts
+- **Network Configuration**: Default operation on port 3546
+- **Storage Dependencies**: Redis backend required for caching and deduplication operations
 
-Both components leverage Amplitude's sophisticated identity resolution system to ensure consistent user tracking across the entire data flow. The Source Catalog imports raw user data for identity resolution processing, while the Destination Catalog exports the resolved merged user identities, creating a complete identity management loop that maintains data consistency across the bidirectional pipeline.
+## Key Features and Capabilities
 
-## Core Technical Nomenclature and Definitions
+**Local Evaluation Extension**: Transforms remote evaluation calls into local operations by proxying requests to Amplitude's remote Evaluation APIs/SDKs, significantly reducing latency compared to direct remote API calls while maintaining experiment integrity.
 
-**Identity Management Architecture**: The platform distinguishes between `amplitude_id` (primary user identifier for individual user tracking) and `merged_amplitude_id` (consolidated identifier after identity resolution algorithms determine that multiple amplitude_ids belong to the same user), ensuring consistent user tracking across the entire data ecosystem.
+**Automated Assignment Tracking**: Implements intelligent event tracking with built-in 24-hour deduplication logic, ensuring accurate experiment attribution without generating duplicate assignment events that could compromise analytical accuracy.
 
-**Synchronization Methodologies**: Multiple sync strategies are implemented including Full Sync for complete data refreshes, Timestamp-based syncing for incremental updates, Append Only Sync for immutable data scenarios, and Mirror Sync with Change Data Capture for real-time bidirectional synchronization maintaining exact data replicas.
+**Large-Scale Cohort Synchronization**: Facilitates sophisticated audience targeting through hourly cohort synchronization processes, enabling experiments on large user segments without performance degradation.
 
-**Change Data Capture Technologies**: Platform-specific change tracking mechanisms including Databricks' Change Data Feed (CDF) for table-level row modifications and Snowflake's CDC for real-time change identification, enabling efficient delta synchronization by processing only modified records.
+**Stateless Architecture**: Maintains no persistent state within the service itself, relying on Redis for necessary data persistence and enabling horizontal scaling and fault tolerance.
 
-**VARIANT Data Architecture**: Snowflake's semi-structured JSON data type utilized across both source and destination integrations for flexible schema handling, enabling storage of complex event properties and user attributes without requiring structural table modifications.
+## Configuration and Integration Parameters
 
-**Micro-batch Processing**: Incremental data transfer methodology employed in destination exports, optimizing computational overhead while enabling near real-time data availability through efficient file processing architecture.
+### Essential Configuration Elements
+- **Flag Sync Interval**: Configurable frequency for experiment flag synchronization with Amplitude services
+- **Management API Key**: Authentication credential for secure communication with Amplitude's backend services
+- **Cohort Sync Schedule**: Hourly synchronization cadence for large cohort targeting updates
+- **Deduplication Window**: 24-hour temporal window for assignment event deduplication logic
 
-**Insert ID and Deduplication**: Unique event identifiers used across the platform for preventing duplicate data ingestion during synchronization processes, ensuring data integrity across multiple sync operations and bidirectional data flows.
+### API Surface
+The proxy exposes HTTP endpoints that mirror Amplitude's native SDK interfaces, providing:
+- User-specific experiment variant retrieval
+- Automatic assignment event triggering
+- Cohort-based targeting rule access
+- Local evaluation execution with cached experiment configurations
 
-## Enterprise Ecosystem Integration
+## Key Nomenclature and Definitions
 
-Collections functions as the central data integration hub within Amplitude's broader enterprise analytics ecosystem, providing comprehensive data governance and compliance capabilities. The platform maintains deep integration with Amplitude's User Privacy API to ensure user deletion requests and privacy controls are respected across all synchronized data flows, maintaining compliance with GDPR, CCPA, and other data protection regulations.
+**Evaluation Proxy**: The stateless microservice that enables local evaluation capabilities for platforms without native SDK support
 
-The platform supports regional data sovereignty through configurable IP allowlists and geographic data residency requirements, enabling global organizations to maintain data sovereignty while leveraging centralized analytics capabilities. Multi-layered authentication supports personal access tokens (PAT), service principal authentication for Databricks, and RSA key pair authentication for Snowflake, ensuring secure data access within organizational security frameworks.
+**Local Evaluation**: The process of determining experiment variants locally rather than through remote API calls, reducing latency while maintaining experiment integrity
 
-Configurable enrichment settings allow organizations to control automatic data enhancement processes, providing granular control over data processing pipelines while maintaining raw data fidelity when required for compliance or analytical purposes.
+**Assignment Tracking**: Automated event logging that records when users are assigned to experiment variants, with built-in deduplication to prevent analytical inaccuracies
 
-## Technical Implementation Specifications
+**Cohort Synchronization**: The hourly process of updating large user segment data to enable sophisticated audience targeting in experiments
 
-**Databricks Source Integration** requires all-purpose compute clusters with JDBC connectivity, Unity Catalog compatibility with Data Reader permissions, SQL-based transformation capabilities during import with custom query mapping, and Change Data Feed support for efficient delta synchronization with configurable sync frequency based on event volume requirements.
+**Flag Sync**: The configurable process of synchronizing experiment flag states and configurations with Amplitude's backend services
 
-**Snowflake Bidirectional Integration** specifications include VARIANT JSON support with OBJECT_CONSTRUCT function implementation and TIMESTAMP_NTZ format compatibility for source operations. Destination capabilities feature automated schema management with VARIANT columns and micro-batch file processing architecture. Universal requirements include key pair authentication with JWT validation, IP allowlisting for network security, 12-hour query timeout limits, 1 billion events batch processing capacity, and auto-suspend configuration for cost optimization.
+**Deduplication Logic**: 24-hour temporal window mechanism that prevents duplicate assignment events from being recorded
 
-**Universal Platform Capabilities** encompass SQL query mapping for custom data transformation during synchronization, event volume impact analysis for performance optimization, real-time sync monitoring with intelligent retry mechanisms, batch processing with configurable filtering for selective data transfer, and regional IP allowlist configuration for network security compliance.
+**Management API Key**: Authentication credential required for secure communication between the proxy and Amplitude's backend services
 
-The destination catalog provides configurable filtering options enabling selective data export based on business criteria, reducing storage costs and transfer volumes while maintaining analytical data relevance for downstream consumption. This comprehensive enterprise data integration ecosystem bridges organizational data warehouses with advanced behavioral analytics capabilities while maintaining the security, compliance, and performance standards required by large-scale enterprise deployments.
+## Product Ecosystem Integration
+
+Within Amplitude's experimentation ecosystem, the Evaluation Proxy functions as a critical infrastructure extension that democratizes access to Amplitude Experiment's capabilities across diverse technology stacks. It maintains full compatibility with core Amplitude experimentation features:
+
+- **User Targeting and Segmentation**: Preserves sophisticated targeting capabilities across platforms
+- **Assignment Analytics**: Ensures consistent event tracking and attribution across all integration points
+- **Cohort-Based Experimentation**: Enables large-scale audience experiments regardless of platform constraints
+- **Real-Time Configuration**: Maintains synchronization with live experiment configurations and flag states
+
+The proxy enables organizations to implement unified experimentation strategies across heterogeneous environments while maintaining the performance characteristics, analytical precision, and operational reliability of Amplitude's native experimentation platform. This architectural approach ensures that platform limitations don't constrain experimentation scope or analytical fidelity.

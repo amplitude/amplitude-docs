@@ -1,0 +1,45 @@
+## Amplitude Experiment Evaluation Proxy
+
+The Experiment Evaluation Proxy is a stateless microservice designed to extend Amplitude's experimentation capabilities to platforms that don't have native SDK support. It serves as a bridge between unsupported platforms and Amplitude's remote Evaluation APIs, enabling local evaluation capabilities while maintaining the performance and reliability benefits of server-side experimentation.
+
+## Core Architecture and Features
+
+The proxy operates as a lightweight, stateless service that can be deployed via Docker containers or Kubernetes using Helm charts. It runs on port 3546 and requires Redis for storage operations. The service provides two primary value propositions:
+
+**Local Evaluation Extension**: Enables platforms without native Amplitude Experiment SDK support to perform local evaluations by proxying requests to remote Evaluation APIs/SDKs, reducing latency and improving performance compared to direct remote calls.
+
+**Automated Event Tracking**: Automatically handles assignment event tracking with built-in 24-hour deduplication logic, ensuring accurate experiment attribution without duplicate events that could skew analytics.
+
+**Large-Scale Cohort Support**: Facilitates targeting of large user cohorts through hourly synchronization processes, enabling sophisticated audience segmentation for experiments.
+
+## Technical Implementation
+
+### Deployment Options
+- **Docker**: Available as `amplitudeinc/evaluation-proxy` container image
+- **Kubernetes**: Deployable via Helm charts for production orchestration
+- **Port Configuration**: Operates on port 3546 by default
+- **Storage Backend**: Requires Redis for caching and deduplication logic
+
+### Key Configuration Parameters
+- **Flag Sync Interval**: Configurable synchronization frequency for experiment flags
+- **Management API Key**: Required for authentication with Amplitude services
+- **Cohort Sync**: Hourly synchronization for large cohort targeting
+- **Deduplication Window**: 24-hour window for assignment event deduplication
+
+## API Surface and Integration
+
+The proxy exposes evaluation API endpoints that mirror Amplitude's native SDK interfaces, allowing seamless integration for unsupported platforms. Applications can make HTTP requests to these endpoints to:
+- Retrieve experiment variants for users
+- Trigger assignment events automatically
+- Access cohort-based targeting rules
+- Perform local evaluations with cached experiment configurations
+
+## Product Ecosystem Integration
+
+Within Amplitude's broader experimentation ecosystem, the Evaluation Proxy serves as an infrastructure component that extends the reach of Amplitude Experiment beyond platforms with native SDK support. It maintains compatibility with Amplitude's core experimentation features including:
+- User targeting and segmentation
+- Assignment tracking and analytics
+- Cohort-based experimentation
+- Real-time flag synchronization
+
+The proxy enables organizations to maintain consistent experimentation practices across heterogeneous technology stacks while preserving the performance characteristics and analytical accuracy of Amplitude's experimentation platform.
