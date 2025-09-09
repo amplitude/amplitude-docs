@@ -1,0 +1,47 @@
+## Amplitude Snowflake Destination Integration
+
+Amplitude's Snowflake destination integration is a warehouse destination solution that enables automated export of behavioral analytics data from Amplitude's platform to Snowflake data warehouses. The integration facilitates data consolidation by transferring processed event data and user identity information through recurring synchronization, supporting advanced analytics, reporting, and data science workflows within enterprise data architectures.
+
+## Product Relationships and Features
+
+The Snowflake destination operates within Amplitude's warehouse destinations ecosystem as a core data pipeline component. The integration supports two primary export functionalities:
+
+**Event Data Export** transfers comprehensive behavioral event data including user actions, properties, and metadata to designated Snowflake tables with automated schema mapping and management.
+
+**Merged User Data Export** synchronizes user identity resolution data, maintaining consistent user tracking across different identifiers through Amplitude's identity resolution system.
+
+The integration employs micro-batch file processing architecture for efficient data transfer, supporting both historical data backfills and ongoing incremental synchronization. Data filtering capabilities enable selective export based on configurable criteria, optimizing storage utilization and transfer efficiency while maintaining data relevance for downstream consumption.
+
+## Key Nomenclature and Definitions
+
+**amplitude_id**: Primary user identifier within Amplitude's analytics system, serving as the foundational reference for user behavior tracking and event attribution.
+
+**merged_amplitude_id**: Consolidated user identifier representing resolved identity when multiple amplitude_ids are determined to belong to the same user through Amplitude's identity resolution algorithms.
+
+**VARIANT Columns**: Snowflake's semi-structured data type utilized for storing JSON-formatted event properties and user attributes, enabling flexible schema evolution without requiring structural table modifications.
+
+**Micro-batch Files**: Incremental data transfer files designed for efficient processing, reducing computational overhead while enabling near real-time data availability in the destination warehouse.
+
+**Key Pair Authentication**: RSA public/private key pair authentication method for secure, scalable connection establishment, superseding deprecated password-based authentication approaches.
+
+**ORGNAME-ACCOUNTNAME Format**: Snowflake account identifier structure combining organization and account names for proper connection routing and configuration.
+
+## Broader Product Ecosystem Integration
+
+The Snowflake destination functions as a critical component within Amplitude's comprehensive data infrastructure, positioned alongside other warehouse destinations to enable unified data architectures. This integration allows organizations to combine Amplitude's behavioral analytics data with other business systems data within their enterprise data warehouse environment.
+
+The solution leverages Amplitude's identity resolution capabilities by exporting merged user data, ensuring consistent user tracking across the entire data ecosystem. This enables downstream analytics tools, business intelligence platforms, and machine learning pipelines to utilize Amplitude's sophisticated user identity management for comprehensive customer analytics.
+
+## Technical Implementation Details
+
+**Authentication Configuration**: The integration implements key pair authentication with JWT token validation, providing enhanced security and scalability compared to password-based methods.
+
+**Network Security**: IP allowlisting requirements ensure secure data transfer with specific IP ranges that must be configured within Snowflake's network policies for proper connectivity.
+
+**Schema Management**: Automated table creation and management with predefined schemas for both event and merged user data exports, utilizing VARIANT columns for flexible JSON data storage and retrieval.
+
+**Cost Optimization**: Auto-suspend configuration recommendations help manage Snowflake compute costs through automatic warehouse suspension during idle periods, optimizing resource utilization.
+
+**Data Export Filtering**: Configurable filtering options enable selective data export capabilities, reducing unnecessary data transfer volumes and storage costs while maintaining analytical data relevance.
+
+The integration emphasizes computational cost optimization through efficient micro-batch processing architecture and provides comprehensive schema documentation to facilitate downstream data consumption, analysis workflows, and integration with existing data infrastructure components.
