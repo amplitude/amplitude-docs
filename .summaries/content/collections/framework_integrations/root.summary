@@ -1,0 +1,73 @@
+## Amplitude Framework Integrations
+
+Amplitude Framework Integrations is a comprehensive SDK suite designed to seamlessly embed analytics and user behavior tracking capabilities into modern web applications. The product provides specialized tooling for popular frameworks like Next.js and React, enabling developers to implement full-stack analytics coverage with minimal configuration overhead. Key capabilities include automated event tracking (autocapture), session replay functionality, and visual labeling tools for enhanced user interaction analysis.
+
+## Product Relationships and Features
+
+The framework integrations architecture centers on **Amplitude's tri-SDK ecosystem** that provides comprehensive coverage across different application layers:
+
+**Core SDK Components:**
+- **Browser SDK** (`@amplitude/analytics-browser`): Optimized for client-side analytics in browser environments, handling user interactions, page views, and frontend event tracking
+- **Unified SDK** (`@amplitude/unified`): Comprehensive solution bridging client and server-side implementations, enabling consistent tracking across full-stack applications
+- **Node SDK** (`@amplitude/analytics-node`): Dedicated server-side analytics for backend event tracking and server-rendered applications
+
+These SDKs work synergistically to create **unified user journey tracking**, where client-side interactions seamlessly connect with server-side events through shared user identification and session management.
+
+**Advanced Feature Integration:**
+- **Session Replay** extends core analytics by capturing detailed user interaction recordings, providing visual context for quantitative data
+- **Visual Labeling** tools integrate with Session Replay to enable point-and-click event definition and management
+- **Autocapture functionality** works across all SDKs to automatically instrument common user interactions without manual coding
+
+## Key Nomenclature and Definitions
+
+**Framework-Specific Components:**
+- **AmplitudeProvider**: React Context provider component that instantiates and distributes the Amplitude instance throughout the React component tree
+- **useAmplitude hook**: React hook providing direct access to Amplitude tracking methods and configuration within functional components
+- **initAll method**: Unified initialization function that simultaneously configures multiple Amplitude features (analytics, session replay, visual labeling)
+
+**Tracking Methodologies:**
+- **Autocapture**: Automated event instrumentation system with granular control:
+  - `elementInteractions`: Captures click events, button presses, and UI element interactions
+  - `pageViews`: Automatically tracks navigation events and route changes
+  - `formInteractions`: Monitors form submissions, field changes, and form abandonment
+- **Manual tracking**: Explicit event instrumentation through direct SDK method calls for custom business logic events
+
+**Configuration Architecture:**
+- **API Key management**: Environment-based configuration system using variables like `NEXT_PUBLIC_AMPLITUDE_API_KEY` for secure credential handling
+- **Plugin system**: Extensible architecture supporting `sessionReplayPlugin` and other feature extensions
+- **Visual Labeling interface**: GUI-based tool for defining trackable elements and events without code changes
+
+## Broader Product Ecosystem Integration
+
+Amplitude Framework Integrations functions as the **data ingestion and instrumentation layer** within Amplitude's comprehensive product analytics ecosystem. The SDKs establish the critical connection between application-level user interactions and Amplitude's cloud-based analytics infrastructure.
+
+**Data Pipeline Integration:**
+- **Real-time event streaming** from instrumented applications to Amplitude's data processing pipeline
+- **Cross-platform user identity resolution** enabling unified user journey analysis across web, mobile, and server touchpoints
+- **Integration with downstream analytics tools** including Amplitude's cohort analysis, funnel optimization, retention analysis, and behavioral segmentation capabilities
+
+**Advanced Analytics Ecosystem:**
+- **Session Replay data** integrates with Amplitude's user behavior analysis suite, providing visual context that enhances quantitative metrics
+- **Event data feeds** into Amplitude's machine learning models for predictive analytics and user segmentation
+- **Cross-product data sharing** enables integration with Amplitude's experimentation platform and personalization tools
+
+## Technical Implementation Details
+
+**Next.js Framework Specialization:**
+- **App Router integration** (Next.js 13+): Native support for modern file-based routing with server components compatibility
+- **Pages Router compatibility**: Backward compatibility with traditional Next.js routing architecture
+- **Middleware integration**: Server-side event tracking through Next.js middleware for server-rendered page analytics
+- **TypeScript support**: Complete type definitions for event tracking, configuration objects, and SDK methods
+
+**API Methods and Configuration Patterns:**
+- `amplitude.init()`: Primary SDK initialization method with environment-specific configuration
+- **Dual-environment configuration**: Separate client-side and server-side initialization patterns optimized for different rendering strategies (SSR, SSG, CSR)
+- **Environment variable management**: Secure API key handling through build-time and runtime environment configuration
+- **Plugin architecture**: Extensible system supporting `sessionReplayPlugin`, custom event processors, and third-party integrations
+
+**Command Line and Development Tools:**
+- Environment-specific build configurations for development vs. production analytics endpoints
+- Debug mode capabilities for development environment event validation
+- Integration with modern development workflows including hot reloading and TypeScript compilation
+
+The Framework Integrations product serves as the foundational instrumentation layer that transforms application user interactions into structured analytics data, designed to integrate seamlessly with existing development practices while providing enterprise-grade tracking and analysis capabilities.

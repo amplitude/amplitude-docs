@@ -1,0 +1,60 @@
+## Amplitude Framework Integrations
+
+Amplitude provides comprehensive SDK integration support for modern web frameworks, with specialized documentation and tooling for seamless implementation across different development environments. The framework integrations collection focuses on enabling developers to implement Amplitude's analytics and user behavior tracking capabilities within their existing application architectures.
+
+## Product Relationships and Features
+
+The framework integrations center around **Amplitude's dual SDK approach**:
+
+- **Browser SDK** (`@amplitude/analytics-browser`): Client-side analytics optimized for browser environments
+- **Unified SDK** (`@amplitude/unified`): Comprehensive solution supporting both client and server-side implementations
+- **Node SDK** (`@amplitude/analytics-node`): Server-side analytics for backend tracking
+
+These SDKs work together to provide **full-stack analytics coverage**, allowing developers to track user interactions across both client and server environments within a single application framework.
+
+The **Session Replay integration** extends beyond basic analytics to capture detailed user interaction data, working in conjunction with **Visual Labeling** tools for enhanced event analysis and debugging.
+
+## Key Nomenclature and Definitions
+
+**Core SDK Components:**
+- **AmplitudeProvider**: React Context provider that makes Amplitude instance available throughout the component tree
+- **useAmplitude hook**: React hook for accessing Amplitude functionality within components
+- **initAll method**: Initialization function that sets up multiple Amplitude features simultaneously
+
+**Tracking Mechanisms:**
+- **Autocapture**: Automated event tracking without manual instrumentation
+  - `elementInteractions`: Automatic tracking of user clicks and interactions
+  - `pageViews`: Automatic page navigation tracking
+  - `formInteractions`: Automatic form submission and interaction tracking
+- **Manual tracking**: Explicit event tracking through SDK methods
+
+**Configuration Elements:**
+- **API Key management**: Environment-specific configuration using `NEXT_PUBLIC_AMPLITUDE_API_KEY`
+- **sessionReplayPlugin**: Plugin architecture for extending core functionality
+- **Visual Labeling**: Interface for defining and managing tracked elements
+
+## Product Ecosystem Integration
+
+Amplitude's framework integrations serve as the **implementation layer** within the broader Amplitude analytics ecosystem. The SDKs connect local application events to Amplitude's cloud-based analytics platform, enabling:
+
+- **Real-time event streaming** from applications to Amplitude's data pipeline
+- **Cross-platform user journey tracking** through unified user identification
+- **Integration with Amplitude's analysis tools** including cohort analysis, funnel tracking, and behavioral segmentation
+
+The **Session Replay functionality** integrates with Amplitude's user behavior analysis suite, providing visual context for quantitative analytics data. This creates a comprehensive view of user interactions that feeds into Amplitude's broader product analytics and optimization tools.
+
+## Technical Implementation Details
+
+**Next.js-Specific Integration Points:**
+- **App Router support** (Next.js 13+): Modern routing architecture integration
+- **Pages Router compatibility**: Legacy routing system support
+- **Middleware integration**: Server-side event tracking through Next.js middleware
+- **TypeScript support**: Full type safety for event tracking and configuration
+
+**API and Configuration Methods:**
+- `amplitude.init()`: Primary SDK initialization
+- Client-side and server-side configuration patterns for different rendering strategies
+- Environment variable management for secure API key handling
+- Plugin architecture supporting extensible functionality through `sessionReplayPlugin` and other extensions
+
+The framework integrations provide the foundational layer for implementing Amplitude's analytics capabilities, designed to work seamlessly within existing development workflows while providing comprehensive tracking and analysis capabilities.
