@@ -114,7 +114,7 @@ Configure the evaluation proxy to use Redis as a persistent storage. Highly reco
 | --- | --- |
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |
-| `useCluster` | Optional. If `uri` is a cluster url, you must pass this as `true`. It defaults to `false`. |
+| `useCluster` | Optional. If `uri` is a cluster URL, pass this as `true`. It defaults to `false`. |
 | `prefix` | Optional. A prefix for all keys saved by the evaluation proxy (default `amplitude`). |
 
 ## Deployment
