@@ -365,7 +365,9 @@ See the [Converter Configuration reference](/docs/data/converter-configuration-r
 
 ### Enable the source
 
-When your converter is configured, click **Save and Enable** to enable the source.
+You must successfully test your converter before you can enable the source and begin data ingestion. You can save your changes and return later, but the option to enable the source is only available when the converter is configured successfully.
+
+When your converter is configured, click **Save and Enable** to enable the source. 
 
 ## Troubleshooting
 
