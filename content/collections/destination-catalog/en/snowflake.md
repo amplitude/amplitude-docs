@@ -68,7 +68,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
     Amplitude offers password-based and key pair authentication for Snowflake. 
 
     {{partial:admonition type="warning" heading="Password Authentication Deprecation"}}
-    Password-based authentication is deprecated and will be removed in a future release. We strongly recommend migrating to key pair authentication for enhanced security and better long-term support.
+Password-based authentication is deprecated and will be removed in a future release. Amplitude recommends that you migrate to key pair authentication for enhanced security and better long-term support.
     {{/partial:admonition}}
 
     {{partial:admonition type="warning" heading=""}}
