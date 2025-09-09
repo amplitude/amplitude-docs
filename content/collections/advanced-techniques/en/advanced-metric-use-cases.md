@@ -49,8 +49,8 @@ When you create a metric, Amplitude computes that metric on **all** exposed user
 
 Follow these steps to filter a subset of users in your experiment results:
 
-1. From the *Analyze* tab in your experiment, click *Open in Chart.*
-2. In the *Variants performed by* section, click *+Filter by* to add a filter for the Country property.
+1. In your experiment, go to *Activity > Analysis > external link icon*. 
+2. In the Variants Performed By section, click **Filter by** to add a filter for the Country property.
 
 ![](/docs/output/img/advanced-techniques/20464386075547.png)
 
