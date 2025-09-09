@@ -81,7 +81,7 @@ The default configuration captures user interactions with interactive elements o
 * All clicks on video and audio elements
 * Clicks on select elements that result in a change on your page (for example, a modal appearing) or navigation to another page. These elements include divs, spans, and headers.
 * All clicks on elements with an attribute of `data-amp-default-track` or a class of `amp-default-track`.
-* You can customize this configuration to add or remove selectors. You can choose if you want those selectors to always be tracked or only track then when the click results in a change to the page.
+* You can customize this configuration to add or remove selectors. You can choose if you want those selectors to always be tracked or only track them when the click results in a change to the page.
 
 | Property Name           | Description |
 |-------------------------|-------------|
