@@ -11,6 +11,7 @@ github_link: 'https://github.com/amplitude/Amplitude-TypeScript/tree/main/packag
 updated_at: 1749752109
 exclude_from_sitemap: false
 platform: browser
+nav_title: developers
 ---
 
 This guide covers the installation and setup of Amplitude's Browser SDK in Next.js applications and includes instructions for both client-side and server-side configurations.
