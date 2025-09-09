@@ -119,6 +119,21 @@ Key indicators: Changes in `src/network-observer.ts`, URL parsing logic using `n
 
 **Summary**: When internal implementation improvements enhance privacy/security to better fulfill existing documented promises without changing user-facing APIs or behavior, documentation updates are typically not needed.
 
+## Preview Mode Internal Refactoring Pattern (Added 2025-09-09)
+
+**PR #211** (amplitude/experiment-js-client - refactor preview mode) confirmed that preview mode refactoring typically doesn't need docs updates when they:
+
+1. **Improve internal implementation without changing user workflow** - Moved preview setup logic from constructor to `setupPreviewMode()` method but users still access preview through same "Test & Preview" button
+2. **Add framework compatibility improvements** - Added Next.js hydration attributes (`data-hydration-safe`, `data-preserve-hydration`) and `requestAnimationFrame()` for stable DOM insertion
+3. **Refactor internal state management** - Changed `previewFlags` type from `Record<string, string>` to `Record<string, Variant>` and added `isPreviewMode` boolean, but user-facing behavior unchanged
+4. **Follow up on recently documented features** - Improves implementation of preview modal documented in PR #205, but modal still "appears automatically when SDK detects preview flags"
+5. **Don't change URL parameters or session storage behavior** - Users continue using same `PREVIEW=true` + flag parameters, same session storage mechanisms
+6. **Keep existing APIs and configuration unchanged** - No new user-facing methods, parameters, or configuration options
+
+Key indicators: Changes in `packages/experiment-tag/src/experiment.ts` that move setup logic between methods, update internal type definitions, add framework compatibility attributes, improve message handling with `webExperimentClient.globalScope` instead of `getGlobalScope()`, but preserve all documented user workflows and behaviors.
+
+**Summary**: Preview mode refactoring that improves reliability, framework compatibility, and internal architecture without changing how users create, access, or experience preview functionality doesn't require documentation updates since existing guides remain accurate.
+
 ## Cross-SDK Integration Coordination Pattern
 
 **PR #321** (amplitude/Amplitude-Swift - expose trackAppOpenedEvent for Flutter SDK) confirmed that cross-SDK integration changes typically don't need docs updates when they:
