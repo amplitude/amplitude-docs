@@ -78,7 +78,12 @@
     }
   </style>
   {{partial:partials/_amplitude}}
-
+  {{if content | math_prep:detect }}
+    {{partial:partials/katex-assets}}
+    <style>
+      .tex-unprocessed { opacity: 0; }
+    </style>
+  {{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
   <div x-data="{ sidebarOpen: false }" class="container prose">
