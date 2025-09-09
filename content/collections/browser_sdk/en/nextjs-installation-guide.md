@@ -697,7 +697,7 @@ amplitude.init(apiKey, undefined, {
 {{/partial:tabs}}
 
 {{partial:admonition type="tip" heading="Visual Labeling"}}
-Visit your Next.js app with the [Amplitude Chrome Extension](https://chrome.google.com/webstore/detail/amplitude-event-explorer/hjfgajkjlmjcbnbmghbljjkbkhniagkh) to visually label elements and create custom events without writing code. Review the [Visual Labeling documentation](/docs/data/visual-labeling).
+Visit your Next.js app with the [Amplitude Chrome Extension](https://chromewebstore.google.com/detail/amplitude-event-explorer/acehfjhnmhbmgkedjmjlobpgdicnhkbp) to view the fired events in the page.
 {{/partial:admonition}}
 
 ### Middleware integration
