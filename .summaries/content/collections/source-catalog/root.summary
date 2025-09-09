@@ -1,72 +1,72 @@
-# Amplitude Source Catalog
+## Amplitude Source Catalog
 
-The Amplitude Source Catalog is a data ingestion platform that enables organizations to import external data into Amplitude's behavioral analytics ecosystem. The catalog serves as Amplitude's primary data integration layer, connecting external data sources with the core analytics platform to provide unified behavioral insights.
+The Amplitude Source Catalog is an enterprise data integration platform that enables organizations to synchronize data between cloud data warehouses and Amplitude's analytics platform. The catalog provides comprehensive data warehouse connectors for major platforms including Databricks and Snowflake, supporting bidirectional data flow for events, user properties, group properties, and user profiles.
 
-## Product Overview and Key Features
+## Product Architecture and Feature Relationships
 
-The Source Catalog currently centers around a sophisticated **Databricks integration** that leverages modern data lakehouse architecture to provide enterprise-grade data synchronization capabilities. The platform supports real-time data ingestion from Databricks environments, enabling organizations to seamlessly integrate their existing data infrastructure with Amplitude's analytics capabilities.
+The source catalog operates as a unified integration layer with standardized capabilities across supported data warehouse platforms:
 
-**Core capabilities include:**
-- Real-time incremental data synchronization using Change Data Feed technology
-- Multi-modal data import supporting events, user properties, and group properties
-- Enterprise-grade authentication and security controls
-- SQL-based data transformation engine
-- Flexible synchronization modes for different use cases
+**Core Data Import Framework**: All integrations share a common architecture for importing four primary data types - events for behavioral tracking, user properties for individual user attributes, group properties for organizational or cohort-level data, and complete user profiles for comprehensive user management.
 
-## Product Relationships and Feature Architecture
+**Synchronization Engine**: The platform implements multiple sync strategies to accommodate different data update patterns and business requirements. Full Sync provides complete data refreshes, Timestamp-based syncing enables incremental updates using temporal markers, Append Only Sync supports write-only scenarios for immutable data, and Mirror Sync maintains exact replicas with Change Data Capture capabilities for real-time synchronization.
 
-The Source Catalog operates as a bridge between external data systems and Amplitude's analytics platform. The **Databricks source** represents the flagship integration, designed to handle three distinct data types:
+**Authentication and Security Layer**: Enterprise-grade security is implemented through multiple authentication methods including personal access tokens (PAT), service principal authentication for Databricks environments, and key pair authentication for Snowflake, ensuring secure data access within organizational security frameworks.
 
-- **Events**: Behavioral tracking data capturing user actions and interactions
-- **User Properties**: Individual user attributes and characteristics
-- **Group Properties**: Organizational or cohort-level attributes for segmentation
+**Data Transformation Pipeline**: Built-in SQL query mapping capabilities allow custom data transformation during the import process, enabling organizations to reshape and enrich data as it flows from warehouse to analytics platform.
 
-The integration utilizes **Databricks Change Data Feed (CDF)** as its core synchronization technology, enabling efficient incremental updates by tracking only changed data rather than full table refreshes.
+## Key Nomenclature and Technical Definitions
 
-## Key Nomenclature and Definitions
+**Change Data Feed (CDF)**: Databricks-specific table-level change tracking mechanism that captures data modifications at the row level, enabling efficient delta synchronization by processing only changed records rather than performing full table scans.
 
-**Change Data Feed (CDF)**: Databricks technology that tracks changes to Delta Lake tables, enabling incremental data synchronization
+**Change Data Capture (CDC)**: Snowflake's systematic approach to identifying and capturing data modifications in real-time, supporting continuous synchronization between warehouse and analytics platforms through automated change detection.
 
-**Mirror Sync**: Synchronization mode that maintains an exact replica of source data, supporting updates and deletions to keep data in perfect alignment
+**Mirror Sync vs Append Only Sync**: Mirror Sync maintains bidirectional data consistency with support for updates, deletions, and insertions, creating an exact replica of source data. Append Only Sync operates in a unidirectional mode, exclusively adding new records without modifying existing data, optimized for immutable data scenarios.
 
-**Append Only Sync**: Synchronization mode that continuously adds new records without modifying existing data, optimized for write-heavy scenarios
+**Delta Sync**: Incremental synchronization methodology that identifies and transfers only data changes since the last synchronization checkpoint, optimizing network bandwidth and processing resources while maintaining data consistency.
 
-**All-Purpose Compute Cluster**: Required Databricks cluster type for data processing operations
+**Unity Catalog**: Databricks' centralized governance framework requiring specific Data Reader permissions and cluster access mode configurations for secure table access and metadata management.
 
-**Unity Catalog**: Databricks' unified governance solution for data and AI assets, requiring specific permissions for integration access
+**Insert ID**: Unique event identifier used for deduplication logic, preventing duplicate event ingestion during synchronization processes and ensuring data integrity across multiple sync operations.
 
-**Personal Access Tokens (PAT)**: Individual user-based authentication method for development and testing environments
+**EPOCH_MILLISECOND**: Standardized timestamp format used across integrations for precise event timing, ensuring consistent temporal data representation regardless of source warehouse timestamp formats.
 
-**Service Principal Authentication**: Enterprise service account authentication designed for production deployments
+## Enterprise Ecosystem Integration
 
-**Delta Sync**: Incremental update mechanism using change data capture to synchronize only modified records
+The source catalog functions as a critical component within Amplitude's broader enterprise analytics ecosystem, providing upstream data ingestion capabilities that connect to downstream analytics and compliance services:
 
-## Broader Product Ecosystem Integration
+**Privacy and Compliance Integration**: Deep integration with Amplitude's User Privacy API ensures that user deletion requests and privacy controls are respected across all synchronized data, maintaining compliance with GDPR, CCPA, and other data protection regulations.
 
-The Source Catalog integrates with several components of Amplitude's broader platform:
+**Regional Data Governance**: Support for regional IP allowlists and geographic data residency requirements enables global organizations to maintain data sovereignty while leveraging centralized analytics capabilities.
 
-- **User Privacy API**: Ensures compliance with data privacy regulations and manages user consent across imported data
-- **Behavioral Analytics Platform**: The destination system where imported data is processed and analyzed
-- **Event Volume Management**: Intelligent handling systems that optimize performance for high-volume data streams
+**Analytics Pipeline Integration**: Synchronized data flows directly into Amplitude's behavioral analytics engine, supporting advanced user journey analysis, cohort segmentation, and predictive analytics capabilities.
 
-The integration creates a unified data ecosystem where organizations can leverage existing Databricks infrastructure while accessing Amplitude's advanced behavioral analytics capabilities.
+**Enrichment Services Control**: Configurable enrichment settings allow organizations to disable automatic data enhancement when raw data fidelity is required, providing granular control over data processing pipelines.
 
-## Technical Implementation Details
+## Technical Implementation Specifications
 
-### Authentication Methods
-- **Personal Access Tokens**: `databricks-pat-authentication`
-- **Service Principal**: `service-principal-authentication`
+**Databricks Integration Technical Requirements**:
+- All-purpose compute clusters (excludes serverless and job clusters)
+- JDBC connection protocol for data access
+- SQL-based transformation capabilities during import
+- Table versioning support for change tracking
+- Configurable sync frequency based on event volume requirements
+- Unity Catalog compatibility with Data Reader permissions
 
-### Infrastructure Requirements
-- **Cluster Type**: All-Purpose Compute Cluster (required)
-- **Permissions**: Unity Catalog Data Reader permission (minimum)
-- **Network**: IP allowlist configuration for secure connectivity
-- **Protocol**: JDBC connection for database connectivity
+**Snowflake Integration Technical Specifications**:
+- VARIANT JSON data type support for flexible schema handling
+- OBJECT_CONSTRUCT function implementation for complex data mapping
+- TIMESTAMP_NTZ format support for timezone-neutral temporal data
+- ABORT_DETACHED_QUERY configuration for connection management
+- DATA_RETENTION_TIME_IN_DAYS enforcement for historical data access
+- 12-hour query timeout with 1 billion events batch processing limit
+- Storage integration with external stages for large-scale data transfers
 
-### Data Processing Features
-- **SQL Transformation Engine**: Built-in capability for data transformation during ingestion
-- **Table Versioning Support**: Compatible with Databricks Delta Lake versioning
-- **Sync Frequency Configuration**: Customizable data refresh intervals
-- **Cluster Access Modes**: Specific access configurations for Unity Catalog integration
+**Universal Technical Features**:
+- SQL query mapping for custom data transformation during sync
+- Regional IP allowlist configuration for network security compliance
+- Event volume impact analysis for performance optimization
+- Configurable authentication methods supporting enterprise security policies
+- Batch processing capabilities with intelligent retry mechanisms
+- Real-time sync monitoring and error handling
 
-The Source Catalog represents Amplitude's strategic approach to enterprise data integration, enabling organizations to maintain their existing data infrastructure while gaining access to sophisticated behavioral analytics capabilities through seamless, real-time data synchronization.
+The Amplitude Source Catalog represents a comprehensive enterprise data integration solution, designed to bridge the gap between organizational data warehouses and advanced analytics platforms while maintaining the security, compliance, and performance standards required by large-scale enterprise deployments.
