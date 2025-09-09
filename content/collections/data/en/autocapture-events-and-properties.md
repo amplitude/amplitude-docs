@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1755188049
 ---
-This page contains information about the events and event properties collected by Autocapture:
+This page contains information about the events and event properties that Autocapture collects:
 
 ## Sessions
 ### Session Started
