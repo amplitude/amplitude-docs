@@ -1,6 +1,5 @@
 ---
 id: cc86bea6-52a3-4c4b-8da4-2c5c159ccccc
-blueprint: browser_sdk
 title: 'Next.js Installation Guide'
 sdk_status: current
 article_type: guide

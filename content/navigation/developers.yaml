@@ -8,4 +8,4 @@ collections:
   - session-replay
   - ampli
   - sources
-  - browser_sdk
+  - framework_integrations
