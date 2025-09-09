@@ -90,10 +90,10 @@ The above example still tracks the click on the div. However, the text content "
 Precise text works recursively so that any text contained in an element is masked. For example: 
 
 ```html
-<div data-am-mask>
+<div data-amp-mask>
   John Doe
   <div>Jane Doe</div>
-  </div>
+</div>
 ```
 In the above example, both names are masked with `*****`.
 
@@ -128,7 +128,7 @@ For example, if you include the following attribute:
      <span name="John D">Account</span>
 </div>
 ```
-on a button or link, the name "John D" isn't captured. 
+on a button or link, the name "John D" is masked with `*****`. 
 
 {{partial:admonition type="note" heading=""}}
 You can't redact information from ID and Class elements. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
@@ -136,7 +136,7 @@ You can't redact information from ID and Class elements. This is because of thei
 
 ### Autocapture security options
 
-Amplitude also provides flexibility to refine the pages for which you configure Autocapture. Make use of these capabilities when setting up Autocapture, especially if your organization requires stronger restrictions or safeguards, or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
+Amplitude also provides flexibility to refine the pages for which you configure Autocapture. Use these capabilities when setting up Autocapture, especially if your organization requires stronger restrictions or safeguards, or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
 
 #### Limit click tracking
 
