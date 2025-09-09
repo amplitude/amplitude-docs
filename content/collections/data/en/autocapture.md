@@ -107,11 +107,11 @@ You can mask information based on patterns that you specify (regular expressions
 
 You can specify a pattern of information that you want to mask within Amplitude. This configuration occurs in the SDK and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
 
-For example, you can set a Regex pattern to filter account numbers such as "#0236732". If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
+For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
 
 #### Page URL allow list and block list
 
-Page URL block and allow lists let you specify unique URL page patterns to either be excluded or included from Amplitude. 
+Page URL block- and allow- lists let you specify unique URL page patterns to either be excluded or included from Amplitude. 
 
 For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
 
