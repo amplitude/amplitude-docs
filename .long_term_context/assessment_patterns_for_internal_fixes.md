@@ -215,3 +215,24 @@ Key indicators: Changes in `packages/analytics-client-common/src/attribution/web
 
 **Assessment Pattern**: Multi-SDK coordination fixes that solve data loss issues are internal improvements when they don't change user APIs, configuration options, or require user action. Users simply experience improved data accuracy without needing to modify their implementation.
 
+## New User-Facing Feature Behavior Change Pattern (Added 2025-09-09)
+
+**PR #1282** (amplitude/Amplitude-TypeScript - "fix(autocapture): make the default for patterns in mask-text-regex to be case insensitive") demonstrated that behavior changes to recently added user-facing features clearly require documentation updates when they:
+
+1. **Affect new user-facing configuration options** - Changes default behavior of `maskTextRegex` feature added just 2 weeks earlier in PR #1259
+2. **Change pattern matching behavior** - Makes regex patterns case-insensitive by default by adding 'i' flag to `new RegExp(entry.pattern, 'i')`
+3. **Are follow-up fixes to recently added features** - PR #1282 is a behavior improvement to the brand new `maskTextRegex` option
+4. **Could impact user patterns** - Users who wrote case-sensitive patterns like `/API_KEY/` would now also match "api_key", "Api_Key", etc.
+5. **Add user-visible functionality not yet documented** - The original `maskTextRegex` feature from PR #1259 had not been documented yet
+
+**Key Documentation Areas for New Feature Behavior Changes:**
+- Document the new feature completely if not yet documented
+- Configuration reference table entries
+- Detailed explanation sections with code examples
+- Behavioral notes emphasizing the behavior (case-insensitive by default)
+- Distinction from similar features (maskTextRegex vs redactTextRegex)
+
+**Assessment Pattern**: When a GitHub PR affects a user-facing feature that was recently added but not yet documented, comprehensive documentation is needed covering both the original feature and the behavior change. This is NOT an internal fix pattern - it's a user-impacting change that requires full feature documentation.
+
+**Example Context**: PR #1259 (merged 2025-08-26) added `maskTextRegex` option to `ElementInteractionsOptions` interface, accepting `RegExp[]` or objects with `pattern`/`description` properties. PR #1282 (2 weeks later) made these patterns case-insensitive by default in the `DataExtractor` class compilation logic.
+
