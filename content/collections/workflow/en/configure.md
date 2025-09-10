@@ -9,11 +9,11 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514522
 ---
-The first step in creating an experiment is to configure it. Configuring is a brief, two-stage process: first you’ll create a deployment, then you’ll install the SDK you want to use.
+Configuring Experiment is a two-stage process: creating a deployment, and installing the SDK you want to use.
 
-## Create a deployment
+## Creating a deployment
 
-In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution. Once you create a deployment, Experiment generates an access key, which you can then use to properly route your flags and experiments.
+In Experiment, a deployment is where you can serve a group of flags or experiments for code execution. After you create a deployment, Experiment generates an access key, which you can then use to properly route your flags and experiments.
 
 Deployments live under Amplitude Analytics projects. A project can have multiple deployments, but you can attach  each deployment to a single project.
 
