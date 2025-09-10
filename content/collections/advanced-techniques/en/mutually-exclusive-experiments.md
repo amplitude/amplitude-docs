@@ -10,22 +10,22 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714079731
 ---
-When running several experiments at once, you may want to keep users who are included in one experiment from being exposed to a second, related experiment at the same time. Perhaps these experiments are working on solving the same problem in different ways, and you worry that your users will be confused if they’re exposed to both, or that your experiment results might be tainted by the **interaction effect**. 
+When running several experiments at the same time, you may want to keep users who receive one experiment from being exposed to a second, related experiment. These experiments may be solving the same problem in different ways, and you worry about confusing users if they’re exposed to both. Or, your experiment results might be tainted by the [interaction effect](https://dictionary.apa.org/interaction-effect). 
 
-Amplitude Experiment makes it easy to set two or more experiments to be **mutually exclusive** to each other. When you set experiments as mutually exclusive, this means they cannot share any users: users who are shown experiment A will not see experiment B, and vice versa. Simply add both experiments to the same **mutual** **exclusion group**, and Amplitude Experiment will take care of the rest.
+Experiment lets you set two or more experiments as mutually exclusive to each other. When you set experiments as mutually exclusive, this means they can't share any users. Users who receive experiment A will not receive experiment B nor will the reverse be true. 
 
-To learn more about the underlying implementation, see [our documentation on flag dependencies](https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies).
+To learn more about the underlying implementation, review [flag dependencies](https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies).
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans** who have **purchased Amplitude Experiment**. See our [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on Enterprise plans who have purchased Experiment. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
-## When should you make experiments mutually exclusive?
+## When to use mutually exclusive experiments
 
-Generally, mutually exclusive experiments are recommended in these situations:
+Use mutually exclusive experiments in these situations:
 
-* Simultaneous experiments that occur in the **same area** of your product, and have the **same goal**.
-* Simultaneous experiments that occur in the **same funnel**, and have the **same goal**.
+* Simultaneous experiments that occur in the same area of your product and have the same goal.
+* Simultaneous experiments that occur in the same funnel and have the same goal.
 
 Alternatively, you could run these experiments one after the other, instead of simultaneously.
 
@@ -34,16 +34,17 @@ Alternatively, you could run these experiments one after the other, instead of s
 Here are some things to keep in mind when using mutual exclusion groups:
 
 * Distribute traffic evenly between your slots.
-* **Don’t** **add a running experiment** to a mutual exclusion group. This can severely compromise the integrity of your data by unassigning users from the active experiments. Instead, add experiments to a mutual exclusion group **before** they've started running.
-* **Don’t** **remove** a running experiment from a mutual exclusion group. This can compromise the integrity of your data by exposing users to the other experiments in the group.
-* **Don't delete** a mutual exclusion group with running experiments, for the same reason. Instead, delete the mutual exclusion group after all experiments in the group have concluded.
+* Don’t add a running experiment to a mutual exclusion group. This can severely compromise the integrity of your data by removing users from the active experiments. Instead, add experiments to a mutual exclusion group before they've started running.
+* Don’t remove a running experiment from a mutual exclusion group. This can compromise the integrity of your data by exposing users to the other experiments in the group.
+* Don't delete a mutual exclusion group with running experiments, for the same reason. Instead, delete the mutual exclusion group after all experiments in the group have concluded.
 
 ## Create a mutual exclusion group
 
-To create a mutual exclusion group and add your experiment to it, follow these steps:
+##### To create a mutual exclusion group
 
-1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. (If you are trying to do this from within an experiment, head to the *Configure* tab and click *See Mutual Exclusion Groups*.) Here, you can see all your mutual exclusion groups and be able to create new ones.
-2. If you have no groups in your project, click *Add a new mutual exclusion group* to create a new group. If you already have existing groups, click *Create A New Group*, then select *Mutual Exclusion Group* in the drawer.  
+1. Go to *Experiment > Experiment Groups tab*. 
+(If you are trying to do this from within a pre-existing experiment, go to the Configure tab and click **See Mutual Exclusion Groups**.)
+1. If you have no groups in your project, click *Add a new mutual exclusion group* to create a new group. If you already have existing groups, click *Create A New Group*, then select *Mutual Exclusion Group* in the drawer.  
   
 ![Screenshot](/docs/output/img/advanced-techniques/screenshot.png)
 
