@@ -251,3 +251,23 @@ Key indicators: Changes in `packages/analytics-client-common/src/attribution/web
 
 **Example Context**: PR #1259 (merged 2025-08-26) added `maskTextRegex` option to `ElementInteractionsOptions` interface, accepting `RegExp[]` or objects with `pattern`/`description` properties. PR #1282 (2 weeks later) made these patterns case-insensitive by default in the `DataExtractor` class compilation logic.
 
+
+
+## Remote Config Feature Pattern (Added 2025-09-10)
+
+**PR #1284** (amplitude/Amplitude-TypeScript - urlsRegex for remote config network tracking) confirmed that remote configuration features clearly require documentation updates when they:
+
+1. **Add new remote-config-only API parameters** - New `urlsRegex` field in NetworkCaptureRule that only works in remote configuration context
+2. **Enable new remote configuration capabilities** - Allows regex strings in Remote Config/GTM for URL pattern matching
+3. **Convert string configurations to runtime objects** - Regex strings automatically converted to RegExp objects and merged with existing patterns
+4. **Provide GTM and Data settings integration** - Users can configure through Amplitude Data UI or Google Tag Manager without code changes
+5. **Follow existing remote config paradigms** - Builds on established remote configuration infrastructure but adds new field-specific functionality
+
+**Key Documentation Areas for Remote Config Features:**
+- Main SDK configuration reference tables (add remote-config-only fields)
+- Detailed explanation sections about remote config behavior and conversion logic
+- Code examples showing remote configuration structure
+- Integration notes for Amplitude Data settings and GTM
+- Clear distinction between local SDK configuration and remote-only fields
+
+**Assessment Pattern**: Remote configuration features that add new fields or capabilities are NOT internal fixes and require comprehensive documentation updates, even when the core functionality (network tracking) already exists. Users need to understand the new remote configuration options and how they integrate with existing features.
