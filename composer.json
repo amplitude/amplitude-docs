@@ -17,7 +17,7 @@
         "laravel/tinker": "^2.8",
         "pecotamic/sitemap": "^1.4",
         "spatie/fork": "^1.2",
-        "statamic/cms": "5.52.0",
+        "statamic/cms": "5.65.0",
         "statamic/ssg": "^3.0",
         "swiftmade/statamic-clear-assets": "^3.0"
     },
