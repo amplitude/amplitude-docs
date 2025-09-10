@@ -76,9 +76,9 @@ Autocapture's default settings for capturing clicks and changes on page elements
 
 Additional autocapture protections include: 
 
-#### Precise text and title masking
+#### Precise text masking
 
-Precise text, otherwise known as title masking, excludes text capture from specific elements on the page, including the page title. This lets you use Autocapture on the page without capturing the text displayed in specific elements.
+Precise text masking excludes text capture from specific elements on the page, including the page title. This lets you use Autocapture on the page without capturing the text displayed in specific elements.
 
 To prevent capturing an element's text, add the attribute `data-amp-mask` to the it. If, for example you have the following on a button: 
 
@@ -109,17 +109,17 @@ Specify a pattern of information that you want Amplitude to mask. This configura
 
 For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
 
-#### Page URL allow list and block list
+#### Page URL allow list and exclude list
 
-Page URL block- and allow- lists let you specify unique URL page patterns to either be excluded or included from Amplitude. 
+Page URL exclude- and allow- lists let you specify unique URL page patterns to either be excluded or included from Amplitude. 
 
 For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
 
 Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
 
-#### Precise attribute redaction
+#### Precise attribute masking
 
-Precise attribute redaction excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. 
+Precise attribute masking excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. 
 
 For example, if you include the following attribute:
 
@@ -131,7 +131,7 @@ For example, if you include the following attribute:
 on a button or link, the name "John D" is masked with `*****`. 
 
 {{partial:admonition type="note" heading=""}}
-You can't redact information from ID and Class elements. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
+You can't mask information from ID and Class elements. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
 {{/partial:admonition}}
 
 ### Autocapture security options
