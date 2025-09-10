@@ -47,9 +47,9 @@ To use Visual Labeling to create new labeled events, follow these steps:
 
 ### AI-generated CSS selector
 
-Amplitude lets you use AI to recommend precise CSS selectors for elements on your web page during the visual labeling process. When you click on an element to label it, Amplitude automatically suggests a selector that may best capture the intended target. 
+Amplitude uses AI to recommend precise CSS selectors for elements on your web page during the visual labeling process. When you click on an element to label it, Amplitude automatically suggests a selector that may best capture the intended target. 
 
-You can use AI-generated CSS selectors on individual elements (such as a button) or a group of elements (such as a list or product tiles).
+AI-generated CSS selectors appears on individual elements (such as a button) and on groups of elements (such as a list or product tiles).
 
 The AI pre-fills the Name and Descriptions fields using contextual AI understanding of the selected element. You can modify the AI-generated input for these fields at any time. 
 

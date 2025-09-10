@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1755299403
 ---
-Autocapture Remote Configuration lets you make adjustments to your implementation and pull additional metadata into Amplitude. You can use Remote Configuration either when you are setting up [Autocapture](/docs/data/autocapture) or after Autocapture is running. Use Remote Configuration after you analyze your first data capture and you discover what adjustments to make in the type of data you want. 
+Autocapture Remote Configuration lets you make adjustments to your implementation and pull additional metadata into Amplitude. You can use Remote Configuration either when you are setting up [Autocapture](/docs/data/autocapture) or after Autocapture is running. After you analyze your first data capture, use Remote Configuration to update autocapture's settings without needing a code update. 
 
 With remote configuration you can:
 
@@ -28,12 +28,12 @@ Remote configuration
 2. Specify which elements you want to capture. By default, all elements are captured. You can select any of:
    * **File downloads**: Track when a user clicks an anchor or `<a>` tag linked to a file. 
    * **Form Interactions**: Track a user's interaction with the form element.
-   * **Sessions**: Track the period of time that a user has your website open. Amplitude tracks both start and end events.
-   * **Page Views**: Tack when a user navigates to a page.
-   * **Element Interactions**: Track when users click on links, buttons, inputs and so on.
+   * **Sessions**: Track the period of time that a user has your website open. Amplitude tracks both Start Session and End Session events.
+   * **Page Views**: Track when a user navigates to a page.
+   * **Element Interactions**: Track when users click links, buttons, inputs and so forth.
 3. For Element Interactions, you can specify the following additional aspects:
    * **CSS Selector Allowlist**: CSS selectors that specify which elements on the page should always be tracked.
-   * **Action Click Allowlist**: Additional CSS selectors that must be tracked which clicked.
-   * **Page URL Allowlist**: Defines the URL(s) or URL patter on which Amplitude tracks element click and change events.
-   * **Data Attribute Prefix**: Lets the SDK capture data attributes as an event property. 
+   * **Action Click Allowlist**: Additional CSS selectors that must be tracked when clicked.
+   * **Page URL Allowlist**: Defines one or more URLs or URL patterns on which Amplitude tracks element click and change events.
+   * **Data Attribute Prefix**: Lets the Amplitude capture data attributes as an event property. 
 4. Click **Save Changes**.
