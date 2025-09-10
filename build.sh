@@ -2,7 +2,7 @@
 
 # Install PHP & WGET
 dnf clean metadata
-dnf install -y php8.3 php8.3-{common,mbstring,gd,bcmath,xml,fpm,intl,zip}
+dnf install -y php8.2 php8.2-{common,mbstring,gd,bcmath,xml,fpm,intl,zip}
 dnf install -y wget
 
 # INSTALL COMPOSER
