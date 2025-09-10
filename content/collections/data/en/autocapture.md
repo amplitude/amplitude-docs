@@ -78,9 +78,9 @@ Additional autocapture protections include:
 
 #### Precise text and title masking
 
-Precise text, otherwise known as title masking, excludes text capture from specific elements on the page, including the page title. This lets Autocapture usage on the page without capturing the text displayed in the specific element.
+Precise text, otherwise known as title masking, excludes text capture from specific elements on the page, including the page title. This lets you use Autocapture on the page without capturing the text displayed in specific elements.
 
-To prevent capturing the text, add the attribute `data-amp-mask` to the element. If, for example you have the following on a button: 
+To prevent capturing an element's text, add the attribute `data-amp-mask` to the it. If, for example you have the following on a button: 
 
 ```html
 <div data-amp-mask>John Doe</div>
@@ -115,7 +115,7 @@ Page URL block- and allow- lists let you specify unique URL page patterns to eit
 
 For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
 
-Alternately, if host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
+Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
 
 #### Precise attribute redaction
 

@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1755188049
 ---
-This page contains information about the events and event properties collected by Autocapture:
+This page contains information about the events and event properties that Autocapture collects:
 
 ## Sessions
 ### Session Started
@@ -50,9 +50,10 @@ This page contains information about the events and event properties collected b
 | **Link URL**         | The link address of the file download. |
 
 ## Form Interactions
+Autocapture can capture forms constructed with the `<form>` tags.
 
 ### Form Started
-Captures when a user initially interacts with a form element within a form, which includes modifications to a text input, radio button, or a dropdown. Autocapture can capture forms constructed with the `<form>` tags.
+Captures when a user initially interacts with a form element within a form, which includes modifications to a text input, radio button, or a dropdown. 
 
 | Property Name | Description |
 |------------|----------|
@@ -61,7 +62,7 @@ Captures when a user initially interacts with a form element within a form, whic
 | **Form Name**          | The name attribute of the form element.  |
 
 ### Form Submitted
-Captures when a user submits the form. Autocapture can capture forms constructed with the `<form>` tags.
+Captures when a user submits the form. 
 
 | Property Name | Description |
 |------------|----------|
@@ -80,7 +81,7 @@ The default configuration captures user interactions with interactive elements o
 * All clicks on video and audio elements
 * Clicks on select elements that result in a change on your page (for example, a modal appearing) or navigation to another page. These elements include divs, spans, and headers.
 * All clicks on elements with an attribute of `data-amp-default-track` or a class of `amp-default-track`.
-* You can customize this configuration to add or remove selectors. You can choose if you want those selectors to always be tracked or only track then when the click results in a change to the page.
+* You can customize this configuration to add or remove selectors. You can choose if you want those selectors to always be tracked or only track them when the click results in a change to the page.
 
 | Property Name           | Description |
 |-------------------------|-------------|
