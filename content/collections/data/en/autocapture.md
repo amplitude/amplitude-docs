@@ -105,7 +105,7 @@ Email address masking automatically hides or otherwise obscures email addresses.
 
 You can mask information based on patterns that you specify (regular expressions or Regex). If you aren't familiar with Regex, review this page on [regular expressions](https://www.regular-expressions.info/quickstart.html).
 
-You can specify a pattern of information that you want to mask within Amplitude. This configuration occurs in the SDK and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
+Specify a pattern of information that you want Amplitude to mask. This configuration occurs in the [SDK](/docs/sdks) and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
 
 For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
 
@@ -119,7 +119,7 @@ Alternately, if host your site in multiple domains such as .com and .co.uk, you 
 
 #### Precise attribute redaction
 
-The precise attribute redaction excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. 
+Precise attribute redaction excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. 
 
 For example, if you include the following attribute:
 
