@@ -115,7 +115,7 @@ Page URL block- and allow- lists let you specify unique URL page patterns to eit
 
 For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
 
-Alternately, if host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
+Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
 
 #### Precise attribute redaction
 
