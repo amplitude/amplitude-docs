@@ -78,7 +78,7 @@ Additional autocapture protections include:
 
 #### Precise text and title masking
 
-Precise text, otherwise known as title masking, excludes text capture from specific elements on the page, including the page title. This lets Autocapture usage on the page without capturing the text displayed in the specific element.
+Precise text, otherwise known as title masking, excludes text capture from specific elements on the page, including the page title. This lets you use Autocapture on the page without capturing the text displayed in specific elements.
 
 To prevent capturing the text, add the attribute `data-amp-mask` to the element. If, for example you have the following on a button: 
 
