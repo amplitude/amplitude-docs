@@ -36,33 +36,37 @@ Deployments must be associated with at least one [Amplitude project](/docs/get-s
 
 Both types of deployments generate keys that are specific to the deployment. A key is a unique identifier for the deployment that ensures data integrity. The key ensures that all of the data collected by your experiment is associated with that particular deployment and all of the results and analytics based off of those results are as accurate as possible. For more information about keys, go to [Keys and Tokens](/docs/apis/keys-and-tokens#keys-overview).
 
-* **Client-side keys**:  
+* **Client-side keys**: The deployment key associated with client deployments is publicly viewable. 
+* **Server-side keys**: Keep the deployment key associated with server deployments secret and use it only for server-side SDKs. Server-side keys access the REST API for flag evaluation. 
 
 ## Install the SDK
 
-If you don't use the REST API, the next step is to install an [Experiment SDK](/docs/sdks/experiment-sdks).
+If you don't use the REST API, the next step is to install an [Experiment SDK](/docs/sdks/experiment-sdks). 
+All SDKs send a request to Amplitude Experiment to decide what flag configurations it should serve to a particular user. There are some important differences between client-side and server-side SDKs you should be aware of.
 
-All SDKs send a request to Amplitude Experiment to decide what flag configurations it should serve to a particular user. That said, there are some important differences between client-side and server-side SDKs you should be aware of.
+{{partial:admonition type="warning" heading=""}}
+Installing SDKs should be performed by engineers. Otherwise, you risk causing issues with your data repositories.
+{{/partial:admonition}}
 
-**Client-side** SDKs should run in the end-user application deployment. When choosing between client-side and server-side, keep in mind that client-side SDKs:
+**Client-side** SDKs run in the end-user application deployment. For client-side SDKs:
 
-* Assume a single user deployment
-* Use client-side deployment keys, which are **public** and **visible** to end users
-* Fetch variants up front for a given user
-* Store variants locally on the client for offline mode
+* Assume a single user deployment.
+* Use client-side deployment keys, which are public and visible to end users.
+* Fetch variants up front for a given user.
+* Store variants locally on the client for offline mode.
 
-**Server-side** SDKs, should run in a server deployment. Server-side SDKs:
+**Server-side** SDKs run in a server deployment. Server-side SDKs:
 
-* Assume a multi user deployment
-* Use Server-side deployment keys, which you should keep private
-* Fetch variants on each request
+* Assume a multi user deployment.
+* Use Server-side deployment keys, which you should keep private.
+* Fetch variants on each request.
 
 ## The User context
 
-When assigning variants, the evaluation engine applies the targeting rules to a user context object, which represents the identity of an individual user. In client-side SDKs, this object-user relationship is set on initialization and passed to the server on every request for variants. In server-side SDKs, the user may change, and should be set on every request.
+When assigning variants, the evaluation engine applies the targeting rules to a user context object, which represents the identity of an individual user. In client-side SDKs, this object-user relationship is set on initialization and passed to the server on every request for variants. In server-side SDKs, the user may change, and is set on every request.
 
-When targeting individual users to assign variants, Experiment matches on any of the listed user identifiers, such as `user_id` and `device_id`. Using rule-based user segments, users match on any of the predefined properties (country, platform, etc.), or on custom properties specified in the user\_properties object. Read more about [defining experiment users in this article](/docs/feature-experiment/data-model#users).
+When targeting individual users to assign variants, Experiment matches on any of the listed user identifiers, such as `user_id` and `device_id`. Using rule-based user segments, users match on any of the predefined properties (country, platform, and so forth), or on custom properties specified in the `user_properties` object. Read more about [defining experiment users in this article](/docs/feature-experiment/data-model#users).
 
 {{partial:admonition type='note'}}
-You should use the same user identifiers for Amplitude Experiment that you use for sending data to Amplitude Analytics. This way, identities resolve correctly, and data generated is correctly associated with the same user in Analytics.
+Use the same user identifiers for Amplitude Experiment that you use for sending data to Analytics. This way, identities resolve correctly and data generated is correctly associated with the same user in Analytics.
 {{/partial:admonition}}
