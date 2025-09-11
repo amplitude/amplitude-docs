@@ -56,6 +56,9 @@ Use CSS class selectors to target Guides and Surveys elements:
 | ------------ | ------------------------------ |
 | Close button | `.amplitude-engagement-close`  |
 | Image        | `.amplitude-engagement-image`  |
+| Video        | `.amplitude-engagement-video`  |
+| Title        | `.amplitude-engagement-title`  |
+| Content      | `.amplitude-engagement-content`|
 | Beacon       | `.amplitude-engagement-beacon` |
 
 ### Banner-specific elements
@@ -73,6 +76,7 @@ Use CSS class selectors to target Guides and Surveys elements:
 | Element                 | Selector                                       |
 | ----------------------- | ---------------------------------------------- |
 | Tooltip content         | `.amplitude-engagement-tooltip-content`        |
+| Tooltip marker          | `.amplitude-engagement-tooltip-marker`         |
 | Tooltip marker (image)  | `.amplitude-engagement-tooltip-marker__image`  |
 | Tooltip marker (icon)   | `.amplitude-engagement-tooltip-marker__icon`   |
 | Tooltip marker (beacon) | `.amplitude-engagement-tooltip-marker__beacon` |
@@ -105,6 +109,12 @@ Use CSS class selectors to target Guides and Surveys elements:
 | Checklist item button (primary)   | `.amplitude-engagement-checklist-item-button__primary`   |
 | Checklist item button (secondary) | `.amplitude-engagement-checklist-item-button__secondary` |
 
+### Modal-specific elements
+
+| Element     | Selector                            |
+| ----------- | ----------------------------------- |
+| Modal body  | `.amplitude-engagement-modal-body`  |
+
 ### Buttons and actions
 
 | Element                | Selector                                      |
@@ -122,8 +132,14 @@ Use CSS class selectors to target Guides and Surveys elements:
 | List dropdown    | `.amplitude-engagement-list-dropdown`    |
 | Rating           | `.amplitude-engagement-rating`           |
 | Rating (emojis)  | `.amplitude-engagement-rating__emojis`   |
+| Rating (numbers) | `.amplitude-engagement-rating__numbers`  |
+| Rating (stars)   | `.amplitude-engagement-rating__stars`    |
+| Rating label     | `.amplitude-engagement-rating-label`     |
 | Text input       | `.amplitude-engagement-text-input`       |
 | Short text input | `.amplitude-engagement-short-text-input` |
+| Input            | `.amplitude-engagement-input`            |
+| Select           | `.amplitude-engagement-select`           |
+| Select input     | `.amplitude-engagement-select-input`     |
 | Checkbox option  | `.amplitude-engagement-checkbox-option`  |
 | Radio option     | `.amplitude-engagement-radio-option`     |
 
