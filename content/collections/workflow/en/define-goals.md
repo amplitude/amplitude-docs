@@ -9,15 +9,15 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ---
-An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
+An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. A recommendation metric is any metric that you use to determine whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
-There’s a lot riding on your recommendation metric, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/docs/feature-experiment/workflow/add-variants) improve dramatically:
+Your recommendation metric is important to understand the success of your experiment, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which metric to choose. To help you create a successful recommendation metric, keep in mind the following:
 
-* Try to identify the **single user action** that tells you if your variant is successful.
-* Measure an event that's **directly affected** by the change you’ve made in your variant.
-* Pick an event that **fully captures** the user behavior you’re trying to affect.
+* Try to identify the single user action that tells you if your [variant](/docs/feature-experiment/workflow/add-variants) is successful.
+* Measure an event that's directly affected by the change you’ve made in your variant.
+* Pick an event that fully captures the user behavior you’re trying to affect.
 
-One common mistake is defaulting to a revenue metric when it’s not appropriate. This happens when your variant introduces a change that's separate from the metric you’ve selected. If your variant changes how your product page looks and functions, you should choose a metric on that page as your recommendation metric, instead of a revenue metric that might not come into play for several more steps down the funnel. 
+One common mistake is defaulting to a revenue metric. This happens when your variant introduces a change that's separate from the metric you’ve selected. If your variant changes how your product page looks and functions, choose a metric on that page as your recommendation metric instead of a revenue metric that might not be visible for several more steps down the funnel.  
 
 Amplitude Experiment lets you define multiple metrics when running an experiment. Unlike a recommended metric, non-recommended metrics aren’t required, but they're often helpful. They can not only improve the quality of your analysis, but help evaluate whether it’s even worthwhile to roll out your experiment at all.
 
