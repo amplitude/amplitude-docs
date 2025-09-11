@@ -5,7 +5,8 @@ title: 'Page Path'
 property_type: event
 data_type:
   - string
-description: 'URL path'
+description: 'The pathname of the current page. This excludes any URL Search Parameters and URL Fragments.'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756411965
+updated_at: 1757614552
+autocapture: true
 ---

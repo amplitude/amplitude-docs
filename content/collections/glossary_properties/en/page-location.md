@@ -5,7 +5,8 @@ title: 'Page Location'
 property_type: event
 data_type:
   - string
-description: 'Full URL including query string'
+description: 'The full URL of the current page, including any URL Search Parameters.'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756411948
+updated_at: 1757614559
+autocapture: true
 ---
