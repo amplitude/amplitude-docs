@@ -5,7 +5,8 @@ title: 'Page Title'
 property_type: event
 data_type:
   - string
-description: 'Document title'
+description: 'The title of the page.'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1756412020
+updated_at: 1757614545
+autocapture: true
 ---
