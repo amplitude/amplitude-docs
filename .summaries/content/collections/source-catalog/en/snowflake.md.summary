@@ -1,0 +1,24 @@
+## Summary
+
+This documentation covers Amplitude's Snowflake data warehouse integration for importing events, user properties, group properties, and profiles into Amplitude projects, supporting four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) with Change Data Capture (CDC) capabilities, key pair authentication, and S3 storage integration configuration.
+
+## Keywords
+
+- Snowflake data warehouse integration
+- Change Data Capture (CDC)
+- Mirror Sync import strategy
+- Append Only Sync
+- Key pair authentication
+- S3 storage integration with stage
+- ABORT_DETACHED_QUERY configuration
+- Event deduplication with insert_id
+- User properties and group properties sync
+- VARIANT JSON object mapping
+- DATA_RETENTION_TIME_IN_DAYS
+- Snowflake streams and views
+- EPOCH_MILLISECOND timestamp conversion
+- OBJECT_CONSTRUCT SQL function
+- Regional IP allowlist configuration
+- 12-hour query timeout limit
+- 1B events batch size limit
+- Password authentication deprecation November 2025

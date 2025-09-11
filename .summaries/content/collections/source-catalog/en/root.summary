@@ -1,37 +1,51 @@
-## Amplitude Source Catalog - HubSpot Integration
+## Product Overview
 
-The Amplitude Source Catalog provides comprehensive integration capabilities between Amplitude's product analytics platform and HubSpot's customer relationship management (CRM) and marketing automation platform. This integration enables organizations to implement product-led growth (PLG) strategies by bridging the gap between product usage data and customer relationship management.
+Amplitude's Source Catalog provides comprehensive data integration capabilities for importing customer data from various platforms into Amplitude's analytics ecosystem. The catalog supports both marketing automation platforms like HubSpot and enterprise data warehouses like Snowflake, enabling organizations to centralize their customer data for advanced analytics, behavioral tracking, and product-led growth initiatives.
 
-## Core Integration Features and Relationships
+## Product Relationships and Features
 
-The HubSpot integration operates through multiple interconnected components that create a bidirectional data flow between Amplitude and HubSpot:
+The Source Catalog operates as a bidirectional integration hub within Amplitude's ecosystem. For HubSpot integration, it enables both data ingestion from HubSpot's CRM and marketing automation platform, as well as data export capabilities including cohort synchronization and chart embedding. The Snowflake integration focuses primarily on large-scale data ingestion from enterprise data warehouses, supporting multiple synchronization strategies to accommodate different data architecture requirements.
 
-**Data Collection and Tracking**: The integration begins with implementing Amplitude's tracking infrastructure within HubSpot environments, including the installation of Amplitude tracking code on HubSpot CMS pages. This enables comprehensive data capture through Autocapture functionality and Session Replay capabilities, providing detailed insights into user behavior across HubSpot-hosted properties.
-
-**Cohort Synchronization**: A critical feature that enables the transfer of behavioral cohorts from Amplitude to HubSpot, allowing marketing and sales teams to leverage product usage patterns for targeted campaigns and personalized outreach. These behavioral cohorts serve as the foundation for automated workflow enrollment triggers within HubSpot's marketing automation system.
-
-**Product-Qualified Lead (PQL) Scoring**: The integration facilitates sophisticated lead scoring mechanisms that incorporate product usage data from Amplitude into HubSpot's lead scoring tools. This creates a more comprehensive view of lead quality based on actual product engagement rather than traditional demographic or firmographic data alone.
-
-**Visualization and Reporting**: Amplitude charts can be embedded directly into HubSpot dashboards, providing sales and marketing teams with real-time access to product analytics without requiring separate platform access.
+The HubSpot integration leverages Amplitude's core analytics features including Session Replay, Autocapture, and behavioral cohort analysis to enhance marketing workflows. The Snowflake integration utilizes Amplitude's event processing engine to handle high-volume data imports with sophisticated deduplication and transformation capabilities.
 
 ## Key Nomenclature and Definitions
 
-**Product-Qualified Lead (PQL)**: A lead classification system that identifies prospects based on their product usage behavior and engagement patterns, as opposed to traditional marketing-qualified leads (MQLs) that rely primarily on demographic and engagement scoring.
+**Import Strategies**: Four distinct synchronization methods for Snowflake integration:
+- **Full Sync**: Complete data refresh on each import cycle
+- **Timestamp Sync**: Incremental imports based on timestamp fields
+- **Append Only Sync**: Continuous addition of new records without updates
+- **Mirror Sync**: Real-time synchronization using Change Data Capture (CDC)
 
-**Behavioral Cohorts**: User segments created in Amplitude based on specific product usage patterns, behaviors, or engagement criteria that can be synchronized to HubSpot for targeted marketing and sales activities.
+**Product-Qualified Lead (PQL)**: A lead scoring methodology that uses behavioral data from Amplitude to identify prospects based on product usage patterns rather than traditional demographic criteria.
 
-**Cohort Sync**: The automated process of transferring user segments from Amplitude to HubSpot, enabling cross-platform audience targeting and workflow automation.
+**Cohort Sync**: The process of exporting user segments from Amplitude to external platforms for targeted marketing campaigns and workflow automation.
 
-**Workflow Enrollment Triggers**: HubSpot automation rules that initiate specific marketing or sales sequences based on cohort membership or behavioral criteria imported from Amplitude.
+**Change Data Capture (CDC)**: Real-time data replication technology that captures and propagates data changes from source systems to Amplitude.
 
-**Autocapture**: Amplitude's automatic event tracking functionality that captures user interactions without requiring manual event instrumentation.
+**Key Pair Authentication**: RSA-based authentication method for secure Snowflake connections, replacing password-based authentication (deprecated November 2025).
 
-**Session Replay**: A feature that records user sessions for detailed behavioral analysis and user experience optimization.
+## Ecosystem Integration
 
-## Product Ecosystem Integration
+The Source Catalog serves as a critical component in Amplitude's broader product ecosystem, connecting external data sources to core analytics capabilities. HubSpot integration enables product-led growth strategies by combining CRM data with behavioral analytics, while Snowflake integration supports enterprise data architecture requirements for organizations with complex data warehousing needs.
 
-Within the broader Amplitude ecosystem, the HubSpot integration represents a critical bridge between product analytics and customer lifecycle management. The integration leverages Amplitude's core analytics capabilities while extending them into the sales and marketing domain through HubSpot's comprehensive CRM and marketing automation features.
+The catalog integrates with Amplitude's visualization layer through chart embedding capabilities and leverages the platform's user segmentation engine for cohort-based marketing automation. Data imported through the Source Catalog feeds into Amplitude's event processing pipeline, supporting downstream features like user journey analysis, retention tracking, and conversion optimization.
 
-The integration is distributed through the HubSpot App Marketplace, indicating its status as a certified and supported integration within HubSpot's partner ecosystem. This positioning enables organizations to implement product-led growth strategies by creating automated workflows that respond to product usage patterns, ultimately aligning product engagement with sales and marketing activities.
+## Technical Implementation Details
 
-The bidirectional nature of this integration allows for a complete customer journey view, where product usage data informs marketing and sales strategies, while CRM data provides context for product analytics and user behavior analysis. This creates a unified approach to customer success that spans the entire customer lifecycle from initial product engagement through ongoing relationship management.
+**HubSpot Integration**:
+- Installation via HubSpot App Marketplace
+- JavaScript tracking code implementation for HubSpot CMS
+- Workflow enrollment triggers based on Amplitude cohorts
+- Dashboard embedding using Amplitude's chart visualization API
+
+**Snowflake Integration**:
+- Regional IP allowlist configuration for secure connectivity
+- S3 storage integration with Snowflake stages for data transfer
+- VARIANT JSON object mapping for flexible schema handling
+- OBJECT_CONSTRUCT SQL function for data transformation
+- EPOCH_MILLISECOND timestamp conversion for temporal data alignment
+- Event deduplication using insert_id fields
+- 12-hour query timeout limits with 1B events batch size constraints
+- ABORT_DETACHED_QUERY and DATA_RETENTION_TIME_IN_DAYS configuration parameters
+
+The Source Catalog supports comprehensive data mapping including events, user properties, group properties, and user profiles, with sophisticated error handling and monitoring capabilities for enterprise-grade reliability.

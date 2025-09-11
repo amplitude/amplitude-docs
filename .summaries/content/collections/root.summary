@@ -1,41 +1,74 @@
-Amplitude Source Catalog is a comprehensive integration platform that bridges Amplitude's product analytics capabilities with external customer relationship management and marketing automation systems. The platform enables organizations to implement product-led growth strategies by synchronizing behavioral data and automating workflows based on actual product usage patterns rather than traditional demographic indicators.
+Amplitude Collections is a comprehensive data integration platform that serves as the central nervous system for connecting Amplitude's behavioral analytics ecosystem with external data sources and destinations. The platform enables bidirectional data flow through two primary components: the Source Catalog for data ingestion and the Destination Catalog for data export, creating a complete data pipeline solution for enterprise analytics workflows.
 
-## Core Integration Architecture and Feature Relationships
+## Product Architecture and Feature Relationships
 
-The Source Catalog operates through a multi-layered integration framework establishing bidirectional data flows between Amplitude and partner platforms. The architecture comprises several interconnected components:
+The Collections platform operates through two complementary integration layers that work in tandem to create comprehensive data workflows:
 
-**Data Collection Infrastructure** forms the foundational layer, implementing Amplitude's tracking capabilities within partner environments through deployment of Amplitude tracking code and activation of Autocapture functionality for comprehensive behavioral data collection. Session Replay capabilities provide granular user interaction recording for detailed behavioral analysis.
+**Source Catalog** functions as the data ingestion hub, importing customer data from external systems into Amplitude's analytics engine. Current integrations include HubSpot for CRM and marketing automation data, and Snowflake for enterprise data warehouse connectivity. The Source Catalog transforms external data into Amplitude's event processing pipeline, where it integrates with core analytics features including Session Replay, Autocapture, behavioral cohort analysis, and user journey tracking.
 
-**Cohort Synchronization Engine** transfers behavioral segments from Amplitude to partner platforms, creating dynamic user segments for cross-platform audience targeting. These behavioral cohorts automatically update based on product usage patterns and engagement criteria defined within Amplitude's analytics framework.
+**Destination Catalog** serves as the data export orchestration system, transforming Amplitude's behavioral analytics data into warehouse-optimized formats for external analysis. The platform exports data through two primary pipelines: Raw Events Export for complete behavioral event streams and Merged User Identity Export for unified cross-device user profiles.
 
-**Lead Scoring Integration** incorporates product usage data into partner platform scoring mechanisms, creating Product-Qualified Lead (PQL) classifications that complement traditional demographic and firmographic scoring models. This enables sophisticated lead qualification based on actual product engagement rather than inferred intent signals.
+Both catalogs leverage Amplitude's core identity resolution and event processing capabilities, creating a unified data ecosystem that supports advanced analytics workflows, customer data platform construction, and machine learning initiatives.
 
-**Visualization and Reporting Layer** embeds Amplitude analytics directly into partner platform dashboards, providing real-time access to product insights without requiring separate platform authentication or navigation.
+## Key Nomenclature and Technical Definitions
 
-## Key Nomenclature and Definitions
+**Import Strategies** define four synchronization methodologies for data warehouse integration:
+- **Full Sync**: Complete dataset refresh during each import cycle
+- **Timestamp Sync**: Incremental imports based on timestamp field comparisons  
+- **Append Only Sync**: Continuous addition of new records without modification
+- **Mirror Sync**: Real-time synchronization using Change Data Capture (CDC) technology
 
-**Product-Qualified Lead (PQL)**: Lead classification methodology prioritizing prospects based on demonstrated product usage behavior and engagement patterns, representing a shift from traditional marketing-qualified lead (MQL) approaches relying primarily on demographic and content engagement scoring.
+**Destination Connector**: Integration module handling data export, transformation, and delivery to specific warehouse platforms
 
-**Behavioral Cohorts**: Dynamic user segments created within Amplitude based on specific product usage patterns, feature adoption rates, or engagement thresholds. These cohorts automatically update as user behavior changes and synchronize across integrated platforms for consistent targeting.
+**Micro-batch Processing**: Data delivery methodology balancing real-time availability with warehouse performance through small, frequent event batches
 
-**Cohort Sync**: Automated synchronization process maintaining real-time alignment between Amplitude user segments and corresponding audience lists in partner platforms, enabling immediate workflow triggers based on behavioral changes.
+**Product-Qualified Lead (PQL)**: Lead scoring methodology leveraging behavioral data to identify prospects based on actual product usage patterns
 
-**Workflow Enrollment Triggers**: Automated rules within partner platforms initiating specific marketing sequences, sales outreach, or customer success interventions based on cohort membership or behavioral criteria imported from Amplitude.
+**Cohort Sync**: Process of exporting user segments from Amplitude to external platforms for targeted marketing campaigns
 
-**Autocapture**: Amplitude's automatic event tracking system capturing user interactions without requiring manual event instrumentation, providing comprehensive behavioral data collection with minimal implementation overhead.
+**Merged User IDs**: Identity resolution process consolidating multiple user identifiers across devices and sessions into unified profiles
 
-**Session Replay**: Recording functionality capturing complete user sessions for detailed behavioral analysis, user experience optimization, and customer journey mapping.
+**Amplitude ID**: Unique identifier assigned to user sessions and devices within Amplitude's tracking system
 
-## Product Ecosystem Positioning
+**VARIANT Data Types**: Snowflake-specific JSON-like data structure for storing flexible, semi-structured event properties
 
-Within Amplitude's broader analytics ecosystem, the Source Catalog serves as the primary mechanism for extending product analytics insights into operational business systems. The catalog integrations are distributed through partner marketplaces, indicating certified and supported status within partner ecosystems.
+## Ecosystem Integration and Data Flow
 
-The HubSpot integration demonstrates the catalog's capability to bridge product analytics with comprehensive CRM and marketing automation platforms. This integration enables organizations to create unified customer journey views where product engagement data directly informs sales and marketing strategies, while CRM relationship data provides contextual framework for product analytics interpretation.
+Collections operates as the foundational data integration layer within Amplitude's broader product ecosystem, serving as both the primary data ingestion point and export orchestration system. The platform creates a comprehensive data pipeline that connects:
 
-The bidirectional data flow architecture ensures product usage patterns can trigger automated marketing workflows, sales alerts, and customer success interventions, while customer relationship data enhances product analytics with account context, deal stage information, and customer lifecycle positioning.
+- **Upstream Systems**: CRM platforms (HubSpot), data warehouses (Snowflake), and marketing automation tools feed data into Amplitude's event processing pipeline
+- **Core Analytics Engine**: Imported data flows through Amplitude's behavioral analytics capabilities, user segmentation engine, and visualization layer
+- **Downstream Systems**: Processed insights and raw behavioral data export to business intelligence tools, machine learning platforms, and customer data platforms
 
-## Integration Implementation
+The bidirectional nature enables product-led growth strategies by combining traditional CRM data with behavioral insights, supporting advanced lead scoring, marketing automation workflows, and comprehensive user journey analysis across the entire customer lifecycle.
 
-Source Catalog integrations typically involve installation through partner platform marketplaces, followed by configuration of data synchronization parameters and workflow automation rules. The HubSpot integration specifically requires Amplitude tracking code deployment on HubSpot CMS pages and configuration of cohort synchronization schedules to maintain real-time audience alignment between platforms.
+## Technical Implementation and API Details
 
-This architecture enables organizations to implement sophisticated product-led growth strategies by automatically responding to product usage patterns with appropriate sales and marketing interventions, creating a unified approach to customer acquisition, expansion, and retention based on demonstrated product engagement rather than traditional demographic or firmographic criteria.
+**HubSpot Integration**:
+- Installation via HubSpot App Marketplace
+- JavaScript tracking code implementation for CMS integration
+- Workflow enrollment triggers based on Amplitude cohort membership
+- Dashboard embedding utilizing Amplitude's chart visualization API
+- Bidirectional synchronization for contacts, companies, and engagement metrics
+
+**Snowflake Integration (Source)**:
+- Regional IP allowlist configuration for secure connectivity
+- S3 storage integration with Snowflake stages for optimized data transfer
+- VARIANT JSON object mapping for flexible schema handling
+- OBJECT_CONSTRUCT SQL function implementation for data transformation
+- EPOCH_MILLISECOND timestamp conversion for temporal alignment
+- Event deduplication using insert_id field validation
+- 12-hour query timeout limits with 1B events batch size constraints
+- ABORT_DETACHED_QUERY and DATA_RETENTION_TIME_IN_DAYS configuration parameters
+
+**Snowflake Integration (Destination)**:
+- Key Pair Authentication using JWT tokens with public/private key pairs (recommended over password authentication, deprecated November 2025)
+- ORGNAME-ACCOUNTNAME account format specification for proper target identification
+- Auto-suspend configurations for computational cost optimization
+- Historical data backfill capabilities with incremental synchronization scheduling
+
+**Data Schema Architecture**:
+- Raw events export with standardized table schemas including identity fields (amplitude_id, uuid), temporal fields (client_event_time, server_received_time), and flexible VARIANT data types for event properties
+- Merged user tables creating cross-device mapping structures for comprehensive user journey reconstruction
+
+The platform includes enterprise-grade error handling, monitoring capabilities, comprehensive data validation, and security through IP allowlisting and multiple authentication mechanisms to ensure reliable data integration at scale.
