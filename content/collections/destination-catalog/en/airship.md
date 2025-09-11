@@ -80,7 +80,7 @@ To confirm you've configured it correctly, [look up your test user or device in
 {{partial:admonition type="note" title=""}}
 
 1. Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
-2. Amplitude adds the tag to users during cohort sync (see Airship setup info below), so please ensure the API key used grants Amplitude to do the operation.
+2. Amplitude adds the tag to users during cohort sync (see [Airship setup](#airship-setup) below). Ensure that the API key you provide to Amplitude has the correct permissions to complete this operation.
 {{/partial:admonition}}
 
 ## Airship setup
