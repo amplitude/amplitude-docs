@@ -1,0 +1,41 @@
+Amplitude Source Catalog is a comprehensive integration platform that bridges Amplitude's product analytics capabilities with external customer relationship management and marketing automation systems. The platform enables organizations to implement product-led growth strategies by synchronizing behavioral data and automating workflows based on actual product usage patterns rather than traditional demographic indicators.
+
+## Core Integration Architecture and Feature Relationships
+
+The Source Catalog operates through a multi-layered integration framework establishing bidirectional data flows between Amplitude and partner platforms. The architecture comprises several interconnected components:
+
+**Data Collection Infrastructure** forms the foundational layer, implementing Amplitude's tracking capabilities within partner environments through deployment of Amplitude tracking code and activation of Autocapture functionality for comprehensive behavioral data collection. Session Replay capabilities provide granular user interaction recording for detailed behavioral analysis.
+
+**Cohort Synchronization Engine** transfers behavioral segments from Amplitude to partner platforms, creating dynamic user segments for cross-platform audience targeting. These behavioral cohorts automatically update based on product usage patterns and engagement criteria defined within Amplitude's analytics framework.
+
+**Lead Scoring Integration** incorporates product usage data into partner platform scoring mechanisms, creating Product-Qualified Lead (PQL) classifications that complement traditional demographic and firmographic scoring models. This enables sophisticated lead qualification based on actual product engagement rather than inferred intent signals.
+
+**Visualization and Reporting Layer** embeds Amplitude analytics directly into partner platform dashboards, providing real-time access to product insights without requiring separate platform authentication or navigation.
+
+## Key Nomenclature and Definitions
+
+**Product-Qualified Lead (PQL)**: Lead classification methodology prioritizing prospects based on demonstrated product usage behavior and engagement patterns, representing a shift from traditional marketing-qualified lead (MQL) approaches relying primarily on demographic and content engagement scoring.
+
+**Behavioral Cohorts**: Dynamic user segments created within Amplitude based on specific product usage patterns, feature adoption rates, or engagement thresholds. These cohorts automatically update as user behavior changes and synchronize across integrated platforms for consistent targeting.
+
+**Cohort Sync**: Automated synchronization process maintaining real-time alignment between Amplitude user segments and corresponding audience lists in partner platforms, enabling immediate workflow triggers based on behavioral changes.
+
+**Workflow Enrollment Triggers**: Automated rules within partner platforms initiating specific marketing sequences, sales outreach, or customer success interventions based on cohort membership or behavioral criteria imported from Amplitude.
+
+**Autocapture**: Amplitude's automatic event tracking system capturing user interactions without requiring manual event instrumentation, providing comprehensive behavioral data collection with minimal implementation overhead.
+
+**Session Replay**: Recording functionality capturing complete user sessions for detailed behavioral analysis, user experience optimization, and customer journey mapping.
+
+## Product Ecosystem Positioning
+
+Within Amplitude's broader analytics ecosystem, the Source Catalog serves as the primary mechanism for extending product analytics insights into operational business systems. The catalog integrations are distributed through partner marketplaces, indicating certified and supported status within partner ecosystems.
+
+The HubSpot integration demonstrates the catalog's capability to bridge product analytics with comprehensive CRM and marketing automation platforms. This integration enables organizations to create unified customer journey views where product engagement data directly informs sales and marketing strategies, while CRM relationship data provides contextual framework for product analytics interpretation.
+
+The bidirectional data flow architecture ensures product usage patterns can trigger automated marketing workflows, sales alerts, and customer success interventions, while customer relationship data enhances product analytics with account context, deal stage information, and customer lifecycle positioning.
+
+## Integration Implementation
+
+Source Catalog integrations typically involve installation through partner platform marketplaces, followed by configuration of data synchronization parameters and workflow automation rules. The HubSpot integration specifically requires Amplitude tracking code deployment on HubSpot CMS pages and configuration of cohort synchronization schedules to maintain real-time audience alignment between platforms.
+
+This architecture enables organizations to implement sophisticated product-led growth strategies by automatically responding to product usage patterns with appropriate sales and marketing interventions, creating a unified approach to customer acquisition, expansion, and retention based on demonstrated product engagement rather than traditional demographic or firmographic criteria.
