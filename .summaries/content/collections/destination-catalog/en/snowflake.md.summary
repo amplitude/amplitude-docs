@@ -1,0 +1,25 @@
+**Summary:** This documentation covers Amplitude's Snowflake integration for bidirectional data sync, including recurring exports of raw events and merged user IDs, with support for both password and key pair authentication, IP allowlisting requirements, and detailed event/merged user table schemas.
+
+**Keywords:**
+- Snowflake data warehouse integration
+- Amplitude event data export
+- recurring syncs
+- merged-users-ids
+- raw-events
+- key pair authentication
+- password authentication deprecation
+- IP allowlist requirements
+- micro-batch files
+- event table schema
+- merged user table schema
+- historical data export
+- warehouse destinations
+- ORGNAME-ACCOUNTNAME format
+- JWT token validation
+- amplitude_id column
+- uuid column
+- client_event_time
+- server_received_time
+- VARIANT data types
+- Snowflake computation costs
+- auto suspend configuration

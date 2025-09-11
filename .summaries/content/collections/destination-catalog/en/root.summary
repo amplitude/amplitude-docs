@@ -1,0 +1,50 @@
+## Amplitude Destination Catalog - Snowflake Integration
+
+Amplitude provides a comprehensive data warehouse integration solution that enables bidirectional data synchronization with Snowflake, allowing organizations to export their behavioral analytics data for advanced analysis and data science workflows. The integration supports automated, recurring exports of raw event data and merged user identity information directly into Snowflake data warehouse environments.
+
+## Product Features and Capabilities
+
+The Snowflake destination connector offers two primary data export types:
+
+**Raw Events Export**: Delivers complete behavioral event data including user interactions, page views, custom events, and associated metadata in micro-batch files for real-time or near-real-time analysis.
+
+**Merged User IDs Export**: Provides unified user identity mapping that consolidates multiple user identifiers (anonymous IDs, user IDs, device IDs) into coherent user profiles, enabling accurate cross-device and cross-session user journey analysis.
+
+The integration supports both historical data backfills and ongoing incremental syncs, with configurable scheduling for recurring data exports based on organizational requirements.
+
+## Authentication and Security Architecture
+
+The connector implements enterprise-grade security through multiple authentication methods:
+
+**Key Pair Authentication**: The recommended approach using JWT token validation with public/private key pairs for secure, scalable authentication without password management overhead.
+
+**Password Authentication**: Legacy method being deprecated in favor of key pair authentication for enhanced security posture.
+
+**IP Allowlisting**: Mandatory network security requirement where organizations must whitelist Amplitude's IP addresses to enable data transfer connectivity.
+
+## Data Schema and Structure
+
+### Event Table Schema
+The raw events export creates structured tables with standardized columns including:
+- `amplitude_id`: Unique identifier for user sessions and devices
+- `uuid`: Universal unique identifier for individual events
+- `client_event_time`: Timestamp when event occurred on client side
+- `server_received_time`: Timestamp when Amplitude servers processed the event
+- Event properties stored as Snowflake VARIANT data types for flexible JSON-like data handling
+
+### Merged User Table Schema
+The user identity consolidation creates mapping tables that link various user identifiers across devices and sessions, enabling comprehensive user journey analysis and attribution modeling.
+
+## Integration Configuration
+
+**Account Format**: Snowflake connections require ORGNAME-ACCOUNTNAME format specification for proper warehouse targeting.
+
+**Computation Management**: Integration includes auto-suspend configuration recommendations to optimize Snowflake computation costs during data loading operations.
+
+**Micro-batch Processing**: Data delivery occurs through optimized micro-batch files that balance real-time requirements with warehouse performance considerations.
+
+## Ecosystem Integration
+
+This Snowflake destination connector operates within Amplitude's broader warehouse destinations ecosystem, enabling organizations to create comprehensive data pipelines that combine behavioral analytics with other enterprise data sources. The standardized export formats facilitate integration with business intelligence tools, machine learning platforms, and custom analytics applications built on Snowflake's cloud data platform.
+
+The bidirectional sync capability positions this integration as a foundational component for advanced analytics workflows, customer data platforms, and data science initiatives that require both Amplitude's behavioral insights and the computational power of modern cloud data warehouses.
