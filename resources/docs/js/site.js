@@ -196,17 +196,12 @@ function addManualApiKeyButtonsWithRetry() {
     
     function tryAddButtons() {
         attempts++;
-        console.log(`🔑 API Key: Attempt ${attempts} to add buttons...`);
         
         const foundButtons = addManualApiKeyButtons();
         
         if (foundButtons === 0 && attempts < maxAttempts) {
             // No buttons found, try again in 500ms
             setTimeout(tryAddButtons, 500);
-        } else if (foundButtons > 0) {
-            console.log(`🔑 API Key: Successfully added ${foundButtons} buttons on attempt ${attempts}`);
-        } else {
-            console.log(`🔑 API Key: Gave up after ${maxAttempts} attempts`);
         }
     }
     
@@ -218,11 +213,8 @@ function addManualApiKeyButtons() {
     const codeBlocks = document.querySelectorAll('code[class*="language-"], code');
     let buttonsAdded = 0;
     
-    console.log(`🔑 API Key: Found ${codeBlocks.length} total code blocks`);
-    
     codeBlocks.forEach((codeBlock, index) => {
         const hasApiKey = codeBlock.textContent.includes('AMPLITUDE_API_KEY');
-        console.log(`🔑 API Key: Block ${index + 1}: ${hasApiKey ? 'HAS' : 'NO'} API key (classes: ${codeBlock.className})`);
         
         if (hasApiKey && !codeBlock.parentElement.querySelector('.api-key-manual-button')) {
             const container = codeBlock.closest('pre') || codeBlock.parentElement;
@@ -253,11 +245,9 @@ function addManualApiKeyButtons() {
             
             container.appendChild(apiKeyButton);
             buttonsAdded++;
-            console.log(`🔑 API Key: Added button to block ${index + 1}`);
         }
     });
     
-    console.log(`🔑 API Key: Added ${buttonsAdded} total buttons`);
     return buttonsAdded;
 }
 
