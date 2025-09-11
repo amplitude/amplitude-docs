@@ -12,7 +12,7 @@ enable_math: true
 ---
 Experiment uses a sequential testing method of statistical inference. With sequential testing, results are valid whenever you view them. You can decide to end an experiment early based on observations made to that point. The number of observations you’ll need to make an informed decision is, on average, much lower than the number you’d need with [T-tests](/docs/feature-experiment/experiment-theory/analyze-with-t-test) or similar procedures. You can experiment more quickly, incorporating what you learn into your product and escalating the pace of your experimentation program.
 
-Sequential testing has several advantages over T-tests. Primarily, you don’t need to know the number of observations necessary to achieve significance before you start the experiment. You can use both sequential testing and T-tests can for binary metrics and continuous metrics. If you have concerns related to long tailed distributions affecting the Central Limit Theorem assumption, read this article about [outliers](/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data). 
+Sequential testing has several advantages over T-tests. Primarily, you don’t need to know the number of observations necessary to achieve significance before you start the experiment. You can use both sequential testing and T-tests for binary metrics and continuous metrics. If you have concerns related to long tailed distributions affecting the Central Limit Theorem assumption, read this article about [outliers](/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data). 
 
 This article explains the basics of sequential testing, how it fits into Amplitude Experiment, and how you can make it work for you.
 
@@ -22,11 +22,15 @@ When you run an A/B test, Experiment conducts an hypothesis test using a randomi
 
 In a hypothesis test, you’re looking for performance differences between the control and your treatment variants. Amplitude Experiment tests the null hypothesis 
 
-![Formula is: H_0:\ \delta = 0](/docs/output/img/under-the-hood/image1-png.png) 
+$$
+H_0:\ \delta = 0
+$$
 
 where 
 
-![Formula is: \delta = \mu_{\text{treatment}} - \mu_{\text{control}}](/docs/output/img/under-the-hood/image2-png.png) 
+$$
+\delta = \mu_{\text{treatment}} - \mu_{\text{control}}
+$$
 
 states there’s no difference between treatment’s mean and control’s mean.
 
@@ -36,7 +40,9 @@ The alternative hypothesis states that there is a difference between the treatme
 
 There are many different sequential testing options. Amplitude Experiment uses a family of sequential tests called mixture sequential probability ratio test (mSPRT). The weight function, H, is the mixing distribution. The following mixture of likelihood ratios against the null hypothesis is such that:
 
-![Formula is: \Lambda_n = \int \prod_{i=1}^{n} \frac{f(x_i \mid \delta)}{f(x_i \mid 0)}\, dH(\delta)](statamic://asset::help_center_conversions::under-the-hood/equation.png)
+$$
+ \Lambda_n = \int \prod_{i=1}^{n} \frac{f(x_i \mid \delta)}{f(x_i \mid 0)}\, dH(\delta)
+ $$
 
 {{partial:admonition type='note'}}
  Read more about sequential testing in this [article on frequently asked questions](/docs/faq/sequential-testing).
