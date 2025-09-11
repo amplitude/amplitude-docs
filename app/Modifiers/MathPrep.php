@@ -43,11 +43,38 @@ class MathPrep extends Modifier
     }
 
     /**
-     * Detect only $$...$$ math
+     * Detect both $$...$$ (display) and $...$ (inline) math
+     * This should match the delimiters configured in KaTeX
      */
     protected function hasMath(string $text): bool
     {
-        return (bool) preg_match('/\$\$[\s\S]+?\$\$/', $text);
+        // Temporary debugging - remove after fixing
+        if (app()->environment('local')) {
+            \Log::info('MathPrep checking content length: ' . strlen($text));
+            \Log::info('First 200 chars: ' . substr($text, 0, 200));
+            
+            // Look for any dollar signs
+            if (strpos($text, '$') !== false) {
+                \Log::info('Found dollar sign in content');
+                preg_match_all('/\$[^$]*\$/', $text, $matches);
+                \Log::info('Dollar sign matches: ' . json_encode($matches[0]));
+            }
+        }
+        
+        // Check for display math $$...$$
+        if (preg_match('/\$\$[\s\S]+?\$\$/', $text)) {
+            if (app()->environment('local')) \Log::info('Found display math');
+            return true;
+        }
+        
+        // Check for inline math $...$ (but not $$)
+        // More restrictive: must contain typical math characters
+        if (preg_match('/(?<!\$)\$(?!\$)[^$\n]*[a-zA-Z=+\-*/^\\{}()][^$\n]*\$(?!\$)/', $text)) {
+            if (app()->environment('local')) \Log::info('Found inline math');
+            return true;
+        }
+        
+        return false;
     }
 
     /**
