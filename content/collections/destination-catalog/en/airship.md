@@ -33,9 +33,9 @@ You can also send events from Airship to Amplitude if your Airship plan include
 
 - To schedule daily and hourly syncs, you need Amplitude Activation.
 
-## Prerequisites 
+## Prerequisites
 
-If you use Amplitude's SDKs, integrate both the Airship and [Amplitude SDKs](/docs/sdks/analytics) in your app. Then follow the instructions in these articles link key identifiers: 
+If you use Amplitude's SDKs, integrate both the Airship and [Amplitude SDKs](/docs/sdks/analytics) in your app. Then follow the instructions in these articles link key identifiers:
 
 - Amplitude: [SDKs](/docs/sdks/analytics) and [APIs](/docs/apis/analytics)
 - Airship: [Getting Started Guide](http://docs.urbanairship.com/dev-resources.html#getting-started) 
@@ -68,7 +68,7 @@ curl --data 'api_key=040062a5d38552315b98302ba4f2f' --data 'identification=[{"us
 
 To confirm you've configured it correctly, [look up your test user or device in Amplitude](/docs/analytics/user-data-lookup). See the `UAChannelID `property stored as a user property at the top of your user profile.
 
-## Amplitude setup 
+## Amplitude setup
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Airship**.
@@ -78,14 +78,16 @@ To confirm you've configured it correctly, [look up your test user or device in
 
 
 {{partial:admonition type="note" title=""}}
-Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
+
+1. Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
+2. Amplitude adds the tag to users during cohort sync (see Airship setup info below), so please ensure the API key used grants Amplitude to do the operation.
 {{/partial:admonition}}
 
 ## Airship setup
 
 Create a tag group in Airship called "Amplitude".
 
-1. In Airship, navigate to **Settings -> APIs and Integrations** and click **Tag Groups**. 
+1. In Airship, navigate to **Settings -> APIs and Integrations** and click **Tag Groups**.
 2. Fill in the tag name, description, and group key. Be sure to set the group key as "amplitude".
 
 After you deploy the application update, you can sync cohorts.
