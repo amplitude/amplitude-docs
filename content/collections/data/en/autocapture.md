@@ -115,11 +115,11 @@ Page URL exclude- and allow- lists let you specify unique URL page patterns to e
 
 For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
 
-Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the .co.uk domain to the allow list.
+Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the https://example.co.uk/* as a glob pattern to the allow list.
 
 #### Precise attribute masking
 
-Precise attribute masking excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. 
+Precise attribute masking excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. Precise attribute masking is recursive and can mask elements at different levels.
 
 For example, if you include the following attribute:
 
@@ -130,8 +130,10 @@ For example, if you include the following attribute:
 ```
 on a button or link, the name "John D" is masked with `*****`. 
 
+You can also use a list to specify more than one attribute to be masked. When using a list, format the masking attributes as `data-amp-mask-attributes="name,ssn'`.
+
 {{partial:admonition type="note" heading=""}}
-You can't mask information from ID and Class elements. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
+You can't mask information from ID and Class attributes. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
 {{/partial:admonition}}
 
 ### Autocapture security options
