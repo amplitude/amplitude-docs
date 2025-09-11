@@ -40,3 +40,14 @@ So to predict any article’s URL:
 4. Prepend `/docs` and the site domain.
 
 Worst case scenario: If you're not sure, you can get the list of articles with the correct URLs in https://amplitude.com/docs/llms.txt
+## When NOT to Document Features
+
+**Internal/Infrastructure Features**: Do not create documentation suggestions for internal Amplitude infrastructure or tooling that is not customer-facing. Key indicators that a feature should NOT be documented:
+
+- **Commented out exports**: If the feature's public API exports are commented out in the PR, it's not ready for customer use
+- **Internal telemetry/diagnostics**: Features that collect data for Amplitude's internal monitoring rather than customer analytics
+- **Incomplete implementations**: Features with TODO markers or incomplete core functionality  
+- **Infrastructure-only**: Low-level SDK infrastructure that customers don't directly interact with
+- **No customer value**: Features that don't provide direct value to customers using Amplitude for their analytics
+
+Always verify the customer-facing nature of a feature before documenting. When in doubt, examine the exports and public API to determine if customers would actually use this feature directly.
