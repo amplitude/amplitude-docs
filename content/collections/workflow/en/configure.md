@@ -9,24 +9,34 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514522
 ---
-Configuring Experiment is a two-stage process: creating a deployment, and installing the SDK you want to use.
+Configuring Experiment is a two-stage process: 
+
+* Creating a deployment
+* Installing the SDK you want to use.
 
 ## Creating a deployment
 
-In Experiment, a deployment is where you can serve a group of flags or experiments for code execution. After you create a deployment, Experiment generates an access key, which you can then use to properly route your flags and experiments.
+An Experiment deployment is the focused area where you can test a new feature, change, or product idea to a small group of your users. The deployment is where you specify your variants and changes to appear to your users. Deployments can be either for Feature Experiments or [Web Experiments](/docs/web-experiment/implementation). This page discusses Feature Experiments. 
 
-Deployments live under Amplitude Analytics projects. A project can have multiple deployments, but you can attach  each deployment to a single project.
+Deployments must be associated with at least one [Amplitude project](/docs/get-started/create-project). A project can have multiple deployments, and each deployment can be associated with multiple projects.
 
-To create a deployment follow these steps:
+##### To create a deployment
 
-1. From inside Experiment, click *Deployments* in the left-hand rail. Then click *+ Create Deployment.*
-2. Choose the Amplitude Analytics project you’d like the deployment to be associated with. If you want to create deployments in multiple projects at once, just select all the relevant projects from the drop-down list.
-3. Next, choose a name for your deployment and specify its type:
+1. Go to *Experiment > Deployments* and then click ***Create Deployment**.
+2. Choose the Amplitude Analytics project to which you want to associate the deployment. If you want to create deployments in multiple projects, select all the relevant projects from the drop-down list.
+3. Enter a name for your deployment. Names should be descriptive of the work you are doing.
+4. Specify its type:
 
-  * **Client-side**: These deployments run on a client device, such as a web browser or mobile app. The deployment key associated with client deployments is publicly viewable and should be used in client-side SDKs.
-  * **Server-side:** These deployments run on a server you control, such as a web server or batch processing system. Keep the deployment key associated with server deployments secret and use it server-side SDKs. Server-side keys can access the REST API for flag evaluation. If, instead of running a full-blown experiment, you only need to evaluate flags using the REST API, you should create a server-side deployment.
+  * **Client-side**: These deployments run on a client device, such as a web browser or mobile app. With client-side deployments, the variation is created directly on the page as it's delivered to the user.
+  * **Server-side:** These deployments run on a server you control, such as a web server or batch processing system. With server-side deployments, the variation is determined on the server before the page reaches the user. 
 
-4. Click *Add Deployment*. Amplitude Experiment creates your deployments and automatically generate keys to copy and use.
+5. Click **Create a Deployment**. Experiment creates your deployments and automatically generate keys to copy and use.
+
+### Deployment keys
+
+Both types of deployments generate keys that are specific to the deployment. A key is a unique identifier for the deployment that ensures data integrity. The key ensures that all of the data collected by your experiment is associated with that particular deployment and all of the results and analytics based off of those results are as accurate as possible. For more information about keys, go to [Keys and Tokens](/docs/apis/keys-and-tokens#keys-overview).
+
+* **Client-side keys**:  
 
 ## Install the SDK
 
