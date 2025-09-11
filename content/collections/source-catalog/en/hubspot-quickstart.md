@@ -79,7 +79,7 @@ Track and analyze product use data and lead performance from within HubSpot dash
 2. From the dashboard, click *Actions > Add external content*. For more information, see HubSpot's article [Embed external content on a dashboard](https://knowledge.hubspot.com/dashboards/embed-external-content-on-a-dashboard).
 3. Name the chart, and enter the chart's URL from Amplitude. The URL should be in the format: `https://app.amplitude.com/analytics/<project>/1234abcd` where `1234abcd` represent an 8 character alphanumeric identifier of the chart.
 
-### Removing the CMS Snippets
+### Remove Amplitude tracking
 
 Follow these steps to remove Amplitude tracking:
 
