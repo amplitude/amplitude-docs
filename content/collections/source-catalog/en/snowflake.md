@@ -75,7 +75,7 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
    Amplitude offers password-based and key pair authentication for Snowflake.
 
 {{partial:admonition type="warning" heading="Snowflake Password Authentication Deprecation"}}
-Snowflake will no longer support single-factor password authentication starting November 2025. This is Snowflake's policy change, not Amplitude's, but it impacts the way that you send data from Snowflake to Amplitude. We strongly recommend migrating to key pair authentication for enhanced security and future compatibility.
+Beginning in November 2025, Snowflake is removing support for single-factor password authentication. This impacts the way you send data from Snowflake to Amplitude. Amplitude recommends migrating to key pair authentication for enhanced security and future compatibility with Snowflake.
 {{/partial:admonition}}
 
     - If you want to use password authentication, select *Password* and enter your password in the *Password* field.
