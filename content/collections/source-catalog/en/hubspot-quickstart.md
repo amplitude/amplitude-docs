@@ -81,7 +81,7 @@ Track and analyze product use data and lead performance from within HubSpot dash
 
 ### Removing the CMS Snippets
 
-Should you want to remove Amplitude tracking, follow the steps below:
+Follow these steps to remove Amplitude tracking:
 
-1. Navigate to your HubSpot Settings =>Tools => Pages => Integrations.
-2. Click "Remove tracking" under the checked "Integrate with Amplitude"
+1. In HubSpot, navigate to *HubSpot Settings > Tools  > Pages  > Integrations*.
+2. Click **Remove tracking** under  "Integrate with Amplitude."
