@@ -1,0 +1,23 @@
+**Summary:** This documentation covers revenue tracking in Amplitude, including revenue properties ($revenue, $price, $quantity, $productId, $revenueType, $currency), configuration options for in-app purchases (IAPs) and non-in-app purchases, revenue verification using iTunes Connect Shared Secret or Google Play License Public Key, and the three revenue event types (Revenue, Revenue (Verified), Revenue (Unverified)) that appear in Revenue LTV charts.
+
+**Keywords:**
+- revenue tracking
+- revenue properties
+- $revenue property
+- $price property
+- $quantity property
+- $productId
+- $revenueType
+- $currency
+- Revenue LTV chart
+- in-app purchases (IAPs)
+- revenue verification
+- iTunes Connect Shared Secret
+- Google Play License Public Key
+- logRevenueV2 function
+- Revenue (Verified) events
+- Revenue (Unverified) events
+- receipt validation
+- HTTP API revenue fields
+- setOptOut method
+- ISO 4217 currency codes

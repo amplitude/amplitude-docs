@@ -1,0 +1,25 @@
+**Summary:** Documents the HTTP V2 API for sending event data directly from servers to Amplitude's ingestion endpoint, including request/response formats, event parameters, rate limiting, upload limits, and error handling with specific status codes.
+
+**Keywords:**
+- HTTP V2 API
+- event ingestion
+- server-to-server
+- api2.amplitude.com/2/httpapi
+- event_type
+- user_id
+- device_id
+- insert_id deduplication
+- rate limiting 1800 user properties/hour
+- upload limits 1MB/2000 events
+- min_id_length option
+- user_properties
+- event_properties
+- groups
+- revenue tracking
+- session_id
+- language field mapping
+- 400/413/429/503 error codes
+- throttling
+- silenced devices
+- partner integrations
+- partner_id

@@ -1,0 +1,58 @@
+## Amplitude Revenue Tracking System
+
+Amplitude's revenue tracking system is a comprehensive monetization analytics platform that enables businesses to capture, verify, and analyze revenue events across multiple platforms and purchase types. The system provides end-to-end revenue monitoring capabilities, from transaction capture to lifetime value analysis, with built-in verification mechanisms to ensure data integrity and fraud prevention.
+
+## Product Architecture and Feature Relationships
+
+The revenue tracking system operates on a multi-layered architecture that combines data collection, verification, and analytics:
+
+**Data Collection Layer**: Captures revenue transactions through both client-side SDKs and server-side HTTP API integration, supporting real-time and batch revenue event submission.
+
+**Verification Layer**: Implements platform-specific validation mechanisms for mobile app purchases, including iOS App Store and Google Play Store verification processes that authenticate transaction legitimacy.
+
+**Classification Layer**: Automatically categorizes revenue events based on verification status, creating three distinct event types that maintain data visibility while ensuring quality control.
+
+**Analytics Layer**: Integrates verified revenue data with Amplitude's broader analytics platform, feeding into Revenue LTV charts and enabling cross-functional analysis of customer behavior and purchasing patterns.
+
+The `logRevenueV2` function serves as the primary programmatic interface for revenue event logging, while the `setOptOut` method provides privacy compliance controls for data protection regulation adherence.
+
+## Key Nomenclature and Definitions
+
+**Revenue Properties**: The six core data fields that define each revenue transaction:
+- `$revenue`: Total transaction amount
+- `$price`: Individual item unit cost  
+- `$quantity`: Number of items purchased
+- `$productId`: Unique product identifier
+- `$revenueType`: Revenue categorization (subscription, one-time, etc.)
+- `$currency`: ISO 4217 standard currency code
+
+**Revenue Event Types**: Classification system based on verification status:
+- **Revenue**: Standard unverified purchase events
+- **Revenue (Verified)**: Platform-authenticated transactions
+- **Revenue (Unverified)**: Failed or unverifiable transactions
+
+**Verification Mechanisms**: Platform-specific authentication systems:
+- **iTunes Connect Shared Secret**: iOS App Store purchase validation key
+- **Google Play License Public Key**: Android Google Play purchase verification credential
+
+**In-App Purchases (IAPs)**: Mobile platform-native purchase transactions subject to automated verification processes.
+
+## Ecosystem Integration and Positioning
+
+The revenue tracking system functions as a core component within Amplitude's unified analytics ecosystem, serving as the monetization data foundation that connects with user engagement analytics, behavioral segmentation, and customer journey mapping. This integration enables businesses to correlate purchasing behavior with product usage patterns, feature adoption rates, and user lifecycle stages.
+
+The system's multi-platform support positions it as a centralized revenue intelligence hub for businesses operating across web, mobile, and server-side environments. Its HTTP API compatibility ensures seamless integration with existing business systems, payment processors, and e-commerce platforms.
+
+Revenue data flows directly into Amplitude's customer lifetime value calculations and cohort analysis tools, enabling predictive revenue modeling and customer segment optimization. The system's support for international currency standards and global payment methods makes it suitable for enterprise-scale, multi-market operations.
+
+## Technical Implementation Interfaces
+
+**Primary API Function**: `logRevenueV2` - Core method for programmatic revenue event submission with full property support
+
+**Privacy Control Method**: `setOptOut` - User consent management for revenue tracking compliance
+
+**HTTP API Integration**: Server-side revenue event submission endpoint supporting the complete revenue property schema
+
+**Platform Verification APIs**: Automated integration with iOS iTunes Connect and Android Google Play validation services for in-app purchase authentication
+
+The system supports both real-time transaction logging and batch revenue event processing, providing flexibility for different implementation architectures and business requirements.
