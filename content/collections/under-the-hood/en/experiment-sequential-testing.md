@@ -42,7 +42,7 @@ There are many different sequential testing options. Amplitude Experiment uses a
 
 $$
  \Lambda_n = \int \prod_{i=1}^{n} \frac{f(x_i \mid \delta)}{f(x_i \mid 0)}\, dH(\delta)
- $$
+$$
 
 {{partial:admonition type='note'}}
  Read more about sequential testing in this [article on frequently asked questions](/docs/faq/sequential-testing).
