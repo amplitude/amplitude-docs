@@ -1,0 +1,47 @@
+**Summary:**
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends events to Amplitude using the HTTP V2 API. It includes installation via script loader/npm/yarn, SDK initialization with API keys, comprehensive autocapture configuration (attribution, page views, sessions, form interactions, file downloads, element interactions, frustration interactions, network tracking), event tracking, user properties, group properties, revenue tracking, plugins system, and advanced features like cross-domain tracking, offline mode, CSP configuration, and cookie management.
+
+**Keywords:**
+- Browser SDK 2
+- @amplitude/analytics-browser
+- @amplitude/unified
+- HTTP V2 API
+- autocapture configuration
+- marketing attribution tracking
+- UTM parameters
+- click ID parameters
+- page view tracking
+- session tracking
+- form interaction tracking
+- file download tracking
+- element interaction tracking
+- frustration interaction tracking
+- rage clicks
+- dead clicks
+- network request tracking
+- XHR and Fetch tracking
+- script loader installation
+- deviceId and userId validation
+- minIdLength configuration
+- flushQueueSize and flushIntervalMillis
+- sendBeacon transport
+- cross-domain tracking
+- ampDeviceId and ampSessionId URL parameters
+- cookie management
+- AMP cookie prefix
+- Content Security Policy (CSP)
+- offline mode
+- remote configuration
+- fetchRemoteConfig
+- plugins system
+- enrichment plugins
+- destination plugins
+- revenue tracking interface
+- group properties
+- user properties
+- Identify interface
+- trackingOptions configuration
+- excludeReferrers configuration
+- Visual labeling support
+- Angular Zone.js compatibility
+- Next.js integration
