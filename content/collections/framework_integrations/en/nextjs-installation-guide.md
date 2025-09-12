@@ -69,158 +69,70 @@ pnpm add @amplitude/analytics-browser
 
 Follow the instructions in this section to configure Amplitude on the client.
 
-### App Router (Next.js 13+)
+### Amplitude Initialization
 
-Create an Amplitude provider component to initialize the SDK on the client side.
+Create an Amplitude module to initialize the SDK on the client side.
 
 {{partial:tabs tabs="Unified SDK, Analytics SDK"}}
 {{partial:tab name="Unified SDK"}}
 
 ```typescript
-// app/providers/AmplitudeProvider.tsx
+// amplitude.ts
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
 import * as amplitude from "@amplitude/unified";
 
-interface AmplitudeContextType {
-  isInitialized: boolean;
-  amplitude: typeof amplitude;
+async function initAmplitude() {
+  await amplitude.initAll(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!, {
+    analytics: {
+      autocapture: true,
+    },
+  });
 }
 
-const defaultContext: AmplitudeContextType = {
-  isInitialized: false,
-  amplitude: amplitude,
-};
-
-const AmplitudeContext = createContext<AmplitudeContextType>(defaultContext);
-
-export function AmplitudeProvider({
-  children,
-  apiKey,
-}: {
-  children: React.ReactNode;
-  apiKey: string;
-}) {
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  useEffect(() => {
-    // Only initialize on client side
-    if (typeof window !== "undefined" && !isInitialized) {
-      amplitude.initAll(apiKey, {
-        analytics: {
-          autocapture: {
-            sessions: true,
-            pageViews: true,
-            formInteractions: true,
-            fileDownloads: true,
-            elementInteractions: true,
-          },
-          logLevel: amplitude.Types.LogLevel.Warn,
-          flushIntervalMillis: 30000,
-          flushQueueSize: 30,
-        },
-      });
-
-      setIsInitialized(true);
-    }
-  }, [apiKey, isInitialized]);
-
-  const contextValue = { isInitialized, amplitude };
-
-  return (
-    <AmplitudeContext.Provider value={contextValue}>
-      {children}
-    </AmplitudeContext.Provider>
-  );
+if (typeof window !== "undefined") {
+  initAmplitude();
 }
 
-export const useAmplitude = () => {
-  const context = useContext(AmplitudeContext);
-  if (!context) {
-    throw new Error("useAmplitude must be used within AmplitudeProvider");
-  }
-  return context;
-};
+export const Amplitude = () => null;
+
+export default amplitude;
 ```
 
 {{/partial:tab}}
 {{partial:tab name="Analytics SDK"}}
 
 ```typescript
-// app/providers/AmplitudeProvider.tsx
+// amplitude.ts
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 
-interface AmplitudeContextType {
-  isInitialized: boolean;
-  amplitude: typeof amplitude;
+async function initAmplitude() {
+  await amplitude.init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!, undefined, {
+    autocapture: true,
+  }).promise;
 }
 
-const defaultContext: AmplitudeContextType = {
-  isInitialized: false,
-  amplitude: amplitude,
-};
-
-const AmplitudeContext = createContext<AmplitudeContextType>(defaultContext);
-
-export function AmplitudeProvider({
-  children,
-  apiKey,
-}: {
-  children: React.ReactNode;
-  apiKey: string;
-}) {
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  useEffect(() => {
-    // Only initialize on client side
-    if (typeof window !== "undefined" && !isInitialized) {
-      amplitude.init(apiKey, undefined, {
-        autocapture: {
-          sessions: true,
-          pageViews: true,
-          formInteractions: true,
-          fileDownloads: true,
-          elementInteractions: true,
-        },
-        logLevel: amplitude.Types.LogLevel.Warn,
-        flushIntervalMillis: 30000,
-        flushQueueSize: 30,
-      });
-
-      setIsInitialized(true);
-    }
-  }, [apiKey, isInitialized]);
-
-  const contextValue = { isInitialized, amplitude };
-
-  return (
-    <AmplitudeContext.Provider value={contextValue}>
-      {children}
-    </AmplitudeContext.Provider>
-  );
+if (typeof window !== "undefined") {
+  initAmplitude();
 }
 
-export const useAmplitude = () => {
-  const context = useContext(AmplitudeContext);
-  if (!context) {
-    throw new Error("useAmplitude must be used within AmplitudeProvider");
-  }
-  return context;
-};
+export const Amplitude = () => null;
+
+export default amplitude;
 ```
 
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Add the provider to your root layout.
+### App Router (Next.js 13+)
+
+Import and add the component to your root layout.
 
 ```typescript
 // app/layout.tsx
-import { AmplitudeProvider } from './providers/AmplitudeProvider';
+import { Amplitude } from "@/amplitude";
 
 export default function RootLayout({
   children,
@@ -229,10 +141,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Amplitude />
       <body>
-        <AmplitudeProvider apiKey={process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!}>
-          {children}
-        </AmplitudeProvider>
+        {children}
       </body>
     </html>
   );
@@ -248,27 +159,10 @@ For the Pages Router, initialize Amplitude in `_app.tsx`.
 
 ```typescript
 // pages/_app.tsx
-import { useEffect } from 'react';
+import '@/amplitude';
 import type { AppProps } from 'next/app';
-import * as amplitude from '@amplitude/unified';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    // Initialize Amplitude on client side only
-    if (typeof window !== 'undefined') {
-      amplitude.initAll(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!, {
-        analytics: {
-          autocapture: {
-            sessions: true,
-            pageViews: true,
-            formInteractions: true,
-            fileDownloads: true,
-          },
-        },
-      });
-    }
-  }, []);
-
   return <Component {...pageProps} />;
 }
 
@@ -280,25 +174,10 @@ export default MyApp;
 
 ```typescript
 // pages/_app.tsx
-import { useEffect } from 'react';
+import '@/amplitude';
 import type { AppProps } from 'next/app';
-import * as amplitude from '@amplitude/analytics-browser';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    // Initialize Amplitude on client side only
-    if (typeof window !== 'undefined') {
-      amplitude.init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!, undefined, {
-        autocapture: {
-          sessions: true,
-          pageViews: true,
-          formInteractions: true,
-          fileDownloads: true,
-        },
-      });
-    }
-  }, []);
-
   return <Component {...pageProps} />;
 }
 
@@ -310,42 +189,11 @@ export default MyApp;
 
 ### Using Amplitude in components
 
-With the App Router setup:
-
-```typescript
-// app/components/TrackingButton.tsx
-'use client';
-
-import { useAmplitude } from '../providers/AmplitudeProvider';
-
-export function TrackingButton() {
-  const { amplitude, isInitialized } = useAmplitude();
-
-  const handleClick = () => {
-    if (isInitialized) {
-      amplitude.track('Button Clicked', {
-        buttonName: 'CTA Button',
-        page: window.location.pathname,
-        timestamp: new Date().toISOString(),
-      });
-    }
-  };
-
-  return (
-    <button onClick={handleClick}>
-      Click Me
-    </button>
-  );
-}
-```
-
-With the Pages Router setup:
-
 ```typescript
 // components/TrackingButton.tsx
 "use client";
 
-import * as amplitude from "@amplitude/unified";
+import amplitude from "@/amplitude";
 
 export function TrackingButton() {
   const handleClick = () => {
@@ -677,31 +525,13 @@ amplitude.init(apiKey, undefined, {
 For business-specific events that autocapture doesn't cover:
 
 ```typescript
-// hooks/useTrackEvent.ts
-import { useCallback } from 'react';
-import { useAmplitude } from '@/app/providers/AmplitudeProvider';
-
-export function useTrackEvent() {
-  const { amplitude, isInitialized } = useAmplitude();
-
-  const trackEvent = useCallback(
-    (eventName: string, properties?: Record<string, any>) => {
-      if (isInitialized) {
-        amplitude.track(eventName, properties);
-      }
-    },
-    [amplitude, isInitialized]
-  );
-
-  return trackEvent;
-}
-
 // Usage for custom business events
-export function ProductCard({ product }: { product: Product }) {
-  const trackEvent = useTrackEvent();
+"use client";
+import amplitude from "@/amplitude";
 
+export function ProductCard({ product }: { product: Product }) {
   const handleAddToCart = () => {
-    trackEvent('Product Added to Cart', {
+    amplitude.track('Product Added to Cart', {
       productId: product.id,
       productName: product.name,
       price: product.price,
@@ -856,53 +686,7 @@ export function handleUserSession() {
 
 ### TypeScript support
 
-Create type-safe event tracking:
-
-```typescript
-// types/amplitude-events.ts
-export interface AmplitudeEvents {
-  "Page Viewed": {
-    page: string;
-    url: string;
-    referrer?: string;
-  };
-  "Button Clicked": {
-    buttonName: string;
-    page: string;
-    section?: string;
-  };
-  "Form Submitted": {
-    formName: string;
-    fields: string[];
-    success: boolean;
-  };
-  "Product Added to Cart": {
-    productId: string;
-    productName: string;
-    price: number;
-    quantity: number;
-  };
-}
-
-// hooks/useTypedTracking.ts
-import { useAmplitude } from "@/app/providers/AmplitudeProvider";
-import type { AmplitudeEvents } from "@/types/amplitude-events";
-
-export function useTypedTracking() {
-  const { amplitude, isInitialized } = useAmplitude();
-
-  function track<K extends keyof AmplitudeEvents>(
-    eventName: K,
-    properties: AmplitudeEvents[K],
-  ) {
-    if (isInitialized) {
-      amplitude.track(eventName, properties);
-    }
-  }
-
-  return { track };
-}
-```
+Create type-safe event tracking, use [Ampli](/docs/sdks/ampli/migrate-to-ampli).
 
 ### Testing
 
@@ -981,32 +765,6 @@ describe('TrackingButton', () => {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Performance optimization
-
-Optimize SDK initialization and loading:
-
-```typescript
-// app/providers/AmplitudeProvider.tsx
-import dynamic from 'next/dynamic';
-
-// Lazy load Amplitude for better initial page load
-const AmplitudeProviderClient = dynamic(
-  () => import('./AmplitudeProviderClient'),
-  {
-    ssr: false,
-    loading: () => null,
-  }
-);
-
-export function AmplitudeProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <AmplitudeProviderClient>
-      {children}
-    </AmplitudeProviderClient>
-  );
-}
-```
-
 ## Debugging
 
 Enable debug mode during development:
@@ -1021,13 +779,7 @@ amplitude.initAll(apiKey, {
     logLevel: amplitude.Types.LogLevel.Debug,
     minIdLength: 1, // Allow shorter IDs in development
     serverUrl: process.env.NEXT_PUBLIC_AMPLITUDE_SERVER_URL, // Custom server URL if needed
-    autocapture: {
-      sessions: true,
-      pageViews: true,
-      formInteractions: true,
-      fileDownloads: true,
-      elementInteractions: true,
-    },
+    autocapture: true,
   },
 });
 ```
@@ -1041,13 +793,7 @@ amplitude.init(apiKey, undefined, {
   logLevel: amplitude.Types.LogLevel.Debug,
   minIdLength: 1, // Allow shorter IDs in development
   serverUrl: process.env.NEXT_PUBLIC_AMPLITUDE_SERVER_URL, // Custom server URL if needed
-  autocapture: {
-    sessions: true,
-    pageViews: true,
-    formInteractions: true,
-    fileDownloads: true,
-    elementInteractions: true,
-  },
+  autocapture: true,
 });
 ```
 
@@ -1100,4 +846,3 @@ amplitude.reset();
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Amplitude HTTP API Reference](/docs/apis/analytics/http-v2)
 - [TypeScript SDK GitHub Repository](https://github.com/amplitude/Amplitude-TypeScript)
-
