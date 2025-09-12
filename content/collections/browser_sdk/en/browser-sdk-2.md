@@ -239,6 +239,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. See [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version <TODO>|
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
@@ -655,6 +656,31 @@ These two events capture properties that describe the corresponding element and 
 - `[Amplitude] Element Aria Label`
 - `[Amplitude] Element Parent Label`
 <!-- vale on-->
+{{/partial:collapse}}
+
+### Track frustration interactions
+You can enable frustration interaction tracking to capture rage clicks and dead clicks. A "rage click" is triggered when a user clicks the same element, within 50px, 4 times in under a second. A "dead click" is triggered when a user clicks an interactable element and no navigation change happens and the DOM doesn't change.
+
+Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    frustrationInteractions: true, 
+  },
+});
+```
+
+#### Advanced configuration for frustration interactions
+
+Use the advanced configuration to control frustration interaction tracking.
+
+{{partial:collapse name="Tracking frustration interaction options"}}
+| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements on the dead clicks should be captured on. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101)       ||
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements should have rage clicks captured on. By default, this is set to capture on any element.|
+
 {{/partial:collapse}}
 
 ### Track network requests
