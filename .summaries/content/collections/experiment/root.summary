@@ -1,0 +1,55 @@
+Amplitude Experiment is a feature flagging and experimentation platform designed for controlled feature rollouts and A/B testing. The platform enables teams to safely deploy features through sophisticated access controls, role-based permissions, and project-level organization while maintaining operational independence from other Amplitude products.
+
+## Product Architecture and Feature Relationships
+
+The platform operates on a project-centric architecture where experiments and feature flags are organized within discrete projects, each maintaining independent permission structures. The core system comprises several interconnected components:
+
+**Flag Management System** serves as the primary control mechanism for feature visibility and experimentation. Feature flags act as the fundamental unit for controlling access to new functionality, with Enterprise customers receiving additional flag-level access restrictions for granular security control.
+
+**Role-Based Access Control** implements a four-tier hierarchical permission system (Viewer, Member, Manager, Admin) that governs user capabilities across flag creation, editing, deployment, and project management. This system operates independently from Amplitude Analytics permissions, allowing organizations to structure access differently across experimentation and analytics workflows.
+
+**API Integration Layer** provides programmatic access through the Management API, which can bypass standard UI permissions while maintaining proper authentication and audit trails. This enables automated workflows and CI/CD integrations while respecting project-level security boundaries.
+
+**Project Isolation Framework** ensures cross-project security through independent permission structures, preventing unauthorized access across project boundaries and supporting multi-team organizational structures.
+
+## Key Nomenclature and Definitions
+
+**Project-Level Permissions**: Access control system specific to individual Experiment projects, operating independently from Analytics permissions and governing all user actions within project boundaries.
+
+**Flag-Level Access Controls**: Enterprise-exclusive feature enabling restriction of specific flags to designated editors, providing granular security that overrides standard role permissions for sensitive feature releases.
+
+**Role Hierarchy**:
+- **Viewer**: Read-only access to flags and experiments
+- **Member**: Flag creation, editing, and deployment management capabilities  
+- **Manager**: Member permissions plus user management and project configuration access
+- **Admin**: Complete project control including deletion rights and advanced configurations
+
+**Restricted Flags**: Enterprise-only feature flags with limited editor access, creating security exceptions to standard role-based permissions for high-sensitivity features.
+
+**Mutual Exclusion Groups**: Feature groupings that prevent conflicting experiments from running simultaneously, requiring specific permission levels for creation and management.
+
+**Management API Bypass**: Programmatic interface capability that circumvents UI-based permission restrictions while maintaining authentication requirements and project-level access validation.
+
+**Deployment Management**: Role-restricted capabilities for pushing flag changes to production environments, ensuring only authorized users can affect live systems.
+
+## Broader Product Ecosystem Integration
+
+Amplitude Experiment integrates strategically within the Amplitude ecosystem while maintaining operational autonomy. The platform connects through several key integration points:
+
+**Amplitude Analytics Separation**: Independent permission systems allow organizations to implement different access patterns between experimentation and analytics teams, supporting specialized workflow requirements without permission conflicts.
+
+**Organization-Wide Inheritance**: Project permissions inherit baseline settings from organization-level configurations, providing consistent default access while enabling project-specific customization for unique security requirements.
+
+**Enterprise Security Framework**: Advanced customers access enhanced security features including flag-level restrictions, detailed audit capabilities, and sophisticated access controls that integrate with broader enterprise security policies.
+
+**API Ecosystem Integration**: Management API endpoints facilitate integration with external systems including CI/CD pipelines, automated deployment tools, and custom development workflows while maintaining security boundaries through project-level authentication.
+
+## Technical Implementation and API Access
+
+The platform enforces access controls across multiple operational dimensions through both UI and programmatic interfaces. The Management API provides comprehensive programmatic access that respects permission boundaries while enabling automation capabilities.
+
+**Project API Key Management** implements permission-controlled access to project-specific authentication credentials, maintaining security isolation for programmatic interactions across different projects and teams.
+
+**Cross-Project Security Isolation** prevents unauthorized access through independent permission structures, ensuring that user access in one project cannot compromise security in another project within the same organization.
+
+The system supports automated workflows through API endpoints that bypass UI restrictions while maintaining proper authentication, project-level access validation, and comprehensive audit logging for compliance and security monitoring requirements.

@@ -1,0 +1,57 @@
+## Amplitude Experiment
+
+Amplitude Experiment is a feature flagging and experimentation platform that enables teams to safely deploy, test, and manage feature releases through controlled rollouts and A/B testing. The platform provides sophisticated access control mechanisms to ensure proper governance and security across different organizational roles and project structures.
+
+## Product Architecture and Feature Relationships
+
+Amplitude Experiment operates as a standalone experimentation platform with its own independent permission system, separate from Amplitude Analytics. The core architecture centers around:
+
+**Project-Level Organization**: Experiments and feature flags are organized within projects, each maintaining independent permission structures and access controls.
+
+**Flag Management System**: Feature flags serve as the primary mechanism for controlling feature visibility and experimentation, with Enterprise customers receiving additional flag-level access restrictions for granular control.
+
+**Role-Based Access Control**: A hierarchical permission system with four distinct roles (Viewer, Member, Manager, Admin) that determine user capabilities across flag creation, editing, deployment, and project management functions.
+
+**API Integration Layer**: The Management API provides programmatic access that can bypass standard UI permissions, enabling automated workflows and integrations while maintaining audit trails.
+
+## Key Nomenclature and Definitions
+
+**Project-Level Permissions**: Access control system specific to Experiment projects, operating independently from Analytics permissions, governing user actions within individual experiment projects.
+
+**Flag-Level Access Controls**: Enterprise feature allowing restriction of specific flags to designated editors, providing granular security for sensitive feature releases.
+
+**Role Hierarchy**:
+- **Viewer**: Read-only access to flags and experiments
+- **Member**: Can create and edit flags, manage deployments
+- **Manager**: Member permissions plus user management and project settings
+- **Admin**: Full project control including deletion and advanced configurations
+
+**Restricted Flags**: Enterprise-only feature flags with limited editor access, overriding standard role permissions for enhanced security.
+
+**Mutual Exclusion Groups**: Feature groupings that prevent conflicting experiments from running simultaneously, with specific permission requirements for management.
+
+**Management API Bypass**: Programmatic interface capability that circumvents UI-based permission restrictions while maintaining proper authentication and project-level access controls.
+
+## Ecosystem Integration
+
+Amplitude Experiment integrates into the broader Amplitude ecosystem while maintaining operational independence. The platform connects with:
+
+**Amplitude Analytics**: Separate permission systems allow different access patterns between experimentation and analytics workflows, enabling specialized team structures.
+
+**Organization-Wide Defaults**: Project permissions inherit from organization-level settings, providing consistent baseline access while allowing project-specific customization.
+
+**Enterprise Security Framework**: Advanced customers receive enhanced security features including flag-level restrictions and detailed audit capabilities.
+
+**API Ecosystem**: Management API endpoints enable integration with CI/CD pipelines, automated deployment systems, and custom tooling while respecting permission boundaries.
+
+## Technical Implementation
+
+The permission system enforces access controls across multiple operational areas:
+
+**Deployment Management**: Role-based restrictions on flag deployment capabilities, ensuring only authorized users can push changes to production environments.
+
+**Project API Key Access**: Permission-controlled access to project-specific API keys, maintaining security boundaries for programmatic interactions.
+
+**Cross-Project Isolation**: Independent permission structures prevent unauthorized access across project boundaries, supporting multi-team organizational structures.
+
+The Management API provides programmatic alternatives to UI-based workflows, enabling automation while maintaining security through project-level authentication and access validation.
