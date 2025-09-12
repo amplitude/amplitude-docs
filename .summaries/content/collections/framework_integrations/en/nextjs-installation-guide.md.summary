@@ -1,0 +1,22 @@
+**Summary:** This guide covers installation and setup of Amplitude's Browser SDK and Unified SDK in Next.js applications, including client-side and server-side configurations for both App Router (Next.js 13+) and Pages Router, with autocapture, Session Replay integration, and Visual Labeling features.
+
+**Keywords:**
+- Next.js installation guide
+- Amplitude Browser SDK
+- Amplitude Unified SDK
+- @amplitude/unified package
+- @amplitude/analytics-browser package
+- @amplitude/analytics-node package
+- App Router Next.js 13+
+- Pages Router legacy
+- client-side server-side configuration
+- autocapture pageViews elementInteractions
+- Session Replay integration
+- Visual Labeling Chrome Extension
+- environment variables NEXT_PUBLIC_AMPLITUDE_API_KEY
+- TypeScript JavaScript support
+- middleware integration
+- user identification setUserId
+- session management reset
+- debugging logLevel
+- window undefined browser check

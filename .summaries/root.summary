@@ -1,51 +1,60 @@
-Amplitude Experiment is a feature flagging and experimentation platform that enables controlled feature rollouts and A/B testing through sophisticated access controls and project-based organization. The platform operates independently from other Amplitude products while integrating strategically within the broader ecosystem.
+## Amplitude Framework Integrations
 
-## Product Architecture and Feature Relationships
+Amplitude Framework Integrations is a specialized SDK integration suite that enables seamless implementation of analytics and user behavior tracking within modern web development frameworks. The product provides comprehensive documentation and implementation guidance for integrating Amplitude's analytics capabilities into framework-specific architectures, supporting both client-side and server-side analytics deployments across various rendering patterns including server-side rendering, static site generation, and single-page applications.
 
-The platform centers on a **project-centric architecture** where experiments and feature flags are organized within discrete projects, each maintaining independent permission structures and operational boundaries.
+## Product Relationships and Feature Architecture
 
-**Flag Management System** serves as the core control mechanism, with feature flags acting as the fundamental unit for controlling feature visibility and experimentation. Enterprise customers receive additional flag-level access restrictions for granular security control over sensitive features.
+The framework integrations operate as implementation bridges connecting Amplitude's core SDK ecosystem with popular development frameworks. The architecture centers on three primary SDK packages that can be deployed individually or in hybrid configurations:
 
-**Role-Based Access Control** implements a four-tier hierarchical permission system that governs user capabilities across the platform:
-- **Viewer**: Read-only access to flags and experiments
-- **Member**: Flag creation, editing, and deployment management
-- **Manager**: Member permissions plus user management and project configuration
-- **Admin**: Complete project control including deletion rights and advanced configurations
+**Core SDK Components:**
+- **@amplitude/unified**: Primary unified package providing single-interface access to both client and server-side analytics capabilities
+- **@amplitude/analytics-browser**: Specialized browser-side package optimized for frontend event tracking and user interactions
+- **@amplitude/analytics-node**: Server-side package designed for backend analytics implementation and server-rendered applications
 
-**API Integration Layer** provides programmatic access through the Management API, enabling automated workflows and CI/CD integrations while maintaining proper authentication and audit trails. The API can bypass standard UI permissions while respecting project-level security boundaries.
+**Integration Architecture:**
+The system supports sophisticated hybrid implementation patterns where client-side and server-side tracking coexist within the same application framework. These integrations leverage framework-specific features including routing systems, middleware integration, environment variable management, and component lifecycle management. The architecture accommodates multiple deployment patterns while maintaining consistent analytics functionality across different execution contexts.
 
-**Project Isolation Framework** ensures cross-project security through independent permission structures, preventing unauthorized access across project boundaries and supporting multi-team organizational structures.
+**Framework-Specific Implementations:**
+Each framework integration provides tailored implementation patterns that respect the framework's architectural conventions, including component boundaries, rendering lifecycles, and data flow patterns. The integrations handle framework-specific considerations such as hydration, routing transitions, and environment detection.
 
 ## Key Nomenclature and Definitions
 
-**Project-Level Permissions**: Access control system specific to individual Experiment projects, operating independently from Amplitude Analytics permissions and governing all user actions within project boundaries.
+**SDK Package Terminology:**
+- **Unified SDK**: Comprehensive package (@amplitude/unified) combining browser and server-side capabilities in a single interface
+- **Browser SDK**: Client-side focused package (@amplitude/analytics-browser) for frontend user interaction tracking
+- **Node SDK**: Server-side package (@amplitude/analytics-node) for backend analytics and server-rendered application support
 
-**Flag-Level Access Controls**: Enterprise-exclusive feature enabling restriction of specific flags to designated editors, providing granular security that overrides standard role permissions for sensitive feature releases.
+**Framework-Specific Concepts:**
+- **App Router**: Next.js 13+ routing system requiring specific client/server component implementation considerations and boundary management
+- **Pages Router**: Legacy Next.js routing system with distinct implementation patterns and lifecycle hooks
+- **Client-side Configuration**: Browser-based SDK initialization, event tracking setup, and user interaction handling
+- **Server-side Configuration**: Backend SDK configuration for server-rendered applications and API route analytics
 
-**Restricted Flags**: Enterprise-only feature flags with limited editor access, creating security exceptions to standard role-based permissions for high-sensitivity features.
+**Analytics Capabilities:**
+- **Autocapture**: Automated tracking system for user interactions including pageViews, elementInteractions, and navigation events
+- **Session Replay**: Comprehensive user session recording and playback functionality for behavioral analysis
+- **Visual Labeling**: Chrome Extension-based tool enabling visual event configuration without code modifications
+- **User Identification**: setUserId functionality for associating analytics events with specific user identities
+- **Session Management**: reset capabilities for managing user sessions across application states and authentication changes
 
-**Mutual Exclusion Groups**: Feature groupings that prevent conflicting experiments from running simultaneously, requiring specific permission levels for creation and management.
-
-**Management API Bypass**: Programmatic interface capability that circumvents UI-based permission restrictions while maintaining authentication requirements and project-level access validation.
-
-**Deployment Management**: Role-restricted capabilities for pushing flag changes to production environments, ensuring only authorized users can affect live systems.
-
-**Project API Key Management**: Permission-controlled access to project-specific authentication credentials, maintaining security isolation for programmatic interactions across different projects and teams.
+**Configuration Elements:**
+- **Environment Variables**: Framework-specific variable management systems (e.g., NEXT_PUBLIC_AMPLITUDE_API_KEY for client-side access)
+- **Middleware Integration**: Framework routing middleware for seamless analytics implementation across application routes
+- **Debug Configuration**: logLevel settings and debugging tools for development environment troubleshooting
+- **API Key Management**: Secure handling of Amplitude API keys across client and server environments
 
 ## Broader Product Ecosystem Integration
 
-Amplitude Experiment integrates within the Amplitude ecosystem while maintaining operational autonomy through several key integration points:
+The framework integrations function as a critical implementation layer within Amplitude's comprehensive analytics ecosystem, serving as the primary connection point between modern web development workflows and Amplitude's core analytics infrastructure. The integrations facilitate seamless data flow between multiple ecosystem components:
 
-**Amplitude Analytics Separation**: Independent permission systems allow organizations to implement different access patterns between experimentation and analytics teams, supporting specialized workflow requirements without permission conflicts.
+**Development Environment Integration:**
+The integrations provide native support for modern web frameworks and their architectural patterns, including TypeScript and JavaScript development environments, client-server hybrid application architectures, and sophisticated browser compatibility handling with environment detection capabilities.
 
-**Organization-Wide Inheritance**: Project permissions inherit baseline settings from organization-level configurations, providing consistent default access while enabling project-specific customization for unique security requirements.
+**Analytics Platform Connection:**
+The framework integrations connect directly to Amplitude's core analytics platform for event ingestion and behavioral analysis, Session Replay infrastructure for comprehensive user behavior recording, Visual Labeling tools that enable non-technical team members to configure events, and robust user identification and session management systems.
 
-**Enterprise Security Framework**: Advanced customers access enhanced security features including flag-level restrictions, detailed audit capabilities, and sophisticated access controls that integrate with broader enterprise security policies.
+**Technical Implementation Support:**
+The integrations provide specialized handling for complex framework rendering patterns, including server-side rendering considerations with proper hydration support, browser environment detection (handling scenarios where `window` is undefined), and framework-specific routing implementations that ensure analytics continuity across navigation events. This comprehensive support ensures reliable analytics functionality across different execution contexts within modern web applications while maintaining compatibility with various deployment patterns, development workflows, and production environments.
 
-**Cross-Project Security Isolation**: Independent permission structures ensure that user access in one project cannot compromise security in another project within the same organization.
-
-## Technical Implementation and API Access
-
-The platform enforces access controls across multiple operational dimensions through both UI and programmatic interfaces. The **Management API** provides comprehensive programmatic access that respects permission boundaries while enabling automation capabilities for CI/CD pipelines, automated deployment tools, and custom development workflows.
-
-API endpoints facilitate integration with external systems while maintaining security boundaries through project-level authentication and comprehensive audit logging for compliance and security monitoring requirements. The system supports automated workflows through API access that bypasses UI restrictions while maintaining proper authentication and project-level access validation.
+**API Integration Points:**
+The framework integrations expose standard Amplitude SDK methods including `track()` for custom event tracking, `setUserId()` for user identification, `reset()` for session management, and configuration methods for SDK initialization, all adapted to work seamlessly within framework-specific component lifecycles and rendering patterns.
