@@ -1,0 +1,59 @@
+## Amplitude Framework Integrations
+
+Amplitude Framework Integrations is a specialized documentation collection that provides comprehensive SDK integration guidance for modern web development frameworks. The product enables developers to seamlessly implement Amplitude's analytics and user behavior tracking capabilities within framework-specific architectures, supporting both client-side and server-side analytics implementations.
+
+## Product Relationships and Feature Architecture
+
+The framework integrations function as implementation bridges between Amplitude's core SDK ecosystem and popular development frameworks. The architecture supports three primary SDK packages that can be deployed individually or in hybrid configurations:
+
+**Core SDK Components:**
+- **@amplitude/unified**: Primary unified package providing single-interface access to both client and server-side analytics
+- **@amplitude/analytics-browser**: Specialized browser-side package for frontend event tracking
+- **@amplitude/analytics-node**: Server-side package for backend analytics implementation
+
+**Integration Patterns:**
+The system supports hybrid implementation architectures where client-side and server-side tracking coexist within the same application, leveraging framework-specific features including routing systems, middleware integration, and environment variable management. The integrations accommodate various deployment patterns including server-side rendering, static site generation, and single-page application architectures.
+
+## Key Nomenclature and Definitions
+
+**SDK Package Terminology:**
+- **Unified SDK**: Comprehensive package (@amplitude/unified) combining browser and server-side capabilities
+- **Browser SDK**: Client-side focused package (@amplitude/analytics-browser) for frontend tracking
+- **Node SDK**: Server-side package (@amplitude/analytics-node) for backend analytics
+
+**Framework-Specific Concepts:**
+- **App Router**: Next.js 13+ routing system requiring specific client/server component implementation considerations
+- **Pages Router**: Legacy Next.js routing system with distinct implementation patterns
+- **Client-side Configuration**: Browser-based SDK initialization and event tracking setup
+- **Server-side Configuration**: Backend SDK configuration for server-rendered applications
+
+**Analytics Features:**
+- **Autocapture**: Automated tracking of user interactions including pageViews and elementInteractions
+- **Session Replay**: User session recording and playback functionality
+- **Visual Labeling**: Chrome Extension-based tool for visual event configuration
+- **User Identification**: setUserId functionality for associating events with specific users
+- **Session Management**: reset capabilities for managing user sessions across application states
+
+**Configuration Elements:**
+- **Environment Variables**: Framework-specific variable management (e.g., NEXT_PUBLIC_AMPLITUDE_API_KEY)
+- **Middleware Integration**: Framework routing middleware for analytics implementation
+- **Debug Configuration**: logLevel settings for development and troubleshooting environments
+
+## Broader Product Ecosystem Integration
+
+The framework integrations serve as a critical implementation layer within Amplitude's comprehensive analytics ecosystem, connecting modern web development workflows with Amplitude's core analytics infrastructure. The integrations bridge multiple ecosystem components:
+
+**Development Environment Integration:**
+- Modern web frameworks and their architectural patterns
+- TypeScript and JavaScript development environments
+- Client-server hybrid application architectures
+- Browser compatibility handling and environment detection
+
+**Analytics Platform Connection:**
+- Core Amplitude analytics platform for event ingestion and behavioral analysis
+- Session Replay infrastructure for comprehensive user behavior recording
+- Visual Labeling tools enabling non-technical event configuration
+- User identification and session management systems
+
+**Technical Implementation Support:**
+The integrations provide specific handling for framework rendering patterns, including server-side rendering considerations, browser environment detection (window undefined checks), and framework-specific routing implementations. This ensures reliable analytics functionality across different execution contexts within modern web applications while maintaining compatibility with various deployment and development patterns.
