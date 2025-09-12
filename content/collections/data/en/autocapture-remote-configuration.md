@@ -30,6 +30,8 @@ With remote configuration you can:
 3. For Element Interactions, you can specify the following additional aspects:
    * **CSS Selector Allowlist**: CSS selectors that specify which elements on the page should always be tracked.
    * **Action Click Allowlist**: Additional CSS selectors that must be tracked when clicked.
-   * **Page URL Allowlist**: Defines one or more URLs or URL patterns on which Amplitude tracks element click and change events.
+   * **Page URL Allowlist**: Defines one or more URLs or URL patterns on which Amplitude tracks element click and change events. 
+   * **Page URL Exclude list**: Defines one or more URLs or URL patterns from Amplitude tracking any element clicks or change events. **Note**: Using RegEx or glob patters requires your SDK version to be 2.23.7 or higher.
+   * **Text Masking RegEx Patterns**: Defines the RegEx patterns that will be masked for event properties in Autocapture. **Note:** Using this masking feature requires your SDK version to be 2.23.7 or higher. 
    * **Data Attribute Prefix**: Lets the Amplitude capture data attributes as an event property. 
 4. Click **Save Changes**.
