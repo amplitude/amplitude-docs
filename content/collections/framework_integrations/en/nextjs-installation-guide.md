@@ -69,7 +69,7 @@ pnpm add @amplitude/analytics-browser
 
 Follow the instructions in this section to configure Amplitude on the client.
 
-### Amplitude Initialization
+### Amplitude initialization
 
 Create an Amplitude module to initialize the SDK on the client side.
 
