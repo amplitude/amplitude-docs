@@ -59,7 +59,7 @@ Some additional things to know about your labeled events:
 
 ## Privacy and security
 
-For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions may vary. There's no one-size-fits-all solution that works in every situation.
+For many organizations, data privacy, security, and personally identifying information (PII) are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions may vary. There's no one-size-fits-all solution that works in every situation.
 
 Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
 
@@ -70,7 +70,7 @@ You control what information you collect with Autocapture and send to the Amplit
 Autocapture's default settings for capturing clicks and changes on page elements ("Element Clicked" and "Element Changed" events) also include the following privacy and security considerations:
 * For sensitive elements such as end user text inputs, selects, text area elements, and any HTML elements with `contenteditable=”true”` as an attribute. The SDK only collects class names and the type attribute. Any end user-inputted text is excluded.
 * Autocapture’s default settings further restrict your collection of sensitive input fields, like passwords or form fields with the hidden attribute, and only captures class and type attribute values. Autocapture doesn't capture other details about these elements, including any of the content of the input fields an end user may populate.
-* Autocapture captures the text your website or app displays. For example, the content (`textContent`) of the element clicked and its children. It's not recommended that you use Autocapture's element interaction tracking on pages that may contain sensitive information. Amplitude uses pattern matching to automatically exclude from your collection any text content that looks like a credit card number, social security number, or email address.
+* Autocapture captures the text your website or app displays. For example, the content (`textContent`) of the element clicked and its children. It's not recommended that you use Autocapture's element interaction tracking on pages that may contain sensitive information. Amplitude uses pattern matching to automatically mask any text content that looks like a credit card number, social security number, or email address.
 * The exception to these attribute collection rules is when an element has an explicit attribute added with the prefix *data-amp-track-*. This allows data in these attributes to be intentionally passed back to Amplitude.
 * Autocapture automatically removes value, event handlers, style, and react attributes.
 
@@ -78,14 +78,14 @@ Additional autocapture protections include:
 
 #### Precise text masking
 
-Precise text masking excludes text capture from specific elements on the page, including the page title. This lets you use Autocapture on the page without capturing the text displayed in specific elements.
+Precise text masking redacts text capture from specific elements on the page. Adding this attribute lets you track clicks with Autocapture while redacting text displayed in particular elements. 
 
 To prevent capturing an element's text, add the attribute `data-amp-mask` to the it. If, for example you have the following on a button: 
 
 ```html
 <div data-amp-mask>John Doe</div>
 ```
-The above example still tracks the click on the div. However, the text content "John Doe" doesn't appear in the Autocapture data. This exclusion works on the SDK level. 
+The above example still tracks the click on the div. However, the text content "John Doe" is replaced with `*****` in the Autocapture data. This exclusion works on the SDK level. 
 
 Precise text works recursively so that any text contained in an element is masked. For example: 
 
@@ -96,26 +96,6 @@ Precise text works recursively so that any text contained in an element is maske
 </div>
 ```
 In the above example, both names are masked with `*****`.
-
-#### Email address masking
-
-Email address masking automatically hides or otherwise obscures email addresses. Amplitude uses pattern matching to automatically exclude content that looks like an email address. Email address masking is recursive. Any email addresses captured within an element is masked such as `*****`.
-
-#### Pattern (Regex) masking
-
-You can mask information based on patterns that you specify (regular expressions or Regex). If you aren't familiar with Regex, review this page on [regular expressions](https://www.regular-expressions.info/quickstart.html).
-
-Specify a pattern of information that you want Amplitude to mask. This configuration occurs in the [SDK](/docs/sdks) and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
-
-For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
-
-#### Page URL allow list and exclude list
-
-Page URL exclude- and allow- lists let you specify unique URL page patterns to either be excluded or included from Amplitude. 
-
-For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data. 
-
-Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to collect data from the .co.uk domain. In this scenario, you'd add the https://example.co.uk/* as a glob pattern to the allow list.
 
 #### Precise attribute masking
 
@@ -130,15 +110,44 @@ For example, if you include the following attribute:
 ```
 on a button or link, the name "John D" is masked with `*****`. 
 
-You can also use a list to specify more than one attribute to be masked. When using a list, format the masking attributes as `data-amp-mask-attributes="name,ssn'`.
+You can also use a list to specify more than one attribute to be masked. When using a list, format the masking attributes as `data-amp-mask-attributes="name,ssn"`.
 
 {{partial:admonition type="note" heading=""}}
 You can't mask information from ID and Class attributes. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
 {{/partial:admonition}}
 
-### Autocapture security options
+#### Email address masking
 
-Amplitude also provides flexibility to refine the pages for which you configure Autocapture. Use these capabilities when setting up Autocapture, especially if your organization requires stronger restrictions or safeguards, or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
+Email address masking automatically hides or otherwise obscures email addresses. Amplitude uses pattern matching to automatically exclude content that looks like an email address. Email address masking is recursive. Any email addresses captured within an element is masked such as `*****`.
+
+#### Pattern (Regex) masking
+
+You can mask information based on patterns that you specify (regular expressions or Regex). If you aren't familiar with Regex, review this page on [regular expressions](https://www.regular-expressions.info/quickstart.html).
+
+Specify a pattern of information that you want Amplitude to mask. This configuration occurs in the [SDK](/docs/sdks) and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
+
+For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
+
+#### Page URL exclude and allows lists
+
+Page URL exclude- and allow- lists let you specify unique URL page patterns to either be excluded or included from Amplitude. Use these capabilities if your organization requires stronger restrictions or safeguards, or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
+
+For example, you can exclude user activity from specific sub-domains on your URL such as from your user's account settings or URLs that only include testing data.
+
+Alternately, if you host your site in multiple domains such as .com and .co.uk, you could specify that you only want to include data from the .co.uk domain. 
+
+**Examples**
+Using the example of .com and .co.uk above, here are examples of the exclude and allow lists:
+
+**Exclude list** 
+* Add `https://example.co.uk/account/*` as a glob pattern to the exclude list and this pattern captures everything on the .co.uk domain except for the account section. 
+
+**Allow list**
+* Add `https://example.co.uk/*` as a glob pattern to the allow list and only data coming from the .co.uk domain is captured. Data coming from the .com domain isn't captured.
+
+{{partial:admonition type="note" heading=""}}
+Remember that the exclude list always takes priority over the allow list. This is to prevent you capturing data that you don't want. If you include the same pattern in both the exclude and allow lists, that pattern is excluded and won't be captured.
+{{/partial:admonition}}
 
 #### Limit click tracking
 
