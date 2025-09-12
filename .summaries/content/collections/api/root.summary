@@ -1,0 +1,71 @@
+Amplitude's Event Ingestion API is a comprehensive server-to-server data collection system designed for analytics and user behavior tracking across web and mobile applications. The platform provides two complementary ingestion endpoints optimized for different volume and latency requirements: the HTTP V2 API for real-time event streaming and the Batch Event Upload API for high-volume bulk data processing.
+
+## Product Relationships and Features
+
+The ingestion infrastructure operates through two primary API endpoints that share common schemas while serving distinct use cases:
+
+**HTTP V2 API** (`api2.amplitude.com/2/httpapi`) functions as the standard real-time ingestion pipeline with moderate throughput limits (1MB payloads, 2000 events per request). This endpoint is optimized for application servers requiring immediate event processing and real-time analytics feedback.
+
+**Batch Event Upload API** (`/batch` endpoint) handles enterprise-scale data ingestion with significantly higher capacity limits (20MB payloads) and throughput optimization. This endpoint serves data migration scenarios, ETL processes, and bulk historical data imports where latency is less critical than volume processing capability.
+
+Both endpoints implement shared authentication mechanisms, event schema validation, and deduplication logic while maintaining independent rate limiting strategies tailored to their respective performance profiles.
+
+## Key Nomenclature and Definitions
+
+**Event Schema Components:**
+- `event_type`: Required classification identifier for tracked user actions
+- `user_id`: Persistent identifier for authenticated user accounts
+- `device_id`: Anonymous device identifier for cross-session tracking
+- `insert_id`: Deduplication key preventing duplicate event processing
+- `event_id`: Unique identifier for individual event instances
+- `session_id`: Logical grouping mechanism for related user activities
+
+**Data Attribution Models:**
+- `user_properties`: Persistent user-level attributes that maintain state across sessions
+- `event_properties`: Contextual metadata specific to individual event occurrences
+- `group_properties`: Organizational or account-level attributes (requires accounts addon)
+- `groups`: Association mechanism linking users to organizational entities
+
+**Special Operation Types:**
+- `$identify`: Dedicated operation for user property updates and profile management
+- `$groupidentify`: Group-level property update operations for organizational data
+- Revenue tracking fields supporting e-commerce and monetization analytics
+
+## Product Ecosystem Integration
+
+The Event Ingestion APIs serve as the foundational data collection layer within Amplitude's broader analytics ecosystem, providing integration points for:
+
+**Third-Party Data Sources:** The `partner_id` parameter enables integration platforms, CDPs, and data warehouses to proxy event data while maintaining attribution and data lineage.
+
+**Device and Data Quality Management:** Integration with device silencing capabilities supports GDPR compliance, data quality control, and user privacy management workflows.
+
+**Analytics Pipeline:** Events flow from ingestion APIs through Amplitude's real-time processing infrastructure to power dashboards, cohort analysis, and behavioral analytics features.
+
+## API Endpoints and Technical Specifications
+
+**HTTP V2 API Implementation:**
+- Endpoint: `POST api2.amplitude.com/2/httpapi`
+- Payload constraints: 1MB maximum, 2000 events per request
+- Rate limiting: 1800 user property updates per hour per project
+- Authentication: `api_key` parameter in request body
+- Response handling: Synchronous with immediate validation feedback
+
+**Batch Event Upload API Implementation:**
+- Endpoint: `POST /batch`
+- Content-Type: `application/json`
+- Payload constraints: 20MB maximum payload size
+- Rate limiting: 1000 events per second per device/user ID, 500,000 events per day
+- Throttling responses: HTTP 429 with retry-after headers
+- Authentication: `api_key` parameter in request body
+
+**Shared Configuration Parameters:**
+- `min_id_length`: Configurable validation for identifier length requirements
+- Language field mapping supporting internationalization workflows
+- Comprehensive error handling with specific HTTP status codes (400 for validation errors, 413 for payload size limits, 429 for rate limiting, 503 for service unavailability)
+
+**Rate Limiting Infrastructure:**
+- EPDS (Events Per Device per Second) and EPUS (Events Per User per Second) throttling for batch API
+- Hourly quotas for user property updates on HTTP V2 API
+- Dynamic throttling based on payload size and event complexity
+
+The dual-API architecture enables flexible implementation strategies ranging from lightweight real-time tracking in mobile applications to enterprise data warehouse synchronization, supporting both streaming and batch data collection patterns within a unified analytics platform.

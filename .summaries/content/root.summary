@@ -1,74 +1,84 @@
-Amplitude Collections is a comprehensive data integration platform that serves as the central nervous system for connecting Amplitude's behavioral analytics ecosystem with external data sources and destinations. The platform enables bidirectional data flow through two primary components: the Source Catalog for data ingestion and the Destination Catalog for data export, creating a complete data pipeline solution for enterprise analytics workflows.
+# Amplitude Analytics Platform
 
-## Product Architecture and Feature Relationships
+Amplitude is a comprehensive product analytics platform that provides businesses with advanced user behavior tracking, revenue analytics, and data-driven insights across web and mobile applications. The platform combines robust data ingestion capabilities with specialized monetization tracking to deliver end-to-end analytics solutions for understanding customer journeys, optimizing product experiences, and maximizing revenue performance.
 
-The Collections platform operates through two complementary integration layers that work in tandem to create comprehensive data workflows:
+## Product Architecture and Feature Integration
 
-**Source Catalog** functions as the data ingestion hub, importing customer data from external systems into Amplitude's analytics engine. Current integrations include HubSpot for CRM and marketing automation data, and Snowflake for enterprise data warehouse connectivity. The Source Catalog transforms external data into Amplitude's event processing pipeline, where it integrates with core analytics features including Session Replay, Autocapture, behavioral cohort analysis, and user journey tracking.
+The Amplitude platform operates through two interconnected core systems that work together to provide comprehensive analytics capabilities:
 
-**Destination Catalog** serves as the data export orchestration system, transforming Amplitude's behavioral analytics data into warehouse-optimized formats for external analysis. The platform exports data through two primary pipelines: Raw Events Export for complete behavioral event streams and Merged User Identity Export for unified cross-device user profiles.
+**Data Ingestion Infrastructure** serves as the foundational layer, capturing all user interactions, behavioral events, and contextual data through dual API endpoints optimized for different operational requirements. The HTTP V2 API handles real-time event streaming for immediate analytics feedback, while the Batch Event Upload API processes high-volume bulk data for enterprise-scale operations.
 
-Both catalogs leverage Amplitude's core identity resolution and event processing capabilities, creating a unified data ecosystem that supports advanced analytics workflows, customer data platform construction, and machine learning initiatives.
+**Revenue Tracking System** functions as a specialized overlay that captures, verifies, and analyzes monetization events with built-in fraud prevention and platform-specific validation. This system integrates directly with the core ingestion infrastructure while adding sophisticated verification mechanisms for mobile app purchases and comprehensive revenue attribution modeling.
 
-## Key Nomenclature and Technical Definitions
+The relationship between these systems creates a unified analytics ecosystem where behavioral data and revenue events flow through shared processing pipelines, enabling businesses to correlate user engagement patterns with purchasing behavior and lifetime value calculations. Revenue events utilize the same foundational event schema as behavioral tracking while extending it with specialized monetization properties and verification workflows.
 
-**Import Strategies** define four synchronization methodologies for data warehouse integration:
-- **Full Sync**: Complete dataset refresh during each import cycle
-- **Timestamp Sync**: Incremental imports based on timestamp field comparisons  
-- **Append Only Sync**: Continuous addition of new records without modification
-- **Mirror Sync**: Real-time synchronization using Change Data Capture (CDC) technology
+## Core Nomenclature and Definitions
 
-**Destination Connector**: Integration module handling data export, transformation, and delivery to specific warehouse platforms
+**Event Architecture:**
+- `event_type`: Classification system for all tracked user actions and revenue transactions
+- `user_id`: Persistent authenticated user identifier linking behavioral and revenue data
+- `device_id`: Anonymous device tracking enabling cross-session analysis
+- `insert_id`: Deduplication mechanism preventing duplicate event processing across both behavioral and revenue tracking
+- `session_id`: Logical grouping for related activities within user sessions
 
-**Micro-batch Processing**: Data delivery methodology balancing real-time availability with warehouse performance through small, frequent event batches
+**Revenue-Specific Properties:**
+- `$revenue`: Total transaction amount for monetization tracking
+- `$price`: Unit cost for individual items in revenue calculations
+- `$quantity`: Purchase volume for transaction analysis
+- `$productId`: Product catalog identifier for revenue attribution
+- `$revenueType`: Revenue categorization (subscription, one-time purchase, etc.)
+- `$currency`: ISO 4217 currency standardization for global operations
 
-**Product-Qualified Lead (PQL)**: Lead scoring methodology leveraging behavioral data to identify prospects based on actual product usage patterns
+**Data Attribution Models:**
+- `user_properties`: Persistent attributes maintained across sessions for both behavioral and revenue analysis
+- `event_properties`: Contextual metadata for individual events and transactions
+- `group_properties`: Organizational-level attributes supporting B2B analytics
+- `groups`: Entity association mechanism linking users to accounts or organizations
 
-**Cohort Sync**: Process of exporting user segments from Amplitude to external platforms for targeted marketing campaigns
+**Revenue Event Classification:**
+- **Revenue**: Standard unverified purchase events
+- **Revenue (Verified)**: Platform-authenticated transactions with validation
+- **Revenue (Unverified)**: Failed or suspicious transactions flagged by verification systems
 
-**Merged User IDs**: Identity resolution process consolidating multiple user identifiers across devices and sessions into unified profiles
+## Ecosystem Positioning and Integration
 
-**Amplitude ID**: Unique identifier assigned to user sessions and devices within Amplitude's tracking system
+Amplitude positions itself as a central analytics hub that unifies user behavior analysis with revenue intelligence, creating a comprehensive view of customer value and product performance. The platform's dual-API architecture supports diverse implementation patterns, from lightweight mobile app tracking to enterprise data warehouse synchronization.
 
-**VARIANT Data Types**: Snowflake-specific JSON-like data structure for storing flexible, semi-structured event properties
+**Third-Party Integration Layer:** The `partner_id` parameter enables CDPs, marketing platforms, and data warehouses to proxy events while maintaining data lineage and attribution accuracy.
 
-## Ecosystem Integration and Data Flow
+**Platform Verification Integration:** Automated connections to iOS App Store and Google Play Store validation services ensure revenue data integrity through platform-native verification mechanisms.
 
-Collections operates as the foundational data integration layer within Amplitude's broader product ecosystem, serving as both the primary data ingestion point and export orchestration system. The platform creates a comprehensive data pipeline that connects:
+**Privacy and Compliance Framework:** Built-in opt-out mechanisms (`setOptOut`) and device silencing capabilities support GDPR compliance and user privacy management across both behavioral and revenue tracking.
 
-- **Upstream Systems**: CRM platforms (HubSpot), data warehouses (Snowflake), and marketing automation tools feed data into Amplitude's event processing pipeline
-- **Core Analytics Engine**: Imported data flows through Amplitude's behavioral analytics capabilities, user segmentation engine, and visualization layer
-- **Downstream Systems**: Processed insights and raw behavioral data export to business intelligence tools, machine learning platforms, and customer data platforms
+**Analytics Pipeline Integration:** All collected data flows through Amplitude's real-time processing infrastructure to power dashboards, cohort analysis, Revenue LTV charts, and predictive analytics features, creating actionable insights from the combined behavioral and monetization datasets.
 
-The bidirectional nature enables product-led growth strategies by combining traditional CRM data with behavioral insights, supporting advanced lead scoring, marketing automation workflows, and comprehensive user journey analysis across the entire customer lifecycle.
+## API Endpoints and Technical Implementation
 
-## Technical Implementation and API Details
+**HTTP V2 API (Real-time Ingestion):**
+- Endpoint: `POST api2.amplitude.com/2/httpapi`
+- Constraints: 1MB payloads, 2000 events per request
+- Rate limiting: 1800 user property updates per hour per project
+- Use case: Real-time behavioral tracking and immediate revenue event processing
 
-**HubSpot Integration**:
-- Installation via HubSpot App Marketplace
-- JavaScript tracking code implementation for CMS integration
-- Workflow enrollment triggers based on Amplitude cohort membership
-- Dashboard embedding utilizing Amplitude's chart visualization API
-- Bidirectional synchronization for contacts, companies, and engagement metrics
+**Batch Event Upload API (High-volume Processing):**
+- Endpoint: `POST /batch`
+- Constraints: 20MB maximum payload size
+- Rate limiting: 1000 events per second per device/user, 500,000 events per day
+- Use case: Bulk data migration, ETL processes, historical revenue data imports
 
-**Snowflake Integration (Source)**:
-- Regional IP allowlist configuration for secure connectivity
-- S3 storage integration with Snowflake stages for optimized data transfer
-- VARIANT JSON object mapping for flexible schema handling
-- OBJECT_CONSTRUCT SQL function implementation for data transformation
-- EPOCH_MILLISECOND timestamp conversion for temporal alignment
-- Event deduplication using insert_id field validation
-- 12-hour query timeout limits with 1B events batch size constraints
-- ABORT_DETACHED_QUERY and DATA_RETENTION_TIME_IN_DAYS configuration parameters
+**Revenue Tracking Methods:**
+- `logRevenueV2`: Primary programmatic interface for revenue event submission with full property support
+- Platform verification APIs: Automated iOS iTunes Connect and Google Play validation integration
+- Server-side HTTP API: Revenue event submission supporting complete monetization schema
 
-**Snowflake Integration (Destination)**:
-- Key Pair Authentication using JWT tokens with public/private key pairs (recommended over password authentication, deprecated November 2025)
-- ORGNAME-ACCOUNTNAME account format specification for proper target identification
-- Auto-suspend configurations for computational cost optimization
-- Historical data backfill capabilities with incremental synchronization scheduling
+**Authentication and Security:**
+- `api_key` parameter authentication for all endpoints
+- iTunes Connect Shared Secret for iOS purchase verification
+- Google Play License Public Key for Android purchase validation
 
-**Data Schema Architecture**:
-- Raw events export with standardized table schemas including identity fields (amplitude_id, uuid), temporal fields (client_event_time, server_received_time), and flexible VARIANT data types for event properties
-- Merged user tables creating cross-device mapping structures for comprehensive user journey reconstruction
+**Rate Limiting and Throttling:**
+- EPDS/EPUS (Events Per Device/User per Second) controls for batch processing
+- HTTP 429 responses with retry-after headers for capacity management
+- Dynamic throttling based on payload complexity and verification requirements
 
-The platform includes enterprise-grade error handling, monitoring capabilities, comprehensive data validation, and security through IP allowlisting and multiple authentication mechanisms to ensure reliable data integration at scale.
+The platform's architecture enables flexible deployment strategies ranging from simple mobile app analytics to complex enterprise revenue intelligence systems, supporting both streaming and batch data collection patterns within a unified analytics ecosystem that correlates user behavior with business outcomes.

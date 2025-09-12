@@ -1,0 +1,53 @@
+## Amplitude Revenue Tracking
+
+Amplitude provides comprehensive revenue tracking capabilities that enable businesses to monitor and analyze their monetization performance across different platforms and purchase types. The revenue tracking system is designed to capture, verify, and categorize revenue events to provide accurate insights into customer lifetime value and purchasing behavior.
+
+## Core Revenue Properties and Data Model
+
+The revenue tracking system is built around six fundamental revenue properties that capture essential transaction data:
+
+- **$revenue**: The total revenue amount for the transaction
+- **$price**: The unit price of individual items
+- **$quantity**: The number of items purchased
+- **$productId**: Unique identifier for the purchased product
+- **$revenueType**: Categorization of the revenue type (e.g., subscription, one-time purchase)
+- **$currency**: Currency code following ISO 4217 standards
+
+These properties work together to provide a complete picture of each revenue transaction, enabling detailed analysis of product performance, pricing effectiveness, and customer purchasing patterns.
+
+## Revenue Event Classification System
+
+Amplitude categorizes revenue events into three distinct types based on verification status:
+
+1. **Revenue**: Standard revenue events for general purchase tracking
+2. **Revenue (Verified)**: Events that have passed platform-specific verification processes
+3. **Revenue (Unverified)**: Events that failed verification or couldn't be verified
+
+This classification system ensures data integrity while maintaining visibility into all revenue events, allowing businesses to identify potential issues with payment processing or fraudulent transactions.
+
+## Platform-Specific Revenue Verification
+
+The system supports automated revenue verification for mobile app purchases through platform-specific validation mechanisms:
+
+- **iOS Integration**: Uses iTunes Connect Shared Secret for App Store purchase verification
+- **Android Integration**: Leverages Google Play License Public Key for Google Play purchase validation
+
+This verification process helps ensure the authenticity of in-app purchases (IAPs) and provides confidence in revenue data accuracy.
+
+## Revenue Configuration and Implementation
+
+Revenue tracking supports both in-app purchases and non-in-app purchases, with specific configuration options for each type. The system provides the `logRevenueV2` function for programmatic revenue event logging, offering developers flexibility in how they implement revenue tracking within their applications.
+
+For privacy compliance, the system includes an `setOptOut` method that allows users to opt out of revenue tracking while maintaining compliance with data protection regulations.
+
+## Integration with Revenue Analytics
+
+All revenue events feed into Amplitude's Revenue LTV (Lifetime Value) charts, providing businesses with comprehensive views of customer value over time. This integration enables analysis of customer segments, product performance, and revenue trends across different time periods and user cohorts.
+
+The revenue tracking system also supports HTTP API integration, allowing server-side revenue event submission with the same comprehensive field support as client-side implementations.
+
+## Ecosystem Integration
+
+Revenue tracking integrates seamlessly with Amplitude's broader analytics platform, connecting purchase behavior with user engagement patterns, feature usage, and customer journey analysis. This holistic approach enables businesses to understand not just what customers purchase, but how their overall product experience influences purchasing decisions and long-term value.
+
+The system's support for multiple currencies and international standards makes it suitable for global businesses operating across different markets and payment systems.
