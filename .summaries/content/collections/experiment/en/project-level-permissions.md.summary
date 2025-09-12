@@ -1,0 +1,14 @@
+**Summary:** This documentation covers Amplitude Experiment's project-level user permissions system that operates independently from Analytics permissions, including role-based access controls (Viewer, Member, Manager, Admin), flag-level access restrictions for Enterprise customers, and the Management API bypass capabilities.
+
+**Keywords:**
+- Amplitude Experiment project-level permissions
+- flag-level access controls
+- Enterprise role-based permissions
+- Experiment Management API bypass
+- project permissions matrix
+- Analytics permissions separation
+- restricted flags editors
+- organization-wide flag defaults
+- mutual exclusion groups permissions
+- deployment permissions
+- project API key access

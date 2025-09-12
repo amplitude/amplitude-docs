@@ -45,7 +45,7 @@ When flag-level access controls are enabled, users in your organization can't sa
 
 You can set the default access for new flags and experiments to a restricted list of editors, or all users in your organization.
 
-This is controlled by a organization-wide setting in *Experiment > Permissions > Organization Settings*. Only users with the admin role can modify this setting.
+This is controlled by a organization-wide setting in *Organization Settings > Experiment > Defaults*. Only users with the manager or admin role can modify this setting.
 
 The default sets new flags and experiments as editable by all users in your organization. If you create a new flag or experiment, you can manually restrict access to that item after you create it.
 

@@ -1,84 +1,51 @@
-# Amplitude Analytics Platform
+Amplitude Experiment is a feature flagging and experimentation platform that enables controlled feature rollouts and A/B testing through sophisticated access controls and project-based organization. The platform operates independently from other Amplitude products while integrating strategically within the broader ecosystem.
 
-Amplitude is a comprehensive product analytics platform that provides businesses with advanced user behavior tracking, revenue analytics, and data-driven insights across web and mobile applications. The platform combines robust data ingestion capabilities with specialized monetization tracking to deliver end-to-end analytics solutions for understanding customer journeys, optimizing product experiences, and maximizing revenue performance.
+## Product Architecture and Feature Relationships
 
-## Product Architecture and Feature Integration
+The platform centers on a **project-centric architecture** where experiments and feature flags are organized within discrete projects, each maintaining independent permission structures and operational boundaries.
 
-The Amplitude platform operates through two interconnected core systems that work together to provide comprehensive analytics capabilities:
+**Flag Management System** serves as the core control mechanism, with feature flags acting as the fundamental unit for controlling feature visibility and experimentation. Enterprise customers receive additional flag-level access restrictions for granular security control over sensitive features.
 
-**Data Ingestion Infrastructure** serves as the foundational layer, capturing all user interactions, behavioral events, and contextual data through dual API endpoints optimized for different operational requirements. The HTTP V2 API handles real-time event streaming for immediate analytics feedback, while the Batch Event Upload API processes high-volume bulk data for enterprise-scale operations.
+**Role-Based Access Control** implements a four-tier hierarchical permission system that governs user capabilities across the platform:
+- **Viewer**: Read-only access to flags and experiments
+- **Member**: Flag creation, editing, and deployment management
+- **Manager**: Member permissions plus user management and project configuration
+- **Admin**: Complete project control including deletion rights and advanced configurations
 
-**Revenue Tracking System** functions as a specialized overlay that captures, verifies, and analyzes monetization events with built-in fraud prevention and platform-specific validation. This system integrates directly with the core ingestion infrastructure while adding sophisticated verification mechanisms for mobile app purchases and comprehensive revenue attribution modeling.
+**API Integration Layer** provides programmatic access through the Management API, enabling automated workflows and CI/CD integrations while maintaining proper authentication and audit trails. The API can bypass standard UI permissions while respecting project-level security boundaries.
 
-The relationship between these systems creates a unified analytics ecosystem where behavioral data and revenue events flow through shared processing pipelines, enabling businesses to correlate user engagement patterns with purchasing behavior and lifetime value calculations. Revenue events utilize the same foundational event schema as behavioral tracking while extending it with specialized monetization properties and verification workflows.
+**Project Isolation Framework** ensures cross-project security through independent permission structures, preventing unauthorized access across project boundaries and supporting multi-team organizational structures.
 
-## Core Nomenclature and Definitions
+## Key Nomenclature and Definitions
 
-**Event Architecture:**
-- `event_type`: Classification system for all tracked user actions and revenue transactions
-- `user_id`: Persistent authenticated user identifier linking behavioral and revenue data
-- `device_id`: Anonymous device tracking enabling cross-session analysis
-- `insert_id`: Deduplication mechanism preventing duplicate event processing across both behavioral and revenue tracking
-- `session_id`: Logical grouping for related activities within user sessions
+**Project-Level Permissions**: Access control system specific to individual Experiment projects, operating independently from Amplitude Analytics permissions and governing all user actions within project boundaries.
 
-**Revenue-Specific Properties:**
-- `$revenue`: Total transaction amount for monetization tracking
-- `$price`: Unit cost for individual items in revenue calculations
-- `$quantity`: Purchase volume for transaction analysis
-- `$productId`: Product catalog identifier for revenue attribution
-- `$revenueType`: Revenue categorization (subscription, one-time purchase, etc.)
-- `$currency`: ISO 4217 currency standardization for global operations
+**Flag-Level Access Controls**: Enterprise-exclusive feature enabling restriction of specific flags to designated editors, providing granular security that overrides standard role permissions for sensitive feature releases.
 
-**Data Attribution Models:**
-- `user_properties`: Persistent attributes maintained across sessions for both behavioral and revenue analysis
-- `event_properties`: Contextual metadata for individual events and transactions
-- `group_properties`: Organizational-level attributes supporting B2B analytics
-- `groups`: Entity association mechanism linking users to accounts or organizations
+**Restricted Flags**: Enterprise-only feature flags with limited editor access, creating security exceptions to standard role-based permissions for high-sensitivity features.
 
-**Revenue Event Classification:**
-- **Revenue**: Standard unverified purchase events
-- **Revenue (Verified)**: Platform-authenticated transactions with validation
-- **Revenue (Unverified)**: Failed or suspicious transactions flagged by verification systems
+**Mutual Exclusion Groups**: Feature groupings that prevent conflicting experiments from running simultaneously, requiring specific permission levels for creation and management.
 
-## Ecosystem Positioning and Integration
+**Management API Bypass**: Programmatic interface capability that circumvents UI-based permission restrictions while maintaining authentication requirements and project-level access validation.
 
-Amplitude positions itself as a central analytics hub that unifies user behavior analysis with revenue intelligence, creating a comprehensive view of customer value and product performance. The platform's dual-API architecture supports diverse implementation patterns, from lightweight mobile app tracking to enterprise data warehouse synchronization.
+**Deployment Management**: Role-restricted capabilities for pushing flag changes to production environments, ensuring only authorized users can affect live systems.
 
-**Third-Party Integration Layer:** The `partner_id` parameter enables CDPs, marketing platforms, and data warehouses to proxy events while maintaining data lineage and attribution accuracy.
+**Project API Key Management**: Permission-controlled access to project-specific authentication credentials, maintaining security isolation for programmatic interactions across different projects and teams.
 
-**Platform Verification Integration:** Automated connections to iOS App Store and Google Play Store validation services ensure revenue data integrity through platform-native verification mechanisms.
+## Broader Product Ecosystem Integration
 
-**Privacy and Compliance Framework:** Built-in opt-out mechanisms (`setOptOut`) and device silencing capabilities support GDPR compliance and user privacy management across both behavioral and revenue tracking.
+Amplitude Experiment integrates within the Amplitude ecosystem while maintaining operational autonomy through several key integration points:
 
-**Analytics Pipeline Integration:** All collected data flows through Amplitude's real-time processing infrastructure to power dashboards, cohort analysis, Revenue LTV charts, and predictive analytics features, creating actionable insights from the combined behavioral and monetization datasets.
+**Amplitude Analytics Separation**: Independent permission systems allow organizations to implement different access patterns between experimentation and analytics teams, supporting specialized workflow requirements without permission conflicts.
 
-## API Endpoints and Technical Implementation
+**Organization-Wide Inheritance**: Project permissions inherit baseline settings from organization-level configurations, providing consistent default access while enabling project-specific customization for unique security requirements.
 
-**HTTP V2 API (Real-time Ingestion):**
-- Endpoint: `POST api2.amplitude.com/2/httpapi`
-- Constraints: 1MB payloads, 2000 events per request
-- Rate limiting: 1800 user property updates per hour per project
-- Use case: Real-time behavioral tracking and immediate revenue event processing
+**Enterprise Security Framework**: Advanced customers access enhanced security features including flag-level restrictions, detailed audit capabilities, and sophisticated access controls that integrate with broader enterprise security policies.
 
-**Batch Event Upload API (High-volume Processing):**
-- Endpoint: `POST /batch`
-- Constraints: 20MB maximum payload size
-- Rate limiting: 1000 events per second per device/user, 500,000 events per day
-- Use case: Bulk data migration, ETL processes, historical revenue data imports
+**Cross-Project Security Isolation**: Independent permission structures ensure that user access in one project cannot compromise security in another project within the same organization.
 
-**Revenue Tracking Methods:**
-- `logRevenueV2`: Primary programmatic interface for revenue event submission with full property support
-- Platform verification APIs: Automated iOS iTunes Connect and Google Play validation integration
-- Server-side HTTP API: Revenue event submission supporting complete monetization schema
+## Technical Implementation and API Access
 
-**Authentication and Security:**
-- `api_key` parameter authentication for all endpoints
-- iTunes Connect Shared Secret for iOS purchase verification
-- Google Play License Public Key for Android purchase validation
+The platform enforces access controls across multiple operational dimensions through both UI and programmatic interfaces. The **Management API** provides comprehensive programmatic access that respects permission boundaries while enabling automation capabilities for CI/CD pipelines, automated deployment tools, and custom development workflows.
 
-**Rate Limiting and Throttling:**
-- EPDS/EPUS (Events Per Device/User per Second) controls for batch processing
-- HTTP 429 responses with retry-after headers for capacity management
-- Dynamic throttling based on payload complexity and verification requirements
-
-The platform's architecture enables flexible deployment strategies ranging from simple mobile app analytics to complex enterprise revenue intelligence systems, supporting both streaming and batch data collection patterns within a unified analytics ecosystem that correlates user behavior with business outcomes.
+API endpoints facilitate integration with external systems while maintaining security boundaries through project-level authentication and comprehensive audit logging for compliance and security monitoring requirements. The system supports automated workflows through API access that bypasses UI restrictions while maintaining proper authentication and project-level access validation.
