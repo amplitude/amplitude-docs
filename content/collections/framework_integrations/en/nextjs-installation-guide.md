@@ -154,9 +154,6 @@ export default function RootLayout({
 
 For the Pages Router, initialize Amplitude in `_app.tsx`.
 
-{{partial:tabs tabs="Unified SDK, Analytics SDK"}}
-{{partial:tab name="Unified SDK"}}
-
 ```typescript
 // pages/_app.tsx
 import '@/amplitude';
@@ -168,24 +165,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp;
 ```
-
-{{/partial:tab}}
-{{partial:tab name="Analytics SDK"}}
-
-```typescript
-// pages/_app.tsx
-import '@/amplitude';
-import type { AppProps } from 'next/app';
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
-
-export default MyApp;
-```
-
-{{/partial:tab}}
-{{/partial:tabs}}
 
 ### Using Amplitude in components
 
