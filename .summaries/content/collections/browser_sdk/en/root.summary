@@ -1,0 +1,66 @@
+## Amplitude Browser SDK 2
+
+Amplitude Browser SDK 2 is a comprehensive JavaScript/TypeScript analytics library designed to track user interactions and send event data to Amplitude's analytics platform via the HTTP V2 API. The SDK provides both manual event tracking capabilities and extensive autocapture functionality to automatically collect user behavior data without requiring explicit instrumentation.
+
+## Product Architecture and Features
+
+The Browser SDK 2 operates as a client-side analytics solution with multiple installation methods including script loader, npm, and yarn. The SDK is built around a plugin-based architecture that supports both enrichment plugins (for data transformation) and destination plugins (for data routing).
+
+### Core Tracking Capabilities
+
+The SDK provides comprehensive autocapture functionality across multiple interaction types:
+
+- **Marketing Attribution Tracking**: Automatically captures UTM parameters and click ID parameters for campaign attribution
+- **Page View Tracking**: Monitors navigation events and page transitions
+- **Session Management**: Handles session tracking with configurable parameters
+- **Form Interaction Tracking**: Captures form submissions and interactions
+- **File Download Tracking**: Monitors file download events
+- **Element Interaction Tracking**: Tracks clicks and interactions with page elements
+- **Frustration Interaction Tracking**: Detects user frustration signals including rage clicks and dead clicks
+- **Network Request Tracking**: Monitors XHR and Fetch API calls for performance analytics
+
+### User and Revenue Analytics
+
+The SDK supports sophisticated user analytics through:
+- **User Properties**: Managed via the Identify interface for user attribute tracking
+- **Group Properties**: Enables cohort and organizational analytics
+- **Revenue Tracking**: Dedicated interface for e-commerce and monetization tracking
+
+## Key Nomenclature and Definitions
+
+- **deviceId and userId**: Core user identification parameters with configurable validation via minIdLength
+- **flushQueueSize and flushIntervalMillis**: Configuration parameters controlling event batching and transmission frequency
+- **sendBeacon**: Transport method for reliable event delivery
+- **ampDeviceId and ampSessionId**: URL parameters used for cross-domain tracking continuity
+- **AMP cookie prefix**: Cookie naming convention for data persistence
+- **trackingOptions**: Configuration object for controlling data collection scope
+- **excludeReferrers**: Configuration for filtering referrer data
+- **fetchRemoteConfig**: Method for retrieving server-side configuration
+
+## Integration and Ecosystem Positioning
+
+The Browser SDK 2 integrates with Amplitude's broader analytics ecosystem through the HTTP V2 API, enabling seamless data flow to Amplitude's analytics platform. The SDK supports modern web development frameworks including:
+
+- **Angular**: Compatible with Zone.js for proper change detection
+- **Next.js**: Optimized integration for server-side rendered applications
+- **Visual Labeling**: Supports Amplitude's visual event labeling tools
+
+### Cross-Domain and Advanced Features
+
+The SDK provides enterprise-grade features including:
+- **Cross-Domain Tracking**: Maintains user identity across different domains using URL parameter passing
+- **Offline Mode**: Queues events when network connectivity is unavailable
+- **Content Security Policy (CSP)**: Configurable for secure deployment environments
+- **Cookie Management**: Flexible cookie handling with customizable prefixes and domains
+- **Remote Configuration**: Dynamic configuration updates via fetchRemoteConfig
+
+## API and Implementation
+
+The SDK exposes a comprehensive API surface including:
+- Event tracking methods for custom analytics
+- Configuration methods for autocapture features
+- Plugin registration for extensibility
+- User and group property management interfaces
+- Revenue tracking specialized methods
+
+The implementation supports both unified package installation (`@amplitude/unified`) and dedicated browser package (`@amplitude/analytics-browser`), providing flexibility for different deployment scenarios and bundle size optimization requirements.
