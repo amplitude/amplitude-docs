@@ -659,7 +659,12 @@ These two events capture properties that describe the corresponding element and 
 {{/partial:collapse}}
 
 ### Track frustration interactions
-You can enable frustration interaction tracking to capture rage clicks and dead clicks. A "rage click" is triggered when a user clicks the same element, within 50px, 4 times in under a second. A "dead click" is triggered when a user clicks an interactable element and no navigation change happens and the DOM doesn't change.
+
+Enable frustration interaction tracking to capture rage clicks and dead clicks. Amplitude defines "rage click" and 
+"dead click" events as:
+
+ * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
+ * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
 
 Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
 
