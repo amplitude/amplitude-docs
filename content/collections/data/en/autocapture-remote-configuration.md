@@ -21,7 +21,7 @@ With remote configuration you can:
 
 ##### To set up remote configuration for autocapture
 1. Go to *Data > Settings > Autocapture*. 
-2. Specify which elements you want to capture. By default, all elements are captured. You can select any of:
+2. Specify which elements you want to capture. By default, all elements are captured. You can capture or not capture any of the following elements:
    * **File downloads**: Track when a user clicks an anchor or `<a>` tag linked to a file. 
    * **Form Interactions**: Track a user's interaction with the form element.
    * **Sessions**: Track the period of time that a user has your website open. Amplitude tracks both Start Session and End Session events.
