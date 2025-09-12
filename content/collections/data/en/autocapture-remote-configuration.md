@@ -19,10 +19,6 @@ With remote configuration you can:
   * Configuring Autocapture events such as allowed elements or allowed pages and add sub-configurations.
   * Capturing additional properties such as page referrer or page URL across all events.
 
-## Setting up remote configuration
-
-Remote configuration 
-
 ##### To set up remote configuration for autocapture
 1. Go to *Data > Settings > Autocapture*. 
 2. Specify which elements you want to capture. By default, all elements are captured. You can select any of:
