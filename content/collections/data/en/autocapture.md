@@ -63,22 +63,25 @@ For many organizations, data privacy, security, and personally identifying infor
 
 Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
 
-### Autocapture protections
+### Default Autocapture protections
 
-You control what information you collect with Autocapture and send to the Amplitude platform. For information about how to update the events that Autocapture sends to Amplitude, go to [Browser SDK | Disable Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#disable-autocapture).
+You control what information you collect with Autocapture and send to the Amplitude platform. For information about how to update the events that Autocapture sends to Amplitude, go to [Browser SDK | Disable Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#disable-autocapture). 
 
-Autocapture's default settings for capturing clicks and changes on page elements ("Element Clicked" and "Element Changed" events) also include the following privacy and security considerations:
+The following list is Autocapture's default settings for capturing clicks and changes on page elements ("Element Clicked" and "Element Changed" events) also include the following privacy and security considerations. You don't need to do anything to turn these protections on. They're always active for you.
+
 * For sensitive elements such as end user text inputs, selects, text area elements, and any HTML elements with `contenteditable=”true”` as an attribute. The SDK only collects class names and the type attribute. Any end user-inputted text is excluded.
 * Autocapture’s default settings further restrict your collection of sensitive input fields, like passwords or form fields with the hidden attribute, and only captures class and type attribute values. Autocapture doesn't capture other details about these elements, including any of the content of the input fields an end user may populate.
 * Autocapture captures the text your website or app displays. For example, the content (`textContent`) of the element clicked and its children. It's not recommended that you use Autocapture's element interaction tracking on pages that may contain sensitive information. Amplitude uses pattern matching to automatically mask any text content that looks like a credit card number, social security number, or email address.
 * The exception to these attribute collection rules is when an element has an explicit attribute added with the prefix *data-amp-track-*. This allows data in these attributes to be intentionally passed back to Amplitude.
 * Autocapture automatically removes value, event handlers, style, and react attributes.
 
-Additional autocapture protections include: 
+### Additional Autocapture protections
+
+The following Autocapture protections are available if you choose to implement them. They're not turned on by default. You can enable all, or some, of the protections listed below. For some of these protections, you must add an attribute to an element. Some of these protections are enabled through the *Data Settings > Autocapture* page. The documentation for each protection indicates how to enable it.
 
 #### Precise text masking
 
-Precise text masking redacts text capture from specific elements on the page. Adding this attribute lets you track clicks with Autocapture while redacting text displayed in particular elements. 
+Precise text masking redacts text capture from specific elements on the page. Adding this attribute lets you track clicks while redacting text displayed in particular elements. 
 
 To prevent capturing an element's text, add the attribute `data-amp-mask` to the it. If, for example you have the following on a button: 
 
@@ -99,7 +102,7 @@ In the above example, both names are masked with `*****`.
 
 #### Precise attribute masking
 
-Precise attribute masking excludes specific elements from capture. This lets you use Autocapture on a page without capturing attributes in a specified element. Precise attribute masking is recursive and can mask elements at different levels.
+Precise attribute masking excludes specific attributes from capture. This lets you use Autocapture on a page without capturing attributes from within a specified element. Precise attribute masking is recursive and can mask elements at different levels.
 
 For example, if you include the following attribute:
 
@@ -116,17 +119,15 @@ You can also use a list to specify more than one attribute to be masked. When us
 You can't mask information from ID and Class attributes. This is because of their importance for [Visual Labeling](/docs/data/visual-labeling).
 {{/partial:admonition}}
 
-#### Email address masking
+#### Pattern (RegEx) masking
 
-Email address masking automatically hides or otherwise obscures email addresses. Amplitude uses pattern matching to automatically exclude content that looks like an email address. Email address masking is recursive. Any email addresses captured within an element is masked such as `*****`.
+You can mask information based on patterns that you specify (regular expressions or RegEx). If you aren't familiar with RegEx, review this page on [regular expressions](https://www.regular-expressions.info/quickstart.html).
 
-#### Pattern (Regex) masking
+Specify a pattern of information that you want Amplitude to mask. This configuration occurs in the [SDK](/docs/sdks) and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. RegEx filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
 
-You can mask information based on patterns that you specify (regular expressions or Regex). If you aren't familiar with Regex, review this page on [regular expressions](https://www.regular-expressions.info/quickstart.html).
+For example, you can set a RegEx pattern to filter out credit card numbers such as `****-**** **** 1234`. In this example, you want to fully mask the credit card information including the final four digits. You can add the RegEx filter `/(?i)ends\s*in\s*[0-9]{4}/` and, if Amplitude finds credit card information that match the pattern, those numbers are masked like: `*****`. 
 
-Specify a pattern of information that you want Amplitude to mask. This configuration occurs in the [SDK](/docs/sdks) and is an additional layer of protection to the default patterns Amplitude uses to mask email, credit cards, and social security numbers. Regex filters mask values in any fields where it may be possible to include this data. This includes both visible fields as well as hidden attributes on the page. 
-
-For example, you can set a Regex pattern to filter account numbers such as "#0236732." If Amplitude finds account numbers that match the pattern you set, those numbers are masked such as: `*****`. 
+Enable this through the *Data Settings > Autocapture > Element Interactions* page.
 
 #### Page URL exclude and allows lists
 
@@ -149,12 +150,15 @@ Using the example of .com and .co.uk above, here are examples of the exclude and
 Remember that the exclude list always takes priority over the allow list. This is to prevent you capturing data that you don't want. If you include the same pattern in both the exclude and allow lists, that pattern is excluded and won't be captured.
 {{/partial:admonition}}
 
+Enable this through the *Data Settings > Autocapture > Element Interactions* page.
+
 #### Limit click tracking
 
 To support visual labeling, Autocapture captures interaction information about both the elements clicked or changed and information about the element's parents in the HTML structure. Depending on your site's structure, you can:
 
 * Refine the elements allowed for click and change tracking. You can configure the `cssSelectorAllowlist` and `actionClickAllowlist` options to change the list of elements that Autocapture can track. You can even remove all common HTML elements and restrict to elements with a specific class.
-* Restrict the pages allowed for click and change tracking. You can configure the `pageUrlAllowlist` to limit the collection of these events to specific URLs (or URL patterns).
+
+Enable this through the *Data Settings > Autocapture > Element Interactions* page.
 
 #### Turn off Autocapture events
 
