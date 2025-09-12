@@ -1,0 +1,16 @@
+## Summary
+This documentation covers custom CSS styling for Amplitude's Guides and Surveys SDK, providing CSS class selectors for targeting form factors (banner, modal, popover, tooltip, pin, checklist) and survey elements, with web SDK-only support and beta status warnings.
+
+## Keywords
+- amplitude-engagement CSS classes
+- guides and surveys styling
+- form factor containers
+- banner modal popover tooltip pin checklist selectors
+- survey form elements CSS
+- web SDK custom styling
+- CSS class selectors targeting
+- amplitude-engagement-banner-container
+- amplitude-engagement-modal-overlay
+- CTA button styling
+- rating input checkbox radio selectors
+- beta feature custom CSS

@@ -1,51 +1,51 @@
-## Amplitude Destination Catalog
+## Amplitude Guides and Surveys SDK
 
-Amplitude's Destination Catalog is a comprehensive data syndication platform that enables organizations to operationalize behavioral analytics insights by syncing user segments and raw event data to external systems. The catalog supports bidirectional data flows across marketing platforms, data warehouses, and customer engagement tools, serving as the critical bridge between Amplitude's analytics capabilities and downstream activation use cases.
+Amplitude's Guides and Surveys SDK is a comprehensive user engagement platform that enables developers to create and deploy interactive experiences directly within web applications. The SDK serves as a bridge between user analytics and actionable engagement, providing tools for onboarding, feedback collection, and contextual user guidance through data-driven messaging campaigns.
 
-## Product Relationships and Architecture
+## Product Architecture and Form Factor Ecosystem
 
-The destination catalog operates within Amplitude's broader ecosystem through **Amplitude Activation**, which serves as the orchestration layer for audience and data syndication. The catalog supports two distinct integration patterns:
+The SDK is built around six core form factors, each engineered for specific engagement patterns and user interaction contexts:
 
-**Data Warehouse Destinations** handle large-scale analytics exports, transferring raw event data, merged user profiles, and historical datasets to platforms like Snowflake through recurring sync mechanisms. These integrations prioritize data fidelity and support comprehensive business intelligence workflows.
+**Banner** serves as persistent messaging infrastructure, positioning content at page boundaries (top/bottom) for ongoing visibility without disrupting core application workflows. **Modal** provides full-screen overlay capabilities for high-priority communications requiring complete user attention and interaction commitment.
 
-**Marketing and Engagement Destinations** focus on real-time audience activation, synchronizing behavioral cohorts from Amplitude to customer engagement platforms like Airship. These integrations enable personalized messaging campaigns and targeted customer experiences based on behavioral segmentation.
+**Popover** delivers contextual messaging that dynamically positions adjacent to specific UI elements, enabling just-in-time guidance tied to user interface components. **Tooltip** offers lightweight informational overlays for micro-interactions and feature explanations. **Pin** creates anchored visual indicators that highlight specific features or interface areas for discovery and navigation assistance.
 
-## Key Nomenclature and Definitions
+**Checklist** implements task-oriented interfaces designed for multi-step process guidance, particularly valuable for complex onboarding sequences and feature adoption workflows.
 
-**Cohort Syncing**: The automated transfer of user segments defined in Amplitude to external platforms, enabling behavioral targeting across marketing and engagement tools.
+## Survey and Data Collection Framework
 
-**Raw Events Export**: Bulk transfer of unprocessed event data maintaining complete event fidelity, including all metadata, user properties, and event properties for downstream analysis.
+The SDK incorporates sophisticated survey capabilities supporting multiple input methodologies:
 
-**Merged User IDs**: Consolidated user identity resolution that unifies multiple identifiers (amplitude_id, user_id, device_id) into coherent user profiles across destination systems.
+- **Rating Systems**: Numerical and visual rating interfaces for satisfaction scoring and preference collection
+- **Selection Controls**: Checkbox and radio button implementations for multiple choice and single-selection scenarios  
+- **Text Input Collection**: Open-ended feedback mechanisms for qualitative data gathering
+- **Call-to-Action (CTA) Integration**: Behavioral trigger buttons that drive specific user actions and conversion events
 
-**Recurring Syncs**: Automated, scheduled data transfers that maintain continuous data freshness between Amplitude and destination platforms without manual intervention.
+## Technical Implementation and Customization
 
-**Micro-batch Files**: Optimized data packaging format that balances transfer efficiency with computational costs when moving event data to warehouse destinations.
+### CSS Architecture and Styling Framework
 
-**UAChannelID**: Airship-specific user identifier that maps Amplitude user profiles to Airship's messaging channels for targeted communication delivery.
+The SDK implements a comprehensive CSS customization system built on structured class hierarchies. All styling elements utilize the `amplitude-engagement` namespace prefix, ensuring clean separation from application stylesheets and preventing CSS conflicts.
 
-**Tag Group Synchronization**: The mechanism by which Amplitude cohorts are represented as tag groups in destination platforms, enabling audience-based campaign targeting and segmentation.
+**Container Classes** provide form factor-specific styling targets:
+- `amplitude-engagement-banner-container` for banner implementations
+- `amplitude-engagement-modal-overlay` for modal experiences
+- Form factor-specific containers for popover, tooltip, pin, and checklist variants
 
-## Broader Product Ecosystem Integration
+**Element-Level Targeting** enables granular component styling through dedicated selectors for rating inputs, checkbox controls, radio button groups, and CTA button elements. This granular approach supports precise brand alignment and design system integration.
 
-The destination catalog integrates deeply with Amplitude's core analytics platform, leveraging behavioral insights generated from user journey analysis to power downstream activation. The system standardizes authentication across destinations, supporting modern security methods including JWT token validation and key pair authentication while deprecating legacy password-based approaches.
+**Form Factor Isolation** ensures CSS scope separation, allowing distinct styling approaches across different engagement types without cross-contamination or inheritance conflicts.
 
-The catalog enables organizations to create closed-loop marketing systems where behavioral insights from Amplitude directly inform targeting strategies across their entire marketing technology stack, from email platforms to advertising networks to customer support tools.
+### Platform Constraints and Development Status
 
-## Technical Implementation Details
+The custom CSS functionality operates under specific technical limitations:
+- **Web SDK Exclusivity**: Custom styling capabilities are currently restricted to web implementations only
+- **Beta Classification**: The feature maintains beta status, indicating active development cycles and potential API evolution
 
-**Snowflake Integration**:
-- API endpoint pattern: `ORGNAME-ACCOUNTNAME.snowflakecomputing.com`
-- Authentication methods: Key pair authentication (recommended) or password authentication (deprecated)
-- Requires IP allowlisting for Amplitude's export infrastructure
-- Standardized event table schema with columns: `amplitude_id`, `uuid`, `client_event_time`, `server_received_time`
-- VARIANT data types for flexible event and user property storage
-- Auto-suspend configuration recommendations for cost optimization
+## Product Ecosystem Integration and Enterprise Positioning
 
-**Airship Integration**:
-- Authentication via Airship API keys
-- Channel ID mapping through Auto Channel ID functionality
-- Integration with Airship's Message Composer for campaign targeting
-- Automated tag group creation and management for cohort representation
+The Guides and Surveys SDK functions as a core component within Amplitude's broader engagement and analytics ecosystem. The platform leverages Amplitude's underlying analytics infrastructure to deliver targeted, data-driven user experiences that respond to behavioral patterns and user segmentation.
 
-The platform supports both historical data exports for initial system setup and ongoing incremental syncs to maintain data freshness, with micro-batch processing optimized for efficient data transfer while minimizing computational overhead on destination systems.
+The sophisticated CSS architecture and form factor organization indicate enterprise-scale deployment capabilities, supporting organizations requiring consistent brand implementation across complex engagement campaigns. The structured approach to styling and component organization suggests integration pathways with existing design systems and brand guideline frameworks.
+
+The SDK's positioning within Amplitude's product suite enables seamless data flow between user analytics, behavioral insights, and engagement execution, creating closed-loop optimization cycles for user experience improvement and conversion optimization initiatives.
