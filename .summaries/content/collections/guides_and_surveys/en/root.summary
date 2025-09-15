@@ -1,44 +1,63 @@
-## Amplitude Guides and Surveys SDK
+## Product Overview
 
-Amplitude's Guides and Surveys SDK is a user engagement platform that enables developers to create and deploy interactive user experiences directly within their web applications. The SDK provides a comprehensive suite of engagement tools designed to guide users through onboarding flows, collect feedback, and drive user actions through contextual messaging.
+Amplitude's Guides and Surveys SDK is a user engagement platform that enables developers to create and deploy interactive user experiences through multiple form factors including banners, modals, popovers, tooltips, pins, and checklists. The SDK supports comprehensive survey functionality with various input types and provides extensive customization capabilities through CSS styling and multi-language localization features.
 
-## Core Features and Form Factors
+## Product Relationships and Features
 
-The SDK supports six distinct form factors, each optimized for different engagement scenarios:
+The Guides and Surveys SDK operates as a cohesive engagement system where multiple components work together:
 
-- **Banner**: Persistent messaging that appears at the top or bottom of the page
-- **Modal**: Full-screen overlays that capture complete user attention
-- **Popover**: Contextual messages that appear adjacent to specific UI elements
-- **Tooltip**: Lightweight informational messages that provide just-in-time guidance
-- **Pin**: Anchored indicators that highlight specific features or areas
-- **Checklist**: Task-oriented interfaces that guide users through multi-step processes
+**Form Factor Ecosystem**: The SDK supports six distinct presentation formats (banner, modal, popover, tooltip, pin, checklist), each serving different user experience scenarios. These form factors share common underlying functionality while providing unique visual presentations and interaction patterns.
 
-## Survey Capabilities
+**Survey Integration**: Survey capabilities are deeply integrated across all form factors, supporting various input types including rating systems, checkboxes, radio buttons, and text inputs. Each survey element can be styled and localized independently while maintaining consistent behavior.
 
-The SDK includes robust survey functionality with support for multiple input types:
-- Rating systems for collecting user satisfaction scores
-- Checkbox and radio button selections for multiple choice questions
-- Text inputs for open-ended feedback collection
-- Call-to-action (CTA) buttons for driving specific user behaviors
+**Styling and Localization Layer**: Both custom CSS styling and localization features operate as overlay systems that enhance the core engagement functionality without disrupting the underlying SDK architecture.
 
-## Technical Implementation
+## Key Nomenclature and Definitions
 
-### CSS Customization Framework
+**Core Components**:
+- **Form Factors**: The six presentation modes (banner, modal, popover, tooltip, pin, checklist) that determine how content is displayed to users
+- **Engagement Plugin**: The primary SDK component initialized with `engagement.plugin` parameters
+- **CSS Class Selectors**: Amplitude-specific CSS classes prefixed with `amplitude-engagement-` for targeting styling
 
-The SDK provides extensive styling capabilities through a structured CSS class system. All engagement elements are prefixed with `amplitude-engagement` for clear namespace separation:
+**Localization Terms**:
+- **Locale Parameter**: SDK initialization setting that determines the user's language preference
+- **Fallback Behavior**: System response when translations are unavailable or outdated
+- **Translatable Strings**: Text elements within guides and surveys that can be localized
+- **XLIFF**: XML Localization Interchange File Format used for translation workflows
 
-- **Container Classes**: Each form factor has dedicated container classes (e.g., `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay`)
-- **Element Targeting**: Granular CSS selectors enable precise styling of individual components like rating inputs, checkboxes, radio buttons, and CTA elements
-- **Form Factor Isolation**: CSS classes are scoped to specific form factors, allowing for distinct styling approaches across different engagement types
-
-### Platform Support and Limitations
-
-The custom CSS functionality is currently:
-- **Web SDK Only**: Custom styling capabilities are exclusively available for web implementations
-- **Beta Status**: The feature is in beta, indicating ongoing development and potential API changes
+**Technical Identifiers**:
+- Container classes: `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay`
+- Survey elements: Rating inputs, checkbox/radio selectors, CTA button styling
+- Locale codes: Language resolution parameters for internationalization
 
 ## Product Ecosystem Integration
 
-The Guides and Surveys SDK operates as part of Amplitude's broader engagement platform, leveraging the company's analytics infrastructure to deliver targeted, data-driven user experiences. The SDK's CSS customization capabilities suggest integration with existing design systems and brand guidelines, allowing organizations to maintain visual consistency while deploying engagement campaigns.
+The Guides and Surveys SDK integrates into Amplitude's broader analytics and engagement ecosystem through several touchpoints:
 
-The structured approach to CSS classes and form factor organization indicates this is designed for enterprise-scale deployments where consistent styling and maintainable code are critical requirements.
+**Plan-Based Feature Access**: Localization functionality requires Growth or Enterprise plans, indicating integration with Amplitude's subscription and billing systems.
+
+**Project-Level Configuration**: Settings are managed through "Project Settings > Guides and Surveys tab," suggesting integration with Amplitude's project management infrastructure.
+
+**AI-Powered Features**: Claude AI integration for automated localization demonstrates connection to modern AI services within the platform.
+
+**Web SDK Focus**: Current custom CSS support is limited to web SDK implementations, indicating a multi-platform architecture with web-first feature rollouts.
+
+## Technical Implementation Details
+
+**SDK Initialization**: 
+- Locale configuration through `engagement.plugin` parameters during SDK setup
+- Project-level language support configuration in administrative interface
+
+**Styling Implementation**:
+- CSS class-based targeting system using `amplitude-engagement-` prefixed selectors
+- Form factor-specific container classes for granular styling control
+- Survey element-specific selectors for input customization
+
+**Localization Workflow**:
+- Three-method translation approach: web interface, AI automation, and XLIFF file upload
+- Template download system for translation preparation
+- Language toggle interface for runtime language switching
+
+**Beta Status**: Both custom CSS and certain localization features carry beta designations, indicating active development and potential API changes.
+
+The SDK represents a comprehensive user engagement solution that balances ease of implementation with extensive customization capabilities, designed to scale across different user bases and international markets while maintaining integration with Amplitude's analytics ecosystem.

@@ -1,67 +1,75 @@
-## Amplitude Browser SDK 2
+## Product Overview
 
-Amplitude Browser SDK 2 is a comprehensive JavaScript/TypeScript analytics library that serves as Amplitude's primary client-side data collection solution. The SDK enables organizations to capture detailed user behavior analytics through both manual event tracking and extensive autocapture functionality, transmitting data to Amplitude's analytics platform via the HTTP V2 API.
+Amplitude's Guides and Surveys SDK is a comprehensive user engagement platform that enables developers to create and deploy interactive user experiences across multiple presentation formats. The SDK provides six distinct form factors - banners, modals, popovers, tooltips, pins, and checklists - each designed for specific user interaction scenarios. The platform includes robust survey functionality with various input types, extensive CSS customization capabilities, and multi-language localization features powered by AI automation.
 
-## Product Architecture and Core Features
+## Product Relationships and Features
 
-The Browser SDK 2 operates on a plugin-based architecture supporting enrichment plugins for data transformation and destination plugins for data routing. The SDK offers multiple installation methods including script loader, npm, and yarn, with package options ranging from unified installation (`@amplitude/unified`) to dedicated browser packages (`@amplitude/analytics-browser`) for bundle size optimization.
+The Guides and Surveys SDK operates as an integrated engagement ecosystem where components work synergistically:
 
-### Comprehensive Autocapture System
+**Form Factor Architecture**: The six presentation formats (banner, modal, popover, tooltip, pin, checklist) share a common underlying framework while providing distinct visual presentations and interaction patterns. Each form factor can be independently styled and configured while maintaining consistent SDK behavior and API interfaces.
 
-The SDK's autocapture functionality represents its most sophisticated feature set, automatically collecting user interaction data without explicit instrumentation:
+**Survey Integration Layer**: Survey capabilities are embedded across all form factors, supporting diverse input types including rating systems, checkboxes, radio buttons, and text inputs. Survey elements maintain consistent functionality regardless of the containing form factor, enabling flexible user experience design.
 
-- **Marketing Attribution Tracking**: Captures UTM parameters and click ID parameters for comprehensive campaign attribution analysis
-- **Page View and Navigation Tracking**: Monitors page transitions and navigation events across single-page applications
-- **Session Management**: Handles automated session tracking with configurable session parameters and timeout settings
-- **Form Interaction Analytics**: Captures form submissions, field interactions, and form abandonment events
-- **File Download Monitoring**: Tracks file download events with metadata about file types and sources
-- **Element Interaction Tracking**: Records clicks and interactions with page elements, supporting CSS selector-based targeting
-- **Frustration Signal Detection**: Identifies user frustration patterns including rage clicks, dead clicks, and rapid successive interactions
-- **Network Request Analytics**: Monitors XHR and Fetch API calls for performance and user journey analytics
+**Styling and Localization Systems**: Custom CSS styling and localization operate as overlay systems that enhance core engagement functionality. These systems work independently but can be combined to create fully customized, internationalized user experiences without disrupting the underlying SDK architecture.
 
-### User Identity and Revenue Analytics
+**Configuration Management**: Settings are managed through a hierarchical system spanning SDK initialization parameters, project-level configurations, and runtime controls, providing flexibility across different implementation scenarios.
 
-The SDK provides sophisticated user analytics capabilities through multiple identification and tracking mechanisms:
-- **User Properties Management**: Implemented via the Identify interface for comprehensive user attribute tracking
-- **Group Properties**: Enables organizational and cohort-based analytics for B2B use cases
-- **Revenue Tracking Interface**: Dedicated methods for e-commerce analytics, transaction tracking, and monetization metrics
+## Key Nomenclature and Definitions
 
-## Key Nomenclature and Technical Definitions
+**Core Components**:
+- **Form Factors**: Six presentation modes (banner, modal, popover, tooltip, pin, checklist) that determine content display and user interaction patterns
+- **Engagement Plugin**: Primary SDK component initialized through `engagement.plugin` parameters
+- **CSS Class Selectors**: Amplitude-specific styling targets using `amplitude-engagement-` prefixed classes
 
-- **deviceId and userId**: Primary user identification parameters with configurable validation through `minIdLength` settings
-- **flushQueueSize and flushIntervalMillis**: Critical configuration parameters controlling event batching behavior and transmission frequency to optimize performance and data delivery
-- **sendBeacon**: Browser API-based transport method ensuring reliable event delivery even during page unload scenarios
-- **ampDeviceId and ampSessionId**: URL parameters facilitating cross-domain tracking continuity and user session persistence
-- **AMP cookie prefix**: Standardized cookie naming convention for data persistence and cross-domain identity resolution
-- **trackingOptions**: Comprehensive configuration object controlling the scope and granularity of automatic data collection
-- **excludeReferrers**: Configuration mechanism for filtering referrer data to comply with privacy requirements
-- **fetchRemoteConfig**: Server-side configuration retrieval method enabling dynamic SDK behavior modification
+**Localization Framework**:
+- **Locale Parameter**: SDK initialization setting controlling language preference and content resolution
+- **Fallback Behavior**: System response mechanism when translations are unavailable or outdated
+- **Translatable Strings**: Text elements within guides and surveys eligible for localization
+- **XLIFF**: XML Localization Interchange File Format supporting professional translation workflows
 
-## Ecosystem Integration and Framework Support
+**Technical Identifiers**:
+- **Container Classes**: `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay` for form factor targeting
+- **Survey Elements**: Rating inputs, checkbox/radio selectors, CTA button styling classes
+- **Locale Codes**: Language resolution parameters for internationalization configuration
 
-The Browser SDK 2 integrates seamlessly with Amplitude's broader analytics ecosystem through the HTTP V2 API, ensuring reliable data flow to Amplitude's analytics platform. The SDK provides optimized support for modern web development frameworks:
+**Operational Terms**:
+- **Beta Features**: Functionality under active development with potential API changes
+- **Plan-Based Access**: Feature availability tied to subscription tiers (Growth/Enterprise)
+- **Template System**: Downloadable translation preparation files
 
-- **Angular Integration**: Full compatibility with Zone.js for proper change detection and lifecycle management
-- **Next.js Optimization**: Specialized integration patterns for server-side rendered applications and static site generation
-- **Visual Labeling Support**: Native compatibility with Amplitude's visual event labeling tools for no-code analytics implementation
+## Product Ecosystem Integration
 
-### Enterprise-Grade Advanced Features
+The Guides and Surveys SDK integrates deeply into Amplitude's broader analytics and engagement platform:
 
-The SDK delivers enterprise-level capabilities for complex deployment scenarios:
+**Subscription Integration**: Localization functionality requires Growth or Enterprise plans, indicating tight coupling with Amplitude's billing and subscription management systems. This tiered access model suggests the SDK leverages centralized entitlement services.
 
-- **Cross-Domain Tracking**: Maintains user identity continuity across different domains using URL parameter passing and cookie synchronization
-- **Offline Mode**: Implements intelligent event queuing when network connectivity is unavailable, with automatic retry mechanisms
-- **Content Security Policy (CSP) Compliance**: Configurable for deployment in secure environments with strict CSP requirements
-- **Advanced Cookie Management**: Flexible cookie handling with customizable prefixes, domains, and expiration policies
-- **Remote Configuration**: Dynamic configuration updates via `fetchRemoteConfig` enabling real-time SDK behavior modification
+**Project Management Integration**: Configuration through "Project Settings > Guides and Surveys tab" demonstrates integration with Amplitude's project management infrastructure, enabling centralized administration and team collaboration workflows.
 
-## API Surface and Implementation Methods
+**AI Platform Integration**: Claude AI integration for automated localization indicates connection to Amplitude's AI services layer, providing intelligent translation capabilities that reduce manual localization overhead.
 
-The SDK exposes a comprehensive API including:
-- Custom event tracking methods with flexible property schemas
-- Autocapture configuration methods for granular control over automatic data collection
-- Plugin registration system for extensibility and custom data processing
-- User and group property management interfaces supporting complex identity resolution
-- Specialized revenue tracking methods for e-commerce analytics
+**Multi-Platform Architecture**: Current custom CSS support limited to web SDK implementations suggests a broader multi-platform architecture with web-first feature development and gradual rollout to mobile platforms.
 
-The implementation architecture supports both unified package deployment for comprehensive analytics coverage and modular installation for specific use cases, enabling organizations to optimize bundle sizes while maintaining full analytical capabilities across their web properties.
+**Analytics Integration**: As part of Amplitude's engagement suite, the SDK likely integrates with core analytics functionality for tracking user interactions, conversion metrics, and engagement performance across different form factors and localization variants.
+
+## Technical Implementation Details
+
+**SDK Initialization**:
+- Locale configuration via `engagement.plugin` parameters during SDK setup
+- Project-level language support configuration through administrative interface
+- Runtime language switching capabilities
+
+**Styling Implementation**:
+- CSS class-based targeting using `amplitude-engagement-` prefixed selectors
+- Form factor-specific container classes: `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay`
+- Survey element-specific selectors for granular input customization
+- Beta status indicating active development and potential API evolution
+
+**Localization Workflow**:
+- Three-method translation approach: web interface editing, AI-powered automation, and XLIFF file upload
+- Template download system for translation preparation and professional workflow integration
+- Language toggle interface for runtime language switching
+- Fallback mechanisms for incomplete or outdated translations
+
+**Development Status**: Both custom CSS styling and certain localization features carry beta designations, indicating active development cycles and potential API changes as features mature toward general availability.
+
+The SDK represents a sophisticated user engagement solution that balances implementation simplicity with extensive customization capabilities, designed to scale across diverse user bases and international markets while maintaining deep integration with Amplitude's comprehensive analytics and engagement ecosystem.
