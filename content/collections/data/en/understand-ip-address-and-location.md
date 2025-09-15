@@ -30,7 +30,7 @@ Amplitude supports both disabling IP Address tracking in the SDK configuration, 
 
 ### Disable IP address tracking in the SDK
 
-When you disable IP address tracking in the SDK configuration (for example, [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2#optional-tracking), [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk#disable-tracking), [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk#disable-tracking)), Amplitude never sees the IP address. As a result, Amplitude's back end services can't attempt to reconcile the user's location, and any location properties remain empty.
+When you disable IP address tracking in the SDK configuration (for example, [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2#optional-tracking), [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk#disable-tracking), [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk#disable-tracking)), Amplitude never receives the IP address. As a result, Amplitude's back end services can't attempt to reconcile the user's location, and any location properties remain empty.
 
 ### IP address filtering
 
