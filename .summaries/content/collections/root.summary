@@ -1,43 +1,56 @@
-Amplitude Data is a comprehensive analytics platform that automatically collects, processes, and enriches user interaction data to deliver location-based and device-specific insights. The platform functions as a data intelligence solution that transforms raw user interactions into actionable analytics through sophisticated server-side data enrichment processes.
+## Amplitude Analytics iOS Swift SDK
 
-## Core Features and Capabilities
+The Amplitude Analytics iOS Swift SDK is a comprehensive client-side analytics solution for iOS applications that provides automated event tracking, user identification, and behavioral analytics capabilities. The SDK serves as the primary data collection layer in the Amplitude analytics ecosystem, featuring extensive autocapture functionality that minimizes manual instrumentation while maximizing analytical insights.
 
-**Automatic Data Enrichment** forms the foundation of Amplitude's data processing capabilities. The platform automatically enhances incoming event data by processing IP addresses through MaxMind GeoIP database lookups, deriving comprehensive location properties including city, DMA (Designated Market Area), region, and country information. This enrichment occurs server-side without requiring additional client configuration, ensuring consistent data quality across all implementations.
+## Product Architecture and Feature Relationships
 
-**Device Intelligence** provides detailed hardware and software context through automatic user agent string parsing. The system extracts device brand, manufacturer, model, operating system details, browser information, and device type classification. This parsing happens automatically for client-side SDK implementations, providing rich device context for analytics segmentation.
+### Core SDK Foundation
+The SDK is built on a modular plugin architecture that separates data enrichment, event processing, and delivery mechanisms. It supports both Swift and Objective-C implementations with multiple installation pathways including Swift Package Manager (AmplitudeSwift package), CocoaPods, and Carthage.
 
-**Flexible Data Ingestion** supports both automatic collection through client-side SDKs and manual specification through the HTTP V2 API. This dual approach allows developers to leverage automatic detection for standard implementations while providing override capabilities for custom location and device properties when enhanced accuracy or privacy compliance is required.
+### Autocapture System Integration
+The SDK's centerpiece is its sophisticated autocapture system, orchestrated through `AutocaptureOptions` configuration operating across multiple layers:
 
-## Product Architecture and Relationships
+- **Application Layer**: Automatic session management with configurable `minTimeBetweenSessionsMillis` parameters and app lifecycle event tracking
+- **UI Layer**: Screen view tracking via method swizzling on `viewDidAppear`, element interaction monitoring through `UIControl` and `UIGestureRecognizer` systems
+- **Network Layer**: URLSession request/response monitoring via `NetworkTrackingOptions` with `StatusCodeRange` filtering and allowlist/blocklist URL management
+- **User Experience Layer**: Advanced interaction analytics including frustration detection, rage click identification through `RageClickOptions`, and dead click detection via `DeadClickOptions`
 
-The Amplitude data processing pipeline operates through three interconnected architectural layers:
+### Data Management and Storage Architecture
+The SDK implements a flexible data persistence layer through a customizable `Storage` protocol, enabling custom storage solutions while providing default implementations. Device identification is managed through automatic IDFV (Identifier for Vendor) handling with comprehensive device ID lifecycle management across app installations and updates.
 
-**Data Collection Layer** encompasses client-side SDKs that automatically capture user interactions with device and network context, alongside server-side integrations that enable custom data specification through API endpoints. This layer provides the foundation for all downstream processing.
+## Key Nomenclature and Technical Definitions
 
-**Data Processing Layer** handles server-side enrichment through IP address resolution, user agent parsing, and geographic data enhancement using MaxMind GeoIP databases. This layer ensures consistent data quality and standardization across all ingestion methods.
+### Event Processing Terminology
+- **Out-of-session Events**: Events tracked outside active user sessions, marked with `sessionId -1` for analytical distinction
+- **Flush Configuration**: Event batching mechanism controlled by `flushQueueSize` (batch size) and `flushIntervalMillis` (time-based flushing)
+- **Identify Operations**: User property update workflows and user identification processes
+- **Group Identify**: Organization or group-level property management for B2B analytics scenarios
 
-**Data Control Layer** implements privacy and filtering mechanisms, allowing organizations to block IP address collection, filter specific IP ranges, and configure tracking options through SDK settings. This layer provides compliance capabilities while maintaining data utility.
+### Interaction Analytics Definitions
+- **Frustration Interactions**: Algorithmic detection of user frustration patterns based on interaction velocity and repetition
+- **Rage Clicks**: Rapid, repeated clicking behavior identification with configurable thresholds
+- **Dead Clicks**: Detection of user interactions that fail to produce expected application responses
+- **CaptureRule Systems**: Configurable filtering mechanisms through `InteractionsOptions` for selective interaction tracking
 
-## Key Nomenclature and Definitions
+### Network and Privacy Controls
+- **NetworkTrackingOptions**: Comprehensive configuration system for automatic network request monitoring with granular control over captured data
+- **Remote Configuration**: Dynamic SDK behavior updates via `enableAutoCaptureRemoteConfig` without requiring app updates
+- **COPPA Control**: Child privacy protection mechanisms integrated into tracking options
+- **NSPrivacyTracking**: Built-in privacy manifest declarations for App Store compliance
 
-**Location Properties** include `location_lat` and `location_long` for geographic coordinates derived from IP address lookup, along with `[Amplitude] City`, `DMA`, `Region`, and `Country` fields that form an automatically populated location hierarchy. The MaxMind GeoIP database serves as the third-party service providing IP-to-location mapping capabilities.
+## Broader Product Ecosystem Integration
 
-**Device Properties** encompass `device_brand`, `device_manufacturer`, and `device_model` for hardware identification, `device_family` for device category classification, and `device_type` for form factor classification (mobile, desktop, tablet). Operating system information is captured through `os_name`, `os_version`, and `platform` fields, while web browser identification uses `browser_version` and mobile network provider information is stored in `carrier`.
+### Amplitude Platform Integration
+The iOS SDK functions as the critical first-mile data collection component in the Amplitude analytics ecosystem, handling client-side event capture and user behavior tracking that feeds into Amplitude's cloud-based analytics platform. The SDK ensures comprehensive behavioral data collection while maintaining performance optimization and privacy compliance standards.
 
-**Configuration Options** include `trackingOptions` for SDK configuration controlling automatic data collection, IP address filtering for server-side blocking of specific IP ranges, and the HTTP V2 API as the RESTful interface for custom data submission.
+### Plugin Ecosystem
+The modular plugin architecture enables extensive customization through:
+- **Enrichment Plugins**: Pre-processing event data enhancement and contextual information addition
+- **Destination Plugins**: Event routing, delivery management, and third-party integration capabilities
+- **NetworkConnectivityCheckerPlugin**: Intelligent offline mode management with automatic event queuing and connectivity-aware delivery
 
-## Ecosystem Integration
+### Cross-Platform Considerations
+The SDK integrates with both UIKit and SwiftUI frameworks, though SwiftUI implementations have documented limitations for certain autocapture features. The SDK's design accommodates varying network conditions through offline capabilities and implements remote configuration support for dynamic analytics strategy adjustments.
 
-Amplitude Data functions as a central processing hub integrating with multiple external services and internal systems. The platform maintains dependencies on MaxMind GeoIP databases for location accuracy and parsing libraries for user agent interpretation across device types and browsers.
-
-**API Integration** centers on the HTTP V2 API, which serves as the primary integration point for server-side implementations. This API allows custom applications to submit events with pre-defined location and device properties that bypass automatic detection, providing flexibility for specialized use cases.
-
-**SDK Ecosystem** spans multiple platforms including web, mobile, and desktop implementations. Client-side SDKs automatically handle data collection and transmission with configurable options for privacy compliance and data filtering, ensuring consistent implementation across different development environments.
-
-## Technical Implementation
-
-**API Endpoints** through the HTTP V2 API provide submission capabilities for events with custom location properties, enabling developers to override automatic IP-based location detection with more accurate or privacy-compliant location data.
-
-**Configuration Methods** utilize `trackingOptions` configuration objects within SDK implementations, providing granular control over automatic data collection features and enabling privacy-focused data collection practices.
-
-**Processing Pipeline** automatically enriches incoming events with location and device data unless explicitly overridden, maintaining consistent data quality while preserving flexibility for custom implementations. This server-side processing ensures data standardization regardless of the ingestion method used.
+### Privacy and Compliance Framework
+The SDK's privacy-first architecture includes comprehensive tracking options, COPPA controls, and configurable data collection parameters, positioning it for compliance with evolving privacy regulations while maintaining analytical depth through sophisticated user experience tracking and behavioral analytics capabilities.
