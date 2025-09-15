@@ -1,75 +1,43 @@
-## Product Overview
+Amplitude Data is a comprehensive analytics platform that automatically collects, processes, and enriches user interaction data to deliver location-based and device-specific insights. The platform functions as a data intelligence solution that transforms raw user interactions into actionable analytics through sophisticated server-side data enrichment processes.
 
-Amplitude's Guides and Surveys SDK is a comprehensive user engagement platform that enables developers to create and deploy interactive user experiences across multiple presentation formats. The SDK provides six distinct form factors - banners, modals, popovers, tooltips, pins, and checklists - each designed for specific user interaction scenarios. The platform includes robust survey functionality with various input types, extensive CSS customization capabilities, and multi-language localization features powered by AI automation.
+## Core Features and Capabilities
 
-## Product Relationships and Features
+**Automatic Data Enrichment** forms the foundation of Amplitude's data processing capabilities. The platform automatically enhances incoming event data by processing IP addresses through MaxMind GeoIP database lookups, deriving comprehensive location properties including city, DMA (Designated Market Area), region, and country information. This enrichment occurs server-side without requiring additional client configuration, ensuring consistent data quality across all implementations.
 
-The Guides and Surveys SDK operates as an integrated engagement ecosystem where components work synergistically:
+**Device Intelligence** provides detailed hardware and software context through automatic user agent string parsing. The system extracts device brand, manufacturer, model, operating system details, browser information, and device type classification. This parsing happens automatically for client-side SDK implementations, providing rich device context for analytics segmentation.
 
-**Form Factor Architecture**: The six presentation formats (banner, modal, popover, tooltip, pin, checklist) share a common underlying framework while providing distinct visual presentations and interaction patterns. Each form factor can be independently styled and configured while maintaining consistent SDK behavior and API interfaces.
+**Flexible Data Ingestion** supports both automatic collection through client-side SDKs and manual specification through the HTTP V2 API. This dual approach allows developers to leverage automatic detection for standard implementations while providing override capabilities for custom location and device properties when enhanced accuracy or privacy compliance is required.
 
-**Survey Integration Layer**: Survey capabilities are embedded across all form factors, supporting diverse input types including rating systems, checkboxes, radio buttons, and text inputs. Survey elements maintain consistent functionality regardless of the containing form factor, enabling flexible user experience design.
+## Product Architecture and Relationships
 
-**Styling and Localization Systems**: Custom CSS styling and localization operate as overlay systems that enhance core engagement functionality. These systems work independently but can be combined to create fully customized, internationalized user experiences without disrupting the underlying SDK architecture.
+The Amplitude data processing pipeline operates through three interconnected architectural layers:
 
-**Configuration Management**: Settings are managed through a hierarchical system spanning SDK initialization parameters, project-level configurations, and runtime controls, providing flexibility across different implementation scenarios.
+**Data Collection Layer** encompasses client-side SDKs that automatically capture user interactions with device and network context, alongside server-side integrations that enable custom data specification through API endpoints. This layer provides the foundation for all downstream processing.
+
+**Data Processing Layer** handles server-side enrichment through IP address resolution, user agent parsing, and geographic data enhancement using MaxMind GeoIP databases. This layer ensures consistent data quality and standardization across all ingestion methods.
+
+**Data Control Layer** implements privacy and filtering mechanisms, allowing organizations to block IP address collection, filter specific IP ranges, and configure tracking options through SDK settings. This layer provides compliance capabilities while maintaining data utility.
 
 ## Key Nomenclature and Definitions
 
-**Core Components**:
-- **Form Factors**: Six presentation modes (banner, modal, popover, tooltip, pin, checklist) that determine content display and user interaction patterns
-- **Engagement Plugin**: Primary SDK component initialized through `engagement.plugin` parameters
-- **CSS Class Selectors**: Amplitude-specific styling targets using `amplitude-engagement-` prefixed classes
+**Location Properties** include `location_lat` and `location_long` for geographic coordinates derived from IP address lookup, along with `[Amplitude] City`, `DMA`, `Region`, and `Country` fields that form an automatically populated location hierarchy. The MaxMind GeoIP database serves as the third-party service providing IP-to-location mapping capabilities.
 
-**Localization Framework**:
-- **Locale Parameter**: SDK initialization setting controlling language preference and content resolution
-- **Fallback Behavior**: System response mechanism when translations are unavailable or outdated
-- **Translatable Strings**: Text elements within guides and surveys eligible for localization
-- **XLIFF**: XML Localization Interchange File Format supporting professional translation workflows
+**Device Properties** encompass `device_brand`, `device_manufacturer`, and `device_model` for hardware identification, `device_family` for device category classification, and `device_type` for form factor classification (mobile, desktop, tablet). Operating system information is captured through `os_name`, `os_version`, and `platform` fields, while web browser identification uses `browser_version` and mobile network provider information is stored in `carrier`.
 
-**Technical Identifiers**:
-- **Container Classes**: `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay` for form factor targeting
-- **Survey Elements**: Rating inputs, checkbox/radio selectors, CTA button styling classes
-- **Locale Codes**: Language resolution parameters for internationalization configuration
+**Configuration Options** include `trackingOptions` for SDK configuration controlling automatic data collection, IP address filtering for server-side blocking of specific IP ranges, and the HTTP V2 API as the RESTful interface for custom data submission.
 
-**Operational Terms**:
-- **Beta Features**: Functionality under active development with potential API changes
-- **Plan-Based Access**: Feature availability tied to subscription tiers (Growth/Enterprise)
-- **Template System**: Downloadable translation preparation files
+## Ecosystem Integration
 
-## Product Ecosystem Integration
+Amplitude Data functions as a central processing hub integrating with multiple external services and internal systems. The platform maintains dependencies on MaxMind GeoIP databases for location accuracy and parsing libraries for user agent interpretation across device types and browsers.
 
-The Guides and Surveys SDK integrates deeply into Amplitude's broader analytics and engagement platform:
+**API Integration** centers on the HTTP V2 API, which serves as the primary integration point for server-side implementations. This API allows custom applications to submit events with pre-defined location and device properties that bypass automatic detection, providing flexibility for specialized use cases.
 
-**Subscription Integration**: Localization functionality requires Growth or Enterprise plans, indicating tight coupling with Amplitude's billing and subscription management systems. This tiered access model suggests the SDK leverages centralized entitlement services.
+**SDK Ecosystem** spans multiple platforms including web, mobile, and desktop implementations. Client-side SDKs automatically handle data collection and transmission with configurable options for privacy compliance and data filtering, ensuring consistent implementation across different development environments.
 
-**Project Management Integration**: Configuration through "Project Settings > Guides and Surveys tab" demonstrates integration with Amplitude's project management infrastructure, enabling centralized administration and team collaboration workflows.
+## Technical Implementation
 
-**AI Platform Integration**: Claude AI integration for automated localization indicates connection to Amplitude's AI services layer, providing intelligent translation capabilities that reduce manual localization overhead.
+**API Endpoints** through the HTTP V2 API provide submission capabilities for events with custom location properties, enabling developers to override automatic IP-based location detection with more accurate or privacy-compliant location data.
 
-**Multi-Platform Architecture**: Current custom CSS support limited to web SDK implementations suggests a broader multi-platform architecture with web-first feature development and gradual rollout to mobile platforms.
+**Configuration Methods** utilize `trackingOptions` configuration objects within SDK implementations, providing granular control over automatic data collection features and enabling privacy-focused data collection practices.
 
-**Analytics Integration**: As part of Amplitude's engagement suite, the SDK likely integrates with core analytics functionality for tracking user interactions, conversion metrics, and engagement performance across different form factors and localization variants.
-
-## Technical Implementation Details
-
-**SDK Initialization**:
-- Locale configuration via `engagement.plugin` parameters during SDK setup
-- Project-level language support configuration through administrative interface
-- Runtime language switching capabilities
-
-**Styling Implementation**:
-- CSS class-based targeting using `amplitude-engagement-` prefixed selectors
-- Form factor-specific container classes: `amplitude-engagement-banner-container`, `amplitude-engagement-modal-overlay`
-- Survey element-specific selectors for granular input customization
-- Beta status indicating active development and potential API evolution
-
-**Localization Workflow**:
-- Three-method translation approach: web interface editing, AI-powered automation, and XLIFF file upload
-- Template download system for translation preparation and professional workflow integration
-- Language toggle interface for runtime language switching
-- Fallback mechanisms for incomplete or outdated translations
-
-**Development Status**: Both custom CSS styling and certain localization features carry beta designations, indicating active development cycles and potential API changes as features mature toward general availability.
-
-The SDK represents a sophisticated user engagement solution that balances implementation simplicity with extensive customization capabilities, designed to scale across diverse user bases and international markets while maintaining deep integration with Amplitude's comprehensive analytics and engagement ecosystem.
+**Processing Pipeline** automatically enriches incoming events with location and device data unless explicitly overridden, maintaining consistent data quality while preserving flexibility for custom implementations. This server-side processing ensures data standardization regardless of the ingestion method used.
