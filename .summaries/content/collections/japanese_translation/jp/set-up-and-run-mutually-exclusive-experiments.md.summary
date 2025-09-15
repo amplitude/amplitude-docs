@@ -1,0 +1,16 @@
+**Summary:** This documentation explains how to set up and run mutually exclusive experiments in Amplitude Experiment, including creating mutual exclusion groups, configuring traffic allocation slots, and handling advanced use cases with multiple groups and holdout interactions.
+
+**Keywords:**
+- Amplitude Experiment
+- mutually exclusive experiments
+- mutual exclusion groups
+- traffic allocation slots
+- experiment groups
+- bucketing
+- holdout groups
+- slot assignment
+- experiment traffic distribution
+- user assignment integrity
+- running experiments restrictions
+- evaluation mode
+- bucket key configuration

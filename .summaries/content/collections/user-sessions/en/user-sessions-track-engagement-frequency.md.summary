@@ -1,0 +1,31 @@
+**Summary:** This documentation explains how to build and configure User Sessions charts in Amplitude, which analyze session-based metrics like session duration, frequency, and event counts within sessions using the Sessions Module instead of the standard Events Module.
+
+**Keywords:**
+- User Sessions chart
+- Sessions Module
+- session duration
+- session length distribution
+- events performed within sessions
+- session-based metrics
+- Count dropdown
+- Event Count
+- Session Duration filter
+- Contains Event filter
+- First Property value
+- Last Property value
+- Total Sessions
+- Time Spent per User
+- Avg Length
+- Length Distribution
+- Avg Per User
+- Average Events per Sessions
+- Total Events Across Sessions
+- Distribution buckets
+- session IDs
+- EVENTTOTALS formula
+- SESSIONTOTALS formula
+- HIST formula
+- PROPSUM formula
+- UNIQUES formula
+- Segment By module
+- Measured As Module

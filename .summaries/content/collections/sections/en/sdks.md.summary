@@ -1,0 +1,17 @@
+**Summary:** This documentation page serves as the main SDK overview and navigation hub for Amplitude SDKs, covering client-side vs server-side implementation decisions and providing links to Analytics SDKs, Experiment SDKs, Session Replay, and Guides/Surveys SDKs, plus integration with the Ampli CLI and code-generated Ampli Wrapper for type-safe event tracking.
+
+**Keywords:**
+- Amplitude SDKs
+- client-side vs server-side
+- Analytics SDKs
+- Experiment SDKs  
+- Session Replay SDK
+- Guides and Surveys SDK
+- Ampli CLI
+- Ampli Wrapper
+- code-generated SDK
+- tracking plan
+- type-safe event tracking
+- static type checking
+- SDK catalog
+- event data collection

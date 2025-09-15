@@ -1,0 +1,130 @@
+# Amplitude Product Ontology and Summary
+
+## High-Level Overview
+
+Amplitude is a comprehensive digital analytics platform that provides product analytics, experimentation, and customer data management capabilities. The platform consists of several interconnected products:
+
+- **Amplitude Analytics**: Core product analytics platform for event-based user behavior analysis
+- **Amplitude Experiment**: A/B testing and feature flag management platform
+- **Amplitude Data**: Data governance and tracking plan management system
+- **Amplitude Activation**: AI-powered personalization and audience targeting platform
+
+The platform enables organizations to instrument event tracking, analyze user behavior through various chart types, run controlled experiments, and activate insights through personalized campaigns and recommendations.
+
+## Product Relationships and Architecture
+
+### Core Analytics Foundation
+Amplitude Analytics serves as the foundational layer, providing event-based analytics through various chart types:
+- **Event Segmentation**: Track user actions and measure engagement
+- **Funnel Analysis**: Analyze conversion paths and drop-off points
+- **Retention Analysis**: Measure user return behavior over time
+- **User Session Charts**: Analyze session-based engagement metrics
+- **Revenue LTV**: Track monetization and lifetime value
+- **Pathfinder/Journey**: Visualize user flow paths
+- **Compass**: Identify correlation between events and retention
+
+### Data Management Layer
+Amplitude Data provides the governance framework:
+- **Tracking Plans**: Define and validate event schemas
+- **Branches and Environments**: Version control for analytics implementations
+- **Data Validation**: Schema enforcement and violation handling
+- **Transformations**: Retroactive data structure modifications
+- **Ampli SDK**: Type-safe tracking libraries generated from tracking plans
+
+### Experimentation Platform
+Amplitude Experiment integrates with Analytics for statistical testing:
+- **Feature Flags**: Progressive feature delivery and rollouts
+- **A/B Testing**: Hypothesis testing with sequential and t-test statistical methods
+- **Mutual Exclusion Groups**: Prevent experiment interference
+- **Sticky Bucketing**: Consistent user assignment across sessions
+
+### Activation and Personalization
+Amplitude Activation leverages Analytics data for targeting:
+- **Behavioral Cohorts**: User segmentation based on actions
+- **Predictive Cohorts**: AI-powered future behavior prediction
+- **Recommendations**: ML-driven content personalization
+- **Third-party Syncs**: Audience export to marketing platforms
+
+## Key Nomenclature and Definitions
+
+### User Identification
+- **Amplitude ID**: Internal unique identifier merging device and user IDs
+- **Device ID**: Anonymous device identifier (IDFV, UUID, etc.)
+- **User ID**: Custom identifier for authenticated users
+- **MTU (Monthly Tracked Users)**: Billing metric for unique users per month
+
+### Event Structure
+- **Events**: User actions tracked in the system (e.g., "Button Clicked", "Page Viewed")
+- **Event Properties**: Contextual attributes of events (e.g., button_name, page_url)
+- **User Properties**: Persistent attributes of users (e.g., subscription_type, location)
+- **Active Events**: Events that indicate user engagement
+- **Inactive Events**: System events that don't represent user engagement
+
+### Analytics Concepts
+- **Cohorts**: Groups of users defined by shared characteristics or behaviors
+- **Segments**: Filtered subsets of users based on properties
+- **Conversion Window**: Time period for measuring funnel completion
+- **Retention Types**: "Return On" (specific day) vs "Return On or After" (any day after)
+- **Usage Intervals**: Frequency patterns of user engagement
+
+### Experimentation Terms
+- **Variants**: Different versions in an experiment (control, treatment)
+- **Exposure Events**: When users see experiment variants
+- **Assignment Events**: When users are allocated to variants
+- **MDE (Minimum Detectable Effect)**: Smallest change worth detecting
+- **Sequential Testing**: Continuous statistical monitoring vs fixed-sample t-tests
+
+## Broader Product Ecosystem Integration
+
+### Data Flow Architecture
+1. **Data Ingestion**: SDKs, HTTP API, third-party integrations (Segment, mParticle)
+2. **Data Processing**: Real-time event processing and user identity resolution
+3. **Data Storage**: Managed Snowflake/Redshift for query processing
+4. **Data Activation**: Export to marketing platforms, CDPs, and business tools
+
+### Integration Ecosystem
+- **Analytics Platforms**: Google Analytics comparison and migration tools
+- **Marketing Tools**: Braze, Iterable, Facebook, Google Ads integrations
+- **Development Tools**: GitHub, Jira, Slack integrations
+- **Business Intelligence**: SQL query interface, CSV exports, REST APIs
+- **Identity Providers**: SSO with Okta, Auth0, Azure AD, G Suite
+
+### Collaboration Features
+- **Spaces**: Organizational structure for team collaboration
+- **Dashboards**: KPI monitoring and executive reporting
+- **Notebooks**: Analytical storytelling and insight sharing
+- **Templates**: Reusable analysis patterns for common use cases
+- **Public Links**: External stakeholder sharing with password protection
+
+## API Endpoints and Technical Integration
+
+### Core APIs
+- **HTTP API v2**: Event ingestion endpoint for server-side tracking
+- **Identify API**: User property updates and user merging
+- **Export API**: Raw event data extraction in JSON format
+- **Cohort API**: Programmatic cohort management and export
+- **Profile API**: Real-time user property and recommendation retrieval
+
+### Experiment APIs
+- **Flag Evaluation API**: Remote variant assignment
+- **Assignment API**: Experiment exposure tracking
+- **Results API**: Statistical analysis data retrieval
+
+### Data Management APIs
+- **Taxonomy API**: Event and property schema management
+- **User Privacy API**: GDPR compliance and data deletion
+- **Releases API**: Version tracking and adoption metrics
+
+### Command Line Tools
+- **Ampli CLI**: Tracking plan synchronization and code generation
+  - `ampli pull`: Download tracking plan updates
+  - `ampli status`: Validate implementation against plan
+  - `ampli push`: Upload implementation changes
+
+### SDK Integration
+The platform supports comprehensive SDK coverage:
+- **Client-side**: JavaScript, React Native, Flutter, Unity
+- **Mobile**: iOS (Swift/Objective-C), Android (Java/Kotlin)
+- **Server-side**: Node.js, Python, Java, Go, PHP, Ruby
+
+This architecture enables organizations to implement comprehensive product analytics workflows from data collection through insight activation, with strong governance and collaboration features supporting enterprise-scale deployments.

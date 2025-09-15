@@ -1,0 +1,18 @@
+Full content: title: Sections
+template: default
+layout: layout
+revisions: false
+route: '/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false
+inject:
+  hide_toc: true

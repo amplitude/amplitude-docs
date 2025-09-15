@@ -1,0 +1,23 @@
+**Summary:** This documentation explains Amplitude's AI-powered Prediction feature within Amplitude Activation, which uses logistic regression models to segment users based on future action likelihood rather than past behavior, analyzing events, event properties, and user properties to optimize targeting workflows for communication frequency, dynamic pricing, and content personalization.
+
+**Keywords:**
+- Amplitude Prediction
+- Amplitude Activation
+- predictive cohorts
+- logistic regression model
+- targeting workflow optimization
+- user segmentation
+- future action likelihood
+- behavioral cohorts
+- event properties
+- user properties
+- conversion probability
+- incremental lift
+- communication frequency
+- dynamic pricing
+- content personalization
+- user journey mapping
+- statistical inference
+- probability scoring
+- seasonality data
+- campaign targeting

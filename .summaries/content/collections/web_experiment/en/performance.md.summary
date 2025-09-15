@@ -1,0 +1,13 @@
+**Summary:** Documents Web Experiment performance characteristics including dynamic script sizing (79KB base + ~1KB per flag), two-layer caching strategy (CDN with 60s max-age and browser cache), synchronous local evaluation (<1ms), and ad blocker impact on user assignment tracking.
+
+**Keywords:**
+- Web Experiment script performance
+- dynamic script sizing per experiment flag
+- CDN caching max-age 60 seconds
+- stale-while-revalidate 3600
+- browser cache control headers
+- synchronous evaluation CPU bound
+- ad blocker assignment event blocking
+- experiment configuration bundling
+- variant action application latency
+- flag deactivation script optimization

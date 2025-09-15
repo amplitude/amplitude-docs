@@ -1,0 +1,75 @@
+## Amplitude Python SDK
+
+The Amplitude Python SDK is a comprehensive analytics tracking solution that enables Python applications to send event data to Amplitude's analytics platform. The SDK provides both a core analytics package (`amplitude-analytics`) and a code-generation wrapper (`Ampli`) that creates strongly-typed tracking libraries from Amplitude Data tracking plans.
+
+## Product Relationship and Architecture
+
+The Python SDK ecosystem consists of two complementary components:
+
+**Core SDK (`amplitude-analytics`)**: The foundational package that handles direct event transmission, client configuration, and plugin architecture. It manages the underlying mechanics of data collection, batching, storage, and delivery to Amplitude's servers.
+
+**Ampli Wrapper**: A code-generation layer that sits on top of the core SDK, transforming Amplitude Data tracking plans into strongly-typed Python classes and methods. This wrapper provides compile-time safety and IDE autocomplete for event tracking while leveraging the core SDK's infrastructure.
+
+## Key Nomenclature and Definitions
+
+**Events and Tracking**:
+- `BaseEvent`: Core event structure for tracking user actions
+- `EventOptions`: Configuration parameters for individual events (user_id, device_id, event_properties)
+- `SongPlayed`: Example of generated event classes from tracking plans
+
+**User and Group Management**:
+- `Identify`: Operations for setting user properties
+- `set_group()`: Method for associating users with groups
+- `group_identify()`: Function for setting group-level properties
+- `group_type`/`group_name`: Parameters for group categorization
+
+**Revenue Tracking**:
+- `Revenue`: Interface for tracking monetization events
+- `product_id`: Identifier for purchased items
+- `revenue_type`: Classification of revenue streams
+
+**Configuration and Performance**:
+- `flush_queue_size`: Batch size threshold for event transmission
+- `flush_interval_millis`: Time-based trigger for sending queued events
+- `flush_max_retries`: Error handling parameter for failed requests
+- `use_batch`: Toggle for batch API utilization
+- `server_zone`: Geographic routing (EU/US)
+
+**Plugin Architecture**:
+- `EventPlugin`: Interface for event processing extensions
+- `DestinationPlugin`: Handlers for event delivery endpoints
+- `PluginType.ENRICHMENT`: Classification for data enhancement plugins
+- `pre_insert`/`post_insert`: Lifecycle hooks for event processing
+
+**Storage and Buffering**:
+- `InMemoryStorageProvider`: Default storage mechanism for event queuing
+- Storage buffer: Temporary holding area for events before transmission
+
+## Broader Product Ecosystem Integration
+
+The Python SDK integrates into Amplitude's comprehensive analytics ecosystem through multiple touchpoints:
+
+**Data Pipeline Integration**: Events flow through Amplitude's batch API infrastructure, with configurable server zones (EU/US) for data residency compliance and geographic optimization.
+
+**Amplitude Data Platform**: The Ampli wrapper connects directly to Amplitude Data's tracking plan management system, enabling schema-driven development where tracking specifications are centrally managed and automatically distributed to client implementations.
+
+**Plugin Ecosystem**: The extensible plugin architecture allows integration with third-party tools and custom data processing workflows, supporting both enrichment plugins for data enhancement and destination plugins for multi-platform event distribution.
+
+## API Endpoints and Command Line Interface
+
+**CLI Operations**:
+- `ampli pull`: Downloads and generates tracking code from Amplitude Data tracking plans
+- `ampli status`: Verifies implementation compliance against tracking plan specifications
+
+**Core SDK Methods**:
+- Client initialization with API key and `LoadOptions`/`LoadClientOptions`
+- `ampli.identify()`: User property management
+- `ampli.track()`: Event transmission
+- `ampli.flush()`: Manual queue processing
+- `group_identify()`: Group property updates
+
+**Installation Commands**:
+- `pip install amplitude-analytics`: Core SDK installation
+- `npm install @amplitude/ampli`: CLI tooling installation
+
+The SDK supports Python 3.6+ environments and provides both synchronous and asynchronous operation modes, with comprehensive error handling and retry mechanisms for reliable data delivery in production applications.

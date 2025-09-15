@@ -1,0 +1,60 @@
+# Amplitude Node.js SDK
+
+The Amplitude Node.js SDK is a comprehensive server-side analytics solution that enables JavaScript and TypeScript applications to track user behavior, events, and properties within the Amplitude analytics platform. The SDK ecosystem provides multiple implementation approaches ranging from basic event tracking to strongly-typed, schema-driven analytics with compile-time validation.
+
+## Product Architecture and Relationships
+
+The ecosystem consists of three interconnected components that address different development needs and migration scenarios:
+
+The **Current Generation SDK** (`@amplitude/analytics-node`) represents the actively maintained solution built on a modern plugin architecture. It leverages Amplitude's HTTP V2 API and provides advanced features including configurable batching, queue management, and extensible plugin systems for event enrichment and destination routing.
+
+The **Legacy SDK** (`@amplitude/node`) operates in maintenance mode as a TypeScript-based solution that supports existing implementations during migration periods. This SDK uses middleware-based event processing and maintains backward compatibility for established integrations while users transition to the current generation.
+
+The **Ampli Wrapper System** functions as a code generation layer that creates strongly-typed APIs on top of either underlying SDK. Ampli generates TypeScript and JavaScript classes directly from Amplitude Data tracking plans, providing compile-time validation, IDE autocomplete support, and schema enforcement for analytics implementations.
+
+## Core Nomenclature and Definitions
+
+**Tracking Plans** serve as the foundational schema definitions within Amplitude Data that specify event structures, property types, validation rules, and user attributes. These plans drive the Ampli code generation process and establish the contract between analytics implementation and data governance requirements.
+
+**Plugin Architecture** defines the current SDK's extensible system where `EnrichmentPlugin` instances modify events before transmission and `DestinationPlugin` instances handle event routing and delivery. This contrasts with the legacy SDK's **Middleware** approach that processes events through sequential middleware chains.
+
+**Event Batching** encompasses the SDK's capability to aggregate multiple events before transmission, controlled by configuration parameters such as `flushQueueSize`, `flushIntervalMillis`, and `maxCachedEvents` depending on the SDK version in use.
+
+**Identify Operations** represent user property management methods including `set` for direct assignment, `setOnce` for initial value setting, `prepend` and `append` for array manipulation, and `preInsert`/`postInsert` for conditional array operations.
+
+**Group Analytics** enables tracking of organizational or categorical user segments through `groupIdentify` operations that manage properties at the group level rather than individual user level.
+
+## Ecosystem Integration
+
+The Node.js SDK integrates deeply with Amplitude's broader analytics infrastructure through multiple integration points:
+
+**Amplitude Data** provides the schema management and governance layer where tracking plans define event structures that the Ampli CLI transforms into strongly-typed code. This integration ensures consistency between planned analytics schemas and actual implementation.
+
+**HTTP V2 API** serves as the communication protocol with Amplitude's ingestion infrastructure, utilizing endpoints like `api2.amplitude.com/2/httpapi` for individual events and dedicated batch endpoints for bulk operations.
+
+**EU Data Residency** support enables compliance with regional data protection requirements through `serverZone` and `serverUrl` configuration options that route events to European infrastructure when required.
+
+**Multi-Instance Architecture** allows applications to maintain separate Amplitude instances for different projects, environments, or data streams within a single application context.
+
+## API Methods and CLI Commands
+
+**Ampli CLI Operations:**
+- `ampli pull` - Downloads tracking plan schemas from Amplitude Data and generates corresponding strongly-typed event classes
+- `ampli status` - Validates local implementation against remote tracking plan definitions to identify schema drift
+
+**Core SDK Methods:**
+- `init(apiKey, config)` - Initializes SDK instances with API keys and configuration objects
+- `track(eventType, eventProperties, eventOptions)` - Transmits events with optional user context and metadata
+- `identify(identifyEvent, eventOptions)` - Updates user properties through Identify operations
+- `groupIdentify(groupType, groupName, identifyEvent)` - Manages group-level properties and associations
+- `revenue(revenueEvent)` - Tracks monetization events using the Revenue interface
+- `flush()` - Forces immediate transmission of queued events bypassing batch timing
+
+**Configuration Parameters:**
+- `flushQueueSize`/`maxCachedEvents` - Controls the number of events that trigger automatic batch transmission
+- `flushIntervalMillis`/`uploadIntervalInSec` - Manages time-based automatic flush intervals
+- `minIdLength` - Enforces minimum character requirements for user and device identifiers
+- `useBatch` - Enables batch API endpoint usage for improved performance
+- `transportProvider` - Allows customization of HTTP transport implementation for specialized networking requirements
+
+The SDK ecosystem supports both CommonJS and ES module packaging standards, provides comprehensive TypeScript definitions with JSDoc documentation for JavaScript projects, and maintains clear migration paths for organizations transitioning between SDK generations while preserving existing analytics data and implementation patterns.

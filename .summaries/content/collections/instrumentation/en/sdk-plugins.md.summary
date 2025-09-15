@@ -1,0 +1,28 @@
+## Summary
+This documentation covers Amplitude SDK plugins that extend analytics behavior through setup() and execute() methods, including enrichment plugins for event modification/filtering and destination plugins for routing to third-party services like Segment, Hotjar, Google Analytics, and FullStory.
+
+## Keywords
+- Amplitude SDK plugins
+- enrichment plugins
+- destination plugins
+- setup() method
+- execute() method
+- event filtering
+- event transformation
+- PII removal
+- third-party routing
+- Segment integration
+- Hotjar integration
+- Google Analytics integration
+- FullStory integration
+- PluginType.ENRICHMENT
+- PluginType.DESTINATION
+- amplitude.add()
+- event propagation
+- user_properties
+- event_properties
+- EnrichmentPlugin interface
+- DestinationPlugin interface
+- BrowserConfig
+- Event object
+- Result object

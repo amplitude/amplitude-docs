@@ -1,0 +1,15 @@
+**Summary:** This documentation describes the Convizit source integration that automatically captures website click events and sends them to Amplitude as raw events with pre-structured event names and properties, delivering data every 30 minutes through a partner-maintained integration requiring Org ID, Project name, and API key for setup.
+
+**Keywords:**
+- Convizit source integration
+- AI-based Digital Experience Data Platform
+- automatic website click capture
+- raw-events integration type
+- 30-minute data delivery interval
+- partner-maintained source
+- insert_id field mapping
+- plan.source field identification
+- User Look-Up event verification
+- website integration category
+- pre-structured event properties
+- Amplitude API key setup

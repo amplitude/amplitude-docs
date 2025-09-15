@@ -36,7 +36,7 @@ The framework integrations support hybrid implementation patterns where both cli
 
 **Configuration Elements:**
 - **Environment Variables**: Framework-specific variable management (e.g., NEXT_PUBLIC_AMPLITUDE_API_KEY)
-- **Middleware Integration**: Framework routing middleware for analytics implementation
+- **Middleware Integration**: Framework routing middleware for analytics integration
 - **Debug Configuration**: logLevel settings for development and troubleshooting
 
 ## Broader Product Ecosystem Integration
@@ -55,7 +55,6 @@ The framework integrations represent a critical layer in Amplitude's broader ana
 - User identification and session management systems
 
 **Technical Implementation Patterns:**
-The integrations accommodate various deployment and development patterns including server-side rendering, static site generation, and single-page application architectures, ensuring Amplitude's analytics capabilities can be leveraged regardless of the chosen framework implementation approach.
+The integrations address framework-specific challenges such as server-side rendering considerations, environment variable management, browser availability checks (window undefined scenarios), and proper SDK initialization timing within framework lifecycles.
 
-**Browser Compatibility and Environment Handling:**
-The integrations include specific handling for browser environment detection (window undefined checks) and framework-specific rendering patterns, ensuring reliable analytics functionality across different execution contexts within modern web applications.
+The framework integration documentation enables developers to maintain their preferred development patterns while gaining access to Amplitude's full analytics capabilities, supporting both simple client-side implementations and complex hybrid architectures that leverage both browser and server-side tracking capabilities.

@@ -1,0 +1,23 @@
+## Summary
+This FAQ documentation covers Event Segmentation chart functionality in Amplitude Analytics, including chart setup options (+Group-by, +Filter by, date ranges), custom formulas (ROLLWIN, PROP(), percentage calculations), measurement types (Active %, New Users, Average of Property Value), behavioral cohorts, and data export limitations.
+
+## Keywords
+- Event Segmentation chart
+- +Group-by filtering
+- +Filter by properties
+- Custom formulas ROLLWIN
+- PROP() formulas
+- Active % metric calculation
+- New Users definition
+- Average of Property Value
+- Behavioral cohorts segmentation
+- who performed filter
+- Microscope user download
+- CSV export limitations
+- 10,000 values group-by limit
+- Glob match filtering
+- Date picker intervals
+- Compare Previous year
+- Incomplete data processing
+- Bar chart vs line chart deduplication
+- Accounts vs Users segmentation

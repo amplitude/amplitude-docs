@@ -1,0 +1,20 @@
+## Summary
+The Experiment Management API enables programmatic creation and control of feature flags, experiments, mutex groups, holdouts, and deployments through REST endpoints with Bearer token authentication and cursor-based pagination.
+
+## Keywords
+- Experiment Management API
+- feature flags programmatic control
+- experiment CRUD operations
+- mutex groups API
+- holdout groups API
+- deployment management endpoints
+- version APIs
+- Bearer token authentication
+- management API key
+- cursor-based pagination
+- rate limiting 100 requests/second
+- experiment.amplitude.com endpoint
+- flag variants deployment keys
+- HTTP Authorization header
+- nextCursor pagination
+- experiment sidebar management

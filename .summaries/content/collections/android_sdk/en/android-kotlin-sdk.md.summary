@@ -1,0 +1,37 @@
+## Summary
+
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features (sessions, app lifecycles, screen views, deep links, element interactions), tracking methods (track, identify, revenue), user/device ID management, plugins system, and advanced features like offline mode and network tracking plugin.
+
+## Keywords
+
+- android-kotlin-sdk
+- com.amplitude:analytics-android
+- gradle-maven-installation
+- flushIntervalMillis
+- flushQueueSize
+- autocapture-options
+- AutocaptureOption.SESSIONS
+- AutocaptureOption.APP_LIFECYCLES
+- AutocaptureOption.SCREEN_VIEWS
+- AutocaptureOption.DEEP_LINKS
+- AutocaptureOption.ELEMENT_INTERACTIONS
+- track-identify-revenue
+- deviceId-userId-management
+- advertising-id-ADID
+- app-set-id
+- plugins-enrichment-destination
+- NetworkTrackingPlugin
+- OkHttp-interceptor
+- offline-mode
+- ACCESS_NETWORK_STATE
+- session-tracking
+- minTimeBetweenSessionsMillis
+- TrackingOptions
+- COPPA-control
+- location-tracking
+- serverZone-EU
+- batch-API
+- Jetpack-Compose
+- testTag-modifier
+- TelephonyManager
+- proguard-configuration

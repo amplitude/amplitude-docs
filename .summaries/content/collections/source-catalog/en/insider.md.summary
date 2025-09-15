@@ -1,0 +1,18 @@
+**Summary:** This documentation covers the Insider Growth Management Platform integration with Amplitude, supporting both raw event ingestion from Insider's messaging channels (email, SMS, in-app) and bidirectional cohort sharing for personalized marketing campaigns across multiple channels.
+
+**Keywords:**
+- Insider Growth Management Platform (GMP)
+- raw-events integration
+- cohorts integration
+- messaging channel events
+- Email Open events
+- SMS Click events
+- Journey Entered events
+- In-App events
+- unique_user_id (UUID)
+- bidirectional data flow
+- marketing-automation
+- personalized journeys
+- channel interaction events
+- Insider Customer Success Manager
+- partner-maintained integration

@@ -1,0 +1,13 @@
+**Summary:** This documentation explains how Amplitude calculates time intervals in retention analysis charts, covering the differences between rolling 24-hour windows (default) and strict calendar dates for measuring daily, weekly, and monthly retention rates, including timestamp rounding, cohort bucketing, and retention type calculations.
+
+**Keywords:**
+- retention analysis time calculation
+- rolling 24-hour windows
+- strict calendar dates
+- timestamp rounding hourly basis
+- cohort bucketing multiple events
+- daily weekly monthly retention intervals
+- Return On vs Return On or After
+- new user retention segmentation
+- calendar timezone project settings
+- retention type calculations

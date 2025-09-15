@@ -1,0 +1,16 @@
+**Summary:** This documentation covers the Kochava (Install) destination integration for streaming install events from Amplitude to Kochava using the IdentityLink API, requiring Kochava App GUID and device identifiers (IDFA, IDFV, ADID, Android ID) for mobile attribution tracking.
+
+**Keywords:**
+- Kochava Install destination
+- IdentityLink API
+- install events streaming
+- Kochava App GUID
+- mobile attribution integration
+- device identifiers (IDFA, IDFV, ADID, Android ID)
+- Kochava Device ID mapping
+- event streaming destination
+- mobile marketing attribution
+- post-install vs install integration
+- Kochava secret authentication key
+- 2MB request limit
+- 429 rate limiting

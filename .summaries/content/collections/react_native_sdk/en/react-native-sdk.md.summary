@@ -1,0 +1,28 @@
+## Summary
+
+This documentation covers the React Native SDK for Amplitude analytics, detailing installation, initialization, configuration, and event tracking functionality. It includes specific compatibility requirements for React Native versions, native module dependencies like @react-native-async-storage/async-storage, and platform-specific features like advertising identifiers (ADID, IDFV, IDFA, AppSetId) and carrier tracking limitations on iOS 16+.
+
+## Keywords
+
+- @amplitude/analytics-react-native
+- React Native SDK
+- @react-native-async-storage/async-storage
+- pod install iOS
+- trackingOptions
+- ADID IDFV IDFA AppSetId
+- carrier tracking iOS 16
+- EnrichmentPlugin DestinationPlugin
+- Revenue interface
+- Identify operations
+- setGroup groupIdentify
+- flushQueueSize flushIntervalMillis
+- migrateLegacyData maintenance SDK
+- Expo OTA updates
+- play-services-appset play-services-ads-identifier
+- CTCarrier serviceSubscriberCellularProviders
+- location_lat location_lng
+- HTTP V2 API batch mode
+- serverZone EU data residency
+- transportProvider custom HTTP client
+- LogLevel debug mode
+- session tracking trackingSessionEvents

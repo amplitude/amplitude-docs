@@ -1,0 +1,22 @@
+## Summary
+This documentation covers Amplitude Data's methods for handling invalid or incorrect data through drop filters (query-time filtering), block filters (ingestion-time blocking), and deletion of events/properties, including technical details about filter limitations, data immutability, and the User Privacy API for complete user deletion.
+
+## Keywords
+- Amplitude Data
+- drop filters
+- block filters
+- data ingestion blocking
+- event deletion
+- property deletion
+- query-time filtering
+- data immutability
+- User Privacy API
+- event volume limit
+- main branch filtering
+- self-service data deletion
+- blocked events recovery
+- custom events blocking
+- instrumentation issues
+- bot traffic blocking
+- IP address filtering
+- application version blocking

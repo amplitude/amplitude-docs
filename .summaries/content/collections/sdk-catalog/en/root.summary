@@ -1,0 +1,91 @@
+## Amplitude SDK Catalog
+
+The Amplitude SDK Catalog is a comprehensive collection of Software Development Kits (SDKs) that enable developers to integrate Amplitude's analytics platform across multiple programming languages, frameworks, and platforms. This catalog serves as a centralized directory for accessing Amplitude's data collection and analytics capabilities across diverse development environments.
+
+## Product Relationships and Architecture
+
+The SDK catalog represents a unified approach to analytics integration, where each SDK provides platform-specific implementations of Amplitude's core analytics functionality. All SDKs in the catalog share common objectives:
+
+- **Event Tracking**: Capture user interactions and behavioral data
+- **Session Management**: Track user sessions across different platforms
+- **Device Identification**: Maintain consistent user identity across sessions
+- **Data Transmission**: Efficiently send analytics data to Amplitude servers
+- **Configuration Management**: Provide flexible setup options for different use cases
+
+The SDKs are organized into several categories:
+- **Web/Browser**: Browser SDK for client-side web applications
+- **Mobile Native**: iOS (Swift) and Android (Kotlin) for native mobile development
+- **Cross-Platform Mobile**: React Native, Flutter, and Unity for hybrid mobile solutions
+- **Server-Side**: Node.js, Python, Java, and Go for backend analytics
+- **Game Development**: Unity and Unreal Engine for gaming applications
+
+## Key Nomenclature and Definitions
+
+### Core Components
+- **SDK Catalog**: The centralized directory of all available Amplitude SDKs
+- **Blueprint**: The structural template (`sdk-catalog`) that defines the metadata schema for each SDK entry
+- **Source URL**: Direct links to comprehensive SDK documentation on the Amplitude developers portal
+- **Template**: The rendering template (`sdk-landing`) used for SDK catalog pages
+
+### Configuration Terminology (Android SDK Example)
+- **flushIntervalMillis**: Time interval for automatic event transmission
+- **flushQueueSize**: Maximum number of events queued before forced transmission
+- **deviceId**: Unique identifier for device tracking
+- **serverZone**: Geographic server location (US/EU) for data residency
+- **trackingSessionEvents**: Automatic session lifecycle event capture
+- **defaultTracking**: Pre-configured tracking options for common events
+- **COPPA**: Children's Online Privacy Protection Act compliance controls
+- **migrateLegacyData**: Data migration from previous SDK versions
+
+### Platform-Specific Features
+- **useAdvertisingIdForDeviceId**: Android advertising ID integration
+- **useAppSetIdForDeviceId**: Android App Set ID for privacy-compliant tracking
+- **AndroidStorageProvider**: Custom storage implementation options
+- **identifyBatchIntervalMillis**: User identification event batching
+- **minTimeBetweenSessionsMillis**: Session timeout configuration
+
+## Product Ecosystem Integration
+
+The SDK catalog integrates into Amplitude's broader analytics ecosystem through several key mechanisms:
+
+### Data Pipeline Integration
+All SDKs connect to Amplitude's unified data ingestion pipeline, ensuring consistent data processing regardless of the source platform. The SDKs support both real-time and batch data transmission modes.
+
+### Cross-Platform Consistency
+The catalog maintains API consistency across platforms while accommodating platform-specific requirements. For example, mobile SDKs include device-specific features like advertising ID integration, while server-side SDKs focus on high-throughput batch processing.
+
+### Developer Experience
+The catalog provides a unified developer experience through:
+- Consistent documentation structure across all SDKs
+- Standardized configuration patterns
+- Common event tracking methodologies
+- Shared debugging and troubleshooting approaches
+
+### Compliance and Privacy
+The SDK catalog addresses various compliance requirements:
+- GDPR compliance through EU server zones
+- COPPA compliance for applications targeting children
+- Privacy-focused device identification options
+- Data residency controls through server zone selection
+
+## Technical Implementation Details
+
+### Documentation Structure
+Each SDK entry contains:
+- Unique identifier for catalog management
+- Source URL pointing to detailed implementation documentation
+- Platform-specific logos and branding
+- Template specifications for consistent presentation
+- Metadata for content management and updates
+
+### Redirect Patterns
+Some SDKs (Unity, Unreal Engine) implement redirect patterns to consolidated documentation locations, indicating a more integrated documentation approach for game development platforms.
+
+### Content Management
+The catalog uses a structured content management system with:
+- Author tracking and attribution
+- Update timestamps for version control
+- Sitemap exclusion controls for SEO management
+- Blueprint-based content structure for consistency
+
+This SDK catalog serves as the primary entry point for developers seeking to implement Amplitude analytics across their technology stack, providing both breadth of platform coverage and depth of implementation guidance for each supported environment.

@@ -1,0 +1,68 @@
+## Amplitude Experiment Platform
+
+Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that enables teams to manage experiments, feature flags, and traffic allocation through both programmatic APIs and deployment-based configurations. The platform supports both remote and local evaluation modes, allowing for flexible implementation across client-side and server-side applications.
+
+## Product Architecture and Feature Relationships
+
+The Amplitude Experiment ecosystem consists of two primary API layers that work in tandem:
+
+**Management API Layer** (`experiment.amplitude.com/api/1/`) provides comprehensive CRUD operations for experiment configuration and administration, authenticated via Bearer tokens with management API keys. This layer handles the creation, modification, and lifecycle management of all experimental entities.
+
+**Evaluation API Layer** (`api.lab.amplitude.com/v1/`) focuses on runtime evaluation and variant assignment, authenticated via deployment keys. This layer serves live traffic and provides the actual experiment results to end users.
+
+The platform organizes experiments through a hierarchical structure where **deployments** serve as the top-level containers that experiments and flags are assigned to. Each deployment can be configured for either client-side or server-side evaluation, with corresponding deployment keys for authentication.
+
+**Experiments and Feature Flags** represent the core experimental units, supporting multiple variants with configurable rollout weights, target segments, and user inclusions/exclusions. Both support version control for tracking configuration changes over time and can operate in different evaluation modes (remote vs local).
+
+**Mutex Groups** provide traffic allocation management by ensuring mutual exclusion between experiments, preventing users from being exposed to conflicting tests. These groups use percentage-based slot allocation to distribute traffic across experiments and holdout groups.
+
+**Holdout Groups** enable control group management by excluding specified percentages of users from experimental exposure, allowing for measurement of overall experiment program impact.
+
+## Key Nomenclature and Definitions
+
+**Bucketing Configuration**: The mechanism for user assignment using bucketing keys (typically `amplitude_id` or `device_id`), bucketing salts for randomization, and bucketing units (User/Device) for consistent assignment.
+
+**Evaluation Modes**: 
+- **Remote**: Server-side evaluation where variant assignments are determined by Amplitude's servers
+- **Local**: Client-side evaluation where flag configurations are downloaded and evaluated locally
+
+**Rollout Management**:
+- **Rollout Percentage**: Overall traffic exposure for an experiment
+- **Rollout Weights**: Distribution of traffic across variants within the exposed population
+- **Target Segments**: Conditional logic for user targeting based on properties and cohorts
+
+**Experiment States**: Lifecycle management through planning, running, and decision-made states, with support for experiment decisions (rollout, rollback, continue-running).
+
+**Individual Inclusions/Exclusions**: User-level overrides for forcing specific users into or out of experiments, supporting both user IDs and device IDs.
+
+**Sticky Bucketing**: Ensures consistent user experience by maintaining variant assignments across sessions.
+
+## Broader Product Ecosystem Integration
+
+Amplitude Experiment integrates deeply with the broader Amplitude analytics ecosystem through several key touchpoints:
+
+**Event Tracking**: The platform automatically generates `[Experiment] Assignment` events when users are bucketed into variants, feeding directly into Amplitude Analytics for experiment analysis. The `X-Amp-Exp-Track` header controls this tracking behavior.
+
+**User Properties and Cohorts**: Target segments leverage Amplitude's user property system and cohort definitions for sophisticated audience targeting, allowing experiments to target users based on behavioral patterns and characteristics defined in Amplitude Analytics.
+
+**Regional Infrastructure**: The platform supports regional data residency with dedicated endpoints (`api.lab.amplitude.com`, `api.lab.eu.amplitude.com`) aligning with Amplitude's global infrastructure strategy.
+
+**SDK Integration**: The evaluation API supports bootstrapping of client-side SDKs through the `/v1/flags` endpoint, which downloads complete flag configurations including segments, variants, and evaluation metadata for local processing.
+
+## API Endpoints and Technical Implementation
+
+**Management API Endpoints**:
+- `GET/POST/PATCH /api/1/deployments` - Deployment lifecycle management
+- `GET/POST/PATCH /api/1/experiments` - Experiment configuration and control
+- `GET/POST/PATCH /api/1/flags` - Feature flag management
+- `GET/POST/PATCH /api/1/holdouts` - Holdout group administration
+- `GET/POST/PATCH /api/1/mutexs` - Mutex group traffic allocation
+- `GET /api/1/versions` - Version history with ISO 8601 time filtering
+
+**Evaluation API Endpoints**:
+- `POST /v1/vardata` - Real-time variant assignment with user context
+- `GET /v1/flags` - Flag configuration download for local evaluation
+
+**Authentication and Rate Limiting**: Management API uses Bearer token authentication with 100 requests/second rate limiting, while Evaluation API uses deployment key authentication via `Api-Key` headers. The platform implements cursor-based pagination for efficient data retrieval across large datasets.
+
+**Technical Features**: Support for JSON variant payloads, exposure event tracking, soft deletion for data preservation, and comprehensive version control for audit trails and rollback capabilities.

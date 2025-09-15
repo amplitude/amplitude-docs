@@ -1,0 +1,46 @@
+## Amplitude Engagement Matrix
+
+The Engagement Matrix is an advanced analytics chart feature within Amplitude that provides comprehensive analysis of product feature engagement through a sophisticated four-quadrant visualization system. This tool enables product teams to understand how different features perform across two critical dimensions: breadth (percentage of active users) and frequency (usage intensity), supporting analysis of up to 100 events simultaneously.
+
+## Product Relationships and Feature Integration
+
+The Engagement Matrix operates as a specialized chart type within Amplitude's broader analytics platform, specifically designed for Growth and Enterprise plan customers. It integrates seamlessly with Amplitude's core event tracking infrastructure, leveraging the platform's user segmentation capabilities and event property analysis. The feature connects to Amplitude's standard user metrics (%MAU, %WAU, %DAU) and extends them with frequency-based measurements (Average Times Performed, Average Days Performed).
+
+The matrix works in conjunction with Amplitude's broader chart ecosystem, offering unique insights that complement other analytical views. It supports account-level reporting and integrates with user segment analysis, allowing teams to filter and analyze engagement patterns across different user cohorts.
+
+## Key Nomenclature and Definitions
+
+**Engagement Matrix Chart**: The primary four-quadrant visualization that plots events based on breadth and frequency metrics.
+
+**Breadth Metrics**: Measures of user adoption including:
+- **% Monthly Active Users (%MAU)**: Percentage of monthly active users performing an event
+- **% Weekly Active Users (%WAU)**: Percentage of weekly active users performing an event  
+- **% Daily Active Users (%DAU)**: Percentage of daily active users performing an event
+
+**Frequency Metrics**: Measures of usage intensity including:
+- **Average Times Performed**: Mean number of times an event occurs per user
+- **Average Days Performed**: Mean number of days users perform an event
+
+**Four Quadrants Classification**:
+- **Core Features**: High user count, high frequency events
+- **Power Features**: Low user count, high frequency events
+- Events are categorized into high/low frequency and high/low user count segments
+
+**Event Selection Options**:
+- **Top Events**: Automatically selected highest-performing events
+- **Bottom Events**: Lowest-performing events for comparison
+- **Custom Event Selection**: Manual selection of specific events to analyze
+
+**Visualization Controls**:
+- **Median vs Average Sectioning**: Statistical approach for quadrant division
+- **Log vs Linear Scale**: Scale options for data representation
+- **Cross-sectional Gray Lines**: Visual dividers separating quadrants
+- **Cluster Zoom Analysis**: Capability to focus on specific event groupings
+
+## Broader Product Ecosystem Integration
+
+The Engagement Matrix fits into Amplitude's comprehensive product analytics ecosystem as a specialized tool for feature performance evaluation. It complements other Amplitude chart types by providing a unique dual-axis perspective that reveals engagement patterns not visible in traditional linear analytics.
+
+The feature leverages Amplitude's foundational event tracking infrastructure, user segmentation engine, and property analysis capabilities. It supports the platform's account-level reporting structure and integrates with CSV export functionality for further analysis. The matrix serves as a strategic tool for product teams to identify feature categories, optimize user engagement strategies, and make data-driven decisions about feature development and resource allocation.
+
+The breakdown table functionality extends the matrix's analytical capabilities, providing detailed event-level data that supports the visual insights with quantitative metrics. This integration ensures teams can move seamlessly from high-level pattern recognition to detailed performance analysis within the same interface.

@@ -1,0 +1,72 @@
+Amplitude Experiment Results is an advanced A/B testing analysis platform that enables Analytics customers to leverage Amplitude's statistical analysis capabilities regardless of their feature flagging platform. The product provides comprehensive experiment analysis tools through exposure event tracking, variant configuration, and sophisticated statistical testing methodologies.
+
+## Product Relationships and Features
+
+The Experiment Results functionality centers around the **Experiment Results chart**, which serves as the primary interface for A/B test analysis. This chart integrates with Amplitude's broader analytics ecosystem while accommodating external feature flagging platforms through exposure event mapping.
+
+Key feature relationships include:
+- **Exposure Events**: Foundation events that trigger experiment participation tracking
+- **Variant Configuration**: Defines test groups and control conditions for statistical comparison
+- **Success Metrics**: Multiple metric types that measure experiment outcomes
+- **Formula Metrics**: Advanced calculated metrics using predefined functions
+- **Statistical Analysis Engine**: Provides significance testing and confidence intervals
+
+## Key Nomenclature and Definitions
+
+**Core Experiment Concepts:**
+- **Exposure Events**: Events that indicate when a user enters an experiment variant
+- **Variants**: Different versions or conditions being tested in an experiment
+- **Attribution Window**: Time period for associating user actions with experiment exposure
+
+**Metric Types:**
+- **Unique Conversions**: Count of distinct users performing target actions
+- **Event Totals**: Aggregate count of specific events
+- **Property Value Metrics**: Sum or average calculations on event properties
+- **Funnel Conversion**: Multi-step conversion rate analysis
+- **Formula Metrics**: Custom calculations using predefined functions
+
+**Formula Functions:**
+- **UNIQUES**: Counts unique users using HyperLogLog algorithm
+- **TOTALS**: Sums event occurrences
+- **PROPSUM/PROPAVG**: Property value aggregations
+- **PROPCOUNT/PROPMAX/PROPMIN**: Property-based calculations with numerical grouping
+- **REVENUETOTAL**: Revenue-specific aggregation function
+
+**Statistical Methods:**
+- **Sequential Testing**: Continuous monitoring approach for ongoing experiments
+- **T-test**: Traditional statistical significance testing
+- **Confidence Intervals**: Statistical range estimates for metric performance
+- **P-values**: Statistical significance indicators
+- **Covariance**: Measure of metric relationship variance
+
+## Product Ecosystem Integration
+
+Experiment Results operates as a bridge between external feature flagging platforms and Amplitude's analytics infrastructure. This positioning allows organizations to maintain their existing feature flag management while accessing Amplitude's advanced statistical analysis capabilities.
+
+The product integrates with:
+- **Amplitude Analytics**: Core event tracking and user behavior analysis
+- **External Feature Flagging Platforms**: Through exposure event integration
+- **Amplitude Charts**: Visualization and reporting ecosystem
+- **Statistical Analysis Engine**: Advanced mathematical calculations for experiment validity
+
+## Technical Implementation
+
+**Analysis Capabilities:**
+- Cumulative exposure tracking over time
+- Performance comparison across variants
+- Mean value visualization with temporal trends
+- Confidence interval charting for statistical validation
+
+**Statistical Calculations:**
+- Variance calculation for metric stability
+- Mean calculation across experiment groups
+- Covariance analysis for metric relationships
+- P-value computation for significance testing
+
+**Visualization Features:**
+- Real-time experiment performance monitoring
+- Variant comparison dashboards
+- Statistical significance indicators
+- Temporal trend analysis
+
+The platform supports both single-use metric definitions for specific experiments and reusable formula metrics for consistent analysis across multiple tests. The system accommodates various statistical approaches, allowing teams to choose between sequential testing for ongoing monitoring and traditional T-tests for fixed-duration experiments.

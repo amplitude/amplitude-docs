@@ -1,0 +1,13 @@
+**Summary:** This documentation covers configuring experiment delivery settings in Amplitude Experiment, including evaluation mode selection (Remote vs Local), bucketing unit specification, deployment selection, variant verification, and QA tester assignment with user/device/cohort IDs.
+
+**Keywords:**
+- Amplitude Experiment delivery configuration
+- evaluation mode Remote Local
+- bucketing unit User company ID city
+- deployments code execution
+- QA tester assignment
+- user device cohort IDs
+- variant verification
+- Stable Unit Treatment Value Assumption
+- feature flag experiment launch
+- engineering team oversight

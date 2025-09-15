@@ -1,0 +1,19 @@
+**Summary:**
+This documentation explains Amplitude's unique user tracking system using three ID types (device ID, user ID, Amplitude ID) and describes the automatic merging process when anonymous users are later identified, including cross-domain tracking setup and merged user handling in raw data exports.
+
+**Keywords:**
+- Amplitude ID generation
+- Device ID tracking
+- User ID assignment
+- Anonymous user merging
+- Cross-domain tracking
+- IDFV (Identifier for Vendors)
+- UUID device identification
+- Merged users problem
+- Event ID sequencing
+- User property overwriting
+- Redshift raw data immutability
+- Multi-device user attribution
+- Anonymous-to-identified user transition
+- Portfolio cross-project user matching
+- MTU billing implications

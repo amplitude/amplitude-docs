@@ -1,0 +1,17 @@
+**Summary:** This Japanese translation documentation covers Part 1 of Amplitude's Data Taxonomy Playbook, focusing on pre-implementation planning including data governance rules, business goal definition, user journey mapping, critical path identification, and Amplitude project structure with separate test/production environments.
+
+**Keywords:**
+- データタクソノミー (data taxonomy)
+- Amplitude インストルメンテーション (instrumentation)
+- イベントベースアナリティクス (event-based analytics)
+- データガバナンスルール (data governance rules)
+- クリティカルパス (critical path)
+- ユーザージャーニー (user journey)
+- KPI重要業績評価指標 (key performance indicators)
+- テスト本番プロジェクト分離 (test/production project separation)
+- イベント命名法 (event naming conventions)
+- ファネルコンバージョン (funnel conversion)
+- オンボーディングプロセス (onboarding process)
+- プロダクト戦略設定 (product strategy)
+- Japanese translation blueprint
+- Amplitude プロジェクト構造 (project structure)

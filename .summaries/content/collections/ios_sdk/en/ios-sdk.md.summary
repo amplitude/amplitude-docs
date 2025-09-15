@@ -1,0 +1,23 @@
+**Summary:**
+This documentation covers the Amplitude Analytics iOS SDK (maintenance status) with installation via CocoaPods/Carthage/Swift Package Manager, initialization with API key, event tracking with properties, user properties management via AMPIdentify class, revenue tracking with AMPRevenue, session handling, and advanced features including EU data residency, COPPA compliance, IDFA/IDFV device ID management, SSL pinning, middleware support, and Apple privacy manifest requirements for iOS 16+ carrier tracking deprecation.
+
+**Keywords:**
+- Amplitude Analytics iOS SDK
+- CocoaPods Carthage Swift Package Manager installation
+- AMPIdentify user properties set setOnce add remove append prepend
+- AMPRevenue revenue tracking logRevenueV2
+- IDFA IDFV device ID useAdvertisingIdForDeviceId
+- CTTelephonyNetworkInfo CTCarrier deprecated iOS 16
+- EU data residency setServerZone AMPServerZone.EU
+- defaultTracking sessions appLifecycles screenViews deepLinks
+- AMPTrackingOptions disableCity disableIPAddress disableCarrier
+- COPPA enableCoppaControl
+- SSL pinning AMPLITUDE_SSL_PINNING preprocessor macro
+- middleware AMPMiddlewarePayload AMPMiddlewareNext
+- Apple privacy manifest NSPrivacyTracking NSPrivacyCollectedDataTypes
+- tvOS watchOS iOS extensions App Clips
+- minTimeBetweenSessionsMillis eventUploadThreshold eventUploadPeriodSeconds
+- setUserId setDeviceId regenerateDeviceId
+- setOptOut setOffline dynamic configuration useDynamicConfig
+- groupIdentifyWithGroupType setGroup logEventWithGroups
+- outOfSession session_id getSessionId

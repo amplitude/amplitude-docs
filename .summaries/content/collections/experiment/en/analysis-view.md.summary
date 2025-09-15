@@ -1,0 +1,13 @@
+**Summary:** This documentation explains the Experiment Analysis view in Amplitude Experiment, detailing the statistical columns (relative performance, confidence interval, significance, absolute value) and metrics table that help evaluate experiment success through variant comparison against control groups.
+
+**Keywords:**
+- Amplitude Experiment Analysis view
+- experiment statistical significance
+- confidence interval interpretation
+- relative performance lift calculation
+- variant vs control comparison
+- recommendation metric vs secondary metrics
+- unique conversions percentage
+- aggregate events per exposed user
+- p-value significance testing
+- experiment success evaluation metrics

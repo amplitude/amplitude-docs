@@ -1,0 +1,16 @@
+**Summary:** This documentation describes Amplitude's Customer.io event streaming destination integration that forwards Amplitude events and user data to Customer.io in real-time using Customer.io's tracking API, requiring Site ID and API Key authentication with configurable user identifier mappings.
+
+**Keywords:**
+- Customer.io event streaming
+- Amplitude Activation destination
+- Customer.io tracking API
+- Site ID authentication
+- Customer.io User Identifier mapping
+- cio_ canonical identifier
+- real-time event forwarding
+- Customer.io user attributes
+- HTTP V2 API integration
+- Identify API integration
+- Customer.io account region
+- event data transformation
+- user property synchronization

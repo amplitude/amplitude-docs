@@ -1,0 +1,23 @@
+## Summary
+This documentation covers Amplitude's Data Tables feature for multi-dimensional analysis, including creating tables with multiple metrics and group-by properties, using conversion metrics, transposing rows/columns, and cell-level operations like creating cohorts and applying attribution models.
+
+## Keywords
+- Data Tables
+- multi-dimensional analysis
+- multi-metric analysis
+- group-by properties
+- nested group-by
+- top-level group-by
+- Formula Metric
+- conversion metrics
+- transpose rows columns
+- attribution models
+- Session Totals metric
+- Uniques metric
+- period over period comparison
+- cohort creation
+- time dimension group-by
+- display options
+- Relative % for totals
+- Data bars in cells
+- Color % delta

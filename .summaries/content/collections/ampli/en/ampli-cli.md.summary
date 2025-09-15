@@ -1,0 +1,20 @@
+**Summary:** This documentation covers the Ampli CLI tool for Amplitude's type-safe analytics instrumentation, including installation via Homebrew/npm, initialization with `ampli pull` to generate tracking libraries from Amplitude Data tracking plans, source code verification with `ampli status`, and detailed command reference for pull, status, configure, init, and other CLI operations.
+
+**Keywords:**
+- Ampli CLI
+- @amplitude/ampli package
+- ampli pull command
+- ampli status command
+- Amplitude Data tracking plan
+- type-safe analytics library generation
+- source code instrumentation verification
+- ampli.json configuration
+- tracking plan branches and versions
+- CI pipeline integration
+- monorepo support
+- --update flag
+- --omit-api-keys/--include-api-keys options
+- instanceName parameter
+- sourceDir parameter
+- Browser/Node.js/iOS/Android platform support
+- tracking library generation paths

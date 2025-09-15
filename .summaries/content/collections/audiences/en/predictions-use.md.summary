@@ -1,0 +1,26 @@
+**Summary:** This documentation explains how to use prediction-based cohorts from Amplitude's AI predictions in marketing campaigns, covering three campaign types (inclusion criteria, dynamic pricing, content personalization), cohort syncing to destinations like Facebook/Google/Braze/Iterable, campaign setup with control groups, and measuring relative lift between predictive cohorts using variant vs control analysis.
+
+**Keywords:**
+- prediction-based cohorts
+- predictive cohorts
+- cohort syncing
+- Amplitude predictions
+- campaign targeting
+- inclusion criteria campaigns
+- dynamic pricing campaigns
+- content personalization
+- inverse pricing
+- holdout groups
+- control groups
+- relative lift analysis
+- variant vs control
+- Facebook Custom Audience
+- Google Customer List
+- Braze filter criteria
+- Iterable User List
+- multivariate testing
+- conversion rate lift
+- predictive model validation
+- campaign attribution windows
+- UTM parameter tracking
+- two-way sync

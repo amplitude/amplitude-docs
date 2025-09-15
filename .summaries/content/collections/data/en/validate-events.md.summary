@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Amplitude Data's Observe feature, which automatically monitors event tracking by analyzing the event stream against tracking plans, categorizing events with statuses (Unexpected, Valid, Invalid, Out of Date), and providing validation insights without requiring code changes.
+
+**Keywords:**
+- Amplitude Data Observe feature
+- event stream monitoring
+- tracking plan validation
+- event status categorization (Unexpected, Valid, Invalid, Out of Date)
+- runtime validation errors
+- Ampli CLI integration
+- event overlay functionality
+- environment-specific branch filtering
+- SDK source attribution
+- property validation indicators
+- % Seen indicator
+- type indicator validation
+- sparkline volume visualization
+- JavaScript Node.js Android iOS SDK support
+- schema version validation
+- Plus Growth Enterprise plan availability

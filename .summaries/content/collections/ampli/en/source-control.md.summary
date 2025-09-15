@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Ampli CLI source control integration with Git workflows, detailing how to use Ampli branches alongside Git branches for tracking plan updates, including commands like `ampli pull`, `ampli checkout`, `ampli status --is-merged`, and CI/CD integration with GitHub Actions for coordinating Data branch merges with Git branch merges.
+
+**Keywords:**
+- Ampli CLI
+- ampli pull
+- ampli checkout
+- ampli status --is-merged
+- ampli status --is-latest
+- ampli.json configuration
+- Data branch merging
+- tracking plan branches
+- GitHub Actions integration
+- Amplitude Data workflow
+- source control coordination
+- CI/CD branch checks
+- Ampli Wrapper code generation
+- --skip-update-on-default-branch
+- AMPLI_TOKEN
+- branch synchronization

@@ -1,0 +1,71 @@
+# Amplitude Digital Analytics Platform
+
+Amplitude is a comprehensive digital analytics and optimization platform that enables organizations to understand user behavior, conduct experiments, and optimize digital experiences through event tracking, data analysis, and experimentation tools.
+
+## Product Architecture and Relationships
+
+The Amplitude ecosystem consists of four interconnected core products that form a complete analytics and optimization suite:
+
+**Analytics** serves as the foundational product analytics platform, providing user behavior tracking and analysis capabilities that feed data to all other products in the ecosystem.
+
+**Data** manages tech stack integration and data infrastructure connectivity, enabling seamless data flow between Amplitude and external tools in an organization's data stack.
+
+**Experiment** delivers A/B testing and experimentation functionality, leveraging Analytics data to enable controlled testing and feature flag management for experience optimization.
+
+**Session Replay** provides visual context by capturing and reconstructing user sessions, complementing the quantitative data from Analytics with qualitative behavioral insights.
+
+These products operate in a hub-and-spoke model where Analytics provides the central data foundation, while Data, Experiment, and Session Replay extend specific capabilities while maintaining bidirectional data relationships.
+
+## Key Nomenclature and Technical Definitions
+
+**Event Properties**: Attributes specific to individual user actions or behaviors, captured at the moment of interaction.
+
+**User Properties**: Persistent attributes associated with user profiles that remain consistent across sessions and interactions.
+
+**Feature Flags**: Dynamic configuration management system that enables controlled rollout of features and experiments without code deployment.
+
+**SDK (Software Development Kit)**: Client-side libraries that enable applications to integrate with Amplitude's tracking and analytics capabilities across multiple programming languages and platforms.
+
+**API Key**: Unique project identifier that routes data to the correct Amplitude project and enables authentication for API calls.
+
+**Session Replay Plugin Architecture**: Extensible system for enhancing session recording capabilities, including components like `pageUrlEnrichmentPlugin` and `@amplitude/plugin-page-url-enrichment-browser`.
+
+**Blueprint System**: Template-based content architecture used in documentation management, defining structural templates for different page types (home, standard pages).
+
+**AmplitudeBootOptions**: Configuration object used during SDK initialization to define tracking parameters, user identification, and integration settings.
+
+## Broader Product Ecosystem Integration
+
+Amplitude positions itself as a central analytics hub within the modern data stack, designed to integrate with existing organizational infrastructure rather than replace it. The platform connects to:
+
+**Data Warehouses**: Through the Data product, enabling enterprise-scale analytics workflows and custom data analysis beyond Amplitude's native capabilities.
+
+**Development Environments**: Via comprehensive SDK support including Browser SDK 2, Swift SDK, and cross-platform implementations that integrate with existing application architectures.
+
+**External Tools and Platforms**: Through RESTful APIs that enable custom integrations, data synchronization, and workflow automation with third-party systems.
+
+**Content Management Systems**: The documentation architecture demonstrates integration capabilities with structured content systems, supporting multi-language localization (evidenced by the Japanese portal) and programmatic content delivery.
+
+## Technical Implementation and API Endpoints
+
+### SDK Integration Methods
+- `amplitude.init(API_KEY, options)` - Primary SDK initialization with project identification and configuration
+- `amplitudeEngagement.boot(AmplitudeBootOptions)` - Alternative initialization method for engagement tracking
+- `amplitude.add(plugin)` - Plugin system for extending SDK functionality
+
+### Session Replay Implementation
+- `@amplitude/session-replay-browser` package provides browser-based recording capabilities
+- Plugin architecture supports modular functionality extension
+- URL enrichment plugins enhance session context with navigation data
+
+### Developer Integration Framework
+The platform provides dual integration pathways:
+- **Client-side SDKs** for direct application integration across web, mobile, and cross-platform environments
+- **Server-side APIs** for programmatic access, custom integrations, and data operations
+
+### Documentation and Content APIs
+- **JSON API endpoints** enable programmatic access to documentation content
+- **LLMs.txt format** provides AI-optimized content delivery for integration with language models
+- **Multi-language support** through collection-based content organization with localized portals
+
+The platform's API-first architecture enables organizations to implement individual products independently or deploy the complete suite, with each component designed to enhance others while maintaining functional independence. This modular approach supports incremental adoption and custom implementation strategies aligned with existing organizational data infrastructure.

@@ -1,0 +1,20 @@
+**Summary:** This documentation explains how to use formula metrics in experimental results charts in Amplitude, covering supported formula functions (UNIQUES, TOTALS, PROPSUM, PROPAVG) and the statistical calculation methods for variance, mean, and p-values in experimental analysis.
+
+**Keywords:**
+- formula metrics
+- experimental results charts
+- UNIQUES function
+- TOTALS function
+- PROPSUM function
+- PROPAVG function
+- statistical significance calculation
+- variance calculation
+- experimental analysis
+- custom formulas
+- event segmentation
+- arithmetic operations
+- confidence intervals
+- p-values
+- covariance
+- Japanese translation
+- Amplitude experiments

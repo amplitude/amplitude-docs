@@ -1,0 +1,18 @@
+**Summary:** This documentation covers setting up notification alerts for Web and Feature experiments through Slack channels and webhooks, including Slack workspace integration, webhook schema configuration with signing keys, and alert scoping by project, deployment, or tags for flag lifecycle events (created/updated/deleted).
+
+**Keywords:**
+- experiment notifications
+- Slack channel alerts
+- webhook notifications
+- flag lifecycle events
+- sample-ratio mismatch (SRM)
+- experiment alerts function
+- webhook schema
+- signing key verification
+- alert scoping
+- deployment notifications
+- flag configuration changes
+- Member permissions
+- Slack workspace integration
+- experiment management API
+- flag endpoints JSON schema

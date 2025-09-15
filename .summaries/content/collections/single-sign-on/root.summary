@@ -1,0 +1,52 @@
+## Amplitude Single Sign-On (SSO) Product Overview
+
+Amplitude's Single Sign-On solution is a SAML 2.0-based authentication system that enables enterprise organizations to centralize user access control through existing identity providers. The core functionality centers on just-in-time (JIT) user provisioning and automatic email resolution from SAML assertions to grant appropriate project permissions within Amplitude organizations.
+
+## Product Architecture and Identity Provider Ecosystem
+
+The SSO system supports a comprehensive range of identity providers through both native integrations and custom SAML 2.0 compliance:
+
+**Native Provider Integrations:**
+- **Auth0** - SAML2 addon configuration with dedicated client creation workflows
+- **Okta** - Native SAML 2.0 app integration through administrative dashboard
+- **G Suite** - Custom SAML application setup via Google admin console
+- **Microsoft Azure Active Directory** - Enterprise application SAML configuration
+- **OneLogin** - SAML 2.0 app configuration with organization ID mapping
+
+**Custom Provider Framework:**
+- **Generic SAML 2.0 Provider Support** - Manual configuration interface for any SAML-compliant identity provider
+
+All integrations follow a standardized three-phase implementation: identity provider configuration, bidirectional metadata exchange, and Amplitude organizational settings configuration.
+
+## Core Technical Nomenclature and Definitions
+
+**SAML Configuration Components:**
+- **Entity ID** - Unique service provider identifier for Amplitude in SAML authentication exchanges
+- **Assertion Consumer Service URL (ACS URL)** - Designated endpoint receiving SAML assertions from identity providers post-authentication
+- **Identity Provider Metadata** - XML configuration containing provider certificates, authentication endpoints, and security parameters
+- **SAML Assertions** - Encrypted authentication tokens containing user identity data and attribute mappings
+
+**User Provisioning Framework:**
+- **Just-in-Time Provisioning (JIT)** - Automated user account creation during initial successful SSO authentication
+- **Email Resolution** - Automated extraction of user email addresses from SAML assertion attributes (user.mail, email claims from xmlsoap.org identity claims)
+- **Project Permissions** - Granular access rights automatically assigned based on organizational membership and SAML attribute mappings
+
+## Configuration Interfaces and Administrative Access
+
+**Primary Configuration Workflow:**
+1. **Identity Provider Setup** - Application/client creation within IdP administrative interface
+2. **SAML Parameter Configuration** - Entity ID and ACS URL configuration in provider settings
+3. **Metadata Exchange** - Bidirectional XML metadata file exchange between systems
+4. **Amplitude Integration** - SSO activation through Organization Settings interface
+
+**Administrative Access Points:**
+- **Organization Settings > Access & SSO Settings** - Primary SSO configuration and management interface
+- **Identity Provider Selection Dropdown** - Provider type selection including "Other" option for custom implementations
+- **Metadata File Upload Interface** - XML configuration import system for IdP integration
+- **SSO Status Management** - Enable/disable controls for organizational SSO enforcement
+
+## Enterprise Product Ecosystem Integration
+
+The SSO system operates as a core component of Amplitude's enterprise authentication architecture, requiring organizational administrator permissions for configuration and deployment. Available exclusively on Growth and Enterprise plan tiers, the system integrates with Amplitude's project-based permission model where successful SAML authentication automatically provisions users with appropriate organizational resource access based on identity provider attribute mappings.
+
+The SSO implementation functions as the primary enterprise access control mechanism, replacing traditional credential-based authentication with centralized identity management that aligns with corporate security policies, compliance requirements, and automated user lifecycle management processes. This integration supports enterprise security frameworks while maintaining seamless access to Amplitude's analytics platform and project-specific data resources.

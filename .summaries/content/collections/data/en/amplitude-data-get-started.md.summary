@@ -1,0 +1,18 @@
+**Summary:** This documentation covers Amplitude Data setup including data ingestion methods (client-side vs server-side SDKs, cloud storage, warehouses, event streaming), tracking plan creation, event/property selection, and implementation best practices like naming conventions and environment separation.
+
+**Keywords:**
+- Amplitude Data setup
+- data ingestion methods
+- client-side tracking
+- server-side tracking
+- Amplitude SDKs
+- Ampli instrumentation
+- tracking plans
+- event properties
+- data taxonomy
+- naming conventions
+- development vs production environments
+- cloud storage integration
+- event streaming
+- data planning playbook
+- destination catalog

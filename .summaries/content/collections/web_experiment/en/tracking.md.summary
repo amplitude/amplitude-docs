@@ -1,0 +1,13 @@
+**Summary:** Documents Web Experiment impression event tracking, including event transformation from `$impression` to `[Experiment] Impression` during ingestion, user property setting for experiment analysis, and estimation formula (M * E * P) for monthly impression volume calculation.
+
+**Keywords:**
+- Web Experiment impression events
+- `$impression` event transformation
+- `[Experiment] Impression` event type
+- flag_key and variant properties
+- experiment user properties
+- third-party CDP integration
+- impression estimation formula
+- monthly tracked users (MTU)
+- experiment analysis billing
+- variant action tracking

@@ -1,0 +1,17 @@
+**Summary:** This documentation explains how to configure email notifications for GDPR and privacy regulation compliance when Amplitude processes user data deletion requests, including setup of notification types (Job Creation, Job Completion, Unset Violation) at the project level with admin privileges required.
+
+**Keywords:**
+- user privacy notifications
+- GDPR compliance
+- data deletion requests
+- email notifications
+- project level configuration
+- admin privileges
+- Job Creation notifications
+- Job Completion notifications
+- Unset Violation notifications
+- SDK unset
+- User Privacy API
+- Organization settings
+- notification types and frequencies
+- team member notification management

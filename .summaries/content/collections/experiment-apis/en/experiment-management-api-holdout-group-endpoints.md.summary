@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude Experiment Management API endpoints for holdout group operations including GET /api/1/holdouts (list), GET /api/1/holdouts/<id> (details), PATCH /api/1/holdouts/{id} (edit), and POST /api/1/holdouts (create) with holdout-specific parameters like holdoutPercentage, bucketingKey, bucketingSalt, and experiment associations.
+
+**Keywords:**
+- holdout-group-endpoints
+- experiment-management-api
+- holdoutPercentage
+- bucketingKey
+- bucketingSalt
+- evaluationMode
+- individualInclusion
+- individualExclusion
+- experiment-associations
+- amplitude-experiment-api
+- holdout-configuration
+- GET-holdouts
+- PATCH-holdouts
+- POST-holdouts
+- holdout-CRUD-operations

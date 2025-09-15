@@ -1,0 +1,13 @@
+**Summary:** This documentation explains Amplitude Data's portfolio feature for cross-project analysis, which combines multiple source projects into a single view and differs from legacy Analytics-managed portfolios by displaying source project event/property metadata by default and requiring schema prioritization during creation.
+
+**Keywords:**
+- Amplitude Data portfolio
+- cross-project analysis
+- schema prioritization
+- source projects aggregation
+- portfolio creation workflow
+- Analytics-managed portfolio import
+- event property metadata override
+- project selector
+- schema conflicts resolution
+- legacy portfolio migration

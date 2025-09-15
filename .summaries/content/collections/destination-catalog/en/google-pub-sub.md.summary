@@ -1,0 +1,15 @@
+**Summary:** This documentation describes Amplitude Data's Google Pub/Sub integration for streaming Amplitude event data to Google Cloud Pub/Sub, including setup requirements for Pub/Sub topics, Google IAM service accounts with Pub/Sub Publisher role, and base64 encoded service account keys.
+
+**Keywords:**
+- Google Pub/Sub integration
+- Amplitude event streaming
+- Google Cloud service account
+- Pub/Sub Publisher role
+- base64 encoded service account key
+- Pub/Sub topic configuration
+- Amplitude Export API JSON format
+- Identify Forwarding
+- user_id event_name created_at
+- Google IAM service account
+- event-driven computing systems
+- stream analytics destination

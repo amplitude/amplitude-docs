@@ -1,0 +1,22 @@
+**Summary:**
+This Japanese documentation explains how to build Event Segment Analytics in Amplitude, covering the step-by-step process of creating event segmentation charts using events, properties, user segments, and various measurement options including unique users, event totals, active rates, frequency distributions, and property-based calculations.
+
+**Keywords:**
+- Event Segment Analytics (イベントセグメント分析)
+- Amplitude event segmentation charts
+- Japanese translation documentation
+- User segments (ユーザーセグメント)
+- Event properties filtering
+- Measurement options (測定方法)
+- Unique users (ユニーク数)
+- Event totals (イベント数)
+- Active rates (アクティブ率)
+- Frequency distribution (実行回数分布)
+- Property value calculations
+- Custom formulas (カスタム数式)
+- Microscope functionality
+- Active events vs inactive events
+- Group segment by user properties
+- Filter by properties
+- Performed events filtering
+- Custom buckets configuration

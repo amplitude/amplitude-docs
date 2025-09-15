@@ -1,0 +1,29 @@
+## Summary
+This documentation covers the Node.js SDK (@amplitude/analytics-node) for sending events to Amplitude, including installation, initialization with API keys, event tracking with HTTP V2 API constraints, user properties management through Identify operations, user groups, revenue tracking, batching configuration, EU data residency setup, and plugin system for enrichment and destination customization.
+
+## Keywords
+- @amplitude/analytics-node
+- Node.js SDK
+- HTTP V2 API
+- event tracking
+- flushQueueSize
+- flushIntervalMillis
+- Identify operations
+- user properties
+- setOnce, prepend, append, preInsert, postInsert
+- user groups
+- groupIdentify
+- Revenue interface
+- serverZone EU
+- useBatch configuration
+- minIdLength validation
+- transportProvider
+- EnrichmentPlugin
+- DestinationPlugin
+- PluginType
+- serverUrl batch API
+- storageProvider MemoryStorage
+- logLevel debugging
+- setOptOut tracking
+- multiple instances
+- Promise interface callbacks

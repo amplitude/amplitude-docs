@@ -1,0 +1,16 @@
+**Summary:** Documents the Split integration for importing feature flag traffic impression data into Amplitude, covering bidirectional setup with raw-events and cohorts integration types, traffic type mapping to Amplitude identities (user_id/device_id), and custom event naming for get_treatment impressions.
+
+**Keywords:**
+- Split integration
+- traffic impression data
+- feature flags
+- get_treatment events
+- traffic type mapping
+- user_id device_id mapping
+- raw-events integration
+- cohorts integration
+- Impact-Driven Development
+- experimentation platform
+- impression events
+- Split environments configuration
+- API key secret setup

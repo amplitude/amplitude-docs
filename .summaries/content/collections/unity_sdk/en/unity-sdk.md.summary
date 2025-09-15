@@ -1,0 +1,24 @@
+**Summary:**
+This documentation covers the Amplitude Analytics Unity SDK, a plugin that integrates Amplitude iOS and Android SDKs into Unity projects (2019.3.11+), including installation via Unity Package Manager or manual download, configuration options for batching behavior and EU data residency, event logging with properties, user property management through Identify operations, revenue tracking with verification, and advanced features like COPPA control, IDFA/GPS setup for iOS, and dynamic configuration.
+
+**Keywords:**
+- Unity SDK
+- amplitude-unity.unitypackage
+- Unity Package Manager installation
+- ProGuard obfuscation rules
+- unity-jar-resolver
+- OkHTTP dependency
+- AmplitudeServerZone.EU
+- setEventUploadPeriodSeconds batching
+- Identify operations (setUserProperty, setOnce, add, append)
+- logRevenue with verification
+- session tracking with trackSessionEvents
+- COPPA control enableCoppaControl
+- IDFA tracking CustomIdfa.m
+- GPS location tracking CustomGPS.m
+- dynamic configuration setUseDynamicConfig
+- Android API 21 compatibility
+- iOS XCode simulator setup
+- useAdvertisingIdForDeviceId
+- useAppSetIdForDeviceId
+- setMinTimeBetweenSessionsMillis

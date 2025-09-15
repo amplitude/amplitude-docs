@@ -1,0 +1,48 @@
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of several interconnected products including Analytics, Experiment, Data, and various specialized features for marketing, web analytics, and user engagement.
+
+## Core Product Ecosystem
+
+The Amplitude ecosystem centers around **Amplitude Analytics** as the foundational product, which provides behavioral analytics capabilities through various chart types and analysis methods. **Amplitude Experiment** handles feature flagging and A/B testing workflows, while **Amplitude Data** manages data governance and taxonomy. The platform also includes specialized tools like **Session Replay**, **Guides and Surveys**, and **Web Experimentation** for comprehensive user experience optimization.
+
+The products integrate seamlessly with external platforms including Google Ads, HubSpot, and support warehouse-native implementations that allow direct querying of existing data warehouses while maintaining Amplitude's analytical capabilities.
+
+## Key Analysis Features and Chart Types
+
+Amplitude offers multiple specialized analysis methods through distinct chart types:
+
+- **Event Segmentation Chart**: The foundational analysis tool for understanding user behavior patterns and event metrics
+- **Funnel Analysis**: Diagnoses conversion issues by tracking user progression through defined steps
+- **Path Analysis**: Works alongside funnel analysis to understand user journey flows
+- **Retention Analysis**: Measures product adoption and user return patterns over time
+- **Stickiness Analysis**: Identifies power users by analyzing regular usage cadence
+- **Journeys Chart**: Discovers and confirms user paths within products
+- **Data Tables**: Enables multi-dimensional analysis of multiple metrics simultaneously
+- **User Sessions Chart**: Analyzes time spent in products and session duration patterns
+
+## Core Nomenclature and Definitions
+
+**Events** represent user actions tracked within the platform, while **Properties** provide additional context about events and users. **Cohorts** group users based on shared characteristics or behaviors. **Spaces** serve as collaborative environments for sharing analyses and assets with team members.
+
+**Data Taxonomy** refers to the structured framework for organizing and categorizing data elements, which is fundamental to maintaining data quality and consistency across the platform. **Autocapture** automatically tracks website interactions without manual instrumentation, while **Visual Labeling** allows users to define and label events through a visual interface.
+
+**Warehouse-Native** functionality enables organizations to run Amplitude analytics directly on their existing data warehouse infrastructure, providing self-serve analytics capabilities while streamlining data management processes.
+
+## Experimentation and Feature Management
+
+Amplitude Experiment provides comprehensive A/B testing and feature flag management capabilities. **Feature Flags** control feature rollouts and enable targeted releases to specific audiences. The platform supports **Web Experimentation** specifically designed for optimizing conversion rates in web experiences and single-page applications.
+
+The experimentation workflow includes audience targeting, performance monitoring, and rollback procedures to ensure trustworthy results and safe feature deployments.
+
+## User Engagement and Marketing Analytics
+
+The platform includes specialized tools for user engagement through **Guides and Surveys**, which deliver targeted in-product messages to drive adoption, engagement, and retention. **Session Replay** provides contextual understanding of user experiences by recording actual user sessions.
+
+**Marketing Analytics** capabilities focus on web analytics, customer engagement analysis, conversion optimization, and retention measurement. The platform integrates with marketing platforms like Google Ads and HubSpot to provide comprehensive marketing performance analysis alongside product usage data.
+
+## Administrative and Data Management
+
+**Admin Essentials** covers the fundamental setup and administration best practices for organizations implementing Amplitude. This includes user management, project configuration, and governance procedures.
+
+**Data governance** tools help maintain data quality and consistency over time, ensuring continued business value from analytics investments. The platform supports various data integration methods and provides frameworks for designing effective data taxonomies.
+
+The academy content is structured as courses, learning paths, and video-based training materials, all accessible through academy.amplitude.com with specific URLs for each educational component. The content management system uses a blueprint-based structure with unique identifiers, asset types, and call-to-action elements for each piece of educational content.

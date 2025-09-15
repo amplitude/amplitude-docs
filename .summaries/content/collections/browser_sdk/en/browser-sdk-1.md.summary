@@ -1,0 +1,30 @@
+## Summary
+
+This documentation covers Amplitude Browser SDK 1.x (maintenance mode), a TypeScript/JavaScript analytics SDK for tracking events to Amplitude using HTTP V2 API, featuring initialization, event tracking, user properties, revenue tracking, plugins, and cookie-based session management with cross-domain support.
+
+## Keywords
+
+- Browser SDK 1.x
+- @amplitude/analytics-browser
+- HTTP V2 API
+- TypeScript JavaScript analytics
+- amplitude.init()
+- amplitude.track()
+- deviceId userId sessionId
+- cookie management AMP prefix
+- cross-domain tracking
+- sendBeacon transport
+- flushQueueSize flushIntervalMillis
+- Identify user properties
+- Revenue tracking
+- plugin system enrichment destination
+- webAttributionPlugin
+- pageViewTrackingPlugin
+- default event tracking
+- maintenance mode SDK
+- migration to Browser SDK 2.0
+- CORS CSP configuration
+- minIdLength validation
+- serverZone EU US
+- trackingOptions optional tracking
+- callback Promise interface

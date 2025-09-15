@@ -1,57 +1,54 @@
-## Amplitude Experiment
+Amplitude Experiment is a comprehensive behavioral experimentation and feature flag platform that enables teams to run A/B tests and manage feature rollouts through a workflow-driven approach. The platform supports both statistical experimentation with hypothesis testing and feature flag management for progressive delivery without metrics.
 
-Amplitude Experiment is a feature flagging and experimentation platform that enables teams to safely deploy, test, and manage feature releases through controlled rollouts and A/B testing. The platform provides sophisticated access control mechanisms to ensure proper governance and security across different organizational roles and project structures.
+## Core Architecture and Evaluation Modes
 
-## Product Architecture and Feature Relationships
+The platform operates through two primary evaluation modes:
 
-Amplitude Experiment operates as a standalone experimentation platform with its own independent permission system, separate from Amplitude Analytics. The core architecture centers around:
+**Remote Evaluation** fetches variants from Amplitude's evaluation servers and provides advanced targeting capabilities including Amplitude ID resolution, IP geolocation, property canonicalization, cohort membership targeting, user enrichment using historical analytics data, and sticky bucketing. This mode offers the most comprehensive feature set but requires network requests.
 
-**Project-Level Organization**: Experiments and feature flags are organized within projects, each maintaining independent permission structures and access controls.
+**Local Evaluation** runs evaluation logic directly in the SDK, providing sub-millisecond performance through consistent bucketing and targeting segments. However, it has limitations compared to remote evaluation, lacking Amplitude ID resolution, user enrichment, and sticky bucketing capabilities. Client-side local evaluation also presents potential data leakage concerns.
 
-**Flag Management System**: Feature flags serve as the primary mechanism for controlling feature visibility and experimentation, with Enterprise customers receiving additional flag-level access restrictions for granular control.
+## Data Model and Hierarchy
 
-**Role-Based Access Control**: A hierarchical permission system with four distinct roles (Viewer, Member, Manager, Admin) that determine user capabilities across flag creation, editing, deployment, and project management functions.
+Amplitude Experiment follows a hierarchical structure: Organizations contain Projects, which contain Deployments (client-side or server-side with deployment keys), which contain Flags/Experiments with variants. Users are identified through user_id/device_id requirements, with group support available through the Accounts add-on. Variants contain both value and payload properties, with kebab-case formatting requirements.
 
-**API Integration Layer**: The Management API provides programmatic access that can bypass standard UI permissions, enabling automated workflows and integrations while maintaining audit trails.
+## Evaluation Implementation
 
-## Key Nomenclature and Definitions
+The evaluation process follows a systematic approach with pre-targeting steps including flag activation, flag dependencies, individual inclusions, and sticky bucketing, followed by targeting segments. The platform uses consistent bucketing with the murmur3 hashing algorithm and bucketing salts to ensure reliable variant assignment. Key concepts include mutual exclusion groups, holdout groups, and allocation bucketing to prevent sample ratio mismatch (SRM) and variant jumping.
 
-**Project-Level Permissions**: Access control system specific to Experiment projects, operating independently from Analytics permissions, governing user actions within individual experiment projects.
+## Experimentation Workflow
 
-**Flag-Level Access Controls**: Enterprise feature allowing restriction of specific flags to designated editors, providing granular security for sensitive feature releases.
+The platform supports comprehensive A/B testing workflows with hypothesis formation, metric selection (primary success metrics, secondary metrics, and guardrail metrics), treatment variant creation, and statistical analysis. The default statistical model uses sequential testing, with T-test options available. Key statistical concepts include CUPED variance reduction, Bonferroni correction for multiple comparisons, minimum detectable effect (MDE), statistical power, and confidence intervals.
 
-**Role Hierarchy**:
-- **Viewer**: Read-only access to flags and experiments
-- **Member**: Can create and edit flags, manage deployments
-- **Manager**: Member permissions plus user management and project settings
-- **Admin**: Full project control including deletion and advanced configurations
+## Analysis and Reporting
 
-**Restricted Flags**: Enterprise-only feature flags with limited editor access, overriding standard role permissions for enhanced security.
+The Analysis view provides detailed statistical evaluation through columns showing relative performance, confidence intervals, significance testing, and absolute values. The metrics table enables variant comparison against control groups through unique conversions percentage and aggregate events per exposed user. Dimensional Analysis allows filtering of QA users and internal traffic through the "Exclude testers" functionality in Targeting settings.
 
-**Mutual Exclusion Groups**: Feature groupings that prevent conflicting experiments from running simultaneously, with specific permission requirements for management.
+## Targeting and Segmentation
 
-**Management API Bypass**: Programmatic interface capability that circumvents UI-based permission restrictions while maintaining proper authentication and project-level access controls.
+The platform supports sophisticated targeting through static and dynamic cohorts that sync hourly to remote and local evaluation destinations. Cohort targeting requires SDK configuration with API/secret keys for local evaluation. Individual inclusions, user ID targeting, device ID targeting, and cohort targeting provide granular control over experiment exposure.
 
-## Ecosystem Integration
+## Permissions and Access Control
 
-Amplitude Experiment integrates into the broader Amplitude ecosystem while maintaining operational independence. The platform connects with:
+Amplitude Experiment implements project-level permissions that operate independently from Analytics permissions. The role-based system includes Viewer, Member, Manager, and Admin roles. Enterprise customers receive flag-level access restrictions and restricted flag editors. The Management API provides bypass capabilities for programmatic access.
 
-**Amplitude Analytics**: Separate permission systems allow different access patterns between experimentation and analytics workflows, enabling specialized team structures.
+## Integration and SDKs
 
-**Organization-Wide Defaults**: Project permissions inherit from organization-level settings, providing consistent baseline access while allowing project-specific customization.
+Multi-platform SDK support includes TypeScript, Kotlin, Objective-C, Swift, and Python implementations with consistent initialization patterns. SDKs support defaultTracking configuration, session management, and automatic exposure tracking. The platform integrates with the Analytics REST API v2.0 for exposure tracking and provides both client-side and server-side deployment options.
 
-**Enterprise Security Framework**: Advanced customers receive enhanced security features including flag-level restrictions and detailed audit capabilities.
+## Key API Endpoints and Configuration
 
-**API Ecosystem**: Management API endpoints enable integration with CI/CD pipelines, automated deployment systems, and custom tooling while respecting permission boundaries.
+- Evaluation REST API for variant fetching
+- Analytics REST API v2.0 for exposure tracking  
+- Management API for programmatic flag management
+- CohortSyncConfig for local evaluation cohort targeting
+- Deployment keys (DEPLOYMENT_KEY) for SDK authentication
+- Project API keys for evaluation access
 
-## Technical Implementation
+## Notifications and Monitoring
 
-The permission system enforces access controls across multiple operational areas:
+The platform provides notification capabilities through Slack channel integration and webhook configurations with signing key verification. Alerts can be scoped by project, deployment, or tags for flag lifecycle events (created/updated/deleted) and sample-ratio mismatch detection.
 
-**Deployment Management**: Role-based restrictions on flag deployment capabilities, ensuring only authorized users can push changes to production environments.
+## Feature Flag Management
 
-**Project API Key Access**: Permission-controlled access to project-specific API keys, maintaining security boundaries for programmatic interactions.
-
-**Cross-Project Isolation**: Independent permission structures prevent unauthorized access across project boundaries, supporting multi-team organizational structures.
-
-The Management API provides programmatic alternatives to UI-based workflows, enabling automation while maintaining security through project-level authentication and access validation.
+Beyond experimentation, the platform serves as a feature flag system for progressive feature delivery. Flags can be managed without metrics for simple on/off toggles or gradual rollouts. The system supports JSON payloads for complex configuration delivery and bulk archive operations for lifecycle management.

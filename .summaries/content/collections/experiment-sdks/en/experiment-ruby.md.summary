@@ -1,0 +1,18 @@
+**Summary:** This documentation covers Amplitude Experiment's Ruby SDK for both remote and local evaluation modes, including installation via gem/bundler, client initialization with deployment keys, fetching/evaluating variants for users, configuration options for timeouts/retries/polling intervals, automatic assignment tracking, cohort sync for local evaluation targeting, and Amplitude cookie parsing utilities.
+
+**Keywords:**
+- amplitude-experiment Ruby gem
+- remote evaluation fetch variants
+- local evaluation client
+- deployment key initialization
+- AmplitudeExperiment::User object
+- fetch_async callback method
+- LocalEvaluationConfig flag_config_polling_interval_millis
+- AssignmentConfig automatic tracking
+- CohortSyncConfig api_key secret_key
+- AmplitudeCookie parse generate
+- server_zone EU data center
+- Ruby 2.0+ compatibility
+- darwin/amd64 linux/arm64 architecture support
+- group_properties account-level bucketing
+- bootstrap flag configuration

@@ -1,0 +1,18 @@
+## Summary
+This documentation explains how to create personalized recommendations in Amplitude Activation, covering the step-by-step process of defining outcome events, building item catalogs from exposure events and event properties, configuring holdout groups for A/B testing, and interpreting confidence scores for recommendation performance.
+
+## Keywords
+- Amplitude Activation
+- personalization campaigns
+- recommendation algorithm training
+- outcome events
+- exposure events
+- event properties
+- item catalog
+- cohort selection
+- confidence score
+- holdout groups
+- static vs dynamic recommendations
+- SKU properties
+- conversion optimization
+- recommendation lift measurement

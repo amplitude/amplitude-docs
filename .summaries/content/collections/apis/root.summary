@@ -1,0 +1,48 @@
+# Amplitude API Documentation Suite
+
+Amplitude provides a comprehensive analytics and experimentation platform with a multi-product ecosystem centered around data collection, A/B testing, and user engagement. The platform consists of five core product categories: Analytics APIs for event tracking and behavioral analysis, Experiment APIs for feature flags and A/B testing, Guides and Surveys APIs for in-app messaging and user feedback, Data APIs for advanced programmatic data access, and SCIM APIs for enterprise identity management.
+
+## Product Architecture and Relationships
+
+The Amplitude ecosystem follows a layered architecture where Analytics serves as the foundational data collection layer, processing user events and behavioral data. Experiment APIs build upon this analytics foundation to enable sophisticated A/B testing and feature flag management with controlled rollouts. Guides and Surveys APIs leverage analytics insights to deliver targeted user experiences through in-app messaging and feedback collection. Data APIs provide enterprise-level programmatic access to the underlying analytics data for advanced use cases and integrations. SCIM APIs enable enterprise-grade user provisioning and access control across the entire platform.
+
+Each product maintains its own API collection while sharing common authentication mechanisms and organizational structures, indicating tight integration across the platform. This shared foundation allows organizations to maintain consistent access control while leveraging specialized functionality across all Amplitude products.
+
+## Key Nomenclature and Definitions
+
+**Authentication Hierarchy:**
+- **API Keys**: Public, client-side identifiers for Analytics projects with rotation capabilities, safe for browser and mobile applications
+- **Secret Keys**: Private, server-side credentials for secure Analytics API access, requiring Manager role permissions
+- **Deployment Keys**: Experiment-specific credentials for feature flag and A/B test management
+- **Management API Keys**: Organization-level credentials for administrative operations across multiple projects
+- **Data API Tokens**: Specialized tokens for advanced data access and manipulation capabilities
+- **SCIM Keys**: Enterprise provisioning credentials for identity management system integration
+
+**Organizational Structure:**
+- **Projects**: Individual Analytics implementations with dedicated API credentials and isolated data scope
+- **Organizations**: Top-level entities containing multiple projects and managing enterprise features
+- **Collections**: Grouped API endpoints organized by product functionality using template structures
+
+**Security Classifications:**
+- **Public Keys**: Client-side safe credentials suitable for frontend applications
+- **Private Keys**: Server-side only credentials requiring secure storage and handling
+- **Rotatable Credentials**: Keys that can be regenerated without service interruption
+- **Role-Restricted Access**: Credentials requiring specific organizational permissions (Manager-level for sensitive operations)
+
+## Ecosystem Integration and Enterprise Features
+
+Amplitude operates as a comprehensive digital analytics platform where Analytics provides the data foundation through event tracking, Experiment enables data-driven decision making through controlled testing frameworks, and Guides and Surveys close the feedback loop through direct user engagement based on analytics insights. Enterprise features including SCIM integration, Management APIs, and Data APIs extend the platform for large-scale organizational deployment with advanced governance and access control capabilities.
+
+## Technical Implementation
+
+**Access Management:**
+- Credential management through Organization Settings > Projects interface
+- Role-based access control with Manager-level requirements for sensitive operations
+- Project-specific vs organization-level credential scoping for granular access control
+
+**API Organization:**
+- Collection-based endpoint grouping using `{{collection:api}}`, `{{collection:experiment-apis}}`, and `{{collection:guides_and_surveys_api}}` template structures
+- Summary-filtered documentation with `summary:exists="true"` conditional rendering for streamlined presentation
+- Standardized table format for consistent API endpoint documentation across all product categories
+
+The documentation architecture supports both developer self-service through clear credential location guidance and enterprise governance through comprehensive key management capabilities and role-based access restrictions.

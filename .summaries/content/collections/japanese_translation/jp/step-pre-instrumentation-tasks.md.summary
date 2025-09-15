@@ -1,0 +1,21 @@
+**Summary:** This Japanese documentation page covers pre-instrumentation tasks for Amplitude setup, including defining business goals, understanding user identification/tracking, organizing events and properties in spreadsheets, avoiding over-tracking, cross-platform project considerations, and data ingestion methods (SDK, HTTP API, Segment.io, mParticle, Shopify).
+
+**Keywords:**
+- pre-instrumentation tasks
+- Amplitude setup series
+- Japanese translation
+- business goals definition
+- user identification tracking
+- event properties spreadsheet
+- naming conventions (verb + noun, noun + verb)
+- data taxonomy playbook
+- 20 properties limit recommendation
+- cross-platform projects
+- Amplitude SDK
+- HTTP API
+- Segment.io integration
+- mParticle integration
+- Shopify integration
+- instrumentation prework
+- event organization
+- user tracking requirements

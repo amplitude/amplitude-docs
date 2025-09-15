@@ -1,56 +1,90 @@
-# Amplitude Analytics iOS Swift SDK
+Amplitude is a comprehensive digital analytics and experimentation platform that enables organizations to understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of four core products that work together to provide end-to-end analytics capabilities: Analytics (behavioral analysis), Experiment (A/B testing and feature flags), Data (governance and schema management), and Session Replay (qualitative user insights).
 
-The Amplitude Analytics iOS Swift SDK is a comprehensive client-side analytics solution for iOS applications that provides automated event tracking, user identification, and behavioral analytics capabilities. The SDK serves as the primary data collection layer in the Amplitude analytics ecosystem, featuring extensive autocapture functionality that minimizes manual instrumentation while maximizing analytical insights.
+## High-Level Product Overview
 
-## Product Architecture and Feature Relationships
+**Amplitude Analytics** serves as the foundational product analytics platform, providing sophisticated event-based tracking and analysis through specialized chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Revenue LTV, and advanced features like Compass and Impact Analysis. The platform supports both real-time and historical analysis with comprehensive user segmentation, cohort management, and behavioral analytics capabilities.
 
-### Core SDK Foundation
-The SDK is built on a modular plugin architecture that separates data enrichment, event processing, and delivery mechanisms. It supports both Swift and Objective-C implementations with multiple installation pathways including Swift Package Manager (AmplitudeSwift package), CocoaPods, and Carthage.
+**Amplitude Experiment** delivers feature flagging and A/B testing functionality with both remote and local evaluation modes, supporting traditional A/B tests, multi-armed bandit experiments, and progressive feature rollouts. The platform includes sophisticated statistical analysis using sequential testing methodology, mutual exclusion groups, and comprehensive targeting capabilities.
 
-### Autocapture System Integration
-The SDK's centerpiece is its sophisticated autocapture system, orchestrated through `AutocaptureOptions` configuration operating across multiple layers:
+**Amplitude Data** provides data governance, schema management, and tracking plan enforcement through a Git-like branching model. It includes the Ampli CLI for generating type-safe SDK wrappers, real-time data validation, and comprehensive transformation capabilities for maintaining data quality across the analytics ecosystem.
 
-- **Application Layer**: Automatic session management with configurable `minTimeBetweenSessionsMillis` parameters and app lifecycle event tracking
-- **UI Layer**: Screen view tracking via method swizzling on `viewDidAppear`, element interaction monitoring through `UIControl` and `UIGestureRecognizer` systems
-- **Network Layer**: URLSession request/response monitoring via `NetworkTrackingOptions` with `StatusCodeRange` filtering and allowlist/blocklist URL management
-- **User Experience Layer**: Advanced interaction analytics including frustration detection, rage click identification through `RageClickOptions`, and dead click detection via `DeadClickOptions`
+**Session Replay** captures and reconstructs user interactions across web and mobile platforms, providing qualitative context to quantitative analytics through session recordings, heatmaps, and privacy-compliant user behavior analysis.
 
-### Data Management and Storage Architecture
-The SDK implements a flexible data persistence layer through a customizable `Storage` protocol, enabling custom storage solutions while providing default implementations. Device identification is managed through automatic IDFV (Identifier for Vendor) handling with comprehensive device ID lifecycle management across app installations and updates.
+## Product Relationships and Feature Integration
 
-## Key Nomenclature and Technical Definitions
+The Amplitude ecosystem operates through deep integration between its core products. Analytics provides the data foundation that feeds into Experiment for statistical analysis and audience targeting. Data governs the schema and quality of information flowing through both Analytics and Experiment, while Session Replay adds qualitative context to quantitative findings from Analytics.
 
-### Event Processing Terminology
-- **Out-of-session Events**: Events tracked outside active user sessions, marked with `sessionId -1` for analytical distinction
-- **Flush Configuration**: Event batching mechanism controlled by `flushQueueSize` (batch size) and `flushIntervalMillis` (time-based flushing)
-- **Identify Operations**: User property update workflows and user identification processes
-- **Group Identify**: Organization or group-level property management for B2B analytics scenarios
+**Cross-Product Data Flow**: Events tracked through Analytics SDKs automatically generate exposure and assignment events for Experiment analysis. Session Replay recordings can be accessed directly from Analytics charts and Experiment results, creating seamless workflows between quantitative and qualitative analysis.
 
-### Interaction Analytics Definitions
-- **Frustration Interactions**: Algorithmic detection of user frustration patterns based on interaction velocity and repetition
-- **Rage Clicks**: Rapid, repeated clicking behavior identification with configurable thresholds
-- **Dead Clicks**: Detection of user interactions that fail to produce expected application responses
-- **CaptureRule Systems**: Configurable filtering mechanisms through `InteractionsOptions` for selective interaction tracking
+**Unified Identity Management**: All products share a common user identification system using Device ID, User ID, and Amplitude ID, enabling consistent user tracking across the entire platform. This unified identity layer supports cross-product features like behavioral cohorts that can be used for both Analytics segmentation and Experiment targeting.
 
-### Network and Privacy Controls
-- **NetworkTrackingOptions**: Comprehensive configuration system for automatic network request monitoring with granular control over captured data
-- **Remote Configuration**: Dynamic SDK behavior updates via `enableAutoCaptureRemoteConfig` without requiring app updates
-- **COPPA Control**: Child privacy protection mechanisms integrated into tracking options
-- **NSPrivacyTracking**: Built-in privacy manifest declarations for App Store compliance
+**Shared Infrastructure**: The platform utilizes common APIs (HTTP V2 API, Batch API, Identify API) and SDK architecture across products, with specialized endpoints for each product's unique functionality. The Ampli code generation system works across all products, providing type-safe implementations for Analytics events, Experiment variants, and Session Replay configurations.
+
+## Key Nomenclature and Definitions
+
+**Core Data Concepts**:
+- **Events**: Discrete user actions tracked within applications (e.g., "Purchase Completed", "Video Played")
+- **Event Properties**: Contextual metadata associated with events (e.g., product_category, video_duration)
+- **User Properties**: Persistent attributes associated with user profiles (e.g., subscription_tier, geographic_region)
+- **Amplitude ID**: Internal unified identifier that merges device and user identities across sessions and platforms
+
+**Analytics Terminology**:
+- **Cohorts**: User groups defined by shared characteristics or behavioral patterns
+- **Segments**: Dynamic user filters based on properties and actions
+- **Active Users**: Users who performed any tracked event within specified time periods
+- **Monthly Tracked Users (MTUs)**: Primary billing metric representing unique users tracked per calendar month
+- **Conversion Windows**: Time boundaries for measuring funnel completion and user journey analysis
+
+**Experimentation Framework**:
+- **Variants**: Different experience versions within experiments (control group, treatment variations)
+- **Exposure Events**: User encounters with experiment variants, distinct from assignment events
+- **Bucketing**: Process of assigning users to experiment variants using deterministic algorithms
+- **Sequential Testing**: Statistical methodology enabling continuous experiment monitoring without predetermined sample sizes
+- **Mutual Exclusion Groups**: Traffic management system preventing users from exposure to conflicting experiments
+
+**Data Governance**:
+- **Tracking Plans**: Schema definitions specifying event structures, property types, and validation rules
+- **Ampli**: Code generation tool creating strongly-typed SDK wrappers from tracking plan definitions
+- **Branches**: Git-like versioning system for tracking plan management and deployment
+- **Transformations**: Retroactive data structure modifications applied at query time
 
 ## Broader Product Ecosystem Integration
 
-### Amplitude Platform Integration
-The iOS SDK functions as the critical first-mile data collection component in the Amplitude analytics ecosystem, handling client-side event capture and user behavior tracking that feeds into Amplitude's cloud-based analytics platform. The SDK ensures comprehensive behavioral data collection while maintaining performance optimization and privacy compliance standards.
+Amplitude positions itself as a central analytics hub within the modern data stack, designed to integrate with existing organizational infrastructure rather than replace it. The platform connects to data warehouses through warehouse-native capabilities, enabling direct querying of existing data while maintaining Amplitude's analytical capabilities.
 
-### Plugin Ecosystem
-The modular plugin architecture enables extensive customization through:
-- **Enrichment Plugins**: Pre-processing event data enhancement and contextual information addition
-- **Destination Plugins**: Event routing, delivery management, and third-party integration capabilities
-- **NetworkConnectivityCheckerPlugin**: Intelligent offline mode management with automatic event queuing and connectivity-aware delivery
+**SDK and API Coverage**: Comprehensive platform support includes JavaScript/TypeScript (Browser), mobile native (iOS Swift, Android Kotlin), cross-platform (React Native, Flutter, Unity), server-side (Node.js, Python, Java, Go), and specialized implementations for gaming (Unity, Unreal Engine) and emerging platforms.
 
-### Cross-Platform Considerations
-The SDK integrates with both UIKit and SwiftUI frameworks, though SwiftUI implementations have documented limitations for certain autocapture features. The SDK's design accommodates varying network conditions through offline capabilities and implements remote configuration support for dynamic analytics strategy adjustments.
+**Third-Party Integrations**: The platform maintains extensive integration capabilities with marketing automation platforms (HubSpot, Braze, Salesforce), advertising networks (Google Ads, Facebook Ads), data warehouses (Snowflake, BigQuery, Redshift), and development tools (GitHub, Slack, Jira) through both source and destination catalogs.
 
-### Privacy and Compliance Framework
-The SDK's privacy-first architecture includes comprehensive tracking options, COPPA controls, and configurable data collection parameters, positioning it for compliance with evolving privacy regulations while maintaining analytical depth through sophisticated user experience tracking and behavioral analytics capabilities.
+**Enterprise Infrastructure**: Advanced features include SSO integration with major identity providers (Okta, Azure AD, Google Workspace), SCIM 2.0 provisioning, comprehensive privacy compliance (GDPR, CCPA), and regional data residency options with dedicated EU infrastructure.
+
+## API Endpoints and Technical Implementation
+
+**Core Data Ingestion APIs**:
+- `POST api2.amplitude.com/2/httpapi` - Primary real-time event ingestion endpoint
+- `POST api2.amplitude.com/batch` - Bulk event upload for high-volume scenarios (up to 20MB payloads)
+- `POST api2.amplitude.com/identify` - User property management without event generation
+- `POST api2.amplitude.com/attribution` - Mobile attribution event processing with 72-hour attribution windows
+
+**Analytics and Data Access APIs**:
+- `GET api/2/export` - Bulk event data extraction in zipped JSON format
+- `GET profile-api.amplitude.com/v1/userprofile` - Individual user profile retrieval with behavioral recommendations
+- `GET api/3/cohorts` - Behavioral cohort management and export
+- Dashboard REST API - Programmatic access to pre-computed analytics results
+
+**Experimentation APIs**:
+- `POST api.lab.amplitude.com/v1/vardata` - Real-time variant assignment and evaluation
+- `GET api.lab.amplitude.com/v1/flags` - Flag configuration download for local evaluation
+- Management API (`experiment.amplitude.com/api/1/`) - Comprehensive experiment lifecycle management
+
+**Command Line Interfaces**:
+- **Ampli CLI**: `ampli pull` (download tracking plans), `ampli status` (validate implementations), `ampli push` (upload changes)
+- **SDK Installation**: Platform-specific package managers (npm, CocoaPods, Maven, pip) with comprehensive dependency management
+
+**Configuration and Performance**:
+- Rate limiting: 1000 events/second per device, 500K events/day limits
+- Batch processing: Configurable `flushQueueSize` and `flushIntervalMillis` parameters
+- Regional endpoints: Dedicated US and EU infrastructure for data residency compliance
+- Authentication: Multiple key types (API keys, secret keys, deployment keys, management API keys) for different access patterns
+
+The platform emphasizes developer experience through comprehensive documentation, interactive debugging tools (Ingestion Debugger, User Lookup, Chrome extensions), and extensive SDK support across all major development environments, making it accessible for organizations ranging from startups to enterprise-scale implementations.

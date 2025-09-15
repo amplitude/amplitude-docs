@@ -1,0 +1,16 @@
+**Summary:** This documentation covers the AppsFlyer-Amplitude integration for mobile attribution and analytics, detailing two API options (Attribution API and HTTP V2 API), their limitations including 72-hour attribution matching windows and ADID requirements, and considerations for preventing duplicate events.
+
+**Keywords:**
+- AppsFlyer integration
+- Attribution API limitations
+- HTTP V2 API
+- mobile advertising attribution
+- ADID/IDFA matching
+- 72-hour attribution window
+- event-streaming integration
+- cohorts export
+- raw-events data
+- duplicate events prevention
+- advertising ID privacy
+- media source restrictions
+- mobile attribution analytics

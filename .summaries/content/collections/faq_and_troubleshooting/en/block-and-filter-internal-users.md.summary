@@ -1,0 +1,18 @@
+**Summary:** This documentation explains methods to block and filter internal user data in Amplitude Analytics to prevent false metric inflation, covering IP address blocking via Data Filters, user segmentation using the Segmentation Module, saved segments with default pinning, and behavioral cohorts for maintaining internal user lists.
+
+**Keywords:**
+- Data Filters
+- Block Filter
+- IP address blocking
+- Segmentation Module
+- user segmentation
+- saved segments
+- default segment pinning
+- behavioral cohorts
+- internal user filtering
+- Behavioral Cohorts API
+- production project data cleanliness
+- event ingestion blocking
+- user ID filtering
+- device ID filtering
+- Amplitude ID filtering

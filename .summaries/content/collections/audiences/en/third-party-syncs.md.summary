@@ -1,0 +1,29 @@
+**Summary:** This documentation covers Amplitude Activation's third-party sync functionality, detailing three sync types (on-demand, automated, real-time) for cohorts, properties, computations and predictions, including sync creation workflows, email notifications, cohort sync discrepancies, user mapping issues, and CSV export capabilities for sync history analysis.
+
+**Keywords:**
+- Amplitude Activation
+- third-party syncs
+- cohort sync
+- on-demand syncs
+- automated syncs
+- real-time syncs
+- user property mapping
+- sync discrepancies
+- unresolved mapping
+- rejected by partner
+- CSV export
+- sync history
+- skip_detected
+- skip_reason
+- destination catalog
+- user composition
+- cohort membership
+- API targets
+- email notifications
+- sync frequency
+- hourly/daily scheduling
+- minute-based updates
+- mapped properties
+- Amplitude_id
+- operation column
+- success rate thresholds

@@ -1,0 +1,44 @@
+## Amplitude Experiment Contentful Integration
+
+Amplitude Experiment's Contentful integration is a specialized content management system bridge that enables content-driven A/B testing and experimentation workflows. This integration allows marketing teams, content creators, and product managers to test different content variants directly within Contentful CMS while leveraging Amplitude's experimentation infrastructure and statistical analysis capabilities.
+
+## Product Architecture and Component Relationships
+
+The integration operates through a bidirectional plugin architecture that creates three distinct operational layers:
+
+**Content Layer (Contentful)**: Serves as the variant repository where different versions of content are stored and managed within Contentful's content modeling system. The Variant Container Content Model acts as the primary organizational structure, grouping different content variations for individual experiments.
+
+**Experimentation Layer (Amplitude Experiment)**: Handles all experimentation logic including user bucketing algorithms, rollout weight distributions, and experiment metadata management. This layer maintains consistency with Amplitude's standard statistical analysis methods.
+
+**Synchronization Layer (Plugin)**: Bridges the two platforms by synchronizing experiment configuration, sharing flag keys, and maintaining experiment parameters across both systems. The plugin utilizes Contentful's Management API for content access and modification.
+
+## Key Nomenclature and Definitions
+
+**Variant Container Content Model**: The specialized Contentful content model that serves as the primary organizational structure for experiment variants, acting as a container that groups different content variations for a single experiment.
+
+**Flag Key**: The unique identifier that creates the linkage between Amplitude Experiment flags and specific Contentful content variants, serving as the primary bridge between platforms.
+
+**Management API Key**: Authentication credential enabling the Contentful plugin to access and modify content models and entries through Contentful's Management API.
+
+**variationsCollection**: A structured JSON API response object containing the collection of available content variants for an experiment, including associated metadata and configuration parameters.
+
+**bucketingKey**: User identifier utilized by Amplitude Experiment's algorithms to consistently assign users to specific content variants across sessions.
+
+**rolloutWeights**: Configuration parameters determining the percentage distribution of users across different content variants within an experiment.
+
+**Reference Field Type**: Contentful's field type mechanism for creating relationships between Variant Containers and actual content entries, enabling dynamic content selection based on experiment results.
+
+## Technical Implementation Components
+
+**Client-Side SDK Integration**:
+- `@amplitude/experiment-js-client` - JavaScript SDK for retrieving experiment variants
+- `experiment.variant()` - Primary method call for fetching appropriate content variants for users
+- `contentful-sdk` - Contentful's SDK for content retrieval based on experiment results
+
+**API Response Structure**: The integration generates JSON API responses containing experiment metadata and variationsCollection objects that include content variant identifiers, experiment configuration parameters, user bucketing information, and rollout weight distributions.
+
+## Broader Product Ecosystem Integration
+
+Within Amplitude's product ecosystem, the Contentful integration extends Amplitude Experiment's core feature flagging capabilities into content management workflows. This integration enables teams to test messaging, copy, and creative assets without engineering resources while maintaining access to Amplitude's robust experimentation infrastructure.
+
+The integration preserves Amplitude Experiment's standard bucketing algorithms and statistical analysis methods, allowing teams to analyze content performance using Amplitude's analytics capabilities and implement personalization strategies based on user segments and behavioral data. This creates a seamless workflow where content creators can manage variants in their familiar CMS environment while leveraging enterprise-grade experimentation capabilities.

@@ -1,0 +1,15 @@
+**Summary:** Documentation page explaining common questions engineers ask during Amplitude instrumentation, covering data payload examples, user/group properties selection, user property update frequency, and the distinction between event properties vs user properties.
+
+**Keywords:**
+- Amplitude instrumentation
+- engineer questions
+- User Lookup
+- Microscope
+- user properties vs event properties
+- payload examples
+- property classification
+- user property updates
+- event property context
+- data implementation process
+- user streams
+- property types distinction

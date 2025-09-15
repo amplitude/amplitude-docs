@@ -1,0 +1,41 @@
+## Amplitude Billing and Usage Analytics Platform
+
+Amplitude provides a comprehensive billing and usage analytics platform designed to help organizations monitor, understand, and optimize their platform adoption and costs. The system serves dual purposes: tracking organizational usage patterns for internal analytics and managing billing calculations based on user engagement metrics.
+
+## Product Relationships and Feature Integration
+
+The billing and usage ecosystem consists of two interconnected components that work together to provide complete visibility into Amplitude platform utilization:
+
+**Usage Reports** serve as the analytical layer, providing real-time organizational insights through two primary interfaces: the User Metrics tab delivers visual analytics on platform adoption including active users charts, weekly learning users tracking, and depth of engagement measurements, while the Event Usage tab provides granular operational data through downloadable CSV/JSON reports containing event query counts and cross-project usage statistics.
+
+**MTU Billing System** operates as the foundational metering layer that calculates Monthly Tracked Users across Scholarship, Starter, and Plus plans. This system processes user identification data, handles ID merging scenarios, and generates synthetic MTU calculations when event volume thresholds are exceeded, directly feeding into the usage reporting infrastructure.
+
+## Key Nomenclature and Definitions
+
+**Monthly Tracked Users (MTU)**: The primary billing metric representing unique users tracked within a calendar month, calculated using UTC time boundaries and serving as the foundation for plan-based pricing.
+
+**Synthetic MTUs**: Calculated billing units generated when event volume exceeds the standard 1,000 events per MTU threshold, ensuring accurate cost allocation for high-volume usage patterns.
+
+**User ID Merging**: The process of consolidating anonymous device IDs with identified user IDs through mapping and identify calls, affecting MTU count calculations and billing accuracy.
+
+**Event Query Counts**: Granular metrics tracking how events are queried across charts, dashboards, notebooks, and pathfinder analysis, providing operational visibility into platform utilization patterns.
+
+**Depth of Engagement**: Organizational analytics measuring how deeply users interact with Amplitude features, including broadcasted learnings and content usage patterns.
+
+## Broader Product Ecosystem Integration
+
+The billing and usage system integrates deeply with Amplitude's broader analytics platform, connecting to multiple product layers:
+
+**Data Ingestion Layer**: Processes event volume ingestion and applies drop filters that can create billing discrepancies, requiring careful monitoring through usage reports.
+
+**Analytics Layer**: Connects with chart dashboard notebook queries, cohort definitions, and custom events metrics to provide comprehensive usage visibility.
+
+**Administrative Layer**: Integrates with organization settings and admin manager permissions to control access to usage reports, particularly for Growth and Enterprise plans.
+
+**Experimentation Platform**: Handles special cases like [Experiment] Exposure events exclusion from MTU calculations, ensuring accurate billing for experimentation workflows.
+
+## API Endpoints and System Interfaces
+
+The system provides **CSV/JSON export capabilities** for Event Usage data, enabling programmatic access to usage metrics and integration with external billing and analytics systems. Usage reports are accessible through **organization settings interfaces** with appropriate admin manager permissions, while MTU calculations operate through **automated billing processes** that handle backfilled events, user mapping, and synthetic MTU generation without requiring direct API interaction.
+
+The platform supports **cross-project views** for comprehensive organizational analytics and provides **pathfinder analysis integration** for advanced usage pattern recognition across the entire Amplitude ecosystem.

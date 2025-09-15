@@ -1,0 +1,16 @@
+**Summary:** Documents Amplitude's URL redirect testing feature for A/B testing that redirects visitors to different URLs without developer involvement, using a script tag in the `<head>` section and requiring the Amplitude Analytics SDK for event tracking.
+
+**Keywords:**
+- URL redirect testing
+- Amplitude Experiment SDK
+- script tag implementation
+- head section integration
+- Amplitude Analytics SDK
+- CMS testing (WordPress)
+- multi-armed bandits
+- local evaluation mode
+- deviceID bucketing
+- visual experimentation limits
+- low-code A/B testing
+- redirect variants
+- conversion optimization testing

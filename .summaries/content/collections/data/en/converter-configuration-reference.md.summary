@@ -1,0 +1,18 @@
+**Summary:** This documentation covers converter configuration reference for Amazon S3 Import and Google Cloud Storage (GCS) data ingestion, detailing the `convertToAmplitudeFunc` transformation rules and comprehensive list/boolean/integer/JSON operators for mapping source data fields to Amplitude event schema.
+
+**Keywords:**
+- convertToAmplitudeFunc
+- Amazon S3 Import converter
+- Google Cloud Storage GCS converter
+- skip_user_properties_sync
+- parquet fileType
+- keyValidatorConfig filterPattern
+- list operators (path, any, value, dict, array, condition, ifelse)
+- time conversion operators (iso_time_to_ms, int96_time_to_ms, parse_time_to_ms)
+- boolean operators (and, or, equals, contains)
+- JSON transformation operators
+- SOURCE_DESCRIPTION evaluation
+- event schema mapping
+- user property operations
+- batch data ingestion
+- converter configuration JSON

@@ -1,0 +1,21 @@
+**Summary:** This is a Japanese translation of Amplitude Experiment key terms documentation that defines essential A/B testing and experimentation terminology including statistical concepts (p-value, confidence intervals, MDE), experiment components (control/variant groups, payload, allocation), and Amplitude-specific events (enrollment events, exposure events).
+
+**Keywords:**
+- Amplitude Experiment
+- Japanese translation
+- A/B testing terminology
+- statistical significance
+- confidence intervals
+- p-value
+- minimum detectable effect (MDE)
+- sample size calculation
+- control variant groups
+- payload variables
+- enrollment events
+- exposure events
+- allocation percentage
+- Type 1 Type 2 errors
+- sequential testing
+- counter metrics
+- baseline conversion rate
+- statistical power

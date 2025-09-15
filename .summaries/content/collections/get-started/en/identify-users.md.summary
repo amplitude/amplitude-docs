@@ -1,0 +1,15 @@
+**Summary:** This documentation explains Amplitude's user identification system using device IDs, Amplitude IDs, and user IDs, with focus on user ID assignment best practices, event reconciliation across devices, and backend data merging for anonymous-to-identified user transitions.
+
+**Keywords:**
+- user identification system
+- device IDs
+- Amplitude ID
+- user ID assignment
+- event reconciliation
+- backend data merging
+- anonymous events
+- user ID immutability
+- cross-device tracking
+- unique user identification
+- case-sensitive user IDs
+- server-side user ID assignment

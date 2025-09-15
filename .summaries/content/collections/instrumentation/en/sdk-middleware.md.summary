@@ -1,0 +1,21 @@
+**Summary:** Documents SDK Middleware functionality for Maintenance SDKs that allows running custom code sequences on every event for enrichment, transformation, filtering, and routing, but has been replaced by Plugins in latest SDK versions.
+
+**Keywords:**
+- SDK Middleware
+- Maintenance SDKs
+- MiddlewarePayload
+- MiddlewareNext
+- addEventMiddleware()
+- event enrichment
+- event transformation
+- event filtering
+- payload customization
+- event_type
+- event_properties
+- user_id
+- device_id
+- PII removal
+- third-party routing
+- Ampli v1
+- event level groups
+- client-side validation

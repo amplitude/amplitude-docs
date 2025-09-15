@@ -1,0 +1,15 @@
+**Summary:** This documentation describes the Qualtrics cohort export integration that allows syncing Amplitude user cohorts to Qualtrics XM directory mailing lists, requiring email-based user_id mapping and specific Qualtrics configuration including Directory ID (POOL_), Data Center ID, and Mailing List ID (CG_).
+
+**Keywords:**
+- Qualtrics XM directory
+- cohort export integration
+- mailing list synchronization
+- Directory ID POOL_
+- Data Center ID
+- Mailing List ID CG_
+- email user_id mapping
+- Qualtrics Experience Management
+- cohort syncing destination
+- qualitative feedback integration
+- raw events and cohorts
+- Amplitude user property mapping

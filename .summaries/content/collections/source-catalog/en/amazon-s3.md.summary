@@ -1,0 +1,24 @@
+**Summary:** This documentation covers Amazon S3 Import integration for Amplitude, detailing how to configure S3 buckets with IAM roles, set up converter configurations for event/user/group property data ingestion, and enable continuous file discovery with optional S3 event notifications for near-real-time import.
+
+**Keywords:**
+- Amazon S3 Import
+- S3 bucket configuration
+- IAM role ARN
+- external_id
+- converter configuration
+- Mirror Sync
+- Append Only Sync
+- S3 event notification
+- insert_id deduplication
+- file requirements JSON/CSV/parquet
+- user properties
+- group properties
+- raw events
+- mutation types INSERT/UPDATE/DELETE
+- trust relationship policy
+- bucket prefix
+- compression type
+- data type selection
+- import strategy
+- converter file
+- continuous file discovery

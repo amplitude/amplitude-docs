@@ -1,0 +1,37 @@
+## Amplitude PII Integrations
+
+Amplitude's PII Integrations collection provides comprehensive privacy compliance solutions through strategic partnerships with leading privacy management platforms. These integrations enable automated data subject request (DSR) fulfillment, PII discovery and classification, and programmatic data access and erasure to ensure GDPR, CCPA, and CPRA compliance.
+
+## Product Relationships and Features
+
+The PII integrations ecosystem consists of three primary partner integrations that work in concert with Amplitude's core analytics platform:
+
+**DataGrail Integration** serves as the foundational privacy management platform, offering automated DSR fulfillment capabilities through cross-functional privacy teams. This beta integration provides continuous system detection and regulatory risk reduction, positioning itself as the primary orchestration layer for privacy compliance workflows.
+
+**Transcend Privacy Platform Integration** focuses specifically on programmatic data access and erasure capabilities, enabling precise control over user device activity data. This partner-maintained integration emphasizes data transparency and consent management, providing the technical infrastructure for regulatory compliance automation.
+
+**Osano Integration** complements the ecosystem by providing automated PII discovery and classification capabilities. This integration requires an Osano Enterprise plan and integrates with Amplitude's data stores to enable comprehensive subject rights request searches across the analytics platform.
+
+## Key Nomenclature and Definitions
+
+**Data Subject Request (DSR)**: Formal requests from individuals exercising their privacy rights under GDPR, CCPA, or CPRA regulations, including data access, deletion, and portability requests.
+
+**PII Discovery and Classification**: Automated processes that identify, categorize, and tag personally identifiable information within Amplitude's data ecosystem to ensure comprehensive privacy compliance coverage.
+
+**Subject Rights Requests**: Broader category encompassing all individual privacy rights exercised under various regulatory frameworks, processed through integrated privacy management platforms.
+
+**Programmatic Data Access and Erasure**: API-driven capabilities that enable automated, scalable data operations for privacy compliance without manual intervention.
+
+**Cross-functional Privacy Teams**: Organizational structures that leverage integrated privacy platforms to coordinate compliance efforts across multiple departments and systems.
+
+## Broader Product Ecosystem Integration
+
+The PII integrations function as middleware between Amplitude's analytics platform and external privacy management systems. Each integration requires Amplitude API key and Secret Key authentication, establishing secure communication channels between systems. The integrations operate within Amplitude's Data Discovery Data Stores framework, enabling comprehensive visibility across the analytics data ecosystem.
+
+These integrations position Amplitude within the broader privacy technology stack, where analytics platforms must seamlessly integrate with specialized privacy management tools. The partner-maintained nature of some integrations (particularly Transcend) indicates a distributed responsibility model where privacy platform vendors maintain integration compatibility with Amplitude's evolving API structure.
+
+## Technical Implementation
+
+All integrations utilize **Amplitude API key and Secret Key authentication** as the primary security mechanism. The **Osano Portal setup** provides the administrative interface for configuration and management. Integration setup requires coordination between Amplitude's analytics infrastructure and partner privacy platforms, with specific requirements varying by partner (such as Osano's Enterprise plan prerequisite).
+
+The integrations support automated workflows that reduce manual privacy compliance overhead while ensuring comprehensive coverage across Amplitude's user device activity data and broader analytics ecosystem.

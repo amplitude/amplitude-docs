@@ -1,0 +1,19 @@
+**Summary:** Documentation for creating a new Amplitude account and organization, covering data region selection (US/EU), configuring the JavaScript snippet with Session Replay and Autocapture features, Browser SDK initialization, and alternative integration methods.
+
+**Keywords:**
+- Amplitude account creation
+- organization setup
+- data storage region selection
+- EU-US Data Privacy Framework
+- JavaScript snippet configuration
+- Session Replay integration
+- Autocapture feature
+- Browser SDK initialization
+- API key insertion
+- head tag implementation
+- sample rate configuration
+- data flow verification
+- CSV upload
+- Chrome extension
+- web bookmarklet
+- source catalog integrations

@@ -1,0 +1,50 @@
+## Amplitude Impact Analysis
+
+Impact Analysis is a premium analytics feature in Amplitude that measures the causal relationship between user engagement with specific events and subsequent behavioral changes. This feature enables product teams to understand how first-time interactions with particular features or events influence user behavior patterns over time.
+
+## Product Relationships and Feature Integration
+
+Impact Analysis operates as a specialized chart type within Amplitude's broader analytics ecosystem, specifically integrating with:
+
+- **Events Module**: Sources treatment and outcome events from the core event tracking system
+- **Segmentation Module**: Leverages user segmentation capabilities for refined analysis
+- **Chart System**: Functions as a distinct chart type alongside other Amplitude visualization tools
+
+The feature is positioned as a premium offering, available exclusively on Growth and Enterprise pricing tiers, indicating its role as an advanced analytics capability for larger organizations requiring sophisticated behavioral analysis.
+
+## Key Nomenclature and Definitions
+
+**Treatment Event**: The initial event or feature interaction being analyzed for its impact on user behavior. This represents the "cause" in the causal relationship being measured.
+
+**Outcome Event**: The subsequent user behavior or event whose frequency is being measured for changes after treatment event exposure. This represents the "effect" being tracked.
+
+**First-time Engagement**: The analysis specifically focuses on users' initial interaction with the treatment event, establishing a baseline for measuring behavioral changes.
+
+**Relative n-day Timeline**: A time-aligned analysis framework that synchronizes user timelines based on when they first triggered the treatment event, enabling accurate before-and-after comparisons.
+
+**Lookback Periods**: Time windows for analysis that vary based on selected intervals:
+- Daily analysis: 90 calendar days
+- Weekly analysis: 91 calendar days  
+- Monthly analysis: 120 calendar days
+- Quarterly analysis: 360 calendar days
+
+## Analytics Metrics Framework
+
+Impact Analysis provides four core measurement dimensions:
+
+1. **Average**: Mean frequency of outcome events
+2. **Active Percentage**: Proportion of users engaging with outcome events
+3. **Frequency**: Rate of outcome event occurrence
+4. **Properties**: Event property-based analysis for deeper behavioral insights
+
+## Product Ecosystem Integration
+
+Within Amplitude's analytics platform, Impact Analysis serves as a bridge between descriptive analytics and experimental validation. It provides an alternative to randomized experimentation when controlled testing isn't feasible, offering causal inference capabilities for behavioral hypothesis validation.
+
+The feature complements Amplitude's core user journey analytics by enabling teams to:
+- Validate feature impact hypotheses
+- Understand user propensity changes following specific interactions
+- Measure correlation versus causation in user behavior patterns
+- Conduct retrospective analysis of feature launches or product changes
+
+Impact Analysis represents Amplitude's advanced analytics tier, designed for organizations requiring sophisticated behavioral correlation analysis beyond standard event tracking and funnel analysis capabilities.

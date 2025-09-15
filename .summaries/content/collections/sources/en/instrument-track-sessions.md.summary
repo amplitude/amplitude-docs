@@ -1,0 +1,21 @@
+**Summary:** This documentation explains Amplitude's session tracking functionality, including automatic session ID generation using Unix timestamps, mobile (5-minute timeout) vs web (30-minute timeout) session definitions, Start/End Session event tracking configuration, out-of-session events with session ID -1, and custom session property definitions for User Sessions charts.
+
+**Keywords:**
+- session ID generation
+- Unix timestamp epoch
+- mobile session timeout
+- web session timeout
+- Start Session End Session events
+- out-of-session events
+- session ID -1
+- HTTP API session tracking
+- User Sessions chart
+- custom session property
+- setMinTimeBetweenSessionsMillis
+- trackingSessionEvents
+- defaultTracking sessions
+- session timeout configuration
+- active events filtering
+- Pathfinder charts
+- session definitions modal
+- Segment cloud-mode connection

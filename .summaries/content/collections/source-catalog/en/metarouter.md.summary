@@ -1,0 +1,16 @@
+**Summary:** Documents MetaRouter integration as a privacy-focused source that streams first-party customer data to Amplitude using server-side data transformation, requiring Amplitude API key setup and MetaRouter dashboard configuration with event parameter mapping for page, identify, and e-commerce events.
+
+**Keywords:**
+- MetaRouter integration
+- first-party data streaming
+- server-side data transformation
+- privacy category source
+- customer data integration
+- event parameter mapping
+- page calls and screen calls
+- identify events with anonymous/user IDs
+- e-commerce event mapping
+- Global Configs section
+- MetaRouter dashboard setup
+- data governance controls
+- raw-events integration type

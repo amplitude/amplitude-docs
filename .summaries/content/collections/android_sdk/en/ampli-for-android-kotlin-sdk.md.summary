@@ -1,0 +1,24 @@
+**Summary:** This documentation covers the Ampli Wrapper for Android-Kotlin SDK, which generates strongly typed APIs for tracking analytics events based on Amplitude Data tracking plans, including installation via gradle, CLI setup with npm/brew, event tracking with type-safe methods, user identification, group management, and plugin extensibility.
+
+**Keywords:**
+- Ampli Wrapper
+- Android-Kotlin SDK
+- strongly typed API
+- tracking plan
+- Amplitude Data
+- analytics-android gradle dependency
+- ampli CLI
+- npm install @amplitude/ampli
+- LoadOptions configuration
+- identify() method
+- groupIdentify() function
+- songPlayed event tracking
+- EventOptions
+- flush() method
+- DestinationPlugin
+- ampli pull command
+- ampli status verification
+- type-safe event properties
+- autocompletion
+- event schemas enforcement
+- Java and Kotlin support

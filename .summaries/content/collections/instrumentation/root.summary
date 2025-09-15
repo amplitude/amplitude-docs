@@ -1,0 +1,85 @@
+# Amplitude Instrumentation SDK Platform
+
+Amplitude provides a comprehensive instrumentation platform for analytics and experimentation through multiple SDKs, tools, and APIs that enable event tracking, user behavior analysis, and feature experimentation across web, mobile, and server environments.
+
+## Product Architecture and Components
+
+### Core SDK Categories
+
+**Analytics SDKs** form the primary instrumentation layer, available across 11+ platforms including Browser (JavaScript/TypeScript), Node.js, Android (Kotlin/Java), iOS (Swift/Objective-C), JRE, Python, React Native, Flutter, Go, Unity, and Unreal Engine. These SDKs handle event collection, user identification, and data transmission to Amplitude's analytics platform.
+
+**Experiment SDKs** provide feature flagging and A/B testing capabilities, working alongside analytics SDKs to enable controlled feature rollouts and experimentation workflows.
+
+**Client-side vs Server-side Architecture** offers flexible deployment options:
+- Client-side SDKs (Browser, Android, iOS, Unity, React Native) for direct user interaction tracking
+- Server-side SDKs (Node.js, Go, Python, Java) for backend event processing
+- Hybrid approaches combining both methodologies
+- Third-party integrations for existing data pipelines
+
+### API Endpoints and Integration Points
+
+The platform exposes several key APIs:
+- **HTTP V2 API** for direct event ingestion
+- **Batch Event Upload API** for high-volume server-side implementations  
+- **Evaluation API** for experiment feature flag evaluation
+
+Dynamic configuration automatically selects optimal server URLs based on user location, with specific support for regions including Mainland China through the `useDynamicConfig` flag.
+
+## Key Tools and Development Features
+
+### Ampli Code Generation
+
+Ampli serves as a sophisticated code generation tool that creates type-safe wrappers around Amplitude SDKs based on tracking plans defined in Amplitude Data. Key capabilities include:
+- Compile-time validation and TypeScript autocompletion
+- CLI commands (`ampli pull`, `ampli status`, `ampli configure`) for workflow management
+- Source code scanning and instrumentation verification
+- Generated methods like `ampli.load()` and `ampli.songPlayed()` for type-safe event tracking
+
+### SDK Extensions and Customization
+
+**Plugins Architecture** (latest SDKs) provides extensibility through:
+- **Enrichment Plugins** for event modification, filtering, and PII removal via `PluginType.ENRICHMENT`
+- **Destination Plugins** for routing to third-party services (Segment, Hotjar, Google Analytics, FullStory) via `PluginType.DESTINATION`
+- Plugin lifecycle methods `setup()` and `execute()` for custom behavior implementation
+
+**SDK Middleware** (maintenance SDKs) offers similar functionality through `addEventMiddleware()` for event transformation and routing, though this has been superseded by the plugins system.
+
+## Core Nomenclature and Concepts
+
+### Event and User Management
+- **event_type** and **event_properties** for categorizing and enriching events
+- **user_id** and **device_id** for user identification and device tracking
+- **user_properties** for user attribute management with identify() calls
+- **Client Event Time** vs **Client Upload Time** vs **server_upload_time** for timestamp handling
+
+### Configuration and Performance
+- **flushQueueSize** and **flushIntervalMillis** for batch processing optimization
+- **API key validation** for project authentication
+- **ServerZone.EU** for European data residency compliance
+- **useDynamicConfig** for automatic server selection
+
+### SDK Lifecycle and Versioning
+- **X.Y.Z semantic versioning** across all SDK packages
+- **Four-phase lifecycle**: Developer Preview/Beta → General Availability (GA) → Maintenance → End-of-Support (EOL)
+- **Version support matrix** tracking SDK lifecycle phases and transition dates
+
+## Debugging and Troubleshooting
+
+The platform includes comprehensive debugging capabilities addressing:
+- Event delivery validation and API key verification
+- Privacy settings impact on IP address collection
+- Device family parsing using ua-parser-js library
+- Race condition handling in user_properties updates
+- Client/server timestamp synchronization issues
+- Navigator.userAgent parsing for device identification
+
+## Ecosystem Integration
+
+Amplitude's instrumentation platform integrates with the broader product ecosystem through:
+- **Amplitude Data** for tracking plan management and schema validation
+- **Third-party routing** to analytics platforms like Segment and Google Analytics
+- **Package manager distribution** via npm, yarn, CocoaPods, and platform-specific repositories
+- **GitHub repository management** with archiving policies for end-of-life SDKs
+- **Operating system and runtime dependency management** across supported platforms
+
+The platform supports both real-time and batch processing workflows, with automatic failover and regional optimization ensuring reliable data collection across global deployments.

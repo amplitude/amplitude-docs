@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Amplitude's datepicker functionality for selecting analysis timeframes, including offset configuration for incomplete intervals, exclude options for specific days/intervals, time input granularity for Event Segmentation and Funnel Analysis charts, and preset management for predefined time ranges.
+
+**Keywords:**
+- datepicker
+- timeframe selection
+- offset configuration
+- incomplete intervals
+- exclude specific days
+- time input granularity
+- Event Segmentation charts
+- Funnel Analysis charts
+- rolling window calculations
+- preset management
+- project-level presets
+- Since/Between date ranges
+- Last x days/weeks/months
+- batch ingestion systems
+- Period over Period analysis
+- realtime intervals

@@ -1,0 +1,13 @@
+**Summary:** This documentation covers the Iterable source integration for Amplitude, which automatically ingests Iterable campaign metrics and engagement events into Amplitude projects through webhook configuration using Basic authentication with combined API keys.
+
+**Keywords:**
+- Iterable source integration
+- campaign metrics ingestion
+- webhook configuration
+- Basic authentication
+- amplitude_api_key:iterable_authentication_key format
+- engagement events
+- userId mapping
+- cross-channel marketing platform
+- system webhooks feature flag
+- api.amplitude.com/iterable endpoint

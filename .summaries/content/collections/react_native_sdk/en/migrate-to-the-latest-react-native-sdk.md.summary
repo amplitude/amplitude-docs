@@ -1,0 +1,22 @@
+**Summary:** This documentation covers migrating from the maintenance React Native SDK (`@amplitude/react-native`) to the latest React Native SDK (`@amplitude/analytics-react-native`), detailing package updates, API changes (getInstance() to init(), logEvent() to track(), uploadEvents() to flush()), configuration differences, and automatic data migration starting in v1.3.4.
+
+**Keywords:**
+- @amplitude/react-native
+- @amplitude/analytics-react-native
+- React Native SDK migration
+- getInstance() to init()
+- logEvent() to track()
+- uploadEvents() to flush()
+- plugin architecture
+- HTTP V2 API
+- migrateLegacyData
+- v1.3.4
+- setUserId API
+- identify() API
+- revenue() API
+- device ID lifecycle
+- COPPA control
+- trackingSessionEvents
+- config.trackingOptions
+- maintenance SDK
+- latest SDK

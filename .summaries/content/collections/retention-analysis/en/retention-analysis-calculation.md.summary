@@ -1,0 +1,16 @@
+## Summary
+This documentation explains how Amplitude calculates retention percentages for "Return On or After" and "Return On" retention types, covering the mathematical formulas for specific cohort entry dates versus overall retention calculations, denominator exclusions for incomplete data, and why retention curves can appear to increase during in-progress analyses.
+
+## Keywords
+- Return On or After retention calculation
+- Return On retention calculation
+- cohort entry date formulas
+- overall retention denominators
+- incomplete data exclusions
+- retention interval completion
+- numerator denominator calculations
+- retention curve behavior
+- Microscope denominator values
+- cohort analysis mathematics
+- retention percentage formulas
+- All Users retention calculations

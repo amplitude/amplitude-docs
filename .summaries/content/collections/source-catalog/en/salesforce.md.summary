@@ -1,0 +1,20 @@
+**Summary:** This documentation describes the Salesforce V2 integration for importing Salesforce object data (like Account records) as group-level properties into Amplitude, featuring daily/hourly sync schedules, schema mapping between Salesforce objects and Amplitude group types, and a three-part setup process including authentication, relation mapping, and group property configuration.
+
+**Keywords:**
+- Salesforce V2 integration
+- group-level properties
+- schema mapping
+- Salesforce objects
+- Account records
+- group type mapping
+- relation mapping
+- Group Name Field
+- sync cadence
+- daily/hourly schedule
+- account-level reporting
+- SFDC field mapping
+- group property mapping
+- authentication process
+- validation failures
+- pickup dates
+- source catalog

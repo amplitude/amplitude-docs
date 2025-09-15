@@ -1,0 +1,15 @@
+**Summary:** This documentation covers advanced holdout group scenarios in Amplitude Experiment, specifically addressing traffic distribution issues when experiments belong to multiple holdout groups (resulting in multiplicative traffic reduction like 0.95 * 0.95 = 90.25%) and the interaction between holdout groups and mutual exclusion groups that can further limit experiment traffic allocation.
+
+**Keywords:**
+- holdout groups
+- multiple holdout groups
+- mutual exclusion groups
+- traffic distribution
+- experiment traffic allocation
+- holdout percentage
+- Amplitude Experiment
+- traffic limits
+- user evaluation
+- experiment rollout
+- slot allocation
+- multiplicative traffic reduction

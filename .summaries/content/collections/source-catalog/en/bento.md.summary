@@ -1,0 +1,16 @@
+**Summary:** This documentation describes the Bento source integration that sends user onboarding guide events (step completion, progress tracking) from Bento's embedded checklists and contextual guides to Amplitude for analyzing guide engagement impact on user activation, requiring matching user_id/Identity ID across both platforms.
+
+**Keywords:**
+- Bento source integration
+- onboarding guide events
+- step completion tracking
+- embedded checklists
+- contextual guides
+- user activation analysis
+- guide engagement metrics
+- Identity ID matching
+- product-led onboarding
+- everboarding
+- guide progress events
+- step auto-completion
+- user_id synchronization

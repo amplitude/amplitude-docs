@@ -1,0 +1,15 @@
+**Summary:** This documentation provides two migration approaches from Google Analytics (GA4) to Amplitude: a low-code Google Analytics Event Forwarder plugin that automatically forwards GA4 events to Amplitude, and a complete SDK replacement guide with code examples for initialization, event tracking, user ID setting, and user properties.
+
+**Keywords:**
+- Google Analytics GA4 migration
+- Amplitude Browser SDK
+- Google Analytics Event Forwarder plugin
+- gtag event tracking replacement
+- GA4 to Amplitude SDK conversion
+- BigQuery Import GA4 beta
+- Google Tag Manager migration
+- amplitude.track vs gtag implementation
+- user_id and user_properties migration
+- Measurement ID forwarding
+- low-code migration tool
+- event structure alignment

@@ -1,0 +1,13 @@
+**Summary:** This documentation describes the Amplitude-to-WebEngage cohort integration that syncs user cohorts from Amplitude to WebEngage's marketing automation platform using WebEngage's REST API key, with user matching based on Amplitude's `user_id` field mapping to WebEngage's `CUID` field.
+
+**Keywords:**
+- WebEngage cohort integration
+- Amplitude cohort sync
+- WebEngage REST API key
+- user_id to CUID mapping
+- omnichannel marketing automation
+- cohort destination setup
+- WebEngage Data Platform
+- retention marketing campaigns
+- paid plan requirement
+- user ID field matching

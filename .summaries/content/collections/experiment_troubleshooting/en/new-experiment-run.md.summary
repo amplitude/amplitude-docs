@@ -1,0 +1,15 @@
+**Summary:** Documents the process of creating new experiment runs in Amplitude Experiment to exclude previous user data from analysis, including configuration changes like experiment key updates, bucketing salt randomization, and sticky bucketing behavior modifications.
+
+**Keywords:**
+- experiment run creation
+- experiment key property
+- bucketing salt randomization
+- sticky bucketing disable
+- exposure event tracking
+- Evaluation API experiment_key
+- variant expKey property
+- experiment restart SDK support
+- user data exclusion
+- experiment configuration changes
+- stale evaluated users
+- experiment run delimitation

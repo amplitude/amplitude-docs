@@ -1,0 +1,13 @@
+**Summary:** This documentation describes the Fivetran destination integration for Amplitude, which enables automated data export from Amplitude to Fivetran using ready-to-use connectors with configurable sync frequencies (1 minute to 24 hours, default 6 hours) and requires API key authentication for setup.
+
+**Keywords:**
+- Fivetran destination integration
+- Amplitude API key authentication
+- automated data export
+- sync frequencies configuration
+- ETL connector setup
+- raw events forwarding
+- project-level integration enablement
+- Fivetran dashboard connector setup
+- secretKey configuration
+- destination schema mapping

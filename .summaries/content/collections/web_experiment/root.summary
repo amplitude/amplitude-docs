@@ -1,0 +1,66 @@
+## Amplitude Web Experimentation Platform
+
+Amplitude Web Experimentation is a comprehensive A/B testing and experimentation platform that enables teams to run client-side experiments without requiring code changes. The platform provides a Visual Editor for creating experiments, sophisticated targeting capabilities, and seamless integration with Amplitude's analytics ecosystem.
+
+## Product Architecture and Feature Relationships
+
+The Web Experimentation platform consists of several interconnected components that work together to deliver a complete experimentation solution:
+
+**Core Implementation Layer**: The foundation is a dynamically-sized JavaScript script (79KB base + ~1KB per experiment flag) that can be deployed synchronously or asynchronously with anti-flicker protection. The script integrates with CDN endpoints for both US (`cdn.amplitude.com`) and EU (`cdn.eu.amplitude.com`) data centers and supports third-party Customer Data Platform integrations through Segment, Tealium, and custom IntegrationPlugin interfaces.
+
+**Experiment Configuration**: Web Experiments are built around three primary components:
+- **Pages**: Define URL targeting rules and variant scoping using operators like URL Matches Exactly, URL Contains, URL Starts With, and URL Matches Regex
+- **Actions**: Specify how variants modify websites through element changes (display, visibility, text, background positioning), URL redirects with query parameter retention, and custom code injection (JavaScript, CSS, HTML)
+- **Targeting**: Control experiment exposure through page targeting evaluation and audience targeting using both browser properties (local evaluation) and user properties (remote evaluation)
+
+**Visual Editor Integration**: The Visual Editor provides a no-code interface for creating experiments, allowing users to modify DOM elements, configure CSS style properties, edit HTML content, and set up URL redirects while previewing changes in real-time.
+
+## Key Nomenclature and Definitions
+
+**Experiment Types**: The platform supports A/B testing and multi-armed bandit experiments with variant distribution controlled through rollout percentages and bucketing algorithms.
+
+**Targeting Mechanisms**:
+- **Page Targeting**: URL-based rules that determine where experiments run
+- **Audience Targeting**: User and browser property-based segmentation including IP geolocation, behavioral cohorts, UTM parameters, and device characteristics
+- **Bucketing**: User assignment to experiment variants using Device ID and Amplitude ID resolution
+
+**Action Types**:
+- **Element Changes**: Visual modifications to website elements
+- **URL Redirects**: Client-side navigation with session history evaluation
+- **Custom Code Actions**: JavaScript, CSS, and HTML injection with utility functions like `waitForElement` and `utils.remove`
+
+**Performance and Caching**:
+- **Two-layer Caching**: CDN caching with 60-second max-age and browser cache control with stale-while-revalidate strategies
+- **Synchronous Evaluation**: Local experiment evaluation completing in <1ms
+- **Anti-flicker Overlay**: Prevents page flickering during experiment loading and evaluation
+
+## Broader Product Ecosystem Integration
+
+Web Experimentation integrates deeply with Amplitude's analytics and experimentation ecosystem:
+
+**Analytics Integration**: Impression events are automatically tracked and transformed from `$impression` to `[Experiment] Impression` during ingestion, with experiment user properties set for analysis. The platform supports impression volume estimation using the formula M * E * P (Monthly Tracked Users × Experiments × Participation rate).
+
+**Feature Flag Relationship**: While sharing some infrastructure with Amplitude's Feature Flags product, Web Experiments have distinct capabilities around Pages functionality and Management API restrictions that don't apply to standard feature flags.
+
+**Third-party Ecosystem**: The platform supports integration with major tag management systems (Google Tag Manager), e-commerce platforms (Shopify App), content management systems (WordPress plugin), and customer data platforms through standardized integration plugins.
+
+## API Endpoints and Technical Implementation
+
+**CDN Endpoints**:
+- US Data Center: `cdn.amplitude.com`
+- EU Data Center: `cdn.eu.amplitude.com`
+
+**Integration Interfaces**:
+- `IntegrationPlugin` interface for custom CDP integrations
+- `experimentIntegration` window variable for third-party connections
+- Browser SDK integration for unified analytics tracking
+
+**Utility Functions**:
+- `waitForElement()`: DOM element waiting utility for custom code actions
+- `utils.remove()`: Element cleanup and removal function
+
+**Content Security Policy Requirements**: The platform requires specific `script-src` and `Cross-Origin-Opener-Policy` configurations for proper operation in secure environments.
+
+## Post-Experiment Workflow
+
+The platform includes comprehensive post-experiment capabilities for managing experiment lifecycle, including winner analysis based on statistical significance, production code migration to reduce client-side overhead, experiment deactivation procedures, and technical debt cleanup to optimize page load execution time and reduce impression volume costs.

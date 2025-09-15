@@ -1,0 +1,20 @@
+## Summary
+This documentation explains how to build, analyze, and create cohorts from machine learning predictions in Amplitude Activation, covering the prediction creation workflow, audience analysis with percentile-based user segmentation, feature importance ranking, model performance metrics (AUC, log loss, true/false positive rates), and converting predictions into targetable cohorts for campaigns.
+
+## Keywords
+- Amplitude Activation predictions
+- predictive cohorts
+- machine learning user segmentation
+- percentile-based targeting
+- feature importance ranking
+- model performance metrics
+- AUC accuracy measurement
+- true positive rate
+- false positive rate
+- log loss evaluation
+- cohort transition modeling
+- future outcome prediction
+- starting cohort definition
+- predictive model validation
+- audience analysis workflow
+- campaign targeting optimization

@@ -1,43 +1,51 @@
-Amplitude Data is a comprehensive analytics platform that automatically collects, processes, and enriches user interaction data to deliver location-based and device-specific insights. The platform functions as a data intelligence solution that transforms raw user interactions into actionable analytics through sophisticated server-side data enrichment processes.
+Amplitude Data is a comprehensive data governance and management platform that serves as the centralized control layer for analytics instrumentation across the entire data lifecycle. The platform functions as a data catalog that enables organizations to create structured tracking plans, generate type-safe code, and ensure data quality through real-time monitoring and validation.
 
-## Core Features and Capabilities
+## Core Platform Architecture
 
-**Automatic Data Enrichment** forms the foundation of Amplitude's data processing capabilities. The platform automatically enhances incoming event data by processing IP addresses through MaxMind GeoIP database lookups, deriving comprehensive location properties including city, DMA (Designated Market Area), region, and country information. This enrichment occurs server-side without requiring additional client configuration, ensuring consistent data quality across all implementations.
+Amplitude Data operates as the governance backbone for Amplitude's analytics ecosystem, integrating with multiple data ingestion methods including client-side SDKs (Browser, Android, iOS, React Native, Unity, Flutter), server-side SDKs (Node.js, Go, Python, Java), and third-party integrations. The platform supports both real-time event streaming through the HTTP V2 API and batch processing via the Batch Event Upload API, with specialized endpoints including the Evaluation API for experimentation features and the Taxonomy API for CRUD operations on data schemas.
 
-**Device Intelligence** provides detailed hardware and software context through automatic user agent string parsing. The system extracts device brand, manufacturer, model, operating system details, browser information, and device type classification. This parsing happens automatically for client-side SDK implementations, providing rich device context for analytics segmentation.
+The system employs a Git-like branching model for tracking plan management, enabling teams to create feature branches, implement changes through merge requests with team reviews, and publish versioned tracking plans. This workflow integrates with the Ampli CLI tool, which generates type-safe wrapper code for SDKs based on tracking plan definitions, providing compile-time validation and autocompletion for developers.
 
-**Flexible Data Ingestion** supports both automatic collection through client-side SDKs and manual specification through the HTTP V2 API. This dual approach allows developers to leverage automatic detection for standard implementations while providing override capabilities for custom location and device properties when enhanced accuracy or privacy compliance is required.
+## Data Ingestion and Processing Pipeline
 
-## Product Architecture and Relationships
+The platform handles multiple data ingestion pathways with specific technical requirements and rate limitations. Data processing includes automatic IP address resolution through MaxMind GeoIP lookup for location properties (location_lat, location_long), user agent string parsing for device information (device_brand, device_manufacturer, device_model, os_name, os_version), and bot traffic filtering using the IAB/ABC International Spiders and Bots List.
 
-The Amplitude data processing pipeline operates through three interconnected architectural layers:
+For high-volume scenarios, the Batch Event Upload API supports data backfill with ingestion limits of 500K events per device ID daily, 100 batches per second, and 1000 events per second. The system includes throttling mechanisms (429 response codes) and supports the `$skip_user_properties_sync` flag for maintaining data integrity during historical imports.
 
-**Data Collection Layer** encompasses client-side SDKs that automatically capture user interactions with device and network context, alongside server-side integrations that enable custom data specification through API endpoints. This layer provides the foundation for all downstream processing.
+## Schema Management and Data Validation
 
-**Data Processing Layer** handles server-side enrichment through IP address resolution, user agent parsing, and geographic data enhancement using MaxMind GeoIP databases. This layer ensures consistent data quality and standardization across all ingestion methods.
+The schema management system categorizes three types of violations: unplanned event types, unplanned event/user properties, and unplanned property values. Organizations can configure responses to either "Mark As Unexpected" or "Reject" each violation type. The Observe feature provides real-time monitoring by analyzing event streams against tracking plans, categorizing events with statuses (Unexpected, Valid, Invalid, Out of Date).
 
-**Data Control Layer** implements privacy and filtering mechanisms, allowing organizations to block IP address collection, filter specific IP ranges, and configure tracking options through SDK settings. This layer provides compliance capabilities while maintaining data utility.
+Schema configuration supports complex data structures including property groups for bulk management, derived properties using formula editors with functions like REGEXEXTRACT, SPLIT, CONCAT, and mathematical operators, and lookup tables for property enrichment through CSV imports (limited to 100MB/1M rows with case-sensitive exact matching).
 
-## Key Nomenclature and Definitions
+## Advanced Data Transformation and Analysis
 
-**Location Properties** include `location_lat` and `location_long` for geographic coordinates derived from IP address lookup, along with `[Amplitude] City`, `DMA`, `Region`, and `Country` fields that form an automatically populated location hierarchy. The MaxMind GeoIP database serves as the third-party service providing IP-to-location mapping capabilities.
+Amplitude Data includes sophisticated transformation capabilities that allow retroactive modification of event data structure at query time without affecting raw data in connected warehouses. These transformations support merging events/properties, renaming property values, and hiding values, applying only to the main branch while preserving raw data integrity.
 
-**Device Properties** encompass `device_brand`, `device_manufacturer`, and `device_model` for hardware identification, `device_family` for device category classification, and `device_type` for form factor classification (mobile, desktop, tablet). Operating system information is captured through `os_name`, `os_version`, and `platform` fields, while web browser identification uses `browser_version` and mobile network provider information is stored in `carrier`.
+The platform supports multi-currency revenue analysis through out-of-the-box derived properties (Currency Converted Revenue/Price) and the CURRENCY_CONVERT() function, utilizing ISO 4217 currency codes and ExchangeRate API integration. Custom events functionality enables combining multiple existing events with OR clauses for tracking related user activities across various chart types.
 
-**Configuration Options** include `trackingOptions` for SDK configuration controlling automatic data collection, IP address filtering for server-side blocking of specific IP ranges, and the HTTP V2 API as the RESTful interface for custom data submission.
+## Integration and Destination Management
 
-## Ecosystem Integration
+The platform maintains extensive integration capabilities through source and destination catalogs. Event streaming destinations enable real-time behavioral data forwarding to downstream marketing, sales, and infrastructure tools with 60-second p95 latency targets and exponential backoff retry mechanisms. Cohort synchronization supports three cadence options: one-time, scheduled (hourly/daily), and real-time (every minute) syncing.
 
-Amplitude Data functions as a central processing hub integrating with multiple external services and internal systems. The platform maintains dependencies on MaxMind GeoIP databases for location accuracy and parsing libraries for user agent interpretation across device types and browsers.
+Specialized plugins extend functionality to platforms including Shopify (with Web Pixels API integration for checkout tracking) and WordPress (with advanced Autocapture functionality). The Chrome extension Amplitude Instrumentation Explorer provides real-time debugging capabilities for JavaScript SDK instrumentation.
 
-**API Integration** centers on the HTTP V2 API, which serves as the primary integration point for server-side implementations. This API allows custom applications to submit events with pre-defined location and device properties that bypass automatic detection, providing flexibility for specialized use cases.
+## Enterprise Data Governance and Security
 
-**SDK Ecosystem** spans multiple platforms including web, mobile, and desktop implementations. Client-side SDKs automatically handle data collection and transmission with configurable options for privacy compliance and data filtering, ensuring consistent implementation across different development environments.
+Enterprise-level features include Data Access Control (DAC) for managing sensitive data through property classification (PII, revenue, sensitive) and group-based permissions. The system supports chart blocking, Event Stream restrictions, and export/subscription enforcement with customizable access controls.
 
-## Technical Implementation
+Data mutability features enable INSERT, UPDATE, and DELETE operations through Mirror Sync strategies across Snowflake (CDC), Databricks (CDF), and Amazon S3 warehouse integrations. Time-to-Live (TTL) configuration allows organization and project-level event data retention with daily deletion jobs and configurable retention periods.
 
-**API Endpoints** through the HTTP V2 API provide submission capabilities for events with custom location properties, enabling developers to override automatic IP-based location detection with more accurate or privacy-compliant location data.
+## Key Technical Specifications and APIs
 
-**Configuration Methods** utilize `trackingOptions` configuration objects within SDK implementations, providing granular control over automatic data collection features and enabling privacy-focused data collection practices.
+**Primary API Endpoints:**
+- **HTTP V2 API**: Real-time event ingestion with automatic location property enrichment
+- **Batch Event Upload API**: Historical data import with rate limiting and deduplication
+- **Taxonomy API**: CRUD operations for categories, event types, and properties
+- **Evaluation API**: Experimentation feature support
+- **User Privacy API**: GDPR/CCPA compliance for complete user deletion
 
-**Processing Pipeline** automatically enriches incoming events with location and device data unless explicitly overridden, maintaining consistent data quality while preserving flexibility for custom implementations. This server-side processing ensures data standardization regardless of the ingestion method used.
+**Command Line Tools:**
+- **Ampli CLI**: Generates type-safe SDK wrapper code from tracking plans, supports pull/push operations for tracking plan synchronization
+
+The platform supports various data formats including CSV import/export for tracking plan schemas, converter configurations for Amazon S3 and Google Cloud Storage with comprehensive transformation operators, and Profiles integration using Change Data Capture for real-time user profile synchronization from data warehouses. The system operates within the broader Amplitude ecosystem, connecting analytics data collection with experimentation, user segmentation, and business intelligence workflows.

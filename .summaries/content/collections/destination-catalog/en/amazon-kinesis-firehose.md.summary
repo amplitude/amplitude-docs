@@ -1,0 +1,17 @@
+**Summary:** This documentation covers the Amazon Kinesis Firehose destination integration for streaming Amplitude event data, including AWS IAM role setup with specific account ID 358203115967, policy configuration for firehose:PutRecord permissions, and Amplitude Data catalog configuration for real-time event streaming to Firehose delivery streams.
+
+**Keywords:**
+- Amazon Kinesis Firehose
+- Amplitude Data destination
+- event streaming integration
+- AWS IAM role configuration
+- firehose:PutRecord permissions
+- delivery stream setup
+- Amplitude account ID 358203115967
+- ETL service integration
+- Identify Forwarding support
+- Amplitude Export API JSON format
+- role ARN configuration
+- stream region and name setup
+- real-time user interaction data
+- data warehouse data lake integration

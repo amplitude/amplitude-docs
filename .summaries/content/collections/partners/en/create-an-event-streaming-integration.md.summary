@@ -1,0 +1,21 @@
+**Summary:** This documentation guides partners through creating Event Streaming integrations in Amplitude using Freemarker templates, covering payload configuration, parameter setup, user property mapping, and the submission process through the Integration Portal.
+
+**Keywords:**
+- Event Streaming integration
+- Freemarker templates
+- Integration Portal
+- Event forwarding
+- User property mapping
+- MappedProperties
+- MappedFields
+- REST API headers
+- Event filtering
+- Identify forwarding
+- Destination tile
+- Parameter configuration
+- Event body editor
+- Rate limits
+- Authentication API key
+- Payload structure
+- Testing modal
+- Release internally

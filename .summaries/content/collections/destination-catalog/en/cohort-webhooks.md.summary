@@ -1,0 +1,18 @@
+**Summary:** This documentation covers Amplitude CDP's Cohort Webhooks destination that sends cohort updates (add/remove batches) to custom webhook endpoints with configurable headers, Apache FreeMarker templating for payload customization, and includes setup instructions for webhook URL configuration and cohort sync establishment.
+
+**Keywords:**
+- Amplitude CDP cohort webhooks
+- cohort syncing destination
+- webhook endpoint configuration
+- Apache FreeMarker templating
+- cohort add/remove batches
+- custom payload templates
+- webhook headers configuration
+- cohort sync cadence
+- user properties payload
+- cohort_id and cohort_name variables
+- in_cohort boolean flag
+- message_id deduplication
+- computed_time timestamp
+- async API pattern
+- 200 OK response handling

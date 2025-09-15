@@ -1,0 +1,24 @@
+## Summary
+This migration guide documents the upgrade from Flutter SDK 3.0 to 4.0, covering breaking changes including removal of `instance()` calls, Configuration object initialization, API method renames (`logEvent()` to `track()`, `uploadEvents()` to `flush()`), minimum identifier length requirements, and dependency updates for iOS 13.0+ and Browser SDK 2.
+
+## Keywords
+- Flutter SDK 4.0 migration
+- amplitude_flutter v3 to v4 upgrade
+- Configuration object initialization
+- instance() method removal
+- logEvent to track API migration
+- uploadEvents to flush migration
+- minimum identifier length minIdLength
+- iOS 13.0 platform requirement
+- Browser SDK 2 snippet replacement
+- BaseEvent eventType parameter
+- clearUserProperties removal
+- setUserProperties to identify migration
+- regenerateDeviceId removal
+- sessionId -1 outOfSession
+- flushQueueSize flushIntervalMillis
+- serverZone serverUrl configuration
+- defaultTracking sessions
+- Revenue API changes
+- pubspec.yaml dependency update
+- Podfile platform update

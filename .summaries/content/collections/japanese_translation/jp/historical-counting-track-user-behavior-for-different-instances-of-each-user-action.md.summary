@@ -1,0 +1,19 @@
+**Summary:**
+This Japanese documentation explains Amplitude's Historical Counting feature for tracking the Nth instance (up to 5th) of user actions across Event Segmentation, Funnel Analysis, Pathfinder, and Retention Analysis charts, with specific filter application order and behavioral cohort integration capabilities.
+
+**Keywords:**
+- Historical Counting (ヒストリカルカウント)
+- Nth instance tracking
+- Amplitude Event Properties
+- Event Segmentation charts
+- Funnel Analysis charts
+- Pathfinder charts
+- Retention Analysis charts
+- behavioral cohorts (行動コホート)
+- filter application order
+- conversion windows
+- custom event logic
+- Japanese translation
+- user action instances
+- event historical count filters
+- 1st through 5th occurrence tracking

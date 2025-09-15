@@ -1,0 +1,61 @@
+## Guides and Surveys Localization API
+
+The Guides and Surveys Localization API is a beta REST API service that enables programmatic translation management for LaunchDarkly's guides and surveys functionality. The API facilitates seamless integration with translation management systems (TMS) through standardized XLIFF 1.2 file format support, serving as a bridge between LaunchDarkly's content and external translation workflows.
+
+### Core Features and Use Cases
+
+The API addresses four primary use cases:
+
+- **Automated Translation Workflows**: Direct integration with translation management systems for streamlined localization processes
+- **Content Synchronization**: Bidirectional import and export of translatable content between LaunchDarkly and external translation tools  
+- **Multi-language Content Management**: Systematic handling of guides and surveys across multiple target languages
+- **Translation File Processing**: Programmatic manipulation of XLIFF translation units for guides and surveys content
+
+### Product Relationships and Architecture
+
+The Localization API operates as a specialized service within LaunchDarkly's guides and surveys ecosystem, integrating with several core platform components:
+
+**Feature Flag Integration**: Content is organized and referenced through `flag_key` parameters, establishing direct relationships between translatable content and feature flag configurations. This enables localized content to be controlled and delivered through the same feature management infrastructure.
+
+**Variant Management**: Translation units map to specific variants within feature flags, providing granular control over localized content delivery and enabling sophisticated A/B testing scenarios that account for language and cultural variations.
+
+**Guides and Surveys Content System**: The API specifically handles "nudge translations" - the user-facing translatable elements within guides and surveys that drive user interaction and engagement.
+
+### Key Nomenclature and Definitions
+
+**XLIFF 1.2 Format**: The standardized XML Localization Interchange File Format used for translation file exchange, ensuring compatibility with industry-standard translation management systems.
+
+**Flag Key**: Unique identifier associating translation content with specific feature flags, serving as the primary organizational unit for translatable content within the LaunchDarkly ecosystem.
+
+**Variant Identifier**: Specifies particular variations within a feature flag containing translatable elements, enabling targeted translation of specific content versions.
+
+**Trans-unit Elements**: Individual translation units within XLIFF files containing source text and target translations, representing discrete translatable segments that maintain mapping relationships.
+
+**Nudge Translations**: User-facing translatable content within guides and surveys, including text, labels, calls-to-action, and interactive elements that guide user behavior.
+
+**Target-language/Source-language Codes**: ISO language codes specifying translation direction and locale-specific content handling requirements.
+
+**Original Attribute Mapping**: Mechanism linking XLIFF translation units back to their corresponding elements in the LaunchDarkly guides and surveys system, ensuring content integrity during translation workflows.
+
+### API Endpoints and Technical Implementation
+
+The API operates through the base endpoint pattern `guides-surveys/api/v1/localization` and implements RESTful principles for translation file management:
+
+**Authentication**: Utilizes App ID and App Secret Key credentials through Basic Authentication, providing secure access to translation operations and ensuring proper authorization for content modification.
+
+**Translation Import/Export Operations**: Bidirectional XLIFF file processing that maintains content integrity and preserves mapping relationships between source and target languages throughout the translation lifecycle.
+
+**Cache Management**: Includes cache purging mechanisms ensuring translation updates are immediately reflected in the live guides and surveys system, maintaining consistency between translated content and user-facing experiences.
+
+**Translation Management System Integration**: Purpose-built for external TMS platform integration, enabling automated translation workflows, content synchronization, and enterprise-scale localization processes.
+
+### Broader Ecosystem Integration
+
+Within LaunchDarkly's feature management platform, the Guides and Surveys Localization API represents a specialized internationalization capability that extends core feature flagging functionality into multi-language content delivery. The API enables organizations to:
+
+- Maintain consistent user experiences across different locales while leveraging feature flag-controlled content delivery
+- Implement sophisticated experimentation scenarios incorporating language and cultural variations
+- Scale guides and surveys functionality to global audiences through systematic translation management
+- Integrate localization workflows into existing DevOps, content management, and release processes
+
+The beta designation indicates active development and refinement of the API's capabilities, with XLIFF 1.2 standard providing a stable foundation for translation workflow integration while the service evolves to meet enterprise localization requirements and expanding international use cases.

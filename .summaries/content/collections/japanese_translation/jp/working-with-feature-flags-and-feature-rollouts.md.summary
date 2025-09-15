@@ -1,0 +1,18 @@
+## Summary
+This Japanese documentation explains how to create and configure feature flags in Amplitude Experiment for feature rollouts, covering the complete workflow from flag creation to activation including deployment selection, variant configuration, user segmentation, and rollout percentage settings.
+
+## Keywords
+- Amplitude Experiment
+- feature flags (機能フラグ)
+- feature rollouts (機能ロールアウト)
+- Japanese translation
+- flag variants (バリアント)
+- user segmentation (ユーザーセグメント)
+- deployment configuration
+- bucket units (バケットユニット)
+- evaluation mode (評価モード)
+- rollout percentage
+- weight distribution
+- active/inactive toggle
+- remote vs local evaluation
+- bucket salt (バケット・ソルト)

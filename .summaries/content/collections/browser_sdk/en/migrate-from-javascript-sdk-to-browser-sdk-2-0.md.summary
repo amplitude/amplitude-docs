@@ -1,0 +1,18 @@
+**Summary:** This documentation covers migrating from the legacy amplitude-js SDK to Browser SDK 2.0 (@amplitude/analytics-browser@2+), detailing breaking changes in API methods, configuration options, cookie migration patterns, and implementation differences including the removal of getInstance() calls and updated event tracking methods.
+
+**Keywords:**
+- amplitude-js migration
+- @amplitude/analytics-browser@2+
+- Browser SDK 2.0 migration
+- getInstance() removal
+- cookie migration AMP_{api_key}
+- logEvent to track API
+- HTTP V2 API endpoint
+- plugin architecture migration
+- web attribution config changes
+- sendEvents to flush mapping
+- deferInitialization removal
+- minimum identifier length
+- tree shaking optimization
+- batch API support
+- transportProvider configuration

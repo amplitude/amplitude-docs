@@ -1,0 +1,19 @@
+**Summary:** Documents Amplitude's Revenue LTV chart for analyzing new user monetization using revenue events like `[Amplitude] Any Revenue Event` with `$revenue` property, supporting measures like Total Revenue, New Paying Users, ARPU, and ARPPU with up to 12-month lookback periods.
+
+**Keywords:**
+- Revenue LTV chart
+- `[Amplitude] Any Revenue Event`
+- `$revenue` property
+- `logRevenueV2()` SDK method
+- ARPU (average revenue per user)
+- ARPPU (average revenue per paying user)
+- New Paying Users measure
+- Total Revenue measure
+- revenue event tracking
+- new user monetization
+- cohort revenue analysis
+- `$price`, `$productId`, `$quantity`, `$revenueType` properties
+- revenue authentication system
+- in-app purchases (IAPs)
+- currency conversion
+- Growth and Enterprise plans

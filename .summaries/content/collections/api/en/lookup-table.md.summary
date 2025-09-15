@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the deprecated Lookup Table API (v1) for Amplitude Analytics, which allows uploading CSV files to augment user and event properties through property mappings, with endpoints for CRUD operations on lookup tables identified by name and scoped per project.
+
+**Keywords:**
+- Lookup Table API
+- CSV file upload
+- property mappings
+- user properties augmentation
+- event properties augmentation
+- multipart/form-data
+- API v2 endpoint
+- HTTP basic authentication
+- lookup table CRUD operations
+- column headers mapping
+- case-sensitive exact matching
+- project-scoped tables
+- deprecated API version
+- beta API status
+- 100MB file size limit
+- 1,000,000 row limit

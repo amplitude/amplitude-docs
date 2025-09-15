@@ -1,0 +1,21 @@
+**Summary:** This documentation provides a comprehensive migration guide for transitioning from Segment to Amplitude's CDP platform, covering source/destination configuration, SDK implementation updates with code examples for Browser, iOS, and Android platforms, and validation processes for successful data migration.
+
+**Keywords:**
+- Segment migration
+- Amplitude CDP
+- SDK implementation migration
+- Browser SDK 2.0
+- iOS Swift SDK
+- Android Kotlin SDK
+- identify() method
+- track() method
+- groupIdentify() method
+- setUserId()
+- write_key to api_key migration
+- source catalog configuration
+- destination catalog setup
+- event validation
+- data debugging tools
+- tracking plan migration
+- workspace to project mapping
+- analytics HTTP v2 API

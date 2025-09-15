@@ -1,0 +1,16 @@
+**Summary:** This documentation describes configuring Amplitude's event streaming integration to Adjust, a mobile app marketing attribution platform, requiring Adjust App Token and S2S Security Token for server-to-server event forwarding with property mapping for user identifiers and revenue tracking.
+
+**Keywords:**
+- Adjust destination integration
+- Event streaming to Adjust
+- Adjust App Token
+- Adjust S2S Security Token
+- Server-to-server events
+- Mobile app attribution
+- Revenue event tracking
+- User property mapping
+- iOS IDFA mapping
+- Google Advertising ID
+- Adjust event token mapping
+- Real-time event forwarding
+- Attribution platform integration

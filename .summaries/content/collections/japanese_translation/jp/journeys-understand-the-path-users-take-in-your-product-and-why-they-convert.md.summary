@@ -1,0 +1,20 @@
+**Summary:**
+This documentation describes Amplitude's Journeys chart feature (currently in beta), which combines legacy Journey, Pathfinder, and Pathfinder Users charts to analyze user conversion paths through product transitions, offering three visualization modes: Pathfinder, Journey Map, and Top User Paths with configurable conversion windows and event filtering.
+
+**Keywords:**
+- Amplitude Journeys chart
+- Pathfinder visualization
+- Journey Map analysis
+- Top User Paths
+- conversion windows
+- user path analysis
+- event filtering
+- beta feature
+- legacy charts integration
+- product transition analysis
+- conversion path tracking
+- session-based measurement
+- clock time measurement
+- event expansion by properties
+- user segmentation
+- funnel analysis integration

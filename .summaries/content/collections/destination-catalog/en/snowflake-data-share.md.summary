@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Snowflake Data Share integration for exporting Amplitude event data, including setup steps for Raw Events (5-minute intervals) and Merged ID tables (hourly), with specific schema definitions and regional limitations requiring US West (Oregon) AWS deployment.
+
+**Keywords:**
+- Snowflake Data Share
+- Raw Events table
+- Merged ID table
+- event-streaming destination
+- 5-minute export intervals
+- hourly merged IDs
+- US West Oregon AWS
+- cross-region cross-cloud limitations
+- EVENTS_{PROJECT_ID} schema
+- MERGE_IDS_{PROJECT_ID} schema
+- DB_{ORG_ID} database
+- amplitude_id column
+- event_properties schema
+- backfill historical data
+- warehouse destination
+- paid add-on feature

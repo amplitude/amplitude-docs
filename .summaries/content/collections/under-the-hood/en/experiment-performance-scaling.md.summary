@@ -1,0 +1,15 @@
+**Summary:** This documentation explains Amplitude Experiment's performance architecture built on Fastly CDN and AWS services, covering implementation recommendations like local defaults and client-side caching for optimal experimentation program performance.
+
+**Keywords:**
+- Amplitude Experiment architecture
+- Fastly CDN routing
+- AWS Application Load Balancer
+- DynamoDB experiment storage
+- local defaults implementation
+- client-side SDK caching
+- identity resolution system
+- user metadata store
+- behavioral cohorts
+- experiment variants local storage
+- network call optimization
+- high availability guarantees

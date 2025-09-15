@@ -1,0 +1,18 @@
+**Summary:** This Japanese documentation page covers frequently asked questions about Amplitude's funnel analysis charts, including counting methods (unique users vs event totals), conversion windows (24-hour vs calendar days), revenue attribution to funnel conversions, cohort creation behavior through microscope, and differences between standard and time-based conversion charts.
+
+**Keywords:**
+- ファネル分析 (funnel analysis)
+- コンバージョン率 (conversion rate)
+- ユニークユーザー (unique users)
+- イベント合計 (event totals)
+- 24時間ウィンドウ (24-hour window)
+- プロパティ定数保持 (property constant retention)
+- マイクロスコープ (microscope)
+- コホート作成 (cohort creation)
+- 動的コホート (dynamic cohort)
+- 静的コホート (static cohort)
+- 収益プロパティ (revenue property)
+- 時間経過コンバージョン (time-based conversion)
+- 最終ステップのプロパティ合計 (final step property sum)
+- セッションID (session ID)
+- 暦日 (calendar days)

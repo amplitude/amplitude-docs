@@ -1,0 +1,15 @@
+**Summary:** This documentation covers the Website scraper feature for Resource Center source repositories, including URL extraction methods (direct URLs vs CSV/XML sitemap upload), advanced filtering options with URL path inclusion/exclusion, content selector overrides for targeting specific page elements, and procedures for re-syncing automatically excluded pages through the Sync errors interface.
+
+**Keywords:**
+- Website scraper
+- Resource Center source repositories
+- URL extraction methods
+- CSV XML sitemap upload
+- Content selectors override
+- Ignore elements selectors
+- URL path filtering
+- Sync errors interface
+- Force Sync and Publish
+- Recursive link pulling
+- Website heuristics
+- Guides and Surveys Content

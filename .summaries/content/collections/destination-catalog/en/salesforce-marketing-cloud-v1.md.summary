@@ -1,0 +1,14 @@
+**Summary:** This documentation covers the Salesforce Marketing Cloud V1 destination integration for syncing Amplitude Behavioral Cohorts to Marketing Cloud data extensions, requiring specific setup of "Amplitude Engage" data extension with Contact Key mapping and server-to-server API integration with dedicated attributes per cohort.
+
+**Keywords:**
+- Salesforce Marketing Cloud V1
+- Behavioral Cohorts sync
+- Amplitude Engage data extension
+- Contact Key mapping
+- Server-to-Server API integration
+- Marketing Cloud subdomain
+- Client ID client secret authentication
+- Data extension attributes
+- Cohort syncing destination
+- Marketing automation integration
+- Growth Enterprise customers only

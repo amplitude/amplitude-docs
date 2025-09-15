@@ -1,0 +1,19 @@
+**Summary:**
+This Japanese documentation explains how to use the Events Module in Amplitude charts, covering event addition (up to 10 events), default Amplitude events (Top Global Event, Segment Top Event, Any Active Event, Any Event, New Users), wildcard search functionality with asterisk/question mark/brackets operators, and event filtering using Filter by and Group by conditions with event properties and user properties.
+
+**Keywords:**
+- Amplitude Events Module
+- Japanese translation documentation
+- event properties filtering
+- user properties grouping
+- wildcard search operators
+- default Amplitude events
+- Top Global Event
+- Segment Top Event
+- Any Active Event
+- Filter by conditions
+- Group by specifications
+- inactive events tracking
+- event instrumentation
+- maximum 10 events per analysis
+- user segments integration

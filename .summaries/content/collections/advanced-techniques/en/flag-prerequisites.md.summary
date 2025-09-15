@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Amplitude Experiment's flag prerequisites feature for Enterprise plans, which allows creating dependencies between feature flags and experiments where evaluation of dependent flags requires prerequisite flags to have specific variant values (like 'on' or 'off').
+
+**Keywords:**
+- flag prerequisites
+- Amplitude Experiment
+- flag dependencies
+- prerequisite flags
+- variant assignment
+- Dependencies card
+- evaluation modes
+- local evaluation mode
+- remote evaluation mode
+- circular dependency loop
+- release groups
+- chained mutual exclusion groups
+- targeting criteria
+- bucketing allocation
+- Enterprise plans
+- testers configuration

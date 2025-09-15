@@ -1,0 +1,57 @@
+## Amplitude Activation: AI-Powered Customer Segmentation and Personalization Platform
+
+Amplitude Activation is a comprehensive customer segmentation and personalization platform that leverages AI and machine learning to help businesses optimize user engagement through predictive analytics, automated recommendations, and intelligent audience targeting. The platform transforms traditional behavioral segmentation by focusing on future user actions rather than past behavior, enabling more effective marketing campaigns and personalized experiences.
+
+## Product Architecture and Feature Relationships
+
+The platform consists of four interconnected core components that work together to create a complete customer activation workflow:
+
+**Predictions** serve as the foundation, using transformer-based sequence models to analyze user activity patterns and generate probabilistic scores for future behavior likelihood. These predictions require a minimum of 100k monthly active users and typically deliver 5-20% lift over traditional behavioral cohorts.
+
+**Computations** complement predictions by transforming raw event data into computed user properties through three computation types: event counts, aggregations, and first/last value calculations. These computed properties enhance segmentation capabilities and provide additional data points for personalization.
+
+**Recommendations** utilize AutoML clustering algorithms with hourly retraining to deliver three types of personalization: Top Trending (momentum-based), Most Popular (frequency-based), and AI Based (machine learning-driven). The system processes outcome events, exposure events, and item catalogs to generate personalized content suggestions.
+
+**Third-Party Syncs** enable the distribution of all generated insights through on-demand, automated, and real-time synchronization to external platforms including Facebook Custom Audiences, Google Customer Lists, Braze, Iterable, and S3 storage.
+
+## Key Nomenclature and Definitions
+
+**Predictive Cohorts**: User segments created based on AI-generated likelihood scores for future actions, replacing traditional behavioral cohorts with forward-looking segmentation.
+
+**Outcome Events**: Target behaviors that the system optimizes for, such as purchases, subscriptions, or conversions, serving as the primary success metric for both predictions and recommendations.
+
+**Exposure Events**: User interactions that trigger recommendation delivery or prediction scoring, creating the touchpoints where personalization occurs.
+
+**Feature Importance Ranking**: Machine learning-generated prioritization of user attributes and behaviors that most strongly influence prediction accuracy.
+
+**Control Groups/Holdout Groups**: Statistically controlled user segments that receive baseline experiences to measure the incremental lift of predictive interventions.
+
+**Percentile-Based Segmentation**: User classification system that ranks users by prediction scores and segments them into performance percentiles for targeted campaigns.
+
+**Event Properties**: Structured data attributes associated with user actions that feed into machine learning models for both prediction generation and recommendation personalization.
+
+**Computed User Properties**: Derived user attributes created by processing raw event data through mathematical operations, enabling enhanced segmentation and personalization capabilities.
+
+## Broader Product Ecosystem Integration
+
+Amplitude Activation integrates deeply with the broader Amplitude Analytics ecosystem, leveraging existing event tracking infrastructure and user identification systems. The platform extends analytics capabilities into actionable marketing automation through several integration patterns:
+
+**Data Foundation**: Utilizes Amplitude's existing event collection and user identification systems, building predictive models on top of established behavioral tracking.
+
+**API Integration**: The Profile API serves as the primary interface for retrieving predictions, recommendations, and computed properties, supporting both user_id and device_id queries with Secret Key authentication.
+
+**External Platform Connectivity**: Seamlessly syncs audiences and insights to major marketing platforms, creating closed-loop optimization cycles where campaign performance feeds back into model improvement.
+
+**Real-Time Processing**: Supports minute-level updates for time-sensitive personalization use cases while maintaining batch processing capabilities for large-scale audience management.
+
+## Technical Implementation Details
+
+**API Endpoints**: The Profile API provides REST endpoints for retrieving recommendations, predictions, and user properties, requiring Secret Key authorization and supporting JSON response formats with structured fields including rec_id, is_control, and items arrays.
+
+**Sync Operations**: Three distinct sync types handle different use cases - on-demand for immediate needs, automated for scheduled campaigns, and real-time for dynamic personalization with configurable frequency from minutes to daily intervals.
+
+**Performance Measurement**: Built-in analytics track model performance through AUC scores, log loss metrics, true/false positive rates, and statistical significance testing using two-sided t-tests for treatment vs control analysis.
+
+**Campaign Types**: Supports three primary campaign applications - inclusion criteria for audience targeting, dynamic pricing for revenue optimization, and content personalization for engagement improvement, each with specific measurement frameworks and success metrics.
+
+The platform represents a shift from reactive behavioral analysis to proactive predictive engagement, enabling businesses to anticipate user needs and optimize experiences before traditional behavioral signals become apparent.

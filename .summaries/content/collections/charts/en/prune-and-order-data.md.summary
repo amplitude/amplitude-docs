@@ -1,0 +1,16 @@
+**Summary:** This documentation explains Amplitude Analytics' data pruning and ordering mechanisms for charts with group-by clauses, including the 100-value limit for single group-by and 500-value limit for dual group-by charts, plus chart-specific behaviors for Event Segmentation and Funnel Analysis.
+
+**Keywords:**
+- data pruning
+- chart ordering
+- group-by clause limits
+- 100-value maximum single group-by
+- 500-value maximum dual group-by
+- Event Segmentation Uniques tab
+- Funnel Analysis conversion rates
+- CSV export 10,000 values
+- Dashboard REST API 20,000 values
+- chart performance optimization
+- top values selection
+- pre-filter pruning
+- cohort filtering

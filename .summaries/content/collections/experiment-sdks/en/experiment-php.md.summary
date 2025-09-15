@@ -1,0 +1,24 @@
+**Summary:** This documentation covers Amplitude Experiment's server-side PHP SDK (v7.4+) for both remote and local evaluation, including initialization with deployment keys, user fetching/evaluation, assignment tracking with custom providers, and Amplitude cookie integration for device ID synchronization.
+
+**Keywords:**
+- Amplitude Experiment PHP SDK
+- remote evaluation client
+- local evaluation client
+- deployment key initialization
+- RemoteEvaluationConfig
+- LocalEvaluationConfig
+- fetch variants
+- evaluate user
+- refreshFlagConfigs
+- assignment tracking
+- AssignmentTrackingProvider
+- DefaultAssignmentTrackingProvider
+- AmplitudeCookie parsing
+- GuzzleHTTPClient configuration
+- PSR logger interface
+- composer installation
+- server-side evaluation
+- flag configurations
+- user properties
+- group properties
+- account-level bucketing

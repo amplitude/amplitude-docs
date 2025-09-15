@@ -1,0 +1,16 @@
+**Summary:** This documentation explains how to instrument account-level reporting in Amplitude using various methods including SDKs, Identify API, HTTP API, Segment integration, and Group Identify API, with a limit of five group types per project and the ability to analyze events at both user and group levels.
+
+**Keywords:**
+- account-level reporting
+- group-level analyses
+- Amplitude SDKs
+- Identify API groups key
+- HTTP API groups key
+- Segment Group Type Trait
+- Segment Group Value Trait
+- Group Identify API
+- group types limit
+- group properties
+- event-level groups
+- user-group association
+- chart control panel dropdown

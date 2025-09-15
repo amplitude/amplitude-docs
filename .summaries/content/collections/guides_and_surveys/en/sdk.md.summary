@@ -1,0 +1,25 @@
+## Summary
+
+This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers (like Segment), and Google Tag Manager, with detailed API methods for managing guides/surveys display, user properties, localization, and router configuration for SPAs.
+
+## Keywords
+
+- Amplitude Guides and Surveys Web SDK
+- @amplitude/engagement-browser package
+- engagement.init() and engagement.boot() methods
+- Amplitude Browser SDK 2.0 plugin integration
+- Third-party analytics provider integration
+- Segment analytics integration
+- Google Tag Manager template
+- engagement.gs.show() and engagement.gs.reset() methods
+- forwardEvent() for event-based triggers
+- setSessionProperty() and _setUserProperties() methods
+- updateLanguage() localization
+- setRouter() SPA configuration
+- setThemeMode() dark/light mode
+- addCallback() method registration
+- Content Security Policy (CSP) nonce parameter
+- _startNudgeDebug() desktop app preview
+- serverZone EU/US configuration
+- proxy setup serverUrl and cdnUrl
+- Electron framework integration

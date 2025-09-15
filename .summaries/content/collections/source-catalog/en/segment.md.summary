@@ -1,0 +1,18 @@
+**Summary:** This documentation covers the Segment integration with Amplitude, detailing bidirectional data flow including sending events from Segment to Amplitude via the Amplitude (Actions) destination and exporting Amplitude behavioral cohorts back to Segment, with setup instructions for client-side bundled integration, server-side implementation, and SDK function mappings.
+
+**Keywords:**
+- Segment Amplitude Actions destination
+- Segment Amplitude Classic destination
+- client-side bundled integration
+- Segment sources and destinations
+- behavioral cohorts export
+- session tracking capabilities
+- SDK function mappings (track, identify, screen, alias, group)
+- JavaScript Analytics.js integration
+- iOS Segment-Amplitude pod
+- Android AmplitudeIntegration.FACTORY
+- server-side libraries
+- User Mapping aliasing
+- groupIdentify functionality
+- CDP integration
+- raw-events and cohorts integration types

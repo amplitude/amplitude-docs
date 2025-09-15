@@ -1,0 +1,31 @@
+## Summary
+This documentation explains how Amplitude Experiment uses sequential testing (specifically mixed Sequential Probability Ratio Tests - mSPRT) for statistical inference in A/B testing, comparing it to traditional t-tests and covering implementation details for unique, sum, and property sum metrics with specific exposure and conversion thresholds.
+
+## Keywords
+- sequential testing
+- mixed Sequential Probability Ratio Tests (mSPRT)
+- statistical inference
+- A/B testing
+- hypothesis testing
+- null hypothesis
+- alternative hypothesis
+- t-test comparison
+- false positive rates
+- type 1 error
+- alpha threshold 0.05
+- unique metrics
+- sum metrics
+- property sum metrics
+- conversion thresholds
+- exposure thresholds
+- 25 conversions minimum
+- 100 exposures minimum
+- confidence intervals
+- absolute lift
+- relative lift
+- statistical power
+- early stopping
+- always-valid results
+- treatment variants
+- control groups
+- randomized controlled trials

@@ -1,0 +1,18 @@
+**Summary:**
+This Japanese documentation explains how to build retention analytics charts in Amplitude, covering the setup of start events, return events, user segmentation, and usage interval analysis for measuring user product adoption and return frequency.
+
+**Keywords:**
+- Amplitude retention analytics
+- Japanese translation (jp)
+- start events (開始イベント)
+- return events (戻りイベント)
+- user segmentation (ユーザーセグメント)
+- usage interval analysis (使用インターバル分析)
+- event properties filtering
+- critical events (重大事象)
+- product adoption measurement
+- retention chart configuration
+- breakdown table (内訳表)
+- event modules
+- segmentation modules
+- user property grouping

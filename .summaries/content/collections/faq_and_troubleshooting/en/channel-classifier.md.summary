@@ -1,0 +1,18 @@
+**Summary:** This FAQ documentation covers Amplitude's channel classifier feature for defining acquisition channels to track traffic sources, including permissions (Growth/Enterprise users, org admin/manager access), property configuration using utm_medium/referring_domain, retroactive application, regex support, and troubleshooting "(none)" values in Data Tables.
+
+**Keywords:**
+- channel classifier
+- acquisition channels
+- traffic sources
+- utm_medium
+- referring_domain
+- UTM parameters
+- Growth Enterprise users
+- org admin manager permissions
+- retroactive property definition
+- Data Tables
+- regex formula
+- initial_utm properties
+- Amplitude Data properties
+- channel definitions
+- attribution tracking

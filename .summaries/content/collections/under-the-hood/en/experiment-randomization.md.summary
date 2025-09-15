@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude Experiment's deterministic randomization process using murmur3 hash of "bucketingSalt/amplitude_id" for two-stage user assignment: first determining experiment inclusion via mod 100 against percentage rollout, then variant assignment via floor division with weighted ranges 0-42949672.
+
+**Keywords:**
+- deterministic randomization
+- murmur3 hash
+- bucketing salt
+- amplitude_id
+- bucketingSalt/amplitude_id
+- murmur3_x86_32
+- mod 100
+- percentage rollout
+- variant assignment
+- weighted ranges
+- 42949672
+- two-stage assignment
+- experiment bucketing
+- fallback variant
+- variant weights

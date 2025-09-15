@@ -1,0 +1,61 @@
+# Amplitude Experiment Statistical Analysis Framework
+
+Amplitude Experiment is a comprehensive statistical analysis platform designed for A/B testing and Multi-Armed Bandit experiments. The platform provides data-driven decision making capabilities through controlled experimentation, built on rigorous statistical methodologies including Welch's T-test implementation, MDE-based experiment design, and robust sample size calculations.
+
+## Product Architecture and Feature Relationships
+
+The platform operates through two primary interconnected systems:
+
+**Statistical Testing Engine** serves as the analytical core, implementing Welch's T-test as the primary statistical method for both binary and continuous metrics analysis. This engine integrates directly with the experiment configuration system through the Settings tab interface, where users define analysis parameters, statistical requirements, and testing methodologies.
+
+**Experiment Design System** focuses on pre-experiment planning through MDE (Minimum Detectable Effect) configuration, which drives sample size calculations, experiment duration estimates, and statistical power analysis. This system works synergistically with the duration estimator to provide end-to-end experiment planning capabilities, ensuring statistical validity from design through execution.
+
+The Goals Panel serves as the central configuration hub, connecting recommendation metrics (primary success measures) with guardrail metrics (safety constraints), while the Analysis Settings section provides granular control over statistical methodology selection and parameter configuration.
+
+## Core Nomenclature and Statistical Definitions
+
+**MDE (Minimum Detectable Effect)**: The smallest effect size an experiment can reliably detect, serving as the foundational input for sample size calculations and experiment design decisions. MDE directly influences statistical power and experiment duration.
+
+**Welch's T-test**: The platform's primary statistical hypothesis testing method, available in both two-sided configurations (detecting any significant difference) and one-sided configurations (detecting directional changes). This method provides robust analysis for unequal variances between experiment variants.
+
+**Sample Size Threshold**: The minimum number of samples required per variant to ensure statistical validity, calculated based on Central Limit Theorem assumptions and configured MDE requirements.
+
+**Goals Panel**: The primary metrics configuration interface where users define recommendation metrics and guardrail metrics, establishing the statistical framework for experiment evaluation.
+
+**Analysis Settings**: The statistical configuration section enabling users to select the Stats Method (typically Welch's T-test) and define critical analysis parameters including test directionality and significance thresholds.
+
+**Duration Estimator**: A predictive planning tool calculating expected experiment runtime based on MDE specifications, sample size requirements, and traffic allocation parameters.
+
+**Cumulative Exposure Graph**: Real-time visualization tracking experiment progress and sample accumulation across variants.
+
+## Product Ecosystem Integration
+
+Amplitude Experiment integrates comprehensively within the broader Amplitude experimentation ecosystem through multiple integration points:
+
+**Experiment Type Support**: The platform accommodates both traditional A/B testing methodologies and Multi-Armed Bandit experiments, with statistical methods specifically adapted to each approach's unique requirements and optimization strategies.
+
+**Metrics Infrastructure**: Deep integration with Amplitude's metrics system enables analysis of conversion rate optimization scenarios alongside complex business metrics, providing flexibility for diverse experimentation use cases.
+
+**Traffic Management Integration**: Coordination with traffic allocation systems ensures adequate sample sizes across all variants while maintaining statistical validity and preventing sample ratio mismatch issues.
+
+**Monitoring and Quality Assurance**: Real-time experiment monitoring through the Cumulative Exposure graph, Sample Size Target tracking, and Exposure Remaining calculations prevents common experimental pitfalls including peeking, early stopping bias, and insufficient statistical power.
+
+## Configuration Pathways and Implementation
+
+**Primary Configuration Flow**: 
+Settings tab → Goals panel (metrics definition) → Analysis Settings (statistical method selection) → Duration estimation and monitoring setup
+
+**Critical Configuration Parameters**:
+- Stats Method selection with Welch's T-test as the recommended default
+- Sample size thresholds configured per variant
+- MDE specification tailored to each metric type and business context
+- Test directionality selection (one-sided vs two-sided testing)
+- Confidence interval bounds and significance level configuration
+
+**Monitoring and Analysis Interfaces**:
+- Samples Per Variant Needed real-time tracking
+- Cumulative Exposure graph for visual progress monitoring
+- Exposure Remaining calculations for experiment timeline management
+- Duration estimator projections for resource planning
+
+The platform emphasizes statistical rigor through proper methodology implementation while offering alternative approaches like sequential testing for scenarios requiring more flexible analysis frameworks. The system maintains confidence interval bounds and statistical validity throughout the complete experiment lifecycle, from initial design and configuration through final analysis and decision making, ensuring reliable and actionable experimental results.

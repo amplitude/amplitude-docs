@@ -1,0 +1,13 @@
+**Summary:** This FAQ documentation explains that Amplitude does not support exporting raw event data for specific charts or selected events in a SQL-like manner, but offers alternatives including the Export API for JSON format exports and Amazon S3 Export integration for bulk data export to S3 buckets.
+
+**Keywords:**
+- data export limitations
+- raw event data export
+- Export API
+- JSON format export
+- Amazon S3 Export integration
+- S3 bucket export
+- chart data export restrictions
+- event property export
+- bulk data export alternatives
+- SQL-like export not supported

@@ -1,0 +1,13 @@
+**Summary:** This documentation describes the Amplitude-Segment integration for syncing behavioral cohorts from Amplitude to Segment using Segment's writeKey authentication, enabling cohort data to be used with ad networks and marketing tools through Segment identify calls that set cohort membership as True/False user traits.
+
+**Keywords:**
+- Segment writeKey authentication
+- Amplitude behavioral cohorts sync
+- Segment identify calls
+- cohort membership True/False traits
+- user_id cohort syncing
+- Segment raw data warehouses
+- CDP cohort destination
+- Amplitude source configuration
+- cohort sync cadence
+- anonymous users not supported

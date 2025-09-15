@@ -1,0 +1,79 @@
+## Amplitude Android SDK Product Suite
+
+The Amplitude Android SDK ecosystem is a comprehensive analytics platform for Android applications, featuring multiple SDK variants and development tools. The suite includes a legacy Android SDK in maintenance mode, a modern Android-Kotlin SDK with advanced capabilities, and the Ampli code generation tool for type-safe analytics implementation.
+
+## Product Relationships and Architecture
+
+The Android SDK ecosystem follows a tiered architecture with three primary components:
+
+**Legacy Android SDK** (`com.amplitude:android-sdk`) - The original maintenance-mode SDK supporting Java and Kotlin with traditional `AmplitudeClient` initialization and `logEvent()` methods for basic analytics tracking.
+
+**Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The modern, actively developed SDK featuring enhanced plugin architecture, autocapture capabilities, and improved API design with `track()`, `identify()`, and `revenue()` methods.
+
+**Ampli Wrapper** - A code generation layer that creates strongly typed APIs on top of either SDK, enforcing tracking plan schemas and providing compile-time validation for analytics events.
+
+The migration path flows from the legacy SDK to the Android-Kotlin SDK, with optional Ampli integration for enhanced type safety and tracking plan enforcement.
+
+## Key Nomenclature and Definitions
+
+**Core Analytics Concepts:**
+- **Event Tracking**: Primary analytics method using `logEvent()` (legacy) or `track()` (modern) with event properties
+- **User Identification**: User property management through `identify()` operations (set, setOnce, add, unset, append, prepend)
+- **Revenue Tracking**: Monetization analytics via `logRevenueV2()` with store verification support
+- **Group Analytics**: Organization-level tracking using `setGroup()` and `groupIdentify()`
+- **Session Management**: Automatic session tracking with configurable timeout periods
+
+**Device and User Identity:**
+- **Device ID**: Unique device identifier with lifecycle management
+- **User ID**: Custom user identifier for cross-device tracking
+- **Advertising ID (ADID)**: Google advertising identifier integration
+- **App Set ID**: Google App Set identifier for privacy-compliant tracking
+
+**Configuration and Data Management:**
+- **Tracking Plans**: Schema definitions for event structure and validation
+- **Autocapture**: Automatic tracking of sessions, app lifecycles, screen views, deep links, and element interactions
+- **Plugins**: Extensible architecture for data enrichment and destination routing
+- **Middleware**: Data transformation layer for event processing
+- **Flush Operations**: Batch event upload management with configurable intervals and queue sizes
+
+## Broader Product Ecosystem Integration
+
+The Android SDK integrates with Amplitude's comprehensive analytics platform through multiple touchpoints:
+
+**Data Infrastructure**: Events flow through Amplitude's HTTP V2 API endpoint with support for EU data residency via `serverZone` configuration and batch processing for optimal performance.
+
+**Privacy and Compliance**: Built-in COPPA control (`enableCoppaControl`), location tracking management (`enableLocationListening`), and tracking options for granular data collection control.
+
+**Development Workflow**: Integration with Amplitude Data for tracking plan management, CLI tools for code generation (`ampli pull`, `ampli status`), and migration utilities (`migrateLegacyData`) for seamless SDK transitions.
+
+**Platform Integrations**: Revenue verification through Google Play and Amazon store APIs, advertising ID integration for attribution, and network state monitoring for offline mode support.
+
+## API Endpoints and Command Line Interface
+
+**SDK Installation Commands:**
+```
+implementation 'com.amplitude:analytics-android:1.+'  // Modern SDK
+implementation 'com.amplitude:android-sdk:2.+'       // Legacy SDK
+```
+
+**Ampli CLI Operations:**
+```
+npm install @amplitude/ampli
+ampli pull                    // Generate typed tracking code
+ampli status                  // Verify implementation
+```
+
+**Core API Methods:**
+- Event tracking: `track()`, `logEvent()`
+- User management: `identify()`, `setUserId()`, `setDeviceId()`
+- Revenue: `revenue()`, `logRevenueV2()`
+- Group analytics: `setGroup()`, `groupIdentify()`
+- Data management: `flush()`, `uploadEvents()`
+
+**Configuration APIs:**
+- Session control: `minTimeBetweenSessionsMillis`, `sessionTimeoutMillis`
+- Data batching: `flushIntervalMillis`, `flushQueueSize`, `eventUploadThreshold`
+- Privacy: `TrackingOptions`, `enableCoppaControl()`, `setOffline()`
+- Infrastructure: `setServerZone()`, `setUseDynamicConfig()`, SSL pinning support
+
+The SDK ecosystem supports both Jetpack Compose and traditional Android development with specialized features like `testTag` modifiers for UI element tracking and comprehensive ProGuard configuration for production builds.

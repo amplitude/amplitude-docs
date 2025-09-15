@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude's Historical Count feature for tracking the Nth instance (up to 5th) of user actions across Event Segmentation, Funnel Analysis, Pathfinder, and Retention Analysis charts, with a one-year lookback period limitation and specific operator support (=, ≠, <, ≤, >, ≥).
+
+**Keywords:**
+- Historical Count
+- Nth instance tracking
+- Amplitude Event Properties
+- Event Segmentation chart
+- Funnel Analysis
+- Pathfinder
+- Retention Analysis
+- behavioral cohorts
+- one-year lookback period
+- Historical Count filter
+- operator constraints
+- fifth instance limit
+- user action instances
+- conversion rates analysis
+- retention rates analysis

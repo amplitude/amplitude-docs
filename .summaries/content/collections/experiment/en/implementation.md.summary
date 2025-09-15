@@ -1,0 +1,23 @@
+## Summary
+This documentation covers Amplitude Experiment's evaluation implementation, detailing the process of determining user variant bucketing through pre-targeting steps (activation, flag dependencies, individual inclusions, sticky bucketing) and targeting segments, using consistent bucketing with murmur3 hashing algorithm and bucketing salts.
+
+## Keywords
+- Amplitude Experiment evaluation
+- variant bucketing
+- flag dependencies
+- mutual exclusion groups
+- holdout groups
+- sticky bucketing
+- targeting segments
+- consistent bucketing
+- murmur3 hashing
+- bucketing salt
+- allocation bucketing
+- variant bucketing
+- individual inclusions
+- all users segment
+- flag activation
+- bucketing key
+- variant weights
+- sample ratio mismatch (SRM)
+- variant jumping

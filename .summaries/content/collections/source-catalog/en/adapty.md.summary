@@ -1,0 +1,15 @@
+**Summary:** This documentation describes the Adapty source integration for Amplitude, which streams subscription monetization and in-app purchase events from Adapty's mobile app platform to Amplitude for advanced product analytics, requiring API key configuration and user ID mapping between platforms.
+
+**Keywords:**
+- Adapty source integration
+- subscription monetization events
+- in-app purchase analytics
+- mobile app subscription tracking
+- Adapty.updateProfile() method
+- amplitudeDeviceId mapping
+- amplitudeUserId synchronization
+- customerUserId alignment
+- raw-events integration type
+- subscription management category
+- partner-maintained integration
+- API key authentication setup

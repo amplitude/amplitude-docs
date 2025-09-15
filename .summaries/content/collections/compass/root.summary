@@ -1,0 +1,49 @@
+Amplitude Compass is an advanced predictive analytics product that identifies critical user behaviors predictive of retention and conversion outcomes. The platform specializes in discovering "a-ha moments" and inflection metrics through sophisticated statistical correlation analysis between user actions and long-term engagement patterns. Available exclusively on Growth and Enterprise plans, Compass transforms descriptive user behavior data into actionable retention insights.
+
+## Product Architecture and Feature Relationships
+
+Compass operates through a multi-layered analytical framework centered on correlation analysis between user behaviors and retention outcomes:
+
+**Base and Target Cohort Analysis Framework**: The core workflow establishes analytical parameters by defining a base cohort (typically "New Users") and target cohort (such as "2nd Week Retention"). This framework enables systematic examination of behavioral patterns that predict conversion from base to target states.
+
+**Statistical Correlation Engine**: The platform employs multiple statistical methodologies including Pearson correlation, Matthews correlation, and binary random variable analysis. These methods identify meaningful behavioral patterns across different event frequencies and time windows, with results visualized through interactive heat map charts displaying correlation strengths.
+
+**Predictive Categorization System**: Compass automatically segments correlations into four predictive strength categories:
+- Highly Predictive (correlation ≥ 0.4)
+- Moderately Predictive (correlation 0.3-0.4)
+- Slightly Predictive (below 0.3)
+- Not Predictive
+
+**Performance Days Window Analysis**: The system analyzes user behaviors within configurable time frames to establish optimal prediction windows for retention outcomes.
+
+## Key Nomenclature and Definitions
+
+**Inflection Metrics**: Critical behavioral thresholds serving as strong predictors of user growth and retention, identified through statistical correlation analysis and validated using 95% confidence intervals.
+
+**Contingency Matrix Analysis**: Statistical framework employing true positives, false positives, true negatives, and false negatives to evaluate predictive power of specific user behaviors.
+
+**Core Performance Metrics**:
+- **Positive Predictive Value (PPV)**: Probability that users performing a specific action will achieve the target outcome
+- **Negative Predictive Value (NPV)**: Probability that users not performing the action will fail to achieve the target
+- **Sensitivity**: True positive rate measuring effectiveness in identifying successful users
+- **Specificity**: True negative rate measuring effectiveness in identifying unsuccessful users
+
+**Proportion Above Threshold**: Percentage of cohort users exceeding specific behavioral thresholds, establishing predictive benchmarks for user success patterns.
+
+**A-ha Moments**: Critical user experience points where specific behaviors strongly correlate with long-term retention and engagement success.
+
+## Broader Product Ecosystem Integration
+
+Compass integrates deeply with Amplitude's analytics platform, extending core capabilities with predictive intelligence layers:
+
+**Cohort Management Integration**: Analysis results convert directly into actionable user cohorts, enabling targeted engagement strategies based on predictive behavioral patterns. This creates a seamless workflow from insight discovery to campaign execution.
+
+**Event Tracking Leverage**: The platform utilizes existing Amplitude event tracking infrastructure, analyzing events like "Social Action Add Friends" and other engagement indicators within the established data collection framework.
+
+**Statistical Confidence Framework**: All correlations undergo validation using 95% confidence intervals, ensuring statistical significance and minimizing Type I and Type II errors in behavioral predictions.
+
+**Heat Map Visualization Interface**: The primary user interface presents correlation data through interactive heat maps, allowing exploration of event-retention relationships across frequency buckets and time periods. This visualization layer enables intuitive discovery of behavioral patterns.
+
+**Growth Optimization Bridge**: Compass serves as a strategic connector between raw behavioral analytics and growth optimization initiatives, providing data-driven identification of the most critical user actions driving long-term retention and conversion success.
+
+The platform positions itself as a predictive intelligence layer within Amplitude's ecosystem, transforming traditional descriptive analytics into forward-looking behavioral insights that directly inform user engagement and retention strategies.

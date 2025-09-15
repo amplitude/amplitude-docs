@@ -1,0 +1,14 @@
+**Summary:** This documentation describes integrating Jira with Amplitude Data to automatically create Jira issues when publishing changes to feature branches, including OAuth authentication setup and linking/unlinking issues to published changes with automatic comment generation.
+
+**Keywords:**
+- Amplitude Data
+- Jira integration
+- Atlassian Jira
+- feature branches
+- OAuth authentication
+- published changes
+- automatic issue creation
+- issue linking/unlinking
+- automatic comments
+- source grouping
+- Japanese translation (jp)

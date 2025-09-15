@@ -1,0 +1,24 @@
+**Summary:** This Japanese documentation explains how to analyze and interpret A/B test experiment results in Amplitude Experiment, covering statistical significance evaluation, p-values, confidence intervals, exposure events vs assignment events, and the Analysis panel interface with summary badges and statistical settings.
+
+**Keywords:**
+- Amplitude Experiment
+- A/B testing analysis
+- statistical significance
+- p-values
+- confidence intervals
+- exposure events
+- assignment events
+- Analysis panel
+- summary badges
+- sequential testing
+- t-test
+- null hypothesis
+- alpha threshold
+- binary metrics
+- non-binary metrics
+- cumulative exposures graph
+- control variants
+- treatment variants
+- confidence level settings
+- Japanese translation
+- experiment rollout analysis

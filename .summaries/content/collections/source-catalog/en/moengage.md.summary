@@ -1,0 +1,16 @@
+**Summary:** This documentation describes the MoEngage source integration for Amplitude, enabling ingestion of campaign data events and user attributes from MoEngage's customer engagement platform through event-streaming, raw-events, and cohorts integration types.
+
+**Keywords:**
+- MoEngage source integration
+- campaign data ingestion
+- customer engagement platform
+- event-streaming integration
+- raw-events integration
+- cohorts integration
+- marketing automation source
+- campaign data events
+- user attributes export
+- MoEngage dashboard setup
+- Amplitude API key configuration
+- partner-maintained integration
+- campaign analytics import

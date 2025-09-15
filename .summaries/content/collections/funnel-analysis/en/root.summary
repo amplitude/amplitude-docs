@@ -1,0 +1,39 @@
+## Amplitude Funnel Analysis
+
+Amplitude's Funnel Analysis is a comprehensive conversion tracking and optimization tool that enables product teams to analyze user journeys through multi-step processes. The feature provides detailed insights into user behavior patterns, conversion rates, and drop-off points across defined event sequences, supporting data-driven decision making for product optimization and growth initiatives.
+
+## Core Features and Capabilities
+
+The Funnel Analysis system centers around tracking user progression through sequential events, offering multiple analysis modes including standard conversion tracking, time-based analysis, and frequency measurement. Key capabilities include A/B testing functionality with statistical significance calculations, conversion driver identification through correlation analysis, and flexible event ordering options (any order, this order, exact order) to accommodate different user journey patterns.
+
+The platform supports advanced segmentation through user property analysis, event property filtering, and the ability to hold properties constant across funnel steps. Users can create optional steps for comparative analysis, combine multiple events within single funnel steps, and leverage integration with complementary tools like Pathfinder, Compass, and Microscope for deeper behavioral insights.
+
+## Product Relationships and Feature Integration
+
+Funnel Analysis operates through two primary modules: the Events Module for event selection and property filtering, and the Segmentation Module for user segment configuration. The system integrates closely with Amplitude's broader analytics ecosystem, connecting to Pathfinder for user journey exploration, Compass for correlation analysis, and Microscope for cohort creation and detailed user behavior examination.
+
+The A/B testing functionality requires Growth or Enterprise plans and provides baseline segment comparison with p-value significance testing at a 95% threshold. Conversion drivers analysis, available on Growth and Enterprise plans, uses Matthews correlation coefficients to identify behaviors that correlate with conversions or drop-offs, though the system emphasizes the distinction between correlation and causation.
+
+## Key Nomenclature and Definitions
+
+**Conversion Order Types**: Three fundamental modes define how Amplitude tracks event sequences - "any order" allows events in any sequence, "this order" requires events in the specified sequence but permits intervening events, and "exact order" demands precise sequential completion without intervening events.
+
+**Hold Properties Constant**: A configuration option that changes the counting methodology from unique users to unique user-property pairs, enabling session-based funnels and multi-conversion tracking by requiring consistent event properties across all funnel steps.
+
+**Conversion Window**: The time period within which users must complete the entire funnel sequence to be counted as converted, with configurable duration settings.
+
+**Conversion Drivers**: Behaviors and events that statistically correlate with user conversions or drop-offs, measured using correlation scores and frequency metrics within specified conversion windows.
+
+**First-Touch Attribution**: The segmentation logic where user properties are applied based on values from when the first funnel event was triggered, rather than from subsequent events in the sequence.
+
+## Ecosystem Integration and Technical Implementation
+
+Funnel Analysis integrates with Amplitude's partner ecosystem including push notification platforms like Airship and Kahuna for retention optimization. The system handles simultaneous events by rounding timestamps to the nearest second, with optional millisecond resolution for precise event ordering when required.
+
+The platform supports CSV data export for external analysis and provides breakdown tables with detailed metrics including absolute and conversion percent differences. Event property analysis can be expanded for deeper insights, and the system accommodates custom event creation through inline event combination, though these remain temporary and chart-specific.
+
+## API and Technical Specifications
+
+While specific API endpoints aren't detailed in the documentation, the system operates through Amplitude's standard analytics interface with configurable parameters for conversion windows, event ordering, and property filtering. The platform supports Historical Count filters and Advanced dropdown configurations for precise funnel behavior control.
+
+The system processes events through timestamp-based ordering with one-second default resolution, expandable to millisecond precision for applications requiring exact event sequence tracking. Segmentation Module filters apply exclusively to first events, while Events Module filters can be applied to individual steps, providing granular control over funnel analysis parameters.

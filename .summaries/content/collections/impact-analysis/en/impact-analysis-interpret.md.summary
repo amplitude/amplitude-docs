@@ -1,0 +1,13 @@
+**Summary:** Documents how to interpret Impact Analysis charts in Amplitude, which track how triggering a treatment event affects the frequency of outcome events using relative n-day timelines, covering four metrics (average, active percentage, frequency, properties) and causal inference best practices for validating behavioral hypotheses.
+
+**Keywords:**
+- Impact Analysis chart interpretation
+- treatment event outcome event correlation
+- relative n-day timeline analysis
+- average active percentage frequency properties metrics
+- causal inference validation
+- behavioral hypothesis testing
+- event triggering frequency analysis
+- user timeline alignment
+- randomized experimentation alternative
+- outcome behavior rate changes

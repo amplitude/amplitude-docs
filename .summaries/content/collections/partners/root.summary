@@ -1,0 +1,58 @@
+# Amplitude Partner Integration Platform
+
+Amplitude operates a comprehensive partner integration ecosystem built around the **Integration Portal**, a self-service platform enabling partners to create, configure, and manage integrations with Amplitude's behavioral analytics platform. The system facilitates bidirectional data flow through three core integration patterns: event ingestion, event streaming, and cohort synchronization, all designed to extend Amplitude's analytics capabilities across partner platforms.
+
+## Integration Architecture and Relationships
+
+The platform supports three distinct integration types that serve different data flow requirements within Amplitude's analytics ecosystem:
+
+**Event Ingestion Integrations** enable partners to send behavioral data into Amplitude via the **HTTP v2 API**, appearing as options on Amplitude's **Sources page**. These integrations require **Project API Keys** for authentication and utilize the `partner_id` parameter for testing and tracking partner-specific data flows.
+
+**Event Streaming Integrations** forward Amplitude's behavioral data to partner platforms using **Freemarker templates** for payload customization. These integrations leverage **MappedProperties** and **MappedFields** for user property mapping, support event filtering and identify forwarding, and appear as destination tiles in Amplitude's interface with REST API header configuration and rate limiting capabilities.
+
+**Cohort Sync Integrations** export user cohorts from Amplitude to partner platforms through two distinct architectural patterns:
+- **List-based cohort integration**: Manages user lists via list creation, add users, and remove users endpoints
+- **Property-based cohort integration**: Sets user traits/properties directly on partner platforms
+
+## Key Nomenclature and Definitions
+
+**Integration Portal**: Amplitude's self-service platform for partners to create and manage integrations
+**Integration Catalog**: Public directory displaying approved integrations to Amplitude customers
+**Sources page**: Amplitude interface showing available data ingestion options
+**Destinations page**: Amplitude interface displaying data export and streaming options
+**Integration tiles**: Visual representations of partner integrations within Amplitude's UI
+**MappedProperties/MappedFields**: Configuration objects mapping Amplitude user properties to partner platform fields
+**Freemarker templates**: Template engine for customizing event streaming payloads
+**partner_id parameter**: Identifier for testing and tracking partner-specific data flows
+**Release Internally**: Testing phase allowing partners to validate integrations before public submission
+**slugify cohort names**: Functionality to format cohort names for partner platform compatibility
+**amplitude_cohort_name variable**: Dynamic variable for cohort identification in partner systems
+**user_id_field_amplitude mapping**: Configuration for mapping Amplitude user identifiers to partner fields
+
+## Broader Product Ecosystem Integration
+
+The partner integration platform operates within Amplitude's behavioral analytics ecosystem, requiring **Plus or Greater Amplitude plans** for access. Integrations connect to Amplitude's core analytics engine using **Org ID-based** configuration, enabling seamless data exchange between Amplitude and partner platforms. The system provides co-marketing opportunities for approved partners and maintains quality control through review processes before integrations reach the public Integration Catalog.
+
+## Technical Implementation and API Specifications
+
+### Authentication and API Endpoints
+- **HTTP v2 API** for event ingestion with **Project API Keys**
+- **REST API calls** for event streaming and cohort sync
+- Authentication methods: **Basic Authentication**, **Bearer Token**, and **Authentication Header**
+- **4 threads concurrent requests** with **exponential backoff retry** mechanisms
+
+### Configuration and Testing Capabilities
+- **CSV upload testing** for cohort integrations
+- **Testing modal** with payload verification
+- **Event body editor** for customizing streaming payloads
+- **Batch size configuration** with default 1000 users for cohort sync
+- **Release Internally** testing phase for integration validation
+
+### Data Processing Features
+- **Event filtering** capabilities for streaming integrations
+- **Full sync** and **incremental sync** options for cohort updates
+- **$items variable** and **$list_id placeholder** for dynamic payload construction
+- Rate limiting and header configuration for REST API integrations
+- Support for identify forwarding and user property mapping
+
+The platform emphasizes self-service partner onboarding while maintaining integration quality through structured review processes, enabling partners to extend Amplitude's analytics capabilities across diverse technology stacks and use cases.

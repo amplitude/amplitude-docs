@@ -1,0 +1,80 @@
+## Amplitude Analytics Unity SDK
+
+The Amplitude Analytics Unity SDK is a comprehensive analytics plugin that enables Unity developers to integrate Amplitude's powerful analytics capabilities into their mobile games and applications. The SDK serves as a bridge between Unity projects (version 2019.3.11 and later) and Amplitude's native iOS and Android SDKs, providing seamless cross-platform analytics tracking.
+
+## Product Features and Relationships
+
+The Unity SDK acts as a wrapper around Amplitude's native mobile SDKs, leveraging the underlying iOS and Android implementations while providing a unified Unity interface. Key components include:
+
+**Installation and Setup:**
+- Unity Package Manager integration for streamlined installation
+- Manual installation via `amplitude-unity.unitypackage`
+- Automatic dependency resolution through `unity-jar-resolver`
+- ProGuard obfuscation rules for Android builds
+- OkHTTP dependency management
+
+**Core Analytics Features:**
+- Event logging with custom properties and metadata
+- User property management through Identify operations
+- Revenue tracking with receipt verification capabilities
+- Session management and tracking controls
+- Batch processing and upload optimization
+
+**Platform-Specific Integrations:**
+- iOS IDFA (Identifier for Advertisers) tracking via `CustomIdfa.m`
+- Android GPS location services through `CustomGPS.m`
+- App Set ID support for Android privacy compliance
+- XCode simulator compatibility for iOS development
+
+## Key Nomenclature and Definitions
+
+**Core Concepts:**
+- **Identify Operations**: User property management functions including `setUserProperty`, `setOnce`, `add`, and `append` for maintaining user profiles
+- **Event Logging**: Primary method for tracking user actions and behaviors within applications
+- **Revenue Tracking**: Specialized event type using `logRevenue` with built-in receipt verification
+- **Session Tracking**: Automated user session management controlled via `trackSessionEvents`
+
+**Configuration Parameters:**
+- **AmplitudeServerZone.EU**: Data residency setting for European Union compliance
+- **setEventUploadPeriodSeconds**: Batching configuration for optimizing network requests
+- **setMinTimeBetweenSessionsMillis**: Session timeout threshold configuration
+- **enableCoppaControl**: COPPA (Children's Online Privacy Protection Act) compliance toggle
+- **setUseDynamicConfig**: Runtime configuration management enablement
+
+**Privacy and Compliance:**
+- **useAdvertisingIdForDeviceId**: iOS advertising identifier usage control
+- **useAppSetIdForDeviceId**: Android App Set ID implementation for privacy-focused tracking
+
+## Product Ecosystem Integration
+
+The Unity SDK operates within Amplitude's broader analytics ecosystem by:
+
+**Data Pipeline Integration:**
+- Seamless data flow to Amplitude's analytics platform through native SDK foundations
+- EU data residency support via `AmplitudeServerZone.EU` for GDPR compliance
+- Dynamic configuration capabilities allowing real-time SDK behavior adjustments
+
+**Cross-Platform Compatibility:**
+- Unified API surface across iOS and Android platforms while maintaining platform-specific optimizations
+- Integration with Unity's build pipeline and package management system
+- Support for modern mobile development practices including ProGuard optimization and dependency resolution
+
+**Privacy Framework Alignment:**
+- COPPA compliance mechanisms for applications targeting children
+- IDFA and App Set ID support aligning with Apple's App Tracking Transparency and Google's privacy initiatives
+- Configurable tracking parameters to meet various regulatory requirements
+
+## Technical Implementation
+
+**API Endpoints and Methods:**
+- Event tracking through standard logging methods with property attachment
+- User identification via Identify API with multiple operation types
+- Revenue verification through platform-specific receipt validation
+- Session management through automated tracking controls
+
+**Platform Requirements:**
+- Android API 21+ compatibility ensuring broad device support
+- Unity 2019.3.11+ requirement for modern Unity feature utilization
+- iOS XCode simulator support for comprehensive development workflows
+
+The SDK provides a complete analytics solution for Unity developers, abstracting the complexity of multi-platform implementation while maintaining access to advanced features and compliance controls necessary for modern mobile applications.

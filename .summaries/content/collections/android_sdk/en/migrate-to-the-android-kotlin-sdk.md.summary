@@ -1,0 +1,18 @@
+**Summary:** This documentation page provides migration instructions from Amplitude's maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Android-Kotlin SDK (`com.amplitude:analytics-android`), covering dependency updates, API changes from `logEvent()` to `track()`, configuration mapping, and data migration with the `migrateLegacyData` setting.
+
+**Keywords:**
+- android-sdk migration
+- analytics-android
+- com.amplitude:android-sdk
+- com.amplitude:analytics-android
+- logEvent to track API
+- migrateLegacyData configuration
+- HTTP V2 API endpoint
+- flushIntervalMillis flushQueueSize
+- minIdLength configuration
+- RemnantDataMigration
+- plugin architecture
+- maintenance SDK to latest SDK
+- Amplitude Android-Kotlin SDK
+- JSONObject to Map<String,Any?> conversion
+- uploadEvents to flush mapping

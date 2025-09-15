@@ -1,0 +1,43 @@
+## Personas Product Overview
+
+Personas is an advanced user analytics feature that leverages clustering analysis to automatically group users based on behavioral similarities rather than traditional rule-based segmentation. This machine learning-driven approach enables exploratory data mining to discover natural user personas within your user base, moving beyond manual segmentation to uncover hidden behavioral patterns.
+
+The product is available on Growth and Enterprise plans and operates within a 30-day analysis timeframe, focusing on Active Users and New Users to identify meaningful behavioral clusters and retention cohorts.
+
+## Product Architecture and Feature Relationships
+
+The Personas system consists of three core specialized modules that replace standard Event/Segmentation modules:
+
+**Cluster Generation Module** - The foundational component that performs the clustering analysis, processing user behavioral data to identify natural groupings based on event behavior similarities.
+
+**Cluster Count Module** - Manages the determination and optimization of cluster quantities, ensuring statistically meaningful persona groups.
+
+**Target Cohort Module** - Handles the selection and definition of the user population to be analyzed, supporting both Active Users and New Users as base cohorts.
+
+These modules work together to create a comprehensive behavioral analysis system that processes up to the top 100 events to generate cluster cards with detailed behavioral profiles.
+
+## Key Nomenclature and Definitions
+
+**Behavioral Clusters** - Automatically generated user groups based on similar event behavior patterns rather than predefined characteristics.
+
+**Cluster Cards** - Visual representations of each persona group showing key behavioral metrics and characteristics.
+
+**Event Tables** - Dual-structure data displays showing above-average and below-average event triggers for each cluster, featuring average event frequencies and standard deviations.
+
+**Behavioral Cohort Export** - The ability to export identified persona groups as actionable user segments for further analysis or targeting.
+
+**Target Cohort Percentage** - The proportion of the total user base represented by each identified persona cluster.
+
+**Standard Deviation Clustering** - The statistical method used to determine behavioral similarities and differences between user groups.
+
+## Product Ecosystem Integration
+
+Personas integrates with the broader analytics platform by consuming event data from existing tracking implementations while providing exportable behavioral cohorts that can be used across other platform features. The system respects event hiding configurations from tracking plans and processes retention cohort data to enhance persona accuracy.
+
+The clustering algorithm operates on existing event infrastructure, analyzing user behavior patterns across the top 100 events to generate actionable insights. Results can be exported as behavioral cohorts for use in other platform features, creating a seamless workflow from discovery to activation.
+
+## Technical Implementation
+
+The Personas chart utilizes a specialized clustering algorithm that processes event behavior data within the 30-day analysis window. The system automatically calculates average event frequencies and standard deviations to create statistically significant user groupings.
+
+The interpretation workflow involves analyzing cluster bubble proportions, examining dual-table event structures, and identifying above/below average event triggers that define each persona. This enables data-driven persona naming and behavioral pattern recognition for strategic user insights.

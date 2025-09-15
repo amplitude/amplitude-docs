@@ -1,0 +1,15 @@
+**Summary:** Documents the CleverTap source integration for ingesting raw event data into Amplitude, requiring CleverTap Enterprise plan and configuration of API key, data center region (Standard/EU), and user/device ID mapping settings.
+
+**Keywords:**
+- CleverTap source integration
+- raw-events integration
+- retention cloud
+- CleverTap Enterprise plan
+- Amplitude API key setup
+- data center region selection
+- user ID mapping (Identity, Phone, Email)
+- device ID mapping
+- CleverTap dashboard configuration
+- marketing automation source
+- event data ingestion
+- CleverTap export functionality

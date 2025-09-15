@@ -1,0 +1,18 @@
+**Summary:** The Experiment Evaluation Proxy is a stateless service that enables local evaluation on unsupported platforms using remote Evaluation APIs/SDKs, automatically tracks assignment events with 24-hour deduplication, and supports large cohort targeting with hourly syncing, deployed via Docker/Kubernetes on port 3546 with Redis storage.
+
+**Keywords:**
+- Experiment Evaluation Proxy
+- local evaluation
+- assignment event tracking
+- cohort targeting
+- Redis storage
+- Docker deployment
+- Kubernetes Helm chart
+- port 3546
+- stateless service
+- flag sync interval
+- evaluation API endpoints
+- management API key
+- cohort sync hourly
+- deduplication 24 hours
+- amplitudeinc/evaluation-proxy

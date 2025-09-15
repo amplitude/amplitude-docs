@@ -1,0 +1,19 @@
+## Summary
+This documentation covers Amplitude's account-level reporting feature using the Accounts addon, which enables group-level analytics instead of individual user-level reporting by implementing groups (accounts, order IDs, charts) with event-level or user-level definitions, dynamic group properties, and integration with Salesforce for B2B analytics.
+
+## Keywords
+- Amplitude Accounts addon
+- group-level reporting
+- account-level analytics
+- group properties
+- event-level groups
+- user-level groups
+- dynamic group properties
+- group behavioral cohorts
+- funnel analysis groups
+- Salesforce integration
+- group identification API
+- microscope group analysis
+- user lookup accounts
+- segmentation module groups
+- account-level KPIs

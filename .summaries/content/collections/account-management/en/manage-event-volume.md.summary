@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude's Scale feature for dynamic behavioral sampling at the user identity level, including setup of sampling rates, user property inclusion lists for exempting key populations, upsampling calculations, and accuracy benchmarks across different DAU volumes and sample rates.
+
+**Keywords:**
+- dynamic behavioral sampling
+- Scale feature
+- Enterprise plans
+- user identity sampling
+- upsampling metrics
+- sampling rate configuration
+- user property inclusion list
+- anonymous users sampling
+- Amplitude ID sampling
+- DAU accuracy benchmarks
+- percent error confidence intervals
+- PROPCOUNT exclusion
+- algorithmic sampling framework
+- event volume management
+- sampling factor calculation

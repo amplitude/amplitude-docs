@@ -1,0 +1,18 @@
+**Summary:** This documentation covers Tealium integration with Amplitude, detailing two integration methods: Tealium iQ Tag Management (TIQ) and Tealium AudienceStream Universal Data Hub, including setup steps for data layer configuration, UDO variables, load rules, and JavaScript implementation for sending customer data from Tealium's CDP to Amplitude for behavioral analysis.
+
+**Keywords:**
+- Tealium iQ Tag Management (TIQ)
+- Tealium AudienceStream Universal Data Hub
+- Universal Data Object (UDO)
+- utag_data JavaScript object
+- utag.js library
+- utag_main cookie
+- Data layer configuration
+- Load rules
+- Customer Data Platform (CDP)
+- Raw events integration
+- Partner-maintained integration
+- JavaScript SDK
+- Device ID mapping
+- Tealium workspace
+- Tag vendor configurations

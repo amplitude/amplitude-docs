@@ -1,0 +1,19 @@
+**Summary:**
+This Japanese documentation explains Amplitude's user properties and event properties, covering default SDK-tracked properties (platform, device type, country, etc.), custom property implementation, property update mechanisms, and how properties are applied to events through three methods (before, after, or with event transmission).
+
+**Keywords:**
+- Amplitude user properties
+- Amplitude event properties  
+- Japanese translation documentation
+- SDK default properties tracking
+- Custom user properties implementation
+- Property update mechanisms
+- Event property attributes
+- Identify API calls
+- User property table updates
+- Property hiding functionality
+- Event-based analytics platform
+- Property value persistence
+- User property definitions
+- Automatic tracking disable
+- Property segmentation overlap

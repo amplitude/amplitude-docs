@@ -1,0 +1,54 @@
+# Amplitude Experiment Troubleshooting
+
+Amplitude Experiment is a comprehensive feature flagging and experimentation platform designed for controlled rollouts and A/B testing. The troubleshooting documentation addresses critical diagnostic scenarios that emerge during experiment execution, with particular emphasis on maintaining data integrity, resolving user assignment issues, and identifying statistical anomalies that could compromise experiment validity and business decision-making.
+
+## Product Architecture and Feature Relationships
+
+The troubleshooting framework reveals a sophisticated experimentation ecosystem built on interconnected components that must work in harmony for reliable results:
+
+**Dual-Event Tracking System**: The platform's core architecture relies on the precise alignment between assignment events (generated during variant allocation) and exposure events (triggered when users encounter variant experiences). This relationship forms the foundation for accurate experiment measurement and serves as the primary diagnostic indicator for implementation issues. When these events become misaligned, it signals fundamental problems in experiment execution that can invalidate results.
+
+**Evaluation Method Dichotomy**: The system supports two distinct evaluation approaches, each with unique troubleshooting considerations:
+- **Remote Evaluation**: Provides centralized, server-side assignment control with robust identity management but requires careful handling of network dependencies and identity resolution
+- **Local Evaluation**: Offers client-side performance benefits and reduced latency but introduces complexity around fallback handling, offline scenarios, and consistent identity management across sessions
+
+**Identity Resolution Framework**: The platform manages complex identity scenarios including multiple identity types (user ID, device ID, Amplitude ID), anonymous-to-authenticated user transitions, account switching on shared devices, and cross-platform user journeys. The troubleshooting documentation emphasizes how identity mismanagement cascades into variant jumping and statistical bias.
+
+## Critical Nomenclature and Technical Definitions
+
+**Assignment vs Exposure Events**: Assignment events represent the system's allocation of users to variants, while exposure events indicate actual user interaction with variant experiences. The gap between these events reveals targeting misconfigurations, implementation errors, or user behavior patterns that affect experiment validity.
+
+**Variant Jumping**: A critical diagnostic indicator where individual users experience multiple variants within a single experiment. This can result from legitimate targeting adjustments or problematic identity resolution failures, requiring different remediation approaches.
+
+**Sample Ratio Mismatch (SRM)**: A statistical anomaly where observed variant allocation percentages deviate significantly from configured allocation ratios, indicating systematic bias in experiment execution that can invalidate results and lead to incorrect business decisions.
+
+**Sticky Bucketing**: A consistency mechanism ensuring users maintain their assigned variant across sessions and interactions. When disabled, it allows re-randomization but can introduce statistical complications that require careful monitoring.
+
+**Bucketing Salt**: A randomization parameter that enables the creation of new experiment runs while excluding previously exposed users from analysis, providing a mechanism for clean experiment restarts without historical contamination.
+
+**Fallback Variants**: Default experiences served when users don't meet targeting criteria or when local evaluation systems exclude users from active experiments, requiring careful tracking to understand true experiment reach.
+
+## Ecosystem Integration and Analytics Framework
+
+The troubleshooting capabilities integrate deeply with Amplitude's broader analytics infrastructure:
+
+**User Streams Integration**: Direct connection to Amplitude's user timeline analytics enables granular debugging through individual user journey analysis, event sequence examination, and behavioral pattern identification that helps diagnose complex experiment issues.
+
+**Real-Time Diagnostics Dashboard**: Built-in monitoring tools including "Exposures without Assignments" charts, cumulative exposure graphs, and statistical health indicators provide continuous experiment monitoring and early warning systems for emerging issues.
+
+**Mutual Exclusion Management**: The platform supports mutually exclusive experiments to prevent interaction effects, with specialized troubleshooting workflows for users excluded from multiple experiments and complex interaction scenarios.
+
+## Technical Implementation and API Framework
+
+**Core SDK Integration Points**:
+- `fetch()` methods for retrieving variant assignments with proper error handling and fallback management
+- `variant()` calls for accessing assigned variants with consistent identity parameter passing
+- Identity parameter management ensuring consistency across all SDK interactions
+
+**Evaluation API Structure**: Utilizes `experiment_key` parameters for tracking experiment runs and variant assignments, enabling precise debugging and historical analysis of experiment execution.
+
+**Event Attribution System**: Assignment events include `expKey` properties that must precisely align with exposure event tracking for accurate attribution and statistical analysis.
+
+**Configuration Management Interface**: Experiment runs can be dynamically created and modified through experiment key updates, bucketing salt modifications, and sticky bucketing behavior adjustments, providing operational flexibility while maintaining statistical integrity.
+
+The troubleshooting framework emphasizes that successful experimentation requires meticulous attention to implementation patterns, identity consistency, and continuous statistical monitoring. The documentation serves as both a diagnostic guide and a best practices framework for maintaining experiment validity in complex, real-world deployment scenarios where user behavior, technical constraints, and business requirements intersect.

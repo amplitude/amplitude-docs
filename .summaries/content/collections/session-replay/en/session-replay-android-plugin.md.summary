@@ -1,0 +1,20 @@
+**Summary:**
+This documentation covers the Session Replay Android Plugin installation and configuration for Android applications already instrumented with Amplitude Analytics SDK, supporting both Android-Kotlin SDK (plugin) and maintenance Android SDK (middleware) implementations with view tree capture and diff-based replay construction.
+
+**Keywords:**
+- Session Replay Android Plugin
+- Android-Kotlin SDK plugin
+- maintenance Android SDK middleware
+- SessionReplayPlugin
+- SessionReplayMiddleware
+- view tree capture
+- diff-based replay
+- sampleRate configuration
+- maskLevel privacy
+- amplitude.add() amplitude.remove()
+- flushEventsOnClose
+- Session Replay ID property
+- Maven Central dependency
+- Jetpack Compose support
+- WebView MapView limitations
+- remote configuration enableRemoteConfig
