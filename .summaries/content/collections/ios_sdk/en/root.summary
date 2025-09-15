@@ -1,0 +1,71 @@
+## Amplitude Analytics iOS Swift SDK
+
+The Amplitude Analytics iOS Swift SDK is a comprehensive analytics solution for iOS applications that provides event tracking, user identification, and behavioral analytics capabilities. The SDK supports both Swift and Objective-C implementations and offers extensive autocapture functionality to automatically track user interactions and application events without manual instrumentation.
+
+## Core Features and Capabilities
+
+### Installation and Integration
+The SDK supports multiple installation methods including Swift Package Manager (AmplitudeSwift package), CocoaPods, and Carthage. It integrates seamlessly with both UIKit and SwiftUI applications, though SwiftUI support has some limitations for certain autocapture features.
+
+### Autocapture System
+The SDK's primary differentiator is its comprehensive autocapture system controlled through `AutocaptureOptions`, which automatically tracks:
+
+- **Session Management**: Automatic session tracking with configurable parameters like `minTimeBetweenSessionsMillis`
+- **App Lifecycle Events**: Application state changes and lifecycle transitions
+- **Screen View Tracking**: Automatic page view tracking using method swizzling on `viewDidAppear`
+- **Network Request Monitoring**: URLSession request/response tracking with `NetworkTrackingOptions`
+- **Element Interactions**: UI component interactions through `UIControl` and `UIGestureRecognizer` monitoring
+
+### Advanced Interaction Analytics
+The SDK includes sophisticated user experience analytics through:
+
+- **Frustration Interactions**: Detection of user frustration patterns
+- **Rage Clicks**: Identification of rapid, repeated clicking behavior via `RageClickOptions`
+- **Dead Clicks**: Detection of clicks that don't result in expected responses through `DeadClickOptions`
+- **Interaction Filtering**: Configurable rules through `InteractionsOptions` and `CaptureRule` systems
+
+## Product Architecture and Relationships
+
+### Plugin System
+The SDK employs a modular plugin architecture with two primary plugin types:
+- **Enrichment Plugins**: Enhance event data before processing
+- **Destination Plugins**: Handle event routing and delivery
+- **NetworkConnectivityCheckerPlugin**: Manages offline mode and connectivity-aware event delivery
+
+### Storage and Data Management
+The SDK provides flexible data persistence through:
+- **Custom Storage Provider**: Implementable `Storage` protocol for custom data storage solutions
+- **Device ID Management**: Automatic IDFV (Identifier for Vendor) handling and device ID lifecycle management
+- **Offline Mode**: Automatic event queuing and delivery when connectivity is restored
+
+### Configuration and Privacy
+- **Remote Configuration**: Dynamic configuration updates via `enableAutoCaptureRemoteConfig`
+- **Privacy Compliance**: Built-in privacy manifest with `NSPrivacyTracking` declarations
+- **COPPA Control**: Child privacy protection through tracking options
+- **Tracking Options**: Granular control over data collection and user privacy
+
+## Key Nomenclature and Definitions
+
+### Event Management
+- **Out-of-session Events**: Events tracked outside active user sessions, marked with `sessionId -1`
+- **Flush Configuration**: Event batching controlled by `flushQueueSize` and `flushIntervalMillis`
+- **Identify Operations**: User property updates and user identification workflows
+- **Group Identify**: Organization or group-level property management
+
+### Network Tracking
+- **NetworkTrackingOptions**: Configuration for automatic network request monitoring
+- **StatusCodeRange**: HTTP response code filtering for network event capture
+- **Allowlist/Blocklist**: URL filtering mechanisms for selective network tracking
+
+### User Analytics
+- **Revenue Tracking**: Monetization event tracking and revenue attribution
+- **User Properties**: Individual user characteristic and behavior data
+- **Device ID Lifecycle**: Device identification and user identity management across app installations
+
+## Ecosystem Integration
+
+The Amplitude Analytics iOS Swift SDK integrates into the broader Amplitude analytics ecosystem by providing client-side data collection that feeds into Amplitude's analytics platform. The SDK handles the critical first-mile data collection process, ensuring comprehensive user behavior capture while maintaining performance and privacy standards.
+
+The autocapture functionality reduces implementation overhead by automatically collecting standard analytics events, while the plugin system allows for custom analytics workflows and third-party integrations. The SDK's offline capabilities and remote configuration support ensure reliable data collection across varying network conditions and allow for dynamic analytics strategy adjustments without app updates.
+
+The privacy-first design with COPPA controls and configurable tracking options positions the SDK for compliance with evolving privacy regulations while maintaining analytical depth through sophisticated interaction tracking and user experience analytics.
