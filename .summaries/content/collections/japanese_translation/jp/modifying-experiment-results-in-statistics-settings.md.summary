@@ -1,0 +1,17 @@
+**Summary:** This Japanese documentation explains how to modify default statistical settings in Amplitude Experiment results analysis, covering CUPED variance reduction, Bonferroni correction for multiple hypothesis testing, custom exposure settings with time windows, sequential vs T-test selection, confidence levels (default 95%), and sample size requirements for T-tests.
+
+**Keywords:**
+- Amplitude Experiment
+- statistical settings modification
+- CUPED variance reduction
+- Bonferroni correction
+- multiple hypothesis testing
+- custom exposure settings
+- sequential test vs T-test
+- confidence level configuration
+- sample size calculation
+- T-test sample requirements
+- experiment results analysis
+- Japanese translation documentation
+- false positive rate control
+- statistical significance thresholds

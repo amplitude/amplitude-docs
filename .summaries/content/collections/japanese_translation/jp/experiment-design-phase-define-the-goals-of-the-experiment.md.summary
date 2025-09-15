@@ -1,0 +1,20 @@
+**Summary:** This Japanese documentation explains how to define experiment goals in Amplitude Experiment's design phase, covering exposure event selection (Amplitude Exposure vs custom), primary/secondary metrics configuration, experiment types (hypothesis testing vs do-no-harm), and metric creation/editing workflows.
+
+**Keywords:**
+- Amplitude Experiment
+- 実験設計フェーズ (experiment design phase)
+- 露出イベント (exposure event)
+- 主要指標 (primary metrics)
+- 二次指標 (secondary metrics)
+- バリアント (variants)
+- 仮説検定 (hypothesis testing)
+- 害を与えない実験 (do-no-harm experiments)
+- 最小検出可能な効果 (minimum detectable effect)
+- サンプル比の不一致 (sample ratio mismatch)
+- ユニークコンバージョン (unique conversion)
+- ファネルコンバージョン (funnel conversion)
+- 統計的検出力 (statistical power)
+- 期間見積もりツール (duration estimation tool)
+- カスタム露出イベント (custom exposure events)
+- .variant() API call
+- 信頼度 (confidence level)

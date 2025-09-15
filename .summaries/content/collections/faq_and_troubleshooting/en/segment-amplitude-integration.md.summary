@@ -1,0 +1,19 @@
+**Summary:** This FAQ documentation covers troubleshooting common issues with Segment-Amplitude integration, including missing events, missing properties, and session tracking problems, with specific focus on cloud-mode vs device-mode connection types, API key configuration, and sessionId handling.
+
+**Keywords:**
+- Segment-Amplitude integration
+- missing events troubleshooting
+- event property vs user property
+- sessionId -1 issue
+- cloud-mode vs device-mode
+- Amplitude API key configuration
+- Segment debugger
+- event-type instrumentation limit
+- deleted/blocked events
+- user properties traits field
+- identify call
+- Amplitude Actions integration
+- Analytics.js 2.0
+- session tracking
+- destination filters
+- Event Delivery tab

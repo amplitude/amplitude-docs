@@ -1,0 +1,18 @@
+Full content: title: 'Experiment SDKs'
+template: default
+layout: layout
+revisions: false
+route: '/sdks/experiment-sdks/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment_sdks
+structure:
+  root: false

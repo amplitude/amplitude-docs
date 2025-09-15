@@ -1,0 +1,22 @@
+**Summary:** This Japanese documentation explains Amplitude's session tracking functionality, covering session definitions for mobile (5-minute timeout) and web (30-minute timeout), automatic session ID generation using Unix timestamps, Start/End Session events, out-of-session events with session ID -1, custom session properties configuration, and session length calculation using client_event_time timestamps.
+
+**Keywords:**
+- Amplitude session tracking
+- session ID generation
+- Unix timestamp epoch
+- mobile session timeout
+- web browser session timeout
+- MinTimeBetweenSessionsMillis
+- Browser SDK configuration
+- Start Session End Session events
+- out-of-session events
+- session ID -1
+- HTTP API session tracking
+- custom session properties
+- session timeout configuration
+- client_event_time calculation
+- trackingSessionEvents
+- user session charts
+- pathfinder charts
+- session definition modal
+- Japanese translation documentation

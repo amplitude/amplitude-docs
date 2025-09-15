@@ -1,0 +1,15 @@
+**Summary:** This Japanese documentation provides best practices for implementing Amplitude Data analytics, covering tracking plan creation, event/property naming conventions, user identification with UUIDs, server vs client-side event collection, and CI/CD integration with Ampli for implementation validation.
+
+**Keywords:**
+- Amplitude Data
+- Japanese translation (jp)
+- tracking plan creation
+- event property naming conventions
+- user identification UUID
+- server-side vs client-side event collection
+- Ampli CI/CD integration
+- development vs production environment separation
+- user properties vs event properties
+- analytics implementation best practices
+- taxonomy setup
+- alias user identification

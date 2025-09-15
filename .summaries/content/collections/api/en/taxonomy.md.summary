@@ -1,0 +1,44 @@
+## Summary
+
+This documentation covers the Taxonomy API for Enterprise users, which provides programmatic access to manage event schema including CRUD operations for categories, event types, event properties, user properties, and group properties via REST endpoints with HTTP basic authentication.
+
+## Keywords
+
+- Taxonomy API
+- Enterprise users
+- event schema management
+- event categories
+- event types
+- event properties
+- user properties
+- group properties
+- CRUD operations
+- HTTP basic authentication
+- REST endpoints
+- URL encoding
+- gp: prefix (custom user properties)
+- grp: prefix (custom group properties)
+- rate limiting
+- cost per query model
+- concurrent cost limit
+- period cost limit
+- tracking plan
+- schema initialization
+- property overrides
+- overrideScope parameter
+- classifications (PII, SENSITIVE, REVENUE)
+- Data Access Controls
+- is_hidden property
+- ingested properties
+- shared properties
+- property restoration
+- enum_values
+- regex validation
+- is_array_type
+- is_required
+- display_name
+- visibility settings
+- pathfinder
+- persona results
+- timeline
+- dropdowns

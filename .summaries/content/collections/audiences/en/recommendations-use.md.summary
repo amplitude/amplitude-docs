@@ -1,0 +1,22 @@
+**Summary:** This documentation explains how to deploy Amplitude recommendations using the Profile API for personalization campaigns, including REST endpoint authentication with Secret Keys, JSON response handling with rec_id/is_control/items fields, and performance analysis through funnel conversion charts with statistical significance testing.
+
+**Keywords:**
+- Profile API
+- recommendations deployment
+- personalization campaigns
+- REST endpoint authentication
+- Secret Key authorization
+- rec_id parameter
+- is_control field
+- JSON response handling
+- user_id and device_id queries
+- funnel conversion analysis
+- statistical significance testing
+- [Recs] Recommendation Event
+- treatment vs control segments
+- recommendations_model_v2
+- amp_props retrieval
+- cohort_memberships
+- prediction_id queries
+- baseline product experience
+- two-sided t-test significance

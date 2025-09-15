@@ -1,0 +1,46 @@
+Amplitude CDP is a comprehensive customer data platform that centralizes customer data collection, processing, and activation to enable personalized experiences and data-driven decision making across organizations. The platform functions as a unified data hub that transforms raw customer interactions into actionable insights and automated personalization campaigns.
+
+## Core Architecture and Component Relationships
+
+The CDP operates through three interconnected layers that form a complete data pipeline:
+
+**Sources** constitute the data ingestion foundation, capturing customer interactions from multiple touchpoints and channels while standardizing data formats for downstream processing.
+
+**Audiences** serves as the intelligence layer, leveraging Amplitude Activation's self-serve platform to transform raw data into strategic customer segments through behavioral analysis, predictive modeling, and machine learning-powered insights.
+
+**Destinations** functions as the activation engine, distributing processed data and segments to third-party platforms for campaign execution, personalization delivery, and cross-channel orchestration.
+
+## Technical Nomenclature and Core Concepts
+
+**Behavioral Cohorts** represent user segments constructed from actual engagement patterns and action sequences, providing historical context for customer behavior analysis.
+
+**Predictive Cohorts** utilize machine learning algorithms to identify users with high propensity for specific future actions or behavioral patterns, enabling proactive engagement strategies.
+
+**Computations** encompass data transformation operations that convert raw event streams into meaningful user properties, metrics, and derived attributes for segmentation and personalization.
+
+**Predictions** leverage AutoML capabilities to forecast user behavior, lifecycle stages, and conversion probabilities, supporting predictive personalization initiatives.
+
+**Recommendations** deliver AI-driven content and product suggestions based on individual user profiles, behavioral patterns, and collaborative filtering algorithms.
+
+**Cohort Syncs** provide flexible data synchronization mechanisms across three operational modes:
+- On-demand syncs for immediate data transfer requirements
+- Automated syncs for scheduled, recurring data updates
+- Real-time syncs for instantaneous data propagation and activation
+
+## API Infrastructure and Integration Points
+
+The platform exposes two primary APIs for programmatic access and integration:
+
+**Cohorts API** enables external systems to retrieve user segment definitions, membership data, and cohort metadata for downstream activation and analysis workflows.
+
+**Profile API** provides real-time access to individual user profiles, attributes, and computed properties for personalization engines and customer service applications.
+
+**Destinations Configuration** is managed through the Connections section's Destinations tab, providing interface for configuring third-party data export endpoints, transformation rules, and sync schedules.
+
+**Notification System** supports operational monitoring through email and Slack integrations, with subscription management capabilities for destination status updates, sync failures, and performance alerts.
+
+## Ecosystem Position and Business Impact
+
+Amplitude CDP integrates with marketing technology stacks, product analytics platforms, and customer engagement tools through its destinations framework, enabling data activation across the entire customer experience ecosystem. The platform demonstrates quantifiable business impact with documented conversion lift improvements of 15-30% through 1:1 personalization capabilities.
+
+The CDP supports both batch processing for large-scale data operations and real-time streaming for immediate personalization use cases. Its self-serve architecture empowers business users to create sophisticated customer segments and activation workflows without technical dependencies, while maintaining robust API access for developer-driven integrations and custom implementations. This dual approach enables organizations to scale personalization efforts across marketing campaigns, in-app experiences, and customer lifecycle management programs.

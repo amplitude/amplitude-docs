@@ -1,0 +1,14 @@
+**Summary:** This documentation covers the Humanic.ai (Cohort) destination integration for Amplitude, detailing setup requirements including API key configuration, user ID mapping to email or customer_id identifiers, and cohort synchronization processes between the platforms.
+
+**Keywords:**
+- Humanic.ai cohort destination
+- Agentic Marketing Platform
+- partner-maintained integration
+- API key authentication
+- user ID mapping
+- email identifier
+- customer_id identifier
+- cohort synchronization
+- sync cadence configuration
+- Amplitude Data Catalog
+- destination setup workflow

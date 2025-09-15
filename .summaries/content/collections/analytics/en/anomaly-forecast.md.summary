@@ -1,0 +1,23 @@
+**Summary:** Amplitude's Anomaly + Forecast feature uses Prophet-based algorithms to detect statistically significant deviations in time-series data across Event Segmentation, Conversion over Time, User Sessions, Retention over Time, and Stickiness over Time charts, offering agile/robust/custom modes with configurable confidence intervals and training data durations (120-365 days default).
+
+**Keywords:**
+- Anomaly + Forecast
+- Prophet algorithm
+- time-series anomaly detection
+- confidence intervals
+- training data duration
+- agile mode robust mode custom mode
+- Event Segmentation charts
+- Conversion over Time
+- User Sessions analytics
+- Retention over Time
+- Stickiness over Time
+- statistical significance detection
+- automated project alerts
+- forecast projection
+- seasonality detection
+- Root Cause Analysis integration
+- Growth Enterprise plans
+- rolling windows rolling averages
+- 95% confidence interval
+- 120 days training data

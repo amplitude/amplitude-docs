@@ -1,0 +1,15 @@
+**Summary:** This documentation describes the Aampe Cohort Sync integration that enables real-time syncing of Amplitude cohorts to Aampe for AI-powered personalized messaging across SMS, email, push notifications, and in-app banners using individual AI agents per user.
+
+**Keywords:**
+- Aampe cohort sync
+- real-time cohort syncing
+- AI agents personalized messaging
+- SMS email push notifications in-app banners
+- Aampe API key authentication
+- bearer token authentication
+- user_id mapping
+- compose.aampe.com
+- agentic messaging
+- hyper-personalized messages
+- cohort destination integration
+- Aampe endpoint configuration

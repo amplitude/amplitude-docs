@@ -1,0 +1,76 @@
+## Amplitude Analytics Platform - Other Charts Collection
+
+This collection represents Amplitude's advanced analytics capabilities that extend beyond standard event tracking, providing specialized tools for custom data analysis, user-centric insights, and direct database access.
+
+## High-Level Product Overview
+
+The Other Charts collection encompasses three core analytical capabilities designed for advanced users requiring deeper data exploration. **Amplitude SQL** transforms the platform into a flexible query engine with direct Snowflake database access, enabling custom SQL queries against event data with 30-minute refresh cycles. **User Composition charts** shift analytical focus from event-driven metrics to user property-based segmentation, providing demographic and characteristic analysis capabilities. The **SQL Schema documentation** establishes the technical foundation with standardized data structures and field mappings that enable both custom querying and broader data integration workflows.
+
+Key use cases include advanced cohort analysis, custom metric creation, user demographic segmentation, and complex multi-dimensional data exploration that standard dashboard analytics cannot accommodate.
+
+## Product Relationships and Feature Integration
+
+The three components operate as an integrated analytical ecosystem. Amplitude SQL serves as the primary query engine, leveraging the SQL Schema's standardized data structures to provide direct database access. The schema defines critical abstractions like the `$events` table and `$amplitude_id` field that simplify complex user identity management and temporal filtering.
+
+User Composition charts complement this technical foundation by providing user-centric analysis tools that analyze user properties rather than behavioral events. This creates a dual analytical approach: SQL for custom technical queries and User Composition for standardized user demographic analysis.
+
+The integration extends to Amplitude's core platform through field shortcuts (`$date`, `$events`, `$amplitude_id`) that create abstraction layers over complex data relationships, making advanced analytics accessible to non-technical users while maintaining full SQL flexibility for technical teams.
+
+## Key Nomenclature and Definitions
+
+**Core Data Architecture:**
+- `$events` table: Primary standardized data table containing all event records
+- `$amplitude_id`: Unified user identifier with automatic user profile merging
+- `$date`: Temporal field shortcut integrating with Amplitude's datepicker functionality
+
+**User Identity Management System:**
+- `amplitude_id`: Primary user identifier handling merged user profiles automatically
+- `device_id`: Device-level tracking identifier for cross-session analysis
+- `user_id`: Custom user identification field for business logic integration
+- Merged users table: Backend system managing user identity consolidation across sessions and devices
+
+**Temporal Data Structure:**
+- `event_time`: Canonical timestamp for event occurrence
+- `client_event_time`: Client-side recorded timestamp for latency analysis
+- `server_received_time`: Server ingestion timestamp for data pipeline monitoring
+- `merge_event_time`: Timestamp tracking user identity merge operations
+
+**User Composition Analysis Types:**
+- Most Recent Value: Analysis based on latest user property value
+- All Values: Comprehensive analysis across all historical property instances
+- Cross Property Values: Multi-dimensional property correlation and segmentation analysis
+
+## Broader Product Ecosystem Integration
+
+Amplitude SQL positions the platform as both a standard analytics dashboard and a data access layer, integrating with Snowflake's cloud data warehouse infrastructure. This dual positioning enables organizations to use Amplitude as their primary data exploration tool while maintaining enterprise data warehouse capabilities.
+
+The User Composition charts integrate with Amplitude's event-based analytics by providing complementary user-centric perspectives. While standard Amplitude charts analyze what users do, User Composition analyzes who users are, enabling comprehensive user acquisition, retention, and segmentation strategies.
+
+Field shortcuts create critical abstraction layers that bridge technical complexity with user accessibility. The `$amplitude_id` shortcut automatically handles user identity merging, while `$date` integration provides seamless temporal filtering that works across both SQL queries and standard dashboard functionality.
+
+## Technical Implementation and API Details
+
+**SQL Query Interface:**
+- Custom SQL syntax with Amplitude-specific field shortcuts and functions
+- Autocomplete functionality for column discovery and query construction
+- 1000 row export limitation for result set management
+- Growth Enterprise plan requirement for access control
+
+**Data Schema Implementation:**
+- One-table schema design (`$events`) for simplified querying and reduced join complexity
+- VARIANT data types enabling flexible property storage without schema modifications
+- Automatic `user_properties` and `event_properties` prefixing for namespace management
+- UUID-based row identification system for unique record tracking
+
+**Query and Visualization Capabilities:**
+- Data table results interface for detailed record inspection and validation
+- Time series chart generation directly from SQL query results
+- Integration with Amplitude's standard charting infrastructure for consistent visualization
+- 30-minute data loading cycle ensuring near real-time analytics while maintaining warehouse performance
+
+**User Composition Chart Configuration:**
+- Property-based segmentation with multiple measurement methodologies
+- Cross-property correlation analysis for multi-dimensional user insights
+- Integration with Amplitude's user property taxonomy and data governance systems
+
+The platform's Growth Enterprise licensing requirement positions these tools as advanced analytics capabilities for sophisticated data analysis workflows, distinguishing them from standard dashboard analytics available in lower-tier plans.

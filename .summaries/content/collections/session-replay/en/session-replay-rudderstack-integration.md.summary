@@ -1,0 +1,15 @@
+**Summary:** Documents the Amplitude Session Replay wrapper integration with Rudderstack analytics, including installation of @amplitude/session-replay-browser package, configuration with Rudderstack Cloud-mode, and automatic injection of sessionReplayProperties into Rudderstack's track() and page() methods.
+
+**Keywords:**
+- Rudderstack integration
+- @amplitude/session-replay-browser
+- sessionReplayProperties
+- Rudderstack Cloud-mode
+- rudderAnalytics.track
+- rudderAnalytics.page
+- Rudderstack Anonymous ID
+- Rudderstack Session ID
+- getSessionReplayProperties()
+- deviceId mapping
+- sessionId mapping
+- third-party integration wrapper

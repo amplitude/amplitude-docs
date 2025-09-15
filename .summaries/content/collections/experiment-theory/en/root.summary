@@ -1,0 +1,55 @@
+## Amplitude Experiment Statistical Analysis Framework
+
+Amplitude Experiment provides a comprehensive statistical analysis platform for A/B testing and Multi-Armed Bandit experiments, built around rigorous statistical methodologies and experiment design principles. The platform enables data-driven decision making through controlled experimentation with robust statistical foundations.
+
+## Product Relationships and Feature Integration
+
+The statistical analysis framework operates through two interconnected components:
+
+**Statistical Testing Engine**: Centers on Welch's T-test implementation as the primary statistical method, supporting both binary and continuous metrics analysis. This engine integrates with the experiment configuration system through the Settings tab, where users define analysis parameters and statistical requirements.
+
+**Experiment Design System**: Focuses on pre-experiment planning through MDE (Minimum Detectable Effect) configuration, which directly influences sample size calculations, experiment duration, and statistical power. This system works in conjunction with the duration estimator to provide comprehensive experiment planning capabilities.
+
+## Key Nomenclature and Definitions
+
+**MDE (Minimum Detectable Effect)**: The smallest effect size that an experiment can reliably detect, serving as a critical input for sample size calculations and experiment design decisions.
+
+**Welch's T-test**: The primary statistical method used for hypothesis testing, available in both two-sided (detecting any difference) and one-sided (detecting directional changes) configurations.
+
+**Sample Size Threshold**: The minimum number of samples required per variant to ensure statistical validity, based on Central Limit Theorem assumptions and configured MDE requirements.
+
+**Goals Panel**: The configuration interface where users define recommendation metrics (primary success measures) and guardrail metrics (safety constraints) for their experiments.
+
+**Analysis Settings**: The statistical configuration section where users select the Stats Method (typically Welch's T-test) and define analysis parameters.
+
+**Duration Estimator**: A planning tool that calculates expected experiment runtime based on MDE, sample size requirements, and traffic allocation.
+
+## Broader Product Ecosystem Integration
+
+The statistical analysis framework integrates with Amplitude's broader experimentation ecosystem through several key touchpoints:
+
+**Experiment Types**: Supports both traditional A/B tests and Multi-Armed Bandit experiments, with statistical methods adapted to each approach's requirements.
+
+**Metrics System**: Interfaces with Amplitude's metrics infrastructure to analyze both conversion rate optimization scenarios and complex business metrics.
+
+**Traffic Management**: Works with traffic allocation systems to ensure adequate sample sizes across variants while maintaining statistical validity.
+
+**Monitoring and Alerting**: Provides real-time experiment monitoring through the Cumulative Exposure graph and Sample Size Target tracking, preventing common pitfalls like peeking and ensuring experiments reach statistical significance.
+
+## Configuration and Implementation
+
+**Primary Configuration Path**: Settings tab → Goals panel (define metrics) → Analysis Settings (select statistical method)
+
+**Key Configuration Parameters**:
+- Stats Method selection (Welch's T-test recommended)
+- Sample size thresholds per variant
+- MDE specification for each metric type
+- Test directionality (one-sided vs two-sided)
+
+**Monitoring Interfaces**:
+- Samples Per Variant Needed tracking
+- Cumulative Exposure graph visualization
+- Exposure Remaining calculations
+- Duration estimator projections
+
+The platform emphasizes preventing false positive/negative rates through proper statistical methodology while providing alternatives like sequential testing for scenarios requiring more flexible analysis approaches. The system maintains confidence interval bounds and statistical rigor throughout the experiment lifecycle, from initial design through final analysis.

@@ -1,0 +1,13 @@
+**Summary:** This documentation page describes the mParticle source integration for Amplitude, which enables raw event data ingestion from mParticle's customer data platform through their API and libraries across multiple platforms (Android, iOS, Unity, JavaScript) for consolidated analytics and customer behavior insights.
+
+**Keywords:**
+- mParticle source integration
+- raw-events integration type
+- CDP (Customer Data Platform)
+- mParticle API and libraries
+- multi-platform support (Android, iOS, Unity, JavaScript)
+- event tracking and user data
+- data aggregation from multiple touchpoints
+- partner-maintained integration
+- source connection type
+- mParticle to Amplitude data pipeline

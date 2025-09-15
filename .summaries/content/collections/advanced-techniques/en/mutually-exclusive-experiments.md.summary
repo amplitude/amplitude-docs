@@ -1,0 +1,19 @@
+## Summary
+This documentation explains how to configure mutually exclusive experiments in Amplitude Experiment using mutual exclusion groups with slots and traffic allocation percentages, including advanced scenarios with holdout groups and multiple group memberships that affect traffic calculations.
+
+## Keywords
+- mutually exclusive experiments
+- mutual exclusion groups
+- Amplitude Experiment
+- slots traffic allocation
+- interaction effect
+- flag dependencies
+- bucketing key
+- evaluation mode
+- holdout groups
+- Enterprise plans
+- experiment groups tab
+- traffic distribution percentages
+- cohort assignment
+- experiment integrity
+- simultaneous experiments

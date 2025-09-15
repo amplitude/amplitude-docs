@@ -1,0 +1,15 @@
+**Summary:** This documentation covers the Salesforce Group V2 integration that imports Salesforce object data (like accounts) as group-level properties in Amplitude, featuring daily/hourly sync schedules, schema mapping between Salesforce objects and Amplitude group types, and requiring account-level reporting setup.
+
+**Keywords:**
+- Salesforce Group V2 integration
+- group-level properties
+- account-level reporting
+- schema mapping
+- Salesforce objects to Amplitude group types
+- Group Name Field
+- Group Property Mapping
+- sync cadence (daily/hourly)
+- relation mapping
+- SFDC field validation
+- source-catalog
+- group identifier mapping

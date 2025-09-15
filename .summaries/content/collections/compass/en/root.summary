@@ -1,0 +1,45 @@
+## Amplitude Compass Product Overview
+
+Amplitude Compass is an advanced analytics feature designed to identify critical user behaviors that predict retention and conversion outcomes. The product specializes in discovering "a-ha moments" and inflection metrics by analyzing statistical correlations between user actions and long-term engagement patterns. Compass is available exclusively on Growth and Enterprise plans and serves as a predictive analytics tool for understanding which user behaviors are most indicative of future success.
+
+## Product Architecture and Feature Relationships
+
+Compass operates through a sophisticated correlation analysis engine that connects user behavior data with retention outcomes. The core workflow involves:
+
+**Base and Target Cohort Analysis**: Users define a base cohort (typically "New Users") and a target cohort (such as "2nd Week Retention") to establish the analytical framework. The system then examines correlations between specific user events within the base cohort and their likelihood to convert to the target cohort.
+
+**Statistical Correlation Engine**: The product employs multiple statistical measures including Pearson correlation, Matthews correlation, and binary random variable analysis to identify meaningful behavioral patterns. Results are visualized through heat map charts that display correlation strengths across different event frequencies and time windows.
+
+**Predictive Categorization System**: Compass automatically categorizes correlations into four distinct buckets:
+- Highly Predictive (correlation ≥ 0.4)
+- Moderately Predictive (correlation 0.3-0.4) 
+- Slightly Predictive (below 0.3)
+- Not Predictive
+
+## Key Nomenclature and Definitions
+
+**Inflection Metrics**: Critical behavioral thresholds that serve as strong predictors of user growth and retention, identified through statistical correlation analysis.
+
+**Contingency Matrix Analysis**: A statistical framework using true positives, false positives, true negatives, and false negatives to evaluate the predictive power of user behaviors.
+
+**Performance Metrics**:
+- **Positive Predictive Value (PPV)**: Probability that users performing a specific action will achieve the target outcome
+- **Negative Predictive Value (NPV)**: Probability that users not performing the action will fail to achieve the target
+- **Sensitivity**: True positive rate measuring how well the metric identifies successful users
+- **Specificity**: True negative rate measuring how well the metric identifies unsuccessful users
+
+**Proportion Above Threshold**: The percentage of users in a cohort who exceed a specific behavioral threshold, used to establish predictive benchmarks.
+
+**Performance Days Window**: The time frame within which user behaviors are analyzed for correlation with retention outcomes.
+
+## Product Ecosystem Integration
+
+Compass integrates seamlessly with Amplitude's broader analytics platform, leveraging existing event tracking and cohort management capabilities. The product extends Amplitude's core analytics by adding predictive intelligence layers that transform descriptive user behavior data into actionable retention insights.
+
+**Cohort Creation Workflow**: Results from Compass analysis can be directly converted into actionable user cohorts, enabling targeted engagement strategies based on predictive behavioral patterns.
+
+**Statistical Confidence Framework**: All correlations are validated using 95% confidence intervals to ensure statistical significance and minimize Type I and Type II errors in behavioral predictions.
+
+**Heat Map Visualization**: The primary interface presents correlation data through interactive heat maps that allow users to explore event-retention relationships across different frequency buckets and time periods, with specific focus on events like "Social Action Add Friends" and other engagement indicators.
+
+The product serves as a bridge between raw user behavior analytics and strategic growth optimization, providing data-driven insights for identifying the most critical user actions that drive long-term retention and conversion success.

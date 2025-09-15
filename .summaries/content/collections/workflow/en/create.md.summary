@@ -1,0 +1,18 @@
+**Summary:** This documentation explains how to create new experiments in Amplitude's Feature Experiment platform, covering the setup process including experiment types (A/B Test, Multi-Armed Bandit), evaluation modes (local vs remote), bucketing units, and configuration fields like targeted page URLs and experiment keys.
+
+**Keywords:**
+- Amplitude Feature Experiment
+- A/B Test creation
+- Multi-Armed Bandit experiment
+- experiment SDK installation
+- evaluation REST API
+- local evaluation vs remote evaluation
+- bucketing unit configuration
+- experiment keys
+- targeted page URL
+- Web experiments vs Feature experiments
+- hypothesis testing methodology
+- do-no-harm experiments
+- minimum detectable effect (MDE)
+- experiment design phase
+- user variant assignment

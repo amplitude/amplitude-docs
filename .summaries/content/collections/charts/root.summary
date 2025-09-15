@@ -1,0 +1,89 @@
+Amplitude Analytics is a comprehensive product analytics platform that provides a suite of specialized chart types and analysis tools for understanding user behavior, conversion patterns, retention metrics, and product performance. The platform centers around event-based analytics, enabling organizations to track, analyze, and optimize user interactions across their digital products.
+
+## Core Chart Types and Analysis Capabilities
+
+The platform offers 16 distinct chart types organized into four primary use case categories:
+
+**User Understanding Charts:**
+- **Event Segmentation**: The foundational chart type for counting and filtering events to understand user behavior patterns
+- **Data Tables**: Multi-metric comparison views for breaking down events and metrics in a unified interface
+- **User Sessions**: Session-based analysis for understanding user engagement patterns
+- **Personas**: Machine learning-driven user clustering to identify behavioral segments
+- **Lifecycle**: User categorization into New, Current, Resurrected, and Dormant segments
+
+**Conversion Analysis Charts:**
+- **Funnel Analysis**: Multi-step conversion analysis to identify drop-off points and optimization opportunities
+- **Journeys**: Sequential user path analysis to understand navigation patterns
+
+**Retention and Engagement Charts:**
+- **Retention Analysis**: Cohort-based analysis measuring how often users return to the product
+- **Stickiness**: Frequency-based engagement measurement within defined time intervals
+- **Engagement Matrix**: Two-dimensional analysis of feature usage by breadth and frequency
+
+**Advanced Analytics Charts:**
+- **Compass**: Behavioral threshold identification for predicting retention and growth
+- **Impact Analysis**: Causal analysis measuring how first-time feature engagement affects subsequent behaviors
+- **Experiment Results**: A/B testing analysis with statistical significance calculations
+- **Revenue LTV**: Lifetime value and monetization analysis
+
+## Key Platform Architecture and Relationships
+
+The platform operates on a modular chart-building system with four core components:
+
+1. **Events Module**: Handles event selection, including default Amplitude events (Top Global Events, Any Active Event, New User), wildcard search with glob match operators, and custom event grouping
+2. **Segmentation Module**: Manages user segment definition through property filters, behavioral cohorts, and inline cohort creation
+3. **Measured As Module**: Defines calculation methods and metrics
+4. **Segment By Module**: Controls data grouping and categorization
+
+Charts share common functionality including dual Y-axis support, custom legend labeling, annotation systems with date ranges and categories, and comprehensive data export capabilities through breakdown tables and CSV exports.
+
+## Core Nomenclature and Definitions
+
+**Events and Properties:**
+- **Events**: User actions tracked within the product (clicks, page views, purchases)
+- **Event Properties**: Attributes associated with specific events
+- **User Properties**: Persistent attributes associated with users across sessions
+- **Parent/Child Properties**: Nested property structures for complex data analysis
+
+**User Segmentation:**
+- **Active Users**: Users who performed any tracked event in the specified time period
+- **New Users**: First-time users within the analysis window
+- **Behavioral Cohorts**: User groups defined by specific action patterns
+- **Inline Cohorts**: Dynamically created user segments using the "+ Performed" clause
+
+**Analysis Concepts:**
+- **Group-by Clauses**: Data categorization with limits of 100 values for single group-by and 500 for dual group-by
+- **Array Operators**: Filtering logic including is/is not, contains/does not contain, set is/set is not, set contains/set does not contain
+- **Query Time Sampling**: Performance optimization using 10% random user samples with statistical up-sampling
+
+## Broader Product Ecosystem Integration
+
+Amplitude Analytics integrates with several complementary tools and systems:
+
+- **Amplitude Data**: Handles data ingestion, property splitting for cart analysis, and data governance
+- **Event Explorer**: Real-time event stream visualization for instrumentation QA and taxonomy exploration
+- **User Lookup**: Individual user journey analysis and debugging
+- **Instrumentation Explorer Chrome Plugin**: Browser-based event validation
+- **Organization Settings**: Enterprise-level configuration for themes, sampling defaults, and access controls
+
+The platform supports multiple data export mechanisms including REST APIs, CSV exports, and direct Snowflake querying through Amplitude SQL for advanced analysis.
+
+## Technical Implementation Details
+
+**Performance Optimization:**
+- Automatic query time sampling with 10% user samples for large datasets
+- Configurable caching intervals (realtime, hourly, daily, weekly, monthly, quarterly, yearly)
+- Data pruning mechanisms with result limits (100 single group-by, 500 dual group-by, 10,000 CSV export, 20,000 Dashboard REST API)
+
+**Access Control:**
+- Plan-based feature availability across Starter, Plus, Growth, and Enterprise tiers
+- Role-based permissions for custom event creation (admin/manager/member)
+- Organization-level theme and sampling configuration
+
+**Advanced Features:**
+- Cart analysis for e-commerce with object array support
+- Historical count application for Event Segmentation
+- Keyboard shortcuts for rapid chart creation (Shift+e, Shift+f, Shift+g)
+- Custom color theming with 8-16 color palettes using hex values
+
+The platform emphasizes real-time analysis capabilities while providing robust historical analysis tools, making it suitable for both operational monitoring and strategic product optimization initiatives.

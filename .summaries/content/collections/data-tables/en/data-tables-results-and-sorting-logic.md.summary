@@ -1,0 +1,14 @@
+**Summary:** Documents Data Tables chart result limits (100-500 rows for display, 20-10,000 for CSV exports based on metric type), sorting logic that only reorders existing results without fetching new data, and special handling of time properties as group-bys that multiply limits by property values.
+
+**Keywords:**
+- Data Tables chart limits
+- group-by result limits
+- sorting logic descending/ascending order
+- CSV export row limits
+- event segmentation metrics
+- funnel metrics attribution
+- session metrics
+- Dashboard REST API 1000 row limit
+- time properties group-by multiplier
+- nested group-by limits
+- metric type row restrictions

@@ -1,0 +1,19 @@
+**Summary:** This documentation explains Amplitude's channels feature, which allows marketers to create retroactive property classifiers based on UTM and referrer data to track acquisition channels, with different plan limits and integration with Data Tables for attribution modeling.
+
+**Keywords:**
+- channels
+- channel classifier
+- UTM parameters
+- referrer data
+- acquisition channels
+- retroactive property creation
+- Data Tables integration
+- attribution modeling
+- user properties vs event properties
+- CPA, AOV, ROAS metrics
+- plan limitations (Starter/Plus vs Growth/Enterprise)
+- special values (ANY, none, blank)
+- explicitly vs implicitly set none values
+- Google Analytics channel definitions
+- blended traffic views
+- campaign attribution

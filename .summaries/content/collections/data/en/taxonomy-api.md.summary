@@ -1,0 +1,13 @@
+**Summary:** The Taxonomy API enables CRUD operations for categories, event types, event properties, and user properties in Amplitude, with the restriction that only planned events and properties can be edited, not those with existing project data.
+
+**Keywords:**
+- Taxonomy API
+- CRUD operations
+- event types
+- event properties
+- user properties
+- categories
+- planned events
+- project data restrictions
+- Amplitude Developer Center
+- Customer Service Manager access

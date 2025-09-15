@@ -1,0 +1,17 @@
+**Summary:** This documentation explains Amplitude's Dimensional Analysis feature for Feature Experiment, which allows filtering out QA users and internal traffic from experiment analysis by defining test users in Targeting settings and using the "Exclude testers" dropdown option.
+
+**Keywords:**
+- Dimensional Analysis
+- Feature Experiment
+- Targeting settings
+- Exclude testers
+- QA users filtering
+- Internal traffic exclusion
+- User ID targeting
+- Device ID targeting
+- Cohort targeting
+- Variant assignment
+- All exposed users dropdown
+- Testing section
+- User segment analysis
+- Statistical significance filtering

@@ -1,0 +1,25 @@
+**Summary:** This documentation covers Google BigQuery destination integration for Amplitude, detailing setup of recurring syncs for raw events and merged user IDs, including service account configuration with specific IAM roles (BigQuery User, Data Editor, custom transfer permissions), table partitioning by event_time, automatic daily integrity checks with backfill, and deduplication functions.
+
+**Keywords:**
+- Google BigQuery destination
+- Amplitude event data export
+- recurring syncs
+- service account JSON key
+- BigQuery Transfer service
+- table partitioning event_time
+- daily integrity check backfill
+- deduplicated table function
+- raw events integration
+- merged user IDs
+- BigQuery User role
+- BigQuery Data Editor role
+- bigquery.transfers.get permission
+- bigquery.transfers.update permission
+- bigquery.datasets.update permission
+- Event table schema
+- Merged User table schema
+- amplitude_id BIGNUMERIC
+- uuid deduplication
+- ROW_NUMBER() OVER PARTITION
+- warehouse destination
+- IP allowlist requirements

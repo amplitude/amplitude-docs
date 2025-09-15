@@ -1,0 +1,27 @@
+## Summary
+This documentation describes Amplitude's Warehouse-native Bulk Model Management feature that allows batch creation and updating of multiple data models using YAML configuration files, supporting events, user properties, group properties, and event properties with both table-based and SQL-based selection methods.
+
+## Keywords
+- warehouse-native bulk model management
+- YAML configuration file
+- batch model operations
+- create update models
+- table-based selection
+- SQL-based selection
+- event models
+- current user properties
+- historical user properties
+- current group properties
+- historical group properties
+- event properties
+- tableConfig object
+- sqlConfig object
+- requiredFields mapping
+- additionalFields mapping
+- fieldMapping column label
+- multiEventTable configuration
+- snowflake integration
+- apiVersion warehouse/models/v1
+- DataModel metadata spec
+- eventTime userId groupId eventId
+- database schema table query

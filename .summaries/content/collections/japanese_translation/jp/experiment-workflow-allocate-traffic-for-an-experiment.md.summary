@@ -1,0 +1,18 @@
+**Summary:** This Japanese documentation explains traffic allocation configuration for Amplitude Experiment workflows, covering variant traffic percentage settings, user segment targeting through cohorts and user properties, stratified sampling controls, and rollout percentage management in the Allocation panel.
+
+**Keywords:**
+- Amplitude Experiment traffic allocation
+- variant traffic percentage バリアント
+- user segment targeting ユーザーセグメント
+- cohort-based experiments コホート
+- user properties ユーザープロパティ
+- stratified sampling 層別サンプリング
+- rollout percentage ロールアウトパーセント
+- Allocation panel 割り当てパネル
+- individual user targeting 個人ユーザーターゲット
+- experiment workflow 実験ワークフロー
+- QA targeting
+- custom user properties カスタムユーザープロパティ
+- segment rollout controls セグメントロールアウト制御
+- internal user assignment 内部ユーザー割り当て
+- experiment bias 実験バイアス

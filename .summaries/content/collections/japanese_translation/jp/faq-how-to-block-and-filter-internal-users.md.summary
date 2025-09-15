@@ -1,0 +1,16 @@
+**Summary:** This Japanese documentation explains methods for blocking and filtering internal users in Amplitude Analytics, including IP address blocking via data filters on the Govern page, user segmentation in charts, saved segments with default settings, and behavioral cohorts for managing internal user lists.
+
+**Keywords:**
+- Amplitude Analytics
+- internal users blocking
+- data filters
+- IP address filtering
+- Govern page
+- user segmentation
+- behavioral cohorts
+- Japanese translation
+- production vs development projects
+- default segments
+- cohort API
+- user properties filtering
+- chart segmentation module

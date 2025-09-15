@@ -1,0 +1,30 @@
+## Product Overview
+
+This documentation directory covers the administrative functionality of a software platform that provides enterprise-level user management capabilities. The system includes comprehensive account management, billing and usage tracking, and Single Sign-On (SSO) authentication services.
+
+## Product Relationships and Features
+
+The administrative system is organized around three core functional areas:
+
+**Account Management** serves as the central hub for user administration, providing tools and interfaces for managing user accounts, permissions, and organizational structures within the platform.
+
+**Billing and Use** handles the commercial aspects of the platform, tracking resource consumption, managing subscription plans, and providing usage analytics and billing information to administrators.
+
+**Single Sign-On** provides enterprise authentication capabilities, allowing organizations to integrate the platform with their existing identity management systems and streamline user access across multiple applications.
+
+## Key Nomenclature and Definitions
+
+- **Blueprint**: The structural template system used to define page layouts and functionality, with "admin" being the primary blueprint for administrative interfaces
+- **Landing Page**: Designated entry points for major functional areas, used for both Account Management and Single Sign-On sections
+- **Current Collection**: The active documentation grouping that corresponds to specific product features
+- **Exclude from Sitemap**: A content management flag that controls the visibility of pages in navigation structures
+
+## Product Ecosystem Integration
+
+The administrative system operates as a foundational layer within the broader platform ecosystem. The Account Management component likely interfaces with user-facing applications to enforce permissions and access controls. The Billing and Use system connects to the platform's resource consumption tracking and integrates with payment processing systems. The Single Sign-On functionality serves as an authentication gateway that other platform services depend on for user verification and authorization.
+
+The documentation structure suggests this is part of a multi-tenant SaaS platform where administrative functions are separated from end-user functionality, allowing for scalable enterprise deployment with centralized management capabilities.
+
+## Technical Implementation
+
+The system uses a content management approach with unique identifiers (UUIDs) for each functional area, enabling programmatic access and integration. The template system supports both standard pages and specialized landing pages, indicating a flexible presentation layer that can accommodate different administrative workflows and user interfaces.

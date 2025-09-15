@@ -1,0 +1,13 @@
+**Summary:** This documentation explains how to create custom events in Amplitude's Events module by grouping multiple events with OR logic, allowing analysis of users who trigger any of several specified events as a single funnel step.
+
+**Keywords:**
+- custom events creation
+- OR clause logic
+- Events module grouping
+- funnel step consolidation
+- Event Segmentation charts
+- Funnel Analysis workflows
+- custom event permissions (admin/manager/member)
+- event property querying limitations
+- Redshift custom event restrictions
+- [Custom] prefix naming convention

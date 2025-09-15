@@ -1,0 +1,17 @@
+**Summary:** This documentation covers cohort targeting in Amplitude Experiment, explaining how static and dynamic cohorts sync to remote and local evaluation destinations with hourly sync intervals, including SDK configuration requirements for local evaluation cohort targeting with API/secret keys.
+
+**Keywords:**
+- cohort targeting
+- Amplitude Experiment
+- remote evaluation
+- local evaluation
+- dynamic cohorts
+- hourly sync intervals
+- cohort sync configuration
+- Experiment Local Evaluation destination
+- server-side SDKs
+- user ID targeting
+- API key secret key configuration
+- cohort propagation delay
+- CohortSyncConfig
+- DEPLOYMENT_KEY

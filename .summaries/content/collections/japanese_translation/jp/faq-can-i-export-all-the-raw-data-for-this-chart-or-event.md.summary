@@ -1,0 +1,13 @@
+**Summary:** This Japanese FAQ documentation explains that Amplitude does not support exporting raw event data from charts or specific events, and describes alternative solutions including Export API, Amplitude SQL/Snowflake ETL addon, and Amazon S3 export for accessing underlying event data.
+
+**Keywords:**
+- Japanese FAQ documentation
+- raw event data export limitations
+- chart data export restrictions
+- Export API JSON format
+- Amplitude SQL addon
+- Snowflake ETL integration
+- Amazon S3 export
+- event properties extraction
+- Growth and Enterprise account features
+- CSV export alternatives

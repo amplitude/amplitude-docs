@@ -1,0 +1,40 @@
+## Summary
+
+This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mode), which provides event tracking, user identification, and analytics capabilities for web browsers, including installation via snippet/npm/yarn, initialization with API keys, event logging with properties, user property management through Identify objects, revenue tracking, and advanced features like cross-domain tracking, UTM parameter capture, and sendBeacon support.
+
+## Keywords
+
+- amplitude-js
+- JavaScript SDK
+- maintenance SDK
+- Browser SDK 2.0 migration
+- amplitude.getInstance()
+- logEvent
+- setUserId
+- Identify object
+- Revenue tracking
+- logRevenueV2
+- UTM parameters
+- includeUtm
+- includeReferrer
+- cross-domain tracking
+- deviceIdFromUrlParam
+- sendBeacon transport
+- amp_ cookies
+- trackingOptions
+- sessionTimeout
+- eventUploadThreshold
+- batchEvents
+- serverZone EU
+- groupIdentify
+- setUserProperties
+- setDeviceId
+- amplitude-8.21.4-min.gz.js
+- requireJS integration
+- Google Tag Manager
+- Content Security Policy CSP
+- navigator.sendBeacon
+- localStorage fallback
+- COPPA control
+- dynamic configuration
+- useDynamicConfig

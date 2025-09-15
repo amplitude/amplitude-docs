@@ -1,0 +1,23 @@
+**Summary:** This documentation covers the Ampli Wrapper for JavaScript SDK, which generates strongly-typed tracking functions from Amplitude Data tracking plans for browser apps using JavaScript ES6+ and TypeScript 2.1+, packaged as a CJS module with amplitude-js@^8.21.0 dependency.
+
+**Keywords:**
+- Ampli Wrapper
+- JavaScript SDK
+- amplitude-js@^8.21.0
+- strongly-typed tracking
+- Amplitude Data tracking plan
+- CJS module
+- TypeScript 2.1+
+- JavaScript ES6+
+- browser apps
+- ampli.load()
+- ampli.identify()
+- ampli.track()
+- ampli.flush()
+- ampli.setGroup()
+- Ampli CLI
+- ampli pull
+- ampli status
+- event schemas
+- autocompletion
+- maintenance SDK status

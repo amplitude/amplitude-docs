@@ -1,0 +1,24 @@
+## Summary
+This documentation explains how to deploy and analyze machine learning recommendations in personalization campaigns using Amplitude's Profile API, including REST endpoint integration, control/treatment group handling, and performance measurement through funnel conversion analysis.
+
+## Keywords
+- Profile API
+- recommendations deployment
+- personalization campaigns
+- REST endpoint
+- user_id device_id queries
+- rec_id recommendation identifier
+- is_control treatment groups
+- items array optimization
+- JSON response payload
+- secret key authentication
+- control vs treatment segments
+- funnel conversion analysis
+- statistical significance testing
+- recommendation performance metrics
+- API integration workflows
+- cached vs real-time calls
+- backend proxy requirements
+- CMS feature flag mapping
+- Braze Movable Ink integration
+- exposure events result events

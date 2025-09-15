@@ -1,0 +1,14 @@
+**Summary:** This FAQ documentation explains Amplitude's immutable data architecture with pre-aggregated hourly/daily/weekly/monthly sets and provides workarounds for modifying historical data including Export API + Batch API data cleaning workflows, self-service data deletion for Growth/Enterprise plans, and event blocking limitations.
+
+**Keywords:**
+- immutable data architecture
+- pre-aggregated sets
+- historical data modification
+- self-service data deletion
+- Export API data cleaning
+- Batch API upload workflow
+- Identify API user properties
+- event blocking limitations
+- data backfill process
+- Growth Enterprise plan features
+- ingested data immutability

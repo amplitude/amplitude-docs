@@ -1,0 +1,17 @@
+**Summary:** This Japanese documentation explains how to add variants to experiments in Amplitude Experiment, covering variant creation, payload configuration with JSON objects, advanced settings like sticky bucketing and evaluation modes, and deployment configuration during the experiment design phase.
+
+**Keywords:**
+- Amplitude Experiment variants
+- Japanese translation documentation
+- experiment design phase
+- sticky bucketing configuration
+- evaluation mode settings
+- variant payload JSON objects
+- deployment dropdown selection
+- exclusion groups (相互排反)
+- bucket salt randomization
+- control variant assignment
+- バリアント作成 (variant creation)
+- ペイロード編集 (payload editing)
+- スティッキーバケット (sticky bucket)
+- 実験設計フェーズ (experiment design phase)

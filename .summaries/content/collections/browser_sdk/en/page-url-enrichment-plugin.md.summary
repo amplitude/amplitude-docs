@@ -1,0 +1,16 @@
+## Summary
+This documentation describes the Page URL Enrichment plugin for Amplitude's Browser SDK that automatically adds page URL-related properties (domain, location, path, title, previous page info) to all tracked events, supporting both multi-page and single-page applications with session storage for navigation history persistence.
+
+## Keywords
+- Page URL Enrichment plugin
+- @amplitude/plugin-page-url-enrichment-browser
+- Browser SDK plugin
+- Automatic page URL properties
+- Navigation tracking
+- Session storage persistence
+- Previous page classification
+- Single-page application support
+- pushState/replaceState/popstate events
+- AMP_URL_INFO session storage key
+- [Amplitude] Page Domain/Location/Path/Title properties
+- Previous Page Type classification (direct/internal/external)

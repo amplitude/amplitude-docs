@@ -1,0 +1,59 @@
+## Guides and Surveys Localization API
+
+The Guides and Surveys Localization API is a beta REST API service designed to facilitate programmatic translation management for LaunchDarkly's guides and surveys functionality. The API enables seamless integration with translation management systems (TMS) through standardized XLIFF 1.2 file format support.
+
+### Core Functionality and Use Cases
+
+The API serves as a bridge between LaunchDarkly's guides and surveys content and external translation workflows. Primary use cases include:
+
+- **Automated Translation Workflows**: Integration with translation management systems for streamlined localization processes
+- **Content Synchronization**: Bidirectional import and export of translatable content between LaunchDarkly and external translation tools
+- **Multi-language Content Management**: Systematic handling of guides and surveys across multiple target languages
+- **Translation File Processing**: Programmatic manipulation of XLIFF translation units for guides and surveys content
+
+### Product Relationships and Feature Integration
+
+The Localization API operates as a specialized service within LaunchDarkly's broader guides and surveys ecosystem. It interfaces directly with:
+
+- **Feature Flags**: Content is organized and referenced through flag_key parameters, establishing a direct relationship between translatable content and feature flag configurations
+- **Variant Management**: Translation units are mapped to specific variants within feature flags, enabling granular control over localized content delivery
+- **Guides and Surveys Content**: The API specifically handles "nudge translations" - the translatable elements within guides and surveys that users interact with
+
+### Key Nomenclature and Definitions
+
+**XLIFF 1.2 Format**: The standardized XML Localization Interchange File Format used for translation file exchange, ensuring compatibility with industry-standard translation tools.
+
+**Flag Key**: A unique identifier that associates translation content with specific feature flags, serving as the primary organizational unit for translatable content.
+
+**Variant Identifier**: Specifies particular variations within a feature flag that contain translatable elements, enabling targeted translation of specific content versions.
+
+**Trans-unit Elements**: Individual translation units within XLIFF files that contain source text and target translations, representing discrete translatable segments.
+
+**Nudge Translations**: The user-facing translatable content within guides and surveys, including text, labels, and interactive elements.
+
+**Target-language/Source-language Codes**: ISO language codes that specify the translation direction and locale-specific content handling.
+
+**Original Attribute Mapping**: The mechanism that links XLIFF translation units back to their corresponding elements in the LaunchDarkly guides and surveys system.
+
+### API Architecture and Endpoints
+
+The API is accessible through the base endpoint pattern `guides-surveys/api/v1/localization` and implements RESTful principles for translation file management. Key operational aspects include:
+
+**Authentication**: Utilizes App ID and App Secret Key credentials through Basic Authentication, providing secure access to translation operations.
+
+**Translation Import/Export**: Bidirectional XLIFF file processing that maintains content integrity and mapping relationships between source and target languages.
+
+**Cache Management**: Includes cache purging mechanisms to ensure translation updates are immediately reflected in the live guides and surveys system.
+
+**Translation Management System Integration**: Designed specifically to work with external TMS platforms, enabling automated translation workflows and content synchronization.
+
+### Broader Product Ecosystem Integration
+
+Within LaunchDarkly's feature management platform, the Guides and Surveys Localization API represents a specialized internationalization capability that extends the core feature flagging functionality into multi-language content delivery. The API enables organizations to:
+
+- Maintain consistent user experiences across different locales while leveraging feature flag-controlled content
+- Implement sophisticated A/B testing scenarios that account for language and cultural variations
+- Scale guides and surveys functionality to global audiences through systematic translation management
+- Integrate localization workflows into existing DevOps and content management processes
+
+The beta status indicates ongoing development and refinement of the API's capabilities, with the XLIFF 1.2 standard providing a stable foundation for translation workflow integration while the service evolves to meet enterprise localization requirements.

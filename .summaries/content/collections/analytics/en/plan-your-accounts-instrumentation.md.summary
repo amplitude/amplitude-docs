@@ -1,0 +1,20 @@
+**Summary:** This documentation covers planning and implementing Amplitude Accounts instrumentation for group-level analytics, detailing event-level vs user-level groups, API integration approaches (HTTP V2, Batch, Identify, Group Identify), dynamic group properties, and specific integration patterns for Salesforce and Segment (both Actions and Classic destinations).
+
+**Keywords:**
+- Amplitude Accounts add-on
+- group types and group values
+- event-level groups vs user-level groups
+- Group Identify API
+- HTTP V2 API and Batch API
+- Dynamic Group Properties
+- Salesforce integration with daily sync
+- Segment Actions destination mapping
+- Segment Classic destination traits
+- account-level reporting
+- group properties persistence
+- Amplitude Group Type Trait
+- Amplitude Group Value Trait
+- integration-specific groups property
+- taxonomy validation
+- 5 group types limit
+- 1000 account-level properties limit

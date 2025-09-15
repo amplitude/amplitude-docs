@@ -1,0 +1,19 @@
+**Summary:** This documentation covers SCIM 2.0 provisioning setup in Amplitude using the User Management API, including Okta integration configuration, SCIM key generation, supported user schema fields (userName, givenName, familyName, email, active), and troubleshooting authentication issues with identity providers.
+
+**Keywords:**
+- SCIM 2.0 provisioning
+- User Management API
+- SCIM key generation
+- Okta integration
+- Identity provider authentication
+- Permission groups management
+- SCIM user schema fields
+- userName givenName familyName email active
+- Enterprise plans only
+- Access and SSO Settings
+- SCIM API authentication token
+- Okta Integration Network
+- SAML configuration
+- NO_GIVEN_NAME NO_FAMILY_NAME placeholders
+- Import Users Groups functionality
+- Push Groups feature

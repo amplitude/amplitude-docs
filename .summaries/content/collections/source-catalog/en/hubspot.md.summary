@@ -1,0 +1,15 @@
+**Summary:** This documentation covers HubSpot's source integration with Amplitude that imports 10 specific email campaign events (EMAIL_SENT, EMAIL_DELIVERED, EMAIL_OPEN, etc.) via HubSpot's Email API using OAuth authentication and server-side connection with email address as User ID.
+
+**Keywords:**
+- HubSpot Email API integration
+- OAuth authentication setup
+- EMAIL_SENT, EMAIL_DELIVERED, EMAIL_OPEN events
+- HubSpot Portal ID connection
+- Email campaign event streaming
+- Server-side connection type
+- Email address User ID mapping
+- 1-hour interval data pulls
+- HubSpot Internal ID filtering
+- Email marketing funnel analysis
+- Marketing automation source integration
+- Event ingestion jobs monitoring

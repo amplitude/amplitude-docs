@@ -1,0 +1,17 @@
+## Summary
+This documentation covers Amplitude Profiles, which enable joining customer profile data from data warehouses (Snowflake, Databricks, S3) with behavioral product data using Change Data Capture (CDC) and incremental modeling for real-time user profile synchronization.
+
+## Keywords
+- Amplitude Profiles
+- Change Data Capture (CDC)
+- Snowflake change tracking
+- Databricks delta.enableChangeDataFeed
+- incremental modeling
+- user_id mapping
+- mutation_type (INSERT/UPDATE/DELETE)
+- profile properties synchronization
+- data warehouse integration
+- S3 profiles import
+- DATA_RETENTION_TIME_IN_DAYS
+- column mapping
+- profile limits (1 billion/300 million operations)

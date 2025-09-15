@@ -1,0 +1,22 @@
+**Summary:** This documentation covers building surveys with four unique block types (Rating, Long answer, Short answer, List) that support conditional logic for dynamic response branching, using a subset of guide form factors (modal, popover, pin) with specific settings like NPS scoring, ARIA labels, pre-fill keys, and multiple choice options.
+
+**Keywords:**
+- survey blocks
+- Rating block types
+- Stars rating
+- NPS Net Promoter Score
+- conditional logic
+- survey branching
+- Long answer block
+- Short answer block
+- List block
+- ARIA label
+- pre-fill key
+- multiple choice
+- randomize order
+- Other option
+- form factors modal popover pin
+- survey targeting
+- rating scales
+- emoji rating
+- survey properties

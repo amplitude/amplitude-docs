@@ -1,0 +1,42 @@
+## Product Overview
+
+This is an AI-powered web analytics and optimization platform built around a multi-agent architecture that provides automated insights and recommendations for website performance improvement. The platform combines session replay technology with conversion optimization capabilities to deliver both deep analytical research and actionable recommendations for website enhancement.
+
+## Agent Architecture and Feature Relationships
+
+The platform employs three specialized AI agents that work in concert to provide comprehensive website analysis:
+
+- **Session Replay Deep Research Agent**: Analyzes user session recordings to identify behavioral patterns, friction points, and optimization opportunities within user journeys
+- **Website Conversion Optimization Agent**: Focuses on conversion rate improvement by analyzing user flows, identifying drop-off points, and recommending specific changes to enhance conversion performance  
+- **Dashboard Summary Agent**: Aggregates and synthesizes data from multiple sources to provide executive-level summaries and key performance indicators
+
+These agents operate interdependently, with session replay data feeding into both research and optimization agents, while the dashboard agent synthesizes outputs from all analytical components into digestible insights.
+
+## Key Nomenclature and Definitions
+
+**Agents**: AI-powered analytical modules that specialize in specific aspects of website performance analysis and optimization, each operating within a defined scope and capability framework.
+
+**Blueprint**: The structural framework defining an agent's functionality, data sources, and output format. All agents follow the standardized "agent" blueprint architecture.
+
+**Session Replay**: Technology that records and reconstructs user interactions with websites, enabling detailed behavioral pattern analysis and usability issue identification.
+
+**Conversion Optimization**: The systematic process of improving website elements to increase the percentage of visitors completing desired actions.
+
+## Broader Product Ecosystem
+
+The platform integrates multiple data streams into a cohesive analytical system with comprehensive privacy and security frameworks ensuring data protection compliance. The ecosystem includes:
+
+- Streamlined setup and onboarding processes through dedicated implementation agents
+- Best practices documentation for optimal platform utilization
+- Content management system with unique identifiers, versioning control, and user attribution tracking
+- Integration capabilities with existing web analytics infrastructure
+
+## Technical Implementation
+
+The documentation structure follows a content management system with:
+- Unique agent identifiers and versioning through updated timestamps
+- User attribution tracking for documentation changes
+- Draft status indicators (published: false) suggesting active development phase
+- Structured content organization under the `/content/collections/agents/en` directory path
+
+The platform represents a comprehensive solution for data-driven website optimization, combining advanced AI analysis capabilities with practical implementation guidance to help organizations systematically improve their digital performance metrics through intelligent automation and actionable insights.

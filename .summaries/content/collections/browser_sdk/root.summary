@@ -1,66 +1,80 @@
-## Amplitude Browser SDK 2
+## Amplitude Browser SDK Product Suite
 
-Amplitude Browser SDK 2 is a comprehensive JavaScript/TypeScript analytics library designed to track user interactions and send event data to Amplitude's analytics platform via the HTTP V2 API. The SDK provides both manual event tracking capabilities and extensive autocapture functionality to automatically collect user behavior data without requiring explicit instrumentation.
+Amplitude's Browser SDK is a comprehensive JavaScript/TypeScript analytics solution for web applications that enables event tracking, user identification, and behavioral analytics. The product suite consists of multiple SDK versions and specialized tools designed to capture user interactions and send analytics data to Amplitude's platform.
 
-## Product Architecture and Features
+## Product Architecture and Relationships
 
-The Browser SDK 2 operates as a client-side analytics solution with multiple installation methods including script loader, npm, and yarn. The SDK is built around a plugin-based architecture that supports both enrichment plugins (for data transformation) and destination plugins (for data routing).
+The Browser SDK ecosystem is built around several core products that work together:
 
-### Core Tracking Capabilities
+**Browser SDK 2.0** (`@amplitude/analytics-browser`) serves as the flagship modern SDK, utilizing the HTTP V2 API and featuring built-in autocapture capabilities, comprehensive marketing attribution tracking, and advanced session management. This represents the current recommended implementation.
 
-The SDK provides comprehensive autocapture functionality across multiple interaction types:
+**Browser SDK 1.x** operates in maintenance mode, providing similar core functionality but with different configuration patterns and plugin architecture. It serves as a stepping stone between the legacy JavaScript SDK and the modern Browser SDK 2.0.
 
-- **Marketing Attribution Tracking**: Automatically captures UTM parameters and click ID parameters for campaign attribution
-- **Page View Tracking**: Monitors navigation events and page transitions
-- **Session Management**: Handles session tracking with configurable parameters
-- **Form Interaction Tracking**: Captures form submissions and interactions
-- **File Download Tracking**: Monitors file download events
-- **Element Interaction Tracking**: Tracks clicks and interactions with page elements
-- **Frustration Interaction Tracking**: Detects user frustration signals including rage clicks and dead clicks
-- **Network Request Tracking**: Monitors XHR and Fetch API calls for performance analytics
+**Legacy JavaScript SDK** (`amplitude-js`) remains in maintenance mode, representing the original implementation that many existing applications still use. Migration paths are provided to move users toward the modern SDK versions.
 
-### User and Revenue Analytics
+**Unified SDK** (`@amplitude/unified`) provides a single entry point for initializing Analytics, Experiment, and Session Replay features together, optimizing bundle size and configuration management across Amplitude's product suite.
 
-The SDK supports sophisticated user analytics through:
-- **User Properties**: Managed via the Identify interface for user attribute tracking
-- **Group Properties**: Enables cohort and organizational analytics
-- **Revenue Tracking**: Dedicated interface for e-commerce and monetization tracking
+**Marketing Analytics SDK** (`@amplitude/marketing-analytics-browser`) extends the Browser SDK with specialized marketing attribution features, though it's now in maintenance mode with functionality integrated into Browser SDK 2.0.
+
+**Ampli Wrappers** generate strongly-typed APIs for each SDK version, providing compile-time validation and autocompletion based on Amplitude Data tracking plans.
 
 ## Key Nomenclature and Definitions
 
-- **deviceId and userId**: Core user identification parameters with configurable validation via minIdLength
-- **flushQueueSize and flushIntervalMillis**: Configuration parameters controlling event batching and transmission frequency
-- **sendBeacon**: Transport method for reliable event delivery
-- **ampDeviceId and ampSessionId**: URL parameters used for cross-domain tracking continuity
-- **AMP cookie prefix**: Cookie naming convention for data persistence
-- **trackingOptions**: Configuration object for controlling data collection scope
-- **excludeReferrers**: Configuration for filtering referrer data
-- **fetchRemoteConfig**: Method for retrieving server-side configuration
+**Autocapture**: Automated tracking of user interactions including page views, form interactions, file downloads, element clicks, frustration events (rage clicks, dead clicks), and network requests without manual instrumentation.
 
-## Integration and Ecosystem Positioning
+**Attribution Tracking**: Capture and analysis of marketing campaign data including UTM parameters, click IDs (gclid, fbclid, dclid), referrer information, and campaign attribution across user sessions.
 
-The Browser SDK 2 integrates with Amplitude's broader analytics ecosystem through the HTTP V2 API, enabling seamless data flow to Amplitude's analytics platform. The SDK supports modern web development frameworks including:
+**Device ID and User ID**: Core identifiers where deviceId represents anonymous user tracking and userId represents authenticated user identification, with validation through `minIdLength` configuration.
 
-- **Angular**: Compatible with Zone.js for proper change detection
-- **Next.js**: Optimized integration for server-side rendered applications
-- **Visual Labeling**: Supports Amplitude's visual event labeling tools
+**Session Management**: Automatic session tracking with configurable timeout periods, cross-domain session continuity using `ampDeviceId` and `ampSessionId` URL parameters, and session storage persistence.
 
-### Cross-Domain and Advanced Features
+**Plugin Architecture**: Extensible system supporting enrichment plugins (data transformation) and destination plugins (data routing), with interfaces for setup, execute, and teardown lifecycle methods.
 
-The SDK provides enterprise-grade features including:
-- **Cross-Domain Tracking**: Maintains user identity across different domains using URL parameter passing
-- **Offline Mode**: Queues events when network connectivity is unavailable
-- **Content Security Policy (CSP)**: Configurable for secure deployment environments
-- **Cookie Management**: Flexible cookie handling with customizable prefixes and domains
-- **Remote Configuration**: Dynamic configuration updates via fetchRemoteConfig
+**Cookie Management**: First-party cookie implementation using `AMP_{api_key}` naming convention with configurable expiration (default 365 days), secure/sameSite flags, and GDPR compliance options.
 
-## API and Implementation
+**Transport Methods**: Multiple data transmission options including `sendBeacon` for reliable event delivery, standard HTTP requests, and batch processing with configurable `flushQueueSize` and `flushIntervalMillis`.
 
-The SDK exposes a comprehensive API surface including:
-- Event tracking methods for custom analytics
-- Configuration methods for autocapture features
-- Plugin registration for extensibility
-- User and group property management interfaces
-- Revenue tracking specialized methods
+## Broader Product Ecosystem Integration
 
-The implementation supports both unified package installation (`@amplitude/unified`) and dedicated browser package (`@amplitude/analytics-browser`), providing flexibility for different deployment scenarios and bundle size optimization requirements.
+The Browser SDK integrates deeply with Amplitude's broader analytics and experimentation platform:
+
+**Amplitude Data Integration**: Ampli wrappers connect directly to Amplitude Data tracking plans, generating type-safe event schemas and providing CLI tools (`ampli pull`, `ampli status`) for synchronization.
+
+**Session Replay Compatibility**: Browser SDK 2.0 provides native compatibility with Amplitude's Session Replay product, sharing configuration and initialization through the Unified SDK.
+
+**Experiment Integration**: The Unified SDK enables seamless integration with Amplitude Experiment for A/B testing and feature flagging alongside analytics tracking.
+
+**Server-Side Processing**: Modern SDKs leverage server-side user agent parsing and enrichment, reducing client-side processing overhead while maintaining data accuracy.
+
+**Cross-Domain Tracking**: Enterprise-grade session continuity across multiple domains using URL parameter passing and shared cookie configurations.
+
+## API Endpoints and Implementation Patterns
+
+**Core Initialization Methods**:
+- `amplitude.init(apiKey, options)` - Primary SDK initialization
+- `initAll()` - Unified SDK initialization for multiple products
+- `ampli.load()` - Ampli wrapper initialization
+
+**Event Tracking APIs**:
+- `amplitude.track(eventType, eventProperties)` - Core event tracking
+- `amplitude.identify(identifyObject)` - User property management
+- `amplitude.revenue(revenueObject)` - Revenue event tracking
+- `ampli.track.eventName()` - Type-safe event tracking via Ampli
+
+**Configuration Management**:
+- `fetchRemoteConfig` - Dynamic configuration retrieval
+- `cookieOptions` - Cookie behavior configuration
+- `defaultTracking` - Autocapture feature configuration
+- `identityStorage` - Storage mechanism selection (cookies, localStorage, sessionStorage, none)
+
+**Plugin Integration**:
+- `amplitude.add(plugin)` - Plugin registration
+- `@amplitude/plugin-page-url-enrichment-browser` - URL tracking enhancement
+- `@amplitude/plugin-user-agent-enrichment-browser` - User agent processing
+
+**Consent Management**:
+- `deferInitialization` - GDPR-compliant delayed initialization
+- `amplitude.reset()` - User data clearing
+- `setOptOut()` - Privacy compliance controls
+
+The SDK suite supports multiple installation methods including script loader, npm/yarn package management, and CDN integration, with comprehensive TypeScript support and compatibility with modern frameworks like Angular, Next.js, and single-page applications.

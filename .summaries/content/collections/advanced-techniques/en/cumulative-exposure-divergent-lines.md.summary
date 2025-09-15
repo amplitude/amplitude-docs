@@ -1,0 +1,18 @@
+**Summary:** This documentation explains how to interpret divergent lines in Amplitude's cumulative exposures graph for A/B testing experiments, covering scenarios with similar slopes (caused by staggered variant launches and novelty effects) and different slopes (caused by custom exposure events, cached variants, and sticky bucketing interactions with traffic allocation changes).
+
+**Keywords:**
+- cumulative exposures graph
+- divergent lines
+- similar slopes
+- different slopes
+- staggered variants
+- novelty effect
+- custom exposure event
+- cached variants
+- assignment event
+- sticky bucketing
+- traffic allocation
+- weighted average allocation
+- variant rollout
+- feature flag removal
+- A/B testing interpretation

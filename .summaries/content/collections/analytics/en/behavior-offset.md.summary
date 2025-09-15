@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude's behavior offset feature for segmenting users based on behaviors across two distinct time periods within behavioral cohorts, including rolling windows, offset configuration, and in-line cohort creation with specific plan availability restrictions.
+
+**Keywords:**
+- behavior offset
+- behavioral cohorts
+- rolling windows
+- in-line cohorts
+- offset field
+- rolling over field
+- previous period event
+- current period event
+- Growth and Enterprise plans
+- Event Segmentation charts
+- during cohorts
+- in each cohorts
+- Segmentation Module
+- time period segmentation
+- cohort shifting

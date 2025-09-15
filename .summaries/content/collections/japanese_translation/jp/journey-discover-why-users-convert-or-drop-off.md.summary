@@ -1,0 +1,18 @@
+**Summary:** This documentation describes Amplitude's Journey feature for analyzing user conversion and drop-off paths between two funnel steps, including setup from funnel analysis with start/end events, auto-filtering using TF-IDF heuristics, and path exploration capabilities for converted vs dropped-off users.
+
+**Keywords:**
+- Amplitude Journey feature
+- user conversion paths
+- drop-off analysis
+- funnel analysis integration
+- TF-IDF auto-filtering
+- pathfinder comparison
+- converted vs dropped-off users
+- start and end events
+- user cohort creation
+- microscope integration
+- event property expansion
+- custom filter overrides
+- legacy pathfinder experience
+- paid plan feature
+- user journey visualization

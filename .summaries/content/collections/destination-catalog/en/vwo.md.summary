@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the VWO destination integration for Amplitude, enabling bidirectional data sync including VWO campaign/survey data export to Amplitude and Amplitude cohort import to VWO for visitor targeting, with specific configuration steps for API key setup, cohort syncing, and campaign targeting using Amplitude segments.
+
+**Keywords:**
+- VWO destination integration
+- Amplitude cohorts sync
+- VWO campaign data export
+- VWO survey data (Insights)
+- visitor targeting
+- experimentation platform
+- VWO API key configuration
+- campaign targeting conditions
+- VWO-Test-ID user properties
+- VWO-survey-answer-submitted events
+- Device ID mapping
+- scheduled cohort sync
+- custom segment targeting
+- partner-maintained integration
+- US region only
+- bidirectional data transfer

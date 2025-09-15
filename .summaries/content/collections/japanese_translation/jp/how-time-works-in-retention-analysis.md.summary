@@ -1,0 +1,17 @@
+**Summary:** This documentation explains how Amplitude defines time periods in retention analysis, covering two approaches: 24-hour rolling windows (default) versus strict calendar days, including how each method calculates daily, weekly, and monthly retention periods with specific timestamp handling and cohort bucketing logic.
+
+**Keywords:**
+- retention analysis time definitions
+- 24-hour rolling windows
+- strict calendar days
+- timestamp truncation to nearest hour
+- cohort bucketing logic
+- daily weekly monthly retention calculations
+- project timezone settings
+- start event trigger timing
+- return event counting
+- calendar view retention
+- retention interval definitions
+- new user segmentation filters
+- retention type comparisons
+- Japanese translation documentation

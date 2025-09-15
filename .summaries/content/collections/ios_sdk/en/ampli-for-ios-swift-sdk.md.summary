@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the Ampli wrapper for iOS Swift SDK, providing strongly-typed event tracking methods generated from Amplitude tracking plans for Swift and Objective-C iOS applications, including installation via CocoaPods/SPM/Carthage, CLI usage, and wrapper methods like load(), identify(), track(), and flush().
+
+**Keywords:**
+- Ampli wrapper iOS Swift SDK
+- AmplitudeSwift pod installation
+- Swift Package Manager Amplitude-Swift
+- Carthage Amplitude integration
+- ampli pull command
+- LoadOptions configuration
+- strongly typed event tracking
+- SongPlayed event example
+- EventOptions deviceId price quantity
+- Ampli CLI status verification
+- ampli.json configuration
+- Swift Objective-C tracking plan
+- flush() method implementation
+- setGroup() groupType groupName
+- Identify user properties
+- @amplitude/ampli npm package

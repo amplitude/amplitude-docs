@@ -1,0 +1,54 @@
+Amplitude is a comprehensive digital analytics and experimentation platform that provides behavioral analytics, customer data management, and AI-powered insights to help product teams optimize user experiences and drive growth. The platform combines quantitative analytics with qualitative insights, experimentation capabilities, and customer engagement tools in an integrated ecosystem.
+
+## Core Product Architecture
+
+The Amplitude platform consists of several interconnected products that work together to provide end-to-end analytics and optimization capabilities:
+
+**Analytics** serves as the foundational product, offering behavioral analytics with AI automation for product growth analysis. It includes specialized analysis tools like Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys (Pathfinder), Revenue LTV, and the Engagement Matrix. The platform supports no-code analytics through an intuitive interface while providing advanced capabilities for technical users.
+
+**Amplitude Data** handles data integration, cross-device identity resolution, and customer/product data management. It includes warehouse-native capabilities and integrates with existing tech stacks to ensure data quality and consistency across the platform.
+
+**CDP (Customer Data Platform)** provides natively integrated customer data management with analytics, helping teams improve data quality, discover new audiences, and sync behavioral data across their entire stack through sources and destinations.
+
+**Experiment** offers comprehensive experimentation capabilities including feature flagging, A/B testing, multivariate experiments, and Multi-armed Bandit experiments. It integrates closely with the analytics platform to measure experiment impact and provides both SDK-based and Web Experiment (no-code) implementation options.
+
+**Session Replay** bridges quantitative and qualitative insights by recording user sessions that can be accessed from User Look-Up, various chart types, and experiment results. It synchronizes with event streams and provides filtering capabilities for deeper user behavior analysis.
+
+**Guides and Surveys** enables in-product communication for user onboarding and feedback collection, serving as an alternative to traditional popup components while measuring impact on retention, activation, and engagement metrics.
+
+**Amplitude Agents** represents the AI layer of the platform, providing real-time data interpretation, proactive recommendations, workflow automation, and connecting analytics with experimentation and engagement tools.
+
+## Key Nomenclature and Definitions
+
+The platform uses specific terminology throughout its ecosystem:
+
+- **Event Segmentation**: Analysis of user actions and behaviors segmented by various properties
+- **Funnel Analysis**: Conversion analysis through sequential user actions
+- **Journeys/Pathfinder**: User path analysis showing how users navigate through products
+- **Retention Analysis**: Measurement of user return behavior over time
+- **Stickiness**: Frequency-based engagement measurement
+- **Revenue LTV**: Lifetime value analysis and revenue attribution
+- **Engagement Matrix**: Comprehensive view of user engagement patterns
+- **Microscope**: The interface for viewing Session Replay recordings
+- **User Look-Up**: Individual user profile and behavior analysis
+- **Ampli**: Code-generated SDK wrapper providing type-safe event tracking
+- **Multi-armed Bandit**: Algorithmic experimentation that automatically optimizes traffic allocation
+- **Web Experiment**: No-code experimentation tool requiring only one-line JavaScript implementation
+
+## Technical Implementation
+
+The platform provides multiple implementation approaches:
+
+**SDKs** are available for both client-side and server-side implementation, including Analytics SDKs, Experiment SDKs, Session Replay SDK, and Guides/Surveys SDK. The Ampli CLI generates type-safe wrappers for tracking plans with static type checking.
+
+**APIs** include Analytics/Data APIs, Experiment APIs, and Guides/Surveys Translation API, with comprehensive authentication through various key types (org API key, secret key, SCIM token) and Postman collection integration.
+
+**Web Experiment** offers one-line JavaScript implementation for no-code experimentation with advanced targeting capabilities and performance optimization.
+
+## Administrative and Enterprise Features
+
+The **Admin** section covers billing, account management, and single sign-on capabilities. The platform includes **Partners** integration capabilities and comprehensive **FAQ and Troubleshooting** resources across all products.
+
+The platform is designed for seamless integration across the product ecosystem, where analytics data flows into experimentation decisions, customer data management enhances targeting and personalization, and AI agents provide proactive insights and automation. Session Replay adds qualitative context to quantitative findings, while Guides and Surveys enable direct user engagement based on analytical insights.
+
+This integrated approach allows product teams to move from data collection through analysis, experimentation, and optimization in a unified workflow, with each component enhancing the capabilities of the others through shared data and insights.

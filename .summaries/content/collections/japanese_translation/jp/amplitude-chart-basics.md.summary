@@ -1,0 +1,17 @@
+**Summary:** This documentation covers Amplitude chart sharing, customization, and caching mechanisms, including chart URL sharing, dashboard/notebook integration, custom legend labels, Y-axis configuration, project switching, and detailed cache timing specifications for different query intervals (real-time, hourly, daily, weekly, monthly).
+
+**Keywords:**
+- Amplitude chart sharing
+- chart URL clipboard copy
+- dashboard notebook integration
+- custom legend labels
+- Y-axis customization
+- project switching
+- chart type switching
+- chart cache timing
+- real-time queries
+- hourly daily weekly monthly queries
+- CSV download caching
+- dynamic group properties
+- collaboration features
+- subscription tiers Plus Enterprise Growth

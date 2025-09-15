@@ -1,0 +1,16 @@
+**Summary:** This documentation explains how to use Amplitude's Segmentation Module to add user segments to charts, covering user categories (any users, active users, new users), filtering with user properties, grouping segments, and saving segments for reuse.
+
+**Keywords:**
+- Amplitude Segmentation Module
+- user segments
+- active users vs new users
+- Filter by clauses
+- Performed clauses
+- Group Segment by function
+- user properties
+- saved user segments
+- default segment
+- custom groups
+- Accounts reporting
+- multiple segments comparison
+- event-by-event grouping

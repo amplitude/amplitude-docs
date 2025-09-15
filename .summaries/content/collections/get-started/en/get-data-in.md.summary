@@ -1,0 +1,22 @@
+**Summary:** This getting started guide explains how to send data to Amplitude Analytics using SDKs (particularly Browser SDK), third-party integrations, and various APIs, with emphasis on project-level API key initialization and JavaScript snippet implementation for web tracking.
+
+**Keywords:**
+- Browser SDK
+- API key initialization
+- JavaScript snippet implementation
+- amplitude.init() statements
+- project-level data ingestion
+- Identify API
+- Dashboard REST API
+- Export API
+- Attribution API
+- HTTP API v2
+- Behavioral Cohorts API
+- Batch API
+- Segment integration
+- mParticle integration
+- SDK instrumentation
+- event tracking
+- user properties modification
+- third-party data sources
+- data taxonomy planning

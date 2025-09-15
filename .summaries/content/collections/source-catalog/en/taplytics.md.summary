@@ -1,0 +1,16 @@
+**Summary:** This documentation describes the Taplytics source integration that exports mobile A/B testing experiment data to Amplitude using the Attribution API endpoint, sending experiment variations as `TL_experiments` events with experiment-to-variation mappings as properties.
+
+**Keywords:**
+- Taplytics integration
+- mobile A/B testing
+- experiment data export
+- Attribution API endpoint
+- TL_experiments event
+- experiment variations
+- cross-platform A/B testing
+- Android SDK integration
+- iOS SDK integration
+- experimentation source catalog
+- raw-events integration type
+- experiment segmentation
+- variation tracking

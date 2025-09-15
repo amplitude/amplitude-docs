@@ -1,0 +1,17 @@
+**Summary:** This Japanese documentation page covers Step 2 of the Amplitude setup series, explaining user identification using device ID, Amplitude ID, and user ID, with best practices for setting user IDs including immutability constraints and case sensitivity requirements.
+
+**Keywords:**
+- Amplitude user identification
+- device ID
+- Amplitude ID  
+- user ID (ユーザーID)
+- Japanese translation (jp)
+- instrumentation setup series
+- user ID immutability
+- case sensitivity
+- anonymous user tracking
+- cross-device event correlation
+- user profile merging
+- backend data merging
+- unique user tracking
+- step-2-identify-the-user

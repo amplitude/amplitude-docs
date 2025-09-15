@@ -1,0 +1,16 @@
+**Summary:** This documentation explains how to integrate Amplitude Session Replay with Segment analytics using Source Middleware to synchronize session IDs across three destination types: Amplitude Actions, Amplitude Classic Device-mode, and Amplitude Classic Cloud-mode, each requiring different approaches for session tracking and event property injection.
+
+**Keywords:**
+- Segment Source Middleware
+- Amplitude Session Replay integration
+- analytics_session_id cookie synchronization
+- Amplitude Actions destination
+- Amplitude Classic Device-mode
+- Amplitude Classic Cloud-mode
+- sessionReplay.getSessionReplayProperties()
+- payload.obj.integrations configuration
+- amplitude-js SDK 5.2.2
+- Session Replay ID event property
+- deviceId and sessionId concatenation
+- segmentAnalytics.addSourceMiddleware()
+- sessionReplayPlugin browser plugin

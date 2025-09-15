@@ -1,0 +1,22 @@
+**Summary:** This documentation explains how to configure and use Welch's T-test for statistical analysis in Amplitude Experiment, covering two-sided vs one-sided testing, sample size requirements, and the configuration process through the Settings tab including Goals panel and Analysis Settings.
+
+**Keywords:**
+- Welch's T-test
+- Amplitude Experiment statistical analysis
+- two-sided T-test
+- one-sided T-test
+- sample size threshold
+- Central Limit Theorem assumptions
+- Goals panel configuration
+- Analysis Settings Stats Method
+- Samples Per Variant Needed
+- duration estimator
+- Cumulative Exposure graph
+- Sample Size Target
+- Exposure Remaining
+- MDE (Minimum Detectable Effect)
+- sequential testing alternative
+- binary and continuous metrics
+- confidence interval bounds
+- false positive/negative rates
+- peeking prevention

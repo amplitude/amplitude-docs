@@ -1,0 +1,16 @@
+**Summary:** Documents the Amplitude Lookup Table API 2 (v3) which provides REST endpoints for managing CSV-based lookup tables that augment user and event properties through property mappings, supporting CRUD operations with HTTP basic authentication at data-api.amplitude.com/api/3/lookup_table.
+
+**Keywords:**
+- Amplitude Lookup Table API 2
+- data-api.amplitude.com/api/3/lookup_table
+- CSV property mapping
+- multipart/form-data uploads
+- HTTP basic authentication
+- keyProperty and keyColumnHeader
+- property.type and property.groupType
+- incremental CSV updates vs override
+- 100MB file size limit
+- 1,000,000 row limit
+- case-sensitive exact matching
+- LOOKUP_TABLE error codes
+- appId project scoping

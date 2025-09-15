@@ -1,0 +1,13 @@
+**Summary:** This FAQ documentation covers Amplitude Experiment's mutual exclusion groups feature, which prevents users from being assigned to multiple experiments simultaneously, including slot allocation percentages, assignment order of operations (individual user qualification → mutual exclusion → sticky bucketing → target segment), and troubleshooting multi-experiment exposure issues.
+
+**Keywords:**
+- Amplitude Experiment mutual exclusion groups
+- experiment assignment order of operations
+- slot allocation percentage
+- individual user qualification bypass
+- sticky bucketing
+- target segment assignment
+- local evaluation mutual exclusion
+- variant jumping
+- multi-experiment exposure troubleshooting
+- user ID merging experiment assignment

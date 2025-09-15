@@ -1,0 +1,16 @@
+**Summary:** This Japanese documentation covers configuration and management of Amplitude Data project settings, including naming conventions, team review requirements, environment mapping to Amplitude Analytics projects, integrations, API token generation, and schema violation handling across five tabs (General, Environments, Integrations, API Tokens, Schema Settings).
+
+**Keywords:**
+- Amplitude Data settings configuration
+- tracking plan management
+- naming conventions (camelCase, snake_case, sentence case)
+- team review requirements
+- environment mapping
+- Amplitude Analytics project integration
+- API token generation
+- schema violation handling
+- public link sharing
+- role permissions (administrator, manager, member, viewer)
+- schema settings tab
+- unexpected data rejection
+- Japanese translation documentation

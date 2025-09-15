@@ -1,0 +1,56 @@
+## Amplitude Partner Integration Platform
+
+Amplitude provides a comprehensive partner integration ecosystem centered around the **Integration Portal**, which serves as the primary gateway for partners to create, configure, and manage integrations with Amplitude's analytics platform. The platform supports three main integration types: event ingestion, event streaming, and cohort synchronization.
+
+## Integration Types and Relationships
+
+### Event Ingestion Integrations
+Event ingestion integrations enable partners to send behavioral data into Amplitude through the **HTTP v2 API**. These integrations appear on Amplitude's **Sources page** and require configuration of connection information, integration tiles, and testing with the `partner_id` parameter. Partners configure data source setup instructions and use **Project API Keys** for authentication.
+
+### Event Streaming Integrations  
+Event streaming integrations forward Amplitude's behavioral data to partner platforms using **Freemarker templates** for payload customization. These integrations utilize **MappedProperties** and **MappedFields** for user property mapping, support event filtering and identify forwarding, and appear as destination tiles in Amplitude's interface. They include REST API header configuration, rate limiting, and authentication via API keys.
+
+### Cohort Sync Integrations
+Cohort sync integrations export user cohorts from Amplitude to partner platforms through two distinct patterns:
+- **List-based cohort integration**: Creates and manages user lists via list creation, add users, and remove users endpoints
+- **Property-based cohort integration**: Sets user traits/properties directly on partner platforms
+
+## Key Nomenclature and Definitions
+
+**Integration Portal**: Amplitude's self-service platform for partners to create and manage integrations
+**Integration Catalog**: Public directory where approved integrations are displayed to Amplitude customers
+**Sources page**: Amplitude interface showing available data ingestion options
+**Destinations page**: Amplitude interface displaying data export and streaming options
+**Integration tiles**: Visual representations of partner integrations within Amplitude's UI
+**MappedProperties/MappedFields**: Configuration objects for mapping Amplitude user properties to partner platform fields
+**Freemarker templates**: Template engine used for customizing event streaming payloads
+**partner_id parameter**: Identifier used for testing and tracking partner-specific data flows
+**Release Internally**: Testing phase allowing partners to validate integrations before public submission
+
+## Broader Product Ecosystem Integration
+
+The partner integration platform operates within Amplitude's broader analytics ecosystem, requiring **Plus or Greater Amplitude plans** for access. Integrations connect to Amplitude's core behavioral analytics engine, enabling bidirectional data flow between Amplitude and partner platforms. The system supports **Org ID-based** configuration and provides co-marketing opportunities for approved partners.
+
+## Technical Implementation Details
+
+### API Endpoints and Authentication
+- **HTTP v2 API** for event ingestion
+- **REST API calls** for event streaming and cohort sync
+- Authentication methods include **Basic Authentication**, **Bearer Token**, and **Authentication Header**
+- **Project API Keys** for ingestion integrations
+
+### Configuration and Testing
+- **CSV upload testing** for cohort integrations
+- **Testing modal** with payload verification
+- **Event body editor** for customizing streaming payloads
+- **Batch size configuration** with default 1000 users for cohort sync
+- **4 threads concurrent requests** with **exponential backoff retry** mechanisms
+
+### Data Processing Features
+- **Event filtering** capabilities for streaming integrations
+- **Full sync** and **incremental sync** options for cohort updates
+- **slugify cohort names** functionality
+- **$items variable** and **$list_id placeholder** for dynamic payload construction
+- **amplitude_cohort_name variable** and **user_id_field_amplitude mapping** for cohort identification
+
+The platform emphasizes self-service partner onboarding while maintaining quality control through review processes before integrations reach the public Integration Catalog.

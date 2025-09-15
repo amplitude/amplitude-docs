@@ -1,0 +1,21 @@
+**Summary:** This documentation covers Amplitude Experiment's duration estimate feature, which predicts experiment completion time using sequential testing, means, variances, and exposures, with a 40-day cap and specific visibility criteria including statistical assumptions and significance thresholds.
+
+**Keywords:**
+- duration estimate
+- sequential testing
+- statistical significance
+- primary metric
+- confidence interval
+- MDE (Minimum Detectable Effect)
+- control variants
+- means variances exposures
+- T-test duration estimator
+- threshold reached
+- 40-day cap
+- irreducible error
+- drift seasonality
+- rollout weights
+- targeting segments
+- conversion rate
+- standard error
+- real-time simulations

@@ -1,0 +1,15 @@
+**Summary:** Documentation for adding descriptions to Amplitude events and properties (event, user, group) through the UI, including global vs event-specific property descriptions and restrictions for active events in tracking plans.
+
+**Keywords:**
+- Amplitude event descriptions
+- Event property descriptions
+- User property descriptions
+- Group property descriptions
+- Global event property descriptions
+- Event-specific property descriptions
+- Tracking plan restrictions
+- Active events only
+- Events UI flyout
+- Properties panel
+- Event Details panel
+- Apply description changes

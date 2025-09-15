@@ -1,0 +1,16 @@
+**Summary:** This documentation page provides multi-platform SDK initialization code examples for Amplitude Experiment, showing configuration options like defaultTracking settings, session management, and event tracking across TypeScript, Kotlin, Objective-C, Swift, and Python implementations.
+
+**Keywords:**
+- Amplitude Experiment SDK
+- Multi-platform initialization
+- defaultTracking configuration
+- fileDownloads tracking
+- session management
+- minTimeBetweenSessionsMillis
+- DefaultTrackingOptions
+- BaseEvent tracking
+- event_properties
+- user_id device_id
+- AMPLITUDE_API_KEY
+- Configuration object
+- TypeScript Kotlin Objective-C Swift Python

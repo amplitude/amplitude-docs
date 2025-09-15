@@ -1,0 +1,26 @@
+## Summary
+
+This documentation covers the Amplitude Experiment Management API endpoints for experiment operations, including CRUD operations for experiments, variants, deployments, and user inclusions, with support for targeting segments, rollout weights, bucketing configurations, and version management.
+
+## Keywords
+
+- Amplitude Experiment Management API
+- experiment endpoints
+- variant management
+- user inclusions
+- deployment management
+- rollout weights
+- target segments
+- bucketing configuration
+- experiment versions
+- sticky bucketing
+- evaluation mode (remote/local)
+- experiment states (planning/running/decision-made)
+- A/B testing
+- multi-arm bandit
+- experiment lifecycle
+- variant payload
+- exposure events
+- experiment archiving
+- rollout percentage
+- experiment decisions (rollout/rollback/continue-running)

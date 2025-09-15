@@ -1,0 +1,54 @@
+Amplitude is a comprehensive event-based product analytics platform designed to help businesses understand user behavior, optimize engagement, and drive growth through data-driven insights. The platform enables organizations to track, analyze, and act on user interactions across web, mobile, and other digital touchpoints.
+
+## Core Product Architecture and Features
+
+Amplitude's analytics platform centers around event-based tracking, where user interactions are captured as discrete events with associated properties. The system supports multiple data ingestion methods including client-side SDKs (Browser SDK, iOS Swift SDK, Android Kotlin SDK), server-side APIs (HTTP API v2, Identify API, Batch API), and third-party integrations (Segment, mParticle). The platform automatically generates API keys at the project level for data collection and provides real-time event streaming capabilities.
+
+Key platform features include the Amplitude Home page with real-time event streams, Quick Actions for chart creation, template galleries, and dashboard widgets. The system supports advanced capabilities like Autocapture for automatic event tracking, Session Replay for user interaction recording, and cross-platform user journey analysis. Charts and dashboards can be created through the Create > Chart workflow, with plan-specific limitations (Starter: 10 charts with 1-year data retention, Plus: 2-year data retention).
+
+## User Identification and Tracking System
+
+Amplitude employs a sophisticated three-tier user identification system. Device IDs are automatically generated for each installation (using iOS identifierForVendor or Android device generation), while Amplitude IDs serve as unique cross-platform identifiers for counting distinct users. User IDs are custom identifiers assigned by developers to link anonymous behavior with known users, enabling cross-device tracking and user journey reconciliation.
+
+The platform handles session management with configurable timeouts (5 minutes for mobile, 30 minutes for web) and tracks behavioral metrics including Monthly Tracked Users (MTU), retention rates, and user lifecycle stages. User properties are automatically collected via client-side SDKs, including device information, geolocation data (via MaxMind GeoIP), and behavioral indicators like "Paying" status based on revenue events.
+
+## Event Taxonomy and Data Structure
+
+Events follow a verb+noun naming convention and can include up to 20 properties maximum. The platform distinguishes between event properties (contextual data about specific interactions) and user properties (persistent attributes about users). Amplitude automatically tracks standard events like page views, form interactions, element clicks, session starts/ends, and marketing attribution through UTM parameters.
+
+Event properties are automatically captured for page-viewed events including Page Domain, Page Location, Page Path, Page Title, Page URL, and Page Counter. The system also generates Amplitude-specific properties like Event Day of Week, Event Historical Count, Session Replay ID, and Server Upload Delay Time for enhanced analysis capabilities.
+
+## Analytics Templates and Pre-built Reports
+
+Amplitude provides extensive template libraries accessible through the Template Gallery, including specialized reports for different use cases:
+
+- **User Activity Report**: Analyzes daily active users, session duration, user retention, and engagement frequency
+- **Feature Adoption Report**: Provides 8 pre-built charts for feature usage patterns, first-time usage percentages, and retention metrics  
+- **Conversion Report**: Tracks funnel conversion rates and identifies drop-off behaviors in user flows
+- **Ecommerce Report**: Analyzes customer acquisition channels with UTM parameter tracking for Page View, Viewing Item, Adding to Cart, and Completing Purchase events
+
+Templates can be converted to customizable dashboards and support industry-specific taxonomies for content/media, ecommerce, B2B/SaaS, finance, healthcare, and gaming sectors.
+
+## Organizational Structure and Collaboration
+
+The platform uses a hierarchical organization model with projects serving as data containers, each with dedicated API keys. Spaces provide content organization and collaboration capabilities, with plan-based restrictions (Starter: 1 space, Plus: 3 spaces, unlimited for other plans). Implementation teams typically include three key roles: Project Lead (coordinates adoption), Data Governor (designs tracking plans), and Instrumentation Lead (implements SDK events).
+
+## Advanced Analytics Capabilities
+
+Amplitude supports sophisticated analysis methods including A/B testing through the AB Test View feature, cohort analysis for user segmentation, and cross-platform vs. separate platform instrumentation strategies. The platform provides a 6-step optimization workflow covering critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, and engagement matrix analysis.
+
+## Technical Implementation and APIs
+
+Key technical endpoints and methods include:
+- `amplitude.init()` for SDK initialization
+- `enableTracking()` and `setOptOut()` for consent management
+- `clearStorage()` for data cleanup
+- Identify API for user property updates
+- HTTP API v2 with insert_id deduplication (7-day retention)
+- Dashboard REST API, Export API, Attribution API, and Behavioral Cohorts API
+
+The platform supports browser compatibility based on 0.5% market share thresholds, explicitly excluding Internet Explorer 11. Data can be stored in US or EU regions with GDPR/CNIL compliance features including cookie management, consent deferral, and privacy controls.
+
+## Quality Assurance and Data Validation
+
+Amplitude provides real-time QA capabilities through the User Activity tab for event verification and debugging. The system includes automatic deduplication using event ID, client event time, and device ID matching. Monthly event limits are enforced with data accessibility restrictions, and the platform supports separate test/dev environments for safe instrumentation testing.

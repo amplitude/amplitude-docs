@@ -1,0 +1,16 @@
+**Summary:** The Attribution API sends attribution campaign events using mobile advertising identifiers (idfa, idfv, adid, android_app_set_id) to api2.amplitude.com/attribution endpoint, with 72-hour user matching window and company-prefixed event types.
+
+**Keywords:**
+- Attribution API
+- idfa (Identifier for Advertiser)
+- idfv (Identifier for Vendor) 
+- adid (Google ADID)
+- android_app_set_id
+- api2.amplitude.com/attribution
+- 72-hour user matching
+- attribution campaign events
+- advertising ID tracking
+- company-prefixed event types
+- mobile attribution
+- POST attribution endpoint
+- attribution data matching

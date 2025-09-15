@@ -1,0 +1,17 @@
+**Summary:** Documentation for implementing Session Replay on Android using the Android SDK middleware for apps already instrumented with the maintenance Amplitude Android SDK (version 2.40.1+), covering installation, configuration, sampling rates, and data masking.
+
+**Keywords:**
+- Session Replay Android Middleware
+- maintenance Amplitude Android SDK
+- SessionReplayMiddleware
+- addEventMiddleware
+- Android SDK middleware
+- sampleRate configuration
+- maintenance SDK 2.40.1
+- middleware-session-replay-android
+- amplitude.addEventMiddleware()
+- sessionReplayMiddleware.flush()
+- sessionReplayMiddleware.stopRecording()
+- sessionReplayMiddleware.startRecording()
+- setFlushEventsOnClose
+- Android session replay implementation

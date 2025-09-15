@@ -1,0 +1,18 @@
+## Summary
+This documentation covers Amplitude's release tracking feature for monitoring product changes, including automatic release creation from semantic versioning in the Version user property, manual release creation through the UI or Releases API, and release reports showing adoption metrics and new events.
+
+## Keywords
+- Amplitude releases
+- Version user property
+- semantic versioning
+- automatic release detection
+- release timeline
+- release reports
+- app_version HTTP API
+- release adoption metrics
+- new events tracking
+- platform filtering
+- release visibility
+- Releases API
+- backfill data limitations
+- paid plan features

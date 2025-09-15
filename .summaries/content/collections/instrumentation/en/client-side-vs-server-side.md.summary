@@ -1,0 +1,25 @@
+**Summary:** Documentation comparing Amplitude's client-side SDKs (Browser, Android, iOS, Unity, React Native) versus server-side SDKs (Node.js, Go, Python, Java) and their corresponding API endpoints (HTTP V2 API, Batch event upload, Evaluation API), including guidance on choosing between client-side, server-side, hybrid, or third-party source implementations.
+
+**Keywords:**
+- client-side SDKs
+- server-side SDKs
+- HTTP V2 API
+- Batch event upload API
+- Evaluation API
+- Browser SDK
+- Android SDK
+- iOS SDK
+- Node.js SDK
+- Go SDK
+- Python SDK
+- Java SDK
+- React Native
+- Unity Plugin
+- Flutter SDK
+- Unreal SDK
+- third-party sources
+- hybrid instrumentation approach
+- Analytics and Data SDKs
+- Experiment SDKs
+- source catalog
+- API endpoints

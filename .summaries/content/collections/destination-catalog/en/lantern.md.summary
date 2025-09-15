@@ -1,0 +1,14 @@
+**Summary:** This documentation describes the Amplitude-to-Lantern event streaming integration that syncs analytics events from Amplitude to Lantern's Customer Success Platform using webhook ID authentication, with specific data size limits (64 bytes max event size, 4.25MB max event data) and user_id to analytics_id matching for customer success workflows.
+
+**Keywords:**
+- Lantern Customer Success Platform
+- event-streaming integration
+- webhook ID authentication
+- user_id to analytics_id matching
+- 64 bytes maximum event size
+- 4.25MB maximum event data
+- Net Dollar Retention
+- B2B customer success
+- event properties filtering
+- partner-maintained integration
+- paid Lantern plan requirement

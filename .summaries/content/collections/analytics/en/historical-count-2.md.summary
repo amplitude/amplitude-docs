@@ -1,0 +1,15 @@
+**Summary:** This documentation explains Amplitude's Historical Count filter order of operations, detailing how Historical Count is applied last after all other filters (unlike Event Historical Count which applies first), and covers the interaction between Historical Count filters and custom events with specific examples.
+
+**Keywords:**
+- Historical Count filter
+- Event Historical Count
+- Amplitude order of operations
+- filter application sequence
+- custom event logic
+- behavioral analysis
+- user instance tracking
+- event segmentation analysis
+- funnel analysis
+- retention analysis
+- group-by operations
+- Nth instance filtering

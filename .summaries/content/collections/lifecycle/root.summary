@@ -1,0 +1,63 @@
+Amplitude Lifecycle is a sophisticated user growth tracking and behavioral analysis tool that provides comprehensive insights into user base evolution through advanced segmentation and temporal analysis. Available exclusively on Growth and Enterprise plans, this feature serves as a critical component for understanding user engagement patterns and driving strategic product decisions.
+
+## Core Product Architecture
+
+The Lifecycle chart operates through a three-module configuration system that creates a comprehensive analytical framework:
+
+**Events Module** establishes the foundational measurement criteria by defining starting events or critical events that determine active user engagement. This module serves as the behavioral baseline for all lifecycle categorizations.
+
+**Segmentation Module** enables targeted analysis through user cohort configuration, allowing teams to analyze specific demographic groups or user segments within the broader user base.
+
+**Metrics Module** configures temporal parameters through usage intervals (daily, weekly, monthly), establishing the time-based framework for user behavior categorization and lifecycle state transitions.
+
+## User Behavioral Segmentation Framework
+
+The system categorizes users into four distinct behavioral segments that form the core of lifecycle analysis:
+
+- **New Users**: First-time users performing critical events, representing fresh user acquisition
+- **Current Users**: Consistently active users maintaining ongoing engagement with the product
+- **Resurrected Users**: Previously inactive users who have returned to active engagement, indicating successful re-engagement
+- **Dormant Users**: Users who have become inactive or disengaged, representing retention challenges
+
+## Visualization and Analysis Capabilities
+
+The Lifecycle chart provides multiple analytical perspectives through distinct visualization modes:
+
+**Growth Histogram View** displays user segments using a color-coded bucket system where blue buckets represent active user segments (new, current, resurrected) and red buckets represent dormant users, providing immediate visual insight into engagement health.
+
+**Dormant Chart View** focuses specifically on user disengagement patterns, enabling teams to identify retention challenges and optimize re-engagement strategies.
+
+**Pulse Chart View** utilizes pulse ratio calculations to measure user engagement ratios and growth momentum, offering a dynamic perspective on user base vitality.
+
+## Key Terminology and Metrics
+
+**Usage Intervals** define configurable time periods that establish temporal boundaries for user behavior categorization and lifecycle state transitions, forming the foundation for all temporal analysis.
+
+**Previously Inactive Users** represent users who experienced dormancy periods but returned to active engagement, serving as the identification basis for resurrected user classification.
+
+**Pulse Ratio** provides a specific calculation methodology used in Pulse chart view to quantify user engagement ratios and measure growth momentum across user segments.
+
+**Blue and Red Bucket System** creates an intuitive visual framework where blue buckets indicate positive engagement metrics across active user segments, while red buckets highlight dormant user populations requiring attention.
+
+## Data Export and Integration Features
+
+The platform provides comprehensive data accessibility through multiple export mechanisms:
+
+- **Chart Type Switching** enables seamless transitions between Growth histogram, Dormant, and Pulse chart views for multi-perspective analysis
+- **Breakdown Table Export** delivers detailed data tables for granular analysis and reporting
+- **CSV Export Functionality** supports raw data extraction for external analysis tools and custom reporting workflows
+- **Retention Lifecycle Framework** integration connects with broader Amplitude retention and engagement metrics
+
+## Ecosystem Integration and Strategic Applications
+
+Within Amplitude's analytics ecosystem, Lifecycle serves multiple strategic functions:
+
+**User Growth Tracking** monitors comprehensive user base expansion and contraction patterns, providing essential metrics for growth strategy development.
+
+**Engagement Retention Metrics** delivers insights into user stickiness and long-term product adoption patterns, enabling teams to optimize retention strategies.
+
+**Critical Event Analysis** identifies correlations between specific user actions and sustained engagement, informing product development priorities.
+
+**Active Event Analysis** determines optimal engagement thresholds and user activity patterns, supporting data-driven engagement strategy development.
+
+The Lifecycle chart complements Amplitude's broader analytics suite by providing temporal user behavior evolution insights, enabling product teams to identify growth opportunities, diagnose retention challenges, and develop targeted re-engagement strategies for dormant user segments. This integration supports comprehensive user journey analysis and strategic product optimization across the entire user lifecycle spectrum.

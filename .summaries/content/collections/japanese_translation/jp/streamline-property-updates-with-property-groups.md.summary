@@ -1,0 +1,15 @@
+## Summary
+This Japanese documentation explains Amplitude Data's property groups feature, which allows developers to define reusable sets of event properties that can be applied to multiple events simultaneously, with changes to property groups automatically propagating to all associated events in tracking plans.
+
+## Keywords
+- property groups (プロパティグループ)
+- Amplitude Data
+- event properties (イベントプロパティ)
+- tracking plans (トラッキングプラン)
+- property updates
+- event management
+- Japanese translation
+- group properties differentiation
+- property synchronization
+- active events only
+- custom events exclusion

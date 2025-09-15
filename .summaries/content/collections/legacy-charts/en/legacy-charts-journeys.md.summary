@@ -1,0 +1,18 @@
+**Summary:** Legacy Journeys feature documentation for analyzing user conversion paths between two funnel steps within a 60-day timeframe, using TF-IDF auto-filtering to surface step-by-step breakdowns of converted and dropped-off user paths, accessible through Microscope from "in this order" funnel charts.
+
+**Keywords:**
+- Legacy Journeys
+- User conversion paths
+- Funnel step transitions
+- TF-IDF auto-filtering
+- 60-day conversion timeframe
+- Microscope integration
+- "in this order" funnels
+- Drop-off path analysis
+- User path breakdowns
+- Conversion acceleration
+- Auto-filter signal slider
+- Custom filter overrides
+- Path-specific cohort creation
+- Event property expansion
+- Journeys vs Pathfinder comparison

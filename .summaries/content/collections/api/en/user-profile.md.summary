@@ -1,0 +1,20 @@
+**Summary:** The User Profile API retrieves Amplitude user profiles including user properties, computed user properties, cohort IDs, recommendations, and prediction propensities using GET requests to `https://profile-api.amplitude.com/v1/userprofile` with secret key authentication. This server-side only API requires an Activation plan, supports querying by user_id or device_id, and provides endpoints for fetching recommendations (rec_id), user properties (get_amp_props), cohort memberships (get_cohort_ids), computations (get_computations/comp_id), and prediction propensities (prediction_id with score/pct types).
+
+**Keywords:**
+- User Profile API
+- profile-api.amplitude.com/v1/userprofile
+- secret key authentication
+- user_id device_id parameters
+- recommendations rec_id
+- get_amp_props user properties
+- get_cohort_ids cohort membership
+- get_computations comp_id
+- prediction propensity prediction_id
+- propensity_type score pct
+- Activation plan requirement
+- server-side API
+- 600 requests per minute limit
+- EU region unavailable
+- is_control recommendation_source
+- computed user properties
+- child_rec_id model recommendations

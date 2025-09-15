@@ -1,0 +1,21 @@
+**Summary:** This Japanese documentation explains the two-step configuration process for Amplitude Experiment: creating deployments (client-side vs server-side environments with different deployment keys) and installing SDKs, including user context object structure for variant assignment and targeting rules.
+
+**Keywords:**
+- Amplitude Experiment configuration
+- deployment creation process
+- client-side deployment
+- server-side deployment
+- deployment keys (public/private)
+- SDK installation
+- user context object
+- variant assignment
+- targeting rules
+- user_id and device_id
+- JavaScript client SDK
+- Node.js server SDK
+- Android SDK
+- iOS SDK
+- React Native SDK
+- REST API flag evaluation
+- user_property object
+- Japanese translation documentation

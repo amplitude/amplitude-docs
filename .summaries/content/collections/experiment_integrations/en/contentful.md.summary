@@ -1,0 +1,17 @@
+**Summary:** This documentation describes the Contentful plugin for Amplitude Experiment that enables A/B testing of content variants through Variant Container content models, flag keys, and JSON API responses with experiment metadata and variationsCollection objects.
+
+**Keywords:**
+- Contentful plugin
+- Amplitude Experiment
+- Variant Container content model
+- Flag Key
+- Management API key
+- variationsCollection
+- experiment metadata
+- bucketingKey
+- rolloutWeights
+- Reference field type
+- @amplitude/experiment-js-client
+- experiment.variant()
+- contentful-sdk
+- JSON API response structure

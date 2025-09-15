@@ -1,0 +1,16 @@
+**Summary:** This Japanese documentation explains how Amplitude calculates retention rates using two methods: "Return On or After" (リターン以降) and "Return On" (リターン時点) retention types, covering calculations for specific cohort entry dates versus overall retention metrics in the Retention Analysis chart.
+
+**Keywords:**
+- リテンション分析チャート (Retention Analysis chart)
+- リターン以降リテンション (Return On or After retention)
+- リターン時点リテンション (Return On retention)
+- コホート参加日 (cohort entry date)
+- 全体的なリテンション (overall retention)
+- リテンションインターバル (retention interval)
+- 開始イベント (starting event)
+- リターンイベント (return event)
+- 分子分母計算 (numerator denominator calculation)
+- 不完全なデータ除外 (incomplete data exclusion)
+- マイクロスコープ分母値 (microscope denominator values)
+- Japanese translation
+- Amplitude analytics

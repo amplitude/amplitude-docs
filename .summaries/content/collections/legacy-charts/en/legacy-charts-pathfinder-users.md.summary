@@ -1,0 +1,16 @@
+**Summary:** Documents the legacy Pathfinder Users chart in Amplitude, which visualizes user journey paths through products by showing event sequences within individual sessions, requiring session_id for accurate tracking and supporting both "starting with" and "ending with" path analysis with a 30-day maximum timeframe.
+
+**Keywords:**
+- Pathfinder Users chart
+- user journey paths
+- event sequences
+- session_id tracking
+- starting with/ending with events
+- session-based analysis
+- 30-day maximum timeframe
+- expand events by property
+- legacy charts
+- path visualization
+- user flow analysis
+- event instrumentation
+- HTTP API session tracking

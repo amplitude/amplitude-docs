@@ -1,0 +1,17 @@
+**Summary:** This documentation describes the typical workflow for Amplitude Data, covering branch creation, event definition, instrumentation, review processes, and merging changes back to main branch, with emphasis on coordinating tracking plan updates with Git workflows and using Ampli CLI commands.
+
+**Keywords:**
+- Amplitude Data workflow
+- tracking plan branching
+- Ampli CLI commands
+- ampli pull -b {branch-name}
+- ampli status
+- Git branch coordination
+- merge requests
+- event definition process
+- instrumentation workflow
+- tracking plan versioning
+- branch publishing
+- main branch merging
+- stakeholder review process
+- tracking library generation

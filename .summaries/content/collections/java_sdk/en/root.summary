@@ -1,0 +1,69 @@
+## Amplitude Java SDK Product Overview
+
+The Amplitude Java SDK is a comprehensive analytics solution for Java applications running on JRE 6+ environments, designed to capture, process, and transmit user behavior data to Amplitude's analytics platform. The SDK provides two primary implementation approaches: a standard Java SDK for flexible event tracking and an Ampli wrapper that offers strongly-typed, code-generated event tracking based on predefined tracking plans.
+
+## Product Architecture and Feature Relationships
+
+The Java SDK ecosystem consists of two complementary components that serve different development approaches:
+
+**Core Java SDK (`com.amplitude:java-sdk`)** serves as the foundational analytics library, providing direct event logging capabilities with flexible configuration options. It supports both real-time and batch processing modes, with the HTTP V2 API enabling efficient data transmission through configurable upload thresholds and periodic flushing.
+
+**Ampli Wrapper (`com.amplitude.ampli`)** builds upon the core SDK to provide a type-safe development experience. It generates strongly-typed event classes from Amplitude Data tracking plans, ensuring compile-time validation and reducing implementation errors. The wrapper maintains full compatibility with the underlying SDK while adding code generation capabilities through the `ampli CLI`.
+
+Both components share common infrastructure for user identification, session management, device tracking, and middleware processing, creating a unified analytics foundation regardless of implementation approach.
+
+## Key Nomenclature and Definitions
+
+**Event Logging Architecture:**
+- `logEvent()` - Primary method for capturing user interactions with configurable properties
+- `EventOptions` and `MiddlewareExtra` - Configuration objects for event-specific settings and metadata
+- `AmplitudeCallbacks` - Response handling system for server communication feedback
+
+**Data Management:**
+- `JSONObject` - Standard data structure for event properties and user attributes
+- `Event` class - Core data model representing user interactions
+- `MiddlewarePayload` - Container for event data processing through middleware chains
+- User properties, group properties, and device information - Contextual data layers
+
+**Configuration Parameters:**
+- `setEventUploadThreshold` - Batch size control for event transmission
+- `setEventUploadPeriodMillis` - Time-based flush intervals
+- `useBatchMode()` - Toggle between real-time and batch processing
+- `flushEvents()` - Manual queue processing trigger
+
+**Ampli-Specific Terms:**
+- `LoadOptions` and `LoadClientOptions` - Initialization configuration for the wrapper
+- `ampli pull` - CLI command for synchronizing tracking plans with generated code
+- `ampli status` - Verification command for implementation completeness
+- Type-safe event methods (e.g., `SongPlayed`) - Generated event builders from tracking plans
+
+## Ecosystem Integration
+
+The Java SDK integrates into Amplitude's broader analytics ecosystem through multiple touchpoints:
+
+**Data Pipeline Integration:** Events flow through Amplitude's HTTP V2 API infrastructure, supporting both individual event transmission and batch processing for high-volume applications. The SDK's middleware system enables custom data processing, transformation, and routing before transmission.
+
+**Development Workflow Integration:** The Ampli wrapper connects directly to Amplitude Data's tracking plan management system, enabling schema-driven development where analytics requirements are defined centrally and propagated to development teams through code generation.
+
+**Infrastructure Compatibility:** Support for HTTP proxy configuration, custom server URLs, and flexible authentication mechanisms enables deployment across diverse enterprise environments and development stages.
+
+## Technical Implementation Details
+
+**Installation and Dependency Management:**
+- Maven/Gradle integration through standard dependency declarations
+- JAR-based installation for non-build-tool environments
+- Version compatibility maintained for Java 6+ runtime environments
+
+**API Endpoints and Operations:**
+- HTTP V2 API endpoint communication for event transmission
+- Batch mode API for high-throughput scenarios
+- `ampli pull` CLI operations for tracking plan synchronization
+- `flush()` operations for manual queue management
+
+**Configuration Methods:**
+- `setEventUploadThreshold()` and `setEventUploadPeriodMillis()` for performance tuning
+- HTTP proxy and custom server URL configuration for network routing
+- Session tracking and device information collection settings
+- User identification through `identify()` and group association via `setGroup(groupType, groupName)`
+
+The SDK's architecture supports both simple implementation scenarios and complex enterprise deployments, with middleware capabilities enabling custom analytics workflows and data processing requirements.

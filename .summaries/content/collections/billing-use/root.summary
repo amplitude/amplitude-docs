@@ -1,0 +1,41 @@
+# Amplitude Billing and Usage Analytics Platform
+
+Amplitude's billing and usage analytics platform provides comprehensive monitoring and optimization capabilities for organizations to track platform adoption, understand usage patterns, and manage costs effectively. The system combines real-time organizational insights with precise billing calculations based on user engagement metrics, serving both internal analytics and financial management needs.
+
+## Product Relationships and Feature Integration
+
+The platform operates through two interconnected core components that provide complete visibility into Amplitude utilization:
+
+**Usage Reports** function as the analytical intelligence layer, delivering organizational insights through dual interfaces. The User Metrics tab provides visual analytics including active users charts, weekly learning users tracking, and depth of engagement measurements. The Event Usage tab offers granular operational data through downloadable CSV/JSON reports containing event query counts and cross-project usage statistics.
+
+**MTU Billing System** serves as the foundational metering infrastructure, calculating Monthly Tracked Users across Scholarship, Starter, and Plus plan tiers. This system processes user identification data, manages ID merging scenarios, and generates synthetic MTU calculations when event volume thresholds are exceeded, directly integrating with the usage reporting framework.
+
+## Key Nomenclature and Definitions
+
+**Monthly Tracked Users (MTU)**: The primary billing metric representing unique users tracked within a calendar month using UTC time boundaries, forming the foundation for plan-based pricing structures.
+
+**Synthetic MTUs**: Calculated billing units automatically generated when event volume exceeds the standard 1,000 events per MTU threshold, ensuring accurate cost allocation for high-volume usage scenarios.
+
+**User ID Merging**: The consolidation process for anonymous device IDs with identified user IDs through mapping and identify calls, directly impacting MTU count calculations and billing precision.
+
+**Event Query Counts**: Granular metrics tracking event queries across charts, dashboards, notebooks, and pathfinder analysis, providing operational visibility into platform utilization patterns.
+
+**Depth of Engagement**: Organizational analytics measuring user interaction intensity with Amplitude features, including broadcasted learnings and content usage patterns.
+
+## Broader Product Ecosystem Integration
+
+The billing and usage system integrates across multiple Amplitude platform layers:
+
+**Data Ingestion Layer**: Processes event volume ingestion and applies drop filters that can create billing discrepancies, requiring monitoring through usage reports.
+
+**Analytics Layer**: Connects with chart dashboard notebook queries, cohort definitions, and custom events metrics for comprehensive usage visibility.
+
+**Administrative Layer**: Integrates with organization settings and admin manager permissions to control usage report access, particularly for Growth and Enterprise plans.
+
+**Experimentation Platform**: Handles special cases like [Experiment] Exposure events exclusion from MTU calculations, ensuring accurate billing for experimentation workflows.
+
+## API Endpoints and System Interfaces
+
+The platform provides **CSV/JSON export capabilities** for Event Usage data, enabling programmatic access to usage metrics and external system integration. Usage reports are accessible through **organization settings interfaces** with appropriate admin manager permissions. MTU calculations operate through **automated billing processes** handling backfilled events, user mapping, and synthetic MTU generation without direct API interaction requirements.
+
+The system supports **cross-project views** for comprehensive organizational analytics and **pathfinder analysis integration** for advanced usage pattern recognition across the complete Amplitude ecosystem.

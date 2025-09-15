@@ -1,0 +1,13 @@
+**Summary:** This documentation provides step-by-step instructions for configuring SAML 2.0 single sign-on integration between Amplitude and Okta, including setting up the app integration in Okta's admin dashboard, configuring SAML settings with Entity ID and ACS URL, and uploading IdP metadata XML to Amplitude's SSO settings.
+
+**Keywords:**
+- Okta SAML 2.0 integration
+- Amplitude SSO configuration
+- Entity ID and ACS URL setup
+- IdP metadata XML upload
+- Okta admin dashboard app integration
+- Assertion Consumer Service URL
+- Single Sign-On settings in Amplitude
+- SAML application username email mapping
+- Organization settings Access & SSO
+- Identity provider metadata configuration

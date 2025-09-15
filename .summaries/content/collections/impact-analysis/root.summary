@@ -1,0 +1,56 @@
+## Amplitude Impact Analysis
+
+Amplitude Impact Analysis is a premium causal analytics feature that measures how first-time user interactions with specific events influence subsequent behavioral patterns. This advanced analytics capability enables product teams to establish causal relationships between feature engagement and user behavior changes, providing an alternative to controlled experimentation when randomized testing isn't feasible.
+
+## Product Architecture and Feature Relationships
+
+Impact Analysis operates as a specialized chart type within Amplitude's analytics ecosystem, integrating with three core platform components:
+
+**Events Module Integration**: Sources both treatment and outcome events from Amplitude's foundational event tracking system, leveraging the platform's comprehensive user interaction data collection capabilities.
+
+**Segmentation Module Connection**: Utilizes Amplitude's user segmentation infrastructure to enable refined cohort-based analysis, allowing teams to examine impact across specific user populations or behavioral segments.
+
+**Chart System Integration**: Functions as a distinct visualization type within Amplitude's broader charting framework, complementing standard funnel analysis, retention charts, and user journey mapping tools.
+
+The feature is positioned as a Growth and Enterprise tier offering, establishing it as an advanced analytics capability designed for organizations requiring sophisticated behavioral correlation analysis beyond basic event tracking.
+
+## Core Nomenclature and Analytical Framework
+
+**Treatment Event**: The initial user interaction or feature engagement being analyzed as the potential cause of behavioral change. This establishes the baseline moment for measuring subsequent impact.
+
+**Outcome Event**: The target behavior or event whose frequency and occurrence patterns are measured for changes following treatment event exposure, representing the measurable effect in the causal relationship.
+
+**First-time Engagement Analysis**: The analytical focus on users' initial interaction with treatment events, creating a clean baseline for measuring behavioral shifts without contamination from repeated exposures.
+
+**Relative n-day Timeline**: A time-synchronized analysis methodology that aligns user timelines based on their individual treatment event trigger dates, enabling accurate before-and-after behavioral comparisons across different user cohorts.
+
+**Lookback Period Framework**: Time window constraints that vary by analysis granularity:
+- Daily intervals: 90 calendar days maximum
+- Weekly intervals: 91 calendar days maximum  
+- Monthly intervals: 120 calendar days maximum
+- Quarterly intervals: 360 calendar days maximum
+
+## Measurement Dimensions and Metrics
+
+Impact Analysis provides four analytical measurement approaches:
+
+**Average Metrics**: Calculates mean frequency of outcome events, providing baseline behavioral intensity measurements before and after treatment exposure.
+
+**Active Percentage Analysis**: Measures the proportion of users engaging with outcome events, tracking participation rate changes following treatment interactions.
+
+**Frequency Analysis**: Examines the rate and pattern of outcome event occurrence, identifying behavioral rhythm changes post-treatment.
+
+**Property-based Analysis**: Enables deep-dive examination of event properties, allowing teams to understand not just behavioral frequency changes but qualitative shifts in user interaction patterns.
+
+## Ecosystem Positioning and Use Cases
+
+Within Amplitude's product analytics platform, Impact Analysis bridges the gap between descriptive behavioral analytics and experimental validation. It serves as a causal inference tool for scenarios where controlled A/B testing isn't practical or ethical, enabling retrospective analysis of feature launches, product changes, or user experience modifications.
+
+The feature complements Amplitude's core analytics capabilities by enabling:
+
+- **Hypothesis Validation**: Testing behavioral impact theories without requiring prospective experimental design
+- **Propensity Analysis**: Understanding how specific interactions change user likelihood to engage with other platform features
+- **Correlation vs. Causation Distinction**: Moving beyond simple behavioral correlation to establish causal relationships between user actions
+- **Retrospective Impact Assessment**: Analyzing the behavioral effects of past product decisions or feature releases
+
+Impact Analysis represents Amplitude's advanced analytics tier, designed for data-driven organizations requiring sophisticated behavioral correlation analysis capabilities that extend beyond standard user journey tracking and conversion funnel optimization.

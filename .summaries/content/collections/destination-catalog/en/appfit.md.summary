@@ -1,0 +1,16 @@
+**Summary:** This documentation describes the Appfit destination integration for Amplitude, which enables event streaming and cohort syncing to provide mobile dashboard analytics with weekly metric reviews, team goal-setting, and progress tracking capabilities using Appfit's Server Secret Key authentication.
+
+**Keywords:**
+- Appfit destination integration
+- event streaming destination
+- cohort syncing
+- Server Secret Key authentication
+- mobile dashboard analytics
+- weekly metrics reviews
+- team goal-setting
+- progress tracking
+- Send events filter
+- Amplitude Data Catalog
+- mobile phone dashboard
+- metric flagging and comments
+- user/event/group properties forwarding

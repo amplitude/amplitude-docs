@@ -1,0 +1,19 @@
+**Summary:** This documentation explains how to configure and build Revenue LTV (Lifetime Value) charts in Amplitude to track monetization progress for new users, including event module setup with revenue events, user segmentation, and measurement selection (total revenue, new paying users, ARPU, ARPPU) with up to 12 months of historical analysis.
+
+**Keywords:**
+- Revenue LTV chart
+- 収益LTV (Japanese Revenue LTV)
+- monetization tracking
+- new user cohorts
+- logRevenueV2()
+- $revenue property
+- ARPU (Average Revenue Per User)
+- ARPPU (Average Revenue Per Paying User)
+- revenue events
+- user segmentation
+- $price, $productId, $quantity, $revenueType properties
+- Amplitude SDK revenue interface
+- IAP tracking
+- revenue verification system
+- cohort analysis
+- paying users conversion

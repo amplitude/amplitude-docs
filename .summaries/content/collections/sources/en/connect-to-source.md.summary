@@ -1,0 +1,18 @@
+**Summary:** Documents the Amplitude Data Sources interface for connecting third-party platforms as data sources, including the Sources List tab, Ingestion Debugger with throttled users/devices monitoring, and source notification management with Slack integration.
+
+**Keywords:**
+- Amplitude Data Sources interface
+- Sources List tab
+- Ingestion Debugger
+- throttled users and devices
+- silenced device IDs
+- source notifications
+- third-party data ingestion
+- event volume monitoring
+- successful requests charts
+- error requests tracking
+- Manager permissions throttling
+- Slack notifications integration
+- source activity status
+- 30-day event volume
+- 90-day time frame analysis

@@ -1,0 +1,18 @@
+**Summary:** This documentation explains how to create custom events in Amplitude's Events module to group multiple events with OR logic as a single step in funnel analysis, including prerequisites, limitations, and step-by-step instructions for combining existing events.
+
+**Keywords:**
+- Amplitude Events module
+- custom events creation
+- OR logic grouping
+- funnel analysis steps
+- event segmentation
+- retention analysis
+- lifecycle charts
+- stickiness analysis
+- pathfinder analysis
+- compass charts
+- event properties filtering
+- user properties conditioning
+- Redshift custom events limitations
+- admin manager member permissions
+- Japanese translation documentation

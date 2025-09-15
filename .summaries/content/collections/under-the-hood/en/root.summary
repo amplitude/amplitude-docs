@@ -1,0 +1,45 @@
+Amplitude Experiment is a comprehensive feature flagging and A/B testing platform that provides both remote and local evaluation capabilities for running controlled experiments at scale. The system is built on a robust architecture leveraging Fastly CDN and AWS services, with sophisticated statistical analysis, deterministic randomization, and flexible flag dependency management.
+
+## Core Architecture and Evaluation Modes
+
+Amplitude Experiment operates through two primary evaluation modes: **remote evaluation** and **local evaluation**. Remote evaluation utilizes `fetch()` calls that leverage Fastly CDN caching with 60-minute TTL for optimal performance, while local evaluation uses `evaluate()` calls with pre-fetched flag configurations stored locally. The platform is built on AWS infrastructure including Application Load Balancers and DynamoDB for experiment storage, with an identity resolution system and user metadata store supporting behavioral cohorts.
+
+Performance varies by geographic region, with latency benchmarks showing different response times across us-west-2 and eu-central-1 regions. The system achieves high availability through CDN cache hit optimization and local defaults implementation, with client-side SDK caching providing additional performance benefits.
+
+## Event Tracking and Analytics
+
+The platform implements a dual event tracking system using **assignment events** (`[Experiment] Assignment`) and **exposure events** (`$exposure` or `[Experiment] Exposure`) for comprehensive experiment analysis. Assignment events track when users are allocated to experiment variants, while exposure events capture actual feature interactions. The system automatically handles tracking through both remote and local evaluation modes, with experiment user properties formatted as `[Experiment] <flag_key>`.
+
+Experiment Analysis charts calculate metrics using sophisticated formulas that process exposure events (E), metric events (M, T), property values (S, A), and funnel events (FM, FT). The system supports unique conversions calculation, event totals calculation, property value sum and average, and funnel conversion metrics through chronological event processing and user-based experiment analysis.
+
+## Randomization and Statistical Testing
+
+Amplitude Experiment employs **deterministic randomization** using murmur3 hash of "bucketingSalt/amplitude_id" for consistent user assignment. The system implements a two-stage assignment process: first determining experiment inclusion via mod 100 against percentage rollout, then variant assignment via floor division with weighted ranges 0-42949672. This approach ensures reproducible results while supporting complex variant weighting schemes.
+
+For statistical inference, the platform uses **mixture sequential probability ratio test (mSPRT)** methodology, enabling early experiment termination without predetermined sample sizes. This approach contrasts with traditional T-tests by providing valid results at any viewing time, supporting both binary and continuous metrics while handling long-tailed distributions through the Central Limit Theorem.
+
+## Flag Dependencies and Advanced Features
+
+The system supports sophisticated **flag dependencies** that define evaluation order relationships between flags. This enables three key functionalities:
+
+- **Flag prerequisites**: Ensuring dependent flags only activate when prerequisite conditions are met
+- **Mutual exclusion groups**: Preventing users from being exposed to conflicting experiments simultaneously  
+- **Holdout groups**: Creating control populations for long-term impact analysis
+
+Flag dependencies require specific minimum SDK versions for local evaluation support, with a compatibility matrix defining which SDK versions support these advanced features.
+
+## Caching and Performance Optimization
+
+The platform implements intelligent caching strategies with Fastly CDN providing cache hit/miss optimization. Cache invalidation occurs automatically during deployment updates, with special considerations for dynamic targeting based on user properties and behavioral cohorts (computed hourly). The system supports various SDK implementations (Node.js, Go, JVM) with different performance characteristics.
+
+Cache keys incorporate user information for personalized responses, while flag configuration pre-fetching enables local evaluation scenarios. The 60-minute TTL balances performance with data freshness, though dynamic targeting scenarios may bypass caching for real-time user property evaluation.
+
+## Key API Methods and Integration Points
+
+Primary integration occurs through:
+- `fetch()` for remote evaluation with CDN caching
+- `evaluate()` for local evaluation with pre-fetched configurations  
+- `variant()` for retrieving specific variant assignments
+- Automatic assignment and exposure tracking integration with Amplitude Analytics
+
+The system integrates deeply with Amplitude's broader analytics ecosystem, utilizing behavioral cohorts, user property systems, and the core analytics platform for comprehensive experiment analysis and reporting.

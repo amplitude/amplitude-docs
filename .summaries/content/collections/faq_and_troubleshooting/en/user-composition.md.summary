@@ -1,0 +1,15 @@
+**Summary:** This FAQ documentation covers troubleshooting issues with Amplitude's User Composition chart, specifically addressing why Identify API calls and user property updates may not appear in chart results until after an "active" event is sent.
+
+**Keywords:**
+- User Composition chart
+- Identify API call
+- user property updates
+- active events
+- most recent active event
+- user profile discrepancies
+- none values troubleshooting
+- account user properties
+- top 100 property values limit
+- breakdown table CSV export
+- 10,000 rows CSV limit
+- user property availability timing

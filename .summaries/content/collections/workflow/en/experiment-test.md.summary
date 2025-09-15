@@ -1,0 +1,20 @@
+**Summary:** This documentation covers testing and launching Amplitude experiments, including pre-rollout QA using Test Instrumentation with designated testers, experiment lifecycle management (Start/Complete Experiment buttons), rollout options (100%, custom, targeted users only), rollback procedures, experiment scheduling, and post-rollout diagnostics with Root Cause Analysis for variant assignment monitoring.
+
+**Keywords:**
+- Test Instrumentation
+- Start Experiment button
+- Complete Experiment
+- rollout percentage
+- sticky bucketing
+- rollout weight
+- variant assignment
+- experiment scheduling
+- Diagnostics card
+- Root Cause Analysis
+- tester designation
+- target segments
+- statistical significance
+- rollback procedures
+- variant delivery delay
+- user exposure tracking
+- experiment lifecycle management

@@ -1,0 +1,13 @@
+**Summary:** This documentation describes the Chameleon cohort destination integration that sends product tour performance events from Chameleon's product adoption platform to Amplitude, requiring the client-side browser SDK with window.amplitude availability and partner-maintained setup through Chameleon's dashboard.
+
+**Keywords:**
+- Chameleon cohort destination
+- product adoption platform integration
+- product tour performance events
+- client-side browser SDK requirement
+- window.amplitude property
+- partner-maintained integration
+- Chameleon dashboard configuration
+- API key authentication
+- product guidance analytics
+- tour optimization data

@@ -1,0 +1,18 @@
+**Summary:** Ampli is a code generation tool that creates type-safe wrappers for Amplitude SDK based on tracking plans defined in Amplitude Data, providing compile-time validation, autocompletion, and instrumentation verification through the Ampli CLI.
+
+**Keywords:**
+- Ampli wrapper generation
+- Amplitude Data tracking plan
+- Ampli CLI commands (pull, status, configure)
+- Type-safe event tracking
+- Compile-time validation
+- Event instrumentation verification
+- Source code scanning
+- SDK wrapper facade
+- Analytics tracking plan
+- Event property validation
+- TypeScript autocompletion
+- ampli.load() configuration
+- ampli.songPlayed() methods
+- Static type checks
+- Data quality enforcement

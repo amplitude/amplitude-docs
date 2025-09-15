@@ -1,0 +1,24 @@
+## Summary
+
+The User Privacy API enables programmatic deletion of user data (events and properties) for GDPR/CCPA compliance using Amplitude IDs or User IDs, with batch processing, scheduling delays up to 30 days, and organization-wide deletion capabilities via the `delete_from_org` parameter.
+
+## Keywords
+
+- User Privacy API
+- GDPR CCPA compliance
+- user data deletion
+- Amplitude IDs
+- User IDs
+- `/api/2/deletions/users` endpoint
+- `delete_from_org` parameter
+- `ignore_invalid_ids` parameter
+- batch deletion jobs
+- deletion job status (staging, submitted, done)
+- 30-day processing timeline
+- rate limit 1 request per second
+- 100 users per request
+- HTTP basic authentication
+- warehouse Change Data Capture (CDC)
+- setOptOut() method
+- deletion job scheduling
+- user tracking prevention

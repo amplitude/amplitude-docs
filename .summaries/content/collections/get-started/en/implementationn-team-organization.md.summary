@@ -1,0 +1,15 @@
+**Summary:** This documentation defines three critical team roles for Amplitude implementation: Project Lead (coordinates with Success Manager and drives adoption), Data Governor (designs tracking plans and maintains data quality), and Instrumentation Lead (implements SDK events and validates data sources).
+
+**Keywords:**
+- Amplitude implementation team roles
+- Project Lead Adoption Lead
+- Data Governor tracking plan taxonomy
+- Instrumentation Lead SDK events
+- Success Manager coordination
+- data quality validation
+- naming convention establishment
+- client-side SDKs back-end data sources
+- duplicate events troubleshooting
+- privacy policy compliance
+- tracking development process
+- platform-specific implementation (iOS/Android/Web)

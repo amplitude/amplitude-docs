@@ -1,0 +1,19 @@
+**Summary:** This documentation covers Amplitude's Google Analytics 4 (Web) streaming integration that forwards Amplitude events and users to GA4 using Google Tag (gtag.js), including setup requirements for GA4 Measurement ID and API Secret, event/user forwarding configuration, Client ID mapping, and delivery metrics based on GA4 Measurement Protocol validation endpoint sampling.
+
+**Keywords:**
+- Google Analytics 4 Web streaming integration
+- gtag.js Google Tag
+- GA4 Measurement ID
+- GA4 Measurement Protocol API Secret
+- Client ID mapping
+- User ID mapping
+- Event forwarding configuration
+- User property forwarding
+- GA4 parameters
+- GA4 User Properties
+- Measurement Protocol validation endpoint
+- non_personalized_ads parameter
+- App Instance ID requirement
+- HTTP V2 API integration
+- Identify API integration
+- Delivery metrics sampling

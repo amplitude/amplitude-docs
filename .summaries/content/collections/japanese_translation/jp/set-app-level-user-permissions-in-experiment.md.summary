@@ -1,0 +1,14 @@
+**Summary:** This Japanese documentation explains how to configure app-level user permissions in Amplitude Experiment independently from Amplitude Analytics permissions, including step-by-step instructions for managing project access and a detailed permissions matrix covering viewer, member, manager, and admin roles for experiments, flags, environments, and mutual exclusion groups.
+
+**Keywords:**
+- Amplitude Experiment
+- app-level user permissions
+- project access management
+- permissions matrix
+- viewer member manager admin roles
+- experiments flags environments
+- mutual exclusion groups
+- target environments variants allocation
+- Japanese translation documentation
+- プロジェクトアクセスの管理
+- 相互排反グループ

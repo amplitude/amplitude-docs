@@ -1,0 +1,22 @@
+**Summary:** Documents Amplitude's automatically tracked user properties collected via client-side SDKs, including device information, location data derived from IP addresses using MaxMind GeoIP, and behavioral properties like "Paying" status, with configuration options to disable automatic tracking and special handling for server-side implementations.
+
+**Keywords:**
+- Amplitude user properties
+- automatic tracking
+- client-side SDKs
+- MaxMind GeoIP
+- IP address geolocation
+- Paying property
+- Device ID
+- User ID
+- Amplitude ID
+- behavioral cohorts
+- server-side tracking
+- revenue events
+- Identify API
+- device family
+- start version
+- DMA (Designated Market Area)
+- library tracking
+- SDK configuration
+- disable tracking options

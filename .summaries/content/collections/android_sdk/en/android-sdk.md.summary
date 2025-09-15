@@ -1,0 +1,33 @@
+## Summary
+
+This documentation covers the Amplitude Analytics Android SDK (maintenance mode), which supports Java and Kotlin for tracking events, user properties, revenue, and sessions in Android applications. The SDK provides core functionality including event logging with properties, user identification, group tracking, revenue verification through Google Play/Amazon stores, session management with foreground tracking, and various configuration options like EU data residency, offline mode, SSL pinning, and middleware support.
+
+## Keywords
+
+- Amplitude Analytics Android SDK
+- maintenance SDK
+- Java Kotlin support
+- AmplitudeClient initialization
+- enableForegroundTracking
+- logEvent with JSONObject properties
+- identify operations (set, setOnce, add, unset, append, prepend)
+- Revenue tracking logRevenueV2
+- Google Play revenue verification
+- Amazon store revenue verification
+- session management sessionTimeoutMillis
+- advertising ID (ADID) useAdvertisingIdForDeviceId
+- App Set ID useAppSetIdForDeviceId
+- device ID lifecycle
+- group tracking setGroup groupIdentify
+- TrackingOptions disable tracking
+- EU data residency setServerZone
+- COPPA control enableCoppaControl
+- location tracking enableLocationListening
+- SSL pinning PinnedAmplitudeClient
+- middleware MiddlewarePayload
+- offline mode setOffline
+- dynamic configuration setUseDynamicConfig
+- OkHTTP dependency
+- Maven Central com.amplitude:android-sdk
+- foreground tracking minTimeBetweenSessionsMillis
+- event batching eventUploadThreshold eventUploadPeriodMillis

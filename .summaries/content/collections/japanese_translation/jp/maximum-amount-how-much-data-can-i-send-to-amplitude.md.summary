@@ -1,0 +1,18 @@
+**Summary:** This Japanese documentation page details Amplitude's data ingestion limits including monthly event volume caps (10M+ for Growth/Enterprise, 100K MTU for Starter), instrumentation limits per project (2000 event types, 2000 event properties, 1000 user properties), string character limits (1024 chars), chart visualization limits, and CSV export row limits with specific thresholds for different chart types.
+
+**Keywords:**
+- Monthly event volume limits
+- MTU (Monthly Tracked Users)
+- Instrumentation limits
+- Event types limit 2000
+- Event properties limit 2000  
+- User properties limit 1000
+- String character limit 1024
+- Account blocking threshold
+- CSV export limits 10000 rows
+- Redshift columnarization 50 properties
+- Segmentation module limits
+- Date picker range restrictions
+- Growth plan Enterprise plan Starter plan
+- Event indexing停止
+- Japanese translation documentation

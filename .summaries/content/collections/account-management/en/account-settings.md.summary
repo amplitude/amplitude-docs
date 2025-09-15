@@ -1,0 +1,27 @@
+## Summary
+This documentation covers Amplitude's Settings page functionality, including organizational settings for managing plans/billing, user permissions, SSO configuration, and Session Replay settings with sample rate controls, as well as personal settings for profile management, Slack integration, notification preferences, and theme customization.
+
+## Keywords
+- Settings page
+- Organizational settings
+- Session Replay settings
+- Sample rate configuration
+- Plans & Billing section
+- User permissions management
+- SSO configuration
+- Identity provider settings
+- Personal profile settings
+- Slack integration
+- Notification preferences
+- Theme preferences (light/dark mode)
+- Usage reports dashboard
+- MTU limits
+- Event limits
+- Session capture toggle
+- SDK implementation
+- User privacy notifications
+- Content access control
+- Year in review
+- Organization admins
+- Project-level settings
+- Instrumentation status

@@ -1,0 +1,18 @@
+**Summary:** This Japanese documentation explains Amplitude's Single Sign-On (SSO) implementation using SAML 2.0, covering supported identity providers (Auth0, G Suite, Azure AD, Okta, OneLogin), just-in-time provisioning, required SSO enforcement, and the specific email attribute lookup order in SAML assertions.
+
+**Keywords:**
+- Amplitude SSO
+- SAML 2.0 authentication
+- Japanese translation documentation
+- Auth0 integration
+- G Suite SSO
+- Microsoft Azure Active Directory
+- Okta SSO
+- OneLogin integration
+- Just-in-time provisioning
+- SAML assertion email lookup
+- Required SSO enforcement
+- Identity provider configuration
+- Email claim attributes
+- User role permissions
+- Enterprise plan features

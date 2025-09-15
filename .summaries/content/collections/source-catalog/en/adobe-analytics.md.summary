@@ -1,0 +1,15 @@
+**Summary:** This documentation covers the Adobe Analytics source integration for Amplitude, which imports Adobe Analytics data directly into Amplitude as raw events without engineering work, including specific field mappings for event_type, user_id (postvisidhigh/postvisidlow), and device_id (custvisid).
+
+**Keywords:**
+- Adobe Analytics source integration
+- raw-events integration type
+- postvisidhigh/postvisidlow user_id mapping
+- custvisid device_id mapping
+- Adobe event list lookup table
+- cross-platform customer behavior tracking
+- Enterprise/Growth/Scholarship plans
+- marketing-analytics integration category
+- Adobe Marketing Cloud
+- Data Sources configuration
+- event mapping preferences
+- daily events uploaded chart

@@ -1,0 +1,17 @@
+**Summary:** This Japanese FAQ documentation covers common Amplitude instrumentation questions including data modification limitations, device ID configuration for SDK vs HTTP API implementations, event naming constraints, array value handling, device information parsing issues, session ID generation, subscription revenue tracking, and bot traffic filtering methods.
+
+**Keywords:**
+- Amplitude instrumentation FAQ
+- Japanese translation documentation
+- device ID configuration SDK HTTP API
+- IDFV IDFA UUID device identification
+- session ID generation timeout
+- array properties contains operator
+- event naming uniqueness constraints
+- subscription revenue tracking
+- bot traffic filtering user-agent
+- data immutability post-ingestion
+- user privacy API GDPR deletion
+- null device information parsing
+- client-side server-side events
+- block filters drop filters IP blocking

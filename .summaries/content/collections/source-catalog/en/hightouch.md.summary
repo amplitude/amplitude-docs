@@ -1,0 +1,13 @@
+**Summary:** This documentation describes integrating Hightouch's reverse ETL platform with Amplitude to sync data from data warehouses into Amplitude for real-time customer experience personalization, requiring only an Amplitude API key for setup.
+
+**Keywords:**
+- Hightouch
+- reverse ETL
+- data warehouse sync
+- raw events integration
+- Amplitude API key
+- customer experience personalization
+- data warehouse to Amplitude
+- Hightouch destinations
+- warehouse data sync
+- reverse ETL integration

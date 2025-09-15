@@ -1,0 +1,21 @@
+## Summary
+
+This documentation covers the legacy Amplitude Experiment React Native SDK (maintenance mode) which provides client-side feature flag evaluation for iOS/Android React Native apps, including initialization with deployment keys, user fetching with remote evaluation, variant access, and Amplitude Analytics integration with automatic exposure tracking.
+
+## Keywords
+
+- Amplitude Experiment React Native SDK legacy
+- @amplitude/experiment-react-native-client
+- deployment key initialization
+- client-side remote evaluation
+- variant fetching and access
+- ExperimentUser object
+- Amplitude Analytics integration
+- automatic exposure tracking
+- user provider interface
+- exposure tracking provider
+- initializeWithAmplitudeAnalytics
+- flag key variant lookup
+- React Native iOS Android only
+- maintenance mode SDK
+- experiment client singleton

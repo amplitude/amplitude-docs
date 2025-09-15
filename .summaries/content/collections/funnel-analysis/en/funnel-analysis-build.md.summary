@@ -1,0 +1,16 @@
+**Summary:** This documentation explains how to build funnel analysis charts in Amplitude Analytics using the Events Module and Segmentation Module, covering event selection, property filtering, conversion order options (this order, any order, exact order), user exclusions, and segment configuration.
+
+**Keywords:**
+- Funnel Analysis chart
+- Events Module
+- Segmentation Module
+- starting event
+- conversion order
+- this order vs any order vs exact order
+- user exclusions
+- event properties filtering
+- saved segments
+- user segment configuration
+- drop-off analysis
+- event sequences
+- funnel steps

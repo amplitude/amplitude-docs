@@ -1,0 +1,17 @@
+Full content: title: 'Flutter SDK'
+template: default
+layout: layout
+mount: 7cac036d-49d6-4fdc-8483-e8d11c75dbac
+revisions: false
+route: '/sdks/analytics/flutter/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks

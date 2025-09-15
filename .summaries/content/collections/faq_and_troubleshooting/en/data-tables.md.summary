@@ -1,0 +1,16 @@
+**Summary:** This FAQ documentation covers Data Tables chart troubleshooting including unique metric group-by aggregation discrepancies, caching issues with overall values, attribution model pruning behavior, CSV export row limits (10,000 groups per metric), formula metric null value handling, and UI limitations like horizontal scrolling and column header editing.
+
+**Keywords:**
+- Data Tables chart
+- unique metric group-by aggregation
+- overall value sum discrepancy
+- attribution model pruning
+- CSV export row limits
+- 10,000 groups per metric limit
+- formula metric null values
+- caching inconsistencies
+- horizontal scrolling limitations
+- PDF PNG export bounded box
+- column header editing restrictions
+- multi-dimensional analysis
+- group-by clause behavior

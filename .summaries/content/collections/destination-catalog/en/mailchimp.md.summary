@@ -1,0 +1,17 @@
+**Summary:** This documentation describes the Amplitude-to-Mailchimp cohort synchronization integration that enables sending Amplitude behavioral cohorts to Mailchimp audiences as tagged segments for email marketing campaigns. The integration requires OAuth authentication, Mailchimp audience ID configuration, and email address mapping through Amplitude user properties.
+
+**Keywords:**
+- Amplitude cohorts
+- Mailchimp audience ID
+- cohort synchronization
+- email marketing integration
+- Mailchimp tags
+- OAuth authentication
+- user property mapping
+- behavioral cohorts
+- audience segmentation
+- scheduled sync
+- messaging destination
+- email address requirement
+- 88 character limit
+- API Target dropdown

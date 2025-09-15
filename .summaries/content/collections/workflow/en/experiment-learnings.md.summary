@@ -1,0 +1,23 @@
+**Summary:** This documentation covers Amplitude Experiment's analysis interface for interpreting A/B test results, including statistical significance determination, filtering capabilities (date/segment/property), and various analysis cards (Summary, Analysis, Data Quality, Diagnostics) that display p-values, confidence intervals, and experiment performance metrics.
+
+**Keywords:**
+- Amplitude Experiment analysis
+- statistical significance
+- p-values confidence intervals
+- A/B test results interpretation
+- experiment variants analysis
+- binary metrics non-binary metrics
+- 100 users 25 conversions threshold
+- Filter card segment filter
+- variant jumping exclusion
+- remote evaluation feature experiments
+- multi-armed bandit experiments
+- Data Quality card recommendations
+- Summary card hypothesis validation
+- Analysis card experiment results charts
+- cumulative exposure event totals
+- sequential test T-test comparison
+- group-by heterogeneous treatment effects
+- Diagnostics card assignment exposure events
+- sample ratio mismatch SRM detection
+- experiment notifications Slack webhook integration

@@ -1,0 +1,16 @@
+**Summary:**
+This Japanese documentation explains how to build funnel analysis charts in Amplitude, covering event configuration, user segmentation, ordering options (any order, this order, exact order), and advanced features like optional steps, inline event combinations, and event comparisons within funnel steps.
+
+**Keywords:**
+- ファネル分析 (funnel analysis)
+- Amplitude funnel charts
+- event ordering (任意の順序, この順序, 正確な順序)
+- conversion path analysis
+- user segmentation module
+- optional funnel steps
+- inline event combinations
+- event exclusion between steps
+- simultaneous event handling
+- funnel step comparison
+- group by property comparison
+- Japanese translation documentation

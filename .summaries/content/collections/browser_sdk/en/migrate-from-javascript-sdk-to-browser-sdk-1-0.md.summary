@@ -1,0 +1,21 @@
+## Summary
+This documentation covers migrating from the legacy amplitude-js SDK to Browser SDK 1.0 (@amplitude/analytics-browser), detailing breaking changes in API methods, configuration options, and implementation patterns including the removal of getInstance(), updated event tracking methods, and new plugin architecture.
+
+## Keywords
+- amplitude-js migration
+- @amplitude/analytics-browser
+- Browser SDK 1.0
+- getInstance() removal
+- logEvent to track API
+- plugin architecture
+- HTTP V2 API endpoint
+- web attribution changes
+- configuration mapping
+- flush() method
+- identify() API changes
+- revenue tracking migration
+- deferred initialization
+- minimum identifier length
+- tree shaking optimization
+- batch API support
+- sendBeacon transport

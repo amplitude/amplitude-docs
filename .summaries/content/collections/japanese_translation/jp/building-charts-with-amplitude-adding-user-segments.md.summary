@@ -1,0 +1,16 @@
+**Summary:** This Japanese documentation explains how to add user segments to Amplitude charts using the segmentation module, covering user property filters, segment creation with AND/OR operators, grouping by user properties, and saving segments for reuse.
+
+**Keywords:**
+- Amplitude charts user segments
+- segmentation module
+- user properties filtering
+- active users vs new users
+- segment operators (is, contains, set is, glob match)
+- AND/OR clauses in segments
+- group segment by functionality
+- saved segments
+- default segments
+- Japanese translation documentation
+- user property values at event time
+- custom groups with account addon
+- multiple segment comparison

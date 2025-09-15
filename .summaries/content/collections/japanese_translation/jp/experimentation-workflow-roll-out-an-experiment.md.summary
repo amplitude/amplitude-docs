@@ -1,0 +1,20 @@
+**Summary:** This documentation covers the Japanese translation of Amplitude's experimentation workflow for rolling out experiments, including the experiment launch process using the "実験を開始" button, toggle switch functionality for flag testing without launching, and post-experiment options (rollout, rollback, continue) with their specific configuration changes like percentage rollout settings and sticky bucket behavior.
+
+**Keywords:**
+- 実験ワークフロー (experimentation workflow)
+- 実験を開始 button
+- バリアント rollout
+- パーセンテージロールアウト 100%
+- スティッキーバケット false setting
+- fetch() function
+- 自動露出イベント (automatic exposure events)
+- 統計的有意性 (statistical significance)
+- 勝利バリアント (winning variant)
+- ロールバック functionality
+- トグルスイッチ activation
+- フラグ検定 (flag testing)
+- Amplitude サーバー
+- ユーザー割り当てデータ (user assignment data)
+- 実験完了 button
+- カスタムロールアウト
+- ウェイト設定 (weight settings)

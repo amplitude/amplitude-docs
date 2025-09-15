@@ -1,0 +1,13 @@
+**Summary:** Documents how to configure Funnel Analysis charts to hold properties constant, changing the counting method from unique users to unique user-property pairs, enabling session-based funnels and multi-conversion tracking by requiring consistent event properties across all funnel steps.
+
+**Keywords:**
+- hold properties constant
+- funnel analysis chart configuration
+- unique user-property pairs counting
+- session-based funnels
+- [Amplitude]Session ID
+- event property instrumentation
+- multi-conversion tracking
+- funnel step completion
+- user and property pairs
+- constant property values

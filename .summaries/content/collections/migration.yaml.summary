@@ -1,0 +1,18 @@
+Full content: title: Migration
+template: default
+layout: layout
+revisions: false
+route: '/migration/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: get_started
+structure:
+  root: false

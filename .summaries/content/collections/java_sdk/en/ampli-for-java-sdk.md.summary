@@ -1,0 +1,19 @@
+## Summary
+This documentation covers the Ampli wrapper for Java SDK (version 1.8.0+), which provides strongly-typed event tracking for JRE programs with code generation from Amplitude Data tracking plans, including installation via Maven/Gradle, CLI operations, and type-safe event methods.
+
+## Keywords
+- Ampli wrapper Java SDK
+- strongly-typed event tracking
+- Amplitude Data tracking plans
+- JRE programs Java 6+
+- Maven Gradle dependencies
+- ampli CLI pull command
+- LoadOptions LoadClientOptions
+- type-safe event methods
+- SongPlayed event builder
+- EventOptions MiddlewareExtra
+- ampli status verification
+- flush queue management
+- identify user properties
+- setGroup groupType groupName
+- com.amplitude.ampli package

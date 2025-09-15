@@ -1,0 +1,21 @@
+**Summary:** This documentation covers the Amplitude to Plotline event streaming integration setup, which enables real-time behavioral triggers and personalized in-app campaigns based on Amplitude event data, including API key configuration, event filtering, and user property synchronization.
+
+**Keywords:**
+- Plotline event streaming integration
+- Amplitude Data Destinations
+- behavioral triggers
+- in-app campaigns
+- digital adoption platform
+- API key authentication
+- real-time event forwarding
+- user property synchronization
+- Create & Update users toggle
+- Send Events configuration
+- event filtering
+- customer engagement destination
+- no-code nudges
+- feature adoption
+- 2MB request limit
+- 429 response handling
+- Live Stream section
+- Data Center events

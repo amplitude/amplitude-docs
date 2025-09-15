@@ -1,0 +1,54 @@
+## Amplitude Experiment Troubleshooting
+
+Amplitude Experiment is a feature flagging and experimentation platform that enables controlled rollouts and A/B testing. The troubleshooting documentation covers critical diagnostic scenarios that arise during experiment execution, focusing on data integrity issues, user assignment problems, and statistical anomalies that can compromise experiment validity.
+
+## Product Relationships and Feature Integration
+
+The troubleshooting guides reveal a sophisticated experimentation system built around several core components:
+
+**Event Tracking Architecture**: The platform operates on a dual-event system where assignment events (generated during variant allocation) must align with exposure events (triggered when users encounter variants). This relationship is fundamental to accurate experiment measurement and forms the basis for multiple diagnostic tools.
+
+**Evaluation Methods**: The system supports both remote evaluation (server-side assignment) and local evaluation (client-side assignment), each with distinct troubleshooting considerations. Remote evaluation provides centralized control but requires careful identity management, while local evaluation offers performance benefits but introduces complexity around fallback handling.
+
+**Identity Management**: The platform handles multiple identity types (user ID, device ID, Amplitude ID) and supports identity resolution scenarios like anonymous-to-authenticated user transitions and account switching on shared devices.
+
+## Key Nomenclature and Definitions
+
+**Assignment vs Exposure Events**: Assignment events occur when the system allocates a user to a variant, while exposure events trigger when users actually encounter the variant experience. Misalignment between these events indicates implementation or targeting issues.
+
+**Variant Jumping**: The phenomenon where individual users are exposed to multiple variants within a single experiment, which can occur through legitimate targeting changes or problematic identity mismatches.
+
+**Sample Ratio Mismatch (SRM)**: Statistical deviation where observed variant allocation differs significantly from configured allocation percentages, indicating potential bias in experiment execution.
+
+**Sticky Bucketing**: A mechanism ensuring users remain in their assigned variant across sessions, which can be disabled during experiment runs to allow re-randomization.
+
+**Bucketing Salt**: A randomization parameter that can be modified to create new experiment runs and exclude previously exposed users from analysis.
+
+**Fallback Variants**: Default experiences served when targeting criteria aren't met or when local evaluation excludes users from experiments.
+
+## Broader Product Ecosystem Integration
+
+The troubleshooting documentation reveals integration with Amplitude's broader analytics ecosystem:
+
+**User Streams Integration**: The platform connects with Amplitude's user timeline analytics, enabling detailed debugging through individual user journey analysis and event sequence examination.
+
+**Diagnostics Dashboard**: Built-in diagnostic tools including the "Exposures without Assignments" chart and cumulative exposures graphs provide real-time monitoring of experiment health.
+
+**Mutual Exclusion Management**: The system supports mutually exclusive experiments to prevent interaction effects, with specific troubleshooting considerations for users excluded from multiple experiments.
+
+## API Endpoints and Technical Implementation
+
+The documentation references several key technical components:
+
+**Core SDK Methods**: 
+- `fetch()` calls for retrieving variant assignments
+- `variant()` calls for accessing assigned variants
+- Identity parameter management across these calls
+
+**Evaluation API**: Uses `experiment_key` parameter for tracking experiment runs and variant assignments.
+
+**Event Properties**: Assignment events include `expKey` properties that must align with exposure event tracking for proper attribution.
+
+**Configuration Management**: Experiment runs can be created through experiment key updates, bucketing salt modifications, and sticky bucketing behavior changes.
+
+The troubleshooting framework emphasizes the critical importance of proper implementation patterns, identity consistency, and statistical monitoring to ensure experiment validity and reliable business decision-making based on experimental results.

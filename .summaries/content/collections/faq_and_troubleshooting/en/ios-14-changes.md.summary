@@ -1,0 +1,11 @@
+**Summary:** This documentation explains how Apple's iOS 14 IDFA opt-in requirements affect Amplitude's iOS SDK device identification, user tracking, attribution matching, and outbound integrations, with specific guidance on IDFA vs IDFV usage.
+
+**Keywords:**
+- iOS 14 IDFA opt-in requirements
+- Amplitude iOS SDK device identification
+- IDFA vs IDFV device ID configuration
+- Attribution API matching with IDFA/IDFV
+- Anonymous user tracking impact
+- Device ID retention app reinstall
+- Outbound integration match rates
+- Attribution provider IDFA dependency

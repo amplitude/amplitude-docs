@@ -1,0 +1,22 @@
+**Summary:** This documentation covers multi-armed bandit experiments in Amplitude Experiment, which use Thompson sampling to automatically reallocate traffic to the best-performing variant based on a primary optimization metric, differing from traditional A/B tests by not using statistical significance or control variants.
+
+**Keywords:**
+- multi-armed bandit experiments
+- Thompson sampling
+- traffic reallocation
+- primary optimization metric
+- Amplitude Experiment
+- variant allocation
+- minimum detectable effect (MDE)
+- ampex_data_monster
+- Bandits card
+- uniform distribution
+- confidence level acceleration
+- Enterprise plans
+- mutual exclusion groups
+- holdouts
+- duration estimate simulation
+- automated optimization
+- success metrics
+- continuous metrics
+- binary metrics

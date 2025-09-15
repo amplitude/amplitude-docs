@@ -1,0 +1,23 @@
+## Summary
+This documentation describes Amplitude's X Ads integration that imports campaign-level spend, click, and impression data as "Daily Ad Metrics" events with properties like `ad_metrics.impressions`, `ad_metrics.clicks`, and campaign identifiers, requiring X Ads Manager Admin access and manual UTM parameter setup for proper attribution tracking.
+
+## Keywords
+- X Ads integration
+- Daily Ad Metrics event
+- ad_metrics.impressions
+- ad_metrics.clicks
+- ad_metrics.cost
+- campaign_id
+- ad_group_id
+- X Ads Manager Admin access
+- UTM parameters manual setup
+- campaign-level metrics
+- ad-networks integration
+- Out-of-the-box Marketing Analytics
+- data backfill
+- synthetic identifier
+- X Ads device ID
+- retrospective updates
+- daily batch import
+- CAC (Customer Acquisition Cost)
+- ROAS (Return on Ad Spend)

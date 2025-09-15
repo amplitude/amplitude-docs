@@ -1,0 +1,22 @@
+**Summary:** This documentation covers implementing Amplitude's Web Experimentation standalone script, including synchronous/asynchronous script installation with anti-flicker snippets, CDN endpoints for US/EU data centers, third-party CDP integrations (Segment, Tealium, custom IntegrationPlugin), Content Security Policy requirements, and CMS/tag manager implementations.
+
+**Keywords:**
+- Web Experimentation script
+- anti-flicker snippet
+- cdn.amplitude.com
+- cdn.eu.amplitude.com
+- impression events tracking
+- Browser SDK integration
+- IntegrationPlugin interface
+- Segment integration
+- Tealium integration
+- Content Security Policy script-src
+- Cross-Origin-Opener-Policy
+- experimentIntegration window variable
+- visual editor
+- Wordpress plugin
+- Shopify App
+- Google Tag Manager GTM
+- synchronous vs asynchronous loading
+- flickering prevention
+- theme.liquid

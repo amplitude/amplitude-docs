@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the Ampli Wrapper for Browser SDK 1.0, which generates strongly-typed JavaScript/TypeScript APIs for tracking analytics events based on Amplitude Data tracking plans, including installation via npm, CLI commands (pull, status), and core methods (load, identify, track, flush) with CJS module packaging.
+
+**Keywords:**
+- Ampli Wrapper Browser SDK 1.0
+- @amplitude/ampli npm package
+- @amplitude/analytics-browser dependency
+- strongly-typed event tracking
+- JavaScript TypeScript CJS module
+- Amplitude Data tracking plan
+- ampli pull command
+- ampli status command
+- ampli.load() initialization
+- ampli.identify() user properties
+- ampli.track() event methods
+- ampli.flush() queue management
+- JSDoc type checking
+- EnrichmentPlugin interface
+- client.instance configuration
+- songPlayed event example

@@ -1,0 +1,21 @@
+**Summary:** This documentation covers Amplitude's Engagement Matrix chart feature, which analyzes product feature engagement using a four-quadrant matrix view based on breadth (% active users) and frequency (times/days performed) metrics, supporting up to 100 events with options for Top Events, Bottom Events, and custom event selection.
+
+**Keywords:**
+- Engagement Matrix chart
+- Amplitude analytics
+- feature engagement analysis
+- four-quadrant matrix view
+- breadth and frequency metrics
+- % Monthly Active Users (%MAU)
+- % Weekly Active Users (%WAU) 
+- % Daily Active Users (%DAU)
+- Average Times Performed
+- Average Days Performed
+- Top Events and Bottom Events
+- Growth and Enterprise plans
+- median vs average sectioning
+- log vs linear scale
+- up to 100 events comparison
+- user segment analysis
+- event properties and group-by
+- account-level reporting

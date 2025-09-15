@@ -1,0 +1,14 @@
+**Summary:** This documentation provides step-by-step instructions for configuring Auth0 as a SAML2 identity provider for Amplitude SSO integration, including client creation, SAML2 addon configuration, callback URL setup, and metadata file exchange between Auth0 and Amplitude's organizational settings.
+
+**Keywords:**
+- Auth0 SAML2 integration
+- Amplitude SSO configuration
+- Identity provider certificate metadata
+- Application Callback URL
+- Assertion Consumer Service URL
+- Entity ID
+- Auth0 clients creation
+- SAML2 addon toggle
+- Organizational settings Access & SSO
+- Identity provider metadata file upload
+- Auth0 Usage tab certificate download

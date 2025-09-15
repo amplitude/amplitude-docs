@@ -1,0 +1,24 @@
+**Summary:** This documentation covers Amplitude's Anomaly + Forecast feature for detecting statistically significant deviations in time-series metrics using Prophet algorithm, with support for event segmentation, funnel conversion, user sessions, retention, and stickiness charts across Growth/Enterprise/Scholarship plans.
+
+**Keywords:**
+- Anomaly + Forecast feature
+- Prophet algorithm
+- Statistical significance detection
+- Time-series data analysis
+- Event segmentation support
+- Funnel conversion over time
+- User sessions analytics
+- Retention over time
+- Stickiness over time
+- Agile/Robust/Custom modes
+- 95% confidence intervals
+- Training data periods
+- Seasonality detection (daily, weekly, monthly, yearly)
+- Rolling windows support
+- Rolling averages
+- Growth percentage calculations
+- Custom formulas
+- Root cause analysis integration
+- Insights package alerts
+- Japanese translation (jp locale)
+- Growth/Enterprise/Scholarship plans

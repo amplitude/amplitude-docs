@@ -1,0 +1,48 @@
+## Amplitude CDP (Customer Data Platform)
+
+Amplitude CDP is a comprehensive customer data platform that enables organizations to collect, process, and activate customer data across multiple touchpoints. The platform serves as a central hub for data ingestion, transformation, and distribution to support personalized customer experiences and data-driven decision making.
+
+## Product Architecture and Feature Relationships
+
+The Amplitude CDP consists of three core components that work together to create a complete data pipeline:
+
+**Sources** serve as the data ingestion layer, collecting customer data from various touchpoints and channels. This component handles the initial data collection and standardization processes.
+
+**Audiences** represents the segmentation and personalization engine, built on Amplitude Activation's self-serve platform. This component transforms raw data into actionable customer insights through behavioral and predictive cohorts, computations, and ML-powered recommendations.
+
+**Destinations** function as the data activation layer, enabling export and synchronization of processed data to third-party platforms and tools for campaign execution and personalization delivery.
+
+## Key Nomenclature and Definitions
+
+**Behavioral Cohorts**: User segments created based on actual user actions and engagement patterns within the platform.
+
+**Predictive Cohorts**: Forward-looking user segments generated using machine learning models to identify users likely to perform specific actions or exhibit certain behaviors.
+
+**Computations**: Data processing operations that transform raw event data into meaningful metrics and user properties.
+
+**Predictions**: AutoML-powered forecasting capabilities that anticipate user behavior and outcomes to enable proactive personalization.
+
+**Recommendations**: AI-driven content and product suggestions tailored to individual user preferences and behavior patterns.
+
+**Cohort Syncs**: Data synchronization mechanisms available in three modes:
+- On-demand syncs for immediate data transfer
+- Automated syncs for scheduled data updates  
+- Real-time syncs for instant data propagation
+
+## API Endpoints and Integration Points
+
+The platform provides two primary APIs for data access and activation:
+
+**Cohorts API**: Enables programmatic access to user segments and cohort data for external system integration.
+
+**Profile API**: Provides individual user profile data and attributes for real-time personalization use cases.
+
+**Destinations Configuration**: Accessible through the Destinations tab within the Connections section, allowing setup and management of third-party data export endpoints.
+
+**Notification System**: Supports email and Slack integration for destination monitoring, with Subscribe/Unsubscribe functionality for notification management.
+
+## Ecosystem Integration and Business Impact
+
+Amplitude CDP integrates seamlessly with third-party platforms through its destinations framework, enabling organizations to activate customer data across their entire marketing and product technology stack. The platform is designed to deliver measurable business outcomes, with documented conversion lift improvements of 15-30% through 1:1 personalization capabilities.
+
+The CDP supports both batch and real-time data processing workflows, making it suitable for various use cases from marketing campaign optimization to in-app personalization. The self-serve nature of the platform empowers business users to create and manage customer segments without requiring extensive technical expertise, while still providing robust APIs for developer integration needs.

@@ -1,0 +1,15 @@
+**Summary:** This documentation covers Amplitude's AppsFlyer streaming integration for forwarding events and cohorts to AppsFlyer, requiring AppsFlyer S2S Key and App ID authentication, with mandatory AppsFlyer ID mapping and optional device identifier mapping (GAID, IDFA, IDFV, etc.).
+
+**Keywords:**
+- AppsFlyer streaming integration
+- S2S Key authentication
+- AppsFlyer App ID
+- AppsFlyer ID mapping
+- Customer User ID
+- Device identifier mapping
+- GAID, IDFA, IDFV, OAID, IMEI
+- Event streaming destination
+- Cohort export
+- Attribution integration
+- AppsFlyer event values
+- Mobile app attribution

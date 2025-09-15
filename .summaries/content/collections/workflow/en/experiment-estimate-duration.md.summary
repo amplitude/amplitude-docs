@@ -1,0 +1,18 @@
+**Summary:** Documents Amplitude Experiment's duration estimator tool for calculating sample size and experiment run time needed to reach statistical significance, covering components like confidence level, control mean, standard deviation, power, test type, and minimum detectable effect (MDE) with their relationships to T-test sample size requirements.
+
+**Keywords:**
+- duration estimator
+- statistical significance
+- T-test sample size calculation
+- confidence level
+- control mean
+- standard deviation
+- power analysis
+- minimum detectable effect (MDE)
+- proxy exposure event
+- sequential testing vs T-test
+- experiment run time optimization
+- primary metric selection
+- 2-sided vs 1-sided test
+- false positives tolerance
+- conversion metrics

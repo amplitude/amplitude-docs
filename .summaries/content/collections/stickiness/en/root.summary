@@ -1,0 +1,44 @@
+## Amplitude Stickiness
+
+Amplitude Stickiness is a user engagement analysis feature that measures how frequently users interact with specific events or features within defined time periods. The tool provides insights into user behavior patterns by tracking event frequency rather than simple occurrence, enabling product teams to identify power users, understand engagement habits, and measure product stickiness over time.
+
+## Product Relationships and Features
+
+The Stickiness feature integrates with several core Amplitude components:
+
+**Chart Creation Module**: Enables users to build stickiness charts by selecting events, applying filters, and configuring analysis parameters. This module supports both individual event analysis and "Any Event" selection for broader engagement measurement.
+
+**User Segmentation Module**: Allows segmentation of stickiness analysis by user properties, enabling comparison of engagement patterns across different user groups. Users can import saved segments or create new segmentations based on user characteristics.
+
+**Metrics Module**: Provides two distinct measurement modes - non-cumulative stickiness (showing exact frequency) and cumulative stickiness (showing minimum frequency thresholds). This module enables switching between "exact number of days" and "at least number of days" analysis.
+
+**Behavioral Cohort Creation**: Integrates with Amplitude's cohort functionality, allowing users to create behavioral cohorts directly from stickiness analysis results for further analysis or targeting.
+
+## Key Nomenclature and Definitions
+
+**Stickiness Chart**: A visualization showing user engagement frequency over time periods, typically displayed as weekly or monthly buckets showing how many days users performed specific actions.
+
+**Non-cumulative Stickiness**: Measures the exact number of days users performed an event within a time period, providing precise frequency data.
+
+**Cumulative Stickiness**: Measures users who performed an event at least a certain number of days, useful for identifying minimum engagement thresholds.
+
+**Daily Buckets**: Time-based groupings that categorize users by their engagement frequency (e.g., users who engaged 1 day, 2 days, 3 days, etc.).
+
+**Power User Analysis**: Identification of highly engaged users through high-frequency event performance patterns.
+
+**Change Over Time View**: A temporal analysis mode that tracks how stickiness patterns evolve across different time periods.
+
+**Breakdown Data Table**: A detailed tabular view of stickiness data that complements the visual chart representation.
+
+## Broader Product Ecosystem Integration
+
+Stickiness analysis fits into Amplitude's comprehensive user analytics platform as a specialized engagement measurement tool. It complements other Amplitude features by:
+
+- **Event Instrumentation**: Requires proper event tracking setup to function effectively, connecting to Amplitude's core event collection infrastructure
+- **User Property System**: Leverages Amplitude's user property framework for segmentation and grouping capabilities
+- **Cohort Management**: Feeds into Amplitude's cohort system for creating targetable user groups based on engagement patterns
+- **Segmentation Framework**: Utilizes Amplitude's broader segmentation capabilities for comparative analysis
+
+The feature supports both weekly and monthly analysis periods and integrates with event property filtering, enabling granular analysis of user engagement patterns. This positions Stickiness as a key component in understanding user lifecycle, retention patterns, and product-market fit indicators within the broader Amplitude analytics ecosystem.
+
+The tool requires proper event instrumentation and connects to Amplitude's core data collection and user identification systems, making it dependent on the platform's foundational tracking infrastructure while providing specialized insights into user engagement frequency and habits.

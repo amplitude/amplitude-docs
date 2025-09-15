@@ -1,0 +1,18 @@
+**Summary:**
+This documentation explains Amplitude's Lifecycle Chart feature for tracking product user base growth by categorizing active users into new, current, and returning segments, with configuration options for critical events, user segments, and usage intervals, plus three chart views (Growth, Dormant, Pulse).
+
+**Keywords:**
+- Amplitude Lifecycle Chart
+- user base growth tracking
+- critical events configuration
+- new users, current users, returning users segmentation
+- dormant users analysis
+- Growth chart view
+- Dormant chart view
+- Pulse chart ratio calculation
+- usage intervals (daily/weekly/monthly)
+- user engagement retention analysis
+- Enterprise Growth Scholarship plans
+- CSV data export functionality
+- event implementation requirements
+- user segment properties filtering

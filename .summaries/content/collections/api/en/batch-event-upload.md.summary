@@ -14,12 +14,13 @@ The Batch Event Upload API enables bulk uploading of large amounts of event data
 - device_id user_id throttling
 - EPDS EPUS measurement
 - HTTP 429 throttling response
-- event deduplication insert_id
 - user_properties event_properties
 - $identify $groupidentify operations
-- api_key authentication
-- /batch endpoint
-- minimum ID length validation
-- revenue tracking fields
-- session_id event_id
+- insert_id deduplication
+- session_id event_id tracking
+- revenue tracking price quantity
+- location_lat location_lng geolocation
 - group_properties accounts addon
+- min_id_length options parameter
+- api_key authentication
+- events_ingested response field

@@ -1,0 +1,16 @@
+**Summary:** This documentation covers Amplitude's permission groups feature for Enterprise plans, which allows admins to assign project permissions to multiple users simultaneously through group membership, with the system granting users the highest permission level when they belong to multiple groups or have individual permissions.
+
+**Keywords:**
+- permission groups
+- Enterprise plans only
+- project permissions
+- group membership
+- User Management API
+- SCIM API
+- project roles (Member, Manager, Viewer)
+- Team Spaces integration
+- highest permission level precedence
+- group-based access control
+- bulk user permission assignment
+- organization settings
+- Members & Groups tab
