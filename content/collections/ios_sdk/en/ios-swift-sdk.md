@@ -102,11 +102,11 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `useBatch`                     | Whether to use batch api.                                                                                                                                                                                   | `false`                                  |
 | `trackingOptions`              | Options to control the values tracked in SDK.                                                                                                                                                               | `enable`                                 |
 | `enableCoppaControl`           | Whether to enable COPPA control for tracking options.                                                                                                                                                       | `false`                                  |
-| `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID).                                                                                                          | `true`                                   |
+| `migrateLegacyData`            | Available in `0.4.7+`. Whether to migrate [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID).                                                                                                          | `true`                                   |
 | `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](#offline-mode).                                                                                                         | `false`                                  |
 | `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1, no cleanup occurs.    | `-1`                                     |
 | `networkTrackingOptions`       | Available in `1.12.0+`. Options to control the network tracking.                                                                                                                                           | `NetworkTrackingOptions.default`          |
-| `interactionsOptions`           | **Experimental**. Available in `1.14.0+`. Options to control the interaction tracking.                                                                                                                                           | `InteractionsOptions.default`          |
+| `interactionsOptions`           | Available in `1.15.0+`. Options to control the interaction tracking.                                                                                                                                           | `InteractionsOptions.default`          |
 
 {{/partial:collapse}}
 
@@ -213,7 +213,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 | `networkTracking` | `AutocaptureOptions` | No | Enables network tracking. If the option is set, Amplitude tracks network requests. Event properties tracked include: `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. See [Track network requests](#track-network-requests) for more information. |
-| `frustrationInteractions` | `AutocaptureOptions` | No | **Experimental**. Available in `1.14.0+`. Enables frustration interaction tracking. If the option is set, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` element and `UIGestureRecognizer`. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Go to [Track frustration interactions](#track-frustration-interactions) for more information. |
+| `frustrationInteractions` | `AutocaptureOptions` | No | Available in `1.15.0+`. Enables frustration interaction tracking. If the option is set, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` element and `UIGestureRecognizer`. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Go to [Track frustration interactions](#track-frustration-interactions) for more information. |
 
 {{/partial:collapse}}
 
@@ -437,7 +437,84 @@ With the default configuration, the SDK tracks network requests from all hosts (
 | Name |  Description | Default Value |
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | **Experimental** The URLs to capture. Supports exact match and regex pattern. Includes query parameters and fragment identifier. eg. `URLPattern.exact("https://example.com/api/status")` to match `https://example.com/api/status`, `URLPattern.regex("https://example.com/api/.*")` to match `https://example.com/api/status` and `https://example.com/api/error`. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. eg. `"0,200-299,413,500-599"` | `"500-599"` |
+| `methods` | **Experimental** The HTTP methods to capture. `*` to match all methods. eg. `["POST", "PUT", "DELETE"]` | `["*"]` |
+| `requestHeaders` | **Experimental** Captures request headers. | `nil` |
+| `responseHeaders` | **Experimental** Captures response headers. | `nil` |
+| `requestBody` | **Experimental** Captures fields in the request body (go to #CaptureBody). | `nil` |
+| `responseBody` | **Experimental** Captures fields in the response body (go to  #CaptureBody). | `nil` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureHeader"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` |  **Experimental** The headers to capture. Case-insensitive. | `[]` |
+| `captureSafeHeaders` | **Experimental** Whether to capture safe headers. | `true` |
+
+{{partial:admonition type="note" heading=""}}
+`authorization`, `cookie`, `proxy-authorization` are headers which is considered as sensitive and will be excluded even is set to `allowlist`.
+{{/partial:admonition}}
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+{{/partial:collapse}}
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureBody"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | **Experimental** The fields to capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
+| `blocklist` | **Experimental** The fields to exclude from capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
 
 {{/partial:collapse}}
 
@@ -530,6 +607,38 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 
 When you enable this setting, Amplitude tracks the `[Amplitude] Network Request` event whenever the application makes a network request. The SDK swizzles URL loading system methods to instrument network activity.
 
+{{partial:admonition type="note" heading="Experimental features"}}
+Use `@_spi(NetworkTracking)` import to access the experimental properties.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(NetworkTracking) import Amplitude-Swift
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .networkTracking,
+    networkTrackingOptions: .init(
+        captureRules: [
+            .init(hosts: ["*"]), // all hosts, statusCodeRange: "500-599"
+            .init(urls: [.regex("^https://example\\.com/api/.*"), .exact("https://example.com/api2/status")],
+                  methods: ["POST"],
+                  statusCodeRange: "0,400-599",
+                  requestHeaders: .init(allowlist: ["Link", "X-API-Key"]),
+                  responseHeaders: .init(allowlist: ["Link", "X-API-Key"], captureSafeHeaders: false),
+                  requestBody: .init(allowlist: ["user/*", "product/**/id"]),
+                  responseBody: .init(allowlist: ["profile/**"], blocklist: ["**/password"])),
+        ],
+        ignoreHosts: ["notmyapi.com"],
+        ignoreAmplitudeRequests: true
+    ),
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+
 {{partial:collapse name="Event Properties Descriptions"}}
 | Event property | Description |
 | --- | --- |
@@ -545,6 +654,10 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 | `[Amplitude] Duration` | The duration of the request in milliseconds. |
 | `[Amplitude] Request Body Size` | The size of the request body in bytes. |
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| `[Amplitude] Request Body` | **Experimental** The captured stringified JSON request body (when you configure a `requestBody` capture rule). |
+| `[Amplitude] Response Body` | **Experimental** The captured stringified JSON response body (when you configure a `responseBody` capture rule). |
+| `[Amplitude] Request Headers` | **Experimental** The captured request headers (when you configure a `requestHeaders` capture rule). |
+| `[Amplitude] Response Headers` | **Experimental** The captured response headers (when you configure a `responseHeaders` capture rule). |
 
 {{/partial:collapse}}
 
@@ -631,19 +744,13 @@ Currently, Amplitude does not supports tracking user interactions with UI elemen
 
 ### Track frustration interactions
 
-Available in version `1.14.0+`.
+Available in version `1.15.0+`.
 
 Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
-
-{{partial:admonition type="note" heading=""}}
-The `AutocaptureOptions.frustrationInteractions` option is available as a beta release for early feedback. You can enable it by adding `@_spi(Frustration)` import to your code.
-{{/partial:admonition}}
 
 {{partial:tabs tabs="Swift"}}
 {{partial:tab name="Swift"}}
 ```swift
-@_spi(Frustration) import Amplitude-Swift
-
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
     autocapture: .frustrationInteractions
@@ -667,8 +774,6 @@ The `interactionsOptions` configuration accepts an `InteractionsOptions` object 
 {{partial:tabs tabs="Swift"}}
 {{partial:tab name="Swift"}}
 ```swift
-@_spi(Frustration) import Amplitude-Swift
-
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
     autocapture: .frustrationInteractions,
