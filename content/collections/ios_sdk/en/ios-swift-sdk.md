@@ -437,21 +437,21 @@ With the default configuration, the SDK tracks network requests from all hosts (
 | Name |  Description | Default Value |
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
-| `urls` | **Experimental** The URLs to capture. Supports exact match and regex pattern. Includes query parameters and fragment identifier. eg. `URLPattern.exact("https://example.com/api/status")` to match `https://example.com/api/status`, `URLPattern.regex("https://example.com/api/.*")` to match `https://example.com/api/status` and `https://example.com/api/error`. | `none` |
+| `urls` | **Experimental** Available in `1.15.0+`. The URLs to capture. Supports exact match and regex pattern. Includes query parameters and fragment identifier. eg. `URLPattern.exact("https://example.com/api/status")` to match `https://example.com/api/status`, `URLPattern.regex("https://example.com/api/.*")` to match `https://example.com/api/status` and `https://example.com/api/error`. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. eg. `"0,200-299,413,500-599"` | `"500-599"` |
-| `methods` | **Experimental** The HTTP methods to capture. `*` to match all methods. eg. `["POST", "PUT", "DELETE"]` | `["*"]` |
-| `requestHeaders` | **Experimental** Captures request headers. | `nil` |
-| `responseHeaders` | **Experimental** Captures response headers. | `nil` |
-| `requestBody` | **Experimental** Captures fields in the request body (go to #CaptureBody). | `nil` |
-| `responseBody` | **Experimental** Captures fields in the response body (go to  #CaptureBody). | `nil` |
+| `methods` | **Experimental** Available in `1.15.0+`. The HTTP methods to capture. `*` to match all methods. eg. `["POST", "PUT", "DELETE"]` | `["*"]` |
+| `requestHeaders` | **Experimental** Available in `1.15.0+`. Captures request headers. | `nil` |
+| `responseHeaders` | **Experimental** Available in `1.15.0+`. Captures response headers. | `nil` |
+| `requestBody` | **Experimental** Available in `1.15.0+`. Captures fields in the request body (go to #CaptureBody). | `nil` |
+| `responseBody` | **Experimental** Available in `1.15.0+`. Captures fields in the response body (go to  #CaptureBody). | `nil` |
 
 {{/partial:collapse}}
 
 {{partial:collapse name="NetworkTrackingOptions.CaptureHeader"}}
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` |  **Experimental** The headers to capture. Case-insensitive. | `[]` |
-| `captureSafeHeaders` | **Experimental** Whether to capture safe headers. | `true` |
+| `allowlist` |  **Experimental** Available in `1.15.0+`. The headers to capture. Case-insensitive. | `[]` |
+| `captureSafeHeaders` | **Experimental** Available in `1.15.0+`. Whether to capture safe headers. | `true` |
 
 {{partial:admonition type="note" heading=""}}
 `authorization`, `cookie`, `proxy-authorization` are headers which is considered as sensitive and will be excluded even is set to `allowlist`.
@@ -513,8 +513,8 @@ With the default configuration, the SDK tracks network requests from all hosts (
 {{partial:collapse name="NetworkTrackingOptions.CaptureBody"}}
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `allowlist` | **Experimental** The fields to capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
-| `blocklist` | **Experimental** The fields to exclude from capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
+| `allowlist` | **Experimental** Available in `1.15.0+`. The fields to capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
+| `blocklist` | **Experimental** Available in `1.15.0+`. The fields to exclude from capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
 
 {{/partial:collapse}}
 
