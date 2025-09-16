@@ -9,37 +9,40 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514203
 ---
-The next step in designing your experiment is to create at least one variant. Amplitude Experiment compares your variants with the **control**, which is usually your product’s current user experience. This way, Experiment measures the performance of the variant against a known quantity, the performance of your app today.
+Your experiment needs at least one variant. Experiment compares a variant experience with the control experience, which is usually your product’s current user experience (UX). Experiment measures the performance of the variant against a known quantity: the performance of your app today.
 
-## Add and manage variants
+## Adding and managing variants
 
-Amplitude Experiment creates your initial variant; by default, and names it `treatment`, though you can edit the variant and give it a different name if you prefer.
+Experiment creates your initial variant automatically. By default, this variant is named `treatment`. You can edit the variant name if you want to rename the variant to something more descriptive of the experiment you're running. .
 
-To add additional variants, follow these steps:
+##### To add additional variants
 
-1. Click **Add a variant**. The Create Variant panel opens.
-2. Give your variant a name and a value. Value is a string, that by default, is a slugified version of the variant name.
+1. In the Experiment section, either create a new experiment or open an existing one. 
+2. In the Variants section, click the **edit** icon.
+3. If you want to rename either the control or treatment variants, click the **edit** icons next to those names. 
+4. Click **Add a variant**. 
+5. Enter a name for your variant and then include a value. By default, the value is a hyphenated (otherwise known as a slug) version of the variant name.
 
     {{partial:admonition type="tip" heading="Use variant value in your code"}}
     When you implement the experiment on your codebase, use the value of the variant to reference it. Experiment SDKs return variant values, which are all lower case, and don't contain spaces.
     {{/partial:admonition}}
 
-3. Add a description of the variant. This step is optional, but recommended.
-4. Add an optional **payload**. A payload is a JSON object that can dynamically change a variant’s experience without requiring you to write more code.
+6. Add a description of the variant. Be specific enough so that other people can understand what your experiment is doing.
+7. Add an optional **payload**. A payload is a JSON object that can dynamically change a variant’s experience without requiring you to write more code.
 
     For example, imagine you’re testing a new splash screen on a marketing webpage. You might get early results that suggest different content might improve the performance of the splash. Instead of going into your codebase and making changes to the variant there, you can just include those changes in a payload, and Amplitude Experiment implements them automatically.
 
     Paste or type your code into the window. 
 
-5. Click **Apply**.
+8. Click **Apply**.
 
-There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to a handful of variants, at most.
+There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to the absolute minimum of variants needed.
 
-Amplitude Experiment uses the first variant listed as the control. You can change this by dragging a different variant to the top of the list. Whichever variant you label as **A** when your experiment launches is the control.
+You can drag and drop your variants in any order you want. However, the variant that contains the `control` label is always considered the control variant, regardless of where it appears in the list.
 
-## Distribute traffic to your variations
+## Distribute traffic to your variants
 
-Unless you specify otherwise, Amplitude Experiment splits traffic evenly between your variations. However, you can opt to send more traffic to specific variations by customizing your variant distribution. Click *Customize* and manually set the traffic percentages for each variation. The percentages must add up to 100%.
+Unless you specify otherwise, Experiment splits traffic evenly between your variants. However, you can opt to send more traffic to specific variations by customizing your variant distribution. In your experiment, go to *Targeting > Distribution* to change the distribution percentage. 
 
 ## Stratified sampling and experiment bias
 
