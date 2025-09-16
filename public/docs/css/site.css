@@ -1407,8 +1407,6 @@ video {
   padding-right: 1rem;
 }.pr-8 {
   padding-right: 2rem;
-}.pt-1 {
-  padding-top: 0.25rem;
 }.pt-5 {
   padding-top: 1.25rem;
 }.pt-8 {
@@ -1801,7 +1799,6 @@ video {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }.prose p:has(img) {
     margin: 0;
-    margin-bottom: 1rem;
     background: #F4F5F6;
     padding: 2rem;
     border-radius: 8px;
