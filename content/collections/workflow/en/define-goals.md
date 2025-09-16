@@ -58,7 +58,7 @@ You can create a new metric if none of the standard metrics meet your needs.
    * Average of property value.
 4. Set the events that you want by clicking **Add Event** and then choosing your events.
 5. Set any key properties you want.
-6. Click **Save and Close***.
+6. Click **Save and Close**.
 
 {{partial:admonition type='note'}}
 By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, or calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments, for up to two months.
@@ -72,6 +72,6 @@ Amplitude sends the `Amplitude exposure` event when your app calls `.variant()`.
 
 You can select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. There's a much greater risk of triggering a custom exposure event at the wrong time, which can lead to a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch).
 
-For more information, see [this article about exposure events in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
+For more information, go to this article about [exposure events](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 
-The next step is defining your experiment's [audience](/docs/feature-experiment/workflow/define-audience).
+After you know your goal, you can define your experiment's [audience](/docs/feature-experiment/workflow/define-audience).
