@@ -11,11 +11,9 @@
         {
           delimiters: [
             {left: "$$", right: "$$", display: true},
-            { left: "$",  right: "$",  display: false }   // inline (produced by the preprocessor)
-
+            {left: "$", right: "$", display: false}
           ],
-          throwOnError: false,
-          onRendered: el => el.classList?.remove('tex-unprocessed')
+          throwOnError: false
         }
       );
     });
