@@ -17,13 +17,7 @@ class MathPrep extends Modifier
             return $value;
         }
 
-        // Only handle 'mark' mode now
-        $mark = in_array('mark', $params);
-
-        if ($mark) {
-            return $this->markMath($value);
-        }
-
+        // Simply return the content unchanged - KaTeX handles the rendering perfectly
         return $value;
     }
 
@@ -33,10 +27,29 @@ class MathPrep extends Modifier
      */
     protected function markMath(string $text): string
     {
-        return preg_replace(
+        // Debug logging
+        if (app()->environment('local')) {
+            \Log::info('=== MARKING MATH ===');
+            \Log::info('Content length: ' . strlen($text));
+            \Log::info('Content preview: ' . substr($text, 0, 200));
+            $matchCount = preg_match_all('/\$\$([\s\S]+?)\$\$/', $text, $matches);
+            \Log::info('Found $$ patterns: ' . $matchCount);
+            if (!empty($matches[0])) {
+                \Log::info('Math expressions found: ' . json_encode($matches[0]));
+            }
+        }
+        
+        $result = preg_replace(
             '/\$\$([\s\S]+?)\$\$/',
-            '<span class="tex-unprocessed">$$$1$$</span>',
+            '$$<span class="tex-unprocessed">$1</span>$$',
             $text
         );
+        
+        if (app()->environment('local')) {
+            \Log::info('Result preview: ' . substr($result, 0, 200));
+            \Log::info('Result contains tex-unprocessed: ' . (strpos($result, 'tex-unprocessed') !== false ? 'YES' : 'NO'));
+        }
+        
+        return $result;
     }
 }

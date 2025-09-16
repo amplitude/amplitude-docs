@@ -79,24 +79,8 @@
   </style>
   {{partial:partials/_amplitude}}
 
-{{ if environment == 'local' }}
-  <script>
-    console.log('DEBUG: Math enabled:', {{ enable_math | json }});
-  </script>
-{{ /if }}
-
 {{if enable_math }}
-  {{ if environment == 'local' }}
-    <script>console.log('DEBUG: KaTeX assets are being loaded!');</script>
-  {{ /if }}
   {{partial:partials/katex-assets}}
-  <style>
-    .tex-unprocessed { opacity: 0; }
-  </style>
-{{else}}
-  {{ if environment == 'local' }}
-    <script>console.log('DEBUG: NO math enabled - KaTeX will NOT load');</script>
-  {{ /if }}
 {{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
