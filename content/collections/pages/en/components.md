@@ -2,22 +2,24 @@
 id: 4d2e02c1-9bf7-48ec-ab17-641fe208de23
 blueprint: page
 title: 'Site components'
-package: "@amplitude/session-replay-browser"
+package: '@amplitude/session-replay-browser'
+author: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1757629320
 ---
-
-{{partial:admonition type="warning" heading="test"}}
-Here's some **formatted** *text*. And `this`.
-
-```js
-import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
-
-const pageUrlEnrichment = pageUrlEnrichmentPlugin();
-amplitude.add(pageUrlEnrichment);
-amplitude.init(API_KEY);
+```html
+<script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+<script>
+  window.amplitude.init('AMPLITUDE_API_KEY', {
+    fetchRemoteConfig: true,
+    autocapture: true
+  });
+</script>
 ```
-{{/partial:admonition}}
 
-
+```html
+<script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script><script>window.amplitude.init('AMPLITUDE_API_KEY', {"fetchRemoteConfig":true,"autocapture":false});</script>
+```
 ## test
 
 ```swift

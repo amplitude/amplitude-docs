@@ -2370,6 +2370,176 @@ line-height: 1.25rem;
 }.prose ol ol {
     list-style: lower-alpha;
     list-style-type: lower-alpha;
+}/* API Key Modal Styles */.api-key-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out;
+}.api-key-modal {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: slideIn 0.3s ease-out;
+}.api-key-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}.api-key-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}.api-key-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}.api-key-modal-close:hover {
+    background-color: #f3f4f6;
+}.api-key-modal-body {
+    padding: 1.5rem;
+}.api-key-modal-body p {
+    margin: 0 0 1rem 0;
+    color: #6b7280;
+    line-height: 1.5;
+}#api-key-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    transition: border-color 0.2s;
+    margin-bottom: 1.5rem;
+}#api-key-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}.api-key-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}.api-key-btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+    min-width: 120px;
+}.api-key-btn-primary:hover {
+    background-color: #2563eb;
+}.api-key-btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}.api-key-btn-secondary:hover {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+}/* Notification Styles */.api-key-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: #10b981;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 10000;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    max-width: 350px;
+    font-weight: 500;
+}.api-key-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}/* Animations */@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}/* PrismJS Toolbar Enhancement */.toolbar .toolbar-item button {
+    font-size: 0.875rem !important;
+}/* Manual API Key Button - styled to match copy button */.api-key-manual-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 4px !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 3rem !important;
+    z-index: 10 !important;
+}.api-key-manual-button:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}.api-key-manual-button svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: #B7B7B7 !important;
+    transition: fill 0.2s ease !important;
+}.api-key-manual-button:hover svg {
+    fill: #1E40AF !important;
+}/* Mobile responsiveness */@media (max-width: 640px) {
+    .api-key-modal {
+        width: 95%;
+    }
+    
+    .api-key-modal-actions {
+        flex-direction: column;
+    }
+    
+    .api-key-btn-primary,
+    .api-key-btn-secondary {
+        flex: none;
+        width: 100%;
+    }
+    
+    .api-key-notification {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
