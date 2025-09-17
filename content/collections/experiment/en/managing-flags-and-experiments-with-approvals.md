@@ -9,11 +9,9 @@ exclude_from_sitemap: false
 updated_by: e6d8f28f-00c6-426e-9ab9-664028ddc50c
 updated_at: 1758133452
 ---
-{{partial:admonition type='note'}}
-Experiment Approvals is only available to Growth and Enterprise customers.
-{{/partial:admonition}}
-
 Improve the governance of your experimentation program and decrease the risk of unintended changes by requiring approvals for critical changes to experiment configuration.
+
+Experiment Approvals is only available to Growth and Enterprise customers.
 
 ## Setting up Approvals
 
