@@ -1,4 +1,4 @@
-**Summary:** Documents Amplitude Experiment Management API flag endpoints for CRUD operations on feature flags, including flag configuration, variants management with rollout weights and targeting, version control, user inclusions/exclusions, and deployment management with bucketing strategies.
+**Summary:** Documents Amplitude Experiment Management API flag endpoints for CRUD operations on feature flags, including flag configuration, variants management with rollout weights and targeting segments, version control, user inclusions/exclusions, and deployment management with bucketing strategies.
 
 **Keywords:**
 - Amplitude Experiment Management API
@@ -16,3 +16,8 @@
 - experiment flag API
 - amplitude_id bucketing
 - flag archiving enabling
+- variant rollout percentage
+- flag dependencies parentDependencies
+- management-api-key authentication
+- flag targeting segments
+- experiment flag versioning
