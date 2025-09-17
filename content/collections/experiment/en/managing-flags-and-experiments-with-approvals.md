@@ -13,7 +13,7 @@ Improve the governance of your experimentation program and decrease the risk of 
 
 Experiment Approvals is only available to Growth and Enterprise customers.
 
-## Setting up Approvals
+## Setting up approvals
 
 Turn on approvals by going to _Organization Settings > Experiment > Approvals_. 
 
