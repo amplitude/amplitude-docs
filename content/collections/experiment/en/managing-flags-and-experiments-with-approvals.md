@@ -17,43 +17,46 @@ Improve the governance of your experimentation program and decrease the risk of 
 
 ## Setting up Approvals
 
-You can turn on approvals by going to _Organization Settings > Experiment > Approvals_. Only users with the manager or admin role can modify approvals settings.
+Turn on approvals by going to _Organization Settings > Experiment > Approvals_. 
+
+Only users who have manager or admin roles can modify approvals settings.
 
 Add the individual projects that you would like to require approvals for.
 
-For each project, you have two options: 
-1. Peer approvals: Any users with access can respond to pending approval requests
-2. Specific approvers: Only the users designated will be able to respond to pending approval requests
+For each project, you can specify one of the following options: 
+1. **Peer approvals**: Any users with access can respond to pending approval requests
+2. **Specific approvers**: Only the users designated will be able to respond to pending approval requests
 
 Additionally, admin users will always be able to respond to pending approvals.
 
 ## Requesting and responding to approval requests
 
-### Approvals are required to activate flags and experiments
+### Requiring approvals to activate flags and experiments
 
-Once approvals are enabled for a project: 
+After approvals are enabled for a project, your organization will follow this approvals process: 
+
 1. When starting or scheduling an experiment or activating or scheduling a feature flag, the requestor must select approver(s) to notify.
-2. The experiment will display a “Pending Approval” status until approved.
+2. The experiment displays a “Pending Approval” status until it's approved.
 3. Approvers can review the experiment and either approve the requested changes or reject the changes.
-4. This will notify the original requestor of the response.
+4. The approval or rejection automatically notifies the original requestor of the response.
 
 While the approval is pending, users can make additional changes to the flag or experiment configuration, enter or exit testing mode, or cancel the request at any time.
 
 After the approval is approved for scheduled flags and experiments, users can still modify any configuration until the scheduled start date.
 
-### Approvals are required for critical changes to live flags and experiments
+### Requiring approvals for critical changes to live flags and experiments
 
 When a flag or experiment is active, making some types of changes will also require approval:
 
 | Field    | Type of Change    |
 | --- | --- |
-| Target Segments | Adding and removing segments, modifying conditions or bucketing    |
-| Variants | Any changes, including adding, renaming or removing variants    |
+| Target Segments | Adding and removing segments, modifying conditions or bucketing.    |
+| Variants | Any changes, including adding, renaming or removing variants.    |
 | Variant Distribution | Any changes |
 | Exposure Event | Any changes |
 | Bucketing Salt | Any changes | 
 | Sticky Bucketing | Enabling / Disabling | 
 
-When reviewing these approval requests, users will see the full list of changes in the approval banner.
+When reviewing these approval requests, users can view the full list of changes in the approval banner.
 
 While these approvals are pending, the flag or experiment will also be locked down and users will be unable to make any additional changes until the approval is cancelled or completed.
