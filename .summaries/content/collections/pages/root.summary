@@ -1,45 +1,33 @@
-Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize experiences, and drive product growth through data-driven insights.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize product experiences, and make data-driven decisions. The platform consists of four core products that work together to deliver end-to-end product intelligence capabilities.
 
 ## Core Product Suite
 
-The platform consists of four primary products that work together to provide end-to-end analytics and optimization capabilities:
-
-**Analytics** serves as the foundational product for behavioral analytics, enabling teams to track, measure, and analyze user interactions across digital properties. This product focuses on understanding user journeys, conversion funnels, and engagement patterns.
-
-**Data** functions as the integration hub, connecting Amplitude with existing tech stacks and data infrastructure. This product facilitates seamless data flow between Amplitude and other business systems, ensuring comprehensive data collection and distribution.
-
-**Experiment** provides A/B testing and feature flag capabilities, allowing teams to test hypotheses, validate product changes, and optimize user experiences through controlled experimentation and gradual feature rollouts.
-
-**Session Replay** offers digital experience reconstruction by capturing and replaying user sessions, providing visual context to quantitative analytics data and helping teams understand the "why" behind user behaviors.
+**Analytics** serves as the foundational product analytics engine, enabling teams to track, measure, and analyze user interactions across digital products. **Data** provides robust tech stack integration capabilities, allowing organizations to connect Amplitude with their existing data infrastructure and warehouse systems. **Experiment** delivers A/B testing and optimization functionality with advanced statistical methodologies, while **Session Replay** reconstructs complete digital user experiences for qualitative analysis and debugging.
 
 ## Technical Implementation Architecture
 
-Amplitude's technical implementation centers around two primary integration methods: SDKs for client-side data collection and APIs for server-side operations and data management.
+The platform operates through a multi-layered technical architecture consisting of SDKs, APIs, and web-based interfaces. **Amplitude SDKs** provide client-side integration capabilities across multiple platforms, including JavaScript Browser SDK 2 and Swift SDK implementations. The JavaScript SDK supports session replay functionality through the `@amplitude/session-replay-browser` package, with initialization methods like `amplitude.init()` that accept configuration options for `fetchRemoteConfig` and `autocapture` settings using `AMPLITUDE_API_KEY` authentication.
 
-The SDK ecosystem supports multiple platforms and programming languages, with specific implementations for JavaScript/Browser environments and Swift for iOS development. The Browser SDK includes the session replay functionality through the `@amplitude/session-replay-browser` package, which integrates directly with the core analytics SDK.
-
-Key SDK initialization patterns include:
-- JavaScript: `amplitude.init()` with configuration options for `fetchRemoteConfig` and `autocapture`
-- Swift: `amplitudeEngagement.boot()` using `AmplitudeBootOptions` for user and device configuration
+The Swift SDK utilizes `amplitudeEngagement.boot()` methods with `AmplitudeBootOptions` configuration objects that handle user identification through `user_id`, `device_id`, and `user_properties` parameters. **Amplitude APIs** complement the SDK layer by providing server-side integration capabilities for data ingestion, user management, and programmatic access to platform features.
 
 ## Key Nomenclature and Definitions
 
-**Event Properties vs User Properties**: Fundamental distinction between attributes that describe specific user actions (event properties) and characteristics that describe the user themselves (user properties).
+The platform employs specific terminology for data modeling and user tracking. **Event properties** capture contextual information about specific user actions, while **user properties** store persistent attributes associated with individual users. **User identification tracking** enables cross-session and cross-device user journey analysis. **Feature flags** provide dynamic configuration capabilities for controlled feature rollouts and experimentation.
 
-**User Identification and Tracking**: Core concept involving the assignment and management of `user_id` and `device_id` parameters to maintain consistent user identity across sessions and devices.
+**Custom formulas** allow advanced metric calculations beyond standard analytics functions. The experimentation framework distinguishes between **treatment vs control** comparisons within **randomized control trials**, supporting both **binary and continuous metrics** for conversion rate testing and other statistical analyses.
 
-**Feature Flags**: Conditional logic controls that enable teams to toggle functionality on/off for specific user segments without code deployments.
+## Statistical and Mathematical Framework
 
-**Autocapture**: Automated event tracking that captures user interactions without manual instrumentation.
+Amplitude Experiment implements sophisticated statistical methodologies, particularly **sequential testing** using **mixture sequential probability ratio test (mSPRT)**. This approach provides advantages over traditional T-tests for A/B testing statistical inference by enabling continuous monitoring of experiment results without inflating Type I error rates.
 
-**Remote Configuration**: Server-side configuration management accessed via `fetchRemoteConfig`, allowing dynamic SDK behavior modification.
+The mathematical foundation centers on **hypothesis testing** with **null hypothesis H₀: δ = 0**, utilizing **likelihood ratios** and **mixing distributions** to determine statistical significance. The platform supports LaTeX mathematical notation for precise statistical communication and documentation.
 
-**Custom Formulas**: Advanced analytics calculations that extend beyond standard metrics to provide tailored insights.
+## Data Integration and Warehouse Connectivity
 
-## Ecosystem Integration
+The Data product facilitates **data warehouse analysis** by connecting Amplitude's behavioral analytics with existing organizational data infrastructure. This integration enables comprehensive analysis that combines product usage data with business metrics, customer data, and other enterprise information sources.
 
-Amplitude positions itself as a central hub within the broader product and marketing technology ecosystem. The Data product specifically addresses tech stack integration challenges, enabling bi-directional data flow with data warehouses, customer data platforms, and other business intelligence tools.
+## Content Delivery and Documentation Architecture
 
-The platform's API infrastructure supports programmatic access to analytics data, user management, and configuration settings, facilitating integration with existing workflows and custom applications. The CDN-hosted SDK delivery (`cdn.amplitude.com`) ensures reliable, performant client-side implementation across global user bases.
+The platform utilizes CDN distribution through `cdn.amplitude.com` for SDK delivery and static asset serving. The documentation system employs structured content management with blueprint templates, section linking, and configurable navigation options including `hide_toc` and `hide_side-nav` settings for customized user experiences.
 
-The documentation structure suggests a comprehensive self-service approach, with dedicated sections for both technical implementation (SDKs, APIs) and business use cases (analytics methodologies, experimentation best practices). This dual focus supports both developer adoption and business user enablement within organizations implementing Amplitude's analytics and experimentation capabilities.
+The documentation architecture supports multiple output formats including JSON APIs and LLM-optimized text formats, enabling programmatic access to product information and AI-powered documentation interactions.

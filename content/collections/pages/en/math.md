@@ -1,13 +1,7 @@
 ---
-id: 4c9bc7b0-f786-4694-97c0-4668958ad1de
-blueprint: under-the-hood
-title: 'Sequential testing for statistical inference'
-source: 'https://help.amplitude.com/hc/en-us/articles/4403176829709-How-Amplitude-Experiment-uses-sequential-testing-for-statistical-inference'
-this_article_will_help_you:
-  - 'Familiarize yourself with the statistical testing method used by Amplitude Experiment'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721759869
-landing: false
+id: 4ab659f3-268f-46e8-b49c-453e5388b22d
+blueprint: home
+title: 'Math test'
 enable_math: true
 ---
 Experiment uses a sequential testing method of statistical inference. With sequential testing, results are valid whenever you view them. You can decide to end an experiment early based on observations made to that point. The number of observations you’ll need to make an informed decision is, on average, much lower than the number you’d need with [T-tests](/docs/feature-experiment/experiment-theory/analyze-with-t-test) or similar procedures. You can experiment more quickly, incorporating what you learn into your product and escalating the pace of your experimentation program.
@@ -47,8 +41,4 @@ There are many different sequential testing options. Amplitude Experiment uses a
 $$
  \Lambda_n = \int \prod_{i=1}^{n} \frac{f(x_i \mid \delta)}{f(x_i \mid 0)}\, dH(\delta)
 $$
-
-{{partial:admonition type='note'}}
- Read more about sequential testing in this [article on frequently asked questions](/docs/faq/sequential-testing).
-{{/partial:admonition}}
 
