@@ -9,18 +9,21 @@ This documentation covers the Amplitude Experiment Management API endpoints for 
 - variant management
 - user inclusions
 - deployment management
+- experiment versions
 - rollout weights
 - target segments
 - bucketing configuration
-- experiment versions
+- experiment states (planning, running, decision-made)
 - sticky bucketing
-- evaluation mode (remote/local)
-- experiment states (planning/running/decision-made)
-- A/B testing
-- multi-arm bandit
-- experiment lifecycle
+- evaluation modes (remote, local)
+- experiment types (a-b-test, multi-arm-bandit)
 - variant payload
-- exposure events
-- experiment archiving
 - rollout percentage
-- experiment decisions (rollout/rollback/continue-running)
+- experiment archiving
+- bulk user operations
+- experiment filtering
+- projectId
+- bucketingKey
+- bucketingSalt
+- exposureEvent
+- experiment decisions (rollout, rollback, continue-running)
