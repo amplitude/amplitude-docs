@@ -1,7 +1,7 @@
 ---
 id: ec448015-b432-434a-93a0-6392b4474d67
 blueprint: workflow
-title: "Finalize your experiment's statistical preferences"
+title: "Finalize your experiment's advanced settings"
 source: 'https://help.amplitude.com/hc/en-us/articles/13448368364187-Finalize-your-experiment-s-statistical-preferences'
 this_article_will_help_you:
   - "Understand the default statistical preferences in your experiment's results"
@@ -9,9 +9,33 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517514
 ---
-Amplitude Experiment uses default statistical settings for experiment analyses: 
+The final step in creating your experiment is to specify any advanced settings you want. These settings encompass:
 
-![defaultStatsPreferences.png](/docs/output/img/workflow/defaultstatspreferences-png.png)
+* **Exposure settings**: Settings for the exposure event that must be triggered before your audience receives your experiment. 
+* **Stats Preferences**: Statistical settings for experiment analysis.
+* **Bucketing options**: Further settings related to bucketing and targeting your audience.
+
+## Exposure settings
+
+Exposure settings are the configuration rules that define when and how a user is marked as exposed to an experiment or feature. These settings determine the logic that triggers an exposure event, such as whether a user is considered exposed the first time they qualify for an experiment, the first time they actively interact with a feature, or under more custom criteria.
+
+In your Experiment Design options, click **Advanced** and then click **Exposure Settings** to specify the settings you want. You can modify any of the following: 
+
+### Exposure event
+
+An exposure event is the moment when a user becomes eligible for a particular experiment variant or feature. They are shown the experiment variant regardless of whether they actively interact with it. This event serves as the anchor point for experiment analysis and ensures that all downstream behaviors and outcomes are accurately attributed to the correct variant. By logging exposure events, Experiment prevents biases such as double counting or misattribution. It also establishes a consistent link between user actions and the experiment they were exposed to.
+
+You can specify:
+
+* **Exposure Event**: Decide which exposure event you want to trigger the experiment. By default, this is set to Amplitude Exposure event. It's recommended to leave this setting as is. However, you can specify a custom exposure event. 
+* **Proxy Exposure Event**: For Feature Experiments, a proxy exposure event is a placeholder used to estimate the duration of the experiment based on historical data of that event. By default, this is set to Any Active Event. You can specify any recorded event as the proxy.
+* **Custom Exposure Settings**: Decide if you want to further customize your expsure settings with:
+  * **Attribution**: If you want the exposure event to activate only on the first instance of the user triggering it or at any instance of a single user triggering the event. 
+  * **Window**: If you want the experiment to trigger within a specific time period of the event.
+
+## Stats Preferences
+
+Statistical preferences are the configurable settings that determine how experiment results are analyzed and displayed. These preferences let teams choose parameters such as:
 
 * [*CUPED*](#cuped) toggled off
 * [*Bonferroni Correction*](#bonferroni-correction) toggled on
@@ -19,19 +43,13 @@ Amplitude Experiment uses default statistical settings for experiment analyses:�
 * [*Test Type*](#test-type) set to Sequential
 * [*Confidence Level*](#confidence-level) set to 95%
 
-As you review your results, your experiment may benefit from modifying one or more of the default settings. To modify the default statistical preferences, follow the steps below:
-
-1. From the *Settings* tab, click the Edit icon in the *Analysis Settings* card.
-2. In the fly-out that appears, go to *Stats Preferences*.
-3. Make the desired edits to the default settings, and then click *Save*.
-
-The *Stats Preferences* can be modified at any step of an experiment, but they are most beneficial for the final analysis after the experiment has ended.
+You can modify the Stats Preferences at any step of an experiment, however, they're most beneficial for the final analysis after the experiment has ended.
 
 {{partial:admonition type='note'}}
- This article continues directly from the [article in our Help Center on learning from your experiment](/docs/feature-experiment/workflow/experiment-learnings). If you haven’t read that, do so before continuing here.
+ This article continues directly from the [Help Center article on learning from your experiment](/docs/feature-experiment/workflow/experiment-learnings). If you haven’t read that, do so before continuing here.
 {{/partial:admonition}}
 
-## CUPED
+### CUPED
 
 Controlled-experiment using pre-existing data, also known as CUPED, is an optional statistical technique meant to reduce variance in Amplitude Experiment. Toggling CUPED on means that Amplitude Experiment will account for possible varying treatment effects for different user segments. There are situations where CUPED would not be the best choice for your experiment, such as targeting only new users in your test.
 
@@ -41,20 +59,8 @@ For a more technical explanation, see this [detailed blog post](https://bytepawn
 
 Read more about CUPED and how it can affect your experiment results in this [blog](https://amplitude.com/blog/amplitude-experiment-cuped). 
 
-## Bonferroni Correction
+### Bonferroni Correction
 
 Amplitude Experiment uses the Bonferroni correction to address potential problems with [multiple hypothesis testing.](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing) Although a trusted statistical method, there are situations where you may not want to use it when analyzing your experiment results. One might be if you want to compare results with those generated by an internal system that does not support the Bonferroni method. In this case, and if you're willing to accept higher false positive rates, toggle the *Bonferroni Correction* off.
 
-## Custom Exposure Settings
-
-You can allocate a timeframe, or window, to the metric event for it to be considered a true conversion event. The window can be set in seconds, minutes, hours, or days. 
-
-## Test Type
-
-You can [choose between a sequential test and a T-test](https://amplitude.com/blog/sequential-test-vs-t-test) when analyzing your experiment. Sequential is usually—but not always—the better choice. For example, you may have too small of a sample size for sequential testing. 
-
-Read more about how to utilize a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) and [sequential testing](/docs/feature-experiment/under-the-hood/experiment-sequential-testing) in Amplitude's Help Center.
-
-## Confidence Level
-
-The confidence level measures how confident Amplitude Experiment is that it would generate the same results for the experiment if you were to roll it out again and again. The default confidence level of 95% means that 5% of the time, you might interpret the results as statistically significant when they're not. Lowering your experiment’s confidence level will make it more likely that your experiment reaches statistical significance, but the likelihood of a false positive goes up. You should not go below 80%, as the experiment's results may no longer be reliable at this point.
+### Statistical Method
