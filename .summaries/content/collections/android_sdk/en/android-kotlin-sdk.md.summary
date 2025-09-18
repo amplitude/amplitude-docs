@@ -1,37 +1,36 @@
 ## Summary
 
-This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven (com.amplitude:analytics-android), configuration options like flushIntervalMillis/flushQueueSize, autocapture features (sessions, app lifecycles, screen views, deep links, element interactions), tracking methods (track, identify, revenue), user/device ID management, plugins system, and advanced features like offline mode and network tracking plugin.
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, detailing installation via Gradle/Maven (com.amplitude:analytics-android), configuration options including batching behavior, EU data residency, and autocapture features for sessions/app lifecycles/screen views/element interactions/frustration interactions, event tracking with BaseEvent objects, user identification with Identify operations, revenue tracking with Revenue objects, plugin architecture for enrichment/destination types, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, offline mode, and multiple SDK instances.
 
 ## Keywords
 
-- android-kotlin-sdk
+- Android-Kotlin SDK
 - com.amplitude:analytics-android
-- gradle-maven-installation
-- flushIntervalMillis
-- flushQueueSize
-- autocapture-options
-- AutocaptureOption.SESSIONS
-- AutocaptureOption.APP_LIFECYCLES
-- AutocaptureOption.SCREEN_VIEWS
-- AutocaptureOption.DEEP_LINKS
-- AutocaptureOption.ELEMENT_INTERACTIONS
-- track-identify-revenue
-- deviceId-userId-management
-- advertising-id-ADID
-- app-set-id
-- plugins-enrichment-destination
-- NetworkTrackingPlugin
-- OkHttp-interceptor
-- offline-mode
-- ACCESS_NETWORK_STATE
-- session-tracking
-- minTimeBetweenSessionsMillis
-- TrackingOptions
-- COPPA-control
-- location-tracking
-- serverZone-EU
-- batch-API
-- Jetpack-Compose
-- testTag-modifier
-- TelephonyManager
-- proguard-configuration
+- Gradle Maven installation
+- Configuration options
+- flushIntervalMillis flushQueueSize
+- EU data residency ServerZone
+- autocapture AutocaptureOption
+- sessions app lifecycles screen views
+- element interactions frustration interactions
+- rage clicks dead clicks
+- BaseEvent tracking
+- Identify operations set setOnce unset
+- Revenue tracking productId price quantity
+- Plugin architecture enrichment destination
+- NetworkTrackingPlugin OkHttp
+- COPPA control enableCoppaControl
+- advertising ID ADID useAdvertisingIdForDeviceId
+- app set ID useAppSetIdForDeviceId
+- device ID lifecycle UUID
+- location tracking locationListening
+- TrackingOptions disable tracking
+- offline mode ACCESS_NETWORK_STATE
+- multiple instances instanceName
+- user sessions sessionId minTimeBetweenSessionsMillis
+- out-of-session events
+- reset userId deviceId
+- group identify groupType groupName
+- event callback EventCallBack
+- log level Logger.LogMode
+- TroubleShootingPlugin debugging
