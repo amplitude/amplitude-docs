@@ -576,13 +576,13 @@ Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with 
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
-  Configuration(
-    apiKey = AMPLITUDE_API_KEY,
-    context = applicationContext,
-    autocapture = autocaptureOptions {
-        +frustrationInteractions    // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
-    }
-  )
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions    // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
+        }
+    )
 )
 ```
 {{/partial:tab}}
@@ -598,7 +598,7 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-**Rage Click** is a user interaction that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
+**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
 
 When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
@@ -624,7 +624,7 @@ When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
 {{/partial:collapse}}
 
-**Dead Click** is a click on an interactive element that resulted in no visible change in the following 3 seconds.
+**Dead Click** is a user interaction on an interactive element that resulted in no visible change in the following 3 seconds.
 
 When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
 
