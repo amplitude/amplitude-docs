@@ -9,11 +9,13 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714516898
 ---
-You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to check if your hypothesis was correct.
+You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now, it’s time to check if your hypothesis was correct.
 
-In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
+In the Activity tab, you’ll be able to tell at a glance whether your experiment has yielded statistically significant results as well as what those results actually are. Experiment takes the information you gave it during the design and rollout phases and enters them in for you automatically limiting repetition of effort. It breaks the results out by variant and provides you with a convenient, detailed tabular breakdown.
 
-Amplitude doesn't generate p-values or confidence intervals for experiments using binary metrics (for example, unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
+{{partial:admonition type="Note" heading=""}}
+Depending on your experiment, not all cards described below may be visible.
+{{/partial:admonition}}
 
 ## Filter card
 
@@ -25,7 +27,7 @@ On the Filter card, set criteria that updates the analysis on the page. Filter y
 
 ### Date filter
 
-The date filter defaults to your experiment's start and end date. Adjust the range to scope experiment results to those specific dates.
+The date filter defaults to your experiment's start and end dates. Adjust the range to scope experiment results to those specific dates.
 
 ### Segment filter
 
@@ -35,25 +37,27 @@ The segment filter enables you to select predefined segments, or create one ad-h
   * Testers. Users added as "testers" during experiment configuration.
   * Exclude testers. Excludes users added as "testers" during experiment configuration
   * Exclude users who variant jumped. Excludes users who were exposed to more than one variant.
-  * Exclude testers and variant jumpers. Excluses users added as "testers" during experiment configuration and users who were exposed to more than one variant.
+  * Exclude testers and variant jumpers. Excludes users added as "testers" during experiment configuration and users who were exposed to more than one variant.
 * Amplitude
   * New user. Users who triggered at least one new user event during the selected date range.
   * Mobile web. Users who triggered events on the web from a mobile device.
   * Desktop web. Users who triggered events on the web from a desktop device.
 
 {{partial:admonition type="note" heading="Support for segments"}}
-The Testers, Exclude Testers, and exclude testers and variant jumpers segments are available on feature experiments that use [Remote evaluation](/docs/feature-experiment/remote-evaluation).
+The Testers, Exclude Testers, and variant jumpers segments are available on feature experiments that use [Remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 The Exclude users who variant jumped segment and and exclude testers and variant jumpers segment are available on experiment types other than [multi-armed bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
 {{/partial:admonition}}
 
 These segments update in real-time.
 
-Click *+Create Segment* to open the Segment builder, where you can define a new segment on the fly. Segments you create in one experiment are available across all other experiments, and appear in the *All Saved Segments* category.
+Click the **segment icon** and then click **Create Segment** to open the Segment builder and then define a new segment however you want. Segments you create in one experiment are available across all other experiments and appear in the All Saved Segments category.
 
 ### Property filter
 
 Filter your experiment results based on user properties. For example, create a filter that excludes users from a specific country or geographic region, or users that have a specific account type on your platform.
+
+Click **Add filter** to build a property filter.
 
 ## Data Quality card
 
@@ -61,7 +65,7 @@ Filter your experiment results based on user properties. For example, create a f
 Data Quality is available to organizations with access to Experiment who have recommendations enabled.
 {{/partial:admonition}}
 
-Amplitude doesn't generate p-values or confidence intervals for experiments using binary metrics (for example, unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
+Amplitude doesn't generate p-values or confidence intervals for experiments using binary metrics (for example, unique conversions) until each variant has 100 users and 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
 
 When you expand a category, or click *Guide*, the Data Quality Guide opens in a side panel where you can address or dismiss issues 
 
