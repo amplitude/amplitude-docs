@@ -9,7 +9,12 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514522
 ---
-Configuring Experiment is a two-stage process: creating a deployment, and installing the SDK you want to use.
+Configuring Feature Experiment is a two-stage process: 
+
+* Creating a deployment
+* Installing the SDK you want to use.
+
+Configuring Experiment isn't the same as [creating an experiment](/docs/feature-experiment/workflow/create). You must first configure Experiment and ensure that it's working properly before you can create any experiments. This page is for Feature Experiment. If you want to configure Web Experiment, go to [Implement Web Experiment](/docs/web-experiment/implementation). 
 
 ## Creating a deployment
 
@@ -31,7 +36,7 @@ To create a deployment follow these steps:
 
 ### Deployment keys
 
-Both types of deployments generate keys that are specific to the deployment. A key is a unique identifier for the deployment that ensures data integrity. The key ensures that all of the data collected by your experiment is associated with that particular deployment and all of the results and analytics based off of those results are as accurate as possible. For more information about keys, go to [Keys and Tokens](/docs/apis/keys-and-tokens#keys-overview).
+Both types of deployments generate keys that are specific to the deployment. A key is a unique identifier for the deployment that ensures data integrity. The key ensures that all data collected by your experiment is associated with that particular deployment and all results and analytics based off of those results are as accurate as possible. For more information about keys, go to [Keys and Tokens](/docs/apis/keys-and-tokens#keys-overview).
 
 * **Client-side keys**: The deployment key associated with client deployments is publicly viewable. 
 * **Server-side keys**: Keep the deployment key associated with server deployments secret and use it only for server-side SDKs. Server-side keys access the REST API for flag evaluation. 
