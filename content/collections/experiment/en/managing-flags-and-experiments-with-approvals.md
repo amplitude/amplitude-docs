@@ -22,29 +22,30 @@ Only users who have manager or admin roles can modify approvals settings.
 Add the individual projects that you would like to require approvals for.
 
 For each project, you can specify one of the following options: 
-1. **Peer approvals**: Any users with access can respond to pending approval requests
-2. **Specific approvers**: Only the users designated will be able to respond to pending approval requests
 
-Additionally, admin users will always be able to respond to pending approvals.
+1. **Peer approvals**: Any users with access can respond to pending approval requests
+2. **Specific approvers**: Only the users designated can respond to pending approval requests
+
+Additionally, admin users can respond to pending approvals.
 
 ## Requesting and responding to approval requests
 
 ### Requiring approvals to activate flags and experiments
 
-After approvals are enabled for a project, your organization will follow this approvals process: 
+After approvals are enabled for a project, Amplitude recommends that you follow this approval process: 
 
-1. When starting or scheduling an experiment or activating or scheduling a feature flag, the requestor must select approver(s) to notify.
+1. When starting or scheduling an experiment or activating or scheduling a feature flag, the requestor selects one or more approver to notify.
 2. The experiment displays a “Pending Approval” status until it's approved.
 3. Approvers can review the experiment and either approve the requested changes or reject the changes.
 4. The approval or rejection automatically notifies the original requestor of the response.
 
 While the approval is pending, users can make additional changes to the flag or experiment configuration, enter or exit testing mode, or cancel the request at any time.
 
-After the approval is approved for scheduled flags and experiments, users can still modify any configuration until the scheduled start date.
+When the scheduled flag or experiment gains approval, users with access can modify any setting until the scheduled start date.
 
 ### Requiring approvals for critical changes to live flags and experiments
 
-When a flag or experiment is active, making some types of changes will also require approval:
+When a flag or experiment is active, certain updates also require approval:
 
 | Field    | Type of Change    |
 | --- | --- |
@@ -57,4 +58,4 @@ When a flag or experiment is active, making some types of changes will also requ
 
 When reviewing these approval requests, users can view the full list of changes in the approval banner.
 
-While these approvals are pending, the flag or experiment will also be locked down and users will be unable to make any additional changes until the approval is cancelled or completed.
+When approvals are pending, the flag or experiment is locked. This prevents users with access from making other changes until the previous approval request is completed or cancelled.
