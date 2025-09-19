@@ -446,6 +446,7 @@
     "/docs/md/experiment/en/index.md": "/docs/md/experiment/en/index.md",
     "/docs/md/experiment/en/key-terms.md": "/docs/md/experiment/en/key-terms.md",
     "/docs/md/experiment/en/local-evaluation.md": "/docs/md/experiment/en/local-evaluation.md",
+    "/docs/md/experiment/en/managing-flags-and-experiments-with-approvals.md": "/docs/md/experiment/en/managing-flags-and-experiments-with-approvals.md",
     "/docs/md/experiment/en/notifications.md": "/docs/md/experiment/en/notifications.md",
     "/docs/md/experiment/en/overview.md": "/docs/md/experiment/en/overview.md",
     "/docs/md/experiment/en/project-level-permissions.md": "/docs/md/experiment/en/project-level-permissions.md",
