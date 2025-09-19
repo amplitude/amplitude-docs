@@ -956,7 +956,7 @@ curl --request DELETE \
 DELETE https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/bulk-delete-users
 ```
 
-Bulk remove users or devices from flag's variant. Limited to 100 per request.
+Bulk remove users or devices from flag's variant. Limited to 100 for each request.
 
 ### Path variables
 
@@ -994,7 +994,7 @@ curl --request DELETE \
 DELETE https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/bulk-delete-cohorts
 ```
 
-Bulk remove cohorts from flag's variant. Limited to 100 per request.
+Bulk remove cohorts from flag's variant. Limited to 100 for each request.
 
 ### Path variables
 
