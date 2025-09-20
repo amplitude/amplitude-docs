@@ -118,7 +118,7 @@ amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 Configure how Guides and Surveys handles screen navigation.
 
 ```swift
-AppDelegate.engagement.setRouter { identifier in
+engagement.setRouter { identifier in
   // Your screen handling and navigation
 }
 ```
