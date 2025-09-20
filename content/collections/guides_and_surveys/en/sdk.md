@@ -60,22 +60,23 @@ But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to
 
 #### Initialize the SDK
 
-Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
+Call `init` to fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, mediaUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
 ```
 
-| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                                    |
-| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                                       |
-| `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU) |
-| `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU) |
-| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                 |
-| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                         |
-| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                      |
-| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`   |
+| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                                                                                            |
+| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                                                                                               |
+| `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                                                     | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
+| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                                                                         |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                                                                                 |
+| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                                                                              |
+| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`                                                           |
 
 ##### Example: Basic initialization
 
@@ -88,12 +89,13 @@ engagement.init("YOUR_API_KEY", {
 
 ##### Example: Initialization with proxy
 
-For [proxy setups](/docs/guides-and-surveys/proxy), specify both `serverUrl` and `cdnUrl`:
+For [proxy setups](/docs/guides-and-surveys/proxy), specify `serverUrl`, `cdnUrl`, and `mediaUrl`:
 
 ```js
 engagement.init("YOUR_API_KEY", {
   serverUrl: "https://your-proxy-domain.cloudfront.net",
-  cdnUrl: "https://your-proxy-domain.cloudfront.net"
+  cdnUrl: "https://your-proxy-domain.cloudfront.net",
+  mediaUrl: "https://your-proxy-domain.cloudfront.net",
 });
 ```
 
