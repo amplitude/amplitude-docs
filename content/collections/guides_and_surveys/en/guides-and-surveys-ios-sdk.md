@@ -113,6 +113,25 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
 ```
 
+## Router configuration
+
+Configure how Guides and Surveys handles screen navigation.
+
+```swift
+engagement.setRouter { identifier in
+  // Your screen handling and navigation
+}
+```
+
+| Parameter          | Type                    | Description                                                                     |
+| ------------------ | ----------------------- | ------------------------------------------------------------------------------- |
+| `identifier`       | `String`                | Required. A screen identifier (or route) that tells your app where to navigate. |
+| `router` (closure) | `(String) -> Void`      | Required. A function (closure) you implement to handle screen navigation when Guides or Surveys need to change screens. |
+
+{{partial:admonition type="note" heading="Update link behavior"}}
+After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
+
 ## Reset
 
 Reset a guide or survey to a specific step.
