@@ -122,7 +122,7 @@ Dashboards, CSV exports, and REST API calls cache content for longer than indivi
 | Monthly   | within the last 3 months   | 6 hours          | 18 hours                             |
 | Monthly   | within the last 6 months   | 24 hours         | 48 hours                             |
 | Monthly   | greater than 6 months      | 48 hours         | 96 hours                             |
-| Quarterly | within the last 2 quartera | 6 hours          | 18 hours                             |
+| Quarterly | within the last 2 quarters | 6 hours          | 18 hours                             |
 | Quarterly | within the last 3 quarters | 24 hours         | 72 hours                             |
 | Quarterly | greater than 3 quarters    | 48 hours         | 96 hours                             |
 | Yearly    | --                         | 48 hours         | 96 hours                             |
@@ -146,6 +146,16 @@ Annotations have the following limitations:
   * Annotations don't support public links and aren't accessible in dashboards or notebooks.
 
 Releases represent a change in your product. For more information, review [Releases](/docs/analytics/releases). 
+
+### Give annotations a date range
+
+Provide a start date and end date for your annotation to apply them to specific dates and times. For example, if you ran a marketing campaign from March 4 through March 8, specify those dates in the annotation so it reflects the entire campaign.
+
+### Categorize an annotation
+
+Specify an annotation's category to group it with similar annotations. Annotation categories enable you to show and hide groups of annotations, so that your chart displays only what you want it to.
+
+Manage annotation categories in Project Settings. When you create a category, you can specify whether it displays by default on all charts within a project, or if users must manually enable it on each chart.
 
 ## Keyboard shortcuts
 
