@@ -1,54 +1,54 @@
-Amplitude Guides and Surveys is a comprehensive in-product user engagement platform that serves as an alternative to traditional popups, designed to enhance user onboarding, collect feedback, and improve retention, activation, and engagement metrics. The platform enables product, growth, and product marketing teams to create contextual, non-intrusive messaging experiences directly within their applications.
+Amplitude Guides and Surveys is a comprehensive in-product user engagement platform that replaces traditional popup systems with contextual, non-intrusive messaging experiences. The platform empowers product, growth, and product marketing teams to enhance user onboarding, collect feedback, and improve key metrics including retention, activation, and engagement through sophisticated behavioral targeting and personalization.
 
 ## Core Product Architecture
 
-The platform consists of three primary components that work together to deliver personalized user experiences:
+The platform operates through three interconnected components that deliver personalized user experiences:
 
-**Guides** are interactive, multi-step experiences designed for user onboarding and feature exploration. They support six form factors (Modal, Popover, Pin, Tooltip, Banner, Checklist) and utilize behavioral triggers, strike detection, and rate-limiting mechanisms. Guides can be created using templates including Tour, Announcement, Checklists, Carousel, Banners, and Tooltips, each optimized for specific use cases from step-by-step onboarding to contextual help.
+**Guides** serve as interactive, multi-step experiences optimized for user onboarding and feature exploration. They support six distinct form factors (Modal, Popover, Pin, Tooltip, Banner, Checklist) and leverage behavioral triggers, strike detection, and rate-limiting mechanisms. The system provides pre-built templates including Tour, Announcement, Checklists, Carousel, Banners, and Tooltips, each designed for specific use cases ranging from comprehensive step-by-step onboarding to contextual help delivery.
 
-**Surveys** focus on feedback collection and user sentiment analysis, supporting four unique block types (Rating, Long answer, Short answer, List) with conditional logic for dynamic response branching. Survey templates include NPS, User feedback, Rating, Carousel, Banner Survey, and Tooltip Survey formats, with specialized analytics for NPS scoring and response aggregation.
+**Surveys** focus on feedback collection and user sentiment analysis through four specialized block types (Rating, Long answer, Short answer, List) with conditional logic enabling dynamic response branching. Survey templates encompass NPS, User feedback, Rating, Carousel, Banner Survey, and Tooltip Survey configurations, supported by specialized analytics for NPS scoring and response aggregation.
 
-**Resource Center** functions as an intelligent help widget that integrates external documentation repositories and provides search functionality, recommended content, quick links, and call-to-action buttons. It features an Autopilot system that uses semantic search algorithms to automatically surface relevant articles based on page content analysis.
+**Resource Center** functions as an intelligent help widget that integrates external documentation repositories with advanced search functionality, recommended content delivery, quick links, and call-to-action buttons. The component features an Autopilot system utilizing semantic search algorithms to automatically surface relevant articles through page content analysis.
 
 ## Multi-Platform SDK Integration
 
-The platform supports comprehensive cross-platform deployment through dedicated SDKs:
+The platform provides comprehensive SDK support across multiple development environments:
 
 - **Web SDK** (`@amplitude/engagement-browser`) integrates with Amplitude Browser SDK 2.0, third-party analytics providers like Segment, and Google Tag Manager
 - **iOS SDK** (`Amplitude-Engagement-Swift`) supports Swift Package Manager and CocoaPods installation with iOS 15+ requirements
-- **Android SDK** (`amplitude-engagement-android`) targets API Level 24+ with Jetpack Compose support
-- **React Native SDK** (`@amplitude/plugin-engagement-react-native`) provides deep linking and URL scheme handling
-
-Each SDK provides consistent APIs for initialization (`engagement.init()`, `engagement.boot()`), screen tracking, element targeting, theme management, and preview mode functionality.
+- **Android SDK** (`amplitude-engagement-android`) supports Jetpack Compose and traditional Android views with API Level 24+ requirements
+- **React Native SDK** (`@amplitude/plugin-engagement-react-native`) provides cross-platform mobile support with deep linking capabilities
 
 ## Advanced Targeting and Personalization
 
-The platform employs sophisticated targeting mechanisms including user segmentation, rollout percentages with bucketing units, and multiple trigger types (element appearance/clicks, time delays, smart delay, rage click, user confusion, event tracking). Page targeting utilizes CSS Selector and XPath patterns, while the priority system (Urgent, High, Medium, Low) manages content display with tiebreaker logic for active state management.
+The platform delivers sophisticated targeting through multiple mechanisms:
 
-Personalization capabilities include the "Personalize with Variables" feature for dynamic content insertion using client-side user properties, comprehensive localization support with fallback behavior, and theme customization through the Theme Editor with Brand controls and Component editor sections.
+**Behavioral Triggers** include element appearance/clicks, time delays, rage clicks, user confusion detection, and comprehensive event tracking. **User Segmentation** enables precise audience targeting through demographic and behavioral criteria. **Session Properties** can be dynamically set via `setSessionProperty()` for real-time personalization. **Page Targeting** supports URL matching patterns and regex expressions for contextual content delivery.
 
-## Analytics and Experimentation
+## Analytics Integration and Event Schema
 
-Comprehensive analytics integration with Amplitude provides detailed event tracking including Guide Viewed, Guide Completed, Guide Dismissed, Survey Submitted, Survey Abandoned, and Resource Center interaction events. The analytics schema includes properties like Lifecycle UUID, Step ID, Variant ID, App Type, and Source.type for granular analysis.
+Complete integration with Amplitude analytics includes a comprehensive event schema featuring common event properties (App Type, Lifecycle UUID, Step ID, Variant ID), guide-specific events (Guide Viewed, Guide Completed, Guide Engaged), survey events (Survey Submitted, Survey Abandoned), and Resource Center interaction tracking. This enables detailed performance analysis and optimization of engagement campaigns.
 
-Amplitude Experiment integration enables A/B testing and multi-armed bandit experiments on guides and surveys, with variant configuration, exposure event handling, and insights dashboard analytics for performance tracking.
+## Experimentation and A/B Testing
 
-## Content Management and Organization
+Native integration with Amplitude Experiment enables sophisticated A/B testing and multi-armed bandit experiments on guides and surveys. The system supports variant configuration, exposure event handling, and comprehensive performance analytics through the insights dashboard, allowing teams to optimize engagement strategies based on data-driven insights.
 
-The platform features a robust content management system with template creation for reusable starting points, tags system for organizational structure, and bulk management operations. Advanced throttling capabilities provide rate-limiting strategies using global settings and tag-based granular control.
+## Content Management and Customization
 
-## Key API Endpoints and Methods
+**Template System** provides reusable starting points for guides and surveys with visibility management, bulk operations, and tag-based organization. Content lifecycle management supports draft/published/scheduled states with rollout percentage controls for gradual deployment.
 
-Critical SDK methods include:
-- `engagement.gs.show()` and `engagement.gs.reset()` for guide/survey display management
-- `forwardEvent()` for event-based triggers
-- `setSessionProperty()` and `_setUserProperties()` for user data management
-- `updateLanguage()` for localization
-- `setRouter()` for SPA configuration
-- `addCallback()` for custom function registration
+**Theme Editor** offers comprehensive branding control over colors, typography (Google Fonts integration), form controls, widget dimensions, animations, and platform-specific styling. Custom CSS support is available for web SDK implementations with specific class selectors for targeting form factors and survey elements.
 
-## Enterprise Features
+**Throttling and Rate Limiting** provides global and granular controls including limit/period settings, time delays between sequential guides, and advanced tag-based throttling for different content categories (campaigns, features, teams).
 
-Advanced capabilities include proxy setup through AWS CloudFront for unified distribution, comprehensive role-based permissions (No access, Viewer, Member, Manager, Administrator), localization with AI-powered translation using Claude, and XLIFF file upload workflows. The platform supports Content Security Policy (CSP) configuration and provides extensive customization through custom CSS styling with amplitude-engagement class selectors.
+## Localization and Multi-Language Support
 
-The Resource Center's Website scraper feature enables automatic content ingestion from documentation repositories using URL extraction methods, advanced filtering with path inclusion/exclusion, and content selector overrides for precise targeting of page elements.
+The platform supports multi-language implementations through SDK locale initialization, project-level language configuration, and fallback behavior settings. Three translation methods are available: web interface management, AI localization with Claude integration, and XLIFF file upload workflows for enterprise translation management.
+
+## Testing and Quality Assurance
+
+Preview mode enables comprehensive condition verification (trigger, limit, throttle) before launch. Troubleshooting capabilities include Reset User History, Ignore Throttle Limits, and manual event triggering for thorough testing workflows, ensuring optimal user experiences before deployment.
+
+## Enterprise Integration
+
+The platform integrates seamlessly into existing product ecosystems through proxy configurations (AWS CloudFront support), Content Security Policy compliance, and extensive callback systems for custom business logic integration. This enables enterprise-grade deployment while maintaining security and performance standards.
