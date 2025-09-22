@@ -20,3 +20,6 @@ Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/
 | NPS           | Capture customer satisfaction and loyalty by measuring the likelihood of that user recommending your product or feature. |
 | User feedback | Define your own questions to collect detailed input from your users.                                                     |
 | Rating        | Gather initial reactions to help you evaluate product experiences.                                                       |
+| Carousel <br/> {.tag .mobile .zero} | Highlight your app's key features with a swipe-able onboarding carousel.                           |
+| Banner Survey        | Provide any custom survey experience with the Banner form factor.                                                          |
+| Tooltip Survey        | Provide any custom survey experiences with the Tooltip form factor.                                                         |

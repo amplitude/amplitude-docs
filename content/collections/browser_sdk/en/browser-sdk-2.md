@@ -108,6 +108,10 @@ runOutsideAngular(function () { amplitude.init(...args); })
 The Angular zone overwrites certain DOM functions that, when invoked by [Amplitude autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture), causes some user interactions to break
 {{/partial:admonition}}
 
+{{partial:admonition type="info" heading="Next.js Integration"}}
+For detailed instructions on integrating Amplitude with Next.js applications, including both client-side and server-side setups, see the [Next.js Installation Guide](/docs/sdks/frameworks/nextjs-installation-guide).
+{{/partial:admonition}}
+
 
 ## Configure the SDK
 
@@ -235,7 +239,8 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
-| `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables network tracking. If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
+| `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -658,9 +663,39 @@ These two events capture properties that describe the corresponding element and 
 <!-- vale on-->
 {{/partial:collapse}}
 
+### Track frustration interactions
+
+Enable frustration interaction tracking to capture rage clicks and dead clicks. Amplitude defines "rage click" and 
+"dead click" events as:
+
+ * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
+ * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
+
+Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    frustrationInteractions: true, 
+  },
+});
+```
+
+#### Advanced configuration for frustration interactions
+
+Use the advanced configuration to control frustration interaction tracking.
+
+{{partial:collapse name="Tracking frustration interaction options"}}
+| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101)       ||
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element.|
+
+{{/partial:collapse}}
+
 ### Track network requests
 
-Track when network requests fail (supports XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
+Track when network requests fail (only XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
 
 Set `config.autocapture.networkTracking` to `true` to enable network request tracking
 
@@ -694,24 +729,6 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 
 {{/partial:collapse}}
 
-#### JSON body capturing
-
-When you enable network tracking, you can capture and filter JSON request and response bodies using the `.json()` method on Request and Response wrappers. This method allows you to selectively include or exclude specific JSON properties for privacy and security.
-
-The `.json()` method accepts two parameters:
-- `allow: string[]`: Array of property names to include in the captured JSON
-- `exclude: string[]`: Array of property names to exclude from the captured JSON
-
-```ts
-// Example: Capture only specific properties from request/response bodies
-const requestJson = await request.json(['userId', 'action'], ['password', 'token']);
-const responseJson = await response.json(['status', 'data'], ['sensitive_info']);
-```
-
-{{partial:admonition type="note" heading="JSON parsing behavior"}}
-The `.json()` method attempts to parse the body text as JSON. If the body isn't valid JSON, is empty, or you don't provide an `allow` parameter, the method returns `null` without throwing an error.
-{{/partial:admonition}}
-
 #### Advanced configuration for network tracking
 
 Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
@@ -730,10 +747,14 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | Defines the URL, URLs, or URL pattern to capture. By default captures all URLs. eg. `[/https:\/\/example.com\/api\/*/, 'https://example.com/api/status']` | `<any>` |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
+| `methods` | The HTTP methods to capture. e.g.: `["POST", "PUT", "DELETE"]` | `['*']` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestBody` | **Experimental.** Configuration for capturing request body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
-| `responseBody` | **Experimental.** Configuration for capturing response body JSON. Review [BodyCaptureRule](#bodycapturerule) for details. | `undefined` |
+| `requestBody` | **Experimental.** Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | **Experimental.** Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
+| `requestHeaders` | **Experimental.** Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | **Experimental.** Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 
@@ -746,49 +767,110 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 
 {{/partial:collapse}}
 
-#### Example: Capture request and response bodies
+#### Safe headers
 
-```ts
-amplitude.init(AMPLITUDE_API_KEY, {
-  autocapture: {
-    networkTracking: {
-      captureRules: [
-        {
-          hosts: ['api.example.com'],
-          statusCodeRange: '400-599',
-          requestBody: {
-            allowlist: ['userId', 'action', 'metadata'],
-            blocklist: ['password', 'token']
-          },
-          responseBody: {
-            allowlist: ['status', 'data', 'message'],
-            blocklist: ['internalId', 'debug']
-          }
-        }
-      ]
+When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captures only safe headers and excludes sensitive ones that may contain authentication credentials or personally identifiable information.
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+
+{{/partial:collapse}}
+
+#### Network body capture
+
+If a network request or response body is in JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`. You can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
+
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (For example: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
+
+Example request/response body
+
+```json
+{
+  "a": "A",
+  "b": {
+    "c": "C",
+    "d": {
+      "e": "E",
+      "f": "F"
     }
-  }
-});
+  },
+  "g": "G"
+}
 ```
 
-This configuration captures network requests to `api.example.com` with status codes 400-599 and includes specific JSON properties from request and response bodies while excluding sensitive information.
+| allowlist | Captured Result |
+| --- | --- |
+| `a` | `{ "a": "A" }` |
+| `a/b/*` | `{ "a": { "b": { "c": "C" } } }` |
+| `b/c` | `{ "b": { "c": "C" } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } } }` |
+| `b/d/*` | `{ "b": { "d": { "e": "E", "f": "F" } } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } }` |
+| `*` | `{ "a": "A", "g": "G" }` |
 
 ## Track an event
 
-Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+Events represent how users interact with your application. For example, the Button Clicked event might be an action you want to track.
 
 ```ts
-// Track a basic event
+// Track a basic event.
 amplitude.track('Button Clicked');
 
-// Track events with optional properties
+// Track events with optional properties.
 const eventProperties = {
   buttonColor: 'primary',
 };
 amplitude.track('Button Clicked', eventProperties);
 ```
 
-You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
+You can also pass a `BaseEvent` object to `track`. For more information, review the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
 
 ```ts
 const event_properties = {
