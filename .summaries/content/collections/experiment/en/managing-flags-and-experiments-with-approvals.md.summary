@@ -1,0 +1,17 @@
+**Summary:** This documentation covers Amplitude's Experiment Approvals feature for Growth and Enterprise customers, detailing the approval workflow configuration for feature flags and experiments, including peer approvals vs specific approvers setup, and the approval requirements for both activation/scheduling and critical live changes to target segments, variants, distribution, exposure events, bucketing salt, and sticky bucketing.
+
+**Keywords:**
+- Experiment Approvals
+- feature flags approval workflow
+- peer approvals vs specific approvers
+- pending approval status
+- target segments approval
+- variant distribution changes
+- exposure event modifications
+- bucketing salt approval
+- sticky bucketing approval
+- experiment configuration governance
+- approval banner review
+- locked flag/experiment state
+- Growth Enterprise customers
+- Organization Settings Experiment Approvals
