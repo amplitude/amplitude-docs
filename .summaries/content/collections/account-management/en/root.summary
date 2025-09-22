@@ -1,46 +1,42 @@
-## Amplitude Account Management System
+Amplitude's Account Management system provides comprehensive organizational and project-level administration capabilities for the analytics platform. The system operates on a hierarchical structure with organizations containing multiple projects, each with configurable settings, user permissions, and data management controls.
 
-Amplitude provides a comprehensive account management platform that enables organizations to configure, monitor, and control their analytics infrastructure across multiple projects and user hierarchies. The system supports enterprise-scale deployments with sophisticated user management, data governance, and cross-project analytics capabilities.
+## Core Product Architecture
 
-## Product Relationships and Feature Integration
+The account management system centers around **Organizations** as the top-level entity, containing multiple **Projects** that house analytics data. Each organization maintains centralized settings for billing, user management, SSO configuration, and cross-project features, while projects contain specific configurations for API keys, session definitions, time zones, and data collection parameters.
 
-The account management system operates through a hierarchical structure where **Organizations** contain multiple **Projects**, each with distinct configurations for API keys, currency settings, session definitions, and user permissions. The **Settings** interface serves as the central hub, providing both organizational-level controls (billing, SSO, user management) and project-specific configurations.
+**Portfolio** functionality enables Enterprise customers to create **Views** that merge up to 5 projects (expandable to 10) for cross-project analysis, using user ID/device ID matching and the User Mapping API for aliasing different user identifiers across projects.
 
-**Portfolio** functionality enables cross-project analysis by creating **Views** that merge up to 5-10 projects using user ID/device ID matching and the **User Mapping API** for identity resolution. This integrates with the **Permission Groups** system, which allows Enterprise customers to assign project-level access through group membership rather than individual user permissions.
+## User Management and Permissions
 
-The **Scale** feature provides dynamic behavioral sampling at the user identity level, working in conjunction with project-level settings to manage event volumes while maintaining statistical accuracy. This connects to the **Self-Service Data Deletion** system, which allows administrators to permanently remove specific events and properties while respecting scanning limits (1B events/month for Growth, 10B for Enterprise).
+The platform implements a four-tier role hierarchy: **Viewer**, **Member**, **Manager**, and **Admin**, with escalating permissions for content creation, data source management, and administrative capabilities. **Permission Groups** (Enterprise-only) enable bulk assignment of project permissions to multiple users simultaneously, with the system granting users the highest permission level when they belong to multiple groups.
 
-## Key Nomenclature and Definitions
+User provisioning supports **SCIM 2.0** integration through the User Management API, with Okta integration and support for standard schema fields (userName, givenName, familyName, email, active). The Members & Groups settings page provides interfaces for user invitations, project-level permission management, and content ownership transfers.
 
-**User Roles**: Four-tier hierarchy consisting of Viewer (read-only), Member (content creation), Manager (project administration), and Admin (full organizational control)
+## Data Management and Privacy
 
-**Permission Groups**: Enterprise feature enabling bulk assignment of project permissions to multiple users simultaneously, with highest permission level precedence when users belong to multiple groups
+**Scale** (Enterprise feature) provides dynamic behavioral sampling at the user identity level, with configurable sampling rates, user property inclusion lists for exempting key populations, and upsampling calculations with accuracy benchmarks across different DAU volumes.
 
-**SCIM 2.0 Provisioning**: Automated user lifecycle management using supported schema fields (userName, givenName, familyName, email, active) through identity providers like Okta
+The **Self-Service Data Deletion** feature allows Growth and Enterprise administrators to permanently delete specific events and properties through a task-based interface, with scanning limits of 1B events/month (Growth) and 10B events/month (Enterprise). The system includes GDPR/privacy compliance notifications for data deletion requests with configurable email alerts (Job Creation, Job Completion, Unset Violation).
 
-**API Keys vs Secret Keys**: API keys identify projects for data ingestion, while secret keys provide enhanced security with Key ID identifiers for authentication
+## API and Integration Management
 
-**Dynamic Behavioral Sampling**: Algorithmic sampling framework that maintains user identity consistency while reducing event volume, with upsampling calculations for metric accuracy
+Enterprise organizations access **self-service key management** through Organization Settings, enabling Managers and Admins to create, revoke, and delete API keys and secret keys. The system supports up to 50 active keys with 6-hour deletion propagation and permanent revocation processes. Secret keys include Key ID identifiers for enhanced security.
 
-**Views**: Portfolio-created data sources that merge multiple projects into unified analytics displays using identity matching algorithms
+**Webhooks** enable Enterprise customers to configure custom monitor notifications, automatically sending triggered alerts to external endpoints when KPI-related behavioral changes occur.
 
-## Broader Product Ecosystem Integration
+## Key Configuration Areas
 
-The account management system integrates with Amplitude's core analytics products through several touchpoints. **Session Replay** settings control sample rates and capture toggles at the organizational level, while **Amplitude Experiment** maintains separate app-level permissions. The **User Management API** and **User Privacy API** provide programmatic access for GDPR/CCPA compliance and automated user provisioning.
+**Session Replay Settings** include sample rate controls and SDK implementation toggles. **Currency Display Units** can be configured at the project level, affecting Revenue LTV charts, Event Segmentation metrics, and Data Tables without modifying underlying data values.
 
-**Webhooks** enable real-time integration with external systems by sending triggered monitor notifications when KPI-related behavioral changes occur. The system supports **SSO integration** with identity providers, requiring SAML configuration for enterprise deployments.
+**Project Settings** encompass API key/secret key rotation, session definition configuration, query time sampling, time zone settings, and user download features. Project deletion workflows and organization name/URL changes require CSM or support requests.
 
-Currency display units affect **Revenue LTV charts**, **Event Segmentation** revenue metrics, and **Data Tables** without modifying underlying data values. **Team Spaces** provide project-based collaboration environments that integrate with permission groups and user role hierarchies.
+## Core API Endpoints and Interfaces
 
-## API Endpoints and Command Line Interfaces
+- User Management API for SCIM provisioning and permission groups
+- User Privacy API for data deletion requests  
+- User Mapping API for Portfolio cross-project user aliasing
+- Organization Settings interface for administrative functions
+- Members & Groups settings page for user management
+- Projects settings for project-level configurations
 
-Key API integrations include:
-
-- **User Management API**: SCIM 2.0 provisioning and permission group management
-- **User Privacy API**: Automated data deletion request processing
-- **User Mapping API**: Cross-project identity resolution for Portfolio views
-- **Webhook endpoints**: Custom monitor notification delivery
-
-The system provides self-service interfaces through **Organization Settings > Projects** for API key management, **Members & Groups** settings for user administration, and project-level configuration panels for session definitions, time zones, and sampling parameters.
-
-Administrative workflows include bulk content ownership transfer, email domain migration processes, and organization URL/name changes requiring CSM or support team intervention. The platform maintains system limitations including 50 active API keys maximum, 6-hour deletion propagation windows, and project limits for Portfolio views requiring account team approval for expansion.
+The system integrates with external identity providers through SSO configuration and supports Slack integration for notifications and collaboration workflows.

@@ -1,15 +1,16 @@
-**Summary:** This documentation page provides an overview of survey functionality as a user feedback collection tool, detailing six survey templates (NPS, User feedback, Rating, Carousel, Banner Survey, Tooltip Survey) with their specific use cases and form factors.
+**Summary:** This documentation page provides an overview of survey functionality as a user feedback collection tool, detailing available survey templates including NPS, User feedback, Rating, Carousel (iOS-only), Banner Survey, and Tooltip Survey with their specific use cases and form factors.
 
 **Keywords:**
 - survey templates
 - NPS survey
 - user feedback collection
 - rating survey
-- carousel onboarding
+- carousel survey iOS
 - banner survey form factor
 - tooltip survey form factor
 - customer satisfaction measurement
 - survey blueprints
 - guides_and_survey blueprint
-- mobile carousel template
-- survey use cases
+- onboarding carousel
+- swipe-able interface
+- product experience evaluation

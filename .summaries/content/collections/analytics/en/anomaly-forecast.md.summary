@@ -19,5 +19,5 @@
 - Root Cause Analysis integration
 - Growth Enterprise plans
 - rolling windows rolling averages
-- 95% confidence interval
-- 120 days training data
+- confidence interval bands
+- orange anomaly indicators
