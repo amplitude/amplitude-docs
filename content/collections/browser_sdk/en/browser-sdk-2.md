@@ -907,12 +907,6 @@ Identify is for setting the user properties of a particular user without sending
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
-### Attributing autocapture events
-
-Autocapture events such as `session_start` fire [as soon as](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#using-autocapture) you initialize the browser SDK. 
-
-If you don't pass the `identify` object in the `init()` call, these events can fire before the user identity is associated with them.
-
 ### Set a user property
 
 The Identify object provides controls for setting user properties. To set a user property:
