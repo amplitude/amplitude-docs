@@ -133,7 +133,7 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `autocapture`              | `boolean\|AutocaptureOptions`. Configures autocapture tracking. See [Autocapture](#autocapture).                                                                                                                                                                                   |                                         |
 | `defaultTracking`          | `boolean`. Deprecated in version 2.10.0. Use `autocapture` instead. Configures default event tracking.                                                                                                                                                                             | `true`                                  |
 | `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                |
-| `identify`                 | `IIdentify`. Sets an Identify object to be called automatically during initialization. This ensures proper attribution for autocapture events like `session_start` that occur immediately after init. See [Set user identity during initialization](#set-user-identity-during-initialization). | `undefined`                             |
+| `identify`                 | `IIdentify`. Sets an Identify object to be called during initialization. This is called before autocapture events, like `session_start`, ensuring proper attribution of events. | `undefined`                             |
 | `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                             |
 | `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                |
 | `cookieOptions.sameSite`   | `string`. Sets `SameSite` property of cookies created.                                                                                                                                                                                                                             | `Lax`                                   |
@@ -906,30 +906,6 @@ Identify is for setting the user properties of a particular user without sending
 {{partial:admonition type="note" heading="Identify calls"}}
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
-
-### Set user identity during initialization
-
-Sometimes you don't know your user identity until after you call `init()`, but calling `identify()` afterward can risk [timing issues](#attributing-autocapture-events).
-
-To address this, the `identify` configuration parameter allows you to set the user identity when initializing the SDK. 
-
-For example:
-
-```ts
-const identify = new amplitude.Identify();
-identify.set('user_type', 'premium');
-identify.set('subscription_plan', 'pro');
-
-amplitude.init(AMPLITUDE_API_KEY, {
-  identify,
-  autocapture: {
-    sessions: true,
-    pageViews: true,
-  },
-});
-```
-
-Passing `identify` object in the `init()` call helps prevent timing issues with events that occur between `init()` and `identify()` by automatically associating the user identity with the initialization call.
 
 ### Attributing autocapture events
 
