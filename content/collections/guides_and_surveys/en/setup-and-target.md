@@ -83,7 +83,7 @@ Common use cases for session properties include:
 
 {{partial:admonition type="note" heading="Feature availability"}}
 Session properties are currently a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
-{{/partial:admonition}}                                                                                                                         |
+{{/partial:admonition}}
 
 ### Where
 
