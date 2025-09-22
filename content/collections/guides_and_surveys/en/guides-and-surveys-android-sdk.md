@@ -8,6 +8,10 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys Android SDK requires:
@@ -146,7 +150,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```kotlin
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
 ## Router configuration
