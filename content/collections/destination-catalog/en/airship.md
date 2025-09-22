@@ -72,7 +72,7 @@ To confirm you've configured it correctly, [look up your test user or device in
 
 1. In Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Airship**.
-3. Enter your Airship API keys.
+3. Enter both your Airship App Key and the Airship Master Secret Key, separated by a comma:
 4. Map your Airship ID to an Amplitude ID. Amplitude recommends mapping `UAChannelID` in Amplitude to `Auto Channel ID` in Airship; however, you can map user ID, device ID, or any user property in Amplitude to any Airship ID.
 5. Save your work.
 
