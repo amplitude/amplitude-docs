@@ -41,7 +41,7 @@ After approvals are enabled for a project, Amplitude recommends that you follow 
 
 While the approval is pending, users can make additional changes to the flag or experiment configuration, enter or exit testing mode, or cancel the request at any time.
 
-When the scheduled flag or experiment gains approval, users with access can modify any setting until the scheduled start date.
+When the scheduled flag or experiment gains approval, the flag or experiment is considered live and requires approvals for critical changes.
 
 ### Requiring approvals for critical changes to live flags and experiments
 
