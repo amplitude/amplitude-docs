@@ -74,6 +74,7 @@ The following list is Autocapture's default settings for capturing clicks and ch
 * Autocapture captures the text your website or app displays. For example, the content (`textContent`) of the element clicked and its children. It's not recommended that you use Autocapture's element interaction tracking on pages that may contain sensitive information. Amplitude uses pattern matching to automatically mask any text content that looks like a credit card number, social security number, or email addresses.
 * The exception to these attribute collection rules is when an element has an explicit attribute added with the prefix `data-amp-track-`. This allows data in these attributes to be intentionally passed back to Amplitude.
 * Autocapture automatically removes value, event handlers, style, and react attributes.
+* Page titles can be masked in page view events by adding the `data-amp-mask` attribute to the `<title>` element, which replaces the actual title with a masked value to protect sensitive information. For implementation details, go to [Browser SDK page title masking](/docs/sdks/analytics/browser/browser-sdk-2#page-title-masking).
 
 ### Manual Autocapture protections
 
