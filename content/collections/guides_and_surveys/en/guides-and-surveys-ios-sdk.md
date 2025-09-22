@@ -8,6 +8,10 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -23,14 +27,14 @@ Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
 1. In Xcode, click *File > Add Packages...*
-2. Enter the repository url `https://github.com/amplitude/Amplitude-Engagement-Swift`
+2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
 3. Select the `Amplitude-Engagement-Swift` package, version `1.0.5`.
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
-```
+```T
 pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 ```
 {{/partial:tab}}
@@ -110,7 +114,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```swift
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
 ## Router configuration

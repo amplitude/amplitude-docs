@@ -11,11 +11,8 @@
 - $price field
 - ISO 4217 currency codes
 - ExchangeRate API
-- target currency configuration
-- project settings currency
+- project-level target currency
 - cart properties conversion
-- Enterprise plans currency features
-- Govern Add-On
-- derived properties OOTB
-- custom derived properties
-- property selectors charts
+- derived properties configuration
+- Enterprise and Growth plans
+- daily exchange rates lookup tables

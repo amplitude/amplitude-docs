@@ -1,71 +1,70 @@
-Amplitude is a comprehensive product analytics platform that provides robust data collection, tracking, and analysis capabilities for understanding user behavior and business metrics. The platform centers around event-based analytics with sophisticated user identification, session management, and revenue tracking systems.
+Amplitude Data Sources is a comprehensive data ingestion and management platform that enables organizations to connect, monitor, and analyze data from third-party platforms and custom implementations. The system provides robust tracking capabilities for user behavior, revenue, and session analytics while offering advanced debugging and monitoring tools for data quality assurance.
 
-## Core Features and Capabilities
+## Core Product Architecture
 
-**Data Sources and Integration**: Amplitude operates through a centralized Data Sources interface that enables connection to third-party platforms for data ingestion. The platform includes an Ingestion Debugger for monitoring data quality, tracking throttled users/devices, and managing event volume. Integration capabilities extend to Slack notifications for source activity monitoring and support for various data export destinations including Snowflake and Redshift.
+The Amplitude Data Sources ecosystem consists of several interconnected components:
 
-**User Tracking and Identity Management**: The platform employs a three-tier user identification system using Device ID, User ID, and Amplitude ID. This architecture supports automatic merging of anonymous users when they become identified, cross-domain tracking capabilities, and multi-device user attribution. The system handles complex scenarios like anonymous-to-identified user transitions and maintains data integrity across merged user profiles.
+**Data Sources Interface** serves as the central hub for managing third-party platform connections through the Sources List tab, where users can monitor ingestion status, configure source notifications, and track data flow from external systems.
 
-**Session Analytics**: Amplitude provides sophisticated session tracking with automatic session ID generation using Unix timestamps. The platform differentiates between mobile (5-minute timeout) and web (30-minute timeout) session definitions, tracks Start/End Session events, and handles out-of-session events with special session ID -1 designation.
+**Ingestion Debugger** provides real-time monitoring capabilities for data quality, including throttled users/devices tracking, event volume analysis over 30-day and 90-day timeframes, successful/error request monitoring, and silenced device ID management.
 
-**Revenue Analytics**: Comprehensive revenue tracking capabilities include multiple revenue properties ($revenue, $price, $quantity, $productId, $revenueType, $currency), support for both in-app purchases (IAPs) and non-IAP transactions, and revenue verification through iTunes Connect Shared Secret or Google Play License Public Key integration.
+**Export API and Data Destinations** facilitate data export to external systems like Snowflake and Redshift, with specific handling for timezone differences and data synchronization.
 
-## Product Relationships and Architecture
-
-The Amplitude ecosystem operates through interconnected components where data sources feed into the core analytics engine, which then processes events through various tracking mechanisms. The Data Sources interface serves as the primary ingestion point, while specialized tracking modules handle user identification, session management, and revenue attribution. Export capabilities connect to external data warehouses and APIs, creating a comprehensive data flow from collection to analysis to export.
-
-The platform's architecture supports both real-time analytics through charts and dashboards, and batch processing through export APIs. Revenue tracking integrates with mobile app stores for transaction verification, while session tracking works across web and mobile platforms with platform-specific timeout configurations.
+**Tracking SDKs and APIs** enable custom instrumentation for revenue tracking, session management, and unique user identification across web and mobile platforms.
 
 ## Key Nomenclature and Definitions
 
-**Event Properties**: Core tracking elements including revenue properties ($revenue, $price, $quantity, $productId, $revenueType, $currency) and session properties (session ID, client_event_time, server_upload_time).
+**User Identity Management:**
+- **Device ID**: Platform-specific identifier (IDFV for iOS, UUID for web)
+- **User ID**: Custom identifier assigned by the application
+- **Amplitude ID**: Internal identifier that enables user merging and cross-device tracking
+- **Anonymous User Merging**: Automatic process linking pre-identification and post-identification user behavior
 
-**User Identification**: 
-- Device ID: Platform-specific identifier (IDFV for iOS, UUID for others)
-- User ID: Custom identifier assigned by the application
-- Amplitude ID: Internal identifier for user profile management
+**Session Tracking:**
+- **Session ID**: Unix timestamp-based identifier with platform-specific timeouts (5 minutes mobile, 30 minutes web)
+- **Session Length**: Calculated as max(client_event_time) - min(client_event_time) for events within a session
+- **Out-of-session Events**: Events assigned session ID -1 when occurring outside defined session boundaries
+- **Start/End Session Events**: Configurable automatic events for session boundary tracking
 
-**Session Management**:
-- Session ID: Unix timestamp-based identifier for user sessions
-- Session timeout: Platform-specific inactivity periods (5 minutes mobile, 30 minutes web)
-- Out-of-session events: Events with session ID -1 indicating activity outside normal session boundaries
+**Revenue Tracking Properties:**
+- **$revenue**: Total transaction value
+- **$price**: Individual item price
+- **$quantity**: Number of items
+- **$productId**: Product identifier
+- **$revenueType**: Transaction categorization
+- **$currency**: ISO 4217 currency codes
+- **Revenue Verification**: iTunes Connect Shared Secret or Google Play License Public Key validation
 
-**Revenue Event Types**:
-- Revenue: Standard revenue events
-- Revenue (Verified): App store verified transactions
-- Revenue (Unverified): Failed verification transactions
+**Data Quality Monitoring:**
+- **Throttled Users/Devices**: Rate-limited entities due to excessive event volume
+- **Silenced Device IDs**: Permanently blocked devices from data ingestion
+- **Manager Permissions Throttling**: Administrative controls for data ingestion limits
 
-**Data Processing**:
-- client_event_time: When event occurred on client device
-- server_upload_time: When event was received by Amplitude servers
-- Event filtering: Exclusion of hidden, inactive, or deleted events from calculations
+## Integration Ecosystem
 
-## Broader Product Ecosystem Integration
+The platform integrates with multiple external systems and services:
 
-Amplitude integrates with mobile app ecosystems through iTunes Connect and Google Play for revenue verification, supports cross-platform tracking for web and mobile applications, and connects to enterprise data infrastructure through Snowflake and Redshift destinations. The platform accommodates various development frameworks through HTTP APIs and SDK implementations.
+**Third-party Platforms** connect through the Sources interface with configurable notification systems, including Slack integration for real-time alerts about source activity and data quality issues.
 
-The system handles timezone complexities by maintaining UTC standards for exports while supporting project-specific timezone settings for user-facing analytics. This dual approach ensures data consistency across different consumption patterns while maintaining user experience optimization.
+**Data Warehouses** like Snowflake and Redshift receive exported data with UTC timezone standardization, while the Export API provides programmatic access using server_upload_time-based filtering rather than event_time.
 
-## Technical Implementation Details
+**Mobile App Stores** integrate for revenue verification through iTunes Connect and Google Play services, enabling distinction between verified and unverified in-app purchase events.
 
-**API Endpoints and Functions**:
-- logRevenueV2 function for revenue tracking
-- HTTP API for session tracking and revenue fields
-- setOptOut method for privacy compliance
-- setMinTimeBetweenSessionsMillis for session timeout configuration
-- trackingSessionEvents for session event management
+**Cross-domain Tracking** enables user journey analysis across multiple web properties within the same organization through shared device identification.
 
-**Configuration Options**:
-- defaultTracking sessions for automatic session management
-- iTunes Connect Shared Secret and Google Play License Public Key for revenue verification
-- ISO 4217 currency codes for international revenue tracking
-- Manager permissions for throttling controls
+## API Endpoints and Implementation
 
-**Data Export and Analysis**:
-- Export API with UTC timezone standardization
-- Revenue LTV charts for lifetime value analysis
-- User Sessions charts with custom session properties
-- Pathfinder charts for user journey analysis
-- Event Segmentation charts with project timezone settings
+**Revenue Tracking API:**
+- `logRevenueV2()` function for comprehensive revenue event logging
+- HTTP API revenue fields for server-side implementation
+- `setOptOut()` method for privacy compliance
 
-The platform supports portfolio-level cross-project user matching and handles MTU (Monthly Tracked Users) billing implications through sophisticated user deduplication and attribution mechanisms.
+**Session Management API:**
+- `setMinTimeBetweenSessionsMillis()` for custom session timeout configuration
+- `trackingSessionEvents` and `defaultTracking.sessions` for automatic session event generation
+
+**Data Export:**
+- Export API with UTC-based date range filtering
+- Raw data exports to Redshift with immutable merged user handling
+
+The system generates three distinct revenue event types (Revenue, Revenue (Verified), Revenue (Unverified)) that populate Revenue LTV charts, while session data feeds into User Sessions charts and Pathfinder analysis tools. Event filtering excludes hidden, inactive, and deleted events from calculations, ensuring data accuracy across all analytical outputs.

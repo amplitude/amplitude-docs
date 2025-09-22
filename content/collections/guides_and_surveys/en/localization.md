@@ -46,7 +46,7 @@ Amplitude considers only the language of a locale code. For example, `fr_FR` and
 
 Navigate to *Project Settings > Guides and Surveys*.
 
-From here, you can specify the localiation settings for Guides and Surveys.
+From here, you can specify the localization settings for Guides and Surveys.
 
 On this tab, you can:
 
@@ -55,9 +55,18 @@ On this tab, you can:
 - Define the languages available for your guides and surveys
 - Set the behavior or fallback when a translation file for an individual guide or survey is unavailable or out of date.
 
-{{partial:admonition type="note" heading=""}}
-English is the default language for all projects. This default setting can only be changed by Amplitude support staff. To update your default language, contact [Amplitude Support](https://gethelp.amplitude.com)
+Guides & Surveys supports [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language codes, and the following locales:
 
+* English: `en-US`, `en-GB`, `en-AU`, `en-CA`, `en-IN`
+* Spanish: `es-ES`, `es-MX`, `es-AR`, `es-CO`
+* French: `fr-FR`, `fr-CA`
+* Portuguese: `pt-BR`, `pt-PT`
+* Chinese: `zh-CN (Simplified)`, `zh-TW (Traditional)`, `zh-HK (Hong Kong, Traditional)`
+* German: `de-DE`, `de-AT`, `de-CH`
+* Arabic: `ar-SA`, `ar-EG`, `ar-MA`
+
+{{partial:admonition type="note" heading=""}}
+English is the default language for all projects. This default setting can only be changed by Amplitude Support staff. To update your default language, contact [Amplitude Support](https://gethelp.amplitude.com)
 {{/partial:admonition}}
 
 ##### To add a supported language
@@ -69,7 +78,7 @@ You can select as many as you want.
 
 ### Specifying fallback behavior
 
-Fallback behavior is what happens if, for some reason, the localized content is not available. You can specify the following types of fallback behavior:
+Fallback behavior is what happens if, for some reason, the localized content isn't available. You can specify the following types of fallback behavior:
 
 - **When translation is unavailable**: If a translation for a specific guide or survey hasn't been uploaded, you can specify if you want the content to appear in the default language or if you don't want the content to appear at all.
 - **When translation is outdated**: If the default content is updated, but that update isn't reflected in the translated content, you can specify if you want the content to appear in the default language, the outdated version of the content should appear, or if you don't want the content to appear at all.
@@ -125,7 +134,7 @@ The web interface is the most direct method of adding localized content to a gui
 By default, this is **English**.
 3. Select the language you want.
 4. Update the individual strings with your translated content.
-All content is automatically associated with the langauge displayed in the language toggle.
+All content is automatically associated with the language displayed in the language toggle.
 
 
 {{/partial:tab}}
@@ -136,7 +145,7 @@ AI localization automatically translates your guide or survey content using [Cla
 - Make the translations natural and user-friendly.
 - Preserve HTML tags, formatting, and special characters.
 
-This feature provides quick, automated translations for all your project's supported languages. However, Amplitude cannot guarantee the accuracy of AI-translated strings. Therefore, it's highly recommended to manually review AI-translated content before publishing your guide or survey to your users. You can edit AI translations using the web interface.
+This feature provides quick, automated translations for all your project's supported languages. However, Amplitude can't guarantee the accuracy of AI-translated strings. Therefore, it's highly recommended to manually review AI-translated content before publishing your guide or survey to your users. You can edit AI translations using the web interface.
 
 ##### To use AI localization
 

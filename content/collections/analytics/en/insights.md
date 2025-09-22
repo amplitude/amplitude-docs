@@ -15,7 +15,7 @@ Amplitude's alerts feature uses [Prophet](https://facebook.github.io/prophet/), 
 
 ### Feature availability
 
-To find out if this feature is available for your Amplitude plan, [visit our pricing page](https://amplitude.com/pricing).
+To find out if this feature is available for your Amplitude plan, [visit the pricing page](https://amplitude.com/pricing).
 
 ## Before you begin
 
@@ -23,7 +23,7 @@ There are a few details about alerts you should be aware of:
 
 * You can set alerts for multiple events and user segments at the same time.
 * If you use a group-by on a property, your alert tracks metrics against the top 1,000 segments only.
-* Currently, custom alerts are available in [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) and [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) charts, and only on those set to a daily or hourly frequency.
+* Custom alerts are available in [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) and [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) charts, and only on those set to a daily or hourly frequency.
 * A Funnel Analysis must measure conversion over time with percentage to support alerts.
 * In an Event Segmentation chart, if you need to track weekly or monthly KPIs, use a 7-day or 30-day rolling window. Amplitude doesn't support alerts for the Frequency and Formula tabs, or for the bar chart visualization. Some custom formulas are supported, as long as they produce a chart with an X-axis time series.
 * Only chart owners can set alerts. If someone else created a chart you want to receive alerts for make a copy and save it before setting up an alert. Additionally, any changes you make to a chart apply to the alert tracking it.
@@ -32,9 +32,9 @@ There are a few details about alerts you should be aware of:
 
 There are three types of alerts in Amplitude: **automatic**, **custom**, and **smart**.
 
-An automatic alert is set up for every event you instrument in Amplitude. It's designed to track all events for anomalies and unexpected trends. This happens automatically; there is nothing for you to do in setting up an automatic alert.
+Amplitude creates an automatic alert for every event you instrument. This helps you track all events for anomalies and unexpected trends. This happens automatically, there is nothing for you to do in setting up an automatic alert.
 
-Amplitude will monitor an event for anomalies once it achieves a volume of 100 or more events per day in at least 15 of the last 30 days. Amplitude considers an anomaly to have occurred when an event's value falls outside of the 99% confidence interval of historical data. Amplitude uses 120 training days for automatic monitors.
+Amplitude monitors an event for anomalies when it reaches a volume of 100 or more events per day in at least 15 of the last 30 days. Amplitude considers an anomaly to have occurred when an event's value falls outside of the 99% confidence interval of historical data. Amplitude uses 120 training days for automatic monitors.
 
 Automatic event monitoring applies **only** to individual events. The Amplitude-defined `Any Event` doesn't qualify for anomaly monitoring.
 

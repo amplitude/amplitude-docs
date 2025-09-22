@@ -6,8 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360061687631-Learn-from-yo
 this_article_will_help_you:
   - 'See your experimental results'
   - 'Understand and interpret those results'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714516898
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1758580175
+landing: false
 ---
 You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to check if your hypothesis was correct.
 
@@ -137,7 +138,7 @@ The Diagnostics card provides information about how your experiment is deliverin
 
 For more control, open any of these charts in the chart build.
 
-## Interpret notifications
+## Enable notifications
 
 You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/experiment/notifications) to set up these notification alerts. 
 
