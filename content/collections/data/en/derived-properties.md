@@ -19,7 +19,7 @@ For example, you may want to create a chart that groups by whether an item added
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**. Go to the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on Enterprise and Growth plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a derived property
 
