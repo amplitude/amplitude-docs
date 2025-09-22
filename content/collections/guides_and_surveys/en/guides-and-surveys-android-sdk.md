@@ -146,7 +146,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```kotlin
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
 ## Router configuration
