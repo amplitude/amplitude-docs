@@ -6,45 +6,46 @@ landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1758643314
+hide_from_search: true
 ---
 
 The Amplitude Model Context Protocol (MCP) integration enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
-## Available Tools & Capabilities
+## Available tools and capabilities
 
 The Amplitude MCP provides comprehensive access to your analytics through these categories:
 
-### Analytics & Data Querying
+### Analytics and data querying
 
 * **Event Segmentation:** Analyze user actions, unique users, and event volumes  
 * **Funnel Analysis:** Track conversion rates across user journeys  
 * **Retention Analysis:** Monitor user engagement and return patterns  
 * **Custom Queries:** Execute ad-hoc analysis on your behavioral data
 
-### Content Discovery & Management
+### Content discovery and management
 
 * **Search:** Find charts, dashboards, notebooks, and experiments by name or content  
 * **Dashboard Access:** Retrieve complete dashboards with all associated charts  
 * **Notebook Integration:** Access analysis notebooks and their visualizations  
 * **Chart Querying:** Get data from specific charts with customizable parameters
 
-### Experimentation & Feature Management
+### Experimentation and feature management
 
 * **A/B Test Analysis:** Query experiment results and statistical significance  
 * **Feature Flag Management:** Monitor flag status and variant performance  
 * **Deployment Tracking:** Access experiment deployment configurations
 
-### Data Schema Exploration
+### Data schema exploration
 
 * **Event Discovery:** Browse all tracked events in your projects  
 * **Property Exploration:** View available event and user properties  
 * **Data Quality:** Monitor data ingestion and identify anomalies
 
-## Implementation Guide
+## Implementation guide
 
-### Option 1: Claude Web & Desktop
+Complete the steps below, depending on the tool you're integrating with. 
 
-**Setup Steps:**
+### Claude Web and Desktop
 
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app  
 2. Go to Settings → Connectors → Add custom connector  
@@ -54,11 +55,9 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 4. Complete Amplitude OAuth authorization when prompted  
 5. Start asking questions about your Amplitude data\!
 
-### Option 2: Claude Code
+### Claude Code
 
 **Best for:** Developers who prefer command-line interfaces
-
-**Setup Steps:**
 
 1. Add the MCP server globally:
 
@@ -80,9 +79,7 @@ claude
 
 4. Follow the authentication flow
 
-### Option 3: Cursor
-
-**Setup Steps:**
+### Cursor
 
 1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings`  
 2. Navigate to: `Tools & Integrations > New MCP Server`  
@@ -101,9 +98,7 @@ claude
 
 4. Return to Tools & Integration tab and authenticate with Amplitude
 
-### Option 4: Gemini CLI
-
-**Setup Steps:**
+### Gemini CLI
 
 1. Ensure you're authenticated with Gemini  
 2. Add this to your `~/.gemini/settings.json`:
@@ -125,9 +120,9 @@ claude
 gemini/mcp auth amplitude
 ```
 
-## Query Examples
+## Query examples
 
-### Basic Analytics Queries
+### Basic analytics queries
 
 ```
 "What were my daily active users over the last 7 days?"
@@ -137,7 +132,7 @@ gemini/mcp auth amplitude
 "Which features have the highest engagement rates?"
 ```
 
-### Experiment Analysis
+### Experiment analysis
 
 ```
 "What's the performance of my checkout experiment?"
@@ -147,7 +142,7 @@ gemini/mcp auth amplitude
 "Which experiment variants are currently running?"
 ```
 
-### Content Discovery
+### Content discovery
 
 ```
 "Find all charts related to user retention"
@@ -157,7 +152,7 @@ gemini/mcp auth amplitude
 "Show me experiments testing the payment flow"
 ```
 
-### Advanced Analysis
+### Advanced analysis
 
 ```
 "Compare user behavior between iOS and Android platforms"
@@ -167,7 +162,7 @@ gemini/mcp auth amplitude
 "Analyze feature adoption rates after our recent product launch"
 ```
 
-## Typical Analysis Workflow
+## Typical analysis workflow
 
 Most analysis questions follow this pattern:
 
@@ -187,21 +182,21 @@ You: "Can you break this down by user segment?"
 AI: [Modifies query to include segmentation]
 ```
 
-## Security & Compliance
+## Security and compliance
 
-### Data Access
+### Data access
 
 * Integration only accesses Amplitude projects where you have existing permissions  
 * No additional data access beyond your current Amplitude account privileges  
 * OAuth authentication ensures secure connection
 
-### Privacy Considerations
+### Privacy considerations
 
-Your Amplitude data will be processed by the AI service you're using (Claude, Gemini, etc.). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (GDPR, CCPA, etc.)
+Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (GDPR, CCPA)
 
 ## Troubleshooting
 
-### Common Issues
+### Common issues
 
 **Authentication Problems**
 
@@ -226,7 +221,7 @@ Your Amplitude data will be processed by the AI service you're using (Claude, Ge
 * Authorization page may appear to spin indefinitely (close tab after authentication)  
 * Desktop apps may require restart after configuration changes
 
-### Getting Help
+### Getting help
 
 If you encounter issues not covered here:
 
@@ -235,7 +230,7 @@ If you encounter issues not covered here:
 3. Check that your Amplitude account has the necessary permissions  
 4. Contact your Amplitude administrator for organization-specific setup help
 
-## Technical Specifications
+## Technical specifications
 
 **Transport Type:** Streamable HTTP (Remote)  
 **Authentication:** OAuth 2.0 with Amplitude  
