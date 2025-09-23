@@ -83,11 +83,9 @@ Amplitude considers an experiment to be statistically significant (stat sig) whe
 
 The Summary card displays a badge labeled *Significant* if the experiment reached statistical significance, and a badge labeled *Not Significant* if it didn't. This card can display several badges at the same time:
 
-* **Inconclusive**: the test was inconclusive for the primary metric.
-* **Above Goal** or *Below Goal:* the primary metric's mean was either above or below its goal depending on the direction of the test (increase = above, decrease = below).
-* **Above Control** or **Below Control** the primary metric's mean was either above or below the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
-
-![summary.png](/docs/output/img/workflow/summary-png.png)
+* **Inconclusive**: The test was inconclusive for the primary metric.
+* **Above Goal** or **Below Goal**: The primary metric's mean was either above or below its goal depending on the direction of the test (increase = above, decrease = below).
+* **Above Control** or **Below Control** The primary metric's mean was either above or below the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
 
 ## Analysis card
 
@@ -104,16 +102,16 @@ For more information, review [Dig deeper into experimentation data with Experime
 The Experiment Results chart on the Activity tab responds to the selections you make in the [Filter card](#filter-card).
 {{/partial:admonition}}
     
-Click *Open in Chart* to open a copy of the Experiment Results in a new chart.
+Click **Open in Chart** to open a copy of the Experiment Results in a new chart.
     
 {{partial:admonition type='note'}}
-If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead view the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
+If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To view the comparison between two non-control treatments, either change the control variant or open the test in Analytics and create a chart using the two treatments you're interested in.
 {{/partial:admonition}}
 
-If needed, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
+If needed, adjust the experiment’s confidence level. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
   
 {{partial:admonition type='note'}}
-Lowering your experiment’s confidence level makes it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
+Lowering your experiment’s confidence level makes it more likely that your experiment achieves statistical significance. However, this increases the likelihood of a false positive.
 {{/partial:admonition}}
 
 ### Group by
@@ -124,9 +122,7 @@ Group-bys in Experiment charts is a Beta feature, and may result in slower query
 
 Oftentimes, you run an experiment and want to know if the experiment effected different users differently. In other words, if there are heterogeneous treatment effects or not. One way to do this is to filter for `Platform = iOS` and then `Platform = Android` and then `Platform = Web`. Grouping results by `Platform` achieves the same result, with fewer clicks. For more information, review [Group-bys: How Amplitude prunes and orders chart results](/docs/analytics/charts/group-by) for more information.
 
-{{partial:admonition type="note"}}
 Group-by settings on the dashboard are temporary. Refreshing the dashboard resets any group-bys you define.
-{{/partial:admonition}}
 
 ## Diagnostics card
 
@@ -139,7 +135,7 @@ The Diagnostics card provides information about how your experiment is deliverin
 * Anonymous exposures (cumulative and non-cumulative)
 * [Exposures without Assignments](/docs/feature-experiment/troubleshooting/exposures-without-assignments) (cumulative and non-cumulative)
 
-For more control, open any of these charts in the chart build.
+For more control, open any of these charts in the Analysis Chart modality.
 
 ## Interpret notifications
 
@@ -157,6 +153,6 @@ Amplitude Experiment sends a notification to the editors of the experiment.
 
 ## Next steps
 
-It’s important to remember that no experiment is a failure. Even if you didn’t get the results you were hoping for, you can still learn something from the process—even if your test didn’t reach stat sig. Use your results as a springboard to asking hard questions about the changes you made, the outcomes you saw, what your customers expect from your product, and how you can deliver that.
+It’s important to remember that no experiment is a failure. Even if you didn’t get the results you were hoping for, you can still learn something from the process. Use your results as a starting point to asking questions about the changes you made, the outcomes you saw, what your customers expect from your product, and how you can deliver on those expectations.
 
 In general, the next step should be deciding whether to conduct another experiment that supports your hypothesis to gather more evidence, or to go ahead and implement the variant that delivered the best results. You can also export your experiment to the Experiment Analysis in Amplitude Analytics and conduct a deeper dive there, where you can segment your users there and hopefully generate more useful insights.
