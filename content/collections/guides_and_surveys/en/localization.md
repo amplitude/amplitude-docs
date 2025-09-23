@@ -31,7 +31,8 @@ amplitude.add(window.engagement.plugin({locale: currentLocale}))
 {{/partial:tab}}
 {{partial:tab name="Third-party analytics"}}
 ```js
-const currentLocale = getLocale() // "en" or "en-US"
+// replace with desired function
+const currentLocale = navigator.language // e.g. "en-US"
 
 engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party Analytics SDKs
 ```
