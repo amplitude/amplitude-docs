@@ -13,118 +13,122 @@ The Amplitude Model Context Protocol (MCP) integration enables teams to analyze 
 
 ## Available tools and capabilities
 
-The Amplitude MCP provides comprehensive access to your analytics through these categories:
+The Amplitude MCP provides comprehensive access to your analytics through these tools:
 
-### Analytics and data querying
+{{partial:collapse name="Available tools"}}
+| Tool Name              | Description                                                                                                                                    |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `search`               | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
+| `get_charts`           | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
+| `get_dashboard`        | Get specific dashboards and all their charts including chart IDs that can be queried individually                                              |
+| `get_notebook`         | Get specific notebooks and all their charts including chart IDs that can be queried individually                                               |
+| `get_flags`            | Retrieve feature flags from a project with optional filtering by deployment, type, and deleted status                                          |
+| `get_experiments`      | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
+| `get_deployments`      | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
+| `get_metrics`          | List all metrics from a project with optional filtering and sorting by various criteria                                                        |
+| `get_metric`           | Get detailed information about a specific metric by ID                                                                                         |
+| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad hoc analysis within a project                                                   |
+| `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
+| `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
+| `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
+| `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
+| `get_project_api_keys` | Get analytics API keys for a specific project                                                                                                  |
+| `get_events`           | Retrieve events from a project with optional filtering and sorting                                                                             |
+| `get_event_properties` | Retrieve event properties from a project with filtering options                                                                                |
+| `get_user_properties`  | Retrieve user properties from a project with filtering options                                                                                 |
+| `get_session_replays`  | Search for session replays in the last 30 days, filtered by user properties or events.                                                         |
 
-* **Event Segmentation:** Analyze user actions, unique users, and event volumes  
-* **Funnel Analysis:** Track conversion rates across user journeys  
-* **Retention Analysis:** Monitor user engagement and return patterns  
-* **Custom Queries:** Execute ad-hoc analysis on your behavioral data
+{{/partial:collapse}}
 
-### Content discovery and management
 
-* **Search:** Find charts, dashboards, notebooks, and experiments by name or content  
-* **Dashboard Access:** Retrieve complete dashboards with all associated charts  
-* **Notebook Integration:** Access analysis notebooks and their visualizations  
-* **Chart Querying:** Get data from specific charts with customizable parameters
-
-### Experimentation and feature management
-
-* **A/B Test Analysis:** Query experiment results and statistical significance  
-* **Feature Flag Management:** Monitor flag status and variant performance  
-* **Deployment Tracking:** Access experiment deployment configurations
-
-### Data schema exploration
-
-* **Event Discovery:** Browse all tracked events in your projects  
-* **Property Exploration:** View available event and user properties  
-* **Data Quality:** Monitor data ingestion and identify anomalies
-
-## Implementation guide
+## Implementation instructions
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-### Claude Web and Desktop
-
+{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, Gemini CLI"}}
+{{partial:tab name="Claude (web and desktop)"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app  
 2. Go to Settings → Connectors → Add custom connector  
 3. Configure the integration:  
    * **Name:** Amplitude  
    * **URL:** `https://mcp.amplitude.com/v1/mcp`  
 4. Complete Amplitude OAuth authorization when prompted  
-5. Start asking questions about your Amplitude data\!
-
-### Claude Code
-
+5. Start asking questions about your Amplitude data.
+{{/partial:tab}}
+{{partial:tab name="Claude Code"}}
 **Best for:** Developers who prefer command-line interfaces
 
-1. Add the MCP server globally:
+   1. Add the MCP server globally:
 
-```shell
-claude mcp add -t http -s user Amplitude "https://mcp.amplitude.com/v1/mcp"
-```
+       ```shell
+       claude mcp add -t http -s user Amplitude "https://mcp.amplitude.com/v1/mcp"
+       ```
 
-2. Start Claude Code:
+   2. Start Claude Code:
 
-```shell
-claude
-```
+       ```shell
+       claude
+       ```
 
-3. Authenticate with Amplitude:
+   3. Authenticate with Amplitude:
 
-```shell
-/mcp
-```
+       ```shell
+       /mcp
+       ```
 
-4. Follow the authentication flow
+   4. Follow the authentication flow
 
-### Cursor
+{{/partial:tab}}
+{{partial:tab name="Cursor"}}
 
-1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings`  
-2. Navigate to: `Tools & Integrations > New MCP Server`  
-3. Add this configuration to your `mcp.json`:
+   1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings` 
+      
+   2. Navigate to: `Tools & Integrations > New MCP Server`  
 
-```json
-{  
-  "mcpServers": {
-    "Amplitude": {
-      "url": "https://mcp.amplitude.com/v1/mcp",
-      "transport": "streamable-http"
-    }
-  }
-}
-```
+   3. Add this configuration to your `mcp.json`:
 
-4. Return to Tools & Integration tab and authenticate with Amplitude
+        ```json
+        {  
+          "mcpServers": {
+            "Amplitude": {
+              "url": "https://mcp.amplitude.com/v1/mcp",
+              "transport": "streamable-http"
+            }
+          }
+        }
+        ```
 
-### Gemini CLI
+   4. Return to Tools & Integration tab and authenticate with Amplitude
+  
+{{/partial:tab}}
+{{partial:tab name="Gemini CLI"}}
+   1. Ensure you're authenticated with Gemini  
+   2. Add this to your `~/.gemini/settings.json`:
 
-1. Ensure you're authenticated with Gemini  
-2. Add this to your `~/.gemini/settings.json`:
+      ```json
+      {
+        "selectedAuthType": "oauth-personal",
+        "mcpServers": {
+          "amplitude": {
+            "httpUrl": "https://mcp.amplitude.com/v1/mcp"
+          }
+        }
+      }
+      ```
 
-```json
-{
-  "selectedAuthType": "oauth-personal",
-  "mcpServers": {
-    "amplitude": {
-      "httpUrl": "https://mcp.amplitude.com/v1/mcp"
-    }
-  }
-}
-```
+   3. Restart the MCP server and authenticate:
 
-3. Restart the MCP server and authenticate:
-
-```shell
-gemini/mcp auth amplitude
-```
+      ```shell
+      gemini/mcp auth amplitude
+      ```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ## Query examples
 
 ### Basic analytics queries
 
-```
+```text
 "What were my daily active users over the last 7 days?"
 
 "Show me signup conversion rates by traffic source this month"

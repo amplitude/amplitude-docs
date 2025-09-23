@@ -1,17 +1,21 @@
-**Summary:** This documentation page explains sequential testing methodology in Amplitude Experiment, covering the mathematical foundations of mixture sequential probability ratio test (mSPRT) with LaTeX formulas, hypothesis testing with null hypothesis H₀: δ = 0, and advantages over T-tests for A/B testing statistical inference.
+**Summary:** This documentation page explains sequential testing methodology in Amplitude Experiment, covering the mathematical foundations of mixture sequential probability ratio test (mSPRT) with hypothesis testing formulas and comparing it to T-tests for A/B testing statistical inference.
 
 **Keywords:**
 - sequential testing
 - mixture sequential probability ratio test (mSPRT)
 - Amplitude Experiment
 - hypothesis testing
-- null hypothesis H₀: δ = 0
-- LaTeX math formulas
+- A/B testing
+- statistical inference
+- null hypothesis
+- treatment variants
+- control groups
 - likelihood ratios
-- A/B testing statistical inference
-- treatment vs control comparison
-- randomized control trial
-- enable_math: true
 - mixing distribution
+- randomized control trial
 - conversion rate testing
-- binary and continuous metrics
+- Central Limit Theorem
+- binary metrics
+- continuous metrics
+- outliers
+- T-tests comparison

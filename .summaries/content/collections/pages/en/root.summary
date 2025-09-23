@@ -1,33 +1,46 @@
-Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize product experiences, and make data-driven decisions. The platform consists of four core products that work together to deliver end-to-end product intelligence capabilities.
+Amplitude is a comprehensive digital analytics and experimentation platform that provides organizations with tools to understand user behavior, optimize experiences, and make data-driven decisions. The platform consists of four core products: Analytics for behavioral analysis, Data for tech stack integration, Experiment for A/B testing and optimization, and Session Replay for reconstructing digital user experiences.
 
-## Core Product Suite
+## Product Architecture and Relationships
 
-**Analytics** serves as the foundational product analytics engine, enabling teams to track, measure, and analyze user interactions across digital products. **Data** provides robust tech stack integration capabilities, allowing organizations to connect Amplitude with their existing data infrastructure and warehouse systems. **Experiment** delivers A/B testing and optimization functionality with advanced statistical methodologies, while **Session Replay** reconstructs complete digital user experiences for qualitative analysis and debugging.
+The Amplitude ecosystem is built around a unified data foundation that connects multiple specialized products. Analytics serves as the core behavioral analytics engine, while Data handles integration with existing tech stacks and data warehouses. Experiment leverages the analytics foundation to run sophisticated A/B tests and feature flag experiments, and Session Replay provides visual context to quantitative insights by reconstructing user interactions.
 
-## Technical Implementation Architecture
-
-The platform operates through a multi-layered technical architecture consisting of SDKs, APIs, and web-based interfaces. **Amplitude SDKs** provide client-side integration capabilities across multiple platforms, including JavaScript Browser SDK 2 and Swift SDK implementations. The JavaScript SDK supports session replay functionality through the `@amplitude/session-replay-browser` package, with initialization methods like `amplitude.init()` that accept configuration options for `fetchRemoteConfig` and `autocapture` settings using `AMPLITUDE_API_KEY` authentication.
-
-The Swift SDK utilizes `amplitudeEngagement.boot()` methods with `AmplitudeBootOptions` configuration objects that handle user identification through `user_id`, `device_id`, and `user_properties` parameters. **Amplitude APIs** complement the SDK layer by providing server-side integration capabilities for data ingestion, user management, and programmatic access to platform features.
+The platform supports both client-side and server-side implementations through comprehensive SDKs and APIs. The JavaScript SDK handles browser-based tracking with session replay capabilities, while mobile SDKs (including Swift) provide native app analytics. All products share common data models for users, events, and properties, ensuring consistency across the platform.
 
 ## Key Nomenclature and Definitions
 
-The platform employs specific terminology for data modeling and user tracking. **Event properties** capture contextual information about specific user actions, while **user properties** store persistent attributes associated with individual users. **User identification tracking** enables cross-session and cross-device user journey analysis. **Feature flags** provide dynamic configuration capabilities for controlled feature rollouts and experimentation.
+**Core Data Concepts:**
+- **Events**: User actions tracked within applications (clicks, page views, purchases)
+- **User Properties**: Persistent attributes describing users (demographics, subscription status)
+- **Event Properties**: Contextual data specific to individual events (product category, page URL)
+- **user_id**: Persistent identifier for authenticated users across sessions
+- **device_id**: Anonymous identifier for tracking users before authentication
 
-**Custom formulas** allow advanced metric calculations beyond standard analytics functions. The experimentation framework distinguishes between **treatment vs control** comparisons within **randomized control trials**, supporting both **binary and continuous metrics** for conversion rate testing and other statistical analyses.
+**Experimentation Terminology:**
+- **Feature Flags**: Configuration switches that control feature availability and behavior
+- **Treatment Variants**: Different versions of features being tested in experiments
+- **Control Groups**: Baseline groups used for comparison in A/B tests
+- **Sequential Testing**: Statistical methodology using mixture sequential probability ratio test (mSPRT)
+- **Conversion Rate Testing**: Experiments measuring binary outcome metrics
 
-## Statistical and Mathematical Framework
+**Technical Components:**
+- **Session Replay Browser Package** (@amplitude/session-replay-browser): Client-side recording of user interactions
+- **Remote Configuration** (fetchRemoteConfig): Dynamic feature flag and experiment configuration retrieval
+- **Autocapture**: Automatic tracking of user interactions without manual instrumentation
 
-Amplitude Experiment implements sophisticated statistical methodologies, particularly **sequential testing** using **mixture sequential probability ratio test (mSPRT)**. This approach provides advantages over traditional T-tests for A/B testing statistical inference by enabling continuous monitoring of experiment results without inflating Type I error rates.
+## Platform Integration and Ecosystem
 
-The mathematical foundation centers on **hypothesis testing** with **null hypothesis H₀: δ = 0**, utilizing **likelihood ratios** and **mixing distributions** to determine statistical significance. The platform supports LaTeX mathematical notation for precise statistical communication and documentation.
+Amplitude integrates into broader product ecosystems through multiple touchpoints. The Data product facilitates warehouse integrations, allowing organizations to combine Amplitude insights with existing business intelligence tools. SDKs support initialization patterns that accommodate various development frameworks and deployment strategies.
 
-## Data Integration and Warehouse Connectivity
+The platform uses a CDN-based delivery system (cdn.amplitude.com) for SDK distribution and configuration management. This architecture supports real-time feature flag updates and experiment configuration changes without requiring application deployments.
 
-The Data product facilitates **data warehouse analysis** by connecting Amplitude's behavioral analytics with existing organizational data infrastructure. This integration enables comprehensive analysis that combines product usage data with business metrics, customer data, and other enterprise information sources.
+## Technical Implementation
 
-## Content Delivery and Documentation Architecture
+**SDK Initialization Patterns:**
+- JavaScript: `amplitude.init()` with API key configuration and optional autocapture settings
+- Swift: `amplitudeEngagement.boot()` using AmplitudeBootOptions for user and device configuration
 
-The platform utilizes CDN distribution through `cdn.amplitude.com` for SDK delivery and static asset serving. The documentation system employs structured content management with blueprint templates, section linking, and configurable navigation options including `hide_toc` and `hide_side-nav` settings for customized user experiences.
+**Statistical Methodology:**
+The Experiment product implements advanced statistical techniques including mSPRT for sequential testing, which provides advantages over traditional T-tests by allowing continuous monitoring of experiment results while maintaining statistical rigor. The system handles both binary metrics (conversion rates) and continuous metrics, with built-in outlier detection and Central Limit Theorem applications.
 
-The documentation architecture supports multiple output formats including JSON APIs and LLM-optimized text formats, enabling programmatic access to product information and AI-powered documentation interactions.
+**Data Architecture:**
+The platform maintains separation between user identification (user_id for authenticated users, device_id for anonymous tracking) and supports property hierarchies that distinguish between persistent user attributes and contextual event data. This structure enables sophisticated segmentation and analysis while maintaining data integrity across the customer journey.
