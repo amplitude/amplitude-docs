@@ -2,6 +2,15 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer utilities {
+  /* Only remove on code blocks */
+  .prose pre code::before,
+  .prose pre code::after {
+    content: none !important;
+  }
+}
+
+
 @layer base {
     p,a,li, button, td {
         font-family: 'IBM Plex Sans', sans-serif;
@@ -301,10 +310,11 @@ ul.nav li::marker {
 }
 
 .tab {
-    font-size: 13px;
+    font-size: 14px;
     padding: 12px;
     margin-bottom: 0px;
-    @apply font-sans;
+    font-family: 'IBM Plex Sans', sans-serif;
+
 }
 
 .prose p:has(img) {
@@ -570,12 +580,6 @@ a.toc-link {
     opacity: 1;
     transition: opacity 0.25s;
   }
-
-
-
-li::marker {
-    color: red;
-}
 
 .max-w-prose {
     max-width: 75ch;
