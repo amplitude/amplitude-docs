@@ -40,3 +40,20 @@ So to predict any article’s URL:
 4. Prepend `/docs` and the site domain.
 
 Worst case scenario: If you're not sure, you can get the list of articles with the correct URLs in https://amplitude.com/docs/llms.txt
+## Implementation Guide Coverage for SDK Features
+
+When documenting new SDK features that require configuration, ensure comprehensive coverage across all relevant implementation guides:
+
+**Check multiple implementation paths**: New SDK features often have configuration details that need to be documented in multiple places:
+- Main feature documentation (e.g., `session-replay.md` for UI features)
+- Autocapture configuration docs (e.g., `autocapture.md` for feature enablement)
+- **SDK-specific implementation guides** (e.g., `session-replay-plugin.md`, `session-replay-standalone-sdk.md`)
+
+**Implementation guides need configuration details**: Users following SDK-specific implementation guides (like Browser SDK Plugin, Standalone SDK, etc.) need to know how to configure new features in their specific setup context. Don't assume they'll find configuration details in other docs.
+
+**Example**: When Session Replay added error tracking and frustration analytics, the configuration details (`autocapture.frustrationInteractions`, `autocapture.networkTracking`) needed to be included in:
+- `autocapture.md` (feature documentation)
+- `session-replay-plugin.md` (Browser SDK Plugin implementation guide)
+- Any other relevant SDK implementation guides
+
+Always ask: "What implementation guides would users be following who need this configuration information?"
