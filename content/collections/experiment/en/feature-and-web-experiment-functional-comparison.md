@@ -12,27 +12,25 @@ The following tables describe which Experiment functionality is available for Fe
 {{partial:collapse name="Planning"}}
 |  |  |  |  |
 | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| Client-side or Server-side implementation | X |  |  |
-| Local or remote evaluation |  |   | X |
-| **Stats Method** |  |   | X |
-| Sequential |  |   | X |
-| T-test |  |   | X |
-| Bayesian |  |   | X |
-| Thompson Sampling (MAB) |  |   | X |
-| **Reduce chance of Error** |  |   | X |
-| Bonferroni Correction |  |   | X |
-| **Group Experiments** | X |   |   |
-| Mutual Exclusion | X |   |   |   | 
-| Holdouts | X |   |   |
-| Rollout |   |   |   |
-| % of audience to rollout| X |   |   |
-| **Exposure Event Type** |   |   |   |
-| Exposure Event | X |  |   |
-| Custom Exposure | X |   |   |
-| Proxy Exposure | X |  |   |
-| **Bucketing Salt** |  |   |   |
-| Bucketing salt  |  X |  |   |
+| **Functionality** | **Feature** | **Web** |
+| Client-side or Server-side implementation | ✅ | ❌ |
+| Local or remote evaluation | ✅ | ✅  |
+| **Stats Method** |  |   |
+| Sequential | ✅  | ✅  |
+| T-test | ✅ |  ✅ |
+| Thompson Sampling (MAB) | ✅ |  ✅ |
+| **Reduce chance of Error** |  |   |
+| Bonferroni Correction | ✅ | ✅  |
+| **Group Experiments** |  |   |
+| Mutual Exclusion | ✅ |  ❌ | 
+| Holdouts | ✅ | ❌  |
+| % of audience to rollout| ✅ | ❌  |
+| **Exposure Event Type** |   |     |
+| Exposure Event | ✅ | ❌ |
+| Custom Exposure | ✅ | ❌  |
+| Proxy Exposure | ✅ | ❌ |
+| **Bucketing Salt** |  |   |
+| Bucketing salt  |  ✅ | ❌ |
 
 {{/partial:collapse}}
 

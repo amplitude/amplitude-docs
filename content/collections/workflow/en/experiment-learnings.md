@@ -78,14 +78,14 @@ Summary is available to organizations with access to Experiment who have recomme
 The Summary card describes your experiment's hypothesis and lets you know if it's reached statistical significance. 
 
 {{partial:admonition type="note" heading="Statisical significance and Amplitude"}}
-Amplitude considers an experiment to be **statistically significant** when Amplitude can confidently say that the results are unlikely to have occurred due to random chance. More technically, it’s when Amplitude rejects the null hypothesis. That may sound subjective, but it’s grounded solidly in statistics. Statistical significance relies on a variant’s **p-value**, which is a value that represents the likelihood that your results occurred by chance. A lower p-value means your results are probably not random, and there's evidence to support your hypothesis. If this value drops below a threshold, Amplitude considers the experiment to be statistically significant.
+Amplitude considers an experiment to be statistically significant (stat sig) when Amplitude can confidently say that the results are unlikely to have occurred due to random chance. More technically, it’s when Amplitude rejects the null hypothesis. That may sound subjective, but it’s grounded in statistics. Statistical significance relies on a variant’s p-value, which is a value that represents the likelihood that your results occurred by chance. A lower p-value means your results are probably not random, and there's evidence to support your hypothesis. If this value drops below a threshold, Amplitude considers the experiment to be statistically significant.
 {{/partial:admonition}}
 
-The Summary card displays a badge labeled *Significant* if the experiment reached statistical significance, and a badge labeled *Not Significant* if it didn't. This card can display several badges at once:
+The Summary card displays a badge labeled *Significant* if the experiment reached statistical significance, and a badge labeled *Not Significant* if it didn't. This card can display several badges at the same time:
 
-* *Inconclusive*: the test was inconclusive for the primary metric.
-* *Above Goal* or *Below Goal:* the primary metric's mean was either **above** or **below** its goal depending on the direction of the test (increase = above, decrease = below).
-* *Above Control* or *Below Control:* the primary metric's mean was either **above** or **below** the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
+* **Inconclusive**: the test was inconclusive for the primary metric.
+* **Above Goal** or *Below Goal:* the primary metric's mean was either above or below its goal depending on the direction of the test (increase = above, decrease = below).
+* **Above Control** or **Below Control** the primary metric's mean was either above or below the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
 
 ![summary.png](/docs/output/img/workflow/summary-png.png)
 
