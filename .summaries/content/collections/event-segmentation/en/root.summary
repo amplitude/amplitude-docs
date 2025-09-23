@@ -1,53 +1,61 @@
-## Product Overview
+## Amplitude Event Segmentation
 
-Event Segmentation is Amplitude's core analytics chart type that enables users to analyze user behavior patterns by measuring how events are performed over time. The product provides comprehensive event analysis capabilities through multiple measurement types, visualization options, and advanced analytical features including custom formulas, real-time segmentation, and comparative analysis.
+Event Segmentation is a core analytics feature in Amplitude that enables users to analyze user behavior patterns and event data through flexible measurement and visualization capabilities. This product allows organizations to track, measure, and understand how users interact with their applications by examining specific events, user segments, and behavioral metrics over time.
 
 ## Product Architecture and Feature Relationships
 
-Event Segmentation operates through three primary modules that work together to create comprehensive behavioral analyses:
+The Event Segmentation product is built around four primary modules that work together to create comprehensive behavioral analyses:
 
-**Events Module** serves as the foundation, allowing users to select events and their properties for analysis. This module supports both standard event selection and in-line custom events that combine multiple events using OR logic without permanent storage.
+**Events Module** serves as the foundation, allowing users to select specific events and their properties for analysis. This module supports both standard event selection and in-line custom events that combine multiple existing events using OR logic without permanently saving them.
 
-**Measured As Module** provides the analytical engine with multiple measurement types including Uniques (unique users), Event Totals, Active percentages, Frequency distributions with customizable buckets, and property-based measurements (Sum, Distribution, Average, Distinct, Median). This module also enables advanced temporal analysis through rolling averages, rolling windows, cumulative sums, and period-over-period comparisons.
+**Measured As Module** provides the analytical engine with multiple measurement types including Uniques (unique users), Event Totals, Active percentages, Frequency distributions, Property-based measurements (sum, distribution, average, distinct, median), and custom formulas. This module also handles advanced temporal analysis through rolling averages, rolling windows, cumulative sums, and period-over-period comparisons.
 
-**Segmentation Module** handles user segment definition and filtering, supporting both user and group segment filtering with "Group segment by" functionality for multi-dimensional analysis.
+**Segmentation Module** enables user segment definition and filtering, allowing analysts to break down data by specific user characteristics or behaviors and apply group-by conditions with multiple segmentation properties.
 
-The visualization layer supports multiple chart types including line charts (with dual Y-axis support), stacked area charts, bar charts (horizontal and vertical), pie charts, and KPI grids, with the ability to switch between absolute totals and relative percentages.
+**Visualization Engine** transforms the analytical results into various chart types including line charts, stacked area charts, bar charts, pie charts, and KPI grids, with support for dual Y-axis configurations and switching between absolute totals and relative percentages.
 
 ## Key Nomenclature and Definitions
 
-**Event Segmentation Chart**: The primary analytical visualization showing how events are performed over time across different user segments.
+**Event Segmentation Chart**: The primary visualization tool for analyzing user behavior patterns and event data across different segments and time periods.
 
-**In-line Custom Events**: Temporary event combinations using OR logic that exist only within the current analysis, accessible through "Combine events inline" and "Add event inline" controls.
+**Uniques vs Event Totals**: Fundamental measurement distinction where Uniques counts distinct users performing events while Event Totals counts all event occurrences regardless of user repetition.
 
-**Measured As Types**: The various measurement methodologies including UNIQUES (unique user counts), TOTALS (event occurrence counts), PROPSUM (property value summations), and frequency distributions.
+**In-line Custom Events**: Temporary event combinations using OR logic that exist only within the current analysis without being permanently saved to the event taxonomy.
 
-**Custom Formulas**: Advanced analytical expressions using 20+ formula types including metrics (UNIQUES, TOTALS, PROPSUM), aggregation functions (ROLLAVG, CUMSUM), and mathematical functions (LOG, POWER, TRENDLINE) with event letter referencing syntax.
+**Rolling Windows**: Time-based aggregation that smooths data by calculating metrics across specified time intervals (supporting up to 36 five-minute intervals, 72 hours, 90 days, 12 weeks, or 12 months).
 
-**Rolling Windows**: Time-based data aggregation that smooths data over specified intervals, distinct from rolling averages which calculate unweighted means.
+**Active Percentage**: Measurement showing the percentage of users in a segment who performed specific events during the analysis period.
 
-**Group-by Conditions**: Multi-dimensional segmentation allowing analysis across multiple segmentation properties simultaneously.
+**Custom Formulas**: Advanced analytical expressions supporting 20+ formula types including metrics (UNIQUES, TOTALS, PROPSUM), aggregation functions (ROLLAVG, CUMSUM), and mathematical functions (LOG, POWER, TRENDLINE) with event letter referencing syntax.
 
-**Breakdown Table**: Tabular representation of chart data showing detailed metrics alongside visualizations.
+**Cohort Filtering**: Temporal segmentation capability allowing before/after cohort filter analysis for understanding user behavior changes over time.
 
 ## Product Ecosystem Integration
 
-Event Segmentation integrates with several Amplitude ecosystem components:
+Event Segmentation integrates deeply with Amplitude's broader analytics ecosystem through several key connections:
 
-- **Funnel Charts**: Share in-line custom event functionality for cross-chart analytical consistency
-- **Data Table Charts**: Support the same custom formula engine with identical syntax and capabilities
-- **User Sessions Charts**: Utilize compatible formula structures for session-based analysis
-- **Microscope Feature**: Provides drill-down capabilities for detailed user journey analysis, though with limitations on in-line custom events
-- **Cohort Analysis**: Supports cohort filtering with before/after cohort filter options and cohort comparison formulas
+**Microscope Integration**: Provides drill-down capabilities from Event Segmentation charts to examine individual user behaviors, though with limitations for in-line custom events.
+
+**Data Table Charts**: Share custom formula capabilities with Event Segmentation, enabling consistent analytical approaches across different visualization types.
+
+**Funnel Charts**: Support in-line custom events functionality, creating analytical consistency across conversion analysis workflows.
+
+**User Sessions Charts**: Utilize compatible formula structures, enabling cross-chart analytical coherence.
+
+**Real-time Analytics**: Event Segmentation supports real-time data analysis with specific time interval constraints for live behavioral monitoring.
 
 ## Technical Implementation Details
 
-**Custom Formula Syntax**: Uses event letter referencing (A, B, C) with specific mathematical operators and functions. Examples include ARPAU revenue calculations using PROPSUM/UNIQUES ratios and TRENDLINE functions using ordinary least-squares regression.
+The product leverages several technical approaches for data processing and analysis:
 
-**Real-time Capabilities**: Supports real-time segmentation with specific time interval limits (36 five-minute intervals, 72 hours for hourly, 90 days for daily, 12 weeks/months for longer periods).
+**HyperLogLog Algorithm**: Used for efficient unique user counting in large-scale data environments.
 
-**Data Processing**: Employs HyperLogLog algorithm for unique user calculations and supports SEMANTICTOTALS for array property analysis.
+**Ordinary Least-Squares Regression**: Powers trendline calculations in custom formulas for predictive analysis.
 
-**Visualization Controls**: Includes Custom Y-axis modal for dual Y-axis configuration, Any Event selection for broad event capture, and period-over-period comparison with offset date picker functionality.
+**Event Letter Referencing**: Systematic approach to referencing events in custom formulas using alphabetical identifiers.
 
-The product operates as Amplitude's foundational analytical tool, providing the core event analysis capabilities that support more specialized chart types and advanced analytical workflows throughout the platform.
+**SEMANTICTOTALS**: Specialized handling for array properties in formula calculations.
+
+**Property Grouping Validation**: Ensures analytical integrity when combining multiple segmentation properties.
+
+The Event Segmentation product represents Amplitude's core behavioral analytics capability, providing the foundational tools for understanding user engagement patterns, measuring product performance, and driving data-informed decision-making across organizations.

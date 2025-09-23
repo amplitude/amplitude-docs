@@ -1,74 +1,90 @@
 ## Amplitude iOS SDK Product Suite
 
-The Amplitude iOS SDK ecosystem consists of multiple interconnected SDKs and tools designed to provide comprehensive analytics, experimentation, and user behavior tracking for iOS applications. The suite includes the legacy iOS SDK (maintenance mode), the modern iOS Swift SDK, the Ampli code generation wrapper, and the unified SDK that combines analytics, experimentation, and session replay capabilities.
+The Amplitude iOS SDK ecosystem consists of multiple interconnected SDKs and tools designed to provide comprehensive analytics, experimentation, and user behavior tracking for iOS applications. The suite includes both legacy and modern implementations, with a clear migration path and unified approach to mobile analytics.
 
 ## Product Relationships and Architecture
 
-The iOS SDK ecosystem follows an evolutionary architecture with three main generations:
+### Core SDK Evolution
+The product suite represents an evolution from the legacy **Amplitude-iOS SDK** (maintenance mode) to the modern **Amplitude-Swift SDK**, with the **Unified SDK** serving as the comprehensive wrapper solution. The migration path is clearly defined, moving from the older instance-based pattern to a modern plugin architecture.
 
-**Legacy iOS SDK (Amplitude-iOS)** - The original Objective-C based SDK in maintenance mode, featuring middleware architecture and HTTP v1 API integration. This SDK provides core analytics functionality with traditional instance-based patterns.
+### SDK Hierarchy
+- **Amplitude-Swift SDK**: The foundational modern analytics SDK with plugin architecture
+- **Unified SDK (Beta)**: Wrapper combining Analytics, Experiment, and Session Replay SDKs
+- **Ampli Wrapper**: Code generation layer providing strongly-typed event tracking
+- **Legacy iOS SDK**: Maintenance-mode predecessor with middleware architecture
 
-**iOS Swift SDK (Amplitude-Swift)** - The modern replacement built with Swift-first design, implementing a plugin architecture that replaces the legacy middleware system. It utilizes HTTP v2 API and removes the instance() pattern in favor of direct SDK interaction.
-
-**Unified SDK (AmplitudeUnified)** - A beta wrapper that orchestrates the Analytics SDK (AmplitudeSwift), Experiment SDK, and Session Replay SDK under a single initialization and configuration system with automatic identity synchronization.
-
-**Ampli Wrapper** - A code generation layer that works with any of the core SDKs to provide strongly-typed event tracking methods generated from Amplitude tracking plans.
+### Integration Patterns
+All SDKs support multiple installation methods (CocoaPods, Swift Package Manager, Carthage) and provide both Swift and Objective-C compatibility, though with varying levels of feature support across platforms (iOS, macOS, tvOS, watchOS, visionOS).
 
 ## Key Nomenclature and Definitions
 
-**AutocaptureOptions** - Configuration object for automatic event collection including sessions, app lifecycles, screen views, network requests, and user interactions without manual instrumentation.
+### Core Concepts
+- **Plugin Architecture**: Modern extensible system replacing middleware, supporting enrichment and destination plugins
+- **Autocapture**: Automated tracking of sessions, app lifecycles, screen views, network requests, and user interactions
+- **Tracking Plan**: Schema definition used by Ampli to generate strongly-typed event methods
+- **Instance Pattern**: Legacy SDK approach using singleton instances, replaced by direct initialization
 
-**Plugin Architecture** - The modern SDK's extensible system with enrichment plugins (data transformation) and destination plugins (data routing), replacing the legacy middleware pattern.
+### Configuration Objects
+- **Configuration**: Main SDK setup object with properties like `apiKey`, `flushQueueSize`, `minTimeBetweenSessionsMillis`
+- **AutocaptureOptions**: Controls automatic event collection including sessions, screen views, element interactions
+- **TrackingOptions**: Privacy controls for disabling collection of IP addresses, city data, carrier information
+- **LoadOptions**: Ampli-specific configuration for wrapper initialization
 
-**AMPIdentify/Identify** - User property management classes providing methods like set, setOnce, add, remove, append, and prepend for user attribute manipulation.
+### Event and User Management
+- **BaseEvent**: Foundation event structure in modern SDK
+- **AMPIdentify/Identify**: User property management with operations like `set`, `setOnce`, `add`, `remove`
+- **Revenue**: Specialized event type for transaction tracking
+- **Group Operations**: Multi-tenant user organization with `setGroup`, `groupIdentify`
 
-**AMPRevenue/Revenue** - Revenue tracking objects for e-commerce analytics with product details, quantities, and pricing information.
-
-**Device ID Lifecycle** - Management of device identifiers including IDFA (Identifier for Advertisers), IDFV (Identifier for Vendor), and custom device ID generation with regenerateDeviceId functionality.
-
-**Session Management** - Automatic session tracking with configurable minTimeBetweenSessionsMillis, session timeout handling, and out-of-session event support (sessionId -1).
-
-**Tracking Options** - Privacy and compliance controls including COPPA enablement, location data disabling (disableCity, disableIPAddress), and carrier information control.
-
-**Group Analytics** - Multi-level user organization with setGroup, groupIdentify, and logEventWithGroups for account-based or organizational analytics.
-
-**Storage Protocol** - Customizable data persistence layer allowing custom storage provider implementation for event queuing and user data management.
+### Privacy and Compliance
+- **COPPA Control**: Children's privacy compliance features
+- **Apple Privacy Manifest**: iOS privacy declaration requirements
+- **IDFA/IDFV**: Device identifier management with privacy considerations
+- **SSL Pinning**: Enhanced security for data transmission
 
 ## Broader Product Ecosystem Integration
 
-The iOS SDKs integrate into Amplitude's comprehensive analytics platform through several key touchpoints:
+### Amplitude Platform Integration
+The iOS SDKs integrate with the broader Amplitude ecosystem through:
+- **HTTP v2 API**: Modern endpoint for event ingestion with improved performance
+- **EU Data Residency**: Regional data storage compliance via `setServerZone`
+- **Remote Configuration**: Dynamic SDK behavior modification without app updates
+- **Tracking Plans**: Schema management integration with Ampli code generation
 
-**Amplitude Analytics Platform** - All SDKs send event data to Amplitude's ingestion endpoints with support for EU data residency through AMPServerZone.EU configuration and dynamic configuration via useDynamicConfig.
+### Cross-Product Synchronization
+The Unified SDK demonstrates the ecosystem's maturation by automatically synchronizing:
+- User and device identities across Analytics, Experiment, and Session Replay
+- Configuration settings and privacy controls
+- Session management and user properties caching
 
-**Amplitude Experiment** - The Unified SDK provides seamless integration with feature flagging through amplitude.experiment.fetch() and amplitude.experiment.variant() methods with automatic user context synchronization.
+### Development Workflow Integration
+- **Ampli CLI**: Command-line tool for pulling tracking plans and generating typed code (`ampli pull`, `ampli status`)
+- **NPM Package**: `@amplitude/ampli` for development workflow integration
+- **Migration Tools**: `migrateLegacyData` function for seamless SDK transitions
 
-**Session Replay** - iOS-specific session recording capabilities through amplitude.sessionReplay.startRecording() and stopRecording() methods for user behavior analysis.
+## API Endpoints and Command Line Interface
 
-**Tracking Plans** - Integration with Amplitude's schema management through the Ampli CLI (ampli pull command) for type-safe event implementation and validation.
+### CLI Commands
+- `ampli pull`: Downloads tracking plan and generates strongly-typed wrapper code
+- `ampli status`: Verifies implementation against tracking plan requirements
 
-## API Endpoints and Command Line Interfaces
+### Key API Methods
+**Core Tracking Methods:**
+- `track()`: Event logging with properties and options
+- `identify()`: User property management
+- `setUserId()`, `setDeviceId()`: Identity management
+- `flush()`: Force event upload
+- `setGroup()`: Multi-tenant user assignment
 
-**Ampli CLI Commands:**
-- `ampli pull` - Downloads strongly-typed tracking methods from Amplitude tracking plans
-- `ampli status` - Verifies CLI configuration and connection
+**Advanced Features:**
+- `logRevenueV2()`: Revenue event tracking
+- `setOptOut()`: Privacy compliance controls
+- `regenerateDeviceId()`: Identity reset functionality
 
-**Core SDK Methods:**
-- `track()` - Event logging with properties and options
-- `identify()` - User property updates
-- `setUserId()` / `setDeviceId()` - Identity management
-- `logRevenueV2()` - Revenue event tracking
-- `flush()` - Force event upload
-- `setOptOut()` / `setOffline()` - Privacy and connectivity controls
+**Unified SDK Specific:**
+- `amplitude.experiment.fetch()`: Feature flag retrieval
+- `amplitude.experiment.variant()`: Experiment variation access
+- `amplitude.sessionReplay.startRecording()`: Session capture initiation
 
-**Installation Methods:**
-- Swift Package Manager with Amplitude-Swift package
-- CocoaPods with AmplitudeSwift pod
-- Carthage with github "amplitude/Amplitude-Swift"
-
-**Network and Interaction Tracking:**
-- URLSession monitoring with NetworkTrackingOptions
-- UIControl and UIGestureRecognizer tracking via method swizzling
-- Frustration detection including rage clicks and dead clicks
-- CaptureRule configuration with statusCodeRange and allowlist/blocklist patterns
-
-The SDK suite supports iOS, macOS, tvOS, watchOS, and visionOS platforms with comprehensive privacy manifest compliance for App Store requirements and automatic handling of iOS 16+ carrier tracking deprecation.
+### Configuration APIs
+The SDKs expose extensive configuration through initialization objects, supporting runtime behavior modification, privacy controls, and performance tuning through properties like `eventUploadThreshold`, `eventUploadPeriodSeconds`, and various autocapture settings.
