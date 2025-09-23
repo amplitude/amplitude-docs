@@ -8,6 +8,10 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -23,14 +27,14 @@ Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
 1. In Xcode, click *File > Add Packages...*
-2. Enter the repository url `https://github.com/amplitude/Amplitude-Engagement-Swift`
+2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
 3. Select the `Amplitude-Engagement-Swift` package, version `1.0.5`.
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
-```
+```T
 pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 ```
 {{/partial:tab}}
@@ -110,8 +114,27 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```swift
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
+
+## Router configuration
+
+Configure how Guides and Surveys handles screen navigation.
+
+```swift
+engagement.setRouter { identifier in
+  // Your screen handling and navigation
+}
+```
+
+| Parameter          | Type                    | Description                                                                     |
+| ------------------ | ----------------------- | ------------------------------------------------------------------------------- |
+| `identifier`       | `String`                | Required. A screen identifier (or route) that tells your app where to navigate. |
+| `router` (closure) | `(String) -> Void`      | Required. A function (closure) you implement to handle screen navigation when Guides or Surveys need to change screens. |
+
+{{partial:admonition type="note" heading="Update link behavior"}}
+After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
 
 ## Reset
 
