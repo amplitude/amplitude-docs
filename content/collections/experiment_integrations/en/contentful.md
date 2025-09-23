@@ -185,32 +185,81 @@ The `experiment` object contains helpful metadata about the experiment. To rende
 For more information, review the following React / Typescript example:
 
 ```typescript
+import React, { useEffect, useState } from 'react';
 import { Experiment } from '@amplitude/experiment-js-client';
- import sdk from 'contentful-sdk';
+import sdk from 'contentful-sdk';
 
+// --- Types (adjust to your schema) ---
+type Hero = {
+  __typename: 'Hero';
+  sys: { id: string };
+  // ...other fields you render
+};
 
- export const experiment = Experiment.initialize(process.env.NEXT_PUBLIC_AMPLITUDE_EXPERIMENT_CLIENT_KEY || "", {
- debug: true,
-  });
- const [hero, setHero] = useState<Hero | null>(null);
- useEffect(() => {
-   const matchExperimentData = async () => {
-     await experiment.fetch({
-       user_id: userId,
-     });
-     const heroBanner = sdk.getEntry('ENTRY_ID_HERE');
-     const variant = experiment.variant(heroBanner?.experimentId ?? 'control');
-     let resolvedVariant;
-     if (heroBanner && variant.value) {
-       const variation = heroBanner.meta[variant.value];
-       resolvedVariant = heroBanner.variationsCollection?.items.find(hero => {
-         return hero?.__typename === 'Hero' && hero?.sys.id === variation;
-       });
-       setHero(resolvedVariant);
-     }
-   };
-   matchExperimentData();
- }, [heroBanner, userId]);
+type HeroBanner = {
+  experimentId?: string; // key you use in Amplitude Experiment
+  meta?: Record<string, string>; // maps variant key -> variation id
+  variationsCollection?: { items: Array<Hero | null | undefined> };
+};
+
+// --- Experiment init ---
+const CLIENT_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_EXPERIMENT_CLIENT_KEY ?? '';
+export const experiment = Experiment.initialize(CLIENT_KEY, {
+  // Only enable verbose logging in dev if you like:
+  debug: process.env.NODE_ENV !== 'production',
+});
+
+// --- Component hook snippet ---
+export function useHeroVariant(userId: string | undefined) {
+  const [hero, setHero] = useState<Hero | null>(null);
+
+  useEffect(() => {
+    // Skip until we have a user id
+    if (!userId) return;
+
+    let isMounted = true;
+
+    (async () => {
+      try {
+        // 1) Fetch variants for this user
+        await experiment.fetch({ user_id: userId });
+
+        // 2) Load the banner/experiment mapping from Contentful
+        const heroBanner = await sdk.getEntry<HeroBanner>('ENTRY_ID_HERE');
+        if (!heroBanner) return;
+
+        // 3) Resolve the variant key from the experiment
+        const experimentKey = heroBanner.experimentId ?? 'control';
+        const { value: variantKey } = experiment.variant(experimentKey);
+        if (!variantKey) return;
+
+        // 4) Map the variant key -> variation id via Contentful metadata
+        const variationId = heroBanner.meta?.[variantKey];
+        if (!variationId) return;
+
+        // 5) Find the matching Hero item
+        const match = heroBanner.variationsCollection?.items.find(
+          (item): item is Hero =>
+            !!item &&
+            item.__typename === 'Hero' &&
+            item.sys?.id === variationId
+        ) ?? null;
+
+        if (isMounted) setHero(match);
+      } catch (err) {
+        // Consider forwarding to your logger
+        console.error('Failed to resolve hero variant', err);
+        if (isMounted) setHero(null);
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [userId]); // Note: don't include heroBanner (it's local) or setHero
+
+  return hero;
+}
 ```
 
 Be sure to account for cases where users receive `off` as the value that `experiment.variant()` returns.

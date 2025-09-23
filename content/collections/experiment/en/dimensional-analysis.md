@@ -25,9 +25,7 @@ If you want to remove QA users or internal traffic from analysis because those u
 
 ![](statamic://asset::help_center_conversions::experiment/exclude-testers.png)
 
-##### To filter test users
-
-  Click the **All exposed users** dropdown and select **Exclude testers**. 
+Click the **All exposed users** dropdown and select **Exclude testers**. 
 
 If you selected multiple targeting segments, analyze each segment individually because you may experience a lift in one segment. Click the segment name in the All Users dropdown. This also filters testing users from your analysis.
 

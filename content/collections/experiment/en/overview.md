@@ -40,7 +40,7 @@ Web experiments use pages to control where your experiments variants apply on yo
 
 ### Functional Availability
 
-For in depth information about what functionality is available for Feature, Web, or both types of experimentation, go to [Differences Between Feature and Web Experimentation](/docs/experiment/differences-between-feature-and-web-experimentation).
+For in depth information about what functionality is available for Feature, Web, or both types of experimentation, go to [Differences Between Feature and Web Experimentation](/docs/feature-experiment/feature-and-web-experiment-functional-comparison).
 
 ## Creating an experiment
 
