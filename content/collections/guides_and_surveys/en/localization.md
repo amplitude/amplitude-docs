@@ -31,7 +31,8 @@ amplitude.add(window.engagement.plugin({locale: currentLocale}))
 {{/partial:tab}}
 {{partial:tab name="Third-party analytics"}}
 ```js
-const currentLocale = getLocale() // "en" or "en-US"
+// replace with desired function
+const currentLocale = navigator.language // for example: "en-US"
 
 engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party Analytics SDKs
 ```
@@ -39,7 +40,7 @@ engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party 
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading="Locale code"}}
-Amplitude considers only the language of a locale code. For example, `fr_FR` and `fr_CA` resolves to a single French translation.
+Amplitude considers the language of a locale code for certain languages. Go to the section below for more details.
 {{/partial:admonition}}
 
 ## Update project settings to support multiple languages
@@ -124,6 +125,7 @@ There are a number of ways to add localized content to your guide or survey:
 - Use the web interface to add or edit translations. Amplitude recommends this method.
 - Use AI localization to automatically translate your content. Amplitude recommends this method for quick, automated translations.
 - Use the .xliff file to add or edit translations. Amplitude recommends this method if you integrate with a custom translation workflow.
+- Use the [localization API](/docs/apis/guides-and-surveys/guides-and-surveys-api-localization) to add or edit translations. Amplitude recommends this method for automated translation workflows. While it takes more time to set up than the others, it can be worth it for larger teams or teams that support many languages.
 
 {{partial:tabs tabs="Web interface, AI localization, XLIFF file upload"}}
 {{partial:tab name="Web interface"}}
@@ -135,7 +137,6 @@ By default, this is **English**.
 3. Select the language you want.
 4. Update the individual strings with your translated content.
 All content is automatically associated with the language displayed in the language toggle.
-
 
 {{/partial:tab}}
 {{partial:tab name="AI localization"}}
