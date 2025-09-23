@@ -32,7 +32,7 @@ amplitude.add(window.engagement.plugin({locale: currentLocale}))
 {{partial:tab name="Third-party analytics"}}
 ```js
 // replace with desired function
-const currentLocale = navigator.language // e.g. "en-US"
+const currentLocale = navigator.language // for example: "en-US"
 
 engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party Analytics SDKs
 ```
@@ -40,7 +40,7 @@ engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party 
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading="Locale code"}}
-Amplitude considers the language of a locale code for certain languages. See the section below for more details.
+Amplitude considers the language of a locale code for certain languages. Go to the section below for more details.
 {{/partial:admonition}}
 
 ## Update project settings to support multiple languages
@@ -137,7 +137,6 @@ By default, this is **English**.
 3. Select the language you want.
 4. Update the individual strings with your translated content.
 All content is automatically associated with the language displayed in the language toggle.
-
 
 {{/partial:tab}}
 {{partial:tab name="AI localization"}}
