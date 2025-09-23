@@ -1,0 +1,19 @@
+**Summary:** This documentation covers the Amplitude Model Context Protocol (MCP) Server integration that enables conversational AI analysis of Amplitude analytics data through natural language queries, including setup instructions for Claude Web/Desktop/Code, Cursor, and Gemini CLI with OAuth authentication and streamable HTTP transport.
+
+**Keywords:**
+- Amplitude MCP Server
+- Model Context Protocol integration
+- conversational AI analytics
+- Claude Web Desktop Code integration
+- Cursor MCP configuration
+- Gemini CLI setup
+- OAuth 2.0 authentication
+- streamable HTTP transport
+- event segmentation analysis
+- funnel analysis retention
+- A/B test experiment querying
+- feature flag management
+- dashboard chart querying
+- natural language analytics
+- mcp.json configuration
+- https://mcp.amplitude.com/v1/mcp endpoint
