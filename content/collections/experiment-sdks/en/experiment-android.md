@@ -244,9 +244,9 @@ Using the integration initializer will automatically configure implementations o
 
 **Supported Versions**
 
-| Analytics SDK Version | Experiment SDK Version |
-| --- | --- |
-| `2.36.0+` | `1.5.1+` |
+| Analytics Kotlin SDK Version | Analytics Legacy SDK Version | Experiment SDK Version |
+| --- | --- | --- |
+| `1.0.0+` | `2.36.0+` | `1.5.1+` |
 
 {{/partial:collapse}}
 
