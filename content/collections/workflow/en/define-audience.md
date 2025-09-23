@@ -38,11 +38,11 @@ Defining your audience isn't just about the segments or user properties. You mus
 1. Either create a new experiment or open an existing one. 
 2. In the Targeting section, click the **edit** icon.
 3. In the Audience tab, select the bucketing unit you want.
-   Typically, the bucketing unit is by `User`. However, you can also bucket by [groups](/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes#applying-group-by-filters).
+   Typically, the bucketing unit is by `User`. However, you can also bucket by [groups](/docs/analytics/account-level-reporting#group-level-reporting-an-overview).
 4. Select who you want to be eligible for this experiment. 
    You can select **All Users** or **Targeted Users**. Targeting all users means that every users who triggers the exposure event receives your experiment. Targeting users lets you specify segments of users to receive your experiment.
 5. Select the bucketing you want to target. 
-   By default, this is `ID`. However you could select something like:
+   By default, this is `Amplitude ID`. However you could select something like:
    * Device type
    * Language
    * Region
