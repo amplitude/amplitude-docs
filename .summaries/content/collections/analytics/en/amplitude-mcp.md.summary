@@ -1,23 +1,20 @@
-**Summary:** This documentation covers the Amplitude Model Context Protocol (MCP) Server integration that enables conversational AI analysis of Amplitude analytics data through 17 specialized tools including search, query_chart, query_metric, query_experiment, and various get operations for dashboards, experiments, feature flags, and session replays.
+**Summary:** This documentation covers the Amplitude Model Context Protocol (MCP) Server integration that enables conversational AI analysis of Amplitude analytics data through natural language queries, providing 17 tools for accessing dashboards, charts, experiments, feature flags, metrics, and session replays via OAuth authentication.
 
 **Keywords:**
 - Amplitude MCP Server
 - Model Context Protocol integration
 - conversational AI analytics
-- OAuth 2.0 authentication
-- streamable HTTP transport
+- OAuth authentication
 - query_chart tool
-- query_metric tool
 - query_experiment tool
-- query_dataset tool
-- get_dashboard tool
-- get_session_replays tool
-- get_flags tool
-- Claude connector configuration
+- query_dataset endpoint
+- session replays analysis
+- feature flags retrieval
+- streamable HTTP transport
+- dashboard and notebook querying
+- experiment analysis data
+- metric references querying
+- Claude desktop integration
 - Cursor mcp.json configuration
-- Gemini CLI settings.json
-- https://mcp.amplitude.com/v1/mcp endpoint
-- experiment analysis queries
-- dashboard chart retrieval
-- feature flags filtering
-- session replay search
+- Gemini CLI settings
+- dash API integration

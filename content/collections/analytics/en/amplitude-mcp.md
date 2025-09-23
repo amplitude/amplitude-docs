@@ -226,5 +226,7 @@ If you encounter issues not covered here:
 ## Technical specifications
 
 **Transport Type:** Streamable HTTP (Remote)
+
 **Authentication:** OAuth 2.0 with Amplitude
+
 **Endpoint:** `https://mcp.amplitude.com/v1/mcp`
