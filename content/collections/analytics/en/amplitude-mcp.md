@@ -19,6 +19,11 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 | Tool Name              | Description                                                                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `search`               | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
+| `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
+| `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
+| `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
+| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad hoc analysis within a project                                                   |
+| `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
 | `get_charts`           | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
 | `get_dashboard`        | Get specific dashboards and all their charts including chart IDs that can be queried individually                                              |
 | `get_notebook`         | Get specific notebooks and all their charts including chart IDs that can be queried individually                                               |
@@ -27,19 +32,13 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 | `get_deployments`      | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
 | `get_metrics`          | List all metrics from a project with optional filtering and sorting by various criteria                                                        |
 | `get_metric`           | Get detailed information about a specific metric by ID                                                                                         |
-| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad hoc analysis within a project                                                   |
-| `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
-| `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
-| `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
-| `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
-| `get_project_api_keys` | Get analytics API keys for a specific project                                                                                                  |
 | `get_events`           | Retrieve events from a project with optional filtering and sorting                                                                             |
 | `get_event_properties` | Retrieve event properties from a project with filtering options                                                                                |
 | `get_user_properties`  | Retrieve user properties from a project with filtering options                                                                                 |
 | `get_session_replays`  | Search for session replays in the last 30 days, filtered by user properties or events.                                                         |
+| `get_project_api_keys` | Get analytics API keys for a specific project                                                                                                  |
 
 {{/partial:collapse}}
-
 
 ## Implementation instructions
 
@@ -128,43 +127,35 @@ Complete the steps below, depending on the tool you're integrating with.
 
 ### Basic analytics queries
 
-```text
-"What were my daily active users over the last 7 days?"
+> What were my daily active users over the last 7 days?
 
-"Show me signup conversion rates by traffic source this month"
+> Show me signup conversion rates by traffic source this month
 
-"Which features have the highest engagement rates?"
-```
+> Which features have the highest engagement rates?
 
 ### Experiment analysis
 
-```
-"What's the performance of my checkout experiment?"
+> What's the performance of my checkout experiment?
 
-"Show me the statistical significance of the new onboarding flow"
+> Show me the statistical significance of the new onboarding flow
 
-"Which experiment variants are currently running?"
-```
+> Which experiment variants are currently running?
 
 ### Content discovery
 
-```
-"Find all charts related to user retention"
+> Find all charts related to user retention
 
-"Search for dashboards containing mobile app metrics"
+> Search for dashboards containing mobile app metrics
 
-"Show me experiments testing the payment flow"
-```
+> Show me experiments testing the payment flow
 
 ### Advanced analysis
 
-```
-"Compare user behavior between iOS and Android platforms"
+> Compare user behavior between iOS and Android platforms
 
-"What's the typical user journey for power users?"
+> What's the typical user journey for power users?
 
-"Analyze feature adoption rates after our recent product launch"
-```
+> Analyze feature adoption rates after our recent product launch
 
 ## Typical analysis workflow
 
@@ -177,14 +168,12 @@ Most analysis questions follow this pattern:
 
 Example conversation flow:
 
-```
-You: "Show me user retention data"
-AI: [Searches for retention-related charts]
-AI: [Retrieves chart definitions]
-AI: [Queries the data and presents results]
-You: "Can you break this down by user segment?"
-AI: [Modifies query to include segmentation]
-```
+> User: Show me user retention data
+> AI: [Searches for retention-related charts]  
+> AI: [Retrieves chart definitions]  
+> AI: [Queries the data and presents results]
+> User: Can you break this down by user segment?
+> AI: [Modifies query to include segmentation]
 
 ## Security and compliance
 
@@ -205,20 +194,20 @@ Your Amplitude data is processed by the AI service you're using (for example, Cl
 **Authentication Problems**
 
 * Ensure your Amplitude account has proper project access  
-* Check that your organization ID is correct in the URL  
-* Try re-authenticating through the OAuth flow
+* Check that you are logged in to the correct Amplitude account  
+* Try disconnecting the MCP connection and try re-authenticating through the OAuth flow
+* Try logging out of Amplitude, then recconnecting the MCP connection
 
 **Missing Data**
 
 * Verify you have access to the specific Amplitude project  
 * Check if the data exists in your Amplitude interface  
-* Ensure proper permissions for the requested metrics
+* Ensure proper permissions for the requested data
 
 **Chart Query Issues**
 
 * Some large charts may be truncated by AI platforms  
-* Dashboard charts may use default settings instead of custom filters  
-* Experiment queries may not include saved filters
+* Querying charts from dashboards may use default chart settings instead of saved dashboard filters
 
 **OAuth Flow Issues**
 
@@ -230,12 +219,12 @@ Your Amplitude data is processed by the AI service you're using (for example, Cl
 If you encounter issues not covered here:
 
 1. Verify your setup matches the configuration examples  
-2. Test with a simple query like "What projects do I have access to?"  
+2. Test with a simple query like "What Amplitude projects do I have access to?"
 3. Check that your Amplitude account has the necessary permissions  
 4. Contact your Amplitude administrator for organization-specific setup help
 
 ## Technical specifications
 
-**Transport Type:** Streamable HTTP (Remote)  
-**Authentication:** OAuth 2.0 with Amplitude  
+**Transport Type:** Streamable HTTP (Remote)
+**Authentication:** OAuth 2.0 with Amplitude
 **Endpoint:** `https://mcp.amplitude.com/v1/mcp`
