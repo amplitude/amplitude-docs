@@ -5,7 +5,7 @@ This documentation covers the Taxonomy API for Enterprise users, which provides 
 ## Keywords
 
 - Taxonomy API
-- Enterprise users
+- Enterprise plan
 - event schema management
 - event categories
 - event types
@@ -14,7 +14,6 @@ This documentation covers the Taxonomy API for Enterprise users, which provides 
 - group properties
 - CRUD operations
 - HTTP basic authentication
-- REST endpoints
 - URL encoding
 - gp: prefix (custom user properties)
 - grp: prefix (custom group properties)
@@ -25,20 +24,13 @@ This documentation covers the Taxonomy API for Enterprise users, which provides 
 - tracking plan
 - schema initialization
 - property overrides
-- overrideScope parameter
-- classifications (PII, SENSITIVE, REVENUE)
-- Data Access Controls
-- is_hidden property
-- ingested properties
 - shared properties
-- property restoration
-- enum_values
+- data classifications (PII, SENSITIVE, REVENUE)
+- property visibility controls
+- is_hidden parameter
 - regex validation
-- is_array_type
-- is_required
-- display_name
-- visibility settings
-- pathfinder
-- persona results
-- timeline
-- dropdowns
+- enum values
+- array types
+- property restoration
+- 409 Conflict responses
+- Data Access Controls
