@@ -39,7 +39,7 @@ engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party 
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading="Locale code"}}
-Amplitude considers only the language of a locale code. For example, `fr_FR` and `fr_CA` resolves to a single French translation.
+Amplitude considers the language of a locale code for certain languages. See the section below for more details.
 {{/partial:admonition}}
 
 ## Update project settings to support multiple languages
