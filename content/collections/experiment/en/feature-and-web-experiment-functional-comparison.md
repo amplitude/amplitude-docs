@@ -26,11 +26,10 @@ The following tables describe which Experiment functionality is available for Fe
 | Holdouts | ✅ | ❌  |
 | % of audience to rollout| ✅ | ❌  |
 | **Exposure Event Type** |   |     |
-| Exposure Event | ✅ | ❌ |
+| Exposure Event | ✅ | ✅ |
 | Custom Exposure | ✅ | ❌  |
-| Proxy Exposure | ✅ | ❌ |
 | **Bucketing Salt** |  |   |
-| Bucketing salt  |  ✅ | ❌ |
+| Bucketing salt  |  ✅ | ✅ |
 
 {{/partial:collapse}}
 
@@ -38,49 +37,47 @@ The following tables describe which Experiment functionality is available for Fe
 {{partial:collapse name="Creating experiments"}}
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| Name |  |  | X |
-| Project |  |   | X |
-| Template | X  |   |   |
-| Recommended Settings |  |   | X |
-| Link |  |   | X |
-| Tag | X |   |   |
-| Variants |  |   |  X |
-| Payload |  X |   |  
-| **When to Run**|  |   |   |
-| When to start |   |   | X |
-| When to end |   |   | X |
-| Traffic estimate per day | X |  |   |
-| Control mean estimator | X  |   |   |
-| Power duration estimator | X |  |   |
-| OOTB web editor widgets |   |  X |  | 
-| Project-level user permissions |  |   | X |
-| Notifications through Slack channel or webhook |  |   | X |
+| **Functionality** | **Feature** | **Web** |
+| Name |  ✅ |  ✅ |
+| Project |  ✅ |  ✅  |
+| Template |  ✅  | ❌  |
+| Recommended Settings |  ✅ |  ✅  |
+| Link |  ✅ | ✅ |
+| Tag |  ✅ | ✅  |
+| Variants |  ✅ | ✅ |
+| Payload | ✅ | ❌  |  
+| **When to Run**|  |   |
+| When to start | ✅  | ✅  |
+| When to end | ✅  | ✅ |
+| Traffic estimate, Control mean estimator, Power duration estimator for each day | ✅ | ❌ |
+| OOTB web editor widgets | ❌ |  ✅ |
+| Project-level user permissions | ✅ | ✅  |
+| Notifications through Slack channel or webhook | ✅ | ✅  |
 
 {{/partial:collapse}}
 
 {{partial:collapse name="Experiment types"}}
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| A/B |  |  | X |
-| Multi-Armed Bandit |  |   | X |
+| **Functionality** | **Feature** | **Web** |
+| A/B | ✅ | ✅ |
+| Multi-Armed Bandit | ✅ | ✅ |
 
 {{/partial:collapse}}
 
 {{partial:collapse name="Goals"}}
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| Primary Metric |  |  | X |
-| Secondary Metric |  |   | X |
-| Guardrail vs success |  |   | X |
-| Direction |  |   | X |
-| Minimum Detectable Effect | X |   |  |
-| Windsorization |  |   | X |
-| CUPED | X |   |  |
-| Attribution | X |   |  |
-| Window | X |   |  |
+| **Functionality** | **Feature** | **Web** |
+| Primary Metric | ✅ | ✅ |
+| Secondary Metric | ✅ | ✅ |
+| Guardrail vs success | ✅ | ✅ |
+| Direction | ✅ | ✅ |
+| Minimum Detectable Effect | ✅ | ❌ |
+| Winsorization | ✅ | ✅  |
+| CUPED | ✅ | ✅  |
+| Attribution | ✅ | ✅ |
+| Window | ✅ | ❌ |
 
 {{/partial:collapse}}
 
@@ -88,11 +85,11 @@ The following tables describe which Experiment functionality is available for Fe
 
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| User or Behavioral Cohort |  |  | X |
-| Stratified Sampling |  |   | X |
-| Rollout |   |   | X |
-| Sticky Bucketing |  |   | X |
+| **Functionality** | **Feature** | **Web** |
+| User or Behavioral Cohort | ✅ | ✅  |
+| Stratified Sampling | ✅ | ✅ |
+| Rollout | ✅  | ✅  |
+| Sticky Bucketing | ✅ | ❌ |
 
 {{/partial:collapse}}
 
@@ -100,11 +97,10 @@ The following tables describe which Experiment functionality is available for Fe
 
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| Deployment|  |  | X |
-| Dependencies | X |   |  |
-| Testers | X  |   |   |
-| Sticky Bucketing |  |   | X |
+| **Functionality** | **Feature** | **Web** |
+| Deployment| ✅ | ✅ |
+| Dependencies | ✅ |  ❌ |
+| Testers | ✅ |  ❌ |
 
 {{/partial:collapse}}
 
@@ -112,11 +108,11 @@ The following tables describe which Experiment functionality is available for Fe
 
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
-| **Functionality** | **Feature** | **Web** | **Both** |
-| Assignment and Exposure charts|  |  | X |
-| Variant Jumping |  |   | X |
-| Anonymous Exposures |   |   |  X |
-| Exposures without Assignments |  |   | X |
-| Rollout options |   |   | X |
+| **Functionality** | **Feature** | **Web** |
+| Assignment and Exposure charts| ✅ | ❌ |
+| Variant Jumping | ✅ | ✅ |
+| Anonymous Exposures | ✅  | ✅ |
+| Exposures without Assignments | ✅ | ❌ |
+| Rollout options | ✅  | ✅  |
 
 {{/partial:collapse}}
