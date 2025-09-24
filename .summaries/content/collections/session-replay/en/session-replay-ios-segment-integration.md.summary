@@ -1,16 +1,18 @@
 **Summary:** This documentation covers the Session Replay iOS Segment Integration plugin for iOS/iPadOS apps using Segment's Analytics-Swift library with Amplitude (Actions) destination, including installation via SPM/CocoaPods, configuration with AmplitudeSegmentSessionReplayPlugin, and integration requirements with Segment's AmplitudeSession plugin.
 
 **Keywords:**
+- Session Replay iOS Segment Integration
 - AmplitudeSegmentSessionReplayPlugin
 - Analytics-Swift library
 - Segment Amplitude (Actions) destination
 - AmplitudeSession plugin
-- iOS/iPadOS session replay
+- iOS iPadOS mobile platform
 - SPM CocoaPods installation
-- AmplitudeSessionReplay-iOS repository
-- Segment destination plugins
 - view tree capture
 - sampleRate configuration
 - serverZone EU data residency
-- analytics.add(plugin:) method
-- analytics.remove(plugin:) method
+- optOut user consent
+- analytics.add plugin
+- analytics.remove plugin
+- AmplitudeSessionReplay-iOS repository
+- Segment destination plugins

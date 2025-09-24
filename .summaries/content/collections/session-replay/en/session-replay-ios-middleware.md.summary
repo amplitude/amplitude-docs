@@ -1,17 +1,18 @@
-**Summary:** This documentation covers the installation and configuration of Session Replay for iOS apps using the iOS SDK middleware with the maintenance Amplitude iOS SDK (version 8.21.0+), including initialization with AmplitudeiOSSessionReplayMiddleware, sampling rate configuration, and middleware management through addEventMiddleware/removeEventMiddleware methods.
+**Summary:** This documentation covers the installation and configuration of Session Replay for iOS apps using the iOS SDK middleware with the maintenance Amplitude iOS SDK, including setup with SPM/CocoaPods, middleware initialization with AmplitudeiOSSessionReplayMiddleware, and configuration options like sampleRate and recordLogOptions.
 
 **Keywords:**
 - AmplitudeiOSSessionReplayMiddleware
 - iOS SDK middleware
 - maintenance Amplitude iOS SDK
-- addEventMiddleware
-- removeEventMiddleware
+- Session Replay iOS
 - sampleRate configuration
-- AmplitudeSessionReplay-iOS
-- middleware initialization
-- session replay middleware
-- Amplitude.instance()
-- iOS session replay integration
-- middleware management
-- amplitude.optOut
+- recordLogOptions
+- logCountThreshold
+- maxMessageLength
+- amplitude.addEventMiddleware
+- amplitude.removeEventMiddleware
+- SPM CocoaPods installation
+- iOS iPadOS compatibility
 - sessionReplayMiddleware reference
+- amplitude.optOut
+- serverZone EU data residency
