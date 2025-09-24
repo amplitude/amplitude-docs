@@ -53,7 +53,7 @@ This setup uses one CloudFront distribution with three origins and three cache b
 5. Add a third origin for nudge images. Navigate to the _Origins_ tab and click **Create origin**:
 
    - **Origin domain**:
-     - `engagement-static.amplitude.com` for the US data center, or
+     - `engagement-static.amplitude.com` for the US data center
      - `engagement-static.eu.amplitude.com` for the EU data center
 
 6. Navigate to the 'Behaviors' tab and click **Create behavior**:
