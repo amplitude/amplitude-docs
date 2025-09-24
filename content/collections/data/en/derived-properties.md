@@ -254,17 +254,17 @@ Use this when tracking a user property with a date-time data type, and you want 
 
 ```
 DIVIDE(  
-  SUBTRACTION(  
-  DATE_TO_LONG(  
-  PROPERTY(  
-  'start_date', 'user'  
-  )  
-  ),  
-  DATE_TO_LONG(  
-  PROPERTY(  
-  'end_date', 'user'  
-  )  
-  )  
+  MINUS(  
+    DATE_TO_LONG(  
+        PROPERTY(  
+        'start_date', 'user'  
+        )  
+    ),  
+    DATE_TO_LONG(  
+        PROPERTY(  
+        'end_date', 'user'  
+        )  
+    )  
   ),  
   86400000   
 )
