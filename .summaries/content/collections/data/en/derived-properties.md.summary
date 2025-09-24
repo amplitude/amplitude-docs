@@ -1,5 +1,5 @@
 ## Summary
-This documentation covers Amplitude Data's derived properties feature, which allows retroactive creation of new event and user properties using formulas with functions and operators applied to existing properties, computed on-the-fly without affecting raw data.
+This documentation covers Amplitude Data's derived properties feature, which allows creating new event and user properties retroactively using formulas with functions and operators applied to existing properties, computed on-the-fly without affecting raw data.
 
 ## Keywords
 - derived properties

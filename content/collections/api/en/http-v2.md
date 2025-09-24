@@ -27,7 +27,7 @@ Amplitude rate limits individual users (by Amplitude ID) that update their user 
 
 **For Starter plan customers:**
 
-Limit your upload to 100 batches per second and 1000 events per second. You can batch events into an upload, but we recommend not sending more than 10 events per batch. Amplitude expects fewer than 100 batches per second, and the 1000 events per second limit still applies.
+Limit your upload to 100 batches per second and 1000 events per second. You can batch events into an upload, but Amplitude recommends not sending more than 10 events per batch. Amplitude expects fewer than 100 batches per second, and the 1000 events per second limit still applies.
 
 **For customers on Growth and Enterprise plans:**
 
