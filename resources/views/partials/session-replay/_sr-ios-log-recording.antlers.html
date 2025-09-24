@@ -1,7 +1,11 @@
 {{markdown}}
 ### Log Recording
 
-**Available in AmplitudeSessionReplay `0.8.0+`**. Session Replay supports recording logs in iOS applications. To enable log recording, send log messages through the `recordLog(level:message:date:)` API and configure the limits through `recordLogOptions` parameter while initializing the Session Replay plugin.
+{{partial:admonition type="note" heading="Availability"}}
+Log recording is available in AmplitudeSessionReplay `0.8.0` and later.
+{{/partial:admonition}}
+
+Session Replay supports recording logs in iOS applications. To enable log recording, send log messages through the `recordLog(level:message:date:)` API and configure the limits through `recordLogOptions` parameter while initializing the Session Replay plugin.
 
 ```swift
 import AmplitudeSwiftSessionReplayPlugin
@@ -12,9 +16,9 @@ amplitude.add(plugin: sessionReplayPlugin)
 sessionReplayPlugin.recordLog(level: .error, message: "This is an error log")
 ```
 
-If you have implemented a log system, you can make single-point modifications to quickly integrate the record log functionality. Here are some common examples:
+If you have implemented a log system, you can make single-point modifications to integrate log recording functionality. See the following examples for more information.
 
-**CocoaLumberjack**
+#### CocoaLumberjack
 
 If you use `CocoaLumberjack`, you can integrate it with a custom logger provider.
 
@@ -52,7 +56,7 @@ DDLog.add(AmplitudeLogRecordLogger(sessionReplayPlugin))
 
 ```
 
-**React Native**
+#### React Native
 
 If you use `console` log or `react-native-logs` with `consoleTransport`, you can integrate it with `RCTAddLogFunction`.
 ```swift
