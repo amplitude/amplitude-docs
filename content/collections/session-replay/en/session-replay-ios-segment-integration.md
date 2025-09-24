@@ -155,6 +155,8 @@ if (nonEUCountryFlagEnabled) {
 
 {{partial:partials/session-replay/sr-ios-mapview-support}}
 
+{{partial:partials/session-replay/sr-ios-log-recording}}
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-ios-storage}}
