@@ -257,12 +257,12 @@ DIVIDE(
   MINUS(  
     DATE_TO_LONG(  
         PROPERTY(  
-        'start_date', 'user'  
+            'start_date', 'user'  
         )  
     ),  
     DATE_TO_LONG(  
         PROPERTY(  
-        'end_date', 'user'  
+            'end_date', 'user'  
         )  
     )  
   ),  
