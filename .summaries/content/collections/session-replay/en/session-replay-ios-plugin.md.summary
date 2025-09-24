@@ -5,16 +5,14 @@
 - AmplitudeSwiftSessionReplayPlugin
 - AmplitudeiOSSessionReplayMiddleware
 - iOS Swift SDK integration
-- view tree capture
 - sampleRate configuration
+- view tree capture
 - Swift Package Manager
 - CocoaPods installation
 - amplitude.add(plugin:)
-- amplitude.remove(plugin:)
-- enableRemoteConfig
-- user opt-out
-- EU data residency
 - AmplitudeSessionReplay-iOS repository
-- iOS/iPadOS applications
-- session recording
-- replay collection disable
+- remote configuration enableRemoteConfig
+- user opt-out optOut
+- EU data residency serverZone
+- recordLogOptions configuration
+- iOS iPadOS compatibility
