@@ -1,10 +1,10 @@
 {{markdown}}
 ### Log Recording
 
-Session Replay supports recording logs in iOS applications. To enable log recording, send log messages through the `recordLog(level:message:date:)` API and configure the limits through `recordLogOptions` parameter while initializing the Session Replay plugin.
+**Available in AmplitudeSessionReplay `0.8.0+`**. Session Replay supports recording logs in iOS applications. To enable log recording, send log messages through the `recordLog(level:message:date:)` API and configure the limits through `recordLogOptions` parameter while initializing the Session Replay plugin.
 
 ```swift
-import AmplitudeSessionReplay
+import AmplitudeSwiftSessionReplayPlugin
 
 let sessionReplayPlugin = AmplitudeSwiftSessionReplayPlugin(recordLogOptions: .init(logCountThreshold: 2000, maxMessageLength: 4000))
 amplitude.add(plugin: sessionReplayPlugin)
