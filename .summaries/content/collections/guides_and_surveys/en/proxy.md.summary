@@ -1,16 +1,18 @@
 ## Summary
-Documents setting up AWS CloudFront as a reverse proxy for Amplitude Guides and Surveys, configuring a unified distribution with two origins (cdn.amplitude.com for static assets and gs.amplitude.com for API requests) and specific cache behaviors including the critical `/sdk/*` path pattern for API routing.
+This documentation explains how to configure AWS CloudFront as a reverse proxy for Amplitude's Guides and Surveys service, setting up three origins (cdn.amplitude.com, gs.amplitude.com, engagement-static.amplitude.com) with specific cache behaviors including a wildcard `/sdk/*` pattern for API requests and troubleshooting common proxy configuration issues.
 
 ## Keywords
 - AWS CloudFront reverse proxy
 - Guides and Surveys API proxy
+- `/sdk/*` wildcard pattern
 - cdn.amplitude.com origin
-- gs.amplitude.com origin
-- `/sdk/*` path pattern
-- cache behaviors configuration
-- serverUrl and cdnUrl initialization
-- preview mode `/sdk/admin/config`
-- POST requests state persistence
+- gs.amplitude.com origin  
+- engagement-static.amplitude.com origin
+- serverUrl cdnUrl mediaUrl configuration
 - AllViewerExceptHostHeader policy
-- CachingDisabled API policy
-- engagement.init() proxy configuration
+- CachingDisabled vs CachingOptimized
+- POST requests state persistence
+- preview mode `/sdk/admin/config`
+- nudge images proxy
+- CORS-with-preflight-and-SecurityHeadersPolicy
+- US vs EU data center origins

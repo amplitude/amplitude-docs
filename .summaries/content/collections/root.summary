@@ -1,117 +1,81 @@
-Amplitude is a comprehensive digital analytics and experimentation platform that provides end-to-end solutions for product analytics, feature experimentation, customer data management, and user engagement. The platform serves organizations seeking to understand user behavior, optimize product experiences, and drive data-driven decision making across web, mobile, and server-side applications.
+Amplitude Guides and Surveys is a comprehensive in-product user engagement platform that serves as an alternative to traditional popups, designed to enhance user onboarding, collect feedback, and improve retention, activation, and engagement metrics. The platform enables product, growth, and product marketing teams to create contextual, interactive experiences directly within their applications across web, iOS, Android, and React Native platforms.
 
 ## Core Product Architecture
 
-**Analytics Foundation**
-Amplitude Analytics forms the platform's core, offering behavioral analytics through multiple chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, Journeys, Stickiness, Lifecycle, Personas, Compass, Data Tables, Engagement Matrix, Impact Analysis, Revenue LTV, and Experiment Results. These charts operate on event-based data models tracking user interactions, properties, and behavioral patterns over time.
+The platform consists of three primary components that work together to deliver personalized user experiences:
 
-**Experimentation Platform**
-Amplitude Experiment provides feature flagging and A/B testing capabilities with advanced statistical analysis, supporting client-side and server-side experiments. The platform includes experiment theory documentation, advanced techniques, workflow management, troubleshooting guides, and "under the hood" technical implementation details.
+**Guides** are interactive, multi-step in-product messages that use behavioral triggers, strike detection, and rate-limiting mechanisms. They support six template types: Tours (multi-step onboarding), Announcements (feature updates), Checklists (task completion), Carousels (swipeable content), Banners (persistent notifications), and Tooltips (contextual help). Guides utilize five form factors: Modal (overlay dialogs), Popover (contextual bubbles), Pin (anchored elements), Tooltip (hover information), and Banner (persistent strips), plus Checklist for task management.
 
-**Data Management Layer**
-Amplitude Data serves as a comprehensive data governance platform with tracking plans, schema validation, data quality monitoring, and the Ampli developer toolkit for type-safe instrumentation. The Customer Data Platform (CDP) includes audience management, source/destination catalogs, and warehouse-native capabilities.
+**Surveys** focus on feedback collection through four unique block types: Rating (stars, NPS, emoji), Long answer (text areas), Short answer (single-line inputs), and List (multiple choice with randomization). Surveys support conditional logic for dynamic response branching and utilize a subset of guide form factors (modal, popover, pin) with specialized settings for NPS scoring, ARIA labels, and pre-fill capabilities.
 
-**Specialized Products**
-- **Session Replay**: Visual user session recording and analysis
-- **Guides and Surveys**: In-product user engagement and feedback collection  
-- **Web Experiment**: Browser-based experimentation tools
-- **Agents**: AI-powered analytics assistance
+**Resource Center** is a help widget that integrates with the SDK to provide search functionality, recommended content, quick links, and call-to-action buttons. It features an Autopilot system using semantic search algorithms to automatically surface relevant articles from content repositories, with configurable recommendation sets and priority-based display logic.
 
-## SDK and Integration Ecosystem
+## Product Relationships and Feature Integration
 
-**Client-Side SDKs**
-The platform provides comprehensive SDKs for Browser (JavaScript/TypeScript), Android (Java/Kotlin), iOS (Swift/Objective-C), React Native, Flutter, Unity, and Unreal Engine. Each SDK supports both analytics tracking and experiment evaluation with platform-specific optimizations.
+The three core components operate within a unified targeting and analytics framework. Guides and Surveys share common form factors and targeting mechanisms, while Resource Center provides persistent help functionality that complements the contextual nature of guides. All components leverage the same SDK infrastructure and event tracking system, enabling cohesive user journey analytics.
 
-**Server-Side SDKs**  
-Server-side instrumentation includes Node.js, Python, Java, and Go SDKs for backend event tracking and experiment evaluation. The Ampli toolkit generates type-safe wrappers for all supported languages.
+The platform integrates deeply with Amplitude's analytics ecosystem, using existing user segmentation, cohort targeting, and session properties for precise audience targeting. Experimentation capabilities through Amplitude Experiment enable A/B testing across all component types, with variant configuration and performance analytics accessible through the insights dashboard.
 
-**Framework Integrations**
-Specialized integrations exist for popular frameworks and platforms, with the SDK catalog providing comprehensive implementation guides and best practices for each supported technology stack.
+Cross-platform consistency is maintained through native SDKs that provide identical functionality across web, iOS, Android, and React Native environments, with platform-specific optimizations for element targeting and navigation handling.
 
-## API Infrastructure
+## Key Nomenclature and Definitions
 
-**Analytics APIs**
-- HTTP V2 API (`/2/httpapi`) for real-time event ingestion
-- Batch Event Upload API for bulk data processing
-- Export API for raw event data extraction
-- Dashboard REST API for processed analytics data
-- User Profile API for comprehensive user data retrieval
+The platform employs specific terminology for its analytics and configuration systems:
 
-**Experiment APIs**
-- Evaluation API for feature flag and experiment variant assignment
-- Management APIs for experiment configuration and results analysis
+**Lifecycle UUID** serves as the primary identifier for tracking user journeys across guides and surveys. **Step ID** and **Step Index** track progression through multi-step experiences, while **Variant ID** supports A/B testing through Amplitude Experiment integration.
 
-**Data Management APIs**
-- Taxonomy API for schema and tracking plan management
-- User Privacy API for GDPR/CCPA compliance
-- Lookup Table APIs for data enrichment
-- Behavioral Cohorts API for audience management
+**Form Factors** define the visual presentation: Modal (full overlay), Popover (contextual positioning), Pin (element-anchored), Tooltip (hover-triggered), Banner (persistent display), and Checklist (task-oriented). Each supports customization properties including z-index positioning, alignment settings, and interactive behaviors.
 
-**Specialized APIs**
-- Guides and Surveys API for in-product engagement
-- SCIM API for user provisioning and identity management
-- Chart Annotations API for programmatic annotation management
+**Targeting Resolution** uses behavioral triggers including element appearance/clicks, time delays, rage clicks, user confusion detection, and event tracking. The system employs **Priority Levels** (urgent, high, medium, low) with tiebreaker rules and **Throttling** mechanisms for rate limiting across global and tag-based categories.
 
-## Key Nomenclature and Concepts
+**Source.type** categorizes trigger origins: nudge (behavioral), trigger (event-based), sdk (programmatic), and share_link (distributed). **App Type** distinguishes platforms (ios, android, react native, web) for cross-platform analytics.
 
-**Core Identifiers**
-- `amplitude_id`: Platform-generated user identifier
-- `user_id`: Customer-defined user identifier  
-- `device_id`: Device-specific tracking identifier
-- `session_id`: Session boundary management
-- `insert_id`: Event deduplication identifier
+## Broader Product Ecosystem Integration
 
-**Event Structure**
-- `event_type`: Categorical event name
-- `event_properties`: Event-specific attributes
-- `user_properties`: User-level attributes
-- `group_properties`: Organization/account-level attributes (Accounts add-on)
+Amplitude Guides and Surveys operates as a specialized engagement layer within the broader Amplitude product ecosystem. It leverages Amplitude Analytics for user segmentation and behavioral data, integrates with Amplitude Experiment for A/B testing capabilities, and utilizes the core Amplitude user management and permissions system.
 
-**Property Operations**
-- `$set`: Set property value
-- `$setOnce`: Set if not exists
-- `$add`: Increment numeric values
-- `$append`/`$prepend`: Array manipulation
-- `$unset`: Remove properties
-- `$remove`: Remove array elements
+The platform extends Amplitude's analytics-first approach by providing actionable engagement tools that respond to the behavioral insights generated by Amplitude Analytics. User properties, cohorts, and event data flow seamlessly between systems, enabling sophisticated targeting based on user behavior patterns, lifecycle stages, and custom attributes.
 
-**Analytics Concepts**
-- **Tracking Plans**: Schema definitions for events and properties
-- **Cohorts**: User segments based on behavioral criteria
-- **Funnels**: Multi-step conversion analysis
-- **Retention**: User return behavior measurement
-- **Personas**: Behavioral user clustering
-- **Journeys**: Path analysis between events
+The permissions system inherits from base Amplitude roles while providing specialized access controls for engagement content creation and management. This ensures consistent security and governance across the entire Amplitude platform while allowing for role-specific functionality.
 
-## Administrative and Enterprise Features
+## SDK Integration and API Endpoints
 
-**Account Management**
-Comprehensive user management, team organization, project structure, and role-based access control with SSO integration through SCIM provisioning.
+The platform provides native SDKs for all major platforms with consistent initialization patterns:
 
-**Billing and Usage**
-Event volume tracking, plan management, quota monitoring, and usage analytics across different pricing tiers (Starter, Plus, Growth, Enterprise).
+**Web SDK** (`@amplitude/engagement-browser`) integrates as an Amplitude Browser SDK plugin or standalone with third-party analytics. Key methods include `engagement.init()` and `engagement.boot()` for initialization, `setRouter()` for SPA navigation, `forwardEvent()` for trigger integration, and `show()`/`reset()`/`closeAll()` for programmatic control.
 
-**Single Sign-On**
-Enterprise SSO integration with SAML, OIDC, and directory service providers including Okta, Azure AD, and Google Workspace.
+**iOS SDK** uses Swift Package Manager/CocoaPods installation with `AmplitudeEngagement` class initialization. Element targeting utilizes `accessibilityIdentifier` and `.amplitudeView()` SwiftUI modifiers, with `amplitudeEngagement.screen()` for tracking and `handleUrl()` for preview mode.
 
-**Data Governance**
-- Data Access Control (DAC) for sensitive data management
-- PII handling and privacy compliance
-- Regional data residency (US/EU)
-- Data retention and deletion policies
+**Android SDK** (`amplitude-engagement-android`) supports Jetpack Compose through `amplitudeView` modifier and traditional views via `contentDescription`. The `AmplitudeEngagement` class handles initialization with `AmplitudeBootOptions` configuration.
 
-## Advanced Capabilities
+**React Native SDK** (`@amplitude/plugin-engagement-react-native`) integrates with `@amplitude/analytics-react-native` using `getPlugin()` method and `handleURL()` for deep linking.
 
-**Warehouse Integration**
-Native warehouse connectivity with Snowflake, BigQuery, Redshift, and Databricks for data synchronization, Change Data Capture (CDC), and reverse ETL workflows.
+All SDKs support preview mode through custom URL schemes (`mobile://amplitude/engagement/preview`) and provide debugging capabilities with `_startNudgeDebug` and `_debugStatus()` methods.
 
-**Partner Ecosystem**
-Extensive integration catalog including marketing tools, customer success platforms, data warehouses, and business intelligence solutions accessible through the destination catalog.
+## Analytics and Event Schema
 
-**Migration Support**
-Comprehensive migration tooling and documentation for transitioning from other analytics platforms including Google Analytics, Mixpanel, and Adobe Analytics.
+The platform generates comprehensive analytics events for Amplitude integration:
 
-**Academy and Learning**
-Educational content, best practices, implementation guides, and certification programs for platform adoption and optimization.
+**Guide Events**: Guide Viewed, Guide Completed, Guide Dismissed, Guide Engaged with CTA engagement levels (primary, secondary, tertiary), snooze duration tracking, and Pin Target Not Found error handling.
 
-The platform operates across multiple deployment regions with different feature availability based on subscription tiers, serving as a complete digital analytics ecosystem for modern product organizations requiring sophisticated user behavior analysis, experimentation capabilities, and data governance.
+**Survey Events**: Survey Submitted, Survey Abandoned, Survey Response with specialized properties including Survey Response Array, Survey Response Number, and NPS-specific promoter/passive/detractor classifications.
+
+**Resource Center Events**: Article interactions, search queries, recommendation clicks, and Autopilot-generated suggestions with semantic search attribution.
+
+All events include common properties: App Type, Lifecycle UUID, Step ID/Index, Variant ID, Is From Debug Mode, and Source.type for comprehensive user journey tracking.
+
+## Advanced Features and Configuration
+
+**Experimentation** integrates with Amplitude Experiment for A/B testing and multi-armed bandit optimization, supporting variant configuration, exposure event handling, and performance analytics through the insights dashboard.
+
+**Localization** supports ISO 639 language codes with XLIFF file workflows, AI-powered translation via Claude, and fallback behavior configuration for multi-language deployments.
+
+**Personalization** uses client-side user properties through the "Personalize with Variables" feature, enabling dynamic content insertion with fallback values for missing properties.
+
+**Themes** provide comprehensive branding control through the Theme Editor with Brand controls and Component editor sections, supporting Google Fonts integration, CSS property configuration, and platform-specific customization.
+
+**Proxy Configuration** supports AWS CloudFront reverse proxy setup with three origins (cdn.amplitude.com, gs.amplitude.com, engagement-static.amplitude.com) and specific cache behaviors including `/sdk/*` wildcard patterns for API requests.
+
+**Permissions System** implements role-based access control with five levels (No access, Viewer, Member, Manager, Administrator) that override base Amplitude user roles, providing granular control over viewing, editing, publishing, and experiment execution capabilities.
+
+The platform provides specialized analytics through dedicated Insights and Responses tabs with CSV export capabilities up to 10,000 responses, enabling detailed analysis of engagement performance and user feedback patterns.

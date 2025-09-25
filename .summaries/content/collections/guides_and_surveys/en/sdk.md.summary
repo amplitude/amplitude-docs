@@ -1,25 +1,29 @@
 ## Summary
 
-This documentation covers the Amplitude Guides and Surveys Web SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers (like Segment), and Google Tag Manager, with detailed API methods for managing guides/surveys display, user properties, localization, and router configuration for SPAs.
+This documentation covers the Amplitude Guides and Surveys Web SDK implementation, including installation methods (Amplitude Browser SDK plugin, standalone with third-party analytics, Google Tag Manager), initialization with `init()` and `boot()` methods, user/session property management, and integration patterns for SPAs and desktop frameworks like Electron.
 
 ## Keywords
 
 - Amplitude Guides and Surveys Web SDK
 - @amplitude/engagement-browser package
 - engagement.init() and engagement.boot() methods
-- Amplitude Browser SDK 2.0 plugin integration
-- Third-party analytics provider integration
+- Browser SDK 2.0 plugin integration
+- third-party analytics provider integration
 - Segment analytics integration
 - Google Tag Manager template
-- engagement.gs.show() and engagement.gs.reset() methods
-- forwardEvent() for event-based triggers
-- setSessionProperty() and _setUserProperties() methods
-- updateLanguage() localization
-- setRouter() SPA configuration
-- setThemeMode() dark/light mode
-- addCallback() method registration
-- Content Security Policy (CSP) nonce parameter
-- _startNudgeDebug() desktop app preview
 - serverZone EU/US configuration
-- proxy setup serverUrl and cdnUrl
-- Electron framework integration
+- proxy setup with serverUrl/cdnUrl/mediaUrl
+- Content Security Policy (CSP) nonce
+- user_id and device_id identification
+- event forwarding with forwardEvent()
+- session properties and user properties
+- SPA router configuration with setRouter()
+- localization with updateLanguage()
+- theme mode management (lightMode/darkMode/auto)
+- callback registration with addCallback()
+- guide/survey control methods (show, reset, list, closeAll)
+- Electron desktop app integration
+- _startNudgeDebug for preview mode
+- _debugStatus() troubleshooting
+- targeting resolution and triggers
+- window.engagement global object
