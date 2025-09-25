@@ -99,7 +99,7 @@ In both cases, the increase in daily events comes from tracking click and page c
 - **Event streams**: Labeled events aren't available in live events, or in the event stream in user lookup and Session Replay. The raw `Element clicked` and `Element changed` events are visible instead.
 - **Google Chrome extension**: The Amplitude Event Explorer Chrome extension only displays raw events from the browser, so labeled events don't appear.
 - **Destination event streaming**: You can't send labeled events to destinations with [event streaming](/docs/data/destination-event-streaming-overview). You can use your labeled events to define cohorts and then use cohort syncing to integrate with (other destinations)[/docs/data/destination-catalog].
-- **Content Security Policy (CSP)**: Amplitude requires cross-tab communication between your site and Amplitude. Visual Labeling requires `cross-origin-opener-policy` to be `unsafe-none` or unset.
+- **Content Security Policy (CSP)**: Amplitude requires cross-tab communication between your site and Amplitude. If your CSP is set to `cross-origin-opener-policy: same-origin`, Visual Labeling may not function.
 
 ## Troubleshooting
 
@@ -109,4 +109,4 @@ If you don't see the visual labeling tools on your site, check the following:
 
 - If you have pop-up or adblocking tools enabled, they can interfere with the Visual Labeling experience. Disable the adblocker and retry.
 - If the URL you entered redirects to another URL, the visual labeling experience may not load. For security reasons, the domain of the page you're labeling must match the domain you entered in Amplitude. Try using the final URL after any redirects are complete.
-- Ensure `Cross-Origin-Opener-Policy` is set to `unsafe-none` or unset.
+- Ensure `Cross-Origin-Opener-Policy` is set to a value other than `same-origin`.
