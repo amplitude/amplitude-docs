@@ -1,0 +1,10 @@
+{{collection:rbac_permissions as="permissions"}}
+{{permissions group_by="product_area"}}
+{{groups}}
+<h2>{{group | ucfirst}}</h2>
+{{items}}
+<li>{{title}}</li>
+{{/items}}
+{{/groups}}
+{{/permissions}}
+{{/collection:rbac_permissions}}
