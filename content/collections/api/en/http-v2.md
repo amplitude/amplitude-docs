@@ -1872,6 +1872,10 @@ To send data to Amplitude HTTP V2 API, a `Content-Type` header must be set to `a
 
 You can send these keys in the JSON event object. One of `user_id` or `device_id` is required, as well as the `event_type`.
 
+{{partial:admonition type="note" heading="Top-level properties"}}
+Ensure that you include properties like `session_id` at the top level of the event payload. Otherwise, Amplitude can't map the value correctly.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `user_id`                          | <span class="required">Required if `device_id` isn't used</span>. String. ID for the user. Must have a minimum length of 5 characters unless overridden with the `min_id_length` option.                                                                                                                                                                                                                                                        |
