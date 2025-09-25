@@ -156,7 +156,9 @@ Pass the following option when you initialize the Session Replay plugin:
 | Name                  | Type      | Required | Default          | Description                                                                                                                                                                                                                                                                                                          |
 | --------------------- | --------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sampleRate`          | `number`  | No       | `0`              | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1 (for example, `0.4`), representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -226,6 +228,8 @@ if (nonEUCountryFlagEnabled) {
 {{partial:partials/session-replay/sr-ios-webview}}
 
 {{partial:partials/session-replay/sr-ios-mapview-support}}
+
+{{partial:partials/session-replay/sr-ios-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 
