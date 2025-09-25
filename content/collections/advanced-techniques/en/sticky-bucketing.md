@@ -10,12 +10,12 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329324
 ---
-Sticky bucketing ensures that a user continues to experience the same variant even when your experiment’s targeting criteria, percentage rollout, or rollout weights change. 
+Sticky bucketing checks whether a user has already experienced a variant of your experiment. If so, Experiment assigns the current value of the user property (the last variant they saw) to the user. This helps keep variants bucketed into their original variants unless you change the parameters of the experiment. 
 
-Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/) which is when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing doesn't guarantee that users will never experience variant jumping. Variant jumping may occur if your experiment includes both a logged-out and a logged-in experience because a user can have different logged in and logged out Amplitude IDs.
+Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/) which is when a user experiences two (2) or more variants for a single flag or experiment. However, simply enabling sticky bucketing doesn't guarantee that users will never experience variant jumping. Variant jumping may occur if your experiment includes both a logged-out and a logged-in experience because a user can have different logged in and logged out Amplitude IDs.
 
 {{partial:admonition type='note'}}
-Sticky bucketing is only available on feature experiments not flags.
+Sticky bucketing is only available for Feature experiments, not flags or Web experiments.
 {{/partial:admonition}}
 
 {{partial:admonition type='note'}}
@@ -26,7 +26,7 @@ Sticky bucketing is only available on feature experiments not flags.
 
 To turn sticky bucketing on or off, open your experiment and navigate to your experiment and then click the **pencil** icon and then go to *Experiment Design > Advanced (Optional) > Bucketing Options.* 
 
-When sticky bucketing is enabled, Amplitude Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user Experiment assigns the current value of the user property (the last variant they saw). Otherwise, the user is re-evaluated.
+When sticky bucketing is enabled, Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user Experiment assigns the current value of the user property (the last variant they saw). Otherwise, the user is re-evaluated.
 
 {{partial:admonition type='note'}}
 If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
