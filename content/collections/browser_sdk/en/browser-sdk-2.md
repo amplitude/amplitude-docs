@@ -535,7 +535,6 @@ When the `<title>` element has the `data-amp-mask` attribute, Amplitude replaces
 <head>
   <!-- Works with any attribute value -->
   <title data-amp-mask="true">Sensitive Customer Information</title>
-  <title data-amp-mask="">Private Account Details</title>
 </head>
 ```
 
