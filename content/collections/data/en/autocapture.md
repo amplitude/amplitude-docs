@@ -28,7 +28,7 @@ Amplitude offers two primary ways to capture events:
 
 From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. Autocapture lets you focus on speed when setting up your analysis.
 
-When you want to drill deeper into specific actions in your application requiring additional metadata, or have some events (like a purchase event) that may be core to your business, Amplitude provides precision tracking. Precise tracking in code allows you to send these events with a robust set of properties to perform even deeper analyses.
+When you want to investigate specific actions in your application requiring additional metadata, or have some events (like a purchase event) that may be core to your business, use precision tracking. Precise tracking in code allows you to send these events with a robust set of properties to perform even deeper analyses.
 
 The solutions are compatible together, which means you can use a combination of Autocapture and precision tracking data in your analyses.
 
@@ -61,7 +61,7 @@ Some additional things to know about your labeled events:
 
 For many organizations, data privacy, security, and personally identifying information (PII) are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions may vary. There's no one-size-fits-all solution that works in every situation.
 
-Autocapture provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
+Autocapture provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings help you reach compliance.
 
 ### Default Autocapture protections
 
