@@ -7,7 +7,11 @@ source: 'https://www.docs.developers.amplitude.com/experiment/general/experiment
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716917513
 ---
-Amplitude Experiment's end-to-end platform relies on two events, [assignment](#assignment-events) and [exposure](#exposure-events), and an [experiment user property](#experiment-user-properties) for each experiment. These events and properties enable experiment analysis, monitoring, and debugging.
+Experiment's end-to-end platform relies on two events: 
+* **[assignment events](#assignment-events)**: The specific event of converting users into registered participant.
+* **[exposure events](#exposure-events)**: The event that indicates when a user has actually experienced an experiment variant.
+
+These two events, as well as an [experiment user property](#experiment-user-properties) for each experiment, enable experiment analysis, monitoring, and debugging.
 
 Use the Amplitude-defined exposure or assignment events as your experiment's exposure event to ensure that the correct [experiment user property](#experiment-user-properties) is set when the exposure is ingested. Custom exposure events might be ingested before the experiment user property is set and, therefore, won't count in experiment analysis.
 
