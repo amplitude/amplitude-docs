@@ -12,6 +12,13 @@
 - **Bad**: "Cross-region data sharing is currently not supported"
 - **Good**: "Amplitude does not support cross-region data sharing"
 
+### Avoid "AI Slop" - Unnecessary Explanations
+- **Avoid excessive explanatory text** that doesn't help users complete tasks
+- **Don't use marketing language** in technical documentation - be direct and factual
+- **Remove verbose technical explanations** when a simpler description suffices
+- **Bad**: "Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay."
+- **Good**: "Session Replay captures DOM changes and plays them back to create session recordings."
+
 ## Formatting Guidelines
 
 ### Emphasis and Highlighting
