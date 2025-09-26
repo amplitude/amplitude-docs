@@ -10,11 +10,11 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1755299403
 ---
-Autocapture Remote Configuration lets you make adjustments to your implementation and pull additional metadata into Amplitude. You can use Remote Configuration either when you are setting up [Autocapture](/docs/data/autocapture) or after Autocapture is running. After you analyze your first data capture, use Remote Configuration to update autocapture's settings without needing a code update. 
+Autocapture Remote Configuration lets you make adjustments to your implementation and send additional metadata into Amplitude. Use Remote Configuration either when you are setting up [Autocapture](/docs/data/autocapture) or after Autocapture is running. After you analyze your first data capture, use Remote Configuration to update autocapture's settings without needing a code update. 
 
 With remote configuration you can:
 
-* Modify the SDK settings to adjust which events you want to capture. Such as:
+* Modify the SDK settings to adjust which events you want to capture. For example:
   * Turning specific Autocapture events on or off.
   * Configuring Autocapture events such as allowed elements or allowed pages and add sub-configurations.
   * Capturing additional properties such as page referrer or page URL across all events.
@@ -32,6 +32,6 @@ With remote configuration you can:
    * **Action Click Allowlist**: Additional CSS selectors that must be tracked when clicked.
    * **Page URL Allowlist**: Defines one or more URLs or URL patterns on which Amplitude tracks element click and change events. 
    * **Page URL Exclude List**: Defines one or more URLs or URL patterns from Amplitude tracking any element clicks or change events. **Note**: Using RegEx or glob patterns requires your SDK version to be 2.23.7 or higher.
-   * **Text Masking RegEx Patterns**: Defines the RegEx patterns that will be masked for event properties in Autocapture. **Note:** Using this masking feature requires your SDK version to be 2.23.7 or higher. 
+   * **Text Masking RegEx Patterns**: Defines the RegEx patterns that you want to mask for event properties in Autocapture. **Note:** Using this masking feature requires your SDK version to be 2.23.7 or higher. 
    * **Data Attribute Prefix**: Lets the Amplitude capture data attributes as an event property. 
 4. Click **Save Changes**.
