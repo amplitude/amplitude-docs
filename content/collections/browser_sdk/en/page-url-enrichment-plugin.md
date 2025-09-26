@@ -75,7 +75,7 @@ This plugin adds the following properties to all events:
 | `[Amplitude] Page Domain` | The website's hostname (`location.hostname`) |
 | `[Amplitude] Page Location` | The website's full URL (`location.href`) |
 | `[Amplitude] Page Path` | The website's pathname (`location.pathname`) |
-| `[Amplitude] Page Title` | The website's title (`document.title`) |
+| `[Amplitude] Page Title` |  The website's title (`document.title`). Can be masked by adding the `data-amp-mask` attribute to the `<title>` element.  
 | `[Amplitude] Page URL` | The website's URL excluding query parameters. |
 | `[Amplitude] Previous Page Location` | The URL of the previous page the user visited. |
 | `[Amplitude] Previous Page Type` | A classification of the previous page type. |
@@ -96,6 +96,26 @@ The Page URL Enrichment plugin:
 2. **Stores navigation history**: Uses session storage to maintain the current and previous page URLs across page navigation.
 3. **Enriches all events**: Automatically adds page URL properties to every event tracked by the Browser SDK.
 4. **Preserves existing properties**: If an event already has any of the page URL properties, the plugin preserves the existing values.
+
+## Page title masking
+
+The Page URL Enrichment plugin supports page title masking through the `data-amp-mask` attribute on your page's `<title>` element. This attribute tells the plugin that you've disguised the page title from users and want to use the masked value in the `[Amplitude] Page Title` property.
+
+For example: 
+
+```html
+<head>
+  <!-- Masked page title
+  This page title is fully masked in the `[Amplitude] Page Title`
+  of all events enriched by the Page URL Enrichment plugin on this page
+
+  Page title: "*****"
+  -->
+  <title data-amp-mask>Private Dashboard For John Doe</title>
+</head>
+```
+
+The Page URL Enrichment plugin replaces the actual page title with the masked value (`*****`) in all events that this plugin enriches.
 
 ## Session storage
 
