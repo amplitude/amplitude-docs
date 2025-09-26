@@ -26,5 +26,6 @@ This plan should be synced with the progress that I make. I should check off ite
 ## Final Review Checklist  
 - [ ] Review `.long_term_context/style/client_style_guide.md` to ensure that my suggestions align with the client style guide
 - [ ] Review `.long_term_context/doc_workflow/client_instructions.md` to ensure that I've satisfied the client instructions
+- [ ] Check for "AI slop" - remove unnecessary explanations, verbose text, marketing language, and excessive technical details that don't help users complete tasks
 - [ ] Generate citations using the instructions from `.long_term_context/citation_instructions.md`, make sure they explain the rationale of my changes
 
