@@ -16,17 +16,8 @@
 - **Avoid excessive explanatory text** that doesn't help users complete tasks
 - **Don't use marketing language** in technical documentation - be direct and factual
 - **Remove verbose technical explanations** when a simpler description suffices
-- **Be more aggressive about simplification** - even when following style guide rules, content may still need further simplification
-- **Always do a final simplification review** - ask "Can this be said more simply?" for each section
 - **Bad**: "Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay."
 - **Good**: "Session Replay captures DOM changes and plays them back to create session recordings."
-
-### Common Areas That Still Need Simplification
-Even when following the above guidelines, these areas often remain too verbose:
-- **Opening descriptions**: Remove marketing-focused language like "shows you how users interact with your product by recording their sessions"
-- **Feature explanations**: Avoid over-explaining what users can do - focus on direct, factual descriptions
-- **Use case descriptions**: Keep examples concise and task-focused, avoid storytelling language like "Let's say you want to understand..."
-- **Technical feature descriptions**: Simplify debugging and UI feature explanations - users need to know what it does, not detailed explanations of how it works
 
 ## Formatting Guidelines
 
