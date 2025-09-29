@@ -73,11 +73,11 @@ The following tables describe which Experiment functionality is available for Fe
 | Secondary Metric | ✅ | ✅ |
 | Guardrail vs success | ✅ | ✅ |
 | Direction | ✅ | ✅ |
-| Minimum Detectable Effect | ✅ | ❌ |
+| Minimum Detectable Effect | ✅ | ✅ |
 | Winsorization | ✅ | ✅  |
 | CUPED | ✅ | ✅  |
 | Attribution | ✅ | ✅ |
-| Window | ✅ | ❌ |
+| Window | ✅ | ✅ |
 
 {{/partial:collapse}}
 

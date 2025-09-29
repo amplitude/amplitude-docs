@@ -21,7 +21,7 @@ With Experiment, you can modify and configure product experiences for unique aud
 * **Dynamic in-product experiences:** Deploy and adapt custom experiences at scale.
 * **Web experimentation**: Perform A/B testing directly on your website.
 
-Experiment enables experimentation through either Feature Experiement or Web Experiment: 
+Experiment enables experimentation through either Feature Experiment or Web Experiment: 
 
 * Feature Experiment enables experimentation through [feature flags](/docs/feature-experiment/workflow/feature-flag-rollouts). Feature flags are switches that let you modify your product's experience without having to change code.
 * Web Experiment enables experimentation through the [Visual Editor](docs/web-experiment/set-up-a-web-experiment#the-visual-editor). The Visual Editor places a dynamic, customizable layer over your existing website. Through the Visual Editor, you can customize any element of your website without having to make changes directly to the site's underlying code or structure.  

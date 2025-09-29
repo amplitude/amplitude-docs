@@ -23,7 +23,7 @@ Feature Experiment is most useful for Product experts, Data Engineering and Oper
 * Ship code
 * Run complex models
 
-Feature experimentation uses feature flags to create the variants you want. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Experiment. Typically, feature flags need a little more advanced knowledge of your code to successfully use them for experimentation. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
+Feature experimentation uses feature flags to create the variants you want. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [APIs](/docs/apis/experiment) to communicate with Experiment. Typically, feature flags need a little more advanced knowledge of your code to successfully use them for experimentation. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
 
 ## Web Experiment use cases
 
