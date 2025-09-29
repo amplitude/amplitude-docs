@@ -26,7 +26,7 @@ In order for a flag to show up in a deployment, it must be enabled in that deplo
 **Is your variant assigned a name of anything besides the value "off"?**
 Don't assign a variant a name value of “Off.” This value is explicitly reserved for users in the "OFF/FALLBACK" bucket.
 
-A fallback is the default variant (usually “control”) that a user is exposed to if Experiment cannot assign them to a treatment group.
+A fallback is the default variant (usually “control”) that a user is exposed to if Experiment can't assign them to a treatment group.
 
 **Is your assignment event and exposure event set to different events?**
 
@@ -63,7 +63,7 @@ It's also possible for a user to receive one variant of your experiment one day 
 
 Sometimes, a user can trigger the assignment event without logging any other active events: 
 
-* The user's ad blockers or analytics blockers interfere with analytics application events. Feature Experiment requests are made from backend servers, those generally aren't impeded. However, this can affect Web Experiments.
+* The user's ad blockers or analytics blockers interfere with analytics application events. Feature Experiment requests are made from backend servers and aren't usually impeded. However, this can affect Web Experiments.
 * A user opened the app, a request was made to Amplitude's backend servers (which in turn triggered the assignment event), and the user left the app before firing any other actions that trigger an analytics event.
 * Amplitude's servers are receiving assignment requests directly from your backend, instead of from the end user. Check if you have instrumented experiments in offline campaigns sending a group push notification, marketing emails, and so forth.
 

@@ -61,7 +61,7 @@ Amplitude's evaluation servers or SDKs track assignment events as a result of ei
 You shouldn't need to track assignment events manually.
 
 {{partial:admonition type="warning" heading="User property inheritance"}}
-Assignment events inherit all non-experiment user properties from the current user state in Amplitude at the time of event ingestion. In short, **the user properties on the assignment event aren't guaranteed to be the same as the properties used in evaluation.** For example, if an assignment event is the first event ingested for a user, the event contains experiment user properties only, even if user properties are explicitly included in the evaluation.
+Assignment events inherit all non-experiment user properties from the current user state in Amplitude at the time of event ingestion. In other words, the user properties on the assignment event aren't guaranteed to be the same as the properties used in evaluation. For example, if an assignment event is the first event ingested for a user, the event contains experiment user properties only, even if user properties are explicitly included in the evaluation.
 {{/partial:admonition}}
 
 ### Assignment event definition
@@ -110,9 +110,9 @@ In other words, you should expect one Assignment per evaluated user, per unique 
 
 ## Exposure events
 
-An exposure event is a [strictly defined](#exposure-event) analytics event sent to Amplitude to inform Amplitude Experiment that a user was exposed to a variant of an [experiment or feature flag](/docs/feature-experiment/data-model#flags-and-experiments). Exposure events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
+An exposure event is a [strictly defined](#exposure-event) analytics event that informs Experiment that a user was exposed to a variant of an [experiment or feature flag](/docs/feature-experiment/data-model#flags-and-experiments). Exposure events contain the flag key and the variant of the flag or experiment that the user has been exposed to in the event's event properties.
 
-When Amplitude ingests an [exposure event](#exposure-event), it uses the flag key and variant to **set or unset user properties** on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
+When Amplitude ingests an [exposure event](#exposure-event), it uses the flag key and variant to set or unset user properties on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
 
 ### Exposure event definition
 
@@ -140,7 +140,7 @@ This is an example exposure event for a user, `123456789`, who was exposed to th
 
 #### Exposure transformation
 
-When Amplitude ingests an **`$exposure`** event, it's **transformed**. The event type and event properties are modified for consistency with other Amplitude properties, and [experiment user properties](#experiment-user-properties) are set or unset for accurate experiment analysis.
+When Amplitude ingests an `$exposure` event, it's transformed. The event type and event properties are modified for consistency with other Amplitude properties, and [experiment user properties](#experiment-user-properties) are set or unset for accurate experiment analysis.
 
 | Property Type | Pre-transformation | Post-transformation |
 | --- | --- | --- |

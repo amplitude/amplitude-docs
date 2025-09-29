@@ -30,7 +30,7 @@ Experiment creates your initial variant automatically. By default, this variant 
 6. Add a description of the variant. Be specific enough so that other people can understand what your experiment is doing.
 7. Add an optional **payload**. A payload is a JSON object that can dynamically change a variant’s experience without requiring you to write more code.
 
-    For example, imagine you’re testing a new splash screen on a marketing webpage. You might get early results that suggest different content might improve the performance of the splash. Instead of going into your codebase and making changes to the variant there, you can just include those changes in a payload, and Amplitude Experiment implements them automatically.
+    For example, imagine you’re testing a new splash screen on a marketing webpage. You might get early results that suggest different content might improve the performance of the splash. Instead of going into your codebase and making changes to the variant there, you can just include those changes in a payload, and Experiment implements them automatically.
 
     Paste or type your code into the window. 
 
@@ -67,6 +67,6 @@ The next step is to set the rollout percentage for this experiment. This is the 
 
 Manually enter the percentage of your audience that should be eligible for bucketing into the experiment. If you roll your experiment out to less than 100% of your users, the balance sees your default product experience, and aren't included in any experiment calculations.
 
-Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any individual user or device IDs prior to both.
+Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any individual user or device IDs prior to both.
 
 Next, it's time to [finalize your experiment's statistical settings](/docs/feature-experiment/workflow/finalize-statistical-preferences).
