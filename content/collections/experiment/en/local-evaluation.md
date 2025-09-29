@@ -15,7 +15,7 @@ Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation
 Local evaluation happens outside of Amplitude, which means advanced targeting and identity resolution powered by Amplitude Analytics isn't supported. That said, local evaluation allows you to perform consistent bucketing with target segments, which is often enough.
 
 {{partial:admonition type="warning" heading="Client-side local evaluation"}}
-When using client-side local evaluation, note that all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has effectively been leaked to all clients, regardless of user.
+When using client-side local evaluation, all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has will be visible to all clients, regardless of user.
 {{/partial:admonition}}
 
 | <div class='big-column'>Feature</div> | Remote Evaluation | Local Evaluation |
@@ -63,7 +63,7 @@ Server-side local evaluation experiments often set the Assignment event as a heu
 
 ### Performance
 
-The following results are for **a single flag evaluation**, and were collected over 10 executions of 10,000 iterations of evaluation with randomized user inputs evaluated for 1 flag configuration, selected at random out of 3 possible flag configurations.
+The following results are for a single flag evaluation, and were collected over 10 executions of 10,000 iterations of evaluation with randomized user inputs evaluated for 1 flag configuration, selected at random out of 3 possible flag configurations.
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |

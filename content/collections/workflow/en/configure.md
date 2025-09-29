@@ -14,7 +14,7 @@ Configuring Feature Experiment is a two-stage process:
 * Creating a deployment
 * Installing the SDK you want to use.
 
-Configuring Experiment isn't the same as [creating an experiment](/docs/feature-experiment/workflow/create). You must first configure Experiment and ensure that it's working properly before you can create any experiments. This page is for Feature Experiment. If you want to configure Web Experiment, go to [Implement Web Experiment](/docs/web-experiment/implementation). 
+Configuring Experiment isn't the same as [creating an experiment](/docs/feature-experiment/workflow/create). You must first configure Experiment and ensure that it's working before you can create any experiments. This page is for Feature Experiment. If you want to configure Web Experiment, go to [Implement Web Experiment](/docs/web-experiment/implementation). 
 
 ## Creating a deployment
 
@@ -39,11 +39,11 @@ To create a deployment follow these steps:
 Both types of deployments generate keys that are specific to the deployment. A key is a unique identifier for the deployment that ensures data integrity. The key ensures that all data collected by your experiment is associated with that particular deployment and all results and analytics based off of those results are as accurate as possible. For more information about keys, go to [Keys and Tokens](/docs/apis/keys-and-tokens#keys-overview).
 
 * **Client-side keys**: The deployment key associated with client deployments is publicly viewable. 
-* **Server-side keys**: Keep the deployment key associated with server deployments secret and use it only for server-side SDKs. Server-side keys access the REST API for flag evaluation. 
+* **Server-side keys**: Keep the deployment key associated with server deployments secret and use it only for server-side SDKs. Server-side keys access the API for flag evaluation. 
 
 ## Install the SDK
 
-If you don't use the REST API, the next step is to install an [Experiment SDK](/docs/sdks/experiment-sdks). 
+If you don't use the API, the next step is to install an [Experiment SDK](/docs/sdks/experiment-sdks). 
 All SDKs send a request to Amplitude Experiment to decide what flag configurations it should serve to a particular user. There are some important differences between client-side and server-side SDKs you should be aware of.
 
 {{partial:admonition type="warning" heading=""}}

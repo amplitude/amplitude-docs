@@ -19,7 +19,7 @@ When Amplitude ingests an impression event, it uses the flag key and variant to 
 
 ### Impression  transformation
 
-Impression events are sent in one form and transformed into Amplitude-standard impressions upon ingestion. The event type and event properties are modified for consistency with other Amplitude properties. Experiment user properties are set or unset for accurate experiment analysis. If you're tracking impressions through a 3rd party CDP, the event is recorded in the CDP in it's pre-transformation state.
+Impression events are sent in one form and transformed into Amplitude-standard impressions upon ingestion. The event type and event properties are modified for consistency with other Amplitude properties. Experiment user properties are set or unset for accurate experiment analysis. If you're tracking impressions through a 3rd party customer data platform (CDP), the event is recorded in the CDP in it's pre-transformation state.
 
 | Property Type | Pre-transformation | Post-transformation |
 | --- | --- | --- |

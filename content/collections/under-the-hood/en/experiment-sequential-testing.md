@@ -72,7 +72,7 @@ This counts the average number of times a visitor has fired an event. For each v
 
 
 {{partial:collapse name="What are we estimating when we choose Average Sum of Property?"}}
-This sums the values of an event per user on a specific property. For example, if you’re interested in getting the total cart value of a user across all times, you’d pick the event “add to cart,” with the property of “cart value”. The result of this specific example is a comparison of the average cart value between treatment and control.
+This sums the values of an event per user on a specific property. For example, if you’re interested in getting the total cart value of a user across all times, you’d pick the event “add to cart,” with the property of “cart value.” The result of this specific example is a comparison of the average cart value between treatment and control.
 {{/partial:collapse}}
 
 {{partial:collapse name="What is absolute lift?"}}
