@@ -39,7 +39,7 @@ Every experiment carries the risk of a false positive result. This happens when 
 
 The risk of a false positive result increases with each metric or variant you add to your experiment. This is true even though the false positive rate stays the same for each individual metric or variant.
 
-There are statistical tools used to compensate and correct for the multiple comparisons problem. Amplitude uses the **Bonferroni correction** to do this.
+There are statistical tools used to compensate and correct for the multiple comparisons problem. Amplitude uses the Bonferroni correction to do this.
 
 {{partial:admonition type='note'}}
  By default, the Bonferroni correction is set to on. In certain circumstances, you may manually toggle it off in your [statistical settings](/docs/feature-experiment/workflow/finalize-statistical-preferences). 

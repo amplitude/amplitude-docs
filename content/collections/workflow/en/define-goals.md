@@ -34,7 +34,7 @@ Alternately, click **Create a custom metric** to define your own metric.
 4. Select the type of metric. You can choose one of:
    * **Success metrics**: States the goal will change by the goal amount and direction. 
    * **Guardrail metrics**: State the goal won't change by the goal amount and direction.
-5. Specify if you're expecing the direction of the metric to **Increase** or **Decrease**.
+5. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
 6. (*Optional*) Click **Advanced** to set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 7. To add secondary metrics, click ***Add a Goal*** and repeat this process.
 
@@ -70,7 +70,7 @@ In your experiment, open the Design Experiment panel, or the Analysis Settings, 
 
 Amplitude sends the `Amplitude exposure` event when your app calls `.variant()`. It sets the user properties Amplitude Experiment uses to conduct its analyses. When you use the Amplitude exposure event, you can be certain your app triggers the event at the correct time.
 
-You can select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. There's a much greater risk of triggering a custom exposure event at the wrong time, which can lead to a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch).
+You can select a custom exposure event instead. Click **Custom Exposure**, then **Select event**. There's a much greater risk of triggering a custom exposure event at the wrong time, which can lead to a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch).
 
 For more information, go to this article about [exposure events](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 
