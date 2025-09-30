@@ -79,6 +79,9 @@
   </style>
   {{partial:partials/_amplitude}}
 
+{{if enable_math }}
+  {{partial:partials/katex-assets}}
+{{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
   <div x-data="{ sidebarOpen: false }" class="container prose">

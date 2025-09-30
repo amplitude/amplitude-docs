@@ -29,7 +29,7 @@ Follow these steps to use your experiment's metrics in a [Funnel Analysis chart]
 
 The results of your Funnel Analysis chart may vary slightly from those of your experiment. This is because funnel analyses and experiments don't handle users who [variant jump](/docs/feature-experiment/troubleshooting/variant-jumping) the same way. 
 
-For example, a funnel analysis includes all users who meet its filter requirements; then, based on those filtered users, it computes the conversion rate of the funnel. This means the funnel analysis may include a user even if they're exposed to your experiment's exposure event after they completed the funnel. 
+For example, a funnel analysis includes all users who meet its filter requirements. Then, based on those filtered users, it computes the conversion rate of the funnel. This means the funnel analysis may include a user even if they're exposed to your experiment's exposure event after they completed the funnel. 
 
 ### Analyze your experiment data using other Amplitude Analytics metrics
 

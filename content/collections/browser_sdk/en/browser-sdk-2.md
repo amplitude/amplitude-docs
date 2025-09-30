@@ -133,6 +133,7 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `autocapture`              | `boolean\|AutocaptureOptions`. Configures autocapture tracking. See [Autocapture](#autocapture).                                                                                                                                                                                   |                                         |
 | `defaultTracking`          | `boolean`. Deprecated in version 2.10.0. Use `autocapture` instead. Configures default event tracking.                                                                                                                                                                             | `true`                                  |
 | `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                |
+| `identify`                 | `Identify`. Calls "identify" with this object during initialization. Called before Autocapture events, like `session_start`, ensuring proper attribution of events. | `undefined`                             |
 | `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                             |
 | `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                |
 | `cookieOptions.sameSite`   | `string`. Sets `SameSite` property of cookies created.                                                                                                                                                                                                                             | `Lax`                                   |
@@ -239,6 +240,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
@@ -510,7 +512,40 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
 
 
-See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+Review [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+
+{{partial:admonition type="Warning" heading=""}}
+If you want Autocapture to include page views for multi-step forms that dynamically update and, therefore, don't refresh the URL with each step, you must use hash elements for Single Page Applications (SPAs). Autocapture doesn't capture the individual dynamic components automatically. Tools such as Google Tag Manager (GTM) can help you [apply hashes to the URL](https://support.google.com/tagmanager/answer/7679410?hl=en) of the SPA between steps. Autocapture can then ingest the different steps as users proceed through the form.
+
+{{/partial:admonition}}
+
+#### Page title masking 
+
+Amplitude lets you to mask page titles in events that include the `[Amplitude] Page Title` property. This protects your sensitive page title information. Use the `data-amp-mask` attribute on your `<title>` element to exclude the actual page title from this property.
+
+When the `<title>` element has the `data-amp-mask` attribute, Amplitude replaces the page title with a masked value across all events that capture page title information. For example:
+
+```html
+<head>
+  <!-- This page title will be masked in all events that capture page titles -->
+  <title data-amp-mask>John Doe - Personal Banking Dashboard</title>
+</head>
+```
+
+```html
+<head>
+  <!-- Works with any attribute value -->
+  <title data-amp-mask="true">Sensitive Customer Information</title>
+</head>
+```
+
+{{partial:admonition type="note" heading="Page title masking behavior"}}
+- Any presence of `data-amp-mask` triggers masking, regardless of the attribute value.
+- Only the page title text is masked. Events are tracked as expected.
+- This affects page view events, page URL enrichment events, and any other events that include `[Amplitude] Page Title`.
+- This is separate from [element interaction masking](/docs/data/autocapture#precise-text-masking) which uses `data-amp-mask` on individual elements
+- The masked value appears as `*****` in your event data
+{{/partial:admonition}}
 
 ### Track sessions
 
@@ -655,6 +690,36 @@ These two events capture properties that describe the corresponding element and 
 - `[Amplitude] Element Aria Label`
 - `[Amplitude] Element Parent Label`
 <!-- vale on-->
+{{/partial:collapse}}
+
+### Track frustration interactions
+
+Enable frustration interaction tracking to capture rage clicks and dead clicks. Amplitude defines "rage click" and 
+"dead click" events as:
+
+ * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
+ * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
+
+Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    frustrationInteractions: true, 
+  },
+});
+```
+
+#### Advanced configuration for frustration interactions
+
+Use the advanced configuration to control frustration interaction tracking.
+
+{{partial:collapse name="Tracking frustration interaction options"}}
+| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101)       ||
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element.|
+
 {{/partial:collapse}}
 
 ### Track network requests

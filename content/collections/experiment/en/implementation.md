@@ -1,18 +1,17 @@
 ---
 id: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
 blueprint: experiment
-title: Implementation
+title: 'Experiment Evaluation'
 landing: true
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1733257548
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1758918440
 landing_blurb: 'Learn how to implement Amplitude Experiment in your product.'
 ---
 Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/feature-experiment/data-model#variants).
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-implementation.drawio.svg)
-
 
 ## Pre-targeting
 
@@ -28,7 +27,7 @@ For simple on/off flags, Amplitude recommends using the [all users segment](#all
 
 ### Flag dependencies
 
-A flag may define a [dependency](/docs/feature-experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are utilized to implement [mutual exclusion groups](/docs/feature-experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
+A flag may define a [dependency](/docs/feature-experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met, then no variant returns. Otherwise the evaluation continues. Flag dependencies are utilized to implement [mutual exclusion groups](/docs/feature-experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 {{partial:admonition type="example" heading=""}}
 For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant `on`.
@@ -37,9 +36,9 @@ For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant 
 * Flag-2 (50% `control`, 50% `treatment`)
     * Depends on Flag-1=`on`
 
-The dependency ensures that Flag-1 will always be evaluated before Flag-2. Further, if Flag-1 evaluates to `on`, then Flag-2 will be fully evaluated. If Flag-1 doesn't evaluate to a variant, or to a variant other than `on`, the evaluation of Flag-2 fails the dependency check and no variant is assigned.
+The dependency ensures that Flag-1 always evaluated before Flag-2. Further, if Flag-1 evaluates to `on`, then Flag-2 is fully evaluated. If Flag-1 doesn't evaluate to a variant, or to a variant other than `on`, the evaluation of Flag-2 fails the dependency check and no variant is assigned. This prevents edge cases where either the dependency checks are avoided or skipped or returning undefined results. It also keeps exposure events and audit trails consistent. 
 
-In this example, 50% of evaluated users will be assigned a variant for Flag-2.
+In this example, 50% of evaluated users are assigned a variant for Flag-2.
 {{/partial:admonition}}
 
 ### Individual inclusions
@@ -50,12 +49,13 @@ For example, if you are the developer on a new multi-variate feature and you wan
 
 ### Sticky bucketing
 
-
 {{partial:admonition type="warning" heading=""}}
 Use sticky bucketing with care. Even if sticky bucketing is disabled, [consistent bucketing](#consistent-bucketing) means that users are still bucketed into the same variant given that the user and targeting rules remain static. Changing targeting rules on an active flag with sticky bucketing enabled may cause a [sample ratio mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), which may skew experiment results.
 {{/partial:admonition}}
 
 If sticky bucketing is enabled, a user always gets evaluated to the same previously bucketed variant, regardless of the current targeting. Sticky bucketing doesn't apply if the user hasn't yet been bucketed into a variant.
+
+Go to [Sticky Bucketing](/docs/feature-experiment/advanced-techniques/sticky-bucketing) for more information.
 
 ## Targeting segments
 

@@ -13,95 +13,6 @@ tree:
       -
         id: 4ca7c411-3f1f-43a3-b017-4d467a1ed820
         entry: 6aa1ef6b-eb50-4df6-a218-1133d4707624
-  -
-    id: 4395cf69-ddb7-4127-9192-ff9c20777a07
-    title: 'Experiment Planning'
-    children:
-      -
-        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
-        title: Evaluation
-        children:
-          -
-            id: fb405bc3-3370-4046-90e5-9a6145e02a67
-            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
-            title: 'How evaluation works'
-          -
-            id: 5af0708b-e976-453e-8354-3f622b978be5
-            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
-          -
-            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
-            entry: b358db28-92d6-458b-9692-d181e0871612
-          -
-            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
-            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
-      -
-        id: 11f27340-72c0-41c0-8027-09dd6ce6be62
-        title: 'Statistics Method'
-        children:
-          -
-            id: e781c130-d33e-4773-a647-3914df6b6f45
-            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
-          -
-            id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
-            entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
-          -
-            id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
-            entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
-          -
-            id: e14ec1eb-2ee1-43e0-aca8-895cc1dfd268
-            entry: 5b4dadf8-14b7-4669-8636-f3105393214c
-      -
-        id: dfe1ce09-74b3-4f43-accf-512c9ead0756
-        title: 'Reduce chance of error'
-      -
-        id: e800f234-086d-4267-91de-cd688afc9bd5
-        title: 'Group Experiments'
-        children:
-          -
-            id: e580e44e-a2e7-412b-91fd-310f714d3bbf
-            entry: c9856100-2aad-440c-9d2f-505eb008d57b
-            title: 'Mutual exclusion groups'
-          -
-            id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
-            entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
-      -
-        id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
-        title: 'Experiment Goals'
-        children:
-          -
-            id: d7dabc7c-392c-4a45-b31f-a4d329d9caf7
-            title: 'Primary Metric'
-          -
-            id: 64340d08-f076-4338-8746-b379f972bb20
-            title: 'Secondary Metric'
-          -
-            id: f28b54bf-4eeb-48ce-b443-3c0228ca8a39
-            title: 'Guardrail vs success'
-          -
-            id: f840954b-5dd4-4416-b96a-49c1ef7fe001
-            title: Direction
-          -
-            id: 27510f77-6da7-44f2-a853-178f8f80987a
-            entry: 18cba191-177e-4f7c-abcb-f5375c155c71
-      -
-        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
-        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
-      -
-        id: fbb6a6ab-5cd6-4a56-9dce-c09c9d397b01
-        title: 'Experiment Rollout'
-      -
-        id: 0c7cd69f-f8c4-4c99-88ab-03074032e5b5
-        title: 'Exposure events'
-        children:
-          -
-            id: 2feddc71-3f0c-4c01-8eea-e28c13f003d5
-            title: 'Custom Exposure'
-          -
-            id: 26da71b4-1ff3-4e13-bd8c-80923423867c
-            title: 'Proxy Exposure'
-      -
-        id: 459e7fd0-d099-4e34-afb2-3ddce21c676f
-        title: Bucketing
       -
         id: 826a6258-d974-4154-a50a-ef95dc2f3ad5
         entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
@@ -116,6 +27,24 @@ tree:
       -
         id: a978b4c7-f702-4e27-b042-3369a199110e
         entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
+      -
+        id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
+        title: 'Experiment Goals'
+        children:
+          -
+            id: 27510f77-6da7-44f2-a853-178f8f80987a
+            entry: 18cba191-177e-4f7c-abcb-f5375c155c71
+      -
+        id: e800f234-086d-4267-91de-cd688afc9bd5
+        title: 'Group Experiments'
+        children:
+          -
+            id: e580e44e-a2e7-412b-91fd-310f714d3bbf
+            entry: c9856100-2aad-440c-9d2f-505eb008d57b
+            title: 'Mutual exclusion groups'
+          -
+            id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
+            entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
       -
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
@@ -148,14 +77,14 @@ tree:
         title: 'Web Experiments'
         children:
           -
-            id: 46abcd22-a45e-4553-b08d-90f16283d013
-            entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+            id: db7c04f0-c7bf-44c1-9e1f-2526712736bf
+            entry: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
           -
             id: c29665fd-0a33-49e1-8fc5-0947335a679c
             entry: 3ef0ccc6-5e0f-435b-9184-edb809f19210
           -
-            id: db7c04f0-c7bf-44c1-9e1f-2526712736bf
-            entry: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
+            id: 4a16df3a-5401-4d41-ab2d-b15b5f61f7fb
+            entry: b87d183d-4b47-4f19-a2cf-e9d31c5faf47
           -
             id: ee1358c1-c781-451f-aabc-24d0fd201b09
             entry: 671d5f19-2b8a-463a-95be-f81de05e0860
@@ -176,14 +105,8 @@ tree:
     title: 'Testing Experiments'
     children:
       -
-        id: eb15cac6-924a-454f-b654-389b56b91d20
-        title: 'Define Testers'
-      -
         id: 779c43fa-d73c-483c-946d-076ea8b9545f
         entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
-      -
-        id: 73637f2a-c73a-42cc-9820-b12101f5194d
-        title: 'Test and Preview Web Experiments'
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'
@@ -197,9 +120,6 @@ tree:
       -
         id: 9e0796bf-3439-4f98-a8ad-cfefea14aee1
         entry: f544b5a1-0689-4137-ab14-690903ae7902
-      -
-        id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
-        entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
       -
         id: 4c9e833a-7c8a-461c-b3b1-1170da157eed
         entry: 5b4dadf8-14b7-4669-8636-f3105393214c
@@ -252,6 +172,12 @@ tree:
         id: 45493c66-cbea-4f55-84b7-9131ef5094c4
         entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
       -
+        id: 46abcd22-a45e-4553-b08d-90f16283d013
+        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+      -
+        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
+        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
+      -
         id: 90ff8151-b864-4782-abdd-65b81d1c26ca
         title: 'Experiment SDKs'
         url: /docs/sdks/experiment-sdks
@@ -263,6 +189,23 @@ tree:
         id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
         title: 'Experiment APIs'
         url: /docs/apis/experiment
+      -
+        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
+        title: Evaluation
+        children:
+          -
+            id: fb405bc3-3370-4046-90e5-9a6145e02a67
+            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
+            title: 'How evaluation works'
+          -
+            id: 5af0708b-e976-453e-8354-3f622b978be5
+            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
+          -
+            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
+            entry: b358db28-92d6-458b-9692-d181e0871612
+          -
+            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
+            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
   -
     id: e67e82c0-c298-4d72-bd01-6e42a7e97826
     title: 'Experiment Integrations'
@@ -303,12 +246,19 @@ tree:
             id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
             entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
             title: 'How flag dependencies work'
+  -
+    id: 11f27340-72c0-41c0-8027-09dd6ce6be62
+    title: 'Statistics Method'
+    children:
       -
-        id: bb6406fa-d060-4d29-9a0e-5bb0beab7ed3
-        title: Attribution
+        id: e781c130-d33e-4773-a647-3914df6b6f45
+        entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
       -
-        id: 1ee9b3ff-2b9d-4514-aae2-0ff2583c8641
-        title: Window
+        id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
+        entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
       -
-        id: 08b06799-767b-49bb-a465-72eb37b64d2e
-        title: CUPED
+        id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
+        entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
+      -
+        id: e14ec1eb-2ee1-43e0-aca8-895cc1dfd268
+        entry: 5b4dadf8-14b7-4669-8636-f3105393214c
