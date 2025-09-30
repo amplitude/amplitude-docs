@@ -2,8 +2,7 @@ import { ref, computed } from 'vue'
 
 export function useRbacFilters() {
   const filters = ref({
-    productAreas: [],
-    advanced: null // null = all, true = advanced only, false = basic only
+    productAreas: []
   })
 
   const availableProductAreas = ref([])
@@ -57,12 +56,6 @@ export function useRbacFilters() {
           }
         }
 
-        // Advanced filter
-        if (filters.value.advanced !== null) {
-          if (filters.value.advanced !== permission.advanced) {
-            return false
-          }
-        }
 
         return true
       })
@@ -71,14 +64,12 @@ export function useRbacFilters() {
 
   const clearFilters = () => {
     filters.value = {
-      productAreas: [],
-      advanced: null
+      productAreas: []
     }
   }
 
   const hasActiveFilters = computed(() => {
-    return filters.value.productAreas.length > 0 ||
-           filters.value.advanced !== null
+    return filters.value.productAreas.length > 0
   })
 
   const toggleProductAreaFilter = (area) => {
@@ -88,10 +79,6 @@ export function useRbacFilters() {
     } else {
       filters.value.productAreas.push(area)
     }
-  }
-
-  const setAdvancedFilter = (value) => {
-    filters.value.advanced = value
   }
 
   const getProductAreaLabel = (area) => {
@@ -106,7 +93,6 @@ export function useRbacFilters() {
     initializeFilters,
     clearFilters,
     toggleProductAreaFilter,
-    setAdvancedFilter,
     getProductAreaLabel
   }
 }
