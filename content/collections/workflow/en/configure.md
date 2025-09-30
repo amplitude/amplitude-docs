@@ -24,7 +24,7 @@ Deployments must be associated with at least one [Amplitude project](/docs/get-s
 
 ##### To create a deployment
 
-1. Go to *Experiment > Deployments* and then click ***Create Deployment**.
+1. Go to *Experiment > Deployments* and then click **Create Deployment**.
 2. Choose the Amplitude Analytics project to which you want to associate the deployment. If you want to create deployments in multiple projects, select all the relevant projects from the drop-down list.
 3. Enter a name for your deployment. Names should be descriptive of the work you are doing.
 4. Specify its type:
