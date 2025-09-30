@@ -43,7 +43,12 @@ You can [delete unneeded event types in Amplitude Data](/docs/data/remove-invali
 
 ### Character limit for strings
 
-String values have a limit of 1024 characters (user ID, event or user property values, etc.). Arrays have a limit of 10000 characters when append or prepend is used (this is available for user property types only). Amplitude truncates any strings that exceeds this limit.
+Property values are typically limited to 1024 characters. Exceptions to this limit are:
+
+* User property arrays can expand to a limit of 10k characters when using the append or prepend methods. The initial array is still limited to 1024 characters.
+* Properties using [property splitting](/docs/analytics/charts/cart-analysis#set-up-property-splitting) for cart analysis have a higher limit. Event properties are limited to 100k characters while user properties are limited to 10k characters. 
+
+Amplitude truncates any values exceeding these limits. 
 
 ## Chart limits
 
