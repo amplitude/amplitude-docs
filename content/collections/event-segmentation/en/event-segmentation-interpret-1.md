@@ -12,32 +12,36 @@ landing_blurb: 'Understand what your Event Segmentation analysis is telling you'
 ---
 Amplitude's **Event Segmentation** chart helps you understand what specific groups of users are doing in your product. For example, in an event segmentation analysis, you can:
 
-* Identify the top events fired over a selected time
+* Identify the top events fired over a selected time period
 * Compare event totals to each other
-* View which users fire certain events
+* See which users fire certain events
+
+![interpret_event_seg_1.png](/docs/output/img/event-segmentation/interpret-event-seg-1-png.png)
 
 ## Before you begin
 
-Familiarize yourself with the basics of [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), as well as how to create an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart.
+If you haven't done so already, you'll want to familiarize yourself with the basics of [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), as well as how to create an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart. You can also see FAQs about the Event Segmentation chart [here](https://help.amplitude.com/hc/en-us/articles/360052734691). 
 
 ## Interpret your Event Segmentation chart
 
-Event Segmentation is Amplitude's most commonly used chart. This article explores these features and explain how you can best put it to use to generate insights on user behavior.
+Event Segmentation is Amplitude's most commonly-used chart. It's simple enough to create a useful analysis quickly, even as a brand-new Amplitude user. The rest of this article will explore these features and explain how you can best put it to use to generate insights on user behavior.
 
 ### Breakdown table
 
-Below the chart, there's a breakdown table. By default, Amplitude includes all top values or events in this table, which update automatically when Amplitude receives new top values or events. You can turn this off by first deselecting the segments and then explicitly selecting the values and events you want to keep.
+Below the chart, you'll see a the breakdown table. By default, Amplitude will include all top values or events in this table, which will update automatically when Amplitude receives new top values or events. You can turn this off by first deselecting the segments and then explicitly selecting the values and events you want to keep.
+
+![Screen_Shot_2019-11-13_at_1.00.22_PM.png](/docs/output/img/event-segmentation/screen-shot-2019-11-13-at-1-00-22-pm-png.png)
 
 ### Change your chart view
 
-Whichever metric you choose, you have several options for displaying results on the chart. 
+Whichever metric you choose, you’ll have several options when it comes to how you want your results displayed on the chart. 
+
+![interpret_event_seg_2.png](/docs/output/img/event-segmentation/interpret-event-seg-2-png.png)
 
 * The default setting is a basic **line chart**. These are useful for looking at the trend of one event for one user category over time.
 * **Stacked area charts** are useful when you’re looking at data that breaks down into discrete buckets, like when you’re analyzing multiple events.
 * **Bar charts** are good for situations when you want to show a distribution of data points, or compare metric values across different segments of your data. Bar charts make it easy to see which values are highest or most common, and how specific groups compare against the rest.
-* A **stacked bar chart** shows how broad categories or buckets divide into smaller ones, as well as the relationship each of those smaller parts has to the overall total.
-* A **Pie chart** displays each result as a percentage of the total.
-* **KPI** displays a grid with the current total values, or average values over a time range you select.
+* A **stacked bar chart** will show how broad categories or buckets are divided into smaller ones, as well as the relationship each of those smaller parts has to the overall total.
 
 If your analysis uses multiple group-by conditions, the resulting visualization might turn out confusing and hard to interpret. 
 
@@ -64,7 +68,7 @@ When using stacked area charts and stacked bar charts, you can choose to view yo
 *# Absolute* will display the overall user volume, whereas *% Relative* gives you the series value divided by the sum of all the series values.
 
 {{partial:admonition type='note'}}
-Amplitude disables the *% Relative* option when analyzing two or more events using the Uniques measure in a stacked area chart. Instead, build a formula in the Measured As Module using the `UNIQUES` metric for each event. The *% Relative* will then be available after you choose the formula option.
+ The *% Relative* will be greyed out when analyzing two or more events using the Uniques measure in a stacked area chart. Instead, build a formula in the Measured As Module using the `UNIQUES` metric for each event. The *% Relative* will then be available once you choose the formula option.
 {{/partial:admonition}}
 
 Be aware that this method will count unique users **per event**. One user could then be counted more than once if they trigger multiple events within the same time window. This is why the **microscope's sum** of unique users may be higher than the number of unique users overall. 
