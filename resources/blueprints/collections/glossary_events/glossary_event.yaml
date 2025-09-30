@@ -1,0 +1,105 @@
+title: 'Glossary Event'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: product_area
+            field:
+              options:
+                -
+                  key: experiment
+                  value: null
+                -
+                  key: 'session replay'
+                  value: null
+                -
+                  key: 'guides & surveys'
+                  value: null
+              type: select
+              display: 'Product Area'
+              localizable: false
+              width: 50
+              multiple: true
+              instructions: 'Supply a value if the event is applicable to only one product area.'
+              listable: true
+          -
+            handle: platform
+            field:
+              options:
+                -
+                  key: all
+                  value: null
+                -
+                  key: web
+                  value: null
+                -
+                  key: ios
+                  value: null
+                -
+                  key: android
+                  value: null
+              type: select
+              display: Platform
+              localizable: false
+              width: 50
+              multiple: true
+              listable: true
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+          -
+            handle: core_properties
+            field:
+              collections:
+                - property_sets
+              type: entries
+              display: 'Core Properties'
+              localizable: false
+              width: 50
+              default: 7661aa62-ce58-4c11-85dc-d689b5cd2654
+              instructions: 'Core properties are automatically applied. Add additional sets if needed.'
+          -
+            handle: related_properties
+            field:
+              collections:
+                - glossary_properties
+              type: entries
+              display: 'Related Properties'
+              localizable: false
+              width: 50
+              query_scopes:
+                - non_core_properties
+          -
+            handle: product_properties
+            field:
+              collections:
+                - property_sets
+              type: entries
+              display: 'Product properties'
+              localizable: false
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

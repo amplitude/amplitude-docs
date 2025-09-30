@@ -1,0 +1,13 @@
+<!-- Vue.js will mount here -->
+<div id="glossary-container"></div>
+
+<script>
+  window.APP_CONFIG = {
+    isLocal: true,
+    dataUrl: '/docs/glossary-data.json',
+    searchDebounce: 150,
+    maxResults: 50
+  };
+</script>
+
+<script src="{{ mix src='docs/js/glossary.js' }}"></script>
