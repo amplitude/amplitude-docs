@@ -63,8 +63,6 @@ Researchers have observed similar effects: if treatment slows performance, more 
 
 {{/partial:admonition}}
 
-
-
 ## Custom code
 
 {{partial:admonition type="note"}}
