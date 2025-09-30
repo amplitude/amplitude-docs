@@ -45,8 +45,6 @@ exceptions:
   - POST
   - RAM
   - REPL
-# MZ 7/22/2025 
-  - REST
   - RSA
   - SCM
   - SCSS
@@ -62,8 +60,6 @@ exceptions:
   - URL
   - USB
   - UTF
-# MZ 7/17/2025  
-  - UUID
   - XML
   - XSS
   - YAML

@@ -186,7 +186,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `secureCookie` | `boolean`. If `true`, the amplitude cookie will be set with the Secure flag. | `false` |
 | `sessionTimeout` | `number`. The time between logged events before a new session starts in milliseconds. | `30 minutes` |
 | `storage` | `string`. Storage for metadata. Options are `cookies`, `localStorage`, `sessionStorage`, or `none`. Sets storage strategy. Will override `disableCookies` option. | `Empty String` |
-| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. |
+| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. Please check [here](/docs/#disable-tracking-specific-fields) for more details. |
 | `transport` | `string`. `http` or `beacon`. Network transport mechanism used to send events. | `http` |
 | `unsetParamsReferrerOnNewSession` | `boolean`. If `false`, the existing `referrer` and `utm_parameter` values will be carried through each new session. If set to `true`, the `referrer` and `utm_parameter` user properties, which include `referrer`, `referring_domain`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, and `utm_content`, will be set to `null` upon instantiating a new session. Note: This only works if `includeReferrer` or `includeUtm` is set to `true`. | `false` |
 | `unsentKey` | `string`. localStorage key that stores unsent events. | `amplitude_unsent` |
@@ -780,8 +780,8 @@ Debugging in a browser can help you identify problems related to your code's imp
 
 You can find JavaScript errors under **Inspect > Console**, which might have the details about the line of code and file that caused the problem. The console also allows you to execute JavaScript code in real time.
 
-- Enable debug mode by following these [instructions](#how-to-debug). Then With the default logger, extra function context information will be output to the developer console when any SDK public method is invoked, which can be helpful for debugging.
-- Amplitude supports SDK deferred initialization. Events tracked before initialization will be dispatched after the initialization call. If you can't send events but can send the event successfully after entering `amplitude.init(API_KEY, 'USER_ID')` in the browser console, it indicates that your `amplitude.init` call might not have been triggered in your codebase or you aren't using the correct amplitude instance during initialization. Therefore, please check your implementation."
+- Enable debug mode by following these [instructions](./#debug-mode). Then With the default logger, extra function context information will be output to the developer console when any SDK public method is invoked, which can be helpful for debugging.
+- Amplitude supports SDK deferred initialization. Events tracked before initialization will be dispatched after the initialization call. If you cannot send events but can send the event successfully after entering `amplitude.init(API_KEY, 'USER_ID')` in the browser console, it indicates that your `amplitude.init` call might not have been triggered in your codebase or you are not using the correct amplitude instance during initialization. Therefore, please check your implementation."
 
 ##### Instrumentation Explorer/Chrome Extension
 
@@ -803,13 +803,13 @@ Console: error text doesn"t contain any blocking-specific info
 Network: Transferred column contains the name of plugin Blocked by uBlock Origin
 - Safari (MacOS)
 Console: error contains text Content Blocker prevented frame ... from loading a resource from ...
-Network: it looks like blocked requests aren't listed. Not sure if it"s possible to show them.
+Network: it looks like blocked requests are not listed. Not sure if it"s possible to show them.
 
 We recommend using a proxy server to avoid this situation.
 
 ##### Cookies related
 
-Here is the [information](#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. So, if these values aren't persistent or aren't increasing by one, that could be the reason.
+Here is the [information](./#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. So, if these values are not persistent or are not increasing by one, that could be the reason.
 
 ##### CORS
 
@@ -826,18 +826,18 @@ If you have set up an API proxy and run into configuration issues related to tha
 
 ##### Events fired but no network requests
 
-If you [set the logger to "Debug" level](#how-to-debug), and see track calls in the developer console, the `track()` method has been called. If you don't see the corresponding event in Amplitude, the Amplitude Instrumentation Explorer Chrome extension, or the network request tab of the browser, the event wasn't sent to Amplitude. Events are fired and placed in the SDK's internal queue upon a successful `track()` call, but sometimes these queued events may not send successfully. This can happen when an in-progress HTTP request is cancelled. For example, if you close the browser or leave the page.
+If you [set the logger to "Debug" level](./#debug-mode), and see track calls in the developer console, the `track()` method has been called. If you don't see the corresponding event in Amplitude, the Amplitude Instrumentation Explorer Chrome extension, or the network request tab of the browser, the event wasn't sent to Amplitude. Events are fired and placed in the SDK's internal queue upon a successful `track()` call, but sometimes these queued events may not send successfully. This can happen when an in-progress HTTP request is cancelled. For example, if you close the browser or leave the page.
 
 There are two ways to address this issue:
 
-1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](#use-sendbeacon) section.
-2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+2. To make track() synchronous, [add the `await` keyword](./#callback) before the call.
 
 ## Advanced topics
 
 ### Dynamic configuration
 
-Beginning with version 8.9.0, you can configure your apps to use dynamic configuration.
+Beginning with version 8.9.0, you can configure your apps to use [dynamic configuration](../../dynamic-configuration/).
  This feature finds the best server URL automatically based on app users' location.
 
 To use, set `useDynamicConfig` to `true`.
@@ -1141,7 +1141,7 @@ The SDK initializes the device ID in the following order, with the device ID bei
 
 1. Device id in configuration on initialization
 2. "amp_device_id" value from URL param if `configuration.deviceIdFromUrlParam` is true. Refer to [cross domain tracking](.#cross-domain-tracking-javascript) for more details
-3. Device id in cookie storage. Refer to [cookie management](#cookie-management) for more details
+3. Device id in cookie storage. Refer to [cookie management](./#cookie-management) for more details
 4. A randomly generated 22-character base64 ID. It is more compacted compared to a 36-character UUID which has the same range 128-bit.
 
 #### When does a device ID change
@@ -1211,7 +1211,7 @@ instanceProd.setDeviceId(instanceDev.getDeviceId());
 
 ```
 
-- Method3: Pass the device ID in URL param `amp_device_id`. Refer to [cross domain tracking](#cross-domain-tracking-javascript) for more details.
+- Method3: Pass the device ID in URL param `amp_device_id`. Refer to [cross domain tracking](./#cross-domain-tracking-javascript) for more details.
 
 ### Content Security Policy (CSP)
 

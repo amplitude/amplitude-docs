@@ -19,11 +19,17 @@ With dashboards, you can collect all your relevant charts into a single, conveni
 
 ## Before you begin
 
-Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on [Scholarship](https://help.amplitude.com/hc/en-us/articles/360053028152), [Growth and Enterprise](https://amplitude.com/pricing) plans.
+Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on [Scholarship](https://help.amplitude.com/hc/en-us/articles/360053028152), [Growth and Enterprise](https://amplitude.com/pricing) plans:
+
+* Adding behavioral cohorts to a dashboard
+* Dashboard date range (bulk filter)
+* Dashboard user segment (bulk filter)
+* Comment
+* Adding target metrics
 
 You must save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 
-Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
+Also, be aware that dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
 
 You may also find the following dashboards articles useful:
 

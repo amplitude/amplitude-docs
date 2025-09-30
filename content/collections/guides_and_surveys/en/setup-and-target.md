@@ -67,23 +67,7 @@ Amplitude provides the following options to trigger an experience.
 | Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
 | Rage click           | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
 | User confusion <br/> {.tag .web .zero}      | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
-| On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
-
-#### Session properties
-
-Session properties provide an additional layer of trigger targeting restrictions for guides and surveys. When a guide or survey is triggered and has session property conditions, all configured session property conditions must be met for the experience to display to the user.
-
-Session properties are set dynamically through the SDK using the `setSessionProperty` method and can change throughout a user's session. When a session property value changes, the SDK automatically evaluates whether any guides or surveys can now be shown, making them effective with the "Immediately" trigger.
-
-Common use cases for session properties include:
-
-- **User can belongs to multiple orgs**: Control guide visibility based on specific features of the user's current organization. (`isFeatureEnabled: true`)
-- **Progress tracking**: Show guides based on user progression (`onboardingStep: 3`)
-- **Dynamic state that shouldn't persist as a user property**: React to real-time user behavior or application state
-
-{{partial:admonition type="note" heading="Feature availability"}}
-Session properties are currently a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
-{{/partial:admonition}}
+| On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.                                                                                                                           |
 
 ### Where
 
@@ -112,7 +96,7 @@ Use the priority to rank the importance of a guide or survey relative to others 
 When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. Amplitude breaks prioritization ties by the experience that was seen most recently, then by the experience that was created most recently.
 {{/partial:admonition}}
 
-## Limits
+### Limits
 
 Limits ensure you don't bombard users with your messaging. 
 
@@ -121,10 +105,6 @@ Limits ensure you don't bombard users with your messaging.
 | Stop showing when completed | Once the user completes the experience, they won’t see it again.                                                                                                                  |
 | Stop showing when dismissed | Once the user dismisses the experience, they won’t see it again. This option requires `Stop showing when completed`.                                                              |
 | Cooldown                    | When enabled, specify the maximum number of times a user can see the experience in the specified time range. This option requires that `Stop showing when dismissed` is disabled. |
-
-## Localization
-
-Localization enables you to serve guides in different languages without creating a new guide or survey for each language. Click [here](/docs/guides-and-surveys/localization) for more details.
 
 ## Status
 

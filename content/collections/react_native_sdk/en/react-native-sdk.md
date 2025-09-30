@@ -129,7 +129,7 @@ The configuration of the SDK is shared across web and mobile platforms. However,
 |`trackingOptions`| `TrackingOptions`. Configures tracking of additional properties. Please refer to `Optional tracking` section for more information. | Enable all tracking options by default. |
 |`storageProvider`| `Storage<Event[]>`. Implements a custom `storageProvider` class from Storage. | `MemoryStorage` |
 |`trackingSessionEvents`| `boolean`. Whether to automatically log start and end session events corresponding to the start and end of a user's session. | `false` |
-|`migrateLegacyData`| `boolean`. Available in `1.3.4`+. Whether to migrate [maintenance SDK](/docs/sdks/analytics/react-native/react-native-sdk-maintenance) data (events, user/device ID). | `true` |
+|`migrateLegacyData`| `boolean`. Available in `1.3.4`+. Whether to migrate [maintenance SDK](../react-native) data (events, user/device ID). | `true` |
 
 {{/partial:collapse}}
 

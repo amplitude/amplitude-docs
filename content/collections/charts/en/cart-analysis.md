@@ -5,9 +5,9 @@ id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
 this_article_will_help_you:
   - 'Unlock new insights by analyzing Amplitude data as object arrays'
 ---
-The cart analysis feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
+Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
-After set up, you have access and analyze these object arrays from within your chart. 
+Once you set everything up, you have access and analyze these object arrays from within your chart. 
 
 Likely use cases include:
 
@@ -23,7 +23,7 @@ Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysi
 
 ### Feature availability
 
-This feature is available to users on Growth and Enterprise plans. Go to [Set up property splitting](#set-up-property-splitting) to get started. 
+This feature is available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
@@ -67,10 +67,8 @@ For advanced cart analysis operations on arrays of data, you can also use [paral
 
 Property splitting must be enabled before you can use object arrays for cart analysis. You can complete the process in Amplitude Data.
 
+{{partial:admonition type='note'}}
 Only project managers and admins can enable splitting. Portfolio projects don't support splitting.
-
-{{partial:admonition type="tip" heading=""}}
-It is recommended to enable both the `amplitude.Revenu()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
 {{/partial:admonition}}
 
 To enable property splitting, follow these steps:

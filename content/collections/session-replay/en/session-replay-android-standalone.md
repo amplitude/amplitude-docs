@@ -14,19 +14,19 @@ description: 'Choose this option if you use a third-party analytics provider to 
 This article covers the installation of Session Replay for Android using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your app is already instrumented with Amplitude Android SDK, use the [Session Replay Android SDK Plugin](/docs/session-replay/session-replay-android-plugin).
 
 {{partial:admonition type="tip" heading="Report issues"}}
-To report issues with Session Replay for Android, go to the [AmplitudeSessionReplay-Android GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-Android).
+To report issues with Session Replay for Android, see the [AmplitudeSessionReplay-Android GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-Android).
 {{/partial:admonition}}
 
 {{partial:partials/session-replay/sr-android-performance}}
 
 ## Before you begin
 
-Use the latest version of the Session Replay SDK above version `{{sdk_versions:session_replay_android_standalone}}`. For a list of available versions, go to the [release versions](https://central.sonatype.com/artifact/com.amplitude/session-replay-android/versions) on Maven Central.
+Use the latest version of the Session Replay SDK above version `{{sdk_versions:session_replay_android_standalone}}`. For a list of available versions, see the [release versions](https://central.sonatype.com/artifact/com.amplitude/session-replay-android/versions) on Maven Central.
 
 Session Replay Standalone SDK requires that:
 
 1. Your application is Android-based.
-2. You track sessions with a timestamp, which you can pass to the SDK. Inform the SDK whenever a session timestamp changes.
+2. You track sessions with a timestamp, which you can pass to the SDK. You inform the SDK whenever a session timestamp changes.
 3. You can provide a device ID to the SDK.
 4. The `Session ID` and `Device ID` you pass to the Standalone SDK must match those sent as event properties to Amplitude.
 
@@ -97,9 +97,9 @@ Pass the following configuration options when you initialize the Session Replay 
 | --------- |-----------| -------- |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `deviceId` | `String`  | Yes      | `null`          | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                                   |
 | `sessionId` | `Long`    | Yes      | `null`          | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                             |
-| `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over many sessions, `0.4` would select `40%` of those sessions. |
+| `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
 | `optOut`  | `Boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                  |
-| `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to a destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
+| `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 | `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
@@ -145,7 +145,7 @@ val sessionReplay = SessionReplay(
 
 ### Disable replay collection
 
-After it is enabled, Session Replay runs on your app until either:
+Once enabled, Session Replay runs on your app until either:
 
 - The user leaves your app
 - You call `sessionReplay.shutdown()`

@@ -70,7 +70,7 @@ Amplitude hides inactive events by default. To show them, click *Choose events t
 
 ![](/docs/output/img/journeys/journeys1.png)
 
-Any changes you make to settings in this procedure populate across [all Journeys visualizations, which you can read more about here](/docs/analytics/charts/journeys/journeys-understand-visualizations).
+Any changes you make to settings in this procedure populate across [all three Journeys visualizations, which you can read more about here](/docs/analytics/charts/journeys/journeys-understand-visualizations).
 
 ## How the conversion window works in a Journeys chart
 

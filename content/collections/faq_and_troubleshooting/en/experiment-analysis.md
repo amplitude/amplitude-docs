@@ -5,13 +5,13 @@ title: 'Experiment Analysis'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17986231773595'
 category: experiment
 ---
-This article covers frequently-asked questions about [Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper).
+This article covers frequently asked questions about [Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper).
 
 
 {{partial:collapse name="Why is my graph displaying an error state?"}}
 A common mistake is to attempt to generate a chart using only one variant.
 
-The Experiment Results chart needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
+The Experiment Results chart must have two or more variants so that it can display comparison results. If you neglect to include both the control and at least one variant, your chart will not display anything.
 {{/partial:collapse}}
 
 
@@ -25,7 +25,7 @@ With sequential testing, even with a large MDE, it can take some time to reach s
 Amplitude uses two parameters to calculate Return On for the Retention metric:
 
 * **The return event**: The event you hope the user performs **after** the exposure event (aka, the starting event). The user is counted as retained if they trigger the return event.
-* **Return on the nth day/week/month**: The number of days/weeks/months you want to see between a user performing the exposure event and the return event. This parameter is calculated in 24 hour increments and does not use calendar dates.
+* **Return on the nth day/week/month**: The number of days/weeks/months between a user performing the exposure event and the return event. This parameter is calculated in 24 hour increments and doesn't use calendar dates.
 
 For example, a user performs an exposure event and a return event:
 

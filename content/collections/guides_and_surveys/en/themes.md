@@ -50,7 +50,7 @@ Use the Theme Editor to customize elements of your brand and style.
 
 Accent represents your brand's primary color. This color appears on primary buttons and selected options.
 
-In this example, the primary color is `#48705C`.
+In this example, the primary color is set to `#48705C`.
 
 ![](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
 
@@ -138,6 +138,6 @@ Select the animation that each widget type uses to appear on screen, along with 
 
 ## Component editor
 
-Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
+Components are reusable elements that you use across your guides and surveys. They let you specify the element properties once, and have them apply anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
