@@ -1,7 +1,9 @@
 ---
 id: b87d183d-4b47-4f19-a2cf-e9d31c5faf47
 blueprint: web_experiment
-title: Pages
+title: 'Web Experiment Pages'
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1758917857
 ---
 In a Web Experiment, Pages control where your experiment variants apply on your site. They help scope experiments to specific URLs, enabling you to run tests on targeted pages, without impacting unrelated parts of your site.
 

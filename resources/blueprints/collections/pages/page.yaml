@@ -32,7 +32,7 @@ tabs:
                 - link
                 - image
                 - table
-              automatic_line_breaks: true
+              automatic_line_breaks: false
               automatic_links: false
               escape_markup: false
               heading_anchors: false

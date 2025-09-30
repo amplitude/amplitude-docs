@@ -10,12 +10,12 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329324
 ---
-Sticky bucketing ensures that a user continues to experience the same variant even when your experiment’s targeting criteria, percentage rollout, or rollout weights change. 
+Sticky bucketing checks whether a user has already experienced a variant of your experiment. If so, Experiment assigns the current value of the user property (the last variant they saw) to the user. This helps keep variants bucketed into their original variants unless you change the parameters of the experiment. 
 
-Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/) which is when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing doesn't guarantee that users will never experience variant jumping. Variant jumping may occur if your experiment includes both a logged-out and a logged-in experience because a user can have different logged in and logged out Amplitude IDs.
+Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/) which is when a user experiences two (2) or more variants for a single flag or experiment. However, simply enabling sticky bucketing doesn't guarantee that users will never experience variant jumping. Variant jumping may occur if your experiment includes both a logged-out and a logged-in experience because a user can have different logged in and logged out Amplitude IDs.
 
 {{partial:admonition type='note'}}
-Sticky bucketing is only available on feature experiments not flags.
+Sticky bucketing is only available for Feature experiments, not flags or Web experiments.
 {{/partial:admonition}}
 
 {{partial:admonition type='note'}}
@@ -26,7 +26,7 @@ Sticky bucketing is only available on feature experiments not flags.
 
 To turn sticky bucketing on or off, open your experiment and navigate to your experiment and then click the **pencil** icon and then go to *Experiment Design > Advanced (Optional) > Bucketing Options.* 
 
-When sticky bucketing is enabled, Amplitude Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user Experiment assigns the current value of the user property (the last variant they saw). Otherwise, the user is re-evaluated.
+When sticky bucketing is enabled, Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user Experiment assigns the current value of the user property (the last variant they saw). Otherwise, the user is re-evaluated.
 
 {{partial:admonition type='note'}}
 If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
@@ -53,7 +53,7 @@ Remember that if you are targeting a dynamic cohort that users can flow in and o
 
 * You want the **user’s experience to change** as the targeted user property changes. To continue an example from the previous list, if you‘re running an experiment in the United States, you may not want users to have the same experience if they’re traveling abroad.
 * Your experiment intends to drive free users to becoming paid users, and relies on earning rewards. After these users convert, you no longer need to offer a reward. If sticky bucketing were enabled here, those users would receive the free experience even after upgrading to paid.
-* You want to enforce a “cool down” period between giving discounts. If you want to limit the frequency of discounts for each user to once every seven days, you can add a seven-day filter to the targeting criteria; if a user received a discount within that period, the flag would evaluate to [off]. This prevents the user from collecting another discount before you want them to.
+* You want to enforce a “cool down” period between giving discounts. If you want to limit the frequency of discounts for each user to one time every seven days, you can add a seven-day filter to the targeting criteria; if a user received a discount within that period, the flag would evaluate to [off]. This prevents the user from collecting another discount before you want them to.
 * You're rolling out or rolling back a variant. When sticky bucketing is enabled and you change the traffic allocation, you get a weighted average between the old and new allocation (since the users who were already bucketed stay in their bucket). It takes some time for your experiment to achieve allocations you want.
 
 ## Verify if sticky bucketing was enabled for a specific user
@@ -69,4 +69,4 @@ For example, the properties above show that the user is assigned to `off` for th
 
 ![image3.png](/docs/output/img/advanced-techniques/image3-png.png)
 
-In this example, sticky bucketing is enabled and the user was bucketed to the 14th version of the `signup-ux-updates` flag, where the experiment served them the `phone-number-removed` variant. Having the flag version helps with debugging when the flag changes. Remember that Experiment shows the assignment event for all active flags in that project, but shows the exposure event on a per-flag basis. If you don’t see an event property corresponding to the flag you’re interested in, check the `[Experiment] Environment Name` field and make sure it matches the deployment your flag belongs to.
+In this example, sticky bucketing is enabled and the user was bucketed to the 14th version of the `signup-ux-updates` flag, where the experiment served them the `phone-number-removed` variant. Having the flag version helps with debugging when the flag changes. Remember that Experiment shows the assignment event for all active flags in that project, but shows the exposure event on a per-flag basis. If you don’t find an event property corresponding to the flag you’re interested in, check the `[Experiment] Environment Name` field and make sure it matches the deployment your flag belongs to.
