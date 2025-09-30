@@ -15,61 +15,74 @@ landing_blurb: 'Learn the value of experimentation in your product.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
 ---
-For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
+Experiment is a workflow-driven behavioral experimentation platform that lets you modify large sections of your customer's experience. This lets you test different aspects of the user journey and make changes as you receive and review the data generated from the experiment. 
+With Experiment, you can modify and configure product experiences for unique audiences through:
 
-Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates your roadmaps**, letting you focus on making better decisions and building better products.
+* **Product experimentation**: Improve key KPIs by running experiments and A/B tests to onboard new users, reduce friction for checkout experiences, roll out new features, and more.
+* **Progressive feature delivery:** Pre-plan and stage new features for beta testers, a percentage of your users, or even specific target audiences.
+* **Dynamic in-product experiences:** Deploy and adapt custom experiences at scale.
 
-With Experiment, you can easily **modify and configure product experiences** for unique audiences through:
+There are two categories of experiments:
+* **Feature Experiments**: Uses feature flags to display or hide functionality or A/B options from your customers.
+* **Web Experiments**: Uses a Web editor to let you make direct changes to your website.
 
-* **Product experimentation**: Improve key KPIs by **running experiments and A/B tests** to onboard new users, reduce friction for checkout experiences, roll out new features, and more.
-* **Progressive feature delivery:** Pre-plan and **stage new features** for beta testers, a percentage of your users, or even specific target audiences.
-* **Dynamic in-product experiences:** Deploy and adapt **custom experiences** at scale.
+## Feature Flags and Web Editor differences
 
-Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
+Feature experimentation uses feature flags to create your experimental variants. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](docs/feature-experiment/workflow/feature-flag-rollouts).
 
 {{partial:admonition type='note'}}
-Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
+Amplitude Experiment defaults to a sequential testing statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
 {{/partial:admonition}}
 
-This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
+Web experimentation uses a visual editor to create your experimental variants. This editor works best for A/B or multi-armed banded experimentation. With the visual editor, you can select and alter web elements such as directly altering content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, to create experiments without engineering resources. 
 
-## Creating an experiment: an overview
+Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site.
 
-Many experimentation programs fail in the first step of the process—nobody can **articulate the problem** experimentation is supposed to solve. If you can’t explain—in clear, simple language—why you’re running an experiment, you can’t realistically hope to learn anything useful from it. 
+### Functional Availability
 
-Before doing anything else, spend some time coming up with a strong mission statement for your experiment. It should, at the very least, answer these two questions: What’s the problem, and how can running an experiment help you solve it? The effort you put in at this stage will pay big dividends later.
+For in depth information about what functionality is available for Feature, Web, or both types of experimentation, go to [Differences Between Feature and Web Experimentation](/docs/feature-experiment/feature-and-web-experiment-functional-comparison).
 
-Once you’ve done that, you’re ready to **configure your experiment**. This means creating a new deployment (or choosing one you’ve created earlier) for the experiment, and installing the SDK you’ll be using.
+## Creating an experiment
+
+Many experimentation programs fail in the first step of the process because nobody can articulate the problem that experimentation might solve. If you can’t explain in clear, simple language, why you’re running an experiment, you can’t realistically hope to learn anything useful from it. 
+
+Before doing anything else, spend some time coming up with a strong mission statement for your experiment. It should answer the following questions: What’s the problem, and how can running an experiment help you solve it? The effort you put in at this stage will pay big dividends later.
+
+After you’ve done that, you’re ready to configure your experiment. This means creating a new deployment (or choosing one you’ve created earlier) for the experiment, and installing the SDK you’ll be using.
 
 ### Create a hypothesis
 
-Next, reach back to the mission statement you came up with for your experiment. This will serve as the foundation for your experiment’s **hypothesis**. What’s a hypothesis? Think of it as a prediction of how your experiment is likely to turn out. This is how you’ll know if your experiment succeeds or fails.
+Next, focus on the mission statement you came up with for your experiment. This serves as the foundation for your experiment’s hypothesis. A hypothesis is a prediction of how your experiment is likely to be the correct choice. This is how you’ll know if your experiment succeeds or fails.
 
-But this **problem** statement is only the first part of a hypothesis. There are two others: a proposed **solution**, and a predicted **result**. The first is essentially a description of the changes you want to make to fix your problem—for example, consolidate two steps of the onboarding process into one—while the second is what you expect the results to be: i.e., “decrease onboarding churn by 20%.”
+But this problem statement is only the first part of a hypothesis. There are two others: a proposed solution and a predicted result. 
 
-Here’s an example of a hypothesis statement:
+A proposed solution is a description of the changes you want to make to fix your problem. For example: "Consolidate two steps of the onboarding process into one." A predicted result are your expected outcomes from the experiment. For example: “Decrease onboarding churn by 20%.”
 
-“User churn in our onboarding funnel is significantly higher than industry average. Product data suggests our funnel may be too confusing; we believe this can be fixed by consolidating steps two and three in the funnel. As a result of this change, we expect onboarding churn to decrease by 20%.”
+An example of a hypothesis statement:
 
-The hypothesis statements you use will be different, particularly around the problem definition stage. For example, your question may be more exploratory in nature—i.e., "why are so many users dropping out of our onboarding funnel?"—or you may be more interested in testing different solutions to a problem you already understand ("we've come up with several potential UI changes to rectify a known user pain point; which one works best?"). Still, this basic template is a good one to follow, especially if you’re new to experimentation.
+*"User churn in our onboarding funnel is significantly higher than industry average. Product data suggests our funnel may be too confusing; we believe this can be fixed by consolidating steps two and three in the funnel. As a result of this change, we expect onboarding churn to decrease by 20%."*
+
+Every hypothesis statements you use is unique to your needs, particularly around the problem definition stage. For example, your question may be more exploratory in nature: *"Why are so many users dropping out of our onboarding funnel?"* Or, you may be more interested in testing different solutions to a problem you already understand such as *"We've come up with several potential UI changes to rectify a known user pain point. Which one works best?"* 
+
+This basic template can be used as a starting point for most hypotheses, especially if you’re new to experimentation.
 
 ### Pick a metric
 
-Take a look at the last sentence in that hypothesis statement. What do you notice about it? For one thing, it includes a specific measurement of how you expect user behavior to change—onboarding churn will decrease by 20%. This is what will determine whether your experiment is a success: either you’ll hit this number, or you won’t.
+Focus on the last sentence in the hypothesis statement. What do you notice about it? For one thing, it includes a specific measurement of how you expect user behavior to change—onboarding churn will decrease by 20%. This is what will determine whether your experiment is a success: either you’ll hit this number, or you won’t.
 
-But how will you know? You need a way to measure that decrease in churn. To do that, you’ll need a **metric**. In Amplitude Experiment, any event you log in Amplitude Analytics can serve as an experiment metric. For the example experiment described above, you’d want to use the event your product uses to track drop-off in your funnels as your metric. 
+But how will you know? You need a way to measure that decrease in churn. To do that, you’ll need a metric. In Experiment, any event you log can serve as an experiment metric. For the example experiment described above, you’d want to use the event your product uses to track drop-off in your funnels as your metric. 
 
 ### Create a variant
 
-At this point, you *could* go ahead and just roll out the new onboarding process to all your users and see what happens. But if you were to do that, you won’t know if the product changes you made were responsible for any improvement in your onboarding churn rate. And what if that rate gets *worse* after you roll out the new funnel? It could be the result of poor design choices, random chance, or some external influence you didn’t consider—but you’ll never know for sure. 
+At this point, you could go ahead and just roll out the new onboarding process to all your users and find out what happens. But if you were to do that, you won’t know if the product changes you made were responsible for any improvement in your onboarding churn rate. And what if that rate is lower after you roll out the new funnel? It could be the result of poor design choices, random chance, or some external influence you didn’t consider. There is no way to find out the specific cause. 
 
-This is why you’ll need to create at least one **treatment** **variant** for your experiment. A treatment variant is simply a different user experience that you’ll show to a percentage of your users. Keeping with the example we’ve been using, the variant here would be the new, streamlined version of the onboarding process. Some of your users will see that, while others will see the current process instead (known as the **control**). It’s the differences in how your users respond to each variant that will determine the experiment’s success.
+This is why you’ll need to create at least one treatment variant for your experiment. A treatment variant is a different user experience that you’ll display to a percentage of your users. Keeping with the above example, the variant here would be the new, streamlined version of the onboarding process. Some of your users will experience the new version, while others will continue to experience the current process (known as the control). It’s the differences in how your users respond to each variant that determines the experiment’s success.
 
-When coming up with variants, it’s good practice to keep the number of changes in each one low (if you can get that number down to one, so much the better). It’s also good to make sure the variants are noticeably different from each other. This way, you can be confident that users in each variant segment are truly experiencing the product differently from each other, and that your changes are what’s driving any differences in behavior between the segments.
+When creating variants, it’s good practice to minimize the number of changes contained in each variant. Ideally, each variant only contains a single change. This lets you understand exactly which changes produce positive results. Also, make sure the variants are noticeably different from each other. This way, you can be confident that users in each variant segment are truly experiencing the different experiences and that your changes are what’s driving any differences in behavior between the segments.
 
-### Decide who will see the variant
+### Decide who will receive the variant
 
-Next you'll be able to decipher a bucketing unit, or the determinant of what group of people sees the same variant. The most common bucketing unit is “user”. However, if you’re a B2B business or are utilizing the collaboration feature, you might want to use a bucketing unit such as “organization” or company\_id, which means that every user within the same organization will see the same variant. This can help reduce product-related confusion caused by disparate user interfaces if people are sitting next to their coworkers. Another reason for bucketing by company\_id is to reduce the load on your customer support team. It is easier for the customer support team to know which accounts have which features enabled. Either way, you want to make sure the Stable Unit Treatment Value Assumption ([SUTVA](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him)) holds for whatever bucketing unit you choose to best ensure inference. 
+Next, you will define a bucketing unit, or the determinant of what group of people sees the same variant. The most common bucketing unit is “user.” However, if you’re a B2B business or are utilizing the collaboration feature, you might want to use a bucketing unit such as “organization” or `company_id`, which means that every user within the same organization will experience the same variant. This can help reduce product-related confusion caused by disparate user interfaces if people are sitting next to their coworkers. Another reason for bucketing by `company_id` is to reduce the load on your customer support team. It's easier for the customer support team to know which accounts have which features enabled. Either way, you want to make sure the Stable Unit Treatment Value Assumption ([SUTVA](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him)) holds for whatever bucketing unit you choose to best ensure inference. 
 
 {{partial:admonition type='note'}}
  If your organization has purchased the [Accounts add-on,](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users.
@@ -77,52 +90,18 @@ Next you'll be able to decipher a bucketing unit, or the determinant of what gro
 
 ### Allocate users
 
-Now that you’ve got your variants, you’ll need to decide how many of your users will see them. You can choose to roll your experiment out to your entire user base, or you can just roll it out to a fraction of them instead. You’ll specify how many users in your experiment will see the control experience and how many will see your variants. You can define specific user segments to include or exclude from your experiment, and you can even choose a specific experience for individual user or device IDs.
+Now that you’ve got your variants, you’ll need to decide how many of your users will receive them. You can choose to roll your experiment out to your entire user base, or you can just roll it out to a fraction of them instead. You’ll specify how many users in your experiment receive the control experience and how many receive your variants. You can define specific user segments to include or exclude from your experiment, and you can even choose a specific experience for individual user or device IDs.
 
 ### Activate your experiment
 
-At this point, you’re ready to roll out your experiment to your users. Click *Start Experiment*, and your experiment will be live.
+At this point, you’re ready to roll out your experiment to your users. Click **Start Experiment**, and your experiment will be live.
 
 ### Analyze your results
 
-After your experiment goes live, you can generate and view your results at any time. Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
+After your experiment goes live, you can generate and view your results at any time. Experiment tells you when your experiment has reached statistical significance, which is when the experiment has enough results and data that you can trust that the information you're gathering is accurate. Experiment provides all the data it collects so that you can analyze and interpret your results.
 
-To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/docs/feature-experiment/workflow/create).
-
-{{partial:admonition type='note'}}
- Now that you better understand the experiment workflow, consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
-{{/partial:admonition}}
-
-## Creating a feature flag
-
-If, on the other hand, you’re planning a phased feature rollout instead, your workflow is even simpler. Because you’re not asking a question about user behavior in your product, you don’t need to worry about creating a hypothesis, picking a metric, or analyzing your results. All you have to do is create a **feature flag**.
+To learn more about how to design, roll out, and learn from experiments, review these [articles on the experimentation workflow](/docs/feature-experiment/workflow/create).
 
 {{partial:admonition type='note'}}
-Experiments and flags may seem similar. However, the difference is that an experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
+ Consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
 {{/partial:admonition}}
-
-After you’ve configured your deployment, create your variants. Instead of exploring how different user segments react to different user experiences, you’ll choose which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
-
-You’ll still allocate users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
-
-Check out this article to [learn more about feature flags and how they work in Amplitude Experiment](/docs/feature-experiment/workflow/feature-flag-rollouts).
-
-## Delete old experiments and flags
-
-Deleting experiments and feature flags you no longer need is simple. You'll find both options from the "more" menu in the top right of your experiment. Click the three dots to open the menu and choose either *Deactivate flag* or, if you'd prefer to archive the experiment, *Archive*.
-
-You can also bulk archive flags and experiments. In the Archive view, select all flags and experiments that you want to archive and then confirm that you want to archive them. 
-
-If you are archiving an experiment, Amplitude automatically identifies all associated flags across your projects and asks if you want to archive them at the same time as the experiment. 
-
-### Restoring archived experiments and flags
-
-If you have archived experiments and flags, you can restore them. 
-
-All archived content is stored in the Archived tab of either the Experiments or Feature Flags page. 
-
-#### To restore experiments or feature flags
-
-1. Navigate to either *Experiment > Experiments > Archived* or *Experiment > Feature Flags > Archived*.
-2. Select the archived experiments or feature flags you want to restore.
-3. Click **Restore**.

@@ -22,7 +22,7 @@ This documentation is split into two sections for [remote](/docs/feature-experim
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
+Implements fetching variants for a user through [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -67,7 +67,7 @@ if variant.Value == "on" {
 
 ### Initialize
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+Initialize the SDK client in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must reside within the same project that you are sending analytics events to.
 
 ```go
 func Initialize(apiKey string, config *Config) *Client
@@ -84,7 +84,7 @@ client := remote.Initialize("<DEPLOYMENT_KEY>", nil)
 
 #### Configuration
 
-The SDK client can be configured on initialization.
+Configure the SDK client upon initialization.
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
@@ -142,7 +142,7 @@ if variant.Value == "on" {
 {{partial:collapse name="Account-level bucketing and analysis (v1.7.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or through [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```go
 user := &experiment.User{
@@ -158,7 +158,7 @@ user := &experiment.User{
 variants, err := client.Fetch(user)
 ```
 
-To pass freeform group properties, see this example:
+To pass freeform group properties, review this example:
 
 ```go
 user := &experiment.User{
@@ -178,7 +178,7 @@ variants, err := client.Fetch(user)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user through [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -236,12 +236,12 @@ func Initialize(apiKey string, config *Config) *Client
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `StreamUpdates` [configuration](#configuration) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. The time for SDK to receive the update after saving is generally under one second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration) to set the time flag configs take to update once modified (default 30s), as well for fallback.
+Use the `StreamUpdates` [configuration](#configuration-1) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. Typically, the time for SDK to receive the update after saving is under one second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration-1) to set how much time flag configs take to update after they are modified (default 30s), as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
 
-The SDK client can be configured on initialization.
+Configure the SDK client upon initialization.
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
@@ -257,7 +257,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
 | `FlagConfigPollerRequestTimeout` | The timeout for the request made by the flag config poller | `10 * time.Second` |
 | `AssignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
-| `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK generally within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
+| `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK. Typically within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
 | `StreamServerUrl` | The URL of the stream server. | `https://stream.lab.amplitude.com` |
 | `StreamFlagConnTimeout` | The timeout for establishing a valid flag config stream. This includes time for establishing a connection to stream server and time for receiving initial flag configs. | `1500` |
 | `CohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
@@ -267,7 +267,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `CacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
-| [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [`Config`](/docs/sdks/analytics/go/go-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
 
@@ -287,7 +287,7 @@ Start the local evaluation client, pre-fetching local evaluation mode flag confi
 func (c *Client) Start() error
 ```
 
-You should await the result of `Start()` to ensure that flag configs are ready to be used before calling [`Evaluate()`](#evaluate)
+You should await the result of `Start()` to ensure that flag configs are ready before calling [`Evaluate()`](#evaluate)
 
 ```go
 err := client.Start()
@@ -301,7 +301,7 @@ if err != nil {
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`AssignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
+Set [`AssignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
 {{/partial:admonition}}
 
 ```go

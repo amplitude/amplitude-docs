@@ -7,19 +7,21 @@ this_article_will_help_you:
   - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
 landing: true
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758565468
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742323697
 landing_blurb: "Manage your project's users and permissions."
 academy_course:
   - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
 ---
-Before a user can gain access to any Amplitude projects, you need to add them to your Amplitude organization. You should do this immediately after creating an organization.
+Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
 
 ## Manage new users and user access
 
-Manage users from the Members page. Navigate to *Settings > Organization settings > Members & Groups*.
+User management is done from the Members page, which you can reach by navigating to *Settings > Organization settings > Members & Groups*.
 
-At the top of the page, find an overview of users for your organization: the number of total users, joined users, pending users, and users requesting access. 
+At the top of the page, you’ll find an overview of users for your organization: the number of total users, joined users, pending users, and users requesting access. 
+
+This section will review some common user management tasks.
 
 ### Invite new users
 
@@ -27,29 +29,27 @@ Only admins and managers can add or remove users. 
 
 To invite new users, follow these steps:
 
-1. From the Members page, click *Invite New Users.* The *Invite New Users* modal appears.
+1. From the Members page, click *Invite New Users.* The *Invite New Users* modal will appear.
 2. Type the new user’s email address into the text box. You can add more than one email address at a time. Press the Enter key after each email address you type.
 3. For each email you entered, select the appropriate team. Then click *Next*.
-4. If you are an Enterprise customer with Groups enabled, choose the group or groups this user belongs to from the *Select Groups* drop-down menu. The user inherits all the project permissions of those groups. Then click *Next*.
-5. Select the individual projects the user has access to. For each project, choose the appropriate role from the drop-down menu on the right. If you’ve assigned the user to a group in the previous step, you can't downgrade those permissions here. Then click *Next*.
-6. Specify the user’s default project, and select the appropriate team spaces for them. The default project sets the user's dropdown menus to that project when they first log into Amplitude. The team spaces appears under *Team Spaces* in the left-hand rail when the user logs into Amplitude. Then click *Next*.
+4. If you are an Enterprise customer with Groups enabled, choose the group or groups this user will belong to from the *Select Groups* drop-down menu. The user will then inherit all the project permissions of those groups. Then click *Next*.
+5. Select the individual projects the user will have access to. For each project, choose the appropriate role from the drop-down menu on the right. If you’ve assigned the user to a group in the previous step, you cannot downgrade those permissions here. Then click *Next*.
+6. Specify the user’s default project, and select the appropriate team spaces for them. The default project sets the user's dropdown menus to that project when they first log into Amplitude. The team spaces will appear under *Team Spaces* in the left-hand rail when the user logs into Amplitude. Then click *Next*.
 7. Review your invitation. If it’s ready to go, click *Send*.
 
 ### Allow team members to request access
 
-In addition to inviting users to the organization, you can also allow team members to request access. They can to request it from the login page, an action that prompts admin approval.
+In addition to inviting users to the organization, you can also allow team members to request access. They’ll be able to request it from the login page, an action that will prompt admin approval.
 
 To turn this setting on, navigate to *Advanced Settings* and switch the *Allow Team Members to Request Access* toggle to Enabled.
 
 ### Change an Amplitude email address
 
-Email address are unique identifiers for Amplitude user accounts. As a result, neither users or administrators can change a user account's email address.
-
-To work around this, follow these steps:
+At this time, user email address cannot be changed because it is a unique identifier for Amplitude user accounts. To work around this, you can follow these steps:
 
 1. Invite your new email address to your Amplitude organization.
 2. Create your new Amplitude account with your new email address.
-3. Log in with your existing email address and [transfer ownership](#transfer-ownership-of-content-from-one-user-to-another) of all content to your new email address.
+3. Log in with your existing email address and [transfer ownership](#01H8M96ZXZ1REHKB3Z16QN389D) of all content to your new email address.
 4. Remove your old email address from your Amplitude org.
 
 {{partial:admonition type='note'}}
@@ -58,7 +58,7 @@ Repeat the process for other users who also need to change their email address.
 
 ## Change user roles and permissions
 
-All current users are visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise and Growth customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
+All current users will be visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
 
 To change user permissions in Amplitude, follow these steps:
 

@@ -162,25 +162,13 @@ The initializer returns a singleton instance, so subsequent initializations for 
 {{partial:tab name="Amplitude"}}
 ```kotlin
 val experiment = Experiment.initializeWithAmplitudeAnalytics(
-    context,
-    "DEPLOYMENT_KEY", 
-    ExperimentConfig().apply {
-        // must match the name you used for your Amplitude Analytics instance
-        instanceName = "myCustomInstance"
-    }
+    context, "DEPLOYMENT_KEY", ExperimentConfig()
 )
 ```
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
 ```kotlin
-val experiment = Experiment.initialize(
-    context,
-    "DEPLOYMENT_KEY",
-    ExperimentConfig().apply {
-        // must match the name you used for your Amplitude Analytics instance
-        instanceName = "myCustomInstance"
-    }
-)
+val experiment = Experiment.initialize(context, "DEPLOYMENT_KEY", ExperimentConfig())
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
