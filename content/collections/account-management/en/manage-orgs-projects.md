@@ -93,4 +93,8 @@ The Amplitude Support team responds to these requests the first Monday of each m
 
 ## How to rotate your project's API key or secret key
 
-Review [Manage your API keys and secret keys](/docs/admin/account-management/manage-your-api-keys-and-secret-keys)
+Amplitude doesn't support rotating API keys due to the inherent public nature of API keys. Changing this key can affect ingestion and data loss if misused. However, with Admin approval Amplitude can re-generate your project's secret key on the backend. If you would like to submit a request to change the secret key, submit a support request [here](https://help.amplitude.com/hc/en-us/requests/new) with the following information: 
+
+* The name and ID of the project in question.
+* Three suggested times within the next three days for Amplitude to make the change. An agent will coordinate the exact time with you.
+* Approval from an admin of the project. If you're not an admin, you must copy an admin in the request.

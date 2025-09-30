@@ -171,8 +171,6 @@ module.exports ={
             typography: {
                 DEFAULT: {
                     css: {
-                        'pre code::before': { content: 'none' },
-                        'pre code::after':  { content: 'none' },
                         td: {
                             'vertical-align': 'top'
                         },
