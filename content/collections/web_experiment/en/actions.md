@@ -32,12 +32,12 @@ URL redirects load a new URL when a targeted user lands on a targeted page in yo
 URL redirects retain any query parameters on the original page URL. For example, you create a variant to redirect users from `https://example.com` to `https://example.com/get-started`. If a user clicks a link `https://example.com?utm_source=facebook`, Web Experiment redirects that user to `https://example.com/get-started?utm_source=facebook`.
 
 {{partial:admonition type="note"}}
-It is possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by quickly loading the page we want to redirect to, ideally as fast as possible. The sequence looks like this:
+It's possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by quickly loading the page we want to redirect to, ideally as fast as possible. The sequence looks like this:
 
 **Control flow**
 - Load control page HTML.
 - Browser parses and loads dependencies (including the experiment script).
-- Experiment script initializes, evaluates the user, and logs an impression if they are in control.
+- Experiment script initializes, evaluates the user, and logs an impression if they're in control.
 
 **Treatment flow**
 - Load control page HTML.
@@ -51,7 +51,7 @@ Because the treatment flow involves more steps before the impression is logged, 
 
 Researchers have observed similar effects: if treatment slows performance, more users may leave before logs are generated, leading to fewer recorded impressions. Conversely, faster performance can lead to more recorded users in treatment than in control.
 
-Further reading:
+**Further reading:**
 * [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
 * [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
 * [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
