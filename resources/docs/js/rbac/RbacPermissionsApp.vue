@@ -27,8 +27,6 @@
         <FilterPanel 
           v-model:filters="filters"
           :available-product-areas="availableProductAreas"
-          :show-filters="showFilters"
-          @toggle-filters="showFilters = !showFilters"
         />
       </div>
     </div>
@@ -96,7 +94,6 @@ const props = defineProps({
 })
 
 // State
-const showFilters = ref(false)
 
 // Composables
 const { data, isLoading, error, loadData } = useRbacData(props.dataUrl)

@@ -14,41 +14,27 @@ export function useRbacSorting() {
       return [...permissions].sort((a, b) => {
         let aValue, bValue
 
-        switch (sortField.value) {
-          case 'title':
-            aValue = a.title?.toLowerCase() || ''
-            bValue = b.title?.toLowerCase() || ''
-            break
-          case 'product_area':
-            // First sort by product area, then by title within each area
-            const aArea = a.product_area?.toLowerCase() || ''
-            const bArea = b.product_area?.toLowerCase() || ''
-            if (aArea !== bArea) {
-              aValue = aArea
-              bValue = bArea
-            } else {
-              aValue = a.title?.toLowerCase() || ''
-              bValue = b.title?.toLowerCase() || ''
+            switch (sortField.value) {
+              case 'title':
+                aValue = a.title?.toLowerCase() || ''
+                bValue = b.title?.toLowerCase() || ''
+                break
+              case 'product_area':
+                // First sort by product area, then by title within each area
+                const aArea = a.product_area?.toLowerCase() || ''
+                const bArea = b.product_area?.toLowerCase() || ''
+                if (aArea !== bArea) {
+                  aValue = aArea
+                  bValue = bArea
+                } else {
+                  aValue = a.title?.toLowerCase() || ''
+                  bValue = b.title?.toLowerCase() || ''
+                }
+                break
+              default:
+                aValue = a.title?.toLowerCase() || ''
+                bValue = b.title?.toLowerCase() || ''
             }
-            break
-          case 'advanced':
-            // First sort by advanced flag, then by title within each type
-            if (a.advanced !== b.advanced) {
-              aValue = a.advanced ? 1 : 0
-              bValue = b.advanced ? 1 : 0
-            } else {
-              aValue = a.title?.toLowerCase() || ''
-              bValue = b.title?.toLowerCase() || ''
-            }
-            break
-          case 'description':
-            aValue = a.description?.toLowerCase() || ''
-            bValue = b.description?.toLowerCase() || ''
-            break
-          default:
-            aValue = a.title?.toLowerCase() || ''
-            bValue = b.title?.toLowerCase() || ''
-        }
 
         let comparison = 0
         if (aValue < bValue) {

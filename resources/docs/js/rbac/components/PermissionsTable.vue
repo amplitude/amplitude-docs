@@ -13,28 +13,11 @@
               <SortIcon :field="'title'" :current-field="sortField" :direction="sortDirection" />
             </div>
           </th>
-          <th 
-            scope="col" 
-            class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors font-IBMPlex"
-            @click="$emit('sort', 'advanced')"
-          >
-            <div class="flex items-center space-x-2">
-              <span>Type</span>
-              <SortIcon :field="'advanced'" :current-field="sortField" :direction="sortDirection" />
-            </div>
-          </th>
-          <th 
-            scope="col" 
-            class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors font-IBMPlex"
-            @click="$emit('sort', 'description')"
-          >
-            <div class="flex items-center space-x-2">
-              <span>Description</span>
-              <SortIcon :field="'description'" :current-field="sortField" :direction="sortDirection" />
-            </div>
-          </th>
           <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex">
             Actions
+          </th>
+          <th scope="col" class="px-6 py-4 text-center text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex w-16">
+            <!-- Expand column -->
           </th>
         </tr>
       </thead>
@@ -42,35 +25,74 @@
         <template v-for="group in groupedPermissions" :key="group.productArea">
           <!-- Product Area Header Row -->
           <tr class="product-area-header bg-[#F6F6F9]">
-            <td colspan="4" class="px-6 py-6 border-b border-[#E6E6EB]">
+            <td colspan="3" class="px-6 py-6 border-b border-[#E6E6EB]">
               <div class="flex items-center space-x-3">
-                <ProductAreaBadge :product-area="group.productArea" />
-                <span class="text-sm font-medium text-[#1C1C1E] font-IBMPlex">({{ group.permissions.length }} permissions)</span>
+                <span class="text-base font-semibold text-[#1C1C1E] font-IBMPlex">{{ getProductAreaLabel(group.productArea) }}</span>
+                <span class="text-sm font-medium text-[#1C1C1E] opacity-70 font-IBMPlex">({{ group.permissions.length }} permissions)</span>
               </div>
             </td>
           </tr>
           
           <!-- Permissions in this group -->
-          <tr 
-            v-for="permission in group.permissions" 
-            :key="permission.id"
-            class="hover:bg-[#F6F6F9] transition-colors border-b border-[#E6E6EB] last:border-b-0"
-          >
-            <td class="px-6 py-4">
-              <div class="font-medium text-[#1C1C1E] text-sm font-IBMPlex">{{ permission.title }}</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <TypeBadge :advanced="permission.advanced" />
-            </td>
-            <td class="px-6 py-4">
-              <div class="text-sm text-[#1C1C1E] max-w-md leading-relaxed font-IBMPlex">
-                {{ permission.description || 'No description available' }}
-              </div>
-            </td>
-            <td class="px-6 py-4">
-              <ActionsList :actions="permission.actions" />
-            </td>
-          </tr>
+          <template v-for="permission in group.permissions" :key="permission.id">
+            <!-- Main permission row -->
+            <tr 
+              class="hover:bg-[#F6F6F9] transition-colors border-b border-[#E6E6EB] cursor-pointer"
+              @click="toggleExpansion(permission.id)"
+            >
+              <td class="px-6 py-4">
+                <div class="flex items-center space-x-3">
+                  <div class="font-medium text-[#1C1C1E] text-sm font-IBMPlex">{{ permission.title }}</div>
+                  <TypeBadge :advanced="permission.advanced" />
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <div class="text-sm text-[#1C1C1E] font-IBMPlex">
+                  {{ permission.actions?.length || 0 }} action{{ (permission.actions?.length || 0) !== 1 ? 's' : '' }}
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <button 
+                  class="text-[#1C1C1E] opacity-50 hover:opacity-70 transition-opacity"
+                  @click.stop="toggleExpansion(permission.id)"
+                >
+                  <svg 
+                    class="w-5 h-5 transform transition-transform duration-200"
+                    :class="{ 'rotate-180': expandedRows.has(permission.id) }"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            
+            <!-- Expanded details row -->
+            <tr 
+              v-if="expandedRows.has(permission.id)"
+              class="bg-[#F6F6F9] border-b border-[#E6E6EB]"
+            >
+              <td colspan="3" class="px-6 py-6">
+                <div class="grid grid-cols-2 gap-4">
+                  <!-- Description -->
+                  <div>
+                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-2 font-IBMPlex">Description</h4>
+                    <p class="text-sm text-[#1C1C1E] leading-relaxed font-IBMPlex">
+                      {{ permission.description || 'No description available' }}
+                    </p>
+                  </div>
+                  
+                  <!-- Actions -->
+                  <div v-if="permission.actions && permission.actions.length > 0">
+                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-2 font-IBMPlex">Actions</h4>
+                    <ActionsList :actions="permission.actions" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </template>
         </template>
       </tbody>
     </table>
@@ -78,13 +100,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 // Components
 import SortIcon from './SortIcon.vue'
-import ProductAreaBadge from './ProductAreaBadge.vue'
 import TypeBadge from './TypeBadge.vue'
 import ActionsList from './ActionsList.vue'
+
+// Reactive state for expanded rows
+const expandedRows = ref(new Set())
 
 // Props
 const props = defineProps({
@@ -104,6 +128,19 @@ const props = defineProps({
 
 // Events
 defineEmits(['sort'])
+
+// Methods
+const toggleExpansion = (permissionId) => {
+  if (expandedRows.value.has(permissionId)) {
+    expandedRows.value.delete(permissionId)
+  } else {
+    expandedRows.value.add(permissionId)
+  }
+}
+
+const getProductAreaLabel = (area) => {
+  return productAreaMap[area] || area
+}
 
 // Product area mapping for sorting
 const productAreaMap = {
