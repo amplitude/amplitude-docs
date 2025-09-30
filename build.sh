@@ -38,6 +38,9 @@ mix --production
 # GENERATE APP KEY
 php artisan key:generate
 
+# BUILD GLOSSARY JSON
+php artisan glossary:generate-json
+
 # GENERATE DATA FILES
 php artisan rbac:generate-data
 

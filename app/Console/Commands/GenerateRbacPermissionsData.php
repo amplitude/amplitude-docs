@@ -29,9 +29,16 @@ class GenerateRbacPermissionsData extends Command
     {
         $this->info('Generating RBAC permissions data...');
 
-        // Get all RBAC permissions from the collection
-        $permissions = collect(Entry::whereCollection('rbac_permissions'))
-            ->map(function ($entry) {
+        try {
+            // Get all RBAC permissions from the collection
+            $entries = Entry::whereCollection('rbac_permissions');
+            
+            if (!$entries || $entries->count() === 0) {
+                $this->warn('No RBAC permissions found in collection');
+                return Command::FAILURE;
+            }
+
+            $permissions = $entries->map(function ($entry) {
                 return [
                     'id' => $entry->id(),
                     'title' => $entry->get('title'),
@@ -41,31 +48,35 @@ class GenerateRbacPermissionsData extends Command
                     'actions' => $entry->get('actions', []),
                     'slug' => $entry->slug(),
                 ];
-            })
-            ->values();
+            })->values();
 
-        // Create the data structure
-        $data = [
-            'generated_at' => now()->toISOString(),
-            'permissions_count' => $permissions->count(),
-            'permissions' => $permissions,
-        ];
+            // Create the data structure
+            $data = [
+                'generated_at' => now()->toISOString(),
+                'permissions_count' => $permissions->count(),
+                'permissions' => $permissions,
+            ];
 
-        // Get output path
-        $outputPath = $this->option('output');
-        
-        // Ensure directory exists
-        $directory = dirname($outputPath);
-        if (!File::exists($directory)) {
-            File::makeDirectory($directory, 0755, true);
+            // Get output path
+            $outputPath = $this->option('output');
+            
+            // Ensure directory exists
+            $directory = dirname($outputPath);
+            if (!File::exists($directory)) {
+                File::makeDirectory($directory, 0755, true);
+            }
+
+            // Write JSON file
+            File::put($outputPath, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+            $this->info("Generated RBAC permissions data with {$permissions->count()} permissions");
+            $this->info("Output: {$outputPath}");
+
+            return Command::SUCCESS;
+            
+        } catch (\Exception $e) {
+            $this->error("Failed to generate RBAC permissions data: " . $e->getMessage());
+            return Command::FAILURE;
         }
-
-        // Write JSON file
-        File::put($outputPath, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-
-        $this->info("Generated RBAC permissions data with {$permissions->count()} permissions");
-        $this->info("Output: {$outputPath}");
-
-        return Command::SUCCESS;
     }
 }
