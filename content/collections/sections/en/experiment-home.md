@@ -6,7 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 nav_title: experiment
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1759165681
+updated_at: 1759257972
 current-collection: experiment|advanced-techniques|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow|experiment_integrations|experiment_troubleshooting|under-the-hood|workflow|web_experiment
 landing_page_content:
   -
@@ -48,7 +48,7 @@ landing_page_content:
     external_link: false
     entries_field: 37e1ab54-da77-4a60-be41-1c1018c4163a
     type: card
-    enabled: false
+    enabled: true
   -
     id: mdyvldpk
     icon: brand-stickers/icon-experiment-blue.svg
