@@ -16,14 +16,6 @@
       </option>
     </select>
 
-    <!-- Clear Filters -->
-    <button
-      v-if="hasActiveFilters"
-      @click="clearAllFilters"
-      class="px-4 py-2 text-sm text-[#1C1C1E] opacity-60 hover:opacity-80 underline font-IBMPlex transition-opacity"
-    >
-      Clear filters
-    </button>
   </div>
 
 </template>
@@ -61,10 +53,6 @@ const productAreaMap = {
 }
 
 // Computed
-const hasActiveFilters = computed(() => {
-  return props.filters.productAreas.length > 0
-})
-
 const selectedProductArea = computed(() => {
   return props.filters.productAreas.length === 1 ? props.filters.productAreas[0] : ''
 })
@@ -87,9 +75,4 @@ const handleProductAreaChange = (event) => {
   emit('update:filters', newFilters)
 }
 
-const clearAllFilters = () => {
-  emit('update:filters', {
-    productAreas: []
-  })
-}
 </script>

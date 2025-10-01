@@ -7,12 +7,13 @@
           <h1 class="text-2xl font-bold text-[#1C1C1E] font-IBMPlex">RBAC Permissions Reference</h1>
           <p class="text-[#1C1C1E] opacity-70 mt-2 font-IBMPlex">Search and filter all available Role-Based Access Control permissions</p>
         </div>
-        <StatsDisplay 
-          :permissions-count="data?.permissions_count" 
-          :filtered-count="filteredPermissions.length"
-          :is-searching="isSearching"
-          :current-query="searchQuery"
-        />
+            <StatsDisplay 
+              :total-count="data?.permissions_count || 0"
+              :filtered-count="filteredPermissions.length"
+              :is-searching="isSearching"
+              :current-query="searchQuery"
+              entity-type="permissions"
+            />
       </div>
     </div>
 
@@ -53,25 +54,25 @@
     />
     
     <!-- Error State -->
-    <ErrorState v-if="error" :error="error" />
+    <ErrorState v-if="error" :error="error" @retry="loadData" />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRbacData } from './composables/useRbacData'
-import { useRbacSearch } from './composables/useRbacSearch'
-import { useRbacFilters } from './composables/useRbacFilters'
-import { useRbacSorting } from './composables/useRbacSorting'
+import { useDataLoader } from '../composables/shared/useDataLoader'
+import { useSearch } from '../composables/shared/useSearch'
+import { useFilters } from '../composables/shared/useFilters'
+import { useSorting } from '../composables/shared/useSorting'
 
 // Components
-import SearchBar from '../glossary/components/SearchBar.vue'
+import SearchBar from '../components/shared/SearchBar.vue'
 import FilterPanel from './components/FilterPanel.vue'
 import PermissionsTable from './components/PermissionsTable.vue'
-import StatsDisplay from './components/StatsDisplay.vue'
-import LoadingSpinner from '../glossary/components/LoadingSpinner.vue'
-import EmptyState from '../glossary/components/EmptyState.vue'
-import ErrorState from '../glossary/components/ErrorState.vue'
+import StatsDisplay from '../components/shared/StatsDisplay.vue'
+import LoadingSpinner from '../components/shared/LoadingSpinner.vue'
+import EmptyState from '../components/shared/EmptyState.vue'
+import ErrorState from '../components/shared/ErrorState.vue'
 
 // Props
 const props = defineProps({
@@ -96,15 +97,16 @@ const props = defineProps({
 // State
 
 // Composables
-const { data, isLoading, error, loadData } = useRbacData(props.dataUrl)
-const { searchQuery, searchResults, performSearch, clearSearch: clearSearchResults } = useRbacSearch()
+const { data, isLoading, error, loadData } = useDataLoader(props.dataUrl, 'permissions')
+const { searchQuery, searchResults, performSearch, clearSearch: clearSearchResults } = useSearch('permissions')
 const { 
   filters, 
   filteredResults, 
   availableProductAreas,
-  initializeFilters 
-} = useRbacFilters()
-const { sortField, sortDirection, sortedResults, handleSort } = useRbacSorting()
+  initializeFilters,
+  hasActiveFilters
+} = useFilters('permissions')
+const { sortField, sortDirection, sortedResults, handleSort } = useSorting('title', 'asc')
 
 // Computed
 const isSearching = computed(() => searchQuery.value.length >= 2)
@@ -130,6 +132,7 @@ const clearSearch = () => {
   clearSearchResults()
 }
 
+
 // Watchers
 watch(() => data.value, (newData) => {
   if (newData) {
@@ -138,12 +141,12 @@ watch(() => data.value, (newData) => {
 }, { immediate: true })
 
 watch(searchQuery, (newQuery) => {
-  if (data.value) {
-    performSearch(newQuery, data.value.permissions)
+  if (data.value?.permissions) {
+    performSearch(newQuery, data.value.permissions, props.searchDebounce)
   }
-})
+}, { immediate: true })
 
-// Initialize
+// Lifecycle
 onMounted(async () => {
   await loadData()
 })
