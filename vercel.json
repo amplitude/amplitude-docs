@@ -10,8 +10,8 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!docs/md/).*)\\.md$",
-      "destination": "/docs/md/$1.md"
+      "source": "/docs/:path*.md",
+      "destination": "/docs/md/:path*.md"
     }
   ],
   "trailingSlash": false,
