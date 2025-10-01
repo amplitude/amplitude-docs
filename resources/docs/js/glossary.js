@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import GlossaryApp from './glossary/GlossaryApp.vue'
+import GlossaryApp from './glossary/GlossaryAppTable.vue'
 
 // Initialize the Vue app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
