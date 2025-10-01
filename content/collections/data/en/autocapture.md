@@ -16,7 +16,7 @@ Autocapture is the fastest way to capture information about your website or app 
 
 Autocapture is available for all Amplitude plans.
 
-* On your website, a single [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) snippet lets you capture sessions, page views, clicks, form interactions, file downloads, marketing attribution, and element interactions. You can also use visual labeling to navigate your site and create new events from the click information.
+* On your website, a single [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) snippet lets you capture sessions, page views, clicks, form interactions, file downloads, marketing attribution, page URL enrichment, and element interactions. You can also use visual labeling to navigate your site and create new events from the click information.
 * On iOS and Android, the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) capture application installs and upgrades, sessions, and screen views.
 
 ## Autocapture and precision tracking
@@ -26,7 +26,7 @@ Amplitude offers two primary ways to capture events:
 * Autocapture to automatically collect a predefined set of events and properties in a standardized taxonomy using Amplitude SDKs.
 * Precision tracking to instrument events and properties specific to your business needs and wanted analyses.
 
-From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. Autocapture lets you focus on speed when setting up your analysis.
+From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. The Browser SDK also enriches all events with page URL information, including previous page tracking and page type classification. Autocapture lets you focus on speed when setting up your analysis.
 
 When you want to investigate specific actions in your application requiring additional metadata, or have some events (like a purchase event) that may be core to your business, use precision tracking. Precise tracking in code allows you to send these events with a robust set of properties to perform even deeper analyses.
 
