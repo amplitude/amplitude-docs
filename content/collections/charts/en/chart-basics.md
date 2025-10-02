@@ -136,12 +136,16 @@ If you're measuring time on the date picker using the "between" option, the quer
 
 ## Releases and annotations
 
-* **Add an annotation** to your chart on the specific date of the data point you've selected, such as the dates of a feature release or a marketing campaign. Annotations appear as purple vertical lines in your chart, and they can be removed in your project's [Settings page](/docs/admin/account-management/account-settings). There are some limits to annotations:
+Click the `+` icon to the right of the x-axis on a time series chart to add an annotation. This launches a modal where you can specify the date, add a description, and set the visibility. Annotations appear as vertical lines on your chart, and as numbers under the x-axis.
+
+Annotations are useful to mark the date of a feature release or a marketing campaign. Remove annotations from your project's [Settings page](/docs/admin/account-management/account-settings). 
+
+Annotations have the following limitations:
   * Only users with Admin or Manager permission levels can create annotations.
   * Chart-specific annotations are only available for Event Segmentation and User Sessions charts.
   * Annotations don't support public links and aren't accessible in dashboards or notebooks.
-* **Create a release**. A **release** represents a change in your product. See [this Help Center article for more information on releases in Amplitude](/docs/analytics/releases). 
 
+Releases represent a change in your product. For more information, review [Releases](/docs/analytics/releases). 
 
 ### Give annotations a date range
 

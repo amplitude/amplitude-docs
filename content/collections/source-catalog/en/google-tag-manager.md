@@ -121,12 +121,12 @@ For more information, see [Browser SDK 2 | Autocapture](/docs/sdks/analytics/bro
 
 ##### Page view tracking
 
-Check this box to enable page view tracking. The following configurations are available page view tracking options. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#tracking-page-views).
+Check this box to enable page view tracking. The following configurations are available page view tracking options. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#track-page-views).
 
 {{partial:collapse name="Default configurations"}}
 | Name                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Default Value                                                                                                                                                 |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Use the legacy page view properties` | `check box`. Whether use the legacy page view properties. [More Details](./#breaking-changes-checklist).                                                                                                                                                                                                                                                                                                                                                                           | `Enabled`. Use the latest page view event type and properties as in [Amplitude Browser 2.0](/docs/sdks/analytics/browser/browser-sdk-2/#tracking-page-views). |
+| `Use the legacy page view properties` | `check box`. Whether use the legacy page view properties.                                                                                                                                                                                                                                                                                                                                                                           | `Enabled`. Use the latest page view event type and properties as in [Amplitude Browser 2.0](/docs/sdks/analytics/browser/browser-sdk-2/#track-page-views). |
 | `Page View Type`                      | `string`. The event type for page view event.                                                                                                                                                                                                                                                                                                                                                                                                                                      | `[Amplitude] Page Viewed`                                                                                                                                     |
 | `Page View trigger`                   | `Page Loads` or `Only with Attribution changes` or a `Variable Configuration`.  The trigger of page view event. A variable configuration can be either build-in or customized that returns a function with a true or false return value. If the function returns true, then Page Views are tracked automatically, if it returns false then Page Views are not tracked. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#advanced-configuration-for-tracking-page-views). | `Page Loads` if enable page view tracking.                                                                                                                    |
 | `Track history events automatically`  | `All history changes` or `Only when page path changes`. Whether to track history events. This is for tracking page view on SPA. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#advanced-configuration-for-tracking-page-views).                                                                                                                                                                                                                                         | `All history changes`                                                                                                                                         |
@@ -135,15 +135,15 @@ Check this box to enable page view tracking. The following configurations are av
 
 ##### Session tracking
 
-Check this box to enable sessions tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#tracking-sessions).
+Check this box to enable sessions tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#track-sessions).
 
 ###### Form interaction tracking
 
-Check this box to enable form interactions tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#tracking-form-interactions).
+Check this box to enable form interactions tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#track-form-interactions).
 
 ###### File downloads tracking
 
-Check this box to enable file downloads tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#tracking-file-downloads).
+Check this box to enable file downloads tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#track-file-downloads).
     
 
 #### EU data residency
@@ -155,7 +155,7 @@ For EU data residency, create your project inside Amplitude EU and use the API k
 If the user ID is already available you can:
 
 - Initialize the instance with it by inputting it in the "User ID" input box of the `init` tag
-- Use the `setUserId` tag type to set the use ID at a later time. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-user-id).
+- Use the `setUserId` tag type to set the use ID at a later time. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-user-identifier).
 
 #### Configuration
 
@@ -350,11 +350,11 @@ If you want to reset the `userId` and deviceId after logout, please check `reset
 
 | Name        | Description                                                                                                                                                                                                                                                                                                                                                                                                 | Default Value |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `Device ID` | `string`. Set the deviceId for the current user. Amplitude assigns an unique identifier for the `deviceId` by default. For the cross domain use case, Amplitude  captures the `deviceId` from URL parameter and assigns the value to `deviceId`. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-device-id) | `UUID`        |
+| `Device ID` | `string`. Set the deviceId for the current user. Amplitude assigns an unique identifier for the `deviceId` by default. For the cross domain use case, Amplitude  captures the `deviceId` from URL parameter and assigns the value to `deviceId`. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-device-identifierentifier) | `UUID`        |
 
 #### Set session ID
 
-Session logic is auto handled by Amplitude. You might need to set the `sessionId` to `-1` if you want to out of session control. Please make sure the value is in milliseconds since epoch (Unix Timestamp) or `-1`. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-session-id).
+Session logic is auto handled by Amplitude. You might need to set the `sessionId` to `-1` if you want to out of session control. Please make sure the value is in milliseconds since epoch (Unix Timestamp) or `-1`. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#custom-session-identifier).
 
 ### Reset 
 

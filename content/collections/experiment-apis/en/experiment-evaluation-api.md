@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-ap
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
 
-The Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
+The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
 
 ## Regions
 

@@ -202,11 +202,11 @@ Some webhook destinations would need a list of users as a batch. In the below ex
          "amplitude_My Test Cohort_7khm89cz": true
       },
       {
-         "user_id": "user_two@example.com"
+         "user_id": "user_two@example.com",
          "amplitude_My Test Cohort_7khm89cz": true
       },
       {
-         "user_id": "user_three@example.com"
+         "user_id": "user_three@example.com",
          "amplitude_My Test Cohort_7khm89cz": true
       }
     ]

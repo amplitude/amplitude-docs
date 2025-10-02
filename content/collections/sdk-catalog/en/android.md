@@ -17,7 +17,7 @@ The Kotlin Android SDK lets you send events to Amplitude.
 {{partial:collapse name="Configuration Options"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
-| `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](./#device-id-lifecycle). | `null` |
+| `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. | `null` |
 | `flushIntervalMillis` | `Int`. The amount of time SDK will attempt to upload the unsent events to the server or reach `flushQueueSize` threshold. The value is in milliseconds. | `30000` |
 | `flushQueueSize` | `Int`. SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `flushIntervalMillis` interval. | `30` |
 | `flushMaxRetries` | `Int`. Maximum retry times. | `5` |
@@ -33,19 +33,19 @@ The Kotlin Android SDK lets you send events to Amplitude.
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
 | `useBatch` | `Boolean` Whether to use batch api. | `false` |
-| `useAdvertisingIdForDeviceId` | `Boolean`. Whether to use advertising id as device id. Please check [here](../android-kotlin/#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `Boolean`. Whether to use app set id as device id. Please check [here](../android-kotlin/#app-set-id) for required module and permission. | `false` |
+| `useAdvertisingIdForDeviceId` | `Boolean`. Whether to use advertising id as device id. Please check [here](/docs/sdks/analytics/android/android-sdk-kotlin/#advertiser-id) for required module and permission. | `false` |
+| `useAppSetIdForDeviceId` | `Boolean`. Whether to use app set id as device id. Please check [here](/docs/sdks/analytics/android/android-sdk-kotlin/#app-set-id) for required module and permission. | `false` |
 | `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
 | `enableCoppaControl` | `Boolean`. Whether to enable COPPA control for tracking options. | `false` |
 | `instanceName` | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. | `$default_instance` |
-| `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](../android) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
-| `offline` | `Boolean | AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](./#offline-mode) | `false` |
+| `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](/docs/sdks/analytics/android/android-sdk) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
+| `offline` | `Boolean | AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. | `false` |
 | `storageProvider` | `StorageProvider`. Implements `StorageProvider` interface to store events. | `AndroidStorageProvider` |
 | `identifyInterceptStorageProvider` | `StorageProvider`. Implements `StorageProvider` interface for identify event interception and volume optimization. | `AndroidStorageProvider` |
 | `identityStorageProvider` | `IdentityStorageProvider`. Implements `IdentityStorageProvider` to store user id and device id. | `FileIdentityStorageProvider` |
 | `loggerProvider` | `LoggerProvider`. Implements `LoggerProvider` interface to emit log messages to desired destination. | `AndroidLoggerProvider` |
 | `newDeviceIdPerInstall` | Whether to generate different a device id every time when the app is installed regardless of devices. It's legacy configuration only to keep compatible with the old Android SDK. It works the same as `useAdvertisingIdForDeviceId`. | `false` |
-| `locationListening` | Whether to enable Android location service. Learn more [here](./#location-tracking). | `true` |
+| `locationListening` | Whether to enable Android location service.  | `true` |
 
 {{/partial:collapse}}
 

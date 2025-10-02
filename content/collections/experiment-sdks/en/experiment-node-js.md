@@ -258,7 +258,7 @@ initializeLocal(apiKey: string, config?: LocalEvaluationConfig): LocalEvaluation
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `streamUpdates` [configuration](#configuration_1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration_1) as well for fallback.
+Use the `streamUpdates` [configuration](#configuration) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration) as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -290,7 +290,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
 
@@ -321,7 +321,7 @@ await experiment.start();
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
+Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
 {{/partial:admonition}}
 
 ```js
@@ -365,31 +365,35 @@ Consider configuring the `maxCohortSize` to avoid downloading large cohorts whic
 
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
 
 ```js
 import { AmplitudeCookie } from '@amplitude/experiment-node-server';
+import { v4 as uuidv4 } from 'uuid';
 
-app.use((req, res, next) => {
-  const { query, cookies, url, path, ip, host } = req
+// Get the cookie name for the Amplitude API key
+// For Browser SDK 2.0 cookies, pass true as second parameter:
+// const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key', true);
+const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key');
+let deviceId = null;
 
-  // grab amp device id if present
-  const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key');
-  let deviceId = null;
-  if (cookies[ampCookieName]) {
-    deviceId = AmplitudeCookie.parse(cookies[ampCookieName]).device_id;
-  }
-  if (!deviceId) {
-    // deviceId doesn't exist, set the Amplitude Cookie
-    deviceId = random22CharBase64String();
-    const ampCookieValue = AmplitudeCookie.generate(deviceId);
-    res.cookie(ampCookieName, ampCookieValue, {
-      domain: '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
-      maxAge: 365 * 24 * 60 * 60 * 1000, // this is currently the same as the default in the Amplitude JS SDK, can be modified
-      sameSite: 'Lax'
-    });
-  }
+// Try to get device ID from existing cookie
+if (req.cookies[ampCookieName]) {
+  deviceId = AmplitudeCookie.parse(req.cookies[ampCookieName]).device_id;
+  // For Browser SDK 2.0: AmplitudeCookie.parse(req.cookies[ampCookieName], true).device_id;
+}
 
-  next()
-});
+// If no device ID found, generate a new one and set the cookie
+if (!deviceId) {
+  deviceId = uuidv4();
+  const ampCookieValue = AmplitudeCookie.generate(deviceId);
+  // For Browser SDK 2.0: AmplitudeCookie.generate(deviceId, true);
+  res.cookie(ampCookieName, ampCookieValue, {
+    domain: '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
+    httpOnly: false,
+    secure: false
+  });
+}
 ```
+
+

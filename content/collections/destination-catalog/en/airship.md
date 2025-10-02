@@ -25,7 +25,7 @@ updated_at: 1713481987
 partner_maintained: false
 integration_icon: partner-icons/appfit.svg
 ---
-This integration combines Amplitude's analytics with Airship's customer engagement tools into one unified system. Use this integration to interact with any user segment or cohort via push notifications, in-app messages, and more to advance your app engagement or conversion goals.
+This integration combines Amplitude's analytics with Airship's customer engagement tools into one unified system. Use this integration to interact with any user segment or cohort through push notifications, in-app messages, and more to advance your app engagement or conversion goals.
 
 You can also send events from Airship to Amplitude if your Airship plan includes real-time data streaming. For more information, visit the [Airship documentation center](https://docs.airship.com/partners/amplitude/).
 
@@ -40,9 +40,9 @@ If you use Amplitude's SDKs, integrate both the Airship and [Amplitude SDKs](/d
 - Amplitude: [SDKs](/docs/sdks/analytics) and [APIs](/docs/apis/analytics)
 - Airship: [Getting Started Guide](http://docs.urbanairship.com/dev-resources.html#getting-started) 
 
-If you use Amplitude's HTTP API to send server-side events, you can send these key identifiers as user properties via Identify API.
+If you use Amplitude's HTTP API to send server-side events, you can send these key identifiers as user properties through the Identify API.
 
-In the app code, link identifiers between the two services. See the following code samples, depending on your platform.
+In the app code, link identifiers between the two services. Review the following code samples, depending on your platform.
 
 {{partial:admonition type="note"}}
 Amplitude recommends you store your Airship Channel ID as a custom user property in Amplitude, named `UAChannelID`.
@@ -70,9 +70,9 @@ To confirm you've configured it correctly, [look up your test user or device in
 
 ## Amplitude setup
 
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
+1. In Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Airship**.
-3. Enter your Airship API keys.
+3. Enter both your Airship App Key and the Airship Master Secret Key, separated by a comma:
 4. Map your Airship ID to an Amplitude ID. Amplitude recommends mapping `UAChannelID` in Amplitude to `Auto Channel ID` in Airship; however, you can map user ID, device ID, or any user property in Amplitude to any Airship ID.
 5. Save your work.
 
@@ -80,14 +80,14 @@ To confirm you've configured it correctly, [look up your test user or device in
 {{partial:admonition type="note" title=""}}
 
 1. Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
-2. Amplitude adds the tag to users during cohort sync (see [Airship setup](#airship-setup) below). Ensure that the API key you provide to Amplitude has the correct permissions to complete this operation.
+2. Amplitude adds the tag to users during cohort sync. (Review [Airship setup](#airship-setup) below for more details.) Ensure that the API key you provide to Amplitude has the correct permissions to complete this operation.
 {{/partial:admonition}}
 
 ## Airship setup
 
 Create a tag group in Airship called "Amplitude".
 
-1. In Airship, navigate to **Settings -> APIs and Integrations** and click **Tag Groups**.
+1. In Airship, navigate to *Settings > APIs and Integrations* and click **Tag Groups**.
 2. Fill in the tag name, description, and group key. Be sure to set the group key as "amplitude".
 
 After you deploy the application update, you can sync cohorts.

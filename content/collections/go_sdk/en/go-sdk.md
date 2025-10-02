@@ -51,10 +51,10 @@ client := amplitude.NewClient(config)
 | `FlushMaxRetries` | `int`. The number of times the client retries an event when the request returns an error. | `12` |
 | `RetryBaseInterval` | `time.Duration`. Base interval between retries when the request returns an error. | `100 milliseconds`|
 | `RetryThrottledInterval` | `time.Duration`. Base interval between retries for throttled requests. | `30 seconds` |
-| `Logger` | Logger interface. The logger used by Amplitude client. | `[Go standard Logger](https://pkg.go.dev/log#Logger): log.Logger.`|
+| `Logger` | Logger interface. The logger used by Amplitude client. | [`Go standard Logger`](https://pkg.go.dev/log#Logger): `log.Logger`.|
 | `ServerZone` | `string`. The server zone of the projects. Supports EU and US. For EU data residency, change to EU. | `US` |
 | `ServerURL` | `string`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone` and `UseBatch`. If this field is set, then `ServerZone` and `UseBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `UseBatch` | `boolean`. Whether to use [batch api](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
+| `UseBatch` | `boolean`. Whether to use [batch api](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
 | `StorageFactory` | `function`. Used to create storage struct to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorage` |
 | `OptOut` | `bool`. Opt out option. If set to `true`, client doesn't process and send events.| `false` |
 | `ConnectionTimeout` | `time.Duration`. A time limit for API requests. | `10 seconds` |

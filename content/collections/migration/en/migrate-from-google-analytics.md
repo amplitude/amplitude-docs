@@ -131,7 +131,7 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 
 #### Amplitude
 
-See more details on [Custom user ID](/docs/sdks/analytics/browser/browser-sdk-2#custom-user-identifier).
+See more details on [Custom user ID](/docs/sdks/analytics/browser/browser-sdk-2#custom-user-identifierentifier).
 
 ```js
 amplitude.setUserId('USER_ID');

@@ -163,7 +163,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, config)
 |`config.platform`|NOT SUPPORTED. `platform` is not supported at configuration level. But it still exist in event object. You can overwrite this by either assign a platform while tracking an event, or enriching the event.platform using enrichment plugin. See [Plugins](#plugins).|
 |`config.savedMaxCount`|NOT SUPPORTED|
 |`config.saveEvents`|NOT SUPPORTED|
-|`config.saveParamsReferrerOncePerSession`|`config.attribution.trackNewCampaigns`. Opposite of `saveParamsReferrerOncePerSession`. See [configuration](../#configuration). |
+|`config.saveParamsReferrerOncePerSession`|`config.attribution.trackNewCampaigns`. Opposite of `saveParamsReferrerOncePerSession`. See [configuration](#configuration). |
 |`config.secureCookie`|`config.cookieSecure`|
 |`config.sessionTimeout`|`config.sessionTimeout`|
 |`config.storage`|`config.identityStorage`|
