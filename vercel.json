@@ -10,6 +10,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/analytics/amplitude-mcp",
+      "destination": "/docs/mcp",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/get-started/cookies-and-consent-management",
       "destination": "/docs/sdks/analytics/browser/cookies-and-consent-management",
       "statusCode": 301
