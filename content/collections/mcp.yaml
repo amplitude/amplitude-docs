@@ -1,0 +1,20 @@
+title: MCP
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+mount: f42b6e3f-1dfd-4c36-99fd-52f8f77b86a7
+revisions: false
+route: '/mcp/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: mcp

@@ -1,15 +1,12 @@
 ---
-id: b09c311c-387a-476e-b382-49ce0ca448d6
-blueprint: analytic
-title: 'Amplitude MCP Server'
-landing: false
-exclude_from_sitemap: false
+id: a463c151-c872-4873-be01-73dfd9bfa6e4
+blueprint: mcp
+title: "Using Amplitude's MCP Server"
+author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758643314
-hide_from_search: true
-published: false
+updated_at: 1759426431
+nav_title: mcp
 ---
-
 The Amplitude Model Context Protocol (MCP) integration enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
 ## Available tools and capabilities
