@@ -16,37 +16,33 @@ With [account-level reporting](/docs/analytics/account-level-reporting), you can
 
 Before you can use account-level reporting, you will have to instrument it.
 
-Once you've instrumented groups, a new dropdown will be visible in the right module of the chart control panel for certain charts. You will then be able to perform account-level reporting and designate whether you want to see events triggered by users or by groups.
+WHen you instrumented group, a new dropdown appears right module of the chart control panel for certain charts. You will then be able to perform account-level reporting and designate whether you want to view events triggered by users or by groups.
 
 Amplitude has a limit of five group types per project.
 
 ## SDKs
 
-You can set up account-level reporting in Amplitude's SDKs by following these specific instructions in the Developer Center, depending on which SDK you are using:
-
-* [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk)
-* [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk)
-* [JavaScript SDK](/docs/sdks/analytics/browser/browser-sdk-2)
+Follow instructions for each [Amplitude SDK](/docs/sdks/analytics) to enable and configure account-level reporting.
 
 ### Identify API
 
-If you are sending data to Amplitude server-side, use the `groups` key in your identification object. This will associate a particular user in a certain group. Please see the [Identify API](/docs/apis/analytics/identify) documentation for more information on how to instrument groups via Amplitude's Identify API.
+If you are sending data to Amplitude server-side, use the `groups` key in your identification object. This will associate a particular user in a certain group. For more information on instrumenting groups with the Identify API, review the [Identify API](/docs/apis/analytics/identify) documentation.
 
 ### HTTP API
 
-If you are sending data to Amplitude server-side, use the `groups` key in your event object. This will add event-level groups (groups that only persist on that specific event). Please see the [HTTP API](/docs/apis/analytics/http-v2) documentation for more information on how to instrument groups via Amplitude's HTTP API.
+If you are sending data to Amplitude server-side, use the `groups` key in your event object. This will add event-level groups (groups that only persist on that specific event). For more information on instrumenting groups with the HTTP API, review the [HTTP API](/docs/apis/analytics/http-v2) documentation.
 
 ## Segment
 
-To set group types in Amplitude via Segment, you must first enable the following Amplitude destination settings and provide them with the appropriate values:
+To set group types in Amplitude through Segment, enable the following Amplitude destination settings and provide them with the appropriate values:
 
-* **Group Type Trait:** This specifies what trait in your Segment `group` calls will contain the desired group type.
-* **Group Value Trait:** This specifies what trait in your Segment `group` calls will contain the desired group value.
+* **Group Type Trait:** This specifies what trait in your Segment `group` calls will contain the group type.
+* **Group Value Trait:** This specifies what trait in your Segment `group` calls will contain the group value.
 
-You can set groups and group properties using Segment's [`group`](/docs/analytics/account-level-reporting-setup) documentation for more information on how to instrument groups via Segment. 
+You can set groups and group properties using Segment's [`group`](/docs/analytics/account-level-reporting-setup) documentation for more information on how to instrument groups with Segment. 
 
 ## Create groups using the Group Identify API
 
-Using the Group Identify API, you can create a new group tied with all expected group properties or update group properties for an existing group. In the example requests, the parameters and keys are *italicized*. The underlined values are what you need to replace with the parameters you are specifically interested in.
+Using the Group Identify API, you can create a new group tied with all expected group properties or update group properties for an existing group. In the example requests, the parameters and keys appear in  *italics*. The underlined values are what you need to replace with the parameters you are specifically interested in.
 
-In addition, group property operations (`$set`, `$setOnce`, `$add`, `$append`, `$unset`) are supported in this Group Identify API. Please see the [Group Identify API](/docs/apis/analytics/group-identify) documentation for more information on how to instrument groups via Amplitude's Group Identify API.
+For more information about instrumenting groups with the Group Identify API, review the [Group Identify API](/docs/apis/analytics/group-identify) documentation.

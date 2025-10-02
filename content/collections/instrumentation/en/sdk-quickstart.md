@@ -1225,8 +1225,8 @@ sdk:
       ```
     init_instructions: |-
       1. In Unreal, navigate to _Settings > Plugins > Project > Analytics_ to enable the plugin. Learn more about [how to enable SDK plugin](/docs/sdks/analytics/unreal/unreal-sdk#enable-the-sdk-plugin-in-the-editor).
-      2. Navigate to _Settings -> Project Settings -> Analytics -> Providers_ to set Amplitude as your analytics provider. Learn more about [how to set analytics provider](/docs/sdks/analytics/unreal/unreal-sdk#set-amplitude-as-your-analytics-provider).
-      3. Navigate to _Settings -> Project Settings -> Analytics -> Amplitude_ to set API keys. Learn more about [how to set API keys](/docs/sdks/analytics/unreal/unreal-sdk/#add-your-api-keys).
+      2. Navigate to _Settings -> Project Settings -> Analytics -> Providers_ to set Amplitude as your analytics provider. Learn more about [how to set analytics provider](/docs/sdks/analytics/unreal/unreal-sdk#enable-amplitude-as-your-analytics-provider).
+      3. Navigate to _Settings -> Project Settings -> Analytics -> Amplitude_ to set API keys.
       4. Add the following code:
 
         ```csharp
