@@ -231,7 +231,7 @@ pip install amplitude-experiment
 
 
 {{partial:admonition type="tip" heading="Quick start"}}
-1. [Initialize the local evaluation client.](#initialize_1)
+1. [Initialize the local evaluation client.](#initialize)
 2. [Start the local evaluation client.](#start)
 3. [Evaluate a user.](#evaluate)
 
@@ -262,7 +262,7 @@ variants = experiment.evaluate_v2(user)
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```python
@@ -275,7 +275,7 @@ Experiment.initialize_local(api_key, config = None) : LocalEvaluationClient
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
+Use the `flag_config_polling_interval_millis` [configuration](#configuration) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
 
 #### Configuration
@@ -319,7 +319,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Start
 
-Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration_1) interval.
+Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration) interval.
 
 ```python
 start()
@@ -336,7 +336,7 @@ experiment.start()
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
+Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}
 
 ```python
@@ -385,20 +385,27 @@ If you're using the Amplitude Analytics SDK on the client-side, the Python serve
 import uuid
 from amplitude_experiment import AmplitudeCookie
 
-# grab amp device id if present
+# Get the cookie name for the Amplitude API key
+# For Browser SDK 2.0 cookies, use new_format=True:
+# amp_cookie_name = AmplitudeCookie.cookie_name('amplitude-api-key', new_format=True)
 amp_cookie_name = AmplitudeCookie.cookie_name('amplitude-api-key')
-device_id = nil
+device_id = None
+
+# Try to get device ID from existing cookie
 if request.cookies.get(amp_cookie_name):
   device_id = AmplitudeCookie.parse(request.cookies.get(amp_cookie_name)).device_id
+  # For Browser SDK 2.0: AmplitudeCookie.parse(request.cookies.get(amp_cookie_name), new_format=True).device_id
 
+# If no device ID found, generate a new one and set the cookie
 if device_id is None:
-  # deviceId doesn't exist, set the Amplitude Cookie
   device_id = str(uuid.uuid4())
   amp_cookie_value = AmplitudeCookie.generate(device_id)
-  resp.set_cookie(amp_cookie_name, {
-    "value": amp_cookie_value,
-    "domain": ".your-domain.com",  # this should be the same domain used by the Amplitude JS SDK
-    "httponly": False,
-    "secure": False
-  })
+  # For Browser SDK 2.0: AmplitudeCookie.generate(device_id, new_format=True)
+  response.set_cookie(amp_cookie_name, amp_cookie_value, 
+    domain='.your-domain.com',  # this should be the same domain used by the Amplitude JS SDK
+    httponly=False,
+    secure=False
+  )
 ```
+
+
