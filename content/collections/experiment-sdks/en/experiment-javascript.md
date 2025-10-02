@@ -364,15 +364,15 @@ const experiment = Experiment.initialize("DEPLOYMENT_KEY", {
 
 ## Consent Management
 
-The Experiment JavaScript SDK supports cookie consent management. Configure consent behavior during initialization and update it dynamically as users interact with your consent banner.
+The Experiment JavaScript SDK supports cookie consent management. Consent status controls data storage persistence and exposure tracking.
 
 ### Consent status values
 
 The SDK supports three consent status values:
 
-- **GRANTED (1)**: User has granted consent. The SDK uses browser localStorage and sessionStorage for persistence.
-- **PENDING (2)**: Waiting for user consent decision. The SDK stores data in-memory only. When consent changes to GRANTED, the SDK persists in-memory data to browser storage.
-- **REJECTED (0)**: User has rejected consent. The SDK doesn't initialize and stores no data.
+- **GRANTED (1)**: User has granted consent. Uses browser localStorage and sessionStorage for persistence and tracks exposures immediately.
+- **PENDING (2)**: Waiting for user consent decision. Stores data in-memory only and queues exposures without tracking them. When consent changes to GRANTED, persists in-memory data to browser storage and fires all queued exposures.
+- **REJECTED (0)**: User has rejected consent. Doesn't initialize, store data, or track exposures. If transitioning from PENDING, deletes all queued exposures.
 
 ### Configure consent on initialization
 
@@ -404,11 +404,9 @@ experiment.setConsentStatus(ConsentStatus.GRANTED);
 experiment.setConsentStatus(ConsentStatus.REJECTED);
 ```
 
-When you change consent from PENDING to GRANTED, the SDK persists any in-memory data to browser storage. When you change to REJECTED, the SDK stops storing data.
+When you change consent from PENDING to GRANTED, the SDK persists in-memory data to browser storage and fires all queued exposures. When you change to REJECTED, the SDK stops storing data and deletes any queued exposures.
 
 ### Example integration with consent banner
-
-Integration with a consent management platform:
 
 ```js
 import { Experiment, ConsentStatus } from '@amplitude/experiment-js-client';
