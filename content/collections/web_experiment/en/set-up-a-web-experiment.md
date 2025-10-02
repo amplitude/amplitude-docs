@@ -10,9 +10,9 @@ this_article_will_help_you:
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
-Web Experiment lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) without new code. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to create experiments without engineering resources.
+Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to create experiments without engineering resources.
 
-Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
+Web Experiments use [**Pages**](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
 
 {{partial:admonition type='note'}}
 Review [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
@@ -20,7 +20,7 @@ Review [Amplitude's pricing page](https://amplitude.com/pricing) to find out if 
 
 ## Before you begin
 
-Before setting up a web experiment, you must [implement](/docs/web-experiment/implementation) the Web Experiment script on your site.
+Before setting up a web experiment, you **must** [implement](/docs/web-experiment/implementation) the Web Experiment script on your site.
 
 Keep in mind that creating and running a web experiment is different than in feature experiment, though there is some overlap.
 
@@ -65,7 +65,7 @@ To set up a web experiment, follow these steps:
 14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
 
 {{partial:admonition type="tip" heading="Create a new run of an existing experiment"}}
-If you have an experiment that you need to re-run, go to [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
+If you have an experiment that you need to re-run, see [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
 {{/partial:admonition}}
 
 ## Test and preview your web experiment
