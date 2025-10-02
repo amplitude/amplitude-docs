@@ -261,6 +261,7 @@ Configure the SDK client once during initialization.
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial array of flag configurations to use for local evaluation. | `undefined` |
+| `consentOptions` | Configure cookie consent management. Set `status` to `ConsentStatus.GRANTED`, `ConsentStatus.PENDING`, or `ConsentStatus.REJECTED`. Go to [Consent Management](#consent-management) for more details. | `{ status: ConsentStatus.GRANTED }` |
 | `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client |
 
 {{/partial:collapse}}
@@ -360,6 +361,77 @@ const experiment = Experiment.initialize("DEPLOYMENT_KEY", {
 ```
 
 {{/partial:collapse}}
+
+## Consent Management
+
+The Experiment JavaScript SDK supports cookie consent management. Configure consent behavior during initialization and update it dynamically as users interact with your consent banner.
+
+### Consent status values
+
+The SDK supports three consent status values:
+
+- **GRANTED (1)**: User has granted consent. The SDK uses browser localStorage and sessionStorage for persistence.
+- **PENDING (2)**: Waiting for user consent decision. The SDK stores data in-memory only. When consent changes to GRANTED, the SDK persists in-memory data to browser storage.
+- **REJECTED (0)**: User has rejected consent. The SDK doesn't initialize and stores no data.
+
+### Configure consent on initialization
+
+Set the initial consent status when you initialize the SDK:
+
+```js
+import { Experiment, ConsentStatus } from '@amplitude/experiment-js-client';
+
+const experiment = Experiment.initialize('DEPLOYMENT_KEY', {
+  consentOptions: {
+    status: ConsentStatus.PENDING
+  }
+});
+```
+
+If you set consent status to REJECTED, the SDK doesn't initialize.
+
+### Update consent status
+
+Update the consent status after initialization when users interact with your consent banner:
+
+```js
+import { ConsentStatus } from '@amplitude/experiment-js-client';
+
+// When user grants consent
+experiment.setConsentStatus(ConsentStatus.GRANTED);
+
+// When user rejects consent
+experiment.setConsentStatus(ConsentStatus.REJECTED);
+```
+
+When you change consent from PENDING to GRANTED, the SDK persists any in-memory data to browser storage. When you change to REJECTED, the SDK stops storing data.
+
+### Example integration with consent banner
+
+Integration with a consent management platform:
+
+```js
+import { Experiment, ConsentStatus } from '@amplitude/experiment-js-client';
+
+// Initialize with PENDING status
+const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY', {
+  consentOptions: {
+    status: ConsentStatus.PENDING
+  }
+});
+
+// Start fetching variants
+await experiment.fetch();
+
+// Update when user responds to consent banner
+window.addEventListener('consentGranted', () => {
+  experiment.setConsentStatus(ConsentStatus.GRANTED);
+});
+
+window.addEventListener('consentRejected', () => {
+  experiment.setConsentStatus(ConsentStatus.REJECTED);
+});
+```
 
 ## Fetch
 
