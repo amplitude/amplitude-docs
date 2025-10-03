@@ -34,7 +34,9 @@ When you publish an update an existing theme, those updates apply to any guide o
 
 ## Theme viewer
 
-The Theme Viewer updates as you make adjustments to provide an up-to-date representation of your theme as you work.
+The Theme Viewer shows how the theme appears when applied to a guide or survey. When editing a theme, you can choose the specific guide or survey you want to preview, to see how changes affect your real-world content.
+
+Theme previews look different depending on where you preview them. When you build a guide or survey, theme previews show the published version. When editing themes, previews display draft changes and let you choose a guide or survey to preview against. This helps ensure consistency between what you see when building guides and what your users experience in your product.
 
 At the top of the viewer, toggle between the [brand](#brand-controls) and [component](#component-editor) editors, toggle between light and dark mode, and cancel, save, and publish your changes.
 
