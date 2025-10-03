@@ -133,26 +133,18 @@
             
             // Copy markdown functionality
             copyBtn.addEventListener('click', async () => {
-                console.log('Copy button clicked, mdUrl:', mdUrl);
                 try {
-                    console.log('Fetching:', mdUrl);
                     const resp = await fetch(mdUrl);
-                    console.log('Response status:', resp.status, resp.ok);
-                    
                     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                     const raw = await resp.text();
-                    console.log('Raw content length:', raw.length);
                     
                     // Strip YAML front matter
                     const md = raw.replace(/^---[\r\n]+[\s\S]*?[\r\n]+---[\r\n]*/, '');
-                    console.log('Processed content length:', md.length);
                     
                     if (navigator.clipboard?.writeText) {
                         await navigator.clipboard.writeText(md);
-                        console.log('Copied via Clipboard API');
                     } else {
                         // Fallback for older browsers
-                        console.log('Using fallback copy method');
                         const ta = document.createElement('textarea');
                         ta.value = md;
                         ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:none;outline:none;box-shadow:none;background:transparent;';
@@ -165,7 +157,6 @@
                     
                     showTooltip('✓ Copied to clipboard!', 'success');
                 } catch (err) {
-                    console.error('Copy failed:', err);
                     showTooltip('✗ Copy failed: ' + err.message, 'error');
                 }
             });
