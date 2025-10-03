@@ -45,10 +45,10 @@ mix.postCss('resources/docs/css/dracula-prism.css', 'public/docs/css', [
     require('autoprefixer'),
     ]);
 
-mix.copyDirectory(
-    'content/collections',
-    'public/docs/md'
-);
+// mix.copyDirectory(
+//     'content/collections',
+//     'public/docs/md'
+// );
 // mix.copyDirectory(
 //     'resources/docs/js/components',
 //     'public/docs/js/components'
