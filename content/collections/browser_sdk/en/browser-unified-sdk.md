@@ -69,6 +69,7 @@ For detailed information about each product's features and APIs, refer to their 
 - [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)
 - [Experiment JavaScript SDK](/docs/sdks/experiment-sdks/experiment-javascript)
 - [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk)
+- [Guides and Surveys Web SDK](/docs/guides-and-surveys/sdk)
 {{/partial:admonition}}
 
 ```typescript
@@ -150,15 +151,5 @@ Sample Rate controls the rate at which Amplitude captures session replays. For e
 All options from `@amplitude/plugin-experiment-browser` are supported. See the [Experiment documentation](/docs/sdks/experiment-sdks/experiment-javascript#configuration) for details.
 
 ### Guides and Surveys options
-
-{{partial:admonition type="note" heading="Dashboard Enablement Required"}}
-Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display.
-
-To enable Guides and Surveys:
-1. Navigate to your project settings in Amplitude
-2. Enable the Guides and Surveys feature for your target app/environment
-
-See [Supported apps](/docs/guides-and-surveys/get-started#supported-apps) for more information.
-{{/partial:admonition}}
 
 The Unified Browser SDK supports all [Guides and Surveys options](/docs/guides-and-surveys/sdk#initialize-the-sdk). The engagement plugin initializes automatically when you pass engagement options in the configuration.
