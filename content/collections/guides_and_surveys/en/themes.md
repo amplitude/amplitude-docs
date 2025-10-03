@@ -58,6 +58,22 @@ In this example, the primary color is `#48705C`.
 
 Set the default type face of your theme. Choose from the [Google font library](https://fonts.google.com/), or specify a custom type face you've already defined on your site.
 
+To use a font natively in your mobile Guides and Surveys, make sure you include the full font family in your app project.
+
+#### Android
+- Place font files in the `/res/font` directory of your project.  
+- Supported formats: **XML**, **TTF**.  
+- After adding, the font can be referenced directly in your theme setup.  
+
+For more information, see Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
+
+#### iOS
+- Add font files to your Xcode project.  
+- Register the fonts in your app's `.plist` file.  
+- Supported formats: **TTF**, **OTF**.  
+
+For more information, see Apple's [Adding a custom font to your app](https://developer.apple.com/documentation/uikit/adding-a-custom-font-to-your-app).  
+
 {{partial:admonition type="note" heading="Font previews"}}
 Custom fonts you add that aren't part of Google Fonts don't appear in the theme preview.
 {{/partial:admonition}}
