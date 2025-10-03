@@ -76,16 +76,14 @@ There are two usages of groups in experiment:
 1. What property do you want to randomize on  
 2. What unit you want to analyze on  
 
-For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you are analyzing an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they are part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
+For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you analyze an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they're part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
 {{/partial:admonition}}
 
 ### Create group-level behavioral cohorts
 
 To create a group-level [behavioral cohort](/docs/analytics/behavioral-cohorts), use the dropdown on the left to specify if you want to create a cohort out of one of your groups.
 
-![account_level_group_behavioral_cohorts.png](/docs/output/img/analytics/account_level_group_behavioral_cohorts.png)
-
-For example, we can create a behavioral cohort of companies who triggered the event `Create customized report`, and apply that cohort to a Retention Analysis chart to see the differences in retention between companies that fired that event versus companies that didn't.
+For example, you could create a behavioral cohort of companies who triggered the event `Create customized report`. Then, apply that cohort to a Retention Analysis chart to view the differences in retention between companies that fired that event versus companies that didn't.
 
 You can also import a cohort of groups from a file. The file must contain exactly one group name per line. 
 
@@ -103,24 +101,17 @@ Then use Microscope to view the groups in the last step's drop-off, or download 
 
 ## Explore the behavior of a specific account
 
-Accounts allow you to drill into a single group’s behavior, much like the User Activity section. 
-
-![image1.png](/docs/output/img/analytics/image1.png)
-
-In this example, the group type is `org id`, and the group value is `12345678` (listed under *Group Name*).
+Accounts enable you to drill into a single group’s behavior, much like the User Activity section. 
 
 To access the Accounts tab:
 
-1. Click *User Look-Up*.
-2. Click the *Account* toggle.
-3. Click one or all of the groups you have instrumented.
-4. Optionally, search for a specific group or group property.
+1. Click *User > Group Profiles*.
+2. Click any of the groups you have instrumented.
+3. Optionally, search for a specific group or group property.
 
 Group property searches must follow the syntax of `name = value`. These searches only cover groups that have been active in the last six months. Amplitude searches across all historical values held by the property, and not just most recent group property value. Use quotes for multi-word strings. Avoid delimiters like commas or semi-colons whenever possible. Spaces are optional.
 
 Clicking on an account takes you to that account’s page, where you can view the account’s properties and activities.
-
-![account-profile.png](/docs/output/img/analytics/account-profile.png)
 
 Find the account’s most recent properties in the top panel. Set the account's properties with one of the following:
 
@@ -129,10 +120,6 @@ Find the account’s most recent properties in the top panel. Set the account's 
 - Event Segmentation to create dynamic properties. 
 
 Use these properties to describe the account as whole (for example, `30 day active users`, `account manager`, `plan type`, or `renewal date`)
-
-If you're using the User Look-up to verify events and the properties set with them, they aren't visible in the *Info* view. You can find them by clicking *Raw* instead.
-
-![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI.png)
 
 ## Set properties at the group level
 
