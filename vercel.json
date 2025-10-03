@@ -3,15 +3,8 @@
     {
       "source": "/docs/md/(.*)\\.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        { "key": "Content-Type", "value": "text/markdown" }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/docs/:path*.md",
-      "destination": "/docs/md/:path*.md"
     }
   ],
   "trailingSlash": false,
