@@ -7,6 +7,18 @@ author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1757629320
 ---
+{{ 
+    md_url = "/docs/md/{collection:handle}/en/{slug}.md";
+    full_md_url = "{site:url}{md_url}";
+    prompt = "Look at this document from Amplitude so I can ask questions about it: " | urlencode;
+    chatgpt_url = "https://chat.openai.com/?q={chatgpt_prompt}";
+    claude_url = "https://claude.ai/chat?q={claude_prompt}";
+}}
+
+https://chat.openai.com/?q={{prompt}}{{"https://amplitude.com{md_url}" | urlencode}}
+
+
+
 ```html
 <script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
 <script>
