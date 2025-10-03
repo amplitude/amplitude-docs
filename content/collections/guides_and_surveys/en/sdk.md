@@ -50,8 +50,22 @@ amplitude.add(engagementPlugin());
 
 For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
+### Amplitude Unified SDK
 
+If you're using the [Amplitude Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), Guides and Surveys comes out of the box. Just provide the engagement options during initialization:
 
+```ts
+import { initAll } from '@amplitude/unified';
+
+initAll('YOUR_API_KEY', {
+    // Other Amplitude SDK options...
+  engagement: {
+        // Guides and Surveys options go here...
+  }
+});
+```
+
+Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. See the [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
 
 ### Other Amplitude SDK's and third-party analytics providers
 
