@@ -1,5 +1,5 @@
 {{ 
-    md_url = "/docs/md/{collection:handle}/{slug}.md";
+    md_url = "/docs/md{uri}.md";
     prompt = "Look at this document from Amplitude so I can ask questions about it: " | urlencode;
 }}
 
@@ -49,11 +49,30 @@
         </div>
     </div>
 
-    <!-- Success notification -->
-    <div class="copy-page-success hidden absolute top-full right-0 mt-2 px-3 py-2 bg-green-100 text-green-800 text-sm rounded-md border border-green-200 z-50 opacity-0 translate-y-2 transition-all duration-300 ease-out">
-        <span class="success-message"></span>
-    </div>
 </div>
+
+<style>
+/* Custom Tippy.js themes for success and error states */
+.tippy-box[data-theme~='light-success'] {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.tippy-box[data-theme~='light-success'] .tippy-arrow {
+    color: #dcfce7;
+}
+
+.tippy-box[data-theme~='light-error'] {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.tippy-box[data-theme~='light-error'] .tippy-arrow {
+    color: #fef2f2;
+}
+</style>
 
 <script>
 (function() {
@@ -74,12 +93,23 @@
             const arrow = menu.querySelector('.copy-page-arrow');
             const copyBtn = menu.querySelector('.copy-markdown-btn');
             const links = menu.querySelectorAll('.copy-page-link');
-            const success = menu.querySelector('.copy-page-success');
-            const successMsg = menu.querySelector('.success-message');
             const mdUrl = menu.dataset.mdUrl;
             
             let isOpen = false;
-            let successTimeout;
+            let copyTooltip = null;
+            
+            // Initialize Tippy.js tooltip for copy button
+            if (window.tippy && copyBtn) {
+                copyTooltip = tippy(copyBtn, {
+                    content: 'Copy as Markdown',
+                    placement: 'top',
+                    trigger: 'manual',
+                    theme: 'light',
+                    animation: 'fade',
+                    duration: [200, 150],
+                    hideOnClick: false
+                });
+            }
             
             // Toggle dropdown
             toggle.addEventListener('click', (e) => {
@@ -133,10 +163,10 @@
                         document.body.removeChild(ta);
                     }
                     
-                    showSuccess('Markdown copied to clipboard!');
+                    showTooltip('✓ Copied to clipboard!', 'success');
                 } catch (err) {
                     console.error('Copy failed:', err);
-                    showSuccess('Failed to copy markdown: ' + err.message);
+                    showTooltip('✗ Copy failed: ' + err.message, 'error');
                 }
             });
             
@@ -166,24 +196,34 @@
                 }, 100);
             }
             
-            function showSuccess(message) {
-                clearTimeout(successTimeout);
+            function showTooltip(message, type = 'success') {
                 closeDropdown();
                 
-                successMsg.textContent = message;
-                success.classList.remove('hidden');
-                // Force reflow
-                success.offsetHeight;
-                success.classList.remove('opacity-0', 'translate-y-2');
-                success.classList.add('opacity-100', 'translate-y-0');
-                
-                successTimeout = setTimeout(() => {
-                    success.classList.remove('opacity-100', 'translate-y-0');
-                    success.classList.add('opacity-0', 'translate-y-2');
+                if (copyTooltip) {
+                    // Update tooltip content and styling based on type
+                    copyTooltip.setContent(message);
+                    
+                    // Set theme based on success/error
+                    const theme = type === 'success' ? 'light-success' : 'light-error';
+                    copyTooltip.setProps({ theme: theme });
+                    
+                    // Show tooltip
+                    copyTooltip.show();
+                    
+                    // Hide after 2 seconds
                     setTimeout(() => {
-                        success.classList.add('hidden');
-                    }, 300);
-                }, 2000);
+                        if (copyTooltip) {
+                            copyTooltip.hide();
+                            // Reset to default content and theme
+                            setTimeout(() => {
+                                if (copyTooltip) {
+                                    copyTooltip.setContent('Copy as Markdown');
+                                    copyTooltip.setProps({ theme: 'light' });
+                                }
+                            }, 200);
+                        }
+                    }, 2000);
+                }
             }
         });
     }
