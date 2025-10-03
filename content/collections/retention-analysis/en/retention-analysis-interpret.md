@@ -18,7 +18,7 @@ Amplitude’s **Retention Analysis** chart helps you drive product adoption by s
 
 Analyzing your retention analysis data takes place in the chart area. There, you can:
 
-* Specify the method Amplitude uses to measure retention ([Return On or After](#return-on-or-after-formerly-known-as-unbounded), [Return On](#return-on-formerly-known-as-n-dayn), or [Return On (Custom)](#return-on-custom-formerly-known-as-customM))
+* Specify the method Amplitude uses to measure retention ([Return On or After](#return-on-or-after-formerly-known-as-unbounded), [Return On](#return-on-formerly-known-as-n-day), or [Return On (Custom)](#return-on-custom-formerly-known-as-custom))
 * View data for either [Retention or Change Over Time](#retention-vs-change-over-time)
 * Define how Amplitude measures days when it calculates retention (24-hour windows or strict calendar dates)
 * Specify the timezone and set the time frame for your analysis using the date picker
