@@ -103,18 +103,26 @@
             
             // Copy markdown functionality
             copyBtn.addEventListener('click', async () => {
+                console.log('Copy button clicked, mdUrl:', mdUrl);
                 try {
+                    console.log('Fetching:', mdUrl);
                     const resp = await fetch(mdUrl);
+                    console.log('Response status:', resp.status, resp.ok);
+                    
                     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                     const raw = await resp.text();
+                    console.log('Raw content length:', raw.length);
                     
                     // Strip YAML front matter
                     const md = raw.replace(/^---[\r\n]+[\s\S]*?[\r\n]+---[\r\n]*/, '');
+                    console.log('Processed content length:', md.length);
                     
                     if (navigator.clipboard?.writeText) {
                         await navigator.clipboard.writeText(md);
+                        console.log('Copied via Clipboard API');
                     } else {
                         // Fallback for older browsers
+                        console.log('Using fallback copy method');
                         const ta = document.createElement('textarea');
                         ta.value = md;
                         ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:none;outline:none;box-shadow:none;background:transparent;';
@@ -127,8 +135,8 @@
                     
                     showSuccess('Markdown copied to clipboard!');
                 } catch (err) {
-                    console.error('Failed to copy markdown:', err);
-                    showSuccess('Failed to copy markdown');
+                    console.error('Copy failed:', err);
+                    showSuccess('Failed to copy markdown: ' + err.message);
                 }
             });
             
@@ -143,7 +151,7 @@
                 dropdown.offsetHeight;
                 dropdown.classList.remove('opacity-0', 'scale-95');
                 dropdown.classList.add('opacity-100', 'scale-100');
-                arrow.style.transform = 'rotate(180deg)';
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
             }
             
             function closeDropdown() {
@@ -151,7 +159,7 @@
                 isOpen = false;
                 dropdown.classList.remove('opacity-100', 'scale-100');
                 dropdown.classList.add('opacity-0', 'scale-95');
-                arrow.style.transform = '';
+                if (arrow) arrow.style.transform = '';
                 // Hide after animation
                 setTimeout(() => {
                     if (!isOpen) dropdown.classList.add('hidden');
