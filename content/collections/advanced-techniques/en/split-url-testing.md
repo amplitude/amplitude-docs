@@ -1,7 +1,7 @@
 ---
 id: 0740104d-a145-47ed-bfdb-1882b4a81c2d
 blueprint: advanced-technique
-title: 'Split URL testing'
+title: 'URL redirect testing'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716914401
@@ -9,15 +9,15 @@ source: https://help.amplitude.com/hc/en-us/articles/26003807556635-Split-URL-te
 ---
 Marketers use A/B testing to create personalized experiences that resonate. By methodically testing the effectiveness of messaging, calls to action, and landing pages, marketers can generate real-world data to help them maximize conversions and create delightful user experiences. But this often requires help from developers, who may not always be immediately available to assist.
 
-With Amplitude’s split URL testing feature, you can design, deploy, and analyze A/B tests that involve or require redirecting visitors to another URL, without extensive developer involvement. It’s a fast and easy way to assess the effectiveness of redirects for achieving goals like increasing conversions or improving the user experience.
+With Amplitude’s URL redirect testing feature, you can design, deploy, and analyze A/B tests that involve or require redirecting visitors to another URL, without extensive developer involvement. It’s a fast and easy way to assess the effectiveness of redirects for achieving goals like increasing conversions or improving the user experience.
 
-Split URL testing works well if you’re building different versions of your page or site on a CMS like Wordpress. In these cases, your different URLs and their associated pages are the variants that Amplitude Experiment tracks.
+URL redirect testing works well if you’re building different versions of your page or site on a CMS like Wordpress. In these cases, your different URLs and their associated pages are the variants that Amplitude Experiment tracks.
 
-You can use split URL testing with both standard A/B tests and multi-armed bandits.
+You can use URL redirect testing with both standard A/B tests and [multi-armed bandits](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
 
-To use split URL testing, you’ll have to add a script tag for Amplitude’s Experiment SDK to the site you want to test, in the `<head>` section. Install the Amplitude Analytics SDK on your site for event tracking.
+To use URL redirect testing, you’ll have to add a script tag for Amplitude’s Experiment SDK to the site you want to test, in the `<head>` section. Install the Amplitude Analytics SDK on your site for event tracking.
 
-## Set up split URL testing
+## Set up URL redirect testing
 
 To set up a URL redirect test:
 

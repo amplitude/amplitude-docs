@@ -146,6 +146,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 | `performanceConfig.timeout`             | `number`  | No       | `undefined` | Optional timeout in milliseconds for the requestIdleCallback API. If specified, this value sets a maximum time for the browser to wait before executing the deferred compression task, even if the browser isn't idle.                                                                                                                                                                                                                                                                                            |
 | `experimental.useWebWorker`             | `boolean` | No       | `false`     | If the SDK should compress the replay events using a webworker.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
+
 ### Track default session events
 
 Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/docs/sdks/analytics/browser/browser-sdk-2#track-sessions).
@@ -366,6 +367,11 @@ To help resolve CSS loading issues:
 - Ensure your domain is publicly accessible. If you work in a local environment, Amplitude may not have access to assets stored on `localhost`.
 - Your CDN should keep track of old stylesheets for older replays. If the content of the same stylesheet changes over time, try to append a unique string or hash to the asset URL. For example, `stylesheet.css?93f8b89`.
 - Add `app.amplitude.com` or `app.eu.amplitude.com` to the list of domains that your server's CORS configuration permits.
+- Make external stylesheets accessible to Session Replay. To ensure Session Replay can capture external stylesheets, add the `crossorigin="anonymous"` attribute to the `<link rel="stylesheet">` elements in your code.
+ 
+    This instructs the browser to load the CSS without sending credentials, which allows cross-origin access to the stylesheet rules. Without this attribute, browsers like Google Chrome block programmatic access to those rules (for example, attempts to read `stylesheet.cssRules` fails).
+
+    Although your site appears correctly to users, these restrictions can prevent session replay tools from capturing the full styling information, resulting in incomplete or broken visual playback.
 
 ### Capture sessions contain limited information
 

@@ -116,9 +116,9 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
 
 ## Troubleshooting
 
-Troubleshooting cohort targeting can be challenging due to the asynchronous nature of dynamic cohorts and cohort syncs in general. If you find that your experiment isn't targeting users who should be in the targeted cohort, try one of the following solutions: 
+Troubleshooting cohort targeting can challenging due to the asynchronous nature of dynamic cohorts and cohort syncs in general. If you find that your experiment isn't targeting users who should be in the targeted cohort ...
 
-- For local evaluation, check that the SDK version supports local evaluation cohort targeting, and that the cohort sync config has been set on initialization.
-- Check that the cohort has the required sync (*Amplitude Experiment* for remote evaluation, *Experiment Local Evaluation* for local evaluation).
-- Check that the cohort contains the expected user. If the user is contained in the current cohort, check the sync history of the cohort -- is it possible that the user was added to the cohort in a sync after the evaluation occurred?
-- Check that the user info passed to `fetch`/`evaluate` is correct.
+- For local evaluation, check that the SDK version supports local evaluation cohort targeting, and that **the cohort sync config has been set on initialization**.
+- Check that **the cohort has the required sync** (*Amplitude Experiment* for remote evaluation, *Experiment Local Evaluation* for local evaluation).
+- Check that **the cohort contains the expected user**. If the user is contained in the current cohort, check the sync history of the cohort -- is it possible that the user was added to the cohort in a sync after the evaluation occurred?
+- Check that the **user info** passed to `fetch`/`evaluate` is correct.

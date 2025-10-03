@@ -12,7 +12,7 @@ academy_course:
 ---
 Before you get started with Guides and Surveys, install one of the available SDKs, depending on where you want to display Guides and Surveys.
 
-Click Guides and Surveys in the left navigation in Amplitude to get started.
+Click **Guides and Surveys** in the left navigation in Amplitude to get started.
 
 ## Overview
 
@@ -50,19 +50,19 @@ Displays a detailed view of individual surveys and their responses over the last
 
 ### Rage closes
 
-![](statamic://asset::help_center_conversions::guides-surveys/rage-closes.png)
-
 Measures the percentage of users who rage closed a guide or survey. High rage close rates could mean poor timing or intrusive placement.
 
 {{partial:admonition type="tip" heading="Rage closes"}}
 Amplitude considers a guide or survey that was rapidly dismissed or exited to be "rage closed". This behavior indicates user dissatisfaction.
 {{/partial:admonition}}
 
+![](statamic://asset::help_center_conversions::guides-surveys/rage-closes.png)
+
 ### Guides and Surveys interactions
 
-![](statamic://asset::help_center_conversions::guides-surveys/interactions.png)
-
 Provides a realtime feed that shows how users are interacting with your Guides and Surveys. Use this data to track engagement patterns and make optimizations.
+
+![](statamic://asset::help_center_conversions::guides-surveys/interactions.png)
 
 ## Supported apps
 
