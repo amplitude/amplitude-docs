@@ -121,7 +121,7 @@ engagement.init("YOUR_API_KEY", {
 ```
 
 {{partial:admonition type="note" heading=""}}
-When using a proxy, you need to call `window.engagement.boot` to fully install Guides and Surveys, even if you are using the Browser SDK v2. Make sure to set up event handling via the `integrations` option.
+When using a proxy, call `window.engagement.boot` to fully install Guides and Surveys, even if you are using the Browser SDK v2. Make sure to set up event handling through the `integrations` option.
 {{/partial:admonition}}
 
 ##### Example: Initialization with CSP nonce
