@@ -72,7 +72,7 @@ initAll('YOUR_API_KEY', {
 });
 ```
 
-Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. See the [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
+Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. Go to [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
 
 ### Other Amplitude SDK's and third-party analytics providers
 
