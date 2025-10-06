@@ -47,10 +47,10 @@ amplitude.add(engagementPlugin());
 {{/partial:tab}}
 {{/partial:tabs}}
 
-For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
+For additional configuration, supply `InitOptions` to the `plugin` function. Go to [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
 {{partial:admonition type="note" heading=""}}
-If you are using the above install approach, then Guides and Surveys is now installed! By default, all Guides and Surveys events are sent to your project.
+After the installation steps are complete, by default all Guides and Surveys events are sent to your project.
 {{/partial:admonition}}
 
 Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
