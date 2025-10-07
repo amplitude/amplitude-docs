@@ -32,7 +32,7 @@ URL redirects load a new URL when a targeted user lands on a targeted page in yo
 URL redirects retain any query parameters on the original page URL. For example, you create a variant to redirect users from `https://example.com` to `https://example.com/get-started`. If a user clicks a link `https://example.com?utm_source=facebook`, Web Experiment redirects that user to `https://example.com/get-started?utm_source=facebook`.
 
 {{partial:admonition type="note"}}
-It's possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by quickly loading the page we want to redirect to, ideally as fast as possible. The sequence looks like this:
+It's possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by loading the redirected page, ideally as fast as possible. The sequence for this is:
 
 **Control flow**
 - Load control page HTML.
