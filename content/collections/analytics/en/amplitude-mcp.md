@@ -1,7 +1,7 @@
 ---
 id: b09c311c-387a-476e-b382-49ce0ca448d6
 blueprint: analytic
-title: 'Amplitude MCP Server'
+title: 'Amplitude MCP (Model Context Protocol) Server'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
@@ -14,7 +14,7 @@ The Amplitude Model Context Protocol (MCP) server enables teams to analyze produ
 ## Remote server
 
 {{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is currently under active development. Some functions and settings may not yet be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Usage guidelines and rate limits are announced when the MCP server becomes generally available.
+The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Usage guidelines and rate limits are announced when the MCP server becomes available.
 {{/partial:admonition}}
 
 ### Who can use this feature
@@ -27,7 +27,7 @@ The Amplitude MCP server is currently under active development. Some functions a
 
 | Region | MCP Server URL |
 | ------ | -------------- |
-| US Server (Default) | `https://mcp.amplitude.com/mcp` |
+| United States Server (Default) | `https://mcp.amplitude.com/mcp` |
 | EU Residency Server | `https://mcp.eu.amplitude.com/mcp` |
 
 Use the Standard Server URL unless your Amplitude data is hosted in the EU region.
@@ -43,11 +43,11 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 | `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
 | `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
 | `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
-| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad hoc analysis within a project                                                   |
+| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
 | `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
 | `get_charts`           | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
-| `get_dashboard`        | Get specific dashboards and all their charts including chart IDs that can be queried individually                                              |
-| `get_notebook`         | Get specific notebooks and all their charts including chart IDs that can be queried individually                                               |
+| `get_dashboard`        | Get specific dashboards and all their charts including chart IDs for individual queries                                              |
+| `get_notebook`         | Get specific notebooks and all their charts including chart IDs for individual queries                                               |
 | `get_flags`            | Retrieve feature flags from a project with optional filtering by deployment, type, and deleted status                                          |
 | `get_experiments`      | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
 | `get_deployments`      | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
@@ -165,19 +165,19 @@ Complete the steps below, depending on the tool you're integrating with.
 
 ### Basic analytics queries
 
-> What were my daily active users over the last 7 days?
+> What were the daily active users over the last 7 days?
 
-> Show me signup conversion rates by traffic source this month
+> Show signup conversion rates by traffic source this month
 
 > Which features have the highest engagement rates?
 
 ### Experiment analysis
 
-> What's the performance of my checkout experiment?
+> What's the performance of the checkout experiment?
 
-> Show me the statistical significance of the new onboarding flow
+> Show the statistical significance of the new onboarding flow
 
-> Which experiment variants are currently running?
+> Which experiment variants are running?
 
 ### Content discovery
 
@@ -185,7 +185,7 @@ Complete the steps below, depending on the tool you're integrating with.
 
 > Search for dashboards containing mobile app metrics
 
-> Show me experiments testing the payment flow
+> Show experiments testing the payment flow
 
 ### Advanced analysis
 
@@ -193,7 +193,7 @@ Complete the steps below, depending on the tool you're integrating with.
 
 > What's the typical user journey for power users?
 
-> Analyze feature adoption rates after our recent product launch
+> Analyze feature adoption rates after the recent product launch
 
 ## Typical analysis workflow
 
@@ -224,9 +224,9 @@ Example conversation flow:
 
 ### Privacy considerations
 
-Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (GDPR, CCPA).
+Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (General Data Protection Regulation, California Consumer Privacy Act).
 
-The AI models used with this MCP server are developed and maintained by third parties (for example, Anthropic). Amplitude is not responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs are generated using your Amplitude data.
+The AI models used with this MCP server are developed and maintained by third parties (for example, Anthropic). Amplitude isn't responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs are generated using your Amplitude data.
 
 ## Troubleshooting
 
@@ -255,7 +255,7 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 **MCP Client Issues**
 
-* Cursor tool call failures: If MCP tool calls fail unexpectedly in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens", then re-authenticate with your accounts.
+* Cursor tool call failures: If MCP tool calls fail in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens," then re-authenticate with your accounts.
 * Token limit errors: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings.
 * Connection timeouts: If queries are timing out, try breaking down complex requests into smaller, more focused questions.
 * Tool loading failures: If tools aren't loading, restart your MCP client application and re-authenticate.
@@ -265,16 +265,16 @@ The AI models used with this MCP server are developed and maintained by third pa
 If you encounter issues not covered here:
 
 1. Verify your setup matches the configuration examples.  
-2. Test with a simple query like "What Amplitude projects do I have access to?"
+2. Test with a simple query like "What Amplitude projects are accessible?"
 3. Check that your Amplitude account has the necessary permissions.  
 4. Contact your Amplitude administrator for organization-specific setup help.
 
 ## Send feedback
 
-Amplitude is constantly improving the Amplitude MCP server and would greatly appreciate hearing from you. Share your feedback, suggestions, or report issues using this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeFgRd8607Y2Gzidva5ChEri2tk7wvl7vofUIwxcM_2aD2Nqw/viewform?usp=header).
+Amplitude is constantly improving the Amplitude MCP server and would appreciate hearing from you. Share your feedback, suggestions, or report issues using this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeFgRd8607Y2Gzidva5ChEri2tk7wvl7vofUIwxcM_2aD2Nqw/viewform?usp=header).
 
 ## Technical specifications
 
-**Transport Type:** Streamable HTTP (Remote).
+**Transport Type:** Streaming HTTP (Remote).
 
 **Authentication:** OAuth 2.0 with Amplitude.
