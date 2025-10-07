@@ -38,5 +38,5 @@ Autocapture Remote Configuration works with [Browser SDK](/docs/sdks/analytics/b
    * **Page URL Exclude List**: Defines one or more URLs or URL patterns from Amplitude tracking any element clicks or change events. **Note**: Using RegEx or glob patterns requires your SDK version to be 2.23.7 or higher.
    * **Text Masking RegEx Patterns**: Defines the RegEx patterns that you want to mask for event properties in Autocapture. **Note:** Using this masking feature requires your SDK version to be 2.23.7 or higher. 
    * **Data Attribute Prefix**: Lets the Amplitude capture data attributes as an event property. 
-   * **Frustration interactions**: Rage or dead clicks performed by the user.
+   * **Frustration interactions**: Frustration interactions (rage or dead clicks) performed by the user. Rage clicks are clicks that occurs four or more times in a second. Dead clicks are clicks on an interactive element but resulted in no visible change within three seconds. 
 4. Click **Save Changes**.
