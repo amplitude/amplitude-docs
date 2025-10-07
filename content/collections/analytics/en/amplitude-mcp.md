@@ -14,7 +14,7 @@ The Amplitude Model Context Protocol (MCP) server enables teams to analyze produ
 ## Remote server
 
 {{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is currently under active development. Some functions and settings may not yet be available, and you may experience bugs or performance issues during this period. This feature will evolve as it develops. Usage guidelines and rate limits will be announced when MCP becomes generally available.
+The Amplitude MCP server is currently under active development. Some functions and settings may not yet be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Usage guidelines and rate limits are announced when the MCP server becomes generally available.
 {{/partial:admonition}}
 
 ### Who can use this feature
@@ -70,7 +70,7 @@ Complete the steps below, depending on the tool you're integrating with.
 2. Go to Settings → Connectors → Add custom connector  
 3. Configure the integration:  
    * **Name:** Amplitude  
-   * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data is hosted in the EU)
+   * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data is hosted in the EU.)
 4. Complete Amplitude OAuth authorization when prompted  
 5. Start asking questions about your Amplitude data.
 {{/partial:tab}}
@@ -238,9 +238,9 @@ The AI models used with this MCP server are developed and maintained by third pa
 * Check that you are logged in to the correct Amplitude account.
 * Make sure you're only logged into one Amplitude organization during the OAuth flow. Being logged into multiple organizations can cause authentication issues.
 * Try disconnecting the MCP connection and re-authenticating through the OAuth flow.
-* Try logging out of Amplitude, then reconnecting the MCP connection.
-* Authorization page may appear to spin indefinitely (close tab after authentication).  
+* Try logging out of Amplitude, then reconnecting.
 * Desktop apps may require restart after configuration changes.
+* Authorization page may appear to spin indefinitely (close tab after authentication).  
 
 **Missing Data**
 
