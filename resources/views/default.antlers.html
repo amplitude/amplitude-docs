@@ -4,25 +4,19 @@
     <div class="copy w-full">
       <div class="flex flex-row items-start justify-between">
         <h1 class="font-[Gellix] font-normal mb-5 max-w-3xl">{{ title }}</h1>
-        <div class="flex flex-col">
-          {{partial:partials/copy-page-button}}
-          {{if environment == 'local'}} 
-          <span class="text-xs text-gray-300"><a
-              href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
-              target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span> {{/if}}
-      </div>
         </div>
       <div
-        class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose" data-headings-anchors>
+        class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose" data-headings-anchors data-math-root>
         {{partial:sdk-comparison}}
         {{partial:partials/goals}}
         {{partial:partials/academy-link}}
         {{partial:partials/api-lede}}
         {{partial:partials/ampli-examples}}
-        {{ content }}
+        {{ content | math_prep }}
         {{partial:partials/chart-landing}}
       </div>
       </div>
+
     {{ unless hide_toc }}
       {{ partial:toc }}
     {{ /unless }}

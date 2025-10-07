@@ -29,6 +29,7 @@ fields:
         - table
         - asset
       antlers: true
+      automatic_line_breaks: false
       type: markdown
       display: Content
       localizable: false

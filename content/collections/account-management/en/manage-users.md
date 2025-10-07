@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1742323697
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1758565468
 landing_blurb: "Manage your project's users and permissions."
 academy_course:
   - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
@@ -58,7 +58,7 @@ Repeat the process for other users who also need to change their email address.
 
 ## Change user roles and permissions
 
-All current users are visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
+All current users are visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise and Growth customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
 
 To change user permissions in Amplitude, follow these steps:
 
