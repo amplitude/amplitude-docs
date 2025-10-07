@@ -19,9 +19,10 @@ Deployments live under Amplitude Analytics projects. A project can have multiple
 
 To create a deployment follow these steps:
 
-1. From inside Experiment, click *Deployments* in the left-hand rail. Then click *+ Create Deployment.*
-2. Choose the Amplitude Analytics project you’d like the deployment to be associated with. If you want to create deployments in multiple projects at once, just select all the relevant projects from the drop-down list.
-3. Next, choose a name for your deployment and specify its type:
+1. Go to *Experiment > Deployments* and then click **Create Deployment**.
+2. Choose the Amplitude Analytics project to which you want to associate the deployment. If you want to create deployments in multiple projects, select all the relevant projects from the drop-down list.
+3. Enter a name for your deployment. Names should be descriptive of the work you are doing.
+4. Specify its type:
 
   * **Client-side**: These deployments run on a client device, such as a web browser or mobile app. The deployment key associated with client deployments is publicly viewable and should be used in client-side SDKs.
   * **Server-side:** These deployments run on a server you control, such as a web server or batch processing system. Keep the deployment key associated with server deployments secret and use it server-side SDKs. Server-side keys can access the REST API for flag evaluation. If, instead of running a full-blown experiment, you only need to evaluate flags using the REST API, you should create a server-side deployment.

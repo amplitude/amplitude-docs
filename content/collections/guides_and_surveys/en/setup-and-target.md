@@ -62,7 +62,7 @@ Amplitude provides the following options to trigger an experience.
 | None                 | The experience doesn't appear by default. Select this option if you use the SDK to launch the experience, the CTA in another guide or survey to launch, or any other method of external trigger. |
 | Immediately          | The experience appears as soon as the page loads.                                                                                                                                                |
 | When element appears | Launches the experience when a specified element appears on screen. Enter a CSS Selector or XPath path expression, or click *Test and Preview* to launch the visual selector.                    |
-| When element clicked | Launches the experience when a the user interacts with the specified element. Enter a CSS Selector or XPath path expression, or click *Test and Preview* to launch the visual selector.                    |
+| When element clicked/tapped | Launches the experience when a the user interacts with the specified element. Enter a CSS Selector or XPath path expression, or click **Test and Preview** to launch the visual selector.                    |
 | After time on page   | Specify a delay (in minutes or seconds) that a user must spend on the page before they see the experience.                                                                                       |
 | Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
 | Rage click           | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
@@ -83,7 +83,7 @@ Common use cases for session properties include:
 
 {{partial:admonition type="note" heading="Feature availability"}}
 Session properties are currently a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
-{{/partial:admonition}}                                                                                                                         |
+{{/partial:admonition}}
 
 ### Where
 

@@ -987,6 +987,8 @@ video {
   margin-top: 0.25rem;
 }.mt-12 {
   margin-top: 3rem;
+}.mt-2 {
+  margin-top: 0.5rem;
 }.mt-4 {
   margin-top: 1rem;
 }.mt-8 {
@@ -1359,6 +1361,9 @@ video {
 }.px-\[2\.88rem\] {
   padding-left: 2.88rem;
   padding-right: 2.88rem;
+}.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }.py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1581,7 +1586,10 @@ video {
   transition-duration: 200ms;
 }.ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}/* Font Import */@font-face {
+}/* Only remove on code blocks */.prose pre code::before,
+  .prose pre code::after {
+    content: none !important;
+  }/* Font Import */@font-face {
     font-family: 'Gellix';
     src: url('../fonts/Gellix-Light.woff2') format('woff2'),
         url('../fonts/Gellix-Light.woff') format('woff'),
@@ -1795,10 +1803,11 @@ video {
     margin-bottom: 0;
     margin-top: 0;
 }.tab {
-    font-size: 13px;
+    font-size: 14px;
     padding: 12px;
     margin-bottom: 0px;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'IBM Plex Sans', sans-serif;
+
 }.prose p:has(img) {
     margin: 0;
     margin-bottom: 1rem;
@@ -1971,9 +1980,7 @@ video {
   {
     opacity: 1;
     transition: opacity 0.25s;
-  }li::marker {
-    color: red;
-}.max-w-prose {
+  }.max-w-prose {
     max-width: 75ch;
 }h2 a {
     opacity: 0;
@@ -2365,6 +2372,14 @@ line-height: 1.25rem;
     content: "Mobile only";
     color: #0f4f73;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%230f4f73"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40H280Zm0-80h400v-720H280v720Zm0 0v-720 720Zm200-600q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>');
+}.ios::after {
+    content: "iOS only";
+    color: #0f4f73;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%230f4f73'%3E%3Cpath d='M160-600v-80h80v80h-80Zm0 320v-240h80v240h-80Zm280 0h-80q-33 0-56.5-23.5T280-360v-240q0-33 23.5-56.5T360-680h80q33 0 56.5 23.5T520-600v240q0 33-23.5 56.5T440-280Zm-80-80h80v-240h-80v240Zm200 80v-80h160v-80h-80q-33 0-56.5-23.5T560-520v-80q0-33 23.5-56.5T640-680h160v80H640v80h80q33 0 56.5 23.5T800-440v80q0 33-23.5 56.5T720-280H560Z'/%3E%3C/svg%3E");
+}.android::after {
+    content: "Android only";
+    color: #0f7353;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%230f7353'%3E%3Cpath d='M40-240q9-107 65.5-197T256-580l-74-128q-6-9-3-19t13-15q8-5 18-2t16 12l74 128q86-36 180-36t180 36l74-128q6-9 16-12t18 2q10 5 13 15t-3 19l-74 128q94 53 150.5 143T920-240H40Zm240-110q21 0 35.5-14.5T330-400q0-21-14.5-35.5T280-450q-21 0-35.5 14.5T230-400q0 21 14.5 35.5T280-350Zm400 0q21 0 35.5-14.5T730-400q0-21-14.5-35.5T680-450q-21 0-35.5 14.5T630-400q0 21 14.5 35.5T680-350Z'/%3E%3C/svg%3E");
 }.tag.zero::after {
     margin-left: 0px;
     margin-top: 1px;
@@ -2373,6 +2388,176 @@ line-height: 1.25rem;
 }.prose ol ol {
     list-style: lower-alpha;
     list-style-type: lower-alpha;
+}/* API Key Modal Styles */.api-key-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out;
+}.api-key-modal {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: slideIn 0.3s ease-out;
+}.api-key-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}.api-key-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}.api-key-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}.api-key-modal-close:hover {
+    background-color: #f3f4f6;
+}.api-key-modal-body {
+    padding: 1.5rem;
+}.api-key-modal-body p {
+    margin: 0 0 1rem 0;
+    color: #6b7280;
+    line-height: 1.5;
+}#api-key-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    transition: border-color 0.2s;
+    margin-bottom: 1.5rem;
+}#api-key-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}.api-key-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}.api-key-btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+    min-width: 120px;
+}.api-key-btn-primary:hover {
+    background-color: #2563eb;
+}.api-key-btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}.api-key-btn-secondary:hover {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+}/* Notification Styles */.api-key-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: #10b981;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 10000;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    max-width: 350px;
+    font-weight: 500;
+}.api-key-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}/* Animations */@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}/* PrismJS Toolbar Enhancement */.toolbar .toolbar-item button {
+    font-size: 0.875rem !important;
+}/* Manual API Key Button - styled to match copy button */.api-key-manual-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 4px !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 3rem !important;
+    z-index: 10 !important;
+}.api-key-manual-button:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}.api-key-manual-button svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: #B7B7B7 !important;
+    transition: fill 0.2s ease !important;
+}.api-key-manual-button:hover svg {
+    fill: #1E40AF !important;
+}/* Mobile responsiveness */@media (max-width: 640px) {
+    .api-key-modal {
+        width: 95%;
+    }
+    
+    .api-key-modal-actions {
+        flex-direction: column;
+    }
+    
+    .api-key-btn-primary,
+    .api-key-btn-secondary {
+        flex: none;
+        width: 100%;
+    }
+    
+    .api-key-notification {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
