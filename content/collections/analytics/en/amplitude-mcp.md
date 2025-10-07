@@ -9,7 +9,7 @@ updated_at: 1758643314
 hide_from_search: true
 ---
 
-The Amplitude Model Context Protocol (MCP) integration enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
+The Amplitude Model Context Protocol (MCP) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
 ## Remote server
 
@@ -19,9 +19,9 @@ The Amplitude MCP server is currently under active development. Some functions a
 
 ### Who can use this feature
 
-* Available to any existing Amplitude customer
+* Available to any existing Amplitude customer.
 
-* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code)
+* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code).
 
 ## Regions
 
@@ -75,7 +75,7 @@ Complete the steps below, depending on the tool you're integrating with.
 5. Start asking questions about your Amplitude data.
 {{/partial:tab}}
 {{partial:tab name="Claude Code"}}
-**Best for:** Developers who prefer command-line interfaces
+**Best for:** Developers who prefer command-line interfaces.
 
    1. Add the MCP server globally:
 
@@ -95,7 +95,7 @@ Complete the steps below, depending on the tool you're integrating with.
        /mcp
        ```
 
-   4. Follow the authentication flow
+   4. Follow the authentication flow.
 
 {{/partial:tab}}
 {{partial:tab name="Cursor"}}
@@ -131,11 +131,11 @@ Complete the steps below, depending on the tool you're integrating with.
         EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
         {{/partial:admonition}}
 
-   4. Return to Tools & Integration tab and authenticate with Amplitude
+   4. Return to Tools & Integration tab and authenticate with Amplitude.
   
 {{/partial:tab}}
 {{partial:tab name="Gemini CLI"}}
-   1. Ensure you're authenticated with Gemini  
+   1. Ensure you're authenticated with Gemini.  
    2. Add this to your `~/.gemini/settings.json`:
 
       ```json
@@ -217,16 +217,16 @@ Example conversation flow:
 
 ### Data access
 
-* The MCP server uses your existing Amplitude user permissions and access controls
-* You can only access Amplitude projects and data that you already have permission to view in your regular Amplitude account
+* The MCP server uses your existing Amplitude user permissions and access controls.
+* You can only access Amplitude projects and data that you already have permission to view in your regular Amplitude account.
 * No additional data access is granted beyond your current Amplitude account privileges  
-* OAuth authentication ensures secure connection between the MCP server and your Amplitude account
+* OAuth authentication ensures secure connection between the MCP server and your Amplitude account.
 
 ### Privacy considerations
 
-Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (GDPR, CCPA)
+Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (GDPR, CCPA).
 
-The AI models used with this MCP server are developed and maintained by third parties (e.g., Anthropic). Amplitude is not responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs are generated using your Amplitude data.
+The AI models used with this MCP server are developed and maintained by third parties (for example, Anthropic). Amplitude is not responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs are generated using your Amplitude data.
 
 ## Troubleshooting
 
@@ -234,24 +234,24 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 **Authentication and OAuth Issues**
 
-* Ensure your Amplitude account has proper project access  
-* Check that you are logged in to the correct Amplitude account  
+* Ensure your Amplitude account has proper project access.
+* Check that you are logged in to the correct Amplitude account.
 * Make sure you're only logged into one Amplitude organization during the OAuth flow. Being logged into multiple organizations can cause authentication issues.
-* Try disconnecting the MCP connection and try re-authenticating through the OAuth flow.
+* Try disconnecting the MCP connection and re-authenticating through the OAuth flow.
 * Try logging out of Amplitude, then reconnecting the MCP connection.
 * Authorization page may appear to spin indefinitely (close tab after authentication).  
 * Desktop apps may require restart after configuration changes.
 
 **Missing Data**
 
-* Verify you have access to the specific Amplitude project  
-* Check if the data exists in your Amplitude interface  
-* Ensure proper permissions for the requested data
+* Verify you have access to the specific Amplitude project.  
+* Check if the data exists in your Amplitude interface.  
+* Ensure proper permissions for the requested data.
 
 **Chart Query Issues**
 
-* Some large charts may be truncated by AI platforms  
-* Querying charts from dashboards may use default chart settings instead of saved dashboard filters
+* Some large charts may be truncated by AI platforms.  
+* Querying charts from dashboards may use default chart settings instead of saved dashboard filters.
 
 **MCP Client Issues**
 
@@ -264,10 +264,10 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 If you encounter issues not covered here:
 
-1. Verify your setup matches the configuration examples  
+1. Verify your setup matches the configuration examples.  
 2. Test with a simple query like "What Amplitude projects do I have access to?"
-3. Check that your Amplitude account has the necessary permissions  
-4. Contact your Amplitude administrator for organization-specific setup help
+3. Check that your Amplitude account has the necessary permissions.  
+4. Contact your Amplitude administrator for organization-specific setup help.
 
 ## Send feedback
 
@@ -275,6 +275,6 @@ Amplitude is constantly improving the Amplitude MCP server and would greatly app
 
 ## Technical specifications
 
-**Transport Type:** Streamable HTTP (Remote)
+**Transport Type:** Streamable HTTP (Remote).
 
-**Authentication:** OAuth 2.0 with Amplitude
+**Authentication:** OAuth 2.0 with Amplitude.
