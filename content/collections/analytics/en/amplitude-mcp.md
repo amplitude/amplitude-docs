@@ -14,7 +14,7 @@ The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/doc
 ## Remote server
 
 {{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Usage guidelines and rate limits are announced when the MCP server becomes available.
+The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Amplitude will announce usage guidelines and rate limits when the MCP server becomes Generally Available.
 {{/partial:admonition}}
 
 ### Who can use this feature
@@ -30,7 +30,7 @@ The Amplitude MCP server is under active development. Some functions and setting
 | United States Server (Default) | `https://mcp.amplitude.com/mcp` |
 | EU Residency Server | `https://mcp.eu.amplitude.com/mcp` |
 
-Use the Standard Server URL unless your Amplitude data is hosted in the EU region.
+Use the Standard Server URL unless your Amplitude data resides in the EU region.
 
 ## Available tools and capabilities
 
@@ -70,7 +70,7 @@ Complete the steps below, depending on the tool you're integrating with.
 2. Go to Settings → Connectors → Add custom connector  
 3. Configure the integration:  
    * **Name:** Amplitude  
-   * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data is hosted in the EU.)
+   * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data resides in the EU.)
 4. Complete Amplitude OAuth authorization when prompted  
 5. Start asking questions about your Amplitude data.
 {{/partial:tab}}
@@ -219,14 +219,14 @@ Example conversation flow:
 
 * The MCP server uses your existing Amplitude user permissions and access controls.
 * You can only access Amplitude projects and data that you already have permission to view in your regular Amplitude account.
-* No additional data access is granted beyond your current Amplitude account privileges  
+* You receive no additional data access beyond your current Amplitude account privileges  
 * OAuth authentication ensures secure connection between the MCP server and your Amplitude account.
 
 ### Privacy considerations
 
-Your Amplitude data is processed by the AI service you're using (for example, Claude or Gemini). Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (General Data Protection Regulation, California Consumer Privacy Act).
+The AI service you're using (for example, Claude or Gemini) processes your Amplitude data. Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (General Data Protection Regulation, California Consumer Privacy Act).
 
-The AI models used with this MCP server are developed and maintained by third parties (for example, Anthropic). Amplitude isn't responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs are generated using your Amplitude data.
+Third parties (for example, Anthropic) develop and maintain the AI models used with this MCP server. Amplitude isn't responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs use your Amplitude data.
 
 ## Troubleshooting
 
@@ -235,8 +235,8 @@ The AI models used with this MCP server are developed and maintained by third pa
 **Authentication and OAuth Issues**
 
 * Ensure your Amplitude account has proper project access.
-* Check that you are logged in to the correct Amplitude account.
-* Make sure you're only logged into one Amplitude organization during the OAuth flow. Being logged into multiple organizations can cause authentication issues.
+* Check that you have logged into the correct Amplitude account.
+* Make sure you're only logged into one Amplitude organization during the OAuth flow. Logging into multiple organizations can cause authentication issues.
 * Try disconnecting the MCP connection and re-authenticating through the OAuth flow.
 * Try logging out of Amplitude, then reconnecting.
 * Desktop apps may require restart after configuration changes.
@@ -250,7 +250,7 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 **Chart Query Issues**
 
-* Some large charts may be truncated by AI platforms.  
+* AI platforms may truncate some large charts.  
 * Querying charts from dashboards may use default chart settings instead of saved dashboard filters.
 
 **MCP Client Issues**
