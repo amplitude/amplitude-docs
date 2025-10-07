@@ -14,20 +14,20 @@ The Amplitude Model Context Protocol (MCP) integration enables teams to analyze 
 ## Remote server
 
 {{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is currently under active development. Some functions and settings may not yet be available, and you may experience bugs or performance issues during this period. The feature may change as we refine it. Usage guidelines and rate limits will be announced when MCP becomes generally available.
+The Amplitude MCP server is currently under active development. Some functions and settings may not yet be available, and you may experience bugs or performance issues during this period. This feature will evolve as it develops. Usage guidelines and rate limits will be announced when MCP becomes generally available.
 {{/partial:admonition}}
 
 ### Who can use this feature
 
 * Available to any existing Amplitude customer
 
-* You must use a code editor or application that supports MCP servers (i.e. VS Code, Cursor, Claude Code)
+* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code)
 
 ## Regions
 
 | Region | MCP Server URL |
 | ------ | -------------- |
-| Standard Server (Default) | `https://mcp.amplitude.com/mcp` |
+| US Server (Default) | `https://mcp.amplitude.com/mcp` |
 | EU Residency Server | `https://mcp.eu.amplitude.com/mcp` |
 
 Use the Standard Server URL unless your Amplitude data is hosted in the EU region.
@@ -236,11 +236,11 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 * Ensure your Amplitude account has proper project access  
 * Check that you are logged in to the correct Amplitude account  
-* Make sure you're only logged into one Amplitude organization during the OAuth flow - being logged into multiple organizations can cause authentication issues
-* Try disconnecting the MCP connection and try re-authenticating through the OAuth flow
-* Try logging out of Amplitude, then reconnecting the MCP connection
-* Authorization page may appear to spin indefinitely (close tab after authentication)  
-* Desktop apps may require restart after configuration changes
+* Make sure you're only logged into one Amplitude organization during the OAuth flow. Being logged into multiple organizations can cause authentication issues.
+* Try disconnecting the MCP connection and try re-authenticating through the OAuth flow.
+* Try logging out of Amplitude, then reconnecting the MCP connection.
+* Authorization page may appear to spin indefinitely (close tab after authentication).  
+* Desktop apps may require restart after configuration changes.
 
 **Missing Data**
 
@@ -255,10 +255,10 @@ The AI models used with this MCP server are developed and maintained by third pa
 
 **MCP Client Issues**
 
-* **Cursor tool call failures**: If MCP tool calls fail unexpectedly in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens", then re-authenticate with your accounts
-* **Token limit errors**: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings
-* **Connection timeouts**: If queries are timing out, try breaking down complex requests into smaller, more focused questions
-* **Tool loading failures**: If tools aren't loading, restart your MCP client application and re-authenticate
+* Cursor tool call failures: If MCP tool calls fail unexpectedly in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens", then re-authenticate with your accounts.
+* Token limit errors: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings.
+* Connection timeouts: If queries are timing out, try breaking down complex requests into smaller, more focused questions.
+* Tool loading failures: If tools aren't loading, restart your MCP client application and re-authenticate.
 
 ### Getting help
 
@@ -271,7 +271,7 @@ If you encounter issues not covered here:
 
 ## Send feedback
 
-We're actively improving the Amplitude MCP server and would love to hear about your experience. Please share your feedback, suggestions, or report issues using our [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeFgRd8607Y2Gzidva5ChEri2tk7wvl7vofUIwxcM_2aD2Nqw/viewform?usp=header).
+Amplitude is constantly improving the Amplitude MCP server and would greatly appreciate hearing from you. Share your feedback, suggestions, or report issues using this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeFgRd8607Y2Gzidva5ChEri2tk7wvl7vofUIwxcM_2aD2Nqw/viewform?usp=header).
 
 ## Technical specifications
 
