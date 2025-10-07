@@ -229,8 +229,4 @@ If you encounter issues not covered here:
 
 **Authentication:** OAuth 2.0 with Amplitude
 
-<<<<<<< HEAD
 **Endpoint:** `https://mcp.amplitude.com/v1/mcp`
-=======
-**Endpoint:** `https://mcp.amplitude.com/v1/mcp`
->>>>>>> parent of f5e67b26f (Merge pull request #1038 from amplitude/DOC-744)
