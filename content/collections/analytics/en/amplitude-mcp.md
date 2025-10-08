@@ -66,12 +66,12 @@ Complete the steps below, depending on the tool you're integrating with.
 
 {{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, Gemini CLI"}}
 {{partial:tab name="Claude (web and desktop)"}}
-1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app  
-2. Go to Settings → Connectors → Add custom connector  
+1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
+2. Go to *Settings > Connectors > Add custom connector*.  
 3. Configure the integration:  
    * **Name:** Amplitude  
    * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data resides in the EU.)
-4. Complete Amplitude OAuth authorization when prompted  
+4. Complete Amplitude OAuth authorization when prompted.  
 5. Start asking questions about your Amplitude data.
 {{/partial:tab}}
 {{partial:tab name="Claude Code"}}
@@ -110,9 +110,9 @@ Complete the steps below, depending on the tool you're integrating with.
 
 **Manual Setup:**
 
-   1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings` 
+   1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings`. 
       
-   2. Navigate to: `Tools & Integrations > New MCP Server`  
+   2. Navigate to: `Tools & Integrations > New MCP Server`.  
 
    3. Add this configuration to your `mcp.json`:
 
@@ -167,7 +167,7 @@ Complete the steps below, depending on the tool you're integrating with.
 
 > What were the daily active users over the last 7 days?
 
-> Show signup conversion rates by traffic source this month
+> Show signup conversion rates by traffic source this month.
 
 > Which features have the highest engagement rates?
 
@@ -175,38 +175,38 @@ Complete the steps below, depending on the tool you're integrating with.
 
 > What's the performance of the checkout experiment?
 
-> Show the statistical significance of the new onboarding flow
+> Show the statistical significance of the new onboarding flow.
 
 > Which experiment variants are running?
 
 ### Content discovery
 
-> Find all charts related to user retention
+> Find all charts related to user retention.
 
-> Search for dashboards containing mobile app metrics
+> Search for dashboards containing mobile app metrics.
 
-> Show experiments testing the payment flow
+> Show experiments testing the payment flow.
 
 ### Advanced analysis
 
-> Compare user behavior between iOS and Android platforms
+> Compare user behavior between iOS and Android platforms.
 
 > What's the typical user journey for power users?
 
-> Analyze feature adoption rates after the recent product launch
+> Analyze feature adoption rates after the recent product launch.
 
 ## Typical analysis workflow
 
 Most analysis questions follow this pattern:
 
-1. **Search** → Find relevant content (charts, dashboards, experiments)  
-2. **Retrieve** → Get full definitions and metadata  
-3. **Query** → Execute data queries and analysis  
-4. **Analyze** → Ask follow-up questions and dive deeper
+1. **Search**: Find relevant content (charts, dashboards, experiments)  
+2. **Retrieve**: Get full definitions and metadata  
+3. **Query**: Execute data queries and analysis  
+4. **Analyze**: Ask follow-up questions and dive deeper
 
 Example conversation flow:
 
-> User: Show me user retention data
+> User: Show me user retention data.
 > AI: [Searches for retention-related charts]  
 > AI: [Retrieves chart definitions]  
 > AI: [Queries the data and presents results]
@@ -255,10 +255,10 @@ Third parties (for example, Anthropic) develop and maintain the AI models used w
 
 **MCP Client Issues**
 
-* Cursor tool call failures: If MCP tool calls fail in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens," then re-authenticate with your accounts.
-* Token limit errors: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings.
-* Connection timeouts: If queries are timing out, try breaking down complex requests into smaller, more focused questions.
-* Tool loading failures: If tools aren't loading, restart your MCP client application and re-authenticate.
+* **Cursor tool call failures**: If MCP tool calls fail in Cursor, this is often due to expired or corrupted authentication tokens. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux), type and select "Clear All MCP Tokens," then re-authenticate with your accounts.
+* **Token limit errors**: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings.
+* **Connection timeouts**: If queries are timing out, try breaking down complex requests into smaller, more focused questions.
+* **Tool loading failures**: If tools aren't loading, restart your MCP client application and re-authenticate.
 
 ### Getting help
 
