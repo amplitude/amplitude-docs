@@ -284,6 +284,7 @@ val amplitude = Amplitude(
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
         +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+        +frustrationInteractions // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
     }
   )
 )
@@ -340,9 +341,12 @@ import java.util.Arrays;
 
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
 configuration.getAutocapture().addAll(Arrays.asList(
+    AutocaptureOption.SESSIONS,
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS
+    AutocaptureOption.SCREEN_VIEWS,
+    AutocaptureOption.ELEMENT_INTERACTIONS,
+    AutocaptureOption.FRUSTRATION_INTERACTIONS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
