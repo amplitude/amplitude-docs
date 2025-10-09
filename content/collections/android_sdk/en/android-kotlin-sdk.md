@@ -283,6 +283,7 @@ val amplitude = Amplitude(
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
         +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+        +frustrationInteractions // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
     }
   )
 )
@@ -313,7 +314,8 @@ Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicatio
 configuration.getAutocapture().addAll(Arrays.asList(
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS
+    AutocaptureOption.SCREEN_VIEWS,
+    AutocaptureOption.FRUSTRATION_INTERACTIONS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
@@ -643,7 +645,6 @@ When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
 | `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
 
 {{/partial:collapse}}
-
 ## User groups
 
 Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group.
