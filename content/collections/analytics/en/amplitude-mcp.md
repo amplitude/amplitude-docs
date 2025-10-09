@@ -13,8 +13,8 @@ The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/doc
 
 ## Remote server
 
-{{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve. Amplitude will announce usage guidelines and rate limits when the MCP server becomes Generally Available.
+{{partial:admonition type="info" heading="Beta notice"}}
+The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve and currently operates under fair use limits.
 {{/partial:admonition}}
 
 ### Who can use this feature
@@ -103,10 +103,11 @@ Complete the steps below, depending on the tool you're integrating with.
 **Quick Install (Recommended):**
 
 **US Server (Default):**
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
+[Install Amplitude MCP Server deep link (US)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
 **EU Server:**
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+[Install Amplitude MCP Server deep link (EU)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
 
 **Manual Setup:**
 
