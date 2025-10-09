@@ -65,10 +65,12 @@ To use a font natively in your mobile Guides and Surveys, be sure to include the
 #### Android
 - Place font files in the `/res/font` directory of your project.  
 - Use a clear and consistent naming convention:
-  - `[fontName]_[style].[fileExtension]`
-  - For example: `lora_italic.ttf`
+  - `[fontNameWithoutSpaces]_[style].[fileExtension]`
+  - For example: `adventpro_italic.ttf`
 - Supported formats: **XML**, **TTF**.  
 - After adding, the font can be referenced directly in your theme setup.  
+
+![](statamic://asset::help_center_conversions::guides-surveys/android-fonts.png)
 
 For more information, see Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
 
