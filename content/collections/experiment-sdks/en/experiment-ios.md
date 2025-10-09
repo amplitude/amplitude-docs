@@ -184,7 +184,7 @@ The SDK client can be configured once on initialization.
 {{partial:collapse name="Configuration options"}}
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
+| `debug` | Enable additional debug logging within the SDK. Set to false in production builds. | `false` |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `serverZone` | Select the Amplitude data center to get flags and variants from, `.US` or `.EU` | `.US` |

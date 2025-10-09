@@ -7,12 +7,12 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718575288
 ---
-The Contentful plugin for Amplitude Experiment enables businesses to create variations of content in Contentful, and use Experiment to control which variant users see, and track performance of those variants.
+The Contentful plugin for Amplitude Experiment enables businesses to create variations of content in Contentful, and use Experiment to control which variant users experience, and track performance of those variants.
 
 ## Features
 
-- Run A/B tests on Amplitude Experiment and author content in Contentful
-- Read different properties (refreshed every 5 seconds) from Amplitude Experiment and build your content around this information
+- Run A/B tests on Amplitude Experiment and author content in Contentful.
+- Read different properties (refreshed every 5 seconds) from Amplitude Experiment and build your content around this information.
 
 ## Requirements
 
@@ -26,40 +26,46 @@ To use the plugin, ensure you have the following:
 
 Complete the following steps in Contentful and Amplitude to add and activate the Contentful plugin for Amplitude Experiment.
 
-### Install the plugin
+##### Install the plugin
 
 1. Install the [plugin](https://www.contentful.com/marketplace/app/amplitude-experiment/) from the Contentful marketplace.
-2. In the plugin configuration, enter the data center, Org URL and Management API key you created in Experiment. Click **Install to selected environments**.
-3. Click **Save** to complete the plugin setup.
+2. In the plugin configuration, enter the data center, Org URL and Management API key you created in Experiment. 
+3. Click **Install to selected environments**.
+4. Click **Save** to complete the plugin setup.
 
 When you enable the plugin, a `Variant Container` content model appears on the Content Model tab.
 
-### Add a variant container to one of your content models
+### Adding a variant container to one of your content models
 
 The variant container in Contentful works with Amplitude Experiment to decide which variant of your experiment displays to each user.
 
 For best results, Amplitude recommends you a **Reference** content type to hold experiments. In the Reference content type
 
-To add a variant container:
+##### To add a variant container
 
 1. Open the content model of the page to which you'll add the variant container.
-2. Click **+ Add field**. Select a **Reference** field.
+2. Click **Add field**. Select a **Reference** field.
 3. Provide a name for the field. For best results, enter a name that corresponds with the purpose of the field. For example, `Hero Banner` or `Demo CTA`.
-4. Select **One reference** as the Type. Click **Add and configure.**
-5. On the Name and field ID tab of the field configuration, select **Accept only specified entry type**, and select **Variant container**. This ensures consistency with the Contentful API response when it serves page content.
-6. Click **Confirm** to create the field, and click **Save** to update the content model.
+4. Select **One reference** as the Type. 
+5. Click **Add and configure.**
+6. On the Name and field ID tab of the field configuration, select **Accept only specified entry type**, and then select **Variant container**. 
+This ensures consistency with the Contentful API response when it serves page content.
+7. Click **Confirm** to create the field and then click **Save** to update the content model.
 
-### Add content
+### Adding content
 
 After you configure the variant container and reference field, open the page on which you want to add an experiment.
 
+##### To add content to your experiment
+
 1. In the Content editor, select the page.
-2. Find the field you created in the previous step. It should have an **+ Add content** selector. Select **Variant Container** as the content to add.
-3. In the field configuration, enter the **Flag Key** of the experiment. The Flag Key field shows matching keys as you type.
-4. When you select the Flag Key, any variants associated with that key appear in the **Variants** section.
-5. For each variant, select to **Link an existing entry** or **Create new content type** to populate the variant.
-6. Click **Publish** to publish the variant container.
-7. Click **Publish** to publish the updated page with the experiment enabled.
+2. Find the field you created in the previous step and click the associated **Add content** selector. 
+3. Select **Variant Container** as the content to add.
+4. In the field configuration, enter the **Flag Key** of the experiment. The Flag Key field shows matching keys as you type.
+5. When you select the Flag Key, any variants associated with that key appear in the **Variants** section.
+6. For each variant, select either **Link an existing entry** or **Create new content type** to populate the variant.
+7. Click **Publish** to publish the variant container.
+8. Click **Publish** to publish the updated page with the experiment enabled.
 
 ### Integrate with your front end
 
@@ -171,40 +177,89 @@ Contentful returns JSON when a user requests the page.
 }
 ```
 
-The `experiment` object contains helpful metadata about the experiment. To render the front end and include the experiment, use the `meta` and `variationsCollection` objects. Amplitude Experiment delivers the variant identifier, and matches it to an option in the `meta` object. After the variant is set, you can:
+The `experiment` object contains helpful metadata about the experiment. To render the front end and include the experiment, use the `meta` and `variationsCollection` objects. Amplitude Experiment delivers the variant identifier, and matches it to an option in the `meta` object. After you set the variant, you can:
 
 - Iterate through items in the `variationsCollection` object to show the variation with the matching ID. 
 - Make a direct call to Contentful with the variant ID to avoid searching through the array.
 
-For more information, see the following React / Typescript example:
+For more information, review the following React / Typescript example:
 
 ```typescript
+import React, { useEffect, useState } from 'react';
 import { Experiment } from '@amplitude/experiment-js-client';
- import sdk from 'contentful-sdk';
+import sdk from 'contentful-sdk';
 
+// --- Types (adjust to your schema) ---
+type Hero = {
+  __typename: 'Hero';
+  sys: { id: string };
+  // ...other fields you render
+};
 
- export const experiment = Experiment.initialize(process.env.NEXT_PUBLIC_AMPLITUDE_EXPERIMENT_CLIENT_KEY || "", {
- debug: true,
-  });
- const [hero, setHero] = useState<Hero | null>(null);
- useEffect(() => {
-   const matchExperimentData = async () => {
-     await experiment.fetch({
-       user_id: userId,
-     });
-     const heroBanner = sdk.getEntry('ENTRY_ID_HERE');
-     const variant = experiment.variant(heroBanner?.experimentId ?? 'control');
-     let resolvedVariant;
-     if (heroBanner && variant.value) {
-       const variation = heroBanner.meta[variant.value];
-       resolvedVariant = heroBanner.variationsCollection?.items.find(hero => {
-         return hero?.__typename === 'Hero' && hero?.sys.id === variation;
-       });
-       setHero(resolvedVariant);
-     }
-   };
-   matchExperimentData();
- }, [heroBanner, userId]);
+type HeroBanner = {
+  experimentId?: string; // key you use in Amplitude Experiment
+  meta?: Record<string, string>; // maps variant key -> variation id
+  variationsCollection?: { items: Array<Hero | null | undefined> };
+};
+
+// --- Experiment init ---
+const CLIENT_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_EXPERIMENT_CLIENT_KEY ?? '';
+export const experiment = Experiment.initialize(CLIENT_KEY, {
+  // Only enable verbose logging in dev if you like:
+  debug: process.env.NODE_ENV !== 'production',
+});
+
+// --- Component hook snippet ---
+export function useHeroVariant(userId: string | undefined) {
+  const [hero, setHero] = useState<Hero | null>(null);
+
+  useEffect(() => {
+    // Skip until we have a user id
+    if (!userId) return;
+
+    let isMounted = true;
+
+    (async () => {
+      try {
+        // 1) Fetch variants for this user
+        await experiment.fetch({ user_id: userId });
+
+        // 2) Load the banner/experiment mapping from Contentful
+        const heroBanner = await sdk.getEntry<HeroBanner>('ENTRY_ID_HERE');
+        if (!heroBanner) return;
+
+        // 3) Resolve the variant key from the experiment
+        const experimentKey = heroBanner.experimentId ?? 'control';
+        const { value: variantKey } = experiment.variant(experimentKey);
+        if (!variantKey) return;
+
+        // 4) Map the variant key -> variation id via Contentful metadata
+        const variationId = heroBanner.meta?.[variantKey];
+        if (!variationId) return;
+
+        // 5) Find the matching Hero item
+        const match = heroBanner.variationsCollection?.items.find(
+          (item): item is Hero =>
+            !!item &&
+            item.__typename === 'Hero' &&
+            item.sys?.id === variationId
+        ) ?? null;
+
+        if (isMounted) setHero(match);
+      } catch (err) {
+        // Consider forwarding to your logger
+        console.error('Failed to resolve hero variant', err);
+        if (isMounted) setHero(null);
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [userId]); // Note: don't include heroBanner (it's local) or setHero
+
+  return hero;
+}
 ```
 
 Be sure to account for cases where users receive `off` as the value that `experiment.variant()` returns.

@@ -6,8 +6,8 @@ this_article_will_help_you:
   - 'Learn how to use the approvals workflows for feature flags and experiments'
 landing: false
 exclude_from_sitemap: false
-updated_by: e6d8f28f-00c6-426e-9ab9-664028ddc50c
-updated_at: 1758133452
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1759851028
 ---
 Improve the governance of your experimentation program and decrease the risk of unintended changes by requiring approvals for critical changes to experiment configuration.
 

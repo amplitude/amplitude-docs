@@ -75,7 +75,7 @@ Analyze your holdout groups using an Experiment Results chart.
 4. A new Experiment Results chart opens, with the following fields complete:
 
    * Exposure event
-   * Segments for *holdout* and *on*
+   * Segments for `Holdout` and `On`
    * Statistical method set to [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) (*Samples per variant needed* set to 10,000)
    * Analysis date range
 
