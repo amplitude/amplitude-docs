@@ -70,9 +70,7 @@ To use a font natively in your mobile Guides and Surveys, be sure to include the
 - Supported formats: **XML**, **TTF**.  
 - After adding, the font can be referenced directly in your theme setup.  
 
-![](statamic://asset::help_center_conversions::guides-surveys/android-fonts.png)
-
-For more information, see Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
+For more information, go to Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
 
 #### iOS
 - Add font files to your Xcode project.  
@@ -82,7 +80,7 @@ For more information, see Android's [Font resources](https://developer.android.c
 - Register the fonts in your app's `.plist` file.  
 - Supported formats: **TTF**, **OTF**.  
 
-For more information, see Apple's [Adding a custom font to your app](https://developer.apple.com/documentation/uikit/adding-a-custom-font-to-your-app).  
+For more information, go to Apple's [Adding a custom font to your app](https://developer.apple.com/documentation/uikit/adding-a-custom-font-to-your-app).  
 
 {{partial:admonition type="note" heading="Font previews"}}
 Custom fonts you add that aren't part of Google Fonts don't appear in the theme preview.
