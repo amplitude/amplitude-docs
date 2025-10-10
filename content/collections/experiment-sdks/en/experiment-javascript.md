@@ -404,7 +404,13 @@ experiment.setConsentStatus(ConsentStatus.GRANTED);
 experiment.setConsentStatus(ConsentStatus.REJECTED);
 ```
 
-When you change consent from PENDING to GRANTED, the SDK persists in-memory data to browser storage and fires all queued exposures. When you change to REJECTED, the SDK stops storing data and deletes any queued exposures.
+When you change consent from `PENDING` to `GRANTED`, the SDK persists in-memory data to browser storage and fires all queued exposures. When you change consent to `REJECTED`, the SDK stops storing data and deletes all persisted data from browser storage, including:
+
+- Experiment storage (`localStorage`) - user information and flag variants
+- User provider storage (`localStorage` and `sessionStorage`) - device and user IDs
+- Unsent events (`localStorage`) - queued exposure events
+
+The SDK deletes this data when you call `setConsentStatus(ConsentStatus.REJECTED)` and during initialization if consent is already rejected.
 
 ### Example integration with consent banner
 
