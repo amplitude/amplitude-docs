@@ -5,6 +5,10 @@ title: 'Guides and Surveys React Native SDK'
 ---
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys React Native SDK requires:
@@ -87,7 +91,7 @@ On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value
 
 ## Boot the plugin
 
-When you "boot" the plugin with a user ID, Guides and Surveys are 
+Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
 
 ```js
 import {

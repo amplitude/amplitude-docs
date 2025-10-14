@@ -155,11 +155,6 @@ Instead of creating every single status code, failure reasons, error message, an
 
 The remove users API is called every time a cohort syncs from Amplitude to your app. This could be hourly or daily. This call calculates the difference in the current cohort size compared to the last successful sync.
 
-<figure markdown>
-![screenshot of the add users endpoint config](../assets/images/partners/partner-remove-users-endpoint.png)
-<figcaption>Configure the remove user call by selecting an endpoint, and adding a payload, a value for `$items`, and setting a batch max for the API. </figcaption>
-</figure>
-
 - **URL Endpoint**: There is a `$listId` placeholder in the URL but it's not required. You can design your API to place this in the payload if you want, for example: `https://your.domain/lists/$listId/remove`.
 - **API payload to send to the destination**: You can customize and define whether this payload is a batch. The important key here is the `$items` variable which is replaced by the contents of *An array of items that replaces the $items variable in the payload* 
 This `$items` variable is usually the identifier for every user in a cohort. For example, there are 20 new users to remove from your existing cohort. The Batch object contains a collection (a list of 20 users) so these 20 objects are sent to your endpoint. Your payload might look something like this: 
