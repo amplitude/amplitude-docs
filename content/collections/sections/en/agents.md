@@ -8,7 +8,7 @@ updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760460724
 nav_title: agents
 ---
-Amplitude AI Agents are specialized, goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, they combine your product’s behavioral data with Amplitude’s analytics, experimentation, guides, and replay to investigate issues, generate hypotheses, design experiments, recommend actions, and track impact. They’re designed to behave like product analytics specialists that run all the.
+Amplitude AI Agents are goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, they combine your product’s behavioral data with Amplitude’s analytics, experimentation, guides, and replay to investigate issues, generate hypotheses, design experiments, recommend actions, and track impact. They’re designed to behave like product analytics specialists that run all the.
 
 ## How Agents work with Amplitude
 
