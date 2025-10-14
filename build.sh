@@ -38,6 +38,7 @@ mix --production
 # GENERATE APP KEY
 php artisan key:generate
 
+php please generate:markdown-files
 # BUILD STATIC SITE
 php please stache:warm -n -q
 php please ssg:generate --workers=4
