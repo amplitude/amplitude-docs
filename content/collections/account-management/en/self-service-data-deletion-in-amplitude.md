@@ -14,7 +14,7 @@ Sometimes, you may need to permanently remove data from your Amplitude projects.
 Amplitude’s self-service data deletion feature lets you do this, without involving Amplitude personnel. Specify which events or properties you want to delete and send your deletion request to the Amplitude deletion queue.
 
 {{partial:admonition type="warning" heading=""}}
-If want to comply with end-user data deletion requests mandated by global privacy laws such as [GDPR](https://gdpr-info.eu/) or [CCPA](https://oag.ca.gov/privacy/ccpa), use Amplitude's [User Privacy](/docs/apis/analytics/user-privacy) API. Self-service data deletion is meant to permanently remove specific data from your Amplitude projects. It is not designed for privacy law compliance.
+If want to comply with end-user data deletion requests mandated by global privacy laws such as [GDPR](https://gdpr-info.eu/) or [CCPA](https://oag.ca.gov/privacy/ccpa), use Amplitude's [User Privacy](/docs/apis/analytics/user-privacy) API. Self-service data deletion is meant to permanently remove specific data from your Amplitude projects. It's not designed for privacy law compliance.
 {{/partial:admonition}}
 
 ## Before you begin
@@ -49,7 +49,6 @@ To create and submit a data deletion task, follow these steps:
     For properties, select the properties you’d like to delete, and specify whether you want to delete them for all events or specific events only. If you want to delete for specific events only, select them in the next drop-down that appears.
 
 8. Click **Next** to move to the verification screen and then click **Next** to confirm.
-9. Follow the instructions that appear and click **Delete**. Y
-ou can’t undo this action.
+9. Follow the instructions that appear and click **Delete**. You can’t undo this action.
 
 You can find the statuses of all existing tasks on the Home page. The speed at which Amplitude processes your deletion request depends on the current volume of requests.
