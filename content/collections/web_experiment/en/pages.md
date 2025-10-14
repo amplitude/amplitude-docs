@@ -1,7 +1,9 @@
 ---
 id: b87d183d-4b47-4f19-a2cf-e9d31c5faf47
 blueprint: web_experiment
-title: Pages
+title: 'Web Experiment Pages'
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1758917857
 ---
 In a Web Experiment, Pages control where your experiment variants apply on your site. They help scope experiments to specific URLs, enabling you to run tests on targeted pages, without impacting unrelated parts of your site.
 
@@ -39,7 +41,7 @@ To update a page definition, navigate to the Pages tab of the Experiment Setup f
 
 ## Manage page scope for variants
 
-In a web experiment, you can scope each vairant to a specific page to ensure that the variants changes apply only where you intend. This is the case for all variant types.
+In a web experiment, you can scope each variant to a specific page to ensure that the variants changes apply only where you intend. This is the case for all variant types.
 
 ### Visual editor
 
@@ -68,20 +70,15 @@ Select the page in the the URL redirect variant's settings. Scoping the redirect
 ## Technical details
 
 * Experiment evaluates pages after bucketing. This ensures that a page's variant impacts only users who are in the experiment. 
-
 * Amplitude deactivates pages that conflict with other pages in your experiment. 
 
 ## Known limitations
 
 * Pages aren't supported in:
-
   * Feature Flags
   * Experiment Templates
   * Management API
-  * Experiments converted to templates or flags
-
+  * Experiments converted to templates or flags.
 * You can't delete or archive a page.
-
-* Amplitude doesn't include pages in universal search or experiment table views
-
-* Pages don't appear in alerts or notifications
+* Amplitude doesn't include pages in universal search or experiment table views.
+* Pages don't appear in alerts or notifications.

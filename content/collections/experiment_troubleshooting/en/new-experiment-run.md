@@ -11,11 +11,11 @@ Creating a new run of an existing experiment can be useful if you had instrument
 
 ## Create a new run
 
-To create a new run of an existing experiment"
+##### To create a new run of an existing experiment
 
 1. Open a running or completed experiment for which you want to create the new run.
-2. Open the menu next to **Turn off flag** (for completed experiments) or **Complete Experiment** (for running experiments), and select **New run**.
-3. Select a new analysis range and optionally tell Amplitude how to handle users in the new run, and what to do with existing feature flags, if applicable.
+2. Open the menu next to **Turn off flag** (for completed experiments) or **Complete Experiment** (for running experiments) and select **New run**.
+3. Select a new analysis range and, optionally, tell Amplitude how to handle users in the new run, and what to do with existing feature flags, if applicable.
 
 ## Options when creating a new run
 
@@ -46,7 +46,7 @@ To use the experiment key:
 | iOS          | v1.11.0         |
 | React Native | v1.2.0          |
 
-If you use the [Evaluation API](/docs/apis/experiment/experiment-evaluation-api), the response body contains the experiment key of the currently running experiment.
+If you use the [Evaluation API](/docs/apis/experiment/experiment-evaluation-api), the response body contains the experiment key of the actively running experiment.
 
 ```json
 {
