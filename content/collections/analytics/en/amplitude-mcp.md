@@ -100,13 +100,13 @@ Complete the steps below, depending on the tool you're integrating with.
 {{/partial:tab}}
 {{partial:tab name="Cursor"}}
 
-**Quick Install (Recommended):**
+**Quick Install :**
 
 **US Server (Default):**
-[Install Amplitude MCP Server deep link (US)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
+<a href="cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9">Install Amplitude MCP Server deep link (US)</a>
 
 **EU Server:**
-[Install Amplitude MCP Server deep link (EU)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+<a href="cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9">Install Amplitude MCP Server deep link (EU)</a>
 
 
 **Manual Setup:**
