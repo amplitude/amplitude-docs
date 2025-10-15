@@ -1,15 +1,15 @@
 ---
 id: 5b4dadf8-14b7-4669-8636-f3105393214c
 blueprint: advanced-technique
-title: 'Find and resolve outliers in your data'
+title: 'Winsorization in Experiment'
 this_article_will_help_you:
   - 'Find outliers in your data that may skew your results'
   - 'Apply various techniques to mitigate or eliminate the negative effects of outliers'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1728509681
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1757365670
 ---
-Outliers are data points that occur on the far fringes of a dataset. These data points typically rest far from measurements of central tendency like the mean, and can easily skew an analysis. 
+Outliers are data points that occur on the far fringes of a dataset. These data points typically rest far from measurements of central tendency like the mean, and can skew an analysis. 
 
 Outliers in your dataset are sometimes the result of instrumentation issues. For example, if your users primarily interact with your app through their mobile devices, but your web instrumentation sends event properties at a different rate (in this example, milliseconds) from iOS and Android instrumentations (seconds), the data from web-based users may look like outliers.
 
@@ -19,7 +19,7 @@ Outliers in your dataset are sometimes the result of instrumentation issues. For
 
 While you can often spot them by examining the tails of a histogram, there is no single correct way to designate what counts as an outlier, and what doesn’t. 
 
-One common method is to use standard deviations from the mean. This works well if your data has a roughly normal distribution. If it does, [you can expect 68 percent of your data points to be within one standard deviation](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule#:~:text=In%20statistics%2C%20the%2068%E2%80%9395,two%2C%20and%20three%20standard%20deviations), 95 percent to be within two, and 99.7 percent of your data points to be within three standard deviations from the mean. Depending on the specifics of your situation, you might decide that anything more than three standard deviations out is an outlier, for example.
+One common method is to use standard deviations from the mean. This works well if your data aligns with normal distribution. If it does, [you can expect 68 percent of your data points to be within one standard deviation](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule#:~:text=In%20statistics%2C%20the%2068%E2%80%9395,two%2C%20and%20three%20standard%20deviations), 95 percent to be within two, and 99.7 percent of your data points to be within three standard deviations from the mean. Depending on the specifics of your situation, you might decide that anything more than three standard deviations out is an outlier, for example.
 
 {{partial:admonition type='note'}}
 Standard deviation can be sensitive to outliers. As skew in the distribution increases, so does the sample size you need to ensure the sample mean approaches a normal distribution. In datasets containing fewer than millions of users, you can’t always assume the sample mean has a normal distribution.
@@ -179,7 +179,7 @@ When switched on, Amplitude Experiment applies winsorization at the per-metric l
 
 In the metrics table, hovering over the cell will show how many users were winsorized.
 
-As a best practice, avoid winsorizing more than 5% of your data. If, for example, 10% of your data are outliers, it’s better to investigate that group separately and run two different analyses. You can also see if there are more outliers in one variant than another. For formula metrics, Amplitude applies the same winsorization value to each term.
+As a best practice, avoid winsorizing more than 5% of your data. If, for example, 10% of your data are outliers, it’s better to investigate that group separately and run two different analyses. You can also find out if there are more outliers in one variant than another. For formula metrics, Amplitude applies the same winsorization value to each term.
 
 ## Log transform in Experiment
 
@@ -187,4 +187,4 @@ Like Winsorization, Amplitude Experiment also supports log transforms as an alte
 
 When enabled, Amplitude Experiment applies the log transformation at a per-metric level. It uses logarithm with base `e`. Experiment uses `ln(1+x)` to deal with the case where `x = 0`.` x` is the metrics value for a particular user. If `1+x <= 0`, Experiment returns `0` for the metric value for that individual user. 
 
-If you enable both winsorization and log transform, winsorization applies first and then the log transform. 
+If you enable both winsorization and log transform, winsorization applies first and then the log transform.
