@@ -14,7 +14,7 @@ You’ve designed your experiment, rolled it out to your users, and given them e
 
 In the Activity tab, you’ll be able to tell at a glance whether your experiment has yielded statistically significant results as well as what those results actually are. Experiment takes the information you gave it during the design and rollout phases and enters them in for you automatically limiting repetition of effort. It breaks the results out by variant and provides you with a convenient, detailed tabular breakdown.
 
-{{partial:admonition type="Note" heading="Note"}}
+{{partial:admonition type="note" heading="Note"}}
 Depending on your experiment, not all cards described below may be visible.
 {{/partial:admonition}}
 
