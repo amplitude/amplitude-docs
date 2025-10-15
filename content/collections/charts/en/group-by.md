@@ -75,6 +75,8 @@ Group-bys provide a more exploratory analysis, and if you adjust for multiple hy
 
 ### Limitations
 
+We do not support group by and CUPED together. If you select these options, the non-group by value will have CUPED applied but the group by values will not have CUPED applied.
+
 If the value of the property you group-by changes between the exposure event and the metric event, you may notice a conversion rate higher than 100%. For example, if you group-by `Country` and view the row `Country = Spain`, the denominator is unique number of exposures in Spain and the numerator is people who did the metric event in Spain. 
 
 As a result, you may notice conversion rates greater than 100% since someone can do a metric event in Spain but never do the exposure event in Spain. They would count toward the numerator but not the denominator. 
