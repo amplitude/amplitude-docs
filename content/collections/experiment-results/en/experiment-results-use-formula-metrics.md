@@ -66,15 +66,18 @@ This function only works when grouping by a numerical property on the event. If 
 
 Returns the average of the property values you're grouping by. This function is the same as `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/feature-experiment/under-the-hood/experiment-analysis-chart-calculation)
 
-### PROPCOUNT
+### PROPCOUNTAVG
 
-**Syntax**: `PROPCOUNT(event)`
+**Syntax**: `PROPCOUNTAVG(event)`
 
-* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
-   
-   Returns the number of distinct property values for the property the event is grouped by.
+* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
+Returns the average number of distinct values each user has for a specified property.
 
-   `PROPCOUNT` is an estimate of distinct property values. This estimate comes from a [HyperLogLog algorithm](https://en.wikipedia.org/wiki/HyperLogLog), and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
+For example, imagine you're interested in the average number of song genres your music app subscribers listen to. Every time a user plays a song, a Play Song or Video event triggers; each played song also captures a Genre_Type event property. Running PROPCOUNTAVG on Play Song or Video grouped by Genre_Type gives you the average number of unique Genre_Type values users who fire PlaySong or Video have.
+
+{{partial:admonition type="note" heading=""}}
+`PROPCOUNTAVG` supports only numeric event properties in Experiment.
+{{/partial:admonition}}
 
 ### PROPMAX
 
