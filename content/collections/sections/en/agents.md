@@ -7,6 +7,7 @@ exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760460724
 nav_title: agents
+hide_toc: false
 ---
 Amplitude AI Agents are goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, they combine your product’s behavioral data with Amplitude’s analytics, experimentation, guides, and replay to investigate issues, generate hypotheses, design experiments, recommend actions, and track impact. They’re designed to behave like product analytics specialists that run all the.
 
@@ -20,3 +21,11 @@ Amplitude built each Agent with a specific focus. These specialized Agents come 
 
 Interacting with Agents is simple. Use natural language to guide their work, adjust their level of autonomy, and approve their recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI and AWS Bedrock with its own memory and tooling to ensure your Agents operate effectively.
 Example use cases
+
+## Get started with Agents
+
+Access agents in from the left navigation panel in Amplitude to find a set of preconfigured agent templates, like Dashboard Monitoring and Session Replay Analysis.
+
+### Agent settings
+
+To help agents start with the best context, project administrators can define which event in your taxonomy represents a page view, and which property in that event contains a page's full URL.

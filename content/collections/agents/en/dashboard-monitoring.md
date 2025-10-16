@@ -7,6 +7,17 @@ updated_at: 1754518919
 ---
 The Dashboard Monitoring Agent is an analytics assistant that automatically analyzes your Amplitude dashboards to surface the most important insights and trends for product decision-making. Select a dashboard and optionally provide custom focus instructions (like "focus on onboarding drop-off" or "emphasize mobile user behavior"). The agent analyzes every chart to identify patterns, anomalies, and executive-level takeaways. It generates a list of prioritized insights and recommendations, highlighting what changed, why it matters, and which user segments are most affected.
 
+{{partial:collapse name="Agent summary"}}
+As you get started with the Dashboard Monitoring agent, keep the following in mind:
+
+|||
+|--|--|
+| **Target persona** | Product managers, marketers |
+| **Requires** | Analytics (input) |
+| **Tools** | Analyze Dashboard, Chart Deep Dive, General Analytics |
+
+{{/partial:collapse}}
+
 ## Capabilities
 
 * **Comprehensive Dashboard Analysis**: Automatically examines all charts in a dashboard to identify trends, conversion rates, user behavior patterns, and cross-chart correlations in a single executive summary.
@@ -15,9 +26,10 @@ The Dashboard Monitoring Agent is an analytics assistant that automatically anal
 
 ## How to use
 
-1. Select a dashboard from the dropdown menu to start configuring your analysis. Add custom instructions to focus the analysis on specific areas of interest or provide context about what you use the dashboard for. 
-2. After the initial analysis, ask follow-up questions like "What caused the conversion drop?" or "Investigate further" and the agent autonomously drills into the most relevant data to provide comprehensive explanations. 
-3. Optionally, schedule the agent to run automatically for proactive monitoring of key business metrics.
+1. Select a dashboard from the dropdown menu to start configuring your analysis. Add custom instructions to focus the analysis on specific areas of interest or provide context about what you use the dashboard for.
+2. Configure how the agent sends you notifications. Set the email recipients, connect to Slack, and set the recurring report frequency. 
+3. After the initial analysis, ask follow-up questions like "What caused the conversion drop?" or "Investigate further" and the agent autonomously drills into the most relevant data to provide comprehensive explanations. 
+4. Optionally, schedule the agent to run automatically for proactive monitoring of key business metrics.
 
 ## Limitations
 
