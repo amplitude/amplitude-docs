@@ -26,10 +26,13 @@ As you get started with the Dashboard Monitoring agent, keep the following in mi
 
 ## How to use
 
-1. Select a dashboard from the dropdown menu to start configuring your analysis. Add custom instructions to focus the analysis on specific areas of interest or provide context about what you use the dashboard for.
-2. Configure how the agent sends you notifications. Set the email recipients, connect to Slack, and set the recurring report frequency. 
-3. After the initial analysis, ask follow-up questions like "What caused the conversion drop?" or "Investigate further" and the agent autonomously drills into the most relevant data to provide comprehensive explanations. 
-4. Optionally, schedule the agent to run automatically for proactive monitoring of key business metrics.
+
+1. Click **Create New Agent** on the AI Agents tab.
+2. Click **Dashboard Monitoring Agent**.
+3. Select a dashboard from the dropdown menu to start configuring your analysis. Add custom instructions to focus the analysis on specific areas of interest or provide context about what you use the dashboard for.
+4. Configure how the agent sends you notifications. Set the email recipients, connect to Slack, and set the recurring report frequency. 
+5. After the initial analysis, ask follow-up questions like "What caused the conversion drop?" or "Investigate further" and the agent autonomously drills into the most relevant data to provide comprehensive explanations. 
+6. Optionally, schedule the agent to run automatically for proactive monitoring of key business metrics.
 
 ## Limitations
 
