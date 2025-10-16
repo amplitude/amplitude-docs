@@ -11,12 +11,12 @@ This comprehensive reference lists all available Role-Based Access Control (RBAC
 
 {{partial:partials/rbac-permissions-table}}
 
-## Understanding Permission Types
+## Understanding permission types
 
 - **Basic**: Standard permissions that are commonly used and safe for most users
 - **Advanced**: Permissions that require careful consideration and are typically reserved for administrators or power users
 
-## Product Areas
+## Product areas
 
 Permissions are organized by product area to help you understand which parts of Amplitude they affect:
 
