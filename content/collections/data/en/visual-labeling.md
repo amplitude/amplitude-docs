@@ -1,17 +1,18 @@
 ---
 id: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
 blueprint: data
-title: "Visual Labeling"
+title: 'Visual Labeling'
 this_article_will_help_you:
-  - "Create and edit labeled events with no new code required"
+  - 'Create and edit labeled events with no new code required'
 landing: true
-source: "https://help.amplitude.com/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements"
+source: 'https://help.amplitude.com/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1723072454
-landing_blurb: "Enable non-technical Amplitude users to create events with Visual Labeling."
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632626
+landing_blurb: 'Enable non-technical Amplitude users to create events with Visual Labeling.'
+academy_course:
+  - 644647f0-9be3-4e6c-a8d9-79a131317a96
 ---
-
 After enabling [Autocapture](/docs/data/autocapture) on your site, you can begin to create labeled events by clicking specific elements on your site using Amplitude Data's visual labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
 
 Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the Labeled Events tab, instead of involving your engineering team.

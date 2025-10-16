@@ -5,10 +5,12 @@ title: 'A/B testing in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart'
 this_article_will_help_you:
   - 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717102463
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632003
 landing: true
 landing_blurb: 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
+academy_course:
+  - 7d137320-f0f2-4b00-8f77-2f2adb07de68
 ---
 {{partial:admonition type='note'}}
 For best practices, including tips on instrumentation, see the [How to Analyze A/B Tests Results in Amplitude](/docs/get-started/analyze-a-b-test-results) article.  
