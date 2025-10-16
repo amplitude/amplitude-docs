@@ -18,6 +18,8 @@ When you target a cohort in a remote evaluation flag, the cohort is automaticall
 
 Cohorts targeted for remote evaluation may have a propagation delay on the initial sync or large change, depending on the size of the difference. For example, the first sync of 10-million-user cohort is likely to take a lot more time than later syncs.
 
+Remote evaluation supports cohorts up to 10 million users.
+
 **Remote evaluation cohort targeting use cases**
 
 - You are targeting users based on user behavior or properties that aren't available in Experiment targeting segments.
@@ -30,6 +32,8 @@ Don't use remote evaluation cohort targeting if:
 ## Local evaluation
 
 Local evaluation flags and experiments that are deployed to up-to-date server-side SDKs can also target cohorts. When you target a cohort in a local evaluation flag, the cohort is automatically synced to the Experiment Local Evaluation destination. For dynamic cohorts, this sync runs hourly. This means that dynamic cohorts targeted in local evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, users are targeted within an hour of performing the event--not immediately after.
+
+Local evaluation supports cohorts up to 50 million users.
 
 {{partial:admonition type="note" heading="Cohorts only support User IDs"}}
 Local evaluation cohorts only sync user IDs to the SDKs. This means that to target cohorts in local evaluation flags, you must include a user ID in the user object passed to the evaluate function.
