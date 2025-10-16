@@ -5,10 +5,10 @@ title: 'Web Experiment performance'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195974
 ---
-Web Experiment is built to minimize impact on page performance.
+Web Experiment intentionally minimizes its impact on page performance.
 
 {{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
 ## Script size
@@ -23,7 +23,7 @@ The Web Experiment script is dynamic, and includes all your experiment configura
 To avoid constantly increasing script sizes, deactivate or archive experiments when they're complete. 
 
 {{partial:admonition type="note" heading="Custom code impact on flag size"}}
-Custom code increases the size of a flag's code as a result of the size of the custom code itself.
+Custom code increases the size of a flag's code because of the size of the custom code itself.
 {{/partial:admonition}}
 
 ## Caching
