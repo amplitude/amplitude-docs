@@ -16,13 +16,13 @@ But sometimes, that reason isn’t relevant. All you want is to decide which var
 - Ad optimization for seasonal or time-sensitive promotions or events
 - Hyperparameter tuning for ML models
 
-## Feature availability
-
-This feature is available to users on Enterprise plans who have purchased Amplitude Experiment. See the [pricing page](https://amplitude.com/pricing) for more details.
-
 Unlike in a traditional A/B test, multi-armed bandits don't use statistical significance as a determinant of success. Nor do they use a control or baseline variant. There are also differences in how Amplitude Experiment displays results for both experiment types; those are covered later in this article.
 
 Multi-armed bandit experiments use [Thompson sampling](https://en.wikipedia.org/wiki/Thompson_sampling). No other statistical methodologies are available to use with a multi-armed bandit in Amplitude Experiment.
+
+## Feature availability
+
+This feature is available to users on Enterprise plans who have purchased Amplitude Experiment. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
@@ -48,7 +48,7 @@ If you want to optimize two metrics in your multi-armed bandit experiment, creat
 
 ### Traffic allocation
 
-Allocation for a multi-armed bandit experiment always begins with a uniform distribution, as the model has no way to know which variant is the most effective before it has collected any data. This changes once that data begins coming in.
+Allocation for a multi-armed bandit experiment always begins with a uniform distribution, as the model has no way to know which variant is the most effective before it has collected any data. This changes after that data begins coming in.
 
 A multi-armed bandit adjusts the allocation **between the variants only**; it doesn't adjust the percentage rollout.
 
@@ -57,7 +57,7 @@ The confidence level in a multi-armed bandit experiment has a different role tha
 
 ### Duration estimate and MDE
 
-In multi-armed bandit experiments, the role of the minimum detectable effect (MDE) is to help calculate the duration estimate. Since these experiments are automated and about optimization, the MDE doesn't affect the experiment once it’s running.
+In multi-armed bandit experiments, the role of the minimum detectable effect (MDE) is to help calculate the duration estimate. Since these experiments are automated and about optimization, the MDE doesn't affect the experiment after it’s running.
 
 When calculating the duration estimate prior to starting the experiment, Amplitude Experiment simulates what would happen if the same baseline mean (computed from historical data) is shared by all variants except one: when measuring an increase, this variant would have `mean * (1+MDE)`; when measuring a decrease, it would be `mean * (1-MDE)`. From there, Amplitude Experiment calculates how long it could take for the multi-armed bandit to assign all traffic to one variant. The duration estimate is capped at 31 days.
 
@@ -67,9 +67,9 @@ Amplitude Experiment doesn't display variant jumping while a multi-armed bandit 
 
 The data quality card isn't visible for multi-armed bandit experiments. Most of the checks conducted for this display don’t make sense for this experiment type. You can't make changes to the experiment that affect traffic allocation while the experiment is running.
 
-The Bandits card is very similar to the non-cumulative exposure chart in the Monitor card, but is normalized to 100%, enabling you to easily visualize the percentage of traffic each variant is getting on that day.
+The Bandits card is similar to the non-cumulative exposure chart in the Monitor card, but is normalized to 100%, enabling you to visualize the percentage of traffic each variant is getting on that day.
 
 ## Notifications
-When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the editors of the experiment. If the bandit takes a long time to terminate or the end date is reached, then Amplitude Experiment also sends a notification. These can be through either Slack or email. For more information, see [Integrate Slack with Amplitude](/docs/analytics/integrate-slack).
+When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the editors of the experiment. If the bandit takes a long time to complete or if the experiment's end date arrives, then Amplitude Experiment also sends a notification. These can be through either Slack or email. For more information, go to [Integrate Slack with Amplitude](/docs/analytics/integrate-slack).
 
-To set up your notifications, navigate to Settings > Personal settings > Notifications.
+To set up your notifications, navigate to *Settings > Personal settings > Notifications*.

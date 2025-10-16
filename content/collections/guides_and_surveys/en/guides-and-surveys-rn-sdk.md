@@ -91,7 +91,7 @@ On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value
 
 ## Boot the plugin
 
-When you "boot" the plugin with a user ID, Guides and Surveys are 
+Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
 
 ```js
 import {

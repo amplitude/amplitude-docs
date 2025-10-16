@@ -24,6 +24,7 @@ With event streaming, you gain access to user-friendly, configuration-based tool
 - **Format for user properties:** All forwarded user properties are currently sent as strings except for [Braze streaming](/docs/data/destination-catalog/braze) and [Iterable streaming](/docs/data/destination-catalog/iterable) destinations
 - **Reserved keywords:** Specific keywords, including `_all` and `_identify`, can't be used as event names when streaming events from Amplitude.
 - **Historical data:** Amplitude's streaming integrations focus on data from the setup point forward. Historical data isn't included in this process, which ensures that Amplitude transmits only events captured post-configuration.
+- **Unsupported Amplitude properties:** Ingestion and streaming pipelines handle some Amplitude properties differently. If so, streaming might not support them. Properties handled differently are `Version` and `Device Family`.
 
 ## FAQs
 
@@ -39,7 +40,7 @@ With event streaming, you gain access to user-friendly, configuration-based tool
 
 ### What happens if I don't see an event streaming destination on Amplitude Catalog?
 
-1. **Webhook streaming:** You can use [Webhook Event streaming](/docs/data/destination-catalog/webhooks) integration to send your Amplitude events and user data to custom webhooks. This allows you to send data to a URL of your choice for various use cases. 
+1. **Webhook streaming:** You can use [Webhook Event streaming](/docs/data/destination-catalog/webhooks) integration to send your Amplitude events and user data to custom webhooks. This allows you to send data to a URL of your choice for various use cases.
 2. **Vendor switch:** Consider switching to a vendor already integrated with Amplitude, which offers similar functionalities. You can find more information in the Amplitude Catalog [here](https://amplitude.com/integrations).
 3. **Self-build or vendor request:** You can either build the integration yourself using the Amplitude Integration Portal or request the vendor to create it through the integration portal. Learn more about the Amplitude Integration Portal [here](/docs/partners/create-an-event-streaming-integration/).
 
