@@ -13,7 +13,7 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Amplitude Browser SDK
+### Amplitude Browser SDK 2
 
 Install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
@@ -47,15 +47,36 @@ amplitude.add(engagementPlugin());
 {{/partial:tab}}
 {{/partial:tabs}}
 
+For additional configuration, supply `InitOptions` to the `plugin` function. Go to [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
-For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
+{{partial:admonition type="note" heading=""}}
+After the installation steps are complete, by default all Guides and Surveys events are sent to your project.
+{{/partial:admonition}}
 
+Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
+You should only call `init` and `boot` if you (a) want to use a proxy; (b) want to customize the event handling via the `integrations` option. You can learn more about using a proxy [here](/docs/guides-and-surveys/proxy). You can find details about the `integrations` option [here](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers).
 
+### Amplitude Unified SDK
+
+If you're using the [Amplitude Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), Guides and Surveys comes out of the box. Just provide the engagement options during initialization:
+
+```ts
+import { initAll } from '@amplitude/unified';
+
+initAll('YOUR_API_KEY', {
+    // Other Amplitude SDK options...
+  engagement: {
+        // Guides and Surveys options go here...
+  }
+});
+```
+
+Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. Go to [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
 
 ### Other Amplitude SDK's and third-party analytics providers
 
-If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+If you don't use the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) or the [Amplitude Analytics Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
 But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
 
 #### Initialize the SDK
@@ -99,6 +120,10 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
+{{partial:admonition type="note" heading=""}}
+When using a proxy, call `window.engagement.boot` to fully install Guides and Surveys, even if you are using the Browser SDK v2. Make sure to set up event handling through the `integrations` option.
+{{/partial:admonition}}
+
 ##### Example: Initialization with CSP nonce
 
 For Content Security Policy (CSP) compliance, include a nonce value:
@@ -134,11 +159,11 @@ await window.engagement.boot({
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
-  // needed for insights and responses to populate
+  // needed for insights and responses to populate 
   integrations: [
     {
       track: (event) => {
-        analytics.track(event.event_type, event.event_properties)
+        amplitude.track(event.event_type, event.event_properties)
       }
     },
   ],
@@ -148,7 +173,8 @@ await window.engagement.boot({
 To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
-analytics.on('track', (event, properties, options) => { // Example for Segment Analytics
+analytics.on('track', (event, properties, options) => { 
+  // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
 ```

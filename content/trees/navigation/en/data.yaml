@@ -10,8 +10,18 @@ tree:
         id: 037c12ca-e0a1-41b6-a61b-87269d089de6
         entry: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
       -
-        id: 174b47f9-ffca-40af-bb9d-78a15d49fb1b
-        entry: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
+        id: 029700a0-b1ac-4820-b293-2678ac140039
+        title: Autocapture
+        children:
+          -
+            id: 174b47f9-ffca-40af-bb9d-78a15d49fb1b
+            entry: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
+          -
+            id: 912a53b9-ea0b-4bb7-adc2-eefa28f6146c
+            entry: 8f8e25db-62c1-4492-bf0d-e44dba323d5d
+          -
+            id: 0114fbb1-82ea-48f3-85a2-d17f2dbd8c6a
+            entry: 6e11f99c-17af-4b9e-864b-ec5639f0b636
       -
         id: 01fcdf37-aa52-472c-abbe-80885ecf7976
         entry: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
