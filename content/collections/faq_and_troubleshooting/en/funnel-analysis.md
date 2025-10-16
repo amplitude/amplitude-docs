@@ -4,6 +4,11 @@ blueprint: faq_and_troubleshooting
 title: 'Funnel Analysis'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360054203872'
 category: charts
+academy_course:
+  - 7d137320-f0f2-4b00-8f77-2f2adb07de68
+landing: false
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632075
 ---
 This article covers frequently asked questions about the [Funnel Analysis](/docs/analytics/charts/funnel-analysis) chart.
 

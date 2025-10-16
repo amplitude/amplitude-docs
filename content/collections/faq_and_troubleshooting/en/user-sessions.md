@@ -3,6 +3,11 @@ id: fe60748d-6a3e-4a93-8e5a-007affe53c41
 blueprint: faq_and_troubleshooting
 title: 'User Sessions'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17645167873691'
+academy_course:
+  - 24571d68-a5a0-45de-990c-770f42c06073
+landing: false
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760631649
 ---
 This article covers frequently asked questions about the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart and sessions in the event streams. Please also refer to [Track sessions](/docs/data/sources/instrument-track-sessions) for how Amplitude defines and calculates sessions.
 

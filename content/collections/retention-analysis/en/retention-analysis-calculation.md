@@ -6,10 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/14310206381595-How-the-Ret
 this_article_will_help_you:
   - 'Understand the differences between retention types'
   - 'Understand how Amplitude calculates retention for different cohorts'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724963398
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760631770
 landing: true
 landing_blurb: 'Understand how Amplitude calculates retention for different cohorts'
+academy_course:
+  - 89a75811-55ce-4273-a3e8-7d0f0bc87737
 ---
 Amplitude's methods for calculating retention are straightforward. However, you should familiarize yourself with them, and understand the differences that do exist. This helps you develop a nuanced understanding of the Retention Analysis chart.
 

@@ -6,10 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/21037113562651-Interpret-y
 this_article_will_help_you:
   - 'Interpret the results of your Lifecycle chart'
   - 'Switch between chart types'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1732570352
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760631535
 landing: true
 landing_blurb: 'Interpret the results of your Lifecycle chart'
+academy_course:
+  - def740af-68f5-484d-95c4-0b84edc128b5
 ---
 This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 

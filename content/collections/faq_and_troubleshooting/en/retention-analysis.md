@@ -4,6 +4,11 @@ blueprint: faq_and_troubleshooting
 title: 'Retention Analysis'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/4402840087181'
 category: charts
+academy_course:
+  - 04e8de22-8441-45b0-9a26-06e0a6f8a1b5
+landing: false
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760631849
 ---
 This article covers some frequently asked questions about the [Retention Analysis](/docs/analytics/charts/retention-analysis) chart.
 

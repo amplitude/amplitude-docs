@@ -5,8 +5,10 @@ instrumentation_guide: false
 title: Heatmaps
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1742510992
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632817
+academy_course:
+  - cafa90d0-f101-4234-bdf3-c9525c221850
 ---
 Heatmaps uses Session Replay to provide a visual representation of user engagement on your website or application over time. Analyze patterns of events to identify trends, anomalies, and areas of your product that drive the most engagement.
 
