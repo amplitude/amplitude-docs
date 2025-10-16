@@ -7,8 +7,10 @@ this_article_will_help_you:
   - 'Apply filters to your dashboards'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717692712
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632973
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 With filtering, you can temporarily or permanently filter all the charts in your dashboard to an alternate date range, interval, or property.
 

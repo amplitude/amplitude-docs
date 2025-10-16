@@ -4,9 +4,12 @@ blueprint: faq_and_troubleshooting
 title: 'Event Segmentation'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360052734691'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718920625
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632291
 category: charts
+academy_course:
+  - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
+landing: false
 ---
 This article covers some frequently asked questions about the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart.
 
