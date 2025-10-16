@@ -19,7 +19,7 @@ Start by defining a goal, like improving trial-to-paid conversion or increasing 
 
 Amplitude built each Agent with a specific focus. These specialized Agents come preloaded with optimization patterns and best practices, drawing from Amplitude’s experience with thousands of teams. This allows them to deliver tailored strategies for the outcomes you want.
 
-Interacting with Agents is simple. Use natural language to guide their work, adjust their level of autonomy, and approve their recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI and AWS Bedrock with its own memory and tooling to ensure your Agents operate effectively.
+Use natural language to guide the agent's work, adjust their level of autonomy, and approve their recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI and AWS Bedrock with its own memory and tooling to ensure your Agents operate effectively.
 
 ## Get started with Agents
 
