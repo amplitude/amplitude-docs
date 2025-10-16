@@ -17,14 +17,13 @@ Amplitude AI Agents bring together analytics, experimentation, guides, and sessi
 
 Start by defining a goal, like improving trial-to-paid conversion or increasing feature adoption. After you set the goal, the Agent continuously scans your data for patterns, identifies friction points, and recommends next steps. It can also carry out actions you approve, like running an experiment or sending targeted guidance to specific user segments.
 
-Amplitude built each Agent with a specific focus. These specialized Agents come preloaded with optimization patterns and best practices, drawing from Amplitude’s experience with thousands of teams. This allows them to deliver tailored strategies for your desired outcomes.
+Amplitude built each Agent with a specific focus. These specialized Agents come preloaded with optimization patterns and best practices, drawing from Amplitude’s experience with thousands of teams. This allows them to deliver tailored strategies for the outcomes you want.
 
 Interacting with Agents is simple. Use natural language to guide their work, adjust their level of autonomy, and approve their recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI and AWS Bedrock with its own memory and tooling to ensure your Agents operate effectively.
-Example use cases
 
 ## Get started with Agents
 
-Access agents in from the left navigation panel in Amplitude to find a set of preconfigured agent templates, like Dashboard Monitoring and Session Replay Analysis.
+Access agents from the left navigation panel in Amplitude to find a set of agent templates, like [Dashboard Monitoring](/docs/agents/dashboard-monitoring) and [Session Replay Analysis](/docs/agents/session-replay-explorer).
 
 ### Agent settings
 
