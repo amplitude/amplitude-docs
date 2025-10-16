@@ -1,5 +1,5 @@
 <template>
-  <div class="permissions-table-container bg-white border border-[#E6E6EB] rounded-lg overflow-hidden shadow-sm">
+  <div class="permissions-table-container bg-white border border-[#E6E6EB] mt-4 rounded-lg overflow-hidden shadow-sm">
     <table class="min-w-full divide-y divide-[#E6E6EB] mt-0">
       <thead class="bg-[#F6F6F9]">
         <tr>
