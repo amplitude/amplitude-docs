@@ -22,7 +22,7 @@ Modals are a full-focus experience that takes center stage. Modals are best for 
 Customize your modal with the following:
 
 * Pick a layout. Select classic, horizontal split, or vertical split.
-* Add a button, and customize what happens when users click it.
+* Add a button, and customize what happens when users click or tap it.
 * Add an image or video. Amplitude places media elements depending on the selected layout.
 * Animate the text. Text animation causes any text you have to animate in when the guide appears.
 
@@ -33,7 +33,7 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.               |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.          |
-| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it. |
+| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it. |
 | Text animation                         | Enables the modal's text to animate in with a typewriter effect.  |
 
 
@@ -51,7 +51,7 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
-| Click outside to close                 | Enables users to click or tap outside of the modal to dismiss it.  |
+| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
 | Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
@@ -80,7 +80,7 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Click outside to close                   | Enables users to click or tap outside of the modal to dismiss it.                                          |
+| Click/Tap outside to close               | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
@@ -159,16 +159,16 @@ Blocks enable you to make your guide more engaging and powerful. Add a Button CT
 
 When you add a Button, you can choose what happens when users click or tap that button.
 
-| Action        | Description                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link    | A link to the specified website opens in a new tab.                                                                                                                               |
-| Click element | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
-| Show guide    | Launch another guide.                                                                                                                                                             |
-| Show survey   | Launch a survey.                                                                                                                                                                  |
-| Go back       | Go to the previous step in the guide.                                                                                                                                             |
-| Go forward    | Advance to the next step in the guide.                                                                                                                                            |
-| Go to step    | Go to the specified step in the guide.                                                                                                                                            |
-| Run callback  | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
+| Action            | Description                                                                                                                                                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visit link        | A link to the specified website opens in a new tab.                                                                                                                               |
+| Click/Tap element | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
+| Show guide        | Launch another guide.                                                                                                                                                             |
+| Show survey       | Launch a survey.                                                                                                                                                                  |
+| Go back           | Go to the previous step in the guide.                                                                                                                                             |
+| Go forward        | Advance to the next step in the guide.                                                                                                                                            |
+| Go to step        | Go to the specified step in the guide.                                                                                                                                            |
+| Run callback      | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
 {{partial:admonition type='note'}}
