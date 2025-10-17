@@ -288,7 +288,7 @@ Organization administrators can control MCP server access through Amplitude sett
 4. By default, Amplitude allows MCP server access to all users in your organization
 
 {{partial:admonition type="note"}}
-MCP access controls are an admin-only setting. Individual users cannot override organization-level MCP restrictions.
+MCP access controls are an admin-only setting. Individual users can't override organization-level MCP restrictions.
 {{/partial:admonition}}
 
 ## Troubleshooting
