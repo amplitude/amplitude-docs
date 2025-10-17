@@ -285,7 +285,7 @@ Organization administrators can control MCP server access through Amplitude sett
 1. Navigate to **Settings > Manage Content > MCP** in your Amplitude organization settings
 2. Use the content access controls to allow or block the Amplitude MCP server
 3. This setting applies to all MCP clients across all users in your organization
-4. By default, MCP server access is allowed for all users in your organization
+4. By default, Amplitude allows MCP server access to all users in your organization
 
 {{partial:admonition type="note"}}
 MCP access controls are an admin-only setting. Individual users cannot override organization-level MCP restrictions.
