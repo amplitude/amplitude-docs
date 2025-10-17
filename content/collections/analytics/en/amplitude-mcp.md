@@ -13,7 +13,7 @@ The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/doc
 
 ## Remote server
 
-{{partial:admonition type="Note" heading="Beta notice"}}
+{{partial:admonition type="beta" heading="Beta notice"}}
 The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve and might be subject to rate limits. 
 {{/partial:admonition}}
 
