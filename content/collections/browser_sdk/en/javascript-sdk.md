@@ -175,7 +175,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `language` | `string`. Custom language to set. | The language determined by the browser. |
 | `library` | `Object`. Values for the library version | `{ name: 'amplitude-js', version: packageJsonVersion }` |
 | `logLevel` | `string`. 'DISABLE', 'ERROR', 'WARN', 'INFO'. Level of logs to be printed in the developer console. | `WARN` |
-| `logAttributionCapturedEvent` | `boolean`. If `true`, the SDK will log an Amplitude event anytime new attribution values are captured from the user. **Note: These events count towards your event volume.** Event name being logged: [Amplitude] Attribution Captured. Event Properties that can be logged: `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `referrer`, `referring_domain`, `gclid`, `fbclid`. | `false` |
+| `logAttributionCapturedEvent` | `boolean`. If `true`, the SDK will log an Amplitude event anytime new attribution values are captured from the user. These events count towards your event volume. Event name being logged: [Amplitude] Attribution Captured. Event Properties that can be logged: `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `referrer`, `referring_domain`, `gclid`, `fbclid`. | `false` |
 | `optOut` | `boolean`. Whether or not to disable tracking for the current user. | `false` |
 | `onError` | `function`. Function to call on error. | `() => {}` |
 | `onExitPage` | `function`. Function called when the user exits the browser. Useful logging on page exit. | `() => {}` |
@@ -196,7 +196,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `serverZone` | `string`. `US` or `EU`. The server zone to send to, will adjust server url based on this config. | `US` |
 | `useDynamicConfig` | `boolean`. To update api endpoint with serverZone change or not. For data residency, recommend to enable it unless using own proxy server. | `false` |
 | `serverZoneBasedApi` | `boolean`. localStorage key that stores unsent events. | `false` |
-| `sessionId` | `number`. The custom Session ID for the current session. *Note: This is not recommended unless you know what you are doing because the Session ID of a session is utilized for all session metrics in Amplitude. | `null` |
+| `sessionId` | `number`. The custom Session ID for the current session. This is not recommended unless you know what you are doing because the Session ID of a session is utilized for all session metrics in Amplitude. | `null` |
 | `partnerId` | `number`. The partner id value. | `null` |
 
 {{/partial:collapse}}
