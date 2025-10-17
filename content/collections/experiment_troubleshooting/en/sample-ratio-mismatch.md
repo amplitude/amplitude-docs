@@ -12,6 +12,8 @@ In Amplitude Experiment, a sample ratio mismatch occurs when the observed alloca
 
 A SRM points to biases in the data, and if unresolved, can lead to unexpected results. You should be wary of the results of any experiment experiencing a SRM.
 
+Amplitude uses a [sequential version of a chi-squared test](https://arxiv.org/abs/2011.03567) with alpha = .01 to detect a SRM.
+
 ## About this guide
 
 This guide provides a deep dive into the process of troubleshooting and debugging a sample ratio mismatch (SRM). This guide assumes that you're using the "end-to-end" Experiment product. However, you may apply some of these debugging steps to experiments which have been set up in Experiment Results.
