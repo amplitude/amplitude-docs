@@ -196,16 +196,16 @@ MCP support in ChatGPT is only available through [developer mode](https://commun
 
 For MCP-compatible clients:
 
-1. Configure your client to connect to `https://mcp.amplitude.com/mcp`
+1. Configure your client to connect to `https://mcp.amplitude.com/mcp`.
 
    {{partial:admonition type="note"}}
    EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
    {{/partial:admonition}}
 
-2. Ensure your client supports OAuth authentication
-3. Set up the connection according to your client's documentation
-4. Authenticate with your Amplitude account when prompted
-5. Select which Amplitude tools to enable based on your needs
+2. Ensure your client supports OAuth authentication.
+3. Set up the connection according to your client's documentation.
+4. Authenticate with your Amplitude account when prompted.
+5. Select which Amplitude tools to enable based on your needs.
 
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -282,13 +282,13 @@ Third parties (for example, Anthropic) develop and maintain the AI models used w
 
 Organization administrators can control MCP server access through Amplitude settings:
 
-1. Navigate to **Settings > Manage Content > MCP** in your Amplitude organization settings
-2. Use the content access controls to allow or block the Amplitude MCP server
-3. This setting applies to all MCP clients across all users in your organization
-4. By default, Amplitude allows MCP server access to all users in your organization
+1. Navigate to **Settings > Manage Content > MCP** in your Amplitude organization settings.
+2. Use the content access controls to allow or block the Amplitude MCP server.
+3. This setting applies to all MCP clients across all users in your organization.
+4. By default, Amplitude allows MCP server access to all users in your organization.
 
 {{partial:admonition type="note"}}
-MCP access controls are an admin-only setting. Individual users cannot override organization-level MCP restrictions.
+MCP access controls are an admin-only setting. Individual users can't override organization-level MCP restrictions.
 {{/partial:admonition}}
 
 ## Troubleshooting
