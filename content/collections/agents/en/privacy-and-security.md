@@ -5,7 +5,7 @@ title: 'Privacy and Security'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1754519006
 ---
-Amplitude Agents prioritize privacy and security by design. Agents operate inside authenticated Amplitude accounts, isolate each customer’s data and agent memory, and never train third‑party models on customer data. When features use an external Large Language Model (LLM), Amplitude enforces contractual no‑training controls and supports opt‑outs, while the broader platform remains covered by Amplitude’s DPA and independent audits.
+Amplitude's Agents prioritize privacy and security by design. Agents operate inside authenticated Amplitude accounts, isolate each customer’s data and agent memory, and never train third‑party models on customer data. When features use an external Large Language Model (LLM), Amplitude enforces contractual no‑training controls and supports opt‑outs, while the broader platform remains covered by Amplitude’s [Data Processing Addendum (DPA)](https://amplitude.com/dpa) and independent audits.
 
 ## How Agents use data
 
@@ -25,11 +25,11 @@ Some AI features use third‑party LLM endpoints (for example, OpenAI or AWS Bed
 
 ## Data‑flow overview (high‑level)
 
-Agent interactions start in the Agents UI and route through Amplitude’s GraphQL gateway (“Thunder”) to Langley (Amplitude’s agent orchestration services). Langley invokes Amplitude tools (for example, analytics query endpoints) and, when applicable, calls an LLM endpoint under no‑training and opt‑out controls. Outputs return to the authenticated user and can notify Slack or email per your configuration. For customer‑shareable diagrams, use Amplitude’s Trust Center. 
+Agent interactions start in the Agents UI and route through Amplitude’s internal services. These services invoke Amplitude tools (for example, analytics query endpoints) and, when applicable, calls an LLM endpoint under no‑training and opt‑out controls. Outputs return to the authenticated user and can notify Slack or email per your configuration.
 
 ## Compliance, certifications, and the DPA
 
-Amplitude processes Customer Data as a processor under its Data Processing Addendum (DPA) and supports customer compliance programs with independent audits. Amplitude maintains SOC 2 Type 2, ISO 27001, and ISO 27018 certifications that cover platform services used by Agents. The DPA governs security commitments and international transfer mechanisms.
+Amplitude processes Customer Data as a processor under its DPA and supports customer compliance programs with independent audits. Amplitude maintains SOC 2 Type 2, ISO 27001, and ISO 27018 certifications that cover platform services used by Agents. The DPA governs security commitments and international transfer mechanisms.
 
 ## Data retention and deletion
 
@@ -37,4 +37,4 @@ Customers control data retention during the subscription term and can delete dat
 
 ## Regional processing and data residency (context for AI)
 
-Amplitude supports regional considerations for AI features. Amplitude documents how AI subprocessors handle regional processing and provides opt‑outs for OpenAI‑powered functionality, including for customers with EU residency requirements. For the latest regional processing posture, use the AI compliance overview and Trust Center artifacts.
+Amplitude supports regional considerations for AI features. Amplitude documents how AI subprocessors handle regional processing and provides opt‑outs for OpenAI‑powered functionality, including for customers with EU residency requirements. For more information, review [Amplitude's Security and Privacy](https://amplitude.com/security-and-privacy) page.
