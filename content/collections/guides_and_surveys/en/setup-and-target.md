@@ -25,7 +25,7 @@ Each segment can filter by property or cohort, and can have multiple filters. Fo
 
 You can set both rollout percentage and bucketing unit for your user segments. For example, you can target 10% of a given segment when you first publish a guide and later increase it to 100% after you are confident about the engagement data.
 
-![An image of the targeting window targeting a segment of two cohorts: where the cohort country does not equal the united states and where the cohort of users equals new users in the last 30 days ](statamic://asset::help_center_conversions::guides-surveys/targeting.png)
+![An image of the targeting window targeting a segment of two cohorts: where the cohort country doesn't equal the united states and where the cohort of users equals new users in the last 30 days ](statamic://asset::help_center_conversions::guides-surveys/targeting.png)
 
 {{partial:admonition type="note" heading="Using more than one segment"}}
 When you add more than one segment to your targeting, Amplitude `OR`s each segment. This means that if a user belongs to *any* segment, Amplitude shows them the guide or survey.
