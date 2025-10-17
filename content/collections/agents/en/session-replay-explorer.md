@@ -59,12 +59,14 @@ When the analysis is complete, the agent returns:
 The Session Replay Explorer can operate in two modes:
 
 ### Interactive mode
-You can chat directly with the agent to explore specific questions about your users' behavior. The agent responds to your requests in real-time, allowing you to dive deeper into particular insights or explore different analytical angles as the conversation develops.
+
+Chat directly with the agent to explore specific questions about your users' behavior. The agent responds to your requests in real-time, helping you dive deeper into particular insights or explore different analytical angles as the conversation develops.
 
 ### Scheduled runs
+
 When running on its configured schedule, the agent acts like a product manager exploring your data with fresh eyes. It automatically selects an analytical focus area within your configured funnel or event scope, choosing from different research approaches like friction detection, user journey mapping, or content engagement analysis.
 
-This simulated product manager perspective helps surface insights you might not have thought to investigate, conducting 2-3 rounds of deep-dive analysis to uncover actionable patterns. Each scheduled run explores a different analytical angle, ensuring comprehensive coverage of potential opportunities and issues within your specified scope.
+This simulated product manager perspective helps surface insights you might not have thought to investigate, conducting multiple rounds of deep-dive analysis to uncover actionable patterns. Each scheduled run explores a different analytical angle, ensuring comprehensive coverage of potential opportunities and issues within your specified scope.
 
 ## Limitations
 
