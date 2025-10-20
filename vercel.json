@@ -10,11 +10,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/analytics/amplitude-mcp",
-      "destination": "/docs/mcp",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/partners/create-a-cohort-syncing-integration",
       "destination": "/docs/partners/create-a-cohort-sync-integration",
       "statusCode": 301
