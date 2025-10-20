@@ -1,11 +1,10 @@
 ---
 id: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
 blueprint: agent
-title: "Session Replay Agent"
+title: 'Session Replay Agent'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1754518936
+updated_at: 1760997431
 ---
-
 The Session Replay Agent helps you understand user behavior by combining advanced data science with real user session replays. This enables you to identify friction points, optimize user journeys, and make data-driven product decisions.
 
 {{partial:collapse name="Agent summary"}}

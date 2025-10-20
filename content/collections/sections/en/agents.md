@@ -9,22 +9,22 @@ updated_at: 1760460724
 nav_title: agents
 hide_toc: false
 ---
-Amplitude Agents are goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, they combine your product’s behavioral data with Amplitude’s full suite of products to investigate issues, generate hypotheses, design experiments, recommend actions, and track impact. They’re designed to behave like product analytics specialists that run analyses in the background.
+Amplitude AI Agents are specialized, goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, agents have access to Amplitude analytics, session replay, experiment, surveys, and other data types to surface insights, investigate issues, generate hypotheses, then recommend actions.
 
-## How agents work with Amplitude
+## How Agents work with Amplitude
 
-Amplitude Agents bring together analytics, experimentation, guides, and session replay data from across your account to build a deep understanding of user behavior. The more complete your Amplitude setup is, the more context the agents have to work with.
+Amplitude AI Agents bring together analytics, session replays, experimentation, guides, and survey data from across your account to build a deep understanding of user behavior. The more complete your Amplitude setup is, the more context and action recommendations the Agents have to work with.
 
-Start by defining a goal, like improving trial-to-paid conversion or increasing feature adoption. After you set the goal, the agent continuously scans your data for patterns, identifies friction points, and recommends next steps. It can also carry out actions you approve, like running an experiment or sending targeted guidance to specific user segments.
+The first Amplitude Agents are task-specific agents tuned to solve common problems like monitoring dashboards, bulk analyzing session replays, and optimizing conversion on websites. 
 
-Amplitude built each agent with a specific focus. These specialized agents come preloaded with optimization patterns and best practices, drawing from Amplitude’s experience with thousands of teams. This allows them to deliver tailored strategies for the outcomes you want.
+Select a dashboard or define a goal to get started. Examples of goals are improving trial-to-paid conversion or increasing feature adoption. After you set the context and instructions, the Agent analyzes your data for patterns, identifies issues, and recommends next step opportunities. It can also carry out actions you approve, like running an experiment or sending targeted guidance to specific user segments. 
 
-Use natural language to guide the agent's work, adjust their level of autonomy, and approve their recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI and AWS Bedrock with its own memory and tooling to ensure your agents operate effectively.
+Create and schedule multiple agents to identify and report key takeaways and improvement areas across your product then push insights and actions into places where work, like Slack, Amplitude, and email.
 
-## Get started with Amplitude Agents
+Interacting with Agents is simple. Use natural language to guide their work, set custom instructions and context to improve accuracy and relevance, then review insights and approve recommendations. Behind the scenes, Amplitude manages the orchestration, combining models from OpenAI, Claude (through AWS Bedrock), and Gemini with its own memory and tooling to ensure your Agents operate effectively.
 
-Access Amplitude Agents from the left navigation panel in Amplitude to find a set of agent templates, like [Dashboard Monitoring](/docs/agents/dashboard-agent) and [Session Replay Analysis](/docs/agents/session-replay-agent).
+## Example use cases
 
-### Agent settings
-
-To help agents start with the best context, project administrators can define which event in your taxonomy represents a page view, and which property in that event contains a page's full URL.
+- Automate reporting with the [Dashboard Agent](/docs/agents/dashboard-agent)
+- Discover behavioral insights with the [Session Replay Agent](/docs/agents/session-replay-agent)
+- Explore strategies with the [Website Conversion Agent](/docs/agents/website-conversion-agent)
