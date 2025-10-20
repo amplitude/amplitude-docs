@@ -7,9 +7,10 @@ this_article_will_help_you:
   - 'Learn how to quickly define a new cohort to use in your analyses and charts'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724883932
-
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760633035
+academy_course:
+  - 5679eb5e-37e0-45b2-a18d-d14c6d0bfa7e
 ---
 ## Define the cohort
 

@@ -99,7 +99,7 @@ MySwiftView {
     // Content
 }
 .amplitudeView("MySwiftView", onTrigger: {
-    // Optional code to run with click element action
+    // Optional code to run with tap element action
 }
 
 // UIKit
@@ -160,7 +160,7 @@ val guidesAndSurveys = amplitudeEngagement.list()
 
 ## Show
 
-Display a specific guide or survey. Ignores any targeting rules and limits except for page targeting.
+Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
 ```kotlin
 amplitudeEngagement.show(key = "GUIDE_KEY")
