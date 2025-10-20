@@ -1,15 +1,15 @@
 ---
 id: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
 blueprint: agent
-title: "Session Replay Explorer"
+title: "Session Replay Agent"
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1754518936
 ---
 
-Session Replay Explorer helps you understand user behavior by combining advanced data science with real user session replays. This enables you to identify friction points, optimize user journeys, and make data-driven product decisions.
+The Session Replay Agent helps you understand user behavior by combining advanced data science with real user session replays. This enables you to identify friction points, optimize user journeys, and make data-driven product decisions.
 
 {{partial:collapse name="Agent summary"}}
-As you get started with the Session Replay Explorer agent, keep the following in mind:
+As you get started with the Session Replay Agent, keep the following in mind:
 
 |                 |                                                                                                                             |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ As you get started with the Session Replay Explorer agent, keep the following in
 ## Creating and configuring the agent
 
 1. Click **Create New Agent** on the AI Agents tab.
-2. Click **Session Replay Explorer**.
+2. Click **Session Replay**.
 3. **Agent name**: Enter a descriptive name for the agent.
 4. Select one of the following to provide a scope to the agent to explore each run:
    - **Funnel**: Select an existing funnel to filter available replays to those that contain the events that constitute the funnel.
@@ -56,7 +56,7 @@ When the analysis is complete, the agent returns:
 
 ## How the agent runs
 
-The Session Replay Explorer can operate in two modes:
+The Session Replay can operate in two modes:
 
 ### Interactive mode
 
@@ -70,4 +70,4 @@ This simulated product manager perspective helps surface insights you might not 
 
 ## Limitations
 
-Session Replay Explorer analyzes recorded sessions within your retention window, so coverage depends on available replays. Some pages or elements may be missing or obfuscated, and it never surfaces raw session IDs or internal references. Page HTML and selectors come from sampled sessions, so they may not reflect every variant. The agent identifies patterns and correlations and works with your connected product data. Large data requests can be slow or fail, so it may recommend using smaller samples.
+Session Replay analyzes recorded sessions within your retention window, so coverage depends on available replays. Some pages or elements may be missing or obfuscated, and it never surfaces raw session IDs or internal references. Page HTML and selectors come from sampled sessions, so they may not reflect every variant. The agent identifies patterns and correlations and works with your connected product data. Large data requests can be slow or fail, so it may recommend using smaller samples.

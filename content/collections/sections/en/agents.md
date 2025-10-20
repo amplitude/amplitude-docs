@@ -23,7 +23,7 @@ Use natural language to guide the agent's work, adjust their level of autonomy, 
 
 ## Get started with Amplitude Agents
 
-Access Amplitude Agents from the left navigation panel in Amplitude to find a set of agent templates, like [Dashboard Monitoring](/docs/agents/dashboard-monitoring) and [Session Replay Analysis](/docs/agents/session-replay-explorer).
+Access Amplitude Agents from the left navigation panel in Amplitude to find a set of agent templates, like [Dashboard Monitoring](/docs/agents/dashboard-agent) and [Session Replay Analysis](/docs/agents/session-replay-agent).
 
 ### Agent settings
 
