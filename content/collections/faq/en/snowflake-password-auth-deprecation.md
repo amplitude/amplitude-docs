@@ -4,11 +4,39 @@ description: Frequently asked questions about migrating from password to key pai
 category: Warehouse
 ---
 
-Snowflake is implementing a phased rollout to deprecate single-factor password authentication, starting in May 2026 and completing by October 2026. This is impacting Amplitude's source and destination integrations with Snowflake.
+Snowflake is implementing a phased rollout to deprecate single-factor password authentication, starting in May 2026 and completing by October 2026. This impacts Amplitude's source and destination integrations with Snowflake.
 
 For the complete official timeline and enforcement details, see Snowflake's [Planning for the deprecation of single-factor password sign-ins](https://docs.snowflake.com/en/user-guide/security-mfa-rollout) documentation.
 
 This FAQ addresses common questions about migrating to key pair authentication for your Amplitude integrations.
+
+## Timeline and Support
+
+### When does this change take effect?
+
+Snowflake's deprecation follows a phased approach:
+
+- **September 2025 - January 2026**: Mandatory MFA for all Snowsight users
+- **May 2026 - July 2026**: Strong authentication required for newly created users
+- **August 2026 - October 2026**: Strong authentication required for all existing users
+
+The official Snowflake timeline referenced in the introduction provides complete details about each milestone and enforcement dates.
+
+### What should I do now?
+
+We recommend migrating to key pair authentication as soon as possible to:
+
+- Ensure future compatibility
+- Improve security
+- Avoid any potential service interruptions
+
+### Where can I get help?
+
+If you encounter issues during migration:
+
+- Contact Amplitude support through your usual channels
+- Reference Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth)
+- Check that your account name follows the `ORGNAME-ACCOUNTNAME` format
 
 ## Migration Impact
 
@@ -36,13 +64,13 @@ No. All configurations are preserved:
 
 ### Will my imports stop during migration?
 
-No interruption. In your `Manage Import Setting`, the process is:
+There will be no interruptions. In your `Manage Import Setting`, the process is:
 
 1. Add key pair auth
 2. Verify connection
 3. Remove password
 
-Your imports continue throughout.
+Your imports will continue throughout the migration process.
 
 ## Technical Details
 
@@ -51,7 +79,7 @@ Your imports continue throughout.
 Yes! We recommend:
 
 - Keep same user
-- Just add key pair auth via `Manage Import Setting` in your existing Snowflake integration
+- Add key pair auth via `Manage Import Setting` in your existing Snowflake integration
 - Remove password after verification
 
 ### What happens to my warehouse/database settings?
@@ -118,31 +146,3 @@ To resolve:
 1. Verify the public key is correctly set on the Snowflake user
 2. Confirm you're using the correct account name format
 3. If needed, regenerate the key pair and update the public key in Snowflake
-
-## Timeline and Support
-
-### When does this change take effect?
-
-Snowflake's deprecation follows a phased approach:
-
-- **September 2025 - January 2026**: Mandatory MFA for all Snowsight users
-- **May 2026 - July 2026**: Strong authentication required for newly created users
-- **August 2026 - October 2026**: Strong authentication required for all existing users
-
-The official Snowflake timeline referenced in the introduction provides complete details about each milestone and enforcement dates.
-
-### What should I do now?
-
-We recommend migrating to key pair authentication as soon as possible to:
-
-- Ensure future compatibility
-- Improve security
-- Avoid any potential service interruption
-
-### Where can I get help?
-
-If you encounter issues during migration:
-
-- Contact Amplitude support through your usual channels
-- Reference Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth)
-- Check that your account name follows the `ORGNAME-ACCOUNTNAME` format
