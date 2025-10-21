@@ -1,12 +1,13 @@
 ---
-title: Snowflake Password Authentication Deprecation FAQ
-description: Frequently asked questions about migrating from password to key pair authentication for Snowflake integrations
+id: 13d3177c-d6a1-4f10-aff0-573d251729e9
+blueprint: faq_and_troubleshooting
+title: 'Snowflake Password Authentication Deprecation FAQ'
+description: 'Frequently asked questions about migrating from password to key pair authentication for Snowflake integrations'
 category: Warehouse
 ---
-
 Snowflake is implementing a phased rollout to deprecate single-factor password authentication, starting in May 2026 and completing by October 2026. This is impacting Amplitude's source and destination integrations with Snowflake.
 
-For the complete official timeline and enforcement details, see Snowflake's [Planning for the deprecation of single-factor password sign-ins](https://docs.snowflake.com/en/user-guide/security-mfa-rollout) documentation.
+For the complete official timeline and enforcement details, review Snowflake's [Planning for the deprecation of single-factor password sign-ins](https://docs.snowflake.com/en/user-guide/security-mfa-rollout) documentation.
 
 This FAQ addresses common questions about migrating to key pair authentication for your Amplitude integrations.
 
@@ -14,7 +15,7 @@ This FAQ addresses common questions about migrating to key pair authentication f
 
 ### Will I lose any data during migration?
 
-No. Changing authentication method does not affect:
+No. Changing authentication method doesn't affect:
 
 - Existing imported data
 - Import configurations  
@@ -23,7 +24,7 @@ No. Changing authentication method does not affect:
 
 ### Will there be duplicate data if I migrate?
 
-No. Migration only changes authentication method. The source configuration (tables, queries, etc.) remains identical.
+No. Migration only changes authentication method. The source configuration (for example, tables and queries,) remains identical.
 
 ### Do I need to recreate my import queries?
 
@@ -48,10 +49,10 @@ Your imports continue throughout.
 
 ### Can I use the same Snowflake user?
 
-Yes! We recommend:
+Yes. Amplitude recommends that you:
 
-- Keep same user
-- Just add key pair auth via `Manage Import Setting` in your existing Snowflake integration
+- Keep the same user
+- Add key pair auth through the `Manage Import Setting` in your existing Snowflake integration
 - Remove password after verification
 
 ### What happens to my warehouse/database settings?
@@ -65,7 +66,7 @@ All settings preserved:
 
 ### Can I migrate sources one at a time?
 
-Yes! You can:
+Yes. You can:
 
 - Migrate sources individually
 - Test each migration
@@ -75,7 +76,7 @@ Yes! You can:
 
 ### Should I create new users for key pair auth?
 
-No need. Best practice:
+This isn't necessary. As a best practice:
 
 - Use existing user
 - Add key pair auth
@@ -95,7 +96,7 @@ No need. Best practice:
 
 5. Provide your organization and account names in the format `ORGNAME-ACCOUNTNAME`
 6. Test the connection to verify it works
-7. Once verified, you can remove password authentication
+7. After verification, you can remove password authentication
 
 ### What format should I use for the account name?
 
@@ -133,7 +134,7 @@ The official Snowflake timeline referenced in the introduction provides complete
 
 ### What should I do now?
 
-We recommend migrating to key pair authentication as soon as possible to:
+Amplitude recommends migrating to key pair authentication as soon as possible to:
 
 - Ensure future compatibility
 - Improve security
