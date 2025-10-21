@@ -1,0 +1,83 @@
+{{markdown}}
+### Log Recording
+
+{{partial:admonition type="note" heading="Availability"}}
+{{markdown}}Log recording is available in AmplitudeSessionReplay `0.8.0` and later.{{/markdown}}
+{{/partial:admonition}}
+
+Session Replay supports recording logs in iOS applications. To enable log recording, send log messages through the `recordLog(level:message:date:)` API and configure the limits through `recordLogOptions` parameter while initializing the Session Replay plugin.
+
+```swift
+import AmplitudeSwiftSessionReplayPlugin
+
+let sessionReplayPlugin = AmplitudeSwiftSessionReplayPlugin(recordLogOptions: .init(logCountThreshold: 2000, maxMessageLength: 4000))
+amplitude.add(plugin: sessionReplayPlugin)
+
+sessionReplayPlugin.recordLog(level: .error, message: "This is an error log")
+```
+
+If you have implemented a log system, you can make single-point modifications to integrate log recording functionality. See the following examples for more information.
+
+#### CocoaLumberjack
+
+If you use `CocoaLumberjack`, you can integrate it with a custom logger provider.
+
+```swift
+class AmplitudeLogRecordLogger: DDAbstractLogger {
+
+    private weak var plugin: SessionReplayPlugin?
+
+    init(_ plugin: SessionReplayPlugin) {
+        self.plugin = plugin
+    }
+
+    override func log(message logMessage: DDLogMessage) {
+        let recordLevel: RecordLogLevel
+        switch logMessage.flag {
+        case .error:
+            recordLevel = .error
+        case .warning:
+            recordLevel = .warn
+        case .info:
+            recordLevel = .log
+        default:
+            return
+        }
+        plugin?.recordLog(level: recordLevel,
+                          message: logMessage.message,
+                          date: logMessage.timestamp)
+    }
+}
+
+let sessionReplayPlugin = AmplitudeSwiftSessionReplayPlugin()
+amplitude.add(plugin: sessionReplayPlugin)
+
+DDLog.add(AmplitudeLogRecordLogger(sessionReplayPlugin))
+
+```
+
+#### React Native
+
+If you use `console` log or `react-native-logs` with `consoleTransport`, you can integrate it with `RCTAddLogFunction`.
+```swift
+RCTAddLogFunction { level, source, fileName, lineNumber, message in
+  let recordLevel: RecordLogLevel
+  switch level {
+  case .error:
+    recordLevel = .error
+  case .warning:
+    recordLevel = .warn
+  case .info:
+    recordLevel = .log
+  case .fatal:
+    recordLevel = .error
+  case .trace:
+    recordLevel = .init("trace")
+  default:
+    return
+  }
+  self.sessionReplayPlugin.recordLog(level: recordLevel, message: message)
+}
+```
+
+{{/markdown}}

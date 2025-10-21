@@ -24,7 +24,7 @@ Before setting up a web experiment, you must [implement](/docs/web-experiment/im
 
 Be aware that creating and running a web experiment is different than in [Feature Experiment](/docs/workflow/configure), though there is some overlap.
 
-## Seting up a web experiment
+## Setting up a web experiment
 
 ##### To set up a web experiment
 
@@ -32,7 +32,7 @@ Be aware that creating and running a web experiment is different than in [Featur
 2. In the New Experiment modal, name your experiment. 
 3. Enter the URL of a page this experiment targets and select the appropriate project from the drop-down. This URL is used to create your first [Page](/docs/web-experiment/pages). Web Experiment must be instrumented on this URL for the experiment to work.
 
-If the script is present on the page you specified, Amplitude Experiment opens the page in the [Visual Editor](#the-visual-editor) as a new variant in your experiment.
+    If the script is present on the page you specified, Amplitude Experiment opens the page in the [Visual Editor](#the-visual-editor) as a new variant in your experiment.
 
     You have two options for the treatment variant action: [element changes](/docs/web-experiment/actions#element-changes) or [URL redirect](/docs/web-experiment/actions#url-redirect).
 

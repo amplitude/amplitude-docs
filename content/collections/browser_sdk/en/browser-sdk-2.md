@@ -780,10 +780,10 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
 | `methods` | The HTTP methods to capture. e.g.: `["POST", "PUT", "DELETE"]` | `['*']` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
-| `requestBody` | **Experimental.** Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
-| `responseBody` | **Experimental.** Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
-| `requestHeaders` | **Experimental.** Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
-| `responseHeaders` | **Experimental.** Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `requestBody` | Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
+| `requestHeaders` | Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
 
 {{/partial:collapse}}
 

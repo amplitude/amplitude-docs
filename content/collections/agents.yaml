@@ -5,7 +5,7 @@ propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/docs/agents/{slug}'
+route: '/agents/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
