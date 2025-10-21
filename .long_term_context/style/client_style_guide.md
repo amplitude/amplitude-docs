@@ -31,3 +31,11 @@ Use admonitions to highlight important information:
 - `{{partial:admonition type="warning" title="Descriptive title"}}` for limitations, restrictions, or important caveats
 - `{{partial:admonition type="note" title="Descriptive title"}}` for helpful information or clarifications  
 - `{{partial:admonition type="info" title="Descriptive title"}}` for general information or context
+
+### Linking to Source Code
+When documenting constants, default values, or long lists that are defined in source code:
+- **Prefer linking to the source code** over duplicating long lists inline
+- This keeps documentation concise and ensures accuracy as values stay up-to-date with the codebase
+- **Bad**: Listing out 40+ default header names inline: `access-control-allow-origin, access-control-allow-credentials, access-control-expose-headers...` (repeating entire list)
+- **Good**: "For the complete list of default safe headers, see [the source code](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108)."
+- Use inline duplication only for short lists (3-5 items) where quick reference is more valuable than a link
