@@ -126,7 +126,7 @@ Limits ensure you don't bombard users with your messaging.
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Stop showing when completed | After the user completes the experience, the guide or survey is no longer visible. again.                                                                                                                  |
 | Stop showing when dismissed | After the user dismisses the experience, they won’t receive it again. This option requires `Stop showing when completed`.                                                              |
-| Cooldown                    | When enabled, specify the maximum number of times a user can receive the experience in the specified time range. This option requires that `Stop showing when dismissed` is disabled. |
+| Cooldown                    | When enabled, limits how often the experience can trigger for a user. Cooldowns are irrelevant (ignored) when (a) the experience is [active](/docs/guides-and-surveys/guides/setup-and-target#active-state) or (b) force-triggered via SDK, button action, or share link. This option requires that `Stop showing when dismissed` is disabled. |
 
 ## Localization
 
