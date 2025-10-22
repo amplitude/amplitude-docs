@@ -21,7 +21,7 @@ Not every message is for every user. Targeting enables you to define exactly whi
 
 **Targeted Users** enables you to create segments of users to whom Amplitude serves your guide or survey.
 
-Each segment can filter by property or cohort, and can have multiple filters. For example, target your guide or survey to users from outside the United States, who are new users within the last 30 days.
+Each segment can filter by property or cohort, and can have multiple filters. For example, target your guide or survey to users from outside the United States and who are new users within the last 30 days.
 
 You can set both rollout percentage and bucketing unit for your user segments. For example, you can target 10% of a given segment when you first publish a guide and later increase it to 100% after you are confident about the engagement data.
 
