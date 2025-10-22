@@ -12,13 +12,13 @@ updated_at: 1750443681
 - SDK breaking change: Require calling `shutdown()` before calling `boot()` with a new user ID \[android, ios, rn\]
 
 ### ✨ Features
-- Feat: custom font support (GSDK-578, GSDK-620) \[android, ios\]
+- Feat: custom font support (GSDK-578, GSDK-620) [android, ios\]
 - Feat: Analytics plugin tracks changes to user ID (#355) \[android\]
 - Feat: support links and italics in Guide titles (GSDK-600) \[android,ios\]
 
 ### 🐛 Fixes
 - Fix: multiple crashes involving QuickJS (GSDK-640, GSDK-625) \[ios\]
-- Fix: crash when rendering Guides in Android apps with multiple Activity or "plain" Activity (e.g. not AppCompatActivity, etc) (GSDK-589) \[android\]
+- Fix: crash when rendering Guides in Android apps with multiple Activity or "plain" Activity (for example, not `AppCompatActivity`) (GSDK-589) \[android\]
 - Fix: crash on preview when using Debugger (#337) \[ios\]
 - Fix: "arrow" for tooltip Guide not hiding when tooltip is closed (GSDK-609) \[ios\]
 - Fix: carousel Guide is correct size on large (tablet) screens (GSDK-616) \[ios\]
