@@ -6,15 +6,14 @@ landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1758643314
-hide_from_search: true
 ---
 
 The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
 ## Remote server
 
-{{partial:admonition type="info" heading="Beta notice"}}
-The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve and currently operates under fair use limits.
+{{partial:admonition type="beta" heading="Beta notice"}}
+The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve and might be subject to rate limits. 
 {{/partial:admonition}}
 
 ### Who can use this feature
@@ -64,13 +63,18 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, Gemini CLI"}}
+{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, ChatGPT, Gemini CLI, Other MCP Clients"}}
 {{partial:tab name="Claude (web and desktop)"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
 2. Go to *Settings > Connectors > Add custom connector*.  
 3. Configure the integration:  
    * **Name:** Amplitude  
-   * **URL:** `https://mcp.amplitude.com/mcp` (or use the EU URL from the [Regions](#regions) table if your data resides in the EU.)
+   * **URL:** `https://mcp.amplitude.com/mcp` 
+
+  {{partial:admonition type="note"}}
+  EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+  {{/partial:admonition}}
+  
 4. Complete Amplitude OAuth authorization when prompted.  
 5. Start asking questions about your Amplitude data.
 {{/partial:tab}}
@@ -82,6 +86,10 @@ Complete the steps below, depending on the tool you're integrating with.
        ```shell
        claude mcp add -t http -s user Amplitude "https://mcp.amplitude.com/mcp"
        ```
+
+      {{partial:admonition type="note"}}
+      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+      {{/partial:admonition}}
 
    2. Start Claude Code:
 
@@ -103,11 +111,10 @@ Complete the steps below, depending on the tool you're integrating with.
 **Quick Install (Recommended):**
 
 **US Server (Default):**
-[Install Amplitude MCP Server deep link (US)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
+[Install Amplitude MCP Server deep link (US)](cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
 **EU Server:**
-[Install Amplitude MCP Server deep link (EU)](@cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
-
+[Install Amplitude MCP Server deep link (EU)](cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
 **Manual Setup:**
 
@@ -135,6 +142,28 @@ Complete the steps below, depending on the tool you're integrating with.
    4. Return to Tools & Integration tab and authenticate with Amplitude.
   
 {{/partial:tab}}
+{{partial:tab name="ChatGPT"}}
+
+**Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
+
+{{partial:admonition type="note"}}
+MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations.
+{{/partial:admonition}}
+
+   1. Enable ChatGPT developer mode (if not already enabled).
+   
+   2. Add a new MCP connector with the following configuration:
+      * **Name:** Amplitude
+      * **URL:** `https://mcp.amplitude.com/mcp`
+
+      {{partial:admonition type="note"}}
+      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+      {{/partial:admonition}}
+
+   3. Complete Amplitude OAuth auth flow when prompted.
+   
+
+{{/partial:tab}}
 {{partial:tab name="Gemini CLI"}}
    1. Ensure you're authenticated with Gemini.  
    2. Add this to your `~/.gemini/settings.json`:
@@ -159,6 +188,24 @@ Complete the steps below, depending on the tool you're integrating with.
       ```shell
       gemini/mcp auth amplitude
       ```
+{{/partial:tab}}
+{{partial:tab name="Other MCP Clients"}}
+
+**Using with other supported MCP Clients**
+
+For MCP-compatible clients:
+
+1. Configure your client to connect to `https://mcp.amplitude.com/mcp`.
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+2. Ensure your client supports OAuth authentication.
+3. Set up the connection according to your client's documentation.
+4. Authenticate with your Amplitude account when prompted.
+5. Select which Amplitude tools to enable based on your needs.
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -228,6 +275,20 @@ Example conversation flow:
 The AI service you're using (for example, Claude or Gemini) processes your Amplitude data. Review your organization's policies regarding AI-powered data analysis tools and consider compliance requirements (General Data Protection Regulation, California Consumer Privacy Act).
 
 Third parties (for example, Anthropic) develop and maintain the AI models used with this MCP server. Amplitude isn't responsible for model outputs, including hallucinations, inaccuracies, or errors resulting from model behavior, even if such outputs use your Amplitude data.
+
+
+### Admin controls
+
+Organization administrators can control MCP server access through Amplitude settings:
+
+1. Navigate to **Settings > Manage Content > MCP** in your Amplitude organization settings.
+2. Use the content access controls to allow or block the Amplitude MCP server.
+3. This setting applies to all MCP clients across all users in your organization.
+4. By default, Amplitude allows MCP server access to all users in your organization.
+
+{{partial:admonition type="note"}}
+MCP access controls are an admin-only setting. Individual users can't override organization-level MCP restrictions.
+{{/partial:admonition}}
 
 ## Troubleshooting
 
