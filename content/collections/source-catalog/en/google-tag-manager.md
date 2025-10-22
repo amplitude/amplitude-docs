@@ -144,6 +144,40 @@ Check this box to enable form interactions tracking. For more information, see [
 ###### File downloads tracking
 
 Check this box to enable file downloads tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#track-file-downloads).
+
+###### Network tracking
+
+Check this box to enable network tracking. Network tracking captures network request events invoked by XHR and Fetch. For more information, see [Browser SDK 2 | Track network requests](/docs/sdks/analytics/browser/browser-sdk-2#track-network-requests).
+
+{{partial:collapse name="Advanced configuration"}}
+
+Define rules to control which requests are captured and what data is included.
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `Ignore Amplitude Requests` | Whether to ignore network requests to Amplitude domains. | `true` |
+| `Ignore Hosts` | Comma-separated list of hosts to ignore. Supports wildcard `*`. For example, `*` to ignore all hosts, or `*.example.com,example.com` to ignore `example.com` and all subdomains. | `[]` |
+
+**Network Capture Rules**
+
+Define specific rules for capturing network request details. Each rule can specify which requests to capture and what data to include.
+
+| Field | Description | Example |
+| --- | --- | --- |
+| `URLs` | Comma-separated list of URLs to capture. Leave empty to capture all URLs. | `https://api.example.com,https://api2.example.com` |
+| `URLs Regex` | Comma-separated list of URL regex patterns to capture. | `.*\.api\..*` |
+| `Methods` | Comma-separated list of HTTP methods to capture. Use `*` for all methods. | `GET,POST,PUT` or `*` |
+| `Status Code Range` | Status code range to capture. Supports comma-separated ranges or single codes. | `0,200-299,413,500-599` |
+| `Response Headers` | Comma-separated list of response headers to capture. | `Content-Type,Set-Cookie` |
+| `Response Body` | Capture parts of the response body using JSON pointers. Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,message,data/info/**` |
+| `Request Headers` | Comma-separated list of request headers to capture. | `Content-Type,Accept-Encoding` |
+| `Request Body` | Capture parts of the request body using JSON pointers. Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,data/info/**` |
+
+{{partial:admonition type="note" title="Default safe headers"}}
+Both `Response Headers` and `Request Headers` default to capturing safe headers that exclude sensitive authentication credentials and personally identifiable information. For the complete list of default safe headers, see [the source code](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108).
+{{/partial:admonition}}
+
+{{/partial:collapse}}
     
 
 #### EU data residency
