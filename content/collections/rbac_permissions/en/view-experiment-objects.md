@@ -8,5 +8,10 @@ description: 'View feature flags, experiments, and related configuration'
 actions:
   - 'view all experiment-specific objects'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819125
+updated_at: 1761239419
+default_permissions:
+  - admin
+  - manager
+  - member
+  - viewer
 ---
