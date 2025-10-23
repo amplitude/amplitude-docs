@@ -6,7 +6,7 @@ title: 'Amplitude Agents'
 author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1761241369
+updated_at: 1761253789
 nav_title: agents
 hide_toc: false
 ---

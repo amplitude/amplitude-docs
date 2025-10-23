@@ -32,6 +32,6 @@ landing_page_content:
     enabled: true
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1761253645
-template: landing-page-experiment
+updated_at: 1761254128
+template: default
 ---
