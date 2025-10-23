@@ -165,3 +165,9 @@ Select the animation that each widget type uses to appear on screen, along with 
 Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
+
+## Advanced customization with Custom CSS
+
+[Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
+
+Amplitude recommends using themes for most styling. Use Custom CSS when themes don't provide the control you need.
