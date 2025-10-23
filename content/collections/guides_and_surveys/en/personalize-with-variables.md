@@ -21,7 +21,7 @@ The Personalize with variables feature (also called interpolation) lets you cust
 You can use user property variables in CTA links to personalize URLs. For example, you could create a link like:
 
 ```
-www.example.com/path?user_id={{property.user_id}}&country={{property.country}}
+www.example.com/path?user_id=@{{property.user_id}}&country=@{{property.country}}
 ```
 
 When a user clicks on the CTA link, the user property variables are replaced with actual values:
@@ -35,7 +35,7 @@ You could create a user property to display the user's first name such as `first
 
 ## Providing fallback values
 
-Sometimes a user property isn't available for all users or all times. In that case, you can use fallback values as a safe default. For example, if you wanted to say "Hey there" instead of "Hey {firstName}" in case a user hasn't provided their name, you could use a fallback value like "Hey {{property.firstName | there}}".
+Sometimes a user property isn't available for all users or all times. In that case, you can use fallback values as a safe default. For example, if you wanted to say "Hey there" instead of "Hey {firstName}" in case a user hasn't provided their name, you could use a fallback value like `{{property.firstName | there}}`.
 
 ![A guide modal built to include the user property property.fistName](statamic://asset::help_center_conversions::guides-surveys/personalize-with-variables.jpeg)
 
