@@ -45,7 +45,7 @@ Luminal Analytics supercharges your Amplitude analytics by addressing critical d
 
 ## Setup
 
-This guide is complementary to Luminal Analytics' instructions. For detailed technical specifications including complete lists of Events and Properties that Luminal captures and sends to Amplitude, visit the [Luminal Analytics documentation](https://luminalanalytics.com/documentation).
+This guide is complementary to Luminal Analytics' instructions. For detailed technical specifications including complete lists of Events and Properties that Luminal captures and sends to Amplitude, visit the [Luminal Analytics documentation](https://www.luminalanalytics.com/docs/amplitude/amplitude-plugin).
 
 1. Copy your project's API key from Amplitude
 2. Get your company key from Luminal (your account team can help with this).
