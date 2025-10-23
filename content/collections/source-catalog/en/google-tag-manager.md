@@ -151,7 +151,7 @@ Check this box to enable network tracking. Network tracking captures network req
 
 {{partial:collapse name="Advanced configuration"}}
 
-Define rules to control which requests are captured and what data is included.
+Define rules to control which network requests to capture and what data is included.
 
 | Name | Description | Default Value |
 | --- | --- | --- |
@@ -167,15 +167,11 @@ Define specific rules for capturing network request details. Each rule can speci
 | `URLs` | Comma-separated list of URLs to capture. Leave empty to capture all URLs. | `https://api.example.com,https://api2.example.com` |
 | `URLs Regex` | Comma-separated list of URL regex patterns to capture. | `.*\.api\..*` |
 | `Methods` | Comma-separated list of HTTP methods to capture. Use `*` for all methods. | `GET,POST,PUT` or `*` |
-| `Status Code Range` | Status code range to capture. Supports comma-separated ranges or single codes. | `0,200-299,413,500-599` |
-| `Response Headers` | Comma-separated list of response headers to capture. | `Content-Type,Set-Cookie` |
-| `Response Body` | Capture parts of the response body using JSON pointers. Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,message,data/info/**` |
-| `Request Headers` | Comma-separated list of request headers to capture. | `Content-Type,Accept-Encoding` |
-| `Request Body` | Capture parts of the request body using JSON pointers. Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,data/info/**` |
-
-{{partial:admonition type="note" title="Default safe headers"}}
-Both `Response Headers` and `Request Headers` default to capturing safe headers that exclude sensitive authentication credentials and personally identifiable information. For the complete list of default safe headers, see [the source code](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108).
-{{/partial:admonition}}
+| `Status Code Range` | Status code range to capture. Supports comma-separated ranges or single codes. | `0,413,500-599` |
+| `Response Headers` | Comma-separated list of response headers to capture. Captures [safe headers](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108) by default. | `Content-Type,Content-Length` |
+| `Response Body` | Capture parts of the response body using [JSON pointers](https://datatracker.ietf.org/doc/html/rfc6901). Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,message,data/info/**` |
+| `Request Headers` | Comma-separated list of request headers to capture. Captures [safe headers](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108) by default. | `Content-Type,Accept-Encoding` |
+| `Request Body` | Capture parts of the request body using [JSON pointers](https://datatracker.ietf.org/doc/html/rfc6901). Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,data/info/**` |
 
 {{/partial:collapse}}
     
