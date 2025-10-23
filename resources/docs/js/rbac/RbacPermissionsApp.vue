@@ -17,8 +17,8 @@
       </div>
     </div>
 
-    <!-- Sticky Search and Filters -->
-    <div class="sticky top-24 z-20">
+    <!-- Search and Filters -->
+    <div>
       <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 w-full">
         <div class="flex-1">
           <SearchBar 
@@ -173,48 +173,3 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
-/* Ensure the app container allows for sticky positioning */
-.rbac-permissions-app {
-  position: relative;
-  height: auto;
-  overflow: visible;
-}
-
-.sticky-filters-container {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background-color: white;
-  border-bottom: 1px solid #E6E6EB;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure the table container allows for sticky positioning */
-:deep(.permissions-table-container) {
-  position: relative;
-  overflow: visible;
-}
-
-/* Make table headers sticky below the filters */
-:deep(.permissions-table thead) {
-  position: sticky;
-  top: 97px;
-  z-index: 10;
-  background-color: #F6F6F9;
-}
-
-/* Make product area headers sticky below table headers */
-:deep(.product-area-header) {
-  z-index: 5;
-  background-color: #F6F6F9;
-}
-
-/* Ensure parent containers don't interfere with sticky positioning */
-:deep(#rbac-permissions-container) {
-  position: relative;
-  overflow: visible;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="permissions-table-container bg-white border border-[#E6E6EB] mt-4 rounded-lg overflow-hidden shadow-sm">
+  <div class="permissions-table-container bg-white border border-[#E6E6EB] mt-4 rounded-lg shadow-sm overflow-clip">
     <table class="min-w-full divide-y divide-[#E6E6EB] mt-0">
       <thead class="bg-[#F6F6F9]">
         <tr>
@@ -47,9 +47,11 @@
             >
               <!-- Permission Name & Badge -->
               <td class="px-6 py-5 align-top">
-                <div class="flex items-start space-x-3">
+                <div class="flex flex-col gap-2">
                   <div class="font-medium text-[#1C1C1E] text-sm font-IBMPlex leading-relaxed">{{ permission.title }}</div>
-                  <TypeBadge :advanced="permission.advanced" />
+                  <div>
+                    <TypeBadge :advanced="permission.advanced" />
+                  </div>
                 </div>
               </td>
               
@@ -280,3 +282,11 @@ const groupedPermissions = computed(() => {
     }))
 })
 </script>
+
+<style scoped>
+/* Ensure IBM Plex Sans is used throughout the entire table */
+.permissions-table-container,
+.permissions-table-container * {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+</style>
