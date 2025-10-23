@@ -16,9 +16,13 @@ description: 'Use the Page URL Enrichment plugin to automatically add page URL-r
 ---
 The Page URL Enrichment plugin automatically adds page URL-related properties to all events tracked by the Browser SDK. This plugin enhances your event data with contextual information about the current page and previous page navigation. This lets you better understand user journeys and page transitions.
 
+{{partial:admonition type="note" title="Enabled by default"}}
+Starting with Browser SDK version 2.x, this plugin is enabled by default with autocapture. Only install it manually if you want custom configuration or have disabled autocapture entirely.
+{{/partial:admonition}}
+
 When using the plugin, remember:
 
-- The plugin automatically starts tracking page changes when added to the SDK.
+- The plugin automatically starts tracking page changes when enabled.
 - Session storage maintains state, so previous page information persists across page refreshes within the same session.
 - The plugin works with both traditional multi-page applications and single-page applications.
 - If session storage isn't available, the plugin still functions but previous page tracking may have limitations.
@@ -37,7 +41,29 @@ yarn add @amplitude/plugin-page-url-enrichment-browser
 
 ## Usage
 
+{{partial:admonition type="info" title="Enabled by default with autocapture"}}
+This plugin is automatically enabled when you use autocapture with Browser SDK version 2.x. The manual installation steps below are only needed if you want custom configuration or have disabled autocapture entirely.
+{{/partial:admonition}}
+
 This plugin works on top of Amplitude Browser SDK and adds page URL enrichment properties to all events. To use this plugin, you must be using `@amplitude/analytics-browser` version `v2.0.0` or later.
+
+### Disable page URL enrichment
+
+If you want to disable the automatic page URL enrichment, set `autocapture.pageUrlEnrichment` to `false`:
+
+```typescript
+import * as amplitude from '@amplitude/analytics-browser';
+
+amplitude.init('YOUR_API_KEY', {
+  autocapture: {
+    pageUrlEnrichment: false,
+  },
+});
+```
+
+### Manual plugin installation
+
+If you need custom configuration or have disabled autocapture entirely, you can install the plugin manually:
 
 ### 1. Import Amplitude packages
 
