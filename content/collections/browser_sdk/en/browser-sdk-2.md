@@ -229,6 +229,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - Form interactions
 - File downloads
 - Element interactions
+- Page URL enrichment
 - Network tracking
 
 
@@ -242,6 +243,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
 | `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
+| `config.autocapture.pageUrlEnrichment` | Optional. `boolean` | Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information.                                                                                                                      |
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
@@ -264,6 +266,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
     formInteractions: false,
     fileDownloads: false,
     elementInteractions: false,
+    pageUrlEnrichment: false,
   },
 });
 
@@ -1333,7 +1336,19 @@ Amplitude provides several official plugins to extend the Browser SDK functional
 
 #### Page URL enrichment plugin
 
-The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) automatically adds page URL-related properties to all events. Properties such as: current page information, previous page location, and page type classification.
+The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) is enabled by default with autocapture. It automatically adds page URL-related properties to all events, including current page information, previous page location, and page type classification.
+
+To disable page URL enrichment, set `autocapture.pageUrlEnrichment` to `false`:
+
+```ts
+amplitude.init(API_KEY, {
+  autocapture: {
+    pageUrlEnrichment: false,
+  },
+});
+```
+
+For custom configuration or if you disabled autocapture entirely, you can still add the plugin manually:
 
 ```ts
 import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
