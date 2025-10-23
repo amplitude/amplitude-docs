@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102912
 ---
-Before you run a experiment, set a Minimum Detectable Effect (MDE) to estimate how you'll measure success. Think of MDE as the minimum change you're hoping to find by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%. However, as the MDE is directly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/feature-experiment/workflow/define-goals). Considerations for setting the MDE should include the recommendation metric and any associated risks.
+Before you run a experiment, set a Minimum Detectable Effect (MDE) to estimate how you'll measure success. Think of MDE as the minimum change you're hoping to find by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%. However, as the MDE is directly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/feature-experiment/workflow/define-goals). Considerations for setting the MDE should include the primary metric and any associated risks.
 
 ## MDE and the experiment type
 
@@ -31,11 +31,11 @@ The second update is needed to meet financial requirements. As a non-negotiable 
 If running a [T-test](/docs/feature-experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE. Give yourself one month to run the experiment to get the estimated MDE.
 {{/partial:admonition}}
 
-## MDE and the recommendation metric
+## MDE and the primary metric
 
-In Amplitude, the MDE is relative to the control mean of the recommendation metric. For example, if the conversion rate for the control group is 10%, an MDE of 2% (0.2) would mean that a change would be detected if the rate moved outside of the range 9.8% to 10.2%. 
+In Amplitude, the MDE is relative to the control mean of the primary metric. For example, if the conversion rate for the control group is 10%, an MDE of 2% (0.2) would mean that a change would be detected if the rate moved outside of the range 9.8% to 10.2%. 
 
-Refer to the case study from the previous section. Consider how the recommendation metric of ticket sales may require a change in the MDE if:
+Refer to the case study from the previous section. Consider how the primary metric of ticket sales may require a change in the MDE if:
 
 * The hypothesis testing experiment runs during an annual discount on ticket prices.
 * The number of varying event tickets, which is positively correlated to ticket sales, is significantly smaller than previous fiscal quarters.
