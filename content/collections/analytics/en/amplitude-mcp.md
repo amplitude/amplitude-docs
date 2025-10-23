@@ -147,7 +147,7 @@ Complete the steps below, depending on the tool you're integrating with.
 **Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
 
 {{partial:admonition type="note"}}
-MCP support in ChatGPT is currently only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
+MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
 {{/partial:admonition}}
 
    1. Enable ChatGPT developer mode (if not already enabled).
