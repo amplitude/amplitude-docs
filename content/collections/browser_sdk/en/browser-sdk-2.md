@@ -147,7 +147,8 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default. |
 | `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
-| `fetchRemoteConfig`        | `boolean`. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                                                                                        | `true`                                 |
+| `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
+| `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
 
 {{/partial:collapse}}
 
@@ -1671,3 +1672,21 @@ Remote configuration supports Autocapture settings, and overrides settings you c
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
+
+#### Proxy remote config requests
+
+To proxy remote configuration requests through your own server (for example, to bypass ad blockers), configure the `remoteConfig` option:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  remoteConfig: {
+    serverUrl: 'https://your-proxy.example.com/config'
+  }
+});
+```
+
+When `remoteConfig.serverUrl` is set, the SDK sends remote configuration requests to your custom URL instead of Amplitude's endpoints. Analytics events still use `serverUrl` or the default Amplitude endpoints.
+
+{{partial:admonition type="note" heading=""}}
+The top-level `fetchRemoteConfig` option is deprecated. Use `remoteConfig.fetchRemoteConfig` instead for new implementations.
+{{/partial:admonition}}
