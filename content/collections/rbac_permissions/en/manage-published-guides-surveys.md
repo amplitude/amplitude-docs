@@ -13,5 +13,8 @@ actions:
   - 'update published guide/survey experiment'
   - 'archive published guide/survey experiment'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758820514
+updated_at: 1761239459
+default_permissions:
+  - admin
+  - manager
 ---

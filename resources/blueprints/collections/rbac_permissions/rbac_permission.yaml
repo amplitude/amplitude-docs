@@ -72,6 +72,27 @@ tabs:
               type: list
               display: Actions
               localizable: false
+          -
+            handle: default_permissions
+            field:
+              options:
+                -
+                  key: admin
+                  value: Admin
+                -
+                  key: manager
+                  value: Manager
+                -
+                  key: member
+                  value: Member
+                -
+                  key: viewer
+                  value: Viewer
+              inline: true
+              type: checkboxes
+              display: 'Default Permissions'
+              instructions: 'Select the roles to which this permission applies by default.'
+              localizable: false
   sidebar:
     display: Sidebar
     sections:

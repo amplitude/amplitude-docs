@@ -17,5 +17,8 @@ actions:
   - 'update DWH destination'
   - 'delete DWH destination'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819508
+updated_at: 1761239306
+default_permissions:
+  - admin
+  - manager
 ---

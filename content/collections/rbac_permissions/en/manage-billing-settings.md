@@ -7,6 +7,11 @@ description: 'Allows users to update billing methods for the organization.'
 actions:
   - 'update billing method'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758818846
+updated_at: 1761239076
 advanced: true
+default_permissions:
+  - admin
+  - manager
+  - member
+  - viewer
 ---

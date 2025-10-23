@@ -9,5 +9,8 @@ actions:
   - 'set official dashboards'
   - 'set official metrics'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758818863
+updated_at: 1761239160
+default_permissions:
+  - admin
+  - manager
 ---

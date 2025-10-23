@@ -19,15 +19,19 @@
 
     <!-- Sticky Search and Filters -->
     <div class="sticky top-24 z-20">
-      <div class="flex flex-col lg:flex-row gap-6">
-        <SearchBar 
-          v-model:query="searchQuery"
-          @clear="clearSearch"
-          placeholder="Search permissions..."
-        />
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 w-full">
+        <div class="flex-1">
+          <SearchBar 
+            v-model:query="searchQuery"
+            @clear="clearSearch"
+            placeholder="Search permissions..."
+          />
+        </div>
         <FilterPanel 
           v-model:filters="filters"
           :available-product-areas="availableProductAreas"
+          :is-expanded="isAllExpanded"
+          @toggle-expand-collapse="toggleExpandCollapse"
         />
       </div>
     </div>
@@ -38,6 +42,7 @@
     <!-- Permissions Table -->
     <div v-else-if="!isLoading && filteredPermissions.length > 0" class="overflow-x-auto">
       <PermissionsTable
+        ref="permissionsTableRef"
         :permissions="filteredPermissions"
         :sort-field="sortField"
         :sort-direction="sortDirection"
@@ -95,6 +100,8 @@ const props = defineProps({
 })
 
 // State
+const permissionsTableRef = ref(null)
+const isAllExpanded = ref(false) // Default state is collapsed (Expand button shown)
 
 // Composables
 const { data, isLoading, error, loadData } = useDataLoader(props.dataUrl, 'permissions')
@@ -130,6 +137,20 @@ const filteredPermissions = computed(() => {
 const clearSearch = () => {
   searchQuery.value = ''
   clearSearchResults()
+}
+
+const toggleExpandCollapse = () => {
+  if (permissionsTableRef.value) {
+    if (isAllExpanded.value) {
+      // Currently expanded, so collapse
+      permissionsTableRef.value.collapseAll()
+      isAllExpanded.value = false
+    } else {
+      // Currently collapsed, so expand
+      permissionsTableRef.value.expandAll()
+      isAllExpanded.value = true
+    }
+  }
 }
 
 

@@ -15,5 +15,8 @@ actions:
   - 'create API tokens'
   - 'manage autocapture settings'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819247
+updated_at: 1761239210
+default_permissions:
+  - admin
+  - manager
 ---

@@ -10,5 +10,8 @@ actions:
   - 'update prediction'
   - 'delete prediction'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819456
+updated_at: 1761239258
+default_permissions:
+  - admin
+  - manager
 ---

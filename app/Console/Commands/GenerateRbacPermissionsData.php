@@ -46,6 +46,7 @@ class GenerateRbacPermissionsData extends Command
                     'product_area' => $entry->get('product_area'),
                     'advanced' => $entry->get('advanced', false),
                     'actions' => $entry->get('actions', []),
+                    'default_permissions' => $entry->get('default_permissions', []),
                     'slug' => $entry->slug(),
                 ];
             })->values();

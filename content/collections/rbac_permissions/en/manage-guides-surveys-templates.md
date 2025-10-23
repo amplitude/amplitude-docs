@@ -10,5 +10,8 @@ actions:
   - 'update guide/survey template'
   - 'archive guide/survey template'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758820632
+updated_at: 1761239453
+default_permissions:
+  - admin
+  - manager
 ---
