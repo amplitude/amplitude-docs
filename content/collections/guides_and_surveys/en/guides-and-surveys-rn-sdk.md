@@ -113,3 +113,6 @@ export default function App() {
   }, []);
 }
 ```
+
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
