@@ -18,24 +18,7 @@ export function useDataLoader(dataUrl, entityType = 'items') {
       
       data.value = await response.json()
       
-      // Log appropriate count based on data structure
-      let count = 0
-      if (data.value.permissions_count) {
-        count = data.value.permissions_count
-      } else if (data.value.events_count) {
-        count = data.value.events_count
-      } else if (data.value.count) {
-        count = data.value.count
-      } else if (data.value.permissions) {
-        count = data.value.permissions.length
-      } else if (data.value.events) {
-        count = data.value.events.length
-      }
-      
-      console.log(`Loaded ${count} ${entityType}`)
-      
     } catch (err) {
-      console.error(`Failed to load ${entityType} data:`, err)
       error.value = err
     } finally {
       isLoading.value = false

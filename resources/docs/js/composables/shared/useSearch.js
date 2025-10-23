@@ -89,7 +89,6 @@ export function useSearch(searchType = 'generic') {
       .sort((a, b) => b.score - a.score)
       .slice(0, 50) // Limit results
 
-    console.log(`Event search for "${query}" returned ${results.length} results`)
     return results
   }
 
@@ -174,7 +173,6 @@ export function useSearch(searchType = 'generic') {
       return a.title?.localeCompare(b.title) || 0
     })
 
-    console.log(`Generic search for "${query}" returned ${results.length} results`)
     return results.slice(0, 50) // Limit results
   }
 
