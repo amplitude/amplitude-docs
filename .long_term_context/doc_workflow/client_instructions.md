@@ -57,3 +57,22 @@ When documenting new SDK features that require configuration, ensure comprehensi
 - Any other relevant SDK implementation guides
 
 Always ask: "What implementation guides would users be following who need this configuration information?"
+## Verifying PR Code Changes
+
+When documenting features from GitHub PRs, always verify the actual code implementation:
+
+**Check the code diff, not just the description**: PR descriptions and summaries can become outdated if the implementation changes during code review. Always examine the actual code changes to see what was implemented.
+
+**Review PR comments for implementation changes**: PR comments may reveal that the API design changed after initial submission. Look for comments from reviewers that indicate structural changes (e.g., "I changed this to use a nested object instead").
+
+**For configuration APIs, verify the exact structure**: Configuration option names, nesting, and structure matter. Check:
+- Interface/type definitions to see the exact property names
+- Test files for usage examples
+- Constructor/initialization code to understand how options are processed
+
+**When feedback mentions PR updates**: If someone says "the PR is updated since then", this is a clear signal to:
+1. Re-read PR comments to understand what changed
+2. Review the code diff again
+3. Verify your documentation matches the final implementation
+
+**Example**: PR #1348 initially appeared to add `remoteConfigServerUrl` but the final implementation used a nested `remoteConfig.serverUrl` structure. The PR comments revealed this change, and the code diff confirmed the nested structure.
