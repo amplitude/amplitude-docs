@@ -76,3 +76,22 @@ When documenting features from GitHub PRs, always verify the actual code impleme
 3. Verify your documentation matches the final implementation
 
 **Example**: PR #1348 initially appeared to add `remoteConfigServerUrl` but the final implementation used a nested `remoteConfig.serverUrl` structure. The PR comments revealed this change, and the code diff confirmed the nested structure.
+## Maintaining Document Structure and Hierarchy
+
+When adding new sections to existing documents, be vigilant about preserving the existing document hierarchy:
+
+**Verify heading structure before and after changes**: When adding new sections (especially top-level sections with `##`), ensure you understand where they'll sit in relation to existing sections and subsections. Use `grep -n "^## \|^### " filename.md` to check the heading hierarchy.
+
+**Be explicit about placement**: When planning to add a new section, explicitly note WHERE it should be placed:
+- "Add new section AFTER section X"
+- "Add new subsection under section Y, before subsection Z"
+- "Add new top-level section at the end of the document"
+
+**Check for accidental hierarchy changes**: After adding content, verify that existing subsections haven't been accidentally moved under the wrong parent section. A subsection (`###`) should remain under its intended parent section (`##`).
+
+**Example of what went wrong**: In PR #1104, when adding the "Custom logging" section (with `##`), it was placed before the "Local evaluation cohort targeting" subsection (with `###`). This made "cohort targeting" appear to be a subsection of "Custom logging" instead of staying under "Local evaluation". The fix was to place "Custom logging" AFTER "Local evaluation cohort targeting" so the cohort targeting subsection remained under its correct parent.
+
+**Prevention strategy**:
+1. Before editing: Review existing heading hierarchy
+2. While planning: Be explicit about exact placement of new sections
+3. After editing: Verify heading hierarchy matches intent using `grep -n` or similar commands
