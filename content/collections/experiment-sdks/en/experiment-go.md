@@ -33,6 +33,7 @@ go get github.com/amplitude/experiment-go-server
 ```
 
 {{partial:admonition type="tip" heading="Quick start"}}
+
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants for the user](#fetch)
 3. [Access a flag's variant](#fetch)
@@ -93,6 +94,8 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `LoggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `defaultLoggerProvider` which outputs to stdout |
 | `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500 * time.Millisecond` |
@@ -189,6 +192,7 @@ go get github.com/amplitude/experiment-go-server
 ```
 
 {{partial:admonition type="tip" heading="Quick start"}}
+
  1. [Initialize the local evaluation client.](#initialize-1)
  2. [Start the local evaluation client.](#start)
  3. [Evaluate a user.](#evaluate)
@@ -216,6 +220,7 @@ go get github.com/amplitude/experiment-go-server
    panic(err)
  }
  ```
+
 {{/partial:admonition}}
 
 ### Initialize
@@ -252,6 +257,8 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `LoggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `defaultLoggerProvider` which outputs to stdout |
 | `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
@@ -351,3 +358,60 @@ client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
   }
 })
 ```
+
+## Custom logging
+
+Control log verbosity with the `LogLevel` configuration, or implement the `LoggerProvider` interface to integrate your own logger.
+
+### Log levels
+
+The SDK supports these log levels:
+
+- `Verbose`: Detailed logging for deep debugging
+- `Debug`: Logging for development and troubleshooting  
+- `Info`: General informational messages
+- `Warn`: Warning messages
+- `Error`: Error messages (default)
+- `Disable`: No logging
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to integrate your logging solution:
+
+```go
+import "github.com/amplitude/experiment-go-server/logger"
+
+type MyCustomLogger struct {
+    // Your logger implementation
+}
+
+func (l *MyCustomLogger) Verbose(message string, args ...interface{}) {
+    // Implement verbose logging
+}
+
+func (l *MyCustomLogger) Debug(message string, args ...interface{}) {
+    // Implement debug logging
+}
+
+func (l *MyCustomLogger) Info(message string, args ...interface{}) {
+    // Implement info logging
+}
+
+func (l *MyCustomLogger) Warn(message string, args ...interface{}) {
+    // Implement warn logging
+}
+
+func (l *MyCustomLogger) Error(message string, args ...interface{}) {
+    // Implement error logging
+}
+
+// Initialize with custom logger
+client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
+    LogLevel: logger.Debug,
+    LoggerProvider: &MyCustomLogger{},
+})
+```
+
+{{partial:admonition type="note" heading="Backward compatibility"}}
+The `Debug` configuration field is still supported. When set to `true`, it overrides `LogLevel` to `Debug`.
+{{/partial:admonition}}
