@@ -1,14 +1,9 @@
 ---
-id: 494972be-95b9-48c6-91e1-f3ce85dc5bbd
-published: false
-blueprint: section
-title: 'Amplitude Agents'
-author: b6c6019f-27db-41a7-98bb-07c9b90f212b
-exclude_from_sitemap: false
+id: adb85d4b-175d-4e9e-bb94-710a6e0b242c
+blueprint: agent
+title: 'Agents Overview'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1761241369
-nav_title: agents
-hide_toc: false
+updated_at: 1761241355
 ---
 Amplitude AI Agents are specialized, goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, agents have access to Amplitude analytics, session replay, experiment, surveys, and other data types to surface insights, investigate issues, generate hypotheses, then recommend actions.
 
