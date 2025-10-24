@@ -20,7 +20,7 @@ updated_at: 1713560928
 [Customer.io](http://customer.io/) is a messaging platform that allows marketers to turn ideas into powerful automated message campaigns. [Customer.io](http://customer.io/)'s logic-based tools help you capture every edge case and connect to the real people in your audience.
 
 {{partial:admonition type="note" heading="Send Amplitude events to Customer.io"}}
-This integration sends Amplitude cohorts to Customer.io. There is a separate integration to send Amplitude events. See [Send events to Customer.io](/docs/data/destination-catalog/customer-io) for information.
+This integration sends Amplitude cohorts to Customer.io. There is a separate integration to send Amplitude events. Go to [Send events to Customer.io](/docs/data/destination-catalog/customer-io) for information.
 {{/partial:admonition}}
 
 ## Considerations
@@ -55,4 +55,4 @@ This integration sends Amplitude cohorts to Customer.io. There is a separate int
 5. Set the sync cadence.
 6. When finished, click **Sync**.
   
-After you have exported the cohort, you can see the cohort in the [Segments](https://customer.io/docs/segments/) section of the Customer.io platform. You can use segments as recipient lists, campaign triggers, filters, conversion goals and more. Whenever you need to reference a subset of the people in your workspace, you use a segment.
+After you have exported the cohort, you can view the cohort in the [Segments](https://customer.io/docs/segments/) section of the Customer.io platform. You can use segments as recipient lists, campaign triggers, filters, conversion goals and more. Whenever you need to reference a subset of the people in your workspace, you use a segment.
