@@ -1,0 +1,150 @@
+<!-- Latest Version -->
+<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+<script>
+    var config = {
+            apiKey: "106b5e962520ab454786a0d1ba709e47372ef512",
+            product: "PRO_MULTISITE",
+            initialState: 'notify',
+            notifyDismissButton: false,
+            theme: 'light',
+            setInnerHTML: true,
+            branding: {
+                fontFamily: 'IBM Plex Sans, sans-serif',
+                backgroundColor: '#fafcfe',
+                removeIcon: true,
+                removeAbout: true,
+            },
+            statement: {
+                description: 'See our',
+                name: 'Privacy Notice',
+                url: 'https://amplitude.com/privacy#cookies',
+                updated: '25/04/2018',
+            },
+
+            ccpaConfig: {
+                description: 'See our',
+                name: 'Personal Information Notice',
+                url: 'https://amplitude.com/privacy',
+                updated: '25/04/2018',
+            },
+
+            ccpaConfig: {
+                description: 'See our',
+                name: 'Personal Information Notice',
+                url: 'https://amplitude.com/privacy',
+                updated: '25/04/2018',
+            },
+            text: {
+                title: 'This site uses cookies.',
+                intro: 'Some of these cookies are essential, while others help us to improve your experience by providing insights into how the site is being used.',
+                necessaryTitle: 'Necessary Cookies',
+                necessaryDescription: 'Necessary cookies enable core functionality. The website cannot function properly without these cookies, and can only be disabled by changing your browser preferences.',
+                accept: 'Accept',
+                reject: 'Reject',
+                rejectSettings: "Do Not Sell or Share My Personal Information",
+
+                // Regarding opening settings, "openCookieControl" should have been exposed
+                // to the window by instrumentCookieControl() by, in the event it hasn't,
+                // this falls back to CookieControl.open
+                notifyDescription: `
+		<div class="ccc-description">
+			<div class="ccc-inner-description">
+				<h2>Cookie Preferences</h2>
+				<p>
+					Sharing your cookies helps us improve site functionality and optimize your experience.
+					<br><a href="https://amplitude.com/privacy#cookies" data-cta-clicked-type="interstitial" data-cc-policy>Click Here</a> to read our cookie policy.
+				</p>
+			</div>
+			<div class="ccc-actions">
+			<a class="ccc-manage-settings-btn" onclick="(window.openCookieControl || CookieControl.open)()"
+					data-cta-clicked-type="interstitial"
+					data-cc-settings>Manage Settings</a>
+				<button onclick="CookieControl.acceptAll()" data-cc-accept data-cta-clicked-type="interstitial">
+					Accept
+				</button>
+			</div>
+		</div>`,
+            },
+            necessaryCookies: [
+                '__utmzz', // utmz cookie replicator necessary to track utm google values
+                '__utmzzses', // Also used by utmz cookie replciator
+                'corp_utm', // Own cookie used to persist utm values for Marketo
+                'membership_token_*', // Membership cookies for all access program
+                'sj_csrftoken', // Skill Jar Cookie
+            ],
+            optionalCookies: [{
+                    name: "performance",
+                    label: "Performance Cookies",
+                    description: 'We use these cookies to monitor and improve website performance.',
+                    cookies: [
+                        'amplitude_id*', // Amplitude SDK
+                        'amp_*', // Newer Amplitude SDK
+                        'AMP_*', // Newer Amplitude SDK
+                        '1P_JAR', // Google Analytics
+                        'DV', // Google Analytics
+                        'NID', // Google Analytics
+                        'OGPC', // Google Analytics
+                        '_ga', // Google Analytics
+                        '_gid', // Google Analytics
+                        '_gat*', // Google Analytics
+                    ],
+                    onAccept: function () {
+                        amplitude.setOptOut(false)
+                    },
+                    onRevoke: function () {
+                        amplitude.setOptOut(true)
+                    }
+                },
+                {
+                    name: "advertising",
+                    label: "Advertising Cookies",
+                    description: 'We use these cookies to help us improve the relevancy of advertising campaigns you receive.',
+                    cookies: [
+                        'BizoID', // LinkedIn
+                        'UserMatchHistory', // LinkedIn
+                        'lang', // LinkedIn
+                        'bcookie', // LinkedIn
+                        'bscookie', // LinkedIn
+                        'lidc', // LinkedIn
+                        'fr', // Facebook
+                        'vc', // AddThis
+                        'uvc', // AddThis
+                        'uid', // AddThis
+                        'loc', // AddThis
+                        'ouid', // AddThis
+                        'di2', // AddThis
+                        '__atuvc', // AddThis
+                        '__atuvs', // AddThis
+                        '__d_mkto', // Marketo
+                        '_mkto_trk', // Marketo
+                        'BIGipServerab13web-app_https', // Marketo
+                        'IDE', // Doubleclick,
+                        'csv', // Reddit
+                        'edgebucket', // Reddit
+                        'loid', // Reddit
+                        'over18', // Reddit
+                        'recent_srs', // Reddit
+                        'session_tracker', // Reddit
+                        'token_v2', // Reddit
+                        'IDE', // Doubleclick
+                        '_uetsid', // Bing
+                        '_uetvid', // Bing
+                        '_uetsid_exp', // Bing
+                        '_uetvid_exp', // Bing
+                        '_uetmsclkid', // Bing
+                        '_clsk', // Bing
+                        'sa-user-id', // Stackadapt
+                        'sa-user-id-v2', // Stackadapt
+                    ],
+                    onAccept: function () {
+
+                    },
+                    onRevoke: function () {
+
+                    },
+                }
+            ]
+    }
+
+            CookieControl.load(config);
+</script>

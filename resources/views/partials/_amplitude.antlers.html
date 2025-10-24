@@ -1,0 +1,70 @@
+<script src="https://cdn.amplitude.com/script/{{config:app:analytics-key}}.js"></script>
+<script src="https://cdn.amplitude.com/script/{{config:app:analytics-key}}.engagement.js"></script>
+
+<script>
+    window.amplitude.add(window.sessionReplay.plugin({
+        sampleRate: 0.5
+    }));
+    window.amplitude.init('{{config:app:analytics-key}}', {
+        "fetchRemoteConfig": true,
+        "autocapture": true
+    });
+     
+    window.amplitude.add(window.engagement.plugin())
+    
+    function checkAuthenticatedUser() {
+        try {
+            const AMP_PREFIX = 'AMP_';
+            const currUserId = amplitude.getUserId();
+
+            if (!currUserId) {
+                // Iterate through all amplitude cookies within amplitude domain
+                const amplitudeCookies = getCookies(AMP_PREFIX);
+
+                for (let [cookieName, cookieValue] of amplitudeCookies.map((cookies) => cookies.split('='))) {
+                    const [deviceId, userId] = cookieValue.split('.');
+    
+                    try {
+                        const userSession = JSON.parse(decodeURIComponent(atob(cookieValue)))
+                        if (userSession && userSession.userId) {
+                            amplitude.setUserId(userSession.userId);
+                            break;
+                        }
+                    } catch {}
+                }
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    function getCookies(prefix) {
+        try {
+            const cookieArray = document.cookie.split(';').map((c) => c.trimStart());
+            let values = [];
+            for (let cookie of cookieArray) {
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.startsWith(prefix)) {
+                    values.push(cookie.substring(name.length));
+                }
+            }
+            return values;
+        } catch (e) {
+            return [];
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        checkAuthenticatedUser();
+    });
+</script>
+<script>
+    function academyClick(link) {
+        amplitude.track('Academy link', {
+            'destination': link,
+            '[Amplitude] Page URL': window.location.href
+        })
+    }
+</script>
