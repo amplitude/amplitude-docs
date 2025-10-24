@@ -8,7 +8,7 @@ landing: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753224454
 ---
-The Personalize with variables feature (also called interpolation) lets you customize content within your guides and surveys by dynamically displaying user properties in a guide or survey. This can be useful to customize content for each individual user - like displaying their first name or user_id. You can add personalized variables to:
+The Personalize with variables feature (also called interpolation) lets you dynamically display user properties to customize content within a guide or survey. Use this to customize content for each individual user, for example displaying their first name or `user_id`. You can add personalized variables to:
 
 - Titles
 - Content
@@ -24,14 +24,14 @@ You can use user property variables in CTA links to personalize URLs. For exampl
 www.example.com/path?user_id=@{{property.user_id}}&country=@{{property.country}}
 ```
 
-When a user clicks on the CTA link, the user property variables are replaced with actual values:
+When a user clicks on the CTA link, Amplitude replaces the user property variables with actual values:
 
 ```
 www.example.com/path?user_id=12345&country=US
 ```
 
 ### Personalizing guides with a user's name
-You could create a user property to display the user's first name such as `firstName`. You could then place this user property in any guide or survey where you want to address each of your users by name.
+Create a user property to display the user's first name, like `firstName`. Then place this user property in any guide or survey where you want to address each of your users by name.
 
 ## Providing fallback values
 
@@ -47,7 +47,7 @@ User properties must be shared client-side during the session with either the Am
 To set user properties, use the [`_setUserProperties`](/docs/guides-and-surveys/sdk#set-user-properties) method in the Engagement SDK, or use `amplitude.identify()` in the Amplitude SDK.
 
 {{partial:admonition type="tip" heading=""}}
-Amplitude auto-populates `user_id` and `device_id` for you. These variables are always available without additional setup.
+Amplitude autopopulates `user_id` and `device_id` for you. These variables are always available without additional setup.
 {{/partial:admonition}}
 
 ##### To include personalized variables into a guide or survey
