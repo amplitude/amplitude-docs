@@ -39,18 +39,10 @@ The payload sent to Pub/Sub is a JSON object. Example:
   "computed_time": "1685748245",
   "message_id": "some-message-id:54",
   "users": [{
-    "user_id": "user1@amplitude.com",
-    "user_properties": {
-      "city": "San Francisco",
-      "fav_animal": "Bat"
-      }
+    "user_id": "user1@amplitude.com"
     },
     {
-      "user_id": "user2@amplitude.com",
-      "user_properties": {
-        "city": "Seattle",
-        "fav_animal": "Cat"
-       }
+      "user_id": "user2@amplitude.com"
     }]
 }
 ```
@@ -63,9 +55,6 @@ The payload sent to Pub/Sub is a JSON object. Example:
 - **message_id**: String. The unique id of each message.
 - **users**: List. The users batch. Each user will be represented as a JSON object
   - **user_id**: String. the id of the user
-  - **(optional) user_properties**: Map. A list of user properties to include, with key as the property name and value as the property value.
-
-**Note:** The feature of having **user_properties** in the payload is in development. Please follow this page for updates. 
 
 ## Setup
 
