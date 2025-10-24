@@ -36,7 +36,7 @@ Amplitude Activation's Intercom streaming integration enables you to forward you
 3. Enter a name and select a workspace.
 4. Click **Create App**.
 
-See [Intercom's documentation](https://developers.intercom.com/building-apps/docs/get-started-developing-on-intercom#create-an-app) for more detailed instructions on creating an app.
+Go to [Intercom's documentation](https://developers.intercom.com/building-apps/docs/get-started-developing-on-intercom#create-an-app) for more detailed instructions on creating an app.
 
 #### Required information
 
@@ -76,20 +76,20 @@ Under **Send Events**, make sure the toggle is enabled ("Events are sent to Inte
 Intercom triggers an event `[Intercom] event.created` when Intercom creates events, including events from Amplitude's Event Streaming integration.
 If you don't want Amplitude to store these events, use Amplitude's [block or drop filters](https://help.amplitude.com/hc/en-us/articles/16805784778907-Remove-invalid-or-incorrect-data) to remove this data.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Intercom. _Transformed events aren't supported._
+1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Intercom. Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 {{partial:admonition type="warning" title="Anonymous user event streaming"}}
 Intercom requires that all events have a user ID present. If you have selected any events to send to Intercom that may not have a user ID, add a filter to send only events where the user ID is present. Additionally, events can only be streamed for users that already exist in Intercom. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Intercom. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Intercom as [Intercom event metadata](https://developers.intercom.com/intercom-api-reference/reference/the-data-event-model#metadata-object). Intercom has a limit of 20 metadata values per event. _Transformed event properties and transformed user properties aren't supported._
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Intercom. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Intercom as [Intercom event metadata](https://developers.intercom.com/intercom-api-reference/reference/the-data-event-model#metadata-object). Intercom has a limit of 20 metadata values per event. Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Configure user forwarding
 
 To stream user and property updates to Intercom, enable **Send Users**. This setting creates or updates users in Intercom when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates. Each user is created as an [Intercom contact](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model).
 
-You can optionally select user properties to send to Intercom in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Intercom custom attributes](https://www.intercom.com/help/en/articles/179-send-custom-user-attributes-to-intercom/). _This integration doesn't support transformed user properties_.
+You can optionally select user properties to send to Intercom in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Intercom custom attributes](https://www.intercom.com/help/en/articles/179-send-custom-user-attributes-to-intercom/). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Enable sync
 
-When satisfied with your configuration, at the top of the page toggle the **Status** to "Enabled" and click **Save**.
+When satisfied with your configuration, at the top of the page toggle the Status to **Enabled** and click **Save**.
