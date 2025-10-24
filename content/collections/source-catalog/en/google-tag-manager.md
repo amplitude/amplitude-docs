@@ -98,7 +98,7 @@ Amplitude generates cookies at the initialization stage. For more information on
 
 #### API Key
 
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, see [API Authentication(/docs/apis/authentication).
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, review [API Authentication](/docs/apis/authentication).
 
 #### Autocapture options
 
@@ -111,7 +111,7 @@ Enable *Autocapture events* to enable autocapture for the following event types:
 - Track File Downloads
 - Track Element Interactions
 
-For more information, see [Browser SDK 2 | Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture)
+For more information, see [Browser SDK 2 - Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture)
 
 | Name                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default Value |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
@@ -147,7 +147,7 @@ Check this box to enable file downloads tracking. For more information, see [Bro
 
 ###### Network tracking
 
-Check this box to enable network tracking. Network tracking captures network request events invoked by XHR and Fetch. For more information, see [Browser SDK 2 | Track network requests](/docs/sdks/analytics/browser/browser-sdk-2#track-network-requests).
+Check this box to enable network tracking. Network tracking captures network request events invoked by XHR and Fetch. For more information, see [Browser SDK 2 - Track network requests](/docs/sdks/analytics/browser/browser-sdk-2#track-network-requests).
 
 {{partial:collapse name="Advanced configuration"}}
 
@@ -306,7 +306,7 @@ Notice that choosing Google Tag: Event Settings variable as an input in Event Pr
 
 ##### Track with groups
 
-Set event level groups. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist on the user unless explicitly set with `setGroup`. For more information, see [Browser SDK 2 | User Groups](/docs/sdks/analytics/browser/browser-sdk-2/#user-groups).
+Set event level groups. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist on the user unless explicitly set with `setGroup`. For more information, see [Browser SDK 2 - User Groups](/docs/sdks/analytics/browser/browser-sdk-2/#user-groups).
 
 | Name         | Description                                                                                                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
