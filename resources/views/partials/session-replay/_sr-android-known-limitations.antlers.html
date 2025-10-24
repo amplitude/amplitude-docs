@@ -1,0 +1,17 @@
+{{markdown}}
+## Known limitations
+
+Keep the following limitations in mind as you implement Session Replay:
+
+- Session Replay doesn't stitch together replays from a single user across multiple projects. For example:
+  
+    - You instrument multiple apps as separate Amplitude projects with Session Replay enabled in each.
+    - A known user begins on one app, and then switch to another.
+    - Amplitude captures both sessions.
+    - The replay for each session is available for view in the corresponding host project.
+
+- The User Sessions chart doesn't show session replays if your organization uses a custom session definition.
+- Session Replay can't capture the following Android views:
+
+    - Canvas Views
+{{/markdown}}
