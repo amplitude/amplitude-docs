@@ -5,7 +5,7 @@ title: SnowcatCloud
 partner_maintained: true
 exclude_from_sitemap: false
 updated_by: 05a6104d-5b58-4e1b-9c95-830dd2fd2e09
-updated_at: 1761341792
+updated_at: 1761361075
 connection: source
 integration_category:
   - cdp
@@ -19,10 +19,11 @@ use_cases:
   - 'Real-time recommendations'
 integration_type:
   - event-streaming
-short_description: 'Seamlessly stream enriched event data from SnowcatCloud into Amplitude for advanced analytics.'
+  - raw-events
+short_description: 'Stream enriched event data from SnowcatCloud into Amplitude for advanced analytics.'
 partner_doc_link: 'https://www.snowcatcloud.com/docs'
 ---
-[SnowcatCloud](https://www.snowcatcloud.com) is a cloud-hosted customer data infrastructure built on the open-source [OpenSnowcat](https://opensnowcat.io) platform.
+[SnowcatCloud](https://www.snowcatcloud.com) is a cloud-hosted customer data infrastructure built on the open-source [OpenSnowcat](https://opensnowcat.io) platform (Snowplow fork).
 
 SnowcatCloud empowers teams to **collect**, **enrich**, and **route** first-party behavioral data with full transparency — reliably delivering clean data to data warehouses and streaming infrastructure, and seamlessly integrating with platforms like Amplitude.
 
@@ -52,7 +53,7 @@ Key features:
 
 ## Field mapping overview
 
-Below is an example mapping used by SnowcatCloud to translate enriched events into Amplitude-compatible payloads:
+Field mapping used by SnowcatCloud to translate enriched events into Amplitude-compatible payloads:
 
 | Category     | Amplitude Field | Source Field (SnowcatCloud Enriched)                                         | Format/Notes       |
 | ------------ | --------------- | ----------------------------------------------------------------------- | ------------------ |
