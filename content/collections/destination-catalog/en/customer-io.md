@@ -32,7 +32,7 @@ To configure streaming from Amplitude to Customer.io, you need the following inf
 - **Customer.io Tracking Site ID**: The Customer.io Site ID used for authenticating with the track API.
 - **Customer.io Tracking API Key**: The Customer.io API Key used for authenticating with the track API.
 
-See the [Customer.io documentation](https://www.customer.io/docs/api/track/#section/Authentication/Basic-Auth-(Tracking-API-Key)) for help locating your track API credentials.
+Go to the [Customer.io documentation](https://www.customer.io/docs/api/track/#section/Authentication/Basic-Auth-(Tracking-API-Key)) for help locating your track API credentials.
 
 ### Create a new sync
 
@@ -48,7 +48,7 @@ See the [Customer.io documentation](https://www.customer.io/docs/api/track/#sect
 
 ### Configure mappings
 
-_This applies to both event and user forwarding. Transformed user properties aren't supported._
+_This applies to both event and user forwarding._
 
 Select an Amplitude user property that corresponds to your **Customer.io User Identifier**, from the left dropdown.
 
@@ -67,19 +67,19 @@ Under **Send Events**, make sure the toggle is enabled ("Events are sent to Cust
 {{/partial:admonition}}
 
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Customer.io. _Transformed events aren't supported._
+1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Customer.io. Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 {{partial:admonition type="warning" title="Events for anonymous users"}}
 Customer.io requires that all events have a user ID present. If you have selected any events to send to Customer.io that may not have a user ID, add a filter to send only events where the user ID is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Customer.io. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Customer.io as [Customer.io event data](https://www.customer.io/docs/events/#event-name-and-data). _Transformed event properties and transformed user properties aren't supported._
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Customer.io. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Customer.io as [Customer.io event data](https://www.customer.io/docs/events/#event-name-and-data). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Configure user forwarding
 
 To stream user and property updates to Customer.io, enable **Send Users**. This setting creates or updates users in Customer.io when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates.
 
-You can optionally select user properties to send to Customer.io in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Customer.io user attributes](https://www.customer.io/docs/attributes/). _This integration doesn't support transformed user properties_.
+You can optionally select user properties to send to Customer.io in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Customer.io user attributes](https://www.customer.io/docs/attributes/). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Enable sync
 
