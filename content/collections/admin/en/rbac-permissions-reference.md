@@ -5,6 +5,7 @@ title: 'RBAC Permissions Reference'
 landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1758819500
+published: false
 ---
 
 This comprehensive reference lists all available Role-Based Access Control (RBAC) permissions in Amplitude. Use the search and filter functionality to find specific permissions by name, product area, or type.
