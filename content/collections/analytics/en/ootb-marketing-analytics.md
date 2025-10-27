@@ -5,8 +5,8 @@ title: 'Out-of-the-box Marketing Analytics'
 this_article_will_help_you:
   - 'Track industry-standard marketing analytics in one place'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1743538884
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1761586978
 source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics'
 landing: false
 academy_course:
@@ -154,6 +154,93 @@ If you don't see results, ensure the following:
 
 * You ran an ad campaign during the selected date range.
 * You added UTM parameters to your ad campaign URLs.
+
+## Purchase by item (beta)
+
+The purchase by item hub helps ecommerce teams analyze purchase behavior at the SKU, product, or category level. It gives you a detailed view of your purchase funnel, allowing you to understand where users drop off and how revenue performs across products.
+
+Unlike the Conversion hub, which focuses on overall funnel performance, the Purchase by item hub adds ecommerce-specific granularity. You can:
+
+* Break down your purchase funnel by product name, SKU, or category
+* Measure conversion and cart drop-off rates
+* Analyze revenue and average order value (AOV) at an item level
+
+This hub supports ecommerce use cases where you need to track multiple products or product categories within a single checkout flow.
+
+### Tracking setup
+
+To use Purchase by item, your Amplitude implementation must send cart data as arrays. Learn more about this setup in [Cart Analysis](/docs/analytics/charts/cart-analysis).
+
+Arrays let you send structured product information like `product_id`, `sku`, `price`, and `category` without creating hundreds of event properties. Each item in the array represents a product in the cart.
+
+### Plan availability
+
+This feature is available to organizations with the eCommerce package on Growth or Enterprise plans.
+
+### Permissions
+
+Editing this hub requires Manager or Admin permissions. For more information, review [User Roles and Permissions](/docs/admin/account-management/user-roles-permissions).
+
+### Configuring the hub
+
+To begin, navigate to *Marketing Analytics > Purchase by Item*.
+
+1. Click **Select event** to create a new configuration, or **Customize** to edit an existing configuration.
+2. Complete the **Purchase funnel** setup.
+   1. Define the funnel steps. Start with an event like `View Product` and end with `Complete Purchase`.
+
+      {{partial:admonition type="tip" heading="Example purchase funnel events"}}
+      A purchase funnel may have events like:
+
+      1. `Add Item to Cart`
+      2. `Begin Checkout`
+      3. `Complete Purchase`
+      {{/partial:admonition}}
+
+       4. Identify your `Add to Cart` step. Selecting this step enables the Cart drop-off rate metric, which includes the percentage of users who abandon their cart between this step and the last step.
+       5. Select a unique identifier. This identifier helps Amplitude understand your individual products. For example, you could choose a property like `product_id`.
+       6. Add revenue detail. Select the event that includes your revenue property. If you don't track revenue, you can create a [derived property](/docs/data/derived-properties) that multiplies price and quantity, and stores the result as the value of a property.
+     
+#### Error handling
+
+If you pick a step that doesn't include a cart item property, Amplitude displays an error message that states:
+
+> Breakdown may be incomplete: this event doesn't include an item property.
+
+To avoid this, ensure your event follows the [Cart analysis](/docs/analytics/charts/cart-analysis) structure.
+
+### Results
+
+After you complete setup, the hub displays:
+
+* A funnel visualization that shows conversion at each step
+* Average Order Value (AOV) and total revenue metrics
+* Cart drop-off rate for your "Add to cart" step
+* A breakdown table that shows performance by product, category, or brand
+
+![](statamic://asset::help_center_conversions::analytics/purchase-by-item-funnel.png)
+
+{{partial:admonition type="note" heading="Metric definitions"}}
+* **Total revenue**: The sum of the item revenue for the row. For example, if the row were `Digital Content` the revenue would equal the revenue value for the `Digital Content` items in the cart.
+* **AOV**: Revenue divided by the number of orders that contain that item.
+{{/partial:admonition}}
+
+The breakdown table includes:
+
+* Conversion rate between steps
+* Average order value (AOV)
+* Total revenue
+* Cart drop-off rate
+
+![](statamic://asset::help_center_conversions::analytics/purchase-by-item-table.png)
+
+### Next steps
+
+The Purchase by item hub is a good starting point for ecommerce analysis. To explore deeper:
+
+* Click **Open as chart** to view the underlying funnel or table.
+* Adjust the filters, metrics, or visualizations to refine your analysis.
+* Save your custom chart to a [Space](/docs/get-started/spaces) for ongoing tracking.
 
 ## Create a web experiment for specific URLs
 
