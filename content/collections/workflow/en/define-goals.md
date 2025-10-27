@@ -4,39 +4,38 @@ blueprint: workflow
 title: "Define your experiment's goals"
 source: 'https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals'
 this_article_will_help_you:
-  - 'Add recommendation and guardrail metrics to your experiment'
+  - 'Add primary and secondary metrics to your experiment'
   - 'Create new metrics from scratch, and edit existing metrics'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ---
-An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. A recommendation metric is any metric that you use to determine whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
+An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. A primary metric is any metric that you use to determine whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
-Your recommendation metric is important to understand the success of your experiment, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which metric to choose. To help you create a successful recommendation metric, keep in mind the following:
+Your primary metric is important to understand the success of your experiment, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which metric to choose. To help you create a successful primary metric, keep in mind the following:
 
 * Try to identify the single user action that tells you if your [variant](/docs/feature-experiment/workflow/add-variants) is successful.
 * Measure an event that's directly affected by the change you’ve made in your variant.
 * Pick an event that fully captures the user behavior you’re trying to affect.
 
-One common mistake is defaulting to a revenue metric. This happens when your variant introduces a change that's separate from the metric you’ve selected. If your variant changes how your product page looks and functions, choose a metric on that page as your recommendation metric instead of a revenue metric that might not be visible for several more steps down the funnel.  
+One common mistake is defaulting to a revenue metric. This happens when your variant introduces a change that's separate from the metric you’ve selected. If your variant changes how your product page looks and functions, choose a metric on that page as your primary metric instead of a revenue metric that might not be visible for several more steps down the funnel.  
 
 Experiment lets you define multiple metrics when running an experiment. Unlike a recommended metric, non-recommended metrics aren’t required, but they're often helpful. They not only improve the quality of your analysis, but help evaluate whether it’s even worthwhile to roll out your experiment at all.
 
 ##### To set up the metrics for your experiment
 
 {{partial:admonition type="note" heading="Recommendations"}}
-Turn on the Enable Recommendation option to enable recommendations for duration estimates, result takeaways, and statistical significance notifications.
+Experiments with primary metrics will have recommendations for duration estimates, result takeaways, and statistical significance notifications.
 {{/partial:admonition}}
 
-1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Goals section.
-2. Click the **edit** icon.
-3. Click **Select metric** and then select the metric you want from the drop-down list. 
+1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Metrics section.
+2. Click **Add metric** and then select the metric you want from the drop-down list. 
 Alternately, click **Create a custom metric** to define your own metric.
-4. Select the type of metric. You can choose one of:
-   * **Success metrics**: States the goal will change by the goal amount and direction. 
-   * **Guardrail metrics**: State the goal won't change by the goal amount and direction.
-5. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
-6. (*Optional*) Click **Advanced** to set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
-7. To add secondary metrics, click ***Add a Goal*** and repeat this process.
+3. Select the type of metric. You can choose one of:
+   * **Success metrics**: States the goal should change by the goal amount and direction. 
+   * **Guardrail metrics**: State the goal should not change by the goal amount and direction.
+4. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
+5. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
+6. To add secondary metrics, click ***Add Metric*** and repeat this process.
 
 The duration estimator estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
 

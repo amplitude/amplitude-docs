@@ -18,13 +18,15 @@ If you are launching a feature flag and not an experiment, you can skip the expe
 
 To configure your experiment's delivery, follow these steps:
 
-1. On the Evaluation and Bucketing tab, specify the [evaluation mode](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/) for your experiment—either *Remote* (it will be evaluated on Amplitude servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
+1. On Bucketing Options section in the Advanced tab, specify the [evaluation mode](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/) for your experiment—either *Remote* (it will be evaluated on Amplitude servers) or *Local*. 
+
+2. In the advanced settings on the Targeting tab, you can specify the **bucketing unit** you want to use for this experiment.  
   
     Most of the time, you should set the bucketing unit to *User*. However, sometimes you might want to use company ID or city as the bucketing unit, especially in certain B2B use cases. For example, bucketing by company ID ensures that all users in a particular company will have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.  
       
     When you’re ready, click *Continue*.
 
-2. In the Deployments tab, select the deployments you’d like to use for this experiment or flag. In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution. Learn more about deployments in the article on [configuring your experiment.](/docs/feature-experiment/workflow/configure). When you’ve selected all the deployments you need, click *Continue*.
+2. In the Delivery tab, select the deployments you’d like to use for this experiment or flag. In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution. Learn more about deployments in the article on [configuring your experiment.](/docs/feature-experiment/workflow/configure). When you’ve selected all the deployments you need, click *Continue*.
    
 3. Next, check your variants. Click **Continue** when you’re ready.
    
