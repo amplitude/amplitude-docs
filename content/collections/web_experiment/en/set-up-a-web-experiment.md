@@ -146,6 +146,8 @@ Keep the following in mind as you move elements on the page:
 * Ensure that JavaScript doesn't reset your changes after you apply them.
 * Moving an element ignores invisible elements in your DOM.
 
+In addition to moving elements up or down, click **Rearrange** to enter preview mode. This enables you to explore different element placements on the page.
+
 ### Navigation mode
 
 Navigation Mode enables you to navigate between pages in your experiment without exiting the editor.
