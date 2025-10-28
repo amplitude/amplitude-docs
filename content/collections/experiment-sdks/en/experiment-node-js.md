@@ -119,8 +119,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
-| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
-| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `ConsoleLogger` |
+| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. Go to [custom logging](#custom-logging). | `Error` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. Go to [custom logging](#custom-logging). | `ConsoleLogger` |
 | `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
