@@ -35,9 +35,6 @@ Permission groups are different from [team spaces](/docs/analytics/collaborate-w
 To create a new group, follow these steps:
 
 1. Navigate to *Settings* > *Organization settings*. Then click *Members & Groups*.
-
-![manage_permissions_at_scale_1.png](/docs/output/img/account-management/manage-permissions-at-scale-1-png.png)
-
 2. From the *Groups* tab, click *+ New Group.* The *Create New Group* pane opens.
 3. In the *General* tab, name your group and add a description, if you want.
 4. If you want, select from the [Team Spaces](/docs/analytics/collaborate-with-spaces) drop-down any team spaces you want to automatically add group members to. Existing members of the selected Team Spaces **aren't** automatically added to this group.
@@ -45,14 +42,12 @@ To create a new group, follow these steps:
 6. Next, click *+ Add Project* and select the projects to which this group has access. You can add any number of projects to the group.
 7. For each project, select the appropriate project role. All group members have the permission level that's attached to that project role.
 
-![permission groups 1a.png](/docs/output/img/account-management/permission-groups-1a-png.png)
-
 {{partial:admonition type='note'}}
  If a group member already has access to a project individually or through another group, Amplitude treats them according to the **highest** level of permission they have. For example, if a user has a "Member" role for a project through Group A, but is also part of Group B that grants them "Manager" access to the project, the user has manager access to this project. Find more [example scenarios here](#Example-Scenarios).
 {{/partial:admonition}}
 
-8. Next, open the *Members* tab and click *+ Add Members*. Select the users you'd like to add from the drop-down. You can also skip this step for now, if you aren't yet ready to add members.
-9. Click *Save* to finish creating your group.
+1. Next, open the *Members* tab and click *+ Add Members*. Select the users you'd like to add from the drop-down. You can also skip this step for now, if you aren't yet ready to add members.
+2. Click *Save* to finish creating your group.
 
 ## Edit a group
 
@@ -70,11 +65,11 @@ When [inviting new users](/docs/admin/account-management/manage-users) to your o
 
 You can assign user permissions either through groups, or individually through User Management. Admins should decide on a method for assigning user permissions, whether it's one method over the other or a hybrid of the two. The table below contains information to help decide which method is best suited for your organization. 
 
-| **Method** | **Pros** | **Cons** |
-| --- | --- | --- |
-| Groups | Organize permissions and scale. Integrate with other permissions models in the future.  | Harder to manage individual overrides to user permissions. Requires creating a new Group for exceptions. |
-| User Management | Customized permissions for each user. | Difficult to manage at larger scales. Difficult to keep organized.  |
-| Hybrid | Benefits of both methods - organization and scale along with individually assigned permissions for one-off cases. | Difficult to know which assignment is the source of truth.  |
+| **Method**      | **Pros**                                                                                                          | **Cons**                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Groups          | Organize permissions and scale. Integrate with other permissions models in the future.                            | Harder to manage individual overrides to user permissions. Requires creating a new Group for exceptions. |
+| User Management | Customized permissions for each user.                                                                             | Difficult to manage at larger scales. Difficult to keep organized.                                       |
+| Hybrid          | Benefits of both methods - organization and scale along with individually assigned permissions for one-off cases. | Difficult to know which assignment is the source of truth.                                               |
 
 If your organization uses third-party identity and access management software (for example, Okta, Google Workspace, SailPoint), you can integrate these with Amplitude in the future. Consider setting up groups within Amplitude that align with the company structure and standard sets of permissions and roles in your organization. Access management integrations can only be managed through groups. 
 
