@@ -80,9 +80,18 @@ Clicking into an individual prompt displays:
 * Brands mentioned in the response.
 * The AI Model used to answer the prompt.
 * The response to the prompt.
-* Citations used to generate the repsonse.
+* Citations used to generate the response.
 * The date and time when the prompt was last run.
 
-Click on any prompt to see the complete AI response and analyze how your brand and competitors were represented in the answer.
+Click on any prompt to view the complete AI response and analyze how your brand and competitors were represented in the answer.
 
 Use the search bar at the top of the list to find specific topics or prompts by keyword.
+
+#### Working with topics and prompts
+
+You can edit or delete any topic or prompt from the list. Deleting the prompt removes it from the metrics about your brand. It doesn't delete the topic or prompt from the AI model. 
+
+Editing a topic or a prompt lets you rewrite the content to be more understandable. It only updates the topic or prompt in the list. It doesn't update the topic or prompt in the AI model.
+
+## Sources tab
+
