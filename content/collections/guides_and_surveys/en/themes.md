@@ -166,16 +166,8 @@ Components are reusable elements that you use across your guides and surveys. Wi
 
 Each component includes states, for example default, hover, or focus, that you can customize.
 
-## Custom CSS
+## Advanced customization with Custom CSS
 
-For advanced styling control beyond the theme editor, you can write custom CSS directly in your themes. Use the CSS selectors provided in the [Custom CSS documentation](/docs/guides-and-surveys/custom-css) to target specific elements and create unique designs.
+[Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
 
-Custom CSS allows you to:
-- Override default theme styles
-- Create complex layouts and animations
-- Implement brand-specific design elements
-- Target specific form factors or components
-
-{{partial:admonition type="tip" heading="CSS selectors"}}
-The Custom CSS documentation provides a comprehensive list of CSS selectors for all Guides and Surveys elements, including form factors, buttons, form elements, and more.
-{{/partial:admonition}}
+Amplitude recommends using themes for most styling. Use Custom CSS when themes don't provide the control you need.
