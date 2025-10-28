@@ -11,12 +11,16 @@ updated_at: 1761239369
 ---
 AI Feedback is an AI-native tool that combines customer voice, product behavior and AI-powered insights into actionable workflows. AI Feedback monitors feedback sources that you define and then delivers actionable insights through Amplitude. AI Feedback groups customer feedback into categories as well as connecting feedback insights into Amplitude cohorts, session replays and experiments. AI Feedback also lets you create guides and surveys based off of the insights to better connect you with your customers’ needs. 
 
-Feedback events collect information about the following use cases:
+Feedback events collect information about use cases such as:
 
 * Providing feedback about specific product areas.
 * Calling out complaints or loved features. 
 * Feature requests
 * Key takeaways
+
+{{partial:admonition type="note" heading="Additional use cases"}}
+The use cases listed above are examples only. For a full description of all of the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
+{{/partial:admonition}}
 
 AI Feedback is available to all customers with a paid Amplitude subscription. For more pricing details, go to [Pricing](https://amplitude.com/pricing).
 
@@ -138,7 +142,7 @@ A link to the insight is automatically saved to your clipboard. Only colleagues 
 
 ## Migrating user mapping
 
-You may, at some point, want to migrate from one customer ID system to another. For example, migrating from a plain email address system to a hashed email address that protects customer PII. You don’t, however, want to lose the history of the previous ID system for your customers. To keep the history together with the new ID system, the new system must be mapped to the pre-existing Amplitude ID. 
+You may, at some point, want to migrate from one user ID system to another. For example, migrating from a plain email address system to a hashed email address that protects customer PII. You don’t, however, want to lose the history of the previous ID system for your customers. To keep the history together with the new ID system, the new system must be mapped to the pre-existing Amplitude ID. 
 
 User mapping lets you select any user property that contains your users’ email addresses and link that to an associated Amplitude ID. 
 
@@ -146,3 +150,7 @@ User mapping lets you select any user property that contains your users’ email
 
 1. Go to *Organizational settings > Projects > AI Feedback*.
 2. Under User Mapping, click the drop down menu and select the user property that contains your users’ email address.
+
+### Deleting information based on user ID or Amplitude ID
+
+When a deletion request is submitted to Amplitude’s User Privacy API for a specific user ID or Amplitude ID, all AI Feedback data associated with that user ID and/or Amplitude ID is also be deleted. 
