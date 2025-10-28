@@ -43,3 +43,20 @@ The Prompts tab contains the following metrics:
 * **Topics**: The total number of topics that have been generated relating to your brand.
 * **Prompts**: The total number of prompts across all topics that relate to your brand or to your competitors.
 * **Responses**: The total number of responses generated from the prompts that relate to your brand or to your competitors.
+
+### Topics and prompts
+
+By default, insights are arranged first by topic and then by the prompts that relate to that topic. For example, in the topic "Product Analytics", you might find the following prompts:
+
+* "Compare leading product analytics services"
+* "Ranking product analytics platforms 2025"
+* "Best platforms for user behavior tracking"
+* "How to analyze user retention in SaaS products"
+
+Both topic and prompt views contain metrics for:
+
+* Visibility
+* Relevancy
+* Average rank
+* Citations
+
