@@ -46,7 +46,7 @@ The Prompts tab contains the following metrics:
 
 ### Topics and prompts
 
-By default, insights are arranged first by topic and then by the prompts that relate to that topic. For example, in the topic "Product Analytics", you might find the following prompts:
+The Prompts tab displays a searchable list of all topics and their associated prompts. Each topic represents a category or theme of queries that AI agents received. By default, insights are arranged first by topic and then by the prompts that relate to that topic. For example, in the topic "Product Analytics", you might find the following prompts:
 
 * "Compare leading product analytics services"
 * "Ranking product analytics platforms 2025"
@@ -62,6 +62,16 @@ Both topic and prompt views contain metrics for:
 * Average rank
 * Citations
 
+#### Topics
+
+Topics are organized in expandable rows that show:
+
+* **Topic name**: The subject or theme of related prompts (for example, "product analytics tools" or "customer data platforms").
+* **Prompt count**: The number of individual prompts within that topic.
+* **Response count**: The total number of AI-generated responses across all prompts in the topic.
+
+Click a topic row to expand it and view all associated prompts.
+
 #### Individual prompts
 
 Clicking into an individual prompt displays:
@@ -73,3 +83,6 @@ Clicking into an individual prompt displays:
 * Citations used to generate the repsonse.
 * The date and time when the prompt was last run.
 
+Click on any prompt to see the complete AI response and analyze how your brand and competitors were represented in the answer.
+
+Use the search bar at the top of the list to find specific topics or prompts by keyword.
