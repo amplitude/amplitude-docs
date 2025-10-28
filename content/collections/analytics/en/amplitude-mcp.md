@@ -20,7 +20,7 @@ The Amplitude MCP server is under active development. Some functions and setting
 
 * Available to any existing Amplitude customer.
 
-* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code).
+* You must use an MCP‑enabled client such as Claude (web/desktop), Claude Code, Cursor, ChatGPT (developer mode), Gemini CLI, or any client that supports the GitHub MCP Registry.
 
 ## Regions
 
@@ -63,7 +63,7 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, ChatGPT, Gemini CLI, Other MCP Clients"}}
+{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, GitHub MCP Registry, ChatGPT, Gemini CLI, Other MCP Clients"}}
 {{partial:tab name="Claude (web and desktop)"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
 2. Go to *Settings > Connectors > Add custom connector*.  
@@ -141,6 +141,30 @@ Complete the steps below, depending on the tool you're integrating with.
 
    4. Return to Tools & Integration tab and authenticate with Amplitude.
   
+{{/partial:tab}}
+{{partial:tab name="GitHub MCP Registry"}}
+
+Use this option if your client supports browsing the GitHub‑hosted MCP Registry. The Amplitude MCP server is listed in the official registry so you can discover and install it without manually copying URLs.
+
+1. Open your client's MCP Registry browser:
+   - Cursor: `Tools & Integrations > Browse Registry`
+   - Claude (web/desktop): `Settings > Connectors > Browse MCP Registry`
+   - Other clients: Refer to your client's documentation for the registry UI.
+
+2. Search for "Amplitude" and select the Amplitude entry.
+
+3. Choose the server URL:
+   - **US (Default):** `https://mcp.amplitude.com/mcp`
+   - **EU Residency:** `https://mcp.eu.amplitude.com/mcp`
+
+   {{partial:admonition type="note"}}
+   Use the EU URL only if your Amplitude data is in the EU region.
+   {{/partial:admonition}}
+
+4. Complete OAuth authentication with your Amplitude account when prompted.
+
+If your client does not yet support the registry, use one of the other tabs on this page for manual setup.
+
 {{/partial:tab}}
 {{partial:tab name="ChatGPT"}}
 
@@ -320,6 +344,7 @@ MCP access controls are an admin-only setting. Individual users can't override o
 * **Token limit errors**: If you receive token limit exceeded errors, try starting a new conversation thread or increase the maximum token limit in your MCP client settings.
 * **Connection timeouts**: If queries are timing out, try breaking down complex requests into smaller, more focused questions.
 * **Tool loading failures**: If tools aren't loading, restart your MCP client application and re-authenticate.
+* **Registry not available**: If you can't find the Amplitude listing in your client's registry browser, update your client to the latest version or use the manual setup instructions in the tabs above.
 
 ### Getting help
 
