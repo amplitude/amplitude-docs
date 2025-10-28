@@ -67,22 +67,22 @@ Amplitude keeps a record of the guides and surveys your users encounter. To remo
 4. In the corresponding row, click the ellipsis menu, and select **Clear history**.
 {{/partial:admonition}}
 
-## "Testing" status
+## Testing status function
 
-While preview mode provides a close approximation of how your guide or survey appears to users, sometimes you want to test in a live environment to be sure. In these cases, use the [**Testing** status](/docs/guides-and-surveys/guides/setup-and-target#status) to test your guide or survey with specific users without affecting your broader audience.
+While preview mode provides a close approximation of how your guide or survey appears to users, sometimes you want to test in a live environment. In these cases, use the [**Testing** status](/docs/guides-and-surveys/guides/setup-and-target#status) to test your guide or survey with specific users without affecting your broader audience.
 
-When you set a guide or survey to **Testing** status:
+When you set a guide or survey to Testing status:
 
-* All specified test users (device IDs, user IDs, or cohorts) are eligible to see the guide or survey
-* Limits are automatically ignored to make testing easier
-* The guide or survey remains hidden from your production users
+* All specified test users (device IDs, user IDs, or cohorts) are eligible to see the guide or survey.
+* Limits are automatically ignored to make testing easier.
+* The guide or survey remains hidden from your production users.
 
 {{partial:admonition type="note" heading="Test users in production"}}
-Test users will continue to see the guide or survey when you update its status to **Published** or **Scheduled**. This allows for smooth transitions from testing to production.
+Test users continue to receove the guide or survey when you update its status to **Published** or **Scheduled**. This allows for smooth transitions from testing to production.
 {{/partial:admonition}}
 
-To use the **Testing** status:
+##### To use the Testing status:
 
-1. Open your guide or survey
-2. In the **Test users** section, specify your test users using device IDs, user IDs, or cohorts
-3. Change status to **Testing** 
+1. Open your guide or survey.
+2. In the **Test users** section, specify your test users using device IDs, user IDs, or cohorts.
+3. Change status to **Testing** .
