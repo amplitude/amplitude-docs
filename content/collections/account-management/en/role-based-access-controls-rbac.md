@@ -49,7 +49,6 @@ This flexibility enables your organization to follow the security best practice 
 
 Permissions define the specific actions Amplitude users can perform. They’re the building blocks of RBAC. Most permissions define a user’s ability to create, edit, or delete items in specific areas. Some permissions provide access to a single action, like marking a dashboard or metric as official.
 
-
 Amplitude organizes permissions by product area:
 
 * Administration  
@@ -65,6 +64,10 @@ Amplitude organizes permissions by product area:
 ### Projects
 
 In Amplitude, you assign roles to users for each project. This means that project membership determines access to that project, and roles within the project determine what a user can do. 
+
+If a user has conflicting roles for the same project through group assignment (for example, Group A assigns them Viewer for Project A, but Group B assigns them Manager for Project A), they get the union of both sets of permissions. On the Members page, that user's role shows as "multiple" with an error warning icon.
+
+If you set a user's permission at the individual level (directly in the Members page), that role overrides any other assignments.
 
 ### Groups
 
