@@ -139,8 +139,9 @@ Statuses enable you to manage when your guide or survey displays.
 | Status    | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | Draft     | Enables you to make changes to and test the experience, but the experience doesn't appear to users.                                      |
+| Testing     | The guide or survey can be shown to [test users](/docs/guides-and-surveys/testing#testing-status).                                      |
 | Published | The guide or survey is live. Any changes you make to a published experience appear to users as soon as you save the guide or survey.                    |
-| Schedule  | Define specific start and end dates during which your experience appears. Start and end times use the timezone set on your project. |
+| Scheduled  | Define specific start and end dates during which your experience appears. Start and end times use the timezone set on your project. |
 
 ## Settings
 
