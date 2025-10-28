@@ -8,8 +8,8 @@ updated_at: 1739220209
 ---
 Amplitude provides two ways to test your guides and surveys:
 
-* **Preview mode** - A quick first check to see how your guide or survey looks and confirm your setup
-* **Testing status** - A more thorough live test with specific users to be extra certain before launch
+* **Preview mode**: A quick first check to see how your guide or survey looks and confirm your setup.
+* **Testing status**: A more thorough live test with specific users to be extra certain before launch.
 
 ## Preview mode
 
