@@ -95,3 +95,4 @@ Editing a topic or a prompt lets you rewrite the content to be more understandab
 
 ## Sources tab
 
+The Sources tab displays...
