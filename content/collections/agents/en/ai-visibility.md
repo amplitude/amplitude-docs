@@ -53,10 +53,23 @@ By default, insights are arranged first by topic and then by the prompts that re
 * "Best platforms for user behavior tracking"
 * "How to analyze user retention in SaaS products"
 
+Clicking into the topic displays all of the prompts related to that topic. 
+
 Both topic and prompt views contain metrics for:
 
 * Visibility
 * Relevancy
 * Average rank
 * Citations
+
+#### Individual prompts
+
+Clicking into an individual prompt displays:
+
+* The specific prompt the user entered.
+* Brands mentioned in the response.
+* The AI Model used to answer the prompt.
+* The response to the prompt.
+* Citations used to generate the repsonse.
+* The date and time when the prompt was last run.
 
