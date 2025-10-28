@@ -4,6 +4,7 @@ blueprint: agent
 title: 'Ensuring Your Content Appears in LLM Searches'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761677343
+nav_title: analytics
 ---
 As AI systems become the primary way users discover information, clear and well-structured content is essential. Large language models (LLMs) such as ChatGPT, Claude, and Perplexity use a combination of structure, freshness, and credibility to determine which content to reference in their responses.  
 
