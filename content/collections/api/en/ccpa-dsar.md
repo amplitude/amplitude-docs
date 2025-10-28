@@ -18,6 +18,10 @@ updated_at: 1715897991
 - Each download URL requires the same auth credentials to access.
 - Because the API is asynchronous, you must poll to check the status of the request. See the Rate Limits section to help select the appropriate polling rate.
 
+{{partial:admonition type="note" heading=""}}
+This API only returns behavioral data associated with a user. If you've connected Support and Service sources (such as Zendesk or Intercom) under the AI Feedback integration and enabled email mapping, that data will appear in the user's profile under the AI Feedback tab. You can find the User Profile by searching user under Users -> User Profile page. 
+{{/partial:admonition}}
+
 ### Asynchronous operation
 
 To support data volume, this API works asynchronously. Getting user data happens in three steps:
