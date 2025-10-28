@@ -10,7 +10,7 @@ landing: true
 landing_blurb: 'Learn how to create rich, custom content for your guides and surveys using Markdown and HTML.'
 ---
 
-The content editor in Guides and Surveys supports rich content creation through Markdown and/or HTML, giving you complete control over how your content appears to users. While this works for the content field, no other fields (eg title or buttons) are supported.
+The content editor in Guides and Surveys supports rich content creation through Markdown and/or HTML, giving you complete control over how your content appears to users. Although the content editor works for the content field, no other fields (for example titles or buttons) are supported.
 
 ## Markdown support
 
@@ -43,7 +43,7 @@ For more information, visit our [help center](/help).
 For advanced customization, you can use HTML with inline CSS directly in the step description editor. This gives you complete control over styling and layout.
 
 {{partial:admonition type="info" heading="HTML is sanitized"}}
-Anything outside of inline styling, for example an `onclick`, will be sanitized and ignored.
+Anything outside of inline styling, for example an `onclick`, is sanitized and ignored.
 {{/partial:admonition}}
 
 ### Example HTML with inline CSS
