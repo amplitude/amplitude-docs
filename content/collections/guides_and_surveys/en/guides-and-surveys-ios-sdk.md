@@ -22,7 +22,11 @@ The Guides and Surveys iOS SDK requires:
 
 ## Install and initialize the SDK
 
-Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Amplitude Swift 5.9+
+
+First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
@@ -40,7 +44,9 @@ pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Initialize the SDK
+#### Initialize the SDK
+
+Next, make sure to initialize the SDK.
 
 ```swift
 import AmplitudeEngagementSwift
@@ -65,22 +71,9 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
-
-### Boot the SDK
-
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 

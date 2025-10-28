@@ -79,6 +79,10 @@ Linking.addEventListener('url', async ({ url }) => {
 });
 ```
 
+{{partial:admonition type="note" heading=""}}
+At this point, you are technically done installing. While optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
+{{/partial:admonition}}
+
 ## Configure linking
 
 If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. Previewing Guides and Surveys on a device requires this support.
@@ -88,31 +92,6 @@ If your app doesn't have deep linking enabled, follow the [React Native instruct
 In Amplitude, navigate to your Project's settings.
 
 On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
-
-## Boot the plugin
-
-Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
-
-```js
-import {
-  track,
-  setDeviceId,
-  setUserId,
-} from '@amplitude/analytics-react-native';
-import { useEffect } from 'react';
-
-export default function App() {
-  useEffect(() => {
-    //
-    // setting the User ID in @amplitude/analytics-react-native
-    // --and-- passing it to boot() is necessary
-    //
-    setUserId('rn-test-user-1');
-    setDeviceId('test-device-1');
-    getPlugin().boot('rn-test-user-1', 'test-device-1');
-  }, []);
-}
-```
 
 ## Changelog
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

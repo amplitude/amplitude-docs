@@ -22,6 +22,10 @@ The Guides and Surveys Android SDK requires:
 
 ## Install and initialize the SDK
 
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Kotlin 1.8.22+
+
 Add the following dependencies to your application's `build.gradle.kts` file:
 
 ```kotlin
@@ -34,7 +38,7 @@ dependencies {
 }
 ```
 
-### Initialize the SDK
+#### Initialize the SDK
 
 ```kotlin
 import com.amplitude.android.engagement.AmplitudeEngagement
@@ -61,23 +65,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
-
-### Boot the SDK
-
-```kotlin
-// Basic boot with user ID
-amplitudeEngagement.boot(userId = "USER_ID")
-
-// Advanced boot with options
-val bootOptions = AmplitudeBootOptions(
-    user = AmplitudeEndUser(
-        userId = "USER_ID",
-        deviceId = "DEVICE_ID",
-        userProperties = mapOf("key" to "value")
-    )
-)
-amplitudeEngagement.boot(bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 
