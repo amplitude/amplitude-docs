@@ -80,7 +80,7 @@ Linking.addEventListener('url', async ({ url }) => {
 ```
 
 {{partial:admonition type="note" heading=""}}
-At this point, you are technically done installing. While optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
+At this point, you are technically done installing. While optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
 {{/partial:admonition}}
 
 ## Configure linking

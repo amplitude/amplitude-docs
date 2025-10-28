@@ -66,7 +66,7 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
 {{partial:admonition type="note" heading=""}}
-After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
 ### Enable screen tracking (optional)
