@@ -43,3 +43,33 @@ The Prompts tab contains the following metrics:
 * **Topics**: The total number of topics that have been generated relating to your brand.
 * **Prompts**: The total number of prompts across all topics that relate to your brand or to your competitors.
 * **Responses**: The total number of responses generated from the prompts that relate to your brand or to your competitors.
+
+### Topics and Prompts
+
+Below the metrics, the Prompts tab displays a searchable list of all topics and their associated prompts. Each topic represents a category or theme of queries that AI agents received.
+
+#### Topics
+
+Topics are organized in expandable rows that show:
+
+* **Topic name**: The subject or theme of related prompts (for example, "product analytics tools" or "customer data platforms").
+* **Prompt count**: The number of individual prompts within that topic.
+* **Response count**: The total number of AI-generated responses across all prompts in the topic.
+
+Click a topic row to expand it and view all associated prompts.
+
+#### Individual Prompts
+
+When you expand a topic, you can see each individual prompt that AI agents received. For each prompt, you can view:
+
+* **Prompt text**: The actual question or query submitted to the AI agent.
+* **Model**: Which AI model received the prompt (Claude, ChatGPT, Gemini, etc.).
+* **Response**: The AI-generated answer, including:
+  * Whether your brand was mentioned
+  * Your brand's position/rank in the response
+  * Which competitors were mentioned
+  * Citations or sources used in the response
+
+Click on any prompt to see the complete AI response and analyze how your brand and competitors were represented in the answer.
+
+Use the search bar at the top of the list to quickly find specific topics or prompts by keyword.
