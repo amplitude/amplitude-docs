@@ -3,6 +3,7 @@ id: 08bf8621-75eb-4834-960a-0dec8b82527f
 blueprint: section
 title: 'Amplitude AI'
 author: 3f7c2286-b7da-4443-a04f-7c225af40254
+nav_title: agents
 landing_page_content:
   -
     id: mh3nal6h
@@ -32,6 +33,6 @@ landing_page_content:
     enabled: true
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1761254128
-template: default
+updated_at: 1761674119
+template: landing-page-experiment
 ---
