@@ -9,7 +9,7 @@ updated_at: 1758821106
 ---
 Role-based Access Controls (RBAC) lets you manage who can access specific areas of Amplitude and the actions they can perform in those areas. By offering granular access controls, your Amplitude administrators can scale Amplitude adoption and prevent unauthorized actions.
 
-RBAC provides administrators a centralized location for assigning permissions to individual users or \[groups\](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and is assigned `Analyst`, they automatically inherit the same set of permissions as everyone else with the \`Analyst\` role.
+RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and is assigned `Analyst`, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
 
 {{partial:admonition type="tip" heading="RBAC: Key benefits"}}   
 RBAC Provides the following benefits to your enterprise:
