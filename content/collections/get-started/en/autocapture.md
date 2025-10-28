@@ -52,7 +52,8 @@ import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser';
 
 amplitude.init('AMPLITUDE_API_KEY', {
   autocapture: {
-    elementInteractions: true
+    elementInteractions: true,
+    webVitals: true // Enable Core Web Vitals tracking
   }
 });
 
@@ -80,6 +81,7 @@ If your web app configures the strict Content Security Policy (CSP) for security
 | Element clicked | Captures when a user clicks an element on the page.                                            | Element Aria Label, Element Class, Element Hierarchy, Element Href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
 | Element changed | Captures form element interactions, such as changes a dropdown or inputs text into a text box. | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
 | Network request | Captures when the application makes a network request.                                         | URL, Request method, Status code, Duration, Request body size, Response body size, Session Replay ID (if enabled).                                                                                                                                                       |
+| Web vitals      | Captures Core Web Vitals performance metrics when the browser tab becomes hidden.              | Page domain, Page location, Page path, Page title, Page URL, LCP, FCP, INP, CLS, TTFB metrics with performance ratings and timing data.                                                                                                                                      |
 
 For more information, see Autocapture in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) documentation. 
 

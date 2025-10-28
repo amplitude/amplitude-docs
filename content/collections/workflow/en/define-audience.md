@@ -37,21 +37,19 @@ Defining your audience isn't just about the segments or user properties. You mus
 
 1. Either create a new experiment or open an existing one. 
 2. In the Targeting section, click the **edit** icon.
-3. In the Audience tab, select the bucketing unit you want.
+3. In the Targeting tab, select the bucketing unit you want.
    Typically, the bucketing unit is by `User`. However, you can also bucket by [groups](/docs/analytics/account-level-reporting#group-level-reporting-an-overview).
 4. Select who you want to be eligible for this experiment. 
-   You can select **All Users** or **Targeted Users**. Targeting all users means that every users who triggers the exposure event receives your experiment. Targeting users lets you specify segments of users to receive your experiment.
+   By default, targeting will be on **All Users**. Add a segment to switch to **Targeted Users**. Targeting all users means that every users who triggers the exposure event receives your experiment. Targeting users lets you specify segments of users to receive your experiment.
 5. Select the bucketing you want to target. 
    By default, this is `Amplitude ID`. However you could select something like:
    * Device type
    * Language
    * Region
    * Postal code
-6. Click the **Distribution** tab.
-7. If you want to customize the distribution percentage, click **Customize** and then specify the percentages you want. 
-8. Click the **Rollout** tab.
-9. In the All users field, specify the percentage of users you want to receive the experiment. 
-10. Click either **Save & Close** or **Testers**. 
+6. If you want to customize the distribution percentage, click **Switch to custom** and then specify the percentages you want. 
+7. In the All users field, specify the percentage of users you want to receive the experiment. 
+8. Click either **Save & Close** or **Testers**. 
 
 After you have specified your audience, specify your testers.
 
