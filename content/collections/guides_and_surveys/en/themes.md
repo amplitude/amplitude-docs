@@ -165,3 +165,17 @@ Select the animation that each widget type uses to appear on screen, along with 
 Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
+
+## Custom CSS
+
+For advanced styling control beyond the theme editor, you can write custom CSS directly in your themes. Use the CSS selectors provided in the [Custom CSS documentation](/docs/guides-and-surveys/custom-css) to target specific elements and create unique designs.
+
+Custom CSS allows you to:
+- Override default theme styles
+- Create complex layouts and animations
+- Implement brand-specific design elements
+- Target specific form factors or components
+
+{{partial:admonition type="tip" heading="CSS selectors"}}
+The Custom CSS documentation provides a comprehensive list of CSS selectors for all Guides and Surveys elements, including form factors, buttons, form elements, and more.
+{{/partial:admonition}}
