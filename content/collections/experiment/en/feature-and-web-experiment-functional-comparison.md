@@ -65,7 +65,7 @@ The following tables describe which Experiment functionality is available for Fe
 
 {{/partial:collapse}}
 
-{{partial:collapse name="Goals"}}
+{{partial:collapse name="Metrics"}}
 |  |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | **Functionality** | **Feature** | **Web** |
