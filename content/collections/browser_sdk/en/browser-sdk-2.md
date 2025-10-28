@@ -147,7 +147,8 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default. |
 | `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
-| `fetchRemoteConfig`        | `boolean`. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                                                                                        | `true`                                 |
+| `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
+| `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
 
 {{/partial:collapse}}
 
@@ -228,7 +229,9 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - Form interactions
 - File downloads
 - Element interactions
+- Page URL enrichment
 - Network tracking
+- Web vitals
 
 
 {{partial:collapse name="Autocapture options"}}
@@ -241,7 +244,9 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
 | `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
+| `config.autocapture.pageUrlEnrichment` | Optional. `boolean` | Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information.                                                                                                                      |
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -263,6 +268,8 @@ amplitude.init(AMPLITUDE_API_KEY, {
     formInteractions: false,
     fileDownloads: false,
     elementInteractions: false,
+    pageUrlEnrichment: false,
+    webVitals: false,
   },
 });
 
@@ -883,6 +890,46 @@ Example request/response body
 | `b/d/*` | `{ "b": { "d": { "e": "E", "f": "F" } } }` |
 | `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } }` |
 | `*` | `{ "a": "A", "g": "G" }` |
+### Track web vitals
+
+Track Core Web Vitals performance metrics automatically. When enabled, Amplitude captures web performance metrics and sends them as `[Amplitude] Web Vitals` events when the browser tab first becomes hidden (when users navigate away, close the tab, or switch tabs).
+
+Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    webVitals: true, //[tl! highlight]
+  },
+});
+```
+
+#### Metrics captured
+
+The web vitals autocapture feature captures the following Core Web Vitals metrics
+- [INP](https://web.dev/articles/inp) 
+- [TTFB](https://web.dev/articles/ttfb)
+- [LCP](https://web.dev/articles/lcp)
+- [FCP](https://web.dev/articles/fcp)
+- [CLS](https://web.dev/articles/cls)
+
+#### Event properties
+
+The `[Amplitude] Web Vitals` event includes the following properties:
+
+| Property | Description |
+|----------|-------------|
+| `[Amplitude] Page Domain` | The hostname of the current page |
+| `[Amplitude] Page Location` | The full URL of the current page |
+| `[Amplitude] Page Path` | The pathname of the current page |
+| `[Amplitude] Page Title` | The title of the current page |
+| `[Amplitude] Page URL` | The URL of the current page without query parameters |
+| `[Amplitude] LCP` | [Largest Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#lcpmetric) (if available) |
+| `[Amplitude] FCP` | [First Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#fcpmetric) (if available) |
+| `[Amplitude] INP` | [Interaction to Next Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#inpmetric) (if available) |
+| `[Amplitude] CLS` | [Cumulative Layout Shift](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#clsmetric) (if available) |
+| `[Amplitude] TTFB` | [Time to First Byte](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#ttfbmetric) (if available) |
+
 
 ## Track an event
 
@@ -1332,7 +1379,19 @@ Amplitude provides several official plugins to extend the Browser SDK functional
 
 #### Page URL enrichment plugin
 
-The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) automatically adds page URL-related properties to all events. Properties such as: current page information, previous page location, and page type classification.
+The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) is enabled by default with autocapture. It automatically adds page URL-related properties to all events, including current page information, previous page location, and page type classification.
+
+To disable page URL enrichment, set `autocapture.pageUrlEnrichment` to `false`:
+
+```ts
+amplitude.init(API_KEY, {
+  autocapture: {
+    pageUrlEnrichment: false,
+  },
+});
+```
+
+For custom configuration or if you disabled autocapture entirely, you can still add the plugin manually:
 
 ```ts
 import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
@@ -1671,3 +1730,21 @@ Remote configuration supports Autocapture settings, and overrides settings you c
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
+
+#### Proxy remote config requests
+
+To proxy remote configuration requests through your own server (for example, to bypass ad blockers), configure the `remoteConfig` option:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  remoteConfig: {
+    serverUrl: 'https://your-proxy.example.com/config'
+  }
+});
+```
+
+When `remoteConfig.serverUrl` is set, the SDK sends remote configuration requests to your custom URL instead of Amplitude's endpoints. Analytics events still use `serverUrl` or the default Amplitude endpoints.
+
+{{partial:admonition type="note" heading=""}}
+The top-level `fetchRemoteConfig` option is deprecated. Use `remoteConfig.fetchRemoteConfig` instead for new implementations.
+{{/partial:admonition}}
