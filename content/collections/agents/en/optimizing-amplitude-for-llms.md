@@ -4,6 +4,7 @@ blueprint: agent
 title: 'Optimizing Amplitude for LLMs'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761677359
+nav_title: analytics
 ---
 As large language models (LLMs) become standard tools for analytics, research, and product discovery, it's important to ensure that your Amplitude data and content are both machine-readable and accurately represented in AI-generated experiences.  
 
