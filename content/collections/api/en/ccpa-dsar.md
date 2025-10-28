@@ -19,7 +19,7 @@ updated_at: 1715897991
 - Because the API is asynchronous, you must poll to check the status of the request. See the Rate Limits section to help select the appropriate polling rate.
 
 {{partial:admonition type="note" heading=""}}
-This API only returns behavioral data associated with a user. If you've connected Support and Service sources (such as Zendesk or Intercom) under the AI Feedback integration and enabled email mapping, that data will appear in the user's profile under the AI Feedback tab. You can find the User Profile by searching user under Users -> User Profile page. 
+This API only returns the behavioral data associated with the user. If you’ve connected Support and Service sources (such as Zendesk or Intercom) under the AI Feedback sources and enabled email mapping, please find the data associated with the user in the User Profile under AI Feedback tab. You can find the User Profile by searching user in Users -> User Profile page.
 {{/partial:admonition}}
 
 ### Asynchronous operation
