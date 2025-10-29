@@ -123,29 +123,29 @@ The selector is a unique identifier for the selected element on the current page
 - **When classes have stable substrings**: Prefer an attribute selector that matches the stable portion instead of the full hashed class.
 
 
-```css
-/* Instead of a fragile exact class */
-.sm-contentWrapper_ab12c_3
+  ```css
+  /* Instead of a fragile exact class */
+  .sm-contentWrapper_ab12c_3
 
-/* Use a contains match on the class attribute */
-div[class*="contentWrapper"]
-```
+  /* Use a contains match on the class attribute */
+  div[class*="contentWrapper"]
+  ```
 
-This continues to match elements like `<div class="sm-contentWrapper_ab12c_3">` even if a later build generates `sm-contentWrapper_d9f7e_1`.
+  This continues to match elements like `<div class="sm-contentWrapper_ab12c_3">` even if a later build generates `sm-contentWrapper_d9f7e_1`.
 
 
 - **Most reliable long-term approach**: Add a stable attribute (for example, `data-*`) or a unique id to the element you want to modify, and target that.
 
 
-```html
-<div data-test-id="experiment-content"></div>
-```
+  ```html
+  <div data-test-id="experiment-content"></div>
+  ```
 
-```html
-[data-test-id="experiment-content"]
-/* or */
-#experiment-content
-```
+  ```html
+  [data-test-id="experiment-content"]
+  /* or */
+  #experiment-content
+  ```
 
 ### Styles
 
