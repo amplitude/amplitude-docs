@@ -1,0 +1,667 @@
+{
+    "generated_at": "2025-08-28T22:10:10.987477Z",
+    "events_count": 16,
+    "properties_count": 57,
+    "events": [
+        {
+            "id": "5848c866-b674-4fbc-a295-28bee88d1de6",
+            "title": "Application Backgrounded",
+            "description": "App backgrounded",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "d1458a63-b883-424b-96a1-b01ec9cb9729",
+            "title": "Application Installed",
+            "description": "First open after install",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "c7a25caa-ba30-401f-9f34-5b82e6b8fe96",
+            "title": "Application Opened",
+            "description": "App foregrounded\/launched",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "2708db45-537e-40f7-bfcd-007e62aa9bae",
+            "title": "Application Updated",
+            "description": "First open after update",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "10b360d0-eaf3-4b88-8486-75662b1682e8",
+            "title": "Deep Link Opened",
+            "description": "Deep link open (if enabled)",
+            "platform": [
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "0ed55f9b-71f0-44ca-a124-285820fb79f5",
+            "title": "Element Changed",
+            "description": "Autocaptured change to form element (if enabled)",
+            "platform": [],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "4642ac01-2e9c-4e45-a320-83e96759dba3",
+            "title": "Element Clicked",
+            "description": "Autocaptured click on page element (if enabled)",
+            "platform": [
+                "web"
+            ],
+            "related_properties": [
+                {
+                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
+                    "title": "Event Historical Count",
+                    "description": "Nth instance before filters (user-level)",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
+                    "title": "Event Day of Week",
+                    "description": "Day name of event time (e.g., Monday)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
+                    "title": "Session Replay ID",
+                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
+                    "title": "Session Recorded",
+                    "description": "True if event occurred in a recorded session",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
+                    "title": "Server Upload Delay Time",
+                    "description": "ms between server upload and event time",
+                    "property_type": "event",
+                    "data_type": [
+                        "integer"
+                    ]
+                },
+                {
+                    "id": "b67aac04-57fe-4bcc-b239-9ef9863397d4",
+                    "title": "Element Aria Label",
+                    "description": "ARIA label of element",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "929a6bd8-a609-4dc5-8763-10540dfcfae0",
+                    "title": "Element Class",
+                    "description": "CSS class(es)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "1c1d706b-a212-4f70-a5aa-993756c78ed0",
+                    "title": "Element Hierarchy",
+                    "description": "DOM hierarchy descriptor",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "45823273-e0c5-4515-87c8-5a4f29555845",
+                    "title": "Element Href",
+                    "description": "Href for anchor elements",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "b48967bf-39c8-4478-86df-46bdcf35cdeb",
+                    "title": "Element ID",
+                    "description": "DOM id",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "530a8fbf-5258-4330-aafa-bac99ba09a38",
+                    "title": "Element Parent Label",
+                    "description": "Label of parent element",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "5699429c-a12b-4ace-97f9-0479dd8a5ed5",
+                    "title": "Element Position Left",
+                    "description": "X position",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "3d907a88-3109-4e61-a348-34d7a05d4e6b",
+                    "title": "Element Position Top",
+                    "description": "Y position",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "e8f6d2e8-daad-4ad3-93c0-9f63a6fba174",
+                    "title": "Element Selector",
+                    "description": "CSS selector",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "efd10b88-ea1c-40da-a75e-9cdb21abb68e",
+                    "title": "Element Tag",
+                    "description": "HTML tag name",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "939dc403-8add-45f2-9e6e-a97797c59d8a",
+                    "title": "Element Text",
+                    "description": "Visible text",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "95ec2d95-7d16-4ea6-a145-95b241fd9ddd",
+                    "title": "Viewport Height",
+                    "description": "Viewport height px",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "261924d1-461e-4ecf-89f8-55e007d26394",
+                    "title": "Viewport Width",
+                    "description": "Viewport width px",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                }
+            ],
+            "related_properties_count": 18
+        },
+        {
+            "id": "73196c71-eb33-432b-8c74-6461ce45c4b5",
+            "title": "Element Interacted",
+            "description": "UI control\/gesture interaction (if enabled)",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "2b8c08a3-e185-4719-950d-a1696d3cee5e",
+            "title": "End Session",
+            "description": "Autocaptured when a session ends",
+            "platform": [
+                "web",
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "a2a874dc-bdf4-42a4-9820-cb48de4609cf",
+            "title": "File Downloaded",
+            "description": "Autocaptured when clicking a link to a file",
+            "platform": [
+                "web"
+            ],
+            "related_properties": [
+                {
+                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
+                    "title": "Event Day of Week",
+                    "description": "Day name of event time (e.g., Monday)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
+                    "title": "Event Historical Count",
+                    "description": "Nth instance before filters (user-level)",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
+                    "title": "Event Hour of Day",
+                    "description": "Hour 0–23 of event time",
+                    "property_type": "event",
+                    "data_type": []
+                },
+                {
+                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
+                    "title": "Server Upload Delay Time",
+                    "description": "ms between server upload and event time",
+                    "property_type": "event",
+                    "data_type": [
+                        "integer"
+                    ]
+                },
+                {
+                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
+                    "title": "Session Recorded",
+                    "description": "True if event occurred in a recorded session",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
+                    "title": "Session Replay ID",
+                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "95b4cc41-d640-4b53-9cfa-0ecaef7be4a4",
+                    "title": "File Extension",
+                    "description": "Downloaded file extension",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c524cc60-ea45-457a-a155-30973ff1c53a",
+                    "title": "File Name",
+                    "description": "Downloaded file name",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "6e9d10ae-4e78-4a93-8b04-fa635908f849",
+                    "title": "Link Text",
+                    "description": "Anchor text clicked",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "f2c62c10-28e2-4ff0-902c-dc7d96b29f31",
+                    "title": "Link URL",
+                    "description": "Link URL",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                }
+            ],
+            "related_properties_count": 10
+        },
+        {
+            "id": "01bcbd6c-1006-468e-a907-040097ef0b60",
+            "title": "Form Started",
+            "description": "Autocaptured on first interaction with a form",
+            "platform": [
+                "web"
+            ],
+            "related_properties": [
+                {
+                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
+                    "title": "Event Day of Week",
+                    "description": "Day name of event time (e.g., Monday)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
+                    "title": "Event Historical Count",
+                    "description": "Nth instance before filters (user-level)",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
+                    "title": "Event Hour of Day",
+                    "description": "Hour 0–23 of event time",
+                    "property_type": "event",
+                    "data_type": []
+                },
+                {
+                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
+                    "title": "Server Upload Delay Time",
+                    "description": "ms between server upload and event time",
+                    "property_type": "event",
+                    "data_type": [
+                        "integer"
+                    ]
+                },
+                {
+                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
+                    "title": "Session Replay ID",
+                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
+                    "title": "Session Recorded",
+                    "description": "True if event occurred in a recorded session",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "260b9630-3134-47ff-abf5-ee5a3b642e35",
+                    "title": "Form Destination",
+                    "description": "Form action target URL",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                }
+            ],
+            "related_properties_count": 7
+        },
+        {
+            "id": "0e94b65f-8a28-4d55-bc7b-b1cf9a564c50",
+            "title": "Form Submitted",
+            "description": "Autocaptured when a form is submitted",
+            "platform": [
+                "web"
+            ],
+            "related_properties": [
+                {
+                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
+                    "title": "Event Day of Week",
+                    "description": "Day name of event time (e.g., Monday)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
+                    "title": "Event Historical Count",
+                    "description": "Nth instance before filters (user-level)",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
+                    "title": "Event Hour of Day",
+                    "description": "Hour 0–23 of event time",
+                    "property_type": "event",
+                    "data_type": []
+                },
+                {
+                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
+                    "title": "Session Replay ID",
+                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
+                    "title": "Session Recorded",
+                    "description": "True if event occurred in a recorded session",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
+                    "title": "Server Upload Delay Time",
+                    "description": "ms between server upload and event time",
+                    "property_type": "event",
+                    "data_type": [
+                        "integer"
+                    ]
+                },
+                {
+                    "id": "260b9630-3134-47ff-abf5-ee5a3b642e35",
+                    "title": "Form Destination",
+                    "description": "Form action target URL",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                }
+            ],
+            "related_properties_count": 7
+        },
+        {
+            "id": "589bf092-c617-4e80-9345-64e669f2a2f3",
+            "title": "Network Request",
+            "description": "Network request tracked (if enabled)",
+            "platform": [
+                "ios"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "4beaf3fe-1fde-4959-bbc8-6671a75bcc8b",
+            "title": "Page Viewed",
+            "description": "Autocaptured on page load",
+            "platform": [
+                "web"
+            ],
+            "related_properties": [
+                {
+                    "id": "240f93a3-1244-414f-8f30-8ecfd8be83ba",
+                    "title": "Event Day of Week",
+                    "description": "Day name of event time (e.g., Monday)",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "b627f7bb-f6f0-4bcd-b815-e370cc5cc8f2",
+                    "title": "Event Hour of Day",
+                    "description": "Hour 0–23 of event time",
+                    "property_type": "event",
+                    "data_type": []
+                },
+                {
+                    "id": "78703d32-ec59-437c-9d75-fcb069a38fd4",
+                    "title": "Event Historical Count",
+                    "description": "Nth instance before filters (user-level)",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "6ce15d74-a5e0-464f-a82e-fd0d8b602134",
+                    "title": "Server Upload Delay Time",
+                    "description": "ms between server upload and event time",
+                    "property_type": "event",
+                    "data_type": [
+                        "integer"
+                    ]
+                },
+                {
+                    "id": "c5d44d5a-175f-46b5-a9c6-bb6b39b9d3cc",
+                    "title": "Session Recorded",
+                    "description": "True if event occurred in a recorded session",
+                    "property_type": "event",
+                    "data_type": [
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "6d056359-a97c-43ff-8a10-a3bd7aa05969",
+                    "title": "Session Replay ID",
+                    "description": "Replay identifier `<uuid>\/<ms_epoch>`",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "c4374047-7e96-48e1-8e9a-a405fba492d8",
+                    "title": "Page Counter",
+                    "description": "Nth page view within session",
+                    "property_type": "event",
+                    "data_type": [
+                        "number"
+                    ]
+                },
+                {
+                    "id": "77a65178-5126-4afd-9bff-dfc4abddf8dc",
+                    "title": "Page Domain",
+                    "description": "Domain where event occurred",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "7e325fa6-60ca-4d47-a79e-a252c8506ad5",
+                    "title": "Page Location",
+                    "description": "Full URL including query string",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "81ea8aee-09db-4054-affd-be31ee273171",
+                    "title": "Page Path",
+                    "description": "URL path",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "8b0df410-7760-415e-9c95-db5e1fae5edc",
+                    "title": "Page Title",
+                    "description": "Document title",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "4e6edea1-b4a1-40d7-87e8-f1fd4f2dc8ae",
+                    "title": "Page URL",
+                    "description": "URL without query string",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                },
+                {
+                    "id": "d1e41f47-07e0-4ecb-92c8-871aa64402a9",
+                    "title": "Referrer",
+                    "description": "Referring URL\/domain",
+                    "property_type": "event",
+                    "data_type": [
+                        "string"
+                    ]
+                }
+            ],
+            "related_properties_count": 13
+        },
+        {
+            "id": "5b1e1af5-7b71-46a2-8e85-06308a9b2766",
+            "title": "Screen Viewed",
+            "description": "Screen view autocapture",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        },
+        {
+            "id": "e737ff1b-5aa4-4b7a-aed1-e07b7785d379",
+            "title": "Start Session",
+            "description": "Autocaptured when a new session starts",
+            "platform": [
+                "ios",
+                "android",
+                "web"
+            ],
+            "related_properties": [],
+            "related_properties_count": 0
+        }
+    ]
+}

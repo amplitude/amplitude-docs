@@ -1,0 +1,797 @@
+{
+    "generated_at": "2025-10-23T17:15:01.288462Z",
+    "permissions_count": 41,
+    "permissions": [
+        {
+            "id": "65f10b78-fdb1-449a-a906-6f769e0331e0",
+            "title": "Create and update Guides & Surveys themes",
+            "description": "Create, update and archive unpublished guide and survey themes",
+            "product_area": "guides-surveys",
+            "advanced": true,
+            "actions": [
+                "create theme",
+                "duplicate unpublished theme",
+                "update unpublished theme",
+                "archive unpublished theme"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "create-and-update-guides-surveys-themes"
+        },
+        {
+            "id": "cccf28bc-d934-4bda-9472-70186e9f88eb",
+            "title": "Export cohorts",
+            "description": "Export cohort CSV files",
+            "product_area": "audiences",
+            "advanced": false,
+            "actions": [
+                "export cohort"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "export-cohorts"
+        },
+        {
+            "id": "1d4d5bfc-8ec7-4286-8053-4649bfec00e5",
+            "title": "Manage annotations",
+            "description": "Create, update, and delete chart annotations",
+            "product_area": "charts-metrics",
+            "advanced": false,
+            "actions": [
+                "create annotation",
+                "delete annotation",
+                "edit annotation"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-annotations"
+        },
+        {
+            "id": "88242b22-1e66-4077-bfcd-16df9f4e3605",
+            "title": "Manage API keys",
+            "description": "View, update, revoke and replace API keys",
+            "product_area": "admin",
+            "advanced": true,
+            "actions": [
+                "view secret key",
+                "view integration api keys",
+                "edit integration api keys"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-api-keys"
+        },
+        {
+            "id": "876e17ca-49a4-4fcc-9576-7ac74a9d0a8b",
+            "title": "Manage billing settings",
+            "description": "Allows users to update billing methods for the organization.",
+            "product_area": "admin",
+            "advanced": true,
+            "actions": [
+                "update billing method"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "manage-billing-settings"
+        },
+        {
+            "id": "9af8c100-ce5b-4cce-9c6d-f335ab53b34e",
+            "title": "Manage cohorts",
+            "description": "Create, update and delete cohorts",
+            "product_area": "audiences",
+            "advanced": false,
+            "actions": [
+                "create cohort",
+                "update cohort",
+                "archive cohort",
+                "delete cohort"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "manage-cohorts"
+        },
+        {
+            "id": "62aa70fe-d4d4-42b5-986b-472883f8ef89",
+            "title": "Manage content",
+            "description": "Add, update, and delete the article and video content that can be used by Resource Center.",
+            "product_area": "resource-center",
+            "advanced": true,
+            "actions": [
+                "add content syncs and sources",
+                "update content sync and sources",
+                "remove content syncs and sources"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-content"
+        },
+        {
+            "id": "50368d6c-aad3-4663-8efd-33b9bbdc60a3",
+            "title": "Manage custom metrics",
+            "description": "Create, update, and delete custom metrics",
+            "product_area": "charts-metrics",
+            "advanced": false,
+            "actions": [
+                "create metrics",
+                "delete metrics",
+                "edit metrics"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-custom-metrics"
+        },
+        {
+            "id": "c6ba84a0-8b6c-4b73-b3dc-58bfdbca8d21",
+            "title": "Manage data clean up",
+            "description": "Full control over transformations, drop filters and block filters",
+            "product_area": "data-management",
+            "advanced": true,
+            "actions": [
+                "create transformations",
+                "edit transformations",
+                "remove transformations",
+                "create drop filters",
+                "edit drop ilters",
+                "remove drop filters",
+                "create block filters",
+                "edit block filters",
+                "remove block filters"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "manage-data-clean-up"
+        },
+        {
+            "id": "2f39d91d-56a4-41a7-acb4-bf63b46d681a",
+            "title": "Manage data enrichment",
+            "description": "Create, update and delete custom events, derived/group/profile properties",
+            "product_area": "data-management",
+            "advanced": true,
+            "actions": [
+                "create custom event",
+                "edit custom event",
+                "remove custom event",
+                "create derived property",
+                "edit derived property",
+                "remove derived property",
+                "create labeled events",
+                "edit labeled events",
+                "remove labeled events",
+                "create lookup property",
+                "edit lookup property",
+                "remove lookup property",
+                "create channels",
+                "edit channels",
+                "remove channels",
+                "create group property",
+                "edit group property",
+                "remove group property",
+                "create profile property",
+                "edit profile property",
+                "remove profile property"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "manage-data-enrichment"
+        },
+        {
+            "id": "3593dc76-0c2c-4916-8b72-7cf7f4d13aba",
+            "title": "Manage data settings",
+            "description": "Manage core settings such as branch reviews, environment & schema settings, naming conventions and workspace names",
+            "product_area": "data-management",
+            "advanced": true,
+            "actions": [
+                "edit naming convention standards",
+                "edit workspace name",
+                "edit branch review settings",
+                "edit environments",
+                "edit schema settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-data-settings"
+        },
+        {
+            "id": "3c48dc6a-bd3f-4aa4-9371-e96cbf0fc362",
+            "title": "Manage deployments",
+            "description": "Create, update, and delete specific deployment keys",
+            "product_area": "experiment",
+            "advanced": true,
+            "actions": [
+                "create deployments",
+                "edit deployments",
+                "revoke and delete deployments"
+            ],
+            "default_permissions": [
+                "admin"
+            ],
+            "slug": "manage-deployments"
+        },
+        {
+            "id": "01c45606-ffee-493a-a00b-04b031a3e3ad",
+            "title": "Manage destinations",
+            "description": "Create, update and delete streams and destinations",
+            "product_area": "integrations",
+            "advanced": true,
+            "actions": [
+                "create stream",
+                "update stream",
+                "delete stream",
+                "view activation destinations (CDP Team)",
+                "create destination",
+                "update destination",
+                "delete destination",
+                "create DWH destination",
+                "update DWH destination",
+                "delete DWH destination"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-destinations"
+        },
+        {
+            "id": "ca27d072-2535-400b-aa54-df929e41f12c",
+            "title": "Manage Experiment settings",
+            "description": "Manage project-level experiment settings",
+            "product_area": "experiment",
+            "advanced": true,
+            "actions": [
+                "edit flag-level permissions settings",
+                "edit approvals setting"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-experiment-settings"
+        },
+        {
+            "id": "0dbdf24f-72af-40e5-bba8-e83a5ce4af0f",
+            "title": "Manage Feature Flags and Feature Experiments",
+            "description": "Create, Update, and Delete Feature Flags and Feature Experiments",
+            "product_area": "experiment",
+            "advanced": true,
+            "actions": [
+                "create feature flags and experiments",
+                "archive feature flags and experiments",
+                "edit feature flag configuration",
+                "create, update and delete experiment templates",
+                "create mutex and holdout groups and add and remove feature experiments"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-feature-flags-and-feature-experiments"
+        },
+        {
+            "id": "4013f91e-0e3e-4b8f-803a-f82f4cb23609",
+            "title": "Manage Guides & Surveys tags and settings",
+            "description": "Update throttle settings and create, update and delete tags",
+            "product_area": "guides-surveys",
+            "advanced": true,
+            "actions": [
+                "edit tags",
+                "update throttle settings",
+                "manage project settings",
+                "manage apps"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-guides-surveys-tags-and-settings"
+        },
+        {
+            "id": "282da3bd-7758-41e0-92d4-78486d95dc45",
+            "title": "Manage Guides & Surveys templates",
+            "description": "Create, update and archive guide and survey templates",
+            "product_area": "guides-surveys",
+            "advanced": true,
+            "actions": [
+                "create guide/survey template",
+                "update guide/survey template",
+                "archive guide/survey template"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-guides-surveys-templates"
+        },
+        {
+            "id": "83afcee4-9f48-4014-8de3-e003719a295a",
+            "title": "Manage Heatmaps",
+            "description": "Create, update, and delete heatmaps",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "create heatmap",
+                "update heatmap",
+                "delete heatmap"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "manage-heatmaps"
+        },
+        {
+            "id": "27e50fdd-9e06-4a88-af9d-1c580caacfa7",
+            "title": "Manage management API keys",
+            "description": "Create, update, and delete experiment management API keys",
+            "product_area": "experiment",
+            "advanced": true,
+            "actions": [
+                "create management api key",
+                "edit management api key",
+                "revoke management api key"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-management-api-keys"
+        },
+        {
+            "id": "ed257943-9308-4676-b7bf-e83c02afd26e",
+            "title": "Manage predictions",
+            "description": "Create, update and delete predictions",
+            "product_area": "audiences",
+            "advanced": false,
+            "actions": [
+                "create prediction",
+                "update prediction",
+                "delete prediction"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-predictions"
+        },
+        {
+            "id": "99c3cca7-aefe-4a04-91dd-842be3f68e32",
+            "title": "Manage project settings",
+            "description": "Full access to all project settings and project data exports",
+            "product_area": "admin",
+            "advanced": true,
+            "actions": [
+                "change project timezone",
+                "change project description",
+                "change project session property",
+                "rename project",
+                "view project key",
+                "create project",
+                "delete project"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-project-settings"
+        },
+        {
+            "id": "854d42d8-074f-41b7-bce7-e1e26bfcdeeb",
+            "title": "Manage published Guides & Surveys",
+            "description": "Update and archive published guides and surveys",
+            "product_area": "guides-surveys",
+            "advanced": true,
+            "actions": [
+                "publish guide/survey",
+                "unpublish guide/survey",
+                "archive published guide/survey",
+                "update published guide/survey",
+                "update published guide/survey experiment",
+                "archive published guide/survey experiment"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-published-guides-surveys"
+        },
+        {
+            "id": "ecbac35e-b888-4804-9d3c-5f0f3749cbcf",
+            "title": "Manage published recommendation sets",
+            "description": "Create, update and archive unpublished recommendation sets",
+            "product_area": "resource-center",
+            "advanced": true,
+            "actions": [
+                "publish / unpublish recommendation sets",
+                "edit published recommendation sets",
+                "archive published  recommendation sets"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-published-recommendation-sets"
+        },
+        {
+            "id": "560fdd59-5dfe-47e7-85f7-af4ce17bdb56",
+            "title": "Manage Resource Center settings",
+            "description": "Control the on/off switch for Resource Center, Autopilot, quick links, and other settings.",
+            "product_area": "resource-center",
+            "advanced": true,
+            "actions": [
+                "update resource center settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-resource-center-settings"
+        },
+        {
+            "id": "cb468ff3-4cf6-4dc2-9e56-7ad630d8e485",
+            "title": "Manage saved segments",
+            "description": "Create, update and delete saved segments",
+            "product_area": "audiences",
+            "advanced": false,
+            "actions": [
+                "create saved segment",
+                "update saved segment",
+                "delete saved segment"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "manage-saved-segments"
+        },
+        {
+            "id": "0c6ecde2-93cf-466d-ba7c-785682a88df0",
+            "title": "Manage Session Replay and Heatmap settings",
+            "description": "Manage masking, replay hiding, and targeted replay capture settings",
+            "product_area": "session-replay",
+            "advanced": true,
+            "actions": [
+                "update session replay masking settings",
+                "hide specific session replays",
+                "update targeted replay capture settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-session-replay-and-heatmap-settings"
+        },
+        {
+            "id": "089c0602-44a6-4c0b-8c41-0d62a41f0851",
+            "title": "Manage Session Replays",
+            "description": "Hide specific session replays",
+            "product_area": "session-replay",
+            "advanced": true,
+            "actions": [
+                "hide specific session replays"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-session-replays"
+        },
+        {
+            "id": "9d57a308-d88c-4049-895d-8a07b864dc1b",
+            "title": "Manage sources",
+            "description": "Create, update and delete sources",
+            "product_area": "integrations",
+            "advanced": true,
+            "actions": [
+                "view activation sources (CDP Team)",
+                "create source",
+                "update source",
+                "delete source",
+                "create DWH source",
+                "update DWH source",
+                "delete DWH source"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-sources"
+        },
+        {
+            "id": "6e0a8713-bf04-4e8b-8eac-2555f2c5a18b",
+            "title": "Manage syncs",
+            "description": "Create, update and delete syncs",
+            "product_area": "integrations",
+            "advanced": true,
+            "actions": [
+                "create sync",
+                "update sync",
+                "delete sync"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-syncs"
+        },
+        {
+            "id": "1a1639e7-d1a7-4c56-8d9d-e0f6256c8037",
+            "title": "Manage Tracking Plan changes",
+            "description": "Approve change branches, data classifications and manage all tracking plan system settings",
+            "product_area": "data-management",
+            "advanced": true,
+            "actions": [
+                "branch approval",
+                "edit session replay screenshots",
+                "set data access controls classifications",
+                "create public link setup",
+                "edit public link setup",
+                "edit integration for Slack and JIRA",
+                "create API tokens",
+                "manage autocapture settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-tracking-plan-changes"
+        },
+        {
+            "id": "1ae8155d-d84c-46da-9d97-35aa7c232b58",
+            "title": "Manage unpublished Guides & Surveys",
+            "description": "Create, update and archive unpublished guides and surveys",
+            "product_area": "guides-surveys",
+            "advanced": false,
+            "actions": [
+                "create guide/survey",
+                "duplicate guide/survey",
+                "copy guide/survey across projects",
+                "update unpublished guide/survey",
+                "archive unpublished guide/survey",
+                "create unpublished guide/survey experiment",
+                "update unpublished guide/survey experiment",
+                "archive unpublished guide/survey experiment",
+                "Upload localization files for G&S",
+                "Use AI generated translations for G&S"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "manage-unpublished-guides-surveys"
+        },
+        {
+            "id": "a1ee9def-c4ad-41fc-9125-3c802f870efd",
+            "title": "Manage unpublished recommendation sets",
+            "description": "Create, update and archive unpublished recommendation sets",
+            "product_area": "resource-center",
+            "advanced": true,
+            "actions": [
+                "create unpublished recommendation sets",
+                "edit unpublished recommendation sets",
+                "archive unpublished  recommendation sets"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-unpublished-recommendation-sets"
+        },
+        {
+            "id": "d7def2e1-8a41-4328-b546-f8589bce7bcf",
+            "title": "Manage user permissions",
+            "description": "Add or remove users, and change their roles and data permissions",
+            "product_area": "admin",
+            "advanced": true,
+            "actions": [
+                "change role of user",
+                "edit permission groups",
+                "invite new users to a project",
+                "remove users from a project"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-user-permissions"
+        },
+        {
+            "id": "a6a4cc13-fabe-4b33-97cb-21a60da1cc54",
+            "title": "Manage Web Experiments",
+            "description": "Manage Web Experiments",
+            "product_area": "experiment",
+            "advanced": true,
+            "actions": [
+                "create web experiment",
+                "edit web experiment configuration",
+                "archive web experiment",
+                "create page objects",
+                "update page objects",
+                "delete page objects",
+                "manage web exp dependencies"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-web-experiments"
+        },
+        {
+            "id": "a08df6d0-3f63-4a98-bbd3-667accfde25d",
+            "title": "Mark audiences as official",
+            "description": "Mark cohorts and saved segments as official",
+            "product_area": "audiences",
+            "advanced": true,
+            "actions": [
+                "mark cohort as official",
+                "mark saved segment as official"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "mark-audiences-as-official"
+        },
+        {
+            "id": "d212d546-59ea-418e-9934-07bc2d2c2e98",
+            "title": "Mark dashboards and metrics as official",
+            "description": "Mark metrics and dashboards as official",
+            "product_area": "charts-metrics",
+            "advanced": false,
+            "actions": [
+                "set official dashboards",
+                "set official metrics"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "mark-dashboards-and-metrics-as-official"
+        },
+        {
+            "id": "ed7a4b43-04a4-48a3-acaa-1d5b6693b299",
+            "title": "Play Session Replays",
+            "description": "Watch session replay recordings",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "view session replay"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "play-session-replays"
+        },
+        {
+            "id": "a62349a2-58d6-482f-addd-2ee84b3c2cec",
+            "title": "Publish and archive Guides & Surveys themes",
+            "description": "Create, update and archive published guide and survey themes",
+            "product_area": "guides-surveys",
+            "advanced": true,
+            "actions": [
+                "publish theme",
+                "unpublish theme",
+                "update published theme",
+                "archive published theme"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "publish-and-archive-guides-surveys-themes"
+        },
+        {
+            "id": "1bf788ab-431b-44fb-90f7-eaeceb44208f",
+            "title": "Update tracking plan",
+            "description": "Make changes to the tracking plan, and gain access to API tokens",
+            "product_area": "data-management",
+            "advanced": true,
+            "actions": [
+                "edit event activity",
+                "edit event display name",
+                "edit event property visibility",
+                "edit event visibility",
+                "edit user property visibility",
+                "export event data",
+                "accept data assistance suggestions",
+                "import tracking plan",
+                "view api tokens",
+                "see instrumentation limit notifications",
+                "delete event types",
+                "delete user properties",
+                "delete event properties",
+                "change block list",
+                "change event description",
+                "change event category",
+                "change event tag",
+                "edit event category",
+                "create planned events",
+                "toggle waiting room",
+                "create dynamic group property",
+                "map salesforce properties",
+                "change property description",
+                "transform event data",
+                "edit schema (taxonomy)",
+                "initialize schema (taxonomy)",
+                "change property type",
+                "edit schema whitelist settings",
+                "edit taxonomy validation email subscribers",
+                "edit nova query transformations",
+                "view vacuum admin page",
+                "delete group types"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
+            "slug": "update-tracking-plan"
+        },
+        {
+            "id": "409c4566-78c4-484b-adc0-d343a20936df",
+            "title": "View experiment objects",
+            "description": "View feature flags, experiments, and related configuration",
+            "product_area": "experiment",
+            "advanced": false,
+            "actions": [
+                "view all experiment-specific objects"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-experiment-objects"
+        },
+        {
+            "id": "86dffa00-657b-46e0-a9a7-8ba392dca9cb",
+            "title": "View Guides & Surveys objects",
+            "description": "View guides & surveys related objects",
+            "product_area": "guides-surveys",
+            "advanced": false,
+            "actions": [
+                "view all guides and surveys assets"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-guides-surveys-objects"
+        }
+    ]
+}

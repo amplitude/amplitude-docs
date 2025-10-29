@@ -1,3 +1,6 @@
 {
-    "markdown.validate.enabled": true
+    "markdown.validate.enabled": false,
+    "markdown.validate.ignoredLinks": [
+        "/docs/admin/account-management/role-based-access-controls-rbac"
+    ]
 }

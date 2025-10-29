@@ -1,0 +1,13 @@
+<!-- Vue.js will mount here -->
+<div id="rbac-permissions-container"></div>
+
+<script>
+  window.APP_CONFIG = {
+    isLocal: {{ environment == 'local' ? 'true' : 'false' }},
+    dataUrl: '/docs/rbac-permissions-data.json',
+    searchDebounce: 150,
+    maxResults: 100
+  };
+</script>
+
+<script src="{{ mix src='docs/js/rbac.js' }}"></script>
