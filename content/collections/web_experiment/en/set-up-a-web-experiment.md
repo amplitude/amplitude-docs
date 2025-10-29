@@ -116,6 +116,37 @@ This toolbar consists of the following sections and tools:
 
 The selector is a unique identifier for the selected element on the current page. Web Experiment disables this by default. You may need to update the selector if you're running the experiment on multiple pages as the selector that's generated is only unique for the current page. As an alternative, you can edit the selector to select and edit multiple elements.
 
+#### Stability best practices
+
+- **Visual Editor behavior**: The editor selects the shortest unique path, which may include dynamically generated class names such as `sm-contentWrapper_ab12c_3`. These class values often include a hash that changes between builds, causing the selector to stop matching.
+
+- **When classes have stable substrings**: Prefer an attribute selector that matches the stable portion instead of the full hashed class.
+
+
+```css
+/* Instead of a fragile exact class */
+.sm-contentWrapper_ab12c_3
+
+/* Use a contains match on the class attribute */
+div[class*="contentWrapper"]
+```
+
+This continues to match elements like `<div class="sm-contentWrapper_ab12c_3">` even if a later build generates `sm-contentWrapper_d9f7e_1`.
+
+
+- **Most reliable long-term approach**: Add a stable attribute (for example, `data-*`) or a unique id to the element you want to modify, and target that.
+
+
+```html
+<div data-test-id="experiment-content"></div>
+```
+
+```html
+[data-test-id="experiment-content"]
+/* or */
+#experiment-content
+```
+
 ### Styles
 
 The Styles tab contains many frequently used CSS properties. These include: font size, font color, text alignment, padding, margin, background color, display, visibility, and more.
