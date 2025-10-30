@@ -48,30 +48,6 @@ Use the following structural checklist to ensure your hierarchy is understandabl
 
 A well-structured page also improves readability for human users and accessibility tools.
 
-### Schema markup 
-
-Adding [structured data markup](https://schema.org/) further enhances AI comprehension of your content. Schema markup provides explicit, machine-readable metadata about your page-type, author, date published, and relationships. Additionally, LLMs increasingly rely on structured data to identify trustworthy sources.
-
-Remember: 
-* Use JSON-LD format inside the `head` of your page.
-* Choose scheme types that reflect your content:
-  * `Article`
-  * `FAQPage`
-  * `HowTo`
-  * `Organization`
-  * `WebPage`
-* Ensure that the schema matches the visible content. Don't mark up hidden or not-present content.
-* Keep the following fields as relevant:
-  * `datePublished` 
-  * `dateModified`
-  * `author`
-  * `headline`
-  * `about`
-  * `audience`
-  * `sameAs`
-* If your content includes Q&A or FAQ content, wrap the content with `FAQPage` schema so that the LLMs can directly reference your answers.
-* Monitor results by testing prompts in LLM tools and checking whether your content is cited or referenced. 
-
 ## Keep content updated and accurate
 
 LLMs heavily weight content that appears recent and up to date. Outdated or stale pages are less likely to appear in model-generated answers.
