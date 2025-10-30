@@ -176,7 +176,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 {{/partial:admonition}}
 
 #### Mark step complete when
-Only checklists have the **Mark step complete when** option. A checklist step can be marked complete when:
+Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when:
 - Button is clicked
 - Page is visited
 - Element is clicked
