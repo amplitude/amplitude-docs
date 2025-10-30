@@ -43,7 +43,7 @@ For more information, visit our [help center](/help).
 For advanced customization, you can use HTML with inline CSS directly in the step description editor. This gives you complete control over styling and layout.
 
 {{partial:admonition type="info" heading="HTML is sanitized"}}
-Anything outside of inline styling, for example an `onclick`, is sanitized and ignored.
+Anything outside of inline styling, for example an `onclick`, is ignored.
 {{/partial:admonition}}
 
 ### Example HTML with inline CSS
