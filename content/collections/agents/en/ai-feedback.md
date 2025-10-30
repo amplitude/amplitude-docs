@@ -140,9 +140,21 @@ Insights are useful to understand your customers’ experience with your product
 
 A link to the insight is automatically saved to your clipboard. Only colleagues with access to your Amplitude project have access to view.
 
-## Migrating user mapping
+## Merging existing users from an AI Feedback source
 
-You may, at some point, want to migrate from one user ID system to another. For example, migrating from a plain email address system to a hashed email address that protects customer PII. You don’t, however, want to lose the history of the previous ID system for your customers. To keep the history together with the new ID system, the new system must be mapped to the pre-existing Amplitude ID. 
+This lets you merge your existing users with users from support AI Feedback sources such as Zendesk, Intercom, and so on. Users with the same email address will be merged. 
+
+##### To merge existing users
+
+1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that will contain the user's email address. 
+2. Send at least one event for each users that has that field populated. 
+
+After Amplitude received that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
+
+## Deleting information based on user ID or Amplitude ID
+
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a sepecit user ID or Amplitude ID, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. 
+
 
 User mapping lets you select any user property that contains your users’ email addresses and link that to an associated Amplitude ID. 
 
@@ -154,3 +166,20 @@ User mapping lets you select any user property that contains your users’ email
 ### Deleting information based on user ID or Amplitude ID
 
 When a deletion request is submitted to Amplitude’s User Privacy API for a specific user ID or Amplitude ID, all AI Feedback data associated with that user ID and/or Amplitude ID is also be deleted. 
+
+To ensure that the deletion is permanent and complete, note the following: 
+* Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 
+* Manual deletion of other data: The User Privacy API only handles deletions tied to specific user IDs or Amplitude IDs. Any other related data (for example general or aggregated feedback) must be deleted manually from your [source management page](/docs/data/sources/connect-to-source).
+
+## Data access
+
+AI Feedback follows your existing Amplitude project and role-based permissions. No new data access is granted. 
+
+Source connectors (for example Zendesk, Intercom, App Store/Google Play, Gong, G2/Trustpilot, Reddit/Discord/X) are authorized by you and scoped to your credentials using secure OAuth (or equivalent).
+
+## AI Feedback and LLM use
+
+AI Feedback uses a third party large language model (OpenAI) to turn connected feedback (for example tickets, reviews, call transcripts, social/forums) into product insights. 
+
+You control which sources to connect and AI Feedback processes only the feedback you choose to ingest as well as the Amplitude data you already can access. Customer data is processed for inference only. It's not used to train foundation models. Requests are handled transiently, with data encrypted in transit and at rest in your regional data plane. Outputs are grounded in raw feedback data with source links, and proprietary safeguards (for example hallucination checks) to help ensure summaries reflect actual feedback. 
+
