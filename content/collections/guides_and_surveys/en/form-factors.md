@@ -176,11 +176,11 @@ When you add a Button, you can choose what happens when users click or tap that 
 {{/partial:admonition}}
 
 #### Mark step complete when
-Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when:
-- Button is clicked
-- Page is visited
-- Element is clicked
-- Event is tracked
+Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
+- `Button is clicked`
+- `Page is visited`
+- `Element is clicked`
+- `Event is tracked`
 
 For each of these options, the checklist step updates from "incomplete" to "complete" only if the action happens on the client while the checklist is visible. For example, if Amplitude tracks an event server side or the event happens before the checklist is shown, the step won't be marked completed.
 
