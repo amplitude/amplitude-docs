@@ -175,6 +175,15 @@ When you add a Button, you can choose what happens when users click or tap that 
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
 
+#### Mark step complete when
+Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
+- `Button is clicked`
+- `Page is visited`
+- `Element is clicked`
+- `Event is tracked`
+
+For each of these options, the checklist step updates from "incomplete" to "complete" only if the action happens on the client while the checklist is visible. For example, if Amplitude tracks an event server side or the event happens before the checklist is shown, the step won't be marked completed.
+
 #### Image
 
 Upload an image to include in your experience. The experience's layout determines the image's position.
