@@ -182,7 +182,7 @@ Only checklists have the **Mark step complete when** option. Amplitude marks a c
 - Element is clicked
 - Event is tracked
 
-For each of these options, the checklist step can only be updated from "incomplete" to "complete" if the action happens on the client while the checklist is visible. For example, if the event is tracked server side or happens before the checklist is shown, then the step won't be marked completed.
+For each of these options, the checklist step can updates from "incomplete" to "complete" only if the action happens on the client while the checklist is visible. For example, if Amplitude tracks an event server side or the event happens before the checklist is shown, the step won't be marked completed.
 
 #### Image
 
