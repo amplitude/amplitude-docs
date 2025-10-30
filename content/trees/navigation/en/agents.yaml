@@ -2,6 +2,7 @@ tree:
   -
     id: 475019ad-c194-4678-b40c-a1ee5d84ca0e
     entry: adb85d4b-175d-4e9e-bb94-710a6e0b242c
+    title: Agents
     children:
       -
         id: 2f0c80b7-e756-48b2-a64e-300d6d358e99
