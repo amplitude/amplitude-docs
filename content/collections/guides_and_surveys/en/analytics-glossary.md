@@ -172,7 +172,7 @@ glossary:
         event_description: |- 
           The user clicked or interacted with a guide.
 
-          Note: clicks on a pin's *target element* or *advance trigger element* do not generate a "Guide Engaged" event.
+         Clicks on a pin's *target element* or *advance trigger element* do not generate a "Guide Engaged" event.
         event_specific_properties: |-
           `Engagement` (object): Object with details about the type of engagement. 
 
