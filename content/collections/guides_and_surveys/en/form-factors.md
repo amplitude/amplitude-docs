@@ -136,7 +136,7 @@ Position controls where the guide appears on screen.
 
 | Form factor                              | Options                                                                                                                                                                                                                                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Popover                                  | Top right, top left, bottom right, bottom left, center                                                                                                                                                                                                                                    |
+| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center                                                                                                                                                                                                                                    |
 | Modal                                    | Center                                                                                                                                                                                                                                                                                    |
 | Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
@@ -174,6 +174,15 @@ When you add a Button, you can choose what happens when users click or tap that 
 {{partial:admonition type='note'}}
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
+
+#### Mark step complete when
+Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
+- `Button is clicked`
+- `Page is visited`
+- `Element is clicked`
+- `Event is tracked`
+
+For each of these options, the checklist step updates from "incomplete" to "complete" only if the action happens on the client while the checklist is visible. For example, if Amplitude tracks an event server side or the event happens before the checklist is shown, the step won't be marked completed.
 
 #### Image
 
