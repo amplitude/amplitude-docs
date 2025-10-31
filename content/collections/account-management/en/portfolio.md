@@ -14,7 +14,7 @@ this_article_will_help_you:
 With Portfolio, you can build a holistic view of how your users interact with your entire product portfolio. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 
 {{partial:admonition type="note" heading="Portfolio project limits"}}
-Portfolios support an unlimited number of projects. User Streams within portfolios is limited to five projects. If your use case requires more, contact your account team to unlock up to 10 projects for User Streams.
+Portfolios support an unlimited number of projects. User Streams within portfolios are limited to five projects. If your use case requires more, contact your account team to unlock up to 10 projects for User Streams.
 {{/partial:admonition}}
 
 ### Feature availability
