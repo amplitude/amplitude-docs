@@ -36,9 +36,8 @@ This directory contains Cursor rules that enforce Amplitude's documentation writ
 13. **new-feature-template.md** - Template for documenting new features
 14. **link-validation.md** - Validates internal link formats
 
-### Contributor Guides
-15. **HOW-TO-CONTRIBUTE.md** - Guide for engineers and contributors
-16. **TEMPLATES-INDEX.md** - Index of all available templates and workflows
+### Reference Guides
+15. **TEMPLATES-INDEX.md** - Index of all available templates and workflows
 
 ## How These Rules Work
 
@@ -52,9 +51,9 @@ This directory contains Cursor rules that enforce Amplitude's documentation writ
 ### For Engineers and Contributors
 
 New to contributing docs? Start here:
-1. Read **HOW-TO-CONTRIBUTE.md** for a quick start guide
+1. Read **[../ HOW-TO-CONTRIBUTE.md](../HOW-TO-CONTRIBUTE.md)** for a quick start guide
 2. Open Cursor Chat (Cmd+L) and say: `"Document new feature: [your feature name]"`
-3. Cursor will guide you through creating properly structured documentation
+3. Cursor guides you through creating properly structured documentation
 
 ### Common Template Commands
 
@@ -224,6 +223,7 @@ When updating these rules:
 - **Rejected terms:** `.github/styles/config/vocabularies/dev/reject.txt`
 - **Official Cursor rules docs:** https://cursor.com/docs/context/rules
 - **Statamic routing patterns:** See `statamic-routing.md` for collection route mappings
-- **Contributing guide:** `HOW-TO-CONTRIBUTE.md` for engineers
+- **Contributing guide:** `../HOW-TO-CONTRIBUTE.md` for engineers
+- **Tech writer guide:** `../IMPLEMENTATION-SUMMARY.md` for implementation
 - **Template index:** `TEMPLATES-INDEX.md` for available workflows
 

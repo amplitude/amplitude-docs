@@ -81,7 +81,7 @@ If you're an engineer documenting a feature, Cursor can help! We've created AI t
 4. Cursor guides you through creating documentation
 
 **Learn more:**
-- Read [.cursor/rules/HOW-TO-CONTRIBUTE.md](.cursor/rules/HOW-TO-CONTRIBUTE.md) for the complete guide
+- Read [.cursor/HOW-TO-CONTRIBUTE.md](.cursor/HOW-TO-CONTRIBUTE.md) for the complete guide
 - See [.cursor/rules/TEMPLATES-INDEX.md](.cursor/rules/TEMPLATES-INDEX.md) for available templates
 - Check [.cursor/rules/README.md](.cursor/rules/README.md) for style guidelines
 

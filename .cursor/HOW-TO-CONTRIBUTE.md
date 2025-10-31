@@ -16,15 +16,15 @@ You don't need to learn Markdown syntax or memorize style rules. Just open Curso
 
 Type these in Cursor Chat (Cmd+L or Cmd+K):
 
-| What You Need | Say This |
-|---------------|----------|
-| Document a new feature | `"Document new feature: [name]"` |
-| Add to existing docs | `"Add section about [topic] to [file]"` |
-| Create API documentation | `"Document API endpoint [name]"` |
-| Update SDK docs | `"Update [platform] SDK docs for [feature]"` |
-| Add code example | `"Add code example for [feature] to [file]"` |
-| Check your writing | `"Check this doc for style issues"` |
-| Fix formatting | `"Apply all Amplitude style rules to this file"` |
+| What You Need            | Say This                                         |
+| ------------------------ | ------------------------------------------------ |
+| Document a new feature   | `"Document new feature: [name]"`                 |
+| Add to existing docs     | `"Add section about [topic] to [file]"`          |
+| Create API documentation | `"Document API endpoint [name]"`                 |
+| Update SDK docs          | `"Update [platform] SDK docs for [feature]"`     |
+| Add code example         | `"Add code example for [feature] to [file]"`     |
+| Check your writing       | `"Check this doc for style issues"`              |
+| Fix formatting           | `"Apply all Amplitude style rules to this file"` |
 
 ## What Happens Automatically
 
