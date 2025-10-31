@@ -157,7 +157,7 @@ glossary:
         event_description: |-
           The user completed a step or portion of the guide.
 
-          Note: pins are unique in that clicks outside of the pin can generate a "Guide Step Completed" event:
+          Pins are unique in that clicks outside of the pin can generate a "Guide Step Completed" event:
           - **Target element**: The element the pin is attached to. Clicking this element always advances the tour.
           - **Advance trigger element**: An optional additional element you can configure in the "Advanced trigger" setting that can also advance the tour when clicked.
         event_specific_properties: "`Was Completed Via CTA` (boolean): True if the step was completed through one of the step's CTA's."
