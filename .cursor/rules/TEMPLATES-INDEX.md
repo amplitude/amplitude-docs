@@ -264,7 +264,7 @@ This ensures consistent, high-quality output.
 ### For Template Questions
 - **Slack:** `#amplitude-docs`
 - **Tag:** `@tech-writers`
-- **File:** `.cursor/rules/HOW-TO-CONTRIBUTE.md`
+- **File:** `.cursor/HOW-TO-CONTRIBUTE.md`
 
 ### For Style Questions
 - **Guide:** `.cursor/rules/README.md`
