@@ -15,6 +15,10 @@ summary: 'Set the User ID for a particular Device ID or update user properties o
 ---
 ## Considerations
 
+{{partial:admonition type="note" heading="Rate limiting"}}
+Amplitude rate limits individual users (by Amplitude ID) that update their user properties more than 1800 times per hour. This limit applies to user property syncing and not event ingestion. Amplitude continues to ingest events, but may drop user property updates for that user.
+{{/partial:admonition}}
+
 - You can update user properties that you haven't tracked yet. However, property values don't apply or appear in the platform until the user's next event. Learn more about [applying user properties](/docs/data/user-properties-and-events).
 - Updates aren't retroactive, and only apply to future events.
 - Amplitude throttles requests for `device_ids` or `user_ids` that exceed a certain threshold of events per second. When Amplitude throttles a request, the request returns a HTTP status code 429. Pause sending events for any devices in that request for 15 seconds before retrying. Continue retrying until you no longer receive status code 429. If the same `user_id` is sending events from multiple devices simultaneously, then all the devices would be throttled. 

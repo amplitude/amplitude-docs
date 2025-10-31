@@ -18,7 +18,7 @@ summary: "Export your project's event data."
 - The specified date range refers to the time the event data was uploaded to Amplitude servers (see `server_upload_time`). The Export API returns events timestamped in UTC. Data is available to export at a minimum within 2 hours of when the servers received it. For example, data sent between 8 and 9 PM begins loading at 9 PM and is available via the Export API at 11 PM. Note that there is no delay in platform reporting. Only exports are delayed.
 - Export API isn't supported for a cross-project view because the view doesn’t own any data. To export all the data in the view, you would need to call the Export API on the underlying projects that actually ingested the data.
 - Size limit is 4GB. If the size exceeds 4GB, the request returns a 400 response. In this case, choose a smaller time range to export the data. In cases where an hour's worth of data exceeds 4GB, use the [Amazon S3 export](/docs/data/destination-catalog/amazon-s3#run-a-manual-export).
-- To export a whole day, use `T00` to `T23`. For example, `GET 'https://amplitude.com/api/2/export?start=20230101T00&end=20220101T23'`
+- To export a whole day, use `T00` to `T23`. For example, `GET 'https://amplitude.com/api/2/export?start=20220101T00&end=20220101T23'`
 - The max period you can query at once is 365 days.
 
 ## Request
@@ -65,7 +65,7 @@ Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
 
 |Name|Description|
 |-----|------------|
-|`start`| <span class="required">Required</span>. First hour included in data series, formatted YYYYMMDDTHH. For example, `0220201T05`.|
+|`start`| <span class="required">Required</span>. First hour included in data series, formatted YYYYMMDDTHH. For example, `20220201T05`.|
 |`end` |<span class="required">Required</span>. Last hour included in data series, formatted YYYYMMDDTHH For example, `20220201T05`.|
 
 ## Response

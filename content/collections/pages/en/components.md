@@ -2,50 +2,34 @@
 id: 4d2e02c1-9bf7-48ec-ab17-641fe208de23
 blueprint: page
 title: 'Site components'
-package: "@amplitude/session-replay-browser"
+package: '@amplitude/session-replay-browser'
+author: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1757629320
 ---
+{{partial:admonition type="note" heading="code block"}}
+```ts
+import { Experiment } from '@amplitude/experiment-js-client';
 
-{{partial:admonition type="warning" heading="test"}}
-Here's some **formatted** *text*. And `this`.
+// (1) Initialize the experiment client with Amplitude Analytics.
+const experiment = Experiment.initializeWithAmplitudeAnalytics(
+    'DEPLOYMENT_KEY'
+);
 
-```js
-import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
+// (2) Fetch variants and await the promise result.
+await experiment.fetch();
 
-const pageUrlEnrichment = pageUrlEnrichmentPlugin();
-amplitude.add(pageUrlEnrichment);
-amplitude.init(API_KEY);
+// (3) Lookup a flag's variant.
+const variant = experiment.variant('FLAG_KEY');
+if (variant.value === 'on') {
+    // Flag is on
+} else {
+    // Flag is off
+}
 ```
 {{/partial:admonition}}
 
 
-## test
-
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
-
-More content **here**
-
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:admonition type="note" heading="inline code"}}
+version `0.8.0` is the version
+{{/partial:admonition}}

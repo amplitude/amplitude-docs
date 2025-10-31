@@ -171,6 +171,8 @@ module.exports ={
             typography: {
                 DEFAULT: {
                     css: {
+                        'pre code::before': { content: 'none' },
+                        'pre code::after':  { content: 'none' },
                         td: {
                             'vertical-align': 'top'
                         },
@@ -211,6 +213,7 @@ module.exports ={
                         h4: {
                             'font-weight': '400',
                             'cursor': 'pointer',
+                            'font-size': '18px',
                         },
                         h5: {
                             'font-weight': '400',

@@ -13,7 +13,7 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Amplitude Browser SDK
+### Amplitude Browser SDK 2
 
 Install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
@@ -47,35 +47,57 @@ amplitude.add(engagementPlugin());
 {{/partial:tab}}
 {{/partial:tabs}}
 
+For additional configuration, supply `InitOptions` to the `plugin` function. Go to [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
-For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
+{{partial:admonition type="note" heading=""}}
+After the installation steps are complete, by default all Guides and Surveys events are sent to your project.
+{{/partial:admonition}}
 
+Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
+You should only call `init` and `boot` if you (a) want to use a proxy; (b) want to customize the event handling via the `integrations` option. You can learn more about using a proxy [here](/docs/guides-and-surveys/proxy). You can find details about the `integrations` option [here](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers).
 
+### Amplitude Unified SDK
+
+If you're using the [Amplitude Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), Guides and Surveys comes out of the box. Just provide the engagement options during initialization:
+
+```ts
+import { initAll } from '@amplitude/unified';
+
+initAll('YOUR_API_KEY', {
+    // Other Amplitude SDK options...
+  engagement: {
+        // Guides and Surveys options go here...
+  }
+});
+```
+
+Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. Go to [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
 
 ### Other Amplitude SDK's and third-party analytics providers
 
-If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+If you don't use the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) or the [Amplitude Analytics Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
 But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
 
 #### Initialize the SDK
 
-Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
+Call `init` to fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, mediaUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
 ```
 
-| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                                    |
-| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                                       |
-| `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU) |
-| `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU) |
-| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                 |
-| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                         |
-| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                      |
-| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`   |
+| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                                                                                            |
+| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                                                                                               |
+| `initOptions.serverUrl`  | `string`                                                                                                                     | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                                                     | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                                                     | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
+| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                                                                         |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                                                                                 |
+| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                                                                              |
+| `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`                                                           |
 
 ##### Example: Basic initialization
 
@@ -88,14 +110,19 @@ engagement.init("YOUR_API_KEY", {
 
 ##### Example: Initialization with proxy
 
-For [proxy setups](/docs/guides-and-surveys/proxy), specify both `serverUrl` and `cdnUrl`:
+For [proxy setups](/docs/guides-and-surveys/proxy), specify `serverUrl`, `cdnUrl`, and `mediaUrl`:
 
 ```js
 engagement.init("YOUR_API_KEY", {
   serverUrl: "https://your-proxy-domain.cloudfront.net",
-  cdnUrl: "https://your-proxy-domain.cloudfront.net"
+  cdnUrl: "https://your-proxy-domain.cloudfront.net",
+  mediaUrl: "https://your-proxy-domain.cloudfront.net",
 });
 ```
+
+{{partial:admonition type="note" heading=""}}
+When using a proxy, call `window.engagement.boot` to fully install Guides and Surveys, even if you are using the Browser SDK v2. Make sure to set up event handling through the `integrations` option.
+{{/partial:admonition}}
 
 ##### Example: Initialization with CSP nonce
 
@@ -132,11 +159,11 @@ await window.engagement.boot({
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
-  // needed for insights and responses to populate
+  // needed for insights and responses to populate 
   integrations: [
     {
       track: (event) => {
-        analytics.track(event.event_type, event.event_properties)
+        amplitude.track(event.event_type, event.event_properties)
       }
     },
   ],
@@ -146,7 +173,8 @@ await window.engagement.boot({
 To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
-analytics.on('track', (event, properties, options) => { // Example for Segment Analytics
+analytics.on('track', (event, properties, options) => { 
+  // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
 ```
@@ -535,9 +563,81 @@ Close all active guides and surveys.
 engagement.gs.closeAll(): void
 ```
 
+## Preview mode for desktop apps
+
+If you are using the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
+
+The Amplitude dashboard will pass your app a special query parameter through a deep link (for example, `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call the `_startNudgeDebug` SDK method with it.
+
+Review below for specific framework examples.
+
+### Electron
+
+Use the following as a minimal example on how to implement Guides & Surveys within Electron:
+1. Register an inter-process communication function during preload.
+2. In the main process: listen for and parse the `gs-debug-id` query parameter.
+3. In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK.
+
+{{partial:tabs tabs="main.js, preload.js, renderer.js"}}
+{{partial:tab name="main.js"}}
+```javascript
+const { app } = require('electron');
+
+// Handle deep link on macOS
+app.on('open-url', (event, url) => {
+  const parsedUrl = new URL(url);
+  const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+  if (debugId) {
+    mainWindow.webContents.send('start-engagement-debug', {
+      debugId: debugId,
+    });
+  }
+});
+
+// Handle deep link on Windows/Linux
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+  // Find the deep link URL in command line arguments
+  const url = commandLine.find(arg => arg.startsWith(PROTOCOL + '://'));
+
+  if (url) {
+    const parsedUrl = new URL(url);
+    const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+    if (debugId) {
+      mainWindow.webContents.send('start-engagement-debug', {
+        debugId: debugId,
+      });
+    }
+  }
+});
+```
+{{/partial:tab}}
+{{partial:tab name="preload.js"}}
+```javascript
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  startEngagementDebug: (callback) => {
+    ipcRenderer.on('start-engagement-debug', (_event, data) => callback(data));
+  },
+});
+```
+{{/partial:tab}}
+{{partial:tab name="renderer.js"}}
+```javascript
+window.electronAPI.startEngagementDebug((data) => {
+  window.engagement._startNudgeDebug({
+    nudge: { variantId: Number(data.debugId) }
+  });
+});
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Troubleshoot your installation
 
-If your Guides and Surveys instrumentation doesn't work, verify the following topics.
+If your Guides and Surveys instrumentation doesn't work, verify the following topics:
 
 ### Verify Guides and Surveys is installed
 

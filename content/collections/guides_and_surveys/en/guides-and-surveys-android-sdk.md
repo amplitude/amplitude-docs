@@ -8,6 +8,10 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys Android SDK requires:
@@ -17,6 +21,10 @@ The Guides and Surveys Android SDK requires:
 * [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0 or higher.
 
 ## Install and initialize the SDK
+
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Kotlin 1.8.22+
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
@@ -30,7 +38,7 @@ dependencies {
 }
 ```
 
-### Initialize the SDK
+#### Initialize the SDK
 
 ```kotlin
 import com.amplitude.android.engagement.AmplitudeEngagement
@@ -57,23 +65,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
-
-### Boot the SDK
-
-```kotlin
-// Basic boot with user ID
-amplitudeEngagement.boot(userId = "USER_ID")
-
-// Advanced boot with options
-val bootOptions = AmplitudeBootOptions(
-    user = AmplitudeEndUser(
-        userId = "USER_ID",
-        deviceId = "DEVICE_ID",
-        userProperties = mapOf("key" to "value")
-    )
-)
-amplitudeEngagement.boot(bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 
@@ -100,8 +94,16 @@ fun MyView() {
     // Use your instance of Amplitude Engagement by creating a Composition context or passing as a param
     val engagement = LocalEngagement.current
 
-    Box() {
-        Button(modifier = Modifier.amplitudeView(engagement, "my-button"))
+    Box {
+        Button(
+            modifier = Modifier.amplitudeView(
+                engagement, 
+                tag = "my-button",
+                onTrigger = {
+                    // Optional code to run with tap element action
+                }
+            )
+        )
     }
 }
 ```
@@ -138,8 +140,27 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```kotlin
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
+
+## Router configuration
+
+Configure how Guides and Surveys handles screen navigation.
+
+```kotlin
+engagement.setRouter { identifier ->
+  // Your screen handling and navigation
+}
+```
+
+| Parameter           | Type                    | Description                                                                     |
+| ------------------- | ----------------------- | ------------------------------------------------------------------------------- |
+| `identifier`        | `String`                | Required. A screen identifier (or route) that tells your app where to navigate. |
+| `router` (callback) | `(String) -> Unit`      | Required. A callback you implement to handle screen navigation when Guides or Surveys need to change screens. |
+
+{{partial:admonition type="note" heading="Update link behavior"}}
+After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
 
 ## Reset
 
@@ -164,7 +185,7 @@ val guidesAndSurveys = amplitudeEngagement.list()
 
 ## Show
 
-Display a specific guide or survey. Ignores any targeting rules and limits except for page targeting.
+Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
 ```kotlin
 amplitudeEngagement.show(key = "GUIDE_KEY")
@@ -229,3 +250,6 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```
+
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

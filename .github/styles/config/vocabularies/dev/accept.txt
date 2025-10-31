@@ -258,3 +258,6 @@ Viewport
 [Dd]escope
 [Tt]ooltips?\b
 [Rr]ollouts?\b
+[Aa]ddons?
+[Aa]utomations?\b
+[Ww]insorization

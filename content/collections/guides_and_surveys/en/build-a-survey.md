@@ -73,7 +73,7 @@ Click the gear icon in the Short answer block to access more settings.
 | ----------------------- | ---------------------------------------------------------------------------- |
 | Required                | Enable to require the user to enter a rating.                                |
 | ARIA label                 | Provide a label to help screen readers understand the input's purpose.                |
-| Pre-fill key | Populate the input with a user property that you specify, using the ingested name of the property, for example `device_type`. If the user property isn't found for a specific user, nothing populates in the field. |
+| Pre-fill key | Populate the input with a user property that you specify, using the ingested name of the property, for example `device_type`. If the user property isn't found for a specific user, nothing populates in the field. User properties must be available client-side during the current session. Go to [Set user properties](/docs/guides-and-surveys/sdk#set-user-properties) for implementation details. |
 
 ### List
 
@@ -86,8 +86,8 @@ Click the gear icon in the List block to access more settings.
 | Required     | Enable to require the user to enter a rating.                                                                                                                                                                       |
 | ARIA label   | Provide a label to help screen readers understand the input's purpose.                                                                                                                                              |
 | Multiple choice | Enables users to select more than one option. Changes the block's form elements from radio buttons to checkboxes.
-| Randomize order <br/> {.tag .web .zero} | Randomizes the order in which items appear in the list each time it displays to a user. |
-| "Other" option <br/> {.tag .web .zero} | Provides users the option to select `Other` as a result, and optionally supply a written answer. |
+| Randomize order | Randomizes the order in which items appear in the list each time it displays to a user. |
+| "Other" option  | Provides users the option to select `Other` as a result, and optionally supply a written answer. |
 
 
 ## Setup and target your survey

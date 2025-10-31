@@ -18,7 +18,7 @@ integration_type:
 ---
 Get access to your Amplitude events through Snowflake's Data Share product.
 
-Amplitude supports [Snowflake’s Data Share](https://docs.snowflake.com/en/user-guide/data-sharing-intro.html) integration to give customers access to their event data that lives within Amplitude. Amplitude’s integration currently supports sharing a Raw Events table and a Merged ID table. 
+Amplitude supports [Snowflake’s Data Share](https://docs.snowflake.com/en/user-guide/data-sharing-intro.html) integration to give customers access to their event data that lives within Amplitude. Amplitude’s integration supports sharing a Raw Events table and a Merged ID table. 
 
 {{partial:admonition type="info" title="Add-on feature"}}
 Amplitude's Snowflake Data Share Export is a paid add on to your Amplitude contract.
@@ -29,6 +29,10 @@ Amplitude's Snowflake Data Share Export is a paid add on to your Amplitude contr
 Snowflake only supports data share within same region and same cloud. Amplitude's Snowflake is in US West (Oregon) region and using Amazon Web Services. To enable cross region cross cloud data share, reach out to your Account Manager at Amplitude or contact Amplitude Support.
 
 Amplitude supports only one Snowflake Data Share per project for events and merge user queries.
+
+{{partial:admonition type="note" heading="EU availability"}}
+Snowflake Data Share isn't available for Amplitude customers in the EU region.
+{{/partial:admonition}}
 
 ## Set up a recurring data export to Snowflake with Data Share
 
@@ -46,7 +50,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
 
     {{partial:admonition type="note" heading=""}}
-    The option you choose here reflects the interval *after* Amplitude injests the data.
+    The option you choose here reflects the interval *after* Amplitude ingests the data.
     {{/partial:admonition}}
 
 5. Click **Next**, enter the name of this Snowflake export and click Finish.

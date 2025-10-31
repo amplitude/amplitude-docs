@@ -8,6 +8,10 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
+{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -18,25 +22,31 @@ The Guides and Surveys iOS SDK requires:
 
 ## Install and initialize the SDK
 
-Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Amplitude Swift 5.9+
+
+First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
 1. In Xcode, click *File > Add Packages...*
-2. Enter the repository url `https://github.com/amplitude/Amplitude-Engagement-Swift`
+2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
 3. Select the `Amplitude-Engagement-Swift` package, version `1.0.5`.
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
-```
+```T
 pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Initialize the SDK
+#### Initialize the SDK
+
+Next, make sure to initialize the SDK.
 
 ```swift
 import AmplitudeEngagementSwift
@@ -61,22 +71,9 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
-
-### Boot the SDK
-
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 
@@ -87,16 +84,18 @@ amplitudeEngagement.screen("HomeScreen")
 
 ### Enable element targeting (optional)
 
-Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app:
+Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app, give the element a unique identifier.
 
 ```swift
 // Swift UI
-
 MySwiftView {
-
+    // Content
 }
-.amplitudeView("MySwiftView")
+.amplitudeView("MySwiftView", onTrigger: {
+    // Optional code to run with tap element action
+}
 
+// UIKit
 let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
@@ -108,8 +107,27 @@ Configure the visual theme mode if your app supports light and dark modes.
 
 ```swift
 // Set the theme mode
-amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: LIGHT, DARK, SYSTEM
+amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
+
+## Router configuration
+
+Configure how Guides and Surveys handles screen navigation.
+
+```swift
+engagement.setRouter { identifier in
+  // Your screen handling and navigation
+}
+```
+
+| Parameter          | Type                    | Description                                                                     |
+| ------------------ | ----------------------- | ------------------------------------------------------------------------------- |
+| `identifier`       | `String`                | Required. A screen identifier (or route) that tells your app where to navigate. |
+| `router` (closure) | `(String) -> Void`      | Required. A function (closure) you implement to handle screen navigation when Guides or Surveys need to change screens. |
+
+{{partial:admonition type="note" heading="Update link behavior"}}
+After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
 
 ## Reset
 
@@ -135,7 +153,7 @@ val guidesAndSurveys = amplitudeEngagement.list()
 
 ## Show
 
-Display a specific guide or survey. Ignores any targeting rules and limits except for page targeting.
+Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
 ```kotlin
 amplitudeEngagement.show(key = "GUIDE_KEY")
@@ -197,3 +215,5 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 }
 ```
 
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

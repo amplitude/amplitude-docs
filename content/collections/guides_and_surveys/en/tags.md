@@ -73,3 +73,19 @@ Combine tag filters with other filters. For example, applying a team tag and a f
 ## Bulk operations with tags
 
 From the guides list view or surveys list view, you can select multiple rows and bulk-apply tag updates.
+
+## Tags and throttling
+
+Tags are important in [advanced throttling](/docs/guides-and-surveys/throttling#advanced-throttles). Use tags to create sophisticated rate-limiting strategies for different categories of guides and surveys.
+
+### Throttling use cases with tags
+
+- **Campaign management**: Use campaign tags like `spring-launch` to limit promotional guides.
+- **User journey stages**: Use tags like `onboarding`, `activation`, `retention` to control flow progression.
+- **Content priority**: Use priority tags like `critical`, `important`, `optional` with different throttle limits.
+
+{{partial:admonition type="tip" heading=""}}
+Plan your tag strategy with throttling in mind. Consistent, meaningful, tags make advanced throttling more effective and easier to manage.
+{{/partial:admonition}}
+
+Go to [Advanced Throttles](/docs/guides-and-surveys/throttling#advanced-throttles) for detailed setup instructions.

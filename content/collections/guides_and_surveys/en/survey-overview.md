@@ -15,8 +15,10 @@ Surveys are a source of user feedback. Like [guides](/docs/guides-and-surveys/gu
 
 Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-overview#guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Guides includes the following templates:
 
-| Template      | Use case                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| NPS           | Capture customer satisfaction and loyalty by measuring the likelihood of that user recommending your product or feature. |
-| User feedback | Define your own questions to collect detailed input from your users.                                                     |
-| Rating        | Gather initial reactions to help you evaluate product experiences.                                                       |
+| Template       | Use case                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| NPS            | Capture customer satisfaction and loyalty by measuring the likelihood of that user recommending your product or feature. |
+| User feedback  | Define your own questions to collect detailed input from your users.                                                     |
+| Rating         | Gather initial reactions to help you evaluate product experiences.                                                       |
+| Banner Survey  | Provide any custom survey experience with the Banner form factor.                                                        |
+| Tooltip Survey | Provide any custom survey experiences with the Tooltip form factor.                                                      |

@@ -91,6 +91,8 @@ Pass the following option when you initialize the Session Replay middleware:
 | Name              | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | --------- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. For more information see, [Sampling rate](#sampling-rate).|
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
@@ -155,6 +157,8 @@ amplitude.initializeApiKey(API_KEY)
 {{partial:partials/session-replay/sr-ios-webview}}
 
 {{partial:partials/session-replay/sr-ios-mapview-support}}
+
+{{partial:partials/session-replay/sr-ios-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 

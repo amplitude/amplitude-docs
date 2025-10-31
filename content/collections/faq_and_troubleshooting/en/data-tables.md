@@ -69,11 +69,6 @@ If you'd like to see this changed, submit a feature request via the Amplitude wi
 {{/partial:collapse}}
 
 
-{{partial:collapse name="Can I edit the column headers within a Data Table?"}}
-No. If you'd like to see this changed, submit a feature request via the Amplitude widget at the bottom right corner on the UI.
-{{/partial:collapse}}
-
-
 {{partial:collapse name="Can I show all the filters applied to the Data Table without having to hover over the filter icon?"}}
 No. The filter is only visible when hovering over it.
 

@@ -18,20 +18,19 @@ package_name: '@amplitude/unified'
 platform: Browser
 full_details: true
 ---
-The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, and Session Replay. It simplifies the integration process by handling the initialization and configuration of all components.
+The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, Session Replay, and Guides and Surveys. It simplifies the integration process by handling the initialization and configuration of all components.
 
 {{partial:admonition type="beta" heading="Beta Release"}}
 The Browser Unified SDK is currently in beta. There may be breaking changes before the stable release. Amplitude recommends testing thoroughly in a development environment before you deploy to production.
 {{/partial:admonition}}
 
 {{partial:admonition type="info" heading="Individual Product Installation"}}
-The Unified SDK installs Analytics, Experiment, and Session Replay. If you're concerned about bundle size and only need specific products, you can install them individually:
+The Unified SDK installs Analytics, Experiment, Session Replay, and Guides and Surveys. If you're concerned about bundle size and only need specific products, you can install them individually:
 
 - [Analytics](/docs/sdks/analytics/browser/browser-sdk-2) - For tracking user events and behavior
 - [Experiment](/docs/sdks/experiment-sdks/experiment-javascript) - For running A/B tests and feature flags
 - [Session Replay](/docs/session-replay/session-replay-standalone-sdk) - For capturing and replaying user sessions
-
-The Unified SDK doesn't support Guides and Surveys. If you need Guides and Surveys functionality, use the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) directly.
+- [Guides and Surveys](/docs/guides-and-surveys/sdk) - For in-product messaging and surveys
 {{/partial:admonition}}
 
 ## Install the SDK
@@ -70,6 +69,7 @@ For detailed information about each product's features and APIs, refer to their 
 - [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)
 - [Experiment JavaScript SDK](/docs/sdks/experiment-sdks/experiment-javascript)
 - [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk)
+- [Guides and Surveys Web SDK](/docs/guides-and-surveys/sdk)
 {{/partial:admonition}}
 
 ```typescript
@@ -119,6 +119,11 @@ initAll('YOUR_API_KEY', {
   // Experiment options
   experiment: {
     // Experiment configuration options
+  },
+  
+  // Guides and Surveys options
+  engagement: {
+    // Guides and Surveys configuration options
   }
 });
 ```
@@ -144,3 +149,7 @@ Sample Rate controls the rate at which Amplitude captures session replays. For e
 ### Experiment options
 
 All options from `@amplitude/plugin-experiment-browser` are supported. See the [Experiment documentation](/docs/sdks/experiment-sdks/experiment-javascript#configuration) for details.
+
+### Guides and Surveys options
+
+The Unified Browser SDK supports all [Guides and Surveys options](/docs/guides-and-surveys/sdk#initialize-the-sdk). The engagement plugin initializes automatically when you pass engagement options in the configuration.
