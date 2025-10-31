@@ -384,10 +384,10 @@ Control log verbosity with the `logLevel` configuration, or implement the `Logge
 
 Implement the `LoggerProvider` interface to use your own logging solution:
 
-```js
-import { Experiment, LogLevel } from '@amplitude/experiment-node-server';
+```ts
+import { Experiment, LogLevel, LoggerProvider } from '@amplitude/experiment-node-server';
 
-class MyCustomLogger {
+class MyCustomLogger implements LoggerProvider {
   verbose(message, ...optionalParams) {
     // Implement verbose logging
   }
