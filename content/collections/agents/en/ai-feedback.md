@@ -153,19 +153,7 @@ After Amplitude received that event for a user, AI Feedback can merge that users
 
 ## Deleting information based on user ID or Amplitude ID
 
-When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a sepecit user ID or Amplitude ID, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. 
-
-
-User mapping lets you select any user property that contains your users’ email addresses and link that to an associated Amplitude ID. 
-
-##### To map a new ID system to a pre-existing Amplitude ID
-
-1. Go to *Organizational settings > Projects > AI Feedback*.
-2. Under User Mapping, click the drop down menu and select the user property that contains your users’ email address.
-
-### Deleting information based on user ID or Amplitude ID
-
-When a deletion request is submitted to Amplitude’s User Privacy API for a specific user ID or Amplitude ID, all AI Feedback data associated with that user ID and/or Amplitude ID is also be deleted. 
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. 
 
 To ensure that the deletion is permanent and complete, note the following: 
 * Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 
