@@ -8,7 +8,9 @@ This directory contains Cursor AI rules and templates that help you create high-
 👉 **[HOW-TO-CONTRIBUTE.md](HOW-TO-CONTRIBUTE.md)** - Start here to learn how to document features using Cursor AI
 
 ### For Tech Writers
-👉 **[IMPLEMENTATION-SUMMARY.md](IMPLEMENTATION-SUMMARY.md)** - Implementation roadmap and metrics
+👉 **[QUICK-START.md](QUICK-START.md)** - 10-minute setup checklist  
+👉 **[AI-REVIEW-SETUP.md](AI-REVIEW-SETUP.md)** - Complete setup guide for AI reviews  
+👉 **[SYSTEM-OVERVIEW.md](SYSTEM-OVERVIEW.md)** - Full system documentation
 
 ### For Style and Templates
 👉 **[rules/README.md](rules/README.md)** - Complete style guide and rule reference  
@@ -68,9 +70,20 @@ This Cursor system enables engineers to document features with AI assistance whi
 ✅ **Auto-enforced style** - Active voice, contractions, present tense  
 ✅ **Smart templates** - Guided documentation creation  
 ✅ **Correct links** - Automatic web route formatting  
-✅ **Quality assurance** - Vale linting + tech writer review  
+✅ **AI-powered reviews** - Intelligent feedback on every PR  
+✅ **Quality assurance** - Context-aware linting + tech writer review  
 
 **Result:** Ship docs with features, not weeks later.
+
+### 🤖 NEW: AI Documentation Review
+
+PRs now get intelligent, context-aware feedback:
+- **Inline comments** on specific lines with suggestions
+- **Before/after examples** for every issue
+- **Severity levels** (errors, warnings, info)
+- **Cursor commands** to fix issues quickly
+
+See [AI-REVIEW-SETUP.md](AI-REVIEW-SETUP.md) for setup.
 
 ---
 
