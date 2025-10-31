@@ -32,18 +32,18 @@ The [User Activity](#user-activity) and [User Search](#user-search) endpoint
 
 ### Endpoint costs
 
-Endpoints use *cost per query* model. Amplitude calculates cost based on this formula:
+Endpoints use *cost per query* rate limit model. In this equation, cost doesn't imply a monetary value. Instead, cost refers to rate limits and API usage limits. This method helps provide equal API availability for all queries. Amplitude calculates rate costs based on this formula:
 
 `cost = (# of days) * (# of conditions) * (cost for the query type)`
 
 Here is how Amplitude determines each variable in the formula:
 
-- Number of days: This is the number of days in the query.
-- Number of conditions: This is the number of segments plus the number of conditions within the segments applied to the chart you are looking at. Each group by counts as 4 segments.
+- **Number of days**: This is the number of days in the query.
+- **Number of conditions**: This is the number of segments plus the number of conditions within the segments applied to the chart you are looking at. Each group by counts as 4 segments.
 
 {{partial:admonition type="note" heading="Segments and conditions"}}
-* Segments are comparison groups. For more information, see [Add user segments](/docs/analytics/charts/build-charts-add-user-segments#add-more-segments).
-* Conditions represent top-level filters. Cohorts, `WHERE`, and "who performed/did" are all conditions in Amplitude. Event filters **don't** count as conditions with regards to API costs.
+* Segments are comparison groups. For more information, go to [Add user segments](/docs/analytics/charts/build-charts-add-user-segments#add-more-segments).
+* Conditions represent top-level filters. Cohorts, `WHERE`, and "who performed/did" are all conditions in Amplitude. Event filters don't count as conditions with regards to API costs.
 {{/partial:admonition}}
 
 Different chart types have different costs. For all endpoints not listed here, the cost is 1.

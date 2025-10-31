@@ -6,11 +6,13 @@ source: 'https://help.amplitude.com/hc/en-us/articles/16796780525339-Create-a-pr
 landing: true
 landing_blurb: 'After you create and add users to your organization, create a project.'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724879660
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632789
 exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create a project in Amplitude'
+academy_course:
+  - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
 ---
 Once your organization is set up and users have joined it, you can begin adding **projects**. Each analysis you create belongs to a specific project. In Amplitude, a project is a way to subdivide your Amplitude organization into distinct territories—for example, you might want to create individual projects for different products, or for different areas or sections of your app. It’s a useful way to keep related analyses grouped together.
 

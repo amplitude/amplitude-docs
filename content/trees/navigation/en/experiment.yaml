@@ -1,103 +1,46 @@
 tree:
   -
-    id: 57610f46-fb4f-4070-acad-fa0872fc729a
-    title: 'Getting started'
+    id: 6ce771a2-2023-491f-aa33-3bd334daacfa
+    entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
     children:
       -
-        id: 306f552c-c41b-444a-b406-adaf88db5ebb
+        id: 1bad217f-262f-4326-a9fe-4ca32db686b8
         entry: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
       -
-        id: 2bda6737-066a-4283-8252-720d24a19573
-        entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
+        id: 7fdccdec-2267-4c69-a624-10aa31405026
+        entry: d002d2ad-3a7f-41f7-aec9-0df7db9fb90b
+        title: 'Feature and Web Experiment Use Cases'
       -
-        id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
-        entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
-        title: 'Create a new feature experiment'
-      -
-        id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
-        entry: 665e15c4-7194-4898-9cca-b58251cc79a2
-  -
-    id: 90ff8151-b864-4782-abdd-65b81d1c26ca
-    title: 'Experiment SDKs'
-    url: /docs/sdks/experiment-sdks
-  -
-    id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
-    title: 'Experiment APIs'
-    url: /docs/apis/experiment
-  -
-    id: b0291980-c279-43f0-879a-7f8dc63798db
-    title: 'General knowledge'
-    children:
+        id: 4ca7c411-3f1f-43a3-b017-4d467a1ed820
+        entry: 6aa1ef6b-eb50-4df6-a218-1133d4707624
       -
         id: 826a6258-d974-4154-a50a-ef95dc2f3ad5
         entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
         title: 'Key terms'
+  -
+    id: fe2ac0eb-274f-4af5-b146-1d467c9edd0e
+    title: 'Creating Experiments'
+    children:
       -
-        id: c2d55904-0be9-4466-9640-bcd9f3f63efc
-        entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
+        id: 3687a9d2-bf40-4280-8220-12b885d702b2
+        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
       -
-        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
-        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
+        id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
+        entry: 5c091ba2-f202-4972-9e9f-4a9af712730d
       -
-        id: dc769ea2-5ebe-4399-8c0f-95472f52e29a
-        entry: 3250ee8b-a6dd-46d0-b46a-1ed5c9f7a4f9
+        id: a978b4c7-f702-4e27-b042-3369a199110e
+        entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
       -
-        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
-        title: Evaluation
+        id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
+        title: 'Experiment Goals'
         children:
           -
-            id: fb405bc3-3370-4046-90e5-9a6145e02a67
-            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
-            title: 'How evaluation works'
-          -
-            id: 5af0708b-e976-453e-8354-3f622b978be5
-            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
-          -
-            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
-            entry: b358db28-92d6-458b-9692-d181e0871612
-          -
-            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
-            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
-          -
-            id: 64dc1494-6d29-4baf-8152-3979efa1b480
-            entry: 21a670fe-6939-4c52-919c-ff495b3109f3
-            title: 'Cohort targeting'
+            id: 27510f77-6da7-44f2-a853-178f8f80987a
+            entry: 18cba191-177e-4f7c-abcb-f5375c155c71
       -
-        id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
-        title: Analysis
+        id: e800f234-086d-4267-91de-cd688afc9bd5
+        title: 'Group Experiments'
         children:
-          -
-            id: 707402a6-d5fb-4432-915a-32c1f59f457a
-            entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
-          -
-            id: 9e0796bf-3439-4f98-a8ad-cfefea14aee1
-            entry: f544b5a1-0689-4137-ab14-690903ae7902
-          -
-            id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
-            entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
-          -
-            id: e781c130-d33e-4773-a647-3914df6b6f45
-            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
-          -
-            id: 4c9e833a-7c8a-461c-b3b1-1170da157eed
-            entry: 5b4dadf8-14b7-4669-8636-f3105393214c
-          -
-            id: 0a50430a-04b8-4c21-a907-7daed0df887a
-            entry: cf260863-11d8-434d-a2de-22c8256e83b6
-          -
-            id: 7f2d6e47-fa61-4e4d-9ab9-45ac511dba3d
-            entry: e05c2f18-2f1f-4391-ae18-cc1248444688
-      -
-        id: 890e96c2-aa13-4451-8379-6fd5024dcf87
-        title: 'Flag dependencies'
-        children:
-          -
-            id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
-            entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
-            title: 'How flag dependencies work'
-          -
-            id: 15fcf5be-505a-44db-9b00-e4f687435164
-            entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
           -
             id: e580e44e-a2e7-412b-91fd-310f714d3bbf
             entry: c9856100-2aad-440c-9d2f-505eb008d57b
@@ -105,63 +48,84 @@ tree:
           -
             id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
             entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
+      -
+        id: d891dd22-a7db-4b52-bb00-81c5c9640217
+        title: 'Feature Experiments'
+        children:
+          -
+            id: 2bda6737-066a-4283-8252-720d24a19573
+            entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
+          -
+            id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
+            entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
+            title: 'Create a new feature experiment'
+          -
+            id: 8d0578e2-aca5-4710-bfac-16ddb05d378e
+            entry: f8a65f47-6611-4f85-a5e4-3602c5b5821b
+          -
+            id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
+            entry: 665e15c4-7194-4898-9cca-b58251cc79a2
+          -
+            id: 0ed5fec3-c9dd-4d64-9914-68de1adfe369
+            entry: 50d1c589-2a92-427b-84d0-eb664f55678d
+          -
+            id: 64dc1494-6d29-4baf-8152-3979efa1b480
+            entry: 21a670fe-6939-4c52-919c-ff495b3109f3
+            title: 'Cohort targeting'
+          -
+            id: 0915be3a-8539-4d36-9a03-96922605e311
+            entry: 183eec11-905d-4333-afaf-089e46ca0b55
+      -
+        id: ef70f9be-3707-4f15-af65-58ef96899710
+        title: 'Web Experiments'
+        children:
+          -
+            id: db7c04f0-c7bf-44c1-9e1f-2526712736bf
+            entry: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
+          -
+            id: c29665fd-0a33-49e1-8fc5-0947335a679c
+            entry: 3ef0ccc6-5e0f-435b-9184-edb809f19210
+          -
+            id: 4a16df3a-5401-4d41-ab2d-b15b5f61f7fb
+            entry: b87d183d-4b47-4f19-a2cf-e9d31c5faf47
+          -
+            id: ee1358c1-c781-451f-aabc-24d0fd201b09
+            entry: 671d5f19-2b8a-463a-95be-f81de05e0860
+          -
+            id: 0b163228-d176-4d25-85a3-a8a00f11cb75
+            entry: 7ade889d-c09c-48ee-8910-c4592bcc09b0
+          -
+            id: 3bd44a68-1b42-42c0-99bd-bffd3a553525
+            entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
   -
-    id: 9360179b-3944-4058-ab65-89d3f8baf60b
-    title: 'Experiment workflows'
-    data:
-      open_collapsed: false
+    id: d5b6a5f1-c999-4645-88e6-08fcce202918
+    title: 'Testing Experiments'
     children:
-      -
-        id: 6ce771a2-2023-491f-aa33-3bd334daacfa
-        entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
-      -
-        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
-        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
-      -
-        id: 8d0578e2-aca5-4710-bfac-16ddb05d378e
-        entry: f8a65f47-6611-4f85-a5e4-3602c5b5821b
-      -
-        id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
-        entry: 5c091ba2-f202-4972-9e9f-4a9af712730d
-      -
-        id: 0ed5fec3-c9dd-4d64-9914-68de1adfe369
-        entry: 50d1c589-2a92-427b-84d0-eb664f55678d
-      -
-        id: dee1f568-8623-4fe9-8df3-89158307d151
-        entry: ec448015-b432-434a-93a0-6392b4474d67
-      -
-        id: a978b4c7-f702-4e27-b042-3369a199110e
-        entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
       -
         id: 779c43fa-d73c-483c-946d-076ea8b9545f
         entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
+  -
+    id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
+    title: 'Analyzing Experiments'
+    children:
       -
-        id: 54317436-52f8-4031-b753-a361edd89b2b
-        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
+        id: a6f5263f-a486-4a61-ab5b-2f8fa08b0e0d
+        entry: 48014e0e-3130-40cc-ba15-946d6a16b51b
+      -
+        id: 707402a6-d5fb-4432-915a-32c1f59f457a
+        entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
+      -
+        id: 9e0796bf-3439-4f98-a8ad-cfefea14aee1
+        entry: f544b5a1-0689-4137-ab14-690903ae7902
+      -
+        id: 4c9e833a-7c8a-461c-b3b1-1170da157eed
+        entry: 5b4dadf8-14b7-4669-8636-f3105393214c
+      -
+        id: 7f2d6e47-fa61-4e4d-9ab9-45ac511dba3d
+        entry: e05c2f18-2f1f-4391-ae18-cc1248444688
       -
         id: ccff772e-23a6-4420-a01b-b22f5afd7f6d
         entry: 2e357f69-a007-4912-8603-5e568d6ddcb8
-      -
-        id: ba6c0ec7-5642-48f2-b4f6-f1c1e454167b
-        entry: 29db4e07-fe88-46f9-8f21-76c7b6d77142
-      -
-        id: 0915be3a-8539-4d36-9a03-96922605e311
-        entry: 183eec11-905d-4333-afaf-089e46ca0b55
-      -
-        id: 3687a9d2-bf40-4280-8220-12b885d702b2
-        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
-      -
-        id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
-        entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
-      -
-        id: 27510f77-6da7-44f2-a853-178f8f80987a
-        entry: 18cba191-177e-4f7c-abcb-f5375c155c71
-      -
-        id: e2cf6857-5740-4894-8121-e9ff81d9814d
-        entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
-      -
-        id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
-        entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
       -
         id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
         title: 'Understand the cumulative exposures graph'
@@ -179,35 +143,119 @@ tree:
             entry: 6b86591a-0640-488d-b94c-5973aea3308b
             title: 'Inflection points and flattened slopes'
   -
-    id: e67e82c0-c298-4d72-bd01-6e42a7e97826
-    title: Integrations
-    children:
-      -
-        id: 91587dda-6cea-4de4-981f-3e346a936598
-        entry: 401dbba7-8405-4a22-96ff-5161ec1c969e
-  -
     id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
     title: Troubleshooting
     children:
       -
-        id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
-        entry: 982a0f19-3b05-4358-adda-93a5b3c60919
-      -
-        id: 6d90b3c9-30b4-4d23-8bce-ad9f10343cc6
-        entry: 9e7b1e59-fd41-4088-9d7f-be591c85b314
+        id: ba6c0ec7-5642-48f2-b4f6-f1c1e454167b
+        entry: 29db4e07-fe88-46f9-8f21-76c7b6d77142
       -
         id: 017ee388-a2b0-4610-a05d-a29927eeb42e
         entry: 71dedb3e-eb17-4ed1-9df0-bcbc78a2e6a2
       -
         id: 94d19551-1ae1-4d4d-bf93-a0a9f187b2d8
         entry: 3599cb83-1395-4690-83fa-54379538dd5b
+      -
+        id: 6d90b3c9-30b4-4d23-8bce-ad9f10343cc6
+        entry: 9e7b1e59-fd41-4088-9d7f-be591c85b314
+      -
+        id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
+        entry: 982a0f19-3b05-4358-adda-93a5b3c60919
   -
-    id: 7a437c18-7481-4b76-9ed7-bb5a2f6d4e93
-    title: 'Implementation guides'
+    id: 76e3b608-0781-418a-b014-f0f79086cf32
+    title: 'Instrument Experiment'
     children:
+      -
+        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
+        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+      -
+        id: 46abcd22-a45e-4553-b08d-90f16283d013
+        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+      -
+        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
+        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
+      -
+        id: 90ff8151-b864-4782-abdd-65b81d1c26ca
+        title: 'Experiment SDKs'
+        url: /docs/sdks/experiment-sdks
+        children:
+          -
+            id: e2cf6857-5740-4894-8121-e9ff81d9814d
+            entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
+      -
+        id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
+        title: 'Experiment APIs'
+        url: /docs/apis/experiment
+      -
+        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
+        title: Evaluation
+        children:
+          -
+            id: fb405bc3-3370-4046-90e5-9a6145e02a67
+            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
+            title: 'How evaluation works'
+          -
+            id: 5af0708b-e976-453e-8354-3f622b978be5
+            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
+          -
+            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
+            entry: b358db28-92d6-458b-9692-d181e0871612
+          -
+            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
+            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
+  -
+    id: e67e82c0-c298-4d72-bd01-6e42a7e97826
+    title: 'Experiment Integrations'
+    children:
+      -
+        id: 91587dda-6cea-4de4-981f-3e346a936598
+        entry: 401dbba7-8405-4a22-96ff-5161ec1c969e
+  -
+    id: eb986f27-1841-4d18-9cea-2edf7c6da4c8
+    title: 'Experiment Advanced Concepts'
+    children:
+      -
+        id: c2d55904-0be9-4466-9640-bcd9f3f63efc
+        entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
+      -
+        id: dc769ea2-5ebe-4399-8c0f-95472f52e29a
+        entry: 3250ee8b-a6dd-46d0-b46a-1ed5c9f7a4f9
+      -
+        id: e038258d-fee8-4130-9e53-f83fb820339a
+        entry: adaff2f2-ddd7-41b5-af79-7e0fe0c599a9
       -
         id: cb690c88-7ceb-4a16-a42b-6ed9dedb3377
         entry: be8fad75-98bf-44c4-945a-a0f8a8bb1d94
       -
-        id: e038258d-fee8-4130-9e53-f83fb820339a
-        entry: adaff2f2-ddd7-41b5-af79-7e0fe0c599a9
+        id: 0a50430a-04b8-4c21-a907-7daed0df887a
+        entry: cf260863-11d8-434d-a2de-22c8256e83b6
+      -
+        id: dee1f568-8623-4fe9-8df3-89158307d151
+        entry: ec448015-b432-434a-93a0-6392b4474d67
+      -
+        id: 15fcf5be-505a-44db-9b00-e4f687435164
+        entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
+      -
+        id: 063e2253-5e83-4d2c-838c-5f52fa107add
+        entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
+        children:
+          -
+            id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
+            entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
+            title: 'How flag dependencies work'
+  -
+    id: 11f27340-72c0-41c0-8027-09dd6ce6be62
+    title: 'Statistics Method'
+    children:
+      -
+        id: e781c130-d33e-4773-a647-3914df6b6f45
+        entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
+      -
+        id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
+        entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
+      -
+        id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
+        entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
+      -
+        id: e14ec1eb-2ee1-43e0-aca8-895cc1dfd268
+        entry: 5b4dadf8-14b7-4669-8636-f3105393214c

@@ -16,7 +16,7 @@ Data that highlights user location properties, such as a user's city and country
 
 ## How Amplitude tracks location properties
 
-Amplitude uses the [MaxMind](https://www.maxmind.com/en/home) database to look up location information from the user's IP address. Even though MaxMind data is generally highly reliable, the [accuracy and availability of city and region information can vary by country](https://www.maxmind.com/en/geoip2-city-accuracy-comparison?country=&resolution=50).
+Amplitude uses the [MaxMind](https://www.maxmind.com/en/home) database to look up location information from the user's IP address. Even though MaxMind data is reliable, the [accuracy and availability of city and region information can vary by country](https://www.maxmind.com/en/geoip2-city-accuracy-comparison?country=&resolution=50).
 
 By default, Amplitude uses the GeoIP to gather location property values based on `location_lat` and `location_long`. You may explicitly define how Amplitude tracks a user's location properties server-side. Amplitude's [HTTP API](/docs/apis/analytics/http-v2) allows you to send your own `[Amplitude] City`, `[Amplitude] DMA`, `[Amplitude] Region`, and `[Amplitude] Country` values with your events.
 
@@ -24,16 +24,17 @@ By default, Amplitude uses the GeoIP to gather location property values based on
 If you choose to send these values, Amplitude doesn't modify them to reflect GeoIP. Always update all four fields together, as setting any one of the fields resets the others.
 {{/partial:admonition}}
 
-## How Amplitude determines location properties when IP address is blocked or filtered out
+## How Amplitude determines location properties when IP address is unavailable
 
-Even if you have chosen to block or filter IP addresses in your data ingestion, Amplitude uses the IP address to find location properties. The following steps outline how this works in the backend:
+Amplitude supports both disabling IP Address tracking in the SDK configuration, and dropping IP addresses after ingestion. The method you choose impacts how Amplitude can determine location properties.
 
-1. An event is uploaded with an IP address.
-2. Amplitude uses the IP address to find the location data, and adds all the relevant fields to the event.
-3. The system looks at the tracking options and filters for the project, excluding blocked or filtered fields as applicable.
-4. When you look at this specific event in Amplitude, it doesn't have an associated IP address. However, it has related location properties, such as city and country.
+### Disable IP address tracking in the SDK
 
-If you are using an SDK and want Amplitude to drop IP addresses, configure the options within the [SDK](/docs/sdks/analytics). If you want to remove IP addresses on events moving forward, file a Service Task request on the Support form.
+When you disable IP address tracking in the SDK configuration (for example, [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2#optional-tracking), [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk#disable-tracking), [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk#disable-tracking)), Amplitude never receives the IP address. As a result, Amplitude's back end services can't attempt to reconcile the user's location, and any location properties remain empty.
+
+### IP address filtering
+
+If you request [Amplitude Support](https://gethelp.amplitude.com) to drop IP addresses after ingestion, Amplitude's back end services process the IP address to determine location, but the IP address itself doesn't persist in Amplitude. As a result, location properties on an event are filled, but IP address remains empty.
 
 ## How Amplitude parses user agent and device information
 
@@ -68,7 +69,7 @@ Amplitude automatically adds the following device-related properties to events:
 ### How user agent parsing works
 
 1. **Client-side collection**: The SDK automatically collects the user agent string from the client device.
-2. **Server-side parsing**: When Amplitude receives the event, it parses the user agent string using a combination of regular expressions and user agent parsing libraries.
+2. **Server-side parsing**: When Amplitude receives the event through the [HTTP V2 API](https://amplitude.com/docs/apis/analytics/http-v2) or other ingestion paths, it parses the user agent string using a combination of regular expressions and user agent parsing libraries. If `os_name` , `os_version` , or `device_model` appear on the request, then those values appear on the final event. If not provided, the `user_agent` field is parsed to set those values on the event. Fields such as `device_family` and `device_type` are derived from a combination of `device_brand`, `device_manufacturer`, and `device_model`. `device_manufacturer` and `device_brand` are expected to be top-level fields on the event, but can be null.
 3. **Property assignment**: Amplitude adds the parsed information to the event as properties.
 4. **Analysis availability**: These properties are then available for segmentation, filtering, and analysis in Amplitude.
 

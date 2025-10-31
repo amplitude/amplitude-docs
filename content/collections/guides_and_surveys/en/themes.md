@@ -34,7 +34,9 @@ When you publish an update an existing theme, those updates apply to any guide o
 
 ## Theme viewer
 
-The Theme Viewer updates as you make adjustments to provide an up-to-date representation of your theme as you work.
+The Theme Viewer shows how the theme appears when applied to a guide or survey. When editing a theme, you can choose the specific guide or survey you want to preview, to see how changes affect your real-world content.
+
+Theme previews look different depending on where you preview them. When you build a guide or survey, theme previews show the published version. When editing themes, previews display draft changes and let you choose a guide or survey to preview against. This helps ensure consistency between what you see when building guides and what your users experience in your product.
 
 At the top of the viewer, toggle between the [brand](#brand-controls) and [component](#component-editor) editors, toggle between light and dark mode, and cancel, save, and publish your changes.
 
@@ -56,7 +58,29 @@ In this example, the primary color is `#48705C`.
 
 ### Typography
 
-Set the default type face of your theme. Choose from the [Google font library](https://fonts.google.com/), or specify a custom type face you've already defined on your site.
+Set the default typeface of your theme. Choose from the [Google font library](https://fonts.google.com/), or specify a custom typeface you've already defined on your site.
+
+To use a font natively in your mobile Guides and Surveys, be sure to include the full font family in your app project and use a consistent file name for the font.
+
+#### Android
+- Place font files in the `/res/font` directory of your project.  
+- Use a clear and consistent naming convention:
+  - `[fontNameWithoutSpaces]_[style].[fileExtension]`
+  - For example: `adventpro_italic.ttf`
+- Supported formats: **XML**, **TTF**.  
+- After adding, the font can be referenced directly in your theme setup.  
+
+For more information, go to Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
+
+#### iOS
+- Add font files to your Xcode project.  
+- Use a clear and consistent naming convention:
+  - `[FontName]-[Style].[fileExtension]`
+  - For example: `Lora-Italic.ttf`
+- Register the fonts in your app's `.plist` file.  
+- Supported formats: **TTF**, **OTF**.  
+
+For more information, go to Apple's [Adding a custom font to your app](https://developer.apple.com/documentation/uikit/adding-a-custom-font-to-your-app).  
 
 {{partial:admonition type="note" heading="Font previews"}}
 Custom fonts you add that aren't part of Google Fonts don't appear in the theme preview.
@@ -141,3 +165,9 @@ Select the animation that each widget type uses to appear on screen, along with 
 Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
+
+## Advanced customization with Custom CSS
+
+[Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
+
+Amplitude recommends using themes for most styling. Use Custom CSS when themes don't provide the control you need.

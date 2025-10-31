@@ -3,8 +3,11 @@ id: 8f2a1b3c-4d5e-6f7g-8h9i-0j1k2l3m4n5o
 blueprint: data
 title: 'Data Mutability Features'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1735574400
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760633174
+academy_course:
+  - 2fe42547-ffe6-4b8a-a5fd-2b50ff7c13c5
+landing: false
 ---
 Amplitude's Data Mutability features enable you to keep data consistent between your warehouse and Amplitude by supporting `INSERT`, `UPDATE`, and `DELETE` operations on your event data. This capability is available through Mirror Sync strategies across multiple warehouse integrations, allowing you to keep your Amplitude data synchronized with your source of truth.
 

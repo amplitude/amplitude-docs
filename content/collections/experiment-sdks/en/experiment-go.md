@@ -22,7 +22,7 @@ This documentation is split into two sections for [remote](/docs/feature-experim
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
+Implements fetching variants for a user through [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -33,6 +33,7 @@ go get github.com/amplitude/experiment-go-server
 ```
 
 {{partial:admonition type="tip" heading="Quick start"}}
+
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants for the user](#fetch)
 3. [Access a flag's variant](#fetch)
@@ -67,7 +68,7 @@ if variant.Value == "on" {
 
 ### Initialize
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+Initialize the SDK client in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must reside within the same project that you are sending analytics events to.
 
 ```go
 func Initialize(apiKey string, config *Config) *Client
@@ -84,7 +85,7 @@ client := remote.Initialize("<DEPLOYMENT_KEY>", nil)
 
 #### Configuration
 
-The SDK client can be configured on initialization.
+Configure the SDK client upon initialization.
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
@@ -93,6 +94,8 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `LoggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `defaultLoggerProvider` which outputs to stdout |
 | `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500 * time.Millisecond` |
@@ -142,7 +145,7 @@ if variant.Value == "on" {
 {{partial:collapse name="Account-level bucketing and analysis (v1.7.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or through [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```go
 user := &experiment.User{
@@ -158,7 +161,7 @@ user := &experiment.User{
 variants, err := client.Fetch(user)
 ```
 
-To pass freeform group properties, see this example:
+To pass freeform group properties, review this example:
 
 ```go
 user := &experiment.User{
@@ -178,7 +181,7 @@ variants, err := client.Fetch(user)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user through [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -189,6 +192,7 @@ go get github.com/amplitude/experiment-go-server
 ```
 
 {{partial:admonition type="tip" heading="Quick start"}}
+
  1. [Initialize the local evaluation client.](#initialize-1)
  2. [Start the local evaluation client.](#start)
  3. [Evaluate a user.](#evaluate)
@@ -216,6 +220,7 @@ go get github.com/amplitude/experiment-go-server
    panic(err)
  }
  ```
+
 {{/partial:admonition}}
 
 ### Initialize
@@ -236,12 +241,12 @@ func Initialize(apiKey string, config *Config) *Client
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `StreamUpdates` [configuration](#configuration) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. The time for SDK to receive the update after saving is generally under one second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration) to set the time flag configs take to update once modified (default 30s), as well for fallback.
+Use the `StreamUpdates` [configuration](#configuration-1) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. Typically, the time for SDK to receive the update after saving is under one (1) second. It reverts to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration-1) to set how much time flag configs take to update after they are modified (default 30s), as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
 
-The SDK client can be configured on initialization.
+Configure the SDK client upon initialization.
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
@@ -252,12 +257,14 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `LoggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `defaultLoggerProvider` which outputs to stdout |
 | `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
 | `FlagConfigPollerRequestTimeout` | The timeout for the request made by the flag config poller | `10 * time.Second` |
 | `AssignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
-| `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK generally within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
+| `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK. Typically within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
 | `StreamServerUrl` | The URL of the stream server. | `https://stream.lab.amplitude.com` |
 | `StreamFlagConnTimeout` | The timeout for establishing a valid flag config stream. This includes time for establishing a connection to stream server and time for receiving initial flag configs. | `1500` |
 | `CohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
@@ -287,7 +294,7 @@ Start the local evaluation client, pre-fetching local evaluation mode flag confi
 func (c *Client) Start() error
 ```
 
-You should await the result of `Start()` to ensure that flag configs are ready to be used before calling [`Evaluate()`](#evaluate)
+You should await the result of `Start()` to ensure that flag configs are ready before calling [`Evaluate()`](#evaluate)
 
 ```go
 err := client.Start()
@@ -351,3 +358,60 @@ client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
   }
 })
 ```
+
+## Custom logging
+
+Control log verbosity with the `LogLevel` configuration, or implement the `LoggerProvider` interface to integrate your own logger.
+
+### Log levels
+
+The SDK supports these log levels:
+
+- `Verbose`: Detailed logging for deep debugging
+- `Debug`: Logging for development and troubleshooting  
+- `Info`: General informational messages
+- `Warn`: Warning messages
+- `Error`: Error messages (default)
+- `Disable`: No logging
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to integrate your logging solution:
+
+```go
+import "github.com/amplitude/experiment-go-server/logger"
+
+type MyCustomLogger struct {
+    // Your logger implementation
+}
+
+func (l *MyCustomLogger) Verbose(message string, args ...interface{}) {
+    // Implement verbose logging
+}
+
+func (l *MyCustomLogger) Debug(message string, args ...interface{}) {
+    // Implement debug logging
+}
+
+func (l *MyCustomLogger) Info(message string, args ...interface{}) {
+    // Implement info logging
+}
+
+func (l *MyCustomLogger) Warn(message string, args ...interface{}) {
+    // Implement warn logging
+}
+
+func (l *MyCustomLogger) Error(message string, args ...interface{}) {
+    // Implement error logging
+}
+
+// Initialize with custom logger
+client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
+    LogLevel: logger.Debug,
+    LoggerProvider: &MyCustomLogger{},
+})
+```
+
+{{partial:admonition type="note" heading="Backward compatibility"}}
+The `Debug` configuration field is still supported. When set to `true`, it overrides `LogLevel` to `Debug`.
+{{/partial:admonition}}

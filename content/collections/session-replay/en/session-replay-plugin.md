@@ -19,7 +19,7 @@ description: 'Use the Session Replay plugin if you instrument your site with Amp
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
-This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk). For more information about the Browser SDK, see 
+This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk). For more information about the Browser SDK, go to 
 [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 {{partial:admonition type="info" heading="Session Replay and performance"}}
@@ -109,11 +109,11 @@ initAll('YOUR_API_KEY', {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than once, you may see mismatches in Device ID or Session ID.
+You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than one time, you may experience mismatches in Device ID or Session ID.
 
 ```html
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.0-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.19.3-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/analytics-browser-2.25.4-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.22.2-min.js.gz"></script>
 <script>
 const sessionReplayTracking = window.sessionReplay.plugin();
 window.amplitude.add(sessionReplayTracking);
@@ -122,11 +122,11 @@ window.amplitude.init(API_KEY)
 ```
 
 {{partial:admonition type="info" heading=""}}
-Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
+Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota gets defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Compatability with Google Tag Manager"}}
-The Session Replay plugin scripts load asynchronously when you add them to the `<head>` tag of your page. As a result, this implementation isn't compatible with Google Tag Manager. For more information, see [Session Replay Implementation with Google Tag Manager](/docs/session-replay/session-replay-google-tag-manager).
+The Session Replay plugin scripts load asynchronously when you add them to the `<head>` tag of your page. As a result, this implementation isn't compatible with Google Tag Manager. For more information, go to [Session Replay Implementation with Google Tag Manager](/docs/session-replay/session-replay-google-tag-manager).
 {{/partial:admonition}}
 
 ## Configuration
@@ -139,7 +139,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 | `debugMode`                             | `boolean` | No       | `false`     | Adds additional debug event property to help debug instrumentation issues (such as mismatching apps). Only recommended for debugging initial setup, and not recommended for production.                                                                                                                                                                                                                                                                                                                           |
 | `serverZone`                            | `string`  | No       | `US`        | EU or US. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `configServerUrl`                       | `string`  | No       | `undefined` | Specifies the endpoint URL to fetch remote configuration. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                                                                                                                                        |
-| `trackServerUrl`                        | `string`  | No       | `undefined` | Specifies the endpoint URL to send session replay data. If provided, it overrides the default server zone configuration.                                                                                                                                                                                                                                                                                                                                                                                          |
+| `trackServerUrl`                        | `string`  | No       | `undefined` | Specifies the endpoint URL to send session replay data. If provided, Amplitude forwards requests from the SDK there instead of the default Session Replay endpoint.                                                                                                                                                                                                                                                                                                                                                          |
 | `shouldInlineStylesheet`                | `boolean` | No       | `true`      | If stylesheets are inlined, the contents of the stylesheet are stored. During replay, the stored stylesheet is used instead of attempting to fetch it remotely. This prevents replays from appearing broken due to missing stylesheets. Inlining stylesheets may not work in all cases. If this is undefined stylesheets are inlined.                                                                                                                                                                             |
 | `storeType`                             | `string`  | No       | `idb`       | Specifies how replay events should be stored. `idb` uses IndexedDB to persist replay events when all events can't be sent during capture. `memory` stores replay events only in memory, meaning events are lost when the page is closed. If IndexedDB is unavailable, the system falls back to memory.                                                                                                                                                                                                            |
 | `performanceConfig.enabled`             | `boolean` | No       | `true`     | If enabled, event compression will be deferred to occur during the browser's idle periods.                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -149,7 +149,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 
 ### Track default session events
 
-Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/docs/sdks/analytics/browser/browser-sdk-2#track-sessions).
+Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, go to [Browser SDK 2.0 | Tracking Sessions](/docs/sdks/analytics/browser/browser-sdk-2#track-sessions).
 
 {{partial:tabs tabs="SDK configuration, Plugin configuration"}}
 {{partial:tab name="SDK configuration"}}
@@ -353,7 +353,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ## Troubleshooting
 
-For more information about individual statuses and errors, see the [Session Replay Ingestion Monitor](/docs/session-replay/ingestion-monitor).
+For more information about individual statuses and errors, go to the [Session Replay Ingestion Monitor](/docs/session-replay/ingestion-monitor).
 
 ### CSS styling doesn't appear in a replay
 
@@ -367,6 +367,11 @@ To help resolve CSS loading issues:
 - Ensure your domain is publicly accessible. If you work in a local environment, Amplitude may not have access to assets stored on `localhost`.
 - Your CDN should keep track of old stylesheets for older replays. If the content of the same stylesheet changes over time, try to append a unique string or hash to the asset URL. For example, `stylesheet.css?93f8b89`.
 - Add `app.amplitude.com` or `app.eu.amplitude.com` to the list of domains that your server's CORS configuration permits.
+- Make external stylesheets accessible to Session Replay. To ensure Session Replay can capture external stylesheets, add the `crossorigin="anonymous"` attribute to the `<link rel="stylesheet">` elements in your code.
+ 
+    This instructs the browser to load the CSS without sending credentials, which allows cross-origin access to the stylesheet rules. Without this attribute, browsers like Google Chrome block programmatic access to those rules (for example, attempts to read `stylesheet.cssRules` fails).
+
+    Although your site appears correctly to users, these restrictions can prevent session replay tools from capturing the full styling information, resulting in incomplete or broken visual playback.
 
 ### Capture sessions contain limited information
 

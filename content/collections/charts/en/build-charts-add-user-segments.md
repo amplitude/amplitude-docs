@@ -9,8 +9,10 @@ this_article_will_help_you:
   - 'Use conditions to fine-tune your analyses'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717690871
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632900
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 {{partial:admonition type='note'}}
 If you haven't done so already, read the Help Center article on [adding events to your Amplitude charts](/docs/analytics/charts/build-charts-add-events) before continuing with this one.

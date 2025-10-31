@@ -6,9 +6,14 @@ landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739220209
 ---
-Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode. 
+Amplitude provides two ways to test your guides and surveys:
 
-Preview mode enables you to confirm the conditions and settings you apply in the builder work on your site or application.
+* **Preview mode**: A quick first check to see how your guide or survey looks and confirm your setup.
+* **Testing status**: A more thorough live test with specific users to be extra certain before launch.
+
+## Preview mode
+
+Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode.
 
 {{partial:admonition type="tip" heading="Recommended testing"}}
 Amplitude recommends that you test your guide or survey thoroughly before you launch. This helps ensure everything works as expected, and the experience has the look and feel you want.
@@ -17,8 +22,6 @@ Amplitude recommends that you test your guide or survey thoroughly before you la
 * Check that multi-step guides and surveys have the right pace
 * Pins and tooltips appear exactly where they should.
 {{/partial:admonition}}
-
-## Enter preview mode
 
 Preview mode is accessible from the builder:
 
@@ -29,7 +32,7 @@ Preview mode is accessible from the builder:
 
 ![](statamic://asset::help_center_conversions::guides-surveys/preview-bar.png)
 
-## Conditions
+### Conditions checked in preview mode
 
 The preview bar shows the status of the three conditions that Amplitude uses to decide to show the guide or survey:
 
@@ -47,7 +50,7 @@ These conditions have three statuses:
 | Yellow | The condition isn't passed, and the guide or survey doesn't display. |
 | Blue   | The condition is pending or bypassed.                                |
 
-## Preview troubleshooting
+### Troubleshooting preview mode
 
 Sometimes, the guide or survey doesn't appear in preview. When this happens, and the instrumentation is correct, check the following:
 
@@ -64,12 +67,22 @@ Amplitude keeps a record of the guides and surveys your users encounter. To remo
 4. In the corresponding row, click the ellipsis menu, and select **Clear history**.
 {{/partial:admonition}}
 
-## Live testing
+## Testing status function
 
-While preview mode provides a close approximation of how your guide or survey appears to users, sometimes you want to test in a live environment to be sure. In these cases, use Guides and Surveys' targeting to target the experience to just yourself, or a subset of internal users.
+While preview mode provides a close approximation of how your guide or survey appears to users, sometimes you want to test in a live environment. In these cases, use the [**Testing** status](/docs/guides-and-surveys/guides/setup-and-target#status) to test your guide or survey with specific users without affecting your broader audience.
 
-Amplitude recommends that you:
+When you set a guide or survey to Testing status:
 
-1. Create a cohort for the set of users you want to test. 
-2. Apply that cohort to the targeting section of the guides and surveys you want to live test.
-3. Change status to **Published**. 
+* All specified test users (device IDs, user IDs, or cohorts) are eligible to see the guide or survey.
+* Limits are automatically ignored to make testing easier.
+* The guide or survey remains hidden from your production users.
+
+{{partial:admonition type="note" heading="Test users in production"}}
+Test users continue to receove the guide or survey when you update its status to **Published** or **Scheduled**. This allows for smooth transitions from testing to production.
+{{/partial:admonition}}
+
+##### To use the Testing status:
+
+1. Open your guide or survey.
+2. In the **Test users** section, specify your test users using device IDs, user IDs, or cohorts.
+3. Change status to **Testing** .

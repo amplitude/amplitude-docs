@@ -119,6 +119,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. Go to [custom logging](#custom-logging). | `Error` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. Go to [custom logging](#custom-logging). | `ConsoleLogger` |
 | `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -274,6 +276,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `ConsoleLogger` |
 | `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
@@ -362,6 +366,62 @@ const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
 ```
 
 Consider configuring the `maxCohortSize` to avoid downloading large cohorts which may cause your service to run out of memory. Cohorts that are too large will not be downloaded.
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `LoggerProvider` interface to integrate your own logger.
+
+### Log levels
+
+- `Verbose`: Detailed debugging logs
+- `Debug`: Development and troubleshooting logs
+- `Info`: General information
+- `Warn`: Warnings
+- `Error`: Errors (default)
+- `Disable`: No logs
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to use your own logging solution:
+
+```ts
+import { Experiment, LogLevel, LoggerProvider } from '@amplitude/experiment-node-server';
+
+class MyCustomLogger implements LoggerProvider {
+  verbose(message, ...optionalParams) {
+    // Implement verbose logging
+  }
+
+  debug(message, ...optionalParams) {
+    // Implement debug logging
+  }
+
+  info(message, ...optionalParams) {
+    // Implement info logging
+  }
+
+  warn(message, ...optionalParams) {
+    // Implement warn logging
+  }
+
+  error(message, ...optionalParams) {
+    // Implement error logging
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initializeLocal(
+  '<DEPLOYMENT_KEY>',
+  {
+    logLevel: LogLevel.Debug,
+    loggerProvider: new MyCustomLogger()
+  }
+);
+```
+
+{{partial:admonition type="note" heading="Backward compatibility"}}
+The `debug` configuration field is still supported. When set to `true`, it overrides `logLevel` to `Debug`.
+{{/partial:admonition}}
 
 ## Access Amplitude cookies
 

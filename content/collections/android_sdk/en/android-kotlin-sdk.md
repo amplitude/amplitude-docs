@@ -70,6 +70,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume.                                                                                                                                                                                                                | `false`                                                                                                                                           |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)       | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                                                                                                                                  | `DefaultTrackingOptions(sessions = true)`                                                                                                         |
 | `autocapture`                                                                      | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions.                                                                                                                                 | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture). |
+| `interactionsOptions`                                                              | `InteractionsOptions`. Configuration for granular control over frustration interaction tracking types (rage clicks and dead clicks).                                                                                                                                                                                     | `InteractionsOptions(rageClick = RageClickOptions(enabled = true), deadClick = DeadClickOptions(enabled = true))`                                |
 | `minTimeBetweenSessionsMillis`                                                     | `Long`. The amount of time for session timeout. The value is in milliseconds.                                                                                                                                                                                                                                            | `300000`                                                                                                                                          |
 | `serverUrl`                                                                        | `String`. The server url events upload to.                                                                                                                                                                                                                                                                               | `https://api2.amplitude.com/2/httpapi`                                                                                                            |
 | `serverZone`                                                                       | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config.                                                                                                                                                                                                             | `ServerZone.US`                                                                                                                                   |
@@ -249,6 +250,9 @@ Starting from release v1.18.0, the SDK can track more events without manual inst
 - Screen views
 - Deep links
 - Element interactions
+- Frustration interactions
+  - Rage clicks
+  - Dead clicks
 
 {{partial:collapse name="Autocapture options"}}
 | Name                   | Type                | Enabled by default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -258,6 +262,7 @@ Starting from release v1.18.0, the SDK can track more events without manual inst
 | `SCREEN_VIEWS`         | `AutocaptureOption` | No                 | Enables screen and fragment views tracking. If the option is set, Amplitude tracks screen viewed and fragment viewed events. Event properties tracked includes: `[Amplitude] Screen Name`, `[Amplitude] Fragment Class`, `[Amplitude] Fragment Identifier`, `[Amplitude] Fragment Tag`. See [Track screen views](#track-screen-views) for more information.                                                                                                    |
 | `DEEP_LINKS`           | `AutocaptureOption` | No                 | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information.                                                                                                                                                                                                            |
 | `ELEMENT_INTERACTIONS` | `AutocaptureOption` | No                 | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with clickable elements. Event properties tracked includes: `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information.                     |
+| `FRUSTRATION_INTERACTIONS` | `AutocaptureOption` | No                 | Enables frustration interaction tracking. If the option is enabled, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with clickable UI elements. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Review [Track frustration interactions](#track-frustration-interactions) for more information.                                                                        |
 
 {{/partial:collapse}}
 
@@ -279,10 +284,39 @@ val amplitude = Amplitude(
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
         +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+        +frustrationInteractions // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
     }
   )
 )
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL` or the `addAll()` method:
+
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.AutocaptureOption
+
+// Using AutocaptureOption.ALL constant
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = AutocaptureOption.ALL
+    )
+)
+
+// Or using addAll() method with builder
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            addAll()
+        }
+    )
+)
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` automatically includes `AutocaptureOption.SESSIONS`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOption.SESSIONS` option.
@@ -307,13 +341,29 @@ import java.util.Arrays;
 
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
 configuration.getAutocapture().addAll(Arrays.asList(
+    AutocaptureOption.SESSIONS,
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS
+    AutocaptureOption.SCREEN_VIEWS,
+    AutocaptureOption.ELEMENT_INTERACTIONS,
+    AutocaptureOption.FRUSTRATION_INTERACTIONS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL`:
+
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.AutocaptureOption;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().addAll(AutocaptureOption.ALL);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.getAutocapture()` automatically includes `AutocaptureOption.SESSIONS`.
 
 To prevent automatic session event capture, remove the `AutocaptureOption.SESSIONS` option from `autocapture`.
@@ -560,6 +610,136 @@ Card(
 ```
 
 When a user clicks these elements, the `[Amplitude] Target Tag` property contains the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
+{{/partial:admonition}}
+
+### Track frustration interactions
+
+Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with clickable UI elements in both Android Views and Jetpack Compose. To enable this option, include `AutocaptureOption.FRUSTRATION_INTERACTIONS` in the `autocapture` configuration.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions    // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
+        }
+    )
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.FRUSTRATION_INTERACTIONS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
+
+When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Begin Time` | The timestamp when the interaction began in ISO 8601 format. |
+| `[Amplitude] End Time` | The timestamp when the interaction ended in ISO 8601 format. |
+| `[Amplitude] Duration` | The duration of the interaction in milliseconds. |
+| `[Amplitude] Click Count` | The number of clicks that occurred. |
+| `[Amplitude] Clicks` | The array of clicks that occurred. |
+| `[Amplitude] Clicks[].X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Time` | The timestamp of the click in ISO 8601 format. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target Class` | The canonical name of the target view class. |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. |
+| `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
+| `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+**Dead Click** is a user interaction on an interactive element that resulted in no visible change in the following 3 seconds.
+
+When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target Class` | The canonical name of the target view class. |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. |
+| `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
+| `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+### Configure frustration interaction types
+
+Enabling `FRUSTRATION_INTERACTIONS` tracks both rage clicks and dead clicks. Use the `interactionsOptions` parameter to enable or disable each type individually.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.InteractionsOptions
+import com.amplitude.android.RageClickOptions
+import com.amplitude.android.DeadClickOptions
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions
+        },
+        interactionsOptions = InteractionsOptions(
+            rageClick = RageClickOptions(enabled = true),
+            deadClick = DeadClickOptions(enabled = false)
+        )
+    )
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.InteractionsOptions;
+import com.amplitude.android.RageClickOptions;
+import com.amplitude.android.DeadClickOptions;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.FRUSTRATION_INTERACTIONS);
+configuration.setInteractionsOptions(
+    new InteractionsOptions(
+        new RageClickOptions(true),
+        new DeadClickOptions(false)
+    )
+);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" title="Dead clicks require Session Replay"}}
+To track dead clicks, enable both Session Replay and frustration interactions.
 {{/partial:admonition}}
 
 ## User groups

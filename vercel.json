@@ -9,7 +9,12 @@
   ],
   "trailingSlash": false,
   "redirects": [
-        {
+    {
+      "source": "/docs/partners/create-a-cohort-syncing-integration",
+      "destination": "/docs/partners/create-a-cohort-sync-integration",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/faq/startup-scholorship-plan",
       "destination": "/docs/faq/startup-scholarship-plan",
       "statusCode": 301

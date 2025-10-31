@@ -6,9 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/14056975720091-Interpret-y
 this_article_will_help_you:
   - 'Use the features of the Measured As Module to customize your analysis'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1753213755
+updated_at: 1760632389
 landing: true
 landing_blurb: 'Use the features of the Measured As Module to customize your analysis'
+academy_course:
+  - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
 ---
 This article explores some more advanced features available to you as you interpret your event segmentation analyses. For a primer on the basics, [review part one](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1).
 

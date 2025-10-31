@@ -67,7 +67,7 @@ The marketing campaign cookie stores attribution data including:
 
 - UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`)
 - Referrer information (`referrer`, `referring_domain`)
-- Click IDs (`gclid`, `fbclid`, `dclid`, `gbraid`, `wbraid`, `ko_click_id`, `msclkid`, `ttclid`, `twclid`, `li_fat_id`, `rtd_cid`)
+- Click IDs (`gclid`, `fbclid`, `dclid`, `gbraid`, `wbraid`, `ko_click_id`, `msclkid`, `ttclid`, `twclid`, `li_fat_id`, `rdt_cid`)
 
 ### Cookie size
 
@@ -159,7 +159,9 @@ When you disable all storage, Amplitude creates a new `device_id` for that user 
 
 Certain jurisdictions require that users consent to non-essential cookies before any data can be collected. You are ultimately responsible for ensuring that you get any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
 
-> **Note:** Amplitude cookies may be created as soon as the SDK is initialized, regardless of the user's opt-out status. If you require that no cookies are created before consent, you must defer SDK initialization until after consent is obtained.
+{{partial:admonition type="note" heading=""}}
+Amplitude cookies may be created as soon as the SDK is initialized, regardless of the user's opt-out status. If you require that no cookies are created before consent, you must defer SDK initialization until after consent is obtained.
+{{/partial:admonition}}
 
 ![](statamic://asset::help_center_conversions::get-started/consentscreen.png)
 

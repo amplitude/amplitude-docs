@@ -123,6 +123,13 @@ tree:
         id: bc5c7c5e-fa0c-4bfd-8c89-a448a2c2e012
         entry: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
   -
+    id: fc0eec99-1276-4766-a82b-120a143695b9
+    title: 'Framework Integrations'
+    children:
+      -
+        id: 2368f6eb-4b5e-45a3-9315-6e43b6d6c69a
+        entry: cc86bea6-52a3-4c4b-8da4-2c5c159ccccc
+  -
     id: 31c797f0-bc32-442a-8204-028abd627513
     entry: bcd2bdb9-24a7-4c65-bb08-764eda6efaa5
   -

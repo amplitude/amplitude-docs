@@ -5,12 +5,13 @@ title: 'How Amplitude computes funnels'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels'
 this_article_will_help_you:
   - 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717102445
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632051
 landing: true
 landing_blurb: 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
+academy_course:
+  - 7d137320-f0f2-4b00-8f77-2f2adb07de68
 ---
-
 Unlike other charts, a Funnel Analysis requires you to specify the order of the events you include in the Events Module. Your options are:
 
 | Order       | Definition                                                                                                                                                                         |

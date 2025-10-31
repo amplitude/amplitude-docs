@@ -3,10 +3,12 @@ id: 20749d99-c2d4-4576-80a3-24233897706c
 blueprint: guides_and_survey
 title: Overview
 landing: false
-updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
-updated_at: 1750961121
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760633219
 this_article_will_help_you:
   - 'Understand the basic concepts of the Resource Center'
+academy_course:
+  - 6b5642f5-c271-4855-b834-85ac2eeaa246
 ---
 Resource center is a widget that integrates directly (with no other installation requirements) into the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk). It surfaces insightful and useful information to your users from anywhere on your site. The Resource Center widget appears as a clickable help icon. The center itself provides:
 - Search functionality

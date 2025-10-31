@@ -7,8 +7,10 @@ this_article_will_help_you:
   - 'Identify the best Amplitude chart to answer your questions'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724345761
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760633120
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 Any Amplitude analysis begins with selecting the right chart for the job. This article provides a short summary explanation of all Amplitude's chart types and the types of analysis they're best suited for.
 
