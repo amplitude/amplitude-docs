@@ -1,0 +1,231 @@
+---
+description: Template for engineers and contributors documenting new features
+globs: []
+alwaysApply: false
+---
+
+# New Feature Documentation Template
+
+You are helping someone document a new feature in Amplitude's product documentation.
+
+## When to Use This Rule
+
+Invoke this rule when someone asks to:
+- "Document a new feature"
+- "Create docs for [feature name]"
+- "Write feature documentation"
+- "Document new functionality"
+
+## Workflow
+
+### Step 1: Gather Information
+
+Ask the person these questions:
+
+1. **Feature name:** What's the feature called?
+2. **Product area:** Which product is this for?
+   - Analytics (charts, analysis tools)
+   - CDP/Audiences (cohorts, syncing, destinations)
+   - Data Management (taxonomy, governance, sources)
+   - Session Replay
+   - Feature Experiment / Web Experiment
+   - SDK/API
+   - Admin/Account Management
+3. **User benefit:** What problem does this solve or what does it enable? (1-2 sentences)
+4. **Prerequisites:** What do users need before using this feature?
+   - Plan tier requirements (Growth, Enterprise, etc.)
+   - Permissions/roles required
+   - Prior setup or configuration
+   - Integrations needed
+5. **Primary use case:** What's the main workflow or task?
+
+### Step 2: Determine the Right Collection
+
+Based on the product area, suggest the appropriate collection:
+
+| Product Area | Collection Folder | Web Route |
+|--------------|------------------|-----------|
+| Analytics overview | analytics | `/docs/analytics/{slug}` |
+| Event Segmentation | event-segmentation | `/docs/analytics/charts/event-segmentation/{slug}` |
+| Funnel Analysis | funnel-analysis | `/docs/analytics/charts/funnel-analysis/{slug}` |
+| Retention | retention-analysis | `/docs/analytics/charts/retention-analysis/{slug}` |
+| Lifecycle | lifecycle | `/docs/analytics/charts/lifecycle/{slug}` |
+| Other charts | charts | `/docs/analytics/charts/{slug}` |
+| CDP/Audiences | audiences | `/docs/data/audiences/{slug}` |
+| Data Management | data | `/docs/data/{slug}` |
+| Sources | sources | `/docs/data/sources/{slug}` |
+| Destinations | destination-catalog | `/docs/data/destination-catalog/{slug}` |
+| Session Replay | session-replay | `/docs/session-replay/{slug}` |
+| Feature Experiment | experiment | `/docs/feature-experiment/{slug}` |
+| Web Experiment | web_experiment | `/docs/web-experiment/{slug}` |
+| Experiment SDKs | experiment-sdks | `/docs/sdks/experiment-sdks/{slug}` |
+| Browser SDK | browser_sdk | `/docs/sdks/analytics/browser/{slug}` |
+| iOS SDK | ios_sdk | `/docs/sdks/analytics/ios/{slug}` |
+| Android SDK | android_sdk | `/docs/sdks/analytics/android/{slug}` |
+| Analytics API | api | `/docs/apis/analytics/{slug}` |
+| Experiment API | experiment-apis | `/docs/apis/experiment/{slug}` |
+| Account Management | account-management | `/docs/admin/account-management/{slug}` |
+| Admin | admin | `/docs/admin/{slug}` |
+
+### Step 3: Generate Document Structure
+
+Create a new markdown file with this structure:
+
+```markdown
+---
+id: [Generate a UUID]
+blueprint: [Use appropriate blueprint for the collection]
+title: [Feature Name]
+source: https://help.amplitude.com/hc/en-us/articles/[if migrating from Help Center]
+this_article_will_help_you:
+  - '[Benefit 1 - what users will accomplish]'
+  - '[Benefit 2]'
+landing: false
+exclude_from_sitemap: false
+updated_by: [Leave for tech writers to fill]
+updated_at: [Leave for tech writers to fill]
+---
+
+[One-sentence description of what this feature does and why it matters]
+
+## Prerequisites
+
+[What users need before using this feature - if applicable. Remove this section if there are no prerequisites]
+
+- [Prerequisite 1]
+- [Prerequisite 2]
+
+## [Primary Task/Use Case Heading - Use imperative verb]
+
+[Brief introduction to the main workflow - 1-2 sentences]
+
+1. Navigate to [location in product].
+2. Click [button or option].
+3. Configure [specific settings]:
+   - **[Setting name]**: [What it does]
+   - **[Setting name]**: [What it does]
+4. Click **[Action button]**.
+
+[Result description - what happens after completing these steps]
+
+### Example
+
+[If applicable, show a code example, configuration example, or describe a concrete scenario]
+
+## Common use cases
+
+[Optional: If there are multiple distinct ways to use this feature, describe them here]
+
+### [Use case 1]
+
+[Brief description and key steps]
+
+### [Use case 2]
+
+[Brief description and key steps]
+
+## Common questions
+
+### [Question 1 - phrase as user would ask]
+
+[Answer in 2-3 sentences]
+
+### [Question 2]
+
+[Answer in 2-3 sentences]
+
+## Related resources
+
+- [Related doc 1 - use full /docs/ route]
+- [Related doc 2 - use full /docs/ route]
+- [Related doc 3 - use full /docs/ route]
+```
+
+### Step 4: Apply Amplitude Style Rules
+
+Ensure the generated content follows all Amplitude documentation standards:
+
+✅ **Active voice** - No passive constructions
+- ❌ "Settings can be configured"
+- ✅ "Configure the settings"
+
+✅ **Present tense** - No future tense
+- ❌ "The feature will allow you to"
+- ✅ "The feature lets you"
+
+✅ **Contractions** - Use conversational tone
+- ❌ "cannot", "does not", "is not"
+- ✅ "can't", "doesn't", "isn't"
+
+✅ **Second person** - Use "you"
+- ❌ "Users should navigate to..."
+- ✅ "Navigate to..."
+
+✅ **Direct instructions** - No "please"
+- ❌ "Please click the button"
+- ✅ "Click the button"
+
+✅ **Concise language** - Remove wordy phrases
+- ❌ "in order to", "via", "desired"
+- ✅ "to", "through", "want/need"
+
+✅ **Internal links** - Use Statamic routes
+- ❌ `[link](../other-doc.md)`
+- ✅ `[link](/docs/collection-path/other-doc)`
+
+### Step 5: Suggest Filename and Location
+
+Recommend:
+- **Filename:** `[feature-name-in-kebab-case].md`
+- **Location:** `content/collections/[collection-name]/en/[filename]`
+- **Web URL:** Will be `/docs/[route-path]/[filename-without-md]`
+
+### Step 6: Remind About Next Steps
+
+After generating the document, remind the contributor:
+
+1. **Add images** if applicable (place in `public/docs/output/img/[collection]/`)
+2. **Add code examples** if this is SDK or API documentation
+3. **Test links** to ensure they work
+4. **Submit PR** - Vercel will generate a preview automatically
+5. **Tag tech writers** for review (@tech-writers or #amplitude-docs)
+
+## Blueprint Reference
+
+Each collection uses specific blueprints. Common ones:
+
+- `analytic` - For analytics collection
+- `lifecycle`, `funnel_analysis`, `event_segmentation`, etc. - For chart collections
+- `data` - For data collection
+- `audience` - For audiences collection
+- `sdk` - For SDK documentation
+- `api` - For API documentation
+- `experiment` - For experiment features
+- `admin` - For admin documentation
+
+Check existing files in the target collection to confirm the correct blueprint.
+
+## Example Interaction
+
+**User:** "Document the new cohort sync feature"
+
+**Your Response:**
+"I'll help you document cohort sync. Let me gather some information:
+
+1. Is this for the Audiences product?
+2. What destinations can users sync cohorts to?
+3. What's the main benefit - real-time marketing activation?
+4. Prerequisites - do they need specific integrations set up first?
+5. Is there a specific plan tier requirement?
+
+Once you provide these details, I'll generate the documentation in the correct collection with proper structure and style."
+
+## Tips for Quality Documentation
+
+- **Start with "why"** - Explain the value before the steps
+- **Use real examples** - Show actual configuration values or scenarios
+- **Anticipate questions** - What would confuse users?
+- **Cross-link** - Connect to related documentation
+- **Show, don't just tell** - Include screenshots or code examples where helpful
+- **Test the steps** - Make sure the workflow actually works as described
+

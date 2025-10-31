@@ -70,6 +70,23 @@ Amplitude Docs builds on the Vercel platform. When you submit a PR, Vercel build
 
 > Tip: The easiest way to get to the sourcefile of an article is to use the pencil icon that's enabled on local environments. Look for it near the article title.
 
+### For Engineers: Contributing with Cursor AI
+
+If you're an engineer documenting a feature, Cursor can help! We've created AI templates that automatically apply our style rules and generate properly structured documentation.
+
+**Quick start:**
+1. Open this repo in Cursor
+2. Press Cmd+L to open Cursor Chat
+3. Say: `"Document new feature: [your feature name]"`
+4. Cursor guides you through creating documentation
+
+**Learn more:**
+- Read [.cursor/rules/HOW-TO-CONTRIBUTE.md](.cursor/rules/HOW-TO-CONTRIBUTE.md) for the complete guide
+- See [.cursor/rules/TEMPLATES-INDEX.md](.cursor/rules/TEMPLATES-INDEX.md) for available templates
+- Check [.cursor/rules/README.md](.cursor/rules/README.md) for style guidelines
+
+All style rules are automatically applied - you focus on content, Cursor handles formatting.
+
 ### Collections
 
 Adding content to the Amplitude Docs site is different than other site builders or CMS platforms. Instead of using the directory structure or file system to determine the page hierarchy, Statamic sites use Collections. Collections are containers that hold similar content, and have routes defined on them. 

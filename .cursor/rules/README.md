@@ -29,12 +29,42 @@ This directory contains Cursor rules that enforce Amplitude's documentation writ
 10. **technical-writing.md** - Code formatting, API docs, technical conventions
 11. **amplitude-vocabulary.md** - Approved Amplitude-specific terms and spellings
 
+### Statamic-Specific Rules
+12. **statamic-routing.md** - Ensures internal links use web routes, not file paths (always applied)
+
+### Documentation Templates (Invoke on Demand)
+13. **new-feature-template.md** - Template for documenting new features
+14. **link-validation.md** - Validates internal link formats
+
+### Contributor Guides
+15. **HOW-TO-CONTRIBUTE.md** - Guide for engineers and contributors
+16. **TEMPLATES-INDEX.md** - Index of all available templates and workflows
+
 ## How These Rules Work
 
 - **Automatic Application**: Most rules have `alwaysApply: true` and target markdown files in `content/**/*.md`
 - **Context Awareness**: Cursor uses these rules when you're editing or creating documentation
 - **Enforcement**: Rules provide examples of incorrect and correct usage
 - **Consistency**: Ensures documentation follows the same standards as our Vale linter
+
+## Using Documentation Templates
+
+### For Engineers and Contributors
+
+New to contributing docs? Start here:
+1. Read **HOW-TO-CONTRIBUTE.md** for a quick start guide
+2. Open Cursor Chat (Cmd+L) and say: `"Document new feature: [your feature name]"`
+3. Cursor will guide you through creating properly structured documentation
+
+### Common Template Commands
+
+In Cursor Chat, you can say:
+- `"Document new feature: [name]"` - Creates feature documentation
+- `"Validate links in this file"` - Checks for incorrect link formats
+- `"Check this doc for style issues"` - Reviews against Amplitude standards
+- `"Where should I document [feature]?"` - Suggests the right collection
+
+See **TEMPLATES-INDEX.md** for a complete list of available templates and workflows.
 
 ## Integration with Vale
 
@@ -160,6 +190,7 @@ was assigned | were assigned
 - [ ] No "please" in instructions
 - [ ] Second person ("you") used consistently
 - [ ] Concise language throughout
+- [ ] Don't include any markdown escape characters
 
 **Rule of thumb:** If the subject of the sentence receives the action rather than performs it, rewrite it in active voice.
 
@@ -187,9 +218,12 @@ When updating these rules:
 
 ## References
 
-- Vale configuration: `.vale.ini`
-- Vale styles: `.github/styles/Amplitude/` and `.github/styles/Microsoft/`
-- Approved vocabulary: `.github/styles/config/vocabularies/dev/accept.txt`
-- Rejected terms: `.github/styles/config/vocabularies/dev/reject.txt`
-- Official Cursor rules docs: https://cursor.com/docs/context/rules
+- **Vale configuration:** `.vale.ini`
+- **Vale styles:** `.github/styles/Amplitude/` and `.github/styles/Microsoft/`
+- **Approved vocabulary:** `.github/styles/config/vocabularies/dev/accept.txt`
+- **Rejected terms:** `.github/styles/config/vocabularies/dev/reject.txt`
+- **Official Cursor rules docs:** https://cursor.com/docs/context/rules
+- **Statamic routing patterns:** See `statamic-routing.md` for collection route mappings
+- **Contributing guide:** `HOW-TO-CONTRIBUTE.md` for engineers
+- **Template index:** `TEMPLATES-INDEX.md` for available workflows
 
