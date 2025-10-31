@@ -32,7 +32,7 @@ The [User Activity](#user-activity) and [User Search](#user-search) endpoint
 
 ### Endpoint costs
 
-Endpoints use *cost per query* rate limit model. In this equation, cost does not imply a monetary value. Instead, cost refers to rate limits and API useage limits. This method helps provide equal API availability for all queries. Amplitude calculates rate costs based on this formula:
+Endpoints use *cost per query* rate limit model. In this equation, cost doesn't imply a monetary value. Instead, cost refers to rate limits and API usage limits. This method helps provide equal API availability for all queries. Amplitude calculates rate costs based on this formula:
 
 `cost = (# of days) * (# of conditions) * (cost for the query type)`
 
