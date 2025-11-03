@@ -1,0 +1,52 @@
+name: AI Documentation Review
+
+on:
+  pull_request:
+    paths:
+      - 'content/collections/**/*.md'
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      
+      - name: Get changed documentation files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: |
+            content/collections/**/*.md
+          
+      - name: Setup Node.js
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Dependencies
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          cd .github/scripts
+          npm install
+          
+      - name: AI Style Review
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: node .github/scripts/ai-docs-reviewer.js
+
