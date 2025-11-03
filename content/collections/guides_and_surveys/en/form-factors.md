@@ -60,6 +60,10 @@ Click the three dot menu to access format settings.
 
 Pins are persistent markers that remain on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
+{{partial:admonition type="note" heading="Pins can advance without CTA clicks"}}
+When you click on a pin's target element, the tour always advances to the next step. This is different from the "Advanced trigger" setting (described below), which allows you to specify an additional element that can also advance the tour when clicked. The target element's click behavior is built-in you can't disable it, while the advanced trigger is an optional setting.
+{{/partial:admonition}}
+
 Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**.
 
 Pins can use the following position settings:
