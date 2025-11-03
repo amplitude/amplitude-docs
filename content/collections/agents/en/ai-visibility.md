@@ -5,9 +5,9 @@ title: 'AI Visibility'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761677299
 ---
-As internet searches are being replaced by AI chatbots, AI Visibility helps marketers and growth teams understand, measure, and amplify their brand presences in AI-generated answers. It surfaces visibility scores, competitor rankings, and recommendations for improvement. This lets you understand how your brand appears in AI searches and to act to improve your AI-driven traffic. 
+As internet searches get replaced by AI chatbots, AI Visibility helps marketers and growth teams understand, measure, and amplify their brand presences in AI-generated answers. It surfaces visibility scores, competitor rankings, and recommendations for improvement. This lets you understand how your brand appears in AI searches and to act to improve your AI-driven traffic. 
 
-Although most AI Visibility functionality is available to everyone, with or without an Amplitude subscription. However, some functionality is only available with a paid Amplitude subscription. Any functionality descriptions in this article that aren't visible to your version of AI Visibility are part of the subscription tier.
+Most AI Visibility functionality is available to everyone, with or without an Amplitude subscription. However, some functionality is only available with a paid Amplitude subscription. Any functionality descriptions in this article that aren't visible to your version of AI Visibility are part of the subscription tier.
 
 Free visibility reports are available to everyone on the Amplitude [Try AI Visibility](https://www.amplitude.com/try-ai-visibility) page of the website. 
 
@@ -27,14 +27,13 @@ The Overview tab contains high-level information about how your website is perfo
 * **Average Rank this Week**: Average position of your brand in AI-generated responses.
 * **Citations this Week**: Number of responses mentioning your brand in the current week. 
 * **Visibility/Rank over Time**: A graph describing your visibility or your rankings over time compared to your competitors. You can further refine this graph by specific topics.
-* **Competitor Mentions**: A graph describing competitor mentions compared to mentions about your brand. By default, your competitors are limited to the top seven.
-* **Top Topics by Visibility**: Displays the top topics relating to your brand that were returned by AI agents. Describes the number of mentions and responses used to calculate the percentage amount. 
+* **Competitor Mentions**: A graph describing competitor mentions compared to mentions about your brand.
+* **Top Topics by Visibility**: Displays the top topics relating to your brand returned by AI agents. Describes the number of mentions and responses used to calculate the percentage amount. 
 * **Top Cited Sources**: Displays the top sources AI agents used to generate results. 
-* **AI Chat Traffic**: Takes you to Amplitude's SEO Web Analytics page (if enabled.). Displays insights about your AI chat traffic such as overall totals, top pages, top countries, and sources.
 
 ## Prompts tab
 
-The Prompts tab contains all of the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
+The Prompts tab contains all the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
 
 You can filter individual AI models to investigate such as Claude, ChatGPT, or Gemini. You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
 
@@ -44,13 +43,13 @@ You can export all of these prompts to a CSV file for further analysis. Click **
 
 The Prompts tab contains the following metrics:
 
-* **Topics**: The total number of topics that have been generated relating to your brand.
+* **Topics**: The total number of topics relating to your brand.
 * **Prompts**: The total number of prompts across all topics that relate to your brand or to your competitors.
 * **Responses**: The total number of responses generated from the prompts that relate to your brand or to your competitors.
 
 ### Topics and prompts
 
-The Prompts tab displays a searchable list of all topics and their associated prompts. Each topic represents a category or theme of queries that AI agents received. By default, insights are arranged first by topic and then by the prompts that relate to that topic. For example, in the topic "Product Analytics", you might find the following prompts:
+The Prompts tab displays a searchable list of all topics and their associated prompts. Each topic represents a category or theme of queries that AI agents received. By default, insights appear first by topic and then by the prompts that relate to that topic. For example, in the topic "Product Analytics," you might find the following prompts:
 
 * "Compare leading product analytics services"
 * "Ranking product analytics platforms 2025"
@@ -61,14 +60,14 @@ Clicking into the topic displays all the prompts related to that topic.
 
 Both topic and prompt views contain metrics for:
 
-* Visibility
-* Relevancy
-* Average rank
-* Citations
+* **Visibility**: The percentage of AI responses that mention your brand.
+* **Relevancy**: The percentage of prompts that mention either your brand or a competitor's brand.
+*** Average rank**: The average position that your brand appears in AI responses.
+* **Citations**: The number of AI responses that cite your website.
 
 #### Topics
 
-Topics are organized in expandable rows that show:
+Topics appear in expandable rows that show:
 
 * **Topic name**: The subject or theme of related prompts (for example, "product analytics tools" or "customer data platforms").
 * **Prompt count**: The number of individual prompts within that topic.
@@ -80,22 +79,22 @@ Click a topic row to expand it and view all associated prompts.
 
 Clicking into an individual prompt displays:
 
-* The specific prompt the user entered.
+* The specific prompt that either the user entered or was generated by the AI.
 * Brands mentioned in the response.
 * The AI Model used to answer the prompt.
-* The response to the prompt.
+* The LLM's response to the prompt.
 * Citations used to generate the response.
 * The date and time when the prompt was last run.
 
-Click on any prompt to view the complete AI response and analyze how your brand and competitors were represented in the answer.
+Click on any prompt to view the complete AI response and analyze how your brand and competitors are represented in the answer.
 
 Use the search bar at the top of the list to find specific topics or prompts by keyword.
 
 #### Working with topics and prompts
 
-You can edit or delete any topic or prompt from the list. Deleting the prompt removes it from the metrics about your brand. It doesn't delete the topic or prompt from the AI model. 
+You can edit or delete any topic or prompt from the list. Deleting the prompt removes it from the metrics about your brand.  
 
-Editing a topic or a prompt lets you rewrite the content to be more understandable. It only updates the topic or prompt in the list. It doesn't update the topic or prompt in the AI model.
+Editing a topic or a prompt lets you rewrite the content to be more understandable. It only updates the topic or prompt in the list. After editing, the existing model responses aren't updated. The next time the LLM runs, it'll use the updated prompt.
 
 ## Sources tab
 
@@ -114,7 +113,7 @@ You can filter the All Cited Sources page by topic, AI model, brands, and group 
 The My Website Pages content displays information about how your own website is referenced and cited. This information not only includes AI chat references but also search engine traffic. The page displays metrics for:
 
 *** Total cited pages**: The total number of website pages cited. 
-* **Overall search engine traffic**: The total number of search engine traffic for all website pages.
+* **Overall search engine traffic**: The total amount of search engine traffic for all website pages.
 * **Overall AI chat traffic**: The total number of AI chat traffic for all website pages.
 * **Total errors**: The total number of website pages with errors.
 * **Total warnings**: The total number of website pages with warnings.
@@ -134,7 +133,7 @@ For further analysis, you can create a cohort from any of the pages or groups of
 2. Select the traffic type you want in your cohort. Traffic types can be:
    * All Traffic
    * Search Engine Traffic
-   * AL Chat Traffic 
+   * AI Chat Traffic 
 3. Select the date range for your cohort. 
 4. Name the cohort.
 5. If you want to place this cohort in a specific space, click the **Location** drop-down and select where you want the cohort.
@@ -148,7 +147,7 @@ AI Visibility automatically selects your competitors by the number of mentions i
 
 ### Comparisons
 
-The Comparisons section displays direct comparisons between you and your competitors about how your brands are being referenced and cited by AI chat. For each competitor, you'll receive an analysis for the subject areas you and your competitor are leading in and an overall score for who appears higher in shared prompts. 
+The Comparisons section displays direct comparisons between you and your competitors about how AI chat references and cites your brands. For each competitor, you'll receive an analysis for the subject areas you and your competitor are leading in and an overall score for who appears higher in shared prompts. 
 
 The subject areas are automatically identified and analyzed by AI Visibility. However, these subject areas tend to be the major functional areas of your business. 
 
@@ -156,7 +155,7 @@ Where possible, these subject areas are repeated across each competitor analysis
 
 ### Competitor Topics Matrix
 
-The Competitor Topics Matrix section displays the primary topics that are being searched and referenced by AI chat and how your citations and references are performing against your competitors. 
+The Competitor Topics Matrix section displays the primary topics searched and referenced by AI chat and how your citations and references are performing against your competitors. 
 
 You can view these comparisons as either by Visibility Percentage or by Average Rank. 
 
