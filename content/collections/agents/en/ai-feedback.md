@@ -19,7 +19,7 @@ Feedback events collect information about use cases such as:
 * Key takeaways
 
 {{partial:admonition type="note" heading="Additional use cases"}}
-The use cases listed above are examples only. For a full description of all of the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
+The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
 {{/partial:admonition}}
 
 AI Feedback is available to all customers with a paid Amplitude subscription. For more pricing details, go to [Pricing](https://amplitude.com/pricing).
@@ -45,7 +45,7 @@ Feedback events capture the following information:
 
 Before you can gain any insights from your customers, you must add at least one data source to Amplitude. A data source is your repository of customer feedback. Popular data sources include Zendesk, Salesforce, Reddit, and others. You can also upload individual CSV or DOCX files as data sources.
 
-For example, if your company is regularly discussed on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
+For example, if your company is discussed on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
 
 AI Feedback can ingest and generate insights from multiple sources at the same time.
 
@@ -63,7 +63,7 @@ AI Feedback can ingest and generate insights from multiple sources at the same t
 5. If you’re pasting text, paste the content you want into the field. AI Feedback begins to parse the content automatically. 
 
 {{partial:admonition type="note" heading="Requesting a new source"}}
-If the integration you need isn’t listed, click the Request a new source link to ask for your source to be included.
+If the integration you need isn’t listed, click **Request a new source** to ask for a new source.
 {{/partial:admonition}}
 
 ## Managing a source
