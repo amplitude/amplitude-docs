@@ -153,7 +153,7 @@ After Amplitude received that event for a user, AI Feedback can merge that users
 
 ## Deleting information based on user ID or Amplitude ID
 
-When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. 
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/agents/ai-feedback#merging-existing-users-from-an-AI-Feedback-source) with users from your supported AI Feedback sources, the User Privacy API won't be able to match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
 
 To ensure that the deletion is permanent and complete, note the following: 
 * Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 
