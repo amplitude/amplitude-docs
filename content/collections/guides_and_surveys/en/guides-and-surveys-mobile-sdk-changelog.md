@@ -14,10 +14,10 @@ updated_at: 1750443681
 
 ## 1.5.1 (Android, iOS, React Native) \[2025-10-30\]
 
-- SDK breaking change: `cleanup()` and `reboot()` functions have been removed, use `shutdown()` instead [android, ios]
+- SDK breaking change: `cleanup()` and `reboot()` functions have been removed, use `shutdown()` instead \[android, ios\]
 
-- Fix: ensure `shutdown()` removes all active nudges from view [android, ios, rn]
-- Fix: ensure non-JSON-safe values are serializable [android, ios, rn]
+- Fix: ensure `shutdown()` removes all active nudges from view \[android, ios, rn\]
+- Fix: ensure non-JSON-safe values are serializable \[android, ios, rn\]
 
 
 ## 1.5.0 (Android, iOS, React Native) \[2025-10-21\]
