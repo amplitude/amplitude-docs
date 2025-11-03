@@ -21,11 +21,15 @@ The OOTB widgets library includes:
 
 You can also save your customized widgets to the library for future use. For example, if you create a notification banner that announces a quarterly sale, you can save that customized message and reuse it as needed. All saved widgets are available to everyone in your organization who have permission to create experiments.
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="Tracked key integrations"}}
 By default, key integrations are already tracked. You don't need to set up additional tagging for OOTB widgets for basic analysis.
 {{/partial:admonition}}
 
-## Editing widgets
+## Using widgets
+
+You can add an OOTB widget to any Web experiment. After you create your [Web experiment](/docs/workflow/create), click **Open Visual Editor**. Click **Widgets** from the top menu bar. This opens the OOTB widgets modal and you can then select the widgets you want. Drag and drop the widget on your experiment. 
+
+### Editing widgets
 
 By default, you can edit the following aspects of any widget:
 - Text
@@ -45,3 +49,4 @@ You can't customize the location of the pop-up modal. It appears in the center o
 
 ### AI styling
 When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want.
+
