@@ -70,6 +70,12 @@ When documenting features from GitHub PRs, always verify the actual code impleme
 - Test files for usage examples
 - Constructor/initialization code to understand how options are processed
 
+**Verify conditional behavior and config option interactions**: Many SDK configuration options have conditional relationships. When documenting config options, trace the logic flow to understand:
+- Whether options have dependencies or affect each other's behavior
+- If certain options only apply in specific conditions (e.g., `if option_x.nil?`)
+- How default values are applied vs. user-provided values
+- **Example**: In Ruby Experiment SDK PR #74, the `debug` flag only affects the default logger (when `logger.nil?`). If a custom logger is provided, the debug flag is ignored entirely. Missing this conditional led to incorrect documentation about debug "overriding" custom logger levels.
+
 **When feedback mentions PR updates**: If someone says "the PR is updated since then", this is a clear signal to:
 1. Re-read PR comments to understand what changed
 2. Review the code diff again
