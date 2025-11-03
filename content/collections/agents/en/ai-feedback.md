@@ -92,7 +92,7 @@ Deleting a source deletes the previously analyzed feedback as well as preventing
 
 ## Viewing Insights
 
-AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback automatically updates with additional insights. These insights are categorized by the following types:
+AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback automatically updates with additional insights. These insights align to the following categories:
 
 * **Feature requests**: Additional features your customers want.
 * **Complaints**: Issues and problems your customers experience.
@@ -142,11 +142,11 @@ A link to the insight is automatically saved to your clipboard. Only colleagues 
 
 ## Merging existing users from an AI Feedback source
 
-This lets you merge your existing users with users from support AI Feedback sources such as Zendesk, Intercom, and so on. Users with the same email address will be merged. 
+This lets you merge your existing users with users from support AI Feedback sources such as Zendesk, Intercom, and so on. Users with the same email address are merged. 
 
 ##### To merge existing users
 
-1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that will contain the user's email address. 
+1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that contains the user's email address. 
 2. Send at least one event for each users that has that field populated. 
 
 After Amplitude received that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
