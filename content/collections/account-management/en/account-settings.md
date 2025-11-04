@@ -58,6 +58,8 @@ From the project list, you can:
      
     For new organizations that implement session replay, replay capture is set to `on`, and the sample rate is set to `1` for testing. Reduce the sample rate before moving to production. You can modify these settings later if you need to do so.
 
+- Toggle *Console Logs* to enable or disable capturing JavaScript console logs, warnings, errors, and network request errors during session replays. When enabled, console logs appear in each replay when you click the console icon to expand the view. This setting applies to future session captures only. Use console logs to identify technical issues that may impact user experience.
+
 {{partial:admonition type="note" heading=""}}
 Replays are captured only if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
 {{/partial:admonition}}
