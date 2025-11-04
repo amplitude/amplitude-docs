@@ -8,16 +8,15 @@ integration_category:
   - ad-networks
 integration_type:
   - cohorts
-title: "Bing Ads (Cohort Sync)"
+title: 'Bing Ads (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 partner_maintained: false
-integration_icon: partner-icons/bing.svg
+integration_icon: partner-icons/ms-ads.svg
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730332800
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1762300317
 ---
-
 Send Amplitude cohorts to Bing Ads to create customer lists for more personalized campaigns. This integration enables you to upload and sync behavioral cohorts directly to the Microsoft Advertising Network for campaign targeting.
 
 ## Considerations
