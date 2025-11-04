@@ -23,7 +23,7 @@ Find Session Replay in the left-hand sidebar in Amplitude Analytics.
 Session Replay is available to try on all new Amplitude plans as of February 7, 2024 (including the Starter and Plus updates from October 2023). Existing Growth and Enterprise customers can also access Session Replay as an add-on purchase. Contact your account manager with questions. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 {{partial:admonition type="note" heading=""}}
-Session Replay **isn't** enabled by default, and requires instrumentation beyond the standard Amplitude instrumentation.
+Session Replay isn't enabled by default and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
 {{partial:partials/session-replay/sr-retention}}
@@ -63,7 +63,7 @@ To view console logs and errors in a session replay:
 The console view displays logs, warnings, and errors in chronological order alongside the session timeline. You can click on any log entry to jump to that moment in the replay.
 
 ### Enable or disable console logs
-
+Enable or disable console log capture through organization settings as an admin or manager:
 Admins and managers can enable or disable console log capture through organization settings:
 
 1. Navigate to *Settings > Organization Settings*.
@@ -87,7 +87,7 @@ This helps quantify the business impact of technical issues and prioritize fixes
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
 
 ### Frustration event types
-
+When users rapidly click the same element multiple times, usually indicating something isn't working as expected.
 * **Rage clicks**: When users rapidly click the same element multiple times, usually indicating something isn't working as expected. This often means a button or link appears interactive but doesn't respond.
 * **Dead clicks**: When users click on elements that appear clickable but have no functionality—such as non-interactive images styled like buttons or links that lead nowhere.
 
