@@ -1713,20 +1713,38 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 ### Remote configuration
 
-Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. By default, the SDK disables this feature.
+Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. 
 
-Autocapture supports remote configuration options for tracking default events. When you enable this setting, the remote configuration overrides your client-side configuration. Find the remote configuration options in *Data > Settings > Autocapture*. 
+{{partial:admonition type="note" heading="Default behavior changed in version 2.16.1"}}
+Starting in SDK version 2.16.1, `fetchRemoteConfig` is **enabled by default** (`true`). For versions 2.10.0 to 2.16.0, remote configuration was disabled by default and required explicit enablement.
+{{/partial:admonition}}
 
-To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
+Autocapture supports remote configuration options for tracking default events. When remote configuration is enabled, settings from Amplitude's servers merge with your local SDK configuration, with remote settings taking precedence. Find the remote configuration options in *Data > Settings > Autocapture*. 
+
+#### Enable or disable remote configuration
+
+**For SDK versions 2.16.1 and later:** Remote configuration is enabled by default. To disable it, explicitly set `fetchRemoteConfig: false`:
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  fetchRemoteConfig: true
+  fetchRemoteConfig: false  // Disable remote config
 });
 ```
 
-{{partial:admonition type="note" heading=""}}
-Remote configuration supports Autocapture settings, and overrides settings you configure locally.
+**For SDK versions 2.10.0 to 2.16.0:** Remote configuration is disabled by default. To enable it, set `fetchRemoteConfig: true`:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  fetchRemoteConfig: true  // Enable remote config (only needed for versions < 2.16.1)
+});
+```
+
+{{partial:admonition type="note" heading="Configuration merging behavior"}}
+When `fetchRemoteConfig` is enabled:
+- Remote configuration settings from Amplitude servers merge with your local configuration
+- Remote settings override conflicting local settings
+- Manual configuration parameters you set locally are preserved unless explicitly overridden by remote settings
+- This particularly affects Autocapture settings, which can be controlled remotely
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
