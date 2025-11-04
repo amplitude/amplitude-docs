@@ -223,7 +223,7 @@ Some webhook destinations would need a list of users as a batch. In the below ex
   - `cohort_name` string. The display name of the cohort.
   - `cohort_id` string. The unique identifier of the cohort.
   - `in_cohort` boolean. Show if this batch of users is entering/leaving the cohort.
-  - `compute_time` string. The time when Amplitude computes this update.
+  - `computed_time` string. The time Amplitude computes this update.
   - `message_id` string. The unique identifier of this update message. When a retry happens, you can use this value to de-duplicate.
   - `users` list of JSON objects. The actual user payload.
     - `user_id` string. The Amplitude `user_id` of the user.

@@ -23,7 +23,7 @@ Find Session Replay in the left-hand sidebar in Amplitude Analytics.
 Session Replay is available to try on all new Amplitude plans as of February 7, 2024 (including the Starter and Plus updates from October 2023). Existing Growth and Enterprise customers can also access Session Replay as an add-on purchase. Contact your account manager with questions. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 {{partial:admonition type="note" heading=""}}
-Session Replay is **not** enabled by default, and requires instrumentation beyond the standard Amplitude instrumentation.
+Session Replay isn't enabled by default and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
 {{partial:partials/session-replay/sr-retention}}
@@ -40,6 +40,69 @@ Session Replay supports user sessions of any length.
 
 {{partial:admonition type="note" heading=""}}
 Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
+{{/partial:admonition}}
+
+## Error analytics and console logs
+
+Session Replay can capture and display technical errors and console logs that occur during user sessions. This helps you understand whether technical issues are impacting user experience and correlate errors with drops in conversion or engagement.
+
+When enabled, Session Replay captures:
+
+* **JavaScript console logs**: Console messages, warnings, and errors logged by your application
+* **Network errors**: Failed network requests and API calls
+* **Runtime errors**: JavaScript errors that occur during the session
+
+### View console logs in a replay
+
+To view console logs and errors in a session replay:
+
+1. Open a session replay from a chart, User Look-Up, or the Session Replay list.
+2. Look for the console icon in the replay interface.
+3. Click the console icon to expand the console log view.
+
+The console view displays logs, warnings, and errors in chronological order alongside the session timeline. You can click on any log entry to jump to that moment in the replay.
+
+### Enable or disable console logs
+Enable or disable console log capture through organization settings as an admin or manager:
+Admins and managers can enable or disable console log capture through organization settings:
+
+1. Navigate to *Settings > Organization Settings*.
+2. Go to the *Session Replay & Heatmaps* section.
+3. Toggle the *Console Logs* setting on or off for your projects.
+
+Changes to this setting apply to future session captures only.
+
+### Analyze error events
+
+Error events captured during sessions appear in your event stream and can be analyzed like any other event. You can:
+
+* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure error frequency and trends
+* Include error events in [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) to review how errors impact conversion
+* Filter session replays by error events to focus on problematic sessions
+
+This helps quantify the business impact of technical issues and prioritize fixes based on data.
+
+## Frustration analytics
+
+Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
+
+### Frustration event types
+When users rapidly click the same element multiple times, usually indicating something isn't working as expected.
+* **Rage clicks**: When users rapidly click the same element multiple times, usually indicating something isn't working as expected. This often means a button or link appears interactive but doesn't respond.
+* **Dead clicks**: When users click on elements that appear clickable but have no functionality—such as non-interactive images styled like buttons or links that lead nowhere.
+
+### View frustration events in replays
+
+Frustration events appear directly in the session timeline and event stream, making them easy to spot:
+
+1. Open a session replay.
+2. Look for rage click and dead click indicators in the timeline.
+3. Click on a frustration event to jump to that moment in the replay.
+
+Like error events, frustration events can be analyzed using Event Segmentation and Funnel Analysis to understand their impact on user behavior and conversion rates.
+
+{{partial:admonition type="note" heading=""}}
+Frustration analytics are available to all Session Replay users and don't require additional configuration.
 {{/partial:admonition}}
 
 ### View Session Replay from User Look-Up
