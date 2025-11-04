@@ -11,8 +11,9 @@ const PR_NUMBER = process.env.PR_NUMBER;
 const COMMIT_SHA = process.env.COMMIT_SHA;
 const BASE_SHA = process.env.BASE_SHA;
 
-const github = new Octokit({ auth: GITHUB_TOKEN });
-const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+// GitHub-specific setup (optional for local testing)
+const github = GITHUB_TOKEN ? new Octokit({ auth: GITHUB_TOKEN }) : null;
+const [owner, repo] = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/') : ['', ''];
 
 // Load all Cursor style rules
 function loadStyleRules() {
@@ -262,6 +263,42 @@ Return JSON with the "issues" array.`;
   }
 }
 
+// Fetch existing review comments to avoid duplicates
+async function getExistingComments(fileName) {
+  if (!github) return new Set();
+  
+  try {
+    const { data: comments } = await github.rest.pulls.listReviewComments({
+      owner,
+      repo,
+      pull_number: parseInt(PR_NUMBER),
+    });
+    
+    // Create a Set of unique comment identifiers (file + line + rule)
+    const existingComments = new Set();
+    
+    comments
+      .filter(comment => comment.path === fileName)
+      .forEach(comment => {
+        // Extract rule from comment body (format: "🟡 **rule-name**")
+        const ruleMatch = comment.body.match(/\*\*([a-z-]+)\*\*/);
+        if (ruleMatch) {
+          const rule = ruleMatch[1];
+          const line = comment.line || comment.original_line;
+          if (line) {
+            const key = `${fileName}:${line}:${rule}`;
+            existingComments.add(key);
+          }
+        }
+      });
+    
+    return existingComments;
+  } catch (error) {
+    console.error(`Warning: Could not fetch existing comments: ${error.message}`);
+    return new Set();
+  }
+}
+
 // Post inline review comments on specific lines with GitHub suggestions
 async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   if (!lineMapping || !lineMapping.lineMap) {
@@ -269,11 +306,27 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
     return 0;
   }
   
+  // Fetch existing comments to avoid duplicates
+  console.log('  Checking for existing comments...');
+  const existingComments = await getExistingComments(fileName);
+  if (existingComments.size > 0) {
+    console.log(`  Found ${existingComments.size} existing comments to skip`);
+  }
+  
   let commentCount = 0;
+  let skippedCount = 0;
   const lines = fileContent.split('\n');
   
   for (const issue of issues) {
     if (!issue.line || issue.line < 1) continue;
+    
+    // Check if this exact comment already exists
+    const commentKey = `${fileName}:${issue.line}:${issue.rule}`;
+    if (existingComments.has(commentKey)) {
+      console.log(`  Skipping duplicate comment at line ${issue.line} for ${issue.rule}`);
+      skippedCount++;
+      continue;
+    }
     
     // Get the position in the diff
     const position = lineMapping.lineMap.get(issue.line);
@@ -330,6 +383,10 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
     } catch (error) {
       console.error(`Failed to post inline comment at line ${issue.line}:`, error.message);
     }
+  }
+  
+  if (skippedCount > 0) {
+    console.log(`  ✓ Skipped ${skippedCount} duplicate comment${skippedCount > 1 ? 's' : ''}`);
   }
   
   return commentCount;
@@ -395,18 +452,48 @@ function formatSummaryComment(results) {
   return comment;
 }
 
-// Post summary comment
+// Post summary comment (or update existing)
 async function postSummaryComment(comment) {
+  if (!github) {
+    console.log('Skipping summary comment (local mode)');
+    return;
+  }
+  
   try {
-    await github.rest.issues.createComment({
+    // Check if a summary comment already exists
+    const { data: comments } = await github.rest.issues.listComments({
       owner,
       repo,
       issue_number: parseInt(PR_NUMBER),
-      body: comment
     });
-    console.log('✅ Posted summary comment to PR');
+    
+    // Find existing AI review summary
+    const existingSummary = comments.find(c => 
+      c.body.includes('🤖 AI Documentation Review') &&
+      c.user.type === 'Bot'
+    );
+    
+    if (existingSummary) {
+      // Update existing comment
+      await github.rest.issues.updateComment({
+        owner,
+        repo,
+        comment_id: existingSummary.id,
+        body: comment
+      });
+      console.log('✅ Updated existing summary comment on PR');
+    } else {
+      // Create new comment
+      await github.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number: parseInt(PR_NUMBER),
+        body: comment
+      });
+      console.log('✅ Posted new summary comment to PR');
+    }
   } catch (error) {
-    console.error('Error posting summary comment:', error.message);
+    console.error('Error posting/updating summary comment:', error.message);
   }
 }
 

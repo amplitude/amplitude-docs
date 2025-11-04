@@ -24,6 +24,8 @@ This directory contains the AI-powered documentation review system that provides
 - ✅ **Actionable feedback** - Provides exact corrected text
 - ✅ **Cursor integration** - Suggests Cursor commands to fix issues
 - ✅ **Prioritized** - Groups by severity (errors, warnings, info)
+- ✅ **No duplicate comments** - Skips comments already posted on previous runs
+- ✅ **Smart summary updates** - Updates existing summary instead of posting duplicates
 
 ## Setup
 
@@ -55,7 +57,7 @@ Test a file before creating a PR:
 export OPENAI_API_KEY="sk-..."
 
 # Run the test script
-node test-local.js ../../content/collections/analytics/en/your-file.md
+node test-local.js ../../content/collections/data/en/destination-event-streaming-overview.md
 ```
 
 The test script will:
@@ -66,6 +68,8 @@ The test script will:
 - Provide Cursor commands to fix issues
 
 **Note:** Local testing reviews ALL lines. In a real PR, only changed lines are reviewed.
+
+**💡 Tip:** You don't need GitHub environment variables (`GITHUB_TOKEN`, `GITHUB_REPOSITORY`, etc.) for local testing. The script automatically detects local mode.
 
 ## Cost Estimate
 
@@ -119,6 +123,13 @@ Rules are automatically loaded from `.cursor/rules/`. Just add new rule files th
 - Check GitHub token permissions
 - Verify PR number is correct
 - Check that lines are in the actual diff
+
+### Duplicate comments on multiple pushes
+✅ **Fixed!** The script now:
+- Checks existing comments before posting
+- Skips duplicates based on file + line + rule
+- Updates the summary comment instead of creating new ones
+- Logs how many duplicates were skipped
 
 ### High costs
 - Reduce files per PR
