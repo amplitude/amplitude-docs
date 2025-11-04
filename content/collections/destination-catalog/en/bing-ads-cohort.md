@@ -22,10 +22,9 @@ Send Amplitude cohorts to Bing Ads to create customer lists for more personalize
 
 ## Considerations
 
-- You should have an understanding of Amplitude Activation and behavioral cohorts before setting up this integration.
-- You need a Microsoft Advertising account.
+- A Microsoft Advertising account is required.
 - Bing Ads customer match lists only support email as an identifier. You should already have identified an Amplitude user property that maps to a user's email address.
-- Email addresses must be provided as plain text (not pre-hashed). Amplitude automatically hashes all email addresses using SHA-256 before sending them to Bing Ads.
+- Email addresses must be provided as plain text or a hashed string (using the SHA-256 algorithm). Amplitude automatically hashes all email addresses using SHA-256 before sending them to Bing Ads.
 - Bing Ads only ingests users that have an email identifier set. Users without valid email addresses are excluded from the sync.
 - The list needs to have at least 300 people on the Microsoft Advertising Network in order for it to be eligible to serve.
 - It may take up to 24 hours for a customer list to be fully populated with members after syncing from Amplitude.
@@ -34,7 +33,7 @@ Send Amplitude cohorts to Bing Ads to create customer lists for more personalize
 
 ### Prerequisites
 
-You need a [Microsoft Advertising account](https://ads.microsoft.com/).
+A [Microsoft Advertising](https://ads.microsoft.com/) account is required.
 
 ### Amplitude setup
 
