@@ -85,16 +85,26 @@ It will automatically run when:
 
 You should see:
 
-**Inline Comments:**
+**Inline Comments with GitHub Suggestions:**
 ```
-🔴 voice-and-tense
+🟡 voice-and-tense
 
-Uses future tense "will allow"
+Uses future tense "will allow users to"
 
-💡 Suggestion: Change to "allows" for present tense
+Suggested change:
+┌─────────────────────────────────────┐
+│ This feature allows users to...    │  [Commit suggestion]
+└─────────────────────────────────────┘
 
-Why this matters: Present tense makes documentation feel current and actionable
+Why this matters: Present tense makes documentation feel 
+current and actionable
+
+💡 Tip: Click "Commit suggestion" above to apply this fix
+
+🤖 AI-powered review
 ```
+
+**You can click "Commit suggestion" to apply the fix instantly!**
 
 **Summary Comment:**
 ```
