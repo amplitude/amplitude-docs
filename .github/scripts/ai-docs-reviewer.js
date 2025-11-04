@@ -193,11 +193,23 @@ Return a JSON object with an "issues" array. Each issue must have:
 }
 
 CRITICAL REQUIREMENTS:
-- Line numbers must be EXACT (count from start of file)
+- Line numbers must be EXACT (count from start of file, shown as "➡️ 123:")
 - Only include issues for lines marked with ➡️
-- originalText and correctedText must be EXACT (for GitHub suggestions)
+- originalText MUST be copied EXACTLY from the line content (after the ":")
+- correctedText MUST be the full line with only the specific fix applied
+- If you're unsure about a line number, DO NOT include that issue
 - Return empty array if no issues found
-- Always return valid JSON`;
+- Always return valid JSON
+
+EXAMPLE:
+If line 18 says: "This will allow you to configure settings"
+And it violates contractions rule, your response should be:
+{
+  "line": 18,
+  "originalText": "This will allow you to configure settings",
+  "correctedText": "This allows you to configure settings",
+  "rule": "contractions"
+}`;
 
   // Mark changed lines
   const changedLinesArray = Array.from(changedLines || []);
@@ -280,8 +292,9 @@ async function getExistingComments(fileName) {
     comments
       .filter(comment => comment.path === fileName)
       .forEach(comment => {
-        // Extract rule from comment body (format: "🟡 **rule-name**")
-        const ruleMatch = comment.body.match(/\*\*([a-z-]+)\*\*/);
+        // Extract rule from comment body (format: "🟡 **rule-name**" at start)
+        // Match the first bold text after emoji, which is always the rule name
+        const ruleMatch = comment.body.match(/^.+?\*\*([a-z-]+)\*\*/);
         if (ruleMatch) {
           const rule = ruleMatch[1];
           const line = comment.line || comment.original_line;
@@ -315,6 +328,7 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   
   let commentCount = 0;
   let skippedCount = 0;
+  let mismatchedCount = 0;
   const lines = fileContent.split('\n');
   
   for (const issue of issues) {
@@ -326,6 +340,23 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
       console.log(`  Skipping duplicate comment at line ${issue.line} for ${issue.rule}`);
       skippedCount++;
       continue;
+    }
+    
+    // Validate that AI's originalText matches the actual line content
+    const actualLine = lines[issue.line - 1];
+    if (issue.originalText && actualLine) {
+      // Normalize whitespace for comparison
+      const normalizedActual = actualLine.trim();
+      const normalizedOriginal = issue.originalText.trim();
+      
+      // Check if the original text is contained in the actual line or vice versa
+      if (!normalizedActual.includes(normalizedOriginal) && !normalizedOriginal.includes(normalizedActual)) {
+        console.log(`  ⚠️  Skipping mismatched suggestion at line ${issue.line}`);
+        console.log(`     Expected: "${normalizedOriginal.substring(0, 50)}..."`);
+        console.log(`     Actual:   "${normalizedActual.substring(0, 50)}..."`);
+        mismatchedCount++;
+        continue;
+      }
     }
     
     // Get the position in the diff
@@ -387,6 +418,10 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   
   if (skippedCount > 0) {
     console.log(`  ✓ Skipped ${skippedCount} duplicate comment${skippedCount > 1 ? 's' : ''}`);
+  }
+  
+  if (mismatchedCount > 0) {
+    console.log(`  ⚠️  Skipped ${mismatchedCount} mismatched suggestion${mismatchedCount > 1 ? 's' : ''} (AI line numbers didn't match actual content)`);
   }
   
   return commentCount;
