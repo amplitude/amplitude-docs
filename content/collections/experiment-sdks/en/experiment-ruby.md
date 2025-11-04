@@ -109,7 +109,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging. | `false` |
+| `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
+| `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone::US` or `ServerZone::EU` | `ServerZone::US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -340,7 +341,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start`](#start) | `30000` |
-| `debug` | Set to `true` to enable debug logging. | `false` |
+| `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
+| `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
 | `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
 | `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
@@ -433,6 +435,68 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
     )
   )
 )
+```
+
+## Custom logging
+
+Provide your own Logger instance to control logging behavior.
+
+### Custom logger
+
+Pass a custom Logger instance to `RemoteEvaluationConfig` or `LocalEvaluationConfig`:
+
+```ruby
+require 'logger'
+require 'amplitude-experiment'
+
+# Create a custom logger
+custom_logger = Logger.new('experiment.log')
+custom_logger.level = Logger::WARN
+custom_logger.formatter = proc do |severity, datetime, progname, msg|
+  "#{datetime}: #{severity} - #{msg}\n"
+end
+
+# Remote evaluation with custom logger
+remote_config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  logger: custom_logger
+)
+experiment = AmplitudeExperiment.initialize_remote('DEPLOYMENT_KEY', remote_config)
+
+# Provide Local evaluation with your Rails logger
+local_config = AmplitudeExperiment::LocalEvaluationConfig.new(
+  logger: Rails.logger
+)
+experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY', local_config)
+```
+
+### Debug flag with default logger
+
+```ruby
+# Without custom logger, debug=false uses ERROR level
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  debug: false
+)
+# Default logger level is ERROR
+
+# Without custom logger, debug=true uses DEBUG level
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  debug: true
+)
+# Default logger level is DEBUG
+```
+
+When you provide a custom logger, the `debug` flag is ignored and your logger keeps its configured level:
+
+```ruby
+custom_logger = Logger.new($stdout)
+custom_logger.level = Logger::WARN
+
+# Custom logger maintains its WARN level regardless of debug flag
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  logger: custom_logger,
+  debug: true
+)
+# Logger level stays WARN (debug flag is ignored)
 ```
 
 ## Access Amplitude cookies
