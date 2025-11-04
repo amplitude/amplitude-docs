@@ -27,6 +27,7 @@ This directory contains the AI-powered documentation review system that provides
 - ✅ **No duplicate comments** - Skips comments already posted on previous runs
 - ✅ **Smart summary updates** - Updates existing summary instead of posting duplicates
 - ✅ **Validated suggestions** - Verifies AI suggestions match actual line content before posting
+- ✅ **Template-aware** - Ignores lines with `{{ }}` template syntax (Statamic/Blade variables)
 
 ## Setup
 
@@ -138,6 +139,13 @@ Rules are automatically loaded from `.cursor/rules/`. Just add new rule files th
 - Skips suggestions where line numbers don't match
 - Logs mismatched suggestions with expected vs actual content
 - Shows warnings: `⚠️  Skipped X mismatched suggestions`
+
+### Comments on template variable lines
+✅ **Fixed!** The script now:
+- Automatically detects `{{ }}` template syntax (Statamic/Blade)
+- Skips review of lines containing template variables
+- Logs: `✓ Skipped X template lines (contains {{ }} syntax)`
+- AI is instructed to ignore template code
 
 ### High costs
 - Reduce files per PR

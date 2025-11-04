@@ -1,12 +1,14 @@
 ---
-description: Use concise, direct language and avoid wordy phrases
+description: Replace wordy phrases with concise alternatives (not about removing content)
 globs: ["content/**/*.md", "*.md"]
 alwaysApply: true
 ---
 
 # Concise Language
 
-Use simple, direct language. Avoid wordy phrases and bureaucratic constructions.
+Use simple, direct language. Replace wordy phrases with shorter equivalents.
+
+**IMPORTANT:** This rule is about replacing verbose phrases with concise alternatives, NOT about removing content or entire sentences. Never delete information or change the meaning.
 
 ## Common Wordy Phrases to Replace
 
@@ -74,4 +76,29 @@ events in real time, you can monitor data now.
 - ❌ "right now"
 
 **Exception:** When describing version-specific behavior or deprecated features, temporal qualifiers may be necessary.
+
+## What NOT to Do
+
+**DON'T remove entire sentences or content:**
+
+❌ **Wrong:**
+```
+Original: "By default, user permissions in Amplitude exist at the organization level. 
+With the default configuration, a user in an organization has the same level of 
+access to all projects within that organization."
+
+Bad suggestion: "By default, user permissions in Amplitude are at the organization level."
+```
+This removes important information about project-level access.
+
+✅ **Correct:**
+The original is fine. The word "exist" is not a wordy phrase - it's a clear, simple verb. Keep both sentences as they provide important context.
+
+**DON'T change simple, clear words:**
+- "exist" is already concise
+- "have" is already concise  
+- "use" is already concise
+- "get" is already concise
+
+**ONLY flag actual wordy phrases** listed in the sections above (like "in order to" → "to", "utilize" → "use", etc.).
 

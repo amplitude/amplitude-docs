@@ -162,6 +162,7 @@ CRITICAL CONSTRAINTS:
 - You can ONLY flag issues on lines that were CHANGED in this PR
 - Focus ONLY on newly added or modified content
 - Ignore pre-existing issues in unchanged lines
+- IGNORE lines containing template syntax like {{ variable }} or {{ template_code }}
 - Provide the EXACT corrected text for GitHub suggestions
 
 # Amplitude Style Rules (CRITICAL - Apply ALL of these):
@@ -230,6 +231,7 @@ ${contentWithMarkers}
 
 IMPORTANT: 
 - Only flag issues on lines marked with ➡️ (changed lines)
+- SKIP lines containing {{ }} template syntax (these are variables/code, not documentation)
 - Provide EXACT originalText and correctedText for each issue
 - Line numbers must match the numbers shown above
 - Focus on substantive style violations
@@ -329,6 +331,7 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   let commentCount = 0;
   let skippedCount = 0;
   let mismatchedCount = 0;
+  let templateCount = 0;
   const lines = fileContent.split('\n');
   
   for (const issue of issues) {
@@ -342,8 +345,15 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
       continue;
     }
     
-    // Validate that AI's originalText matches the actual line content
+    // Skip lines with template syntax {{ }}
     const actualLine = lines[issue.line - 1];
+    if (actualLine && /\{\{.*?\}\}/.test(actualLine)) {
+      console.log(`  Skipping template line ${issue.line} (contains {{ }} syntax)`);
+      templateCount++;
+      continue;
+    }
+    
+    // Validate that AI's originalText matches the actual line content
     if (issue.originalText && actualLine) {
       // Normalize whitespace for comparison
       const normalizedActual = actualLine.trim();
@@ -418,6 +428,10 @@ async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   
   if (skippedCount > 0) {
     console.log(`  ✓ Skipped ${skippedCount} duplicate comment${skippedCount > 1 ? 's' : ''}`);
+  }
+  
+  if (templateCount > 0) {
+    console.log(`  ✓ Skipped ${templateCount} template line${templateCount > 1 ? 's' : ''} (contains {{ }} syntax)`);
   }
   
   if (mismatchedCount > 0) {
