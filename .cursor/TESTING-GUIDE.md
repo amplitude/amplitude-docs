@@ -19,8 +19,10 @@ export OPENAI_API_KEY="sk-..."
 
 ```bash
 # From .github/scripts directory
-node test-local.js ../../content/collections/analytics/en/your-file.md
+node test-local.js ../../content/collections/data/en/your-file.md
 ```
+
+**💡 Note:** You don't need to set GitHub environment variables (`GITHUB_TOKEN`, `GITHUB_REPOSITORY`, etc.) for local testing. The script automatically detects local mode and skips GitHub API calls.
 
 ### Example Output:
 

@@ -49,6 +49,11 @@ It will automatically run when:
 - Someone opens a PR with documentation changes
 - Documentation files are updated in an existing PR
 
+The system intelligently:
+- ✅ Reviews only changed lines (not entire files)
+- ✅ Skips duplicate comments if you push again
+- ✅ Updates the summary comment instead of creating new ones
+
 ### 4. Test It
 
 **Create a test PR:**
