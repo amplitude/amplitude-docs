@@ -121,7 +121,7 @@ The Autocapture settings in Amplitude Data allow you to change the configuration
 
 ### Availability
 
-Autocapture settings are enabled on projects that use version 2.10.0 or higher of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) where the SDK has `fetchRemoteConifg` enabled.
+Autocapture settings are enabled on projects that use version 2.10.0 or higher of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) where the SDK has `fetchRemoteConfig` enabled.
 
 To disable remote configuration, set `fetchRemoteConfig` to `false`. Disabling `fetchRemoteConfig` doesn't disable the remote configuration options in Data Settings. 
 
