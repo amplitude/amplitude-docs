@@ -62,7 +62,7 @@ Both topic and prompt views contain metrics for:
 
 * **Visibility**: The percentage of AI responses that mention your brand.
 * **Relevancy**: The percentage of prompts that mention either your brand or a competitor's brand.
-*** Average rank**: The average position that your brand appears in AI responses.
+* **Average rank**: The average position that your brand appears in AI responses.
 * **Citations**: The number of AI responses that cite your website.
 
 #### Topics
