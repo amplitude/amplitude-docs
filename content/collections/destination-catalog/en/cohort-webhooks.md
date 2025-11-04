@@ -11,7 +11,7 @@ updated_at: 1721766883
 integration_type:
   - cohorts
 ---
-Amplitude CDP’s cohort webhook allows you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
+Cohort webhooks allow you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
 
 ## Considerations
 
