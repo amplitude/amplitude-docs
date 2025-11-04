@@ -142,6 +142,8 @@ The system is now active and will:
 - ✅ Post inline comments with suggestions
 - ✅ Provide Cursor commands for quick fixes
 - ✅ Learn from your style rules automatically
+- ✅ Skip duplicate comments on subsequent pushes
+- ✅ Update summary comment instead of creating new ones
 
 ---
 
