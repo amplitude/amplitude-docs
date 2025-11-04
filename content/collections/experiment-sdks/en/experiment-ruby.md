@@ -471,8 +471,6 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY', local_config
 
 ### Debug flag with default logger
 
-Th
-
 ```ruby
 # Without custom logger, debug=false uses ERROR level
 config = AmplitudeExperiment::RemoteEvaluationConfig.new(
