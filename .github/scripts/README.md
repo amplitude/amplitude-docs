@@ -26,6 +26,7 @@ This directory contains the AI-powered documentation review system that provides
 - ✅ **Prioritized** - Groups by severity (errors, warnings, info)
 - ✅ **No duplicate comments** - Skips comments already posted on previous runs
 - ✅ **Smart summary updates** - Updates existing summary instead of posting duplicates
+- ✅ **Validated suggestions** - Verifies AI suggestions match actual line content before posting
 
 ## Setup
 
@@ -130,6 +131,13 @@ Rules are automatically loaded from `.cursor/rules/`. Just add new rule files th
 - Skips duplicates based on file + line + rule
 - Updates the summary comment instead of creating new ones
 - Logs how many duplicates were skipped
+
+### Wrong suggestions on wrong lines
+✅ **Fixed!** The script now:
+- Validates AI's `originalText` matches the actual line content
+- Skips suggestions where line numbers don't match
+- Logs mismatched suggestions with expected vs actual content
+- Shows warnings: `⚠️  Skipped X mismatched suggestions`
 
 ### High costs
 - Reduce files per PR
