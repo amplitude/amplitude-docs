@@ -53,7 +53,7 @@ You need a [Microsoft Advertising](https://ads.microsoft.com/) account.
 For scheduled cohort syncs, only the initial sync includes the full cohort. All subsequent syncs include only additions and removals since the last sync.
 {{/partial:admonition}}
 
-After you send your Amplitude cohort to Bing Ads, you can see it in the **Tools** > **Audiences** section of the Microsoft Advertising dashboard. Amplitude adds an `[Amplitude]` prefix to cohort names in this format: _[Amplitude] {cohort_name}: {cohort_id}_.
+After you send your Amplitude cohort to Bing Ads, you can view it in the **Tools** > **Audiences** section of the Microsoft Advertising dashboard. Amplitude adds an `[Amplitude]` prefix to cohort names in this format: _[Amplitude] {cohort_name}: {cohort_id}_.
 
 For example, a cohort named "High Value Users" with ID "abc123" appears as: _[Amplitude] High Value Users: abc123_.
 
@@ -66,15 +66,15 @@ Keep in mind that it may take up to 24 hours to populate the list with the users
 The sync may exclude some users if they don't meet certain requirements:
 
 - **Unresolved Mapping**: Users without an email property set in Amplitude
-- **Partner Requirement Unmet**: Users with a malformed email (e.g. iloveamplitude.com)
+- **Partner Requirement Unmet**: Users with a malformed email (for example, iloveamplitude.com)
 
 #### Example
 
 {{partial:admonition type="example" title=""}}
-User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a valid email (`user@example.com`), User B has no email property set, and User C has an invalid email (`invalid`). Amplitude excludes User B with "Unresolved Mapping" and User C with "Partner Requirement Unmet". Bing Ads creates a customer list that includes only User A.
+User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a valid email (`user@example.com`), User B has no email property set, and User C has an invalid email (`invalid`). Amplitude excludes User B with "Unresolved Mapping" and User C with "Partner Requirement Unmet." Bing Ads creates a customer list that includes only User A.
 {{/partial:admonition}}
 
-To check whether Amplitude successfully transferred a user, you can review the CSV file from Amplitude. Amplitude strives to identify cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have queries, see the [cohort sync troubleshooting guide](https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations) for more information on how you can investigate and diagnose cohort sync discrepancies in a self-serve manner.
+To check whether Amplitude successfully transferred a user, you can review the CSV file from Amplitude. Amplitude strives to identify cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have queries, review [this guide](https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations) for more information on how you can investigate and diagnose cohort sync discrepancies in a self-serve manner.
 
 ### Cohort name not updating in Bing Ads
 
