@@ -10,6 +10,7 @@ This directory contains Cursor AI rules and templates that help you create high-
 ### For Tech Writers
 👉 **[QUICK-START.md](QUICK-START.md)** - 10-minute setup checklist  
 👉 **[AI-REVIEW-SETUP.md](AI-REVIEW-SETUP.md)** - Complete setup guide for AI reviews  
+👉 **[TESTING-GUIDE.md](TESTING-GUIDE.md)** - Test AI reviews locally  
 👉 **[SYSTEM-OVERVIEW.md](SYSTEM-OVERVIEW.md)** - Full system documentation
 
 ### For Style and Templates
