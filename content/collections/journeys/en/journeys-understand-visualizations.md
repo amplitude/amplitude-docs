@@ -54,7 +54,9 @@ To filter paths by a property, select *Any Event* and specify the property you'd
 
 ### Sunburst Visualization
 
-The Sunburst visualization displays customer journey event flows as a hierarchical, radial chart where each ring represents a sequential step in the user journey. Users can hover over nodes to see detailed event paths and metrics in an interactive breadcrumb panel, or click on nodes to drill down and explore specific journey segments in greater detail. The visualization automatically color-codes events by source path, and consolidates infrequent paths (< 1% threshold) into an "Other" category for cleaner display.
+The Sunburst visualization displays customer journey event flows as a hierarchical, radial chart where each ring represents a sequential step in the user journey. The Sunburst visualization is an alternate way to visualize the Pathfinder chart. It's not related to the Journeys chart. 
+
+Users can hover over nodes to view detailed event paths and metrics in an interactive breadcrumb panel, or click on nodes to drill down and explore specific journey segments in greater detail. The visualization automatically color-codes events by source path, and consolidates infrequent paths (< 1% threshold) into an "Other" category for cleaner display.
 
 ## Journey Map
 
