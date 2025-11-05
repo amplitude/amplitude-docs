@@ -79,8 +79,18 @@ Linking.addEventListener('url', async ({ url }) => {
 });
 ```
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
+
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
+
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading=""}}
-At this point, you are technically done installing. While optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
+At this point, you are technically done installing. While optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
 {{/partial:admonition}}
 
 ## Configure linking
