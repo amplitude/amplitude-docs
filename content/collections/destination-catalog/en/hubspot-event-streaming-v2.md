@@ -28,6 +28,7 @@ updated_at: 1726695250
 
 Keep these things in mind when sending events to HubSpot:
 
+- **Don't manually create or delete custom events or properties in HubSpot.** Let Amplitude create them for you. HubSpot soft-deletes events and properties, which means their internal names are permanently locked and can never be reused—even after deletion. If you manually create events or properties in HubSpot and later need to change them, you'll be forced to create new ones with different names and update all your HubSpot workflows, reports, and automations. It's safe to edit display names, descriptions, and dropdown options in the HubSpot UI since these don't affect the internal name. However, creating or deleting events and properties outside of Amplitude can cause naming conflicts that Amplitude Support cannot resolve.
 - If you already have an existing HubSpot streaming connection, re-authenticate with HubSpot to grant additional permissions to create events and properties for you. With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as custom events in HubSpot.
