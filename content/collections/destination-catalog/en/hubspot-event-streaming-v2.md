@@ -33,10 +33,11 @@ Keep these things in mind when sending events to HubSpot:
 - Events from Amplitude appear as custom events in HubSpot.
 - A HubSpot Enterprise subscription is required to send custom events. See the [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information.
 - Relevant limits for HubSpot events are:
-    - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
+    - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSpot's [Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
     - HubSpot allows up to 50 custom properties for each custom event.
+    - Amplitude truncates event and property names to 50 characters to comply with HubSpot's API limitations.
 - Amplitude sends selected event and user properties along with the event.
-- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.     
+- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.
 
 ## Setup
 
@@ -55,7 +56,7 @@ Keep these things in mind when sending events to HubSpot:
 ## Use custom event data in HubSpot
 
 - Click here to learn more about how you can [analyze custom events](https://knowledge.HubSpot.com/analytics-tools/analyze-custom-behavioral-events) in HubSpot.
-  
+
 ### Report on custom events
 
 Analyze custom event completions from the custom events tool, and event data is available in the custom report builder and attribution reports.
