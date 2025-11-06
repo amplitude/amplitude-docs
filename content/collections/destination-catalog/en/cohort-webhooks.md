@@ -11,7 +11,7 @@ updated_at: 1721766883
 integration_type:
   - cohorts
 ---
-Amplitude CDP’s cohort webhook allows you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
+Cohort webhooks allow you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
 
 ## Considerations
 
@@ -223,7 +223,7 @@ Some webhook destinations would need a list of users as a batch. In the below ex
   - `cohort_name` string. The display name of the cohort.
   - `cohort_id` string. The unique identifier of the cohort.
   - `in_cohort` boolean. Show if this batch of users is entering/leaving the cohort.
-  - `compute_time` string. The time when Amplitude computes this update.
+  - `computed_time` string. The time Amplitude computes this update.
   - `message_id` string. The unique identifier of this update message. When a retry happens, you can use this value to de-duplicate.
   - `users` list of JSON objects. The actual user payload.
     - `user_id` string. The Amplitude `user_id` of the user.

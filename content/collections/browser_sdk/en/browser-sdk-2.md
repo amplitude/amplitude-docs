@@ -260,7 +260,7 @@ To disable Autocapture, see the following code sample.
 
 ```ts
 // Disable individual default tracked events
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: false,
     pageViews: false,
@@ -274,7 +274,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 
 // Disable all default tracked events
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: false,
 });
 ```
@@ -391,7 +391,7 @@ Amplitude tracks the following as user properties:
 Set `config.autocapture.attribution` to `false` to disable marketing attribution tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: false, 
   },
@@ -423,7 +423,7 @@ In addition to excluding referrers from the default configuration, you can add o
 Track complete web attribution, including self-referrals, for comprehensive insight.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: {
       // Override the default setting to exclude all subdomains
@@ -438,7 +438,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 For customers who want to exclude tracking campaign from any referrers across all subdomains of `your-domain.com`, as well as from a specific subdomain.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
     autocapture: {
     attribution: {
       excludeReferrers: [/your-domain\.com$/, 'www.test.com'],
@@ -452,7 +452,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 For customers who want to exclude tracking campaign from all referrers across all subdomains of `test.com`.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: {
       excludeReferrers: [/test\.com$/],
@@ -469,7 +469,7 @@ Amplitude tracks page view events by default. The default behavior sends a page 
 Set `config.autocapture.pageViews` to `false` to disable page view tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     pageViews: false, 
   },
@@ -561,7 +561,7 @@ Amplitude tracks session events by default. A session is the period of time a us
 You can opt out of tracking session events by setting `config.autocapture.sessions` to `false`. Refer to the code sample below.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     sessions: false, 
   },
@@ -584,7 +584,7 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     formInteractions: false, 
   },
@@ -600,7 +600,7 @@ Amplitude tracks file download events by default. The SDK tracks `[Amplitude] Fi
 Set `config.autocapture.fileDownloads` to `false` to disable file download tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     fileDownloads: false,
   },
@@ -614,7 +614,7 @@ You can enable element interaction tracking to capture clicks and changes for el
 Set `config.autocapture.elementInteractions` to `true` to enable element click and change tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     elementInteractions: true, 
   },
@@ -710,7 +710,7 @@ Enable frustration interaction tracking to capture rage clicks and dead clicks. 
 Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     frustrationInteractions: true, 
   },
@@ -736,7 +736,7 @@ Track when network requests fail (only XHR and fetch). By default, tracks networ
 Set `config.autocapture.networkTracking` to `true` to enable network request tracking
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     networkTracking: true, 
   },
@@ -897,7 +897,7 @@ Track Core Web Vitals performance metrics automatically. When enabled, Amplitude
 Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     webVitals: true, //[tl! highlight]
   },
@@ -1713,20 +1713,38 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 ### Remote configuration
 
-Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. By default, the SDK disables this feature.
+Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. 
 
-Autocapture supports remote configuration options for tracking default events. When you enable this setting, the remote configuration overrides your client-side configuration. Find the remote configuration options in *Data > Settings > Autocapture*. 
+{{partial:admonition type="note" heading="Default behavior changed in version 2.16.1"}}
+Starting in SDK version 2.16.1, `fetchRemoteConfig` is **enabled by default** (`true`). For versions 2.10.0 to 2.16.0, remote configuration was disabled by default and required explicit enablement.
+{{/partial:admonition}}
 
-To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
+Autocapture supports remote configuration options for tracking default events. When remote configuration is enabled, settings from Amplitude's servers merge with your local SDK configuration, with remote settings taking precedence. Find the remote configuration options in *Data > Settings > Autocapture*. 
+
+#### Enable or disable remote configuration
+
+**For SDK versions 2.16.1 and later:** Remote configuration is enabled by default. To disable it, explicitly set `fetchRemoteConfig: false`:
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  fetchRemoteConfig: true
+  fetchRemoteConfig: false  // Disable remote config
 });
 ```
 
-{{partial:admonition type="note" heading=""}}
-Remote configuration supports Autocapture settings, and overrides settings you configure locally.
+**For SDK versions 2.10.0 to 2.16.0:** Remote configuration is disabled by default. To enable it, set `fetchRemoteConfig: true`:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  fetchRemoteConfig: true  // Enable remote config (only needed for versions < 2.16.1)
+});
+```
+
+{{partial:admonition type="note" heading="Configuration merging behavior"}}
+When `fetchRemoteConfig` is enabled:
+- Remote configuration settings from Amplitude servers merge with your local configuration
+- Remote settings override conflicting local settings
+- Manual configuration parameters you set locally are preserved unless explicitly overridden by remote settings
+- This particularly affects Autocapture settings, which can be controlled remotely
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
