@@ -28,7 +28,7 @@ updated_at: 1726695250
 
 Keep these things in mind when sending events to HubSpot:
 
-- **Don't manually create or delete custom events or properties in HubSpot.** Let Amplitude create them for you. HubSpot soft-deletes events and properties, which means their internal names are permanently locked and can never be reused, even after deletion. If you manually create events or properties in HubSpot and later need to change them, HubSpot forces you to create new ones with different names and then update your HubSpot workflows, reports, and automations. It's safe to edit display names, descriptions, and dropdown options in the HubSpot UI since these don't affect the internal name. However, creating or deleting events and properties outside of Amplitude can cause naming conflicts that Amplitude Support can't resolve.
+- **Don't manually create or delete custom events or properties in HubSpot for your Amplitude events.** Amplitude will automatically create the necessary event and property definitions when you enable the integration. Amplitude expects event and property definitions in HubSpot to be named and typed according to our internal specification so that they can be consistently matched with our integration. If you manually create event or property definitions in HubSpot that do not match the Amplitude integration, you will not be able to send events without additional steps (see below), as event definition names cannot be changed or permanently deleted in HubSpot. It is safe to edit display names and descriptions in HubSpot
 - If you already have an existing HubSpot streaming connection, re-authenticate with HubSpot to grant additional permissions to create events and properties for you. With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as custom events in HubSpot.
@@ -53,6 +53,8 @@ Keep these things in mind when sending events to HubSpot:
 7. Under *Map properties to destinations*, select the Event Properties you would like to send. The HubSpot identifier for this object must be at least one of the following: `User Token`, `Email` or `Object ID`.
 8. Under *Select additional properties*, select any extra event and user properties you want to send to HubSpot. If you don't select any properties here, Amplitude doesn't send any.
 9. When finished, enable the destination and click *Save*.
+10. Click *Create in HubSpot* if there are events and/or properties that are missing.
+11. Click *Continue*, verify your connection, and click *Finish*.
 
 ## Use custom event data in HubSpot
 
