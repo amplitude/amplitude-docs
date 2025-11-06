@@ -75,7 +75,7 @@ The sync may exclude some users if they don't meet certain requirements:
 User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a valid email (`user@example.com`), User B has no email property set, and User C has an invalid email (`invalid`). Amplitude excludes User B with "Unresolved mapping" and User C with "Partner requirement unmet." Bing Ads creates a customer match list that includes only User A.
 {{/partial:admonition}}
 
-To check whether Amplitude successfully transferred a user, review the CSV file from Amplitude. Amplitude identifies cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have questions, review [this guide](/docs/data/audiences/third-party-syncs) for more information about how you can investigate and diagnose cohort sync discrepancies.
+To check whether Amplitude successfully transferred a user, review the CSV file from Amplitude. Amplitude identifies cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have questions, review this [guide](/docs/data/audiences/third-party-syncs) for more information about how you can investigate and diagnose cohort sync discrepancies.
 
 ### Sync fails with "Bing Ads terms and conditions not accepted"
 
@@ -87,7 +87,7 @@ To accept the terms and conditions:
 2. Click **Create**.
 3. Enter a name for the audience and select **Customer match list**.
 4. Click **Next**.
-5. Upload a CSV file with an `Email` header and at least one email address (the email doesn't need to be real, for example, `test@example.com`).
+5. Upload a CSV file with an `Email` header and at least one email address (you can use a placeholder like `test@example.com`).
 6. Select **I ACCEPT**.
 7. Click **Next**, then click **Apply Changes**.
 
