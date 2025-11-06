@@ -12,7 +12,7 @@ title: 'Bing Ads (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 partner_maintained: false
-integration_icon: partner-icons/ms-ads.svg
+integration_icon: partner-icons/bing.svg
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1762300317
