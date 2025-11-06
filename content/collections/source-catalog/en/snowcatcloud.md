@@ -25,14 +25,12 @@ partner_doc_link: 'https://www.snowcatcloud.com/docs'
 ---
 [SnowcatCloud](https://www.snowcatcloud.com) is a cloud-hosted customer data infrastructure built on the open-source [OpenSnowcat](https://opensnowcat.io) platform (Snowplow fork).
 
-SnowcatCloud empowers teams to **collect**, **enrich**, and **route** first-party behavioral data with full transparency — reliably delivering clean data to data warehouses and streaming infrastructure, and seamlessly integrating with platforms like Amplitude.
+SnowcatCloud empowers teams to collect, enrich, and route first-party behavioral data with full transparency. It reliably delivers clean data to data warehouses and streaming infrastructure, and seamlessly integrates with platforms like Amplitude.
 
 {{partial:admonition type="note" title=""}}
-SnowcatCloud’s integration with Amplitude is fully **server-side**. Beyond the initial setup, no additional instrumentation or client-side changes are required to deliver events to Amplitude.{{/partial:admonition}}
+SnowcatCloud's integration with Amplitude is fully **server-side**. Beyond the initial setup, you don't need additional instrumentation or client-side changes to deliver events to Amplitude.
+{{/partial:admonition}}
 
-
-
----
 
 ## Setup overview
 
@@ -47,13 +45,12 @@ Key features:
 
 * **Batch uploads** to Amplitude’s HTTP V2 API
 * **Automatic field mapping** to Amplitude’s schema
-* **Rich contextual data** - including session, geo, and device information
+* **Rich contextual data** - including session, geographic, and device information
 
----
 
 ## Field mapping overview
 
-Field mapping used by SnowcatCloud to translate enriched events into Amplitude-compatible payloads:
+SnowcatCloud uses this field mapping to translate enriched events into Amplitude-compatible payloads:
 
 | Category     | Amplitude Field | Source Field (SnowcatCloud Enriched)                                         | Format/Notes       |
 | ------------ | --------------- | ----------------------------------------------------------------------- | ------------------ |
@@ -93,8 +90,6 @@ Field mapping used by SnowcatCloud to translate enriched events into Amplitude-c
 | `utm_content`  | `mkt_content`  |
 | `utm_network`  | `mkt_network`  |
 | `utm_term`     | `mkt_term`     |
-
----
 
 
 ## More help
