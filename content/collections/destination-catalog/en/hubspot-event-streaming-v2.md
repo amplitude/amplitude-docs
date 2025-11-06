@@ -56,6 +56,17 @@ Keep these things in mind when sending events to HubSpot:
 10. Click *Create in HubSpot* if there are events and/or properties that are missing.
 11. Click *Continue*, verify your connection, and click *Finish*.
 
+### Troubleshooting
+If you manually created and then deleted a custom event in HubSpot, the internal name is locked and can't be reused. Here's a workaround:
+
+1. In Amplitude Data, navigate to *Events > Custom Events*.
+2. Click *Create custom event*.
+3. Name the custom event something similar to the original, but not the same (for example, if you deleted `user_signup`, use `user_signup_v2`). This ensures Amplitude can create the event in HubSpot without naming conflicts.
+4. Configure the custom event to trigger on the deleted event.
+5. Update your HubSpot event stream to send this new custom event instead of the original one.
+6. Click *Create in HubSpot* to define the custom event in HubSpot.
+7. Once the event is created successfully, you can use it in HubSpot workflows, reports, and automations.
+
 ## Use custom event data in HubSpot
 
 - Click here to learn more about how you can [analyze custom events](https://knowledge.HubSpot.com/analytics-tools/analyze-custom-behavioral-events) in HubSpot.
