@@ -39,3 +39,12 @@ When documenting constants, default values, or long lists that are defined in so
 - **Bad**: Listing out 40+ default header names inline: `access-control-allow-origin, access-control-allow-credentials, access-control-expose-headers...` (repeating entire list)
 - **Good**: "For the complete list of default safe headers, see [the source code](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108)."
 - Use inline duplication only for short lists (3-5 items) where quick reference is more valuable than a link
+
+### Configuration Tables
+When documenting configuration options in tables:
+- **Enumerate possible values for options with limited sets**: When a configuration option accepts a specific set of values (enums, log levels, constants), list all possible values inline in the table's description column with brief explanations of each value
+  - **Good**: "Options: `LogLevel.Disable` (no logging), `LogLevel.Error` (errors only), `LogLevel.Warn` (errors and warnings), `LogLevel.Info` (errors, warnings, and info), `LogLevel.Debug` (errors, warnings, info, and debug), `LogLevel.Verbose` (all messages)"
+  - This applies when the list is reasonably short (roughly 3-10 values). For longer lists, link to source code instead (see "Linking to Source Code" above)
+- **Link to detailed sections**: When configuration options have detailed explanations, examples, or troubleshooting information elsewhere in the document, include anchor links from the config table to those sections
+  - **Example**: "See [Custom logging](#custom-logging) for details." or "See [Custom logging](#custom-logging)."
+  - This helps users discover related content and navigate efficiently
