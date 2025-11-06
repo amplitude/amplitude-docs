@@ -1,0 +1,15 @@
+{{partial:admonition type="important" heading="Enhanced Schema Validation"}}
+This API performs schema validation before executing queries. This enhanced validation ensures that all API requests strictly adhere to the documented schema requirements.
+
+**What this means for you:**
+- Requests that previously succeeded despite not meeting schema requirements may return `400 Bad Request` responses
+- Error messages provide specific details about validation failures to help you correct your requests
+- The schema hasn't changed—only the enforcement of existing requirements
+
+**If you receive validation errors:**
+1. Review the error message in the response, which indicates the specific schema requirement that wasn't met
+2. Ensure you include and correctly format all required parameters, according to the endpoint documentation
+3. Verify that all parameter values match their expected types and constraints
+
+Most users shouldn't experience any issues, as this change only affects requests that don't conform to the documented API schema.
+{{/partial:admonition}}

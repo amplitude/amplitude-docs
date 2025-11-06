@@ -13,6 +13,10 @@ updated_at: 1716312268
 api_status: ga
 summary: "Programmatically annotate important dates like feature releases and marketing campaigns on your organization's charts with a horizontal axis of calendar dates."
 ---
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Create an annotation
 
 ```bash

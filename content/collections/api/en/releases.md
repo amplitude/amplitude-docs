@@ -13,6 +13,10 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716312353
 summary: 'Programmatically create releases in Amplitude using the Releases API.'
 ---
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Create a release
 
 `POST https://amplitude.com/api/2/release`

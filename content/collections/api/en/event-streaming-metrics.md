@@ -22,6 +22,10 @@ summary: 'Get delivery metrics summary for a configured event stream.'
 
 The API has a limit of 4 concurrent requests per project, and 12 requests per minute per project. Amplitude rejects anything above this threshold with a `429` status code.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request
 
 Send a `GET` request with required and optional parameters to `https://analytics.amplitude.com/api/2/event-streaming/delivery-metrics-summary`. 

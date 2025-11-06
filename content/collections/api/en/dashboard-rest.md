@@ -23,12 +23,16 @@ summary: "Get data that's displayed on the dashboard graphs in JSON format via t
 
 For each endpoint, there is a concurrent limit and a rate limit. The concurrent limit restricts the number of requests you can run at the same time. The rate limit restricts the total number of queries you can run per hour. Exceeding these limits returns a 429 error. These limits are per project, and the 429 error also includes information on how you are exceeding the limit.
 
-**Concurrent Limit**: You can run up to 5 concurrent requests across all Amplitude REST API endpoints, including cohort download.
+**Concurrent Limit**: You can run up to 5 concurrent requests across all Amplitude REST API endpoints, including cohort download.
 
 #### User activity/user search limits
 
 You can run up to 360 queries per hour for user activity and user search endpoints.
-The [User Activity](#user-activity) and [User Search](#user-search) endpoints have a different rate limit than all other request types.
+The [User Activity](#user-activity) and [User Search](#user-search) endpoints have a different rate limit than all other request types.
+
+### Schema validation
+
+{{partial:schema-validation-analytics-rest}}
 
 ### Endpoint costs
 
