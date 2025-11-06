@@ -21,6 +21,10 @@ summary: "Export your project's event data."
 - To export a whole day, use `T00` to `T23`. For example, `GET 'https://amplitude.com/api/2/export?start=20220101T00&end=20220101T23'`
 - The max period you can query at once is 365 days.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request
 
 `GET https://amplitude.com/api/2/export`

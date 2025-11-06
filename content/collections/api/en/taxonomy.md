@@ -41,6 +41,10 @@ Cost structure of each endpoint:
 * POST: 2 cost
 * DELETE: 2 cost
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Event category
 
 

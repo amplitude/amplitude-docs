@@ -28,6 +28,10 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 - There is limit on Cohort Download to request a single cohort: 60 requests per 10 minutes per app, and 4 parallel request per minute per app.
 - Amplitude limits single requests to 100,000 identifiers
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Get all cohorts
 
 Get all discoverable cohorts for an app. Use the `id` for each cohort returned in the response to get a single cohort.
