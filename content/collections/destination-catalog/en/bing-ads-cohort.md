@@ -3,7 +3,7 @@ id: 8f3c5e7a-9d2b-4f1e-a8c6-3b9d7e5f2a1c
 blueprint: destination-catalog
 use_cases:
   - "Send cohorts from Amplitude to Bing Ads to target specific groups of users on the Microsoft Advertising Network. Leverage first-party behavioral data from Amplitude to create custom cohorts tailored to specific user segments—whether that's high-value customers, returning users, or those at risk of churning—and sync them directly to Bing Ads for precise audience targeting."
-short_description: 'Send Amplitude cohorts to Bing Ads to create customer lists for more personalized campaigns on the Microsoft Advertising Network.'
+short_description: 'Send Amplitude cohorts to Bing Ads to create customer match lists for more personalized campaigns on the Microsoft Advertising Network.'
 integration_category:
   - ad-networks
 integration_type:
@@ -17,7 +17,7 @@ exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1762300317
 ---
-Send Amplitude cohorts to Bing Ads to create customer lists for more personalized campaigns. This integration enables you to upload and sync behavioral cohorts directly to the Microsoft Advertising Network for campaign targeting.
+Send Amplitude cohorts to Bing Ads to create customer match lists for more personalized campaigns. This integration enables you to upload and sync behavioral cohorts directly to the Microsoft Advertising Network for campaign targeting.
 
 ## Considerations
 
@@ -26,13 +26,13 @@ Send Amplitude cohorts to Bing Ads to create customer lists for more personalize
 - Provide email addresses as plain text or a hashed string (using the SHA-256 algorithm). Amplitude automatically hashes plain text email addresses using SHA-256 before sending them to Bing Ads.
 - Bing Ads only ingests users that have an email identifier set. The sync excludes users without valid email addresses.
 - The list needs at least 300 people on the Microsoft Advertising Network to be eligible to serve.
-- Customer lists can take up to 24 hours to populate with members after syncing from Amplitude.
+- Customer match lists can take up to 24 hours to populate with members after syncing from Amplitude.
 
 ## Setup
 
 ### Prerequisites
 
-You need a [Microsoft Advertising](https://ads.microsoft.com/) account. Before you can sync cohorts, you must create at least one customer list audience in the Microsoft Advertising UI and accept the terms and conditions.
+You need a [Microsoft Advertising](https://ads.microsoft.com/) account. Before you can sync cohorts, you must create at least one customer match list audience in the Microsoft Advertising UI and accept the terms and conditions.
 
 ### Amplitude setup
 
@@ -46,8 +46,9 @@ You need a [Microsoft Advertising](https://ads.microsoft.com/) account. Before y
 
 1. In Amplitude, open the cohort you want to export. Click **Sync**, and choose Bing Ads.
 2. Select the destination.
-3. Select the sync cadence.
-4. Save your work.
+3. Select the customer account.
+4. Select the sync cadence.
+5. Save your work.
 
 {{partial:admonition type="note" title=""}}
 For scheduled cohort syncs, only the initial sync includes the full cohort. Subsequent syncs include only additions and removals since the last sync.
@@ -71,14 +72,14 @@ The sync may exclude some users if they don't meet certain requirements:
 #### Example
 
 {{partial:admonition type="example" title=""}}
-User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a valid email (`user@example.com`), User B has no email property set, and User C has an invalid email (`invalid`). Amplitude excludes User B with "Unresolved mapping" and User C with "Partner requirement unmet." Bing Ads creates a customer list that includes only User A.
+User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a valid email (`user@example.com`), User B has no email property set, and User C has an invalid email (`invalid`). Amplitude excludes User B with "Unresolved mapping" and User C with "Partner requirement unmet." Bing Ads creates a customer match list that includes only User A.
 {{/partial:admonition}}
 
 To check whether Amplitude successfully transferred a user, review the CSV file from Amplitude. Amplitude identifies cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have questions, review [this guide](/docs/data/audiences/third-party-syncs) for more information about how you can investigate and diagnose cohort sync discrepancies.
 
 ### Sync fails with "Bing Ads terms and conditions not accepted"
 
-Before you can sync cohorts, you must create one customer list audience and accept the terms and conditions in the Microsoft Advertising UI. The initial customer list doesn't need to contain customer data.
+Before you can sync cohorts, you must create one customer match list audience and accept the terms and conditions in the Microsoft Advertising UI. The initial list doesn't need to contain customer data.
 
 To accept the terms and conditions:
 
@@ -90,8 +91,8 @@ To accept the terms and conditions:
 6. Select **I ACCEPT**.
 7. Click **Next**, then click **Apply Changes**.
 
-After you complete these steps, you can view the created customer list in the **Audiences** tab. You can now sync cohorts from Amplitude.
+After you complete these steps, you can view the created customer match list in the **Audiences** tab. You can now sync cohorts from Amplitude.
 
 ### Cohort name doesn't update in Bing Ads
 
-Bing Ads sets customer list names when it first creates the list and can't update them through subsequent syncs. Keep the cohort name unchanged.
+Amplitude doesn't update list names in Bing Ads after the initial sync. If you change the cohort name in Amplitude, the list name in Bing Ads remains unchanged. Keep the cohort name unchanged to avoid confusion.
