@@ -18,23 +18,21 @@ Experiment creates your initial variant automatically. By default, this variant 
 ##### To add additional variants
 
 1. In the Experiment section, either create a new experiment or open an existing one. 
-2. In the Variants section, click the **edit** icon.
-3. If you want to rename either the control or treatment variants, click the **edit** icons next to those names. 
-4. Click **Add a variant**. 
-5. Enter a name for your variant and then include a value. By default, the value is a hyphenated (otherwise known as a slug) version of the variant name.
+2. Click **Add a variant**. 
+3. Enter a name for your variant and then include a value. By default, the value is a hyphenated (otherwise known as a slug) version of the variant name.
 
     {{partial:admonition type="tip" heading="Use variant value in your code"}}
     When you implement the experiment on your codebase, use the value of the variant to reference it. Experiment SDKs return variant values, which are all lower case, and don't contain spaces.
     {{/partial:admonition}}
 
-6. Add a description of the variant. Be specific enough so that other people can understand what your experiment is doing.
-7. Add an optional **payload**. A payload is a JSON object that can dynamically change a variant’s experience without requiring you to write more code.
+4. Add a description of the variant. Be specific enough so that other people can understand what your experiment is doing.
+5. Add an optional **payload**. A payload is a JSON object that can dynamically change a variant’s experience without requiring you to write more code.
 
     For example, imagine you’re testing a new splash screen on a marketing webpage. You might get early results that suggest different content might improve the performance of the splash. Instead of going into your codebase and making changes to the variant there, you can just include those changes in a payload, and Experiment implements them automatically.
 
     Paste or type your code into the window. 
 
-8. Click **Apply**.
+6. Click **Apply**.
 
 There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to the absolute minimum of variants needed.
 

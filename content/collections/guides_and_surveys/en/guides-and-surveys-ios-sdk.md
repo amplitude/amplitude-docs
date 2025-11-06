@@ -22,7 +22,11 @@ The Guides and Surveys iOS SDK requires:
 
 ## Install and initialize the SDK
 
-Install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Amplitude Swift 5.9+
+
+First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
@@ -40,7 +44,9 @@ pod 'AmplitudeEngagementSwift', '~> 1.0.5'
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Initialize the SDK
+#### Initialize the SDK
+
+Next, make sure to initialize the SDK.
 
 ```swift
 import AmplitudeEngagementSwift
@@ -65,22 +71,19 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
 
-### Boot the SDK
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
 
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
 
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 

@@ -49,7 +49,7 @@ To configure streaming from Amplitude to Braze, you need the following informati
 
 ### Configure mappings
 
-_This applies to both event and user forwarding. Transformed user properties aren't supported._
+_This applies to both event and user forwarding._
 
 1. Select an Amplitude user property that corresponds to your Braze user ID, from the left dropdown.
 2. Select the type of your Braze user ID, from the right dropdown.
