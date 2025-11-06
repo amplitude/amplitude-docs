@@ -22,6 +22,10 @@ OCR systems do something that.
 
 - If you are using the iOS SDK or Android SDK, you can enable tracking of the Advertising ID by following the instructions [here](/docs/sdks/analytics/ios/ios-swift-sdk#advertiser-id). If you are using a JavaScript SDK or React Native, these don't have the functionality to collect Advertising ID automatically due to Google's and Apple's privacy rules around advertising ID and web tracking. You have to send the Advertising ID through the HTTP API endpoint so that Amplitude can match attribution data/events. See keys in the [HTTP API V2](/docs/apis/analytics/http-v2) doc.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Send an attribution event
 
 Send a `POST` request to {{standard_endpoint}} with two arguments: `api_key` and `event`.

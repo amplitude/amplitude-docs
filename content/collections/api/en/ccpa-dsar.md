@@ -18,6 +18,10 @@ updated_at: 1715897991
 - Each download URL requires the same auth credentials to access.
 - Because the API is asynchronous, you must poll to check the status of the request. See the Rate Limits section to help select the appropriate polling rate.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ### Asynchronous operation
 
 To support data volume, this API works asynchronously. Getting user data happens in three steps:

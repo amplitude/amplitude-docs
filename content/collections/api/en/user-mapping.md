@@ -25,6 +25,10 @@ Keep these considerations in mind when using this API.
 - When you use the User Lookup feature in Amplitude, the UI indicates a mapped user with "Remapped User IDs" or "Remapping Into User ID..."
 - Contact Support if you need a list of merged user IDs. 
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Limits
 
 The aliasing API has the following limits:

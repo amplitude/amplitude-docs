@@ -1495,6 +1495,10 @@ The following table shows the list of mappings. Language tags are case-insensiti
 
 {{/partial:collapse}}
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request 
 
 `POST https://api2.amplitude.com/2/httpapi`

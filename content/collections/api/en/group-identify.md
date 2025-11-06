@@ -24,6 +24,10 @@ summary: 'Set or update properties of particular groups.'
 - The maximum number of group properties per request is 1024.
 - The maximum byte size/per request is 1 mb.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request
 
 Set or update group properties.

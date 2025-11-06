@@ -50,6 +50,10 @@ The endpoint `/api/2/deletions/users` has a rate limit of 1 HTTP request per sec
 
 Make up to 100 deletion requests per second if you batch 100 users in each request. 
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Delete users
 
 `POST /deletions/users`

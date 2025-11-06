@@ -29,6 +29,10 @@ All throttling and status code guidance from Amplitude's [HTTP V2 API](/docs/api
 - Because these calls aren't counted as events, Identify API calls don't add to your monthly event count in Amplitude.
 - If you change the `user_id` field from an existing value, then Amplitude creates a new user. Amplitude doesn't create a new Amplitude user if the current value of `user_id` is null.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request
 
 `POST https://api2.amplitude.com/identify`

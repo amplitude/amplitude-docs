@@ -51,6 +51,10 @@ Amplitude recommends that you use the User Profile API server-side only. Calling
 - For batch recommendation use cases, consider rate limiting your requests so you don't go above this limit.
 - If you need this limit increased for your org, contact Support.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request Parameters
 
 | <div class= "big-column">Parameter</div> | Description |
