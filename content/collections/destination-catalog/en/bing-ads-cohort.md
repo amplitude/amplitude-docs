@@ -32,7 +32,7 @@ Send Amplitude cohorts to Bing Ads to create customer lists for more personalize
 
 ### Prerequisites
 
-You need a [Microsoft Advertising](https://ads.microsoft.com/) account.
+You need a [Microsoft Advertising](https://ads.microsoft.com/) account. Before you can sync cohorts, you must create at least one customer list audience in the Microsoft Advertising UI and accept the terms and conditions.
 
 ### Amplitude setup
 
@@ -75,6 +75,22 @@ User A, User B, and User C are in the Amplitude cohort (Cohort 1). User A has a 
 {{/partial:admonition}}
 
 To check whether Amplitude successfully transferred a user, review the CSV file from Amplitude. Amplitude identifies cases where users aren't included at third-party platforms by analyzing response codes. However, technical constraints may prevent fully detecting every instance of silent user exclusion. If you encounter issues or have questions, review [this guide](/docs/data/audiences/third-party-syncs) for more information about how you can investigate and diagnose cohort sync discrepancies.
+
+### Sync fails with "Bing Ads terms and conditions not accepted"
+
+Before you can sync cohorts, you must create one customer list audience and accept the terms and conditions in the Microsoft Advertising UI. The initial customer list doesn't need to contain customer data.
+
+To accept the terms and conditions:
+
+1. In Microsoft Advertising, navigate to **Tools** > **Audiences**.
+2. Click **Create**.
+3. Enter a name for the audience and select **Customer match list**.
+4. Click **Next**.
+5. Upload a CSV file with an `Email` header and at least one email address (the email doesn't need to be real, for example, `test@example.com`).
+6. Select **I ACCEPT**.
+7. Click **Next**, then click **Apply Changes**.
+
+After you complete these steps, you can view the created customer list in the **Audiences** tab. You can now sync cohorts from Amplitude.
 
 ### Cohort name doesn't update in Bing Ads
 
