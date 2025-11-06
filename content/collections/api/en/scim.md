@@ -32,6 +32,10 @@ Although the route includes "1", this doesn't mean that Amplitude implements the
 
 The SCIM API supports 100 requests per minute per organization. Amplitude can lift this restriction for burst requests on a per-request basis. Contact the support team or a customer success manager for more information.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## User routes
 
 This section details routes and information that deal with user management.

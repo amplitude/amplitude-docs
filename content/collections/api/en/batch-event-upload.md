@@ -28,6 +28,10 @@ Amplitude rate limits individual users (by Amplitude ID) that update their user 
 
 Use this request to bulk upload events to Amplitude.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Request
 
 The Batch Event Upload API has two differences in the request as compared to the HTTP API:

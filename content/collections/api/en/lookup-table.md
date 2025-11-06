@@ -32,6 +32,10 @@ The CSV file must meet the following requirements:
 - Rows must be separated by line breaks.
 - If a field value contains commas or quotes, it should be wrapped within double quotation marks. The first double quote signifies the beginning of the column data, and the last double quote marks the end. If the value contains a string with double quotes, these are replaced by two double quotes `""`.
 
+## Schema validation
+
+{{partial:schema-validation-analytics-rest}}
+
 ## Create a Lookup Table
 
 Create a Lookup Table object by uploading a CSV that maps an existing property to the new properties to create. Send the request with the type multipart/form-data type.
