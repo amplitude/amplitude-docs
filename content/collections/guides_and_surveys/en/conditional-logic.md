@@ -31,7 +31,7 @@ Common user property examples:
 * `initial_referring_domain`
 
 {{partial:admonition type="note" heading="User property requirements"}}
-Properties must be available client-side during the current session. Properties shared from prior sessions or properties only stored on the server aren't supported. See [Set user properties](/docs/guides-and-surveys/sdk#set-user-properties) for implementation details.
+Properties must be available client-side during the current session. Properties shared from prior sessions or properties only stored on the server aren't supported. Go to [Set user properties](/docs/guides-and-surveys/sdk#set-user-properties) for implementation details.
 {{/partial:admonition}}
 
 ### Survey responses
@@ -60,7 +60,7 @@ The setup process is similar whether you're adding conditional logic to buttons 
 1. In your guide or survey, add a primary or secondary button.
 2. Click the **On button click** dropdown.
 3. Select **Evaluate conditional logic**.
-4. In the **Conditional Logic** section.
+4. Navigate to the Conditional Logic section.
 5. Under **When**, select either **User Property** or **Survey Response** from the dropdown.
 6. Configure your condition:
    - For **User Property**: Select the property, operator, and value.
@@ -77,9 +77,7 @@ You can add multiple conditional actions to handle different scenarios. For exam
 
 ### Branch survey based on NPS score
 
-Create a survey that asks different follow-up questions based on a user's NPS score.
-
-**Setup:**
+Create a survey that asks different follow-up questions based on a user's NPS score:
 
 1. Add an NPS rating block asking "How likely are you to recommend us?"
 2. Add conditional logic:
@@ -90,43 +88,37 @@ This ensures detractors get a chance to provide feedback, while promoters are en
 
 ### Redirect users based on subscription tier
 
-Create a guide with a button that directs users to different pages based on their subscription level.
+Create a guide with a button that directs users to different pages based on their subscription level:
 
-**Setup:**
-
-1. Add a primary button labeled "View Features"
-2. Select **Evaluate conditional logic**
+1. Add a primary button labeled "View Features".
+2. Select **Evaluate conditional logic**.
 3. Add conditions:
-   - If `subscription_tier = premium`, then visit link `www.example.com/premium-features`
-   - If `subscription_tier = free`, then visit link `www.example.com/upgrade`
+   - If `subscription_tier = premium`, then visit link `www.example.com/premium-features`.
+   - If `subscription_tier = free`, then visit link `www.example.com/upgrade`.
 
 This ensures each user sees content relevant to their subscription level.
 
 ### Show guide only to specific user segments
 
-Launch a secondary guide based on both user property and survey response.
+Launch a secondary guide based on both user property and survey response:
 
-**Setup:**
-
-1. Add a primary button labeled "Next"
-2. Select **Evaluate conditional logic**
+1. Add a primary button labeled "Next".
+2. Select **Evaluate conditional logic**.
 3. Add conditions:
-   - If `country = US` AND `rating > 8`, then show guide "US-specific-offer"
-   - If `country ≠ US` AND `rating > 8`, then show guide "international-offer"
+   - If `country = US` AND `rating > 8`, then show guide "US-specific-offer".
+   - If `country ≠ US` AND `rating > 8`, then show guide "international-offer".
 
 This creates a personalized experience based on both location and satisfaction level.
 
 ### Personalized CTA based on user properties
 
-Create a button action that clicks different elements based on user characteristics.
+Create a button action that clicks different elements based on user characteristics:
 
-**Setup:**
-
-1. Add a primary button labeled "Get Started"
-2. Select **Evaluate conditional logic**
+1. Add a primary button labeled "Get Started".
+2. Select **Evaluate conditional logic**.
 3. Add conditions:
-   - If `user_type = new`, then click element `[data-testid="onboarding-flow"]`
-   - If `user_type = returning`, then click element `[data-testid="dashboard"]`
+   - If `user_type = new`, then click element `[data-testid="onboarding-flow"]`.
+   - If `user_type = returning`, then click element `[data-testid="dashboard"]`.
 
 This ensures new users enter onboarding while returning users go directly to their dashboard.
 
