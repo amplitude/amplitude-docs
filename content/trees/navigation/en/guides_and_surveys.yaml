@@ -5,6 +5,10 @@ tree:
   -
     id: 3474a0be-7ff6-45af-a11e-bfd432c799fa
     entry: e2e25f59-3bfc-4b09-bcd0-bdf0f97854bb
+    children:
+      -
+        id: 769f3588-0794-42b3-9843-b790b35f4a4b
+        entry: f8e3d9c2-4b5a-6c7d-8e9f-0a1b2c3d4e5f
   -
     id: 974a4b9e-3e00-438f-8c09-0a2e47329ee5
     title: Instrumentation
