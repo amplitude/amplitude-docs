@@ -172,8 +172,8 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Go back                    | Go to the previous step in the guide.                                                                                                                                             |
 | Go forward                 | Advance to the next step in the guide.                                                                                                                                            |
 | Go to step                 | Go to the specified step in the guide.                                                                                                                                            |
-| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. See [Conditional Logic](/docs/guides-and-surveys/conditional-logic) for more information. |
-| Run callback               | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
+| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic) for more information. |
+| Run callback               | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, go to [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
 {{partial:admonition type='note'}}
