@@ -49,7 +49,7 @@ AI Feedback can ingest and generate insights from multiple sources at the same t
 
 ##### To add a data source
 
-1. Open Amplitude and go to *AI Feedback > Add Source*.
+1. Open Amplitude and click **AI Feedback** and then **Add Source**.
 2. Select one of:
   * **Connect an integration**: Lets you connect to an application such as Zendesk or G2.
   * **Upload a file**: Lets you upload a static CSV or DOCX file.
@@ -84,7 +84,7 @@ Not all sources have additional settings. If your source doesn’t have any sett
 2. Click the **three-dot menu** icon next to the source you want to delete.
 3. Click **Confirm**.
 
-{{partial:admonition type="note" heading="deleting sources"}}
+{{partial:admonition type="note" heading="Deleting sources"}}
 Deleting a source deletes the previously analyzed feedback as well as preventing new feedback from that source. 
 {{/partial:admonition}}
 
@@ -92,14 +92,14 @@ Deleting a source deletes the previously analyzed feedback as well as preventing
 
 AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback automatically updates with additional insights. These insights align to the following categories:
 
-* **Feature requests**: Additional features your customers want.
-* **Complaints**: Issues and problems your customers experience.
-* **Loved features**: Features and functions that your customers enjoy.
-* **Brands mentioned**: Specific brands mentioned by your customers.
-* **Pain points**: Places within your product that are problematic or causing issues for customers. 
-* **Features mentioned**: Any features or functionality specifically called out by name by customers.
-* **Bugs**: Functionality issues experienced by customers.
-* **Key takeaways**: High-level understandings and insight about your products, features, or functionality.
+* **Feature Request**: Additional features your customers want.
+* **Complaint**: Issues and problems your customers experience.
+* **Loved Feature**: Features and functions that your customers enjoy.
+* **Brand**: Specific brands mentioned by your customers.
+* **Bug**: Functionality issues experienced by customers.
+* **Feature Mentioned**: Any features or functionality specifically called out by name by customers.
+* **Pain Point**: Places within your product that are problematic or causing issues for customers. 
+* **Takeaway**: High-level understandings and insight about your products, features, or functionality.
 
 Insights are automatically categorized based on AI Feedback’s analysis of your customer’s feedback. 
 
