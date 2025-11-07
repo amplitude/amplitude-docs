@@ -109,7 +109,7 @@ AI Feedback counts how many customers have the same feedback for the same piece 
 
 You can specify any time range you want to view insights throughout the history of your data sources.  
 
-You can also specify from which data sources you want to view insights. You can view insights from all data sources together or select combinations of data sources. For example, you might only want to view insights from all social media data sources to understand how your products are being discussed publicly. Or, you might only want to view insights from your customer service tickets to understand how your product is performing. 
+You can also specify from which data sources you want to view insights. You can view insights from all data sources together or select combinations of data sources. For example, you might only want to view insights from social media data sources to understand how your products are being discussed publicly. Or, you might only want to view insights from your customer service tickets to understand how your product is performing. 
 
 ## Working with insights
 
@@ -163,7 +163,7 @@ To ensure that the deletion is permanent and complete, note the following:
 
 AI Feedback follows your existing Amplitude project and role-based permissions. No new data access is granted. 
 
-Source connectors (for example Zendesk, Intercom, App Store/Google Play, Gong, G2/Trustpilot, Reddit/Discord/X) are authorized by you and scoped to your credentials using secure OAuth (or equivalent).
+You authorize the source connectors you want (for example: Zendesk, Intercom, App Store/Google Play, Gong, G2/Trustpilot, Reddit/Discord/X) and they're scoped to your credentials using secure OAuth (or equivalent).
 
 ## AI Feedback and LLM use
 
