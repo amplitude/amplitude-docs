@@ -22,8 +22,6 @@ Feedback events collect information about use cases such as:
 The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
 {{/partial:admonition}}
 
-AI Feedback is available to all customers with a paid Amplitude subscription. For more pricing details, go to [Pricing](https://amplitude.com/pricing).
-
 ## Feedback Event overview
 The Feedback event records user feedback and those events are what AI Feedback uses to create insights. 
 
@@ -45,7 +43,7 @@ Feedback events capture the following information:
 
 Before you can gain any insights from your customers, you must add at least one data source to Amplitude. A data source is your repository of customer feedback. Popular data sources include Zendesk, Salesforce, Reddit, and others. You can also upload individual CSV or DOCX files as data sources.
 
-For example, if your company is discussed on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
+For example, if your company generates discussions on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
 
 AI Feedback can ingest and generate insights from multiple sources at the same time.
 
