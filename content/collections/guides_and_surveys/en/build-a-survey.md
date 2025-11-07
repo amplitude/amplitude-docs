@@ -56,7 +56,7 @@ You can also combine survey responses with user properties. For example:
 * If `rating > 8` AND `subscription_tier = premium` then `Show survey asking for app store review`
 * If `rating < 5` AND `country = US` then `Show survey with US support contact information`
 
-For more information about conditional logic, including how to use it with buttons and guides, see [Conditional Logic](/docs/guides-and-surveys/conditional-logic).
+For more information about conditional logic, including how to use it with buttons and guides, go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic).
 
 ### Long answer
 
