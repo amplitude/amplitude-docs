@@ -20,7 +20,7 @@ A group is an object that a set of users might belong to—such as a company of 
 
 ### Feature availability
 
-This feature is available to users on Plus, Growth, and Enterprise plans.
+The Accounts add-on is available to purchase on Plus, Growth, and Enterprise plans.
 
 ## Before you begin
 
