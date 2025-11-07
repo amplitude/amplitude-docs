@@ -6,10 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/21037634182299-Interpret-y
 this_article_will_help_you:
   - 'Interpret the results of your Engagement Matrix chart'
   - 'Identify and examine clusters of data points'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104782
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632239
 landing: true
 landing_blurb: 'Interpret the results of your Engagement Matrix chart'
+academy_course:
+  - 1341ddad-3bd8-401d-b03e-f15bd2a341c4
 ---
 Before you begin, see [Engagement Matrix: see how users feel about your product](/docs/analytics/charts/engagement-matrix/engagement-matrix-discover) to learn how to create an engagement matrix chart.
 

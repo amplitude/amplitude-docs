@@ -7,9 +7,11 @@ this_article_will_help_you:
   - 'Understand the complete planning workflow using all the planning capabilities offered by Amplitude Data'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722895150
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632680
 landing_blurb: 'Learn the end-to-end Amplitude data planning process.'
+academy_course:
+  - b6249179-e517-4027-a0ff-619b3bd0106e
 ---
 Using Amplitude Data for planning helps ensure high-quality data from the start and reduces the need for clean-up later. This article will give you a sense of the complete workflow in Amplitude Data.
 

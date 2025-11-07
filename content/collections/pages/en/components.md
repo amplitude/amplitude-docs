@@ -7,47 +7,29 @@ author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1757629320
 ---
-```html
-<script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
-<script>
-  window.amplitude.init('AMPLITUDE_API_KEY', {
-    fetchRemoteConfig: true,
-    autocapture: true
-  });
-</script>
+{{partial:admonition type="note" heading="code block"}}
+```ts
+import { Experiment } from '@amplitude/experiment-js-client';
+
+// (1) Initialize the experiment client with Amplitude Analytics.
+const experiment = Experiment.initializeWithAmplitudeAnalytics(
+    'DEPLOYMENT_KEY'
+);
+
+// (2) Fetch variants and await the promise result.
+await experiment.fetch();
+
+// (3) Lookup a flag's variant.
+const variant = experiment.variant('FLAG_KEY');
+if (variant.value === 'on') {
+    // Flag is on
+} else {
+    // Flag is off
+}
 ```
+{{/partial:admonition}}
 
-```html
-<script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script><script>window.amplitude.init('AMPLITUDE_API_KEY', {"fetchRemoteConfig":true,"autocapture":false});</script>
-```
-## test
 
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
-
-More content **here**
-
-```swift
-// Basic boot with user ID
-amplitudeEngagement.boot("USER_ID")
-
-// Advanced boot with options
-
-let bootOptions = AmplitudeBootOptions(
-  user_id: "USER_ID",
-  device_id: "DEVICE_ID",
-  user_properties: ["key": "value"]
-)
-amplitudeEngagement.boot(options: bootOptions)
-```
+{{partial:admonition type="note" heading="inline code"}}
+version `0.8.0` is the version
+{{/partial:admonition}}

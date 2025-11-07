@@ -70,6 +70,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume.                                                                                                                                                                                                                | `false`                                                                                                                                           |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)       | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                                                                                                                                  | `DefaultTrackingOptions(sessions = true)`                                                                                                         |
 | `autocapture`                                                                      | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions.                                                                                                                                 | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture). |
+| `interactionsOptions`                                                              | `InteractionsOptions`. Configuration for granular control over frustration interaction tracking types (rage clicks and dead clicks).                                                                                                                                                                                     | `InteractionsOptions(rageClick = RageClickOptions(enabled = true), deadClick = DeadClickOptions(enabled = true))`                                |
 | `minTimeBetweenSessionsMillis`                                                     | `Long`. The amount of time for session timeout. The value is in milliseconds.                                                                                                                                                                                                                                            | `300000`                                                                                                                                          |
 | `serverUrl`                                                                        | `String`. The server url events upload to.                                                                                                                                                                                                                                                                               | `https://api2.amplitude.com/2/httpapi`                                                                                                            |
 | `serverZone`                                                                       | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config.                                                                                                                                                                                                             | `ServerZone.US`                                                                                                                                   |
@@ -283,10 +284,39 @@ val amplitude = Amplitude(
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
         +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+        +frustrationInteractions // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
     }
   )
 )
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL` or the `addAll()` method:
+
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.AutocaptureOption
+
+// Using AutocaptureOption.ALL constant
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = AutocaptureOption.ALL
+    )
+)
+
+// Or using addAll() method with builder
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            addAll()
+        }
+    )
+)
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` automatically includes `AutocaptureOption.SESSIONS`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOption.SESSIONS` option.
@@ -311,13 +341,29 @@ import java.util.Arrays;
 
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
 configuration.getAutocapture().addAll(Arrays.asList(
+    AutocaptureOption.SESSIONS,
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS
+    AutocaptureOption.SCREEN_VIEWS,
+    AutocaptureOption.ELEMENT_INTERACTIONS,
+    AutocaptureOption.FRUSTRATION_INTERACTIONS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL`:
+
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.AutocaptureOption;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().addAll(AutocaptureOption.ALL);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.getAutocapture()` automatically includes `AutocaptureOption.SESSIONS`.
 
 To prevent automatic session event capture, remove the `AutocaptureOption.SESSIONS` option from `autocapture`.
@@ -643,6 +689,58 @@ When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
 | `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
 
 {{/partial:collapse}}
+
+### Configure frustration interaction types
+
+Enabling `FRUSTRATION_INTERACTIONS` tracks both rage clicks and dead clicks. Use the `interactionsOptions` parameter to enable or disable each type individually.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.InteractionsOptions
+import com.amplitude.android.RageClickOptions
+import com.amplitude.android.DeadClickOptions
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions
+        },
+        interactionsOptions = InteractionsOptions(
+            rageClick = RageClickOptions(enabled = true),
+            deadClick = DeadClickOptions(enabled = false)
+        )
+    )
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.InteractionsOptions;
+import com.amplitude.android.RageClickOptions;
+import com.amplitude.android.DeadClickOptions;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.FRUSTRATION_INTERACTIONS);
+configuration.setInteractionsOptions(
+    new InteractionsOptions(
+        new RageClickOptions(true),
+        new DeadClickOptions(false)
+    )
+);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" title="Dead clicks require Session Replay"}}
+To track dead clicks, enable both Session Replay and frustration interactions.
+{{/partial:admonition}}
 
 ## User groups
 

@@ -28,7 +28,7 @@ Amplitude Activation's Iterable streaming integration enables you to forward you
 
 To configure streaming from Amplitude to Iterable, you need the following information from Iterable.
 
-**Iterable API Key**: The Iterable API Key used for authentication. See the [Iterable documentation](https://support.iterable.com/hc/en-us/articles/360043464871-API-Keys-#creating-api-keys) for help locating your API Key.
+**Iterable API Key**: The Iterable API Key used for authentication. Go to the [Iterable documentation](https://support.iterable.com/hc/en-us/articles/360043464871-API-Keys-#creating-api-keys) for help locating your API Key.
 
 ### Create a new sync
 
@@ -52,34 +52,34 @@ _This applies to both event and user forwarding. Transformed user properties are
       1. Select an Amplitude user property that corresponds to a Iterable property, from the left dropdown.
       2. Select the Iterable property, from the corresponding right dropdown.
 
-See the full list of [Iterable properties that are supported by Amplitude](#supported-iterable-properties).
+Click for the the full list of [Iterable properties that are supported by Amplitude](#supported-iterable-properties).
 
 ### Configure event forwarding
 
 Under **Send Events**, make sure the toggle is enabled ("Events are sent to Iterable") if you want to stream events to Iterable. When enabled, events are automatically forwarded to Iterable when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Iterable. _Transformed events aren't supported._
+1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Iterable. Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 {{partial:admonition type="warning" title=""}}
 Iterable requires that all events have an **Iterable ID** present. If you have selected any events to send to Iterable that may not have an **Iterable ID**, add a filter to send only events where the **Iterable ID** is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Iterable. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Iterable as [Iterable data fields](https://support.iterable.com/hc/en-us/articles/208183076-Field-Data-Types). _Transformed event properties and transformed user properties aren't supported._
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Iterable. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Iterable as [Iterable data fields](https://support.iterable.com/hc/en-us/articles/208183076-Field-Data-Types). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Configure user forwarding
 
 To stream user and property updates to Iterable, enable **Send Users**. This setting creates or updates users in Iterable when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates.
 
-You can optionally select user properties to send to Iterable in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Iterable data fields](https://support.iterable.com/hc/en-us/articles/208183076-Field-Data-Types). _This integration doesn't support transformed user properties_.
+You can optionally select user properties to send to Iterable in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Iterable data fields](https://support.iterable.com/hc/en-us/articles/208183076-Field-Data-Types). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
 
 ### Enable sync
 
-When satisfied with your configuration, at the top of the page toggle the **Status** to "Enabled" and click **Save**.
+When satisfied with your configuration, at the top of the page toggle the Status to **Enabled** and click **Save**.
 
 ## Supported Iterable properties
 
 - **User ID**
 - **Email**
-- Campaign ID
-- Template ID
+- **Campaign ID**
+- **Template ID**
 
