@@ -17,15 +17,17 @@ In Feature Experiment, use the Targeting settings to define your test users.
 
 ![](statamic://asset::help_center_conversions::experiment/targeting-test-users.png)
 
-Add users by `User ID` or `Device ID`, or using a cohort. Test users are assigned a variant, which Amplitude ensures they see each time they're exposed.
+Add users by `User ID` or `Device ID`, or using a cohort. Test users are assigned a variant, and that variant is what they experience when interacting with the experiment.
 
 ## Filter test users
 
+If you want to remove QA users or internal traffic from analysis because those users aren't representative of your customer base and may skew results.
+
 ![](statamic://asset::help_center_conversions::experiment/exclude-testers.png)
 
-If you want to remove QA users or internal traffic from analysis because those users aren't representative of your customer base and may skew results. To remove users from an analysis, click the **All exposed users* dropdown and select `Exclude testers`. This removes the users in the "Testing" section on the "Settings" tab from the analysis. 
+Click the **All exposed users** dropdown and select **Exclude testers**. 
 
-If you selected multiple targeting segments, analyze each segment individually because you may see a lift in one segment. Click the segment name in the "All Users" dropdown. This also filters testing users from your analysis
+If you selected multiple targeting segments, analyze each segment individually because you may experience a lift in one segment. Click the segment name in the All Users dropdown. This also filters testing users from your analysis.
 
 It can be helpful to investigate the impact of experiments on specific user segments. Experiments that aren't statistically significant can often contain a small group of users for which the result is statistically significant. Likewise, for statistically significant results, small segments of users can drive performance of the experiment.
 

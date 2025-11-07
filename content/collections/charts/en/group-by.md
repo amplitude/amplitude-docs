@@ -8,8 +8,10 @@ this_article_will_help_you:
   - 'Understand how Amplitude Analytics prioritizes group-by results'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720212375
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632930
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 In its basic form, Amplitude's group-by feature is a tool for categorizing events for aggregation. 
 
@@ -74,6 +76,8 @@ In [multiple hypothesis testing](/docs/feature-experiment/advanced-techniques/mu
 Group-bys provide a more exploratory analysis, and if you adjust for multiple hypothesis testings it will increase the difficulty in reaching statistical significance. If you think you have a false positive, try to split your experiment into to date ranges. Conduct all the hypothesis testing you want on one dataset, then try to reproduce those results on the second date range. Think of this like doing a [train-test split](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/). This is when you are training a machine learning model where you tune the hyperparameter on the training set and evaluate the model on the unseen test set to get an unbiased error estimate.
 
 ### Limitations
+
+We do not support group by and CUPED together. If you select these options, the non-group by value will have CUPED applied but the group by values will not have CUPED applied.
 
 If the value of the property you group-by changes between the exposure event and the metric event, you may notice a conversion rate higher than 100%. For example, if you group-by `Country` and view the row `Country = Spain`, the denominator is unique number of exposures in Spain and the numerator is people who did the metric event in Spain. 
 

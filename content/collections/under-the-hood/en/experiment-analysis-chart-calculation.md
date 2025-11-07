@@ -1,13 +1,15 @@
 ---
 id: c3d4aec1-92db-4f44-b847-19d6f31f1add
+published: false
 blueprint: under-the-hood
 title: 'Value calculation in Experiment Analysis charts'
 source: 'https://help.amplitude.com/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts'
 this_article_will_help_you:
   - 'Understand the inputs and formulas underlying Experiment Analysis charts'
   - 'Understand the counting logic Amplitude uses when calculating these values'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329186
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1757350329
+landing: false
 ---
 Knowing how the values in your Experiment Analysis charts are calculated can help you understand what your experiments are telling you, so you can avoid making costly interpretation errors.
 

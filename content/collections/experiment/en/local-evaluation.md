@@ -8,14 +8,14 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716333767
 ---
-Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation) in the SDK, saving you the overhead incurred by making a network request per user evaluation. The [sub-millisecond evaluation](/docs/feature-experiment/under-the-hood/performance-and-caching) is perfect for latency-minded systems which need to be performant at scale.
+Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation) in the SDK, saving you the overhead incurred by making a network request for each user evaluation. The [sub-millisecond evaluation](/docs/feature-experiment/under-the-hood/performance-and-caching) is engineered for latency-minded systems which need to be performant at scale.
 
 ## Targeting capabilities
 
 Local evaluation happens outside of Amplitude, which means advanced targeting and identity resolution powered by Amplitude Analytics isn't supported. That said, local evaluation allows you to perform consistent bucketing with target segments, which is often enough.
 
 {{partial:admonition type="warning" heading="Client-side local evaluation"}}
-When using client-side local evaluation it's important to note that all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has effectively been leaked to all clients, regardless of user.
+When using client-side local evaluation, all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has will be visible to all clients, regardless of user.
 {{/partial:admonition}}
 
 | <div class='big-column'>Feature</div> | Remote Evaluation | Local Evaluation |
@@ -29,7 +29,7 @@ When using client-side local evaluation it's important to note that all data use
 
 ### Cohort targeting
 
-Server-side SDKs can target cohorts if configured to do so. Only User IDs can be targeted by local evaluation cohorts.
+Server-side SDKs can target cohorts if configured to do so. Note that unly User IDs can be targeted by local evaluation cohorts.
 
 | SDK | Cohort Targeting | Version |
 | --- | :---: | --- |
@@ -57,13 +57,13 @@ The local evaluation Node.js SDK can run in edge worker/functions which support 
 Local evaluation SDKs track evaluations differently on the client-side vs on the server-side.
 
 - Client-side SDKs track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
-- Server-side SDKs track an **assignment event** (if configured to do so) when a user is evaluated.
+- Server-side SDKs track an [assignment event](/docs/feature-experiment/under-the-hood/event-tracking#automatic-assignment-tracking) (if configured to do so) when a user is evaluated.
 
 Server-side local evaluation experiments often set the Assignment event as a heuristic for Exposure.
 
 ### Performance
 
-The following results are for **a single flag evaluation**, and were collected over 10 executions of 10,000 iterations of evaluation with randomized user inputs evaluated for 1 flag configuration, selected at random out of 3 possible flag configurations.
+The following results are for a single flag evaluation, and were collected over 10 executions of 10,000 iterations of evaluation with randomized user inputs evaluated for 1 flag configuration, selected at random out of 3 possible flag configurations.
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |

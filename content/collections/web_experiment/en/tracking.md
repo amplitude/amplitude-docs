@@ -8,18 +8,18 @@ updated_at: 1729195928
 Web Experiment uses impression events for analysis and billing purposes. Impression events are tracked by the Web Experiment script through the [integration](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp). Tracking impression events is required for experiment analysis.
 
 {{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
 ## Impressions
 
-The impression event is the same as the Feature Experiment [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events), but has a different event type, `[Experiment] Impression`. Impression events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
+The impression event is the same as the Feature Experiment [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events), but has a different event type, `[Experiment] Impression`. Impression events contain the flag key and the variant of the flag or experiment that the user has been exposed to in the event properties.
 
-When Amplitude ingests an impression event, it uses the flag key and variant to **set or unset user properties** on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
+When Amplitude ingests an impression event, it uses the flag key and variant to set or unset user properties on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
 
 ### Impression  transformation
 
-Impression events are sent in one form and transformed into what you see in Amplitude on ingestion. The event type and event properties are modified for consistency with other Amplitude properties, and experiment user properties are set or unset for accurate experiment analysis. If you're tracking impressions through a 3rd party CDP, you will see the event in the CDP in it's pre-transformation state.
+Impression events are sent in one form and transformed into Amplitude-standard impressions upon ingestion. The event type and event properties are modified for consistency with other Amplitude properties. Experiment user properties are set or unset for accurate experiment analysis. If you're tracking impressions through a 3rd party customer data platform (CDP), the event is recorded in the CDP in it's pre-transformation state.
 
 | Property Type | Pre-transformation | Post-transformation |
 | --- | --- | --- |

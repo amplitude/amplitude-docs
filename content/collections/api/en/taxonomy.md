@@ -1506,18 +1506,21 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-prope
 POST /api/2/taxonomy/event-property/EVENT_PROPERTY/restore HTTP/1.1
 Host: amplitude.com
 Authorization: Basic {api-key}:{secret-key} # credentials must be base64 encoded
+
+event_type=EVENT_TYPE
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-{{partial:collapse name="Example: Delete an event property"}}
-This example restores the event property "Completed Task".
+{{partial:collapse name="Example: Restore an event property"}}
+This example restores the event property "Completed Task" for the "Onboard Start" event.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property/Completed Task/restore' \
---header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
+--data-urlencode 'event_type=Onboard Start'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -1525,6 +1528,8 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-prope
 POST /api/2/taxonomy/event-property/Completed Task/restore HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+
+event_type=Onboard%20Start
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1537,6 +1542,12 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `event_property`                   | <span class="required">Required</span>. The event property name. |
 
+#### Body parameters
+
+| <div class="big-column">Name</div> | Description                                                      |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| `event_type`                       | <span class="optional">Optional</span>. String. The name of the event type. When included, restores the event property for the specified event type. When omitted, restores the shared event property. |
+
 #### Behavior
 
 | Event property   | Behavior in Amplitude          |
@@ -1544,9 +1555,16 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 | `deleted` | Restores the event property |
 | `not deleted` or `not found` | Returns an error|
 
-#### 200 OK response
+{{partial:admonition type="note" heading="Deleted properties and the GET endpoint"}}
+The [Get event properties](#get-event-properties) endpoint doesn't return deleted properties. If you try to create an event property that exists but is deleted, the [Create event property](#create-an-event-property) endpoint returns a `409 Conflict` error indicating the property already exists. To work with deleted properties:
 
-A successful request returns a `200 OK` status and a JSON body.
+- Use this restore endpoint to restore a deleted property
+- Check for `409 Conflict` errors when creating properties, which may indicate the property exists but is deleted
+{{/partial:admonition}}
+
+#### 201 OK response
+
+A successful request returns a `201 OK` status and a JSON body.
 
 ```json
 {

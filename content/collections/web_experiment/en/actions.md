@@ -5,12 +5,12 @@ title: 'Web Experiment actions'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195880
 ---
-Actions define how variants modify your site. Actions relate to variants rather than a specific page, and can be scoped to specific [Pages](/docs/web-experiment/pages) to control exactly where they apply.
+Actions define how variants modify your site. Actions relate to variants rather than a specific page, and are applied to specific [Pages](/docs/web-experiment/pages) to control exactly where they apply.
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
 
 {{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
 {{/partial:admonition}}
 
 ## Element changes
@@ -66,15 +66,15 @@ Researchers have observed similar effects: if treatment slows performance, more 
 ## Custom code
 
 {{partial:admonition type="note"}}
-Custom code is available on **Growth** and **Enterprise** plans only.
+Custom code is available on Growth and Enterprise plans only.
 {{/partial:admonition}}
 
 Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in ways the visual editor doesn't support.
 
-Custom code can be scoped to specific [Pages](/docs/web-experiment/pages) using the **"Apply to"** dropdown, allowing you to run different code depending on which Page is active.
+You apply custom code to specific [Pages](/docs/web-experiment/pages) using the **Apply to** dropdown, allowing you to run different code depending on which Page is active.
 
 {{partial:admonition type="tip"}}
-Custom code can be used in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text, then a non-technical user could use the visual editor to edit the placeholder text without touching the custom code.
+You can use custom code in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text. A non-technical user could then use the visual editor to edit the placeholder text without touching the custom code.
 {{/partial:admonition}}
 
 Web Experiment applies custom code to your site in the following order:
@@ -82,7 +82,7 @@ Web Experiment applies custom code to your site in the following order:
 1. Adds **CSS** in a `<style>` tag in the page's `<head>`.
 2. Parses **HTML** into a DOM element.
 3. Wraps **JavaScript** in a function, and adds it to a `<script>` tag in the page's `<head>`.
-4. Calls the wrapped **JavaScript** function and passes parsed **HTML** and utils as arguments.
+4. Calls the wrapped **JavaScript** function and passes parsed HTML and utilities as arguments.
 
 ### JavaScript
 
@@ -91,7 +91,7 @@ Web Experiment wraps any custom JavaScript in a function, and calls it when the 
 - `html`: The custom HTML code parsed as a DOM element object.
 - `utils`: An object that contains utility functions you can use in your custom code.
 
-#### Utils
+#### Utilities
 
 Web Experiment provides the following utilities:
 
@@ -99,9 +99,7 @@ Web Experiment provides the following utilities:
 
 - `remove: (()=> void) | undefined`: A function that you can set inside the JavaScript you inject. Web Experiment calls this function on page change, when Amplitude reevaluates experiments and reapplies variants.
 
-    This function can be useful for cleaning up changes to the page in single page apps, where the page doesn't fully reload.
-
-    For example, if you inject an HTML element on a specific page, set this function to remove that element when the page changes.
+    This function can be useful for cleaning up changes to the page in single page apps, where the page doesn't fully reload. For example, if you inject an HTML element on a specific page, set this function to remove that element when the page changes.
 
 ### HTML
 
@@ -114,7 +112,7 @@ Custom CSS styles you can use to manipulate existing CSS classes and styles, or 
 ### Examples
 
 {{partial:admonition type="tip"}}
-Generative AI like ChatGPT or equivalents are quite good at writing HTML and CSS for simple elements. The modal and banner examples below were both initially generated initially by ChatGPT, then modified.
+Generative AI like ChatGPT or equivalents can create HTML and CSS for simple elements. The modal and banner examples below were both initially generated initially by ChatGPT, then modified.
 {{/partial:admonition}}
 
 #### Insert an element

@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-ap
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
 
-The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
+The Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
 
 ## Regions
 
@@ -47,13 +47,28 @@ The Evaluation API lets you retrieve variant assignment data for users. When you
 
 ### Evaluation response
 
-The response body is a JSON object keyed by the flag key. The value for a given flag key is the variant assigned to the user. The variant contains its identification `key` (a.k.a value) and an optional payload containing a JSON element.
+The response body is a JSON object keyed by the flag key. The value for a given flag key is the variant assigned to the user. The variant contains its identification `key` (a.k.a value) and an optional payload containing a JSON element. For each flag, the variant object contains:
+
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| `key` | `string` | Required | The assigned variant key for the flag/experiment. |
+| `payload` | `any` | Optional | The variant's payload (if set). Can be any valid JSON value. |
+| `expKey` | `string` | Optional | The expeirment key is used to differentiate between different runs of the same experiment. |
+| `evaluationId` | `string` | Optional | The evaluation ID is used for debugging purposes. Can be ignored for now. |
+
+{{partial:admonition type="warning" heading="Unexpected response fields."}}
+The variant object for each flag may be updated to contain additional response fields. Your code must be able to handle these additional fields gracefully.
+{{/partial:admonition}}
+
+For example
 
 ```json
 {
-    "<flag_keys>": {
-        "key": "<variant_value>",
-        "payload": <variant_payload>
+    "my-experiment": {
+        "key": "treatment",
+        "payload": { "price": 99.99, "discount": "25%" },
+        "expKey": "exp-1",
+        "evaluationId": "224681772811_1760563672659_3681"
     },
     // ...
 }

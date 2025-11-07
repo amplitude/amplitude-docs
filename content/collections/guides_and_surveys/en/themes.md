@@ -58,7 +58,29 @@ In this example, the primary color is `#48705C`.
 
 ### Typography
 
-Set the default type face of your theme. Choose from the [Google font library](https://fonts.google.com/), or specify a custom type face you've already defined on your site.
+Set the default typeface of your theme. Choose from the [Google font library](https://fonts.google.com/), or specify a custom typeface you've already defined on your site.
+
+To use a font natively in your mobile Guides and Surveys, be sure to include the full font family in your app project and use a consistent file name for the font.
+
+#### Android
+- Place font files in the `/res/font` directory of your project.  
+- Use a clear and consistent naming convention:
+  - `[fontNameWithoutSpaces]_[style].[fileExtension]`
+  - For example: `adventpro_italic.ttf`
+- Supported formats: **XML**, **TTF**.  
+- After adding, the font can be referenced directly in your theme setup.  
+
+For more information, go to Android's [Font resources](https://developer.android.com/guide/topics/resources/font-resource).
+
+#### iOS
+- Add font files to your Xcode project.  
+- Use a clear and consistent naming convention:
+  - `[FontName]-[Style].[fileExtension]`
+  - For example: `Lora-Italic.ttf`
+- Register the fonts in your app's `.plist` file.  
+- Supported formats: **TTF**, **OTF**.  
+
+For more information, go to Apple's [Adding a custom font to your app](https://developer.apple.com/documentation/uikit/adding-a-custom-font-to-your-app).  
 
 {{partial:admonition type="note" heading="Font previews"}}
 Custom fonts you add that aren't part of Google Fonts don't appear in the theme preview.
@@ -143,3 +165,9 @@ Select the animation that each widget type uses to appear on screen, along with 
 Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
+
+## Advanced customization with Custom CSS
+
+[Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
+
+Amplitude recommends using themes for most styling. Use Custom CSS when themes don't provide the control you need.
