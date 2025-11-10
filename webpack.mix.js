@@ -18,6 +18,8 @@ mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-table.js', 'public/docs/js')
 //mix.js('resources/docs/js/interactive-flags-table.js', 'public/docs/js')
 mix.js('resources/docs/js/statuspage.js', 'public/docs/js')
+mix.js('resources/docs/js/glossary.js', 'public/docs/js')
+mix.js('resources/docs/js/rbac.js', 'public/docs/js')
 // mix.js('resources/docs/js/prism.js', 'public/docs/js')
 
 
@@ -53,6 +55,9 @@ mix.postCss('resources/docs/css/dracula-prism.css', 'public/docs/css', [
 //     'resources/docs/js/components',
 //     'public/docs/js/components'
 // )
+
+// Enable Vue.js support
+mix.vue({ version: 3 });
 
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({
