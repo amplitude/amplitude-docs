@@ -115,16 +115,16 @@ Your metrics table must include specific required fields and can optionally incl
 | `user_id`   | User, device, or group identifier                | `user_12345`                           |
 | `insert_id` | An optional unique identifier for deduplication. | `51a87950-b35d-4a2f-b919-af92f00f75dd` |
 
-{{partial:admonition type=”note” title=”Time conversion”}}  
-Amplitude requires that the incoming time is represented in milliseconds from UNIX epoch. Use Snowflake’s built-in conversion functions or other tooling in your data pipeline to convert to this format before Amplitude ingests the data.  
+{{partial:admonition type="note" title="Time conversion"}}  
+Amplitude requires that the incoming time is represented in milliseconds from Unix epoch. Use Snowflake’s built-in conversion functions or other tooling in your data pipeline to convert to this format before Amplitude ingests the data.  
 {{/partial:admonition}}
 
 ### Metric fields
 
 | Field Type | Description                              | Example        |
 | --------- | :--------------------------------------- | ------------- |
-| Metric     | Numeric value (integer or decimal)       | 150.25         |
-| Dimension  | String or boolean for filtering/grouping | "active," true |
+| Metric     | Numeric value (integer or decimal)       | `150.25`         |
+| Dimension  | String, boolean, or number for filtering/grouping | `"active"`, `true`, `10` |
 
 ### Example
 
