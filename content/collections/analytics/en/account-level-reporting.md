@@ -20,20 +20,18 @@ A group is an object that a set of users might belong to—such as a company of 
 
 ### Feature availability
 
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
-
-* Use of this feature requires the Accounts add-on.
+The Accounts add-on is available to purchase on Plus, Growth, and Enterprise plans.
 
 ## Before you begin
 
-* With the Accounts add-on, you are able to instrument up to five different group types per project. You can manage and remove groups using Amplitude Data.
+* With the Accounts add-on, you can instrument up to five different group types per project. You can manage and remove groups using Amplitude Data.
 * Account-level properties have a limit of 1000 per project.
 * Changes to account groups and group properties apply to new data moving forward, and don't affect historical data.
-* To [instrument account-level reporting in Amplitude, see our Help Center documentation](/docs/analytics/account-level-reporting-setup).
+* To [instrument account-level reporting in Amplitude, refer to the Help Center documentation](/docs/analytics/account-level-reporting-setup).
 
 ## Group-level reporting: An overview
 
-Once you've [set up groups](/docs/analytics/account-level-reporting-setup), Amplitude includes them in a drop-down list in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments). From there, you can report at the group level instead of the individual user level.
+After you [set up groups](/docs/analytics/account-level-reporting-setup), Amplitude includes them in a drop-down list in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments). From there, you can report at the group level instead of the individual user level.
 
 ![account_level_reporting_1.png](/docs/output/img/analytics/account_level_reporting_1.png)
 
@@ -76,7 +74,7 @@ There are two usages of groups in experiment:
 1. What property do you want to randomize on  
 2. What unit you want to analyze on  
 
-For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you analyze an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they're part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
+For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you analyze an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they're part of the same company. Refer to [how to evaluate groups and group properties](/docs/feature-experiment/data-model#users) for more details. Refer to [setting the bucketing unit](/docs/feature-experiment/overview) for configuration instructions.
 {{/partial:admonition}}
 
 ### Create group-level behavioral cohorts
@@ -133,14 +131,14 @@ You can turn your KPIs into dynamically updating group properties. Add group pro
 
 	Dynamic properties aren't supported on frequency and property distribution metrics, or on custom formulas.
 
-2. **Determine time interval:** Set the time interval you would like to update the group property on. For example, a rolling window of “last 7 day active users” updates every day, while “weekly active users” updates once every calendar week.
+2. **Determine time interval:** Set the time interval you would like to update the group property on. For example, a rolling window of "last 7 day active users" updates every day, while "weekly active users" updates after every calendar week.
 	
     Dynamic properties aren't supported on static time ranges.
 
 3. **Name group property:** Choose your group type and name for the group property.
 
-	Editing the chart used to create the dynamic group property doesn't affect the property.
+	Editing the chart that creates the dynamic group property doesn't affect the property.
 
 ### Create group properties using the Salesforce integration
 
-To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.
+To learn how to create **group properties** using Amplitude's Salesforce integration, refer to [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.

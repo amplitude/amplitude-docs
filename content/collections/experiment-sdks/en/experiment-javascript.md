@@ -244,7 +244,9 @@ Configure the SDK client once during initialization.
 {{partial:collapse name="Configuration"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false` |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `LogLevel.Disable`, `LogLevel.Error`, `LogLevel.Warn`, `LogLevel.Info`, `LogLevel.Debug`, `LogLevel.Verbose`. See [Custom logging](#custom-logging) for details. | `LogLevel.Error` |
+| `loggerProvider` | Custom logger implementation. Must implement the `Logger` interface. See [Custom logging](#custom-logging). | `null` (uses default ConsoleLogger) |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage` |
@@ -675,5 +677,91 @@ To use your custom HTTP client, set the `httpClient` [configuration](#configurat
 ```typescript
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     httpClient: new CustomHttpClient(),
+});
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `Logger` interface to integrate your own logging solution.
+
+### Log levels
+
+- `LogLevel.Disable` - No logging
+- `LogLevel.Error` - Errors only (default)
+- `LogLevel.Warn` - Errors and warnings
+- `LogLevel.Info` - Errors, warnings, and informational messages
+- `LogLevel.Debug` - Errors, warnings, info, and debug messages
+- `LogLevel.Verbose` - All messages including verbose details
+
+```typescript
+import { Experiment, LogLevel } from '@amplitude/experiment-js-client';
+
+// Only log errors
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Error
+});
+
+// Log errors and warnings
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Warn
+});
+
+// Log everything (verbose)
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Verbose
+});
+```
+
+### Custom logger
+
+Implement the `Logger` interface to use your own logging solution:
+
+```typescript
+import { Experiment, Logger, LogLevel } from '@amplitude/experiment-js-client';
+
+// Implement the Logger interface
+class CustomLogger implements Logger {
+  error(message?: any, ...optionalParams: any[]): void {
+    // Send errors to your logging service
+    myLoggingService.error(message, ...optionalParams);
+  }
+
+  warn(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.warn(message, ...optionalParams);
+  }
+
+  info(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.info(message, ...optionalParams);
+  }
+
+  debug(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.debug(message, ...optionalParams);
+  }
+
+  verbose(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.verbose(message, ...optionalParams);
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  loggerProvider: new CustomLogger(),
+  logLevel: LogLevel.Warn
+});
+```
+
+### Debug flag (deprecated)
+
+The `debug` configuration flag is deprecated. Use `logLevel` instead.
+
+```typescript
+// Deprecated: Sets logLevel to Debug
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  debug: true
+});
+
+// Preferred: Use logLevel instead
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Debug
 });
 ```
