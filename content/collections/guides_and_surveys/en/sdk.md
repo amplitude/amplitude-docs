@@ -53,6 +53,16 @@ For additional configuration, supply `InitOptions` to the `plugin` function. Go 
 After the installation steps are complete, by default all Guides and Surveys events are sent to your project.
 {{/partial:admonition}}
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
+
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
+
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
+
 Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 You should only call `init` and `boot` if you (a) want to use a proxy; (b) want to customize the event handling via the `integrations` option. You can learn more about using a proxy [here](/docs/guides-and-surveys/proxy). You can find details about the `integrations` option [here](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers).
@@ -699,3 +709,5 @@ Ensure the API key you provide:
 
 - is the same key you use to initialize the Browser SDK
 - belongs to the project that contains the Guides and Surveys configuration
+
+Using different API keys for Guides & Surveys and Analytics causes the SDK to fetch guides and surveys from the wrong project and results in incomplete or mismatched analytics data. Always use the same API key for both SDKs to ensure they're tied to the same Amplitude project.

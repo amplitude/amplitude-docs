@@ -27,8 +27,8 @@ Remote evaluation targeting and identity resolution both use Amplitude Analytics
 | [Consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) | ✅ | ✅ |
 | [Individual inclusions](/docs/feature-experiment/implementation#individual-inclusions) | ✅ | ✅ |
 | [Targeting segments](/docs/feature-experiment/implementation#targeting-segments) | ✅ | ✅ |
-| [Amplitude ID resolution](##amplitude-id-resolution) | ✅ | ❌ |
-| [User enrichment](##user-enrichment) | ✅ | ❌ |
+| [Amplitude ID resolution](#amplitude-id-resolution) | ✅ | ❌ |
+| [User enrichment](#user-enrichment) | ✅ | ❌ |
 | [Sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing) | ✅ | ❌ |
 
 ## Implementation

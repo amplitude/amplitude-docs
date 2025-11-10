@@ -112,7 +112,7 @@ You can filter the All Cited Sources page by topic, AI model, brands, and group 
 
 The My Website Pages content displays information about how your own website is referenced and cited. This information not only includes AI chat references but also search engine traffic. The page displays metrics for:
 
-*** Total cited pages**: The total number of website pages cited. 
+* **Total cited pages**: The total number of website pages cited. 
 * **Overall search engine traffic**: The total amount of search engine traffic for all website pages.
 * **Overall AI chat traffic**: The total number of AI chat traffic for all website pages.
 * **Total errors**: The total number of website pages with errors.
