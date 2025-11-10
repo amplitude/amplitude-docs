@@ -11,7 +11,7 @@ Persistent properties are event properties to related to metrics and events beyo
 
 For example, a customer clicks a Facebook add to reach your website. Clicking the add generates the property `utm_source = facebook`. By making that property value persisted, you can specify that you want to apply that value to all subsequent clicks your customer makes on your website. This means that you know which products are sold, which pages are visited, how long the customers stayed on your site, and so on, based on the visit that originated from that Facebook ad.
 
-Persistence is applied on a property level. 
+You can set the persistence to any length of time you want. Using the previous example, you could set the persistence for the `utm_source = facebook` property for seven (7) days. 
 
 Persistences relies on the following concepts:
 
@@ -26,8 +26,45 @@ For example, you have a customer who visits your site through a Facebook ad, by 
 . 
 You can set the allocation to be one of: 
 
-* **Most recent**:
-* **Original**: 
-* **All**:
-* **First known**:
-* **Last known**:
+* **Most recent**: The latest value, the one most recently received, is used. 
+* **Original**: The first value received is used and never updated.
+* **All**: Every value received gets credit simultaneously.
+* **First known**: The earliest value received is applied to all events, even ones that happened before the value was captured.
+* **Last known**: The final value received is applied to all events, even ones that happened before the value was captured. 
+
+## Expiration
+
+Expiration when you want a specific property persisted and available for allocation. This is typically expressed as how long you want a value to receive credit for the property. 
+
+You can set the expiration in the following ways:
+
+* **Session**: The value expires at the end of a session.
+* **User**: Value does not expire because it's tied to the user, not a time limit. 
+{{partial:admonition type="note" heading="User time limit"}}
+Although the User expiration setting doesn't expire, there is a functional limit of about 365 days to this setting.
+{{/partial:admonition}}
+* **Custom Time**: The value expires after a specific period of time such as 24 hours, 30 days, 90 minutes, and so forth.
+* **Event**: The value expires after a specific event occurs. For example, the expiration event could be a purchase or lead submission. Expiration events are only available for Original and Most Recent allocation settings. 
+
+### Allocation and expiration example
+
+The following example describes how different allocation and expiration settings can affect the persistent property. 
+
+In this example, your customer has visited your website three times in a week and has made a purchase. The property you want to persist is `utm_source`. This means that you want to track where how the customer arrived at your website.
+
+* Day 1: User clicks Facebook ad `utm_source = "facebook"`.
+* Day 2: User returns to your website by typing your URL directly `utm_source = "(direct)"`.
+* Day 5: User clicks a Google ad `utm_source = "google"`.  
+* Day 7: User completes a purchase.
+
+The different allocation and expiration settings generate the following persisted (credited) values:
+
+| Allocation |  Expiration  | Purchase credited to  |
+|   -----   |   -----   |   -----   |
+|   Most Recent |   7 days  |   Google (last value within the date window)  |
+|   Original    |   7 days  |   Facebook (fist value, never overwritten)    |
+|   All |   7 days  |   Facebook, Direct, and Google (all three values) |
+|   Most Recent | Session   |   Google (if purchase happened in same session as google add) |
+|   Most Recent |   3 days  |   Google (Facebook and Direct fall outside the date window)   |
+
+
