@@ -172,11 +172,15 @@ tree:
         id: d4986b6d-1800-4495-b26a-27c9c97485e2
         entry: 06feb1be-15e3-419a-95ea-85a497dc07f5
       -
-        id: a83fe580-968c-432e-af15-781b2d7373fa
-        entry: 51a87950-b35d-4a2f-b919-af92f00f75dd
-      -
-        id: 8ecb2732-3648-4d1f-a279-8851bada72c0
-        entry: d8d5e604-10a9-40e7-9d76-752e02df08fd
+        id: b4899aad-a4fc-48eb-b32e-9d556afdc195
+        title: 'Warehouse Metrics'
+        children:
+          -
+            id: a83fe580-968c-432e-af15-781b2d7373fa
+            entry: 51a87950-b35d-4a2f-b919-af92f00f75dd
+          -
+            id: 8ecb2732-3648-4d1f-a279-8851bada72c0
+            entry: d8d5e604-10a9-40e7-9d76-752e02df08fd
   -
     id: 7318ab4d-f08a-4c62-8dc1-bd1c642934dc
     title: Activation
