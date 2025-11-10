@@ -81,6 +81,16 @@ When documenting features from GitHub PRs, always verify the actual code impleme
 2. Review the code diff again
 3. Verify your documentation matches the final implementation
 
+**Distinguish user-facing APIs from plugin lifecycle hooks**: When documenting new SDK methods, verify whether the API is:
+- **User-facing**: Users call the method directly (e.g., `amplitude.reset()`, `amplitude.track()`)
+- **Plugin lifecycle hook**: Plugins implement the method, SDK calls it automatically (e.g., `plugin.onReset()`, `plugin.setup()`, `plugin.teardown()`)
+
+Check the code diff to understand the pattern:
+- User-facing APIs are methods on the client class (e.g., `BrowserClient`)
+- Plugin lifecycle hooks are optional methods in the Plugin interface that get called by the timeline/SDK
+
+**Example**: PR #1393 added `onReset()` as a plugin lifecycle hook (not `amplitude.onReset()`). The implementation shows `plugin.onReset?(): Promise<void>` in the Plugin interface, and `timeline.onReset()` calls all registered plugins' onReset methods. This should be documented in the plugin lifecycle table alongside `setup()`, `execute()`, and `teardown()`, not as a user-facing listener API.
+
 **Example**: PR #1348 initially appeared to add `remoteConfigServerUrl` but the final implementation used a nested `remoteConfig.serverUrl` structure. The PR comments revealed this change, and the code diff confirmed the nested structure.
 ## Maintaining Document Structure and Hierarchy
 
