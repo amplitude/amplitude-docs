@@ -2,10 +2,11 @@
 id: 7346a8c9-efe7-48e5-a2df-28b1da5300a0
 blueprint: account-management
 title: 'Role-based Access Controls (RBAC)'
-landing: false
+landing: true
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758821106
+updated_at: 1762801028
+landing_blurb: 'Manage who can access features within your Amplitude Org and the actions they can perform.'
 ---
 Role-based Access Controls (RBAC) lets you manage who can access specific areas of Amplitude and the actions they can perform in those areas. By offering granular access controls, your Amplitude administrators can scale Amplitude adoption and prevent unauthorized actions.
 
