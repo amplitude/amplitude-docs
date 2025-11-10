@@ -115,7 +115,7 @@ Your metrics table must include specific required fields and can optionally incl
 | `user_id`   | User, device, or group identifier                | `user_12345`                           |
 | `insert_id` | An optional unique identifier for deduplication. | `51a87950-b35d-4a2f-b919-af92f00f75dd` |
 
-{{partial:admonition type="note" title="Time conversion"}}  
+{{partial:admonition type="note" heading="Time conversion"}}  
 Amplitude requires that the incoming time is represented in milliseconds from Unix epoch. Use Snowflake’s built-in conversion functions or other tooling in your data pipeline to convert to this format before Amplitude ingests the data.  
 {{/partial:admonition}}
 
