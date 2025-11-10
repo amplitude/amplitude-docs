@@ -101,7 +101,7 @@ On Snowflake Standard Edition, the maximum retention time is one day. Set your s
 
 ### Connect and configure
 
-Follow the instructions in [Snowflake Data Import ](docs/data/source-catalog/snowflake#add-and-configure-the-snowflake-source) to connect to your Snowflake instance.
+Follow the instructions in [Snowflake Data Import ](/docs/data/source-catalog/snowflake#add-and-configure-the-snowflake-source) to connect to your Snowflake instance.
 
 ## Data specifications
 
