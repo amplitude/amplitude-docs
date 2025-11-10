@@ -64,7 +64,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 5. In the *Snowflake Credentials For Amplitude* section, enter the following information:
 
    - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, before 'snowflakecomputing.com'.
-   - **Warehouse**: The warehouse Amplitude uses to load the data. **Use a dedicated warehouse for Amplitude data to prevent load capacity issues with other Snowflake integrations.** Sharing a warehouse can disrupt your other Snowflake operations.
+   - **Warehouse**: The warehouse Amplitude uses to load the data. Use a dedicated warehouse for Amplitude data to prevent load capacity issues with other Snowflake integrations. Sharing a warehouse can disrupt your other Snowflake operations.
    - **Database**: The database where Amplitude stores data. Dedicate this database specifically to Amplitude data.
    - **Role**: The role that the connection uses to write this data. The default value of role is `AMPLITUDE` only.
    - **Username**: The username Amplitude uses to connect to the Snowflake account.
