@@ -1,15 +1,15 @@
 ---
 id: 51a87950-b35d-4a2f-b919-af92f00f75dd
 blueprint: data
-title: 'Warehouse Metrics'
+title: 'Warehouse Metrics Overview'
 this_article_will_help_you:
   - 'Import precomputed metrics from your data warehouse into Amplitude'
   - 'Use warehouse-defined metrics in experiments and analytics'
   - 'Maintain consistency between your warehouse and Amplitude metrics'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730678400
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1762800477
 ---
 Warehouse Metrics enable you to import precomputed metrics directly from your data warehouse into Amplitude, ensuring consistency between your source of truth and your analytics.
 
@@ -42,9 +42,11 @@ Warehouse Metrics support both identified users (`user_id`) and anonymous users 
 Warehouse Metrics supports the following aggregation types:
 
 - **Sum**: Total of all values
-- **Average**: Mean value across users
-- **Min**: Minimum value (new)
-- **Max**: Maximum value (new)
+- **User Average**: Mean value across users
+- **Min**: Minimum value
+- **Max**: Maximum value
+
+For detailed explanations of each calculation type with examples and use cases, review [Warehouse Metric calculations](/docs/data/warehouse-metric-calculations).
 
 ## Data types
 
@@ -294,7 +296,7 @@ No. Warehouse Metrics have separate limits based on operations (insert/update/de
 
 ## Related documentation
 
+- [Warehouse Metric calculations](/docs/data/warehouse-metric-calculations) - Understand Sum, User Average, Min, and Max calculations
 - [Profiles](/docs/data/profiles) - Import user profile data from your warehouse
 - [Snowflake Data Import](/docs/data/source-catalog/snowflake) - Detailed Snowflake connection guide
 - [Warehouse-native Amplitude](/docs/data/warehouse-native/overview) - Run analyses directly on warehouse data
-
