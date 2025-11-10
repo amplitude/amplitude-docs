@@ -10,13 +10,13 @@ updated_at: 1750443681
 ## 1.6.0 (Android, iOS, React Native) \[2025-11-07\]
 
 ### ✨ Features
-- Feat: proxy support (GSDK-630) (see https://amplitude.com/docs/guides-and-surveys/proxy) \[android, ios\]
+- Feat: proxy support (GSDK-630) (go to https://amplitude.com/docs/guides-and-surveys/proxy) \[android, ios\]
 - Feat: support 4 new popover Guide positions (top-center, bottom-center, left-center, right-center) (FOO-2639) \[android, ios\]
 
 ### 🐛 Fixes
 - Fix: add debug logging to all SDK methods \[android, ios\]
 - Fix: proper handling of null or blank user IDs on boot (GSDK-681) \[android\]
-- Fix: theming fixes (incorrect colors, text alignment, popover Guide width, etc.) (GSDK-671) \[android\]
+- Fix: theming fixes (incorrect colors, text alignment, popover Guide width, and so forth.) (GSDK-671) \[android\]
 - Fix: when pin target scrolls offscreen, guide should be displayed again when target re-appears (GSDK-651) \[android\]
 - Fix: on tablets, modal carousel max width in theme is used, rather than device's max-width (GSDK-633, GSDK-616) \[ios, android\]
 - Fix: stop showing previously previewed guide when initiating a new preview (GSDK-595) \[ios\]
