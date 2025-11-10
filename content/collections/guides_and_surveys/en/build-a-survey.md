@@ -35,22 +35,28 @@ Click the gear icon in the rating block to access more settings.
 
 #### Conditional logic
 
-Unlike guides, surveys often require dynamic responses based on user input. Conditional logic supports these use cases.
-
-On each step of a survey, you can add one or more conditions that consider the entered rating, and enable you to trigger an action if the rating meets the condition.
+Conditional logic enables you to create dynamic survey experiences based on user responses and user properties. On each step of a survey, you can add one or more conditions that trigger different actions based on how users answer or their characteristics.
 
 Use conditional logic to:
 
 * **Trigger actions based on responses**: Change what happens next depending on how a user answers.
-* **Branch survey paths**: Users who give a low rating might get a follow-up question asking why.
-* **Personalized experiences**: Show different questions or steps based on previous responses.
+* **Branch survey paths**: Users who give a low rating might get a follow-up question asking why, while high ratings advance to a different step.
+* **Personalized experiences**: Show different questions or steps based on previous responses or user properties.
+* **Combine conditions**: Use both survey responses and user properties together to create sophisticated branching logic.
 
 For example, if you have a question with a five point scale, you can use the following logic:
 
-* If `rating < 4` then `Show step to ask what went wrong`
-* If `rating > 3` then `Show step with a 'thank you' message`
+* If `rating < 4` then `Go to step to ask what went wrong`
+* If `rating > 3` then `Go to step with a 'thank you' message`
 
 This logic asks a followup question to users who gave a 1-3, and shows a thank you message to users who gave a 4 or 5.
+
+You can also combine survey responses with user properties. For example:
+
+* If `rating > 8` AND `subscription_tier = premium` then `Show survey asking for app store review`
+* If `rating < 5` AND `country = US` then `Show survey with US support contact information`
+
+For more information about conditional logic, including how to use it with buttons and guides, go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic).
 
 ### Long answer
 

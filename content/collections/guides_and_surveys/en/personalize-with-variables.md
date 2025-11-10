@@ -50,6 +50,10 @@ To set user properties, use the [`_setUserProperties`](/docs/guides-and-surveys/
 Amplitude autopopulates `user_id` and `device_id` for you. These variables are always available without additional setup.
 {{/partial:admonition}}
 
+{{partial:admonition type="tip" heading="User properties in conditional logic"}}
+User properties can also power [conditional logic](/docs/guides-and-surveys/conditional-logic), enabling you to create different button actions or survey paths based on user characteristics. For example, direct premium users to different content than free users.
+{{/partial:admonition}}
+
 ##### To include personalized variables into a guide or survey
 
 1. Open an existing guide or survey or create a new one.

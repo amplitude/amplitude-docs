@@ -11,6 +11,8 @@ landing_blurb: "See how you can use guides, and the templates available to you."
 ---
 Guides are versatile, in-product messages that gently nudge your users toward completing specific tasks, exploring new features, or learning more about your product. Unlike traditional popups that can feel interruptive, guides focus on being helpful and timely. Guides use behavioral triggers, strike detection, and rate-limiting mechanisms to avoid annoying users.
 
+Guides support [conditional logic](/docs/guides-and-surveys/conditional-logic) on buttons, enabling you to create personalized experiences that adapt based on user properties.
+
 ## Guide templates
 
 When you create a new guide, you can start with a blank guide, or use a template. Guides includes the following templates:

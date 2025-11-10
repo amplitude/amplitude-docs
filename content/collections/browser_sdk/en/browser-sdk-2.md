@@ -767,7 +767,25 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 
 #### Advanced configuration for network tracking
 
-Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
+Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` object to configure which network requests get tracked.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    networkTracking: {
+      captureRules: [
+        {
+          statusCodeRange: "400-599"
+        }
+      ],
+      ignoreHosts: ["*.example.com"],
+      ignoreAmplitudeRequests: true
+    }
+  },
+});
+```
+
+This example tracks network requests with status codes from 400-599, ignores requests to `*.example.com` domains, and excludes Amplitude's own requests. Review the configuration options below for more details.
 
 {{partial:collapse name="NetworkTrackingOptions"}}
 
