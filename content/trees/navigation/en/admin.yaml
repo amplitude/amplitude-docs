@@ -52,6 +52,19 @@ tree:
       -
         id: 42012458-d017-4a01-8113-a058adc7be23
         entry: 64462898-6686-4899-8bbe-4d29d8a97f3f
+      -
+        id: 3d44e3ee-ae41-4cdf-b8ac-0ceaf55701e6
+        title: 'Role-based Access Controls (RBAC)'
+        children:
+          -
+            id: e60822d8-2a30-45a2-a896-a04bba92aafc
+            entry: 7346a8c9-efe7-48e5-a2df-28b1da5300a0
+          -
+            id: 5f879569-43e6-4b9c-ac8c-2cf13c1548a5
+            entry: 5fda151f-b240-41ab-bf74-74b473434036
+          -
+            id: e8415cdd-cb0f-4e10-8cb8-69e7e2ac1d3b
+            entry: 90fa43b0-481f-49b4-bb5f-55afbb2edf35
   -
     id: b7d5e9b1-b4a2-4d33-a7db-0386a2290ef7
     title: 'Single Sign-on'
