@@ -18,10 +18,15 @@ This directory contains the AI-powered documentation review system that provides
 ## Features
 
 - ✅ **Context-aware** - Understands meaning, not just patterns
-- ✅ **Inline suggestions** - Comments on specific lines
-- ✅ **Actionable feedback** - Provides before/after examples
+- ✅ **Changed lines only** - Reviews only modified content in PRs
+- ✅ **GitHub suggestions** - One-click "Commit suggestion" buttons
+- ✅ **Inline comments** - Comments on specific lines with exact fixes
+- ✅ **Actionable feedback** - Provides exact corrected text
 - ✅ **Cursor integration** - Suggests Cursor commands to fix issues
 - ✅ **Prioritized** - Groups by severity (errors, warnings, info)
+- ✅ **No duplicate comments** - Skips comments already posted on previous runs
+- ✅ **Smart summary updates** - Updates existing summary instead of posting duplicates
+- ✅ **Validated suggestions** - Verifies AI suggestions match actual line content before posting
 
 ## Setup
 
@@ -44,18 +49,28 @@ cd .github/scripts
 npm install
 ```
 
-### 3. Test Locally (Optional)
+### 3. Test Locally
+
+Test a file before creating a PR:
 
 ```bash
+# Set your API key
 export OPENAI_API_KEY="sk-..."
-export GITHUB_TOKEN="ghp_..."
-export PR_NUMBER="123"
-export GITHUB_REPOSITORY="amplitude/amplitude-docs"
-export COMMIT_SHA="abc123..."
-export BASE_SHA="def456..."
 
-node ai-docs-reviewer.js
+# Run the test script
+node test-local.js ../../content/collections/data/en/destination-event-streaming-overview.md
 ```
+
+The test script will:
+- Load all style rules
+- Review the entire file
+- Show issues grouped by severity
+- Display current text and suggested fixes
+- Provide Cursor commands to fix issues
+
+**Note:** Local testing reviews ALL lines. In a real PR, only changed lines are reviewed.
+
+**💡 Tip:** You don't need GitHub environment variables (`GITHUB_TOKEN`, `GITHUB_REPOSITORY`, etc.) for local testing. The script automatically detects local mode.
 
 ## Cost Estimate
 
@@ -109,6 +124,20 @@ Rules are automatically loaded from `.cursor/rules/`. Just add new rule files th
 - Check GitHub token permissions
 - Verify PR number is correct
 - Check that lines are in the actual diff
+
+### Duplicate comments on multiple pushes
+✅ **Fixed!** The script now:
+- Checks existing comments before posting
+- Skips duplicates based on file + line + rule
+- Updates the summary comment instead of creating new ones
+- Logs how many duplicates were skipped
+
+### Wrong suggestions on wrong lines
+✅ **Fixed!** The script now:
+- Validates AI's `originalText` matches the actual line content
+- Skips suggestions where line numbers don't match
+- Logs mismatched suggestions with expected vs actual content
+- Shows warnings: `⚠️  Skipped X mismatched suggestions`
 
 ### High costs
 - Reduce files per PR

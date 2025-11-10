@@ -89,19 +89,26 @@ git push origin DOC-974
 
 ## 🎯 What You Should See
 
-### Inline Comment Example:
+### Inline Comment with Suggestion Button:
 ```
 🟡 voice-and-tense
 
 Uses future tense "will allow users to"
 
-💡 Suggestion: Change to "allows users to" for present tense
+Suggested change:
+┌─────────────────────────────────────┐
+│ This feature allows users to...    │  [Commit suggestion]
+└─────────────────────────────────────┘
 
 Why this matters: Present tense makes documentation feel 
-current and actionable, not hypothetical.
+current and actionable.
 
-🤖 AI-powered review - Learn about our style guide
+💡 Tip: Click "Commit suggestion" above to apply this fix
+
+🤖 AI-powered review
 ```
+
+**The "Commit suggestion" button lets you apply fixes with one click!**
 
 ### Summary Comment Example:
 ```
@@ -135,6 +142,8 @@ The system is now active and will:
 - ✅ Post inline comments with suggestions
 - ✅ Provide Cursor commands for quick fixes
 - ✅ Learn from your style rules automatically
+- ✅ Skip duplicate comments on subsequent pushes
+- ✅ Update summary comment instead of creating new ones
 
 ---
 
