@@ -75,7 +75,7 @@ If you set a user's permission at the individual level (directly in the Members 
 Groups enable you to manage users at scale. They define the projects that a member of the group has access to, and their role within those projects. Groups most often map to teams in your organization. For example, the Business Intelligence team has a defined set of Amplitude projects where they do their work, and a set of permissions they need to do that work. As a result, you may have a group called "Business Intelligence," with access to Project A and Project B, with the `Analyst` role.
 
 {{partial:admonition type="note" heading="Permission conflicts"}}   
-When you assign roles to users both individually and through groups, the permissions may conflict. When this happens, Amplitude uses the permission granted individually overrides the group permission.
+When you assign roles to users both individually and through groups, the permissions may conflict. When this happens, Amplitude provides grants the user the combination of roles assigned individually and through groups, and displays a warning in the UI.
 {{/partial:admonition}}
 
 ## RBAC permission reference
