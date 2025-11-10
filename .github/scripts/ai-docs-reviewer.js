@@ -11,8 +11,9 @@ const PR_NUMBER = process.env.PR_NUMBER;
 const COMMIT_SHA = process.env.COMMIT_SHA;
 const BASE_SHA = process.env.BASE_SHA;
 
-const github = new Octokit({ auth: GITHUB_TOKEN });
-const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+// GitHub-specific setup (optional for local testing)
+const github = GITHUB_TOKEN ? new Octokit({ auth: GITHUB_TOKEN }) : null;
+const [owner, repo] = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/') : ['', ''];
 
 // Load all Cursor style rules
 function loadStyleRules() {
@@ -55,6 +56,50 @@ function getChangedFiles() {
     console.error('Error getting changed files:', e);
     return [];
   }
+}
+
+// Get which lines were changed in a file
+function getChangedLines(fileName) {
+  try {
+    // Get the diff for this file
+    const diff = execSync(
+      `git diff ${BASE_SHA} ${COMMIT_SHA} -- ${fileName}`,
+      { encoding: 'utf8' }
+    );
+    
+    // Parse the diff to find changed line numbers
+    const changedLines = new Set();
+    const lines = diff.split('\n');
+    let currentLine = 0;
+    
+    for (const line of lines) {
+      if (line.startsWith('@@')) {
+        const match = line.match(/\+(\d+)/);
+        if (match) {
+          currentLine = parseInt(match[1]) - 1;
+        }
+      } else if (line.startsWith('+') && !line.startsWith('+++')) {
+        currentLine++;
+        changedLines.add(currentLine);
+      } else if (!line.startsWith('-')) {
+        currentLine++;
+      }
+    }
+    
+    return changedLines;
+  } catch (e) {
+    console.error(`Error getting changed lines for ${fileName}:`, e.message);
+    return new Set();
+  }
+}
+
+// Get content of specific lines with context
+function getLineContent(content, lineNumber) {
+  const lines = content.split('\n');
+  if (lineNumber < 1 || lineNumber > lines.length) {
+    return null;
+  }
+  return lines[lineNumber - 1];
 }
 
 // Get line mapping for a file (maps content lines to diff positions)
@@ -109,19 +154,25 @@ async function getLineMapping(fileName) {
 }
 
 // Call OpenAI API to review documentation
-async function reviewWithAI(fileContent, fileName, styleRules) {
-  const systemPrompt = `You are an expert technical documentation reviewer for Amplitude. 
-Your job is to review documentation against Amplitude's style guide and provide actionable, specific feedback.
+async function reviewWithAI(fileContent, fileName, styleRules, changedLines) {
+  const systemPrompt = `You are an expert technical documentation reviewer for Amplitude.
+
+CRITICAL CONSTRAINTS:
+- This is a Pull Request review
+- You can ONLY flag issues on lines that were CHANGED in this PR
+- Focus ONLY on newly added or modified content
+- Ignore pre-existing issues in unchanged lines
+- Provide the EXACT corrected text for GitHub suggestions
 
 # Amplitude Style Rules (CRITICAL - Apply ALL of these):
 
 ${styleRules.map(rule => `## ${rule.name}\n${rule.content}`).join('\n\n---\n\n')}
 
 # Your Task:
-1. Review the documentation for violations of these style rules
-2. Focus on the most impactful issues (active voice, present tense, contractions, link format)
-3. Provide specific line numbers where possible
-4. Provide specific suggestions with before/after examples
+1. Review ONLY the changed lines (marked with ➡️) for violations
+2. Focus on: active voice, present tense, contractions, link format
+3. Provide EXACT line numbers (must match the ➡️ marked lines)
+4. For each issue, provide the EXACT corrected line text
 5. Be constructive and helpful
 6. Prioritize: errors > warnings > info
 
@@ -130,30 +181,60 @@ Return a JSON object with an "issues" array. Each issue must have:
 {
   "issues": [
     {
-      "line": <line number in the file, starting from 1>,
+      "line": <exact line number from the file>,
       "severity": "error" | "warning" | "info",
       "rule": "<which style rule>",
       "issue": "<brief description>",
-      "suggestion": "<specific fix with example>",
+      "originalText": "<exact current text on this line>",
+      "correctedText": "<exact corrected text for this line>",
       "explanation": "<why this matters>"
     }
   ]
 }
 
-IMPORTANT:
-- Line numbers must be accurate (count from the start of the file)
-- Focus on changed lines only
+CRITICAL REQUIREMENTS:
+- Line numbers must be EXACT (count from start of file, shown as "➡️ 123:")
+- Only include issues for lines marked with ➡️
+- originalText MUST be copied EXACTLY from the line content (after the ":")
+- correctedText MUST be the full line with only the specific fix applied
+- If you're unsure about a line number, DO NOT include that issue
 - Return empty array if no issues found
-- Always return valid JSON`;
+- Always return valid JSON
 
+EXAMPLE:
+If line 18 says: "This will allow you to configure settings"
+And it violates contractions rule, your response should be:
+{
+  "line": 18,
+  "originalText": "This will allow you to configure settings",
+  "correctedText": "This allows you to configure settings",
+  "rule": "contractions"
+}`;
+
+  // Mark changed lines
+  const changedLinesArray = Array.from(changedLines || []);
+  const contentWithMarkers = fileContent.split('\n').map((line, i) => {
+    const lineNum = i + 1;
+    const marker = changedLines && changedLines.has(lineNum) ? '➡️' : '  ';
+    return `${marker} ${String(lineNum).padStart(4, ' ')}: ${line}`;
+  }).join('\n');
+  
   const userPrompt = `Review this documentation file: ${fileName}
 
-Content (with line numbers):
+**Changed lines in this PR:** ${changedLinesArray.length > 0 ? changedLinesArray.join(', ') : 'All lines (new file)'}
+
+Content (lines marked with ➡️ were changed in this PR):
 \`\`\`markdown
-${fileContent.split('\n').map((line, i) => `${i + 1}: ${line}`).join('\n')}
+${contentWithMarkers}
 \`\`\`
 
-Focus your review on substantive style issues. Return JSON with the "issues" array.`;
+IMPORTANT: 
+- Only flag issues on lines marked with ➡️ (changed lines)
+- Provide EXACT originalText and correctedText for each issue
+- Line numbers must match the numbers shown above
+- Focus on substantive style violations
+
+Return JSON with the "issues" array.`;
 
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -194,17 +275,89 @@ Focus your review on substantive style issues. Return JSON with the "issues" arr
   }
 }
 
-// Post inline review comments on specific lines
-async function postInlineComments(fileName, issues, lineMapping) {
+// Fetch existing review comments to avoid duplicates
+async function getExistingComments(fileName) {
+  if (!github) return new Set();
+  
+  try {
+    const { data: comments } = await github.rest.pulls.listReviewComments({
+      owner,
+      repo,
+      pull_number: parseInt(PR_NUMBER),
+    });
+    
+    // Create a Set of unique comment identifiers (file + line + rule)
+    const existingComments = new Set();
+    
+    comments
+      .filter(comment => comment.path === fileName)
+      .forEach(comment => {
+        // Extract rule from comment body (format: "🟡 **rule-name**" at start)
+        // Match the first bold text after emoji, which is always the rule name
+        const ruleMatch = comment.body.match(/^.+?\*\*([a-z-]+)\*\*/);
+        if (ruleMatch) {
+          const rule = ruleMatch[1];
+          const line = comment.line || comment.original_line;
+          if (line) {
+            const key = `${fileName}:${line}:${rule}`;
+            existingComments.add(key);
+          }
+        }
+      });
+    
+    return existingComments;
+  } catch (error) {
+    console.error(`Warning: Could not fetch existing comments: ${error.message}`);
+    return new Set();
+  }
+}
+
+// Post inline review comments on specific lines with GitHub suggestions
+async function postInlineComments(fileName, issues, lineMapping, fileContent) {
   if (!lineMapping || !lineMapping.lineMap) {
     console.log(`No line mapping available for ${fileName}, skipping inline comments`);
     return 0;
   }
   
+  // Fetch existing comments to avoid duplicates
+  console.log('  Checking for existing comments...');
+  const existingComments = await getExistingComments(fileName);
+  if (existingComments.size > 0) {
+    console.log(`  Found ${existingComments.size} existing comments to skip`);
+  }
+  
   let commentCount = 0;
+  let skippedCount = 0;
+  let mismatchedCount = 0;
+  const lines = fileContent.split('\n');
   
   for (const issue of issues) {
     if (!issue.line || issue.line < 1) continue;
+    
+    // Check if this exact comment already exists
+    const commentKey = `${fileName}:${issue.line}:${issue.rule}`;
+    if (existingComments.has(commentKey)) {
+      console.log(`  Skipping duplicate comment at line ${issue.line} for ${issue.rule}`);
+      skippedCount++;
+      continue;
+    }
+    
+    // Validate that AI's originalText matches the actual line content
+    const actualLine = lines[issue.line - 1];
+    if (issue.originalText && actualLine) {
+      // Normalize whitespace for comparison
+      const normalizedActual = actualLine.trim();
+      const normalizedOriginal = issue.originalText.trim();
+      
+      // Check if the original text is contained in the actual line or vice versa
+      if (!normalizedActual.includes(normalizedOriginal) && !normalizedOriginal.includes(normalizedActual)) {
+        console.log(`  ⚠️  Skipping mismatched suggestion at line ${issue.line}`);
+        console.log(`     Expected: "${normalizedOriginal.substring(0, 50)}..."`);
+        console.log(`     Actual:   "${normalizedActual.substring(0, 50)}..."`);
+        mismatchedCount++;
+        continue;
+      }
+    }
     
     // Get the position in the diff
     const position = lineMapping.lineMap.get(issue.line);
@@ -225,16 +378,24 @@ async function postInlineComments(fileName, issues, lineMapping) {
     let body = `${emoji} **${issue.rule}**\n\n`;
     body += `${issue.issue}\n\n`;
     
-    if (issue.suggestion) {
-      body += `💡 **Suggestion**: ${issue.suggestion}\n\n`;
+    // Add GitHub suggestion if we have corrected text
+    if (issue.originalText && issue.correctedText) {
+      body += `**Suggested change:**\n\`\`\`suggestion\n${issue.correctedText}\n\`\`\`\n\n`;
+    } else if (issue.correctedText) {
+      // Fallback: try to get the current line
+      const currentLine = lines[issue.line - 1];
+      if (currentLine) {
+        body += `**Suggested change:**\n\`\`\`suggestion\n${issue.correctedText}\n\`\`\`\n\n`;
+      }
     }
     
     if (issue.explanation) {
-      body += `*Why this matters*: ${issue.explanation}\n\n`;
+      body += `**Why this matters:** ${issue.explanation}\n\n`;
     }
     
     body += `---\n`;
-    body += `🤖 *AI-powered review - [Learn about our style guide](.cursor/rules/README.md)*`;
+    body += `💡 *Tip: Click "Commit suggestion" above to apply this fix*\n\n`;
+    body += `🤖 *AI-powered review - [Style guide](.cursor/rules/README.md)*`;
     
     try {
       await github.rest.pulls.createReviewComment({
@@ -253,6 +414,14 @@ async function postInlineComments(fileName, issues, lineMapping) {
     } catch (error) {
       console.error(`Failed to post inline comment at line ${issue.line}:`, error.message);
     }
+  }
+  
+  if (skippedCount > 0) {
+    console.log(`  ✓ Skipped ${skippedCount} duplicate comment${skippedCount > 1 ? 's' : ''}`);
+  }
+  
+  if (mismatchedCount > 0) {
+    console.log(`  ⚠️  Skipped ${mismatchedCount} mismatched suggestion${mismatchedCount > 1 ? 's' : ''} (AI line numbers didn't match actual content)`);
   }
   
   return commentCount;
@@ -318,18 +487,48 @@ function formatSummaryComment(results) {
   return comment;
 }
 
-// Post summary comment
+// Post summary comment (or update existing)
 async function postSummaryComment(comment) {
+  if (!github) {
+    console.log('Skipping summary comment (local mode)');
+    return;
+  }
+  
   try {
-    await github.rest.issues.createComment({
+    // Check if a summary comment already exists
+    const { data: comments } = await github.rest.issues.listComments({
       owner,
       repo,
       issue_number: parseInt(PR_NUMBER),
-      body: comment
     });
-    console.log('✅ Posted summary comment to PR');
+    
+    // Find existing AI review summary
+    const existingSummary = comments.find(c => 
+      c.body.includes('🤖 AI Documentation Review') &&
+      c.user.type === 'Bot'
+    );
+    
+    if (existingSummary) {
+      // Update existing comment
+      await github.rest.issues.updateComment({
+        owner,
+        repo,
+        comment_id: existingSummary.id,
+        body: comment
+      });
+      console.log('✅ Updated existing summary comment on PR');
+    } else {
+      // Create new comment
+      await github.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number: parseInt(PR_NUMBER),
+        body: comment
+      });
+      console.log('✅ Posted new summary comment to PR');
+    }
   } catch (error) {
-    console.error('Error posting summary comment:', error.message);
+    console.error('Error posting/updating summary comment:', error.message);
   }
 }
 
@@ -366,21 +565,36 @@ async function main() {
       // Read file content
       const content = fs.readFileSync(file, 'utf8');
       
+      // Get which lines were changed
+      console.log('  Identifying changed lines...');
+      const changedLines = getChangedLines(file);
+      console.log(`  ${changedLines.size} lines changed`);
+      
       // Get line mapping for inline comments
       console.log('  Getting diff positions...');
       const lineMapping = await getLineMapping(file);
       
-      // Get AI review
+      // Get AI review (pass changed lines)
       console.log('  Calling AI for review...');
-      const issues = await reviewWithAI(content, file, styleRules);
+      const issues = await reviewWithAI(content, file, styleRules, changedLines);
       console.log(`  Found ${issues.length} issues`);
       
-      results.push({ file, issues });
+      // Filter issues to only those on changed lines (double-check)
+      const validIssues = issues.filter(issue => {
+        if (changedLines.size === 0) return true; // New file, all lines valid
+        return changedLines.has(issue.line);
+      });
       
-      // Post inline comments
-      if (issues.length > 0 && lineMapping) {
-        console.log('  Posting inline comments...');
-        const count = await postInlineComments(file, issues, lineMapping);
+      if (validIssues.length < issues.length) {
+        console.log(`  Filtered out ${issues.length - validIssues.length} issues on unchanged lines`);
+      }
+      
+      results.push({ file, issues: validIssues });
+      
+      // Post inline comments with suggestions
+      if (validIssues.length > 0 && lineMapping) {
+        console.log('  Posting inline comments with suggestions...');
+        const count = await postInlineComments(file, validIssues, lineMapping, content);
         totalComments += count;
         console.log(`  Posted ${count} inline comments`);
       }
@@ -415,5 +629,5 @@ if (require.main === module) {
   });
 }
 
-module.exports = { main, reviewWithAI, loadStyleRules };
+module.exports = { main, reviewWithAI, loadStyleRules, getChangedLines, getLineContent };
 
