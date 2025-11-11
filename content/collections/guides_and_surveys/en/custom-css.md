@@ -4,10 +4,6 @@ blueprint: guides_and_survey
 title: 'Custom CSS'
 ---
 
-{{partial:admonition type="beta" heading=""}}
-This is a Beta feature. Functionality may change without notice.
-{{/partial:admonition}}
-
 Amplitude provides two options for customizing the look and feel of your guides and surveys. [Themes](/docs/guides-and-surveys/themes) provide control over the appearance of your guides and surveys. Custom CSS offers additional fine-grained control for specific styling needs that themes can't address. Amplitude recommends using themes for most customizations, as they offer better flexibility and backward compatibility.
 
 {{partial:admonition type="note" heading="Web SDK only"}}

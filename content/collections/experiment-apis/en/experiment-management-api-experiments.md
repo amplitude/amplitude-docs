@@ -19,13 +19,16 @@ updated_at: 1734485610
 | [List variants](#list-variants)                                   | List all variants for an experiment.                       |
 | [Get variant details](#get-variant-details)                       | Get a specific variant for an experiment.                  |
 | [Get variant inclusions](#get-variant-inclusions)                 | Get all inclusions (users) for a variant.                  |
+| [Get variant cohort inclusions](#get-variant-cohort-inclusions)   | Get all cohort inclusions for a variant.                   |
 | [Create variant](#create-variant)                                 | Create a new variant for an experiment.                    |
 | [Edit variant](#edit-variant)                                     | Edit a variant for an experiment.                          |
 | [Remove variant](#remove-variant)                                 | Remove a variant from an experiment.                       |
 | [Add users to variant](#add-users-to-variant)                     | Add users to experiment's variant.                         |
+| [Add cohorts to variant](#add-cohorts-to-variant)                 | Add cohorts to experiment's variant.                       |
 | [Remove users from variant](#remove-users-from-variant)           | Remove users from experiment's variant.                    |
 | [Remove all users from variant](#remove-all-users-from-variant)   | Remove all users from experiment's variant.                |
 | [Bulk remove users from variant](#bulk-remove-users-from-variant) | Bulk remove users from experiment's variant.               |
+| [Bulk remove cohorts from variant](#bulk-remove-cohorts-from-variant) | Bulk remove cohorts from experiment's variant.         |
 | [List deployments](#list-deployments)                             | List all deployments for an experiment.                    |
 | [Add deployment](#create-deployment)                              | Add a deployment to an experiment.                         |
 | [Remove deployment](#remove-deployment)                           | Remove a deployment from an experiment.                    |
@@ -637,6 +640,48 @@ curl --request GET \
 {{/partial:tab}}
 {{/partial:tabs}}
 
+## Get variant cohort inclusions
+
+```bash
+GET https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/cohorts
+```
+
+Fetch a list of cohort inclusions for a specific variant of an experiment.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Response
+
+A successful request returns a `200 OK` response and a list of cohort inclusions of experiment's variant as an array of cohort IDs.
+
+{{partial:tabs tabs="Request, Response"}}
+{{partial:tab name="Request"}}
+
+```bash
+curl --request GET \
+    --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/cohorts' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>'
+```
+
+{{/partial:tab}}
+{{partial:tab name="Response"}}
+
+```json
+[
+    "cohort-id-1",
+    "cohort-id-2"
+]
+```
+
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Create variant
 
 ```bash
@@ -829,6 +874,57 @@ curl --request POST \
 
 {{/partial:admonition}}
 
+## Add cohorts to variant
+
+```bash
+POST https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/cohorts
+```
+
+Add cohort inclusions to experiment's variant.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Request body
+
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                               |
+| -------------------------------------- | ----------- | ------ | ----------------------------------------- |
+| `inclusions`                           | Required    | array  | An array of cohort IDs to add.           |
+
+{{partial:admonition type="example" heading="Example request"}}
+
+```json
+{
+  "inclusions": [
+    "cohort-id-1",
+    "cohort-id-2"
+  ]
+}
+```
+
+{{/partial:admonition}}
+
+### Response
+
+A successful request returns a `200 OK` response and `OK` text.
+
+{{partial:admonition type="example" heading="Request"}}
+
+```bash
+curl --request POST \
+    --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/cohorts' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>' \
+    --data '{"inclusions":["cohort-id-1", "cohort-id-2"]}'
+```
+
+{{/partial:admonition}}
+
 ## Remove users from variant
 
 ```bash
@@ -896,7 +992,7 @@ curl --request DELETE \
 DELETE https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/bulk-delete-users
 ```
 
-Bulk remove users or devices from experiment's variant. Limited to 100 per request.
+Bulk remove users or devices from experiment's variant. Limited to 100 for each request.
 
 ### Path variables
 
@@ -924,6 +1020,44 @@ curl --request DELETE \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"users":<["id1", "id2", "id3"]>}'
+```
+
+{{/partial:admonition}}
+
+## Bulk remove cohorts from variant
+
+```bash
+DELETE https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/bulk-delete-cohorts
+```
+
+Bulk remove cohorts from experiment's variant. Limited to 100 for each request.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Request body
+
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                |
+| -------------------------------------- | ----------- | ------ | ------------------------------------------ |
+| `users`                                | Required    | array  | An array of cohort IDs to remove.         |
+
+### Response
+
+A successful request returns a `200 OK` response and `OK` text.
+
+{{partial:admonition type="example" heading="Request"}}
+
+```bash
+curl --request DELETE \
+    --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/bulk-delete-cohorts' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>' \
+    --data '{"users":["cohort-id-1", "cohort-id-2"]}'
 ```
 
 {{/partial:admonition}}

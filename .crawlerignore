@@ -4,6 +4,8 @@
 
 # Ignore specific URLs (exact matches)
 /docs/llms
+/docs/guides-and-surveys/customization/content-editor
+/docs/guides-and-surveys/analytics-glossary
 # /docs/test-page
 # /docs/sandbox
 # https://amplitude.com/docs/temporary

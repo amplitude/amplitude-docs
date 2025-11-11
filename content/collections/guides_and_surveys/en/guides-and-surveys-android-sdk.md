@@ -22,6 +22,10 @@ The Guides and Surveys Android SDK requires:
 
 ## Install and initialize the SDK
 
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Kotlin 1.8.22+
+
 Add the following dependencies to your application's `build.gradle.kts` file:
 
 ```kotlin
@@ -34,7 +38,7 @@ dependencies {
 }
 ```
 
-### Initialize the SDK
+#### Initialize the SDK
 
 ```kotlin
 import com.amplitude.android.engagement.AmplitudeEngagement
@@ -61,23 +65,19 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
 
-### Boot the SDK
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
 
-```kotlin
-// Basic boot with user ID
-amplitudeEngagement.boot(userId = "USER_ID")
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
 
-// Advanced boot with options
-val bootOptions = AmplitudeBootOptions(
-    user = AmplitudeEndUser(
-        userId = "USER_ID",
-        deviceId = "DEVICE_ID",
-        userProperties = mapOf("key" to "value")
-    )
-)
-amplitudeEngagement.boot(bootOptions)
-```
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
 ### Enable screen tracking (optional)
 
@@ -260,3 +260,6 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```
+
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
