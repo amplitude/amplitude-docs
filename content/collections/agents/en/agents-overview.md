@@ -7,10 +7,6 @@ updated_at: 1761241355
 ---
 Amplitude AI Agents are specialized, goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, agents have access to Amplitude analytics, session replay, experiment, surveys, and other data types to surface insights, investigate issues, generate hypotheses, then recommend actions.
 
-{{partial:admonition type="info" heading="AI Agents rollout"}}
-Amplitude AI Agents is rolling out to all Amplitude accounts during the week of October 20, 2025. If you don't have the AI Agents tab in your account, it may not be enabled.
-{{/partial:admonition}}
-
 ## How Agents work with Amplitude
 
 Amplitude AI Agents bring together analytics, session replays, experimentation, guides, and survey data from across your account to build a deep understanding of user behavior. The more complete your Amplitude setup is, the more context and action recommendations the Agents have to work with.
