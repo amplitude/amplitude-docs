@@ -9,7 +9,7 @@ this_article_will_help_you:
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761239369
 ---
-AI Feedback is an AI-native tool that combines customer voice, product behavior and AI-powered insights into actionable workflows. AI Feedback monitors feedback sources that you define and then delivers actionable insights through Amplitude. AI Feedback groups customer feedback into categories as well as connecting feedback insights into Amplitude cohorts, session replays and experiments. AI Feedback also lets you create guides and surveys based off of the insights to better connect you with your customers’ needs. 
+AI Feedback is an AI-native tool that combines customer voice, product behavior, and AI-powered insights into actionable workflows. AI Feedback monitors feedback sources that you define and delivers actionable insights through Amplitude. AI Feedback groups customer feedback into categories as well as connecting feedback insights into Amplitude cohorts, session replays and experiments. AI Feedback also lets you create guides and surveys based off of the insights to better connect you with your customers’ needs. 
 
 Feedback events collect information about use cases such as:
 
