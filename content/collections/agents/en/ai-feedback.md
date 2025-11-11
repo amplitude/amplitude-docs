@@ -57,7 +57,7 @@ AI Feedback can ingest and generate insights from multiple sources at the same t
 3. If you’re connecting an integration:
   * Search for your application or select it from the list.
   * Depending on the integration, you may need to sign in to that application, specify relevant metadata tags, or point AI Feedback to a specific URL. The connector modal guides you through the necessary steps.
-4. If you’re uploading a CSV or DocX file, click **Upload** and then drag and drop the files you want to upload. 
+4. If you’re uploading a CSV or DOCX file, click **Upload** and then drag and drop the files you want to upload. 
 5. If you’re pasting text, paste the content you want analyzed into the field. AI Feedback begins to parse the content automatically. 
 
 {{partial:admonition type="note" heading="Requesting a new source"}}
