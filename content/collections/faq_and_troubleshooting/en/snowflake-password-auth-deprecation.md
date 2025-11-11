@@ -12,7 +12,7 @@ For the complete official timeline and enforcement details, review Snowflake's [
 
 This FAQ addresses common questions about migrating to key pair authentication for your Amplitude integrations.
 
-## Timeline and Support
+## Timeline and support
 
 ### When does this change take effect?
 
