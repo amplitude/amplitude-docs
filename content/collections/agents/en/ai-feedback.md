@@ -140,7 +140,7 @@ A link to the insight is automatically saved to your clipboard. Only colleagues 
 
 ## Merging existing users from an AI Feedback source
 
-This lets you merge your existing users with users from support AI Feedback sources such as Zendesk, Intercom, and so on. Users with the same email address are merged. 
+This lets you merge your existing users with users from supported AI Feedback sources such as Zendesk or Intercom. Amplitude merges users with the same email address. 
 
 ##### To merge existing users
 
