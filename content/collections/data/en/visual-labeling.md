@@ -77,7 +77,9 @@ To edit your labeled events, follow these steps:
 
 ### Repair a labeled event
 
-Sometimes, changes to your site's DOM can break Visual Labeling's reference to the specific element on your site. In situations like this, Visual Labeling supports repairing events you already labeled.
+Sometimes, changes to your site's DOM can break Visual Labeling's reference to the specific element on your site. You may also need to repair a labeled event when there's a need for definition changes, such as when an element moves to a different location or its structure changes.
+
+Visual Labeling's repair flow preserves your event history by adding a new OR statement with a secondary definition, rather than replacing the original definition. This means all historical data remains intact while the event begins tracking the new element as well.
 
 To repair a labeled event:
 
@@ -86,7 +88,7 @@ To repair a labeled event:
    1. A chart that depicts the number of times the event Amplitude saw over the last 30 days.
    2. Charts for each definition you've added to the labeled event.
 3. To repair an event that doesn't have event volume, click **Repair**. This opens the Visual Labeling flow with the context of the selected event.
-4. Select a new element on the page to update the labeled event's definition.
+4. Select a new element on the page to update the labeled event's definition. The repair process adds this as an additional OR condition to your existing definition, maintaining all historical data.
 5. Click **Save** to exit the Visual Labeler and apply the updated definition
 
 ### Find misconfigured events
