@@ -25,8 +25,8 @@ Data Tables are useful for:
 
 Sort columns in ascending or descending order (just click the metric header), drag or resize columns, and highlight, copy and paste any number of cells from your Data Table.
 
-{{partial:admonition type='note'}}
-**Display limits:** When you apply group-bys, Data Tables display the top 100 results for a single group-by, or up to 500 results for multiple top-level group-bys. Metrics with attribution have a 20-row limit. These are display limits—Amplitude processes all your data but shows only the top results. Export limits vary by metric type. For complete details, see [Results limits and sorting logic in Data Tables charts](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic).
+{{partial:admonition type='note' heading="Display limits"}}
+When you apply group-bys, Data Tables display the top 100 results for a single group-by, or up to 500 results for multiple top-level group-bys. Metrics with attribution have a 20-row limit. These are display limits—Amplitude processes all your data but shows only the top results. Export limits vary by metric type. For complete details, review [Results limits and sorting logic in Data Tables charts](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic).
 {{/partial:admonition}}
 
 ## Create a Data Table

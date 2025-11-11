@@ -29,7 +29,7 @@ For details about results limits and sorting logic in Data Tables, see the [Dat
 
 
 {{partial:collapse name="Why does my Data Table show only 100 rows when I've applied a group-by clause?"}}
-When you apply a group-by to your Data Table, Amplitude displays the top 100 results by default. This is a display limit, not a data processing limit—Amplitude still processes all your data, but only shows the top 100 groups ranked by the sorted metric.
+When you apply a group-by to your Data Table, Amplitude displays the top 100 results by default. This is a display limit, not a data processing limit. Amplitude still processes all your data, but only shows the top 100 groups ranked by the sorted metric.
 
 The display limits vary based on your configuration:
 
