@@ -8,7 +8,7 @@ this_article_will_help_you:
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1762192449
 ---
-Out-of-the-box (OOTB) widgets let you test new website elements like modals and banners without needing to design or code them yourself. They're pre-built, configurable components that you can customize directly in the visual editor to match your brand. By removing engineering setup, OOTB widgets let you validate new ideas, drive learnings, and scale your experimentation program while maintaining brand consistency through saved design presets and reusable styles. For more information on the Visual Editor and setting up a web experiment, go to [The Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). 
+Out-of-the-box (OOTB) widgets let you test new website elements like modals and banners without needing to design or code them yourself. They're pre-built, configurable components that you can customize directly in the visual editor to match your brand. By removing engineering setup such as SDK, UI frameworks, and so on, OOTB widgets let you validate new ideas, drive learnings, and scale your experimentation program while maintaining brand consistency through saved design presets and reusable styles. For more information on the Visual Editor and setting up a web experiment, go to [The Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). 
 
 OOTB widgets also incorporates Amplitude AI to let you design your web experiment through conversational prompts instead of needing the precise details of your brand style guide. 
 
@@ -48,4 +48,4 @@ You can't customize the location of the pop-up modal. It appears in the center o
 For more information on moving modals around your website go to [Moving elements](/docs/web-experiment/set-up-a-web-experiment#move).
 
 ### AI styling
-When you click the AI style button, it automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want.
+When you click the AI style button, Amplitude automatically matches your widget with the style settings from your website. It also creates text for your buttons or other text areas. You can further edit AI-created styles if you want.
