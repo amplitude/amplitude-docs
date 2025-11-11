@@ -9,7 +9,7 @@ this_article_will_help_you:
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761239369
 ---
-AI Feedback is an AI-native tool that combines customer voice, product behavior and AI-powered insights into actionable workflows. AI Feedback monitors feedback sources that you define and then delivers actionable insights through Amplitude. AI Feedback groups customer feedback into categories as well as connecting feedback insights into Amplitude cohorts, session replays and experiments. AI Feedback also lets you create guides and surveys based off of the insights to better connect you with your customers’ needs. 
+AI Feedback is an AI-native tool that combines customer voice, product behavior, and AI-powered insights into actionable workflows. It monitors feedback sources that you define and delivers actionable insights through Amplitude. AI Feedback groups customer feedback into categories as well as connecting feedback insights into Amplitude cohorts, session replays and experiments. AI Feedback also lets you create guides and surveys based off of the insights to better connect you with your customers’ needs. 
 
 Feedback events collect information about use cases such as:
 
@@ -23,7 +23,7 @@ The use cases listed above are examples only. For a full description of all the 
 {{/partial:admonition}}
 
 ## Feedback Event overview
-The Feedback event records user feedback and those events are what AI Feedback uses to create insights. 
+AI Feedback uses Feedback Events to record user feedback and create insights. 
 
 Feedback events capture the following information:
 
@@ -37,7 +37,7 @@ Feedback events capture the following information:
   * `insights`: Array of insights
   * `timestamp`: Date the feedback occurred
   * `author`: Feedback author
-  * `<AUTHOR_EMAIL>`: <AUTHOR_EMAIL> is a documentation notation for whichever field name is configured for the author’s email address. You can specify this property through user mapping <LINK>. 
+  * `<AUTHOR_EMAIL>`: <AUTHOR_EMAIL> is a documentation notation for whichever field name is configured for the author’s email address. You can specify this property through [user mapping](/docs/apis/analytics/user-mapping). 
 
 ## Setting up a data source
 
@@ -57,7 +57,7 @@ AI Feedback can ingest and generate insights from multiple sources at the same t
 3. If you’re connecting an integration:
   * Search for your application or select it from the list.
   * Depending on the integration, you may need to sign in to that application, specify relevant metadata tags, or point AI Feedback to a specific URL. The connector modal guides you through the necessary steps.
-4. If you’re uploading a CSV or DocX file, click **Upload** and then drag and drop the files you want to upload. 
+4. If you’re uploading a CSV or DOCX file, click **Upload** and then drag and drop the files you want to upload. 
 5. If you’re pasting text, paste the content you want analyzed into the field. AI Feedback begins to parse the content automatically. 
 
 {{partial:admonition type="note" heading="Requesting a new source"}}
@@ -66,7 +66,7 @@ If the integration you need isn’t listed, click **Request a new source** to as
 
 ## Managing a source
 
-After you’ve added a data source, you can make further adjustments to it, if you want. You can either change the source settings or you can delete the source from AI feedback. 
+After you’ve added a data source, you can make further adjustments to it, as necessary. You can either change the source settings or you can delete the source from AI feedback. 
 
 {{partial:admonition type="note" heading=""}}
 Not all sources have additional settings. If your source doesn’t have any settings for you to modify, the Settings option only displays a status page.
@@ -90,7 +90,7 @@ Deleting a source deletes the previously analyzed feedback as well as preventing
 
 ## Viewing Insights
 
-AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback automatically updates with additional insights. These insights align to the following categories:
+AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback updates with additional insights. These insights align to the following categories:
 
 * **Feature Request**: Additional features your customers want.
 * **Complaint**: Issues and problems your customers experience.
@@ -101,13 +101,13 @@ AI Feedback automatically generates its insights. As your data sources update wi
 * **Pain Point**: Places within your product that are problematic or causing issues for customers. 
 * **Takeaway**: High-level understandings and insight about your products, features, or functionality.
 
-Insights are automatically categorized based on AI Feedback’s analysis of your customer’s feedback. 
+AI Feeedback's analysis of your customer's needs results in automatic categorization of your insights. 
 
 AI Feedback counts how many customers have the same feedback for the same piece of functionality or feature. For example, if multiple customers report the same bug, AI Feedback calls out the bug and displays the number of mentions that bug received. 
 
 You can specify any time range you want to view insights throughout the history of your data sources.  
 
-You can also specify from which data sources you want to view insights. You can view insights from all data sources together or select combinations of data sources. For example, you might only want to view insights from social media data sources to understand how your products are being discussed publicly. Or, you might only want to view insights from your customer service tickets to understand how your product is performing. 
+You can also filter your data sources. For example, you might only want to view insights from social media data sources to understand how your products are being discussed publicly. Or, you might only want to view insights from your customer service tickets to understand how your product is performing. 
 
 ## Working with insights
 
@@ -145,17 +145,17 @@ This lets you merge your existing users with users from support AI Feedback sour
 ##### To merge existing users
 
 1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that contains the user's email address. 
-2. Send at least one event for each users that has that field populated. 
+2. From you system, send at least one event for each users that has that field populated. 
 
-After Amplitude received that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
+After Amplitude receives that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
 
 ## Deleting information based on user ID or Amplitude ID
 
-When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/agents/ai-feedback#merging-existing-users-from-an-AI-Feedback-source) with users from your supported AI Feedback sources, the User Privacy API won't be able to match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/agents/ai-feedback#merging-existing-users-from-an-AI-Feedback-source) with users from your supported AI Feedback sources, the User Privacy API can't match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
 
-To ensure that the deletion is permanent and complete, note the following: 
+To ensure that the deletion is permanent and complete: 
 * Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 
-* Manual deletion of other data: The User Privacy API only handles deletions tied to specific user IDs or Amplitude IDs. Any other related data (for example general or aggregated feedback) must be deleted manually from your [source management page](/docs/data/sources/connect-to-source).
+* Manual deletion of other data: The User Privacy API only handles deletions tied to specific user IDs or Amplitude IDs. Any other related data (for example general or aggregated feedback) must be deleted manually from the [source management page](/docs/data/sources/connect-to-source).
 
 ## Data access
 
