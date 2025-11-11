@@ -14,7 +14,7 @@ Before you run a experiment, set a Minimum Detectable Effect (MDE) to estimate h
 
 ## MDE and the metric goal type
 
-When you create your experiment, you select between two metric goal types: success or gaurdrail.
+When you create your experiment, you select between two metric goal types: success or guardrail.
 
 The following case study examines how the goal type can alter the MDE.
 
