@@ -63,6 +63,20 @@ You can create a new metric if none of the standard metrics meet your needs.
 By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, or calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments, for up to two months.
 {{/partial:admonition}}
 
+## Using Warehouse Metrics in experiments
+
+In addition to event-based metrics, you can use [Warehouse Metrics](/docs/data/warehouse-metrics) as goals in your experiments. Warehouse Metrics are precomputed metrics imported directly from your data warehouse into Amplitude, ensuring consistency between your source of truth and your experimental analysis.
+
+Warehouse Metrics are particularly valuable when your experiment goals involve business metrics that are difficult or impractical to calculate from behavioral events alone, such as:
+
+- **Revenue and financial metrics**: Average order value, credits remaining, or subscription revenue that require complex calculations across multiple data sources
+- **Customer health metrics**: Customer lifetime value (LTV), health scores, or churn risk predictions that are modeled in your data warehouse
+- **State metrics**: Current subscription tier, activation status, or account-level attributes that track user state rather than discrete events
+
+When you add metrics to your experiment, Warehouse Metrics appear in the metrics picker with a warehouse icon indicator. You can use them as primary or secondary metrics just like event-based metrics. Amplitude displays when each Warehouse Metric was last synced and when the next sync is scheduled, helping you ensure your experiment results reflect the most current data.
+
+For more information about setting up and using Warehouse Metrics, review [Warehouse Metrics Overview](/docs/data/warehouse-metrics).
+
 ## Define the exposure event
 
 In your experiment, open the Design Experiment panel, or the Analysis Settings, and choose the **exposure event**. When a user trigger this event, Amplitude Experiment buckets them into the experiment. The Amplitude exposure event is the most accurate and reliable way to track user exposures to your experiment’s variants, so you should use that if possible.
