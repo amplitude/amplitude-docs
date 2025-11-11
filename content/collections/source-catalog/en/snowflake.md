@@ -98,6 +98,7 @@ The data type you select defines the strategies and settings available to you fo
 | Event            | Includes user actions associated with either a user ID or a device ID and may also include event properties.                                                             |
 | User Properties  | Includes dictionaries of user attributes you can use to segment users. Each property is associated with a user ID.                                                       |
 | Group Properties | Includes dictionaries of group attributes that apply to a a group of users. Each property is associated with a group name.                                               |
+| Metrics | Includes dictionaries of behaviors that are associated with a user profile. Metrics always display the most current data synced from your warehouse. |
 | Profiles         | Includes dictionaries of properties that relate to a user profile. Profiles display the most current data synced from your warehouse, and are associated with a user ID. |
 
 ### Select the import strategy
@@ -118,6 +119,7 @@ See the following table to understand which data types are compatible with which
 | Event            | Mirror Sync, Append Only Sync, Timestamp |
 | User properties  | Full Sync, Timestamp                     |
 | Group Properties | Full Sync, Timestamp                     |
+| Metrics | Append Only Sync |
 | Profiles         | Mirror Sync                              |
 
 {{partial:admonition type="note" heading="Change Data Capture options"}}
