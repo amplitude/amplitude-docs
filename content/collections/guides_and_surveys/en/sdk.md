@@ -454,6 +454,34 @@ await window.engagement.updateLanguage("fr");
 await window.engagement.updateLanguage("en");
 ```
 
+## Refresh targeting
+
+Re-fetch targeting evaluation from the backend by making a new request to the decide endpoint. This allows you to refresh which guides and surveys are eligible to show based on the latest targeting rules and user state. Targeting is automatically refreshed when the user or its properties change. Manually refreshing targeting through this method is useful when you update user properties server-side or to get the latest cohort membership states.
+
+
+```js
+engagement.decide(): Promise<Decide>
+```
+
+This method returns a Promise that resolves with the updated targeting configuration.
+
+{{partial:admonition type="note" heading="Prerequisites"}}
+Before calling `decide()`, ensure that:
+- A user has been set (either through `boot()` or user identification)
+- An API key has been configured during initialization
+
+If either prerequisite isn't met, the method logs an error and returns early.
+{{/partial:admonition}}
+
+```js
+// Example: Refresh targeting evaluation
+const decideResult = await window.engagement.decide();
+
+// Common use case: Refresh targeting after updating user properties
+window.engagement._setUserProperties({ plan: "premium" });
+await window.engagement.decide(); // Re-evaluate which guides/surveys to show
+```
+
 ## Reset
 
 Reset a guide or survey to a specific step.
