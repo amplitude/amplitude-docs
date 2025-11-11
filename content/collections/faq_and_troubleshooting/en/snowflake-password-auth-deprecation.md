@@ -36,7 +36,7 @@ Amplitude recommends migrating to key pair authentication as soon as possible to
 
 If you encounter issues during migration:
 
-- Contact Amplitude support through your usual channels
+- Contact [Amplitude Support](https://gethelp.amplitude.com) through your usual channels.
 - Reference Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth)
 - Check that your account name follows the `ORGNAME-ACCOUNTNAME` format
 
