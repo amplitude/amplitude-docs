@@ -24,7 +24,7 @@ The Guides and Surveys iOS SDK requires:
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Swift 5.9+
+### Using Amplitude iOS Swift 1.13.0+
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -32,17 +32,21 @@ First, install the Guides and Surveys iOS SDK with Swift Package Manager or Coco
 {{partial:tab name="Swift Package Manager"}}
 1. In Xcode, click *File > Add Packages...*
 2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
-3. Select the `Amplitude-Engagement-Swift` package, version `1.0.5`.
+3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 1.0.5'
+pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{/partial:admonition}}
 
 #### Initialize the SDK
 
@@ -84,6 +88,79 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 {{partial:admonition type="note" heading=""}}
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
+
+### Not using Amplitude Swift 5.9+
+In this case, installation is very similar to above; however, you need to manually call `.boot`.
+
+First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+
+{{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
+{{partial:tab name="Swift Package Manager"}}
+1. In Xcode, click *File > Add Packages...*
+2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
+3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
+4. Click **Add Package**.
+{{/partial:tab}}
+{{partial:tab name="CocoaPods"}}
+Add the following line to your Podfile, then run `pod install`.
+
+```T
+pod 'AmplitudeEngagementSwift', '~> 1.6.0'
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{/partial:admonition}}
+
+#### Initialize the SDK
+
+```swift
+import AmplitudeEngagementSwift
+
+
+let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
+
+
+let configuration = Configuration(
+  apiKey: API_KEY
+)
+let amplitude = Amplitude(configuration: configuration)
+amplitude.add(plugin: amplitudeEngagement.getPlugin())
+```
+
+#### Configuration options
+
+| Parameter                | Type                                                                                              | Description                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
+| `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
+| `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
+
+After you init and call `amplitude.add`, you are technically done installing. While erything else is optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+
+#### Boot the SDK
+
+```swift
+// Basic boot with user ID
+amplitudeEngagement.boot("USER_ID")
+
+// Advanced boot with options
+
+let bootOptions = AmplitudeBootOptions(
+  user_id: "USER_ID",
+  device_id: "DEVICE_ID",
+  user_properties: ["key": "value"]
+)
+amplitudeEngagement.boot(options: bootOptions)
+```
+
+{{partial:admonition type="note" heading=""}}
+After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
+
 
 ### Enable screen tracking (optional)
 
