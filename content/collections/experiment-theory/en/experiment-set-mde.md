@@ -28,7 +28,7 @@ Because the goal of the first update is to increase conversion rates, a success 
 The second update is needed to meet financial requirements. As a non-negotiable enhancement to the checkout process, a guardrail metric may help confirm that the additional payment method doesn't decrease completed sales for users in that process. Over the last four fiscal quarters, an average of 1% of users abandoned checkout after starting the process. Therefore, this guardrail metric would have a direction set to *decrease* and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
-If running a [T-test](/docs/feature-experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE. You can look at the recommended MDE that Amplitude gives you or change the MDE until the duration estimate is reasonable.
+If running a [T-test](/docs/feature-experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE. Review the recommended MDE that Amplitude gives you or change the MDE until the duration estimate is reasonable.
 {{/partial:admonition}}
 
 ## MDE and the primary metric
