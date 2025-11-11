@@ -40,7 +40,7 @@ If you encounter issues during migration:
 - Reference Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 - Ensure that your account name follows the `ORGNAME-ACCOUNTNAME` format.
 
-## Migration Impact
+## Migration impact
 
 ### Will I lose any data during migration?
 
