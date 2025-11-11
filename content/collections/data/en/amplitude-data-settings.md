@@ -85,9 +85,9 @@ You can integrate Amplitude Data with your existing tools to streamline your ana
 
 Use API tokens to authenticate to Amplitude Data using credentials other than your email address and a password. Tokens authorize applications to enjoy the same roles and permissions you have when you log in personally.
 
-To create an API token, click _Create Token_. Amplitude Data generates the token and displays it in a modal window.
+To create an API token, click **Create Token**. Amplitude Data generates the token and displays it in a modal window.
 
-Click _Copy to clipboard_ now, as you can't retrieve the token later.
+Click **Copy to clipboard** now, as you can't retrieve the token later.
 
 ## Schema Settings
 
@@ -97,7 +97,7 @@ You can tell Amplitude how to handle these situations by configuring your schema
 
 For any unplanned events, event properties, event property types, user properties, or user property types, you can tell Amplitude Data to either mark them as **unexpected**, or to **reject** them outright. Amplitude Data ingests any unexpected events or properties and sends a notification to everyone subscribed to this schema. If you choose to reject unexpected data, however, Amplitude Data doesn't ingest or store the rejected data. Subscribers still receive a notification.
 
-Click _Save_ to implement any changes you make to your schema settings.
+Click **Save** to implement any changes you make to your schema settings.
 
 ## The Permissions tab
 
