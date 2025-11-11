@@ -101,7 +101,7 @@ Yes. You can:
 - Test each migration
 - Maintain mixed auth temporarily
 
-## Best Practices
+## Best practices
 
 ### Should I create new users for key pair auth?
 
