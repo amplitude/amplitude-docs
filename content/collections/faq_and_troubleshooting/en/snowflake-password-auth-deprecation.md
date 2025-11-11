@@ -26,7 +26,7 @@ The official Snowflake timeline referenced in the introduction provides complete
 
 ### What should I do now?
 
-We recommend migrating to key pair authentication as soon as possible to:
+Amplitude recommends migrating to key pair authentication as soon as possible to:
 
 - Ensure future compatibility
 - Improve security
