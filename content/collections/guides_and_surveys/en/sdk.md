@@ -169,7 +169,7 @@ await window.engagement.boot({
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
-  // needed for insights and responses to populate 
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
@@ -183,7 +183,7 @@ await window.engagement.boot({
 To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
-analytics.on('track', (event, properties, options) => { 
+analytics.on('track', (event, properties, options) => {
   // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
@@ -460,27 +460,9 @@ Re-fetch targeting evaluation from the backend by making a new request to the de
 
 
 ```js
-engagement.decide(): Promise<Decide>
+engagement.decide(): Promise<void>
 ```
 
-This method returns a Promise that resolves with the updated targeting configuration.
-
-{{partial:admonition type="note" heading="Prerequisites"}}
-Before calling `decide()`, ensure that:
-- A user has been set (either through `boot()` or user identification)
-- An API key has been configured during initialization
-
-If either prerequisite isn't met, the method logs an error and returns early.
-{{/partial:admonition}}
-
-```js
-// Example: Refresh targeting evaluation
-const decideResult = await window.engagement.decide();
-
-// Common use case: Refresh targeting after updating user properties
-window.engagement._setUserProperties({ plan: "premium" });
-await window.engagement.decide(); // Re-evaluate which guides/surveys to show
-```
 
 ## Reset
 
