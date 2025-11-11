@@ -21,12 +21,13 @@ If you're interested in testing the feature and providing feedback, contact your
 
 ## How Warehouse Metrics work
 
-Warehouse Metrics sync on a recurring schedule from tables in your data warehouse. Each metric value includes:
+Warehouse Metrics sync on a recurring schedule from tables in your data warehouse. Each row should include the following:
 
-- **Timestamp**: When the metric value is valid  
-- **User identifier**: The `user_id` or `device_id` the metric applies to  
-- **Metric values**: Numeric values (like revenue: 13423, count: 50)  
-- **Dimensions** (optional): Categorical attributes (like `health_score`: `"green"`, or `paid: true`)
+- **Time**: When the metric value is valid.  
+- **User identifier**: The `user_id` or `device_id` to which the metric applies.
+- **Insert identifier**: An optional unique identifier for deduplication. 
+- **Metric values**: Numeric values (like revenue: 13423, count: 50).  
+- **Dimensions** (optional): Categorical attributes (like `health_score`: `"green"`, or `paid: true`).
 
 ## Requirements
 
@@ -41,7 +42,7 @@ Warehouse Metrics support both identified users (`user_id`) and anonymous users 
 
 ## Metric types
 
-Warehouse Metrics supports the following aggregation types:
+Warehouse Metrics supports the following aggregation types on values:
 
 - **Sum**: Total of all values  
 - **Average**: Mean value across per-user sums  
@@ -54,6 +55,10 @@ For more information, review [Warehouse Metric Calculations](/docs/data/warehous
 
 - **Metrics**: Numeric values only (integers, decimals)  
 - **Dimensions**: String, number, or boolean values for grouping and filtering
+
+{{partial:admonition type="note" heading=""}}
+Metrics require the source data to be numeric.
+{{/partial:admonition}}
 
 ## Common use cases
 
@@ -83,7 +88,7 @@ These metrics require modeling and forecasting that happens in your data warehou
 
 These metrics track current user state rather than discrete events.
 
-## Set up Warehouse Metrics
+## Import metric data
 
 Warehouse Metrics supports Snowflake.
 
@@ -116,7 +121,7 @@ Your metrics table must include specific required fields and can optionally incl
 | Field       | Description                                      | Example                                |
 | ---------- | ----------------------------------------------- | ------------------------------------- |
 | `time`      | When the metric value is valid                   | `1762813185`                           |
-| `user_id`   | User, device, or group identifier                | `user_12345`                           |
+| `user_id` or `device_id`   | A unique identifier for a user or device.                | `user_12345`                           |
 | `insert_id` | An optional unique identifier for deduplication. | `51a87950-b35d-4a2f-b919-af92f00f75dd` |
 
 {{partial:admonition type="note" heading="Time conversion"}}  
@@ -159,11 +164,7 @@ FROM DATABASE_NAME.SCHEMA_NAME.METRICS_TABLE
 WHERE event_date >= CURRENT_DATE - INTERVAL '30 days'
 ```
 
-## Use Warehouse Metrics in Amplitude
-
-After syncing, Warehouse Metrics appear throughout Amplitude with a warehouse icon indicator.
-
-### In Experiment
+## Add your metric to an experiment
 
 Use Warehouse Metrics in end-to-end experiments or experiment results as:
 
@@ -176,55 +177,38 @@ When you create or edit an experiment, select metrics from the Warehouse source 
 Warehouse Metrics display when they were last synced and when the next sync is scheduled.   
 {{/partial:admonition}}
 
-### In analytics
+##### Creating a Warehouse Metric in your experiment
 
-Use Warehouse Metrics in:
+1. In the experiment, navigate to the **Metrics** panel.
+2. Click **Create a custom metric**.
+3. Enter a **Name** and **Description** for the metric.
+4. Click the **Warehouse** tab.
+5. Select the table you specified during data import.
+6. Define the metric. Choose **Sum**, **User Average**, **Min**, or **Max**.
+7. Select the column in the table you want to aggregate using the definition you selected.
+8. Preview the results and click **Save**.
 
-- **Event Segmentation**: Visualize metric trends over time  
-- **Data Tables**: Combine metrics with behavioral events  
-- **Notebooks and Dashboards**: Add metric cards to workspaces  
-- **Cohorts**: Create audiences based on metric values (Beta)
-
-### Access control
-
-Configure who can create and manage Warehouse Metrics using Amplitude's role-based access control (RBAC). Data engineers typically create metrics, while product and marketing teams use them in analysis.
-
-### Verified Metrics
-
-Mark critical Warehouse Metrics as "verified" to indicate they're approved for company-wide use. This helps teams trust and adopt standardized metrics.
+{{partial:admonition type="tip" heading=""}}
+Warehouse metrics you previously created are available in the **Add Metric** dialog. You don't need to recreate them.
+{{/partial:admonition}}
 
 ## Best practices
 
 1. **Define metrics once**: Create metrics in your warehouse and reference them everywhere in Amplitude  
 2. **Use descriptive names**: Name metrics clearly (like "Average Order Value" not "metric_1")  
 3. **Include descriptions**: Add descriptions in the Metrics creation flow to help users understand what each metric measures  
-4. **Set appropriate sync frequency**:  
-   - Use 12-hour sync for most use cases  
-   - Consider more frequent syncs for time-sensitive experiments  
-5. **Start with key metrics**: Begin with 5-10 critical metrics before expanding  
-6. **Document your SQL**: Keep your warehouse SQL well-documented for future updates
+4. **Start with key metrics**: Begin with 5-10 critical metrics before expanding  
 
 ## Troubleshooting
 
 If you encounter issues with Warehouse Metrics, these common problems and solutions can help you resolve them.
 
-### Metrics not appearing after setup
-
-- Verify your table has data with recent timestamps  
-- Check that change tracking is enabled  
-- Confirm column mapping is correct  
-- Review the Ingestion Jobs tab to ensure ingestion completed without error.
-
 ### Sync failures
 
 - Ensure data retention period is at least seven days, unless you use Snowflake Standard Edition, then set it to one day.  
-- Verify warehouse credentials haven't expired  
-- Check that the table structure hasn't changed
-
-### Data mismatch between warehouse and Amplitude
-
-- Compare timestamps—Amplitude displays the most recently synced value  
-- Check if mutations (updates/deletes) are syncing correctly  
+- Verify warehouse credentials haven't expired.  
+- Check that the table structure hasn't changed.
+- Ensure Change Data Capture (CDC) is enabled in your Snowflake table or view.
 - Verify the sync completed successfully in the activity log
 
 ## Limitations
@@ -232,7 +216,7 @@ If you encounter issues with Warehouse Metrics, these common problems and soluti
 - Warehouse Metrics require a unique user identifier per row  
 - Metric values can only be numeric (dimensions can be strings, numbers, or booleans)  
 - Each metric represents a point-in-time value, not an event stream  
-- Amplitude doesn't support rollup or aggregate tables without unique identifiers  
+- Amplitude doesn't support rollup or aggregate tables without unique user identifiers  
 - Warehouse metrics don’t support CUPED or group by
 
 ## FAQs
@@ -244,7 +228,3 @@ Yes, but Warehouse Metrics are most powerful when combined with behavioral event
 ### What are the differences between Warehouse Metrics and Profiles?
 
 Profiles sync current user attributes. Warehouse Metrics sync time-series numeric values that can be aggregated, used as experiment goals, and visualized over time.
-
-### What warehouse Metrics and event volume limits exist?
-
-No. Warehouse Metrics have separate limits based on operations (insert/update/delete) per month.
