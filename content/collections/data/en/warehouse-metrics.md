@@ -15,6 +15,10 @@ Warehouse Metrics enable you to import precomputed metrics directly from your da
 
 Unlike event-based metrics that Amplitude calculates from behavioral data, Warehouse Metrics sync pre-calculated values from your warehouse. This lets you use critical business metrics like revenue, customer lifetime value, health scores, and financial KPIs alongside behavioral data in Amplitude's analytics and experimentation tools.
 
+{{partial:admonition type="beta" heading="This feature is in closed Beta"}}
+If you're interested in testing the feature and providing feedback, contact your account team.
+{{/partial:admonition}}
+
 ## How Warehouse Metrics work
 
 Warehouse Metrics sync on a recurring schedule from tables in your data warehouse. Each metric value includes:
