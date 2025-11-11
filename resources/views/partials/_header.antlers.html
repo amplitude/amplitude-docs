@@ -1,14 +1,40 @@
 {{if site == 'jp'}}
-<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4"
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 dark:border-amp-gray-700 h-12 px-4"
     style="margin-left: -20px; margin-top: -20px;">
-    <div class="flex-auto mr-4"><a class="no-underline" href="/docs/jp">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="hidden md:inline text-xs uppercase text-black-600 ml-2">ドキュメンテーション</span></a></div>
+    <div class="flex-auto mr-4"><a class="no-underline" href="/docs/jp">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="hidden md:inline text-xs uppercase text-black-600 dark:text-amp-gray-300 ml-2">ドキュメンテーション</span></a></div>
+    <button 
+        onclick="window.darkMode.toggle()" 
+        class="mr-4 p-2 rounded-md hover:bg-amp-gray-100 dark:hover:bg-amp-gray-800 transition-colors"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+    >
+        <svg class="w-5 h-5 text-amp-gray-600 dark:text-amp-gray-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        <svg class="w-5 h-5 text-amp-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+    </button>
     <div id="algolia-search-header"></div>
 </div>
 {{else}}
 
-<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4"
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 dark:border-amp-gray-700 h-12 px-4"
     style="margin-left: -20px; margin-top: -20px;">
-    <div class="flex-auto mr-4"><a class="no-underline" href="/docs">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="hidden md:inline text-xs uppercase text-black-600 ml-2">documentation</span></a></div>
+    <div class="flex-auto mr-4"><a class="no-underline" href="/docs">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="hidden md:inline text-xs uppercase text-black-600 dark:text-amp-gray-300 ml-2">documentation</span></a></div>
+    <button 
+        onclick="window.darkMode.toggle()" 
+        class="mr-4 p-2 rounded-md hover:bg-amp-gray-100 dark:hover:bg-amp-gray-800 transition-colors"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+    >
+        <svg class="w-5 h-5 text-amp-gray-600 dark:text-amp-gray-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        <svg class="w-5 h-5 text-amp-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+    </button>
     {{if segment_1}}<div id="algolia-search-header"></div>{{/if}}
 </div>
 {{/if}}
