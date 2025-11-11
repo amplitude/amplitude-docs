@@ -66,7 +66,7 @@ If the integration you need isn’t listed, click **Request a new source** to as
 
 ## Managing a source
 
-After you’ve added a data source, you can make further adjustments to it, if you want. You can either change the source settings or you can delete the source from AI feedback. 
+After you’ve added a data source, you can make further adjustments to it as necessary. You can either change the source settings or you can delete the source from AI feedback. 
 
 {{partial:admonition type="note" heading=""}}
 Not all sources have additional settings. If your source doesn’t have any settings for you to modify, the Settings option only displays a status page.
