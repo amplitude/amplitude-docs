@@ -169,7 +169,7 @@ await window.engagement.boot({
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
-  // needed for insights and responses to populate 
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
@@ -183,7 +183,7 @@ await window.engagement.boot({
 To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
-analytics.on('track', (event, properties, options) => { 
+analytics.on('track', (event, properties, options) => {
   // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
@@ -453,6 +453,16 @@ await window.engagement.updateLanguage("fr");
 // Example: Update language to English
 await window.engagement.updateLanguage("en");
 ```
+
+## Refresh targeting
+
+Re-fetch targeting evaluation from the backend by making a new request to the decide endpoint. This allows you to refresh which guides and surveys are eligible to show based on the latest targeting rules and user state. Targeting is automatically refreshed when the user or its properties change. Manually refreshing targeting through this method is useful when you update user properties server-side or to get the latest cohort membership states.
+
+
+```js
+engagement.decide(): Promise<void>
+```
+
 
 ## Reset
 

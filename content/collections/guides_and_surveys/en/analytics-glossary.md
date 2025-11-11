@@ -428,43 +428,87 @@ glossary:
 Amplitude prefixes Guides and Surveys both events and event properties with `[Guides-Surveys]`. 
 
 
+<div x-data="{ expandedRows: {} }">
 {{glossary}}
 <h2 id="{{glossary_section_title | slugify}}">{{glossary_section_title}}</h2>
-{{glossary_section_description | markdown}}
+<p>{{glossary_section_description | markdown}}</p>
+
 {{if glossary_row}}
-<table>
-<thead>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
+<table class="w-full border-collapse border border-gray-300 mb-8">
+<thead class="bg-gray-50">
+<tr>
+<th class="border border-gray-300 px-4 py-2 text-left font-semibold">Property</th>
+<th class="border border-gray-300 px-4 py-2 text-left font-semibold">Description</th>
+</tr>
 </thead>
 <tbody>
 {{glossary_row}}
-<tr>
-<td>{{event_name}}</td>
-<td><code class="pr-2">{{data_type}}</code></td>
-<td>{{event_description | markdown}}</td>
+<tr class="hover:bg-gray-50">
+<td class="border border-gray-300 px-4 py-2 font-mono text-sm">{{event_name}}</td>
+<td class="border border-gray-300 px-4 py-2">
+<div class="flex items-start gap-2">
+<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">{{data_type}}</span>
+<span class="flex-1">{{event_description | markdown}}</span>
+</div>
+</td>
 </tr>
 {{/glossary_row}}
 </tbody>
 </table>
 {{/if}}
+
 {{if event_row}}
-<table>
-<thead>
-<th>Event</th>
-<th>Description</th>
-<th>Properties</th>
+<table class="w-full border-collapse border border-gray-300 mb-8">
+<thead class="bg-gray-50">
+<tr>
+<th class="border border-gray-300 px-4 py-2 text-left font-semibold">Event</th>
+<th class="border border-gray-300 px-4 py-2 text-left font-semibold">Description</th>
+</tr>
 </thead>
 <tbody>
 {{event_row}}
-<tr>
-<td>{{event_name}}</td>
-<td>{{event_description | markdown}}</td>
-<td>{{event_specific_properties | markdown}}</td>
+<tr class="hover:bg-gray-50">
+<td class="border border-gray-300 px-4 py-2 font-mono text-sm align-top">{{event_name}}</td>
+<td class="border border-gray-300 px-4 py-2">
+<div>{{event_description | markdown}}</div>
+{{if event_specific_properties}}
+<div class="mt-3">
+<button 
+x-data="{ rowId: '{{id}}' }"
+@click="expandedRows[rowId] = !expandedRows[rowId]"
+class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none"
+>
+<svg x-show="!expandedRows['{{id}}']" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+</svg>
+<svg x-show="expandedRows['{{id}}']" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+</svg>
+<span x-text="expandedRows['{{id}}'] ? 'Hide Properties' : 'Show Properties'"></span>
+</button>
+<div 
+x-show="expandedRows['{{id}}']" 
+x-transition:enter="transition ease-out duration-200"
+x-transition:enter-start="opacity-0 transform scale-95"
+x-transition:enter-end="opacity-100 transform scale-100"
+x-transition:leave="transition ease-in duration-100"
+x-transition:leave-start="opacity-100 transform scale-100"
+x-transition:leave-end="opacity-0 transform scale-95"
+class="mt-2 p-3 bg-gray-50 rounded border-l-4 border-blue-400"
+>
+<h4 class="font-semibold text-sm text-gray-700 mb-2">Event-Specific Properties:</h4>
+<div class="text-sm text-gray-600 prose prose-sm max-w-none">
+{{event_specific_properties | markdown}}
+</div>
+</div>
+</div>
+{{/if}}
+</td>
 </tr>
 {{/event_row}}
 </tbody>
 </table>
 {{/if}}
+
 {{/glossary}}
+</div>
