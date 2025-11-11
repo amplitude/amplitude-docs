@@ -23,7 +23,7 @@ The use cases listed above are examples only. For a full description of all the 
 {{/partial:admonition}}
 
 ## Feedback Event overview
-The Feedback event records user feedback and those events are what AI Feedback uses to create insights. 
+AI Feedback uses Feedback Events to record user feedback and create insights.
 
 Feedback events capture the following information:
 
