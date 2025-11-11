@@ -12,7 +12,7 @@ updated_at: 1715294338
 ---
 With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization. 
 
-For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. Anyone assigned to a group receives the permission level you assigned to the group. Users can be assigned to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
+For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. Anyone you assign to a group receives the permission level you assigned to the group. You can assign users to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
 
 Amplitude grants the highest level of permissions assigned to a user. When you assign a user to a group, they inherit its project permissions. If a user has their own set of project permissions, their new set of permissions are a combination of the two, with projects taking on the highest role.
 
@@ -25,6 +25,10 @@ This feature is available to users on **Enterprise plans only**. Review the [pri
 * Only Admins in the organization can edit groups.
 * Permission groups can be managed through the [User Management API](/docs/admin/account-management/scim-provision) (a SCIM API).
 * You should be familiar with Amplitude's [user permissions model](/docs/admin/account-management/user-roles-permissions) before proceeding.
+
+{{partial:admonition type='note'}}
+Permission groups are different from [team spaces](/docs/analytics/collaborate-with-spaces). Permission groups control project-level access across the organization (Admin-only feature), while team spaces are collaborative workspaces that Members, Managers, and Admins can all create and manage.
+{{/partial:admonition}}
 
 ## Create a group
 
@@ -78,7 +82,7 @@ If your organization uses third-party identity and access management software (f
 
 When a user has multiple permission levels for a single project (either through group membership or individual assignment), the user enjoys the highest permission level available to them. 
 
-**Example A**: Oleg is assigned to a group that provides Member permissions to a project.
+**Example A**: You assign Oleg to a group that provides Member permissions to a project.
 
 * You can individually upgrade Oleg to a higher role through User Management.
 * If you later decide to re-assign Oleg to the lower-level Member role, you can individually downgrade him to that permission level.
