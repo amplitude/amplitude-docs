@@ -109,6 +109,18 @@ You can specify any time range you want to view insights throughout the history 
 
 You can also filter your data sources. For example, you might only want to view insights from social media data sources to understand how your products are being discussed publicly. Or, you might only want to view insights from your customer service tickets to understand how your product is performing. 
 
+### AI Feedback with AI Chat analysis
+
+You can use Amplitude's Ask AI feature to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
+* Summarize all recent feedback.
+* Provide direct user quotes from customers about your website's search experience.
+* Highlight the most talked about bug or complaint from the previous week.
+
+You can also have Ask AI to perform actions such as:
+* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Ask AI can create a PRD to improve your notification system based on feedback about notifications.
+
+To get AI analysis on your feedback, click the **Ask AI** button and type in your request.
+
 ## Working with insights
 
 Insights are useful to understand your customers’ experience with your product. For every insight, AI Feedback offers actions you can take to enhance your customers’ experience. AI Feedback lets you perform the following actions for each insight: 
