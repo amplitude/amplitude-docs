@@ -5,7 +5,7 @@ propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/agents/{slug}'
+route: '/amplitude-ai/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
