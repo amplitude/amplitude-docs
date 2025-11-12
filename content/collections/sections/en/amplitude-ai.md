@@ -31,8 +31,9 @@ landing_page_content:
     external_link: false
     type: card
     enabled: true
+    entries_field: 123f636e-6ab8-48e1-bbc0-60e0b8ecf86d
 exclude_from_sitemap: false
-updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1761674119
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1762981237
 template: landing-page-experiment
 ---
