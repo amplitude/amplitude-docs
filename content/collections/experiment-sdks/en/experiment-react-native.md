@@ -192,7 +192,7 @@ SDK client configuration occurs during initialization.
 | <div class="big-column">Name</div> | Description | Default Value                |
 | --- | --- |------------------------------|
 | `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false`                      |
-| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `Disable`, `Error`, `Warn`, `Info`, `Debug`, `Verbose`. See [Custom logging](#custom-logging) for details. | `LogLevel.Error`             |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `Disable`, `Error`, `Warn`, `Info`, `Debug`, `Verbose`. Go to [Custom logging](#custom-logging) for details. | `LogLevel.Error`             |
 | `loggerProvider` | Custom logger implementation. Must implement the `Logger` interface. See [Custom logging](#custom-logging) for details. | `null` (uses default ConsoleLogger) |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}`                         |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}`                         |
