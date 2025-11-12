@@ -10,6 +10,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/agents/(.*)",
+      "destination": "/docs/amplitude-ai/$1",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/partners/create-a-cohort-syncing-integration",
       "destination": "/docs/partners/create-a-cohort-sync-integration",
       "statusCode": 301
