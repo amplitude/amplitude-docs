@@ -101,7 +101,7 @@ AI Feedback automatically generates its insights. As your data sources update wi
 * **Pain Point**: Places within your product that are problematic or causing issues for customers. 
 * **Takeaway**: High-level understandings and insight about your products, features, or functionality.
 
-AI Feeedback's analysis of your customer's needs results in automatic categorization of your insights. 
+AI Feedback's analysis of your customer's needs results in automatic categorization of your insights. 
 
 AI Feedback counts how many customers have the same feedback for the same piece of functionality or feature. For example, if multiple customers report the same bug, AI Feedback calls out the bug and displays the number of mentions that bug received. 
 
