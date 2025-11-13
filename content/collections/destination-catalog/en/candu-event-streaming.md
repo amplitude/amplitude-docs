@@ -49,5 +49,5 @@ To configure an Event Streaming integration from Amplitude to Candu, you must fu
 4. Paste your **API Key (Access Token from the Candu platform)**.
 5. (Optional) In the **Create & Update users** section, enable the toggle if you want to send users and their properties in real-time whenever Amplitude creates a user or updates the user property.
 6. In the **Send Events** section, enable the **Events are sent to Candu** toggle to stream events to Candu. When enabled, Amplitude forwards events to Candu when they're ingested. Events aren't sent on a schedule or on demand using this integration.
-7. In the **Select and filter events** section choose which events you want to send. Choose only the events you need in Candu. This integration doesn't support[Transformed events](/docs/data/transformations).
+7. In the **Select and filter events** section choose which events you want to send. Choose only the events you need in Candu.
 8. Enable the destination and **Save** to finish.

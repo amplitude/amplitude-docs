@@ -1,9 +1,8 @@
 ---
 description: Validate internal links use correct Statamic routes
-globs: []
+globs: content/**/*.md,*.md
 alwaysApply: false
 ---
-
 # Link Validation
 
 Use this rule to check documentation files for incorrect internal link formats.

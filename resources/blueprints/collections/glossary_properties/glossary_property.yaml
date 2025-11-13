@@ -1,0 +1,111 @@
+title: 'Glossary Property'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+              width: 50
+          -
+            handle: property_type
+            field:
+              type: select
+              display: 'Property type'
+              localizable: false
+              width: 50
+              options:
+                -
+                  key: event
+                  value: null
+                -
+                  key: user
+                  value: null
+                -
+                  key: core
+                  value: null
+          -
+            handle: data_type
+            field:
+              multiple: true
+              type: select
+              display: 'Data type'
+              localizable: false
+              width: 33
+              options:
+                -
+                  key: string
+                  value: null
+                -
+                  key: boolean
+                  value: null
+                -
+                  key: object
+                  value: null
+                -
+                  key: array
+                  value: null
+                -
+                  key: number
+                  value: null
+                -
+                  key: integer
+                  value: null
+                -
+                  key: timestamp
+                  value: null
+                -
+                  key: dictionary
+                  value: null
+          -
+            handle: product
+            field:
+              options:
+                -
+                  key: all
+                  value: null
+                -
+                  key: experiment
+                  value: null
+                -
+                  key: 'guides & surveys'
+                  value: null
+                -
+                  key: 'session replay'
+                  value: null
+              type: select
+              display: Product
+              localizable: false
+              width: 33
+          -
+            handle: autocapture
+            field:
+              type: toggle
+              display: Autocapture
+              instructions: 'Is this property part of Autocaptured events?'
+              localizable: false
+              width: 33
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

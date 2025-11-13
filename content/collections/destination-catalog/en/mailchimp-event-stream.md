@@ -31,7 +31,7 @@ Amplitude's Mailchimp streaming integration enables you to forward your Amplitud
 
 ### Configure mappings
 
-_This applies to both event and user forwarding. Transformed user properties aren't supported._
+_This applies to both event and user forwarding._
 
 Select an Amplitude user property that corresponds to your Mailchimp emails, from the left dropdown.
 
@@ -39,18 +39,18 @@ Select an Amplitude user property that corresponds to your Mailchimp emails, fro
 
 Under **Send Events**, make sure the toggle is enabled ("Events are sent to Mailchimp") if you want to stream events to Mailchimp. When enabled, events are automatically forwarded to Mailchimp when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration. The `occurred_at` field on the Mailchimp event is the date and time at which the event is ingested in Mailchimp, not Amplitude.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Mailchimp. Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
+1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Mailchimp.
 
     {{partial:admonition type="warning" heading="Streaming events of anonymous users isn't supported"}}
     Mailchimp requires that all events have a user ID (email) present. If you have selected any events to send to Mailchimp that may not have a user ID, add a filter to send only events where the user ID is present. Additionally, events can only be streamed for users that already exist in Mailchimp. Otherwise, your delivery metrics may be affected.
     {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Mailchimp. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Mailchimp as [Mailchimp event properties](https://mailchimp.com/developer/marketing/api/list-member-events/add-event/). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Mailchimp. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Mailchimp as [Mailchimp event properties](https://mailchimp.com/developer/marketing/api/list-member-events/add-event/).
 ### Configure user forwarding
 
 Under **Send Users**, make sure the toggle is enabled ("Users are sent to Mailchimp") if you want to stream users and their properties to Mailchimp. When enabled, users are automatically created or updated in Mailchimp when an event is sent to Amplitude. [Amplitude Identify API](/docs/apis/analytics/identify) calls are also forwarded to Mailchimp. Users aren't sent on a schedule or on-demand using this integration.
 
-(optional) In **Select additional properties**, select any more user properties you want to send to Mailchimp. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Mailchimp as [Mailchimp merge fields](https://mailchimp.com/developer/marketing/docs/merge-fields/). Some transformed objects aren't supported. For more details, go to [Streaming Transformations Limitations](/docs/data/streaming-transformations#limitations).
+(optional) In **Select additional properties**, select any more user properties you want to send to Mailchimp. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Mailchimp as [Mailchimp merge fields](https://mailchimp.com/developer/marketing/docs/merge-fields/).
 
 {{partial:admonition type="warning" heading="Create your user properties"}}
 All additional user properties must be manually created in Mailchimp. [Create a merge field in Mailchimp](https://mailchimp.com/developer/marketing/docs/merge-fields/#create-a-merge-field) for each user property, with the exact same ID (not the display name). Any properties not created in this way in Mailchimp are skipped.

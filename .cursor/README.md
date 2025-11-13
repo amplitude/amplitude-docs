@@ -1,4 +1,4 @@
-# Cursor Documentation System
+# Amplitude Docs and Cursor
 
 This directory contains Cursor AI rules and templates that help you create high-quality Amplitude documentation.
 
@@ -96,27 +96,30 @@ See [AI-REVIEW-SETUP.md](AI-REVIEW-SETUP.md) for setup.
 ├── HOW-TO-CONTRIBUTE.md (engineer guide)
 ├── IMPLEMENTATION-SUMMARY.md (tech writer guide)
 │
+├── commands/
+│   └── fix-issue.md (issue fix workflow)
+│
 └── rules/
-    ├── README.md (style guide overview)
-    ├── TEMPLATES-INDEX.md (template reference)
+    ├── README.mdc (style guide overview)
+    ├── TEMPLATES-INDEX.mdc (template reference)
     │
     ├── Style Rules (11 files)
-    │   ├── voice-and-tense.md
-    │   ├── contractions.md
-    │   ├── concise-language.md
-    │   ├── direct-instructions.md
-    │   ├── person-and-point-of-view.md
-    │   ├── headings-and-structure.md
-    │   ├── grammar-and-punctuation.md
-    │   ├── images-and-accessibility.md
-    │   ├── inclusive-terminology.md
-    │   ├── technical-writing.md
-    │   └── amplitude-vocabulary.md
+    │   ├── voice-and-tense.mdc
+    │   ├── contractions.mdc
+    │   ├── concise-language.mdc
+    │   ├── direct-instructions.mdc
+    │   ├── person-and-point-of-view.mdc
+    │   ├── headings-and-structure.mdc
+    │   ├── grammar-and-punctuation.mdc
+    │   ├── images-and-accessibility.mdc
+    │   ├── inclusive-terminology.mdc
+    │   ├── technical-writing.mdc
+    │   └── vocabulary.mdc
     │
     └── Templates (3 files)
-        ├── statamic-routing.md
-        ├── new-feature-template.md
-        └── link-validation.md
+        ├── statamic-routing.mdc
+        ├── new-feature-template.mdc
+        └── link-validation.mdc
 ```
 
 ---

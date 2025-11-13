@@ -10,25 +10,30 @@
 ### 1. **Cursor Rules & Templates** (`.cursor/rules/`)
 AI rules that automatically enforce Amplitude's writing style:
 
-**Style Rules (11 files):**
-- Active voice & present tense
-- Contractions for conversational tone
-- Second person point of view
-- Direct instructions (no "please")
-- Concise language
-- Grammar & punctuation
-- Inclusive terminology
-- Technical writing conventions
-- Amplitude vocabulary
-- Headings & structure
-- Images & accessibility
+**Style Rules (12 .mdc files):**
+- `voice-and-tense.mdc` - Active voice & present tense
+- `contractions.mdc` - Contractions for conversational tone
+- `person-and-point-of-view.mdc` - Second person point of view
+- `direct-instructions.mdc` - Direct instructions (no "please")
+- `concise-language.mdc` - Concise language
+- `grammar-and-punctuation.mdc` - Grammar & punctuation
+- `inclusive-terminology.mdc` - Inclusive terminology
+- `technical-writing.mdc` - Technical writing conventions
+- `vocabulary.mdc` - Amplitude vocabulary
+- `headings-and-structure.mdc` - Headings & structure
+- `images-and-accessibility.mdc` - Images & accessibility
+- `master-checklist.mdc` - Complete editing checklist
 
-**Templates (3 files):**
-- `new-feature-template.md` - Interactive guide for documenting features
-- `statamic-routing.md` - Ensures correct `/docs/` link format (auto-applied)
-- `link-validation.md` - Validates internal link formats
+**Templates (3 .mdc files):**
+- `new-feature-template.mdc` - Interactive guide for documenting features
+- `statamic-routing.mdc` - Ensures correct `/docs/` link format (automatically applied)
+- `link-validation.mdc` - Validates internal link formats
 
-### 2. **AI-Powered PR Reviews** (`.github/workflows/`)
+**Documentation (2 .md files):**
+- `README.md` - Style guide overview
+- `TEMPLATES-INDEX.md` - Template catalog
+
+### 2. **AI-Powered PR Reviews** (`.github/`)
 Intelligent documentation review on every PR:
 
 **Features:**
@@ -39,16 +44,34 @@ Intelligent documentation review on every PR:
 - ✅ Cursor command suggestions for quick fixes
 - ✅ Cost-effective (~$6/month for 100 PRs)
 
-**Files:**
-- `.github/workflows/ai-docs-review.yml` - GitHub Action workflow
-- `.github/scripts/ai-docs-reviewer.js` - Main AI review script
-- `.github/scripts/package.json` - Node.js dependencies
+**Workflows (`.github/workflows/`):**
+- `ai-docs-review.yml` - AI-powered documentation review
+- `vale.yml` - Vale linting
+- `internal-link-check.yml` - Internal link validation
+- `spell-checker.yml` - Spell checking
+- `markdown-check.yml` - Markdown syntax validation
+- `mega-linter.yml` - Comprehensive linting
+- `cron-link-check.yml` - Scheduled link checking
+- `auto-assign-reviewer.yml` - Automatic reviewer assignment
+- `deploy.yml` - Deployment workflow
+
+**Scripts (`.github/scripts/`):**
+- `ai-docs-reviewer.js` - Main AI review logic
+- `test-local.js` - Local testing script
+- `package.json` - Node.js dependencies
+- `package-lock.json` - Dependency lock file
+- `README.md` - Script documentation
 
 ### 3. **Engineer Documentation** (`.cursor/`)
-- `HOW-TO-CONTRIBUTE.md` - Quick start guide for engineers
+- `README.md` - Navigation hub and main entry point
+- `HOW-TO-CONTRIBUTE.md` - Complete guide for engineers
+- `QUICK-START.md` - Fast-track guide for contributors
 - `AI-REVIEW-SETUP.md` - Setup guide for AI reviews
-- `README.md` - Navigation hub
-- `TEMPLATES-INDEX.md` - Complete template reference (in `rules/`)
+- `TESTING-GUIDE.md` - Testing and validation guide
+- `SYSTEM-OVERVIEW.md` - This file (complete system documentation)
+
+**Commands (`.cursor/commands/`):**
+- `fix-issue.md` - Quick fix commands for common issues
 
 ---
 
@@ -146,43 +169,56 @@ amplitude-docs/
 │
 ├── .cursor/
 │   ├── README.md (navigation hub)
-│   ├── HOW-TO-CONTRIBUTE.md (engineer guide)
+│   ├── QUICK-START.md (fast-track guide)
+│   ├── HOW-TO-CONTRIBUTE.md (complete engineer guide)
 │   ├── AI-REVIEW-SETUP.md (AI review setup)
+│   ├── TESTING-GUIDE.md (testing and validation)
 │   ├── SYSTEM-OVERVIEW.md (this file)
+│   │
+│   ├── commands/
+│   │   └── fix-issue.md (quick fix commands)
 │   │
 │   └── rules/
 │       ├── README.md (style guide overview)
 │       ├── TEMPLATES-INDEX.md (template catalog)
 │       │
-│       ├── Style Rules (11 files)
-│       │   ├── voice-and-tense.md
-│       │   ├── contractions.md
-│       │   ├── concise-language.md
-│       │   ├── direct-instructions.md
-│       │   ├── person-and-point-of-view.md
-│       │   ├── headings-and-structure.md
-│       │   ├── grammar-and-punctuation.md
-│       │   ├── images-and-accessibility.md
-│       │   ├── inclusive-terminology.md
-│       │   ├── technical-writing.md
-│       │   └── amplitude-vocabulary.md
+│       ├── Style Rules (12 .mdc files)
+│       │   ├── voice-and-tense.mdc
+│       │   ├── contractions.mdc
+│       │   ├── concise-language.mdc
+│       │   ├── direct-instructions.mdc
+│       │   ├── person-and-point-of-view.mdc
+│       │   ├── headings-and-structure.mdc
+│       │   ├── grammar-and-punctuation.mdc
+│       │   ├── images-and-accessibility.mdc
+│       │   ├── inclusive-terminology.mdc
+│       │   ├── technical-writing.mdc
+│       │   ├── vocabulary.mdc
+│       │   └── master-checklist.mdc
 │       │
-│       └── Templates (3 files)
-│           ├── statamic-routing.md
-│           ├── new-feature-template.md
-│           └── link-validation.md
+│       └── Templates (3 .mdc files)
+│           ├── new-feature-template.mdc
+│           ├── statamic-routing.mdc
+│           └── link-validation.mdc
 │
 └── .github/
-    ├── workflows/
-    │   ├── ai-docs-review.yml (NEW - AI PR reviews)
-    │   ├── vale.yml (existing - Vale linting)
-    │   ├── internal-link-check.yml (existing)
-    │   └── [other workflows]
+    ├── workflows/ (9 workflow files)
+    │   ├── ai-docs-review.yml (AI-powered reviews)
+    │   ├── vale.yml (Vale linting)
+    │   ├── internal-link-check.yml (link validation)
+    │   ├── spell-checker.yml (spell checking)
+    │   ├── markdown-check.yml (markdown syntax)
+    │   ├── mega-linter.yml (comprehensive linting)
+    │   ├── cron-link-check.yml (scheduled checks)
+    │   ├── auto-assign-reviewer.yml (auto-assignment)
+    │   └── deploy.yml (deployment)
     │
     └── scripts/
-        ├── ai-docs-reviewer.js (NEW - AI review logic)
-        ├── package.json (NEW - dependencies)
-        └── README.md (NEW - script docs)
+        ├── ai-docs-reviewer.js (AI review logic)
+        ├── test-local.js (local testing)
+        ├── package.json (dependencies)
+        ├── package-lock.json (dependency lock)
+        └── README.md (script documentation)
 ```
 
 ---
@@ -190,15 +226,18 @@ amplitude-docs/
 ## 🎓 Getting Started
 
 ### For Engineers
-1. Read [.cursor/HOW-TO-CONTRIBUTE.md](.cursor/HOW-TO-CONTRIBUTE.md)
-2. Try: `"Document new feature: Test Feature"`
-3. Submit PR and see AI feedback
+1. **Quick start:** Read [`.cursor/QUICK-START.md`](QUICK-START.md)
+2. **Complete guide:** Read [`.cursor/HOW-TO-CONTRIBUTE.md`](HOW-TO-CONTRIBUTE.md)
+3. Try: `"Document new feature: Test Feature"`
+4. Submit PR and see AI feedback
+5. Use [`.cursor/commands/fix-issue.md`](commands/fix-issue.md) for quick fixes
 
 ### For Tech Writers
-1. Read [.cursor/AI-REVIEW-SETUP.md](.cursor/AI-REVIEW-SETUP.md)
+1. Read [`.cursor/AI-REVIEW-SETUP.md`](AI-REVIEW-SETUP.md)
 2. Add OpenAI API key to GitHub secrets
-3. Test with a sample PR
+3. Test with [`.github/scripts/test-local.js`](../.github/scripts/test-local.js)
 4. Monitor costs and quality
+5. Review [`.cursor/TESTING-GUIDE.md`](TESTING-GUIDE.md) for validation
 
 ### For Leadership
 - **This file** for system overview
@@ -232,13 +271,15 @@ on:
     types: [opened, synchronize]
 ```
 
-### Cursor Template Customization
+### Cursor Rule Customization
 
-Add new templates in `.cursor/rules/`:
-- Follow existing format
-- Set `alwaysApply: false` for on-demand use
-- Set `alwaysApply: true` for automatic enforcement
-- Use descriptive frontmatter for discoverability
+Add new rules in `.cursor/rules/` as `.mdc` files:
+- Follow existing format (see `voice-and-tense.mdc` as example)
+- Use `.mdc` extension (Markdown Cursor format)
+- Add descriptive title and description at the top
+- Rules are automatically applied when relevant to conversation
+- Templates (like `new-feature-template.mdc`) are invoked on-demand
+- Update `TEMPLATES-INDEX.md` when adding new templates
 
 ---
 
@@ -253,7 +294,7 @@ Add new templates in `.cursor/rules/`:
 ### Monthly
 - Engineer adoption rate (target: 20+ contributors)
 - Feature documentation coverage (target: 100%)
-- Support tickets re: docs confusion (target: -50%)
+- Support tickets re: docs confusion (target: –50%)
 - Time saved (hours) (target: 30+/month)
 
 ### Quarterly
@@ -276,7 +317,7 @@ Document wins as they happen:
 ## 🔮 Future Enhancements
 
 ### Short Term (Next 3 months)
-- [ ] Auto-fix mode (AI generates PR with fixes)
+- [ ] Autofix mode (AI generates PR with fixes)
 - [ ] Slack integration for notifications
 - [ ] Weekly metrics dashboard
 - [ ] Video tutorial for engineers
@@ -289,7 +330,7 @@ Document wins as they happen:
 
 ### Long Term (6+ months)
 - [ ] Multi-language support
-- [ ] Auto-generated API docs from OpenAPI
+- [ ] Autogenerated API docs from OpenAPI
 - [ ] Interactive examples
 - [ ] Docs-as-code validation in CI/CD
 
@@ -303,10 +344,15 @@ Document wins as they happen:
 - **GitHub:** Open an issue
 
 ### Resources
+- **Navigation Hub:** `.cursor/README.md`
+- **Quick Start:** `.cursor/QUICK-START.md`
+- **Contributing Guide:** `.cursor/HOW-TO-CONTRIBUTE.md`
 - **Style Guide:** `.cursor/rules/README.md`
 - **Templates:** `.cursor/rules/TEMPLATES-INDEX.md`
-- **Contributing:** `.cursor/HOW-TO-CONTRIBUTE.md`
 - **AI Setup:** `.cursor/AI-REVIEW-SETUP.md`
+- **Testing:** `.cursor/TESTING-GUIDE.md`
+- **Quick Fixes:** `.cursor/commands/fix-issue.md`
+- **Script Docs:** `.github/scripts/README.md`
 
 ---
 
@@ -332,7 +378,12 @@ Document wins as they happen:
 
 ---
 
-**System Status:** ✅ Ready to use!
+**System Status:** ✅ Fully operational and actively in use!
 
-Last Updated: October 31, 2024
+**Last Updated:** November 11, 2025  
+**File Count:**
+- 17 rule/template files (`.cursor/rules/`)
+- 6 documentation files (`.cursor/`)
+- 9 GitHub workflow files (`.github/workflows/`)
+- 5 script files (`.github/scripts/`)
 

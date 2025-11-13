@@ -78,7 +78,8 @@
     }
   </style>
   {{partial:partials/_amplitude}}
-
+<!-- Preload consolidated glossary data -->
+{{# <link rel="preload" href="/docs/glossary-data.json" as="fetch" crossorigin> #}}
 {{if enable_math }}
   {{partial:partials/katex-assets}}
 {{/if}}

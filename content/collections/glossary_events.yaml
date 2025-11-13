@@ -1,0 +1,11 @@
+title: 'Glossary Events'
+sites:
+  - en
+propagate: false
+revisions: false
+date_behavior:
+  past: public
+  future: private
+inject:
+  default_properties:
+    - 7661aa62-ce58-4c11-85dc-d689b5cd2654

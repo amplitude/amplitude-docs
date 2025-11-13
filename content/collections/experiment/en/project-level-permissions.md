@@ -73,6 +73,10 @@ There are two ways to to make modifications to a restricted flag or experiment w
 
 This table describes the various permissions included with each permission level.
 
+{{partial:admonition type="note" heading="Role-based Access Controls (RBAC)"}}
+For Enterprise organizations with Role-based Access Controls (RBAC) enabled, review the available [Experiment Roles and Permissions](/docs/admin/account-management/role-based-access-controls-rbac#rbac-permission-reference). 
+{{/partial:admonition}}
+
 |                       | Viewer | Member     | Manager (Project) | Admin (Org) |
 | --------------------- | ------ | ---------- | ----------------- | ----------- |
 | Deployments | Read   | Read/Write | Read/Write        | Read/Write  |

@@ -47,6 +47,10 @@ Load your Amplitude event data into your Snowflake account. You can set up recur
 Creating a recurring data export is a simple, three-step process you can handle yourself. Each sync completes within five to ten minutes, though often it's much closer to real time. 
 This method also lets you watch jobs.
 
+{{partial:admonition type="warning" heading="Use a dedicated warehouse for Amplitude data"}}
+Amplitude strongly recommends using a dedicated Snowflake warehouse instance for loading Amplitude data. Using a shared warehouse can cause load capacity issues and disrupt other Snowflake integrations. Configure a separate warehouse to ensure optimal performance and prevent conflicts with your other Snowflake operations.
+{{/partial:admonition}}
+
 To set up a recurring export of your Amplitude data to Snowflake, follow these steps:
 
 {{partial:admonition type="note" heading="Required user permissions"}}
@@ -60,7 +64,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 5. In the *Snowflake Credentials For Amplitude* section, enter the following information:
 
    - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, before 'snowflakecomputing.com'.
-   - **Warehouse**: The warehouse Amplitude uses to load the data. For best results, this should be a warehouse dedicated to loading Amplitude data to ensure other Snowflake operations aren't disrupted.
+   - **Warehouse**: The warehouse Amplitude uses to load the data. Use a dedicated warehouse for Amplitude data to prevent load capacity issues with other Snowflake integrations. Sharing a warehouse can disrupt your other Snowflake operations.
    - **Database**: The database where Amplitude stores data. Dedicate this database specifically to Amplitude data.
    - **Role**: The role that the connection uses to write this data. The default value of role is `AMPLITUDE` only.
    - **Username**: The username Amplitude uses to connect to the Snowflake account.
@@ -68,7 +72,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
     Amplitude offers password-based and key pair authentication for Snowflake. 
 
     {{partial:admonition type="warning" heading="Snowflake Password Authentication Deprecation"}}
-Beginning in November 2025, Snowflake is removing support for single-factor password authentication. This impacts the way you send data from Snowflake to Amplitude. Amplitude recommends migrating to key pair authentication for enhanced security and future compatibility with Snowflake.
+Beginning in May 2026, Snowflake is removing support for single-factor password authentication. This impacts data exports from Amplitude to Snowflake. Amplitude recommends migrating to key pair authentication for enhanced security and future compatibility with Snowflake. For detailed migration guidance, review the [Snowflake Password Authentication Deprecation FAQ](/faq/en/snowflake-password-auth-deprecation).
     {{/partial:admonition}}
 
     {{partial:admonition type="warning" heading=""}}
@@ -100,15 +104,15 @@ This process can take anywhere from a single day to several weeks. It depends on
 
 ## Reduce your Snowflake computation costs
 
-If you are looking to reduce the Snowflake computation costs when receiving data from Amplitude, try these methods:
+If you're looking to reduce the Snowflake computation costs when receiving data from Amplitude, try these methods:
 
 {{partial:admonition type="note" title=""}}
-The effectiveness of these recommendations depends on the frequency with which you export to your Snowflake instance.
+The effectiveness of these recommendations depends on the frequency with which you export to your Snowflake instance. Remember to use a dedicated warehouse for Amplitude data to prevent performance issues with other Snowflake operations.
 {{/partial:admonition}}
 
-- Modify warehouse **size** and **number of clusters**. For shorter export cadences (15 to 30 minutes), try starting with `xsmall` or `small`. Then upgrade as needed.
+- Modify warehouse **size** and **number of clusters** for your dedicated Amplitude warehouse. For shorter export cadences (15 to 30 minutes), try starting with `xsmall` or `small`. Then upgrade as needed.
 - When backfilling data into Snowflake, start with a small warehouse and upgrade as needed.
-- You can also try reducing the auto suspend time to 60s. This option might not be available within the Snowflake UI, but can be manually set via direct Snowflake query.
+- You can also try reducing the auto suspend time to 60s. This option might not be available within the Snowflake UI, but you can manually set it through a direct Snowflake query.
 
 ## Snowflake export format
 

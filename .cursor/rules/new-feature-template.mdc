@@ -1,6 +1,6 @@
 ---
 description: Template for engineers and contributors documenting new features
-globs: []
+globs: content/**/*.md,*.md
 alwaysApply: false
 ---
 

@@ -3,7 +3,6 @@ description: Use approved Amplitude-specific vocabulary and technical terms
 globs: ["content/**/*.md", "*.md"]
 alwaysApply: true
 ---
-
 # Amplitude Vocabulary
 
 Use these approved terms consistently throughout the documentation.

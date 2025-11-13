@@ -191,7 +191,9 @@ SDK client configuration occurs during initialization.
 
 | <div class="big-column">Name</div> | Description | Default Value                |
 | --- | --- |------------------------------|
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false`                      |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false`                      |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `Disable`, `Error`, `Warn`, `Info`, `Debug`, `Verbose`. Go to [Custom logging](#custom-logging) for details. | `LogLevel.Error`             |
+| `loggerProvider` | Custom logger implementation. Must implement the `Logger` interface. See [Custom logging](#custom-logging) for details. | `null` (uses default ConsoleLogger) |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}`                         |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}`                         |
 | `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage`        |
@@ -554,6 +556,92 @@ To use your custom HTTP client, set the `httpClient` [configuration](#configurat
 ```js
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     httpClient: new CustomHttpClient(),
+});
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration or implement the `Logger` interface to use your own logging solution.
+
+### Log levels
+
+- `LogLevel.Disable` - No logging.
+- `LogLevel.Error` - Errors only (default).
+- `LogLevel.Warn` - Errors and warnings.
+- `LogLevel.Info` - Errors, warnings, and informational messages.
+- `LogLevel.Debug` - Errors, warnings, info, and debug messages.
+- `LogLevel.Verbose` - All messages including verbose details.
+
+```js
+import { Experiment, LogLevel } from '@amplitude/experiment-react-native-client';
+
+// Only log errors
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Error
+});
+
+// Log errors and warnings
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Warn
+});
+
+// Log everything (verbose)
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Verbose
+});
+```
+
+### Custom logger
+
+Implement the `Logger` interface to use your own logging solution.
+
+```js
+import { Experiment, Logger, LogLevel } from '@amplitude/experiment-react-native-client';
+
+// Implement the Logger interface
+class CustomLogger implements Logger {
+  error(message, ...optionalParams) {
+    // Send errors to your logging service
+    myLoggingService.error(message, ...optionalParams);
+  }
+
+  warn(message, ...optionalParams) {
+    myLoggingService.warn(message, ...optionalParams);
+  }
+
+  info(message, ...optionalParams) {
+    myLoggingService.info(message, ...optionalParams);
+  }
+
+  debug(message, ...optionalParams) {
+    myLoggingService.debug(message, ...optionalParams);
+  }
+
+  verbose(message, ...optionalParams) {
+    myLoggingService.verbose(message, ...optionalParams);
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  loggerProvider: new CustomLogger(),
+  logLevel: LogLevel.Warn
+});
+```
+
+### Debug flag (deprecated)
+
+The `debug` configuration flag is deprecated. Use `logLevel` instead.
+
+```js
+// Deprecated: Sets logLevel to Debug
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  debug: true
+});
+
+// Preferred: Use logLevel instead
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Debug
 });
 ```
 
