@@ -1,0 +1,95 @@
+{{markdown}}
+### Log Recording
+
+{{partial:admonition type="note" heading="Availability"}}
+{{markdown}}Log recording is available in Session Replay Android `1.13.0` and later.{{/markdown}}
+{{/partial:admonition}}
+
+Session Replay supports recording logs in Android applications. To enable log recording, send log messages through the `recordLog(level, message, timestamp)` API and configure the limits through `recordLogOptions` parameter while initializing Session Replay.
+
+```kotlin
+import com.amplitude.android.plugins.SessionReplayPlugin
+import com.amplitude.android.sessionreplay.config.RecordLogLevel
+import com.amplitude.android.sessionreplay.config.RecordLogOptions
+
+val sessionReplayPlugin = SessionReplayPlugin(
+    recordLogOptions = RecordLogOptions(
+        logCountThreshold = 2000,
+        maxMessageLength = 4000
+    )
+)
+amplitude.add(sessionReplayPlugin)
+
+sessionReplayPlugin.recordLog(RecordLogLevel.Error, "This is an error log")
+```
+
+If you have implemented a log system, you can make single-point modifications to integrate log recording functionality. See the following examples for more information.
+
+#### Timber
+
+If you use `Timber`, you can integrate it with a custom tree.
+
+```kotlin
+import com.amplitude.android.plugins.SessionReplayPlugin
+import com.amplitude.android.sessionreplay.config.RecordLogLevel
+import timber.log.Timber
+
+class AmplitudeLogRecordTree(private val plugin: SessionReplayPlugin) : Timber.Tree() {
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        val recordLevel = when (priority) {
+            android.util.Log.ERROR -> RecordLogLevel.Error
+            android.util.Log.WARN -> RecordLogLevel.Warn
+            android.util.Log.INFO -> RecordLogLevel.Log
+            else -> return
+        }
+        plugin.recordLog(recordLevel, message)
+    }
+}
+
+val sessionReplayPlugin = SessionReplayPlugin()
+amplitude.add(sessionReplayPlugin)
+
+Timber.plant(AmplitudeLogRecordTree(sessionReplayPlugin))
+```
+
+#### Logcat
+
+If you use Android's `Log` class directly, you can create a wrapper function.
+
+```kotlin
+import com.amplitude.android.plugins.SessionReplayPlugin
+import com.amplitude.android.sessionreplay.config.RecordLogLevel
+import android.util.Log
+
+object AmplitudeLog {
+    private var sessionReplayPlugin: SessionReplayPlugin? = null
+
+    fun initialize(plugin: SessionReplayPlugin) {
+        sessionReplayPlugin = plugin
+    }
+
+    fun e(tag: String, message: String) {
+        Log.e(tag, message)
+        sessionReplayPlugin?.recordLog(RecordLogLevel.Error, "[$tag] $message")
+    }
+
+    fun w(tag: String, message: String) {
+        Log.w(tag, message)
+        sessionReplayPlugin?.recordLog(RecordLogLevel.Warn, "[$tag] $message")
+    }
+
+    fun i(tag: String, message: String) {
+        Log.i(tag, message)
+        sessionReplayPlugin?.recordLog(RecordLogLevel.Log, "[$tag] $message")
+    }
+}
+
+val sessionReplayPlugin = SessionReplayPlugin()
+amplitude.add(sessionReplayPlugin)
+AmplitudeLog.initialize(sessionReplayPlugin)
+
+// Use AmplitudeLog instead of Log
+AmplitudeLog.e("MyTag", "This is an error message")
+```
+
+{{/markdown}}

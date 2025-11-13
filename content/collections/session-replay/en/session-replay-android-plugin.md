@@ -148,7 +148,9 @@ Pass the following options when you initialize the Session Replay plugin:
 | --------- |-----------| -------- |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
-| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. | 
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -220,6 +222,8 @@ if (nonEUCountryFlagEnabled) {
 ```
 
 {{partial:partials/session-replay/sr-android-webview-mapview}}
+
+{{partial:partials/session-replay/sr-android-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 
