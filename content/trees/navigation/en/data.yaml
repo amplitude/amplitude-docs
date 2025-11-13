@@ -161,6 +161,16 @@ tree:
     id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
     entry: 59306913-18a3-4948-87c4-877316da591c
   -
+    id: b4899aad-a4fc-48eb-b32e-9d556afdc195
+    title: 'Warehouse Metrics'
+    children:
+      -
+        id: a83fe580-968c-432e-af15-781b2d7373fa
+        entry: 51a87950-b35d-4a2f-b919-af92f00f75dd
+      -
+        id: 8ecb2732-3648-4d1f-a279-8851bada72c0
+        entry: d8d5e604-10a9-40e7-9d76-752e02df08fd
+  -
     id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
     title: 'Warehouse-native Amplitude'
     children:

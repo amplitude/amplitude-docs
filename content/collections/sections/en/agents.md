@@ -1,11 +1,12 @@
 ---
 id: 494972be-95b9-48c6-91e1-f3ce85dc5bbd
+published: false
 blueprint: section
-title: Amplitude Agents
+title: 'Amplitude Agents'
 author: b6c6019f-27db-41a7-98bb-07c9b90f212b
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1760460724
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1761253789
 nav_title: agents
 hide_toc: false
 ---
