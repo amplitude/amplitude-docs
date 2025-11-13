@@ -5,7 +5,7 @@ title: 'Streaming transformations'
 landing: false
 exclude_from_sitemap: false
 ---
-Amplitude supports streaming pre-existing transformed events and event properties. This includes support for Custom Events, Derived Properties, Transformed Events, and Transformed Properties. With this feature, you can select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
+Amplitude supports streaming pre-existing transformed events, event properties and user properties. This includes support for Custom Events, Derived Properties, Transformed Events, and Transformed Properties. With this feature, you can select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
 
 ## Feature availability
 
@@ -36,6 +36,75 @@ Keep these things in mind when streaming transformations from Amplitude:
 * Amplitude sends selected event and user properties along with the event.
 * Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed from Amplitude within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.
 
+## How transformations are structured in the payload
+
+When you forward transformations to a destination, they're included as separate nested JSON fields in the payload. This is important to understand if you're using custom FTL (FreeMarker Template Language) templates or need to know how your destination receives the data.
+
+### Selection requirement
+
+To forward a transformation, you must first select it in your sync configuration. You can select transformations in:
+
+* The **Select and filter events** section (for example, filtering where a derived property is not null)
+* The **Select additional properties** section
+* The **Map properties to destination** section (if applicable)
+
+Only transformations that you explicitly select are included in the streaming payload.
+
+### JSON structure
+
+When transformations are attached to the payload, they're added as nested JSON objects. The top-level field name depends on the type of transformation:
+
+| Transformation Type | Top-level JSON Field Name |
+|---------------------|---------------------------|
+| Merged properties | N/A (replaced in original field) |
+| Derived properties | `derived_properties` |
+| Channel properties | `derived_properties` |
+| Lookup properties | `lookup_properties` |
+
+The child field names within these objects match the transformation names displayed in the Amplitude UI.
+
+### Example payload
+
+If you select a derived property called `sample_derived_property_key1`, the streaming payload looks like this:
+
+```json
+{
+  "event_type": "Button Clicked",
+  "user_id": "12345",
+  "derived_properties": {
+    "sample_derived_property_key1": "whatever_value"
+  }
+}
+```
+
+### Using transformations with custom FTL
+
+If your destination uses custom FTL templates, you can access transformation data using these patterns.
+
+**Example 1: Using FtlUtils to serialize derived properties**
+
+```ftl
+<#assign UtilClass=statics['com.amplitude.integrations.connector.utils.FtlUtils']>
+{
+  "version": "derived_properties_sample_ftl1",
+  "derived_properties": ${UtilClass.toJson(input.derived_properties)}
+}
+```
+
+**Example 2: Manually iterating over derived properties**
+
+```ftl
+<#assign UtilClass=statics['com.amplitude.integrations.connector.utils.FtlUtils']>
+{
+  "version": "derived_properties_sample_ftl2",
+  "derived_properties": {
+    <#list input.derived_properties?keys as key>
+      "${key}": "${input.derived_properties[key]}"<#sep>,</#sep>
+    </#list>
+  }
+}
+```
+
 ## Limitations
 
 There are some limitations when streaming transformations from Amplitude:
@@ -47,8 +116,8 @@ There are some limitations when streaming transformations from Amplitude:
 * You can only stream **channel classifiers** directly by requesting it from Amplitude. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they're used as a property where values map to specific rules on existing properties, these channel properties can't be selected when setting up the sync in either event filters, or when sending more properties to the destination, unless you've explicitly enabled this feature.
 * Streaming transformation is available for all streaming destinations except for Data Warehouse destinations.
 * Some custom events aren't selectable in event streaming if:
-  *  They use properties that Amplitude doesn't support
-  *  They use a set operation that Amplitude doesn't support
+  * They use properties that streaming doesn't support
+  * They use a set operation that streaming doesn't support
 
 ## FAQ
 
