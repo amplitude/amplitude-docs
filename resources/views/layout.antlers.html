@@ -21,6 +21,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/general/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/docs/assets/general/favicon-16x16.png">
   <title>{{title}} | {{blade ?? "Amplitude"}}</title>
+  <!-- Dark mode initialization (inline to prevent flash) -->
+  <script src="{{ mix src='/docs/js/dark-mode.js' }}"></script>
   {{if content }}
   {{partial:partials/schema/article}}
   {{else}}
@@ -84,9 +86,9 @@
   {{partial:partials/katex-assets}}
 {{/if}}
 </head>
-<body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
-  <div x-data="{ sidebarOpen: false }" class="container prose">
-    <div class="top-0 left-0  right-0 bg-white fixed z-10">
+<body class="bg-gray-100 dark:bg-amp-gray-950 font-sans leading-normal text-gray-800 dark:text-amp-gray-100 scroll-pt-24 transition-colors">
+  <div x-data="{ sidebarOpen: false }" class="container prose dark:prose-invert">
+    <div class="top-0 left-0  right-0 bg-white dark:bg-amp-gray-900 fixed z-10">
       <div class="w-full pt-5 pl-5">
         <div class="box-border">
           {{ partial:header }}
@@ -94,7 +96,7 @@
       </div>
 
     </div>
-    <div class="top-12 left-0 right-0 fixed bg-white z-10">
+    <div class="top-12 left-0 right-0 fixed bg-white dark:bg-amp-gray-900 z-10">
       <div class="w-full overflow-scroll md:overflow-auto pt-5 pl-5">
         <div class="box-border">
           {{ partial:top-nav }}
@@ -110,7 +112,7 @@
       </div>
     {{ else }}
       <div
-        class="w-64 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow overflow-visible lg:overflow-auto lg:overscroll-contain" :class="{ 'translate-x-[240px]': sidebarOpen }">
+        class="w-64 top-24 bg-white dark:bg-amp-gray-900 bottom-0 border-solid border-r border-black-200 dark:border-amp-gray-700 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow dark:shadow-amp-gray-950 overflow-visible lg:overflow-auto lg:overscroll-contain" :class="{ 'translate-x-[240px]': sidebarOpen }">
         <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8" :class="{ 'rotate-180': sidebarOpen, 'translate-x-[250px]' : sidebarOpen }">{{svg src="/docs/assets/general/expand.svg"}}</button>
         <div class="h-full overflow-scroll overscroll-contain">{{ partial:side-nav :nav_title="nav_title" }}</div>    
         
