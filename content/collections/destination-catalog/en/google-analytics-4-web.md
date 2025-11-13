@@ -52,7 +52,7 @@ To configure streaming from Amplitude to Google Analytics 4 (Web), you need the 
 
 ### Configure mappings
 
-_This applies to both event and user forwarding. Transformed user properties aren't supported._
+_This applies to both event and user forwarding._
 
 1. Select an Amplitude user property that corresponds to your [Google Analytics 4 **Client ID**](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body), from the left dropdown.
 2. (optional) Map an Amplitude user property to [Google Analytics 4 **User ID**](https://support.google.com/analytics/answer/9213390).
@@ -63,19 +63,19 @@ _This applies to both event and user forwarding. Transformed user properties are
 
 Under **Send Events**, make sure the toggle is enabled ("Events are sent to Google Analytics 4") if you want to stream events to Google Analytics 4. When enabled, events are automatically forwarded to Google Analytics 4 when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Google Analytics 4. _Amplitude sets `non_personalized_ads` to `true` for all events events. Transformed events aren't supported._
+1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Google Analytics 4. _Amplitude sets `non_personalized_ads` to `true` for all events events._
 
 {{partial:admonition type="warning" title="Events for non-Google Analytics 4 users cannot be streamed"}}
 Google Analytics 4 requires that all events have a Google Analytics 4 **App Instance ID** present. If you have selected any events to send to Google Analytics 4 that may not have a **App Instance ID**, add a filter to send only events where the **App Instance ID** is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Google Analytics 4. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Google Analytics 4 as [Google Analytics 4 parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body). _Transformed event properties and transformed user properties aren't supported._
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Google Analytics 4. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Google Analytics 4 as [Google Analytics 4 parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body).
 
 ### Configure user forwarding
 
 To stream user and property updates to Google Analytics 4, enable **Send Users**. This setting creates or updates users in Google Analytics 4 when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates.
 
-You can optionally select user properties to send to Google Analytics 4 in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Google Analytics 4 User Properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties?client_type=gtag). _This integration doesn't support transformed user properties_.
+You can optionally select user properties to send to Google Analytics 4 in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Google Analytics 4 User Properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties?client_type=gtag).
 
 ### Enable sync
 
