@@ -130,6 +130,56 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 
 Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
 
+## Element selector
+
+When you configure guides with pins, tooltips, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
+
+### How the element selector works
+
+Amplitude's visual element selector automatically identifies the most stable CSS selector for the element you choose. This ensures your guide continues to work even if minor page changes occur.
+
+To use the visual selector:
+
+1. Click **Test and Preview** in the guide builder
+2. Navigate to the page containing your target element
+3. Click the element you want to target
+4. Amplitude automatically generates a CSS selector for that element
+
+#### Selecting nested elements
+
+To select nested elements (elements inside other elements), use the Alt key (Option key on Mac) while hovering over elements:
+
+1. Click **Test and Preview**
+2. Hover over the parent element
+3. Hold the Alt/Option key
+4. Continue hovering to drill down into nested child elements
+5. Click to select the desired nested element
+
+This lets you precisely target specific elements within complex page structures, such as buttons within cards or icons within menus.
+
+### Override or provide your own selector
+
+If you prefer to specify your own selector or need more control, you can manually enter a CSS or XPath selector:
+
+1. In the element selector field, paste your CSS selector or XPath expression
+2. Choose your selection strategy:
+   - **CSS Selector**: Standard CSS selector syntax (for example, `#submit-button`, `.primary-cta`)
+   - **XPath**: XPath expression for more complex targeting (for example, `//button[@id='submit']`)
+3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
+4. Test your selector with **Test and Preview** to confirm it targets the correct element
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+
+{{partial:admonition type='tip' heading='Best practices for custom selectors'}}
+* Use stable attributes like IDs or data attributes that are less likely to change
+* Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
+* Test your selectors across different pages and screen sizes
+* Consider adding data attributes specifically for guide targeting to ensure reliability
+{{/partial:admonition}}
+
 ## Properties
 
 These properties apply across form factors, enabling you to customize your guide components. Options available to each property may differ across form factors.
