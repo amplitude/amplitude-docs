@@ -37,8 +37,7 @@ Depending on your company's network policy, you may need to add these IP address
 
 ## Limits
 
-- Maximum running time for a single Snowflake SQL query is 12 hours.
-- Max batch size for a single Snowflake SQL query is 1B events. 
+- Maximum running time for a single Snowflake SQL query is 12 hours. You can optimize query performance and reduce runtime by allocating more compute resources to your Snowflake warehouse (for example, by increasing the warehouse size).
 
 {{partial:admonition type="warning" title="User and Group properties sync"}}
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
@@ -140,7 +139,7 @@ For the `Event` data type and Append-Only or Timestamp Ingestion, optionally sel
 
 ### Schedule your sync
 
-Provide a name for the source, and set the frequency with which Amplitude imports your data. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
+Provide a name for the source, and configure the sync frequency. You can schedule syncs from every 5 minutes to monthly. Daily syncs can run at a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
 
 ## Choose the best integration for your use case
 
