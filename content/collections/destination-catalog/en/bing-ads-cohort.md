@@ -25,6 +25,7 @@ Send Amplitude cohorts to Bing Ads to create customer match lists for more perso
 - Bing Ads customer match lists only support email as an identifier. Identify an Amplitude user property that maps to a user's email address before you set up the integration.
 - Provide email addresses as plain text or a hashed string (using the SHA-256 algorithm). Amplitude automatically hashes plain text email addresses using SHA-256 before sending them to Bing Ads.
 - Bing Ads only ingests users that have an email identifier set. The sync excludes users without valid email addresses.
+- Customer match lists created through this integration are available to all accounts under the selected customer. You can associate these lists with any campaigns and ad groups across all of the customer's accounts.
 - The list needs at least 300 people on the Microsoft Advertising Network to be eligible to serve.
 - Customer match lists can take up to 24 hours to populate with members after syncing from Amplitude.
 
