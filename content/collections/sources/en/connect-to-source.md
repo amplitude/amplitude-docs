@@ -28,7 +28,33 @@ The Ingestion Debugger is a trio of charts showing data for successful requests,
 Below the Ingestion Debugger is the list of throttled users and devices. Here you can see a list of which users and device IDs have been throttled in the last 30 minutes, as well as a list of silenced device IDs.
 
 {{partial:admonition type='note'}}
- Throttled user IDs and device IDs will only appear in the Ingestion Debugger for users with Manager permissions or higher. User with Member and Viewer permissions won't see anything in this section.
+Throttled user IDs and device IDs appear only in the Ingestion Debugger for users with Manager permissions or higher. User with Member and Viewer permissions won't see anything in this section.
+{{/partial:admonition}}
+
+## Set up ingestion error alerts
+
+Configure email alerts to notify you when ingestion errors occur. This helps you identify and resolve data quality issues before they impact your analysis.
+
+To set up ingestion error alerts, follow these steps:
+
+1. Navigate to **Data** > **Sources**.
+2. Select the **Ingestion Debugger** tab.
+3. Click **Create A New Alert**.
+4. Configure your alert settings:
+   - **Ingestion Path**: Select the source of the error. For example, SDK or HTTP API.
+   - **Error type**: Select the type of error that triggers the alert.
+   - **Threshold**: Set the error rate or count that triggers an alert.
+   - **Evaluation Window**: Set the frequency with which Amplitude checks for alerts.
+   - **Recipients**: Add email addresses for people who should receive notifications
+   - **Alert frequency**: Choose how often Amplitude sends alerts (for example, immediate, hourly, or daily)
+5. Enable the Alert and click **Create Alert**.
+
+After you set up alerts, Amplitude monitors your ingestion error rates and sends email notifications when errors exceed your configured thresholds. This lets you proactively address data quality issues and maintain reliable analytics.
+
+{{partial:admonition type='tip' heading='Best practices'}}
+* Set up alerts for critical data sources that power key dashboards or reports
+* Include multiple team members as recipients to ensure alerts don't go unnoticed
+* Review and adjust thresholds periodically based on your typical error patterns
 {{/partial:admonition}}
 
 ## Add a data source

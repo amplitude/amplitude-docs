@@ -358,6 +358,29 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
+#### iframe support and limitations
+
+Guides and Surveys has limited support for applications that use iframes. Consider these important limitations when implementing Guides and Surveys in iframe-based applications.
+
+**Targeting elements inside iframes:**
+- Pins and tooltips can't target elements inside an iframe from the parent application
+- Each iframe requires its own SDK instance to display guides or surveys within that iframe
+- CSS selectors can't cross iframe boundaries, which prevents the SDK from locating elements inside iframes
+
+**SDK instances and multi-step experiences:**
+- Each iframe requires a separate SDK instance, initialized with the same API key as the parent application
+- Multi-step tours that span across the parent application and iframes aren't supported
+- Each SDK instance operates independently and can't coordinate steps across different contexts
+
+**Event tracking and user identification:**
+- Events tracked in an iframe are independent from events in the parent application
+- Ensure consistent user identification (user ID and device ID) across all SDK instances
+- Each SDK instance maintains its own state and doesn't share data with other instances
+
+**Recommended approach:**
+- Install the SDK in both the parent application and each iframe that needs to display guides or surveys
+- Use the same API key for all SDK instances to ensure consistent user identification
+- Design guides and surveys to work within a single context (either parent or a specific iframe)
 
 ## Manage themes
 
@@ -697,9 +720,22 @@ If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If
 
 If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK.
 
+Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
+
+### Google Tag Manager configuration
+
 If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 
-Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
+{{partial:admonition type="warning" heading="Google Tag Manager custom tags"}}
+If Guides and Surveys doesn't work with a Google Tag Manager (GTM) custom HTML tag, verify that the **Support document.write** checkbox in the tag configuration is enabled. This setting is required for Guides and Surveys to load properly through GTM.
+
+To enable this setting:
+
+1. In GTM, navigate to your Amplitude tag.
+2. Expand the **Advanced Settings** section.
+3. Check the **Support document.write** checkbox.
+4. Save and publish your changes.
+{{/partial:admonition}}
 
 ### Common root causes
 

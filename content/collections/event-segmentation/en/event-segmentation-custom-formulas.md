@@ -52,6 +52,10 @@ The order in which you are grouping properties by matters as well. Both events m
 
 ![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
 
+{{partial:admonition type='note' heading='Ranking with multi-term formulas'}}
+When you use multi-term formula metrics with group-bys, Amplitude ranks groups by the sum of unique users across all metrics in the formula, not by the final calculated values. This can affect which groups appear in high-cardinality results. For more details, review [Column ranking behavior in Data Tables](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic#column-ranking-behavior).
+{{/partial:admonition}}
+
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
 To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This displays a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 

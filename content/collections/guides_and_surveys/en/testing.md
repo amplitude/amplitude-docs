@@ -50,6 +50,17 @@ These conditions have three statuses:
 | Yellow | The condition isn't passed, and the guide or survey doesn't display. |
 | Blue   | The condition is pending or bypassed.                                |
 
+### How preview mode works
+
+Preview mode uses browser messaging to communicate between the Amplitude dashboard and your application. When you start a preview:
+
+1. The Amplitude dashboard opens your application URL in a new tab.
+2. The dashboard waits (approximately 10 seconds) for a message from the Guides and Surveys SDK running on your page.
+3. If the SDK sends a message, the dashboard responds with preview information (including the guide or survey ID).
+4. The SDK receives this information and displays the preview.
+
+This communication relies on the browser's `window.postMessage` API to pass messages between the dashboard and your application.
+
 ### Troubleshooting preview mode
 
 Sometimes, the guide or survey doesn't appear in preview. When this happens, and the instrumentation is correct, check the following:
@@ -57,6 +68,43 @@ Sometimes, the guide or survey doesn't appear in preview. When this happens, and
 * That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
 * That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
 * If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
+
+#### No error message but preview doesn't appear
+
+If the Amplitude dashboard doesn't show an error but your preview doesn't appear, this indicates that:
+
+* The dashboard received the initial message from your SDK
+* The SDK isn't receiving the response message from the dashboard
+
+To troubleshoot this scenario:
+
+* Check your browser console for errors related to message passing
+* Verify that no browser extensions or security settings block cross-window messaging
+* Enable the **Don't automatically close the preview window** option in the preview modal to keep the window open for debugging
+
+#### Error message and preview doesn't appear
+
+If the Amplitude dashboard displays an error after approximately 10 seconds, the dashboard didn't receive a message from the SDK. This indicates that:
+
+* The SDK isn't loading on your page
+* The SDK can't communicate with the dashboard
+
+To troubleshoot this scenario:
+
+* Verify the SDK is installed correctly using `window.engagement` in your browser console
+* Enable the **Don't automatically close the preview window** option to extend the waiting time beyond 10 seconds
+* Check that your application URL is correct and accessible
+
+#### Known issue: Cross-Origin-Opener-Policy header
+
+If your application sets the `Cross-Origin-Opener-Policy` (COOP) header to `same-origin`, it prevents message passing between the Amplitude dashboard and your application. This blocks preview mode from working.
+
+To resolve this issue, either:
+
+* Set the COOP header to `same-origin-allow-popups` instead of `same-origin`
+* Temporarily disable the COOP header for testing purposes
+
+For more information about the COOP header, review the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 {{partial:admonition type="note" heading="Clear user history"}}
 Amplitude keeps a record of the guides and surveys your users encounter. To remove a guide or survey from a user's history:
