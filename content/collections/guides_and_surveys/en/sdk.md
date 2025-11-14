@@ -358,6 +358,29 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
+#### iframe support and limitations
+
+Guides and Surveys has limited support for applications that use iframes. Consider these important limitations when implementing Guides and Surveys in iframe-based applications.
+
+**Targeting elements inside iframes:**
+- Pins and tooltips can't target elements inside an iframe from the parent application
+- Each iframe requires its own SDK instance to display guides or surveys within that iframe
+- CSS selectors can't cross iframe boundaries, which prevents the SDK from locating elements inside iframes
+
+**SDK instances and multi-step experiences:**
+- Each iframe requires a separate SDK instance, initialized with the same API key as the parent application
+- Multi-step tours that span across the parent application and iframes aren't supported
+- Each SDK instance operates independently and can't coordinate steps across different contexts
+
+**Event tracking and user identification:**
+- Events tracked in an iframe are independent from events in the parent application
+- Ensure consistent user identification (user ID and device ID) across all SDK instances
+- Each SDK instance maintains its own state and doesn't share data with other instances
+
+**Recommended approach:**
+- Install the SDK in both the parent application and each iframe that needs to display guides or surveys
+- Use the same API key for all SDK instances to ensure consistent user identification
+- Design guides and surveys to work within a single context (either parent or a specific iframe)
 
 ## Manage themes
 
