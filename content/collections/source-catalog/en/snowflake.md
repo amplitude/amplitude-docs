@@ -139,7 +139,7 @@ For the `Event` data type and Append-Only or Timestamp Ingestion, optionally sel
 
 ### Schedule your sync
 
-Provide a name for the source, and set the frequency with which Amplitude imports your data. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
+Provide a name for the source, and configure the sync frequency. You can schedule syncs from every 5 minutes to monthly. Daily syncs can run at a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
 
 ## Choose the best integration for your use case
 
