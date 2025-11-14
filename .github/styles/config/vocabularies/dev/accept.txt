@@ -261,3 +261,4 @@ Viewport
 [Aa]ddons?
 [Aa]utomations?\b
 [Ww]insorization
+Accoil
