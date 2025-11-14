@@ -250,11 +250,25 @@ amplitudeEngagement.closeAll()
 
 To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
 
+### Add your mobile app to project settings
+
+Before you can use preview mode, add your Android app to your project settings in Amplitude:
+
+1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
+2. Select your project.
+3. Click the **Guides and Surveys** tab.
+4. In the **App Management** section, click **Add App**.
+5. Enter your Android app's package name (for example, `com.example.myapp`).
+6. Click **Save**.
+
+After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
+After adding your app to project settings, locate the URL scheme:
 
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
+2. Copy its value, for example, `amp-abc123`.
 
 ### Add the URL scheme in Android Studio
 
