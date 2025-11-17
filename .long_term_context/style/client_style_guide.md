@@ -21,6 +21,25 @@
 
 ## Formatting Guidelines
 
+### Heading Structure and Spacing
+- **Always include content between headings**: Never place headings sequentially without intervening content. Each heading should be followed by at least one sentence or paragraph before any subheadings.
+  - **Bad**: 
+    ```markdown
+    ## Troubleshooting
+    ### Short or incomplete replays
+    ```
+  - **Good**:
+    ```markdown
+    ## Troubleshooting
+    
+    This section describes common issues you may encounter with Session Replay and how to resolve them.
+    
+    ### Short or incomplete replays
+    ```
+- **Add empty lines before section headings**: Always include an empty line before `##` and `###` headings to ensure proper spacing.
+  - **Bad**: No empty line before the heading
+  - **Good**: One empty line separates the previous content from the heading
+
 ### Emphasis and Highlighting
 - **Don't use bold text for emphasis** of important information. If content is important enough to be bolded, it should become a note or warning admonition instead.
 - **Bad**: **Important limitation that users need to know**
