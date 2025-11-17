@@ -25,7 +25,10 @@ Ingestion Monitor displays charts that show the count of the following status ov
 - Invalid session IDs
 
 Use the information in these graphs to help debug the cause of unavailable session replays and monitor the health of your Session Replay implementation.
+
 ## Troubleshooting
+
+This section describes common issues you may encounter with Session Replay and how to resolve them.
 
 ### Short or incomplete replays
 
