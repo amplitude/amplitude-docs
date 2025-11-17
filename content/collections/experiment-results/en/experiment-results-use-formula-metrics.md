@@ -139,9 +139,9 @@ Measures the percentage of users who complete a desired action.
 
 **Example**: If event A is "Viewed Product Page" and event B is "Completed Purchase", this formula calculates the percentage of users who viewed a product page and then completed a purchase.
 
-### Average revenue per user (ARPU)
+### Average revenue for each user (ARPU)
 
-Calculates the average revenue generated per user.
+Calculates the average revenue generated for each user.
 
 **Formula**: `PROPSUM(A) / UNIQUES(A)`
 
@@ -155,17 +155,17 @@ Measures the ratio of users who clicked on a specific element to users who viewe
 
 **Example**: If event A is "Viewed Banner" and event B is "Clicked Banner", this formula calculates the percentage of users who clicked after viewing.
 
-### Events per user
+### Events for each user
 
-Calculates the average number of times users trigger an event.
+Calculates the average number of times each user triggers an event.
 
 **Formula**: `TOTALS(A) / UNIQUES(A)`
 
-**Example**: If event A is "Video Watched", this formula calculates the average number of videos watched per user.
+**Example**: If event A is "Video Watched", this formula calculates the average number of videos each user watched.
 
-### Revenue per session
+### Revenue for each session
 
-Measures the average revenue generated per session.
+Measures the average revenue generated for each session.
 
 **Formula**: `PROPSUM(A) / TOTALS(B)`
 
@@ -211,13 +211,13 @@ Compares two types of engagement to understand user preferences.
 
 **Example**: If event A is "Video Watched" and event B is "Article Read", this formula shows the ratio of video views to article reads.
 
-### Average property value per user
+### Average property value for each user
 
-Calculates the average value of a property across all users who triggered an event.
+Calculates the average value of a property for each user who triggered an event.
 
 **Formula**: `PROPSUM(A) / UNIQUES(A)`
 
-**Example**: If event A is "Time Spent" grouped by a `duration` property (in seconds), this formula calculates the average time spent per user.
+**Example**: If event A is "Time Spent" grouped by a `duration` property (in seconds), this formula calculates the average time each user spent.
 
 ### Maximum property value
 
@@ -235,13 +235,13 @@ Finds the lowest value of a property across all events.
 
 **Example**: If event A is "Time Spent" grouped by `duration`, this formula returns the shortest time spent in the experiment.
 
-### Revenue per unique user
+### Revenue for each unique user
 
 Calculates total revenue divided by unique purchasers.
 
 **Formula**: `$:REVENUETOTAL(A) / UNIQUES(A)`
 
-**Example**: If event A is "Purchase Completed" grouped by `revenue`, this formula calculates average revenue per purchasing user. The `$:` prefix formats the result as currency.
+**Example**: If event A is "Purchase Completed" grouped by `revenue`, this formula calculates average revenue for each purchasing user. The `$:` prefix formats the result as currency.
 
 ### Combined conversion rate
 
@@ -249,7 +249,7 @@ Measures conversion across multiple paths.
 
 **Formula**: `(UNIQUES(B) + UNIQUES(C)) / UNIQUES(A)`
 
-**Example**: If event A is "Viewed Landing Page", event B is "Signed Up via Email", and event C is "Signed Up via Social", this formula calculates the total sign-up rate across both methods.
+**Example**: If event A is "Viewed Landing Page", event B is "Signed Up through Email", and event C is "Signed Up through Social", this formula calculates the total sign-up rate across both methods.
 
 ## How Amplitude calculates experiment data for formula metrics
 
