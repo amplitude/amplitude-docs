@@ -25,3 +25,15 @@ Ingestion Monitor displays charts that show the count of the following status ov
 - Invalid session IDs
 
 Use the information in these graphs to help debug the cause of unavailable session replays and monitor the health of your Session Replay implementation.
+## Troubleshooting
+
+### Short or incomplete replays
+
+If you see short replays (less than 10 seconds) or replays that appear incomplete, check the Ingestion Monitor for 429 throttling errors.
+
+429 errors mean your application sends too many Session Replay requests. Amplitude throttles these requests, and because replays consist of multiple chunks of data, some chunks may not send successfully. This causes incomplete or unusually short replays.
+
+To resolve this:
+
+1. Reduce your Session Replay sample rate to lower the number of requests your application sends per second.
+2. Monitor the 429 error count in the Ingestion Monitor to confirm throttling errors decrease after you adjust the sample rate.
