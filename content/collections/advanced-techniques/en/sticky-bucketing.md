@@ -24,7 +24,7 @@ Sticky bucketing is only available for Feature experiments, not flags or Web exp
 
 ## How sticky bucketing works
 
-To turn sticky bucketing on or off, open your experiment and navigate to your experiment and then click the **pencil** icon and then go to *Experiment Design > Advanced (Optional) > Bucketing Options.* 
+To turn sticky bucketing on or off, open your experiment, click the **pencil** icon, and navigate to **Advanced (Optional)** > **Bucketing Options**. 
 
 When sticky bucketing is enabled, Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user Experiment assigns the current value of the user property (the last variant they saw). Otherwise, the user is re-evaluated.
 
