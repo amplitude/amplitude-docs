@@ -7,7 +7,11 @@ updated_at: 1761677299
 ---
 As internet searches get replaced by AI chatbots, AI Visibility helps marketers and growth teams understand, measure, and amplify their brand presences in AI-generated answers. It surfaces visibility scores, competitor rankings, and recommendations for improvement. This lets you understand how your brand appears in AI searches and to act to improve your AI-driven traffic. 
 
+AI Visibility automatically updates its information weekly. 
+
 Most AI Visibility functionality is available to everyone, with or without an Amplitude subscription. However, some functionality is only available with a paid Amplitude subscription. Any functionality descriptions in this article that aren't visible to your version of AI Visibility are part of the subscription tier.
+
+## Free visibility reports
 
 Free visibility reports are available to everyone on the Amplitude [Try AI Visibility](https://www.amplitude.com/try-ai-visibility) page of the website. 
 

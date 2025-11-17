@@ -127,6 +127,34 @@ In your formulas, refer to events selected in the Events Module by their corresp
 * Multiplication (*)
 * Division (/)
 
+## Formula metric examples
+
+Use these examples to create common business metrics for your experiments. Each example shows the formula syntax and what it measures.
+
+### Total engagement score
+
+Combines multiple engagement events into a single metric.
+
+**Formula**: `TOTALS(A) + TOTALS(B) + TOTALS(C)`
+
+**Example**: If event A is "Article Read", event B is "Comment Posted", and event C is "Article Shared", this formula sums all engagement actions.
+
+### Average order value
+
+Calculates the average value of orders or purchases.
+
+**Formula**: `PROPAVG(A)`
+
+**Example**: If event A is "Purchase Completed" grouped by a `order_value` property, this formula returns the average order value. This is equivalent to `PROPSUM(A) / TOTALS(A)`.
+
+### Engagement ratio
+
+Compares two types of engagement to understand user preferences.
+
+**Formula**: `TOTALS(A) / TOTALS(B)`
+
+**Example**: If event A is "Video Watched" and event B is "Article Read", this formula shows the ratio of video views to article reads.
+
 ## How Amplitude calculates experiment data for formula metrics
 
 Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the [Experiment Analysis view](/docs/feature-experiment/analysis-view), which provides details for your experiment.
