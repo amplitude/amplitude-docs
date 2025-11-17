@@ -28,7 +28,7 @@ updated_at: 1726695250
 
 Keep these things in mind when sending events to HubSpot:
 
-- **Don't manually create or delete events or property definitions in HubSpot for your Amplitude events.** Amplitude will automatically create the necessary event and property definitions when you enable the integration. Amplitude expects event and property definitions in HubSpot to be named and typed according to our internal specification so that they can be consistently matched by our integration. If you manually create event or property definitions in HubSpot that don't match the Amplitude integration, you will not be able to send events without additional steps (see the troubleshooting section), as event definition names can't be changed or permanently deleted in HubSpot. It's safe to edit display names and descriptions in HubSpot.
+- **Don't manually create or delete events or property definitions in HubSpot for your Amplitude events.** Amplitude automatically creates the necessary event and property definitions when you enable the integration. Amplitude expects event and property definitions in HubSpot to be named and typed according to Amplitude's internal specification so the integration can match them consistently. If you manually create event or property definitions in HubSpot that don't match the Amplitude integration, you can't send events without additional steps as event definition names can't be changed or permanently deleted in HubSpot. It's safe to edit display names and descriptions in HubSpot. For more information, review [Troubleshooting](#troubleshooting)
 - If you already have an existing HubSpot streaming connection, re-authenticate with HubSpot to grant additional permissions to create events and properties for you. With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as custom events in HubSpot.
@@ -59,7 +59,7 @@ Keep these things in mind when sending events to HubSpot:
 11. Click *Continue*, verify your connection, and click *Finish*.
 
 ### Troubleshooting
-If you encounter an error when trying to create event and/or property definitions in HubSpot, or if you manually created and then deleted a custom event matched with an Amplitude event in HubSpot, you can try this workaround. It will create a custom event that references the original event and uses it instead (this won't impact existing charts using the original event in Amplitude).
+If you encounter an error when trying to create event and/or property definitions in HubSpot, or if you manually created and then deleted a custom event matched with an Amplitude event in HubSpot, try the following workaround. It creates a custom event that references the original event and uses it instead. This doesn't impact existing charts using the original event in Amplitude.
 
 1. In Amplitude Data, navigate to *Events > Custom Events*.
 2. Click *Create custom event*.
