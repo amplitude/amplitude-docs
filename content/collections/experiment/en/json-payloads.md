@@ -225,6 +225,8 @@ app.get('/api/blog-config', async (req, res) => {
 
 ## Best practices
 
+Follow these best practices to ensure your payload implementation is robust and maintainable.
+
 ### Provide default values
 
 Always provide default values when accessing payload properties. This ensures your application works correctly if:
@@ -267,7 +269,7 @@ if (variant?.payload && validateLayoutPayload(variant.payload)) {
 
 Keep payload structures simple and focused on configuration. Avoid:
 - Large payloads (keep under 10KB)
-- Deeply nested structures
+- Complex nested structures
 - Sensitive data (payloads are visible in network traffic)
 
 ### Document your payload schema
@@ -287,6 +289,8 @@ Document the expected structure of your payloads, especially when multiple teams
 ```
 
 ## Common use cases
+
+JSON payloads support a wide range of use cases. Here are some of the most common patterns.
 
 ### Remote configuration
 
@@ -346,12 +350,5 @@ Only the `value` and `payload` properties are available when accessing a variant
 
 For more information about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
 
-## Related resources
 
-- [Data model](/docs/feature-experiment/data-model#variants)
-- [Experiment quick start](/docs/feature-experiment/experiment-quick-start#creating-variations)
-- [Create variant API (flags)](/docs/apis/experiment/experiment-management-api-flags#create-variant)
-- [Create variant API (experiments)](/docs/apis/experiment/experiment-management-api-experiments#create-variant)
-- [Remote evaluation](/docs/feature-experiment/remote-evaluation)
-- [Local evaluation](/docs/feature-experiment/local-evaluation)
 
