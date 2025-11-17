@@ -24,11 +24,11 @@ Data Tables apply display limits based on your group-by configuration. These are
 
 ### Nested group-bys
 
-To add multiple group-bys in a data table, start with one group-by already selected in the first column. Then, look for the icon with three stacked lines that appears when you hover—it says "Add top-level group-by." Click this icon to add another column and a second group-by.
+To add multiple group-bys in a data table, start with one group-by already selected in the first column. Then, look for the icon with three stacked lines that appears when you hover—it says "Add top-level group-by." Click the icon to add another column and a second group-by.
 
 ![Add top-level group-by icon](/docs/output/img/data-tables/add-nested-groupby-icon.png)
 
-By default, the first group-by is applied first. Amplitude then finds the second group-by value within each value of the first, and continues in that order for any additional group-bys you add.
+By default, Amplitude applies the first group-by, then finds the second group-by value within each value of the first, and continues in that order for any additional group-bys you add.
 
 ![Multiple group-bys applied in order](/docs/output/img/data-tables/nested-groupby-png.png)
 
