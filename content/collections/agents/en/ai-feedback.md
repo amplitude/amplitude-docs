@@ -51,14 +51,24 @@ AI Feedback can ingest and generate insights from multiple sources at the same t
 
 1. Open Amplitude and click **AI Feedback** and then **Add Source**.
 2. Select one of:
-  * **Connect an integration**: Lets you connect to an application such as Zendesk or G2.
+  * **Connect an integration**: Lets you connect to an application such as Zendesk, Hubspot, or G2.
   * **Upload a file**: Lets you upload a static CSV or DOCX file.
   * **Paste text**: Lets you paste text directly into AI Feedback.
 3. If you’re connecting an integration:
   * Search for your application or select it from the list.
   * Depending on the integration, you may need to sign in to that application, specify relevant metadata tags, or point AI Feedback to a specific URL. The connector modal guides you through the necessary steps.
-4. If you’re uploading a CSV or DOCX file, click **Upload** and then drag and drop the files you want to upload. 
-5. If you’re pasting text, paste the content you want analyzed into the field. AI Feedback begins to parse the content automatically. 
+4. If you’re pasting text, paste the content you want analyzed into the field. AI Feedback begins to parse the content automatically. 
+5. If you’re uploading a CSV or DOCX file, click **Upload** and then drag and drop the files you want to upload. For CSV files, you'll choose which columns you want to designate as the Feedback information and which columns you want as additional metadata. 
+
+For example:
+You could have a CSV file with the following columns:
+
+  |  Feedback  |Timestamp  | Email | Geolocation |
+  |  ----- |  ----- | ----- | ----- | 
+  |  Feedback entry 1  |  2023-11-03T15:28:05Z  | name@example.co.uk | UK  |
+  |  Feedback entry 2  |  11/03/2023 3:28:05 PM | name2@example.com | US  |
+
+In the AI Feedback CSV upload tool, designate which columns you want and click **Analyze**. You must select the column that includes your feedback. 
 
 {{partial:admonition type="note" heading="Requesting a new source"}}
 If the integration you need isn’t listed, click **Request a new source** to ask for a new source.
@@ -152,7 +162,7 @@ A link to the insight is automatically saved to your clipboard. Only colleagues 
 
 ## Merging existing users from an AI Feedback source
 
-This lets you merge your existing users with users from supported AI Feedback sources such as Zendesk or Intercom. Amplitude merges users with the same email address. 
+This lets you merge your existing users with users from supported AI Feedback sources such as Zendesk, Hubspot, or Intercom. Amplitude merges users with the same email address. 
 
 ##### To merge existing users
 
@@ -173,7 +183,7 @@ To ensure that the deletion is permanent and complete:
 
 AI Feedback follows your existing Amplitude project and role-based permissions. No new data access is granted. 
 
-You authorize the source connectors you want (for example: Zendesk, Intercom, App Store/Google Play, Gong, G2/Trustpilot, Reddit/Discord/X) and they're scoped to your credentials using secure OAuth (or equivalent).
+You authorize the source connectors you want (for example: Zendesk, Hubspot, Intercom, App Store/Google Play, Gong, G2/Trustpilot, Reddit/Discord/X) and they're scoped to your credentials using secure OAuth (or equivalent).
 
 ## AI Feedback and LLM use
 

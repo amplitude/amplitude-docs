@@ -25,18 +25,18 @@ Don't ask users to perform actions. Tell them what to do.
 Start instructions with action verbs in the imperative mood.
 
 **Common instruction verbs:**
-- Configure, Create, Delete, Update, Edit
-- Navigate, Select, Choose, Click
-- Enter, Type, Specify, Define
-- Install, Run, Execute, Deploy
-- Enable, Disable, Toggle, Set
-- Review, Check, Verify, Validate
-- Export, Import, Upload, Download
+- Configure, Create, Delete, Update, Edit.
+- Navigate, Select, Choose, Click.
+- Enter, Type, Specify, Define.
+- Install, Run, Execute, Deploy.
+- Enable, Disable, Toggle, Set.
+- Review, Check, Verify, Validate.
+- Export, Import, Upload, Download.
 
 **Examples:**
 - ✅ "Configure the API endpoint in the settings file."
 - ✅ "Create a new project in the Amplitude dashboard."
-- ✅ "Navigate to **Settings** > **API Keys**."
+- ✅ "Navigate to *Settings > API Keys*."
 - ✅ "Select the events you want to track."
 
 ## Avoid Hedging Language
@@ -57,7 +57,7 @@ For multi-step procedures, use numbered lists with direct imperative statements:
 ```markdown
 To configure API authentication:
 
-1. Navigate to **Settings** > **API Keys**.
+1. Navigate to *Settings > API Keys*.
 2. Select **Create New Key**.
 3. Enter a name for the key.
 4. Copy the generated key to your application.

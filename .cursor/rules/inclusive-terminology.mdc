@@ -11,8 +11,8 @@ Use inclusive, modern terminology that avoids potentially offensive or outdated 
 ## Required Terminology Changes
 
 ### Access Control Terms
-- ❌ "blacklist" → ✅ "block list" or "deny list"
-- ❌ "whitelist" → ✅ "allow list" or "accept list"
+- ❌ "blacklist" → ✅ "block list" or "deny list".
+- ❌ "whitelist" → ✅ "allow list" or "accept list".
 
 **Examples:**
 - ❌ "Add the domain to the whitelist."
@@ -21,8 +21,8 @@ Use inclusive, modern terminology that avoids potentially offensive or outdated 
 ### Process Termination
 Use neutral terms for stopping processes:
 
-- ❌ "kill" → ✅ "end", "cancel", "stop", or "terminate"
-- ❌ "abort" → ✅ "end", "cancel", or "stop"
+- ❌ "kill" → ✅ "end", "cancel", "stop", or "terminate".
+- ❌ "abort" → ✅ "end", "cancel", or "stop".
 
 **Examples:**
 - ❌ "Kill the running process."
@@ -31,42 +31,57 @@ Use neutral terms for stopping processes:
 - ✅ "Cancel the operation."
 
 ### Legacy and Exemption
-- ❌ "grandfathered" → ✅ "legacy" or "exempt"
+- ❌ "grandfathered" → ✅ "legacy" or "exempt".
 
 **Examples:**
 - ❌ "Existing users are grandfathered into the old pricing."
 - ✅ "Existing users are exempt from the new pricing."
 
 ### Placeholder Terms
-- ❌ "dummy" → ✅ "placeholder", "mock", "stub", or "sample"
+- ❌ "dummy" → ✅ "placeholder", "mock", "stub", or "sample".
 
 **Examples:**
 - ❌ "Use dummy data for testing."
 - ✅ "Use placeholder data for testing."
 
 ### UI State Terms
-- ❌ "grayed-out" → ✅ "disabled" or "inactive"
+- ❌ "grayed-out" → ✅ "disabled" or "inactive".
 
 **Examples:**
 - ❌ "The button appears grayed-out."
 - ✅ "The button appears disabled."
 
 ### Verification Terms
-- ❌ "sanity-check" → ✅ "validate", "verify", or "final check"
+- ❌ "sanity-check" → ✅ "validate", "verify", or "final check".
 
 **Examples:**
 - ❌ "Run a sanity-check on the configuration."
 - ✅ "Validate the configuration."
 
 ### Navigation Terms
-- ❌ "see" (when referring to other documentation) → ✅ "go to", "navigate to", "review", or "refer to"
+- ❌ "see" (when referring to other documentation) → ✅ "go to", "navigate to", "review", or "refer to".
 
 **Examples:**
 - ❌ "See the API documentation."
 - ✅ "Review the API documentation." or "Refer to the API documentation."
 
-### Other Terms
+### Latin Terminology
+Avoid Latin terms and phrases. Use plain English alternatives:
+
+- ❌ "versus" or "vs." → ✅ "compared to" or "compared with"
 - ❌ "via" → ✅ "through" or "using"
+- ❌ "per" → ✅ "for each" or "according to"
+- ❌ "e.g." → ✅ "for example"
+- ❌ "i.e." → ✅ "that is"
+- ❌ "etc." → ✅ Start with "for example" or "such as"
+
+**Examples:**
+- ❌ "Compare version 1 versus version 2."
+- ✅ "Compare version 1 with version 2."
+- ❌ "Send 100 events per second."
+- ✅ "Send 100 events for each second."
+
+### Other Terms
 - ❌ "once" (meaning "after") → ✅ "after"
 - ❌ "desire" → ✅ "want" or "need"
 - ❌ "first-class" (in abstract contexts) → ✅ "primary" or "default"
@@ -76,9 +91,9 @@ Use neutral terms for stopping processes:
 
 Use gender-neutral pronouns and terms:
 
-- Use "they/their" for singular when gender is unknown
-- Use role-based terms: "developer," "user," "administrator" rather than gendered alternatives
-- Avoid "guys" when referring to groups
+- Use "they/their" for singular when gender is unknown.
+- Use role-based terms: "developer," "user," "administrator" rather than gendered alternatives.
+- Avoid "guys" when referring to groups.
 
 **Examples:**
 - ❌ "Each developer should configure his API key."
@@ -89,9 +104,9 @@ Use gender-neutral pronouns and terms:
 
 When describing UI elements:
 
-- Use "select" or "choose" rather than "click" (to include keyboard and screen reader users)
-- Describe what happens, not just the action: "Select **Save** to save your changes."
-- Avoid relying solely on color: "Select the blue **Submit** button" → "Select **Submit**"
+- Use "select" or "choose" rather than "click" (to include keyboard and screen reader users).
+- Describe what happens, not just the action: "Select **Save** to save your changes.".
+- Avoid relying solely on color: "Select the blue **Submit** button" → "Select **Submit**".
 
 ## Examples
 

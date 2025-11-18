@@ -28,6 +28,10 @@ This feature is available on all plans and requires the following:
 Visual Labeling is available to Amplitude users with the role **Member** and above.
 {{/partial:admonition}}
 
+{{partial:admonition type='tip' heading='Retroactive analysis'}}
+Events you create with visual labeling work retroactively against all Autocapture data. Amplitude applies your labeled event definitions to historical click and form interaction data captured since your instrumentation went live. This means you can analyze user behavior from the past without waiting for new data to accumulate.
+{{/partial:admonition}}
+
 ## Create a labeled event with visual labeling
 
 To use Visual Labeling to create new labeled events, follow these steps:

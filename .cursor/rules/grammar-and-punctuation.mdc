@@ -69,9 +69,9 @@ Use for unordered items. Maintain parallel structure.
 **Examples:**
 ```markdown
 Amplitude provides:
-- Real-time event tracking
-- Advanced analytics dashboards
-- Integration with third-party tools
+- Real-time event tracking.
+- Advanced analytics dashboards.
+- Integration with third-party tools.
 ```
 
 ### Numbered Lists
@@ -87,10 +87,10 @@ To configure authentication:
 4. Add the key to your application.
 ```
 
-### Capitalization in Lists
-- Capitalize the first word of each list item
-- Use ending punctuation if items are complete sentences
-- Omit ending punctuation if items are fragments
+### Capitalization and Punctuation in Lists
+- Capitalize the first word of each list item.
+- Always use ending punctuation for all list items (periods, question marks, or exclamation points as appropriate).
+- Use periods for both complete sentences and fragments.
 
 ## Semicolons
 

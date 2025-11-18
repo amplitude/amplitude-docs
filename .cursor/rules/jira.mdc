@@ -1,0 +1,54 @@
+---
+globs: content/**/*.md,*.md
+alwaysApply: false
+---
+# Jira Ticket Management
+
+For any documentation work in this repository, ensure proper Jira ticket tracking.
+
+## Workflow
+
+1. **Check for existing Jira reference** in the user's prompt:
+   - Look for Jira issue keys (format: `DOC-123`, `DOC-456`, etc.)
+   - Look for Jira links (format: `https://amplitude.atlassian.net/browse/DOC-123`)
+   - If found, proceed with the work—no action needed
+
+2. **If no Jira reference exists**, create a new ticket automatically:
+   - Use the `mcp_Atlassian_createJiraIssue` tool
+   - Set these parameters:
+     - `cloudId`: `"https://amplitude.atlassian.net"`
+     - `projectKey`: `"DOC"`
+     - `issueTypeName`: `"Task"`
+     - `summary`: Create a concise summary based on the user's request (under 100 characters)
+     - `description`: Provide more details about the documentation task
+
+3. **After ticket creation**:
+   - Display the ticket ID clearly (e.g., "DOC-123")
+   - Provide the ticket URL
+   - Remind the user: "When creating a git branch for this work, include the ticket ID in the branch name (e.g., `DOC-123-update-sdk-docs`)"
+
+## Example Scenarios
+
+### Scenario A: User provides ticket reference
+```
+User: "Update the SDK docs for DOC-456"
+```
+✅ Ticket reference found—proceed with the work
+
+### Scenario B: User provides ticket link
+```
+User: "Update https://amplitude.atlassian.net/browse/DOC-789"
+```
+✅ Ticket reference found—proceed with the work
+
+### Scenario C: No ticket reference
+```
+User: "Update the Android SDK documentation to include new features"
+```
+❌ No ticket found—create new ticket with summary: "Update Android SDK documentation"
+
+## Notes
+
+- This ensures all documentation work is tracked in Jira
+- Helps the Docs team maintain visibility into ongoing work
+- Supports proper git workflow with ticket IDs in branch names

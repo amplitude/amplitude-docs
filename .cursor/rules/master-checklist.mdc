@@ -65,6 +65,11 @@ Remove "please" from ALL instructions:
 - Use sentence case, not title case
 - No ending punctuation (no periods, colons, question marks)
 
+## 8. LISTS AND NAVIGATION
+
+- Ensure all list items have ending punctuation (periods, question marks, or exclamation points as appropriate)
+- Use italics for navigation hierarchies (*Settings > API Keys*), not bold
+
 ## Quick Pattern Search
 
 Before completing edits, search for these patterns:
@@ -84,6 +89,8 @@ is not|does not|in order to|via|please|we recommend
 - [ ] Second person ("you") used consistently
 - [ ] No "please" in instructions
 - [ ] Headings properly formatted
+- [ ] All list items have ending punctuation
+- [ ] Navigation paths use italics, not bold
 
 **Remember:** Active voice is the #1 issue. Always do two passes specifically for passive voice.
 

@@ -59,14 +59,14 @@ Use sentence case (capitalize only the first word and proper nouns) rather than 
 Make headings descriptive and, when appropriate, action-oriented.
 
 **Task-based headings (preferred for procedures):**
-- ✅ `## Configure authentication`
-- ✅ `## Send your first event`
-- ✅ `## Create a custom dashboard`
+- ✅ `## Configure authentication`.
+- ✅ `## Send your first event`.
+- ✅ `## Create a custom dashboard`.
 
 **Concept-based headings (for explanatory content):**
-- ✅ `## How authentication works`
-- ✅ `## Event tracking overview`
-- ✅ `## Data privacy and compliance`
+- ✅ `## How authentication works`.
+- ✅ `## Event tracking overview`.
+- ✅ `## Data privacy and compliance`.
 
 ## Heading Hierarchy
 
