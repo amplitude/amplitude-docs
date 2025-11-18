@@ -11,7 +11,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an experiment. Templates include goals, metrics, audience targeting, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include goals, metrics, audience targeting, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
@@ -43,7 +43,7 @@ To create a template from an existing experiment:
    - Deployment rules
    - Goals and metrics
    - User targeting rules
-   - Evaluation mode and bucketing settings
+   - Evaluation mode and [bucketing](/docs/feature-experiment/workflow/create#bucketing-unit) settings
 5. Click **Use as a template**.
 
 Your template automatically appears in the Templates library.
@@ -62,7 +62,7 @@ Templates can only apply to a single project.
 
 To use a template when creating a new experiment:
 
-1. From the Experiments page, click **Create Experiment > Feature Experiment**.
+1. From the Experiments page, click **Create Experiment > Feature Experiment**. For more information, see [Create a new experiment](/docs/feature-experiment/workflow/create).
 2. Enter information about your experiment.
 3. In the Apply a template section, select the template you want from the drop-down menu.
 4. Click **Create**.
@@ -109,7 +109,7 @@ Templates can include the following experiment configurations:
 
 ### Experiment settings
 - Evaluation mode (local vs. remote)
-- Bucketing unit (user vs. group)
+- [Bucketing unit](/docs/feature-experiment/workflow/create#bucketing-unit) (user vs. group)
 
 ### Goals and metrics
 - Primary and secondary metrics
@@ -118,6 +118,8 @@ Templates can include the following experiment configurations:
 - Minimum detectable effects
 
 ### Audience targeting
+For more information about audience targeting, see [Define your experiment's audience](/docs/feature-experiment/workflow/define-audience).
+
 - Segment definitions
 - Property-based targeting rules
 - Geographic or demographic filters
