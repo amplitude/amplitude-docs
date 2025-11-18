@@ -65,8 +65,23 @@ Use neutral terms for stopping processes:
 - ❌ "See the API documentation."
 - ✅ "Review the API documentation." or "Refer to the API documentation."
 
-### Other Terms
+### Latin Terminology
+Avoid Latin terms and phrases. Use plain English alternatives:
+
+- ❌ "versus" or "vs." → ✅ "compared to" or "compared with"
 - ❌ "via" → ✅ "through" or "using"
+- ❌ "per" → ✅ "for each" or "according to"
+- ❌ "e.g." → ✅ "for example"
+- ❌ "i.e." → ✅ "that is"
+- ❌ "etc." → ✅ Start with "for example" or "such as"
+
+**Examples:**
+- ❌ "Compare version 1 versus version 2."
+- ✅ "Compare version 1 with version 2."
+- ❌ "Send 100 events per second."
+- ✅ "Send 100 events for each second."
+
+### Other Terms
 - ❌ "once" (meaning "after") → ✅ "after"
 - ❌ "desire" → ✅ "want" or "need"
 - ❌ "first-class" (in abstract contexts) → ✅ "primary" or "default"
