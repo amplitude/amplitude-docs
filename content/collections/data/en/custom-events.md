@@ -24,10 +24,6 @@ In the image above, `Play or Search Song` is a custom event consisting of the `
 
 Another method is conditioning an added event with an [event property or user property](/docs/data/user-properties-and-events). This is the primary method for analyzing if a user had performed one of many events.
 
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
-
 ## Before you begin
 
 * Only admins, managers, and members can create custom events.
