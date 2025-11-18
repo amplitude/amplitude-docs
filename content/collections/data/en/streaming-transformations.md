@@ -105,19 +105,28 @@ If your destination uses custom FTL templates, you can access transformation dat
 }
 ```
 
+## Supported custom events
+
+Amplitude supports streaming custom events that meet specific criteria. When you create custom events in the Amplitude taxonomy, you can select them for event streaming if they're configured with:
+
+* **Supported properties:** User properties and event properties only
+* **Supported operators:** `is`, `is not`, `contains`, and `does not contain`
+
+Custom events that use other property types or operators aren't available for selection in event streaming configurations.
+
 ## Limitations
 
 There are some limitations when streaming transformations from Amplitude:
 
-* When changing the names of custom events or derived properties, don't forget to update any existing sync configs that use them. Syncs require up-to-date event and property names in order to work properly. Note that this only applies to the name of the transformation: changing the underlying definition of a custom event or derived property doesn't affect syncing.
-* You can stream lookup properties directly by requesting them from Amplitude and then using them to filter events. Lookup properties allow you to upload a .csv file that maps an existing event or user property to a list of new properties. You can also use it to add more properties to already ingested events during query time based on the lookup property.
+* When changing the names of custom events or derived properties, don't forget to update any existing sync configs that use them. Syncs require up-to-date event and property names to work properly. Note that this only applies to the name of the transformation: changing the underlying definition of a custom event or derived property doesn't affect syncing.
+* You can stream lookup properties directly by requesting them from Amplitude and then using them to filter events. Lookup properties let you upload a .csv file that maps an existing event or user property to a list of new properties. You can also use it to add more properties to already ingested events during query time based on the lookup property.
   * The streaming setup won't display lookup property files over 1000 rows
   * After saving the file, the lookup property can take up to 1 hour to populate into streaming system.
 * You can only stream **channel classifiers** directly by requesting it from Amplitude. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they're used as a property where values map to specific rules on existing properties, these channel properties can't be selected when setting up the sync in either event filters, or when sending more properties to the destination, unless you've explicitly enabled this feature.
 * Streaming transformation is available for all streaming destinations except for Data Warehouse destinations.
-* Some custom events aren't selectable in event streaming if:
-  * They use properties that streaming doesn't support
-  * They use a set operation that streaming doesn't support
+* Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section aren't selectable in event streaming. This includes custom events that:
+  * Use properties other than user properties or event properties
+  * Use operators other than `is`, `is not`, `contains`, or `does not contain`
 
 ## FAQ
 

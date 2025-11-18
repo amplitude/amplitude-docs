@@ -24,6 +24,11 @@ Place the script tag below your Amplitude script tag.
 <script src="https://cdn.amplitude.com/script/API_KEY.engagement.js"></script>
 <script>amplitude.add(window.engagement.plugin())</script>
 ```
+
+{{partial:admonition type="warning" heading="Load scripts synchronously"}}
+When using script tags to load Analytics and Engagement SDKs, don't set `async = true` on your Amplitude Analytics script tag. The Analytics SDK must load before the Engagement SDK. Loading them asynchronously can cause initialization errors.
+{{/partial:admonition}}
+
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
@@ -63,9 +68,15 @@ To avoid analytics mismatches and ensure accurate data collection, use the same 
 Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
 {{/partial:admonition}}
 
-Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
+{{partial:admonition type="note" heading="No need to call init or boot"}}
+When using the plugin with `amplitude.add(engagementPlugin())`, don't call `engagement.init()` or `engagement.boot()`. The plugin handles initialization automatically.
 
-You should only call `init` and `boot` if you (a) want to use a proxy; (b) want to customize the event handling via the `integrations` option. You can learn more about using a proxy [here](/docs/guides-and-surveys/proxy). You can find details about the `integrations` option [here](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers).
+Only call `init` and `boot` manually if you need to:
+- Use a proxy (see [Proxy configuration](/docs/guides-and-surveys/proxy))
+- Customize event handling with the `integrations` option (see [Other analytics providers](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers))
+
+This option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
+{{/partial:admonition}}
 
 ### Amplitude Unified SDK
 
