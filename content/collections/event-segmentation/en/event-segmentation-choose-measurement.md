@@ -25,7 +25,7 @@ The default measure for the Event Segmentation chart, it displays the total coun
 
 Like Uniques, Event Totals is a straightforward, count-based measure. The difference is that instead of counting unique users, it graphs the total count of times a specific event was fired at each data point.
 
-### Counting events vs. counting items
+### Counting events and counting items
 
 When you group by a cart property (an array property), Amplitude offers you an explicit choice between two counting methods:
 
