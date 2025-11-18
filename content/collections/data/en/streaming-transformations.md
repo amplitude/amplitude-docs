@@ -7,10 +7,6 @@ exclude_from_sitemap: false
 ---
 Amplitude supports streaming pre-existing transformed events, event properties and user properties. This includes support for Custom Events, Derived Properties, Transformed Events, and Transformed Properties. With this feature, you can select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
 
-## Feature availability
-
-This feature is available on Plus, Growth, or Enterprise plans. For more information, see the [pricing page](https://amplitude.com/pricing).
-
 ## Setup
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.

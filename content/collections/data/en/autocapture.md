@@ -12,10 +12,6 @@ academy_course:
 ---
 Autocapture is the fastest way to capture information about your website or app with minimal setup. After it's enabled through the [Browser SDK](/docs/sdks/analytics/browser), Autocapture captures user interactions on your digital products with a single code snippet. It lets you get started and uncover insights with minimal setup activity.
 
-## Availability
-
-Autocapture is available for all Amplitude plans.
-
 * On your website, a single [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) snippet lets you capture sessions, page views, clicks, form interactions, file downloads, marketing attribution, page URL enrichment, and element interactions. You can also use visual labeling to navigate your site and create new events from the click information.
 * On iOS and Android, the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) capture application installs and upgrades, sessions, and screen views.
 
