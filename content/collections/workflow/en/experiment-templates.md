@@ -62,7 +62,7 @@ Templates can only apply to a single project.
 
 To use a template when creating a new experiment:
 
-1. From the Experiments page, click **Create Experiment > Feature Experiment**. For more information, see [Create a new experiment](/docs/feature-experiment/workflow/create).
+1. From the Experiments page, click **Create Experiment > Feature Experiment**. For more information, go to [Create a new experiment](/docs/feature-experiment/workflow/create).
 2. Enter information about your experiment.
 3. In the Apply a template section, select the template you want from the drop-down menu.
 4. Click **Create**.
@@ -108,8 +108,8 @@ Archiving a template doesn't affect any experiments that were created from the t
 Templates can include the following experiment configurations:
 
 ### Experiment settings
-- Evaluation mode (local vs. remote)
-- [Bucketing unit](/docs/feature-experiment/workflow/create#bucketing-unit) (user vs. group)
+- Evaluation mode (local or remote)
+- [Bucketing unit](/docs/feature-experiment/workflow/create#bucketing-unit) (user or group)
 
 ### Goals and metrics
 - Primary and secondary metrics
@@ -118,7 +118,7 @@ Templates can include the following experiment configurations:
 - Minimum detectable effects
 
 ### Audience targeting
-For more information about audience targeting, see [Define your experiment's audience](/docs/feature-experiment/workflow/define-audience).
+For more information about audience targeting, review [Define your experiment's audience](/docs/feature-experiment/workflow/define-audience).
 
 - Segment definitions
 - Property-based targeting rules
