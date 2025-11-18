@@ -86,7 +86,29 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
-After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it's highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
+
+## Add your application to project settings
+
+After installing the SDK, add your iOS application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
+
+To add your application:
+
+1. Navigate to **Settings** > **Projects** in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. In the **Platform** section, click **+ Add Platform**.
+5. Select **iOS** from the platform list.
+6. Enter your application details:
+   - **App name**: Your app's display name
+   - **Bundle ID**: Your iOS bundle identifier (for example, `com.example.myapp`)
+7. Click **Save**.
+
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your iOS users and preview guides directly in your app.
+
+{{partial:admonition type='tip' heading='Find your bundle ID'}}
+Your iOS bundle identifier is defined in your Xcode project settings under **General** > **Identity** > **Bundle Identifier**.
 {{/partial:admonition}}
 
 ### Not using Amplitude Swift 1.13.0+
@@ -287,11 +309,25 @@ amplitudeEngagement.closeAll()
 
 To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
 
+### Add your mobile app to project settings
+
+Before you can use preview mode, add your iOS app to your project settings in Amplitude:
+
+1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
+2. Select your project.
+3. Click the **Guides and Surveys** tab.
+4. In the **App Management** section, click **Add App**.
+5. Enter your iOS app's bundle ID (for example, `com.example.MyApp`).
+6. Click **Save**.
+
+After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
+After adding your app to project settings, locate the URL scheme:
 
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
+2. Copy its value, for example, `amp-abc123`.
 
 ### Add the URL scheme in Xcode
 

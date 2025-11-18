@@ -24,6 +24,11 @@ Place the script tag below your Amplitude script tag.
 <script src="https://cdn.amplitude.com/script/API_KEY.engagement.js"></script>
 <script>amplitude.add(window.engagement.plugin())</script>
 ```
+
+{{partial:admonition type="warning" heading="Load scripts synchronously"}}
+When using script tags to load Analytics and Engagement SDKs, don't set `async = true` on your Amplitude Analytics script tag. The Analytics SDK must load before the Engagement SDK. Loading them asynchronously can cause initialization errors.
+{{/partial:admonition}}
+
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
@@ -63,9 +68,15 @@ To avoid analytics mismatches and ensure accurate data collection, use the same 
 Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
 {{/partial:admonition}}
 
-Behind the scenes, `amplitude.add(engagementPlugin())` takes care of both `init` and `boot`. However, this option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
+{{partial:admonition type="note" heading="No need to call init or boot"}}
+When using the plugin with `amplitude.add(engagementPlugin())`, don't call `engagement.init()` or `engagement.boot()`. The plugin handles initialization automatically.
 
-You should only call `init` and `boot` if you (a) want to use a proxy; (b) want to customize the event handling via the `integrations` option. You can learn more about using a proxy [here](/docs/guides-and-surveys/proxy). You can find details about the `integrations` option [here](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers).
+Only call `init` and `boot` manually if you need to:
+- Use a proxy (see [Proxy configuration](/docs/guides-and-surveys/proxy))
+- Customize event handling with the `integrations` option (see [Other analytics providers](/docs/guides-and-surveys/sdk#other-amplitude-sdks-and-third-party-analytics-providers))
+
+This option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
+{{/partial:admonition}}
 
 ### Amplitude Unified SDK
 
@@ -169,7 +180,7 @@ await window.engagement.boot({
     device_id: 'DEVICE_ID',
     user_properties: {},
   },
-  // needed for insights and responses to populate 
+  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
@@ -183,7 +194,7 @@ await window.engagement.boot({
 To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
-analytics.on('track', (event, properties, options) => { 
+analytics.on('track', (event, properties, options) => {
   // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
@@ -358,6 +369,29 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
+#### iframe support and limitations
+
+Guides and Surveys has limited support for applications that use iframes. Consider these important limitations when implementing Guides and Surveys in iframe-based applications.
+
+**Targeting elements inside iframes:**
+- Pins and tooltips can't target elements inside an iframe from the parent application
+- Each iframe requires its own SDK instance to display guides or surveys within that iframe
+- CSS selectors can't cross iframe boundaries, which prevents the SDK from locating elements inside iframes
+
+**SDK instances and multi-step experiences:**
+- Each iframe requires a separate SDK instance, initialized with the same API key as the parent application
+- Multi-step tours that span across the parent application and iframes aren't supported
+- Each SDK instance operates independently and can't coordinate steps across different contexts
+
+**Event tracking and user identification:**
+- Events tracked in an iframe are independent from events in the parent application
+- Ensure consistent user identification (user ID and device ID) across all SDK instances
+- Each SDK instance maintains its own state and doesn't share data with other instances
+
+**Recommended approach:**
+- Install the SDK in both the parent application and each iframe that needs to display guides or surveys
+- Use the same API key for all SDK instances to ensure consistent user identification
+- Design guides and surveys to work within a single context (either parent or a specific iframe)
 
 ## Manage themes
 
@@ -453,6 +487,16 @@ await window.engagement.updateLanguage("fr");
 // Example: Update language to English
 await window.engagement.updateLanguage("en");
 ```
+
+## Refresh targeting
+
+Re-fetch targeting evaluation from the backend by making a new request to the decide endpoint. This allows you to refresh which guides and surveys are eligible to show based on the latest targeting rules and user state. Targeting is automatically refreshed when the user or its properties change. Manually refreshing targeting through this method is useful when you update user properties server-side or to get the latest cohort membership states.
+
+
+```js
+engagement.decide(): Promise<void>
+```
+
 
 ## Reset
 
@@ -687,9 +731,22 @@ If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If
 
 If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK.
 
+Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
+
+### Google Tag Manager configuration
+
 If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 
-Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
+{{partial:admonition type="warning" heading="Google Tag Manager custom tags"}}
+If Guides and Surveys doesn't work with a Google Tag Manager (GTM) custom HTML tag, verify that the **Support document.write** checkbox in the tag configuration is enabled. This setting is required for Guides and Surveys to load properly through GTM.
+
+To enable this setting:
+
+1. In GTM, navigate to your Amplitude tag.
+2. Expand the **Advanced Settings** section.
+3. Check the **Support document.write** checkbox.
+4. Save and publish your changes.
+{{/partial:admonition}}
 
 ### Common root causes
 

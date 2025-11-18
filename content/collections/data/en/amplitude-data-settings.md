@@ -20,7 +20,7 @@ In the Settings page, you can:
 - Generate API tokens
 - Delete your Amplitude Data project
 
-Find these settings and features on five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings. This article describes each tab below.
+Find these settings and features on five different tabs: General, Environments, Integrations, API Tokens, and Schema Settings. This article describes each tab below.
 
 {{partial:admonition type="note" heading=""}}
 Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.
@@ -42,7 +42,7 @@ For Enterprise organizations with Role-based Access Controls (RBAC) enabled, rev
 You may also restrict data management access while keeping permissions the same for other areas of Amplitude. Review [The Permissions Tab](#the-permissions-tab) for more details.
 
 {{partial:admonition type="info" heading=""}}
-If you disable the _Require team reviews to make changes to the main branch_ option in the project settings, members can modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
+If you disable the **Require team reviews to make changes to the main branch** option in the project settings, members can modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
 
 {{/partial:admonition}}
 
@@ -73,21 +73,21 @@ To find out if this feature is available on your Amplitude plan, [visit the pric
 
 ### Public link to your tracking plan
 
-If you ever want to share your tracking plan, you can do so using the public link provided here on the _General_ tab. Just copy it to your clipboard and paste it into an email or Slack message. Stakeholders can read it, but they can’t make any changes themselves.
+If you ever want to share your tracking plan, you can do so using the public link provided here on the **General** tab. Just copy it to your clipboard and paste it into an email or Slack message. Stakeholders can read it, but they can’t make any changes themselves.
 
-You can also enable or disable the public link, which changes the availability for the selected project. Just click _Create Public Link_ or _Delete Public Link_.
+You can also enable or disable the public link, which changes the availability for the selected project. Click **Create Public Link** or **Delete Public Link**.
 
 ## Integrations
 
-You can integrate Amplitude Data with your existing tools to streamline your analytics workflow. To integrate a platform, simply click _Connect_ or _Add_ next to its name.
+You can integrate Amplitude Data with your existing tools to streamline your analytics workflow. To integrate a platform, simply click **Connect** or **Add** next to its name.
 
 ## API Tokens
 
 Use API tokens to authenticate to Amplitude Data using credentials other than your email address and a password. Tokens authorize applications to enjoy the same roles and permissions you have when you log in personally.
 
-To create an API token, click _Create Token_. Amplitude Data generates the token and displays it in a modal window.
+To create an API token, click **Create Token**. Amplitude Data generates the token and displays it in a modal window.
 
-Click _Copy to clipboard_ now, as you can't retrieve the token later.
+Click **Copy to clipboard** now, as you can't retrieve the token later.
 
 ## Schema Settings
 
@@ -97,7 +97,7 @@ You can tell Amplitude how to handle these situations by configuring your schema
 
 For any unplanned events, event properties, event property types, user properties, or user property types, you can tell Amplitude Data to either mark them as **unexpected**, or to **reject** them outright. Amplitude Data ingests any unexpected events or properties and sends a notification to everyone subscribed to this schema. If you choose to reject unexpected data, however, Amplitude Data doesn't ingest or store the rejected data. Subscribers still receive a notification.
 
-Click _Save_ to implement any changes you make to your schema settings.
+Click **Save** to implement any changes you make to your schema settings.
 
 ## The Permissions tab
 
@@ -111,13 +111,13 @@ Under Restrict access in Amplitude Data, specify from the following options to r
 - Restrict Members
 - Restrict Members and Managers
 
-Then, click _Save_.
+Then, click **Save**.
 
 Permission restrictions are available for Enterprise customers only. Only administrators can access the Permissions tab.
 
 ### Copy to other projects
 
-Click _Copy to Other Projects_ to apply the current permission restriction settings to another project.
+Click **Copy to Other Projects** to apply the current permission restriction settings to another project.
 
 ## Autocapture 
 

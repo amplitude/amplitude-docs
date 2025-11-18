@@ -19,9 +19,9 @@ Use active voice to make documentation clear and direct. Active voice emphasizes
 Use present tense to describe current functionality. Avoid future tense constructions.
 
 **Avoid these future tense patterns:**
-- "will" → Use present tense instead
-- "would be" → Use "is" or imperative form
-- "we are going to" → Use present tense
+- "will" → Use present tense instead.
+- "would be" → Use "is" or imperative form.
+- "we are going to" → Use present tense.
 
 **Examples:**
 - ❌ Future: "This feature will allow you to configure settings."
@@ -30,7 +30,7 @@ Use present tense to describe current functionality. Avoid future tense construc
 - ✅ Present: "The API returns a response."
 
 ## Implementation Tips
-- Start instructions with imperative verbs (Configure, Create, Navigate, Use)
-- Describe what the product does, not what it will do
-- When referring to user actions, use second person ("you") with present or imperative forms
+- Start instructions with imperative verbs (Configure, Create, Navigate, Use).
+- Describe what the product does, not what it will do.
+- When referring to user actions, use second person ("you") with present or imperative forms.
 
