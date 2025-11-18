@@ -25,6 +25,20 @@ The default measure for the Event Segmentation chart, it displays the total coun
 
 Like Uniques, Event Totals is a straightforward, count-based measure. The difference is that instead of counting unique users, it graphs the total count of times a specific event was fired at each data point.
 
+### Counting events vs. counting items
+
+When you group by a cart property (an array property), Amplitude offers you an explicit choice between two counting methods:
+
+* **Counting Events**: Counts unique events by deduplicating array property values. If a single event contains multiple items with the same property value, it counts as one event.
+* **Counting Items**: Counts each item within the array property without deduplication. If a single event contains multiple items, each item counts toward the total.
+
+For example, imagine a `Checkout` event with the cart property `item_list.product_category`. If a single `Checkout` event contains two tacos (one Crunchy Taco and one Soft Taco) under the same product category "tacos":
+
+* **Counting Events** counts 1 Checkout event
+* **Counting Items** counts 2 Checkout items
+
+The default behavior remains "Counting Items" (item count). This option appears when you group by a cart property in the Event Totals measurement.
+
 ## Active %
 
 This measure graphs the percentage of all [active users](/docs/get-started/helpful-definitions) (defined as users who have triggered any active event in a specified time frame) who triggered a specific event at each data point.
@@ -38,6 +52,15 @@ For any data point, Amplitude calculates this by taking the total number of time
 {{partial:admonition type="note" heading=""}}
 Amplitude doesn't include users who didn't trigger the event in this calculation.
 {{/partial:admonition}}
+
+### Counting events vs. counting items
+
+When you group by a cart property (an array property), Amplitude offers you an explicit choice between two counting methods for calculating the average:
+
+* **Counting Events**: Calculates the average based on unique events by deduplicating array property values
+* **Counting Items**: Calculates the average based on each item within the array property without deduplication
+
+This option appears when you group by a cart property in the Average measurement. The default behavior remains "Counting Items" (item count).
 
  
 
@@ -57,7 +80,7 @@ When you apply the Frequency measure, Amplitude groups the users included in you
 
 ![new_event_seg_screenshot.png](/docs/output/img/event-segmentation/new-event-seg-screenshot-png.png)
 
-Here, we see an event segmentation analysis using the Frequency measure. Each stacked area represents a "frequency bucket." For each data point, Amplitude displays the number of users contained in that bucket. And as described above, if you want to learn more about the users in a particular data point, all you have to do is click on it.
+This shows an event segmentation analysis using the Frequency measure. Each stacked area represents a "frequency bucket." For each data point, Amplitude displays the number of users contained in that bucket. As described above, if you want to learn more about the users in a particular data point, click on it.
 
 In the screenshot above, the default buckets are represented by the colored dots. Click *customize buckets* to adjust the sizing of the buckets and distribution of the data, or use the Custom Buckets modal to set individual ranges for each bucket.
 
@@ -73,6 +96,6 @@ Depending on the details of your analysis, you may also be able to generate an e
 
 ## Formula
 
-In an Event Segmentation chart, you can write formulas for Amplitude to apply to the events you include in your analysis. To read more about each formula and see some examples of use cases, see [Custom Formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
+In an Event Segmentation chart, you can write formulas for Amplitude to apply to the events you include in your analysis. To read more about each formula and view examples of use cases, review [Custom Formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
 
-[Read this article to learn about how to interpret your Event Segmentation chart.](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1)
+To learn how to interpret your Event Segmentation chart, review [Interpret your Event Segmentation chart](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1).
