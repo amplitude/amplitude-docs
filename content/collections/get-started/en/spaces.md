@@ -18,9 +18,6 @@ Every saved piece of content must live in a space. By default, you save content 
 
 You can save a piece of content to one location only, but you can create [shortcuts](/docs/analytics/collaborate-with-spaces) to that content in other spaces.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ### Restrictions
 

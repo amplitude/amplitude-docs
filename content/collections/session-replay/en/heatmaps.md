@@ -24,10 +24,6 @@ Use the following map types, depending on your use case,
 | [Selector map](#selector-map) | Highlights the most interacted with elements on a page along with their rank.                                                                                  |
 | [Scroll map](#scroll-map)     | Displays the aggregate scroll activity on a given page. See the location of the average page fold, the number of users who scroll to a given depth.            |
 
-### Feature availability
-
-Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon. All users with [View permissions](/docs/account-management/user-roles-permissions) can create Heat Maps.
-
 {{partial:admonition type="note" heading="Legacy organizations"}}
 If you see a message that states **Heatmaps isn’t available for your organization**, contact [Amplitude Support](https://gethelp.amplitude.com) for assitance enabling Heatmaps. Legacy organizations require manual enablement, and may require an increase in property limit.
 {{/partial:admonition}}

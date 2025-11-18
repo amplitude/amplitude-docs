@@ -14,9 +14,6 @@ academy_course:
 ---
 It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 
-### Feature availability
-
-This feature is available to users on all Amplitude plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ### Restrictions
 
