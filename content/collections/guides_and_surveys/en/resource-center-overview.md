@@ -16,7 +16,7 @@ Resource center is a widget that integrates directly (with no other installation
 - Quick links
 - Call to action button
 
-Content for your Resource Center can be external or publicly available documentation repositories, articles, videos, or third-party chat modules.
+Content for your Resource Center can be external or publicly available documentation repositories, articles, videos, or third-party chat modules like Intercom.
 
 Before your users can access the Resource Center to find relevant information, you must first set it up. Setting up the Resource Center includes the following activities:
 - [Specifying the content](/docs/guides-and-surveys/resource-center-source-content) from which the Resource Center pulls information.
