@@ -10,15 +10,12 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 ---
-Experiment templates let you save experiment configurations for reuse across multiple experiments. By creating templates, you can standardize your experimentation approach and quickly launch new experiments with pre-configured settings.
-
-## What are experiment templates?
 
 Experiment templates capture the configuration of an experiment—including goals, metrics, audience targeting, statistical preferences, and variants—so you can reuse it for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
-- Need to quickly spin up new experiments with proven configurations.
+- Need to quickly launch new experiments with proven configurations.
 - Test variations of the same feature with different audiences.
 
 ## Create a template from an experiment
@@ -27,7 +24,7 @@ To create a template from an existing experiment:
 
 1. Navigate to the experiment you want to save as a template.
 2. Click **More options** (three dots) and select **Save as template**.
-3. Enter a **Template name** and optional **Description**.
+3. Enter a Template name and optional Description.
 4. Select which components to include in the template:
    - Variants and allocations
    - Goals and metrics
@@ -58,7 +55,7 @@ The new experiment inherits the template configuration but operates independentl
 
 ### View all templates
 
-Navigate to **Experiment > Templates** to view your organization's template library. The Templates page shows:
+Navigate to *Experiment > Templates* to view your organization's template library. The Templates page shows:
 
 - Template name and description
 - Creator and creation date
@@ -69,7 +66,7 @@ Navigate to **Experiment > Templates** to view your organization's template libr
 
 To update a template:
 
-1. Navigate to **Experiment > Templates**.
+1. Navigate to *Experiment > Templates*.
 2. Select the template you want to edit.
 3. Click **Edit template**.
 4. Modify the configuration as needed.
@@ -81,12 +78,12 @@ Changes to a template only affect future experiments created from it. Existing e
 
 To remove a template:
 
-1. Navigate to **Experiment > Templates**.
+1. Navigate to *Experiment > Templates*.
 2. Select the template you want to delete.
 3. Click **More options** (three dots) and select **Delete**.
 4. Confirm the deletion.
 
-Deleting a template doesn't affect experiments that were created from it.
+Deleting a template doesn't affect any experiments that were created from the template.
 
 ## Template components
 
