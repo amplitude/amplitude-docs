@@ -11,7 +11,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include goals, metrics, audience targeting, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include goals, metrics, audience targeting, and [variants](/docs/feature-experiment/workflow/add-variants) so you can reuse it for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
@@ -40,8 +40,8 @@ To create a template from an existing experiment:
 2. Click **More options** (three dots) and select **Use as a template**.
 3. Enter a Template name and optional Description.
 4. Select which components to include in the template:
-   - Deployment rules
-   - Goals and metrics
+   - [Deployment rules](/docs/feature-experiment/workflow/configure-delivery)
+   - [Goals and metrics](/docs/feature-experiment/workflow/define-goals)
    - User targeting rules
    - Evaluation mode and [bucketing](/docs/feature-experiment/workflow/create#bucketing-unit) settings
 5. Click **Use as a template**.
@@ -108,14 +108,16 @@ Archiving a template doesn't affect any experiments that were created from the t
 Templates can include the following experiment configurations:
 
 ### Experiment settings
-- Evaluation mode (local or remote)
+- Evaluation mode ([local](/docs/feature-experiment/local-evaluation) or [remote](/docs/feature-experiment/remote-evaluation))
 - [Bucketing unit](/docs/feature-experiment/workflow/create#bucketing-unit) (user or group)
 
 ### Goals and metrics
+For more information about defining experiment goals, go to [Define your experiment's goals](/docs/feature-experiment/workflow/define-goals).
+
 - Primary and secondary metrics
 - Success and guardrail metrics
 - Metric types and configurations
-- Minimum detectable effects
+- [Minimum detectable effects](/docs/feature-experiment/workflow/finalize-statistical-preferences#minimum-detectable-effect)
 
 ### Audience targeting
 For more information about audience targeting, review [Define your experiment's audience](/docs/feature-experiment/workflow/define-audience).
@@ -130,6 +132,6 @@ For more information about audience targeting, review [Define your experiment's 
 - **Name templates descriptively**: Use names that clearly indicate the template's purpose, like "Product Page Conversion Test" or "Mobile Onboarding Experiment."
 - **Add detailed descriptions**: Include guidance on when to use the template and any special considerations.
 - **Review templates regularly**: Archive or update templates that are outdated or no longer align with your experimentation standards.
-- **Start with successful experiments**: Create templates from experiments that have proven configurations and clear learnings.
+- **Start with successful experiments**: Create templates from experiments that have proven configurations and [clear learnings](/docs/feature-experiment/workflow/experiment-learnings).
 - **Document template variations**: If you create multiple similar templates, document the differences between them.
 
