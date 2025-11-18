@@ -101,17 +101,17 @@ The cohort sync history page provides a detailed breakdown of cohort syncs over 
 3. Click the *Syncs* tab.
 4. If multiple destinations are involved, select the appropriate cohort destination.
 5. Click the *History* tab.
-6. Click *Export list* to download a CSV. See the [Inspect CSV exports via download](https://docs.google.com/document/d/18yRRJCbE35Dc9c7znO-YhQ00LYD6KWw1ltAKjXJ3J7U/edit#bookmark=id.8g3benqkxz79) section below for more detailed information.
+6. Click **Export** to export a CSV. See the [Inspect CSV exports](#inspect-exported-cohorts-via-csv-export) section below for more detailed information.
 
 ![](/docs/output/img/audiences/24324901338907.png)
 
 {{partial:admonition type='note'}}
-This detailed cohort sync history page is available for all cohort sync destinations except for [Amazon S3](/docs/data/destination-catalog/amazon-s3) and [TradeDesk](/docs/data/destination-catalog/thetradedesk). These destinations continuously perform a full sync of users, not just the initial sync followed by incremental changes, making CSV downloads impractical. 
+This detailed cohort sync history page is available for all cohort sync destinations except for [Amazon S3](/docs/data/destination-catalog/amazon-s3) and [TradeDesk](/docs/data/destination-catalog/thetradedesk). These destinations continuously perform a full sync of users, not just the initial sync followed by incremental changes, making CSV exports impractical. 
 {{/partial:admonition}}
 
-## Inspect exported cohorts via CSV download
+## Inspect exported cohorts via CSV export
 
-To find out which and how many users have been exported from your cohort to your third-party destination, download a CSV containing all users that have been exported.
+To find out which and how many users have been exported from your cohort to your third-party destination, export a CSV containing all users that have been exported.
 
 The CSV export includes the following columns:
 
@@ -129,7 +129,7 @@ If there are a significant number of skipped entries, there may be a data qualit
 
 ## Additional considerations
 
-* **Real-time cohort sync:** With Amplitude's Real-Time Sync (RTS) feature, the cohort sync history page does not allow you to download a CSV export for users who were skipped during the sync. For detailed tracking of skipped users, consider using hourly or daily syncs instead of real-time.
+* **Real-time cohort sync:** With Amplitude's Real-Time Sync (RTS) feature, the cohort sync history page doesn't allow you to export a CSV for users who were skipped during the sync. For detailed tracking of skipped users, consider using hourly or daily syncs instead of real-time.
 * **Users are silently dropped upon reaching destination:** Some destinations may return a 2XXs response to indicate the cohort sync has synced successfully from Amplitude, even though the destination has actually silently dropped users who didn't meet their criteria. In these cases, confirm that a specific user has been exported by looking at the CSV file.
 
 {{partial:admonition type='note'}}

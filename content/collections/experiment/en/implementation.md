@@ -45,7 +45,7 @@ In this example, 50% of evaluated users are assigned a variant for Flag-2.
 
 Inclusions let you to force-bucket specific users (identified by either their user ID or device ID) into a variant. This feature is primarily used for development purposes. 
 
-For example, if you are the developer on a new multi-variate feature and you want to test each variant in your application, add your user or device ID to the *Targeting > Testers* section of your experiment and refresh the application.
+For example, if you're the developer on a new multi-variate feature and you want to test each variant in your application, add your user or device ID to the **Inclusions** section of your experiment and refresh the application.
 
 ### Sticky bucketing
 

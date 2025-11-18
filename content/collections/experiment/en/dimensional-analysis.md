@@ -13,7 +13,7 @@ Amplitude's Dimensional Analysis capabilities enable you to exclude groups of us
 
 ## Define your testers
 
-In Feature Experiment, use the Targeting settings to define your test users.
+In Feature Experiment, use the **Inclusions** section to define your test users.
 
 ![](statamic://asset::help_center_conversions::experiment/targeting-test-users.png)
 
