@@ -47,8 +47,6 @@ You must consider any unique business needs and circumstances when planning for 
  You can also set the MDE when analyzing your experiment results. 
 {{/partial:admonition}}
 
-![MDE_test_chart.jpeg](/docs/output/img/experiment-theory/mde-test-chart-jpeg.jpeg)
-
 ## MDE and associated risk
 
 Experiments don't produce risk-free results and running them can take a lot of time and require large sample sets. This can mean higher costs and greater potential for adverse effects on users. The most important thing to remember when assessing risk is that the MDE is inversely related to sample size. This means that the smaller or more "sensitive" the MDE, the larger the sample size needed to reach statistical significance. 
