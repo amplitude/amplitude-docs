@@ -37,6 +37,24 @@ Alternately, click **Create a custom metric** to define your own metric.
 5. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 6. To add secondary metrics, click ***Add Metric*** and repeat this process.
 
+### Examples of success and guardrail metrics
+
+**Success metrics** measure the primary outcomes you want to improve:
+
+- **Conversion metrics:** Purchase completion rate, sign-up conversion, add-to-cart rate
+- **Engagement metrics:** Daily active users, average session duration, feature adoption rate
+- **Revenue metrics:** Average order value, revenue for each user, subscription upgrades
+- **Retention metrics:** Day 7 retention rate, return user rate
+
+**Guardrail metrics** monitor important metrics that shouldn't degrade during the experiment:
+
+- **Performance metrics:** Page load time, API response time, app crash rate
+- **Quality metrics:** Error rate, failed transaction rate, support ticket volume
+- **Core engagement:** Usage of key features unrelated to the experiment, overall session count
+- **Business health:** Subscription cancellation rate, refund rate, negative review rate
+
+For example, if you're testing a new checkout flow, your success metric might be "Purchase completion rate (Increase)," while your guardrail metrics could include "Checkout page load time (No increase)" and "Payment error rate (No increase)."
+
 The duration estimator estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
 
 ## Creating a custom metric
