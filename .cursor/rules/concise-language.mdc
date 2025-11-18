@@ -11,46 +11,46 @@ Use simple, direct language. Avoid wordy phrases and bureaucratic constructions.
 ## Common Wordy Phrases to Replace
 
 ### Prepositions and Conjunctions
-- ❌ "in order to" → ✅ "to"
-- ❌ "via" → ✅ "through"
-- ❌ "prior to" or "previous to" → ✅ "before"
-- ❌ "subsequent to" → ✅ "after"
-- ❌ "in spite of" → ✅ "despite"
-- ❌ "with regard to" → ✅ "regarding"
-- ❌ "in addition" → ✅ "also"
+- ❌ "in order to" → ✅ "to".
+- ❌ "via" → ✅ "through".
+- ❌ "prior to" or "previous to" → ✅ "before".
+- ❌ "subsequent to" → ✅ "after".
+- ❌ "in spite of" → ✅ "despite".
+- ❌ "with regard to" → ✅ "regarding".
+- ❌ "in addition" → ✅ "also".
 
 ### Time-Related Phrases
-- ❌ "at the present time" → ✅ "now"
-- ❌ "at this point in time" → ✅ "at this point"
-- ❌ "in the near future" → ✅ "soon"
-- ❌ "at a later date" → ✅ "later"
-- ❌ "during the time that" → ✅ "while"
-- ❌ "for the duration of" → ✅ "during"
+- ❌ "at the present time" → ✅ "now".
+- ❌ "at this point in time" → ✅ "at this point".
+- ❌ "in the near future" → ✅ "soon".
+- ❌ "at a later date" → ✅ "later".
+- ❌ "during the time that" → ✅ "while".
+- ❌ "for the duration of" → ✅ "during".
 
 ### Causal Phrases
-- ❌ "due to the fact that" → ✅ "because"
-- ❌ "because of the fact that" → ✅ "because"
-- ❌ "based on the fact that" → ✅ "because"
-- ❌ "as a result of" → ✅ "because of"
+- ❌ "due to the fact that" → ✅ "because".
+- ❌ "because of the fact that" → ✅ "because".
+- ❌ "based on the fact that" → ✅ "because".
+- ❌ "as a result of" → ✅ "because of".
 
 ### Conditional Phrases
-- ❌ "in the event that" → ✅ "if"
-- ❌ "if this is not the case" → ✅ "if not"
-- ❌ "except when" → ✅ "unless"
+- ❌ "in the event that" → ✅ "if".
+- ❌ "if this is not the case" → ✅ "if not".
+- ❌ "except when" → ✅ "unless".
 
 ### Verbal Phrases
-- ❌ "utilize" or "make use of" → ✅ "use"
-- ❌ "perform an assessment of" → ✅ "assess"
-- ❌ "conduct an investigation" → ✅ "investigate"
-- ❌ "take action" → ✅ "act"
-- ❌ "make reference to" → ✅ "refer to"
-- ❌ "has the ability to" → ✅ "can"
-- ❌ "has the capacity to" → ✅ "can"
+- ❌ "utilize" or "make use of" → ✅ "use".
+- ❌ "perform an assessment of" → ✅ "assess".
+- ❌ "conduct an investigation" → ✅ "investigate".
+- ❌ "take action" → ✅ "act".
+- ❌ "make reference to" → ✅ "refer to".
+- ❌ "has the ability to" → ✅ "can".
+- ❌ "has the capacity to" → ✅ "can".
 
 ### Quantifiers
-- ❌ "a large number of" → ✅ "many"
-- ❌ "a majority of" → ✅ "most"
-- ❌ "an adequate number of" → ✅ "enough"
+- ❌ "a large number of" → ✅ "many".
+- ❌ "a majority of" → ✅ "most".
+- ❌ "an adequate number of" → ✅ "enough".
 
 ## Examples
 
@@ -69,9 +69,9 @@ events in real time, you can monitor data now.
 
 ## Remove Temporal Qualifiers
 
-- ❌ "currently" - Documentation always represents the current state
-- ❌ "at present"
-- ❌ "right now"
+- ❌ "currently" - Documentation always represents the current state.
+- ❌ "at present".
+- ❌ "right now".
 
 **Exception:** When describing version-specific behavior or deprecated features, temporal qualifiers may be necessary.
 

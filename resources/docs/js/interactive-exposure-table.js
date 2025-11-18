@@ -3,8 +3,8 @@ document.getElementById('api_key').value =
 
 document.getElementById('server-zone').addEventListener("change", function(){
      const serverZone = document.getElementById('server-zone').value;
-     const url = serverZone === 'US' ? 'https://api.lab.amplitude.com/v1/vardata?' :
-     'https://api.lab.eu.amplitude.com/v1/vardata?';
+     const url = serverZone === 'US' ? 'https://api2.amplitude.com/2/httpapi' :
+     'https://api.eu.amplitude.com/2/httpapi';
      document.getElementById('curl_url').textContent = url;
 })
 

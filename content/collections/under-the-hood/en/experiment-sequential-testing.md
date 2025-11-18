@@ -42,13 +42,7 @@ The alternative hypothesis states that there is a difference between the treatme
 
 There are many different sequential testing options. Amplitude Experiment uses a family of sequential tests called mixture sequential probability ratio test (mSPRT). The weight function, H, is the mixing distribution. The following mixture of likelihood ratios against the null hypothesis is such that:
 
-$$
-\[
-\Lambda_{n}^{H,\theta_0}
-= \int_{\Theta} \prod_{m=1}^{n}
-\frac{f_{\theta}(X_m)}{f_{\theta_0}(X_m)}\, h(\theta)\,\mathrm{d}\theta .
-\]
-$$
+![Mixture sequential probability ratio test equation showing Lambda with superscripts and subscripts, an integral over Theta, a product from m=1 to n, a fraction with f functions, and h of theta times d theta](/docs/output/img/under-the-hood/image4-png.png)
 
 ## Frequently asked questions about sequential testing
 

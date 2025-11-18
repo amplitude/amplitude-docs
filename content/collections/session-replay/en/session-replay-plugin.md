@@ -112,8 +112,8 @@ initAll('YOUR_API_KEY', {
 You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than one time, you may experience mismatches in Device ID or Session ID.
 
 ```html
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.25.4-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.22.2-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions.session_replay_plugin}}-min.js.gz"></script>
 <script>
 const sessionReplayTracking = window.sessionReplay.plugin();
 window.amplitude.add(sessionReplayTracking);
@@ -157,7 +157,7 @@ Use the Browser SDK configuration to implicitly enable session tracking.
 
 ```js
 amplitude.init(API_KEY, USER, {
-    defaultTracking: {
+    autocapture: {
         sessions: true
     }
 });
@@ -168,7 +168,7 @@ Disable all default tracking by the Browser SDK. In this case, the plugin enable
 
 ```js
 amplitude.init(API_KEY, USER, {
-    defaultTracking: false
+    autocapture: false
 });
 ```
 {{/partial:tab}}
