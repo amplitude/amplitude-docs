@@ -21,7 +21,7 @@ With dashboards, you can collect all your relevant charts into a single, conveni
 
 ## Before you begin
 
-Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on [Scholarship](https://help.amplitude.com/hc/en-us/articles/360053028152), [Growth and Enterprise](https://amplitude.com/pricing) plans.
+Dashboards are available to all Amplitude customers.
 
 You must save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 

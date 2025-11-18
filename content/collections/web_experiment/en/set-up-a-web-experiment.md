@@ -14,10 +14,6 @@ Web Experiment lets you create an A/B or [multi-armed bandit experiment](/docs/f
 
 Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Before you begin
 
 Before setting up a web experiment, you must [implement](/docs/web-experiment/implementation) the Web Experiment script on your site.

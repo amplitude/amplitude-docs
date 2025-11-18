@@ -11,10 +11,6 @@ Web Experiment requires a standalone script that you must add to your website. P
 
 The script tracks [impression events](/docs/web-experiment/tracking#impressions) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Add the experiment script
 
 Replace `API_KEY` with your project's API key in one of the synchronous scripts below, depending on your region:
