@@ -93,6 +93,35 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 At this point, you are technically done installing. While optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
 {{/partial:admonition}}
 
+## Element targeting
+
+Pin and tooltip guides require the ability for the SDK to target specific views on screen. The Engagement SDK uses the "testID" property on an element in the React Native DOM.
+
+In the example component below, "welcome-banner" is the element targeting string that should be used in the Guides and Surveys dashboard.
+
+```js
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+/**
+ * A simple component with a testID that can be targeted
+ * by the Amplitude Guides & Surveys SDK.
+ */
+export default function WelcomeBanner() {
+  return (
+    <View
+      testID="welcome-banner"   // Element targeting via testID
+      style={styles.banner}
+    >
+      <Text style={styles.bannerText}>
+        Welcome to the App!
+      </Text>
+    </View>
+  );
+}
+```
+
+
 ## Configure linking
 
 If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. Previewing Guides and Surveys on a device requires this support.
