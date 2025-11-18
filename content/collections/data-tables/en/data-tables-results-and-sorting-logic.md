@@ -44,6 +44,51 @@ When using multiple metrics, sorting by a particular column displays data for al
 
 ![sort_columns.jpeg](/docs/output/img/data-tables/sort-columns-jpeg.jpeg)
 
+## Column ranking behavior
+
+When you apply group-bys to your Data Table, Amplitude ranks and prunes high-cardinality results before displaying them. The ranking method depends on the metric type in the sorted column.
+
+### Single-term formulas and non-formula metrics
+
+When you sort a column by a single-term formula metric or any non-formula metric (like Uniques, Totals, or property aggregations), Amplitude ranks groups according to the standard [group ordering logic](/docs/analytics/charts/group-by#group-ordering).
+
+For example, if you sort by Uniques, Amplitude ranks by the number of unique users. If you sort by Sum of Property Value, Amplitude ranks by the sum of property values.
+
+### Multi-term formula metrics
+
+When you sort a column by a formula metric with multiple terms (such as `PROPSUM(A) / TOTALS(B)`), Amplitude uses a different ranking approach. Instead of ranking by the final calculated formula values, **Amplitude ranks by the sum of unique users across all metrics in the formula**.
+
+This ranking method is less accurate because it doesn't reflect the actual formula results. The system weights each group by unique user count, calculates each metric separately, performs the formula operation, and then orders the results.
+
+{{partial:admonition type='note'}}
+This weighted ranking applies only when determining which groups to display (the top N results based on display limits). Once Amplitude selects the groups, sorting within those results displays them in the correct order based on the actual formula values.
+{{/partial:admonition}}
+
+#### Example
+
+You create a Data Table with the formula `PROPSUM(A) / TOTALS(B)` grouped by Country:
+
+* **USA**: Revenue = $40,000, Events = 20,000, Users with revenue events = 1
+* **Canada**: Revenue = $10,000, Events = 10,000, Users with revenue events = 10
+
+When ranking to determine which countries to display, Amplitude ranks Canada higher than USA because Canada has 10 users with revenue events compared to USA's 1 user. This happens even though USA's actual formula result ($40,000 / 20,000 = $2) is higher than Canada's ($10,000 / 10,000 = $1).
+
+After Amplitude selects which countries to display based on this user-weighted ranking, the table correctly sorts them by their actual formula values.
+
+### Why this matters
+
+This ranking behavior can produce unexpected results when working with high-cardinality data (many unique group-by values). Groups with high formula values but few users may not appear in your results if other groups have more users, even if those groups have lower formula values.
+
+{{partial:admonition type='tip' heading='Workaround'}}
+If you need to rank by actual formula results, consider:
+
+* Breaking your analysis into separate metrics without using multi-term formulas
+* Exporting the data and performing calculations outside Amplitude
+* Using filters to reduce cardinality before applying group-bys
+{{/partial:admonition}}
+
+This behavior also applies to Event Segmentation charts with custom formulas. For more details on formula metrics, review [Custom formulas in Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
+
 ## CSV export limits
 
 CSV exports have different row limits than what displays in the table. Export limits depend on the metric type:
