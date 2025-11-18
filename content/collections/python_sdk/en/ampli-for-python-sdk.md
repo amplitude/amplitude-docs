@@ -311,7 +311,7 @@ Events Tracked: 1 missed, 2 total
 ```
 ## Troubleshooting
 
-### ImportError: attempted relative import with no known parent package
+### ImportError: Attempted relative import with no known parent package
 
 This error occurs when you run a script directly with `python3 main.py` and use a relative import like `from .ampli import *`. Python doesn't recognize the module structure when scripts are run directly.
 
