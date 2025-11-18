@@ -309,3 +309,32 @@ The output displays status and indicates what events are missing.
  ✘ Song Stopped Called when a user stops playing a song.
 Events Tracked: 1 missed, 2 total
 ```
+## Troubleshooting
+
+### ImportError: attempted relative import with no known parent package
+
+This error occurs when you run a script directly with `python3 main.py` and use a relative import like `from .ampli import *`. Python doesn't recognize the module structure when scripts are run directly.
+
+There are two solutions:
+
+**Option 1: Use absolute imports**
+
+Use an absolute import based on your package structure:
+
+```python
+from ampli import *
+```
+
+Or if your Ampli wrapper is in a package:
+
+```python
+from your_package.ampli import *
+```
+
+**Option 2: Run as a module**
+
+Run your script as a module:
+
+```bash
+python3 -m your_package.main
+```
