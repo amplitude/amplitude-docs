@@ -32,7 +32,7 @@ Experiments with primary metrics will have recommendations for duration estimate
 Alternately, click **Create a custom metric** to define your own metric.
 3. Select the type of metric. You can choose one of:
    * **Success metrics**: States the goal should change by the goal amount and direction. 
-   * **Guardrail metrics**: State the goal should not change by the goal amount and direction.
+   * **Guardrail metrics**: State the goal shouldn't change by the goal amount and direction.
 4. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
 5. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 6. To add secondary metrics, click ***Add Metric*** and repeat this process.
@@ -41,17 +41,17 @@ Alternately, click **Create a custom metric** to define your own metric.
 
 **Success metrics** measure the primary outcomes you want to improve:
 
-- **Conversion metrics:** Purchase completion rate, sign-up conversion, add-to-cart rate
-- **Engagement metrics:** Daily active users, average session duration, feature adoption rate
-- **Revenue metrics:** Average order value, revenue for each user, subscription upgrades
-- **Retention metrics:** Day 7 retention rate, return user rate
+- **Conversion metrics:** Purchase completion rate, sign-up conversion, add-to-cart rate.
+- **Engagement metrics:** Daily active users, average session duration, feature adoption rate.
+- **Revenue metrics:** Average order value, revenue for each user, subscription upgrades.
+- **Retention metrics:** Day 7 retention rate, return user rate.
 
 **Guardrail metrics** monitor important metrics that shouldn't degrade during the experiment:
 
-- **Performance metrics:** Page load time, API response time, app crash rate
-- **Quality metrics:** Error rate, failed transaction rate, support ticket volume
-- **Core engagement:** Usage of key features unrelated to the experiment, overall session count
-- **Business health:** Subscription cancellation rate, refund rate, negative review rate
+- **Performance metrics:** Page load time, API response time, app crash rate.
+- **Quality metrics:** Error rate, failed transaction rate, support ticket volume.
+- **Core engagement:** Usage of key features unrelated to the experiment, overall session count.
+- **Business health:** Subscription cancellation rate, refund rate, negative review rate.
 
 For example, if you're testing a new checkout flow, your success metric might be "Purchase completion rate (Increase)," while your guardrail metrics could include "Checkout page load time (No increase)" and "Payment error rate (No increase)."
 
