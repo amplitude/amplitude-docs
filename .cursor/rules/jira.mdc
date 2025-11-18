@@ -1,6 +1,6 @@
 ---
-description: For any doc update, make sure there's a matching Jira ticket. This helps the Docs team track its work
-alwaysApply: true
+globs: content/**/*.md,*.md
+alwaysApply: false
 ---
 # Jira Ticket Management
 
