@@ -1152,7 +1152,7 @@ amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent);
 
 ## Track revenue
 
-The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
+The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productId`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets Amplitude automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
 
 {{partial:admonition type="tip" heading=""}}
 Amplitude recommends to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
@@ -1164,22 +1164,41 @@ To track revenue from a user, call revenue each time a user generates revenue. I
 const event = new amplitude.Revenue()
   .setProductId('com.company.productId')
   .setPrice(3.99)
-  .setQuantity(3);
+  .setQuantity(3)
+  .setRevenueType('purchase');
+
+amplitude.revenue(event);
+```
+
+This example shows tracking revenue with additional properties:
+
+```ts
+const event = new amplitude.Revenue()
+  .setProductId('com.company.productId')
+  .setPrice(3.99)
+  .setQuantity(3)
+  .setRevenueType('purchase')
+  .setEventProperties({
+    category: 'electronics',
+    brand: 'Acme'
+  });
 
 amplitude.revenue(event);
 ```
 
 ### Revenue interface
 
-| Name           | Description                                                                                                             | Default Value |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `product_id`   | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
-| `quantity`     | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                              | `1`           |
-| `price`        | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.   | `null`        |
-| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).         | `null`        |
-| `receipt`      | Optional. `string`. The receipt identifier of the revenue.                                                              | `null`        |
-| `receipt_sig`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                        | `null`        |
-| `properties`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                      | `null`        |
+Revenue objects support the following properties. Use the corresponding setter methods to assign values.
+
+| Name                 | Setter Method            | Description                                                                                                                                              | Default Value |
+| -------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `productId`          | `setProductId()`         | Optional. `string`. An identifier for the product. Amplitude recommends something like the Google Play Store product ID.                                 | Empty string. |
+| `quantity`           | `setQuantity()`          | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                                                                | `1`           |
+| `price`              | `setPrice()`             | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.                                     | `null`        |
+| `revenueType`        | `setRevenueType()`       | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).                                          | `null`        |
+| `receipt`            | `setReceipt()`           | Optional. `string`. The receipt identifier of the revenue.                                                                                               | `null`        |
+| `receiptSignature`   | `setReceiptSignature()`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                                                         | `null`        |
+| `eventProperties`    | `setEventProperties()`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                                                       | `null`        |
 
 ## Flush the event buffer
 
