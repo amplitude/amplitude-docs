@@ -1,6 +1,6 @@
 ---
 globs: content/**/*.md,*.md
-alwaysApply: false
+alwaysApply: true
 ---
 # Jira Ticket Management
 
