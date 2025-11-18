@@ -38,7 +38,7 @@ You can't create a new flag until you’ve created a deployment, and either inst
 4. Click **Create**. Experiment opens a blank template for your flag.
 5. Choose the deployment for your experiment from the **Deployment** drop-down menu. For more information about working with deployments, go to [this article on configuring Amplitude Experiment](/docs/feature-experiment/workflow/configure).
 6. Click **Advanced Settings** to change the bucketing salt. 
-  {{partial:admonition type="not" heading=""}}
+  {{partial:admonition type="note" heading=""}}
    Changing the bucketing salt may let users might switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing salt without guidance. For more information, go to [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
   {{/partial:admonition}}
  
