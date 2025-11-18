@@ -13,14 +13,14 @@ Follow these guidelines when documenting technical concepts, code, and APIs.
 Use backticks for all code-related elements:
 
 ### Inline Code Elements
-- File names and paths: `config.json`, `/etc/amplitude/settings`
-- Function and method names: `logEvent()`, `setUserId()`
-- Variable names: `api_key`, `userId`
-- Parameter names: `event_name`, `event_properties`
-- API endpoints: `/api/v2/events`
-- Class names: `AmplitudeClient`, `EventData`
-- Package names: `@amplitude/analytics-browser`
-- Command-line commands: `npm install`, `php artisan`
+- File names and paths: `config.json`, `/etc/amplitude/settings`.
+- Function and method names: `logEvent()`, `setUserId()`.
+- Variable names: `api_key`, `userId`.
+- Parameter names: `event_name`, `event_properties`.
+- API endpoints: `/api/v2/events`.
+- Class names: `AmplitudeClient`, `EventData`.
+- Package names: `@amplitude/analytics-browser`.
+- Command-line commands: `npm install`, `php artisan`.
 
 **Examples:**
 - ✅ "Set the `api_key` parameter in your `config.json` file."
@@ -54,25 +54,25 @@ Define acronyms the first time they appear in a document (unless they're univers
 - ✅ "Use the Application Programming Interface (API) to send events."
 
 **Exceptions** (commonly understood acronyms that don't need definition):
-- API, SDK, HTML, CSS, JSON, XML, HTTP, HTTPS
-- URL, URI, UUID
-- iOS, Android
+- API, SDK, HTML, CSS, JSON, XML, HTTP, HTTPS.
+- URL, URI, UUID.
+- iOS, Android.
 
 ### Capitalization of Technical Terms
 
 Follow standard capitalization for:
-- **Product names**: Amplitude, Amplitude Analytics, Session Replay, Guides & Surveys
-- **Technology names**: JavaScript, TypeScript, Python, React, Node.js
-- **Third-party products**: Keep their official capitalization (GitHub, npm, AWS)
+- **Product names**: Amplitude, Amplitude Analytics, Session Replay, Guides & Surveys.
+- **Technology names**: JavaScript, TypeScript, Python, React, Node.js.
+- **Third-party products**: Keep their official capitalization (GitHub, npm, AWS).
 
 ### Amplitude-Specific Terms
 
 Use these approved technical terms (from the vocabulary list):
-- "event properties" not "event attributes"
-- "user properties" not "user attributes"
-- "API key" not "api key" or "API-key"
-- "tracking plan" not "tracking-plan"
-- "cohort" not "segment" (unless specifically referring to user segments)
+- "event properties" not "event attributes".
+- "user properties" not "user attributes".
+- "API key" not "api key" or "API-key".
+- "tracking plan" not "tracking-plan".
+- "cohort" not "segment" (unless specifically referring to user segments).
 
 ## API Documentation
 
@@ -109,21 +109,21 @@ Always include request and response examples:
 ## Version Numbers and Dates
 
 ### Version Numbers
-- Use semantic versioning format: `2.1.0`
-- Include "version" before the number in prose: "version 2.1.0"
-- Use code formatting for version numbers: `v2.1.0` or `2.1.0`
+- Use semantic versioning format: `2.1.0`.
+- Include "version" before the number in prose: "version 2.1.0".
+- Use code formatting for version numbers: `v2.1.0` or `2.1.0`.
 
 ### Dates
-- Use full date format: "January 15, 2024"
-- Don't use ambiguous numeric formats like "01/15/24"
-- For date ranges, use: "January 1–15, 2024" (en dash)
+- Use full date format: "January 15, 2024".
+- Don't use ambiguous numeric formats like "01/15/24".
+- For date ranges, use: "January 1–15, 2024" (en dash).
 
 ## Numbers and Units
 
 ### Numbers
-- Spell out numbers one through nine in prose
-- Use numerals for 10 and above
-- Use numerals for all technical measurements, versions, and quantities
+- Spell out numbers one through nine in prose.
+- Use numerals for 10 and above.
+- Use numerals for all technical measurements, versions, and quantities.
 
 **Examples:**
 - ✅ "The SDK supports three platforms."
@@ -131,9 +131,9 @@ Always include request and response examples:
 - ✅ "Version 2.0 includes five new features."
 
 ### Units
-- Use standard abbreviations: KB, MB, GB, TB (not kb, mb)
-- Include a space between number and unit: "100 MB" not "100MB"
-- For time: ms (milliseconds), s (seconds), min (minutes)
+- Use standard abbreviations: KB, MB, GB, TB (not kb, mb).
+- Include a space between number and unit: "100 MB" not "100MB".
+- For time: ms (milliseconds), s (seconds), min (minutes).
 
 **Examples:**
 - ✅ "The API accepts payloads up to 1 MB."
@@ -145,22 +145,26 @@ Always include request and response examples:
 ### Formatting UI Elements
 Use bold for UI elements users interact with:
 
-- Buttons: **Save**, **Cancel**, **Create Project**
-- Menu items: **File** > **Settings** > **API Keys**
-- Tabs: **Configuration**, **Analytics**, **Settings**
-- Field labels: **Project Name**, **API Key**, **Event Type**
+- Buttons: **Save**, **Cancel**, **Create Project**.
+- Tabs: **Configuration**, **Analytics**, **Settings**.
+- Field labels: **Project Name**, **API Key**, **Event Type**.
 
 **Examples:**
-- ✅ "Select **Settings** > **API Keys** to view your credentials."
 - ✅ "Enter your project name in the **Project Name** field."
 - ✅ "Select **Save** to save your changes."
 
 ### Navigation Paths
-Use angle brackets (>) to show navigation paths:
+Use italics for navigation hierarchies with angle brackets (>) to show navigation paths:
 
 ```markdown
-**Settings** > **Data** > **Sources**
+*Settings > API Keys*
+*Data > Sources*
 ```
+
+**Examples:**
+- ✅ "Navigate to *Settings > API Keys* to view your credentials."
+- ✅ "Go to *Settings > Data > Sources* to configure your data sources."
+- ❌ "Navigate to **Settings** > **API Keys**" (don't use bold for navigation paths)
 
 ## Links and References
 

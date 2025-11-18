@@ -37,8 +37,7 @@ Depending on your company's network policy, you may need to add these IP address
 
 ## Limits
 
-- Maximum running time for a single Snowflake SQL query is 12 hours.
-- Max batch size for a single Snowflake SQL query is 1B events. 
+- Maximum running time for a single Snowflake SQL query is 12 hours. You can optimize query performance and reduce runtime by allocating more compute resources to your Snowflake warehouse (for example, by increasing the warehouse size).
 
 {{partial:admonition type="warning" title="User and Group properties sync"}}
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
@@ -75,7 +74,7 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
     Amplitude offers password-based and key pair authentication for Snowflake.
 
     {{partial:admonition type="warning" heading="Snowflake Password Authentication Deprecation"}}
-    Beginning in May 2026, Snowflake is removing support for single-factor password authentication. This impacts the way you send data from Snowflake to Amplitude. Amplitude recommends migrating to key pair authentication for enhanced security and future compatibility with Snowflake.
+    Beginning in May 2026, Snowflake is removing support for single-factor password authentication. This impacts the way you send data from Snowflake to Amplitude. Amplitude recommends migrating to key pair authentication for enhanced security and future compatibility with Snowflake. For detailed migration guidance, see the [Snowflake Password Authentication Deprecation FAQ](/docs/faq/snowflake-password-auth-deprecation).
     {{/partial:admonition}}
 
     - If you want to use password authentication, select *Password* and enter your password in the *Password* field.
@@ -98,6 +97,7 @@ The data type you select defines the strategies and settings available to you fo
 | Event            | Includes user actions associated with either a user ID or a device ID and may also include event properties.                                                             |
 | User Properties  | Includes dictionaries of user attributes you can use to segment users. Each property is associated with a user ID.                                                       |
 | Group Properties | Includes dictionaries of group attributes that apply to a a group of users. Each property is associated with a group name.                                               |
+| Metrics | Includes dictionaries of behaviors that are associated with a user profile. Metrics always display the most current data synced from your warehouse. |
 | Profiles         | Includes dictionaries of properties that relate to a user profile. Profiles display the most current data synced from your warehouse, and are associated with a user ID. |
 
 ### Select the import strategy
@@ -118,6 +118,7 @@ See the following table to understand which data types are compatible with which
 | Event            | Mirror Sync, Append Only Sync, Timestamp |
 | User properties  | Full Sync, Timestamp                     |
 | Group Properties | Full Sync, Timestamp                     |
+| Metrics | Append Only Sync |
 | Profiles         | Mirror Sync                              |
 
 {{partial:admonition type="note" heading="Change Data Capture options"}}
@@ -138,7 +139,7 @@ For the `Event` data type and Append-Only or Timestamp Ingestion, optionally sel
 
 ### Schedule your sync
 
-Provide a name for the source, and set the frequency with which Amplitude imports your data. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
+Provide a name for the source, and configure the sync frequency. You can schedule syncs from every 5 minutes to monthly. Daily syncs can run at a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
 
 ## Choose the best integration for your use case
 

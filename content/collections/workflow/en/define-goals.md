@@ -32,10 +32,28 @@ Experiments with primary metrics will have recommendations for duration estimate
 Alternately, click **Create a custom metric** to define your own metric.
 3. Select the type of metric. You can choose one of:
    * **Success metrics**: States the goal should change by the goal amount and direction. 
-   * **Guardrail metrics**: State the goal should not change by the goal amount and direction.
+   * **Guardrail metrics**: State the goal shouldn't change by the goal amount and direction.
 4. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
 5. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 6. To add secondary metrics, click ***Add Metric*** and repeat this process.
+
+### Examples of success and guardrail metrics
+
+**Success metrics** measure the primary outcomes you want to improve:
+
+- **Conversion metrics:** Purchase completion rate, sign-up conversion, add-to-cart rate.
+- **Engagement metrics:** Daily active users, average session duration, feature adoption rate.
+- **Revenue metrics:** Average order value, revenue for each user, subscription upgrades.
+- **Retention metrics:** Day 7 retention rate, return user rate.
+
+**Guardrail metrics** monitor important metrics that shouldn't degrade during the experiment:
+
+- **Performance metrics:** Page load time, API response time, app crash rate.
+- **Quality metrics:** Error rate, failed transaction rate, support ticket volume.
+- **Core engagement:** Usage of key features unrelated to the experiment, overall session count.
+- **Business health:** Subscription cancellation rate, refund rate, negative review rate.
+
+For example, if you're testing a new checkout flow, your success metric might be "Purchase completion rate (Increase)," while your guardrail metrics could include "Checkout page load time (No increase)" and "Payment error rate (No increase)."
 
 The duration estimator estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
 
@@ -62,6 +80,20 @@ You can create a new metric if none of the standard metrics meet your needs.
 {{partial:admonition type='note'}}
 By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, or calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments, for up to two months.
 {{/partial:admonition}}
+
+## Using Warehouse Metrics in experiments
+
+In addition to event-based metrics, you can use [Warehouse Metrics](/docs/data/warehouse-metrics) as goals in your experiments. Warehouse Metrics are precomputed metrics imported directly from your data warehouse into Amplitude, ensuring consistency between your source of truth and your experimental analysis.
+
+Warehouse Metrics are particularly valuable when your experiment goals involve business metrics that are difficult or impractical to calculate from behavioral events alone, such as:
+
+- **Revenue and financial metrics**: Average order value, credits remaining, or subscription revenue that require complex calculations across multiple data sources
+- **Customer health metrics**: Customer lifetime value (LTV), health scores, or churn risk predictions that are modeled in your data warehouse
+- **State metrics**: Current subscription tier, activation status, or account-level attributes that track user state rather than discrete events
+
+When you add metrics to your experiment, Warehouse Metrics appear in the metrics picker with a warehouse icon indicator. You can use them as primary or secondary metrics just like event-based metrics. Amplitude displays when each Warehouse Metric was last synced and when the next sync is scheduled, helping you ensure your experiment results reflect the most current data.
+
+For more information about setting up and using Warehouse Metrics, review [Warehouse Metrics Overview](/docs/data/warehouse-metrics).
 
 ## Define the exposure event
 
