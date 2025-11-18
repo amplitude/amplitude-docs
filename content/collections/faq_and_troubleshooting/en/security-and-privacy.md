@@ -10,11 +10,6 @@ updated_at: 1723649888
 ---
 This article covers some frequently asked questions about Amplitude's security and privacy policies.
 
-## Feature availability
-
-Amplitude has a built-in compliance feature that meets standards for SOC2 Type 2, GDPR, HIPPA, CCPA, and Privacy Shield. It is available to users on Starter, Plus, Growth, and Enterprise plans.
-
-
 {{partial:collapse name="What are the terms of Amplitude's service and privacy policy?"}}
 Amplitude provides a secure platform to explore your data, while addressing all relevant legal, industry, and regulatory concerns. The Terms of Service incorporate the Data Processing Addendum for Terms of Service ([TOS DPA](https://www.amplitude.com/terms/dpa)) and the Acceptable Use Policy ([AUP](https://www.amplitude.com/aup)).
 

@@ -17,12 +17,6 @@ The Amplitude Query product lets you query your raw data through your Amplitude-
 Amplitude loads data into Snowflake every 30 minutes.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only, and requires the **Query add-on**. It's no longer available for purchase.
-
-See our [pricing page](https://amplitude.com/pricing) for more details.
-
 This feature is also **not available in the EU**.
 
 ## Getting started
