@@ -89,7 +89,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it is highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Swift 5.9+
+### Not using Amplitude Swift 1.13.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
@@ -139,8 +139,6 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
-After you init and call `amplitude.add`, you are technically done installing. While erything else is optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
-
 #### Boot the SDK
 
 ```swift
@@ -153,6 +151,11 @@ let bootOptions = AmplitudeBootOptions(
   user_id: "USER_ID",
   device_id: "DEVICE_ID",
   user_properties: ["key": "value"]
+  integrations: [
+    { event, eventProperties in
+        // Custom event handler
+    }
+  ]
 )
 amplitudeEngagement.boot(options: bootOptions)
 ```
@@ -161,15 +164,23 @@ amplitudeEngagement.boot(options: bootOptions)
 After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
+## Screen tracking and element targeting
+Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
 
-### Enable screen tracking (optional)
+### Enable screen tracking
+
+Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
 amplitudeEngagement.screen("HomeScreen")
 ```
 
-### Enable element targeting (optional)
+{{partial:admonition type="warning" heading=""}}
+`Screen Viewed` events from the Amplitude iOS Swift SDK's [Autocapture feature](/docs/sdks/analytics/ios/ios-swift-sdk#autocapture) are auto-forwarded to the Engagement SDK.
+{{/partial:admonition}}
+
+### Enable element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app, give the element a unique identifier.
 
@@ -187,7 +198,9 @@ let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
 
-## Manage themes
+## Other SDK Methods
+
+### Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
 
@@ -197,7 +210,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
-## Router configuration
+### Router configuration
 
 Configure how Guides and Surveys handles screen navigation.
 
@@ -216,7 +229,7 @@ engagement.setRouter { identifier in
 After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
 
-## Reset
+### Reset
 
 Reset a guide or survey to a specific step.
 
@@ -230,7 +243,7 @@ amplitudeEngagement.reset(key = "GUIDE_KEY", stepIndex = 0)
 | `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
 
 
-## List
+### List
 
 Retrieve a list of all live guides and surveys along with their status.
 
@@ -238,7 +251,7 @@ Retrieve a list of all live guides and surveys along with their status.
 val guidesAndSurveys = amplitudeEngagement.list()
 ```
 
-## Show
+### Show
 
 Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
@@ -251,7 +264,7 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 
 
-## Forward event
+### Forward event
 
 If you don't use the plugin, but want to trigger Guides using events.
 
@@ -262,7 +275,7 @@ amplitudeEngagement.forwardEvent([
 ])
 ```
 
-## Close all
+### Close all
 
 Close all active guides and surveys.
 
