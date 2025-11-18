@@ -11,12 +11,14 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an experiment—including goals, metrics, audience targeting, statistical preferences, and variants—so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an experiment. Templates include goals, metrics, audience targeting, statistical preferences, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
 - Need to quickly launch new experiments with proven configurations.
 - Test variations of the same feature with different audiences.
+
+Templates are only applicable to Web Experiments.
 
 ## Create a template from an experiment
 
