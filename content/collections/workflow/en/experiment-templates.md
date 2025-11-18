@@ -11,47 +11,65 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an experiment. Templates include goals, metrics, audience targeting, statistical preferences, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an experiment. Templates include goals, metrics, audience targeting, and variants so you can reuse it for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
 - Need to quickly launch new experiments with proven configurations.
 - Test variations of the same feature with different audiences.
 
-Templates are only applicable to Web Experiments.
+## Permissions
 
-## Create a template from an experiment
+To create, edit, or delete experiment templates, you need the Manage Experiments permission. For more information, review [Manage feature flags and feature experiments](/docs/admin/account-management/manage-feature-flags-and-feature-experiments).
+
+### Template notes and caveats
+
+* Templates are only available on Feature Experiments.
+* Templates are project-specific.
+* Templates can't be applied to pre-existing experiments.
+* You can't convert a template back into an active experiment.
+* Template changes don't sync to experiments already created from that template.
+
+## Creating templates
+
+### Create a template from an experiment
 
 To create a template from an existing experiment:
 
 1. Navigate to the experiment you want to save as a template.
-2. Click **More options** (three dots) and select **Save as template**.
+2. Click **More options** (three dots) and select **Use as a template**.
 3. Enter a Template name and optional Description.
 4. Select which components to include in the template:
-   - Variants and allocations
+   - Deployment rules
    - Goals and metrics
-   - Audience targeting rules
-   - Statistical preferences
+   - User targeting rules
    - Evaluation mode and bucketing settings
-5. Click **Create template**.
+5. Click **Use as a template**.
 
-Your template appears in the Templates library.
+Your template automatically appears in the Templates library.
+
+### Create a template from the Templates library
+
+1. Navigate to *Experiments > Templates*.
+2. Click **Create Template**.
+3. Enter the name you want for your template.
+4. Select the project where you want the template applied.
+Templates can only apply to a single project.
+5. Optionally, enter a description of the template.
+6. Click **Create**.
 
 ## Create an experiment from a template
 
 To use a template when creating a new experiment:
 
-1. Click **Create > Experiment from template**.
-2. Select the template you want to use from the Templates library.
-3. Review and customize the pre-populated settings:
-   - **Name**: Give your new experiment a unique name
-   - **Project**: Confirm or change the project
-   - **Key**: Amplitude generates a new key automatically
-   - Review variants, goals, and audience settings
-4. Make any necessary adjustments to the configuration.
-5. Click **Create**.
+1. From the Experiments page, click **Create Experiment > Feature Experiment**.
+2. Enter information about your experiment.
+3. In the Apply a template section, select the template you want from the drop-down menu.
+4. Click **Create**.
+5. Make any adjustments you want to the experiment.
+6. When you ready, click **Start Experiment**.
 
-The new experiment inherits the template configuration but operates independently. Changes to the template don't affect existing experiments created from it.
+The new experiment inherits the template configuration but operates independently. Changes to the template don't affect experiments that were created from it.
 
 ## Manage experiment templates
 
@@ -60,41 +78,38 @@ The new experiment inherits the template configuration but operates independentl
 Navigate to *Experiment > Templates* to view your organization's template library. The Templates page shows:
 
 - Template name and description
-- Creator and creation date
 - Number of experiments created from this template
 - Last modified date
+- Goals
+- Evaluation mode
+- Number of segments in the template
+- Bucketing type
 
 ### Edit a template
 
-To update a template:
-
 1. Navigate to *Experiment > Templates*.
-2. Select the template you want to edit.
-3. Click **Edit template**.
+2. Click the name of the template you want to edit.
 4. Modify the configuration as needed.
-5. Click **Save changes**.
+5. Click **Save**.
 
 Changes to a template only affect future experiments created from it. Existing experiments created from the template aren't updated.
 
-### Delete a template
-
-To remove a template:
+### Archive a template
 
 1. Navigate to *Experiment > Templates*.
-2. Select the template you want to delete.
-3. Click **More options** (three dots) and select **Delete**.
-4. Confirm the deletion.
+2. Open the template you want to archive.
+3. Click the **three-dot** menu icon and then click **Archive**.
+4. Confirm the archive.
 
-Deleting a template doesn't affect any experiments that were created from the template.
+Archiving a template doesn't affect any experiments that were created from the template.
 
 ## Template components
 
 Templates can include the following experiment configurations:
 
-### Variants
-- Variant names and descriptions
-- Payload configurations
-- Traffic allocation percentages
+### Experiment settings
+- Evaluation mode (local vs. remote)
+- Bucketing unit (user vs. group)
 
 ### Goals and metrics
 - Primary and secondary metrics
@@ -108,17 +123,6 @@ Templates can include the following experiment configurations:
 - Geographic or demographic filters
 - User ID targeting
 
-### Statistical preferences
-- Confidence level
-- Statistical power
-- Test methodology (hypothesis testing vs. do-no-harm)
-- Sequential testing settings
-
-### Experiment settings
-- Evaluation mode (local vs. remote)
-- Bucketing unit (user vs. group)
-- Sticky bucketing preferences
-
 ## Best practices
 
 - **Name templates descriptively**: Use names that clearly indicate the template's purpose, like "Product Page Conversion Test" or "Mobile Onboarding Experiment."
@@ -126,15 +130,4 @@ Templates can include the following experiment configurations:
 - **Review templates regularly**: Archive or update templates that are outdated or no longer align with your experimentation standards.
 - **Start with successful experiments**: Create templates from experiments that have proven configurations and clear learnings.
 - **Document template variations**: If you create multiple similar templates, document the differences between them.
-
-## Permissions
-
-To create, edit, or delete experiment templates, you need the **Manage experiments** permission. For more information, review [Manage feature flags and feature experiments](/docs/admin/account-management/manage-feature-flags-and-feature-experiments).
-
-## Limitations
-
-- Templates aren't supported for Feature Flags (flags don't use the template system).
-- Templates created from Web Experiments don't include page-specific targeting.
-- You can't convert a template back into an active experiment.
-- Template changes don't sync to experiments already created from that template.
 
