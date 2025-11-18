@@ -19,10 +19,10 @@ When you create a variant, you can optionally attach a JSON payload containing a
 
 ### Workflow overview
 
-1. **Create a variant with a payload**: Add a JSON object to a variant that defines the experience configuration
-2. **Activate the experiment**: Deploy the experiment to your users
-3. **Evaluate in your application**: The SDK fetches the variant and payload for each user
-4. **Use the payload**: Your application reads the payload and applies the configuration
+1. **Create a variant with a payload**: Add a JSON object to a variant that defines the experience configuration.
+2. **Activate the experiment**: Deploy the experiment to your users.
+3. **Evaluate in your application**: The SDK fetches the variant and payload for each user.
+4. **Use the payload**: Your application reads the payload and applies the configuration.
 
 ## Create variants with payloads
 
@@ -32,7 +32,7 @@ You can add JSON payloads to variants through the Amplitude UI or programmatical
 
 To add a payload when creating a variant:
 
-1. Navigate to **Experiment** > **Feature Flags** or **Experiments** and select your flag or experiment.
+1. Navigate to *Experiment > Feature Flags* or *Experiments* and select your flag or experiment.
 2. In the Variants section, click the **Plus** icon to create a variant.
 3. Enter the variant name, value, and description.
 4. In the **Payload** field, add your JSON configuration.
@@ -85,17 +85,17 @@ curl --request POST \
 {{/partial:admonition}}
 
 For complete API documentation, go to:
-- [Create variant for flags](/docs/apis/experiment/experiment-management-api-flags#create-variant)
-- [Create variant for experiments](/docs/apis/experiment/experiment-management-api-experiments#create-variant)
+- [Create variant for flags](/docs/apis/experiment/experiment-management-api-flags#create-variant).
+- [Create variant for experiments](/docs/apis/experiment/experiment-management-api-experiments#create-variant).
 
 ## Access payloads in your application
 
 After you create variants with payloads, your application needs to evaluate the experiment and access the payload. The implementation varies by SDK, but the general pattern is the same:
 
-1. Initialize the Experiment SDK
-2. Fetch the variant for a user
-3. Access the payload from the variant object
-4. Use the payload to configure your application
+1. Initialize the Experiment SDK.
+2. Fetch the variant for a user.
+3. Access the payload from the variant object.
+4. Use the payload to configure your application.
 
 ### JavaScript/TypeScript example
 
@@ -230,9 +230,9 @@ Follow these best practices to ensure your payload implementation is robust and 
 ### Provide default values
 
 Always provide default values when accessing payload properties. This ensures your application works correctly if:
-- The user doesn't receive a variant
-- The payload is missing expected properties
-- The experiment is turned off
+- The user doesn't receive a variant.
+- The payload is missing expected properties.
+- The experiment is turned off.
 
 ```javascript
 const layout = variant?.payload?.layout || 'list';
@@ -268,9 +268,9 @@ if (variant?.payload && validateLayoutPayload(variant.payload)) {
 ### Keep payloads simple
 
 Keep payload structures simple and focused on configuration. Avoid:
-- Large payloads (keep under 10KB)
-- Complex nested structures
-- Sensitive data (payloads are visible in network traffic)
+- Large payloads (keep under 10KB).
+- Complex nested structures.
+- Sensitive data (payloads are visible in network traffic).
 
 ### Document your payload schema
 
@@ -346,7 +346,7 @@ Test different content approaches:
 
 ## Payload availability
 
-Only the `value` and `payload` properties are available when accessing a variant from the SDK or Evaluation API. Other variant properties like `name` and `description` are only available through the Management API and the Amplitude UI.
+When you access a variant from the SDK or Evaluation API, you can use only the `value` and `payload` properties. To access other variant properties like `name` and `description`, use the Management API or the Amplitude UI.
 
 For more information about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
 
