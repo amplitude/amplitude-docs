@@ -61,7 +61,7 @@ Amplitude recommends that you use the User Profile API server-side only. Calling
 | `rec_id`| *Optional*. Recommendations to retrieve, required if `get_recs` is true. Fetch multiple recommendations by separating the `rec_ids` with commas. |
 | `rec_type` | *Optional*. Overrides the default experimental control setting and `rec_type=model` returns modeled recommendations and `rec_type=random` returns random recommendations. |
 | `get_amp_props`| *Optional*. Return a full set of user properties for this user, not including computations. Defaults to `false`. |
-| `get_cohort_ids`| *Optional*. Return a list of all the cohort IDs that this user is a part of that have been set up to be tracked. By default cohort membership isn't tracked for users for any cohort. Defaults to `false`. **Note**: Only cohorts that are synced to Profile API are returned. |
+| `get_cohort_ids`| *Optional*. Return a list of all the cohort IDs that this user is a part of that have been set up to be tracked. By default cohort membership isn't tracked for users for any cohort. Defaults to `false`. Only cohorts that are synced to Profile API are returned. |
 | `get_computations` | *Optional*. Return a list of all the computations that are enabled for this user. Defaults to `false`. |
 | `comp_id` | *Optional*. Return a single computation that might be enabled for this user. It returns a null value if it doesn't exist. If `get_computations` is true, all values are fetched, including this one (unless it's archived or deleted). |
 
@@ -293,9 +293,12 @@ Authorization: Api-Key 1234567890
 ## Get cohort IDs
 
 Retrieves a user's cohort IDs.
-Before you can use `get cohort IDs`, the following prerequisites must be satisfied:
 
-* Cohorts must be synced to the [User Profile API](/docs/data/destination-catalog/movable-ink-profile-api).
+Before you can use `get cohort IDs`, ensure your cohorts are synced using the [User Profile API](/docs/data/destination-catalog/movable-ink-profile-api).
+
+{{partial:admonition type="note" heading="Profile API limit"}}
+Amplitude limits cohort syncs with the Profile API to 10 million users or fewer.
+{{/partial:admonition}}
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
