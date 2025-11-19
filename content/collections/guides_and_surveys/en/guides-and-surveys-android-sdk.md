@@ -250,6 +250,14 @@ button.tag = "my-button"
 
 ## Other SDK methods
 
+This section describes additional methods available in the Android SDK for Amplitude Guides and Surveys, including:
+
+- **Managing themes**: You can set the visual theme (light, dark, or auto) for guides and surveys using `setThemeMode`.
+- **Router configuration**: You can customize how guides and surveys handle screen navigation by defining a router callback with `setRouter`, which lets you handle navigation logic in your app.
+- **Resetting guides/surveys**: Use `reset` to move a guide or survey back to a specific step.
+- **Listing guides/surveys**: Retrieve the full list of live guides and surveys and their current status using the `list()` method.
+
+
 ### Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
