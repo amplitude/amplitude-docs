@@ -22,6 +22,9 @@ RBAC Provides the following benefits to your enterprise:
 
 {{/partial:admonition}}
 
+## Feature availability
+
+RBAC is available to organizations on the Enterprise plan.
 
 ## Amplitude RBAC concepts
 
