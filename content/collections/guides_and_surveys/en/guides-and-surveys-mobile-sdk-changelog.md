@@ -6,6 +6,7 @@ landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1750443681
 ---
+<!-- vale off -->
 
 ## 1.7.0 (Android, iOS, React Native) \[2025-11-18\]
 
