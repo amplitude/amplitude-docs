@@ -7,6 +7,16 @@ updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1750443681
 ---
 
+## 1.7.0 (Android, iOS, React Native) \[2025-11-18\]
+
+#### 🐛 Fixes
+- Fix: type error when using the Engagement Analytics Plugin with "amplitude.add(...)" (GSDK-698) \[rn\]
+- Fix: Guide title incorrectly center-aligned when left alignment was configured (GSDK-701) \[android\]
+- Fix: Allow underscore ("_") separated font files on Android (GSDK-701) \[android\]
+- Fix: Use correct corner radius and outer padding when rendering Guide (GSDK-701) \[android\]
+- Fix: app is unresponsive after displaying StoreKit content (e.g. `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
+
+
 ## 1.6.0 (Android, iOS, React Native) \[2025-11-07\]
 
 ### ✨ Features
