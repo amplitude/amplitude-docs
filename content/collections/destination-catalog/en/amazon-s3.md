@@ -55,7 +55,7 @@ To set up the Amazon S3 integration, follow these steps:
 5. In the **Set Up Bucket Policy** tab, go through the steps listed in the *Create a Bucket* and *Add a Bucket Policy* sections. Then fill out the required information in the *S3 Bucket Information* section.
 6. Click **Generate Bucket Policy**, then click **Next**.
 
-Amplitude verifies your bucket access. After access is verified, Amplitude starts exporting data on an hourly basis.
+Amplitude verifies your bucket access, then starts hourly exports on a best-effort basis.
 
 After setup is complete, check the status of your exports from the integration. 
 
@@ -125,7 +125,7 @@ To disable automatic exports, open the integration and click **Manage**. You can
 
 ### Raw event file and data format
 
-Data is exported hourly as zipped archive JSON files, and partitioned by the hour with one or multiple files per hour. Export timing depends on job execution time and data import timing. If an export job takes longer than an hour or data import is delayed, exports may contain data from multiple hours. Each file contains one event JSON object per line.
+Amplitude exports data hourly as a zipped archive of JSON files, partitioned by the hour with one or more files per hour. Exports typically contain one hour of data but may contain multiple hours if they run less frequently. Each file contains one event JSON object per line.
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example, `server_upload_time`):
 
@@ -208,7 +208,7 @@ To disable `complete` files, contact Amplitude Support.
 
 ### Merged Amplitude IDs file and data format
 
-Data is exported hourly as zipped archive JSON files. Export timing depends on job execution time and data import timing. Each file contains one merged Amplitude ID JSON object per line.
+Data is exported hourly as zipped archive JSON files. Exports may run less frequently and contain multiple hours of data. Each file contains one merged Amplitude ID JSON object per line.
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example `server_upload_time`):
 
