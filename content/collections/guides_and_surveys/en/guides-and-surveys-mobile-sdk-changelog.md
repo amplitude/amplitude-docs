@@ -18,7 +18,7 @@ updated_at: 1750443681
 - Fix: app is unresponsive after displaying StoreKit content (e.g. `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
 
 
-# 1.6.1 (Android, iOS, React Native) \[2025-11-13\]
+## 1.6.1 (Android, iOS, React Native) \[2025-11-13\]
 
 #### 🐛 Fixes
 
