@@ -17,6 +17,16 @@ updated_at: 1750443681
 - Fix: app is unresponsive after displaying StoreKit content (e.g. `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
 
 
+# 1.6.1 (Android, iOS, React Native) \[2025-11-13\]
+
+#### 🐛 Fixes
+
+- Fix: update ordering of survey and media blocks (GSDK-689) \[android, ios\]
+- Fix: fix threading issue for uikit click element (GSDK-571) \[ios\]
+- Fix: fix nudge anchoring on custom nav bar behind transparent system nav bar (GSDK-664) \[ios\]
+- Fix: refactor view hierarchy scanning to improve performance on the Main thread \[android\]
+
+
 ## 1.6.0 (Android, iOS, React Native) \[2025-11-07\]
 
 ### ✨ Features
