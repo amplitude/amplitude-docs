@@ -295,7 +295,8 @@ Authorization: Api-Key 1234567890
 Retrieves a user's cohort IDs.
 Before you can use `get cohort IDs`, the following prerequisites must be satisfied:
 
-* Cohorts must be synced to the [User Profile API](/docs/data/destination-catalog/movable-ink-profile-api).
+- Cohorts must be synced to the [User Profile API](/docs/data/destination-catalog/movable-ink-profile-api).
+- **Note**: Cohort sync to the Profile API is limited to 10 million users or fewer.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
