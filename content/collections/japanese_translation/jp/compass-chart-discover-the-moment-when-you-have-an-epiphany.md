@@ -24,8 +24,6 @@ source: 'https://help.amplitude.com/hc/ja/articles/235147347'
 
 また、この記事はコンパスチャートの使い方についてのシリーズ記事の第一弾です。[次の記事はこちらをご覧ください](/docs/analytics/charts/compass/compass-interpret-1)。
 
-**注**：コンパスチャートは[エンタープライズ、グロースおよびスカラーシップ](https://amplitude.com/pricing)プランのお客様にのみご利用いただけます。
-
 ## コンパスチャートの設定
 
 あなたが既にAmplitudeの操作方法に慣れていれば、コンパスチャートが他のAmplitudeチャートと同じようには機能しないことにまず気づくでしょう。イベントモジュールもセグメンテーションモジュールも、指標モジュールもありません。

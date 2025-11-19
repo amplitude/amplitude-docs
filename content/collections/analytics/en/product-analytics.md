@@ -43,17 +43,16 @@ Product Analytics permissions for editing views depend on both your role within 
 
 ### Basic settings
 
-On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
-
-Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to learn how long users go between triggering your critical event.
-
-Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
-
-Click **Save** to commit changes.
+1. On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
+2. Select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to learn how long users go between triggering your critical event.
+3. Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
+4. Click **Save** to commit changes.
 
 ### Onboarding funnel
 
-Select events that represent the steps in your onboarding funnel. For example start with a broad event like `App installed` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
+Select events that represent the steps in your onboarding funnel. 
+
+For example start with a broad event like `App installed` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
 
 ### Features
 
