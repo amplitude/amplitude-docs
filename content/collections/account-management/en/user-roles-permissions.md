@@ -22,7 +22,7 @@ The **admin** sets user permissions. The admin is the first user of any Amplitud
 
 By default, user permissions in Amplitude exist at the **organization** level. With the default configuration, a user in an organization has the same level of access to all projects within that organization.
 
-Enterprise customers can enable project-level permissions, which allow users to have different roles for different projects within the same organization. For example, a user could be a Manager in one project but only a Viewer in another. Go to [Project-level permissions](/docs/admin/account-management/manage-users#project-level-permissions) for more information.
+Enterprise and Growth customers can enable project-level permissions, which allow users to have different roles for different projects within the same organization. For example, a user could be a Manager in one project but only a Viewer in another. Go to [Project-level permissions](/docs/admin/account-management/manage-users#project-level-permissions) for more information.
 
 Go to [Manage users, organizations, and projects](/docs/admin/account-management/manage-users) to learn more about creating and managing organizations and projects.
 
