@@ -10,6 +10,8 @@ module.exports ={
         './content/**/*.md',
     ],
 
+    darkMode: 'class',
+
     theme: {
         extend: {
             fontFamily: {
@@ -229,6 +231,25 @@ module.exports ={
 
                         }
 
+                    }
+                },
+                invert: {
+                    css: {
+                        '--tw-prose-body': '#e5e6e8',
+                        '--tw-prose-headings': '#F4F5F6',
+                        '--tw-prose-links': '#4b80f3',
+                        '--tw-prose-bold': '#F4F5F6',
+                        '--tw-prose-counters': '#aaaeb6',
+                        '--tw-prose-bullets': '#aaaeb6',
+                        '--tw-prose-quotes': '#e5e6e8',
+                        code: {
+                            'color': '#e5e6e8',
+                            'border-color': '#5a5e68',
+                        },
+                        kbd: {
+                            'background-color': '#4a4d54',
+                            'color': '#e5e6e8',
+                        }
                     }
                 }
             },
