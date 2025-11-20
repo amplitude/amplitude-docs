@@ -33,4 +33,4 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
   
 For example, you've chosen to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric should increase by at least 2%. If you change the experiment type to *Do No Harm*, you expect the metric to "not increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.
 
-5. Click **Continue** to move on to the next step: [defining your experiment’s goals](/docs/feature-experiment/workflow/define-goals).
+After the experiment has been created, you must configure additional aspects of the experiment. Go to [Define your experiment's goals](/docs/workflow/define-goals) for next steps. 

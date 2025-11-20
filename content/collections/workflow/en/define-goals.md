@@ -27,13 +27,15 @@ Experiment lets you define multiple metrics when running an experiment. Unlike a
 Experiments with primary metrics will have recommendations for duration estimates, result takeaways, and statistical significance notifications.
 {{/partial:admonition}}
 
-1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Metrics section.
+1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Metrics section and click the **edit** icon.
 2. Click **Add metric** and then select the metric you want from the drop-down list. 
 Alternately, click **Create a custom metric** to define your own metric.
-3. Select the type of metric. You can choose one of:
-   * **Success metrics**: States the goal should change by the goal amount and direction. 
-   * **Guardrail metrics**: State the goal shouldn't change by the goal amount and direction.
-4. Specify if you're expecting the direction of the metric to **Increase** or **Decrease**.
+3. Select the metric you want. 
+Typical metrics are:
+   * Event segmentation
+   * Retention
+   * Funnel analysis
+4. Specify if the metric **should** or **should not** **Increase** or **Decrease** and by how many percentages.
 5. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 6. To add secondary metrics, click ***Add Metric*** and repeat this process.
 
