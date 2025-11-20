@@ -23,7 +23,7 @@ This documentation has separate sections for [remote](/docs/feature-experiment/r
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
+Implements fetching variants for a user using [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -171,7 +171,7 @@ experiment.fetch_async_v2(user, fetch_callback)
 {{partial:collapse name="Account-level bucketing and analysis (v1.3.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user using a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or using [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```python
 user = User(
@@ -203,7 +203,7 @@ variants = experiment.fetch_v2(user)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user using [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
