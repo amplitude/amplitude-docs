@@ -18,7 +18,7 @@ updated_at:
 source: 'https://docs.developers.amplitude.com/data/destinations/notifly-cohort-sync'
 ---
 
-The Notifly destination allows you to sync your Amplitude-built cohort to your Notifly user group for targeting purposes.
+The Notifly destination allows you to sync your Amplitude-built cohort to your [Notifly](https://notifly.tech/en) user group for targeting purposes.
 
 ## Use cases
 
