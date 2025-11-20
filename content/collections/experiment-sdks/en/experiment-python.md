@@ -98,7 +98,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging. | `false` |
+| `debug` | When `True`, sets the logger level to `DEBUG`. | `False` |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -290,7 +291,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div> | Description                                                                                                             | Default Value                   |
 | --- |-------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| `debug` | Set to `True` to enable debug logging.                                                                                  | `False`                         |
+| `debug` | When `True`, sets the logger level to `DEBUG`.                                                                          | `False`                         |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`                                             | `ServerZone.US`                 |
 | `server_url` | The host to fetch flag configurations from.                                                                             | `https://api.lab.amplitude.com` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start)                                         | `30000`                         |
@@ -375,6 +377,73 @@ experiment = Experiment.initialize_local("DEPLOYMENT_KEY", LocalEvaluationConfig
   # (Recommended) Enable local evaluation cohort targeting.
   cohort_sync_config=CohortSyncConfig(api_key="API_KEY", secret_key="SECRET_KEY")
 ))
+```
+
+## Custom logging
+
+Pass a custom `logging.Logger` instance to control logging behavior.
+
+### Custom logger
+
+Pass a custom `logging.Logger` instance to `RemoteEvaluationConfig` or `LocalEvaluationConfig`:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig, LocalEvaluationConfig
+
+# Create a custom logger
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+handler = logging.FileHandler('experiment.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+custom_logger.addHandler(handler)
+
+# Remote evaluation with custom logger
+remote_config = RemoteEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_remote('DEPLOYMENT_KEY', remote_config)
+
+# Local evaluation with custom logger
+local_config = LocalEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_local('DEPLOYMENT_KEY', local_config)
+```
+
+### Debug flag with default logger
+
+Without a custom logger, the `debug` flag controls the default logger's level:
+
+```python
+# Without custom logger, debug=False uses WARNING level
+config = RemoteEvaluationConfig(
+    debug=False
+)
+# Default logger level is WARNING
+
+# Without custom logger, debug=True uses DEBUG level
+config = RemoteEvaluationConfig(
+    debug=True
+)
+# Default logger level is DEBUG
+```
+
+With a custom logger, the `debug` flag is ignored and your logger maintains its configured level:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig
+
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+
+# Custom logger maintains its WARN level regardless of debug flag
+config = RemoteEvaluationConfig(
+    logger=custom_logger,
+    debug=True
+)
+# Logger level stays WARN (debug flag is ignored)
 ```
 
 ## Access Amplitude cookies
