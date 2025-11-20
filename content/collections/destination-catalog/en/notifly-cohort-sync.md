@@ -1,8 +1,7 @@
 ---
-id:
+id: c878ffd2-5c95-447c-91ff-7c22a798a5a7
 blueprint: destination-catalog
 title: 'Notifly (Cohort Sync)'
-author:
 connection: destination
 integration_type:
   - cohorts
@@ -13,11 +12,8 @@ integration_icon: partner-icons/notifly.svg
 use_cases:
   - 'Target key cohorts with messaging informed by customer insights'
 exclude_from_sitemap: false
-updated_by:
-updated_at:
 source: 'https://docs.developers.amplitude.com/data/destinations/notifly-cohort-sync'
 ---
-
 The Notifly destination allows you to sync your Amplitude-built cohort to your [Notifly](https://notifly.tech/en) user group for targeting purposes.
 
 ## Use cases
@@ -28,9 +24,9 @@ The Notifly destination allows you to sync your Amplitude-built cohort to your [
 
 ## Considerations
 
-- This integration maps an Amplitude user ID to the external_user_id of a Notifly user.
-- Anonymous users are not supported. Each user must have a user ID to be identified across Amplitude and Notifly. Please ensure that the selected user property exists in both Amplitude and Notifly.
-- Notifly creates one user group per cohort. To avoid cohort discrepancies, each new sync for the same cohort will reset the existing user group. (Note: "new sync" refers to a newly added destination.) Be careful when syncing again with a different mapping.
+- This integration maps an Amplitude user ID to the `external_user_id` of a Notifly user.
+- This integration doesn't support anonymous users. Each user must have a user ID to be identified across Amplitude and Notifly. Ensure that the selected user property exists in both Amplitude and Notifly.
+- Notifly creates one user group per cohort. To avoid cohort discrepancies, each new sync for the same cohort resets the existing user group. (Note: "new sync" refers to a newly added destination.) Be careful when syncing again with a different mapping.
 
 ## Notifly setup
 
@@ -40,9 +36,9 @@ Copy the Project ID and API Credentials (Access and Secret Key).
 ## Amplitude setup
 
 1. In Amplitude Data, navigate to *Catalog > Destinations* tab.
-2. In the Cohort section, click *Notifly*.
+2. In the Cohort section, click **Notifly**.
 3. Enter a name, your Notifly Project ID, Access Key, and Secret Key.
-4. Map an Amplitude user ID to the Notifly external_user_id. You can choose any pre-defined or custom user property in Amplitude to serve as the user ID.
+4. Map an Amplitude user ID to the Notifly `external_user_id`. You can choose any pre-defined or custom user property in Amplitude to serve as the user ID.
 5. Save when finished.
 
 ## Send a cohort
@@ -53,12 +49,12 @@ Copy the Project ID and API Credentials (Access and Secret Key).
 4. Save your work.
 
 {{partial:admonition type="note" title=""}}
-For scheduled cohort syncs, only the initial sync will include the full cohort. All subsequent syncs will include all additions and removals since the last sync.
+For scheduled cohort syncs, only the initial sync includes the full cohort. All subsequent syncs include all additions and removals since the last sync.
 {{/partial:admonition}}
 
 ## Cohorts in Notifly
 
-After you send your Amplitude cohort to Notifly, you can see it in the *User Groups* section of the Notifly dashboard. Cohorts sent by Amplitude include an "(Amplitude)" suffix in the name.
+After you send your Amplitude cohort to Notifly, it appears in the *User Groups* section of the Notifly dashboard. Cohorts sent by Amplitude include an "(Amplitude)" suffix in the name.
 
 Notifly only ingests users for whom they have identifiers.
 
