@@ -21,7 +21,12 @@ val sessionReplayPlugin = SessionReplayPlugin(
 amplitude.add(sessionReplayPlugin)
 
 sessionReplayPlugin.recordLog(RecordLogLevel.Error, "This is an error log")
+
+// You can also create custom log levels
+sessionReplayPlugin.recordLog(RecordLogLevel("debug"), "This is a debug log")
 ```
+
+Session Replay supports predefined log levels (`Error`, `Warn`, `Log`) and custom log levels. Create custom log levels by passing any string value to `RecordLogLevel(...)`.
 
 If you have implemented a log system, you can make single-point modifications to integrate log recording functionality. See the following examples for more information.
 
@@ -40,6 +45,8 @@ class AmplitudeLogRecordTree(private val plugin: SessionReplayPlugin) : Timber.T
             android.util.Log.ERROR -> RecordLogLevel.Error
             android.util.Log.WARN -> RecordLogLevel.Warn
             android.util.Log.INFO -> RecordLogLevel.Log
+            android.util.Log.DEBUG -> RecordLogLevel("debug")
+            android.util.Log.VERBOSE -> RecordLogLevel("verbose")
             else -> return
         }
         plugin.recordLog(recordLevel, message)
@@ -50,46 +57,6 @@ val sessionReplayPlugin = SessionReplayPlugin()
 amplitude.add(sessionReplayPlugin)
 
 Timber.plant(AmplitudeLogRecordTree(sessionReplayPlugin))
-```
-
-#### Logcat
-
-If you use Android's `Log` class directly, you can create a wrapper function.
-
-```kotlin
-import com.amplitude.android.plugins.SessionReplayPlugin
-import com.amplitude.android.sessionreplay.config.RecordLogLevel
-import android.util.Log
-
-object AmplitudeLog {
-    private var sessionReplayPlugin: SessionReplayPlugin? = null
-
-    fun initialize(plugin: SessionReplayPlugin) {
-        sessionReplayPlugin = plugin
-    }
-
-    fun e(tag: String, message: String) {
-        Log.e(tag, message)
-        sessionReplayPlugin?.recordLog(RecordLogLevel.Error, "[$tag] $message")
-    }
-
-    fun w(tag: String, message: String) {
-        Log.w(tag, message)
-        sessionReplayPlugin?.recordLog(RecordLogLevel.Warn, "[$tag] $message")
-    }
-
-    fun i(tag: String, message: String) {
-        Log.i(tag, message)
-        sessionReplayPlugin?.recordLog(RecordLogLevel.Log, "[$tag] $message")
-    }
-}
-
-val sessionReplayPlugin = SessionReplayPlugin()
-amplitude.add(sessionReplayPlugin)
-AmplitudeLog.initialize(sessionReplayPlugin)
-
-// Use AmplitudeLog instead of Log
-AmplitudeLog.e("MyTag", "This is an error message")
 ```
 
 {{/markdown}}
