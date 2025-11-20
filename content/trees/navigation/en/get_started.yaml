@@ -1,5 +1,9 @@
 tree:
   -
+    id: f2b09fbe-70aa-4f7d-bddd-3f4a0af1358c
+    entry: 29b8b9d1-1063-4b23-926b-69b8333531ed
+    title: '⚡️Amplitude Quickstart'
+  -
     id: 7bf5a96b-66fd-4df5-8056-ac09411dd2df
     title: 'Set Up Amplitude'
     children:
