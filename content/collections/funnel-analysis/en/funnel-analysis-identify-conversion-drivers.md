@@ -21,9 +21,6 @@ Use this feature to understand which behaviors are driving key outcomes in your 
 
 These metrics should help clarify the frequency of different user actions, and whether they help or impede conversion.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

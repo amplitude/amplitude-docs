@@ -18,10 +18,6 @@ The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.
 For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](/docs/apis/analytics/scim). It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Before you begin
 
 The User Management API works in tandem with [permission groups](/docs/admin/account-management/manage-users).

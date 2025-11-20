@@ -18,10 +18,6 @@ Find Session Replay in the left-hand sidebar in Amplitude Analytics.
 
 [View and modify Session Replay settings in your organization settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
-## Feature availability
-
-Session Replay is available to try on all new Amplitude plans as of February 7, 2024 (including the Starter and Plus updates from October 2023). Existing Growth and Enterprise customers can also access Session Replay as an add-on purchase. Contact your account manager with questions. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 {{partial:admonition type="note" heading=""}}
 Session Replay isn't enabled by default and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}

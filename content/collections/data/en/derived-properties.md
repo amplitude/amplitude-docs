@@ -17,10 +17,6 @@ For example, you may want to create a chart that groups by whether an item added
 
 ![Screen_Shot_2021-08-03_at_2.35.25_PM.png](/docs/output/img/data/screen-shot-2021-08-03-at-2-35-25-pm-png.png)
 
-### Feature availability
-
-This feature is available to users on Enterprise and Growth plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Create a derived property
 
 {{partial:admonition type="note" heading=""}}
