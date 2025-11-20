@@ -14,8 +14,6 @@ Amplitudeの**エンゲージメントマトリクス**チャートでは、幅�
 
 ![スクリーンショット](/docs/output/img/jp/sukurinsiyotuto.png)
 
-**注意:** この機能は、[エンタープライズ、グロースおよびスカラーシップ](https://amplitude.com/pricing)の各プランの顧客にのみ適用できます。
-
 ## 始める前に
 
 まず最初に、実装が完了するまでイベントはAmplitudeチャートに表示されないため、予め実装を完了してください。Amplitudeのユーザーインターフェースの基本について解説した[Amplitudeでのチャートの作成](/docs/get-started/helpful-definitions)も併せてご参照ください。

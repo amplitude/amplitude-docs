@@ -19,9 +19,6 @@ With query time sampling enabled, Amplitude's query engine selects a representat
 Up-sampling is useful for functions that scale with the number of users, such as totals and uniques. Amplitude doesn't use it for functions that don't scale the same way, like average, min, and max. 
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. 
 
 ## Enable query time sampling
 

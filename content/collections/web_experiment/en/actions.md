@@ -9,10 +9,6 @@ Actions define how variants modify your site. Actions relate to variants rather 
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Element changes
 
 Element changes modify existing elements on your site. Web Experiment applies these changes by editing the inner text of an element or appending style to the element based on the change you make in the visual editor.

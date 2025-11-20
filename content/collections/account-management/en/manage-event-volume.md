@@ -11,9 +11,6 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001476972-Scale-Manage-
 
 With Scale, Amplitude enables **dynamic behavioral sampling** for ultra-high volume customers who have unique cost challenges. Sampling lets you keep your data costs manageable without compromising the accuracy of your analyses.
 
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 {{partial:admonition type='note'}}
 Scale is a paid add-on intended for extremely high volume customers. **Amplitude** **does not sample by default**. Contact your Account Manager if you believe Scale may be appropriate for your organization.

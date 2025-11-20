@@ -12,9 +12,6 @@ updated_at: 1718658637
 ---
 Admins may need to identify and delete unneeded charts from various projects. The organizational settings Chart Cleanup feature allows admins to search for and view saved charts from all projects to determine what can be deleted.
 
-## Feature availability
-This feature is available with **some Amplitude plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## View and delete charts
 Navigate to _Settings  > Organization Settings > Chart Cleanup_. The chart cleanup settings area will display organizational-level metrics representing the number of all saved charts, charts not viewed within the last 60 days, and charts saved by the admin. 
 

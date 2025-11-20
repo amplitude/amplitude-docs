@@ -16,9 +16,6 @@ Amplitude's **Personas** chart groups your users into **clusters** based on the 
 
 The Personas chart rewards experimentation. With it, you can quickly do exploratory data mining analyses of the ways in which your user base navigates your product. It can help you surface similarities between user cohorts you may not have thought to look for. And it can guide you through the process of creating a comprehensive set of user personas for your product, which you can then use to drive engagement and retention.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

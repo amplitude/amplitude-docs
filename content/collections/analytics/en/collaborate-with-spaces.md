@@ -15,9 +15,6 @@ academy_course:
 ---
 This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Join an existing space
 

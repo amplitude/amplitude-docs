@@ -20,10 +20,6 @@ Unlike in a traditional A/B test, multi-armed bandits don't use statistical sign
 
 Multi-armed bandit experiments use [Thompson sampling](https://en.wikipedia.org/wiki/Thompson_sampling). No other statistical methodologies are available to use with a multi-armed bandit in Amplitude Experiment.
 
-## Feature availability
-
-This feature is available to users on Enterprise plans who have purchased Amplitude Experiment. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Before you begin
 
 - You can evaluate Multi-armed bandit experiments locally or remotely.

@@ -13,8 +13,6 @@ To create localized versions of your guides and surveys, you must:
 - Specify how you want your supported languages to behave.
 - Create the translated versions of your guides and surveys.
 
-Guides and Surveys localization is available on all accounts with access to Guides and Surveys that are on Growth or Enterprise plans. For more information, go to [Pricing page](https://amplitude.com/pricing).
-
 ## Updating the Guides and Surveys SDK
 
 Update the SDK to record each user's locale during the Guides and Surveys [SDK initialization](/docs/guides-and-surveys/sdk). With accurate information of your user's locale, the SDK serves up the correct translation of your guide or survey to your user.

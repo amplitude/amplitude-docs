@@ -20,11 +20,7 @@ Amplitude Data’s **Observe** feature lets you inspect, analyze, and monitor yo
 
 Observe listens in on your existing event stream and turns your tracking code into a living document, so you can get a holistic view of the state of your data collection across your platforms.
 
-You and your teams will get immediate insight into anything that’s broken or needs attention. With an intuitive and collaborative workflow, your teams can work together to instrument fixes and get your tracking plan in shape.
-
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
+You and your teams will get immediate insight into anything that's broken or needs attention. With an intuitive and collaborative workflow, your teams can work together to instrument fixes and get your tracking plan in shape.
 
 ## View and update your event statuses
 

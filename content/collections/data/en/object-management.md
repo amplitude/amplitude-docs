@@ -17,10 +17,6 @@ With object management, you can:
 * View an analysis object's definition, and the charts it's used in
 * Bulk delete analysis objects
 
-## Availability
-
-Object management is available to accounts on Enterprise plans. For more information, see Amplitude's [pricing page](https://amplitude.com/pricing).
-
 ## Common use cases
 
 * Look for similar metrics, custom events, or segments during the object creation process to decide if there are any already-existing objects you can use, instead of creating another duplicate.

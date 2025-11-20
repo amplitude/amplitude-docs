@@ -18,10 +18,6 @@ Amplitude’s Out-of-the-box Marketing Analytics acts as a centralized hub where
 - **Track conversions**: Easily define a conversion funnel, enable detailed tracking, and visualize conversion metrics with data tables and charts.
 - **Uncover deeper insights with nested group-bys**: Add additional detail to your top-level channels or campaigns analytics with nested group-bys.
 
-## Feature availability
-
-This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
-
 ### Permissions
 
 Your ability to edit views in Marketing Analytics depends on your role within the project.

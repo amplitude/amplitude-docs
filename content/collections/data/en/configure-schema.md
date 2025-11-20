@@ -12,11 +12,7 @@ updated_at: 1722895369
 ---
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,** and it means the data Amplitude has just received isn't accounted for in your schema. If you see a schema violation, you've probably neglected to plan for that particular data type or value when you first set up your schema.
 
-You can tell Amplitude how to handle these situations by configuring your schema settings. You can configure for three different types of schema violations. Find your schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
-
-### Feature availability
-
-See [the pricing page](https://amplitude.com/pricing) to find out if this feature is available for your Amplitude plan.
+You can tell Amplitude how to handle these situations by configuring your schema settings. You can configure for three different types of schema violations. Find your schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
 
 ## Unplanned event types
 

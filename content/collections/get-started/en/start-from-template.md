@@ -12,9 +12,6 @@ updated_at: 1725400214
 ---
 In Amplitude Analytics, **templates** help teams efficiently recreate common analyses and share best practices with just a few clicks.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 Once you've built some analyses of your own, you can easily [create your own templates](/docs/analytics/templates). But before that day, you can use Amplitude's suite of starter templates in the **Template Gallery** to start generating insights into your users and their behavior.
 

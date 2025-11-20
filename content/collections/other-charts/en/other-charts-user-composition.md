@@ -13,9 +13,6 @@ landing_blurb: 'Build a user composition analysis and interpret the results'
 ---
 The User Composition chart shows the breakdown of active users based on a single user property. This grouped view provides insight into **who your users are** and what **properties they share**.  
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. View the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

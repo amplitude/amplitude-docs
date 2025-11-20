@@ -17,9 +17,6 @@ The most famous example probably comes from Facebook. They discovered that users
 
 This is what the Compass chart can help you achieve. A Compass analysis scans through your user data and identifies these behaviors in moments, giving you the insights you need to efficiently improve your product and drive sustainable growth.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

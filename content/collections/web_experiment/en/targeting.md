@@ -9,10 +9,6 @@ Web Experiments target both pages and audiences. Amplitude evaluates first page 
 
 Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where experiment variants apply on your website. Pages define the conditions under which a web experiment should apply, including targeting conditions to match specific URLs and visual editor URLs for previewing experiments.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Audience targeting
 
 {{partial:admonition type="note"}}

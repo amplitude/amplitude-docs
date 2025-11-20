@@ -16,9 +16,6 @@ For example, you might create groups like "Marketing Team" or "Payments Team," a
 
 Amplitude grants the highest level of permissions assigned to a user. When you assign a user to a group, they inherit its project permissions. If a user has their own set of project permissions, their new set of permissions are a combination of the two, with projects taking on the highest role.
 
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. Review the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

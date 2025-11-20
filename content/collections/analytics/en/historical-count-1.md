@@ -23,9 +23,6 @@ For example, if your product is a music streaming platform, Historical Count cou
 Historical Count is not the same as Amplitude's behavioral cohorts. However, you can use Historical Count in a behavioral cohort. 
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

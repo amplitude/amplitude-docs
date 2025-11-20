@@ -9,9 +9,6 @@ updated_at: 1718138213
 ---
 Amplitude Data makes it easy for you to set up third-party platforms as data export destinations. This enables you to share data generated in Amplitude with other tools and stakeholders in a variety of contexts. 
 
-## Feature availability
-This feature is available to users on all Amplitude plans. For more details, go to the [pricing page](https://amplitude.com/pricing).
-
 ## Add a destination
 
 To add a new data destination, follow these steps:

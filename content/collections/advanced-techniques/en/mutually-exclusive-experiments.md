@@ -16,10 +16,6 @@ Experiment lets you set two or more experiments as mutually exclusive to each ot
 
 To learn more about the underlying implementation, review [flag dependencies](https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies).
 
-### Feature availability
-
-This feature is available to users on Enterprise plans who have purchased Experiment. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## When to use mutually exclusive experiments
 
 Use mutually exclusive experiments in these situations:

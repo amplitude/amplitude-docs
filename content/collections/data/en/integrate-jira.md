@@ -13,10 +13,6 @@ updated_at: 1717622968
 ---
 Amplitude Data allows you to integrate with Jira to quickly create new Jira issues whenever you make changes to a feature branch. You can only create issues from within the feature branch, and only changes can be associated with a Jira ticket.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
-
 ## Set up the integration
 
 To set up and use the integration, follow these steps:

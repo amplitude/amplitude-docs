@@ -21,10 +21,6 @@ You can apply transformations in a project’s `main` branch only. Ensure the *S
 Transformations occur at query time when a chart or cohort generates results. **This doesn't affect the raw data**. Raw data on Snowflake or Redshift aren't affected by transformations.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available with **some Amplitude plans only**. See the [pricing page](https://amplitude.com/pricing) for details.
-
 ## Merge events, event properties, and user properties
 
  Many Amplitude users need to merge superfluous or duplicate events, event properties, or user properties sooner or later. Transformations make this process easy.

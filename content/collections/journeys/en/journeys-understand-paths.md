@@ -30,9 +30,6 @@ A common use case for Journeys is to bridge the gap between your **ideal** custo
 
 Read the article [Understand and use the Journeys visualizations](/docs/analytics/charts/journeys/journeys-understand-visualizations) for more information on the **Pathfinder** and **Journey Map** visualizations.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a Journeys chart
 

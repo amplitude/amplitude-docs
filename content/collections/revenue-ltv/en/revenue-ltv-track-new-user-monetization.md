@@ -17,9 +17,6 @@ With Amplitude's **Revenue Long-Term Value (LTV)** chart, you can:
 * See how quickly and effectively segments of new users are transitioning to paying users.
 * Set benchmarks and goals for new user monetization going forward.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

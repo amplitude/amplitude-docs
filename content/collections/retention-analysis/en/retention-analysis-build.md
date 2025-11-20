@@ -28,9 +28,6 @@ You can select up to two return events for your retention analysis. Each event w
 
 The Retention Analysis chart’s **usage interval** shows the percentage of active users who’ve triggered the events you’re interested in with a specified daily, weekly, or monthly median frequency. Essentially, it shows how much time elapses between a user firing your product’s critical event. This is a vital piece of your retention analysis puzzle. Knowing how often your product is actually used will help you gauge the health of your product when looking at Retention Analysis and [Lifecycle](/docs/analytics/charts/lifecycle/lifecycle-track-growth) charts.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

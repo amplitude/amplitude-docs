@@ -17,10 +17,6 @@ You can exclude users from your experiments by creating a holdout group. Holdout
 
 Your holdout groups experience previous experiments. You can set up dependencies for which experiments you want to show your holdout group. For more information, go to the article on [Flag Dependencies](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
-### Feature availability
-
-This feature is available to users on Enterprise plans who have purchased Feature Experiment. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Creating a holdout group
 
 When using holdout groups, there are a few things to keep in mind:

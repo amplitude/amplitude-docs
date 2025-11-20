@@ -8,9 +8,6 @@ updated_at: 1739560537
 ---
 Entry / Exit Analysis enables you to use the entry (first) or exit (last) in session dimensions across different types of analysis.
 
-## Feature availability
-
-This feature is available on all Amplitude plans. For more information, see the [Pricing page](https://amplitude.com/pricing).
 
 ## Supported metric types
 

@@ -19,9 +19,6 @@ The User Sessions chart helps analyze your users through various session-based m
 * How long are they engaging with your product?
 * How do these metrics compare to other segments of users?
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

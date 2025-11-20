@@ -11,8 +11,6 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726094463
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
-Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
-
 An MTU is a unique user who triggers one or more events within a calendar month. This can be either an anonymous user (which Amplitude tracks with device ID) or an identified user (tracked by user ID). If a user appears in two or more projects, they still count as a single MTU.
 
 Amplitude tracks any anonymous users as distinct MTUs, even if they visited before while logged in. If an anonymous user subsequently logs into the site, all events triggered by the user while they were anonymous are merged under their user ID, and count as a single MTU.
@@ -24,7 +22,7 @@ Your MTU count doesn't increase due to user mapping, identify calls, or group id
 MTU-based pricing is available for all Amplitude plans. Customers who use sampling aren't eligible for MTU-based pricing.
 
 {{partial:admonition type="note" heading="Events that don't count toward MTUs"}}
-`[Experiment] Exposure` and `[Experiment] Assignment` events don't count toward your organization's MTU count. Amplitude uses hese events for experiment analysis and monitoring but they don't affect your billing.
+`[Experiment] Exposure` and `[Experiment] Assignment` events don't count toward your organization's MTU count. Amplitude uses these events for experiment analysis and monitoring but they don't affect your billing.
 {{/partial:admonition}}
 
 ## Track your MTUs
@@ -32,7 +30,7 @@ MTU-based pricing is available for all Amplitude plans. Customers who use sampli
 The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users). The best way to ensure accurate counting of MTUs is to support a one-to-one correlation between user IDs and actual users.
 
 {{partial:admonition type='note'}}
-If you're using test data and generating fictitious user IDs for testing purposes, **each** of these test users are also included in your MTU count.
+If you're using test data and generating fictitious user IDs for testing purposes, each of these test users are also included in your MTU count.
 {{/partial:admonition}}
 
 ### Estimate your MTUs
@@ -44,7 +42,7 @@ If you haven't implemented tracking yet, you can use your monthly active user (M
 To view your MTU usage, navigate to *Settings > Organization Settings > Plans & Billing*. MTU statistics are visible in their own panel.
 
 {{partial:admonition type='note'}}
-MTU counts are **not** available for every plan type.
+MTU counts aren't available for every plan type.
 {{/partial:admonition}}
 
 Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen for users who log in on their usual device, but then later open the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
@@ -57,7 +55,7 @@ There are also instances where a user’s actions can result in a **reduced** MT
 MTU billing uses UTC time.
 {{/partial:admonition}}
 
-See [this post in the Amplitude Community to learn more about investigating your organization's MTU usage](https://community.amplitude.com/building-and-sharing-your-analysis-58/learn-how-to-investigate-your-org-s-monthly-tracked-users-mtus-2163).
+Go to [this post in the Amplitude Community to learn more about investigating your organization's MTU usage](https://community.amplitude.com/building-and-sharing-your-analysis-58/learn-how-to-investigate-your-org-s-monthly-tracked-users-mtus-2163).
 
 ### Discrepancies with counts provided by other tools
 

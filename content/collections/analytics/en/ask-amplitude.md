@@ -12,9 +12,6 @@ With Ask Amplitude, you can:
 - Navigate to different parts of Amplitude.
 - Create multiple threads and share them with other members of your organization.
 
-## Feature availability
-
-Ask Amplitude is available to users on all Amplitude plans.
 
 ## Ask Amplitude, Amazon Bedrock, and Large Language Model (LLM) use
 

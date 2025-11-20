@@ -15,10 +15,6 @@ Using Amplitude effectively requires you to first identify the events and proper
 
 This playbook will review the strategy and considerations for creating your tracking plan.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
-
 ## What's a taxonomy?
 
 A taxonomy is a set of hierarchical classifications and naming conventions for your data. It's a way to identify and categorize your event and user data so that Amplitude can generate relevant and valuable insights from it. The process of setting up a taxonomy in Amplitude will differ from organization to organization, but the heart of it is selecting the events you want to track, identifying event properties and user properties you want to track, and then naming them.

@@ -13,13 +13,7 @@ updated_at: 1718901114
 
 * Deepen your understanding of user session activity with a qualitative lens
 
-Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude’s built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
-
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
-
-* Use of this feature requires the Session Replay add-on.
+Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude's built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
 
 With Session Replay, you can:
 

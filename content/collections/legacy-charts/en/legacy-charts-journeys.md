@@ -18,9 +18,6 @@ With Journeys, you can:
 * Identify the experiences that lead to conversion fastest, and those that take the longest to get there
 * Understand the friction points in your customer experience, and develop a strategy to fix them
 
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Who should use Journeys?
 

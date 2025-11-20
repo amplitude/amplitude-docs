@@ -22,10 +22,6 @@ exclude_from_sitemap: false
 
 Just click through to see more detailed information on setting up and configuring SSO with each of these services.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## SSO Basics
 
 Some things you should be aware of:

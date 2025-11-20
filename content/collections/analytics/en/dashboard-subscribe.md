@@ -12,9 +12,6 @@ updated_at: 1717692886
 ---
 When you subscribe to a dashboard, you receive an HTML-formatted email report with optional .CSV files. Amplitude can send dashboard subscription emails to anyone, including people who aren't members of your Amplitude organization. 
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 To subscribe to a dashboard—either your own, or someone else's—follow these steps: 
 

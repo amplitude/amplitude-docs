@@ -17,9 +17,6 @@ With Amplitude's **Engagement Matrix** chart, you can develop a better understan
 
 ![Screenshot](/docs/output/img/engagement-matrix/screenshot.png)
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

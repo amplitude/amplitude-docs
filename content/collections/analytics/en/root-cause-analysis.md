@@ -16,9 +16,6 @@ Historically, that insight has not always been easy to come by. For example, it 
 
 Amplitude's **Root Cause Analysis (RCA)** feature addresses this by analyzing the properties of the anomalous events for you, while also pulling in external context like country-specific holidays and new releases of your product. In this way, it can potentially explain the anomaly or rule out the obvious. It's designed to streamline your workflow and help you quickly understand the “why?” of a change, so that you can easily answer questions like “Which user groups best explain this change?” or “How are other correlated metrics affected?”
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
 
 * Users on Growth plans require the Insights add-on to use this feature.
 * This feature is supported for Event Segmentation charts only. It cannot be used with formulas.

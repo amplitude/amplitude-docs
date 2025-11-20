@@ -15,9 +15,6 @@ Amplitude's **Microscope** feature enables you to dig deeper into a specific dat
 
 This article explains how to use this feature and interpret the information provided in the *View User Streams* and *Show User Paths* sections. 
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for details.
 
 ## Before you begin
 

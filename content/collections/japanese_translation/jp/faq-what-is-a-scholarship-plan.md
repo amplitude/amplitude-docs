@@ -5,7 +5,7 @@ title: FAQ：スカラーシッププランとは何ですか？
 title_en: 'FAQ: What is a Scholarship Plan?'
 source: 'https://help.amplitude.com/hc/ja/articles/360053028152'
 ---
-Amplitudeには、エンタープライズ、グロース、プラス、スターターの4つの主なプランタイプがあります。各プランタイプの詳細については、[こちらを](https://amplitude.com/pricing)ご覧ください。
+Amplitudeには、エンタープライズ、グロース、プラス、スターターの4つの主なプランタイプがあります。
 
 スカラーシッププランも提供しています。これは、スタートアップのお客様のための一時的なプランタイプで、Amplitudeグロースプランを1年間無料で利用できます。スカラーシッププランへのお申し込みは、[こちらのページ](https://amplitude.com/startups)をご覧ください。スカラーシップのお申し込み、またはスカラーシッププランタイプについてのご質問は、[scholarship@amplitude.com](mailto:scholarship@amplitude.com)までメールでお問い合わせください。
 

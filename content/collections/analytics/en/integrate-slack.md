@@ -26,9 +26,6 @@ To connect Amplitude to Slack, you can either follow the steps below, or you can
 If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. Find it in the Slack app directory under “[Amplitude - EU](https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu).”  Install it by clicking [this link](https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&rn=&re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&sc=false), or by following the instructions below.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Connect to Slack
 

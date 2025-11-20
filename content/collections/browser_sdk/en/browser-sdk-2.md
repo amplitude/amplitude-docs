@@ -1094,10 +1094,6 @@ amplitude.identify(identifyEvent);
 
 ## User groups
 
-{{partial:admonition type="info" heading="User group availability"}}
-User Groups requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
-{{/partial:admonition}}
-
 Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group.
 
 For example, you want to group your users based on what organization they're in by using an 'orgId'. Joe is in 'orgId' '10', and Sue is in 'orgId' '15'. Sue and Joe both perform a certain event. You can query their organizations in the Event Segmentation Chart.
@@ -1133,10 +1129,6 @@ amplitude.track({
 ```
 
 ## Group properties
-
-{{partial:admonition type="info" heading="Group properties availability"}}
-Group Properties requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
-{{/partial:admonition}}
 
 Use the Group Identify API to set or update the properties of particular groups. These updates only affect events going forward.
 

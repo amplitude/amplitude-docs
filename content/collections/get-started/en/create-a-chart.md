@@ -15,9 +15,6 @@ academy_course:
 ---
 **Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create > Chart*, then select a new chart type from the Charts fly-out.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ### Restrictions
 

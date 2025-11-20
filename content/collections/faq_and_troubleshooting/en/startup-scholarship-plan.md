@@ -10,13 +10,14 @@ updated_at: 1721064516
 This article covers some frequently asked questions about the Scholarship plan.
 
 {{partial:collapse name="What is the Scholarship plan?"}}
-Amplitude has four main plan types: Enterprise, Growth, Plus, and Starter. For more information, see the [Pricing page](https://amplitude.com/pricing).
+Amplitude has four main plan types: Enterprise, Growth, Plus, and Starter. For more information, go to the [Pricing page](https://amplitude.com/pricing).
 
-Amplitude also offers the Scholarship plan. This is a temporary plan type for startup customers in which you can get one year of the Amplitude Growth plan at no cost. To apply for the Scholarship plan, see [Startups](https://amplitude.com/startups). If you have any questions about your Scholarship application or Scholarship plan type, email [scholarship@amplitude.com](mailto:scholarship@amplitude.com). 
+Amplitude also offers a Scholarship plan. 
+This is a temporary plan for startup customers in which you can get one year of the Amplitude Growth plan at no cost. To apply for the Scholarship plan, go to [Startups](https://amplitude.com/startups). If you have any questions about your Scholarship application or Scholarship plan type, email [scholarship@amplitude.com](mailto:scholarship@amplitude.com). 
 {{/partial:collapse}}
 
 {{partial:collapse name="How do I apply for the Amplitude Startup Scholarship?"}}
-To apply for the Scholarship plan, see [Startups](https://amplitude.com/startups).
+To apply for the Scholarship plan, go to [Startups](https://amplitude.com/startups).
 
 What are the criteria to qualify for the Amplitude Startup Scholarship?
 To qualify, your company must meet the following criteria:
@@ -25,9 +26,8 @@ To qualify, your company must meet the following criteria:
 * You have fewer than 20 employees
 {{/partial:collapse}}
 
-
 {{partial:collapse name="What’s included in the Amplitude Startup Scholarship?"}}
-You’ll get 200,000 [MTUs](/docs/admin/billing-use/mtu-guide)—more than enough data to get you to product-market fit. You also get full access to features on our paid Growth plan, including Behavioral Cohorts, Pathfinder, advanced collaboration features, and more.
+You’ll get 200,000 [MTUs](/docs/admin/billing-use/mtu-guide)—more than enough data to get you to product-market fit. You also get full access to features on Amplitude's paid Growth plan, including Behavioral Cohorts, Pathfinder, advanced collaboration features, and more.
 
 Request access to add-ons like [Insights](/docs/analytics/account-level-reporting) and [Portfolio](/docs/data/cross-project-analysis) by emailing [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
 {{/partial:collapse}}
@@ -44,7 +44,7 @@ Yes. Contact [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
 
 
 {{partial:collapse name="What happens if we go over the limit?"}}
-We’ll give you the option to decrease your MTU volume the following month or start a 30 day trial of the Growth plan to decide whether you’d like to upgrade for more event volume. If you go over the event limit more than twice, Amplitude downgrades your account to the Free plan.
+You have the option to decrease your MTU volume the following month or start a 30 day trial of the Growth plan to decide whether you’d like to upgrade for more event volume. If you go over the event limit more than twice, Amplitude downgrades your account to the Free plan.
 {{/partial:collapse}}
 
 
@@ -56,7 +56,7 @@ Amplitude can't grant extensions past one year for the Amplitude Startup Scholar
 
 
 {{partial:collapse name="What if we want to go back to the Free plan?"}}
-If you choose to go back to the Free plan, the system changes your plan type from Scholarship to Free once the extra 30 days are over. You aren't billed if you choose not to upgrade once the trial ends. You don't need to contact to Amplitude to downgrade your plan.
+If you choose to go back to the Free plan, the system changes your plan type from Scholarship to Free after the extra 30 days are over. You aren't billed if you choose not to upgrade after the trial ends. You don't need to contact to Amplitude to downgrade your plan.
 {{/partial:collapse}}
 
 

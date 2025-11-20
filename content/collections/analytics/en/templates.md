@@ -21,9 +21,6 @@ Save time when repeating common analyses and make it simpler for new team member
 * Roll out regional dashboards for leadership and local teams with just a few clicks
 * Replicate KPI measurements across accounts, platforms, and core features
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
 
 ## Create a template
 

@@ -17,11 +17,6 @@ For example, you may want to understand the distribution of organic traffic to y
 
 ![image2.png](/docs/output/img/data/channel-classifier.png)
 
-### Feature availability
-
-* Starter and Plus plans can create one classifier.
-* Growth and Enterprise plans can create unlimited classifiers.
-
 ## Create a channel
 
 You must be an Admin or Manager to create a channel.

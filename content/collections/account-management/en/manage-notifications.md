@@ -21,9 +21,6 @@ This feature is **applied at the project level**, and admin privileges are requi
 
 There must be at least one recipient for each notification.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Enable user privacy notifications
 
