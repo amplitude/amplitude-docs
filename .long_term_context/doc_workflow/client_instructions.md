@@ -123,12 +123,17 @@ When a PR fails the Vale CI check, you need to fix all errors before the PR can 
 **Common Vale rules and fixes**:
 - **Amplitude.Latin**: Replace Latin phrases with clearer English
   - "via" → "through", "using", or "with"
-  - "i.e." → "that is" or "for example"
+  - "i.e." → "that's" (use contraction directly to avoid triggering both Latin error and Contractions warning)
   - "e.g." → "for example" or "such as"
 - **Amplitude.Dashes**: No spaces around em dashes
   - Change ` — ` or ` —` to `---` (markdown convention for em dash)
+- **Amplitude.TooWordy**: Simplify complex phrases
+  - "in order to" → "to"
+  - "prior to" → "before"
+  - "with respect to" → "for" or "about"
 - **Amplitude.Contractions**: Use contractions for informal tone
-  - "that is" → "that's" (Note: This can conflict with the Latin rule fix for "i.e." In that case, prefer "that is" to fix the error-level Latin rule)
+  - "that is" → "that's"
+  - When replacing Latin phrases like "i.e.", go directly to "that's" to avoid both the Latin error and Contractions warning
 
 **Workflow for fixing Vale errors**:
 1. Run Vale locally to see all errors: `vale --config=.vale/rules.ini <filepath>`
