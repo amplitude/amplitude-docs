@@ -29,13 +29,12 @@ Product Analytics permissions for editing views depend on both your role within 
 | Manager | ✅            | ✅                   | ✅                    |
 | Member  | ✅            | ✅                   | ✅                    |
 
-**Growth and Enterprise**
+**Enterprise**
 
 | Role    | Default view | Custom view (yours) | Custom view (others) |
 | ------- | ------------ | ------------------- | -------------------- |
 | Admin   | ✅            | ✅                   | ✅                    |
-| Manager | ❌            | ✅                   | ✅                    |
-| Member  | ❌            | ✅                   | ✅                    |
+| Non-Admmin | ❌            | ✅                   | ✅                    |
 
 {{/partial:collapse}}
 
