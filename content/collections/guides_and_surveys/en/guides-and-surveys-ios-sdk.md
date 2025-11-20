@@ -24,7 +24,7 @@ The Guides and Surveys iOS SDK requires:
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Swift 5.9+
+### Using Amplitude iOS Swift 1.13.0+
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -32,17 +32,21 @@ First, install the Guides and Surveys iOS SDK with Swift Package Manager or Coco
 {{partial:tab name="Swift Package Manager"}}
 1. In Xcode, click *File > Add Packages...*
 2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
-3. Select the `Amplitude-Engagement-Swift` package, version `1.0.5`.
+3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 1.0.5'
+pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{/partial:admonition}}
 
 #### Initialize the SDK
 
@@ -107,14 +111,98 @@ After you add your application, it appears as a platform option when you create 
 Your iOS bundle identifier is defined in your Xcode project settings under **General** > **Identity** > **Bundle Identifier**.
 {{/partial:admonition}}
 
-### Enable screen tracking (optional)
+### Not using Amplitude Swift 1.13.0+
+In this case, installation is very similar to above; however, you need to manually call `.boot`.
+
+First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+
+{{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
+{{partial:tab name="Swift Package Manager"}}
+1. In Xcode, click *File > Add Packages...*
+2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
+3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
+4. Click **Add Package**.
+{{/partial:tab}}
+{{partial:tab name="CocoaPods"}}
+Add the following line to your Podfile, then run `pod install`.
+
+```T
+pod 'AmplitudeEngagementSwift', '~> 1.6.0'
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{/partial:admonition}}
+
+#### Initialize the SDK
+
+```swift
+import AmplitudeEngagementSwift
+
+
+let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
+
+
+let configuration = Configuration(
+  apiKey: API_KEY
+)
+let amplitude = Amplitude(configuration: configuration)
+amplitude.add(plugin: amplitudeEngagement.getPlugin())
+```
+
+#### Configuration options
+
+| Parameter                | Type                                                                                              | Description                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
+| `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
+| `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
+
+#### Boot the SDK
+
+```swift
+// Basic boot with user ID
+amplitudeEngagement.boot("USER_ID")
+
+// Advanced boot with options
+
+let bootOptions = AmplitudeBootOptions(
+  user_id: "USER_ID",
+  device_id: "DEVICE_ID",
+  user_properties: ["key": "value"]
+  integrations: [
+    { event, eventProperties in
+        // Custom event handler
+    }
+  ]
+)
+amplitudeEngagement.boot(options: bootOptions)
+```
+
+{{partial:admonition type="note" heading=""}}
+After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
+
+## Screen tracking and element targeting
+Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
+
+### Enable screen tracking
+
+Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
 amplitudeEngagement.screen("HomeScreen")
 ```
 
-### Enable element targeting (optional)
+{{partial:admonition type="warning" heading=""}}
+`Screen Viewed` events from the Amplitude iOS Swift SDK's [Autocapture feature](/docs/sdks/analytics/ios/ios-swift-sdk#autocapture) are auto-forwarded to the Engagement SDK.
+{{/partial:admonition}}
+
+### Enable element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific elements on screen. To enable this in your app, give the element a unique identifier.
 
@@ -132,7 +220,9 @@ let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
 
-## Manage themes
+## Other SDK Methods
+
+### Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
 
@@ -142,7 +232,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
-## Router configuration
+### Router configuration
 
 Configure how Guides and Surveys handles screen navigation.
 
@@ -161,7 +251,7 @@ engagement.setRouter { identifier in
 After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
 
-## Reset
+### Reset
 
 Reset a guide or survey to a specific step.
 
@@ -175,7 +265,7 @@ amplitudeEngagement.reset(key = "GUIDE_KEY", stepIndex = 0)
 | `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
 
 
-## List
+### List
 
 Retrieve a list of all live guides and surveys along with their status.
 
@@ -183,7 +273,7 @@ Retrieve a list of all live guides and surveys along with their status.
 val guidesAndSurveys = amplitudeEngagement.list()
 ```
 
-## Show
+### Show
 
 Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
@@ -196,7 +286,7 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 
 
-## Forward event
+### Forward event
 
 If you don't use the plugin, but want to trigger Guides using events.
 
@@ -207,7 +297,7 @@ amplitudeEngagement.forwardEvent([
 ])
 ```
 
-## Close all
+### Close all
 
 Close all active guides and surveys.
 

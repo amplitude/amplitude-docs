@@ -8,9 +8,9 @@ landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961154
 ---
-The source content you select should be either internal help (documentation) repositories or specific external content. Documentation repositories are typically more useful as they provide a large selection of information that's widely applicable to each page with which your users interact. 
+The source content you select should be either internal help (documentation) repositories, specific external content, or third-party chat integrations like Intercom. Documentation repositories are typically more useful as they provide a large selection of information that's widely applicable to each page with which your users interact. 
 
-- The Resource Center requires that you add documentation repositories and videos individually. 
+- The Resource Center requires that you add documentation repositories, videos, and chat integrations individually. 
 - Each documentation source requires slightly different information to successfully add it to the Resource Center. Follow the onscreen prompts for required fields.
 - If you don't find your specific documentation repository as an option, select the [Website](/docs/guides-and-surveys/resource-center-website-scraper) option to sync to a public website.
 - You can also suggest Resource Center content integrations through a Survey that's sent to Amplitude.
