@@ -16,9 +16,6 @@ To get the most of your product analytics, you need to understand what drives en
 
 Amplitude's **Stickiness** chart helps you answer these questions by showing you how often users fire specific events over a given period of time. You can segment your power users and include them in a stickiness analysis to help you uncover what they're doing differently. This information can then be used to effectively redirect the product interactions of your regular users.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

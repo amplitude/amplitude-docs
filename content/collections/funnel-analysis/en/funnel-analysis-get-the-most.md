@@ -19,9 +19,6 @@ Users who don't convert have **dropped off**. Knowing which steps of your funnel
 
 Using Amplitude's [Journeys](/docs/analytics/behavioral-cohorts) features, you can easily identify and set up insightful funnels.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Identify funnel events: Which ones should you include?
 

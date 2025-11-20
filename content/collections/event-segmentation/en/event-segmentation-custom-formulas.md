@@ -23,9 +23,6 @@ This article explains the mechanics of custom formulas, with examples of formula
 While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, go to [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Plus, Growth, and Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Formula syntax
 

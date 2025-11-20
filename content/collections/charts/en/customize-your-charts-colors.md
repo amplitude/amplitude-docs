@@ -13,10 +13,6 @@ this_article_will_help_you:
 ---
 You can update the color theme of your charts in Amplitude to match your brand's colors or give a chart a different look and feel.
 
-### Availability
-
-Chart color themes are available to organizations on a **Growth** or **Enterprise** plan. For more information, see [Amplitude's pricing page](https://amplitude.com/pricing).
-
 ## Apply a theme to a new or existing chart
 
 1. On any individual chart, click *More* above the chart, and select *Change Chart Color Theme*. The Change theme panel appears.

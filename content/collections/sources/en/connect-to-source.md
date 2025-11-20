@@ -13,10 +13,6 @@ updated_at: 1718126553
 ---
 Amplitude Data makes it easy for you to set up third-party platforms as data **sources**. This enables you to bring data generated with other tools into Amplitude.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Understand the interface
 
 The *Sources* panel includes two tabs, *Sources List* and *Ingestion Debugger*.

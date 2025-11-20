@@ -16,9 +16,6 @@ Once you've created your [account](/docs/get-started/create-a-new-account) and y
 You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in our Academy.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Approve and provision new users in your organization
 
