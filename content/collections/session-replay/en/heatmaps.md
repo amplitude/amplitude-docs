@@ -83,7 +83,7 @@ Heatmaps provides three views that help you understand how users engage with a s
 
 ### Click map
 
-![Click map](statamic://asset::help_center_conversions::session-replay/hm1.png)
+![A view of the Amplitude documentation with orange and green areas where customers ahve clicked on the most. Red denotes areas of heavy traffic. The image displays information about each high-traffic area including total clicks for all users over the last seven (7) days. users can click a heatmap area for information.](statamic://asset::help_center_conversions::session-replay/hm1.png)
 
 Click maps provide a color-coded display of the clicks, or "heat" on your page. Areas with few clicks appear blue, while busier areas appear green, yellow, orange, and red in order of increasing clicks.
 
@@ -97,7 +97,7 @@ Highlight an area of the click map to access Microscope. From there, you can:
 
 ### Selector map
 
-![](statamic://asset::help_center_conversions::session-replay/hm2.png)
+![Displays a highlighted section of the Amplitude documentation site with a wire-frame highlighting clickable elemends on the page.](statamic://asset::help_center_conversions::session-replay/hm2.png)
 
 The Selector view displays a wire frame of clickable elements on the page, ranked by number of clicks in descending order. Select an element on the map, or in the list to watch Session Replays of those events, view the raw events, or create a cohort of users who engaged with selector.
 
@@ -115,7 +115,7 @@ Select a ranked element on the page to access Microscope. From there you can:
 
 ### Scroll map
 
-![](statamic://asset::help_center_conversions::session-replay/hm3.png)
+![Image displays the Amplitude documentation site home page completely overlaid with a red-colored mapping of where customers scrolled through. The overlay is heavier at the top of the page than the bottom, displaying a gradient of color. This indicates that customers did not scroll all the way to the bottom of the page and, instead, scrolled lightly or not at all.](statamic://asset::help_center_conversions::session-replay/hm3.png)
 
 The Scrollmap shows the unique users, and percentage of unique users who have scrolled that part of the page into their view port. Use the handle on the slider to adjust the scroll depth.
 
