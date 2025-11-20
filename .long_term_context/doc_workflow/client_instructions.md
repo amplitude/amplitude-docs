@@ -111,3 +111,29 @@ When adding new sections to existing documents, be vigilant about preserving the
 1. Before editing: Review existing heading hierarchy
 2. While planning: Be explicit about exact placement of new sections
 3. After editing: Verify heading hierarchy matches intent using `grep -n` or similar commands
+## Handling Vale Linting Failures
+
+When a PR fails the Vale CI check, you need to fix all errors before the PR can be merged. Vale runs on the entire file when checking PRs, so you may encounter pre-existing errors in files you edit, even if your new content is error-free.
+
+**Key facts about Vale at Amplitude**:
+- **Errors block CI, warnings don't**: Focus on fixing all errors (red). Warnings (yellow) are informational but won't block the PR.
+- **Vale runs on entire files**: When you edit a file, Vale checks the whole file, not just your changes. You're responsible for fixing all errors, including pre-existing ones.
+- **Run Vale locally**: `vale --config=.vale/rules.ini <filepath>` to see errors before pushing.
+
+**Common Vale rules and fixes**:
+- **Amplitude.Latin**: Replace Latin phrases with clearer English
+  - "via" → "through", "using", or "with"
+  - "i.e." → "that is" or "for example"
+  - "e.g." → "for example" or "such as"
+- **Amplitude.Dashes**: No spaces around em dashes
+  - Change ` — ` or ` —` to `---` (markdown convention for em dash)
+- **Amplitude.Contractions**: Use contractions for informal tone
+  - "that is" → "that's" (Note: This can conflict with the Latin rule fix for "i.e." In that case, prefer "that is" to fix the error-level Latin rule)
+
+**Workflow for fixing Vale errors**:
+1. Run Vale locally to see all errors: `vale --config=.vale/rules.ini <filepath>`
+2. Read each error line and understand what needs to change
+3. Use `sed -n '<line_number>p' <filepath>` to view specific lines
+4. Apply fixes using `apply_update` for precise changes
+5. Run Vale again to confirm all errors are resolved (0 errors)
+6. Commit and push changes
