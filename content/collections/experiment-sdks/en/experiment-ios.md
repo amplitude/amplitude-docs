@@ -184,7 +184,9 @@ The SDK client can be configured once on initialization.
 {{partial:collapse name="Configuration options"}}
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Set to false in production builds. | `false` |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `.debug`. Use `logLevel` instead. | `false` |
+| `logLevel` | The minimum log level to output. Options: `.off` (no logging), `.error` (errors only), `.warn` (errors and warnings), `.log` (errors, warnings, and logs), `.debug` (all messages including debug). See [Custom logging](#custom-logging). | `.warn` |
+| `loggerProvider` | Custom logger implementation. Must implement the `CoreLogger` protocol. See [Custom logging](#custom-logging). | `DefaultLogger()` |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `serverZone` | Select the Amplitude data center to get flags and variants from, `.US` or `.EU` | `.US` |
@@ -569,6 +571,59 @@ To download initial flags, use the [evaluation flags API](/docs/apis/experiment/
 ```swift
 let config = ExperimentConfigBuilder()
     .initialFlags("<FLAGS_JSON>")
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `CoreLogger` protocol to integrate your own logging solution.
+
+### Log levels
+
+- `.off` - No logging
+- `.error` - Errors only
+- `.warn` - Errors and warnings (default)
+- `.log` - Errors, warnings, and logs
+- `.debug` - All messages including debug
+
+```swift
+// Only log errors
+let config = ExperimentConfigBuilder()
+    .logLevel(.error)
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
+
+### Custom logger
+
+Implement the `CoreLogger` protocol to use your own logging solution:
+
+```swift
+// Implement the CoreLogger protocol
+class CustomLogger: CoreLogger {
+    func error(message: String) {
+        // Send error logs to your logging service
+        myLoggingService.error(message)
+    }
+
+    func warn(message: String) {
+        myLoggingService.warn(message)
+    }
+
+    func log(message: String) {
+        myLoggingService.log(message)
+    }
+
+    func debug(message: String) {
+        myLoggingService.debug(message)
+    }
+}
+
+// Initialize with custom logger
+let config = ExperimentConfigBuilder()
+    .loggerProvider(CustomLogger())
+    .logLevel(.warn)
     .build()
 let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
 ```
