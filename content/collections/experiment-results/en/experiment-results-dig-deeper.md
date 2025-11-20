@@ -13,8 +13,6 @@ landing_blurb: 'Extend the analytic power of A/B tests you create in Amplitude E
 ---
 Experiment results lets you delve into the data that was collected from your experiments. Experiment results can incorporate data and information from non-Amplitude feature-flagging platforms and use that external data within Amplitude's native planning, tracking, and analysis tools. This data is incorporated into Amplitude's A/B tracking data which is generated through Experiment.
 
-The Experiment Results chart is available to growth and enterprise plans. For more information, go to Amplitude's [pricing page](https://amplitude.com/pricing).
-
 ## Before you begin
 
 Before using Experiment Results, ensure you’ve instrumented the [metric events](/docs/feature-experiment/advanced-techniques/advanced-metric-use-cases) that are relevant to your experiment. Without metric events, you can't create the success metrics and goals that Experiment Results needs to compare each variant in its analysis.

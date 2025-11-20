@@ -23,9 +23,6 @@ Like most Amplitude charts, Event Segmentation charts combine events and event p
 
 This article describes the steps required to build a segmentation analysis in Amplitude.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
