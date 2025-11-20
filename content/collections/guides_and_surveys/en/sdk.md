@@ -418,7 +418,7 @@ window.engagement.setThemeMode("lightMode");
 
 ## Register a callback
 
-Register a callback with the Guides and Surveys SDK. Set the Callback action on a guide or survey button to execute the callback.
+Register a callback with the Guides and Surveys SDK. After you register a callback, you can set the **Run callback** action on any button in your guide or survey to execute the callback. Both primary and secondary buttons support this action.
 
 ```js
 engagement.addCallback(name: string, callback: () => void): void
