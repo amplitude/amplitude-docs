@@ -102,7 +102,9 @@ Pass the following configuration options when you initialize the Session Replay 
 | `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to a destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
-| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. | 
 
 {{partial:partials/session-replay/sr-remote-config-test | markdown}}
 
@@ -178,6 +180,8 @@ if (nonEUCountryFlagEnabled) {
 ```
 
 {{partial:partials/session-replay/sr-android-webview-mapview}}
+
+{{partial:partials/session-replay/sr-android-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 
