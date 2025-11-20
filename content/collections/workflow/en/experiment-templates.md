@@ -11,7 +11,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include goals, deployments, audience targeting, and etc so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include features like goals, deployments, audience targeting that you can reuse for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
