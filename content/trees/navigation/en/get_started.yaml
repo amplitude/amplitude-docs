@@ -1,133 +1,200 @@
 tree:
   -
-    id: 7bf5a96b-66fd-4df5-8056-ac09411dd2df
-    title: 'Set Up Amplitude'
+    id: role-cards-section
+    title: '🎯 Choose your path'
     children:
       -
-        id: 4914bd44-0aad-4f7c-8e97-d0b57d671ad9
-        entry: e4d9e0f6-a440-47d9-9f21-f1af62645bff
-      -
-        id: e20fe145-2a97-4f11-a02e-870e666c4477
-        entry: 0037796b-7b61-4125-bbc7-6d13c83e6e6a
-      -
-        id: 814d306c-400d-4800-bfbb-02486d709750
-        entry: a64c1c43-88d3-415d-b895-d27bb6decfd9
-      -
-        id: e2ee2b7c-fb55-4f13-b607-1bf50ef9db8f
-        entry: 2caa7dc1-796d-4f1f-b423-add51b091335
-      -
-        id: 2074def5-bdea-4610-aeae-4b95112901ab
-        entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
-  -
-    id: b888fbc0-820b-47e3-9b06-019592be3e54
-    title: 'Instrument Amplitude'
-    children:
-      -
-        id: c90a535d-bb58-4b7c-ad51-bd43e6144236
-        title: 'Get Data into Amplitude'
+        id: developer-card
+        title: '💻 Developers'
         children:
           -
-            id: 8a45f3d0-4bdc-4e77-847a-78cc3c76c3f5
-            title: 'SDK Catalog'
-            url: /docs/sdks
+            id: dev-quickstart-link
+            title: '⚡ 5-minute quickstart'
+            url: /docs/get-started/quickstart-developer
           -
-            id: ae9efd21-4d93-4d22-b56b-8e23401628da
-            title: 'Source Catalog'
-            url: /docs/data/source-catalog
+            id: dev-sdk-intro-link
+            title: 'Introduction to SDKs'
+            url: /docs/get-started/sdk-introduction
+          -
+            id: dev-autocapture-link
+            entry: 062d89f1-1e39-4f90-8490-1ee34c5647f9
+          -
+            id: dev-select-events-link
+            entry: 669876e4-a2ae-44d5-bfb2-5def51504a25
+          -
+            id: dev-identify-link
+            entry: 0540d355-59be-49fc-b93d-ac1a256c38af
+          -
+            id: dev-track-progress-link
+            entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
       -
-        id: 67e31de9-d899-47a7-8e8e-52be22d8a5b2
-        entry: 062d89f1-1e39-4f90-8490-1ee34c5647f9
+        id: analyst-card
+        title: '📊 Analysts'
+        children:
+          -
+            id: analyst-quickstart-link
+            title: '⚡ 5-minute quickstart'
+            url: /docs/get-started/quickstart-analyst
+          -
+            id: analyst-create-chart-link
+            entry: 1b7d1277-e445-4c19-a784-216b7018abb1
+          -
+            id: analyst-template-link
+            entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+          -
+            id: analyst-understand-activity-link
+            entry: 6351af1c-e7e9-4488-bbe7-34648487d173
       -
-        id: 60f7ce81-ea9b-4e5f-adc7-3e3801691c58
-        entry: 669876e4-a2ae-44d5-bfb2-5def51504a25
-      -
-        id: 1610ffb0-4e7e-40f1-8fe2-0dfb3c48a75d
-        entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
-      -
-        id: 15ac20e2-4d50-463e-be42-ca05607c8c39
-        entry: 1ec657a2-1a00-4264-af01-78e7c34fe98d
-      -
-        id: fb66467c-e050-4c9e-bdf6-e110f8abf58b
-        entry: 95a8c851-e03e-4b3d-907b-d3381dd46957
+        id: data-engineer-card
+        title: '🔧 Data Engineers'
+        children:
+          -
+            id: de-quickstart-link
+            title: '⚡ 5-minute quickstart'
+            url: /docs/get-started/quickstart-data-engineer
+          -
+            id: de-plan-implementation-link
+            entry: 2caa7dc1-796d-4f1f-b423-add51b091335
+          -
+            id: de-track-progress-link
+            entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
   -
-    id: 8699ae75-d49f-4d84-9090-0bef3527444c
-    title: 'Build a Chart'
+    id: complete-guide-section
+    title: '📖 Complete guide'
     children:
       -
-        id: 1e9d8160-632f-4da3-8c74-8915b555bfbd
-        entry: 937c2ebf-0fe4-435e-aa6d-c7c12de968ac
+        id: overview-section
+        title: 'Overview'
+        children:
+          -
+            id: what-is-amplitude-link
+            entry: e4d9e0f6-a440-47d9-9f21-f1af62645bff
+          -
+            id: helpful-definitions-link
+            entry: 59166098-ebb1-440c-9f76-e744d92aa49e
       -
-        id: 26508ef2-30cc-410d-8833-d311da49065f
-        entry: 1b7d1277-e445-4c19-a784-216b7018abb1
+        id: setup-account-section
+        title: 'Setup your account'
+        children:
+          -
+            id: create-account-link
+            entry: 0037796b-7b61-4125-bbc7-6d13c83e6e6a
+          -
+            id: create-project-link
+            entry: a64c1c43-88d3-415d-b895-d27bb6decfd9
+          -
+            id: plan-implementation-link
+            entry: 2caa7dc1-796d-4f1f-b423-add51b091335
+          -
+            id: instrumentation-prework-link
+            entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
+          -
+            id: organize-team-link
+            entry: 67184865-248e-4d6c-9a46-3e7495c2e072
       -
-        id: 24bd0c80-0269-41b1-94e3-3cbe085d8975
-        entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
+        id: send-data-section
+        title: 'Send data to Amplitude'
+        children:
+          -
+            id: get-data-in-section
+            title: 'Get Data into Amplitude'
+            children:
+              -
+                id: sdk-catalog-link
+                title: 'SDK Catalog'
+                url: /docs/sdks
+              -
+                id: source-catalog-link
+                title: 'Source Catalog'
+                url: /docs/data/source-catalog
+          -
+            id: autocapture-link
+            entry: 062d89f1-1e39-4f90-8490-1ee34c5647f9
+          -
+            id: select-events-link
+            entry: 669876e4-a2ae-44d5-bfb2-5def51504a25
+          -
+            id: identify-users-link
+            entry: 0540d355-59be-49fc-b93d-ac1a256c38af
+          -
+            id: track-progress-link
+            entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
+          -
+            id: engineer-questions-link
+            entry: 1ec657a2-1a00-4264-af01-78e7c34fe98d
+          -
+            id: cross-platform-link
+            entry: 95a8c851-e03e-4b3d-907b-d3381dd46957
       -
-        id: 5a2e1b36-e5d0-401e-b02e-1ecc9b2eff34
-        entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+        id: start-analyzing-section
+        title: 'Start analyzing'
+        children:
+          -
+            id: home-page-link
+            entry: 937c2ebf-0fe4-435e-aa6d-c7c12de968ac
+          -
+            id: create-chart-link
+            entry: 1b7d1277-e445-4c19-a784-216b7018abb1
+          -
+            id: spaces-link
+            entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
+          -
+            id: start-template-link
+            entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+          -
+            id: optimize-workflow-link
+            entry: df37755a-32f0-4c3b-9589-dd2c71b26a9a
+      -
+        id: common-analyses-section
+        title: 'Common analyses'
+        children:
+          -
+            id: understand-activity-link
+            entry: 6351af1c-e7e9-4488-bbe7-34648487d173
+          -
+            id: analyze-acquisition-link
+            entry: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
+          -
+            id: analyze-feature-adoption-link
+            entry: 07fcc029-bad9-40ad-9841-f288943fae48
+          -
+            id: understand-conversion-link
+            entry: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
+          -
+            id: analyze-ab-test-link
+            entry: 3c450c92-9e04-4996-82ac-2baf0a741845
+      -
+        id: additional-section
+        title: 'Additional reading'
+        children:
+          -
+            id: user-properties-link
+            entry: 4d421b64-f9f4-45c7-b0d6-ea0708c21b78
+          -
+            id: event-properties-link
+            entry: b337d57f-f887-4596-9dc8-9397e301b7f4
+          -
+            id: track-your-first-event-link
+            entry: 01c914d0-cbcb-4cb5-81c8-b4a5cc734a03
+          -
+            id: ab-test-results-link
+            entry: 1b0ba36a-6b55-40cb-98f8-13931435966d
   -
-    id: 8635ead6-f80e-4f53-9c45-9ed368a0383e
-    title: 'Get Value from Amplitude'
-    children:
-      -
-        id: 07bc2774-dfc6-47d1-a10a-1143b4818eb8
-        entry: 6351af1c-e7e9-4488-bbe7-34648487d173
-      -
-        id: 1319446c-4335-4013-a8e5-fe3ead82ed2e
-        entry: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
-      -
-        id: 69de8dd4-789d-4d00-b5c1-459143f6e2e4
-        entry: 07fcc029-bad9-40ad-9841-f288943fae48
-      -
-        id: 49bd798c-0033-4d79-9689-470f470db258
-        entry: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
-      -
-        id: 1e4eb409-e30c-4cd1-b755-962708afadbd
-        entry: 0540d355-59be-49fc-b93d-ac1a256c38af
-  -
-    id: c87a6d6a-8754-48ec-90d2-a2e0fc39a569
-    title: 'Additional Reading'
-    children:
-      -
-        id: fb32af55-abd2-424e-8912-780ed1aa78db
-        entry: 59166098-ebb1-440c-9f76-e744d92aa49e
-      -
-        id: 8cf18a89-8985-4b9e-89cb-e2922e53f948
-        entry: 4d421b64-f9f4-45c7-b0d6-ea0708c21b78
-      -
-        id: 10babdcf-ec62-414e-b307-3fbb1d417f5d
-        entry: b337d57f-f887-4596-9dc8-9397e301b7f4
-      -
-        id: 1537abce-70f8-40d2-9c48-c78dbb12c8fd
-        entry: 01c914d0-cbcb-4cb5-81c8-b4a5cc734a03
-      -
-        id: c4a065f6-a635-49f0-9f93-3b0c209873df
-        entry: 67184865-248e-4d6c-9a46-3e7495c2e072
-      -
-        id: 57a10558-f529-4e2b-a56c-db83729ccfb5
-        entry: df37755a-32f0-4c3b-9589-dd2c71b26a9a
-      -
-        id: 84452bfd-99ec-4057-86e9-da2c6804d2b8
-        entry: 3c450c92-9e04-4996-82ac-2baf0a741845
-      -
-        id: f3d252a5-ac73-4c91-b308-7744e78c4265
-        entry: 1b0ba36a-6b55-40cb-98f8-13931435966d
-  -
-    id: f57e8298-ded9-46b8-89ff-a39e5494d739
+    id: migrate-section
     title: 'Migrate to Amplitude'
     children:
       -
-        id: ea9ac7a4-e4b7-4f1a-a755-7d588ef33125
+        id: migrate-from-ga-link
         entry: 785c609b-7277-401c-9ea6-6c591f6c81c0
       -
-        id: f21abc1c-2366-46fe-a04b-e4dbc6a8bc43
+        id: migrate-from-segment-link
         entry: 6aa2684c-8d4c-4cd6-8281-10204eb956d3
       -
-        id: e0630dee-5829-4470-b0dd-03b07324e3aa
+        id: migrate-from-mixpanel-link
         entry: ca7e0544-2e99-4552-89d5-649a34c1956f
       -
-        id: c7e4563b-738a-4275-87ef-47db6b2e3449
+        id: migrate-from-heap-link
         entry: abf952ae-fdc9-4f51-8691-c0f4ed6a73f4
       -
-        id: 9a6b99d1-4c7b-44bd-8718-b7ac2ed759ba
+        id: migrate-gtm-link
         entry: 676af2fe-cf1a-40db-8720-331002aa5bea
