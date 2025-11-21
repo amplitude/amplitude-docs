@@ -582,45 +582,6 @@ engagement.boot(options: BootOptions): Promise<void>
 | `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
 | `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
 
-#### User parameter formats
-
-You can provide the `user` parameter in three formats:
-
-**Format 1: EndUser object**
-```js
-await window.engagement.boot({
-  user: {
-    user_id: "user123",
-    device_id: "device456",
-    user_properties: {
-      name: "John Doe",
-      plan: "premium"
-    }
-  }
-});
-```
-
-**Format 2: Function that returns EndUser**
-```js
-await window.engagement.boot({
-  user: () => {
-    return {
-      user_id: getCurrentUserId(),
-      device_id: getDeviceId(),
-      user_properties: getUserProperties(),
-      getSessionId: () => getSessionId()
-    };
-  }
-});
-```
-
-**Format 3: Simple string (user ID only)**
-```js
-await window.engagement.boot({
-  user: "user123"
-});
-```
-
 #### EndUser type
 
 The `EndUser` type includes these properties:
@@ -688,7 +649,6 @@ await window.engagement.boot({
       user_id: getCurrentUserId(),
       device_id: getDeviceId(),
       user_properties: getUserProperties(),
-      getSessionId: () => getSessionId()
     };
   },
   integrations: [
@@ -703,9 +663,7 @@ await window.engagement.boot({
 
 **Example 4: Simple string user ID**
 ```js
-await window.engagement.boot({
-  user: "user123"
-});
+await window.engagement.boot("user123");
 ```
 
 #### Important notes
@@ -723,7 +681,7 @@ Shut down the Guides and Surveys SDK. This method closes all active guides and s
 engagement.shutdown(): void
 ```
 
-After calling `shutdown()`, the SDK is no longer functional. To use Guides and Surveys again, you need to reinitialize the SDK by calling `boot()` again.
+After calling `shutdown()`, the SDK is no longer functional. To use Guides and Surveys again, you need to re-boot the SDK by calling `boot()` again.
 
 ### Refresh targeting
 
