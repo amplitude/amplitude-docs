@@ -912,6 +912,8 @@ Example request/response body
 
 Track Core Web Vitals performance metrics automatically. When enabled, Amplitude captures web performance metrics and sends them as `[Amplitude] Web Vitals` events when the browser tab first becomes hidden (when users navigate away, close the tab, or switch tabs).
 
+Requires Browser SDK 2.27.0 or higher.
+
 Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
 
 ```ts
