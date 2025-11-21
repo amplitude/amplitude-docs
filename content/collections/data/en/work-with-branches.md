@@ -18,10 +18,6 @@ When you first create your Amplitude Data account, it automatically creates a de
 
 `main` is perfect for getting started in Amplitude Data, and you may find that it's the only branch you need for quite some time.
 
-### Feature availability
-
-This feature is available to users on on **all** plans. **Starter** and **Plus** plan users get one branch. **Growth** and **Enterprise** plans have unlimited branches.
-
 ## Publish a version of your tracking plan
 
 Changes you make on a branch are initially kept in the branch's staging area, where they remain **pending**. Pending changes are like work-in-progress changes: visible to you and your teammates, but hidden from your production systems and not yet available for instrumentation by your engineering team.

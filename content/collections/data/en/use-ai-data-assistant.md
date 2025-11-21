@@ -13,11 +13,7 @@ updated_at: 1756159007
 ---
 Maintaining a clean and organized tracking plan is key to maximizing the value you get from Amplitude Data. But when you have hundreds or even thousands of events and properties, doing so can be a daunting task. This is particularly true for identifying what you have to do to improve messy data.
 
-Amplitude’s AI Data Assistant helps you stay on top of your tracking plan by showing you a short list of suggested modifications whenever you are on the Data home page. Amplitude’s internal AI generates these suggestions automatically. Any changes you make with the Data Assistant post directly to your tracking plan, with no other action required on your part.
-
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
+Amplitude's AI Data Assistant helps you stay on top of your tracking plan by showing you a short list of suggested modifications whenever you are on the Data home page. Amplitude's internal AI generates these suggestions automatically. Any changes you make with the Data Assistant post directly to your tracking plan, with no other action required on your part.
 
 ## Update your tracking plan with Data Assistant
 

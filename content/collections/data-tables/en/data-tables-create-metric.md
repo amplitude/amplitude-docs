@@ -14,9 +14,6 @@ academy_course:
 ---
 Metrics allow users to define and save reusable analysis objects in Amplitude. They accelerate workflows and increase confidence for end users when building analyses. Metrics are shared **project-wide**, and can be created by any member, manager, or admin. However, only managers and administrators can designate a metric as official.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create and configure a new metric
 

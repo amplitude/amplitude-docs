@@ -12,6 +12,12 @@ Amplitude is a powerful product analytics platform that enables you to build bet
 
 Use Amplitude to track user data and gain insights into user engagement, retention, and revenue. Amplitude keeps your data trustworthy and secure, ensuring that you have access to accurate and reliable information. Amplitude offers powerful analytics tools that help answer questions about what happened, why it happened, and which actions to take next. With Amplitude, you can seamlessly share your work across teams, facilitating collaboration and driving growth.
 
+{{partial:admonition type="Note" heading="Availability by Pricing Plan"}}
+
+Not all Amplitude products are available for every plan. Your experience with Amplitude may vary from the documentation depending on what plan you're using. For details on which functionality is available to each plan, go to the [Pricing](https://amplitude.com/pricing) page.
+
+{{/partial:admonition}}
+
 ## Key concepts
 
 Amplitude is an event-based analytics tool that tracks the behaviors of users based on in-product interactions and analyzes user behavior in real-time. Event-based analytics is the method of tracking and analyzing interactions between users and your product, also known as events. Before you get started with Amplitude, it's important to understand some key concepts. 

@@ -7,10 +7,6 @@ updated_at: 1729195928
 ---
 Web Experiment uses impression events for analysis and billing purposes. Impression events are tracked by the Web Experiment script through the [integration](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp). Tracking impression events is required for experiment analysis.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Impressions
 
 The impression event is the same as the Feature Experiment [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events), but has a different event type, `[Experiment] Impression`. Impression events contain the flag key and the variant of the flag or experiment that the user has been exposed to in the event properties.

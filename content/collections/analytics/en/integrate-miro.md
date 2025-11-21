@@ -14,9 +14,6 @@ With Amplitude’s Miro integration, you can easily search for and add Amplitude
 
 To use it, you’ll have to find and install the Amplitude plug-in from the Miro Marketplace.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Install and use the integration
 

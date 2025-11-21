@@ -10,10 +10,6 @@ As you run new experiments or roll out new feature flags, you may have features 
 
 Experiment lets you create dependencies for your flags and experiments on prerequisite flags or experiments.
 
-### Feature availability
-
-This feature is available to users on Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Configuring flag prerequisites
 
 Configure flag prerequisites in the Dependencies card for the feature flag. Go to *Experiment > Feature Flags > your feature flag* and then scrolling to the Dependencies card.
