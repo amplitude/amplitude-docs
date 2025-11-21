@@ -1,0 +1,237 @@
+<div class="quickstart-configurator">
+    <div class="bg-gray-100 p-4">
+        <div class="font-semibold mb-3 text-gray-800">Configure your setup:</div>
+        <div class="flex gap-6 flex-wrap">
+            <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="quickstart-autocapture" checked class="cursor-pointer w-4 h-4">
+                <span class="text-gray-700">Enable Autocapture</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="quickstart-session-replay" checked class="cursor-pointer w-4 h-4">
+                <span class="text-gray-700">Enable Session Replay</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Fix API key button positioning in quickstart component - keep button visible during horizontal scroll */
+pre:has(#quickstart-ai-prompt) .api-key-manual-button,
+pre:has(#quickstart-snippet) .api-key-manual-button {
+    position: absolute !important;
+    right: 3rem !important;
+    will-change: transform !important;
+    transition: none !important;
+}
+</style>
+
+{{partial:tabs tabs="AI Prompt, Snippet"}}
+{{partial:tab name="AI Prompt"}}
+{{markdown}}Paste the prompt below into your terminal or AI tools like Copilot, Cursor, Replit or Bolt.{{/markdown}}
+<pre><code class="language-plaintext" id="quickstart-ai-prompt">__AI_PROMPT_PLACEHOLDER__</code></pre>
+{{/partial:tab}}
+{{partial:tab name="Snippet"}}
+{{markdown}}Paste this snippet into the `<head>`of your site to track engagement{{/markdown}}
+<pre><code class="language-html" id="quickstart-snippet">&lt;script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"&gt;&lt;/script&gt;&lt;script&gt;window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('AMPLITUDE_API_KEY', {"fetchRemoteConfig":true,"autocapture":{"attribution":true,"fileDownloads":true,"formInteractions":true,"pageViews":true,"sessions":true,"elementInteractions":true,"networkTracking":true,"webVitals":true,"frustrationInteractions":true}});&lt;/script&gt;</code></pre>
+{{/partial:tab}}
+{{/partial:tabs}}
+
+<script>
+(function() {
+    const autocaptureCheckbox = document.getElementById('quickstart-autocapture');
+    const sessionReplayCheckbox = document.getElementById('quickstart-session-replay');
+    const aiPromptCode = document.getElementById('quickstart-ai-prompt');
+    const snippetCode = document.getElementById('quickstart-snippet');
+    
+    // Configuration - matching production code
+    const isUnifiedSdkEnabled = true;
+    const isEUDC = false;
+    
+    function makeAiPrompt({ isAutocaptureSelected, isSessionReplaySelected, apiKey }) {
+        const autoCapture = { autocapture: isAutocaptureSelected };
+        const serverZone = isEUDC ? { serverZone: 'EU' } : {};
+        const analyticsInitOptions = JSON.stringify({
+            ...autoCapture,
+            ...serverZone,
+        });
+        const unifiedInitOptions = JSON.stringify({
+            ...serverZone,
+            analytics: {
+                ...autoCapture,
+            },
+            ...(isSessionReplaySelected ? { sessionReplay: { sampleRate: 1 } } : {}),
+        });
+        
+        const includeSessionReplaySpecificSteps = !isUnifiedSdkEnabled && isSessionReplaySelected;
+        
+        const documentationSteps = [
+            `Install the Amplitude Analytics Browser SDK with \`npm install @amplitude/unified\` or \`yarn add @amplitude/unified\``,
+            ...(includeSessionReplaySpecificSteps
+                ? ['Install the Amplitude Session Replay SDK with `npm install @amplitude/plugin-session-replay-browser --save` or `yarn add @amplitude/plugin-session-replay-browser`']
+                : []),
+            `Import amplitude into the root of the client application with \`import * as amplitude from '@amplitude/unified';\``,
+            ...(includeSessionReplaySpecificSteps
+                ? [
+                    "Import sessionReplayPlugin into the root of the client application with `import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';`",
+                    'Add Session Replay to the Amplitude instance with `amplitude.add(sessionReplayPlugin({sampleRate: 1}));`',
+                ]
+                : []),
+            `Initialize amplitude with \`amplitude.initAll('${apiKey}', ${unifiedInitOptions});\``,
+            ...(isAutocaptureSelected
+                ? []
+                : [`Track the initialization of amplitude with the following line of code that should fire when amplitude is initialized. Make sure you include the comment with the code. \`amplitude.track('amplitude initialized'); // you must send an event to advance through Amplitude onboarding. As you've disabled autocapture, we've added this initilization event. Of course, you can also add more and replace this one! See our documentation for more details (https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#track-an-event).\``]),
+        ];
+        
+        const documentationText = documentationSteps
+            .map((step, index) => `${index + 1}. ${step}`)
+            .join('\n');
+        
+        return `You are an Amplitude Analytics installation wizard, an expert AI programming assistant that implements Amplitude Analytics${isSessionReplaySelected ? ' and Session Replay ' : ' '}for JavaScript-based applications.
+
+Your task is to select, install, and initialize the correct Amplitude package(s) necessary to enable Amplitude Analytics${isSessionReplaySelected ? ' and Session Replay ' : ' '}for this application and track key interactions, all in strict accordance to the Documentation provided below.
+
+Rules
+- Do not make any code changes if this is not a JavaScript-based application
+- Ensure ALL the code added ONLY runs client-side and never server-side
+- Ensure amplitude is only initialized once during the lifecycle of the application
+
+Context
+---
+
+## Documentation
+${documentationText}`;
+    }
+    
+    function updateSnippets() {
+        const isAutocaptureSelected = autocaptureCheckbox.checked;
+        const isSessionReplaySelected = sessionReplayCheckbox.checked;
+        
+        // Always use placeholder - let global API key system handle replacement
+        const apiKey = 'AMPLITUDE_API_KEY';
+        
+        // Generate AI Prompt using production logic
+        const updatedAiPrompt = makeAiPrompt({
+            isAutocaptureSelected,
+            isSessionReplaySelected,
+            apiKey
+        });
+        aiPromptCode.textContent = updatedAiPrompt;
+        
+        // Build Snippet (HTML snippet tab)
+        let snippetParts = [];
+        // Use actual < and > characters, escape for template literal safety
+        const scriptOpen = String.fromCharCode(60) + 'script';
+        const scriptClose = String.fromCharCode(60) + '/script' + String.fromCharCode(62);
+        
+        snippetParts.push(`${scriptOpen} src="https://cdn.amplitude.com/script/${apiKey}.js"${String.fromCharCode(62)}${scriptClose}`);
+        
+        let scriptContent = [];
+        if (isSessionReplaySelected) {
+            scriptContent.push('window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));');
+        }
+        
+        // Build init config for snippet
+        let snippetInitConfig = {
+            fetchRemoteConfig: true
+        };
+        
+        if (isAutocaptureSelected) {
+            snippetInitConfig.autocapture = {
+                attribution: true,
+                fileDownloads: true,
+                formInteractions: true,
+                pageViews: true,
+                sessions: true,
+                elementInteractions: true,
+                networkTracking: true,
+                webVitals: true,
+                frustrationInteractions: true
+            };
+        } else {
+            snippetInitConfig.autocapture = {
+                attribution: false,
+                fileDownloads: false,
+                formInteractions: false,
+                pageViews: false,
+                sessions: false,
+                elementInteractions: false,
+                networkTracking: false,
+                webVitals: false,
+                frustrationInteractions: false
+            };
+        }
+        
+        scriptContent.push(`window.amplitude.init('${apiKey}', ${JSON.stringify(snippetInitConfig)});`);
+        
+        snippetParts.push(scriptOpen + String.fromCharCode(62) + scriptContent.join('') + scriptClose);
+        
+        const updatedSnippet = snippetParts.join('');
+        snippetCode.textContent = updatedSnippet;
+        
+        // Store original content with placeholder for global API key system
+        aiPromptCode.setAttribute('data-original-content', updatedAiPrompt);
+        snippetCode.setAttribute('data-original-content', updatedSnippet);
+        
+        // Re-highlight with Prism
+        if (window.Prism) {
+            Prism.highlightElement(aiPromptCode);
+            Prism.highlightElement(snippetCode);
+        }
+        
+        // Trigger API key button addition and replacement from global system
+        if (window.amplitudeApiKeyFeature) {
+            // Small delay to ensure Prism highlighting is complete
+            setTimeout(() => {
+                // Add buttons to code blocks with AMPLITUDE_API_KEY
+                if (window.amplitudeApiKeyFeature.addButtons) {
+                    window.amplitudeApiKeyFeature.addButtons();
+                }
+                // Apply stored API key if exists
+                if (window.amplitudeApiKeyFeature.updateBlocks) {
+                    const storedApiKey = localStorage.getItem('amplitude_api_key');
+                    if (storedApiKey) {
+                        window.amplitudeApiKeyFeature.updateBlocks(storedApiKey);
+                    }
+                }
+                
+                // Fix button positioning to not scroll horizontally
+                fixApiKeyButtonPosition();
+            }, 100);
+        }
+    }
+    
+    function fixApiKeyButtonPosition() {
+        // Get both pre containers
+        const preElements = [
+            aiPromptCode.closest('pre'),
+            snippetCode.closest('pre')
+        ].filter(Boolean);
+        
+        preElements.forEach(pre => {
+            const button = pre.querySelector('.api-key-manual-button');
+            if (button && pre) {
+                // Listen to scroll events and adjust button position
+                pre.addEventListener('scroll', () => {
+                    button.style.transform = `translateX(${pre.scrollLeft}px)`;
+                });
+                // Set initial position
+                button.style.transform = `translateX(${pre.scrollLeft}px)`;
+            }
+        });
+    }
+    
+    // Add event listeners
+    autocaptureCheckbox.addEventListener('change', updateSnippets);
+    sessionReplayCheckbox.addEventListener('change', updateSnippets);
+    
+    // Initial update
+    updateSnippets();
+    
+    // Listen for API key updates from the global system
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'amplitude_api_key') {
+            updateSnippets();
+        }
+    });
+})();
+</script>
