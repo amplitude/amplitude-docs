@@ -166,18 +166,18 @@ Finalizing the flag activates it and makes it available.
 You can directly create an experiment or convert an existing flag to an experiment. 
 
 Remember when designing your experiment: 
-- Set a goal for the experiment
+- Set metrics for the experiment
 - Set up any further variations and payloads
 
-Adding goals (or metrics) lets you track the success rate of your experiment. All experiments should have at least one goal. Tell Amplitude Experiment what you want your recommendation metric to be, as well as define any secondary metrics. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
+Adding goals (or metrics) lets you track the success rate of your experiment. All experiments should have at least one metric. Tell Amplitude Experiment what you want your primary metric to be, as well as define any secondary metrics. The primary metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
-##### To add a goal
+##### To add metrics
 
-1. Open your experiment and navigate to the Goals section.
+1. Open your experiment and navigate to the Metrics section.
 2. Select your recommended metric from the Metric dropdown or create a custom metric. 
-2. Select the metric type: 
-    - A Success metric states the goal changes by the goal amount and direction. 
-    - A Guardrail metric states the goal won't change by the goal amount and direction.
+2. Select the metric type using "should" or "should not": 
+    - "Should": A Success metric states the goal changes by the goal amount and direction. 
+    - "Should not": A Guardrail metric states the goal won't change by the goal amount and direction.
 3. Specify whether you’re expecting the metric to increase or decrease.
 4. (_Optional_) Set the minimally acceptable goal for the experiment, otherwise known as the [minimum detectable effect](/docs/feature-experiment/experiment-theory/experiment-set-mde). This is the minimum amount of difference between the control and the variant for the experiment to be considered a positive result.
 5. To add secondary metrics, click **Add Metric** and repeat this process for each additional metric you want to include.
@@ -571,10 +571,6 @@ If any segments match, Amplitude buckets that user into a variant based on the c
 ### Web Experiment performance
 
 Web Experiment intentionally minimizes its impact on page performance.
-
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
 
 ### Script size
 

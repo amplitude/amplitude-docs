@@ -3,6 +3,7 @@ id: dbc8fb29-c647-4b15-b9d5-7467e1acd1f7
 blueprint: guides_and_survey
 title: Throttling
 this_article_will_help_you:
+  - 'Understand built-in display limits for different form factors'
   - 'Understand what throttling is'
   - 'Set basic throttling for your guides or surveys'
   - 'Configure time delays between sequential guides'
@@ -18,6 +19,31 @@ Throttling works identically for both Guides and Surveys. However, the throttlin
 {{partial:admonition type="tip" heading=""}}
 Your throttling settings apply globally to all guides or surveys in the list. You can further specify how and when your guides or surveys appear by modifying the Limits section for each guide or survey.
 {{/partial:admonition}}
+
+## Built-in display limits
+
+Amplitude has built-in limits that control how many guides and surveys can display simultaneously. These limits prevent overwhelming users with too many messages at once:
+
+| Form Factor | Display Limit | Behavior |
+| --- | --- | --- |
+| Tooltips | Unlimited | Multiple tooltips can display at the same time. |
+| Pins | One at a time | If a pin is already displayed and another pin is triggered, the first pin continues to show and the second pin doesn't display. |
+| Popovers | One at a time | If a popover is already displayed and another popover is triggered, the first popover continues to show and the second popover doesn't display. |
+| Modals | One at a time | If a modal is already displayed and another modal is triggered, the first modal continues to show and the second modal doesn't display. |
+| Checklists | One at a time | If a checklist is already displayed and another checklist is triggered, the first checklist continues to show and the second checklist doesn't display. |
+| Banners | One at a time | If a banner is already displayed and another banner is triggered, the first banner continues to show and the second banner doesn't display. |
+
+{{partial:admonition type="note" heading="Checklists can display with other form factors"}}
+Checklists can display at the same time as pins, popovers, or modals. Priority doesn't factor into this behavior. For example, if a high-priority modal is already showing and a low-priority checklist is triggered, both display simultaneously.
+{{/partial:admonition}}
+
+### Example scenarios
+
+**Multiple pins triggered:** If checklist B is triggered while checklist A is already displayed, checklist A continues to show and checklist B doesn't display.
+
+**Checklist and modal together:** If a modal is showing and a checklist is triggered, both display at the same time, regardless of their priority settings.
+
+**Pin and tooltip together:** A pin can display while multiple tooltips are also visible, since tooltips have no display limit.
 
 ##### To set the throttling for Guides or Surveys
 

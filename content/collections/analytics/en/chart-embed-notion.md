@@ -14,9 +14,6 @@ Notion is an all-in-one workspace that combines essential work tools like notes,
 
 Because it's often critical to include data in write-ups like these, Amplitude users can bring Amplitude charts and data into existing workflows in Notion, simply by pasting a link into Notion.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Embed charts in Notion
 

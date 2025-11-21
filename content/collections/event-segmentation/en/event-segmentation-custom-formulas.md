@@ -23,9 +23,6 @@ This article explains the mechanics of custom formulas, with examples of formula
 While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, go to [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Plus, Growth, and Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Formula syntax
 
@@ -51,6 +48,10 @@ For example, if you have an event called `Page Name`, the following property val
 The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, there is a warning that events have no matching group by values.
 
 ![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
+
+{{partial:admonition type='note' heading='Ranking with multi-term formulas'}}
+When you use multi-term formula metrics with group-bys, Amplitude ranks groups by the sum of unique users across all metrics in the formula, not by the final calculated values. This can affect which groups appear in high-cardinality results. For more details, review [Column ranking behavior in Data Tables](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic#column-ranking-behavior).
+{{/partial:admonition}}
 
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
@@ -344,20 +345,21 @@ For example, the following setup shows the total number of sessions by day over 
 ### SEMANTICTOTALS
 
 **Syntax**: SEMANTICTOTALS(event, semantic)
+
 * **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
-* **Semantic**: Defines how totals are calculated when grouped by array properties. Supported values are:
-  * `UNIQUE_ARRAY_VALUES`: Counts unique events by de-duplicating array property values.
-  * `ALL_VALUES`: Counts all items within the array property without de-duplication.
+* **Semantic**: Defines how totals are calculated when grouped by cart properties (array properties). Supported values are:
+  * `UNIQUE_ARRAY_VALUES`: Performs "Counting Events" by deduplicating array property values
+  * `ALL_VALUES`: Performs "Counting Items" by counting each item within the array property without deduplication
 
-Returns the total number of times an event occurred with explicit control over how array properties are counted. This resolves situations where TOTALS may over count events containing multiple array values. 
+Returns the total number of times an event occurred with explicit control over how array properties are counted. This gives you formula-based access to the same counting options available in the Event Totals and Average measurement controls when grouping by cart properties.
 
-For example, if a Checkout event contains two products in the array property `item_list.product_category`: one Crunchy Taco and one Soft Taco. Both of which appear under the category "Taco." 
+For example, imagine a `Checkout` event with the cart property `item_list.product_category`. If a single `Checkout` event contains two tacos (one Crunchy Taco and one Soft Taco) under the same product category "tacos":
 
-* SEMANTICTOTALS(A, UNIQUE_ARRAY_VALUES): Counts 1 Checkout event.
-* SEMANTICTOTALS(A, ALL_VALUES): Counts 2 Checkout items.
+* `SEMANTICTOTALS(A, UNIQUE_ARRAY_VALUES)` counts 1 Checkout event
+* `SEMANTICTOTALS(A, ALL_VALUES)` counts 2 Checkout items
 
 {{partial:admonition type="note" heading=""}}
-The default behavior for TOTALS remains unchanged (equivalent to Item Count.) Use SEMANTICTOTALS only when you need to explicitly choose between counting events and counting items.
+The default behavior for TOTALS remains unchanged (equivalent to "Counting Items"). Use SEMANTICTOTALS when you need to explicitly choose between counting events and counting items.
 {{/partial:admonition}}
 
 ## Aggregation formulas

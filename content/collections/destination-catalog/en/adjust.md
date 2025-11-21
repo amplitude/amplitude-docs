@@ -51,7 +51,7 @@ To configure an Event Streaming integration from Amplitude to Adjust, you need t
 
 In the **Send Events** section of the Adjust destination config, enable the **Events are sent to Adjust** toggle. This toggle ensures that Amplitude forwards events to Adjust. Amplitude forwards events to Adjust as it receives them, not on a schedule or on demand.
 
-1. In the **Select and filter events** section, choose the events to send to Adjust. This integration doesn't support transformed events.
+1. In the **Select and filter events** section, choose the events to send to Adjust.
 
     To map an event, select the Amplitude event, and enter the corresponding Adjust event token.
 

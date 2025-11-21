@@ -16,11 +16,15 @@ This feature is in open beta and under active development.
 
 The Guides and Surveys Android SDK requires:
 
-* Android API Level 24 (Android 7.0) or higher
-* Kotlin 1.8.22 or newer
-* [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0 or higher.
+* Android API Level 24 (Android 7.0)+
+* Kotlin 1.8.22+
+* [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
 
 ## Install and initialize the SDK
+
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Using Amplitude Android-Kotlin 1.0+
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
@@ -34,7 +38,7 @@ dependencies {
 }
 ```
 
-### Initialize the SDK
+#### Initialize the SDK
 
 ```kotlin
 import com.amplitude.android.engagement.AmplitudeEngagement
@@ -61,34 +65,134 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
 
-### Boot the SDK
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
+
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
+
+### Not using Amplitude Android-Kotlin 1.0+
+In this case, installation is very similar to above; however, you need to manually call `.boot`.
+
+Add the following dependencies to your application's `build.gradle.kts` file:
+
+```kotlin
+dependencies {
+    // Amplitude Engagement SDK
+    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+
+    // Amplitude Analytics SDK (required dependency)
+    implementation("com.amplitude:analytics-android:1.+")
+}
+```
+
+#### Initialize the SDK
+
+```kotlin
+import com.amplitude.android.engagement.AmplitudeEngagement
+import com.amplitude.android.engagement.AmplitudeInitOptions
+
+// Initialize the SDK
+val amplitudeEngagement = AmplitudeEngagement(
+    context = applicationContext,
+    apiKey = "YOUR_API_KEY",
+    options = AmplitudeInitOptions()
+)
+
+// Add the plugin to your Amplitude instance
+val amplitude = Amplitude(applicationContext)
+amplitude.add(amplitudeEngagement.getPlugin())
+```
+
+#### Configuration options
+
+| Parameter                | Type                                                                                              | Description                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
+| `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
+| `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
+
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
+
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
+
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
+
+#### Boot the SDK
 
 ```kotlin
 // Basic boot with user ID
-amplitudeEngagement.boot(userId = "USER_ID")
+amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
-val bootOptions = AmplitudeBootOptions(
-    user = AmplitudeEndUser(
-        userId = "USER_ID",
-        deviceId = "DEVICE_ID",
-        userProperties = mapOf("key" to "value")
-    )
+
+let bootOptions = AmplitudeBootOptions(
+  userId: "USER_ID",
+  deviceId: "DEVICE_ID",
+  userProperties: mapOf("key" to "value")
+  integrations = arrayOf({ event: BaseEvent ->
+    // Custom event handler
+    // Dummy example here:
+    println("event: ${event.eventType} properties: ${event.eventProperties}")
+  })
 )
-amplitudeEngagement.boot(bootOptions)
+amplitudeEngagement.boot(options: bootOptions)
 ```
 
-### Enable screen tracking (optional)
+{{partial:admonition type="note" heading=""}}
+After you call `amplitude.boot`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
+{{/partial:admonition}}
 
-Required for screen targeting and the Time on Screen trigger.
+## Add your application to project settings
+
+After installing the SDK, add your Android application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
+
+To add your application:
+
+1. Navigate to **Settings** > **Projects** in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. In the **Platform** section, click **+ Add Platform**.
+5. Select **Android** from the platform list.
+6. Enter your application details:
+   - **App name**: Your app's display name
+   - **Package name**: Your Android package identifier (for example, `com.example.myapp`)
+7. Click **Save**.
+
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your Android users and preview guides directly in your app.
+
+{{partial:admonition type='tip' heading='Find your package name'}}
+Your Android package name is defined in your `AndroidManifest.xml` file or in your app-level `build.gradle` file as the `applicationId`.
+{{/partial:admonition}}
+
+## Screen tracking and element targeting
+### Enable screen tracking
+
+Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```kotlin
 // Track screen views to trigger guides based on screens
 amplitudeEngagement.screen("HomeScreen")
 ```
 
-### Enable element targeting (optional)
+{{partial:admonition type="warning" heading=""}}
+`Screen Viewed` events from the Amplitude Android-Kotlin SDK's [Autocapture feature](/docs/sdks/analytics/android/android-kotlin-sdk#autocapture) are auto-forwarded to the Engagement SDK.
+{{/partial:admonition}}
+
+### Enable element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific elements on screen. 
 
@@ -228,11 +332,25 @@ amplitudeEngagement.closeAll()
 
 To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
 
+### Add your mobile app to project settings
+
+Before you can use preview mode, add your Android app to your project settings in Amplitude:
+
+1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
+2. Select your project.
+3. Click the **Guides and Surveys** tab.
+4. In the **App Management** section, click **Add App**.
+5. Enter your Android app's package name (for example, `com.example.myapp`).
+6. Click **Save**.
+
+After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
+After adding your app to project settings, locate the URL scheme:
 
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
+2. Copy its value, for example, `amp-abc123`.
 
 ### Add the URL scheme in Android Studio
 
@@ -260,3 +378,6 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```
+
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

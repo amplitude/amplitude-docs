@@ -1,5 +1,5 @@
 {
-    "generated_at": "2025-10-16T20:02:45.341417Z",
+    "generated_at": "2025-10-23T17:15:01.288462Z",
     "permissions_count": 41,
     "permissions": [
         {
@@ -14,6 +14,10 @@
                 "update unpublished theme",
                 "archive unpublished theme"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "create-and-update-guides-surveys-themes"
         },
         {
@@ -24,6 +28,12 @@
             "advanced": false,
             "actions": [
                 "export cohort"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
             ],
             "slug": "export-cohorts"
         },
@@ -38,6 +48,10 @@
                 "delete annotation",
                 "edit annotation"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-annotations"
         },
         {
@@ -51,6 +65,10 @@
                 "view integration api keys",
                 "edit integration api keys"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-api-keys"
         },
         {
@@ -61,6 +79,12 @@
             "advanced": true,
             "actions": [
                 "update billing method"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
             ],
             "slug": "manage-billing-settings"
         },
@@ -76,6 +100,12 @@
                 "archive cohort",
                 "delete cohort"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
             "slug": "manage-cohorts"
         },
         {
@@ -89,6 +119,10 @@
                 "update content sync and sources",
                 "remove content syncs and sources"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-content"
         },
         {
@@ -101,6 +135,10 @@
                 "create metrics",
                 "delete metrics",
                 "edit metrics"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-custom-metrics"
         },
@@ -120,6 +158,11 @@
                 "create block filters",
                 "edit block filters",
                 "remove block filters"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
             ],
             "slug": "manage-data-clean-up"
         },
@@ -152,6 +195,11 @@
                 "edit profile property",
                 "remove profile property"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
             "slug": "manage-data-enrichment"
         },
         {
@@ -167,6 +215,10 @@
                 "edit environments",
                 "edit schema settings"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-data-settings"
         },
         {
@@ -179,6 +231,9 @@
                 "create deployments",
                 "edit deployments",
                 "revoke and delete deployments"
+            ],
+            "default_permissions": [
+                "admin"
             ],
             "slug": "manage-deployments"
         },
@@ -200,6 +255,10 @@
                 "update DWH destination",
                 "delete DWH destination"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-destinations"
         },
         {
@@ -211,6 +270,10 @@
             "actions": [
                 "edit flag-level permissions settings",
                 "edit approvals setting"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-experiment-settings"
         },
@@ -227,6 +290,10 @@
                 "create, update and delete experiment templates",
                 "create mutex and holdout groups and add and remove feature experiments"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-feature-flags-and-feature-experiments"
         },
         {
@@ -241,6 +308,10 @@
                 "manage project settings",
                 "manage apps"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-guides-surveys-tags-and-settings"
         },
         {
@@ -253,6 +324,10 @@
                 "create guide/survey template",
                 "update guide/survey template",
                 "archive guide/survey template"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-guides-surveys-templates"
         },
@@ -267,6 +342,11 @@
                 "update heatmap",
                 "delete heatmap"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
             "slug": "manage-heatmaps"
         },
         {
@@ -280,6 +360,10 @@
                 "edit management api key",
                 "revoke management api key"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-management-api-keys"
         },
         {
@@ -292,6 +376,10 @@
                 "create prediction",
                 "update prediction",
                 "delete prediction"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-predictions"
         },
@@ -310,6 +398,10 @@
                 "create project",
                 "delete project"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-project-settings"
         },
         {
@@ -326,6 +418,10 @@
                 "update published guide/survey experiment",
                 "archive published guide/survey experiment"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-published-guides-surveys"
         },
         {
@@ -339,6 +435,10 @@
                 "edit published recommendation sets",
                 "archive published  recommendation sets"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-published-recommendation-sets"
         },
         {
@@ -349,6 +449,10 @@
             "advanced": true,
             "actions": [
                 "update resource center settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-resource-center-settings"
         },
@@ -363,6 +467,11 @@
                 "update saved segment",
                 "delete saved segment"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
             "slug": "manage-saved-segments"
         },
         {
@@ -376,6 +485,10 @@
                 "hide specific session replays",
                 "update targeted replay capture settings"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-session-replay-and-heatmap-settings"
         },
         {
@@ -386,6 +499,10 @@
             "advanced": true,
             "actions": [
                 "hide specific session replays"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-session-replays"
         },
@@ -404,6 +521,10 @@
                 "update DWH source",
                 "delete DWH source"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-sources"
         },
         {
@@ -416,6 +537,10 @@
                 "create sync",
                 "update sync",
                 "delete sync"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-syncs"
         },
@@ -434,6 +559,10 @@
                 "edit integration for Slack and JIRA",
                 "create API tokens",
                 "manage autocapture settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-tracking-plan-changes"
         },
@@ -455,6 +584,11 @@
                 "Upload localization files for G&S",
                 "Use AI generated translations for G&S"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
             "slug": "manage-unpublished-guides-surveys"
         },
         {
@@ -467,6 +601,10 @@
                 "create unpublished recommendation sets",
                 "edit unpublished recommendation sets",
                 "archive unpublished  recommendation sets"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-unpublished-recommendation-sets"
         },
@@ -481,6 +619,10 @@
                 "edit permission groups",
                 "invite new users to a project",
                 "remove users from a project"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "manage-user-permissions"
         },
@@ -499,6 +641,10 @@
                 "delete page objects",
                 "manage web exp dependencies"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "manage-web-experiments"
         },
         {
@@ -510,6 +656,10 @@
             "actions": [
                 "mark cohort as official",
                 "mark saved segment as official"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "mark-audiences-as-official"
         },
@@ -523,6 +673,10 @@
                 "set official dashboards",
                 "set official metrics"
             ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
             "slug": "mark-dashboards-and-metrics-as-official"
         },
         {
@@ -533,6 +687,10 @@
             "advanced": false,
             "actions": [
                 "view session replay"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "play-session-replays"
         },
@@ -547,6 +705,10 @@
                 "unpublish theme",
                 "update published theme",
                 "archive published theme"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
             ],
             "slug": "publish-and-archive-guides-surveys-themes"
         },
@@ -590,6 +752,11 @@
                 "view vacuum admin page",
                 "delete group types"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member"
+            ],
             "slug": "update-tracking-plan"
         },
         {
@@ -601,6 +768,12 @@
             "actions": [
                 "view all experiment-specific objects"
             ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
             "slug": "view-experiment-objects"
         },
         {
@@ -611,6 +784,12 @@
             "advanced": false,
             "actions": [
                 "view all guides and surveys assets"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
             ],
             "slug": "view-guides-surveys-objects"
         }

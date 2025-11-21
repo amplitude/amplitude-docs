@@ -1,0 +1,30 @@
+tree:
+  -
+    id: 475019ad-c194-4678-b40c-a1ee5d84ca0e
+    entry: adb85d4b-175d-4e9e-bb94-710a6e0b242c
+    children:
+      -
+        id: 2f0c80b7-e756-48b2-a64e-300d6d358e99
+        entry: 6acdb952-28cc-4a62-996d-e9af7d5e387b
+      -
+        id: 265fd0df-7569-475d-960e-57c54bc0b2b9
+        entry: 7c399dfd-07f9-4027-9ea6-f57a1ffb474a
+      -
+        id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
+        title: 'Agent Templates'
+        children:
+          -
+            id: 2ccee62f-6cf9-43f3-9c22-8fe2cb68ded4
+            entry: e552f2d5-5490-4c51-b779-cf7edb79ec61
+          -
+            id: 394f5fa1-d188-4eee-8c65-f42925edf9eb
+            entry: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
+          -
+            id: 1691ed50-dc88-42f9-9a83-4fe014e9d5ff
+            entry: 7d0b778f-c493-41c5-b262-b3c9a5eb8cdf
+      -
+        id: c9e925cb-124d-4a70-b482-294f5ef33b38
+        entry: 3c152fc4-e6a1-4a5f-92f6-1bc3ca7073be
+  -
+    id: 51b63da1-3fc6-4876-a286-7a35d38af01d
+    entry: 61027aa7-267f-479f-b379-912c1fea207f

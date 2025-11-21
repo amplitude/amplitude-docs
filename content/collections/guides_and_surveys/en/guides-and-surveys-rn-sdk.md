@@ -79,6 +79,49 @@ Linking.addEventListener('url', async ({ url }) => {
 });
 ```
 
+{{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
+To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
+
+- The SDK to fetch guides and surveys from the wrong project
+- Analytics data to appear in different projects
+- Insights and survey responses are incomplete or mismatched
+
+Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+At this point, you are technically done installing. While optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
+{{/partial:admonition}}
+
+## Element targeting
+
+Pin and tooltip guides require the ability for the SDK to target specific views on screen. The Engagement SDK uses the "testID" property on an element in the React Native DOM.
+
+In the example component below, "welcome-banner" is the element targeting string that should be used in the Guides and Surveys dashboard.
+
+```js
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+/**
+ * A simple component with a testID that can be targeted
+ * by the Amplitude Guides & Surveys SDK.
+ */
+export default function WelcomeBanner() {
+  return (
+    <View
+      testID="welcome-banner"   // Element targeting via testID
+      style={styles.banner}
+    >
+      <Text style={styles.bannerText}>
+        Welcome to the App!
+      </Text>
+    </View>
+  );
+}
+```
+
+
 ## Configure linking
 
 If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. Previewing Guides and Surveys on a device requires this support.
@@ -89,27 +132,5 @@ In Amplitude, navigate to your Project's settings.
 
 On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
 
-## Boot the plugin
-
-Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
-
-```js
-import {
-  track,
-  setDeviceId,
-  setUserId,
-} from '@amplitude/analytics-react-native';
-import { useEffect } from 'react';
-
-export default function App() {
-  useEffect(() => {
-    //
-    // setting the User ID in @amplitude/analytics-react-native
-    // --and-- passing it to boot() is necessary
-    //
-    setUserId('rn-test-user-1');
-    setDeviceId('test-device-1');
-    getPlugin().boot('rn-test-user-1', 'test-device-1');
-  }, []);
-}
-```
+## Changelog
+You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

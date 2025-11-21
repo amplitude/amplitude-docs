@@ -1,11 +1,12 @@
 <template>
-  <div class="permissions-table-container bg-white border border-[#E6E6EB] mt-4 rounded-lg overflow-hidden shadow-sm">
+  <div class="permissions-table-container bg-white border border-[#E6E6EB] mt-4 rounded-lg shadow-sm overflow-clip">
     <table class="min-w-full divide-y divide-[#E6E6EB] mt-0">
       <thead class="bg-[#F6F6F9]">
         <tr>
           <th 
             scope="col" 
             class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors font-IBMPlex"
+            style="width: 35%;"
             @click="$emit('sort', 'title')"
           >
             <div class="flex items-center space-x-2">
@@ -13,10 +14,13 @@
               <SortIcon :field="'title'" :current-field="sortField" :direction="sortDirection" />
             </div>
           </th>
-          <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex">
+          <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex" style="width: 50%;">
+            Description
+          </th>
+          <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex" style="width: 10%;">
             Actions
           </th>
-          <th scope="col" class="px-6 py-4 text-center text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex w-16">
+          <th scope="col" class="px-6 py-4 text-center text-xs font-semibold text-[#1C1C1E] uppercase tracking-wider font-IBMPlex" style="width: 5%;">
             <!-- Expand column -->
           </th>
         </tr>
@@ -25,7 +29,7 @@
         <template v-for="group in groupedPermissions" :key="group.productArea">
           <!-- Product Area Header Row -->
           <tr class="product-area-header bg-[#F6F6F9]">
-            <td colspan="3" class="px-6 py-6 border-b border-[#E6E6EB]">
+            <td colspan="4" class="px-6 py-6 border-b border-[#E6E6EB]">
               <div class="flex items-center space-x-3">
                 <span class="text-base font-semibold text-[#1C1C1E] font-IBMPlex">{{ getProductAreaLabel(group.productArea) }}</span>
                 <span class="text-sm font-medium text-[#1C1C1E] opacity-70 font-IBMPlex">({{ group.permissions.length }} permissions)</span>
@@ -37,24 +41,41 @@
           <template v-for="permission in group.permissions" :key="permission.id">
             <!-- Main permission row -->
             <tr 
-              class="hover:bg-[#F6F6F9] transition-colors border-b border-[#E6E6EB] cursor-pointer"
-              @click="toggleExpansion(permission.id)"
+              class="hover:bg-[#F6F6F9] transition-colors border-b border-[#E6E6EB]"
+              :class="{ 'cursor-pointer': permission.actions && permission.actions.length > 0 }"
+              @click="permission.actions && permission.actions.length > 0 ? toggleExpansion(permission.id) : null"
             >
-              <td class="px-6 py-4">
-                <div class="flex items-center space-x-3">
-                  <div class="font-medium text-[#1C1C1E] text-sm font-IBMPlex">{{ permission.title }}</div>
-                  <TypeBadge :advanced="permission.advanced" />
+              <!-- Permission Name & Badge -->
+              <td class="px-6 py-5 align-top">
+                <div class="flex flex-col gap-2">
+                  <div class="font-medium text-[#1C1C1E] text-sm font-IBMPlex leading-relaxed">{{ permission.title }}</div>
+                  <div>
+                    <TypeBadge :advanced="permission.advanced" />
+                  </div>
                 </div>
               </td>
-              <td class="px-6 py-4">
+              
+              <!-- Description -->
+              <td class="px-6 py-5 align-top">
+                <p class="text-sm text-[#1C1C1E] leading-relaxed font-IBMPlex opacity-80">
+                  {{ permission.description || 'No description available' }}
+                </p>
+              </td>
+              
+              <!-- Actions Count -->
+              <td class="px-6 py-5 align-top">
                 <div class="text-sm text-[#1C1C1E] font-IBMPlex">
                   {{ permission.actions?.length || 0 }} action{{ (permission.actions?.length || 0) !== 1 ? 's' : '' }}
                 </div>
               </td>
-              <td class="px-6 py-4 text-center">
+              
+              <!-- Expand Button -->
+              <td class="px-6 py-5 text-center align-top">
                 <button 
+                  v-if="permission.actions && permission.actions.length > 0"
                   class="text-[#1C1C1E] opacity-50 hover:opacity-70 transition-opacity"
                   @click.stop="toggleExpansion(permission.id)"
+                  :title="expandedRows.has(permission.id) ? 'Hide actions' : 'Show actions'"
                 >
                   <svg 
                     class="w-5 h-5 transform transition-transform duration-200"
@@ -69,25 +90,48 @@
               </td>
             </tr>
             
-            <!-- Expanded details row -->
+            <!-- Expanded actions row -->
             <tr 
-              v-if="expandedRows.has(permission.id)"
+              v-if="expandedRows.has(permission.id) && permission.actions && permission.actions.length > 0"
               class="bg-[#F6F6F9] border-b border-[#E6E6EB]"
             >
-              <td colspan="3" class="px-6 py-6">
-                <div class="grid grid-cols-2 gap-4">
-                  <!-- Description -->
+              <td colspan="4" class="px-6 py-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <!-- Left Column: Default Roles Section -->
                   <div>
-                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-2 font-IBMPlex">Description</h4>
-                    <p class="text-sm text-[#1C1C1E] leading-relaxed font-IBMPlex">
-                      {{ permission.description || 'No description available' }}
-                    </p>
+                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-3 font-IBMPlex">Default Roles</h4>
+                    <div v-if="permission.default_permissions && permission.default_permissions.length > 0">
+                      <p class="text-xs text-[#1C1C1E] opacity-70 font-IBMPlex mb-3">
+                        This permission is granted by default to the following roles:
+                      </p>
+                      <div class="flex flex-wrap gap-2">
+                        <DefaultPermissionsBadge 
+                          v-for="role in permission.default_permissions" 
+                          :key="role" 
+                          :role="role"
+                        />
+                      </div>
+                    </div>
+                    <div v-else>
+                      <p class="text-xs text-[#1C1C1E] opacity-50 font-IBMPlex italic">
+                        No default roles assigned
+                      </p>
+                    </div>
                   </div>
                   
-                  <!-- Actions -->
-                  <div v-if="permission.actions && permission.actions.length > 0">
-                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-2 font-IBMPlex">Actions</h4>
-                    <ActionsList :actions="permission.actions" />
+                  <!-- Right Column: Actions Section -->
+                  <div>
+                    <h4 class="text-sm font-semibold text-[#1C1C1E] mb-3 font-IBMPlex">Available Actions</h4>
+                    <div class="space-y-2">
+                      <div 
+                        v-for="(action, index) in permission.actions" 
+                        :key="index"
+                        class="flex items-start space-x-2 text-sm text-[#1C1C1E] font-IBMPlex"
+                      >
+                        <span class="text-[#0066FF] mt-1">•</span>
+                        <span class="leading-relaxed">{{ action }}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -105,7 +149,7 @@ import { computed, ref } from 'vue'
 // Components
 import SortIcon from './SortIcon.vue'
 import TypeBadge from './TypeBadge.vue'
-import ActionsList from './ActionsList.vue'
+import DefaultPermissionsBadge from './DefaultPermissionsBadge.vue'
 
 // Reactive state for expanded rows
 const expandedRows = ref(new Set())
@@ -137,6 +181,26 @@ const toggleExpansion = (permissionId) => {
     expandedRows.value.add(permissionId)
   }
 }
+
+const expandAll = () => {
+  // Add all permission IDs to expandedRows
+  props.permissions.forEach(permission => {
+    if (permission.actions && permission.actions.length > 0) {
+      expandedRows.value.add(permission.id)
+    }
+  })
+}
+
+const collapseAll = () => {
+  // Clear all expanded rows
+  expandedRows.value.clear()
+}
+
+// Expose methods to parent component
+defineExpose({
+  expandAll,
+  collapseAll
+})
 
 const getProductAreaLabel = (area) => {
   return productAreaMap[area] || area
@@ -218,3 +282,11 @@ const groupedPermissions = computed(() => {
     }))
 })
 </script>
+
+<style scoped>
+/* Ensure IBM Plex Sans is used throughout the entire table */
+.permissions-table-container,
+.permissions-table-container * {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+</style>

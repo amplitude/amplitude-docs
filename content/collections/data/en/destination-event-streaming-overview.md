@@ -15,13 +15,14 @@ With event streaming, you gain access to user-friendly, configuration-based tool
 ## Considerations
 
 - **Billing efficiency:** Amplitude tracks event volume based on distinct events sent. If you send same event to multiple event streaming destinations, it's counted only once for billing. When you use all your contracted event volume for the billing period, Amplitude pauses all streams until the next billing cycle. Wait until the next billing cycle or upgrade your plan to restart streaming.
+- **Identify events count toward limits:** When you enable the **Send Users** option in your event streaming destination, Amplitude triggers an `Identify` event each time a selected user property changes. These `Identify` events are sent to your event streaming destinations and count toward your event streaming volume limit. Monitor your `Identify` event volume to avoid exceeding your contracted limits, especially if you have frequently updated user properties.
 - **Latency target:** Amplitude aims for an end-to-end p95 latency of 60 seconds, monitored and supported by alerts.
 - **Retry mechanism:** Amplitude addresses intermittent errors using in-memory retries with exponential backoff for initial sends. The retry pipeline attempts up to 10 times within a 4-hour window. This mechanism applies to all event streaming destinations.
 - **Streamlined monitoring and management:** The Event Streaming Debugger UI in Amplitude Data lets you monitor pending retries, progress, and expired payloads. Analyze failed payload samples to gain insight into error categories.
 
 ## Limitations
 
-- **Format for user properties:** All forwarded user properties are currently sent as strings except for [Braze streaming](/docs/data/destination-catalog/braze) and [Iterable streaming](/docs/data/destination-catalog/iterable) destinations
+- **Format for user properties:** All forwarded user properties are sent as strings except for [Braze streaming](/docs/data/destination-catalog/braze) and [Iterable streaming](/docs/data/destination-catalog/iterable) destinations.
 - **Reserved keywords:** Specific keywords, including `_all` and `_identify`, can't be used as event names when streaming events from Amplitude.
 - **Historical data:** Amplitude's streaming integrations focus on data from the setup point forward. Historical data isn't included in this process, which ensures that Amplitude transmits only events captured post-configuration.
 - **Unsupported Amplitude properties:** Ingestion and streaming pipelines handle some Amplitude properties differently. If so, streaming might not support them. Properties handled differently are `Version` and `Device Family`.

@@ -14,14 +14,6 @@ In Amplitude, a **release** represents a change in your product. It can be a maj
 
 ![release_line_chart.png](/docs/output/img/analytics/release-line-chart-png.png)
 
-### Feature availability
-
-* Users on **Growth** or **Enterprise** plans can take advantage of [automated releases](#automated-releases).
-* Users on the **Plus** plan can create [manual releases](#manual-releases).
-
-For more information, see the [pricing page](https://amplitude.com/pricing).
-
-
 ## Create a release
 
 Amplitude automatically creates releases for customers on **Growth** and **Enterprise** plans. **Plus** plan users can manually create releases.

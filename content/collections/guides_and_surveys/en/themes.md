@@ -32,6 +32,10 @@ To create a new Guides and Surveys theme:
 When you publish an update an existing theme, those updates apply to any guide or survey that uses that theme. 
 {{/partial:admonition}}
 
+{{partial:admonition type="tip" heading="Customize a specific guide or survey"}}
+If you need to customize the theme for a single guide or survey without affecting others, use the **Customize only this guide** or **Customize only this survey** option in the guide or survey editor. This creates a unique theme version for that specific experience, allowing you to make one-off customizations without changing the base theme.
+{{/partial:admonition}}
+
 ## Theme viewer
 
 The Theme Viewer shows how the theme appears when applied to a guide or survey. When editing a theme, you can choose the specific guide or survey you want to preview, to see how changes affect your real-world content.
@@ -165,3 +169,9 @@ Select the animation that each widget type uses to appear on screen, along with 
 Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
+
+## Advanced customization with Custom CSS
+
+[Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
+
+Amplitude recommends using themes for most styling. Use Custom CSS when themes don't provide the control you need.
