@@ -12,10 +12,6 @@ this_article_will_help_you:
 ---
 Amplitude's **usage reports** help you identify trends and patterns of Amplitude usage within your organization. Use it to better understand where your company’s analytics practice is strongest, as well as opportunities to further maximize the value your organization gets from Amplitude. 
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Access usage reports
 
 Usage reports include ten charts (visible on the User Metrics tab) that deliver the metrics you need to effectively drive Amplitude adoption in your organization, as well as a report (visible on the Event Usage tab) that describes how your ingested events are being used within Amplitude across all projects in your organization.

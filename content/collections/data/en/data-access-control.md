@@ -9,11 +9,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726163345
 ---
-Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
-
-## Feature availability
-
-Data Access Control is available to organizations on the Enterprise plan.
+Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude's **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
 
 ## Data Access Controls
 

@@ -19,9 +19,6 @@ You may need to involve your developer or engineer for this step.
 
 This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, check out the [Data Taxonomy Playbook](/docs/data/data-planning-playbook). 
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Send data to Amplitude
 

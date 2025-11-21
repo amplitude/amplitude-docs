@@ -21,9 +21,6 @@ This can help you:
 
 Forecast lets you project metrics into the future, so that you can set realistic goals for your team and product.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
 
 ## Before you begin
 

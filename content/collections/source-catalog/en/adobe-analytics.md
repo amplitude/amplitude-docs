@@ -30,8 +30,7 @@ This article helps guide you through the process of ingesting Adobe data into Am
 
 ## Considerations
 
-- This feature is available to customers on the [Enterprise, Growth, and Scholarship](https://amplitude.com/pricing) plans.
-- Amplitude suggests reading this [blog post on how Adobe and Amplitude work together](https://amplitude.com/blog/adobe-customers-can-see-user-behavior-with-amplitude). You may also want to go over the [Data Taxonomy Playbook](https://help.amplitude.com/hc/en-us/articles/115000465251-Data-Taxonomy-Playbook) before getting started.
+- Amplitude suggests reading this [blog post on how Adobe and Amplitude work together](https://amplitude.com/blog/adobe-customers-can-see-user-behavior-with-amplitude). You may also want to go over the [Data Taxonomy Playbook](https://help.amplitude.com/hc/en-us/articles/115000465251-Data-Taxonomy-Playbook) before getting started.
 - Amplitude maps Adobe data like this: 
     - For `event_type,` Amplitude looks up the events in the Adobe event list and compares it to a lookup table where the event names are defined.
     - `user_id:` Amplitude uses `postvisidhigh` or, if that's not available, `postvisidlow`.

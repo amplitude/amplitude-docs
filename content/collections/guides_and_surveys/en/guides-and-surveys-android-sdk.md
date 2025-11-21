@@ -248,7 +248,17 @@ button.contentDescription = "my-button"
 button.tag = "my-button"
 ```
 
-## Manage themes
+## Other SDK methods
+
+This section describes additional methods available in the Android SDK for Amplitude Guides and Surveys, including:
+
+- **Managing themes**: You can set the visual theme (light, dark, or auto) for guides and surveys using `setThemeMode`.
+- **Router configuration**: You can customize how guides and surveys handle screen navigation by defining a router callback with `setRouter`, which lets you handle navigation logic in your app.
+- **Resetting guides/surveys**: Use `reset` to move a guide or survey back to a specific step.
+- **Listing guides/surveys**: Retrieve the full list of live guides and surveys and their current status using the `list()` method.
+
+
+### Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
 
@@ -257,7 +267,7 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
-## Router configuration
+### Router configuration
 
 Configure how Guides and Surveys handles screen navigation.
 
@@ -276,7 +286,7 @@ engagement.setRouter { identifier ->
 After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
 
-## Reset
+### Reset
 
 Reset a guide or survey to a specific step.
 
@@ -289,7 +299,7 @@ amplitudeEngagement.reset(key = "GUIDE_KEY", stepIndex = 0)
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 | `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
 
-## List
+### List
 
 Retrieve a list of all live guides and surveys along with their status.
 
@@ -297,7 +307,7 @@ Retrieve a list of all live guides and surveys along with their status.
 val guidesAndSurveys = amplitudeEngagement.list()
 ```
 
-## Show
+### Show
 
 Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
@@ -310,7 +320,7 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 
 
-## Forward event
+### Forward event
 
 If you don't use the plugin, but want to trigger Guides using events, call `forwardEvent` with any events want to use as triggers.
 
@@ -320,7 +330,7 @@ val event = BaseEvent()
 amplitudeEngagement.forwardEvent(event)
 ```
 
-## Close all
+### Close all
 
 Close all active guides and surveys.
 
