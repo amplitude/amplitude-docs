@@ -17,7 +17,7 @@ The decisions you make in the [design](/docs/feature-experiment/workflow/define-
 
 To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or call the [evaluation API](/docs/apis/experiment/experiment-evaluation-api).  Then follow these steps:
 
-1. Click **Create > Experiment**, and select **Web** or **Feature**.
+1. Click **Create > Experiment**, and select **Feature**.
 2. Complete the following fields:
     - **Name**: Enter the name of the experiment for future reference.
     - **Project**: Select the project in which this experiment operates.
