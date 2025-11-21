@@ -15,17 +15,19 @@ academy_course:
 ---
 After enabling [Autocapture](/docs/data/autocapture) on your site, you can begin to create labeled events by clicking specific elements on your site using Amplitude Data's visual labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
 
-Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the Labeled Events tab, instead of involving your engineering team.
+Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the Labeled Events tab, instead of involving your engineering team.
 
-## Feature availability
-
-This feature is available on all plans and requires the following:
+## Prerequisites
 
 - [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) 2.10.0 or higher
 - The SDK's `config.autocapture.elementInteractions` option set to `true`. For more information, go to the [Browser SDK Configuration](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk).
 
 {{partial:admonition type="note" heading=""}}
 Visual Labeling is available to Amplitude users with the role **Member** and above.
+{{/partial:admonition}}
+
+{{partial:admonition type='tip' heading='Retroactive analysis'}}
+Events you create with visual labeling work retroactively against all Autocapture data. Amplitude applies your labeled event definitions to historical click and form interaction data captured since your instrumentation went live. This means you can analyze user behavior from the past without waiting for new data to accumulate.
 {{/partial:admonition}}
 
 ## Create a labeled event with visual labeling
@@ -77,17 +79,19 @@ To edit your labeled events, follow these steps:
 
 ### Repair a labeled event
 
-Sometimes, changes to your site's DOM can break Visual Labeling's reference to the specific element on your site. In situations like this, Visual Labeling supports repairing events you already labeled.
+Sometimes, changes to your site's DOM can break Visual Labeling's reference to the specific element on your site. You may also need to repair a labeled event when there's a need for definition changes, such as when an element moves to a different location or its structure changes.
+
+Visual Labeling's repair flow preserves your event history by adding a new `OR` statement with a secondary definition, rather than replacing the original definition. This means all historical data remains intact while the event begins tracking the new element as well.
 
 To repair a labeled event:
 
-1. Open Amplitude Data and click _Events_ in the left rail. In the main section, click the **Labeled Events** tab.
+1. Open Amplitude Data and click _Events_ in the left rail and then, in the main section, click the **Labeled Events** tab.
 2. Select a labeled event. In the flyout tab, you can interact with:
-   1. A chart that depicts the number of times the event Amplitude saw over the last 30 days.
-   2. Charts for each definition you've added to the labeled event.
+   * A chart that depicts the number of times the event Amplitude saw over the last 30 days.
+   * Charts for each definition you've added to the labeled event.
 3. To repair an event that doesn't have event volume, click **Repair**. This opens the Visual Labeling flow with the context of the selected event.
-4. Select a new element on the page to update the labeled event's definition.
-5. Click **Save** to exit the Visual Labeler and apply the updated definition
+4. Select a new element on the page to update the labeled event's definition. The repair process adds this as an additional OR condition to your existing definition, maintaining all historical data.
+5. Click **Save** to exit the Visual Labeler and apply the updated definition.
 
 ### Find misconfigured events
 

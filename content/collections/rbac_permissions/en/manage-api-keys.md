@@ -7,8 +7,12 @@ advanced: true
 description: 'View, update, revoke and replace API keys'
 actions:
   - 'view secret key'
-  - 'view integration api keys'
-  - 'edit integration api keys'
+  - 'view integration API keys'
+  - 'edit integration API keys'
+  - 'view project API keys'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758818322
+updated_at: 1762817050
+default_permissions:
+  - admin
+  - manager
 ---

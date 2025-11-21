@@ -14,9 +14,6 @@ academy_course:
 ---
 In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/data/audiences/predictions) and **behavioral cohorts**. 
 
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
 
 ### Restrictions
 

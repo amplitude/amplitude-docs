@@ -89,12 +89,6 @@ export function useFilters(filterType = 'generic') {
       })
 
     availablePropertyTypes.value = Array.from(propertyTypes).sort()
-
-    console.log('Initialized filters:', {
-      productAreas: availableProductAreas.value,
-      platforms: availablePlatforms.value,
-      propertyTypes: availablePropertyTypes.value
-    })
   }
 
   const filteredResults = computed(() => {

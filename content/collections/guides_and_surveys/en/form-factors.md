@@ -60,6 +60,10 @@ Click the three dot menu to access format settings.
 
 Pins are persistent markers that remain on screen until a user interacts with it. Pins are best at highlighting key features or providing contextual help users can refer to.
 
+{{partial:admonition type="note" heading="Pins can advance without CTA clicks"}}
+When you click on a pin's target element, the tour always advances to the next step. This is different from the "Advanced trigger" setting (described below), which allows you to specify an additional element that can also advance the tour when clicked. The target element's click behavior is built-in you can't disable it, while the advanced trigger is an optional setting.
+{{/partial:admonition}}
+
 Pins offer different customization options than modals or popovers. Toggle between opening them by default, or start them closed. Choose to show a semi-transparent overlay that highlights the pinned element and dim the rest of the screen through the **Show mask**.
 
 Pins can use the following position settings:
@@ -82,6 +86,7 @@ Click the three dot menu for the pin to access format settings.
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
 | Click/Tap outside to close               | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
+| Image Width                              | Define the width of the pin icon or image in pixels.                                                       |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
@@ -101,6 +106,7 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
 | Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
+| Image Width                              | Define the width of the tooltip icon or image in pixels.                                              |
 | Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                    |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify. |
 | Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
@@ -126,6 +132,56 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 
 Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
 
+## Element selector
+
+When you configure guides with pins, tooltips, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
+
+### How the element selector works
+
+Amplitude's visual element selector automatically identifies the most stable CSS selector for the element you choose. This ensures your guide continues to work even if minor page changes occur.
+
+To use the visual selector:
+
+1. Click **Test and Preview** in the guide builder
+2. Navigate to the page containing your target element
+3. Click the element you want to target
+4. Amplitude automatically generates a CSS selector for that element
+
+#### Selecting nested elements
+
+To select nested elements (elements inside other elements), use the Alt key (Option key on Mac) while hovering over elements:
+
+1. Click **Test and Preview**
+2. Hover over the parent element
+3. Hold the Alt/Option key
+4. Continue hovering to drill down into nested child elements
+5. Click to select the desired nested element
+
+This lets you precisely target specific elements within complex page structures, such as buttons within cards or icons within menus.
+
+### Override or provide your own selector
+
+If you prefer to specify your own selector or need more control, you can manually enter a CSS or XPath selector:
+
+1. In the element selector field, paste your CSS selector or XPath expression
+2. Choose your selection strategy:
+   - **CSS Selector**: Standard CSS selector syntax (for example, `#submit-button`, `.primary-cta`)
+   - **XPath**: XPath expression for more complex targeting (for example, `//button[@id='submit']`)
+3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
+4. Test your selector with **Test and Preview** to confirm it targets the correct element
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+
+{{partial:admonition type='tip' heading='Best practices for custom selectors'}}
+* Use stable attributes like IDs or data attributes that are less likely to change
+* Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
+* Test your selectors across different pages and screen sizes
+* Consider adding data attributes specifically for guide targeting to ensure reliability
+{{/partial:admonition}}
+
 ## Properties
 
 These properties apply across form factors, enabling you to customize your guide components. Options available to each property may differ across form factors.
@@ -136,7 +192,7 @@ Position controls where the guide appears on screen.
 
 | Form factor                              | Options                                                                                                                                                                                                                                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Popover                                  | Top right, top left, bottom right, bottom left, center                                                                                                                                                                                                                                    |
+| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center                                                                                                                                                                                                                                    |
 | Modal                                    | Center                                                                                                                                                                                                                                                                                    |
 | Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
@@ -157,23 +213,33 @@ Blocks enable you to make your guide more engaging and powerful. Add a Button CT
 
 #### Buttons
 
-When you add a Button, you can choose what happens when users click or tap that button.
+When you add a Button, you can choose what happens when users click or tap that button. Both primary and secondary buttons support all actions, including conditional logic.
 
-| Action            | Description                                                                                                                                                                       |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link        | A link to the specified website opens in a new tab.                                                                                                                               |
-| Click/Tap element | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
-| Show guide        | Launch another guide.                                                                                                                                                             |
-| Show survey       | Launch a survey.                                                                                                                                                                  |
-| Go back           | Go to the previous step in the guide.                                                                                                                                             |
-| Go forward        | Advance to the next step in the guide.                                                                                                                                            |
-| Go to step        | Go to the specified step in the guide.                                                                                                                                            |
-| Run callback      | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
+| Action                     | Description                                                                                                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visit link                 | A link to the specified website opens in a new tab.                                                                                                                               |
+| Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
+| Show guide                 | Launch another guide.                                                                                                                                                             |
+| Show survey                | Launch a survey.                                                                                                                                                                  |
+| Go back                    | Go to the previous step in the guide.                                                                                                                                             |
+| Go forward                 | Advance to the next step in the guide.                                                                                                                                            |
+| Go to step                 | Go to the specified step in the guide.                                                                                                                                            |
+| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic) for more information. |
+| Run callback               | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, go to [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
 {{partial:admonition type='note'}}
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
+
+#### Mark step complete when
+Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
+- `Button is clicked`
+- `Page is visited`
+- `Element is clicked`
+- `Event is tracked`
+
+For each of these options, the checklist step updates from "incomplete" to "complete" only if the action happens on the client while the checklist is visible. For example, if Amplitude tracks an event server side or the event happens before the checklist is shown, the step won't be marked completed.
 
 #### Image
 

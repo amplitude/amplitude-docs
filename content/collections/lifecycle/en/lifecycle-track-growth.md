@@ -21,9 +21,6 @@ You can also get a bird's-eye view of engagement and retention by building your 
 
 The idea is to grow your current and resurrected user counts, either by keeping them engaged or by giving them a reason to become active again. You'll also want to keep an eye on your dormant users: if this category starts growing, you may have an engagement problem on your hands.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

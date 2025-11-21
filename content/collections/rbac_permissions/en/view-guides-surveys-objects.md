@@ -8,5 +8,10 @@ description: 'View guides & surveys related objects'
 actions:
   - 'view all guides and surveys assets'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758820461
+updated_at: 1761239482
+default_permissions:
+  - admin
+  - manager
+  - member
+  - viewer
 ---

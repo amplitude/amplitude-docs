@@ -10,6 +10,8 @@ updated_at: 1758643314
 
 The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
+The Amplitude MCP server is listed in the [official MCP servers registry](https://github.com/modelcontextprotocol/servers) on GitHub. You can also find MCP integration guides and examples in [Anthropic's Claude documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp), the [MCP quickstart resources](https://github.com/modelcontextprotocol/quickstart-resources), and [Cursor's MCP documentation](https://docs.cursor.com/context/model-context-protocol).
+
 ## Remote server
 
 {{partial:admonition type="beta" heading="Beta notice"}}
@@ -147,7 +149,7 @@ Complete the steps below, depending on the tool you're integrating with.
 **Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
 
 {{partial:admonition type="note"}}
-MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations.
+MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
 {{/partial:admonition}}
 
    1. Enable ChatGPT developer mode (if not already enabled).
@@ -279,12 +281,11 @@ Third parties (for example, Anthropic) develop and maintain the AI models used w
 
 ### Admin controls
 
-Organization administrators can control MCP server access through Amplitude settings:
+MCP server access is **enabled by default** for all users in your organization. Organization administrators can opt out or restrict access if needed:
 
-1. Navigate to **Settings > Manage Content > MCP** in your Amplitude organization settings.
+1. Navigate to **Settings > Content Access > MCP** in your Amplitude organization settings.
 2. Use the content access controls to allow or block the Amplitude MCP server.
-3. This setting applies to all MCP clients across all users in your organization.
-4. By default, Amplitude allows MCP server access to all users in your organization.
+3. Access restrictions apply to all MCP clients across all users in your organization.
 
 {{partial:admonition type="note"}}
 MCP access controls are an admin-only setting. Individual users can't override organization-level MCP restrictions.

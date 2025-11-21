@@ -9,5 +9,8 @@ actions:
   - 'mark cohort as official'
   - 'mark saved segment as official'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819435
+updated_at: 1761239271
+default_permissions:
+  - admin
+  - manager
 ---

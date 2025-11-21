@@ -28,9 +28,6 @@ Likely use cases include:
 Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysis charts.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Growth and Enterprise plans. Go to [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 

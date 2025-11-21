@@ -17,5 +17,9 @@ actions:
   - 'Upload localization files for G&S'
   - 'Use AI generated translations for G&S'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758820489
+updated_at: 1761239464
+default_permissions:
+  - admin
+  - manager
+  - member
 ---

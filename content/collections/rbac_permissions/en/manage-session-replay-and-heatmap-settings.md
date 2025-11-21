@@ -10,5 +10,8 @@ actions:
   - 'hide specific session replays'
   - 'update targeted replay capture settings'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758819622
+updated_at: 1761239340
+default_permissions:
+  - admin
+  - manager
 ---

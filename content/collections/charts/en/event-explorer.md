@@ -23,9 +23,6 @@ Amplitude’s Event Explorer helps you overcome these and similar challenges by 
 
 Simply find your test account ID and click through the area of your product you want to analyze. Event Explorer shows the events you’re triggering **as you trigger them**. You’ll know exactly which events correspond with the user actions you’re interested in analyzing, and you can immediately add them to any Amplitude chart.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 {{partial:admonition type="note" heading=""}}
 Starter and Plus plan users have limited event explorer functionality.

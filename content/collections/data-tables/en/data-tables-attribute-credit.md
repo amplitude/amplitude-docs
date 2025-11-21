@@ -14,9 +14,6 @@ academy_course:
 ---
 It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 
-### Feature availability
-
-This feature is available to users on all Amplitude plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ### Restrictions
 
@@ -36,6 +33,7 @@ Also, when measuring unique users, none of these models generate attribution gro
 
 * **First Touch**: Gives all credit for the selected metric to the first property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
 * **Last Touch**: Gives all credit for the selected metric to the last property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
+* **Last non direct touch**: Gives all credit for the selected metric to the last property value that wasn't tagged as Direct within the selected lookback window relative to the date the metric occurred. This model reflects common marketing attribution logic by excluding direct traffic from attribution. If using the event totals attribute, will sum to 100%.
 * **Linear**: Credit for the selected metric is equally distributed for all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 50% credit, and with three properties each would receive 33.3%.
 * **Participation**: Credit for the selected metric is fully allocated to all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 100% credit, and with three properties each would receive 100%. It is possible for the total rows to not sum to the overall total. This is because multiple properties from the same event can receive credit, so the sums of the rows are greater than the overall value. 
 * **U-Shaped**: Credit for the selected metrics biases credit to the first and last values for the selected property. With two touch points, the middle 20% is equally added to the first and middle touch points (50%, 50%). With four touch points, the middle two touch points would share the 20% (40%, 10%, 10%, 40%).
@@ -95,17 +93,20 @@ Each metric type supports a specific set of attribution types:
 * **Uniques**
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * markov
 
 * **Conversion**
     * first touch
     * last touch
+    * last non direct touch
     * participation
 
 * **Event totals**
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * linear
     * j-shaped
@@ -117,6 +118,7 @@ Each metric type supports a specific set of attribution types:
 * **property sum**, **revenue total**, and **formula** (clauses: uniques, total, propsum)
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * linear
     * j-shaped

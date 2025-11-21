@@ -29,9 +29,6 @@ In each of these use cases, there are two cohorts in play, separated from each o
 
 Behavior offsets make it easy to segment the users who appear in both of these cohorts.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
 
 ## Before you begin
 

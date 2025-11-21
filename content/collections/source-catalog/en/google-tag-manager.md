@@ -98,7 +98,7 @@ Amplitude generates cookies at the initialization stage. For more information on
 
 #### API Key
 
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, see [API Authentication(/docs/apis/authentication).
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, review [API Authentication](/docs/apis/authentication).
 
 #### Autocapture options
 
@@ -111,7 +111,7 @@ Enable *Autocapture events* to enable autocapture for the following event types:
 - Track File Downloads
 - Track Element Interactions
 
-For more information, see [Browser SDK 2 | Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture)
+For more information, see [Browser SDK 2 - Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture)
 
 | Name                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default Value |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
@@ -144,6 +144,36 @@ Check this box to enable form interactions tracking. For more information, see [
 ###### File downloads tracking
 
 Check this box to enable file downloads tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#track-file-downloads).
+
+###### Network tracking
+
+Check this box to enable network tracking. Network tracking captures network request events invoked by XHR and Fetch. For more information, see [Browser SDK 2 - Track network requests](/docs/sdks/analytics/browser/browser-sdk-2#track-network-requests).
+
+{{partial:collapse name="Advanced configuration"}}
+
+Define rules to control which network requests to capture and what data is included.
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `Ignore Amplitude Requests` | Whether to ignore network requests to Amplitude domains. | `true` |
+| `Ignore Hosts` | Comma-separated list of hosts to ignore. Supports wildcard `*`. For example, `*` to ignore all hosts, or `*.example.com,example.com` to ignore `example.com` and all subdomains. | `[]` |
+
+**Network Capture Rules**
+
+Define specific rules for capturing network request details. Each rule can specify which requests to capture and what data to include.
+
+| Field | Description | Example |
+| --- | --- | --- |
+| `URLs` | Comma-separated list of URLs to capture. Leave empty to capture all URLs. | `https://api.example.com,https://api2.example.com` |
+| `URLs Regex` | Comma-separated list of URL regex patterns to capture. | `.*\.api\..*` |
+| `Methods` | Comma-separated list of HTTP methods to capture. Use `*` for all methods. | `GET,POST,PUT` or `*` |
+| `Status Code Range` | Status code range to capture. Supports comma-separated ranges or single codes. | `0,413,500-599` |
+| `Response Headers` | Comma-separated list of response headers to capture. Captures [safe headers](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108) by default. | `Content-Type,Content-Length` |
+| `Response Body` | Capture parts of the response body using [JSON pointers](https://datatracker.ietf.org/doc/html/rfc6901). Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,message,data/info/**` |
+| `Request Headers` | Comma-separated list of request headers to capture. Captures [safe headers](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/constants.ts#L59-L108) by default. | `Content-Type,Accept-Encoding` |
+| `Request Body` | Capture parts of the request body using [JSON pointers](https://datatracker.ietf.org/doc/html/rfc6901). Comma-separated list. Supports wildcards: `*` matches any key, `**` matches any number of keys. | `status,data/info/**` |
+
+{{/partial:collapse}}
     
 
 #### EU data residency
@@ -276,7 +306,7 @@ Notice that choosing Google Tag: Event Settings variable as an input in Event Pr
 
 ##### Track with groups
 
-Set event level groups. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist on the user unless explicitly set with `setGroup`. For more information, see [Browser SDK 2 | User Groups](/docs/sdks/analytics/browser/browser-sdk-2/#user-groups).
+Set event level groups. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist on the user unless explicitly set with `setGroup`. For more information, see [Browser SDK 2 - User Groups](/docs/sdks/analytics/browser/browser-sdk-2/#user-groups).
 
 | Name         | Description                                                                                                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |

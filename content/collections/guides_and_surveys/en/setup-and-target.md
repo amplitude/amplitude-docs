@@ -31,6 +31,35 @@ You can set both rollout percentage and bucketing unit for your user segments. F
 When you add more than one segment to your targeting, Amplitude `OR`s each segment. This means that if a user belongs to *any* segment, Amplitude shows them the guide or survey.
 {{/partial:admonition}}
 
+### Understanding bucketing units
+
+The bucketing unit determines how Amplitude assigns users to receive your guide or survey when you use rollout percentages. This ensures consistent experiences across different devices and sessions for the same entity.
+
+#### Available bucketing units
+
+**User ID**: Buckets users based on their user ID. When a user logs in from different devices, they remain in the same bucket and receive a consistent experience. This is the default and most common option.
+
+**Device ID**: Buckets users based on their device identifier. Each device receives an independent bucketing assignment, which means the same user on different devices might have different experiences.
+
+**Account ID** or **Organization ID**: Buckets users based on a custom property like account ID or organization ID. This is useful when you want all users within the same organization to have the same experience. For example, if you're testing a new feature with 50% of accounts, all users within a selected account see the feature, while all users in excluded accounts don't.
+
+#### Bucketing examples
+
+**Example 1: User ID bucketing**
+You set a 50% rollout with User ID bucketing. User Jane logs in on her laptop and receives the guide. Later, she logs in on her phone with the same user ID—she continues to see the guide because bucketing is based on her user ID.
+
+**Example 2: Account ID bucketing**
+You set a 50% rollout with Account ID bucketing (using a custom `account_id` property). Account "Acme Corp" with 10 users falls into the selected 50%. All 10 users from Acme Corp see the guide, regardless of which devices they use. Meanwhile, all users from "Beta Inc" in the other 50% don't see the guide.
+
+**Example 3: Device ID bucketing**
+You set a 50% rollout with Device ID bucketing. User Jane's laptop falls into the selected 50% and receives the guide. However, her phone falls into the other 50%, so she doesn't see the guide on her phone—even though both devices belong to the same user.
+
+#### When to use each bucketing unit
+
+- **User ID**: Use when you want consistent experiences for logged-in users across all their devices
+- **Device ID**: Use for anonymous users or when device-specific targeting matters
+- **Account/Organization ID**: Use when you want all users within an organization to have the same experience, which is useful for B2B products or organizational rollouts
+
 ### Excluding group of users
 
 There may be a group of users that you don't want to include in a specific guide or survey. For example, you might want to run a survey on your site but don't want to include customers within the United States. Or, you might want to exclude internal users and only receive responses from actual customers.
@@ -124,9 +153,9 @@ Limits ensure you don't bombard users with your messaging.
 
 | Limit                       | Description                                                                                                                                                                       |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stop showing when completed | After the user completes the experience, the guide or survey is no longer visible. again.                                                                                                                  |
-| Stop showing when dismissed | After the user dismisses the experience, they won’t receive it again. This option requires `Stop showing when completed`.                                                              |
-| Cooldown                    | When enabled, specify the maximum number of times a user can receive the experience in the specified time range. This option requires that `Stop showing when dismissed` is disabled. |
+| Stop showing when completed | Enabled by default. When disabled, the experience is eligible to be triggered again via its [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers) for the [targeted users](/docs/guides-and-surveys/guides/setup-and-target#targeting) even after it is completed. Disabling this option requires `Stop showing when dismissed` to be disabled.                                                                                                                   |
+| Stop showing when dismissed | Enabled by default. When disabled, the experience is eligible to be triggered again via its [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers) for the [targeted users](/docs/guides-and-surveys/guides/setup-and-target#targeting) even after it is dismissed.                                                             |
+| Cooldown                    | When enabled, limits how often the experience can trigger for a user. Cooldowns are irrelevant (ignored) when (a) the experience is [active](/docs/guides-and-surveys/guides/setup-and-target#active-state) or (b) force-triggered by the SDK, a button action, or a share link. Enabling this option requires that `Stop showing when dismissed` is disabled. |
 
 ## Localization
 
@@ -139,8 +168,9 @@ Statuses enable you to manage when your guide or survey displays.
 | Status    | Description                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | Draft     | Enables you to make changes to and test the experience, but the experience doesn't appear to users.                                      |
+| Testing     | The guide or survey can be shown to [test users](/docs/guides-and-surveys/testing#testing-status).                                      |
 | Published | The guide or survey is live. Any changes you make to a published experience appear to users as soon as you save the guide or survey.                    |
-| Schedule  | Define specific start and end dates during which your experience appears. Start and end times use the timezone set on your project. |
+| Scheduled  | Define specific start and end dates during which your experience appears. Start and end times use the timezone set on your project. |
 
 ## Settings
 
