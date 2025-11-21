@@ -10,7 +10,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726005676
 landing: false
 ---
-After you define the events that make up your experiment, you can set who's eligible for the experiment. You can choose to open eligibility up to all users or you can target specific groups of users.
+After you define the events that make up your experiment, set up the audience who's eligible for the experiment. You can choose to open eligibility up to all users or you can target specific groups of users. This is also known as Targeting.
 
 {{partial:admonition type='note'}}
 Users still must trigger the exposure event before they receive the experiment. The targeting section only defines the potential audience you want. 
@@ -33,7 +33,7 @@ Defining your audience isn't just about the segments or user properties. You mus
 * **Distribution**: The percentage between the control and the experiment group. By default, this is set to 50% distribution so that half of your group is the control and half is the experiment. You can customize the percentage if you want more people in one distribution group or the other. This is the distribution across your targeted audience and not your total user base. 
 * **Rollout**: The percentage of people, within your targeted audience who you want to receive the experiment. If you set this number to 100%, then all users within your targeted audience receives the experiment as either the control or treatment group. Experiment displays the potential number of people who will receive the experiment.
 
-##### To define the audience for your experiment
+##### To set the target audience for your experiment
 
 1. Either create a new experiment or open an existing one. 
 2. In the Targeting section, click the **edit** icon.
@@ -66,3 +66,5 @@ Segment 2: Users who use Android devices and access your website through the mob
 Using Boolean logic, both conditions for a segment must be met to include users in the experiment. If users access your website but aren't located in India, they're not included in Segment 1. Likewise, if users access your site through an iOS device, they aren't included in Segment 2. 
 
 The `if, else if` evaluation means that a user is evaluated if they meet the conditions for Segment 1. If not, they're evaluated if they meet the conditions for Segment 2. 
+
+After you define the target audience, 
