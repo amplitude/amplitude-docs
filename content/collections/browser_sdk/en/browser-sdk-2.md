@@ -148,7 +148,7 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
 | `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
-| `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL of proxying remote config requests     | `undefined`                             |
+| `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
 
 {{/partial:collapse}}
 
@@ -797,7 +797,7 @@ This example tracks network requests with status codes from 400-599, ignores req
 
 {{/partial:collapse}}
 
-{{partial:collapse name="NetworkTrackingOptions. NetworkCaptureRule"}}
+{{partial:collapse name="NetworkTrackingOptions.NetworkCaptureRule"}}
 
 | Name |  Description | Default Value |
 | --- | --- | --- |
