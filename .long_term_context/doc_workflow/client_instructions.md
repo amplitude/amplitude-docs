@@ -121,12 +121,13 @@ When a PR fails the Vale CI check, you need to fix all errors before the PR can 
 - **Run Vale locally**: `vale --config=.vale/rules.ini <filepath>` to see errors before pushing.
 - **Vale CI requires `.vale.ini` at repository root**: The errata-ai/vale-action@reviewdog GitHub Action expects a `.vale.ini` or `_vale.ini` file at the root of the repository. If this file is missing, CI will fail even if Vale passes locally. The file should contain:
   ```
-  StylesPath = .vale/styles
+  StylesPath = .github/styles
   MinAlertLevel = warning
 
   [*.md]
   BasedOnStyles = Amplitude
   ```
+  **Important**: The StylesPath must be `.github/styles` (where Amplitude's custom rules live), not `.vale/styles` (which contains Microsoft's generic rules). Using the wrong path will cause CI to fail with "style 'Amplitude' does not exist on StylesPath".
 
 **Common Vale rules and fixes**:
 - **Amplitude.Latin**: Replace Latin phrases with clearer English
