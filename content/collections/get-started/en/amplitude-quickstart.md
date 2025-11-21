@@ -10,9 +10,9 @@ updated_at: 1763678212
 ---
 As an early-stage startup, you need answers fast. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
 
-## Five minute setup: Browser SDK and autocapture
+## Speed run your installation: Browser SDK and Autocapture
 
-Get data flowing into Amplitude in five minutes or less.
+Quickly get data flowing into Amplitude with Browser SDK and Autocapture.
 
 ### Install Amplitude
 
