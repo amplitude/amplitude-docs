@@ -18,13 +18,13 @@ The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
-* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
+* [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude iOS Swift 1.13.0+
+### Using Amplitude Analytics iOS Swift 1.13.0+
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -89,7 +89,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it's highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Swift 1.13.0+
+### Not using Amplitude Analytics Swift 1.13.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
