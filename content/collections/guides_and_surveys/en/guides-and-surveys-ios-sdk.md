@@ -220,7 +220,7 @@ let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
 
-## Other SDK Methods
+## Other SDK methods
 
 ### Manage themes
 
