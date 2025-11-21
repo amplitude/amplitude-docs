@@ -191,7 +191,9 @@ SDK client configuration occurs during initialization.
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false` |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `LogLevel.DISABLE`, `LogLevel.ERROR`, `LogLevel.WARN`, `LogLevel.INFO`, `LogLevel.DEBUG`, `LogLevel.VERBOSE`. See [Custom logging](#custom-logging). | `LogLevel.ERROR` |
+| `loggerProvider` | Custom logger implementation. Must implement the `LoggerProvider` interface. See [Custom logging](#custom-logging). | `AndroidLoggerProvider()` |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `source` | The primary source of variants. Set the value to `Source.INITIAL_VARIANTS` and configure `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LOCAL_STORAGE` |
@@ -864,6 +866,184 @@ val config = ExperimentConfig.builder()
     .initialFlags("<FLAGS_JSON>")
     .build()
 val experiment = Experiment.initialize(context, "<DEPLOYMENT_KEY>", config)
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `LoggerProvider` interface to integrate your own logger.
+
+### Log levels
+
+- `LogLevel.DISABLE` - No logs.
+- `LogLevel.ERROR` - Errors only (default).
+- `LogLevel.WARN` - Errors and warnings.
+- `LogLevel.INFO` - Errors, warnings, and info.
+- `LogLevel.DEBUG` - Errors, warnings, info, and debug.
+- `LogLevel.VERBOSE` - All messages including verbose details.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+// Set log level to debug
+val experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .build()
+)
+
+
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+// Set log level to debug
+ExperimentClient experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .build()
+);
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to use your own logging solution.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+// Implement the LoggerProvider interface
+class CustomLoggerProvider : LoggerProvider {
+    override fun verbose(msg: String) {
+        // Send verbose logs to your logging service
+        myLoggingService.verbose(msg)
+    }
+
+    override fun debug(msg: String) {
+        myLoggingService.debug(msg)
+    }
+
+    override fun info(msg: String) {
+        myLoggingService.info(msg)
+    }
+
+    override fun warn(msg: String) {
+        myLoggingService.warn(msg)
+    }
+
+    override fun error(msg: String) {
+        myLoggingService.error(msg)
+    }
+}
+
+// Initialize with custom logger
+val experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .loggerProvider(CustomLoggerProvider())
+        .logLevel(LogLevel.WARN)
+        .build()
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+// Implement the LoggerProvider interface
+class CustomLoggerProvider implements LoggerProvider {
+    @Override
+    public void verbose(String msg) {
+        // Send verbose logs to your logging service
+        myLoggingService.verbose(msg);
+    }
+
+    @Override
+    public void debug(String msg) {
+        myLoggingService.debug(msg);
+    }
+
+    @Override
+    public void info(String msg) {
+        myLoggingService.info(msg);
+    }
+
+    @Override
+    public void warn(String msg) {
+        myLoggingService.warn(msg);
+    }
+
+    @Override
+    public void error(String msg) {
+        myLoggingService.error(msg);
+    }
+}
+
+// Initialize with custom logger
+ExperimentClient experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .loggerProvider(new CustomLoggerProvider())
+        .logLevel(LogLevel.WARN)
+        .build()
+);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Debug flag (deprecated)
+
+The `debug` configuration flag is deprecated. Use `logLevel` instead.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+// Deprecated: Sets logLevel to Debug
+val experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .debug(true)
+        .build()
+)
+
+// Preferred: Use logLevel instead
+val experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .build()
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+// Deprecated: Sets logLevel to Debug
+ExperimentClient experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .debug(true)
+        .build()
+);
+
+// Preferred: Use logLevel instead
+ExperimentClient experiment = Experiment.initialize(
+    context,
+    "<DEPLOYMENT_KEY>",
+    ExperimentConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .build()
+);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
