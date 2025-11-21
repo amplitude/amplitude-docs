@@ -153,10 +153,10 @@ fun initialize(application: Application, apiKey: String, config: ExperimentConfi
 | <div class='med-column'>Parameter</div> | Requirement | Description |
 | --- | --- | --- |
 | `application` | required | The Android `Application` context. Used to persist variants across sessions. |
-| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags the SDK evaluates for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
-The initializer returns a singleton instance, so subsequent initializations for the same instance name will always return the initial instance. To create multiple instances, use the `instanceName` [configuration](#configuration).
+The initializer returns a singleton instance, so subsequent initializations for the same instance name return the initial instance. To create multiple instances, use the `instanceName` [configuration](#configuration).
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
@@ -242,7 +242,7 @@ val experiment = Experiment.initializeWithAmplitudeAnalytics(
 {{/partial:tabs}}
 If you use a custom instance name for analytics, set the same value in the `instanceName` configuration option in the Experiment SDK.
 
-Using the integration initializer will automatically configure implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
+Using the integration initializer configures implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
 
 **Supported Versions**
 
@@ -253,7 +253,7 @@ Using the integration initializer will automatically configure implementations o
 {{/partial:collapse}}
 
 {{partial:collapse name="Segment integration"}}
-Experiment's integration with Segment Analytics must be configured manually. The Experiment SDK must then be configured on initialization with an instance of the exposure tracking provider. Make sure this happens _after_ the analytics SDK has been loaded an initialized.
+Configure Experiment's integration with Segment Analytics manually. Then configure the Experiment SDK on initialization with an instance of the exposure tracking provider. Make sure this happens _after_ the analytics SDK loads and initializes.
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -362,10 +362,10 @@ fun fetch(user: ExperimentUser? = null, options: FetchOptions? = null): Future<E
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional | Explicit flag keys to fetch.|
 
-Amplitude Experiment recommends calling `fetch()` during application start up so that the user gets the most up-to-date variants for the application session. Furthermore, you'll need to wait for the fetch request to return a result before rendering the user experience to avoid the interface "flickering".
+Amplitude Experiment recommends calling `fetch()` during application start up so that the user gets the most up-to-date variants for the application session. Furthermore, wait for the fetch request to return a result before rendering the user experience to avoid the interface "flickering".
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -414,15 +414,15 @@ experiment.fetch()
 {{partial:admonition type="tip" heading="Fetch when user identity changes"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()` -- for example, a race.
+For **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees for `fetch()` -- for example, a race.
 {{/partial:admonition}}
 
-If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
+If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client returns and retries in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
 
 {{partial:collapse name="Account-level bucketing and analysis (v1.9.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user using a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or using [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Include groups in the user sent with the fetch request (recommended), or identify them with the user using a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or using [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -504,7 +504,7 @@ fun start(user: ExperimentUser? = null): Future<ExperimentClient>
 | --- | --- | --- |
 | `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. | `null` |
 
-Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned future resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
+Call `start()` when your application is initializing, after user information is available to use to fetch or [fetch](#fetch) variants. The returned future resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
 
 Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configuration on initialization to improve performance based on the needs of your application.
 
@@ -541,7 +541,7 @@ try {
 Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
 {{partial:admonition type="info" heading="Automatic exposure tracking"}}
-When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` will automatically track an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
+When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` tracks an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
 {{/partial:admonition}}
 
 ```kotlin
@@ -551,9 +551,9 @@ fun variant(key: String, fallback: Variant? = null): Variant
 | Parameter | Requirement | Description |
 | --- | --- | --- |
 | `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) to access the variant for. |
-| `fallback` | optional | The value to return if no variant was found for the given `flagKey`. |
+| `fallback` | optional | The value to return if the SDK found no variant for the given `flagKey`. |
 
-When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.
+When determining which variant a user has been bucketed into, compare the variant `value` to a well-known string.
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -579,9 +579,9 @@ if (variant.value == "on") {
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading="Access the variant's payload"}}
-A variant may also be configured with a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
+A variant may also include a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
-The `payload` on Android is of type `Object` (`Any?`) meaning you will need to cast the payload to the expected type. JSON object and array types need to be cast as `org.json.JSONObject` and `org.json.JSONArray` respectively.
+The `payload` on Android is of type `Object` (`Any?`) meaning you must cast the payload to the expected type. Cast JSON object and array types as `org.json.JSONObject` and `org.json.JSONArray` respectively.
 
 For example, if the payload is `{"key":"value"}`:
 
@@ -735,7 +735,7 @@ Provider implementations enable a more streamlined developer experience by makin
 
 ### User provider
 
-The user provider is used by the SDK client to access the most up-to-date user information only when it's needed (for example, when [`fetch()`](#fetch) is called). This provider is optional, but helps if you have a user information store already set up in your application. This way, you don't need to manage two separate user info stores in parallel, which may result in a divergent user state if the application user store is updated and experiment isn't (or vice versa).
+The user provider is used by the SDK client to access the most up-to-date user information only when it's needed (for example, when the SDK calls [`fetch()`](#fetch)). This provider is optional, but helps if you have a user information store already set up in your application. This way, you don't need to manage two separate user info stores in parallel, which may result in a divergent user state if the application updates the user store and experiment isn't (or vice versa).
 
 ```kotlin title="ExperimentUserProvider"
 interface ExperimentUserProvider {
@@ -775,7 +775,7 @@ interface ExposureTrackingProvider {
 }
 ```
 
-The implementation of `track()` should track an event of type `$exposure` (a.k.a name) with two event properties, `flag_key` and `variant`, corresponding to the two fields on the `Exposure` object argument. Finally, the event tracked must eventually end up in Amplitude Analytics for the same project that the [deployment] used to [initialize](#initialize) the SDK client lives within, and for the same user that variants were [fetched](#fetch) for.
+The implementation of `track()` should track an event of type `$exposure` (a.k.a name) with two event properties, `flag_key` and `variant`, corresponding to the two fields on the `Exposure` object argument. Finally, the event tracked must eventually end up in Amplitude Analytics for the same project that the [deployment] used to [initialize](#initialize) the SDK client lives within, and for the same user that the SDK [fetched](#fetch) variants for.
 
 To use your custom user provider, set the `exposureTrackingProvider` [configuration](#configuration) option with an instance of your custom implementation on SDK initialization.
 
@@ -801,11 +801,11 @@ val experiment = Experiment.initialize(context, "<DEPLOYMENT_KEY>", config)
 
 ## Bootstrapping
 
-You may want to bootstrap the experiment client with an initial set of flags or variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation) or integration testing on specific variants.
+You may want to bootstrap the experiment client with an initial set of flags or variants when you get variants from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation) or integration testing on specific variants.
 
 ### Bootstrapping variants
 
-To bootstrap the client with a predefined set of variants, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
+To bootstrap the client with a predefined set of variants, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any fetched & stored variants from before for the same flags.
 
 ```swift
 let config = ExperimentConfigBuilder()
