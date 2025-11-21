@@ -51,6 +51,10 @@ Use admonitions to highlight important information:
 - `{{partial:admonition type="note" title="Descriptive title"}}` for helpful information or clarifications  
 - `{{partial:admonition type="info" title="Descriptive title"}}` for general information or context
 
+**SDK version requirements**: Always format SDK version requirements or minimum version information as admonitions rather than plain text. Use `type="note"` to make version requirements more visible and emphasize their importance to users.
+- **Bad**: Plain text like "Requires Browser SDK 2.27.0 or higher."
+- **Good**: `{{partial:admonition type="note" heading=""}}Requires Browser SDK 2.27.0 or higher.{{/partial:admonition}}`
+
 ### Linking to Source Code
 When documenting constants, default values, or long lists that are defined in source code:
 - **Prefer linking to the source code** over duplicating long lists inline
