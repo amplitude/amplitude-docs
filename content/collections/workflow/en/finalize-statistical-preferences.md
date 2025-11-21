@@ -15,6 +15,14 @@ The final step in creating your experiment is to specify any advanced settings y
 * **Stats Preferences**: Statistical settings for experiment analysis.
 * **Bucketing options**: Further settings related to bucketing and targeting your audience.
 
+##### To set advanced settings
+
+1. In your experiment, scroll down to the Advanced section and click the **edit** icon.
+2. Set your preferences (review the definitions and explanations below).
+3. Click **Save and Close**.
+
+After you have saved your settings, you can [test your experiment](/docs/workflow/experiment-test). 
+
 ## Exposure settings
 
 Exposure settings are the configuration rules that define when and how a user is marked as exposed to an experiment or feature. These settings determine the logic that triggers an exposure event, such as whether a user is considered exposed the first time they qualify for an experiment, the first time they actively interact with a feature, or under more custom criteria.
