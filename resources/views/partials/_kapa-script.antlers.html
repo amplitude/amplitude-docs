@@ -36,11 +36,9 @@
   experiment.fetch();
 
   const variant = experiment.variant('hide-kapa');
-  console.log(variant.key);
 
-if (variant.key === 'on') {
-  return;
-} else {
+
+if (variant.key === 'off') {
   initKapa();
 }
 
