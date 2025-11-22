@@ -1,3 +1,4 @@
+
 <script>
   function getPageInfo() {
     return {
@@ -36,8 +37,13 @@
 
   const variant = experiment.variant('hide-kapa');
 
+
 if (variant.key === 'off') {
   initKapa();
+}
+
+
+
 
   // Kapa tracking
 
