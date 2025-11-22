@@ -1,3 +1,4 @@
+
 <script>
   function getPageInfo() {
     return {
@@ -31,7 +32,20 @@
     // });
   };
 
+  const experiment = Experiment.initialize('client-XOcXndcc5WjxS8u21359W7HZvkPMWOuS');
+  experiment.fetch();
+
+  const variant = experiment.variant('hide-kapa');
+  console.log(variant.key);
+
+if (variant.key === 'on') {
+  return;
+} else {
   initKapa();
+}
+
+
+
 
   // Kapa tracking
 
