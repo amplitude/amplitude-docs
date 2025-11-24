@@ -189,13 +189,16 @@ Fetches variants for a [user](/docs/feature-experiment/data-model#users) and ret
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
-fun fetch(user: ExperimentUser): CompletableFuture<Map<String, Variant>>
+fun fetch(user: ExperimentUser, fetchOptions: FetchOptions? = null): CompletableFuture<Map<String, Variant>>
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
 @Nonnull
 public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser user);
+
+@Nonnull
+public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser user, @Nullable FetchOptions fetchOptions);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -203,6 +206,15 @@ public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser use
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracksExposure` | To track or not track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
+| `tracksAssignment` | To track or not track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
+
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}

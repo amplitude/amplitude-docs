@@ -135,12 +135,21 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```js
-fetchV2(user: ExperimentUser): Promise<Variants>
+fetchV2(user: ExperimentUser, fetchOptions?: FetchOptions): Promise<Variants>
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `flagKeys` | Specific flags or experiments to evaluate. If undefined, null, or empty, all flags and experiments are evaluated. | `undefined` |
+| `tracksExposure` | To track or not track an exposure event for this fetch request. If `undefined`, uses the server's default behavior (does not track exposure). | `undefined` |
+| `tracksAssignment` | To track or not track an assignment event for this fetch request. If `undefined`, uses the server's default behavior (does track assignment). | `undefined` |
 
 ```js
 const user = {

@@ -65,7 +65,7 @@ user = AmplitudeExperiment::User.new(
     'premium' => true
   }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 
 # (3) Access a flag's variant
 variant = variants['YOUR-FLAG-KEY']
@@ -125,12 +125,20 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```ruby
-fetch(user: AmplitudeExperiment::User) : Variants
+fetch_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::FetchOptions = nil) : Variants
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | To track or not track an exposure event for this fetch request. If `nil`, uses the server's default behavior (does not track exposure). | `nil` |
+| `tracks_assignment` | To track or not track an assignment event for this fetch request. If `nil`, uses the server's default behavior (does track assignment). | `nil` |
 
 ```ruby
 user = AmplitudeExperiment::User.new(
@@ -140,7 +148,7 @@ user = AmplitudeExperiment::User.new(
         'premium' => true
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 After fetching variants for a user, you may to access the variant for a specific flag.
@@ -161,16 +169,17 @@ end
 The fetch method is synchronous. To fetch asynchronously, you can use `fetch_async` method
 
 ```ruby
-fetch_async(user: AmplitudeExperiment::User, &callback)
+fetch_async_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::FetchOptions = nil, &callback)
 ```
 
 | Parameter  | Requirement | Description                                                                                           |
 |------------|-------------|-------------------------------------------------------------------------------------------------------|
 | `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for.                         |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
 | `callback` | optional    | The callback to handle the variants. Callback takes two arguments: User object and returned Variants. |
 
 ```ruby
-experiment.fetch_async(user) do |_, variants|
+experiment.fetch_async_v2(user) do |_, variants|
   variant = variants['sdk-ci-test']
   unless variant.nil?
     if variant.value == 'on'
@@ -198,7 +207,7 @@ user = AmplitudeExperiment::User.new(
       'org name' => ['Amplitude']
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 To pass freeform group properties, see this example:
@@ -214,7 +223,7 @@ user = AmplitudeExperiment::User.new(
       'org name' => ['Amplitude']
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 {{/partial:collapse}}
