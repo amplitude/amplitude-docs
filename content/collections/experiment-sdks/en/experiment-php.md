@@ -102,14 +102,22 @@ Fetches variants for a [user](/docs/feature-experiment/data-model#users) and ret
 
 ```php
 <?php
-fetch(User $user, array $flagKeys = []): array<Variant>
+fetch(User $user, ?FetchOptions $fetchOptions = null): array<Variant>
 // An array of variants is returned on success, an empty array is returned on failure
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
-| `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `flagKeys` | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. | `[]` |
+| `tracksExposure` | To track or not track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
+| `tracksAssignment` | To track or not track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
 
 ```php
 <?php
