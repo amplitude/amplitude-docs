@@ -106,7 +106,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | `RetryBackoff.FetchRetryTimeout` | The request timeout for retrying variant fetches. | `500 * time.Millisecond` |
 
 ### Fetch
-   
+
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```go
