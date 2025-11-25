@@ -76,14 +76,14 @@ Beginning in May 2026, Snowflake is removing support for single-factor password 
     {{/partial:admonition}}
 
     {{partial:admonition type="warning" heading=""}}
-    If you use password-based authentication, your password is case-sensitive.
+    If you use password-based authentication, note that your password is case-sensitive.
     {{/partial:admonition}}
 
     If you want to use password authentication, select the **Password** option and then enter your password in the **Password** field. **Key pair authentication (Recommended)**: If you want to use key pair authentication, select the **Key pair** option and then click **Generate Key**. 
     To use key pair authentication, provide the organization and account names in the format `ORGNAME-ACCOUNTNAME`.
 
     {{partial:admonition type="tip" heading=""}}
-    When using key pair authentication, you must use the format `ORGNAME-ACCOUNTNAME`. Without this specific format, Snowflake generates a `JWT token is invalid` error.
+    When using key pair authentication, you must use the format `ORGNAME-ACCOUNTNAME`. Without this specific format, Snowflake will generate a `JWT token is invalid` error.
     {{/partial:admonition}}
    
 
@@ -116,7 +116,9 @@ The effectiveness of these recommendations depends on the frequency with which y
 
 ## Snowflake export format
 
-### Event table schema
+### Event table
+
+#### Event table schema
 
 The **Event** table schema includes the following columns:
 <!--vale off -->
@@ -164,7 +166,7 @@ The **Event** table schema includes the following columns:
 
 <!-- vale on-->
 
-#### Table clustering
+#### Event table clustering
 
 The exported events table uses these clustering keys by default (in order):
 
@@ -175,7 +177,9 @@ The exported events table uses these clustering keys by default (in order):
 
 This optimizes query performance for time-based queries. You can modify the clustering keys to match your query patterns.
 
-### Merged User table schema
+### Merged User table
+
+#### Merged User table schema
 
 The Merged User table schema contains the following:  
 
@@ -186,6 +190,6 @@ The Merged User table schema contains the following:
 | `merge_server_time`                  | TIMESTAMP    | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id`                | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.                                         |
 
-#### Table clustering
+#### Merged User table clustering
 
 Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. You can modify the clustering keys to match your query patterns.
