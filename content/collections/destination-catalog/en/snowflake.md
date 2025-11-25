@@ -188,4 +188,4 @@ The Merged User table schema contains the following:
 
 #### Table clustering
 
-The merged IDs table is clustered by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. You can modify the clustering keys to match your query patterns.
+Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. You can modify the clustering keys to match your query patterns.
