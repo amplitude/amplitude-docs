@@ -44,7 +44,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Warehouse Destinations section, click **Snowflake Data Share**.
-3. Under *Access Data through Snowflake Data Share*, enter the following information:
+3. Under *Access Data via Snowflake Data Share*, enter the following information:
       - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `http://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
       - **Org Name**: This is the name of your Snowflake organization.
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
@@ -158,3 +158,6 @@ The Merged User table schema contains the following:
 - `merged_amplitude_id`
 
 For more information,  see the [Merged User table schema](/docs/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.
+#### Table clustering
+
+The merged IDs table is clustered by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. For custom clustering to optimize different query patterns, use Direct Load export instead, which gives you full ownership and control over the table.
