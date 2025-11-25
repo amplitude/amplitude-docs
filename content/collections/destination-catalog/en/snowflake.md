@@ -76,14 +76,14 @@ Beginning in May 2026, Snowflake is removing support for single-factor password 
     {{/partial:admonition}}
 
     {{partial:admonition type="warning" heading=""}}
-    If you use password-based authentication, note that your password is case-sensitive.
+    If you use password-based authentication, your password is case-sensitive.
     {{/partial:admonition}}
 
     If you want to use password authentication, select the **Password** option and then enter your password in the **Password** field. **Key pair authentication (Recommended)**: If you want to use key pair authentication, select the **Key pair** option and then click **Generate Key**. 
     To use key pair authentication, provide the organization and account names in the format `ORGNAME-ACCOUNTNAME`.
 
     {{partial:admonition type="tip" heading=""}}
-    When using key pair authentication, you must use the format `ORGNAME-ACCOUNTNAME`. Without this specific format, Snowflake will generate a `JWT token is invalid` error.
+    When using key pair authentication, you must use the format `ORGNAME-ACCOUNTNAME`. Without this specific format, Snowflake generates a `JWT token is invalid` error.
     {{/partial:admonition}}
    
 
