@@ -166,7 +166,7 @@ The **Event** table schema includes the following columns:
 
 #### Table clustering
 
-The exported events table is clustered by default with these keys in order:
+The exported events table uses these clustering keys by default (in order):
 
 1. `TO_DATE(EVENT_TIME)`
 2. `TO_DATE(SERVER_UPLOAD_TIME)`
