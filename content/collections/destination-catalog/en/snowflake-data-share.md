@@ -148,7 +148,7 @@ The exported events table uses the following clustering keys (in order):
 3. `EVENT_TYPE`
 4. `AMPLITUDE_ID`
 
-This clustering optimizes query performance for time-based queries. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. If you need custom clustering for different query patterns, use Direct Load export instead for full table ownership and control.
+This clustering optimizes query performance for time-based queries. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. If you need custom clustering for different query patterns, use [Snowflake Export](https://amplitude.com/docs/data/destination-catalog/snowflake) instead for full table ownership and control.
 
 ### Merged User table
 
