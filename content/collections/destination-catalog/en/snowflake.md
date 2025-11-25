@@ -185,3 +185,7 @@ The Merged User table schema contains the following:
 | `merge_event_time`                   | TIMESTAMP    | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.             |
 | `merge_server_time`                  | TIMESTAMP    | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id`                | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.                                         |
+
+#### Table clustering
+
+The merged IDs table is clustered by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. You can modify the clustering keys to match your query patterns.
