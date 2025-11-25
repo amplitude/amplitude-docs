@@ -164,6 +164,17 @@ The **Event** table schema includes the following columns:
 
 <!-- vale on-->
 
+#### Table clustering
+
+The exported events table is clustered by default with these keys in order:
+
+1. `TO_DATE(EVENT_TIME)`
+2. `TO_DATE(SERVER_UPLOAD_TIME)`
+3. `EVENT_TYPE`
+4. `AMPLITUDE_ID`
+
+This optimizes query performance for time-based queries. You can modify the clustering keys to match your query patterns.
+
 ### Merged User table schema
 
 The Merged User table schema contains the following:  
