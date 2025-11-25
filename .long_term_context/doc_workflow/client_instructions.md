@@ -119,15 +119,17 @@ When a PR fails the Vale CI check, you need to fix all errors before the PR can 
 - **Errors block CI, warnings don't**: Focus on fixing all errors (red). Warnings (yellow) are informational but won't block the PR.
 - **Vale runs on entire files**: When you edit a file, Vale checks the whole file, not just your changes. You're responsible for fixing all errors, including pre-existing ones.
 - **Run Vale locally**: `vale --config=.vale/rules.ini <filepath>` to see errors before pushing.
-- **IMPORTANT - Vale configuration file required**: Every branch must include a `.vale.ini` file at the repository root. The Vale CI check will fail without this file. Copy the standard configuration:
+- **IMPORTANT - Vale configuration file required**: Every branch must include a `.vale.ini` file at the repository root. The Vale CI check will fail without this file (exit code 2: config not found). The file should already exist on main - ensure it's not accidentally deleted. If missing, copy the standard configuration:
   ```
-  StylesPath = .github/styles
+  StylesPath = ".vale/styles"
   MinAlertLevel = warning
 
   [*.md]
+  format = markdown
   BasedOnStyles = Amplitude
+  TokenIgnores = \{\{[\s\S]*?\}\}
   ```
-  This file points Vale to the correct styles directory. Never modify the styles themselves in `.github/styles/` or `.vale/` directories.
+  This file points Vale to the correct styles directory (`.vale/styles`). Never modify the styles themselves in the `.vale/` directory.
 
 **Common Vale rules and fixes**:
 - **Amplitude.Latin**: Replace Latin phrases with clearer English
