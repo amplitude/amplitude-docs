@@ -139,7 +139,7 @@ For more information, see the [Event Table Schema](/docs/data/destination-catalo
 
 #### Table clustering
 
-The exported events table is clustered with the following keys (in order):
+The exported events table uses the following clustering keys (in order):
 
 1. `TO_DATE(EVENT_TIME)`
 2. `TO_DATE(SERVER_UPLOAD_TIME)`
