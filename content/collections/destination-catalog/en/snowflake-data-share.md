@@ -44,7 +44,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Warehouse Destinations section, click **Snowflake Data Share**.
-3. Under *Access Data using Snowflake Data Share*, enter the following information:
+3. Under *Access Data via Snowflake Data Share*, enter the following information:
       - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `http://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
       - **Org Name**: This is the name of your Snowflake organization.
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
@@ -78,7 +78,9 @@ To remove the Amplitude data set made available through the Data Share,  reach o
 | `EVENTS_{PROJECT_ID}`                     | Events Table     |
 | `MERGE_IDS_{PROJECT_ID}`                  | Merge User Table |
 
-### Event table schema
+### Event table
+
+#### Event table schema
 
 The **Event** table schema includes the following columns:
 
@@ -137,7 +139,7 @@ The **Event** table schema includes the following columns:
 
 For more information, see the [Event Table Schema](/docs/data/destination-catalog/snowflake#event-table-schema) section of the Snowflake Export documentation.
 
-#### Table clustering
+#### Event table clustering
 
 The exported events table uses the following clustering keys (in order):
 
@@ -148,7 +150,9 @@ The exported events table uses the following clustering keys (in order):
 
 This clustering optimizes query performance for time-based queries. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. If you need custom clustering for different query patterns, use Direct Load export instead for full table ownership and control.
 
-### Merged User table schema
+### Merged User table
+
+#### Merged User table schema
 
 The Merged User table schema contains the following:  
 
@@ -158,6 +162,6 @@ The Merged User table schema contains the following:
 - `merged_amplitude_id`
 
 For more information,  see the [Merged User table schema](/docs/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.
-#### Table clustering
+#### Merged User table clustering
 
 Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. For custom clustering to optimize different query patterns, use Direct Load export instead, which gives you full ownership and control over the table.
