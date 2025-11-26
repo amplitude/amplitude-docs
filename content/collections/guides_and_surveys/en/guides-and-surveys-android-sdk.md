@@ -18,13 +18,13 @@ The Guides and Surveys Android SDK requires:
 
 * Android API Level 24 (Android 7.0)+
 * Kotlin 1.8.22+
-* [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
+* [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Android-Kotlin 1.0+
+### Using Amplitude Analytics Android-Kotlin 1.0+
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
@@ -79,7 +79,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Android-Kotlin 1.0+
+### Not using Amplitude Analytics Android-Kotlin 1.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 Add the following dependencies to your application's `build.gradle.kts` file:
