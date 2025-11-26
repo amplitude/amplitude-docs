@@ -172,19 +172,11 @@ To add your application:
 
 1. Navigate to **Settings** > **Projects** in Amplitude.
 2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **iOS** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Bundle ID**: Your iOS bundle identifier (for example, `com.example.myapp`)
-7. Click **Save**.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **iOS** from the dropdown.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your iOS users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your bundle ID'}}
-Your iOS bundle identifier is defined in your Xcode project settings under **General** > **Identity** > **Bundle Identifier**.
-{{/partial:admonition}}
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your iOS app users.
 
 ## Screen tracking and element targeting
 Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
