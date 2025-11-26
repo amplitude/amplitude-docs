@@ -555,7 +555,7 @@ engagement.forwardEvent(event: Event): void
 
 
 ## Set user properties
-Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ property.propertyName }}` syntax.
 
 If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 
