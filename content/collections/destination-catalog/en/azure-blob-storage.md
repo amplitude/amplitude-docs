@@ -88,7 +88,7 @@ You can export these two different data types to separate containers, if you pre
 3. Complete the Azure Blob Storage container details in the *Azure Blob Storage Container Details* section. Click **Next**.
 4. Click **Next**. Amplitude attempts a test upload to check that the entered credentials work. If the upload is successful, click **Finish** to complete the Azure Blob Storage destination configuration and activation.
 
-When complete, Amplitude sends all future events/merged users to your Azure Blob Storage once per hour.
+When complete, Amplitude sends all future events/merged users to your Azure Blob Storage on a best-effort basis. Exports typically run hourly and contain one hour of data, but may run less frequently and contain multiple hours of data.
 
 ## Run a manual export
 
@@ -107,7 +107,7 @@ If the backfill date range overlaps with the date range of already exported data
 
 ### Raw event file and data format
 
-Amplitude exports data hourly as a zipped archive of JSON files, partitioned by the hour with one or more files per hour. Each file contains one event JSON object per line.
+Amplitude exports data as a zipped archive of JSON files, partitioned by the hour with one or more files per hour. Each file contains one event JSON object per line.
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example, `server_upload_time`):
 

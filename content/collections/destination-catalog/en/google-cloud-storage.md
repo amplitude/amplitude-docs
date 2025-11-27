@@ -59,7 +59,7 @@ You can export these two different data types to separate buckets. Complete the 
 3. After the account service key is uploaded, fill out the Google Cloud bucket details in the *Google Cloud Bucket Details* section.
 4. Click **Next**. Amplitude attempts a test upload to check that the entered credentials work. If the upload is successful, click **Finish** to complete the GCS destination configuration and activation.
 
-All future events/merged users are automatically sent to GCS. Amplitude exports files to your GCS account every hour.
+All future events/merged users are automatically sent to GCS. Amplitude exports files to your GCS account on a best-effort basis. Exports typically run hourly and contain one hour of data, but may run less frequently and contain multiple hours of data.
 
 ## Run a manual export
 
@@ -76,7 +76,7 @@ If the backfill range overlaps with the range of previously exported data, Ampli
 
 ### Raw event file and data format
 
-Data is exported hourly as zipped archive JSON files, and partitioned by the hour with one or multiple files per hour. Each file contains one event JSON object per line.
+Amplitude exports data as a zipped archive of JSON files, partitioned by the hour with one or more files per hour. Each file contains one event JSON object per line.
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example, `server_upload_time`):
 
@@ -143,7 +143,7 @@ Here is the exported data JSON object schema:
 
 ### Merged Amplitude IDs file and data format
 
-Data is exported hourly as zipped archive JSON files. Each file contains one merged Amplitude ID JSON object per line.
+Amplitude exports data as a zipped archive of JSON files. Each file contains one merged Amplitude ID JSON object per line.
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example `server_upload_time`):
 
