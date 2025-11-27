@@ -164,19 +164,11 @@ To add your application:
 
 1. Navigate to **Settings** > **Projects** in Amplitude.
 2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **Android** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Package name**: Your Android package identifier (for example, `com.example.myapp`)
-7. Click **Save**.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the dropdown.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your Android users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your package name'}}
-Your Android package name is defined in your `AndroidManifest.xml` file or in your app-level `build.gradle` file as the `applicationId`.
-{{/partial:admonition}}
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys toyour Android app users.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
