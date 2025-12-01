@@ -162,21 +162,13 @@ After installing the SDK, add your Android application to your Amplitude project
 
 To add your application:
 
-1. Navigate to **Settings** > **Projects** in Amplitude.
+1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **Android** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Package name**: Your Android package identifier (for example, `com.example.myapp`)
-7. Click **Save**.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the drop-down.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your Android users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your package name'}}
-Your Android package name is defined in your `AndroidManifest.xml` file or in your app-level `build.gradle` file as the `applicationId`.
-{{/partial:admonition}}
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
@@ -340,27 +332,16 @@ amplitudeEngagement.closeAll()
 
 ## Simulate Guides and Surveys for preview
 
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
-
-### Add your mobile app to project settings
-
-Before you can use preview mode, add your Android app to your project settings in Amplitude:
-
-1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
-2. Select your project.
-3. Click the **Guides and Surveys** tab.
-4. In the **App Management** section, click **Add App**.
-5. Enter your Android app's package name (for example, `com.example.myapp`).
-6. Click **Save**.
-
-After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
 ### Locate the mobile URL scheme
 
-After adding your app to project settings, locate the URL scheme:
-
-1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
-2. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ### Add the URL scheme in Android Studio
 
