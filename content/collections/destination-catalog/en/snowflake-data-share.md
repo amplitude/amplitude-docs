@@ -162,6 +162,7 @@ The Merged User table schema contains the following:
 - `merged_amplitude_id`
 
 For more information,  see the [Merged User table schema](/docs/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.
+
 #### Merged User table clustering
 
 Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. For custom clustering to optimize different query patterns, use [Snowflake Export](/docs/data/destination-catalog/snowflake) instead, which gives you full ownership and control over the table.
