@@ -126,7 +126,7 @@ After installing the SDK, add your React Native application to your Amplitude pr
 
 To add your application:
 
-1. Navigate to **Settings** > **Projects** in Amplitude.
+1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
 3. Navigate to the **Guides and Surveys** tab.
 4. In the **App Management** section, expand and click **+ Add App**.
@@ -168,9 +168,12 @@ If your app doesn't have deep linking enabled, follow the [React Native instruct
 
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
-
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ## Changelog
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
