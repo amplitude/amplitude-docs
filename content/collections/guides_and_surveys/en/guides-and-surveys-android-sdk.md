@@ -168,7 +168,7 @@ To add your application:
 4. In the **App Management** section, expand and click **+ Add App**.
 5. Select **Android** from the dropdown.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys toyour Android app users.
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
