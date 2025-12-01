@@ -54,12 +54,12 @@ The local evaluation Node.js SDK can run in edge worker/functions which support 
 
 ### Exposure and assignment tracking
 
-Local evaluation SDKs track evaluations differently on the client-side vs on the server-side.
+Local evaluation tracks assignment differently than [remote evaluation](/docs/feature-experiment/remote-evaluation), which automatically tracks exposure events. With local evaluation:
 
-- Client-side SDKs track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
-- Server-side SDKs track an [assignment event](/docs/feature-experiment/under-the-hood/event-tracking#automatic-assignment-tracking) (if configured to do so) when a user is evaluated.
+- **Client-side SDKs** automatically track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) when a variant is accessed from a client-side [Experiment SDK](/docs/sdks/experiment-sdks).
+- **Server-side SDKs** track an [assignment event](/docs/feature-experiment/under-the-hood/event-tracking#automatic-assignment-tracking) when a user is evaluated, if the SDK is configured to do so. Exposure tracking isn't automatic amd must be tracked separately, if needed.
 
-Server-side local evaluation experiments often set the Assignment event as a heuristic for Exposure.
+For server-side local evaluation experiments, use the assignment event as the exposure event in your experiment analysis.
 
 ### Performance
 
