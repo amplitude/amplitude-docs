@@ -166,7 +166,7 @@ To add your application:
 2. Select your project.
 3. Navigate to the **Guides and Surveys** tab.
 4. In the **App Management** section, expand and click **+ Add App**.
-5. Select **Android** from the dropdown.
+5. Select **Android** from the drop-down.
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
