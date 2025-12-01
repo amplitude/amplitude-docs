@@ -65,6 +65,10 @@ This communication relies on the browser's `window.postMessage` API to pass mess
 
 Sometimes, the guide or survey doesn't appear in preview. When this happens, and the instrumentation is correct, check the following:
 
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys setup and troubleshoot why guides or surveys aren't showing. The extension's Guides & Surveys tab shows SDK setup status, trigger conditions, and lets you test event-based triggers.
+{{/partial:admonition}}
+
 * That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
 * That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
 * If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
