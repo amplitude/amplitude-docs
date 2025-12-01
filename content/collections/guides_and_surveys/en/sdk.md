@@ -555,7 +555,7 @@ engagement.forwardEvent(event: Event): void
 
 
 ## Set user properties
-Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ property.propertyName }}` syntax.
 
 If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 
@@ -692,6 +692,10 @@ window.electronAPI.startEngagementDebug((data) => {
 ## Troubleshoot your installation
 
 If your Guides and Surveys instrumentation doesn't work, verify the following topics:
+
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys. The extension includes tools to verify SDK setup, troubleshoot why guides or surveys aren't showing, and test event-based triggers.
+{{/partial:admonition}}
 
 ### Verify Guides and Surveys is installed
 
