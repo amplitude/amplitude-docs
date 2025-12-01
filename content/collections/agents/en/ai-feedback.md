@@ -167,7 +167,7 @@ This lets you merge your existing users with users from supported AI Feedback so
 ##### To merge existing users
 
 1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that contains the user's email address. 
-2. From you system, send at least one event for each users that has that field populated. 
+2. From your system, send at least one event for each users that has that field populated. 
 
 After Amplitude receives that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
 
