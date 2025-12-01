@@ -78,7 +78,9 @@ To remove the Amplitude data set made available through the Data Share,  reach o
 | `EVENTS_{PROJECT_ID}`                     | Events Table     |
 | `MERGE_IDS_{PROJECT_ID}`                  | Merge User Table |
 
-### Event table schema
+### Event table
+
+#### Event table schema
 
 The **Event** table schema includes the following columns:
 
@@ -137,7 +139,20 @@ The **Event** table schema includes the following columns:
 
 For more information, see the [Event Table Schema](/docs/data/destination-catalog/snowflake#event-table-schema) section of the Snowflake Export documentation.
 
-### Merged User table schema
+#### Event table clustering
+
+The exported events table uses the following clustering keys (in order):
+
+1. `TO_DATE(EVENT_TIME)`
+2. `TO_DATE(SERVER_UPLOAD_TIME)`
+3. `EVENT_TYPE`
+4. `AMPLITUDE_ID`
+
+This clustering optimizes query performance for time-based queries. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. If you need custom clustering for different query patterns, use [Snowflake Export](/docs/data/destination-catalog/snowflake) instead for full table ownership and control.
+
+### Merged User table
+
+#### Merged User table schema
 
 The Merged User table schema contains the following:  
 
@@ -147,3 +162,7 @@ The Merged User table schema contains the following:
 - `merged_amplitude_id`
 
 For more information,  see the [Merged User table schema](/docs/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.
+
+#### Merged User table clustering
+
+Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. Data Share provides read-only access to an Amplitude-owned table, so you can't modify the clustering keys. For custom clustering to optimize different query patterns, use [Snowflake Export](/docs/data/destination-catalog/snowflake) instead, which gives you full ownership and control over the table.
