@@ -45,7 +45,7 @@ Before you can gain any insights from your customers, you must add at least one 
 
 For example, if your company generates discussions on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
 
-AI Feedback can ingest and generate insights from multiple sources at the same time.
+AI Feedback can ingest and generate insights from multiple sources at the same time. After the initial ingestion, feedback is pulled into AI Feedback once each day. 
 
 ##### To add a data source
 
