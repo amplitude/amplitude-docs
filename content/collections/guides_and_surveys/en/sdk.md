@@ -693,6 +693,10 @@ window.electronAPI.startEngagementDebug((data) => {
 
 If your Guides and Surveys instrumentation doesn't work, verify the following topics:
 
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys. The extension includes tools to verify SDK setup, troubleshoot why guides or surveys aren't showing, and test event-based triggers.
+{{/partial:admonition}}
+
 ### Verify Guides and Surveys is installed
 
 1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
