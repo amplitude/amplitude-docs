@@ -1,6 +1,8 @@
 import headingsAnchors from './heading-anchors'
 import codeCopy from './code-copy';
 import Prism from 'prismjs';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
@@ -18,7 +20,10 @@ import 'prismjs/components/prism-http';
 import 'prismjs/components/prism-ruby';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
 import 'prismjs/plugins/show-language/prism-show-language';     
-import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'; 
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
+
+// Expose tippy globally for inline scripts that may need it
+window.tippy = tippy; 
 
 
 
@@ -212,6 +217,7 @@ function addManualApiKeyButtonsWithRetry() {
 function addManualApiKeyButtons() {
     const codeBlocks = document.querySelectorAll('code[class*="language-"], code');
     let buttonsAdded = 0;
+    const storedApiKey = localStorage.getItem('amplitude_api_key');
     
     codeBlocks.forEach((codeBlock, index) => {
         const hasApiKey = codeBlock.textContent.includes('AMPLITUDE_API_KEY');
@@ -234,8 +240,6 @@ function addManualApiKeyButtons() {
             `;
             apiKeyButton.title = 'Set your Amplitude API Key';
             
-            // Styling is handled by CSS class
-            
             // Add click handler
             apiKeyButton.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -245,6 +249,35 @@ function addManualApiKeyButtons() {
             
             container.appendChild(apiKeyButton);
             buttonsAdded++;
+            
+            // Add Tippy tooltip only if no API key is stored
+            // Only add to the first matching button to avoid multiple tooltips
+            if (!storedApiKey && window.tippy && buttonsAdded === 1) {
+                const tooltipInstance = window.tippy(apiKeyButton, {
+                    content: 'Add your API key to personalize code samples',
+                    placement: 'top',
+                    theme: 'amplitude-api-key',
+                    trigger: 'mouseenter focus',
+                    hideOnClick: true,
+                });
+                apiKeyButton._tippyInstance = tooltipInstance;
+                
+                // Delay showing tooltip to allow DOM to fully render
+                setTimeout(() => {
+                    const rect = apiKeyButton.getBoundingClientRect();
+                    // Only show if button is visible and properly positioned
+                    if (tooltipInstance && !localStorage.getItem('amplitude_api_key') && rect.width > 0 && rect.top > 0) {
+                        tooltipInstance.show();
+                        
+                        // Auto-hide after 5 seconds
+                        setTimeout(() => {
+                            if (tooltipInstance.state && tooltipInstance.state.isVisible) {
+                                tooltipInstance.hide();
+                            }
+                        }, 5000);
+                    }
+                }, 1000);
+            }
         }
     });
     
@@ -324,6 +357,48 @@ function showApiKeyModal() {
 function updateAllCodeBlocks(apiKey) {
     // Find all code blocks that contain AMPLITUDE_API_KEY placeholder
     const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+    const isPlaceholder = !apiKey || apiKey === 'AMPLITUDE_API_KEY';
+    let tooltipAdded = false;
+    
+    // Handle tooltips on API key buttons based on whether a real API key is set
+    document.querySelectorAll('.api-key-manual-button').forEach(button => {
+        if (isPlaceholder) {
+            // Re-add tooltip only to first button if it doesn't exist (API key was cleared)
+            if (!button._tippyInstance && window.tippy && !tooltipAdded) {
+                const tooltipInstance = window.tippy(button, {
+                    content: 'Add your API key to personalize code samples',
+                    placement: 'top',
+                    theme: 'amplitude-api-key',
+                    trigger: 'mouseenter focus',
+                    hideOnClick: true,
+                });
+                button._tippyInstance = tooltipInstance;
+                tooltipAdded = true;
+                
+                // Delay showing tooltip to allow DOM to fully render
+                setTimeout(() => {
+                    const rect = button.getBoundingClientRect();
+                    // Only show if button is visible and properly positioned
+                    if (tooltipInstance && !localStorage.getItem('amplitude_api_key') && rect.width > 0 && rect.top > 0) {
+                        tooltipInstance.show();
+                        
+                        // Auto-hide after 5 seconds
+                        setTimeout(() => {
+                            if (tooltipInstance.state && tooltipInstance.state.isVisible) {
+                                tooltipInstance.hide();
+                            }
+                        }, 5000);
+                    }
+                }, 1000);
+            }
+        } else {
+            // Destroy tooltip if API key is set
+            if (button._tippyInstance) {
+                button._tippyInstance.destroy();
+                delete button._tippyInstance;
+            }
+        }
+    });
     
     codeBlocks.forEach(codeBlock => {
         const originalText = codeBlock.getAttribute('data-original-content') || codeBlock.textContent;
