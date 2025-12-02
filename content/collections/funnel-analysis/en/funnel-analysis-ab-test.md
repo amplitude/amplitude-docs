@@ -22,9 +22,6 @@ In Amplitude, A/B testing lets you compare the funnel conversion performance of 
 For statistical significance calculations with continuous metrics, use the [experiment results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper) or the [Experiment end-to-end product](/docs/feature-experiment/overview).
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 Amplitude, by default, uses the first segment added to the funnel analysis as the baseline, but you can change this in the *Baseline segment* drop-down menu.
 

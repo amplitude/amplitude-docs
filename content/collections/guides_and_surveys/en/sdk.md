@@ -396,10 +396,12 @@ If your Guides and Surveys instrumentation doesn't work, verify the following to
 
 ### Verify Guides and Surveys is installed
 
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys. The extension includes tools to verify SDK setup, troubleshoot why guides or surveys aren't showing, and test event-based triggers.
+{{/partial:admonition}}
+
 1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
-
 2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the plugin configuration.
-
 3. For additional debugging, enter `window.engagement._debugStatus()`. The output should look like:
 
 ```json
@@ -731,7 +733,6 @@ engagement.forwardEvent(event: Event): void
 | --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
-
 ### Register a callback
 
 Register a callback with the Guides and Surveys SDK. Set the Callback action on a guide or survey button to execute the callback.
@@ -781,7 +782,7 @@ After you configure the router with `setRouter()`, update the URL behavior setti
 {{/partial:admonition}}
 
 ### Set user properties
-Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ property.propertyName }}` syntax.
 
 If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 

@@ -13,10 +13,6 @@ updated_at: 1725398247
 ---
 With Amplitude's Lookup Table feature, you can import your own data and map it to ingested properties to create an enhanced set of event and user properties.
 
-### Feature availability
-
-This feature is available to users on **Growth** or **Enterprise** plans.
-
 ## Lookup table benefits
 
 * **Enrich data using ingested property values**. Say you've captured an event called `Purchased` with an event property named `SKU`. The `SKU` value itself doesn’t inherently hold a lot of meaning. But with your list of all the SKUs and their corresponding product names, you can use this feature to create a new property called `Product Name` and have it automatically populate based on that list.
