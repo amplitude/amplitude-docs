@@ -101,10 +101,10 @@ import com.amplitude.api.AmplitudeClient
 import com.amplitude.android.Amplitude 
 
 val client = Amplitude.getInstance() 
-  .initialize(getApplicationContext(), "YOUR_API_KEY")
+  .initialize(getApplicationContext(), "AMPLITUDE_API_KEY")
 val client = Amplitude( 
     Configuration(
-        apiKey = "YOUR_API_KEY",
+        apiKey = "AMPLITUDE_API_KEY",
         context = getApplicationContext()
     )
 )
@@ -117,9 +117,9 @@ import com.amplitude.api.AmplitudeClient;
 import com.amplitude.android.Amplitude; 
 
 AmplitudeClient client = Amplitude.getInstance() 
-  .initialize(getApplicationContext(), "YOUR_API_KEY");
+  .initialize(getApplicationContext(), "AMPLITUDE_API_KEY");
 Amplitude client =  new Amplitude(new Configuration( 
-    apiKey = "YOUR_API_KEY",
+    apiKey = "AMPLITUDE_API_KEY",
     context = getApplicationContext()
 ));
 ```

@@ -46,7 +46,7 @@ const config: SessionReplayConfig = {
     sampleRate: 1, // default 0
     autoStart: true, // default true
 };
-await init('YOUR_API_KEY').promise;
+await init('AMPLITUDE_API_KEY').promise;
 await add(new SessionReplayPlugin(config)).promise;
 ```
 
@@ -116,7 +116,7 @@ import { SessionReplayPlugin } from '@amplitude/plugin-session-replay-react-nati
 
 // ...
 
-await init('YOUR_API_KEY').promise;
+await init('AMPLITUDE_API_KEY').promise;
 const sessionReplayPlugin = new SessionReplayPlugin();
 await add(sessionReplayPlugin).promise;
 
@@ -139,7 +139,7 @@ const config: SessionReplayConfig = {
     sampleRate: 1,
     autoStart: false, // Don't start capturing automatically
 };
-await init('YOUR_API_KEY').promise;
+await init('AMPLITUDE_API_KEY').promise;
 const sessionReplayPlugin = new SessionReplayPlugin(config);
 await add(sessionReplayPlugin).promise;
 
@@ -161,7 +161,7 @@ const config: SessionReplayConfig = {
     sampleRate: 1, // default 0
     serverZone: "EU" // [tl! ~~]
 };
-await init('YOUR_API_KEY').promise;
+await init('AMPLITUDE_API_KEY').promise;
 await add(new SessionReplayPlugin(config)).promise;
 ```
 
@@ -178,7 +178,7 @@ const config: SessionReplayConfig = {
     enableRemoteConfig: true, // default true
     sampleRate: 1, // [tl! ~~]
 };
-await init('YOUR_API_KEY').promise;
+await init('AMPLITUDE_API_KEY').promise;
 await add(new SessionReplayPlugin(config)).promise;
 ```
 

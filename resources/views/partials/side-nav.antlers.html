@@ -21,7 +21,7 @@
           {{ integrations }}
             {
               "id": "{{ id }}",
-              "title": {{ title | sanitize | to_json }},
+              "title": {{ title | to_json }},
               "url": "{{ url }}",
               "is_current": {{ if current_uri == url }}true{{ else }}false{{ /if }}
             }{{ unless last }},{{ /unless }}
@@ -49,7 +49,7 @@
         {{ nav :handle="nav_title" }}
           {
             "id": "{{ id }}",
-            "title": {{ title | sanitize | to_json }},
+            "title": {{ title | to_json }},
             {{ if url }}"url": "{{ url }}",{{ /if }}
             {{ if entry }}"entry": "{{ entry }}",{{ /if }}
             {{ if is_current }}"is_current": true,{{ /if }}
@@ -59,7 +59,7 @@
                 {{ children }}
                   {
                     "id": "{{ id }}",
-                    "title": {{ title | sanitize | to_json }},
+                    "title": {{ title | to_json }},
                     {{ if url }}"url": "{{ url }}",{{ /if }}
                     {{ if entry }}"entry": "{{ entry }}",{{ /if }}
                     {{ if is_current }}"is_current": true,{{ /if }}
@@ -69,7 +69,7 @@
                         {{ children }}
                           {
                             "id": "{{ id }}",
-                            "title": {{ title | sanitize | to_json }},
+                            "title": {{ title | to_json }},
                             {{ if url }}"url": "{{ url }}",{{ /if }}
                             {{ if entry }}"entry": "{{ entry }}",{{ /if }}
                             {{ if is_current }}"is_current": true,{{ /if }}
@@ -79,7 +79,7 @@
                                 {{ children }}
                                   {
                                     "id": "{{ id }}",
-                                    "title": {{ title | sanitize | to_json }},
+                                    "title": {{ title | to_json }},
                                     {{ if url }}"url": "{{ url }}",{{ /if }}
                                     {{ if entry }}"entry": "{{ entry }}",{{ /if }}
                                     {{ if is_current }}"is_current": true,{{ /if }}

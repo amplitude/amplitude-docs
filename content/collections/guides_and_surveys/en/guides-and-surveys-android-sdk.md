@@ -47,7 +47,7 @@ import com.amplitude.android.engagement.AmplitudeInitOptions
 // Initialize the SDK
 val amplitudeEngagement = AmplitudeEngagement(
     context = applicationContext,
-    apiKey = "YOUR_API_KEY",
+    apiKey = "AMPLITUDE_API_KEY",
     options = AmplitudeInitOptions()
 )
 
@@ -103,7 +103,7 @@ import com.amplitude.android.engagement.AmplitudeInitOptions
 // Initialize the SDK
 val amplitudeEngagement = AmplitudeEngagement(
     context = applicationContext,
-    apiKey = "YOUR_API_KEY",
+    apiKey = "AMPLITUDE_API_KEY",
     options = AmplitudeInitOptions()
 )
 

@@ -42,7 +42,7 @@ Configure your application code.
 import { init, SessionReplayConfig, MaskLevel } from '@amplitude/session-replay-react-native';
 
 const config: SessionReplayConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'AMPLITUDE_API_KEY',
     deviceId: 'YOUR_DEVICE_ID',
     sessionId: Date.now(),
     sampleRate: 1, // default 0
@@ -81,7 +81,7 @@ Initialize the Session Replay SDK with your configuration.
 import { init, SessionReplayConfig } from '@amplitude/session-replay-react-native';
 
 const config: SessionReplayConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'AMPLITUDE_API_KEY',
     deviceId: 'YOUR_DEVICE_ID',
     sessionId: Date.now()
 };
@@ -246,7 +246,7 @@ Session Replay is available to Amplitude customers who use the EU data center. S
 import { init, SessionReplayConfig } from '@amplitude/session-replay-react-native';
 
 const config: SessionReplayConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'AMPLITUDE_API_KEY',
     deviceId: 'YOUR_DEVICE_ID',
     sessionId: Date.now(),
     serverZone: 'EU' // Set to EU for data residency
@@ -263,7 +263,7 @@ By default, Session Replay captures 0% of sessions for replay. Use the `sampleRa
 import { init, SessionReplayConfig } from '@amplitude/session-replay-react-native';
 
 const config: SessionReplayConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'AMPLITUDE_API_KEY',
     deviceId: 'YOUR_DEVICE_ID',
     sessionId: Date.now(),
     sampleRate: 0.1 // Capture 10% of sessions
@@ -291,7 +291,7 @@ To opt users out of session replay collection, set the `optOut` configuration op
 import { init, SessionReplayConfig } from '@amplitude/session-replay-react-native';
 
 const config: SessionReplayConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'AMPLITUDE_API_KEY',
     deviceId: 'YOUR_DEVICE_ID',
     sessionId: Date.now(),
     optOut: true // Opt out of session replay collection

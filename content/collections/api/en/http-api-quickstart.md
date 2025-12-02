@@ -16,7 +16,7 @@ Use this guide to get started with the Amplitude HTTP V2 API. For a more in-dept
 For EU data residency, configure the project inside Amplitude EU. Replace the standard endpoint `https://api2.amplitude.com/2/httpapi` with the EU residency endpoint `https://api.eu.amplitude.com/2/httpapi` in all examples to ensure proper data residency.
 {{/partial:admonition}}
 
-Choose your target platform to send a POST request to `https://api2.amplitude.com/2/httpapi` (or `https://api.eu.amplitude.com/2/httpapi` for EU residency). Replace `YOUR_API_KEY` with the [API KEY](/docs/apis/authentication) for your Amplitude project.
+Choose your target platform to send a POST request to `https://api2.amplitude.com/2/httpapi` (or `https://api.eu.amplitude.com/2/httpapi` for EU residency). Replace `AMPLITUDE_API_KEY` with the [API KEY](/docs/apis/authentication) for your Amplitude project.
 
 {{partial:tabs tabs="cURL, Wget, HTTP, JavaScript, NodeJS, Ruby, Python, Java, Go"}}
 {{partial:tab name="cURL"}}
@@ -25,7 +25,7 @@ curl -X POST https://api2.amplitude.com/2/httpapi \
     -H "Content-Type: application/json" \
     -H "Accept: */*" \
     -d "{
-        'api_key': 'YOUR_API_KEY',
+        'api_key': 'AMPLITUDE_API_KEY',
         'events': [{
         'user_id': '203201202',
         'device_id': 'C8F9E604-F01A-4BD9-95C6-8E5357DF265D',
@@ -40,7 +40,7 @@ wget --method=POST https://api2.amplitude.com/2/httpapi \
     --header="Content-Type: application/json" \
     --header="Accept: */*" \
     --body-data='{ 
-        "api_key": "YOUR_API_KEY",
+        "api_key": "AMPLITUDE_API_KEY",
         "events": [{
         "user_id": "203201202",
         "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
@@ -56,7 +56,7 @@ Host: api2.amplitude.com
 Content-Type: application/json
 Accept: */*
 Body: { 
-        "api_key": "YOUR_API_KEY",
+        "api_key": "AMPLITUDE_API_KEY",
         "events": [{
             "user_id": "203201202",
             "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
@@ -68,7 +68,7 @@ Body: {
 {{partial:tab name="JavaScript"}}
 ```js
 const payload = {
-    api_key: 'YOUR_API_KEY', // Replace with your Amplitude API key
+    api_key: 'AMPLITUDE_API_KEY', // Replace with your Amplitude API key
     events: [
         {
             'user_id': '203201202',
@@ -112,7 +112,7 @@ fetch('https://api2.amplitude.com/2/httpapi', {
         'Accept': '*/*'
     },
     body: JSON.stringify({
-        "api_key": "YOUR_API_KEY",
+        "api_key": "AMPLITUDE_API_KEY",
         "events": [{
             "user_id": "203201202",
             "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
@@ -138,7 +138,7 @@ headers = {
 }
 
 data = {
-"api_key": "YOUR_API_KEY",
+"api_key": "AMPLITUDE_API_KEY",
 "events": [{
     "user_id": "203201202",
     "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
@@ -172,7 +172,7 @@ headers = {
 }
 
 data = {
-    "api_key": "YOUR_API_KEY",
+    "api_key": "AMPLITUDE_API_KEY",
     "events": [{
         "user_id": "203201202",
         "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
@@ -201,7 +201,7 @@ import java.net.URL;
 
 public class AmplitudeEventsSender {
 
-    private final String API_KEY = "YOUR_API_KEY";
+    private final String API_KEY = "AMPLITUDE_API_KEY";
     private final String API_URL = "https://api2.amplitude.com/2/httpapi";
 
     public static void main(String[] args) throws Exception {
@@ -264,7 +264,7 @@ func main() {
 
     // Define the request body in JSON format
     requestBody := map[string]interface{}{
-        "api_key": "YOUR_API_KEY",
+        "api_key": "AMPLITUDE_API_KEY",
         "events": []interface{}{
             map[string]interface{}{
                 "user_id":    "203201202",

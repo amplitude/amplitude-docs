@@ -57,7 +57,7 @@ The Unified SDK provides a single initialization method that initializes all Amp
 ```typescript
 import { initAll } from '@amplitude/unified';
 
-initAll('YOUR_API_KEY');
+initAll('AMPLITUDE_API_KEY');
 ```
 
 ## Access SDK features
@@ -100,7 +100,7 @@ The Unified SDK supports configuration options for all Amplitude features. You c
 ```typescript
 import { initAll } from '@amplitude/unified';
 
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
   // Shared options for all SDKs (optional)
   serverZone: 'US', // or 'EU'
   instanceName: 'my-instance',

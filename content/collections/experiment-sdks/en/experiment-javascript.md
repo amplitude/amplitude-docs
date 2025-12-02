@@ -105,7 +105,7 @@ import { initAll, experiment } from '@amplitude/unified';
 
 // (1) Initialize the Unified SDK with your API key
 // Note: if deploymentKey is not provided, it will fall back to the api key
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
     experiment: {
         deploymentKey: 'DEPLOYMENT_KEY'
     }
@@ -211,7 +211,7 @@ const experiment = initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 import { initAll, experiment } from '@amplitude/unified';
 
 // Note: if deploymentKey is not provided, it will fall back to the api key
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
     experiment: {
         deploymentKey: 'DEPLOYMENT_KEY'
     }

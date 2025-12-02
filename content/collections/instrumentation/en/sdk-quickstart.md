@@ -1180,7 +1180,7 @@ sdk:
     init_instructions: |-
       ```csharp
       Amplitude amplitude = Amplitude.getInstance()
-      amplitude.init("YOUR_API_KEY");
+      amplitude.init("AMPLITUDE_API_KEY");
       ```
     send_data_instructions: |-
       ```csharp

@@ -100,7 +100,7 @@ amplitude.init(API_KEY);
 import { initAll } from '@amplitude/unified';
 
 // Initialize Unified SDK with Session Replay configuration
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
     sessionReplay: {
         sampleRate: "<number>"
     }

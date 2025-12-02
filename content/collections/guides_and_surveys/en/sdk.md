@@ -85,7 +85,7 @@ If you're using the [Amplitude Unified SDK](/docs/sdks/analytics/browser/browser
 ```ts
 import { initAll } from '@amplitude/unified';
 
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
     // Other Amplitude SDK options...
   engagement: {
         // Guides and Surveys options go here...
@@ -123,7 +123,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: s
 ##### Example: Basic initialization
 
 ```js
-engagement.init("YOUR_API_KEY", {
+engagement.init("AMPLITUDE_API_KEY", {
   serverZone: "US",
   logLevel: LogLevel.Warn
 });
@@ -134,7 +134,7 @@ engagement.init("YOUR_API_KEY", {
 For [proxy setups](/docs/guides-and-surveys/proxy), specify `serverUrl`, `cdnUrl`, and `mediaUrl`:
 
 ```js
-engagement.init("YOUR_API_KEY", {
+engagement.init("AMPLITUDE_API_KEY", {
   serverUrl: "https://your-proxy-domain.cloudfront.net",
   cdnUrl: "https://your-proxy-domain.cloudfront.net",
   mediaUrl: "https://your-proxy-domain.cloudfront.net",
@@ -150,7 +150,7 @@ When using a proxy, call `window.engagement.boot` to fully install Guides and Su
 For Content Security Policy (CSP) compliance, include a nonce value:
 
 ```js
-engagement.init("YOUR_API_KEY", {
+engagement.init("AMPLITUDE_API_KEY", {
   nonce: "YOUR_NONCE"
 });
 ```
@@ -364,7 +364,7 @@ style-src: https://*.amplitude.com;
 For environments with stricter CSP requirements that block inline styles, you can use the `nonce` parameter during initialization. This allows Guides and Surveys to execute necessary inline styles by including your CSP nonce value:
 
 ```js
-engagement.init("YOUR_API_KEY", {
+engagement.init("AMPLITUDE_API_KEY", {
   nonce: "YOUR_NONCE"
 });
 ```

@@ -115,7 +115,7 @@ import { initAll, sessionReplay } from '@amplitude/unified';
 // - Device ID and Session ID management
 // - Session ID changes
 // - Event property collection and tracking
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
     sessionReplay: {
         sampleRate: "<number>"
     }

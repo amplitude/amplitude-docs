@@ -58,12 +58,12 @@ You must initialize the SDK before you can instrument. The API key for your Ampl
 ```swift
 // Basic initialization with default configurations
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY"
+    apiKey: "AMPLITUDE_API_KEY"
 )
 
 // Advanced initialization with custom configurations
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     serverZone: .US,
     instanceName: "default_instance",
     analyticsConfig: AnalyticsConfig(),
@@ -76,14 +76,14 @@ let amplitude = Amplitude(
 {{partial:tab name="Obj-C"}}
 ```objc
 // Basic initialization with default configurations
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"];
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"];
 
 // Basic initialization with server zone
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY" 
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY" 
                                               serverZone:AMPServerZoneUS];
 
 // Advanced initialization with custom configurations
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                               serverZone:AMPServerZoneUS
                                            instanceName:@"default_instance"
                                                  analyticsConfig:[[AMPAnalyticsConfig alloc] init]
@@ -112,7 +112,7 @@ let analyticsConfig = AnalyticsConfig(
 )
 
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     analyticsConfig: analyticsConfig
 )
 ```
@@ -129,7 +129,7 @@ analyticsConfig.autocapture = AMPAutocaptureOptions.all;
 analyticsConfig.migrateLegacyData = YES;
 analyticsConfig.enableAutoCaptureRemoteConfig = YES;
 ]];
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                          analyticsConfig:analyticsConfig];
 ```
 {{/partial:tab}}
@@ -149,7 +149,7 @@ let experimentConfig = ExperimentPlugin.Config(
 )
 
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     experimentConfig: experimentConfig
 )
 ```
@@ -161,7 +161,7 @@ experimentConfig.serverUrl = @"https://api.lab.amplitude.com";
 experimentConfig.debug = YES;
 experimentConfig.fetchTimeoutMillis = 10000;
 
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                         experimentConfig:experimentConfig];
 ```
 {{/partial:tab}}
@@ -185,7 +185,7 @@ let sessionReplayConfig = SessionReplayPlugin.Config(
 )
 
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     sessionReplayConfig: sessionReplayConfig
 )
 #endif
@@ -198,7 +198,7 @@ AMPSessionReplayPluginConfig *sessionReplayConfig = [[AMPSessionReplayPluginConf
 sessionReplayConfig.sessionSampleRate = 100;
 sessionReplayConfig.scrollSampleRate = 50;
 
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                      sessionReplayConfig:sessionReplayConfig];
 #endif
 ```
@@ -429,7 +429,7 @@ let analyticsConfig = AnalyticsConfig(
 )
 
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     analyticsConfig: analyticsConfig,
     logger: ConsoleLogger(logLevel: LogLevelEnum.DEBUG.rawValue)
 )
@@ -440,7 +440,7 @@ let amplitude = Amplitude(
 AMPAnalyticsConfig *analyticsConfig = [[AMPAnalyticsConfig alloc] init];
 // Other configuration options...
 
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                          analyticsConfig:analyticsConfig
                                                   logger:^(NSInteger logLevel, NSString *logMessage) {
         NSLog(@"%@", logMessage);
@@ -491,14 +491,14 @@ If you use the individual Amplitude SDKs separately, follow these steps to migra
 ```swift
 // Analytics SDK
 let amplitude = Amplitude(configuration: Configuration(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     flushQueueSize: 30,
     flushIntervalMillis: 30000
 ))
 
 // Experiment SDK
 let experimentClient = Experiment.initialize(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     config: ExperimentConfig(
         serverUrl: "https://api.lab.amplitude.com"
     )
@@ -514,15 +514,15 @@ amplitude.add(plugin: sessionReplay)
 {{partial:tab name="Obj-C"}}
 ```objc
 // Analytics SDK
-AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"YOUR_API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"AMPLITUDE_API_KEY"];
 configuration.flushQueueSize = 30;
 configuration.flushIntervalMillis = 30000;
 Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 
 // Experiment SDK
-ExperimentConfig *experimentConfig = [ExperimentConfig initWithApiKey:@"YOUR_API_KEY"];
+ExperimentConfig *experimentConfig = [ExperimentConfig initWithApiKey:@"AMPLITUDE_API_KEY"];
 experimentConfig.serverUrl = @"https://api.lab.amplitude.com";
-ExperimentClient *experimentClient = [Experiment initializeWithApiKey:@"YOUR_API_KEY" config:experimentConfig];
+ExperimentClient *experimentClient = [Experiment initializeWithApiKey:@"AMPLITUDE_API_KEY" config:experimentConfig];
 
 // Session Replay SDK
 AMPSessionReplayPluginConfig *sessionReplayConfig = [[AMPSessionReplayPluginConfig alloc] init];
@@ -552,7 +552,7 @@ let sessionReplayConfig = SessionReplayPlugin.Config(
 )
 
 let amplitude = Amplitude(
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AMPLITUDE_API_KEY",
     analyticsConfig: analyticsConfig,
     experimentConfig: experimentConfig,
     sessionReplayConfig: sessionReplayConfig
@@ -571,7 +571,7 @@ experimentConfig.serverUrl = @"https://api.lab.amplitude.com";
 AMPSessionReplayPluginConfig *sessionReplayConfig = [[AMPSessionReplayPluginConfig alloc] init];
 sessionReplayConfig.sessionSampleRate = 100;
 
-Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"AMPLITUDE_API_KEY"
                                             serverZone:AMPServerZoneUS
                                           instanceName:@"default"
                                        analyticsConfig:analyticsConfig

@@ -54,7 +54,7 @@ If you want to disable the automatic page URL enrichment, set `autocapture.pageU
 ```typescript
 import * as amplitude from '@amplitude/analytics-browser';
 
-amplitude.init('YOUR_API_KEY', {
+amplitude.init('AMPLITUDE_API_KEY', {
   autocapture: {
     pageUrlEnrichment: false,
   },
@@ -166,7 +166,7 @@ const pageUrlEnrichment = pageUrlEnrichmentPlugin();
 amplitude.add(pageUrlEnrichment);
 
 // Initialize Amplitude
-amplitude.init('YOUR_API_KEY');
+amplitude.init('AMPLITUDE_API_KEY');
 
 // Track an event - it will automatically include page URL properties
 amplitude.track('Button Clicked', {

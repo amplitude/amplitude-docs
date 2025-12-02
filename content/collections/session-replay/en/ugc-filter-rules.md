@@ -27,7 +27,7 @@ UGC Filter Rules are configured as part of the `interactionConfig` when initiali
 ```javascript
 import { sessionReplay } from '@amplitude/session-replay-browser';
 
-sessionReplay.init('YOUR_API_KEY', {
+sessionReplay.init('AMPLITUDE_API_KEY', {
     // ...
     // Other Configs
     // ...
@@ -215,7 +215,7 @@ ugcFilterRules: [
 ```javascript
 import { sessionReplay } from '@amplitude/session-replay-browser';
 
-sessionReplay.init('YOUR_API_KEY', {
+sessionReplay.init('AMPLITUDE_API_KEY', {
   interactionConfig: {
     enabled: true,
     ugcFilterRules: [

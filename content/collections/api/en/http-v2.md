@@ -1508,7 +1508,7 @@ This example uploads a 'watch_tutorial' event with a few properties and user pro
 curl --location --request POST 'https://api2.amplitude.com/2/httpapi' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "api_key": "YOUR_API_KEY",
+    "api_key": "AMPLITUDE_API_KEY",
     "events": [
         {
             "user_id": "12345",
@@ -1532,7 +1532,7 @@ Content-Type: application/json
 Content-Length: 360
 
 {
-    "api_key": "YOUR_API_KEY",
+    "api_key": "AMPLITUDE_API_KEY",
     "events": [
         {
             "user_id": "12345",
@@ -1560,7 +1560,7 @@ This example uploads a 'watch_tutorial' event with many event properties and use
 curl --location --request POST 'https://api2.amplitude.com/2/httpapi' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "api_key": "YOUR_API_KEY",
+  "api_key": "AMPLITUDE_API_KEY",
   "events": [
     {
       "user_id": "12345@gmail.com",
@@ -1633,7 +1633,7 @@ Content-Type: application/json
 Content-Length: 1719
 
 {
-  "api_key": "YOUR_API_KEY",
+  "api_key": "AMPLITUDE_API_KEY",
   "events": [
     {
       "user_id": "datamonster@gmail.com",
@@ -1709,7 +1709,7 @@ This example uploads a 'watch_tutorial' event with many event properties and use
 curl --location --request POST 'https://api2.amplitude.com/2/httpapi' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "api_key": "YOUR_API_KEY",
+  "api_key": "AMPLITUDE_API_KEY",
   "options": {
     "min_id_length": 3
     },
@@ -1785,7 +1785,7 @@ Content-Type: application/json
 Content-Length: 1731
 
 {
-  "api_key": "YOUR_API_KEY",
+  "api_key": "AMPLITUDE_API_KEY",
   "options": {
     "min_id_length": 3
     },

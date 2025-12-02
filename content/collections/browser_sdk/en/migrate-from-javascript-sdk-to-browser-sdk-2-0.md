@@ -637,7 +637,7 @@ window.addEventListener('pagehide', () => {
 `amplitude-js` passes one `init` callback function for executing any function after initialization and two separate callback functions for success and error network requests. With `@amplitude/analytics-browser@2+` supporting promises (and async/await), the asynchronous methods like `init()`, `track()`, `identify()`, `groupIdentify()` return a custom promise interface.
 
 ```javascript
-const initResult = await amplitude.init("YOUR_API_KEY").promise
+const initResult = await amplitude.init("AMPLITUDE_API_KEY").promise
 if (initResult.code === 200) {
   // success logic
 } else {
