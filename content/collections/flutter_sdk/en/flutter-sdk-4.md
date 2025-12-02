@@ -172,6 +172,7 @@ class YourClass {
 | `userId`                   | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option.                                                                                                                                    | `null`        |
 | `transport`                | `String`. Sets request API to use by name. Options include `fetch` for `fetch`, `xhr` for `XMLHTTPRequest`, or `beacon` for `navigator.sendBeacon`.                                                                                                                                         | `fetch`       |
 | `fetchRemoteConfig`        | `bool`. Whether the SDK fetches remote configuration. Review [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information. The default depends on the Browser SDK version used. For Browser SDK 2.16.1+, the default is `true`. | `false` (for Browser SDK < 2.16.1)<br/>`true` (for Browser SDK >= 2.16.1) |
+| `autocapture`              | `Autocapture`. Configures autocapture behavior for sessions, page views, and marketing attribution. Use `AutocaptureDisabled()`, `AutocaptureEnabled()`, or `AutocaptureOptions()` for granular control. See [Autocapture](#autocapture) for more information.                              | `AutocaptureOptions()` (all features enabled) |
 
 
 ### Configure batching behavior
@@ -347,6 +348,132 @@ Amplitude(
 ```
 
 After enabling this setting, Amplitude tracks the `[Amplitude] Deep Link Opened` event with the URL and referrer information.
+
+## Autocapture
+
+{{partial:admonition type="note" heading=""}}
+Autocapture is available on Web only.
+{{/partial:admonition}}
+
+Autocapture automatically tracks user interactions and events without requiring manual instrumentation. The SDK supports the following autocapture features on Web:
+
+- **Sessions**: Automatically track session start and end events.
+- **Page views**: Automatically track page view events when the URL changes.
+- **Attribution**: Automatically attribution parameters from URL query parameters.
+
+### Enable autocapture
+
+By default, all autocapture features are enabled (sessions, page views, and attribution). You can also explicitly enable all features with `AutocaptureEnabled()`:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureEnabled(),
+  )
+);
+```
+
+### Disable autocapture
+
+To disable all autocapture features:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureDisabled(),
+  )
+);
+```
+
+### Configure autocapture
+
+Use `AutocaptureOptions` for granular control over autocapture features:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureOptions(
+      sessions: true,
+      pageViews: PageViewsOptions(
+        trackHistoryChanges: 'pathOnly',
+        eventType: '[Amplitude] Page Viewed',
+      ),
+      attribution: AttributionOptions(
+        excludeReferrers: ['example.com'],
+        initialEmptyValue: 'NONE',
+        resetSessionOnNewCampaign: true,
+      ),
+    ),
+  )
+);
+```
+
+#### Sessions
+
+Set `sessions` to `true` to track session start and end events automatically. Set to `false` to disable session tracking.
+
+```dart
+autocapture: AutocaptureOptions(
+  sessions: true,
+)
+```
+
+#### Page views
+
+Configure page view tracking with `PageViewsOptions`:
+
+| Option | Type | Description | Default |
+| --- | --- | --- | --- |
+| `trackHistoryChanges` | `String` | Track page views on navigation changes. Options: `'all'` (track all URL changes including fragments) or `'pathOnly'` (track only path changes). | `'all'` |
+| `eventType` | `String` | Custom event type for page view events. | `'[Amplitude] Page Viewed'` |
+
+```dart
+autocapture: AutocaptureOptions(
+  pageViews: PageViewsOptions(
+    trackHistoryChanges: 'pathOnly',
+    eventType: 'Page View',
+  ),
+)
+```
+
+To disable page view tracking, use `PageViewsDisabled()`:
+
+```dart
+autocapture: AutocaptureOptions(
+  pageViews: PageViewsDisabled(),
+)
+```
+
+#### Attribution
+
+Configure marketing attribution tracking with `AttributionOptions`:
+
+| Option | Type | Description | Default |
+| --- | --- | --- | --- |
+| `excludeReferrers` | `List<String>` | List of referrer domains to exclude from attribution tracking. | `null` |
+| `initialEmptyValue` | `String` | Value to represent undefined initial campaign parameters for first-touch attribution. | `'EMPTY'` |
+| `resetSessionOnNewCampaign` | `bool` | Start a new session when campaign parameters change. | `false` |
+
+```dart
+autocapture: AutocaptureOptions(
+  attribution: AttributionOptions(
+    excludeReferrers: ['example.com', 'internal.com'],
+    initialEmptyValue: 'NONE',
+    resetSessionOnNewCampaign: true,
+  ),
+)
+```
+
+To disable attribution tracking, use `AttributionDisabled()`:
+
+```dart
+autocapture: AutocaptureOptions(
+  attribution: AttributionDisabled(),
+)
+```
 
 ## User groups
 
