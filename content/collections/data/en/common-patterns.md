@@ -11,15 +11,15 @@ Amplitude fits into many different data stacks. Most customers use one of four p
 
 1. Amplitude as the primary analytics destination.
 
-2. Amplitude with a customer data platform such as Segment.
+2. Amplitude with a Customer Data Platform (CDP) such as Segment.
 
 3. Amplitude with a data warehouse such as Snowflake, BigQuery, Redshift, or Databricks.
 
 4. Amplitude with both a CDP and a data warehouse.
 
-Across all four, Amplitude’s web, mobile, and server SDKs give you a single way to collect events, power Session Replay, and then stream that same data to the rest of your stack through Event Stream and exports. Once your product is instrumented, you rarely need to change application code when you add new destinations.
+Across all four, Amplitude's web, mobile, and server SDKs give you a single way to collect events, power Session Replay, and then stream that same data to the rest of your stack through Event Stream and exports. After you instrument your product, you rarely need to change application code when you add new destinations.
 
-You can instrument Amplitude Session Replay in several ways. For the browser you can use the Session Replay plugin for the Amplitude Browser SDK, a standalone Session Replay SDK, Google Tag Manager, or a Segment integration. For iOS, Android, and React Native you can use plugins that sit on top of Amplitude's analytics SDKs, standalone Session Replay SDKs, or Segment based options.
+You can instrument Amplitude Session Replay in several ways. For the browser you can use the Session Replay plugin for the Amplitude Browser SDK, a standalone Session Replay SDK, Google Tag Manager, or a Segment integration. For iOS, Android, and React Native you can use plugins that sit on top of Amplitude's analytics SDKs, standalone Session Replay SDKs, or Segment-based options.
 
 Instrumenting Session Replay together with events gives you three main benefits:
 
@@ -39,11 +39,11 @@ In this setup, Amplitude and its SDKs are your main event collection, Session Re
 
 ### Data flow
 
-Your website, mobile apps, and backend services send behavioral events directly to Amplitude using Amplitude SDKs or HTTP APIs. The same web and mobile SDKs can capture Session Replay data for selected sessions. Amplitude stores and processes everything for product analytics, experimentation, journey analysis, cohorts, and session level insights. From there you can sync events, cohorts, and optionally selected replay links to downstream tools.
+Your website, mobile apps, and backend services send behavioral events directly to Amplitude using Amplitude SDKs or HTTP APIs. The same web and mobile SDKs can capture Session Replay data for selected sessions. Amplitude stores and processes everything for product analytics, experimentation, journey analysis, cohorts, and session-level insights. From there you can sync events, cohorts, and optionally selected replay links to downstream tools.
 
 ### Role of the SDKs and Session Replay
 
-Because events and replay are collected through Amplitude SDKs, you can later turn on Event Stream and forward those same events from Amplitude to other tools such as a warehouse, CDP, or marketing systems, without changing tracking in your application. Session Replay shares the same user and session identifiers as your events, so product teams can move from a funnel in Amplitude to a specific session and watch what happened at a critical step.
+Because Amplitude SDKs collect events and replay, you can later turn on Event Stream and forward those same events from Amplitude to other tools such as a warehouse, CDP, or marketing systems, without changing tracking in your application. Session Replay shares the same user and session identifiers as your events, so product teams can move from a funnel in Amplitude to a specific session and watch what happened at a critical step.
 
 ### When this works well
 
@@ -79,15 +79,15 @@ You can instrument Session Replay in four main ways. The last method is with a C
 
 4. Using [Segment](/docs/session-replay/session-replay-integration-with-segment).
 
-This lets you keep the CDP as the central event router while still getting session level visibility inside Amplitude.
+This lets you keep the CDP as the central event router while still getting session-level visibility inside Amplitude.
 
 ### Role of the SDKs and Session Replay
 
-Most customers either instrument events only through the CDP SDKs and use Amplitude’s SDKs specifically for Session Replay and any extra product only events, or combine CDP and Amplitude SDKs more broadly for redundancy and lower latency. In all cases Amplitude can still use Event Stream to forward its copy of events to other destinations.
+Most customers either instrument events only through the CDP SDKs and use Amplitude's SDKs specifically for Session Replay and any extra product-only events, or combine CDP and Amplitude SDKs more broadly for redundancy and lower latency. In all cases Amplitude can still use Event Stream to forward its copy of events to other destinations.
 
 ### When this works well
 
-This pattern is common when a CDP is already deployed, owns identity resolution and audience syncs, and marketing teams are heavily invested in it. Amplitude becomes the main product analytics and Session Replay surface while the CDP remains the system through which events pass.
+This pattern is common when you've already deployed a CDP that owns identity resolution and audience syncs, and marketing teams are heavily invested in it. Amplitude becomes the main product analytics and Session Replay surface while the CDP remains the system through which events pass.
 
 ### Key benefits
 
@@ -95,7 +95,7 @@ This pattern is common when a CDP is already deployed, owns identity resolution 
 
 * Amplitude benefits from the CDP's unified identities while adding deep product analytics and replay.
 
-* Ability to use Session Replay to explain patterns seen in CDP driven campaigns and journeys.
+* Ability to use Session Replay to explain patterns seen in CDP-driven campaigns and journeys.
 
 * Option to stream Amplitude's enriched event data into other systems.
 
@@ -111,11 +111,11 @@ Your applications send events and Session Replay data into Amplitude using Ampli
 
 ### Role of the SDKs and Session Replay
 
-Amplitude SDKs define a behavioral schema that is optimized for product analytics and replay. Once instrumented, you don't need separate tracking for warehouse use. Events flow first into Amplitude, and then into the warehouse through exports or Event Stream. Session identifiers and user identifiers stay consistent across analytics in Amplitude and tables in the warehouse, so data teams can link warehouse based models such as churn or lifetime value back to specific replays for qualitative investigation.
+Amplitude SDKs define a behavioral schema optimized for product analytics and replay. After you instrument, you don't need separate tracking for warehouse use. Events flow first into Amplitude, and then into the warehouse through exports or Event Stream. Session identifiers and user identifiers stay consistent across analytics in Amplitude and tables in the warehouse, so data teams can link warehouse-based models such as churn or lifetime value back to specific replays for qualitative investigation.
 
 ### When this works well
 
-This pattern fits organizations where product teams rely on Amplitude for self service analytics and debugging, while the data team uses the warehouse for cross domain reporting and modeling.
+This pattern fits organizations where product teams rely on Amplitude for self-service analytics and debugging, while the data team uses the warehouse for cross-domain reporting and modeling.
 
 ### Key benefits
 
@@ -125,31 +125,31 @@ This pattern fits organizations where product teams rely on Amplitude for self s
 
 * Data teams can join behavioral events with other domains while still using Amplitude for quick analysis and Session Replay.
 
-* Replays give valuable context when investigating anomalies or model outputs discovered in warehouse based dashboards.
+* Replays give valuable context when investigating anomalies or model outputs discovered in warehouse-based dashboards.
 
 ## Amplitude with CDP and Data Warehouse
 
 ![](statamic://asset::help_center_conversions::data/amplitude-cdp-warehouse.png)
 
-This pattern combines all three components. The CDP (or a CDI like Snowplow) is the real time collection and routing layer, the warehouse is the long term storage and modeling layer, and Amplitude is the product analytics, Session Replay, and activation layer.
+This pattern combines all three components. The CDP (or a CDI like Snowplow) is the real-time collection and routing layer, the warehouse is the long-term storage and modeling layer, and Amplitude is the product analytics, Session Replay, and activation layer.
 
 ### Data flow
 
-Your applications send events into the CDP using its SDKs. The CDP forwards those events to Amplitude and to the warehouse. Amplitude instruments Session Replay through its own SDKs, plugins, or Segment based integrations, and attaches replays to the sessions that originate from CDP events. The warehouse receives event data from the CDP and or Amplitude, and data teams build models and aggregate tables there. You can send modeled attributes and scores back into Amplitude or the CDP with reverse ETL.
+Your applications send events into the CDP using its SDKs. The CDP forwards those events to Amplitude and to the warehouse. Amplitude instruments Session Replay through its own SDKs, plugins, or Segment-based integrations, and attaches replays to the sessions that originate from CDP events. The warehouse receives event data from the CDP or Amplitude, and data teams build models and aggregate tables there. You can send modeled attributes and scores back into Amplitude or the CDP with reverse ETL.
 
 ### Role of the SDKs and Session Replay
 
-CDP SDKs typically provide the core event stream. Amplitude SDKs focus on Session Replay and any Amplitude specific instrumentation that you choose to add. Amplitude can still stream enriched events and replay metadata to the warehouse or other tools. This gives you multiple controlled paths for data without duplicating tracking logic in code.
+CDP SDKs typically provide the core event stream. Amplitude SDKs focus on Session Replay and any Amplitude-specific instrumentation that you choose to add. Amplitude can still stream enriched events and replay metadata to the warehouse or other tools. This gives you multiple controlled paths for data without duplicating tracking logic in code.
 
 ### When this works well
 
-This pattern fits data mature organizations where:
+This pattern fits data-mature organizations where:
 
 * The CDP owns event collection, identity resolution, and routing.
 
 * The warehouse owns storage, modeling, and governance.
 
-* Amplitude owns behavioral analytics, experimentation, Session Replay, and product led activation.
+* Amplitude owns behavioral analytics, experimentation, Session Replay, and product-led activation.
 
 ### Key benefits
 
@@ -157,7 +157,7 @@ This pattern fits data mature organizations where:
 
 * Strong governance for schemas and identities with clear ownership in CDP and warehouse.
 
-* Session Replay directly tied to CDP based journeys and warehouse based models to explain the why behind metrics.
+* Session Replay directly tied to CDP-based journeys and warehouse-based models to explain the why behind metrics.
 
 * Ability to stream Amplitude events and replay context to many downstream tools without new SDK work in the product.
 
@@ -171,6 +171,6 @@ Many customers evolve through these patterns over time.
 
 3. Add a warehouse to centralize storage, join across systems, and support advanced modeling and business intelligence.
 
-4. Connect all three so that collection, analytics, replay, and storage are each handled by the system best suited for that job.
+4. Connect all three so that the system best suited for each job handles collection, analytics, replay, and storage.
 
 Across all four scenarios, Amplitude’s instrumentation layer for events and Session Replay is reusable and extensible. Once data flows into Amplitude, you can use Event Stream and exports to route events and replay context across your stack, so your architecture can evolve while your tracking plan remains stable.
