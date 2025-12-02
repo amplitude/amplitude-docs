@@ -12,11 +12,14 @@ As an early-stage startup, you need answers fast. Which features drive retention
 
 ## Speed run your installation: Browser SDK and Autocapture
 
-Quickly get data flowing into Amplitude with Browser SDK and Autocapture.
+Quickly get data flowing into Amplitude with Browser SDK and [Autocapture](/docs/data/autocapture).
 
 ### Install Amplitude
 
-When you create your Amplitude account, you'll receive a pre-configured snippet. Simply paste it inside the `<head>` tag of every page you want to track:
+When you create your Amplitude account, Amplitude provides two ways to install:
+
+- A prompt which you can pass to your agentic AI tool of choice.
+- A pre-configured snippet, which you can add inside the `<head>` tag of every page you want to track.
 
 {{partial:admonition type="tip" heading="Get your data flowing!"}}
 {{partial:partials/quickstart}}
@@ -35,49 +38,12 @@ With `autocapture: true`, Amplitude automatically tracks:
 
 ### Add Session Replay
 
-The snippet above includes Session Replay at 100% sampling (`sampleRate: 1`). This lets you watch exactly what users experience and helps you debug issues and understand user behavior. Lower the sample rate in production to control volume and cost.
+The snippet above includes [Session Replay](/docs/session-replay/session-replay-plugin) at 100% sampling (`sampleRate: 1`). This lets you watch exactly what users experience and helps you debug issues and understand user behavior. Lower the sample rate in production to control volume and cost.
 
 ## Benefits of this approach
 
-- **Time to insights: Minutes, not months** – Start analyzing user behavior the same day  
-- **No engineering bottleneck** – Non-technical team members can define events using Visual Labeling
-- **Flexible foundation** – Add custom precision tracking later as needs emerge  
-- **Complete picture** – Autocapture + Session Replay shows what users do AND why  
-- **Cost-effective** – Only pay for what you use; scale as you grow
-
----
-
-## Startup vs. enterprise: Why your path is different
-
-| Aspect          | Startups (you)                 | Enterprises                                                                                                                                 |
-| ------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Speed           | Ship in minutes with autocapture   | Weeks of planning, tracking plans, reviews                           |
-| Governance      | Lightweight, one person manages    | Formal roles, approval workflows, compliance controls         |
-| Instrumentation | Autocapture first, precision later | Structured tracking plans with Ampli CLI and code generation           |
-| Team structure  | Founder/developer wears all hats   | Dedicated Project Lead, Data Governor, Instrumentation Lead              |
-| Configuration   | Minimal. Paste snippet and go       | Strict permissions, environment separation, integration setup. |
-
-
-## Things to consider before you begin
-
-### Define your north star metric
-
-What's the one thing that matters most right now? User signups? Feature adoption? Retention? Start with 1-3 key questions you need answered. Don't try to track everything.
-
-### User identification strategy
-- **Anonymous users:** Amplitude tracks them automatically through device ID.
-- **Logged-in users:** Assign a user ID only after authentication (signup/login).
-- **Best practice:** Use immutable IDs (not email addresses) and Amplitude connects pre- and post-login activity automatically.
-
-### Data privacy from day one
-- Only track what you need. Data minimization is both smart and compliant.
-- Use Amplitude's User Privacy API if you need to delete user data.
-- Separate dev/test and production environments to keep data clean.
-
-### Plan for growth (but don't over-engineer)
-- Use clear naming conventions early (for example, `Song Played`, `Checkout Completed`).
-- Document what you're tracking and why, even a simple spreadsheet helps.
-- Start with 20-50 events; you can always add more.
-
-### Leverage startup resources
-Apply for the [Amplitude Startup Scholarship](https://amplitude.com/startups) to access advanced features free during your growth phase.
+- **Time to insights: Minutes, not months**: Start analyzing user behavior the same day.
+- **No engineering bottleneck**: Non-technical team members can define events using Visual Labeling.
+- **Flexible foundation**: Add custom precision tracking later as needs emerge.
+- **Complete picture**: Autocapture + Session Replay shows what users do and why.
+- **Cost-effective**: Only pay for what you use; scale as you grow.

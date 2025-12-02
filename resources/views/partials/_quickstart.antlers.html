@@ -1,5 +1,5 @@
 <div class="quickstart-configurator">
-    <div class="bg-gray-100 p-4">
+    <div class="bg-gray-100 pb-2">
         <div class="font-semibold mb-3 text-gray-800">Configure your setup:</div>
         <div class="flex gap-6 flex-wrap">
             <label class="flex items-center gap-2 cursor-pointer">
@@ -27,11 +27,17 @@ pre:has(#quickstart-snippet) .api-key-manual-button {
 
 {{partial:tabs tabs="AI Prompt, Snippet"}}
 {{partial:tab name="AI Prompt"}}
-{{markdown}}Paste the prompt below into your terminal or AI tools like Copilot, Cursor, Replit or Bolt.{{/markdown}}
+{{markdown}}Paste the prompt below into your terminal or AI tools like Copilot, Cursor, Replit or Bolt.
+
+Click the Key icon to insert your Amplitude API key.
+{{/markdown}}
 <pre><code class="language-plaintext" id="quickstart-ai-prompt">__AI_PROMPT_PLACEHOLDER__</code></pre>
 {{/partial:tab}}
 {{partial:tab name="Snippet"}}
-{{markdown}}Paste this snippet into the `<head>`of your site to track engagement{{/markdown}}
+{{markdown}}Paste this snippet into the `<head>`of your site to track engagement.
+    
+Click the Key icon to insert your Amplitude API key.
+{{/markdown}}
 <pre><code class="language-html" id="quickstart-snippet">&lt;script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"&gt;&lt;/script&gt;&lt;script&gt;window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('AMPLITUDE_API_KEY', {"fetchRemoteConfig":true,"autocapture":{"attribution":true,"fileDownloads":true,"formInteractions":true,"pageViews":true,"sessions":true,"elementInteractions":true,"networkTracking":true,"webVitals":true,"frustrationInteractions":true}});&lt;/script&gt;</code></pre>
 {{/partial:tab}}
 {{/partial:tabs}}
