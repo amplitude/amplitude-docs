@@ -16,11 +16,7 @@ In Amplitude, the default level of reporting is the **individual user**, meaning
 
 The Amplitude Accounts add-on enables you to do exactly this, by giving you analytical capabilities at the **group** level.
 
-A group is an object that a set of users might belong to—such as a company of customers, a team of users, or a playlist with listeners. Analyzing at the group level helps you understand how specific accounts interact with your product, instead of just seeing the individual users in those companies.  
-
-### Feature availability
-
-The Accounts add-on is available to purchase on Plus, Growth, and Enterprise plans.
+A group is an object that a set of users might belong to—such as a company of customers, a team of users, or a playlist with listeners. Analyzing at the group level helps you understand how specific accounts interact with your product, instead of just seeing the individual users in those companies.  
 
 ## Before you begin
 

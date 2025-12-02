@@ -1,0 +1,62 @@
+{{markdown}}
+### Log Recording
+
+{{partial:admonition type="note" heading="Availability"}}
+{{markdown}}Log recording is available in Session Replay Android `1.13.0` and later.{{/markdown}}
+{{/partial:admonition}}
+
+Session Replay supports recording logs in Android applications. To enable log recording, send log messages through the `recordLog(level, message, timestamp)` API and configure the limits through `recordLogOptions` parameter while initializing Session Replay.
+
+```kotlin
+import com.amplitude.android.plugins.SessionReplayPlugin
+import com.amplitude.android.sessionreplay.config.RecordLogLevel
+import com.amplitude.android.sessionreplay.config.RecordLogOptions
+
+val sessionReplayPlugin = SessionReplayPlugin(
+    recordLogOptions = RecordLogOptions(
+        logCountThreshold = 2000,
+        maxMessageLength = 4000
+    )
+)
+amplitude.add(sessionReplayPlugin)
+
+sessionReplayPlugin.recordLog(RecordLogLevel.Error, "This is an error log")
+
+// You can also create custom log levels
+sessionReplayPlugin.recordLog(RecordLogLevel("debug"), "This is a debug log")
+```
+
+Session Replay supports predefined log levels (`Error`, `Warn`, `Log`) and custom log levels. Create custom log levels by passing any string value to `RecordLogLevel(...)`.
+
+If you have implemented a log system, you can make single-point modifications to integrate log recording functionality. See the following examples for more information.
+
+#### Timber
+
+If you use `Timber`, you can integrate it with a custom tree.
+
+```kotlin
+import com.amplitude.android.plugins.SessionReplayPlugin
+import com.amplitude.android.sessionreplay.config.RecordLogLevel
+import timber.log.Timber
+
+class AmplitudeLogRecordTree(private val plugin: SessionReplayPlugin) : Timber.Tree() {
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        val recordLevel = when (priority) {
+            android.util.Log.ERROR -> RecordLogLevel.Error
+            android.util.Log.WARN -> RecordLogLevel.Warn
+            android.util.Log.INFO -> RecordLogLevel.Log
+            android.util.Log.DEBUG -> RecordLogLevel("debug")
+            android.util.Log.VERBOSE -> RecordLogLevel("verbose")
+            else -> return
+        }
+        plugin.recordLog(recordLevel, message)
+    }
+}
+
+val sessionReplayPlugin = SessionReplayPlugin()
+amplitude.add(sessionReplayPlugin)
+
+Timber.plant(AmplitudeLogRecordTree(sessionReplayPlugin))
+```
+
+{{/markdown}}

@@ -12,9 +12,9 @@ landing_blurb: 'Learn the basics of creating a cohort syncing integration.'
 This guide assumes that you've completed the prerequisites for building partner integrations listed in [Amplitude Integration Portal](/docs/partners/integration-portal)
 {{/partial:admonition}}
 
-This guide walks through the basics of creating a cohort sync integration with Amplitude. 
+This guide walks through the basics of creating a cohort sync integration with Amplitude.
 
-This doc uses a list-based integration in its examples. If you create a property-based cohort syn integration, some steps may be slightly different than you see here. 
+This doc uses a list-based integration in its examples. If you create a property-based cohort syn integration, some steps may be slightly different than you see here.
 
 ## Integration setup
 
@@ -29,7 +29,7 @@ The first step is to configure the integration tile that appears on the Amplitud
 
 ## Integration Name
 
-This determines what users will see in the catalog page. Note that the name must be globally unique to all other cohort sync integrations. 
+This determines what users will see in the catalog page. Note that the name must be globally unique to all other cohort sync integrations.
 
 ## Configuration
 
@@ -68,8 +68,10 @@ Amplitude recommends using an underscore "_" instead of a dash in the Header Val
 
 Map fields to specify how Amplitude fields connect to the fields in your system. The value of the mapping replaces `item_template` in the payloads.
 
+When you configure Mapping Fields in the Integration Portal, users of your integration can see a **Mappings** section in their Destination Settings. This section lets users select any Amplitude user property to map to a field in your destination system. This also allows for custom user identifiers.
+
 - **Mapping Field Display Name**: Amplitude recommends setting this as this as "Key," "Identifier," or "User ID Mapping."
-- **Amplitude Mapping Field**:  The field name in Amplitude. For example, `user_id_field_amplitude`.
+- **Amplitude Mapping Field**:  The field name in Amplitude. For example, `user_id_field_amplitude`.
 - **Field Type**: Either "String" or "Single Select."
 - **Display name**: This is fully customizable, so use something descriptive. For example, User ID or Email.
 - **Add New Mapping**: Add more mappings if required such as String, Single Select, Button Group
@@ -127,8 +129,8 @@ For any error response code that's "undefined" at the point of configuration (wi
 The add users API is called every time a cohort syncs from Amplitude to your app. This could be hourly or daily. This call calculates the difference in the current cohort size compared to the last successful sync.
 
 - **URL Endpoint**: There is a `$list_Id` placeholder in the URL but it's not required. You can design your API to place this in the payload if you want, for example: `https://your.domain/lists/$listId/add`.
-- **API payload that to send to the destination**: You can customize and define whether this payload is a batch. The important key here is the `$items` variable. The contents of *An array of items that replaces the $items variable in the payload* replace this variable. 
-This `$items` variable is usually the identifier for every user in a cohort. For example, there are 20 new users to add to your existing cohort. The Batch object contains a collection (a list of 20 users) so these 20 objects are sent to your endpoint. Your payload might look something like this: 
+- **API payload that to send to the destination**: You can customize and define whether this payload is a batch. The important key here is the `$items` variable. The contents of *An array of items that replaces the $items variable in the payload* replace this variable.
+This `$items` variable is usually the identifier for every user in a cohort. For example, there are 20 new users to add to your existing cohort. The Batch object contains a collection (a list of 20 users) so these 20 objects are sent to your endpoint. Your payload might look something like this:
 
     ```json
     {
@@ -156,8 +158,8 @@ Instead of creating every single status code, failure reasons, error message, an
 The remove users API is called every time a cohort syncs from Amplitude to your app. This could be hourly or daily. This call calculates the difference in the current cohort size compared to the last successful sync.
 
 - **URL Endpoint**: There is a `$listId` placeholder in the URL but it's not required. You can design your API to place this in the payload if you want, for example: `https://your.domain/lists/$listId/remove`.
-- **API payload to send to the destination**: You can customize and define whether this payload is a batch. The important key here is the `$items` variable which is replaced by the contents of *An array of items that replaces the $items variable in the payload* 
-This `$items` variable is usually the identifier for every user in a cohort. For example, there are 20 new users to remove from your existing cohort. The Batch object contains a collection (a list of 20 users) so these 20 objects are sent to your endpoint. Your payload might look something like this: 
+- **API payload to send to the destination**: You can customize and define whether this payload is a batch. The important key here is the `$items` variable which is replaced by the contents of *An array of items that replaces the $items variable in the payload*
+This `$items` variable is usually the identifier for every user in a cohort. For example, there are 20 new users to remove from your existing cohort. The Batch object contains a collection (a list of 20 users) so these 20 objects are sent to your endpoint. Your payload might look something like this:
 
     ```json
     {
@@ -182,11 +184,15 @@ Instead of creating every single status code, failure reasons, error message, an
 
 Before submitting your configuration for review, test the mock payload that you expect to receive from Amplitude. In Testing Tab, follow these steps to preview and test your configuration.
 
-In the Testing tab, the Destination Settings is identical to what users of your integration will see. This form is used to control the parameters you have defined in the headers of the payload. 
+In the Testing tab, the Destination Settings is identical to what users of your integration will see. This form is used to control the parameters you have defined in the headers of the payload.
 
-To generate users, you can upload a CSV or click regenerate which will generate users based on your configurations. The CSV must have an Operation column which must be either add or remove. Any parameters used in the List Creation payload must also be the same across all rows in the CSV. The CSV must also have columns for each of the parameters used. 
+{{partial:admonition type="note" heading="Mappings don't work in the Testing tab"}}
+The **Mappings** section doesn't function in the Testing tab because the tab uses CSV input with pre-defined variables (like `user_id_field_amplitude`). In production, user-selected mappings replace these values, but in testing, the CSV values take precedence.
+{{/partial:admonition}}
 
-Here is a sample CSV that can be used for the default configurations: 
+To generate users, you can upload a CSV or click regenerate which will generate users based on your configurations. The CSV must have an Operation column which must be either add or remove. Any parameters used in the List Creation payload must also be the same across all rows in the CSV. The CSV must also have columns for each of the parameters used.
+
+Here is a sample CSV that can be used for the default configurations:
 
 ```
 operation,user_id_field_amplitude,amp_cohort_name,amp_cohort_id
@@ -196,13 +202,13 @@ remove,user789,Unified Cohort,unified_cohort_001
 add,john.doe@example.com,Unified Cohort,unified_cohort_001
 ```
 
-Check the parameters table to make sure all variables are accounted for and resolve any errors. Ensure that all declared fields are non empty. 
+Check the parameters table to make sure all variables are accounted for and resolve any errors. Ensure that all declared fields are non empty.
 
 - **DECLARED**: All declared variables in the "Authentication calls, Custom Fields and Mapping Fields section"
 - **USED**:  All variables that are used either in the list users endpoint, add users endpoint, and remove users endpoint.
 - **PRE-DEFINED**: There are some pre-defined variables that Amplitude replaces values for.
 
-To modify the headers use the **Destination Settings** form which can be seen on both the **Configuration** and **Testing** tab. 
+To modify the headers use the **Destination Settings** form which can be seen on both the **Configuration** and **Testing** tab.
 
 Check your headers and payloads and when ready, click **Test Endpoint** to send a test API call to the predefined endpoint. You can also see the response/error for easy debugging.
 
@@ -212,11 +218,11 @@ The `{listId: $list_id}` is the expected response for list creation API call. To
 
 Use the `$list_id` you retrieved to test the add to add users and remove users endpoints.
 
-You can also test end to end with the **Test Endpoint** button in the Test Integration section, which will automatically run all necessary tests. 
+You can also test end to end with the **Test Endpoint** button in the Test Integration section, which will automatically run all necessary tests.
 
 ## Release Internally
 
-To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. The integration should be instantly available once you do this. 
+To test in your org, click **Release Internally**. This enables anyone within your org to use the integration you defined. The integration should be instantly available once you do this.
 
 ### Submit your integration
 

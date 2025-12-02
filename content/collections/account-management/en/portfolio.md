@@ -17,10 +17,6 @@ With Portfolio, you can build a holistic view of how your users interact with yo
 Portfolios support an unlimited number of projects. User Streams within portfolios are limited to five projects. If your use case requires more, contact your account team to unlock up to 10 projects for User Streams.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## How it works
 
 The foundation of Portfolio's ability to create cross-product analyses is the **View**. Views are collections of Amplitude Projects or data sources that merge the goings-on in each project into a single display. A View, with one or more data sources, allows you to analyze users across multiple projects at once. 

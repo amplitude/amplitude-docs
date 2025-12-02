@@ -6,6 +6,47 @@ landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1750443681
 ---
+<!-- vale off -->
+
+## 1.8.0 (Android, iOS, React Native) \[2025-11-26\]
+
+### ✨ Features
+
+- Feat: update nudges to be scrollable for long content (GSDK-693) \[ios\]
+- Feat: track nudge engagement event with link source (GSDK-144) \[android, ios\]
+- Feat: respect modal height setting for carousels+modals on tablets \[android, ios\]
+
+### 🐛 Fixes
+
+- Fix: fix nps button height (GSDK-708) \[android\]
+- Fix: re-render mask + target view on device orientation changes (GSDK-441) \[ios\]
+- Fix: use theme background color for top+bottom of Carousel (GSDK-731) \[android\]
+- Fix: background mask for pins flickers when advancing between steps (GSDK-660) \[ios\]
+- Fix: guide renders in top-left corner briefly before being moved to correct location (GSDK-718) \[ios\]
+- Fix: drop shadows on form factors is clipped and duplicated by Surface (GSDK-259) \[android\]
+- Fix: add support for conditional actions on button blocks (GSDK-726) \[ios\]
+- Fix: update spacing between ctas (GSDK-734) \[android\]
+
+
+## 1.7.0 (Android, iOS, React Native) \[2025-11-18\]
+
+### 🐛 Fixes
+- Fix: type error when using the Engagement Analytics Plugin with "amplitude.add(...)" (GSDK-698) \[rn\]
+- Fix: Guide title incorrectly center-aligned when left alignment was configured (GSDK-701) \[android\]
+- Fix: Allow underscore ("_") separated font files on Android (GSDK-701) \[android\]
+- Fix: Use correct corner radius and outer padding when rendering Guide (GSDK-701) \[android\]
+- Fix: app is unresponsive after displaying StoreKit content (e.g. `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
+
+
+## 1.6.1 (Android, iOS, React Native) \[2025-11-13\]
+
+### 🐛 Fixes
+
+- Fix: update ordering of survey and media blocks (GSDK-689) \[android, ios\]
+- Fix: fix threading issue for uikit click element (GSDK-571) \[ios\]
+- Fix: fix nudge anchoring on custom nav bar behind transparent system nav bar (GSDK-664) \[ios\]
+- Fix: refactor view hierarchy scanning to improve performance on the Main thread \[android\]
+
 
 ## 1.6.0 (Android, iOS, React Native) \[2025-11-07\]
 
