@@ -172,7 +172,7 @@ class YourClass {
 | `userId`                   | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option.                                                                                                                                    | `null`        |
 | `transport`                | `String`. Sets request API to use by name. Options include `fetch` for `fetch`, `xhr` for `XMLHTTPRequest`, or `beacon` for `navigator.sendBeacon`.                                                                                                                                         | `fetch`       |
 | `fetchRemoteConfig`        | `bool`. Whether the SDK fetches remote configuration. Review [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information. The default depends on the Browser SDK version used. For Browser SDK 2.16.1+, the default is `true`. | `false` (for Browser SDK < 2.16.1)<br/>`true` (for Browser SDK >= 2.16.1) |
-| `autocapture`              | `Autocapture`. Configures autocapture behavior for sessions, page views, and marketing attribution. Use `AutocaptureDisabled()`, `AutocaptureEnabled()`, or `AutocaptureOptions()` for granular control. See [Autocapture](#autocapture) for more information.                              | `AutocaptureOptions()` (all features enabled) |
+| `autocapture`              | `Autocapture`. Configures autocapture behavior for sessions, page views, and marketing attribution. Use `AutocaptureDisabled()`, `AutocaptureEnabled()`, or `AutocaptureOptions()` for granular control. By default, `AutocaptureOptions()` with no parameters enables all features. See [Autocapture](#autocapture) for more information.                              | `AutocaptureOptions()` |
 
 
 ### Configure batching behavior
@@ -428,7 +428,7 @@ Configure page view tracking with `PageViewsOptions`:
 | Option | Type | Description | Default |
 | --- | --- | --- | --- |
 | `trackHistoryChanges` | `String` | Track page views on navigation changes. Options: `'all'` (track all URL changes including fragments) or `'pathOnly'` (track only path changes). | `'all'` |
-| `eventType` | `String` | Custom event type for page view events. If not set, defaults to `'[Amplitude] Page Viewed'`. | `''` (empty string) |
+| `eventType` | `String` | Custom event type for page view events. If not set or set to `''` (empty string), defaults to `'[Amplitude] Page Viewed'`. | `''` |
 
 ```dart
 autocapture: AutocaptureOptions(
