@@ -359,7 +359,7 @@ Autocapture automatically tracks user interactions and events without requiring 
 
 - **Sessions**: Automatically track session start and end events.
 - **Page views**: Automatically track page view events when the URL changes.
-- **Attribution**: Automatically attribution parameters from URL query parameters.
+- **Attribution**: Automatically track attribution parameters from URL query parameters.
 
 ### Enable autocapture
 
@@ -428,7 +428,7 @@ Configure page view tracking with `PageViewsOptions`:
 | Option | Type | Description | Default |
 | --- | --- | --- | --- |
 | `trackHistoryChanges` | `String` | Track page views on navigation changes. Options: `'all'` (track all URL changes including fragments) or `'pathOnly'` (track only path changes). | `'all'` |
-| `eventType` | `String` | Custom event type for page view events. | `'[Amplitude] Page Viewed'` |
+| `eventType` | `String` | Custom event type for page view events. If not set, defaults to `'[Amplitude] Page Viewed'`. | `''` (empty string) |
 
 ```dart
 autocapture: AutocaptureOptions(
