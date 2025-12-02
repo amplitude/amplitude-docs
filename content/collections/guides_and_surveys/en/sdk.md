@@ -15,7 +15,7 @@ Guides and Surveys supports different installation options to work best with you
 
 ### Amplitude Browser SDK 2
 
-If you're using the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
+If you use the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
 {{partial:tabs tabs="script, npm, yarn"}}
 {{partial:tab name="script"}}
@@ -499,7 +499,7 @@ await window.engagement.updateLanguage("en");
 
 ## Preview mode for desktop apps
 
-If you are using the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
+If you use the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
 
 The Amplitude dashboard will pass your app a special query parameter through a deep link (for example, `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call the `_startNudgeDebug` SDK method with it.
 
