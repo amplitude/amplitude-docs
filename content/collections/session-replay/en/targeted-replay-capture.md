@@ -83,6 +83,3 @@ Targeted Replay Capture doesn't support the standalone SDK. TRC doesn't work wit
 
 The SDK evaluates targeting conditions at the start of a session. Changes to configurations don't affect sessions already in progress.
 
-### Backend architecture
-
-The remote config service is designed to be generic and reusable, supporting TRC and other targeting use cases.
