@@ -65,7 +65,10 @@ You can add multiple conditions and combine them using OR logic. Each condition 
 - Event types.
 - Event properties.
 - User properties.
-- Sample rates.
+
+{{partial:admonition type="note" heading=""}}
+Events, event properties, and user properties must be captured and sent to Amplitude during the session for targeting conditions to work properly.
+{{/partial:admonition}}
 
 The UI shows an estimate of quota usage for each condition based on historical data.
 
@@ -73,7 +76,7 @@ The UI shows an estimate of quota usage for each condition based on historical d
 
 ### SDK support
 
-The Session Replay SDK fetches targeting configurations from a remote config service and evaluates them at runtime to decide whether to capture a session. The remote config service is designed to be generic and reusable, supporting TRC and other targeting use cases.
+Targeted Replay Capture requires the Amplitude Browser Analytics SDK with the Session Replay Browser SDK Plugin. To use TRC, ensure you have both the Amplitude Browser Analytics SDK and the Session Replay Plugin integrated into your setup.
 
 {{partial:admonition type="warning" heading="Standalone SDK not supported"}}
 Targeted Replay Capture doesn't support the standalone SDK. TRC doesn't work with the standalone SDK. Use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) instead.
@@ -83,3 +86,6 @@ Targeted Replay Capture doesn't support the standalone SDK. TRC doesn't work wit
 
 The SDK evaluates targeting conditions at the start of a session. Changes to configurations don't affect sessions already in progress.
 
+{{partial:admonition type="note" heading="Capture timing"}}
+Session replay capture begins only **after** the target event occurs. There is no "lookback" period for TRC—events that happened before the targeting condition is met are not captured in the replay. This means the replay will start from the point when the target event is triggered, not from the beginning of the session.
+{{/partial:admonition}}
