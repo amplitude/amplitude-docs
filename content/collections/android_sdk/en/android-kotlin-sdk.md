@@ -644,7 +644,7 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 dp apart.
+**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
 
 When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
@@ -1026,7 +1026,7 @@ amplitude.add(networkPlugin);
 
 The default configuration tracks all hosts except `*.amplitude.com` with status code `500` to `599`.
 
-{{partial:collapse name="NetworkTrackingOptions DEFAULT"}}
+{{partial:collapse name="NetworkTrackingOptions.DEFAULT"}}
 | Name                      | Description                                                                    | Value                                                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | `captureRules`            | Captures all hosts (except `*.amplitude.com`) with status code `500` to `599`. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
@@ -1113,7 +1113,7 @@ amplitude.add(networkPlugin);
 
 {{/partial:collapse}}
 
-{{partial:collapse name="NetworkTrackingOptions CaptureRule"}}
+{{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
 | Name              | Description                                                                                                                                                                  | Default Value |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `hosts`           | The hosts to capture. Supports wildcard characters `*`. For example, `["*"]` matches all hosts, `["*.example.com", "example.com"]` matches `example.com` and all subdomains. | `none`        |
