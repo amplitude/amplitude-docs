@@ -226,7 +226,7 @@ amplitude.track(event)
 Starting in release v1.7.0, the SDK batches `identify` events that contain only `set` operiatons. This results in fewer sent events and doesn't impact the running of the `set` operations. Use the `identifyBatchIntervalMillis` configuration setting to manage the interval at which the SDK flushes batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. 
@@ -644,7 +644,7 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
+**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 dp apart.
 
 When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
 
@@ -862,7 +862,7 @@ Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying 
 
 ### Plugin.setup
 
-This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. This method is called when the plugin is registered to the client via `amplitude.add()`.
+This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. This method is called when the plugin is registered to the client through `amplitude.add()`.
 
 ### Plugin.execute
 
@@ -1026,7 +1026,7 @@ amplitude.add(networkPlugin);
 
 The default configuration tracks all hosts except `*.amplitude.com` with status code `500` to `599`.
 
-{{partial:collapse name="NetworkTrackingOptions.DEFAULT"}}
+{{partial:collapse name="NetworkTrackingOptions DEFAULT"}}
 | Name                      | Description                                                                    | Value                                                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | `captureRules`            | Captures all hosts (except `*.amplitude.com`) with status code `500` to `599`. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
@@ -1113,7 +1113,7 @@ amplitude.add(networkPlugin);
 
 {{/partial:collapse}}
 
-{{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
+{{partial:collapse name="NetworkTrackingOptions CaptureRule"}}
 | Name              | Description                                                                                                                                                                  | Default Value |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `hosts`           | The hosts to capture. Supports wildcard characters `*`. For example, `["*"]` matches all hosts, `["*.example.com", "example.com"]` matches `example.com` and all subdomains. | `none`        |
