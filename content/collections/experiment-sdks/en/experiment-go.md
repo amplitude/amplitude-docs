@@ -179,6 +179,43 @@ variants, err := client.Fetch(user)
 
 {{/partial:collapse}}
 
+### Fetch V2 With Options
+
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) with options and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+
+```go
+func (c *Client) FetchV2WithOptions(user *experiment.User, fetchOptions *experiment.FetchOptions) (map[string]experiment.Variant, error)
+```
+
+| Parameter  | Requirement | Description |
+| --- | --- | --- |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. If `nil`, uses the server's default behavior (track assignment, do not track exposure). |
+
+```go
+user := &experiment.User{
+    UserId:   "user@company.com",
+    DeviceId: "abcdefg",
+    UserProperties: map[string]interface{}{
+        "premium": true,
+    },
+}
+variants, err := client.FetchV2WithOptions(user, &experiment.FetchOptions{
+    TracksAssignment: true,
+    TracksExposure:   true,
+})
+if err != nil {
+    // Handle error
+}
+```
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `TracksExposure` | If `true`, the SDK tracks an exposure event for the fetched variants. | `false` |
+| `TracksAssignment` | If `true`, the SDK tracks an assignment event for the fetched variants. | `true` |
+
 ## Local evaluation
 
 Implements evaluating variants for a user through [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).

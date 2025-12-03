@@ -114,12 +114,20 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```python
-fetch_v2(user: User) : Variants
+fetch_v2(user: User, fetch_options: FetchOptions = None) : Variants
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | To track or not track an exposure event for this fetch request. If `None`, uses the server's default behavior (does not track exposure). | `None` |
+| `tracks_assignment` | To track or not track an assignment event for this fetch request. If `None`, uses the server's default behavior (does track assignment). | `None` |
 
 ```python
 user = User(
