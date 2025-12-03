@@ -226,7 +226,7 @@ amplitude.track(event)
 Starting in release v1.7.0, the SDK batches `identify` events that contain only `set` operiatons. This results in fewer sent events and doesn't impact the running of the `set` operations. Use the `identifyBatchIntervalMillis` configuration setting to manage the interval at which the SDK flushes batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Use the Identify interface to declare the operations. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. 
@@ -862,7 +862,7 @@ Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying 
 
 ### Plugin.setup
 
-This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. This method is called when the plugin is registered to the client through `amplitude.add()`.
+This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. Amplitude calls this method when you register the plugin to the client through `amplitude.add()`.
 
 ### Plugin.execute
 
