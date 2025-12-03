@@ -158,3 +158,24 @@ When a PR fails the Vale CI check, you need to fix all errors before the PR can 
 4. Apply fixes using `apply_update` for precise changes
 5. Run Vale again to confirm all errors are resolved (0 errors)
 6. Commit and push changes
+## Stay Surgical with Targeted Changes
+
+When making small, targeted updates (like adding one item to a list or fixing a specific issue), resist the temptation to improve unrelated content in the same file:
+
+**Be intentional about scope**: If the task is "add clearAll to the list of Identify operations," limit your changes to that specific addition. Don't also:
+- Abbreviate technical terms elsewhere in the file (e.g., "device-independent pixels" → "dp")
+- Change formatting in code references or partial names
+- Rewrite prose in unrelated sections for style improvements
+- Make "while I'm here" improvements to nearby content
+
+**Preserve intentional formatting**: Some formatting choices are purposeful even if they seem inconsistent:
+- Periods in code references (e.g., `NetworkTrackingOptions.DEFAULT` vs `NetworkTrackingOptions DEFAULT`) may be intentional
+- Spelled-out technical terms (e.g., "device-independent pixels") may be preferred over abbreviations for clarity
+- When in doubt, preserve existing formatting unless explicitly asked to change it
+
+**Use rewrite_with_client_voice judiciously**: When making targeted changes:
+- Only rewrite the specific sentence or paragraph you're modifying
+- Don't run entire sections through the rewriter if only adding one item
+- If you do use the rewriter, carefully review the output to ensure it didn't change unrelated content
+
+**Exception - fixing clear errors**: If you notice an obvious error (broken link, typo, incorrect information) while making targeted changes, it's appropriate to fix it. But distinguish between errors and style preferences.
