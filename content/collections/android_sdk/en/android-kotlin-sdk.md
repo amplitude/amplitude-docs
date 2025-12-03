@@ -862,7 +862,7 @@ Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying 
 
 ### Plugin.setup
 
-This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. Amplitude calls this method when you register the plugin to the client through `amplitude.add()`.
+This method contains logic for preparing the plugin for use and has `amplitude` instance as a parameter. The expected return value is `null`. A typical use for this method, is to instantiate plugin dependencies. This method is called when the plugin is registered to the client via `amplitude.add()`.
 
 ### Plugin.execute
 
