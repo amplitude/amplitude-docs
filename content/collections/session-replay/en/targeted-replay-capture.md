@@ -25,17 +25,9 @@ Define rules to capture replays only when certain conditions are met:
 - **User properties**: For example, "country = US".
 - **Combinations**: Combine the above using OR logic.
 
-### UI for configuration
+### Configuration and quota management
 
-Manage TRC through the [Session Replay settings page](/docs/admin/account-management/account-settings#session-replay-settings), where you can add, edit, and manage your targeting conditions.
-
-### Quota management
-
-The UI provides an estimate of how much quota each condition uses, based on historical traffic and the sample rate set for each condition.
-
-### Flexible sampling
-
-Set different sample rates for different conditions, giving you granular control over which sessions are captured and how much of your quota is used.
+Manage TRC through the [Session Replay settings page](/docs/admin/account-management/account-settings#session-replay-settings), where you can add, edit, and manage your targeting conditions. The UI provides an estimate of how much quota each condition uses, based on historical traffic. You can set different sample rates for different conditions, giving you granular control over which sessions are captured and how much of your quota is used.
 
 ## Use cases
 
@@ -67,8 +59,6 @@ You can add multiple conditions and combine them using OR logic. Each condition 
 {{partial:admonition type="note" heading=""}}
 Events, event properties, and user properties must be captured and sent to Amplitude during the session for targeting conditions to work properly.
 {{/partial:admonition}}
-
-The UI shows an estimate of quota usage for each condition based on historical data.
 
 ## Technical details
 
