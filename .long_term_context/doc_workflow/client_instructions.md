@@ -117,7 +117,12 @@ When a PR fails the Vale CI check, you need to fix all errors before the PR can 
 
 **Key facts about Vale at Amplitude**:
 - **Errors block CI, warnings don't**: Focus on fixing all errors (red). Warnings (yellow) are informational but won't block the PR.
-- **Vale runs on entire files**: When you edit a file, Vale checks the whole file, not just your changes. You're responsible for fixing all errors, including pre-existing ones.
+- **Vale runs on entire files but CI only reports on modified lines**: The Vale CI action uses `filter_mode: added`, which means:
+  - Vale checks the entire file for errors and warnings
+  - CI only reports issues on lines you added or modified in your PR
+  - Pre-existing issues in unchanged lines won't cause CI failure
+  - **Important**: If you modify a line that has a pre-existing Vale warning, you must fix that warning even though you didn't introduce it
+- **Local Vale shows all warnings**: When you run `vale <filepath>` locally, you'll see all warnings in the entire file (not just your changes). This is expected—focus on fixing warnings only on the lines you modified.
 - **Run Vale locally**: `vale --config=.vale/rules.ini <filepath>` to see errors before pushing.
 - **IMPORTANT - Vale configuration file required**: Every branch must include a `.vale.ini` file at the repository root. The Vale CI check will fail without this file (exit code 2: config not found). The file should already exist on main - ensure it's not accidentally deleted. If missing, copy the standard configuration:
   ```
