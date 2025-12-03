@@ -21,7 +21,7 @@ LinkedIn Ads is a digital advertising platform that helps you reach professional
 Before you begin, ensure you have the following:
 
 - A LinkedIn Ads account with access to OAuth
-- You LinkedIn Ads conversion ID
+- Your LinkedIn Ads conversion ID
 
 ## Use cases
 
