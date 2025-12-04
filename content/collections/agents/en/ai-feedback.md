@@ -22,6 +22,8 @@ Feedback events collect information about use cases such as:
 The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
 {{/partial:admonition}}
 
+For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
+
 ## Feedback Event overview
 AI Feedback uses Feedback Events to record user feedback and create insights. 
 

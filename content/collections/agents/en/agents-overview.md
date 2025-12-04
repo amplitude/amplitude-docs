@@ -7,6 +7,8 @@ updated_at: 1761241355
 ---
 Amplitude AI Agents are specialized, goal‑oriented AI experts embedded in Amplitude’s platform. Unlike generic copilots, agents have access to Amplitude analytics, session replay, experiment, surveys, and other data types to surface insights, investigate issues, generate hypotheses, then recommend actions.
 
+For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
+
 ## How Agents work with Amplitude
 
 Amplitude AI Agents bring together analytics, session replays, experimentation, guides, and survey data from across your account to build a deep understanding of user behavior. The more complete your Amplitude setup is, the more context and action recommendations the Agents have to work with.

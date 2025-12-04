@@ -11,6 +11,8 @@ AI Visibility automatically updates its information weekly.
 
 Most AI Visibility functionality is available to everyone, with or without an Amplitude subscription. However, some functionality is only available with a paid Amplitude subscription. Any functionality descriptions in this article that aren't visible to your version of AI Visibility are part of the subscription tier.
 
+For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
+
 ## Free visibility reports
 
 Free visibility reports are available to everyone on the Amplitude [Try AI Visibility](https://www.amplitude.com/try-ai-visibility) page of the website. 
