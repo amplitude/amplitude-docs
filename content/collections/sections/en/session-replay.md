@@ -168,7 +168,29 @@ Once you make your selection, view replays that took place within the selected t
 Keep in mind that if you apply a filter to exclude replays with a specific property value, Session Replay search returns results for all replays with a different value for that property, **and** replays with **missing** values for that property.
 {{/partial:admonition}}
 
-The list of results shows a maximum of 100 replays. 
+The list of results shows a maximum of 100 replays. 
+
+## How session replay queries work
+
+When you query for events or view a user's session in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your queried events occurred.
+
+### Matching replays to events
+
+Amplitude matches replays to your query by finding replays that:
+
+1. **Match the session ID**: The replay's session ID matches the session ID of your queried events
+2. **Start before your queried events**: The replay begins before the first event in your query
+3. **End after your queried events**: The replay continues past the last event in your query
+
+The Session Replay SDK uses a session ID that must match the session ID of the events. This ensures the replay captures the full context around the events you're analyzing. For example, if you query for events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that have the same session ID and started before 2:00 PM and ended after 2:05 PM.
+
+### Querying by user
+
+When you query events for a specific user, Amplitude searches for replays associated with that user's device ID. Amplitude matches replays to the user based on the device ID captured during the session.
+
+{{partial:admonition type="note" heading=""}}
+If Amplitude can't associate a device ID with an existing user, it may create an anonymous user for the replay. This happens when the device ID doesn't match any known user in your project.
+{{/partial:admonition}}
 
 ## Add a replay to a dashboard or notebook
 
