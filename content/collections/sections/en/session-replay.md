@@ -80,7 +80,7 @@ This helps quantify the business impact of technical issues and prioritize fixes
 
 ## Replay Captured event
 
-Amplitude automatically sends a `[Amplitude] Replay Captured` event when a session replay is successfully captured. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
+Amplitude automatically sends a `[Amplitude] Replay Captured` event when it successfully captures a session replay. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
 
 ### Use the Replay Captured event
 
