@@ -187,7 +187,23 @@ Once you make your selection, view replays that took place within the selected t
 Keep in mind that if you apply a filter to exclude replays with a specific property value, Session Replay search returns results for all replays with a different value for that property, **and** replays with **missing** values for that property.
 {{/partial:admonition}}
 
-The list of results shows a maximum of 100 replays. 
+The list of results shows a maximum of 100 replays. 
+
+## How session replay querying works
+
+When you search for replays by event in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your events occurred.
+
+![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
+
+### Matching replays to events
+
+Amplitude matches replays to your events by finding replays that:
+
+1. **Match the session ID**: The replay belongs to the same session as your events. This ensures you're viewing the correct replay for that user session.
+2. **Start before your events**: The replay begins before the first event you're looking at
+3. **End after your events**: The replay continues past the last event you're looking at
+
+This ensures the replay captures the full context around the events you're analyzing. For example, if you're looking at events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that belong to the same session and started before 2:00 PM and ended after 2:05 PM.
 
 ## Add a replay to a dashboard or notebook
 
