@@ -184,14 +184,6 @@ Amplitude matches replays to your query by finding replays that:
 
 The Session Replay SDK uses a session ID that must match the session ID of the events. This ensures the replay captures the full context around the events you're analyzing. For example, if you query for events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that have the same session ID and started before 2:00 PM and ended after 2:05 PM.
 
-### Querying by user
-
-When you query events for a specific user, Amplitude searches for replays associated with that user's device ID. Amplitude matches replays to the user based on the device ID captured during the session.
-
-{{partial:admonition type="note" heading=""}}
-If Amplitude can't associate a device ID with an existing user, it may create an anonymous user for the replay. This happens when the device ID doesn't match any known user in your project.
-{{/partial:admonition}}
-
 ## Add a replay to a dashboard or notebook
 
 There are three ways you can add a Session Replay to a dashboard or notebook:
