@@ -93,6 +93,27 @@ Error events captured during sessions appear in your event stream and can be ana
 
 This helps quantify the business impact of technical issues and prioritize fixes based on data.
 
+## Replay Captured event
+
+Amplitude automatically sends a `[Amplitude] Replay Captured` event when it successfully captures a session replay. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
+
+### Use the Replay Captured event
+
+The `[Amplitude] Replay Captured` event appears in your event stream and you can analyze it like any other event. For example, you can:
+
+* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure replay capture rates and trends.
+* Filter charts and analyses by the event to focus on sessions with captured replays.
+
+The event indicates that the replay is available for viewing in Amplitude. When you see this event in a user's event stream, you can view the associated session replay.
+
+{{partial:admonition type="note" heading=""}}
+Amplitude sends the `[Amplitude] Replay Captured` event automatically. You don't need to instrument this event yourself. This event doesn't count toward your event volume or MTU (Monthly Tracked Users).
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The `[Amplitude] Replay Captured` event may create anonymous users if the device ID can't be associated with an existing user.
+{{/partial:admonition}}
+
 ## Frustration analytics
 
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
