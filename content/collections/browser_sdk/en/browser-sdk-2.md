@@ -1048,6 +1048,16 @@ identifyEvent.add('travel-count', 1);
 amplitude.identify(identifyEvent);
 ```
 
+#### Identify.unset
+
+This method removes a user property from a user profile. Use `unset` when you no longer need a property or want to remove it completely.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.unset('location'); 
+amplitude.identify(identifyEvent);
+```
+
 ### Arrays in user properties
 
 Call the `prepend`, `append`, `preInsert`, or `postInsert` methods to use arrays as user properties.
