@@ -170,21 +170,21 @@ Keep in mind that if you apply a filter to exclude replays with a specific prope
 
 The list of results shows a maximum of 100 replays. 
 
-## How session replay queries work
+## How session replay querying works
 
-When you query for events or view a user's session in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your queried events occurred.
+When you search for replays by event in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your events occurred.
 
 ![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
 
 ### Matching replays to events
 
-Amplitude matches replays to your query by finding replays that:
+Amplitude matches replays to your events by finding replays that:
 
-1. **Match the session ID**: The replay's session ID matches the session ID of your queried events
-2. **Start before your queried events**: The replay begins before the first event in your query
-3. **End after your queried events**: The replay continues past the last event in your query
+1. **Match the session ID**: The replay belongs to the same session as your events. This ensures you're viewing the correct replay for that user session.
+2. **Start before your events**: The replay begins before the first event you're looking at
+3. **End after your events**: The replay continues past the last event you're looking at
 
-The Session Replay SDK uses a session ID that must match the session ID of the events. This ensures the replay captures the full context around the events you're analyzing. For example, if you query for events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that have the same session ID and started before 2:00 PM and ended after 2:05 PM.
+This ensures the replay captures the full context around the events you're analyzing. For example, if you're looking at events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that belong to the same session and started before 2:00 PM and ended after 2:05 PM.
 
 ## Add a replay to a dashboard or notebook
 
