@@ -86,7 +86,7 @@ Amplitude automatically sends a `[Amplitude] Replay Captured` event when a sessi
 
 The `[Amplitude] Replay Captured` event appears in your event stream and can be analyzed like any other event. You can:
 
-* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure replay capture rates and trends
+* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure replay capture rates and trends.
 * Filter charts and analyses by the event to focus on sessions with captured replays
 
 The event indicates that the replay is available for viewing in Amplitude. When you see this event in a user's event stream, you can view the associated session replay.
