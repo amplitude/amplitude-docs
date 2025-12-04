@@ -35,36 +35,7 @@ For more information on each of these tasks, just follow the links to the releva
 
 ### Session Replay settings
 
-The organizational settings also allow admins and managers to view or modify [Session Replay](/docs/session-replay) settings.
-
-The session replay settings area displays your total session replay capture plan allowance, current usage, and a list of projects showing sample rate, instrumentation status, and whether a specific project is capturing replays.
-
-Click *View Usage Over Time* in the session capture card to review usage specific to your plan.
-
-From the project list, you can:
-
-- View a list of projects that are capturing replays, along with their sample rate and current instrumentation status.
-- Toggle *Session Capture* on or off for a specific project. Turning off session capture for a specific project only applies to future sessions.
-
-    Click a project name to modify the sample rate, or percentage of user sessions captured. Modifying the sample rate in settings overrides the existing SDK implementation's sample rate, and may take several minutes to take effect.
-    
-    ![session_replay_settings.png](/docs/output/img/account-management/session_replay_settings.png)
-
-    From the sampling module, click *View User Sessions Chart* to view an estimate of the total sessions captured on a monthly basis. 
-
-- Click *+ Select Project* from the bottom of the list to add a project. Projects can't be removed once added.
-
-    By default, the project's session capture is set to `on`, and its sample rate matches the rate set in your SDK implementation. Adding a project with the SDK doesn't automatically add it to the list of projects with Session Replay enabled. If you want to manage Session Replay settings from the Settings page, add it to the list manually with the **Add Project** picker.
-     
-    For new organizations that implement session replay, replay capture is set to `on`, and the sample rate is set to `1` for testing. Reduce the sample rate before moving to production. You can modify these settings later if you need to do so.
-
-- Toggle *Console Logs* to enable or disable capturing JavaScript console logs, warnings, errors, and network request errors during session replays. When enabled, console logs appear in each replay when you click the console icon to expand the view. This setting applies to future session captures only. Use console logs to identify technical issues that may impact user experience.
-
-{{partial:admonition type="note" heading=""}}
-Replays are captured only if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
-{{/partial:admonition}}
-
-[Learn how to manage your Session Replay privacy settings here](https://amplitude.com/docs/session-replay/manage-privacy-settings-for-session-replay).
+For information about Session Replay settings, review [Session Replay Settings](/docs/session-replay/session-replay-settings).
 
 ## Personal settings
 
