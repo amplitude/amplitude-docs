@@ -8,6 +8,14 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 1.8.1 (iOS) \[2025-12-04\]
+
+### 🐛 Fixes
+
+- Fix: update default title+text alignment to leading (GSDK-733) \[ios\]
+- Fix: bug causing app crash when Foundation.Data is used as an event property value (GSDK-736) \[ios\]
+
+
 ## 1.8.0 (Android, iOS, React Native) \[2025-11-26\]
 
 ### ✨ Features
