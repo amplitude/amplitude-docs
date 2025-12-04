@@ -39,21 +39,5 @@ Toggle console tracking on or off, and set the types of console information you 
 
 ## Multi-tab behavior
 
-Session Replay captures activity across all open tabs, but plays back only the focused tab's visual state.
-
-### Visual replay
-
-The visual replay follows the user's focus, automatically switching to show whichever tab the user is actively viewing at any given moment. When the user switches tabs, the replay cuts directly to the new tab with a fresh snapshot reflecting its current state.
-
-### Event timeline
-
-The event timeline captures and displays events from all tabs, regardless of whether they were in focus at the time.
-
-### Understanding the mismatch
-
-This can create an apparent mismatch: viewers may see events appearing in the timeline while the replay appears static or "frozen." This occurs when the user interacts with a background tab—the events are real and correctly recorded, but the visual replay remains on the last focused tab until the user switches to it.
-
-### Viewer limitations
-
-Viewers can't manually switch to view background tabs; the replay strictly follows the user's actual focus. If the user switches away from the browser entirely, the replay shows an inactive period while displaying the last focused tab.
+Session Replay captures activity across all open tabs, but plays back only the focused tab's visual state. The visual replay follows the user's focus, automatically switching to show whichever tab the user is actively viewing at any given moment. When the user switches tabs, the replay cuts directly to the new tab with a fresh snapshot reflecting its current state. The event timeline captures and displays events from all tabs, regardless of whether they were in focus at the time. This can create an apparent mismatch: viewers may see events appearing in the timeline while the replay appears static or "frozen." This occurs when the user interacts with a background tab—the events are real and correctly recorded, but the visual replay remains on the last focused tab until the user switches to it. Viewers can't manually switch to view background tabs; the replay strictly follows the user's actual focus. If the user switches away from the browser entirely, the replay shows an inactive period while displaying the last focused tab.
 
