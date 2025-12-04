@@ -92,7 +92,7 @@ The `[Amplitude] Replay Captured` event appears in your event stream and can be 
 The event indicates that the replay is available for viewing in Amplitude. When you see this event in a user's event stream, you can view the associated session replay.
 
 {{partial:admonition type="note" heading=""}}
-The `[Amplitude] Replay Captured` event is sent automatically by Amplitude. You don't need to instrument this event yourself. This event doesn't count toward your event volume or MTU (Monthly Tracked Users).
+Amplitude sends the `[Amplitude] Replay Captured` event automatically. You don't need to instrument this event yourself. This event doesn't count toward your event volume or MTU (Monthly Tracked Users).
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
