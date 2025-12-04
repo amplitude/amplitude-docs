@@ -2,7 +2,7 @@
 id: 9d42e657-b743-4cb3-8e32-1c75c1e8f580
 blueprint: browser_sdk
 title: 'Browser Unified SDK'
-sdk_status: beta
+sdk_status: ga
 article_type: core
 supported_languages:
   - js
@@ -19,10 +19,6 @@ platform: Browser
 full_details: true
 ---
 The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, Session Replay, and Guides and Surveys. It simplifies the integration process by handling the initialization and configuration of all components.
-
-{{partial:admonition type="beta" heading="Beta Release"}}
-The Browser Unified SDK is currently in beta. There may be breaking changes before the stable release. Amplitude recommends testing thoroughly in a development environment before you deploy to production.
-{{/partial:admonition}}
 
 {{partial:admonition type="info" heading="Individual Product Installation"}}
 The Unified SDK installs Analytics, Experiment, Session Replay, and Guides and Surveys. If you're concerned about bundle size and only need specific products, you can install them individually:
@@ -73,11 +69,11 @@ For detailed information about each product's features and APIs, refer to their 
 {{/partial:admonition}}
 
 ```typescript
-import { 
-  track, 
-  identify, 
-  experiment, 
-  sessionReplay 
+import {
+  track,
+  identify,
+  experiment,
+  sessionReplay
 } from '@amplitude/unified';
 
 // Track events
@@ -104,23 +100,23 @@ initAll('YOUR_API_KEY', {
   // Shared options for all SDKs (optional)
   serverZone: 'US', // or 'EU'
   instanceName: 'my-instance',
-  
+
   // Analytics options
   analytics: {
     // Analytics configuration options
   },
-  
+
   // Session Replay options
   sessionReplay: {
     // Session Replay configuration options
     sampleRate: 1 // To enable session replay
   },
-  
+
   // Experiment options
   experiment: {
     // Experiment configuration options
   },
-  
+
   // Guides and Surveys options
   engagement: {
     // Guides and Surveys configuration options
@@ -141,7 +137,7 @@ All options from `@amplitude/analytics-browser` are supported. See the [Analytic
 
 ### Session Replay options
 
-The Unified Browser SDK supports all options from `@amplitude/plugin-session-replay-browser`. See the [Session Replay Plugin documentation](/docs/session-replay/session-replay-plugin#configuration) for more information. Set `config.sessionReplay.sampleRate` to a non-zero value to enable session replay. 
+The Unified Browser SDK supports all options from `@amplitude/plugin-session-replay-browser`. See the [Session Replay Plugin documentation](/docs/session-replay/session-replay-plugin#configuration) for more information. Set `config.sessionReplay.sampleRate` to a non-zero value to enable session replay.
 
 Sample Rate controls the rate at which Amplitude captures session replays. For example, if you set `config.sessionReplay.sampleRate` to `0.5`, Session Replay captures roughly half of all sessions.
 
