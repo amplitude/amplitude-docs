@@ -85,19 +85,23 @@ See the [Microsoft Conversions API documentation](https://learn.microsoft.com/en
 
 Amplitude sends these user properties as Bing Ads user identifiers for event attribution and audience matching.
 
-| Property Name         | Required | Hashed |
-|-----------------------|:--------:|:------:|
-| **Anonymous ID**      | *        |        |
-| **External ID**       | *        |        |
-| **Email**             | *        | ✅     |
-| **Phone**             | *        | ✅     |
-| **Microsoft Click ID**| *        |        |
-| **IDFA**              | *        |        |
-| **GAID**              | *        |        |
-| IP Address            |          |        |
-| User Agent            |          |        |
+{{partial:admonition type="note" heading="Required properties"}}
+Ensure you send at least one required identifier with each event.
+{{/partial:admonition}}
 
-_* At least one of these identifiers is required with each event_
+| Property Name                                             | Hashed |
+| --------------------------------------------------------- | ------ |
+| Email <span class="required">required</span>              | ✅      |
+| Phone <span class="required">required</span>              | ✅      |
+| Anonymous ID <span class="required">required</span>       |        |
+| External ID <span class="required">required</span>        |        |
+| Microsoft Click ID <span class="required">required</span> |        |
+| IDFA <span class="required">required</span>               |        |
+| GAID <span class="required">required</span>               |        |
+| IP Address                                                |        |
+| User Agent                                                |        |
+
+
 
 ### Event properties
 
