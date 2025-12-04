@@ -120,6 +120,20 @@ export default function App() {
 At this point, you are technically done installing. While optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
 {{/partial:admonition}}
 
+## Add your application to project settings
+
+After installing the SDK, add your React Native application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
+
+To add your application:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **React Native** from the dropdown.
+
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your React Native app users.
+
 ## Element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific views on screen. The Engagement SDK uses the "testID" property on an element in the React Native DOM.
@@ -154,9 +168,12 @@ If your app doesn't have deep linking enabled, follow the [React Native instruct
 
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
-
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ## Changelog
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

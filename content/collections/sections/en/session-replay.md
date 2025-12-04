@@ -42,6 +42,21 @@ Event names with a *sparkle* icon indicate that Amplitude has generated a name t
 
 Session Replay can capture and display technical errors and console logs that occur during user sessions. This helps you understand whether technical issues are impacting user experience and correlate errors with drops in conversion or engagement.
 
+Error Analytics is an umbrella term for two types of error capture:
+
+* **Console Errors**: JavaScript console logs, warnings, and errors. These display in the console panel within the session replay modal.
+* **Network Errors**: Failed network requests and API calls. These display at the bottom of the session replay modal.
+
+### Requirements
+
+Error Analytics features have different SDK requirements:
+
+| Feature | SDK | Minimum Version |
+|---------|-----|-----------------|
+| Console Errors | [Session Replay Browser SDK](/docs/session-replay/session-replay-standalone-sdk) (`@amplitude/session-replay-browser`) | 1.22.4 |
+| Console Errors | [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) (`@amplitude/plugin-session-replay-browser`) | 1.16.6 |
+| Network Errors | [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) | 2.24.0 |
+
 When enabled, Session Replay captures:
 
 * **JavaScript console logs**: Console messages, warnings, and errors logged by your application
@@ -82,8 +97,12 @@ This helps quantify the business impact of technical issues and prioritize fixes
 
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
 
+{{partial:admonition type="note" heading="Requirements"}}
+Frustration Analytics requires [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) version 2.24.0 or later.
+{{/partial:admonition}}
+
+
 ### Frustration event types
-When users rapidly click the same element multiple times, usually indicating something isn't working as expected.
 * **Rage clicks**: When users rapidly click the same element multiple times, usually indicating something isn't working as expected. This often means a button or link appears interactive but doesn't respond.
 * **Dead clicks**: When users click on elements that appear clickable but have no functionality—such as non-interactive images styled like buttons or links that lead nowhere.
 
