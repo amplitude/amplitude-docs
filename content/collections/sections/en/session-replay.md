@@ -174,6 +174,8 @@ The list of results shows a maximum of 100 replays.
 
 When you query for events or view a user's session in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your queried events occurred.
 
+![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
+
 ### Matching replays to events
 
 Amplitude matches replays to your query by finding replays that:
