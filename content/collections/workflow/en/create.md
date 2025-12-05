@@ -21,7 +21,7 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
 
 ##### To create a new feature experiment
 
-1. Click **Create > Experiment**, and select **Feature**.
+1. Go to *Create > Experiment*, and select **Feature**.
 2. Complete the following fields:
     - **Name**: Enter the name of the experiment for future reference.
     - **Project**: Select the project in which this experiment operates.
