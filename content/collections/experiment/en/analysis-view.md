@@ -68,3 +68,11 @@ Otherwise, the value indicates the aggregate (total events, sum of property valu
 
 Access the absolute value by hovering over the control or metric name. 
 
+## Winsorization statistics
+
+When you enable [winsorization](/docs/feature-experiment/advanced-techniques/winsorization-in-experiment) for your experiment, the Analysis view displays additional information about how winsorization affected your data:
+
+- **Number of winsorized users**: The count of users whose values were adjusted by winsorization.
+- **Percentage of winsorized users**: The proportion of total users that were winsorized.
+
+This information helps you understand the impact of outlier handling on your experiment results. If a high percentage of users are winsorized, you may want to investigate the underlying data distribution or adjust your winsorization settings.
