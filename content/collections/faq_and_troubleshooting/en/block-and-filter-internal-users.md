@@ -53,5 +53,10 @@ This cohort can be applied to charts in a similar fashion to user properties. On
 
 ![block_and_filter_2.png](/docs/output/img/faq/block-and-filter-2-png.png)
 
-Behavioral cohorts can also be updated programmatically, so your cohort of internal users can be easily maintained. Please check out the [Behavioral Cohorts API](/docs/apis/analytics/behavioral-cohorts) for more details.
+Behavioral cohorts can also be updated programmatically, so your cohort of internal users can be easily maintained. Review the [Behavioral Cohorts API](/docs/apis/analytics/behavioral-cohorts) for more details.
 {{/partial:collapse}}
+
+## Related resources
+
+- [Block bot web traffic](/docs/data/block-bot-traffic): Prevent bot traffic from affecting your metrics.
+- [Winsorization in Experiment](/docs/feature-experiment/advanced-techniques/winsorization-in-experiment): Find and resolve outliers that may skew your experiment results.

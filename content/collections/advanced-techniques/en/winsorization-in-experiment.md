@@ -188,3 +188,8 @@ Like Winsorization, Amplitude Experiment also supports log transforms as an alte
 When enabled, Amplitude Experiment applies the log transformation at a per-metric level. It uses logarithm with base `e`. Experiment uses `ln(1+x)` to deal with the case where `x = 0`.` x` is the metrics value for a particular user. If `1+x <= 0`, Experiment returns `0` for the metric value for that individual user. 
 
 If you enable both winsorization and log transform, winsorization applies first and then the log transform.
+
+## Related resources
+
+- [Block bot web traffic](/docs/data/block-bot-traffic): Prevent bot traffic from affecting your metrics.
+- [Block and filter internal users](/docs/faq/block-and-filter-internal-users): Learn how to exclude internal user data from your metrics.

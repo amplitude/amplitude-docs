@@ -30,4 +30,9 @@ To create a block filter for bot web traffic, follow these steps:
   
 ![block_filter.png](/docs/output/img/data/block-filter-png.png)
 
-5. When you’re ready, click *Block Data* to initiate the block filter.
+5. When you're ready, click *Block Data* to initiate the block filter.
+
+## Related resources
+
+- [Block and filter internal users](/docs/faq/block-and-filter-internal-users): Learn how to exclude internal user data from your metrics.
+- [Winsorization in Experiment](/docs/feature-experiment/advanced-techniques/winsorization-in-experiment): Find and resolve outliers that may skew your experiment results.
