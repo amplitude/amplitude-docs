@@ -19,6 +19,12 @@ logo: icons/node.svg
 ---
 Official documentation for Amplitude Experiment's server-side Node.js SDK implementation.
 
+{{partial:admonition type="warning" heading="Automatic exposure tracking not supported"}}
+The Node.js SDK doesn't support automatic exposure event tracking. To track exposure events, you must manually send them using the [Amplitude Analytics Node.js SDK](/docs/sdks/analytics/node/node-js-sdk) or through the [HTTP V2 API](/docs/apis/analytics/http-v2).
+
+For local evaluation, you can configure [automatic assignment tracking](#configuration) through the `assignmentConfig` option, which tracks when users are evaluated for experiments.
+{{/partial:admonition}}
+
 This documentation has separate sections for [remote](/docs/feature-experiment/remote-evaluation) and [local](/docs/feature-experiment/local-evaluation) evaluation:
 
 ## Remote evaluation
