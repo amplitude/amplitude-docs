@@ -3,8 +3,8 @@ id: 34cde5a0-0c7a-46b7-ac73-a0e306bb0b95
 blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718398660
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1764871534
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -32,7 +32,7 @@ products:
     type: product_details
     enabled: true
     product_icon: home/experiment.png
-    section_link: 7ba36066-3d54-4874-a407-504b27d83a26
+    section_link: 4cb8166f-a1a1-44dc-9b76-f2fb51db6b05
   -
     id: lux6n36s
     product_name: 'Amplitude Session Replay'

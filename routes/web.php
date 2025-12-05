@@ -34,3 +34,5 @@ Route::permanentRedirect('/docs/cdp/audiences/recommendations-build', '/docs/dat
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-use', '/docs/data/audiences/recommendations-use');
 Route::permanentRedirect('/docs/cdp/audiences/third-party-syncs', '/docs/data/audiences/third-party-syncs');
 
+// Legacy Help Center redirects
+Route::permanentRedirect('/docs/hc/en-us/articles/360021252771-Manage-Data-', '/docs/data/amplitude-data-settings');
