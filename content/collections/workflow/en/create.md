@@ -23,7 +23,7 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
     - **Project**: Select the project in which this experiment operates.
     - **Experiment Type**: Select from the following:
       - **A/B Test**: Test one or more variants with a goal of improving a metric. Run A/B tests using hypothesis testing or do-no-harm methodologies. For more information, go to [Define your experiment's goals](/docs/feature-experiment/workflow/define-goals).
-      - **Multi-Armed Bandit**: Amplitude allocates an increasing amount of traffic to the winning variant, based on the primary metric, until it hits 100% allocation.
+      - **[Multi-Armed Bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments)**: Amplitude allocates an increasing amount of traffic to the winning variant, based on the primary metric, until it hits 100% allocation.
     - For Web Experiments, enter the *Targeted Page URL*, on which this experiment runs.
 3. Optionally, complete the following fields:
    - **Key**: Keys are unique to experiments and tell which experiments a user participates in. You can edit keys until you run the experiment.
