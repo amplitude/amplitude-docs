@@ -45,14 +45,12 @@ You can access the T-test settings from the Settings tab. The settings required 
     The T-test works by first computing the sample size you need before you can control for a specific false positive and false negative rate. Analyzing your data before reaching the sample size threshold increases your error rates. Review this [article](https://medium.com/@SkyscannerEng/the-fourth-ghost-of-experimentation-peeking-b33890dcd3de) for more explanation on how peeking can interrupt your experiment process.
     {{/partial:admonition}}
 
-4. Lastly, click *Save* to change the statistical settings to T-test.
+4. Lastly, click **Save** to change the statistical settings to T-test.
 
 ## Manage sample size needed for the T-test
 
 You need to reach a minimum sample size before you run a T-test. Experiment warns you if your data set is too small. 
 
 You can find more information on your sample size requirements in the Cumulative Exposure graph and its corresponding table. The graph shows a constant, dotted line named Sample Size Target, which is the total number of users needed for each variant. The table next to the graph highlights the Exposure Remaining, which is the number of users needed by each variant. This information can confirm not only the number of users needed before running the T-test, but also provides an estimate of the time you need to complete the experiment before using a T-test to interpret your results.
-
-![](/docs/output/img/experiment-theory/RM3egRnbjtRu6omQuMOnWLzB454XqT8c0Zggca7cXJGi3BM6utiLZjfABHlMD3LEQi3rkWuz1DWXwinwVTJeZ3WQ40aAi9qhQAFzhO769-nlNFWRhYzAhzOVPTk0UHO6k323AO60QDFVCgcZE-AThMY)
 
 Unfortunately, reaching the needed sample size doesn't guarantee your results are statistically significant. For example, if your lift is smaller than the MDE, then your results often aren't be statistically significant.
