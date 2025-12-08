@@ -28,7 +28,7 @@ Amplitude's Snowflake Data Share Export is a paid add on to your Amplitude contr
 
 Snowflake supports data sharing only within the same region and cloud provider. Amplitude's Snowflake runs in US West (Oregon) on Amazon Web Services. To enable cross-region or cross-cloud data sharing, contact your Account Manager at Amplitude or reach out to Amplitude Support.
 
-Amplitude supports one Snowflake Data Share destination per project for each data type (events and merged user tables). You can set up multiple destinations across your organization. Destinations in different projects do not necessarily need to be to the same Snowflake account. For example, production projects can connect to your production Snowflake instance, staging projects to your staging instance, and development projects to your sandbox instance.
+Amplitude supports one Snowflake Data Share destination per project for each data type (events and merged user tables). You can set up multiple destinations across your organization. Destinations in different projects don't need to connect to the same Snowflake account. For example, production projects can connect to your production Snowflake instance, staging projects to your staging instance, and development projects to your sandbox instance.
 
 {{partial:admonition type="note" heading="EU availability"}}
 Snowflake Data Share isn't available for Amplitude customers in the EU region.
