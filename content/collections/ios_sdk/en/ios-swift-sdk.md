@@ -166,7 +166,7 @@ amplitude.track(
 Starting from release v0.4.0, identify events with only set operations will be batched and sent with fewer events. This change won't affect running the set operations. There is a config `identifyBatchIntervalMillis` for managing the interval to flush the batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 
 {{partial:admonition type="note" heading=""}}
@@ -187,6 +187,27 @@ amplitude.identify(identify: identify)
 ```objc
 AMPIdentify *identify = [AMPIdentify new];
 [identify set:@"color" value:@"green"];
+[amplitude identify:identify];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Clear all user properties
+
+Use `clearAll` to remove all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let identify = Identify()
+identify.clearAll()
+amplitude.identify(identify: identify)
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPIdentify *identify = [AMPIdentify new];
+[identify clearAll];
 [amplitude identify:identify];
 ```
 {{/partial:tab}}
