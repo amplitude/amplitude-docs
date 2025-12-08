@@ -36,7 +36,7 @@ To set up, you need the following:
 -   If your project uses [Schema enforcement](/docs/data/configure-schema), allow the Daily Ad Metrics event and its properties. Otherwise, the data may be silently blocked from ingestion.
 -   Google Ads data collects data at the ad level rather than the user level. As a result, Daily Ad Metrics events aren't associated with individual users and may appear as standalone events in user streams. These are best used for campaign level reporting, not for user level funnels or behavioral analysis.
 -   You can't import data directly from a Google Ads Manager Account (MCC). While you can provide an MCC ID to authorize access to a specific Customer ID, Amplitude only imports data from the specified account and not from the MCC or other accounts linked to it.
--   You can connect multiple Google Ads customer accounts (not MCCs) to a single Amplitude project. Although all campaign data is grouped under the same Daily Ad Metrics event, the `ad_account_id` property is available on new events as of May 9, 2025 and allows you to filter and analyze performance by account.
+-   You can connect multiple Google Ads customer accounts (not MCCs) to a single Amplitude project. There's no limit on the number of ad accounts you can connect. Although all campaign data is grouped under the same Daily Ad Metrics event, the `ad_account_id` property is available on new events as of May 9, 2025 and allows you to filter and analyze performance by account.
 
 ## Amplitude setup
 
