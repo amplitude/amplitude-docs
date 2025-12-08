@@ -41,6 +41,6 @@ Toggle console tracking on or off, and set the types of console information you 
 
 Session Replay captures activity on the currently focused tab. When the user switches between tabs, the replay follows their focus and automatically switches to show whichever tab they're actively viewing.
 
-When the user switches tabs, the replay cuts directly to the new tab with a fresh snapshot reflecting its current state. Background tabs aren't actively captured while out of focus, so they display periods of inactivity until the user returns to them. The event timeline captures and displays events from all tabs, regardless of whether they were happening on the focused tab at the time.
+When the user switches tabs, the replay cuts directly to the new tab with a fresh snapshot reflecting its current state. Background tabs aren't actively captured while out of focus. The event timeline captures and displays events from all tabs, regardless of whether they were happening on the focused tab at the time.
 
 While viewing a Session Replay, it isn't possible to manually switch to view background tabs; the replay strictly follows the user's actual focus. If the user switches away from the browser entirely, the replay shows an inactive period while displaying the last focused tab.
