@@ -72,7 +72,7 @@ footer_details:
       -
         id: lv1iuzsd
         link_text: 'Find a Partner'
-        link_url: 'https://partnerships.amplitude.com/English/directory/'
+        link_url: 'https://amplitude.com/partner-program'
     type: link_group
     enabled: true
   -
