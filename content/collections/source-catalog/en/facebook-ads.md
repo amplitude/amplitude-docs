@@ -30,7 +30,7 @@ To set up this integration, you need the following:
 * [Amplitude’s Web SDK v2](/docs/sdks/analytics/browser/browser-sdk-2) and other platform SDKs typically autocapture UTM parameters when a session starts. However, for setups using server-side instrumentation, custom routing, or single-page applications, you may need to manually map UTM values as user properties to keep consistency across events.  
 * If you use [Schema enforcement](/docs/data/configure-schema), ensure the Daily Ad Metrics event and its associated properties aren't blocked. If blocked, ingestion may silently fail and metrics don't populate.  
 * Because Facebook Ads data isn't tied to Amplitude user identifiers, Daily Ad Metrics events aren't mapped to real users. These events may appear in user streams with a synthetic ID but are best suited for campaign-level analysis rather than user-level funnels, cohorts, or journeys.  
-* You can connect multiple Facebook Ads customer accounts (not MCCs) to a single Amplitude project. Although all campaign data is grouped under the same Daily Ad Metrics event, `ad_account_id` is available on new events as of May 9, 2025 and allows you to filter and analyze performance by Facebook Ads account.
+* You can connect multiple Facebook Ads customer accounts (not MCCs) to a single Amplitude project. There's no limit on the number of ad accounts you can connect. Although all campaign data is grouped under the same Daily Ad Metrics event, `ad_account_id` is available on new events as of May 9, 2025 and allows you to filter and analyze performance by Facebook Ads account.
 
 ### Amplitude setup
 

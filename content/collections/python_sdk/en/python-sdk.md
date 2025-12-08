@@ -120,7 +120,7 @@ client.track(
 
 User properties help you understand your users at the time they performed some action within your app such as their device details, their preferences, or language.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `set_once`, `unset`, `add`, `append`, `prepend`, `pre_insert`, `post_insert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `set_once`, `unset`, `add`, `append`, `prepend`, `pre_insert`, `post_insert`, `remove`, and `clear_all` on individual user properties. Declare the operations through a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
@@ -216,13 +216,25 @@ client.identify(identify_obj, EventOptions(user_id="USER_ID"))
 
 #### Identify.remove
 
-This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing value from the given list. If the item doesn't exist in the user property, it will be no operation.
+This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing value from the given list. If the item doesn't exist in the user property, it's a no-op.
 
 ```Python
 from amplitude import Identify, EventOptions
 
 identify_obj=Identify()
 identify_obj.remove("unique-locations", "JFK")
+client.identify(identify_obj, EventOptions(user_id="USER_ID"))
+```
+
+#### Identify.clear_all
+
+This method removes all user properties from a user. Use `clear_all` with care because the operation is irreversible.
+
+```Python
+from amplitude import Identify, EventOptions
+
+identify_obj=Identify()
+identify_obj.clear_all()
 client.identify(identify_obj, EventOptions(user_id="USER_ID"))
 ```
 
