@@ -91,9 +91,6 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 dependencies {
     // Amplitude Engagement SDK
     implementation("com.amplitude:amplitude-engagement-android:1.0+")
-
-    // Amplitude Analytics SDK (required dependency)
-    implementation("com.amplitude:analytics-android:1.+")
 }
 ```
 
@@ -109,10 +106,6 @@ val amplitudeEngagement = AmplitudeEngagement(
     apiKey = "YOUR_API_KEY",
     options = AmplitudeInitOptions()
 )
-
-// Add the plugin to your Amplitude instance
-val amplitude = Amplitude(applicationContext)
-amplitude.add(amplitudeEngagement.getPlugin())
 ```
 
 #### Configuration options

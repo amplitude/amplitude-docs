@@ -129,8 +129,6 @@ let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
 let configuration = Configuration(
   apiKey: API_KEY
 )
-let amplitude = Amplitude(configuration: configuration)
-amplitude.add(plugin: amplitudeEngagement.getPlugin())
 ```
 
 #### Configuration options
