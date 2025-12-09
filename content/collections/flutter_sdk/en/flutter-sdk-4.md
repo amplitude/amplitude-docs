@@ -222,7 +222,7 @@ Refer to the [BaseEvent](https://github.com/amplitude/Amplitude-Flutter/blob/bet
 
 ## Identify
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations with a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations with a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If you send the Identify call after the event, the results of operations are visible immediately in the dashboard user's profile area, but it doesn't appear in chart results until the SDK sends another event after the Identify call. As a result, the identify call only affects events going forward. For more information, see [User Properties and Events](/docs/data/user-properties-and-events).
@@ -234,6 +234,16 @@ You can handle the identity of a user using the identify methods. Proper use of 
 final Identify identify = Identify()
     ..set('color', 'green')
 amplitude.identify(identify)
+```
+
+### Clear all user properties
+
+Use `clearAll` to remove all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+```dart
+final Identify identify = Identify()
+    ..clearAll();
+amplitude.identify(identify);
 ```
 
 ## Track default events
