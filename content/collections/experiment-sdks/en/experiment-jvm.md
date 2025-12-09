@@ -205,7 +205,7 @@ public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser use
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
 
 **FetchOptions**

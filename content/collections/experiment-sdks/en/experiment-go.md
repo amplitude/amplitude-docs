@@ -115,7 +115,7 @@ func (c *Client) Fetch(user *experiment.User) (map[string]experiment.Variant, er
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 
 ```go
 user := &experiment.User{
@@ -189,7 +189,7 @@ func (c *Client) FetchV2WithOptions(user *experiment.User, fetchOptions *experim
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. If `nil`, uses the server's default behavior (track assignment, do not track exposure). |
 
 ```go
