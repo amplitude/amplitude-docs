@@ -119,7 +119,7 @@ fetch_v2(user: User, fetch_options: FetchOptions = None) : Variants
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
 
 **FetchOptions**
@@ -161,7 +161,7 @@ fetch_async_v2(user: User, callback)
 
 | Parameter  | Requirement | Description                                                                   |
 |------------|-------------|-------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `callback` | optional    | The callback to handle the variants.                                          |
 
 ```python
