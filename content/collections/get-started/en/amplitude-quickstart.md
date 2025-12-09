@@ -16,6 +16,8 @@ Quickly get data flowing into Amplitude with Browser SDK and [Autocapture](/docs
 
 ### Install Amplitude
 
+Need an API key? Create a [free Amplitude account](https://app.amplitude.com/signup) to get started.
+
 When you create your Amplitude account, Amplitude provides two ways to install:
 
 - A prompt which you can pass to your agentic AI tool of choice.
@@ -42,7 +44,7 @@ The snippet above includes [Session Replay](/docs/session-replay/session-replay-
 
 ## Benefits of this approach
 
-- **Time to insights: Minutes, not months**: Start analyzing user behavior the same day.
+- **Time to insight**: Think minutes, not months. Start analyzing user behavior the same day.
 - **No engineering bottleneck**: Non-technical team members can define events using Visual Labeling.
 - **Flexible foundation**: Add custom precision tracking later as needs emerge.
 - **Complete picture**: Autocapture + Session Replay shows what users do and why.

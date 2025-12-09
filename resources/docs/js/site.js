@@ -297,7 +297,8 @@ function showApiKeyModal() {
                 <button class="api-key-modal-close">&times;</button>
             </div>
             <div class="api-key-modal-body">
-                <p>Enter your Amplitude API Key to personalize all code snippets on this page:</p>
+                <p>Enter your Amplitude API Key to personalize code snippets.</p>
+                <p>Need an API key? Create a <a href="https://app.amplitude.com/signup" target="_blank" style="color: rgb(30,97,240);">free Amplitude account</a> to get started.</p>
                 <input type="text" id="api-key-input" placeholder="Enter your API Key" value="${currentApiKey}" />
                 <div class="api-key-modal-actions">
                     <button id="api-key-save" class="api-key-btn-primary">Save & Update Code</button>
