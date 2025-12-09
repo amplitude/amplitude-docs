@@ -124,7 +124,7 @@ This view also shows the average fold of your page. The amount of the page that 
 On the list to the right of the map, click Watch Replays to view Session Replays of users who saw *at least* that much of your page.
 
 {{partial:admonition type="note" heading="Microscope availability"}}
-The microscope in heatmaps is only available for click maps and selector maps. The microscope isn't available for scroll maps at this time.
+The microscope in heatmaps is only available for click maps and selector maps. The microscope isn't available for scroll maps.
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Page length"}}
