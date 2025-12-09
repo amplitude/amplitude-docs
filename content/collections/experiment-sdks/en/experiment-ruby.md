@@ -130,7 +130,7 @@ fetch_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::Fe
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
 
 **FetchOptions**
@@ -174,7 +174,7 @@ fetch_async_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperime
 
 | Parameter  | Requirement | Description                                                                                           |
 |------------|-------------|-------------------------------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for.                         |
+| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched.                         |
 | `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
 | `callback` | optional    | The callback to handle the variants. Callback takes two arguments: User object and returned Variants. |
 
