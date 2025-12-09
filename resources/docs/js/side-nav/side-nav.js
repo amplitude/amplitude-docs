@@ -149,7 +149,11 @@ export class AmpNavItem extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+  }
+
+  firstUpdated() {
     // Auto-expand if this item or any descendant is current
+    // Must run in firstUpdated() because shadow DOM (and slot) doesn't exist until after first render
     this._checkAutoExpand();
   }
 
