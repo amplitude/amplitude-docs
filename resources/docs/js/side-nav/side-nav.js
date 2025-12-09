@@ -123,7 +123,8 @@ export class AmpNavItem extends LitElement {
       height: 0.875rem;
     }
 
-    .icon svg {
+    .icon svg,
+    .icon img {
       height: 0.875rem;
       width: auto;
     }
