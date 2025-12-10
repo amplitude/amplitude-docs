@@ -7,18 +7,96 @@
 {{/if}}
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
-  docsearch({
-    appId: "{{config:app:algolia-app}}",
-    apiKey: "{{config:app:algolia-key}}",
-    indexName: "amplitude-vercel",
-    container: '{{container}}',
-    debug: true,
-    placeholder: "Search 'instrumentation' , 'Export API'",
-    transformItems(items) {
-        return items.map((item) => ({
-          ...item,
-          url: item.url.replace('https://amplitude.com','')
-        }))
+  (function() {
+    var lastQuery = '';
+    var searchStartTime = null;
+    var debounceTimer = null;
+
+    docsearch({
+      appId: "{{config:app:algolia-app}}",
+      apiKey: "{{config:app:algolia-key}}",
+      indexName: "amplitude-vercel",
+      container: '{{container}}',
+      debug: true,
+      placeholder: "Search 'instrumentation' , 'Export API'",
+
+      transformItems: function(items) {
+        return items.map(function(item) {
+          return Object.assign({}, item, {
+            url: item.url.replace('https://amplitude.com', '')
+          });
+        });
+      },
+
+      onOpen: function() {
+        searchStartTime = Date.now();
+        if (typeof amplitude !== 'undefined') {
+          amplitude.track('Search opened', {
+            search_source: '{{container}}'
+          });
+        }
+      },
+
+      onClose: function() {
+        searchStartTime = null;
+        lastQuery = '';
+      },
+
+      onInput: function(event) {
+        var query = event.query || '';
+        lastQuery = query;
+
+        // Debounce search tracking to avoid firing on every keystroke
+        clearTimeout(debounceTimer);
+        if (query.length >= 3) {
+          debounceTimer = setTimeout(function() {
+            if (typeof amplitude !== 'undefined') {
+              amplitude.track('Search query', {
+                search_term: query,
+                search_source: '{{container}}'
+              });
+            }
+          }, 500);
+        }
+      },
+
+      navigator: {
+        navigate: function(params) {
+          var itemUrl = params.itemUrl;
+          if (typeof amplitude !== 'undefined') {
+            amplitude.track('Search result clicked', {
+              search_term: lastQuery,
+              result_url: itemUrl,
+              time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
+            });
+          }
+          window.location.href = itemUrl;
+        },
+        navigateNewTab: function(params) {
+          var itemUrl = params.itemUrl;
+          if (typeof amplitude !== 'undefined') {
+            amplitude.track('Search result clicked', {
+              search_term: lastQuery,
+              result_url: itemUrl,
+              new_tab: true,
+              time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
+            });
+          }
+          window.open(itemUrl, '_blank');
+        },
+        navigateNewWindow: function(params) {
+          var itemUrl = params.itemUrl;
+          if (typeof amplitude !== 'undefined') {
+            amplitude.track('Search result clicked', {
+              search_term: lastQuery,
+              result_url: itemUrl,
+              new_window: true,
+              time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
+            });
+          }
+          window.open(itemUrl, '_blank', 'noopener');
+        }
       }
-  });
+    });
+  })();
 </script>
