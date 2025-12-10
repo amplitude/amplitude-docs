@@ -645,6 +645,9 @@ svg.DocSearch-Hit-Select-Icon {
         display: none;
     }
 }
+.DocSearch-Escape-Key {
+    font-size: 10px;
+}
 @keyframes fade-in {
     0% {
         opacity: 0;
