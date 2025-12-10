@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1754950505
 ---
-Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking the recommendations provided by the Data Assistant and transforming those recommendations into automatic actions. For example, an automated task can automatically delete events if they have been unused for 90 days. 
+Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking recommendations provided by the Data Assistant and transforming those recommendations into automatic actions. For example, an automated task can automatically delete events if they have been unused for 90 days. 
 
 After they have been created, automated tasks run daily. 
 
@@ -29,11 +29,30 @@ By default, automated tasks operate across all projects within a workspace. You 
 
 You can select one, or any, of the following types of tasks to automate: 
 
-* Clean up unused events
-* Clean up single-day events
 * Clean up stale events
+* Clean up single-day events
+* Clean up unused events
+
+### Clean up stale events
+This tasks removes events that haven't experiences any recent volume. This indicates that the events aren't being ingested and are no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
+
+Historical charts or data aren't affected. 
+
+### Clean up single-day events
+This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that:
+
+* Have the same first seen and last seen dates and;
+* That date is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
+
+When the automated task finds events that match those criteria, it automatically schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+
+Historical charts or data aren't affected. 
 
 ### Clean up unused events
+{{partial:admonition type="tip" heading="Manually enabled"}}
+The Clean up unused events automated task can affect events that you want to keep. Therefore, the task must be manually enabled for each account. Reach out to your Amplitude representative or [Amplitude Support](https://gethelp.amplitude.com/hc/en-us/requests/new) for more information or to get this task enabled. 
+{{/partial:admonition}}
+
 This task optimizes your event volume by ensuring that all your ingested events are being actively used. The tasks inspects your organization for events that haven't been queried in 90 days. When it finds those events, it can notify you about them, schedule to delete those events within 30 days, and notify you when those events get deleted. 
 
 Your users can save events. They can save the event either through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
@@ -42,31 +61,23 @@ If the task deletes an event, this also blocks future ingestion of that event. H
 
 You can manually recover a deleted event at any time. 
 
-{{partial:admonition type="tip" heading="Manually enabled"}}
-The Clean up unused events automated task must be manually enabled for each account. Reach out to your Amplitude representative or [Amplitude Support](https://gethelp.amplitude.com/hc/en-us/requests/new) to get this task enabled. 
-{{/partial:admonition}}
-
-### Clean up single-day events
-This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that:
-
-* Have the same first seen and last seen dates and;
-* That date is more than 30 days before the inspection date
-
-When the automated task finds events that match those criteria, it automatically deletes those events. After they're deleted, those one-time testing events no longer appear in the event dropdown menu and are blocked from future ingestion.
-
-Historical charts or data aren't affected. 
-
-### Clean up stale events
-This tasks audits and deletes events that haven't happened recently. For example, this task identifies events that haven't been ingested in 90 days. It also can notify users about the impending deletion and then schedule the deletion activity 30 days after the notification is sent. 
-
 ## Setting up an automated task
 
+You can manually set up an automated task. Alternately, the [Data Assistant](/docs/data/use-ai-data-assistant) can proactively identify tasks for you.
+
+##### To manually set up an automated task
 1. Go to *Data > Assistant > Automated Tasks tab*.
 2. Click **Get Started**.
 3. Complete the set up prompts. This includes:
-    * Setting the threshold (in days) for unused events. By default, this is 90 days for unused events and 30 days for test events.
+    * Setting the threshold (in days). By default, this is 30 days for single-day events and 90 days for stale events.
     * Specifying any event tags that the automation rule should ignore. For example, if you never want to remove creation events, add a `create` tag to the ignore field. Review your events to make sure you are specifying the exact tag that's applied to your event.
 4. Click **Set Up Automation**.
+
+##### To set up an automated task through the Data Assistant
+
+If Amplitude detects events that meet a task’s criteria, those suggested tasks appear in the Suggestions view under *Data > Assistant*. If automation is available for that task, a banner appears above the suggestion. 
+
+Click the banner to turn on automation for future matching events.
 
 ## Removing an automation
 You can remove any current automation. When removing an automation, you can specify if you want to affect any pending changes or to only affect future changes.  
