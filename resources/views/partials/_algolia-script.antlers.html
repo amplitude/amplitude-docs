@@ -63,13 +63,12 @@
       navigator: {
         navigate: function(params) {
           var itemUrl = params.itemUrl;
-          
-          function doNavigate() {
+          var completeNavigation = function() {
             window.location.href = itemUrl;
-          }
+          };
           
           if (typeof amplitude !== 'undefined') {
-            amplitude.track('Search result clicked', {
+            var trackResult = amplitude.track('Search result clicked', {
               search_term: lastQuery,
               result_url: itemUrl,
               time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
@@ -80,7 +79,7 @@
             var timeoutId = setTimeout(function() {
               if (!navigated) {
                 navigated = true;
-                doNavigate();
+                completeNavigation();
               }
             }, 300);
             
@@ -88,17 +87,17 @@
               if (!navigated) {
                 navigated = true;
                 clearTimeout(timeoutId);
-                doNavigate();
+                completeNavigation();
               }
             }).catch(function() {
               if (!navigated) {
                 navigated = true;
                 clearTimeout(timeoutId);
-                doNavigate();
+                completeNavigation();
               }
             });
           } else {
-            doNavigate();
+            completeNavigation();
           }
         },
         navigateNewTab: function(params) {
