@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1756159007
 ---
-Maintaining a clean and organized tracking plan is key to maximizing the value you get from Amplitude Data. But when you have hundreds or even thousands of events and properties, doing so can be a daunting task. This is particularly true for identifying what you have to do to improve messy data.
+Maintaining a clean and organized tracking plan is key to maximizing the value you get from Amplitude Data. But when you have hundreds or even thousands of events and properties doing so can be a daunting task. This is particularly true for identifying what you have to do to improve messy data.
 
 Amplitude's AI Data Assistant helps you stay on top of your tracking plan by showing you a short list of suggested modifications whenever you are on the Data home page. Amplitude's internal AI generates these suggestions automatically. Any changes you make with the Data Assistant post directly to your tracking plan, with no other action required on your part.
 
@@ -39,3 +39,9 @@ If you’d like more detail on why Data Assistant has made a specific suggestion
 You can choose to implement the offered suggestion for all, some, or none of the events listed. To implement them all, click *Apply All*. To implement none of them, click *Reject All*.  
   
 To implement (or reject) the suggestion for only certain events, check the boxes for those events and click *Apply Suggestions* (or *Reject Suggestions*), or simply click *Apply* (or *X*) next to each of the events you want to update.
+
+## Automated tasks in Data Assistant
+
+Data Assistant provides automated tasks to help you clean up your data. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking recommendations provided by the Data Assistant and transforming those recommendations into automatic actions.
+
+For more information, go to [Automated Tasks](/docs/data/automated-tasks-in-data-assistant).
