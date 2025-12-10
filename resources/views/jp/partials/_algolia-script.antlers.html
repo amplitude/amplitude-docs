@@ -30,9 +30,9 @@
       }
     });
 
-    document.addEventListener('keyup', function(e) {
+    document.addEventListener('input', function(e) {
       var input = document.querySelector('.DocSearch-Input');
-      if (input && document.activeElement === input) {
+      if (input && e.target === input) {
         lastQuery = input.value;
       }
     });
@@ -57,6 +57,8 @@
         lastQuery = '';
         searchOpen = false;
       } else if (modal && !searchOpen) {
+        // Track search opened for keyboard shortcuts (Cmd+K/Ctrl+K)
+        amplitude.track('Search opened');
         searchOpen = true;
       }
     });
