@@ -205,7 +205,7 @@ html[data-theme="dark"] {
 .DocSearch-MagnifierLabel,
 .DocSearch-Reset {
     align-items: center;
-    color: var(--docsearch-highlight-color);
+    color: #A8ABB3;
     display: flex;
     justify-content: center;
 }
@@ -256,9 +256,9 @@ html[data-theme="dark"] {
     width: 20px;
 }
 
-.DocSearch-MagnifierLabel svg path {
+/* .DocSearch-MagnifierLabel svg path {
     stroke: #A8ABB3;
-}
+} */
 
 
 .DocSearch-Cancel {
@@ -647,6 +647,9 @@ svg.DocSearch-Hit-Select-Icon {
 }
 .DocSearch-Escape-Key {
     font-size: 10px;
+}
+.DocSearch-Clear {
+    display: none;
 }
 @keyframes fade-in {
     0% {
