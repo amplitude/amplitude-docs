@@ -200,6 +200,43 @@ analytics.on('track', (event, properties, options) => {
 });
 ```
 
+#### Add an integration after boot
+
+Use `addIntegration` to add an integration after the SDK boots. This is useful when you want to listen for specific Guides and Surveys events, like when a user dismisses a guide or survey.
+
+```js
+engagement.addIntegration(integration: Integration): void
+```
+
+| Parameter     | Type          | Description                                                                                   |
+| ------------- | ------------- | --------------------------------------------------------------------------------------------- |
+| `integration` | `Integration` | Required. An integration object with a `track` function that receives Guides and Surveys events. |
+
+##### Example: Track when a specific guide or survey closes
+
+```js
+// Add an integration that logs when a specific nudge is closed
+
+window.engagement.addIntegration({
+  track: (event) => {
+    // Check if this is a dismiss/close event
+    // Note: Events can be "[Guides-Surveys] Guide Dismissed" or "[Guides-Surveys] Survey Dismissed"
+    if (event.event_type.includes('Dismissed')) {
+      // Get the nudge key from event properties
+      const nudgeKey = event.event_properties['[Guides-Surveys] Key'];
+      
+      // Replace 'your-key' with the actual key you want to track
+      if (nudgeKey === 'your-key') {
+        console.log('Guide or survey closed!', {
+          key: nudgeKey,
+          eventType: event.event_type,
+          allProperties: event.event_properties
+        });
+      }
+    }
+  }
+});
+```
 
 {{partial:collapse name="Initialize with Segment analytics"}}
 Initializing the SDK and launching a guide or survey with third-party analytics requires a few more steps.
@@ -555,7 +592,7 @@ engagement.forwardEvent(event: Event): void
 
 
 ## Set user properties
-Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ property.propertyName }}` syntax.
 
 If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
 
@@ -692,6 +729,10 @@ window.electronAPI.startEngagementDebug((data) => {
 ## Troubleshoot your installation
 
 If your Guides and Surveys instrumentation doesn't work, verify the following topics:
+
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys. The extension includes tools to verify SDK setup, troubleshoot why guides or surveys aren't showing, and test event-based triggers.
+{{/partial:admonition}}
 
 ### Verify Guides and Surveys is installed
 

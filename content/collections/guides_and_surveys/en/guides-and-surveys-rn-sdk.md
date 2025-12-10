@@ -20,7 +20,9 @@ The Guides and Surveys React Native SDK requires:
 * iOS 15+
 * Swift 5.9+
 
-## Install the SDK
+## Installation
+
+### Install the SDK
 
 Install the Guides and Surveys React Native SDK as a package with npm or Yarn.
 
@@ -50,7 +52,7 @@ cd ios
 bundle exec pod install
 ```
 
-## Initialize the SDK
+### Initialize the SDK
 
 ```js
 //index.js
@@ -89,9 +91,48 @@ To avoid analytics mismatches and ensure accurate data collection, use the same 
 Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Analytics SDK.
 {{/partial:admonition}}
 
+### Boot the plugin
+
+Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
+
+```js
+import {
+  track,
+  setDeviceId,
+  setUserId,
+} from '@amplitude/analytics-react-native';
+import { useEffect } from 'react';
+
+export default function App() {
+  useEffect(() => {
+    //
+    // setting the User ID in @amplitude/analytics-react-native
+    // --and-- passing it to boot() is necessary
+    //
+    setUserId('rn-test-user-1');
+    setDeviceId('test-device-1');
+    getPlugin().boot('rn-test-user-1', 'test-device-1');
+  }, []);
+}
+```
+
 {{partial:admonition type="note" heading=""}}
 At this point, you are technically done installing. While optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-rn-sdk#configure-linking).
 {{/partial:admonition}}
+
+## Add your application to project settings
+
+After installing the SDK, add your React Native application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
+
+To add your application:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **React Native** from the dropdown.
+
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your React Native app users.
 
 ## Element targeting
 
@@ -121,16 +162,18 @@ export default function WelcomeBanner() {
 }
 ```
 
-
 ## Configure linking
 
-If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. Previewing Guides and Surveys on a device requires this support.
+If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. **Previewing guides and surveys on a phone, tablet, or simulator requires this configuration.**
 
 ### Locate the mobile URL scheme
 
-In Amplitude, navigate to your Project's settings.
-
-On the **General** tab, locate the **URL scheme (mobile)** field. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ## Changelog
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

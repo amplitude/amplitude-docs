@@ -22,7 +22,7 @@ Be sure to check out our other articles on predictions: [Predictions: use Amplit
 
 To build a prediction in Amplitude Activation, follow these steps:
 
-1. Navigate to *Cohorts & Audiences* and click *Predictions* in the left rail. Then click *+ Create Prediction*.
+1. Navigate to *Users > Predictions*. Then click *+ Create Prediction*.
 2. Next, click *Start with All Users* to apply this prediction to all user who’ve been active in the last 90 days, or define your own starting cohort.
 3. If you choose to define your own starting cohort, select the users to include in the cohort. Under *Define starting cohort*, select the events, properties, or statuses that users in your cohort share.
 4. Next, specify the action you want the starting cohort to take. Under *Define future outcome*, specify the events you want, or don’t want, your users to fire, the properties you want them to have after taking an action, or some combination of all three. Be sure to specify the time frame in which you want your users to take this future action.  
@@ -38,7 +38,7 @@ Another way to think about a prediction is as a **cohort transition**: you’re 
 
 Once Amplitude Activation has finished building your prediction, you’ll want to take a look at the results. Depending on what you see, you’ll either save the prediction as a cohort, or start over with a new prediction.
 
-1. To view the results of your prediction, click the *Predictions* tab from the Cohorts & Audiences page. This shows you a list of all the predictions created so far.
+1. To view the results of your prediction, navigate to *Users > Predictions*. This shows you a list of all the predictions created so far.
 2. Find your prediction and click it to open the prediction explorer's *Audience analysis* tab. Here, you’ll see the distribution of all users in your starting cohort:
 
    * The Y-axis shows the likelihood a user converts (for example, arrive at the future outcome you specified earlier)

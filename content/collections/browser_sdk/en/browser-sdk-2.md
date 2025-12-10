@@ -999,7 +999,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties are details like device details, user preferences, or language to help you understand your users at the time they performed an action in your app.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading="Identify calls"}}
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
@@ -1048,6 +1048,16 @@ identifyEvent.add('travel-count', 1);
 amplitude.identify(identifyEvent);
 ```
 
+#### Identify.unset
+
+This method removes a user property from a user profile. Use `unset` when you no longer need a property or want to remove it completely.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.unset('location'); 
+amplitude.identify(identifyEvent);
+```
+
 ### Arrays in user properties
 
 Call the `prepend`, `append`, `preInsert`, or `postInsert` methods to use arrays as user properties.
@@ -1089,6 +1099,16 @@ This method removes a value or values to a user property if it exists in the use
 ```ts
 const identifyEvent = new amplitude.Identify();
 identifyEvent.remove('unique-locations', 'JFK') 
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.clearAll
+
+This method removes all user properties from the user. Use `clearAll` with care because it's irreversible.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.clearAll();
 amplitude.identify(identifyEvent);
 ```
 
