@@ -123,6 +123,10 @@ This view also shows the average fold of your page. The amount of the page that 
 
 On the list to the right of the map, click Watch Replays to view Session Replays of users who saw *at least* that much of your page.
 
+{{partial:admonition type="note" heading="Microscope availability"}}
+The microscope in heatmaps is only available for click maps and selector maps. The microscope isn't available for scroll maps.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading="Page length"}}
 Scroll maps reflect the farthest point users scrolled on the page, with no set limit. For example, if some users receive a 1,000px version of a page and others receive a 2,000px version, the heatmap combines scroll data from both versions. Choose from available background snapshots to align the heatmap with the version most relevant to your analysis.
 {{/partial:admonition}}
