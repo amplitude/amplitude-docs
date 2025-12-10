@@ -97,6 +97,8 @@ This helps quantify the business impact of technical issues and prioritize fixes
 
 Amplitude automatically sends a `[Amplitude] Replay Captured` event when it successfully captures a session replay. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
 
+The event uses the device ID passed to the Session Replay SDK or browser SDK plugin. The session ID is added to the event based on your project's Amplitude session definition. The event doesn't use user ID.
+
 ### Use the Replay Captured event
 
 The `[Amplitude] Replay Captured` event appears in your event stream and you can analyze it like any other event. For example, you can:
