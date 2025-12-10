@@ -63,14 +63,43 @@
       navigator: {
         navigate: function(params) {
           var itemUrl = params.itemUrl;
+          
+          function doNavigate() {
+            window.location.href = itemUrl;
+          }
+          
           if (typeof amplitude !== 'undefined') {
             amplitude.track('Search result clicked', {
               search_term: lastQuery,
               result_url: itemUrl,
               time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
             });
+            
+            // Flush events before navigating, with timeout fallback
+            var navigated = false;
+            var timeoutId = setTimeout(function() {
+              if (!navigated) {
+                navigated = true;
+                doNavigate();
+              }
+            }, 300);
+            
+            amplitude.flush().promise.then(function() {
+              if (!navigated) {
+                navigated = true;
+                clearTimeout(timeoutId);
+                doNavigate();
+              }
+            }).catch(function() {
+              if (!navigated) {
+                navigated = true;
+                clearTimeout(timeoutId);
+                doNavigate();
+              }
+            });
+          } else {
+            doNavigate();
           }
-          window.location.href = itemUrl;
         },
         navigateNewTab: function(params) {
           var itemUrl = params.itemUrl;
