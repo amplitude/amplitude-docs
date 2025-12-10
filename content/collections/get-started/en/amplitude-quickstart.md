@@ -8,7 +8,9 @@ exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1763678212
 ---
-As an early-stage startup, you need answers fast. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
+Get started with the full Amplitude platform in minutes. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
+
+Use this kit to get Autocapture, Session Replay, Web Experiment, and Guides & Surveys.
 
 ## Speed run your installation: Browser SDK and Autocapture
 
@@ -27,20 +29,29 @@ When you create your Amplitude account, Amplitude provides two ways to install:
 {{partial:partials/quickstart}}
 {{/partial:admonition}}
 
-### Use autocapture
+### Use Autocapture
 
 With `autocapture: true`, Amplitude automatically tracks:
-- **Sessions** – How users engage over time
-- **Page views** – Which pages matter most
-- **Clicks & interactions** – What users engage with
-- **Form interactions** – Where users get stuck
-- **File downloads** – Content engagement
-- **Marketing attribution** – Where users come from
-
+- **Sessions** – How users engage over time.
+- **Page views** – Which pages matter most.
+- **Clicks & interactions** – What users engage with.
+- **Form interactions** – Where users get stuck.
+- **File downloads** – Content engagement.
+- **Marketing attribution** – Where users come from.
 
 ### Add Session Replay
 
 The snippet above includes [Session Replay](/docs/session-replay/session-replay-plugin) at 100% sampling (`sampleRate: 1`). This lets you watch exactly what users experience and helps you debug issues and understand user behavior. Lower the sample rate in production to control volume and cost.
+
+### Launch a Web Experiment
+
+Web Experiment lets you run A/B tests on your website using the same data you already send through the Unified Browser SDK. Target users, roll out changes gradually, and compare variants based on real product metrics like activation or retention in Amplitude. Web Experiment handles experiment assignment, exposure, and basic statistical analysis so you don't need to build that logic yourself.
+
+Test different versions or features of your site using Amplitude's no-code [Visual Editor](/docs/web-experiment/visual-editor).
+
+### Create a guide or survey
+
+[Guides & Surveys](/docs/guides-and-surveys) let you deliver in-product messages and collect feedback on your website using the same Unified Browser SDK instrumentation you already set up. You can target users based on their behavior or properties, show walkthroughs or prompts, and trigger surveys at key moments in the journey. Amplitude captures responses and interactions, so you can see how they relate to core metrics like activation, conversion, or retention. This is a natural next step after events are flowing and you want to both influence and understand user behavior directly in the product.
 
 ## Benefits of this approach
 
