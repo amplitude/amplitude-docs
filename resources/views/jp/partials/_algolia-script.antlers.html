@@ -11,10 +11,56 @@
     debug: false,
     placeholder: "Search 'instrumentation' , 'Export API'",
     transformItems(items) {
-        return items.map((item) => ({
-          ...item,
-          url: item.url.replace('https://amplitude-docs.vercel.app','')
-        }))
-      }
+      return items.map((item) => ({
+        ...item,
+        url: item.url.replace('https://amplitude-docs.vercel.app','')
+      }))
+    }
   });
+
+  // Amplitude tracking for DocSearch
+  (function() {
+    var lastQuery = '';
+    var searchOpen = false;
+
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.DocSearch-Button')) {
+        amplitude.track('Search opened');
+        searchOpen = true;
+      }
+    });
+
+    document.addEventListener('keyup', function(e) {
+      var input = document.querySelector('.DocSearch-Input');
+      if (input && document.activeElement === input) {
+        lastQuery = input.value;
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      var hit = e.target.closest('.DocSearch-Hit');
+      if (hit) {
+        var link = hit.querySelector('a');
+        var url = link ? link.getAttribute('href') : '';
+        var hits = document.querySelectorAll('.DocSearch-Hit');
+        var position = Array.prototype.indexOf.call(hits, hit) + 1;
+        amplitude.track('Search result clicked', { url: url, position: position });
+      }
+    });
+
+    var observer = new MutationObserver(function(mutations) {
+      var modal = document.querySelector('.DocSearch-Modal');
+      if (searchOpen && !modal) {
+        if (lastQuery) {
+          amplitude.track('Search query', { query: lastQuery });
+        }
+        lastQuery = '';
+        searchOpen = false;
+      } else if (modal && !searchOpen) {
+        searchOpen = true;
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
 </script>
