@@ -22,7 +22,7 @@ The Amplitude MCP server is under active development. Some functions and setting
 
 * Available to any existing Amplitude customer.
 
-* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code).
+* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Replit, Claude Code).
 
 ## Regions
 
@@ -65,7 +65,7 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, ChatGPT, Gemini CLI, Other MCP Clients"}}
+{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, Replit, ChatGPT, Gemini CLI, Other MCP Clients"}}
 {{partial:tab name="Claude (web and desktop)"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
 2. Go to *Settings > Connectors > Add custom connector*.  
@@ -143,6 +143,35 @@ Complete the steps below, depending on the tool you're integrating with.
 
    4. Return to Tools & Integration tab and authenticate with Amplitude.
   
+{{/partial:tab}}
+{{partial:tab name="Replit"}}
+
+**Quick Install (Recommended):**
+
+**US Server (Default):**
+[Add Amplitude MCP Server to Replit](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
+**EU Server:**
+[Add Amplitude MCP Server to Replit (EU)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
+**Manual Setup:**
+
+   1. Navigate to your Replit workspace settings.
+      
+   2. Go to *Integrations > MCP Servers*.
+
+   3. Add a new MCP server with this configuration:
+      * **Name:** Amplitude
+      * **URL:** `https://mcp.amplitude.com/mcp`
+
+      {{partial:admonition type="note"}}
+      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+      {{/partial:admonition}}
+
+   4. Complete Amplitude OAuth authorization when prompted.
+
+   5. Start asking questions about your Amplitude data.
+
 {{/partial:tab}}
 {{partial:tab name="ChatGPT"}}
 
