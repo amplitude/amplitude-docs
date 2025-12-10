@@ -63,14 +63,26 @@
       navigator: {
         navigate: function(params) {
           var itemUrl = params.itemUrl;
+          var completeNavigation = function() {
+            window.location.href = itemUrl;
+          };
           if (typeof amplitude !== 'undefined') {
-            amplitude.track('Search result clicked', {
+            var trackResult = amplitude.track('Search result clicked', {
               search_term: lastQuery,
               result_url: itemUrl,
               time_to_click_ms: searchStartTime ? Date.now() - searchStartTime : null
             });
+            var trackPromise = trackResult && typeof trackResult.then === 'function'
+              ? trackResult
+              : trackResult && trackResult.promise && typeof trackResult.promise.then === 'function'
+                ? trackResult.promise
+                : null;
+            if (trackPromise) {
+              trackPromise.then(completeNavigation).catch(completeNavigation);
+              return;
+            }
           }
-          window.location.href = itemUrl;
+          completeNavigation();
         },
         navigateNewTab: function(params) {
           var itemUrl = params.itemUrl;
