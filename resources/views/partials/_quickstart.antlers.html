@@ -1,15 +1,30 @@
 <div class="quickstart-configurator">
-    <div class="bg-gray-100 pb-2">
-        <div class="font-semibold mb-3 text-gray-800">Configure your setup:</div>
-        <div class="flex gap-6 flex-wrap">
-            <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="quickstart-autocapture" checked class="cursor-pointer w-4 h-4">
-                <span class="text-gray-700">Enable Autocapture</span>
+    <!-- Introductory text -->
+    <p class="text-sm text-amp-gray-600 my-0">Customize your installation by selecting the features and data region for your project.</p>
+    
+    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 py-3">
+        <!-- Feature toggles -->
+        <div class="flex items-center gap-6">
+            <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" id="quickstart-autocapture" checked class="cursor-pointer w-4 h-4 rounded border-amp-gray-300 text-amp-blue focus:ring-amp-blue-500">
+                <span class="text-sm text-amp-gray-700 group-hover:text-amp-gray-900">Autocapture</span>
             </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="quickstart-session-replay" checked class="cursor-pointer w-4 h-4">
-                <span class="text-gray-700">Enable Session Replay</span>
+            <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" id="quickstart-session-replay" checked class="cursor-pointer w-4 h-4 rounded border-amp-gray-300 text-amp-blue focus:ring-amp-blue-500">
+                <span class="text-sm text-amp-gray-700 group-hover:text-amp-gray-900">Session Replay</span>
             </label>
+        </div>
+
+        <!-- Divider -->
+        <div class="hidden sm:block w-px h-6 bg-amp-gray-200"></div>
+
+        <!-- Data region toggle -->
+        <div class="flex items-center gap-3">
+            <span class="text-sm text-amp-gray-700">Data region</span>
+            <div class="flex rounded-md overflow-hidden border border-amp-gray-200 shadow-sm">
+                <button type="button" id="quickstart-region-us" class="px-3 py-1.5 text-sm font-semibold bg-amp-blue-950 text-amp-blue-500 transition-colors">US</button>
+                <button type="button" id="quickstart-region-eu" class="px-3 py-1.5 text-sm font-medium bg-white text-amp-gray-300 hover:text-amp-gray-500 hover:bg-amp-gray-50 transition-colors">EU</button>
+            </div>
         </div>
     </div>
 </div>
@@ -46,12 +61,14 @@ Click the Key icon to insert your Amplitude API key.
 (function() {
     const autocaptureCheckbox = document.getElementById('quickstart-autocapture');
     const sessionReplayCheckbox = document.getElementById('quickstart-session-replay');
+    const regionUsButton = document.getElementById('quickstart-region-us');
+    const regionEuButton = document.getElementById('quickstart-region-eu');
     const aiPromptCode = document.getElementById('quickstart-ai-prompt');
     const snippetCode = document.getElementById('quickstart-snippet');
     
     // Configuration - matching production code
     const isUnifiedSdkEnabled = true;
-    const isEUDC = false;
+    let isEUDC = false;
     
     function makeAiPrompt({ isAutocaptureSelected, isSessionReplaySelected, apiKey }) {
         const autoCapture = { autocapture: isAutocaptureSelected };
@@ -129,7 +146,8 @@ ${documentationText}`;
         const scriptOpen = String.fromCharCode(60) + 'script';
         const scriptClose = String.fromCharCode(60) + '/script' + String.fromCharCode(62);
         
-        snippetParts.push(`${scriptOpen} src="https://cdn.amplitude.com/script/${apiKey}.js"${String.fromCharCode(62)}${scriptClose}`);
+        const cdnDomain = isEUDC ? 'cdn.eu.amplitude.com' : 'cdn.amplitude.com';
+        snippetParts.push(`${scriptOpen} src="https://${cdnDomain}/script/${apiKey}.js"${String.fromCharCode(62)}${scriptClose}`);
         
         let scriptContent = [];
         if (isSessionReplaySelected) {
@@ -140,6 +158,10 @@ ${documentationText}`;
         let snippetInitConfig = {
             fetchRemoteConfig: true
         };
+        
+        if (isEUDC) {
+            snippetInitConfig.serverZone = 'EU';
+        }
         
         if (isAutocaptureSelected) {
             snippetInitConfig.autocapture = {
@@ -229,6 +251,26 @@ ${documentationText}`;
     // Add event listeners
     autocaptureCheckbox.addEventListener('change', updateSnippets);
     sessionReplayCheckbox.addEventListener('change', updateSnippets);
+    
+    // Region toggle handlers
+    function setRegion(isEU) {
+        isEUDC = isEU;
+        if (isEU) {
+            regionUsButton.classList.remove('bg-amp-blue-950', 'text-amp-blue-500', 'font-semibold');
+            regionUsButton.classList.add('bg-white', 'text-amp-gray-300', 'font-medium', 'hover:text-amp-gray-500', 'hover:bg-amp-gray-50');
+            regionEuButton.classList.remove('bg-white', 'text-amp-gray-300', 'font-medium', 'hover:text-amp-gray-500', 'hover:bg-amp-gray-50');
+            regionEuButton.classList.add('bg-amp-blue-950', 'text-amp-blue-500', 'font-semibold');
+        } else {
+            regionEuButton.classList.remove('bg-amp-blue-950', 'text-amp-blue-500', 'font-semibold');
+            regionEuButton.classList.add('bg-white', 'text-amp-gray-300', 'font-medium', 'hover:text-amp-gray-500', 'hover:bg-amp-gray-50');
+            regionUsButton.classList.remove('bg-white', 'text-amp-gray-300', 'font-medium', 'hover:text-amp-gray-500', 'hover:bg-amp-gray-50');
+            regionUsButton.classList.add('bg-amp-blue-950', 'text-amp-blue-500', 'font-semibold');
+        }
+        updateSnippets();
+    }
+    
+    regionUsButton.addEventListener('click', () => setRegion(false));
+    regionEuButton.addEventListener('click', () => setRegion(true));
     
     // Initial update
     updateSnippets();
