@@ -44,7 +44,7 @@ This task removes accidental or one-time test events that can negatively impact 
 * Have the same first seen and last seen dates and;
 * That date is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
 
-When the automated task finds events that match those criteria, it automatically schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
 
@@ -55,7 +55,7 @@ The Clean up unused events automated task can affect events that you want to kee
 
 This task optimizes your event volume by ensuring that all your ingested events are being actively used. The tasks inspects your organization for events that haven't been queried in 90 days. When it finds those events, it can notify you about them, schedule to delete those events within 30 days, and notify you when those events get deleted. 
 
-Your users can save events. They can save the event either through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
+Your users can save events through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
 
 If the task deletes an event, this also blocks future ingestion of that event. Historical charts or data aren't affected. The deleted event still appears in them. 
 
