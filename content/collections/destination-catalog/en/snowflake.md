@@ -44,7 +44,7 @@ Load your Amplitude event data into your Snowflake account. You can set up recur
 
 ## Set up a recurring data export to Snowflake
 
-Creating a recurring data export is a simple, three-step process you can handle yourself. Each sync completes within five to ten minutes, though often it's much closer to real time. 
+Creating a recurring data export is a simple, three-step process you can handle yourself. Each sync typically completes within five to ten minutes, though timing may vary depending on system load and data volume. 
 This method also lets you watch jobs.
 
 {{partial:admonition type="warning" heading="Use a dedicated warehouse for Amplitude data"}}
@@ -92,8 +92,7 @@ Beginning in May 2026, Snowflake is removing support for single-factor password 
 
 All future events are automatically sent to Snowflake.
 
-From here, Amplitude generates micro-batch files at five-minute intervals and loads them to customer-owned Snowflake accounts directly every 10 minutes. 
-You are able to see the data in your Snowflake accounts within 20 minutes after Amplitude receives the events.
+From here, Amplitude generates micro-batch files and loads them to customer-owned Snowflake accounts on a best-effort basis. Exports typically run every 10 minutes, but may run less frequently depending on system load and data volume. You can typically see the data in your Snowflake accounts within 20 minutes after Amplitude receives the events, though timing may vary.
 
 ## Export historical Amplitude data to Snowflake
 
@@ -116,7 +115,9 @@ The effectiveness of these recommendations depends on the frequency with which y
 
 ## Snowflake export format
 
-### Event table schema
+### Event table
+
+#### Event table schema
 
 The **Event** table schema includes the following columns:
 <!--vale off -->
@@ -164,7 +165,20 @@ The **Event** table schema includes the following columns:
 
 <!-- vale on-->
 
-### Merged User table schema
+#### Event table clustering
+
+The exported events table uses these clustering keys by default (in order):
+
+1. `TO_DATE(EVENT_TIME)`
+2. `TO_DATE(SERVER_UPLOAD_TIME)`
+3. `EVENT_TYPE`
+4. `AMPLITUDE_ID`
+
+This optimizes query performance for time-based queries. You can modify the clustering keys to match your query patterns.
+
+### Merged User table
+
+#### Merged User table schema
 
 The Merged User table schema contains the following:  
 
@@ -174,3 +188,7 @@ The Merged User table schema contains the following:
 | `merge_event_time`                   | TIMESTAMP    | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.             |
 | `merge_server_time`                  | TIMESTAMP    | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id`                | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.                                         |
+
+#### Merged User table clustering
+
+Amplitude clusters the merged IDs table by `DATE_TRUNC('HOUR', MERGE_SERVER_TIME)`. This optimizes queries that filter by when user merges occurred. You can modify the clustering keys to match your query patterns.

@@ -5,15 +5,11 @@ title: 'Web Experiment targeting'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195990
 ---
-Web Experiments target both pages and audiences. Amplitude evaluates first page targeting and then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
+Web Experiments target both pages and audiences. Amplitude first evaluates page targeting and then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
 
 Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where experiment variants apply on your website. Pages define the conditions under which a web experiment should apply, including targeting conditions to match specific URLs and visual editor URLs for previewing experiments.
 
 ## Audience targeting
-
-{{partial:admonition type="note"}}
-Audience targeting isn't available on **Starter** plans. 
-{{/partial:admonition}}
 
 By default, a new Web Experiment targets all users. Audience targeting enables you to target specific users for your experiment. Users who aren't targeted in the experiment receive the default experience and don't count towards analysis.
 
@@ -25,7 +21,7 @@ Browser properties are available client-side and don't require network requests.
 
 | Parameter                            | Description                                                                                                                                                                                                                                                                                                                                          |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| New Users                            | A new user is first seen after a specified date. When the Web Experiment SDK first sees a user, it stores the date in local storage when the SDK loads then is never updated. May not function as intended shortly after the initial script installation, when all users are new. This **isn't** the same as new user queries in charts and cohorts. |
+| New Users                            | A new user is first seen after a specified date. When the Web Experiment SDK first sees a user, it stores the date in local storage when the SDK loads then is never updated. May not function as intended shortly after the initial script installation, when all users are new. This isn't the same as new user queries in charts and cohorts. |
 | Returning Users                      | A returning user is a user first seen before a certain date. Same local considerations apply as with New Users.                                                                                                                                                                                                                                      |
 | Referring URL                        | Matches users who land on your site from a specific referrer. For more information, review [document.referrer](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) on MDN.                                                                                                                                                              |
 | Landing Page URL                     | The landing page URL is set in session storage when the SDK loads.                                                                                                                                                                                                                                                                              |
@@ -39,10 +35,6 @@ Browser properties are available client-side and don't require network requests.
 | Freeform properties                  | Custom properties for the user set using the [`IntegrationPlugin`](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp).                                                                                                                                                                                                            |
 
 ### User properties (remote)
-
-{{partial:admonition type='note'}}
-Web experiment user property targeting isn't available on Starter or Plus plans.
-{{/partial:admonition}}
 
 You can perform advanced targeting based on [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution), [IP geolocation](/docs/feature-experiment/remote-evaluation#geolocation), [property canonicalization](/docs/feature-experiment/remote-evaluation#canonicalization), [behavioral cohorts](/docs/feature-experiment/remote-evaluation#cohort-membership), and historical [user properties](/docs/feature-experiment/remote-evaluation#user-properties). Targeting user properties may increase page display latency because of required network requests.
 
@@ -63,4 +55,4 @@ Bucketing refers to the variant a users sees, based on the rollout and distribut
 
 Bucketing is consistent given the user has the same ID. Since most experiments bucket by Device ID, Web Experiment may put them in a different bucket if they visit on a new device, browser, or have private browsing enabled.
 
-Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment has rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
+Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment has rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the distribution from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.

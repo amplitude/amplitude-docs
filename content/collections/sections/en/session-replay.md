@@ -42,6 +42,21 @@ Event names with a *sparkle* icon indicate that Amplitude has generated a name t
 
 Session Replay can capture and display technical errors and console logs that occur during user sessions. This helps you understand whether technical issues are impacting user experience and correlate errors with drops in conversion or engagement.
 
+Error Analytics is an umbrella term for two types of error capture:
+
+* **Console Errors**: JavaScript console logs, warnings, and errors. These display in the console panel within the session replay modal.
+* **Network Errors**: Failed network requests and API calls. These display at the bottom of the session replay modal.
+
+### Requirements
+
+Error Analytics features have different SDK requirements:
+
+| Feature | SDK | Minimum Version |
+|---------|-----|-----------------|
+| Console Errors | [Session Replay Browser SDK](/docs/session-replay/session-replay-standalone-sdk) (`@amplitude/session-replay-browser`) | 1.22.4 |
+| Console Errors | [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) (`@amplitude/plugin-session-replay-browser`) | 1.16.6 |
+| Network Errors | [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) | 2.24.0 |
+
 When enabled, Session Replay captures:
 
 * **JavaScript console logs**: Console messages, warnings, and errors logged by your application
@@ -78,12 +93,39 @@ Error events captured during sessions appear in your event stream and can be ana
 
 This helps quantify the business impact of technical issues and prioritize fixes based on data.
 
+## Replay Captured event
+
+Amplitude automatically sends a `[Amplitude] Replay Captured` event when it successfully captures a session replay. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
+
+The event uses the device ID passed to the Session Replay SDK or browser SDK plugin. The session ID is added to the event based on your project's Amplitude session definition. The event doesn't use user ID.
+
+### Use the Replay Captured event
+
+The `[Amplitude] Replay Captured` event appears in your event stream and you can analyze it like any other event. For example, you can:
+
+* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure replay capture rates and trends.
+* Filter charts and analyses by the event to focus on sessions with captured replays.
+
+The event indicates that the replay is available for viewing in Amplitude. When you see this event in a user's event stream, you can view the associated session replay.
+
+{{partial:admonition type="note" heading=""}}
+Amplitude sends the `[Amplitude] Replay Captured` event automatically. You don't need to instrument this event yourself. This event doesn't count toward your event volume or MTU (Monthly Tracked Users).
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The `[Amplitude] Replay Captured` event may create anonymous users if the device ID can't be associated with an existing user.
+{{/partial:admonition}}
+
 ## Frustration analytics
 
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
 
+{{partial:admonition type="note" heading="Requirements"}}
+Frustration Analytics requires [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) version 2.24.0 or later.
+{{/partial:admonition}}
+
+
 ### Frustration event types
-When users rapidly click the same element multiple times, usually indicating something isn't working as expected.
 * **Rage clicks**: When users rapidly click the same element multiple times, usually indicating something isn't working as expected. This often means a button or link appears interactive but doesn't respond.
 * **Dead clicks**: When users click on elements that appear clickable but have no functionality—such as non-interactive images styled like buttons or links that lead nowhere.
 
@@ -168,7 +210,23 @@ Once you make your selection, view replays that took place within the selected t
 Keep in mind that if you apply a filter to exclude replays with a specific property value, Session Replay search returns results for all replays with a different value for that property, **and** replays with **missing** values for that property.
 {{/partial:admonition}}
 
-The list of results shows a maximum of 100 replays. 
+The list of results shows a maximum of 100 replays. 
+
+## How session replay querying works
+
+When you search for replays by event in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your events occurred.
+
+![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
+
+### Matching replays to events
+
+Amplitude matches replays to your events by finding replays that:
+
+1. **Match the session ID**: The replay belongs to the same session as your events. This ensures you're viewing the correct replay for that user session.
+2. **Start before your events**: The replay begins before the first event you're looking at
+3. **End after your events**: The replay continues past the last event you're looking at
+
+This ensures the replay captures the full context around the events you're analyzing. For example, if you're looking at events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that belong to the same session and started before 2:00 PM and ended after 2:05 PM.
 
 ## Add a replay to a dashboard or notebook
 

@@ -866,14 +866,12 @@ line-height: 1.25rem;
     background: #e5e6e8;
     border: none;
     border-radius: .2rem;
-    /* box-shadow: 0 0 0 1px rgb(var(--tw-prose-kbd-shadows) / 10%), 0 3px 0 rgb(var(--tw-prose-kbd-shadows) / 10%); */
     box-shadow: none;
     color: #656b75;
     font-family: inherit;
     font-size: .875em;
     font-style: normal;
     font-weight: 500;
-    padding: .1875em .375em;
 }
 
 
@@ -1344,6 +1342,24 @@ img.expandable-image {
 
 .api-key-manual-button:hover svg {
     fill: #1E40AF !important;
+}
+
+/* Custom Tippy.js theme for API key tooltip */
+.tippy-box[data-theme~='amplitude-api-key'] {
+    background-color: #1e61f0; /* amp-blue */
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(30, 97, 240, 0.35);
+}
+
+.tippy-box[data-theme~='amplitude-api-key'] .tippy-arrow {
+    color: #1e61f0; /* amp-blue */
+}
+
+.tippy-box[data-theme~='amplitude-api-key'] .tippy-content {
+    padding: 8px 12px;
 }
 
 /* Mobile responsiveness */
