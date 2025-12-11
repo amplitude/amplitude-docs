@@ -246,7 +246,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
 | `config.autocapture.pageUrlEnrichment` | Optional. `boolean` | Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information.                                                                                                                      |
 | `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
-| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information.                                                                                                                      |
+| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information. Minimum SDK version 2.27.0.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -912,6 +912,10 @@ Example request/response body
 
 Track Core Web Vitals performance metrics automatically. When enabled, Amplitude captures web performance metrics and sends them as `[Amplitude] Web Vitals` events when the browser tab first becomes hidden (when users navigate away, close the tab, or switch tabs).
 
+{{partial:admonition type="note" heading=""}}
+Requires Browser SDK 2.27.0 or higher.
+{{/partial:admonition}}
+
 Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
 
 ```ts
@@ -999,7 +1003,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties are details like device details, user preferences, or language to help you understand your users at the time they performed an action in your app.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading="Identify calls"}}
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
@@ -1048,6 +1052,16 @@ identifyEvent.add('travel-count', 1);
 amplitude.identify(identifyEvent);
 ```
 
+#### Identify.unset
+
+This method removes a user property from a user profile. Use `unset` when you no longer need a property or want to remove it completely.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.unset('location'); 
+amplitude.identify(identifyEvent);
+```
+
 ### Arrays in user properties
 
 Call the `prepend`, `append`, `preInsert`, or `postInsert` methods to use arrays as user properties.
@@ -1089,6 +1103,16 @@ This method removes a value or values to a user property if it exists in the use
 ```ts
 const identifyEvent = new amplitude.Identify();
 identifyEvent.remove('unique-locations', 'JFK') 
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.clearAll
+
+This method removes all user properties from the user. Use `clearAll` with care because it's irreversible.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.clearAll();
 amplitude.identify(identifyEvent);
 ```
 
@@ -1144,7 +1168,7 @@ amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent);
 
 ## Track revenue
 
-The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
+The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productId`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets Amplitude automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
 
 {{partial:admonition type="tip" heading=""}}
 Amplitude recommends to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
@@ -1156,22 +1180,41 @@ To track revenue from a user, call revenue each time a user generates revenue. I
 const event = new amplitude.Revenue()
   .setProductId('com.company.productId')
   .setPrice(3.99)
-  .setQuantity(3);
+  .setQuantity(3)
+  .setRevenueType('purchase');
+
+amplitude.revenue(event);
+```
+
+This example shows tracking revenue with additional properties:
+
+```ts
+const event = new amplitude.Revenue()
+  .setProductId('com.company.productId')
+  .setPrice(3.99)
+  .setQuantity(3)
+  .setRevenueType('purchase')
+  .setEventProperties({
+    category: 'electronics',
+    brand: 'Acme'
+  });
 
 amplitude.revenue(event);
 ```
 
 ### Revenue interface
 
-| Name           | Description                                                                                                             | Default Value |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `product_id`   | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
-| `quantity`     | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                              | `1`           |
-| `price`        | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.   | `null`        |
-| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).         | `null`        |
-| `receipt`      | Optional. `string`. The receipt identifier of the revenue.                                                              | `null`        |
-| `receipt_sig`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                        | `null`        |
-| `properties`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                      | `null`        |
+Revenue objects support the following properties. Use the corresponding setter methods to assign values.
+
+| Name                 | Setter Method            | Description                                                                                                                                              | Default Value |
+| -------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `productId`          | `setProductId()`         | Optional. `string`. An identifier for the product. Amplitude recommends something like the Google Play Store product ID.                                 | Empty string. |
+| `quantity`           | `setQuantity()`          | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                                                                | `1`           |
+| `price`              | `setPrice()`             | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.                                     | `null`        |
+| `revenueType`        | `setRevenueType()`       | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).                                          | `null`        |
+| `receipt`            | `setReceipt()`           | Optional. `string`. The receipt identifier of the revenue.                                                                                               | `null`        |
+| `receiptSignature`   | `setReceiptSignature()`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                                                         | `null`        |
+| `eventProperties`    | `setEventProperties()`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                                                       | `null`        |
 
 ## Flush the event buffer
 
@@ -1658,7 +1701,7 @@ amplitude.init("api-key", null, {
 
 ### Offline mode
 
-{{partial:admonition type="note" heading="Auto-flush when reconnecting"}}
+{{partial:admonition type="note" heading="Autoflush when reconnecting"}}
 Setting `config.flushIntervalMillis` to a small value like `1` may cause an `ERR_NETWORK_CHANGED` error.
 {{/partial:admonition}}
 

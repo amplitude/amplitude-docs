@@ -65,6 +65,6 @@ Continuing from the previous section, you can now use the flag you've created to
     All Amplitude’s user properties and cohorts are available to use in defining user segments. There is no limit on the number of user segments you can include here.
 
 2. Next, set the **rollout percentage** for this feature. This is the percentage of the users included in the flag’s user segments receiving the new feature. If you want everyone in the user segment to have access to the feature, set this value to 100%.
-3. Set the weights to define how many users will receive each variant. Weights are relative values. For example, if you give variant A a weight of 1 and variant B a weight of 4, then four times as many users receive variant B than variant A.
+3. Set the percentage for each variant to define how many users receive each one. Percentages must sum to 100%. For example, if you give variant A 20% and variant B 80%, four times as many users receive variant B than variant A.
 4. You can set separate rules for everyone not covered by any user segments you created. If, for example, you only want the feature rolled out to the specific cohorts you targeted earlier, scroll down to the All Other Users section and set the rollout percentage to **zero**.
 5. Save your flag and QA it before setting it to **Active**. For more information, go to [QAing before launching an experiment](/docs/feature-experiment/workflow/experiment-test). Your feature is now live for the user segments you selected.

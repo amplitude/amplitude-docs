@@ -15,12 +15,14 @@ Amplitude provides two ways to test your guides and surveys:
 
 Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode.
 
-{{partial:admonition type="tip" heading="Recommended testing"}}
 Amplitude recommends that you test your guide or survey thoroughly before you launch. This helps ensure everything works as expected, and the experience has the look and feel you want.
 
 * Ensure button actions behave as you intend
 * Check that multi-step guides and surveys have the right pace
 * Pins and tooltips appear exactly where they should.
+
+{{partial:admonition type="note" heading="Multi-page displays"}}
+There is a known issue in Preview mode where multi-page guides or surveys may not display as expected if used in multi-page apps. This only affects the Preview mode, not the published guide or survey.
 {{/partial:admonition}}
 
 Preview mode is accessible from the builder:
