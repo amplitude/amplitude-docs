@@ -238,10 +238,19 @@ ${documentationText}`;
         preElements.forEach(pre => {
             const button = pre.querySelector('.api-key-manual-button');
             if (button && pre) {
-                // Listen to scroll events and adjust button position
-                pre.addEventListener('scroll', () => {
+                // Remove any existing scroll handler to prevent duplicates
+                if (pre._scrollHandler) {
+                    pre.removeEventListener('scroll', pre._scrollHandler);
+                }
+                
+                // Create and store the scroll handler
+                pre._scrollHandler = () => {
                     button.style.transform = `translateX(${pre.scrollLeft}px)`;
-                });
+                };
+                
+                // Listen to scroll events and adjust button position
+                pre.addEventListener('scroll', pre._scrollHandler);
+                
                 // Set initial position
                 button.style.transform = `translateX(${pre.scrollLeft}px)`;
             }
