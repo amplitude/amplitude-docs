@@ -24,7 +24,7 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze
 - You must enable this integration in each Amplitude project you want to use it in.
 - For more details on using this integration in Braze, go to the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
-- Identified users can be matched by either their `external_id` or alias. Anonymous users can be matched by their `device_id`. Identified users who were originally created as anonymous users can't be identified by their `device_id`, and must be identified by their `external_id` or alias.
+- Identified users can be matched by either their `external_id` or an alias. Anonymous users can be matched by their `device_id`. Identified users who were originally created as anonymous users can't be identified by their `device_id` and must be identified by their `external_id` or alias.
 
 ## Prerequisites
 
