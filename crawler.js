@@ -179,62 +179,24 @@ class MarkdownCrawler {
     detectMarkdownIssues(html, url) {
         const issues = [];
         
-        // Enhanced HTML content filtering using a more robust approach
+        // Build a list of code regions in the original HTML
+        // This allows us to check if any match falls within a code block
+        const codeRegions = this.findCodeRegions(html);
+        
+        // Create cleaned HTML by replacing code regions with placeholder spaces
+        // This preserves indices for accurate position checking
         let cleanHtml = html;
         
-        // First, remove content from tags that should be completely ignored
-        const tagsToRemove = [
-            'script', 'style', 'title', 'code', 'pre', 'textarea', 'kbd'
-        ];
-        
-        for (const tag of tagsToRemove) {
-            // Use a more robust regex that handles attributes and nested content
-            const regex = new RegExp(`<${tag}[^>]*>[\\s\\S]*?<\\/${tag}>`, 'gi');
-            cleanHtml = cleanHtml.replace(regex, '');
-        }
-        
-        // Remove HTML comments
-        cleanHtml = cleanHtml.replace(/<!--[\s\S]*?-->/gi, '');
+        // Remove HTML comments first (they may contain markdown-like syntax)
+        cleanHtml = cleanHtml.replace(/<!--[\s\S]*?-->/gi, match => ' '.repeat(match.length));
         
         // Remove data attributes that might contain markdown-like syntax
-        cleanHtml = cleanHtml.replace(/\sdata-[^=]*="[^"]*"/gi, '');
+        cleanHtml = cleanHtml.replace(/\sdata-[^=]*="[^"]*"/gi, match => ' '.repeat(match.length));
         
-        // Remove content inside elements with code-related classes
-        const codeClassPatterns = [
-            /<[^>]*class="[^"]*\bcode\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
-            /<[^>]*class="[^"]*\bexample\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
-            /<[^>]*class="[^"]*\bsample\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
-            /<[^>]*class="[^"]*\bhighlight\b[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi,
-            /<[^>]*class="[^"]*\blanguage-[^"]*"[^>]*>[\s\S]*?<\/[^>]*>/gi
-        ];
-        
-        for (const pattern of codeClassPatterns) {
-            cleanHtml = cleanHtml.replace(pattern, '');
-        }
-        
-        // Additional function to check if a match is inside a code context
-        function isInCodeContext(html, matchIndex) {
-            const before = html.substring(0, matchIndex);
-            const after = html.substring(matchIndex);
-            
-            // Count opening and closing code tags before the match
-            const codeOpenBefore = (before.match(/<code[^>]*>/gi) || []).length;
-            const codeCloseBefore = (before.match(/<\/code>/gi) || []).length;
-            
-            // If there are more opening tags than closing tags, we're inside a code block
-            if (codeOpenBefore > codeCloseBefore) {
-                return true;
-            }
-            
-            // Check for other code-related contexts
-            const codeContexts = [
-                /<pre[^>]*>/gi,
-                /<code[^>]*>/gi,
-                /class="[^"]*\b(highlight|language-|code|example|sample)\b[^"]*"/gi
-            ];
-            
-            const contextWindow = before.substring(Math.max(0, before.length - 200));
-            return codeContexts.some(pattern => pattern.test(contextWindow));
+        // Replace code regions with spaces (preserving length for index alignment)
+        for (const region of codeRegions) {
+            const placeholder = ' '.repeat(region.end - region.start);
+            cleanHtml = cleanHtml.substring(0, region.start) + placeholder + cleanHtml.substring(region.end);
         }
         
         for (const [patternName, pattern] of Object.entries(this.markdownPatterns)) {
@@ -243,10 +205,17 @@ class MarkdownCrawler {
             const regex = new RegExp(pattern.regex.source, pattern.regex.flags);
             
             while ((match = regex.exec(cleanHtml)) !== null) {
-                const matchIndex = match.index;
+                const matchStart = match.index;
+                const matchEnd = matchStart + match[0].length;
                 
-                // Check if this match is in a code context
-                if (!isInCodeContext(html, matchIndex)) {
+                // Check if this match overlaps with any code region
+                const inCodeRegion = codeRegions.some(region => 
+                    (matchStart >= region.start && matchStart < region.end) ||
+                    (matchEnd > region.start && matchEnd <= region.end) ||
+                    (matchStart <= region.start && matchEnd >= region.end)
+                );
+                
+                if (!inCodeRegion) {
                     matches.push(match[0]);
                 }
                 
@@ -259,16 +228,16 @@ class MarkdownCrawler {
                 
                 // Special filtering for different pattern types
                 if (patternName === 'tables') {
-                    filteredMatches = matches.filter(match => {
-                        const tableContext = cleanHtml.indexOf(match);
+                    filteredMatches = matches.filter(matchText => {
+                        const tableContext = cleanHtml.indexOf(matchText);
                         const beforeMatch = cleanHtml.substring(Math.max(0, tableContext - 200), tableContext);
                         const afterMatch = cleanHtml.substring(tableContext, Math.min(cleanHtml.length, tableContext + 200));
                         
                         return !(beforeMatch.includes('<table') || afterMatch.includes('</table>'));
                     });
                 } else if (patternName === 'links') {
-                    filteredMatches = matches.filter(match => {
-                        const linkContext = cleanHtml.indexOf(match);
+                    filteredMatches = matches.filter(matchText => {
+                        const linkContext = cleanHtml.indexOf(matchText);
                         const beforeMatch = cleanHtml.substring(Math.max(0, linkContext - 50), linkContext);
                         const afterMatch = cleanHtml.substring(linkContext, Math.min(cleanHtml.length, linkContext + 50));
                         
@@ -289,6 +258,80 @@ class MarkdownCrawler {
         }
         
         return issues;
+    }
+    
+    /**
+     * Find all code regions in the HTML that should be excluded from markdown detection.
+     * Returns an array of {start, end} objects representing character positions.
+     */
+    findCodeRegions(html) {
+        const regions = [];
+        
+        // Tags whose content should be completely ignored
+        const tagsToIgnore = ['script', 'style', 'title', 'code', 'pre', 'textarea', 'kbd', 'samp', 'var'];
+        
+        for (const tag of tagsToIgnore) {
+            // Match opening tag, content, and closing tag
+            // Using a greedy approach for nested tags of the same type
+            const regex = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'gi');
+            let match;
+            
+            while ((match = regex.exec(html)) !== null) {
+                regions.push({
+                    start: match.index,
+                    end: match.index + match[0].length,
+                    tag: tag
+                });
+            }
+        }
+        
+        // Also find elements with code-related classes
+        const codeClassPatterns = [
+            // Elements with class containing 'code', 'highlight', 'language-', etc.
+            /<(\w+)[^>]*class="[^"]*\b(?:code|highlight|language-\w*|hljs|prism|syntax|snippet)\b[^"]*"[^>]*>[\s\S]*?<\/\1>/gi
+        ];
+        
+        for (const pattern of codeClassPatterns) {
+            let match;
+            while ((match = pattern.exec(html)) !== null) {
+                regions.push({
+                    start: match.index,
+                    end: match.index + match[0].length,
+                    tag: 'class-based'
+                });
+            }
+        }
+        
+        // Find inline code patterns in attributes (like title="some `code` here")
+        const attrCodePattern = /(?:title|alt|aria-label|data-\w+)="[^"]*`[^`]*`[^"]*"/gi;
+        let attrMatch;
+        while ((attrMatch = attrCodePattern.exec(html)) !== null) {
+            regions.push({
+                start: attrMatch.index,
+                end: attrMatch.index + attrMatch[0].length,
+                tag: 'attribute'
+            });
+        }
+        
+        // Sort regions by start position and merge overlapping regions
+        regions.sort((a, b) => a.start - b.start);
+        
+        const mergedRegions = [];
+        for (const region of regions) {
+            if (mergedRegions.length === 0) {
+                mergedRegions.push(region);
+            } else {
+                const last = mergedRegions[mergedRegions.length - 1];
+                if (region.start <= last.end) {
+                    // Overlapping or adjacent - extend the last region
+                    last.end = Math.max(last.end, region.end);
+                } else {
+                    mergedRegions.push(region);
+                }
+            }
+        }
+        
+        return mergedRegions;
     }
 
     async processUrl(url) {

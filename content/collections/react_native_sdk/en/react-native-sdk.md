@@ -253,7 +253,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties help you understand your users at the time they performed some action within your app such as their device details, their preferences, or language.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. The operations are declared via a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. The operations are declared through a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
@@ -367,13 +367,26 @@ identify(identifyObj);
 
 #### Identify.remove
 
-This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing values from the given list. If the item doesn't exist in the user property, it will be no operation.
+This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing values from the given list. If the item doesn't exist in the user property, it's a no-op.
 
 ```ts
 import { Identify, identify } from '@amplitude/analytics-react-native';
 
 const identifyObj = new Identify();
 identifyObj.remove('unique-locations', 'JFK')
+
+identify(identifyObj);
+```
+
+#### Identify.clearAll
+
+This method removes all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+```ts
+import { Identify, identify } from '@amplitude/analytics-react-native';
+
+const identifyObj = new Identify();
+identifyObj.clearAll();
 
 identify(identifyObj);
 ```

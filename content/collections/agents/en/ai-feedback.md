@@ -22,6 +22,8 @@ Feedback events collect information about use cases such as:
 The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
 {{/partial:admonition}}
 
+For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
+
 ## Feedback Event overview
 AI Feedback uses Feedback Events to record user feedback and create insights. 
 
@@ -167,9 +169,9 @@ This lets you merge your existing users with users from supported AI Feedback so
 ##### To merge existing users
 
 1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that contains the user's email address. 
-2. From your system, send at least one event for each users that has that field populated. 
+2. From your system, send at least one event for each user that has that field populated. 
 
-After Amplitude receives that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
+After Amplitude receives that event for a user, AI Feedback can merge that user with the user from an AI Feedback-supported source using that email address. 
 
 ## Deleting information based on user ID or Amplitude ID
 

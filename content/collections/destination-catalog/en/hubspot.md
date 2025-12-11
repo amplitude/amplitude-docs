@@ -33,6 +33,7 @@ Keep these things in mind when sending events to HubSpot:
 - A HubSpot Enterprise subscription is required to send custom events. See the [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information.
 - Relevant limits for HubSpot events are:
     - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
+    - HubSpot limits event streaming to 30 million events per month. This is a HubSpot-enforced limitation.
     - HubSpot allows up to 50 custom properties for each custom event.
 - Amplitude sends selected event and user properties along with the event.
 - Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.     
