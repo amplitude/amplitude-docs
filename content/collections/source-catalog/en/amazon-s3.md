@@ -333,7 +333,6 @@ See the following table to understand which data types are compatible with which
 | Group properties | Append Only                 |
 | Profiles         | Mirror                      |
 
- d
 {{partial:admonition type="note" heading="Mutations and event volume"}}
 When you use mutations, Amplitude doesn't merge `INSERT`, `UPDATE`, or `DELETE` operations to per-row mutations based on your sync frequency. This means that when more than one operation is made to an event during the sync window, they may apply out of order. Each operation also counts toward your event volume. As a result, you may use your existing event volume more quickly than you otherwise would. Contact sales to purchase additional event volume.
 {{/partial:admonition}}
