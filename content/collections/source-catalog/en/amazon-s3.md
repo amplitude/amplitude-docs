@@ -333,13 +333,13 @@ See the following table to understand which data types are compatible with which
 | Group properties | Append Only                 |
 | Profiles         | Mirror                      |
 
-
+ d
 {{partial:admonition type="note" heading="Mutations and event volume"}}
 When you use mutations, Amplitude doesn't merge `INSERT`, `UPDATE`, or `DELETE` operations to per-row mutations based on your sync frequency. This means that when more than one operation is made to an event during the sync window, they may apply out of order. Each operation also counts toward your event volume. As a result, you may use your existing event volume more quickly than you otherwise would. Contact sales to purchase additional event volume.
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Event streaming destinations"}}
-Events ingested via mutation-based imports (Mirror Sync) can't be exported through event streaming destinations. If you need to export events to streaming destinations, use Append Only Sync instead of Mirror Sync.
+Events ingested through mutation-based imports (Mirror Sync) can't be exported through event streaming destinations. If you need to export events to streaming destinations, use Append Only Sync instead of Mirror Sync.
 {{/partial:admonition}}
 
 Find a list of supported fields for events in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
