@@ -3,10 +3,10 @@ id: 29b8b9d1-1063-4b23-926b-69b8333531ed
 blueprint: get-started
 title: 'Amplitude Quickstart'
 landing: true
-landing_blurb: 'Follow this guide to get data from your site into Amplitude in ~10 minutes.'
+landing_blurb: 'Follow this guide to get data from your site into Amplitude in just a few minutes.'
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1763678212
+updated_at: 1765489396
 ---
 Get started with the full Amplitude platform in minutes. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
 
