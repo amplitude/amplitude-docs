@@ -22,11 +22,9 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze
 ## Considerations
 
 - You must enable this integration in each Amplitude project you want to use it in.
-- You need a paid Amplitude plan to enable this integration.
 - For more details on using this integration in Braze, go to the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
-- Amplitude sends email alerts for job success and failures, keeping you informed about the status of your cohort syncs.
-- Identified users can be matched by either their `external_id` or alias. Anonymous users can be matched by their `device_id`. Identified users who were originally created as anonymous users can't be identified by their `device_id`, and must be identified by their `external_id` or alias. Set up multiple user identifier mappings in a hierarchical order, so if the first mapping doesn't match, the next is applied, allowing more users to be included in your sync.
+- Identified users can be matched by either their `external_id` or alias. Anonymous users can be matched by their `device_id`. Identified users who were originally created as anonymous users can't be identified by their `device_id`, and must be identified by their `external_id` or alias.
 
 ## Prerequisites
 
@@ -48,7 +46,7 @@ To configure a cohort integration from Amplitude to Braze, you need the followin
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Braze**.
 3. Select your endpoint and paste your Data Import Key.
-4. Select the hierarchy of mappings you want to map users to. 
+4. Select the Amplitude and Braze properties to map users to. 
   * If you select **User alias** as the target object, add a **User alias label**. Otherwise, you can leave it empty.
 6. When finished, save.
 
