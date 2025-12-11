@@ -23,7 +23,7 @@ Automated tasks are only available for users with manager or admin permissions. 
 You can access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
 If you have active automations, they display along with a current count of the events affected by that specific automation. If you don't have any active automations, you can create one. 
 
-By default, automated tasks operate across all projects within a workspace. You can, however, specify for the automation to only search through a single project.
+By default, automated tasks operate across all projects within a workspace. You can specify for the automation to only search through a single project.
 
 ## Types of automated tasks
 
