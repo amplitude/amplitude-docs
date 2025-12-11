@@ -1,3 +1,6 @@
+---
+show_banner: true
+---
 <section class="h-96 py-20 relative overflow-hidden bg-amp-blue-950 block hero">
     <div class="container mx-auto px-4 flex flex-col">
         <div class="max-w-3xl mx-auto">
@@ -9,6 +12,34 @@
         </div>
     </div>
 </section>
+{{if site_settings:show_banner}}
+<section class="pb-16 px-6 lg:px-12">
+    <div class="my-8 flex items-center gap-4 max-w-screen-xl mx-auto rounded-lg p-4 bg-gradient-to-b from-amp-blue-500 to-amp-blue-600 text-white shadow-xl">
+        <div class="flex-shr ink-0">{{svg src="/docs/assets/icons/getting-started.svg" class="w-12 h-12"}}</div>
+        <div class="flex flex-col justify-center">
+            <div class="font-[Gellix] font-medium text-lg"><span class="bg-[#FAC400] text-black-950 px-2 py-1 rounded-md font-IBMPlexMono text-sm">NEW</span> Get started with Amplitude</div>
+            <div class="text-sm opacity-90" style="font-family: 'IBM Plex Sans', sans-serif;">Start tracking your first events in minutes</div>
+        </div>
+        <div class="flex-shrink-0 ml-auto">
+            <a href="/docs/get-started/amplitude-quickstart" class="bg-white text-amp-blue-500 px-4 py-2 rounded-md font-IBMPlexMono text-sm shadow-lg hover:bg-amp-blue-950 hover:shadow-xl transition-all duration-200">Get started {{svg src="/docs/assets/icons/arrow-right.svg" class="w-4 h-4 inline-block ml-2"}}</a>
+        </div>
+    </div>
+    <div class="max-w-screen-xl mx-auto">
+        <h2 class="font-light mt-0 font-[Gellix]">Browse by product</h2>
+        <div class="flex justify-between gap-4 flex-wrap flex-col sm:flex-row">
+            {{products}}
+            <a href="{{section_link:url}}">
+            <div class="w-72 h-[22rem] border rounded border-amp-gray-100 p-9 hover:shadow-lg transition-shadow">
+                <h3 class="mt-0 font-medium text-[18px]">{{product_name}}</h3>
+                <img class="mb-0" src="{{product_icon}}" />
+                <p class="leading-6 mb-0 font-normal text-amp-gray-600">{{product_description}}</p>
+            </div>
+        </a>
+            {{/products}}
+            </div>
+    </div>
+</section>
+{{else}}
 <section class="py-16 px-6 lg:px-12">
     <div class="max-w-screen-xl mx-auto">
         <h2 class="font-light mt-0 font-[Gellix]">Browse by product</h2>
@@ -24,8 +55,8 @@
             {{/products}}
             </div>
     </div>
-
 </section>
+{{/if}}
 <section class="bg-amp-gray-50 py-16 px-6 lg:px-12 popcon">
     <div class="max-w-screen-xl mx-auto">
         <h2 class="font-light mt-0 font-[Gellix]">Popular content</h2>

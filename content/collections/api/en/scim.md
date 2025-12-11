@@ -22,6 +22,10 @@ eu_endpoint: 'https://core.eu.amplitude.com/scim/1/'
 ## Considerations
 Keep the following in mind as you configure the SCIM API integration.
 
+{{partial:admonition type="tip" heading="Postman collection"}}
+For more examples and to test API requests, explore the [SCIM API Postman collection](https://www.postman.com/amplitude-dev-docs/amplitude-developers/folder/20044411-4e4ab138-2055-4ed8-be5f-2b28c4c17c7f).
+{{/partial:admonition}}
+
 ### Base URL
 
 See the **Endpoints** table above to find the correct base URL to use given your organization's choice of data residency. All routes against this URL can be formed according to the SCIM Standard. This URL doesn't change between organizations, as the SCIM key used in authentication is used to determine which organization the requests are directed toward.
@@ -456,11 +460,15 @@ A successful request returns a `200 OK` status and JSON body with the group's da
 
 ### Update a user group
 
+Use `PATCH` requests to add or remove users from a group. The `Operations` array supports `add` and `remove` operations.
+
+{{partial:tabs tabs="Add a user, Remove a user"}}
+{{partial:tab name="Add a user"}}
 ```bash
 PATCH /scim/1/Groups/632 HTTP/1.1
 Host: core.amplitude.com
 Authorization: Bearer {scim-token}
-Content-Length: 241
+Content-Type: application/json
 
 {
     "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
@@ -470,10 +478,34 @@ Content-Length: 241
           "path": "members",
           "value": [{
               "value": "new.member@amplitude.com"
-        }]
-    }]
+          }]
+        }
+    ]
 }
 ```
+{{/partial:tab}}
+{{partial:tab name="Remove a user"}}
+```bash
+PATCH /scim/1/Groups/632 HTTP/1.1
+Host: core.amplitude.com
+Authorization: Bearer {scim-token}
+Content-Type: application/json
+
+{
+    "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+    "Operations": [
+        {
+          "op": "remove",
+          "path": "members",
+          "value": [{
+              "value": "user.to.remove@amplitude.com"
+          }]
+        }
+    ]
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 #### Example response
 

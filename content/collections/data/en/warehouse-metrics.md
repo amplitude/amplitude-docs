@@ -19,7 +19,7 @@ Unlike event-based metrics that Amplitude calculates from behavioral data, Wareh
 If you're interested in testing the feature and providing feedback, contact your account team.
 {{/partial:admonition}}
 
-## How Warehouse Metrics work
+## How warehouse metrics work
 
 Warehouse Metrics sync on a recurring schedule from tables in your data warehouse. Each row should include the following:
 
@@ -114,7 +114,7 @@ Follow the instructions in [Snowflake Data Import ](/docs/data/source-catalog/sn
 
 ## Data specifications
 
-Your metrics table must include specific required fields and can optionally include additional metric and dimension fields.
+Your metrics table must include specific required fields and can optionally include additional fields. At least one metric or dimension field is required.
 
 ### Required fields
 
@@ -122,13 +122,20 @@ Your metrics table must include specific required fields and can optionally incl
 | ---------- | ----------------------------------------------- | ------------------------------------- |
 | `time`      | When the metric value is valid                   | `1762813185`                           |
 | `user_id` or `device_id`   | A unique identifier for a user or device.                | `user_12345`                           |
-| `insert_id` | An optional unique identifier for deduplication. | `51a87950-b35d-4a2f-b919-af92f00f75dd` |
 
 {{partial:admonition type="note" heading="Time conversion"}}  
 Amplitude requires that the incoming time is represented in milliseconds from Unix epoch. Use Snowflake’s built-in conversion functions or other tooling in your data pipeline to convert to this format before Amplitude ingests the data.  
 {{/partial:admonition}}
 
+### Optional fields
+
+| Field       | Description                                      | Example                                |
+| ---------- | ----------------------------------------------- | ------------------------------------- |
+| `insert_id` | A unique identifier for deduplication. | `51a87950-b35d-4a2f-b919-af92f00f75dd` |
+
 ### Metric fields
+
+Your metrics table must include at least one metric or dimension field.
 
 | Field Type | Description                              | Example        |
 | --------- | :--------------------------------------- | ------------- |
@@ -149,7 +156,7 @@ Amplitude requires that the incoming time is represented in milliseconds from Un
 }
 ```
 
-## SQL template
+## Query template
 
 ```sql
 SELECT
@@ -174,10 +181,10 @@ Use Warehouse Metrics in end-to-end experiments or experiment results as:
 When you create or edit an experiment, select metrics from the Warehouse source in the metrics picker.
 
 {{partial:admonition type="note" heading="Last synced information"}}   
-Warehouse Metrics display when they were last synced and when the next sync is scheduled.   
+Warehouse Metrics display when they were last synced and the next scheduled sync.   
 {{/partial:admonition}}
 
-##### Creating a Warehouse Metric in your experiment
+##### Creating a warehouse metric in your experiment
 
 1. In the experiment, navigate to the **Metrics** panel.
 2. Click **Create a custom metric**.
@@ -185,11 +192,11 @@ Warehouse Metrics display when they were last synced and when the next sync is s
 4. Click the **Warehouse** tab.
 5. Select the table you specified during data import.
 6. Define the metric. Choose **Sum**, **User Average**, **Min**, or **Max**.
-7. Select the column in the table you want to aggregate using the definition you selected.
+7. Select the column in the table you want to combine using the definition you selected.
 8. Preview the results and click **Save**.
 
 {{partial:admonition type="tip" heading=""}}
-Warehouse metrics you previously created are available in the **Add Metric** dialog. You don't need to recreate them.
+Warehouse metrics you created before are available in the **Add Metric** dialog. You don't need to recreate them.
 {{/partial:admonition}}
 
 ## Best practices
@@ -216,15 +223,15 @@ If you encounter issues with Warehouse Metrics, these common problems and soluti
 - Warehouse Metrics require a unique user identifier per row  
 - Metric values can only be numeric (dimensions can be strings, numbers, or booleans)  
 - Each metric represents a point-in-time value, not an event stream  
-- Amplitude doesn't support rollup or aggregate tables without unique user identifiers  
+- Amplitude doesn't support rollup or combined tables without unique user identifiers  
 - Warehouse metrics don’t support CUPED or group by
 
-## FAQs
+## Frequently asked questions
 
-### Can I Use Warehouse Metrics without sending events to Amplitude?
+### Using warehouse metrics without sending events to Amplitude
 
 Yes, but Warehouse Metrics are most powerful when combined with behavioral events. You can create metric-only charts if needed.
 
-### What are the differences between Warehouse Metrics and Profiles?
+### Differences between warehouse metrics and profiles
 
-Profiles sync current user attributes. Warehouse Metrics sync time-series numeric values that can be aggregated, used as experiment goals, and visualized over time.
+Profiles sync current user attributes. Warehouse Metrics sync time-series numeric values that you can combine, use as experiment goals, and visualize over time.

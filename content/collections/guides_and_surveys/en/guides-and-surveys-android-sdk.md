@@ -18,13 +18,13 @@ The Guides and Surveys Android SDK requires:
 
 * Android API Level 24 (Android 7.0)+
 * Kotlin 1.8.22+
-* [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
+* [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Android-Kotlin 1.0+
+### Using Amplitude Analytics Android-Kotlin 1.0+
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
@@ -62,6 +62,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -79,7 +82,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Android-Kotlin 1.0+
+### Not using Amplitude Analytics Android-Kotlin 1.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 Add the following dependencies to your application's `build.gradle.kts` file:
@@ -88,9 +91,6 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 dependencies {
     // Amplitude Engagement SDK
     implementation("com.amplitude:amplitude-engagement-android:1.0+")
-
-    // Amplitude Analytics SDK (required dependency)
-    implementation("com.amplitude:analytics-android:1.+")
 }
 ```
 
@@ -106,10 +106,6 @@ val amplitudeEngagement = AmplitudeEngagement(
     apiKey = "YOUR_API_KEY",
     options = AmplitudeInitOptions()
 )
-
-// Add the plugin to your Amplitude instance
-val amplitude = Amplitude(applicationContext)
-amplitude.add(amplitudeEngagement.getPlugin())
 ```
 
 #### Configuration options
@@ -118,6 +114,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -162,21 +161,13 @@ After installing the SDK, add your Android application to your Amplitude project
 
 To add your application:
 
-1. Navigate to **Settings** > **Projects** in Amplitude.
+1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **Android** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Package name**: Your Android package identifier (for example, `com.example.myapp`)
-7. Click **Save**.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the drop-down.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your Android users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your package name'}}
-Your Android package name is defined in your `AndroidManifest.xml` file or in your app-level `build.gradle` file as the `applicationId`.
-{{/partial:admonition}}
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
@@ -340,27 +331,16 @@ amplitudeEngagement.closeAll()
 
 ## Simulate Guides and Surveys for preview
 
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
-
-### Add your mobile app to project settings
-
-Before you can use preview mode, add your Android app to your project settings in Amplitude:
-
-1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
-2. Select your project.
-3. Click the **Guides and Surveys** tab.
-4. In the **App Management** section, click **Add App**.
-5. Enter your Android app's package name (for example, `com.example.myapp`).
-6. Click **Save**.
-
-After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
 ### Locate the mobile URL scheme
 
-After adding your app to project settings, locate the URL scheme:
-
-1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
-2. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ### Add the URL scheme in Android Studio
 
