@@ -1346,6 +1346,24 @@ img.expandable-image {
     fill: #1E40AF !important;
 }
 
+/* Custom Tippy.js theme for API key tooltip */
+.tippy-box[data-theme~='amplitude-api-key'] {
+    background-color: #1e61f0; /* amp-blue */
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(30, 97, 240, 0.35);
+}
+
+.tippy-box[data-theme~='amplitude-api-key'] .tippy-arrow {
+    color: #1e61f0; /* amp-blue */
+}
+
+.tippy-box[data-theme~='amplitude-api-key'] .tippy-content {
+    padding: 8px 12px;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 640px) {
     .api-key-modal {
