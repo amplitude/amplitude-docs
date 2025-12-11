@@ -39,6 +39,10 @@ With `autocapture: true`, Amplitude automatically tracks:
 - **File downloads** – Content engagement.
 - **Marketing attribution** – Where users come from.
 
+## Take the next step
+
+After your data starts flowing into Amplitude, expand  your implementation with Session Replay, Web Experiment, and Guides & Surveys.
+
 ### Add Session Replay
 
 The snippet above includes [Session Replay](/docs/session-replay/session-replay-plugin) at 100% sampling (`sampleRate: 1`). This lets you watch exactly what users experience and helps you debug issues and understand user behavior. Lower the sample rate in production to control volume and cost.
