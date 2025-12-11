@@ -34,7 +34,7 @@ You can select one, or any, of the following types of tasks to automate:
 * Clean up unused events
 
 ### Clean up stale events
-This tasks removes events that haven't experiences any recent volume. This indicates that the events aren't being ingested and are no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
+This task removes events that haven't had any recent volume. This indicates that Amplitude isn't ingesting the events and they're no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
 
 Historical charts or data aren't affected. 
 
