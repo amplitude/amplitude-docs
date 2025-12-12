@@ -135,6 +135,8 @@ Amplitude requires that the incoming time is represented in milliseconds from Un
 
 ### Metric fields
 
+Your metrics table must include at least one metric or dimension field.
+
 | Field Type | Description                              | Example        |
 | --------- | :--------------------------------------- | ------------- |
 | Metric     | Numeric value (integer or decimal)       | `150.25`         |

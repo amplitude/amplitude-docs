@@ -62,7 +62,7 @@ To find the security group assigned to your Redshift cluster:
 
 ### Set up a recurring data export to Redshift
 
-Creating a recurring data export is a three-step process. Each sync completes within five to ten minutes, and you can monitor the status of each job.
+Creating a recurring data export is a three-step process. Each sync typically completes within five to ten minutes, and you can monitor the status of each job.
 
 To set up a recurring export of your Amplitude data to Redshift, follow these steps:
 
@@ -83,7 +83,7 @@ To set up a recurring export of your Amplitude data to Redshift, follow these st
 
 All future events are automatically sent to Redshift.
 
-From here, Amplitude generates micro-batch files at five-minute intervals and loads them to customer-owned Redshift accounts directly every 10 minutes. You can see the data in your Redshift accounts within 20 minutes after Amplitude receives the events.
+From here, Amplitude generates micro-batch files and loads them to customer-owned Redshift accounts on a best-effort basis. Exports typically run every 10 minutes, but may run less frequently depending on system load and data volume. You can typically see the data in your Redshift accounts within 20 minutes after Amplitude receives the events, though timing may vary.
 
 ## Export historical Amplitude data to Redshift
 
