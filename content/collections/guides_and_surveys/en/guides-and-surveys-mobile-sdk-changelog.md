@@ -59,7 +59,7 @@ updated_at: 1750443681
 ## 1.6.0 (Android, iOS, React Native) \[2025-11-07\]
 
 ### ✨ Features
-- Feat: proxy support (GSDK-630) (go to https://amplitude.com/docs/guides-and-surveys/proxy) \[android, ios\]
+- Feat: proxy support (GSDK-630) (go to [Proxy](/docs/guides-and-surveys/proxy)) \[android, ios\]
 - Feat: support 4 new popover Guide positions (top-center, bottom-center, left-center, right-center) (FOO-2639) \[android, ios\]
 
 ### 🐛 Fixes
