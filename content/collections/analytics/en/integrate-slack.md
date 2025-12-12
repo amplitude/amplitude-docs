@@ -93,4 +93,10 @@ Connect Amplitude team spaces to specific Slack channels to receive notification
 
 ![slack_team_space.gif](/docs/output/img/analytics/slack_team_space.gif)
 
-To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*
+To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*
+
+## AskAI requirements
+
+The Amplitude AskAI feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
+
+The Amplitude AskAI feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
