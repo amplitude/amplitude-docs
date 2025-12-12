@@ -175,5 +175,14 @@ To locate the URL scheme:
 4. Find the **URL scheme (mobile)** field.
 5. Copy its value, for example, `amp-abcdefgh12345678`.
 
+## Known limitations
+
+### Tab bar element targeting
+
+Pins and tooltips can't target tab bar items in navigation components (such as `@react-navigation/bottom-tabs`). Tab bars use native components that exist outside the standard React Native view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
+
+**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+
 ## Changelog
+
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
