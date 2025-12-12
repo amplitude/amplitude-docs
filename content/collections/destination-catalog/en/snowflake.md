@@ -63,7 +63,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 4. Review the Event table and Merge IDs table schemas and click **Next**.
 5. In the *Snowflake Credentials For Amplitude* section, enter the following information:
 
-   - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, before 'snowflakecomputing.com'.
+   - **Account Identifier**: This is the account identifier on your Snowflake account. It's in the format of: `<org-name>-<account-name>`. You can find more info on how to find this [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier#finding-the-organization-and-account-name-for-an-account){:target="_blank" rel="noopener noreferrer"}.
    - **Warehouse**: The warehouse Amplitude uses to load the data. Use a dedicated warehouse for Amplitude data to prevent load capacity issues with other Snowflake integrations. Sharing a warehouse can disrupt your other Snowflake operations.
    - **Database**: The database where Amplitude stores data. Dedicate this database specifically to Amplitude data.
    - **Role**: The role that the connection uses to write this data. The default value of role is `AMPLITUDE` only.
