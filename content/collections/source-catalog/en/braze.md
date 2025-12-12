@@ -41,7 +41,7 @@ To configure Braze to send events to Amplitude, you need the following from Ampl
 1. **Amplitude Export API Key**  
    * In Amplitude, navigate to *Settings > Projects*, then select your project.  
    * Go to the General tab and locate your API Key in the project details.  
-2. **Amplitude Region**: Your Amplitude data residency region (`US` or `EU`)
+2. **Amplitude Region**: Your Amplitude data residency region (`US` or `EU`).
 
 ## Considerations
 
@@ -56,8 +56,8 @@ To configure Braze to send events to Amplitude, you need the following from Ampl
 
 * For anonymous users, set the user's device ID in Amplitude to the device ID used in Braze.
 * All events sent to Amplitude include the user's `external_user_id` as the Amplitude user ID.  
-* Braze events are subject to Amplitude's HTTP API rate limits: 30 events/second per device and 500K events/day per device. If you exceed these thresholds, Amplitude throttles events.  
-* Keep your Amplitude API key up to date. If your connector's credentials expire, the connector stops sending events. If this persists for more than 48 hours, the connector's events are dropped, and you permanently lose data.
+* Braze events are subject to Amplitude's HTTP API rate limits: 30 events/second for each device and 500K events/day for each device. If you exceed these thresholds, Amplitude throttles events.  
+* Keep your Amplitude API key up to date. If the connector's credentials expire, it stops sending events to Amplitude. If the connector goes more than 48 hours without sending an event, Amplitude drops the connector's events, and you permanently lose that data.
 
 ## Braze setup
 
@@ -70,11 +70,11 @@ Review [Braze's documentation](https://www.braze.com/docs/partners/data_and_infr
 * Verify that users in Braze have their `external_user_id` set (for identified users) or `device_id` set (for anonymous users).  
 * For anonymous users, confirm that you synced your Amplitude device ID with your Braze device ID in your SDK implementation.  
 * Check that your Amplitude API key is valid and hasn't expired.  
-* Ensure you're not exceeding rate limits (30 events/second per device, 500K events/day per device).
+* Make sure you don't exceed rate limits (30 events/second for each device, 500K events/day for each device).
 
 ### Events are delayed
 
-* If you exceed Amplitude's rate limits (30 events/second or 500K events/day per device), Amplitude throttles events, causing delays.  
+* If you exceed Amplitude's rate limits (30 events/second or 500K events/day for each device), Amplitude throttles events, causing delays.  
 * Check your SDK integration to ensure your app reports events at a normal rate.  
 * Avoid running automated tests that generate many events for a single device.
 
