@@ -24,6 +24,61 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713820679
 ---
-Import Braze events into Amplitude using Braze Currents. Currents is available with certain Braze packages, contact your Braze Customer Success Manager or support@braze.com if you want access. Note that any events you send from Braze to Amplitude count toward your Amplitude event volume quota.
+Amplitude's Braze integration lets you send Braze events into Amplitude using Braze Currents. Combine your marketing engagement data from Braze with your product analytics in Amplitude for a complete view of the customer journey.
 
-See [Amplitude for Currents](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_for_currents/) in the Braze documentation to set up and use this integration.
+## What Braze does
+
+Braze is a customer engagement platform that delivers personalized experiences across email, push notifications, in-app messages, and other digital channels. It combines real-time behavioral data with automated messaging to help businesses create targeted marketing campaigns and drive customer engagement.
+
+## Use case
+
+Import Braze engagement events into Amplitude to analyze campaign performance alongside product and marketing analytics. By bringing Braze marketing events into Amplitude, you can understand how campaigns impact product usage, create unified customer journey analyses, and measure the full impact of your marketing efforts on product outcomes.
+
+## Prerequisites
+
+To configure Braze to send events to Amplitude, you need the following from Amplitude:
+
+1. **Amplitude Export API Key**  
+   * In Amplitude, navigate to *Settings > Projects*, then select your project.  
+   * Go to the General tab and locate your API Key in the project details.  
+2. **Amplitude Region**: Your Amplitude data residency region (`US` or `EU`)
+
+## Considerations
+
+* Configure this integration in Braze to send events to your Amplitude project.  
+* This integration requires Braze Currents. Currents is available with certain Braze packages. Contact your Braze Customer Success Manager or support@braze.com if you need access.  
+* Events sent from Braze to Amplitude count toward your Amplitude event volume quota.  
+* Braze only sends event data for users who have their `external_user_id` set or anonymous users who have their `device_id` set.  
+
+  {{partial:admonition type="warning" heading="Important"}}
+  Your Amplitude user ID must match the Braze external ID for proper user identification.
+  {{/partial:admonition}}
+
+* For anonymous users, set the user's device ID in Amplitude to the device ID used in Braze.
+* All events sent to Amplitude include the user's `external_user_id` as the Amplitude user ID.  
+* Braze events are subject to Amplitude's HTTP API rate limits: 30 events/second per device and 500K events/day per device. If you exceed these thresholds, Amplitude throttles events.  
+* Keep your Amplitude API key up to date. If your connector's credentials expire, the connector stops sending events. If this persists for more than 48 hours, the connector's events are dropped, and you permanently lose data.
+
+## Braze setup
+
+Review [Braze's documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/) for setup instructions. 
+
+## Troubleshooting
+
+### Events aren't appearing in Amplitude
+
+* Verify that users in Braze have their `external_user_id` set (for identified users) or `device_id` set (for anonymous users).  
+* For anonymous users, confirm that you synced your Amplitude device ID with your Braze device ID in your SDK implementation.  
+* Check that your Amplitude API key is valid and hasn't expired.  
+* Ensure you're not exceeding rate limits (30 events/second per device, 500K events/day per device).
+
+### Events are delayed
+
+* If you exceed Amplitude's rate limits (30 events/second or 500K events/day per device), Amplitude throttles events, causing delays.  
+* Check your SDK integration to ensure your app reports events at a normal rate.  
+* Avoid running automated tests that generate many events for a single device.
+
+### Users aren't matching between Braze and Amplitude
+
+* Confirm that your Amplitude user ID matches the Braze external ID.  
+* For identified users who were originally created as anonymous users in Braze, they can't be identified by their `device_id` and must use `external_user_id`.
