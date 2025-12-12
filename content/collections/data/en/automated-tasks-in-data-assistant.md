@@ -10,22 +10,22 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1754950505
 ---
-Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature. Automated Tasks let data governors define conditions and actions that the system then performs automatically. This feature automates repetitive clean-up workflows by transforming Data Assistant recommendations into automatic actions. For example, an automated task can automatically delete events if they have been unused for 90 days. 
+Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-data-assistant) feature. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking recommendations provided by the Data Assistant and transforming those recommendations into automatic actions. For example, an automated task can automatically delete events if they have been unused for 90 days. 
 
-After you create them, Automated Tasks run daily. 
+After they have been created, automated tasks run daily. 
 
 Automated tasks is only available on Enterprise plans. Go to the [pricing](https://amplitude.com/pricing) page for more details.
 
 {{partial:admonition type="note" heading=""}}
-Automated Tasks are only available for users with manager or admin permissions. Contact your administrator if you can't access Automated Tasks as an option for Data Assistant.
+Automated tasks are only available for users with manager or admin permissions. Contact your administrator if you can't access Automated tasks as an option for Data Assistant.
 {{/partial:admonition}}
 
-You can access your Automated Tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
-If you have active automations, those are displays along with a current count of the events affected by that specific automation. If you don't have any active automations, you'll have the opportunity to set them up. 
+You can access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
+If you have active automations, they display along with a current count of the events affected by that specific automation. If you don't have any active automations, you can create one. 
 
-By default, Automated Tasks operate across all projects within a workspace. You can, however, specify for the automation to only search through a single project.
+By default, automated tasks operate across all projects within a workspace. You can specify for the automation to only search through a single project.
 
-## Types of Automated Tasks
+## Types of automated tasks
 
 You can select one, or any, of the following types of tasks to automate: 
 
@@ -34,19 +34,17 @@ You can select one, or any, of the following types of tasks to automate:
 * Clean up unused events
 
 ### Clean up stale events
-This task deletes events that haven't experienced any recent volume. This indicates that the events aren't being ingested and are no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days. 
+This task removes events that haven't had any recent volume. This indicates that Amplitude isn't ingesting the events and they're no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
 
 Historical charts or data aren't affected. 
 
-When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30 day timeline to remove events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
-
 ### Clean up single-day events
-This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that both:
+This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that:
 
-* Have the same first seen and last seen dates.
-* Have a date that is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
+* Have the same first seen and last seen dates and;
+* That date is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
 
-When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30 day timeline to remove events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
 
@@ -55,13 +53,13 @@ Historical charts or data aren't affected.
 The Clean up unused events automated task can affect events that you want to keep. Therefore, the task must be manually enabled for each account. Reach out to your Amplitude representative or [Amplitude Support](https://gethelp.amplitude.com/hc/en-us/requests/new) for more information or to get this task enabled. 
 {{/partial:admonition}}
 
-This task optimizes your event volume by ensuring that all your ingested events are being actively used. The task inspects your organization for events that haven't been queried in 90 days. When it finds those events, it can notify you about them, schedule to delete those events within 30 days, and notify you when those events get deleted. 
+This task optimizes your event volume by ensuring that all your ingested events are being actively used. The tasks inspects your organization for events that haven't been queried in 90 days. When it finds those events, it can notify you about them, schedule to delete those events within 30 days, and notify you when those events get deleted. 
 
-Your users can save events. They can save the event either through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
+Your users can save events through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
 
-If the task deletes an event, this also blocks future ingestion of that event. Data blocked while the event is in a deleted state can't be recovered. Historical charts or data aren't affected. The deleted event still appears in them. 
+If the task deletes an event, this also blocks future ingestion of that event. Historical charts or data aren't affected. The deleted event still appears in them. 
 
-You can manually [recover a deleted event](#recovering-deleted-events) at any time.
+You can manually recover a deleted event at any time. 
 
 ## Setting up an automated task
 
