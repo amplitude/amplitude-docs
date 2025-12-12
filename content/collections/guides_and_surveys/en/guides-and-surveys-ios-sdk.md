@@ -335,5 +335,14 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 }
 ```
 
+## Known limitations
+
+### Tab bar element targeting
+
+Pins and tooltips can't target tab bar items (`UITabBar` elements). Tab bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
+
+**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+
 ## Changelog
+
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
