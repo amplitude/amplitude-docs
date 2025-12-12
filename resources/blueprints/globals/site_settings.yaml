@@ -1,0 +1,12 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: show_banner
+            field:
+              type: toggle
+              display: 'Show banner'
+              localizable: false

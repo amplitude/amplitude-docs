@@ -368,6 +368,6 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```
-
 ## Changelog
+
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

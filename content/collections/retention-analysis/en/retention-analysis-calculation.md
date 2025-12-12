@@ -92,7 +92,7 @@ A user can trigger the return event on multiple days and be counted on each day.
 As with Return On or After retention, when the analysis time frame is complete, the denominator value in the Microscope for any day will be consistent with the total number of users for overall retention. When the analysis is still in progress, the denominator value in the Microscope for a single day will be the sum of the users who have completed that day’s retention interval. This value is not shown in the breakdown table.
 
 {{partial:admonition type='note'}}
-In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/docs/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](https://amplitude.com/docs/analytics/charts/retention-analysis/retention-analysis-interpret#return-on-custom-formerly-known-as-custom).
+In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/docs/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](/docs/analytics/charts/retention-analysis/retention-analysis-interpret#return-on-custom-formerly-known-as-custom).
 {{/partial:admonition}}
 
 Additionally, the overall row represents the sum of the cohort entry date rows below it. Similar to Return On or After retention, if data is incomplete (cells noted with an \*), they are excluded from the overall row's total (e.g. the sum of each row for Day 3 won't add to the overall Day 3 value).
