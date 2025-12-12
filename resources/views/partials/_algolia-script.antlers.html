@@ -41,16 +41,18 @@
       }
     });
 
+    // Use capture phase to run before DocSearch closes the modal
     document.addEventListener('click', function(e) {
       var hit = e.target.closest('.DocSearch-Hit');
       if (hit) {
+        var query = lastQuery; // Capture query before any DOM changes
         var link = hit.querySelector('a');
         var url = link ? link.getAttribute('href') : '';
         var hits = document.querySelectorAll('.DocSearch-Hit');
         var position = Array.prototype.indexOf.call(hits, hit) + 1;
-        amplitude.track('Search result clicked', { url: url, position: position });
+        amplitude.track('Search result clicked', { query: query, url: url, position: position });
       }
-    });
+    }, true);
 
     var observer = new MutationObserver(function(mutations) {
       var modal = document.querySelector('.DocSearch-Modal');
