@@ -368,15 +368,6 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handlePreviewLinkIntent(intent)
 }
 ```
-
-## Known limitations
-
-### Tab bar element targeting
-
-Pins and tooltips can't target bottom navigation bar items (`BottomNavigationView` elements). Bottom navigation bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
-
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to navigation bar items.
-
 ## Changelog
 
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
