@@ -77,7 +77,7 @@ You can manually set up an automated task. Alternately, the [Data Assistant](/do
 
 If Amplitude detects events that meet a task’s criteria, those suggested tasks appear in the Suggestions view under *Data > Assistant*. If automation is available for that task, a banner appears above the suggestion. 
 
-Click the banner to turn on automation for future matching events.
+Click the banner to turn on automation for future matching events. You are taken to the window to complete the task set up. 
 
 ## Removing an automation
 You can remove any current automation. When removing an automation, you can specify if you want to affect any pending changes or to only affect future changes.  
