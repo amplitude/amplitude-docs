@@ -19,6 +19,10 @@ With remote configuration you can:
   * Configuring Autocapture events such as allowed elements or allowed pages and add sub-configurations.
   * Capturing additional properties such as page referrer or page URL across all events.
 
+{{partial:admonition type="note" heading=""}}
+Autocapture Remote Configuration works with [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) v2.10.0+ when `fetchRemoteConfig` is enabled. Browser SDK v2.16.1 enables Remote Configuration by default.
+{{/partial:admonition}}
+
 ##### To set up remote configuration for autocapture
 1. Go to *Data > Settings > Autocapture*. 
 2. Specify which elements you want to capture. By default, all elements are captured. You can capture or not capture any of the following elements:
@@ -34,4 +38,5 @@ With remote configuration you can:
    * **Page URL Exclude List**: Defines one or more URLs or URL patterns from Amplitude tracking any element clicks or change events. **Note**: Using RegEx or glob patterns requires your SDK version to be 2.23.7 or higher.
    * **Text Masking RegEx Patterns**: Defines the RegEx patterns that you want to mask for event properties in Autocapture. **Note:** Using this masking feature requires your SDK version to be 2.23.7 or higher. 
    * **Data Attribute Prefix**: Lets the Amplitude capture data attributes as an event property. 
+   * **Frustration interactions**: Frustration interactions (rage or dead clicks) performed by the user. Rage clicks are clicks that occurs four or more times in a second. Dead clicks are clicks on an interactive element but resulted in no visible change within three seconds. 
 4. Click **Save Changes**.
