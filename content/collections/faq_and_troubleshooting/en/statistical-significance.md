@@ -9,7 +9,7 @@ updated_at: 1719503279
 Amplitude's A/B testing features rely on standard statistical techniques to determine its statistical significance. This article covers some frequently asked questions about those calculations.
 
 {{partial:admonition type='note'}}
-The information in this article **only** applies to [A/B tests in a funnels chart](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-ab-test). It **does not apply** to the Experiment Results chart, or to end-to-end experimentation in Amplitude Experiment.
+The information in this article **only** applies to [A/B tests in a funnels chart](/docs/analytics/charts/funnel-analysis/funnel-analysis-ab-test). It **does not apply** to the Experiment Results chart, or to end-to-end experimentation in Amplitude Experiment.
 {{/partial:admonition}}
 
 {{partial:collapse name="How does Amplitude calculate improvement over baseline?"}}
