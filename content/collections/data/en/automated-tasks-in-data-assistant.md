@@ -14,20 +14,18 @@ Automated Tasks are part of Amplitude’s [Data Assistant](/docs/data/use-ai-dat
 
 After they have been created, automated tasks run daily. 
 
-Automated tasks is only available on Enterprise plans. Go to the [pricing](https://amplitude.com/pricing) page for more details.
-
 {{partial:admonition type="note" heading=""}}
 Automated tasks are only available for users with manager or admin permissions. Contact your administrator if you can't access Automated tasks as an option for Data Assistant.
 {{/partial:admonition}}
 
-You can access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
-If you have active automations, they display along with a current count of the events affected by that specific automation. If you don't have any active automations, you can create one. 
+Access your automated tasks from the Data Assistant by going to *Data > Assistant > Automated Tasks*. 
+If you have active automations, they display along with a current count of the affected events. If you don't have any active automations, you can create one. 
 
 By default, automated tasks operate across all projects within a workspace. You can specify for the automation to only search through a single project.
 
 ## Types of automated tasks
 
-You can select one, or any, of the following types of tasks to automate: 
+You can select any of the following types of tasks to automate: 
 
 * Clean up stale events
 * Clean up single-day events
@@ -35,6 +33,8 @@ You can select one, or any, of the following types of tasks to automate:
 
 ### Clean up stale events
 This task removes events that haven't had any recent volume. This indicates that Amplitude isn't ingesting the events and they're no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
+
+When the automated task finds events that match those criteria, it schedules them for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30-day timeframe to delete events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
 
@@ -44,7 +44,7 @@ This task removes accidental or one-time test events that can negatively impact 
 * Have the same first seen and last seen dates and;
 * That date is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
 
-When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30-day timeframe to delete events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
 
@@ -57,7 +57,7 @@ This task optimizes your event volume by ensuring that all your ingested events 
 
 Your users can save events through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
 
-If the task deletes an event, this also blocks future ingestion of that event. Historical charts or data aren't affected. The deleted event still appears in them. 
+If the task deletes an event, this also blocks future ingestion of that event. Any data that isn't collected because of an event's deleted status is not recoverable. Historical charts or data aren't affected. The deleted event still appears in them. 
 
 You can manually recover a deleted event at any time. 
 
