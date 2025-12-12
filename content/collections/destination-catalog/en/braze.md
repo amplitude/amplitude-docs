@@ -21,7 +21,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713560693
 ---
-The Amplitude Activation Braze streaming integration enables you to forward your Amplitude events and users straight to [Braze](https://www.braze.com/) with just a few clicks.
+The Amplitude Activation Braze streaming integration lets you forward your Amplitude events and users directly to [Braze](https://www.braze.com/).
 
 ## Setup
 
@@ -35,24 +35,24 @@ To configure streaming from Amplitude to Braze, you need the following informati
 
 ### Create a new sync
 
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
-2. In the Event Streaming section, click **Braze**.
-3. Enter a sync name, then click **Create Sync**.
+1. In Amplitude Data, go to *Catalog > Destinations*.
+2. In the Event Streaming section, select **Braze**.
+3. Enter a sync name, then select **Create Sync**.
 
 ### Enter credentials
 
 1. Select your **Braze API Endpoint**.
 2. Enter your **Braze API Key**.
 3. Enter your **Braze App ID**.
-4. If you use the [Braze User Alias](https://www.braze.com/docs/api/objects_filters/user_alias_object) to identify your users on Braze, enter the **Braze User Alias Label** you plan to use. Otherwise, you can ignore this field.
-5. Check the **Update Users Only**  option to update users that exist in Braze, not create new users. If you send alias-only user profiles, don't check this field. If you check **Update Users Only**, your alias-only user profiles aren't created in Braze. More information available in the [Braze documentation](https://www.braze.com/docs/api/objects_filters/user_attributes_object).
+4. If you use the [Braze User Alias](https://www.braze.com/docs/api/objects_filters/user_alias_object) to identify your users in Braze, enter the **Braze User Alias Label** you plan to use. Otherwise, leave this field blank.
+5. Select **Update Users Only** to update users that already exist in Braze instead of creating new ones. Leave the option unchecked if you send alias-only user profiles, otherwise Braze won't create those profiles. Review the [Braze documentation](https://www.braze.com/docs/api/objects_filters/user_attributes_object) for more details.
 
 ### Configure mappings
 
 _This applies to both event and user forwarding._
 
-1. Select an Amplitude user property that corresponds to your Braze user ID, from the left dropdown.
-2. Select the type of your Braze user ID, from the right dropdown.
+1. From the left dropdown, select the Amplitude user property that corresponds to your Braze user ID.
+2. From the right dropdown, select the type of Braze user ID you use.
     - [**External ID**](https://www.braze.com/docs/api/basics/#user-ids): Any unique identifier for each user in Braze.
     - [**Braze ID**](https://www.braze.com/docs/api/basics/#user-ids): A unique identifier provided by Braze for each user.
     - [**User Alias**](https://www.braze.com/docs/api/objects_filters/user_alias_object): An alternative unique identifier for each user in Braze.
@@ -60,23 +60,23 @@ _This applies to both event and user forwarding._
 
 ### Configure event forwarding
 
-Under **Send Events**, make sure the toggle is enabled ("Events are sent to Braze") if you want to stream events to Braze. When enabled, events are automatically forwarded to Braze when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
+Enable **Send Events** to stream events to Braze. When the toggle shows "Events are sent to Braze," Amplitude forwards events as soon as it ingests them. The integration doesn't support scheduled or on-demand sends.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Braze.
+1. In **Select and filter events**, choose the events you need in Braze.
 
 
 {{partial:admonition type="warning" title="Events for anonymous users"}}
 Braze requires that all events have an identifier present. If you selected any events to send to Braze that may not have an identifier, add a filter to send only events where the identifier is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-1. (optional) In **Select additional properties**, select any more event and user properties you want to send to Braze. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Braze as [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties).
+1. (Optional) In **Select additional properties**, choose any extra event and user properties you want to send to Braze. If you leave the field empty, Amplitude doesn't send additional properties. Amplitude maps the selected properties to [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties).
 
 ### Configure user forwarding
 
-To stream user and property updates to Braze, enable **Send Users**. This setting creates or updates users in Braze when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates.
+Enable **Send Users** to stream user and property updates to Braze. Amplitude creates or updates Braze users when you update them in Amplitude with the [HTTP V2 API](/docs/apis/analytics/http-v2) or [Identify API](/docs/apis/analytics/identify). The integration doesn't support scheduled or on-demand updates.
 
-You can optionally select user properties to send to Braze in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Braze custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/).
+Select optional user properties to send in **Select additional properties**. Amplitude sends only the properties you choose, and only after one of them changes. Amplitude maps those properties to [Braze custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/).
 
 ### Enable sync
 
-When satisfied with your configuration, at the top of the page toggle the Status to **Enabled** and click **Save**.
+When you're satisfied with the configuration, set **Status** to **Enabled**, then select **Save**.
