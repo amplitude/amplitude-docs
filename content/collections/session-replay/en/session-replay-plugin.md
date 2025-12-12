@@ -195,6 +195,56 @@ Amplitude requires at least one event in any captured session to enable playback
 
 The Session Replay plugin follows the Browser SDK's `optOut` setting, and doesn't support user opt-outs on its own.
 
+### Content Security Policy (CSP)
+
+If your web application uses a strict Content Security Policy, add the following directives:
+
+#### Required CSP directives
+
+```text
+script-src: https://cdn.amplitude.com;
+connect-src: https://api-secure.amplitude.com;
+worker-src: blob:;
+```
+
+#### CSP directives reference
+
+| Directive | Domain | Required | Description |
+| --------- | ------ | -------- | ----------- |
+| `script-src` | `https://cdn.amplitude.com` | Yes, if using CDN | Allows loading the Session Replay plugin and Browser SDK from Amplitude's CDN. |
+| `connect-src` | `https://api-secure.amplitude.com` | Yes (US) | Allows sending replay data to Amplitude's US servers. |
+| `connect-src` | `https://api.eu.amplitude.com` | Yes (EU) | Allows sending replay data to Amplitude's EU servers. Required if you set `serverZone: "EU"`. |
+| `worker-src` | `blob:` | Yes, if using web workers | Required if you enable the `useWebWorker` option for replay event compression. |
+
+#### API endpoints
+
+Session Replay sends data to the following endpoints:
+
+| Region | Endpoint | Purpose |
+| ------ | -------- | ------- |
+| US (default) | `https://api-secure.amplitude.com/sessions/track` | Replay data ingestion. |
+| EU | `https://api.eu.amplitude.com/sessions/track` | Replay data ingestion for EU data residency. |
+| US (default) | `https://api-secure.amplitude.com/sessions/config` | Remote configuration (sample rate settings). |
+| EU | `https://api.eu.amplitude.com/sessions/config` | Remote configuration for EU data residency. |
+
+#### Example CSP header
+
+For US data center:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api-secure.amplitude.com; worker-src 'self' blob:;
+```
+
+For EU data center:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api.eu.amplitude.com; worker-src 'self' blob:;
+```
+
+{{partial:admonition type="tip" heading=""}}
+If you use the `configServerUrl` or `trackServerUrl` configuration options to specify custom endpoints, add those domains to your `connect-src` directive instead.
+{{/partial:admonition}}
+
 ### EU data residency
 
 Session Replay is available to Amplitude Customers who use the EU data center. Set the `serverZone` configuration option to `EU` during initialization. For example:
