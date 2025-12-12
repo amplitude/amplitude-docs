@@ -34,17 +34,19 @@ You can select one, or any, of the following types of tasks to automate:
 * Clean up unused events
 
 ### Clean up stale events
-This task removes events that haven't experiences any recent volume. This indicates that the events aren't being ingested and are no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days.
+This task deletes events that haven't experienced any recent volume. This indicates that the events aren't being ingested and are no longer of value. The task inspects your organization for events that have a `last seen` date in a configurable number of days. For example, events that haven't been ingested in 90 days. 
 
 Historical charts or data aren't affected. 
 
+When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30 day timeline to remove events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+
 ### Clean up single-day events
-This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that:
+This task removes accidental or one-time test events that can negatively impact or clutter up your taxonomy. The task inspects your organization for events that both:
 
-* Have the same first seen and last seen dates and;
-* That date is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
+* Have the same first seen and last seen dates.
+* Have a date that is more than a configuraable number of days before the inspection date. (For example, 90 days before the inspection date.)
 
-When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
+When the automated task finds events that match those criteria, it schedules those events for deletion. All people using those events are notified through email or Slack about the impending deletion. Anywhere the events are being used (for example, in a chart), a banner appears notifying users about the upcoming deletion. If anyone wants to keep the event, they can do so through the email or banner notification. If no one elects to keep the event within 30 days, the event is deleted. The 30 day timeline to remove events is not configurable. Deleted events no longer appear in the event drop-down menu and are blocked from future ingestion.
 
 Historical charts or data aren't affected. 
 
@@ -57,9 +59,9 @@ This task optimizes your event volume by ensuring that all your ingested events 
 
 Your users can save events. They can save the event either through the notification from the automated task or through the Data Assistant. Saved events aren't deleted, even if they're not queried during the time window. 
 
-If the task deletes an event, this also blocks future ingestion of that event. Historical charts or data aren't affected. The deleted event still appears in them. 
+If the task deletes an event, this also blocks future ingestion of that event. Data blocked while the event is in a deleted state can't be recovered. Historical charts or data aren't affected. The deleted event still appears in them. 
 
-You can manually [recover a deleted event](#recovering-deleted-events) at any time. 
+You can manually [recover a deleted event](#recovering-deleted-events) at any time.
 
 ## Setting up an automated task
 
@@ -77,7 +79,7 @@ You can manually set up an automated task. Alternately, the [Data Assistant](/do
 
 If Amplitude detects events that meet a task’s criteria, those suggested tasks appear in the Suggestions view under *Data > Assistant*. If automation is available for that task, a banner appears above the suggestion. 
 
-Click the banner to turn on automation for future matching events.
+Click the banner to turn on automation for future matching events. You are taken to the window to complete the task set up. 
 
 ## Removing an automation
 You can remove any current automation. When removing an automation, you can specify if you want to affect any pending changes or to only affect future changes.  
