@@ -65,8 +65,8 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, Replit, ChatGPT, Gemini CLI, Other MCP Clients"}}
-{{partial:tab name="Claude (web and desktop)"}}
+{{partial:tabs tabs="Claude, Claude Code, Cursor, ChatGPT, Gemini CLI, Replit, Other MCP Clients"}}
+{{partial:tab name="Claude"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
 2. Go to *Settings > Connectors > Add custom connector*.  
 3. Configure the integration:  
@@ -181,18 +181,28 @@ Complete the steps below, depending on the tool you're integrating with.
 MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
 {{/partial:admonition}}
 
-   1. Enable ChatGPT developer mode (if not already enabled).
+   1. Navigate to [ChatGPT](https://chatgpt.com/) or open the ChatGPT desktop app.
    
-   2. Add a new MCP connector with the following configuration:
-      * **Name:** Amplitude
-      * **URL:** `https://mcp.amplitude.com/mcp`
-
-      {{partial:admonition type="note"}}
-      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-      {{/partial:admonition}}
-
-   3. Complete Amplitude OAuth auth flow when prompted.
+   2. Go to *Settings > Apps & Connectors > Browse Connectors*.
    
+   3. Select Amplitude then press Connect to start the OAuth connection.
+   
+   4. Complete Amplitude OAuth authorization when prompted.
+   
+   5. Amplitude strongly recommends creating a Project specific to using Amplitude's MCP then adding this prompt in the instructions to get the best results:
+
+      ```
+      When using Amplitude MCP, follow these rules then act quickly and autonomously:
+      - Use tools to find answers: If you need info (events, properties, chart definitions, cohorts), use tools to discover it rather than asking the user. Trust the Amplitude MCP tools provide access to actual data behind charts, dashboards, and other entities. Always attempt using tools before saying they don't exist.
+      - Try NOT to ask clarifying questions: Make your best judgment with information available but sparingly elicit clarification from users
+      - Resolve ambiguity yourself: When multiple options exist (e.g., which project to use, which saved chart or event matches best, how to define a segment), choose the most reasonable option based on tool results and context. Search saved charts, metrics, and other data before creating something new.
+      - When responding to requests that involve Amplitude objects (charts, dashboards, or any entity), don't stop at referencing IDs and metadata. Retrieve underlying data, run analysis based on it, then share specific metrics as part of your analysis.
+      - Complete the request: Execute the workflow requested, proactively share relevant data when analyzing, don't stop partway to ask for confirmation, then provide data-backed, actionable, and concise answers.
+      - Report what you did: After completing the task, briefly explain key assumptions or data used
+      - Cite your sources: When referencing data from Amplitude, include the link as part of the markdown response (()[])
+      ```
+   
+   6. Start asking questions about your Amplitude data.
 
 {{/partial:tab}}
 {{partial:tab name="Gemini CLI"}}
