@@ -38,7 +38,7 @@ landing_page_content:
     card_content: 'Provide system context about your business, product, and data taxonomy to improve Amplitude AI.'
     cta: 'Customize AI Context...'
     external_link: false
-    entries_field: ai-context-page-8342
+    entries_field: a3ba8170-140c-4d50-bd37-264878320754
     type: card
     enabled: true
 exclude_from_sitemap: false
