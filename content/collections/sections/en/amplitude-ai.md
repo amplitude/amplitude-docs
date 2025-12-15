@@ -32,6 +32,15 @@ landing_page_content:
     type: card
     enabled: true
     entries_field: 123f636e-6ab8-48e1-bbc0-60e0b8ecf86d
+  -
+    id: mh3ne04g
+    card_title: 'AI Context'
+    card_content: 'Provide system context about your business, product, and data taxonomy to improve Amplitude AI.'
+    cta: 'Customize AI Context...'
+    external_link: false
+    entries_field: a3ba8170-140c-4d50-bd37-264878320754
+    type: card
+    enabled: true
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1762981237
