@@ -84,9 +84,8 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Click/Tap outside to close               | Enables users to click or tap outside of the modal to dismiss it.                                          |
+| Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
-| Image Width                              | Define the width of the pin icon or image in pixels.                                                       |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
@@ -106,11 +105,10 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
 | Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
-| Image Width                              | Define the width of the tooltip icon or image in pixels.                                              |
+| Marker                                   | Select the appearance of the marker that can be used to reveal the tooltip message.                                        |
+| Marker Width <br/> {.tag .web .zero}                              | Define the width of the tooltip's marker (icon/image) in pixels.                                              |
 | Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                    |
-| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify. |
-| Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
-| Marker                                   | Select the appearance of the marker that launches the tooltip.                                        |
+| Show on hover/click <br/> {.tag .web .zero}                                 | Select the trigger that causes the tooltip message to appear.                                                 |
 
 ### Banner
 
@@ -131,6 +129,15 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 ### Checklist {.tag .web}
 
 Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
+
+#### Checklist items {.tag .web}
+
+Checklist items compose a checklist.
+
+| Setting                                | Description                                                                                                  |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Skippable | If enabled, the user can complete the checklist item via a "Skip" button. |
+
 
 ## Element selector
 
@@ -192,8 +199,8 @@ Position controls where the guide appears on screen.
 
 | Form factor                              | Options                                                                                                                                                                                                                                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center                                                                                                                                                                                                                                    |
-| Modal                                    | Center                                                                                                                                                                                                                                                                                    |
+| Modal                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
+| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
 | Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
 | Banner                                   | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
@@ -245,6 +252,6 @@ For each of these options, the checklist step updates from "incomplete" to "comp
 
 Upload an image to include in your experience. The experience's layout determines the image's position.
 
-#### Movie
+#### Video
 
-Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a movie's position.
+Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a video's position.
