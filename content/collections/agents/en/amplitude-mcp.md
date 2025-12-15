@@ -1,13 +1,12 @@
 ---
 id: b09c311c-387a-476e-b382-49ce0ca448d6
 blueprint: agent
-title: 'Amplitude MCP (Model Context Protocol) Server'
+title: 'Amplitude MCP Server'
 landing: false
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758643314
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1765824836
 ---
-
 The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
 
 The Amplitude MCP server is listed in the [official MCP servers registry](https://github.com/modelcontextprotocol/servers) on GitHub. You can also find MCP integration guides and examples in [Anthropic's Claude documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp), the [MCP quickstart resources](https://github.com/modelcontextprotocol/quickstart-resources), and [Cursor's MCP documentation](https://docs.cursor.com/context/model-context-protocol).
