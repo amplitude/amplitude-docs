@@ -1,6 +1,6 @@
 ---
 id: b09c311c-387a-476e-b382-49ce0ca448d6
-blueprint: analytic
+blueprint: agent
 title: 'Amplitude MCP (Model Context Protocol) Server'
 landing: false
 exclude_from_sitemap: false
