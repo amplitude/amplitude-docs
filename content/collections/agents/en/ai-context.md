@@ -1,5 +1,5 @@
 ---
-id: ai-context-page-8342
+id: a3ba8170-140c-4d50-bd37-264878320754
 blueprint: agent
 title: 'AI Context'
 this_article_will_help_you:
@@ -9,7 +9,7 @@ this_article_will_help_you:
 updated_by: cursor-agent
 updated_at: 1734192000
 ---
-AI Context lets admins provide additional context to Amplitude's AI features. This context is used by Amplitude's Agents, Ask AI, and other AI features when generating responses, helping them better understand your business context, data conventions, and preferred practices.
+AI Context lets admins provide additional context to Amplitude's AI features. Amplitude's Agents, Ask AI, and other AI features use this context when generating responses, helping them better understand your business context, data conventions, and preferred practices.
 
 This feature is similar to Claude Projects or Cursor rules—by providing high-level context to Amplitude's AI, you can influence the responses you get and ensure consistency across your team's work.
 
@@ -23,11 +23,11 @@ To configure AI Context for your organization:
 4. Add your business context, guidelines, and preferences.
 5. Click **Save** to apply the changes.
 
-AI Context is limited to 10,000 characters and you can make changes through the markdown editor or upload markdown files directly. AI Context is visible to all users but only editable by admins.
+AI Context is limited to 10,000 characters. You can make changes through the markdown editor or upload markdown files directly. All users can view AI Context, but only admins can edit it.
 
 ## What to include in AI Context
 
-Your AI Context can include any information that would help Amplitude's AI better understand your business context and generate more relevant responses. Here are some examples:
+Your AI Context can include any information that helps Amplitude's AI better understand your business context and generate more relevant responses. Examples include:
 
 **Business context:** Company-specific terminology and definitions, product names and definitions, key metrics and KPIs your team focuses on, business workflows, industry-specific considerations.
 
@@ -39,11 +39,11 @@ Your AI Context can include any information that would help Amplitude's AI bette
 
 **Jargon:** Companies often have terms or phrases that are specific to them. Explain what specific words or phrases mean to give AI the best chance of understanding this terminology.
 
-Example: "P0 feature" refers to a feature in our highest priority tier for the current quarter.
+Example: "P0 feature" refers to a feature in your highest priority tier for the current quarter.
 
 **Synonyms:** Companies sometimes use multiple words to describe the same concept. Giving this context helps AI provide suggestions more consistently.
 
-Example: "Organization," "workspace," and "account" are used interchangeably, but "organization" is the property name in our event taxonomy.
+Example: "Organization," "workspace," and "account" are used interchangeably, but "organization" is the property name in your event taxonomy.
 
 AI Context teaches Amplitude's AI your organization's unique context—the tribal knowledge that distinguishes your product team from others. The AI already knows product analytics, experimentation, and funnel analysis. What it needs from you is your business context, your event taxonomy, and your specific ways of working.
 
