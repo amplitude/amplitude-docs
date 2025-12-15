@@ -178,7 +178,7 @@ Complete the steps below, depending on the tool you're integrating with.
 **Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
 
 {{partial:admonition type="note"}}
-MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
+MCP support in ChatGPT is available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
 {{/partial:admonition}}
 
    1. Navigate to [ChatGPT](https://chatgpt.com/) or open the ChatGPT desktop app.
@@ -189,9 +189,9 @@ MCP support in ChatGPT is only available through [developer mode](https://commun
    
    4. Complete Amplitude OAuth authorization when prompted.
    
-   5. Amplitude strongly recommends creating a Project specific to using Amplitude's MCP then adding this prompt in the instructions to get the best results:
+   5. For best results with ChatGPT, Amplitude recommends creating a Project specificly for the Amplitude MCP and adding this prompt to the instructions:
 
-      ```
+      ```text
       When using Amplitude MCP, follow these rules then act quickly and autonomously:
       - Use tools to find answers: If you need info (events, properties, chart definitions, cohorts), use tools to discover it rather than asking the user. Trust the Amplitude MCP tools provide access to actual data behind charts, dashboards, and other entities. Always attempt using tools before saying they don't exist.
       - Try NOT to ask clarifying questions: Make your best judgment with information available but sparingly elicit clarification from users
