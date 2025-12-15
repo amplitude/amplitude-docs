@@ -41,8 +41,17 @@ landing_page_content:
     entries_field: a3ba8170-140c-4d50-bd37-264878320754
     type: card
     enabled: true
+  -
+    id: mj7ij717
+    card_title: 'Amplitude MCP'
+    card_content: 'Analyze your product data, experiments, and user behavior using conversational AI.'
+    cta: 'Connect to Amplitude MCP'
+    external_link: false
+    entries_field: b09c311c-387a-476e-b382-49ce0ca448d6
+    type: card
+    enabled: true
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1762981237
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1765824937
 template: landing-page-experiment
 ---
