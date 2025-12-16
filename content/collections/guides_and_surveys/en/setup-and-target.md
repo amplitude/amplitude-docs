@@ -98,9 +98,9 @@ Amplitude provides the following options to trigger an experience.
 | Immediately          | The experience appears as soon as the page loads.                                                                                                                                                |
 | When element appears | Launches the experience when a specified element appears on screen. Enter a CSS Selector or XPath path expression, or click *Test and Preview* to launch the visual selector.                    |
 | When element clicked/tapped | Launches the experience when a the user interacts with the specified element. Enter a CSS Selector or XPath path expression, or click **Test and Preview** to launch the visual selector.                    |
-| After time on page   | Specify a delay (in minutes or seconds) that a user must spend on the page before they receive the experience.                                                                                       |
+| After time on page/screen | Specify a delay (in minutes or seconds) that a user must spend on the page before they receive the experience.                                                                                       |
 | Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
-| Rage click           | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
+| Rage click/tap       | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
 | User confusion <br/> {.tag .web .zero}      | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
 | On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
 
@@ -127,12 +127,12 @@ Control whether your guide or survey displays on all pages, include specific pag
 When you exclude or include specific pages, Amplitude accepts the following:
 
 * URL matches
-* URL matches exactly
-* URL matches pattern
-* URL contains
-* URL starts with
-* URL ends with
-* URL matches regex
+* URL/screen matches exactly
+* URL/screen matches pattern
+* URL/screen contains
+* URL/screen starts with
+* URL/screen ends with
+* URL/screen matches regex
 
 ### Priority
 
@@ -180,9 +180,9 @@ Access guide or survey settings with the gear icon at the top of the builder.
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Dismissable       | Gives users an option to dismiss the experience.                                                                                          |
 | Snoozable <br/> {.tag .web .zero}         | Allow the user to snooze the experience for the specified duration.                                                                       |
-| Label             | The snooze button’s text.                                                                                                            |
-| Duration          | How long the snooze lasts. The experience doesn't re-appear for the user until at least that much time has passed.                        |
-| Show on all steps | If disabled, the guide or survey's first step is the only step with a snooze option.                                                           |
+| Label <br/> {.tag .web .zero} | The snooze button’s text. Only visible when Snoozable is enabled. |
+| Duration <br/> {.tag .web .zero} | How long the snooze lasts. The experience doesn't re-appear for the user until at least that much time has passed. Only visible when Snoozable is enabled.                        |
+| Snoozable on all steps <br/> {.tag .web .zero} | If disabled, the guide or survey's first step is the only step with a snooze option. Only visible when Snoozable is enabled.                                                           |
 | Show step counter | Adds a step counter to each step in the guide or survey. For example, on a guide with five steps, the metric `2/5` appears on the second step. |
 
 ## Active state

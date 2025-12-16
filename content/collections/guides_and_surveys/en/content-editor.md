@@ -16,7 +16,7 @@ The content editor in Guides and Surveys supports rich content creation through 
 
 The description editor supports standard Markdown formatting, allowing you to create rich text content without writing HTML. Use Markdown for:
 
-- \*\*Bold text\*\* and \*italic text\*
+- \*\*Bold text\*\* and \*italic text\* or \_italic text\_
 - Headers and subheaders
 - Lists (bulleted and numbered)
 - Links and images
