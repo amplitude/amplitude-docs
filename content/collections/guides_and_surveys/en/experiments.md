@@ -53,7 +53,7 @@ Click *Manage Experiment* to open the experiment editor in a new tab. The experi
 Variant names stay in sync between your guide or survey and the experiment when you save the guide or survey.
 {{/partial:admonition}}
 
-For more information about working with experiments, see [Feature Experiment](/docs/feature-experiment)
+For more information about working with experiments, see [Feature Experiment](/docs/feature-experiment/overview)
 
 {{partial:admonition type="tip" heading="Exposures and assignments"}}
 Exposure events in Guides and Surveys experiments work similarly to a standard experiment, but there are cases that can cause a uneven split between between control and variant exposures. The way in which you set targets and limits impacts the frequency with which treatment exposures occur.

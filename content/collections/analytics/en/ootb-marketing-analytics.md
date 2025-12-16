@@ -240,6 +240,6 @@ The Purchase by item hub is a good starting point for ecommerce analysis. To exp
 
 ## Create a web experiment for specific URLs
 
-On the Page Engagement tab of Marketing Analytics, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment) from the table.
+On the Page Engagement tab of Marketing Analytics, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment/set-up-a-web-experiment) from the table.
 
 Click the flask icon in the Action column of the table, and the New Web Experiment dialog appears pre-populated with the targeted page URL.
