@@ -50,7 +50,7 @@ Heatmaps use Session Replay data to track interactions on your pages. If you use
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Heatmap generation thresholds"}}
-There's no minimum threshold for generating heatmaps. As soon as Session Replay data is available for a page, you can create a heatmap. The sample rate you configure for Session Replay affects the amount of data available for heatmaps, but there's no minimum number of sessions, clicks, or views required to generate a heatmap.
+Amplitude doesn't require a minimum number of replays before you can generate a heatmap. As soon as Session Replay data is available for a page, you can create a heatmap. The sample rate you configure for Session Replay affects the amount of data available for heatmaps, but there's no minimum number of sessions, clicks, or views required to generate a heatmap.
 {{/partial:admonition}}
 
 ### No server-side identifiers
