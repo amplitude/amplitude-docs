@@ -61,6 +61,44 @@ When Amplitude evaluates users for Flag-B:
 
 Targeting for Flag-B determines what variant (if any) the user receives. The flag dependency on Flag-A has no effect at this point.
 
+## Prerequisites compared to user property targeting
+
+You can achieve similar outcomes using either flag prerequisites or targeting rules based on `[Experiment]` user properties. However, there are important differences.
+
+### Using `[Experiment]` user properties in targeting
+
+When Amplitude assigns a user to a flag or experiment variant, it sets a user property in the format `[Experiment] <flag_key>` with the variant key as the value. You can use this user property in another flag's targeting rules to target users based on their previous assignments.
+
+**Example:** Target users where `[Experiment] Flag-A` equals `on`.
+
+**Limitations:**
+
+- **Timing issues**: The `[Experiment]` user property is set when the assignment or exposure event is ingested. If you evaluate a dependent flag before this property syncs, the user may not match the targeting rule.
+- **No formal dependency tracking**: The UI doesn't show the relationship between flags. You must manually track which flags depend on others.
+- **Potential inconsistency**: Race conditions between property sync and flag evaluation can cause users to receive inconsistent experiences.
+
+### Using flag prerequisites
+
+Flag prerequisites formally define dependencies between flags. When you add Flag-A as a prerequisite for Flag-B, Amplitude evaluates Flag-A first and uses the result to determine Flag-B eligibility.
+
+**Advantages:**
+
+- **Evaluated together**: Prerequisites are evaluated in sequence during a single evaluation call, eliminating timing issues.
+- **Visible dependencies**: The Dependencies card shows all relationships, making it easier to manage complex flag hierarchies.
+- **Consistent bucketing**: Users receive consistent experiences because prerequisite evaluation happens atomically.
+- **Protected changes**: Amplitude prevents you from archiving prerequisite flags or changing variant keys that other flags depend on.
+
+### When to use each approach
+
+| Use case | Recommended approach |
+|----------|---------------------|
+| Users must be assigned to Flag-A before seeing Flag-B | Flag prerequisites |
+| Building release groups with sub-features | Flag prerequisites |
+| Chaining mutually exclusive experiments | Flag prerequisites |
+| Targeting users who were exposed to a flag days or weeks ago | User property targeting |
+| Analyzing experiment results by previous flag exposure | User property targeting |
+| Ad-hoc segmentation for debugging | User property targeting |
+
 ## Common use cases
 
 Flag prerequisites are flexible and have many use cases. Here are some common examples:
