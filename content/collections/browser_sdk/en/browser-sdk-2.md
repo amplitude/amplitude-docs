@@ -1793,13 +1793,13 @@ amplitude.init(AMPLITUDE_API_KEY, {
 ```
 
 {{partial:admonition type="note" heading="Configuration merging behavior"}}
-When `fetchRemoteConfig` is enabled, the SDK merges remote configuration with local configuration at the feature level. Remote configuration can override specific autocapture features even when you set `autocapture: false` locally.
+When you enable `fetchRemoteConfig`, the SDK merges remote configuration with local configuration at the feature level. Remote configuration can override specific autocapture features even when you set `autocapture: false` locally.
 
 How the merging works:
 
-- If remote configuration specifies a value for an autocapture feature, that value takes precedence
-- If remote configuration doesn't specify a value for a feature, the local configuration value is used
-- Each autocapture feature (sessions, pageViews, elementInteractions, etc.) is merged independently
+- If remote configuration specifies a value for an autocapture feature, that value takes precedence.
+- If remote configuration doesn't specify a value for a feature, the SDK uses the local configuration value.
+- Each autocapture feature such as `sessions`, `pageViews`, and `elementInteractions` merges independently.
 
 {{partial:collapse name="Remote config enables specific features when local config disables all"}}
 
@@ -1846,7 +1846,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 {{/partial:collapse}}
 
-{{partial:collapse name="Remote config when no local config is specified"}}
+{{partial:collapse name="Remote config when you don't specify local config"}}
 
 ```ts
 // Local configuration doesn't specify autocapture settings
