@@ -10,7 +10,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/agents/amplitude-mcp",
+      "source": "/docs/analytics/amplitude-mcp",
       "destination": "/docs/amplitude-ai/amplitude-mcp",
       "statusCode": 301
     },
