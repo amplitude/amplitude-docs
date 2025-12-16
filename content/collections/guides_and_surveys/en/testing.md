@@ -28,9 +28,9 @@ There is a known issue in Preview mode where multi-page guides or surveys may no
 Preview mode is accessible from the builder:
 
 1. Open a guide or survey.
-2. Click **Test & Preview**.
-3. Enter the URL of the page with the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) installed.
-4. Amplitude verifies that the SDK is available on the URL, and opens it in a new tab with the preview bar visible.
+2. Click **Preview**.
+3. Enter the URL of the page with the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) installed (for web), or scan the QR code/open the preview URL (for mobile).
+4. Amplitude verifies that the SDK is available. For web, the URL opens in a new tab with the preview bar visible. For mobile, the preview opens in the app with the preview bar displayed.
 
 ![](statamic://asset::help_center_conversions::guides-surveys/preview-bar.png)
 

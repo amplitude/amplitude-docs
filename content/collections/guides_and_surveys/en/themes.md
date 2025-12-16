@@ -153,12 +153,12 @@ Specify how individual cards display on screen. Adjust the following, which appl
 
 Specify the maximum dimensions for each type of widget.
 
-| Widget        | Available dimension |
-| ------------- | ------------------- |
-| Modal         | Max content width   |
-| Popover / pin | Max content width   |
-| Tooltip       | Max width           |
-| Checklist     | Max Width, Max-height   |
+| Widget        | Available dimension                                           |
+| ------------- | ------------------------------------------------------------- |
+| Modal         | Max content width for modals and mobile carousels on tablets  |
+| Popover / pin | Max content width for pins                                    |
+| Tooltip       | Max width for tooltips                                        |
+| Checklist     | Max width and max height for checklists                       |
 
 ### Animations
 

@@ -11,11 +11,11 @@ landing_blurb: "Learn how surveys can improve the feedback you get from your use
 ---
 Surveys are a source of user feedback. Like [guides](/docs/guides-and-surveys/guides), they feature a more targeted way to collect thoughts from your users, and increase the percentage of those thoughts that you capture.
 
-Surveys support advanced [conditional logic](/docs/guides-and-surveys/conditional-logic) based on both survey responses and user properties, enabling you to branch survey paths and create personalized follow-up questions.
+Surveys support advanced [conditional logic](/docs/guides-and-surveys/guides/conditional-logic) based on both survey responses and user properties, enabling you to branch survey paths and create personalized follow-up questions.
 
 ## Survey templates
 
-Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-overview#guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Guides includes the following templates:
+Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-overview#guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Surveys include the following templates:
 
 | Template       | Use case                                                                                                                 |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------ |
