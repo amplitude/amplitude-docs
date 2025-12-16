@@ -73,7 +73,7 @@ When Amplitude assigns a user to a flag or experiment variant, it sets a user pr
 
 **Limitations:**
 
-- **Timing issues**: The `[Experiment]` user property is set when the assignment or exposure event is ingested. If you evaluate a dependent flag before this property syncs, the user may not match the targeting rule.
+- **Timing issues**: Amplitude sets the `[Experiment]` user property when it ingests the assignment or exposure event. If you evaluate a dependent flag before this property syncs, the user may not match the targeting rule.
 - **No formal dependency tracking**: The UI doesn't show the relationship between flags. You must manually track which flags depend on others.
 - **Potential inconsistency**: Race conditions between property sync and flag evaluation can cause users to receive inconsistent experiences.
 
@@ -83,7 +83,7 @@ Flag prerequisites formally define dependencies between flags. When you add Flag
 
 **Advantages:**
 
-- **Evaluated together**: Prerequisites are evaluated in sequence during a single evaluation call, eliminating timing issues.
+- **Evaluated together**: Amplitude evaluates prerequisites in sequence during a single evaluation call, eliminating timing issues.
 - **Visible dependencies**: The Dependencies card shows all relationships, making it easier to manage complex flag hierarchies.
 - **Consistent bucketing**: Users receive consistent experiences because prerequisite evaluation happens atomically.
 - **Protected changes**: Amplitude prevents you from archiving prerequisite flags or changing variant keys that other flags depend on.
@@ -92,10 +92,10 @@ Flag prerequisites formally define dependencies between flags. When you add Flag
 
 | Use case | Recommended approach |
 |----------|---------------------|
-| Users must be assigned to Flag-A before seeing Flag-B | Flag prerequisites |
+| Assign users to Flag-A before they see Flag-B | Flag prerequisites |
 | Building release groups with sub-features | Flag prerequisites |
 | Chaining mutually exclusive experiments | Flag prerequisites |
-| Targeting users who were exposed to a flag days or weeks ago | User property targeting |
+| Target users exposed to a flag days or weeks ago | User property targeting |
 | Analyzing experiment results by previous flag exposure | User property targeting |
 | Ad-hoc segmentation for debugging | User property targeting |
 
