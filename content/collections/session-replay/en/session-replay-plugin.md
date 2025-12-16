@@ -32,11 +32,11 @@ Amplitude built Session Replay to minimize impact on the performance of web page
 
 ## Performance
 
-Session Replay minimizes its impact on page performance through asynchronous processing, efficient compression, and optimized bundle size.
+Session Replay minimizes its impact on page performance through asynchronous processing, efficient compression, and optimizing bundle sizes.
 
 ### Bundle size
 
-The Session Replay plugin adds to your application's bundle size. The bundle size partial below shows the current package size (gzip compressed):
+The Session Replay plugin adds to your application's bundle size. 
 
 {{partial:bundle-size :package_name="package_name"}}
 
