@@ -1793,11 +1793,76 @@ amplitude.init(AMPLITUDE_API_KEY, {
 ```
 
 {{partial:admonition type="note" heading="Configuration merging behavior"}}
-When `fetchRemoteConfig` is enabled:
-- Remote configuration settings from Amplitude servers merge with your local configuration
-- Remote settings override conflicting local settings
-- Manual configuration parameters you set locally are preserved unless explicitly overridden by remote settings
-- This particularly affects Autocapture settings, which can be controlled remotely
+When `fetchRemoteConfig` is enabled, the SDK merges remote configuration with local configuration at the feature level. Remote configuration can override specific autocapture features even when you set `autocapture: false` locally.
+
+How the merging works:
+
+- If remote configuration specifies a value for an autocapture feature, that value takes precedence
+- If remote configuration doesn't specify a value for a feature, the local configuration value is used
+- Each autocapture feature (sessions, pageViews, elementInteractions, etc.) is merged independently
+
+{{partial:collapse name="Remote config enables specific features when local config disables all"}}
+
+```ts
+// Local configuration disables all autocapture
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: false
+});
+
+// Remote config (set in Data > Settings > Autocapture) enables only:
+// - Page Views: enabled
+// - Element Interactions: enabled
+
+// Result: Only Page Views and Element Interactions are tracked
+// All other features (sessions, formInteractions, fileDownloads, etc.) remain disabled
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config overrides specific local settings"}}
+
+```ts
+// Local configuration enables most features
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    pageViews: true,
+    sessions: true,
+    elementInteractions: true,
+    formInteractions: true
+  }
+});
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Element Interactions: disabled
+// - Frustration Interactions: enabled
+
+// Result:
+// - pageViews: true (from local config)
+// - sessions: true (from local config)
+// - elementInteractions: false (overridden by remote config)
+// - formInteractions: true (from local config)
+// - frustrationInteractions: true (set by remote config)
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config when no local config is specified"}}
+
+```ts
+// Local configuration doesn't specify autocapture settings
+amplitude.init(AMPLITUDE_API_KEY);
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Page Views: enabled
+// - Sessions: enabled
+
+// Result: Only Page Views and Sessions are tracked
+// All other features use their default values
+```
+
+{{/partial:collapse}}
+
+Set baseline settings locally and adjust specific features remotely through the Amplitude UI without code changes.
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
