@@ -37,9 +37,9 @@ From here, depending on the chart type, you can:
 * **Watch Session Replays** of those user sessions.
 * **Exclude** or remove distracting or irrelevant series from the analysis.
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
-* **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are a customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
+* **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are a customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to view a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file also contains each user's most-recently sent user property values.
-* **Add users to...** a [Feature Flag](/docs/feature-experiment/workflow/feature-flag-rollouts), [Feature Experiment](/docs/feature-experiment/overview), [Web Experiment](/docs/web-experiment/set-up-a-web-experiment), [Guide, or Survey](/docs/guides-and-surveys).
+* **Add users to...** a [Feature Experiment](/docs/feature-experiment/overview), [Feature Flag](/docs/feature-experiment/workflow/feature-flag-rollouts), [Web Experiment](/docs/web-experiment/set-up-a-web-experiment), [Guide, or Survey](/docs/guides-and-surveys).
 
 {{partial:admonition type="note" heading=""}}
 If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file includes the following four columns:
@@ -79,7 +79,7 @@ Microscope actions such as `View user streams` and `Create cohort` are not suppo
 
 ## View user streams
 
-When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can see individual user streams in aggregate by selecting *View User Streams*. All a user's events within the date range of the data point are visible here, as well as:
+When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can view individual user streams in aggregate by selecting *View User Streams*. All a user's events within the date range of the data point are visible here, as well as:
 
 * Up to 25 events **prior to** the beginning of the time range.
 * Up to 50 events **after** the start of the time range.
@@ -87,7 +87,7 @@ When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-se
 If you have a specific event selected, it's highlighted in the user's stream. You can also choose to show certain event properties as well. Click a user ID or any event in a user's stream to view their profile in the *[User Activity](/docs/analytics/user-data-lookup)* tab.
 
 {{partial:admonition type="note" heading=""}}
-Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to understand their ingested name and properties.
 {{/partial:admonition}}
 
 ### View Session Replay from a user's event stream
@@ -100,7 +100,7 @@ While using Microscope in a supported chart, click on *View User Streams*. Check
 
 In a funnel chart, click into any step after the initial event to enable the **Explore Conversion Drivers** feature. This allows you to explore events triggered **between** funnel steps for converted and dropped-off users.
 
-For more information, see [Amplitude's conversion drivers feature](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers).
+For more information, go to [Amplitude's conversion drivers feature](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers).
 
 ## Create a guide or survey from Microscope
 

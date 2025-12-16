@@ -40,7 +40,7 @@ The user history panel has 6 tabs, Activity, Insights, Session Replays, Cohorts,
 
 The event stream displays a list of all the events the user performed in your application. Filter the list by event type or a specific device ID. Enable *Live event updates* for a real time feed of the user's activity in your application.
 
-Amplitude groups the event stream by **session**, and orders it in **reverse chronological order**, placing the session property with the most recent activity at the top of the list. Blue events in a session are all connected by a line; green, out-of-session events stand alone. Customize the events you want to see in the event stream by choosing to show all events, highlight specific events, or only show specific events. You can also filter on a particular device ID.
+Amplitude groups the event stream by **session**, and orders it in **reverse chronological order**, placing the session property with the most recent activity at the top of the list. Blue events in a session are all connected by a line; green, out-of-session events stand alone. Customize the events you want to view in the event stream by choosing to show all events, highlight specific events, or only show specific events. You can also filter on a particular device ID.
 
 There are two available views: the **Info** view, which gives a digestible view of the event data, and the **Raw** view, which displays the raw JSON file Amplitude received, along with any user properties that persisted from previous events or Identify requests. This is useful for debugging the data your product sends to Amplitude.
 
@@ -80,7 +80,7 @@ If the difference between `server_received_time` and `client_upload_time` is les
 
 This occurs automatically for projects with a [project ID](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information) of 243704 or higher. To apply this 60-second cutoff time to an older project, contact Amplitude Support.
 
-[See this blog post for more detail](https://amplitude.com/blog/dont-trust-client-data).
+[Go to this blog post for more detail](https://amplitude.com/blog/dont-trust-client-data).
 {{/partial:admonition}}
 
 Daily exported files use `server_upload_time` and all dashboards use `event_time`. Queries on raw data should use `event_time`.
@@ -103,7 +103,7 @@ The *Cohorts* tab enables you to check if the user is in any of your project's c
 
 ### Experiments
 
-The Experiments tab shows any [feature experiments](/docs/feature-experiment/overview) or [web experiments](/docs/web-experiment/set-up-a-web-experiment) of which the user is a part.
+The Experiments tab shows any [feature or web experiments](/docs/experiment-home) of which the user is a part.
 
 ### Flags
 
