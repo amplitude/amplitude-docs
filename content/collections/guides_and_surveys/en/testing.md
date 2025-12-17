@@ -18,17 +18,11 @@ There are two ways to test your guides and surveys:
 
 Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode.
 
-{{partial:admonition type="tip" heading="Recommended testing"}}
 Amplitude recommends that you test your guide or survey thoroughly before you launch. This helps ensure everything works as expected, and the experience has the look and feel you want.
 
 - Ensure button actions behave as you intend
 - Check that multi-step guides and surveys have the right pace
 - Pins and tooltips appear exactly where they should.
-  {{/partial:admonition}}
-
-{{partial:admonition type="note" heading="Multi-page displays"}}
-There is a known issue in Preview mode where multi-page guides or surveys may not display as expected if used in multi-page apps. This only affects the Preview mode, not the published guide or survey.
-{{/partial:admonition}}
 
 Preview mode is accessible from the builder:
 
@@ -75,10 +69,6 @@ Sometimes, the guide or survey doesn't appear in preview. When this happens, and
 {{partial:admonition type="tip"}}
 Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys setup and troubleshoot why guides or surveys aren't showing. The extension's Guides & Surveys tab shows SDK setup status, trigger conditions, and lets you test event-based triggers.
 {{/partial:admonition}}
-
-- That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
-- That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
-- If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
 
 #### No error message but preview doesn't appear
 
