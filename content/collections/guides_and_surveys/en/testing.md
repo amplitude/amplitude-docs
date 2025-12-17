@@ -1,25 +1,30 @@
 ---
 id: d402c648-6218-4450-b216-0439206e1206
 blueprint: guides_and_survey
-title: Testing
+title: Testing and publishing
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739220209
 ---
-Amplitude provides two ways to test your guides and surveys:
 
-* **Preview mode**: A quick first check to see how your guide or survey looks and confirm your setup.
-* **Testing status**: A more thorough live test with specific users to be extra certain before launch.
+Amplitude allows you to test your guides and surveys before publishing them to your users. This helps you ensure that your guides and surveys are set up as you want them and that they behave as expected.
+
+There are two ways to test your guides and surveys:
+
+- **Preview mode**: A quick first check to see how your guide or survey looks and confirm your setup.
+- **Testing status**: A more thorough live test with specific users to be extra certain before launch.
 
 ## Preview mode
 
 Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode.
 
+{{partial:admonition type="tip" heading="Recommended testing"}}
 Amplitude recommends that you test your guide or survey thoroughly before you launch. This helps ensure everything works as expected, and the experience has the look and feel you want.
 
-* Ensure button actions behave as you intend
-* Check that multi-step guides and surveys have the right pace
-* Pins and tooltips appear exactly where they should.
+- Ensure button actions behave as you intend
+- Check that multi-step guides and surveys have the right pace
+- Pins and tooltips appear exactly where they should.
+  {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Multi-page displays"}}
 There is a known issue in Preview mode where multi-page guides or surveys may not display as expected if used in multi-page apps. This only affects the Preview mode, not the published guide or survey.
@@ -38,9 +43,9 @@ Preview mode is accessible from the builder:
 
 The preview bar shows the status of the three conditions that Amplitude uses to decide to show the guide or survey:
 
-* Trigger
-* Limit
-* Throttle
+- Trigger
+- Limit
+- Throttle
 
 ### Condition status
 
@@ -71,9 +76,9 @@ Sometimes, the guide or survey doesn't appear in preview. When this happens, and
 Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys setup and troubleshoot why guides or surveys aren't showing. The extension's Guides & Surveys tab shows SDK setup status, trigger conditions, and lets you test event-based triggers.
 {{/partial:admonition}}
 
-* That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
-* That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
-* If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
+- That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
+- That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
+- If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
 
 #### No error message but preview doesn't appear
 
@@ -119,7 +124,7 @@ Amplitude keeps a record of the guides and surveys your users encounter. To remo
 2. Navigate to the Guides or Surveys tab.
 3. Find the guide or survey to remove.
 4. In the corresponding row, click the ellipsis menu, and select **Clear history**.
-{{/partial:admonition}}
+   {{/partial:admonition}}
 
 ## Testing status function
 
@@ -127,12 +132,12 @@ While preview mode provides a close approximation of how your guide or survey ap
 
 When you set a guide or survey to Testing status:
 
-* All specified test users (device IDs, user IDs, or cohorts) are eligible to see the guide or survey.
-* Limits are automatically ignored to make testing easier.
-* The guide or survey remains hidden from your production users.
+- All specified test users (device IDs, user IDs, or cohorts) are eligible to see the guide or survey.
+- Limits are automatically ignored to make testing easier.
+- The guide or survey remains hidden from your production users.
 
 {{partial:admonition type="note" heading="Test users in production"}}
-Test users continue to receove the guide or survey when you update its status to **Published** or **Scheduled**. This allows for smooth transitions from testing to production.
+Test users continue to receive the guide or survey when you update its status to **Published** or **Scheduled**. This allows for smooth transitions from testing to production.
 {{/partial:admonition}}
 
 ##### To use the Testing status:
@@ -140,3 +145,11 @@ Test users continue to receove the guide or survey when you update its status to
 1. Open your guide or survey.
 2. In the **Test users** section, specify your test users using device IDs, user IDs, or cohorts.
 3. Change status to **Testing** .
+
+## Publishing
+
+When you are finished editing your guide or survey and have tested it successfully, you can publish it to your users. To do that, hit the **Publish** button in the builder.
+
+Once a guide is published, you can still make changes. These changes will be saved as "unpublished" changes until you publish them by explicitly clicking on the **Publish** button again.
+
+The dashboard's preview pane will show your guide or survey including any unpublished changes. The "Preview" mode will also show the unpublished changes. Use the version history to see how many changes you made since you last published.
