@@ -1,11 +1,7 @@
 ---
 id: d402c648-6218-4450-b216-0439206e1206
 blueprint: guides_and_survey
-<<<<<<< HEAD
 title: Testing and Publishing
-=======
-title: Testing and publishing
->>>>>>> origin/update-testing-docs-add-publishing-section
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739220209
@@ -29,13 +25,10 @@ Amplitude recommends that you test your guide or survey thoroughly before you la
 - Check that multi-step guides and surveys have the right pace
 - Pins and tooltips appear exactly where they should.
   {{/partial:admonition}}
-<<<<<<< HEAD
 
 {{partial:admonition type="note" heading="Multi-page displays"}}
 There is a known issue in Preview mode where multi-page guides or surveys may not display as expected if used in multi-page apps. This only affects the Preview mode, not the published guide or survey.
 {{/partial:admonition}}
-=======
->>>>>>> origin/update-testing-docs-add-publishing-section
 
 Preview mode is accessible from the builder:
 
@@ -79,7 +72,6 @@ This communication relies on the browser's `window.postMessage` API to pass mess
 
 Sometimes, the guide or survey doesn't appear in preview. When this happens, and the instrumentation is correct, check the following:
 
-<<<<<<< HEAD
 {{partial:admonition type="tip"}}
 Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys setup and troubleshoot why guides or surveys aren't showing. The extension's Guides & Surveys tab shows SDK setup status, trigger conditions, and lets you test event-based triggers.
 {{/partial:admonition}}
@@ -92,27 +84,27 @@ Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug
 
 If the Amplitude dashboard doesn't show an error but your preview doesn't appear, this indicates that:
 
-* The dashboard received the initial message from your SDK
-* The SDK isn't receiving the response message from the dashboard
+- The dashboard received the initial message from your SDK
+- The SDK isn't receiving the response message from the dashboard
 
 To troubleshoot this scenario:
 
-* Check your browser console for errors related to message passing
-* Verify that no browser extensions or security settings block cross-window messaging
-* Enable the **Don't automatically close the preview window** option in the preview modal to keep the window open for debugging
+- Check your browser console for errors related to message passing
+- Verify that no browser extensions or security settings block cross-window messaging
+- Enable the **Don't automatically close the preview window** option in the preview modal to keep the window open for debugging
 
 #### Error message and preview doesn't appear
 
 If the Amplitude dashboard displays an error after approximately 10 seconds, the dashboard didn't receive a message from the SDK. This indicates that:
 
-* The SDK isn't loading on your page
-* The SDK can't communicate with the dashboard
+- The SDK isn't loading on your page
+- The SDK can't communicate with the dashboard
 
 To troubleshoot this scenario:
 
-* Verify the SDK is installed correctly using `window.engagement` in your browser console
-* Enable the **Don't automatically close the preview window** option to extend the waiting time beyond 10 seconds
-* Check that your application URL is correct and accessible
+- Verify the SDK is installed correctly using `window.engagement` in your browser console
+- Enable the **Don't automatically close the preview window** option to extend the waiting time beyond 10 seconds
+- Check that your application URL is correct and accessible
 
 #### Known issue: Cross-Origin-Opener-Policy header
 
@@ -120,15 +112,14 @@ If your application sets the `Cross-Origin-Opener-Policy` (COOP) header to `same
 
 To resolve this issue, either:
 
-* Set the COOP header to `same-origin-allow-popups` instead of `same-origin`
-* Temporarily disable the COOP header for testing purposes
+- Set the COOP header to `same-origin-allow-popups` instead of `same-origin`
+- Temporarily disable the COOP header for testing purposes
 
-For more information about the COOP header, review the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
-=======
+# For more information about the COOP header, review the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+
 - That the user you're previewing as hasn't already seen the guide or survey you're trying to test. If this is the case, the preview bar shows a yellow (warning) status for the **Limit** condition. If this happens, hover over the condition, and click **Reset User History**.
 - That the throttle limit isn't reached. In this case, the Throttle condition shows yellow (warning) status. If this happens, hover over the condition, and toggle **Ignore Throttle Limits**.
 - If you're using **On event tracked** as the trigger condition, ensure that the corresponding event fires. If the event hasn't fired, the Trigger condition has a blue status. Hover over the Trigger condition, and click **Manually trigger event**.
->>>>>>> origin/update-testing-docs-add-publishing-section
 
 {{partial:admonition type="note" heading="Clear user history"}}
 Amplitude keeps a record of the guides and surveys your users encounter. To remove a guide or survey from a user's history:
