@@ -108,7 +108,7 @@ Returns the number of distinct property values for the property by which the eve
 `PROPCOUNT` supports only numeric event properties in Experiment.
 {{/partial:admonition}}
 
-One common metric used in experiments is number of distinct days someone does an event. You can compute this by using PROPCOUNT and having an event property that is a number (for example you can use the YYYYMMDD format). You may need to use a [derived property](/docs/data/derived-properties) to make sure you are applying the PROPCOUNT to a number.
+A common metric used in experiments is the number of distinct days someone does an event. To compute this metric, use PROPCOUNT and specify an event that's a number. For example, the `YYYYMMDD` format for a date. You may need to use a [derived property](/docs/data/derived-properties) to make sure you apply the PROPCOUNT to a number.
 
 ### REVENUETOTAL
 
