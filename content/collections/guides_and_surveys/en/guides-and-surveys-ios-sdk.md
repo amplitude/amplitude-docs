@@ -236,7 +236,7 @@ engagement.addCallback(_ key: String, _ function: () -> Void)
 | `key`      | `String`     | Required. Refer to this callback by key when setting a callback action on a guide or survey.  |
 | `function` | `() -> Void` | Required. The callback to execute.                                                            |
 
-```js
+```swift
 engagement.addCallback("show-alert") {
   DispatchQueue.main.async {
     let alert = UIAlertController(
