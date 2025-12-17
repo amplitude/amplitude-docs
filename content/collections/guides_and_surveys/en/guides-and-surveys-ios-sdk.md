@@ -55,9 +55,7 @@ Next, make sure to initialize the SDK.
 ```swift
 import AmplitudeEngagementSwift
 
-
 let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -122,9 +120,7 @@ We don't update our docs on each release. You can check for the latest version h
 ```swift
 import AmplitudeEngagementSwift
 
-
 let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -150,14 +146,13 @@ let configuration = Configuration(
 amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
-
 let bootOptions = AmplitudeBootOptions(
   user_id: "USER_ID",
   device_id: "DEVICE_ID",
   user_properties: ["key": "value"]
   integrations: [
     { event, eventProperties in
-        // Custom event handler
+      // Custom event handler
     }
   ]
 )
@@ -205,11 +200,11 @@ Pin and tooltip guides require the ability for the SDK to target specific elemen
 ```swift
 // Swift UI
 MySwiftView {
-    // Content
+  // Content
 }
 .amplitudeView("MySwiftView", onTrigger: {
-    // Optional code to run with tap element action
-}
+  // Optional code to run with tap element action
+})
 
 // UIKit
 let myView = MyUIKitView(...)
@@ -226,6 +221,34 @@ Configure the visual theme mode if your app supports light and dark modes.
 ```swift
 // Set the theme mode
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
+```
+
+### Register a callback
+
+Set the Run callback action on a guide or survey button to execute the callback.
+
+```swift
+engagement.addCallback(_ key: String, _ function: () -> Void)
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `key`      | `String`     | Required. Refer to this callback by key when setting a callback action on a guide or survey.  |
+| `function` | `() -> Void` | Required. The callback to execute.                                                            |
+
+```js
+engagement.addCallback("show-alert") {
+  DispatchQueue.main.async {
+    let alert = UIAlertController(
+      title: "Callback",
+      message: "Callback has been executed!",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    
+    viewController.present(alert, animated: true)
+  }
+}
 ```
 
 ### Router configuration
@@ -327,11 +350,11 @@ To locate the URL scheme:
 ```swift
 // In your AppDelegate or SceneDelegate
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    if amplitudeEngagement.handleUrl(url) {
-        return true
-    }
-    // Handle other URL schemes
-    return false
+  if amplitudeEngagement.handleUrl(url) {
+    return true
+  }
+  // Handle other URL schemes
+  return false
 }
 ```
 
