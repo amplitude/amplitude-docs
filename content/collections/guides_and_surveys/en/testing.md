@@ -1,7 +1,7 @@
 ---
 id: d402c648-6218-4450-b216-0439206e1206
 blueprint: guides_and_survey
-title: Testing and publishing
+title: Testing and Publishing
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739220209
