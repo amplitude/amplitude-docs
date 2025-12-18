@@ -148,6 +148,6 @@ Test users continue to receive the guide or survey when you update its status to
 
 When you are finished editing your guide or survey and have tested it successfully, you can publish it to your users. To do that, hit the **Publish** button in the builder.
 
-Once a guide is published, you can still make changes. These changes will be saved as "unpublished" changes until you publish them by explicitly clicking on the **Publish** button again.
+After you publish a guide, you can still make changes. Amplitude saves these changes  as "unpublished" changes until you click **Publish** to explicitly publish them.
 
-The dashboard's preview pane will show your guide or survey including any unpublished changes. The "Preview" mode will also show the unpublished changes. Use the version history to see how many changes you made since you last published.
+The dashboard's preview pane shows your guide or survey including any unpublished changes. The Preview mode also shows any unpublished changes. Use the version history to see how many changes you made since you last published.
