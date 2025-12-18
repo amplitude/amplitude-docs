@@ -735,7 +735,7 @@ engagement.forwardEvent(event: Event): void
 
 ### Register a callback
 
-Register a callback with the Guides and Surveys SDK. Set the Callback action on a guide or survey button to execute the callback.
+Register a callback with the Guides and Surveys SDK. Set the Run callback action on a guide or survey button to execute the callback.
 
 ```js
 engagement.addCallback(name: string, callback: () => void): void
