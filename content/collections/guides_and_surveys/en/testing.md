@@ -113,7 +113,7 @@ To resolve this issue, either:
 - Set the COOP header to `same-origin-allow-popups` instead of `same-origin`
 - Temporarily disable the COOP header for testing purposes
 
-# For more information about the COOP header, review the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+For more information about the COOP header, review the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 {{partial:admonition type="note" heading="Clear user history"}}
 Amplitude keeps a record of the guides and surveys your users encounter. To remove a guide or survey from a user's history:
