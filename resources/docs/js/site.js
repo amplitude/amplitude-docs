@@ -178,7 +178,9 @@ const observer = new MutationObserver((mutations) => {
     // Check if any code blocks lost their tokens
     const codeBlocks = document.querySelectorAll('code[class*="language-"]');
     const hasBlockWithoutTokens = Array.from(codeBlocks).some(block => 
-        block.textContent.trim().length > 0 && block.querySelectorAll('.token').length === 0
+        // CRITICAL: Don't use textContent as it strips Prism tokens in Chrome
+        // Instead check innerHTML length (preserves tokens) and count token elements
+        block.innerHTML.trim().length > 0 && block.querySelectorAll('.token').length === 0
     );
     
     if (hasBlockWithoutTokens) {
