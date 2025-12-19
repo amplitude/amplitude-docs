@@ -114,13 +114,25 @@ The event parameter can include these keys:
 
 ## Segment definition
 
+Segments filter users based on their properties or behaviors. Each segment is a JSON object.
+
 | Name| Description|
 |------|----------|
 |`prop`| <span class="required">Required</span>. The name of the property to filter on. For behavioral cohorts, the name of the property is "userdata_cohort". <br>Example ("XYXxxzz" is the identifier from the Behavioral Cohort's URL, https://analytics.amplitude.com/org_name/cohort/**XYXxxzz**.)<br>`s=\[\{"prop":"userdata_cohort","op":"is","values":\["XYXxxzz"\]\}\]`|
 |`op` |<span class="required">Required</span>. The operator for filtering on specific property values. Allowed values are `is`, `is not`, `contains`, `does not contain`, `less`, `less or equal`, `greater`, `greater or equal`, `set is`, or `set is not`.|
 |`values`| <span class="required">Required</span>. A list of strings to filter the segment by. If you are segmenting by a cohort, the value is the cohort ID, found in URL of the cohort in the web app (for example, "5mjbq8w").|
+|`type`| <span class="optional">Optional</span>. Set to `"event"` when using a "who performed" filter to segment users based on event performance.|
+|`event_type`| <span class="optional">Optional</span>. The event to filter on when using a "who performed" filter. Required when `type` is `"event"`.|
+|`filters`| <span class="optional">Optional</span>. Event property filters when using a "who performed" filter. An array of filter objects.|
+|`value`| <span class="optional">Optional</span>. The count threshold for the "who performed" filter. Used with `time_type` and `time_value`.|
+|`time_type`| <span class="optional">Optional</span>. Time window type for the "who performed" filter. Values include `"forEachInterval"`, `"currentInterval"`, or `"allTime"`.|
+|`time_value`| <span class="optional">Optional</span>. Number of days for the time window when `time_type` is set to `"forEachInterval"`.|
 
-### Segment definition example
+### Segment definition examples
+
+#### User property filter
+
+Filter users by property values.
 
 ```json
 [
@@ -133,6 +145,44 @@ The event parameter can include these keys:
         "prop": "gp:gender",
         "op": "is",
         "values": ["female"]
+    }
+]
+```
+
+#### "Who performed" filter
+
+Filter users who performed a specific event. This example filters users who performed the "signup - end signup" event at least once in the last 30 days.
+
+```json
+[
+    {
+        "op": ">=",
+        "type": "event",
+        "event_type": "signup - end signup",
+        "filters": [],
+        "value": 0,
+        "time_type": "forEachInterval",
+        "time_value": 30
+    }
+]
+```
+
+You can combine multiple filters. This example filters users in the United States who performed the "signup - end signup" event at least once.
+
+```json
+[
+    {
+        "prop": "country",
+        "op": "is",
+        "values": ["United States"]
+    },
+    {
+        "op": ">=",
+        "type": "event",
+        "event_type": "signup - end signup",
+        "filters": [],
+        "value": 1,
+        "time_type": "allTime"
     }
 ]
 ```
