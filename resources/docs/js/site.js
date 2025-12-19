@@ -402,6 +402,12 @@ function updateAllCodeBlocks(apiKey) {
     });
     
     codeBlocks.forEach(codeBlock => {
+        // ONLY process blocks that actually contain the API key placeholder
+        if (!codeBlock.textContent.includes('AMPLITUDE_API_KEY') && 
+            !codeBlock.getAttribute('data-original-content')?.includes('AMPLITUDE_API_KEY')) {
+            return; // Skip this block entirely
+        }
+        
         const originalText = codeBlock.getAttribute('data-original-content') || codeBlock.textContent;
         
         // Store original content if not already stored
