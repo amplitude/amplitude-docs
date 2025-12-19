@@ -1,17 +1,18 @@
 ---
-id: TODO
+id: 41d7ef5b-4d62-4015-9071-096482cf33d8
 blueprint: source-catalog
 title: 'Bing Ads'
 connection: source
 integration_category:
   - ad-networks
 partner_maintained: false
-integration_icon: TODO
+integration_icon: partner-icons/bing.svg
 exclude_from_sitemap: false
-updated_by: TODO
-updated_at: TODO
+integration_type:
+  - raw-events
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1766181060
 ---
-
 Amplitude's Bing Ads integration helps you import your Bing Ads spend, click, impression, and conversion data for analysis in Amplitude.
 
 The integration imports metrics once per day from the Ads Account level. These metrics appear in Amplitude as ad-level metrics, and don't tie to individual users.
@@ -117,7 +118,3 @@ Bing Ads doesn't export user level identifiers like device ID, email address, or
 While these events may appear in a user stream with a synthetic identifier (like Bing Ads device ID), this doesn't mean identity resolution was successful. Amplitude treats the events as standalone entries, which aren't suitable for user-level reporting.
 
 Daily Ad Metrics events work best for campaign level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
-
-
-
-
