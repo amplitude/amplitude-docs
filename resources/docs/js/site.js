@@ -176,8 +176,12 @@ document.addEventListener('alpine:initialized', function() {
 let highlightTimeout;
 const observer = new MutationObserver((mutations) => {
     // Check if any code blocks lost their tokens
-    const jsonBlock = document.querySelector('code.language-json');
-    if (jsonBlock && jsonBlock.querySelectorAll('.token').length === 0) {
+    const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+    const hasBlockWithoutTokens = Array.from(codeBlocks).some(block => 
+        block.textContent.trim().length > 0 && block.querySelectorAll('.token').length === 0
+    );
+    
+    if (hasBlockWithoutTokens) {
         // Debounce: wait for DOM changes to settle
         clearTimeout(highlightTimeout);
         highlightTimeout = setTimeout(() => {
