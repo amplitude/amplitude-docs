@@ -55,9 +55,9 @@ Content-Type: application/json
 ```json
 {
    "data": {
-      "id": 569,
-      "category": "test category api"
-     }
+      "id": 6789,
+      "name": "Releases"
+   }
 }
 ```
 
@@ -197,7 +197,7 @@ Content-Type: application/json
 {
    "data": {
       "id": 569,
-      "category": "updated category name"
+      "category": "Updated category name"
    }
 }
 ```
