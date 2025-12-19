@@ -124,9 +124,9 @@ Segments filter users based on their properties or behaviors. Each segment is a 
 |`type`| <span class="optional">Optional</span>. Set to `"event"` when using a "who performed" filter to segment users based on event performance.|
 |`event_type`| <span class="optional">Optional</span>. The event to filter on when using a "who performed" filter. Required when `type` is `"event"`.|
 |`filters`| <span class="optional">Optional</span>. Event property filters when using a "who performed" filter. An array of filter objects.|
-|`value`| <span class="optional">Optional</span>. The count threshold for the "who performed" filter. Used with `time_type` and `time_value`.|
+|`value`| <span class="optional">Optional</span>. The count threshold for the "who performed" filter. Use with `time_type` and `time_value`.|
 |`time_type`| <span class="optional">Optional</span>. Time window type for the "who performed" filter. Values include `"forEachInterval"`, `"currentInterval"`, or `"allTime"`.|
-|`time_value`| <span class="optional">Optional</span>. Number of days for the time window when `time_type` is set to `"forEachInterval"`.|
+|`time_value`| <span class="optional">Optional</span>. Number of days for the time window when `time_type` equals `"forEachInterval"`.|
 
 ### Segment definition examples
 
