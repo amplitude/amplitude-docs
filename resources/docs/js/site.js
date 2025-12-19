@@ -153,13 +153,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Your Prism.js initialization code here
-    // This code will run after the initial HTML document has been completely loaded and parsed
     Prism.highlightAll();
-    
-    // Initialize API Key functionality after Prism highlighting
     initApiKeyFeature();
 });
+
+// Re-highlight code blocks after Alpine.js initializes (Alpine might strip tokens)
+document.addEventListener('alpine:init', function() {
+    setTimeout(() => {
+        Prism.highlightAll();
+    }, 100);
+});
+
+// Also listen for when Alpine is done processing the DOM
+document.addEventListener('alpine:initialized', function() {
+    setTimeout(() => {
+        Prism.highlightAll();
+    }, 100);
+});
+
+// Re-highlight after Amplitude Engagement SDK loads (it manipulates DOM)
+// Use MutationObserver to watch for DOM changes that strip Prism tokens
+let highlightTimeout;
+const observer = new MutationObserver((mutations) => {
+    // Check if any code blocks lost their tokens
+    const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+    const hasBlockWithoutTokens = Array.from(codeBlocks).some(block => 
+        // CRITICAL: Don't use textContent as it strips Prism tokens in Chrome
+        // Instead check innerHTML length (preserves tokens) and count token elements
+        block.innerHTML.trim().length > 0 && block.querySelectorAll('.token').length === 0
+    );
+    
+    if (hasBlockWithoutTokens) {
+        // Debounce: wait for DOM changes to settle
+        clearTimeout(highlightTimeout);
+        highlightTimeout = setTimeout(() => {
+            Prism.highlightAll();
+        }, 300);
+    }
+});
+
+// Start observing after a short delay (let initial rendering complete)
+setTimeout(() => {
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
+}, 1000);
 
 // Expose API key functionality globally for debugging
 window.amplitudeApiKeyFeature = {
@@ -220,9 +260,20 @@ function addManualApiKeyButtons() {
     const storedApiKey = localStorage.getItem('amplitude_api_key');
     
     codeBlocks.forEach((codeBlock, index) => {
-        const hasApiKey = codeBlock.textContent.includes('AMPLITUDE_API_KEY');
+        // CRITICAL: Never read textContent directly as it strips Prism tokens in Chrome
+        // Instead, check data-original-content (if it exists) or innerHTML (which preserves tokens)
+        const originalContent = codeBlock.getAttribute('data-original-content');
+        const hasApiKey = originalContent 
+            ? originalContent.includes('AMPLITUDE_API_KEY')
+            : codeBlock.innerHTML.includes('AMPLITUDE_API_KEY');
         
-        if (hasApiKey && !codeBlock.parentElement.querySelector('.api-key-manual-button')) {
+        // Skip blocks that don't have the API key placeholder
+        if (!hasApiKey) {
+            return;
+        }
+        
+        // Now we know this block has the placeholder, safe to continue
+        if (!codeBlock.parentElement.querySelector('.api-key-manual-button')) {
             const container = codeBlock.closest('pre') || codeBlock.parentElement;
             
             // Create a wrapper if needed
@@ -402,11 +453,27 @@ function updateAllCodeBlocks(apiKey) {
     });
     
     codeBlocks.forEach(codeBlock => {
-        const originalText = codeBlock.getAttribute('data-original-content') || codeBlock.textContent;
+        // CRITICAL: Never use textContent.includes() as it strips Prism tokens in Chrome
+        // Check data-original-content first, then innerHTML (which preserves tokens)
+        const dataOriginal = codeBlock.getAttribute('data-original-content');
+        const hasPlaceholder = dataOriginal 
+            ? dataOriginal.includes('AMPLITUDE_API_KEY')
+            : codeBlock.innerHTML.includes('AMPLITUDE_API_KEY');
+        
+        // ONLY process blocks that actually contain the API key placeholder
+        if (!hasPlaceholder) {
+            return; // Skip this block entirely
+        }
+        
+        // For originalText, use data-original-content if it exists
+        // Otherwise extract text from innerHTML (preserves Prism tokens until we need to replace)
+        const originalText = dataOriginal || codeBlock.textContent;
         
         // Store original content if not already stored
         if (!codeBlock.getAttribute('data-original-content')) {
-            codeBlock.setAttribute('data-original-content', originalText);
+            // Store the PLAIN TEXT version (strip HTML tags) for future comparisons
+            const plainText = codeBlock.textContent;
+            codeBlock.setAttribute('data-original-content', plainText);
         }
         
         // Replace API key in the content
