@@ -11,6 +11,10 @@ Targeted Replay Capture (TRC) is an advanced feature in Amplitude Session Replay
 
 Targeted Replay Capture lets you customize capture criteria using specific conditions like multiple events, event properties, or user properties. You can combine these criteria within a single filter or across filters using OR logic. The Session Replay SDK fetches targeting configurations from a remote config service and evaluates them at runtime to decide whether to capture a session.
 
+{{partial:admonition type="note" heading="Availability"}}
+Targeted Replay Capture is only availabile on paid Session Replay plans. For more information, go to [Pricing](https://amplitude.com/pricing)
+{{/partial:admonition}}
+
 ## Key capabilities
 
 TRC enables you to define the criteria that Amplitude uses to decide to capture a session, and more efficiently manage your Session Replay quota.
