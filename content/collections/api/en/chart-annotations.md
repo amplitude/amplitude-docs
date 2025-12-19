@@ -54,7 +54,10 @@ Content-Type: application/json
 
 ```json
 {
-  "success": true
+   "data": {
+      "id": 569,
+      "category": "test category api"
+     }
 }
 ```
 
@@ -192,7 +195,10 @@ Content-Type: application/json
 
 ```json
 {
-  "success": true
+   "data": {
+      "id": 569,
+      "category": "updated category name"
+   }
 }
 ```
 
@@ -284,7 +290,21 @@ Content-Type: application/json
 
 ```json
 {
-  "success": true
+    "data": [
+        {
+            "id": 12345,
+            "start": "2025-12-18T15:00:00+00:00",
+            "label": "test",
+            "details": null,
+            "category": {
+                "id": 12345,
+                "category": "Alerts"
+            },
+            "end": null,
+            "chart_id": null
+        },
+        …
+    ]
 }
 ```
 
@@ -351,7 +371,6 @@ Content-Type: application/json
 
 ```json
 {
-  "success": true,
   "data": {
     "id": 12345,
     "start": "2025-11-01T07:00:00+00:00",
@@ -405,7 +424,6 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 ```json
 {
-  "success": true,
   "data": [
     {
       "id": 12345,
@@ -458,7 +476,6 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 ```json
 {
-  "success": true,
   "data": {
     "id": 12345,
     "start": "2025-11-01T07:00:00+00:00",
@@ -531,7 +548,6 @@ Content-Type: application/json
 
 ```json
 {
-  "success": true,
   "data": {
     "id": 12345,
     "start": "2025-11-01T07:00:00+00:00",
