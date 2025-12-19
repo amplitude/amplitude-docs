@@ -27,8 +27,10 @@ For each endpoint, there is a concurrent limit and a rate limit. The concurrent 
 
 #### User activity/user search limits
 
-You can run up to 360 queries per hour for user activity and user search endpoints.
-The [User Activity](#user-activity) and [User Search](#user-search) endpoints have a different rate limit than all other request types.
+The [User Activity](#user-activity) and [User Search](#user-search) endpoints have different limits than other request types:
+
+- **Concurrent Limit**: You can run up to 10 concurrent requests for these endpoints.
+- **Rate Limit**: You can run up to 360 queries per hour for these endpoints.
 
 ### Endpoint costs
 
