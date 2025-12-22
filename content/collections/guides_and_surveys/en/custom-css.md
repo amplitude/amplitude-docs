@@ -39,6 +39,7 @@ Use CSS class selectors to target Guides and Surveys elements:
 | Form Factor   | Selector                                    |
 | ------------- | ------------------------------------------- |
 | Banner        | `.amplitude-engagement-banner-container`    |
+| Card          | `.amplitude-engagement-card-container`      |
 | Modal         | `.amplitude-engagement-modal-container`     |
 | Modal overlay | `[data-amplitude-engagement-modal-overlay]` |
 | Popover       | `.amplitude-engagement-popover-container`   |
@@ -104,6 +105,13 @@ Use CSS class selectors to target Guides and Surveys elements:
 | Checklist item buttons            | `.amplitude-engagement-checklist-item-buttons`           |
 | Checklist item button (primary)   | `.amplitude-engagement-checklist-item-button__primary`   |
 | Checklist item button (secondary) | `.amplitude-engagement-checklist-item-button__secondary` |
+
+### Card-specific elements
+
+| Element      | Selector                              |
+| ------------ | ------------------------------------- |
+| Card         | `.amplitude-engagement-card`          |
+| Card content | `.amplitude-engagement-card-content`  |
 
 ### Modal-specific elements
 
@@ -185,7 +193,7 @@ Use class selectors for basic styling, or to target specific form factors.
 
 ## Important considerations
 
-Keep the following considerations in mind as you implement custom CSS. 
+Keep the following considerations in mind as you implement custom CSS.
 
 ### Specificity
 
