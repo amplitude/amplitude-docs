@@ -14,7 +14,7 @@ The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you t
 
 ## Overview
 
-The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment).
+The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 {{partial:admonition type="warning" heading="Shopify and flickering"}}
 The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](/docs/web-experiment/implementation#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
