@@ -116,6 +116,10 @@ Amplitude sends the `[Amplitude] Replay Captured` event automatically. You don't
 The `[Amplitude] Replay Captured` event may create anonymous users if the device ID can't be associated with an existing user.
 {{/partial:admonition}}
 
+{{partial:admonition type="note" heading=""}}
+You may see multiple `[Amplitude] Replay Captured` events in a session replay timeline. This can happen when multiple browser tabs are open with different active sessions. Amplitude only captures replays when device IDs and session IDs match, but since timelines are based on events captured during the replay period, events from different sessions may overlap in the timeline.
+{{/partial:admonition}}
+
 ## Frustration analytics
 
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
