@@ -23,21 +23,29 @@ updated_at: 1713560693
 ---
 The Amplitude Activation Braze streaming integration enables you to forward your Amplitude events and users straight to [Braze](https://www.braze.com/) with just a few clicks.
 
+## Use cases
+
+Event streaming is a great solution if you want to send a message to a customer immediately after they've performed an action. For example:
+
+1. Email a customer who has abandoned their cart.
+2. Congratulate a customer who has completed a sticky action.
+
 ## Setup
 
 ### Prerequisites
 
 To configure streaming from Amplitude to Braze, you need the following information from Braze.
 
-- **Braze API Endpoint**: The Braze endpoint for REST operations. Go to the [Braze documentation](https://www.braze.com/docs/api/basics/#endpoints) for help determining your endpoint.
-- **Braze API Key**: The Braze API key used for authentication. Go to the [Braze documentation](https://www.braze.com/docs/api/basics/#rest-api-key) for help locating your API key.
-- **Braze App ID**: The Braze App ID for the app receiving Amplitude events. Go to the [Braze documentation](https://www.braze.com/docs/api/identifier_types/#the-app-identifier-api-key) for help locating your app ID.
+- **Braze API Endpoint**: The Braze endpoint for REST operations.
+- **Braze API Key**: The Braze API key used for authentication. Go to the [Braze documentation](https://www.braze.com/docs/api/basics/#rest-api-key) for help determining your endpoint or locating your API key.
+- **Braze App ID**: The Braze App ID for the app receiving Amplitude events. See the [Braze docs](https://www.braze.com/docs/api/identifier_types/#the-app-identifier-api-key) for help locating your app ID.
 
 ### Create a new sync
 
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
-2. In the Event Streaming section, click **Braze**.
-3. Enter a sync name, then click **Create Sync**.
+1. In Amplitude Data, click *Catalog* and select the *Destinations* tab.
+2. Select *Braze (Events · User Properties)* or filter by Type → Events.
+3. Select *Add Destination*.
+4. Enter a sync name, then click *Create Sync*.
 
 ### Enter credentials
 
