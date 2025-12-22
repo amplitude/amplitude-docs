@@ -219,6 +219,35 @@ With the default logger, extra function context information is output to the dev
 - `time`: Start and end timestamp of the function invocation.
 - `states`: Useful internal states snapshot before and after the function invocation.
 
+## Performance
+
+The Browser SDK 2 minimizes its impact on page performance through event batching, asynchronous processing, and optimizing bundle sizes.
+
+### Bundle size
+
+The Browser SDK 2 bundle size varies based on the installation method and features you use. 
+
+{{partial:bundle-size :package_name="package_name"}}
+
+For the most up-to-date bundle size information, check the [npm package page](https://www.npmjs.com/package/@amplitude/analytics-browser) or [BundlePhobia](https://bundlephobia.com/package/@amplitude/analytics-browser).
+
+### Runtime performance
+
+The Browser SDK 2 runs asynchronously and doesn't block the main thread during event tracking. Performance characteristics include:
+
+- **Event tracking**: Event tracking operations are non-blocking and typically complete in less than 1ms for each event.
+- **Network requests**: Events are batched and sent asynchronously, minimizing network overhead. The default configuration batches up to 30 events or sends every 1 second, whichever comes first.
+- **Memory usage**: The SDK maintains a small in-memory queue for event batching. Memory usage scales with the number of queued events (default: up to 30 events).
+- **CPU impact**: Event processing and batching operations have minimal CPU impact, typically less than 1% of CPU time during normal operation.
+
+### Optimization tips
+
+To further optimize performance:
+
+- Adjust `flushQueueSize` and `flushIntervalMillis` to balance between network efficiency and memory usage.
+- Use the `offline` mode to defer event uploads when network conditions are poor.
+- Enable `useBatch` mode for high-volume event tracking to reduce the number of HTTP requests.
+
 ## Autocapture <a id="tracking-default-events"></a>
 
 Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:

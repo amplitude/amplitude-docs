@@ -29,6 +29,38 @@ Amplitude built Session Replay to minimize impact on the performance of web page
 - Optimizing DOM processing.
 {{/partial:admonition}}
 
+## Performance
+
+Session Replay minimizes its impact on page performance through asynchronous processing, efficient compression, and optimizing bundle sizes.
+
+### Bundle size
+
+The Session Replay standalone SDK adds to your application's bundle size.
+
+{{partial:bundle-size :package_name="package_name"}}
+
+For the most up-to-date bundle size information, check the [npm package page](https://www.npmjs.com/package/@amplitude/session-replay-browser) or [BundlePhobia](https://bundlephobia.com/package/@amplitude/session-replay-browser).
+
+### Runtime performance
+
+Session Replay runs asynchronously and processes replay data in the background to avoid blocking the main thread. Performance characteristics include:
+
+- **DOM capture**: DOM snapshot capture typically adds less than 5ms of processing time for each page interaction. Initial page load snapshot capture may take 10-50ms depending on page complexity.
+- **Memory usage**: Session Replay stores replay events in memory or IndexedDB (configurable using `storeType`). Memory usage scales with session length and page complexity, typically ranging from 1-10 MB for each active session.
+- **CPU impact**: With default settings, Session Replay uses less than 2% of CPU time during normal operation. Compression operations are deferred to browser idle periods when `performanceConfig.enabled` is `true` (default).
+- **Network bandwidth**: Replay data is compressed before upload, typically reducing payload size by 60-80%. Network requests are batched and sent asynchronously.
+
+### Performance optimization
+
+To optimize Session Replay performance:
+
+- Enable `useWebWorker` to move compression off the main thread, reducing CPU impact on the main thread.
+- Configure `performanceConfig.timeout` to control when deferred compression occurs.
+- Use `sampleRate` to reduce the number of sessions captured, which directly reduces CPU and memory usage.
+- Set `storeType` to `memory` if you don't need persistence across page reloads, reducing IndexedDB overhead.
+
+For detailed performance testing results, see the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
+
 
 
 Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
