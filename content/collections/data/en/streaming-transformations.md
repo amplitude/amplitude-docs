@@ -120,9 +120,11 @@ There are some limitations when streaming transformations from Amplitude:
   * After saving the file, the lookup property can take up to 1 hour to populate into streaming system.
 * You can only stream **channel classifiers** directly by requesting it from Amplitude. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they're used as a property where values map to specific rules on existing properties, these channel properties can't be selected when setting up the sync in either event filters, or when sending more properties to the destination, unless you've explicitly enabled this feature.
 * Streaming transformation is available for all streaming destinations except for Data Warehouse destinations.
-* Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section aren't selectable in event streaming. This includes custom events that:
-  * Use properties other than user properties or event properties
-  * Use operators other than `is`, `is not`, `contains`, or `does not contain`
+* Streaming setup does not allow the selection of unsupported trnasformations. This includes but not limited to:
+  * Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section
+  * Group property
+  * Cart property
+  * Nested property (e.g. derived property relying on merged property): the exception is nested property based on merged/cart property, UI can select them but they indeed will not work
 
 ## FAQ
 
