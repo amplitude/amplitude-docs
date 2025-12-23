@@ -16,8 +16,8 @@ Amplitude supports streaming transformed data to your destinations, including Cu
 5. Paste your destination's Server Secret Key.
 6. Toggle **Send events** to enable event streaming.
 7. In **Select and filter events**, choose which events to send. Select only the events needed for your downstream destination. The dropdown includes any transformed events from your taxonomy.
-8. (optional) In **Select additional properties**, select any event properties (including transformed event properties) to include. By default, no additional properties are sent unless explicitly selected.
-9. (optional) In **Select additional user properties**, select any user properties to include. By default, no additional user properties are sent unless explicitly selected.
+8. (optional) In **Select additional properties**, select any event properties (including transformed event properties) to include. By default, Amplitude doesn't send any additional properties unless you explicitly select them.
+9. (optional) In **Select additional user properties**, select any user properties to include. By default, Amplitude doesn't send any additional user properties unless you explicitly select them.
 10. When satisfied with your configuration, click Save.
 
 ## Example use cases
@@ -35,25 +35,25 @@ To improve campaign effectiveness, you can stream derived properties from Amplit
 Keep these things in mind when streaming transformations from Amplitude:
 
 * Amplitude sends selected event and user properties along with the event.
-* Amplitude targets an end-to-end p95 latency of 60 seconds. This means 95% of events are streamed from Amplitude within 60 seconds. Amplitude has internal processes, monitors, and alerts in place to meet this target.
+* Amplitude targets an end-to-end p95 latency of 60 seconds. This means Amplitude streams 95% of events within 60 seconds. Amplitude has internal processes, monitors, and alerts in place to meet this target.
 
 ## How transformations are structured in the payload
 
-Transformations are included as nested JSON fields in the streaming payload. Understanding this structure is essential when using custom FTL (FreeMarker Template Language) templates or configuring how your destination receives data.
+The streaming payload includes transformations as nested JSON fields. Understanding this structure is essential when using custom FTL (FreeMarker Template Language) templates or configuring how your destination receives data.
 
 ### Selection requirement
 
 You must explicitly select transformations in your sync configuration to include them in the streaming payload. You can select transformations in:
 
-* **Select and filter events** - For example, filtering events where a derived property is not null
+* **Select and filter events** - For example, filtering events where a derived property isn't `null`
 * **Select additional properties** - To include specific transformed properties
 * **Map properties to destination** - When mapping properties to your destination's schema (if applicable)
 
-Only explicitly selected transformations are included in the streaming payload.
+The streaming payload only includes transformations you explicitly select.
 
 ### JSON structure
 
-Transformations are added to the payload as nested JSON objects. The top-level field name depends on the transformation type:
+The payload includes transformations as nested JSON objects. The top-level field name depends on the transformation type:
 
 | Transformation Type | Top-level JSON Field Name |
 |---------------------|---------------------------|
@@ -121,15 +121,15 @@ There are some limitations when streaming transformations from Amplitude:
 
 * When you rename custom events or derived properties, update any existing sync configurations that reference them. Syncs require current event and property names to work properly. Note: Changing the underlying definition of a transformation doesn't affect syncing—only name changes require sync updates.
 * **Lookup properties**: You can stream lookup properties by requesting access from Amplitude. Lookup properties map existing event or user properties to new properties using a CSV file upload, and can enrich already-ingested events at query time.
-  * Lookup property files with over 1000 rows won't display in the streaming setup
-  * After saving a lookup property file, it can take up to 1 hour to populate into the streaming system
+  * Lookup property files with over 1000 rows won't display in the streaming setup.
+  * After saving a lookup property file, it can take up to 1 hour to populate into the streaming system.
 * **Channel classifiers**: Streaming channel classifiers requires requesting access from Amplitude. Channels act like derived properties applied in real-time during queries, and are primarily used by marketers to define acquisition channels based on UTM and referrer data. By default, you can't select channel properties in sync configuration (event filters or additional properties) unless this feature is explicitly enabled for your organization.
 * Streaming transformations are available for all streaming destinations except Data Warehouse destinations.
 * The streaming setup doesn't support the following transformation types:
-  * Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section
-  * Group properties
-  * Cart properties
-  * Nested properties (for example, derived properties that rely on other derived properties). Exception: The UI allows selecting nested properties based on merged or cart properties, but these won't work in practice
+  * Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section.
+  * Group properties.
+  * Cart properties.
+  * Nested properties (for example, derived properties that rely on other derived properties). Exception: The UI allows selecting nested properties based on merged or cart properties, but these won't work in practice.
 
 ## FAQ
 
