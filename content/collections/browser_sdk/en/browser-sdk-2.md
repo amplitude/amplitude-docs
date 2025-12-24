@@ -1613,8 +1613,6 @@ amplitude.init(API_KEY, {
 });
 ```
 
-```
-
 ### Use sendBeacon
 
 Unlike standard network requests, `sendBeacon` sends events in the background, even if the user closes the browser or leaves the page.
