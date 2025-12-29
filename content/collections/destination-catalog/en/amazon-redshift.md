@@ -33,11 +33,7 @@ Upload your Amplitude event data into your Redshift account. You can set up recu
 
 ### Prerequisites
 
-You need admin privileges in Amplitude, and a role that allows you to enable resources in Redshift.
-
-{{partial:admonition type="warning" heading="Redshift endpoint must be publicly accessible"}}
-Amplitude supports only public Redshift endpoints. Private endpoints aren't supported.
-{{/partial:admonition}}
+You need admin privileges in Amplitude, and a role that allows you to enable resources in Redshift. Amplitude supports only public Redshift endpoints. Private endpoints aren't supported.
 
 By default, Redshift clusters don't allow any incoming traffic.
 You must first allowlist Amplitude's IP addresses in the security group for your Redshift cluster. For more help, see the [Redshift documentation](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-vpc-security-groups.html). 
