@@ -12,7 +12,7 @@ enable_math: true
 ---
 Experiment uses a sequential testing method of statistical inference. With sequential testing, results are valid whenever you view them. You can decide to end an experiment early based on observations made to that point. The number of observations you’ll need to make an informed decision is, on average, much lower than the number you’d need with [T-tests](/docs/feature-experiment/experiment-theory/analyze-with-t-test) or similar procedures. You can experiment rapidly, incorporating what you learn into your product and escalating the pace of your experimentation program.
 
-Sequential testing has several advantages over T-tests. Primarily, you don’t need to know the number of observations necessary to achieve significance before you start the experiment. You can use both sequential testing and T-tests for binary metrics and continuous metrics. If you have concerns related to long tailed distributions affecting the Central Limit Theorem assumption, read this article about [outliers](/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data). 
+Sequential testing has several advantages over T-tests. Primarily, you don’t need to know the number of observations necessary to achieve significance before you start the experiment. You can use both sequential testing and T-tests for binary metrics and continuous metrics. If you have concerns related to long tailed distributions affecting the Central Limit Theorem assumption, read this article about [outliers](/docs/feature-experiment/advanced-techniques/winsorization-in-experiment). 
 
 Given enough time, the statistical power of sequential testing method is 1. If there is an effect size to be detected, this approach can detect it.
 
