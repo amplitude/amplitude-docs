@@ -30,16 +30,16 @@ First, install the Guides and Surveys iOS SDK with Swift Package Manager or Coco
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
-1. In Xcode, click *File > Add Packages...*
+1. In Xcode, click *File > Add Package Dependencies...*
 2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
-3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
+3. Select the `amplitude-engagement-swift` package
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 1.6.0'
+pod 'AmplitudeEngagementSwift', '~> 2.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
