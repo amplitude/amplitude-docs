@@ -68,13 +68,13 @@ You can exclude users on the cohort or the segment level. However, the process i
 
 To exclude a cohort of users, set up the `where` statement to be `does not equal` the cohort you want to exclude. The screenshot above displays a segment where users in the United States are excluded from the guide or survey.
 
-### Send a link to a guide {.tag .web}
+### Send a link to a guide
 
 Send users a link to your guide or survey to target them more directly. From the guide or survey builder, expand the menu next to the Save button, and click **Share link**.
 
-In the resulting modal, copy the query parameter, and append it to a page on your site that's instrumented with Guides and Surveys.
-
-When the recipient clicks the link with the query parameter attached, the guide displays.
+In the resulting modal:
+- For web, copy the query parameter and append it to a page on your site that's instrumented with Guides and Surveys. When the recipient clicks the link with the query parameter attached, the guide displays.
+- For mobile, scan the QR code or open the share link URL on a device with your app installed. The guide displays in the app.
 
 {{partial:admonition type="note" heading="User and page targeting"}}
 When you send a direct link to a guide or survey, Amplitude overrides any audience or user targeting you set on the guide.
