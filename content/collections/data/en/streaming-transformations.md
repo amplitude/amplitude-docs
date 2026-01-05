@@ -18,7 +18,7 @@ Amplitude supports streaming transformed data to your destinations, including Cu
 7. In **Select and filter events**, choose which events to send. Select only the events needed for your downstream destination. The dropdown includes any transformed events from your taxonomy.
 8. (*optional*) In **Select additional properties**, select any event properties (including transformed event properties) to include. By default, Amplitude doesn't send any additional properties unless you explicitly select them.
 9. (*optional*) In **Select additional user properties**, select any user properties to include. By default, Amplitude doesn't send any additional user properties unless you explicitly select them.
-10. When satisfied with your configuration, click Save.
+10. When satisfied with your configuration, click **Save**.
 
 ## Example use cases
 
