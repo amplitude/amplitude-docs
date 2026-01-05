@@ -8,6 +8,36 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.0.0 (Android, iOS, React Native) \[2026-01-02\]
+
+### 🚨 Breaking Changes
+- `AmplitudeEngagement` is now an interface rather than a class, and the `options` and `apiKey` are no longer accessible \[android\]
+- `AmplitudeInitOptions.Options` has been removed and `logLevel` now lives at the top level of the options object \[android, ios\]
+- `handlePreviewLinkIntent` is deprecated, use `handleLinkIntent` instead (GSDK-322) \[android\]
+
+### ✨ Features
+
+- Feat: add support for share links (GSDK-322) \[android, ios\]
+
+### 🐛 Fixes
+
+- Fix: pin visibility logic and mask interactions (GSDK-748) \[android, ios\]
+- Fix: allow banner content to expand vertically for tablet (GSDK-759) \[ios\]
+- Fix: add finite checks before using actual content size in constraints (GSDK-761) \[ios\]
+- Fix: maintain status bar visibility state when nudge shows (GSDK-758) \[ios\]
+- Fix: fix arrow misalignment on scrolled pins (GSDK-725) \[ios\]
+- Fix: gracefully handle failure to initialize mobile SDK, instead of crashing host app (GSDK-775) \[android\]
+- Fix: fix theming for step counter size and background color (GSDK-538) \[android\]
+- Fix: correctly handle "null" user and device IDs (FOO-2908) \[android\]
+- Fix: remove `isObscuredByPresentedViewController` check for target view visibility (GSDK-720) \[ios\]
+- Fix: tooltip is re-openable after using the "close" button to close it (GSDK-776) \[ios\]
+- Fix: properly apply drop shadow to Guide/Survey cards from theme (GSDK-772) \[android, ios\]
+
+### 🐇 Performance improvements
+
+- Fix: event forwarding from Amplitude Analytics to G+S SDK is now "async" and won't interfere with the main thread (GSDK-763) \[ios\]
+
+
 ## 1.8.1 (iOS) \[2025-12-04\]
 
 ### 🐛 Fixes
