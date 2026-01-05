@@ -146,6 +146,20 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 | `performanceConfig.timeout`             | `number`  | No       | `undefined` | Optional timeout in milliseconds for the requestIdleCallback API. If specified, this value sets a maximum time for the browser to wait before executing the deferred compression task, even if the browser isn't idle.                                                                                                                                                                                                                                                                                            |
 | `useWebWorker`             | `boolean` | No       | `false`     | Uses a web worker to compress replay events. This improves performance by moving compression off the main thread.                                                                                                                                                                                                                                                                                                                                                                   |
 
+### API endpoints
+
+Session Replay uses the following API endpoints:
+
+- **Data ingestion**:
+  - US: `https://api-sr.amplitude.com/sessions/v2/track`.
+  - EU: `https://api-sr.eu.amplitude.com/sessions/v2/track`.
+  - Session Replay sends captured replay data to these endpoints.
+- **Remote configuration**:
+  - US: `https://sr-client-cfg.amplitude.com/config`.
+  - EU: `https://sr-client-cfg.eu.amplitude.com/config`.
+  - Session Replay fetches remote configuration from these endpoints.
+
+If you set up a domain proxy, forward requests to these endpoints. You can override these defaults using the `trackServerUrl` and `configServerUrl` configuration options.
 
 ### Track default session events
 
