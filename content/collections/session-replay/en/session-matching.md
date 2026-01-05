@@ -1,12 +1,12 @@
 ---
-id: session-matching-session-replay
+id: 900c21f5-2b95-4c45-b078-2eb439b39c62
 blueprint: session-replay
 instrumentation_guide: false
 title: Session matching
 landing: false
 exclude_from_sitemap: false
-updated_by: lew.gordon@amplitude.com
-updated_at: 1734633600
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1736115600
 ---
 Session Replay matches replays to Amplitude data to provide a complete view of the user journey. This matching links device and session information from Session Replay to Amplitude sessions.
 
