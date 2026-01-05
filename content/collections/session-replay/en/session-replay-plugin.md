@@ -57,7 +57,6 @@ To optimize Session Replay performance:
 
 - Enable `useWebWorker` to move compression off the main thread, reducing CPU impact on the main thread.
 - Configure `performanceConfig.timeout` to control when deferred compression occurs.
-- Use `sampleRate` to reduce the number of sessions captured, which directly reduces CPU and memory usage.
 - Set `storeType` to `memory` if you don't need persistence across page reloads, reducing IndexedDB overhead.
 
 For detailed performance testing results, see the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
