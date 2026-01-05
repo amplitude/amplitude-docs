@@ -62,7 +62,7 @@ The payload includes transformations as nested JSON objects. The top-level field
 | Channel properties | `derived_properties` |
 | Lookup properties | `lookup_properties` |
 
-Field names within these objects match the transformation names shown in the Amplitude UI.
+Field names within these objects match the transformation names displayed in the Amplitude UI.
 
 ### Example payload
 
@@ -119,11 +119,11 @@ Custom events that use other property types or operators aren't available for se
 
 There are some limitations when streaming transformations from Amplitude:
 
-* When you rename custom events or derived properties, update any existing sync configurations that reference them. Syncs require current event and property names to work properly. Note: Changing the underlying definition of a transformation doesn't affect syncing—only name changes require sync updates.
-* **Lookup properties**: You can stream lookup properties by requesting access from Amplitude. Lookup properties map existing event or user properties to new properties using a CSV file upload, and can enrich already-ingested events at query time.
+* When you rename custom events or derived properties, update any existing sync configurations that reference them. Syncs require current event and property names to work properly. **Note**: Changing the underlying definition of a transformation doesn't affect syncing. Only name changes require sync updates.
+* **Lookup properties**: You can stream lookup properties by requesting access from Amplitude. Lookup properties map existing event or user properties to new properties using a CSV file upload and can enrich already-ingested events at query time.
   * Lookup property files with over 1000 rows won't display in the streaming setup.
-  * After saving a lookup property file, it can take up to 1 hour to populate into the streaming system.
-* **Channel classifiers**: Streaming channel classifiers requires requesting access from Amplitude. Channels act like derived properties applied in real-time during queries, and are primarily used by marketers to define acquisition channels based on UTM and referrer data. By default, you can't select channel properties in sync configuration (event filters or additional properties) unless this feature is explicitly enabled for your organization.
+  * After saving a lookup property file, it can take up to one hour to populate into the streaming system.
+* **Channel classifiers**: Streaming channel classifiers requires requesting access from Amplitude. Channels act like derived properties applied in real-time during queries and are primarily used by marketers to define acquisition channels based on UTM and referrer data. By default, you can't select channel properties in sync configuration (event filters or additional properties) unless you have already enabled this feature for your organization.
 * Streaming transformations are available for all streaming destinations except Data Warehouse destinations.
 * The streaming setup doesn't support the following transformation types:
   * Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section.
