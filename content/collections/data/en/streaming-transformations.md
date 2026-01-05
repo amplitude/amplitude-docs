@@ -24,7 +24,7 @@ Amplitude supports streaming transformed data to your destinations, including Cu
 
 ### Streaming renamed events to AppsFlyer
 
-AppsFlyer requires unique event names for attribution and doesn't support event properties. Previously, you had to create custom events in your backend and resend them to Amplitude. Now you can use Amplitude Data to rename events before streaming them to AppsFlyer, which streamlines your workflow and reduces duplicate ingestion.
+AppsFlyer requires unique event names for attribution and doesn't support event properties. Previously, you had to create custom events in your backend and resend them to Amplitude. Now, you can use Amplitude Data to rename events before streaming them to AppsFlyer, which reduces duplicate ingestion.
 
 ### Streaming derived properties to Braze
 
