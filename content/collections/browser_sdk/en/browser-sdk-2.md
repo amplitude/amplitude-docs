@@ -145,7 +145,7 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `storageProvider`          | `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events.                                                                                                                                                                                   | `LocalStorage`                          |
 | `userId`                   | `string`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option.                                                                                                                                     | `undefined`                             |
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default. |
-| `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
+| `transport`                | `TransportType \| TransportConfig`. Sets request API to use. Can be a string (`'fetch'`, `'xhr'`, or `'beacon'`) or an object with `type` and optional `headers` properties. See [Custom HTTP request headers](#custom-http-request-headers).                                      | `fetch`                                 |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
 | `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
 | `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
@@ -1618,6 +1618,41 @@ window.addEventListener('pagehide',
     amplitude.flush()
   },
 );
+```
+
+### Custom HTTP request headers
+
+You can configure custom HTTP headers for the `fetch` and `xhr` transport providers. This lets you send additional headers with your event requests, such as authentication tokens or custom metadata.
+
+{{partial:admonition type="note" heading=""}}
+Custom headers only work with the `fetch` and `xhr` transports. The `beacon` transport doesn't support custom headers.
+{{/partial:admonition}}
+
+To configure custom headers, pass a transport configuration object instead of a string:
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'fetch',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+      'Authorization': 'Bearer token123',
+    },
+  },
+});
+```
+
+You can also use this configuration with the `xhr` transport:
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'xhr',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+    },
+  },
+});
 ```
 
 ### Content Security Policy (CSP)
