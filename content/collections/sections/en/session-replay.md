@@ -117,7 +117,7 @@ The `[Amplitude] Replay Captured` event may create anonymous users if the device
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
-You may see multiple `[Amplitude] Replay Captured` events in a session replay timeline. This can happen when multiple browser tabs are open with different active sessions. Amplitude only captures replays when device IDs and session IDs match, but since timelines are based on events captured during the replay period, events from different sessions may overlap in the timeline.
+You may see multiple `[Amplitude] Replay Captured` events in a session replay timeline. This can happen when multiple browser tabs are open with different active sessions. Amplitude only captures replays when device IDs and session IDs match. Because timelines are based on events captured during the replay period, events from different sessions may overlap in the timeline.
 {{/partial:admonition}}
 
 ## Frustration analytics
