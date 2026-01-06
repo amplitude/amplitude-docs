@@ -49,7 +49,7 @@ To use Bayesian statistics for your experiment, complete the following:
 
 1. Go to your Experiments page.
 2. Open an existing experiment or click **Create Experiment**.
-3. Scroll to the Advance (Optional) settings and then click **Stats Preferences**. 
+3. Scroll to the Advanced (Optional) settings and then click **Stats Preferences**. 
 4. Click the **Statistical Method** drop-down and select **Bayesian**. 
 
 If your experiment is already running, you can switch to Bayesian analysis in the Experiment Results Chart by clicking the **Gear icon > Statistical Method** and selecting **Bayesian**.
@@ -62,7 +62,7 @@ You can adjust the Chance to Outperform Threshold anywhere from 0% to 100%. Beca
 
 All metrics in Bayesian analysis: relative lift, absolute lift, and mean values, are based on the posterior distribution. This means you might experience scenarios where an experiment with minimal data still displays a mean value, because the prior distribution contributes to the calculation. For example, with one exposure and zero conversions, the control mean displays as 33.3% because the prior adds one conversion and one non-conversion, resulting in a posterior mean of `(0+1) / (1 + 1 + 1)`.
 
-To view the mean without the prior distribution's influence, hover over the metric you want Analysis section. The mean over time chart shows the posterior mean in cumulative view and the data's raw mean in non-cumulative view.
+To view the mean without the prior distribution's influence, hover over the metric in the Analysis section. The mean over time chart shows the posterior mean in cumulative view and the data's raw mean in non-cumulative view.
 
 ### Minimum data requirements
 
