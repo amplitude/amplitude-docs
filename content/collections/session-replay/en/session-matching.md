@@ -18,11 +18,76 @@ Amplitude provides options to match sessions directly, match events based on tim
 
 ### Match Amplitude sessions (recommended)
 
-Match Amplitude sessions to fully align Session Replay with Amplitude sessions, including custom session definitions. This provides the most accurate end-to-end view of the user journey.
+Match Amplitude sessions based on your project's session definition. This method respects how you've configured sessions in your Amplitude project settings, including sessions defined by event properties, timeout windows, or start/end events.
 
-{{partial:admonition type="note" heading="Custom session IDs"}}
-If you use a custom session ID in Amplitude, the Session Replay SDK must send **the same session ID value** so Amplitude can match sessions correctly.
-{{/partial:admonition}}
+If you use the default `session_id`, Session Replay works automatically with no additional configuration.
+
+If you use a custom session property (a custom session definition in Amplitude), configure the Session Replay SDK to extract and send that same property value. Session Replay then matches sessions using your project's custom session definition, providing the most accurate alignment between replay data and analytics sessions.
+
+#### Requirements for custom session definitions
+
+**Minimum SDK versions:**
+- Browser SDK Plugin: `@amplitude/plugin-session-replay-browser` version 1.10.0 or later
+- Standalone SDK: `@amplitude/session-replay-browser` version 1.17.0 or later
+
+**Project configuration:**
+- Configure your custom session definition in *Settings > Projects > Session Definitions*
+- Use the "Counted based on <> Property" option to define sessions by a specific property
+- For more details, see [Track sessions](/docs/data/sources/instrument-track-sessions)
+
+**Constraints:**
+- Custom session ID values can't contain the "/" character, as Session Replay uses it as a delimiter in the session replay ID format (`<deviceId>/<sessionId>`)
+- Allowed characters: `a-z A-Z 0-9 _ - . | @ : =`
+- If you need an additional character, contact support.
+
+#### Configure the SDK for custom session definitions
+
+These code examples apply only if you've configured a custom session definition in your Amplitude project settings.
+
+**Browser SDK Plugin:**
+
+Pass a method that extracts the custom session ID from Amplitude events:
+
+```javascript
+import * as amplitude from '@amplitude/analytics-browser';
+import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
+
+const sessionReplayTracking = sessionReplayPlugin({
+  customSessionId: (event) => {
+    const props = event.event_properties;
+    if (!props) {
+      return;
+    }
+    const sessionId = props["your_custom_session_id_property"];
+    return sessionId;
+  },
+});
+amplitude.add(sessionReplayTracking);
+
+amplitude.init(API_KEY);
+```
+
+**Standalone SDK:**
+
+The standalone SDK treats custom session IDs and timestamp-based session IDs the same way. Pass the session ID to the standalone SDK, and send that same session ID to Amplitude as an event property that matches your project's custom session definition:
+
+```javascript
+import * as sessionReplay from '@amplitude/session-replay-browser';
+
+// Initialize Session Replay with session ID
+sessionReplay.init(AMPLITUDE_API_KEY, {
+  customSessionId: (event) => {
+    const props = event.event_properties;
+    if (!props) {
+      return;
+    }
+    const sessionId = props["your_custom_session_id_property"];
+    return sessionId;
+  },
+});
+```
+
+Ensure the session ID property name matches the property configured in your project's custom session definition (*Settings > Projects > Session Definitions*).
 
 ### Time-based event matching
 
