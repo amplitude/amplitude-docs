@@ -18,7 +18,7 @@ Amplitude provides options to match sessions directly, match events based on tim
 
 ### Match Amplitude sessions (recommended)
 
-Match Amplitude sessions based on your project's session definition. This method respects how you've configured sessions in your Amplitude project settings, including sessions defined by event properties, timeout windows, or start/end events.
+Match Amplitude sessions based on your project's session definition. This method respects how you configure sessions in your Amplitude project settings, including sessions you define with event properties, timeout windows, or start/end events.
 
 If you use the default `session_id`, Session Replay works automatically with no additional configuration.
 
@@ -27,17 +27,17 @@ If you use a custom session property (a custom session definition in Amplitude),
 #### Requirements for custom session definitions
 
 **Minimum SDK versions:**
-- Browser SDK Plugin: `@amplitude/plugin-session-replay-browser` version 1.10.0 or later
-- Standalone SDK: `@amplitude/session-replay-browser` version 1.17.0 or later
+- Browser SDK Plugin: `@amplitude/plugin-session-replay-browser` version 1.10.0 or later.
+- Standalone SDK: `@amplitude/session-replay-browser` version 1.17.0 or later.
 
 **Project configuration:**
-- Configure your custom session definition in *Settings > Projects > Session Definitions*
-- Use the "Counted based on <> Property" option to define sessions by a specific property
-- For more details, see [Track sessions](/docs/data/sources/instrument-track-sessions)
+- Configure your custom session definition in *Settings > Projects > Session Definitions*.
+- Use the "Counted based on <> Property" option to define sessions by a specific property.
+- For more details, see [Track sessions](/docs/data/sources/instrument-track-sessions).
 
 **Constraints:**
-- Custom session ID values can't contain the "/" character, as Session Replay uses it as a delimiter in the session replay ID format (`<deviceId>/<sessionId>`)
-- Allowed characters: `a-z A-Z 0-9 _ - . | @ : =`
+- Custom session ID values can't contain the "/" character, as Session Replay uses it as a delimiter in the session replay ID format (`<deviceId>/<sessionId>`).
+- Allowed characters: `a-z A-Z 0-9 _ - . | @ : =`.
 - If you need an additional character, contact support.
 
 #### Configure the SDK for custom session definitions
@@ -107,10 +107,10 @@ If you can't send session IDs from your frontend, use time-based event matching.
 
 ## Configure session matching
 
-You configure session matching at the organization level, not at the project level. Configure your session matching option in your organization settings under Session Replay. For more information, see [Session Replay and Heatmap Settings](/docs/session-replay/session-replay-settings).
+You configure session matching at the organization level, not at the project level. Configure your session matching option in *Organization Settings > Session Replay*. For more information, see [Session Replay and Heatmap Settings](/docs/session-replay/session-replay-settings).
 
 {{partial:admonition type="note" heading="Organization-level configuration"}}
-Session matching applies to all projects in your organization. You configure this setting once in your organization settings, not per project.
+Session matching applies to all projects in your organization. You configure this setting in *Organization Settings*, not per project.
 {{/partial:admonition}}
 
 To configure session matching in your Session Replay SDK implementation, the exact steps depend on which SDK you use:
