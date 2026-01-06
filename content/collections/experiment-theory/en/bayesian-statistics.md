@@ -60,7 +60,7 @@ You can adjust the Chance to Outperform Threshold anywhere from 0% to 100%. Beca
 
 ### Understanding posterior-based metrics
 
-All metrics in Bayesian analysis: relative lift, absolute lift, and mean values, are based on the posterior distribution. This means you might experience scenarios where an experiment with minimal data still displays a mean value, because the prior distribution contributes to the calculation. For example, with one exposure and zero conversions, the control mean displays as 33.3% because the prior adds one conversion and one non-conversion, resulting in a posterior mean of `(0+1) / (1 + 1 + 1)`.
+All metrics in Bayesian analysis: relative lift, absolute lift, and mean values, are based on the posterior distribution. For example, with one exposure and zero conversions, the control mean displays as 33.3% because the prior adds one conversion and one non-conversion, resulting in a posterior mean of `(0+1) / (1 + 1 + 1)`.
 
 To view the mean without the prior distribution's influence, hover over the metric in the Analysis section. The mean over time chart shows the posterior mean in cumulative view and the data's raw mean in non-cumulative view.
 
