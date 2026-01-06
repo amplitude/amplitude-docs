@@ -37,7 +37,7 @@ Keep these things in mind when streaming transformations from Amplitude:
 * Amplitude sends selected event and user properties along with the event.
 * Amplitude targets an end-to-end p95 latency of 60 seconds. This means Amplitude streams 95% of events within 60 seconds. Amplitude has internal processes, monitors, and alerts in place to meet this target.
 
-## How transformations are structured in the payload
+## Transformation payload structure
 
 The streaming payload includes transformations as nested JSON fields. Understanding this structure is essential when using custom FTL (FreeMarker Template Language) templates or configuring how your destination receives data.
 
@@ -123,8 +123,8 @@ There are some limitations when streaming transformations from Amplitude:
 * **Lookup properties**: You can stream lookup properties by requesting access from Amplitude. Lookup properties map existing event or user properties to new properties using a CSV file upload and can enrich already-ingested events at query time.
   * Lookup property files with over 1000 rows won't display in the streaming setup.
   * After saving a lookup property file, it can take up to one hour to populate into the streaming system.
-* **Channel classifiers**: Streaming channel classifiers requires requesting access from Amplitude. Channels act like derived properties applied in real-time during queries and are primarily used by marketers to define acquisition channels based on UTM and referrer data. By default, you can't select channel properties in sync configuration (event filters or additional properties) unless you have already enabled this feature for your organization.
-* Streaming transformations are available for all streaming destinations except Data Warehouse destinations.
+* **Channel classifiers**: To stream channel classifiers, request access from Amplitude. Channels act like derived properties applied in real-time during queries. Marketers primarily use channels to define acquisition channels based on UTM and referrer data. By default, you can't select channel properties in sync configuration (event filters or additional properties) unless you have already enabled this feature for your organization.
+* You can stream transformations to all streaming destinations except Data Warehouse destinations.
 * The streaming setup doesn't support the following transformation types:
   * Custom events that don't meet the criteria in the [Supported custom events](#supported-custom-events) section.
   * Group properties.
@@ -140,15 +140,15 @@ Yes, this counts towards your existing event streaming volume limit. Check your 
 
 
 {{partial:collapse name="Can I select both raw and transformed events/properties?"}}
-Yes, you can select both raw and transformed versions in your streaming sync. For example, if three event types are merged into one transformed event, all four event types (the three originals plus the merged version) appear in the selection dropdown.
+Yes, you can select both raw and transformed versions in your streaming sync. For example, if a transformation merges three event types into one transformed event, all four event types (the three originals plus the merged version) appear in the selection dropdown.
 {{/partial:collapse}}
 
 
-{{partial:collapse name="How are custom events and transformed properties handled during streaming?"}}
-Custom events and transformed properties follow the configurations set in your Amplitude Data taxonomy. The transformations are applied before the data is streamed to the destination.
+{{partial:collapse name="How does Amplitude handle custom events and transformed properties during streaming?"}}
+Custom events and transformed properties follow the configurations set in your Amplitude Data taxonomy. Amplitude applies transformations before it streams the data to the destination.
 {{/partial:collapse}}
 
 
 {{partial:collapse name="How can I enable channel classifiers for my event stream?"}}
-Support for selecting channel classifiers in event streaming sync configurations is available on request. Email integrations@amplitude.com with your organization ID and app IDs to request access.
+Amplitude can enable channel classifier selection in event streaming sync configurations on request. Email integrations@amplitude.com with your organization ID and app IDs to request access.
 {{/partial:collapse}}
