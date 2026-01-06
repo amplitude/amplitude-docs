@@ -332,7 +332,7 @@ For example, the following setup shows the number of `Page Viewed` events across
 
 ### SESSIONTOTALS
 
-Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
+Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
 
 The value you pass to `SESSIONTOTALS` depends on the chart you're using:
 

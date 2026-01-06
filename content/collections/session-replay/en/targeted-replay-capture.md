@@ -43,7 +43,7 @@ Manage TRC through the [Session Replay settings page](/docs/session-replay/sessi
 Before you configure Targeted Replay Capture, ensure you meet these requirements:
 
 - You use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin). TRC doesn't work with the standalone SDK.
-- You have the appropriate permissions to manage settings in your org and project. For more information, review [Manage Session Replay and Heatmap settings](/docs/account-management/user-roles-permissions#manage-session-replay-and-heatmap-settings).
+- You have the appropriate permissions to manage settings in your org and project. For more information, review [Manage Session Replay and Heatmap settings](/docs/admin/account-management/user-roles-permissions#manage-session-replay-and-heatmap-settings).
 
 ## Configure Targeted Replay Capture
 

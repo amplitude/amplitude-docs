@@ -21,7 +21,7 @@ The final step in creating your experiment is to specify any advanced settings y
 2. Set your preferences (review the definitions and explanations below).
 3. Click **Save and Close**.
 
-After you have saved your settings, you can [test your experiment](/docs/workflow/experiment-test). 
+After you have saved your settings, you can [test your experiment](/docs/feature-experiment/workflow/experiment-test). 
 
 ## Exposure settings
 

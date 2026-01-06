@@ -140,7 +140,7 @@ For more control, open any of these charts in the Analysis Chart modality.
 
 ## Enable notifications
 
-You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/experiment/notifications) to set up these notification alerts. 
+You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/feature-experiment/notifications) to set up these notification alerts. 
 
 You can set up a notification for the following events:
 

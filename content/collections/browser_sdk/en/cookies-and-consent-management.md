@@ -17,7 +17,7 @@ supported_languages:
 This guide covers functional and technical information on how Amplitude Browser SDK 2 works with cookies, local storage, opt-in/opt-out options, and consent management (including CNIL regulations for France).
 
 {{partial:admonition type="info" heading="Browser SDK 2 compatibility"}}
-This guide covers the behavior with Browser SDK 2 (TypeScript SDK). For information about the legacy JavaScript SDK, see the [legacy cookies and consent management guide](/docs/get-started/cookies-and-consent-management).
+This guide covers the behavior with Browser SDK 2 (TypeScript SDK). For information about the legacy JavaScript SDK, see the [legacy cookies and consent management guide](/docs/sdks/analytics/browser/cookies-and-consent-management).
 {{/partial:admonition}}
 
 ## Amplitude cookies
