@@ -169,7 +169,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Session Replay Configuration
 
-The Unified SDK automatically configures the Session Replay SDK with sensible defaults. For more advanced configuration options, see the [Session Replay SDK documentation](../session-replay/session-replay-ios-plugin).
+The Unified SDK automatically configures the Session Replay SDK with sensible defaults. For more advanced configuration options, see the [Session Replay SDK documentation](/docs/session-replay/session-replay-ios-plugin).
 
 {{partial:admonition type="note" heading=""}}
 Session Replay is only available on iOS platforms, not on macOS, tvOS, watchOS, or visionOS.

@@ -24,14 +24,14 @@ With Experiment, you can modify and configure product experiences for unique aud
 Experiment enables experimentation through either Feature Experiment or Web Experiment: 
 
 * Feature Experiment enables experimentation through [feature flags](/docs/feature-experiment/workflow/feature-flag-rollouts). Feature flags are switches that let you modify your product's experience without having to change code.
-* Web Experiment enables experimentation through the [Visual Editor](docs/web-experiment/set-up-a-web-experiment#the-visual-editor). The Visual Editor places a dynamic, customizable layer over your existing website. Through the Visual Editor, you can customize any element of your website without having to make changes directly to the site's underlying code or structure.  
+* Web Experiment enables experimentation through the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). The Visual Editor places a dynamic, customizable layer over your existing website. Through the Visual Editor, you can customize any element of your website without having to make changes directly to the site's underlying code or structure.  
 
 For more information about the use cases for each type of experimentation, go to [Feature and Web Experiment Use Cases](/docs/feature-experiment/feature-vs-web-experimentation).
 
 This page is divided into quick start information for Feature and for Web Experiment. Click the tab for the experiment type you want to set up.
 
 {{partial:admonition type="warning" heading=""}}
-This quick start guide contains only the basic information needed to implement Experiment. Review the entire set of [Experiment documentation](docs/feature-experiment) to understand the full complexity of the product.
+This quick start guide contains only the basic information needed to implement Experiment. Review the entire set of [Experiment documentation](/docs/feature-experiment/overview) to understand the full complexity of the product.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Feature Experiment, Web Experiment"}}

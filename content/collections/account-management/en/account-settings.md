@@ -66,7 +66,7 @@ In the Notifications area, you can to change your Slack direct message and email
 ![new_notifications.png](/docs/output/img/account-management/new-notifications-png.png)
 
 {{partial:admonition type="tip" heading=""}}
-You can also set notification alerts for your experiments or feature flags to be sent to either a dedicated Slack channel or to a unique webhook. Go to [Experiment Notifications](/docs/experiment/notifications) for more information.
+You can also set notification alerts for your experiments or feature flags to be sent to either a dedicated Slack channel or to a unique webhook. Go to [Experiment Notifications](/docs/feature-experiment/notifications) for more information.
 
 {{/partial:admonition}}
 
