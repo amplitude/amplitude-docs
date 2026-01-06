@@ -45,9 +45,9 @@ The streaming payload includes transformations as nested JSON fields. Understand
 
 You must explicitly select transformations in your sync configuration to include them in the streaming payload. You can select transformations in:
 
-* **Select and filter events**: For example, filtering events where a derived property isn't `null`
-* **Select additional properties**: To include specific transformed properties
-* **Map properties to destination**: When mapping properties to your destination's schema (if applicable)
+* **Select and filter events**: For example, filtering events where a derived property isn't `null`.
+* **Select additional properties**: To include specific transformed properties.
+* **Map properties to destination**: When mapping properties to your destination's schema (if applicable).
 
 The streaming payload only includes transformations you explicitly select.
 
