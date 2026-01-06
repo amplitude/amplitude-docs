@@ -136,7 +136,7 @@ This requires keeping a reference to the Session Replay Middleware instance `let
 
 Call `amplitude.addEventMiddleware(sessionReplayMiddleware)` to re-enable replay collection when the return to an unrestricted area of your app.
 
-You can also use a feature flag product like [Amplitude Experiment](/docs/experiment) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
+You can also use a feature flag product like [Amplitude Experiment](/docs/feature-experiment/overview) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
 
 ```swift
 import Amplitude

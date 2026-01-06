@@ -149,7 +149,7 @@ For further analysis, you can create a cohort from any of the pages or groups of
 
 The Competitors tab lets you view information about your competitors and how their AI Visibility results compare with your own. This information lets you understand how AI chat is comparing you to your competitors and areas where you can improve against your competitors. 
 
-AI Visibility automatically selects your competitors by the number of mentions it finds for other brands similar to yours. You can filter out competitors from your analysis. If you want to either add or delete a competitor, go to [Competitor Settings](/docs/agents/ai-visibility#competitor-settings). 
+AI Visibility automatically selects your competitors by the number of mentions it finds for other brands similar to yours. You can filter out competitors from your analysis. If you want to either add or delete a competitor, go to [Competitor Settings](/docs/amplitude-ai/ai-visibility#competitor-settings). 
 
 ### Comparisons
 

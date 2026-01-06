@@ -35,4 +35,4 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
    - **Bucketing Unit**: Select the unit Amplitude uses to assign variants, either `User` or `Group`.
 4. Click **Create**.
 
-After the experiment has been created, you must configure additional aspects of the experiment. Go to [Define your experiment's goals](/docs/workflow/define-goals) for next steps. 
+After the experiment has been created, you must configure additional aspects of the experiment. Go to [Define your experiment's goals](/docs/feature-experiment/workflow/define-goals) for next steps. 
