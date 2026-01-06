@@ -39,7 +39,7 @@ Review the following concepts to better understand Bayesian statistics:
 
 ### When to use Bayesian Statistics
 
-Bayesian methods excel when you want continuous insight into your experiment's performance without inflating false positive risk. They're particularly valuable when you need to incorporate prior knowledge, make decisions with smaller sample sizes, or require probability statements that directly answer business questions like "How likely is this variant to succeed?"
+Bayesian methods excel when you want continuous insight into your experiment's performance. They're particularly valuable when you need to incorporate prior knowledge, make decisions with smaller sample sizes, or require probability statements that directly answer business questions like "How likely is this variant to succeed?"
 
 For teams running standard product experiments with straightforward decision criteria, Amplitude Experiment defaults to sequential testing, which offers fast results with strong false positive control. You can switch to Bayesian analysis at any point to gain additional perspective on your experiment outcomes.
 
