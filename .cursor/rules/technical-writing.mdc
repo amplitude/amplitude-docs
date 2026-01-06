@@ -142,29 +142,65 @@ Always include request and response examples:
 
 ## UI Element References
 
-### Formatting UI Elements
-Use bold for UI elements users interact with:
+### Critical Formatting Rule
+
+**Bold = Interactive UI literals only**  
+**Italics = Orientation elements**
+
+Use bold exclusively for UI elements that users directly interact with (buttons, clickable tabs, input fields). Use italics for elements that help orient users within the interface but aren't directly interactive (page headings, section titles, navigation paths, labels).
+
+### Bold for Interactive Elements
+
+Use bold only for UI literals that users click, select, or interact with:
 
 - Buttons: **Save**, **Cancel**, **Create Project**.
-- Tabs: **Configuration**, **Analytics**, **Settings**.
-- Field labels: **Project Name**, **API Key**, **Event Type**.
+- Clickable tabs: **Configuration**, **Analytics**, **Settings**.
+- Input field labels: **Project Name**, **API Key**, **Event Type**.
+- Checkboxes and radio buttons: **Enable tracking**, **Advanced mode**.
+- Menu items: **File**, **Edit**, **View**.
+- Dropdowns and selectable options: **Select all**, **None**.
 
 **Examples:**
 - ✅ "Enter your project name in the **Project Name** field."
 - ✅ "Select **Save** to save your changes."
+- ✅ "In the **Region** dropdown, select **US**."
+- ✅ "Select the **Advanced** tab to view more options."
 
-### Navigation Paths
-Use italics for navigation hierarchies with angle brackets (>) to show navigation paths:
+### Italics for Orientation Elements
 
-```markdown
-*Settings > API Keys*
-*Data > Sources*
-```
+Use italics for UI elements that orient users but aren't directly interactive:
+
+- Page headings visible in the UI: *Settings*, *Dashboard*, *Analytics*.
+- Section titles within pages: *API Configuration*, *User Management*.
+- Navigation paths and hierarchies: *Settings > API Keys*, *Data > Sources*.
+- Panel or card titles: *Recent Activity*, *Quick Stats*.
+- Non-interactive labels or headings: *Overview*, *Details*.
 
 **Examples:**
 - ✅ "Navigate to *Settings > API Keys* to view your credentials."
 - ✅ "Go to *Settings > Data > Sources* to configure your data sources."
+- ✅ "The *Dashboard* page displays your project metrics."
+- ✅ "Under the *API Configuration* section, enter your credentials."
 - ❌ "Navigate to **Settings** > **API Keys**" (don't use bold for navigation paths)
+- ❌ "The **Dashboard** page displays..." (don't use bold for page names unless instructing to click)
+
+### Navigation Paths
+
+Always use italics for navigation hierarchies with angle brackets (>) to show paths:
+
+```markdown
+*Settings > API Keys*
+*Data > Sources > Integrations*
+*Analytics > Reports > Custom*
+```
+
+### When Both Formatting Types Appear
+
+Sometimes you need both in one instruction:
+
+- ✅ "On the *Settings* page, select **Save Changes**." (page name in italics, button in bold)
+- ✅ "Navigate to *Data > Sources*, then select **Add Source**." (path in italics, button in bold)
+- ✅ "In the *API Configuration* section, enter your key in the **API Key** field." (section in italics, field label in bold)
 
 ## Links and References
 
