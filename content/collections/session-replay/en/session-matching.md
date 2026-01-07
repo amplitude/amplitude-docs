@@ -64,7 +64,7 @@ const sessionReplayTracking = sessionReplayPlugin({
 });
 amplitude.add(sessionReplayTracking);
 
-amplitude.init(API_KEY);
+amplitude.init(AMPLITUDE_API_KEY);
 ```
 
 **Standalone SDK:**
