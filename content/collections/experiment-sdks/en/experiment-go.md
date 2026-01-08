@@ -300,7 +300,8 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
 | `FlagConfigPollerRequestTimeout` | The timeout for the request made by the flag config poller | `10 * time.Second` |
-| `AssignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `AssignmentConfig` | **Deprecated.** Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `ExposureConfig` | Configuration for tracking exposure events after an evaluation. | `nil` |
 | `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK. Typically within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
 | `StreamServerUrl` | The URL of the stream server. | `https://stream.lab.amplitude.com` |
 | `StreamFlagConnTimeout` | The timeout for establishing a valid flag config stream. This includes time for establishing a connection to stream server and time for receiving initial flag configs. | `1500` |
@@ -312,6 +313,13 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | --- | --- | --- |
 | `CacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
 | [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+
+**ExposureConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `CacheCapacity` | The maximum number of exposures stored in the exposure cache | `524288` |
+| [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
 
 **CohortSyncConfig**
 
@@ -344,8 +352,8 @@ if err != nil {
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
-{{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`AssignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`ExposureConfig`](#configuration) to enable exposure tracking. Then, set `TracksExposure` to `true` in `EvaluateOptions` when calling `EvaluateV2WithOptions()`.
 {{/partial:admonition}}
 
 ```go
@@ -381,6 +389,37 @@ if variant.Value == "on" {
     // Flag is off
 }
 ```
+
+### Evaluate V2 With Options
+
+Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
+
+```go
+func (c *Client) EvaluateV2WithOptions(user *experiment.User, options *EvaluateOptions) (map[string]experiment.Variant, error)
+```
+
+| Parameter | Requirement | Description |
+| --- | --- | --- |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
+| `options` | optional | The [options](#evaluate-options) for the evaluation. |
+
+```go
+user := &experiment.User{DeviceId: "abcdefg"}
+variants, err := client.EvaluateV2WithOptions(user, &local.EvaluateOptions{
+    FlagKeys: []string{"flag-key-1", "flag-key-2"},
+    TracksExposure: true,
+})
+if err != nil {
+    // Handle Error
+}
+```
+
+**EvaluateOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `FlagKeys` | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. | `nil` |
+| `TracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 
 ### Local evaluation cohort targeting
 

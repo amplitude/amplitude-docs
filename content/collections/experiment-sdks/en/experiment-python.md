@@ -305,7 +305,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `server_url` | The host to fetch flag configurations from.                                                                             | `https://api.lab.amplitude.com` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start)                                         | `30000`                         |
 | `flag_config_poller_request_timeout_millis` | The timeout for the request made by the flag config poller                                                              | `10000`                         |
-| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation.                                         | `None`                          |
+| `assignment_config` | **Deprecated.** Use `exposure_config` instead. Configuration for automatically tracking assignment events after an evaluation.                                         | `None`                          |
+| `exposure_config` | Configuration for tracking exposure events after an evaluation.                                         | `None`                          |
 | `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `None`                          |
 
 **AssignmentConfig**
@@ -316,6 +317,14 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | `send_evaluated_props`| Set to `True` to send properties of the evaluated user in assignment events | `False` |
 | [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+
+**ExposureConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
+| [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
 
 **CohortSyncConfig**
 
@@ -349,14 +358,19 @@ Executes the [evaluation logic](/docs/feature-experiment/implementation) using t
 Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}
 
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposure_config`](#configuration) to enable exposure tracking. Then, set `tracks_exposure` to `True` in `EvaluateOptions` when calling `evaluate_v2()`.
+{{/partial:admonition}}
+
 ```python
-evaluate_v2(self, user: User, flag_keys: List[str]) : Dict[str, Variant]
+evaluate_v2(self, user: User, flag_keys: List[str], options: EvaluateOptions) : Dict[str, Variant]
 ```
 
 | Parameter   | Requirement | Description |
 |-------------| --- | --- |
 | `user`      | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flag_keys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
+| `options`   | optional | The [options](#evaluate-options) for the evaluation request. |
 
 ```python
 # The user to evaluate
@@ -375,6 +389,12 @@ if variant.value == 'on':
 else:
     # Flag is off
 ```
+
+**EvaluateOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | If `True`, the SDK tracks an exposure event for the evaluated variants. | `False` |
 
 ### Local evaluation cohort targeting
 

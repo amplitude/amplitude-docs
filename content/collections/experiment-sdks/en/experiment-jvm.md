@@ -407,7 +407,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `flagConfigPollingIntervalMillis` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30000` |
 | `flagConfigPollerRequestTimeoutMillis` | The timeout for the request made by the flag config poller | `10000` |
-| `assignmentConfiguration` | Enable automatic assignment tracking for local evaluations. | `null` |
+| `assignmentConfiguration` | **Deprecated.** Enable automatic assignment tracking for local evaluations. | `null` |
+| `exposureConfiguration` | Enable exposure tracking for local evaluations. | `null` |
 | `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK generally within one second. If the stream fails for any reason, it reverts to polling automatically and retry streaming after some interval. | `false` |
 | `streamServerUrl` | The URL of the stream server. | `https://stream.lab.amplitude.com` |
 | `streamFlagConnTimeoutMillis` | The timeout for establishing a valid flag config stream. This includes time for establishing a connection to stream server and time for receiving initial flag configs. | `1500` |
@@ -419,6 +420,16 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
+| `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10` |
+| `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10000` |
+| `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `true` |
+
+**ExposureConfiguration**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
 | `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10` |
 | `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10000` |
 | `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `true` |
@@ -472,20 +483,20 @@ public void stop();
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
-{{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfiguration`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposureConfiguration`](#configuration) to enable exposure tracking. Then, set `tracksExposure` to `true` in `EvaluateOptions` when calling `evaluate()`.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
-fun evaluate(user: ExperimentUser, flagKeys: List<String> = listOf()): Map<String, Variant>
+fun evaluate(user: ExperimentUser, flagKeys: List<String> = listOf(), evaluateOptions: EvaluateOptions? = null): Map<String, Variant>
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
 @Nonnull
-public Map<String, Variant> evaluate(@Nonnull experimentUser, @Nonnull List<String> flagKeys);
+public Map<String, Variant> evaluate(@Nonnull experimentUser, @Nonnull List<String> flagKeys, @Nullable EvaluateOptions evaluateOptions);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -494,6 +505,7 @@ public Map<String, Variant> evaluate(@Nonnull experimentUser, @Nonnull List<Stri
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, all flags and experiments are evaluated. |
+| `evaluateOptions` | optional | The [options](#evaluate-options) for the evaluation request. |
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -549,6 +561,12 @@ if (Variant.valueEquals(variant, "on")) {
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+**EvaluateOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 
 {{partial:collapse name="Account-level bucketing and analysis (v1.3.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
