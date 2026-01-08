@@ -243,7 +243,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact Amplitude support if you don't see this event.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new) if you don't see this event.
 
 If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone/).
 
@@ -279,7 +279,7 @@ Amplitude automatically creates the `[Amplitude] Replay Captured` event when Ses
 - The user may have opted out or may not be part of the sample set given the current `sampleRate`. Increasing the `sampleRate` captures more sessions.
 - The `optOut` configuration is enabled for the session. Check that `optOut` and `sampleRate` are set to include the session.
 
-If you've verified these settings and still don't see the event, contact Amplitude support.
+If you've verified these settings and still don't see the event, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 ### Session Replay processing errors
 
