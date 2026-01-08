@@ -51,7 +51,7 @@ The snippet above includes [Session Replay](/docs/session-replay/session-replay-
 
 Web Experiment lets you run A/B tests on your website using the same data you already send through the Unified Browser SDK. Target users, roll out changes gradually, and compare variants based on real product metrics like activation or retention in Amplitude. Web Experiment handles experiment assignment, exposure, and basic statistical analysis so you don't need to build that logic yourself.
 
-Test different versions or features of your site using Amplitude's no-code [Visual Editor](/docs/web-experiment/visual-editor).
+Test different versions or features of your site using Amplitude's no-code [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor).
 
 ### Create a guide or survey
 
