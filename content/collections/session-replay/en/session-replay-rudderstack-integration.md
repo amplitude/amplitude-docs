@@ -88,7 +88,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
 
 ## Rudderstack integration
 
-This integration updates Rudderstack's request architecture, which ensures that all `track` and `page` events include the required Amplitude `Session Replay ID` event property. 
+This integration updates Rudderstack's request architecture, which ensures that the `[Amplitude] Replay Captured` event reaches Amplitude to link replays with your analytics data. 
 
 ## Required field mapping
 

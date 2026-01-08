@@ -15,8 +15,8 @@ Session Replay supports other analytics providers. Follow the information below 
 - [Amplitude Classic destination (Cloud-mode)](#amplitude-classic-destination-cloud-mode)
 - [Troubleshoot Segment integration](#troubleshoot-segment-integration)
 
-{{partial:admonition type="warning" heading="Session Replay ID is a required property"}}
-To ensure that Session Replay implementations with Segment work as expected, add the `Session Replay ID` event property to your Segment tracking plan. Otherwise, Segment may block the property.
+{{partial:admonition type="note" heading="Replay Captured event"}}
+Session Replay automatically tags replays with the `[Amplitude] Replay Captured` event. To ensure this event reaches Amplitude through Segment, add it to your Segment tracking plan. Otherwise, Segment may block the event.
 {{/partial:admonition}}
 
 ### Amplitude (Actions) destination

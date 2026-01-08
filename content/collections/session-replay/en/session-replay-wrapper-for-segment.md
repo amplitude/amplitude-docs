@@ -68,7 +68,7 @@ segmentAnalytics.register(segmentActionsPlugin);
 
 ## Segment plugin architecture
 
-This plugin uses Segment's plugin architecture, which ensures that all `track` and `page` events include the required `Session Replay ID` event property. 
+This plugin uses Segment's plugin architecture, which ensures that the `[Amplitude] Replay Captured` event reaches Amplitude to link replays with your analytics data. 
 
 ## User ID to Device ID mapping
 

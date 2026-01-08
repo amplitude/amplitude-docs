@@ -222,7 +222,7 @@ By default, Session Replay blocks web views, and doesn't track them. If you want
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Session Replay automatically tags captured sessions with the `[Amplitude] Replay Captured` event, which includes the `[Amplitude] Session Replay ID` property. This provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
 
 ```json
 {

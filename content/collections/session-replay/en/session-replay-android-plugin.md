@@ -243,7 +243,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Session Replay requires that the Android SDK send at least one event that includes Session Replay ID. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel Analysis, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
+Session Replay automatically tags replays with the `[Amplitude] Replay Captured` event. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays with the User Sessions chart or through User Lookup.
 
 If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone/).
 
@@ -264,24 +264,22 @@ Session replays may not appear in Amplitude due to:
 
 Ensure your app has access to the internet then try again.
 
-#### No events triggered through the Android SDK in the current session
+#### No Replay Captured event
 
-Session Replay requires that at least one event in the user's session has the `[Amplitude] Session Replay ID` property. If you instrument your events with a method other than the [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk), the Android SDK may send only the default Session Start and Session End events, which don't include this property.
+Session Replay requires the `[Amplitude] Replay Captured` event to link replays with your analytics data. If you don't see this event in the User Lookup Event Stream, replays won't appear in the Amplitude UI.
 
-For local testing, you can force a Session Start event to ensure that Session Replay functions.
-
-1. In Amplitude, in the User Lookup Event Stream, you should see a Session Start event that includes the `[Amplitude] Session Replay ID` property. After processing, the Play Session button should appear for that session.
+For local testing, verify that the `[Amplitude] Replay Captured` event fires during a session. After processing, the Play Session button should appear for that session. If you don't see this event, contact Amplitude support.
 
 #### Sampling
 
 As mentioned above, the default `sampleRate` for Session Replay is `0`. Update the rate to a higher number. For more information see, [Sampling rate](#sampling-rate).
 
-#### Some sessions don't include the Session Replay ID property
+#### Some sessions don't include the Replay Captured event
 
-Session replay doesn't require that all events in a session have the `[Amplitude] Session Replay ID` property, only that one event in the session has it. Reasons why `[Amplitude] Session Replay ID`  may not be present in an event include:
+Session Replay captures sessions automatically and tags them with the `[Amplitude] Replay Captured` event. Reasons why this event may not appear include:
 
 - The user may have opted out or may not be part of the sample set given the current `sampleRate`. Increasing the `sampleRate` captures more sessions.
-- Amplitude events may still send through your provider, but `getSessionReplayProperties()` doesn't return the `[Amplitude] Session Replay ID` property. This can result from `optOut` and `sampleRate` configuration settings. Check that `optOut` and `sampleRate` are set to include the session.
+- The `optOut` configuration is enabled for the session. Check that `optOut` and `sampleRate` are set to include the session.
 
 ### Session Replay processing errors
 
