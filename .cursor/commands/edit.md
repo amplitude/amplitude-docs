@@ -4,6 +4,16 @@
 
 Your goal is to parse through the content in an article, and ensure it meets the guidelines in @.cursor/rules.
 
+## Important Guidelines
+
+### Implementation Details
+
+Do not reveal implementation details that users may start to rely on because it will limit our ability to modify the implementation in the future.
+
+### Session Replay Add-On Requirements
+
+Targeted Replay Capture (TRC) is only available to customers who have purchased the Session Replay (SR) add-on.
+
 ## Systematic Review Process
 
 ### Phase 1: Pattern-Based Searches (Run First)
