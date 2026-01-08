@@ -79,7 +79,7 @@ Configure your application code.
 
 1. Call `sessionReplay.init` to begin collecting replays. Pass the API key, session identifier, and device identifier.
 2. When the session identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId`.
-3. Session Replay automatically tags captured replays with the `[Amplitude] Replay Captured` event. See [Session Replay ID](#session-replay-id) for more information.
+3. Amplitude automatically creates the `[Amplitude] Replay Captured` event to link replays with your analytics data. See [Session Replay ID](#session-replay-id) for more information.
 
 {{partial:tabs tabs="Standalone SDK, Unified SDK"}}
 {{partial:tab name="Standalone SDK"}}
@@ -155,7 +155,7 @@ const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties(
 
 ## Session Replay ID
 
-Session Replay automatically tags replays with a Session Replay ID through the `[Amplitude] Replay Captured` event. This event fires automatically when a replay is captured, ensuring replays appear in the Amplitude UI without manual instrumentation.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which links the replay to your analytics data. No manual instrumentation is required.
 
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session. The Session Replay ID follows the format: `<deviceId>/<sessionId>`.
 
@@ -164,11 +164,11 @@ Amplitude links replays with a session replay ID. To combine multiple sessions i
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Legacy implementations"}}
-If you have a legacy implementation that manually adds the `[Amplitude] Session Replay ID` property to events using `getSessionReplayProperties()`, this continues to work. However, the `[Amplitude] Replay Captured` event is the recommended approach.
+If you have a legacy implementation that manually adds the `[Amplitude] Session Replay ID` property to events using `getSessionReplayProperties()`, this continues to work. However, Amplitude's automatic `[Amplitude] Replay Captured` event is the recommended approach.
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Not seeing replays?"}}
-If replays don't appear in the Amplitude UI, verify that the `[Amplitude] Replay Captured` event fires in your implementation. If you don't see this event, contact Amplitude support.
+If replays don't appear in the Amplitude UI, check that you see the `[Amplitude] Replay Captured` event in your project. If you don't see this event, contact Amplitude support.
 {{/partial:admonition}} 
 
 ## Configuration
@@ -297,7 +297,7 @@ if (nonEUCountryFlagEnabled) {
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Session Replay automatically tags captured sessions with the `[Amplitude] Replay Captured` event, which includes the `[Amplitude] Session Replay ID` property. This provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which provides information about the sessions collected for replay for the user.
 
 ```json
 {
