@@ -159,8 +159,6 @@ To see the number of captured replays, create an [Event Segmentation](/docs/anal
 
 This formula returns the number of distinct property values for the property by which the event is grouped. In this example, the formula retrieves the number of different session replay IDs.
 
-![Session replay count chart showing PROPCOUNT formula](/docs/output/img/analytics/distinct_replays.png)
-
 ## Search for a replay
 
 Session replay gives you two options for searching replays: either by date, or through a filter.
