@@ -49,7 +49,7 @@ CAC and ROAS may display as `0` if your ads haven't led to conversions, or if th
 
 For example, if `utm_content` in a Facebook add is `image_xyz`, but the value you set in Amplitude is `xyz`, Amplitude can't accurately track that campaign.
 
-To ensure accurate results, ensure the UTM properties you use in your campaigns match what you [configure in Amplitude](#configure-utm-properties). If you notice a discrepency, you can update the property definition in Amplitude. For more information, see [Fix your data with Transformations](/docs/data/transformations#rename-property-values)
+To ensure accurate results, ensure the UTM properties you use in your campaigns match what you [configure in Amplitude](#configure-utm-properties). If you notice a discrepency, you can update the property definition in Amplitude. For more information, go to [Fix your data with Transformations](/docs/data/transformations#rename-property-values)
 {{/partial:admonition}}
 
 Each insight displays a time series chart and an aggregated data table below it.
@@ -61,7 +61,7 @@ Visit the [Marketing metrics recipes article](/docs/analytics/charts/user-sessio
 Follow these steps to analyze metrics in Out-of-the-box Marketing Analytics:
 
 1. Click *Marketing Analytics* in the left-hand sidebar and select the insight you’d like to view.
-2. If desired, click *Add segment > Amplitude segments* to filter your analysis by user type:
+2. (*Optional*), click *Add segment > Amplitude segments* to filter your analysis by user type:
     * **All users**: Users who triggered any event during the selected date range.
     * **Active users**: Users who triggered at least one active event during the selected date range.
     * **New users**: Users who triggered at least one new user event during the selected date range.
@@ -228,8 +228,6 @@ The breakdown table includes:
 * Total revenue
 * Cart drop-off rate
 
-![](statamic://asset::help_center_conversions::analytics/purchase-by-item-table.png)
-
 ### Next steps
 
 The Purchase by item hub is a good starting point for ecommerce analysis. To explore deeper:
@@ -240,6 +238,6 @@ The Purchase by item hub is a good starting point for ecommerce analysis. To exp
 
 ## Create a web experiment for specific URLs
 
-On the Page Engagement tab of Marketing Analytics, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment) from the table.
+On the Page Engagement tab of Marketing Analytics, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment/set-up-a-web-experiment) from the table.
 
 Click the flask icon in the Action column of the table, and the New Web Experiment dialog appears pre-populated with the targeted page URL.
