@@ -65,7 +65,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
 
 ## Rudderstack integration
 
-Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact Amplitude support. 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## Required field mapping
 
@@ -77,4 +77,4 @@ Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/e
 Session Replay isn't compatible with ad blocking software.
 {{/partial:admonition}}
 
-For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)
+For troubleshooting information, go to [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)
