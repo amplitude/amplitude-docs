@@ -299,7 +299,9 @@ if (nonEUCountryFlagEnabled) {
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which provides information about the sessions collected for replay for the user.
+The Amplitude DSAR API returns metadata about session replays, but not the raw replay data.
+
+The [Amplitude] Replay Captured event is automatically created when Session Replay captures a replay. This event includes the [Amplitude] Session Replay ID property, which provides information about the replays collected for replay for the user.
 
 ```json
 {
