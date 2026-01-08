@@ -57,30 +57,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
             sessionId: rudderAnalytics.getSessionId(),
             sampleRate: .1 // 10% of sessions will be captured 
         }).promise;
-   
-        // Update track method to include sessionReplayProperties
-        const rudderAnalyticsTrack = rudderAnalytics.track;
-        rudderAnalytics.track = function (eventName, eventProperties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          eventProperties = {
-            ...eventProperties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsTrack(eventName, eventProperties, options, callback);
-        };
-   
-        // Update page method to include sessionReplayProperties
-        const rudderAnalyticsPage = rudderAnalytics.page;
-        rudderAnalytics.page = function (category, name, properties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          properties = {
-            ...properties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsPage(category, name, properties, options, callback);
-        };
-
-        sessionReplay.set(rudderAnalytics.getSessionId())
+        sessionReplay.set(rudderAnalytics.getSessionId());
       });
     }
 );

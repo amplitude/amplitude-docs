@@ -99,11 +99,6 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
 
 // Call whenever the session id changes
 await sessionReplay.setSessionId(sessionId).promise;
-
-// When you send events to Amplitude, call this event to get
-// the most up to date session replay properties for the event
-const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
 ```
 {{/partial:tab}}
 {{partial:tab name="Unified SDK"}}
@@ -145,11 +140,6 @@ window.sessionReplay.init(AMPLITUDE_API_KEY, {
 
 // Call whenever the session id changes
 window.sessionReplay.setSessionId(sessionId);
- 
-// When you send events to Amplitude, call this event to get
-// the most up-to-date Session Replay properties for the event
-const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties();
-3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
 </script>
 ```
 
@@ -285,11 +275,6 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
  optOut: <boolean>,
  sampleRate: <number>
 }).promise;
-
-if (nonEUCountryFlagEnabled) {
- const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
- 3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
-}
 ```
 
 
