@@ -16,7 +16,7 @@ Heatmaps uses Session Replay to provide a visual representation of user engageme
 Heatmaps use an anonymized session replay that's decoupled from any user behavior and isn't subject to your Session Replay retention period.
 {{/partial:admonition}}
 
-Heatmaps are available to customers who have the Session Replay addon. All users with [View permissions](/docs/account-management/user-roles-permissions) can create Heatmaps.
+Heatmaps are available to customers who have the Session Replay addon. All users with [View permissions](/docs/admin/account-management/user-roles-permissions) can create Heatmaps.
 
 Use the following map types, depending on your use case,
 
