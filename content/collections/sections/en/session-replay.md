@@ -18,7 +18,7 @@ Find Session Replay in the left-hand sidebar in Amplitude Analytics.
 
 [View and modify Session Replay settings in your organization settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="Enabling Session Replay"}}
 Session Replay isn't enabled by default and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
@@ -34,7 +34,7 @@ When viewing a session replay from your homepage or from a search, the user's ev
 
 Session Replay supports user sessions of any length.
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="AI generated names"}}
 Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
 
@@ -79,7 +79,7 @@ Admins and managers can enable or disable console log capture through organizati
 
 1. Navigate to *Settings > Organization Settings*.
 2. Go to the *Session Replay & Heatmaps* section.
-3. Toggle the *Console Logs* setting on or off for your projects.
+3. Toggle the **Console Logs** setting on or off for your projects.
 
 Changes to this setting apply to future session captures only.
 
@@ -143,10 +143,6 @@ Frustration events appear directly in the session timeline and event stream, mak
 
 Like error events, frustration events can be analyzed using Event Segmentation and Funnel Analysis to understand their impact on user behavior and conversion rates.
 
-{{partial:admonition type="note" heading=""}}
-Frustration analytics are available to all Session Replay users and don't require additional configuration.
-{{/partial:admonition}}
-
 ### View Session Replay from User Look-Up
 
 To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend.
@@ -158,8 +154,8 @@ Find the user with User Look-Up (you’ll need their user ID to do this), then c
 To use Session Replay in a chart, follow these steps:
 
 1. Open the Amplitude chart that contains the events you want to look at.
-2. Open the [Microscope](/docs/analytics/microscope) and click *Watch Session Replays*.
-3. Check the *Streams with session replays* box.
+2. Open the [Microscope](/docs/analytics/microscope) and click **Watch Session Replays**.
+3. Check the **Streams with session replays** box.
 
 The replay modal appears, where you can: 
 
@@ -191,7 +187,7 @@ With Session Replay, your homepage shows 100 sessions captured over the past sev
 If you can’t see the Session Replay widget and have a customized [home page](/docs/get-started/amplitude-home-page), reset the home page and then re-add your customizations to make the widget visible.
 {{/partial:admonition}}
 
-Click *Play* to see the session view in the modal that appears. 
+Click **Play** to see the session view in the modal that appears. 
 
 ## View the number of captured replays
 
@@ -209,12 +205,12 @@ To review your Session Replay quota and retention time frame, navigate to the Pl
 
 Session replay gives you two options for searching replays: either by date, or with a filter.
 
-1. Navigate to *Session Replay* to see the complete list of session replays available for viewing.
+1. Navigate to the Session Replay page to view the complete list of session replays available for viewing.
 2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset time range: one day, seven days, or 30 days.
 
 Filtered results by date or time frame match the project's timezone.
 
-3. To narrow the list with a filter, click *+ Add Filter*. You can filter by cohorts, events, event properties, user properties, and session duration. You can also use multiple filters to further narrow your list.
+3. To narrow the list with a filter, click **Add Filter**. You can filter by cohorts, events, event properties, user properties, and session duration. You can also use multiple filters to further narrow your list.
 
 Once you make your selection, view replays that took place within the selected time frame, or replays that meet your filter specifications. Your search results generate a unique URL that you can share with your team.
 
@@ -226,7 +222,7 @@ The list of results shows a maximum of 100 replays.
 
 ## How session replay querying works
 
-When you search for replays by event in Amplitude, Amplitude finds replays that "cover" those events. This means Amplitude looks for replays that include the time period when your events occurred.
+When you search for replays by event in Amplitude, Amplitude finds replays that spans those events. This means Amplitude looks for replays that include the time period when your events occurred.
 
 ![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
 
