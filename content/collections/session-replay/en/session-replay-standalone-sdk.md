@@ -157,7 +157,7 @@ const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties(
 
 Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which links the replay to your analytics data. No manual instrumentation is required.
 
-`[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session. The Session Replay ID follows the format: `<deviceId>/<sessionId>`.
+`[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session by default.
 
 {{partial:admonition type="info" heading=""}}
 Amplitude links replays with a session replay ID. To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
