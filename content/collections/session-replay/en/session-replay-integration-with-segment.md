@@ -16,7 +16,7 @@ Session Replay supports other analytics providers. Follow the information below 
 - [Troubleshoot Segment integration](#troubleshoot-segment-integration)
 
 {{partial:admonition type="note" heading="Replay Captured event"}}
-Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude, not through Segment. If you don't see this event in Amplitude, contact Amplitude support.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. Amplitude receives this event directly, it is not sent through Segment. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 {{/partial:admonition}}
 
 ### Amplitude (Actions) destination
