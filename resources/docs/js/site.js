@@ -153,21 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    Prism.highlightAll();
+    Prism.highlightAllUnder('.code-toolbar');
     initApiKeyFeature();
 });
 
 // Re-highlight code blocks after Alpine.js initializes (Alpine might strip tokens)
 document.addEventListener('alpine:init', function() {
     setTimeout(() => {
-        Prism.highlightAll();
+        Prism.highlightAllUnder('.code-toolbar');
     }, 100);
 });
 
 // Also listen for when Alpine is done processing the DOM
 document.addEventListener('alpine:initialized', function() {
     setTimeout(() => {
-        Prism.highlightAll();
+        Prism.highlightAllUnder('.code-toolbar');
     }, 100);
 });
 
@@ -187,7 +187,7 @@ const observer = new MutationObserver((mutations) => {
         // Debounce: wait for DOM changes to settle
         clearTimeout(highlightTimeout);
         highlightTimeout = setTimeout(() => {
-            Prism.highlightAll();
+            Prism.highlightAllUnder('.code-toolbar');
         }, 300);
     }
 });
