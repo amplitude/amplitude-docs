@@ -32,6 +32,8 @@ updated_at: 1750443681
 ### ✨ Features
 
 - Feat: add support for share links (GSDK-322) \[android, ios\]
+- Feat: add support for custom tooltip size (GSDK-353) \[android, ios\]
+- Feat: add support for `serverZone`, `serverUrl`, `cdnUrl`, `mediaUrl`, `logLevel` and `locale` init options (GSDK-767) \[rn\]
 
 ### 🐛 Fixes
 
@@ -47,11 +49,11 @@ updated_at: 1750443681
 - Fix: tooltip is re-openable after using the "close" button to close it (GSDK-776) \[ios\]
 - Fix: properly apply drop shadow to Guide/Survey cards from theme (GSDK-772) \[android, ios\]
 - Fix: trigger display of matching guide/survey (if any) when user properties are updated via "_setUserProperties" (FOO-2911) \[ios\]
+- Fix: React Native plugin automatically sets `serverZone` based on the server zone used for Amplitude initialization (GSDK-767) \[rn\]
 
 ### 🐇 Performance improvements
 
 - Fix: event forwarding from Amplitude Analytics to G+S SDK is now "async" and won't interfere with the main thread (GSDK-763) \[ios\]
-
 
 ## 1.8.1 (iOS) \[2025-12-04\]
 
