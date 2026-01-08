@@ -389,7 +389,7 @@ To help resolve CSS loading issues:
 
 ### Capture sessions contain limited information
 
-Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact Amplitude support if you don't see this event.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new)t if you don't see this event.
 
 If you use a method other than the Browser SDK to instrument your events, consider using the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk/)
 
