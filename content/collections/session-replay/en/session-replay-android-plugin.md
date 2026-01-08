@@ -266,7 +266,7 @@ Ensure your app has access to the internet then try again.
 
 #### No Replay Captured event
 
-Amplitude automatically creates the `[Amplitude] Replay Captured` event to link replays with your analytics data. If you don't see this event, contact Amplitude support.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event to link replays with your analytics data. If you don't see this event, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 #### Sampling
 
