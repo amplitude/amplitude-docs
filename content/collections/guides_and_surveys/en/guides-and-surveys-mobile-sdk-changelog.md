@@ -8,6 +8,20 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.0.1 (Android, iOS, React Native) \[2026-01-07\]
+
+### ✨ Features
+
+- Feat: add `ignoreAnalyticsAutomaticScreenTracking` option to `AmplitudeInitOptions` to configure default Engagement SDK behavior for automatic screen tracking (GSDK-750) \[android, ios\]
+
+### 🐛 Fixes
+
+- Fix: reset animation queue when nudge disappears (GSDK-518) \[android\]
+- Fix: crash in debug mode when used without calling "boot" on the SDK \[android, ios\]
+- Fix: ensure element selector and preview mode can be started when the other is active (GSDK-717) \[ios\]
+- Fix: ignore Amplitude Analytics automatic screen tracking by default in Engagement SDK (GSDK-781) \[android, ios\]
+
+
 ## 2.0.0 (Android, iOS, React Native) \[2026-01-02\]
 
 ### 🚨 Breaking Changes
@@ -32,6 +46,7 @@ updated_at: 1750443681
 - Fix: remove `isObscuredByPresentedViewController` check for target view visibility (GSDK-720) \[ios\]
 - Fix: tooltip is re-openable after using the "close" button to close it (GSDK-776) \[ios\]
 - Fix: properly apply drop shadow to Guide/Survey cards from theme (GSDK-772) \[android, ios\]
+- Fix: trigger display of matching guide/survey (if any) when user properties are updated via "_setUserProperties" (FOO-2911) \[ios\]
 
 ### 🐇 Performance improvements
 
