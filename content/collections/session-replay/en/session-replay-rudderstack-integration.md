@@ -88,7 +88,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
 
 ## Rudderstack integration
 
-This integration updates Rudderstack's request architecture to ensure that Amplitude's automatically-created `[Amplitude] Replay Captured` event reaches Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact Amplitude support. 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact Amplitude support. 
 
 ## Required field mapping
 
