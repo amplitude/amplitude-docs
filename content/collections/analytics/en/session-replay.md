@@ -157,7 +157,7 @@ To see the number of captured replays, create an [Event Segmentation](/docs/anal
 2. Group by the `[Amplitude] Session Replay ID` event property.
 3. In the formula, use `PROPCOUNT(A)` to count distinct session replay IDs.
 
-This formula returns the number of distinct property values for the property the event is grouped by. In this example, the formula retrieves the number of different session replay IDs.
+This formula returns the number of distinct property values for the property by which the event is grouped. In this example, the formula retrieves the number of different session replay IDs.
 
 ![Session replay count chart showing PROPCOUNT formula](/docs/output/img/analytics/distinct_replays.png)
 
