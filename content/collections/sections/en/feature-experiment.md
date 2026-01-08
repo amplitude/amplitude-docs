@@ -4,8 +4,8 @@ published: false
 blueprint: section
 title: 'Feature Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
-updated_at: 1754408643
+updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
+updated_at: 1767909368
 nav_title: experiment
 template: landing-page-experiment
 current-collection: experiment|advanced-techniques|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow|experiment_integrations|experiment_troubleshooting|under-the-hood|workflow
