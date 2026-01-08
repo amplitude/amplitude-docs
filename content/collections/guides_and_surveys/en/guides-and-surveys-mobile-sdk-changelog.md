@@ -20,7 +20,6 @@ updated_at: 1750443681
 - Fix: crash in debug mode when used without calling "boot" on the SDK \[android, ios\]
 - Fix: ensure element selector and preview mode can be started when the other is active (GSDK-717) \[ios\]
 - Fix: ignore Amplitude Analytics automatic screen tracking by default in Engagement SDK (GSDK-781) \[android, ios\]
-- Fix: hide buttons until text animation completes, if applicable (GSDK-780) \[android, ios\]
 
 
 ## 2.0.0 (Android, iOS, React Native) \[2026-01-02\]
