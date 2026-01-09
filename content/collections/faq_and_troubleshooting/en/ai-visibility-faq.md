@@ -7,11 +7,14 @@ updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1763401005
 ---
 ## What is AI Visibility? 
-
 AI Visibility is Amplitude’s solution for tracking and improving your brand’s presence in AI-generated answers across ChatGPT and Google AI Overview.
 
-## Why does AI search matter for my business?
+## How frequently is AI Visibility updated?
+AI Visibility within the Amplitude system is automatically updated weekly.
 
+If you are using the free version of AI Visibility, those reports are not updated.
+
+## Why does AI search matter for my business?
 Consumers are increasingly using AI assistants instead of traditional search engines to research products. If your brand isn’t appearing as a recommendation in AI answers, you risk losing high-intent customers to competitors.
 
 ## How does AI Visibility measure brand performance in AI search?
@@ -20,15 +23,17 @@ AI Visibility provides a customer dashboard that includes your visibility score,
 ## Can AI Visibility show me where competitors are winning?
 Yes. The competitive rankings feature highlights exactly which prompts and keywords lead to competitor mentions in AI search. It also provides recommendations about how to close the gap.
 
-## How frequently is AI Visibility updated?
-
-AI Visibility is automatically updated weekly.
-
-## Does AI Visibility connect to traffic and conversions?
-Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
+## What are the usage limits for AI Visibility?
+* 500 prompts each month for free users
+* 1000 prompts each month for Plus
+* 2500 prompts each month for Growth
+* 5000 prompts each month for Enterprise
 
 ## What platforms and models does AI Visibility track?
 Currently, AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
+
+## Does AI Visibility connect to traffic and conversions?
+Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
 
 ## Who should use AI Visibility?
 Marketing, SEO, content, and product teams can all benefit—whether monitoring brand mentions, optimizing content for AI search, or proving ROI to leadership.
@@ -49,3 +54,10 @@ Compared to traditional SEO tools that have recently added AI visibility feature
 As part of the Amplitude Digital Analytics Platform, AI Visibility connects with the rest of your org’s data to uniquely link AEO insights with ROI. It also uses the platform’s capabilities to prioritize recommendations and simulate changes, helping you take action on your insights faster. Because other SEO suites are siloed, they require separate integrations or manual effort to do anything with your data.
 
 And with other SEO suites, AI visibility comes at an extra cost—with Amplitude, it’s free.
+
+## Can I modify the prompts? 
+Yes, if you are logged into the Amplitude system. After you enter new prompts, the system refreshes. 
+
+## Can I change the LLM that AI Visibility uses? 
+Not at this time.
+
