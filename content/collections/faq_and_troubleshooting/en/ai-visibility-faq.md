@@ -24,7 +24,7 @@ AI Visibility provides a customer dashboard that includes your visibility score,
 Yes. The competitive rankings feature highlights exactly which prompts and keywords lead to competitor mentions in AI search. It also provides recommendations about how to close the gap.
 
 ## What are the usage limits for AI Visibility?
-* 500 prompts each month for free users
+* 500 prompts each month for free/Starter users
 * 1000 prompts each month for Plus
 * 2500 prompts each month for Growth
 * 5000 prompts each month for Enterprise
