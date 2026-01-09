@@ -43,7 +43,7 @@ If you don't add parameters to Bing Ads' `FinalUrls`, Amplitude infers default v
 Before you begin, ensure you have the following:
 
 * A Bing Ads account
-* A OAuth account must have access to the Ad account in order to configure the integration. (TOCHECK)
+* A user OAuth account with access to the Ad account in order to configure the integration. 
 
 ## Amplitude configuration
 
@@ -52,7 +52,7 @@ To enable the integration in Amplitude: (TODO)
 1. Navigate to Data Sources and find **Bing Ads**.
 2. Enter a **Display Name** for the connection.
 3. Select the Bing Ads account from which you want to import data.
-4. Choose to import historical data from a period you specify, up to one year. Amplitude backfills this data, and continues daily imports.
+4. Choose to import historical data from a period you specify, up to one year. Amplitude backfills these data, and continues daily imports.
 5. Click **Save** to create the integration.
 
 ## Analyze your data
@@ -65,7 +65,7 @@ Bing Ads provides the properties listed in this section.
 
 ### Event properties
 
-Bing Ads provides the following event properties. (TOCHECK)
+Bing Ads provides the following event properties.
 
 | Property Name            | Description                                            |
 | ------------------------ | ------------------------------------------------------ |
@@ -77,10 +77,9 @@ Bing Ads provides the following event properties. (TOCHECK)
 | `ad_metrics.conversions` | The number of conversions attributed to the ad.        |
 | `ad_metrics.cost`        | The total cost associated with the ad.                 |
 | `ad_metrics.impressions` | The number of times the ad was shown to users.         |
-| `ad_name`                | The name of the ad.                                    |
 | `ad_platform`            | The platform source for the ad. Defaults to `bing`. |
 | `campaign_id`            | The ID of the campaign.                                |
-| `campaign_name`          | The name of the campaig.                               |
+| `campaign_name`          | The name of the campaign.                               |
 
 ### User properties
 
@@ -107,7 +106,7 @@ Amplitude imports Bing Ads data once per day, and always for the previous calend
 
 If Bing Ads revises campaign data after Amplitude’s import complets, those changes don't appear automatically. 
 
-Consider this a you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in Bing Ads.
+Consider this as you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in Bing Ads.
 
 For more information, see [Reporting Data Retention Time Periods](https://learn.microsoft.com/en-us/advertising/guides/report-data-retention-time-periods?view=bingads-13) in Bing Ads' documentation.
 

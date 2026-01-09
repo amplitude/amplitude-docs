@@ -80,7 +80,7 @@ TikTok provides the following event properties.
 | `ad_name`                | The name of the ad.                                    |
 | `ad_platform`            | The platform source for the ad. Defaults to `tikttok`. |
 | `campaign_id`            | The ID of the campaign.                                |
-| `campaign_name`          | The name of the campaig.                               |
+| `campaign_name`          | The name of the campaign.                               |
 
 ### User properties
 
@@ -107,7 +107,7 @@ Amplitude imports TikTok Ads data once per day, and always for the previous cale
 
 If TikTok revises campaign data after Amplitude’s import complets, those changes don't appear automatically. 
 
-Consider this a you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in TikTok Ads.
+Consider this as you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in TikTok Ads.
 
 For more information, see [Data latency for reports](https://business-api.tiktok.com/portal/docs?id=1738864894606337) in TikTok’s documentation.
 
