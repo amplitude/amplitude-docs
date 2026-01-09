@@ -30,7 +30,7 @@ Yes. The competitive rankings feature highlights exactly which prompts and keywo
 * 5000 prompts each month for Enterprise
 
 ## What platforms and models does AI Visibility track?
-Currently, AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
+AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
 
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
