@@ -223,26 +223,34 @@ This lets you:
 
 If you are already using Amplitude's Analytics SDK, you can update the tracking endpoint for the browser SDK through `serverUrl`.
 
-If you are not using Amplitude's Analytics SDK, you can add the following script before the Web Experiment script. 
+If you are not using Amplitude's Analytics SDK, you can add the following script before the Web Experiment script.
 
 **Important**: The impression event forwarding script must be placed above the Web Experiment script.
 
 ```html
 <script>
-window.experimentIntegration = {
-    getUser: () => {
-        // TODO: Return user
-        return {
-            user_id: "user",
-            device_id: "device"
-        };
-    },
+// TODO: Replace this object with your tracker implementation.
+const customTracker = {
+  track: (eventType, eventProperties) => {
+    // TODO: Send eventType and eventProperties to your analytics tool.
+    console.log({ eventType, eventProperties });
+  },
+};
 
-    track: (e) => {
-        // TODO: Track event
-        <CUSTOM_TRACKER>.track(e.eventType, e.eventProperties);
-        return true;
-    }
-}
+window.experimentIntegration = {
+  getUser: () => {
+    // TODO: Return user.
+    return {
+      user_id: "user",
+      device_id: "device",
+    };
+  },
+
+  track: (e) => {
+    // TODO: Track event
+    customTracker.track(e.eventType, e.eventProperties);
+    return true;
+  },
+};
 </script>
 ```
