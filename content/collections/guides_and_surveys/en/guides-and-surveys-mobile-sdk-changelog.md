@@ -8,6 +8,12 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.0.2 (iOS) \[2026-01-09\]
+
+### 🐛 Fixes
+- Fix: compile SDK framework with Xcode 16.2 / Swift 6.0.3 for broader compatiblity (GSDK-786) \[ios\]
+
+
 ## 2.0.1 (Android, iOS, React Native) \[2026-01-07\]
 
 ### ✨ Features
