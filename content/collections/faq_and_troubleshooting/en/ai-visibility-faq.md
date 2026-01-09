@@ -9,6 +9,12 @@ updated_at: 1763401005
 ## What is AI Visibility? 
 AI Visibility is Amplitude’s solution for tracking and improving your brand’s presence in AI-generated answers across ChatGPT and Google AI Overview.
 
+## Who should use AI Visibility?
+Marketing, SEO, content, and product teams can all benefit—whether monitoring brand mentions, optimizing content for AI search, or proving ROI to leadership.
+
+## How do I get started with AI Visibility?
+AI Visibility is available directly inside the Amplitude platform and is available to all customers across all plans. We also provide a limited, free experience to non-customers here.
+
 ## How frequently is AI Visibility updated?
 AI Visibility within the Amplitude system is automatically updated weekly.
 
@@ -35,11 +41,11 @@ AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
 
-## Who should use AI Visibility?
-Marketing, SEO, content, and product teams can all benefit—whether monitoring brand mentions, optimizing content for AI search, or proving ROI to leadership.
+## Are the prompts shown in AI Visibility based on data from real users?
+No, OpenAPI, Google, and other companies do not share what users are searching. The prompts Amplitude generates are based on what LLMs know is relevant to your brand. 
 
-## How do I get started with AI Visibility?
-AI Visibility is available directly inside the Amplitude platform and is available to all customers across all plans. We also provide a limited, free experience to non-customers here.
+## Is AI Visibility English only? 
+No. In the logged-in version, you can configure a brand's prompts ande responses for any language. However, LLMs may occasionally still use English. 
 
 ## How does Amplitude’s AI Visibility compare to other AEO-specific tools like Profound and Evertune AI?
 Amplitude’s AI Visibility stands out compared to other AEO tools because of two key differentiators: platform and pricing.
@@ -60,4 +66,7 @@ Yes, if you are logged into the Amplitude system. After you enter new prompts, t
 
 ## Can I change the LLM that AI Visibility uses? 
 Not at this time.
+
+## Can I update my competitors?
+Yes. In the main AI Visibility page, you can make the changes you want.
 
