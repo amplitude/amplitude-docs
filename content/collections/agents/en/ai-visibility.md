@@ -195,6 +195,10 @@ Be aware that AI Visibility can't directly access or make changes to your websit
 
 The following procedures describe how to implement or create AI Visibility's actions:
 
+{{partial:admonition type="tip" heading="Recommendations are in Beta"}}
+The Recommendations functionality is currently in Beta. This means that responses and suggestions may be delayed, the functionality may not operate exactly as expected, and that you should review the recommendations before implementing them. When the feature is out of Beta, this message will disappear.
+{{/partial:admonition}}
+
 ##### To implement a recommendation
 1. Go to *AI Visibility > Actions > Recommendations*.
 2. Review the recommendations to improve your overall LLM visibility.
