@@ -390,7 +390,7 @@ Add the following intent filter to the main activity to your project's `AndroidM
 // In your Activity
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
-    amplitudeEngagement.handlePreviewLinkIntent(intent)
+    amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
 ## Changelog
