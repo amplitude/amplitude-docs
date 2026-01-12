@@ -7,7 +7,7 @@ exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1765824836
 ---
-The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
+The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query and create Amplitude content including charts, dashboards, experiments, and cohorts directly through AI interfaces using natural language.
 
 The Amplitude MCP server is listed in the [official MCP servers registry](https://github.com/modelcontextprotocol/servers) on GitHub. You can also find MCP integration guides and examples in [Anthropic's Claude documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp), the [MCP quickstart resources](https://github.com/modelcontextprotocol/quickstart-resources), and [Cursor's MCP documentation](https://docs.cursor.com/context/model-context-protocol).
 
@@ -37,26 +37,31 @@ Use the Standard Server URL unless your Amplitude data resides in the EU region.
 The Amplitude MCP provides comprehensive access to your analytics through these tools:
 
 {{partial:collapse name="Available tools"}}
-| Tool Name              | Description                                                                                                                                    |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `search`               | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
-| `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
-| `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
-| `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
-| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
-| `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
-| `get_charts`           | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
-| `get_dashboard`        | Get specific dashboards and all their charts including chart IDs for individual queries                                              |
-| `get_notebook`         | Get specific notebooks and all their charts including chart IDs for individual queries                                               |
-| `get_flags`            | Retrieve feature flags from a project with optional filtering by deployment, type, and deleted status                                          |
-| `get_experiments`      | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
-| `get_deployments`      | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
-| `get_metrics`          | List all metrics from a project with optional filtering and sorting by various criteria                                                        |
-| `get_metric`           | Get detailed information about a specific metric by ID                                                                                         |
-| `get_events`           | Retrieve events from a project with optional filtering and sorting                                                                             |
-| `get_event_properties` | Retrieve event properties from a project with filtering options                                                                                |
-| `get_user_properties`  | Retrieve user properties from a project with filtering options                                                                                 |
-| `get_session_replays`  | Search for session replays in the last 30 days, filtered by user properties or events.                                                         |
+| Tool Name                  | Description                                                                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `search`                   | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
+| `query_chart`              | Query chart data result using the internal dash API to get chart data                                                                          |
+| `query_experiment`         | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
+| `query_dataset`            | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
+| `get_context`              | Get context information about the current user, organization, and accessible projects                                                          |
+| `get_charts`               | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
+| `get_dashboard`            | Get specific dashboards and all their charts including chart IDs for individual queries                                                        |
+| `get_experiments`          | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
+| `get_deployments`          | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
+| `get_events`               | Retrieve events from a project with optional filtering and sorting                                                                             |
+| `get_event_properties`     | Retrieve event properties from a project with filtering options                                                                                |
+| `get_user_properties`      | Retrieve user properties from a project with filtering options                                                                                 |
+| `get_session_replays`      | Search for session replays in the last 30 days, filtered by user properties or events                                                          |
+| `save_chart_edits`         | Save edits to existing charts, enabling you to modify chart configurations and parameters                                                      |
+| `create_dashboard`         | Create new dashboards in your Amplitude project                                                                                                |
+| `create_experiment`        | Create new experiments in your Amplitude project                                                                                               |
+| `create_cohort`            | Create new cohorts based on user properties and behaviors                                                                                      |
+| `get_cohorts`              | Retrieve cohorts from your project with filtering and sorting options                                                                          |
+| `get_users`                | Retrieve user data from your project                                                                                                           |
+| `get_feedback_insights`    | Retrieve customer feedback insights and analysis                                                                                               |
+| `get_feedback_comments`    | Retrieve customer feedback comments                                                                                                            |
+| `get_feedback_mentions`    | Retrieve customer feedback mentions                                                                                                            |
+| `get_feedback_sources`     | Retrieve customer feedback sources and channels                                                                                                |
 
 {{/partial:collapse}}
 
@@ -259,6 +264,18 @@ For MCP-compatible clients:
 
 > Which features have the highest engagement rates?
 
+### Creation workflows
+
+> Create a dashboard showing our key product metrics.
+
+> Create an experiment to test the new checkout flow with a 50/50 split.
+
+> Create a cohort of users who completed onboarding in the last 30 days.
+
+> Edit the retention chart to show weekly instead of monthly data.
+
+> Build a cohort of power users who have used the product more than 10 times.
+
 ### Experiment analysis
 
 > What's the performance of the checkout experiment?
@@ -275,6 +292,22 @@ For MCP-compatible clients:
 
 > Show experiments testing the payment flow.
 
+### User and cohort analysis
+
+> Show me users who signed up in the last week.
+
+> What cohorts exist for high-value customers?
+
+> Analyze the behavior of users in the "Active Users" cohort.
+
+### Customer feedback analysis
+
+> What are the main insights from customer feedback this month?
+
+> Show me recent customer feedback comments about the mobile app.
+
+> Which feedback sources are generating the most mentions?
+
 ### Advanced analysis
 
 > Compare user behavior between iOS and Android platforms.
@@ -283,7 +316,9 @@ For MCP-compatible clients:
 
 > Analyze feature adoption rates after the recent product launch.
 
-## Typical analysis workflow
+## Typical workflows
+
+### Analysis workflow
 
 Most analysis questions follow this pattern:
 
@@ -300,6 +335,24 @@ Example conversation flow:
 > AI: [Queries the data and presents results]
 > User: Can you break this down by user segment?
 > AI: [Modifies query to include segmentation]
+
+### Creation workflow
+
+You can create new content directly through natural language:
+
+1. **Create**: Build new charts, dashboards, experiments, or cohorts
+2. **Configure**: Specify parameters and settings through conversation
+3. **Refine**: Edit and adjust based on your needs
+4. **Deploy**: Save and use the created content in Amplitude
+
+Example conversation flow:
+
+> User: Create a dashboard for mobile app metrics.
+> AI: [Creates dashboard with relevant charts]
+> User: Add a chart showing daily active users by platform.
+> AI: [Adds chart to the dashboard]
+> User: Create a cohort of users who completed checkout.
+> AI: [Creates cohort with specified criteria]
 
 ## Security and compliance
 
