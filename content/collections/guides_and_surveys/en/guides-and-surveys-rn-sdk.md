@@ -81,8 +81,8 @@ Linking.addEventListener('url', async ({ url }) => {
 });
 ```
 
-{{partial:admonition type="note" heading="serverZone initialization"}}
-`serverZone` is used to initialize `@amplitude/analytics-react-native`. This initialization means that @amplitude/analytics-react-native is automatically used, so you don't need to pass `serverZone` in the `options` argument to `init`.
+{{partial:admonition type="note" heading="Amplitude server zone"}}
+The `serverZone` used to initialize `@amplitude/analytics-react-native` will automatically be used ([ref](/docs/sdks/analytics/react-native/react-native-sdk#configure-the-sdk)), so you don't need to pass `serverZone` in the `options` argument to `init`.
 {{/partial:admonition}}
 
 
