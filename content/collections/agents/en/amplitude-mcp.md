@@ -340,10 +340,10 @@ Example conversation flow:
 
 You can create new content directly through natural language:
 
-1. **Create**: Build new charts, dashboards, experiments, or cohorts
-2. **Configure**: Specify parameters and settings through conversation
-3. **Refine**: Edit and adjust based on your needs
-4. **Deploy**: Save and use the created content in Amplitude
+1. **Create**: Build new charts, dashboards, experiments, or cohorts.
+2. **Configure**: Specify parameters and settings through conversation.
+3. **Refine**: Edit and adjust based on your needs.
+4. **Deploy**: Save and use the created content in Amplitude.
 
 Example conversation flow:
 
