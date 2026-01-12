@@ -47,7 +47,7 @@ Before you begin, ensure you have the following:
 
 ## Amplitude configuration
 
-To enable the integration in Amplitude: (TODO)
+To enable the integration in Amplitude:
 
 1. Navigate to Data Sources and find **Bing Ads**.
 2. Enter a **Display Name** for the connection.
@@ -98,7 +98,7 @@ Keep the following potential issues in mind as you build out the integration.
 
 ### Insufficient permissions
 
-Your Bing Ads Manager account requires administrator privileges. This level of permission allows Amplitude to add and remove users from specific user lists in Bing Ads. (TOCHECK)
+Your Bing Ads Manager account requires administrator privileges. This level of permission allows Amplitude to add and remove users from specific user lists in Bing Ads.
 
 ### Daily ad metric discrepancies
 
