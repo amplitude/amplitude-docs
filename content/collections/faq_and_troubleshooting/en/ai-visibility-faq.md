@@ -71,5 +71,8 @@ No.
 Yes. In the main AI Visibility page, you can make the changes you want.
 
 ## Can I identify activity such as sessions and events from LLM or conversational AI tools?  
-Activity referred to an application from an LLM or conversational AI tool can be identified through either the referrer or the `utm_source`. There is logic for identifying each to the default channel rules. Organizations with existing rules can replicate this logic in their own rules.
+Activity referred to an application from an LLM or conversational AI tool can be identified through either the referrer or the `utm_source`. There is logic for identifying each to the default channel rules. If you already have existing rules, you can replicate this logic within your own rules.
+
+## Is prompt or citation level data available for referrals? 
+LLM or conversational AI tools don't currently suppoly the prompts when users are referred to other applications. You can evaluate entry pages for sessions from LLMs to understand which pages on your site are most commonly receiving direct referrals. 
 
