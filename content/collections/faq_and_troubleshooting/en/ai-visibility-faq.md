@@ -70,3 +70,6 @@ No.
 ## Can I update my competitors?
 Yes. In the main AI Visibility page, you can make the changes you want.
 
+## Can I identify activity such as sessions and events from LLM or conversational AI tools?  
+Activity referred to an application from an LLM or conversational AI tool can be identified through either the referrer or the `utm_source`. There is logic for identifying each to the default channel rules. Organizations with existing rules can replicate this logic in their own rules.
+
