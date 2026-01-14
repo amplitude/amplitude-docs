@@ -25,7 +25,7 @@ This article covers the installation of Session Replay using the Browser SDK plu
 {{partial:admonition type="info" heading="Session Replay and performance"}}
 Session Replay minimizes impact on the performance of web pages on which it's installed by:
 
-- Asynchronously processing content through webhooks, which provides efficient compression and optimized bundle sizes
+- Asynchronously processing content through webhooks, which provides efficient compression and optimized bundle sizes.
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
