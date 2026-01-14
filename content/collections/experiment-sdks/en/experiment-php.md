@@ -102,14 +102,22 @@ Fetches variants for a [user](/docs/feature-experiment/data-model#users) and ret
 
 ```php
 <?php
-fetch(User $user, array $flagKeys = []): array<Variant>
+fetch(User $user, ?FetchOptions $fetchOptions = null): array<Variant>
 // An array of variants is returned on success, an empty array is returned on failure
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
-| `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `flagKeys` | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. | `[]` |
+| `tracksExposure` | Tracks or doesn't track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
+| `tracksAssignment` | Tracks or doesn't track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
 
 ```php
 <?php
@@ -121,7 +129,7 @@ $user = \AmplitudeExperiment\User::builder()
 $variants = $client->fetch($user);
 ```
 
-After fetching variants for a user, you may to access the variant for a specific flag.
+After fetching variants for a user, you may want to access the variant for a specific flag.
 
 ```php
 <?php
@@ -136,9 +144,9 @@ if ($variant) {
 ```
 
 {{partial:collapse name="Account-level bucketing and analysis (v1.0.0+)"}}
-If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or through [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```php
 <?php
@@ -225,7 +233,8 @@ You can configure the SDK client on initialization.
 | `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
 | `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
 | `bootstrap` | Bootstrap the client with an array of flag key to flag configuration | `[]` |
-| [`assignmentConfig`](#assignment-tracking) | Configuration for automatically tracking assignment events after an evaluation. | `null` |
+| `assignmentConfig` | **Deprecated.** Configuration for automatically tracking assignment events after an evaluation. | `null` |
+| `exposureConfig` | Configuration for tracking exposure events after an evaluation. | `null` |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you use Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
@@ -265,18 +274,19 @@ $client->getFlagConfigs();
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags fetched on [`refreshFlagConfigs()`](#refreshflagconfigs). Give `evaluate()` a user object argument. Optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
-{{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when you call `evaluate()`.
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposureConfig`](#configuration) to enable exposure tracking. Then, set `tracksExposure` to `true` in `EvaluateOptions` when calling `evaluate()`.
 {{/partial:admonition}}
 
 ```php
-evaluate(User $user, array $flagKeys = []): array
+evaluate(User $user, array $flagKeys = [], ?EvaluateOptions $options = null): array
 ```
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. |
+| `options` | optional | The [options](#evaluate-options) for the evaluation request. |
 
 ```php
 <?php
@@ -305,7 +315,15 @@ if ($variant) {
 }
 ```
 
+**EvaluateOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
+
 ### Assignment tracking
+
+**Deprecated.** Use [Exposure tracking](#exposure-tracking) instead.
 
 You can configure the local evaluation client to send [assignment events](/docs/feature-experiment/under-the-hood/event-tracking#assignment-events) to Amplitude.
 
@@ -373,6 +391,76 @@ $config = \AmplitudeExperiment\Amplitude\AmplitudeConfig::builder()
           ->build();
 $amplitude = new \AmplitudeExperiment\Amplitude\Amplitude('<API_Key>', $config);
 $defaultAssignmentTrackingProvider = new \AmplitudeExperiment\Assignment\DefaultAssignmentTrackingProvider($amplitude);
+```
+
+### Exposure tracking
+
+You can configure the local evaluation client to send exposure events to Amplitude.
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `exposureTrackingProvider` | The ExposureTrackingProvider used to send exposure events. | *required* |
+| `cacheCapacity` | The maximum number of exposures stored in the exposure cache. | `65536` |
+| `apiKey` | The analytics API key. Not to be confused with the experiment deployment key. | *required* |
+| `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
+
+#### ExposureTrackingProvider
+
+The local evaluation client uses an exposure tracking provider to send exposure events. Amplitude provides a default exposure tracking provider that tracks events to Amplitude. You can implement a custom provider to track events to other destinations or to customize the tracking behavior.
+
+```php title="ExposureTrackingProvider"
+<?php
+interface ExposureTrackingProvider {
+  public function track(Exposure $exposure): void;
+}
+```
+
+The local evaluation client calls `track()` when it determines there are untracked exposure events. It compares the resulting exposure from `evaluate()` with the exposure cache and tracks it if it's not in the cache.
+
+| Parameter | Requirement | Description |
+| --- | --- | --- |
+| `exposure` | required | The object representing an Experiment exposure event. |
+
+#### DefaultExposureTrackingProvider
+
+The default exposure tracking provider is an implementation of the `ExposureTrackingProvider` interface that sends exposure events to Amplitude using the internal `Amplitude` package via synchronous HTTP requests.
+
+```php title="DefaultExposureTrackingProvider"
+<?php
+class DefaultExposureTrackingProvider implements ExposureTrackingProvider {
+  public function __construct(Amplitude $amplitude);
+}
+```
+
+**Amplitude**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `apiKey` | The analytics API key. Not to be confused with the experiment deployment key. | *required* |
+| `config` | Configuration options | `null` |
+
+**AmplitudeConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `flushQueueSize` | Events wait in the buffer and are sent in a batch. Experiment flushes the buffer when the number of events reaches the `flushQueueSize`. | `200` |
+| `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
+| `serverZone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
+| `serverUrl` | The API endpoint URL that events are sent to. Automatically selected by `serverZone` and `useBatch`. If this field is set with a string value instead of `null`, then `serverZone` and `useBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
+| `useBatch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
+| `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
+| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
+| `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
+| `logLevel` | The [log level](#log-level) to use for the logger. | `LogLevel::ERROR` |
+
+```php
+<?php
+$config = \AmplitudeExperiment\Amplitude\AmplitudeConfig::builder()
+          ->useBatch(true)
+          ->minIdLength(10)
+          ->build();
+$amplitude = new \AmplitudeExperiment\Amplitude\Amplitude('<API_Key>', $config);
+$defaultExposureTrackingProvider = new \AmplitudeExperiment\Exposure\DefaultExposureTrackingProvider($amplitude);
 ```
 
 ## Custom Logger

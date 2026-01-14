@@ -65,7 +65,7 @@ user = AmplitudeExperiment::User.new(
     'premium' => true
   }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 
 # (3) Access a flag's variant
 variant = variants['YOUR-FLAG-KEY']
@@ -125,12 +125,20 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```ruby
-fetch(user: AmplitudeExperiment::User) : Variants
+fetch_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::FetchOptions = nil) : Variants
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | To track or not track an exposure event for this fetch request. If `nil`, uses the server's default behavior (does not track exposure). | `nil` |
+| `tracks_assignment` | To track or not track an assignment event for this fetch request. If `nil`, uses the server's default behavior (does track assignment). | `nil` |
 
 ```ruby
 user = AmplitudeExperiment::User.new(
@@ -140,7 +148,7 @@ user = AmplitudeExperiment::User.new(
         'premium' => true
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 After fetching variants for a user, you may to access the variant for a specific flag.
@@ -161,16 +169,17 @@ end
 The fetch method is synchronous. To fetch asynchronously, you can use `fetch_async` method
 
 ```ruby
-fetch_async(user: AmplitudeExperiment::User, &callback)
+fetch_async_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::FetchOptions = nil, &callback)
 ```
 
 | Parameter  | Requirement | Description                                                                                           |
 |------------|-------------|-------------------------------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for.                         |
+| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched.                         |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
 | `callback` | optional    | The callback to handle the variants. Callback takes two arguments: User object and returned Variants. |
 
 ```ruby
-experiment.fetch_async(user) do |_, variants|
+experiment.fetch_async_v2(user) do |_, variants|
   variant = variants['sdk-ci-test']
   unless variant.nil?
     if variant.value == 'on'
@@ -198,7 +207,7 @@ user = AmplitudeExperiment::User.new(
       'org name' => ['Amplitude']
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 To pass freeform group properties, see this example:
@@ -214,7 +223,7 @@ user = AmplitudeExperiment::User.new(
       'org name' => ['Amplitude']
     }
 )
-variants = experiment.fetch(user)
+variants = experiment.fetch_v2(user)
 ```
 
 {{/partial:collapse}}
@@ -291,7 +300,7 @@ user = AmplitudeExperiment::User.new(
     'premium' => true
   }
 )
-variants = experiment.evaluate(user)
+variants = experiment.evaluate_v2(user)
 variant = variants['YOUR-FLAG-KEY']
 unless variant.nil?
     if variant.value == 'on'
@@ -343,7 +352,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start`](#start) | `30000` |
 | `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
 | `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
-| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `assignment_config` | **Deprecated.** Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `exposure_config` | Configuration for tracking exposure events after an evaluation. | `nil` |
 | `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
 **AssignmentConfig**
@@ -352,6 +362,24 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
+| `flush_queue_size` | Events wait in the buffer and are sent in a batch. The buffer is flushed when the number of events reaches `flush_queue_size`. | `200` |
+| `flush_interval_millis` | Events wait in the buffer and are sent in a batch. The buffer is flushed every `flush_interval_millis` milliseconds. | `10 seconds` |
+| `flush_max_retries` | The number of times the client retries an event when the request returns an error. | `12` |
+| `logger` | The logger instance used by Amplitude client. | Default Ruby logger |
+| `min_id_length` | The minimum length of `user_id` and `device_id`. | `5` |
+| `callback`  | Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `nil` |
+| `server_zone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
+| `server_url` | The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `nil`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
+| `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
+| `storage_provider` | Used to create storage instance to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorageProvider` |
+| `opt_out`  | Opt out option. If set to `True`, client doesn't process and send events. | `False` |
+
+**ExposureConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
 | `flush_queue_size` | Events wait in the buffer and are sent in a batch. The buffer is flushed when the number of events reaches `flush_queue_size`. | `200` |
 | `flush_interval_millis` | Events wait in the buffer and are sent in a batch. The buffer is flushed every `flush_interval_millis` milliseconds. | `10 seconds` |
 | `flush_max_retries` | The number of times the client retries an event when the request returns an error. | `12` |
@@ -392,26 +420,27 @@ experiment.start
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start`](#start). You must give evaluate a user object argument, and can you can optionally pass it an array of flag keys if only a specific subset of required flag variants are required.
 
-{{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposure_config`](#configuration) to enable exposure tracking. Then, set `tracks_exposure` to `true` in `EvaluateOptions` when calling `evaluate_v2()`.
 {{/partial:admonition}}
 
 ```ruby
-evaluate(user, flag_keys)
+evaluate_v2(user: AmplitudeExperiment::User, flag_keys: Array[String] = [], options: AmplitudeExperiment::EvaluateOptions = nil) : Hash[String, Variant]
 ```
 
 | Parameter   | Requirement | Description |
 |-------------| --- | --- |
 | `user`      | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flag_keys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
+| `options`   | optional | The [options](#evaluate-options) for the evaluation request. |
 
 ```ruby
 # The user to evaluate
 user = AmplitudeExperiment::User.new(user_id: 'test-user')
 # Evaluate all flag variants
-all_variants = experiment.evaluate(user)
+all_variants = experiment.evaluate_v2(user)
 # Evaluate a specific subset of flag variants
-specific_variants = experiment.evaluate(user, ["<FLAG_KEY_1>", "<FLAG_KEY_2>"])
+specific_variants = experiment.evaluate_v2(user, ["<FLAG_KEY_1>", "<FLAG_KEY_2>"])
 # Access a variant
 variant = all_variants["<FLAG_KEY>"]
 if variant.value == 'on':
@@ -420,6 +449,12 @@ else:
     # Flag is off
 end
 ```
+
+**EvaluateOptions**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 
 ### Local evaluation cohort targeting
 
