@@ -229,7 +229,7 @@ Session Replay sends data to the following endpoints:
 
 #### Example CSP header
 
-For US data center:
+For the US region:
 
 ```text
 Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api-secure.amplitude.com; worker-src 'self' blob:;
