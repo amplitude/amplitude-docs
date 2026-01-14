@@ -13,7 +13,7 @@ Most AI Visibility functionality is available to everyone, with or without an Am
 
 For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
 
-AI Visibility reports run one time each week. Changes made to AI Visibility are applied when the report reruns. 
+AI Visibility reports run one time each week. Any hanges made to AI Visibility become active when the report reruns. 
 
 ## Free visibility reports
 
