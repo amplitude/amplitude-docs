@@ -24,14 +24,10 @@ This article covers the installation of Session Replay using the standalone SDK.
 {{partial:admonition type="info" heading="Session Replay and performance"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
 
-- Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread.
+- Asynchronously processing through webhooks (if enabled) for efficient compression and optimizing bundle sizes.
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
-
-## Performance
-
-Session Replay minimizes its impact on page performance through asynchronous processing, efficient compression, and optimizing bundle sizes.
 
 ### Bundle size
 
