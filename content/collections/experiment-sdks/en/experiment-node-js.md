@@ -119,6 +119,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. Go to [custom logging](#custom-logging). | `Error` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. Go to [custom logging](#custom-logging). | `ConsoleLogger` |
 | `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -258,7 +260,7 @@ initializeLocal(apiKey: string, config?: LocalEvaluationConfig): LocalEvaluation
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `streamUpdates` [configuration](#configuration_1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration_1) as well for fallback.
+Use the `streamUpdates` [configuration](#configuration) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration) as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -274,6 +276,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `ConsoleLogger` |
 | `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
@@ -290,7 +294,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
 
@@ -321,7 +325,7 @@ await experiment.start();
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
+Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
 {{/partial:admonition}}
 
 ```js
@@ -363,33 +367,93 @@ const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
 
 Consider configuring the `maxCohortSize` to avoid downloading large cohorts which may cause your service to run out of memory. Cohorts that are too large will not be downloaded.
 
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `LoggerProvider` interface to integrate your own logger.
+
+### Log levels
+
+- `Verbose`: Detailed debugging logs
+- `Debug`: Development and troubleshooting logs
+- `Info`: General information
+- `Warn`: Warnings
+- `Error`: Errors (default)
+- `Disable`: No logs
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to use your own logging solution:
+
+```ts
+import { Experiment, LogLevel, LoggerProvider } from '@amplitude/experiment-node-server';
+
+class MyCustomLogger implements LoggerProvider {
+  verbose(message, ...optionalParams) {
+    // Implement verbose logging
+  }
+
+  debug(message, ...optionalParams) {
+    // Implement debug logging
+  }
+
+  info(message, ...optionalParams) {
+    // Implement info logging
+  }
+
+  warn(message, ...optionalParams) {
+    // Implement warn logging
+  }
+
+  error(message, ...optionalParams) {
+    // Implement error logging
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initializeLocal(
+  '<DEPLOYMENT_KEY>',
+  {
+    logLevel: LogLevel.Debug,
+    loggerProvider: new MyCustomLogger()
+  }
+);
+```
+
+{{partial:admonition type="note" heading="Backward compatibility"}}
+The `debug` configuration field is still supported. When set to `true`, it overrides `logLevel` to `Debug`.
+{{/partial:admonition}}
+
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
 
 ```js
 import { AmplitudeCookie } from '@amplitude/experiment-node-server';
+import { v4 as uuidv4 } from 'uuid';
 
-app.use((req, res, next) => {
-  const { query, cookies, url, path, ip, host } = req
+// Get the cookie name for the Amplitude API key
+// For Browser SDK 2.0 cookies, pass true as second parameter:
+// const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key', true);
+const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key');
+let deviceId = null;
 
-  // grab amp device id if present
-  const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key');
-  let deviceId = null;
-  if (cookies[ampCookieName]) {
-    deviceId = AmplitudeCookie.parse(cookies[ampCookieName]).device_id;
-  }
-  if (!deviceId) {
-    // deviceId doesn't exist, set the Amplitude Cookie
-    deviceId = random22CharBase64String();
-    const ampCookieValue = AmplitudeCookie.generate(deviceId);
-    res.cookie(ampCookieName, ampCookieValue, {
-      domain: '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
-      maxAge: 365 * 24 * 60 * 60 * 1000, // this is currently the same as the default in the Amplitude JS SDK, can be modified
-      sameSite: 'Lax'
-    });
-  }
+// Try to get device ID from existing cookie
+if (req.cookies[ampCookieName]) {
+  deviceId = AmplitudeCookie.parse(req.cookies[ampCookieName]).device_id;
+  // For Browser SDK 2.0: AmplitudeCookie.parse(req.cookies[ampCookieName], true).device_id;
+}
 
-  next()
-});
+// If no device ID found, generate a new one and set the cookie
+if (!deviceId) {
+  deviceId = uuidv4();
+  const ampCookieValue = AmplitudeCookie.generate(deviceId);
+  // For Browser SDK 2.0: AmplitudeCookie.generate(deviceId, true);
+  res.cookie(ampCookieName, ampCookieValue, {
+    domain: '.your-domain.com', // this should be the same domain used by the Amplitude JS SDK
+    httpOnly: false,
+    secure: false
+  });
+}
 ```
+
+

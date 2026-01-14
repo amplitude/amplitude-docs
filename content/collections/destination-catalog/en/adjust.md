@@ -51,13 +51,12 @@ To configure an Event Streaming integration from Amplitude to Adjust, you need t
 
 In the **Send Events** section of the Adjust destination config, enable the **Events are sent to Adjust** toggle. This toggle ensures that Amplitude forwards events to Adjust. Amplitude forwards events to Adjust as it receives them, not on a schedule or on demand.
 
-1. In the **Select and filter events** section, choose the events to send to Adjust. This integration doesn't support transformed events.
+1. In the **Select and filter events** section, choose the events to send to Adjust.
 
     To map an event, select the Amplitude event, and enter the corresponding Adjust event token.
 
 2. In the **Map properties to destination** section, select which Amplitude user properties map to which Adjust user properties. Amplitude recommends that you map the following:
 
-    - An Amplitude user property to Adjust **User ID**.
     - Amplitude properties to as many of the Adjust identifiers as possible (iOS IDFA, Google Advertising ID, Amazon Fire Advertising ID, Huawei Open Advertising ID, Adjust Device ID (ADID), IDFA, Android ID).
 
 3. (optional) In the **Select additional properties**, select any more event and user properties to send to Adjust. 

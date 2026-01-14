@@ -6,18 +6,17 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115000095851-Engagement-Ma
 this_article_will_help_you:
   - 'Assess the overall level of engagement of features in your product'
   - 'Set up an Engagement Matrix chart and choose the right metrics for your analysis'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104774
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632216
 landing: true
 landing_blurb: 'Assess the overall level of engagement of features in your product'
+academy_course:
+  - 1341ddad-3bd8-401d-b03e-f15bd2a341c4
 ---
 With Amplitude's **Engagement Matrix** chart, you can develop a better understanding of the high-level pattern of feature engagement in your product, by breadth and frequency. By breaking out the top and bottom events for engagement into a four-quadrant matrix view, the Engagement Matrix will enable you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
 
 ![Screenshot](/docs/output/img/engagement-matrix/screenshot.png)
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

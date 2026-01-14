@@ -1,0 +1,24 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: warning
+ignorecase: true
+action:
+  name: replace
+swap:
+  once: after
+  via: through
+  abort: end|cancel|stop
+  blacklist: block list|deny list
+  blackout period: moratorium
+  cripple: hinder|slow down|impede
+  desire(d)?: want|need
+  dummy: placeholder|mock|stub
+  first-class: primary|default
+  grandfather(ed)?: legacy|exempt
+  grayed-out: disabled|inactive
+  kill: end|cancel|stop
+  sanity-check: validate|final check
+  see: go to|navigate to|review
+  terminate: end|cancel|stop
+  
+  

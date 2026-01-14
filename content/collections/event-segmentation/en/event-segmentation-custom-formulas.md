@@ -5,11 +5,13 @@ title: 'Custom formulas: Syntax and definitions'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions'
 this_article_will_help_you:
   - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1726001553
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632354
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 exclude_from_sitemap: false
+academy_course:
+  - 5462a30c-4c78-48fa-9e47-a339f658c8cd
 ---
 In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 
@@ -18,12 +20,9 @@ Choose from more than 20 custom formulas to plot the metrics you need. You can p
 This article explains the mechanics of custom formulas, with examples of formulas you can use right now.
 
 {{partial:admonition type='note'}}
-While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
+While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, go to [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Formula syntax
 
@@ -41,7 +40,7 @@ For example, the letter A in the formula `UNIQUES(A)` refers to the event `View
 
 You can also write a formula that consists of events, grouping each event by a property or properties. However, for the formula to be valid, the properties must have matching values across all events you are segmenting.
 
-For example, if you have an event called `Page Name`, the following property values would **not** match:
+For example, if you have an event called `Page Name`, the following property values would not match:
 
 * `Tutorial` and `TUTORIAL` (the matching is case sensitive)
 * `1` and `1.0` (non-matching characters)
@@ -49,6 +48,10 @@ For example, if you have an event called `Page Name`, the following property val
 The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, there is a warning that events have no matching group by values.
 
 ![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
+
+{{partial:admonition type='note' heading='Ranking with multi-term formulas'}}
+When you use multi-term formula metrics with group-bys, Amplitude ranks groups by the sum of unique users across all metrics in the formula, not by the final calculated values. This can affect which groups appear in high-cardinality results. For more details, review [Column ranking behavior in Data Tables](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic#column-ranking-behavior).
+{{/partial:admonition}}
 
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
@@ -75,11 +78,11 @@ With metrics formulas, you can query on a metric for a particular event that int
 | [HIST](#hist)                 | [PERCENTILE](#percentile)       | [PROPAVG](#propavg) | [PROPCOUNT](#propcount)           |
 | [PROPCOUNTAVG](#propcountavg) | [PROPHIST](#prophist)           | [PROPMAX](#propmax) | [PROPMIN](#propmin)               |
 | [PROPSUM](#propsum)           | [REVENUETOTAL](#revenuetotal)   | [TOTALS](#totals)   | [UNIQUES](#uniques)               |
-| [EVENTTOTALS](#eventtotals)   | [SESSIONTOTALS](#sessiontotals) |                     |                                   |
+| [EVENTTOTALS](#eventtotals)   | [SESSIONTOTALS](#sessiontotals) | [SEMANTICTOTALS](#semantictotals)                    |                                   |
 
 ### Aggregation formulas
 
-Aggregation formulas let you query on a **rolling average or rolling window** for the metric and event that interests you. These formulas are color-coded in purple. Each aggregation formula requires **three** components: the metric you are aggregating, the event that interests you, and the interval to aggregate by.
+Aggregation formulas let you query on a rolling average or rolling window for the metric and event that interests you. These formulas are color-coded in purple. Each aggregation formula requires three components: the metric you are aggregating, the event that interests you, and the interval to aggregate by.
 
 |                   |                     |                     |                                 |
 | ----------------- | ------------------- | ------------------- | ------------------------------- |
@@ -102,7 +105,7 @@ Function formulas let you query on a mathematical function for a particular even
 
 * **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 
-The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it displays in decimal fraction form. This setup displays the percentage of active users who have triggered the `View Item Details` event.
+The `ACTIVE` formula returns the percentage of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it displays in decimal fraction form. This setup displays the percentage of active users who have triggered the `View Item Details` event.
 
 ![custom_formulas_active.png](/docs/output/img/event-segmentation/custom-formulas-active-png.png)
 
@@ -111,7 +114,7 @@ The `ACTIVE` formula returns the percent of active users who triggered the event
 **Syntax:** $:ARPAU(event)
 
 * **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Events card.
-* This function will only work if you are grouping by a numerical property on the event.
+* This function only works if you are grouping by a numerical property on the event.
 
 Returns the aggregate sum of the revenue event property formatted as a currency, divided by the number of unique active users in that same time period. It's the same as `PROPSUM(event) / UNIQUES(any active event)`.
 
@@ -119,10 +122,10 @@ For example, the following setup shows the average revenue per active user of a 
 
 ![ARPAU_sidecontrols.png](/docs/output/img/event-segmentation/arpau-sidecontrols-png.png)
 
-As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format is a currency.
+As described in the screenshot above, the `$:` prefix is optional. Its presence ensures the output format is a currency.
 
 {{partial:admonition type='note'}}
- ARPAU can't be used in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
+ You can't use ARPAU in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
 {{/partial:admonition}}
 
 ### AVG
@@ -194,7 +197,7 @@ Another example where the PERCENTILE formula can be useful is if you're tracking
 **Syntax:** PROPAVG(event)
 
 * **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
-* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
+* This function only works if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
 Returns the average of the property values you are grouping by. This function is the same as `PROPSUM(event)/TOTALS(event)`.
 
@@ -277,13 +280,13 @@ Returns the total time (sum of the duration in seconds) of the specified session
 **Syntax:** $:REVENUETOTAL(event)
 
 * **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Event card.
-* This function will only work if you are grouping by a numerical property on the event. Also,
+* This function only works if you are grouping by a numerical property on the event. Also,
 
 Returns the aggregate sum of the property, formatted as a currency. It's the same as `PROPSUM(event)`. For example, the following setup shows the total revenue by day generated by purchases:
 
 ![revtotal_sidecontrols.png](/docs/output/img/event-segmentation/revtotal-sidecontrols-png.png)
 
-As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format is a currency.
+As described in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format is a currency.
 
 ### TOTALS
 
@@ -329,15 +332,38 @@ For example, the following setup shows the number of `Page Viewed` events across
 
 ### SESSIONTOTALS
 
-**Syntax:** SESSIONTOTALS(session)
+Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
 
-* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Sessions card.
+The value you pass to `SESSIONTOTALS` depends on the chart you're using:
 
-This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). It returns the number of sessions defined by the specified session.
+| Chart | Syntax | Description |
+| --- | --- | --- |
+| User Sessions | `SESSIONTOTALS(session)` | Returns the number of sessions that match the specified session label in the Sessions card. |
+| Event Segmentation | `SESSIONTOTALS(event)` | Returns the number of sessions that contain the specified event at least once. |
 
-For example, the following setup shows the total number of sessions by day over the last 30 days for all users in the United Kingdom who completed at least one `Add to Cart` event during each session. 
+For example, the following setup shows the total number of sessions by day over the last 30 days for all users in the United Kingdom who completed at least one `Add to Cart` event during each session.
 
 ![sessionTotalsChart.png](/docs/output/img/event-segmentation/sessiontotalschart-png.png)
+
+### SEMANTICTOTALS
+
+**Syntax**: SEMANTICTOTALS(event, semantic)
+
+* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
+* **Semantic**: Defines how totals are calculated when grouped by cart properties (array properties). Supported values are:
+  * `UNIQUE_ARRAY_VALUES`: Performs "Counting Events" by deduplicating array property values
+  * `ALL_VALUES`: Performs "Counting Items" by counting each item within the array property without deduplication
+
+Returns the total number of times an event occurred with explicit control over how array properties are counted. This gives you formula-based access to the same counting options available in the Event Totals and Average measurement controls when grouping by cart properties.
+
+For example, imagine a `Checkout` event with the cart property `item_list.product_category`. If a single `Checkout` event contains two tacos (one Crunchy Taco and one Soft Taco) under the same product category "tacos":
+
+* `SEMANTICTOTALS(A, UNIQUE_ARRAY_VALUES)` counts 1 Checkout event
+* `SEMANTICTOTALS(A, ALL_VALUES)` counts 2 Checkout items
+
+{{partial:admonition type="note" heading=""}}
+The default behavior for TOTALS remains unchanged (equivalent to "Counting Items"). Use SEMANTICTOTALS when you need to explicitly choose between counting events and counting items.
+{{/partial:admonition}}
 
 ## Aggregation formulas
 
@@ -465,8 +491,8 @@ Returns the [square root](https://en.wikipedia.org/wiki/Square_root) of the valu
 
 * **Value:** The value can be a constant or another function (for example the value you pass in could be `UNIQUES` of an event).
 
-Returns the [ordinary least-squares linear regression](https://en.wikipedia.org/wiki/Ordinary_least_squares) trendline of the value. You should strongly consider plotting another custom formula alongside this one, so you can compare them. Otherwise, the `TRENDLINE` function  simply gives you a straight line with no context on a chart.
+Returns the [ordinary least-squares linear regression](https://en.wikipedia.org/wiki/Ordinary_least_squares) trend line of the value. You should strongly consider plotting another custom formula alongside this one, so you can compare them. Otherwise, the `TRENDLINE` function  simply gives you a straight line with no context on a chart.
 
-For example, use this function to see the trendline of number of users who purchase a song or video and compare it to the unique number of users.
+For example, use this function to understand the trend line of number of users who purchase a song or video and compare it to the unique number of users.
 
 ![trendline_sidecontrols.png](/docs/output/img/event-segmentation/trendline-sidecontrols-png.png)

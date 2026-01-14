@@ -16,7 +16,7 @@ There are some limits to the amount of data that you can send to Amplitude.
 All organizations have a monthly event volume limit. Your company's signed agreement with Amplitude specifies the limit that applies to you, and you can see it in your Settings.   
 
 {{partial:admonition type='note'}}
- Identify and Group Identify calls do **NOT** count against total event volume.
+Identify and Group Identify calls don't count against total event volume.
 {{/partial:admonition}}
 
 Customers who exceed these limits may be subject to overage fees. If you're close to exceeding this limit, Amplitude alerts you through email and in-product notifications. Email alerts automatically go out to users with the Admin role when you reach certain percentages of your limit (80%, 90%, 100%, and 110% for paid plans).
@@ -31,19 +31,24 @@ The allowed per-project maximums for **event types**, **event properties**, and 
 * Event properties: 2000
 * User properties: 1000
 
-Once you reach these limits, Amplitude stops indexing new values. You can no longer query data for any event types and event or user properties that exceed these limits, and you can only access them in the raw data by exporting data as a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
+After you reach these limits, Amplitude stops indexing new values. You can no longer query data for any event types and event or user properties that exceed these limits, and you can only access them in the raw data by exporting data as a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
 
-As an example, imagine an instrumentation bug causes your product to send several extra event types to Amplitude, and your project exceeds its instrumentation limit by five as a result. Data for those excess event types are visible within Amplitude once you've brought your project down under the instrumentation limit. However, you can't query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
+As an example, imagine an instrumentation bug causes your product to send several extra event types to Amplitude, and your project exceeds its instrumentation limit by five as a result. Data for those excess event types are visible within Amplitude after you've brought your project down under the instrumentation limit. However, you can't query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
 
 There is **no limit** to the number of event or user property values you can send. However, for a specific event or user property, you can select only the first 1000 values sent to Amplitude from dropdown menus.
 
 There is **no limit** to the number of event properties you can apply to an event.
 
-You can [delete unneeded event types in Amplitude Data](/docs/data/remove-invalid-data). Once you're under the limit, it can take around 24 hours for the new event types, event properties, and user properties to appear in Amplitude.
+You can [delete unneeded event types in Amplitude Data](/docs/data/remove-invalid-data).After your are below the limit, it can take around 24 hours for the new event types, event properties, and user properties to appear in Amplitude.
 
 ### Character limit for strings
 
-String values have a limit of 1024 characters (user ID, event or user property values, etc.). Arrays have a limit of 10000 characters when append or prepend is used (this is available for user property types only). Amplitude truncates any strings that exceeds this limit.
+Property values are typically limited to 1024 characters. Exceptions to this limit are:
+
+* User property arrays can expand to a limit of 10k characters when using the append or prepend methods. The initial array is still limited to 1024 characters.
+* Properties using [property splitting](/docs/analytics/charts/cart-analysis#set-up-property-splitting) for cart analysis have a higher limit. Event properties are limited to 100k characters while user properties are limited to 10k characters. 
+
+Amplitude truncates any values exceeding these limits. 
 
 ## Chart limits
 
@@ -116,6 +121,6 @@ The baseline group-by limit for Data Tables is 10,000, with some exceptions:
 
 * The limit is 300 with a conversion metric
 * The limit is 100 with a session metric
-* The limit is 10 with attribution
+* The limit is 20 with attribution
 
 For any combination of these exceptions, the limit is the lowest limit included in the combination. For example, if a group-by includes both a conversion metric and attribution, the limit is 10.

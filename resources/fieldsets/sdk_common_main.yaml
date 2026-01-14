@@ -18,10 +18,21 @@ fields:
     handle: article_type
     field:
       options:
-        core: 'Core SDK Doc'
-        migration: 'SDK Migration'
-        ampli: 'Ampli Codegen'
-        plugin: Plugin
+        -
+          key: core
+          value: 'Core SDK Doc'
+        -
+          key: migration
+          value: 'SDK Migration'
+        -
+          key: ampli
+          value: 'Ampli Codegen'
+        -
+          key: plugin
+          value: Plugin
+        -
+          key: privacy
+          value: Privacy
       type: select
       display: 'Article Type'
       width: 50

@@ -109,7 +109,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging. | `false` |
+| `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
+| `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone::US` or `ServerZone::EU` | `ServerZone::US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -308,7 +309,7 @@ end
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```ruby
@@ -321,7 +322,7 @@ AmplitudeExperiment.initialize_local(api_key)
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
+Use the `flag_config_polling_interval_millis` [configuration](#configuration) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
 
 #### Configuration
@@ -340,7 +341,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start`](#start) | `30000` |
-| `debug` | Set to `true` to enable debug logging. | `false` |
+| `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
+| `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
 | `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
 | `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
@@ -358,7 +360,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | `callback`  | Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `nil` |
 | `server_zone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `server_url` | The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `nil`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
+| `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
 | `storage_provider` | Used to create storage instance to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorageProvider` |
 | `opt_out`  | Opt out option. If set to `True`, client doesn't process and send events. | `False` |
 
@@ -374,7 +376,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Start
 
-Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration_1) interval.
+Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration) interval.
 
 ```ruby
 start
@@ -391,7 +393,7 @@ experiment.start
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start`](#start). You must give evaluate a user object argument, and can you can optionally pass it an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
 {{/partial:admonition}}
 
 ```ruby
@@ -435,24 +437,93 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
 )
 ```
 
+## Custom logging
+
+Provide your own Logger instance to control logging behavior.
+
+### Custom logger
+
+Pass a custom Logger instance to `RemoteEvaluationConfig` or `LocalEvaluationConfig`:
+
+```ruby
+require 'logger'
+require 'amplitude-experiment'
+
+# Create a custom logger
+custom_logger = Logger.new('experiment.log')
+custom_logger.level = Logger::WARN
+custom_logger.formatter = proc do |severity, datetime, progname, msg|
+  "#{datetime}: #{severity} - #{msg}\n"
+end
+
+# Remote evaluation with custom logger
+remote_config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  logger: custom_logger
+)
+experiment = AmplitudeExperiment.initialize_remote('DEPLOYMENT_KEY', remote_config)
+
+# Provide Local evaluation with your Rails logger
+local_config = AmplitudeExperiment::LocalEvaluationConfig.new(
+  logger: Rails.logger
+)
+experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY', local_config)
+```
+
+### Debug flag with default logger
+
+```ruby
+# Without custom logger, debug=false uses ERROR level
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  debug: false
+)
+# Default logger level is ERROR
+
+# Without custom logger, debug=true uses DEBUG level
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  debug: true
+)
+# Default logger level is DEBUG
+```
+
+When you provide a custom logger, the `debug` flag is ignored and your logger keeps its configured level:
+
+```ruby
+custom_logger = Logger.new($stdout)
+custom_logger.level = Logger::WARN
+
+# Custom logger maintains its WARN level regardless of debug flag
+config = AmplitudeExperiment::RemoteEvaluationConfig.new(
+  logger: custom_logger,
+  debug: true
+)
+# Logger level stays WARN (debug flag is ignored)
+```
+
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you're using the Amplitude Analytics SDK on the client-side, the Ruby server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
 
 ```ruby
 require 'amplitude-experiment'
+require 'securerandom'
 
-# grab amp device id if present
+# Get the cookie name for the Amplitude API key
+# Use new_format: true for Browser SDK 2.0 cookies
 amp_cookie_name = AmplitudeExperiment::AmplitudeCookie.cookie_name('amplitude-api-key')
+# For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.cookie_name('amplitude-api-key', new_format: true)
 device_id = nil
+
+# Try to get device ID from existing cookie
 unless cookies[amp_cookie_name].nil?
   device_id = AmplitudeExperiment::AmplitudeCookie.parse(cookies[amp_cookie_name]).device_id
+  # For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.parse(cookies[amp_cookie_name], new_format: true).device_id
 end
 
+# If no device ID found, generate a new one and set the cookie
 if device_id.nil?
-  # deviceId doesn't exist, set the Amplitude Cookie
   device_id = SecureRandom.uuid
   amp_cookie_value = AmplitudeExperiment::AmplitudeCookie.generate(device_id)
+  # For Browser SDK 2.0: AmplitudeExperiment::AmplitudeCookie.generate(device_id, new_format: true)
   cookies[amp_cookie_name] = {
     value: amp_cookie_value,
     domain: '.your-domain.com', # this should be the same domain used by the Amplitude JS SDK
@@ -461,3 +532,5 @@ if device_id.nil?
   }
 end
 ```
+
+

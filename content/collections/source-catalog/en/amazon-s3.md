@@ -54,7 +54,7 @@ The files you want to send to Amplitude must follow some basic requirements:
 - Files contain events, with one event per line.
 - Files are uploaded in the events’ chronological order.
 - Filenames are unique.
-- File size must be greater than 1MB and smaller than 1GB.
+- File size must be greater than 1MB and smaller than 5GB. For customers with large event volumes, Amplitude recommends file sizes close to 500MB for optimal performance.
 - Files are compressed or uncompressed JSON, CSV, or parquet files.
 - For Mirror Sync, which supports mutations, the following constraints exist:
   - Mutations to events require a user ID. If a row doesn't contain a user ID, Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode.
@@ -79,8 +79,9 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
 1. Create a new IAM role, for example: `AmplitudeReadRole`.
 2. Go to **Trust Relationships** for the role and add Amplitude’s account to the trust relationship policy to allow Amplitude to assume the role using the following example.
 
-    - `amplitude_account`: `358203115967` for Amplitude US data center. `202493300829` for Amplitude EU data center. 
     - `external_id` : unique identifiers used when Amplitude assumes the role. You can generate it with help from [third party tools](https://www.uuidgenerator.net/). Example external id can be `vzup2dfp-5gj9-8gxh-5294-sd9wsncks7dc`.
+
+    - Trust policy for Amplitude US region:
 
     ``` json hl_lines="7 12"
     {
@@ -89,12 +90,38 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::<amplitude_account>:root" //[tl! ~~]
+          "AWS": ["arn:aws:iam::358203115967:role/k8s_prod_cargo",
+                  "arn:aws:iam::358203115967:role/k8s_prod_falcon",
+                  "arn:aws:iam::358203115967:role/vacuum_iam_role" ]
           },
           "Action": "sts:AssumeRole",
           "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "<external_id>" //[tl! ~~]
+          "StringEquals": {
+          "sts:ExternalId": "<external_id>" 
+            }
+          }
+        }
+      ]
+    }
+    ```
+
+    - Trust policy for Amplitude EU region
+
+    ``` json hl_lines="7 12"
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+          "AWS": ["arn:aws:iam::202493300829:role/k8s_prod-eu_cargo",
+                  "arn:aws:iam::202493300829:role/k8s_prod-eu_falcon",
+                  "arn:aws:iam::202493300829:role/vacuum_iam_role" ]
+        }, 
+          "Action": "sts:AssumeRole",
+          "Condition": {
+          "StringEquals": {
+          "sts:ExternalId": "<external_id>" 
             }
           }
         }
@@ -125,7 +152,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "*" //[tl! ~~]
+                "*" 
               ]
             }
           }
@@ -138,7 +165,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/*" 
           ]
         },
         {
@@ -149,7 +176,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]
@@ -174,7 +201,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "<prefix>*" //[tl! ~~]
+                "<prefix>*" 
               ]
             }
           }
@@ -187,7 +214,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListBucket"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>/<prefix>*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/<prefix>*" 
           ]
         },
         {
@@ -198,7 +225,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" 
           ]
         }
       ]
@@ -306,9 +333,12 @@ See the following table to understand which data types are compatible with which
 | Group properties | Append Only                 |
 | Profiles         | Mirror                      |
 
-
 {{partial:admonition type="note" heading="Mutations and event volume"}}
 When you use mutations, Amplitude doesn't merge `INSERT`, `UPDATE`, or `DELETE` operations to per-row mutations based on your sync frequency. This means that when more than one operation is made to an event during the sync window, they may apply out of order. Each operation also counts toward your event volume. As a result, you may use your existing event volume more quickly than you otherwise would. Contact sales to purchase additional event volume.
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Event streaming destinations"}}
+Events ingested through mutation-based imports (Mirror Sync) can't be exported through event streaming destinations. If you need to export events to streaming destinations, use Append Only Sync instead of Mirror Sync.
 {{/partial:admonition}}
 
 Find a list of supported fields for events in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
@@ -338,7 +368,9 @@ See the [Converter Configuration reference](/docs/data/converter-configuration-r
 
 ### Enable the source
 
-When your converter is configured, click **Save and Enable** to enable the source.
+Enabling the source requires a successful test of your converter. You can save your changes and return later, but the option to enable the source is available only after the converter completes a test successfully.
+
+When your converter is configured, click **Save and Enable** to enable the source. 
 
 ## Troubleshooting
 

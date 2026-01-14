@@ -9,6 +9,10 @@ use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 use App\Markdown\Copy\TorchlightWithCopyExtension;
+use App\Modifiers\MathPrep;
+use Statamic\StaticSite\SSG;
+use Symfony\Component\Finder\Finder;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,7 +30,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Markdown::addExtensions(function () {
-            return [new TorchlightWithCopyExtension, new HeadingPermalinkExtension];
+            return [new HeadingPermalinkExtension];
+        });
+
+        // Register MathPrep modifier manually
+        Statamic::booted(function () {
+            \Statamic\Modifiers\Modifier::register('math_prep', MathPrep::class);
         });
     }
 }

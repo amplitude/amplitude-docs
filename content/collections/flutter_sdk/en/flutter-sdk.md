@@ -22,7 +22,7 @@ platform: Flutter
 This is the official documentation for the Amplitude Analytics Flutter SDK.
 
 {{partial:admonition type="note" title="Flutter SDK 4.0 now available"}}
-An improved version of Amplitude Flutter SDK is now available. Amplitude [Flutter SDK 4.0](/docs/sdks/analytics/flutter/flutter-sdk-4-0) features default event tracking, improved marketing attribution tracking, and macOS support. Amplitude recommends the Flutter SDK 4.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Flutter SDK 4.0. See the [Migration Guide](/docs/sdks/analytics/flutter/flutter-4-0-migration-guide) for more information.
+An improved version of Amplitude Flutter SDK is now available. Amplitude [Flutter SDK 4.0](/docs/sdks/analytics/flutter/flutter-sdk) features default event tracking, improved marketing attribution tracking, and macOS support. Amplitude recommends the Flutter SDK 4.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Flutter SDK 4.0. See the [Migration Guide](/docs/sdks/analytics/flutter/flutter-sdk-4-0-migration-guide) for more information.
 {{/partial:admonition}}
 
 ## Compatibility
@@ -84,8 +84,8 @@ The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance 
 For other default configurations:
 
 - on Android, check the [Android Configuration](/docs/sdks/analytics/android/android-sdk#configuration)
-- on iOS, check the [iOS configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configuration)
-- on browser, check the [browser configuration](/docs/sdks/analytics/browser/browser-sdk-2#configuration)
+- on iOS, check the [iOS configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configure-the-sdk)
+- on browser, check the [browser configuration](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk)
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
@@ -99,7 +99,7 @@ For other default configurations:
 | `setUseDynamicConfig()` | `bool`. Find the best server url automatically based on users' geo location. For example, `setUseDynamicConfig(true)`. | `false` |
 | `setOptOut()` | `bool`. Opt the user out of tracking. For example, `Amplitude.getInstance().setOptOut(true)`.| `false` |
 | `trackingSessionEvents()` | `bool`. Whether to automatically log "[Amplitude] Session Start" and "[Amplitude] Session End" session events corresponding to the start and end of a user's session. Not supported on Flutter Web. [Learn more](/docs/#flutter-web-support). | `false` |
-| `useAppSetIdForDeviceId()` | Only for Android. Whether to use app ser id as device id on Android side.  Check [here](../android/#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)` | By default, the deviceId will be UUID+"R" |
+| `useAppSetIdForDeviceId()` | Only for Android. Whether to use app ser id as device id on Android side.  Check [here](/docs/sdks/analytics/android/android-sdk/#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)` | By default, the deviceId will be UUID+"R" |
 
 ### Configure batching behavior
 
@@ -452,7 +452,7 @@ Amplitude.getInstance().setOptOut(false);
 
 ### Dynamic configuration
 
-Flutter SDK lets users configure their apps to use [dynamic configuration](../../dynamic-configuration). This feature finds the best server URL automatically based on app users' location.
+Flutter SDK lets users configure their apps to use dynamic configuration This feature finds the best server URL automatically based on app users' location.
 
 - If you have your own proxy server and use `setServerUrl` API, don't use dynamic configuration.
 - If you have users in Mainland China, Amplitude recommends that you use dynamic configuration.

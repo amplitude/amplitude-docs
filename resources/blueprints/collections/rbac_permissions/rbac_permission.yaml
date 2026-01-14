@@ -1,0 +1,106 @@
+title: 'RBAC Permission'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              width: 50
+              localizable: false
+              validate:
+                - required
+          -
+            handle: product_area
+            field:
+              options:
+                -
+                  key: charts-metrics
+                  value: 'Charts & Metrics'
+                -
+                  key: experiment
+                  value: Experiment
+                -
+                  key: data-management
+                  value: 'Data Management'
+                -
+                  key: audiences
+                  value: Audiences
+                -
+                  key: integrations
+                  value: Integrations
+                -
+                  key: session-replay
+                  value: 'Session Replay'
+                -
+                  key: heatmaps
+                  value: Heatmaps
+                -
+                  key: guides-surveys
+                  value: 'Guides & Surveys'
+                -
+                  key: resource-center
+                  value: 'Resource Center & Content'
+                -
+                  key: admin
+                  value: Admin
+              type: select
+              display: 'Product Area'
+              localizable: false
+              width: 50
+          -
+            handle: advanced
+            field:
+              type: toggle
+              display: Advanced
+              localizable: false
+              width: 25
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+              width: 75
+          -
+            handle: actions
+            field:
+              type: list
+              display: Actions
+              localizable: false
+          -
+            handle: default_permissions
+            field:
+              options:
+                -
+                  key: admin
+                  value: Admin
+                -
+                  key: manager
+                  value: Manager
+                -
+                  key: member
+                  value: Member
+                -
+                  key: viewer
+                  value: Viewer
+              inline: true
+              type: checkboxes
+              display: 'Default Permissions'
+              instructions: 'Select the roles to which this permission applies by default.'
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

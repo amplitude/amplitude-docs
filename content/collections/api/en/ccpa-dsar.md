@@ -18,6 +18,10 @@ updated_at: 1715897991
 - Each download URL requires the same auth credentials to access.
 - Because the API is asynchronous, you must poll to check the status of the request. See the Rate Limits section to help select the appropriate polling rate.
 
+{{partial:admonition type="note" heading=""}}
+This API only returns the behavioral data associated with the user. If you’ve connected Support and Service sources (such as Zendesk or Intercom) under the AI Feedback sources and enabled email mapping, find the data associated with the user in the User Profile on the AI Feedback tab. You can find the User Profile by searching for the user on the *Users -> User Profile* page.
+{{/partial:admonition}}
+
 ### Asynchronous operation
 
 To support data volume, this API works asynchronously. Getting user data happens in three steps:
@@ -209,7 +213,7 @@ Content-Length: 83
 
 ### Response
 
-When successful, the call returns a `202 Accepted` response and `requestID`. Use the `requestID` to poll the job status.
+When successful, the call returns a `202 Accepted` response and `requestId`. Use the `requestId` to poll the job status.
 
 ```json
 {
@@ -279,7 +283,7 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 | `status` | **staging**: not started  <br>**submitted**: in progress  <br>**done**: job completed and download URLs populated  <br>**failed**: job failed, may need to retry  <br> |
 | `failReason` | String. If the job failed, contains Information about the failure. |
 | `urls` | Array of strings. A list of download URLs for the data. |
-| `expires` | Data. The date that the output download links expire. |
+| `expires` | Date. The date that the output download links expire. |
 
 ## Get output files
 

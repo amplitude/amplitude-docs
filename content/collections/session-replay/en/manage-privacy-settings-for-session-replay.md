@@ -20,13 +20,17 @@ When these privacy settings are active, Amplitude **masks** the user data you sp
 
 There are three out-of-the-box privacy levels for Session Replay. You can also implement custom overrides when necessary.
 
-- **Conservative**. This option is for companies that retain a large amount of sensitive customer data. Selecting this choice masks **all text and all form fields**. This includes  HTML text, user input, and links. It **doesn't** mask text in pictures, videos, thumbnails, or other static assets. [Use CSS Selectors](https://https://www.w3schools.com/cssref/css_selectors.php) to exclude any pictures, videos, or thumbnails that contain sensitive information. Examples of companies that might choose this option are financial services firms, CRM systems, online betting companies, geospatial technology companies, and companies in the healthcare and medical technology industries—all sectors in which the inadvertent release of sensitive user data could have serious repercussions.
+- **Conservative**. This option is for companies that retain a large amount of sensitive customer data. Selecting this choice masks **all text and all form fields**. This includes  HTML text, user input, and links. It **doesn't** mask text in pictures, videos, thumbnails, or other static assets. [Use CSS Selectors](https://www.w3schools.com/cssref/css_selectors.php) to exclude any pictures, videos, or thumbnails that contain sensitive information. Examples of companies that might choose this option are financial services firms, CRM systems, online betting companies, geospatial technology companies, and companies in the healthcare and medical technology industries—all sectors in which the inadvertent release of sensitive user data could have serious repercussions.
 
 - **Light**. This option is for companies that retain very little sensitive customer data, and those who want to get up and running quickly and selectively choose any relevant fields to mask. Selecting this choice will only mask a **subset** of sensitive inputs: things like passwords, credit card numbers, telephone numbers, or email addresses. Examples of companies that might choose this option are business productivity app developers, restaurant- or appointment-booking software companies, and ecommerce sites.
 
 - **Medium**. This is the default option for Session Replay privacy settings. When selected, it masks all form fields and text inputs; Amplitude captures all other text as-is.
 
 Any changes you make to these privacy levels take precedence over privacy definitions set in the SDK.
+
+{{partial:admonition type="warning" heading="React Native remote masking limitations"}}
+React Native remote masking may be unstable and not work as expected. For React Native applications, Amplitude recommends that you implement masking manually using the `AmpMaskView` component. For more information, see [Mask onscreen data](/docs/session-replay/session-replay-react-native-sdk-plugin#mask-onscreen-data) in the React Native Session Replay documentation.
+{{/partial:admonition}}
 
 ## Set your privacy level
 

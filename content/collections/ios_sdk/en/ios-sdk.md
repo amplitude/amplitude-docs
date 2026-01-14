@@ -41,14 +41,14 @@ Add the following line to your `Cartfile`.
 ```bash
 github "@{{repo}}" ~> @{{version}}
 ```
-See the [Carthage documentation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more information.
+Review the [Carthage documentation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more information.
 {{/partial:tab}}
 {{partial:tab name="Swift Package Manager"}}
  1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
  2. Enter the URL `https://github.com/@{{repo}}` in the search bar. 
  3. Xcode resolves to the latest version. Or you can select a specific version. 
  4. Click the "Next" button to confirm the addition of the package as a dependency. 
- 5. Build your project to make sure the package is properly integrated.
+ 5. Build your project to make sure the package is integrated.
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -98,7 +98,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 | Name  | Description | Default Value |
 | --- | --- | --- |
 | `eventUploadPeriodSeconds` | The amount of time SDK attempts to upload the unsent events to the server or reaches `eventUploadThreshold` threshold. | `30` |
-| `eventUploadThreshold` | SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `eventUploadPeriodSeconds` interval.  | `30` |
+| `eventUploadThreshold` | SDK attempts to upload after unsent event count exceeds the event upload threshold or reach `eventUploadPeriodSeconds` interval.  | `30` |
 | `eventUploadMaxBatchSize` | The maximum number of events sent with each upload request. | `100` |
 | `eventMaxCount` | The maximum number of unsent events to keep on the device. | `1000` |
 | `minTimeBetweenSessionsMillis` |  When a user closes and reopens the app within minTimeBetweenSessionsMillis milliseconds, the reopen is considered part of the same session and the session continues. Otherwise, a new session is created. The default is 5 minutes. | `5 minutes` |
@@ -456,7 +456,7 @@ Starting from release v8.17.0, the SDK is able to track more default events now.
   
 | Name | Type | Default Value | Description |
 |-|-|-|-|
-`defaultTracking.sessions` | Optional. `boolean` | `NO` | Enables session tracking. This configuration replaces [`trackingSessionEvents`](#configuration). If value is `YES`, Amplitude tracks session start and session end events.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.|
+`defaultTracking.sessions` | Optional. `boolean` | `NO` | Enables session tracking. This configuration replaces [`trackingSessionEvents`](#configuration). If value is `YES`, Amplitude tracks session start and session end events.<br /><br />See [Tracking sessions](#track-sessions) for more information.|
 `defaultTracking.appLifecycles` | Optional. `boolean` | `NO` | Enables application lifecycle events tracking. If value is `YES`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events.<br /><br />Event properties tracked includes: `[Amplitude] Version`,<br /> `[Amplitude] Build`,<br /> `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`<br /><br />See [Tracking application lifecycles](#tracking-application-lifecycles) for more information.|
 `defaultTracking.screenViews` | Optional. `boolean` | `NO` | Enables screen views tracking. If value is `YES`, Amplitude tracks screen viewed events.<br /><br />Event properties tracked includes: `[Amplitude] Screen Name`<br /><br />See [Tracking screen views](#tracking-screen-views) for more information.|
 `defaultTracking.deepLinks` | Optional. `boolean` | `NO` | Enables deep link tracking. If value is `YES`, Amplitude tracks deep link opened events. Note that you still need to call `continueUserActivity` or `openURL` manually for tracking this event.<br /><br />Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`<br /><br />See [Tracking deep links](#tracking-deep-links) for more information.|
@@ -774,15 +774,15 @@ Each revenue event has fields available, and each field has a corresponding set 
 Like `logEvent`, you can attach event properties for each call to `logRevenueV2` . However, these event properties only appear in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart and not in the Revenue charts.
 
 <!-- vale Vale.Spelling = NO-->
-| Name  | Description  |
-| --- | --- |
-| `productId` | Optional. NSString. An identifier for the product. Amplitude recommends something like the "Google Play Store product ID". Defaults to `null`. |
-| `quantity`| Required. NSInteger. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1. |
-| `price` | Required. NSNumber. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
-| `revenueType` | Optional, but required for revenue verification. NSString. The revenue type. For example tax, refund, income. Defaults to `null`. |
-| `receipt`  | Optional, but required for revenue verification. NSData. Defaults to `null` |
-| `receiptSignature` | Optional, but required for revenue verification. Defaults to `null`. |
-| `eventProperties`| Optional. NSDictionary. An object of event properties to include in the revenue event. Defaults to `null`. |
+| Name               | Description                                                                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `productId`        | Optional. NSString. An identifier for the product. Amplitude recommends something like the "Google Play Store product ID". Defaults to `null`. |
+| `quantity`         | Required. NSInteger. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1.                                      |
+| `price`            | Required. NSNumber. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to `null`.       |
+| `revenueType`      | Optional, but required for revenue verification. NSString. The revenue type. For example tax, refund, income. Defaults to `null`.              |
+| `receipt`          | Optional, but required for revenue verification. NSData. Defaults to `null`                                                                    |
+| `receiptSignature` | Optional, but required for revenue verification. Defaults to `null`.                                                                           |
+| `eventProperties`  | Optional. NSDictionary. An object of event properties to include in the revenue event. Defaults to `null`.                                     |
 <!-- vale Vale.Spelling = YES -->
 
 {{partial:admonition type="note" heading=""}}

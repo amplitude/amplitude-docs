@@ -96,7 +96,7 @@ import 'package:amplitude_flutter/events/base_event.dart';
 class YourClass {
   Future<void> exampleForAmplitude() async {
     // Create and initailize the instance
-    final Amplitude analytics = Amplitude(Configuration(
+    final Amplitude amplitude = Amplitude(Configuration(
         apiKey: 'YOUR-API-KEY',
     ));
 
@@ -171,7 +171,8 @@ class YourClass {
 | `identityStorage`          | `String`. Sets storage API for user identity. Options include cookie for `document.cookie`, `localStorage` for `localStorage`, or none to opt-out of persisting user identity.                                                                                                        | `cookie`      |
 | `userId`                   | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option.                                                                                                                                    | `null`        |
 | `transport`                | `String`. Sets request API to use by name. Options include `fetch` for `fetch`, `xhr` for `XMLHTTPRequest`, or `beacon` for `navigator.sendBeacon`.                                                                                                                                         | `fetch`       |
-| `fetchRemoteConfig`        | `bool`. Whether the SDK fetches remote configuration. See [here](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information.                                                                                                    | `false`       |
+| `fetchRemoteConfig`        | `bool`. Whether the SDK fetches remote configuration. Review [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information. The default depends on the Browser SDK version used. For Browser SDK 2.16.1+, the default is `true`. | `false` (for Browser SDK < 2.16.1)<br/>`true` (for Browser SDK >= 2.16.1) |
+| `autocapture`              | `Autocapture`. Configures autocapture behavior for sessions, page views, and marketing attribution. Use `AutocaptureDisabled()`, `AutocaptureEnabled()`, or `AutocaptureOptions()` for granular control. By default, `AutocaptureOptions()` with no parameters enables all features. See [Autocapture](#autocapture) for more information.                              | `AutocaptureOptions()` |
 
 
 ### Configure batching behavior
@@ -221,7 +222,7 @@ Refer to the [BaseEvent](https://github.com/amplitude/Amplitude-Flutter/blob/bet
 
 ## Identify
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations with a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations with a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If you send the Identify call after the event, the results of operations are visible immediately in the dashboard user's profile area, but it doesn't appear in chart results until the SDK sends another event after the Identify call. As a result, the identify call only affects events going forward. For more information, see [User Properties and Events](/docs/data/user-properties-and-events).
@@ -235,6 +236,16 @@ final Identify identify = Identify()
 amplitude.identify(identify)
 ```
 
+### Clear all user properties
+
+Use `clearAll` to remove all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+```dart
+final Identify identify = Identify()
+    ..clearAll();
+amplitude.identify(identify);
+```
+
 ## Track default events
 
 The SDK can track more default events. You can configure it to track the following events by default:
@@ -245,7 +256,7 @@ The SDK can track more default events. You can configure it to track the followi
 
 | Name                                   | Type             | Default Value | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------- | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.defaultTracking.sessions`      | Optional. `bool` | `true`        | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.                                                                                                                                                                                                |
+| `config.defaultTracking.sessions`      | Optional. `bool` | `true`        | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#track-sessions) for more information.                                                                                                                                                                                                |
 | `config.defaultTracking.appLifecycles` | Optional. `bool` | `false`       | Enables application lifecycle events tracking. If value is `true`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events.<br /><br />Event properties tracked includes: `[Amplitude] Version`,<br /> `[Amplitude] Build`,<br /> `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`<br /><br />See [Tracking application lifecycles](#tracking-application-lifecycles) for more information. |
 | `config.defaultTracking.deepLinks`     | Optional. `bool` | `false`       | Only available on Android. It enables deep link tracking. If value is `true`, Amplitude tracks deep link opened events.<br /><br />Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`<br /><br />See [Tracking deep links](#tracking-deep-links) for more information.                                                                                                                                                                                          |
 
@@ -347,6 +358,132 @@ Amplitude(
 ```
 
 After enabling this setting, Amplitude tracks the `[Amplitude] Deep Link Opened` event with the URL and referrer information.
+
+## Autocapture
+
+{{partial:admonition type="note" heading=""}}
+Autocapture is available on Web only.
+{{/partial:admonition}}
+
+Autocapture automatically tracks user interactions and events without requiring manual instrumentation. The SDK supports the following autocapture features on Web:
+
+- **Sessions**: Automatically track session start and end events.
+- **Page views**: Automatically track page view events when the URL changes.
+- **Attribution**: Automatically track attribution parameters from URL query parameters.
+
+### Enable autocapture
+
+By default, all autocapture features are enabled (sessions, page views, and attribution). You can also explicitly enable all features with `AutocaptureEnabled()`:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureEnabled(),
+  )
+);
+```
+
+### Disable autocapture
+
+To disable all autocapture features:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureDisabled(),
+  )
+);
+```
+
+### Configure autocapture
+
+Use `AutocaptureOptions` for granular control over autocapture features:
+
+```dart
+Amplitude(
+  Configuration(
+    apiKey: 'YOUR-API-KEY',
+    autocapture: AutocaptureOptions(
+      sessions: true,
+      pageViews: PageViewsOptions(
+        trackHistoryChanges: 'pathOnly',
+        eventType: '[Amplitude] Page Viewed',
+      ),
+      attribution: AttributionOptions(
+        excludeReferrers: ['example.com'],
+        initialEmptyValue: 'NONE',
+        resetSessionOnNewCampaign: true,
+      ),
+    ),
+  )
+);
+```
+
+#### Sessions
+
+Set `sessions` to `true` to track session start and end events automatically. Set to `false` to disable session tracking.
+
+```dart
+autocapture: AutocaptureOptions(
+  sessions: true,
+)
+```
+
+#### Page views
+
+Configure page view tracking with `PageViewsOptions`:
+
+| Option | Type | Description | Default |
+| --- | --- | --- | --- |
+| `trackHistoryChanges` | `String` | Track page views on navigation changes. Options: `'all'` (track all URL changes including fragments) or `'pathOnly'` (track only path changes). | `'all'` |
+| `eventType` | `String` | Custom event type for page view events. If not set or set to `''` (empty string), defaults to `'[Amplitude] Page Viewed'`. | `''` |
+
+```dart
+autocapture: AutocaptureOptions(
+  pageViews: PageViewsOptions(
+    trackHistoryChanges: 'pathOnly',
+    eventType: 'Page View',
+  ),
+)
+```
+
+To disable page view tracking, use `PageViewsDisabled()`:
+
+```dart
+autocapture: AutocaptureOptions(
+  pageViews: PageViewsDisabled(),
+)
+```
+
+#### Attribution
+
+Configure marketing attribution tracking with `AttributionOptions`:
+
+| Option | Type | Description | Default |
+| --- | --- | --- | --- |
+| `excludeReferrers` | `List<String>` | List of referrer domains to exclude from attribution tracking. | `null` |
+| `initialEmptyValue` | `String` | Value to represent undefined initial campaign parameters for first-touch attribution. | `'EMPTY'` |
+| `resetSessionOnNewCampaign` | `bool` | Start a new session when campaign parameters change. | `false` |
+
+```dart
+autocapture: AutocaptureOptions(
+  attribution: AttributionOptions(
+    excludeReferrers: ['example.com', 'internal.com'],
+    initialEmptyValue: 'NONE',
+    resetSessionOnNewCampaign: true,
+  ),
+)
+```
+
+To disable attribution tracking, use `AttributionDisabled()`:
+
+```dart
+autocapture: AutocaptureOptions(
+  attribution: AttributionDisabled(),
+)
+```
 
 ## User groups
 

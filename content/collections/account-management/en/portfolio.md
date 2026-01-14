@@ -14,12 +14,8 @@ this_article_will_help_you:
 With Portfolio, you can build a holistic view of how your users interact with your entire product portfolio. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 
 {{partial:admonition type="note" heading="Portfolio project limits"}}
-Portfolios support up to five projects. If your use case requires more, contact your account team to unlock up to 10 projects in a portfolio.
+Portfolios support an unlimited number of projects. User Streams within portfolios are limited to five projects. If your use case requires more, contact your account team to unlock up to 10 projects for User Streams.
 {{/partial:admonition}}
-
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## How it works
 
@@ -43,11 +39,7 @@ While cohort export for portfolio projects is supported for all destinations, wh
 
 ## Create a Portfolio view
 
-Admins and managers in an organization can access and create the Portfolio view by clicking the Settings icon
-
-![gear_icon_for_settings.png](/docs/output/img/account-management/gear-icon-for-settings-png.png)
-
-and navigating to *Organization settings > Projects > Create Portfolio View*. A modal appears; in it, you can name the portfolio view and set user permissions.
+Admins and managers in an organization can access and create the Portfolio view by clicking the **Settings** icon and navigating to *Organization settings > Projects > Create Portfolio View*. A modal appears; in it, you can name the portfolio view and set user permissions.
 
 At this point, you can connect multiple projects into this cross-project view. Just click *Update Source Projects* to select the projects that should merge into a single view. 
 

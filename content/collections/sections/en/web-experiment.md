@@ -1,11 +1,13 @@
 ---
 id: 427fa0c0-c489-48df-a147-cfe636b803b8
+published: false
 blueprint: section
 title: 'Web Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1745620371
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1754408649
+current-collection: web_experiment
 nav_title: web_experiment
 template: landing-page-experiment
 landing_page_content:

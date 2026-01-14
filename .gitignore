@@ -45,7 +45,8 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+/node_modules/
+/vendor/
 
 # Optional npm cache directory
 .npm
@@ -77,6 +78,7 @@ public/hot
 public/storage
 public/docs/css/*
 public/vendor/statamic
+public/docs/md
 public/docs/js/*
 **/.DS_Store
 
@@ -85,3 +87,15 @@ public/docs/js/*
 
 public/docs/js/site.js
 
+
+
+
+markdown-issues.json
+.vscode/mcp.json
+public/mix-manifest.json
+public/docs/css/site.css
+public/docs/js/api-table.js
+public/docs/js/interactive-evaluation-table.js
+public/docs/js/interactive-exposure-table.js
+public/docs/js/interactive-exposure-tracking-table.js
+public/mix-manifest.json

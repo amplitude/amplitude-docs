@@ -47,7 +47,7 @@ No, this isn't available.
 
 **I don’t see cohort population under my cohort. Is this expected?**
 
-Cohort population is only supported for **dynamic cohorts**, or, cohorts that can Amplitude can recompute according to specified criteria. It doesn't support static cohorts. Examples of static cohorts include those imported from a CSV file, or created using Microscope within charts.
+Only dynamic cohorts support listing cohort population. Amplitude recomputes these cohorts according to the specified criteria. Static cohorts don't support listing the cohort population. Examples of static cohorts include those imported from a CSV file, or created using Microscope within charts.
 
 Additionally, the following cohorts aren't supported:
 

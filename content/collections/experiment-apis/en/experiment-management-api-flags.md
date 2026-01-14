@@ -20,13 +20,16 @@ updated_at: 1717531451
 | [List variants](#list-variants)                                   | List all variants for a flag.                        |
 | [Get variant details](#get-variant-details)                       | Get a specific variant for a flag.                   |
 | [Get variant inclusions](#get-variant-inclusions)                 | Get all inclusions (users) for a variant.            |
+| [Get variant cohort inclusions](#get-variant-cohort-inclusions)   | Get all cohort inclusions for a variant.             |
 | [Create variant](#create-variant)                                 | Create a new variant for a flag.                     |
 | [Edit variant](#edit-variant)                                     | Edit a variant for a flag.                           |
 | [Remove variant](#remove-variant)                                 | Remove a variant from a flag.                        |
 | [Add users to variant](#add-users-to-variant)                     | Add users to flag's variant.                         |
+| [Add cohorts to variant](#add-cohorts-to-variant)                 | Add cohorts to flag's variant.                       |
 | [Remove users from variant](#remove-users-from-variant)           | Remove users from flag's variant.                    |
 | [Remove all users from variant](#remove-all-users-from-variant)   | Remove all users from flag's variant.                |
 | [Bulk remove users from variant](#bulk-remove-users-from-variant) | Bulk remove users from experiment's variant.         |
+| [Bulk remove cohorts from variant](#bulk-remove-cohorts-from-variant) | Bulk remove cohorts from flag's variant.         |
 | [List deployments](#list-deployments)                             | List all deployments for a flag.                     |
 | [Create deployment](#create-deployment)                           | Add a deployment for a flag.                         |
 | [Remove deployment](#remove-deployment)                           | Remove a deployment from a flag.                     |
@@ -277,7 +280,7 @@ curl --request GET \
             "rolloutWeights": {
                 "on": 1
             },
-            "targetSegments": [ //[tl! collapse:start]
+            "targetSegments": [ 
                 {
                     "name": "Segment 1",
                     "conditions": [
@@ -298,10 +301,10 @@ curl --request GET \
                 }
             ]
         }
-    },  //[tl! collapse:end]
+    },  
     {
         "createdAt": "2023-07-29T03:32:39.494Z",
-        "createdBy": <userId>, //[tl! collapse:start]
+        "createdBy": <userId>, 
         "version": 2,
         "flagConfig": {
             "id": <id>,
@@ -374,7 +377,7 @@ curl --request GET \
             "targetSegments": []
         }
     }
-] //[tl! collapse:end]
+] 
 ```
 
 {{/partial:tab}}
@@ -598,6 +601,48 @@ curl --request GET \
 {{/partial:tab}}
 {{/partial:tabs}}
 
+## Get variant cohort inclusions
+
+```bash
+GET https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/cohorts
+```
+
+Fetch a list of cohort inclusions for a specific variant of a flag.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Response
+
+A successful request returns a `200 OK` response and a list of cohort inclusions of flag's variant as an array of cohort IDs.
+
+{{partial:tabs tabs="Request, Response"}}
+{{partial:tab name="Request"}}
+
+```bash
+curl --request GET \
+    --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/cohorts' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>'
+```
+
+{{/partial:tab}}
+{{partial:tab name="Response"}}
+
+```json
+[
+    "cohort-id-1",
+    "cohort-id-2"
+]
+```
+
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Create variant
 
 ```bash
@@ -619,7 +664,7 @@ Create a new variant for a flag
 | `key`                                  | Required    | string | The variant key.                                      |
 | `description`                          | Optional    | string | Description for the variant.                          |
 | `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -689,7 +734,7 @@ Edit a variant for a flag.
 | `key`                                  | Optional    | string | The variant key.                                                                                                      |
 | `description`                          | Optional    | string | Description for the variant.                                                                                          |
 | `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
+| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. This value replaces the existing value for the variant payload. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
 
 ### Response
@@ -746,7 +791,7 @@ POST https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/use
 ```
 
 {{partial:admonition type='note'}} 
-You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error.
+You can have up to 2,000 inclusions per variant. If you go over this limit, Amplitude returns a `400` error.
 {{/partial:admonition}}
 
 Add inclusions (users or devices) to flag's variant.
@@ -789,6 +834,57 @@ curl --request POST \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"inclusions":<["id1", "id2", "id3"]>}'
+```
+
+{{/partial:admonition}}
+
+## Add cohorts to variant
+
+```bash
+POST https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/cohorts
+```
+
+Add cohort inclusions to flag's variant.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Request body
+
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                               |
+| -------------------------------------- | ----------- | ------ | ----------------------------------------- |
+| `inclusions`                           | Required    | array  | An array of cohort IDs to add.           |
+
+{{partial:admonition type="example" heading="Example request"}}
+
+```json
+{
+  "inclusions": [
+    "cohort-id-1",
+    "cohort-id-2"
+  ]
+}
+```
+
+{{/partial:admonition}}
+
+### Response
+
+A successful request returns a `200 OK` response and `OK` text.
+
+{{partial:admonition type="example" heading="Request"}}
+
+```bash
+curl --request POST \
+    --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/cohorts' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>' \
+    --data '{"inclusions":["cohort-id-1", "cohort-id-2"]}'
 ```
 
 {{/partial:admonition}}
@@ -860,7 +956,7 @@ curl --request DELETE \
 DELETE https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/bulk-delete-users
 ```
 
-Bulk remove users or devices from flag's variant. Limited to 100 per request.
+Bulk remove users or devices from flag's variant. Limited to 100 for each request.
 
 ### Path variables
 
@@ -888,6 +984,44 @@ curl --request DELETE \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"users":<["id1", "id2", "id3"]>}'
+```
+
+{{/partial:admonition}}
+
+## Bulk remove cohorts from variant
+
+```bash
+DELETE https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/bulk-delete-cohorts
+```
+
+Bulk remove cohorts from flag's variant. Limited to 100 for each request.
+
+### Path variables
+
+| Name         | Requirement | Type   | Description        |
+| ------------ | ----------- | ------ | ------------------ |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
+| `variantKey` | Required    | string | The variant's key. |
+
+### Request body
+
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                |
+| -------------------------------------- | ----------- | ------ | ------------------------------------------ |
+| `users`                                | Required    | array  | An array of cohort IDs to remove.         |
+
+### Response
+
+A successful request returns a `200 OK` response and `OK` text.
+
+{{partial:admonition type="example" heading="Request"}}
+
+```bash
+curl --request DELETE \
+    --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/bulk-delete-cohorts' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer <management-api-key>' \
+    --data '{"users":["cohort-id-1", "cohort-id-2"]}'
 ```
 
 {{/partial:admonition}}
@@ -956,7 +1090,7 @@ Add a deployment for a flag.
 
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                 |
 | -------------------------------------- | ----------- | ------ | ------------------------------------------- |
-| `deployments`                          | Required    | object | Contains an string array of deployment ids. |
+| `deployments`                          | Required    | string array | Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -1040,7 +1174,7 @@ Edit a flag.
 | `bucketingUnit`                        | Optional    | string       | Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis.                                                                                          |
 | `evaluationMode`                       | Optional    | string       | Evaluation mode for the flag, either `local` or `remote`.                                                                                                                                                  |
 | `rolloutPercentage`                    | Optional    | number       | Rollout percentage for non-targeted users. Range 0 - 100.                                                                                                                                                  |
-| `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information. When `targetSegments` object is provided, it will replace existing target segments. Note: cohorts are not supported at the moment. |
+| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
 | `enabled`                              | Optional    | boolean      | Property to activate or deactivate flag.                                                                                                                                                                   |
 | `archive`                              | Optional    | boolean      | Property to archive or unarchive flag.                                                                                                                                                                     |
 | `tags`                                 | Optional    | string array | A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first.                     |
@@ -1099,7 +1233,7 @@ Create a new flag.
 | `variants`                             | Optional    | object array | Array of [`variants`](#variants).                                                                                                                                         |
 | `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
 | `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
-| `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
+| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
 | `deployments`                          | Optional    | string array | Array of deployments that the flag should be assigned to.                                                                                                                 |
 | `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
 
@@ -1110,7 +1244,7 @@ The `variants` field contains these objects.
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
 | -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
 | `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
+| `payload`                              | Optional    | JSON | Optional payload. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `name`                                 | Optional    | string | The variant name.                                     |
 | `description`                          | Optional    | string | The variant description.                              |
 

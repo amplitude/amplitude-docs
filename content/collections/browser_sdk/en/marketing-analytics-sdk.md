@@ -180,9 +180,9 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 |`ko_click_id`| Google Click Identifier for iOS device from App to Web |
 |`li_fat_id`| Kochava Click Identifier from URL parameters |
 |`msclkid`| Microsoft Click Identifier |
-|`rtd_cid`| TikTok Click Identifier |
-|`ttclid`| Twitter Click Identifier from URL parameter |
-|`twclid`| Linkedin Click identifier |
+|`rdt_cid`| Reddit Click Identifier |
+|`ttclid`| TikTok Click Identifier from URL parameter |
+|`twclid`| Twitter Click identifier |
 |`wbraid`| Reddit campaign tracking/attribution Click identifier |
 
 #### First-touch attribution
@@ -349,7 +349,7 @@ The following information is tracked in the page view events.
 |`event_properties.page_path`| `string`. The page path. | `location.path` or ''.|
 |`event_properties.page_title`| `string`. The page title. | `document.title` or ''.|
 |`event_properties.page_url`| `string`. The value of page url. | `location.href.split('?')[0]` or ``.|
-|`event_properties.[CampaignParam]`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined campaignParam or `undefined`. |
+|`event_properties.[CampaignParam]`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. | Any undefined campaignParam or `undefined`. |
 
 ### Use the Marketing Analytics SDK with Ampli
 

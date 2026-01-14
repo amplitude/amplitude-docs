@@ -19,3 +19,7 @@ To update a user's access to Guides and Surveys:
 2. Select one or more users, then click **Manage Project Access**.
 3. If your organization has more than one project, select the individual projects for which you need to update the user's role.
 4. Select the update role on a per-project basis.
+
+{{partial:admonition type="note" heading="Role-based Access Controls (RBAC)"}}
+For Enterprise organizations with Role-based Access Controls (RBAC) enabled, review the available [Guides & Surveys Roles and Permissions](/docs/admin/account-management/role-based-access-controls-rbac#rbac-permission-reference). 
+{{/partial:admonition}}

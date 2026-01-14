@@ -64,6 +64,7 @@ Environment configuration can only configure a single project. Environment varia
 | `AMPLITUDE_EXPERIMENT_MANAGEMENT_API_KEY` | <span style="max-width:450px;display:inline-block">The [Experiment management API key](/docs/apis/keys-and-tokens#management-api-key). Must be created for the same project as the configured API and secret key. Used to automatically access and update deployments used for the project.</span> |
 | `AMPLITUDE_REDIS_URI` | Optional. The entire URI to connect to Redis. Include the protocol, host, port, and optional username, password, and path (for example `redis://localhost:6379`). |
 | `AMPLITUDE_REDIS_PREFIX` | Optional. The prefix to connect  |
+| `AMPLITUDE_REDIS_USE_CLUSTER` | Optional. If `AMPLITUDE_REDIS_URI` is a cluster URL, pass this as `true`. It defaults to `false`. |
 | `AMPLITUDE_SERVER_URL` | Optional. The server URL, including protocol and host, to fetch flags from. |
 | `AMPLITUDE_COHORT_SERVER_URL` | Optional. The server URL, including protocol and host, to download cohorts from. |
 
@@ -113,6 +114,7 @@ Configure the evaluation proxy to use Redis as a persistent storage. Highly reco
 | --- | --- |
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |
+| `useCluster` | Optional. If `uri` is a cluster URL, pass this as `true`. It defaults to `false`. |
 | `prefix` | Optional. A prefix for all keys saved by the evaluation proxy (default `amplitude`). |
 
 ## Deployment

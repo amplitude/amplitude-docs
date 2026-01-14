@@ -13,7 +13,7 @@ description: 'Choose this option if you use an Amplitude Android SDK to instrume
 ---
 This article covers the installation of Session Replay using the Android SDK plugin. If your app is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-android-standalone).
 
-{{partial:partials/session-replay/sr-android-performance}}
+{{partial:partials/session-replay/sr-android-performance | markdown}}
 
 Session Replay captures changes to an app's **view tree**. The view tree includes the main view and all child views recursively. It then replays these changes to build a video-like replay. 
 
@@ -76,19 +76,17 @@ import com.amplitude.android.Configuration
 import com.amplitude.android.plugins.SessionReplayPlugin
 
 // Initialize Amplitude Analytics SDK instance
-val amplitude = Amplitude(Configuration(
-    apiKey = API_KEY,
-    context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(sessions = true),
-))
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = API_KEY,
+        context = applicationContext
+    )
+)
 
 // Create and Install Session Replay Plugin
 // Recording will be handled automatically
-val sessionReplayPlugin = SessionReplayPlugin(sampleRate = 1.0) //[tl! ~~]
+val sessionReplayPlugin = SessionReplayPlugin(sampleRate = 1.0) 
 amplitude.add(sessionReplayPlugin)
-
-// Send replay data to the server
-amplitude.flush()
 ```
 {{/partial:tab}}
 {{partial:tab name="Legacy SDK"}}
@@ -116,7 +114,7 @@ val amplitude = Amplitude.getInstance()
     .setFlushEventsOnClose(true)
 
 // Create Session Replay Middleware
-val sessionReplayMiddleware = SessionReplayMiddleware(amplitude, sampleRate = 1.0) //[tl! ~~]
+val sessionReplayMiddleware = SessionReplayMiddleware(amplitude, sampleRate = 1.0) 
 
 // Add session replay middleware
 // Recording will be handled automatically
@@ -150,7 +148,9 @@ Pass the following options when you initialize the Session Replay plugin:
 | --------- |-----------| -------- |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
-| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. | 
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -223,6 +223,8 @@ if (nonEUCountryFlagEnabled) {
 
 {{partial:partials/session-replay/sr-android-webview-mapview}}
 
+{{partial:partials/session-replay/sr-android-log-recording}}
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-android-storage}}
@@ -241,7 +243,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Session Replay requires that the Android SDK send at least one event that includes Session Replay ID. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel Analysis, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new) if you don't see this event.
 
 If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone/).
 
@@ -262,24 +264,22 @@ Session replays may not appear in Amplitude due to:
 
 Ensure your app has access to the internet then try again.
 
-#### No events triggered through the Android SDK in the current session
+#### No Replay Captured event
 
-Session Replay requires that at least one event in the user's session has the `[Amplitude] Session Replay ID` property. If you instrument your events with a method other than the [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk), the Android SDK may send only the default Session Start and Session End events, which don't include this property.
-
-For local testing, you can force a Session Start event to ensure that Session Replay functions.
-
-1. In Amplitude, in the User Lookup Event Stream, you should see a Session Start event that includes the `[Amplitude] Session Replay ID` property. After processing, the Play Session button should appear for that session.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event to link replays with your analytics data. If you don't see this event, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 #### Sampling
 
 As mentioned above, the default `sampleRate` for Session Replay is `0`. Update the rate to a higher number. For more information see, [Sampling rate](#sampling-rate).
 
-#### Some sessions don't include the Session Replay ID property
+#### Some sessions don't include the Replay Captured event
 
-Session replay doesn't require that all events in a session have the `[Amplitude] Session Replay ID` property, only that one event in the session has it. Reasons why `[Amplitude] Session Replay ID`  may not be present in an event include:
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. Reasons why this event may not appear include:
 
 - The user may have opted out or may not be part of the sample set given the current `sampleRate`. Increasing the `sampleRate` captures more sessions.
-- Amplitude events may still send through your provider, but `getSessionReplayProperties()` doesn't return the `[Amplitude] Session Replay ID` property. This can result from `optOut` and `sampleRate` configuration settings. Check that `optOut` and `sampleRate` are set to include the session.
+- The `optOut` configuration is enabled for the session. Check that `optOut` and `sampleRate` are set to include the session.
+
+If you've verified these settings and still don't see the event, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 ### Session Replay processing errors
 

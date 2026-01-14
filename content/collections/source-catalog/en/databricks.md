@@ -193,7 +193,7 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
 5. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
-6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks.
+6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
 7. Enter a descriptive name for this instance of the source.
 8. The source appears in the Sources list for your workspace.
 
@@ -268,9 +268,19 @@ Depending on your company's network policy, you may need to add the following IP
    [Databricks][JDBCDriver](700100) Connection timeout expired. Details: None.
    ```
    - **Root cause**: This means Amplitude was unable to establish a JDBC connection to the Databricks endpoint. It often occurs because:
-      - The your Databricks cluster was terminated and is taking too long to restart, causing the connection attempt to time out.
+      - The Databricks cluster was terminated and is taking too long to restart, causing the connection attempt to time out.
       - The Databricks workspace may have reached resource limits (for example, maximum concurrent SQL endpoints, cluster quota, etc).
    - **Solution**:
-      - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or restarting during the connection attempt.
+      - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or is restarting during the connection attempt.
       - Review cluster auto-start and auto-termination settings to ensure clusters can restart quickly when needed.
       - Monitor for resource limits in Databricks (such as concurrent connection caps or cluster capacity issues) and adjust quotas if necessary.
+
+8. ```
+   [DELTA_MISSING_CHANGE_DATA] Error getting change data for range [2 , 3] as change data was not recorded for version [2]
+   ```
+    - **Root cause**: This means Amplitude couldn't retrieve data from the table for a specific version range. It occurs because:
+        - Change data feed(CDF) was enabled after the specific table version, so the change data doesn't exist for the range.
+        - The specific table version has been vacuumed and corresponding data files have been deleted.
+    - **Solution**:
+        - Create a new source which starts importing from the latest table version.
+        - If you want to reuse the same source and skip the table version, contact [Amplitude Support](https://gethelp.amplitude.com).

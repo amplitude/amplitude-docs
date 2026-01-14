@@ -17,18 +17,17 @@ With Amplitude's **Revenue Long-Term Value (LTV)** chart, you can:
 * See how quickly and effectively segments of new users are transitioning to paying users.
 * Set benchmarks and goals for new user monetization going forward.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
 Events don't appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. Before you begin, see the article about [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-See the [tracking revenue](/docs/data/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system.  
+Review the [tracking revenue](/docs/data/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system. 
 
-{{partial:admonition type='note'}}
-Amplitude doesn't support currency conversion. The revenue value you send Amplitude is what's aggregated and displayed. If you get revenue in different currencies, normalize to a single currency before you send any revenue data to Amplitude.
+Review [Currency Conversion](/docs/data/currency-conversion) for information about how to aggregate and display original and converted currency options. 
+
+{{partial:admonition type="tip" heading=""}}
+It is recommended to enable both the `amplitude.Revenu()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
 {{/partial:admonition}}
 
 ## Set up a Revenue LTV chart

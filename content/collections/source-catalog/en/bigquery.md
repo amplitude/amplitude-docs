@@ -67,9 +67,9 @@ To add BigQuery as a data source in your Amplitude project, follow these steps.
 5. After you confirm your credentials, click **Next** to select data. You have several configuration options to choose from here:
     - Type of data: This tells Amplitude whether you're ingesting event data, user property or group property data.
     - Type of import:
-          - Full Sync: Amplitude periodically imports the entire dataset, regardless of whether the data is already imported. This is good for data sets where the row data changes over time, but there is no easy way to tell which rows have changed. Otherwise, the more efficient option would be a time-based import. This option isn't supported for ingesting event data.
-          - Time-based: Amplitude periodically ingests the most recent rows in the data, as determined by the provided Timestamp column. The first import ingests all available data, and later imports ingest any data with timestamps after the time of the most recent import. To use this option, include the timestamp column in the output of your SQL statement.
-    - Frequency: Choose from several scheduling options ranging from five minutes to one month (when this is selected, ingestion happens on the first of the month).
+        - Full Sync: Amplitude periodically imports the entire dataset, regardless of whether the data is already imported. This is good for data sets where the row data changes over time, but there is no easy way to tell which rows have changed. Otherwise, the more efficient option is a time-based import. This option isn't supported for ingesting event data.
+        - Time-based: Amplitude periodically ingests the most recent rows in the data, as determined by the provided Timestamp column. The first import ingests all available data, and later imports ingest any data with timestamps after the time of the most recent import. To use this option, include the timestamp column in the output of your SQL statement.
+    - Frequency: Choose from several scheduling options ranging from five minutes to one month. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
     - SQL query: This is the code for the query Amplitude uses to ingest the right data.
 6. After you've set your configuration options, click **Test SQL** to see how the data is coming through from your BigQuery instance. If there are any errors, they appear under the Test SQL button.
 7. If there are no errors, click **Finish**. You get a notification indicating you've successfully enabled the new BigQuery source. Finally, you're redirected to the Sources listing page, where you can see the newly created BigQuery source.
@@ -102,37 +102,37 @@ Include the mandatory fields for the data type when you create the SQL query. Th
 
 ### Events
 
-| Column name (must be lowercase) | Mandatory | Column data type | Example |
-|---|---|---|---|
-| `user_id` | Yes, unless `device_id` is used | VARCHAR | datamonster@gmail.com |
-| `device_id` | Yes, unless `user_id` is used | VARCHAR | C8F9E604-F01A-4BD9 |
-| `event_type` | Yes | VARCHAR | watch_tutorial | 
-| `time` | Yes | Milliseconds since epoch (Timestamp) | 1396381378123 |
-| `event_properties` | Yes | JSON | {"source":"notification", "server":"host-us"} |
-| `user_properties` | No | JSON | {"city":"chicago", "gender":"female"} |
-| `update_time_column` | No (Yes if using time based import) | TIMESTAMP | 2013-04-05 01:02:03.000 |
+| Column name (must be lowercase) | Mandatory                           | Column data type                     | Example                                       |
+| ------------------------------- | ----------------------------------- | ------------------------------------ | --------------------------------------------- |
+| `user_id`                       | Yes, unless `device_id` is used     | VARCHAR                              | datamonster@gmail.com                         |
+| `device_id`                     | Yes, unless `user_id` is used       | VARCHAR                              | C8F9E604-F01A-4BD9                            |
+| `event_type`                    | Yes                                 | VARCHAR                              | watch_tutorial                                |
+| `time`                          | Yes                                 | Milliseconds since epoch (Timestamp) | 1396381378123                                 |
+| `event_properties`              | Yes                                 | JSON                                 | {"source":"notification", "server":"host-us"} |
+| `user_properties`               | No                                  | JSON                                 | {"city":"chicago", "gender":"female"}         |
+| `update_time_column`            | No (Yes if using time based import) | TIMESTAMP                            | 2013-04-05 01:02:03.000                       |
 
 Find other supported fields in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#upload-request-headers).
 
 ### User properties
 
-| Column name (must be lowercase) | Mandatory | Column data type | Example |
-|---|---|---|---|
-| `user_id` | Yes | VARCHAR | datamonster@gmail.com |
-| `user_properties` | Yes | JSON | {"city":"chicago", "gender":"female"} |
-| `update_time_column` | No (Yes if using time based import) | TIMESTAMP | 2013-04-05 01:02:03.000 |
+| Column name (must be lowercase) | Mandatory                           | Column data type | Example                               |
+| ------------------------------- | ----------------------------------- | ---------------- | ------------------------------------- |
+| `user_id`                       | Yes                                 | VARCHAR          | datamonster@gmail.com                 |
+| `user_properties`               | Yes                                 | JSON             | {"city":"chicago", "gender":"female"} |
+| `update_time_column`            | No (Yes if using time based import) | TIMESTAMP        | 2013-04-05 01:02:03.000               |
 
 Find other supported fields in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys).
 
 ### Group properties
 
-| Column name (must be lowercase) | Mandatory | Column data type | Example |
-|---|---|---|---|
-| `groups` | Yes | JSON | {"company":"amplitude", "team":["marketing", "sales"]} |
-| `group_properties` | Yes | JSON | {"location":"seattle", "active":"true"} |
-| `update_time_column` | No (Yes if using time based import) | TIMESTAMP | 2013-04-05 01:02:03.000 |
+| Column name (must be lowercase) | Mandatory                           | Column data type | Example                                                |
+| ------------------------------- | ----------------------------------- | ---------------- | ------------------------------------------------------ |
+| `groups`                        | Yes                                 | JSON             | `{"company":"amplitude", "team":["marketing", "sales"]}` |
+| `group_properties`              | Yes                                 | JSON             | `{"location":"seattle", "active":"true"}`                |
+| `update_time_column`            | No (Yes if using time based import) | TIMESTAMP        | `2013-04-05 01:02:03.000`                                |
 
-Each group property in `group_properties` would be applied to every group in `groups`
+Each group property in `group_properties` applies to every group in `groups`
 
 ## Update your BigQuery service account key
 

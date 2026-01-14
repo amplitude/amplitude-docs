@@ -6,10 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/228838627-The-Lifecycle-ch
 this_article_will_help_you:
   - 'Understand the benefits of a lifecycle analysis'
   - 'Set up a Lifecycle chart'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1732570270
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760631886
 landing: true
 landing_blurb: 'Understand the benefits of a lifecycle analysis'
+academy_course:
+  - def740af-68f5-484d-95c4-0b84edc128b5
 ---
 Amplitude's **Lifecycle** chart gives you a quick, easy-to-understand overview of the growth of your product's user base over time. It does this by breaking out your active users into subgroups: new, current, and resurrected (formerly inactive) users. All your total active users will fall into one of these categories. It will also show you a count of your inactive, dormant users.
 
@@ -19,9 +21,6 @@ You can also get a bird's-eye view of engagement and retention by building your 
 
 The idea is to grow your current and resurrected user counts, either by keeping them engaged or by giving them a reason to become active again. You'll also want to keep an eye on your dormant users: if this category starts growing, you may have an engagement problem on your hands.
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

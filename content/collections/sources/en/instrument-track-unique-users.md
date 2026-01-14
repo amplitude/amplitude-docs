@@ -13,10 +13,6 @@ updated_at: 1718136543
 ---
 Accurately tracking unique users is critical to getting the most out of Amplitude. Depending on the nature of your product, your users can log in and out at will, browse anonymously, or use multiple devices. This article will describe how Amplitude tracks unique users, and what you can do to ensure that process goes smoothly.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## How Amplitude identifies unique users
 
 Amplitude uses a system of three different IDs to track users: device ID, user ID, and Amplitude ID:
@@ -168,7 +164,7 @@ Amplitude solves this problem by cross referencing the list of Amplitude IDs wit
 **Important Note:**
 
 * User IDs **cannot be merged**. If you create a new user ID for an existing user, Amplitude will only recognize them as different unique users.
-* This merged users solution **does not apply** to the raw data in Amazon [Redshift](/docs/data/destination-catalog/amazon-redshift), as the database contains the raw event logs and not a merged users table. Without this merged users logic, we have seen an average change of about 5% in DAU numbers for our users with higher-than-average change for web data. Merged users **are** available in Snowflake with [Query](/docs/analytics/charts/other-charts/other-charts-amplitude-sql).
+* This merged users solution **does not apply** to the raw data in Amazon [Redshift](/docs/data/destination-catalog/amazon-redshift), as the database contains the raw event logs and not a merged users table. Without this merged users logic, we have seen an average change of about 5% in DAU numbers for our users with higher-than-average change for web data.
 
 ### Event IDs, device IDs, and merging users
 

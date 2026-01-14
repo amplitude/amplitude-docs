@@ -1,66 +1,179 @@
-{{if nav_title =="source-catalog" || nav_title=="destination-catalog"}}
-<div class="nav-level-1 p-4">
-    <div class="flex flex-col">
-        {{collection :from="nav_title" as="integrations"}}
-        <a href="/docs/data" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative text-amp-gray-600 hover:text-amp-blue-500">Back to Data</a>
-        {{integrations}}
-        <a href="{{url}}" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500  hover:bg-amp-gray-50 hover:rounded {{if current_uri == url }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}}text-amp-gray-600{{/if}}" >{{title}}</a>
-        {{/integrations}}
-        {{/collection}}
-    </div>
-</div>
+{{#
+  Side Navigation - Lit Web Components Version
+  
+  Uses <amp-side-nav>, <amp-nav-item>, and <amp-catalog-nav> custom elements
+  for a clean, component-based navigation structure.
+#}}
+
+{{if nav_title == "source-catalog" || nav_title == "destination-catalog"}}
+  {{# Catalog navigation - flat list with back link #}}
+  <amp-catalog-nav back-url="/docs/data" back-label="Back to Data" current-uri="{{ current_uri }}">
+    {{collection :from="nav_title" as="integrations"}}
+      {{integrations}}
+        <a href="{{url}}" class="{{if current_uri == url }}active{{/if}}">{{title}}</a>
+      {{/integrations}}
+    {{/collection}}
+  </amp-catalog-nav>
+
 {{else}}
-<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1 p-4">
-    <div class="flex flex-col">
-        {{ nav :handle="nav_title" }}
-            {{ lvl1_parent = title | slugify }}
-            {{ if url && children }}
-                <a href="{{ url }}"
-                    {{if current_uri | contains(url) }}@click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" {{/if}}
-                    class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500 {{if is_current }} text-amp-blue-500 active{{else}}text-amp-gray-600{{/if}}"
-                    {{if is_current }} x-effect="lvl1 = '{{title | slugify}}'"{{/if}} :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }} <!--{{data}}{{underline}}{{/data}} -->
-                    {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</a>
-            {{ elseif url }}
-                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-blue-950{{/if}}">   
-                    <a href="{{ url }}"
-                    class="no-underline inline-block text-[.875rem] p-2 leading-5 {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
-                </div>
+  {{# Standard multi-level navigation #}}
+  <amp-side-nav current-uri="{{ current_uri }}" nav-title="{{ nav_title }}">
+    {{ nav :handle="nav_title" }}
+      {{# Level 1 items #}}
+      {{ if url && children }}
+        {{# Has URL and children - expandable link #}}
+        <amp-nav-item 
+          title="{{ title }}" 
+          url="{{ url }}" 
+          slug="{{ title | slugify }}"
+          has-children
+          level="1"
+          {{ if is_current }}is-current{{ /if }}>
+          {{ children }}
+            {{# Level 2 items #}}
+            {{ if url }}
+              {{ if children }}
+                {{# Level 2 with children #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  url="{{ url }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  has-children
+                  level="2"
+                  {{ if is_current }}is-current{{ /if }}>
+                  {{ children }}
+                    {{# Level 3 items #}}
+                    <amp-nav-item 
+                      title="{{ title }}" 
+                      url="{{ url }}" 
+                      slug="{{ title | slugify }}"
+                      parent-slug="{{ parent:title | slugify }}"
+                      {{ if icon }}icon="{{ icon }}"{{ /if }}
+                      level="3"
+                      {{ if is_current }}is-current{{ /if }}>
+                    </amp-nav-item>
+                  {{ /children }}
+                </amp-nav-item>
+              {{ else }}
+                {{# Level 2 link only #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  url="{{ url }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  level="2"
+                  {{ if is_current }}is-current{{ /if }}>
+                </amp-nav-item>
+              {{ /if }}
             {{ else }}
-                <button @click.prevent="lvl1 = (lvl1 === '{{ title | slugify }}') ? '' : '{{ title | slugify }}'"
-                    class="nav-button text-left text-[.875rem] my-0 py-[.25rem] pl-2 relative"
-                    :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
-                    {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</button>
+              {{ if children }}
+                {{# Level 2 button (no URL, has children) #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  has-children
+                  level="2">
+                  {{ children }}
+                    {{# Level 3 items #}}
+                    <amp-nav-item 
+                      title="{{ title }}" 
+                      url="{{ url }}" 
+                      slug="{{ title | slugify }}"
+                      parent-slug="{{ parent:title | slugify }}"
+                      {{ if icon }}icon="{{ icon }}"{{ /if }}
+                      level="3"
+                      {{ if is_current }}is-current{{ /if }}>
+                    </amp-nav-item>
+                  {{ /children }}
+                </amp-nav-item>
+              {{ /if }}
             {{ /if }}
-            {{ if children }}
-                <div x-show="lvl1 === '{{ title | slugify }}'" class="nav-level-2 flex flex-col my-0 pl-4"
-                >
-                    {{ children }}
-                        {{ if url }}
-                            <a href="{{ url }}"
-                                class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}"
-                                {{if is_current }} x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
-                        {{ else }}
-                            <button
-                                @click.prevent="lvl2 = (lvl2 === '{{ title | slugify }}' ? null : '{{ title | slugify }}')"
-                                class="text-left text-[.875rem] py-2 pl-2 relative"
-                                :class="lvl2 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
-                                {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</button>
-                        {{ /if }}
-                        {{ if children }}
-                            <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 flex flex-col my-0 pl-2">
-                                {{ children }}
-                                <div>
-                                    <a href="{{ url }}"
-                                        class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}"
-                                        {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{svg :src="icon" class="inline pr-2 text-amp-gray-600 h-[0.875rem]"}}{{ title }}</a>
-</div>
-                                {{ /children }}
-                            </div>
-                        {{ /if }}
-                    {{ /children }}
-                </div>
+          {{ /children }}
+        </amp-nav-item>
+
+      {{ elseif url }}
+        {{# URL only - plain link #}}
+        <amp-nav-item 
+          title="{{ title }}" 
+          url="{{ url }}" 
+          slug="{{ title | slugify }}"
+          level="1"
+          {{ if is_current }}is-current{{ /if }}>
+        </amp-nav-item>
+
+      {{ elseif children }}
+        {{# Button only - no URL but has children #}}
+        <amp-nav-item 
+          title="{{ title }}" 
+          slug="{{ title | slugify }}"
+          has-children
+          level="1">
+          {{ children }}
+            {{# Level 2 items #}}
+            {{ if url }}
+              {{ if children }}
+                {{# Level 2 with children #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  url="{{ url }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  has-children
+                  level="2"
+                  {{ if is_current }}is-current{{ /if }}>
+                  {{ children }}
+                    {{# Level 3 items #}}
+                    <amp-nav-item 
+                      title="{{ title }}" 
+                      url="{{ url }}" 
+                      slug="{{ title | slugify }}"
+                      parent-slug="{{ parent:title | slugify }}"
+                      {{ if icon }}icon="{{ icon }}"{{ /if }}
+                      level="3"
+                      {{ if is_current }}is-current{{ /if }}>
+                    </amp-nav-item>
+                  {{ /children }}
+                </amp-nav-item>
+              {{ else }}
+                {{# Level 2 link only #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  url="{{ url }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  level="2"
+                  {{ if is_current }}is-current{{ /if }}>
+                </amp-nav-item>
+              {{ /if }}
+            {{ else }}
+              {{ if children }}
+                {{# Level 2 button (no URL, has children) #}}
+                <amp-nav-item 
+                  title="{{ title }}" 
+                  slug="{{ title | slugify }}"
+                  parent-slug="{{ parent:title | slugify }}"
+                  has-children
+                  level="2">
+                  {{ children }}
+                    {{# Level 3 items #}}
+                    <amp-nav-item 
+                      title="{{ title }}" 
+                      url="{{ url }}" 
+                      slug="{{ title | slugify }}"
+                      parent-slug="{{ parent:title | slugify }}"
+                      {{ if icon }}icon="{{ icon }}"{{ /if }}
+                      level="3"
+                      {{ if is_current }}is-current{{ /if }}>
+                    </amp-nav-item>
+                  {{ /children }}
+                </amp-nav-item>
+              {{ /if }}
             {{ /if }}
-        {{ /nav }}
-    </div>
-</div>
-{{/if}} 
+          {{ /children }}
+        </amp-nav-item>
+      {{ /if }}
+    {{ /nav }}
+  </amp-side-nav>
+{{/if}}

@@ -102,33 +102,33 @@ You can also switch the chart type, by clicking the chart type name and selectin
 
 Amplitude caches charts and requests. The cache time is dependent on the time interval (daily, weekly, monthly) and the numbers days from the present day. Amplitude also caches CSV downloads from charts.
 
-Below are the cache times for charts. **Cache times for dashboards, REST API requests, and CSV downloads are twice as long as the times listed below.** 
+Cache time depends on the interval of the chart (for example, hourly, daily, or weekly), the interval length, and whether the chart is standalone or:
+- on a dashboard
+- part of a CSV export
+- retrieved from a REST API call
 
-**Real-time queries:**
+Dashboards, CSV exports, and REST API calls cache content for longer than individual charts.
 
-* five minutes, within the last 24 hours
+| Interval  | Interval length            | Chart cache time | Dashboard, CSV, REST call cache time |
+| --------- | -------------------------- | ---------------- | ------------------------------------ |
+| Realtime  | --                         | 5 minutes        | 5 minutes                            |
+| Hourly    | --                         | 5 minutes        | 5 minutes                            |
+| Daily     | within the last 7 days     | 10 minutes       | 60 minutes                           |
+| Daily     | within the last 30 days    | 60 minutes       | 6 hours                              |
+| Daily     | greater than 30 days       | 6 hours          | 18 hours                             |
+| Weekly    | within the last 4 weeks    | 60 minutes       | 6 hours                              |
+| Weekly    | within the last 12 weeks   | 6 hours          | 12 hours                             |
+| Weekly    | greater than 12 weeks      | 24 hours         | 48 hours                             |
+| Monthly   | within the last 3 months   | 6 hours          | 18 hours                             |
+| Monthly   | within the last 6 months   | 24 hours         | 48 hours                             |
+| Monthly   | greater than 6 months      | 48 hours         | 96 hours                             |
+| Quarterly | within the last 2 quarters | 6 hours          | 18 hours                             |
+| Quarterly | within the last 3 quarters | 24 hours         | 72 hours                             |
+| Quarterly | greater than 3 quarters    | 48 hours         | 96 hours                             |
+| Yearly    | --                         | 48 hours         | 96 hours                             |
 
-**Hourly queries:**
+During the time in which Amplitude caches a chart's results, Amplitude doesn't automatically recompute the chart. Sometimes, after the cache time expires, Amplitude may still show cached results by default while it recomputes the chart in the background. Click **Refresh** to recompute a chart at any time.
 
-* five minutes
-
-**Daily queries:**
-
-* ten minutes, within last seven days
-* 60 minutes, within last 30 days
-* six hours, greater than last 30 days
-
-**Weekly queries:**
-
-* 60 minutes, within last four weeks
-* six hours, within last 12 weeks
-* 24 hours, greater than last 12 weeks
-
-**Monthly queries:**
-
-* six hours, within last three months
-* 24 hours, within last six months
-* 48 hours, greater than last six months
 
 {{partial:admonition type='note'}}
 If you're measuring time on the date picker using the "between" option, the query times listed above apply to any range of that duration, and not just the most recent. For instance, a chart generated in 2023 that examines monthly data collected between January 2020 and June 2020 (a six-month span that's not the most recent six months) is cached for 24 hours.
@@ -136,12 +136,26 @@ If you're measuring time on the date picker using the "between" option, the quer
 
 ## Releases and annotations
 
-* **Add an annotation** to your chart on the specific date of the data point you've selected, such as the dates of a feature release or a marketing campaign. Annotations appear as purple vertical lines in your chart, and they can be removed in your project's [Settings page](/docs/admin/account-management/account-settings). There are some limits to annotations:
+Click the `+` icon to the right of the x-axis on a time series chart to add an annotation. This launches a modal where you can specify the date, add a description, and set the visibility. Annotations appear as vertical lines on your chart, and as numbers under the x-axis.
+
+Annotations are useful to mark the date of a feature release or a marketing campaign. Remove annotations from your project's [Settings page](/docs/admin/account-management/account-settings). 
+
+Annotations have the following limitations:
   * Only users with Admin or Manager permission levels can create annotations.
   * Chart-specific annotations are only available for Event Segmentation and User Sessions charts.
   * Annotations don't support public links and aren't accessible in dashboards or notebooks.
-* **Create a release**. A **release** represents a change in your product. See [this Help Center article for more information on releases in Amplitude](/docs/analytics/releases). 
 
+Releases represent a change in your product. For more information, review [Releases](/docs/analytics/releases). 
+
+### Give annotations a date range
+
+Provide a start date and end date for your annotation to apply them to specific dates and times. For example, if you ran a marketing campaign from March 4 through March 8, specify those dates in the annotation so it reflects the entire campaign.
+
+### Categorize an annotation
+
+Specify an annotation's category to group it with similar annotations. Annotation categories enable you to show and hide groups of annotations, so that your chart displays only what you want it to.
+
+Manage annotation categories in Project Settings. When you create a category, you can specify whether it displays by default on all charts within a project, or if users must manually enable it on each chart.
 
 ## Keyboard shortcuts
 

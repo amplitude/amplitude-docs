@@ -1,7 +1,0 @@
-extends: existence
-message: "Don't use colons in headings."
-nonword: true
-level: suggestion
-scope: heading
-tokens:
-  - ':\s[a-z]'

@@ -1,0 +1,6 @@
+extends: existence
+message: Don't ask users to do something.
+level: error
+ignorecase: true
+tokens:
+  - please

@@ -1,0 +1,67 @@
+name: Assign rotating on-call reviewer
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+jobs:
+  assign-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign on-call reviewer
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.ON_CALL_BOT }}
+          script: |
+            const teamSlug = 'dev-docs';  // Your team slug (e.g., 'oncall-reviewers')
+            const org = context.repo.owner;
+            const prNumber = context.payload.pull_request.number;
+            const prAuthor = context.payload.pull_request.user.login;
+
+            core.info(`Fetching team members from ${org}/${teamSlug}`);
+
+            // Get team members
+            const { data: members } = await github.rest.teams.listMembersInOrg({
+              org,
+              team_slug: teamSlug,
+              per_page: 100
+            });
+
+            if (!members || members.length === 0) {
+              core.setFailed(`No members found in team ${teamSlug}`);
+              return;
+            }
+
+            // Exclude PR author
+            const reviewers = members
+              .map(member => member.login)
+              .filter(username => username !== prAuthor);
+
+            if (reviewers.length === 0) {
+              core.warning(`PR author (${prAuthor}) is the only team member. Skipping assignment.`);
+              return;
+            }
+
+            // Determine current week
+            function getISOWeekNumber(date = new Date()) {
+              const d = new Date(date);
+              d.setHours(0, 0, 0, 0);              // Reset time
+              d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7)); // Move to Thursday
+              const week1 = new Date(d.getFullYear(), 0, 4);       // Jan 4 is always in week 1
+              const dayDiff = (d - week1) / 86400000;
+              return 1 + Math.floor(dayDiff / 7);
+            }
+
+            // Determine reviewer based on calendar week
+            const currentWeek = getISOWeekNumber();
+            const reviewerIndex = currentWeek % reviewers.length;
+            const reviewer = reviewers[reviewerIndex];
+
+            core.info(`Assigning reviewer @${reviewer} (week ${currentWeek})`);
+
+            await github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+              reviewers: [reviewer]
+            });

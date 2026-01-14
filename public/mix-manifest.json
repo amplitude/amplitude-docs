@@ -1,10 +1,14 @@
 {
     "/docs/js/site.js": "/docs/js/site.js",
+    "/docs/js/side-nav.js": "/docs/js/side-nav.js",
     "/docs/js/api-table.js": "/docs/js/api-table.js",
     "/docs/js/interactive-exposure-tracking-table.js": "/docs/js/interactive-exposure-tracking-table.js",
     "/docs/js/interactive-evaluation-table.js": "/docs/js/interactive-evaluation-table.js",
     "/docs/js/interactive-exposure-table.js": "/docs/js/interactive-exposure-table.js",
     "/docs/js/statuspage.js": "/docs/js/statuspage.js",
+    "/docs/js/glossary.js": "/docs/js/glossary.js",
+    "/docs/js/rbac.js": "/docs/js/rbac.js",
+    "/docs/css/dracula-prism.css": "/docs/css/dracula-prism.css",
     "/docs/css/algolia.css": "/docs/css/algolia.css",
     "/docs/css/site.css": "/docs/css/site.css"
 }

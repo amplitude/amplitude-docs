@@ -101,30 +101,33 @@ Like all other calls, instance() has been removed. Configuration is handled diff
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-import Amplitude //[tl! --]
-import AmplitudeSwift //[tl! ++]
+import Amplitude 
+import AmplitudeSwift 
 
-Amplitude.instance().trackingSessionEvents = true //[tl! --:1]
+Amplitude.instance().trackingSessionEvents = true 
 Amplitude.instance().initializeApiKey("YOUR-API-KEY")
-let amplitude = Amplitude(configuration: Configuration( //[tl! ++:5]
-    apiKey: "YOUR-API-KEY",
-    defaultTracking: DefaultTrackingOptions(
-        sessions: true
-    )
+let amplitude = Amplitude(configuration: Configuration( 
+    apiKey: "API_KEY",
+    autocapture: [.sessions, .appLifecycles, .screenViews, .networkTracking]
 ))
 ```
 
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
-#import "Amplitude.h" //[tl! --]
-@import AmplitudeSwift; //[tl! ++]
+#import "Amplitude.h" 
+@import AmplitudeSwift; 
 
-[Amplitude instance].trackingSessionEvents = true; //[tl! --:1]
+[Amplitude instance].trackingSessionEvents = true; 
 [[Amplitude instance] initializeApiKey:@"YOUR-API-KEY"];
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"YOUR-API-KEY"]; //[tl! ++:2]
-configuration.defaultTracking.sessions = true;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews,
+    AMPAutocaptureOptions.networkTracking
+]];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -138,7 +141,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 |`amplitude.setServerUrl("YOUR-SERVER-URL")`|`config.serverUrl`|
 |`amplitude.setServerZone("AMPServerZone.EU or AMPServerZone.US")`|`config.serverZone`|
 |`amplitude.trackingOptions`|`config.trackingOptions`|
-|`amplitude.trackingSessionEvents`|`config.defaultTracking.sessions`|
+|`amplitude.trackingSessionEvents`|`config.autocapture.sessions`|
 |`amplitude.minTimeBetweenSessionsMillis`|`config.minTimeBetweenSessionsMillis`|
 |`amplitude.eventUploadMaxBatchSize`|`config.flushQueueSize`|
 |`amplitude.eventUploadThreshold`|`config.flushQueueSize`|
@@ -183,11 +186,11 @@ The `logEvent()` API maps to `track()`.
 let eventType = "Button Clicked"
 let eventProperties: [String: Any] = ["key": "value"]
 
-Amplitude.instance().logEvent( //[tl! --:3]
+Amplitude.instance().logEvent( 
  eventType, 
  withEventProperties: eventProperties
 )
-let event = BaseEvent( //[tl! ++:4]
+let event = BaseEvent( 
   eventType: eventType,
   eventProperties: eventProperties
 )
@@ -199,8 +202,8 @@ amplitude.track(event)
 NSString* eventType = @"Button Clicked";
 NSDictionary* eventProperties = @{@"key": @"value"};
 
-[[Amplitude instance] logEvent:eventType withEventProperties:eventProperties]; //[tl! --]
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType //[tl! ++:2]
+[[Amplitude instance] logEvent:eventType withEventProperties:eventProperties]; 
+AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType 
     eventProperties:eventProperties];
 [amplitude track:event];
 ```
@@ -216,11 +219,11 @@ The `logEvent()` API maps to `track()`.
 ```swift
 let eventType = "Button Clicked"
 let timestamp = Int64(NSDate().timeIntervalSince1970 * 1000)
-Amplitude.instance().logEvent( //[tl! --:3]
+Amplitude.instance().logEvent( 
  eventType,
  withTimestamp: timestamp
 )
-let event = BaseEvent( //[tl! ++:4]
+let event = BaseEvent( 
   eventType: eventType,
   timestamp: timestamp
 )
@@ -232,8 +235,8 @@ amplitude.track(event)
 NSString* eventType = @"Button Clicked";
 NSNumber* timestamp = [NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970] * 1000];
 
-[[Amplitude instance] logEvent:eventType withTimestamp:timestamp]; //[tl! --]
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType]; //[tl! ++:2]
+[[Amplitude instance] logEvent:eventType withTimestamp:timestamp]; 
+AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType]; 
 event.timestamp = [timestamp longLongValue];
 [amplitude track:event];
 ```
@@ -251,12 +254,12 @@ let eventType = "Button Clicked"
 let eventProperties: [String: Any] = ["key": "value"]
 let groups: [String: Any] = ["orgId": 10]
 
-Amplitude.instance().logEvent( //[tl! --:4]
+Amplitude.instance().logEvent( 
  eventType,
  withEventProperties: eventProperties,
  withGroups: groups
 )
-let event = BaseEvent( //[tl! ++:5]
+let event = BaseEvent( 
   eventType: eventType,
   eventProperties: eventProperties,
   groups: groups
@@ -269,11 +272,11 @@ amplitude.track(event)
 NSString* eventType = @"Button Clicked";
 NSDictionary* eventProperties = @{@"key": @"value"};
 
-NSDictionary* groups = @{@"orgId": @"10"}; //[tl! --:3]
+NSDictionary* groups = @{@"orgId": @"10"}; 
 [[Amplitude instance] logEvent:eventType
     withEventProperties:eventProperties
     withGroups:groups];
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType //[tl! ++:3]
+AMPBaseEvent* event = [AMPBaseEvent initWithEventType:eventType 
     eventProperties:eventProperties];
 [event.groups set:@"orgId" value:@"10"];
 [amplitude track:event];
@@ -288,14 +291,14 @@ The `uploadEvents()` API maps to `flush()`.
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-Amplitude.instance().uploadEvents() //[tl! --]
-amplitude.flush() //[tl! ++]
+Amplitude.instance().uploadEvents() 
+amplitude.flush() 
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
-[[Amplitude instance] uploadEvents]; //[tl! --]
-[amplitude flush]; //[tl! ++]
+[[Amplitude instance] uploadEvents]; 
+[amplitude flush]; 
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -316,15 +319,15 @@ Setting a user ID can be invoked on `amplitude` without calling `getInstance()`.
 {{partial:tab name="Swift"}}
 ```swift
 let userId = "TEST-USER-ID"
-Amplitude.instance().setUserId(userId) //[tl! --]
-amplitude.setUserId(userId: userId) //[tl! ++]
+Amplitude.instance().setUserId(userId) 
+amplitude.setUserId(userId: userId) 
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
 NSString* userId = @"TEST-USER-ID";
-[[Amplitude instance] setUserId:userId]; //[tl! --]
-[amplitude setUserId:userId]; //[tl! ++]
+[[Amplitude instance] setUserId:userId]; 
+[amplitude setUserId:userId]; 
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -341,15 +344,15 @@ Set a device ID on `amplitude` without calling `instance()`.
 {{partial:tab name="Swift"}}
 ```swift
 let deviceId = "TEST-DEVICE-ID"
-Amplitude.instance().setDeviceId(deviceId) //[tl! --]
-amplitude.setDeviceId(deviceId: deviceId) //[tl! ++]
+Amplitude.instance().setDeviceId(deviceId) 
+amplitude.setDeviceId(deviceId: deviceId) 
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
 NSString* deviceId = @"TEST-DEVICE-ID";
-[[Amplitude instance] setDeviceId:deviceId]; //[tl! --]
-[amplitude setDeviceId:deviceId]; //[tl! ++]
+[[Amplitude instance] setDeviceId:deviceId]; 
+[amplitude setDeviceId:deviceId]; 
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -361,16 +364,16 @@ The `clearUserProperties` API has been removed, but you can now use the unified 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-Amplitude.instance().clearUserProperties() //[tl! --]
-let identify = Identify() //[tl! ++:2]
+Amplitude.instance().clearUserProperties() 
+let identify = Identify() 
 identify.clearAll()
 amplitude.identify(identify: identify)
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
-[[Amplitude instance] clearUserProperties]; //[tl! --]
-AMPIdentify* identify = [AMPIdentify new]; //[tl! ++:2]
+[[Amplitude instance] clearUserProperties]; 
+AMPIdentify* identify = [AMPIdentify new]; 
 [identify clearAll];
 [amplitude identify:identify];
 ```
@@ -383,24 +386,24 @@ The `setUserProperties` API has been removed, but you can now use the unified `i
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
-```diff
-Amplitude.instance().setUserProperties([ //[tl! --:3]
+```swift
+Amplitude.instance().setUserProperties([ 
   "membership": "paid",
   "payment": "bank",
 ])
-amplitude.identify(userProperties: [ //[tl! ++:3]
+amplitude.identify(userProperties: [ 
   "membership": "paid",
   "payment": "bank"
 ])
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
-```diff
-[[Amplitude instance] setUserProperties:@{ //[tl! --:3]
+```objc
+[[Amplitude instance] setUserProperties:@{ 
     @"membership": @"paid",
     @"payment": @"bank"
 }]; 
-AMPIdentify* identify = [AMPIdentify new]; //[tl! ++:3]
+AMPIdentify* identify = [AMPIdentify new]; 
 [identify set:@"membership" value:@"paid"];
 [identify set:@"payment" value:@"bank"];
 [amplitude identify:identify];
@@ -415,10 +418,10 @@ You can now make an identify call on `amplitude` without calling `instance()`.
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-let identify = AMPIdentify() //[tl! --:2]
+let identify = AMPIdentify() 
 identify.set("membership", value: "paid")
 Amplitude.instance().identify(identify)
-let identify = Identify() //[tl! ++:3]
+let identify = Identify() 
 identify.set(property: "membership", value: "paid")
 amplitude.identify(identify: identify)
 ```
@@ -428,8 +431,8 @@ amplitude.identify(identify: identify)
 AMPIdentify* identify = [AMPIdentify new];
 [identify set:@"membership" value:@"paid"];
 
-[[Amplitude instance] identify:identify]; //[tl! --]
-[amplitude identify:identify]; //[tl! ++]
+[[Amplitude instance] identify:identify]; 
+[amplitude identify:identify]; 
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -443,7 +446,7 @@ You can now make an identify call on `amplitude` without calling `instance()`.
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-let identify = AMPIdentify() //[tl! --:6]
+let identify = AMPIdentify() 
 identify.set("membership", value: "paid")
 Amplitude.instance().groupIdentify(
   withGroupType: "TEST-GROUP-TYPE", 
@@ -451,7 +454,7 @@ Amplitude.instance().groupIdentify(
   groupIdentify: identify
 )
 
-let identify = Identify() //[tl! ++:6]
+let identify = Identify() 
 identify.set(property: "membership", value: "paid")
 amplitude.groupIdentify(
   groupType: "TEST-GROUP-TYPE", 
@@ -465,10 +468,10 @@ amplitude.groupIdentify(
 AMPIdentify* identify = [AMPIdentify new];
 [identify set:@"membership" value:@"paid"];
 
-[[Amplitude instance] groupIdentifyWithGroupType:@"TEST-GROUP-TYPE" //[tl! --:2]
+[[Amplitude instance] groupIdentifyWithGroupType:@"TEST-GROUP-TYPE" 
     groupName:@"TEST-GROUP-NAME"
     groupIdentify:identify];
-[amplitude groupIdentify:@"TEST-GROUP-TYPE" //[tl! ++:2]
+[amplitude groupIdentify:@"TEST-GROUP-TYPE" 
     groupName:@"TEST-GROUP-NAME"
     identify:identify];
 ```
@@ -484,13 +487,13 @@ Track revenue using `revenue()` API on `amplitude` without calling `instance()`.
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-let revenue = AMPRevenue() //[tl! --:4]
+let revenue = AMPRevenue() 
 revenue.setProductIdentifier("productIdentifier")
 revenue.setQuantity(3)
 revenue.setPrice(NSNumber(value: 3.99))
 Amplitude.instance().logRevenueV2(revenue)
 
-let revenue = Revenue() //[tl! ++:4]
+let revenue = Revenue() 
 revenue.productId = "productIdentifier"
 revenue.quantity = 3
 revenue.price = 3.99
@@ -501,11 +504,11 @@ amplitude.revenue(revenue: revenue)
 ```objc
 AMPRevenue* revenue = [AMPRevenue new];
 
-[revenue setProductIdentifier:@"productidentifier"]; //[tl! --:3]
+[revenue setProductIdentifier:@"productidentifier"]; 
 [revenue setQuantity:3];
 [revenue setPrice:@3.99];
 [[Amplitude instance] logRevenueV2:revenue];
-revenue.productId = @"productidentifier"; //[tl! ++:3]
+revenue.productId = @"productidentifier"; 
 revenue.quantity = 3;
 revenue.price = 3.99;
 [amplitude revenue:revenue];
@@ -670,7 +673,7 @@ AMPBaseEvent* event2 = [AMPBaseEvent initWithEventType:@"test"];
 
 ## Data migration
 
-Existing [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configuration).
+Existing [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configure-the-sdk).
 
 If your macOS app isn't sandboxed, data from the legacy SDK won't migrate. For more information about sandboxing, and how to know if your app is sandboxed, see Apple's article [Protecting user data with App Sandbox](https://developer.apple.com/documentation/security/app_sandbox/protecting_user_data_with_app_sandbox#4098972).
 

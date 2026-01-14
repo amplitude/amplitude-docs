@@ -189,25 +189,28 @@ const experiment = Experiment.initialize(
 
 SDK client configuration occurs during initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value |
-| --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
-| `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
-| `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
-| `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage` |
-| `serverZone` | Select the Amplitude data center to get flags and variants from, `us` or `eu`. | `us` |
+| <div class="big-column">Name</div> | Description | Default Value                |
+| --- | --- |------------------------------|
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false`                      |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `Disable`, `Error`, `Warn`, `Info`, `Debug`, `Verbose`. Go to [Custom logging](#custom-logging) for details. | `LogLevel.Error`             |
+| `loggerProvider` | Custom logger implementation. Must implement the `Logger` interface. See [Custom logging](#custom-logging) for details. | `null` (uses default ConsoleLogger) |
+| `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}`                         |
+| `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}`                         |
+| `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage`        |
+| `serverZone` | Select the Amplitude data center to get flags and variants from, `us` or `eu`. | `us`                         |
 | `serverUrl` | The host to fetch remote evaluation variants from. For hitting the EU data center, use `serverZone`. | `https://api.lab.amplitude.com` |
 | `flagsServerUrl` | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`. | `https://flag.lab.amplitude.com` |
-| `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000` |
-| `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true` |
-| `automaticExposureTracking` | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
-| `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
-| `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true` |
-| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics triggers the experiment SDK to fetch variants and update it's cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
-| `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
-| `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
-| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
+| `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000`                      |
+| `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true`                       |
+| `automaticExposureTracking` | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true`                       |
+| `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true`                       |
+| `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true`                       |
+| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics triggers the experiment SDK to fetch variants and update it's cache. | `false`                      |
+| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null`                       |
+| `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null`                       |
+| `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null`                       |
+| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined`                  |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client                     |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization to `eu`.
@@ -225,7 +228,7 @@ import * as amplitude from '@amplitude/analytics-browser';
 import { Experiment } from '@amplitude/experiment-js-client';
 
 amplitude.init('API_KEY');
-const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY'); //[tl! ~~]
+const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY'); 
 ```
 
 When you use the integration initializer, it configures implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
@@ -414,9 +417,9 @@ A `null` variant `value` means that the user hasn't been bucketed into a variant
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>', { value: 'control' });
-if (variant === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
@@ -526,3 +529,119 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     source: Source.InitialVariants,
 });
 ```
+
+## HTTP client
+
+You can provide a custom HTTP client implementation to handle network requests made by the SDK. This is useful for environments with specific networking requirements or when you need to customize request handling.
+
+```js title="HttpClient"
+export interface SimpleResponse {
+  status: number;
+  body: string;
+}
+
+export interface HttpClient {
+  request(
+    requestUrl: string,
+    method: string,
+    headers: Record<string, string>,
+    data: string,
+    timeoutMillis?: number,
+  ): Promise<SimpleResponse>;
+}
+```
+
+To use your custom HTTP client, set the `httpClient` [configuration](#configuration) option with an instance of your implementation on SDK initialization.
+
+```js
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+    httpClient: new CustomHttpClient(),
+});
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration or implement the `Logger` interface to use your own logging solution.
+
+### Log levels
+
+- `LogLevel.Disable` - No logging.
+- `LogLevel.Error` - Errors only (default).
+- `LogLevel.Warn` - Errors and warnings.
+- `LogLevel.Info` - Errors, warnings, and informational messages.
+- `LogLevel.Debug` - Errors, warnings, info, and debug messages.
+- `LogLevel.Verbose` - All messages including verbose details.
+
+```js
+import { Experiment, LogLevel } from '@amplitude/experiment-react-native-client';
+
+// Only log errors
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Error
+});
+
+// Log errors and warnings
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Warn
+});
+
+// Log everything (verbose)
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Verbose
+});
+```
+
+### Custom logger
+
+Implement the `Logger` interface to use your own logging solution.
+
+```js
+import { Experiment, Logger, LogLevel } from '@amplitude/experiment-react-native-client';
+
+// Implement the Logger interface
+class CustomLogger implements Logger {
+  error(message, ...optionalParams) {
+    // Send errors to your logging service
+    myLoggingService.error(message, ...optionalParams);
+  }
+
+  warn(message, ...optionalParams) {
+    myLoggingService.warn(message, ...optionalParams);
+  }
+
+  info(message, ...optionalParams) {
+    myLoggingService.info(message, ...optionalParams);
+  }
+
+  debug(message, ...optionalParams) {
+    myLoggingService.debug(message, ...optionalParams);
+  }
+
+  verbose(message, ...optionalParams) {
+    myLoggingService.verbose(message, ...optionalParams);
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  loggerProvider: new CustomLogger(),
+  logLevel: LogLevel.Warn
+});
+```
+
+### Debug flag (deprecated)
+
+The `debug` configuration flag is deprecated. Use `logLevel` instead.
+
+```js
+// Deprecated: Sets logLevel to Debug
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  debug: true
+});
+
+// Preferred: Use logLevel instead
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Debug
+});
+```
+

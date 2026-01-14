@@ -16,8 +16,8 @@ Amplitude offers two methods to help you migrate from Google Analytics to Amplit
 1. A [low-code Google Analytics event forwarding plugin](#forward-events-from-google-analytics)
 2. A [migration guide](#replace-google-analytics) that highlights the differences between Google Analytics and Amplitude tracking.
 
-{{partial:admonition type="note" heading="BigQuery Import for GA4 (Google Analytics 4) Beta"}}
-Amplitude is working on a beta version of BigQuery Import specifically for GA4. To join this beta, [contact Amplitude Support](https://amplitude.zendesk.com/hc/en-us/requests/new). For more information about importing BiqQuery data in to Amplitude, see the [BigQuery Source documentation](/docs/data/source-catalog/bigquery).
+{{partial:admonition type="note" heading="Import historical GA4 data"}}
+You can import your historical Google Analytics 4 data into Amplitude through BigQuery. For setup instructions, see the [Google Analytics 4 Import documentation](/docs/data/source-catalog/ga4).
 {{/partial:admonition}}
 
 ## Forward events from Google Analytics
@@ -131,7 +131,7 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 
 #### Amplitude
 
-See more details on [Custom user ID](/docs/sdks/analytics/browser/browser-sdk-2#custom-user-identifier).
+See more details on [Custom user ID](/docs/sdks/analytics/browser/browser-sdk-2#custom-user-identifierentifier).
 
 ```js
 amplitude.setUserId('USER_ID');

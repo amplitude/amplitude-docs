@@ -5,13 +5,9 @@ title: 'Web Experiment actions'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195880
 ---
-Actions define how variants modify your site. Actions relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
+Actions define how variants modify your site. Actions relate to variants rather than a specific page, and are applied to specific [Pages](/docs/web-experiment/pages) to control exactly where they apply.
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
-
-{{partial:admonition type='note'}}
-See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
 
 ## Element changes
 
@@ -31,16 +27,91 @@ URL redirects load a new URL when a targeted user lands on a targeted page in yo
 
 URL redirects retain any query parameters on the original page URL. For example, you create a variant to redirect users from `https://example.com` to `https://example.com/get-started`. If a user clicks a link `https://example.com?utm_source=facebook`, Web Experiment redirects that user to `https://example.com/get-started?utm_source=facebook`.
 
+{{partial:admonition type="note"}}
+It's possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by loading the redirected page, ideally as fast as possible. The sequence for this is:
+
+**Control flow**
+- Load control page HTML.
+- Browser parses and loads dependencies (including the experiment script).
+- Experiment script initializes, evaluates the user, and logs an impression if they're in control.
+
+**Treatment flow**
+- Load control page HTML.
+- Browser parses and loads dependencies (including the experiment script).
+- Experiment script evaluates the user → assigns them to treatment → triggers a redirect.
+- Load treatment page HTML.
+- Browser parses and loads dependencies (including the experiment script again).
+- Experiment script initializes and logs the impression for treatment.
+
+Because the treatment flow involves more steps before the impression is logged, users who bounce quickly (for example, after clicking an ad by mistake) are more likely to be counted in control than in treatment. This imbalance can show up as Sample Ratio Mismatch (SRM).
+
+Researchers have observed similar effects: if treatment slows performance, more users may leave before logs are generated, leading to fewer recorded impressions. Conversely, faster performance can lead to more recorded users in treatment than in control.
+
+**Further reading:**
+* [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
+* [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
+* [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
+
+**What to do**
+
+* **Reduce latency in evaluation**. The longer the delay before impressions are logged, the more pronounced the SRM effect.
+* **Use local evaluation where possible**. For example, target only on browser properties instead of slower remote attributes like Country. This reduces the chance that users drop off before logging. Here’s a configuration example in Amplitude Experiment.
+
+{{/partial:admonition}}
+
+### SEO best practices for redirects
+
+Client-side redirects in experiments can affect how search engines index and rank your pages. Follow these best practices to minimize SEO impact.
+
+#### Use temporary redirects during tests
+
+Web Experiment uses client-side redirects that simulate a `302` temporary redirect through `window.location.replace`. This tells search engines to keep the original URL indexed during the experiment. Don't use `noindex` tags on your control page, as this removes it from search results.
+
+After you pick a winner, implement a permanent server-side `301` or `308` redirect to consolidate link equity to the winning URL.
+
+#### Add canonical tags on variant pages
+
+Add a canonical tag on your experiment variant page that points back to the original (control) URL. This prevents search engines from indexing the variant as a separate page.
+
+```html
+<!-- On the variant/redirect destination page -->
+<link rel="canonical" href="https://example.com/original-page" />
+```
+
+#### Prefer server-side redirects for SEO-critical pages
+
+For pages where SEO is critical, consider using server-side assignment and redirects at the edge (CDN) or server level. Server-side redirects execute before the page renders, which:
+
+- Ensures search engine crawlers interpret redirects reliably.
+- Minimizes page flicker for users.
+- Provides proper HTTP status codes to crawlers.
+
+If you must use client-side redirects, ensure the redirect logic runs in the `<head>` to reduce layout shift.
+
+#### Keep tests short and avoid cloaking
+
+Don't show different content or URLs to users compared to what Googlebot sees—search engines consider this cloaking and may penalize your site. End experiments promptly and remove test logic after concluding to avoid SEO drift.
+
+#### Ensure goals cover both URLs
+
+Define conversion goals that include both control and variant URLs. Web Experiment [preserves query parameters](#url-redirect) through redirects, so attribution and session continuity remain intact.
+
+#### Use Search Console if issues arise
+
+If your experiment variant page gets indexed unexpectedly, use [Google Search Console's URL removal tool](https://search.google.com/search-console/removals) as a temporary fix while you address the underlying issue.
+
 ## Custom code
 
 {{partial:admonition type="note"}}
-Custom code is available on **Growth** and **Enterprise** plans only.
+Custom code is available on Growth and Enterprise plans only.
 {{/partial:admonition}}
 
-Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in was the visual editor doesn't support.
+Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in ways the visual editor doesn't support.
+
+You apply custom code to specific [Pages](/docs/web-experiment/pages) using the **Apply to** dropdown, allowing you to run different code depending on which Page is active.
 
 {{partial:admonition type="tip"}}
-Custom code can be used in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text, then a non-technical user could use the visual editor to edit the placeholder text without touching the custom code.
+You can use custom code in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text. A non-technical user could then use the visual editor to edit the placeholder text without touching the custom code.
 {{/partial:admonition}}
 
 Web Experiment applies custom code to your site in the following order:
@@ -48,7 +119,7 @@ Web Experiment applies custom code to your site in the following order:
 1. Adds **CSS** in a `<style>` tag in the page's `<head>`.
 2. Parses **HTML** into a DOM element.
 3. Wraps **JavaScript** in a function, and adds it to a `<script>` tag in the page's `<head>`.
-4. Calls the wrapped **JavaScript** function and passes parsed **HTML** and utils as arguments.
+4. Calls the wrapped **JavaScript** function and passes parsed HTML and utilities as arguments.
 
 ### JavaScript
 
@@ -57,7 +128,7 @@ Web Experiment wraps any custom JavaScript in a function, and calls it when the 
 - `html`: The custom HTML code parsed as a DOM element object.
 - `utils`: An object that contains utility functions you can use in your custom code.
 
-#### Utils
+#### Utilities
 
 Web Experiment provides the following utilities:
 
@@ -65,9 +136,7 @@ Web Experiment provides the following utilities:
 
 - `remove: (()=> void) | undefined`: A function that you can set inside the JavaScript you inject. Web Experiment calls this function on page change, when Amplitude reevaluates experiments and reapplies variants.
 
-    This function can be useful for cleaning up changes to the page in single page apps, where the page doesn't fully reload.
-
-    For example, if you inject an HTML element on a specific page, set this function to remove that element when the page changes.
+    This function can be useful for cleaning up changes to the page in single page apps, where the page doesn't fully reload. For example, if you inject an HTML element on a specific page, set this function to remove that element when the page changes.
 
 ### HTML
 
@@ -80,7 +149,7 @@ Custom CSS styles you can use to manipulate existing CSS classes and styles, or 
 ### Examples
 
 {{partial:admonition type="tip"}}
-Generative AI like ChatGPT or equivalents are quite good at writing HTML and CSS for simple elements. The modal and banner examples below were both initially generated initially by ChatGPT, then modified.
+Generative AI like ChatGPT or equivalents can create HTML and CSS for simple elements. The modal and banner examples below were both initially generated initially by ChatGPT, then modified.
 {{/partial:admonition}}
 
 #### Insert an element

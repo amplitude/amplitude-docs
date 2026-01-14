@@ -20,11 +20,11 @@ Some survey types offer insights that are specific to the type of data they capt
 
 #### NPS
 
-NPS survey questions enable a breakdown of promoters (score: 8 - 10), passives (score: 6,7), and detractors (score: 0 - 5). To calculate the NPS, subtract `% detractors` from `% promoters`.
+Net Promoter Score (NPS) survey questions enable a breakdown of promoters (score: 8 - 10), passives (score: 6,7), and detractors (score: 0 - 5). To calculate the NPS, subtract `% detractors` from `% promoters`.
 
 #### List
 
-See the breakdown of responses by option.
+Understand the breakdown of responses by option.
 
 ### Filter card
 
@@ -46,7 +46,7 @@ Track guide and survey engagement trends over predefined time periods.
 * Monthly
 * Quarterly
 
-With these presets, see when users are most likely to engage with the guide or survey and if engagement changes after, for example, a new product release.
+With these presets, review when users are most likely to engage with the guide or survey and if engagement changes after, for example, a new product release.
 
 #### Date range selection
 
@@ -66,13 +66,18 @@ Use the advanced settings to:
 
 If the Insights tab gives you the big-picture trends, the Responses tab is where you get into the who, what, and when of your survey data.
 
-This is where you’ll read through individual responses to see exactly what users had to say. Instead of just numbers and summaries, you get raw, user-level data, tied to specific users and timestamps.
+This is where you’ll read through individual responses to understand exactly what users had to say. Instead of just numbers and summaries, you get raw, user-level data, tied to specific users and timestamps.
 
 On the responses tab, you can:
 
-* View individual responses: See exactly what each user submitted.
-* Sort & filter: Organize responses by date, user ID, or specific answers.
-* Pin important columns: Keep key data points visible while scrolling.
-* Adjust date ranges: Look at responses over the past 7, 30, 60, or 90 days.
+* **View individual responses**: Review exactly what each user submitted.
+* **Export responses**: Export a CSV of survey responses.
+* **Sort & filter**: Organize responses by date, user ID, or specific answers.
+* **Pin important columns**: Keep key data points visible while scrolling.
+* **Adjust date ranges**: Look at responses over the past 7, 30, 60, or 90 days.
 
-If you’re trying to figure out why users feel a certain way, this tab gives you the nitty-gritty details to help make sense of their feedback.
+If you’re trying to figure out why users feel a certain way, this tab provides in-depth details to help understand their feedback.
+
+{{partial:admonition type="note" heading=""}}
+You can export up to 10k responses at a time to your local machine.
+{{/partial:admonition}}

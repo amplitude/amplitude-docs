@@ -75,8 +75,8 @@ Update package.json to uninstall the maintenance React Native SDK and install th
 ```json
 {
     "dependencies": {
-      "@amplitude/react-native": "*" //[tl! --]
-      "@amplitude/analytics-react-native": "^1" //[tl! ++]
+      "@amplitude/react-native": "*" 
+      "@amplitude/analytics-react-native": "^1" 
     }
 }
 ```
@@ -90,11 +90,11 @@ Latest React Native SDK offers an API to instrument events. To migrate to it, yo
 `getInstance()` in the maintenance SDK only accepts API key and has been removed. To initialize the SDK, call `init()`, with the user ID and configuration parameters.
 
 ```ts
-- import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-+ import { init } from '@amplitude/analytics-react-native'; //[tl! ++]
+- import { Amplitude } from '@amplitude/react-native'; 
++ import { init } from '@amplitude/analytics-react-native'; 
 
-- Amplitude.getInstance().init(API_KEY) //[tl! --]
-+ init(API_KEY, OPTIONAL_USER_ID, config); //[tl! __]
+- Amplitude.getInstance().init(API_KEY) 
++ init(API_KEY, OPTIONAL_USER_ID, config); 
 ```
 
 ### Configuration
@@ -103,9 +103,9 @@ The latest React Native SDK instance accepts a configuration object during upon 
 
 |@amplitude/react-native|@amplitude/analytics-react-native|
 |-|-|
-| `enableCoppaControl()` | Refer to [COPPA](./#coppa) section for more details |
-| `disableCoppaControl()` | Refer to [COPPA](./#coppa) section for more details |
-| `setAdvertisingIdForDeviceId()` | No configuration to set ADID as device ID. But ADID is still tracked by default as `config.trackingOptions.adid` defaults to `true`. To learn more about how device ID is initialized [here](./#device-id).  |
+| `enableCoppaControl()` | Refer to [COPPA](#coppa) section for more details |
+| `disableCoppaControl()` | Refer to [COPPA](#coppa) section for more details |
+| `setAdvertisingIdForDeviceId()` | No configuration to set ADID as device ID. But ADID is still tracked by default as `config.trackingOptions.adid` defaults to `true`. To learn more about how device ID is initialized [here](#device-id).  |
 | `setAppSetIdForDeviceId()` | No configuration to set App Set ID as device ID. But the latest React Native SDK will track it in a newly released version soon. |
 | `setOptOut()` | both `setOptOut()` and `config.optOut` are supported |
 | `trackingSessionEvents()` | `config.trackingSessionEvents` |
@@ -125,11 +125,11 @@ The latest React Native SDK instance accepts a configuration object during upon 
 The `logEvent()` API maps to `track()`.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { track } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { track } from '@amplitude/analytics-react-native'; 
 
-Amplitude.getInstance().logEvent('Button Clicked', {buttonColor: 'primary'}); //[tl! --]
-track('Button Clicked', { buttonColor: 'primary' }); //[tl! ++]
+Amplitude.getInstance().logEvent('Button Clicked', {buttonColor: 'primary'}); 
+track('Button Clicked', { buttonColor: 'primary' }); 
 ```
 
 ### uploadEvents
@@ -137,11 +137,11 @@ track('Button Clicked', { buttonColor: 'primary' }); //[tl! ++]
 The `uploadEvents()` API maps to `flush()`.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { flush } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { flush } from '@amplitude/analytics-react-native'; 
 
-Amplitude.getInstance().uploadEvents(); //[tl! --]
-flush(); //[tl! ++]
+Amplitude.getInstance().uploadEvents(); 
+flush(); 
 ```
 
 ### identify
@@ -149,14 +149,14 @@ flush(); //[tl! ++]
 The `identify()` API and `Identify` type remain the same.
 
 ```ts
-import { Amplitude, Identify } from '@amplitude/react-native'; //[tl! --]
-import { Identify, identify } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude, Identify } from '@amplitude/react-native'; 
+import { Identify, identify } from '@amplitude/analytics-react-native'; 
 
 const identifyObj = new Identify();
 identifyObj.set('location', 'LAX');
 
-Amplitude.getInstance().identify(identifyObj); //[tl! --]
-identify(identifyObj); //[tl! ++]
+Amplitude.getInstance().identify(identifyObj); 
+identify(identifyObj); 
 ```
 
 ### setUserProperties
@@ -164,14 +164,14 @@ identify(identifyObj); //[tl! ++]
 The `setUserProperties()` API has been removed, but you can now use the unified `identify()` API to add user properties.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { Identify, identify } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { Identify, identify } from '@amplitude/analytics-react-native'; 
 
-Amplitude.getInstance().setUserProperties({ //[tl! --:3]
+Amplitude.getInstance().setUserProperties({ 
     membership, "paid",
     payment, "bank",
 })
-const identifyObj = new amplitude.Identify() //[tl! ++:4]
+const identifyObj = new amplitude.Identify() 
 identifyObj
     .set("membership", "paid")
     .set("payment", "bank")
@@ -183,11 +183,11 @@ amplitude.identify(identifyObj)
 The `clearUserProperties()` API has been removed, but you can now use the unified `identify()` API to remove user properties.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { Identify, identify } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { Identify, identify } from '@amplitude/analytics-react-native'; 
 
-Amplitude.getInstance().clearUserProperties(); //[tl! --]
-const identifyObj = new amplitude.Identify() //[tl! ++:3]
+Amplitude.getInstance().clearUserProperties(); 
+const identifyObj = new amplitude.Identify() 
 identifyObj.clearAll()
 amplitude.identify(identifyObj)
 ```
@@ -201,11 +201,11 @@ The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforc
 The `setUserId()` API remains the same.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { setUserId } from '@amplitude/analytics-react-native' //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { setUserId } from '@amplitude/analytics-react-native' 
 
-Amplitude.getInstance().setUserId("test_user_id"); //[tl! --]
-setUserId('user@amplitude.com'); //[tl! ++]
+Amplitude.getInstance().setUserId("test_user_id"); 
+setUserId('user@amplitude.com'); 
 ```
 
 ### groupIdentify
@@ -213,16 +213,16 @@ setUserId('user@amplitude.com'); //[tl! ++]
 You can now make an identify call without calling `getInstance()`.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native'; //[tl! --]
-import { Identify, groupIdentify } from '@amplitude/analytics-react-native';  //[tl! ++]
+import { Amplitude } from '@amplitude/react-native'; 
+import { Identify, groupIdentify } from '@amplitude/analytics-react-native';  
 
 const groupType = 'plan';
 const groupName = 'enterprise';
 const identifyObj = new Identify()
 identifyObj.set('key1', 'value1');
 
-Amplitude.getInstance().groupIdentify(groupType, groupName, identifyObj); //[tl! --]
-groupIdentify(groupType, groupName, identifyObj); //[tl! ++]
+Amplitude.getInstance().groupIdentify(groupType, groupName, identifyObj); 
+groupIdentify(groupType, groupName, identifyObj); 
 ```
 
 ### logRevenue
@@ -230,10 +230,10 @@ groupIdentify(groupType, groupName, identifyObj); //[tl! ++]
 The `logRevenue()` API maps to `revenue()`. `receipt` and `receiptSignature` is not supported.
 
 ```ts
-import { Amplitude } from '@amplitude/react-native';  //[tl! --]
-import { Revenue, revenue } from '@amplitude/analytics-react-native'; //[tl! ++]
+import { Amplitude } from '@amplitude/react-native';  
+import { Revenue, revenue } from '@amplitude/analytics-react-native'; 
 
-const userProperties = { //[tl! --:8]
+const userProperties = { 
     price: 3,
     productId: 'com.company.productId',
     quantity: 2,
@@ -243,9 +243,9 @@ const userProperties = { //[tl! --:8]
     },
 };
 
-ampInstance.logRevenue(userProperties); //[tl! --]
+ampInstance.logRevenue(userProperties); 
 
-const event = new Revenue() //[tl! ++:7]
+const event = new Revenue() 
     .setPrice(3)
     .setProductId('com.company.productId')
     .setQuantity(2)
@@ -254,7 +254,7 @@ const event = new Revenue() //[tl! ++:7]
         key: 'value',
     })
 
-revenue(event); //[tl! ++]
+revenue(event); 
 ```
 
 You can also use `setRevenue(6)` instead of `setPrice(3)` and `setQuantity(2)`.
@@ -278,7 +278,7 @@ The maintenance React Native SDK supports setting an advertising ID as device ID
 
 ### COPPA 
 
-You can enable COPPA control by `enableCoppaControl()` in maintenance React Native SDK. The latest React Native SDK doesn't support that API but you can still enable COPPA using `config.trackingOptions` or an [Enrichment Plugin](../#enrichment-type-plugin) to remove identifying information from being tracked.
+You can enable COPPA control by `enableCoppaControl()` in maintenance React Native SDK. The latest React Native SDK doesn't support that API but you can still enable COPPA using `config.trackingOptions` or an [Enrichment Plugin](/docs/sdks/analytics/react-native/react-native-sdk#enrichment-type-plugin-example) to remove identifying information from being tracked.
 
 * Learn how to enable IDFA, IDFV, ADID, and AppSetId in the [Advertising Identifiers](/docs/sdks/analytics/react-native/react-native-sdk#advertising-identifiers) documentation.
 * You can turn off IP address tracking by setting `config.trackingOptions.ipAddress` to `false`

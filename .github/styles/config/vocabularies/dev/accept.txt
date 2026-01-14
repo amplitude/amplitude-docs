@@ -43,6 +43,7 @@ AWS
 backgrounded
 backoff
 batchEvents
+Bing
 Bitcode
 Blitzllama
 bool
@@ -144,7 +145,6 @@ Plotline
 postback
 prepends
 preprocessor
-Productboard
 Productboard
 ProGuard
 Pushwoosh
@@ -255,3 +255,11 @@ Heatmap
 Heatmaps
 Scrollmap
 Viewport
+[Ff]ullscreen
+[Dd]escope
+[Tt]ooltips?\b
+[Rr]ollouts?\b
+[Aa]ddons?
+[Aa]utomations?\b
+[Ww]insorization
+Accoil

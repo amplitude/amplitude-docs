@@ -162,6 +162,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `VERBOSE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `DISABLE`. See [custom logging](#custom-logging). | `ERROR` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `DefaultLogger` which outputs to stdout|
 | `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` |  The timeout for fetching variants in milliseconds. | `500` |
@@ -387,6 +389,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `logLevel` | The minimum log level to output. Options: `VERBOSE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `DISABLE`. See [custom logging](#custom-logging). | `ERROR` |
+| `loggerProvider` | Custom logger implementation. Implement the `LoggerProvider` interface to integrate with your logging solution. See [custom logging](#custom-logging). | `DefaultLogger` which outputs to stdout |
 | `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `flagConfigPollingIntervalMillis` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30000` |
@@ -403,9 +407,9 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `10` |
-| `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `10000` |
-| `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `true` |
+| `eventUploadThreshold` | `setEventUploadThreshold()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10` |
+| `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `10000` |
+| `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configure-the-sdk) | `true` |
 
 **CohortSyncConfig**
 
@@ -457,7 +461,7 @@ public void stop();
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfiguration`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
+Set [`assignmentConfiguration`](#configuration) to automatically track an assignment event to Amplitude when `evaluate()` is called.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}
@@ -634,3 +638,107 @@ LocalEvaluationClient experiment = Experiment.initializeLocal("<DEPLOYMENT_KEY>"
 
 {{/partial:tab}}
 {{/partial:tabs}}
+
+
+## Custom logging
+
+Set the `logLevel` configuration to adjust log verbosity, or implement the `LoggerProvider` interface to use your own logger.
+
+### Log levels
+
+- `VERBOSE`: Detailed debugging logs
+- `DEBUG`: Development and troubleshooting logs  
+- `INFO`: General information
+- `WARN`: Warnings
+- `ERROR`: Errors only (default)
+- `DISABLE`: No logs
+
+### Custom logger
+
+Implement the `LoggerProvider` interface to use your own logging solution:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.experiment.util.LogLevel
+import com.amplitude.experiment.util.LoggerProvider
+
+class MyCustomLogger : LoggerProvider {
+    override fun verbose(msg: String) {
+        // Implement verbose logging
+    }
+
+    override fun debug(msg: String) {
+        // Implement debug logging
+    }
+
+    override fun info(msg: String) {
+        // Implement info logging
+    }
+
+    override fun warn(msg: String) {
+        // Implement warn logging
+    }
+
+    override fun error(msg: String) {
+        // Implement error logging
+    }
+}
+
+// Initialize with custom logger
+val experiment = Experiment.initializeLocal(
+    "<DEPLOYMENT_KEY>",
+    LocalEvaluationConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .loggerProvider(MyCustomLogger())
+        .build()
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.experiment.util.LogLevel;
+import com.amplitude.experiment.util.LoggerProvider;
+
+public class MyCustomLogger implements LoggerProvider {
+    @Override
+    public void verbose(String msg) {
+        // Implement verbose logging
+    }
+
+    @Override
+    public void debug(String msg) {
+        // Implement debug logging
+    }
+
+    @Override
+    public void info(String msg) {
+        // Implement info logging
+    }
+
+    @Override
+    public void warn(String msg) {
+        // Implement warn logging
+    }
+
+    @Override
+    public void error(String msg) {
+        // Implement error logging
+    }
+}
+
+// Initialize with custom logger
+LocalEvaluationClient experiment = Experiment.initializeLocal(
+    "<DEPLOYMENT_KEY>",
+    LocalEvaluationConfig.builder()
+        .logLevel(LogLevel.DEBUG)
+        .loggerProvider(new MyCustomLogger())
+        .build()
+);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" heading="Backward compatibility"}}
+The `debug` configuration field is still supported. When set to `true`, it overrides `logLevel` to `DEBUG`.
+{{/partial:admonition}}

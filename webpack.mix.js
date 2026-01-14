@@ -12,12 +12,16 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/docs/js/site.js', 'public/docs/js')
+mix.js('resources/docs/js/side-nav/index.js', 'public/docs/js/side-nav.js')
 mix.js('resources/docs/js/api-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-table.js', 'public/docs/js')
 //mix.js('resources/docs/js/interactive-flags-table.js', 'public/docs/js')
 mix.js('resources/docs/js/statuspage.js', 'public/docs/js')
+mix.js('resources/docs/js/glossary.js', 'public/docs/js')
+mix.js('resources/docs/js/rbac.js', 'public/docs/js')
+// mix.js('resources/docs/js/prism.js', 'public/docs/js')
 
 
     
@@ -36,6 +40,30 @@ mix.postCss('resources/docs/css/algolia.css', 'public/docs/css', [
     require('postcss-nested'),
     require('autoprefixer'),
     ]);
+
+mix.postCss('resources/docs/css/dracula-prism.css', 'public/docs/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('autoprefixer'),
+    ]);
+
+// mix.copyDirectory(
+//     'content/collections',
+//     'public/docs/md'
+// );
+// mix.copyDirectory(
+//     'resources/docs/js/components',
+//     'public/docs/js/components'
+// )
+
+// Enable Vue.js support
+mix.vue({ version: 3 });
+
+// Enable versioning for cache busting
+if (mix.inProduction()) {
+    mix.version();
+}
 
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({

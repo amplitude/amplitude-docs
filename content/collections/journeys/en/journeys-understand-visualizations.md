@@ -22,35 +22,41 @@ In any of these analyses, you can:
 
 You can also hide noisy events, only show specific events, collapse repeated events, and view custom events. Any settings you change while viewing one visualization carry over to the others.
 
-Start and end sessions are also defined the same for all Journeys visualizations, and don't allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude generates a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/docs/data/sources/instrument-track-sessions). 
+Start and end sessions are also defined the same for all Journeys visualizations, and don't allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude generates a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/docs/data/sources/instrument-track-sessions). In fact, no microscope actions, such as `view user streams` or `Create cohort` are available for dropped off users in the Pathfinder or Journey Maps . 
 
-Finally, in any Journeys visualization, you can remove an event, expand an event by property, filter by sequences that include the event and property pair, or create a cohort from an event. Just click the event and select the option you want from the menu that appears.
+Finally, in any Journeys visualization, you can remove an event, expand an event by property, filter by sequences that include the event and property pair, or create a cohort from an event. Click the event and select the option you want from the menu that appears.
 
 {{partial:admonition type='note'}}
-To [access your legacy Pathfinder, Pathfinder Users, and Journeys charts, see our Help Center article linked here](/docs/analytics/charts/journeys/journeys-understand-paths).
+To [access your legacy Pathfinder, Pathfinder Users, and Journeys charts, go to our Help Center article linked here](/docs/analytics/charts/journeys/journeys-understand-paths).
 {{/partial:admonition}}
 
-Because Journeys charts automatically hide inactive events, you may see more conversions in a Pathfinder chart than in an identical funnel. Here are some more differences to note between a Journeys chart and a funnel:
+Because Journeys charts automatically hide inactive events, you may experience more conversions in a Pathfinder chart than in an identical funnel. Here are some more differences to note between a Journeys chart and a funnel:
 
-* When a path has a step that repeats, a **Journeys chart will begin a path from the first time the repeated event was triggered**; a funnel will use the instance that best meets the conversion window.
-* A **Journeys chart uses the earliest path** - the first instance of the starting event for each user - **and creates paths from there**; whereas funnels will take the earliest and longest conversion - based on the instance of the starting event that matches as many of the later events as possible.
-* **Funnels created from a Pathfinder will be set to *this order***; and, the results won’t exactly match because a Journeys chart can include hidden events between steps.
+* When a path has a step that repeats, a **Journeys chart begins a path from the first time the repeated event was triggered**. A funnel uses the instance that best meets the conversion window.
+* A Journeys chart uses the earliest path. Going from the first instance of the starting event for each user and it creates paths from there. However, funnels take the earliest and longest conversion based on the instance of the starting event that matches as many of the later events as possible.
+* **Funnels created from a Pathfinder are set to *this order***. Although the results won’t exactly match because a Journeys chart can include hidden events between steps.
 
 ## Pathfinder
 
 Pathfinder is the default visualization of the Journeys chart. It’s a great tool to show you how users are using your product by presenting all the paths that start with, or end with, a specific event during a given time period. It shows the paths your customers take and their popularity relative to each other. 
 
-The flow diagram shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event triggered at that step in the sequence, as well as the frequency the event was triggered at that stage in the sequence. If a step reads *Dropped off* or *Did not perform an event*, that path includes users who dropped off at that point, or who did not trigger an event prior to the next one listed in the path.
+The flow diagram shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event triggered at that step in the sequence, as well as the frequency the event was triggered at that stage in the sequence. If a step reads *Dropped off* or *Did not perform an event*, that path includes users who dropped off at that point, or who didn't trigger an event before the next one listed in the path.
 
 Drill in on and expand a particular branch by clicking *More*, to a maximum of nine steps.
 
 {{partial:admonition type='note'}}
-You can also easily **turn a Pathfinder chart into a funnel**. Simply click on a step in a Pathfinder flow, then click *Create Funnel* in the pop-up that appears.
+You can also turn a Pathfinder chart into a funnel. To do so, click on a step in a Pathfinder flow, then click *Create Funnel* in the pop-up that appears.
 {{/partial:admonition}}
 
-One distinguishing feature of Pathfinder is the ability to select **properties instead of events**. Event properties, user properties, and Amplitude User properties are all supported (Historical Count and Event Historical Count are not). You can select one property value per property; you should avoid setting property values to "none," as this may result in inaccurate results.
+One distinguishing feature of Pathfinder is the ability to select properties instead of events. Event properties, user properties, and Amplitude User properties are all supported (Historical Count and Event Historical Count aren't supported). You can select one property value for each property. Avoid setting property values to "none," as this may result in inaccurate results.
 
 To filter paths by a property, select *Any Event* and specify the property you'd like to use as a filter.
+
+### Sunburst Visualization
+
+The Sunburst visualization displays customer journey event flows as a hierarchical, radial chart where each ring represents a sequential step in the user journey. The Sunburst visualization is an alternate way to visualize the Pathfinder chart. It's not related to the Journeys chart. 
+
+Users can hover over nodes to view detailed event paths and metrics in an interactive breadcrumb panel, or click on nodes to drill down and explore specific journey segments in greater detail. The visualization automatically color-codes events by source path, and consolidates infrequent paths (< 1% threshold) into an "Other" category for cleaner display.
 
 ## Journey Map
 
@@ -96,7 +102,7 @@ Notice the same progressions in the Journey Map. Those 2,725 users took an avera
 
 	Instead, the new Journeys logic begins by looking at the first occurrence of the start event. If it's in the conversion window, it counts as a conversion; if it's not, it counts as a drop-off.
 
-* In the new version, the Pathfinder visualization will match the numbers in the legacy Pathfinder through Step 2. After Step 2 the numbers will differ. In the legacy version, the % shown for an event after Step 2 represents a cumulative sum of all prior events in the step before it; because of the branching experience in the new version, the % shown for any event after Step 2 is specifically related to the event that occurred before it in the same path.
+* In the new version, the Pathfinder visualization match the numbers in the legacy Pathfinder through Step 2. After Step 2 the numbers differ. In the legacy version, the % shown for an event after Step 2 represents a cumulative sum of all prior events in the step before it; because of the branching experience in the new version, the % shown for any event after Step 2 is specifically related to the event that occurred before it in the same path.
 
 This was done to align the Pathfinder and Journeys visual numbers, and provide users with faster exploration capabilities.
 

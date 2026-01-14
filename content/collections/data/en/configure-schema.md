@@ -12,18 +12,14 @@ updated_at: 1722895369
 ---
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,** and it means the data Amplitude has just received isn't accounted for in your schema. If you see a schema violation, you've probably neglected to plan for that particular data type or value when you first set up your schema.
 
-You can tell Amplitude how to handle these situations by configuring your schema settings. You can configure for three different types of schema violations. Find your schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
-
-### Feature availability
-
-See [the pricing page](https://amplitude.com/pricing) to find out if this feature is available for your Amplitude plan.
+You can tell Amplitude how to handle these situations by configuring your schema settings. You can configure for three different types of schema violations. Find your schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
 
 ## Unplanned event types
 
 Sometimes, Amplitude may receive an event that isn't part of your schema, or that you didn't plan earlier. This is an **unplanned event type**. You can configure Amplitude to respond in these ways: 
 
-* **Mark As Unexpected****. Amplitude ingests the event, triggers a warning, and sends a notification to the subscribers designated. The event's category in drop-downs is "Unexpected" until you approve it.
-* **Reject****. Amplitude rejects the event and sends a notification to the subscribers designated. Amplitude doesn't store the event or its properties.  
+* **Mark As Unexpected**. Amplitude ingests the event, triggers a warning, and sends a notification to the subscribers designated. The event's category in drop-downs is "Unexpected" until you approve it.
+* **Reject**. Amplitude rejects the event and sends a notification to the subscribers designated. Amplitude doesn't store the event or its properties.  
   
 ![Screenshot 2023-08-07 at 6.31.28 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-31-28-pm-png.png)
 
@@ -49,7 +45,7 @@ Once you've initialized your schema and defined your expected events and event p
 
 View validation errors by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings* > *Validation Errors*. Any errors triggered in the last 24 hours appear on this page, regardless of whether the event or property have since been approved or rejected. If no errors are visible in the validation page, there haven't been any violations in the past 24 hours. This **doesn't** mean that all violations are now fixed; it only means Amplitude hasn't encountered them in that time.
 
-You can set up email alerts for validation errors by clicking *Subscribe**.*
+Click **Subscribe** to set up email alerts for validation errors.
 
 ## Manage subscribers
 

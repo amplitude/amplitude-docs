@@ -119,6 +119,8 @@ Pass the following configuration options when you initialize the Session Replay 
 | `serverZone`          | `string`  | No       | `US`             | EU or US. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.                                                                                                                                                                                                           |
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 | `serverUrl`           | `string`  | No       | `null`           | Explicitly set the server URL. Use this setting for proxy configuration.                                                                                                                                                                                                                                             |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -164,7 +166,7 @@ Call `sessionReplay.stop()` before a user navigates to a restricted area of your
 
 Create a new instance `sessionReplay.start()` to re-enable replay collection when the return to an unrestricted area of your app.
 
-You can also use a feature flag product like [Amplitude Experiment](docs/experiment) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
+You can also use a feature flag product like [Amplitude Experiment](/docs/feature-experiment/overview) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
 
 ```swift
 import AmplitudeSessionReplay
@@ -183,6 +185,8 @@ if (nonEUCountryFlagEnabled) {
 {{partial:partials/session-replay/sr-ios-webview}}
 
 {{partial:partials/session-replay/sr-ios-mapview-support}}
+
+{{partial:partials/session-replay/sr-ios-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 

@@ -1,0 +1,8 @@
+{{if environment == 'local'}}
+<div class="relative">
+    <span class="text-xs text-gray-300 absolute"><a
+        href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
+        target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500  transition-all duration-200 h-6 hover:h-7" }}</a></span>
+</div>
+
+{{/if}}

@@ -10,9 +10,9 @@ landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 academy_course:
   - 498134e3-190a-4b58-b148-2a94ef5bc069
 ---
-Before you get started with Guides and Surveys, install the [SDK](/docs/guides-and-surveys/sdk) on your website or application.
+Before you get started with Guides and Surveys, install one of the available SDKs, depending on where you want to display Guides and Surveys.
 
-Click Guides and Surveys in the left navigation in Amplitude to get started.
+Click **Guides and Surveys** in the left navigation in Amplitude to get started.
 
 ## Overview
 
@@ -50,16 +50,25 @@ Displays a detailed view of individual surveys and their responses over the last
 
 ### Rage closes
 
-![](statamic://asset::help_center_conversions::guides-surveys/rage-closes.png)
-
 Measures the percentage of users who rage closed a guide or survey. High rage close rates could mean poor timing or intrusive placement.
 
 {{partial:admonition type="tip" heading="Rage closes"}}
 Amplitude considers a guide or survey that was rapidly dismissed or exited to be "rage closed". This behavior indicates user dissatisfaction.
 {{/partial:admonition}}
 
+![](statamic://asset::help_center_conversions::guides-surveys/rage-closes.png)
+
 ### Guides and Surveys interactions
+
+Provides a realtime feed that shows how users are interacting with your Guides and Surveys. Use this data to track engagement patterns and make optimizations.
 
 ![](statamic://asset::help_center_conversions::guides-surveys/interactions.png)
 
-Provides a realtime feed that shows how users are interacting with your Guides and Surveys. Use this data to track engagement patterns and make optimizations.
+## Supported apps
+
+Guides and Surveys supports web, iOS, Android, and React Native apps. Select the target app / environment when you create a new guide or survey.
+
+### Enable or disable apps
+
+Guides and Surveys has a project-level setting where you can enable or disable different environments or "apps". Enabling an app causes it to appear as an option when you create a new guide or survey.
+

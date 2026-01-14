@@ -329,8 +329,8 @@ You can't change the default names given to these client-side revenue events in 
 | Name  | Description  |
 | --- | --- |
 | `productId` | Optional. String. An identifier for the product. Amplitude recommends something like the "Google Play Store product ID". Defaults to `null`. |
-| `quantity`| Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1. |
-| `price` | Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
+| `quantity`| Required. Integer. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1. |
+| `price` | Required. Double. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to `null`.|
 | `revenueType` | Optional, but required for revenue verification. String. The type of revenue (for example, tax, refund, income). Defaults to `null`. |
 | `eventProperties`| Optional. Object. An object of event properties to include in the revenue event. Defaults to `null`. |
 

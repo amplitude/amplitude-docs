@@ -13,16 +13,12 @@ updated_at: 1718137658
 ---
 When you begin sending revenue events to Amplitude, you can choose from a handful of different configuration options.
 
-{{partial:admonition type='note'}}
-Amplitude currently **does not support currency conversion**. All revenue data should be normalized to your currency of choice **before** being sent to Amplitude. 
-{{/partial:admonition}}
-
 All revenue events that send revenue as [revenue properties](#revenue-properties) will appear in the [Revenue LTV](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization) chart (including both verified and unverified events). See the following documentation for more information on sending revenue events:
 
 * [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk)
 * [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk)
 * [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)
-* [HTTP API](/docs/apis/analytics/http-v2) (set the `price`, `quantity`, and `revenue` fields to record the event as a revenue event)
+* [HTTP API](/docs/apis/analytics/http-v2) (set the `price`, `quantity`, `currency`, and `revenue` fields to record the event as a revenue event)
 
 Amplitude will only count events that you send and that are processed through the Amplitude ingestion system. Any computed events **are not counted separately.** Therefore, any additional events attached to revenue events (e.g verified / unverified) **will not be counted** towards your limit.
 
@@ -40,6 +36,7 @@ Amplitude needs certain information in order to track revenue:
 | $productId | String | An identifier for the product. | null |
 | $quantity | Integer | The quantity of products purchased. Defaults to one if not specified. | 1 |
 | $revenueType | String | The type of revenue (e.g. tax, refund, income). | null |
+| $currency | String | The currency for the purchased item, specified as a 3-character uppercase [ISO 4217](https://www.iban.com/currency-codes) code (for example, USD, EUR). | null |
 | eventProperties | Object | An object of event properties to include in the revenue event. You will only be able to segment on these properties in the [Event Segmentation](/docs/analytics/charts/event-segmentation) chart. | null |
 
 Note that these properties must be explicitly sent **by you** via Amplitude's SDKs or server-side when you log revenue events.

@@ -45,6 +45,9 @@ return [
         public_path('docs/css') => 'docs/css',
         public_path('docs/js') => 'docs/js',
         public_path('docs/fonts') => 'docs/fonts',
+        public_path('docs/md') => 'docs/md',
+        public_path('docs/glossary-data.json') => 'docs/glossary-data.json',
+        public_path('docs/rbac-permissions-data.json') => 'docs/rbac-permissions-data.json',
     ],
 
     'symlinks' => [

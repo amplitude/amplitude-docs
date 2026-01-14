@@ -28,15 +28,28 @@ Official documentation for Amplitude Experiment's Client-side JavaScript SDK imp
 
 Install the Experiment JavaScript Client SDK with one of the three following methods:
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+
+{{/partial:admonition}}
+
 {{partial:tabs tabs="npm, yarn, script"}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Experiment SDK only
 npm install --save @amplitude/experiment-js-client
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Experiment SDK only
 yarn add @amplitude/experiment-js-client
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="script"}}
@@ -48,7 +61,6 @@ yarn add @amplitude/experiment-js-client
     // tracking provider.
     window.experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 </script>
-
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -56,13 +68,13 @@ yarn add @amplitude/experiment-js-client
 {{partial:admonition type="tip" heading="Quick start"}}
 The right way to initialize the Experiment SDK depends on whether you use an Amplitude SDK for analytics or a third party (for example, Segment).
 
-{{partial:tabs tabs="Amplitude, Third party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third party"}}
 {{partial:tab name="Amplitude"}}
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants](#fetch)
 3. [Access a flag's variant](#variant)
 
-```js
+```typescript
 import { Experiment } from '@amplitude/experiment-js-client';
 
 // (1) Initialize the experiment client with Amplitude Analytics.
@@ -83,12 +95,41 @@ if (variant.value === 'on') {
 ```
 
 {{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+1. [Initialize the Unified SDK](#initialize)
+2. [Fetch variants](#fetch)
+3. [Access a flag's variant](#variant)
+
+```typescript
+import { initAll, experiment } from '@amplitude/unified';
+
+// (1) Initialize the Unified SDK with your API key
+// Note: if deploymentKey is not provided, it will fall back to the api key
+initAll('YOUR_API_KEY', {
+    experiment: {
+        deploymentKey: 'DEPLOYMENT_KEY'
+    }
+});
+
+// (2) Fetch variants and await the promise result.
+await experiment()?.fetch();
+
+// (3) Lookup a flag's variant.
+const variant = experiment()?.variant('FLAG_KEY');
+if (variant.value === 'on') {
+    // Flag is on
+} else {
+    // Flag is off
+}
+```
+
+{{/partial:tab}}
 {{partial:tab name="Third party"}}
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants for a user](#fetch)
 3. [Access a flag's variant](#variant)
 
-```js
+```typescript
 import { Experiment } from '@amplitude/experiment-js-client';
 
 // (1) Initialize the experiment client and implement a
@@ -132,14 +173,19 @@ if (variant.value === 'on') {
 
 Initialize the SDK in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
 
-{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third-party"}}
 {{partial:tab name="Amplitude"}}
-```js
+```typescript
 initializeWithAmplitudeAnalytics(apiKey: string, config?: ExperimentConfig): ExperimentClient
 ```
 {{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```typescript
+initAll(apiKey: string, config?: UnifiedConfig): void
+```
+{{/partial:tab}}
 {{partial:tab name="Third-party"}}
-```js
+```typescript
 initialize(apiKey: string, config?: ExperimentConfig): ExperimentClient
 ```
 {{/partial:tab}}
@@ -150,18 +196,30 @@ initialize(apiKey: string, config?: ExperimentConfig): ExperimentClient
 | `apikey`  | *Required*. The deployment key which authorizes fetch requests and determines which flags to evaluate for the user |
 | `config`  | The client configuration to customize SDK client behavior.                                                         |
 
-The initializer returens a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` configuration.
+The initializer returns a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` configuration.
 
-{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third-party"}}
 {{partial:tab name="Amplitude"}}
-```js
+```typescript
 import { Experiment } from '@amplitude/experiment-js-client';
 
 const experiment = initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 ```
 {{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```typescript
+import { initAll, experiment } from '@amplitude/unified';
+
+// Note: if deploymentKey is not provided, it will fall back to the api key
+initAll('YOUR_API_KEY', {
+    experiment: {
+        deploymentKey: 'DEPLOYMENT_KEY'
+    }
+});
+```
+{{/partial:tab}}
 {{partial:tab name="Third-party"}}
-```js
+```typescript
 import { Experiment } from '@amplitude/experiment-js-client';
 
 const experiment = Experiment.initialize(
@@ -186,7 +244,9 @@ Configure the SDK client once during initialization.
 {{partial:collapse name="Configuration"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false` |
+| `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `LogLevel.Disable`, `LogLevel.Error`, `LogLevel.Warn`, `LogLevel.Info`, `LogLevel.Debug`, `LogLevel.Verbose`. See [Custom logging](#custom-logging) for details. | `LogLevel.Error` |
+| `loggerProvider` | Custom logger implementation. Must implement the `Logger` interface. See [Custom logging](#custom-logging). | `null` (uses default ConsoleLogger) |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage` |
@@ -195,14 +255,16 @@ Configure the SDK client once during initialization.
 | `flagsServerUrl` | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`. | `https://flag.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000` |
 | `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true` |
-| `automaticExposureTracking` | If true, calling [`variant()`](#variant) will track an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
+| `automaticExposureTracking` | If true, calling [`variant()`](#variant) will track an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
 | `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
 | `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true` |
-| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics will trigger the experiment SDK to fetch variants and update it's cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
+| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics will trigger the experiment SDK to fetch variants and update it's cache. | `false` |
+| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial array of flag configurations to use for local evaluation. | `undefined` |
+| `consentOptions` | Configure cookie consent management. Set `status` to `ConsentStatus.GRANTED`, `ConsentStatus.PENDING`, or `ConsentStatus.REJECTED`. Go to [Consent Management](#consent-management) for more details. | `{ status: ConsentStatus.GRANTED }` |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client |
 
 {{/partial:collapse}}
 
@@ -213,7 +275,7 @@ If you use either Amplitude or Segment Analytics SDKs to track events into Ampli
 {{partial:collapse name="Amplitude integration"}}
 The Amplitude Experiment SDK is set up to integrate seamlessly with the Amplitude Analytics SDK.
 
-```js
+```typescript
 import * as amplitude from '@amplitude/analytics-browser';
 import { Experiment } from '@amplitude/experiment-js-client';
 
@@ -236,7 +298,7 @@ All versions of the next-generation [Amplitude analytics Browser](/docs/sdks/ana
 {{partial:collapse name="Segment integration"}}
 Experiment's integration with Segment Analytics requires manual configuration. Then, configure the  Experiment SDK on initialization with an instance of the exposure tracking provider. Make sure this happens _after_ the analytics SDK loads an initializes.
 
-```js
+```typescript
 analytics.ready(() => {
     const experiment =  Experiment.initialize('DEPLOYMENT_KEY', {
         exposureTrackingProvider: {
@@ -250,7 +312,7 @@ analytics.ready(() => {
 
 When [fetching variants](#fetch), pass the segment anonymous ID and user ID for the device ID and user ID, respectively.
 
-```js
+```typescript
 await experiment.fetch({
     user_id: analytics.user().id(),
     device_id: analytics.user().analyticsId(),
@@ -264,7 +326,7 @@ Experiment's integration with mParticle requires manual integration. The values 
 
 In accordance with your event forwarding settings to Amplitude, the event type `Other` may not be the right classification. Make sure that the event type you use is forwarded to Amplitude in destination settings.
 
-```js
+```typescript
 const identityRequest = {
     userIdentities: {
         email: "joe_slow@gmail.com",
@@ -302,6 +364,81 @@ const experiment = Experiment.initialize("DEPLOYMENT_KEY", {
 
 {{/partial:collapse}}
 
+## Consent Management
+
+The Experiment JavaScript SDK supports cookie consent management. Consent status controls data storage persistence and exposure tracking.
+
+### Consent status values
+
+The SDK supports three consent status values:
+
+- **GRANTED (1)**: User has granted consent. Uses browser localStorage and sessionStorage for persistence and tracks exposures immediately.
+- **PENDING (2)**: Waiting for user consent decision. Stores data in-memory only and queues exposures without tracking them. When consent changes to GRANTED, persists in-memory data to browser storage and fires all queued exposures.
+- **REJECTED (0)**: User has rejected consent. Doesn't initialize, store data, or track exposures. If transitioning from PENDING, deletes all queued exposures.
+
+### Configure consent on initialization
+
+Set the initial consent status when you initialize the SDK:
+
+```js
+import { Experiment, ConsentStatus } from '@amplitude/experiment-js-client';
+
+const experiment = Experiment.initialize('DEPLOYMENT_KEY', {
+  consentOptions: {
+    status: ConsentStatus.PENDING
+  }
+});
+```
+
+If you set consent status to REJECTED, the SDK doesn't initialize.
+
+### Update consent status
+
+Update the consent status after initialization when users interact with your consent banner:
+
+```js
+import { ConsentStatus } from '@amplitude/experiment-js-client';
+
+// When user grants consent
+experiment.setConsentStatus(ConsentStatus.GRANTED);
+
+// When user rejects consent
+experiment.setConsentStatus(ConsentStatus.REJECTED);
+```
+
+When you change consent from `PENDING` to `GRANTED`, the SDK persists in-memory data to browser storage and fires all queued exposures. When you change consent to `REJECTED`, the SDK stops storing data and deletes all persisted data from browser storage, including:
+
+- Experiment storage (`localStorage`) - user information and flag variants
+- User provider storage (`localStorage` and `sessionStorage`) - device and user IDs
+- Unsent events (`localStorage`) - queued exposure events
+
+The SDK deletes this data when you call `setConsentStatus(ConsentStatus.REJECTED)` and during initialization if consent is already rejected.
+
+### Example integration with consent banner
+
+```js
+import { Experiment, ConsentStatus } from '@amplitude/experiment-js-client';
+
+// Initialize with PENDING status
+const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY', {
+  consentOptions: {
+    status: ConsentStatus.PENDING
+  }
+});
+
+// Start fetching variants
+await experiment.fetch();
+
+// Update when user responds to consent banner
+window.addEventListener('consentGranted', () => {
+  experiment.setConsentStatus(ConsentStatus.GRANTED);
+});
+
+window.addEventListener('consentRejected', () => {
+  experiment.setConsentStatus(ConsentStatus.REJECTED);
+});
+```
+
 ## Fetch
 
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
@@ -312,7 +449,7 @@ If you want the most up-to-date variants for the user, it's recommended that you
 Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
 {{/partial:admonition}}
 
-```js
+```typescript
 fetch(user?: ExperimentUser, options?: FetchOptions): Promise<Client>
 ```
 
@@ -326,7 +463,7 @@ If your organization has purchased the [Accounts add-on](/docs/analytics/account
 
 Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
-```js
+```typescript
 await fetch({
     user_id: 'user@company.com',
     device_id: 'abcdefg',
@@ -339,7 +476,7 @@ await fetch({
 
 To pass freeform group properties, see this example:
 
-```js
+```typescript
 await fetch({
     user_id: 'user@company.com',
     device_id: 'abcdefg',
@@ -352,7 +489,7 @@ await fetch({
 
 {{/partial:collapse}}
 
-```js
+```typescript
 const user = {
     user_id: 'user@company.com',
     device_id: 'abcdefg',
@@ -365,7 +502,7 @@ await experiment.fetch(user);
 
 If you're using an [integration](#integrations) or a custom [user provider](#user-provider) then you can fetch without inputting the user.
 
-```js
+```typescript
 await experiment.fetch();
 ```
 
@@ -379,7 +516,7 @@ Use `start` if you're using client-side [local evaluation](/docs/feature-experim
 
 Start the SDK by getting flag configurations from the server and fetching remote evaluation variants for the user. The SDK is ready once the returned promise resolves.
 
-```js
+```typescript
 start(user?: ExperimentUser): Promise<void>
 ```
 
@@ -396,12 +533,12 @@ Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configu
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
-```js
+```typescript
 await experiment.start();
 ```
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
-```js
+```typescript
 const user = {
     user_id: 'user@company.com',
     device_id: 'abcdefg',
@@ -422,7 +559,7 @@ Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or 
 When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` will automatically track an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
 {{/partial:admonition}}
 
-```js
+```typescript
 variant(key: string, fallback?: string | Variant): Variant
 ```
 
@@ -433,7 +570,7 @@ variant(key: string, fallback?: string | Variant): Variant
 
 When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.
 
-```js
+```typescript
 const variant = experiment.variant('<FLAG_KEY>');
 if (variant.value === 'on') {
     // Flag is on
@@ -445,7 +582,7 @@ if (variant.value === 'on') {
 {{partial:admonition type="info" heading="Access a variant's payload"}}
 A variant may also be configured with a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
-```js
+```typescript
 const variant = experiment.variant('<FLAG_KEY>');
 if (variant.value === 'on') {
     const payload = variant.payload;
@@ -455,11 +592,11 @@ if (variant.value === 'on') {
 
 A `null` variant `value` means that the user hasn't been bucketed into a variant. You may use the built in **fallback** parameter to provide a variant to return if the store doesn't contain a variant for the given flag key.
 
-```js
+```typescript
 const variant = experiment.variant('<FLAG_KEY>', { value: 'control' });
-if (variant === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
@@ -468,7 +605,7 @@ if (variant === 'control') {
 
 Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
-```js
+```typescript
 all(): Variants
 ```
 
@@ -476,13 +613,13 @@ all(): Variants
 
 Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
-```js
+```typescript
 clear(): void
 ```
 
 You can call `clear` after user logout to clear the variants in cache and storage.
 
-```js
+```typescript
 experiment.clear();
 ```
 
@@ -490,7 +627,7 @@ experiment.clear();
 
 Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
-```js
+```typescript
 exposure(key: string): void
 ```
 
@@ -498,15 +635,15 @@ exposure(key: string): void
 | --- | --- | --- |
 | `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for. |
 
-```js
+```typescript
 const variant = experiment.variant('<FLAG_KEY>');
 
 // Do other things...
 
 experiment.exposure('<FLAG_KEY>');
-if (variant === 'control') {
+if (variant.value === 'control') {
     // Control
-} else if (variant === 'treatment') {
+} else if (variant.value === 'treatment') {
     // Treatment
 }
 ```
@@ -523,7 +660,7 @@ Provider implementations enable a more streamlined developer experience by makin
 
 The user provider is used by the SDK client to access the most up-to-date user information only when it's needed (for example, when [`fetch()`](#fetch) is called). This provider is optional, but helps if you have a user information store already set up in your application. This way, you don't need to manage two separate user info stores in parallel, which may result in a divergent user state if the application user store is updated and experiment isn't (or via versa).
 
-```js title="ExperimentUserProvider"
+```typescript title="ExperimentUserProvider"
 interface ExperimentUserProvider {
   getUser(): ExperimentUser;
 }
@@ -531,7 +668,7 @@ interface ExperimentUserProvider {
 
 To use your custom user provider, set the `userProvider` [configuration](#configuration) option with an instance of your custom implementation on SDK initialization.
 
-```js
+```typescript
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     userProvider: new CustomUserProvider(),
 });
@@ -541,7 +678,7 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 Implementing an exposure tracking provider is highly recommended. [Exposure tracking](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) increases the accuracy and reliability of experiment results and improves visibility into which flags and experiments a user is exposed to.
 
-```js title="ExposureTrackingProvider"
+```typescript title="ExposureTrackingProvider"
 export interface ExposureTrackingProvider {
   track(exposure: Exposure): void;
 }
@@ -551,7 +688,7 @@ The implementation of `track()` should track an event of type `$exposure` (a.k.a
 
 To use your custom user provider, set the `exposureTrackingProvider` [configuration](#configuration) option with an instance of your custom implementation on SDK initialization.
 
-```js
+```typescript
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     exposureTrackingProvider: new CustomExposureTrackingProvider(),
 });
@@ -565,7 +702,7 @@ You may want to bootstrap the experiment client with an initial set of flags or 
 
 To bootstrap the client with a predefined set of variants, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
 
-```js
+```typescript
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     // Map flag keys to variant objects. The variant object may either be
     // pre-evaluation (SSR) or input manually in for testing.
@@ -582,10 +719,125 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
 
-To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
+To download initial flags, use the [evaluation flags API](/docs/apis/experiment/experiment-evaluation-api#flags-api)
 
-```js
+```typescript
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     initialFlags: "<FLAGS_JSON>",
+});
+```
+
+## HTTP client
+
+You can provide a custom HTTP client implementation to handle network requests made by the SDK. This is useful for environments with specific networking requirements or when you need to customize request handling.
+
+```typescript title="HttpClient"
+export interface SimpleResponse {
+  status: number;
+  body: string;
+}
+
+export interface HttpClient {
+  request(
+    requestUrl: string,
+    method: string,
+    headers: Record<string, string>,
+    data: string,
+    timeoutMillis?: number,
+  ): Promise<SimpleResponse>;
+}
+```
+
+To use your custom HTTP client, set the `httpClient` [configuration](#configuration) option with an instance of your implementation on SDK initialization.
+
+```typescript
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+    httpClient: new CustomHttpClient(),
+});
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `Logger` interface to integrate your own logging solution.
+
+### Log levels
+
+- `LogLevel.Disable` - No logging
+- `LogLevel.Error` - Errors only (default)
+- `LogLevel.Warn` - Errors and warnings
+- `LogLevel.Info` - Errors, warnings, and informational messages
+- `LogLevel.Debug` - Errors, warnings, info, and debug messages
+- `LogLevel.Verbose` - All messages including verbose details
+
+```typescript
+import { Experiment, LogLevel } from '@amplitude/experiment-js-client';
+
+// Only log errors
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Error
+});
+
+// Log errors and warnings
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Warn
+});
+
+// Log everything (verbose)
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Verbose
+});
+```
+
+### Custom logger
+
+Implement the `Logger` interface to use your own logging solution:
+
+```typescript
+import { Experiment, Logger, LogLevel } from '@amplitude/experiment-js-client';
+
+// Implement the Logger interface
+class CustomLogger implements Logger {
+  error(message?: any, ...optionalParams: any[]): void {
+    // Send errors to your logging service
+    myLoggingService.error(message, ...optionalParams);
+  }
+
+  warn(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.warn(message, ...optionalParams);
+  }
+
+  info(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.info(message, ...optionalParams);
+  }
+
+  debug(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.debug(message, ...optionalParams);
+  }
+
+  verbose(message?: any, ...optionalParams: any[]): void {
+    myLoggingService.verbose(message, ...optionalParams);
+  }
+}
+
+// Initialize with custom logger
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  loggerProvider: new CustomLogger(),
+  logLevel: LogLevel.Warn
+});
+```
+
+### Debug flag (deprecated)
+
+The `debug` configuration flag is deprecated. Use `logLevel` instead.
+
+```typescript
+// Deprecated: Sets logLevel to Debug
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  debug: true
+});
+
+// Preferred: Use logLevel instead
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+  logLevel: LogLevel.Debug
 });
 ```

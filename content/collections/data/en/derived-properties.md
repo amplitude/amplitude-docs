@@ -17,10 +17,6 @@ For example, you may want to create a chart that groups by whether an item added
 
 ![Screen_Shot_2021-08-03_at_2.35.25_PM.png](/docs/output/img/data/screen-shot-2021-08-03-at-2-35-25-pm-png.png)
 
-### Feature availability
-
-This feature is available to users on **Enterprise plans only**. See the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Create a derived property
 
 {{partial:admonition type="note" heading=""}}
@@ -29,12 +25,12 @@ You must be in your project's `main` branch to create a derived property.
 
 To create a derived property, follow these steps:
 
-1. In Amplitude Data, navigate to *Tracking Plan—>Properties* and click the *Derived Properties* tab.
-2. Click *+ Add Derived Property*.
+1. In Amplitude Data, navigate to *Tracking Plan—>Properties* and click the **Derived Properties** tab.
+2. Click **Add Derived Property**.
 3. Give your derived property a name.
 4. Add any relevant metadata to your property, including a description (optional, unless you want to use the Suggest feature) and the visibility of the property in charts within this project.
-5. Enter your formula. See below for the list of valid functions and operators.
-6. Click *Save*.
+5. Enter your formula. Review the list of valid functions and operators below.
+6. Click **Save**.
 
 ## Preview your results
 
@@ -44,11 +40,11 @@ As long as the formula you entered is valid, you can test the results in the spa
 
 ## Derived property use cases
 
-Taking our previous referrer URL example, you can write a formula using string operators that looks like this:
+Using the previous referrer URL example, you can write a formula using string operators such as:
 
 `SPLIT(PROPERTY('referrer_url','event'), "/", 2)`
 
-This formula converts a value like "https://www.google.com/search?q=amplitude" into the value "www.google.com." But what if you want to strip this down even further, to just "google"? You can achieve this by wrapping the result of a SPLIT function inside another SPLIT function. The resulting formula would look like this:
+This formula converts a value like "https://www.google.com/search?q=amplitude" into the value "www.google.com." If you want to strip this down even further to "google", you can achieve this by wrapping the result of a SPLIT function inside another SPLIT function. The resulting formula would look like this:
 
 `SPLIT(SPLIT(PROPERTY('referrer_url','event'), "/", 2), ".", 1)`
 
@@ -113,11 +109,10 @@ Amplitude requires all Unix timestamps to be in milliseconds.
 | `TODAY()`                                                         | Current day represented as a long in epoch time in UTC.                                                                                                                         | `TODAY() - start_date_in_ms >>> 1609459200000 - 1577836800000`                             | 31622400000         |
 | `EVENT_HOUR_OF_DAY()`                                             | Get hour of day (0-23) from the event's timestamp.                                                                                                                              | `EVENT_HOUR_OF_DAY()`                                                                      | 10                  |
 | `EVENT_DAY_OF_WEEK()`                                             | Get day of week from the event's timestamp as string. For example, Monday.                                                                                                      | `EVENT_DAY_OF_WEEK()`                                                                      | Monday              |
-| `DATE_TIME_FORMATTER (datetime_property, old_format, new_format)` | Convert format of a datetime property to a new format. See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | `DATE_TIME_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd")` | 2021/05/01          |
 
 ### Array functions
 
-When performing computations on derived properties created from array properties, Amplitude assumes that only the first child is an array property, and only considers the first value of the other children, even if they're also array properties.  
+When performing computations on derived properties created from array properties, Amplitude assumes that only the first child is an array property. It only considers the first value of the other children, even if they're also array properties.  
 
 Here are some illustrative examples:
 
@@ -254,17 +249,17 @@ Use this when tracking a user property with a date-time data type, and you want 
 
 ```
 DIVIDE(  
-  SUBTRACTION(  
-  DATE_TO_LONG(  
-  PROPERTY(  
-  'Subscription Start Date', 'user'  
-  )  
-  ),  
-  DATE_TO_LONG(  
-  PROPERTY(  
-  'Subscription End Date', 'user'  
-  )  
-  )  
+  MINUS(  
+    DATE_TO_LONG(  
+        PROPERTY(  
+            'start_date', 'user'  
+        )  
+    ),  
+    DATE_TO_LONG(  
+        PROPERTY(  
+            'end_date', 'user'  
+        )  
+    )  
   ),  
   86400000   
 )
@@ -373,7 +368,7 @@ One way to format dates to Standard Date Format is to use a series of IF stateme
 CONCAT(  
     REGEXEXTRACT(  
         PROPERTY(  
-            'Subscription Start Date',  
+            'start_date',  
             'user'  
         ),  
         'dddd-dd'  

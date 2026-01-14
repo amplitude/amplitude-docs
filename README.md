@@ -31,7 +31,7 @@ Statamic is built on a PHP framework / ecosystem called [Laravel](https://larave
 
 ### Set your .env file
 
-Rename the file `.env.example` to `.env`.
+Reach out in `#amplitude-docs` to request the contents of your .env file.
 
 ### Command line
 
@@ -69,6 +69,23 @@ Amplitude Docs builds on the Vercel platform. When you submit a PR, Vercel build
 ## Working with Docs
 
 > Tip: The easiest way to get to the sourcefile of an article is to use the pencil icon that's enabled on local environments. Look for it near the article title.
+
+### For Engineers: Contributing with Cursor AI
+
+If you're an engineer documenting a feature, Cursor can help! We've created AI templates that automatically apply our style rules and generate properly structured documentation.
+
+**Quick start:**
+1. Open this repo in Cursor
+2. Press Cmd+L to open Cursor Chat
+3. Say: `"Document new feature: [your feature name]"`
+4. Cursor guides you through creating documentation
+
+**Learn more:**
+- Read [.cursor/HOW-TO-CONTRIBUTE.md](.cursor/HOW-TO-CONTRIBUTE.md) for the complete guide
+- See [.cursor/rules/TEMPLATES-INDEX.md](.cursor/rules/TEMPLATES-INDEX.md) for available templates
+- Check [.cursor/rules/README.md](.cursor/rules/README.md) for style guidelines
+
+All style rules are automatically applied - you focus on content, Cursor handles formatting.
 
 ### Collections
 

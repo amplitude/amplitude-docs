@@ -37,7 +37,17 @@ In the Salesforce Marketing Cloud v2 integration, all you have to do is follow t
 - The Salesforce Marketing Cloud v2 integration is only available on paid Amplitude plans.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Anonymized UUID as identifiers in both Amplitude and Salesforce Marketing Cloud work for this integration so you don't have to send email addresses or PII to Amplitude.
-- Amplitude will automatically create new contacts for users within the Data Extension in Salesforce Marketing Cloud who do not already exist within Salesforce Marketing Cloud.
+- Amplitude will automatically create new contacts for users within the Data Extension in Salesforce Marketing Cloud who don't already exist within Salesforce Marketing Cloud.
+- Depending on your company's network policy, you may need to add the following IP addresses to your allowlist to allow Amplitude's servers to access your BigQuery instance:
+
+    - Amplitude US IP addresses:
+        - 52.33.3.219
+        - 35.162.216.242
+        - 52.27.10.221 
+    - Amplitude EU IP addresses:
+        - 3.124.22.25
+        - 18.157.59.125
+        - 18.192.47.195
 
 ## Setup
 
@@ -49,7 +59,7 @@ You need a Subdomain, Client ID, and Client Secret from Salesforce Marketing Clo
 2. In the Quick Find box, search for **Installed Packages**.
 3. Click **New** to create a new package.
 4. Click **Add Component**.
-5. For the Component Type, select **API Integration**. This step generates the API integration information that is required in Amplitude.
+5. For the Component Type, select **API Integration**. This step generates the API integration information that's required in Amplitude.
 6. For the integration type, select **Server-to-Server**.
 7. Grant the package these permissions:
     - Contacts
@@ -59,7 +69,7 @@ You need a Subdomain, Client ID, and Client Secret from Salesforce Marketing Clo
         - Data Extensions: Read and Write
 8. **Save** the package.
 9. Copy the **Client ID**, **Client Secret**, and **Subdomain** from the app you want to integrate.
-    - For the Subdomain, see the Authentication Base URI and only copy the subdomain. e.g. If the Authentication Base URL is  "https://mc1n78yx33kxv5mv1q7fh81flfjq.auth.marketingcloudapis.com/", then only copy "mc1n78yx33kxv5mv1q7fh81flfjq".
+    - For the Subdomain, see the Authentication Base URI and only copy the subdomain. For example, if the Authentication Base URL is  "https://mc1n78yx33kxv5mv1q7fh81flfjq.auth.marketingcloudapis.com/," then only copy `mc1n78yx33kxv5mv1q7fh81flfjq`.
 
 10. Click on **Access** tab and click on **Enable All Business Units**.
 11. (Optional) Create a new folder to hold all your future data extensions. You can do this in the Salesforce Marketing cloud by navigating to **Audience Builder** and clicking on **Data Extensions** at the top navigation bar. Click on "+" to create a new folder. Make sure the folder name is unique for the cohort sync.
@@ -84,6 +94,7 @@ To sync your first cohort, follow these steps:
 5. When finished, save your work.
 
 ## Locating your Amplitude Cohort in Salesforce Marketing Cloud
+
 1. Log into [Salesforce Marketing Cloud](https://mc.exacttarget.com/).
 2. Click on **Audience Builder** on the top navigation bar and navigate to **Contact Builder**. 
 3. Click on **Data Extensions** at the top navigation bar.

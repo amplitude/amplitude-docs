@@ -92,7 +92,7 @@ Along with the basic configuration options, you can configure attribution.
 |`config.attribution.initialEmptyValue`| `string`. Customize the initial empty value for attribution related user properties to any string value. | `EMPTY` |
 |`config.attribution.resetSessionOnNewCampaign`| `boolean`. Whether to reset user sessions when a new campaign is detected. Note a new| `false` |
 |`config.attribution.trackNewCampaigns`| `boolean`. Whether tracking new campaigns on the current session. | `false` | 
-|`config.attribution.trackPageViews`| `boolean`. Whether track page view on attribution. Note that `config.defaultTracking.pageViews` has higher priority over this configuration. Learn more about it [here](./#tracking-page-views). | `false` |
+|`config.attribution.trackPageViews`| `boolean`. Whether track page view on attribution. Note that `config.defaultTracking.pageViews` has higher priority over this configuration. Learn more about it [here](#advanced-configuration-for-tracking-page-views). | `false` |
 
 {{/partial:collapse}}
 
@@ -232,10 +232,10 @@ Starting in SDK version 1.9.1, the Browser SDK tracks default events, and adds a
 
 |Name|Value|Description|
 |-|-|-|
-`config.defaultTracking.pageViews` | Optional. `boolean` | Enables default page view tracking. If value is `true`, Amplitude tracks page view events on initialization. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`<br /><br />See [Tracking page views](#tracking-page-views) for more information.|
-`config.defaultTracking.sessions` | Optional. `boolean` | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events. Default value is `false`.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.|
-`config.defaultTracking.formInteractions` | Optional. `boolean` | Enables form interaction tracking. If value is `true`, Amplitude tracks form start and form submit events. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`<br /><br />See [Tracking form interactions](#tracking-form-interactions) for more information.|
-`config.defaultTracking.fileDownloads` | Optional. `boolean` | Enables file download tracking. If value is `true`, Amplitude tracks file download events. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`<br /><br />See [Tracking file downloads](#tracking-file-downloads) for more information.|
+`config.defaultTracking.pageViews` | Optional. `boolean` | Enables default page view tracking. If value is `true`, Amplitude tracks page view events on initialization. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`<br /><br />See [Tracking page views](#track-page-views) for more information.|
+`config.defaultTracking.sessions` | Optional. `boolean` | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events. Default value is `false`.<br /><br />See [Tracking sessions](#track-sessions) for more information.|
+`config.defaultTracking.formInteractions` | Optional. `boolean` | Enables form interaction tracking. If value is `true`, Amplitude tracks form start and form submit events. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`<br /><br />See [Tracking form interactions](#track-form-interactions) for more information.|
+`config.defaultTracking.fileDownloads` | Optional. `boolean` | Enables file download tracking. If value is `true`, Amplitude tracks file download events. Default value is `false`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`<br /><br />See [Tracking file downloads](#track-file-downloads) for more information.|
 
 Use the following code sample to start tracking all default events. Or, omit the configuration to keep them disabled.
 
@@ -308,7 +308,7 @@ Amplitude tracks the following information with page view events.
 |`event_properties.[Amplitude] Page Path`| `string`. The page path. | location.path or ''.|
 |`event_properties.[Amplitude] Page Title`| `string`. The page title. | document.title or ''.|
 |`event_properties.[Amplitude] Page URL`| `string`. The value of page URL. | location.href.split('?')[0] or ''.|
-|`event_properties.${CampaignParam}`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#tracking-default-events) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
+|`event_properties.${CampaignParam}`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](#track-default-events) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
 
 See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
@@ -374,7 +374,7 @@ User properties are details like device details, user preferences, or language t
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" title=""}}
-If you send the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area. However, they don't appear in chart results until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events#applying-user-properties-to-events).
+If you send the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area. However, they don't appear in chart results until another event is sent after the Identify call. The identify call only affects events going forward.
 
 {{/partial:admonition}}
 
@@ -835,7 +835,7 @@ amplitude.init(API_KEY);
 
 See the [configuration options](/docs/sdks/analytics/browser/marketing-analytics-sdk#configuration).
 
-Learn more about what the [Web Attribution Plugin](/docs/sdks/analytics/browser/marketing-analytics-sdk#web-attribution) supports.
+Learn more about what the [Web Attribution Plugin](/docs/sdks/analytics/browser/marketing-analytics-sdk#marketing-attribution) supports.
 
 ##### Differences from the base SDK
 
@@ -950,9 +950,9 @@ If you [set the logger to "Debug" level](#debug-mode), and see track calls in th
 
 There are two ways to address this issue:
 
-1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](#use-sendbeacon) section.
 
-2. To make track() synchronous, [add the `await` keyword](./#callback) before the call.
+2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
 
 ## Advanced topics
 
@@ -1087,7 +1087,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 |`twclid`|Twitter Click Identifier from URL parameter|
 |`wbraid`|Google Click Identifier for iOS device from App to Web|
 |`li_fat_id`|LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics|
-|`rtd_cid`|Reddit Click Identifier| 
+|`rdt_cid`|Reddit Click Identifier| 
 
 {{/partial:collapse}}
 
