@@ -156,7 +156,7 @@ Card embeds require a target element selector that specifies where to place the 
 | After element                     | Places the card immediately after the target element.            |
 | Replace element                   | Replaces the target element with the card.                       |
 
-Click the three dot menu to access format settings.
+Click the **three dot menu** to access format settings.
 
 | Setting                     | Description                                                                      |
 | --------------------------- | -------------------------------------------------------------------------------- |
