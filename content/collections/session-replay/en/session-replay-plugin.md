@@ -23,16 +23,12 @@ This article covers the installation of Session Replay using the Browser SDK plu
 [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 {{partial:admonition type="info" heading="Session Replay and performance"}}
-Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
+Session Replay minimizes impact on the performance of web pages on which it's installed by:
 
-- Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread.
+- Asynchronously processing content through webhooks, which provides efficient compression and optimized bundle sizes
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
-
-## Performance
-
-Session Replay minimizes its impact on page performance through asynchronous processing, efficient compression, and optimizing bundle sizes.
 
 ### Bundle size
 
@@ -55,13 +51,13 @@ Session Replay runs asynchronously and processes replay data in the background t
 
 To optimize Session Replay performance:
 
-- Enable `useWebWorker` to move compression off the main thread, reducing CPU impact on the main thread.
-- Configure `performanceConfig.timeout` to control when deferred compression occurs.
+- Enable `useWebWorker` which moves compression off the main thread, reducing CPU impact.
+- Configure `performanceConfig.timeout` that controls when deferred compression occurs.
 - Set `storeType` to `memory` if you don't need persistence across page reloads, reducing IndexedDB overhead.
 
-For detailed performance testing results, see the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
+For detailed performance testing results, go to the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
 
-Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
+Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
 
 ## Before you begin
 
