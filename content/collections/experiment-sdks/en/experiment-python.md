@@ -322,7 +322,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
-| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `api_key` | The analytics API key. This is **not** the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
 
