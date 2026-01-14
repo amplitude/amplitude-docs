@@ -18,7 +18,7 @@ Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control whe
 
 Before setting up a web experiment, you must [implement](/docs/web-experiment/implementation) the Web Experiment script on your site.
 
-Be aware that creating and running a web experiment is different than in [Feature Experiment](/docs/workflow/configure), though there is some overlap.
+Be aware that creating and running a web experiment is different than in [Feature Experiment](/docs/feature-experiment/workflow/create), though there is some overlap.
 
 ## Setting up a web experiment
 

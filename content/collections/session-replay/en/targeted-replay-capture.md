@@ -11,10 +11,6 @@ Targeted Replay Capture (TRC) is an advanced feature in Amplitude Session Replay
 
 Targeted Replay Capture lets you customize capture criteria using specific conditions like multiple events, event properties, or user properties. You can combine these criteria within a single filter or across filters using OR logic. The Session Replay SDK fetches targeting configurations from a remote config service and evaluates them at runtime to decide whether to capture a session.
 
-{{partial:admonition type="note" heading="Availability"}}
-Targeted Replay Capture is only availabile on paid Session Replay plans. For more information, go to [Pricing](https://amplitude.com/pricing)
-{{/partial:admonition}}
-
 ## Key capabilities
 
 TRC enables you to define the criteria that Amplitude uses to decide to capture a session, and more efficiently manage your Session Replay quota.
@@ -42,8 +38,8 @@ Manage TRC through the [Session Replay settings page](/docs/session-replay/sessi
 
 Before you configure Targeted Replay Capture, ensure you meet these requirements:
 
-- You use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin). TRC doesn't work with the standalone SDK.
-- You have the appropriate permissions to manage settings in your org and project. For more information, review [Manage Session Replay and Heatmap settings](/docs/account-management/user-roles-permissions#manage-session-replay-and-heatmap-settings).
+- You're using the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) version `@amplitude/plugin-session-replay-browser@1.22.0` or higher. TRC doesn't work with the standalone SDK.
+- You have the appropriate permissions to manage settings in your org and project. For more information, review [Manage Session Replay and Heatmap settings](/docs/admin/account-management/user-roles-permissions#manage-session-replay-and-heatmap-settings).
 
 ## Configure Targeted Replay Capture
 
@@ -65,7 +61,7 @@ You must capture and send events, event properties, and user properties to Ampli
 
 ## SDK support
 
-Targeted Replay Capture requires the Amplitude Browser Analytics SDK with the Session Replay Browser SDK Plugin. To use TRC, ensure you have both the Amplitude Browser Analytics SDK and the Session Replay Plugin integrated into your setup.
+Targeted Replay Capture (TRC) requires the Amplitude Browser Analytics SDK with the Session Replay Browser SDK Plugin version `@amplitude/plugin-session-replay-browser@1.22.0` or higher. To use TRC, ensure you have both the Amplitude Browser Analytics SDK and the Session Replay Plugin integrated into your setup.
 
 {{partial:admonition type="warning" heading="Standalone SDK not supported"}}
 Targeted Replay Capture doesn't support the standalone SDK. Use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) instead.

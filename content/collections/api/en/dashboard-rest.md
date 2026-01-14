@@ -1128,11 +1128,11 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 | <div class="big-column">Attribute</div> | Description |
 | --- | --- |
-| `series` | A JSON object containing two keys.  <br>  <br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order).  <br>**values** - A JSON object with one key for each date, where each value is an array whose n-th element corresponds to the retention for n intervals (days, weeks, or months depending on i) out. This is by each interval. |
+| `series` | A JSON object containing two keys.  <br>  <br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order).  <br>**values** - A JSON object with one key for each date, where each value is an array of retention data. The first element (index 0) contains the total user count for that cohort. Subsequent elements contain retention data: element at index N+1 corresponds to the retention for N intervals (days, weeks, or months depending on i) out. For example, index 1 is Day 0 retention, index 2 is Day 1 retention, and so on. |
 | `count` | The number of users retained in that interval. |
-| `outof` | The total number of users in the cohort (users who performed the starting action on the date), respectively. |
+| `outof` | The total number of users in the cohort (users who performed the starting action on the date). |
 | `incomplete` | Whether users in that date have had enough time to be retained. |
-| `combined` | A JSON object where each value is an array whose n-th element corresponds to the retention for n intervals (days, weeks, or months depending on i) out. This object is the deduplicated aggregate of all date cohorts from the values JSON object. |
+| `combined` | A JSON object where each value is an array of aggregated retention data across all date cohorts. The first element (index 0) contains the total user count. Subsequent elements contain retention data: element at index N+1 corresponds to the retention for N intervals (days, weeks, or months depending on i) out. For example, index 1 is Day 0 retention, index 2 is Day 1 retention, and so on. This object is the deduplicated aggregate of all date cohorts from the values JSON object. |
 | `seriesMeta` | An array of labels with one for each segment. |
 | `segmentIndex` | This represents the index of the segment, referring to its position in the right module of the chart control panel. |
 | `eventIndex` | This represents the index of the event, referring to which event if you have many return events selected in the left module. |

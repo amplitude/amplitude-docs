@@ -31,7 +31,7 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")
@@ -90,7 +90,7 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 }
 ```
 
@@ -390,7 +390,7 @@ Add the following intent filter to the main activity to your project's `AndroidM
 // In your Activity
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
-    amplitudeEngagement.handlePreviewLinkIntent(intent)
+    amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
 ## Changelog

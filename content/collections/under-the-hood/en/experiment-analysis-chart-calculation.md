@@ -1,6 +1,6 @@
 ---
 id: c3d4aec1-92db-4f44-b847-19d6f31f1add
-published: false
+published: true
 blueprint: under-the-hood
 title: 'Value calculation in Experiment Analysis charts'
 source: 'https://help.amplitude.com/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts'
@@ -21,11 +21,11 @@ The formulas rely on a straightforward set of inputs:
 
 * **E**: The number of unique users who were exposed to the experiment.
 * **M**: The number of unique users who triggered the metric event. T the subset of the users who have been exposed to the experiment. `M` is always be less than `E`.
-* **T**: The **total number of times** the metric event was triggered. A single user can trigger the metric event more than once. Amplitude only counts metric events triggered by users included in E.
-* **S**: The **sum** of all the metric events' property values.
-* **A**: The **sum of the** **average** of all the metric events' property values, per user.
-* **FM**: The number of unique **users** who triggered the events **in the funnel**, in the specified order.
-* **FT**: The total number of times **all the funnel events** are triggered in the specified order.
+* **T**: The total number of times the metric event was triggered. A single user can trigger the metric event more than once. Amplitude only counts metric events triggered by users included in E.
+* **S**: The sum of all the metric events' property values.
+* **A**: The sum of the average of all the metric events' property values, per user.
+* **FM**: The number of unique users who triggered the events in the funnel, in the specified order.
+* **FT**: The total number of times all the funnel events are triggered in the specified order.
 
 ## Formulas
 

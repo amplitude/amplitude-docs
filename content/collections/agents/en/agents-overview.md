@@ -23,6 +23,6 @@ Interacting with Agents is simple. Use natural language to guide their work, set
 
 ## Example use cases
 
-- Automate reporting with the [Dashboard Agent](/docs/agents/dashboard-agent)
-- Discover behavioral insights with the [Session Replay Agent](/docs/agents/session-replay-agent)
-- Explore strategies with the [Website Conversion Agent](/docs/agents/website-conversion-agent)
+- Automate reporting with the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent)
+- Discover behavioral insights with the [Session Replay Agent](/docs/amplitude-ai/session-replay-agent)
+- Explore strategies with the [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent)
