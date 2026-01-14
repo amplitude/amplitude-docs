@@ -34,7 +34,7 @@ Experiment creates your initial variant automatically. By default, this variant 
 
 6. Click **Apply**.
 
-There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to the absolute minimum of variants needed.
+There is no limit to the number of variants you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/bonferroni-correction). Try to keep your experiments limited to the absolute minimum of variants needed.
 
 You can drag and drop your variants in any order you want. However, the variant that contains the `control` label is always considered the control variant, regardless of where it appears in the list.
 

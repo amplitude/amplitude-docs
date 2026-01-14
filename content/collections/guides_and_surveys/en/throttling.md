@@ -30,7 +30,7 @@ Amplitude has built-in limits that control how many guides and surveys can displ
 | Pins | One at a time | If a pin is already displayed and another pin is triggered, the first pin continues to show and the second pin doesn't display. |
 | Popovers | One at a time | If a popover is already displayed and another popover is triggered, the first popover continues to show and the second popover doesn't display. |
 | Modals | One at a time | If a modal is already displayed and another modal is triggered, the first modal continues to show and the second modal doesn't display. |
-| Checklists | One at a time | If a checklist is already displayed and another checklist is triggered, the first checklist continues to show and the second checklist doesn't display. |
+| Checklists <br/> {.tag .web .zero} | One at a time | If a checklist is already displayed and another checklist is triggered, the first checklist continues to show and the second checklist doesn't display. |
 | Banners | One at a time | If a banner is already displayed and another banner is triggered, the first banner continues to show and the second banner doesn't display. |
 
 {{partial:admonition type="note" heading="Checklists can display with other form factors"}}

@@ -60,6 +60,11 @@ mix.postCss('resources/docs/css/dracula-prism.css', 'public/docs/css', [
 // Enable Vue.js support
 mix.vue({ version: 3 });
 
+// Enable versioning for cache busting
+if (mix.inProduction()) {
+    mix.version();
+}
+
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({
         test: /\.js$/,

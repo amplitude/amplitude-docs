@@ -10,6 +10,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data ",
+      "destination": "/docs/feature-experiment/advanced-techniques/winsorization-in-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing",
+      "destination": "/docs/feature-experiment/advanced-techniques/bonferroni-correction",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/amplitude-mcp",
       "destination": "/docs/amplitude-ai/amplitude-mcp",
       "statusCode": 301

@@ -31,7 +31,7 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")
@@ -90,7 +90,7 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 }
 ```
 
@@ -137,16 +137,15 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
-
 let bootOptions = AmplitudeBootOptions(
-  userId: "USER_ID",
-  deviceId: "DEVICE_ID",
-  userProperties: mapOf("key" to "value")
-  integrations = arrayOf({ event: BaseEvent ->
-    // Custom event handler
-    // Dummy example here:
-    println("event: ${event.eventType} properties: ${event.eventProperties}")
-  })
+    userId: "USER_ID",
+    deviceId: "DEVICE_ID",
+    userProperties: mapOf("key" to "value")
+    integrations = arrayOf({ event: BaseEvent ->
+        // Custom event handler
+        // Dummy example here:
+        println("event: ${event.eventType} properties: ${event.eventProperties}")
+    })
 )
 amplitudeEngagement.boot(options: bootOptions)
 ```
@@ -222,8 +221,8 @@ Configure this in your existing layout XMLs or programmatically by setting the p
 ```xml
 <!-- in my_layout.xml -->
 <LinearLayout>
+    <!-- Set either contentDescription or tag to your desired selector -->
     <Button
-        <!-- Set either contentDescription or tag to your desired selector -->
         android:contentDescription="my-button"
         android:tag="my-button" />
 </LinearLayout>
@@ -235,7 +234,7 @@ val button = Button(this)
 
 // Set the contentDescription
 button.contentDescription = "my-button"
-// Or, set the tag
+// Or set the tag
 button.tag = "my-button"
 ```
 
@@ -244,6 +243,7 @@ button.tag = "my-button"
 This section describes additional methods available in the Android SDK for Amplitude Guides and Surveys, including:
 
 - **Managing themes**: You can set the visual theme (light, dark, or auto) for guides and surveys using `setThemeMode`.
+- **Adding callbacks**: You can register named callbacks and trigger them from guides or surveys using the Run callback action to execute custom app logic.
 - **Router configuration**: You can customize how guides and surveys handle screen navigation by defining a router callback with `setRouter`, which lets you handle navigation logic in your app.
 - **Resetting guides/surveys**: Use `reset` to move a guide or survey back to a specific step.
 - **Listing guides/surveys**: Retrieve the full list of live guides and surveys and their current status using the `list()` method.
@@ -258,13 +258,38 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
+### Register a callback
+
+Set the Run callback action on a guide or survey button to execute the callback.
+
+```kotlin
+engagement.addCallback(key: String, func: () -> Unit)
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `key`      | `String`     | Required. Refer to this callback by key when setting a callback action on a guide or survey. |
+| `func`     | `() -> Unit` | Required. The callback to execute.                                                            |
+
+```kotlin
+engagement.addCallback("show-alert") {
+    this.runOnUiThread {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Callback")
+            .setMessage("Callback has been executed!")
+            .setPositiveButton("OK", null)
+            .show()
+    }
+}
+```
+
 ### Router configuration
 
 Configure how Guides and Surveys handles screen navigation.
 
 ```kotlin
 engagement.setRouter { identifier ->
-  // Your screen handling and navigation
+    // Your screen handling and navigation
 }
 ```
 
@@ -365,7 +390,7 @@ Add the following intent filter to the main activity to your project's `AndroidM
 // In your Activity
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
-    amplitudeEngagement.handlePreviewLinkIntent(intent)
+    amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
 ## Changelog

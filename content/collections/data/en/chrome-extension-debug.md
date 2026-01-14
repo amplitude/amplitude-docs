@@ -75,7 +75,7 @@ If all checks pass but guides or surveys still don't work, verify these settings
 
 ### Troubleshooting Guides & Surveys
 
-The troubleshooting section shows all published guides and surveys that appear on the current page. Each guide or survey displays its trigger conditions and whether those conditions pass.
+The troubleshooting section shows all published guides and surveys for the associated project's API key. Each guide or survey displays its trigger conditions and whether those conditions pass.
 
 Open a preview of any guide or survey to see the Preview toolbar and debug individual steps. The preview helps you test the guide's behavior and identify issues with specific steps.
 

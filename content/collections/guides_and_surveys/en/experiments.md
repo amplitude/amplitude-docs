@@ -15,9 +15,7 @@ Running an experiment on your guide or survey requires the Manager role at a min
 
 ## Run an experiment
 
-To add experimentation to your guide or survey, click the add experiment icon. 
-
-![](statamic://asset::help_center_conversions::guides-surveys/add-experiment.png)
+To add experimentation to your guide or survey, click the **Add experiment** icon. 
 
 When you add an experiment to your guide or survey, Guides and Surveys controls the experience, and Experiment controls user targeting and distribution of each variant, depending on the type of experiment you choose.
 
@@ -60,10 +58,10 @@ Exposure events in Guides and Surveys experiments work similarly to a standard e
 
 Consider the following example:
 
-Amplitude assigns **User A** to the control, and **User B** to the treatment.
+Amplitude assigns User A to the control, and User B to the treatment.
 
 - If Amplitude serves **User B** another guide or survey that blocks the display of the treatment, no exposure event fires, and won't fire until the user actually sees the treatment.
-- If the same scenario occurs for **User A**, in the control group, the exposure event fires because they don't see the relvant guide, as is expected for the control group.
+- If the same scenario occurs for **User A**, in the control group, the exposure event fires because they don't receive the relvant guide, as is expected for the control group.
 {{/partial:admonition}}
 
 ### End the experiment
@@ -78,8 +76,6 @@ If you're ready to conclude experiment, navigate to the experiment's configurati
 ## Insights
 
 The Insights tab is the dashboard where you track how users engage with your guide or survey. Monitor trends in views and completions over time, and track how different variants perform relative to one another.
-
-![](statamic://asset::help_center_conversions::guides-surveys/insights-tab.png)
 
 ### Time-based analysis
 

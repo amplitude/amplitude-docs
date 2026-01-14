@@ -13,6 +13,8 @@ Most AI Visibility functionality is available to everyone, with or without an Am
 
 For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
 
+AI Visibility reports run one time each week. Any hanges made to AI Visibility become active when the report reruns. 
+
 ## Free visibility reports
 
 Free visibility reports are available to everyone on the Amplitude [Try AI Visibility](https://www.amplitude.com/try-ai-visibility) page of the website. 
@@ -37,11 +39,29 @@ The Overview tab contains high-level information about how your website is perfo
 * **Top Topics by Visibility**: Displays the top topics relating to your brand returned by AI agents. Describes the number of mentions and responses used to calculate the percentage amount. 
 * **Top Cited Sources**: Displays the top sources AI agents used to generate results. 
 
+##### Updating languages and regions
+
+You can update the language and region settings for each brand that you're researching. Updating the language for a brand affects the generated prompts and responses. Changes to the language settings take effect when the report reruns on its normal schedule.
+
+{{partial:admonition type="note" heading="Language considerations"}}
+If the prompts are in English and you change the language settings, the prompts remain in English. However, the responses should be in the updated language. If you configured the langauge during the original brand setup, most of the responses are returned in that same language.
+{{/partial:admonition}}
+
+1. Next to the brand drop-down menu, click the **Configuration** slider icon button. 
+2. Select the brand you want to modify.
+3. In the Region field, set the region you want. By default, this is set to **global**.
+4. In the Language field, specify the two-character language code. For example, if you want to set the brand to French, enter **FR**. By default, this is **EN** for English.
+For all possible language codes, go to [Language Codes](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages). 
+1. Click **Save**.
+2. Close the Brand Settings window. 
+ 
 ## Prompts tab
 
 The Prompts tab contains all the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
 
 You can filter individual AI models to investigate such as Claude, ChatGPT, or Gemini. You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
+
+If you change a prompt, that prompt reruns immediately. The rest of the report remains as-is until its regularly scheduled update.
 
 You can export all of these prompts to a CSV file for further analysis. Click **Export CSV** to download the exported file. 
 
@@ -149,7 +169,7 @@ For further analysis, you can create a cohort from any of the pages or groups of
 
 The Competitors tab lets you view information about your competitors and how their AI Visibility results compare with your own. This information lets you understand how AI chat is comparing you to your competitors and areas where you can improve against your competitors. 
 
-AI Visibility automatically selects your competitors by the number of mentions it finds for other brands similar to yours. You can filter out competitors from your analysis. If you want to either add or delete a competitor, go to [Competitor Settings](/docs/agents/ai-visibility#competitor-settings). 
+AI Visibility automatically selects your competitors by the number of mentions it finds for other brands similar to yours. You can filter out competitors from your analysis. If you want to either add or delete a competitor, go to [Competitor Settings](/docs/amplitude-ai/ai-visibility#competitor-settings). 
 
 ### Comparisons
 
@@ -194,6 +214,10 @@ Be aware that AI Visibility can't directly access or make changes to your websit
 {{/partial:admonition}}
 
 The following procedures describe how to implement or create AI Visibility's actions:
+
+{{partial:admonition type="tip" heading="Recommendations are in Beta"}}
+The Recommendations functionality is in Beta. This means that functionality may not operate exactly as expected, and that you should review the recommendations before implementing them. When the feature is out of Beta, this message will disappear.
+{{/partial:admonition}}
 
 ##### To implement a recommendation
 1. Go to *AI Visibility > Actions > Recommendations*.

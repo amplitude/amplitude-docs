@@ -87,7 +87,7 @@ Click the three dot menu for the pin to access format settings.
 | Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
-| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
+| Advance trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
 
 ### Tooltip
@@ -130,6 +130,10 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 
 Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
 
+| Setting                                | Description                                                                                                  |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Z-index                                | Specify a custom z-index value for the checklist.                 |
+
 #### Checklist items {.tag .web}
 
 Checklist items compose a checklist.
@@ -139,7 +143,7 @@ Checklist items compose a checklist.
 | Skippable | If enabled, the user can complete the checklist item via a "Skip" button. |
 
 
-## Element selector
+## Element selector {.tag .web}
 
 When you configure guides with pins, tooltips, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
 
@@ -201,7 +205,7 @@ Position controls where the guide appears on screen.
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Modal                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
 | Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
-| Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
+| Pins                                     | Controls position of the pin relative to the target element. Select the position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
 | Banner                                   | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
 | Checklist header <br/> {.tag .web .zero} | Bottom left or Bottom right, in relation to the page.                                                                                                                                                                                                                                     |
@@ -224,14 +228,14 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab.                                                                                                                               |
+| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |
 | Go back                    | Go to the previous step in the guide.                                                                                                                                             |
 | Go forward                 | Advance to the next step in the guide.                                                                                                                                            |
 | Go to step                 | Go to the specified step in the guide.                                                                                                                                            |
-| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic) for more information. |
+| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/guides/conditional-logic) for more information. |
 | Run callback               | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, go to [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
@@ -239,7 +243,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
 
-#### Mark step complete when
+#### Mark step complete when {.tag .web}
 Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
 - `Button is clicked`
 - `Page is visited`

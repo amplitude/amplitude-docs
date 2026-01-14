@@ -39,7 +39,7 @@ Typical metrics are:
 2. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 3. To add secondary metrics, click ***Add Metric*** and repeat this process.
 
-After you add your metrics, set your [varients](/docs/workflow/add-variants).
+After you add your metrics, set your [varients](/docs/feature-experiment/workflow/add-variants).
 
 ### Examples of success and guardrail metrics
 

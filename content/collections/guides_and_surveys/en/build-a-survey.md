@@ -21,17 +21,17 @@ The Rating block enables users provide structured feedback using a scale you def
 | Rating type   | Description                                                                            |
 | ------------- | -------------------------------------------------------------------------------------- |
 | Stars         | A three or five point scale that displays star icons to the user.                      |
-| Rating labels | Enter text labels that appear on the low and high ends of the scale.                   |
-| Emoji         | A two, three, or five point scale that displays emojis that you choose for each value. |
+| Numbers       | A three, five, seven, or ten point scale that displays numbers to the user.            |
+| Emojis        | A two, three, or five point scale that displays emojis that you choose for each value. |
 | NPS           | A 0 - 10 point [Net Promoter Score](https://en.wikipedia.org/wiki/Net_promoter_score). |
 
 Click the gear icon in the rating block to access more settings.
 
-| Setting                 | Description                                                                  |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| Required                | Enable to require the user to enter a rating.                                |
-| Numbers                 | A five or ten point scale that displays numbers to the user.                 |
-| Stars / Numbers / Emoji | Select the number of options available in the rating. Not applicable to NPS. |
+| Setting                  | Description                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| Required                 | Enable to require the user to enter a rating.                                |
+| Rating labels            | Enter text labels that appear on the low and high ends of the scale.         |
+| Stars / Numbers / Emojis | Select the number of options available in the rating. Not applicable to NPS. |
 
 #### Conditional logic
 
@@ -56,7 +56,7 @@ You can also combine survey responses with user properties. For example:
 * If `rating > 8` AND `subscription_tier = premium` then `Show survey asking for app store review`
 * If `rating < 5` AND `country = US` then `Show survey with US support contact information`
 
-For more information about conditional logic, including how to use it with buttons and guides, go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic).
+For more information about conditional logic, including how to use it with buttons and guides, go to [Conditional Logic](/docs/guides-and-surveys/guides/conditional-logic).
 
 ### Long answer
 
@@ -67,7 +67,6 @@ Click the gear icon in the Long answer block to access more settings.
 | Setting                 | Description                                                                  |
 | ----------------------- | ---------------------------------------------------------------------------- |
 | Required                | Enable to require the user to enter a rating.                                |
-| ARIA label                 | Provide a label to help screen readers understand the input's purpose.                |
 
 ### Short answer
 
@@ -78,7 +77,6 @@ Click the gear icon in the Short answer block to access more settings.
 | Setting                 | Description                                                                  |
 | ----------------------- | ---------------------------------------------------------------------------- |
 | Required                | Enable to require the user to enter a rating.                                |
-| ARIA label                 | Provide a label to help screen readers understand the input's purpose.                |
 | Pre-fill key | Populate the input with a user property that you specify, using the ingested name of the property, for example `device_type`. If the user property isn't found for a specific user, nothing populates in the field. User properties must be available client-side during the current session. Go to [Set user properties](/docs/guides-and-surveys/sdk#set-user-properties) for implementation details. |
 
 ### List
@@ -89,9 +87,9 @@ Click the gear icon in the List block to access more settings.
 
 | Setting      | Description                                                                                                                                                                                                         |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Required     | Enable to require the user to enter a rating.                                                                                                                                                                       |
-| ARIA label   | Provide a label to help screen readers understand the input's purpose.                                                                                                                                              |
-| Multiple choice | Enables users to select more than one option. Changes the block's form elements from radio buttons to checkboxes.
+| Required     | Enable to require the user to select an option.                                                                                                                                                                       |
+| Display as dropdown | Enables users to select one option. Changes the block's form elements from radio buttons to a dropdown.
+| Multi-select | Enables users to select more than one option. Changes the block's form elements from radio buttons to checkboxes.
 | Randomize order | Randomizes the order in which items appear in the list each time it displays to a user. |
 | "Other" option  | Provides users the option to select `Other` as a result, and optionally supply a written answer. |
 

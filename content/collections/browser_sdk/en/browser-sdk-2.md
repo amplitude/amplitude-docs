@@ -145,10 +145,10 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `storageProvider`          | `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events.                                                                                                                                                                                   | `LocalStorage`                          |
 | `userId`                   | `string`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option.                                                                                                                                     | `undefined`                             |
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default. |
-| `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
+| `transport`                | `TransportType \| TransportConfig`. Sets the request API to use. Pass a string (`'fetch'`, `'xhr'`, or `'beacon'`), or an object with `type` and `headers` properties to set custom HTTP headers. Go to [Custom HTTP request headers](#custom-http-request-headers) for more details.            | `'fetch'`                               |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
 | `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
-| `remoteConfig`             | `object`. Remote configuration options. See [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
+| `remoteConfig`             | `object`. Remote configuration options. Go to [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
 
 {{/partial:collapse}}
 
@@ -1609,6 +1609,39 @@ amplitude.track("event")
 // because the tracked "event" is not in the previous session 12345
 ```
 
+### Custom HTTP request headers
+
+Use the `transport` configuration option to attach custom HTTP headers to event upload requests. Instead of passing a transport name string, pass an object with `transport` and `headers` properties. This is useful for scenarios like routing requests through a proxy server that requires specific headers.
+
+{{partial:admonition type="note" heading=""}}
+Custom headers only work with `fetch` and `xhr` transports. When using the `beacon` transport, the browser doesn't support custom headers due to limitations of the [sendBeacon API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon).
+{{/partial:admonition}}
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'fetch',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+      'Authorization': 'Bearer your-token',
+    },
+  },
+});
+```
+
+You can also use the `xhr` transport with custom headers:
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'xhr',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+    },
+  },
+});
+```
+
 ### Use sendBeacon
 
 Unlike standard network requests, `sendBeacon` sends events in the background, even if the user closes the browser or leaves the page.
@@ -1822,11 +1855,76 @@ amplitude.init(AMPLITUDE_API_KEY, {
 ```
 
 {{partial:admonition type="note" heading="Configuration merging behavior"}}
-When `fetchRemoteConfig` is enabled:
-- Remote configuration settings from Amplitude servers merge with your local configuration
-- Remote settings override conflicting local settings
-- Manual configuration parameters you set locally are preserved unless explicitly overridden by remote settings
-- This particularly affects Autocapture settings, which can be controlled remotely
+When you enable `fetchRemoteConfig`, the SDK merges remote configuration with local configuration at the feature level. Remote configuration can override specific autocapture features even when you set `autocapture: false` locally.
+
+How the merging works:
+
+- If remote configuration specifies a value for an autocapture feature, that value takes precedence.
+- If remote configuration doesn't specify a value for a feature, the SDK uses the local configuration value.
+- Each autocapture feature such as `sessions`, `pageViews`, and `elementInteractions` merges independently.
+
+{{partial:collapse name="Remote config enables specific features when local config disables all"}}
+
+```ts
+// Local configuration disables all autocapture
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: false
+});
+
+// Remote config (set in Data > Settings > Autocapture) enables only:
+// - Page Views: enabled
+// - Element Interactions: enabled
+
+// Result: Only Page Views and Element Interactions are tracked
+// All other features (sessions, formInteractions, fileDownloads, etc.) remain disabled
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config overrides specific local settings"}}
+
+```ts
+// Local configuration enables most features
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    pageViews: true,
+    sessions: true,
+    elementInteractions: true,
+    formInteractions: true
+  }
+});
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Element Interactions: disabled
+// - Frustration Interactions: enabled
+
+// Result:
+// - pageViews: true (from local config)
+// - sessions: true (from local config)
+// - elementInteractions: false (overridden by remote config)
+// - formInteractions: true (from local config)
+// - frustrationInteractions: true (set by remote config)
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config when you don't specify local config"}}
+
+```ts
+// Local configuration doesn't specify autocapture settings
+amplitude.init(AMPLITUDE_API_KEY);
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Page Views: enabled
+// - Sessions: enabled
+
+// Result: Only Page Views and Sessions are tracked
+// All other features use their default values
+```
+
+{{/partial:collapse}}
+
+Set baseline settings locally and adjust specific features remotely through the Amplitude UI without code changes.
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
