@@ -49,15 +49,15 @@ For example: You want to ensure that your new feature flag (Flag-B) rolls out to
 
 When Amplitude evaluates users for Flag-B:
 
-1. First, it checks if the user is in Flag-B’s cohort.
+1. It checks if the user is in Flag-B’s cohort.
 
    - If the user is a member of the cohort, it serves the configured variant to the user.
  
-2. Evaluates the user for dependencies, in this case: Flag-A. 
+2. It then evaluates the user for dependencies, in this case: Flag-A. 
 
    - If the user doesn't receive the `On` variant for Flag-A, Amplitude excludes them from Flag-B.
 
-3. Evaluates the user for Flag-B.
+3. It then evaluates the user for Flag-B.
 
 Targeting for Flag-B determines what variant (if any) the user receives. The flag dependency on Flag-A has no effect at this point.
 
