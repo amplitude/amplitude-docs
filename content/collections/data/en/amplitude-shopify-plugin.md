@@ -8,13 +8,13 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1729791421
 ---
 
-[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, customize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
+[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, /docs/feature-experiment/workflow/createcustomize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
 
 The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you to bring data from your Shopify store into Amplitude, unlocking valuable insights from funnel analytics, user behavior trends and charts, ROI analysis, Session Replay and more.
 
 ## Overview
 
-The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment).
+The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 {{partial:admonition type="warning" heading="Shopify and flickering"}}
 The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](/docs/web-experiment/implementation#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.

@@ -116,13 +116,25 @@ The event parameter can include these keys:
 
 ## Segment definition
 
+Segments filter users based on their properties or behaviors. Each segment is a JSON object.
+
 | Name| Description|
 |------|----------|
 |`prop`| <span class="required">Required</span>. The name of the property to filter on. For behavioral cohorts, the name of the property is "userdata_cohort". <br>Example ("XYXxxzz" is the identifier from the Behavioral Cohort's URL, https://analytics.amplitude.com/org_name/cohort/**XYXxxzz**.)<br>`s=\[\{"prop":"userdata_cohort","op":"is","values":\["XYXxxzz"\]\}\]`|
 |`op` |<span class="required">Required</span>. The operator for filtering on specific property values. Allowed values are `is`, `is not`, `contains`, `does not contain`, `less`, `less or equal`, `greater`, `greater or equal`, `set is`, or `set is not`.|
 |`values`| <span class="required">Required</span>. A list of strings to filter the segment by. If you are segmenting by a cohort, the value is the cohort ID, found in URL of the cohort in the web app (for example, "5mjbq8w").|
+|`type`| <span class="optional">Optional</span>. Set to `"event"` when using a "who performed" filter to segment users based on event performance.|
+|`event_type`| <span class="optional">Optional</span>. The event to filter on when using a "who performed" filter. Required when `type` is `"event"`.|
+|`filters`| <span class="optional">Optional</span>. Event property filters when using a "who performed" filter. An array of filter objects.|
+|`value`| <span class="optional">Optional</span>. The count threshold for the "who performed" filter. Use with `time_type` and `time_value`.|
+|`time_type`| <span class="optional">Optional</span>. Time window type for the "who performed" filter. Values include `"forEachInterval"`, `"currentInterval"`, or `"allTime"`.|
+|`time_value`| <span class="optional">Optional</span>. Number of days for the time window when `time_type` equals `"forEachInterval"`.|
 
-### Segment definition example
+### Segment definition examples
+
+#### User property filter
+
+Filter users by property values.
 
 ```json
 [
@@ -135,6 +147,44 @@ The event parameter can include these keys:
         "prop": "gp:gender",
         "op": "is",
         "values": ["female"]
+    }
+]
+```
+
+#### "Who performed" filter
+
+Filter users who performed a specific event. This example filters users who performed the "signup - end signup" event at least once in the last 30 days.
+
+```json
+[
+    {
+        "op": ">=",
+        "type": "event",
+        "event_type": "signup - end signup",
+        "filters": [],
+        "value": 0,
+        "time_type": "forEachInterval",
+        "time_value": 30
+    }
+]
+```
+
+You can combine multiple filters. This example filters users in the United States who performed the "signup - end signup" event at least once.
+
+```json
+[
+    {
+        "prop": "country",
+        "op": "is",
+        "values": ["United States"]
+    },
+    {
+        "op": ">=",
+        "type": "event",
+        "event_type": "signup - end signup",
+        "filters": [],
+        "value": 1,
+        "time_type": "allTime"
     }
 ]
 ```
@@ -1128,11 +1178,11 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 | <div class="big-column">Attribute</div> | Description |
 | --- | --- |
-| `series` | A JSON object containing two keys.  <br>  <br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order).  <br>**values** - A JSON object with one key for each date, where each value is an array whose n-th element corresponds to the retention for n intervals (days, weeks, or months depending on i) out. This is by each interval. |
+| `series` | A JSON object containing two keys.  <br>  <br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order).  <br>**values** - A JSON object with one key for each date, where each value is an array of retention data. The first element (index 0) contains the total user count for that cohort. Subsequent elements contain retention data: element at index N+1 corresponds to the retention for N intervals (days, weeks, or months depending on i) out. For example, index 1 is Day 0 retention, index 2 is Day 1 retention, and so on. |
 | `count` | The number of users retained in that interval. |
-| `outof` | The total number of users in the cohort (users who performed the starting action on the date), respectively. |
+| `outof` | The total number of users in the cohort (users who performed the starting action on the date). |
 | `incomplete` | Whether users in that date have had enough time to be retained. |
-| `combined` | A JSON object where each value is an array whose n-th element corresponds to the retention for n intervals (days, weeks, or months depending on i) out. This object is the deduplicated aggregate of all date cohorts from the values JSON object. |
+| `combined` | A JSON object where each value is an array of aggregated retention data across all date cohorts. The first element (index 0) contains the total user count. Subsequent elements contain retention data: element at index N+1 corresponds to the retention for N intervals (days, weeks, or months depending on i) out. For example, index 1 is Day 0 retention, index 2 is Day 1 retention, and so on. This object is the deduplicated aggregate of all date cohorts from the values JSON object. |
 | `seriesMeta` | An array of labels with one for each segment. |
 | `segmentIndex` | This represents the index of the segment, referring to its position in the right module of the chart control panel. |
 | `eventIndex` | This represents the index of the event, referring to which event if you have many return events selected in the left module. |

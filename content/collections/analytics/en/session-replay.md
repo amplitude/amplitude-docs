@@ -149,9 +149,15 @@ Click *Play* to see the session view in the modal that appears. 
 
 ![](/docs/output/img/analytics/20464613106203)
 
-### View the number of captured sessions
+### View the number of captured replays
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include sessions that contain any events where the event property `Session Replay ID ≠ "(none)"`. This includes all session replays with a value.
+To see the number of captured replays, create an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart:
+
+1. Select the `[Amplitude] Replay Captured` event.
+2. Group by the `[Amplitude] Session Replay ID` event property.
+3. In the formula, use `PROPCOUNT(A)` to count distinct session replay IDs.
+
+This formula returns the number of distinct property values for the property by which the event is grouped. In this example, the formula retrieves the number of different session replay IDs.
 
 ## Search for a replay
 
