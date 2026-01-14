@@ -116,8 +116,8 @@ fetch(User $user, ?FetchOptions $fetchOptions = null): array<Variant>
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `flagKeys` | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. | `[]` |
-| `tracksExposure` | To track or not track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
-| `tracksAssignment` | To track or not track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
+| `tracksExposure` | Tracks or doesn't track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
+| `tracksAssignment` | Tracks or doesn't track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
 
 ```php
 <?php
@@ -129,7 +129,7 @@ $user = \AmplitudeExperiment\User::builder()
 $variants = $client->fetch($user);
 ```
 
-After fetching variants for a user, you may to access the variant for a specific flag.
+After fetching variants for a user, you may want to access the variant for a specific flag.
 
 ```php
 <?php
@@ -144,9 +144,9 @@ if ($variant) {
 ```
 
 {{partial:collapse name="Account-level bucketing and analysis (v1.0.0+)"}}
-If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or through [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```php
 <?php
@@ -419,7 +419,7 @@ The local evaluation client calls `track()` when it determines there are untrack
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `exposure` | required | The object representing an Experiment exposure event |
+| `exposure` | required | The object representing an Experiment exposure event. |
 
 #### DefaultExposureTrackingProvider
 
