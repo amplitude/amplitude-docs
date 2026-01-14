@@ -25,7 +25,7 @@ The Amplitude Activation Braze streaming integration enables you to forward your
 
 ## Use cases
 
-Event streaming is a great solution if you want to send a message to a customer immediately after they've performed an action. For example:
+Event streaming lets you send a message to a customer immediately after they've performed an action. For example:
 
 1. Email a customer who has abandoned their cart.
 2. Congratulate a customer who has completed a sticky action.
