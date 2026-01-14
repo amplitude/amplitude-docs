@@ -179,7 +179,7 @@ variants, err := client.Fetch(user)
 
 {{/partial:collapse}}
 
-### Fetch V2 With Options
+### Fetch V2 with options
 
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) with options and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
