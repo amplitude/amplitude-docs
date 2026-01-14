@@ -6,12 +6,14 @@ source: 'https://help.amplitude.com/hc/en-us/articles/21037113562651-Interpret-y
 this_article_will_help_you:
   - 'Interpret the results of your Lifecycle chart'
   - 'Switch between chart types'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1732570352
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1761932190
 landing: true
 landing_blurb: 'Interpret the results of your Lifecycle chart'
+academy_course:
+  - def740af-68f5-484d-95c4-0b84edc128b5
 ---
-This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
+This article explains how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 
 ## Interpret your Lifecycle chart
 
@@ -19,15 +21,15 @@ The Lifecycle chart's default display is a histogram with two buckets for each o
 
 This is your **Growth** chart. It shows the distribution of active users and the count of dormant users for a particular day, week, or month. This allows you to see which group of users affects your active user counts the most.
 
-Earlier, we mentioned that all your **active users** would fall into one of three groups: **new**, **current**, or **resurrected** (formerly inactive). Each of these groups is represented in the different shades of blue in the histogram's blue bar. Let's define the three active user groups by looking at days 1 and 2 from the above **Growth** chart:
+All your **active users** fall into one of three groups: **new**, **current**, or **resurrected** (formerly inactive). Each of these groups is represented in the different shades of blue in the histogram's blue bar. Here's how the three active user groups are defined:
 
-* A **new user** (light blue) is one who is new in Amplitude as a whole within one usage interval of whenever they performed the event. Amplitude will count that user as **new** for one full interval after their first event is received. Since our example looks at daily usage, a user will be considered **new** on August 1st if they fired the event and were new to Amplitude on the same day - August 1st.
-* A **current user** (medium blue) is one who logged the specified event in the **current** interval and also**in the previous usage interval** (day, week, or month). Using the same example, a user who fired the specified event on August 1st and August 2nd would be considered a **current** user on August 2nd.
-* A **resurrected user** (dark blue) is a user who logged the specified event in the **current** interval but did **not** log the event in the previous interval (previously inactive). In our example, a user who was new to Amplitude on August 1st, but didn't fire the specified event until August 2nd would be considered a **resurrected** user on August 2nd.
+* A **new user** (light blue) is one who is new in Amplitude as a whole within one usage interval of whenever they performed the event. Amplitude counts that user as New for one full interval after the interval in which their first event is received. For example, if your chart uses weekly intervals, Amplitude considers a user New during Oct 1 through Oct 7 if they fired the event and were new to Amplitude during that same interval.
+* A **current user** (medium blue) is one who logged the specified event in the **current** interval and also in the **previous usage interval** (day, week, or month). For example, Amplitude considers a user who fired the specified event during Oct 1 - Oct 7 and Oct 8 - Oct 14 a **current** user on October 9.
+* A **resurrected user** (dark blue) is a user who logged the specified event in the **current** interval but didn't log the event in the previous interval. Importantly, a resurrected user must have logged the event at some point before the previous interval (otherwise Amplitude considers them "new"). Amplitude looks back through your historical data to determine if a user was previously active. For example, Amplitude considers a user who was active on September 30, didn't fire the event during the week of Oct 1 - Oct 7 (previous interval), but then fired it again on October 9 (current interval) a **resurrected** during Oct 8 - Oct 14.
 
-![Screenshot 2023-08-08 at 12.01.00 PM.png](/docs/output/img/lifecycle/screenshot-2023-08-08-at-12-01-00-pm-png.png)
+![](statamic://asset::help_center_conversions::lifecycle/lifecycle-growth.png)
 
-We also have **dormant users**, represented by the red bar. A dormant user is one who did not log the event you've specified, but who was had logged the specified event during the previous time period (day, week, or month). For example, a user who was active on January 1st but **not** active on January 2nd would be considered a dormant user on January 2nd.
+You also have **dormant users**, represented by the red bar. A dormant user is one who didn't log the event you've specified, but who had logged the specified event during the previous time period (day, week, or month). For example, Amplitude considers a user who was active on January 1st but wasn't active on January 2nd a dormant user on January 2nd.
 
 ### Breakdown table
 
@@ -41,7 +43,7 @@ There are also two other views for your Lifecycle chart: Dormant and Pulse.
 
 ### Dormant
 
-The Dormant chart shows the distribution of dormant users for a particular day, week, or month. For example, a dormant new user on November 21st (shown in the bar between November 20th and November 21st) is a user who was new on November 20th but became dormant on November 21st.
+The Dormant chart shows the distribution of dormant users for a particular day, week, or month. For example, a dormant new user during Oct 8 - Oct 14 is a user who was new during Oct 1 - Oct 7, but became dormant on October 8.
 
 ![](statamic://asset::help_center_conversions::lifecycle/lifecycle-dormant.png)
 
@@ -58,6 +60,6 @@ Broadly speaking:
 * **Pulse > 1** means you're gaining users faster than you're losing them—your product is experiencing growth.
 * **Pulse < 1** means you're losing more users than you're gaining—and your product isn't growing.
 
-For example, in the chart below, pulse was 0.95 between December 5th and December 11th. This means we lost more users in that interval than we gained or resurrected.
+For example, in the chart below, pulse was 0.96 during the week of Oct 8 - Oct 14. This means you lost more users in that interval than you gained or resurrected.
 
 ![](statamic://asset::help_center_conversions::lifecycle/lifecycle-pulse.png)

@@ -11,8 +11,8 @@ github_link: 'https://github.com/amplitude/Amplitude-TypeScript/tree/main/packag
 releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=analytics-browser&expanded=true'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1731007061
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1749752109
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
@@ -23,12 +23,18 @@ full_details: true
 migration_guide:
   - 9b155be9-bb32-428c-9f49-6e00f9630547
   - 57ba371b-f74f-4606-bc62-6405b4375f61
+privacy_guide:
+  - 2f8e4c9a-7b3d-4e2f-9a1c-8d5f6e7a8b9c
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
 ## Install the SDK
 
 Install the dependency with npm, yarn, or the script loader.
+
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
 
 {{partial:tabs tabs="Script loader, npm, yarn"}}
 {{partial:tab name="Script loader"}}
@@ -37,20 +43,32 @@ When you use the script loader and enable Autocapture, Browser SDK track interac
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Analytics SDK only
 npm install @amplitude/analytics-browser
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Analytics SDK only
 yarn add @amplitude/analytics-browser
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -66,7 +84,7 @@ To prevent instrumentation issues, device IDs and user IDs must be strings with 
 
 This SDK requires initialization before you can instrument any events and requires your Amplitude project's API key. You can pass an optional `userID` and `config` object in this call.
 
-```ts
+```js
 // Option 1, initialize with Amplitude API key only
 amplitude.init(AMPLITUDE_API_KEY);
 
@@ -79,6 +97,21 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com');
 // Option 4, initialize with a user ID and options
 amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 ```
+
+{{partial:admonition type="warning" heading=""}}
+When using the SDK in an [Angular](https://angular.dev/) app with [Zone.js](https://angular.dev/api/core/NgZone), invoke `init` [outside of the Angular zone](https://angular.dev/api/core/NgZone#runOutsideAngular).
+
+```javascript
+runOutsideAngular(function () { amplitude.init(...args); })
+```
+
+The Angular zone overwrites certain DOM functions that, when invoked by [Amplitude autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture), causes some user interactions to break
+{{/partial:admonition}}
+
+{{partial:admonition type="info" heading="Next.js Integration"}}
+For detailed instructions on integrating Amplitude with Next.js applications, including both client-side and server-side setups, see the [Next.js Installation Guide](/docs/sdks/frameworks/nextjs-installation-guide).
+{{/partial:admonition}}
+
 
 ## Configure the SDK
 
@@ -100,6 +133,7 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `autocapture`              | `boolean\|AutocaptureOptions`. Configures autocapture tracking. See [Autocapture](#autocapture).                                                                                                                                                                                   |                                         |
 | `defaultTracking`          | `boolean`. Deprecated in version 2.10.0. Use `autocapture` instead. Configures default event tracking.                                                                                                                                                                             | `true`                                  |
 | `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                |
+| `identify`                 | `Identify`. Calls "identify" with this object during initialization. Called before Autocapture events, like `session_start`, ensuring proper attribution of events. | `undefined`                             |
 | `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                             |
 | `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                |
 | `cookieOptions.sameSite`   | `string`. Sets `SameSite` property of cookies created.                                                                                                                                                                                                                             | `Lax`                                   |
@@ -111,9 +145,10 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `storageProvider`          | `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events.                                                                                                                                                                                   | `LocalStorage`                          |
 | `userId`                   | `string`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option.                                                                                                                                     | `undefined`                             |
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default. |
-| `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                 |
+| `transport`                | `TransportType \| TransportConfig`. Sets the request API to use. Pass a string (`'fetch'`, `'xhr'`, or `'beacon'`), or an object with `type` and `headers` properties to set custom HTTP headers. Go to [Custom HTTP request headers](#custom-http-request-headers) for more details.            | `'fetch'`                               |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                              | `false`                                 |
-| `fetchRemoteConfig`        | `boolean`. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                                                                                        | `false`                                 |
+| `fetchRemoteConfig`        | `boolean`. *Deprecated.* Use `remoteConfig.fetchRemoteConfig` instead. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                           | `true`                                 |
+| `remoteConfig`             | `object`. Remote configuration options. Go to [Remote configuration](#remote-configuration)<br/>`fetchRemoteConfig` - `boolean`. Whether the SDK fetches remote configuration. Default: `true`<br/>`serverUrl` - `string`. Custom server URL for proxying remote config requests     | `undefined`                             |
 
 {{/partial:collapse}}
 
@@ -131,8 +166,8 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-{{partial:admonition type="note" heading="Data residency"}}
-To send data to Amplitude's EU servers, use `https://app.eu.amplitude.com` to create your project, and use the API key from that project.
+{{partial:admonition type="note" heading="Data residency requirement"}}
+To send data to Amplitude's EU servers, your organization must use the EU data storage region, which you set during signup. 
 {{/partial:admonition}}
 
 ### Debugging
@@ -184,6 +219,35 @@ With the default logger, extra function context information is output to the dev
 - `time`: Start and end timestamp of the function invocation.
 - `states`: Useful internal states snapshot before and after the function invocation.
 
+## Performance
+
+The Browser SDK 2 minimizes its impact on page performance through event batching, asynchronous processing, and optimizing bundle sizes.
+
+### Bundle size
+
+The Browser SDK 2 bundle size varies based on the installation method and features you use. 
+
+{{partial:bundle-size :package_name="package_name"}}
+
+For the most up-to-date bundle size information, check the [npm package page](https://www.npmjs.com/package/@amplitude/analytics-browser) or [BundlePhobia](https://bundlephobia.com/package/@amplitude/analytics-browser).
+
+### Runtime performance
+
+The Browser SDK 2 runs asynchronously and doesn't block the main thread during event tracking. Performance characteristics include:
+
+- **Event tracking**: Event tracking operations are non-blocking and typically complete in less than 1ms for each event.
+- **Network requests**: Events are batched and sent asynchronously, minimizing network overhead. The default configuration batches up to 30 events or sends every 1 second, whichever comes first.
+- **Memory usage**: The SDK maintains a small in-memory queue for event batching. Memory usage scales with the number of queued events (default: up to 30 events).
+- **CPU impact**: Event processing and batching operations have minimal CPU impact, typically less than 1% of CPU time during normal operation.
+
+### Optimization tips
+
+To further optimize performance:
+
+- Adjust `flushQueueSize` and `flushIntervalMillis` to balance between network efficiency and memory usage.
+- Use the `offline` mode to defer event uploads when network conditions are poor.
+- Enable `useBatch` mode for high-volume event tracking to reduce the number of HTTP requests.
+
 ## Autocapture <a id="tracking-default-events"></a>
 
 Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:
@@ -194,6 +258,10 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - Form interactions
 - File downloads
 - Element interactions
+- Page URL enrichment
+- Network tracking
+- Web vitals
+
 
 {{partial:collapse name="Autocapture options"}}
 | Name                                     | Value               | Description                                                                                                                                                                                                                                                                                                                                                                 |
@@ -204,6 +272,10 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
+| `config.autocapture.pageUrlEnrichment` | Optional. `boolean` | Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information.                                                                                                                      |
+| `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information. Minimum SDK version 2.27.0.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -217,7 +289,7 @@ To disable Autocapture, see the following code sample.
 
 ```ts
 // Disable individual default tracked events
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: false,
     pageViews: false,
@@ -225,11 +297,13 @@ amplitude.init(AMPLITUDE_API_KEY, {
     formInteractions: false,
     fileDownloads: false,
     elementInteractions: false,
+    pageUrlEnrichment: false,
+    webVitals: false,
   },
 });
 
 // Disable all default tracked events
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: false,
 });
 ```
@@ -257,7 +331,7 @@ There are five different standard UTM parameters:
 
 Here is an example URL with UTM parameters:
 
-```curl
+```bash
 https://www.amplitude.com/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link
 ```
 
@@ -286,7 +360,7 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 | `ko_click_id` | Kochava click identifier                                  |
 | `li_fat_id`   | LinkedIn click identifier                                 |
 | `msclkid`     | Microsoft click identifier                                |
-| `rtd_cid`     | Reddit click identifier                                   |
+| `rdt_cid`     | Reddit click identifier                                   |
 | `ttclid`      | TikTok click identifier                                   |
 | `twclid`      | Twitter click identifier                                  |
 
@@ -346,9 +420,9 @@ Amplitude tracks the following as user properties:
 Set `config.autocapture.attribution` to `false` to disable marketing attribution tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    attribution: false, //[tl! highlight]
+    attribution: false, 
   },
 });
 ```
@@ -378,7 +452,7 @@ In addition to excluding referrers from the default configuration, you can add o
 Track complete web attribution, including self-referrals, for comprehensive insight.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: {
       // Override the default setting to exclude all subdomains
@@ -393,7 +467,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 For customers who want to exclude tracking campaign from any referrers across all subdomains of `your-domain.com`, as well as from a specific subdomain.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
     autocapture: {
     attribution: {
       excludeReferrers: [/your-domain\.com$/, 'www.test.com'],
@@ -407,7 +481,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 For customers who want to exclude tracking campaign from all referrers across all subdomains of `test.com`.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     attribution: {
       excludeReferrers: [/test\.com$/],
@@ -424,9 +498,9 @@ Amplitude tracks page view events by default. The default behavior sends a page 
 Set `config.autocapture.pageViews` to `false` to disable page view tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    pageViews: false, //[tl! highlight]
+    pageViews: false, 
   },
 });
 ```
@@ -449,7 +523,7 @@ For example, you can configure Amplitude to track page views only when the URL p
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    pageViews: { //[tl! highlight:2]
+    pageViews: { 
       trackOn: () => {
         return window.location.pathname.includes('home');
       },
@@ -468,13 +542,46 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                                              |
 | `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | document.title or ''.                                             |
 | `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
-| `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`.                     |
+| `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
 | `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
 
 
-See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+Review [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+
+{{partial:admonition type="Warning" heading=""}}
+If you want Autocapture to include page views for multi-step forms that dynamically update and, therefore, don't refresh the URL with each step, you must use hash elements for Single Page Applications (SPAs). Autocapture doesn't capture the individual dynamic components automatically. Tools such as Google Tag Manager (GTM) can help you [apply hashes to the URL](https://support.google.com/tagmanager/answer/7679410?hl=en) of the SPA between steps. Autocapture can then ingest the different steps as users proceed through the form.
+
+{{/partial:admonition}}
+
+#### Page title masking 
+
+Amplitude lets you to mask page titles in events that include the `[Amplitude] Page Title` property. This protects your sensitive page title information. Use the `data-amp-mask` attribute on your `<title>` element to exclude the actual page title from this property.
+
+When the `<title>` element has the `data-amp-mask` attribute, Amplitude replaces the page title with a masked value across all events that capture page title information. For example:
+
+```html
+<head>
+  <!-- This page title will be masked in all events that capture page titles -->
+  <title data-amp-mask>John Doe - Personal Banking Dashboard</title>
+</head>
+```
+
+```html
+<head>
+  <!-- Works with any attribute value -->
+  <title data-amp-mask="true">Sensitive Customer Information</title>
+</head>
+```
+
+{{partial:admonition type="note" heading="Page title masking behavior"}}
+- Any presence of `data-amp-mask` triggers masking, regardless of the attribute value.
+- Only the page title text is masked. Events are tracked as expected.
+- This affects page view events, page URL enrichment events, and any other events that include `[Amplitude] Page Title`.
+- This is separate from [element interaction masking](/docs/data/autocapture#precise-text-masking) which uses `data-amp-mask` on individual elements
+- The masked value appears as `*****` in your event data
+{{/partial:admonition}}
 
 ### Track sessions
 
@@ -483,9 +590,9 @@ Amplitude tracks session events by default. A session is the period of time a us
 You can opt out of tracking session events by setting `config.autocapture.sessions` to `false`. Refer to the code sample below.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    sessions: false, //[tl! highlight]
+    sessions: false, 
   },
 });
 ```
@@ -506,9 +613,9 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    formInteractions: false, //[tl! highlight]
+    formInteractions: false, 
   },
 });
 ```
@@ -522,7 +629,7 @@ Amplitude tracks file download events by default. The SDK tracks `[Amplitude] Fi
 Set `config.autocapture.fileDownloads` to `false` to disable file download tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     fileDownloads: false,
   },
@@ -536,9 +643,9 @@ You can enable element interaction tracking to capture clicks and changes for el
 Set `config.autocapture.elementInteractions` to `true` to enable element click and change tracking.
 
 ```ts
-amplitude.init(AMPLITUDE_API_KEY, {
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    elementInteractions: true, //[tl! highlight]
+    elementInteractions: true, 
   },
 });
 ```
@@ -621,23 +728,276 @@ These two events capture properties that describe the corresponding element and 
 <!-- vale on-->
 {{/partial:collapse}}
 
+### Track frustration interactions
+
+Enable frustration interaction tracking to capture rage clicks and dead clicks. Amplitude defines "rage click" and 
+"dead click" events as:
+
+ * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
+ * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
+
+Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    frustrationInteractions: true, 
+  },
+});
+```
+
+#### Advanced configuration for frustration interactions
+
+Use the advanced configuration to control frustration interaction tracking.
+
+{{partial:collapse name="Tracking frustration interaction options"}}
+| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101)       ||
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element.|
+
+{{/partial:collapse}}
+
+### Track network requests
+
+Track when network requests fail (only XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
+
+Set `config.autocapture.networkTracking` to `true` to enable network request tracking
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    networkTracking: true, 
+  },
+});
+```
+
+When you enable this setting, Amplitude tracks the `[Amplitude] Network Request` event whenever the application makes a network request.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] URL` | The URL of the network request with sensitive information masked. |
+| `[Amplitude] URL Query` | The query parameters of the URL. |
+| `[Amplitude] URL Fragment` | The fragment identifier of the URL. |
+| `[Amplitude] Request Method` | The HTTP method used for the request (GET, POST, etc.). |
+| `[Amplitude] Status Code` | The HTTP status code of the response. |
+| `[Amplitude] Error Code` | The local error code if the request failed with out a status code. |
+| `[Amplitude] Error Message` | The local error message if the request failed with out a status code. |
+| `[Amplitude] Start Time` | The timestamp when the request started, in milliseconds since Unix epoch. |
+| `[Amplitude] Completion Time` | The timestamp when the request completed, in milliseconds since Unix epoch. |
+| `[Amplitude] Duration` | The duration of the request in milliseconds. |
+| `[Amplitude] Request Body Size` | The size of the request body in bytes. |
+| `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| `[Amplitude] Request Body` | The captured JSON request body (when you configure a `requestBody` capture rule). |
+| `[Amplitude] Response Body` | The captured JSON response body (when you configure a `responseBody` capture rule). |
+
+{{/partial:collapse}}
+
+#### Advanced configuration for network tracking
+
+Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` object to configure which network requests get tracked.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    networkTracking: {
+      captureRules: [
+        {
+          statusCodeRange: "400-599"
+        }
+      ],
+      ignoreHosts: ["*.example.com"],
+      ignoreAmplitudeRequests: true
+    }
+  },
+});
+```
+
+This example tracks network requests with status codes from 400-599, ignores requests to `*.example.com` domains, and excludes Amplitude's own requests. Review the configuration options below for more details.
+
+{{partial:collapse name="NetworkTrackingOptions"}}
+
+| Name                                                          | Description                          | Value                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `undefined` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.NetworkCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `urls` | Defines the URL, URLs, or URL pattern to capture. By default captures all URLs. eg. `[/https:\/\/example.com\/api\/*/, 'https://example.com/api/status']` | `<any>` |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. (this is deprecated. URLs is the preferred way to filter by hosts.) | `none` |
+| `methods` | The HTTP methods to capture. e.g.: `["POST", "PUT", "DELETE"]` | `['*']` |
+| `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
+| `requestBody` | Captures fields in the request body (go to #BodyCaptureRule). | `undefined` |
+| `responseBody` | Captures fields in the response body (go to  #BodyCaptureRule). | `undefined` |
+| `requestHeaders` | Captures request headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+| `responseHeaders` | Captures response headers. If `true`, captures safe headers. If `false`, no headers captured. If an array of strings, captures the specified headers. | `false` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="BodyCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | Array of JSON property names to capture from request/response bodies. Uses JSON Pointer syntax where leading `/` is optional. Supports wildcards: `*` matches any key, `**` matches any number of keys. Maintains the structure of the original JSON. | `[]` |
+| `blocklist` | Array of JSON property names to exclude from captured request/response bodies. This removes properties that the allowlist would otherwise capture. | `[]` |
+
+{{/partial:collapse}}
+
+#### Safe headers
+
+When you set `requestHeaders: true` or `responseHeaders: true`, Amplitude captures only safe headers and excludes sensitive ones that may contain authentication credentials or personally identifiable information.
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+
+{{/partial:collapse}}
+
+#### Network body capture
+
+If a network request or response body is in JSON, you can capture part of the response body by configuring `responseBody.allowlist` and `responseBody.blocklist`. You can capture part of the request body by configuring `requestBody.allowlist` and `requestBody.blocklist`. 
+
+The allowlist and blocklist are lists of JSON Pointer-like strings that capture specific fields. (For example: `['foo/bar', 'hello/**']`). `allowlist` tells the client which fields to capture. `excludelist` tells the client to exclude fields from capture (by default, nothing captured)
+
+Example request/response body
+
+```json
+{
+  "a": "A",
+  "b": {
+    "c": "C",
+    "d": {
+      "e": "E",
+      "f": "F"
+    }
+  },
+  "g": "G"
+}
+```
+
+| allowlist | Captured Result |
+| --- | --- |
+| `a` | `{ "a": "A" }` |
+| `a/b/*` | `{ "a": { "b": { "c": "C" } } }` |
+| `b/c` | `{ "b": { "c": "C" } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } } }` |
+| `b/d/*` | `{ "b": { "d": { "e": "E", "f": "F" } } }` |
+| `b/**` | `{ "b": { "c": "C", "d": { "e": "E", "f": "F" } }` |
+| `*` | `{ "a": "A", "g": "G" }` |
+### Track web vitals
+
+Track Core Web Vitals performance metrics automatically. When enabled, Amplitude captures web performance metrics and sends them as `[Amplitude] Web Vitals` events when the browser tab first becomes hidden (when users navigate away, close the tab, or switch tabs).
+
+{{partial:admonition type="note" heading=""}}
+Requires Browser SDK 2.27.0 or higher.
+{{/partial:admonition}}
+
+Set `config.autocapture.webVitals` to `true` to enable web vitals tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    webVitals: true, //[tl! highlight]
+  },
+});
+```
+
+#### Metrics captured
+
+The web vitals autocapture feature captures the following Core Web Vitals metrics
+- [INP](https://web.dev/articles/inp) 
+- [TTFB](https://web.dev/articles/ttfb)
+- [LCP](https://web.dev/articles/lcp)
+- [FCP](https://web.dev/articles/fcp)
+- [CLS](https://web.dev/articles/cls)
+
+#### Event properties
+
+The `[Amplitude] Web Vitals` event includes the following properties:
+
+| Property | Description |
+|----------|-------------|
+| `[Amplitude] Page Domain` | The hostname of the current page |
+| `[Amplitude] Page Location` | The full URL of the current page |
+| `[Amplitude] Page Path` | The pathname of the current page |
+| `[Amplitude] Page Title` | The title of the current page |
+| `[Amplitude] Page URL` | The URL of the current page without query parameters |
+| `[Amplitude] LCP` | [Largest Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#lcpmetric) (if available) |
+| `[Amplitude] FCP` | [First Contentful Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#fcpmetric) (if available) |
+| `[Amplitude] INP` | [Interaction to Next Paint](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#inpmetric) (if available) |
+| `[Amplitude] CLS` | [Cumulative Layout Shift](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#clsmetric) (if available) |
+| `[Amplitude] TTFB` | [Time to First Byte](https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#ttfbmetric) (if available) |
+
 
 ## Track an event
 
-Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+Events represent how users interact with your application. For example, the Button Clicked event might be an action you want to track.
 
 ```ts
-// Track a basic event
+// Track a basic event.
 amplitude.track('Button Clicked');
 
-// Track events with optional properties
+// Track events with optional properties.
 const eventProperties = {
   buttonColor: 'primary',
 };
 amplitude.track('Button Clicked', eventProperties);
 ```
 
-You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
+You can also pass a `BaseEvent` object to `track`. For more information, review the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
 
 ```ts
 const event_properties = {
@@ -672,7 +1032,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties are details like device details, user preferences, or language to help you understand your users at the time they performed an action in your app.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading="Identify calls"}}
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
@@ -697,7 +1057,7 @@ This method sets the value of a user property. For example, you can set a role p
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.set('location', 'LA'); //[tl! highlight]
+identifyEvent.set('location', 'LA'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -707,7 +1067,7 @@ This method sets the value of a user property only one time. Subsequent calls us
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.setOnce('initial-location', 'SF'); //[tl! highlight]
+identifyEvent.setOnce('initial-location', 'SF'); 
 identify(identifyEvent);
 ```
 
@@ -717,7 +1077,17 @@ This method increments a user property by a numerical value. If the user propert
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.add('travel-count', 1); //[tl! highlight]
+identifyEvent.add('travel-count', 1); 
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.unset
+
+This method removes a user property from a user profile. Use `unset` when you no longer need a property or want to remove it completely.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.unset('location'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -731,7 +1101,7 @@ This method prepends a value or values to a user property array. If the user pro
 
 ```ts
 const identifyEvent = new Identify();
-identifyEvent.prepend('visited-locations', 'LAX'); //[tl! highlight]
+identifyEvent.prepend('visited-locations', 'LAX'); 
 identify(identifyEvent);
 ```
 
@@ -741,7 +1111,7 @@ This method appends a value or values to a user property array. If the user prop
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.append('visited-locations', 'SFO'); //[tl! highlight]
+identifyEvent.append('visited-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -751,7 +1121,7 @@ This method post-inserts a value or values to a user property if it doesn't exis
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.postInsert('unique-locations', 'SFO'); //[tl! highlight]
+identifyEvent.postInsert('unique-locations', 'SFO'); 
 amplitude.identify(identifyEvent);
 ```
 
@@ -761,15 +1131,21 @@ This method removes a value or values to a user property if it exists in the use
 
 ```ts
 const identifyEvent = new amplitude.Identify();
-identifyEvent.remove('unique-locations', 'JFK') //[tl! highlight]
+identifyEvent.remove('unique-locations', 'JFK') 
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.clearAll
+
+This method removes all user properties from the user. Use `clearAll` with care because it's irreversible.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.clearAll();
 amplitude.identify(identifyEvent);
 ```
 
 ## User groups
-
-{{partial:admonition type="info" heading="User group availability"}}
-User Groups requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
-{{/partial:admonition}}
 
 Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group.
 
@@ -807,10 +1183,6 @@ amplitude.track({
 
 ## Group properties
 
-{{partial:admonition type="info" heading="Group properties availability"}}
-Group Properties requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
-{{/partial:admonition}}
-
 Use the Group Identify API to set or update the properties of particular groups. These updates only affect events going forward.
 
 The `groupIdentify()` method accepts a group type and group name string parameter, as well as an Identify object that's applied to the group.
@@ -820,12 +1192,16 @@ const groupType = 'plan';
 const groupName = 'enterprise';
 const groupIdentifyEvent = new amplitude.Identify()
 groupIdentifyEvent.set('key1', 'value1');
-amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); //[tl! highlight]
+amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); 
 ```
 
 ## Track revenue
 
-The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
+The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productId`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets Amplitude automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
+
+{{partial:admonition type="tip" heading=""}}
+Amplitude recommends to also enable [product array](/docs/analytics/charts/cart-analysis) tracking method to get the most information possible. 
+{{/partial:admonition}}
 
 To track revenue from a user, call revenue each time a user generates revenue. In this example, the user purchased 3 units of a product at $3.99.
 
@@ -833,22 +1209,41 @@ To track revenue from a user, call revenue each time a user generates revenue. I
 const event = new amplitude.Revenue()
   .setProductId('com.company.productId')
   .setPrice(3.99)
-  .setQuantity(3);
+  .setQuantity(3)
+  .setRevenueType('purchase');
+
+amplitude.revenue(event);
+```
+
+This example shows tracking revenue with additional properties:
+
+```ts
+const event = new amplitude.Revenue()
+  .setProductId('com.company.productId')
+  .setPrice(3.99)
+  .setQuantity(3)
+  .setRevenueType('purchase')
+  .setEventProperties({
+    category: 'electronics',
+    brand: 'Acme'
+  });
 
 amplitude.revenue(event);
 ```
 
 ### Revenue interface
 
-| Name           | Description                                                                                                             | Default Value |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `product_id`   | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
-| `quantity`     | Required. `number`. The quantity of products purchased. Note: revenue = quantity \* price.                              | `1`           |
-| `price`        | Required. `number`. The price of the products purchased, and this can be negative. Note: revenue = quantity \* price.   | `null`        |
-| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).         | `null`        |
-| `receipt`      | Optional. `string`. The receipt identifier of the revenue.                                                              | `null`        |
-| `receipt_sig`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                        | `null`        |
-| `properties`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                      | `null`        |
+Revenue objects support the following properties. Use the corresponding setter methods to assign values.
+
+| Name                 | Setter Method            | Description                                                                                                                                              | Default Value |
+| -------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `productId`          | `setProductId()`         | Optional. `string`. An identifier for the product. Amplitude recommends something like the Google Play Store product ID.                                 | Empty string. |
+| `quantity`           | `setQuantity()`          | Required. `number`. The quantity of products purchased. `revenue = quantity * price`.                                                                | `1`           |
+| `price`              | `setPrice()`             | Required. `number`. The price of the products purchased, and this can be negative. `revenue = quantity * price`.                                     | `null`        |
+| `revenueType`        | `setRevenueType()`       | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).                                          | `null`        |
+| `receipt`            | `setReceipt()`           | Optional. `string`. The receipt identifier of the revenue.                                                                                               | `null`        |
+| `receiptSignature`   | `setReceiptSignature()`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                                                         | `null`        |
+| `eventProperties`    | `setEventProperties()`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                                                       | `null`        |
 
 ## Flush the event buffer
 
@@ -1060,6 +1455,34 @@ amplitude.add(myDestinationPlugin('https://custom.url.com'));
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### Available plugins
+
+Amplitude provides several official plugins to extend the Browser SDK functionality:
+
+#### Page URL enrichment plugin
+
+The [page URL enrichment plugin](/docs/sdks/analytics/browser/page-url-enrichment-plugin) is enabled by default with autocapture. It automatically adds page URL-related properties to all events, including current page information, previous page location, and page type classification.
+
+To disable page URL enrichment, set `autocapture.pageUrlEnrichment` to `false`:
+
+```ts
+amplitude.init(API_KEY, {
+  autocapture: {
+    pageUrlEnrichment: false,
+  },
+});
+```
+
+For custom configuration or if you disabled autocapture entirely, you can still add the plugin manually:
+
+```ts
+import { pageUrlEnrichmentPlugin } from '@amplitude/plugin-page-url-enrichment-browser';
+
+const pageUrlEnrichment = pageUrlEnrichmentPlugin();
+amplitude.add(pageUrlEnrichment);
+amplitude.init(API_KEY);
+```
+
 ## Troubleshooting and debugging
 
 Debugging in a browser can help you identify problems related to your code's implementation, as well as potential issues within the SDKs you're using. Here's a basic guide on how to use the browser's built-in Developer Tools (DevTools) for debugging.
@@ -1104,7 +1527,7 @@ Amplitude recommends using a proxy server to avoid this situation.
 
 #### Cookies related
 
-Here is the [information](./#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
+Here is the [information](#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
 
 #### CORS
 
@@ -1126,7 +1549,7 @@ If you [set the logger to "Debug" level](#debugging), and see track calls in the
 
 There are two ways to address this issue:
 
-1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](#use-sendbeacon) section.
 
 2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
 
@@ -1156,7 +1579,24 @@ Starting from `v2.8.0`, the SDK can automatically get session ID from the URL to
 
 If the `deviceId` and `sessionId` aren't set in `init('API_KEY', null, { deviceId: 'custom-device-id', sessionId: 1716245958483 })`, the SDK automatically falls back to using the URL parameters respectively.
 
-It's recommended to follow the same session ID format as the Browser SDK by using `Date.now()`. Because the SDK checks whether an event is in session every time an event is tracked. For example, 
+#### Evaluation window with ampTimestamp
+
+{{partial:admonition type="note" heading=""}}
+This feature requires @amplitude/analytics-browser@2.21.1 and above.
+{{/partial:admonition}}
+
+To improve security and prevent the use of stale session or device IDs, you can include an `ampTimestamp` parameter that acts as an evaluation window. The SDK only uses `ampSessionId` and `ampDeviceId` URL parameters if the `ampTimestamp` value is in the future (greater than the current time).
+
+For example:
+```
+www.example.com?ampDeviceId=device_id&ampSessionId=session_id&ampTimestamp=1640995500000
+```
+
+When `ampTimestamp` expires (is less than the current time), the SDK ignores the `ampSessionId` and `ampDeviceId` parameters. It falls back to generating new values or using stored values from cookies. If `ampTimestamp` isn't provided, the SDK behaves as before for backward compatibility.
+
+This feature ensures that cross-domain tracking parameters remain valid only for a limited time window. This prevents potential security issues from long-lived URLs with embedded tracking parameters.
+
+Amplitude recommends that you follow the same session ID format as the Browser SDK using `Date.now()` because the SDK checks if an event is in session every time it tracks an event. For example:
 
 ```typescript
 // if session ID is set to 12345
@@ -1169,9 +1609,42 @@ amplitude.track("event")
 // because the tracked "event" is not in the previous session 12345
 ```
 
+### Custom HTTP request headers
+
+Use the `transport` configuration option to attach custom HTTP headers to event upload requests. Instead of passing a transport name string, pass an object with `transport` and `headers` properties. This is useful for scenarios like routing requests through a proxy server that requires specific headers.
+
+{{partial:admonition type="note" heading=""}}
+Custom headers only work with `fetch` and `xhr` transports. When using the `beacon` transport, the browser doesn't support custom headers due to limitations of the [sendBeacon API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon).
+{{/partial:admonition}}
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'fetch',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+      'Authorization': 'Bearer your-token',
+    },
+  },
+});
+```
+
+You can also use the `xhr` transport with custom headers:
+
+```ts
+amplitude.init(API_KEY, {
+  transport: {
+    type: 'xhr',
+    headers: {
+      'X-Custom-Header': 'custom-value',
+    },
+  },
+});
+```
+
 ### Use sendBeacon
 
-Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
+Unlike standard network requests, `sendBeacon` sends events in the background, even if the user closes the browser or leaves the page.
 
 {{partial:admonition type="warning" heading=""}}
 `sendBeacon` sends events in the background. As a result, events dispatched by `sendBeacon` don't return server responses. Keep the following in mind if you use `sendBeacon`:
@@ -1274,7 +1747,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 | `twclid`                           | Twitter Click Identifier from URL parameter                                                                                      |
 | `wbraid`                           | Google Click Identifier for iOS device from App to Web                                                                           |
 | `li_fat_id`                        | LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics                                  |
-| `rtd_cid`                          | Reddit Click Identifier                                                                                                          |
+| `rdt_cid`                          | Reddit Click Identifier                                                                                                          |
 
 {{/partial:collapse}}
 
@@ -1290,7 +1763,7 @@ amplitude.init("api-key", null, {
 
 ### Offline mode
 
-{{partial:admonition type="note" heading="Auto-flush when reconnecting"}}
+{{partial:admonition type="note" heading="Autoflush when reconnecting"}}
 Setting `config.flushIntervalMillis` to a small value like `1` may cause an `ERR_NETWORK_CHANGED` error.
 {{/partial:admonition}}
 
@@ -1306,7 +1779,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](/docs/sdks/analytics/browser/browser-sdk-2#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
@@ -1355,20 +1828,121 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 ### Remote configuration
 
-Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. By default, the SDK disables this feature.
+Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. 
 
-Autocapture supports remote configuration options for tracking default events. When you enable this setting, the remote configuration overrides your client-side configuration. Find the remote configuration options in *Data > Settings > Autocapture*. 
+{{partial:admonition type="note" heading="Default behavior changed in version 2.16.1"}}
+Starting in SDK version 2.16.1, `fetchRemoteConfig` is **enabled by default** (`true`). For versions 2.10.0 to 2.16.0, remote configuration was disabled by default and required explicit enablement.
+{{/partial:admonition}}
 
-To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
+Autocapture supports remote configuration options for tracking default events. When remote configuration is enabled, settings from Amplitude's servers merge with your local SDK configuration, with remote settings taking precedence. Find the remote configuration options in *Data > Settings > Autocapture*. 
+
+#### Enable or disable remote configuration
+
+**For SDK versions 2.16.1 and later:** Remote configuration is enabled by default. To disable it, explicitly set `fetchRemoteConfig: false`:
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  fetchRemoteConfig: true
+  fetchRemoteConfig: false  // Disable remote config
 });
 ```
 
-{{partial:admonition type="note" heading=""}}
-Remote configuration supports Autocapture settings, and overrides settings you configure locally.
+**For SDK versions 2.10.0 to 2.16.0:** Remote configuration is disabled by default. To enable it, set `fetchRemoteConfig: true`:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  fetchRemoteConfig: true  // Enable remote config (only needed for versions < 2.16.1)
+});
+```
+
+{{partial:admonition type="note" heading="Configuration merging behavior"}}
+When you enable `fetchRemoteConfig`, the SDK merges remote configuration with local configuration at the feature level. Remote configuration can override specific autocapture features even when you set `autocapture: false` locally.
+
+How the merging works:
+
+- If remote configuration specifies a value for an autocapture feature, that value takes precedence.
+- If remote configuration doesn't specify a value for a feature, the SDK uses the local configuration value.
+- Each autocapture feature such as `sessions`, `pageViews`, and `elementInteractions` merges independently.
+
+{{partial:collapse name="Remote config enables specific features when local config disables all"}}
+
+```ts
+// Local configuration disables all autocapture
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: false
+});
+
+// Remote config (set in Data > Settings > Autocapture) enables only:
+// - Page Views: enabled
+// - Element Interactions: enabled
+
+// Result: Only Page Views and Element Interactions are tracked
+// All other features (sessions, formInteractions, fileDownloads, etc.) remain disabled
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config overrides specific local settings"}}
+
+```ts
+// Local configuration enables most features
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    pageViews: true,
+    sessions: true,
+    elementInteractions: true,
+    formInteractions: true
+  }
+});
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Element Interactions: disabled
+// - Frustration Interactions: enabled
+
+// Result:
+// - pageViews: true (from local config)
+// - sessions: true (from local config)
+// - elementInteractions: false (overridden by remote config)
+// - formInteractions: true (from local config)
+// - frustrationInteractions: true (set by remote config)
+```
+
+{{/partial:collapse}}
+
+{{partial:collapse name="Remote config when you don't specify local config"}}
+
+```ts
+// Local configuration doesn't specify autocapture settings
+amplitude.init(AMPLITUDE_API_KEY);
+
+// Remote config (set in Data > Settings > Autocapture):
+// - Page Views: enabled
+// - Sessions: enabled
+
+// Result: Only Page Views and Sessions are tracked
+// All other features use their default values
+```
+
+{{/partial:collapse}}
+
+Set baseline settings locally and adjust specific features remotely through the Amplitude UI without code changes.
 {{/partial:admonition}}
 
 In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
+
+#### Proxy remote config requests
+
+To proxy remote configuration requests through your own server (for example, to bypass ad blockers), configure the `remoteConfig` option:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  remoteConfig: {
+    serverUrl: 'https://your-proxy.example.com/config'
+  }
+});
+```
+
+When `remoteConfig.serverUrl` is set, the SDK sends remote configuration requests to your custom URL instead of Amplitude's endpoints. Analytics events still use `serverUrl` or the default Amplitude endpoints.
+
+{{partial:admonition type="note" heading=""}}
+The top-level `fetchRemoteConfig` option is deprecated. Use `remoteConfig.fetchRemoteConfig` instead for new implementations.
+{{/partial:admonition}}

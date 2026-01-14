@@ -26,6 +26,7 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
     2. Poll the cohort status.
     3. Download the file.
 - There is limit on Cohort Download to request a single cohort: 60 requests per 10 minutes per app, and 4 parallel request per minute per app.
+- Amplitude limits single requests to 100,000 identifiers
 
 ## Get all cohorts
 
@@ -522,7 +523,7 @@ The response is a JSON object with this schema:
 
 | Parameter | Type                                             | Description    |
 | --------- | ------------------------------------------------ | -------------- |
-| error     | [error json](#update-cohort-error-response-json) | Error details. |
+| error     | [error json](#upload-cohort-error-response-json) | Error details. |
 
 #### Upload cohort error response JSON
 
@@ -684,7 +685,7 @@ Perform incremental update (add / remove) to existing cohort membership.
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `cohort_id`        | <span class="required">Required</span>. String. The ID of an existing cohort. This updates the membership for the specified cohort with the IDs being uploaded in this request.                                                                                                          |
 | `count_group`      | <span class="optional">Optional</span>. String. The count group of the given IDs. This must be the same as the cohort’s existing count group. `Count_group` defaults to User.                                                                                                            |
-| `memberships`      | <span class="required">Required</span>. List of [membership json](https://developers.amplitude.com/docs/behavioral-cohorts-api#membershipjson) An array of JSON objects identifying IDs to add or remove.                                                                                |
+| `memberships`      | <span class="required">Required</span>. List of [membership json](#memberships-request-json) An array of JSON objects identifying IDs to add or remove.                                                                                |
 | `skip_invalid_ids` | <span class="optional">Optional</span>. Boolean. Setting this parameter to `false` ends the request without updating cohort membership if the request has invalid IDs. Setting `skip_invalid_ids` to `true` skips invalid IDs while applying the remaining valid ids. Default is `true`. |
 
 #### Memberships request JSON

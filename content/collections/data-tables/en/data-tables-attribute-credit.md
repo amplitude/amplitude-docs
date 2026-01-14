@@ -5,20 +5,17 @@ title: 'Attribute credit to multiple acquisition touch points'
 source: 'https://help.amplitude.com/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points'
 this_article_will_help_you:
   - 'Understand how specific touch points are contributing to your marketing outcomes'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738271039
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632550
 landing: true
 landing_blurb: 'Understand how specific touch points are contributing to your marketing outcomes'
+academy_course:
+  - 61b3a9e8-5868-4ec3-8753-4c15b05c71a4
 ---
 It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ### Restrictions
-
-This feature is available to users on all plans. See the [pricing page](https://amplitude.com/pricing) for more details. 
 
 * Starter and Plus plan users can create one channel view
 
@@ -32,12 +29,13 @@ First Touch and Last Touch are the only pre-built attribution models for which t
 For example, the Last Touch model attributes 100% of the credit to a single property value—the last one. For this reason, it makes sense to expect the resulting attribution group totals to sum to 100%. But the Participation model attributes 100% credit to multiple property values. As a result, you should expect the resulting attribution group totals to sum to more than 100%.   
 {{/partial:admonition}}
   
-Also, when measuring unique users, none of these models generate attribution group totals that sum to the count in the `Overall` row. This is because each unique user can appear in multiple attribution groups.
+Also, when measuring unique users, none of these models generate attribution group totals that sum to the count in the `Overall` row. This is because each unique user can appear in multiple attribution groups. Users may be attributed to multiple channels. This is because attribution applies to events, not unique users. A unique user may perform events attributed to both channel X and channel Y. In this situation, the user appears in rows for both X and Y and there is a potential to double-count the user in summing of the rows. 
 
-* **First Touch**: Gives all credit for the selected metric to the first property value within the selected lookback window relative to the date the metric occurred.
-* **Last Touch**: Gives all credit for the selected metric to the last property value within the selected lookback window relative to the date the metric occurred.
+* **First Touch**: Gives all credit for the selected metric to the first property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
+* **Last Touch**: Gives all credit for the selected metric to the last property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
+* **Last non direct touch**: Gives all credit for the selected metric to the last property value that wasn't tagged as Direct within the selected lookback window relative to the date the metric occurred. This model reflects common marketing attribution logic by excluding direct traffic from attribution. If using the event totals attribute, will sum to 100%.
 * **Linear**: Credit for the selected metric is equally distributed for all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 50% credit, and with three properties each would receive 33.3%.
-* **Participation**: Credit for the selected metric is fully allocated to all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 100% credit, and with three properties each would receive 100%.
+* **Participation**: Credit for the selected metric is fully allocated to all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 100% credit, and with three properties each would receive 100%. It is possible for the total rows to not sum to the overall total. This is because multiple properties from the same event can receive credit, so the sums of the rows are greater than the overall value. 
 * **U-Shaped**: Credit for the selected metrics biases credit to the first and last values for the selected property. With two touch points, the middle 20% is equally added to the first and middle touch points (50%, 50%). With four touch points, the middle two touch points would share the 20% (40%, 10%, 10%, 40%).
 * **J-Shaped**: Distributes credit for the selected metrics in a way that biases credit to the more recent values from the selected property. With two touch points, the first 20% is equally added to the last and middle touch points (30%, 70%). With four touch points, the final two touch points would share the 20% (10%, 10%, 20%, 60%).
 * **Inverse J-Shaped**: Distributes credit for the selected metrics in a way that biases credit to the first values from the selected property. With two touch points, the last 20% is equally added to the first and middle touch points (70%, 30%). With four touch points, the last two touch points would share the 20% (60%, 20%, 10%, 10%).
@@ -47,9 +45,7 @@ Also, when measuring unique users, none of these models generate attribution gro
     {{partial:admonition type='note' heading="About the Data Driven model"}}
     * The data driven attribution model executes in real time, and calculations may take longer than with other models.
     * The data driven model doesn't count `null` values.
-    {{/partial:admonition}}
-
-    
+    {{/partial:admonition}}    
 
 ## Configure an attribution model
 
@@ -97,17 +93,20 @@ Each metric type supports a specific set of attribution types:
 * **Uniques**
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * markov
 
 * **Conversion**
     * first touch
     * last touch
+    * last non direct touch
     * participation
 
 * **Event totals**
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * linear
     * j-shaped
@@ -119,6 +118,7 @@ Each metric type supports a specific set of attribution types:
 * **property sum**, **revenue total**, and **formula** (clauses: uniques, total, propsum)
     * first touch
     * last touch
+    * last non direct touch
     * participation
     * linear
     * j-shaped
@@ -126,6 +126,8 @@ Each metric type supports a specific set of attribution types:
     * u-shaped
     * custom
 
+    Attribution options differ between uniques and event total attribution types because a unique user is a less clear unit to split across multiple channels or campaigns. Only attributions that clearly assign a whole user to a single, or many, channels are used. Such as First, Last, or Participation. 
+    
 ## Attribution with multiple properties
 
 The attribution model applies only to the property in the outermost group by level. Properties in inner group by levels don't undergo attribution modeling. Instead, they inherit their values from the attributed event.
@@ -134,7 +136,9 @@ The attribution model applies only to the property in the outermost group by lev
 
 In this example, the attribution model applies only to the `Channel`, as its the outermost group by property.
 
-`utm_source`, as an inner group by property derives its value from the attributed events, rather than applying attribution separately.
+`utm_source`, as an inner group by property derives its value from the attributed events, rather than applying attribution separately. 
+
+If you have further questions about how results are organized or why the sum may not match the overall value go to [Group-bys: How Amplitude prune and orders chart results](/docs/analytics/charts/group-by).
 
 ## Attribution example calculation
 

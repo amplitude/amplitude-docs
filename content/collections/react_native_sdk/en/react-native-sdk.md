@@ -24,7 +24,7 @@ full_details: true
 The React Native SDK lets you send events to Amplitude.
 
 {{partial:admonition type="note" heading="React Native support"}}
-Since [React-Native](https://github.com/facebook/react-native) doesn't provide stable release versioning, ensuring backward compatibility is challenging, especially as React-Native itself isn't backward compatible and might introduce breaking changes across different versions. You can check [here](https://github.com/react-native-community/cli#compatibility) for more details. Therefore, Amplitude supports only the latest version of React-Native.
+Because [React-Native](https://github.com/facebook/react-native) doesn't provide stable release versioning, ensuring backward compatibility is challenging. Additionally, React-Native itself isn't backward compatible and may introduce breaking changes across different versions. Check the React-Native [compatibility list](https://github.com/react-native-community/cli#compatibility) for more details. Amplitude supports only the latest version of React-Native.
 {{/partial:admonition}}
 
 ## Compatibility matrix
@@ -97,7 +97,7 @@ init(API_KEY, 'user@amplitude.com', {
 ## Configure the SDK
 
 {{partial:admonition type="note" heading="Web vs. mobile"}}
-The configuration of the SDK is shared across web and mobile platforms, but many of these options simply don't apply when running the SDK on native platforms (for example iOS, Android). For example, when the SDK is run on web, the identity is stored in the browser cookie by default, whereas on native platforms identity is stored in async storage.
+The configuration of the SDK is shared across web and mobile platforms. However, many of these options simply don't apply when running the SDK on native platforms (for example iOS, Android). For example, when the SDK is run on web, the identity is stored in the browser cookie by default, whereas on native platforms identity is stored in async storage.
 {{/partial:admonition}}
 
 {{partial:collapse name="Configuration options"}}
@@ -129,7 +129,7 @@ The configuration of the SDK is shared across web and mobile platforms, but many
 |`trackingOptions`| `TrackingOptions`. Configures tracking of additional properties. Please refer to `Optional tracking` section for more information. | Enable all tracking options by default. |
 |`storageProvider`| `Storage<Event[]>`. Implements a custom `storageProvider` class from Storage. | `MemoryStorage` |
 |`trackingSessionEvents`| `boolean`. Whether to automatically log start and end session events corresponding to the start and end of a user's session. | `false` |
-|`migrateLegacyData`| `boolean`. Available in `1.3.4`+. Whether to migrate [maintenance SDK](../react-native) data (events, user/device ID). | `true` |
+|`migrateLegacyData`| `boolean`. Available in `1.3.4`+. Whether to migrate [maintenance SDK](/docs/sdks/analytics/react-native/react-native-sdk-maintenance) data (events, user/device ID). | `true` |
 
 {{/partial:collapse}}
 
@@ -253,7 +253,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties help you understand your users at the time they performed some action within your app such as their device details, their preferences, or language.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. The operations are declared via a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. The operations are declared through a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
@@ -367,13 +367,26 @@ identify(identifyObj);
 
 #### Identify.remove
 
-This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing values from the given list. If the item doesn't exist in the user property, it will be no operation.
+This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing values from the given list. If the item doesn't exist in the user property, it's a no-op.
 
 ```ts
 import { Identify, identify } from '@amplitude/analytics-react-native';
 
 const identifyObj = new Identify();
 identifyObj.remove('unique-locations', 'JFK')
+
+identify(identifyObj);
+```
+
+#### Identify.clearAll
+
+This method removes all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+```ts
+import { Identify, identify } from '@amplitude/analytics-react-native';
+
+const identifyObj = new Identify();
+identifyObj.clearAll();
 
 identify(identifyObj);
 ```
@@ -456,15 +469,15 @@ revenue(event);
 
 ### Revenue interface
 
-|Name | Description |
-|-----|-------|
-|`product_id` | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to null. |
-|`quantity` | Required. Int. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1|
-|`price` | Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to null. |
-|`revenue_type` | Optional, but required for revenue verification. String. The revenue type (for example tax, refund, income).  Defaults to null.|
-|`receipt`| Optional. String. The receipt identifier of the revenue. Defaults to null|
-|`receipt_sig`| Optional, but required for revenue verification. String. The receipt signature of the revenue. Defaults to null.|
-|`properties`| Optional. JSONObject. An object of event properties to include in the revenue event. Defaults to null.
+| Name           | Description                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `product_id`   | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to null. |
+| `quantity`     | Required. Int. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1                                       |
+| `price`        | Required. Double. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to null.     |
+| `revenue_type` | Optional, but required for revenue verification. String. The revenue type (for example tax, refund, income).  Defaults to null.          |
+| `receipt`      | Optional. String. The receipt identifier of the revenue. Defaults to null                                                                |
+| `receipt_sig`  | Optional, but required for revenue verification. String. The receipt signature of the revenue. Defaults to null.                         |
+| `properties`   | Optional. JSONObject. An object of event properties to include in the revenue event. Defaults to null.                                   |
 
 ## Flush the event buffer
 
@@ -622,6 +635,8 @@ track('Button Clicked').promise.then((result) => {
 ## Plugins
 
 Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying event properties (enrichment type) or sending to third-party APIs (destination type). A plugin is an object with methods `setup()` and `execute()`.
+
+For Session Replay integration with Segment, review the [Session Replay React Native Segment Integration](/docs/session-replay/session-replay-react-native-segment-integration) guide.
 
 ### add
 

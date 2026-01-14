@@ -193,6 +193,19 @@ Keep the following in mind as you consider your sample rate:
 
 Session Replay supports remote sampling rate settings. This enables users in your organization to configure or update the sampling rate of your project after implementation, without a code change. In the event of a conflict, Session Replay defaults to the remote setting. For more information, see [Account Settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
+## Troubleshooting
+
+### Android crashes with null pointer exception
+
+If your Android app crashes with a `NullPointerException` related to the `serverZone` parameter when using custom server URLs, ensure you're using the latest version of the Session Replay React Native plugin. Earlier versions required the `serverZone` parameter to be explicitly set when using custom `serverUrl` configurations.
+
+The error typically appears as:
+```
+java.lang.NullPointerException: Parameter specified as non-null is null: method com.amplitude.pluginsessionreplayreactnative.PluginSessionReplayReactNativeModule.setup, parameter serverZone
+```
+
+**Solution**: Update to the latest version of `@amplitude/plugin-session-replay-react-native` where the `serverZone` parameter is optional and defaults to `US` if not specified.
+
 ## Track web views (beta)
 
 By default, Session Replay blocks web views, and doesn't track them. If you want to track web views in your application, wrap the view in the `AmpMaskView` tag, and apply the `amp-unmask` mask property.
@@ -209,7 +222,7 @@ By default, Session Replay blocks web views, and doesn't track them. If you want
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which provides information about the sessions collected for replay for the user.
 
 ```json
 {

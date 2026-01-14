@@ -5,43 +5,43 @@ title: 'Interpret your analysis, part 2: Advanced features'
 source: 'https://help.amplitude.com/hc/en-us/articles/14056975720091-Interpret-your-event-segmentation-analysis-part-2-Advanced-features'
 this_article_will_help_you:
   - 'Use the features of the Measured As Module to customize your analysis'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717101918
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632389
 landing: true
 landing_blurb: 'Use the features of the Measured As Module to customize your analysis'
+academy_course:
+  - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
 ---
-This article explores some of the more advanced features available to you as you interpret your event segmentation analyses. For a primer on the basics, [see part one](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1).
+This article explores some more advanced features available to you as you interpret your event segmentation analyses. For a primer on the basics, [review part one](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1).
 
 ## Rolling averages
 
-Rolling averages will display the **unweighted mean**, which works to **smooth out** a chart. This is useful if you have cyclical users—for example, people who use your product during the week, but not on weekends. 
+Rolling averages will display the unweighted mean, which works to smooth out a chart. This is useful if you have cyclical users—for example, people who use your product during the week, but not on weekends. 
 
 To apply a rolling average to your chart, click *Advanced* and select *Rolling Average* from the drop-down list.
-
-![interpret](/docs/output/img/event-segmentation/interpret.png)
 
 {{partial:admonition type='note'}}
 The maximum ranges allowed for a rolling average are 36 five-minute intervals (three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 {{/partial:admonition}}
 
-This chart displays the daily event totals between February 26th and March 28th, **without** a rolling average. Note the sharp peaks and valleys in the line.
+This chart displays the daily event totals, without a rolling average. Notice the sharp peaks and valleys in the line.
 
-![interpret](/docs/output/img/event-segmentation/interpret.png)
+![No rolling average](statamic://asset::help_center_conversions::event-segmentation/interpret-no-window.png)
 
-But when a rolling average of seven days is added, those fluctuations disappear. That’s because each data point is now an **average** of the previous seven days’ worth of data.
+But when you add a rolling average of seven days, those fluctuations disappear. That’s because each data point is now an average of the previous seven days’ worth of data.
 
-![interpret](/docs/output/img/event-segmentation/interpret.png)
+![Rolling average applied](statamic://asset::help_center_conversions::event-segmentation/interpret-roll-avg.png)
 
 Bear in mind that each day’s data is included in that day’s data point: 
 
-* When looking at the **current day**, Amplitude will use a dotted line to show data collection for today isn’t finished yet. You can hide the dotted line by using *Offset* in the date picker.
-* Also, with a **seven-day rolling average**, the first six days of your selected time frame will fetch data from outside the selected time period. For example, in an analysis covering the month of February, the result for February 6th would average data over January 31st to February 6th.
+* When looking at the current day, Amplitude uses a dotted line to show data collection for today isn’t finished. Use an **Offset** in the date picker to exclude the current day from your analysis.
+* Also, with aseven-day rolling average, the first six days of your selected time period fetch data from outside the selected time period. For example, in an analysis covering the month of February, the result for February 6th averages data over January 31st to February 6th.
 
 ## Rolling windows
 
-A rolling window is another method of smoothing out your data. It will display the **aggregate** last N days of information in a single data point. This is useful if you want to see aggregated metrics—such as your 7-day active user count—on a daily basis.
+A rolling window is another method of smoothing out your data. It will display the **aggregate** last N days of information in a single data point. This is useful if you want to view aggregated metrics—such as your 7-day active user count—on a daily basis.
 
-This differs from the rolling average, in that a rolling window **does not average** your data over the selected time frame. Instead, it **sums** the data.
+This differs from the rolling average, in that a rolling window doesn't average your data over the selected time frame. Instead, it sums the data.
 
 To apply a rolling window to your chart, click *Advanced* and select *Rolling Window* from the drop-down list.
 
@@ -49,19 +49,26 @@ To apply a rolling window to your chart, click *Advanced* and select *Rolling Wi
 The maximum ranges allowed for a rolling window are 36 five-minute intervals (three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 {{/partial:admonition}}
 
-This chart displays daily uniques between April 5th and May 5th **without** a rolling window. With Microscope, we can see that on April 21st, there were 7,560,891 users.
+This chart displays event totals without a rolling window.
 
-![interpret_event_seg_2-6.png](/docs/output/img/event-segmentation/interpret-event-seg-2-6-png.png)
+![No rolling window](statamic://asset::help_center_conversions::event-segmentation/interpret-no-window.png)
 
-Below, we see the daily uniques displayed with a rolling window of seven days. The April 21st data point is the number of unique users between April 15th and April 21st, with duplicates removed.
+Below, the the event totals display with a rolling window of seven days. Each day represents a sum of the previous seven days worth of events.
 
-![interpret](/docs/output/img/event-segmentation/interpret.png)
+![Seven day rolling window](statamic://asset::help_center_conversions::event-segmentation/interpret-roll-window.png)
 
 As with a rolling average, when using a seven-day rolling window, the first six days of your selected time frame will fetch data from outside the selected time period. For example, in an analysis covering the month of February, the result for February 6th would average data over January 31st to February 6th.
 
+### Cohort filtering
+
+When you select a rolling window, you can specify if aggregation happens before or after Amplitude filters results according to the cohort or cohorts you select.
+
+* **before cohort filter**: Amplitude aggregates the event data, then applies the cohort and filters the results.
+* **after cohort filter**: Amplitude applies the cohort and filters the results, then aggregrates the resulting event data.
+
 ## Cumulative sum
 
-Cumulative sum will display a **running total** of events in a single data point. For example, you might want to show a running total of revenue generated by purchase events. Cumulative sum will help you do that.
+Cumulative sum displays a **running total** of events in a single data point. For example, you might want to show a running total of revenue generated by purchase events. Cumulative sum helps you do that.
 
 To apply a cumulative sum to your chart, click *Advanced* and select *Cumulative* from the drop-down list.
 
@@ -69,40 +76,38 @@ To apply a cumulative sum to your chart, click *Advanced* and select *Cumulative
 If you would like to use cumulative sum in a formula, click *Formula* and type out CUMSUM.
 {{/partial:admonition}}
 
-This chart shows a running total of revenue generated by `Complete Purchase` events. The April 19th data point represents a sum of revenue generated on all the preceding days of the selected time frame. Here, that means April 5th to April 19th.
+This chart shows a running total of purchases using the `Complete Purchase` event. The April 19th data point represents a sum of purchases on all the preceding days of the selected time frame. Here, that means April 5th to April 19th.
 
 ![interpret_event_seg_2-8.png](/docs/output/img/event-segmentation/interpret-event-seg-2-8-png.png)
 
-Using cumulative sum with uniques will generate a count of unique users for each data point, with duplicates removed.
+Using cumulative sum with uniques generate a count of unique users for each data point, with duplicates removed.
 
 For example:
-* * On April 5th, User A triggered `Complete Purchase`.
-	* On April 11th, User A and User B triggered `Complete Purchase`.
-	* On April 19th, User C and User D triggered `Complete Purchase`.
+* On April 5th, User A triggered `Complete Purchase`.
+* On April 11th, User A and User B triggered `Complete Purchase`.
+* On April 19th, User C and User D triggered `Complete Purchase`.
 
 On the data point for April 19th, a total count of four will be returned because four unique users fired this event from April 5th to April 19th.
 
 ## Real-time segmentation
 
-You can view segmentation data in real time. However, there are some caveats:
+View segmentation data in real time. However, there are some caveats:
 
 * You can only segment one day's worth of data for real-time.
-	* The event times are rounded down.
-	* Charts are cached every five minutes for everyone.
+* The event times are rounded down.
+* Charts are cached every five minutes for everyone.
 
 ## Period-over-period comparison (compare to past)
 
-Using *Compare to past*, you can **compare** the results of the current time range with the previous day, or the same day from previous week, month, quarter or year.
+Using *Compare to past*, you can compare the results of the current time range with the previous day, or the same day from previous week, month, quarter, or year.
 
-For example, let's say you want to compare completed purchases for the current week to last week.
+For example, you want to compare completed purchases for the current week to last week.
 
-![interpret](/docs/output/img/event-segmentation/interpret.png)
+![](statamic://asset::help_center_conversions::event-segmentation/interpret-compare.png)
 
 The blue segment shows you the current period and the green segment shows you your data for last week. 
 
-![interpret_event_seg_2-10.png](/docs/output/img/event-segmentation/interpret-event-seg-2-10-png.png)
-
-Since the period-over-period comparison interval is configurable, you can choose what dates you actually want to compare. You can also toggle to see the percentage change between values instead.
+Since the period-over-period comparison interval is configurable, you can choose what dates you actually want to compare. You can also toggle to view the percentage change between values instead.
 
 ### Period-over-period for custom formulas
 

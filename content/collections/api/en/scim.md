@@ -14,16 +14,21 @@ lede: |-
   This guide provides detailed documentation on the specific routes supported by Amplitude's implementation of the [System for Cross-domain Identity Management (SCIM) 2.0 Standard](http://www.simplecloud.info/#Specification). This guide pays specific attention to any details useful for debugging issues with a SCIM integration.
 
   For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision).
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718668267
+updated_by: 6ca93b88-2d10-44dd-9995-d5f1b5d9151a
+updated_at: 1749075625
 summary: 'Provision and manage users and groups. This API uses the System for Cross-domain Identity Management (SCIM) 2.0 Standard.'
+eu_endpoint: 'https://core.eu.amplitude.com/scim/1/'
 ---
 ## Considerations
 Keep the following in mind as you configure the SCIM API integration.
 
+{{partial:admonition type="tip" heading="Postman collection"}}
+For more examples and to test API requests, explore the [SCIM API Postman collection](https://www.postman.com/amplitude-dev-docs/amplitude-developers/folder/20044411-4e4ab138-2055-4ed8-be5f-2b28c4c17c7f).
+{{/partial:admonition}}
+
 ### Base URL
 
-The Base URL of the SCIM API is `https://core.amplitude.com/scim/1/`, and all routes can be formed according to the SCIM Standard. This URL doesn't change between organizations, as the SCIM key used in authentication is used to determine which organization the requests are directed toward.
+See the **Endpoints** table above to find the correct base URL to use given your organization's choice of data residency. All routes against this URL can be formed according to the SCIM Standard. This URL doesn't change between organizations, as the SCIM key used in authentication is used to determine which organization the requests are directed toward.
 
 Although the route includes "1", this doesn't mean that Amplitude implements the SCIM 1.1 Standard. This is to denote the Amplitude version of this implementation, future-proofing for new iterations of the API that introduce breaking changes without disrupting service for current consumers.
 
@@ -455,11 +460,15 @@ A successful request returns a `200 OK` status and JSON body with the group's da
 
 ### Update a user group
 
+Use `PATCH` requests to add or remove users from a group. The `Operations` array supports `add` and `remove` operations.
+
+{{partial:tabs tabs="Add a user, Remove a user"}}
+{{partial:tab name="Add a user"}}
 ```bash
 PATCH /scim/1/Groups/632 HTTP/1.1
 Host: core.amplitude.com
 Authorization: Bearer {scim-token}
-Content-Length: 241
+Content-Type: application/json
 
 {
     "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
@@ -469,10 +478,34 @@ Content-Length: 241
           "path": "members",
           "value": [{
               "value": "new.member@amplitude.com"
-        }]
-    }]
+          }]
+        }
+    ]
 }
 ```
+{{/partial:tab}}
+{{partial:tab name="Remove a user"}}
+```bash
+PATCH /scim/1/Groups/632 HTTP/1.1
+Host: core.amplitude.com
+Authorization: Bearer {scim-token}
+Content-Type: application/json
+
+{
+    "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+    "Operations": [
+        {
+          "op": "remove",
+          "path": "members",
+          "value": [{
+              "value": "user.to.remove@amplitude.com"
+          }]
+        }
+    ]
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 #### Example response
 

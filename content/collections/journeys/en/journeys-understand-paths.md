@@ -30,9 +30,6 @@ A common use case for Journeys is to bridge the gap between your **ideal** custo
 
 Read the article [Understand and use the Journeys visualizations](/docs/analytics/charts/journeys/journeys-understand-visualizations) for more information on the **Pathfinder** and **Journey Map** visualizations.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a Journeys chart
 
@@ -61,7 +58,7 @@ To create a new Journeys chart, follow these steps:
 
 5. In the *Measured As* module, specify whether you want this chart to measure by uniques or event totals.
 6. In the *Segment by* module, [specify the users you’d like to include in this analysis](/docs/analytics/charts/build-charts-add-user-segments).
-7. In the chart area, set your preferred **bucket below threshold**. This threshold sets a lower boundary for node visibility in your chart. In other words, if the percentage of users who took a particular path is **lower** than the bucket below threshold, Amplitude doesn't display that path.
+7. In the chart area, click **+ More Events** to load more events into the the chart. By default, Amplitude loads the top five events by number of users.
 8. Your chart appears. If you want to hide noisy events, show only specific events, show custom events, or collapse repeated events, click the *Filter Events* dropdown and make your selections.
 
 {{partial:admonition type='note'}}
@@ -70,7 +67,7 @@ Amplitude hides inactive events by default. To show them, click *Choose events t
 
 ![](/docs/output/img/journeys/journeys1.png)
 
-Any changes you make to settings in this procedure populate across [all three Journeys visualizations, which you can read more about here](/docs/analytics/charts/journeys/journeys-understand-visualizations).
+Any changes you make to settings in this procedure populate across [all Journeys visualizations, which you can read more about here](/docs/analytics/charts/journeys/journeys-understand-visualizations).
 
 ## How the conversion window works in a Journeys chart
 

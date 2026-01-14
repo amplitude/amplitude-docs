@@ -1,0 +1,206 @@
+name: Check for Unrendered Markdown
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 13 * * *'
+  workflow_dispatch:  # This enables the "Run workflow" button
+
+jobs:
+  markdown-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install NPM Dependencies
+      run: npm install
+
+    - name: Run Markdown Crawler
+      run: |
+        node crawler.js \
+          --base-url https://amplitude.com \
+          --sitemap-path /docs/sitemap-docs.xml \
+          --output markdown-issues.json \
+          --concurrency 10 \
+          --ignore-file .crawlerignore \
+          --verbose
+      continue-on-error: true
+      id: crawler
+
+    - name: Upload Markdown Issues Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: markdown-issues-report-${{ github.run_number }}
+        path: markdown-issues.json
+
+    # Slack Notifications
+    - name: Send Slack Summary
+      if: always()
+      continue-on-error: true
+      uses: 8398a7/action-slack@v3
+      with:
+        status: custom
+        custom_payload: |
+          {
+            "text": ":mag: Daily Markdown Check Results",
+            "attachments": [
+              {
+                "color": "${{ steps.crawler.outcome == 'success' && 'good' || 'danger' }}",
+                "blocks": [
+                  {
+                    "type": "header",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "${{ steps.crawler.outcome == 'success' && '✅ No Markdown Issues Found' || '❌ Markdown Issues Detected' }}"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Site:*\nhttps://amplitude.com"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Repository:*\n${{ github.repository }}"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Trigger:*\n${{ github.event_name }}"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Report:*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - name: Send Detailed Slack Report
+      if: always() && steps.crawler.outcome == 'failure'
+      continue-on-error: true
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const https = require('https');
+          
+          try {
+            const report = JSON.parse(fs.readFileSync('markdown-issues.json', 'utf8'));
+            
+            if (report.summary.totalIssues > 0) {
+              let issuesList = '';
+              report.summary.issuesByType.forEach(issue => {
+                issuesList += `• *${issue.type}*: ${issue.count} occurrences\n`;
+              });
+              
+              let sampleIssues = '';
+              Object.keys(report.issuesByUrl).slice(0, 3).forEach(url => {
+                const shortUrl = url.replace('https://amplitude.com', '').substring(0, 50);
+                sampleIssues += `\n*${shortUrl}*:\n`;
+                report.issuesByUrl[url].forEach(issue => {
+                  sampleIssues += `  • ${issue.type}: ${issue.count} occurrences\n`;
+                });
+              });
+              
+              const payload = {
+                text: "📋 Daily Markdown Issues Report",
+                attachments: [
+                  {
+                    color: "danger",
+                    blocks: [
+                      {
+                        type: "section",
+                        text: {
+                          type: "mrkdwn",
+                          text: `*Summary:*\n• URLs crawled: ${report.summary.totalUrls}\n• URLs with issues: ${report.summary.urlsWithIssues}\n• Total issues: ${report.summary.totalIssues}\n• Errors: ${report.summary.totalErrors}\n• Skipped: ${report.summary.totalSkipped || 0}`
+                        }
+                      },
+                      {
+                        type: "section",
+                        text: {
+                          type: "mrkdwn",
+                          text: `*Issues by Type:*\n${issuesList}`
+                        }
+                      },
+                      {
+                        type: "section",
+                        text: {
+                          type: "mrkdwn",
+                          text: `*Sample Issues:*${sampleIssues}`
+                        }
+                      },
+                      {
+                        type: "actions",
+                        elements: [
+                          {
+                            type: "button",
+                            text: {
+                              type: "plain_text",
+                              text: "View Full Report"
+                            },
+                            url: `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              };
+              
+              const data = JSON.stringify(payload);
+              const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+              
+              if (!webhookUrl) {
+                console.log('SLACK_WEBHOOK_URL not configured, skipping detailed report');
+                return;
+              }
+              
+              const url = new URL(webhookUrl);
+              const options = {
+                hostname: url.hostname,
+                port: url.port || 443,
+                path: url.pathname,
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Content-Length': data.length
+                }
+              };
+              
+              const req = https.request(options, (res) => {
+                console.log(`Slack webhook response: ${res.statusCode}`);
+              });
+              
+              req.on('error', (error) => {
+                console.error('Error sending to Slack:', error);
+              });
+              
+              req.write(data);
+              req.end();
+            }
+          } catch (error) {
+            console.log('Could not send detailed Slack report:', error.message);
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - name: Fail if Issues Found
+      if: steps.crawler.outcome == 'failure'
+      run: |
+        echo "❌ Markdown rendering issues detected on production site."
+        echo "Check the report for details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        exit 1

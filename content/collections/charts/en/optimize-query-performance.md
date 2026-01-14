@@ -19,15 +19,12 @@ With query time sampling enabled, Amplitude's query engine selects a representat
 Up-sampling is useful for functions that scale with the number of users, such as totals and uniques. Amplitude doesn't use it for functions that don't scale the same way, like average, min, and max. 
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. 
 
 ## Enable query time sampling
 
-To enable query time sampling, follow these steps:
+To enable query time sampling in a chart:
 
-1. From your Funnel Analysis, click the lightning bolt.
+1. From a Funnel Analysis, click the lightning bolt.
 
     The lightning bolt updates to show the percentage of the data set that the chart queries.
 
@@ -39,8 +36,19 @@ To enable query time sampling, follow these steps:
 
 Project administrators can set query time sampling as the default for all new charts in a project.
 
-1. Navigate to you project's settings.
+1. Navigate to your project's settings.
 2. Enable the toggle for **Query Time Sampling**.
+
+## Dashboard query time sampling
+
+To enable query time sampling for a dashboard that contains more than one chart, go the dashboard toolbar, and click Sampling to toggle sampling on or off for the dashboard.
+
+After you enable it, the dashboard shows that query time sampling is enabled. Each chart also displays a lightning bolt icon:
+
+* A blue icon means the chart is using sampled data.
+* A red icon means the chart's analysis is on a small set of data, and the sampled data may not accurately reflect the full data set.
+
+When you enable sampling on a dashboard and open a chart, the chart opens with sampling turned on.
 
 ## Caveats
 

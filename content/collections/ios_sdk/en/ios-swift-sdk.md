@@ -27,28 +27,28 @@ The new [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) combines A
 
 ## Install the SDK
 
-{{partial:tabs tabs="CocoaPods, Swift Package Manager, Carthage"}}
-{{partial:tab name="CocoaPods"}}
-1. Add the dependency to your `Podfile`:
-
-    ```bash
-    pod 'AmplitudeSwift', '~> 1.0'
-    ```
-2. Run `pod install` in the project directory.
-{{/partial:tab}}
+{{partial:tabs tabs="Swift Package Manager, CocoaPods, Carthage"}}
 {{partial:tab name="Swift Package Manager"}}
-1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
-2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar. 
-3. Xcode automatically resolves to the latest version. Or you can select a specific version. 
-4. Click the "Next" button to confirm the addition of the package as a dependency. 
+1. Navigate to *File > Swift Package Manager > Add Package Dependency*. 
+2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar.
+3. Select a specific version or let Xcode automatically resolve to the latest version. 
+4. Click **Next** to confirm the addition of the package as a dependency.
 5. Build your project to make sure the package is properly integrated.
+{{/partial:tab}}
+{{partial:tab name="CocoaPods"}}
+    1. Add the dependency to your `Podfile`:
+
+        ```bash
+        pod 'AmplitudeSwift', '~> 1.0'
+        ```
+    2. Run `pod install` in the project directory.
 {{/partial:tab}}
 {{partial:tab name="Carthage"}}
 Add the following line to your `Cartfile`.
 ```bash
 github "amplitude/Amplitude-Swift" ~> 1.0
 ```
-Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
+Go to the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -102,9 +102,11 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `useBatch`                     | Whether to use batch api.                                                                                                                                                                                   | `false`                                  |
 | `trackingOptions`              | Options to control the values tracked in SDK.                                                                                                                                                               | `enable`                                 |
 | `enableCoppaControl`           | Whether to enable COPPA control for tracking options.                                                                                                                                                       | `false`                                  |
-| `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](../ios) data (events, user/device ID).                                                                                                          | `true`                                   |
-| `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](./#offline-mode).                                                                                                         | `false`                                  |
+| `migrateLegacyData`            | Available in `0.4.7+`. Whether to migrate [maintenance SDK](/docs/sdks/analytics/ios/ios-sdk) data (events, user/device ID).                                                                                                          | `true`                                   |
+| `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](#offline-mode).                                                                                                         | `false`                                  |
 | `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1, no cleanup occurs.    | `-1`                                     |
+| `networkTrackingOptions`       | Available in `1.12.0+`. Options to control the network tracking.                                                                                                                                           | `NetworkTrackingOptions.default`          |
+| `interactionsOptions`           | Available in `1.15.0+`. Options to control the interaction tracking.                                                                                                                                           | `InteractionsOptions.default`          |
 
 {{/partial:collapse}}
 
@@ -164,7 +166,7 @@ amplitude.track(
 Starting from release v0.4.0, identify events with only set operations will be batched and sent with fewer events. This change won't affect running the set operations. There is a config `identifyBatchIntervalMillis` for managing the interval to flush the batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 
 {{partial:admonition type="note" heading=""}}
@@ -190,6 +192,27 @@ AMPIdentify *identify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### Clear all user properties
+
+Use `clearAll` to remove all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let identify = Identify()
+identify.clearAll()
+amplitude.identify(identify: identify)
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPIdentify *identify = [AMPIdentify new];
+[identify clearAll];
+[amplitude identify:identify];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Autocapture <a id="track-default-events"></a>
 
 Starting from release v1.8.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
@@ -198,6 +221,10 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 - App lifecycles
 - Screen views
 - Element interactions
+- Frustration interactions
+  - Rage clicks
+  - Dead clicks
+- Network requests
 
 {{partial:collapse name="Autocapture options"}}
 | Name | Type | Enabled by default | Description |
@@ -207,6 +234,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 | `networkTracking` | `AutocaptureOptions` | No | Enables network tracking. If the option is set, Amplitude tracks network requests. Event properties tracked include: `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. See [Track network requests](#track-network-requests) for more information. |
+| `frustrationInteractions` | `AutocaptureOptions` | No | Available in `1.15.0+`. Enables frustration interaction tracking. If the option is set, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` element and `UIGestureRecognizer`. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Go to [Track frustration interactions](#track-frustration-interactions) for more information. |
 
 {{/partial:collapse}}
 
@@ -430,7 +458,84 @@ With the default configuration, the SDK tracks network requests from all hosts (
 | Name |  Description | Default Value |
 | --- | --- | --- |
 | `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `urls` | **Experimental** Available in `1.15.0+`. The URLs to capture. Supports exact match and regex pattern. Includes query parameters and fragment identifier. eg. `URLPattern.exact("https://example.com/api/status")` to match `https://example.com/api/status`, `URLPattern.regex("https://example.com/api/.*")` to match `https://example.com/api/status` and `https://example.com/api/error`. | `none` |
 | `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. eg. `"0,200-299,413,500-599"` | `"500-599"` |
+| `methods` | **Experimental** Available in `1.15.0+`. The HTTP methods to capture. `*` to match all methods. eg. `["POST", "PUT", "DELETE"]` | `["*"]` |
+| `requestHeaders` | **Experimental** Available in `1.15.0+`. Captures request headers. | `nil` |
+| `responseHeaders` | **Experimental** Available in `1.15.0+`. Captures response headers. | `nil` |
+| `requestBody` | **Experimental** Available in `1.15.0+`. Captures fields in the request body (go to #CaptureBody). | `nil` |
+| `responseBody` | **Experimental** Available in `1.15.0+`. Captures fields in the response body (go to  #CaptureBody). | `nil` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureHeader"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` |  **Experimental** Available in `1.15.0+`. The headers to capture. Case-insensitive. | `[]` |
+| `captureSafeHeaders` | **Experimental** Available in `1.15.0+`. Whether to capture safe headers. | `true` |
+
+{{partial:admonition type="note" heading=""}}
+`authorization`, `cookie`, `proxy-authorization` are headers which is considered as sensitive and will be excluded even is set to `allowlist`.
+{{/partial:admonition}}
+
+{{partial:collapse name="Safe headers list"}}
+- `access-control-allow-origin`
+- `access-control-allow-credentials`
+- `access-control-expose-headers`
+- `access-control-max-age`
+- `access-control-allow-methods`
+- `access-control-allow-headers`
+- `accept-patch`
+- `accept-ranges`
+- `age`
+- `allow`
+- `alt-svc`
+- `cache-control`
+- `connection`
+- `content-disposition`
+- `content-encoding`
+- `content-language`
+- `content-length`
+- `content-location`
+- `content-md5`
+- `content-range`
+- `content-type`
+- `date`
+- `delta-base`
+- `etag`
+- `expires`
+- `im`
+- `last-modified`
+- `link`
+- `location`
+- `permanent`
+- `p3p`
+- `pragma`
+- `proxy-authenticate`
+- `public-key-pins`
+- `retry-after`
+- `server`
+- `status`
+- `strict-transport-security`
+- `trailer`
+- `transfer-encoding`
+- `tk`
+- `upgrade`
+- `vary`
+- `via`
+- `warning`
+- `www-authenticate`
+- `x-b3-traceid`
+- `x-frame-options`
+{{/partial:collapse}}
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureBody"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `allowlist` | **Experimental** Available in `1.15.0+`. The fields to capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
+| `blocklist` | **Experimental** Available in `1.15.0+`. The fields to exclude from capture. Case-sensitive. Supports wildcards: `*` matches one level of field, `**` matches any number of levels of fields. | `[]` |
 
 {{/partial:collapse}}
 
@@ -523,6 +628,38 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 
 When you enable this setting, Amplitude tracks the `[Amplitude] Network Request` event whenever the application makes a network request. The SDK swizzles URL loading system methods to instrument network activity.
 
+{{partial:admonition type="note" heading="Experimental features"}}
+Use `@_spi(NetworkTracking)` import to access the experimental properties.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+@_spi(NetworkTracking) import Amplitude-Swift
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .networkTracking,
+    networkTrackingOptions: .init(
+        captureRules: [
+            .init(hosts: ["*"]), // all hosts, statusCodeRange: "500-599"
+            .init(urls: [.regex("^https://example\\.com/api/.*"), .exact("https://example.com/api2/status")],
+                  methods: ["POST"],
+                  statusCodeRange: "0,400-599",
+                  requestHeaders: .init(allowlist: ["Link", "X-API-Key"]),
+                  responseHeaders: .init(allowlist: ["Link", "X-API-Key"], captureSafeHeaders: false),
+                  requestBody: .init(allowlist: ["user/*", "product/**/id"]),
+                  responseBody: .init(allowlist: ["profile/**"], blocklist: ["**/password"])),
+        ],
+        ignoreHosts: ["notmyapi.com"],
+        ignoreAmplitudeRequests: true
+    ),
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+
 {{partial:collapse name="Event Properties Descriptions"}}
 | Event property | Description |
 | --- | --- |
@@ -538,6 +675,10 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Network Request`
 | `[Amplitude] Duration` | The duration of the request in milliseconds. |
 | `[Amplitude] Request Body Size` | The size of the request body in bytes. |
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| `[Amplitude] Request Body` | **Experimental** The captured stringified JSON request body (when you configure a `requestBody` capture rule). |
+| `[Amplitude] Response Body` | **Experimental** The captured stringified JSON response body (when you configure a `responseBody` capture rule). |
+| `[Amplitude] Request Headers` | **Experimental** The captured request headers (when you configure a `requestHeaders` capture rule). |
+| `[Amplitude] Response Headers` | **Experimental** The captured response headers (when you configure a `responseHeaders` capture rule). |
 
 {{/partial:collapse}}
 
@@ -621,6 +762,102 @@ After enabling this setting, Amplitude tracks the `[Amplitude] Element Interacte
 {{partial:admonition type="info" heading=""}}
 Currently, Amplitude does not supports tracking user interactions with UI elements in SwiftUI.
 {{/partial:admonition}}
+
+### Track frustration interactions
+
+Available in version `1.15.0+`.
+
+Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.frustrationInteractions` in the `autocapture` configuration.
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The `interactionsOptions` configuration accepts an `InteractionsOptions` object to configure the options for capturing rage clicks and dead clicks.
+
+{{partial:collapse name="InteractionsOptions"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `rageClick` | The options for capturing rage clicks. | `RageClickOptions()` |
+| `rageClick.enabled` | Whether to capture rage clicks. | `true` |
+| `deadClick` | The options for capturing dead clicks. | `DeadClickOptions()` |
+| `deadClick.enabled` | Whether to capture dead clicks. | `true` |
+
+{{/partial:collapse}}
+
+{{partial:tabs tabs="Swift"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .frustrationInteractions,
+    interactionsOptions: .init(
+        rageClick: .init(enabled: true),
+        deadClick: .init(enabled: true)
+    )
+))
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+Rage Click is a user interaction that occurs four (4) or more times in 1 second on the same element and the distance between each adjacent click is no more than 50 points.
+
+When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Begin Time` | The timestamp when the interaction began in ISO 8601 format. |
+| `[Amplitude] End Time` | The timestamp when the interaction ended in ISO 8601 format. |
+| `[Amplitude] Duration` | The duration of the interaction in milliseconds. |
+| `[Amplitude] Click Count` | The number of clicks that occurred. |
+| `[Amplitude] Clicks` | The array of clicks that occurred. |
+| `[Amplitude] Clicks[].X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Time` | The timestamp of the click in ISO 8601 format. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target View Class` | The name of the target view class. |
+| `[Amplitude] Target Text` | The title of the target `UIControl` element. |
+| `[Amplitude] Target Accessibility Label` | The accessibility label of the target element. |
+| `[Amplitude] Target Accessibility Identifier` | The accessibility identifier of the target element. |
+| `[Amplitude] Action Method` | The name of the function or method that triggered when the interaction occurs. |
+| `[Amplitude] Gesture Recognizer` | The name of the `UIGestureRecognizer` class that recognizes the interaction. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | Go to [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+Dead Click is a tap on an interactive element that resulted in no visible change in the following three (3) seconds. 
+
+When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
+
+{{partial:admonition type="note" heading="Requirements"}}
+Dead clicks requires the Amplitude Session Replay iOS Plugin version `0.5.0` or higher installed and running. Go to [Session Replay iOS Plugin](/docs/session-replay/session-replay-ios-plugin) for more information.
+{{/partial:admonition}}
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target View Class` | The name of the target view class. |
+| `[Amplitude] Target Text` | The title of the target `UIControl` element. |
+| `[Amplitude] Target Accessibility Label` | The accessibility label of the target element. |
+| `[Amplitude] Target Accessibility Identifier` | The accessibility identifier of the target element. |
+| `[Amplitude] Action Method` | The name of the function or method that triggered when the interaction occurs. |
+| `[Amplitude] Gesture Recognizer` | The name of the `UIGestureRecognizer` class that recognizes the interaction. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | Go to [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
 
 ## User groups
 
@@ -981,13 +1218,15 @@ Amplitude doesn't set user properties on session events by default. To add these
 
 Due to the way in which Amplitude manages sessions, there are scenarios where the SDK works expected but it may appear as if events are missing or session tracking is inaccurate:
 
-* If a user doesn't return to the app, Amplitude does not track a session end event to correspond with a session start event.
+* If a user doesn't return to the app, Amplitude doesn't track a session end event to correspond with a session start event.
 * If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
+* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 
 You can adjust the time window for which sessions are extended. The default session expiration time is five minutes.
+
+Use the helper method `getSessionId` to get the value of the current `sessionId`.
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -1231,7 +1470,7 @@ NSString *deviceId = [amplitude getDeviceId];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-To set the device, see [custom device ID](#custom-device-id).
+To set the device, see [custom device ID](#custom-device-identifierentifier).
 
 ### Location tracking
 

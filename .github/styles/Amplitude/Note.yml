@@ -1,7 +1,0 @@
-extends: existence
-message: Use an admonition instead of '%s'
-level: warning
-ignorecase: false
-tokens:
-  - note that
-  - Note

@@ -1,0 +1,16 @@
+---
+sections:
+---
+# Amplitude
+
+> Amplitude is a leading product analytics platform that helps teams understand user behavior, optimize product experiences, and drive business growth. With powerful event tracking, cohort analysis, and real-time reporting, Amplitude enables organizations to uncover insights, measure the impact of new features, and make data-driven decisions. Its intuitive interface and robust integrations make it easy for product, engineering, and growth teams to collaborate and act on insights quickly. Amplitude is trusted by companies of all sizes to improve retention, engagement, and conversion by turning complex data into actionable intelligence
+---
+
+{{collection:sections}}
+{{ if current-collection}}
+## {{title}}
+{{ collection :from="current-collection" scope="articles"}}
+- [{{title}}]({{current_full_url | parse_url('scheme')}}://{{current_full_url | parse_url('host')}}/docs/md/{{ collection:handle }}/en/{{ slug }}.md)
+{{/collection }}
+{{/if}}
+{{/collection:sections}}

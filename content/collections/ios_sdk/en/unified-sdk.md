@@ -78,14 +78,18 @@ let amplitude = Amplitude(
 // Basic initialization with default configurations
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"];
 
+// Basic initialization with server zone
+Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY" 
+                                              serverZone:AMPServerZoneUS];
+
 // Advanced initialization with custom configurations
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
                                               serverZone:AMPServerZoneUS
                                            instanceName:@"default_instance"
-                                         analyticsConfig:[[AMPAnalyticsConfig alloc] init]
-                                        experimentConfig:[[AMPExperimentPluginConfig alloc] init]
-                                    sessionReplayConfig:[[AMPSessionReplayPluginConfig alloc] init]
-                                                 logger:[[AMPConsoleLogger alloc] init]];
+                                                 analyticsConfig:[[AMPAnalyticsConfig alloc] init]
+                                                experimentConfig:[[ExperimentPluginConfig alloc] init]
+                                            sessionReplayConfig:[[AMPSessionReplayPluginConfig alloc] init]
+                                                         logger:nil];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -94,7 +98,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Analytics Configuration
 
-The Unified SDK provides a simplified configuration interface for the Analytics SDK. For a complete list of configuration options, see the [Analytics SDK documentation](./ios-swift-sdk#configure-the-sdk).
+The Unified SDK provides a simplified configuration interface for the Analytics SDK. For a complete list of configuration options, see the [Analytics SDK documentation](/docs/sdks/analytics/ios/ios-swift-sdk#configure-the-sdk).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -121,12 +125,10 @@ analyticsConfig.flushIntervalMillis = 30000;
 [analyticsConfig.trackingOptions disableTrackCity];
 [analyticsConfig.trackingOptions disableTrackIpAddress];
 analyticsConfig.minTimeBetweenSessionsMillis = 300000;
-analyticsConfig.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
-    AMPAutocaptureOptions.sessions,
-    AMPAutocaptureOptions.appLifecycles,
-    AMPAutocaptureOptions.screenViews
+analyticsConfig.autocapture = AMPAutocaptureOptions.all;
+analyticsConfig.migrateLegacyData = YES;
+analyticsConfig.enableAutoCaptureRemoteConfig = YES;
 ]];
-
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
                                          analyticsConfig:analyticsConfig];
 ```
@@ -135,7 +137,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Experiment Configuration
 
-The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](../experiment-sdks/experiment-ios).
+The Unified SDK automatically configures the Experiment SDK with sensible defaults. For more advanced configuration options, see the [Experiment SDK documentation](/docs/sdks/experiment-sdks/experiment-ios).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -154,7 +156,7 @@ let amplitude = Amplitude(
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
-AMPExperimentPluginConfig *experimentConfig = [[AMPExperimentPluginConfig alloc] init];
+ExperimentPluginConfig *experimentConfig = [[ExperimentPluginConfig alloc] init];
 experimentConfig.serverUrl = @"https://api.lab.amplitude.com";
 experimentConfig.debug = YES;
 experimentConfig.fetchTimeoutMillis = 10000;
@@ -167,7 +169,7 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 
 ### Session Replay Configuration
 
-The Unified SDK automatically configures the Session Replay SDK with sensible defaults. For more advanced configuration options, see the [Session Replay SDK documentation](../session-replay/session-replay-ios-plugin).
+The Unified SDK automatically configures the Session Replay SDK with sensible defaults. For more advanced configuration options, see the [Session Replay SDK documentation](/docs/session-replay/session-replay-ios-plugin).
 
 {{partial:admonition type="note" heading=""}}
 Session Replay is only available on iOS platforms, not on macOS, tvOS, watchOS, or visionOS.
@@ -197,7 +199,7 @@ sessionReplayConfig.sessionSampleRate = 100;
 sessionReplayConfig.scrollSampleRate = 50;
 
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
-                                    sessionReplayConfig:sessionReplayConfig];
+                                     sessionReplayConfig:sessionReplayConfig];
 #endif
 ```
 {{/partial:tab}}
@@ -209,7 +211,7 @@ The Unified SDK provides access to all the functionality of the individual SDKs 
 
 ### Analytics
 
-The Unified SDK exposes all the Analytics SDK functionality directly. For a complete list of methods, see the [Analytics SDK documentation](./ios-swift-sdk).
+The Unified SDK exposes all the Analytics SDK functionality directly. For a complete list of methods, see the [Analytics SDK documentation](/docs/sdks/analytics/ios/ios-swift-sdk).
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -232,7 +234,7 @@ amplitude.setUserId(userId: "user@example.com")
 [amplitude track:@"Button Clicked" eventProperties:@{@"button_id": @"sign_up"}];
 
 // Set user properties
-AMPIdentify *identify = [AMPIdentify new];
+AMPIdentify *identify = [[AMPIdentify alloc] init];
 [identify set:@"plan" value:@"premium"];
 [amplitude identify:identify];
 
@@ -272,24 +274,27 @@ amplitude.experiment.fetch().onFetchCompleted { error in
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
+// Access the experiment client
+ExperimentClient *experimentClient = amplitude.experiment;
+
 // Fetch variants for the current user
-[[amplitude.experiment fetch] onFetchCompleted:^(NSError * _Nullable error) {
+[[experimentClient fetch] onFetchCompleted:^(NSError * _Nullable error) {
     if (error != nil) {
         NSLog(@"Error fetching variants: %@", error);
         return;
     }
     
     // Get a variant for a flag
-    ExperimentVariant *variant = [amplitude.experiment variant:@"my-flag"];
+    ExperimentVariant *variant = [experimentClient variant:@"my-flag"];
     NSLog(@"Variant: %@", variant.value);
     
     // Evaluate a flag locally
-    ExperimentVariant *localVariant = [amplitude.experiment variant:@"local-flag" fallback:@"default"];
+    ExperimentVariant *localVariant = [experimentClient variant:@"local-flag" fallback:@"default"];
     NSLog(@"Local variant: %@", localVariant.value);
     
     // Exposure tracking is automatic when you call variant()
     // But you can also track exposures manually
-    [amplitude.experiment exposure:@"my-flag"];
+    [experimentClient exposure:@"my-flag"];
 }];
 ```
 {{/partial:tab}}
@@ -325,18 +330,19 @@ amplitude.sessionReplay?.resumeRecording()
 #if __has_include(<AmplitudeSessionReplay/AmplitudeSessionReplay.h>)
 // Session Replay is automatically initialized and configured
 // You can access the Session Replay client through the sessionReplay property
+SessionReplay *sessionReplay = amplitude.sessionReplay;
 
 // Start recording a session
-[amplitude.sessionReplay startRecording];
+[sessionReplay startRecording];
 
 // Stop recording
-[amplitude.sessionReplay stopRecording];
+[sessionReplay stopRecording];
 
 // Pause recording
-[amplitude.sessionReplay pauseRecording];
+[sessionReplay pauseRecording];
 
 // Resume recording
-[amplitude.sessionReplay resumeRecording];
+[sessionReplay resumeRecording];
 #endif
 ```
 {{/partial:tab}}
@@ -389,7 +395,7 @@ NSString *deviceId = amplitude.identity.deviceId;
 
 The Unified SDK maintains a cache of user properties that are set with identify operations. This allows you to access the current user properties state at any time.
 
-{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tabs tabs="Swift"}}
 {{partial:tab name="Swift"}}
 ```swift
 // Set user properties
@@ -407,25 +413,6 @@ print("User age: \(userProperties["age"] ?? 0)")
 let clearIdentify = Identify()
 clearIdentify.clearAll()
 amplitude.identify(identify: clearIdentify)
-```
-{{/partial:tab}}
-{{partial:tab name="Obj-C"}}
-```objc
-// Set user properties
-AMPIdentify *identify = [AMPIdentify new];
-[identify set:@"plan" value:@"premium"];
-[identify set:@"age" value:@25];
-[amplitude identify:identify];
-
-// Access the current user properties
-NSDictionary *userProperties = amplitude.identity.userProperties;
-NSLog(@"User plan: %@", userProperties[@"plan"] ?: @"none");
-NSLog(@"User age: %@", userProperties[@"age"] ?: @0);
-
-// Clear all user properties
-AMPIdentify *clearIdentify = [AMPIdentify new];
-[clearIdentify clearAll];
-[amplitude identify:clearIdentify];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -453,10 +440,11 @@ let amplitude = Amplitude(
 AMPAnalyticsConfig *analyticsConfig = [[AMPAnalyticsConfig alloc] init];
 // Other configuration options...
 
-AMPConsoleLogger *logger = [[AMPConsoleLogger alloc] initWithLogLevel:AMPLogLevelDEBUG];
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
                                          analyticsConfig:analyticsConfig
-                                                  logger:logger];
+                                                  logger:^(NSInteger logLevel, NSString *logMessage) {
+        NSLog(@"%@", logMessage);
+    }];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -577,16 +565,19 @@ AMPAnalyticsConfig *analyticsConfig = [[AMPAnalyticsConfig alloc] init];
 analyticsConfig.flushQueueSize = 30;
 analyticsConfig.flushIntervalMillis = 30000;
 
-AMPExperimentPluginConfig *experimentConfig = [[AMPExperimentPluginConfig alloc] init];
+ExperimentPluginConfig *experimentConfig = [[ExperimentPluginConfig alloc] init];
 experimentConfig.serverUrl = @"https://api.lab.amplitude.com";
 
 AMPSessionReplayPluginConfig *sessionReplayConfig = [[AMPSessionReplayPluginConfig alloc] init];
 sessionReplayConfig.sessionSampleRate = 100;
 
 Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
-                                         analyticsConfig:analyticsConfig
-                                        experimentConfig:experimentConfig
-                                    sessionReplayConfig:sessionReplayConfig];
+                                            serverZone:AMPServerZoneUS
+                                          instanceName:@"default"
+                                       analyticsConfig:analyticsConfig
+                                      experimentConfig:experimentConfig
+                                   sessionReplayConfig:sessionReplayConfig
+                                                logger:nil];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}

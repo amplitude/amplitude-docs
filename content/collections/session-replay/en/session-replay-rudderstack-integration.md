@@ -2,6 +2,7 @@
 id: 5416910c-32f8-4e80-be0f-88a10509c029
 blueprint: session-replay
 title: 'Session Replay Wrapper for Rudderstack'
+published: false
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -10,7 +11,7 @@ instrumentation_guide: true
 platform: 'third-party integration'
 public: true
 package_name: '@amplitude/session-replay-browser'
-full_details: true
+full_details: false
 description: "Choose this option if you use Rudderstack for your site's analytics."
 ---
 Amplitude provides a wrapper for integrating Rudderstack and Amplitude's Session Replay.
@@ -56,30 +57,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
             sessionId: rudderAnalytics.getSessionId(),
             sampleRate: .1 // 10% of sessions will be captured 
         }).promise;
-   
-        // Update track method to include sessionReplayProperties
-        const rudderAnalyticsTrack = rudderAnalytics.track;
-        rudderAnalytics.track = function (eventName, eventProperties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          eventProperties = {
-            ...eventProperties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsTrack(eventName, eventProperties, options, callback);
-        };
-   
-        // Update page method to include sessionReplayProperties
-        const rudderAnalyticsPage = rudderAnalytics.page;
-        rudderAnalytics.page = function (category, name, properties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          properties = {
-            ...properties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsPage(category, name, properties, options, callback);
-        };
-
-        sessionReplay.set(rudderAnalytics.getSessionId())
+        sessionReplay.set(rudderAnalytics.getSessionId());
       });
     }
 );
@@ -87,7 +65,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
 
 ## Rudderstack integration
 
-This integration updates Rudderstack's request architecture, which ensures that all `track` and `page` events include the required Amplitude `Session Replay ID` event property. 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## Required field mapping
 
@@ -99,4 +77,4 @@ Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/e
 Session Replay isn't compatible with ad blocking software.
 {{/partial:admonition}}
 
-For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)
+For troubleshooting information, go to [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)

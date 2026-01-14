@@ -28,8 +28,17 @@ For details about results limits and sorting logic in Data Tables, see the [Dat
 {{/partial:collapse}}
 
 
-{{partial:collapse name="Why does my Data Table show only 100 rows when I’ve applied a group-by clause?"}}
-For details about results limits and sorting logic in Data Tables, see the [Data Tables documentation](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis).
+{{partial:collapse name="Why does my Data Table show only 100 rows when I've applied a group-by clause?"}}
+When you apply a group-by to your Data Table, Amplitude displays the top 100 results by default. This is a display limit, not a data processing limit. Amplitude still processes all your data, but only shows the top 100 groups ranked by the sorted metric.
+
+The display limits vary based on your configuration:
+
+- **Single top-level group-by:** 100 rows
+- **Multiple top-level group-bys:** 500 rows
+- **Metrics with attribution:** 20 rows
+- **Multiple metric types:** Smallest limit applies
+
+When you export to CSV, different limits apply based on metric type. For complete details about display limits, export limits, and sorting logic, review [Results limits and sorting logic in Data Tables](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic).
 {{/partial:collapse}}
 
 
@@ -66,11 +75,6 @@ If you'd like to see this changed, submit a feature request with the Amplitude w
 When you have a lot of group-by filters, these property values can take up the entire width of a laptop screen. This pushes the metric columns off the page, making them unreachable. Try to open the Data Table on a monitor, or reducing the number of group-bys applied.
 
 If you'd like to see this changed, submit a feature request via the Amplitude widget at the bottom right corner on the UI.
-{{/partial:collapse}}
-
-
-{{partial:collapse name="Can I edit the column headers within a Data Table?"}}
-No. If you'd like to see this changed, submit a feature request via the Amplitude widget at the bottom right corner on the UI.
 {{/partial:collapse}}
 
 

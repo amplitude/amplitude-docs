@@ -12,10 +12,6 @@ this_article_will_help_you:
 ---
 Amplitude's **usage reports** help you identify trends and patterns of Amplitude usage within your organization. Use it to better understand where your company’s analytics practice is strongest, as well as opportunities to further maximize the value your organization gets from Amplitude. 
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Access usage reports
 
 Usage reports include ten charts (visible on the User Metrics tab) that deliver the metrics you need to effectively drive Amplitude adoption in your organization, as well as a report (visible on the Event Usage tab) that describes how your ingested events are being used within Amplitude across all projects in your organization.
@@ -87,11 +83,13 @@ All events that have ever been included in Amplitude are part of both files. Thi
 * **# of Users**: Total number of users who have ever queried an event
 * **# of Charts**: Total count of all charts that have ever included the event in their definitions
 * **# of Cohorts**: Total count of cohorts that have ever included the event in their definitions
-* **User IDs**: A list of the email addresses \*
-* **Chart IDs**: A list of the chart IDs \*
-* **Cohort IDs**: A list of the cohort IDs \*
+* **User IDs**: A list of the email addresses
+* **Chart IDs**: A list of the chart IDs
+* **Cohort IDs**: A list of the cohort IDs
 
-\* These lists detail the counts of the previous three columns. They can be very long, often exceeding the cell size limit in spreadsheets.
+{{partial:admonition type="warning" heading=""}}
+User IDs, Chart IDs, and Cohort IDs list detail of the counts of the previous three columns. As a result, these columns can exceed cell size limits in spreadsheets.
+{{/partial:admonition}}
 
 #### JSON fields and definitions
 

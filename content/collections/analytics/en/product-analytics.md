@@ -13,7 +13,7 @@ Amplitude's Out-of-the-box Product Analytics provides a single location in Ampli
 
 ## Feature availability
 
-This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
+This feature is available on all Amplitude plans. 
 
 ### Permissions
 
@@ -29,13 +29,12 @@ Product Analytics permissions for editing views depend on both your role within 
 | Manager | ✅            | ✅                   | ✅                    |
 | Member  | ✅            | ✅                   | ✅                    |
 
-**Growth and Enterprise**
+**Enterprise**
 
 | Role    | Default view | Custom view (yours) | Custom view (others) |
 | ------- | ------------ | ------------------- | -------------------- |
 | Admin   | ✅            | ✅                   | ✅                    |
-| Manager | ❌            | ✅                   | ✅                    |
-| Member  | ❌            | ✅                   | ✅                    |
+| Non-Admmin | ❌            | ✅                   | ✅                    |
 
 {{/partial:collapse}}
 
@@ -43,25 +42,24 @@ Product Analytics permissions for editing views depend on both your role within 
 
 ### Basic settings
 
-On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
-
-Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to learn how long users go between triggering your critical event.
-
-Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
-
-Click **Save** to commit changes.
+1. On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
+2. Select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to learn how long users go between triggering your critical event.
+3. Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
+4. Click **Save** to commit changes.
 
 ### Onboarding funnel
 
-Select events that represent the steps in your onboarding funnel. For example start with a broad event like `App installed` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
+Select events that represent the steps in your onboarding funnel. 
+
+For example start with a broad event like `App installed` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
 
 ### Features
 
 Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
 
-To create a new feature based on an event:
+##### To create a new feature based on an event:
 
-1. From the *Features* tab of the *Customize page*, click *+ Create Feature*.
+1. From the Features tab of the Customize page, click **Create Feature**.
 2. Choose to define the feature with an event.
 3. Name the feature, and select the Value Moment, or the event that represents when a user realized value from the feature.
 
@@ -98,10 +96,10 @@ Break down conversion with the properties you defined during configuration. Brea
 Features are a specific function or characteristic of a product that provides value to customers.
 {{/partial:admonition}}
 
-Feature engagement displays an engagement matrix that enables you to compare the features you define. The matrix plots features according to adoption (or the percentage of active users that engaged with the feature), and the average frequency with which users engaged with the feature.
+Feature engagement displays an engagement matrix that enables you to compare the features you define. The matrix plots features according to adoption (or the percentage of active users that engaged with the feature), and the average frequency with which users engaged with the feature. For more information, go to [Engagement Matrix](/docs/analytics/charts/engagement-matrix/engagement-matrix-discover).
 
 ### Retention
 
 Retention contains three tabs that reflect your product's user retention, retention over time, and  usage interval.
 
-Retention over time uses the retention interval values you set during configuration.
+Retention over time uses the retention interval values you set during configuration. For more information, go to [Interpreting your retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-interpret)

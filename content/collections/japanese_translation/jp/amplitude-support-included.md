@@ -16,7 +16,7 @@ Amplitudeへようこそ！ Amplitudeの使用中にご質問や技術的な問�
 
 ## Amplitudeが提供するサポートチャンネル
 
-[プランタイプ](https://amplitude.com/pricing)に応じて、ご利用頂けるサポートチャンネルが異なります。ここでは提供チャンネルの概要と、プランタイプ別にご利用いただける内容をご紹介します。
+ご利用頂けるサポートチャンネルはプランタイプによって異なります。ここでは提供チャンネルの概要と、プランタイプ別にご利用いただける内容をご紹介します。
 
 |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |
@@ -44,7 +44,7 @@ Amplitudeサポートは、オンデマンドコンテンツと受賞歴のあ�
 
 * コース、ウェビナー、ライブトレーニングなどのトレーニングリソースを提供する[Amplitudeアカデミー](https://academy.amplitude.com/)
 * [Amplitudeコミュニティ](community.amplitude.com)では、質問をしたり、回答を探したり、このスペースの専門家と交流したりできます。マーケティングチームは、プロダクトの機能に関する質問への回答を提供したり、製品のバグを[support.amplitude.com](https://support.amplitude.com)からサポートフォームにアップロードしたりするなど、コミュニティの運営をサポートしています。
-* [ディベロッパーセンター](docs.developers.amplitude.com)では、AmplitudeのSDKおよびAPIの実装に関するガイドを提供しています。
+* [ディベロッパーセンター](/docs.developers.amplitude.com)では、AmplitudeのSDKおよびAPIの実装に関するガイドを提供しています。
 * [ヘルプセンター](help.amplitude.com)では、チャートや機能の使用方法、FAQ、トラブルシューティングの手順に関する記事をご覧いただけます。
 
 また、ステータスページでは、既知のAmplitude全体の問題に関する最新情報を積極的にお届けしています：[status.amplitude.com](https://status.amplitude.com/)。

@@ -12,54 +12,56 @@ In Amplitude Experiment, a sample ratio mismatch occurs when the observed alloca
 
 A SRM points to biases in the data, and if unresolved, can lead to unexpected results. You should be wary of the results of any experiment experiencing a SRM.
 
+Amplitude uses a [sequential version of a chi-squared test](https://arxiv.org/abs/2011.03567) with alpha = .01 to detect a SRM.
+
 ## About this guide
 
 This guide provides a deep dive into the process of troubleshooting and debugging a sample ratio mismatch (SRM). This guide assumes that you're using the "end-to-end" Experiment product. However, you may apply some of these debugging steps to experiments which have been set up in Experiment Results.
 
-This page is ordered from most common cause to least common cause of an SRM.
+This page describes the most common causes to least common causes of an SRM.
 
 {{partial:admonition type="info" heading="More information"}}
-This isn't an exhaustive list of every possible cause of SRMs. See [SRM Checker](https://www.lukasvermeer.nl/srm/docs/faq/#what-can-we-do-about-sample-ratio-mismatch) for more debugging strategies. 
+This isn't an exhaustive list of every possible cause of sample ration mismatches (SRMs). Go to [SRM Checker](https://www.lukasvermeer.nl/srm/docs/faq/#what-can-we-do-about-sample-ratio-mismatch) for more debugging strategies. 
     
 If you are still having issues with an SRM after using this guide, contact support. 
 {{/partial:admonition}}
 
 ## Amplitude exposure events versus custom exposure events
 <!-- Casey: Revisit -->
-Amplitude recommends that you use the [Amplitude exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events). When using client-side SDKs, the Amplitude exposure event is automatically tracked when the variant is accessed from the cache, not when variants are fetched. When using local evaluation, there is no assignment event and you are required to use a custom exposure event. 
+Amplitude recommends that you use the [Amplitude exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events). When using client-side SDKs, the Amplitude exposure event is automatically tracked when the variant is accessed from the cache, not when variants have been fetched. When using local evaluation, there is no assignment event and you must use a custom exposure event. 
 
-If you use a custom exposure event, make sure that you send it when the user experiences the variant. More importantly, the custom exposure event may happen before assignment, meaning that the user property isn't yet set, and the initial custom exposure event isn't actually counted as an exposure in analysis. Note that it doesn't cost extra money to use Amplitude Exposure events.
+If you use a custom exposure event, make sure that you send it when the user experiences the variant. Remember, the custom exposure event may happen before assignment. This means that the user property isn't yet set, and the initial custom exposure event isn't actually counted as an exposure in analysis. Note that it doesn't cost extra to use Amplitude Exposure events.
 
 ## Variant distribution weights changed during the experiment
 
 As a best practice, you shouldn't change a running experiment in a way that could cause users to jump between variants. This can cause an SRM.
 
-For example, changing 50% treatment / 50% control to 60% treatment / 40% control may cause users to jump between variants while the experiment is running. One of the assumptions of the SRM test is that the traffic allocation doesn't change while the experiment is running. See [Interpret the Cumulative Exposures Graph in Amplitude Experiment](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope) for more context about why you shouldn't change the traffic allocation in the middle of an experiment.
+For example, changing 50% treatment / 50% control to 60% treatment / 40% control may cause users to jump between variants while the experiment is running. One of the assumptions of the SRM test is that the traffic allocation doesn't change while the experiment is running. Go to [Interpret the Cumulative Exposures Graph in Amplitude Experiment](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope) for more context about why you shouldn't change the traffic allocation in the middle of an experiment.
 
 ## Experiment exposures started before analysis window begins
 
-If one variant causes users to return to the product more, then you may see more users than expected in that variant if your exposures and analysis window don't align. 
+If one variant causes users to return to the product more, then more users may appear than expected in that variant if your exposures and analysis window don't align. 
 
 
 {{partial:admonition type="example" heading=""}}
-The experiment ran from January 1 to January 30, and the experiment was analyzed from January 15 to January 30. There are 100 users in control and treatment respectively every two weeks. The treatment you are experimenting on is so good that it makes all the users return the product every day and the control is so bad that they never come back. 
+The experiment ran from January 1 to January 30, and analysis of the experiment occurred from January 15 to January 30. There are 100 users in control and treatment respectively every two weeks. The treatment you are experimenting on is so good that it makes all the users return the product every day. The control is so bad that they never come back. 
 
 During the analysis time window you have 100 exposed users in control and 200 exposed users in treatment. Here the issue is that you aren't doing a fair comparison between control and treatment. 
 {{/partial:admonition}}
     
-If the analysis time window and the time the experiment was receiving traffic are different, change the analysis window to be the whole time the experiment was receiving traffic and see if there is still a SRM.
+If the analysis time window and the time the experiment was receiving traffic are different, change the analysis window to be the whole time the experiment was receiving traffic to understand if there is still a SRM.
 
 ## Variant jumping
 
-[Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping) describes when a user moves from one variant to another, sometimes multiple times. Variant jumping makes it difficult to attribute the metric to a specific variant. Amplitude Experiment's built-in diagnostics in the **Diagnostics** card has charts to make it easy to track the percentage of users jumping between variants. 
+[Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping) describes when a user moves from one variant to another, sometimes multiple times. Variant jumping makes it difficult to attribute the metric to a specific variant. Amplitude Experiment's built-in diagnostics in the Diagnostics card has charts to make it easy to track the percentage of users jumping between variants. 
 
-If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can see this by looking at the [User Stream](/docs/analytics/user-data-lookup).
+If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can review this by viewing the [User Stream](/docs/analytics/user-data-lookup).
 
 As a best practice, you shouldn't change a running experiment in a way that could cause users to jump between variants. This can cause an SRM.
 
 ## Significantly more users converted from Assignment to Exposure for one variant over another
 
-You can find the Assignment to Exposure funnel chart in the **Diagnostics** card of an experiment. Enter the conversion rates and sample size into [this calculator](https://www.socscistatistics.com/tests/ztest/default2.aspx) to see if it's statistically significant or not at the 95% significance level. The conversion rates between variants should be similar (within randomness) because the assignment event should randomly split users into two equal cohorts. Because exposure events get sent right before the user experiences a variant, there should be no difference between users because they have the same user experience from the time the assignment event is sent to the time the exposure event is sent.
+You can find the Assignment to Exposure funnel chart in the Diagnostics card of an experiment. Enter your conversion rates and sample size into [this calculator](https://www.socscistatistics.com/tests/ztest/default2.aspx) to find out if your metrics are statistically significant or not at the 95% significance level. The conversion rates between variants should be similar (within randomness) because the assignment event should split users into two, randomly assigned, equal cohorts. Because exposure events are sent immediately before the user experiences a variant, there should be no difference between users. This is because they have the same user experience from the time the assignment event fires to the time the exposure event fires.
 
 ## Variant added or removed in the experiment
 
@@ -67,7 +69,7 @@ Adding or removing a variant while an experiment is running can cause an SRM. As
 
 ## Sticky bucketing enabled or disabled during experiment
 
-Enabling or disabling sticky bucketing on a running experiment can cause a mismatch between what you expect and which variant a user actually sees. If sticky bucketing was _ever_ enabled on an experiment (even if it's later disabled), a user is always evaluated to the same previously bucketed variant, regardless of the current targeting.
+Enabling or disabling sticky bucketing on a running experiment can cause a mismatch between what you expect and which variant a user actually sees. If sticky bucketing was ever enabled on an experiment (even if it's later disabled), a user is always evaluated to the same previously bucketed variant, regardless of the current targeting.
 
 ## Changes that affected a segment of users
 
@@ -81,17 +83,17 @@ To troubleshoot this kind of problem, find out which specific users were affecte
 ## Individual allocation of many users
 
 Did you [individually allocate](/docs/feature-experiment/implementation#individual-inclusions) a large number of users?
-This can cause an SRM because individually allocating users doesn't randomly allocate them and can skew your ratio. 
+This can cause an SRM because individually allocating users doesn't allocate them randomly and can skew your ratio. 
 
 It's fine to add a few users in the experiment individually, but avoid adding many users.
 
 ## First experiment 
 
-If you see an SRM in your first experiment, it could be an instrumentation bug. However, if you have had multiple SRMs, then the SRM is unlikely to be a false positive and you should find the root cause. 
+If there is an SRM in your first experiment, it could be an instrumentation bug. However, if you have had multiple SRMs, then the SRM is unlikely to be a false positive and you should find the root cause. 
 
 ## Users often logging out
 
-You may see frequent logouts manifested in the variant jumping chart. Is the experiment causing users to log out more frequently? This is common in financial institutions where users are logged out after 15 minutes of inactivity.
+You may find frequent logouts manifested in the variant jumping chart. Is the experiment causing users to log out more frequently? This is common in financial institutions where users are logged out after 15 minutes of inactivity.
 
 1. On log out regenerate device id
 2. Amplitude thinks its a new user

@@ -45,8 +45,8 @@ Ampli v2 is compatible with both Browser SDK 2.0 and Browser SDK 1.0. Follow thi
 ```json
 {
   "dependencies": {
-    "@amplitude/analytics-browser": "^1" //[tl! --]
-    "@amplitude/analytics-browser": "^2" //[tl! ++]
+    "@amplitude/analytics-browser": "^1" 
+    "@amplitude/analytics-browser": "^2" 
   }
 }
 ```
@@ -96,9 +96,9 @@ This option no longer exists but Amplitude can be configured similarly using pag
 
 ```ts
 amplitude.init(API_KEY, undefined {
-  attribution: {            //[tl! --:1]
+  attribution: {            
     trackPageViews: true
-  defaultTracking: {        //[tl! ++:2]
+  defaultTracking: {        
     pageViews: {
       trackOn: 'attribution'
     },
@@ -114,19 +114,19 @@ Starting Browser SDK 2.0, Amplitude has simplified the options to manage the use
 
 ```ts
 amplitude.init(API_KEY, undefined, {
-  disableCookies: true,                  //[tl! --]
-  identityStorage: 'localStorage',       //[tl! ++]
+  disableCookies: true,                  
+  identityStorage: 'localStorage',       
 });
 ```
 
 ### Disabling user identity persistence
 
 ```ts
-import { MemoryStorage } from '@amplitude/analytics-core'; //[tl! --]
+import { MemoryStorage } from '@amplitude/analytics-core'; 
 
 amplitude.init(API_KEY, undefined, {
-  cookieStorageProvider: new MemoryStorage(),           //[tl! --]
-  identityStorage: 'none',                              //[tl! ++]
+  cookieStorageProvider: new MemoryStorage(),           
+  identityStorage: 'none',                              
 });
 ```
 
@@ -136,12 +136,12 @@ The options to manage cookie usage are now nested under `options.cookieOptions` 
 
 ```ts
 amplitude.init(API_KEY, undefined, {
-  cookieExpiration: 365, //[tl! --:4]
+  cookieExpiration: 365, 
   cookieSameSite: 'Lax',
   cookieSecure: false,
   cookieUpgrade: true,
   domain: '',
-  cookieOptions: {    //[tl! ++:5]
+  cookieOptions: {    
     expiration: 365,
     sameSite: 'Lax',
     secure: false,
@@ -165,8 +165,8 @@ Setting transport provider on initialization
 import * as amplitude from '@amplitude/analytics-browser';
 
 amplitude.init(API_KEY, USER_ID, {
-  transport: amplitude.Types.TransportType.Fetch,     //[tl! --]
-  transport: 'fetch',                                 //[tl! ++]
+  transport: amplitude.Types.TransportType.Fetch,     
+  transport: 'fetch',                                 
 });
 ```
 
@@ -175,8 +175,8 @@ Setting transport provider using setTransport()
 ```ts
 import * as amplitude from '@amplitude/analytics-browser';
 
-amplitude.setTransport(amplitude.Types.TransportProvider.Fetch); //[tl! --]
-amplitude.setTransport('fetch');                                 //[tl! ++]
+amplitude.setTransport(amplitude.Types.TransportProvider.Fetch); 
+amplitude.setTransport('fetch');                                 
 ```
 
 Setting server zone on initialization
@@ -185,8 +185,8 @@ Setting server zone on initialization
 import * as amplitude from '@amplitude/analytics-browser';
 
 amplitude.init(API_KEY, USER_ID, {
-  serverZone: amplitude.Types.ServerZone.US, //[tl! --]
-  serverZone: 'US',                         //[tl! ++]
+  serverZone: amplitude.Types.ServerZone.US, 
+  serverZone: 'US',                         
 });
 ```
 

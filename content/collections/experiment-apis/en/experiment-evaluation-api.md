@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-ap
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
 
-The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
+The Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
 
 ## Regions
 
@@ -47,13 +47,28 @@ The Evaluation API lets you retrieve variant assignment data for users. When you
 
 ### Evaluation response
 
-The response body is a JSON object keyed by the flag key. The value for a given flag key is the variant assigned to the user. The variant contains its identification `key` (a.k.a value) and an optional payload containing a JSON element.
+The response body is a JSON object keyed by the flag key. The value for a given flag key is the variant assigned to the user. The variant contains its identification `key` (a.k.a value) and an optional payload containing a JSON element. For each flag, the variant object contains:
+
+| Field | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| `key` | `string` | Required | The assigned variant key for the flag/experiment. |
+| `payload` | `any` | Optional | The variant's payload (if set). Can be any valid JSON value. |
+| `expKey` | `string` | Optional | The expeirment key is used to differentiate between different runs of the same experiment. |
+| `evaluationId` | `string` | Optional | The evaluation ID is used for debugging purposes. Can be ignored for now. |
+
+{{partial:admonition type="warning" heading="Unexpected response fields."}}
+The variant object for each flag may be updated to contain additional response fields. Your code must be able to handle these additional fields gracefully.
+{{/partial:admonition}}
+
+For example
 
 ```json
 {
-    "<flag_keys>": {
-        "key": "<variant_value>",
-        "payload": <variant_payload>
+    "my-experiment": {
+        "key": "treatment",
+        "payload": { "price": 99.99, "discount": "25%" },
+        "expKey": "exp-1",
+        "evaluationId": "224681772811_1760563672659_3681"
     },
     // ...
 }
@@ -80,7 +95,7 @@ If a user isn't in the target audience, the Evaluation API may return an empty o
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-
+{{partial:experiment/interactive-evaluation-table}}
 
 ---
 
@@ -92,7 +107,7 @@ GET /v1/flags
 
 The Flags API allows you to download flag configurations for local evaluations. This is useful for bootstrapping client-side local evaluation SDKs with `initialFlags` or running evaluation using external flag configuration storage like edge environments.
 
-The data model returned by this API is different from what you may see in the [management API](/docs/apis/experiment/experiment-management-api) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
+The data model returned by this API is different from what you may experience in the [management API](/docs/apis/experiment/experiment-management-api) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
 
 ### Flags query parameters
 
@@ -108,7 +123,7 @@ The data model returned by this API is different from what you may see in the [m
 
 ### Flags response
 
-The evaluation API returns a JSON array of objects where each object represents a flag or experiment. For example, here is a very basic response with a single flag.
+The evaluation API returns a JSON array of objects where each object represents a flag or experiment. For example, here is a basic response with a single flag.
 
 ```json
 [
@@ -148,5 +163,5 @@ The evaluation API returns a JSON array of objects where each object represents 
 
 | Status Code | Description |
 | ----------- | ----------- |
-| 200  | A successful request returns a `200` response with an array of flag configurations. Use the [example](#flags-example) below to try the API from your browser or copy a curl. |
+| 200  | A successful request returns a `200` response with an array of flag configurations. |
 | 401 | If the request doesn't include a valid API key, it returns a `401` response. |

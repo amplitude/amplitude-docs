@@ -12,14 +12,26 @@ updated_at: 1724879558
 ---
 Amplitude's onboarding helps you to get data into your new organization as quickly as possible.
 
+## Create your org
+
+Get started with Amplitude for free. Sign in with Google or your work email.
+
+### Data storage location
+
+When you sign up, you can choose the region which hosts your data, either United States or European Union. Amplitude is compliant with the [EU-US Data Privacy Framework](https://ec.europa.eu/commission/presscorner/detail/en/qanda_23_3752).
+
+{{partial:admonition type="note" heading=""}}
+This setting impacts the way in which your organization sends data to Amplitude, and where Amplitude stores that data. You can't change this setting after you create your org.
+{{/partial:admonition}}
+
 ## The Amplitude snippet
 
-Once you sign up and activate your account, Amplitude prompts you to connect your first application with a single snippet. Enable [Session Replay](/docs/session-replay) and [Autocapture](/docs/data/autocapture) to enable those features automatically.
+After you sign up and activate your account, Amplitude prompts you to connect your first application with a single snippet. Enable [Session Replay](/docs/session-replay) and [Autocapture](/docs/data/autocapture) to enable those features automatically.
 
 {{partial:partials/code/snippet autocapture="true" session_replay="true" unified="true"}}
 
 {{partial:admonition type="note" heading="Session Replay sample rate"}}
-When you add Session Replay to the snippet, Amplitude sets the Sample Rate to `1`. This ensures you can verify the implementation during testing. In production, Amplitude recommends you set this value lower to account for your monthly quota. For more information, see [Session Replay Plugin | Sampling rate](/docs/session-replay/session-replay-plugin#sampling-rate)
+When you add Session Replay to the snippet, Amplitude sets the Sample Rate to `1`. This ensures you can verify the implementation during testing. In production, Amplitude recommends you set this value lower to account for your monthly quota. For more information, review [Session Replay Plugin | Sampling rate](/docs/session-replay/session-replay-plugin#sampling-rate)
 {{/partial:admonition}}
 
 Amplitude inserts your API key in the snippet as necessary. Paste the snippet in the `head` tag of each page you want to track user behavior, create a feature flag, or build a cohort.

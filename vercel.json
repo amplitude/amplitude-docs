@@ -1,6 +1,59 @@
 {
+  "headers":[
+    {
+      "source": "/docs/md/(.*)\\.md",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown" }
+      ]
+    }
+  ],
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data ",
+      "destination": "/docs/feature-experiment/advanced-techniques/winsorization-in-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing",
+      "destination": "/docs/feature-experiment/advanced-techniques/bonferroni-correction",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/amplitude-mcp",
+      "destination": "/docs/amplitude-ai/amplitude-mcp",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/agents",
+      "destination": "/docs/amplitude-ai",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/agents/(.*)",
+      "destination": "/docs/amplitude-ai/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/partners/create-a-cohort-syncing-integration",
+      "destination": "/docs/partners/create-a-cohort-sync-integration",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/faq/startup-scholorship-plan",
+      "destination": "/docs/faq/startup-scholarship-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/get-started/cookies-and-consent-management",
+      "destination": "/docs/sdks/analytics/browser/cookies-and-consent-management",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/115000959052((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/data/data-get-started",
+      "statusCode": 301
+    },
     {
       "source": "/docs/guides-and-surveys/guides/roles-and-permissions",
       "destination": "/docs/guides-and-surveys/roles-and-permissions",
@@ -3269,6 +3322,21 @@
     {
       "source": "/docs/experiment/:path*",
       "destination": "/docs/feature-experiment/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/remote-evaluaiton",
+      "destination": "/docs/feature-experiment/remote-evaluation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments",
+      "destination": "/docs/web-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments/(.*)",
+      "destination": "/docs/web-experiment/$1",
       "statusCode": 301
     }
   ]

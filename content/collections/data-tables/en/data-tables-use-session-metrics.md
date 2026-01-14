@@ -20,9 +20,6 @@ In Amplitude Analytics, you can find session metrics in the Data Tables charts, 
 Analyze other marketing metrics with Amplitude charts. See [Marketing metrics recipes](/docs/analytics/charts/user-sessions/marketing-metrics-recipes). 
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Select a good group-by property
 

@@ -9,27 +9,21 @@ this_article_will_help_you:
   - 'Manage your dashboards'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1731444719
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632951
 academy_link: 'https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p'
 academy_title: 'Use Dashboards and Starter Templates to Monitor Important Metrics'
 academy_description: "Learn how Dashboards can be used to monitor important metrics at a glance, as well as how to use Amplitude's pre-built Dashboard Starter Templates."
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
 ## Before you begin
 
-Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on [Scholarship](https://help.amplitude.com/hc/en-us/articles/360053028152), [Growth and Enterprise](https://amplitude.com/pricing) plans:
-
-* Adding behavioral cohorts to a dashboard
-* Dashboard date range (bulk filter)
-* Dashboard user segment (bulk filter)
-* Comment
-* Adding target metrics
-
 You must save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 
-Also, be aware that dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
+Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
 
 You may also find the following dashboards articles useful:
 

@@ -16,9 +16,6 @@ Once you've created your [account](/docs/get-started/create-a-new-account) and y
 You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in our Academy.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Approve and provision new users in your organization
 
@@ -93,8 +90,4 @@ The Amplitude Support team responds to these requests the first Monday of each m
 
 ## How to rotate your project's API key or secret key
 
-Amplitude doesn't support rotating API keys due to the inherent public nature of API keys. Changing this key can affect ingestion and data loss if misused. However, with Admin approval Amplitude can re-generate your project's secret key on the backend. If you would like to submit a request to change the secret key, submit a support request [here](https://help.amplitude.com/hc/en-us/requests/new) with the following information: 
-
-* The name and ID of the project in question.
-* Three suggested times within the next three days for Amplitude to make the change. An agent will coordinate the exact time with you.
-* Approval from an admin of the project. If you're not an admin, you must copy an admin in the request.
+Review [Manage your API keys and secret keys](/docs/admin/account-management/manage-your-api-keys-and-secret-keys)

@@ -11,6 +11,8 @@ landing_blurb: "See how you can use guides, and the templates available to you."
 ---
 Guides are versatile, in-product messages that gently nudge your users toward completing specific tasks, exploring new features, or learning more about your product. Unlike traditional popups that can feel interruptive, guides focus on being helpful and timely. Guides use behavioral triggers, strike detection, and rate-limiting mechanisms to avoid annoying users.
 
+Guides support [conditional logic](/docs/guides-and-surveys/guides/conditional-logic) on buttons, enabling you to create personalized experiences that adapt based on user properties.
+
 ## Guide templates
 
 When you create a new guide, you can start with a blank guide, or use a template. Guides includes the following templates:
@@ -19,6 +21,7 @@ When you create a new guide, you can start with a blank guide, or use a template
 | ------------ | ------------------------------------------------------------------------------------------------------ |
 | Tour         | Guide users to explore your product.                                                                   |
 | Announcement | Tell your users something, like information about a product changes, company updates, or new features. |
-| Checklists   | Help your users complete tasks by showing them step-by-step instructions.                              |
+| Checklists <br/> {.tag .web .zero} | Help your users complete tasks by showing them step-by-step instructions.        |
+| Carousel <br/> {.tag .mobile .zero} | Highlight your app's key features with a swipe-able onboarding carousel.        |
 | Banners      | Highlight important messages or alerts.                                                                |
 | Tooltips     | Provide quick tips or additional context, related to a specific element on screen.                     |

@@ -32,6 +32,16 @@ Before you start, make sure you’ve taken care of some prerequisites.
 - Make sure your GCS bucket has data files ready for ingestion. They must conform to the mappings that you outline in your converter file.
 - Make sure the data in your GCS bucket follows the format outlined in [Amplitude's HTTP API v2 spec](/docs/apis/analytics/http-v2#keys-for-the-event-argument).
 
+### File requirements
+
+The files you want to send to Amplitude must follow some basic requirements:
+
+- Files contain events, with one event per line.
+- Files are uploaded in the events’ chronological order.
+- Filenames are unique.
+- File size must be greater than 1MB and smaller than 5GB. For customers with large event volumes, Amplitude recommends file sizes close to 500MB for optimal performance.
+- Files are compressed or uncompressed JSON, CSV, or parquet files.
+
 ### Create a GCS service account and set permissions
 
 If you haven't already, [create a service account](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) for Amplitude within the Google Cloud console. This allows Amplitude to export your data to your Google Cloud project.
@@ -120,6 +130,10 @@ See the [Converter Configuration reference](/docs/data/converter-configuration-r
 If you add new fields or change the source data format, you need to update your converter configuration. Note that the updated converter only applies to files `discovered_after_converter` updates are saved.
 {{/partial:admonition}}
 
+### Misleading “Malformed File” Error during Preview
+
+If you are seeing an error during preview with converter, it does not always mean your original GCS files are malformed. Amplitude first copies files from GCS to an internal S3. The Preview button reflects files in the S3, not directly in GCS. If your files do not match the required folder structure, they won’t be copied into the Amplitude S3 resulting in nothing being imported or shown in the preview.
+
 ## Storage organization requirements
 
 After the initial ingestion, your data organization must conform to this standard for subsequent imports:
@@ -136,3 +150,17 @@ where:
 {{partial:admonition type="info" title=""}}
 These organizational requirements **apply only to new data** you want to import **after** the source is enabled. You don't have to reorganize any pre-existing files, as Amplitude's GCS Import captures the data they contain on the first ingestion scan. After the initial scan, new data uploaded to the bucket must conform to the requirements outlined here.
 {{/partial:admonition}}
+
+## File Search Time Window (48 Hours)
+
+Amplitude GCS Import job only searches for files from the past 48 hours based on the folder date in the path.
+
+Example: If the batch job starts at 2024/09/03 00:00, it will only search in:
+
+``` {json}
+{bucket name}/{GCSPrefix}/2024/09/01/00/ 
+  to  
+{bucket name}/{GCSPrefix}/2024/09/03/00/
+```
+
+Ensure your data files are uploaded into a folder that falls within this 2-day window, so Amplitude service can detect and import them.

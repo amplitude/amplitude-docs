@@ -4,8 +4,14 @@ tree:
     title: 'Browser SDK 2'
     children:
       -
+        id: 76119324-E851-43A0-A4C0-7A8FB1D3F2B8
+        entry: 9d42e657-b743-4cb3-8e32-1c75c1e8f580
+      -
         id: 4dfa95d1-1204-4075-b599-0c6f1802c7a1
         entry: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+      -
+        id: nextjs-guide-nav-id
+        entry: cc86bea6-52a3-4c4b-8da4-2c5c159ccccc
       -
         id: 8afe62f8-8e67-42eb-8cf6-b558225d2263
         entry: 5afa91b7-c12d-425a-b4b6-661061e5843a

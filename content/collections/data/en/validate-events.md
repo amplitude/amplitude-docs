@@ -12,39 +12,37 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895310
 ---
-A big challenge for data, product, and growth teams is a lack of visibility into the state of their data collection. Often, teams rely on manual testing, broken charts, and gut feel to continually validate their product analytics.
+A big challenge for data, product, and growth teams is a lack of visibility into the state of their data collection. Often, teams rely on manual testing, broken charts, and personal instincts to validate their product analytics.
 
 With no way to enforce or verify their event tracking, downstream systems are polluted with missing properties, wrong data types, incorrect naming conventions and more, resulting in poor quality data. This often results in a lack of confidence in the analytics, accumulated technical debt, and tons of hours wasted on cleaning and preparing data for analysis.
 
 Amplitude Data’s **Observe** feature lets you inspect, analyze, and monitor your event tracking continuously. There are **no code changes** to make. You don’t even have to switch anything on. Observe runs automatically in the background, surfacing any issues with your data as they occur and making sure your code is always in sync with your tracking plan.
 
-Observe listens in on your existing event stream and turns your tracking code into a living document, so you can get a holistic view of the state of your data collection across all of your platforms.
+Observe listens in on your existing event stream and turns your tracking code into a living document, so you can get a holistic view of the state of your data collection across your platforms.
 
-You and your teams will get immediate insight into anything that’s broken or needs attention. With an intuitive and collaborative workflow, your teams can work together to instrument fixes and get your tracking plan in shape.
-
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
+You and your teams will get immediate insight into anything that's broken or needs attention. With an intuitive and collaborative workflow, your teams can work together to instrument fixes and get your tracking plan in shape.
 
 ## View and update your event statuses
 
-The first time you view your tracking plan, you’ll see all the events and properties received and processed by Amplitude. All events and properties will show up as unexpected; to add them to your tracking plan, just check the box next to the event name and click *Add to plan*.
+To access your event stream, go to *Data > Events*. This displays all your events. 
+
+The first time you view your tracking plan, all events and properties received and processed by Amplitude are displayed. By default, all events and properties are categorized as *Unexpected*. To add them to your tracking plan, check the box next to the event name and click **Add to plan**.
 
 ![](statamic://asset::help_center_conversions::data/observe.png)
 
-Do this anytime you want to add an unexpected event to your tracking plan. Don’t forget to click *Publish* to complete the process. From now on, Observe will alert you about any changes to this event or any properties associated with it.
+Do this anytime you want to add an unexpected event to your tracking plan. Click **Publish** to complete the process. From now on, Observe alerts you about any changes to this event or any properties associated with it.
 
 Your events will always have one of four statuses:
 
-* **Unexpected**: Any event or property that has not yet been added to your tracking plan.
+* **Unexpected**: Any event or property that is not yet added to your tracking plan.
 * **Valid** (and **Current**): Any event or property that matches (in name and schema) the latest version of an existing event. If Observe doesn’t know the version of the event, it only ensures that the event shape matches your current tracking plan.
 * **Invalid**: Any event or property that doesn’t match your current tracking plan.
 * **Out of Date**: Any event or property that matches a previous version of an existing event or property (only applicable when using Amplitude SDKs).
 
-Remember, **Observe will only surface the data it sees**, so you might have legacy tracking or events that fire very infrequently that you don’t immediately see in your tracking plan. If you know of any events that aren’t surfaced by Observe, you can add them manually to your plan, or trigger the events yourself.
+Remember, Observe only surfaces the data as it occurs. If you have legacy tracking or events that fire infrequently, they may not appear in your tracking plan. If you know of any events that aren’t surfaced by Observe, you can add them manually to your plan, or trigger the events yourself.
 
 {{partial:admonition type="note" heading=""}}
-If you’re blocking, filtering or transforming your data upstream of Amplitude, Observe will not see this data. For this reason, we recommend sending all your data to Amplitude.
+If you’re blocking, filtering, or transforming your data upstream of Amplitude, Observe can't access this data. For this reason, ensure that you are sending all your data to Amplitude.
 {{/partial:admonition}}
 
 ### Observe and the Ampli CLI
@@ -61,7 +59,7 @@ You can overlay your tracking plan with your event stream.
 
 If you’re using the Amplitude SDK, you also have the option to overlay your tracking plan with your event stream from an environment, but **only** data sent to the **specific branch** you’re currently on. This is useful for debugging when you have multiple teams sending data to the environment.
 
-You can also **set a specific time range** to use for overlaying your event stream with your tracking plan. Currently, you can choose from:
+You can also **set a specific time range** to use for overlaying your event stream with your tracking plan. You can choose from:
 
 * Five minutes
 * One hour

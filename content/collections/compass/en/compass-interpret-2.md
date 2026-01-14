@@ -11,7 +11,7 @@ updated_at: 1717104023
 landing: true
 landing_blurb: 'Create a cohort from your Compass chart results'
 ---
-This article will further explain correlation and how it is applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/docs/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
+This article explains correlation and how it applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/docs/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
 
 ## Understanding correlation
 
@@ -19,10 +19,10 @@ Correlation is a measure of how two statistical variables relate to each other. 
 
 Amplitude categorizes correlation scores like this:
 
-* **Highly Predictive**: |correlation| >= 0.4
-* **Moderately Predictive**: 0.3 <= |correlation| < 0.4
-* **Slightly Predictive**: 0.2 <= |correlation| < 0.3
-* **Not Predictive**: |correlation| < 0.2
+* **Highly Predictive**: `|correlation| >= 0.4`
+* **Moderately Predictive**: `0.3 <= |correlation| < 0.4`
+* **Slightly Predictive**: `0.2 <= |correlation| < 0.3`
+* **Not Predictive**: `|correlation| < 0.2`
 
 In a Compass chart, the two variables to be correlated are:
 
@@ -31,10 +31,10 @@ In a Compass chart, the two variables to be correlated are:
 
 You may have heard of different variations and definitions of correlation. Well-known examples include Matthews correlation, Pearson correlation, phi coefficient, and R-value. In this case, all these different methods generate equivalent results, because Compass looks at pairs of binary random variables.
 
-Remember, **correlation is not causation**, so any hypotheses you come up with via a Compass analysis must still be **tested and verified** in the real world.
+Remember, correlation isn't causation, so you should still test and verify any hypotheses you form from a Compass analysis.
 
 {{partial:admonition type='note'}}
- Use [Amplitude Experiment](/docs/feature-experiment/overview) to determine causality. 
+Use [Amplitude Experiment](/docs/feature-experiment/overview) to determine causality. 
 {{/partial:admonition}}
 
 ### Why is correlation a good metric to use here?

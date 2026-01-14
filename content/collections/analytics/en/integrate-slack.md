@@ -23,12 +23,9 @@ To connect Amplitude to Slack, you can either follow the steps below, or you can
 ![Add to Slack](statamic://asset::help_center_conversions::analytics/add-to-slack.png.png)
 
 {{partial:admonition type="note" heading=""}}
-If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. It can be found in the Slack app directory under “[Amplitude - EU](https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu).”  Install it by clicking [this link](https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&rn=&re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&sc=false), or by following the instructions below.
+If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. Find it in the Slack app directory under “[Amplitude - EU](https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu).”  Install it by clicking [this link](https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&rn=&re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&sc=false), or by following the instructions below.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**.
 
 ## Connect to Slack
 
@@ -47,7 +44,7 @@ To connect your Amplitude account to Slack, follow these steps:
 
 You will immediately receive a Slack message from Amplitude, which includes a link to a brief explanation of how to use the integration.
 
-Once you've authenticated via this process, Slack will automatically **unfurl** (or preview) any links to Amplitude charts, both in Slack channels and direct messages (**DM**s).
+After you authenticate, Slack unfurls any links to Amplitude charts, both in Slack channels and direct messages.
 
 ![unfurled_chart_in_Slack.png](/docs/output/img/analytics/unfurled_chart_in_Slack.png)
 
@@ -60,10 +57,12 @@ You can also subscribe a Slack channel to real-time notifications of all branch 
 * Branch Created / Deleted / Merged / Approved
 * Version Published
 
-To receive these notifications, you will have to set up the Amplitude app for Slack for the Amplitude Data project you are interested in receiving updates from. To do so, follow these steps:
+To receive these notifications, set up the Amplitude app for Slack for the Amplitude Data project you want to receive updates from.
 
-1. In Amplitude Data, navigate to *Catalog > Integrations*.
-2. If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.  
+##### Configure notifications
+
+1. In Amplitude, navigate to *Data > Catalog > Integrations*.
+2. If you haven’t previously enabled the Amplitude Slack App, grant Amplitude permission to your Slack workspace. Specify the channel you want Amplitude to send notifications to.
   
 	![slack_for_data.png](/docs/output/img/analytics/slack_for_data.png)
 
@@ -71,28 +70,33 @@ To receive these notifications, you will have to set up the Amplitude app for Sl
 
 ### Turn on link previews
 
-If a shareable link doesn't unfurl when you post it in Slack, it may be because you have not enabled link previews in your Slack settings. To do this, see [Slack's documentation](https://get.slack.help/hc/en-us/articles/204399343-Sharing-links-in-Slack).
+If a shareable link doesn't unfurl when you post it in Slack, you may need to enable link previews in your Slack settings. To do this, review [Slack's documentation](https://get.slack.help/hc/en-us/articles/204399343-Sharing-links-in-Slack).
 
 ## Receive Amplitude comments directly in Slack
 
-Once you've connected your Slack account to Amplitude, you will receive Slack notifications when you are @ mentioned in an Amplitude comment, or a comment is left on any content you own. 
+After you connect your Slack account, Amplitude sends notifications when:
 
-Use this integration to quickly get questions answered about your analysis, share an insight, or leave notes to yourself.
+- Someone `@` messages you in an Amplitude comment.
+- Someone leaves a comment on content you own.
+
+Use this integration get questions answered about your analysis, share an insight, or leave notes to yourself.
 
 ![Screenshot_2019-08-05_17.37.06.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.37.06.png)
 
-Use the content link within the Slack message to quickly access the Amplitude chart, dashboard, or notebook referenced.
+Use the content link within the Slack message to access the Amplitude chart, dashboard, or notebook referenced.
 
 ![Screenshot_2019-08-05_17.36.57.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.36.57.png)
 
-You can also use this integration to leave reminders or notes for yourself. Simply @ mention your own Amplitude account, and you will receive a Slack notification.
-
-![Screenshot_2019-08-05_17.36.05.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.36.05.png)
-
 ## Connect with team spaces
 
-Connect Amplitude team spaces to specific Slack channels to receive notifications when your team creates new analyses. When new content is added to that team space, it will automatically appear in the Slack channel. Click *Connect with Slack* from within a team space to set this up:
+Connect Amplitude team spaces to specific Slack channels to receive notifications when your team creates new analyses. When someone adds new content to that team space, it appears in the Slack channel. Click *Connect with Slack* from within a team space to set this up:
 
 ![slack_team_space.gif](/docs/output/img/analytics/slack_team_space.gif)
 
-To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*
+To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*
+
+## AskAI requirements
+
+The Amplitude AskAI feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
+
+The Amplitude AskAI feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.

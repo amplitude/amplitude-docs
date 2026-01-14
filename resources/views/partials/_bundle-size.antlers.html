@@ -1,39 +1,218 @@
-{{bundle_phobia :package="package_name"}}
-<div class="rounded-lg border text-card-foreground bg-amp-gray-50 border-amp-gray-200 shadow-sm mb-8" data-v0-t="card">
-    <div class="p-4">
-        <div class="flex items-center gap-2 mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" class="lucide lucide-package h-4 w-4 text-amp-gray-600">
-                <path d="m7.5 4.27 9 5.15"></path>
-                <path
-                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                </path>
-                <path d="m3.3 7 8.7 5 8.7-5"></path>
-                <path d="M12 22V12"></path>
-            </svg>
-            <h3 class="font-medium text-amp-gray-900 text-sm m-0">Package Information</h3>
-        </div>
-        <div class="space-y-2.5">
-            <div>
-                <div class="text-xs text-amp-gray-500 mb-1">Package Name</div><code
-                    class="block font-mono text-xs bg-white px-2 py-1.5 rounded border border-amp-gray-200 text-amp-gray-700 w-full overflow-x-auto">{{name}}</code>
+{{# Try to get bundle data server-side first (works in dev, gets cached data in SSG build) #}}
+{{ bundle_phobia :package="package_name" }}
+{{ if _bundlephobia_success }}
+    {{# Server-side data available - render immediately #}}
+    <div class="rounded-lg border text-card-foreground bg-amp-gray-50 border-amp-gray-200 shadow-sm mb-8" data-bundle-loaded="true">
+        <div class="p-4">
+            <div class="flex items-center gap-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-package h-4 w-4 text-amp-gray-600">
+                    <path d="m7.5 4.27 9 5.15"></path>
+                    <path
+                        d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                    </path>
+                    <path d="m3.3 7 8.7 5 8.7-5"></path>
+                    <path d="M12 22V12"></path>
+                </svg>
+                <h3 class="font-medium text-amp-gray-900 text-sm m-0">
+                    <a href="https://npmjs.com/package/{{package_name}}" target="_blank">Package Information</a>
+                    {{ if _bundlephobia_cached }}
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded" title="Data from cache{{ if _bundlephobia_cache_time }} ({{ _bundlephobia_cache_time }}){{ /if }}">Cached</span>
+                    {{ else }}
+                        <span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded" title="Fresh data{{ if _bundlephobia_fetch_time }} ({{ _bundlephobia_fetch_time }}){{ /if }}">Live</span>
+                    {{ /if }}
+                </h3>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="space-y-2.5">
                 <div>
-                    <div class="text-xs text-amp-gray-500 mb-1">Version</div>
-                    <div class="font-medium text-amp-gray-900">{{version}}</div>
+                    <div class="text-xs text-amp-gray-500 mb-1">Package Name</div>
+                    <code class="block font-mono text-xs bg-white px-2 py-1.5 rounded border border-amp-gray-200 text-amp-gray-700 w-full overflow-x-auto">{{name}}</code>
                 </div>
-                <div class="text-right">
-                    <div class="text-xs text-amp-gray-500 mb-1">Size (gzip)</div>
-                    <div class="font-medium text-amp-gray-900">{{size_gzip_kb}} kB</div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <div class="text-xs text-amp-gray-500 mb-1">Version</div>
+                        <div class="font-medium text-amp-gray-900">{{version}}</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-amp-gray-500 mb-1">Size (gzip)</div>
+                        <div class="font-medium text-amp-gray-900">{{size_gzip_kb}} kB</div>
+                    </div>
                 </div>
             </div>
-            <!-- <div class="pt-1">
-                <div class="text-xs text-amp-gray-500 mb-1">Install with npm</div><code
-                    class="block font-mono text-xs bg-white px-2 py-1.5 rounded border border-amp-gray-200 text-amp-gray-700 w-full overflow-x-auto">npm
-                    install {{name}}</code>
-            </div> -->
+        </div>
+        
+        {{# Add debug info in preview/development #}}
+        {{ if config:app:debug || config:app:env == 'preview' }}
+            <div class="text-xs text-gray-500 mt-2 p-2 {{ if _bundlephobia_stale }}bg-orange-100{{ else }}bg-gray-100{{ /if }} rounded">
+                <strong>Debug Info:</strong><br>
+                Package: {{ _bundlephobia_package }}<br>
+                Cached: {{ _bundlephobia_cached ? 'Yes' : 'No' }}<br>
+                {{ if _bundlephobia_stale }}<strong class="text-orange-600">⚠️ Using stale data (API unavailable)</strong><br>{{ /if }}
+                {{ if _bundlephobia_cache_time }}Cache Time: {{ _bundlephobia_cache_time }}<br>{{ /if }}
+                {{ if _bundlephobia_fetch_time }}Fetch Time: {{ _bundlephobia_fetch_time }}<br>{{ /if }}
+                {{ if _bundlephobia_api_timestamp }}API Call Time: {{ _bundlephobia_api_timestamp }}<br>{{ /if }}
+                {{ if _bundlephobia_error }}Error: {{ _bundlephobia_error }}<br>{{ /if }}
+                Cache Driver: {{ _bundlephobia_cache_driver }}<br>
+                Success: {{ _bundlephobia_success ? 'Yes' : 'No' }}<br>
+                Environment: {{ config:app:env }}<br>
+                Version: {{ version }}<br>
+                Size: {{ size_gzip_kb }} kB
+            </div>
+        {{ /if }}
+    </div>
+{{ else }}
+    {{# Server-side data failed - use client-side loading as fallback #}}
+    <div class="rounded-lg border text-card-foreground bg-amp-gray-50 border-amp-gray-200 shadow-sm mb-8" 
+         data-bundle-package="{{package_name}}" 
+         data-bundle-loader="true"
+         data-environment="{{ config:app:env }}">
+        <div class="p-4">
+            <div class="flex items-center gap-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-package h-4 w-4 text-amp-gray-600">
+                    <path d="m7.5 4.27 9 5.15"></path>
+                    <path
+                        d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                    </path>
+                    <path d="m3.3 7 8.7 5 8.7-5"></path>
+                    <path d="M12 22V12"></path>
+                </svg>
+                <h3 class="font-medium text-amp-gray-900 text-sm m-0">
+                    <a href="https://npmjs.com/package/{{package_name}}" target="_blank">Package Information</a>
+                </h3>
+            </div>
+            <div class="space-y-2.5">
+                <div>
+                    <div class="text-xs text-amp-gray-500 mb-1">Package Name</div>
+                    <code class="block font-mono text-xs bg-white px-2 py-1.5 rounded border border-amp-gray-200 text-amp-gray-700 w-full overflow-x-auto">{{package_name}}</code>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <div class="text-xs text-amp-gray-500 mb-1">Version</div>
+                        <div class="bundle-version">
+                            <div class="animate-pulse bg-amp-gray-200 h-5 w-16 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-amp-gray-500 mb-1">Size (gzip)</div>
+                        <div class="bundle-size">
+                            <div class="animate-pulse bg-amp-gray-200 h-5 w-12 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-{{/bundle_phobia}}
+{{ /if }}
+{{ /bundle_phobia }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const bundleCards = document.querySelectorAll('[data-bundle-loader]');
+    
+    // Skip if no cards need loading (server-side data was successful)
+    if (bundleCards.length === 0) return;
+    
+    bundleCards.forEach(async (card) => {
+        const packageName = card.dataset.bundlePackage;
+        const environment = card.dataset.environment;
+        
+        try {
+            let data;
+            let dataSource = 'unknown';
+            
+            // Only try Laravel API in local/development (NOT preview/production)
+            if (environment === 'local' || environment === 'development') {
+                try {
+                    const response = await fetch(`/api/bundle-phobia?package=${encodeURIComponent(packageName)}`);
+                    if (response.ok) {
+                        data = await response.json();
+                        if (data._bundlephobia_success) {
+                            dataSource = data._bundlephobia_cached ? 'laravel-cache' : 'laravel-live';
+                            updateBundleSuccess(card, data, dataSource);
+                            return;
+                        }
+                    }
+                } catch (apiError) {
+                    console.warn('Laravel API not available, falling back to direct BundlePhobia API');
+                }
+            } else {
+                console.log(`Skipping Laravel API for environment: ${environment}`);
+            }
+            
+            // Direct BundlePhobia API (works in all environments)
+            const response = await fetch(`https://bundlephobia.com/api/size?package=${encodeURIComponent(packageName)}`);
+            
+            if (response.ok) {
+                const directData = await response.json();
+                if (directData && directData.size) {
+                    // Transform direct API response to match our format
+                    const transformedData = {
+                        name: directData.name || packageName,
+                        version: directData.version || 'Latest',
+                        size_gzip_kb: directData.gzip ? Math.round(directData.gzip / 1024 * 100) / 100 : 'N/A'
+                    };
+                    dataSource = 'bundlephobia-direct';
+                    updateBundleSuccess(card, transformedData, dataSource);
+                    return;
+                }
+            }
+            
+            // Both APIs failed
+            showBundleError(card, packageName, 'Unable to fetch bundle data');
+            
+        } catch (error) {
+            console.warn('Bundle size fetch failed:', error);
+            showBundleError(card, packageName, 'Network error');
+        }
+    });
+    
+    function updateBundleSuccess(card, data, source) {
+        card.querySelector('.bundle-version').innerHTML = 
+            `<div class="font-medium text-amp-gray-900">${data.version}</div>`;
+        card.querySelector('.bundle-size').innerHTML = 
+            `<div class="font-medium text-amp-gray-900">${data.size_gzip_kb} kB</div>`;
+        
+        // Add source indicator
+        const sourceIndicator = getSourceIndicator(source, data);
+        card.querySelector('h3').innerHTML += sourceIndicator;
+        
+        // Mark as loaded
+        card.removeAttribute('data-bundle-loader');
+        card.setAttribute('data-bundle-loaded', 'true');
+    }
+    
+    function getSourceIndicator(source, data) {
+        switch (source) {
+            case 'laravel-cache':
+                return '<span class="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded" title="Data from Laravel cache">Cached</span>';
+            case 'laravel-live':
+                return '<span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded" title="Fresh data from Laravel">Live</span>';
+            case 'bundlephobia-direct':
+                return '<span class="ml-2 text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded" title="Direct from BundlePhobia API">Direct</span>';
+            default:
+                return '';
+        }
+    }
+    
+    function showBundleError(card, packageName, errorMessage) {
+        const flexContainer = card.querySelector('.flex.justify-between');
+        flexContainer.innerHTML = `
+            <div class="p-3 bg-white border border-amp-gray-200 rounded text-sm text-amp-gray-700 w-full">
+                <p class="m-0 mb-2"><strong>Bundle size information temporarily unavailable.</strong></p>
+                <p class="m-0 text-xs text-amp-gray-600">
+                    Visit <a href="https://bundlephobia.com/package/${packageName}" target="_blank" class="text-amp-blue-600 underline">BundlePhobia</a> 
+                    or <a href="https://npmjs.com/package/${packageName}" target="_blank" class="text-app-blue-600 underline">npm</a> 
+                    for current package details.
+                </p>
+            </div>
+        `;
+        
+        card.removeAttribute('data-bundle-loader');
+        card.setAttribute('data-bundle-loaded', 'error');
+    }
+});
+</script>
+

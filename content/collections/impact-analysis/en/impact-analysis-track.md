@@ -22,9 +22,6 @@ Use the Impact Analysis chart to:
 * Learn whether discovering a feature for the first time changes how often users take another, specific action
 * Determine if users who interacted with a new or changed feature are taking certain actions more frequently, relative to the time before they first used the new feature
 
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 

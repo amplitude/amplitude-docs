@@ -46,6 +46,12 @@ export default function () {
 
         const cleanSample = sample.replace(/\u00A0/g, '')
 
+        // Check if user has set an API key and replace it in the copied text
+        const userApiKey = localStorage.getItem('amplitude_api_key');
+        if (userApiKey && cleanSample.includes('AMPLITUDE_API_KEY')) {
+          return cleanSample.replace(/AMPLITUDE_API_KEY/g, userApiKey);
+        }
+
         return cleanSample
       }
     })

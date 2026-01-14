@@ -18,6 +18,10 @@ summary: 'Upload large amounts of event data.'
 ---
 ## Considerations
 
+{{partial:admonition type="note" heading="Rate limiting"}}
+Amplitude rate limits individual users (by Amplitude ID) that update their user properties more than 1800 times per hour. This limit applies to user property syncing and not event ingestion. Amplitude continues to ingest events, but may drop user property updates for that user.
+{{/partial:admonition}}
+
 - The JSON serialized payload must not exceed 20MB in size.
 - To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event has a device or user ID that's too short, the ID value is dropped from the event. If an event doesn't have a user or device ID, it may cause the API to reject the upload with a 400 error. You can change the minimum ID length using the `options` property.
 - Each API key can send up to 1000 events per second for any individual device ID or user ID. If you exceed that rate, the API rejects the upload, and gives a 429 response. Check the response summary for more information.
@@ -97,7 +101,7 @@ These properties belong to the request's body.
           "DataMonster"
         ]
       },
-      "app_version": "2.1.3", //[tl! collapse:start]
+      "app_version": "2.1.3", 
       "platform": "iOS",
       "os_name": "Android",
       "os_version": "4.2.2",
@@ -124,7 +128,7 @@ These properties belong to the request's body.
       "android_id": "BCCE52E7-03EE-321A-B3D4-E57123966239",
       "event_id": 23,
       "session_id": 1396381378123,
-      "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841" //[tl! collapse:end]
+      "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841" 
     }
   ]
 }
@@ -161,9 +165,10 @@ These properties belong to the `events` object.
 |      `language`       |                                                                                                                                                                                  <span class="optional">Optional</span>. String. The language set by the user.                                                                                                                                                                                  |
 |        `price`        |                                                                                                                          <span class="optional">Optional</span>. Float. The price of the item purchased. Required for revenue data if the revenue field isn't sent. You can use negative values for refunds.                                                                                                                           |
 |      `quantity`       |                                                                                                                                                              <span class="optional">Optional</span>. Integer. The quantity of the item purchased. Defaults to 1 if not specified.                                                                                                                                                               |
-|       `revenue`       |                                                                                                  <span class="optional">Optional</span>. Float. Revenue = (price * quantity). If you send all 3 fields of price, quantity, and revenue, then (price *  quantity) is used as the revenue value. You can use negative values to identify refunds.                                                                                                   |
+|       `revenue`       |                                                                                                  <span class="optional">Optional</span>. Float. `Revenue = (price * quantity)`. If you send all 3 fields of price, quantity, and revenue, then `(price *  quantity)` is used as the revenue value. You can use negative values to identify refunds.                                                                                                   |
 |      `productId`      |                                                                                                                                              <span class="optional">Optional</span>. String. An identifier for the item purchased. You must send a price and quantity or revenue with this field.                                                                                                                                               |
 |     `revenueType`     |                                                                                                                                           <span class="optional">Optional</span>. String. The type of revenue for the item purchased. You must send a price and quantity or revenue with this field.                                                                                                                                            |
+|     `currency`     |                                                                                                                                           <span class="optional">Optional</span>. String. The currency for the purchased item, specified as a 3-character uppercase [ISO 4217](https://www.iban.com/currency-codes) code (for example, USD, EUR).                                                                                                                                            |
 |    `location_lat`     |                                                                                                                                                                                <span class="optional">Optional</span>. Float. The current Latitude of the user.                                                                                                                                                                                 |
 |    `location_lng`     |                                                                                                                                                                                <span class="optional">Optional</span>. Float. The current Longitude of the user.                                                                                                                                                                                |
 |         `ip`          |     <span class="optional">Optional</span>. String. The IP address of the user. Use "$remote" to use the IP address on the upload request. Amplitude uses the IP address to reverse lookup a user's location (city, country, region, and DMA). Amplitude can drop the location and IP address from events once it reaches Amplitude servers. You can submit a request to Amplitude Support to configure this for you.     |

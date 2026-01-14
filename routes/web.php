@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::statamic('json', 'json', [
+Route::statamic('/docs/json', 'json', [
     'content_type' => 'json',
     'layout' => 'blank'
    
+]);
+
+Route::statamic('/docs/llms.txt', 'llms',[
+    'content_type' => 'text/plain',
+    'layout' => 'blank'
 ]);
 
 Route::permanentRedirect('/docs/cdp/audiences', '/docs/data/audiences');
@@ -28,3 +33,12 @@ Route::permanentRedirect('/docs/cdp/audiences/recommendations', '/docs/data/audi
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-build', '/docs/data/audiences/recommendations-build');
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-use', '/docs/data/audiences/recommendations-use');
 Route::permanentRedirect('/docs/cdp/audiences/third-party-syncs', '/docs/data/audiences/third-party-syncs');
+
+// Legacy Help Center redirects
+Route::permanentRedirect('/docs/hc/en-us/articles/360021252771-Manage-Data-', '/docs/data/amplitude-data-settings');
+
+// Experiment documentation redirects (DOC-921)
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing', '/docs/feature-experiment/advanced-techniques/bonferroni-correction');
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data', '/docs/feature-experiment/advanced-techniques/winsorization-in-experiment');
+Route::permanentRedirect('/docs/feature-experiment', '/docs/experiment-home');
+Route::permanentRedirect('/docs/web-experiment', '/docs/experiment-home');

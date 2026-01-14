@@ -52,7 +52,8 @@ import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser';
 
 amplitude.init('AMPLITUDE_API_KEY', {
   autocapture: {
-    elementInteractions: true
+    elementInteractions: true,
+    webVitals: true // Enable Core Web Vitals tracking
   }
 });
 
@@ -79,6 +80,8 @@ If your web app configures the strict Content Security Policy (CSP) for security
 | File downloaded | Captures when a user downloads a file from your site.                                          | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                                                                                           |
 | Element clicked | Captures when a user clicks an element on the page.                                            | Element Aria Label, Element Class, Element Hierarchy, Element Href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
 | Element changed | Captures form element interactions, such as changes a dropdown or inputs text into a text box. | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
+| Network request | Captures when the application makes a network request.                                         | URL, Request method, Status code, Duration, Request body size, Response body size, Session Replay ID (if enabled).                                                                                                                                                       |
+| Web vitals      | Captures Core Web Vitals performance metrics when the browser tab becomes hidden.              | Page domain, Page location, Page path, Page title, Page URL, LCP, FCP, INP, CLS, TTFB metrics with performance ratings and timing data.                                                                                                                                      |
 
 For more information, see Autocapture in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) documentation. 
 
@@ -124,20 +127,19 @@ The iOS SDK enables session tracking, and disables application lifecycle, screen
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions, .networkTracking] //[tl! ~~]
+    autocapture: [.sessions, .appLifecycles, .screenViews, .networkTracking] 
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[  //[tl! ~~]
-    AMPAutocaptureOptions.sessions,  //[tl! ~~]
-    AMPAutocaptureOptions.appLifecycles,  //[tl! ~~]
-    AMPAutocaptureOptions.screenViews,  //[tl! ~~]
-    AMPAutocaptureOptions.elementInteractions,  //[tl! ~~]
-    AMPAutocaptureOptions.networkTracking  //[tl! ~~]
-]]; //[tl! ~~]
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[  
+    AMPAutocaptureOptions.sessions,  
+    AMPAutocaptureOptions.appLifecycles,  
+    AMPAutocaptureOptions.screenViews,  
+    AMPAutocaptureOptions.networkTracking  
+]]; 
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -180,13 +182,12 @@ Amplitude(
 	Configuration(
 	 apiKey = AMPLITUDE_API_KEY,
 		context = applicationContext,
-		autocapture = autocaptureOptions { //[tl! ~~]
+		autocapture = autocaptureOptions { 
           +sessions               // or `+Autocapture.SESSIONS` [tl! ~~]
           +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` [tl! ~~]
           +deepLinks              // or `+Autocapture.DEEP_LINKS` [tl! ~~]
           +screenViews            // or `+Autocapture.SCREEN_VIEWS` [tl! ~~]
-          +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` [tl! ~~]
-    	} //[tl! ~~]
+    	} 
 	)
 )
 ```
@@ -194,12 +195,11 @@ Amplitude(
 {{partial:tab name="Java"}}
 ```java
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
-configuration.getAutocapture().addAll(Arrays.asList( //[tl! ~~]
-    AutocaptureOption.APP_LIFECYCLES, //[tl! ~~]
-    AutocaptureOption.DEEP_LINKS, //[tl! ~~]
-    AutocaptureOption.SCREEN_VIEWS, //[tl! ~~]
-    AutocaptureOption.ELEMENT_INTERACTIONS //[tl! ~~]
-)); //[tl! ~~]
+configuration.getAutocapture().addAll(Arrays.asList( 
+    AutocaptureOption.APP_LIFECYCLES, 
+    AutocaptureOption.DEEP_LINKS, 
+    AutocaptureOption.SCREEN_VIEWS
+)); 
 
 Amplitude amplitude = new Amplitude(configuration);
 ```

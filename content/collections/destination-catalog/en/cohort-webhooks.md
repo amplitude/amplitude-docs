@@ -11,12 +11,15 @@ updated_at: 1721766883
 integration_type:
   - cohorts
 ---
-Amplitude CDP’s cohort webhook allows you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
+Cohort webhooks allow you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
 
 ## Considerations
 
 - You must enable this integration in each Amplitude project you want to use it in.
 - You need a paid Amplitude plan to use Cohort Webhooks.
+- Cohort Webhooks send add or remove batches to the destination. Expect the destination to process each batch within 1–2 seconds (including network latency) to ensure Amplitude receives a 200 OK response within retry limits. If the destination doesn’t respond in time, the call times out and retries, which may result in duplicate payloads.
+- Amplitude recommends that you test destination endpoint latency with tools like Postman to confirm responses are within the expected window.
+- If processing takes longer, use an async API pattern that returns a 200 OK immediately and handles the payload asynchronously, for example with in-memory queues.
 
 ## Setup
 
@@ -199,11 +202,11 @@ Some webhook destinations would need a list of users as a batch. In the below ex
          "amplitude_My Test Cohort_7khm89cz": true
       },
       {
-         "user_id": "user_two@example.com"
+         "user_id": "user_two@example.com",
          "amplitude_My Test Cohort_7khm89cz": true
       },
       {
-         "user_id": "user_three@example.com"
+         "user_id": "user_three@example.com",
          "amplitude_My Test Cohort_7khm89cz": true
       }
     ]
@@ -220,7 +223,7 @@ Some webhook destinations would need a list of users as a batch. In the below ex
   - `cohort_name` string. The display name of the cohort.
   - `cohort_id` string. The unique identifier of the cohort.
   - `in_cohort` boolean. Show if this batch of users is entering/leaving the cohort.
-  - `compute_time` string. The time when Amplitude computes this update.
+  - `computed_time` string. The time Amplitude computes this update, represented as Unix epoch time in seconds (for example, `"1692206763"`).
   - `message_id` string. The unique identifier of this update message. When a retry happens, you can use this value to de-duplicate.
   - `users` list of JSON objects. The actual user payload.
     - `user_id` string. The Amplitude `user_id` of the user.

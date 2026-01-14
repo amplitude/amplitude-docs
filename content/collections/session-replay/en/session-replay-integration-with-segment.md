@@ -15,8 +15,8 @@ Session Replay supports other analytics providers. Follow the information below 
 - [Amplitude Classic destination (Cloud-mode)](#amplitude-classic-destination-cloud-mode)
 - [Troubleshoot Segment integration](#troubleshoot-segment-integration)
 
-{{partial:admonition type="warning" heading="Session Replay ID is a required property"}}
-To ensure that Session Replay implementations with Segment work as expected, add the `Session Replay ID` event property to your Segment tracking plan. Otherwise, Segment may block the property.
+{{partial:admonition type="note" heading="Replay Captured event"}}
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. Amplitude receives this event directly, it is not sent through Segment. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 {{/partial:admonition}}
 
 ### Amplitude (Actions) destination
@@ -57,19 +57,6 @@ segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   }
   next(payload);
 });
-
-// Add middleware to always add session replay properties to track calls
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
-  const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-  if (payload.type() === "track") {
-    payload.obj.properties = {
-      ...payload.obj.properties,
-      ...sessionReplayProperties,
-    };
-  }
-  
-  next(payload);
-});
 ```
 ### Amplitude Classic destination (Device-mode)
 
@@ -104,26 +91,13 @@ window.amplitude.getInstance().onInit(() => {
 
 // Add middleware to check if the session id has changed, 
 // and update the session replay instance
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const nextSessionId = window.amplitude.getInstance().getSessionId();
   const storedSessionId = cookie.get("analytics_session_id") || 0;
   if (storedSessionId < nextSessionId) {
     cookie.set("analytics_session_id", nextSessionId);
     sessionReplay.setSessionId(nextSessionId);
   }
-  next(payload);
-});
-
-// Add middleware to always add session replay properties to track calls
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
-  const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-  if (payload.type() === "track") {
-    payload.obj.properties = {
-      ...payload.obj.properties,
-      ...sessionReplayProperties,
-    };
-  }
-  
   next(payload);
 });
 ```
@@ -184,17 +158,12 @@ amplitude.track('event name')
 ```
 
 ### Troubleshoot Segment integration
-
-Ensure that `getSessionReplayProperties()` returns a valid value in the format as follows `cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244`. 
-
-The value provided by `getSessionReplayProperties()` represents the concatenation of `deviceId` and `sessionId` in the format `${deviceId}/${sessionId}`. 
-
 If the instance returns empty, your Segment middleware may not have populated the values for the Amplitude integration field `payload.obj.integrations['Actions Amplitude']`. If this happens, add the following `setTimeout` wrapper to ensure this field populate with a valid value.
 
 ```js
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
     const storedSessionId = getStoredSessionId()
-    setTimeout(() => { //[tl! ~~:2]
+    setTimeout(() => { 
       ... // Rest of the Segment integrations code
     }, 0) 
     next(payload)

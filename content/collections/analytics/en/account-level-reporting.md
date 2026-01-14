@@ -16,24 +16,18 @@ In Amplitude, the default level of reporting is the **individual user**, meaning
 
 The Amplitude Accounts add-on enables you to do exactly this, by giving you analytical capabilities at the **group** level.
 
-A group is an object that a set of users might belong to—such as a company of customers, a team of users, or a playlist with listeners. Analyzing at the group level helps you understand how specific accounts interact with your product, instead of just seeing the individual users in those companies.  
-
-### Feature availability
-
-This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
-
-* Use of this feature requires the Accounts add-on.
+A group is an object that a set of users might belong to—such as a company of customers, a team of users, or a playlist with listeners. Analyzing at the group level helps you understand how specific accounts interact with your product, instead of just seeing the individual users in those companies.  
 
 ## Before you begin
 
-* With the Accounts add-on, you are able to instrument up to five different group types per project. You can manage and remove groups using Amplitude Data.
+* With the Accounts add-on, you can instrument up to five different group types per project. You can manage and remove groups using Amplitude Data.
 * Account-level properties have a limit of 1000 per project.
 * Changes to account groups and group properties apply to new data moving forward, and don't affect historical data.
-* To [instrument account-level reporting in Amplitude, see our Help Center documentation](/docs/analytics/account-level-reporting-setup).
+* To [instrument account-level reporting in Amplitude, refer to the Help Center documentation](/docs/analytics/account-level-reporting-setup).
 
 ## Group-level reporting: An overview
 
-Once you've [set up groups](/docs/analytics/account-level-reporting-setup), Amplitude includes them in a drop-down list in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments). From there, you can report at the group level instead of the individual user level.
+After you [set up groups](/docs/analytics/account-level-reporting-setup), Amplitude includes them in a drop-down list in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments). From there, you can report at the group level instead of the individual user level.
 
 ![account_level_reporting_1.png](/docs/output/img/analytics/account_level_reporting_1.png)
 
@@ -76,16 +70,14 @@ There are two usages of groups in experiment:
 1. What property do you want to randomize on  
 2. What unit you want to analyze on  
 
-For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you are analyzing an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they are part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
+For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you analyze an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they're part of the same company. Refer to [how to evaluate groups and group properties](/docs/feature-experiment/data-model#users) for more details. Refer to [setting the bucketing unit](/docs/feature-experiment/overview) for configuration instructions.
 {{/partial:admonition}}
 
 ### Create group-level behavioral cohorts
 
 To create a group-level [behavioral cohort](/docs/analytics/behavioral-cohorts), use the dropdown on the left to specify if you want to create a cohort out of one of your groups.
 
-![account_level_group_behavioral_cohorts.png](/docs/output/img/analytics/account_level_group_behavioral_cohorts.png)
-
-For example, we can create a behavioral cohort of companies who triggered the event `Create customized report`, and apply that cohort to a Retention Analysis chart to see the differences in retention between companies that fired that event versus companies that didn't.
+For example, you could create a behavioral cohort of companies who triggered the event `Create customized report`. Then, apply that cohort to a Retention Analysis chart to view the differences in retention between companies that fired that event versus companies that didn't.
 
 You can also import a cohort of groups from a file. The file must contain exactly one group name per line. 
 
@@ -103,36 +95,25 @@ Then use Microscope to view the groups in the last step's drop-off, or download 
 
 ## Explore the behavior of a specific account
 
-Accounts allow you to drill into a single group’s behavior, much like the User Activity section. 
-
-![image1.png](/docs/output/img/analytics/image1.png)
-
-In this example, the group type is `org id`, and the group value is `12345678` (listed under *Group Name*).
+Accounts enable you to drill into a single group’s behavior, much like the User Activity section. 
 
 To access the Accounts tab:
 
-1. Click *User Look-Up*.
-2. Click the *Account* toggle.
-3. Click one or all of the groups you have instrumented.
-4. Optionally, search for a specific group or group property.
+1. Click *User > Group Profiles*.
+2. Click any of the groups you have instrumented.
+3. Optionally, search for a specific group or group property.
 
 Group property searches must follow the syntax of `name = value`. These searches only cover groups that have been active in the last six months. Amplitude searches across all historical values held by the property, and not just most recent group property value. Use quotes for multi-word strings. Avoid delimiters like commas or semi-colons whenever possible. Spaces are optional.
 
 Clicking on an account takes you to that account’s page, where you can view the account’s properties and activities.
 
-![account-profile.png](/docs/output/img/analytics/account-profile.png)
-
 Find the account’s most recent properties in the top panel. Set the account's properties with one of the following:
 
 - the [Group Identify API](/docs/apis/analytics/group-identify)
-- the [Salesforce integration](/docs/data/source-catalog/salesforce)
+- the [Salesforce integration](/docs/data/source-catalog/salesforce-group)
 - Event Segmentation to create dynamic properties. 
 
 Use these properties to describe the account as whole (for example, `30 day active users`, `account manager`, `plan type`, or `renewal date`)
-
-If you're using the User Look-up to verify events and the properties set with them, they aren't visible in the *Info* view. You can find them by clicking *Raw* instead.
-
-![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI.png)
 
 ## Set properties at the group level
 
@@ -146,14 +127,14 @@ You can turn your KPIs into dynamically updating group properties. Add group pro
 
 	Dynamic properties aren't supported on frequency and property distribution metrics, or on custom formulas.
 
-2. **Determine time interval:** Set the time interval you would like to update the group property on. For example, a rolling window of “last 7 day active users” updates every day, while “weekly active users” updates once every calendar week.
+2. **Determine time interval:** Set the time interval you would like to update the group property on. For example, a rolling window of "last 7 day active users" updates every day, while "weekly active users" updates after every calendar week.
 	
     Dynamic properties aren't supported on static time ranges.
 
 3. **Name group property:** Choose your group type and name for the group property.
 
-	Editing the chart used to create the dynamic group property doesn't affect the property.
+	Editing the chart that creates the dynamic group property doesn't affect the property.
 
 ### Create group properties using the Salesforce integration
 
-To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.
+To learn how to create **group properties** using Amplitude's Salesforce integration, refer to [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.

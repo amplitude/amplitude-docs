@@ -42,6 +42,11 @@
                                     <li><a href="{{ url }}">{{ title }}</a></li>
                                 {{ /plugins }}
                             {{ /if }}
+                            {{ if privacy_guide }}
+                                {{ privacy_guide }}
+                                    <li><a href="{{ url }}">{{ title }}</a></li>
+                                {{ /privacy_guide }}
+                            {{ /if }}
                         </ul>
                     </div>
                 {{ /collection }}

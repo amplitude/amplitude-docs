@@ -11,12 +11,16 @@ landing_blurb: "Learn how surveys can improve the feedback you get from your use
 ---
 Surveys are a source of user feedback. Like [guides](/docs/guides-and-surveys/guides), they feature a more targeted way to collect thoughts from your users, and increase the percentage of those thoughts that you capture.
 
+Surveys support advanced [conditional logic](/docs/guides-and-surveys/guides/conditional-logic) based on both survey responses and user properties, enabling you to branch survey paths and create personalized follow-up questions.
+
 ## Survey templates
 
-Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-overview#guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Guides includes the following templates:
+Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-overview#guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Surveys include the following templates:
 
-| Template      | Use case                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| NPS           | Capture customer satisfaction and loyalty by measuring the likelihood of that user recommending your product or feature. |
-| User feedback | Define your own questions to collect detailed input from your users.                                                     |
-| Rating        | Gather initial reactions to help you evaluate product experiences.                                                       |
+| Template       | Use case                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| NPS            | Capture customer satisfaction and loyalty by measuring the likelihood of that user recommending your product or feature. |
+| User feedback  | Define your own questions to collect detailed input from your users.                                                     |
+| Rating         | Gather initial reactions to help you evaluate product experiences.                                                       |
+| Banner Survey  | Provide any custom survey experience with the Banner form factor.                                                        |
+| Tooltip Survey | Provide any custom survey experiences with the Tooltip form factor.                                                      |

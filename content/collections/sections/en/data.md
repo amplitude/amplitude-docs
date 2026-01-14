@@ -13,7 +13,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328444
 nav_title: data
 template: landing-page
-current-collection: data|warehouse_native_amplitude
+current-collection: data|warehouse_native_amplitude|cdp|audiences|sources|destination-catalog|pii_integrations|source-catalog|sources
 exclude_from_sitemap: false
 academy_course:
   - dac76bfe-1d9f-49a5-bc64-7e2f45fb9719

@@ -22,38 +22,32 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze
 ## Considerations
 
 - You must enable this integration in each Amplitude project you want to use it in.
-- You need a paid Amplitude plan to enable this integration.
-- For more details on using this integration in Braze, see the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
+- For more details on using this integration in Braze, go to the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
-- Amplitude sends email alerts for job success and failures, keeping you informed about the status of your cohort syncs.
+- Identified users can be matched by either their `external_id` or an alias. Anonymous users can be matched by their `device_id`. Identified users who were originally created as anonymous users can't be identified by their `device_id` and must be identified by their `external_id` or alias.
 
 ## Prerequisites
 
 To configure a cohort integration from Amplitude to Braze, you need the following information from Braze:
 
-1. Data Import Key
+1. Data Import Key (Braze REST API key)
  
     - In Braze, click **Partner Integrations** then click on **Amplitude** and **Generate New Key**. 
-    - See [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/#step-1-get-the-braze-data-import-key) for more detail.
+    The Data Import Key is the Braze REST API key mentioned in Braze's documentation.
+    - Go to [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/#step-1-get-the-braze-data-import-key) for more detail.
 
 2. Endpoint: the endpoint for the REST operations 
 
      - In Braze, click on **Partner Integrations** and click **Amplitude**.
-     - It looks like: `https://rest.iad-##.braze.com`. See the [Braze documentation](https://www.braze.com/docs/api/basics/#endpoints) to find your endpoint.
-
-3. App Group REST API Key
-   
-     - In Braze, click **Settings**, click **API Keys** and then click **Create New API Key** OR choose an existing API key.
-     - Find this in your Braze Developer Console. See the [Braze documentation](https://www.braze.com/docs/api/basics/#rest-api-key) for more detail.
+     - It looks like: `https://rest.iad-##.braze.com`. Go to the [Braze documentation](https://www.braze.com/docs/api/basics/#endpoints) to find your endpoint.
 
 ## Amplitude setup 
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Braze**.
-3. Enter your App Group REST API key, select your endpoint, and paste your Data Import Key.
-4. Select an Amplitude user property and a Braze target object.
-  * If you select **User alias** as the target object,  add a **User alias label**.
-  * If you select a target object other than **User alias**, don't enter a **User alias label** .
+3. Select your endpoint and paste your Data Import Key.
+4. Select the Amplitude and Braze properties to map users to. 
+  * If you select **User alias** as the target object, add a **User alias label**. Otherwise, you can leave it empty.
 6. When finished, save.
 
 ## Send a cohort
@@ -77,8 +71,8 @@ To sync your first cohort, follow these steps:
 
 Amplitude automatically sends email alerts for cohort sync jobs:
 
-- **Success notifications**: Receive confirmation when your cohort sync to Braze completes successfully
-- **Failure notifications**: Get alerted when a sync job fails, allowing you to quickly address any issues
+- **Success notifications**: Receive confirmation when your cohort sync to Braze completes successfully.
+- **Failure notifications**: Get alerted when a sync job fails, allowing you to address any issues.
 
 These notifications help you monitor the status of your cohort syncs without having to manually check the platform.
 

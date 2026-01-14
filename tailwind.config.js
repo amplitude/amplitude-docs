@@ -13,7 +13,7 @@ module.exports ={
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
+                'sans': ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
                 'IBMPlex': ['IBM Plex Sans', 'sans-serif'],
                 'IBMPlexMono': ['"IBM Plex Mono"',],
                 'Gellix': ['Gellix', 'sans-serif'],
@@ -171,6 +171,15 @@ module.exports ={
             typography: {
                 DEFAULT: {
                     css: {
+                        'pre code::before': { content: 'none' },
+                        'pre code::after':  { content: 'none' },
+                        td: {
+                            'vertical-align': 'top'
+                        },
+                        'td p': {
+                            marginTop: '0',
+                            marginBottom: '0'
+                        },
                         code: {
                             'color': '#2a2f45',
                             'background': '#f7fafc',
@@ -204,6 +213,7 @@ module.exports ={
                         h4: {
                             'font-weight': '400',
                             'cursor': 'pointer',
+                            'font-size': '18px',
                         },
                         h5: {
                             'font-weight': '400',

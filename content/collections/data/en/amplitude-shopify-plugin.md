@@ -8,16 +8,16 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1729791421
 ---
 
-[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, customize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
+[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, /docs/feature-experiment/workflow/createcustomize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
 
 The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you to bring data from your Shopify store into Amplitude, unlocking valuable insights from funnel analytics, user behavior trends and charts, ROI analysis, Session Replay and more.
 
 ## Overview
 
-The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment).
+The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 {{partial:admonition type="warning" heading="Shopify and flickering"}}
-The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
+The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](/docs/web-experiment/implementation#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
 {{/partial:admonition}}
 
 The Shopify plugin captures Amplitude's default events, including [marketing attribution](/docs/sdks/analytics/browser/browser-sdk-2#track-marketing-attribution) and Shopify's standard [events](https://shopify.dev/docs/api/web-pixels-api/standard-events).
@@ -26,11 +26,11 @@ The Shopify plugin captures Amplitude's default events, including [marketing att
 
 | Event                            | Source    | Properties                                                                                                                                                                                                                                                                |
 | -------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Page viewed                      | Amplitude | Page counter, Page domain, Page location, Page path, Page title, Page URL, Session Replay ID (if enabled), Referrer, [Attribution](#marketing-attribution), [User properties](#user-properties).                                                                          |
-| Start session                    | Amplitude | Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                                      |
-| End session                      | Amplitude | [User properties](#user-properties).                                                                                                                                                                                                                                      |
-| Form started                     | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
-| Form submitted                   | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
+| Page viewed                      | Amplitude | Page counter, Page domain, Page location, Page path, Page title, Page URL, Session Replay ID (if enabled), Referrer, [Attribution](/docs/sdks/analytics/browser/browser-sdk-2#track-marketing-attribution), [User properties](/docs/sdks/analytics/browser/browser-sdk-2#user-properties).                                                                          |
+| Start session                    | Amplitude | Session Replay ID (if enabled), [User properties](/docs/sdks/analytics/browser/browser-sdk-2#user-properties).                                                                                                                                                                                                      |
+| End session                      | Amplitude | [User properties](/docs/sdks/analytics/browser/browser-sdk-2#user-properties).                                                                                                                                                                                                                                      |
+| Form started                     | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](/docs/sdks/analytics/browser/browser-sdk-2#user-properties).                                                                                                                                                                                    |
+| Form submitted                   | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](/docs/sdks/analytics/browser/browser-sdk-2#user-properties).                                                                                                                                                                                    |
 | File downloaded                  | Amplitude | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                                                                                           |
 | Element clicked                  | Amplitude | Element Aria Label, Element Class, Element Hierarchy, Element href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
 | Element changed                  | Amplitude | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
@@ -84,3 +84,11 @@ The method you use to install the Shopify plugin depends on if you have an exist
 2. Select the project within your organization that you want to connect to Shopify.
 3. Find the Project's API key and copy it.
 4. Return to the Amplitude Settings screen in Shopify, enter the API key, and click **Connect**.
+
+### Configure Session Replay sample rates
+
+1. Log in to Amplitude as a manager and navigate to your organization's settings.
+2. click **Session Replay & Heatmaps** in the sidebar.
+3. Select the project that matches the API key you used to install the Shopify app.
+5. Input the sample rate you want under the Sampling section.
+6. Save the settings.

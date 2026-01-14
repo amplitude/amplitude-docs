@@ -5,6 +5,10 @@
 <head>
   <meta name='zd-site-verification' content='od3rs5oc4ggcruhipz6rp' />
   <meta charset="utf-8">
+  {{if hide_from_search}}
+  <meta name="robots" content="noindex, nofollow">
+  {{/if}}
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="{{content | strip_tags | safe_truncate(100)}}" name="description">
@@ -22,16 +26,34 @@
   {{else}}
   {{partial:partials/schema/webpage}}
   {{/if}}
+    <style>
+    /* Prism’s critical code-block styles only */
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #2a2a2a;
+      background: #f5f2f0;
+      font-family:"IBM Plex Mono", Consolas, Menlo, monospace;
+      font-size: 0.9em;
+      white-space: pre;
+      /* …etc, just the essentials… */
+    }
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
   <link href="{{ mix src='/docs/css/site.css' }}" rel="stylesheet">
   <link href="{{ mix src='/docs/css/algolia.css' }}" rel="stylesheet">
+  <link href="{{ mix src='/docs/css/dracula-prism.css' }}" rel="stylesheet">
+<style>
+      pre[class*="language-"] code p {
+  all: unset;        /* removes default block-level margins/padding */
+  display: inline;   /* flow as if it were plain text */
+}
+</style>
   <script src="{{ mix src='/docs/js/site.js' }}"></script>
+  <script type="module" src="{{ mix src='/docs/js/side-nav.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://93SYI9HL20-dsn.algolia.net" crossorigin />
-<script>
-  (function(){let k=window.Kapa;if(!k){let i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};window.Kapa=i}})();
-</script>
+  <script src="https://unpkg.com/@amplitude/experiment-js-client@1.9.0/dist/experiment.umd.js"></script>
   <style>
     [x-cloak] {
       display: none !important;
@@ -55,7 +77,11 @@
     }
   </style>
   {{partial:partials/_amplitude}}
-
+<!-- Preload consolidated glossary data -->
+{{# <link rel="preload" href="/docs/glossary-data.json" as="fetch" crossorigin> #}}
+{{if enable_math }}
+  {{partial:partials/katex-assets}}
+{{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800 scroll-pt-24">
   <div x-data="{ sidebarOpen: false }" class="container prose">
@@ -122,9 +148,6 @@
      
     </script>
 {{partial:partials/algolia-script}}
-{{if environment == 'production' }}
-{{partial:partials/kapa-script}}
-{{/if}}
 <script src="{{ mix src='/docs/js/site.js' }}"></script>
 <script src="{{ mix src='/docs/js/statuspage.js' }}"></script>
 {{if environment == "production"}}

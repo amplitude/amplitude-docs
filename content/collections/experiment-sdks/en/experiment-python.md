@@ -23,7 +23,7 @@ This documentation has separate sections for [remote](/docs/feature-experiment/r
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
+Implements fetching variants for a user using [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -98,7 +98,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging. | `false` |
+| `debug` | When `True`, sets the logger level to `DEBUG`. | `False` |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -170,7 +171,7 @@ experiment.fetch_async_v2(user, fetch_callback)
 {{partial:collapse name="Account-level bucketing and analysis (v1.3.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user using a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or using [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```python
 user = User(
@@ -202,7 +203,7 @@ variants = experiment.fetch_v2(user)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user using [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -231,7 +232,7 @@ pip install amplitude-experiment
 
 
 {{partial:admonition type="tip" heading="Quick start"}}
-1. [Initialize the local evaluation client.](#initialize_1)
+1. [Initialize the local evaluation client.](#initialize)
 2. [Start the local evaluation client.](#start)
 3. [Evaluate a user.](#evaluate)
 
@@ -262,7 +263,7 @@ variants = experiment.evaluate_v2(user)
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key in to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```python
@@ -275,7 +276,7 @@ Experiment.initialize_local(api_key, config = None) : LocalEvaluationClient
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
+Use the `flag_config_polling_interval_millis` [configuration](#configuration) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
 
 #### Configuration
@@ -290,7 +291,8 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 | <div class="big-column">Name</div> | Description                                                                                                             | Default Value                   |
 | --- |-------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| `debug` | Set to `True` to enable debug logging.                                                                                  | `False`                         |
+| `debug` | When `True`, sets the logger level to `DEBUG`.                                                                          | `False`                         |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`                                             | `ServerZone.US`                 |
 | `server_url` | The host to fetch flag configurations from.                                                                             | `https://api.lab.amplitude.com` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start)                                         | `30000`                         |
@@ -319,7 +321,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Start
 
-Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration_1) interval.
+Start the local evaluation client, pre-fetching local evaluation mode flag configs for [evaluation](#evaluate) and starting the flag config poller at the [configured](#configuration) interval.
 
 ```python
 start()
@@ -336,7 +338,7 @@ experiment.start()
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
+Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}
 
 ```python
@@ -377,6 +379,73 @@ experiment = Experiment.initialize_local("DEPLOYMENT_KEY", LocalEvaluationConfig
 ))
 ```
 
+## Custom logging
+
+Pass a custom `logging.Logger` instance to control logging behavior.
+
+### Custom logger
+
+Pass a custom `logging.Logger` instance to `RemoteEvaluationConfig` or `LocalEvaluationConfig`:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig, LocalEvaluationConfig
+
+# Create a custom logger
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+handler = logging.FileHandler('experiment.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+custom_logger.addHandler(handler)
+
+# Remote evaluation with custom logger
+remote_config = RemoteEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_remote('DEPLOYMENT_KEY', remote_config)
+
+# Local evaluation with custom logger
+local_config = LocalEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_local('DEPLOYMENT_KEY', local_config)
+```
+
+### Debug flag with default logger
+
+Without a custom logger, the `debug` flag controls the default logger's level:
+
+```python
+# Without custom logger, debug=False uses WARNING level
+config = RemoteEvaluationConfig(
+    debug=False
+)
+# Default logger level is WARNING
+
+# Without custom logger, debug=True uses DEBUG level
+config = RemoteEvaluationConfig(
+    debug=True
+)
+# Default logger level is DEBUG
+```
+
+With a custom logger, the `debug` flag is ignored and your logger maintains its configured level:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig
+
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+
+# Custom logger maintains its WARN level regardless of debug flag
+config = RemoteEvaluationConfig(
+    logger=custom_logger,
+    debug=True
+)
+# Logger level stays WARN (debug flag is ignored)
+```
+
 ## Access Amplitude cookies
 
 If you're using the Amplitude Analytics SDK on the client-side, the Python server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
@@ -385,20 +454,27 @@ If you're using the Amplitude Analytics SDK on the client-side, the Python serve
 import uuid
 from amplitude_experiment import AmplitudeCookie
 
-# grab amp device id if present
+# Get the cookie name for the Amplitude API key
+# For Browser SDK 2.0 cookies, use new_format=True:
+# amp_cookie_name = AmplitudeCookie.cookie_name('amplitude-api-key', new_format=True)
 amp_cookie_name = AmplitudeCookie.cookie_name('amplitude-api-key')
-device_id = nil
+device_id = None
+
+# Try to get device ID from existing cookie
 if request.cookies.get(amp_cookie_name):
   device_id = AmplitudeCookie.parse(request.cookies.get(amp_cookie_name)).device_id
+  # For Browser SDK 2.0: AmplitudeCookie.parse(request.cookies.get(amp_cookie_name), new_format=True).device_id
 
+# If no device ID found, generate a new one and set the cookie
 if device_id is None:
-  # deviceId doesn't exist, set the Amplitude Cookie
   device_id = str(uuid.uuid4())
   amp_cookie_value = AmplitudeCookie.generate(device_id)
-  resp.set_cookie(amp_cookie_name, {
-    "value": amp_cookie_value,
-    "domain": ".your-domain.com",  # this should be the same domain used by the Amplitude JS SDK
-    "httponly": False,
-    "secure": False
-  })
+  # For Browser SDK 2.0: AmplitudeCookie.generate(device_id, new_format=True)
+  response.set_cookie(amp_cookie_name, amp_cookie_value, 
+    domain='.your-domain.com',  # this should be the same domain used by the Amplitude JS SDK
+    httponly=False,
+    secure=False
+  )
 ```
+
+

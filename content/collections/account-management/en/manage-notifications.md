@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715292146
 ---
-In order to comply with GDPR and other user privacy regulations, Amplitude will send emails when we receive and process user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
+In order to comply with GDPR and other user privacy regulations, Amplitude sends emails when it receives and processes user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
 
 This feature is **applied at the project level**, and admin privileges are required to use it. Admins can control the following notification types:
 
@@ -19,11 +19,8 @@ This feature is **applied at the project level**, and admin privileges are requi
 * **Unset Violation**: email sent when SDK unset is not done
 * **All Notifications**: all of the above
 
-There must be at least one recipient per notification.
+There must be at least one recipient for each notification.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Enable user privacy notifications
 

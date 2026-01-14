@@ -1,0 +1,267 @@
+---
+description: Validate internal links use correct Statamic routes
+globs: content/**/*.md,*.md
+alwaysApply: false
+---
+# Link Validation
+
+Use this rule to check documentation files for incorrect internal link formats.
+
+## When to Use
+
+Invoke when someone asks:
+- "Validate links"
+- "Check links in this file"
+- "Are my links correct?"
+- "Fix broken links"
+
+## What to Check
+
+Scan the current file for these common link errors:
+
+### 1. Relative Paths with `../`
+
+**Pattern to find:**
+```markdown
+[text](../some-path/file.md)
+[text](../../another-path/file.md)
+```
+
+**Problem:** These break when files are moved and don't match Statamic's routing.
+
+**Solution:** Convert to web routes starting with `/docs/`.
+
+### 2. Markdown Extensions
+
+**Pattern to find:**
+```markdown
+[text](/docs/path/file.md)
+[text](file.md)
+```
+
+**Problem:** Web routes don't include `.md` extensions.
+
+**Solution:** Remove `.md` from all internal documentation links.
+
+### 3. File Paths Instead of Web Routes
+
+**Pattern to find:**
+```markdown
+[text](/content/collections/analytics/en/some-doc.md)
+[text](content/collections/analytics/en/some-doc.md)
+```
+
+**Problem:** These are repository paths, not web URLs.
+
+**Solution:** Convert to the collection's web route (e.g., `/docs/analytics/some-doc`).
+
+### 4. Missing `/docs/` Prefix
+
+**Pattern to find:**
+```markdown
+[text](/analytics/chart)
+[text](/data/audiences/cohorts)
+[text](/sdks/browser/installation)
+```
+
+**Problem:** Missing the `/docs/` prefix that all documentation routes require.
+
+**Solution:** Add `/docs/` before the route path.
+
+**Exception:** External links (starting with `http://` or `https://`) shouldn't have a `/docs/` prefix.
+
+## Output Format
+
+When checking links, provide a report in this format:
+
+```
+## Link Validation Report
+
+### ✅ Correct Links: [count]
+
+### ❌ Issues Found: [count]
+
+#### Issue 1: Relative path
+- **Line [number]:** `[text](../path/file.md)`
+- **Problem:** Uses relative path
+- **Suggested fix:** `[text](/docs/collection-path/file)`
+
+#### Issue 2: Markdown extension
+- **Line [number]:** `[text](/docs/analytics/chart.md)`
+- **Problem:** Includes .md extension
+- **Suggested fix:** `[text](/docs/analytics/chart)`
+
+#### Issue 3: Missing /docs/ prefix
+- **Line [number]:** `[text](/analytics/chart)`
+- **Problem:** Missing /docs/ prefix
+- **Suggested fix:** `[text](/docs/analytics/chart)`
+```
+
+## Validation Logic
+
+### Step 1: Extract All Links
+Find all markdown links in the format `[text](url)`.
+
+### Step 2: Categorize Links
+- **External links:** Start with `http://` or `https://` - skip validation
+- **Image links:** Point to `/docs/output/img/` or `statamic://asset::` - skip validation
+- **Anchor links:** Start with `#` - skip validation
+- **Internal doc links:** Everything else - validate these
+
+### Step 3: Check Internal Links
+For each internal documentation link, verify:
+1. ✅ Starts with `/docs/`
+2. ✅ Doesn't contain `../` or `./`
+3. ✅ Doesn't end with `.md`
+4. ✅ Doesn't contain `/content/collections/`
+5. ✅ Follows valid collection route patterns
+
+### Step 4: Suggest Corrections
+For invalid links:
+1. Identify the target file (if determinable from context)
+2. Look up the correct collection route
+3. Suggest the proper `/docs/` format
+
+## Common Corrections
+
+### Relative Path → Web Route
+
+❌ `[Lifecycle](../lifecycle/lifecycle-interpret.md)`  
+✅ `[Lifecycle](/docs/analytics/charts/lifecycle/lifecycle-interpret)`
+
+❌ `[Browser SDK](../../sdks/browser/browser-sdk-2.md)`  
+✅ `[Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)`
+
+### Remove .md Extension
+
+❌ `[API docs](/docs/apis/analytics/taxonomy.md)`  
+✅ `[API docs](/docs/apis/analytics/taxonomy)`
+
+### Add /docs/ Prefix
+
+❌ `[Settings](/admin/account-management/settings)`  
+✅ `[Settings](/docs/admin/account-management/settings)`
+
+### File Path → Web Route
+
+❌ `[Doc](/content/collections/analytics/en/chart.md)`  
+✅ `[Doc](/docs/analytics/chart)`
+
+## Auto-Fix Mode
+
+If someone asks to "fix links" (not just "check links"), make the corrections automatically:
+
+1. Identify all incorrect links
+2. Apply corrections
+3. Use the `search_replace` tool to fix each one
+4. Report what was changed
+
+## Special Cases
+
+### Guides and Surveys Collection
+This collection uses `{section}` in routes:
+- Route pattern: `/docs/guides-and-surveys/{section}/{slug}`
+- Example: `/docs/guides-and-surveys/customization/content-editor`
+
+### Anchors (OK to use)
+Links with anchors are valid:
+```markdown
+[Section heading](/docs/analytics/chart#specific-section)
+```
+
+### External Links (Don't validate)
+These are fine as-is:
+```markdown
+[Google](https://google.com)
+[GitHub](https://github.com/amplitude)
+```
+
+### Image Links (Don't validate)
+These use different paths:
+```markdown
+![Alt text](/docs/output/img/analytics/image.png)
+![Alt text](statamic://asset::help_center_conversions::folder/image.png)
+```
+
+## Confidence Levels
+
+When suggesting fixes, indicate confidence:
+
+**High confidence:** Link clearly points to a known collection
+```
+✅ `/docs/analytics/charts/lifecycle/lifecycle-interpret`
+```
+
+**Medium confidence:** Can infer collection, but verify the file exists
+```
+⚠️ `/docs/data/audiences/cohorts` (verify file exists)
+```
+
+**Low confidence:** Can't determine the correct collection
+```
+❓ Unable to determine correct route - specify the collection
+```
+
+## Integration with Other Rules
+
+This validation rule works with:
+- **statamic-routing.md:** Uses same route reference table
+- **new-feature-template.md:** Validates generated links
+- **All style rules:** Runs after style checks
+
+## Batch Mode
+
+If asked to "validate all links in multiple files":
+1. Process each file separately
+2. Combine results into summary report
+3. Group issues by type
+4. Prioritize critical issues (broken routes)
+
+## Example Validation Session
+
+**User:** "Validate links in this file"
+
+**Your response:**
+```
+## Link Validation Report for lifecycle-interpret.md
+
+### ✅ Correct Links: 2
+- Line 16: `/docs/analytics/charts/lifecycle/lifecycle-track-growth` ✓
+- Line 36: `/docs/analytics/charts/review-chart-data` ✓
+
+### ❌ Issues Found: 1
+
+#### Issue 1: Relative path with .md extension
+- **Line 58:** `[Growth chart](../lifecycle/lifecycle-growth.md)`
+- **Problem:** Uses relative path and includes .md extension
+- **Suggested fix:** `[Growth chart](/docs/analytics/charts/lifecycle/lifecycle-growth)`
+- **Confidence:** High
+
+Would you like me to fix this automatically?
+```
+
+## Tips for Users
+
+When the validation finds issues, also provide helpful tips:
+
+1. **Always start internal links with `/docs/`**
+2. **Never use relative paths** (`../`)
+3. **Never include `.md` extensions**
+4. **Check the collection's YAML file** for the correct route pattern
+5. **Use the statamic-routing.md reference table** for route mappings
+
+## Reporting Summary
+
+End each validation with a summary:
+
+```
+### Summary
+- Total links checked: [number]
+- Valid links: [number]
+- Issues found: [number]
+- External links (not checked): [number]
+- Image links (not checked): [number]
+
+All issues can be automatically fixed. Say "fix links" to apply corrections.
+```
+

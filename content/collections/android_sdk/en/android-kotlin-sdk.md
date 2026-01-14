@@ -21,6 +21,10 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
+## System requirements
+
+The Android Kotlin SDK supports Android API level 21 (Android 5.0 Lollipop) and higher.
+
 ## Install the SDK
 
 Amplitude recommends using Android Studio as an IDE and Gradle to manage dependencies.
@@ -51,38 +55,39 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 ## Configure the SDK
 
 {{partial:collapse name="Configuration options"}}
-| Name | Description | Default Value |
-| --- | --- | --- |
-| `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](./#device-id-lifecycle). | `null` |
-| `flushIntervalMillis` | `Int`. The amount of time SDK will attempt to upload the unsent events to the server or reach `flushQueueSize` threshold. The value is in milliseconds. | `30000` |
-| `flushQueueSize` | `Int`. SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `flushIntervalMillis` interval. | `30` |
-| `flushMaxRetries` | `Int`. Maximum retry times. | `5` |
-| `minIdLength` | `Int`. The minimum length for user id or device id. | `5` |
-| `partnerId` | `Int`. The partner id for partner integration. | `null` |
-| `identifyBatchIntervalMillis` | `Long`. The amount of time SDK will attempt to batch intercepted identify events. The value is in milliseconds | `30000` |
-| `flushEventsOnClose` | `Boolean`. Flushing of unsent events on app close. | `true` |
-| `callback` | `EventCallBack`. Callback function after event sent. | `null` |
-| `optOut` | `Boolean`. Opt the user out of tracking. | `false` |
-| ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)| `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
-| ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links. | `DefaultTrackingOptions(sessions = true)` |
-| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
-| `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
-| `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
-| `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
-| `useBatch` | `Boolean` Whether to use batch API. | `false` |
-| `useAdvertisingIdForDeviceId` | `Boolean`. Whether to use advertising id as device id. For more information, see [Advertiser ID](#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `Boolean`. Whether to use app set id as device id. For more information, see [Application ID](#app-set-id) for required module and permission. | `false` |
-| `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
-| `enableCoppaControl` | `Boolean`. Whether to enable COPPA control for tracking options. | `false` |
-| `instanceName` | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. | `$default_instance` |
-| `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](../android) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
-| `offline` | `Boolean \| AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](./#offline-mode) | `false` |
-| `storageProvider` | `StorageProvider`. Implements `StorageProvider` interface to store events. | `AndroidStorageProvider` |
-| `identifyInterceptStorageProvider` | `StorageProvider`. Implements `StorageProvider` interface for identify event interception and volume optimization. | `AndroidStorageProvider` |
-| `identityStorageProvider` | `IdentityStorageProvider`. Implements `IdentityStorageProvider` to store user id and device id. | `FileIdentityStorageProvider` |
-| `loggerProvider` | `LoggerProvider`. Implements `LoggerProvider` interface to emit log messages to desired destination. | `AndroidLoggerProvider` |
-| `newDeviceIdPerInstall` | Whether to generate different a device id every time when the app is installed regardless of devices. It's legacy configuration only to keep compatible with the old Android SDK. It works the same as `useAdvertisingIdForDeviceId`. | `false` |
-| `locationListening` | Whether to enable Android location service. Learn more [here](./#location-tracking). | `true` |
+| Name                                                                               | Description                                                                                                                                                                                                                                                                                                              | Default Value                                                                                                                                     |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `deviceId`                                                                         | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](#device-id-lifecycle).                                                                                                                                                                | `null`                                                                                                                                            |
+| `flushIntervalMillis`                                                              | `Int`. The amount of time SDK will attempt to upload the unsent events to the server or reach `flushQueueSize` threshold. The value is in milliseconds.                                                                                                                                                                  | `30000`                                                                                                                                           |
+| `flushQueueSize`                                                                   | `Int`. SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `flushIntervalMillis` interval.                                                                                                                                                                                    | `30`                                                                                                                                              |
+| `flushMaxRetries`                                                                  | `Int`. Maximum retry times.                                                                                                                                                                                                                                                                                              | `5`                                                                                                                                               |
+| `minIdLength`                                                                      | `Int`. The minimum length for user id or device id.                                                                                                                                                                                                                                                                      | `5`                                                                                                                                               |
+| `partnerId`                                                                        | `Int`. The partner id for partner integration.                                                                                                                                                                                                                                                                           | `null`                                                                                                                                            |
+| `identifyBatchIntervalMillis`                                                      | `Long`. The amount of time SDK will attempt to batch intercepted identify events. The value is in milliseconds                                                                                                                                                                                                           | `30000`                                                                                                                                           |
+| `flushEventsOnClose`                                                               | `Boolean`. Flushing of unsent events on app close.                                                                                                                                                                                                                                                                       | `true`                                                                                                                                            |
+| `callback`                                                                         | `EventCallBack`. Callback function after event sent.                                                                                                                                                                                                                                                                     | `null`                                                                                                                                            |
+| `optOut`                                                                           | `Boolean`. Opt the user out of tracking.                                                                                                                                                                                                                                                                                 | `false`                                                                                                                                           |
+| ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume.                                                                                                                                                                                                                | `false`                                                                                                                                           |
+| ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)       | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                                                                                                                                  | `DefaultTrackingOptions(sessions = true)`                                                                                                         |
+| `autocapture`                                                                      | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions.                                                                                                                                 | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture). |
+| `interactionsOptions`                                                              | `InteractionsOptions`. Configuration for granular control over frustration interaction tracking types (rage clicks and dead clicks).                                                                                                                                                                                     | `InteractionsOptions(rageClick = RageClickOptions(enabled = true), deadClick = DeadClickOptions(enabled = true))`                                |
+| `minTimeBetweenSessionsMillis`                                                     | `Long`. The amount of time for session timeout. The value is in milliseconds.                                                                                                                                                                                                                                            | `300000`                                                                                                                                          |
+| `serverUrl`                                                                        | `String`. The server url events upload to.                                                                                                                                                                                                                                                                               | `https://api2.amplitude.com/2/httpapi`                                                                                                            |
+| `serverZone`                                                                       | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config.                                                                                                                                                                                                             | `ServerZone.US`                                                                                                                                   |
+| `useBatch`                                                                         | `Boolean` Whether to use batch API.                                                                                                                                                                                                                                                                                      | `false`                                                                                                                                           |
+| `useAdvertisingIdForDeviceId`                                                      | `Boolean`. Whether to use advertising id as device id. For more information, see [Advertiser ID](#advertiser-id) for required module and permission.                                                                                                                                                                     | `false`                                                                                                                                           |
+| `useAppSetIdForDeviceId`                                                           | `Boolean`. Whether to use app set id as device id. For more information, see [Application ID](#app-set-id) for required module and permission.                                                                                                                                                                           | `false`                                                                                                                                           |
+| `trackingOptions`                                                                  | `TrackingOptions`. Options to control the values tracked in SDK.                                                                                                                                                                                                                                                         | `enable`                                                                                                                                          |
+| `enableCoppaControl`                                                               | `Boolean`. Whether to enable COPPA control for tracking options.                                                                                                                                                                                                                                                         | `false`                                                                                                                                           |
+| `instanceName`                                                                     | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance.                                                                                                                                       | `$default_instance`                                                                                                                               |
+| `migrateLegacyData`                                                                | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](/docs/sdks/analytics/android/android-sdk) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true`                                                                                                                                            |
+| `offline`                                                                          | `Boolean \| AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](#offline-mode)                                                                                                                                                                                 | `false`                                                                                                                                           |
+| `storageProvider`                                                                  | `StorageProvider`. Implements `StorageProvider` interface to store events.                                                                                                                                                                                                                                               | `AndroidStorageProvider`                                                                                                                          |
+| `identifyInterceptStorageProvider`                                                 | `StorageProvider`. Implements `StorageProvider` interface for identify event interception and volume optimization.                                                                                                                                                                                                       | `AndroidStorageProvider`                                                                                                                          |
+| `identityStorageProvider`                                                          | `IdentityStorageProvider`. Implements `IdentityStorageProvider` to store user id and device id.                                                                                                                                                                                                                          | `FileIdentityStorageProvider`                                                                                                                     |
+| `loggerProvider`                                                                   | `LoggerProvider`. Implements `LoggerProvider` interface to emit log messages to desired destination.                                                                                                                                                                                                                     | `AndroidLoggerProvider`                                                                                                                           |
+| `newDeviceIdPerInstall`                                                            | Whether to generate different a device id every time when the app is installed regardless of devices. It's legacy configuration only to keep compatible with the old Android SDK. It works the same as `useAdvertisingIdForDeviceId`.                                                                                    | `false`                                                                                                                                           |
+| `locationListening`                                                                | Whether to enable Android location service. Learn more [here](#location-tracking).                                                                                                                                                                                                                                       | `true`                                                                                                                                            |
 
 {{/partial:collapse}}
 
@@ -221,7 +226,7 @@ amplitude.track(event)
 Starting in release v1.7.0, the SDK batches `identify` events that contain only `set` operiatons. This results in fewer sent events and doesn't impact the running of the `set` operations. Use the `identifyBatchIntervalMillis` configuration setting to manage the interval at which the SDK flushes batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Use the Identify interface to declare the operations. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
 If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. 
@@ -245,15 +250,19 @@ Starting from release v1.18.0, the SDK can track more events without manual inst
 - Screen views
 - Deep links
 - Element interactions
+- Frustration interactions
+  - Rage clicks
+  - Dead clicks
 
 {{partial:collapse name="Autocapture options"}}
-| Name | Type | Enabled by default | Description |
-| --- | --- | --- | --- |
-| `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
-| `APP_LIFECYCLES` | `AutocaptureOption` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
-| `SCREEN_VIEWS` | `AutocaptureOption` | No | Enables screen and fragment views tracking. If the option is set, Amplitude tracks screen viewed and fragment viewed events. Event properties tracked includes: `[Amplitude] Screen Name`, `[Amplitude] Fragment Class`, `[Amplitude] Fragment Identifier`, `[Amplitude] Fragment Tag`. See [Track screen views](#track-screen-views) for more information. |
-| `DEEP_LINKS` | `AutocaptureOption` | No | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information. |
-| `ELEMENT_INTERACTIONS` | `AutocaptureOption` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with clickable elements. Event properties tracked includes: `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
+| Name                   | Type                | Enabled by default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------------------- | ------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SESSIONS`             | `AutocaptureOption` | Yes                | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information.                                                                                                                                                                           |
+| `APP_LIFECYCLES`       | `AutocaptureOption` | No                 | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
+| `SCREEN_VIEWS`         | `AutocaptureOption` | No                 | Enables screen and fragment views tracking. If the option is set, Amplitude tracks screen viewed and fragment viewed events. Event properties tracked includes: `[Amplitude] Screen Name`, `[Amplitude] Fragment Class`, `[Amplitude] Fragment Identifier`, `[Amplitude] Fragment Tag`. See [Track screen views](#track-screen-views) for more information.                                                                                                    |
+| `DEEP_LINKS`           | `AutocaptureOption` | No                 | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information.                                                                                                                                                                                                            |
+| `ELEMENT_INTERACTIONS` | `AutocaptureOption` | No                 | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with clickable elements. Event properties tracked includes: `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information.                     |
+| `FRUSTRATION_INTERACTIONS` | `AutocaptureOption` | No                 | Enables frustration interaction tracking. If the option is enabled, Amplitude tracks frustration interactions (Rage Clicks and Dead Clicks) with clickable UI elements. Rage Clicks generate the `[Amplitude] Rage Click` event and Dead Clicks generate the `[Amplitude] Dead Click` event. Review [Track frustration interactions](#track-frustration-interactions) for more information.                                                                        |
 
 {{/partial:collapse}}
 
@@ -274,10 +283,40 @@ val amplitude = Amplitude(
         +appLifecycles		  // or `+AutocaptureOption.APP_LIFECYCLES`
         +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
         +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
+        +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+        +frustrationInteractions // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
     }
   )
 )
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL` or the `addAll()` method:
+
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.AutocaptureOption
+
+// Using AutocaptureOption.ALL constant
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = AutocaptureOption.ALL
+    )
+)
+
+// Or using addAll() method with builder
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            addAll()
+        }
+    )
+)
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` automatically includes `AutocaptureOption.SESSIONS`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOption.SESSIONS` option.
@@ -302,13 +341,29 @@ import java.util.Arrays;
 
 Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
 configuration.getAutocapture().addAll(Arrays.asList(
+    AutocaptureOption.SESSIONS,
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS
+    AutocaptureOption.SCREEN_VIEWS,
+    AutocaptureOption.ELEMENT_INTERACTIONS,
+    AutocaptureOption.FRUSTRATION_INTERACTIONS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
 ```
+
+To enable all autocapture options, use `AutocaptureOption.ALL`:
+
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.AutocaptureOption;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().addAll(AutocaptureOption.ALL);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.getAutocapture()` automatically includes `AutocaptureOption.SESSIONS`.
 
 To prevent automatic session event capture, remove the `AutocaptureOption.SESSIONS` option from `autocapture`.
@@ -433,12 +488,12 @@ Amplitude amplitude = new Amplitude(configuration);
 After enabling this setting, Amplitude will track both `[Amplitude] Screen Viewed` and `[Amplitude] Fragment Viewed` events. Both of these events include a screen name property. For `[Amplitude] Fragment Viewed` events, Amplitude captures additional fragment-specific properties.
 
 {{partial:collapse name="Event properties descriptions"}}
-| Event property | Description |
-| --- | --- |
-| `[Amplitude] Screen Name` | The activity label, application label, or activity name (in order of priority). |
-| `[Amplitude] Fragment Class` | The fully qualified class name of the viewed fragment. |
-| `[Amplitude] Fragment Identifier` | The resource ID of the fragment as defined in the layout XML. |
-| `[Amplitude] Fragment Tag` | The unique identifier assigned to the fragment during a transaction. |
+| Event property                    | Description                                                                                                         |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `[Amplitude] Screen Name`         | The activity title, activity label, activity name, activity class name, or application name (in order of priority). |
+| `[Amplitude] Fragment Class`      | The fully qualified class name of the viewed fragment.                                                              |
+| `[Amplitude] Fragment Identifier` | The resource ID of the fragment as defined in the layout XML.                                                       |
+| `[Amplitude] Fragment Tag`        | The unique identifier assigned to the fragment during a transaction.                                                |
 
 {{/partial:collapse}}
 
@@ -481,17 +536,12 @@ After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Ope
 
 Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
 
-{{partial:admonition type="note" heading=""}}
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
-{{/partial:admonition}}
-
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
-  @OptIn(ExperimentalAmplitudeFeature::class)
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
@@ -501,7 +551,6 @@ val amplitude = Amplitude(
   )
 )
 ```
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is marked as `@ExperimentalAmplitudeFeature`. To enable this feature, apply the `@OptIn(ExperimentalAmplitudeFeature::class)` annotation to the configuration.
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
@@ -518,12 +567,102 @@ Amplitude amplitude = new Amplitude(configuration);
 When you enable this setting, Amplitude tracks the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application.
 
 {{partial:collapse name="Event properties descriptions"}}
+| Event property                | Description                                                                                                                                                                               |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `[Amplitude] Action`          | The action that triggered the event. Defaults to `touch`.                                                                                                                                 |
+| `[Amplitude] Target Class`    | The canonical name of the target view class.                                                                                                                                              |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in.                                                                                         |
+| `[Amplitude] Target Tag`      | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. This property is optional for Compose elements. |
+| `[Amplitude] Target Text`     | The text of the target view if the view is a `Button` instance.                                                                                                                           |
+| `[Amplitude] Target Source`   | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`.                                                                                              |
+| `[Amplitude] Hierarchy`       | A nested hierarchy of the target view's class inheritance, from the most specific to the most general.                                                                                    |
+| `[Amplitude] Screen Name`     | See [Track screen views](#track-screen-views).                                                                                                                                            |
+
+{{/partial:collapse}}
+
+{{partial:admonition type="info" heading="Support for Jetpack Compose"}}
+Amplitude tracks user interactions with all clickable UI elements implemented in Jetpack Compose. `Modifier.testTag` is optional. Add it to `@Composable` functions to provide additional identification in the `[Amplitude] Target Tag` property. If no `testTag` is provided, Amplitude tracks the element with other available properties.
+
+#### Use testTag for better element identification
+
+While `testTag` is optional, Amplitude recommends that you identify specific Compose views that users clicked. The `testTag` property provides several benefits:
+
+- **Precise Element Identification**: Helps distinguish between similar UI elements (like multiple buttons or cards) in your analytics data.
+- **Stable Tracking**: Provides a consistent identifier that doesn't change when you update or modify the UI structure or styling.
+- **Easier Analysis**: Enables easier filtering and analysis of interactions with specific elements in Amplitude charts.
+- **Cross-Platform Consistency**: Helps you to maintain consistent element naming across different platforms.
+
+```kotlin
+// Example: Adding testTag for better identification
+Button(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("login_button")
+) {
+    Text("Log In")
+}
+
+Card(
+    onClick = { /* handle click */ },
+    modifier = Modifier.testTag("product_card_${product.id}")
+) {
+    // Card content
+}
+```
+
+When a user clicks these elements, the `[Amplitude] Target Tag` property contains the `testTag` value, making it easy to identify which specific element was interacted with in your analytics data.
+{{/partial:admonition}}
+
+### Track frustration interactions
+
+Amplitude can track frustration interactions (Rage Clicks and Dead Clicks) with clickable UI elements in both Android Views and Jetpack Compose. To enable this option, include `AutocaptureOption.FRUSTRATION_INTERACTIONS` in the `autocapture` configuration.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions    // or `+AutocaptureOption.FRUSTRATION_INTERACTIONS`
+        }
+    )
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.FRUSTRATION_INTERACTIONS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+**Rage Click** is a click that occurs 4 or more times within 1 second on the same element, with each click no more than 50 device-independent pixels apart.
+
+When a Rage Click occurs, Amplitude tracks the `[Amplitude] Rage Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
 | Event property | Description |
 | --- | --- |
+| `[Amplitude] Begin Time` | The timestamp when the interaction began in ISO 8601 format. |
+| `[Amplitude] End Time` | The timestamp when the interaction ended in ISO 8601 format. |
+| `[Amplitude] Duration` | The duration of the interaction in milliseconds. |
+| `[Amplitude] Click Count` | The number of clicks that occurred. |
+| `[Amplitude] Clicks` | The array of clicks that occurred. |
+| `[Amplitude] Clicks[].X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Clicks[].Time` | The timestamp of the click in ISO 8601 format. |
 | `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
 | `[Amplitude] Target Class` | The canonical name of the target view class. |
 | `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
-| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. |
 | `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
 | `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
 | `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
@@ -531,8 +670,76 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Element Interact
 
 {{/partial:collapse}}
 
-{{partial:admonition type="info" heading="Support for Jetpack Compose"}}
-Amplitude supports tracking user interactions with UI elements implemented in Jetpack Compose. To track interactions, add a `Modifier.testTag` to the `@Composable` functions of the elements that you want to track.
+**Dead Click** is a user interaction on an interactive element that resulted in no visible change in the following 3 seconds.
+
+When a Dead Click occurs, Amplitude tracks the `[Amplitude] Dead Click` event.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] X` | The x-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Y` | The y-coordinate of the click from the top-left corner of the screen. |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target Class` | The canonical name of the target view class. |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function if provided. |
+| `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
+| `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+### Configure frustration interaction types
+
+Enabling `FRUSTRATION_INTERACTIONS` tracks both rage clicks and dead clicks. Use the `interactionsOptions` parameter to enable or disable each type individually.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.InteractionsOptions
+import com.amplitude.android.RageClickOptions
+import com.amplitude.android.DeadClickOptions
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = AMPLITUDE_API_KEY,
+        context = applicationContext,
+        autocapture = autocaptureOptions {
+            +frustrationInteractions
+        },
+        interactionsOptions = InteractionsOptions(
+            rageClick = RageClickOptions(enabled = true),
+            deadClick = DeadClickOptions(enabled = false)
+        )
+    )
+)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.android.InteractionsOptions;
+import com.amplitude.android.RageClickOptions;
+import com.amplitude.android.DeadClickOptions;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.FRUSTRATION_INTERACTIONS);
+configuration.setInteractionsOptions(
+    new InteractionsOptions(
+        new RageClickOptions(true),
+        new DeadClickOptions(false)
+    )
+);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" title="Dead clicks require Session Replay"}}
+To track dead clicks, enable both Session Replay and frustration interactions.
 {{/partial:admonition}}
 
 ## User groups
@@ -606,14 +813,14 @@ amplitude.revenue(revenue)
 
 ```
 
-| Name | Description |
-| --- | --- |
-| `productId` | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to `null`. |
-| `quantity` | Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1 |
-| `price` | Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`. |
-| `revenueType` | Optional, but required for revenue verification. String. The revenue type (for example, tax, refund, income). Defaults to `null`. |
-| `receipt` | Optional. String. The receipt identifier of the revenue. For example, "123456". Defaults to `null`. |
-| `receiptSignature` | Optional, but required for revenue verification. String. Defaults to `null`. |
+| Name               | Description                                                                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `productId`        | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to `null`. |
+| `quantity`         | Required. Integer. The quantity of products purchased. `revenue = quantity * price`. Defaults to 1                                     |
+| `price`            | Required. Double. The price of the products purchased, and this can be negative. `revenue = quantity * price`. Defaults to `null`.     |
+| `revenueType`      | Optional, but required for revenue verification. String. The revenue type (for example, tax, refund, income). Defaults to `null`.          |
+| `receipt`          | Optional. String. The receipt identifier of the revenue. For example, `123456`. Defaults to `null`.                                        |
+| `receiptSignature` | Optional, but required for revenue verification. String. Defaults to `null`.                                                               |
 
 ## Custom user identifier
 
@@ -820,11 +1027,11 @@ amplitude.add(networkPlugin);
 The default configuration tracks all hosts except `*.amplitude.com` with status code `500` to `599`.
 
 {{partial:collapse name="NetworkTrackingOptions.DEFAULT"}}
-| Name | Description | Value |
-| --- | --- | --- |
-| `captureRules` | Captures all hosts (except `*.amplitude.com`) with status code `500` to `599`. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
-| `ignoreHosts` | Don't ignore any other hosts by default. | `[]` |
-| `ignoreAmplitudeRequests` | Don't capture Amplitude requests by default. | `true` |
+| Name                      | Description                                                                    | Value                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `captureRules`            | Captures all hosts (except `*.amplitude.com`) with status code `500` to `599`. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
+| `ignoreHosts`             | Don't ignore any other hosts by default.                                       | `[]`                                                                                                                     |
+| `ignoreAmplitudeRequests` | Don't capture Amplitude requests by default.                                   | `true`                                                                                                                   |
 
 {{/partial:collapse}}
 
@@ -898,19 +1105,19 @@ amplitude.add(networkPlugin);
 {{/partial:tabs}}
 
 {{partial:collapse name="NetworkTrackingOptions"}}
-| Name |  Description | Default Value |
-| --- | --- | --- |
-| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `none` |
-| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` ignores all hosts, `["*.notmyapi.com", "notmyapi.com"]` ignores `notmyapi.com` and all subdomains. | `[]` |
-| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
+| Name                      | Description                                                                                                                                                                    | Default Value |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| `captureRules`            | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list.                                                        | `none`        |
+| `ignoreHosts`             | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` ignores all hosts, `["*.notmyapi.com", "notmyapi.com"]` ignores `notmyapi.com` and all subdomains. | `[]`          |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests.                                                                                                                                          | `true`        |
 
 {{/partial:collapse}}
 
 {{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
-| Name |  Description | Default Value |
-| --- | --- | --- |
-| `hosts` | The hosts to capture. Supports wildcard characters `*`. For example, `["*"]` matches all hosts, `["*.example.com", "example.com"]` matches `example.com` and all subdomains. | `none` |
-| `statusCodeRange` | The status code range to capture. For example, `(200..299) + 413 + (500..599)` | `"500-599"` |
+| Name              | Description                                                                                                                                                                  | Default Value |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `hosts`           | The hosts to capture. Supports wildcard characters `*`. For example, `["*"]` matches all hosts, `["*.example.com", "example.com"]` matches `example.com` and all subdomains. | `none`        |
+| `statusCodeRange` | The status code range to capture. For example, `(200..299) + 413 + (500..599)`                                                                                               | `"500-599"`   |
 
 {{/partial:collapse}}
 
@@ -941,19 +1148,19 @@ The SDK processes requests as follows:
 
 When the plugin tracks a network request, it sends an event with the type `[Amplitude] Network Request` with the following properties:
 
-| Property | Description |
-| --- | --- |
-| `[Amplitude] URL` | The URL of the network request with sensitive information masked. |
-| `[Amplitude] URL Query` | The query parameters of the URL. |
-| `[Amplitude] URL Fragment` | The fragment identifier of the URL. |
-| `[Amplitude] Request Method` | The HTTP method used for the request (GET, POST, etc.). |
-| `[Amplitude] Status Code` | The HTTP status code of the response. |
-| `[Amplitude] Error Message` | The local error message if the request failed with out a status code. |
-| `[Amplitude] Start Time` | The timestamp when the request started, in milliseconds since Unix epoch. |
-| `[Amplitude] Completion Time` | The timestamp when the request completed, in milliseconds since Unix epoch. |
-| `[Amplitude] Duration` | The duration of the request in milliseconds. |
-| `[Amplitude] Request Body Size` | The size of the request body in bytes. |
-| `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+| Property                         | Description                                                                 |
+| -------------------------------- | --------------------------------------------------------------------------- |
+| `[Amplitude] URL`                | The URL of the network request with sensitive information masked.           |
+| `[Amplitude] URL Query`          | The query parameters of the URL.                                            |
+| `[Amplitude] URL Fragment`       | The fragment identifier of the URL.                                         |
+| `[Amplitude] Request Method`     | The HTTP method used for the request (GET, POST, etc.).                     |
+| `[Amplitude] Status Code`        | The HTTP status code of the response.                                       |
+| `[Amplitude] Error Message`      | The local error message if the request failed with out a status code.       |
+| `[Amplitude] Start Time`         | The timestamp when the request started, in milliseconds since Unix epoch.   |
+| `[Amplitude] Completion Time`    | The timestamp when the request completed, in milliseconds since Unix epoch. |
+| `[Amplitude] Duration`           | The duration of the request in milliseconds.                                |
+| `[Amplitude] Request Body Size`  | The size of the request body in bytes.                                      |
+| `[Amplitude] Response Body Size` | The size of the response body in bytes.                                     |
 
 #### Privacy considerations
 
@@ -969,7 +1176,7 @@ Ensure that the configuration and payload are accurate and check for any unusual
 ### Log
 
 - Set the [log level](#log-level) to debug to collect useful information during debugging.
-- Customize `loggerProvider` class from the `LoggerProvider` and implement your own logic, such as logging error message in server in a production environment. For more information, see [Set log callback](#set-log-callback).
+- Customize `loggerProvider` class from the `LoggerProvider` and implement your own logic, such as logging error message in server in a production environment.
 
 
 ### Plugins
@@ -997,7 +1204,7 @@ Due to the way in which Amplitude manages sessions, there are scenarios where th
 
 - If a user doesn't return to the app, Amplitude does not track a session end event to correspond with a session start event.
 - If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-- If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
+- If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 
@@ -1214,26 +1421,26 @@ amplitude = AmplitudeKt.Amplitude(AMPLITUDE_API_KEY, getApplicationContext(), co
 
 Tracking for each field can be individually controlled, and has a corresponding method (for example, `disableCountry`, `disableLanguage`).
 
-| Method | Description |
-| --- | --- |
-| `disableAdid()` | Disable tracking of Google ADID |
-| `disableAppSetId()` | Disable tracking of App Set Id |
-| `disableCarrier()` | Disable tracking of device's carrier |
-| `disableCity()` | Disable tracking of user's city |
-| `disableCountry()` | Disable tracking of user's country |
-| `disableDeviceBrand()` | Disable tracking of device brand |
-| `disableDeviceModel()` | Disable tracking of device model |
-| `disableTrackDeviceManufacturer()` | Disable tracking of device manufacturer |
-| `disableDma()` | Disable tracking of user's designated market area (DMA). |
-| `disableIpAddress()` | Disable tracking of user's IP address |
-| `disableLanguage()` | Disable tracking of device's language |
-| `disableLatLng()` | Disable tracking of user's current latitude and longitude coordinates |
-| `disableOsName()` | Disable tracking of device's OS Name |
-| `disableOsVersion()` | Disable tracking of device's OS Version |
-| `disablePlatform()` | Disable tracking of device's platform |
-| `disableRegion()` | Disable tracking of user's region. |
-| `disableVersionName()` | Disable tracking of your app's version name |
-| `disableApiLevel` | Disable tracking of Android API level |
+| Method                             | Description                                                           |
+| ---------------------------------- | --------------------------------------------------------------------- |
+| `disableAdid()`                    | Disable tracking of Google ADID                                       |
+| `disableAppSetId()`                | Disable tracking of App Set Id                                        |
+| `disableCarrier()`                 | Disable tracking of device's carrier                                  |
+| `disableCity()`                    | Disable tracking of user's city                                       |
+| `disableCountry()`                 | Disable tracking of user's country                                    |
+| `disableDeviceBrand()`             | Disable tracking of device brand                                      |
+| `disableDeviceModel()`             | Disable tracking of device model                                      |
+| `disableTrackDeviceManufacturer()` | Disable tracking of device manufacturer                               |
+| `disableDma()`                     | Disable tracking of user's designated market area (DMA).              |
+| `disableIpAddress()`               | Disable tracking of user's IP address                                 |
+| `disableLanguage()`                | Disable tracking of device's language                                 |
+| `disableLatLng()`                  | Disable tracking of user's current latitude and longitude coordinates |
+| `disableOsName()`                  | Disable tracking of device's OS Name                                  |
+| `disableOsVersion()`               | Disable tracking of device's OS Version                               |
+| `disablePlatform()`                | Disable tracking of device's platform                                 |
+| `disableRegion()`                  | Disable tracking of user's region.                                    |
+| `disableVersionName()`             | Disable tracking of your app's version name                           |
+| `disableApiLevel`                  | Disable tracking of Android API level                                 |
 
 {{partial:admonition type="note" heading=""}}
 Using `TrackingOptions` only prevents default properties from being tracked on newly created projects, where data has not yet been sent. If you have a project with existing data that you want to stop collecting the default properties for, get help in the [Amplitude Community](https://community.amplitude.com/). Disabling tracking doesn't delete any existing data in your project.
@@ -1424,7 +1631,7 @@ String deviceId = amplitude.getDeviceId();
 {{/partial:tab}}
 {{/partial:tabs}}
 
-To set the device, see to [custom device ID](#custom-device-id).
+To set the device, see to [custom device ID](#custom-device-identifierentifier).
 
 ### Location tracking
 

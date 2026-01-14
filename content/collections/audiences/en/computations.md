@@ -85,4 +85,4 @@ For example, you can use a computed property to calculate the total number of or
 Amplitude Activation supports Braze, S3, and the Profile API as destinations for computed property syncs. The process of syncing to Braze accrues more data points in your Braze plan, which may result in an additional charge from Braze.
 {{/partial:admonition}}
 
-To sync your computed property with a personalization tool, follow the instructions in our article on [syncing properties, recommendations, and cohorts to third-party destinations](/docs/cdp/audiences/third-party-syncs).
+To sync your computed property with a personalization tool, follow the instructions in our article on [syncing properties, recommendations, and cohorts to third-party destinations](/docs/data/audiences/third-party-syncs).

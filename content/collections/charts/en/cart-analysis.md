@@ -1,13 +1,20 @@
 ---
-title: "Cart analysis: Use object arrays to drive behavioral insights"
-source: "https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights"
 id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
+blueprint: chart
+title: 'Cart analysis: Use object arrays to drive behavioral insights'
+source: 'https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights'
 this_article_will_help_you:
   - 'Unlock new insights by analyzing Amplitude data as object arrays'
+academy_course:
+  - f69fbb71-d49f-4fe8-aaef-9552a9dd52dc
+landing: false
+exclude_from_sitemap: false
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1760632878
 ---
-Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
+The cart analysis feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
-Once you set everything up, you have access and analyze these object arrays from within your chart. 
+After set up, you have access and analyze these object arrays from within your chart. 
 
 Likely use cases include:
 
@@ -21,9 +28,6 @@ Likely use cases include:
 Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysis charts.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
@@ -57,8 +61,8 @@ Here's a brief overview of the more important ideas that make cart analysis work
 * **Sibling property**: These are two or more child properties tied to the same parent event or user property. In the example above, `sku` and `price` are sibling properties.
 * **Property splitting**: This is the processing method Amplitude uses to split out nested child properties from parent properties in your data, after ingestion has occurred. The property splitting process preserves the parent properties.  
   
-{{partial:admonition type='note'}}
-Child properties count toward your property volume counts.
+{{partial:admonition type='note' heading="Child property limits"}}
+Child properties count toward your Event Property limit of 2000.
 {{/partial:admonition}}
 
 For advanced cart analysis operations on arrays of data, you can also use [parallel operators in derived properties](/docs/data/derived-properties#parallel-operators). These operators allow you to perform calculations like sums, products, and comparisons across sibling properties within the same parent array.
@@ -67,8 +71,10 @@ For advanced cart analysis operations on arrays of data, you can also use [paral
 
 Property splitting must be enabled before you can use object arrays for cart analysis. You can complete the process in Amplitude Data.
 
-{{partial:admonition type='note'}}
 Only project managers and admins can enable splitting. Portfolio projects don't support splitting.
+
+{{partial:admonition type="tip" heading=""}}
+It is recommended to enable both the `amplitude.Revenue()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
 {{/partial:admonition}}
 
 To enable property splitting, follow these steps:

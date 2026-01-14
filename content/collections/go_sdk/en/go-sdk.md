@@ -51,10 +51,10 @@ client := amplitude.NewClient(config)
 | `FlushMaxRetries` | `int`. The number of times the client retries an event when the request returns an error. | `12` |
 | `RetryBaseInterval` | `time.Duration`. Base interval between retries when the request returns an error. | `100 milliseconds`|
 | `RetryThrottledInterval` | `time.Duration`. Base interval between retries for throttled requests. | `30 seconds` |
-| `Logger` | Logger interface. The logger used by Amplitude client. | `[Go standard Logger](https://pkg.go.dev/log#Logger): log.Logger.`|
+| `Logger` | Logger interface. The logger used by Amplitude client. | [`Go standard Logger`](https://pkg.go.dev/log#Logger): `log.Logger`.|
 | `ServerZone` | `string`. The server zone of the projects. Supports EU and US. For EU data residency, change to EU. | `US` |
 | `ServerURL` | `string`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone` and `UseBatch`. If this field is set, then `ServerZone` and `UseBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `UseBatch` | `boolean`. Whether to use [batch api](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
+| `UseBatch` | `boolean`. Whether to use [batch api](/docs/apis/analytics/batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
 | `StorageFactory` | `function`. Used to create storage struct to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorage` |
 | `OptOut` | `bool`. Opt out option. If set to `true`, client doesn't process and send events.| `false` |
 | `ConnectionTimeout` | `time.Duration`. A time limit for API requests. | `10 seconds` |
@@ -277,16 +277,16 @@ client.Revenue(revenueObj, amplitude.EventOptions{UserID: "user-id"})
 
 ### Revenue Interface
 
-Name |  Type  |Description | Default
------|-------|--------------|--------
-ProductID (optional) | string | An identifier for the product. Amplitude recommends something like the Google Play Store product ID. | ""
-Quantity (optional) | int| The quantity of products purchased. Note: Revenue = Quantity * Price | 0
-Price (optional *required for revenue data if the revenue field isn't set) | float64 | The price of the products purchased. You can use negative values to indicate refunds. Note: Revenue = Quantity * Price | 0
-RevenueType (optional) | string| The revenue type (for example, tax, refund, income). | ""
-Receipt (optional) | string| The receipt identifier of the revenue. | ""
-ReceiptSig (optional) | string| The receipt signature of the revenue. | ""
-Properties (optional) | map[string]interface{}| An map of event properties to include in the revenue event.| nil
-Revenue (optional) | float64 | Use negative values to indicate refunds. Note: Revenue = Quantity * Price | 0
+| Name                                                                       | Type                   | Description                                                                                                            | Default |
+| -------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------- |
+| ProductID (optional)                                                       | string                 | An identifier for the product. Amplitude recommends something like the Google Play Store product ID.                   | ""      |
+| Quantity (optional)                                                        | int                    | The quantity of products purchased. `Revenue = Quantity * Price`                                                         | 0       |
+| Price (optional *required for revenue data if the revenue field isn't set) | float64                | The price of the products purchased. You can use negative values to indicate refunds. `Revenue = Quantity * Price` | 0       |
+| RevenueType (optional)                                                     | string                 | The revenue type (for example, tax, refund, income).                                                                   | ""      |
+| Receipt (optional)                                                         | string                 | The receipt identifier of the revenue.                                                                                 | ""      |
+| ReceiptSig (optional)                                                      | string                 | The receipt signature of the revenue.                                                                                  | ""      |
+| Properties (optional)                                                      | map[string]interface{} | An map of event properties to include in the revenue event.                                                            | nil     |
+| Revenue (optional)                                                         | float64                | Use negative values to indicate refunds. `Revenue = Quantity * Price `                                             | 0       |
 
 ## Flush
 

@@ -21,17 +21,17 @@ For example, imagine two holdout groups: 
 * **Holdout group 1**: This group contains **experiment A** and **experiment B**, with a holdout percentage of 5%.
 * **Holdout group 2**: The second group contains **experiment A** and **experiment C**, also with a holdout percentage of 5%.
 
-Since **experiment A** is part of both holdout groups (1 and 2), it will receive the majority of the total traffic: 
+Since experiment A is part of both holdout groups (1 and 2), it will receive the majority of the total traffic: 
 
-0.95 \* 0.95 = 0.9025 (90.25%)
+`0.95 * 0.95 = 0.9025 (90.25%)`
 
 Instead of adding an experiment to multiple holdout groups, create a single group with all the relevant experiments instead. This will allow for a more even distribution of traffic across experiments. 
 
-In the example above, you would create just **one** holdout group containing all three experiments (A, B, and C).
+In the example above, you would create one holdout group containing all three experiments (A, B, and C).
 
 ## Case 2: Handle experiments with holdout groups and mutual exclusion
 
-Adding an experiment to a holdout group **and** a mutual exclusion group can also further limit the amount of traffic to the experiment. Each user will be evaluated for both the holdout group **and** the mutual exclusion group.
+Adding an experiment to a holdout group as well as a mutual exclusion group can also further limit the amount of traffic to the experiment. Each user will be evaluated for both the holdout group and the mutual exclusion group.
 
 For example, imagine the following holdout group and mutual exclusion group: 
 
@@ -40,7 +40,7 @@ For example, imagine the following holdout group and mutual exclusion group: 
 
 In this scenario, experiment A receives about half of the total traffic:
 
-0.95 \* 0.5 = 0.475 (47.5%)
+`0.95 * 0.5 = 0.475 (47.5%)`
 
 Using holdout groups with mutual exclusion isn't forbidden, but be cautious of the potential traffic limits as you plan and roll out your experiments. 
 

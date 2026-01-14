@@ -1,0 +1,75 @@
+extends: capitalization
+message: "'%s' should use sentence-style capitalization."
+link: https://docs.microsoft.com/en-us/style-guide/capitalization
+level: suggestion
+scope: heading
+match: $sentence
+indicators:
+  - ':'
+exceptions:
+  - Amplitude
+  - Appfit
+  - API
+  - APIs
+  - Autocapture
+  - Azure
+  - Candu
+  - CLI
+  - Code
+  - Cosmos
+  - CRM
+  - CSM
+  - Databricks
+  - Docker
+  - Emmet
+  - Heatmap
+  - Heatmaps
+  - HTTP
+  - Scrollmap
+  - I
+  - JavaScript
+  - Jetbrains
+  - Kotlin
+  - KPI
+  - KPIs
+  - Kubernetes
+  - Linux
+  - macOS
+  - Marketplace
+  - Mixpanel
+  - Moloco
+  - MongoDB
+  - MTU
+  - MTUs
+  - NGINX
+  - OAuth
+  - Objective-C
+  - Optimizely
+  - Qualtrics
+  - REPL
+  - segmentIndex
+  - SDK
+  - SDKs
+  - SKU
+  - SKUs
+  - SLA
+  - SLAs
+  - SRM
+  - TypeScript
+  - UCD
+  - UUIDs
+  - URLs
+  - Viewport
+  - Visual
+  - VS
+  - VSCode
+  - Welltory
+  - Windows
+
+
+
+
+
+
+
+
