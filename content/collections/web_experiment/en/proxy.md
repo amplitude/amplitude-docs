@@ -7,7 +7,7 @@ updated_at: 1734984000
 ---
 
 
-Some organizations prefer not to load third-party experimentation scripts directly from vendor-hosted domains nor do they want to perform client-side experiment evaluation. They may not want to do this for a variety of reasons including security policies, privacy controls, or tighter infrastructure ownership.
+You may prefer not to load third-party experimentation scripts directly from vendor-hosted domains or want to perform client-side experiment evaluation. There could be a variety of reasons to not want this including security policies, privacy controls, or tighter infrastructure ownership.
 
 Proxy-based experimentation architecture lets teams retain full control over script delivery, evaluation, and exposure tracking while continuing to use a centralized experimentation platform.
 
