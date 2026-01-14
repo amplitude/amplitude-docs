@@ -38,7 +38,7 @@ To configure streaming from Amplitude to Braze, you need the following informati
 
 - **Braze API Endpoint**: The Braze endpoint for REST operations.
 - **Braze API Key**: The Braze API key used for authentication. Go to the [Braze documentation](https://www.braze.com/docs/api/basics/#rest-api-key) for help determining your endpoint or locating your API key.
-- **Braze App ID**: The Braze App ID for the app receiving Amplitude events. See the [Braze docs](https://www.braze.com/docs/api/identifier_types/#the-app-identifier-api-key) for help locating your app ID.
+- **Braze App ID**: The Braze App ID for the app receiving Amplitude events. Go to the [Braze docs](https://www.braze.com/docs/api/identifier_types/#the-app-identifier-api-key) for help locating your app ID.
 
 ### Create a new sync
 
