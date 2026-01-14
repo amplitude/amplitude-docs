@@ -3323,6 +3323,21 @@
       "source": "/docs/experiment/:path*",
       "destination": "/docs/feature-experiment/:path*",
       "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/remote-evaluaiton",
+      "destination": "/docs/feature-experiment/remote-evaluation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments",
+      "destination": "/docs/web-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments/(.*)",
+      "destination": "/docs/web-experiment/$1",
+      "statusCode": 301
     }
   ]
 }

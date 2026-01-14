@@ -80,7 +80,7 @@ If the difference between `server_received_time` and `client_upload_time` is les
 
 This occurs automatically for projects with a [project ID](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information) of 243704 or higher. To apply this 60-second cutoff time to an older project, contact Amplitude Support.
 
-[See this blog post for more detail](https://amplitude.com/blog/dont-trust-client-data).
+[Go to this blog post for more detail](https://amplitude.com/blog/dont-trust-client-data).
 {{/partial:admonition}}
 
 Daily exported files use `server_upload_time` and all dashboards use `event_time`. Queries on raw data should use `event_time`.
@@ -103,7 +103,7 @@ The *Cohorts* tab enables you to check if the user is in any of your project's c
 
 ### Experiments
 
-The Experiments tab shows any [feature experiments](/docs/feature-experiment/workflow/create) or [web experiments](/docs/web-experiment/set-up-a-web-experiment) of which the user is a part.
+The Experiments tab shows any [feature or web experiments](/docs/experiment-home) of which the user is a part.
 
 ### Flags
 

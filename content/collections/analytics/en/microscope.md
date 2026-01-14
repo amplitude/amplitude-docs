@@ -79,7 +79,7 @@ Microscope actions such as `View user streams` and `Create cohort` are not suppo
 
 ## View user streams
 
-When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can see individual user streams in aggregate by selecting *View User Streams*. All a user's events within the date range of the data point are visible here, as well as:
+When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can view individual user streams in aggregate by selecting *View User Streams*. All a user's events within the date range of the data point are visible here, as well as:
 
 * Up to 25 events **prior to** the beginning of the time range.
 * Up to 50 events **after** the start of the time range.
@@ -87,7 +87,7 @@ When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-se
 If you have a specific event selected, it's highlighted in the user's stream. You can also choose to show certain event properties as well. Click a user ID or any event in a user's stream to view their profile in the *[User Activity](/docs/analytics/user-data-lookup)* tab.
 
 {{partial:admonition type="note" heading=""}}
-Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to understand their ingested name and properties.
 {{/partial:admonition}}
 
 ### View Session Replay from a user's event stream
@@ -100,7 +100,7 @@ While using Microscope in a supported chart, click on *View User Streams*. Check
 
 In a funnel chart, click into any step after the initial event to enable the **Explore Conversion Drivers** feature. This allows you to explore events triggered **between** funnel steps for converted and dropped-off users.
 
-For more information, see [Amplitude's conversion drivers feature](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers).
+For more information, go to [Amplitude's conversion drivers feature](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers).
 
 ## Create a guide or survey from Microscope
 

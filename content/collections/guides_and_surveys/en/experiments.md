@@ -40,7 +40,7 @@ Adding variants is only the first part of experimentation in Guides and Surveys.
 
 1. Make sure the experiment is running. Define a goal, review targeting, and click *Start Experiment*. For more information, go to [Manage the experiment](#manage-the-experiment).
 2. If an specific user doesn't experience a variant, ensure they're part of the experiments target audience.
-3. If a user sees one variant, they should continue to experience that variant. Navigate to *Users > User Profiles*. Search for the user and open their profile. Look at the *Guide* and *Survey* tabs to view which experiences they've seen.
+3. If a user sees one variant, they should continue to receive that variant. Navigate to *Users > User Profiles*. Search for the user and open their profile. Look at the *Guide* and *Survey* tabs to view which experiences they've seen.
 {{/partial:admonition}}
 
 ### Manage the experiment
@@ -51,7 +51,7 @@ Click *Manage Experiment* to open the experiment editor in a new tab. The experi
 Variant names stay in sync between your guide or survey and the experiment when you save the guide or survey.
 {{/partial:admonition}}
 
-For more information about working with experiments, go to [Feature Experiment](/docs/feature-experiment/workflow/create)
+For more information about working with experiments, go to [Feature Experiment](/docs/feature-experiment/overview)
 
 {{partial:admonition type="tip" heading="Exposures and assignments"}}
 Exposure events in Guides and Surveys experiments work similarly to a standard experiment, but there are cases that can cause a uneven split between between control and variant exposures. The way in which you set targets and limits impacts the frequency with which treatment exposures occur.
@@ -87,7 +87,7 @@ Track guide and survey engagement trends over predefined time periods.
 * Monthly
 * Quarterly
 
-With these presets, you can monitor when users are most likely to engage with the guide or survey and if engagement changes after, for example, a new product release.
+With these presets, find when users are most likely to engage with the guide or survey and if engagement changes after, for example, a new product release.
 
 #### Date range selection
 
