@@ -13,6 +13,8 @@ Most AI Visibility functionality is available to everyone, with or without an Am
 
 For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
 
+AI Visibility reports run one time each week. Most changes you make to AI Visibility is applied when the report reruns. 
+
 ## Free visibility reports
 
 Free visibility reports are available to everyone on the Amplitude [Try AI Visibility](https://www.amplitude.com/try-ai-visibility) page of the website. 
@@ -39,12 +41,17 @@ The Overview tab contains high-level information about how your website is perfo
 
 ##### Updating languages and regions
 
-You can update the language and region settings for each brand that you're researching. Updating the language for a brand affects the generated prompts and responses. 
+You can update the language and region settings for each brand that you're researching. Updating the language for a brand affects the generated prompts and responses. Changes to the language settings take effect when the report reruns on its normal schedule.
+
+{{partial:admonition type="note" heading="Language considerations"}}
+If the prompts are written in English and you change the language settings, the prompts remain in English. The responses should be in the updated language. If you changed the language setting in the original setup and the prompts in the new langauge, the responses are returned in that same language.
+{{/partial:admonition}}
 
 1. Next to the brand drop-down menu, click the **Configuration** slider icon button. 
 2. Select the brand you want to modify.
 3. In the Region field, set the region you want. By default, this is set to **global**.
 4. In the Language field, specify the two-character language code. For example, if you want to set the brand to French, enter **FR**. By default, this is set to **EN** for English.
+For all possible language codes, go to [Language Codes](https://serpapi.com/google-languages). 
 5. Click **Save**.
 6. Close the Brand Settings window. 
  
@@ -53,6 +60,8 @@ You can update the language and region settings for each brand that you're resea
 The Prompts tab contains all the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
 
 You can filter individual AI models to investigate such as Claude, ChatGPT, or Gemini. You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
+
+If you change a prompt, that prompt reruns immediately. The rest of the report remains as-is until its regularly scheduled update.
 
 You can export all of these prompts to a CSV file for further analysis. Click **Export CSV** to download the exported file. 
 
