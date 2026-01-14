@@ -13,7 +13,7 @@ Most AI Visibility functionality is available to everyone, with or without an Am
 
 For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
 
-AI Visibility reports run one time each week. Most changes you make to AI Visibility is applied when the report reruns. 
+AI Visibility reports run one time each week. Changes made to AI Visibility are applied when the report reruns. 
 
 ## Free visibility reports
 
@@ -44,16 +44,16 @@ The Overview tab contains high-level information about how your website is perfo
 You can update the language and region settings for each brand that you're researching. Updating the language for a brand affects the generated prompts and responses. Changes to the language settings take effect when the report reruns on its normal schedule.
 
 {{partial:admonition type="note" heading="Language considerations"}}
-If the prompts are written in English and you change the language settings, the prompts remain in English. The responses should be in the updated language. If you changed the language setting in the original setup and the prompts in the new langauge, the responses are returned in that same language.
+If the prompts are in English and you change the language settings, the prompts remain in English. However, the responses should be in the updated language. If you configured the langauge during the original brand setup, most of the responses are returned in that same language.
 {{/partial:admonition}}
 
 1. Next to the brand drop-down menu, click the **Configuration** slider icon button. 
 2. Select the brand you want to modify.
 3. In the Region field, set the region you want. By default, this is set to **global**.
-4. In the Language field, specify the two-character language code. For example, if you want to set the brand to French, enter **FR**. By default, this is set to **EN** for English.
-For all possible language codes, go to [Language Codes](https://serpapi.com/google-languages). 
-5. Click **Save**.
-6. Close the Brand Settings window. 
+4. In the Language field, specify the two-character language code. For example, if you want to set the brand to French, enter **FR**. By default, this is **EN** for English.
+For all possible language codes, go to [Language Codes](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages). 
+1. Click **Save**.
+2. Close the Brand Settings window. 
  
 ## Prompts tab
 
