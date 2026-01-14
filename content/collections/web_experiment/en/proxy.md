@@ -9,7 +9,7 @@ updated_at: 1734984000
 
 You may prefer not to load third-party experimentation scripts directly from vendor-hosted domains or want to perform client-side experiment evaluation. There could be a variety of reasons to not want this including security policies, privacy controls, or tighter infrastructure ownership.
 
-Proxy-based experimentation architecture lets teams retain full control over script delivery, evaluation, and exposure tracking while continuing to use a centralized experimentation platform.
+Proxy-based experimentation architecture lets teams retain full control over script delivery, evaluation, and exposure tracking while using a centralized experimentation platform.
 
 This document outlines common proxy patterns and the key implementation details required to support them.
 
@@ -63,7 +63,7 @@ The SDK uses this base URL for all evaluation requests.
 
 ### Configuring the Web Experiment script
 
-Configure the Web Experiment script/SDK to call your new endpoint instead of the Amplitude-hosted URLs (`flag.lab.amplitude.com` or `flag.lab.eu.amplitude.com`). Put the following code above the Web Experiment script.
+Configure the Web Experiment script/SDK to call your new endpoint instead of the Amplitude-hosted URLs (`flag.lab.amplitude.com` or `flag.lab.eu.amplitude.com`). Enter the following code above the Web Experiment script.
 
 ```html
 <script>
@@ -129,8 +129,8 @@ The endpoint returns a JSON array of experiment flag objects pre-evaluated for t
 | Field    | Description                                                                                                                        |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | key      | Unique flag key identifying the experiment.                                                                                         |
-| segments | Targeting and bucketing rules pre-evaluated with the user’s properties. Conditions that are true are included; others are removed. |
-| variants | Available variants, including key, metadata, and web experiment actions (mutations, custom code, URL redirects).                   |
+| segments | Targeting and bucketing rules pre-evaluated with the user’s properties. Conditions that are true are included, others are removed. |
+| variants | Available variants including: key, metadata, and web experiment actions (mutations, custom code, URL redirects).                   |
 | metadata | Experiment metadata: version, deployment status, and re-run indicators.                                                             |
 
 ---
@@ -221,7 +221,7 @@ This lets you:
 * Unify event pipelines.
 * Make compliance with data governance policies easier.
 
-If you are already using Amplitude's Analytics SDK, you can update the tracking endpoint for the browser SDK through `serverUrl`.
+If you already use Amplitude's Analytics SDK, update the tracking endpoint for the browser SDK through `serverUrl`.
 
 If you are not using Amplitude's Analytics SDK, you can add the following script before the Web Experiment script.
 
