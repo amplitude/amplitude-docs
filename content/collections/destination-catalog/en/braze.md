@@ -42,10 +42,10 @@ To configure streaming from Amplitude to Braze, you need the following informati
 
 ### Create a new sync
 
-1. In Amplitude Data, click *Catalog* and select the *Destinations* tab.
-2. Select *Braze (Events · User Properties)* or filter by Type → Events.
-3. Select *Add Destination*.
-4. Enter a sync name, then click *Create Sync*.
+1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
+2. Select **Braze (Events · User Properties)** or filter by *Type > Events*.
+3. Select **Add Destination**.
+4. Enter a sync name, then click **Create Sync**.
 
 ### Enter credentials
 
@@ -57,7 +57,7 @@ To configure streaming from Amplitude to Braze, you need the following informati
 
 ### Configure mappings
 
-_This applies to both event and user forwarding._
+This applies to both event and user forwarding.
 
 1. Select an Amplitude user property that corresponds to your Braze user ID, from the left dropdown.
 2. Select the type of your Braze user ID, from the right dropdown.
@@ -68,16 +68,15 @@ _This applies to both event and user forwarding._
 
 ### Configure event forwarding
 
-Under **Send Events**, make sure the toggle is enabled ("Events are sent to Braze") if you want to stream events to Braze. When enabled, events are automatically forwarded to Braze when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
+Under Send Events, make sure the toggle is enabled ("Events are sent to Braze") if you want to stream events to Braze. When enabled, events are automatically forwarded to Braze when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in Braze.
-
+1. In Select and filter events choose which events you want to send. Choose only the events you need in Braze.
 
 {{partial:admonition type="warning" title="Events for anonymous users"}}
 Braze requires that all events have an identifier present. If you selected any events to send to Braze that may not have an identifier, add a filter to send only events where the identifier is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-1. (optional) In **Select additional properties**, select any more event and user properties you want to send to Braze. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Braze as [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties).
+2. (optional) In Select additional properties, select any more event and user properties you want to send to Braze. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Braze as [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties).
 
 ### Configure user forwarding
 
