@@ -22,7 +22,7 @@ rm composer-setup.php
 
 # INSTALL COMPOSER DEPENDENCIES
 php composer.phar install
-composer update
+php composer.phar update
 
 # Force clean slate - prevent cross-deployment cache pollution
 rm -rf storage/framework/cache/*
