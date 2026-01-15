@@ -113,7 +113,7 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: [https://github.com/amplitude/Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift)
+Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
 
 #### Initialize the SDK
