@@ -171,7 +171,7 @@ After you add your application, it appears as a platform option when you create 
 ## Screen tracking and element targeting
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (e.g., "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```kotlin
 // Track screen views to trigger guides based on screens

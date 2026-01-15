@@ -45,7 +45,7 @@ pod 'AmplitudeEngagementSwift', '~> 2.0.0'
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+We don't update our docs on each release. You can check for the latest version here: [https://github.com/amplitude/Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift)
 {{/partial:admonition}}
 
 #### Initialize the SDK
@@ -55,7 +55,8 @@ Next, make sure to initialize the SDK.
 ```swift
 import AmplitudeEngagementSwift
 
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagement(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -112,7 +113,7 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+We don't update our docs on each release. You can check for the latest version here: [https://github.com/amplitude/Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift)
 {{/partial:admonition}}
 
 #### Initialize the SDK
@@ -120,11 +121,8 @@ We don't update our docs on each release. You can check for the latest version h
 ```swift
 import AmplitudeEngagementSwift
 
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
-let configuration = Configuration(
-  apiKey: API_KEY
-)
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagement(API_KEY)
 ```
 
 #### Configuration options
@@ -182,7 +180,7 @@ Screen tracking and element targeting are technically optional, but can be very 
 
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (e.g., "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
@@ -340,9 +338,9 @@ To locate the URL scheme:
 
 1. Open your iOS project in Xcode.
 2. In the Project navigator, select your app's target.
-3. On the **Info** tab, locate the **URL Types** section.
+3. On the **Info** tab, locate or add the **URL Types** section.
 4. Add a new URL type with the following values:
-    * **Identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
+    * **URL identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
     * **URL Schemes**: Paste the value you copied from Amplitude, for example `amp-abc123`.
 
 ### Configure URL handling for preview links
