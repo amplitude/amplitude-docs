@@ -114,7 +114,7 @@ Amplitude associates advertising metrics with an event called `Daily Ad Metrics`
 
 ### User properties
 
-The following user properties display by default in the breakdown table on the *Ad Performance* tab. Use these properties to link ad spend to user behavior across your product.
+The following user properties display by default in the breakdown table on the **Ad Performance** tab. Use these properties to link ad spend to user behavior across your product.
 
 | Property | Description |
 |---|---|
