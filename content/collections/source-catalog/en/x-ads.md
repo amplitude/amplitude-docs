@@ -15,7 +15,7 @@ Amplitude's X Ads integration helps you import your X Ads spend, click, and impr
 
 The integration imports campaign level metrics once per day from X Ads. These metrics appear in Amplitude as ad-level metrics, and don't tie to individual users.
 
-In Amplitude, ad data appears as a dedicated event caleld Daily Ad Metrics, and includes event properties like:
+In Amplitude, ad data appears as a dedicated event called Daily Ad Metrics, and includes event properties like:
 
 * `ad_metrics.impressions`
 * `ad_metrics.clicks`
