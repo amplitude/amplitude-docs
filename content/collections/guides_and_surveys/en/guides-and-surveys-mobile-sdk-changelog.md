@@ -96,7 +96,7 @@ updated_at: 1750443681
 - Fix: Guide title incorrectly center-aligned when left alignment was configured (GSDK-701) \[android\]
 - Fix: Allow underscore ("_") separated font files on Android (GSDK-701) \[android\]
 - Fix: Use correct corner radius and outer padding when rendering Guide (GSDK-701) \[android\]
-- Fix: app is unresponsive after displaying StoreKit content (e.g., `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
+- Fix: app is unresponsive after displaying StoreKit content (for example, `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
 
 
 ## 1.6.1 (Android, iOS, React Native) \[2025-11-13\]

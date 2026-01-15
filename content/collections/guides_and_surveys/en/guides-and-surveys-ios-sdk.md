@@ -180,7 +180,7 @@ Screen tracking and element targeting are technically optional, but can be very 
 
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (e.g., "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (such as "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
