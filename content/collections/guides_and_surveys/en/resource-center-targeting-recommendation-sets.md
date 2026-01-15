@@ -7,6 +7,7 @@ this_article_will_help_you:
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750969378
+landing_blurb: Learn how to target content in your Resource Center to specific user segments.
 ---
 Targeting in the Resource Center is exactly the same as targeting in the rest of Amplitude. For more information, go to [Cohort Targeting](/docs/guides-and-surveys/guides/setup-and-target)
 

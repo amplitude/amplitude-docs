@@ -7,6 +7,7 @@ this_article_will_help_you:
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961162
+landing_blurb: Recommendation sets are customizable, in-time articles and information embedded throughout your website to help your users as they need it.
 ---
 Recommendation sets are customizable, in-time articles and information embedded throughout your website to help your users as they need it. Think of them like personalized landing pages for your Resource Center. For example, you could create unique recommendation sets for:
 - Advanced articles targeted towards your power users.
