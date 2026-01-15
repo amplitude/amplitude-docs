@@ -28,15 +28,15 @@ To set up, you need the following:
 ## Considerations
 
 -   This source imports campaign level metrics from Google Ads. It doesn't import other types of data such as experiments or user level identifiers. Metrics are ingested at the ad level and aren't tied to individual users.
--   Amplitude imports Google Ads data once per day, always for the previous calendar day, using a batch ingestion process. The data appears in Amplitude as a dedicated event called Daily Ad Metrics, which includes properties such as `ad_metrics.impressions`, `ad_metrics.clicks`, `ad_group_id`, and `campaign_id`.
--   The Daily Ad Metrics event also includes user properties such as `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, and `utm_term`. These fields are often used for campaign analysis and for calculating metrics like Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS).
+-   Amplitude imports Google Ads data once per day, always for the previous calendar day, using a batch ingestion process. The data appears in Amplitude as a dedicated event called `Daily Ad Metrics`, which includes properties such as `ad_metrics.impressions`, `ad_metrics.clicks`, `ad_group_id`, and `campaign_id`.
+-   The `Daily Ad Metrics` event also includes user properties such as `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, and `utm_term`. These fields are often used for campaign analysis and for calculating metrics like Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS).
 -   UTM parameters aren't automatically populated by Google Ads. To ensure these fields appear in Amplitude, customers must manually add UTM parameters to their ad URLs using either [tracking templates](https://support.google.com/google-ads/answer/6305348) or the [Final URL Suffix](https://support.google.com/google-ads/answer/7305793). Auto tagging, such as using gclid, doesn't populate UTM fields. Some campaign types such as [Performance Max](https://support.google.com/google-ads/answer/10724817) may not allow URL level control. This means UTM values may not consistently appear in those cases.
 -   To calculate CAC and ROAS correctly, UTM parameters must be present on both the Daily Ad Metrics event and on downstream conversion events such as Sign Up or Purchase. These metrics depend on shared fields, such as `utm_campaign`, that link ad spend to user behavior.
 -   Amplitude’s [Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2) and other SDKs usually capture UTM parameters automatically at the beginning of a user session. However, if your setup uses server side tracking, custom routing, or a single page application, you may need to manually map UTM values as user properties to ensure consistency.
--   If your project uses [Schema enforcement](/docs/data/configure-schema), allow the Daily Ad Metrics event and its properties. Otherwise, the data may be silently blocked from ingestion.
--   Google Ads data collects data at the ad level rather than the user level. As a result, Daily Ad Metrics events aren't associated with individual users and may appear as standalone events in user streams. These are best used for campaign level reporting, not for user level funnels or behavioral analysis.
+-   If your project uses [Schema enforcement](/docs/data/configure-schema), allow the `Daily Ad Metrics` event and its properties. Otherwise, the data may be silently blocked from ingestion.
+-   Google Ads data collects data at the ad level rather than the user level. As a result, `Daily Ad Metrics` events aren't associated with individual users and may appear as standalone events in user streams. These are best used for campaign level reporting, not for user level funnels or behavioral analysis.
 -   You can't import data directly from a Google Ads Manager Account (MCC). While you can provide an MCC ID to authorize access to a specific Customer ID, Amplitude only imports data from the specified account and not from the MCC or other accounts linked to it.
--   You can connect multiple Google Ads customer accounts (not MCCs) to a single Amplitude project. There's no limit on the number of ad accounts you can connect. Although all campaign data is grouped under the same Daily Ad Metrics event, the `ad_account_id` property is available on new events as of May 9, 2025 and allows you to filter and analyze performance by account.
+-   You can connect multiple Google Ads customer accounts (not MCCs) to a single Amplitude project. There's no limit on the number of ad accounts you can connect. Although all campaign data is grouped under the same `Daily Ad Metrics` event, the `ad_account_id` property is available on new events as of May 9, 2025 and allows you to filter and analyze performance by account.
 
 ## Amplitude setup
 
@@ -108,10 +108,10 @@ For more information, review [About data freshness](https://support.google.com/g
 
 ### Ad events don't map to Users
 
-Google Ads doesn't export user-level identifiers such as device ID, email address, or user ID. As a result, Daily Ad Metrics events aren't linked to real user profiles in Amplitude and aren't associated with known users across other product events.
+Google Ads doesn't export user-level identifiers such as device ID, email address, or user ID. As a result, `Daily Ad Metrics` events aren't linked to real user profiles in Amplitude and aren't associated with known users across other product events.
 
 While these events may appear in a user stream with a synthetic identifier (such as a Google Ads device ID), this doesn't mean successful identity resolution. Amplitude treats the events as standalone entries and aren't suitable for user-level reporting.
 
-Daily Ad Metrics events are best used for campaign-level analysis and you shouldn't use them in funnels, cohort definitions, or behavioral journeys that rely on user identity.
+`Daily Ad Metrics` events are best used for campaign-level analysis and you shouldn't use them in funnels, cohort definitions, or behavioral journeys that rely on user identity.
 
 These events may appear as standalone events in user streams with only campaign-level context.

@@ -15,14 +15,14 @@ Amplitude's X Ads integration helps you import your X Ads spend, click, and impr
 
 The integration imports campaign level metrics once per day from X Ads. These metrics appear in Amplitude as ad-level metrics, and don't tie to individual users.
 
-In Amplitude, ad data appears as a dedicated event called Daily Ad Metrics, and includes event properties like:
+In Amplitude, ad data appears as a dedicated event called `Daily Ad Metrics`, and includes event properties like:
 
 * `ad_metrics.impressions`
 * `ad_metrics.clicks`
 * `ad_group_id`
 * `campaign_id`
 
-Daily Ad Metrics includes the following user properties, which you can use for campaign analysis and for calculating other metrics like Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS):
+`Daily Ad Metrics` includes the following user properties, which you can use for campaign analysis and for calculating other metrics like Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS):
 
 * `utm_medium`
 * `utm_campaign`
@@ -116,8 +116,8 @@ Consider this a you analyze campaign performance, particularly when reviewing sh
 
 ### Ad event's don't map to users
 
-X Ads doesn't export user level identifiers like device ID, email address, or user ID. As a result, Daily Ad Metrics event's don't link to use profiles in Amplitude, they aren't associated with known users across other product events.
+X Ads doesn't export user level identifiers like device ID, email address, or user ID. As a result, `Daily Ad Metrics` event's don't link to use profiles in Amplitude, they aren't associated with known users across other product events.
 
 While these events may appear in a user stream with a synthetic identifier (like X Ads device ID), this doesn't mean identity resolution was successful. Amplitude treats the events as standalone entries, which aren't suitable for user-level reporting.
 
-Daily Ad Metrics events work best for campaign level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
+`Daily Ad Metrics` events work best for campaign level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
