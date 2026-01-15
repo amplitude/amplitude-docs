@@ -626,7 +626,7 @@ After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Ope
 
 #### Handle deep links in single-task activities
 
-If your activity uses `singleTop`, `singleTask`, or `singleInstance` launch mode, deep links that arrive while the activity is already running are delivered to `onNewIntent()` instead of creating a new activity. In this case, call `setIntent()` to update the activity's intent so Amplitude can track the deep link.
+If your activity uses `singleTop`, `singleTask`, or `singleInstance` launch mode, Android delivers deep links that arrive while the activity is already running to `onNewIntent()` instead of creating a new activity. In this case, call `setIntent()` to update the activity's intent so Amplitude can track the deep link.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -948,7 +948,7 @@ Button(
 | `false` | `false` | Track both (doesn't ignore anything) |
 
 {{partial:admonition type="note" heading=""}}
-Regular element interaction events (`[Amplitude] Element Interaction`) are still tracked when frustration analytics are ignored. Only rage click and dead click events are affected.
+The SDK still tracks regular element interaction events (`[Amplitude] Element Interaction`) when you ignore frustration analytics. This affects only rage click and dead click events.
 {{/partial:admonition}}
 
 ## User groups
