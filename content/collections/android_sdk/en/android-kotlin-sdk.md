@@ -241,6 +241,83 @@ amplitude.identify(identify)
 
 ```
 
+### Identify operations
+
+The `Identify` object supports the following operations:
+
+| Operation    | Description                                                                                          |
+|--------------|------------------------------------------------------------------------------------------------------|
+| `set`        | Sets the value of a user property. Overwrites existing values.                                       |
+| `setOnce`    | Sets the value of a user property only once. Subsequent calls don't overwrite the initial value.    |
+| `add`        | Adds a numeric value to a numeric user property.                                                     |
+| `append`     | Appends a value to a user property array.                                                            |
+| `prepend`    | Prepends a value to a user property array.                                                           |
+| `preInsert`  | Adds a value to the beginning of a user property array if it doesn't already exist in the array.    |
+| `postInsert` | Adds a value to the end of a user property array if it doesn't already exist in the array.          |
+| `remove`     | Removes a value from a user property array.                                                          |
+| `unset`      | Removes a user property.                                                                             |
+| `clearAll`   | Clears all user properties.                                                                          |
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+val identify = Identify()
+identify
+    .set("color", "green")
+    .setOnce("initial_source", "organic")
+    .add("login_count", 1)
+    .append("visited_pages", "home")
+    .prepend("notifications", "new_feature")
+    .unset("temporary_property")
+
+amplitude.identify(identify)
+
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+Identify identify = new Identify();
+identify
+    .set("color", "green")
+    .setOnce("initial_source", "organic")
+    .add("login_count", 1)
+    .append("visited_pages", "home")
+    .prepend("notifications", "new_feature")
+    .unset("temporary_property");
+
+amplitude.identify(identify);
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Clear all user properties
+
+Use `clearAll()` to clear all user properties for the current user. This operation is irreversible.
+
+{{partial:admonition type="warning" heading="Use with caution"}}
+The `clearAll()` operation removes all user properties. This action is permanent and can't be undone.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+val identify = Identify()
+identify.clearAll()
+amplitude.identify(identify)
+
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+Identify identify = new Identify();
+identify.clearAll();
+amplitude.identify(identify);
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Autocapture <a id="track-default-events"></a>
 
 Starting from release v1.18.0, the SDK can track more events without manual instrumentation. You can configure it to track the following events automatically:
