@@ -21,10 +21,7 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
-## Recent features
-
-The Android Kotlin SDK includes powerful features to help you understand user behavior with minimal instrumentation:
-
+{{partial:collapse name="Recent features"}}
 - **Frustration Analytics** (v1.22.0+): Automatically detect and track rage clicks and dead clicks to identify areas of user frustration in your app. Configure tracking for both Android Views and Jetpack Compose, with options to [ignore specific elements](#ignore-specific-elements-from-frustration-analytics). [Learn more](#track-frustration-interactions).
 - **Network Tracking Plugin** (v1.21.0+): Automatically track network requests and responses with OkHttp integration, including request/response sizes, status codes, and timing information. [Learn more](#network-tracking-plugin).
 - **Enhanced Jetpack Compose Support** (v1.21.3+): Full autocapture support for all clickable Compose elements with improved element identification. [Learn more](#track-element-interactions).
@@ -35,6 +32,7 @@ The Android Kotlin SDK includes powerful features to help you understand user be
 {{partial:admonition type="note" heading="Location tracking default change"}}
 As of v1.20.7, location tracking is disabled by default. Call `enableLocationListening()` to track location data. [Learn more](#location-tracking).
 {{/partial:admonition}}
+{{/partial:collapse}}
 
 ## System requirements
 
