@@ -108,34 +108,67 @@ If *Goals*, choose the key events or metrics you'd like to set up as additional 
 
 ## Advertising metrics and properties
 
-To view insights on ad performance, you need to connect to an ad network (for example, Google or Facebook). For more information, see the [Source Catalog](/docs/data/source-catalog).
+To view insights on ad performance, connect to an ad network (for example, Google or Facebook). For more information, see the [Source Catalog](/docs/data/source-catalog).
 
-Amplitude associates advertising metrics with an event called `Daily Ad Metrics`.
+Amplitude associates advertising metrics with an event called `Daily Ad Metrics`. This event includes both user properties and event properties that you can use for campaign analysis.
 
-The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ad Performance tab:
+### User properties
 
-* UTM Campaign
-* UTM Content
-* UTM Medium 
-* UTM Source 
-* UTM Term
+The following user properties display by default in the breakdown table on the **Ad Performance** tab. Use these properties to link ad spend to user behavior across your product.
+
+| Property | Description |
+|---|---|
+| `utm_campaign` | The campaign name from UTM tracking. Identifies which marketing campaign drove the user. |
+| `utm_content` | The ad content or variation from UTM tracking. Distinguishes between different ads within the same campaign. |
+| `utm_medium` | The advertising or marketing medium. For example, `cpc`, `email`, or `social`. |
+| `utm_source` | The source that referred the user. For example, `google`, `facebook`, or `newsletter`. |
+| `utm_term` | The search term or keyword from UTM tracking. Identifies which keywords drove clicks. |
 
 {{partial:admonition type="tip" heading="Use UTM properties as breakdowns"}}
 To gain insight on both ad metrics and product metrics, use UTM properties as the breakdown.
 {{/partial:admonition}}
 
-The Daily Ad Metrics event also includes several important event properties:
+### Event properties
 
-* Ad Impressions, Ad Clicks, Ad Cost, Ad Conversions, Ad Interactions
+The `Daily Ad Metrics` event includes two types of event properties: numeric properties for computing metrics, and descriptive properties that identify the ad and campaign.
 
-* Ad Group ID, Ad Group Name, Ad Group Type, Ad ID, Ad Name, Ad Platform, Ad Segment Device, Campaign Advertising Channel Type, Campaign End Date, Campaign ID, Campaign Name, Campaign Start Date, Final URL, Tracking URL Template
+#### Numeric properties
 
-The first set of event properties includes numeric values you can use to compute advertising metrics. The remaining event properties describe the advertising metrics in the same way as the ad network. (This example uses Google Ads, but the process is similar for other advertising networks, although property names may vary.)
+Use these properties to compute advertising metrics like CTR, CPC, CAC, and ROAS.
+
+| Property | Description |
+|---|---|
+| `ad_metrics.impressions` | Total number of times the ad appeared to users. |
+| `ad_metrics.clicks` | Total number of times users clicked the ad. |
+| `ad_metrics.cost` | Total amount spent on the ad. |
+| `ad_metrics.conversions` | Total number of conversions attributed to the ad. |
+| `ad_metrics.interactions` | Total number of user interactions with the ad. |
+
+#### Descriptive properties
+
+These properties identify and describe ads and campaigns. Property values match what you see in your ad network (for example, Google Ads). Property names may vary slightly between ad networks.
+
+| Property | Description |
+|---|---|
+| `ad_id` | Unique identifier for the ad. |
+| `ad_name` | Name of the ad. |
+| `ad_platform` | The advertising platform. For example, `google` or `facebook`. |
+| `ad_group_id` | Unique identifier for the ad group. |
+| `ad_group_name` | Name of the ad group. |
+| `ad_group_type` | Type of the ad group. |
+| `ad_segment_device` | Device type used to view the ad. For example, `mobile` or `desktop`. |
+| `campaign_id` | Unique identifier for the campaign. |
+| `campaign_name` | Name of the campaign. |
+| `campaign_advertising_channel_type` | The advertising channel type for the campaign. For example, `search` or `display`. |
+| `campaign_start_date` | The start date of the campaign. |
+| `campaign_end_date` | The end date of the campaign. |
+| `final_url` | The final destination URL of the ad. |
+| `tracking_url_template` | The tracking URL template used for the ad. |
 
 {{partial:admonition type="tip" heading="Amplitude recommends UTM properties"}}
 Amplitude recommends that you use UTM properties to track the full user journey from impression to in-product action.
 
-The Daily Ad Metric supports other properties, like `ad_platform` or `campaign_name`. Using these properties lets you measure ad-level metrics like impressions and clicks. They don't support values for CAC, ROAS, or any custom goals you define that tie to Amplitude events. Those require UTM-based matching within the Daily Ad Metric.
+The `Daily Ad Metrics` event supports other properties like `ad_platform` or `campaign_name`. These properties let you measure ad-level metrics like impressions and clicks, but don't support values for CAC, ROAS, or any custom goals you define that tie to Amplitude events. Those require UTM-based matching within the `Daily Ad Metrics` event.
 {{/partial:admonition}}
 
 ### Configure UTM properties
