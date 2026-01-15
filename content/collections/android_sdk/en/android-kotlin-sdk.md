@@ -30,7 +30,7 @@ The Kotlin Android SDK lets you send events to Amplitude.
 - **Advanced Identify Operations**: Full support for user property operations including `clearAll()` to remove all user properties. [Learn more](#identify).
 
 {{partial:admonition type="note" heading="Location tracking default change"}}
-As of v1.20.7, location tracking is disabled by default. Call `enableLocationListening()` to track location data. [Learn more](#location-tracking).
+As of v1.20.7, the SDK disables location tracking by default. Call `enableLocationListening()` to track location data. [Learn more](#location-tracking).
 {{/partial:admonition}}
 {{/partial:collapse}}
 
@@ -311,7 +311,7 @@ amplitude.identify(identify);
 Use `clearAll()` to clear all user properties for the current user. This operation is irreversible.
 
 {{partial:admonition type="warning" heading="Use with caution"}}
-The `clearAll()` operation removes all user properties. This action is permanent and can't be undone.
+The `clearAll()` operation removes all user properties. This action is permanent. You can't undo it.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}
@@ -649,7 +649,7 @@ protected void onNewIntent(Intent intent) {
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-Without calling `setIntent()`, `getIntent()` continues to return the original intent that started the activity, and Amplitude won't detect the new deep link.
+Without calling `setIntent()`, `getIntent()` continues to return the original intent that started the activity, and Amplitude doesn't detect the new deep link.
 {{/partial:admonition}}
 
 ### Track element interactions
@@ -867,10 +867,10 @@ To track dead clicks, enable both Session Replay and frustration interactions.
 Some UI elements generate expected rapid clicks or may not provide meaningful frustration signals. Use the ignore APIs to exclude these elements from frustration analytics while still tracking regular interaction events.
 
 **Common use cases:**
-- **Navigation elements**: Back buttons, close buttons, drawer toggles
-- **Multi-click elements**: Increment/decrement buttons, like/favorite buttons
-- **Loading indicators**: Progress bars, spinners, loading buttons
-- **Decorative elements**: Non-functional UI components
+- **Navigation elements**: Back buttons, close buttons, and drawer toggles.
+- **Multi-click elements**: Increment/decrement buttons and like/favorite buttons.
+- **Loading indicators**: Progress bars, spinners, and loading buttons.
+- **Decorative elements**: Non-functional UI components.
 
 #### Android Views
 
