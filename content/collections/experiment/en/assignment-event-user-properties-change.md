@@ -8,37 +8,87 @@ updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1759852528
 ---
 
-This announcement describes an important change to how Amplitude sets experiment user properties on assignment events.
+Effective February 10, 2026, Amplitude stops creating experiment user properties (`{flag-key}` = `assigned_variant`) on the Assignment event.
+
+Event properties on the Assignment event remain unchanged.
+
+This change ensures experiment analysis using the user properties is accurate and based only on actual user exposure.
 
 ## What's changing
 
-The assignment event (`[Experiment] Assignment`) now sets the experiment user property at the time the assignment event is ingested, just like exposure events. This ensures the experiment user property (for example, `[Experiment] <flag_key>`) reflects the variant the user was assigned to, not just when the exposure happens.
+### Before (current behavior)
 
-## Why this matters
+When a user is assigned a variant during remote evaluation:
 
-Previously, the value of experiment user properties on assignment events could lag exposure values, leading to discrepancies in analysis when segmenting or filtering by variant. With this change, assignment events become more reliable for debugging, monitoring, and serving as heuristics for exposure in server-side or remote evaluation setups.
+- An Assignment event is generated (for debugging).
+- A user property is created: `{flag-key}` = `assigned_variant`.
+- Assignment event properties are set:
+  - `{flag-key}.variant` = `assigned_variant`.
+  - `{flag-key}.details` = assignment details.
 
-## What to do
+{{partial:admonition type="warning" heading="Important"}}
+At this stage, the user hasn't been exposed to the experiment. They may never see the experiment at all.
+{{/partial:admonition}}
 
-- If you're depending on `[Experiment] Assignment` events as exposure events (for example, for server-side experiments), your dashboards, queries, and filters may need updating.
-- Review custom queries that segment users by experiment user property and ensure they align with this updated behavior.
+### After (new behavior)
 
-## Additional details
+- No experiment user property is created on the Assignment event.
+- The Assignment event remains available for debugging only.
+- The experiment user property is created only on the Exposure event.
 
-- This change applies to assignment events triggered by remote evaluation, as well as server-side local evaluation when configured to track assignments.
-- Exposure events remain unchanged in behavior for setting user properties.
-- There should be no breaking changes or data loss, but variant-based segmentation might show updated results because of this alignment.
+## When exposure happens
 
-## FAQs
+A user is considered exposed only when experiment logic affects the user experience.
 
-### Does this change retroactively update historical data?
+At exposure time:
 
-No. This change applies from the date of rollout. All historical events remain as-is.
+- An Exposure event is recorded.
+- The experiment user property is created: `{flag-key}` = `assigned_variant`.
+- All subsequent events include this user property. Only these events are valid for experiment analysis.
 
-### What if I already treat assignment as exposure in server-side experiments?
+## How experiment analysis works
 
-This change makes that practice more accurate—it should now reflect user properties you expect.
+Analysis is based on:
 
-### Will this affect our SDK integrations?
+- Exposure events.
+- Metric events occurring after exposure.
+- User properties created at exposure time.
 
-Only if you manually rely on assignment behavior in custom logic. Most integrations should continue to work unaffected.
+Analysis doesn't use:
+
+- Assignment events.
+- User properties created on Assignment events.
+- Events between Assignment and Exposure.
+
+## Why this change is necessary
+
+Using user properties for experiment analysis without attributing to the exposure event can produce incorrect results.
+
+### Example
+
+1. User is assigned Variant B (Assignment event).
+2. User property `{flag-key}` = `B` is set.
+3. User performs actions.
+4. User is never exposed to the experiment.
+
+If analysis relies only on the user property:
+
+- The user is incorrectly counted in Variant B.
+- Their actions are wrongly attributed to the experiment.
+- This leads to misleading results.
+
+## Benefits of the new behavior
+
+After this change:
+
+- Experiment user property always means actual exposure.
+- User properties accurately reflect experiment participation.
+- Analysis using user properties is correct and consistent.
+
+## Key takeaway
+
+An experiment user property should indicate one thing only: the user was exposed to the experiment.
+
+Assignment events remain for debugging and shouldn't be used for experiment analysis.
+
+If you want to opt out of this change, contact Support.
