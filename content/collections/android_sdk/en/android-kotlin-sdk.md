@@ -21,6 +21,19 @@ platform: Android
 ---
 The Kotlin Android SDK lets you send events to Amplitude.
 
+{{partial:collapse name="Recent features"}}
+- **Frustration Analytics** (v1.22.0+): Automatically detect and track rage clicks and dead clicks to identify areas of user frustration in your app. Configure tracking for both Android Views and Jetpack Compose, with options to [ignore specific elements](#ignore-specific-elements-from-frustration-analytics). [Learn more](#track-frustration-interactions).
+- **Network Tracking Plugin** (v1.21.0+): Automatically track network requests and responses with OkHttp integration, including request/response sizes, status codes, and timing information. [Learn more](#network-tracking-plugin).
+- **Enhanced Jetpack Compose Support** (v1.21.3+): Full autocapture support for all clickable Compose elements with improved element identification. [Learn more](#track-element-interactions).
+- **Element Interactions Autocapture** (v1.17.0+): Track user interactions with clickable UI elements in both Android Views and Jetpack Compose automatically. [Learn more](#track-element-interactions).
+- **Fragment Autocapture** (v1.18.0+): Automatically capture fragment views with detailed fragment properties including class, identifier, and tag. [Learn more](#track-screen-views).
+- **Advanced Identify Operations**: Full support for user property operations including `clearAll()` to remove all user properties. [Learn more](#identify).
+
+{{partial:admonition type="note" heading="Location tracking default change"}}
+As of v1.20.7, the SDK disables location tracking by default. Call `enableLocationListening()` to track location data. [Learn more](#location-tracking).
+{{/partial:admonition}}
+{{/partial:collapse}}
+
 ## System requirements
 
 The Android Kotlin SDK supports Android API level 21 (Android 5.0 Lollipop) and higher.
@@ -72,8 +85,10 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `autocapture`                                                                      | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions.                                                                                                                                 | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture). |
 | `interactionsOptions`                                                              | `InteractionsOptions`. Configuration for granular control over frustration interaction tracking types (rage clicks and dead clicks).                                                                                                                                                                                     | `InteractionsOptions(rageClick = RageClickOptions(enabled = true), deadClick = DeadClickOptions(enabled = true))`                                |
 | `minTimeBetweenSessionsMillis`                                                     | `Long`. The amount of time for session timeout. The value is in milliseconds.                                                                                                                                                                                                                                            | `300000`                                                                                                                                          |
+| `sessionId`                                                                        | `Long?`. Initial session ID to use. If not set, session management handles ID generation automatically.                                                                                                                                                                                                                  | `null`                                                                                                                                            |
 | `serverUrl`                                                                        | `String`. The server url events upload to.                                                                                                                                                                                                                                                                               | `https://api2.amplitude.com/2/httpapi`                                                                                                            |
 | `serverZone`                                                                       | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config.                                                                                                                                                                                                             | `ServerZone.US`                                                                                                                                   |
+| `httpClient`                                                                       | `HttpClientInterface?`. Custom HTTP client implementation for event uploads. Implement the `HttpClientInterface` to use your own HTTP client.                                                                                                                                                                            | `null`                                                                                                                                            |
 | `useBatch`                                                                         | `Boolean` Whether to use batch API.                                                                                                                                                                                                                                                                                      | `false`                                                                                                                                           |
 | `useAdvertisingIdForDeviceId`                                                      | `Boolean`. Whether to use advertising id as device id. For more information, see [Advertiser ID](#advertiser-id) for required module and permission.                                                                                                                                                                     | `false`                                                                                                                                           |
 | `useAppSetIdForDeviceId`                                                           | `Boolean`. Whether to use app set id as device id. For more information, see [Application ID](#app-set-id) for required module and permission.                                                                                                                                                                           | `false`                                                                                                                                           |
@@ -240,6 +255,83 @@ identify.set("color", "green")
 amplitude.identify(identify)
 
 ```
+
+### Identify operations
+
+The `Identify` object supports the following operations:
+
+| Operation    | Description                                                                                          |
+|--------------|------------------------------------------------------------------------------------------------------|
+| `set`        | Sets the value of a user property. Overwrites existing values.                                       |
+| `setOnce`    | Sets the value of a user property only once. Subsequent calls don't overwrite the initial value.    |
+| `add`        | Adds a numeric value to a numeric user property.                                                     |
+| `append`     | Appends a value to a user property array.                                                            |
+| `prepend`    | Prepends a value to a user property array.                                                           |
+| `preInsert`  | Adds a value to the beginning of a user property array if it doesn't already exist in the array.    |
+| `postInsert` | Adds a value to the end of a user property array if it doesn't already exist in the array.          |
+| `remove`     | Removes a value from a user property array.                                                          |
+| `unset`      | Removes a user property.                                                                             |
+| `clearAll`   | Clears all user properties.                                                                          |
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+val identify = Identify()
+identify
+    .set("color", "green")
+    .setOnce("initial_source", "organic")
+    .add("login_count", 1)
+    .append("visited_pages", "home")
+    .prepend("notifications", "new_feature")
+    .unset("temporary_property")
+
+amplitude.identify(identify)
+
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+Identify identify = new Identify();
+identify
+    .set("color", "green")
+    .setOnce("initial_source", "organic")
+    .add("login_count", 1)
+    .append("visited_pages", "home")
+    .prepend("notifications", "new_feature")
+    .unset("temporary_property");
+
+amplitude.identify(identify);
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Clear all user properties
+
+Use `clearAll()` to clear all user properties for the current user. This operation is irreversible.
+
+{{partial:admonition type="warning" heading="Use with caution"}}
+The `clearAll()` operation removes all user properties. This action is permanent. You can't undo it.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+val identify = Identify()
+identify.clearAll()
+amplitude.identify(identify)
+
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+Identify identify = new Identify();
+identify.clearAll();
+amplitude.identify(identify);
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ## Autocapture <a id="track-default-events"></a>
 
@@ -532,6 +624,34 @@ Amplitude amplitude = new Amplitude(configuration);
 
 After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Opened` event with the URL and referrer information.
 
+#### Handle deep links in single-task activities
+
+If your activity uses `singleTop`, `singleTask`, or `singleInstance` launch mode, Android delivers deep links that arrive while the activity is already running to `onNewIntent()` instead of creating a new activity. In this case, call `setIntent()` to update the activity's intent so Amplitude can track the deep link.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+override fun onNewIntent(intent: Intent) {
+    super.onNewIntent(intent)
+    setIntent(intent) // Required for Amplitude to track the deep link
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    setIntent(intent); // Required for Amplitude to track the deep link
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+Without calling `setIntent()`, `getIntent()` continues to return the original intent that started the activity, and Amplitude doesn't detect the new deep link.
+{{/partial:admonition}}
+
 ### Track element interactions
 
 Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
@@ -740,6 +860,95 @@ Amplitude amplitude = new Amplitude(configuration);
 
 {{partial:admonition type="note" title="Dead clicks require Session Replay"}}
 To track dead clicks, enable both Session Replay and frustration interactions.
+{{/partial:admonition}}
+
+### Ignore specific elements from frustration analytics
+
+Some UI elements generate expected rapid clicks or may not provide meaningful frustration signals. Use the ignore APIs to exclude these elements from frustration analytics while still tracking regular interaction events.
+
+**Common use cases:**
+- **Navigation elements**: Back buttons, close buttons, and drawer toggles.
+- **Multi-click elements**: Increment/decrement buttons and like/favorite buttons.
+- **Loading indicators**: Progress bars, spinners, and loading buttons.
+- **Decorative elements**: Non-functional UI components.
+
+#### Android Views
+
+Use `FrustrationAnalyticsUtils` to ignore frustration analytics for Android Views:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.FrustrationAnalyticsUtils
+
+// Ignore all frustration analytics for this view
+val backButton = findViewById<Button>(R.id.back_button)
+FrustrationAnalyticsUtils.ignoreFrustrationAnalytics(backButton)
+
+// Ignore only rage clicks (allow dead click detection)
+val incrementButton = findViewById<Button>(R.id.increment_button)
+FrustrationAnalyticsUtils.ignoreFrustrationAnalytics(
+    incrementButton,
+    rageClick = true,
+    deadClick = false
+)
+
+// Remove ignore marker from a view
+FrustrationAnalyticsUtils.unignoreView(backButton)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.FrustrationAnalyticsUtils;
+
+// Ignore all frustration analytics for this view
+Button backButton = findViewById(R.id.back_button);
+FrustrationAnalyticsUtils.INSTANCE.ignoreFrustrationAnalytics(backButton, true, true);
+
+// Ignore only rage clicks (allow dead click detection)
+Button incrementButton = findViewById(R.id.increment_button);
+FrustrationAnalyticsUtils.INSTANCE.ignoreFrustrationAnalytics(incrementButton, true, false);
+
+// Remove ignore marker from a view
+FrustrationAnalyticsUtils.INSTANCE.unignoreView(backButton);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Jetpack Compose
+
+Use the `Modifier.ignoreFrustrationAnalytics()` extension to ignore frustration analytics for Compose elements:
+
+```kotlin
+import com.amplitude.android.ignoreFrustrationAnalytics
+
+// Ignore all frustration analytics
+Button(
+    onClick = { finish() },
+    modifier = Modifier.ignoreFrustrationAnalytics()
+) { Text("Back") }
+
+// Ignore only dead clicks (allow rage click detection)
+Button(
+    onClick = { submitForm() },
+    modifier = Modifier.ignoreFrustrationAnalytics(
+        rageClick = false,
+        deadClick = true
+    )
+) { Text("Submit") }
+```
+
+#### Parameter combinations
+
+| `rageClick` | `deadClick` | Behavior |
+|-------------|-------------|----------|
+| `true` (default) | `true` (default) | Ignore all frustration analytics |
+| `true` | `false` | Ignore only rage click detection |
+| `false` | `true` | Ignore only dead click detection |
+| `false` | `false` | Track both (doesn't ignore anything) |
+
+{{partial:admonition type="note" heading=""}}
+The SDK still tracks regular element interaction events (`[Amplitude] Element Interaction`) when you ignore frustration analytics. This affects only rage click and dead click events.
 {{/partial:admonition}}
 
 ## User groups
