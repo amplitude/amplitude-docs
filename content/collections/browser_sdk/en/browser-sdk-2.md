@@ -642,41 +642,6 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 });
 ```
 
-**Example use cases:**
-
-Track form submits only when validation passes:
-
-```ts
-amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
-  autocapture: {
-    formInteractions: {
-      shouldTrackSubmit: (event) => {
-        const form = event.target;
-        // Custom validation logic
-        const emailInput = form.querySelector('input[type="email"]');
-        return emailInput && emailInput.value.includes('@');
-      }
-    }
-  },
-});
-```
-
-Skip tracking for specific forms:
-
-```ts
-amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
-  autocapture: {
-    formInteractions: {
-      shouldTrackSubmit: (event) => {
-        const form = event.target;
-        // Don't track internal or test forms
-        return !form.classList.contains('internal-form');
-      }
-    }
-  },
-});
-```
-
 ### Track file downloads
 
 Amplitude tracks file download events by default. The SDK tracks `[Amplitude] File Downloaded` when the user clicks an anchor or `<a>` tag linked to a file. Amplitude determines that the anchor or `<a>` tag linked to a file if the file extension matches the following regex:
