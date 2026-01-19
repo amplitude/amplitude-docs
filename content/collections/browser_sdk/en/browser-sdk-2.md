@@ -269,7 +269,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.attribution`         | Optional. `boolean` | Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                         |
 | `config.autocapture.pageViews`           | Optional. `boolean` | Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. Default value is `true`. See [Track page views](#track-page-views) for more information. |
 | `config.autocapture.sessions`            | Optional. `boolean` | Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. Default value is `true`. See [Track sessions](#track-sessions) for more information.                                                                |
-| `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
+| `config.autocapture.formInteractions`    | Optional. `boolean \| FormInteractionsOptions` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. You can also pass an object with `shouldTrackSubmit` callback to control when form submit events are tracked. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
 | `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
@@ -610,12 +610,69 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 </form>
 ```
 
-Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
+#### Disable form interaction tracking
+
+Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     formInteractions: false, 
+  },
+});
+```
+
+#### Control form submit tracking
+
+You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. This is particularly useful for forms with the `novalidate` attribute where you want full control over validation before tracking.
+
+The `shouldTrackSubmit` callback receives the form submit event and should return `true` to track the submit event or `false` to skip tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        // Only track submit if form is valid
+        const form = event.target;
+        return form.checkValidity();
+      }
+    }
+  },
+});
+```
+
+**Example use cases:**
+
+Track form submits only when validation passes:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        const form = event.target;
+        // Custom validation logic
+        const emailInput = form.querySelector('input[type="email"]');
+        return emailInput && emailInput.value.includes('@');
+      }
+    }
+  },
+});
+```
+
+Skip tracking for specific forms:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        const form = event.target;
+        // Don't track internal or test forms
+        return !form.classList.contains('internal-form');
+      }
+    }
   },
 });
 ```
