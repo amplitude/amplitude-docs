@@ -199,8 +199,8 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
     
     Examples:
     
-    - **Daily sync**: Runs once per day at a specified hour.
-    - **Hourly sync**: Runs once per hour.
+    - **Daily sync**: Runs once each day at a specified hour.
+    - **Hourly sync**: Runs once each hour.
 7. Enter a descriptive name for this instance of the source.
 8. The source appears in the Sources list for your workspace.
 
