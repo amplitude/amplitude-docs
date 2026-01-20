@@ -201,8 +201,6 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
     
     - Daily sync: Runs once per day at a specified time.
     - 4-hour sync: Runs every 4 hours continuously.
-    
-    For daily syncs, you can choose a specific hour in the day. For weekly and monthly syncs (when available), you can choose a specific day and hour.
 7. Enter a descriptive name for this instance of the source.
 8. The source appears in the Sources list for your workspace.
 
