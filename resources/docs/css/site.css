@@ -660,6 +660,10 @@ td {
     vertical-align: top;
 }
 
+table td:nth-child(3) {
+    word-break: break-all;
+}
+
 .current {
     border-color: #259991;
     color: #259991;

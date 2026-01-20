@@ -537,11 +537,11 @@ Browser SDK tracks the following information in page view events.
 | Name                                         | Description                                                                                                                                         | Default Value                                                     |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `event_type`                                 | `string`. The event type for page view event. Configurable through `autocapture.pageViews.eventType` or enrichment plugin.                          | `[Amplitude] Page Viewed` from version 1.9.1.                     |
-| `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | location.hostname or ''.                                          |
-| `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | location.href or ''.                                              |
-| `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                                              |
-| `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | document.title or ''.                                             |
-| `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
+| `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | `location.hostname`or `''`.                                          |
+| `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | `location.href` or `''`.                                              |
+| `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | `location.path` or `''`.                                              |
+| `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | `document.title` or `''`.                                             |
+| `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | `location.href.split('?')[0]` or `''`.                                |
 | `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
 | `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
@@ -550,9 +550,8 @@ Browser SDK tracks the following information in page view events.
 
 Review [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
-{{partial:admonition type="Warning" heading=""}}
+{{partial:admonition type="warning" heading=""}}
 If you want Autocapture to include page views for multi-step forms that dynamically update and, therefore, don't refresh the URL with each step, you must use hash elements for Single Page Applications (SPAs). Autocapture doesn't capture the individual dynamic components automatically. Tools such as Google Tag Manager (GTM) can help you [apply hashes to the URL](https://support.google.com/tagmanager/answer/7679410?hl=en) of the SPA between steps. Autocapture can then ingest the different steps as users proceed through the form.
-
 {{/partial:admonition}}
 
 #### Page title masking 
