@@ -58,7 +58,7 @@ Accent represents your brand's primary color. This color appears on primary butt
 
 In this example, the primary color is `#48705C`.
 
-![](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
+![Image shows a selection option where the primary color is a dark green and the accent color is a complimentary, lighter green. ](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
 
 ### Typography
 
@@ -205,12 +205,12 @@ Card properties (corner radius, padding, gaps, shadow) apply uniformly to all ca
 
 Form controls are interactive elements used in surveys and forms. These controls appear in:
 
-- **Text inputs**: Short and long text input fields for survey responses
+- **Text inputs**: Short and long text input fields for survey responses..
 - **Select dropdowns**: Dropdown menus for selecting from multiple options
-- **Checkboxes**: Multiple choice options where users can select more than one answer
-- **Radio buttons**: Single choice options where users can select only one answer
-- **Rating components**: Star ratings, emoji ratings, and numeric ratings for feedback
-- **List elements**: Ordered and unordered lists in survey questions
+- **Checkboxes**: Multiple choice options where users can select more than one answer.
+- **Radio buttons**: Single choice options where users can select only one answer.
+- **Rating components**: Star ratings, emoji ratings, and numeric ratings for feedback.
+- **List elements**: Ordered and unordered lists in survey questions.
 
 All form controls share the same styling properties (height, corner radius, padding, gaps, shadow, focus ring) that you configure in the Form controls section.
 
@@ -264,10 +264,10 @@ The typography you set becomes the default font for all text in guides and surve
 
 Animations control how widgets appear on screen. Each widget type can have its own animation:
 
-- **Modal animations**: Control how modals enter and exit the screen
-- **Popover / Pin animations**: Control how contextual elements appear
-- **Tooltip animations**: Control how tooltips fade in and out
-- **Checklist animations**: Control how checklist items appear
+- **Modal animations**: Control how modals enter and exit the screen.
+- **Popover / Pin animations**: Control how contextual elements appear.
+- **Tooltip animations**: Control how tooltips fade in and out.
+- **Checklist animations**: Control how checklist items appear.
 
 Animation duration settings (in milliseconds) control the speed of these transitions.
 
@@ -275,13 +275,13 @@ Animation duration settings (in milliseconds) control the speed of these transit
 
 Content colors apply to text and link elements:
 
-- **Primary color**: Used for main text content
-- **Secondary color**: Used for secondary text and labels
-- **Disabled color**: Used for disabled text and inactive elements
-- **Link color**: Used for clickable links in guide and survey content
-- **Link hover color**: Used when users hover over links
-- **Link visited color**: Used for links that users have already clicked
-- **Highlight color**: Used to emphasize important text or selections
+- **Primary color**: Used for main text content.
+- **Secondary color**: Used for secondary text and labels.
+- **Disabled color**: Used for disabled text and inactive elements.
+- **Link color**: Used for clickable links in guide and survey content.
+- **Link hover color**: Used when users hover over links.
+- **Link visited color**: Used for links that users have already clicked.
+- **Highlight color**: Used to emphasize important text or selections.
 
 ## Advanced customization with Custom CSS
 
