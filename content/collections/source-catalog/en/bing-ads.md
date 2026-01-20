@@ -104,7 +104,7 @@ Your Bing Ads Manager account requires administrator privileges. This level of p
 
 Amplitude imports Bing Ads data once per day, and always for the previous calendar day. The import happens as a daily batch, and isn't available in real time or for hour-by-hour analysis
 
-If Bing Ads revises campaign data after Amplitude’s import complets, those changes don't appear automatically. 
+If Bing Ads revises campaign data after Amplitude’s import completes, those changes don't appear automatically. 
 
 Consider this as you analyze campaign performance, particularly when reviewing short-term trends, diagnosing anomalies, or comparing metrics across tools. Data appearing accurate at the time of import may shift days later due to these retrospective updates in Bing Ads.
 
