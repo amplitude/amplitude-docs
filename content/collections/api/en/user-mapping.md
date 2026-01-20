@@ -40,14 +40,14 @@ The aliasing API has the following limits:
 
 ## Query parameters
 
-|<div class="big-column">Name</div>|Description|
+|Name|Description|
 |----|-----------|
 |`api_key`| Required. Type: `string`. An API Key for any project in your organization.|
 |`mapping`| Required. Either a single JSON mapping object or an array of JSON objects, each of which represents a single mapping.|
 
 ### Mapping paramater
 
-|<div class="big-column">Name</div>|Description|
+|Name|Description|
 |----|-----------|
 |`user_id`| Required. Type: `string`. A UUID (unique user ID) specified by you, for the user you want to map. Each JSON mapping object can contain one `user_id` to map.|
 |`global_user_id`| Required unless `unmap` is `true`. Type: `string`. A UUID (unique user ID) specified by you. The unified identity you want to map the other `user_id` to.|
@@ -175,7 +175,7 @@ User mappings uses a different URL than the map and unmap endpoints above, `http
 
 ### Query parameters
 
-|<div class="big-column">Name</div>|Description|
+|Name|Description|
 |----|-----------|
 |`api_key`| Required. Type: `string`. An API Key for any project in your organization.|
 |`secret_key`| Required. Type: `string`. An API Secret Key for any project in your organization.|
@@ -185,14 +185,14 @@ User mappings uses a different URL than the map and unmap endpoints above, `http
 
 The response for a POST request contains these fields:
 
-| <div class="big-column">Name</div> | Description                                                                                               |
+| Name | Description                                                                                               |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `user id`                          | A user id in the request list.                                                                            |
 | `mappings`                         | The mappings associated with this user id. See next section. Empty if the requested user isn't found     |
 
 The `mappings` key contains these fields:
 
-| <div class="big-column">Name</div> | Description                                                                                                                    |
+| Name | Description                                                                                                                    |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `amplitude_id`                     | The Amplitude ID of the requested user                                                                                         |
 | `mapped_from`                      | A list of objects that map into the requested user. {"amplitude_id": 1234, "user_id": "mappedUser"}                            |

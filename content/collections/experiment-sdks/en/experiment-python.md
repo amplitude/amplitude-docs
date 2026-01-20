@@ -96,7 +96,7 @@ You can configure the SDK client on initialization.
 If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | When `True`, sets the logger level to `DEBUG`. | `False` |
 | `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
@@ -124,7 +124,7 @@ fetch_v2(user: User, fetch_options: FetchOptions = None) : Variants
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracks_exposure` | To track or not track an exposure event for this fetch request. If `None`, uses the server's default behavior (does not track exposure). | `None` |
 | `tracks_assignment` | To track or not track an assignment event for this fetch request. If `None`, uses the server's default behavior (does track assignment). | `None` |
@@ -297,7 +297,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                             | Default Value                   |
+| Name | Description                                                                                                             | Default Value                   |
 | --- |-------------------------------------------------------------------------------------------------------------------------|---------------------------------|
 | `debug` | When `True`, sets the logger level to `DEBUG`.                                                                          | `False`                         |
 | `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
@@ -311,7 +311,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
@@ -320,7 +320,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **ExposureConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key. This is **not** the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
@@ -328,7 +328,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                | Default Value |
+| Name | Description                                                                                                                                                                                | Default Value |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `api_key`                          | The analytics API key and NOT the experiment deployment key                                                                                                                                | *required* |
 | `secret_key`                       | The analytics secret key                                                                                                                                                                   | *required* |
@@ -392,7 +392,7 @@ else:
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracks_exposure` | If `True`, the SDK tracks an exposure event for the evaluated variants. | `False` |
 

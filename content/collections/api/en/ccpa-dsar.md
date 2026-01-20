@@ -331,7 +331,7 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 
 ### Path variables
 
-| <div class="big-column">Name</div>|Description|
+| Name|Description|
 |-----|-----|
 |`request_id`|<span class="required">Required</span>. Integer. The ID of the request. Returned with the original GET request.|
 |`output_id`|<span class="required">Required</span>. Integer. The ID of the output to download. An integer at the end of the URL returned in the status response after the job finishes.|

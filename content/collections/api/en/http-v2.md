@@ -102,7 +102,7 @@ The following table shows the list of mappings. Language tags are case-insensiti
 
 {{partial:collapse name="Language mappings"}}
 
-| <div class="big-column">Language Tag</div>             | Language Value                |
+| Language Tag             | Language Value                |
 | ------------------------------------------------------ | ----------------------------- |
 | `"aa"`                                                 | "Afar"                        |
 | `"ab"`                                                 | "Abkhazian"                   |
@@ -1876,7 +1876,7 @@ You can send these keys in the JSON event object. One of `user_id` or `device_id
 Ensure that you include properties like `session_id` at the top level of the event payload. Otherwise, Amplitude can't map the value correctly.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `user_id`                          | <span class="required">Required if `device_id` isn't used</span>. String. ID for the user. Must have a minimum length of 5 characters unless overridden with the `min_id_length` option.                                                                                                                                                                                                                                                        |
 | `device_id`                        | <span class="required">Required if `user_id` isn't used</span>. String. A device-specific identifier, such as the Identifier for Vendor on iOS. If a `device_id` isn't sent with the event, then it's set to a hashed version of the `user_id`.                                                                                                                                                                                                 |
@@ -1926,7 +1926,7 @@ Ensure that you include properties like `session_id` at the top level of the eve
 
 #### Options
 
-| <div class="big-column">Name</div> | Description                                                                                                                    |
+| Name | Description                                                                                                                    |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `min_id_length`                    | <span class="optional">Optional</span>. Integer. Overrides the default minimum length of 5 for `user_id` & `device_id` fields. |
 
@@ -1953,7 +1953,7 @@ Amplitude recommends that you add your own logging to capture responses that rec
 
 ```
 
-| <div class="big-column">Name</div> | Description                                                                                                             |
+| Name | Description                                                                                                             |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `code`                             | Integer. 200 success code                                                                                               |
 | `events_ingested`                  | Integer. The number of events ingested from the upload request.                                                         |
@@ -2021,7 +2021,7 @@ Possible reasons for an invalid request:
 
 #### Properties (invalid or missing JSON)
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                  |
+| Name | Description                                                                                                                                                                                                                                  |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `code`                             | Integer. 400 error code                                                                                                                                                                                                                      |
 | `error`                            | String. Error description. Possible values are `Invalid request path`, `Missing request body`, `Invalid JSON request body`, `Request missing required field`, `Invalid event JSON`, `Invalid API key`, `Invalid field values on some events` |
@@ -2031,7 +2031,7 @@ Possible reasons for an invalid request:
 
 #### Properties (SilencedDeviceID)
 
-| <div class="big-column">Name</div> | Description                                                                                                                  |
+| Name | Description                                                                                                                  |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `code`                             | Integer. 400 error code                                                                                                      |
 | `error`                            | String. Error description.                                                                                                   |
@@ -2113,7 +2113,7 @@ Possible reasons for the response:
 
 #### Properties
 
-| <div class="big-column">Name</div> | Description                                                                                                                    |
+| Name | Description                                                                                                                    |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `code`                             | Integer. 429 error code                                                                                                        |
 | `error`                            | String. Error description.                                                                                                     |

@@ -37,7 +37,7 @@ Send a `POST` request to {{standard_endpoint}} with two arguments: `api_key` and
 
 These keys are available for the Event argument.
 
-| <div class="big-column">Key</div>              | Description                                                                                                                          | Example                                                  |
+| Key              | Description                                                                                                                          | Example                                                  |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
 | `event_type`     | <span class="required">Required</span>. String. The event info. Prefix with brackets `[YOUR COMPANY]`.                                                             | `[YOUR COMPANY] Install`                                 |
 | `platform`       | <span class="required">Required</span>. String. Either `ios` or `android`.                                                                                         | `ios`                                                    |

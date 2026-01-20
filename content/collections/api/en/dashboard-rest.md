@@ -76,7 +76,7 @@ These query parameters are shared across several Dashboard REST API endpoints.
 
 The event parameter can include these keys:
 
-| <div class ="big-column">Name</div>| Description|
+| Name| Description|
 |-----|------------|
 |`event_type`| Required. The event type.<br> For custom events, prefix the name with `ce:`. For example: "ce:name". <br> For '[Amplitude] Any Active Event', use `_active`.<br> For '[Amplitude] Any Event', use `_all`. <br> For '[Amplitude] Revenue', use `revenue_amount`. <br> For '[Amplitude] Revenue (Verified)', use `verified_revenue`. <br>For '[Amplitude] Revenue (Unverified)', use `unverified_revenue`.|
 |`filters` | Optional. A list of property filters. Each filter is a JSON object with the following keys: <br>`subprop_type` Required. Either "event" or "user", indicating that the property is either an event or user property, respectively. <br> `subprop_key` Required. The name of the property to filter on. Note: For non-Amplitude, custom user properties, prepend the user property name with `gp:`. `gp:` isn't needed for event properties.<br>`subprop_op` Required. The operator for filtering on specific property values, either `is`, `is not`, `contains`, `does not contain`, `less`, `less or equal`, `greater`, `greater or equal`, `set is`, or `set is not`.<br>`subprop_value`: Required. A list of values to filter the event property by.|
@@ -301,7 +301,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 The response is a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | An array with one element for each group, in the same order as "seriesMeta", where each element is itself an array that has the value of the metric on each of the days specified in `xValues`. |
 | `seriesMeta` | An array of labels with one for each segment. |
@@ -386,7 +386,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Query parameters
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |-------|----------|
 |`start`| Required. First date included in data series, formatted YYYYMMDD. For example,"20221001".|
 |`end`|Required. Last date included in data series, formatted YYYYMMDD. For example,"20221001".|
@@ -409,7 +409,7 @@ Session lengths have a max length of 1 day (86,400,000 ms).
 
 The response is a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | An array with one element which is itself an array that includes the counts (number of sessions) for each of the buckets. |
 | `xValues` | An array of the (string) session length intervals (buckets) of the format `[bucketStartInSeconds]s-[bucketEndInSeconds]s`. |
@@ -512,7 +512,7 @@ Authorization: Basic {api-key}:{secret-key}
 
 Returns a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | An array with one element which is itself an array that includes the (float) average number of sessions per user for each day. |
 | `seriesMeta` | An array of labels with one for each segment. |
@@ -608,7 +608,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 Returns a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | A one-element array which is the number of unique users who had the corresponding property value in the specified date range. |
 | `seriesLabels` | The field that displays what user property the chart is looking at. |
@@ -656,7 +656,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 Returns a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `non_active` | If the event is marked inactive or not. |
 | `value` | Name of the event in the raw data. |
@@ -819,7 +819,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Query parameters
 
-| <div class="big-column"> Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `e`                                 | Required. Include up to two. A full event. [Full description](#event-format). The Dashboard REST API supports segmentation by up to two events. If you wish to query on a second event, use the parameter `e2`.                                                                                                                                                        |
 | `m`                                 | Optional. Non-property metrics: `uniques`, `totals`, `pct_dau`, or `average`. Defaults to `uniques`. Property metrics: `histogram`, `sums`, or `value_avg`.  To use property metrics, you must include a valid group by value  in parameter `e`.  *For custom formulas: "formula" (This metric only supports up to two events currently and the second event needs to have the parameter "e2").* |
@@ -836,7 +836,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Response
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | An array with one element for each group, in the same order as "seriesLabels", where each element is itself an array that includes the value of the metric on each of the days specified in "xValues". |
 | `seriesLabels` | An array of labels, one for each group. |
@@ -1023,7 +1023,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
 
 The response includes an array with one element per group. Each element has these fields:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `meta` | An array of labels with one for each segment.  <br>  <br>**segmentIndex** This represents the index of the segment, referring to its position in the right module of the chart control panel. |
 | `stepTransTimeDistribution` | The histogram data of each step for how long it took users to convert through that step |
@@ -1176,7 +1176,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Response
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `series` | A JSON object containing two keys.  <br>  <br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order).  <br>**values** - A JSON object with one key for each date, where each value is an array of retention data. The first element (index 0) contains the total user count for that cohort. Subsequent elements contain retention data: element at index N+1 corresponds to the retention for N intervals (days, weeks, or months depending on i) out. For example, index 1 is Day 0 retention, index 2 is Day 1 retention, and so on. |
 | `count` | The number of users retained in that interval. |
@@ -1455,7 +1455,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 Returns a JSON object with this schema:
 
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `xValues` | An array of (string) times in the form "HH:mm", one for each time interval in a day starting from the current time. |
 | `seriesLabels` | An array of two labels: "Today" and "Yesterday". |
@@ -1553,7 +1553,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 Returns a response containing JSON objects with this schema:
 <!-- vale Amplitude.Ellipses = NO-->
-| <div class="big-column">Attribute</div> | Description |
+| Attribute | Description |
 | --- | --- |
 | `seriesLabels` | An array of labels, one for each group. |
 | `series` | A JSON object containing two keys.<br>**dates** - An array of formatted string dates, one for each date in the specified range (in descending order). <br>**values** - A JSON object with one key for each date, where each value is a JSON object with keys `r1d`, `r2d`, ..., `r90d` for the n-day metric values, and the keys `count`, `paid`, and `total_amount`, which indicate the total number of users, number of paid users, and amount paid by the users for the group. |

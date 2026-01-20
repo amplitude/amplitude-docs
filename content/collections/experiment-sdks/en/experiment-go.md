@@ -91,7 +91,7 @@ Configure the SDK client upon initialization.
 If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
 | `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
@@ -211,7 +211,7 @@ if err != nil {
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `TracksExposure` | If `true`, the SDK tracks an exposure event for the fetched variants. | `false` |
 | `TracksAssignment` | If `true`, the SDK tracks an assignment event for the fetched variants. | `true` |
@@ -291,7 +291,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 
 **Config**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
 | `LogLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
@@ -309,21 +309,21 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `CacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
 | [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **ExposureConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `CacheCapacity` | The maximum number of exposures stored in the exposure cache | `524288` |
 | [`Config`](/docs/sdks/analytics/go/go-sdk#configuration-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                             | Default Value |
+| Name | Description                                                                                                                                                                             | Default Value |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `ApiKey`                           | The analytics API key and NOT the experiment deployment key                                                                                                                             | *required* |
 | `SecretKey`                        | The analytics secret key                                                                                                                                                                | *required* |
@@ -416,7 +416,7 @@ if err != nil {
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `FlagKeys` | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. | `nil` |
 | `TracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |

@@ -1714,7 +1714,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 
 
 {{partial:collapse name="User session cookies"}}
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                 |
+| Name | Description                                                                                                                                                                                                                 |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `optOut`                           | Required. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user                                                     |
 | `userId`                           | Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64                                               |
@@ -1727,7 +1727,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 
 
 {{partial:collapse name="Marketing campaign cookies"}}
-| <div class="big-column">Name</div> | Description                                                                                                                      |
+| Name | Description                                                                                                                      |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `utm_campaign`                     | This identifies a specific campaign used (for example, "summer_sale")                                                            |
 | `utm_content`                      | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |

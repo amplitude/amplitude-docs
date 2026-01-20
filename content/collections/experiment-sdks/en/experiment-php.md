@@ -83,7 +83,7 @@ initializeRemote(string $apiKey, ?RemoteEvaluationConfig $config = null): Remote
 
 You can configure the SDK client on initialization.
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
@@ -113,7 +113,7 @@ fetch(User $user, ?FetchOptions $fetchOptions = null): array<Variant>
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `flagKeys` | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. | `[]` |
 | `tracksExposure` | Tracks or doesn't track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
@@ -225,7 +225,7 @@ initializeLocal(string $apiKey, ?LocalEvaluationConfig $config = null): LocalEva
 You can configure the SDK client on initialization.
 
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
@@ -317,7 +317,7 @@ if ($variant) {
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 
@@ -327,7 +327,7 @@ if ($variant) {
 
 You can configure the local evaluation client to send [assignment events](/docs/feature-experiment/under-the-hood/event-tracking#assignment-events) to Amplitude.
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `assignmentTrackingProvider` | The AssignmentTrackingProvider used to send assignment events. | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache. | `65536` |
@@ -364,14 +364,14 @@ class DefaultAssignmentTrackingProvider implements AssignmentTrackingProvider {
 
 **Amplitude**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key. Not to be confused with the experiment deployment key. | *required* |
 | `config` | Configuration options | `null` |
 
 **AmplitudeConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `flushQueueSize` | Events wait in the buffer and are sent in a batch. Experiment flushes the buffer when the number of events reaches the `flushQueueSize`. | `200` |
 | `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
@@ -397,7 +397,7 @@ $defaultAssignmentTrackingProvider = new \AmplitudeExperiment\Assignment\Default
 
 You can configure the local evaluation client to send exposure events to Amplitude.
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `exposureTrackingProvider` | The ExposureTrackingProvider used to send exposure events. | *required* |
 | `cacheCapacity` | The maximum number of exposures stored in the exposure cache. | `65536` |
@@ -434,14 +434,14 @@ class DefaultExposureTrackingProvider implements ExposureTrackingProvider {
 
 **Amplitude**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key. Not to be confused with the experiment deployment key. | *required* |
 | `config` | Configuration options | `null` |
 
 **AmplitudeConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `flushQueueSize` | Events wait in the buffer and are sent in a batch. Experiment flushes the buffer when the number of events reaches the `flushQueueSize`. | `200` |
 | `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
@@ -492,7 +492,7 @@ Local and remote evaluation clients can be configured to use a custom HTTP clien
 
 The default Guzzle client can be configured via the `guzzleClientConfig` option in [`RemoteEvaluationConfig`](#configuration) and [`LocalEvaluationConfig`](#configuration).
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `timeoutMillis` | The timeout for requests in milliseconds. This timeout applies to the initial request, not subsequent retries. | `10000` |
 | `retries` | The number of retries to attempt if a request fails. | `8` |

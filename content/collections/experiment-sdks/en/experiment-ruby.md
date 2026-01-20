@@ -107,7 +107,7 @@ You can configure the SDK client on initialization.
 If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | When `true`, sets the logger level to `DEBUG`. | `false` |
 | `logger` | Custom Logger instance for SDK logging. | Default Logger with `ERROR` level |
@@ -135,7 +135,7 @@ fetch_v2(user: AmplitudeExperiment::User, fetch_options: AmplitudeExperiment::Fe
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracks_exposure` | To track or not track an exposure event for this fetch request. If `nil`, uses the server's default behavior (does not track exposure). | `nil` |
 | `tracks_assignment` | To track or not track an assignment event for this fetch request. If `nil`, uses the server's default behavior (does track assignment). | `nil` |
@@ -344,7 +344,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone::US` or `ServerZone::EU` | `ServerZone::US` |
 | `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
@@ -358,7 +358,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
@@ -376,7 +376,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **ExposureConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
@@ -394,7 +394,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                     | Default Value |
+| Name | Description                                                                                                                                                                     | Default Value |
 | --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key                                                                                                                     | *required* |
 | `secret_key` | The analytics secret key                                                                                                                                                        | *required* |
@@ -452,7 +452,7 @@ end
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracks_exposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 

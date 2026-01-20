@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717531446
 ---
-| <div class="big-column">Name</div>      | Description                                                    |
+| Name      | Description                                                    |
 | --------------------------------------- | -------------------------------------------------------------- |
 | [List deployments](#list-deployments)   | List deployments that experiments or flags can be assigned to. |
 | [Create deployment](#create-deployment) | Create a deployment.                                           |
@@ -27,10 +27,10 @@ Fetch a list of deployments that experiments or flags can be assigned to.
 
 ### Query parameters
 
-| Name     | Requirement | Type   | Description                                                   |
-| -------- | ----------- | ------ | ------------------------------------------------------------- |
-| `limit`  | Optional    | number | The max number of deployments to be returned. Capped at 1000. |
-| `cursor` | Optional    | number | The offset to start the "page" of results from.               |
+| Name | Description |
+|------|-------------|
+| `limit` | Optional. Type: `number`. The max number of deployments to be returned. Capped at 1000. |
+| `cursor` | Optional. Type: `number`. The offset to start the "page" of results from. |
 
 ### Response
 
@@ -78,11 +78,11 @@ Create a deployment that experiments or flags can be assigned to.
 
 ### Query parameters
 
-| Name        | Requirement | Type   | Description                                                               |
-| ----------- | ----------- | ------ | ------------------------------------------------------------------------- |
-| `projectId` | Required    | string | The project's ID.                                                         |
-| `label`     | Required    | string | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
-| `type`      | Required    | string | Deployment's type.  Must be either `client` or `server`.                  |
+| Name | Description |
+|------|-------------|
+| `projectId` | Required. Type: `string`. The project's ID. |
+| `label` | Required. Type: `string`. Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
+| `type` | Required. Type: `string`. Deployment's type. Must be either `client` or `server`. |
 
 {{partial:admonition type="example" heading="Request"}}
 ```json
@@ -125,10 +125,10 @@ Edit a deployment that experiments or flags can be assigned to.
 
 ### Query parameters
 
-| Name      | Requirement | Type    | Description                                                               |
-| --------- | ----------- | ------- | ------------------------------------------------------------------------- |
-| `label`   | Optional    | string  | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
-| `archive` | Optional    | boolean | Soft delete or restore deployment.                                        |
+| Name | Description |
+|------|-------------|
+| `label` | Optional. Type: `string`. Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
+| `archive` | Optional. Type: `boolean`. Soft delete or restore deployment. |
 
 {{partial:admonition type="example" heading="Request"}}
 ```json

@@ -73,7 +73,7 @@ Authorization: Bearer {scim-token}
 
 #### Query parameters
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
 |`startIndex`| <span class="optional">Optional</span>. Integer. Defaults to 1. 1-indexed.|
 |`itemsPerPage`| <span class="optional">Optional</span>. Integer. Defaults to 100. 100 is the maximum page size.|
@@ -131,7 +131,7 @@ Authorization: Bearer {scim-token}
 
 #### Path variables
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
 |`id`| <span class="required">Required</span>. Must be a valid email address. Not case sensitive.|
 
@@ -298,7 +298,7 @@ Authorization: Bearer {scim-token}
 
 #### Path variables
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
 |`id`| <span class="required">Required</span>. Must be a valid email address. Not case sensitive.|
 

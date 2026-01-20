@@ -22,7 +22,7 @@ Remote evaluation involves making a request to Amplitude Experiment's evaluation
 
 Remote evaluation targeting and identity resolution both use Amplitude Analytics' historical user data. Remote evaluation enables advanced features such as [Amplitude ID resolution](#amplitude-id-resolution), [IP geolocation](#geolocation), [property canonicalization](#canonicalization), [targeting behavioral cohorts](#cohort-membership), and historical [user properties](#user-properties).
 
-| <div class='big-column'>Feature</div> | Remote Evaluation | [Local Evaluation](/docs/feature-experiment/local-evaluation) |
+| Feature | Remote Evaluation | [Local Evaluation](/docs/feature-experiment/local-evaluation) |
 | --- | --- | --- |
 | [Consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) | ✅ | ✅ |
 | [Individual inclusions](/docs/feature-experiment/implementation#individual-inclusions) | ✅ | ✅ |

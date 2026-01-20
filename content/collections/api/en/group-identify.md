@@ -50,14 +50,14 @@ Host: api2.amplitude.com
 ### Required parameters
 
 
-|<div class="big-column">Name</div>|Description|
+|Name|Description|
 |---|----|
 |`api_key`|Your project API key.|
 |`identification`|Either a single JSON identification object or an array of JSON objects, each of which represents one identification. |
 
 ### Identification parameter keys
 
-| <div class="big-column">Key</div>  | Description | Example |
+| Key  | Description | Example |
 | ---  | --- | --- |
 | `group_type` | String. Group type. | "org name", "org id" |
 | `group_value` |String. One specific value of the `group_type`.  <br> | `"group_type":"org id","group_value":"12345678"` or `"group_type":"account name","group_value":"Acme Corp"`. Ex.`"org id":"12345678", "account name":"Acme Corp"` 
@@ -65,7 +65,7 @@ Host: api2.amplitude.com
 
 `group_properties` supports these operations:
 
-| <div class="big-column">Operation</div> | Description |
+| Operation | Description |
 | --- | --- |
 | `$set` | Set the value of a property. |
 | `$setOnce` | Set the value of a property, prevent overriding the property value. |

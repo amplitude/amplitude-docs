@@ -498,7 +498,7 @@ func main() {
 
 The body parameter is required. It's the deletion request object listing the `user_ids` and `amplitude_ids` for the users to delete.
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                            |
+| Name | Description                                                                                                                                                                                                                                                                                                                                            |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `amplitude_ids`                    | Amplitude IDs for the users to delete.                                                                                                                                                                                                                                                                                                                 |
 | `user_ids`                         | User IDs for the users to delete.                                                                                                                                                                                                                                                                                                                      |
@@ -511,7 +511,7 @@ The body parameter is required. It's the deletion request object listing the `us
 
 The response for a POST request contains these fields:
 
-| <div class="big-column">Name</div> | Description                                                                                                       |
+| Name | Description                                                                                                       |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------|
 | `day`                              | The day the deletion job is scheduled to begin.                                                                   |
 | `status`                           | The status of the deletion job.                                                                                   |
@@ -521,7 +521,7 @@ The response for a POST request contains these fields:
 
 The `amplitude_ids` key contains these fields:
 
-| <div class="big-column">Name</div> | Description                                                                                                                    |
+| Name | Description                                                                                                                    |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `amplitude_id`                     | The Amplitude ID of the user to be deleted.                                                                                    |
 | `requester`                        | The person who requested the Amplitude ID to be deleted.                                                                       |
@@ -682,7 +682,7 @@ func main() {
 
 The success response for a `GET` request contains these fields:
 
-| <div class="big-column">Property</div> | Description                                                                                                                                                                                                                                                                                                                                             |
+| Property | Description                                                                                                                                                                                                                                                                                                                                             |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `day`                                  | The day the deletion job is scheduled to begin.                                                                                                                                                                                                                                                                                                           |
 | `status`                               | The deletion job's status.  <br>  <br>**Staging**: The job hasn't started, and you can modify it. More deletion requests may get scheduled into this job and you can remove requests from this job.  <br>  <br>**Submitted**: The job is submitted to run. You can't modify it.  <br>  <br>**Done**: The job has finished running. You can't modify it.  |
@@ -692,7 +692,7 @@ The success response for a `GET` request contains these fields:
 
 The `amplitude_ids` key contains these fields:
 
-| <div class="big-column">Name</div> | Description                                              |
+| Name | Description                                              |
 | ---------------------------------- | -------------------------------------------------------- |
 | `amplitude_id`                     | The Amplitude ID of the user to be deleted.              |
 | `requester`                        | The person who requested the Amplitude ID to be deleted. |
@@ -730,7 +730,7 @@ curl -X DELETE \
 
 ### Path variables
 
-| <div class="big-column">Name</div> | Description                                                                  |
+| Name | Description                                                                  |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
 | `AMPLITUDE_ID`                     | Required. The `amplitude_id` to be removed from a deletion job.              |
 | `JOB_START_DAY`                    | Required. Day the deletion is schedule for. YYYY-MM-DD                       |
@@ -739,7 +739,7 @@ curl -X DELETE \
 
 A successful request returns a response with this schema:
 
-| <div class="big-column">Property</div> | Description                                                 |
+| Property | Description                                                 |
 | -------------------------------------- | ----------------------------------------------------------- |
 | `amplitude_id`                         | The Amplitude ID of the user that was removed from the job  |
 | `requester`                            | The person who requested the Amplitude ID to be deleted.    |

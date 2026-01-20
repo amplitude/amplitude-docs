@@ -49,7 +49,7 @@ Amplitude recommends that you use the User Profile API server-side only. Calling
 
 ## Request Parameters
 
-| <div class= "big-column">Parameter</div> | Description |
+| Parameter | Description |
 | --- | --- |
 | `user_id`[^1] | *Optional*, but <span class="required">required unless `device_id` is set. The user ID (external database ID) to be queried. |
 | `device_id`[^1] | *Optional*, but <span class="required">required unless `user_id` is set. The device ID (anonymous ID) to be queried. |

@@ -491,7 +491,7 @@ Content-Length: 280
 
 ### Body parameters
 
-| <div class="big-column">Parameter</div> | Description                                                                                                                                                                                                                                                                                                     |
+| Parameter | Description                                                                                                                                                                                                                                                                                                     |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`                                  | <span class="required">Required</span>. String. A name for the cohort.                                                                                                                                                                                                                                          |
 | `app_id`                                | <span class="required">Required</span>. Integer. An identifier for the Amplitude project containing the cohort.                                                                                                                                                                                                 |

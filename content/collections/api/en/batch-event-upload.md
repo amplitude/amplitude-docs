@@ -139,7 +139,7 @@ These properties belong to the request's body.
 
 These properties belong to the `events` object.
 
-|<div class='big-column'> Name </div>|                                                                                                                                                                                         Description                                                                                                                                                                                                    |
+| Name |                                                                                                                                                                                         Description                                                                                                                                                                                                    |
 |:-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       `user_id`       |                                                                                                                                        <span class="required">Required</span>. String. A readable ID specified by you. Must have a minimum length of 5 characters. <br>Required unless device_id is present.                                                                                                                                        |
 |      `device_id`      |                                                                                            <span class="required">Required</span>. String. A device-specific identifier, such as the Identifier for Vendor on iOS. Required unless `user_id` is present. If a `device_id` isn't sent with the event, it's set to a hashed version of the `user_id`.                                                                                            |
@@ -188,7 +188,7 @@ These properties belong to the `events` object.
 
 These properties belong to the `options` object.
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |----|------------|
 |`min_id_length`|<span class="optional">Optional</span>. Integer. Sets the minimum permitted length for `user_id` and `device_id` fields. Default is five. |
 
@@ -212,7 +212,7 @@ These properties belong to the `options` object.
 }
 ```
 
-|<div class="big-column"> Name</div> |  Description |
+| Name |  Description |
 | --- |--- |
 | code | Integer. 200 success code |
 | events_ingested |  Integer. The number of events ingested from the upload request. |
@@ -244,7 +244,7 @@ These properties belong to the `options` object.
 
 ```
 
-| <div class="big-column">Name</div> |  Description |
+| Name |  Description |
 | --- | --- |
 | `code`  | 400 error code. |
 | `error` |  String. Error description |
@@ -284,7 +284,7 @@ These properties belong to the `options` object.
 }
 ```
 
-| <div class="big-column">Name</div> | Description |
+| Name | Description |
 | ---| --- |
 | `code` |  400 error code |
 | `error` | String. Error description. |
@@ -338,7 +338,7 @@ These properties belong to the `options` object.
 
 ```
 
-| <div class="big-column">Name</div> |  Description |
+| Name |  Description |
 | --- |-- |
 | `code` | Integer. 429 error code |
 | `error` | String. Error description. |

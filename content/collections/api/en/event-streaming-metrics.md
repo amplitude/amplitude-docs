@@ -106,7 +106,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ## Query parameters
 
-|<div class ="big-column">Name</div>|Description|
+|Name|Description|
 |-----|----------|
 |`sync_id`|  <span class="required">Required</span>. The ID for a specific streaming destination. You can find this ID under the title of the sync on the destination's setting page.|
 |`time_period`|  <span class="required">Required</span>. Retrieves the data for a specified period. Can be one of the following values:<br>`TEN_MINUTES`<br>`ONE_HOUR`<br> `FOUR_HOURS`<br> `ONE_DAY`<br> `ONE_WEEK`<br> `TWO_WEEKS`<br> `CUSTOM`|

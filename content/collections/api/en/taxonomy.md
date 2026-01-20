@@ -107,7 +107,7 @@ category_name=Attribution
 #### Body parameters
 
 
-| <div class="big-column">Name</div> | Description                                                   |
+| Name | Description                                                   |
 | ---------------------------------- | ------------------------------------------------------------- |
 | `category_name`                    | <span class="required">Required</span>. Name of the category. |
 
@@ -233,7 +233,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                      |
+| Name | Description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `category_name`                    | <span class="required">Required</span>. The name of the category |
 
@@ -318,13 +318,13 @@ category_name=Converted
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                    |
+| Name | Description                                                    |
 | ---------------------------------- | -------------------------------------------------------------- |
 | `category_id`                      | <span class="required">Required</span>. The ID of the category |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                          |
+| Name | Description                                                          |
 | ---------------------------------- | -------------------------------------------------------------------- |
 | `category_name`                    | <span class="required">Required</span>. The new name of the category |
 
@@ -397,7 +397,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                    |
+| Name | Description                                                    |
 | ---------------------------------- | -------------------------------------------------------------- |
 | `category_id`                      | <span class="required">Required</span>. The ID of the category |
 
@@ -494,7 +494,7 @@ event_type=Onboard%20Start&category=Onboarding&description=My%20new%20onboarding
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                               |
+| Name | Description                                                                               |
 | ---------------------------------- | ----------------------------------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. String. The event name.                           |
 | `category`                         | <span class="optional">Optional</span>. String. The event type's category.                |
@@ -650,7 +650,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/Event 
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                     |
+| Name | Description                                                     |
 | ---------------------------------- | --------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. String. The event name. |
 
@@ -753,13 +753,13 @@ new_event_type=OnboardStart&category=Onboarding&description=User%20signed%20in%2
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                     |
+| Name | Description                                                     |
 | ---------------------------------- | --------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. String. The event name. |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                          |
+| Name | Description                                                                                                                                                          |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `new_event_type`                   | <span class="optional">Optional</span>. String. The event type's new name.                                                                                           |
 | `category`                         | <span class="optional">Optional</span>. Current category name of the event type.                                                                                     |
@@ -850,7 +850,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                         |
+| Name | Description                                                         |
 | ---------------------------------- | ------------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. The name of the event type. |
 
@@ -935,7 +935,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                         |
+| Name | Description                                                         |
 | ---------------------------------- | ------------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. The name of the event type. |
 
@@ -1038,7 +1038,7 @@ event_type=Onboard%20Start&event_property=Completed%20Task&type=boolean&is_requi
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `event_property`                   | <span class="required">Required</span>. String. Name of the event property.                                                                                                                                                                                                                                                                                                                                                                |
 | `event_type`                       | <span class="optional">Optional</span>. String. Name of the event type to which the event property belongs to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitiude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property. |
@@ -1139,7 +1139,7 @@ event_type=Onboard%20Start
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                     |
+| Name | Description                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event_type`                       | <span class="required">Required</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type. If `event_type` isn't present, Amplitude returns all shared event properties in your tracking plan. |
 
@@ -1235,13 +1235,13 @@ event_type=Onboard%20Start
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                      |
+| Name | Description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `event_property`                   | <span class="required">Required</span>. The event property name. |
 
 #### Body parameter
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                |
+| Name | Description                                                                                                                                                                                                                                                                                                |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type.  If `event_type` isn't present, Amplitude returns all shared properties in your tracking plan. |
 
@@ -1342,13 +1342,13 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                         |
+| Name | Description                                                         |
 | ---------------------------------- | ------------------------------------------------------------------- |
 | `event-property`                   | <span class="required">Required</span>. Name of the event property. |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.                                                                                                                                                                                                                                                                                                |
 | `overrideScope`                    | <span class="optional">Optional</span>. Determines how we should act on this event property. Only applicable if event_type is present. If `overrideScope` is not present, Amplitude updates property override on the event if it exists on the event, or the shared property if no override exists on the event. With `overrideScope: "override"`, Amplitude creates an override if none exists on the event, then updates that overridden property, or it updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the event if one exists on the event, then updates the shared property, or updates the shared property if no property override exists. |
@@ -1448,13 +1448,13 @@ event_type=Onboarding%20Start
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                      |
+| Name | Description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `event_property`                   | <span class="required">Required</span>. The event property name. |
 
 #### Body parameter
 
-| <div class="big-column">Name</div> | Description                                                                                          |
+| Name | Description                                                                                          |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong. |
 
@@ -1538,13 +1538,13 @@ event_type=Onboard%20Start
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                      |
+| Name | Description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `event_property`                   | <span class="required">Required</span>. The event property name. |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                      |
+| Name | Description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | `event_type`                       | <span class="optional">Optional</span>. String. The name of the event type. When included, restores the event property for the specified event type. When omitted, restores the shared event property. |
 
@@ -1633,7 +1633,7 @@ user_property=User%20Type&description=Describes%20whether%20the%20user%20is%20a%
 
 #### Body parameter
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                   |
+| Name | Description                                                                                                                                                                                                                                   |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `user_property`                    | <span class="required">Required</span>. String. Name of the user property type.                                                                                                                                                               |
 | `description`                      | <span class="optional">Optional</span>. String. Details to add to the user property type.                                                                                                                                                     |
@@ -1824,7 +1824,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ##### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                               |
+| Name | Description                                                                                               |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
@@ -1925,13 +1925,13 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                               |
+| Name | Description                                                                                               |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                   |
+| Name | Description                                                                                                                                                                                                                                   |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `new_user_property_value`          | <span class="optional">Optional</span>. String. New name of the user property type.                                                                                                                                                           |
 | `description`                      | <span class="optional">Optional</span>. String. Details to add to the user property type.                                                                                                                                                     |
@@ -2007,7 +2007,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                               |
+| Name | Description                                                                                               |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
@@ -2078,7 +2078,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                               |
+| Name | Description                                                                                               |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
@@ -2165,7 +2165,7 @@ group_type=Group%201&group_property=Group%20Property%201&type=boolean&descriptio
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `group_property`                   | <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `group_type`                       | <span class="optional">Optional</span>. String. Name of the group type the group property belongs to. If the group type doesn't exist, Amplitude returns a `404 Not Found` error. If the group property already exists on this group type, Amplitude returns a `409 Conflict` error. If the group property already exists but not on this group type, Amplitude creates an override for this property. If the group property doesn't exist anywhere, Amplitude doesn't create an override for this property. If the group property exists and is an Amplitude-sourced group property, providing any extra arguments other than `group_property` and `group_type` results in an error because you can't edit Amplitude-sourced group properties. |
@@ -2265,7 +2265,7 @@ group_type=Group%201
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                             |
+| Name | Description                                                                                                                                                                                                                                                             |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `group_type`                       | <span class="optional">Optional</span>. Name of the group type. If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan. |
 
@@ -2359,13 +2359,13 @@ group_type=Group%201
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                  |
+| Name | Description                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `group_property`                   | <span class="required">Required</span>. The group property name. Prefix custom group properties with `grp:`. |
 
 #### Query or Body parameter
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                |
+| Name | Description                                                                                                                                                                                                                                                |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `group_type`                       | <span class="optional">Optional</span>. Name of the group type. If `group_type` is provided, we return all group properties associated with this group type. If `group_type` is not provided, we return all shared group properties in your tracking plan. |
 
@@ -2465,13 +2465,13 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 
 #### Path parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                            |
+| Name | Description                                                                                                                                                                                            |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `group_property`                   | <span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:`. Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `group_type`                       | <span class="optional">Optional</span>. Name of the group type the group property belongs to.  If the group type doesn't exist, Amplitude returns a `404 Not Found` error.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `overrideScope`                    | <span class="optional">Optional</span>. Determines how we should act on this group property.  Only applicable if `group_type` is present. If `overrideScope` is not present, Amplitude updates property override on the group type if it exists on the group type, or the shared property if no override exists on the group type. With `overrideScope: "override"`, Amplitude creates an override if none exists on the group type, then updates that overridden property, or updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the group type if one exists on the group type, then updates the shared property, or it updates the shared property if no property override exists. |

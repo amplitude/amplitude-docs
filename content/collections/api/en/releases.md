@@ -52,7 +52,7 @@ Content-Length: 260
 
 ### Release parameters
 
-|<div class="big-column">Name</div>|Description|
+|Name|Description|
 |----|-------|
 |`version`|<span class="required">Required</span>. The version of your product corresponding to this release.|
 |`release_start`| <span class="required">Required</span>. Timestamp corresponding to the start of this release in UTC. Must be in this format: `yyyy-MM-dd HH:mm:ss`.|
