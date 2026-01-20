@@ -732,8 +732,8 @@ curl -X DELETE \
 
 | <div class="big-column">Name</div> | Description                                                                  |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `AMPLITUDE_ID`                     | Required. The `amplitude_id` to be removed from a deletion job.              |
-| `JOB_START_DAY`                    | Required. Day the deletion is schedule for. YYYY-MM-DD                       |
+| `AMPLITUDE_ID`                     | <span class="required">Required</span>. The `amplitude_id` to be removed from a deletion job.              |
+| `JOB_START_DAY`                    | <span class="required">Required</span>. Day the deletion is schedule for. YYYY-MM-DD                       |
 
 ### Response
 

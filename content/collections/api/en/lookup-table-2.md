@@ -33,15 +33,15 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 ### Parameters
 
 
-| <div class="big-column">Name</div> | Type   | Description                                                                                    |
-| ---------------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
-| `name`                             | String | <span class="required">Required.</span> Name of the table.                                     |
-| `file`                             | File   | <span class="required">Required.</span> A CSV representation of the mappings.                  |
-| `key`                              | String | <span class="required">Required.</span> Column in CSV to use as key of lookup table.           |
-| `property`                         | JSON   | <span class="required">Required.</span> Property in Amplitude to map to the key column in CSV. |
-| `property.value`                   | String | <span class="required">Required.</span> Name of property in Amplitude.                         |
-| `property.type`                    | String | <span class="required">Required.</span> Type of property in Amplitude.                         |
-| `property.groupType`               | String | Required only if property is a group property.                                                 |
+| Name | Description |
+|------|-------------|
+| `name` | <span class="required">Required</span>. Type: `string`. Name of the table. |
+| `file` | <span class="required">Required</span>. Type: `file`. A CSV representation of the mappings. |
+| `key` | <span class="required">Required</span>. Type: `string`. Column in CSV to use as key of lookup table. |
+| `property` | <span class="required">Required</span>. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | <span class="required">Required</span>. Type: `string`. Name of property in Amplitude. |
+| `property.type` | <span class="required">Required</span>. Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | <span class="optional">Optional</span>. Type: `string`. Required only if property is a group property. |
 
 ### Example request
 
