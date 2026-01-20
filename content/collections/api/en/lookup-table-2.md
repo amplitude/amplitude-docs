@@ -280,12 +280,12 @@ Update a Lookup Table's columns and data. If you provide a CSV file, the file is
 
 | Name | Description |
 |------|-------------|
-| `name` | Required. Type: `string`. Name of the table. |
-| `file` | Optional. Type: `file`. A CSV representation of the mappings. |
-| `property` | Optional. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
-| `property.value` | Optional. Type: `string`. Name of property in Amplitude. |
-| `property.type` | Optional. Type: `string`. Type of property in Amplitude. |
-| `property.groupType` | Optional. Type: `string`. Required only if property is a group property. |
+| `name` | Type: `string`. Name of the table. |
+| `file` | Type: `file`. A CSV representation of the mappings. |
+| `property` | Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | Type: `string`. Name of property in Amplitude. |
+| `property.type` | Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | Type: `string`. Required only if property is a group property. |
 ### Example request
 
 {{partial:tabs tabs="cURL, HTTP"}}

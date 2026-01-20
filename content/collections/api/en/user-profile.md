@@ -51,8 +51,8 @@ Amplitude recommends that you use the User Profile API server-side only. Calling
 
 | Parameter | Description |
 | --- | --- |
-| `user_id`[^1] | *Optional*, but required unless `device_id` is set. The user ID (external database ID) to be queried. |
-| `device_id`[^1] | *Optional*, but required unless `user_id` is set. The device ID (anonymous ID) to be queried. |
+| `user_id`[^1] | Optional, but required unless `device_id` is set. The user ID (external database ID) to be queried. |
+| `device_id`[^1] | Optional, but required unless `user_id` is set. The device ID (anonymous ID) to be queried. |
 | `get_recs` | *Optional*. Return a recommendation result for this user. Defaults to `false`.|
 | `rec_id`| *Optional*. Recommendations to retrieve, required if `get_recs` is true. Fetch multiple recommendations by separating the `rec_ids` with commas. |
 | `rec_type` | *Optional*. Overrides the default experimental control setting and `rec_type=model` returns modeled recommendations and `rec_type=random` returns random recommendations. |
