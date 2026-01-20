@@ -170,6 +170,119 @@ Components are reusable elements that you use across your guides and surveys. Wi
 
 Each component includes states, for example default, hover, or focus, that you can customize.
 
+## Where theme components are used
+
+Theme components appear throughout guides and surveys. This section outlines where each component type is used in the application.
+
+### Buttons
+
+Buttons appear in the following locations:
+
+- **Primary buttons**: Used for main call-to-action (CTA) buttons in guides and surveys. These buttons use the accent color you define in your theme.
+- **Secondary buttons**: Used for alternative actions or less prominent CTAs. These buttons use the secondary color settings.
+- **Button states**: All buttons support default, hover, active, and disabled states that you can customize in the component editor.
+
+Buttons appear in:
+- Guide steps with action buttons
+- Survey submission buttons
+- Modal dialogs
+- Banner actions
+- Form submissions
+
+### Cards
+
+Cards are used to group and display content in guides and surveys. Card styling applies to:
+
+- Guide step containers
+- Survey question containers
+- Content blocks within guides
+- Information panels
+- Result displays in surveys
+
+Card properties (corner radius, padding, gaps, shadow) apply uniformly to all card elements in your guides and surveys.
+
+### Form controls
+
+Form controls are interactive elements used in surveys and forms. These controls appear in:
+
+- **Text inputs**: Short and long text input fields for survey responses
+- **Select dropdowns**: Dropdown menus for selecting from multiple options
+- **Checkboxes**: Multiple choice options where users can select more than one answer
+- **Radio buttons**: Single choice options where users can select only one answer
+- **Rating components**: Star ratings, emoji ratings, and numeric ratings for feedback
+- **List elements**: Ordered and unordered lists in survey questions
+
+All form controls share the same styling properties (height, corner radius, padding, gaps, shadow, focus ring) that you configure in the Form controls section.
+
+### Widgets
+
+Widgets are container elements that display guides and surveys. Each widget type has specific dimension settings:
+
+- **Modals**: Full-screen or centered dialog boxes that appear over your application. Used for multi-step guides, surveys, and important announcements.
+- **Popovers / Pins**: Small, contextual elements that appear near specific UI elements. Used for tooltips, hints, and inline guidance.
+- **Tooltips**: Small informational boxes that appear when users hover over or interact with elements. Used for contextual help and explanations.
+- **Checklists**: Interactive lists that users can check off as they complete tasks. Used for onboarding flows and task completion guides.
+
+### Borders
+
+Border colors apply to:
+
+- Form control outlines
+- Card edges
+- Button borders
+- Input field borders
+- Separator lines between content sections
+
+Border colors support primary, primary hover, and disabled states that you can customize.
+
+### Backgrounds
+
+Background colors are used for:
+
+- Card backgrounds
+- Form control backgrounds
+- Button backgrounds (primary, secondary, and their hover states)
+- Disabled element backgrounds
+- Widget container backgrounds
+
+Background settings support primary, primary hover, secondary, secondary hover, and disabled states.
+
+### Typography
+
+Typography settings apply to all text elements in guides and surveys, including:
+
+- Guide step titles and descriptions
+- Survey questions and instructions
+- Button labels
+- Form control labels
+- Card content text
+- Widget headers and body text
+
+The typography you set becomes the default font for all text in guides and surveys that use your theme.
+
+### Animations
+
+Animations control how widgets appear on screen. Each widget type can have its own animation:
+
+- **Modal animations**: Control how modals enter and exit the screen
+- **Popover / Pin animations**: Control how contextual elements appear
+- **Tooltip animations**: Control how tooltips fade in and out
+- **Checklist animations**: Control how checklist items appear
+
+Animation duration settings (in milliseconds) control the speed of these transitions.
+
+### Content colors
+
+Content colors apply to text and link elements:
+
+- **Primary color**: Used for main text content
+- **Secondary color**: Used for secondary text and labels
+- **Disabled color**: Used for disabled text and inactive elements
+- **Link color**: Used for clickable links in guide and survey content
+- **Link hover color**: Used when users hover over links
+- **Link visited color**: Used for links that users have already clicked
+- **Highlight color**: Used to emphasize important text or selections
+
 ## Advanced customization with Custom CSS
 
 [Custom CSS](/docs/guides-and-surveys/custom-css) gives you control over specific elements using CSS class selectors for styling beyond what themes provide. Custom CSS is available for web SDKs only.
