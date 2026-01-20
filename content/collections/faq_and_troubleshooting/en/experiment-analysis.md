@@ -16,7 +16,7 @@ The Experiment Results chart must have two or more variants so that it can displ
 
 
 {{partial:collapse name="Why is reaching significance taking longer than it should?"}}
-When using a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test), you must wait until your experiment reaches the specified sample size before Experiment Results will run the p-value and confidence interval computations.
+When using a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test), you must wait until your experiment reaches the specified sample size before Experiment Results runs the p-value and confidence interval computations.
 
 With sequential testing, even with a large MDE, it can take some time to reach statistical significance if your experiment’s lift is small. A T-test generally requires fewer samples to detect the same lift.
 {{/partial:collapse}}
