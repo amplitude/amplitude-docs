@@ -108,6 +108,66 @@ The Admin role is the highest-level role, granting extensive control over the or
 * Change organization Admins
 * Full access to Guides and Surveys
 
+## Experiment-specific permissions
+
+Amplitude Experiment has its own set of permissions that work alongside the general organization roles. The following sections describe what each role can do specifically in Experiment.
+
+For more detailed information about Experiment permissions, including flag-level access controls, go to [Project-level user permissions](/docs/feature-experiment/project-level-permissions).
+
+### Viewer permissions in Experiment
+
+**Experiment viewer permissions:**
+
+* View experiments, flags, and deployments
+* View mutual exclusion groups
+* View analysis and metrics
+* View project API keys
+
+**Experiment viewer restrictions:**
+
+* Can't create, edit, or delete experiments or flags
+* Can't create, edit, or delete deployments
+* Can't create, edit, or delete mutual exclusion groups
+* Can't modify variants, allocation, or activation settings
+* Can't add users to projects or edit roles
+
+### Member permissions in Experiment
+
+**Experiment member permissions:**
+
+* All Experiment viewer permissions
+* Create, edit, and delete experiments and flags
+* Create, edit, and delete deployments
+* Create, edit, and delete mutual exclusion groups
+* Read and write to variants, allocation, activation, analysis, and metrics
+
+**Experiment member restrictions:**
+
+* Can't add users to projects or edit project roles
+* Can't add users to the organization or edit organization roles
+
+### Manager permissions in Experiment
+
+**Experiment manager permissions:**
+
+* All Experiment member permissions
+* Add users to projects
+* Edit project-level roles for users
+
+**Experiment manager restrictions:**
+
+* Can't add users to the organization
+* Can't edit organization-level roles
+
+### Admin permissions in Experiment
+
+**Experiment admin permissions:**
+
+* All Experiment manager permissions
+* Add users to the organization
+* Edit organization-level roles for users
+* Edit restricted flags and experiments (even without being listed as an editor)
+
 ## General restrictions for all users
 
 Regardless of role, all users have the following restrictions:
