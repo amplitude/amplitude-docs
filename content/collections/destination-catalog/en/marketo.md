@@ -85,15 +85,15 @@ You can map any Amplitude user property to a Marketo field during setup. Common 
 - **Custom user properties**: Any custom user property that exists in both Amplitude and Marketo.
 
 {{partial:admonition type="note" title="Property mapping"}}
-During Amplitude setup, you select the Amplitude user property to map to Marketo. The property you choose must exist in both systems and have consistent values for successful user matching.
+During Amplitude setup, select the Amplitude user property to map to Marketo. The property you choose must exist in both systems and have consistent values for successful user matching.
 {{/partial:admonition}}
 
 ### Cohort membership
 
 When you sync a cohort to Marketo, Amplitude creates or updates a custom Boolean field in Marketo for each cohort. This field indicates whether a user belongs to the cohort:
 
-- `true`: User is in the cohort
-- `false`: User isn't in the cohort
+- `true`: User is in the cohort.
+- `false`: User isn't in the cohort.
 
 You must create a custom Boolean field in Marketo for each cohort you want to sync. The field name must match the API name you enter during the sync process.
 
@@ -103,7 +103,7 @@ A marketing manager wants to create a targeted email campaign in Marketo for use
 
 Here are the steps you can take:
 
-1. In Amplitude, create a cohort of users who performed the "Add to Cart" event but didn't perform the "Purchase Completed" event within 7 days.
+1. In Amplitude, create a cohort of users who performed the "Add to Cart" event but didn't perform the "Purchase Completed" event within seven days.
 2. Set up the Marketo destination in Amplitude, mapping the email address user property to Marketo's email field.
 3. Create a custom Boolean field in Marketo called "Cart Abandoners" (or similar).
 4. Sync the cohort to Marketo, specifying the custom field name.
