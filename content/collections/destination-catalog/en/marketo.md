@@ -41,7 +41,7 @@ This integration syncs data from Amplitude to Marketo only. Marketo data doesn't
 
 ### Marketo setup
 
-1. Copy your Marketo `Client Id`, `Client Secret`, and `REST API Endpoint`. See [Marketo's documentation](https://developers.marketo.com/blog/quick-start-guide-for-marketo-rest-api/) for help with this.
+1. Copy your Marketo `Client Id`, `Client Secret`, and `REST API Endpoint`. Go to [Marketo's documentation](https://developers.marketo.com/blog/quick-start-guide-for-marketo-rest-api/) for help with this.
 
 {{partial:admonition type="example" title="Example keys"}}
 - `Client ID`: `97890c99-9999-46e4-bccc-351071cd5c3b`
