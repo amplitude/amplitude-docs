@@ -38,7 +38,7 @@ If you want to roll out the winning variant to all users, Amplitude:
 * Changes the distribution weight of the variant you roll out to 100 for the winning variant and 0 for all other variants.
 * Disables [sticky bucketing](/docs/feature-experiment/advanced-techniques/sticky-bucketing) (sets it to `false`).
 
-If you roll out your experiment to a custom percentage of users, the automatic changes listed above don't occur. You muar apply changes manually after confirming your rollout decision.
+If you roll out your experiment to a custom percentage of users, the automatic changes listed above don't occur. You must apply changes manually after confirming your rollout decision.
 
 You can also roll out to "only the targeted users." This option helps avoid situations that generalize your experiment's results. For example: You target users in the United States and find a 5% improvement in your results. These results don't mean that if you roll out to all users, there is a lift of 5% outside of the United States. Sometimes, you may experience a 5% lift for U.S users but find a -2% lift for all other users.
 
