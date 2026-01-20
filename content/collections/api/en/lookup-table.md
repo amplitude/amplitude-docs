@@ -40,8 +40,8 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 
 |Name| Description|
 |-----|------|
-|`name` | <span class="required">Required</span>. String. Name of the table.|
-|`file` | <span class="required">Required</span>. File. A CSV representation of the mappings.|
+|`name` | Required. String. Name of the table.|
+|`file` | Required. File. A CSV representation of the mappings.|
 
 ### Request
 
@@ -122,7 +122,7 @@ Retrieve a Lookup Table by its name.
 
 |Name| Description|
 |-----|------|
-|`name` | <span class="required">Required</span>. String. Name of the table.|
+|`name` | Required. String. Name of the table.|
 
 ### Request
 
@@ -177,8 +177,8 @@ Update a Lookup Table's columns and data.
 
 |Name| Description|
 |-----|------|
-|`name` | <span class="required">Required</span>. String. Name of the table.|
-|`file` | <span class="required">Required</span>. File. A CSV representation of the mappings.|
+|`name` | Required. String. Name of the table.|
+|`file` | Required. File. A CSV representation of the mappings.|
 
 ### Request
 
@@ -260,8 +260,8 @@ Delete a Lookup Table.
 
 |Name| Description|
 |-----|------|
-|`name` | <span class="required">Required</span>. String. Name of the table.|
-|`force` | <span class="optional">Optional</span>. Boolean. Delete the associated properties. Defaults to `false`.|
+|`name` | Required. String. Name of the table.|
+|`force` | Optional. Boolean. Delete the associated properties. Defaults to `false`.|
 
 ### Request 
 

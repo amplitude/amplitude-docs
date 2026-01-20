@@ -48,7 +48,7 @@ Content-Type: application/json
 
 | Parameter  | Description                                                               |
 | ---------- | ------------------------------------------------------------------------- |
-| `category` | <span class="required">Required</span>. String. The name of the category. |
+| `category` | Required. String. The name of the category. |
 
 #### Response
 
@@ -88,7 +88,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter  | Description                                                                                                                           |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `category` | <span class="optional">Optional</span>. String. If specified, returns only the specified category. Otherwise, returns all categories. |
+| `category` | Optional. String. If specified, returns only the specified category. Otherwise, returns all categories. |
 
 #### Response
 
@@ -134,7 +134,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter     | Description                                                              |
 | ------------- | ------------------------------------------------------------------------ |
-| `category_id` | <span class="required">Required</span>. Integer. The ID of the category. |
+| `category_id` | Required. Integer. The ID of the category. |
 
 #### Response
 
@@ -183,13 +183,13 @@ Content-Type: application/json
 
 | Parameter     | Description                                                                        |
 | ------------- | ---------------------------------------------------------------------------------- |
-| `category_id` | <span class="required">Required</span>. Integer. The ID of the category to update. |
+| `category_id` | Required. Integer. The ID of the category to update. |
 
 #### Body parameters
 
 | Parameter  | Description                                                                   |
 | ---------- | ----------------------------------------------------------------------------- |
-| `category` | <span class="required">Required</span>. String. The new name of the category. |
+| `category` | Required. String. The new name of the category. |
 
 #### Response
 
@@ -230,7 +230,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter     | Description                                                                        |
 | ------------- | ---------------------------------------------------------------------------------- |
-| `category_id` | <span class="required">Required</span>. Integer. The ID of the category to delete. |
+| `category_id` | Required. Integer. The ID of the category to delete. |
 
 #### Response
 
@@ -278,13 +278,13 @@ Content-Type: application/json
 
 | Parameter     | Description                                                                        |
 | ------------- | ---------------------------------------------------------------------------------- |
-| `category_id` | <span class="required">Required</span>. Integer. The ID of the category to assign. |
+| `category_id` | Required. Integer. The ID of the category to assign. |
 
 #### Body parameters
 
 | Parameter        | Description                                                                        |
 | ---------------- | ---------------------------------------------------------------------------------- |
-| `annotation_ids` | <span class="required">Required</span>. Array. A list of annotation IDs to update. |
+| `annotation_ids` | Required. Array. A list of annotation IDs to update. |
 
 #### Response
 
@@ -360,12 +360,12 @@ Content-Type: application/json
 
 | Parameter  | Description                                                                                                                                                                                               |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | <span class="required">Required</span>. String. The title of your annotation.                                                                                                                             |
-| `start`    | <span class="required">Required</span>. String. Timestamp corresponding to the start of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-01T07:00:00+00:00"`.           |
-| `category` | <span class="optional">Optional</span>. String. The name of the category that the annotation belongs to.                                                                                                  |
-| `chart_id` | <span class="optional">Optional</span>. String. The ID of the chart (found in the URL) to annotate. If you don't include `chart_id`, the annotation is global and appears on all charts for your project. |
-| `details`  | <span class="optional">Optional</span>. String. Details for the annotation.                                                                                                                               |
-| `end`      | <span class="optional">Optional</span>. String. Timestamp corresponding to the end of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`.             |
+| `label`    | Required. String. The title of your annotation.                                                                                                                             |
+| `start`    | Required. String. Timestamp corresponding to the start of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-01T07:00:00+00:00"`.           |
+| `category` | Optional. String. The name of the category that the annotation belongs to.                                                                                                  |
+| `chart_id` | Optional. String. The ID of the chart (found in the URL) to annotate. If you don't include `chart_id`, the annotation is global and appears on all charts for your project. |
+| `details`  | Optional. String. Details for the annotation.                                                                                                                               |
+| `end`      | Optional. String. Timestamp corresponding to the end of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`.             |
 
 #### Response
 
@@ -415,10 +415,10 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter  | Description                                                                                                                                                                                                                                                                                        |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `category` | <span class="optional">Optional</span>. String. If specified, only returns annotations in this category. Doesn't combine with `chart_id` filter.                                                                                                                                                   |
-| `chart_id` | <span class="optional">Optional</span>. String. If specified, only returns annotations that show on this chart. Doesn't combine with `category` filter.                                                                                                                                            |
-| `start`    | <span class="optional">Optional</span>. String. If specified, only returns annotations that occur after `start` in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`.                                                                                            |
-| `end`      | <span class="optional">Optional</span>. String. If specified, only returns annotations that occur before `end` in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). If the annotation spans a date range, the annotation's end date must be before `end` input. For example: `"2025-11-10T07:00:00+01:00"`. |
+| `category` | Optional. String. If specified, only returns annotations in this category. Doesn't combine with `chart_id` filter.                                                                                                                                                   |
+| `chart_id` | Optional. String. If specified, only returns annotations that show on this chart. Doesn't combine with `category` filter.                                                                                                                                            |
+| `start`    | Optional. String. If specified, only returns annotations that occur after `start` in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`.                                                                                            |
+| `end`      | Optional. String. If specified, only returns annotations that occur before `end` in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). If the annotation spans a date range, the annotation's end date must be before `end` input. For example: `"2025-11-10T07:00:00+01:00"`. |
 
 #### Response
 
@@ -470,7 +470,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter       | Description                                                                            |
 | --------------- | -------------------------------------------------------------------------------------- |
-| `annotation_id` | <span class="required">Required</span>. Integer. The ID of the annotation to retrieve. |
+| `annotation_id` | Required. Integer. The ID of the annotation to retrieve. |
 
 #### Response
 
@@ -531,18 +531,18 @@ Content-Type: application/json
 
 | Parameter       | Description                                                                          |
 | --------------- | ------------------------------------------------------------------------------------ |
-| `annotation_id` | <span class="required">Required</span>. Integer. The ID of the annotation to update. |
+| `annotation_id` | Required. Integer. The ID of the annotation to update. |
 
 #### Body parameters
 
 | Parameter  | Description                                                                                                                                                                                                                                                                                                     |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`    | <span class="optional">Optional</span>. String. The title of your annotation.                                                                                                                                                                                                                                   |
-| `start`    | <span class="optional">Optional</span>. String. Timestamp corresponding to the start of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-01T07:00:00+00:00"`.                                                                                                                 |
-| `category` | <span class="optional">Optional</span>. String. The name of the category that the annotation belongs to.                                                                                                                                                                                                        |
-| `chart_id` | <span class="optional">Optional</span>. String. The ID of the chart (found in the URL) to annotate. If you don't include `chart_id`, the annotation is global and appears on all charts for your project. Set to `null` to remove the association to a specific chart and make the annotation visible globally. |
-| `details`  | <span class="optional">Optional</span>. String. Details for the annotation.                                                                                                                                                                                                                                     |
-| `end`      | <span class="optional">Optional</span>. String. Timestamp corresponding to the end of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`. Set to `null` to remove the end time.                                                                             |
+| `label`    | Optional. String. The title of your annotation.                                                                                                                                                                                                                                   |
+| `start`    | Optional. String. Timestamp corresponding to the start of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-01T07:00:00+00:00"`.                                                                                                                 |
+| `category` | Optional. String. The name of the category that the annotation belongs to.                                                                                                                                                                                                        |
+| `chart_id` | Optional. String. The ID of the chart (found in the URL) to annotate. If you don't include `chart_id`, the annotation is global and appears on all charts for your project. Set to `null` to remove the association to a specific chart and make the annotation visible globally. |
+| `details`  | Optional. String. Details for the annotation.                                                                                                                                                                                                                                     |
+| `end`      | Optional. String. Timestamp corresponding to the end of this annotation in ISO 8601 format (`YYYY-MM-DDThh:mmTZD`). For example: `"2025-11-10T07:00:00+01:00"`. Set to `null` to remove the end time.                                                                             |
 
 #### Response
 
@@ -591,7 +591,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 | Parameter       | Description                                                                          |
 | --------------- | ------------------------------------------------------------------------------------ |
-| `annotation_id` | <span class="required">Required</span>. Integer. The ID of the annotation to delete. |
+| `annotation_id` | Required. Integer. The ID of the annotation to delete. |
 
 #### Response
 

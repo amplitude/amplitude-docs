@@ -206,10 +206,10 @@ Content-Length: 83
 
 | Name | Description |
 | --- | --- |
-| `userId` | <span class="required">Required if `amplitudeID` isn't set</span>. The user ID of the user to request data for. |
-| `amplitudeId` | <span class="required">Required if `userID` isn't set</span>. Integer. The Amplitude ID of the user to request data for. |
-| `startDate` | <span class="required">Required</span>. Date. The start date for the data request. |
-| `endDate` | <span class="required">Required</span>. Date. The end date for the data request. |
+| `userId` | Required if `amplitudeID` isn't set. The user ID of the user to request data for. |
+| `amplitudeId` | Required if `userID` isn't set. Integer. The Amplitude ID of the user to request data for. |
+| `startDate` | Required. Date. The start date for the data request. |
+| `endDate` | Required. Date. The end date for the data request. |
 
 ### Response
 
@@ -269,7 +269,7 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 
 |Name|Description|
 |----|-----------|
-|`requestId`|<span class="required">Required</span>. The request ID retrieved with the [create data request](#create-a-request-for-data) call.|
+|`requestId`|Required. The request ID retrieved with the [create data request](#create-a-request-for-data) call.|
 
 ### Response
 
@@ -333,5 +333,5 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 
 | Name|Description|
 |-----|-----|
-|`request_id`|<span class="required">Required</span>. Integer. The ID of the request. Returned with the original GET request.|
-|`output_id`|<span class="required">Required</span>. Integer. The ID of the output to download. An integer at the end of the URL returned in the status response after the job finishes.|
+|`request_id`|Required. Integer. The ID of the request. Returned with the original GET request.|
+|`output_id`|Required. Integer. The ID of the output to download. An integer at the end of the URL returned in the status response after the job finishes.|

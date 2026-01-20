@@ -65,8 +65,8 @@ Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
 
 |Name|Description|
 |-----|------------|
-|`start`| <span class="required">Required</span>. First hour included in data series, formatted YYYYMMDDTHH. For example, `20220201T05`.|
-|`end` |<span class="required">Required</span>. Last hour included in data series, formatted YYYYMMDDTHH For example, `20220201T05`.|
+|`start`| Required. First hour included in data series, formatted YYYYMMDDTHH. For example, `20220201T05`.|
+|`end` | Required. Last hour included in data series, formatted YYYYMMDDTHH For example, `20220201T05`.|
 
 ## Response
 
