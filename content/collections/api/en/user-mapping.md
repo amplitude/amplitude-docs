@@ -42,16 +42,16 @@ The aliasing API has the following limits:
 
 |<div class="big-column">Name</div>|Description|
 |----|-----------|
-|`api_key`| <span class="required">Required</span>. Type: `string`. An API Key for any project in your organization.|
-|`mapping`| <span class="required">Required</span>. Either a single JSON mapping object or an array of JSON objects, each of which represents a single mapping.|
+|`api_key`| Required. Type: `string`. An API Key for any project in your organization.|
+|`mapping`| Required. Either a single JSON mapping object or an array of JSON objects, each of which represents a single mapping.|
 
 ### Mapping paramater
 
 |<div class="big-column">Name</div>|Description|
 |----|-----------|
-|`user_id`| <span class="required">Required</span>. Type: `string`. A UUID (unique user ID) specified by you, for the user you want to map. Each JSON mapping object can contain one `user_id` to map.|
-|`global_user_id`| <span class="required">Required</span> unless `unmap` is `true`. Type: `string`. A UUID (unique user ID) specified by you. The unified identity you want to map the other `user_id` to.|
-|`unmap`| <span class="optional">Optional</span>. Type: `boolean`. When `true`, the current mapping for `user_id` is removed.|
+|`user_id`| Required. Type: `string`. A UUID (unique user ID) specified by you, for the user you want to map. Each JSON mapping object can contain one `user_id` to map.|
+|`global_user_id`| Required unless `unmap` is `true`. Type: `string`. A UUID (unique user ID) specified by you. The unified identity you want to map the other `user_id` to.|
+|`unmap`| Optional. Type: `boolean`. When `true`, the current mapping for `user_id` is removed.|
 
 ## User mapping
 
@@ -177,9 +177,9 @@ User mappings uses a different URL than the map and unmap endpoints above, `http
 
 |<div class="big-column">Name</div>|Description|
 |----|-----------|
-|`api_key`| <span class="required">Required</span>. Type: `string`. An API Key for any project in your organization.|
-|`secret_key`| <span class="required">Required</span>. Type: `string`. An API Secret Key for any project in your organization.|
-|`user_ids`| <span class="required">Required</span>. A list of user ids. Minimum 1 user id, maximum 100 user ids in a single request. |
+|`api_key`| Required. Type: `string`. An API Key for any project in your organization.|
+|`secret_key`| Required. Type: `string`. An API Secret Key for any project in your organization.|
+|`user_ids`| Required. A list of user ids. Minimum 1 user id, maximum 100 user ids in a single request. |
 
 ### Response
 

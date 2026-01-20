@@ -675,8 +675,8 @@ func main() {
 
 | Name    | Description                                                                                                                |
 | ------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `start_day` | <span class="required">Required</span>. First hour included in data series, formatted `YYYY-MM-DD`. For example, `20220201`. |
-| `end_day`   | <span class="required">Required</span>. Last hour included in data series, formatted `YYYY-MM-DD` For example, `20220201`.   |
+| `start_day` | Required. First hour included in data series, formatted `YYYY-MM-DD`. For example, `20220201`. |
+| `end_day`   | Required. Last hour included in data series, formatted `YYYY-MM-DD` For example, `20220201`.   |
 
 ### Response
 
@@ -732,8 +732,8 @@ curl -X DELETE \
 
 | <div class="big-column">Name</div> | Description                                                                  |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `AMPLITUDE_ID`                     | <span class="required">Required</span>. The `amplitude_id` to be removed from a deletion job.              |
-| `JOB_START_DAY`                    | <span class="required">Required</span>. Day the deletion is schedule for. YYYY-MM-DD                       |
+| `AMPLITUDE_ID`                     | Required. The `amplitude_id` to be removed from a deletion job.              |
+| `JOB_START_DAY`                    | Required. Day the deletion is schedule for. YYYY-MM-DD                       |
 
 ### Response
 

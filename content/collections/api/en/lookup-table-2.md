@@ -35,13 +35,13 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 
 | Name | Description |
 |------|-------------|
-| `name` | <span class="required">Required</span>. Type: `string`. Name of the table. |
-| `file` | <span class="required">Required</span>. Type: `file`. A CSV representation of the mappings. |
-| `key` | <span class="required">Required</span>. Type: `string`. Column in CSV to use as key of lookup table. |
-| `property` | <span class="required">Required</span>. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
-| `property.value` | <span class="required">Required</span>. Type: `string`. Name of property in Amplitude. |
-| `property.type` | <span class="required">Required</span>. Type: `string`. Type of property in Amplitude. |
-| `property.groupType` | <span class="optional">Optional</span>. Type: `string`. Required only if property is a group property. |
+| `name` | Required. Type: `string`. Name of the table. |
+| `file` | Required. Type: `file`. A CSV representation of the mappings. |
+| `key` | Required. Type: `string`. Column in CSV to use as key of lookup table. |
+| `property` | Required. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | Required. Type: `string`. Name of property in Amplitude. |
+| `property.type` | Required. Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | Optional. Type: `string`. Required only if property is a group property. |
 
 ### Example request
 
@@ -121,7 +121,7 @@ Retrieve a Lookup Table by its name.
 
 | <div class="big-column">Name</div> | Type   | Description                                                |
 | ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| `name`                             | String | Required. Name of the table. |
 
 ### Example request
 
@@ -176,7 +176,7 @@ Download the lookup table object as a CSV. Any incremental changes are applied i
 
 | <div class="big-column">Name</div> | Type   | Description                                                |
 | ---------------------------------- | ------ | ---------------------------------------------------------- |  
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| `name`                             | String | Required. Name of the table. |
 
 ### Example request
 
@@ -204,7 +204,7 @@ Override a Lookup Table object by uploading a CSV that replaces the CSV already 
 
 | <div class="big-column">Name</div> | Type   | Description                                                |
 | ---------------------------------- | ------ | ---------------------------------------------------------- |  
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| `name`                             | String | Required. Name of the table. |
 | `file`                             | File   | A CSV representation of the mappings.                      |
 | `property`                         | JSON   | Property in Amplitude to map to the key column in CSV.     |
 | `property.value`                   | String | Name of property in Amplitude.                             |
@@ -281,7 +281,7 @@ Update a Lookup Table's columns and data. If you provide a CSV file, the file is
 
 | <div class="big-column">Name</div> | Type   | Description                                                |
 | ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| `name`                             | String | Required. Name of the table. |
 | `file`                             | File   | A CSV representation of the mappings.                      |
 | `property`                         | JSON   | Property in Amplitude to map to the key column in CSV.     |
 | `property.value`                   | String | Name of property in Amplitude.                             |
@@ -356,7 +356,7 @@ Delete a Lookup Table.
 
 | <div class="big-column">Name</div> | Type   | Description                                                |
 | ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| `name`                             | String | Required. Name of the table. |
 
 ### Example request
 
