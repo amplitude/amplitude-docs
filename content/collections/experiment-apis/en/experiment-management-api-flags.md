@@ -11,7 +11,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717531451
 ---
 
-| <div class="big-column">Name</div>                                | Description                                          |
+| Name                                | Description                                          |
 | ----------------------------------------------------------------- | ---------------------------------------------------- |
 | [List](#list)                                                     | List of flags including their configuration details. |
 | [Get details](#get-details)                                       | Get the configuration details of a flag.             |
@@ -144,9 +144,9 @@ Fetch the configuration details of a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -232,9 +232,9 @@ Fetch a list of all versions for a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -393,10 +393,10 @@ Fetch details of a specific version of a flag.
 
 ### Path variables
 
-| Name        | Requirement | Type   | Description       |
-| ----------- | ----------- | ------ | ----------------- |
-| `id`        | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.    |
-| `versionId` | Required    | string | The version's ID. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `versionId` | Required. Type: `string`. The version's ID. |
 
 ### Response
 
@@ -478,9 +478,9 @@ Fetch a list of all variants for a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -524,10 +524,10 @@ Fetch details of a specific variant of a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -569,10 +569,10 @@ Fetch a list of inclusions for a specific variant of a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -611,10 +611,10 @@ Fetch a list of cohort inclusions for a specific variant of a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -653,18 +653,18 @@ Create a new variant for a flag
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The variant key.                                      |
-| `description`                          | Optional    | string | Description for the variant.                          |
-| `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
+| Name | Description |
+|------|-------------|
+| `key` | Required. Type: `string`. The variant key. |
+| `description` | Optional. Type: `string`. Description for the variant. |
+| `name` | Optional. Type: `string`. Name for the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -708,10 +708,10 @@ Edit a variant for a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -729,12 +729,12 @@ Edit a variant for a flag.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                                                                                           |
-| -------------------------------------- | ----------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| `key`                                  | Optional    | string | The variant key.                                                                                                      |
-| `description`                          | Optional    | string | Description for the variant.                                                                                          |
-| `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | JSON | Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. This value replaces the existing value for the variant payload. |
+| Name | Description |
+|------|-------------|
+| `key` | Optional. Type: `string`. The variant key. |
+| `description` | Optional. Type: `string`. Description for the variant. |
+| `name` | Optional. Type: `string`. Name for the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. This value replaces the existing value for the variant payload. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
 
 ### Response
@@ -764,10 +764,10 @@ Remove a variant from a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -798,16 +798,16 @@ Add inclusions (users or devices) to flag's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                     |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------- |
-| `inclusions`                           | Required    | object | Contains an string array of user or device ids. |
+| Name | Description |
+|------|-------------|
+| `inclusions` | Required. Type: `object`. Contains an string array of user or device ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -848,16 +848,16 @@ Add cohort inclusions to flag's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                               |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------- |
-| `inclusions`                           | Required    | array  | An array of cohort IDs to add.           |
+| Name | Description |
+|------|-------------|
+| `inclusions` | Required. Type: `array`. An array of cohort IDs to add. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -899,11 +899,11 @@ Remove inclusions (users or devices) from flag's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.                                                                                                           |
-| `variantKey` | Required    | string | The variant's key.                                                                                                       |
-| `userIndex`  | Required    | string | The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
+| `userIndex` | Required. Type: `string`. The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
 
 ### Response
 
@@ -930,10 +930,10 @@ Remove all inclusions (users or devices) from flag's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -960,16 +960,16 @@ Bulk remove users or devices from flag's variant. Limited to 100 for each reques
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                     |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------- |
-| `users`                                | Required    | object | Contains an string array of user or device ids. |
+| Name | Description |
+|------|-------------|
+| `users` | Required. Type: `object`. Contains an string array of user or device ids. |
 
 ### Response
 
@@ -998,16 +998,16 @@ Bulk remove cohorts from flag's variant. Limited to 100 for each request.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                |
-| -------------------------------------- | ----------- | ------ | ------------------------------------------ |
-| `users`                                | Required    | array  | An array of cohort IDs to remove.         |
+| Name | Description |
+|------|-------------|
+| `users` | Required. Type: `array`. An array of cohort IDs to remove. |
 
 ### Response
 
@@ -1036,9 +1036,9 @@ List all deployments for a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -1082,15 +1082,15 @@ Add a deployment for a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description      |
-| ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | The object's ID. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The object's ID. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                 |
-| -------------------------------------- | ----------- | ------ | ------------------------------------------- |
-| `deployments`                          | Required    | string array | Contains an string array of deployment ids. |
+| Name | Description |
+|------|-------------|
+| `deployments` | Required. Type: `string array`. Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -1129,10 +1129,10 @@ Remove a deployment from a flag.
 
 ### Path variables
 
-| Name           | Requirement | Type   | Description          |
-| -------------- | ----------- | ------ | -------------------- |
-| `id`           | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.       |
-| `deploymentID` | Required    | string | The deployment's ID. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| `deploymentID` | Required. Type: `string`. The deployment's ID. |
 
 ### Response
 
@@ -1159,25 +1159,25 @@ Edit a flag.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description    |
-| ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                                                                                                                |
-| -------------------------------------- | ----------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                                 | Optional    | string       | Name.                                                                                                                                                                                                      |
-| `description`                          | Optional    | string       | Description.                                                                                                                                                                                               |
-| `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                                                   |
-| `bucketingSalt`                        | Optional    | string       | Bucketing salt.                                                                                                                                                                                            |
-| `bucketingUnit`                        | Optional    | string       | Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis.                                                                                          |
-| `evaluationMode`                       | Optional    | string       | Evaluation mode for the flag, either `local` or `remote`.                                                                                                                                                  |
-| `rolloutPercentage`                    | Optional    | number       | Rollout percentage for non-targeted users. Range 0 - 100.                                                                                                                                                  |
-| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
-| `enabled`                              | Optional    | boolean      | Property to activate or deactivate flag.                                                                                                                                                                   |
-| `archive`                              | Optional    | boolean      | Property to archive or unarchive flag.                                                                                                                                                                     |
-| `tags`                                 | Optional    | string array | A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first.                     |
+| Name | Description |
+|------|-------------|
+| `name` | Optional. Type: `string`. Name. |
+| `description` | Optional. Type: `string`. Description. |
+| `bucketingKey` | Optional. Type: `string`. The user property to bucket the user by. |
+| `bucketingSalt` | Optional. Type: `string`. Bucketing salt. |
+| `bucketingUnit` | Optional. Type: `string`. Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis. |
+| `evaluationMode` | Optional. Type: `string`. Evaluation mode for the flag, either `local` or `remote`. |
+| `rolloutPercentage` | Optional. Type: `number`. Rollout percentage for non-targeted users. Range 0 - 100. |
+| `targetSegments` | Optional. Type: `object array`. See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
+| `enabled` | Optional. Type: `boolean`. Property to activate or deactivate flag. |
+| `archive` | Optional. Type: `boolean`. Property to archive or unarchive flag. |
+| `tags` | Optional. Type: `string array`. A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -1224,51 +1224,51 @@ Create a new flag.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                                                                               |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `projectId`                            | Required    | string       | The project's ID.                                                                                                                                                         |
-| `key`                                  | Required    | string       | The flag key.                                                                                                                                                             |
-| `name`                                 | Optional    | string       | The flag name.                                                                                                                                                            |
-| `description`                          | Optional    | string       | Description for the flag.                                                                                                                                                 |
-| `variants`                             | Optional    | object array | Array of [`variants`](#variants).                                                                                                                                         |
-| `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
-| `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
-| `targetSegments`                       | Optional    | object array       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
-| `deployments`                          | Optional    | string array | Array of deployments that the flag should be assigned to.                                                                                                                 |
-| `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
+| Name | Description |
+|------|-------------|
+| `projectId` | Required. Type: `string`. The project's ID. |
+| `key` | Required. Type: `string`. The flag key. |
+| `name` | Optional. Type: `string`. The flag name. |
+| `description` | Optional. Type: `string`. Description for the flag. |
+| `variants` | Optional. Type: `object array`. Array of [`variants`](#variants). |
+| `bucketingKey` | Optional. Type: `string`. The user property to bucket the user by. |
+| `rolloutWeights` | Optional. Type: `object`. Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
+| `targetSegments` | Optional. Type: `object array`. See the [`targetSegments`](#targetsegments) table for more information. |
+| `deployments` | Optional. Type: `string array`. Array of deployments that the flag should be assigned to. |
+| `evaluationMode` | Optional. Type: `string`. Experiment evaluation mode; options include `remote` or `local`. |
 
 #### `variants`
 
 The `variants` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | JSON | Optional payload. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
-| `name`                                 | Optional    | string | The variant name.                                     |
-| `description`                          | Optional    | string | The variant description.                              |
+| Name | Description |
+|------|-------------|
+| `key` | Required. Type: `string`. The key (a.k.a value) of the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Optional payload. Value must be a valid JSON element, and can be an object, string, number, etc. |
+| `name` | Optional. Type: `string`. The variant name. |
+| `description` | Optional. Type: `string`. The variant description. |
 
 #### `targetSegments`
 
 The `targetSegments` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------ |
-| `name`                                 | Required    | string       | The segment name.                                                                          |
-| `conditions`                           | Required    | object array | Array of [`conditions`](#conditions).                                                      |
-| `percentage`                           | Required    | number       | The allocation percentage for users who match a condition.                                 |
-| `rolloutWeights`                       | Required    | object       | A map from variant key to rollout weight. For example: `{ "control": 1, "treatment": 1 }`. |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. The segment name. |
+| `conditions` | Required. Type: `object array`. Array of [`conditions`](#conditions). |
+| `percentage` | Required. Type: `number`. The allocation percentage for users who match a condition. |
+| `rolloutWeights` | Required. Type: `object`. A map from variant key to rollout weight. For example: `{ "control": 1, "treatment": 1 }`. |
 
 #### `conditions`
 
 The `conditions` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                             |
-| -------------------------------------- | ----------- | ------------ | --------------------------------------------------------------------------------------- |
-| `type`                                 | Required    | string       | **Must have value: `property`**                                                         |
-| `prop`                                 | Required    | string       | The property to use in the condition. Prefix custom and free-form properties with `gp:` |
-| `op`                                   | Required    | string       | The [operation](#op) to use in this condition.                                          |
-| `values`                               | Required    | string array | The values to use in the operation.                                                     |
+| Name | Description |
+|------|-------------|
+| `type` | Required. Type: `string`. **Must have value: `property`** |
+| `prop` | Required. Type: `string`. The property to use in the condition. Prefix custom and free-form properties with `gp:` |
+| `op` | Required. Type: `string`. The [operation](#op) to use in this condition. |
+| `values` | Required. Type: `string array`. The values to use in the operation. |
 
 #### `op`
 

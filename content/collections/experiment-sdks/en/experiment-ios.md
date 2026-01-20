@@ -182,7 +182,7 @@ let experiment = Experiment.initialize(
 The SDK client can be configured once on initialization.
 
 {{partial:collapse name="Configuration options"}}
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | **Deprecated.** When `true`, sets `logLevel` to `.debug`. Use `logLevel` instead. | `false` |
 | `logLevel` | The minimum log level to output. Options: `.off` (no logging), `.error` (errors only), `.warn` (errors and warnings), `.log` (errors, warnings, and logs), `.debug` (all messages including debug). See [Custom logging](#custom-logging). | `.warn` |

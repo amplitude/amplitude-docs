@@ -18,7 +18,7 @@ Local evaluation happens outside of Amplitude, which means advanced targeting an
 When using client-side local evaluation, all data used in targeting is included in the flag configuration loaded on the client-side. For example, if you are targeting a specific user by their email, that email has will be visible to all clients, regardless of user.
 {{/partial:admonition}}
 
-| <div class='big-column'>Feature</div> | Remote Evaluation | Local Evaluation |
+| Feature | Remote Evaluation | Local Evaluation |
 | --- | --- | --- |
 | [Consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) | ✅ | ✅ |
 | [Individual inclusions](/docs/feature-experiment/implementation#individual-inclusions) | ✅ | ✅ |
