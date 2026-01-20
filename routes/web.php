@@ -40,5 +40,6 @@ Route::permanentRedirect('/docs/hc/en-us/articles/360021252771-Manage-Data-', '/
 // Experiment documentation redirects (DOC-921)
 Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing', '/docs/feature-experiment/advanced-techniques/bonferroni-correction');
 Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data', '/docs/feature-experiment/advanced-techniques/winsorization-in-experiment');
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/split-url-testing', '/docs/web-experiment/url-redirect-testing');
 Route::permanentRedirect('/docs/feature-experiment', '/docs/experiment-home');
 Route::permanentRedirect('/docs/web-experiment', '/docs/experiment-home');

@@ -21,19 +21,20 @@ To use URL redirect testing, you must [implement](/docs/web-experiment/implement
 
 To set up a URL redirect test:
 
-1. In Amplitude Experiment, navigate to *Experiments > Create Experiment > Web Experiment*.
+1. In Amplitude Experiment, navigate to the Experiments page and click **Create Experiment** and then click **Web**.
 2. In the New Experiment modal, name your experiment.
 3. Enter the URL of a page this experiment targets and select the appropriate project from the drop-down. This URL is used to create your first [Page](/docs/web-experiment/pages). Web Experiment must be instrumented on this URL for the experiment to work.
 
-    If the script is present on the page you specified, Amplitude Experiment opens the page in the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor) as a new variant in your experiment.
+    If the script is present on the page you specified, Experiment opens the page in the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor) as a new variant in your experiment.
 
-4. For the treatment variant action, select **URL Redirect**.
-5. In the URL Redirect panel, add each URL you want to test as a separate variant.
-6. Configure which [Pages](/docs/web-experiment/pages) your experiment should target. You can create new Pages or reuse existing saved Pages.
-7. Target the users you want to include in this experiment. Go to [audience targeting](/docs/web-experiment/targeting#audience-targeting) for more information. Note that Web Experiment audience targeting works differently than Feature Experimentation.
-8. Define your experiment's [goals](/docs/feature-experiment/workflow/define-goals).
-9. Specify any [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) in the Advanced tab.
-10. Click **Save and Close** to finish creating your Web Experiment.
+4. Click the Treatment **three-dot** menu item and, select **Edit** and then, under Action, select **URL Redirect**.
+5. In the URL Redirect panel, add each URL you want to test as a separate variant and click **Apply**.
+6. Click **Apply and Exit** to leave the editing view.
+7. Configure which [Pages](/docs/web-experiment/pages) your experiment should target. You can create new Pages or reuse existing saved Pages.
+8. Target the users you want to include in this experiment. Go to [audience targeting](/docs/web-experiment/targeting#audience-targeting) for more information. Note that Web Experiment audience targeting works differently than Feature Experimentation.
+9. Define your experiment's [Metrics](/docs/feature-experiment/workflow/define-goals).
+10. Specify any [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) in the Advanced tab.
+11. Click **Save and Close** to finish creating your Web Experiment.
 
 ## Preview and test
 
