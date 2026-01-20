@@ -193,7 +193,7 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
 5. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
-6. Set the sync frequency. You can configure the sync frequency yourself when setting up a source. This frequency determines the interval at which Amplitude pulls data from Databricks.
+6. Set the sync frequency. You can configure the sync frequency when setting up a source. This frequency determines the interval at which Amplitude pulls data from Databricks.
     
     The available sync frequency options vary depending on the data type you're importing, such as Events, User Properties, Group Properties, and Profiles.
     
