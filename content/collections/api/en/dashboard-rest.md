@@ -68,9 +68,9 @@ These query parameters are shared across several Dashboard REST API endpoints.
 
 | Parameter | Description |
 | --- | --- |
-| `e` | Required. A full event with optional property filters or group by. Events are represented as JSON objects as described in [event format](#event-format). |
-| `s` | Optional. Segment definitions. Include as many as needed. Segments are represented as JSON arrays, where each element is a JSON object corresponding to a filter condition as described [segment definition](#segment-definition). |
-| `g` | Optional. The property to group by, for example `platform`. Available only when there is a single segment. Limit: two. |
+| `e` | A full event with optional property filters or group by. Events are represented as JSON objects as described in [event format](#event-format). |
+| `s` | Segment definitions. Include as many as needed. Segments are represented as JSON arrays, where each element is a JSON object corresponding to a filter condition as described [segment definition](#segment-definition). |
+| `g` | The property to group by, for example `platform`. Available only when there is a single segment. Limit: two. |
 
 ## Event format
 
