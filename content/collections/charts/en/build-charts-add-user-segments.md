@@ -32,6 +32,10 @@ Also, be sure to see our Help Center article on the [advanced features available
 
 The first step is deciding which category of users your segment will draw from—**any users**, **active users**, or **new users**.
 
+{{partial:admonition type='note'}}
+The **Active Users** and **New Users** options are available in [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build), [Funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-build), [Retention](/docs/analytics/charts/retention-analysis/retention-analysis-build), and [Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts. Other chart types only support **Any Users**.
+{{/partial:admonition}}
+
 ![build_charts_in_amplitude_segment_by_1.png](/docs/output/img/charts/build-charts-in-amplitude-segment-by-1-png.png)
 
 If you select *Any Users*, your analysis will include all users who have triggered the events you’re interested in. This is the broadest possible choice.
