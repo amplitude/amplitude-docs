@@ -44,10 +44,10 @@ Releases and annotations in your dashboard can help identify temporal correlatio
 
 Metric spikes or dips often affect specific platforms or app versions rather than all users. Group your analysis by these default user properties:
 
-- **App version**: New app releases can introduce bugs or behavioral changes.
-- **OS version**: Operating system updates can affect app performance.
-- **Platform**: Issues might only affect iOS, Android, or web users.
-- **Device type**: Specific device models or screen sizes might behave differently.
+- App version: New app releases can introduce bugs or behavioral changes.
+- OS version: Operating system updates can affect app performance.
+- Platform: Issues might only affect iOS, Android, or web users.
+- Device type: Specific device models or screen sizes might behave differently.
 
 Amplitude SDKs track these properties automatically, making them reliable dimensions for debugging. See [user properties](/docs/data/user-properties-and-events#user-properties) for more information.
 
@@ -66,7 +66,7 @@ Outlier users or data quality issues cause some metric spikes:
 Automated bot traffic can skew metrics significantly. Amplitude provides several ways to handle bots:
 
 - Use [bot traffic blocking](/docs/data/block-bot-traffic) to filter known bots automatically.
-- Configure [block filters and drop filters](/faq/block-and-filter-internal-users) to exclude specific traffic patterns.
+- Configure [block filters and drop filters](/docs/faq/block-and-filter-internal-users) to exclude specific traffic patterns.
 
 ### Instrumentation issues
 
@@ -111,7 +111,7 @@ To request the ability to filter Root Cause Analysis by experiment properties, c
 After identifying the cause of a metric spike or dip:
 
 1. Document your findings with annotations in your dashboard.
-2. If the issue was caused by a bug, fix the instrumentation.
-3. If the issue was caused by bots or outliers, configure filters to prevent future occurrences.
-4. If the issue was caused by a configuration change, consider restarting the experiment with stable settings.
+2. If a bug caused the issue, fix the instrumentation.
+3. If bots or outliers caused the issue, configure filters to prevent future occurrences.
+4. If a configuration change caused the issue, consider restarting the experiment with stable settings.
 5. Review [sample ratio mismatch troubleshooting](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) if the spike or dip correlates with exposure distribution changes.
