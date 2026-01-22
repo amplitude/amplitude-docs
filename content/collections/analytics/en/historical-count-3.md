@@ -51,10 +51,20 @@ When using [Historical Count filters](/docs/analytics/historical-count-1) on t
 
 Historical Count and behavioral cohorts are related but separate concepts in Amplitude. 
 
-A behavior cohort can define a group of users who took a specific action with a certain frequency within a specific time period. For example, users who completed a workout five times in the last 30 days. A fitness company might want to know which of its users fit this description, as it may be their definition of a recent power user.
+A behavior cohort defines a group of users who took a specific action with a certain frequency within a specific time period. For example, users who completed a workout five times in the last 30 days. A fitness company might want to know which of its users fit this description, as it might be their definition of a recent power user.
 
-Conversely, Historical Count allows you to pinpoint a user’s fifth workout. So if they completed only two workouts in the last 30 days, but had also completed three workouts before that, the most recent workout was actually their fifth. This is an important distinction, as a user’s fifth workout overall could also mark an important milestone in their overall user lifecycle in that they have now transitioned into a long-term group of users.
+Conversely, Historical Count lets you pinpoint a user’s fifth workout. So if they completed only two workouts in the last 30 days, but also completed three workouts before that, the most recent workout was actually their fifth. This is an important distinction, as a user’s fifth workout overall could also mark an important milestone in their overall user lifecycle in that they have now transitioned into a long-term group of users.
 
-Amplitude allows users to combine the power of both, by creating a cohort with historical count as a condition. You can also see the cohort population over time as well.
+Amplitude lets you combine the power of both by creating a cohort with historical count as a condition. You can also see the cohort population over time.
+
+### Limitations with "Any Event" and "Any Active Event"
+
+When using Historical Count in Cohort Builder, you can't use "Any Event" or "Any Active Event" for dynamic cohorts. These event types work only when creating static cohorts:
+
+* **Dynamic cohorts**: Using Historical Count in Cohort Builder creates a dynamic cohort that updates automatically. However, "Any Event" and "Any Active Event" aren't supported for dynamic cohorts with Historical Count.
+* **Static cohorts**: If you create a cohort using "Any Event where Historical Count = 1", it becomes a static cohort. Static cohorts don't update automatically and represent a snapshot of users at a specific point in time.
+* **Workaround**: To track users based on "Any Event" with Historical Count, create the analysis in an Event Segmentation chart first, then save it as a static cohort.
+
+This limitation applies only to Cohort Builder. You can still use "Any Event" or "Any Active Event" with Historical Count in Event Segmentation, Funnel Analysis, Pathfinder, and Retention Analysis charts.
 
 To add Historical Count to a behavioral cohort, review [Creating a behavioral cohort in Amplitude](/docs/analytics/behavioral-cohorts).
