@@ -41,7 +41,7 @@ Then all of the following must occur for the user to appear in the chart:
 * `event_b` occurred within the specified time period
 * `event_a` (the occurrance within the specified time period) happened before the second occurrence of `event_b`
 
-If either of the events occurred outside of the specified date range, or if `event_a` did not occur before the seccond instance of `event_b` within the timeframe, then the user isn't included.
+If either of the events occurred outside of the specified date range, or if `event_a` didn't occur before the second instance of `event_b` within the timeframe, then the chart doesn't include the user.
 
 {{partial:admonition type='note'}}
 When using [Historical Count filters](/docs/analytics/historical-count-1) on the same events that happen within the same second, users appear to have dropped off. This is because the [funnel query](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
@@ -61,7 +61,7 @@ Amplitude lets you combine the power of both by creating a cohort with historica
 
 When using Historical Count in Cohort Builder, you can't use "Any Event" or "Any Active Event" for dynamic cohorts. These event types work only when creating static cohorts:
 
-* **Dynamic cohorts**: Using Historical Count in Cohort Builder creates a dynamic cohort that updates automatically. However, "Any Event" and "Any Active Event" aren't supported for dynamic cohorts with Historical Count.
+* **Dynamic cohorts**: Using Historical Count in Cohort Builder creates a dynamic cohort that updates automatically. However, dynamic cohorts with Historical Count don't support "Any Event" and "Any Active Event".
 * **Static cohorts**: If you create a cohort using "Any Event where Historical Count = 1", it becomes a static cohort. Static cohorts don't update automatically and represent a snapshot of users at a specific point in time.
 * **Workaround**: To track users based on "Any Event" with Historical Count, create the analysis in an Event Segmentation chart first, then save it as a static cohort.
 
