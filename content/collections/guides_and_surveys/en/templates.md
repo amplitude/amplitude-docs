@@ -61,4 +61,4 @@ Unhidden templates automatically appear in the same Create Guide/Survey menu tha
 - **Use clear naming**: When you create a new template, Amplitude automatically appends "Template" to the name. When team members create guides or surveys from templates, Amplitude automatically removes this suffix.
 - **Polish before sharing**: Take advantage of the hidden state to test and refine your templates.
 - **Consider your audience**: Design templates with your team's common use cases in mind.
-- **Update Templates as needed**: Updating a template doesn't affect any guides or surveys that were previously created using that template.
+- **Update Templates as needed**: Updating a template doesn't affect any guides or surveys that your team previously created from that template.
