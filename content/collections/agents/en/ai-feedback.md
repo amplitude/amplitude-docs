@@ -19,8 +19,10 @@ Feedback events collect information about use cases such as:
 * Key takeaways
 
 {{partial:admonition type="note" heading="Additional use cases"}}
-The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
+The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/amplitude-ai/ai-feedback#viewing-insights)
 {{/partial:admonition}}
+
+For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
 
 ## Feedback Event overview
 AI Feedback uses Feedback Events to record user feedback and create insights. 
@@ -45,7 +47,7 @@ Before you can gain any insights from your customers, you must add at least one 
 
 For example, if your company generates discussions on Reddit, you could set up an integration with that website by pointing AI Feedback directly to the subreddit URL with the discussions. AI Feedback then monitors the subreddit and provides insights from the content that's posted there. Or as another example, you may have a transcript of a customer call. You can upload those transcripts directly to AI Feedback to gain insights from the conversation. 
 
-AI Feedback can ingest and generate insights from multiple sources at the same time.
+AI Feedback can ingest and generate insights from multiple sources at the same time. After the initial ingestion, feedback is pulled into AI Feedback once each day. 
 
 ##### To add a data source
 
@@ -167,13 +169,13 @@ This lets you merge your existing users with users from supported AI Feedback so
 ##### To merge existing users
 
 1. Go to *Organization Settings > Projects > your project > AI Feedback > User Mapping* and specify the field that contains the user's email address. 
-2. From you system, send at least one event for each users that has that field populated. 
+2. From your system, send at least one event for each user that has that field populated. 
 
-After Amplitude receives that event for a user, AI Feedback can merge that users with the user from an AI Feedback-supported source using that email address. 
+After Amplitude receives that event for a user, AI Feedback can merge that user with the user from an AI Feedback-supported source using that email address. 
 
 ## Deleting information based on user ID or Amplitude ID
 
-When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/agents/ai-feedback#merging-existing-users-from-an-AI-Feedback-source) with users from your supported AI Feedback sources, the User Privacy API can't match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/amplitude-ai/ai-feedback#merging-existing-users-from-an-ai-feedback-source) with users from your supported AI Feedback sources, the User Privacy API can't match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
 
 To ensure that the deletion is permanent and complete: 
 * Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 

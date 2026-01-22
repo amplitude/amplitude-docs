@@ -8,19 +8,23 @@ nav_title: developers
 
 Data validation is a critical step in the instrumentation process. To streamline this process and enhance your debugging efforts, Amplitude provides some tools to convenience your debugging process. These resources facilitate the smooth implementation and operation of your projects.
 
-The following sections outline common issues that you may encounter, along with their respective solutions or explanations to aid in resolving these problems. 
+{{partial:admonition type="tip"}}
+For browser-based debugging, use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to examine and debug your Amplitude JS SDK instrumentation in real time. The extension captures each Amplitude event you trigger and displays it in the extension popup, helping you verify SDK setup and troubleshoot issues.
+{{/partial:admonition}}
+
+The following sections outline common issues that you may encounter, along with their respective solutions or explanations to aid in resolving these problems.
 
 ## Events not showing in Amplitude
 
 If you are not able to ingest any event, check the following questions:
 
-* Are you using the correct API key? 
+* Are you using the correct API key?
 Check that you have correctly set the API during init(). If you have enabled data residency in the EU, you'll need to retrieve your API key from `https://analytics.eu.amplitude.com/`. This is where your specific API details are located due to data locality regulations.
 
-* Are you using multiple instances? 
+* Are you using multiple instances?
 If you are using the right instance. Ensure that you're using the correct instance. If multiple versions of SDKs exist, they might cause conflict issues. To avoid this, provide different instance names for each instance. For the latest SDKs, you might need to create separate variables in order to instantiate them differently.
 
-* Are you using Amplitude Data? 
+* Are you using Amplitude Data?
 If you are using Amplitude Data, check that the event hasn't been blocked.
 
 * Are you setting valid userId and deviceId?
@@ -29,7 +33,28 @@ Check if your deviceId or userId are valid, the 400 error can be caused by this.
 * Did you hit the `flushQueueSize` or `flushIntervalMillis`?
 Events are queued and sent in batches by default. That means events are not sent immediately to the server. The exact values differ by platform, check to make sure you have waited for events to be sent to the server before checking for them in charts.
 
-## Privacy 
+## Endpoint limits and throttling
+
+Amplitude enforces endpoint limits to protect the platform from traffic spikes. Understanding these limits helps you handle rate limiting scenarios effectively.
+
+### Endpoint limits
+
+Amplitude sets limits on the number of events each endpoint can process per second:
+
+- **Default limit**: 100,000 events per project per second (counted separately for each endpoint).
+- **Group identify endpoint**: 10,000 events per organization per second.
+- **SDK endpoint**: 150,000 events per project per second.
+- **HTTP API and HTTP API v2**: 50,000 events per project per second.
+
+When you exceed these limits, Amplitude returns an HTTP 429 status code. Wait 60 seconds before resending events.
+
+### Normal throttling
+
+Amplitude also enforces a throttling limit of 30 events per user or device per second across your entire organization. This limit applies to all endpoints, including the SDK endpoint, and protects against excessive event volume from individual users or devices.
+
+If you exceed this limit, Amplitude throttles the events and logs a warning. Distribute your event tracking across time or reduce the frequency of event calls to stay within this limit.
+
+## Privacy
 
 If you've already disabled IP, it's still possible to see the IP in your user lookup if you're using the latest SDK. Amplitude sends the data to the HTTP API (HTTP API V1 for maintenance SDK and HTTP API V2 for the latest SDK). If you disabled the IP address midway, it's possible that the user's previous IP address was saved in our backend. Our backend will retrieve the IP from the database, if there's any. If it's a test user, it's probably fine. It won't affect incoming new users after you disable the IP. If this affects all users, you might need to create a new workspace.
 
@@ -47,7 +72,7 @@ Check this section if you're seeing `client_upload_time` appearing as a time in 
 
 * For web, Amplitude uses a [third party library](https://github.com/faisalman/ua-parser-js) library to parse the `Navigator.userAgent` info, except @amplitude/analytics-browser@^2.0. If you find an inappropriate device family, make sure the value of `Navigator.userAgent` as expected first. Starting from Chrome 110, a fixed value for Android version and device model has been introduced. Device info might be effect by [Chrome's user‑agent reduction](https://developer.chrome.com/blog/user-agent-reduction-android-model-and-version/#fixed-android-version-and-device-model-starting-from-chrome-110).
 
-* For mobile SDKs, we rely on server device mapping. We refer to [this resource](http://storage.googleapis.com/play_public/supported_devices.html), [this resource](https://en.wikipedia.org/wiki/List_of_Android_smartphones) for Android, and [this resource](https://en.wikipedia.org/wiki/Comparison_of_tablet_computers) for iOS. If you find an inappropriate device family that doesn't exist in any of these files, submit a ticket. 
+* For mobile SDKs, we rely on server device mapping. We refer to [this resource](http://storage.googleapis.com/play_public/supported_devices.html), [this resource](https://en.wikipedia.org/wiki/List_of_Android_smartphones) for Android, and [this resource](https://en.wikipedia.org/wiki/Comparison_of_tablet_computers) for iOS. If you find an inappropriate device family that doesn't exist in any of these files, submit a ticket.
 
 ## `user_properties` through identify call showing up late
 
@@ -58,7 +83,7 @@ To reduce the amount of requests made by the SDK, the latest mobile SDKs will qu
 ## Event times are very inaccurate
 
 If you notice that some sessions from certain users report inaccurate event times (for example, hundreds of years in the future, or hundreds of years in the past) the most likely cause may be:
-- the end user has an anomalous configuration that causes their device to an incorrect date 
+- the end user has an anomalous configuration that causes their device to an incorrect date
 - they use a browser extension that causes inaccurate time reporting
 
 These issues don't indicate an error or mistake in your instrumentation.

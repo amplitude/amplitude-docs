@@ -13,13 +13,7 @@ updated_at: 1718901114
 
 * Deepen your understanding of user session activity with a qualitative lens
 
-Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude’s built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
-
-### Feature availability
-
-This feature is available to users on **Growth** and **Enterprise plans** only.
-
-* Use of this feature requires the Session Replay add-on.
+Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude's built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
 
 With Session Replay, you can:
 
@@ -141,7 +135,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Event Segmentation**: Session replay is available for all six measures.
 * **Funnel Analysis**: Session replay is only available for the conversion measure.
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
-* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/data/sources/instrument-track-sessions).
+* **User Sessions**: Session replay is available for all six measures.
 
 **NOTE**: For Funnel Analysis charts, the order of events appears in chronological order (oldest to newest).
 
@@ -155,9 +149,15 @@ Click *Play* to see the session view in the modal that appears. 
 
 ![](/docs/output/img/analytics/20464613106203)
 
-### View the number of captured sessions
+### View the number of captured replays
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include sessions that contain any events where the event property `Session Replay ID ≠ "(none)"`. This includes all session replays with a value.
+To see the number of captured replays, create an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart:
+
+1. Select the `[Amplitude] Replay Captured` event.
+2. Group by the `[Amplitude] Session Replay ID` event property.
+3. In the formula, use `PROPCOUNT(A)` to count distinct session replay IDs.
+
+This formula returns the number of distinct property values for the property by which the event is grouped. In this example, the formula retrieves the number of different session replay IDs.
 
 ## Search for a replay
 
@@ -183,7 +183,6 @@ Some common use cases for Session Replay include:
 There are some limitations when using Session Replay:
 
 * Session Replay is available for web-based applications only. This includes mobile web.
-* Session Replay supports standard session definitions only. [Custom](/docs/data/sources/instrument-track-sessions) session definitions aren't supported.
 * You can replay captured sessions for up to three months after they occur.
 * Some HTML elements aren't supported and aren't captured as part of the replay:
 	* Canvas

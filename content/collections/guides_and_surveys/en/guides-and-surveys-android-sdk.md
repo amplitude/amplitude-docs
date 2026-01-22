@@ -18,20 +18,20 @@ The Guides and Surveys Android SDK requires:
 
 * Android API Level 24 (Android 7.0)+
 * Kotlin 1.8.22+
-* [Amplitude Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
+* [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Android-Kotlin 1.0+
+### Using Amplitude Analytics Android-Kotlin 1.0+
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")
@@ -62,6 +62,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -79,7 +82,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Android-Kotlin 1.0+
+### Not using Amplitude Analytics Android-Kotlin 1.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 Add the following dependencies to your application's `build.gradle.kts` file:
@@ -87,10 +90,7 @@ Add the following dependencies to your application's `build.gradle.kts` file:
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:1.0+")
-
-    // Amplitude Analytics SDK (required dependency)
-    implementation("com.amplitude:analytics-android:1.+")
+    implementation("com.amplitude:amplitude-engagement-android:2.+")
 }
 ```
 
@@ -106,10 +106,6 @@ val amplitudeEngagement = AmplitudeEngagement(
     apiKey = "YOUR_API_KEY",
     options = AmplitudeInitOptions()
 )
-
-// Add the plugin to your Amplitude instance
-val amplitude = Amplitude(applicationContext)
-amplitude.add(amplitudeEngagement.getPlugin())
 ```
 
 #### Configuration options
@@ -118,6 +114,9 @@ amplitude.add(amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -138,16 +137,15 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
-
 let bootOptions = AmplitudeBootOptions(
-  userId: "USER_ID",
-  deviceId: "DEVICE_ID",
-  userProperties: mapOf("key" to "value")
-  integrations = arrayOf({ event: BaseEvent ->
-    // Custom event handler
-    // Dummy example here:
-    println("event: ${event.eventType} properties: ${event.eventProperties}")
-  })
+    userId: "USER_ID",
+    deviceId: "DEVICE_ID",
+    userProperties: mapOf("key" to "value")
+    integrations = arrayOf({ event: BaseEvent ->
+        // Custom event handler
+        // Dummy example here:
+        println("event: ${event.eventType} properties: ${event.eventProperties}")
+    })
 )
 amplitudeEngagement.boot(options: bootOptions)
 ```
@@ -162,26 +160,18 @@ After installing the SDK, add your Android application to your Amplitude project
 
 To add your application:
 
-1. Navigate to **Settings** > **Projects** in Amplitude.
+1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **Android** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Package name**: Your Android package identifier (for example, `com.example.myapp`)
-7. Click **Save**.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the drop-down.
 
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your Android users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your package name'}}
-Your Android package name is defined in your `AndroidManifest.xml` file or in your app-level `build.gradle` file as the `applicationId`.
-{{/partial:admonition}}
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (for example, "HomeScreen") is compared with the string provided in the guide or survey page targeting section.
 
 ```kotlin
 // Track screen views to trigger guides based on screens
@@ -231,8 +221,8 @@ Configure this in your existing layout XMLs or programmatically by setting the p
 ```xml
 <!-- in my_layout.xml -->
 <LinearLayout>
+    <!-- Set either contentDescription or tag to your desired selector -->
     <Button
-        <!-- Set either contentDescription or tag to your desired selector -->
         android:contentDescription="my-button"
         android:tag="my-button" />
 </LinearLayout>
@@ -244,11 +234,22 @@ val button = Button(this)
 
 // Set the contentDescription
 button.contentDescription = "my-button"
-// Or, set the tag
+// Or set the tag
 button.tag = "my-button"
 ```
 
-## Manage themes
+## Other SDK methods
+
+This section describes additional methods available in the Android SDK for Amplitude Guides and Surveys, including:
+
+- **Managing themes**: You can set the visual theme (light, dark, or auto) for guides and surveys using `setThemeMode`.
+- **Adding callbacks**: You can register named callbacks and trigger them from guides or surveys using the Run callback action to execute custom app logic.
+- **Router configuration**: You can customize how guides and surveys handle screen navigation by defining a router callback with `setRouter`, which lets you handle navigation logic in your app.
+- **Resetting guides/surveys**: Use `reset` to move a guide or survey back to a specific step.
+- **Listing guides/surveys**: Retrieve the full list of live guides and surveys and their current status using the `list()` method.
+
+
+### Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
 
@@ -257,13 +258,38 @@ Configure the visual theme mode if your app supports light and dark modes.
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
 ```
 
-## Router configuration
+### Register a callback
+
+Set the Run callback action on a guide or survey button to execute the callback.
+
+```kotlin
+engagement.addCallback(key: String, func: () -> Unit)
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `key`      | `String`     | Required. Refer to this callback by key when setting a callback action on a guide or survey. |
+| `func`     | `() -> Unit` | Required. The callback to execute.                                                            |
+
+```kotlin
+engagement.addCallback("show-alert") {
+    this.runOnUiThread {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Callback")
+            .setMessage("Callback has been executed!")
+            .setPositiveButton("OK", null)
+            .show()
+    }
+}
+```
+
+### Router configuration
 
 Configure how Guides and Surveys handles screen navigation.
 
 ```kotlin
 engagement.setRouter { identifier ->
-  // Your screen handling and navigation
+    // Your screen handling and navigation
 }
 ```
 
@@ -276,7 +302,7 @@ engagement.setRouter { identifier ->
 After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
 
-## Reset
+### Reset
 
 Reset a guide or survey to a specific step.
 
@@ -289,7 +315,7 @@ amplitudeEngagement.reset(key = "GUIDE_KEY", stepIndex = 0)
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 | `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
 
-## List
+### List
 
 Retrieve a list of all live guides and surveys along with their status.
 
@@ -297,7 +323,7 @@ Retrieve a list of all live guides and surveys along with their status.
 val guidesAndSurveys = amplitudeEngagement.list()
 ```
 
-## Show
+### Show
 
 Display a specific guide or survey. Ignores any targeting rules and limits except for screen targeting.
 
@@ -310,7 +336,7 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 | `key`       | `string` | Required. The guide or survey's key.                                                    |
 
 
-## Forward event
+### Forward event
 
 If you don't use the plugin, but want to trigger Guides using events, call `forwardEvent` with any events want to use as triggers.
 
@@ -320,7 +346,7 @@ val event = BaseEvent()
 amplitudeEngagement.forwardEvent(event)
 ```
 
-## Close all
+### Close all
 
 Close all active guides and surveys.
 
@@ -330,27 +356,16 @@ amplitudeEngagement.closeAll()
 
 ## Simulate Guides and Surveys for preview
 
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
-
-### Add your mobile app to project settings
-
-Before you can use preview mode, add your Android app to your project settings in Amplitude:
-
-1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
-2. Select your project.
-3. Click the **Guides and Surveys** tab.
-4. In the **App Management** section, click **Add App**.
-5. Enter your Android app's package name (for example, `com.example.myapp`).
-6. Click **Save**.
-
-After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
 ### Locate the mobile URL scheme
 
-After adding your app to project settings, locate the URL scheme:
-
-1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
-2. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ### Add the URL scheme in Android Studio
 
@@ -375,9 +390,9 @@ Add the following intent filter to the main activity to your project's `AndroidM
 // In your Activity
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
-    amplitudeEngagement.handlePreviewLinkIntent(intent)
+    amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
-
 ## Changelog
+
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

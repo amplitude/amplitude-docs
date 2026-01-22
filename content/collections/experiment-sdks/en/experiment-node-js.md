@@ -116,7 +116,7 @@ The SDK client can be configured on initialization.
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. Go to [custom logging](#custom-logging). | `Error` |
@@ -135,12 +135,21 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```js
-fetchV2(user: ExperimentUser): Promise<Variants>
+fetchV2(user: ExperimentUser, fetchOptions?: FetchOptions): Promise<Variants>
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
+| `fetchOptions` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `flagKeys` | Specific flags or experiments to evaluate. If undefined, null, or empty, all flags and experiments are evaluated. | `undefined` |
+| `tracksExposure` | To track or not track an exposure event for this fetch request. If `undefined`, uses the server's default behavior (does not track exposure). | `undefined` |
+| `tracksAssignment` | To track or not track an assignment event for this fetch request. If `undefined`, uses the server's default behavior (does track assignment). | `undefined` |
 
 ```js
 const user = {
@@ -273,7 +282,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
@@ -282,7 +291,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
 | `flagConfigPollingIntervalMillis` | The interval (in milliseconds) to poll for updated flag configs after calling `start()` | `30000` |
-| `assignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `null` |
+| `assignmentConfig` | **Deprecated.** Configuration for automatically tracking assignment events after an evaluation. | `null` |
+| `exposureConfig` | Configuration for tracking exposure events after an evaluation. | `null` |
 | `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, our servers push updates to SDK generally within a second. If stream fails for any reason, it will fallback to polling automatically and retry streaming after some interval. | `false` |
 | `streamServerUrl` | The stream server url to stream from. | `https://stream.lab.amplitude.com` |
 | `streamFlagConnTimeoutMillis` | The timeout for establishing a valid flag config stream. This includes time for a connection to be established to stream server and time for receiving initial flag configs. | `1500` |
@@ -290,15 +300,23 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
+**ExposureConfig**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
+| `cacheCapacity` | The maximum number of exposures stored in the exposure cache | `65536` |
+| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
+
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                   | Default Value |
+| Name | Description                                                                                                                                                                   | Default Value |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `apiKey`                           | The analytics API key and NOT the experiment deployment key                                                                                                                   | *required* |
 | `secretKey`                        | The analytics secret key                                                                                                                                                      | *required* |
@@ -324,18 +342,19 @@ await experiment.start();
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
-{{partial:admonition type="tip" heading="Automatic assignment tracking"}}
-Set [`assignmentConfig`](#configuration) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposureConfig`](#configuration) to enable exposure tracking. Then, set `tracksExposure` to `true` in `EvaluateOptions` when calling `evaluateV2()`.
 {{/partial:admonition}}
 
 ```js
-evaluateV2(user: ExperimentUser, flagKeys?: string[]): Record<string, Variant>
+evaluateV2(user: ExperimentUser, flagKeys?: string[], options?: EvaluateOptions): Record<string, Variant>
 ```
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
 | `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If undefined, null, or empty, all flags and experiments are evaluated. |
+| `options` | optional | The [options](#evaluate-options) for the evaluation request. |
 
 ```js
 // The user to evaluate
@@ -350,6 +369,12 @@ const specificVariants = experiment.evaluateV2(user, [
   'my-local-flag-2',
 ]);
 ```
+
+**EvaluateOptions**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 
 ### Local evaluation cohort targeting
 

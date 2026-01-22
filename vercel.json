@@ -10,6 +10,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data ",
+      "destination": "/docs/feature-experiment/advanced-techniques/winsorization-in-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing",
+      "destination": "/docs/feature-experiment/advanced-techniques/bonferroni-correction",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/amplitude-mcp",
+      "destination": "/docs/amplitude-ai/amplitude-mcp",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/agents",
       "destination": "/docs/amplitude-ai",
       "statusCode": 301
@@ -3307,6 +3322,21 @@
     {
       "source": "/docs/experiment/:path*",
       "destination": "/docs/feature-experiment/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/remote-evaluaiton",
+      "destination": "/docs/feature-experiment/remote-evaluation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments",
+      "destination": "/docs/web-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments/(.*)",
+      "destination": "/docs/web-experiment/$1",
       "statusCode": 301
     }
   ]

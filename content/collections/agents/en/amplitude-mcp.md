@@ -1,14 +1,13 @@
 ---
 id: b09c311c-387a-476e-b382-49ce0ca448d6
-blueprint: analytic
-title: 'Amplitude MCP (Model Context Protocol) Server'
+blueprint: agent
+title: 'Amplitude MCP Server'
 landing: false
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1758643314
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1765824836
 ---
-
-The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query your Amplitude analytics, dashboards, experiments, and feature flags directly through AI interfaces using natural language.
+The Amplitude [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server enables teams to analyze product data, experiments, and user behavior using conversational AI. Query and create Amplitude content including charts, dashboards, experiments, and cohorts directly through AI interfaces using natural language.
 
 The Amplitude MCP server is listed in the [official MCP servers registry](https://github.com/modelcontextprotocol/servers) on GitHub. You can also find MCP integration guides and examples in [Anthropic's Claude documentation](https://docs.anthropic.com/en/docs/build-with-claude/mcp), the [MCP quickstart resources](https://github.com/modelcontextprotocol/quickstart-resources), and [Cursor's MCP documentation](https://docs.cursor.com/context/model-context-protocol).
 
@@ -22,7 +21,7 @@ The Amplitude MCP server is under active development. Some functions and setting
 
 * Available to any existing Amplitude customer.
 
-* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Claude Code).
+* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Replit, Claude Code).
 
 ## Regions
 
@@ -38,26 +37,31 @@ Use the Standard Server URL unless your Amplitude data resides in the EU region.
 The Amplitude MCP provides comprehensive access to your analytics through these tools:
 
 {{partial:collapse name="Available tools"}}
-| Tool Name              | Description                                                                                                                                    |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `search`               | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
-| `query_chart`          | Query chart data result using the internal dash API to get chart data                                                                          |
-| `query_metric`         | Query metric data using the dataset endpoint with metric references                                                                            |
-| `query_experiment`     | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
-| `query_dataset`        | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
-| `get_context`          | Get context information about the current user, organization, and accessible projects                                                          |
-| `get_charts`           | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
-| `get_dashboard`        | Get specific dashboards and all their charts including chart IDs for individual queries                                              |
-| `get_notebook`         | Get specific notebooks and all their charts including chart IDs for individual queries                                               |
-| `get_flags`            | Retrieve feature flags from a project with optional filtering by deployment, type, and deleted status                                          |
-| `get_experiments`      | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
-| `get_deployments`      | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
-| `get_metrics`          | List all metrics from a project with optional filtering and sorting by various criteria                                                        |
-| `get_metric`           | Get detailed information about a specific metric by ID                                                                                         |
-| `get_events`           | Retrieve events from a project with optional filtering and sorting                                                                             |
-| `get_event_properties` | Retrieve event properties from a project with filtering options                                                                                |
-| `get_user_properties`  | Retrieve user properties from a project with filtering options                                                                                 |
-| `get_session_replays`  | Search for session replays in the last 30 days, filtered by user properties or events.                                                         |
+| Tool Name                  | Description                                                                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `search`                   | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
+| `query_chart`              | Query chart data result using the internal dash API to get chart data                                                                          |
+| `query_experiment`         | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
+| `query_dataset`            | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
+| `get_context`              | Get context information about the current user, organization, and accessible projects                                                          |
+| `get_charts`               | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
+| `get_dashboard`            | Get specific dashboards and all their charts including chart IDs for individual queries                                                        |
+| `get_experiments`          | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
+| `get_deployments`          | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
+| `get_events`               | Retrieve events from a project with optional filtering and sorting                                                                             |
+| `get_event_properties`     | Retrieve event properties from a project with filtering options                                                                                |
+| `get_user_properties`      | Retrieve user properties from a project with filtering options                                                                                 |
+| `get_session_replays`      | Search for session replays in the last 30 days, filtered by user properties or events                                                          |
+| `save_chart_edits`         | Save edits to existing charts, enabling you to modify chart configurations and parameters                                                      |
+| `create_dashboard`         | Create new dashboards in your Amplitude project                                                                                                |
+| `create_experiment`        | Create new experiments in your Amplitude project                                                                                               |
+| `create_cohort`            | Create new cohorts based on user properties and behaviors                                                                                      |
+| `get_cohorts`              | Retrieve cohorts from your project with filtering and sorting options                                                                          |
+| `get_users`                | Retrieve user data from your project                                                                                                           |
+| `get_feedback_insights`    | Retrieve customer feedback insights and analysis                                                                                               |
+| `get_feedback_comments`    | Retrieve customer feedback comments                                                                                                            |
+| `get_feedback_mentions`    | Retrieve customer feedback mentions                                                                                                            |
+| `get_feedback_sources`     | Retrieve customer feedback sources and channels                                                                                                |
 
 {{/partial:collapse}}
 
@@ -65,8 +69,8 @@ The Amplitude MCP provides comprehensive access to your analytics through these 
 
 Complete the steps below, depending on the tool you're integrating with. 
 
-{{partial:tabs tabs="Claude (web and desktop), Claude Code, Cursor, ChatGPT, Gemini CLI, Other MCP Clients"}}
-{{partial:tab name="Claude (web and desktop)"}}
+{{partial:tabs tabs="Claude, Claude Code, Cursor, ChatGPT, Gemini CLI, Replit, Other MCP Clients"}}
+{{partial:tab name="Claude"}}
 1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
 2. Go to *Settings > Connectors > Add custom connector*.  
 3. Configure the integration:  
@@ -144,17 +148,23 @@ Complete the steps below, depending on the tool you're integrating with.
    4. Return to Tools & Integration tab and authenticate with Amplitude.
   
 {{/partial:tab}}
-{{partial:tab name="ChatGPT"}}
+{{partial:tab name="Replit"}}
 
-**Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
+**Quick Install (Recommended):**
 
-{{partial:admonition type="note"}}
-MCP support in ChatGPT is only available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
-{{/partial:admonition}}
+**US Server (Default):**
+[Add Amplitude MCP Server to Replit](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
-   1. Enable ChatGPT developer mode (if not already enabled).
-   
-   2. Add a new MCP connector with the following configuration:
+**EU Server:**
+[Add Amplitude MCP Server to Replit (EU)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
+**Manual Setup:**
+
+   1. Navigate to your Replit workspace settings.
+      
+   2. Go to *Integrations > MCP Servers*.
+
+   3. Add a new MCP server with this configuration:
       * **Name:** Amplitude
       * **URL:** `https://mcp.amplitude.com/mcp`
 
@@ -162,8 +172,41 @@ MCP support in ChatGPT is only available through [developer mode](https://commun
       EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
       {{/partial:admonition}}
 
-   3. Complete Amplitude OAuth auth flow when prompted.
+   4. Complete Amplitude OAuth authorization when prompted.
+
+   5. Start asking questions about your Amplitude data.
+
+{{/partial:tab}}
+{{partial:tab name="ChatGPT"}}
+
+**Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
+
+{{partial:admonition type="note"}}
+MCP support in ChatGPT is available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
+{{/partial:admonition}}
+
+   1. Navigate to [ChatGPT](https://chatgpt.com/) or open the ChatGPT desktop app.
    
+   2. Go to *Settings > Apps & Connectors > Browse Connectors*.
+   
+   3. Select Amplitude then press Connect to start the OAuth connection.
+   
+   4. Complete Amplitude OAuth authorization when prompted.
+   
+   5. For best results with ChatGPT, Amplitude recommends creating a Project specificly for the Amplitude MCP and adding this prompt to the instructions:
+
+      ```text
+      When using Amplitude MCP, follow these rules then act quickly and autonomously:
+      - Use tools to find answers: If you need info (events, properties, chart definitions, cohorts), use tools to discover it rather than asking the user. Trust the Amplitude MCP tools provide access to actual data behind charts, dashboards, and other entities. Always attempt using tools before saying they don't exist.
+      - Try NOT to ask clarifying questions: Make your best judgment with information available but sparingly elicit clarification from users
+      - Resolve ambiguity yourself: When multiple options exist (e.g., which project to use, which saved chart or event matches best, how to define a segment), choose the most reasonable option based on tool results and context. Search saved charts, metrics, and other data before creating something new.
+      - When responding to requests that involve Amplitude objects (charts, dashboards, or any entity), don't stop at referencing IDs and metadata. Retrieve underlying data, run analysis based on it, then share specific metrics as part of your analysis.
+      - Complete the request: Execute the workflow requested, proactively share relevant data when analyzing, don't stop partway to ask for confirmation, then provide data-backed, actionable, and concise answers.
+      - Report what you did: After completing the task, briefly explain key assumptions or data used
+      - Cite your sources: When referencing data from Amplitude, include the link as part of the markdown response (()[])
+      ```
+   
+   6. Start asking questions about your Amplitude data.
 
 {{/partial:tab}}
 {{partial:tab name="Gemini CLI"}}
@@ -221,6 +264,18 @@ For MCP-compatible clients:
 
 > Which features have the highest engagement rates?
 
+### Creation workflows
+
+> Create a dashboard showing our key product metrics.
+
+> Create an experiment to test the new checkout flow with a 50/50 split.
+
+> Create a cohort of users who completed onboarding in the last 30 days.
+
+> Edit the retention chart to show weekly instead of monthly data.
+
+> Build a cohort of power users who have used the product more than 10 times.
+
 ### Experiment analysis
 
 > What's the performance of the checkout experiment?
@@ -237,6 +292,22 @@ For MCP-compatible clients:
 
 > Show experiments testing the payment flow.
 
+### User and cohort analysis
+
+> Show me users who signed up in the last week.
+
+> What cohorts exist for high-value customers?
+
+> Analyze the behavior of users in the "Active Users" cohort.
+
+### Customer feedback analysis
+
+> What are the main insights from customer feedback this month?
+
+> Show me recent customer feedback comments about the mobile app.
+
+> Which feedback sources are generating the most mentions?
+
 ### Advanced analysis
 
 > Compare user behavior between iOS and Android platforms.
@@ -245,7 +316,9 @@ For MCP-compatible clients:
 
 > Analyze feature adoption rates after the recent product launch.
 
-## Typical analysis workflow
+## Typical workflows
+
+### Analysis workflow
 
 Most analysis questions follow this pattern:
 
@@ -262,6 +335,24 @@ Example conversation flow:
 > AI: [Queries the data and presents results]
 > User: Can you break this down by user segment?
 > AI: [Modifies query to include segmentation]
+
+### Creation workflow
+
+You can create new content directly through natural language:
+
+1. **Create**: Build new charts, dashboards, experiments, or cohorts.
+2. **Configure**: Specify parameters and settings through conversation.
+3. **Refine**: Edit and adjust based on your needs.
+4. **Deploy**: Save and use the created content in Amplitude.
+
+Example conversation flow:
+
+> User: Create a dashboard for mobile app metrics.
+> AI: [Creates dashboard with relevant charts]
+> User: Add a chart showing daily active users by platform.
+> AI: [Adds chart to the dashboard]
+> User: Create a cohort of users who completed checkout.
+> AI: [Creates cohort with specified criteria]
 
 ## Security and compliance
 

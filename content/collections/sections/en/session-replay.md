@@ -18,11 +18,7 @@ Find Session Replay in the left-hand sidebar in Amplitude Analytics.
 
 [View and modify Session Replay settings in your organization settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
-## Feature availability
-
-Session Replay is available to try on all new Amplitude plans as of February 7, 2024 (including the Starter and Plus updates from October 2023). Existing Growth and Enterprise customers can also access Session Replay as an add-on purchase. Contact your account manager with questions. See our [pricing page](https://amplitude.com/pricing) for more details.
-
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="Enabling Session Replay"}}
 Session Replay isn't enabled by default and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
@@ -38,13 +34,28 @@ When viewing a session replay from your homepage or from a search, the user's ev
 
 Session Replay supports user sessions of any length.
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="AI generated names"}}
 Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
 
 ## Error analytics and console logs
 
 Session Replay can capture and display technical errors and console logs that occur during user sessions. This helps you understand whether technical issues are impacting user experience and correlate errors with drops in conversion or engagement.
+
+Error Analytics is an umbrella term for two types of error capture:
+
+* **Console Errors**: JavaScript console logs, warnings, and errors. These display in the console panel within the session replay modal.
+* **Network Errors**: Failed network requests and API calls. These display at the bottom of the session replay modal.
+
+### Requirements
+
+Error Analytics features have different SDK requirements:
+
+| Feature | SDK | Minimum Version |
+|---------|-----|-----------------|
+| Console Errors | [Session Replay Browser SDK](/docs/session-replay/session-replay-standalone-sdk) (`@amplitude/session-replay-browser`) | 1.22.4 |
+| Console Errors | [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) (`@amplitude/plugin-session-replay-browser`) | 1.16.6 |
+| Network Errors | [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) | 2.24.0 |
 
 When enabled, Session Replay captures:
 
@@ -68,7 +79,7 @@ Admins and managers can enable or disable console log capture through organizati
 
 1. Navigate to *Settings > Organization Settings*.
 2. Go to the *Session Replay & Heatmaps* section.
-3. Toggle the *Console Logs* setting on or off for your projects.
+3. Toggle the **Console Logs** setting on or off for your projects.
 
 Changes to this setting apply to future session captures only.
 
@@ -82,12 +93,43 @@ Error events captured during sessions appear in your event stream and can be ana
 
 This helps quantify the business impact of technical issues and prioritize fixes based on data.
 
+## Replay Captured event
+
+Amplitude automatically sends a `[Amplitude] Replay Captured` event when it successfully captures a session replay. This event includes the `[Amplitude] Session Replay ID` property, which links the event to the captured replay.
+
+The event uses the device ID passed to the Session Replay SDK or browser SDK plugin. The session ID is added to the event based on your project's Amplitude session definition. The event doesn't use user ID.
+
+### Use the Replay Captured event
+
+The `[Amplitude] Replay Captured` event appears in your event stream and you can analyze it like any other event. For example, you can:
+
+* Use [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) to measure replay capture rates and trends.
+* Filter charts and analyses by the event to focus on sessions with captured replays.
+
+The event indicates that the replay is available for viewing in Amplitude. When you see this event in a user's event stream, you can view the associated session replay.
+
+{{partial:admonition type="note" heading=""}}
+Amplitude sends the `[Amplitude] Replay Captured` event automatically. You don't need to instrument this event yourself. This event doesn't count toward your event volume or MTU (Monthly Tracked Users).
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The `[Amplitude] Replay Captured` event may create anonymous users if the device ID can't be associated with an existing user.
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+You may see multiple `[Amplitude] Replay Captured` events in a session replay timeline. This can happen when multiple browser tabs are open with different active sessions. Amplitude only captures replays when device IDs and session IDs match. Because timelines are based on events captured during the replay period, events from different sessions may overlap in the timeline.
+{{/partial:admonition}}
+
 ## Frustration analytics
 
 Session Replay automatically detects and highlights user frustration signals during playback. These signals help you identify UX problems that may not be obvious in traditional analytics.
 
+{{partial:admonition type="note" heading="Requirements"}}
+Frustration Analytics requires [Analytics Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) (`@amplitude/analytics-browser`) version 2.24.0 or later.
+{{/partial:admonition}}
+
+
 ### Frustration event types
-When users rapidly click the same element multiple times, usually indicating something isn't working as expected.
 * **Rage clicks**: When users rapidly click the same element multiple times, usually indicating something isn't working as expected. This often means a button or link appears interactive but doesn't respond.
 * **Dead clicks**: When users click on elements that appear clickable but have no functionality—such as non-interactive images styled like buttons or links that lead nowhere.
 
@@ -101,10 +143,6 @@ Frustration events appear directly in the session timeline and event stream, mak
 
 Like error events, frustration events can be analyzed using Event Segmentation and Funnel Analysis to understand their impact on user behavior and conversion rates.
 
-{{partial:admonition type="note" heading=""}}
-Frustration analytics are available to all Session Replay users and don't require additional configuration.
-{{/partial:admonition}}
-
 ### View Session Replay from User Look-Up
 
 To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend.
@@ -116,8 +154,8 @@ Find the user with User Look-Up (you’ll need their user ID to do this), then c
 To use Session Replay in a chart, follow these steps:
 
 1. Open the Amplitude chart that contains the events you want to look at.
-2. Open the [Microscope](/docs/analytics/microscope) and click *Watch Session Replays*.
-3. Check the *Streams with session replays* box.
+2. Open the [Microscope](/docs/analytics/microscope) and click **Watch Session Replays**.
+3. Check the **Streams with session replays** box.
 
 The replay modal appears, where you can: 
 
@@ -149,9 +187,17 @@ With Session Replay, your homepage shows 100 sessions captured over the past sev
 If you can’t see the Session Replay widget and have a customized [home page](/docs/get-started/amplitude-home-page), reset the home page and then re-add your customizations to make the widget visible.
 {{/partial:admonition}}
 
-Click *Play* to see the session view in the modal that appears. 
+Click **Play** to see the session view in the modal that appears. 
 
-## View the number of captured sessions
+## View the number of captured replays
+
+To see the number of captured replays, create an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart:
+
+1. Select the `[Amplitude] Replay Captured` event.
+2. Group by the `[Amplitude] Session Replay ID` event property.
+3. In the formula, use `PROPCOUNT(A)` to count distinct session replay IDs.
+
+This formula returns the number of distinct property values for the property by which the event is grouped. In this example, the formula retrieves the number of different session replay IDs.
 
 To review your Session Replay quota and retention time frame, navigate to the Plans & Billing page for your organization.
 
@@ -159,12 +205,12 @@ To review your Session Replay quota and retention time frame, navigate to the Pl
 
 Session replay gives you two options for searching replays: either by date, or with a filter.
 
-1. Navigate to *Session Replay* to see the complete list of session replays available for viewing.
+1. Navigate to the Session Replay page to view the complete list of session replays available for viewing.
 2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset time range: one day, seven days, or 30 days.
 
 Filtered results by date or time frame match the project's timezone.
 
-3. To narrow the list with a filter, click *+ Add Filter*. You can filter by cohorts, events, event properties, user properties, and session duration. You can also use multiple filters to further narrow your list.
+3. To narrow the list with a filter, click **Add Filter**. You can filter by cohorts, events, event properties, user properties, and session duration. You can also use multiple filters to further narrow your list.
 
 Once you make your selection, view replays that took place within the selected time frame, or replays that meet your filter specifications. Your search results generate a unique URL that you can share with your team.
 
@@ -172,7 +218,23 @@ Once you make your selection, view replays that took place within the selected t
 Keep in mind that if you apply a filter to exclude replays with a specific property value, Session Replay search returns results for all replays with a different value for that property, **and** replays with **missing** values for that property.
 {{/partial:admonition}}
 
-The list of results shows a maximum of 100 replays. 
+The list of results shows a maximum of 100 replays. 
+
+## How session replay querying works
+
+When you search for replays by event in Amplitude, Amplitude finds replays that spans those events. This means Amplitude looks for replays that include the time period when your events occurred.
+
+![Diagram showing how session replay queries match replays to events: a timeline with queried events highlighted in a bounding box, and a matching replay that starts before and ends after the queried events](/docs/output/img/session-replay/replay-query-matching.svg)
+
+### Matching replays to events
+
+Amplitude matches replays to your events by finding replays that:
+
+1. **Match the session ID**: The replay belongs to the same session as your events. This ensures you're viewing the correct replay for that user session.
+2. **Start before your events**: The replay begins before the first event you're looking at
+3. **End after your events**: The replay continues past the last event you're looking at
+
+This ensures the replay captures the full context around the events you're analyzing. For example, if you're looking at events that occurred between 2:00 PM and 2:05 PM in a specific session, Amplitude returns replays that belong to the same session and started before 2:00 PM and ended after 2:05 PM.
 
 ## Add a replay to a dashboard or notebook
 
@@ -199,7 +261,6 @@ With Session Replay, you can:
 
 There are some limitations when using Session Replay:
 
-* Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) and time-based session definitions aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
 * Session Replay doesn't capture these unsupported HTML elements:

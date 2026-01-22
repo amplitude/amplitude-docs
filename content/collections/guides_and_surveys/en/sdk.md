@@ -15,7 +15,7 @@ Guides and Surveys supports different installation options to work best with you
 
 ### Amplitude Browser SDK 2
 
-Install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
+If you use the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
 {{partial:tabs tabs="script, npm, yarn"}}
 {{partial:tab name="script"}}
@@ -78,9 +78,9 @@ Only call `init` and `boot` manually if you need to:
 This option can only be used with the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 {{/partial:admonition}}
 
-### Amplitude Unified SDK
+### Amplitude Browser Unified SDK
 
-If you're using the [Amplitude Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), Guides and Surveys comes out of the box. Just provide the engagement options during initialization:
+If you're using the [Amplitude Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), Guides and Surveys comes out of the box. Just provide the engagement options during initialization:
 
 ```ts
 import { initAll } from '@amplitude/unified';
@@ -159,39 +159,35 @@ After calling this function, you can access `window.engagement` and call the SDK
 
 #### Boot user
 
-The final step before guides and surveys can show to your end-users is to call `boot`. This method triggers targeting resolution of your live guides and surveys. It also establishes the connection from the Guides and Surveys SDK to your third-party analytics provider. Call this method only once for a given session unless you want to change the active user.
+Call `boot` to initialize Guides and Surveys and make it available to users. Guides and Surveys doesn't work until you call `boot`, even if the SDK script loads on the page. This method triggers targeting resolution for your live guides and surveys and establishes the connection from the Guides and Surveys SDK to your analytics provider. Call this method once per session unless you need to change the active user.
 
+For detailed documentation on the `boot` method, including parameter options, type definitions, and usage examples, see [Boot](#boot).
 
-
-```js
-engagement.boot(options: BootOptions): Promise<void>
-```
-
-| Parameter              | Type                           | Description                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                                                                                                                                                                                             |
-| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
+Below is a basic example of `boot` with a user ID, device ID, and user properties. `integrations` is also specified to forward Guides and Surveys events to an analytics provider (Amplitude in this case).
 
 ```js
 await window.engagement.boot({
   user: {
-    // Guides and Surveys requires at least one of user_id or device_id for user identification
-    user_id: 'USER_ID',
-    device_id: 'DEVICE_ID',
-    user_properties: {},
+    user_id: "user123",
+    device_id: "device456",
+    user_properties: {
+      plan: "premium"
+    }
   },
-  // needed for insights and responses to populate
   integrations: [
     {
       track: (event) => {
-        amplitude.track(event.event_type, event.event_properties)
+        amplitude.track(event.event_type, event.event_properties);
       }
-    },
-  ],
+    }
+  ]
 });
 ```
 
-To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
+#### Forwarding events
+
+
+To use the **On event tracked** [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers), forward events from your analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
 analytics.on('track', (event, properties, options) => {
@@ -200,6 +196,7 @@ analytics.on('track', (event, properties, options) => {
 });
 ```
 
+#### Example of booting and forwarding events if using Segment
 
 {{partial:collapse name="Initialize with Segment analytics"}}
 Initializing the SDK and launching a guide or survey with third-party analytics requires a few more steps.
@@ -339,7 +336,7 @@ Next, on the Tags page, enable Guides and Surveys.
 The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
 {{/partial:admonition}}
 
-### Verify installation and initialization
+## Verify installation and initialization
 
 To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
 
@@ -349,7 +346,7 @@ window.engagement
 
 If the response is `undefined`, Guides and Surveys isn't installed properly.
 
-#### Content Security Policy (CSP)
+### Content Security Policy (CSP)
 
 If your organization has a strict Content Security Policy (CSP), Guides and Surveys requires some additions to ensure smooth operation. Add the following CSP directives to your policy:
 
@@ -369,7 +366,7 @@ engagement.init("YOUR_API_KEY", {
 });
 ```
 
-#### iframe support and limitations
+### iframe support and limitations
 
 Guides and Surveys has limited support for applications that use iframes. Consider these important limitations when implementing Guides and Surveys in iframe-based applications.
 
@@ -393,312 +390,18 @@ Guides and Surveys has limited support for applications that use iframes. Consid
 - Use the same API key for all SDK instances to ensure consistent user identification
 - Design guides and surveys to work within a single context (either parent or a specific iframe)
 
-## Manage themes
-
-Configure the visual theme mode if your app supports light and dark modes.
-
-```js
-engagement.setThemeMode(mode: ThemeMode): void
-```
-
-| Parameter | Type                            | Description                          |
-| --------- | ------------------------------- | ------------------------------------ |
-| `mode`    | `lightMode`, `darkMode`, `auto` | Required. Select the theme to apply. |
-
-```js
-// Automatically detect user's system preferences
-window.engagement.setThemeMode("auto");
-
-// Set dark mode explicitly
-window.engagement.setThemeMode("darkMode");
-
-// Set light mode explicitly
-window.engagement.setThemeMode("lightMode");
-```
-
-## Register a callback
-
-Register a callback with the Guides and Surveys SDK. After you register a callback, you can set the **Run callback** action on any button in your guide or survey to execute the callback. Both primary and secondary buttons support this action.
-
-```js
-engagement.addCallback(name: string, callback: () => void): void
-```
-
-| Parameter  | Type         | Description                                                                                   |
-| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
-| `name`     | `string`     | Required. Refer to this callback by name when setting a callback action on a guide or survey. |
-| `callback` | `() => void` | Required. The callback to execute.                                                            |
-
-```js
-window.engagement.addCallback("toggle_dark_mode", () => {
-  setTheme("darkMode");
-  window.engagement.setThemeMode("darkMode");
-});
-```
-
-## Router configuration
-
-Configure how Guides and Surveys handles URLs in a single page application (SPA).
-
-```js
-engagement.setRouter(routerFn: (url: string) => void): void
-```
-
-| Parameter  | Type                    | Description                                           |
-| ---------- | ----------------------- | ----------------------------------------------------- |
-| `routerFn` | `(url: string) => void` | Required. A function that handles changes to the URL. |
-
-```js
-// React Router v6 implementation
-import { useNavigate } from "react-router-dom";
-
-const MyComponent = () => {
-  const navigate = useNavigate();
-
-  React.useEffect(() => {
-    window.engagement.setRouter((newUrl) => navigate(newUrl));
-  }, []);
-};
-```
-{{partial:admonition type="note" heading="Update URL behavior"}}
-After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
-{{/partial:admonition}}
-## Localization
-
-Set the `locale` option during initialization to localize a guide or survey.
-
-* If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
-* If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
-
-To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
-
-```js
-engagement.updateLanguage(locale: string): Promise<void>
-```
-
-| Parameter | Type     | Description                                                                              |
-| --------- | -------- | ---------------------------------------------------------------------------------------- |
-| `locale`  | `string` | Required. The new language code (for example, `en`, `es`, `fr`) to set for localization. |
-
-```js
-// Example: Update language to French
-await window.engagement.updateLanguage("fr");
-
-// Example: Update language to English
-await window.engagement.updateLanguage("en");
-```
-
-## Refresh targeting
-
-Re-fetch targeting evaluation from the backend by making a new request to the decide endpoint. This allows you to refresh which guides and surveys are eligible to show based on the latest targeting rules and user state. Targeting is automatically refreshed when the user or its properties change. Manually refreshing targeting through this method is useful when you update user properties server-side or to get the latest cohort membership states.
-
-
-```js
-engagement.decide(): Promise<void>
-```
-
-
-## Reset
-
-Reset a guide or survey to a specific step.
-
-```js
-engagement.gs.reset(key: string, stepIndex?: number)
-```
-
-| Parameter   | Type     | Description                                                                           |
-| ----------- | -------- | ------------------------------------------------------------------------------------- |
-| `key`       | `string` | Required. The guide or survey's key.                                                  |
-| `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
-
-## List
-
-Retrieve a list of all live guides and surveys along with their status.
-
-```js
-engagement.gs.list(): Array<GuideOrSurvey>
-```
-
-```js
-interface GuideOrSuvey {
-  id: number;
-  status: "visible" | "active";
-  step: number;
-  title: string
-}
-```
-
-## Show
-
-Display a specific guide or survey. This ignores any targeting rules and limits except for page targeting.
-
-```js
-engagement.gs.show(key: string, stepIndex?: number): void
-```
-
-| Parameter   | Type     | Description                                                                             |
-| ----------- | -------- | --------------------------------------------------------------------------------------- |
-| `key`       | `string` | Required. The guide or survey's key.                                                    |
-| `stepIndex` | `number` | The zero-based index of the step to show. Defaults to the initial step if not provided. |
-
-## Forward event
-
-Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the *On event tracked* [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
-
-```js
-engagement.forwardEvent(event: Event): void
-```
-
-| Parameter | Type  | Description                                                                                                                                        |
-| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
-
-
-## Set user properties
-Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ properties.propertyName }}` syntax.
-
-If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
-
-{{partial:admonition type="tip" heading=""}}
-Ensure that user properties load during the current client-side session and before the guide or survey displays. Properties shared from prior sessions aren't available.
-{{/partial:admonition}}
-
-```js
-engagement._setUserProperties(userProperties: Record<string, any>): void
-```
-
-| Parameter        | Type                  | Description                                                                                                                     |
-| ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `userProperties` | `Record<string, any>` | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
-### Example
-
-```js
-// Supply user properties manually via engagement SDK
-const userProperties = {firstName: 'john'}
-engagement._setUserProperties(userProperties)
-
-// For testing, view the current user properties
-engagement._.user.user_properties
-```
-
-## Set session properties
-
-Set session properties for the current session. Session properties provide an additional way to restrict when guides and surveys are triggered. At the time of trigger, the configured session property conditions must be met for the guide or survey to display.
-
-When a session property changes, the SDK checks if there are any guides or surveys that can now be shown. This means session properties work with the "immediately" trigger and display content as soon as the session property conditions become true.
-
-```js
-engagement.setSessionProperty(key: string, value: any): void
-```
-
-| Parameter | Type      | Description                                              |
-| --------- | --------- | -------------------------------------------------------- |
-| `key`     | `string`  | Required. The session property key to set.              |
-| `value`   | `any` | Required. The value to set for the session property.    |
-
-{{partial:admonition type="note" heading="Feature availability"}}
-Session properties are a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
-{{/partial:admonition}}
-
-### Example
-
-```js
-// Various session properties to control guide/survey targeting
-window.engagement.setSessionProperty("subscriptionTier", "premium");
-window.engagement.setSessionProperty("isFeatureXEnabled", true);
-window.engagement.setSessionProperty("userScore", 85);
-```
-
-## Close all
-
-Close all active guides and surveys.
-
-```js
-engagement.gs.closeAll(): void
-```
-
-## Preview mode for desktop apps
-
-If you are using the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
-
-The Amplitude dashboard will pass your app a special query parameter through a deep link (for example, `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call the `_startNudgeDebug` SDK method with it.
-
-Review below for specific framework examples.
-
-### Electron
-
-Use the following as a minimal example on how to implement Guides & Surveys within Electron:
-1. Register an inter-process communication function during preload.
-2. In the main process: listen for and parse the `gs-debug-id` query parameter.
-3. In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK.
-
-{{partial:tabs tabs="main.js, preload.js, renderer.js"}}
-{{partial:tab name="main.js"}}
-```javascript
-const { app } = require('electron');
-
-// Handle deep link on macOS
-app.on('open-url', (event, url) => {
-  const parsedUrl = new URL(url);
-  const debugId = parsedUrl.searchParams.get('gs-debug-id');
-
-  if (debugId) {
-    mainWindow.webContents.send('start-engagement-debug', {
-      debugId: debugId,
-    });
-  }
-});
-
-// Handle deep link on Windows/Linux
-app.on('second-instance', (event, commandLine, workingDirectory) => {
-  // Find the deep link URL in command line arguments
-  const url = commandLine.find(arg => arg.startsWith(PROTOCOL + '://'));
-
-  if (url) {
-    const parsedUrl = new URL(url);
-    const debugId = parsedUrl.searchParams.get('gs-debug-id');
-
-    if (debugId) {
-      mainWindow.webContents.send('start-engagement-debug', {
-        debugId: debugId,
-      });
-    }
-  }
-});
-```
-{{/partial:tab}}
-{{partial:tab name="preload.js"}}
-```javascript
-const { contextBridge, ipcRenderer } = require('electron');
-
-contextBridge.exposeInMainWorld('electronAPI', {
-  startEngagementDebug: (callback) => {
-    ipcRenderer.on('start-engagement-debug', (_event, data) => callback(data));
-  },
-});
-```
-{{/partial:tab}}
-{{partial:tab name="renderer.js"}}
-```javascript
-window.electronAPI.startEngagementDebug((data) => {
-  window.engagement._startNudgeDebug({
-    nudge: { variantId: Number(data.debugId) }
-  });
-});
-```
-{{/partial:tab}}
-{{/partial:tabs}}
-
 ## Troubleshoot your installation
 
 If your Guides and Surveys instrumentation doesn't work, verify the following topics:
 
 ### Verify Guides and Surveys is installed
 
+{{partial:admonition type="tip"}}
+Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug Guides & Surveys. The extension includes tools to verify SDK setup, troubleshoot why guides or surveys aren't showing, and test event-based triggers.
+{{/partial:admonition}}
+
 1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
-
 2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the plugin configuration.
-
 3. For additional debugging, enter `window.engagement._debugStatus()`. The output should look like:
 
 ```json
@@ -768,3 +471,420 @@ Ensure the API key you provide:
 - belongs to the project that contains the Guides and Surveys configuration
 
 Using different API keys for Guides & Surveys and Analytics causes the SDK to fetch guides and surveys from the wrong project and results in incomplete or mismatched analytics data. Always use the same API key for both SDKs to ensure they're tied to the same Amplitude project.
+
+## Localization
+
+Set the `locale` option during initialization to localize a guide or survey.
+
+* If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
+* If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
+
+To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
+
+```js
+engagement.updateLanguage(locale: string): Promise<void>
+```
+
+| Parameter | Type     | Description                                                                              |
+| --------- | -------- | ---------------------------------------------------------------------------------------- |
+| `locale`  | `string` | Required. The new language code (for example, `en`, `es`, `fr`) to set for localization. |
+
+```js
+// Example: Update language to French
+await window.engagement.updateLanguage("fr");
+
+// Example: Update language to English
+await window.engagement.updateLanguage("en");
+```
+
+## Preview mode for desktop apps
+
+If you use the SDK within a desktop framework, you must perform extra instrumentation to support previewing Guides & Surveys.
+
+The Amplitude dashboard will pass your app a special query parameter through a deep link (for example, `your-app://?gs-debug-id=123`). You will need to add logic within your app to listen for this query parameter on a deep link and call the `_startNudgeDebug` SDK method with it.
+
+Review below for specific framework examples.
+
+### Electron
+
+Use the following as a minimal example on how to implement Guides & Surveys within Electron:
+1. Register an inter-process communication function during preload.
+2. In the main process: listen for and parse the `gs-debug-id` query parameter.
+3. In the renderer process: listen for a message from the main process and pass the debug parameter to the Engagement SDK.
+
+{{partial:tabs tabs="main.js, preload.js, renderer.js"}}
+{{partial:tab name="main.js"}}
+```javascript
+const { app } = require('electron');
+
+// Handle deep link on macOS
+app.on('open-url', (event, url) => {
+  const parsedUrl = new URL(url);
+  const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+  if (debugId) {
+    mainWindow.webContents.send('start-engagement-debug', {
+      debugId: debugId,
+    });
+  }
+});
+
+// Handle deep link on Windows/Linux
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+  // Find the deep link URL in command line arguments
+  const url = commandLine.find(arg => arg.startsWith(PROTOCOL + '://'));
+
+  if (url) {
+    const parsedUrl = new URL(url);
+    const debugId = parsedUrl.searchParams.get('gs-debug-id');
+
+    if (debugId) {
+      mainWindow.webContents.send('start-engagement-debug', {
+        debugId: debugId,
+      });
+    }
+  }
+});
+```
+{{/partial:tab}}
+{{partial:tab name="preload.js"}}
+```javascript
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  startEngagementDebug: (callback) => {
+    ipcRenderer.on('start-engagement-debug', (_event, data) => callback(data));
+  },
+});
+```
+{{/partial:tab}}
+{{partial:tab name="renderer.js"}}
+```javascript
+window.electronAPI.startEngagementDebug((data) => {
+  window.engagement._startNudgeDebug({
+    nudge: { variantId: Number(data.debugId) }
+  });
+});
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Lifecycle SDK methods
+
+### Boot
+
+Call `boot` to initialize the Guides and Surveys SDK and make it available to users. If you are both (a) not using the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2) and (b) not using the [Amplitude Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), then Guides and Surveys doesn't work until you call `boot`, even if the SDK script loads on the page. This method triggers targeting resolution for your live guides and surveys and establishes the connection from the Guides and Surveys SDK to your analytics provider. Call this method once per session unless you need to change the active user.
+
+```js
+engagement.boot(options: BootOptions): Promise<void>
+```
+
+| Parameter              | Type                           | Description                                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
+| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
+
+#### EndUser type
+
+The `EndUser` type includes these properties:
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| `user_id` | `string` | User identifier |
+| `device_id` | `string` | Device identifier |
+| `user_properties` | `UserProperties` | Custom user properties |
+| `country` | `string` | Country location data |
+| `region` | `string` | Region location data |
+| `platform` | `string` | Platform identifier |
+
+**Required fields:** You must provide at least `user_id` or `device_id`. If neither is provided, the method logs an error and returns early.
+
+#### Integration type
+
+The `Integration` type includes a single property currently:
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| `track` | `(event: Event) => void` | Optional. Function to track events to your analytics provider |
+
+#### Boot examples
+
+**Example 1: Basic usage with user object**
+```js
+await window.engagement.boot({
+  user: {
+    user_id: "user123",
+    user_properties: {
+      name: "John Doe",
+      plan: "premium",
+      signupDate: "2023-01-15"
+    }
+  }
+});
+```
+
+**Example 2: With analytics integration**
+```js
+await window.engagement.boot({
+  user: {
+    user_id: "user123",
+    device_id: "device456",
+    user_properties: {
+      plan: "premium"
+    }
+  },
+  integrations: [
+    {
+      track: (event) => {
+        amplitude.track(event.event_type, event.event_properties);
+      }
+    }
+  ]
+});
+```
+
+**Example 3: With function provider for dynamic user data**
+```js
+await window.engagement.boot({
+  user: () => {
+    return {
+      user_id: getCurrentUserId(),
+      device_id: getDeviceId(),
+      user_properties: getUserProperties(),
+    };
+  },
+  integrations: [
+    {
+      track: (event) => {
+        ampliutde.track(event.event_type, event.event_properties);
+      }
+    }
+  ]
+});
+```
+
+**Example 4: Simple string user ID**
+```js
+await window.engagement.boot("user123");
+```
+
+#### Important notes
+
+- **Async method:** `boot` is an async method. Always use `await` or handle it as a Promise.
+- **Required:** You must call `boot` before any guides or surveys show.
+- **Queue processing:** Boot calls process first in the SDK's method queue.
+- **Single call per session:** Typically call `boot` once per user session.
+
+### Shutdown
+
+Shut down the Guides and Surveys SDK. This method closes all active guides and surveys, stops all guides and surveys from being triggered. Use this method when you need to completely clean up the SDK, such as when a user logs out.
+
+```js
+engagement.shutdown(): void
+```
+
+After calling `shutdown()`, the SDK is no longer functional. To use Guides and Surveys again, you need to re-boot the SDK by calling `boot()` again.
+
+### Refresh targeting
+
+Re-fetch targeting evaluation from the backend by making a new request to the decide endpoint. This allows you to refresh which guides and surveys are eligible to show based on the latest targeting rules and user state. Targeting is automatically refreshed when the user or its properties change. Manually refreshing targeting through this method is useful when you update user properties server-side or to get the latest cohort membership states.
+
+
+```js
+engagement.decide(): Promise<void>
+```
+
+## Styling SDK methods
+
+### Manage themes
+
+Configure the visual theme mode if your app supports light and dark modes.
+
+```js
+engagement.setThemeMode(mode: ThemeMode): void
+```
+
+| Parameter | Type                            | Description                          |
+| --------- | ------------------------------- | ------------------------------------ |
+| `mode`    | `lightMode`, `darkMode`, `auto` | Required. Select the theme to apply. |
+
+```js
+// Automatically detect user's system preferences
+window.engagement.setThemeMode("auto");
+
+// Set dark mode explicitly
+window.engagement.setThemeMode("darkMode");
+
+// Set light mode explicitly
+window.engagement.setThemeMode("lightMode");
+```
+
+## Instrumentation SDK methods
+
+### Forward event
+
+Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the *On event tracked* [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
+
+```js
+engagement.forwardEvent(event: Event): void
+```
+
+| Parameter | Type  | Description                                                                                                                                        |
+| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
+
+### Register a callback
+
+Register a callback with the Guides and Surveys SDK. Set the Run callback action on a guide or survey button to execute the callback.
+
+```js
+engagement.addCallback(name: string, callback: () => void): void
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `name`     | `string`     | Required. Refer to this callback by name when setting a callback action on a guide or survey. |
+| `callback` | `() => void` | Required. The callback to execute.                                                            |
+
+```js
+window.engagement.addCallback("toggle_dark_mode", () => {
+  setTheme("darkMode");
+  window.engagement.setThemeMode("darkMode");
+});
+```
+
+### Router configuration
+
+Configure how Guides and Surveys handles URLs in a single page application (SPA). Doing so enables reload-less URL updates.
+
+```js
+engagement.setRouter(routerFn: (url: string) => void): void
+```
+
+| Parameter  | Type                    | Description                                           |
+| ---------- | ----------------------- | ----------------------------------------------------- |
+| `routerFn` | `(url: string) => void` | Required. A function that handles changes to the URL. |
+
+```js
+// React Router v6 implementation
+import { useNavigate } from "react-router-dom";
+
+const MyComponent = () => {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    window.engagement.setRouter((newUrl) => navigate(newUrl));
+  }, []);
+};
+```
+{{partial:admonition type="note" heading="Update URL behavior"}}
+After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+{{/partial:admonition}}
+
+### Set user properties
+Set user properties for the current session. These properties can be used as variables inside guides and surveys content with the `@{{ property.propertyName }}` syntax.
+
+If you use `amplitude.identify()` to share user properties, you don't need to use `_setUserProperties()`.
+
+{{partial:admonition type="tip" heading=""}}
+Ensure that user properties load during the current client-side session and before the guide or survey displays. Properties shared from prior sessions aren't available.
+{{/partial:admonition}}
+
+```js
+engagement._setUserProperties(userProperties: Record<string, any>): void
+```
+
+| Parameter        | Type                  | Description                                                                                                                     |
+| ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `userProperties` | `Record<string, any>` | Required. An object that contains user properties as key-value pairs. Reference these properties in guides and surveys content. |
+#### Example
+
+```js
+// Supply user properties manually via engagement SDK
+const userProperties = {firstName: 'john'}
+engagement._setUserProperties(userProperties)
+
+// For testing, view the current user properties
+engagement._.user.user_properties
+```
+
+### Set session properties
+
+Set session properties for the current session. Session properties provide an additional way to restrict when guides and surveys are triggered. At the time of trigger, the configured session property conditions must be met for the guide or survey to display.
+
+When a session property changes, the SDK checks if there are any guides or surveys that can now be shown. This means session properties work with the "immediately" trigger and display content as soon as the session property conditions become true.
+
+```js
+engagement.setSessionProperty(key: string, value: any): void
+```
+
+| Parameter | Type      | Description                                              |
+| --------- | --------- | -------------------------------------------------------- |
+| `key`     | `string`  | Required. The session property key to set.              |
+| `value`   | `any` | Required. The value to set for the session property.    |
+
+{{partial:admonition type="note" heading="Feature availability"}}
+Session properties are a feature-flagged capability. Contact Amplitude support if you want to use this feature in your implementation.
+{{/partial:admonition}}
+
+#### Example
+
+```js
+// Various session properties to control guide/survey targeting
+window.engagement.setSessionProperty("subscriptionTier", "premium");
+window.engagement.setSessionProperty("isFeatureXEnabled", true);
+window.engagement.setSessionProperty("userScore", 85);
+```
+
+## Guide and survey management SDK methods
+
+### Show
+
+Display a specific guide or survey. This ignores any targeting rules and limits except for page targeting.
+
+```js
+engagement.gs.show(key: string, stepIndex?: number): void
+```
+
+| Parameter   | Type     | Description                                                                             |
+| ----------- | -------- | --------------------------------------------------------------------------------------- |
+| `key`       | `string` | Required. The guide or survey's key.                                                    |
+| `stepIndex` | `number` | The zero-based index of the step to show. Defaults to the initial step if not provided. |
+
+### Close all
+
+Close all active guides and surveys.
+
+```js
+engagement.gs.closeAll(): void
+```
+
+### Reset
+
+Reset a guide or survey to a specific step.
+
+```js
+engagement.gs.reset(key: string, stepIndex?: number)
+```
+
+| Parameter   | Type     | Description                                                                           |
+| ----------- | -------- | ------------------------------------------------------------------------------------- |
+| `key`       | `string` | Required. The guide or survey's key.                                                  |
+| `stepIndex` | `number` | Required. The zero-based index of the step to reset to. Defaults to the initial step. |
+
+### List
+
+Retrieve a list of all live guides and surveys along with their status.
+
+```js
+engagement.gs.list(): Array<GuideOrSurvey>
+```
+
+```js
+interface GuideOrSuvey {
+  id: number;
+  status: "visible" | "active";
+  step: number;
+  title: string
+}
+```

@@ -7,6 +7,9 @@ tree:
         id: 60a71f94-e900-46ec-baf1-d73161835907
         entry: c5166da1-e099-4e0b-a870-b06b10057c19
       -
+        id: ec9960cd-aa1b-4052-9834-9f8b6e06e37d
+        entry: 00c34873-f370-41e4-a4ba-1f476bfb10ca
+      -
         id: 037c12ca-e0a1-41b6-a61b-87269d089de6
         entry: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
       -
@@ -110,8 +113,16 @@ tree:
     title: 'Clean your data'
     children:
       -
-        id: 19247ad4-2bcc-41a6-a36b-7c750a9a4a94
-        entry: 186f35a4-5184-46c4-8a96-16184ad038bb
+        id: 16334b97-ec0f-4b1d-8cc5-ff5851cf9a1d
+        title: 'Data Assistant'
+        children:
+          -
+            id: 19247ad4-2bcc-41a6-a36b-7c750a9a4a94
+            entry: 186f35a4-5184-46c4-8a96-16184ad038bb
+            title: 'Data Assistant Overview'
+          -
+            id: 71a0d1a4-73ba-41ac-b211-dad89eecff14
+            entry: bef1ff7c-2c93-4677-b05e-1588205fbd4d
       -
         id: 88973ab4-dc04-4a3e-b1c9-a17fc1f336d3
         entry: 3b46d4e2-2ab2-43e2-bacf-19e133b534cf

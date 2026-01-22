@@ -18,34 +18,34 @@ The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
-* [Amplitude iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
+* [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude iOS Swift 1.13.0+
+### Using Amplitude Analytics iOS Swift 1.13.0+
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
-1. In Xcode, click *File > Add Packages...*
+1. In Xcode, click *File > Add Package Dependencies...*
 2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
-3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
+3. Select the `amplitude-engagement-swift` package
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 1.6.0'
+pod 'AmplitudeEngagementSwift', '~> 2.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
 
 #### Initialize the SDK
@@ -55,9 +55,8 @@ Next, make sure to initialize the SDK.
 ```swift
 import AmplitudeEngagementSwift
 
-
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagement(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -72,6 +71,9 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -89,29 +91,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it's highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-## Add your application to project settings
-
-After installing the SDK, add your iOS application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
-
-To add your application:
-
-1. Navigate to **Settings** > **Projects** in Amplitude.
-2. Select your project.
-3. Navigate to the **General** tab.
-4. In the **Platform** section, click **+ Add Platform**.
-5. Select **iOS** from the platform list.
-6. Enter your application details:
-   - **App name**: Your app's display name
-   - **Bundle ID**: Your iOS bundle identifier (for example, `com.example.myapp`)
-7. Click **Save**.
-
-After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to target your iOS users and preview guides directly in your app.
-
-{{partial:admonition type='tip' heading='Find your bundle ID'}}
-Your iOS bundle identifier is defined in your Xcode project settings under **General** > **Identity** > **Bundle Identifier**.
-{{/partial:admonition}}
-
-### Not using Amplitude Swift 1.13.0+
+### Not using Amplitude Analytics Swift 1.13.0+
 In this case, installation is very similar to above; however, you need to manually call `.boot`.
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
@@ -133,7 +113,7 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
 
 #### Initialize the SDK
@@ -141,15 +121,8 @@ We don't update our docs on each release. You can check for the latest version h
 ```swift
 import AmplitudeEngagementSwift
 
-
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
-
-let configuration = Configuration(
-  apiKey: API_KEY
-)
-let amplitude = Amplitude(configuration: configuration)
-amplitude.add(plugin: amplitudeEngagement.getPlugin())
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagement(API_KEY)
 ```
 
 #### Configuration options
@@ -158,6 +131,9 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 | ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiKey`                 | `string`                                                                                          | Required. API key of the Amplitude project you want to use.                                                                                                               |
 | `initOptions.serverZone` | `EU` or `US`                                                                                      | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                  |
+| `initOptions.serverUrl`  | `string`                                                                                          | Optional. Sets a custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://gs.amplitude.com` (US) or `https://gs.eu.amplitude.com` (EU)                                                         |
+| `initOptions.cdnUrl`     | `string`                                                                                          | Optional. Sets a custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy). Default: `https://cdn.amplitude.com` (US) or `https://cdn.eu.amplitude.com` (EU)                                                         |
+| `initOptions.mediaUrl`   | `string`                                                                                          | Optional. Sets a custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked. Default: `https://engagement-static.amplitude.com` (US) or `https://engagement-static.eu.amplitude.com` (EU) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                    |
 | `initOptions.locale`     | `string`                                                                                          | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used. |
 
@@ -168,14 +144,13 @@ amplitude.add(plugin: amplitudeEngagement.getPlugin())
 amplitudeEngagement.boot("USER_ID")
 
 // Advanced boot with options
-
 let bootOptions = AmplitudeBootOptions(
   user_id: "USER_ID",
   device_id: "DEVICE_ID",
   user_properties: ["key": "value"]
   integrations: [
     { event, eventProperties in
-        // Custom event handler
+      // Custom event handler
     }
   ]
 )
@@ -186,12 +161,26 @@ amplitudeEngagement.boot(options: bootOptions)
 After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
+## Add your application to project settings
+
+After installing the SDK, add your iOS application to your Amplitude project settings so it appears as a platform option when you create guides and surveys.
+
+To add your application:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **iOS** from the dropdown.
+
+After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your iOS app users.
+
 ## Screen tracking and element targeting
 Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
 
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (for example, "HomeScreen") is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
@@ -209,18 +198,18 @@ Pin and tooltip guides require the ability for the SDK to target specific elemen
 ```swift
 // Swift UI
 MySwiftView {
-    // Content
+  // Content
 }
 .amplitudeView("MySwiftView", onTrigger: {
-    // Optional code to run with tap element action
-}
+  // Optional code to run with tap element action
+})
 
 // UIKit
 let myView = MyUIKitView(...)
 myView.accessibilityIdentifier = "MyView"
 ```
 
-## Other SDK Methods
+## Other SDK methods
 
 ### Manage themes
 
@@ -230,6 +219,34 @@ Configure the visual theme mode if your app supports light and dark modes.
 ```swift
 // Set the theme mode
 amplitudeEngagement.setThemeMode(ThemeMode.DARK) // Options: AUTO, LIGHT, DARK
+```
+
+### Register a callback
+
+Set the Run callback action on a guide or survey button to execute the callback.
+
+```swift
+engagement.addCallback(_ key: String, _ function: () -> Void)
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `key`      | `String`     | Required. Refer to this callback by key when setting a callback action on a guide or survey.  |
+| `function` | `() -> Void` | Required. The callback to execute.                                                            |
+
+```swift
+engagement.addCallback("show-alert") {
+  DispatchQueue.main.async {
+    let alert = UIAlertController(
+      title: "Callback",
+      message: "Callback has been executed!",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    
+    viewController.present(alert, animated: true)
+  }
+}
 ```
 
 ### Router configuration
@@ -306,36 +323,24 @@ amplitudeEngagement.closeAll()
 ```
 
 ## Simulate Guides and Surveys for preview
-
-To use preview mode to test a guide or survey in your app, configure a custom URL scheme.
-
-### Add your mobile app to project settings
-
-Before you can use preview mode, add your iOS app to your project settings in Amplitude:
-
-1. In Amplitude, navigate to **Settings** > **Organization Settings** > **Projects**.
-2. Select your project.
-3. Click the **Guides and Surveys** tab.
-4. In the **App Management** section, click **Add App**.
-5. Enter your iOS app's bundle ID (for example, `com.example.MyApp`).
-6. Click **Save**.
-
-After you add your app, Amplitude generates a unique URL scheme for mobile preview.
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
 ### Locate the mobile URL scheme
 
-After adding your app to project settings, locate the URL scheme:
-
-1. In the **Guides and Surveys** tab of your project settings, find the **URL scheme (mobile)** field.
-2. Copy its value, for example, `amp-abc123`.
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
 
 ### Add the URL scheme in Xcode
 
 1. Open your iOS project in Xcode.
 2. In the Project navigator, select your app's target.
-3. On the **Info** tab, locate the **URL Types** section.
+3. On the **Info** tab, locate or add the **URL Types** section.
 4. Add a new URL type with the following values:
-    * **Identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
+    * **URL identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
     * **URL Schemes**: Paste the value you copied from Amplitude, for example `amp-abc123`.
 
 ### Configure URL handling for preview links
@@ -343,13 +348,22 @@ After adding your app to project settings, locate the URL scheme:
 ```swift
 // In your AppDelegate or SceneDelegate
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    if amplitudeEngagement.handleUrl(url) {
-        return true
-    }
-    // Handle other URL schemes
-    return false
+  if amplitudeEngagement.handleUrl(url) {
+    return true
+  }
+  // Handle other URL schemes
+  return false
 }
 ```
 
+## Known limitations
+
+### Tab bar element targeting
+
+Pins and tooltips can't target tab bar items (for example, `UITabBar` elements). Tab bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
+
+**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+
 ## Changelog
+
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

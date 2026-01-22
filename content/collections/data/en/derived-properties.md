@@ -17,10 +17,6 @@ For example, you may want to create a chart that groups by whether an item added
 
 ![Screen_Shot_2021-08-03_at_2.35.25_PM.png](/docs/output/img/data/screen-shot-2021-08-03-at-2-35-25-pm-png.png)
 
-### Feature availability
-
-This feature is available to users on Enterprise and Growth plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Create a derived property
 
 {{partial:admonition type="note" heading=""}}
@@ -113,7 +109,6 @@ Amplitude requires all Unix timestamps to be in milliseconds.
 | `TODAY()`                                                         | Current day represented as a long in epoch time in UTC.                                                                                                                         | `TODAY() - start_date_in_ms >>> 1609459200000 - 1577836800000`                             | 31622400000         |
 | `EVENT_HOUR_OF_DAY()`                                             | Get hour of day (0-23) from the event's timestamp.                                                                                                                              | `EVENT_HOUR_OF_DAY()`                                                                      | 10                  |
 | `EVENT_DAY_OF_WEEK()`                                             | Get day of week from the event's timestamp as string. For example, Monday.                                                                                                      | `EVENT_DAY_OF_WEEK()`                                                                      | Monday              |
-| `DATE_TIME_FORMATTER (datetime_property, old_format, new_format)` | Convert format of a datetime property to a new format. See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | `DATE_TIME_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd")` | 2021/05/01          |
 
 ### Array functions
 

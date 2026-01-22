@@ -5,7 +5,7 @@
   {{else}}
     {{container = "#algolia-search"}}
 {{/if}}
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
 <script type="text/javascript">
   docsearch({
     appId: "{{config:app:algolia-app}}",
@@ -15,10 +15,60 @@
     debug: true,
     placeholder: "Search 'instrumentation' , 'Export API'",
     transformItems(items) {
-        return items.map((item) => ({
-          ...item,
-          url: item.url.replace('https://amplitude.com','')
-        }))
-      }
+      return items.map((item) => ({
+        ...item,
+        url: item.url.replace('https://amplitude.com','')
+      }))
+    }
   });
+
+  // Amplitude tracking for DocSearch
+  (function() {
+    var lastQuery = '';
+    var searchOpen = false;
+
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.DocSearch-Button')) {
+        amplitude.track('Search opened');
+        searchOpen = true;
+      }
+    });
+
+    document.addEventListener('input', function(e) {
+      var input = document.querySelector('.DocSearch-Input');
+      if (input && e.target === input) {
+        lastQuery = input.value;
+      }
+    });
+
+    // Use capture phase to run before DocSearch closes the modal
+    document.addEventListener('click', function(e) {
+      var hit = e.target.closest('.DocSearch-Hit');
+      if (hit) {
+        var query = lastQuery; // Capture query before any DOM changes
+        var link = hit.querySelector('a');
+        var url = link ? link.getAttribute('href') : '';
+        var hits = document.querySelectorAll('.DocSearch-Hit');
+        var position = Array.prototype.indexOf.call(hits, hit) + 1;
+        amplitude.track('Search result clicked', { query: query, url: url, position: position });
+      }
+    }, true);
+
+    var observer = new MutationObserver(function(mutations) {
+      var modal = document.querySelector('.DocSearch-Modal');
+      if (searchOpen && !modal) {
+        if (lastQuery) {
+          amplitude.track('Search query', { query: lastQuery });
+        }
+        lastQuery = '';
+        searchOpen = false;
+      } else if (modal && !searchOpen) {
+        // Track search opened for keyboard shortcuts (Cmd+K/Ctrl+K)
+        amplitude.track('Search opened');
+        searchOpen = true;
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
 </script>

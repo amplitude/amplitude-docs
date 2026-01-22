@@ -13,10 +13,6 @@ lede: 'The User Profile API serves Amplitude user profiles, which include user p
 summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
 
-## Availability
-
-User Profile API requires an Activation plan. For more information, review the [pricing page](https://amplitude.com/pricing).
-
 {{partial:admonition type="warning" heading="Unavailable in EU Region"}}
 This API isn't supported for customers in Amplitude's EU data processing region.
 {{/partial:admonition}}
@@ -53,10 +49,10 @@ Amplitude recommends that you use the User Profile API server-side only. Calling
 
 ## Request Parameters
 
-| <div class= "big-column">Parameter</div> | Description |
+| Parameter | Description |
 | --- | --- |
-| `user_id`[^1] | *Optional*, but <span class="required">required unless `device_id` is set. The user ID (external database ID) to be queried. |
-| `device_id`[^1] | *Optional*, but <span class="required">required unless `user_id` is set. The device ID (anonymous ID) to be queried. |
+| `user_id`[^1] | Optional, but required unless `device_id` is set. The user ID (external database ID) to be queried. |
+| `device_id`[^1] | Optional, but required unless `user_id` is set. The device ID (anonymous ID) to be queried. |
 | `get_recs` | *Optional*. Return a recommendation result for this user. Defaults to `false`.|
 | `rec_id`| *Optional*. Recommendations to retrieve, required if `get_recs` is true. Fetch multiple recommendations by separating the `rec_ids` with commas. |
 | `rec_type` | *Optional*. Overrides the default experimental control setting and `rec_type=model` returns modeled recommendations and `rec_type=random` returns random recommendations. |

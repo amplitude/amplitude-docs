@@ -1,7 +1,7 @@
 ---
 id: b83bc093-8bb0-464d-8f79-74529f5f3a12
 blueprint: faq_and_troubleshooting
-title: 'AI Visability FAQ'
+title: 'AI Visibility FAQ'
 landing: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1763401005

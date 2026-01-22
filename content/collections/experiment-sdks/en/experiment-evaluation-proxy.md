@@ -77,7 +77,7 @@ Environment configuration can only configure a single project. Environment varia
 
 A required array of objects with the following fields, all which are required.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `id` | The project's ID. Found in the project settings. |
 | `apiKey` | The project's [API key](/docs/apis/keys-and-tokens#api-key). |
@@ -88,7 +88,7 @@ A required array of objects with the following fields, all which are required.
 
 An optional object of extra configuration.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `redis` | Optional (Recommended). See [`redis`](#redis). Configure the proxy to use redis as persistent storage. |
 | `flagSyncIntervalMillis` | Optional. The polling interval to update flag configurations (default `10000`). |
@@ -110,7 +110,7 @@ configuration:
 
 Configure the evaluation proxy to use Redis as a persistent storage. Highly recommended to enable the evaluation proxy to run efficiently.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |

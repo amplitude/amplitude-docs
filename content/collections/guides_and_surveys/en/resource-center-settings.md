@@ -7,6 +7,7 @@ this_article_will_help_you:
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961188
+landing_blurb: Discover the options available to Resource Center, and how they help you customize the experience.
 ---
 The Resource Center settings option applies to the Resource Center as a whole. 
 

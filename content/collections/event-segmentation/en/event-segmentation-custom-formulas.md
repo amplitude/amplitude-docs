@@ -23,9 +23,6 @@ This article explains the mechanics of custom formulas, with examples of formula
 While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, go to [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Plus, Growth, and Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Formula syntax
 
@@ -335,13 +332,16 @@ For example, the following setup shows the number of `Page Viewed` events across
 
 ### SESSIONTOTALS
 
-**Syntax:** SESSIONTOTALS(session)
+Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
 
-* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Sessions card.
+The value you pass to `SESSIONTOTALS` depends on the chart you're using:
 
-This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). It returns the number of sessions defined by the specified session.
+| Chart | Syntax | Description |
+| --- | --- | --- |
+| User Sessions | `SESSIONTOTALS(session)` | Returns the number of sessions that match the specified session label in the Sessions card. |
+| Event Segmentation | `SESSIONTOTALS(event)` | Returns the number of sessions that contain the specified event at least once. |
 
-For example, the following setup shows the total number of sessions by day over the last 30 days for all users in the United Kingdom who completed at least one `Add to Cart` event during each session. 
+For example, the following setup shows the total number of sessions by day over the last 30 days for all users in the United Kingdom who completed at least one `Add to Cart` event during each session.
 
 ![sessionTotalsChart.png](/docs/output/img/event-segmentation/sessiontotalschart-png.png)
 

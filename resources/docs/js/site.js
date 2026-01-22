@@ -1,6 +1,8 @@
 import headingsAnchors from './heading-anchors'
 import codeCopy from './code-copy';
 import Prism from 'prismjs';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
@@ -18,13 +20,13 @@ import 'prismjs/components/prism-http';
 import 'prismjs/components/prism-ruby';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
 import 'prismjs/plugins/show-language/prism-show-language';     
-import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'; 
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 
-
+// Expose tippy globally for inline scripts that may need it
+window.tippy = tippy; 
 
 headingsAnchors()
 codeCopy()
-
 
 window.onload = function() {
     const element = document.querySelector('.active');
@@ -148,13 +150,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Your Prism.js initialization code here
-    // This code will run after the initial HTML document has been completely loaded and parsed
-    Prism.highlightAll();
-    
-    // Initialize API Key functionality after Prism highlighting
+    document.querySelectorAll('.code-toolbar').forEach(toolbar => {
+        Prism.highlightAllUnder(toolbar);
+    });
     initApiKeyFeature();
 });
+
+// Re-highlight code blocks after Alpine.js initializes (Alpine might strip tokens)
+document.addEventListener('alpine:init', function() {
+    setTimeout(() => {
+        document.querySelectorAll('.code-toolbar').forEach(toolbar => {
+            Prism.highlightAllUnder(toolbar);
+        });
+    }, 100);
+});
+
+// Also listen for when Alpine is done processing the DOM
+document.addEventListener('alpine:initialized', function() {
+    setTimeout(() => {
+        document.querySelectorAll('.code-toolbar').forEach(toolbar => {
+            Prism.highlightAllUnder(toolbar);
+        });
+    }, 100);
+});
+
+// Re-highlight after Amplitude Engagement SDK loads (it manipulates DOM)
+// Use MutationObserver to watch for DOM changes that strip Prism tokens
+let highlightTimeout;
+const observer = new MutationObserver((mutations) => {
+    // Check if any code blocks lost their tokens
+    const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+    const hasBlockWithoutTokens = Array.from(codeBlocks).some(block => 
+        // CRITICAL: Don't use textContent as it strips Prism tokens in Chrome
+        // Instead check innerHTML length (preserves tokens) and count token elements
+        block.innerHTML.trim().length > 0 && block.querySelectorAll('.token').length === 0
+    );
+    
+    if (hasBlockWithoutTokens) {
+        // Debounce: wait for DOM changes to settle
+        clearTimeout(highlightTimeout);
+        highlightTimeout = setTimeout(() => {
+            document.querySelectorAll('.code-toolbar').forEach(toolbar => {
+                Prism.highlightAllUnder(toolbar);
+            });
+        }, 300);
+    }
+});
+
+// Start observing after a short delay (let initial rendering complete)
+setTimeout(() => {
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
+}, 1000);
 
 // Expose API key functionality globally for debugging
 window.amplitudeApiKeyFeature = {
@@ -166,20 +216,6 @@ window.amplitudeApiKeyFeature = {
 
 // API Key Management for Amplitude code snippets
 function initApiKeyFeature() {
-    // Register the API key button in PrismJS toolbar
-    if (Prism.plugins.toolbar) {
-        Prism.plugins.toolbar.registerButton('api-key-input', {
-            text: function(env) {
-                return `<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#1E40AF" style="vertical-align: middle; margin-right: 4px;">
-                    <path d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"/>
-                </svg>Set API Key`;
-            },
-            onClick: function (env) {
-                showApiKeyModal();
-            }
-        });
-    }
-    
     // Add manual buttons with multiple retry attempts to handle dynamic content
     addManualApiKeyButtonsWithRetry();
     
@@ -212,11 +248,32 @@ function addManualApiKeyButtonsWithRetry() {
 function addManualApiKeyButtons() {
     const codeBlocks = document.querySelectorAll('code[class*="language-"], code');
     let buttonsAdded = 0;
+    const storedApiKey = localStorage.getItem('amplitude_api_key');
     
     codeBlocks.forEach((codeBlock, index) => {
-        const hasApiKey = codeBlock.textContent.includes('AMPLITUDE_API_KEY');
+        // Check if this code block has .code-toolbar as an ancestor
+        const hasToolbar = codeBlock.closest('.code-toolbar');
         
-        if (hasApiKey && !codeBlock.parentElement.querySelector('.api-key-manual-button')) {
+        if (!hasToolbar) {
+            return;
+        }
+        
+        // CRITICAL: Never read textContent directly as it strips Prism tokens in Chrome
+        // Instead, check data-original-content (if it exists) or innerHTML (which preserves tokens)
+        const originalContent = codeBlock.getAttribute('data-original-content');
+        const hasApiKey = originalContent 
+            ? originalContent.includes('AMPLITUDE_API_KEY')
+            : codeBlock.innerHTML.includes('AMPLITUDE_API_KEY');
+        
+        // Skip blocks that don't have the API key placeholder
+        if (!hasApiKey) {
+            return;
+        }
+        
+        // Now we know this block has the placeholder, safe to continue
+        const alreadyHasButton = codeBlock.parentElement.querySelector('.api-key-manual-button');
+        
+        if (!alreadyHasButton) {
             const container = codeBlock.closest('pre') || codeBlock.parentElement;
             
             // Create a wrapper if needed
@@ -234,8 +291,6 @@ function addManualApiKeyButtons() {
             `;
             apiKeyButton.title = 'Set your Amplitude API Key';
             
-            // Styling is handled by CSS class
-            
             // Add click handler
             apiKeyButton.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -245,6 +300,35 @@ function addManualApiKeyButtons() {
             
             container.appendChild(apiKeyButton);
             buttonsAdded++;
+            
+            // Add Tippy tooltip only if no API key is stored
+            // Only add to the first matching button to avoid multiple tooltips
+            if (!storedApiKey && window.tippy && buttonsAdded === 1) {
+                const tooltipInstance = window.tippy(apiKeyButton, {
+                    content: 'Add your API key to personalize code samples',
+                    placement: 'top',
+                    theme: 'amplitude-api-key',
+                    trigger: 'mouseenter focus',
+                    hideOnClick: true,
+                });
+                apiKeyButton._tippyInstance = tooltipInstance;
+                
+                // Delay showing tooltip to allow DOM to fully render
+                setTimeout(() => {
+                    const rect = apiKeyButton.getBoundingClientRect();
+                    // Only show if button is visible and properly positioned
+                    if (tooltipInstance && !localStorage.getItem('amplitude_api_key') && rect.width > 0 && rect.top > 0) {
+                        tooltipInstance.show();
+                        
+                        // Auto-hide after 5 seconds
+                        setTimeout(() => {
+                            if (tooltipInstance.state && tooltipInstance.state.isVisible) {
+                                tooltipInstance.hide();
+                            }
+                        }, 5000);
+                    }
+                }, 1000);
+            }
         }
     });
     
@@ -264,7 +348,8 @@ function showApiKeyModal() {
                 <button class="api-key-modal-close">&times;</button>
             </div>
             <div class="api-key-modal-body">
-                <p>Enter your Amplitude API Key to personalize all code snippets on this page:</p>
+                <p>Enter your Amplitude API Key to personalize code snippets.</p>
+                <p>Need an API key? Create a <a href="https://app.amplitude.com/signup" target="_blank" style="color: rgb(30,97,240);">free Amplitude account</a> to get started.</p>
                 <input type="text" id="api-key-input" placeholder="Enter your API Key" value="${currentApiKey}" />
                 <div class="api-key-modal-actions">
                     <button id="api-key-save" class="api-key-btn-primary">Save & Update Code</button>
@@ -324,13 +409,76 @@ function showApiKeyModal() {
 function updateAllCodeBlocks(apiKey) {
     // Find all code blocks that contain AMPLITUDE_API_KEY placeholder
     const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+    const isPlaceholder = !apiKey || apiKey === 'AMPLITUDE_API_KEY';
+    let tooltipAdded = false;
+    
+    // Handle tooltips on API key buttons based on whether a real API key is set
+    document.querySelectorAll('.api-key-manual-button').forEach(button => {
+        if (isPlaceholder) {
+            // Re-add tooltip only to first button if it doesn't exist (API key was cleared)
+            if (!button._tippyInstance && window.tippy && !tooltipAdded) {
+                const tooltipInstance = window.tippy(button, {
+                    content: 'Add your API key to personalize code samples',
+                    placement: 'top',
+                    theme: 'amplitude-api-key',
+                    trigger: 'mouseenter focus',
+                    hideOnClick: true,
+                });
+                button._tippyInstance = tooltipInstance;
+                tooltipAdded = true;
+                
+                // Delay showing tooltip to allow DOM to fully render
+                setTimeout(() => {
+                    const rect = button.getBoundingClientRect();
+                    // Only show if button is visible and properly positioned
+                    if (tooltipInstance && !localStorage.getItem('amplitude_api_key') && rect.width > 0 && rect.top > 0) {
+                        tooltipInstance.show();
+                        
+                        // Auto-hide after 5 seconds
+                        setTimeout(() => {
+                            if (tooltipInstance.state && tooltipInstance.state.isVisible) {
+                                tooltipInstance.hide();
+                            }
+                        }, 5000);
+                    }
+                }, 1000);
+            }
+        } else {
+            // Destroy tooltip if API key is set
+            if (button._tippyInstance) {
+                button._tippyInstance.destroy();
+                delete button._tippyInstance;
+            }
+        }
+    });
     
     codeBlocks.forEach(codeBlock => {
-        const originalText = codeBlock.getAttribute('data-original-content') || codeBlock.textContent;
+        // Check if this code block has .code-toolbar as an ancestor
+        if (!codeBlock.closest('.code-toolbar')) {
+            return;
+        }
+        
+        // CRITICAL: Never use textContent.includes() as it strips Prism tokens in Chrome
+        // Check data-original-content first, then innerHTML (which preserves tokens)
+        const dataOriginal = codeBlock.getAttribute('data-original-content');
+        const hasPlaceholder = dataOriginal 
+            ? dataOriginal.includes('AMPLITUDE_API_KEY')
+            : codeBlock.innerHTML.includes('AMPLITUDE_API_KEY');
+        
+        // ONLY process blocks that actually contain the API key placeholder
+        if (!hasPlaceholder) {
+            return; // Skip this block entirely
+        }
+        
+        // For originalText, use data-original-content if it exists
+        // Otherwise extract text from innerHTML (preserves Prism tokens until we need to replace)
+        const originalText = dataOriginal || codeBlock.textContent;
         
         // Store original content if not already stored
         if (!codeBlock.getAttribute('data-original-content')) {
-            codeBlock.setAttribute('data-original-content', originalText);
+            // Store the PLAIN TEXT version (strip HTML tags) for future comparisons
+            const plainText = codeBlock.textContent;
+            codeBlock.setAttribute('data-original-content', plainText);
         }
         
         // Replace API key in the content

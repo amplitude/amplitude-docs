@@ -9,6 +9,7 @@ this_article_will_help_you:
   - 'Understand the basic concepts of the Resource Center'
 academy_course:
   - 6b5642f5-c271-4855-b834-85ac2eeaa246
+landing_blurb: Learn about Resource Center, a widget that integrates directly with Guides & Surveys, and surfaces content from anywhere on your site.
 ---
 Resource center is a widget that integrates directly (with no other installation requirements) into the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk). It surfaces insightful and useful information to your users from anywhere on your site. The Resource Center widget appears as a clickable help icon. The center itself provides:
 - Search functionality

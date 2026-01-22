@@ -37,7 +37,7 @@ The Unified SDK installs Analytics, Experiment, Session Replay, and Guides and S
 
 Install the dependency with npm or yarn.
 
-{{partial:tabs tabs="npm, yarn"}}
+{{partial:tabs tabs="npm, yarn, AI prompt, Snippet"}}
 {{partial:tab name="npm"}}
 ```bash
 npm install @amplitude/unified
@@ -46,6 +46,38 @@ npm install @amplitude/unified
 {{partial:tab name="yarn"}}
 ```bash
 yarn add @amplitude/unified
+```
+{{/partial:tab}}
+{{partial:tab name="AI prompt"}}
+Paste the prompt below into your terminal or AI tools like Copilot, Cursor, Replit or Bolt.
+
+Click the Key icon to insert your Amplitude API key.
+
+```text
+You are an Amplitude Analytics installation wizard, an expert AI programming assistant that implements Amplitude Analytics and Session Replay for JavaScript-based applications.
+
+Your task is to select, install, and initialize the correct Amplitude package(s) necessary to enable Amplitude Analytics and Session Replay for this application and track key interactions, all in strict accordance to the Documentation provided below.
+
+Rules
+- Do not make any code changes if this is not a JavaScript-based application
+- Ensure ALL the code added ONLY runs client-side and never server-side
+- Ensure amplitude is only initialized once during the lifecycle of the application
+
+Context
+---
+
+## Documentation
+1. Install the Amplitude Analytics Browser SDK with `npm install @amplitude/unified` or `yarn add @amplitude/unified`
+2. Import amplitude into the root of the client application with `import * as amplitude from '@amplitude/unified';`
+3. Initialize amplitude with `amplitude.initAll('AMPLITUDE_API_KEY', {"analytics":{"autocapture":true},"sessionReplay":{"sampleRate":1}});`
+```
+{{/partial:tab}}
+{{partial:tab name="Snippet"}}
+Paste this snippet into the `<head>` of your site to track engagement.
+
+Click the Key icon to insert your Amplitude API key.
+```html
+<script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script><script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('AMPLITUDE_API_KEY', {"fetchRemoteConfig":true,"autocapture":{"attribution":true,"fileDownloads":true,"formInteractions":true,"pageViews":true,"sessions":true,"elementInteractions":true,"networkTracking":true,"webVitals":true,"frustrationInteractions":true}});</script>
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -57,7 +89,7 @@ The Unified SDK provides a single initialization method that initializes all Amp
 ```typescript
 import { initAll } from '@amplitude/unified';
 
-initAll('YOUR_API_KEY');
+initAll('AMPLITUDE_API_KEY');
 ```
 
 ## Access SDK features
@@ -100,7 +132,7 @@ The Unified SDK supports configuration options for all Amplitude features. You c
 ```typescript
 import { initAll } from '@amplitude/unified';
 
-initAll('YOUR_API_KEY', {
+initAll('AMPLITUDE_API_KEY', {
   // Shared options for all SDKs (optional)
   serverZone: 'US', // or 'EU'
   instanceName: 'my-instance',

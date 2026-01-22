@@ -166,7 +166,7 @@ amplitude.track(
 Starting from release v0.4.0, identify events with only set operations will be batched and sent with fewer events. This change won't affect running the set operations. There is a config `identifyBatchIntervalMillis` for managing the interval to flush the batched identify intercepts.
 {{/partial:admonition}}
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, `remove`, and `clearAll` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 
 {{partial:admonition type="note" heading=""}}
@@ -187,6 +187,27 @@ amplitude.identify(identify: identify)
 ```objc
 AMPIdentify *identify = [AMPIdentify new];
 [identify set:@"color" value:@"green"];
+[amplitude identify:identify];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Clear all user properties
+
+Use `clearAll` to remove all user properties from a user. Use `clearAll` with care because the operation is irreversible.
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let identify = Identify()
+identify.clearAll()
+amplitude.identify(identify: identify)
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPIdentify *identify = [AMPIdentify new];
+[identify clearAll];
 [amplitude identify:identify];
 ```
 {{/partial:tab}}
@@ -1199,7 +1220,7 @@ Due to the way in which Amplitude manages sessions, there are scenarios where th
 
 * If a user doesn't return to the app, Amplitude doesn't track a session end event to correspond with a session start event.
 * If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/skipuserpropertiessync) in the Converter Configuration Reference article to learn more.
+* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 

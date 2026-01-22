@@ -9,10 +9,6 @@ Actions define how variants modify your site. Actions relate to variants rather 
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Element changes
 
 Element changes modify existing elements on your site. Web Experiment applies these changes by editing the inner text of an element or appending style to the element based on the change you make in the visual editor.
@@ -62,6 +58,47 @@ Researchers have observed similar effects: if treatment slows performance, more 
 * **Use local evaluation where possible**. For example, target only on browser properties instead of slower remote attributes like Country. This reduces the chance that users drop off before logging. Here’s a configuration example in Amplitude Experiment.
 
 {{/partial:admonition}}
+
+### SEO best practices for redirects
+
+Client-side redirects in experiments can affect how search engines index and rank your pages. Follow these best practices to minimize SEO impact.
+
+#### Use temporary redirects during tests
+
+Web Experiment uses client-side redirects that simulate a `302` temporary redirect through `window.location.replace`. This tells search engines to keep the original URL indexed during the experiment. Don't use `noindex` tags on your control page, as this removes it from search results.
+
+After you pick a winner, implement a permanent server-side `301` or `308` redirect to consolidate link equity to the winning URL.
+
+#### Add canonical tags on variant pages
+
+Add a canonical tag on your experiment variant page that points back to the original (control) URL. This prevents search engines from indexing the variant as a separate page.
+
+```html
+<!-- On the variant/redirect destination page -->
+<link rel="canonical" href="https://example.com/original-page" />
+```
+
+#### Prefer server-side redirects for SEO-critical pages
+
+For pages where SEO is critical, consider using server-side assignment and redirects at the edge (CDN) or server level. Server-side redirects execute before the page renders, which:
+
+- Ensures search engine crawlers interpret redirects reliably.
+- Minimizes page flicker for users.
+- Provides proper HTTP status codes to crawlers.
+
+If you must use client-side redirects, ensure the redirect logic runs in the `<head>` to reduce layout shift.
+
+#### Keep tests short and avoid cloaking
+
+Don't show different content or URLs to users compared to what Googlebot sees—search engines consider this cloaking and may penalize your site. End experiments promptly and remove test logic after concluding to avoid SEO drift.
+
+#### Ensure goals cover both URLs
+
+Define conversion goals that include both control and variant URLs. Web Experiment [preserves query parameters](#url-redirect) through redirects, so attribution and session continuity remain intact.
+
+#### Use Search Console if issues arise
+
+If your experiment variant page gets indexed unexpectedly, use [Google Search Console's URL removal tool](https://search.google.com/search-console/removals) as a temporary fix while you address the underlying issue.
 
 ## Custom code
 

@@ -27,7 +27,7 @@ The Amplitude Analytics Legacy template, currently utilizing the [Maintenance Am
 
 Here are the breaking changes:
 
-| <div class="big-column">Change Area</div>  | Amplitude Analytics Browser SDK (GTM Client Template Latest) | Amplitude Analytics Legacy (GTM Client Template Maintenance)|
+| Change Area  | Amplitude Analytics Browser SDK (GTM Client Template Latest) | Amplitude Analytics Legacy (GTM Client Template Maintenance)|
 | --- | --- | --- |
 | Core SDK | [Marketing Analytics Browser SDK](/docs/sdks/analytics/browser/marketing-analytics-sdk). | [Maintenance Amplitude JavaScript SDK](/docs/sdks/analytics/browser/javascript-sdk). |
 | Amplitude initialization | The `init` function is a separate tag type that requires a dedicated tag. This accommodates deferred initialization, which allows the `init` tag to be called even after an event track call. However, it's critical to note that events won't be dispatched to Amplitude until the `init` tag is explicitly activated.  | The `init` is called by default. As there's no separate init tag, the initialization process runs as soon as the template is loaded. |

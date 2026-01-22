@@ -7,6 +7,7 @@ this_article_will_help_you:
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961154
+landing_blurb: Discover how to add content to Resource Center.
 ---
 The source content you select should be either internal help (documentation) repositories, specific external content, or third-party chat integrations like Intercom. Documentation repositories are typically more useful as they provide a large selection of information that's widely applicable to each page with which your users interact. 
 
@@ -25,7 +26,7 @@ The source content you select should be either internal help (documentation) rep
 6. In the Sync options section, specify how often you want the Resource Center to sync to your data repository.
 7. In the Default visibility field, decide if you want newly created articles set to Published (visible) or Draft (hidden). By default, this is set to Draft. 
 8. Specify if you want to target this repository to specific users.
-   - If you are targeting the content, you must specify the segments you want. For more information, go to [Setup and Targeting](/docs/guides_and_surveys/setup-and-target)
+   - If you are targeting the content, you must specify the segments you want. For more information, go to [Setup and Targeting](/docs/guides-and-surveys/guides/setup-and-target)
 9. Click **Add source**.
 
 ##### Add video content to the Resource Center

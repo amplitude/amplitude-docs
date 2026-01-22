@@ -46,8 +46,7 @@ Configure your application code.
 
 1. Create a  `val sessionReplay = SessionReplay()` object to begin collecting replays. Pass the API key, session identifier, and device identifier.
 2. When the session or device identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId` or `sessionReplay.setDeviceId`.
-3. Collect Session Replay properties to send with other event properties with `sessionReplay.getSessionReplayProperties`
-4. Call `sessionReplay.flush` to send session replay data to Amplitude. Always call `flush` before exiting the app or sending it to the background. For longer sessions, call `flush` often to prevent high memory use (alpha).
+3. Call `sessionReplay.flush` to send session replay data to Amplitude. Always call `flush` before exiting the app or sending it to the background. For longer sessions, call `flush` often to prevent high memory use (alpha).
 
 ```kotlin
 import com.amplitude.android.sessionreplay.SessionReplay
@@ -60,15 +59,6 @@ val sessionReplay = SessionReplay(
     deviceId = "device-id",
     sessionId = Date().time,
     sampleRate = 1.0,
-)
-
-// Track an event
-// Get session replay properties for this session
-val sessionReplayProperties = sessionReplay.getSessionReplayProperties()
-// Add session replay properties to the event before tracking
-ThirdPartyAnalytics.track(
-    eventName,
-    if (eventProperties == null) sessionReplayProperties else eventProperties + sessionReplayProperties
 )
 
 // Handle session ID change
@@ -102,7 +92,9 @@ Pass the following configuration options when you initialize the Session Replay 
 | `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to a destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
-| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). |
+| `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
+| `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. | 
 
 {{partial:partials/session-replay/sr-remote-config-test | markdown}}
 
@@ -167,17 +159,11 @@ val sessionReplay = SessionReplay(
     sampleRate = 1.0,
     /* other session replay options */
 )
-
-if (nonEUCountryFlagEnabled) {
-  val sessionReplayProperties = sessionReplay.getSessionReplayProperties()
-  ThirdPartyAnalytics.track(
-      eventName = 'event',
-      eventProperties = eventProperties + sessionReplayProperties
-  )
-}
 ```
 
 {{partial:partials/session-replay/sr-android-webview-mapview}}
+
+{{partial:partials/session-replay/sr-android-log-recording}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 

@@ -10,10 +10,6 @@ As you run new experiments or roll out new feature flags, you may have features 
 
 Experiment lets you create dependencies for your flags and experiments on prerequisite flags or experiments.
 
-### Feature availability
-
-This feature is available to users on Enterprise plans. Go to the [pricing page](https://amplitude.com/pricing) for more details.
-
 ## Configuring flag prerequisites
 
 Configure flag prerequisites in the Dependencies card for the feature flag. Go to *Experiment > Feature Flags > your feature flag* and then scrolling to the Dependencies card.
@@ -53,17 +49,55 @@ For example: You want to ensure that your new feature flag (Flag-B) rolls out to
 
 When Amplitude evaluates users for Flag-B:
 
-1. First, it checks if the user is in Flag-B’s cohort.
+1. It checks if the user is in Flag-B’s cohort.
 
    - If the user is a member of the cohort, it serves the configured variant to the user.
  
-2. Evaluates the user for dependencies, in this case: Flag-A. 
+2. It then evaluates the user for dependencies, in this case: Flag-A. 
 
    - If the user doesn't receive the `On` variant for Flag-A, Amplitude excludes them from Flag-B.
 
-3. Evaluates the user for Flag-B.
+3. It then evaluates the user for Flag-B.
 
 Targeting for Flag-B determines what variant (if any) the user receives. The flag dependency on Flag-A has no effect at this point.
+
+## Prerequisites compared to user property targeting
+
+You can achieve similar outcomes using either flag prerequisites or targeting rules based on `[Experiment]` user properties. However, there are important differences.
+
+### Using `[Experiment]` user properties in targeting
+
+When Amplitude assigns a user to a flag or experiment variant, it sets a user property in the format `[Experiment] <flag_key>` with the variant key as the value. You can use this user property in another flag's targeting rules to target users based on their previous assignments.
+
+**Example:** Target users where `[Experiment] Flag-A` equals `on`.
+
+**Limitations:**
+
+- **Timing issues**: Amplitude sets the `[Experiment]` user property when it ingests the assignment or exposure event. If you evaluate a dependent flag before this property syncs, the user may not match the targeting rule.
+- **No formal dependency tracking**: The UI doesn't show the relationship between flags. You must manually track which flags depend on others.
+- **Potential inconsistency**: Race conditions between property sync and flag evaluation can cause users to receive inconsistent experiences.
+
+### Using flag prerequisites
+
+Flag prerequisites formally define dependencies between flags. When you add Flag-A as a prerequisite for Flag-B, Amplitude evaluates Flag-A first and uses the result to determine Flag-B eligibility.
+
+**Advantages:**
+
+- **Evaluated together**: Amplitude evaluates prerequisites in sequence during a single evaluation call, eliminating timing issues.
+- **Visible dependencies**: The Dependencies card shows all relationships, making it easier to manage complex flag hierarchies.
+- **Consistent bucketing**: Users receive consistent experiences because prerequisite evaluation happens atomically.
+- **Protected changes**: Amplitude prevents you from archiving prerequisite flags or changing variant keys that other flags depend on.
+
+### When to use each approach
+
+| Use case | Recommended approach |
+|----------|---------------------|
+| Assign users to Flag-A before they see Flag-B | Flag prerequisites |
+| Building release groups with sub-features | Flag prerequisites |
+| Chaining mutually exclusive experiments | Flag prerequisites |
+| Target users exposed to a flag days or weeks ago | User property targeting |
+| Analyzing experiment results by previous flag exposure | User property targeting |
+| Ad-hoc segmentation for debugging | User property targeting |
 
 ## Common use cases
 

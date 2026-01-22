@@ -23,7 +23,7 @@ This documentation has separate sections for [remote](/docs/feature-experiment/r
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
+Implements fetching variants for a user using [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -96,9 +96,10 @@ You can configure the SDK client on initialization.
 If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging. | `false` |
+| `debug` | When `True`, sets the logger level to `DEBUG`. | `False` |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
@@ -113,12 +114,20 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```python
-fetch_v2(user: User) : Variants
+fetch_v2(user: User, fetch_options: FetchOptions = None) : Variants
 ```
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
+| `fetch_options` | optional | The [options](#fetch-options) for the fetch request. |
+
+**FetchOptions**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | To track or not track an exposure event for this fetch request. If `None`, uses the server's default behavior (does not track exposure). | `None` |
+| `tracks_assignment` | To track or not track an assignment event for this fetch request. If `None`, uses the server's default behavior (does track assignment). | `None` |
 
 ```python
 user = User(
@@ -152,7 +161,7 @@ fetch_async_v2(user: User, callback)
 
 | Parameter  | Requirement | Description                                                                   |
 |------------|-------------|-------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
+| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) for whom variants should be fetched. |
 | `callback` | optional    | The callback to handle the variants.                                          |
 
 ```python
@@ -170,7 +179,7 @@ experiment.fetch_async_v2(user, fetch_callback)
 {{partial:collapse name="Account-level bucketing and analysis (v1.3.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user using a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or using [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```python
 user = User(
@@ -202,7 +211,7 @@ variants = experiment.fetch_v2(user)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user using [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -288,28 +297,38 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                             | Default Value                   |
+| Name | Description                                                                                                             | Default Value                   |
 | --- |-------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| `debug` | Set to `True` to enable debug logging.                                                                                  | `False`                         |
+| `debug` | When `True`, sets the logger level to `DEBUG`.                                                                          | `False`                         |
+| `logger` | Custom `logging.Logger` instance for SDK logging. | Default Logger with `WARNING` level |
 | `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`                                             | `ServerZone.US`                 |
 | `server_url` | The host to fetch flag configurations from.                                                                             | `https://api.lab.amplitude.com` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start)                                         | `30000`                         |
 | `flag_config_poller_request_timeout_millis` | The timeout for the request made by the flag config poller                                                              | `10000`                         |
-| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation.                                         | `None`                          |
+| `assignment_config` | **Deprecated.** Use `exposure_config` instead. Configuration for automatically tracking assignment events after an evaluation.                                         | `None`                          |
+| `exposure_config` | Configuration for tracking exposure events after an evaluation.                                         | `None`                          |
 | `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `None`                          |
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | `send_evaluated_props`| Set to `True` to send properties of the evaluated user in assignment events | `False` |
 | [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
+**ExposureConfig**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key. This is **not** the experiment deployment key | *required* |
+| `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
+| [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track exposure events |  |
+
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                | Default Value |
+| Name | Description                                                                                                                                                                                | Default Value |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `api_key`                          | The analytics API key and NOT the experiment deployment key                                                                                                                                | *required* |
 | `secret_key`                       | The analytics secret key                                                                                                                                                                   | *required* |
@@ -339,14 +358,19 @@ Executes the [evaluation logic](/docs/feature-experiment/implementation) using t
 Set [`assignment_config`](#configuration) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}
 
+{{partial:admonition type="tip" heading="Exposure tracking"}}
+Set [`exposure_config`](#configuration) to enable exposure tracking. Then, set `tracks_exposure` to `True` in `EvaluateOptions` when calling `evaluate_v2()`.
+{{/partial:admonition}}
+
 ```python
-evaluate_v2(self, user: User, flag_keys: List[str]) : Dict[str, Variant]
+evaluate_v2(self, user: User, flag_keys: List[str], options: EvaluateOptions) : Dict[str, Variant]
 ```
 
 | Parameter   | Requirement | Description |
 |-------------| --- | --- |
 | `user`      | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flag_keys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
+| `options`   | optional | The [options](#evaluate-options) for the evaluation request. |
 
 ```python
 # The user to evaluate
@@ -366,6 +390,12 @@ else:
     # Flag is off
 ```
 
+**EvaluateOptions**
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `tracks_exposure` | If `True`, the SDK tracks an exposure event for the evaluated variants. | `False` |
+
 ### Local evaluation cohort targeting
 
 Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohort_sync_config` option with the analytics `api_key` and `secret_key` on initialization to enable this support.
@@ -375,6 +405,73 @@ experiment = Experiment.initialize_local("DEPLOYMENT_KEY", LocalEvaluationConfig
   # (Recommended) Enable local evaluation cohort targeting.
   cohort_sync_config=CohortSyncConfig(api_key="API_KEY", secret_key="SECRET_KEY")
 ))
+```
+
+## Custom logging
+
+Pass a custom `logging.Logger` instance to control logging behavior.
+
+### Custom logger
+
+Pass a custom `logging.Logger` instance to `RemoteEvaluationConfig` or `LocalEvaluationConfig`:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig, LocalEvaluationConfig
+
+# Create a custom logger
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+handler = logging.FileHandler('experiment.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+custom_logger.addHandler(handler)
+
+# Remote evaluation with custom logger
+remote_config = RemoteEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_remote('DEPLOYMENT_KEY', remote_config)
+
+# Local evaluation with custom logger
+local_config = LocalEvaluationConfig(
+    logger=custom_logger
+)
+experiment = Experiment.initialize_local('DEPLOYMENT_KEY', local_config)
+```
+
+### Debug flag with default logger
+
+Without a custom logger, the `debug` flag controls the default logger's level:
+
+```python
+# Without custom logger, debug=False uses WARNING level
+config = RemoteEvaluationConfig(
+    debug=False
+)
+# Default logger level is WARNING
+
+# Without custom logger, debug=True uses DEBUG level
+config = RemoteEvaluationConfig(
+    debug=True
+)
+# Default logger level is DEBUG
+```
+
+With a custom logger, the `debug` flag is ignored and your logger maintains its configured level:
+
+```python
+import logging
+from amplitude_experiment import Experiment, RemoteEvaluationConfig
+
+custom_logger = logging.getLogger('MyAppLogger')
+custom_logger.setLevel(logging.WARN)
+
+# Custom logger maintains its WARN level regardless of debug flag
+config = RemoteEvaluationConfig(
+    logger=custom_logger,
+    debug=True
+)
+# Logger level stays WARN (debug flag is ignored)
 ```
 
 ## Access Amplitude cookies

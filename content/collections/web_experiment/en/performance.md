@@ -7,10 +7,6 @@ updated_at: 1729195974
 ---
 Web Experiment intentionally minimizes its impact on page performance.
 
-{{partial:admonition type='note'}}
-Go to [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
-{{/partial:admonition}}
-
 ## Script size
 
 The Web Experiment script is dynamic, and includes all your experiment configurations to avoid making multiple synchronous downloads. This means that the script size starts with a base size, and scales with each experiment.

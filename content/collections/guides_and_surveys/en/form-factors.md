@@ -9,11 +9,11 @@ section: guides
 landing: true
 landing_blurb: 'Learn about the form factors available to guides, and the customization properties they contain.'
 ---
-Guides and Surveys include five form factors you can chose from. Each form factor has a set of properties that control how it behaves to the end user.
+Guides and Surveys include six form factors you can choose from. Each form factor has a set of properties that control how it behaves to the end user.
 
 ## Form factors
 
-Guides provide five form factors you can use to engage your users. Each form factor shares a similar set of [properties](#properties).
+Guides provide six form factors you can use to engage your users. Each form factor shares a similar set of [properties](#properties).
 
 ### Modal
 
@@ -84,11 +84,10 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Click/Tap outside to close               | Enables users to click or tap outside of the modal to dismiss it.                                          |
+| Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
-| Image Width                              | Define the width of the pin icon or image in pixels.                                                       |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
-| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
+| Advance trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
 
 
 ### Tooltip
@@ -106,11 +105,10 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                              |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                       |
 | Pointer                                  | Select the style with which the dialog relates to the marker.                                         |
-| Image Width                              | Define the width of the tooltip icon or image in pixels.                                              |
+| Marker                                   | Select the appearance of the marker that can be used to reveal the tooltip message.                                        |
+| Marker Width <br/> {.tag .web .zero}                              | Define the width of the tooltip's marker (icon/image) in pixels.                                              |
 | Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                    |
-| Advanced trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify. |
-| Show on                                  | Select the trigger that causes the tooltip to appear.                                                 |
-| Marker                                   | Select the appearance of the marker that launches the tooltip.                                        |
+| Show on hover/click <br/> {.tag .web .zero}                                 | Select the trigger that causes the tooltip message to appear.                                                 |
 
 ### Banner
 
@@ -130,11 +128,50 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 
 ### Checklist {.tag .web}
 
-Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
+Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions.
 
-## Element selector
+| Setting                                | Description                                                                                                  |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Z-index                                | Specify a custom z-index value for the checklist.                 |
 
-When you configure guides with pins, tooltips, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
+#### Checklist items {.tag .web}
+
+Checklist items compose a checklist.
+
+| Setting                                | Description                                                                                                  |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Skippable | If enabled, the user can complete the checklist item via a "Skip" button. |
+
+### Card embed {.tag .web}
+
+Card embeds render content directly into your page's DOM, embedding guides and surveys as native-feeling elements within your UI. Use card embeds for persistent content that should feel like part of your application rather than an overlay.
+
+Card embeds require a target element selector that specifies where to place the card. Select from these position options to control how the card relates to the target element:
+
+| Position                          | Description                                                      |
+| --------------------------------- | ---------------------------------------------------------------- |
+| Append to children (last child)   | Inserts the card as the last child element within the target.   |
+| Prepend to children (first child) | Inserts the card as the first child element within the target.  |
+| Before element                    | Places the card immediately before the target element.           |
+| After element                     | Places the card immediately after the target element.            |
+| Replace element                   | Replaces the target element with the card.                       |
+
+Click the **three dot menu** to access format settings.
+
+| Setting                     | Description                                                                      |
+| --------------------------- | -------------------------------------------------------------------------------- |
+| Width                       | Choose **Auto** to let the card size to its content, **Fixed** to specify a pixel width, or **Full** to fill the container width. |
+| Alignment                   | When width isn't set to Full, align the card to the **Left**, **Center**, or **Right** of its container. |
+| Height                      | Choose **Auto** to let the card size to its content, **Fixed** to specify a pixel height, or **Full** to fill the container height. |
+| Content layout              | Updates the visual ordering of the guide's content.                              |
+| Title and content alignment | Changes the alignment of the title and body text.                                |
+| Actions bar                 | Updates the placement and layout of the guide's buttons.                         |
+| Z-index                     | Specify a custom z-index value for the card.                                     |
+| Text animation              | Enables the card's text to animate in with a typewriter effect.                  |
+
+## Element selector {.tag .web}
+
+When you configure guides with pins, tooltips, card embeds, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
 
 ### How the element selector works
 
@@ -192,11 +229,12 @@ Position controls where the guide appears on screen.
 
 | Form factor                              | Options                                                                                                                                                                                                                                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center                                                                                                                                                                                                                                    |
-| Modal                                    | Center                                                                                                                                                                                                                                                                                    |
-| Pins                                     | Controls position of the pin relative to the target element. Select The position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
+| Modal                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center. |
+| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center. |
+| Pins                                     | Controls position of the pin relative to the target element. Select the position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
 | Banner                                   | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
+| Card embed <br/> {.tag .web .zero}       | Controls position relative to the target element. Select from **Append, Prepend, Before, After**, or **Replace**. Configure Width (**Auto, Fixed**, or **Full**), Alignment (**Left, Center**, or **Right**) when width isn't Full, and Height (Auto, Fixed, or Full).                                               |
 | Checklist header <br/> {.tag .web .zero} | Bottom left or Bottom right, in relation to the page.                                                                                                                                                                                                                                     |
 
 ### Steps
@@ -217,14 +255,14 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab.                                                                                                                               |
+| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |
 | Go back                    | Go to the previous step in the guide.                                                                                                                                             |
 | Go forward                 | Advance to the next step in the guide.                                                                                                                                            |
 | Go to step                 | Go to the specified step in the guide.                                                                                                                                            |
-| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/conditional-logic) for more information. |
+| Evaluate conditional logic | Execute different actions based on user properties or survey responses. Create conditions to personalize the button's behavior for different users. Go to [Conditional Logic](/docs/guides-and-surveys/guides/conditional-logic) for more information. |
 | Run callback               | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, go to [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 | Submit app store rating request <br/> {.tag .mobile .zero} | Prompt the user to rate your app using the native in-app flow (App Store for iOS and Google Play for Android). If the rating request is unsuccessful and you provide the app identifier in the survey configuration, the request falls back to the platform’s app store page. |
 
@@ -232,7 +270,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 [Apple](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews) and [Google](https://developer.android.com/guide/playcore/in-app-review) control their own native app review display and may override requests for review from your guide.
 {{/partial:admonition}}
 
-#### Mark step complete when
+#### Mark step complete when {.tag .web}
 Only checklists have the **Mark step complete when** option. Amplitude marks a checklist step complete when one of the following activies is performed:
 - `Button is clicked`
 - `Page is visited`
@@ -245,6 +283,6 @@ For each of these options, the checklist step updates from "incomplete" to "comp
 
 Upload an image to include in your experience. The experience's layout determines the image's position.
 
-#### Movie
+#### Video
 
-Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a movie's position.
+Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a video's position.

@@ -24,10 +24,38 @@ This article covers the installation of Session Replay using the standalone SDK.
 {{partial:admonition type="info" heading="Session Replay and performance"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
 
-- Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread.
+- Asynchronously processing through webhooks (if enabled) for efficient compression and optimizing bundle sizes.
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
+
+### Bundle size
+
+The Session Replay standalone SDK adds to your application's bundle size.
+
+{{partial:bundle-size :package_name="package_name"}}
+
+For the most up-to-date bundle size information, check the [npm package page](https://www.npmjs.com/package/@amplitude/session-replay-browser) or [BundlePhobia](https://bundlephobia.com/package/@amplitude/session-replay-browser).
+
+### Runtime performance
+
+Session Replay runs asynchronously and processes replay data in the background to avoid blocking the main thread. Performance characteristics include:
+
+- **DOM capture**: DOM snapshot capture typically adds less than 5ms of processing time for each page interaction. Initial page load snapshot capture may take 10-50ms depending on page complexity.
+- **Memory usage**: Session Replay stores replay events in memory or IndexedDB (configurable using `storeType`). Memory usage scales with session length and page complexity, typically ranging from 1-10 MB for each active session.
+- **CPU impact**: With default settings, Session Replay uses less than 2% of CPU time during normal operation. Compression operations are deferred to browser idle periods when `performanceConfig.enabled` is `true` (default).
+- **Network bandwidth**: Replay data is compressed before upload, typically reducing payload size by 60-80%. Network requests are batched and sent asynchronously.
+
+### Performance optimization
+
+To optimize Session Replay performance:
+
+- Enable `useWebWorker` to move compression off the main thread, reducing CPU impact on the main thread.
+- Configure `performanceConfig.timeout` to control when deferred compression occurs.
+- Use `sampleRate` to reduce the number of sessions captured, which directly reduces CPU and memory usage.
+- Set `storeType` to `memory` if you don't need persistence across page reloads, reducing IndexedDB overhead.
+
+For detailed performance testing results, see the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
 
 
 
@@ -79,7 +107,7 @@ Configure your application code.
 
 1. Call `sessionReplay.init` to begin collecting replays. Pass the API key, session identifier, and device identifier.
 2. When the session identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId`.
-3. Collect Session Replay properties to send with other event properties with `sessionReplay.getSessionReplayProperties`. See [Add Session Replay ID to your events](#add-session-replay-id-to-your-events) for more information.
+3. Amplitude automatically creates the `[Amplitude] Replay Captured` event to link replays with your analytics data. See [Session Replay ID](#session-replay-id) for more information.
 
 {{partial:tabs tabs="Standalone SDK, Unified SDK"}}
 {{partial:tab name="Standalone SDK"}}
@@ -99,11 +127,6 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
 
 // Call whenever the session id changes
 await sessionReplay.setSessionId(sessionId).promise;
-
-// When you send events to Amplitude, call this event to get
-// the most up to date session replay properties for the event
-const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
 ```
 {{/partial:tab}}
 {{partial:tab name="Unified SDK"}}
@@ -145,40 +168,26 @@ window.sessionReplay.init(AMPLITUDE_API_KEY, {
 
 // Call whenever the session id changes
 window.sessionReplay.setSessionId(sessionId);
- 
-// When you send events to Amplitude, call this event to get
-// the most up-to-date Session Replay properties for the event
-const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties();
-3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
 </script>
 ```
 
-## Add Session Replay ID to your events
+## Session Replay ID
 
-The Session Replay SDK outputs the Session Replay properties that you need to add to your custom event instrumentation. `getSessionReplayProperties` returns event properties, namely the `[Amplitude] Session Replay ID` event property that you need to add to events before you send them to Amplitude. An example response of getSessionReplayProperties is: 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which links the replay to your analytics data. No manual instrumentation is required.
 
-```json
-{
- "[Amplitude] Session Replay ID": "6eb24f81-a106-45b0-879c-65248d7b8911/1710374872575"
-}
-```
+`[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session by default.
 
 {{partial:admonition type="info" heading=""}}
-`getSessionReplayProperties` may return an empty object if Session Replay doesn't capture the session (for example, due to sampling or if the page is out of focus).
+Amplitude links replays with a session replay ID. To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
 {{/partial:admonition}}
 
-`[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session.
-
-{{partial:admonition type="info" heading=""}}
-Amplitude links replays with a session replay ID.  To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
-
+{{partial:admonition type="note" heading="Legacy implementations"}}
+If you have a legacy implementation that manually adds the `[Amplitude] Session Replay ID` property to events using `getSessionReplayProperties()`, this continues to work. However, Amplitude's automatic `[Amplitude] Replay Captured` event is the recommended approach.
 {{/partial:admonition}}
 
-{{partial:admonition type="warning" heading="Important"}}
-For a replay to be visible in the Amplitude UI, tag at least one Amplitude event with the `[Amplitude] Session Replay ID` property. Without this, the replay doesn't appear in the interface.
-{{/partial:admonition}}
-
-The [Session Replay Browser Plugin](/docs/session-replay/session-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
+{{partial:admonition type="warning" heading="Not seeing replays?"}}
+If replays don't appear in the Amplitude UI, check that you see the `[Amplitude] Replay Captured` event in your project. If you don't see this event, contact Amplitude support.
+{{/partial:admonition}} 
 
 ## Configuration
 
@@ -203,8 +212,22 @@ Pass the following configuration options when you initialize the Session Replay 
 | `storeType`                 | `string`  | No       | `idb`           | Specifies how replay events should be stored. `idb` uses IndexedDB to persist replay events when all events can't be sent during capture. `memory` stores replay events only in memory, meaning events are lost when the page is closed. If IndexedDB is unavailable, the system falls back to memory.                                                                                          |
 | `performanceConfig.enabled` | `boolean` | No       | `true`          | If enabled, event compression will be deferred to occur during the browser's idle periods.                                                                                                                                                                                                                                                                                                   |
 | `performanceConfig.timeout` | `number`  | No       | `undefined`     | Optional timeout in milliseconds for the requestIdleCallback API. If specified, this value sets a maximum time for the browser to wait before executing the deferred compression task, even if the browser isn't idle.                                                                                                                                                       |
-| `experimental.useWebWorker` | `boolean` | No       | `false`         | If the SDK should compress the replay events using a webworker.                                                                                                                                                                                                                                                                                                                              |
+| `useWebWorker` | `boolean` | No       | `false`         | Uses a web worker to compress replay events. This improves performance by moving compression off the main thread.                                                                                                                                                                                                                              |
 
+### API endpoints
+
+Session Replay uses the following API endpoints:
+
+- **Data ingestion**:
+  - US: `https://api-sr.amplitude.com/sessions/v2/track`.
+  - EU: `https://api-sr.eu.amplitude.com/sessions/v2/track`.
+  - Session Replay sends captured replay data to these endpoints.
+- **Remote configuration**:
+  - US: `https://sr-client-cfg.amplitude.com/config`.
+  - EU: `https://sr-client-cfg.eu.amplitude.com/config`.
+  - Session Replay fetches remote configuration from these endpoints.
+
+If you set up a domain proxy, forward requests to these endpoints. You can override these defaults using the `trackServerUrl` and `configServerUrl` configuration options.
 
 
 ### Mask on-screen data
@@ -221,6 +244,56 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
  optOut: true, 
 }).promise;
 ```
+
+### Content Security Policy (CSP)
+
+If your web application uses a strict Content Security Policy, add the following directives:
+
+#### Required CSP directives
+
+```text
+script-src: https://cdn.amplitude.com;
+connect-src: https://api-secure.amplitude.com;
+worker-src: blob:;
+```
+
+#### CSP directives reference
+
+| Directive | Domain | Required | Description |
+| --------- | ------ | -------- | ----------- |
+| `script-src` | `https://cdn.amplitude.com` | Yes, if using CDN | Allows loading the Session Replay SDK from Amplitude's CDN. |
+| `connect-src` | `https://api-secure.amplitude.com` | Yes (US) | Allows sending replay data to Amplitude's US servers. |
+| `connect-src` | `https://api.eu.amplitude.com` | Yes (EU) | Allows sending replay data to Amplitude's EU servers. Required if you set `serverZone: "EU"`. |
+| `worker-src` | `blob:` | Yes, if using web workers | Required if you enable the `useWebWorker` option for replay event compression. |
+
+#### API endpoints
+
+Session Replay sends data to the following endpoints:
+
+| Region | Endpoint | Purpose |
+| ------ | -------- | ------- |
+| US (default) | `https://api-secure.amplitude.com/sessions/track` | Replay data ingestion. |
+| EU | `https://api.eu.amplitude.com/sessions/track` | Replay data ingestion for EU data residency. |
+| US (default) | `https://api-secure.amplitude.com/sessions/config` | Remote configuration (sample rate settings). |
+| EU | `https://api.eu.amplitude.com/sessions/config` | Remote configuration for EU data residency. |
+
+#### Example CSP header
+
+For US data center:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api-secure.amplitude.com; worker-src 'self' blob:;
+```
+
+For EU data center:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api.eu.amplitude.com; worker-src 'self' blob:;
+```
+
+{{partial:admonition type="tip" heading=""}}
+If you use the `configServerUrl` or `trackServerUrl` configuration options to specify custom endpoints, add those domains to your `connect-src` directive instead.
+{{/partial:admonition}}
 
 ### EU data residency
 
@@ -280,11 +353,6 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
  optOut: <boolean>,
  sampleRate: <number>
 }).promise;
-
-if (nonEUCountryFlagEnabled) {
- const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
- 3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
-}
 ```
 
 
@@ -292,7 +360,7 @@ if (nonEUCountryFlagEnabled) {
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which provides information about the sessions collected for replay for the user.
 
 ```json
 {
@@ -331,7 +399,6 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports default session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL

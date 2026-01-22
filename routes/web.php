@@ -34,3 +34,12 @@ Route::permanentRedirect('/docs/cdp/audiences/recommendations-build', '/docs/dat
 Route::permanentRedirect('/docs/cdp/audiences/recommendations-use', '/docs/data/audiences/recommendations-use');
 Route::permanentRedirect('/docs/cdp/audiences/third-party-syncs', '/docs/data/audiences/third-party-syncs');
 
+// Legacy Help Center redirects
+Route::permanentRedirect('/docs/hc/en-us/articles/360021252771-Manage-Data-', '/docs/data/amplitude-data-settings');
+
+// Experiment documentation redirects (DOC-921)
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing', '/docs/feature-experiment/advanced-techniques/bonferroni-correction');
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data', '/docs/feature-experiment/advanced-techniques/winsorization-in-experiment');
+Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/split-url-testing', '/docs/web-experiment/url-redirect-testing');
+Route::permanentRedirect('/docs/feature-experiment', '/docs/experiment-home');
+Route::permanentRedirect('/docs/web-experiment', '/docs/experiment-home');

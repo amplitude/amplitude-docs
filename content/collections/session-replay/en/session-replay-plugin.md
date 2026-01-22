@@ -23,14 +23,41 @@ This article covers the installation of Session Replay using the Browser SDK plu
 [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 {{partial:admonition type="info" heading="Session Replay and performance"}}
-Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
+Session Replay minimizes impact on the performance of web pages on which it's installed by:
 
-- Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread.
+- Asynchronously processing content through webhooks, which provides efficient compression and optimized bundle sizes.
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
 
-Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
+### Bundle size
+
+The Session Replay plugin adds to your application's bundle size. 
+
+{{partial:bundle-size :package_name="package_name"}}
+
+For the most up-to-date bundle size information, check the [npm package page](https://www.npmjs.com/package/@amplitude/plugin-session-replay-browser) or [BundlePhobia](https://bundlephobia.com/package/@amplitude/plugin-session-replay-browser).
+
+### Runtime performance
+
+Session Replay runs asynchronously and processes replay data in the background to avoid blocking the main thread. Performance characteristics include:
+
+- **DOM capture**: DOM snapshot capture typically adds less than 5ms of processing time for each page interaction. Initial page load snapshot capture may take 10-50ms depending on page complexity.
+- **Memory usage**: Session Replay stores replay events in memory or IndexedDB (configurable using `storeType`). Memory usage scales with session length and page complexity, typically ranging from 1-10 MB for each active session.
+- **CPU impact**: With default settings, Session Replay uses less than 2% of CPU time during normal operation. Compression operations are deferred to browser idle periods when `performanceConfig.enabled` is `true` (default).
+- **Network bandwidth**: Replay data is compressed before upload, typically reducing payload size by 60-80%. Network requests are batched and sent asynchronously.
+
+### Performance optimization
+
+To optimize Session Replay performance:
+
+- Enable `useWebWorker` which moves compression off the main thread, reducing CPU impact.
+- Configure `performanceConfig.timeout` that controls when deferred compression occurs.
+- Set `storeType` to `memory` if you don't need persistence across page reloads, reducing IndexedDB overhead.
+
+For detailed performance testing results, go to the [Session Replay performance testing blog post](https://amplitude.com/blog/session-replay-performance-testing).
+
+Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
 
 ## Before you begin
 
@@ -144,8 +171,22 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 | `storeType`                             | `string`  | No       | `idb`       | Specifies how replay events should be stored. `idb` uses IndexedDB to persist replay events when all events can't be sent during capture. `memory` stores replay events only in memory, meaning events are lost when the page is closed. If IndexedDB is unavailable, the system falls back to memory.                                                                                                                                                                                                            |
 | `performanceConfig.enabled`             | `boolean` | No       | `true`     | If enabled, event compression will be deferred to occur during the browser's idle periods.                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `performanceConfig.timeout`             | `number`  | No       | `undefined` | Optional timeout in milliseconds for the requestIdleCallback API. If specified, this value sets a maximum time for the browser to wait before executing the deferred compression task, even if the browser isn't idle.                                                                                                                                                                                                                                                                                            |
-| `experimental.useWebWorker`             | `boolean` | No       | `false`     | If the SDK should compress the replay events using a webworker.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `useWebWorker`             | `boolean` | No       | `false`     | Uses a web worker to compress replay events. This improves performance by moving compression off the main thread.                                                                                                                                                                                                                                                                                                                                                                   |
 
+### API endpoints
+
+Session Replay uses the following API endpoints:
+
+- **Data ingestion**:
+  - US: `https://api-sr.amplitude.com/sessions/v2/track`.
+  - EU: `https://api-sr.eu.amplitude.com/sessions/v2/track`.
+  - Session Replay sends captured replay data to these endpoints.
+- **Remote configuration**:
+  - US: `https://sr-client-cfg.amplitude.com/config`.
+  - EU: `https://sr-client-cfg.eu.amplitude.com/config`.
+  - Session Replay fetches remote configuration from these endpoints.
+
+If you set up a domain proxy, forward requests to these endpoints. You can override these defaults using the `trackServerUrl` and `configServerUrl` configuration options.
 
 ### Track default session events
 
@@ -194,6 +235,56 @@ Amplitude requires at least one event in any captured session to enable playback
 ### User opt-out
 
 The Session Replay plugin follows the Browser SDK's `optOut` setting, and doesn't support user opt-outs on its own.
+
+### Content Security Policy (CSP)
+
+If your web application uses a strict Content Security Policy, add the following directives:
+
+#### Required CSP directives
+
+```text
+script-src: https://cdn.amplitude.com;
+connect-src: https://api-secure.amplitude.com;
+worker-src: blob:;
+```
+
+#### CSP directives reference
+
+| Directive | Domain | Required | Description |
+| --------- | ------ | -------- | ----------- |
+| `script-src` | `https://cdn.amplitude.com` | Yes, if using CDN | Allows loading the Session Replay plugin and Browser SDK from Amplitude's CDN. |
+| `connect-src` | `https://api-secure.amplitude.com` | Yes (US) | Allows sending replay data to Amplitude's US servers. |
+| `connect-src` | `https://api.eu.amplitude.com` | Yes (EU) | Allows sending replay data to Amplitude's EU servers. Required if you set `serverZone: "EU"`. |
+| `worker-src` | `blob:` | Yes, if using web workers | Required if you enable the `useWebWorker` option for replay event compression. |
+
+#### API endpoints
+
+Session Replay sends data to the following endpoints:
+
+| Region | Endpoint | Purpose |
+| ------ | -------- | ------- |
+| US (default) | `https://api-secure.amplitude.com/sessions/track` | Replay data ingestion. |
+| EU | `https://api.eu.amplitude.com/sessions/track` | Replay data ingestion for EU data residency. |
+| US (default) | `https://api-secure.amplitude.com/sessions/config` | Remote configuration (sample rate settings). |
+| EU | `https://api.eu.amplitude.com/sessions/config` | Remote configuration for EU data residency. |
+
+#### Example CSP header
+
+For the US region:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api-secure.amplitude.com; worker-src 'self' blob:;
+```
+
+For EU data center:
+
+```text
+Content-Security-Policy: script-src 'self' https://cdn.amplitude.com; connect-src 'self' https://api.eu.amplitude.com; worker-src 'self' blob:;
+```
+
+{{partial:admonition type="tip" heading=""}}
+If you use the `configServerUrl` or `trackServerUrl` configuration options to specify custom endpoints, add those domains to your `connect-src` directive instead.
+{{/partial:admonition}}
 
 ### EU data residency
 
@@ -285,7 +376,9 @@ if (nonEUCountryFlagEnabled) {
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude DSAR API returns metadata about session replays, but not the raw replay data.
+
+The [Amplitude] Replay Captured event is automatically created when Session Replay captures a replay. This event includes the [Amplitude] Session Replay ID property, which provides information about the replays collected for replay for the user.
 
 ```json
 {
@@ -328,7 +421,6 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports standard session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL
@@ -375,7 +467,7 @@ To help resolve CSS loading issues:
 
 ### Capture sessions contain limited information
 
-The Session Replay Plugin enables session tracking by default. If you instrument events outside of the Browser SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. If you don't see this event in your implementation, replays may not appear correctly in Amplitude's analysis tools like Funnel Analysis, Segmentation, or Journeys charts. You can still find session replays on the Session Replay home page or the user profile page. Contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new)t if you don't see this event.
 
 If you use a method other than the Browser SDK to instrument your events, consider using the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk/)
 

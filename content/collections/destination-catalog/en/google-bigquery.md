@@ -75,7 +75,7 @@ To set up a recurring export of your Amplitude data to BigQuery, follow these st
 5. Specify the BigQuery dataset to receive your Amplitude data, and upload the service account key file. This file must be in JSON format.
 6. Click **Next**. Amplitude attempts a test upload to test the credentials. If the upload is successful, click **Finish** to complete the BigQuery destination configuration and activation.
 
-All future events or merged users are automatically sent to BigQuery. Amplitude exports files to your BigQuery account every hour.
+All future events or merged users are automatically sent to BigQuery. Amplitude exports files to your BigQuery account on a best-effort basis. Exports typically run hourly and contain one hour of data, but may run less frequently and contain multiple hours of data.
 
 ### Event table schema
 
@@ -129,7 +129,7 @@ The **Event** table schema includes the following columns:
 
 The Merged User table schema contains the following:  
 
-| <div class="big-column">Column</div> | Type         | Description                                                                                                  |
+| Column | Type         | Description                                                                                                  |
 | ------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------ |
 | `amplitude_id`                       | NUMBER(38,0) | The Amplitude ID being merged into a user's original Amplitude ID.                                           |
 | `merge_event_time`                   | TIMESTAMP    | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.             |

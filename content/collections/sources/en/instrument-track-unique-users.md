@@ -13,10 +13,6 @@ updated_at: 1718136543
 ---
 Accurately tracking unique users is critical to getting the most out of Amplitude. Depending on the nature of your product, your users can log in and out at will, browse anonymously, or use multiple devices. This article will describe how Amplitude tracks unique users, and what you can do to ensure that process goes smoothly.
 
-### Feature availability
-
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
 ## How Amplitude identifies unique users
 
 Amplitude uses a system of three different IDs to track users: device ID, user ID, and Amplitude ID:

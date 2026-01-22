@@ -4,15 +4,16 @@ blueprint: account-management
 title: 'Role-based Access Controls (RBAC)'
 landing: true
 exclude_from_sitemap: false
-updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1762801028
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1765488153
 landing_blurb: 'Manage who can access features within your Amplitude Org and the actions they can perform.'
+academy_course:
+  - bbb19f3a-7715-49c9-9b72-d63a07249d03
 ---
 Role-based Access Control (RBAC) lets you manage who can access specific areas of Amplitude and the actions they can perform in those areas. By offering granular access controls, your Amplitude administrators can scale Amplitude adoption and prevent unauthorized actions.
 
 RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and is assigned `Analyst`, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
 
-{{partial:admonition type="tip" heading="RBAC: Key benefits"}}   
 RBAC Provides the following benefits to your enterprise:
 
 * **Improved security**: Limit data access based on job responsibilities.  
@@ -20,11 +21,13 @@ RBAC Provides the following benefits to your enterprise:
 * **Compliance support**: Supports regulatory requirements around access control and auditing.  
 * **Scalability**: Manages access for growing teams and multiple business units. 
 
+{{partial:admonition type="note" heading="Feature availability"}}
+
+RBAC is available to organizations on any Enterprise plan. If you aren't on an Enterprise plan, go to your Account Management [roles and permissions](/docs/admin/account-management/user-roles-permissions).
+
 {{/partial:admonition}}
 
-## Feature availability
-
-RBAC is available to organizations on the Enterprise plan.
+To learn more, take the [Manage roles and permissions with RBAC](https://academy.amplitude.com/manage-roles-and-permissions-with-role-based-access-controls-rbac) course on Amplitude Academy.
 
 ## Amplitude RBAC concepts
 

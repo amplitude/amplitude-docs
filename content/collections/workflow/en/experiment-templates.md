@@ -11,7 +11,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include goals, metrics, audience targeting, and [variants](/docs/feature-experiment/workflow/add-variants) so you can reuse it for future experiments. Templates are particularly useful when you:
+Experiment templates capture the configuration of an [experiment](/docs/feature-experiment/workflow/create). Templates include features like goals, deployments, audience targeting that you can reuse for future experiments. Templates are particularly useful when you:
 
 - Run similar experiments across different features or time periods.
 - Want to enforce consistent experiment standards across your team.
@@ -34,7 +34,7 @@ To create, edit, or delete experiment templates, you need the Manage Experiments
 
 ### Create a template from an experiment
 
-To create a template from an existing experiment:
+To create a template from an existing feature experiment:
 
 1. Navigate to the experiment you want to save as a template.
 2. Click **More options** (three dots) and select **Use as a template**.
@@ -83,7 +83,7 @@ Navigate to *Experiment > Templates* to view your organization's template librar
 - Goals
 - Evaluation mode
 - Number of segments in the template
-- Bucketing type
+- Bucketing unit
 
 ### Edit a template
 
@@ -116,7 +116,6 @@ For more information about defining experiment goals, go to [Define your experim
 
 - Primary and secondary metrics
 - Success and guardrail metrics
-- Metric types and configurations
 - [Minimum detectable effects](/docs/feature-experiment/workflow/finalize-statistical-preferences#minimum-detectable-effect)
 
 ### Audience targeting

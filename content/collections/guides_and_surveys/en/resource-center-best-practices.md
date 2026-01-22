@@ -7,6 +7,7 @@ updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961145
 this_article_will_help_you:
   - 'Learn best practices and caveats about the Resource Center feature'
+landing_blurb: Learn best practices and caveats about the Resource Center feature.
 ---
 - The Autopilot feature uses a search algorithm that's based on semantic search to optimize relevance of the recommendation.
 - Only one recommendation appears at a time.

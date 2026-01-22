@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/docs/js/site.js', 'public/docs/js')
+mix.js('resources/docs/js/side-nav/index.js', 'public/docs/js/side-nav.js')
 mix.js('resources/docs/js/api-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
@@ -58,6 +59,11 @@ mix.postCss('resources/docs/css/dracula-prism.css', 'public/docs/css', [
 
 // Enable Vue.js support
 mix.vue({ version: 3 });
+
+// Enable versioning for cache busting
+if (mix.inProduction()) {
+    mix.version();
+}
 
 mix.override(webpackConfig => {
     webpackConfig.module.rules.push({

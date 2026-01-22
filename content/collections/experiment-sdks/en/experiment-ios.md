@@ -182,9 +182,11 @@ let experiment = Experiment.initialize(
 The SDK client can be configured once on initialization.
 
 {{partial:collapse name="Configuration options"}}
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Set to false in production builds. | `false` |
+| `debug` | **Deprecated.** When `true`, sets `logLevel` to `.debug`. Use `logLevel` instead. | `false` |
+| `logLevel` | The minimum log level to output. Options: `.off` (no logging), `.error` (errors only), `.warn` (errors and warnings), `.log` (errors, warnings, and logs), `.debug` (all messages including debug). See [Custom logging](#custom-logging). | `.warn` |
+| `loggerProvider` | Custom logger implementation. Must implement the `CoreLogger` protocol. See [Custom logging](#custom-logging). | `DefaultLogger()` |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
 | `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
 | `serverZone` | Select the Amplitude data center to get flags and variants from, `.US` or `.EU` | `.US` |
@@ -292,7 +294,7 @@ func fetch(user: ExperimentUser?, options: FetchOptions?, completion: ((Experime
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional | Explicit flag keys to fetch.|
 | `completion` | optional | Callback when the variant fetch (success or failure). If the fetch request fails, the error is returned in the second parameter of this callback. |
 
@@ -317,7 +319,7 @@ experiment.fetch(user: nil, completion: nil)
 {{partial:admonition type="tip" heading="Fetch when user identity changes"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
+In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees for `fetch()`---that's a race.
 {{/partial:admonition}}
 
 If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
@@ -325,7 +327,7 @@ If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK cli
 {{partial:collapse name="Account-level bucketing and analysis (v1.10.0+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or through [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
 ```swift
 let user = ExperimentUserBuilder()
@@ -363,7 +365,7 @@ func start(_ user: ExperimentUser? = nil, completion: ((Error?) -> Void)? = nil)
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
 | `completion` | optional | The completion block, called when the SDK has finished starting. If fetch is called on start, the completion block is called after the fetch response is received. |
 
 Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The provided completion block is called after loading local evaluation flag configurations and fetching remote evaluation variants.
@@ -506,7 +508,7 @@ Provider implementations enable a more streamlined developer experience by makin
 
 ### User provider
 
-The user provider is used by the SDK client to access the most up-to-date user information only when it's needed (for example: when [`fetch()`](#fetch) is called). This provider is optional, but helps if you have a user information store already set up in your application. This way, you don't need to manage two separate user info stores in parallel, which may result in a divergent user state if the application user store is updated and experiment isn't (or via versa).
+The user provider is used by the SDK client to access the most up-to-date user information only when it's needed (for example: when [`fetch()`](#fetch) is called). This provider is optional, but helps if you have a user information store already set up in your application. This way, you don't need to manage two separate user info stores in parallel, which may result in a divergent user state if the application user store is updated and experiment isn't (or vice versa).
 
 ```swift 
 protocol ExperimentUserProvider {
@@ -569,6 +571,59 @@ To download initial flags, use the [evaluation flags API](/docs/apis/experiment/
 ```swift
 let config = ExperimentConfigBuilder()
     .initialFlags("<FLAGS_JSON>")
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
+
+## Custom logging
+
+Control log verbosity with the `logLevel` configuration, or implement the `CoreLogger` protocol to integrate your own logging solution.
+
+### Log levels
+
+- `.off` - No logging
+- `.error` - Errors only
+- `.warn` - Errors and warnings (default)
+- `.log` - Errors, warnings, and logs
+- `.debug` - All messages including debug
+
+```swift
+// Only log errors
+let config = ExperimentConfigBuilder()
+    .logLevel(.error)
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
+
+### Custom logger
+
+Implement the `CoreLogger` protocol to use your own logging solution:
+
+```swift
+// Implement the CoreLogger protocol
+class CustomLogger: CoreLogger {
+    func error(message: String) {
+        // Send error logs to your logging service
+        myLoggingService.error(message)
+    }
+
+    func warn(message: String) {
+        myLoggingService.warn(message)
+    }
+
+    func log(message: String) {
+        myLoggingService.log(message)
+    }
+
+    func debug(message: String) {
+        myLoggingService.debug(message)
+    }
+}
+
+// Initialize with custom logger
+let config = ExperimentConfigBuilder()
+    .loggerProvider(CustomLogger())
+    .logLevel(.warn)
     .build()
 let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
 ```

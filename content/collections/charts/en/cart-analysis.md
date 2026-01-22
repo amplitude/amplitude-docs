@@ -28,9 +28,6 @@ Likely use cases include:
 Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysis charts.
 {{/partial:admonition}}
 
-### Feature availability
-
-This feature is available to users on Growth and Enterprise plans. Go to [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
@@ -77,7 +74,7 @@ Property splitting must be enabled before you can use object arrays for cart ana
 Only project managers and admins can enable splitting. Portfolio projects don't support splitting.
 
 {{partial:admonition type="tip" heading=""}}
-It is recommended to enable both the `amplitude.Revenu()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
+It is recommended to enable both the `amplitude.Revenue()` and [product array](/docs/analytics/charts/cart-analysis) tracking methods to get the most information possible. 
 {{/partial:admonition}}
 
 To enable property splitting, follow these steps:

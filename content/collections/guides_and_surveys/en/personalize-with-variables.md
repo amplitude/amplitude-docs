@@ -51,7 +51,7 @@ Amplitude autopopulates `user_id` and `device_id` for you. These variables are a
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="User properties in conditional logic"}}
-User properties can also power [conditional logic](/docs/guides-and-surveys/conditional-logic), enabling you to create different button actions or survey paths based on user characteristics. For example, direct premium users to different content than free users.
+User properties can also power [conditional logic](/docs/guides-and-surveys/guides/conditional-logic), enabling you to create different button actions or survey paths based on user characteristics. For example, direct premium users to different content than free users.
 {{/partial:admonition}}
 
 ##### To include personalized variables into a guide or survey
