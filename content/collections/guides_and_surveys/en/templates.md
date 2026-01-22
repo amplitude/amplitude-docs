@@ -22,6 +22,11 @@ Templates help you create reusable starting points for your team's guides and su
 Amplitude provides pre-built survey templates to help you quickly create common survey types. These templates appear in the Create Survey menu and include:
 
 - **How did you hear about us**: A two-step acquisition channel survey that helps you understand where new users discover your product. The first step asks users to select from common sources (social media, search engines, referrals, advertisements, or other), and the second step collects additional details through an optional short-answer field.
+- **NPS (Net Promoter Score)**: Measures how likely users are to recommend your product on a 0-10 scale. Use this to track customer loyalty by identifying promoters (9-10), passives (7-8), and detractors (0-6), then calculate your overall NPS score. Ideal for periodic health checks and benchmarking customer sentiment.
+- **User Feedback**: A blank canvas for custom question sets. Use this when you need tailored questions for specific research goals, qualitative insights, or exploratory feedback that doesn't fit standard templates.
+- **Rating**: Quick reaction surveys using stars, numbers, or emojis. Perfect for measuring satisfaction at key moments (post-purchase, after feature use, support interactions) without disrupting the user experience.
+- **Banner Survey**: Non-intrusive surveys displayed as banners within your product. Use for broad reach without blocking the user flow, ideal for general announcements or low-priority feedback requests.
+- **Tooltip Survey**: Contextual surveys attached to specific UI elements. Best for gathering feedback about particular features or flows right where users interact with them.
 
 Built-in templates are designed to follow best practices and can be customized after creation to match your specific needs.
 
