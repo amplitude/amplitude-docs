@@ -50,6 +50,3 @@ This is the absolute lift scaled by the mean of the control. Some people find th
 {{/partial:collapse}}
 {{/unless}}
 
-
-
-{{/partial:collapse}}
