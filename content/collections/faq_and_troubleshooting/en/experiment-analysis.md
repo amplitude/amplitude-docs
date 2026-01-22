@@ -22,7 +22,7 @@ With sequential testing, even with a large MDE, it can take some time to reach s
 {{/partial:collapse}}
 
 {{partial:collapse name="How is the Retention metric calculated?"}}
-Amplitude uses three parameters to calculate Return On for the Retention metric:
+Amplitude uses the following parameters to calculate Return On for the Retention metric:
 
 * **The starting event**: The event that occurs **after** the exposure event. This marks the beginning of the retention window.
 * **The return event**: The event you hope the user performs after the starting event. The user is counted as retained if they trigger the return event.
