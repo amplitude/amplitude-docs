@@ -17,7 +17,7 @@ These values are derived from a small selection of inputs and formulas, which ar
 
 ## Inputs
 
-The formulas rely on a straightforward set of inputs:
+The formulas rely on the following set of inputs:
 
 * **E**: The number of unique users who were exposed to the experiment.
 * **M**: The number of unique users who triggered the metric event. T the subset of the users who have been exposed to the experiment. `M` is always be less than `E`.
