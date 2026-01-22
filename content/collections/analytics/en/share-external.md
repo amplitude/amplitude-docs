@@ -44,9 +44,16 @@ To generate this embed code, follow these steps:
 
 ## Copy, edit, or delete a public link
 
-To manage your public links, navigate to *Settings > Organization Settings > Content Access*.
+You can manage public links from two locations:
 
-Public links aren't editable from the *Manage Content Access* page, but you can remove them from there. Hover over the public link to bring up the *Remove* button. To edit the link's password or change its expiration date, click on the name of the chart to open it, then click *Share* to begin making those changes.
+**From the Share modal:**
+1. Click **Share** in the top right corner.
+2. Navigate to the **Public Link** tab.
+3. Click the three-dot menu (kebab menu) next to your public link.
+4. Select **Copy URL**, **Edit**, or **Delete** from the dropdown.
+
+**From Organization Settings:**
+Navigate to *Settings > Organization Settings > Content Access*. You can remove public links from this page by hovering over the link and selecting the **Remove** button. To edit a link's password or expiration date, open the chart and use the Share modal.
 
 ## Set public link permissions
 

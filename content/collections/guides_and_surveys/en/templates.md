@@ -17,6 +17,14 @@ Templates help you create reusable starting points for your team's guides and su
 - **Team efficiency**: Help team members get started with proven templates.
 - **Quality control**: Review and polish templates before making them available to your team.
 
+## Built-in Amplitude templates
+
+Amplitude provides pre-built survey templates to help you quickly create common survey types. These templates appear in the Create Survey menu and include:
+
+- **How did you hear about us**: A two-step acquisition channel survey that helps you understand where new users discover your product. The first step asks users to select from common sources (social media, search engines, referrals, advertisements, or other), and the second step collects additional details through an optional short-answer field.
+
+Built-in templates are designed to follow best practices and can be customized after creation to match your specific needs.
+
 ## Creating templates
 
 ##### Create a template from existing content
@@ -29,7 +37,7 @@ Templates start out hidden from non-admins, giving you time to polish them befor
 
 ### Template visibility and management
 
-When editing a template, Amplitude dipslays a blue banner at the top of the page indicating you're editing a template rather than a guide or survey. This visual cue helps prevent confusion during the editing process.
+When editing a template, Amplitude displays a blue banner at the top of the page indicating you're editing a template rather than a guide or survey. This visual cue helps prevent confusion during the editing process.
 
 ## Building with templates
 
