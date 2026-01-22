@@ -14,7 +14,12 @@ Amplitude's onboarding helps you to get data into your new organization as quick
 
 ## Create your org
 
-Get started with Amplitude for free. Sign in with Google or your work email.
+Get started with Amplitude for free. To create a new account:
+
+1. Go to [amplitude.com/get-started](https://amplitude.com/get-started).
+2. Sign in with Google or enter your work email address.
+3. Verify your email address. You'll receive an email from Amplitude asking you to verify your email. Click the link in the email to set a password and finish creating your account.
+4. Choose your data storage location (see below).
 
 ### Data storage location
 
