@@ -28,7 +28,7 @@ Amplitude provides pre-built survey templates to help you quickly create common 
 - **Banner Survey**: Non-intrusive surveys displayed as banners within your product. Use for broad reach without blocking the user flow, ideal for general announcements or low-priority feedback requests.
 - **Tooltip Survey**: Contextual surveys attached to specific UI elements. Best for gathering feedback about particular features or flows right where users interact with them.
 
-Built-in templates are designed to follow best practices and can be customized after creation to match your specific needs.
+Built-in templates follow best practices, and you can customize them after creation to match your specific needs.
 
 ## Creating templates
 
@@ -49,7 +49,7 @@ When editing a template, Amplitude displays a blue banner at the top of the page
 ##### Using templates to create new content
 
 1. Navigate to the Create Guide or Create Survey menu.
-2. Your custom templates will appear below the built-in Amplitude templates.
+2. Your custom templates appear below the built-in Amplitude templates.
 3. Select the template you want to use as your starting point.
 4. Customize the content as needed for your specific use case.
 
@@ -57,8 +57,8 @@ Unhidden templates automatically appear in the same Create Guide/Survey menu tha
 
 ### Template best practices and tips
 
-- **Choose appropriate themes**: Select a theme before you make the template available to your team, as the template's designated theme will also apply to new guides/surveys created from it.
-- **Use clear naming**: When you create a new template, "Template" is automatically appended to the name. When team members create guides or surveys from templates, this suffix is automatically removed.
+- **Choose appropriate themes**: Select a theme before you make the template available to your team, as the template's designated theme also applies to new guides/surveys created from it.
+- **Use clear naming**: When you create a new template, Amplitude automatically appends "Template" to the name. When team members create guides or surveys from templates, Amplitude automatically removes this suffix.
 - **Polish before sharing**: Take advantage of the hidden state to test and refine your templates.
 - **Consider your audience**: Design templates with your team's common use cases in mind.
-- **Update Templates as needed**: Updating a template will not affect any guides or surveys that were previously created using that template.
+- **Update Templates as needed**: Updating a template doesn't affect any guides or surveys that were previously created using that template.
