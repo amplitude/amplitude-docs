@@ -125,7 +125,7 @@ One typical use case for event properties is tracking values that must be held c
 * Step 1: `Product Details Viewed`
 * Step 2: `Product Added`
 
-Here, users should count as having converted through the funnel **only** if they triggered the event on the **same** product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
+Here, users should count as having converted through the funnel only if they triggered the event on the same product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
 
 * Step 1: `Product Details Viewed`
 	* `Product ID` = `3345`
