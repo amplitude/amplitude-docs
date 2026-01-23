@@ -20,9 +20,9 @@ The duration estimator can help you calculate the sample size and experiment run
 
 This table describes the components involved in generating the duration estimate.
 
-|  |  |  |
+
+| Component name and default setting | Definition and data validation | Relation to sample size needed for statistical significance |
 | --- | --- | --- |
-| **Component name and default setting** | **Definition and data validation** | **Relation to sample size needed for statistical significance** |
 | **Confidence Level**: 95% | The confidence level is a measure of your own tolerance for false positives in the results. For example, if you set the confidence level at 95%, that means that if you were to roll out the same experiment again and again, you would expect to get the same results 95% of the time. For the remaining 5%, you might interpret the results as statistically significant when they're not (in other words, a false positive). Your confidence interval must be between 1% and 99%. Amplitude recommends a minimum of 80%. The experiment's results may no longer be reliable for any level below that. | The larger the confidence level, the larger the sample size. |
 | **Control Mean**: Automatically computed when you select the primary metric | The control mean is the average value of the selected primary metric over the last seven days (not including today) for users who completed the proxy exposure event. Consider adjusting the mean if there was a recent special event or holiday that may have affected the average in the last seven days. This value can't be zero, regardless of metric type. For conversion metrics, it can't be one. For conversion metrics, .5 means 50%, and not .5%. | The smaller the control mean, the larger the sample size. |
 | **Standard Deviation**: Automatically computed for you when you select the primary metric | Standard deviation signifies the variance, or the spread, in the data (average between each data point and the mean). It only shows up for numerical metrics and not for binary or 0-1 conversion rates. The automatic calculation derives from the standard deviation of the primary metric over the last seven (7) days (not including today) for users that completed the proxy exposure event. This value can be any positive number. | The Larger the standard deviation, the larger the sample size. |

@@ -17,7 +17,7 @@ These values are derived from a small selection of inputs and formulas, which ar
 
 ## Inputs
 
-The formulas rely on a straightforward set of inputs:
+The formulas rely on the following set of inputs:
 
 * **E**: The number of unique users who were exposed to the experiment.
 * **M**: The number of unique users who triggered the metric event. T the subset of the users who have been exposed to the experiment. `M` is always be less than `E`.
@@ -26,6 +26,7 @@ The formulas rely on a straightforward set of inputs:
 * **A**: The sum of the average of all the metric events' property values, per user.
 * **FM**: The number of unique users who triggered the events in the funnel, in the specified order.
 * **FT**: The total number of times all the funnel events are triggered in the specified order.
+* **R**: The number of unique users who triggered the starting event after exposure, then triggered the return event within the specified time window (nth day/week/month).
 
 ## Formulas
 
@@ -37,6 +38,7 @@ The inputs in the previous section are then plugged into the following formulas:
 * Average of property value: `A/E`
 * Funnel conversion, uniques: `FM/E`
 * Funnel conversion, totals: `FT/E`
+* Retention: `R/E`
 
 ## Examples
 
@@ -101,3 +103,31 @@ Knowing that, you can plug these values into each of the formulas listed above:
 
 * Funnel conversion, uniques = FM/E = 2/4 = 0.5
 * Funnel conversion, totals = FT/E = 3/4 = 0.75
+
+### Retention example
+
+For this example, define retention as users who trigger a starting event after exposure, then trigger a return event within seven days (Day 7 retention). This table is the chronological log of events coming into Amplitude:
+
+| User | Event type       | Timestamp (days after exposure) | Days from starting event |
+| -------- | -------------------- | ------------------------------- | ------------------------ |
+| U1       | Exposure event (EE)  | 0                                |                          |
+| U1       | Starting event (SE)  | 1                                |                          |
+| U1       | Return event (RE)    | 8                                | 7                        |
+| U2       | Exposure event       | 0                                |                          |
+| U2       | Starting event       | 2                                |                          |
+| U2       | Return event         | 9                                | 7                        |
+| U3       | Exposure event       | 0                                |                          |
+| U3       | Starting event       | 1                                |                          |
+| U3       | Return event         | 5                                | 4                        |
+| U4       | Exposure event       | 0                                |                          |
+| U4       | Starting event       | 3                                |                          |
+| U5       | Exposure event       | 0                                |                          |
+| U5       | Return event         | 6                                |                          |
+
+Here, the number of unique users exposed to the experiment (E) is four (U1, U2, U3, U4). U5 doesn't count, as they weren't exposed to the experiment.
+
+For Day 7 retention, a user is counted as retained if they trigger the return event between seven days and seven days plus 24 hours from performing the starting event. The number of unique users who triggered the starting event after exposure and then triggered the return event within the Day 7 window—defined as R—is two (U1 and U2). U1 triggered the return event 7 days after the starting event (day 8 from exposure, which is 7 days after day 1). U2 triggered the return event 7 days after the starting event (day 9 from exposure, which is 7 days after day 2). U3 triggered the return event only 4 days after the starting event, which is outside the Day 7 window. U4 triggered the starting event but never triggered the return event. U5 never triggered the exposure event, and thus isn't included in the experiment at all.
+
+Knowing that, you can plug these values into the retention formula:
+
+* Retention = R/E = 2/4 = 0.5 (50%)

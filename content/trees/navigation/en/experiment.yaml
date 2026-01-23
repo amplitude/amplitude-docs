@@ -31,6 +31,9 @@ tree:
         id: a978b4c7-f702-4e27-b042-3369a199110e
         entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
       -
+        id: fb9455d3-d9b2-4559-aca3-4e14096cd3fb
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
+      -
         id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
         title: 'Experiment Goals'
         children:
