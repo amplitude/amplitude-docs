@@ -10,20 +10,18 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Identify and manage feature flags and experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags that have been rolled out or rolled back for an extended period. By understanding how long it's been since you either rolled out or rolled back a feature flag, you can maintain your list of flags to only the ones that are currently relevant.
+Identify and manage feature flags and experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, you can maintain your list of flags to only the ones that are currently relevant.
 
-## When flags and experiments become stale
+## How flags and experiments become stale
 
 A feature flag or experiment becomes stale when it meets one of these conditions:
 
 * **Rolled out**: The flag or experiment has been rolled out to 100% of users for more than 30 days.
 * **Rolled back**: The flag or experiment is inactive or rolled out to 0% for more than 30 days.
 
-After a flag or experiment becomes stale, it's ready for cleanup. This means you should remove the flag from your codebase and archive it in Amplitude.
+After a flag or experiment becomes stale, it's ready for cleanup. You should remove the flag from your codebase and archive it.
 
-## Viewing stale flags and experiments
-
-### Stale status badge
+## Working with stale flags and experiments
 
 When you view a flag or experiment that is stale, a stale status badge appears next to the other status badges in the header. Hover over the stale badge to see when it became stale and update the stale date if needed.
 
@@ -69,14 +67,3 @@ After a flag or experiment becomes stale, take these steps:
 ### Handling multiple variants
 
 If a flag or experiment has multiple variants and one variant is rolled out to 100%, keep that variant in your application while removing the others. This ensures the winning variant remains active.
-
-### Using AI coding tools
-
-You can use AI coding tools to help remove feature flags from your code. These tools can identify flag references and generate code changes to remove them.
-
-## Best practices
-
-* **Review stale flags regularly**: Check your stale flags list weekly or monthly to keep your codebase clean.
-* **Set appropriate stale dates**: When rolling out flags, set stale dates that align with your team's cleanup schedule.
-* **Coordinate with your team**: Before removing flags, coordinate with team members who might be using them.
-* **Document long-lived flags**: If a flag is intentionally long-lived, remove the stale date to prevent unnecessary notifications.
