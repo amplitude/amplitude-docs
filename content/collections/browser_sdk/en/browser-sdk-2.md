@@ -623,7 +623,7 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 
 #### Control form submit tracking
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="Minimum SDK version"}}
 Minimum SDK version 2.34.0.
 {{/partial:admonition}}
 
