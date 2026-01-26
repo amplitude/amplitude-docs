@@ -177,6 +177,99 @@ docker run \
 The [evaluation-proxy GitHub repository](https://github.com/amplitude/evaluation-proxy) also contains an example using `docker compose` to run the proxy alongside a local Redis image.
 {{/partial:admonition}}
 
+## Best practices
+
+### Production deployment
+
+#### Resource requirements
+
+Configure each pod with 4 CPU cores and 9 GiB RAM for approximately 5,000 requests per second capacity.
+
+- **Minimum replicas**: Deploy at least 2 replicas for high availability.
+- **Horizontal scaling**: Add pods to increase capacity. For example, 4 pods provide approximately 20,000 requests per second.
+
+#### Redis configuration
+
+##### Option 1: Standalone with replicas
+
+Use for small deployments.
+
+```yaml
+configuration:
+  redis:
+    uri: "rediss://primary:6379"
+    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling
+```
+
+**Recommended specs**: 12+ GiB memory, cache.m7g.xlarge or equivalent.
+
+##### Option 2: Redis Cluster (recommended for high scale)
+
+Use Redis Cluster when you have 10M+ users or many large cohorts.
+
+```yaml
+configuration:
+  redis:
+    uri: "rediss://cluster:6379"
+    useCluster: true
+```
+
+**Recommended specs**: 2-3 shards, 1-2 replicas per shard, 12+ GiB per node.
+
+{{partial:admonition type="tip" heading=""}}
+A cluster-based approach is preferred as cohort size and count increase. Test with your data to finalize the configuration.
+{{/partial:admonition}}
+
+### Performance characteristics
+
+#### Latency
+
+- **Normal**: 1-5ms.
+- **During background cohort refresh**: p95 latency can reach up to 50ms. This typically occurs when a significant number of users are added to or removed from a cohort, or when new large cohorts are attached to a flag.
+
+#### Cold start
+
+Initial startup time scales with the number and size of targeted cohorts.
+
+Set the readiness probe `initialDelaySeconds: 600` to prevent pod restarts during startup.
+
+### Monitoring and alerts
+
+The proxy exposes metrics at `http://proxy:9090/metrics`.
+
+Configure these critical alerts:
+
+```promql
+# Error rate > 1%
+rate(http_requests_total{status=~"5.."}[5m]) > 0.01
+
+# P95 latency > 100ms sustained (ignore during cohort refresh spikes)
+histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.1
+
+# Memory > 85%
+container_memory_usage_bytes / container_spec_memory_limit_bytes > 0.85
+
+# Redis errors
+rate(redis_errors_total[5m]) > 0
+```
+
+### Troubleshooting
+
+| Issue | Solution |
+|---|---|
+| High latency (sustained >100ms) | Check Redis latency: `redis-cli --latency -h <host>` |
+| Cohorts not loading | Verify management key, check logs for sync errors |
+| Proxy won't start | Verify Redis connectivity, check all API keys |
+| Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds` |
+
+### Capacity planning
+
+| Load | Pods | Redis |
+|---|---|---|
+| <10k req/s | 2 | Standalone + replica |
+| 10-20k req/s | 3-4 | Standalone or 2-shard cluster |
+| >20k req/s | 5+ | 2-3 shard cluster |
+
 ## Evaluation
 
 The Evaluation Proxy exposes remote [Evaluation API](/docs/apis/experiment/experiment-evaluation-api) and [SDK](/docs/sdks/experiment-sdks) endpoints to run local evaluation within your cluster. This is useful to enable platforms and languages which aren't supported by local evaluation SDKs. As an added benefit, fetch requests made to the evaluation proxy can target cohorts of users, and have assignment events tracked automatically to Amplitude.
