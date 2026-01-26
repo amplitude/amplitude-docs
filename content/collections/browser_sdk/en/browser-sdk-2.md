@@ -628,7 +628,9 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 Minimum SDK version 2.34.0.
 {{/partial:admonition}}
 
-You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. This is particularly useful for forms with the `novalidate` attribute where you want full control over validation before tracking.
+You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. 
+
+By default, Amplitude tracks all form submit events. However, when a form has the [`novalidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/noValidate) attribute set, the browser [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) fires without performing default validation checks. This means the submit event triggers even if the form is empty or contains invalid data. In these cases, use `shouldTrackSubmit` to implement custom validation logic and control when Amplitude tracks the submit event.
 
 The `shouldTrackSubmit` callback receives the form submit event and should return `true` to track the submit event or `false` to skip tracking.
 
