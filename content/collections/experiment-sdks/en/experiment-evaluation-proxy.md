@@ -227,7 +227,7 @@ configuration:
 **Recommended specs**: 2-3 shards, 1-2 replicas per shard, 12+ GiB per node.
 
 {{partial:admonition type="tip" heading=""}}
-A cluster-based approach is preferred as cohort size and count increase. Test with your data to finalize the configuration.
+Prefer a cluster-based approach as cohort size and count increase. Test with your data to finalize the configuration.
 {{/partial:admonition}}
 
 ### Performance characteristics
