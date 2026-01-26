@@ -135,7 +135,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Event Segmentation**: Session replay is available for all six measures.
 * **Funnel Analysis**: Session replay is only available for the conversion measure.
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
-* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/data/sources/instrument-track-sessions).
+* **User Sessions**: Session replay is available for all six measures.
 
 **NOTE**: For Funnel Analysis charts, the order of events appears in chronological order (oldest to newest).
 
@@ -183,7 +183,6 @@ Some common use cases for Session Replay include:
 There are some limitations when using Session Replay:
 
 * Session Replay is available for web-based applications only. This includes mobile web.
-* Session Replay supports standard session definitions only. [Custom](/docs/data/sources/instrument-track-sessions) session definitions aren't supported.
 * You can replay captured sessions for up to three months after they occur.
 * Some HTML elements aren't supported and aren't captured as part of the replay:
 	* Canvas

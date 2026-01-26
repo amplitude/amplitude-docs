@@ -159,7 +159,7 @@ The SDK client can be configured on initialization.
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `VERBOSE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `DISABLE`. See [custom logging](#custom-logging). | `ERROR` |
@@ -174,7 +174,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                              | Default Value |
+| Name | Description                                                                                                                                                                              | Default Value |
 | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key                                                                                                                              | *required* |
 | `secretKey` | The analytics secret key                                                                                                                                                                 | *required* |
@@ -210,7 +210,7 @@ public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser use
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracksExposure` | To track or not track an exposure event for this fetch request. If `null`, uses the server's default behavior (does not track exposure). | `null` |
 | `tracksAssignment` | To track or not track an assignment event for this fetch request. If `null`, uses the server's default behavior (does track assignment). | `null` |
@@ -398,7 +398,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `VERBOSE`, `DEBUG`, `INFO`, `WARN`, `ERROR`, `DISABLE`. See [custom logging](#custom-logging). | `ERROR` |
@@ -416,7 +416,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **AssignmentConfiguration**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
@@ -426,7 +426,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **ExposureConfiguration**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of exposures stored in the exposure cache | `65536` |
@@ -436,7 +436,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `secretKey` | The analytics secret key | *required* |
@@ -564,7 +564,7 @@ if (Variant.valueEquals(variant, "on")) {
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 

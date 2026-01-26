@@ -116,7 +116,7 @@ The SDK client can be configured on initialization.
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
 {{/partial:admonition}}
 
-| <div class="big-column">Name</div>  | Description | Default Value |
+| Name  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. Go to [custom logging](#custom-logging). | `Error` |
@@ -145,7 +145,7 @@ fetchV2(user: ExperimentUser, fetchOptions?: FetchOptions): Promise<Variants>
 
 **FetchOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `flagKeys` | Specific flags or experiments to evaluate. If undefined, null, or empty, all flags and experiments are evaluated. | `undefined` |
 | `tracksExposure` | To track or not track an exposure event for this fetch request. If `undefined`, uses the server's default behavior (does not track exposure). | `undefined` |
@@ -282,7 +282,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `logLevel` | The minimum log level to output. Options: `Verbose`, `Debug`, `Info`, `Warn`, `Error`, `Disable`. See [custom logging](#custom-logging). | `Error` |
@@ -300,7 +300,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **AssignmentConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
@@ -308,7 +308,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **ExposureConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of exposures stored in the exposure cache | `65536` |
@@ -316,7 +316,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                   | Default Value |
+| Name | Description                                                                                                                                                                   | Default Value |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
 | `apiKey`                           | The analytics API key and NOT the experiment deployment key                                                                                                                   | *required* |
 | `secretKey`                        | The analytics secret key                                                                                                                                                      | *required* |
@@ -372,7 +372,7 @@ const specificVariants = experiment.evaluateV2(user, [
 
 **EvaluateOptions**
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `tracksExposure` | If `true`, the SDK tracks an exposure event for the evaluated variants. | `false` |
 

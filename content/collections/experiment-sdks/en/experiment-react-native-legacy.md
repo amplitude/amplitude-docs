@@ -128,7 +128,7 @@ Using the integration initializer will automatically configure implementations o
 
 The SDK client can be configured once on initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
 | `fallbackVariant` | The default variant to fall back if a variant for the provided key does not exist. | `{}` |

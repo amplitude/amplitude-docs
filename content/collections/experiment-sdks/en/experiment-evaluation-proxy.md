@@ -65,6 +65,7 @@ Environment configuration can only configure a single project. Environment varia
 | `AMPLITUDE_REDIS_URI` | Optional. The entire URI to connect to Redis. Include the protocol, host, port, and optional username, password, and path (for example `redis://localhost:6379`). |
 | `AMPLITUDE_REDIS_PREFIX` | Optional. The prefix to connect  |
 | `AMPLITUDE_REDIS_USE_CLUSTER` | Optional. If `AMPLITUDE_REDIS_URI` is a cluster URL, pass this as `true`. It defaults to `false`. |
+| `AMPLITUDE_REDIS_READ_FROM` | Optional. Read routing strategy for Redis Cluster. Options: `ANY` (default, read from any node in the cluster) or `REPLICA_PREFERRED` (prefer replicas). |
 | `AMPLITUDE_SERVER_URL` | Optional. The server URL, including protocol and host, to fetch flags from. |
 | `AMPLITUDE_COHORT_SERVER_URL` | Optional. The server URL, including protocol and host, to download cohorts from. |
 
@@ -77,7 +78,7 @@ Environment configuration can only configure a single project. Environment varia
 
 A required array of objects with the following fields, all which are required.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `id` | The project's ID. Found in the project settings. |
 | `apiKey` | The project's [API key](/docs/apis/keys-and-tokens#api-key). |
@@ -88,7 +89,7 @@ A required array of objects with the following fields, all which are required.
 
 An optional object of extra configuration.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `redis` | Optional (Recommended). See [`redis`](#redis). Configure the proxy to use redis as persistent storage. |
 | `flagSyncIntervalMillis` | Optional. The polling interval to update flag configurations (default `10000`). |
@@ -110,12 +111,13 @@ configuration:
 
 Configure the evaluation proxy to use Redis as a persistent storage. Highly recommended to enable the evaluation proxy to run efficiently.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |
-| `useCluster` | Optional. If `uri` is a cluster URL, pass this as `true`. It defaults to `false`. |
-| `prefix` | Optional. A prefix for all keys saved by the evaluation proxy (default `amplitude`). |
+| `useCluster` | Optional. If `uri` is a cluster URL, set this to `true`. Defaults to `false`. |
+| `readFrom` | Optional. Read routing strategy for **cluster mode only**: `ANY` (default, read from any node in the cluster) or `REPLICA_PREFERRED` (prefer replicas). |
+| `prefix` | Optional. A prefix for all keys saved by the evaluation proxy. Defaults to `amplitude`. |
 
 ## Deployment
 

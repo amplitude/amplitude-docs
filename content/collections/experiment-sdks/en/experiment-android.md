@@ -189,7 +189,7 @@ val experiment = Experiment.initialize(
 
 SDK client configuration occurs during initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false` |
 | `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `LogLevel.DISABLE`, `LogLevel.ERROR`, `LogLevel.WARN`, `LogLevel.INFO`, `LogLevel.DEBUG`, `LogLevel.VERBOSE`. See [Custom logging](#custom-logging). | `LogLevel.ERROR` |

@@ -660,6 +660,49 @@ td {
     vertical-align: top;
 }
 
+/* Improved table column width distribution */
+table {
+    table-layout: auto;
+    width: 100%;
+}
+
+/* Set minimum widths to prevent columns from becoming too narrow */
+table td,
+table th {
+    min-width: 150px;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* First column: typically shorter labels/names */
+table td:nth-child(1),
+table th:nth-child(1) {
+    width: 20%;
+    min-width: 160px;
+}
+
+/* Second column: often contains detailed descriptions */
+table td:nth-child(2),
+table th:nth-child(2) {
+    width: 45%;
+    min-width: 200px;
+}
+
+/* Third column: supporting information */
+table td:nth-child(3),
+table th:nth-child(3) {
+    width: 35%;
+    min-width: 180px;
+}
+
+/* Handle code elements within table cells to prevent overflow */
+table td code,
+table th code {
+    word-break: break-all;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
 .current {
     border-color: #259991;
     color: #259991;

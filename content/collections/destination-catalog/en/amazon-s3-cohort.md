@@ -69,11 +69,12 @@ Each sync generates three CSV files:
 
 The CSV files all use this naming convention:
 
-`path/integer_cohortID_YYYY-MM-DDTHH:SS_difftype_routingkey.csv`
+`path/projectID_cohortID_YYYY-MM-DDTHH:SS_difftype_routingkey.csv`
 
 Where:
 
-- `path` : The optional folder prefix on the path the file should be written to.
+- `path` : The optional folder prefix on the path where the file should be written.
+- `projectID` : Identifies to which Amplitude project the cohort belongs.
 - `cohortID` : The unique identifier for your cohort. You can find this number in the URL of your cohort in Amplitude.
 - `YYYY-MM-DDTHH-SS` : The timestamp when the cohort was synced.
 - `difftype` : This describes which of the three user groups the CSV file contains. Acceptable values are `entering` , `exiting` , or `existing`.

@@ -10,7 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1734485610
 ---
 
-| <div class="big-column">Name</div>                                | Description                                                |
+| Name                                | Description                                                |
 | ----------------------------------------------------------------- | ---------------------------------------------------------- |
 | [List](#list)                                                     | List of experiments including their configuration details. |
 | [Get details](#get-details)                                       | Get the configuration details of an experiment.            |
@@ -261,9 +261,9 @@ Fetch a list of all versions for an experiment.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description      |
-| ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -419,10 +419,10 @@ Fetch details of a specific version of an experiment.
 
 ### Path variables
 
-| Name        | Requirement | Type   | Description       |
-| ----------- | ----------- | ------ | ----------------- |
-| `id`        | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.  |
-| `versionId` | Required    | string | The version's ID. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `versionId` | Required. Type: `string`. The version's ID. |
 
 ### Response
 
@@ -510,9 +510,9 @@ Fetch a list of all variants for an experiment.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description      |
-| ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -563,10 +563,10 @@ Fetch details of a specific variant of an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -608,10 +608,10 @@ Fetch a list of inclusions for a specific variant of an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -650,10 +650,10 @@ Fetch a list of cohort inclusions for a specific variant of an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -698,13 +698,13 @@ Create a new variant for an experiment.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The variant key.                                      |
-| `description`                          | Optional    | string | Description for the variant.                          |
-| `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. |
-| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
+| Name | Description |
+|------|-------------|
+| `key` | Required. Type: `string`. The variant key. |
+| `description` | Optional. Type: `string`. Description for the variant. |
+| `name` | Optional. Type: `string`. Name for the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Value must be a valid JSON element. |
+| `rolloutWeight` | Optional. Type: `number`. Rollout weight for non-targeted users. |
 
 {{partial:admonition type="example" heading="Request"}}
 
@@ -747,20 +747,20 @@ Edit a variant for an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                                                                                           |
-| -------------------------------------- | ----------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| `key`                                  | Optional    | string | The variant key.                                                                                                      |
-| `description`                          | Optional    | string | Description for the variant.                                                                                          |
-| `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
-| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
+| Name | Description |
+|------|-------------|
+| `key` | Optional. Type: `string`. The variant key. |
+| `description` | Optional. Type: `string`. Description for the variant. |
+| `name` | Optional. Type: `string`. Name for the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
+| `rolloutWeight` | Optional. Type: `number`. Rollout weight for non-targeted users. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -803,10 +803,10 @@ Remove a variant from an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -836,10 +836,10 @@ Add inclusions (users or devices) to experiment's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -853,9 +853,9 @@ Add inclusions (users or devices) to experiment's variant.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                     |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------- |
-| `inclusions`                           | Required    | object | Contains an string array of user or device ids. |
+| Name | Description |
+|------|-------------|
+| `inclusions` | Required. Type: `object`. Contains an string array of user or device ids. |
 
 ### Response
 
@@ -884,16 +884,16 @@ Add cohort inclusions to experiment's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                               |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------- |
-| `inclusions`                           | Required    | array  | An array of cohort IDs to add.           |
+| Name | Description |
+|------|-------------|
+| `inclusions` | Required. Type: `array`. An array of cohort IDs to add. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -935,11 +935,11 @@ Remove inclusions (users or devices) from experiment's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.                                                                                                         |
-| `variantKey` | Required    | string | The variant's key.                                                                                                       |
-| `userIndex`  | Required    | string | The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
+| `userIndex` | Required. Type: `string`. The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
 
 ### Response
 
@@ -966,10 +966,10 @@ Remove all inclusions (users or devices) from experiment's variant.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Response
 
@@ -996,16 +996,16 @@ Bulk remove users or devices from experiment's variant. Limited to 100 for each 
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                     |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------- |
-| `users`                                | Required    | object | Contains an string array of user or device ids. |
+| Name | Description |
+|------|-------------|
+| `users` | Required. Type: `object`. Contains an string array of user or device ids. |
 
 ### Response
 
@@ -1034,16 +1034,16 @@ Bulk remove cohorts from experiment's variant. Limited to 100 for each request.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
-| `variantKey` | Required    | string | The variant's key. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. The experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `variantKey` | Required. Type: `string`. The variant's key. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                |
-| -------------------------------------- | ----------- | ------ | ------------------------------------------ |
-| `users`                                | Required    | array  | An array of cohort IDs to remove.         |
+| Name | Description |
+|------|-------------|
+| `users` | Required. Type: `array`. An array of cohort IDs to remove. |
 
 ### Response
 
@@ -1072,9 +1072,9 @@ List all deployments for an experiment.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description      |
-| ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -1124,9 +1124,9 @@ Add a deployment to an experiment.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                 |
-| -------------------------------------- | ----------- | ------ | ------------------------------------------- |
-| `deployments`                          | Required    | string array | Contains an string array of deployment ids. |
+| Name | Description |
+|------|-------------|
+| `deployments` | Required. Type: `string array`. Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
 
@@ -1165,10 +1165,10 @@ Remove a deployment from an experiment.
 
 ### Path variables
 
-| Name           | Requirement | Type   | Description          |
-| -------------- | ----------- | ------ | -------------------- |
-| `id`           | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
-| `deploymentId` | Required    | string | The deployment's ID. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| `deploymentId` | Required. Type: `string`. The deployment's ID. |
 
 ### Response
 
@@ -1199,50 +1199,50 @@ Edit an experiment.
 
 ### Path variables
 
-| Name | Requirement | Type   | Description      |
-| ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
+| Name | Description |
+|------|-------------|
+| `id` | Required. Type: `string`. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                                                                                                                |
-| -------------------------------------- | ----------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                                 | Optional    | string       | Name.                                                                                                                                                                                                      |
-| `description`                          | Optional    | string       | Description.                                                                                                                                                                                               |
-| `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                                                   |
-| `bucketingSalt`                        | Optional    | string       | Bucketing salt.                                                                                                                                                                                            |
-| `bucketingUnit`                        | Optional    | string       | Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis.                                                                                          |
-| `evaluationMode`                       | Optional    | string       | Evaluation mode for the experiment, either `local` or `remote`.                                                                                                                                            |
-| `rolloutPercentage`                    | Optional    | number       | Rollout percentage for non-targeted users. Range 0 - 100.                                                                                                                                                  |
-| `targetSegments`                       | Optional    | object array      | See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
-| `enabled`                              | Optional    | boolean      | Property to activate or deactivate experiment.                                                                                                                                                             |
-| `archive`                              | Optional    | boolean      | Property to archive or unarchive experiment.                                                                                                                                                               |
-| `experimentType`                       | Optional    | string       | Experiment type, options include `a-b-test` or `multi-arm-bandit`.                                                                                                                                         |
-| `stickyBucketing`                      | Optional    | boolean      | If true, the experiment uses [sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing).                                                                                                 |
-| `startDate`                            | Optional    | string       | Start date of the experiment in ISO 8601 format.                                                                                                                                                           |
-| `endDate`                              | Optional    | string       | End date of the experiment in ISO 8601 format. End date can be null.                                                                                                                                       |
-| `exposureEvent`                        | Optional    | object       | See the [`exposureEvent`](#exposureevent) table for more information. If set to null, the Amplitude Exposure Event will be used.                                                                           |
-| `tags`                                 | Optional    | string array | A list of tags for the experiment. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all experiment tags first.         |
-| `decision`                             | Optional    | string       | Options include `rollout`, `rollback`, `continue-running`.                                                                                                                                                 |
-| `decisionReason`                       | Optional    | string       | The reason you made the decision you made.                                                                                                                                                              |
-| `rolledOutVariant`                     | Optional    | string       | The variant key or name that you rolled out.                                                                                                                                                             |
+| Name | Description |
+|------|-------------|
+| `name` | Optional. Type: `string`. Name. |
+| `description` | Optional. Type: `string`. Description. |
+| `bucketingKey` | Optional. Type: `string`. The user property to bucket the user by. |
+| `bucketingSalt` | Optional. Type: `string`. Bucketing salt. |
+| `bucketingUnit` | Optional. Type: `string`. Bucketing unit represented by a group type from the accounts add-on. Used for group level bucketing and analysis. |
+| `evaluationMode` | Optional. Type: `string`. Evaluation mode for the experiment, either `local` or `remote`. |
+| `rolloutPercentage` | Optional. Type: `number`. Rollout percentage for non-targeted users. Range 0 - 100. |
+| `targetSegments` | Optional. Type: `object array`. See the [`targetSegments`](#targetsegments) table for more information. When you provide the `targetSegments` object array, it replaces existing target segments. This option doesn't support cohorts. |
+| `enabled` | Optional. Type: `boolean`. Property to activate or deactivate experiment. |
+| `archive` | Optional. Type: `boolean`. Property to archive or unarchive experiment. |
+| `experimentType` | Optional. Type: `string`. Experiment type, options include `a-b-test` or `multi-arm-bandit`. |
+| `stickyBucketing` | Optional. Type: `boolean`. If true, the experiment uses [sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing). |
+| `startDate` | Optional. Type: `string`. Start date of the experiment in ISO 8601 format. |
+| `endDate` | Optional. Type: `string`. End date of the experiment in ISO 8601 format. End date can be null. |
+| `exposureEvent` | Optional. Type: `object`. See the [`exposureEvent`](#exposureevent) table for more information. If set to null, the Amplitude Exposure Event will be used. |
+| `tags` | Optional. Type: `string array`. A list of tags for the experiment. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all experiment tags first. |
+| `decision` | Optional. Type: `string`. Options include `rollout`, `rollback`, `continue-running`. |
+| `decisionReason` | Optional. Type: `string`. The reason you made the decision you made. |
+| `rolledOutVariant` | Optional. Type: `string`. The variant key or name that you rolled out. |
 
 #### exposureEvent
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                           |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------- |
-| `event_type`                           | Required    | string       | Event type.                                                                           |
-| `filters`                              | Required    | object array | A list of property filters. See the [`filters`](#filters) table for more information. |
+| Name | Description |
+|------|-------------|
+| `event_type` | Required. Type: `string`. Event type. |
+| `filters` | Required. Type: `object array`. A list of property filters. See the [`filters`](#filters) table for more information. |
 
 #### filters
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                              |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `group_type`                           | Optional    | string       | Group type of the filter; can be null. Can be `User` value or one of the group values, like `org_id`, `org name`          |
-| `subprop_key`                          | Required    | string       | Filter's key; can be null.                                                                                               |
-| `subprop_op`                           | Required    | string       | The [operation](#subprop_op) to use in this filter.                                                                      |
-| `subprop_type`                         | Required    | string       | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
-| `subprop_value`                        | Required    | string array | A list of values to filter the event property by.                                                                        |
+| Name | Description |
+|------|-------------|
+| `group_type` | Optional. Type: `string`. Group type of the filter; can be null. Can be `User` value or one of the group values, like `org_id`, `org name` |
+| `subprop_key` | Required. Type: `string`. Filter's key; can be null. |
+| `subprop_op` | Required. Type: `string`. The [operation](#subprop_op) to use in this filter. |
+| `subprop_type` | Required. Type: `string`. Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
+| `subprop_value` | Required. Type: `string array`. A list of values to filter the event property by. |
 
 #### subprop_op
 
@@ -1317,52 +1317,52 @@ Create a new feature experiment.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                                                                               |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `projectId`                            | Required    | string       | The project's ID.                                                                                                                                                         |
-| `key`                                  | Required    | string       | The flag key.                                                                                                                                                             |
-| `name`                                 | Optional    | string       | The experiment name.                                                                                                                                                      |
-| `description`                          | Optional    | string       | Description for the experiment.                                                                                                                                           |
-| `variants`                             | Optional    | object array | Array of [`variants`](#variants).                                                                                                                                         |
-| `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
-| `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
-| `targetSegments`                       | Optional    | object array      | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
-| `deployments`                          | Optional    | string array | Array of deployment ids that the experiment should be assigned to.                                                                                                           |
-| `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
-| `experimentType`                       | Optional    | string       | Experiment type; options include `a-b-test` or `multi-arm-bandit`.                                                                                                        |
+| Name | Description |
+|------|-------------|
+| `projectId` | Required. Type: `string`. The project's ID. |
+| `key` | Required. Type: `string`. The flag key. |
+| `name` | Optional. Type: `string`. The experiment name. |
+| `description` | Optional. Type: `string`. Description for the experiment. |
+| `variants` | Optional. Type: `object array`. Array of [`variants`](#variants). |
+| `bucketingKey` | Optional. Type: `string`. The user property to bucket the user by. |
+| `rolloutWeights` | Optional. Type: `object`. Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
+| `targetSegments` | Optional. Type: `object array`. See the [`targetSegments`](#targetsegments) table for more information. |
+| `deployments` | Optional. Type: `string array`. Array of deployment ids that the experiment should be assigned to. |
+| `evaluationMode` | Optional. Type: `string`. Experiment evaluation mode; options include `remote` or `local`. |
+| `experimentType` | Optional. Type: `string`. Experiment type; options include `a-b-test` or `multi-arm-bandit`. |
 
 #### variants
 
 The `variants` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. |
-| `name`                                 | Optional    | string | The variant name.                                     |
-| `description`                          | Optional    | string | The variant description.                              |
+| Name | Description |
+|------|-------------|
+| `key` | Required. Type: `string`. The key (a.k.a value) of the variant. |
+| `payload` | Optional. Type: `JSON`. Optional payload. Value must be a valid JSON element. |
+| `name` | Optional. Type: `string`. The variant name. |
+| `description` | Optional. Type: `string`. The variant description. |
 
 #### targetSegments
 
 The `targetSegments` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                |
-| -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------ |
-| `name`                                 | Required    | string       | The segment name.                                                                          |
-| `conditions`                           | Required    | object array | Array of [`conditions`](#conditions).                                                      |
-| `percentage`                           | Required    | number       | The allocation percentage for users who match a condition.                                 |
-| `rolloutWeights`                       | Required    | object       | A map from variant key to rollout weight. For example: `{ "control": 1, "treatment": 1 }`. |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. The segment name. |
+| `conditions` | Required. Type: `object array`. Array of [`conditions`](#conditions). |
+| `percentage` | Required. Type: `number`. The allocation percentage for users who match a condition. |
+| `rolloutWeights` | Required. Type: `object`. A map from variant key to rollout weight. For example: `{ "control": 1, "treatment": 1 }`. |
 
 #### conditions
 
 The `conditions` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                             |
-| -------------------------------------- | ----------- | ------------ | --------------------------------------------------------------------------------------- |
-| `type`                                 | Required    | string       | **Must have value: `property`**                                                         |
-| `prop`                                 | Required    | string       | The property to use in the condition. Prefix custom and free-form properties with `gp:` |
-| `op`                                   | Required    | string       | The [operation](#op) to use in this condition.                                          |
-| `values`                               | Required    | string array | The values to use in the operation.                                                     |
+| Name | Description |
+|------|-------------|
+| `type` | Required. Type: `string`. **Must have value: `property`** |
+| `prop` | Required. Type: `string`. The property to use in the condition. Prefix custom and free-form properties with `gp:` |
+| `op` | Required. Type: `string`. The [operation](#op) to use in this condition. |
+| `values` | Required. Type: `string array`. The values to use in the operation. |
 
 #### op
 

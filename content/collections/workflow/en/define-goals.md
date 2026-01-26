@@ -30,11 +30,6 @@ One common mistake is defaulting to a revenue metric. This happens when your var
 1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Metrics section and click the **edit** icon.
 2. Click **Add metric** and then select the metric you want from the drop-down list. 
 Alternately, click **Create a custom metric** to define your own metric.
-1. Select the metric you want. 
-Typical metrics are:
-   * Event segmentation
-   * Retention
-   * Funnel analysis
 1. Specify if the metric **should** or **should not** **Increase** or **Decrease** and by how many percentages.
 2. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 3. To add secondary metrics, click ***Add Metric*** and repeat this process.
