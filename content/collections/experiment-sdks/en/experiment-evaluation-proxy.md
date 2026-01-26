@@ -269,7 +269,7 @@ rate(redis_errors_total[5m]) > 0
 |---|---|
 | High latency (sustained >100ms) | Check Redis latency: `redis-cli --latency -h <host>` |
 | Cohorts not loading | Verify management key, check logs for sync errors. |
-| Proxy won't start | Verify Redis connectivity, check all API keys |
+| Proxy won't start | Verify Redis connectivity, check all API keys. |
 | Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds`. |
 
 ### Capacity planning
