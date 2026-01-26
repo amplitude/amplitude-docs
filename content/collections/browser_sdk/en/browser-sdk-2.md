@@ -609,12 +609,40 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 </form>
 ```
 
-Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
+#### Disable form interaction tracking
+
+Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     formInteractions: false, 
+  },
+});
+```
+
+#### Control form submit tracking
+
+{{partial:admonition type="note" heading="Minimum SDK version"}}
+Minimum SDK version 2.34.0.
+{{/partial:admonition}}
+
+You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. 
+
+By default, Amplitude tracks all form submit events. However, when a form has the [`novalidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/noValidate) attribute set, the browser [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) fires without performing default validation checks. This means the submit event triggers even if the form is empty or contains invalid data. In these cases, use `shouldTrackSubmit` to implement custom validation logic and control when Amplitude tracks the submit event.
+
+The `shouldTrackSubmit` callback receives the form submit event and should return `true` to track the submit event or `false` to skip tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        // Only track submit if form is valid
+        const form = event.target;
+        return form.checkValidity();
+      }
+    }
   },
 });
 ```
