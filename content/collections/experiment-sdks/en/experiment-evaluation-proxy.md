@@ -235,7 +235,7 @@ Prefer a cluster-based approach as cohort size and count increase. Test with you
 #### Latency
 
 - **Normal**: 1-5ms.
-- **During background cohort refresh**: p95 latency can reach up to 50ms. This typically occurs when a significant number of users are added to or removed from a cohort, or when new large cohorts are attached to a flag.
+- **During background cohort refresh**: p95 latency can reach up to 50ms. This typically occurs when you add or remove a significant number of users from a cohort, or attach new large cohorts to a flag.
 
 #### Cold start
 
@@ -268,7 +268,7 @@ rate(redis_errors_total[5m]) > 0
 | Issue | Solution |
 |---|---|
 | High latency (sustained >100ms) | Check Redis latency: `redis-cli --latency -h <host>` |
-| Cohorts not loading | Verify management key, check logs for sync errors |
+| Cohorts not loading | Verify `managementKey`, check logs for sync errors |
 | Proxy won't start | Verify Redis connectivity, check all API keys |
 | Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds` |
 
