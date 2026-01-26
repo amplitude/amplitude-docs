@@ -193,10 +193,10 @@ A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) runnin
 
 #### Resource requirements
 
-Configure each pod with 4 CPU cores and 9 GiB RAM for approximately 5,000 requests per second capacity.
+Configure each pod with 4 CPU cores and 9 GiB RAM for a capacity of approximately 5,000 requests each second.
 
-- **Minimum replicas**: Deploy at least 2 replicas for high availability.
-- **Horizontal scaling**: Add pods to increase capacity. For example, 4 pods provide approximately 20,000 requests per second.
+- **Minimum replicas**: Deploy at least two replicas for high availability.
+- **Horizontal scaling**: Add pods to increase capacity. For example, four pods provide approximately 20,000 requests each second.
 
 #### Redis configuration
 
@@ -208,7 +208,7 @@ Use for small deployments.
 configuration:
   redis:
     uri: "rediss://primary:6379"
-    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling
+    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling.
 ```
 
 **Recommended specs**: 12+ GiB memory, cache.m7g.xlarge or equivalent.
@@ -226,7 +226,7 @@ configuration:
 
 **Recommended specs**: 2-3 shards, 1-2 replicas per shard, 12+ GiB per node.
 
-{{partial:admonition type="tip" heading=""}}
+{{partial:admonition type="tip" heading="Cluster-based approach"}}
 Prefer a cluster-based approach as cohort size and count increase. Test with your data to finalize the configuration.
 {{/partial:admonition}}
 
@@ -268,9 +268,9 @@ rate(redis_errors_total[5m]) > 0
 | Issue | Solution |
 |---|---|
 | High latency (sustained >100ms) | Check Redis latency: `redis-cli --latency -h <host>` |
-| Cohorts not loading | Verify `managementKey`, check logs for sync errors |
-| Proxy won't start | Verify Redis connectivity, check all API keys |
-| Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds` |
+| Cohorts not loading | Verify `managementKey`, check logs for sync errors. |
+| Proxy won't start | Verify Redis connectivity, check all API keys. |
+| Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds`. |
 
 ### Capacity planning
 
