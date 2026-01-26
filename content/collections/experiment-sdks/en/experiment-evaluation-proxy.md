@@ -193,7 +193,7 @@ A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) runnin
 
 #### Resource requirements
 
-Configure each pod with 4 CPU cores and 9 GiB RAM for approximately 5,000 requests per second capacity.
+Configure each pod with 4 CPU cores and 9 GiB RAM for a capacity of approximately 5,000 requests each second.
 
 - **Minimum replicas**: Deploy at least two replicas for high availability.
 - **Horizontal scaling**: Add pods to increase capacity. For example, 4 pods provide approximately 20,000 requests per second.
