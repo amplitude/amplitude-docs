@@ -208,7 +208,7 @@ Use for small deployments.
 configuration:
   redis:
     uri: "rediss://primary:6379"
-    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling
+    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling.
 ```
 
 **Recommended specs**: 12+ GiB memory, cache.m7g.xlarge or equivalent.
