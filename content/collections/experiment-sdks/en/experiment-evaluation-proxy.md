@@ -195,7 +195,7 @@ A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) runnin
 
 Configure each pod with 4 CPU cores and 9 GiB RAM for approximately 5,000 requests per second capacity.
 
-- **Minimum replicas**: Deploy at least 2 replicas for high availability.
+- **Minimum replicas**: Deploy at least two replicas for high availability.
 - **Horizontal scaling**: Add pods to increase capacity. For example, 4 pods provide approximately 20,000 requests per second.
 
 #### Redis configuration
