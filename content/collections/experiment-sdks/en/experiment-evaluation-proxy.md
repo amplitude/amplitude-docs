@@ -177,6 +177,16 @@ docker run \
 The [evaluation-proxy GitHub repository](https://github.com/amplitude/evaluation-proxy) also contains an example using `docker compose` to run the proxy alongside a local Redis image.
 {{/partial:admonition}}
 
+## Evaluation
+
+The Evaluation Proxy exposes remote [Evaluation API](/docs/apis/experiment/experiment-evaluation-api) and [SDK](/docs/sdks/experiment-sdks) endpoints to run local evaluation within your cluster. This is useful to enable platforms and languages which aren't supported by local evaluation SDKs. As an added benefit, fetch requests made to the evaluation proxy can target cohorts of users, and have assignment events tracked automatically to Amplitude.
+
+**You must send requests to the service using `http` on port `3546`.**
+
+{{partial:admonition type="example" heading="Kubernetes"}}
+A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) running within a kubernetes namespace `main` is from within the cluster at: `http://evaluation-proxy.main.svc.cluster.local:3546`
+{{/partial:admonition}}
+
 ## Best practices
 
 ### Production deployment
@@ -269,13 +279,3 @@ rate(redis_errors_total[5m]) > 0
 | <10k req/s | 2 | Standalone + replica |
 | 10-20k req/s | 3-4 | Standalone or 2-shard cluster |
 | >20k req/s | 5+ | 2-3 shard cluster |
-
-## Evaluation
-
-The Evaluation Proxy exposes remote [Evaluation API](/docs/apis/experiment/experiment-evaluation-api) and [SDK](/docs/sdks/experiment-sdks) endpoints to run local evaluation within your cluster. This is useful to enable platforms and languages which aren't supported by local evaluation SDKs. As an added benefit, fetch requests made to the evaluation proxy can target cohorts of users, and have assignment events tracked automatically to Amplitude.
-
-**You must send requests to the service using `http` on port `3546`.**
-
-{{partial:admonition type="example" heading="Kubernetes"}}
-A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) running within a kubernetes namespace `main` is from within the cluster at: `http://evaluation-proxy.main.svc.cluster.local:3546`
-{{/partial:admonition}}
