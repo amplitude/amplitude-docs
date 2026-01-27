@@ -79,6 +79,9 @@ tree:
             id: 92597bc4-7868-425f-94c8-b399c989b998
             entry: c7210fe3-77ed-43ee-9f76-7ad20736c439
           -
+            id: 429dc4fd-7d45-4fe4-8269-6b3384c57c73
+            entry: stale-flag-management
+          -
             id: e9498dd2-3e82-4220-b494-c775bc8f3b6a
             entry: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
             title: 'Experiment templates'
