@@ -19,7 +19,7 @@ A feature flag or experiment becomes stale when it meets one of these conditions
 * **Rolled out**: The flag or experiment has been rolled out to 100% of users for more than 30 days.
 * **Rolled back**: The flag or experiment is inactive or rolled out to 0% for more than 30 days.
 
-After a flag or experiment becomes stale, it's ready for cleanup. This means you should remove the flag from your codebase and archive it in Amplitude.
+After a flag or experiment becomes stale, it's ready for cleanup. This means you can remove the flag from your codebase and archive it in Amplitude.
 
 ## Viewing stale flags and experiments
 
