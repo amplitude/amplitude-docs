@@ -25,9 +25,9 @@ After a flag or experiment becomes stale, it's ready for cleanup. You should rem
 
 In the Feature Flags list, the stale status appears as a secondary status badge next to the primary status. Click the **Stale** option which filters the table to show only stale flags.
 
-## Working with stale flags and experiments
+## Working with stale flags
 
-Hover over the Stale badge on a flag. Information appears that displays when that specific flag became stale. The information pop-up contains information on the Rollout status of the flag. From this pop-up, you can choos to archive the flag or to Unmark the flag as stale.
+Hover over the Stale badge on a flag. Information appears that displays when that specific flag became stale. The information pop-up contains information on the Rollout status of the flag. From this pop-up, you can choos to archive the flag or to unmark the flag as stale.
 
 ## Setting stale dates
 
