@@ -49,7 +49,7 @@ If you change the rollout after you set a stale date, you can update the stale d
 
 * On January 3, you roll out a flag to 100% and set the stale date to February 3.
 * On January 5, you add a segment to the flag that is rolled out to 0%.
-* When saving, you're prompted to update the stale date.
+* When saving, Amplitude prompts you to update the stale date.
 
 ## Notifications
 
