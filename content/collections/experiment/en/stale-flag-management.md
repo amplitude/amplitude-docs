@@ -25,7 +25,7 @@ After a flag or experiment becomes stale, it's ready for cleanup. This means you
 
 ### Stale status badge
 
-When you're looking at the list of your flags a status badge appears next to the flag indicating that it's stale. Hover over the stale badge to view when it became stale and update the stale date if needed.
+When you're looking at the list of your flags, a status badge appears next to the flag indicating that it's stale. Hover over the stale badge to view when it became stale and update the stale date if needed.
 
 ### Filtering in the table view
 
