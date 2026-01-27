@@ -10,7 +10,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-Identify and manage feature flags and experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, you can maintain your list of flags to only the ones that are currently relevant.
+Identify and manage feature flags and experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, your list of flags displays only the ones that are active or relevant.
 
 ## How flags and experiments become stale
 
@@ -19,7 +19,7 @@ A feature flag or experiment becomes stale when it meets one of these conditions
 * **Rolled out**: The flag or experiment has been rolled out to 100% of users for more than 30 days.
 * **Rolled back**: The flag or experiment is inactive or rolled out to 0% for more than 30 days.
 
-After a flag or experiment becomes stale, it's ready for cleanup. You should remove the flag from your codebase and archive it.
+After a flag or experiment becomes stale, it's ready for cleanup. Remove the flag from your codebase and archive it.
 
 ### Filtering in the table view
 
@@ -39,7 +39,7 @@ By default, Amplitude sets the stale date to 30 days after you roll out or roll 
 
 ### Updating stale dates
 
-If you change the rollout after a stale date is already set, you can update the stale date. For example:
+If you change the rollout after a stale date is already set, you can update the date that the flag is considered stale. For example:
 
 * On January 3, you roll out a flag to 100% and set the stale date to February 3.
 * On January 5, you add a segment to the flag that is rolled out to 0%.
@@ -47,7 +47,7 @@ If you change the rollout after a stale date is already set, you can update the 
 
 ## Notifications
 
-Amplitude can send you notifications when flags become stale. Notifications are sent once each day to all owners of stale flags and experiments that became stale in the last 24 hours.
+Amplitude can send you notifications when flags become stale. Experiment sends notification one time each day to all listed owners of the flags that became stale over the last 24 hours.
 
 You can receive notifications through:
 
@@ -57,14 +57,14 @@ You can receive notifications through:
 
 Configure [notification preferences](/docs/feature-experiment/notifications) in your organization settings.
 
-## Bulk archving stale flags
+## Bulk archiving stale flags
 
-After a flag becomes stale, remove them from your list.
+After a flag (or flags) becomes stale, remove it (or them) from your list.
 
 1. **Remove the flag from your codebase**: Remove the feature flag code from your application. If the flag is deployed across multiple services or codebases, remove it from each location.
 2. **Archive the flag in Amplitude**: Archive the flag or experiment in Amplitude to remove it from your active flags list.
 
-##### To remove a stale flag from Amplitud
+##### To remove a stale flag from Amplitude
 
 1. Select the flag you want to remove.
 2. Click **Archive**.
@@ -75,4 +75,4 @@ If a flag or experiment has multiple variants and one variant is rolled out to 1
 
 ## Using Amplitude AI or MCP
 
-You can use Amplitude AI or Amplit MCP to highlight stale flags and either update the stale date or archive them. Within the agent window, ask Amplitude to generate a list of your stale flags. After it gives you the list, you can continue the conversation to archive or modify your stale flags.
+You can use Amplitude AI or Amplitude MCP to highlight stale flags and either update the stale date or archive them. Within the agent window, ask Amplitude to generate a list of your stale flags. After it gives you the list, you can continue the conversation to archive or modify your stale flags.
