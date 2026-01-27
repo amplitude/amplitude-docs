@@ -53,7 +53,7 @@ If you change the rollout after you set a stale date, you can update the stale d
 
 ## Notifications
 
-Amplitude can send you notifications when flags become stale. Experiment sends notification one time each day to all listed owners of the flags that became stale over the last 24 hours.
+You can receive notifications when flags become stale. Amplitude sends a notification each day to all listed owners of the flags that became stale over the previous 24 hours.
 
 You can receive notifications through:
 
