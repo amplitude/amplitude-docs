@@ -19,7 +19,7 @@ The Guides and Surveys Android SDK requires:
 * Android API Level 24 (Android 7.0)+
 * Kotlin 1.8.22+
 
-Guides and Surveys can be used independently of Amplitude Analytics.
+You can use Guides and Surveys independently of Amplitude Analytics.
 
 ## Install and initialize the SDK
 

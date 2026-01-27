@@ -19,7 +19,7 @@ The Guides and Surveys iOS SDK requires:
 * User devices on iOS 15 or higher
 * Swift 5.9+
 
-Guides and Surveys can be used independently of Amplitude Analytics.
+You can use Guides and Surveys independently of Amplitude Analytics.
 
 ## Install and initialize the SDK
 
