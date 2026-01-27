@@ -29,10 +29,6 @@ After a flag or experiment becomes stale, it's ready for cleanup. This means you
 ### Stale status badge
 
 When you're looking at the list of your flags a status badge appears next to the flag indicating that it's stale. Hover over the stale badge to view when it became stale and update the stale date if needed.
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 ### Filtering in the table view
 
@@ -52,15 +48,7 @@ By default, Amplitude sets the stale date to 30 days after you roll out or roll 
 
 ### Updating stale dates
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-If you change the rollout after a stale date is already set, you can update the date that the flag is considered stale. For example:
-=======
 If you change the rollout after you set a stale date, you can update the stale date. For example:
->>>>>>> Stashed changes
-=======
-If you change the rollout after you set a stale date, you can update the stale date. For example:
->>>>>>> Stashed changes
 
 * On January 3, you roll out a flag to 100% and set the stale date to February 3.
 * On January 5, you add a segment to the flag that is rolled out to 0%.
