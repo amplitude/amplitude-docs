@@ -69,7 +69,6 @@ After a flag becomes stale, remove them from your list.
 1. Select the flag you want to remove.
 2. Click **Archive**.
 
-
 ### Handling multiple variants
 
 If a flag or experiment has multiple variants and one variant is rolled out to 100%, keep that variant in your application while removing the others. This ensures the winning variant remains active.
