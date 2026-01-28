@@ -8,6 +8,28 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.0.3 (Android, iOS, React Native) \[2026-01-26\]
+
+### ✨ Features
+- Feat: add support for `autoRefreshIntervalSeconds` option to `AmplitudeBootOptions` to configure the auto-refresh interval for the SDK (GSDK-799) \[android, ios\]
+- Feat: add SDK method `setAutoRefreshInterval` to configure the auto-refresh interval for the SDK on the fly (GSDK-799) \[android, ios\]
+- Feat: add SDK method `refresh` to manually trigger a refresh of targeting data (GSDK-799) \[android, ios\]
+
+
+### 🐛 Fixes
+
+- Fix: persist survey values when step-navigating (GSDK-582) \[android, ios\]
+- Fix: hide buttons until text animation completes, if applicable (GSDK-780) \[android, ios\]
+- Fix: popover overlaps system bars because we were not consuming WindowInsets from host app appropriately (GSDK-784) \[android\]
+- Fix: crash occurring on transition to a new activity that has `enableEdgeToEdge()` by waiting for root view to be attached to window (GSDK-768) \[android\]
+- Fix: ensure Modal Guides & Surveys are properly dismissed when `shutdown()` is called (GSDK-790) \[ios\]
+- Fix: update default content alignment to leading GSDK-796 \[ios\]
+- Fix: identify containerView as EngagementWindow to dismiss keyboard as needed GSDK-797 \[ios\]
+- Fix: expand nudge to show Other textfield without scrolling (GSDK-779) \[ios\]
+- Fix: internal engagement android dependency version is incorrectly set \[rn\]
+- Fix: fix theming issues (GSDK-676) \[android, ios\]
+
+
 ## 2.0.2 (iOS) \[2026-01-09\]
 
 ### 🐛 Fixes
