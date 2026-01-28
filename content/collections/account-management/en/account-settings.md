@@ -12,7 +12,7 @@ this_article_will_help_you:
 ---
 Any user within your organization can access the Settings page, but only organization admins and managers can edit it. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
-Click the gear icon to open Settings. 
+Click the **gear** icon to open Settings. 
 
 ## Organizational settings
 

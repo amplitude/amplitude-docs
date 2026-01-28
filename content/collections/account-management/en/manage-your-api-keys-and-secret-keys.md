@@ -10,10 +10,6 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721166679
 ---
 
-{{partial:admonition type="tip" heading="Contact support to enable this feature"}}
-This feature is available to organizations on an Enterprise plan. Contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us) to enable it in your org.
-{{/partial:admonition}}
-
 Amplitude’s self-service key management page helps Managers & Admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
 
 You can: 

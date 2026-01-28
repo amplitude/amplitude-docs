@@ -10,14 +10,12 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717697547
 ---
-When working with product analytics, understanding **why** something is happening is arguably more important than understanding **what** is happening in the first place. This is especially true when Amplitude is showing **anomalous data**—i.e., events and properties that are out of the ordinary, and to a significant extent. With anomalous data, you need to be able to determine if what you're seeing is just a random blip, or the beginning of a shift in the way your users interact with your product.
+When working with product analytics, understanding why something is happening is arguably more important than understanding what is happening in the first place. This is especially true when Amplitude is showing anomalous data. As in, events and properties that are out of the ordinary, and to a significant extent. With anomalous data, you need to be able to determine if what you're seeing is just a random blip, or the beginning of a shift in the way your users interact with your product.
 
 Historically, that insight has not always been easy to come by. For example, it would take a decent amount of guesswork to navigate down the hierarchy from *Platform → OS → Device family* to finally discover that an observed change is driven by users on a specific type of device.
 
-Amplitude's **Root Cause Analysis (RCA)** feature addresses this by analyzing the properties of the anomalous events for you, while also pulling in external context like country-specific holidays and new releases of your product. In this way, it can potentially explain the anomaly or rule out the obvious. It's designed to streamline your workflow and help you quickly understand the “why?” of a change, so that you can easily answer questions like “Which user groups best explain this change?” or “How are other correlated metrics affected?”
+Amplitude's Root Cause Analysis (RCA) feature addresses this by analyzing the properties of the anomalous events for you, while also pulling in external context like country-specific holidays and new releases of your product. In this way, it can potentially explain the anomaly or rule out the obvious. It's designed to streamline your workflow and help you quickly understand the “why?” of a change, so that you can easily answer questions like “Which user groups best explain this change?” or “How are other correlated metrics affected?”
 
-
-* Users on Growth plans require the Insights add-on to use this feature.
 * This feature is supported for Event Segmentation charts only. It cannot be used with formulas.
 
 ## Analyze an anomalous data point

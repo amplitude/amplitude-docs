@@ -19,11 +19,6 @@ If want to comply with end-user data deletion requests mandated by global privac
 
 ## Before you begin
 
-This feature is available to users on Growth and Enterprise plans.
-
-* Accounts on the Growth plan can scan up to one billion (1,000,000,000) events per month.
-* Accounts on the Enterprise plan can scan up to ten billion (10,000,000,000) events per month.
-
 Self-service data deletion requires Administrator privileges.
 
 After you submit your deletion request to Amplitude, you can't cancel it.
