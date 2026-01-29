@@ -27,6 +27,8 @@ To manage your keys, follow these steps:
 
 ## API key
 
+An API key identifies your project so Amplitude can route ingested data to it. Learn more about [API Key](/docs/apis/keys-and-tokens#api-key).
+
 ### Legacy API key
 
 The first time you use API key management, you see the legacy API key in the *API Keys* tab. Amplitude created this key when you created the project. You can't disable it but you can click **Rotate** to replace the key.
@@ -51,6 +53,8 @@ To revoke an API key, follow these steps:
 After you click **Revoke**, the key is permanently unusable. You still retain the API key for your records.
 
 ## Secret key (Beta)
+
+A secret key authenticates you to server-side Analytics APIs that read or modify project data. Learn more about [secret key](/docs/apis/keys-and-tokens#secret-key).
 
 ### Generate a secret key
 
