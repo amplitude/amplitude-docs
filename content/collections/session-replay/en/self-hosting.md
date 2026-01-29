@@ -1,11 +1,11 @@
 ---
 id: 3f8a2c5d-9e1b-4a7f-8c3e-6d0f2a5b9c4e
 blueprint: session-replay
-title: 'Self-hosting Session Replay'
+title: 'Self-host Session Replay'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1737936000
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1769723460
 instrumentation_guide: false
 ---
 Self-hosting Session Replay lets you route Session Replay data through your own infrastructure before it reaches Amplitude. This approach helps organizations that need to:
