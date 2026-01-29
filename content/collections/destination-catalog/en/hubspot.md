@@ -27,16 +27,18 @@ integration_category:
 
 Keep these things in mind when sending events to HubSpot:
 
+- **Don't manually create or delete events or property definitions in HubSpot for your Amplitude events.** Amplitude automatically creates the necessary event and property definitions when you enable the integration. Amplitude expects event and property definitions in HubSpot to be named and typed according to Amplitude's internal specification so the integration can match them consistently. If you manually create event or property definitions in HubSpot that don't match the Amplitude integration, you can't send events without additional steps as event definition names can't be changed or permanently deleted in HubSpot. It's safe to edit display names and descriptions in HubSpot. For more information, review [Troubleshooting](#troubleshooting)
 - If you already have an existing HubSpot streaming connection, re-authenticate with HubSpot to grant additional permissions to create events and properties for you. With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as custom events in HubSpot.
-- A HubSpot Enterprise subscription is required to send custom events. See the [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information.
-- Relevant limits for HubSpot events are:
-    - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
+- Sending custom events requires a HubSpot Enterprise subscription. See the [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information.
+- HubSpot events have these limits:
+    - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSpot's [Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
     - HubSpot limits event streaming to 30 million events per month. This is a HubSpot-enforced limitation.
     - HubSpot allows up to 50 custom properties for each custom event.
+    - Amplitude truncates event and property names to 50 characters to comply with HubSpot's API limitations.
 - Amplitude sends selected event and user properties along with the event.
-- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.     
+- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.  
 
 ## Setup
 
@@ -47,10 +49,27 @@ Keep these things in mind when sending events to HubSpot:
 3. Enter a sync name, then click *Create Sync*.
 4. Choose a HubSpot Account ID or authenticate with HubSpot. If you have an existing Account ID, re-authenticate to grant the necessary permissions from HubSpot.
 5. Toggle the *Send events* filter to select the events to send.
-6. Under *Select & filter events*, choose the Amplitude Events you would like to map to HubSpot. Provide a HubSpot Internal Event Name that corresponds to the Amplitude event you’ve selected. HubSpot recommends choosing the events that are most important to your use case.
-7. Under *Map properties to destinations*, select the Event Properties you would like to send. The HubSpot identifier for this object must be at least one of the following: `User Token`, `Email` or `Object ID`.
+6. Under *Select & filter events*, choose the Amplitude Events you want to map to HubSpot. Provide a HubSpot Internal Event Name that corresponds to the Amplitude event you’ve selected. HubSpot recommends choosing the events that are most important to your use case.
+7. Under *Map properties to destinations*, select the Event Properties you want to send. The HubSpot identifier for this object must be at least one of the following: `User Token`, `Email` or `Object ID`.
 8. Under *Select additional properties*, select any extra event and user properties you want to send to HubSpot. If you don't select any properties here, Amplitude doesn't send any.
 9. When finished, enable the destination and click *Save*.
+10. Click *Create in HubSpot* if there are events and/or properties that are missing.
+    
+    * If no event or property is missing in HubSpot, the creation modal doesn't appear.
+    * If errors appear on this step, check the Troubleshooting section for next steps.
+
+11. Click *Continue*, verify your connection, and click *Finish*.
+
+### Troubleshooting
+
+If you encounter an error when trying to create event and/or property definitions in HubSpot, or if you manually created and then deleted a custom event matched with an Amplitude event in HubSpot, try the following workaround. It creates a custom event that references the original event and uses it instead. This doesn't impact existing charts using the original event in Amplitude.
+
+1. In Amplitude Data, navigate to *Events > Custom Events*.
+2. Click *Create custom event*.
+3. Name the custom event something similar to the original, but not the same (for example, if you deleted `user_signup`, use `user_signup_copy`). This ensures Amplitude can create the event in HubSpot without naming conflicts.
+4. Configure the custom event to be defined on the original event.
+5. Update your HubSpot event stream to send this new custom event instead of the original one (using the previous example, send `user_signup_copy` instead of `user_signup`), and complete the setup flow.
+6. Once the event is created successfully, you can use it in HubSpot workflows, reports, and automations in place of the other event.
 
 ## Use custom event data in HubSpot
 
@@ -77,7 +96,7 @@ To view event details on the contact timeline:
 In a workflow, you can delay based on custom event completions using a [Delay until event happens action](https://knowledge.hubspot.com/workflows/use-delays) or an event enrollment trigger.
 
 1. In your HubSpot account, navigate to *Automation > Workflows*.
-2. Click the name of a workflow. Or, learn how to create a new workflow.
+2. Click the name of a workflow or, learn how to create a new workflow.
 3. In the workflow editor, click the + icon to add a workflow action.
 4. In the right panel, click *Delay until the event happens*.
 5. Configure the delay:
@@ -97,7 +116,7 @@ To disconnect HubSpot from within Amplitude, follow these steps:
 3. Follow the instructions displayed in the confirmation modal that appears.
 4. Click *Delete*.
 
-Disconnecting HubSpot means Amplitude won't process new data sent from this source. Amplitude doesn't delete historical data from HubSpot, so you can still analyze it.
+Disconnecting HubSpot means Amplitude doesn't process new data sent from this source. Amplitude doesn't delete historical data from HubSpot, so you can still analyze it.
 
 ## Uninstall Amplitude from a HubSpot account
 
@@ -108,4 +127,4 @@ To disconnect HubSpot from within Amplitude, follow these steps:
 3. Follow the instructions displayed in the confirmation modal that appears.
 4. Click *Uninstall*.
 
-This won’t delete any existing Amplitude data in HubSpot, but it will no longer be updated.
+This doesn't delete any existing Amplitude data in HubSpot, but it's no longer updated.
