@@ -79,6 +79,10 @@ Click the gear icon in the Short answer block to access more settings.
 | Required                | Enable to require the user to enter a rating.                                |
 | Pre-fill key | Populate the input with a user property that you specify, using the ingested name of the property, for example `device_type`. If the user property isn't found for a specific user, nothing populates in the field. User properties must be available client-side during the current session. Go to [Set user properties](/docs/guides-and-surveys/sdk#set-user-properties) for implementation details. |
 
+{{partial:admonition type="note" heading="Mobile pin limitations"}}
+Short answer and long answer blocks aren't available for mobile pins.
+{{/partial:admonition}}
+
 ### List
 
 Lists provide a multiple choice input, enabling users to choose a response from a list that you define.
