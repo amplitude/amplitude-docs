@@ -450,24 +450,27 @@ The `debug` configuration field is still supported. When set to `true`, it overr
 
 ## Access Amplitude cookies
 
-If you're using the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for ensuring that the Device ID on the server matches the Device ID set on the client, especially if the client hasn't yet generated a Device ID.
+If you use the Amplitude Analytics SDK on the client-side, the Node.js server SDK provides an `AmplitudeCookie` class with convenience functions for parsing and interacting with the Amplitude identity cookie. This is useful for server-side rendering (SSR) use cases, where you need to:
+
+- Maintain consistent Device IDs between server-rendered and client-side code.
+- Access the user's Amplitude identity before the page renders.
+- Generate and set cookies on the server when they don't exist yet.
+
+This ensures that the Device ID on the server matches the Device ID set on the client, even if the client didn't generate a Device ID yet.
 
 ```js
 import { AmplitudeCookie } from '@amplitude/experiment-node-server';
 import { v4 as uuidv4 } from 'uuid';
-
 // Get the cookie name for the Amplitude API key
 // For Browser SDK 2.0 cookies, pass true as second parameter:
 // const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key', true);
 const ampCookieName = AmplitudeCookie.cookieName('amplitude-api-key');
 let deviceId = null;
-
 // Try to get device ID from existing cookie
 if (req.cookies[ampCookieName]) {
   deviceId = AmplitudeCookie.parse(req.cookies[ampCookieName]).device_id;
   // For Browser SDK 2.0: AmplitudeCookie.parse(req.cookies[ampCookieName], true).device_id;
 }
-
 // If no device ID found, generate a new one and set the cookie
 if (!deviceId) {
   deviceId = uuidv4();
@@ -480,5 +483,4 @@ if (!deviceId) {
   });
 }
 ```
-
 
