@@ -54,7 +54,7 @@ After you click **Revoke**, the key is permanently unusable. You still retain th
 
 ## Secret key (Beta)
 
-A secret key authenticates you to server-side Analytics APIs that read or modify project data. Learn more about [secret key](/docs/apis/keys-and-tokens#secret-key).
+Secret keys authenticate you to server-side Analytics APIs that read or modify project data. For more information, review [Keys and Tokens](/docs/apis/keys-and-tokens#secret-key).
 
 ### Generate a secret key
 
