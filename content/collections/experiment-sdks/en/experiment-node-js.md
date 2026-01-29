@@ -456,7 +456,7 @@ If you use the Amplitude Analytics SDK on the client-side, the Node.js server SD
 - Access the user's Amplitude identity before the page renders.
 - Generate and set cookies on the server when they don't exist yet.
 
-This ensures that the Device ID on the server matches the Device ID set on the client, even if the client didn't generate a Device ID yet.
+This ensures that the Device ID on the server matches the Device ID set on the client, even if the client hasn't generated a Device ID yet.
 
 ```js
 import { AmplitudeCookie } from '@amplitude/experiment-node-server';
