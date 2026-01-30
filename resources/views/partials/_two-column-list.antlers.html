@@ -1,0 +1,18 @@
+{{# 
+  Two-column list layout that automatically wraps content into columns
+  
+  Usage: 
+  {{partial:two-column-list}}
+  - Item 1
+  - Item 2
+  - Item 3
+  - Item 4
+  {{/partial:two-column-list}}
+  
+  Note: Uses CSS columns for automatic wrapping. For manual column control,
+  use _two-column-list-grid.antlers.html instead.
+#}}
+
+<div class="my-6 two-column-list">
+  {{ slot | antlers | strip_tags('br') }}
+</div>

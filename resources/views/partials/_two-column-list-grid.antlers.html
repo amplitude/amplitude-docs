@@ -1,0 +1,30 @@
+{{# 
+  Two-column grid wrapper - splits content before markdown processing
+  
+  Usage: 
+  {{partial:two-column-list-grid}}
+  
+  **Column 1 content**
+  - Item 1
+  - Item 2
+  
+  ---SPLIT---
+  
+  **Column 2 content**
+  - Item 3
+  - Item 4
+  
+  {{/partial:two-column-list-grid}}
+  
+  Use ---SPLIT--- on its own line to separate columns
+#}}
+
+{{ columns = slot | explode('---SPLIT---') }}
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+{{ columns }}
+  <div class="prose max-w-none">
+    {{ value | markdown | trim }}
+  </div>
+{{ /columns }}
+</div>
