@@ -71,19 +71,39 @@ Amplitude organizes permissions by product area:
 
 ### Projects
 
-In Amplitude, you assign roles to users for each project. This means that project membership determines access to that project, and roles within the project determine what a user can do. 
-
-If a user has conflicting roles for the same project through group assignment (for example, Group A assigns them Viewer for Project A, but Group B assigns them Manager for Project A), they get the union of both sets of permissions. On the Members page, that user's role shows as "multiple" with an error warning icon.
-
-If you set a user's permission at the individual level (directly in the Members page), that role overrides any other assignments.
+In Amplitude, you assign roles to users for each project. This means that project membership determines access to that project, and roles within the project determine what a user can do.
 
 ### Groups
 
 Groups enable you to manage users at scale. They define the projects that a member of the group has access to, and their role within those projects. Groups most often map to teams in your organization. For example, the Business Intelligence team has a defined set of Amplitude projects where they do their work, and a set of permissions they need to do that work. As a result, you may have a group called "Business Intelligence," with access to Project A and Project B, with the `Analyst` role.
 
-{{partial:admonition type="note" heading="Permission conflicts"}}   
-When you assign roles to users both individually and through groups, the permissions may conflict. When this happens, Amplitude provides grants the user the combination of roles assigned individually and through groups, and displays a warning in the UI.
-{{/partial:admonition}}
+#### Group permission prioritization
+
+When you add a user to a group, admins can't change their permissions at the individual level for projects where access is granted through that group. This ensures permission consistency and simplifies troubleshooting when determining why a user has certain access levels.
+
+When you try to modify permissions for a user who has group-assigned access, a tooltip appears stating "User(s) are assigned access to this project via Group(s)".
+
+To change a user's permissions for projects they access through a group:
+
+- Remove the user from the group and assign permissions directly, or
+- Modify the group's permissions for that project
+
+### Permission assignment warnings
+
+Amplitude displays warning indicators when permission assignments require attention:
+
+**Multiple**: Displayed when a user has different roles for the same project, typically because they belong to multiple groups with different permission levels. When this occurs, Amplitude grants the user the union of all assigned role permissions for that project.
+
+**Conflict**: Displayed when you manage roles for multiple users simultaneously and those users have a permissions mismatch for the same project.
+
+### Access definitions
+
+The **ACCESS VIA** column in the User Overview panel indicates how a user received their project access:
+
+| Access Via   | Meaning                                                                        |
+| ------------ | ------------------------------------------------------------------------------ |
+| Direct       | Role was assigned to the user directly through the Manage Project Access modal |
+| [Group Name] | Role was assigned to the user through membership in the specified group        |
 
 ## RBAC permission reference
 
