@@ -609,12 +609,40 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 </form>
 ```
 
-Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
+#### Disable form interaction tracking
+
+Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     formInteractions: false, 
+  },
+});
+```
+
+#### Control form submit tracking
+
+{{partial:admonition type="note" heading="Minimum SDK version"}}
+Minimum SDK version 2.34.0.
+{{/partial:admonition}}
+
+You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. 
+
+By default, Amplitude tracks all form submit events. However, when a form has the [`novalidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/noValidate) attribute set, the browser [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) fires without performing default validation checks. This means the submit event triggers even if the form is empty or contains invalid data. In these cases, use `shouldTrackSubmit` to implement custom validation logic and control when Amplitude tracks the submit event.
+
+The `shouldTrackSubmit` callback receives the form submit event and should return `true` to track the submit event or `false` to skip tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        // Only track submit if form is valid
+        const form = event.target;
+        return form.checkValidity();
+      }
+    }
   },
 });
 ```
@@ -734,8 +762,15 @@ Enable frustration interaction tracking to capture rage clicks and dead clicks. 
 
  * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
  * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
+ * **Error click**: Experimental. A user clicks an element and a browser error occurs within two seconds of the click.
 
 Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+Set `config.autocapture.frustrationInteractions.rageClicks` to `true` to enable capture of rage clicks.
+
+Set `config.autocapture.frustrationInteractions.deadClicks` to `true` to enable capture of dead clicks.
+
+Set `config.autocapture.frustrationInteractions.errorClicks` to `true` to enable capture of error clicks.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
@@ -754,8 +789,37 @@ Use the advanced configuration to control frustration interaction tracking.
 |------|-------------|
 | `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101) |
 | `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element. |
+| `config.autocapture.frustrationInteractions.errorClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures error clicks. By default, this is set to [DEFAULT_ERROR_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/frustration-interactions.ts#L129) |
 
 {{/partial:collapse}}
+
+#### Track error clicks
+
+Error clicks is experimental and must be explicitly enabled.
+
+Error click tracking captures when a user clicks an element and a browser error occurs within two seconds of the click. This helps you identify which user interactions may be triggering errors in your application.
+
+Enable error click tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    frustrationInteractions: {
+      errorClicks: true,
+    },
+  },
+});
+```
+
+When you enable error click tracking, it emits an event `[Amplitude] Error Click` that includes these properties:
+
+- `[Amplitude] Kind`: The type of error (one of uncaught exception, console error, unhandled promise rejection).
+- `[Amplitude] Message`: The error message.
+- `[Amplitude] Stack`: The error stack trace.
+- `[Amplitude] Filename`: The filename where the error occurred.
+- `[Amplitude] Line Number`: The line number where the error occurred.
+- `[Amplitude] Column Number`: The column number where the error occurred.
+- Element properties from the clicked element (for example, `[Amplitude] Element Text`, `[Amplitude] Element Tag Name`).
 
 ### Track network requests
 

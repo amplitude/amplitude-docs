@@ -23,7 +23,7 @@ With dashboards, you can collect all your relevant charts into a single, conveni
 
 You must save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 
-Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
+Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths). Customers on Starter plans can subscribe to a maximum of 50 different dashboards.
 
 You may also find the following dashboards articles useful:
 

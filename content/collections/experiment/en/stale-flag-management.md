@@ -10,7 +10,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-With Stale Flag Management, you can identify and manage feature flags or experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags or experiments that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, your list of flags displays only the ones that are active or relevant.
+Stale flag management helps you maintain a clean codebase by identifying feature flags that have either been completely rolled out or have been rolled back for a specific period of time.
 
 ## How flags and experiments become stale
 

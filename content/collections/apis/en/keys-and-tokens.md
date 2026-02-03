@@ -45,10 +45,10 @@ API Keys are public. If an API key is abused, you should revoke or rotate the ke
 
 ### Secret Key
 
-Projects can have multiple *Secret Keys*. These are used in conjunction with the project API Key to manage your account.
+A secret key authenticates you to server-side APIs that read or modify project data. Projects can have multiple secret keys.
 
 {{partial:admonition type="warning" heading="Secret keys are private"}}
-Keep the Secret Keys private. If your Secret Keys are compromised, delete the compromised key and generate a new one.
+Keep the secret keys private. If your secret keys are compromised, delete the compromised key and generate a new one.
 {{/partial:admonition}}
 
 ## Data keys
