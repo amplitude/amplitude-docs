@@ -150,7 +150,7 @@ Include `-b {branch}` to generate a tracking library from a particular branch, r
 
 When a source is created in Amplitude Data without a specific language selected (for example, Browser or iOS), it starts in a platform-only runtime state. In this state, Ampli doesn't yet know which language-specific client library to generate.
 
-The **first time** you initialize such a source, the CLI must resolve and **save** the exact runtime (platform + language). That write operation updates source metadata in Amplitude and therefore requires **Manager or Admin** permissions. Because of this, a non-admin `ampli pull` can fail for sources that haven't been configured yet, even though the command is named `pull`.
+The first time you initialize such a source, the CLI must resolve and save the exact runtime (platform + language). That write operation updates source metadata in Amplitude. This requires Manager or Admin permissions. Because of this, a non-admin `ampli pull` can fail for sources that haven't been configured yet, even though the command is named `pull`.
 
 To handle this, you have two options:
 
