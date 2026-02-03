@@ -59,11 +59,14 @@ For all possible language codes, go to [Language Codes](https://developers.googl
 
 The Prompts tab contains all the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
 
-You can filter individual AI models to investigate such as Claude, ChatGPT, or Gemini. You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
-
 If you change a prompt, that prompt reruns immediately. The rest of the report remains as-is until its regularly scheduled update.
 
 You can export all of these prompts to a CSV file for further analysis. Click **Export CSV** to download the exported file. 
+
+### Filtering
+You can filter individual AI models to include all available AIs or only the ones you want. 
+
+You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
 
 ### Metrics
 
@@ -191,7 +194,7 @@ The brand, either you or a competitor, that has the best performance in a partic
 
 The Competitor Settings section lets you view your primary competitors and either delete an existing competitor from the analysis or manually add a competitor to your analysis. 
 
-The section also displays the number of prompts that each competitor appears in and a visibility score.
+The section also displays the number of prompts that each competitor appears in and a visibility score. The visibility score is based on how often your brand appears across hundreds of prompts. It compares performance with competitors and supplies automated actions to improve results.
 
 ##### To add a competitor
 1. Click **Add Competitor**.

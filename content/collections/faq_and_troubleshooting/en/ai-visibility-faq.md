@@ -24,7 +24,9 @@ The free version of AI Visibility does not update.
 Consumers are increasingly using AI assistants instead of traditional search engines to research products. If your brand isn’t appearing as a recommendation in AI answers, you risk losing high-intent customers to competitors.
 
 ## How does AI Visibility measure brand performance in AI search?
-AI Visibility provides a customer dashboard that includes your visibility score, competitive rankings, and the sources large language models use to generate responses. 
+AI Visibility provides a customer dashboard that includes a visibility score, competitive rankings, and the source LLMs used to generate responses. 
+
+Your visiblity score quantifies how often a brand appears in AI responses across major LLMs using hundreds of prompts.
 
 ## Can AI Visibility show me where competitors are winning?
 Yes. The competitive rankings feature highlights exactly which prompts and keywords lead to competitor mentions in AI search. It also provides recommendations about how to close the gap.
@@ -35,8 +37,13 @@ Yes. The competitive rankings feature highlights exactly which prompts and keywo
 * 2500 prompts for Growth
 * 5000 prompts for Enterprise
 
+### How many popular prompts can be generated for each category or filter selection?
+Unlimited by category or filter selection. However your total number of prompts is limited by your pricing tier.
+
 ## What platforms and models does AI Visibility track?
-AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
+AI Visibility monitors brand performance in OpenAI ChatGPT and Google Gemini. 
+
+Through the [MCP](/docs/amplitude-ai/amplitude-mcp), Amplitude also supports external AI clients such as Cursor for natural-langauge queries against Amplitude data.
 
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
@@ -75,4 +82,21 @@ You can identify activity referred to an application from an LLM or conversation
 
 ## Is prompt or citation level data available for referrals? 
 LLM or conversational AI tools don't supply the prompts when users are referred to other applications. You can evaluate entry pages for sessions from LLMs to understand which pages on your site are most commonly receiving direct referrals. 
+
+## Can I filter for premium users such as ChatGPT Plus or Pro? 
+No. AI Visibility looks at the total responses from an LLM or AI.
+
+## What is the maximum number of users I can have for AI Visibility? 
+Unlimited. 
+
+## Do popular prompts include volum data (for example, search counts) to support rankings? 
+Not specificaly. However, prompts reflect the total number of prompts across all topics related to your brand or competitors. Responses reflect the total AP repsonses generated from those prompts, which gives additional volume context.
+
+## What is the data source for popular prompts on my dashboard? 
+Amplitude asks LLMs such as ChatGPT to come up with likely prompts that marketers would be interested in. 
+
+## Is there a limit to the number of prompts I can track accross multiple projects? 
+Your prompt usage is limited by your pricing tier. However, for each project, up to 2000 even properties and 1000 user properties can be recorded for each prompt.
+
+
 
