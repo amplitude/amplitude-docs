@@ -166,7 +166,7 @@ Alternatively, have a user with **Manager or Admin** access run:
 ampli configure
 ```
 
-Complete the prompts for platform, language, and SDK. Once an Admin or Manager runs `ampli configure` for the source and the runtime is fully set, subsequent `ampli pull` runs are read-only and should work for developers with **Member** roles as expected.
+Complete the prompts for platform, language, and SDK. After an Admin or Manager runs `ampli configure` for the source and the runtime is fully set, subsequent `ampli pull` runs are read-only and works as expected for developers with Member role permissions.
 
 ### Status
 
