@@ -156,7 +156,7 @@ Use one of the following options to resolve the permissions:
 
 #### Option 1: Run the first ampli pull with elevated permissions
 
-Have a user with **Manager or Admin** access run the first `ampli pull` for the source. This configures and persists the runtime, after which non-admin developers can use `ampli pull` normally.
+Have a user with Manager or Admin access run the first `ampli pull` for the source. This configures and persists the runtime, after which non-admin developers can use `ampli pull` normally.
 
 #### Option 2: Run ampli configure once, then let Members use ampli pull
 
