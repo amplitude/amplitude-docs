@@ -78,16 +78,56 @@ Before you dive into implementation, ensure all stakeholders and team members ag
 
 #### Common use cases by industry
 
-B2BFintechE-commerceStreaming media  
-Goal: Understand product engagement.
+{{partial:tabs tabs="B2B, Fintech, E-commerce, Streaming media"}}
+{{partial:tab name="B2B"}}
+**Goal**: Understand product engagement.
 
-Key points:
+**Key points:**
 
 * See how your users convert through critical funnels: acquisition (free trial, sales, partner, POC), onboarding, activation, workflow, cross-sell/upsell funnels.
 * Target the right customers at the right time to move them through a critical funnel.
 * Find patterns in the way your customers move through key milestones (acquisition, onboarding, activation, renewal).
-* Understand different customer segments’ use and adoption to define key personas based on use cases and needs.  
+* Understand different customer segments’ use and adoption to define key personas based on use cases and needs.
 * Optimize your product experience to target different customers personas needs and make them more successful.
+{{/partial:tab}}
+{{partial:tab name="Fintech"}}
+**Goal**: Understand what makes your users purchase.
+
+**Key questions:**
+
+* What's the efficiency of marketing channels?
+* How many users complete sign-up and money transfer in one session?
+* How do users engage with product features?
+* What impacts user retention?
+* What's the % of users that have used accounts with > 2 currencies in the last 30 days?
+* How much revenue do we get from a customer?
+* What impacts referrals?
+{{/partial:tab}}
+{{partial:tab name="E-commerce"}}
+**Goal:** Understand revenue and conversion drivers.
+
+**Key questions:**
+
+* How often do users look at products?
+* What's our purchase conversion rate?
+* And what's the falloff in each step? (rates of- click to category page, click to product, add to cart, view cart, start checkout, order conversion)
+* What features do users interact with that lead to conversions?
+* What are the drivers that lead from user registration to first purchase?
+* How many purchases include more than one item?
+* Does the ATC (add to cart) decreased by user or device type?
+{{/partial:tab}}
+{{partial:tab name="Streaming media"}}
+**Goal:** Understand the acquisition and subscription drivers of your users' engagement with your product.
+
+**Key questions:**
+
+* What's the total length of time from content consumption in the Free Trial for churned trials vs. subscription converters?
+* What activities are common between users who convert vs don't convert after the Free Trial expires?
+* How do users interact with our site and how do they consume content?
+* What is the percentage of content consumed per genre?
+* What brings users back?
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ### Design and instrument a data taxonomy
 
