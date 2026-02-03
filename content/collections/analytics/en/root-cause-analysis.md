@@ -28,7 +28,7 @@ For example, this Event Segmentation chart has an unusual-looking peak for Decem
 
 To examine this anomalous data point using Root Cause Analysis, follow these steps:
 
-1. Click [*Anomaly + Forecast*](/docs/analytics/anomaly-forecast) to confirm that the result you're interested in is actually a statistical anomaly. Amplitude will enhance the chart to display the statistically-expected values for each day, as well as a range of values that would not be considered anomalous (in other words, values that could be attributable to random chance).
+1. Click [*Anomaly + Forecast*](/docs/analytics/anomaly-forecast) to confirm that the result you're interested in is actually a statistical anomaly. Amplitude enhances the chart to display the statistically-expected values for each day, as well as a range of values that would not be considered anomalous (in other words, values that could be attributable to random chance).
 
 	![root_cause_analysis_2.png](/docs/output/img/analytics/root_cause_analysis_2.png)
     
@@ -36,16 +36,16 @@ To examine this anomalous data point using Root Cause Analysis, follow these ste
 
 2. Click on the data point to bring up the Microscope. Then click *Run Root Cause Analysis*. Scroll down to view the *Root Cause Analysis* tab.
 
-At this point, Amplitude will scan the properties of the anomalous event and compare them to a baseline. It will then generate a time-series graph for each property, so you can see how each value tracks with the anomalous data point.
+At this point, Amplitude scans the properties of the anomalous event and compare them to a baseline. It then generates a time-series graph for each property, so you can understand how each value tracks with the anomalous data point.
 
 You can **expand** any of these graphs into a standalone Event Segmentation chart by clicking *Open Chart* for the graph you're interested in.
 
-You can also give **feedback** on the chart by clicking the thumbs-up or thumbs-down icon. This tells Amplitude whether you found the chart useful or not, and will help improve the ranking algorithm over time.
+You can also give **feedback** on the chart by clicking the thumbs-up or thumbs-down icon. This tells Amplitude whether you found the chart useful or not, and helps improve the ranking algorithm over time.
 
-RCA scans event properties **in batches of thirty**, in order to present you with results for the most relevant properties first. From time to time, RCA will automatically pause scanning, so as to avoid overwhelming you with graphs. If you want RCA to scan more properties, click *Continue Scanning*.
+RCA scans event properties **in batches of thirty**, in order to present you with results for the most relevant properties first. From time to time, RCA automatically pausees scanning, so as to avoid overwhelming you with graphs. If you want RCA to scan more properties, click *Continue Scanning*.
 
 {{partial:admonition type='tip'}}
-Holidays are frequently the cause of anomalous data points. The Microscope will alert you if the anomaly you're investigating falls on a holiday.
+Holidays are frequently the cause of anomalous data points. The Microscope alerts you if the anomaly you're investigating falls on a holiday.
 {{/partial:admonition}}
 
 ## Configure your analysis
