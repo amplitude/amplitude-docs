@@ -25,20 +25,20 @@ Amplitude offers a few options to migrate your historical data from Mixpanel to 
 * The [Mixpanel import tool](#mixpanel-import-tool): Best for sending historical event data quickly.
 * The [Batch Event Upload API](#amplitude-batch-event-upload-api): Best for sending historical data, including events and user profile properties, at scale.
 
-### Mixpanel Import Tool
+### Mixpanel import tool
 
 With just your Mixpanel project's API key or service account credentials, this tool uses [Mixpanel's Export API](https://developer.mixpanel.com/reference/raw-event-export) to export event data from Mixpanel, and import it to your Amplitude project.
 
 #### Limitations
 
 * This tool processes about 160,000 events per batch.
-* User profile properties aren't supported. If you need to import user profile information, use one of the following options:
-* Export your data from Mixpanel with the Mixpanel [Export](https://developer.mixpanel.com/reference/raw-event-export) and [Engage](https://developer.mixpanel.com/reference/engage-query) APIs, and import it to Amplitude with the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload).
-* Contact Amplitude Support or your Amplitude account manager for custom services led by Amplitude's Professional Services team.
+* The tool doesn't support User Profile imports. If you need to import user profile information, use one of the following options:
+  * Export your data from Mixpanel with the Mixpanel [Export](https://developer.mixpanel.com/reference/raw-event-export) and [Engage](https://developer.mixpanel.com/reference/engage-query) APIs, and import it to Amplitude with the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload).
+  * Contact Amplitude Support or your Amplitude account manager for custom services led by Amplitude's Professional Services team.
 
 #### Troubleshooting
 
-If the import tool responds with an authentication errorL
+If the import tool responds with an authentication error:
 
 * Make sure you provide the correct authentication to the Mixpanel import tool.
 * If you use your Mixpanel project's API key, be sure to reference the correct project. Each project in Mixpanel has its own API key.
@@ -131,8 +131,8 @@ Before you dive into implementation, ensure all stakeholders and team members ag
 
 ### Design and instrument a data taxonomy
 
-* Check out the [Mixpanel to Amplitude Taxonomy workbook](https://docs.google.com/spreadsheets/d/1lsZa6uZmcUmJdq-_sr5JawckMPiiQDCCzl_ytSYccNg/edit#gid434510064), built off of the most common use cases from Amplitude customers who've migrated from Mixpanel.   
-* For more broad taxonomy guidance, see the [Data Taxonomy Playbook](/docs/data/data-planning-playbook) and the sample taxonomy below for best practices.
+* Review the [Mixpanel to Amplitude Taxonomy workbook](https://docs.google.com/spreadsheets/d/1lsZa6uZmcUmJdq-_sr5JawckMPiiQDCCzl_ytSYccNg/edit#gid434510064), built from the most common use cases from Amplitude customers who've migrated from Mixpanel.   
+* For broader taxonomy guidance, see the [Data Taxonomy Playbook](/docs/data/data-planning-playbook) and the sample taxonomy below for best practices.
 
 #### Choose an instrumentation method
 
@@ -140,11 +140,11 @@ You can send data to Amplitude client-side, server-side, or through a third part
 
 For client-side event tracking:
 
-* [Amplitude’s SDK Catalog](/sdks/analytics). Use your existing instrumentation method and reference Amplitude mapping to replace instrumentation.
+* [Amplitude’s SDK Catalog](/docs/sdks/analytics). Use your existing instrumentation method and reference Amplitude mapping to replace instrumentation.
 
 For server-side event tracking:
 
-* [Amplitude's HTTP API](/apis/analytics/http-v2).
+* [Amplitude's HTTP API](/docs/apis/analytics/http-v2).
 
 #### Map Mixpanel methods to Amplitude methods
 
@@ -167,16 +167,16 @@ Super properties in Mixpanel are properties that attach to all subsequent events
 * Mixpanel uses a combination of `distinct_id` (a randomly generated identifier on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'mixpanel.identify()'` method.
 * Amplitude uses a combination of `device_id` (a randomly generated id on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'amplitude.identify()'` method.
 
-For more on how Amplitude resolves user identifies, see [Track unique users](/data/sources/instrument-track-unique-users).
+For more on how Amplitude resolves user identifies, see [Track unique users](/docs/data/sources/instrument-track-unique-users).
 
 ## Data privacy considerations
 
 Along with the ingestion methods above, here are some features or areas to consider when managing your customer data:
 
-* [Time to Live (TTL)](/data/time-to-live) - Feature within Amplitude to control how long event data lives in your Amplitude instance.
-* [How to manage Opt-Outs](/sdks/analytics/browser/browser-sdk-2#opt-users-out-of-tracking) - SDK settings to allow your website visitors to disable activity tracking on your website.
-* [IP Address](/apis/analytics/batch-event-upload) - Amplitude captures IP address and location-based details by default with client-side tracking. For information about disabling this tracking, see [Browser SDK | Optional Tracking](/sdks/analytics/browser/browser-sdk-2#optional-tracking).
-* [User Privacy API](/apis/analytics/user-privacy) - API to delete all data for a set of known Amplitude IDs or User IDs.
+* [Time to Live (TTL)](/docs/data/time-to-live) - Feature within Amplitude to control how long event data lives in your Amplitude instance.
+* [How to manage Opt-Outs](/docs/sdks/analytics/browser/browser-sdk-2#opt-users-out-of-tracking) - SDK settings to allow your website visitors to disable activity tracking on your website.
+* [IP Address](/docs/apis/analytics/batch-event-upload) - Amplitude captures IP address and location-based details by default with client-side tracking. For information about disabling this tracking, see [Browser SDK | Optional Tracking](/docs/sdks/analytics/browser/browser-sdk-2#optional-tracking).
+* [User Privacy API](/docs/apis/analytics/user-privacy) - API to delete all data for a set of known Amplitude IDs or User IDs.
 * [Amplitude’s Stance on Security & Privacy](https://amplitude.com/amplitude-security-and-privacy)
 
 ## GDPR information
@@ -185,7 +185,7 @@ Amplitude is fully GDPR compliant.
 
 For more information about compliance, see [Security and Privacy](https://amplitude.com/amplitude-security-and-privacy).
 
-Amplitude maintains a [user privacy API](/apis/analytics/user-privacy) that allows you to service end user data deletion requests.
+Amplitude maintains a [user privacy API](/docs/apis/analytics/user-privacy) that allows you to service end user data deletion requests.
 
 ## Feedback or questions
 
