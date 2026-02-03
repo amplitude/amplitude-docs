@@ -34,7 +34,7 @@ With just your Mixpanel project's API key or service account credentials, this t
 * This tool processes about 160,000 events per batch.
 * The tool doesn't support User Profile imports. If you need to import user profile information, use one of the following options:
   * Export your data from Mixpanel with the Mixpanel [Export](https://developer.mixpanel.com/reference/raw-event-export) and [Engage](https://developer.mixpanel.com/reference/engage-query) APIs, and import it to Amplitude with the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload).
-  * Contact Amplitude Support or your Amplitude account manager for custom services led by Amplitude's Professional Services team.
+  * Contact Amplitude Support or your Amplitude account manager to get custom services from Amplitude's Professional Services team.
 
 #### Troubleshooting
 
@@ -68,7 +68,7 @@ Export your data directly out of Mixpanel through the [API](https://developer.mi
 
 ### Professional Services
 
-For custom services led by the Amplitude Professional Services team, contact your Amplitude account manager.
+To get custom services from the Amplitude Professional Services team, contact your Amplitude account manager.
 
 ## Plan new Amplitude tracking from Mixpanel
 
