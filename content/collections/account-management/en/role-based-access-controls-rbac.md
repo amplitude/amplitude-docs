@@ -53,6 +53,25 @@ Amplitude’s default roles cover most common use cases, but every organization 
 
 This flexibility enables your organization to follow the security best practice of providing the least amount of access that enables users to complete their work.
 
+#### Admin-only permissions
+
+The Admin role has special permissions that custom roles don't have.
+
+Admin-only permissions include:
+
+- Modify discovery settings at org level
+- Change the organization's master password
+- Modify organization admin assignments
+- Change the organization's subscription plan
+- Modify query time sampling rules
+- Change event sampling rules
+- Configure Single Sign-On settings
+- Permanently delete the organization
+- Edit permission groups/settings
+- Full administrative access flag
+- Invite users with restrictions
+- Transfer org ownership
+
 ### Permissions
 
 Permissions define the specific actions Amplitude users can perform. They’re the building blocks of RBAC. Most permissions define a user’s ability to create, edit, or delete items in specific areas. Some permissions provide access to a single action, like marking a dashboard or metric as official.
