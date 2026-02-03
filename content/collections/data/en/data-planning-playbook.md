@@ -31,7 +31,7 @@ You can learn how Amplitude tracks unique users, including how to reconcile anon
 
 ### Events
 
-An event is a **distinct action or activity** taken by a user within your product. Events can be **active** when a user has interacted with your app (for example, starting a game or adding to their cart) or they can be **inactive** (the user receives a push notification). 
+An event is a distinct action or activity taken by a user within your product. Events can be active when a user has interacted with your app (for example, starting a game or adding to their cart) or they can be inactive (the user receives a push notification). 
 
 When naming events, Amplitude recommends establishing a consistent naming convention that uses:
 
@@ -43,7 +43,7 @@ Default events are Title Cased from the user's perspective, with a `[Noun]` + `[
 
 ### Properties
 
-Properties are **attributes** that help define details around your events and users. At a high level:
+Properties are attributes that help define details around your events and users. At a high level:
 
 * **Event properties** are attributes that describe details specific to the particular instance of an event. For example, if you had a `Purchase Completed` event, you could specify what the user purchased, the total value of the order, and the payment method used.
 * **User properties** are traits describing the user and apply across all their future events until the properties are modified. Amplitude's SDK captures several user properties by default, and you can also set up your own properties to track.
@@ -105,8 +105,7 @@ Suppose you have two user actions you could capture as two separate events, or a
 For example, perhaps you believe payment method is a critical factor. Should you instrument:
 
 * `Order Completed` as a single event with a `Payment Method` property that captures `Credit Card` or `Apple Pay`, or
-* Separate events for `Credit Card Order Completed` and `Apple Pay Order
- Completed` ?
+* Separate events for `Credit Card Order Completed` and `Apple Pay Order Completed` 
 
 There are a few things to consider:
 
@@ -125,7 +124,7 @@ One typical use case for event properties is tracking values that must be held c
 * Step 1: `Product Details Viewed`
 * Step 2: `Product Added`
 
-Here, users should count as having converted through the funnel **only** if they triggered the event on the **same** product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
+Here, users should count as having converted through the funnel only if they triggered the event on the same product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
 
 * Step 1: `Product Details Viewed`
 	* `Product ID` = `3345`

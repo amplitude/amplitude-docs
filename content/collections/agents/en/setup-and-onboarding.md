@@ -19,7 +19,12 @@ Amplitude Agents are available to all organizations by default, unless your orga
 
 Open the AI Agents tab in Amplitude to create a new agent, or check on an agent you already created. You can create multiple agents spanning across multiple dashboards, product flows, or web pages to optimize.
 
-Amplitude creates agents on a per-user basis, so agents that you’ve created are only visible by you and respect your individual permissions. If your agent identifies insights or recommends any actions to take, you can share the URL of the thread or artifact directly with teammates so they can view the outputs.
+
+The AI Agents page includes two tabs:
+- **All Agents**: View all agents in your organization that you have permission to access.
+- **My Agents**: View only the agents you created.
+
+Amplitude creates agents on a per-user basis, and agents respect your individual permissions. If your agent identifies insights or recommends any actions to take, you can share the URL of the thread or artifact directly with teammates so they can view the outputs.
 
 ## Providing context
 

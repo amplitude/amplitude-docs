@@ -1,4 +1,6 @@
 ---
+# This article is no longer maintained.
+# Make updates to content at content/collections/destination-catalog/en/hubspot.md
 id: ed7582d9-a06c-486f-8c18-0be2a1973629
 published: false
 blueprint: destination-catalog
