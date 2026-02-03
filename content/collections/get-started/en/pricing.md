@@ -1,13 +1,13 @@
 ---
 id: 7118a745-a815-4955-9079-542f410d7715
+published: false
 blueprint: get-started
 title: Pricing
 landing: false
 exclude_from_sitemap: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
-updated_at: 1769541187
+updated_at: 1770146259
 ---
-
 Amplitude offers several pricing plans: 
 
 * Starter
@@ -31,4 +31,4 @@ The Growth and Enterprise plans expand further on the Plus plan. For example:
 
 For the most recent information about plan comparison, go to the [Amplitude Pricing](https://amplitude.com/pricing#comparePlans) page. 
 
-If you have questions about add-ons or specific features or functioanlity, contact [Amplitude Sales](https://amplitude.com/sales-contact?siteLocation=nav). 
+If you have questions about add-ons or specific features or functioanlity, contact [Amplitude Sales](https://amplitude.com/sales-contact?siteLocation=nav).
