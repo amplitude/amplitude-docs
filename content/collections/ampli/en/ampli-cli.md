@@ -160,7 +160,7 @@ Have a user with Manager or Admin access run the first `ampli pull` for the sour
 
 #### Option 2: Run ampli configure once, then let Members use ampli pull
 
-Alternatively, have a user with **Manager or Admin** access run:
+Have a user with Manager or Admin access run:
 
 ```shell
 ampli configure
