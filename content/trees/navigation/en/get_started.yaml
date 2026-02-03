@@ -4,6 +4,9 @@ tree:
     entry: 29b8b9d1-1063-4b23-926b-69b8333531ed
     title: '⚡️Amplitude Quickstart'
   -
+    id: b8eea2f1-dcad-4025-9f44-4463d3ed2138
+    entry: 7118a745-a815-4955-9079-542f410d7715
+  -
     id: 7bf5a96b-66fd-4df5-8056-ac09411dd2df
     title: 'Set Up Amplitude'
     children:

@@ -10,13 +10,11 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726163151
 ---
-In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases display as a marker in your time-series charts when they occur.
+In Amplitude, a release represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases display as a marker in your time-series charts when they occur.
 
 ![release_line_chart.png](/docs/output/img/analytics/release-line-chart-png.png)
 
 ## Create a release
-
-Amplitude automatically creates releases for customers on **Growth** and **Enterprise** plans. **Plus** plan users can manually create releases.
 
 ### Automated releases
 
