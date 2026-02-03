@@ -146,6 +146,28 @@ ampli pull web -p ./src/analytics
 Include `-b {branch}` to generate a tracking library from a particular branch, rather than **main**. By default, Ampli uses the last published version. If you'd like to generate a tracking library for another version, include
 `-v {version}` and specify the tracking plan's version.
 
+### Initial pull permissions
+
+When a source is created in Amplitude Data without a specific language selected (for example, only **Browser** or **iOS**), it starts in a **platform-only runtime** state. In this state, Ampli doesn't yet know which language-specific client library to generate.
+
+The **first time** you initialize such a source, the CLI must resolve and **save** the exact runtime (platform + language). That write operation updates source metadata in Amplitude and therefore requires **Manager or Admin** permissions. Because of this, a non-admin `ampli pull` can fail for sources that haven't been configured yet, even though the command is named `pull`.
+
+To handle this, you have two options:
+
+#### Option 1: Run the first ampli pull with elevated permissions
+
+Have a user with **Manager or Admin** access run the first `ampli pull` for the source. This configures and persists the runtime, after which non-admin developers can use `ampli pull` normally.
+
+#### Option 2: Run ampli configure once, then let Members use ampli pull
+
+Alternatively, have a user with **Manager or Admin** access run:
+
+```shell
+ampli configure
+```
+
+Complete the prompts for platform, language, and SDK. Once an Admin or Manager runs `ampli configure` for the source and the runtime is fully set, subsequent `ampli pull` runs are read-only and should work for developers with **Member** roles as expected.
+
 ### Status
 
 Check the status of your instrumentation by linting (verifying) your source code for analytics.
