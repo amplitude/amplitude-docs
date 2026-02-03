@@ -10,7 +10,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-With Stale Flag Management, you can identify and manage feature flags that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, your list of flags displays only the ones that are active or relevant.
+With Stale Flag Management, you can identify and manage feature flags or experiments that are ready for cleanup. Stale flag management helps you maintain a clean codebase by identifying flags or experiments that have been rolled out or rolled back for an extended period. By understanding how long it's been since you've interacted with a feature flag, your list of flags displays only the ones that are active or relevant.
 
 ## How flags and experiments become stale
 
@@ -25,11 +25,11 @@ After a flag or experiment becomes stale, it's ready for cleanup. This means you
 
 ### Stale status badge
 
-When you're looking at the list of your flags, a status badge appears next to the flag indicating that it's stale. Hover over the stale badge to view when it became stale and update the stale date if needed.
+When you're looking at the list of your flags or experiments, a status badge appears next to the flag indicating that it's stale. Hover over the stale badge to view when it became stale and update the stale date if needed.
 
 ### Filtering in the table view
 
-In the Feature Flags list, the stale status appears as a secondary status badge next to the primary status. Click the **Stale** option which filters the table to show only stale flags.
+In the Feature Flags or Experiments list, the stale status appears as a secondary status badge next to the primary status. Click the **Stale** option which filters the table to show only stale flags.
 
 ## Working with stale flags
 
@@ -49,7 +49,7 @@ If you change the rollout after you set a stale date, you can update the stale d
 
 ## Notifications
 
-You can receive notifications when flags become stale. Amplitude sends a notification each day to all listed owners of the flags that became stale over the previous 24 hours.
+You can receive notifications when flags or experiments become stale. If you are listed as an owner of a flag or experiment, Amplitude sends a message about any flag or notification that becomes stale over the previous 24 hours. These notifications are sent once each day.
 
 You can receive notifications through:
 
@@ -59,16 +59,16 @@ You can receive notifications through:
 
 Configure [notification preferences](/docs/feature-experiment/notifications) in your organization settings.
 
-## Bulk archiving stale flags
+## Bulk archiving stale flags and experiments
 
-After a flag (or flags) becomes stale, remove it (or them) from your list.
+After a flag or experiment becomes stale, remove it from your list.
 
 1. **Remove the flag from your codebase**: Remove the feature flag code from your application. If the flag is deployed across multiple services or codebases, remove it from each location.
-2. **Archive the flag in Amplitude**: Archive the flag or experiment in Amplitude to remove it from your active flags list.
+2. **Archive the flag or experiment in Amplitude**: Archive the flag or experiment in Amplitude to remove it from your active flags list.
 
-##### To remove a stale flag from Amplitude
+##### To remove a stale item from Amplitude
 
-1. Select the flag you want to remove.
+1. Select the flag or experiment you want to remove.
 2. Click **Archive**.
 
 ### Handling multiple variants
