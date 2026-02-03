@@ -33,11 +33,11 @@ In the Feature Flags or Experiments list, the stale status appears as a secondar
 
 ## Working with stale flags
 
-Hover over the Stale badge on a flag. Information appears that displays when that specific flag became stale. The information pop-up contains information on the Rollout status of the flag. From this pop-up, you can choose to archive the flag or to unmark the flag as stale.
+Hover over the Stale badge on a flag. Information appears that displays when that specific flag became stale. The information pop-up contains information on the rollout status of the flag. From this pop-up, you can choose to archive the flag or to unmark the flag as stale.
 
 ### Default stale date
 
-By default, Amplitude sets the stale date to 30 days after the last updatedfor the flag or experiment. For example, you set the rollout of a flag to 50% on March 1. If no other updates occur, Amplitude marks the flag as stale 30 days later, or March 31. If you select the option to keep the flag or deselect the stale value, the flag is considered permanent and won't be marked stale again.
+By default, a flag or experiment is considered stale after 30 days from the date of the last update. For example, you set the rollout of a flag to 50% on March 1. If no other updates occur, Amplitude marks the flag as stale 30 days later, or in this example, March 31. If you select the option to keep the flag or deselect the stale value, the flag is considered permanent and won't be marked stale again.
 
 ### Updating stale dates
 
