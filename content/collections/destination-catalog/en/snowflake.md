@@ -129,8 +129,8 @@ Amplitude exports data to your Snowflake account using the following naming conv
 
 For example, if your organization ID is `12345` and your project ID is `67890`:
 
-- **Events**: `DB_12345.SCHEMA_67890.EVENTS_67890`
-- **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`
+- **Events**: `DB_12345.SCHEMA_67890.EVENTS_67890`.
+- **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`.
 
 {{partial:admonition type="note" heading=""}}
 Each Snowflake Export destination creates one table for its data type. Since you can only have one destination per data type per project, each project has at most one events table and one merged users table.
