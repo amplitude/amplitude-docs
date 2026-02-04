@@ -115,6 +115,22 @@ The effectiveness of these recommendations depends on the frequency with which y
 
 ## Snowflake export format
 
+### Data locations
+
+Amplitude exports data to your Snowflake account using the following naming convention:
+
+| Component | Format | Description |
+|-----------|--------|-------------|
+| Database | `DB_{org_id}` | Database named with your Amplitude organization ID |
+| Schema | `SCHEMA_{project_id}` | Schema named with your Amplitude project ID |
+| Events Table | `EVENTS_{project_id}` | Events table named with your Amplitude project ID |
+| Merged Users Table | `MERGE_IDS_{project_id}` | Merged users table named with your Amplitude project ID |
+
+For example, if your organization ID is `12345` and your project ID is `67890`:
+
+- **Events**: `DB_12345.SCHEMA_67890.EVENTS_67890`
+- **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`
+
 ### Event table
 
 #### Event table schema
