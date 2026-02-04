@@ -28,7 +28,7 @@ There are two categories of experiments:
 
 ## Feature Flags and Web Editor differences
 
-Feature experimentation uses feature flags to create your experimental variants. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](docs/feature-experiment/workflow/feature-flag-rollouts).
+Feature experimentation uses feature flags to create your experimental variants. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
 
 {{partial:admonition type='note'}}
 Amplitude Experiment defaults to a sequential testing statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
