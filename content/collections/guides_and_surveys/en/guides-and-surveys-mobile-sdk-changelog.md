@@ -8,6 +8,27 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.1.0 (Android, iOS, React Native) \[2026-02-02\]
+
+### ✨ Features
+- Feat: add support for `autoRefreshIntervalSeconds` option to `AmplitudeBootOptions` to configure the auto-refresh interval for the SDK (GSDK-799) \[android, ios\]
+- Feat: add SDK method `setAutoRefreshInterval` to configure the auto-refresh interval for the SDK on the fly (GSDK-799) \[android, ios\]
+- Feat: add SDK method `refresh` to manually trigger a refresh of targeting data (GSDK-799) \[android, ios\]
+
+### 🐛 Fixes
+
+- Fix: fix theming issues (GSDK-676) \[android, ios\]
+- Fix: ensure Pin guide is displayed when it follows another guide in a Tour (a multi-step guide) (GSDK-827) \[ios\]
+- Fix: reposition nudge when keyboard shows (GSDK-782) \[android\]
+- Fix: fix link appearance and click behavior (GSDK-821) \[android\]
+- Fix: update components to use form control theme (GSDK-835) \[android\]
+- Fix: ensure host app still receives touch events after session/activity changes (GSDK-198) \[android\]
+
+### 🐇 Performance improvements
+
+- Fix: view hierarchy tracking is now "async" and won't interfere with the main thread (GSDK-819) \[ios\]
+
+
 ## 2.0.3 (Android, iOS, React Native) \[2026-01-26\]
 
 ### 🐛 Fixes
