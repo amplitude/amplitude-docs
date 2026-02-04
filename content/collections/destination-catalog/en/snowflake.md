@@ -133,7 +133,7 @@ For example, if your organization ID is `12345` and your project ID is `67890`:
 - **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`.
 
 {{partial:admonition type="note" heading=""}}
-Each Snowflake Export destination creates one table for its data type. Since you can only have one destination per data type per project, each project has at most one events table and one merged users table.
+Each project can only have one Snowflake Export destination for each data type. This means one destination for events and one destination for merged IDs per project.
 {{/partial:admonition}}
 
 ### Event table
