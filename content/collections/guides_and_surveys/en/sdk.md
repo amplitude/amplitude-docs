@@ -13,6 +13,10 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
+{{partial:admonition type="note" heading="Shopify installation"}}
+If you use the [Amplitude Shopify Plugin](/docs/data/amplitude-shopify-plugin), install the Guides and Surveys Web SDK separately. The Shopify plugin includes Amplitude Analytics, Session Replay, and Web Experiment, but doesn't include Guides and Surveys.
+{{/partial:admonition}}
+
 ### Amplitude Browser SDK 2
 
 If you use the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
