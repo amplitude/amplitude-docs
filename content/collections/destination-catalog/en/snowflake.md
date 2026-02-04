@@ -133,7 +133,7 @@ For example, if your organization ID is `12345` and your project ID is `67890`:
 - **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`
 
 {{partial:admonition type="note" heading=""}}
-Amplitude creates one table per data type per project. You can't create multiple event tables or multiple merged user tables for the same project.
+Each Snowflake Export destination creates one table for its data type. Since you can only have one destination per data type per project, each project has at most one events table and one merged users table.
 {{/partial:admonition}}
 
 ### Event table
