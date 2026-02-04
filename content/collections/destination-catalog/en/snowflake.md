@@ -121,10 +121,10 @@ Amplitude exports data to your Snowflake account using the following naming conv
 
 | Component | Format | Description |
 |-----------|--------|-------------|
-| Database | `DB_{org_id}` | Database named with your Amplitude organization ID |
-| Schema | `SCHEMA_{project_id}` | Schema named with your Amplitude project ID |
-| Events Table | `EVENTS_{project_id}` | Events table named with your Amplitude project ID |
-| Merged Users Table | `MERGE_IDS_{project_id}` | Merged users table named with your Amplitude project ID |
+| Database | `DB_{org_id}` | Database named with your Amplitude organization ID. |
+| Schema | `SCHEMA_{project_id}` | Schema named with your Amplitude project ID. |
+| Events Table | `EVENTS_{project_id}` | Events table named with your Amplitude project ID. |
+| Merged Users Table | `MERGE_IDS_{project_id}` | Merged users table named with your Amplitude project ID. |
 
 For example, if your organization ID is `12345` and your project ID is `67890`:
 
