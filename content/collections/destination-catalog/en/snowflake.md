@@ -41,7 +41,7 @@ Load your Amplitude event data into your Snowflake account. You can set up recur
 ## Limits
 
 - Maximum running time for a single Snowflake SQL query is 12 hours.
-- Each project can only have onee Snowflake Export destination for each data type. This means one destination for events and one destination for merged IDs per project.
+- Each project can only have one Snowflake Export destination for each data type. This means one destination for events and one destination for merged IDs per project.
 
 ## Set up a recurring data export to Snowflake
 
