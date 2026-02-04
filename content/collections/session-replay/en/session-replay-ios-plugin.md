@@ -159,6 +159,7 @@ Pass the following option when you initialize the Session Replay plugin:
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `quality`    | `SessionReplayQuality` | No       | `.standard`            | Use this option to configure the recording quality. Quality affects frame rate and quality of the replay. Options: `.low`, `.standard`, `.high`. |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
