@@ -846,6 +846,18 @@ Use these skills by typing `/skill-name` in the conversation:
 
 **Example**: "Apply all Amplitude style rules to this document"
 
+#### `/fix-issue`
+**When to use**: Resolving a Jira documentation issue (DOC ticket)
+**What it does**:
+- Verifies Atlassian MCP connectivity
+- Retrieves Jira issue details
+- Creates a Git branch from `main` named after the issue key
+- Identifies impacted documentation files
+- Proposes and applies changes with style rules
+- Summarizes the issue and resolution
+
+**Example**: "/fix-issue DOC-1096"
+
 ### Common Workflows
 
 **Starting new documentation:**
@@ -859,6 +871,12 @@ Use these skills by typing `/skill-name` in the conversation:
 2. Use `/edit-doc` to apply all style rules
 3. Use `/validate-links` to verify links
 4. Submit PR
+
+**Fixing a Jira issue:**
+1. Use `/fix-issue DOC-###` with the ticket key or URL
+2. Review the proposed changes
+3. Use `/validate-links` to verify links in changed files
+4. Commit and submit PR
 
 **Checking your work:**
 1. Use `/edit-doc` to catch style issues
