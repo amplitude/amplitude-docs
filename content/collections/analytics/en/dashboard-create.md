@@ -57,6 +57,10 @@ You can add charts to your dashboard either from inside the dashboard, or from w
 
 ### Add cohorts to your dashboard
 
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Create, analyze, and activate user groups with behavioral cohorts](https://academy.amplitude.com/create-user-groups-with-behavioral-cohorts)
+{{/partial:admonition}}
+
 You can add a [behavioral cohort](/docs/analytics/behavioral-cohorts) to a dashboard. This displays the number of users in a cohort and the date and time of its last computation. 
 
 {{partial:admonition type='note'}}
@@ -79,6 +83,10 @@ For any chart or query that segments on a cohort, the segmented cohort automatic
 {{/partial:admonition}}
 
 ### Add a Session Replay to your dashboard
+
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Contextualize user experience with Session Replay](https://academy.amplitude.com/contextualize-user-experience-with-session-replay)
+{{/partial:admonition}}
 
 There are three ways you can add a Session Replay to a dashboard or notebook:
 

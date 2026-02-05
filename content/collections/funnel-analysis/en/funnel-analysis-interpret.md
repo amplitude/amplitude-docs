@@ -12,7 +12,8 @@ academy_course:
   - 4f6a7b8c-9d0e-4f5a-3b4c-6d7e8f9a0b1c
 ---
 {{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Interpret a Funnel Analysis chart](https://academy.amplitude.com/interpret-a-funnel-analysis-chart) · [Drive conversion with Funnel Analysis](https://academy.amplitude.com/drive-conversion-with-funnel-analysis)
+- [Interpret a Funnel Analysis chart](https://academy.amplitude.com/interpret-a-funnel-analysis-chart)
+- [Drive conversion with Funnel Analysis](https://academy.amplitude.com/drive-conversion-with-funnel-analysis)
 {{/partial:admonition}}
 
 Amplitude’s Funnel Analysis chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
