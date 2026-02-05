@@ -193,7 +193,7 @@ File names have the following syntax, where the time represents when Amplitude s
 
 `-{orgId}_yyyy-MM-dd_H.json.gz`
 
-For example, data uploaded for org ID `189524`, on Jan 25, 2020, between 5 PM and 6 PM UTC, is in the file:
+For example, for org ID `189524`, Amplitude exports data received on Jan 25, 2020, between 5 PM and 6 PM UTC to the file:
 
 `-189524_2020-01-25_17.json.gz`
 
