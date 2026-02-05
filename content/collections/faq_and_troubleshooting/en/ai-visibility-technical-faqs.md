@@ -22,7 +22,7 @@ Identical prompts are considered a single prompt, regardless of the LLM. If the 
 Not yet. Amplitude plans on adding Google search volume in the future to provide more context on the popularity of each prompt.
 
 ## What platforms and models does AI Visibility track?
-AI Visibility monitors brand performance in OpenAI ChatGPT and Google Gemini. 
+AI Visibility monitors brand performance in OpenAI ChatGPT and Google AI Overviews. 
 
 Through the [MCP](/docs/amplitude-ai/amplitude-mcp), Amplitude also supports external AI clients such as Cursor for natural-language queries against Amplitude data.
 
