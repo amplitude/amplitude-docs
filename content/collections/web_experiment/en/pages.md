@@ -39,7 +39,7 @@ To update a page definition, navigate to the Pages tab of the Experiment Setup f
 | URL Ends WIth       | Match the full page URL, where the URL ends with an exact substring.   | `/blog/my-first-post` <br /> ✅ https://example.com/blog/my-first-post <br /> ❌ https://example.com/blog/my-first-post#get-started            |
 | URL Matches Regex   | Match the full page URL with a regular expression you define.          | [Learn Regex](https://www.regular-expressions.info/quickstart.html) <br /> [Test Regex](https://regex101.com/)                               |
 
-### Page triggers
+### Page Triggers
 
 Page Triggers define when an experiment evaluates a Page's conditions to determine whether the experiment activates on a webpage. While page targeting rules determine where an experiment runs, page triggers determine when variant actions apply.
 
