@@ -58,7 +58,7 @@ Accent represents your brand's primary color. This color appears on primary butt
 
 In this example, the primary color is `#48705C`.
 
-![Image shows a selection option where the primary color is a dark green and the accent color is a complementary, lighter green. ](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
+![A selection option where the primary color is a dark green and the accent color is a complementary, lighter green. ](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
 
 ### Typography
 
@@ -170,7 +170,7 @@ Components are reusable elements that you use across your guides and surveys. Wi
 
 Each component includes states, for example default, hover, or focus, that you can customize.
 
-## Where theme components are used
+## Theme component usage
 
 Theme components appear throughout guides and surveys. This section outlines where each component type appears in the application.
 
