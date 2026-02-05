@@ -1,3 +1,8 @@
+---
+name: edit-doc
+description: Apply all Amplitude documentation style rules systematically to a document.
+---
+
 # Edit Doc
 
 Apply all Amplitude documentation style rules systematically to a document.
@@ -54,10 +59,10 @@ Before making any edits, search for these patterns to identify ALL issues:
 - `is available`, `is processed`, `is sent`, `is configured`
 
 **Examples:**
-- ❌ "Users can be assigned to groups"
-- ✅ "You can assign users to groups"
-- ❌ "Events are sent to the API"
-- ✅ "Send events to the API" or "The SDK sends events to the API"
+- "Users can be assigned to groups"
+- "You can assign users to groups"
+- "Events are sent to the API"
+- "Send events to the API" or "The SDK sends events to the API"
 
 #### 2. Future Tense
 **Search for:**
@@ -65,8 +70,8 @@ Before making any edits, search for these patterns to identify ALL issues:
 - `would be`, `we are going to`, `going to`
 
 **Examples:**
-- ❌ "This feature will allow you to..."
-- ✅ "This feature lets you..."
+- "This feature will allow you to..."
+- "This feature lets you..."
 
 #### 3. Missing Contractions
 **Search for:**
@@ -75,16 +80,16 @@ Before making any edits, search for these patterns to identify ALL issues:
 - `should not`, `could not`, `would not`, `will not`
 
 **Examples:**
-- ❌ "You cannot configure..."
-- ✅ "You can't configure..."
+- "You cannot configure..."
+- "You can't configure..."
 
 #### 4. "Please" in Instructions
 **Search for:**
 - `please` (case-insensitive)
 
 **Examples:**
-- ❌ "Please navigate to Settings"
-- ✅ "Navigate to Settings"
+- "Please navigate to Settings"
+- "Navigate to Settings"
 
 #### 5. Wordy Phrases
 **Search for:**
@@ -93,18 +98,18 @@ Before making any edits, search for these patterns to identify ALL issues:
 - `due to the fact that`, `has the ability to`
 
 **Examples:**
-- ❌ "in order to configure"
-- ✅ "to configure"
-- ❌ "currently available"
-- ✅ "available"
+- "in order to configure"
+- "to configure"
+- "currently available"
+- "available"
 
 #### 6. First Person Plural
 **Search for:**
 - ` we `, ` our `, ` us ` (in prose, not URLs)
 
 **Examples:**
-- ❌ "We recommend using..."
-- ✅ "Use..." or "Amplitude recommends..."
+- "We recommend using..."
+- "Use..." or "Amplitude recommends..."
 
 #### 7. List Items Without Punctuation
 **Search for:**
@@ -112,16 +117,16 @@ Before making any edits, search for these patterns to identify ALL issues:
 - Numbered list items missing ending punctuation
 
 **Examples:**
-- ❌ `- Configure the settings`
-- ✅ `- Configure the settings.`
+- `- Configure the settings`
+- `- Configure the settings.`
 
 #### 8. Bold Navigation (Should Be Italics)
 **Search for:**
 - `**[text]** >` patterns
 
 **Examples:**
-- ❌ `**Settings** > **API Keys**`
-- ✅ `*Settings > API Keys*`
+- `**Settings** > **API Keys**`
+- `*Settings > API Keys*`
 
 #### 9. Headings Issues
 **Search for:**
@@ -130,10 +135,10 @@ Before making any edits, search for these patterns to identify ALL issues:
 - Title case in headings (should be sentence case)
 
 **Examples:**
-- ❌ `## How do I configure the API?`
-- ✅ `## Configure the API`
-- ❌ `## Prerequisites:`
-- ✅ `## Prerequisites`
+- `## How do I configure the API?`
+- `## Configure the API`
+- `## Prerequisites:`
+- `## Prerequisites`
 
 ### Phase 2: Create Findings Report
 
@@ -142,7 +147,7 @@ Before making ANY edits, document what you found:
 ```markdown
 ## Style Issues Found in [filename]
 
-### 🔴 Critical: Active Voice
+### Critical: Active Voice
 - Line 23: "Users can be assigned to groups"
 - Line 45: "Events are sent to the API endpoint"
 - Line 67: "The configuration is created by the system"
@@ -223,11 +228,11 @@ This second pass is CRITICAL because passive voice is easily missed when fixing 
 ### Phase 5: Verification
 
 After all fixes, verify:
-- ✅ Re-run passive voice search → zero results
-- ✅ Check that changes are correct and maintain meaning
-- ✅ Verify no new issues introduced
-- ✅ Confirm all list items have ending punctuation
-- ✅ Ensure headings follow rules (no end punctuation, sentence case)
+- Re-run passive voice search → zero results
+- Check that changes are correct and maintain meaning
+- Verify no new issues introduced
+- Confirm all list items have ending punctuation
+- Ensure headings follow rules (no end punctuation, sentence case)
 
 ## Completion Summary
 
@@ -308,7 +313,7 @@ When complete, provide a comprehensive summary:
 
 ### Rules Referenced
 All changes follow the style rules in .claude/CLAUDE.md:
-- Active voice (two-pass verification completed ✓)
+- Active voice (two-pass verification completed)
 - Present tense
 - Contractions required
 - Second person
@@ -365,11 +370,11 @@ was assigned | were assigned
 
 For passive constructions where the actor is unclear, often use "Amplitude" as the subject:
 
-- ❌ "Data is processed in real time"
-- ✅ "Amplitude processes data in real time"
+- "Data is processed in real time"
+- "Amplitude processes data in real time"
 
-- ❌ "Permissions are granted at the organization level"
-- ✅ "Amplitude grants permissions at the organization level"
+- "Permissions are granted at the organization level"
+- "Amplitude grants permissions at the organization level"
 
 ## Example Before/After
 
@@ -402,28 +407,28 @@ help you filter data.
 ```
 
 ### Changes Made:
-1. ❌ `#` → ✅ `##` (no H1 in document body)
-2. ❌ "Please navigate" → ✅ "Navigate" (no "please")
-3. ❌ "will be able to" → ✅ "to" (present tense, concise)
-4. ❌ "Currently," → ✅ Removed (temporal qualifier)
-5. ❌ "utilize" → ✅ "Use" (concise)
-6. ❌ "blacklist" → ✅ "block list" (inclusive terminology)
-7. ❌ "in order to" → ✅ "to" (concise)
-8. ❌ "was designed by our team" → ✅ "Amplitude designed" (active voice, second person)
+1. `#` → `##` (no H1 in document body)
+2. "Please navigate" → "Navigate" (no "please")
+3. "will be able to" → "to" (present tense, concise)
+4. "Currently," → Removed (temporal qualifier)
+5. "utilize" → "Use" (concise)
+6. "blacklist" → "block list" (inclusive terminology)
+7. "in order to" → "to" (concise)
+8. "was designed by our team" → "Amplitude designed" (active voice, second person)
 9. Added ending periods to all list items
 
 ## When to Stop
 
 A document is complete when:
-- ✅ Zero passive voice constructions (verified with two searches)
-- ✅ Zero future tense
-- ✅ All contractions applied
-- ✅ No "please" in instructions
-- ✅ All wordy phrases replaced
-- ✅ Second person used consistently
-- ✅ All list items have ending punctuation
-- ✅ All headings follow conventions
-- ✅ UI elements formatted correctly (bold vs italics)
+- Zero passive voice constructions (verified with two searches)
+- Zero future tense
+- All contractions applied
+- No "please" in instructions
+- All wordy phrases replaced
+- Second person used consistently
+- All list items have ending punctuation
+- All headings follow conventions
+- UI elements formatted correctly (bold vs italics)
 
 ## Integration with Other Skills
 

@@ -1,3 +1,8 @@
+---
+name: fix-issue
+description: Retrieve a Jira issue, understand what it describes, and update documentation to resolve it.
+---
+
 # Fix Issue
 
 Retrieve a Jira issue, understand what it describes, and update documentation to resolve it.

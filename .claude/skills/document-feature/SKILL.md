@@ -1,3 +1,8 @@
+---
+name: document-feature
+description: Interactive wizard for creating new feature documentation with proper structure and style.
+---
+
 # Document Feature
 
 Interactive wizard for creating new feature documentation with proper structure and style.
@@ -170,44 +175,44 @@ exclude_from_sitemap: false
 Ensure ALL generated content follows Amplitude documentation standards:
 
 ### Active Voice (CRITICAL - Do Two Passes)
-- ❌ "Settings can be configured by users"
-- ✅ "Configure the settings"
+- "Settings can be configured by users"
+- "Configure the settings"
 
 Search for passive patterns and convert:
 - `is/are/was/were [verb]ed`
 - `can be`, `will be`, `should be`
 
 ### Present Tense
-- ❌ "The feature will allow you to"
-- ✅ "The feature lets you"
+- "The feature will allow you to"
+- "The feature lets you"
 
 Remove: `will`, `would be`, `going to`
 
 ### Contractions Required
-- ❌ "cannot", "does not", "is not"
-- ✅ "can't", "doesn't", "isn't"
+- "cannot", "does not", "is not"
+- "can't", "doesn't", "isn't"
 
 ### Second Person
-- ❌ "Users should navigate to..."
-- ✅ "Navigate to..."
+- "Users should navigate to..."
+- "Navigate to..."
 
 Use "you" throughout, avoid "we", "users"
 
 ### Direct Instructions (No "Please")
-- ❌ "Please click the button"
-- ✅ "Select the button"
+- "Please click the button"
+- "Select the button"
 
 ### Concise Language
-- ❌ "in order to", "via", "desired"
-- ✅ "to", "through", "want/need"
+- "in order to", "via", "desired"
+- "to", "through", "want/need"
 
 ### UI Formatting
 - **Bold** for interactive elements: buttons, tabs, fields
 - *Italics* for navigation paths: *Settings > API Keys*
 
 ### Internal Links
-- ✅ `[Link text](/docs/collection-path/slug)`
-- ❌ `[Link](../relative-path.md)`
+- `[Link text](/docs/collection-path/slug)`
+- `[Link](../relative-path.md)`
 
 ## Step 5: Suggest Filename and Location
 

@@ -1,3 +1,8 @@
+---
+name: validate-links
+description: Check documentation files for incorrect internal link formats and suggest corrections.
+---
+
 # Validate Links
 
 Check documentation files for incorrect internal link formats and suggest corrections.
@@ -27,13 +32,13 @@ This skill scans documentation files for common link errors and provides a detai
 
 ### 1. Relative Paths with `../`
 
-**❌ Incorrect:**
+**Incorrect:**
 ```markdown
 [Lifecycle](../lifecycle/lifecycle-interpret.md)
 [Browser SDK](../../sdks/browser/browser-sdk-2.md)
 ```
 
-**✅ Correct:**
+**Correct:**
 ```markdown
 [Lifecycle](/docs/analytics/charts/lifecycle/lifecycle-interpret)
 [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)
@@ -43,13 +48,13 @@ This skill scans documentation files for common link errors and provides a detai
 
 ### 2. Markdown Extensions
 
-**❌ Incorrect:**
+**Incorrect:**
 ```markdown
 [API docs](/docs/apis/analytics/taxonomy.md)
 [Chart guide](/docs/analytics/chart.md)
 ```
 
-**✅ Correct:**
+**Correct:**
 ```markdown
 [API docs](/docs/apis/analytics/taxonomy)
 [Chart guide](/docs/analytics/chart)
@@ -59,13 +64,13 @@ This skill scans documentation files for common link errors and provides a detai
 
 ### 3. File Paths Instead of Web Routes
 
-**❌ Incorrect:**
+**Incorrect:**
 ```markdown
 [Doc](/content/collections/analytics/en/chart.md)
 [Guide](content/collections/data/en/sources.md)
 ```
 
-**✅ Correct:**
+**Correct:**
 ```markdown
 [Doc](/docs/analytics/chart)
 [Guide](/docs/data/sources)
@@ -75,14 +80,14 @@ This skill scans documentation files for common link errors and provides a detai
 
 ### 4. Missing `/docs/` Prefix
 
-**❌ Incorrect:**
+**Incorrect:**
 ```markdown
 [Analytics](/analytics/chart)
 [Audiences](/data/audiences/cohorts)
 [SDK](/sdks/browser/installation)
 ```
 
-**✅ Correct:**
+**Correct:**
 ```markdown
 [Analytics](/docs/analytics/chart)
 [Audiences](/docs/data/audiences/cohorts)
@@ -121,11 +126,11 @@ Categorize each link for appropriate handling:
 ### Step 3: Check Internal Links
 
 For each internal documentation link, verify it:
-1. ✅ Starts with `/docs/`
-2. ✅ Doesn't contain `../` or `./`
-3. ✅ Doesn't end with `.md`
-4. ✅ Doesn't contain `/content/collections/`
-5. ✅ Follows valid collection route patterns
+1. Starts with `/docs/`
+2. Doesn't contain `../` or `./`
+3. Doesn't end with `.md`
+4. Doesn't contain `/content/collections/`
+5. Follows valid collection route patterns
 
 ### Step 4: Suggest Corrections
 
@@ -142,12 +147,12 @@ Provide a detailed report in this format:
 ```markdown
 ## Link Validation Report for [filename]
 
-### ✅ Correct Links: [count]
+### Correct Links: [count]
 
 - Line [number]: `[text](/docs/collection/slug)` ✓
 - Line [number]: `[text](/docs/another-collection/slug)` ✓
 
-### ❌ Issues Found: [count]
+### Issues Found: [count]
 
 #### Issue 1: Relative path with .md extension
 - **Line [number]:** `[Growth chart](../lifecycle/lifecycle-growth.md)`
@@ -167,7 +172,7 @@ Provide a detailed report in this format:
 - **Suggested fix:** `[API docs](/docs/apis/analytics/taxonomy)`
 - **Confidence:** High
 
-### ℹ️ Skipped Links: [count]
+### Skipped Links: [count]
 
 - [count] external links (not validated)
 - [count] image links (not validated)
@@ -189,7 +194,7 @@ Would you like me to fix these issues automatically?
 
 When suggesting fixes, indicate your confidence level:
 
-### High Confidence ✅
+### High Confidence
 The correction is clearly determinable from the link structure.
 
 **Example:**
@@ -198,7 +203,7 @@ The correction is clearly determinable from the link structure.
 → /docs/analytics/charts/lifecycle/lifecycle-interpret
 ```
 
-### Medium Confidence ⚠️
+### Medium Confidence
 Can infer the collection, but should verify the file exists.
 
 **Example:**
@@ -207,7 +212,7 @@ Can infer the collection, but should verify the file exists.
 → /docs/data/audiences/cohorts (verify file exists)
 ```
 
-### Low Confidence ❓
+### Low Confidence
 Can't determine the correct route from context.
 
 **Example:**
@@ -303,12 +308,12 @@ For a complete list, refer to CLAUDE.md or `.cursor/rules/statamic-routing.mdc`.
 ```markdown
 ## Link Validation Report for lifecycle-interpret.md
 
-### ✅ Correct Links: 2
+### Correct Links: 2
 
 - Line 16: `/docs/analytics/charts/lifecycle/lifecycle-track-growth` ✓
 - Line 36: `/docs/analytics/charts/review-chart-data` ✓
 
-### ❌ Issues Found: 1
+### Issues Found: 1
 
 #### Issue 1: Relative path with .md extension
 - **Line 58:** `[Growth chart](../lifecycle/lifecycle-growth.md)`
@@ -316,7 +321,7 @@ For a complete list, refer to CLAUDE.md or `.cursor/rules/statamic-routing.mdc`.
 - **Suggested fix:** `[Growth chart](/docs/analytics/charts/lifecycle/lifecycle-growth)`
 - **Confidence:** High
 
-### ℹ️ Skipped Links: 3
+### Skipped Links: 3
 
 - 2 external links (not validated)
 - 1 image link (not validated)
@@ -369,9 +374,9 @@ Validated 5 files:
 
 1. **lifecycle-interpret.md**: 1 issue (relative path)
 2. **event-segmentation.md**: 3 issues (2 relative paths, 1 .md extension)
-3. **funnel-analysis.md**: ✅ All links valid
+3. **funnel-analysis.md**: All links valid
 4. **retention-overview.md**: 2 issues (missing /docs/ prefix)
-5. **cohorts.md**: ✅ All links valid
+5. **cohorts.md**: All links valid
 
 ### Total Summary
 
