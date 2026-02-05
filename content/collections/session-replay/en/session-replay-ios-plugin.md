@@ -159,6 +159,7 @@ Pass the following option when you initialize the Session Replay plugin:
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `uploadConfig.disableMeteredUploads`    | `Bool` | No       | `false`            | Use this option to disable uploading session replays when the device is on a metered network (such as cellular data). When set to `true`, uploads pause automatically when the device switches to a metered connection and resume when the device reconnects to an unmetered network (such as Wi-Fi). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
