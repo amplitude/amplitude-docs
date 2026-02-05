@@ -14,7 +14,8 @@ academy_course:
   - 46517037-8185-4438-afbd-4ba6f18249ea
 ---
 {{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Collaborate and share analyses with Spaces](https://academy.amplitude.com/collaborate-and-share-analyses-with-spaces) · [Collaboration features](https://academy.amplitude.com/path/collaboration-features)
+- [Collaborate and share analyses with Spaces](https://academy.amplitude.com/collaborate-and-share-analyses-with-spaces)
+- [Collaboration features](https://academy.amplitude.com/path/collaboration-features)
 {{/partial:admonition}}
 
 This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
