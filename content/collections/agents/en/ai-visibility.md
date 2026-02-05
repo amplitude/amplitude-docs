@@ -213,7 +213,7 @@ AI Visibility automatically creates actions that you can take to improve your vi
 * **Generate Content**: Generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
 
 {{partial:admonition type="note" heading="Suggestions for Improvement"}}
-Be aware that AI Visibility can't directly access or make changes to your website. You must implement these suggestions and recommendations yourself. For any content suggestion, AI Visibility let's you copy or download the content and port it over to your website. 
+Be aware that AI Visibility can't directly access or make changes to your website. You must implement these suggestions and recommendations yourself. For any content suggestion, AI Visibility lets you copy or download the content and port it over to your website. 
 {{/partial:admonition}}
 
 The following procedures describe how to implement or create AI Visibility's actions:
