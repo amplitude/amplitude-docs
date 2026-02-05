@@ -158,7 +158,7 @@ let sessionReplay = SessionReplay(apiKey: API_KEY,
 
 ### Disable uploads on metered networks
 
-To avoid using the user's cellular data, you can pause Session Replay uploads while the device is on a metered network. Session Replay still records data locally and uploads resume when the device connects to Wi‑Fi or another non-metered connection.
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
 
 ```swift
 let sessionReplay = SessionReplay(apiKey: API_KEY,
