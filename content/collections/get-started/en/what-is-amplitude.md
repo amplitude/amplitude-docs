@@ -10,10 +10,6 @@ source: "/docs/analytics/what-is-amplitude/"
 academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path)
-{{/partial:admonition}}
-
 Amplitude is a powerful product analytics platform that enables you to build better products by tracking and understanding user behavior. 
 
 Use Amplitude to track user data and gain insights into user engagement, retention, and revenue. Amplitude keeps your data trustworthy and secure, ensuring that you have access to accurate and reliable information. Amplitude offers powerful analytics tools that help answer questions about what happened, why it happened, and which actions to take next. With Amplitude, you can seamlessly share your work across teams, facilitating collaboration and driving growth.

@@ -10,10 +10,6 @@ updated_at: 1722895468
 academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Getting Started with Amplitude Analytics](https://academy.amplitude.com/amplitude-getting-started-with-analytics)
-{{/partial:admonition}}
-
 In Amplitude, properties are attributes that provide additional context around your users and the events they trigger. There are two types of properties in Amplitude:
 
 1. **User properties:** User properties are the attributes of individual users. Common user properties include device type, location, User ID, and whether the user is a paying customer or not. An attribute can reflect either current or previous values, depending on its nature and how often it updates.

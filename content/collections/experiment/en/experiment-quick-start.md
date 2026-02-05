@@ -7,10 +7,6 @@ exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753137993
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Getting Started with Amplitude Experiment](https://academy.amplitude.com/path/getting-started-with-amplitude-experiment-learning-path)
-{{/partial:admonition}}
-
 Experiment is a workflow-driven behavioral experimentation platform that accelerates the process of creating different variants of features and websites for experimentation. 
 
 With Experiment, you can modify and configure product experiences for unique audiences through:

@@ -10,10 +10,6 @@ landing_blurb: 'Understand the benefits of a lifecycle analysis'
 academy_course:
   - def740af-68f5-484d-95c4-0b84edc128b5
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Track the growth of your user base with Lifecycle](https://academy.amplitude.com/track-the-growth-of-your-user-base-with-lifecycle)
-{{/partial:admonition}}
-
 Amplitude's **Lifecycle** chart gives you a quick, easy-to-understand overview of the growth of your product's user base over time. It does this by breaking out your active users into subgroups: new, current, and resurrected (formerly inactive) users. All your total active users will fall into one of these categories. It will also show you a count of your inactive, dormant users.
 
 Much of the power of a lifecycle analysis depends on an understanding of your product's **critical event.** What's the one thing your users need to do in order to get value from your product? For a food delivery app, this might be placing an order. For a healthcare app, it might be starting or booking a session. When you know that critical event, you can build a Lifecycle chart around it and see how your user base is interacting with that event over time.

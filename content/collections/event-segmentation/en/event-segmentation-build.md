@@ -11,11 +11,6 @@ academy_course:
   - 3a7b8c9d-0e1f-4a5b-4c5d-7e8f9a0b1c2d
   - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-- [Build an Event Segmentation chart](https://academy.amplitude.com/build-an-event-segmentation-chart)
-- [Understand user behavior with the Event Segmentation chart](https://academy.amplitude.com/understand-user-behavior-with-the-event-segmentation-chart)
-{{/partial:admonition}}
-
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:
 
 * Measure the top events performed over a selected time period

@@ -12,11 +12,6 @@ academy_course:
   - 7c3d4e5f-6a7b-4c5d-0e1f-3a4b5c6d7e8f
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-- [Build your first analysis](https://academy.amplitude.com/build-your-first-analysis)
-- [Getting Started with Amplitude Analytics](https://academy.amplitude.com/amplitude-getting-started-with-analytics)
-{{/partial:admonition}}
-
 **Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create > Chart*, then select a new chart type from the Charts fly-out.
 
 
