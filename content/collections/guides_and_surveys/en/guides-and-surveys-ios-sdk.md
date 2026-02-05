@@ -365,6 +365,17 @@ Pins and tooltips can't target tab bar items (for example, `UITabBar` elements).
 
 **Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
 
+### Animated views and moving containers
+
+Pins can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+**Note:** Scrollviews usually work.
+
+**Workaround:** Use screen-based targeting or event-based triggers to show guides, rather than pinning directly to animated elements or elements in moving containers.
+
 ## Changelog
 
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).
