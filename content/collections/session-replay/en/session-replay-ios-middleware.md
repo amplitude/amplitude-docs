@@ -93,6 +93,7 @@ Pass the following option when you initialize the Session Replay middleware:
 | `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. For more information see, [Sampling rate](#sampling-rate).|
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
@@ -119,6 +120,17 @@ amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(/* session repl
 ```swift
 // This configuration samples 1% of all sessions
 amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(sampleRate: 0.01))
+```
+
+### Disable uploads on metered networks
+
+To avoid using the user's cellular data, you can pause Session Replay uploads while the device is on a metered network. Session Replay still records data locally and uploads resume when the device connects to Wi‑Fi or another non-metered connection.
+
+```swift
+amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(
+    sampleRate: 0.1,
+    uploadConfig: UploadConfig(disableMeteredUploads: true)
+))
 ```
 
 ### Disable replay collection

@@ -159,6 +159,7 @@ Pass the following option when you initialize the Session Replay plugin:
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -191,6 +192,17 @@ amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(/* session replay option
 ```swift
 // This configuration samples 1% of all sessions
 amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(sampleRate: 0.01))
+```
+
+### Disable uploads on metered networks
+
+To avoid using the user's cellular data, you can pause Session Replay uploads while the device is on a metered network. Session Replay still records data locally and uploads resume when the device connects to Wi‑Fi or another non-metered connection.
+
+```swift
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    uploadConfig: UploadConfig(disableMeteredUploads: true)
+))
 ```
 
 ### Disable replay collection
