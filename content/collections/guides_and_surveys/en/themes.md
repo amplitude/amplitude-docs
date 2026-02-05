@@ -58,7 +58,7 @@ Accent represents your brand's primary color. This color appears on primary butt
 
 In this example, the primary color is `#48705C`.
 
-![Image shows a selection option where the primary color is a dark green and the accent color is a complimentary, lighter green. ](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
+![Image shows a selection option where the primary color is a dark green and the accent color is a complementary, lighter green. ](statamic://asset::help_center_conversions::guides-surveys/primary-color.png)
 
 ### Typography
 
@@ -166,20 +166,20 @@ Select the animation that each widget type uses to appear on screen, along with 
 
 ## Component editor
 
-Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents once, and then can apply them anywhere in the theme.
+Components are reusable elements that you use across your guides and surveys. With components, you only specify the contents one time. You can then apply them anywhere in the theme.
 
 Each component includes states, for example default, hover, or focus, that you can customize.
 
 ## Where theme components are used
 
-Theme components appear throughout guides and surveys. This section outlines where each component type is used in the application.
+Theme components appear throughout guides and surveys. This section outlines where each component type appears in the application.
 
 ### Buttons
 
 Buttons appear in the following locations:
 
-- **Primary buttons**: Used for main call-to-action (CTA) buttons in guides and surveys. These buttons use the accent color you define in your theme.
-- **Secondary buttons**: Used for alternative actions or less prominent CTAs. These buttons use the secondary color settings.
+- **Primary buttons**: The main call-to-action (CTA) buttons in guides and surveys. These buttons use the accent color you define in your theme.
+- **Secondary buttons**: Alternative actions or less prominent CTAs. These buttons use the secondary color settings.
 - **Button states**: All buttons support default, hover, active, and disabled states that you can customize in the component editor.
 
 Buttons appear in:
@@ -191,7 +191,7 @@ Buttons appear in:
 
 ### Cards
 
-Cards are used to group and display content in guides and surveys. Card styling applies to:
+Cards group and display content in guides and surveys. Card styling applies to:
 
 - Guide step containers
 - Survey question containers
@@ -203,10 +203,10 @@ Card properties (corner radius, padding, gaps, shadow) apply uniformly to all ca
 
 ### Form controls
 
-Form controls are interactive elements used in surveys and forms. These controls appear in:
+Form controls are interactive elements in surveys and forms. These controls appear in:
 
-- **Text inputs**: Short and long text input fields for survey responses..
-- **Select dropdowns**: Dropdown menus for selecting from multiple options
+- **Text inputs**: Short and long text input fields for survey responses.
+- **Select dropdowns**: Dropdown menus for selecting from multiple options.
 - **Checkboxes**: Multiple choice options where users can select more than one answer.
 - **Radio buttons**: Single choice options where users can select only one answer.
 - **Rating components**: Star ratings, emoji ratings, and numeric ratings for feedback.
@@ -218,10 +218,10 @@ All form controls share the same styling properties (height, corner radius, padd
 
 Widgets are container elements that display guides and surveys. Each widget type has specific dimension settings:
 
-- **Modals**: Full-screen or centered dialog boxes that appear over your application. Used for multi-step guides, surveys, and important announcements.
-- **Popovers / Pins**: Small, contextual elements that appear near specific UI elements. Used for tooltips, hints, and inline guidance.
-- **Tooltips**: Small informational boxes that appear when users hover over or interact with elements. Used for contextual help and explanations.
-- **Checklists**: Interactive lists that users can check off as they complete tasks. Used for onboarding flows and task completion guides.
+- **Modals**: Full-screen or centered dialog boxes that appear over your application. Appears for multi-step guides, surveys, and important announcements.
+- **Popovers / Pins**: Small, contextual elements that appear near specific UI elements. Appears for tooltips, hints, and inline guidance.
+- **Tooltips**: Small informational boxes that appear when users hover over or interact with elements. Appears for contextual help and explanations.
+- **Checklists**: Interactive lists that users can check off as they complete tasks. Appears for onboarding flows and task completion guides.
 
 ### Borders
 
@@ -237,7 +237,7 @@ Border colors support primary, primary hover, and disabled states that you can c
 
 ### Backgrounds
 
-Background colors are used for:
+Background colors apply to:
 
 - Card backgrounds
 - Form control backgrounds
