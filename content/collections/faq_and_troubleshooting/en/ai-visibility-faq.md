@@ -16,7 +16,7 @@ Marketing, SEO, content, and product teams can all benefit—whether monitoring 
 AI Visibility is available directly inside the Amplitude platform and is available to all customers across all plans. Amplitude also provides a limited, free experience to non-customers here.
 
 ## How frequently is AI Visibility updated?
-AI Visibility (logged-in) updates once each week.
+AI Visibility refreshes weekly.
 
 The free version of AI Visibility does not update.
 
@@ -40,6 +40,12 @@ Yes. The competitive rankings feature highlights exactly which prompts and keywo
 ### How many popular prompts can be generated for each category or filter selection?
 Unlimited by category or filter selection. However your total number of prompts is limited by your pricing tier.
 
+### Are identical prompts across different LLMs calculated separately? 
+Identical prompts are considered a single prompt, regardless of the LLM. If the prompt is identical across different LLMs, it's still counted as a single prompt towards your usage limit. 
+
+## Is there a limit to the number of prompts I can track accross multiple projects? 
+Your prompt usage is limited by your pricing tier. However, for each project, up to 2000 even properties and 1000 user properties can be recorded for each prompt.
+
 ## What platforms and models does AI Visibility track?
 AI Visibility monitors brand performance in OpenAI ChatGPT and Google Gemini. 
 
@@ -47,6 +53,9 @@ Through the [MCP](/docs/amplitude-ai/amplitude-mcp), Amplitude also supports ext
 
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
+
+## Does AI Visibility provide optimization suggestions for specific URLs or copy? 
+Yes. AI Visiblity surfaces automated recommendations to boos LLM visibility for specific pages and copy. These suggestions include adding clear headings, breaking long paragraphs into shorter sections, inserting concise FAQ blocks, and more. 
 
 ## Are the prompts shown in AI Visibility based on data from real users?
 No, OpenAPI, Google, and other companies don't share what users are searching. The prompts Amplitude generates are based on what LLMs know is relevant to your brand. 
@@ -93,10 +102,16 @@ Unlimited.
 Not specificaly. However, prompts reflect the total number of prompts across all topics related to your brand or competitors. Responses reflect the total AP repsonses generated from those prompts, which gives additional volume context.
 
 ## What is the data source for popular prompts on my dashboard? 
-Amplitude asks LLMs such as ChatGPT to come up with likely prompts that marketers would be interested in. 
+Amplitude asks LLMs such as ChatGPT to come up with likely prompts that marketers might be interested in. 
 
 ## Is there a limit to the number of prompts I can track accross multiple projects? 
 Your prompt usage is limited by your pricing tier. However, for each project, up to 2000 even properties and 1000 user properties can be recorded for each prompt.
 
+## Does AI Visibility integrate with analytics platforms like Google Analytics? 
+Yes, Amplitude provides a native Google Analytics 4 integration and streams event. AI Visibility can also stream event and user data to other analytics platforms through an Amplitude real-time Webhook destination.
 
+## What reporting or export options are available? 
+You can export all prompt metrics as a CSV file. In Amplitude Analytics, you can export charts as PNG, PDF, CSV, or sharable links. Dashboards and usage reports can be exported to PDF or PNG files. All other aspects of Analytics can also be exported. 
+
+Additionally, you can export API time
 

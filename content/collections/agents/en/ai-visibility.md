@@ -207,7 +207,7 @@ AI Visibility then searches for that competitor and includes their information i
 
 AI Visibility automatically creates actions that you can take to improve your visibility within AI responses. You can implement any, or none, of the recommended actions. These actions are divided into the following categories:
 
-* **Recommendations**: Implement specific actions to improve your overall LLM visibility.
+* **Recommendations**: Implement specific actions to improve your overall LLM visibility. Recommendations also provides page or URL-specific suggestions.
 * **Analyze Page**: Have AI Visibility analyze a specific URL, topic, or piece of content and generate recommendations specific to that page.
 * **Simulate Changes**: Have AI Visibility simulate recommended changes. This list you view the suggested changes in real time before committing them to your website.
 * **Generate Content**: Have AI Visibility generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
@@ -219,7 +219,7 @@ Be aware that AI Visibility can't directly access or make changes to your websit
 The following procedures describe how to implement or create AI Visibility's actions:
 
 {{partial:admonition type="tip" heading="Recommendations are in Beta"}}
-The Recommendations functionality is in Beta. This means that functionality may not operate exactly as expected, and that you should review the recommendations before implementing them. When the feature is out of Beta, this message will disappear.
+The Recommendations functionality is in Beta. This means that functionality may not operate exactly as expected, and that you should review the recommendations before implementing them.
 {{/partial:admonition}}
 
 ##### To implement a recommendation
