@@ -196,7 +196,7 @@ amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(sampleRate: 0.01))
 
 ### Recording quality
 
-You can choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution; higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example, high on newer devices, lower on older ones).
+Choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution. Higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example: high on newer devices, lower on older ones).
 
 {{partial:tabs tabs="iOS Swift SDK, iOS SDK (maintenance)"}}
 {{partial:tab name="iOS Swift SDK"}}
