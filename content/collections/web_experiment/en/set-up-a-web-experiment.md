@@ -7,6 +7,10 @@ updated_at: 1754501567
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting started with Amplitude Web Experimentation](https://academy.amplitude.com/getting-started-with-amplitude-web-experimentation)
+{{/partial:admonition}}
+
 Web Experiment lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) without new code. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you'd like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to create experiments without engineering resources.
 
 Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control where your experiment variants apply on your website, helping you scope experiments to specific URLs without affecting unrelated parts of your site.

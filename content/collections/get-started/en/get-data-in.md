@@ -11,6 +11,10 @@ academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
   - 9a1b2c3d-4e5f-4a5b-8c9d-1e2f3a4b5c6d
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) · [Essentials of Data Management](https://academy.amplitude.com/path/essentials-of-data-management-learning-path)
+{{/partial:admonition}}
+
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
 {{partial:admonition type='note'}}

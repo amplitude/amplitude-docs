@@ -12,6 +12,10 @@ academy_course:
   - 5679eb5e-37e0-45b2-a18d-d14c6d0bfa7e
   - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Use dashboards and starter templates to monitor important metrics](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics)
+{{/partial:admonition}}
+
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
 ## Before you begin

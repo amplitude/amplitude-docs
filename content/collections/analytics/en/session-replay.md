@@ -11,6 +11,10 @@ updated_at: 1718901114
 academy_course:
   - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Contextualize user experience with Session Replay](https://academy.amplitude.com/contextualize-user-experience-with-session-replay)
+{{/partial:admonition}}
+
 #### This article will help you:
 
 * Deepen your understanding of user session activity with a qualitative lens

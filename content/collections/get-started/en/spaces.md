@@ -11,6 +11,10 @@ academy_course:
   - 8b2c3d4e-5f6a-4b5c-9d0e-2f3a4b5c6d7e
   - 46517037-8185-4438-afbd-4ba6f18249ea
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Increase your team's data use with collaboration features](https://academy.amplitude.com/path/collaboration-features) · [Collaborate and share analyses with Spaces](https://academy.amplitude.com/collaborate-and-share-analyses-with-spaces)
+{{/partial:admonition}}
+
 Some of the most valuable analyses are the result of collaborations among teammates. **Spaces** help product teams subscribe to and organize analyses shared in Amplitude.
 
 Every saved piece of content must live in a space. By default, you save content into your personal workspace. You can also choose to move them into a shared space.

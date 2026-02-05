@@ -10,6 +10,10 @@ updated_at: 1715292596
 academy_course:
   - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Amplitude Analytics Admin Essentials](https://academy.amplitude.com/amplitude-analytics-admin-essentials)
+{{/partial:admonition}}
+
 Once you've created your [account](/docs/get-started/create-a-new-account) and your [first project](/docs/get-started/create-project), you will from time to time need to manage and update them. This article explains how to perform common tasks related to organization and project management in Amplitude.
 
 ## Approve and provision new users in your organization
