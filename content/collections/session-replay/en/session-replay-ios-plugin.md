@@ -159,6 +159,7 @@ Pass the following option when you initialize the Session Replay plugin:
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `quality`                              | `QualityProfile` | No | `.high` | Controls capture and encoding quality (for example, frame rate and image resolution). Use `.low`, `.medium`, or `.high` to balance replay fidelity with performance and storage. Use `QualityProfile.automatic` to let the SDK choose a profile based on the device. |
 | `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
@@ -192,6 +193,24 @@ amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(/* session replay option
 ```swift
 // This configuration samples 1% of all sessions
 amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(sampleRate: 0.01))
+```
+
+### Recording quality
+
+Choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution. Higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example: high on newer devices, lower on older ones).
+
+```swift
+// Use automatic profile selection based on device
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    quality: .automatic
+))
+
+// Or set a fixed profile (low, medium, or high)
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    quality: .medium
+))
 ```
 
 ### Disable uploads on metered networks
