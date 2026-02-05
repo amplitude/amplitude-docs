@@ -8,6 +8,10 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718902608
 source: "/docs/analytics/what-is-amplitude/"
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path)
+{{/partial:admonition}}
+
 Amplitude is a powerful product analytics platform that enables you to build better products by tracking and understanding user behavior. 
 
 Use Amplitude to track user data and gain insights into user engagement, retention, and revenue. Amplitude keeps your data trustworthy and secure, ensuring that you have access to accurate and reliable information. Amplitude offers powerful analytics tools that help answer questions about what happened, why it happened, and which actions to take next. With Amplitude, you can seamlessly share your work across teams, facilitating collaboration and driving growth.
@@ -56,6 +60,4 @@ User properties are details about users. For example, use them to keep track of 
 
 A session is the duration a user has your app in the foreground or has your website open. Sessions are useful for understanding the frequency and duration of your users' engagement with your product. Amplitude assigns a session ID to each session, and all events within the same session share the same session ID. To send data, Amplitude SDKs automatically generate and manage session IDs. However, you have to manage session IDs yourself, using HTTP APIs. 
 
-You can learn more about [how Amplitude tracks sessions](/docs/data/sources/instrument-track-sessions).
-
-If you are new to Amplitude, you should complete [this course](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) to get started and learn more [helpful definitions](/docs/get-started/helpful-definitions).
+You can learn more about [how Amplitude tracks sessions](/docs/data/sources/instrument-track-sessions). For definitions of key terms, see [Helpful definitions](/docs/get-started/helpful-definitions).

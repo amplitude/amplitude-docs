@@ -13,6 +13,10 @@ updated_at: 1742328540
 academy_course:
   - f60c2808-d54b-484c-bad0-b346581d802c
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Tracking unique users with Amplitude](https://academy.amplitude.com/tracking-unique-users-with-amplitude)
+{{/partial:admonition}}
+
 Amplitude uses a combination of three different methods to identify your users: device IDs, Amplitude ID, and **user IDs**. The first comes directly from your users' devices, while the second is an ID that Amplitude automatically creates once it has enough information to conclusively identify a unique user. The user ID, however, is something you'd set up.
 
 In Amplitude, a user ID is a unique identifier applied to individual users. Using them is optional, but recommended: your product should set a user ID once a user has created an account, logged in, or is otherwise identified in your product.

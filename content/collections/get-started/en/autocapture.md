@@ -9,6 +9,10 @@ updated_at: 1742491699
 academy_course:
   - fcefbf26-273d-49a9-adbf-89440c8cb48b
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting started with Autocapture and visual labeling](https://academy.amplitude.com/autocapture-and-visual-labeling-course)
+{{/partial:admonition}}
+
 Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document helps you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
 
 ## Autocapture for the web

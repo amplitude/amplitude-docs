@@ -11,6 +11,10 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571412
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) · [Essentials of Data Management](https://academy.amplitude.com/path/essentials-of-data-management-learning-path)
+{{/partial:admonition}}
+
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
 {{partial:admonition type='note'}}
@@ -57,4 +61,3 @@ You can send data to Amplitude in different ways: SDKs, HTTP API v2, Batch API, 
 * [Amplitude SDKs](https://www.docs.developers.amplitude.com/data/sources/)
 * [Amplitude Github Repository](https://github.com/amplitude?page=1)
 * [Data Taxonomy Playbook](/docs/data/data-planning-playbook)
-* [Amplitude Academy](https://academy.amplitude.com/)

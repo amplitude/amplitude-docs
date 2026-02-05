@@ -13,6 +13,10 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717612640
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Data](https://academy.amplitude.com/getting-started-with-amplitude-data)
+{{/partial:admonition}}
+
 Amplitude Data provides you with a complete set of tools for the entire lifecycle of your data, from planning and instrumentation, maintenance, and deprecation. We've designed the product to be flexible enough to accomodate various workflows, so you can choose which tools you need.
 
 ## Getting data into Amplitude

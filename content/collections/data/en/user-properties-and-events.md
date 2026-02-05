@@ -10,16 +10,16 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895468
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Analytics](https://academy.amplitude.com/amplitude-getting-started-with-analytics)
+{{/partial:admonition}}
+
 In Amplitude, properties are attributes that provide additional context around your users and the events they trigger. There are two types of properties in Amplitude:
 
 1. **User properties:** User properties are the attributes of individual users. Common user properties include device type, location, User ID, and whether the user is a paying customer or not. An attribute can reflect either current or previous values, depending on its nature and how often it updates.
 2. **Event properties:** Event properties are attributes of a particular event. The values they contain are current for the moment at which the event occurred. For example, the event  `JoinCommunity`  could have an event property of  `Type` , which denotes the kind of community joined **at the time** of that event.
 
 This article describes what user and event properties do, how Amplitude updates and applies them, and how you can hide individual properties in an Amplitude project.
-
-{{partial:admonition type="info" heading=""}}
-For more on events, users and properties, take this course in [the Amplitude Academy](https://academy.amplitude.com/amplitude-getting-started-with-analytics/1092674/scorm/40m548g557cd).
-{{/partial:admonition}}
 
 ## User properties
 
