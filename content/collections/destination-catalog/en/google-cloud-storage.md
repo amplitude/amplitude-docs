@@ -173,43 +173,39 @@ Amplitude exports data as a zipped archive of JSON files. Each file contains one
 
 #### Object key structure
 
-Amplitude organizes merged ID files under a scope directory. The scope determines the directory name and corresponds to either your organization ID (for cross-app orgs) or your app ID (for legacy single-app configurations). The full object key structure is:
+Amplitude organizes merged ID files under a directory named by your organization ID (with a leading `-`). The full object key structure is:
 
-`{gcsPrefix}/{scope}/{filename}`
+`{gcsPrefix}/-{orgId}/{filename}`
 
 If you don't configure a prefix, the path simplifies to:
 
-`{scope}/{filename}`
+`-{orgId}/{filename}`
 
-#### Cross-app organizations (standard behavior)
+Where:
 
-For organizations with cross-app user tracking enabled, the scope is a negative org ID. Both the directory and filename use this negative org ID format:
-
-- **Directory:** `-{orgId}/`
-- **Filename:** `-{orgId}_yyyy-MM-dd_H.json.gz`
-
-For example, if your bucket is `amplitude-data`, your prefix is `merged`, and your org ID is `189524`, a merged ID file from Jan 25, 2020, between 5 PM and 6 PM UTC appears at:
-
-`gs://amplitude-data/merged/-189524/-189524_2020-01-25_17.json.gz`
-
-#### Legacy single-app behavior
-
-A small number of legacy organizations that haven't migrated to cross-app user tracking may still export merged IDs with the app ID as the scope. In this configuration:
-
-- **Directory:** `{appId}/`
-- **Filename:** `{appId}_yyyy-MM-dd_H.json.gz` (no leading `-`)
-
-If you're unsure which behavior applies to your organization, contact Amplitude Support or your Customer Success Manager.
+- `{gcsPrefix}` is the optional folder/prefix you configure in the Amplitude UI.
+- `-{orgId}` is your Amplitude organization ID with a leading hyphen.
+- `{filename}` follows the format below.
 
 #### Filename format
 
 File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example `server_upload_time`):
 
-`-OrgID_yyyy-MM-dd_H.json.gz`
+`-{orgId}_yyyy-MM-dd_H.json.gz`
 
-For example, data uploaded to this project, on Jan 25, 2020, between 5 PM and 6 PM UTC, is in the file:
+For example, data uploaded for org ID `189524`, on Jan 25, 2020, between 5 PM and 6 PM UTC, is in the file:
 
 `-189524_2020-01-25_17.json.gz`
+
+#### Example
+
+If your bucket is `amplitude-data`, your prefix is `merged`, and your org ID is `189524`, the full GCS path for this file is:
+
+`gs://amplitude-data/merged/-189524/-189524_2020-01-25_17.json.gz`
+
+{{partial:admonition type="note" title="Legacy organizations"}}
+Some legacy organizations may see merged ID exports with your app ID instead of org ID. In this case, the directory and filename use `{appId}` without the leading `-`. Contact Amplitude Support to confirm which format applies to your organization.
+{{/partial:admonition}}
 
 Merged ID JSON objects have the following schema:
 
