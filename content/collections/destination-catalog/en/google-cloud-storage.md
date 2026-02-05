@@ -82,7 +82,7 @@ Amplitude exports data as a zipped archive of JSON files, partitioned by the hou
 
 #### Object key structure
 
-Amplitude organizes exported event files under a directory named by your project/app ID. The full object key structure is:
+Amplitude organizes exported event files under an `{appId}` directory that matches your project ID. The full object key structure is:
 
 `{gcsPrefix}/{appId}/{filename}`
 
@@ -98,7 +98,7 @@ Where:
 
 #### Filename format
 
-File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example, `server_upload_time`):
+File names have the following syntax, where the time represents when Amplitude servers received the data in UTC (the `server_upload_time`):
 
 `projectID_yyyy-MM-dd_H#partitionInteger.json.gz`
 
@@ -173,7 +173,7 @@ Amplitude exports data as a zipped archive of JSON files. Each file contains one
 
 #### Object key structure
 
-Amplitude organizes merged ID files under a directory named by your organization ID (with a leading `-`). The full object key structure is:
+Amplitude organizes merged ID files under a `-{orgId}` directory that matches your organization ID. The full object key structure is:
 
 `{gcsPrefix}/-{orgId}/{filename}`
 
@@ -189,7 +189,7 @@ Where:
 
 #### Filename format
 
-File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example `server_upload_time`):
+File names have the following syntax, where the time represents when Amplitude servers received the data in UTC (the `server_upload_time`):
 
 `-{orgId}_yyyy-MM-dd_H.json.gz`
 
