@@ -119,6 +119,16 @@ amplitude.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_K
                                                               sampleRate: 0.01))
 ```
 
+### Disable uploads on metered networks
+
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
+
+```swift
+analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_KEY,
+                                                              sampleRate: 0.1,
+                                                              uploadConfig: UploadConfig(disableMeteredUploads: true)))
+```
+
 ### Disable replay collection
 
 Once enabled, Session Replay runs on your app until either:

@@ -121,6 +121,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | `serverUrl`           | `string`  | No       | `null`           | Explicitly set the server URL. Use this setting for proxy configuration.                                                                                                                                                                                                                                             |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -152,6 +153,18 @@ let sessionReplay = SessionReplay(apiKey: API_KEY,
 // This configuration samples 1% of all sessions
 let sessionReplay = SessionReplay(apiKey: API_KEY,
                                      sampleRate: 0.01,
+                                     /* other session replay options */)
+```
+
+### Disable uploads on metered networks
+
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
+
+```swift
+let sessionReplay = SessionReplay(apiKey: API_KEY,
+                                     deviceId: DEVICE_ID,
+                                     sessionId: SESSION_ID,
+                                     uploadConfig: UploadConfig(disableMeteredUploads: true),
                                      /* other session replay options */)
 ```
 
