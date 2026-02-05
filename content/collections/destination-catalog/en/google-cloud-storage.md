@@ -199,7 +199,7 @@ A small number of legacy organizations that haven't migrated to cross-app user t
 - **Directory:** `{appId}/`
 - **Filename:** `{appId}_yyyy-MM-dd_H.json.gz` (no leading `-`)
 
-If you're unsure which behavior applies to your organization, contact Amplitude Support or your Customer Success Manager. They can confirm your current configuration and provide migration details if needed.
+If you're unsure which behavior applies to your organization, contact Amplitude Support or your Customer Success Manager.
 
 #### Filename format
 
