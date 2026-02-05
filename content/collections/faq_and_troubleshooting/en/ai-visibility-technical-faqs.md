@@ -13,21 +13,18 @@ updated_at: 1770313443
 * 5000 prompts for Enterprise
 
 ### How many popular prompts can be generated for each category or filter selection?
-Unlimited by category or filter selection. However your total number of prompts is limited by your pricing tier.
+Unlimited by category or filter selection. However, your total number of prompts is limited by your pricing tier.
 
 ### Are identical prompts across different LLMs calculated separately? 
 Identical prompts are considered a single prompt, regardless of the LLM. If the prompt is identical across different LLMs, it's still counted as a single prompt towards your usage limit. 
 
-## Is there a limit to the number of prompts I can track accross multiple projects? 
-Your prompt usage is limited by your pricing tier. However, for each project, up to 2000 even properties and 1000 user properties can be recorded for each prompt.
-
-## Do popular prompts include volum data (for example, search counts) to support rankings? 
-Not specificaly. However, prompts reflect the total number of prompts across all topics related to your brand or competitors. Responses reflect the total AP repsonses generated from those prompts, which gives additional volume context.
+## Do popular prompts include volume data (for example, search counts) to support rankings? 
+Not yet. Amplitude plans on adding Google search volume in the future to provide more context on the popularity of each prompt.
 
 ## What platforms and models does AI Visibility track?
 AI Visibility monitors brand performance in OpenAI ChatGPT and Google Gemini. 
 
-Through the [MCP](/docs/amplitude-ai/amplitude-mcp), Amplitude also supports external AI clients such as Cursor for natural-langauge queries against Amplitude data.
+Through the [MCP](/docs/amplitude-ai/amplitude-mcp), Amplitude also supports external AI clients such as Cursor for natural-language queries against Amplitude data.
 
 ## How do Role-Based Access (RBAC) rules apply to AI Visibility? 
 Amplitude's RBAC process uses three layers: roles, permissions, and actions to let administrators assign default or customer roles at the project level. You can assign users and groups to receive view-only, admin, or other permissions sets for each project. This lets you limit who can access each project's AI Visibility analysis. 
@@ -57,4 +54,4 @@ Unlimited.
 Amplitude asks LLMs such as ChatGPT to come up with likely prompts that marketers might be interested in. 
 
 ## Does AI Visibility integrate with analytics platforms like Google Analytics? 
-Yes, Amplitude provides a native Google Analytics 4 integration and streams event. AI Visibility can also stream event and user data to other analytics platforms through an Amplitude real-time Webhook destination.
+Yes, Amplitude provides a native Google Analytics 4 integration. 

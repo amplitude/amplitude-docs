@@ -207,10 +207,10 @@ AI Visibility then searches for that competitor and includes their information i
 
 AI Visibility automatically creates actions that you can take to improve your visibility within AI responses. You can implement any, or none, of the recommended actions. These actions are divided into the following categories:
 
-* **Recommendations**: Implement specific actions to improve your overall LLM visibility. Recommendations also provides page or URL-specific suggestions.
-* **Analyze Page**: Have AI Visibility analyze a specific URL, topic, or piece of content and generate recommendations specific to that page.
-* **Simulate Changes**: Have AI Visibility simulate recommended changes. This list you view the suggested changes in real time before committing them to your website.
-* **Generate Content**: Have AI Visibility generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
+* **Recommendations**: Implement specific actions to improve your overall LLM visibility. Recommendations also provide page or URL-specific suggestions.
+* **Analyze Page**: Analyze a specific URL, topic, or piece of content and generate recommendations specific to that page.
+* **Simulate Changes**: Simulate recommended changes. This lets you view the suggested changes in real time before committing them to your website.
+* **Generate Content**: Generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
 
 {{partial:admonition type="note" heading="Suggestions for Improvement"}}
 Be aware that AI Visibility can't directly access or make changes to your website. You must implement these suggestions and recommendations yourself. For any content suggestion, AI Visibility let's you copy or download the content and port it over to your website. 
@@ -272,9 +272,9 @@ If you aren't satisfied with the original generated content, click **Generate Ag
 
 ##### To export content
 
-You can export all prompt metrics as a CSV file. Export API timestamps are in UTC. The CSV exports mirror the on-screen breakdown table. This table is limited to 10,000 rows. There may be additional chart and group-by-dependnt limitations. You can bypass these UI limits by sending the full dataset to a connected data warehouse.
+You can export all prompt metrics as a CSV file. Export API timestamps are in UTC. The CSV exports mirror the on-screen breakdown table. This table is limited to 10,000 rows. There may be additional chart and group-by-dependent limitations. You can bypass these UI limits by sending the full dataset to a connected data warehouse.
 
 1. Go to *Marketing Analytics > AI Visibility > Prompts*. 
-2. Select if you want which Models and Brands you want. 
+2. Select the Models and Brands you want. 
 3. Click **Export CSV**.
 The file automatically downloads to your local machine.

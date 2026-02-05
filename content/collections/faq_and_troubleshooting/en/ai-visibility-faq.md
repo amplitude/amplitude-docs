@@ -18,7 +18,7 @@ AI Visibility is available directly inside the Amplitude platform and is availab
 ## How frequently is AI Visibility updated?
 AI Visibility refreshes weekly.
 
-The free version of AI Visibility does not update.
+The free version of AI Visibility doesn't update.
 
 ## Why does AI search matter for my business?
 Consumers are increasingly using AI assistants instead of traditional search engines to research products. If your brand isn’t appearing as a recommendation in AI answers, you risk losing high-intent customers to competitors.
@@ -31,6 +31,9 @@ Your visiblity score quantifies how often a brand appears in AI responses across
 ## Can AI Visibility show me where competitors are winning?
 Yes. The competitive rankings feature highlights exactly which prompts and keywords lead to competitor mentions in AI search. It also provides recommendations about how to close the gap.
 
+## Does AI Visibility provide optimization suggestions for specific URLs or copy? 
+Yes. AI Visibility surfaces automated recommendations to boos LLM visibility for specific pages and copy. These suggestions include adding clear headings, breaking long paragraphs into shorter sections, inserting concise FAQ blocks, and more. 
+
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
 
@@ -38,7 +41,7 @@ Unlike standalone search analysis tools, AI Visibility is built into Amplitude. 
 No, OpenAPI, Google, and other companies don't share what users are searching. The prompts Amplitude generates are based on what LLMs know is relevant to your brand. 
 
 ## Is AI Visibility English only? 
-No. In the logged-in version, you can configure a brand's prompts ande responses for any language. However, LLMs may occasionally still use English. 
+No. In the logged-in version, you can configure a brand's prompts and responses for any language. However, LLMs may occasionally still use English. 
 
 ## How does Amplitude’s AI Visibility compare to other AEO-specific tools like Profound and Evertune AI?
 Amplitude’s AI Visibility stands out compared to other AEO tools because of two key differentiators: platform and pricing.
@@ -54,9 +57,6 @@ As part of the Amplitude Digital Analytics Platform, AI Visibility connects with
 
 And with other SEO suites, AI visibility comes at an extra cost—with Amplitude, it’s free.
 
-## Does AI Visibility provide optimization suggestions for specific URLs or copy? 
-Yes. AI Visiblity surfaces automated recommendations to boos LLM visibility for specific pages and copy. These suggestions include adding clear headings, breaking long paragraphs into shorter sections, inserting concise FAQ blocks, and more. 
-
 ## Can I modify the prompts? 
 Yes, if you're logged into the Amplitude system. After you enter new prompts, the system refreshes. 
 
@@ -67,8 +67,8 @@ No.
 Yes. In the main AI Visibility page, you can make the changes you want.
 
 ## Is AI Visiblity analysis private? 
-Yes. Any URLs you submit for analysis are processed within your authenticated Amplitude organization. When these requests are forwarded to the LLM endpoint, they are covered by contractual no-training, zero-data-retention controls. By contract, your analysis requests are not retained or used to build public models.    
+Yes. Any URLs you submit for analysis are processed within your authenticated Amplitude organization. When these requests are forwarded to the LLM endpoint, they are covered by contractual controls. By contract, your analysis requests are not retained or used to build public models.    
 
-## What is Amplitudes default data rentention policy?
-Amplitude retains custoemr data for the duration of the subscription. After contract termination, we retain your information for a 30-day, data retrieval period. After that, all customer data is deleted unless limited retention is legally required.
+## What is Amplitude's default data retention policy?
+Amplitude retains customer data for the duration of the subscription. After contract termination, Amplitude retains your information for a 30-day, data retrieval period. After that, all customer data is deleted unless limited retention is legally required.
 
