@@ -93,6 +93,7 @@ Pass the following option when you initialize the Session Replay middleware:
 | `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. For more information see, [Sampling rate](#sampling-rate).|
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `quality`                              | `QualityProfile` | No | `.high` | Controls capture and encoding quality (for example, frame rate and image resolution). Use `.low`, `.medium`, or `.high` to balance replay fidelity with performance and storage. Use `QualityProfile.automatic` to let the SDK choose a profile based on the device. |
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
@@ -119,6 +120,24 @@ amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(/* session repl
 ```swift
 // This configuration samples 1% of all sessions
 amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(sampleRate: 0.01))
+```
+
+### Recording quality
+
+You can choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution; higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example, high on newer devices, lower on older ones).
+
+```swift
+// Use automatic profile selection based on device
+amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(
+    sampleRate: 0.1,
+    quality: .automatic
+))
+
+// Or set a fixed profile (low, medium, or high)
+amplitude.addEventMiddleware(AmplitudeiOSSessionReplayMiddleware(
+    sampleRate: 0.1,
+    quality: .medium
+))
 ```
 
 ### Disable replay collection
