@@ -7,11 +7,9 @@ landing: false
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1764787582
+academy_course:
+  - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Contextualize user experience with Session Replay](https://academy.amplitude.com/contextualize-user-experience-with-session-replay)
-{{/partial:admonition}}
-
 Use Session Replay settings to manage replay capture across your organization's projects. From these settings, you can control sample rates, enable or disable capture, and monitor quota usage.
 
 The organizational settings also let admins and managers view or modify [Session Replay](/docs/session-replay) settings for the projects they have access to.

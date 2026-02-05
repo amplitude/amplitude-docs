@@ -2,10 +2,6 @@
 id: d8d5e604-10a9-40e7-9d76-752e02df08fd
 blueprint: data
 title: 'Warehouse Metric Calculations'
-this_article_will_help_you:
-  - 'Understand how Amplitude aggregates Warehouse Metric values'
-  - 'Choose the right calculation type for your business questions'
-  - 'Apply Sum, User Average, Min, and Max calculations effectively'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

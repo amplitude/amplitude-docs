@@ -3,10 +3,6 @@ id: 849868aa-1ae1-4e02-be90-2d2f2a4a17af
 blueprint: user-session
 title: 'Interpret your User Sessions chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/20997387039387-Interpret-your-User-Sessions-chart'
-this_article_will_help_you:
-  - 'Interpret the results of your User Sessions chart'
-  - 'Learn the ways Amplitude records sessions'
-  - 'Understand how filtering works in the User Sessions chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538792
 landing: true

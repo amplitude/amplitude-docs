@@ -5,16 +5,10 @@ title: Overview
 landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760633219
-this_article_will_help_you:
-  - 'Understand the basic concepts of the Resource Center'
 academy_course:
   - 6b5642f5-c271-4855-b834-85ac2eeaa246
 landing_blurb: Learn about Resource Center, a widget that integrates directly with Guides & Surveys, and surfaces content from anywhere on your site.
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Deliver targeted guidance and support with a Resource Center](https://academy.amplitude.com/deliver-targeted-guidance-and-support-with-a-resource-center)
-{{/partial:admonition}}
-
 Resource center is a widget that integrates directly (with no other installation requirements) into the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk). It surfaces insightful and useful information to your users from anywhere on your site. The Resource Center widget appears as a clickable help icon. The center itself provides:
 - Search functionality
 - Recommended content

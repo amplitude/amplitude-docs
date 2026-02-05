@@ -3,21 +3,15 @@ id: 19c03845-d834-4777-af7c-904a6fa82cd7
 blueprint: analytic
 title: 'Create, edit, and manage dashboards'
 source: 'https://help.amplitude.com/hc/en-us/articles/229505188-Create-edit-and-manage-dashboards'
-this_article_will_help_you:
-  - 'Create and edit dashboards'
-  - 'Comment on your dashboards'
-  - 'Manage your dashboards'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632951
 academy_course:
-  - caa26d9a-e585-492c-afa1-f6571125252f
+  - a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d
+  - 5679eb5e-37e0-45b2-a18d-d14c6d0bfa7e
+  - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Use dashboards and starter templates to monitor important metrics](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics)
-{{/partial:admonition}}
-
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
 ## Before you begin
@@ -59,10 +53,6 @@ You can add charts to your dashboard either from inside the dashboard, or from w
 
 ### Add cohorts to your dashboard
 
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Create, analyze, and activate user groups with behavioral cohorts](https://academy.amplitude.com/create-user-groups-with-behavioral-cohorts)
-{{/partial:admonition}}
-
 You can add a [behavioral cohort](/docs/analytics/behavioral-cohorts) to a dashboard. This displays the number of users in a cohort and the date and time of its last computation. 
 
 {{partial:admonition type='note'}}
@@ -85,10 +75,6 @@ For any chart or query that segments on a cohort, the segmented cohort automatic
 {{/partial:admonition}}
 
 ### Add a Session Replay to your dashboard
-
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Contextualize user experience with Session Replay](https://academy.amplitude.com/contextualize-user-experience-with-session-replay)
-{{/partial:admonition}}
 
 There are three ways you can add a Session Replay to a dashboard or notebook:
 

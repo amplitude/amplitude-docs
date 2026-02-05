@@ -3,8 +3,6 @@ id: b7e71edd-424f-41a0-8206-a787c75349e4
 blueprint: funnel-analysi
 title: 'Hold properties constant in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/19466646450203-Hold-properties-constant-in-a-Funnel-Analysis-chart'
-this_article_will_help_you:
-  - 'Set up your Funnel Analysis charts to display the unique count of user and property pairs that have completed the funnel, instead of just the unique count of users who have completed it at least once'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015220
 ---

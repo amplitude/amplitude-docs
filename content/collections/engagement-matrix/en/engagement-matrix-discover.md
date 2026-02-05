@@ -3,9 +3,6 @@ id: 580a8667-f732-4986-9cd0-3cd1b520af1c
 blueprint: engagement-matrix
 title: 'Engagement Matrix: see how users feel about your product'
 source: 'https://help.amplitude.com/hc/en-us/articles/115000095851-Engagement-Matrix-discover-what-your-users-love-and-don-t-love-about-your-product'
-this_article_will_help_you:
-  - 'Assess the overall level of engagement of features in your product'
-  - 'Set up an Engagement Matrix chart and choose the right metrics for your analysis'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632216
 landing: true

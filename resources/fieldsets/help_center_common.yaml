@@ -54,4 +54,5 @@ fields:
         - academy_content
       type: entries
       display: 'Academy Course'
+      instructions: 'Add one or more Academy courses; they appear in a single box at the top of the page.'
       localizable: false

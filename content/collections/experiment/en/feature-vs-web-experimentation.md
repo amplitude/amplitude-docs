@@ -2,8 +2,6 @@
 id: d002d2ad-3a7f-41f7-aec9-0df7db9fb90b
 blueprint: experiment
 title: 'Feature and Web Experiment Use Cases'
-this_article_will_help_you:
-  - 'Understand the differences between Feature and Web Experiment'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254

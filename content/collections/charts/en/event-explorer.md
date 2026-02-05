@@ -3,18 +3,13 @@ id: f4d3ad91-b9c5-4271-b06d-3ac81d3dba0f
 blueprint: chart
 title: 'Event Explorer: View event streams in real time'
 source: 'https://help.amplitude.com/hc/en-us/articles/360050836071-Event-Explorer-View-event-streams-in-real-time'
-this_article_will_help_you:
-  - 'Identify and select the right events for your analysis, especially when your events are not clearly labeled'
-  - 'QA instrumentation issues with your product'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691104
+academy_course:
+  - 2b8c9d0e-1f2a-4b5c-5d6e-8f9a0b1c2d3e
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Learn about your data taxonomy using Event Explorer](https://academy.amplitude.com/use-event-explorer-to-learn-about-your-taxonomy)
-{{/partial:admonition}}
-
 Even with clean data, knowing which data to use in an analysis isn't always as straightforward as we would like: taxonomies can sometimes be unclear or counterintuitive; out-of-date events can persist well after the point when they should have been deprecated; events can sometimes break unexpectedly.
 
 

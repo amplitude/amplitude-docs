@@ -3,9 +3,6 @@ id: 7f411988-132d-4623-89d3-730f4bc54d52
 blueprint: funnel-analysi
 title: 'How Amplitude handles simultaneous events in a funnel'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel'
-this_article_will_help_you:
-  - 'Understand how Amplitude accounts for events fired within the same second'
-  - 'Learn how to more precisely track events with millisecond resolution'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015451
 ---

@@ -3,9 +3,6 @@ id: 5c091ba2-f202-4972-9e9f-4a9af712730d
 blueprint: workflow
 title: "Define your experiment's audience"
 source: 'https://help.amplitude.com/hc/en-us/articles/9795802005019-Define-your-experiment-s-audience'
-this_article_will_help_you:
-  - 'Specify which users will be able to see your experiment'
-  - 'Limit experiment exposure based on user segments'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726005676
 landing: false

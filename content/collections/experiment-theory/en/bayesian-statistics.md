@@ -2,9 +2,6 @@
 id: 16863948-0e45-4c77-a816-6aafd1e02eee
 blueprint: experiment-theory
 title: 'Bayesian Statistics'
-this_article_will_help_you:
-  - 'Understand the basics of Bayes statistics'
-  - 'Understand how Bayesian statistics work in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c

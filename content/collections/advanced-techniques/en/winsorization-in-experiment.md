@@ -2,9 +2,6 @@
 id: 5b4dadf8-14b7-4669-8636-f3105393214c
 blueprint: advanced-technique
 title: 'Winsorization in Experiment'
-this_article_will_help_you:
-  - 'Find outliers in your data that may skew your results'
-  - 'Apply various techniques to mitigate or eliminate the negative effects of outliers'
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1757365670

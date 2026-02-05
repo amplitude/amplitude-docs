@@ -3,9 +3,6 @@ id: 4116b5ac-6eb0-4b39-8b13-470a135f2143
 blueprint: data
 title: "Set an event's activity status"
 source: 'https://help.amplitude.com/hc/en-us/articles/17050354126619-Change-an-event-s-activity-status'
-this_article_will_help_you:
-  - 'Understand what constitutes an active or inactive event'
-  - "Learn how to set an event's status"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -3,13 +3,13 @@ id: 1473fc96-a097-4045-a6f9-43ad3bf5027e
 blueprint: get-started
 title: 'Get data into Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/17472723888411-Get-data-into-Amplitude'
-this_article_will_help_you:
-  - 'Pull data into Amplitude from your app or a third-party source'
-  - 'Identify valuable resources and APIs to consider during instrumentation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571412
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
+  - 9a1b2c3d-4e5f-4a5b-8c9d-1e2f3a4b5c6d
 ---
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
@@ -21,10 +21,6 @@ This article is intended as a broad overview. For a more in-depth explanation of
 
 
 ## Send data to Amplitude
-
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path)
-{{/partial:admonition}}
 
 Getting data into Amplitude from your product happens at the **project** level. Remember when you created [your first Amplitude project](/docs/get-started/create-project)? When you did that, Amplitude generated an API key to ensure your product data finds its way to the correct Amplitude project. You must use this key to initialize the SDK in your product or website; [here's how to find it in an existing Amplitude project](/docs/admin/account-management/manage-orgs-projects).
 
@@ -43,10 +39,6 @@ After instrumenting Amplitude successfully, your data becomes visible as soon as
 You can import data from a wide range of third-party data sources. To learn more, [check out Amplitude's SDK documentation.](https://www.docs.developers.amplitude.com/data/sdks/)
 
 ## Take note of APIs and resources
-
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Essentials of Data Management](https://academy.amplitude.com/path/essentials-of-data-management-learning-path)
-{{/partial:admonition}}
 
 You can send data to Amplitude in different ways: SDKs, HTTP API v2, Batch API, Amplitude's integration with Segment, or Amplitude's integration with mParticle. The below lists include examples of powerful APIs and useful resources to keep in mind. Your Success Manager is always available to help answer questions.
 

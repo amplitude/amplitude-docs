@@ -8,11 +8,9 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726085730
+academy_course:
+  - 1c9d0e1f-2a3b-4c5d-6e7f-9a0b1c2d3e4f
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Instrumenting events with Amplitude Data and the Ampli CLI](https://academy.amplitude.com/instrumenting-events-with-amplitude-data-and-the-ampli-cli)
-{{/partial:admonition}}
-
 **Ampli** dynamically generates a light-weight wrapper for the **Amplitude SDK** based on your analytics tracking plan in **Amplitude Data** making event tracking easier and less error-prone.
 
 This document provides a high-level overview of Ampli.

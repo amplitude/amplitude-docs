@@ -8,8 +8,6 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1740517840
 source: 'https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Audiences-overview-Drive-conversions-with-true-one-to-one-personalization'
-this_article_will_help_you:
-  - 'Find the right resources to plan and execute an effective personalization campaign'
 ---
 Personalization in the style of Netflix and Amazon—optimizing the digital experience for the right user with the right message at the right time is the dream of every marketer. 
 

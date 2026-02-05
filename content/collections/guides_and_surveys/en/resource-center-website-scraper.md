@@ -5,9 +5,6 @@ title: Scraper
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961207
-this_article_will_help_you:
-  - 'Set up the Website scraper'
-  - 'Understand what you can do with the Website scraper'
 landing_blurb: Learn how Resource Center's scraper ingests the content of your site and makes it available in Resource Center.
 ---
 The Website source repository lets you scrape a public-facing website to pull in articles that may be useful for your users. Because there are such a wide variety of websites and rich content that can be included in any specific page, read the following information carefully when using this content source.  

@@ -3,10 +3,6 @@ id: 0c16c26c-9a94-4e5b-a136-493fb66f917d
 blueprint: analytic
 title: 'Account-level reporting in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001765532-Account-level-reporting-in-Amplitude'
-this_article_will_help_you:
-  - 'Build an analysis around aggregated units of measure like accounts, charts, or order IDs'
-  - 'Understand how to look up accounts and users to set up account-level reporting'
-  - "Use the account-level reporting feature\_when using certain Amplitude integrations, like Segment or Salesforce"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

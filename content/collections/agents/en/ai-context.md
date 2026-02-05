@@ -2,10 +2,6 @@
 id: a3ba8170-140c-4d50-bd37-264878320754
 blueprint: agent
 title: 'AI Context'
-this_article_will_help_you:
-  - 'Understand what AI Context is and how it improves Amplitude AI'
-  - 'Configure AI Context for your organization'
-  - 'Write effective context that helps AI understand your business'
 updated_by: cursor-agent
 updated_at: 1734192000
 ---

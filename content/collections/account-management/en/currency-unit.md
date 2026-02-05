@@ -3,8 +3,6 @@ id: b287cffb-096c-4dbd-a4f4-a8a99607e723
 blueprint: account-management
 title: 'Change the unit of currency your project uses'
 source: 'https://help.amplitude.com/hc/en-us/articles/15581410157339-Change-the-unit-of-currency-your-project-uses-'
-this_article_will_help_you:
-  - 'Set the unit of currency used by your Amplitude project to your local currency, or any other that is appropriate'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

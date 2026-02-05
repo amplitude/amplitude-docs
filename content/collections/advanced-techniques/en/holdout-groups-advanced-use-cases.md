@@ -3,9 +3,6 @@ id: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
 blueprint: advanced-technique
 title: 'Holdout groups: Advanced use cases'
 source: 'https://help.amplitude.com/hc/en-us/articles/20085827191963-Holdout-groups-Advanced-use-cases'
-this_article_will_help_you:
-  - 'Best manage experiments with multiple holdout groups'
-  - 'Rollout experiments with holdout groups and mutual exclusion'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714079443

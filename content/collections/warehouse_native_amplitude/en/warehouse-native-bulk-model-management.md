@@ -2,8 +2,6 @@
 id: 131771f8-ba6f-4492-a6bd-a0105e6a71ff
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Bulk Model Management'
-this_article_will_help_you:
-  - 'efficiently manage multiple models in batch'
 landing: false
 exclude_from_sitemap: false
 updated_by: 36df5bf6-28d6-4b56-9bba-1c675073870d

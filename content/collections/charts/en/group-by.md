@@ -3,9 +3,6 @@ id: 3fc06830-001c-4c85-9d1f-6fc7c5ea7a39
 blueprint: chart
 title: 'Group-bys: How Amplitude prunes and orders chart results'
 source: 'https://help.amplitude.com/hc/en-us/articles/360031259831-Group-bys-How-Amplitude-prunes-and-orders-chart-results'
-this_article_will_help_you:
-  - 'Understand when and why Amplitude Analytics truncates group-by query results'
-  - 'Understand how Amplitude Analytics prioritizes group-by results'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

@@ -7,8 +7,6 @@ source: /experiment/general/exposure-tracking
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724885595
-this_article_will_help_you:
-  - 'Learn how Amplitude Experiment tracks user exposures'
 ---
 When running an experiment, tracking the [exposure](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) of your users to your feature flag's variable experience is essential. Without it, you can't count on reliable results.
 
