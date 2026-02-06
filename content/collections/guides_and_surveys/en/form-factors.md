@@ -255,7 +255,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
+| Visit link                 | A link to the specified website opens. Configure the link behavior: **Same tab** opens in the same tab/screen, **New tab** opens in a new tab/browser, or **Use router** uses your configured router (requires [router configuration](/docs/guides-and-surveys/sdk#router-configuration)). |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |
