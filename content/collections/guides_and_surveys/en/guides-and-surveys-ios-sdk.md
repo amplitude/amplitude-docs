@@ -266,7 +266,7 @@ engagement.setRouter { identifier in
 | `router` (closure) | `(String) -> Void`      | Required. A function (closure) you implement to handle screen navigation when Guides or Surveys need to change screens. |
 
 {{partial:admonition type="note" heading="Update link behavior"}}
-After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the link behavior to **Use router**. The **Same tab** and **New tab** link behaviors don't use the configured router - only **Use router** triggers your custom router function.
+After you configure the router with `setRouter()`, update the link behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the behavior to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
 
 ### Reset
