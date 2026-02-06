@@ -212,17 +212,17 @@ If you prefer to specify your own selector or need more control, you can manuall
 * Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
 * Test your selectors across different pages and screen sizes
 * Consider adding data attributes specifically for guide targeting to ensure reliability
-* Use `:has()` to create flexible selectors that work across multiple similar elements
+* Use `:is()` to create flexible selectors that work across multiple similar elements
 {{/partial:admonition}}
 
 **Examples of custom selectors:**
 
 - CSS Selector: `.header-navigation > .menu-item:first-child`
 - XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
-- CSS with multiple elements: `:has([data-testid="element-1"],[data-testid="element-2"])`
+- CSS with multiple elements: `:is([my-class="foo"],[my-class="bar"])`
 
 {{partial:admonition type='tip'}}
-Amplitude supports most modern CSS selector features, including functional pseudo-classes like :has(), :not(), :is(), and :nth-child(), allowing you to create more expressive and flexible selectors
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like :is(), :not(), and :nth-child(), allowing you to create more expressive and flexible selectors
 {{/partial:admonition}}
 
 ## Properties
