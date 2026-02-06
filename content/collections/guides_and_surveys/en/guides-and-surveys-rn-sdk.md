@@ -197,7 +197,24 @@ To locate the URL scheme:
 
 Pins and tooltips can't target tab bar items in navigation components (such as `@react-navigation/bottom-tabs`). Tab bars use native components that exist outside the standard React Native view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+{{partial:admonition type="tip" heading="Workaround"}}
+Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs. Do not pin directly to tab bar items.
+{{/partial:admonition}}
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
 
 ## Changelog
 
