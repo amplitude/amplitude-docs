@@ -222,7 +222,7 @@ If you prefer to specify your own selector or need more control, you can manuall
 - CSS with multiple elements: `:is([my-class="foo"],[my-class="bar"])`
 
 {{partial:admonition type='tip'}}
-Amplitude supports most modern CSS selector features, including functional pseudo-classes like: is(), :not(), :nth-of-type(), and :where(), allowing you to create more expressive and flexible selectors
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like: `is()`, `:not()`, `:nth-of-type()`, and `:where()`, allowing you to create more expressive and flexible selectors.
 {{/partial:admonition}}
 
 ## Properties
