@@ -207,28 +207,22 @@ If you prefer to specify your own selector or need more control, you can manuall
 3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
 4. Test your selector with **Test and Preview** to confirm it targets the correct element
 
-**Examples of custom selectors:**
-
-- CSS Selector: `.header-navigation > .menu-item:first-child`
-- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
-- CSS with multiple elements: `:has([data-testid="element-1"],[data-testid="element-2"])`
-
-### Combine multiple CSS selectors
-
-Use the CSS `:has()` pseudo-class to match any element from a list of selectors. This triggers the guide when any of the specified elements appear:
-
-```css
-:has([data-testid="hanging-event-0-n-day-ltv"],[data-testid="context-event-0-n-day-ltv"])
-```
-
-This example matches if either `[data-testid="hanging-event-0-n-day-ltv"]` or `[data-testid="context-event-0-n-day-ltv"]` exists on the page.
-
 {{partial:admonition type='tip' heading='Best practices for custom selectors'}}
 * Use stable attributes like IDs or data attributes that are less likely to change
 * Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
 * Test your selectors across different pages and screen sizes
 * Consider adding data attributes specifically for guide targeting to ensure reliability
 * Use `:has()` to create flexible selectors that work across multiple similar elements
+{{/partial:admonition}}
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+- CSS with multiple elements: `:has([data-testid="element-1"],[data-testid="element-2"])`
+
+{{partial:admonition type='tip'}}
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like :has(), :not(), :is(), and :nth-child(), allowing you to create more expressive and flexible selectors
 {{/partial:admonition}}
 
 ## Properties
