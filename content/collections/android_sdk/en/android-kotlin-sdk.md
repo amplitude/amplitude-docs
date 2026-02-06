@@ -204,6 +204,49 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### Custom HTTP client
+
+The SDK uses `HttpURLConnection` by default for network requests. To use a custom HTTP client, implement `HttpClientInterface` and pass it to the `httpClient` configuration option.
+
+#### OkHttp with gzip compression
+
+The sample app demonstrates how to create a custom OkHttp client with gzip compression for event uploads:
+
+- [GzipRequestInterceptor](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/amplitude/android/sample/GzipRequestInterceptor.kt) - OkHttp interceptor that compresses request bodies.
+- [CustomOkHttpClient](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/amplitude/android/sample/CustomOkHttpClient.kt) - `HttpClientInterface` implementation using OkHttp.
+
+To use the custom client:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+val httpClient = CustomOkHttpClient()
+val configuration = Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    httpClient = httpClient,
+)
+httpClient.initialize(configuration)
+
+val amplitude = Amplitude(configuration)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+CustomOkHttpClient httpClient = new CustomOkHttpClient();
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.setHttpClient(httpClient);
+httpClient.initialize(configuration);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:admonition type="note" heading=""}}
+The SDK's default HTTP client already compresses request bodies using gzip. Use a custom OkHttp client when you need additional features like custom timeouts, certificate pinning, or logging interceptors.
+{{/partial:admonition}}
+
 ## Track
 
 Events represent how users interact with your application. For example, "Song Played" may be an action you want to note.
