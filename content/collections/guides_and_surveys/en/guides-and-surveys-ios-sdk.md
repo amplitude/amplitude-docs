@@ -363,18 +363,24 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 Pins and tooltips can't target tab bar items (for example, `UITabBar` elements). Tab bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+{{partial:admonition type="tip" heading="Workaround"}}
+Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs. Do not pin directly to tab bar items.
+{{/partial:admonition}}
 
-### Animated views and moving containers
+### Targeting animated elements and elements inside moving containers
 
-Pins can't target views or elements that are:
+Pins and tooltips can't target views or elements that are:
 
 - Animated or in an animated container (they move around the screen).
 - In a container that can move based on user interaction.
 
-**Note:** Scrollviews usually work.
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides, rather than pinning directly to animated elements or elements in moving containers.
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
 
 ## Changelog
 
