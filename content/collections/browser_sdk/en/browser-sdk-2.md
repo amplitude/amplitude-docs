@@ -763,6 +763,7 @@ Enable frustration interaction tracking to capture rage clicks and dead clicks. 
  * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
  * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
  * **Error click**: Experimental. A user clicks an element and a browser error occurs within two seconds of the click.
+ * **Thrashed cursor**: Experimental. A user's cursor moves rapidly back and forth within a short time window, indicating potential frustration.
 
 Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
 
@@ -771,6 +772,8 @@ Set `config.autocapture.frustrationInteractions.rageClicks` to `true` to enable 
 Set `config.autocapture.frustrationInteractions.deadClicks` to `true` to enable capture of dead clicks.
 
 Set `config.autocapture.frustrationInteractions.errorClicks` to `true` to enable capture of error clicks.
+
+Set `config.autocapture.frustrationInteractions.thrashedCursor` to `true` to enable capture of thrashed cursors.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
@@ -790,6 +793,9 @@ Use the advanced configuration to control frustration interaction tracking.
 | `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101) |
 | `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element. |
 | `config.autocapture.frustrationInteractions.errorClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures error clicks. By default, this is set to [DEFAULT_ERROR_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/frustration-interactions.ts#L129) |
+| `config.autocapture.frustrationInteractions.thrashedCursor.directionChanges` | Optional. Type: `number`. Number of direction changes required to consider a thrashed cursor. X-axis changes and Y-axis changes are counted separately. Default is 10 |
+| `config.autocapture.frustrationInteractions.thrashedCursor.threshold` | Optional. Type: `number`. Time window (in milliseconds) that direction changes need to happen
+for it to be considered a thrashed cursor. Default is 2000 (2 seconds). |
 
 {{/partial:collapse}}
 
@@ -820,6 +826,26 @@ When you enable error click tracking, it emits an event `[Amplitude] Error Click
 - `[Amplitude] Line Number`: The line number where the error occurred.
 - `[Amplitude] Column Number`: The column number where the error occurred.
 - Element properties from the clicked element (for example, `[Amplitude] Element Text`, `[Amplitude] Element Tag Name`).
+
+#### Track thrashed cursor
+
+Thrashed cursor tracking is experimental and must be explicitly enabled.
+
+Thrashed cursor tracking captures when a user's cursor moves rapidly back and forth with multiple direction changes within a short time window. This helps identify areas where users may be experiencing frustration or confusion.
+
+Enable thrashed cursor tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    frustrationInteractions: {
+      thrashedCursor: true,
+    },
+  },
+});
+```
+
+It emits an event called `[Amplitude] Thrashed Cursor`
 
 ### Track network requests
 
