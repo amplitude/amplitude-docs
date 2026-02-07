@@ -23,8 +23,9 @@ This integration allows you to target experiments at specific cohorts you’ve a
 
 ### Statsig setup
 
-1. Navigate to the [Statsig Console](https://console.statsig.com/login), click **Project Settings**, and select **API Keys**.
-2. Generate a new key and add a description. Copy the key. 
+1. Navigate to the [Statsig Console](https://console.statsig.com/api_keys), click **Project Settings**, and select **Keys & Environments**.
+2. Click the **Generate New Key** button, select *Console* as the **Key Type**, and optionally add a description to create a key.
+3. Copy the key. 
 
 ### Amplitude setup 
 
