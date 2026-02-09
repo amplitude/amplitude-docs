@@ -207,16 +207,22 @@ If you prefer to specify your own selector or need more control, you can manuall
 3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
 4. Test your selector with **Test and Preview** to confirm it targets the correct element
 
-**Examples of custom selectors:**
-
-- CSS Selector: `.header-navigation > .menu-item:first-child`
-- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
-
 {{partial:admonition type='tip' heading='Best practices for custom selectors'}}
 * Use stable attributes like IDs or data attributes that are less likely to change
 * Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
 * Test your selectors across different pages and screen sizes
 * Consider adding data attributes specifically for guide targeting to ensure reliability
+* Use `:is()` to create flexible selectors that work across multiple similar elements
+{{/partial:admonition}}
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+- CSS with multiple elements: `:is([my-class="foo"],[my-class="bar"])`
+
+{{partial:admonition type='tip'}}
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like: `is()`, `:not()`, `:nth-of-type()`, and `:where()`, allowing you to create more expressive and flexible selectors.
 {{/partial:admonition}}
 
 ## Properties
