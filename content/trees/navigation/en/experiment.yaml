@@ -123,6 +123,9 @@ tree:
       -
         id: 77fcfce6-dc68-4da0-b51d-a7cf7eee38d6
         entry: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
+      -
+        id: dce46451-9ed0-45f2-ad8c-4f4b11de3dc6
+        entry: f2ec214a-e983-47f1-bf4f-7656427b8b14
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'
