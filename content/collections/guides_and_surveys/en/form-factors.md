@@ -118,6 +118,14 @@ Banners are available in the Banner template, and contain one step.
 
 Banners are full-width blocks that show on either the top or bottom of the page. Use banners for longer-term announcements, status updates, or time-sensitive promotions.
 
+{{partial:admonition type="info" heading="Banner display limitations"}}
+Banners can overlap existing content on your website even when using the **Inline** display style. This happens when your site has conflicting CSS styles on the `body` element or other page elements. If changing the display style from **Overlay** to **Inline** doesn't resolve content overlap issues, the conflicting CSS prevents proper banner positioning.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Use card embeds as a workaround"}}
+If you experience banner overlap issues that can't be resolved by adjusting the display style, consider using [card embeds](#card-embed-tag-web) instead. Card embeds render content directly into your page's DOM as native elements, which avoids CSS conflicts and ensures proper positioning within your page layout. You can configure a card embed to appear at the top or bottom of your page, similar to a banner.
+{{/partial:admonition}}
+
 | Setting                                | Description                                                                                                  |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Sticky <br/> {.tag .web .zero}         | Keeps the banner visible while the user scrolls.                                                             |
