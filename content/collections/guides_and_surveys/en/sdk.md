@@ -797,7 +797,7 @@ export class AppComponent {
 }
 ```
 
-For Angular apps, use the Router service with `navigateByUrl` in your root `AppComponent` (or an initializer). This method accepts a full URL string, which matches the `(url: string) => void` signature that `setRouter` expects.
+For Angular apps, use the `Router` service with `navigateByUrl` in your root `AppComponent` (or an initializer). This method accepts a full URL string, which matches the `(url: string) => void` signature that `setRouter` expects.
 
 {{partial:admonition type="note" heading="Update URL behavior"}}
 After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
