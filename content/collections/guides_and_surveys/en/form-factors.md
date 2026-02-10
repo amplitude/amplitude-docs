@@ -123,7 +123,7 @@ Banners can overlap existing content on your website even when using the **Inlin
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Use card embeds as a workaround"}}
-If you experience banner overlap issues that can't be resolved by adjusting the display style, consider using [card embeds](#card-embed-tag-web) instead. Card embeds render content directly into your page's DOM as native elements, which avoids CSS conflicts and ensures proper positioning within your page layout. You can configure a card embed to appear at the top or bottom of your page, similar to a banner.
+If you experience banner overlap issues that can't be resolved by adjusting the display style, consider using [card embeds](#card-embed) instead. Card embeds render content directly into your page's DOM as native elements, which avoids CSS conflicts and ensures proper positioning within your page layout. You can configure a card embed to appear at the top or bottom of your page, similar to a banner.
 {{/partial:admonition}}
 
 | Setting                                | Description                                                                                                  |
