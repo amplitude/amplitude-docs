@@ -33,7 +33,7 @@
   {{ label_text = 'text-amp-gray-700' }}
 {{ /if }}
 
-<div class="border {{ border_color }} {{ bg_color }} rounded-lg overflow-hidden shadow-sm">
+<div class="border {{ border_color }} {{ bg_color }} rounded-lg overflow-hidden shadow-sm flex flex-col min-h-full">
   {{ if label }}
     <div class="flex items-center gap-2 px-4 py-2 border-b {{ border_color }} bg-white">
       {{ if label == 'good' }}
@@ -52,12 +52,12 @@
     </div>
   {{ /if }}
   
-  <div class="p-4 prose prose-sm max-w-none">
+  <div class="p-4 prose prose-sm max-w-none flex-grow">
     {{ slot | antlers | strip_tags('br') | strip_tags('p') }}
   </div>
   
   {{ if caption }}
-    <div class="px-4 pb-4 text-sm text-amp-gray-600 italic border-t {{ border_color }} pt-3 mt-3 bg-white">
+    <div class="px-4 pb-4 text-sm text-amp-gray-600 italic border-t {{ border_color }} pt-3 bg-white">
       {{ caption }}
     </div>
   {{ /if }}
