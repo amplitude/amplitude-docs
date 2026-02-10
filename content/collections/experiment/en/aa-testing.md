@@ -23,7 +23,7 @@ A/A tests help you verify that your experimentation infrastructure works correct
 
 A/A tests can reveal several implementation problems:
 
-- **Improper randomization.** Users aren't evenly distributed between variants, which creates [sample ratio mismatches](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), or users jump between variants and see different experiences across sessions or page loads. For more on causes and fixes, refer to [Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping).
+- **Improper randomization.** The system doesn't evenly distribute users between variants, which creates [sample ratio mismatches](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), or users jump between variants and see different experiences across sessions or page loads. For more on causes and fixes, refer to [Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping).
 - **Tracking inconsistencies.** Events fire differently between variants because of timing issues or conditional logic errors.
 - **Sample pollution.** Pre-exposure bias occurs when users see content before the system properly allocates them to a variant.
 - **Statistical configuration.** Incorrect significance thresholds or multiple testing without proper correction.
@@ -41,7 +41,7 @@ A/A tests are diagnostic tools, not routine practice. Run them strategically whe
 
 ### Don't run A/A tests for
 
-- Routine experiments when your setup is already validated.
+- Routine experiments when you've already validated your setup.
 - Every single new experiment—this wastes traffic and delays real insights.
 - "Just to be safe" without a specific concern.
 
@@ -83,11 +83,11 @@ This ensures the experiment loads and tracks properly without changing anything 
 
 ## Interpret your A/A test results
 
-Random variation is normal and expected in A/A tests. The key indicator of a healthy A/A test is statistical significance.
+Expect random variation in A/A tests—it's normal. The key indicator of a healthy A/A test is statistical significance.
 
 ### Successful A/A test
 
-No statistically significant difference between variants, traffic is evenly split, and metrics are comparable. You can proceed with confidence to run real A/B tests.
+No statistically significant difference between variants, the system splits traffic evenly, and metrics are comparable. You can proceed with confidence to run real A/B tests.
 
 ### Failed A/A test
 
@@ -96,7 +96,7 @@ Any statistically significant result indicates a potential implementation issue 
 - Your traffic allocation percentages in the experiment dashboard.
 - Event tracking implementation for conditional logic that might affect variants differently.
 - That the experiment fires before any page content that might influence results.
-- That your metrics are calculated consistently across both variants.
+- That Amplitude calculates your metrics consistently across both variants.
 
 ## Best practices
 
@@ -104,7 +104,7 @@ Any statistically significant result indicates a potential implementation issue 
 - **Use the same sample size you'd use for real experiments.** This validates your statistical power calculations.
 - **Test your most important metrics.** Focus on the conversion events that matter most to your business.
 - **Document your setup.** A/A tests serve as baseline validation you can reference when you troubleshoot future experiments.
-- **Don't over-interpret noise.** Random variation is expected. Focus on statistical significance rather than the size of percentage differences between variants.
+- **Don't over-interpret noise.** Expect random variation. Focus on statistical significance rather than the size of percentage differences between variants.
 - **Expect some variant jumping.** A small percentage of users may see different variants across sessions. This is normal and shouldn't cause statistically significant differences in a properly configured test.
 
 ## When to skip A/A tests

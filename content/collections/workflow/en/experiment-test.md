@@ -49,4 +49,4 @@ This is a useful way to QA the assignment process. If you notice that one varian
 
 If you do spot some outliers or anomalies that concern you, click into the chart or information to conduct a deep dive into the potential causes. To learn more about understanding anomalies, review this article on [Root Cause Analysis](/docs/analytics/root-cause-analysis).
 
-For a deeper validation of your experiment's instrumentation and assignment logic, consider [running an A/A test](/docs/feature-experiment/aa-testing) before launching a full A/B test.
+For a deeper validation of your experiment's instrumentation and assignment logic, [run an A/A test](/docs/feature-experiment/aa-testing) before launching a full A/B test.
