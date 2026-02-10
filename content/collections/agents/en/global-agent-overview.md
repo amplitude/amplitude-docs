@@ -171,6 +171,6 @@ Keep these tips in mind as you work with Global Agent:
 - **Allow time for complex questions**. Global Agent may take 30-60 seconds to research and generate comprehensive answers.  
 - **Validate the data**. All generated content includes links so you can verify the analysis and explore deeper.
 
-{{partial:admonition type="tip" heading="Global Agent and Data Privacy"}}
+{{partial:admonition type="note" heading="Global Agent and Data Privacy"}}
 For more information about how Global Agent handles your data, review [Amplitude's Security and Privacy ](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI)information.
 {{/partial:admonition}}

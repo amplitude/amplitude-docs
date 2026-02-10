@@ -7,6 +7,10 @@ updated_at: 1770672121
 ---
 Page context enables Global Agent to understand what you're currently viewing in Amplitude. Global Agent captures details about your chart, dashboard, notebook, or experiment so you can ask questions naturally without manually explaining the context.
 
+{{partial:admonition type="note" heading="Organization context"}}
+This article focuses on adding context to individual queries. Organization administrators can also set organization-wide context. For more information, review the [AI Context](/docs/amplitude-ai/ai-context) article.
+{{/partial:admonition}}
+
 ## Page context improves responses
 
 Page context makes zyour interactions with Global Agent more natural and efficient in several ways.
