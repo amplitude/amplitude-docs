@@ -36,7 +36,7 @@ If your app uses the [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/io
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 2.0.0'
+pod 'AmplitudeEngagementSwift', '~> 3.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
