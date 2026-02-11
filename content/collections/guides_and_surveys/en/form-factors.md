@@ -119,11 +119,11 @@ Banners are available in the Banner template, and contain one step.
 Banners are full-width blocks that show on either the top or bottom of the page. Use banners for longer-term announcements, status updates, or time-sensitive promotions.
 
 {{partial:admonition type="info" heading="Banner display limitations"}}
-Banners can overlap existing content on your website even when using the **Inline** display style. This happens when your site has conflicting CSS styles on the `body` element or other page elements. If changing the display style from **Overlay** to **Inline** doesn't resolve content overlap issues, then conflicting CSS in the application is preventing the banner from being positioned as intended.
+Banners can overlap existing content on your website even when using the **Inline** display style. This happens when your site has conflicting CSS styles on the `body` element or other page elements. If changing the display style from **Overlay** to **Inline** doesn't resolve content overlap issues, then conflicting CSS in the application prevents the banner from rendering in the intended position.
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Use card embeds as a workaround"}}
-If banners are not rendering as expected, give [card embeds](#card-embed) a shot. Card embeds render content directly into your page's DOM as native elements, which reduces the odds of CSS conflicting. Card embeds can be configured as **Prepend to children (first child)** on `<body>`, for example, which typically renders the card as the top element on the page.
+If banners aren't rendering as expected, give [card embeds](#card-embed) a shot. Card embeds render content directly into your page's DOM as native elements, which reduces the odds of CSS conflicting. Card embeds can be configured as **Prepend to children (first child)** on `<body>`, for example, which typically renders the card as the top element on the page.
 {{/partial:admonition}}
 
 | Setting                                | Description                                                                                                  |
