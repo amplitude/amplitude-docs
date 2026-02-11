@@ -74,17 +74,43 @@ If the backfill range overlaps with the range of previously exported data, Ampli
 
 ## Exported data format
 
+When you configure a GCS export, you specify a bucket name and an optional folder/prefix. This prefix determines where your exported data appears inside the bucket. If you leave the prefix empty, Amplitude writes objects directly at the bucket root.
+
 ### Raw event file and data format
 
 Amplitude exports data as a zipped archive of JSON files, partitioned by the hour with one or more files per hour. Each file contains one event JSON object per line.
 
-File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example, `server_upload_time`):
+#### Object key structure
+
+Amplitude organizes exported event files under an `{appId}` directory that matches your project ID. The full object key structure is:
+
+`{gcsPrefix}/{appId}/{filename}`
+
+If you don't configure a prefix, the path simplifies to:
+
+`{appId}/{filename}`
+
+Where:
+
+- `{gcsPrefix}` is the optional folder/prefix you configure in the Amplitude UI.
+- `{appId}` is your Amplitude project ID (the same ID that appears in the filename).
+- `{filename}` follows the format below.
+
+#### Filename format
+
+File names have the following syntax, where the time represents when Amplitude servers received the data in UTC (the `server_upload_time`):
 
 `projectID_yyyy-MM-dd_H#partitionInteger.json.gz`
 
 For example, the first partition of data uploaded to this project, on Jan 25, 2020, between 5 PM and 6 PM UTC, is in the file:
 
 `187520_2020-01-25_17#1.json.gz`
+
+#### Example
+
+If your bucket is `amplitude-data`, your prefix is `events`, and your project ID is `187520`, the full GCS path for this file is:
+
+`gs://amplitude-data/events/187520/187520_2020-01-25_17#1.json.gz`
 
 Here is the exported data JSON object schema:
 
@@ -145,13 +171,41 @@ Here is the exported data JSON object schema:
 
 Amplitude exports data as a zipped archive of JSON files. Each file contains one merged Amplitude ID JSON object per line.
 
-File names have the following syntax, where the time represents when the data was uploaded to Amplitude servers in UTC (for example `server_upload_time`):
+#### Object key structure
 
-`-OrgID_yyyy-MM-dd_H.json.gz`
+Amplitude organizes merged ID files under a `-{orgId}` directory that matches your organization ID. The full object key structure is:
 
-For example, data uploaded to this project, on Jan 25, 2020, between 5 PM and 6 PM UTC, is in the file:
+`{gcsPrefix}/-{orgId}/{filename}`
+
+If you don't configure a prefix, the path simplifies to:
+
+`-{orgId}/{filename}`
+
+Where:
+
+- `{gcsPrefix}` is the optional folder/prefix you configure in the Amplitude UI.
+- `-{orgId}` is your Amplitude organization ID with a leading hyphen.
+- `{filename}` follows the format below.
+
+#### Filename format
+
+File names have the following syntax, where the time represents when Amplitude servers received the data in UTC (the `server_upload_time`):
+
+`-{orgId}_yyyy-MM-dd_H.json.gz`
+
+For example, for org ID `189524`, Amplitude exports data received on Jan 25, 2020, between 5 PM and 6 PM UTC to the file:
 
 `-189524_2020-01-25_17.json.gz`
+
+#### Example
+
+If your bucket is `amplitude-data`, your prefix is `merged`, and your org ID is `189524`, the full GCS path for this file is:
+
+`gs://amplitude-data/merged/-189524/-189524_2020-01-25_17.json.gz`
+
+{{partial:admonition type="note" title="Legacy organizations"}}
+Some legacy organizations may see merged ID exports with your app ID instead of org ID. In this case, the directory and filename use `{appId}` without the leading `-`. Contact Amplitude Support to confirm which format applies to your organization.
+{{/partial:admonition}}
 
 Merged ID JSON objects have the following schema:
 

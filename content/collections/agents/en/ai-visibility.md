@@ -59,11 +59,14 @@ For all possible language codes, go to [Language Codes](https://developers.googl
 
 The Prompts tab contains all the prompts asked of the available AI agents that mentioned your brand or generated its results from your content. The page contains metrics as well as the ability to investigate individual prompts. 
 
-You can filter individual AI models to investigate such as Claude, ChatGPT, or Gemini. You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
-
 If you change a prompt, that prompt reruns immediately. The rest of the report remains as-is until its regularly scheduled update.
 
 You can export all of these prompts to a CSV file for further analysis. Click **Export CSV** to download the exported file. 
+
+### Filtering
+You can filter individual AI models to include all available AIs or only the ones you want. 
+
+You can also filter prompt results to include or exclude competitor brands or your own brand. Click either the **All Models** or **All Brands** drop-downs to filter AI models or competitor brands. If you want to exclude your own brand, select the **Exclude <BRAND>** checkbox. 
 
 ### Metrics
 
@@ -191,7 +194,7 @@ The brand, either you or a competitor, that has the best performance in a partic
 
 The Competitor Settings section lets you view your primary competitors and either delete an existing competitor from the analysis or manually add a competitor to your analysis. 
 
-The section also displays the number of prompts that each competitor appears in and a visibility score.
+The section also displays the number of prompts that each competitor appears in and a visibility score. The visibility score is based on how often your brand appears across hundreds of prompts. It compares performance with competitors and supplies automated actions to improve results.
 
 ##### To add a competitor
 1. Click **Add Competitor**.
@@ -204,22 +207,23 @@ AI Visibility then searches for that competitor and includes their information i
 
 AI Visibility automatically creates actions that you can take to improve your visibility within AI responses. You can implement any, or none, of the recommended actions. These actions are divided into the following categories:
 
-* **Recommendations**: Implement specific actions to improve your overall LLM visibility.
-* **Analyze Page**: Have AI Visibility analyze a specific URL, topic, or piece of content and generate recommendations specific to that page.
-* **Simulate Changes**: Have AI Visibility simulate recommended changes. This list you view the suggested changes in real time before committing them to your website.
-* **Generate Content**: Have AI Visibility generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
+* **Recommendations**: Implement specific actions to improve your overall LLM visibility. Recommendations also provide page or URL-specific suggestions.
+* **Analyze Page**: Analyze a specific URL, topic, or piece of content and generate recommendations specific to that page.
+* **Simulate Changes**: Simulate recommended changes. This lets you view the suggested changes in real time before committing them to your website.
+* **Generate Content**: Generate content for your website that's targeted towards increasing your visibility and engagement with LLMs. 
 
 {{partial:admonition type="note" heading="Suggestions for Improvement"}}
-Be aware that AI Visibility can't directly access or make changes to your website. You must implement these suggestions and recommendations yourself. For any content suggestion, AI Visibility let's you copy or download the content and port it over to your website. 
+Be aware that AI Visibility can't directly access or make changes to your website. You must implement these suggestions and recommendations yourself. For any content suggestion, AI Visibility lets you copy or download the content and port it over to your website. 
 {{/partial:admonition}}
 
 The following procedures describe how to implement or create AI Visibility's actions:
 
 {{partial:admonition type="tip" heading="Recommendations are in Beta"}}
-The Recommendations functionality is in Beta. This means that functionality may not operate exactly as expected, and that you should review the recommendations before implementing them. When the feature is out of Beta, this message will disappear.
+The Recommendations functionality is in Beta. This means that functionality may not operate exactly as expected, and that you should review the recommendations before implementing them.
 {{/partial:admonition}}
 
 ##### To implement a recommendation
+
 1. Go to *AI Visibility > Actions > Recommendations*.
 2. Review the recommendations to improve your overall LLM visibility.
 3. Click **Optimize** for the recommendation you want to implement.
@@ -230,6 +234,7 @@ This takes you to the Simulate Changes section where you can view the recommende
 After the test runs, you can review the simulation results. If the results improve your visibility, you can then implement the changes directly on your website. If the results don't improve your visibility, continue to make edits and update the prompts until you have the results you want.
 
 ##### To analyze a page or topic
+
 1. Go to *AI Visibility > Actions > Analyze Page*.
 2. Select either **Analyze URL** or **Analyze content**. 
 3. Enter the website URL you want analyzed or copy/paste the content.
@@ -239,6 +244,7 @@ If you don't select a topic, AI Visibility analyzes the URL against all topics.
 AI Visibility may take some time to complete the analysis, depending on the complexity or amount of content. After the analysis completes, you can scroll through the recommended optimizations. Click **Simulate Changes** to try out the recommendations. 
 
 ##### To simulate changes
+
 This pages opens with the most recent suggested change.
 1. Go to *AI Visibility > Actions > Simulate Changes*.
 2. Review and, if necessary, change the source for the change.
@@ -249,6 +255,7 @@ This pages opens with the most recent suggested change.
 After the test runs, you can review the simulation results. If the results improve your visibility, you can then implement the changes directly on your website. If the results don't improve your visibility, continue to make edits and update the prompts until you have the results you want.
 
 ##### To generate content
+
 1. Go to *AI Visibility > Actions > Generate Content*. 
 2. Select the topic about which you want AI Visibility to generate content. 
 3. Select the content type. You can select one of:
@@ -262,3 +269,12 @@ After the test runs, you can review the simulation results. If the results impro
 After AI Visibility generates your content, you can edit it as much as you want. After you're satisfied with the content, you can click either **Copy** or **Download as Markdown** to implement it on your website.
 
 If you aren't satisfied with the original generated content, click **Generate Again** to have AI Visibility make a new attempt. If you regenerate the content after you have manually edited it, those edits aren't retained. 
+
+##### To export content
+
+You can export all prompt metrics as a CSV file. Export API timestamps are in UTC. The CSV exports mirror the on-screen breakdown table. This table is limited to 10,000 rows. There may be additional chart and group-by-dependent limitations. You can bypass these UI limits by sending the full dataset to a connected data warehouse.
+
+1. Go to *Marketing Analytics > AI Visibility > Prompts*. 
+2. Select the Models and Brands you want. 
+3. Click **Export CSV**.
+The file automatically downloads to your local machine.

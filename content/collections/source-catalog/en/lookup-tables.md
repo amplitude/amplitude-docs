@@ -15,6 +15,10 @@ integration_category:
 ---
 Amplitude's Lookup Table integration lets you import your own data and map it to ingested properties to have an enhanced set of properties.
 
+{{partial:admonition type="note" heading=""}}
+Lookup Tables can't exceed 100 MB or 1 million rows. Contact your Amplitude CSM if you have data that exceeds this limit.
+{{/partial:admonition}}
+
 You can also create and manage lookup tables through an API. See [Lookup Table API](/docs/apis/analytics/lookup-table) for more information.
 
 ## Setup

@@ -8,10 +8,6 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys Android SDK requires:
@@ -394,6 +390,24 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
+
+## Known limitations
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
+
 ## Changelog
 
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

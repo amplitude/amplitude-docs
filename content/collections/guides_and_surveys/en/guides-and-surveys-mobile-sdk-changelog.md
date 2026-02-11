@@ -8,6 +8,14 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 2.1.1 (Android, iOS, React Native) \[2026-02-02\]
+
+### 🐛 Fixes
+- Fix: trailing comma issue causing build error on Swift compiler less than version 6.1 \[rn\]
+- Fix: fix keyboard layout bug during iOS 26 device rotation (GSDK-632) \[ios\]
+- Fix: restore nudge keyboard after configuration change (GSDK-831) \[android\]
+
+
 ## 2.1.0 (Android, iOS, React Native) \[2026-02-02\]
 
 ### ✨ Features
