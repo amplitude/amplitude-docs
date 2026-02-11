@@ -5,7 +5,7 @@ title: 'AI Context'
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1770764884
 ---
-Teach Ask AI how your business works. Define your metrics, terminology, and preferences so every answer is tailored to your organization.
+Teach Global Agent how your business works. Define your metrics, terminology, and preferences so every answer is tailored to your organization.
 
 ## Getting started
 
@@ -13,7 +13,7 @@ Before you add your context, gather the necessary information and navigate to th
 
 ### Find AI Context
 
-Ask AI uses two layers of context: Organization and Project.
+Global Agent uses two layers of context: Organization and Project.
 
 Access both from *Project Settings > AI Controls*.
 
@@ -42,17 +42,17 @@ Access both from *Project Settings > AI Controls*.
 
 ## Understanding AI context
 
-Context changes how Ask AI answers questions.
+Context changes how Global Agent answers questions.
 
 A user asks:
 
 > Show my our activation rate
 
 {{partial:card-grid}}
-{{partial:card style="warning" label="Without context" caption="Ask AI guesses. Uses wrong events, wrong timeframe, includes test users."}}
+{{partial:card style="warning" label="Without context" caption="Global Agent guesses. Uses wrong events, wrong timeframe, includes test users."}}
 I'll create a chart showing user activation. I'll define activated users as those who completed any event after signing up...
 {{/partial:card}} 
-{{partial:card style="tip" label="With context" caption="Ask AI knows your exact definition, timeframe, and filters."}}
+{{partial:card style="tip" label="With context" caption="Global Agent knows your exact definition, timeframe, and filters."}}
 I'll show activation rate using your definition: users who triggered `first_project_created` within 7 days of signup, excluding @test.com emails...
 {{/partial:card}}
 {{/partial:card-grid}}
@@ -80,7 +80,7 @@ Applies to one project. Use for product-specific details.
 {{/partial:card}}
 {{/partial:card-grid}}
 
-At runtime, Ask AI combines both contexts. Project context overrides organization context when they conflict.
+At runtime, Global Agent combines both contexts. Project context overrides organization context when they conflict.
 
 ### What to write
 
@@ -116,7 +116,7 @@ Amplitude includes their definitions by default
 
 ## Write good context
 
-Structure your context with markdown so it's easy for Ask AI to parse.
+Structure your context with markdown so it's easy for Global Agent to parse.
 
 {{partial:two-column-list-grid}}
 ### Formatting {.js-toc-ignore}
@@ -299,7 +299,7 @@ See what makes AI Context effective and what pitfalls to avoid.
 ### Be specific
 
 {{partial:card-grid}}
-{{partial:card style="tip" label="good" caption="Defines exact events, timeframes, and thresholds that Ask AI can use directly."}}
+{{partial:card style="tip" label="good" caption="Defines exact events, timeframes, and thresholds that Global Agent can use directly."}}
 ```text
 ## Key Metrics
 - **Activation**: User triggers `project_created` event
@@ -308,7 +308,7 @@ See what makes AI Context effective and what pitfalls to avoid.
 - **Churned**: No activity for 30+ days
 ```
 {{/partial:card}}
-{{partial:card style="warning" label="bad" caption="No concrete definitions. Ask AI must guess what 'activation' means and what time ranges are 'appropriate.'"}}
+{{partial:card style="warning" label="bad" caption="No concrete definitions. Global Agent must guess what 'activation' means and what time ranges are 'appropriate.'"}}
 ```text
 Help users understand activation and engagement.
 Show relevant metrics when asked about user behavior.
@@ -360,7 +360,7 @@ North Star: Monthly Active Workspaces (MAW)
 - Week starts Monday
 ```
 {{/partial:card}}
-{{partial:card style="warning" label="bad" caption="Generic statements that don't help Ask AI understand your specific business."}}
+{{partial:card style="warning" label="bad" caption="Generic statements that don't help Global Agent understand your specific business."}}
 ```text
 We are a software company that sells to businesses.
 Our product helps teams collaborate better.
@@ -372,7 +372,7 @@ We care about growth and revenue.
 ### Use explicit do/don't rules
 
 {{partial:card-grid}}
-{{partial:card style="tip" label="good" caption="Clear instructions with exact property values. Ask AI knows what to do and avoid."}}
+{{partial:card style="tip" label="good" caption="Clear instructions with exact property values. Global Agent knows what to do and avoid."}}
 ```text
 ## Rules
 DO:
@@ -385,7 +385,7 @@ DON'T:
 - Use deprecated events: `old_signup`, `legacy_purchase`
 ```
 {{/partial:card}}
-{{partial:card style="warning" label="bad" caption="Vague guidance that doesn't tell Ask AI what specific actions to take."}}
+{{partial:card style="warning" label="bad" caption="Vague guidance that doesn't tell Global Agent what specific actions to take."}}
 ```text
 Be helpful and show relevant data.
 Use appropriate filters when needed.
@@ -446,7 +446,7 @@ Keep the following in mind to help maintain context.
 
 - **Assign owners**: Analytics lead for org context. PM or analyst for each project context.
 
-- **Review regularly**: Quarterly, after major launches, or when Ask AI gives unexpected answers.
+- **Review regularly**: Quarterly, after major launches, or when Global Agent gives unexpected answers.
 
 - **Change carefully**: One change at a time. Test with real questions. Keep backups.
 
@@ -456,14 +456,14 @@ Keep the following in mind to help maintain context.
 There's no dedicated preview mode. The best approach is to:
 1. Start with project context on a test project
 2. Ask questions that should use your new definitions
-3. Verify Ask AI responds correctly
+3. Verify Global Agent responds correctly
 4. Then apply to org context or your main project
 
 Keep a backup of your old context so you can roll back if needed.
 {{/partial:collapse}}
 
 {{partial:collapse name="What happens if my organization and project contexts conflict?"}}
-Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Ask AI will use 7 days for that project.
+Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Global Agent will use 7 days for that project.
 
 This is intentional—it lets you set sensible org-wide defaults while allowing projects to override when their needs differ.
 {{/partial:collapse}}
@@ -480,14 +480,14 @@ Yes. Amplitude automatically includes your saved cohorts, official dashboards, a
 Review your context:
 - Quarterly as part of regular maintenance
 - When you add new key metrics or segments
-- When you notice Ask AI giving incorrect answers
+- When you notice Global Agent giving incorrect answers
 - After major product or tracking changes
 
 Assign an owner to each context level so updates don't fall through the cracks.
 {{/partial:collapse}}
 
-{{partial:collapse name="What if Ask AI ignores my context?"}}
-If Ask AI isn't using your context correctly:
+{{partial:collapse name="What if Global Agent ignores my context?"}}
+If Global Agent isn't using your context correctly:
 1. Check that your context is saved (refresh the settings page)
 2. Make sure you're using exact event/property names with correct casing
 3. Simplify conflicting or redundant rules

@@ -30,6 +30,7 @@ The organizational settings also include tools to help you:
 * [Control access to content](/docs/analytics/share-external) your organization generates in Amplitude (if you're an admin)
 * View the [usage reports](/docs/admin/billing-use/usage-reports) dashboard
 * Manage [user privacy notifications](/docs/admin/account-management/manage-notifications) (if you're an admin)
+* Manage and update [AI Context and AI Controls](/docs/amplitude-ai/ai-context).
 
 For more information on each of these tasks, just follow the links to the relevant Help Center articles.
 
