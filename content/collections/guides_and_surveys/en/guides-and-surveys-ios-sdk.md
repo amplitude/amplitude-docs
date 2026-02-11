@@ -8,10 +8,6 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -45,9 +41,30 @@ pod 'AmplitudeEngagementSwift', '~> 2.0.0'
 {{/partial:tab}}
 {{/partial:tabs}}
 
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading=""}}
 Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 
@@ -113,9 +130,30 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tab}}
 {{/partial:tabs}}
 
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading=""}}
 Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 

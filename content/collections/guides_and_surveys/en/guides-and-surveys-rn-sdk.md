@@ -5,10 +5,6 @@ title: 'Guides and Surveys React Native SDK'
 ---
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys React Native SDK requires:
@@ -178,11 +174,15 @@ export default function WelcomeBanner() {
 }
 ```
 
-## Configure linking
+## Simulate Guides and Surveys for preview
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
-If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. **Previewing guides and surveys on a phone, tablet, or simulator requires this configuration.**
+{{partial:admonition type="warning" heading="Deep linking required for preview"}}
+If your app doesn't have deep linking enabled, follow [React Native's instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. **Previewing guides and surveys on a phone, tablet, or simulator requires this configuration.**
+{{/partial:admonition}}
 
-### Locate the mobile URL scheme
+### Setting up preview in Xcode (iOS)
+#### Locate the mobile URL scheme
 
 To locate the URL scheme:
 1. Navigate to *Settings > Projects* in Amplitude.
@@ -190,6 +190,63 @@ To locate the URL scheme:
 3. Navigate to the **General** tab.
 4. Find the **URL scheme (mobile)** field.
 5. Copy its value, for example, `amp-abcdefgh12345678`.
+
+#### Add the URL scheme in Xcode
+
+1. Open your iOS project in Xcode.
+2. In the Project navigator, select your app's target.
+3. On the **Info** tab, locate or add the **URL Types** section.
+4. Add a new URL type with the following values:
+    * **URL identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
+    * **URL Schemes**: Paste the value you copied from Amplitude, for example `amp-abc123`.
+
+### Setting up preview in Android Studio (Android)
+#### Locate the mobile URL scheme
+
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
+
+#### Add the URL scheme in Android Studio
+
+Add the following intent filter to the main activity to your project's `AndroidManifest.xml` file:
+
+```xml
+<activity android:name=".MainActivity">
+    <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- Add your URL scheme from Amplitude Dashboard here -->
+    <!-- ex: android:scheme="amp-12345" -->
+    <data android:scheme="<your-unique-scheme-id>" />
+    </intent-filter>
+</activity>
+```
+
+### URL handling for preview links
+The [initialization code snippet](#initialize-the-sdk) already takes care of URL handling for preview links. Specifically, this code:
+
+```js
+Linking.getInitialURL().then(async (url) => {
+    if (url) {
+    const didHandleURL = await handleURL(url);
+    if (didHandleURL) { return; }
+
+    // Handle a non-Amplitude SDK URL
+    }
+});
+
+Linking.addEventListener('url', async ({ url }) => {
+    const didHandleURL = await handleURL(url);
+    if (didHandleURL) { return; }
+
+    // Handle a non-Amplitude SDK URL
+});
+```
 
 ## Known limitations
 
