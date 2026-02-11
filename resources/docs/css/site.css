@@ -321,8 +321,23 @@ ul.nav li::marker {
     margin: 0;
     margin-bottom: 1rem;
     background: #F4F5F6;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Remove padding for full-width images */
+.prose p:has(img.full-width),
+.prose p:has(img[style*="width: 100%"]),
+.prose p:has(img[style*="max-width: 100%"]) {
+    padding: 0;
+    background: none;
+}
+
+.prose p:has(img) > img {
+    max-width: 100%;
+    height: auto;
 }
 
 .prose p:has(.inline) {
@@ -1427,4 +1442,111 @@ img.expandable-image {
         left: 1rem;
         max-width: none;
     }
+}
+
+/* Procedure component styling */
+.procedure-content ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.procedure-content ol > li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.procedure-content ol > li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, #1e61f0 0%, #4b80f3 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.125rem;
+    box-shadow: 0 2px 8px rgba(30, 97, 240, 0.3);
+}
+
+.procedure-content ol > li > p:first-child {
+    margin-top: 0.25rem;
+}
+
+.procedure-content ol > li > p:last-child {
+    margin-bottom: 0;
+}
+
+.procedure-content ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.procedure-content code {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Two-column list styling */
+.two-column-list ul {
+    columns: 1;
+    column-gap: 1.5rem;
+    list-style-position: inside;
+}
+
+@media (min-width: 768px) {
+    .two-column-list ul {
+        columns: 2;
+    }
+}
+
+.two-column-list ul li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+}
+
+.two-column-list ul li::marker {
+    color: #1e61f0;
+}
+
+/* Two-column grid - creates two equal columns */
+/* Target only divs as grid children, ignore empty paragraphs */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Hide empty paragraphs completely */
+.two-column-grid > p:empty,
+.two-column-grid > p:first-child:empty,
+.two-column-grid > p:last-child:empty {
+    display: none !important;
+    grid-column: span 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make sure only divs participate in the grid */
+.two-column-grid > div {
+    display: block;
 }
