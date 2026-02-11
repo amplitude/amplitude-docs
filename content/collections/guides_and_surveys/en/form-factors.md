@@ -119,11 +119,11 @@ Banners are available in the Banner template, and contain one step.
 Banners are full-width blocks that show on either the top or bottom of the page. Use banners for longer-term announcements, status updates, or time-sensitive promotions.
 
 {{partial:admonition type="info" heading="Banner display limitations"}}
-Banners can overlap existing content on your website even when using the **Inline** display style. This happens when your site has conflicting CSS styles on the `body` element or other page elements. If changing the display style from **Overlay** to **Inline** doesn't resolve content overlap issues, the conflicting CSS prevents proper banner positioning.
+Banners can overlap existing content on your website even when using the **Inline** display style. This happens when your site has conflicting CSS styles on the `body` element or other page elements. If changing the display style from **Overlay** to **Inline** doesn't resolve content overlap issues, then conflicting CSS in the application is preventing the banner from being positioned as intended.
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Use card embeds as a workaround"}}
-If you experience banner overlap issues that can't be resolved by adjusting the display style, consider using [card embeds](#card-embed) instead. Card embeds render content directly into your page's DOM as native elements, which avoids CSS conflicts and ensures proper positioning within your page layout. You can configure a card embed to appear at the top or bottom of your page, similar to a banner.
+If banners are not rendering as expected, give [card embeds](#card-embed) a shot. Card embeds render content directly into your page's DOM as native elements, which reduces the odds of CSS conflicting. Card embeds can be configured as **Prepend to children (first child)** on `<body>`, for example, which typically renders the card as the top element on the page.
 {{/partial:admonition}}
 
 | Setting                                | Description                                                                                                  |
