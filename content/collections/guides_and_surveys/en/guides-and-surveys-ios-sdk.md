@@ -74,7 +74,7 @@ Next, make sure to initialize the SDK.
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -161,7 +161,7 @@ After adding these lines, clean your build folder and rebuild your project.
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 ```
 
 #### Configuration options
