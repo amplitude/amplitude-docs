@@ -10,7 +10,7 @@ updated_at: 1762192449
 ---
 Out-of-the-box (OOTB) widgets let you test new website elements like modals and banners without needing to design or code them yourself. They're pre-built, configurable components that you can customize directly in the visual editor to match your brand. By removing engineering setup such as SDK, UI frameworks, and so on, OOTB widgets let you validate new ideas, drive learnings, and scale your experimentation program while maintaining brand consistency through saved design presets and reusable styles. For more information on the Visual Editor and setting up a web experiment, go to [The Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). 
 
-OOTB widgets also incorporate Amplitude AI to let you design your web experiment through conversational prompts instead of needing the precise details of your brand style guide. 
+OOTB widgets incorporate native Amplitude AI to let you design your web experiment through conversational prompts instead of needing the precise details of your brand style guide. 
 
 The OOTB widgets library includes:
 - **Buttons**: A call to action (CTA) button. When a customer clicks a CTA button, an action occurs for them. Actions can be taking the customer to another location of your website, like their shopping cart, or taking them to your support agents.
@@ -51,9 +51,9 @@ For more information on moving banners and buttons, go to [Moving elements](/doc
 
 ### AI Stylizer
 
-AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, apply brand-aware styling, and clean up elements such as spacing, alignment, and hierarchy on your OOTB widgets. AI Stylizer also works on existing page elements—headlines, CTAs, banners, modals, and text blocks. You don't need the precise details of your brand style guide, design, or coding skills. You can use natural-language prompts instead to align your widgets or elements to your brand's style.
+AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, apply brand-aware styling, and clean up elements such as spacing, alignment, and hierarchical elements of your OOTB widgets. AI Stylizer also works on existing page elements such as CTAs, banners, modals, and text blocks. You don't need the precise details of your brand style guide, design, or coding skills. You can use natural-language prompts instead to align your widgets or elements to your brand's style.
 
-When you select a widget or any text-based element in the Visual Editor, the AI Stylizer control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
+When you select a widget or any text-based element in the Visual Editor, the **AI Stylizer** control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
 
 For example, you could enter "Make this headline more urgent" or "Shorten this and make it easier to read" or "Make this feel more premium," or "Make the CTA more action-oriented." Stylizer updates the selected element based on your request. 
 
@@ -65,8 +65,10 @@ You can use AI Stylizer in the following ways:
 - **Headlines:** Make them more compelling or more urgent, simplify and clarify the information in the topic or tailor for new visitors.
 - **Buttons (CTAs):** Make them more action-oriented, increase contrast and visibility, and customize for returning customers.
 - **Banners:** Make them more prominent, simplify the messaging, and customize for new visitors.
-- **Text blocks:** Simplify and clarify, shift from features to benefits, and customize for mobile users.
+- **Text blocks:** Simplify and clarify the content, shift from features to benefits, and customize for mobile users.
 
-You can choose a preset prompt or enter your own, custom, prompt. AI Stylizer generates multiple headline or copy variants in a single interaction so you can pick which one you want. You can also revert to a previous AI-generated version from the AI Stylizer version history. You can continue to edit all AI-created styles and copy after you apply them. For example, select a hero headline and ask AI Stylizer to make it more urgent or clearer. Or, select a CTA banner and ask it to simplify the copy and fix spacing so the banner looks balanced and on-brand.
+You can choose a preset prompt or enter your own, custom, prompt. AI Stylizer can generate multiple variants in a single interaction so you can pick which one you want. You can also revert to a previous AI-generated version from the AI Stylizer version history. You can continue to edit all AI-created styles and copy after you apply them to your experiment. For example, you select a hero headline and ask AI Stylizer to make it more urgent or clearer. You like the first design and apply it to your experiment. After receiving feedback from colleagues, you go back and update the headline with their suggestions.
 
+{{partial:admonition type="note" heading="Using AI Stylizer on embedded OOTB widgets"}}
 You can't use AI Stylizer on an element that contains an embedded OOTB widget. If you try, the product displays an error message.
+{{/partial:admonition}}
