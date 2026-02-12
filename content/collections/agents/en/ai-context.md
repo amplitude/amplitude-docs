@@ -5,7 +5,7 @@ title: 'AI Context'
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1770764884
 ---
-Teach Global Agent how your business works. Define your metrics, terminology, and preferences so every answer is tailored to your organization.
+Teach Global Agent how your business works. Define your metrics, terminology, and preferences to tailor every answer to your organization.
 
 ## Getting started
 
@@ -17,7 +17,7 @@ Global Agent uses two layers of context: Organization and Project.
 
 Access both from *Project Settings > AI Controls*.
 
-![](statamic://asset::help_center_conversions::ai/ai-controls.png){.full-width}
+![AI Controls settings page in Amplitude organization settings](statamic://asset::help_center_conversions::ai/ai-controls.png){.full-width}
 
 ### What to gather before you start
 
@@ -25,18 +25,18 @@ Access both from *Project Settings > AI Controls*.
 {{partial:card style="plain" }}
 ### Business basics {.js-toc-ignore}
 
-- Your business model (B2B, B2C, marketplace, etc.)
-- North Star metric and how it's defined
-- Fiscal year start date (if not January)
-- Key customer segments and how to identify them
+- Your business model, such as B2B, B2C, or marketplace.
+- North Star metric and how it's defined.
+- Fiscal year start date (if not January).
+- Key customer segments and how to identify them.
 {{/partial:card}}
 {{partial:card style="plain"}}
 ### Technical details {.js-toc-ignore}
 
-- Event names for key actions (signup, purchase, etc.)
-- Property names that define segments (plan type, ARR)
-- Test/internal user identifiers to exclude
-- Any deprecated events to avoid
+- Event names for key actions, such as signup and purchase.
+- Property names that define segments (plan type, ARR).
+- Test/internal user identifiers to exclude.
+- Any deprecated events to avoid.
 {{/partial:card}}
 {{/partial:card-grid}}
 
@@ -46,7 +46,7 @@ Context changes how Global Agent answers questions.
 
 A user asks:
 
-> Show my our activation rate
+> Show me our activation rate
 
 {{partial:card-grid}}
 {{partial:card style="warning" label="Without context" caption="Global Agent guesses. Uses wrong events, wrong timeframe, includes test users."}}
@@ -64,19 +64,19 @@ I'll show activation rate using your definition: users who triggered `first_proj
 ### Organization context {.js-toc-ignore}
 Applies to all projects. Use for company-wide standards.
 
-- Business model and KPI definitions
-- Standard terminology
-- Global filters (exclude test users)
-- Fiscal calendar rules
+- Business model and KPI definitions.
+- Standard terminology.
+- Global filters (exclude test users).
+- Fiscal calendar rules.
 {{/partial:card}}
 {{partial:card style="plain" caption="Limit: 10,000 characters"}}
 ### Project context {.js-toc-ignore}
 Applies to one project. Use for product-specific details.
 
-- Product-specific events and funnels
-- Metrics unique to this product
-- Product-specific segments
-- Override org defaults when needed
+- Product-specific events and funnels.
+- Metrics unique to this product.
+- Product-specific segments.
+- Override org defaults when needed.
 {{/partial:card}}
 {{/partial:card-grid}}
 
@@ -98,11 +98,11 @@ Amplitude can't infer the following:
 {{partial:card style="plain"}}
 ### Skip this {.js-toc-ignore}
 Amplitude understands the following:
-- Your event catalog and properties
-- Top events by volume
-- Official dashboards
-- Saved cohort definitions
-- Existing chart configurations
+- Your event catalog and properties.
+- Top events by volume.
+- Official dashboards.
+- Saved cohort definitions.
+- Existing chart configurations.
 {{/partial:card}}
 {{/partial:card-grid}}
 
@@ -111,7 +111,7 @@ Reference your existing cohorts and dashboards by name in any context you provid
 
 > Use the 'Power Users' cohort when asked about engaged users.
 
-Amplitude includes their definitions by default
+Amplitude includes their definitions by default.
 {{/partial:admonition}}
 
 ## Write good context
@@ -348,7 +348,7 @@ are evaluating the product.
 ### Include business context
 
 {{partial:card-grid}}
-{{partial:card style="tip" label="good" caption="Establishes context Amplitude cannot infer, like fiscal calendar and business model."}}
+{{partial:card style="tip" label="good" caption="Establishes context Amplitude can't infer, like fiscal calendar and business model."}}
 ```text
 ## Business Model
 B2B SaaS, annual subscriptions.
@@ -423,21 +423,21 @@ Properties follow our naming conventions.
 {{partial:two-column-list-grid}}
 ### Do {.js-toc-ignore}
 
-- Use exact event and property names with correct casing
-- Be specific: "exclude `email` contains @test.com"
-- Put universal rules at org level, overrides at project level
-- Test changes by asking questions before saving
-- Keep a backup in your wiki or version control
+- Use exact event and property names with correct casing.
+- Be specific: "exclude `email` contains @test.com".
+- Put universal rules at org level, overrides at project level.
+- Test changes by asking questions before saving.
+- Keep a backup in your wiki or version control.
 
 ---SPLIT---
 
 ### Don't {.js-toc-ignore}
 
-- List events or properties (Amplitude already knows these)
-- Write vague instructions like "be helpful" or "use appropriate filters"
-- Create conflicting rules between org and project context
-- Add edge-case rules that only apply to rare situations
-- Make large changes without testing first
+- List events or properties (Amplitude already knows these).
+- Write vague instructions like "be helpful" or "use appropriate filters".
+- Create conflicting rules between org and project context.
+- Add edge-case rules that only apply to rare situations.
+- Make large changes without testing first.
 {{/partial:two-column-list-grid}}
 
 ### Maintain context over time
@@ -454,16 +454,16 @@ Keep the following in mind to help maintain context.
 
 {{partial:collapse name="How do I test my context before I roll it out?"}}
 There's no dedicated preview mode. The best approach is to:
-1. Start with project context on a test project
-2. Ask questions that should use your new definitions
-3. Verify Global Agent responds correctly
-4. Then apply to org context or your main project
+1. Start with project context on a test project.
+2. Ask questions that should use your new definitions.
+3. Verify Global Agent responds correctly.
+4. Then apply to org context or your main project.
 
 Keep a backup of your old context so you can roll back if needed.
 {{/partial:collapse}}
 
 {{partial:collapse name="What happens if my organization and project contexts conflict?"}}
-Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Global Agent will use 7 days for that project.
+Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Global Agent uses 7 days for that project.
 
 This is intentional—it lets you set sensible org-wide defaults while allowing projects to override when their needs differ.
 {{/partial:collapse}}
@@ -478,20 +478,20 @@ Yes. Amplitude automatically includes your saved cohorts, official dashboards, a
 
 {{partial:collapse name="How often should I update my context?"}}
 Review your context:
-- Quarterly as part of regular maintenance
-- When you add new key metrics or segments
-- When you notice Global Agent giving incorrect answers
-- After major product or tracking changes
+- Quarterly as part of regular maintenance.
+- When you add new key metrics or segments.
+- When you notice Global Agent giving incorrect answers.
+- After major product or tracking changes.
 
 Assign an owner to each context level so updates don't fall through the cracks.
 {{/partial:collapse}}
 
 {{partial:collapse name="What if Global Agent ignores my context?"}}
 If Global Agent isn't using your context correctly:
-1. Check that your context is saved (refresh the settings page)
-2. Make sure you're using exact event/property names with correct casing
-3. Simplify conflicting or redundant rules
-4. Be more explicit—instead of "exclude test users," say "exclude where email contains @test.com"
+1. Check that your context saves correctly (refresh the settings page).
+2. Make sure you're using exact event/property names with correct casing.
+3. Simplify conflicting or redundant rules.
+4. Be more explicit—instead of "exclude test users," say "exclude where email contains @test.com".
 
 Overly long or complex context can also cause issues. Try trimming to essentials.
 {{/partial:collapse}}
@@ -499,20 +499,20 @@ Overly long or complex context can also cause issues. Try trimming to essentials
 {{partial:collapse name="What's the character limit?"}}
 10,000 characters each for org context and project context (20,000 total). This is roughly 1,500-2,000 words—plenty for most use cases.
 
-If you're hitting the limit, you're probably including too much detail. Focus on definitions and rules that Apply to the majority of questions, not edge cases.
+If you're hitting the limit, you're probably including too much detail. Focus on definitions and rules that apply to the majority of questions, not edge cases.
 {{/partial:collapse}}
 
 {{partial:collapse name="Should I put everything in organization context or split it up?"}}
 Use org context for company-wide standards that apply everywhere:
-- Business model and terminology
-- Global filters (exclude test users)
-- Fiscal calendar
-- Core metric definitions
+- Business model and terminology.
+- Global filters (exclude test users).
+- Fiscal calendar.
+- Core metric definitions.
 
 Use project context for product-specific details:
-- Product-specific events and funnels
-- Metrics unique to that product
-- Overrides to org defaults
+- Product-specific events and funnels.
+- Metrics unique to that product.
+- Overrides to org defaults.
 
 If you only have one project, org context is fine for everything.
 {{/partial:collapse}}
