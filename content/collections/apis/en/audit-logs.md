@@ -1,6 +1,6 @@
 ---
 id: 6f75ddb8-9de6-4897-bcd8-76adf53c03f1
-blueprint: account-management
+blueprint: api
 title: 'Audit Logs API'
 this_article_will_help_you:
   - 'Request access to the Audit Logs API.'
