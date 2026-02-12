@@ -53,7 +53,7 @@ For more information on moving banners and buttons, go to [Moving elements](/doc
 
 AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, apply brand-aware styling, and clean up elements such as spacing, alignment, and hierarchical elements of your OOTB widgets. You don't need the precise details of your brand style guide, design, or coding skills. You can use natural-language prompts instead to align your widgets or elements to your brand's style.
 
-When you select a widget in the Visual Editor, the **AI Stylizer** control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
+When you select a widget in the Visual Editor, the **AI Stylizer** control appears in the element toolbar as a **sparkle icon**. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
 
 For example, you could enter "Make this headline more urgent" or "Create a promotion for summer that contains a 15% discount promocode", or "Make the CTA more action-oriented." Stylizer updates the selected element based on your request. 
 
