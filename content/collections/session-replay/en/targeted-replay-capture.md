@@ -7,9 +7,9 @@ exclude_from_sitemap: false
 updated_by: system
 updated_at: 1735000000
 ---
-Targeted Replay Capture (TRC) is a per-project feature in Amplitude Session Replay that lets you selectively capture session replays based on specific criteria, rather than capturing all sessions or relying solely on random sampling. This helps you focus your replay quota on the most important user behaviors, workflows, or segments.
+Targeted Replay Capture (TRC) is a per-project feature in Amplitude Session Replay that lets you capture session replays based on specific criteria rather than capturing all sessions or relying on random sampling. Focus your replay quota on the most important user behaviors, workflows, or segments.
 
-You configure Targeted Replay Capture by adding conditions to the Sampling control in your project's Session Replay settings. You can customize capture criteria using specific conditions like multiple events, event properties, or user properties. You can combine these criteria within a single filter or across filters using OR logic. The Session Replay SDK fetches targeting configurations from a remote config service and evaluates them at runtime to decide whether to capture a session.
+Configure Targeted Replay Capture by adding conditions to the *Sampling* control in your project's Session Replay settings. Customize capture criteria with specific conditions like multiple events, event properties, or user properties. Combine criteria within a single filter or across filters with OR logic. The Session Replay SDK fetches targeting configurations from a remote config service and evaluates them at runtime to decide whether to capture a session.
 
 ## Key capabilities
 
@@ -17,16 +17,16 @@ TRC enables you to define the criteria that Amplitude uses to decide to capture 
 
 ### Custom capture criteria
 
-Define rules to capture replays only when certain conditions are met:
+Define rules that capture replays based on:
 
 - **Specific events**: For example, `Checkout Started`.
 - **Event properties**: For example, `plan = Pro`.
 - **User properties**: For example, `country = US`.
-- **Combinations**: Combine the above using `OR` logic.
+- **Combinations**: Combine these criteria with `OR` logic.
 
 ### Configuration and quota management
 
-Manage TRC through the [Session Replay settings page](/docs/session-replay/session-replay-settings) by adding conditions to the Sampling control. You can add, edit, and manage your targeting conditions for each project. The UI provides an estimate of how much quota each condition uses, based on historical traffic. You can set different sample rates for different conditions, giving you granular control over which sessions you capture and how much of your quota you use.
+Manage TRC through the [Session Replay settings page](/docs/session-replay/session-replay-settings) by adding conditions to the *Sampling* control. Add, edit, and remove targeting conditions for each project. The UI estimates how much quota each condition uses based on historical traffic. Set different sample rates for different conditions to control which sessions you capture and how much quota you use.
 
 ## Use cases
 
@@ -43,14 +43,14 @@ Before you configure Targeted Replay Capture, ensure you meet these requirements
 
 ## Configure Targeted Replay Capture
 
-Targeted Replay Capture settings are configured per project. To configure Targeted Replay Capture for a project:
+You configure Targeted Replay Capture per project. To configure it:
 
-1. Navigate to *Settings > Organizational Settings > Session Replay Settings*. For more information, review [Session Replay settings page](/docs/session-replay/session-replay-settings).
-2. Select the project you want to configure. Each project has its own Targeted Replay Capture settings.
-3. In the **Sampling** section, select **Add Condition** to create a new targeting condition.
+1. Navigate to *Settings > Organizational Settings > Session Replay Settings*. For more information, review the [Session Replay settings page](/docs/session-replay/session-replay-settings).
+2. Select the project you want to configure.
+3. In the *Sampling* section, select **Add Condition** to create a new targeting condition.
 4. Define your targeting criteria for the condition.
 
-You can add multiple conditions and combine them using OR logic. Each condition can include:
+Add multiple conditions and combine them with OR logic. Each condition can include:
 
 - Event types.
 - Event properties.
@@ -62,7 +62,7 @@ You must capture and send events, event properties, and user properties to Ampli
 
 ## SDK support
 
-Targeted Replay Capture (TRC) requires the Amplitude Browser Analytics SDK with the Session Replay Browser SDK Plugin version `@amplitude/plugin-session-replay-browser@1.22.0` or higher. To use TRC, ensure you have both the Amplitude Browser Analytics SDK and the Session Replay Plugin integrated into your setup.
+TRC requires the Amplitude Browser Analytics SDK with the Session Replay Browser SDK Plugin version `@amplitude/plugin-session-replay-browser@1.22.0` or higher. Integrate both the Amplitude Browser Analytics SDK and the Session Replay Plugin into your setup to use TRC.
 
 {{partial:admonition type="warning" heading="Standalone SDK not supported"}}
 Targeted Replay Capture doesn't support the standalone SDK. Use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin) instead.
@@ -70,8 +70,8 @@ Targeted Replay Capture doesn't support the standalone SDK. Use the [Session Rep
 
 ## Evaluation timing
 
-The SDK fetches the targeting configuration at session start and uses it for the entire session. If an event matches later in the session, the SDK evaluates it against that original configuration. Updates to targeting rules only take effect for new sessions.
+The SDK fetches the targeting configuration at session start and uses it for the entire session. If an event matches later in the session, the SDK evaluates it against that original configuration. Updates to targeting rules apply only to new sessions.
 
 {{partial:admonition type="note" heading="Capture timing"}}
-Session replay capture begins only after the target event occurs. TRC has no "lookback" period—replays don't capture events that happened before the targeting condition triggers. The replay starts from the point when the target event triggers, not from the beginning of the session.
+Session replay capture begins only after the target event occurs. TRC has no "lookback" period—replays don't capture events before the targeting condition triggers. The replay starts when the target event triggers, not at the beginning of the session.
 {{/partial:admonition}}
