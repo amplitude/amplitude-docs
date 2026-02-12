@@ -8,7 +8,8 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328299
 source: /docs/analytics/plan-your-set-up
 academy_course:
-  - 5bdab705-c0c7-40c3-b19d-5d2e28f28b59
+  - 9a1b2c3d-4e5f-4a5b-8c9d-1e2f3a4b5c6d
+  - b6249179-e517-4027-a0ff-619b3bd0106e
 ---
 This article describes how to successfully set up and get familiar with Amplitude basics.
 

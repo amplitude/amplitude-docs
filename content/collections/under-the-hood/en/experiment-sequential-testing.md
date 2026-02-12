@@ -3,8 +3,6 @@ id: 4c9bc7b0-f786-4694-97c0-4668958ad1de
 blueprint: under-the-hood
 title: 'Sequential testing for statistical inference'
 source: 'https://help.amplitude.com/hc/en-us/articles/4403176829709-How-Amplitude-Experiment-uses-sequential-testing-for-statistical-inference'
-this_article_will_help_you:
-  - 'Familiarize yourself with the statistical testing method used by Amplitude Experiment'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1721759869
 landing: false

@@ -3,8 +3,6 @@ id: 9a636606-4c3e-4452-915c-b153146b9116
 blueprint: data-table
 title: 'Use session metrics to evaluate content paths'
 source: 'https://help.amplitude.com/hc/en-us/articles/10442602260507-Use-session-metrics-to-evaluate-content-paths'
-this_article_will_help_you:
-  - 'Use legacy metrics to enhance your analyses'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103382
 landing: true

@@ -3,15 +3,13 @@ id: 0b5fb0a0-d720-4cc4-ad1d-072be91a710f
 blueprint: funnel-analysi
 title: 'Interpret your funnel analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis'
-this_article_will_help_you:
-  - 'View and interpret funnel conversions'
-  - 'Track conversions over time'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538359
 landing: true
 landing_blurb: 'Interpret and track your conversions over time'
 academy_course:
-  - 7d137320-f0f2-4b00-8f77-2f2adb07de68
+  - 5e5f6a7b-8c9d-4e5f-2a3b-5c6d7e8f9a0b
+  - 4f6a7b8c-9d0e-4f5a-3b4c-6d7e8f9a0b1c
 ---
 Amplitude’s Funnel Analysis chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
 

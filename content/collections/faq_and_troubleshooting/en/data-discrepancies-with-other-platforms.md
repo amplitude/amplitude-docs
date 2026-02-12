@@ -3,8 +3,6 @@ id: d96f413e-6cf2-4bac-b9e2-23575175d3fa
 blueprint: faq_and_troubleshooting
 title: 'Data discrepancies with other platforms'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/115002383247'
-this_article_will_help_you:
-  - "Troubleshoot when Amplitude's numbers do not match those provided by other platforms"
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720214605
 category: other

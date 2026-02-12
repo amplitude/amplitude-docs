@@ -3,10 +3,6 @@ id: bbf77d65-6251-456d-adb9-b9591a1b8ca8
 blueprint: chart
 title: 'Chart basics in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/231999267-Chart-basics-in-Amplitude'
-this_article_will_help_you:
-  - 'Share and customize your charts in Amplitude'
-  - 'Customize your charts'
-  - 'Set expectations for chart caching times'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

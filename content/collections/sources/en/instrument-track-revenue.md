@@ -3,9 +3,6 @@ id: 02e1a247-91b8-48ac-aabb-e1ab3b46042f
 blueprint: source
 title: 'Track revenue'
 source: 'https://help.amplitude.com/hc/en-us/articles/115003116888-Track-revenue'
-this_article_will_help_you:
-  - 'Understand your options for tracking revenue in Amplitude'
-  - 'Learn how to track in-app and non-in-app purchases and validate revenue data'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

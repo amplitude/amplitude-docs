@@ -2,8 +2,6 @@
 id: 64462898-6686-4899-8bbe-4d29d8a97f3f
 blueprint: account-management
 title: 'Manage your API keys and secret keys'
-this_article_will_help_you:
-  - 'Manage your API keys and secret keys'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

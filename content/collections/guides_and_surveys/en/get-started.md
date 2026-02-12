@@ -9,6 +9,7 @@ landing: true
 landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 academy_course:
   - 498134e3-190a-4b58-b148-2a94ef5bc069
+  - 9e1f2a3b-4c5d-4e5f-8a9b-1c2d3e4f5a6b
 ---
 Before you get started with Guides and Surveys, install one of the available SDKs, depending on where you want to display Guides and Surveys.
 

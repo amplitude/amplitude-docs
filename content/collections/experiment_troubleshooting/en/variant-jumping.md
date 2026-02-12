@@ -6,8 +6,6 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1719874098
-this_article_will_help_you:
-  - 'Understand what variant jumping is, and what you can do about it'
 ---
 Variant jumping occurs when a user is exposed to two or more variants for a single flag or experiment. Variant jumping above a certain threshold may be cause for concern around the trustworthiness of an analysis.
 

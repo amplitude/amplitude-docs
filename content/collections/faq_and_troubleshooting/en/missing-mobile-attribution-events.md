@@ -4,8 +4,6 @@ blueprint: faq_and_troubleshooting
 title: 'Missing mobile attribution events'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360051234592'
 category: governance
-this_article_will_help_you:
-  - 'Understand why mobile attribution events are missing, and fix the issue'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718926153
 ---

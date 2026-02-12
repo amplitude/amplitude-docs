@@ -6,8 +6,6 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719528358
-this_article_will_help_you:
-  - 'Understand how Amplitude tracks users, events, and sessions, and how they relate to marketing channel classifiers and attribution models'
 ---
 To get the best view of user behavior and product engagement, it's important to first understand the differences between events, users, and sessions. It’s also critical to understand how channel classifiers, attribution models, and session entries and exits work in Amplitude.
 

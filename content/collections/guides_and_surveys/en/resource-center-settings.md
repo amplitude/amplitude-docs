@@ -2,8 +2,6 @@
 id: 05c26116-31bf-4215-bc7b-8bc230655839
 blueprint: guides_and_survey
 title: Settings
-this_article_will_help_you:
-  - 'Manage Resource Center settings and overall look and feel of the widget'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961188

@@ -3,8 +3,6 @@ id: e6607f82-0240-4525-bbe7-e3058c73abb3
 blueprint: faq_and_troubleshooting
 title: 'Missing data'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360044886071'
-this_article_will_help_you:
-  - 'Troubleshoot for missing events, event properties, or user properties'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718925861
 category: governance

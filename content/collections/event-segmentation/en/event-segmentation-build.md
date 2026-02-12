@@ -3,13 +3,12 @@ id: 61370d33-6a3c-41a3-ba21-85ccaf8e861b
 blueprint: event-segmentation
 title: 'Build an event segmentation analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/360052274852-Build-an-event-segmentation-analysis'
-this_article_will_help_you:
-  - 'Use events and properties to create an Event Segmentation analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1744389533
 landing: true
 landing_blurb: 'Use events and properties to create an Event Segmentation analysis'
 academy_course:
+  - 3a7b8c9d-0e1f-4a5b-4c5d-7e8f9a0b1c2d
   - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
 ---
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:

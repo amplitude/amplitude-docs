@@ -3,15 +3,13 @@ id: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
 blueprint: workflow
 title: 'Create a new experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687551-Create-a-new-experiment'
-this_article_will_help_you:
-  - 'Create and initialize a new experiment'
-  - 'Add context to your experiment description, so other stakeholders will understand it'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538242
 landing: true
 landing_blurb: 'Create a new experiment in Amplitude.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
+  - 8f2a3b4c-5d6e-4f5a-9b0c-2d3e4f5a6b7c
 ---
 The decisions you make in the [design](/docs/feature-experiment/workflow/define-goals) phase define your experiment’s success. By putting thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 

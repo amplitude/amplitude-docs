@@ -3,10 +3,6 @@ id: 6fa8fdca-74d6-4e5b-894d-fed42807a8e8
 blueprint: retention-analysi
 title: 'Build a retention analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/360050153151-Build-a-retention-analysis'
-this_article_will_help_you:
-  - 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
-  - 'Understand how Amplitude applies time to a retention analysis'
-  - 'Build a Retention Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538471
 landing: true
@@ -17,10 +13,6 @@ academy_course:
 Amplitude’s **Retention Analysis** chart helps you drive product adoption by showing you how often users return to your product after taking a specific action (known as **triggering an event**). 
 
 Amplitude computes retention data by comparing the date of that starting event to the date of the **return event** you’ve specified. The return event is the event that, when triggered, tells you a user has been retained. When building a retention analysis chart, you can choose any event you like for both the starting and return events. You can also opt not to choose a specific event, and instead tell Amplitude to use any active event.
-
-{{partial:admonition type='note'}}
-You may also find [this course on retention analysis](https://academy.amplitude.com/drive-product-adoption-with-retention-analysis) helpful.
-{{/partial:admonition}}
 
 You can select up to two return events for your retention analysis. Each event will have its own analysis, and will appear as a separate segment in the chart.
 

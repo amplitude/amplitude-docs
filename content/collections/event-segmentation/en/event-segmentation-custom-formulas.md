@@ -3,8 +3,6 @@ id: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
 blueprint: event-segmentation
 title: 'Custom formulas: Syntax and definitions'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions'
-this_article_will_help_you:
-  - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632354
 landing: true

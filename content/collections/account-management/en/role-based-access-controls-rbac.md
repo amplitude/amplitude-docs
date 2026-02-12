@@ -27,8 +27,6 @@ RBAC is available to organizations on any Enterprise plan. If you aren't on an E
 
 {{/partial:admonition}}
 
-To learn more, take the [Manage roles and permissions with RBAC](https://academy.amplitude.com/manage-roles-and-permissions-with-role-based-access-controls-rbac) course on Amplitude Academy.
-
 ## Amplitude RBAC concepts
 
 Amplitude's RBAC contains three main layers: Roles, Permissions, and Actions. Roles contain permissions, and Permissions contain actions. An action is a singular task, editing a metric, or creating an annotation.

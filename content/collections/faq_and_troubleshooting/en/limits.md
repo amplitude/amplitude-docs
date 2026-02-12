@@ -3,8 +3,6 @@ id: de87be4d-9370-44b2-b5c7-051dea5df54f
 blueprint: faq_and_troubleshooting
 title: Limits
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/115002923888'
-this_article_will_help_you:
-  - 'Understand the limits Amplitude places on the amount of data you can send, and how to avoid exceeding them'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721083346
 landing: false

@@ -3,10 +3,6 @@ id: c3c874b0-ba20-4e12-bdf7-7104a492d9a4
 blueprint: analytic
 title: 'Create cohorts with Microscope, file import, or the Segmentation module'
 source: 'https://help.amplitude.com/hc/en-us/articles/19528398045083-Create-cohorts-via-Microscope-file-import-or-the-Segmentation-module'
-this_article_will_help_you:
-  - 'Create cohorts via the Microscope feature'
-  - 'Learn how to import a cohort from a file'
-  - 'Create cohorts with the Segmentation module of all Amplitude chart types except Compass'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

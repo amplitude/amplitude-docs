@@ -7,6 +7,9 @@ landing_blurb: 'Follow this guide to get data from your site into Amplitude in j
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1765489396
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
+  - 7c3d4e5f-6a7b-4c5d-0e1f-3a4b5c6d7e8f
 ---
 Get started with the full Amplitude platform in minutes. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
 

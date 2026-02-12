@@ -2,9 +2,6 @@
 id: a78497a9-734e-4d88-9e3c-1c2a8d1cb102
 blueprint: analytic
 title: 'Microscope: Explore individual data points in your charts'
-this_article_will_help_you:
-  - 'Inspect your data points in a high level of detail'
-  - 'Create cohorts, flags, and experiments directly from your chart data points'
 source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
 landing: false
 exclude_from_sitemap: false

@@ -8,6 +8,7 @@ updated_at: 1743538336
 landing: true
 landing_blurb: "Build your funnel analysis following Amplitude's best practices"
 academy_course:
+  - 6d4e5f6a-7b8c-4d5e-1f2a-4b5c6d7e8f9a
   - 7d137320-f0f2-4b00-8f77-2f2adb07de68
 ---
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off. 

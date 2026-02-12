@@ -3,13 +3,13 @@ id: 1473fc96-a097-4045-a6f9-43ad3bf5027e
 blueprint: get-started
 title: 'Get data into Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/17472723888411-Get-data-into-Amplitude'
-this_article_will_help_you:
-  - 'Pull data into Amplitude from your app or a third-party source'
-  - 'Identify valuable resources and APIs to consider during instrumentation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571412
+academy_course:
+  - caa26d9a-e585-492c-afa1-f6571125252f
+  - 9a1b2c3d-4e5f-4a5b-8c9d-1e2f3a4b5c6d
 ---
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
@@ -57,4 +57,3 @@ You can send data to Amplitude in different ways: SDKs, HTTP API v2, Batch API, 
 * [Amplitude SDKs](https://www.docs.developers.amplitude.com/data/sources/)
 * [Amplitude Github Repository](https://github.com/amplitude?page=1)
 * [Data Taxonomy Playbook](/docs/data/data-planning-playbook)
-* [Amplitude Academy](https://academy.amplitude.com/)
