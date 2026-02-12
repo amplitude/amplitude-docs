@@ -16,6 +16,7 @@ updated_at: 1750443681
 ### ✨ Features
 - Feat: add SDK methods `disable` which temporarily hides any displayed guides or surveys and `enable` which shows them again (GSDK-513) \[android,ios,rn\]
 - Feat: add SDK method `shutdown` to React Native SDK binding (GSDK-769) \[rn\]
+- Feat: add `Minimum SDK version` support to App Management so older SDK versions don't initialize Guides and Surveys \[android,ios,rn\]
 
 ### 🐛 Fixes
 - Fix: fix theming issues (GSDK-845, GSDK-847) \[android, ios\]
