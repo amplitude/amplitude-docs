@@ -21,8 +21,8 @@ In Guides and Surveys experiments, you can test whether showing a guide or surve
 - **Variants**: Users in variant groups see the guide or survey you create.
 
 For example, to run a 50-50 test to see if a guide improves feature adoption:
-- Set the control to 50% (these users don't see the guide)
-- Set variant A to 50% (these users see the guide)
+- Set the control to 50% (these users don't see the guide).
+- Set variant A to 50% (these users see the guide).
 
 This lets you measure the impact of your guide or survey against a baseline of users who don't see it.
 
