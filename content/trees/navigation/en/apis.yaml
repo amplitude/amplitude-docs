@@ -133,3 +133,10 @@ tree:
       -
         id: 7d949d16-0964-4d64-bc40-3be3be8fbc06
         entry: d55d1726-1779-4479-bd3d-063b71c49f52
+  -
+    id: d92003e5-775e-43f5-af6c-553d4e3e6666
+    title: 'Admin APIs'
+    children:
+      -
+        id: f32655f0-83e2-4536-b509-dd76792435c1
+        entry: 6f75ddb8-9de6-4897-bcd8-76adf53c03f1
