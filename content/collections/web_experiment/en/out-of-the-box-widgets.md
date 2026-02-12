@@ -34,11 +34,11 @@ By default, you can edit the following aspects of any widget:
 
 When you select a widget, the element toolbar lets you delete it or save it to the library.
 
-The Visual Editor shows all changes in real time. 
+The Visual Editor displays all changes in real time. 
 
 ### Customizing placement of your widgets
 
-You can move banners and buttons around your website:
+You can freely move all banners and buttons around your website:
 - Banners can appear at the top or bottom of a page. 
 - Buttons can appear almost anywhere on the page. When set, the buttons snap to a grid layout. 
 
