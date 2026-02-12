@@ -69,4 +69,4 @@ You can use AI Stylizer in the following ways:
 
 You can choose a preset prompt or enter your own, custom, prompt. AI Stylizer generates multiple headline or copy variants in a single interaction so you can pick which one you want. You can also revert to a previous AI-generated version from the AI Stylizer version history. You can continue to edit all AI-created styles and copy after you apply them. For example, select a hero headline and ask AI Stylizer to make it more urgent or clearer. Or, select a CTA banner and ask it to simplify the copy and fix spacing so the banner looks balanced and on-brand.
 
-You can't use AI Stylizer on an element that contains an embedded OOTB widget. If you try, the product shows a message explaining that this case isn't supported.
+You can't use AI Stylizer on an element that contains an embedded OOTB widget. If you try, the product displays an error message.
