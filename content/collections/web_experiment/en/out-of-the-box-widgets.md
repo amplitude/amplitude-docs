@@ -51,17 +51,16 @@ For more information on moving banners and buttons, go to [Moving elements](/doc
 
 ### AI Stylizer
 
-AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, apply brand-aware styling, and clean up elements such as spacing, alignment, and hierarchical elements of your OOTB widgets. AI Stylizer also works on existing page elements such as CTAs, banners, modals, and text blocks. You don't need the precise details of your brand style guide, design, or coding skills. You can use natural-language prompts instead to align your widgets or elements to your brand's style.
+AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, apply brand-aware styling, and clean up elements such as spacing, alignment, and hierarchical elements of your OOTB widgets. You don't need the precise details of your brand style guide, design, or coding skills. You can use natural-language prompts instead to align your widgets or elements to your brand's style.
 
-When you select a widget or any text-based element in the Visual Editor, the **AI Stylizer** control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
+When you select a widget in the Visual Editor, the **AI Stylizer** control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
 
 For example, you could enter "Make this headline more urgent" or "Create a promotion for summer that contains a 15% discount promocode", or "Make the CTA more action-oriented." Stylizer updates the selected element based on your request. 
 
 You can use AI Stylizer in the following ways: 
 
-**On OOTB widgets:** When you use AI Stylizer on a pre-built widget (modal, CTA, banner, or promo block), it adapts the element to your brand. This means that it updates typography, colors, and spacing to match your site and can create or refine headline and CTA text so the component looks like part of your product.
+**On OOTB widgets:** When you use AI Stylizer on a pre-built widget (modal, CTA, banner, or promo block), it adapts the element to your brand. This means that it updates typography, colors, and spacing to match your site and can create or refine headline and CTA text so the component looks like part of your product. 
 
-**On existing page elements:** When you insert pre-built elements in the Visual Editor, AI Stylizer adapts them to your brand and content. For example:
 - **Headlines:** Make them more compelling or more urgent, simplify and clarify the information in the topic or tailor for new visitors.
 - **Buttons (CTAs):** Make them more action-oriented, increase contrast and visibility, and customize for returning customers.
 - **Banners:** Make them more prominent, simplify the messaging, and customize for new visitors.
