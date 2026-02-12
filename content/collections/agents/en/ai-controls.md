@@ -83,6 +83,7 @@ Use file uploads for:
 File uploads supplement your text instructions—they don't replace them. Use text instructions for rules and definitions, and file uploads for detailed reference material.
 {{/partial:admonition}}
 
+{{##
 ## Model providers
 
 Enable or disable specific AI model providers for your organization.
@@ -98,7 +99,7 @@ Toggle each provider on or off based on your organization's policies. Amplitude 
 {{partial:admonition type="warning" heading=""}}
 Disabling a provider may degrade performance across certain AI features. Only disable a provider if your organization's security or compliance policies require it.
 {{/partial:admonition}}
-
+##}}
 ## Data retention and privacy
 
 Configure how long AI conversation data is stored.
