@@ -12,10 +12,6 @@ landing_blurb: 'Analyze conversions between the key transition points in your pr
 academy_course:
   - bd75ea62-37df-4ba9-a32b-459a73933d9e
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Discover user paths with Journeys](https://academy.amplitude.com/discover-user-paths-with-journeys) · [What is Journeys?](https://academy.amplitude.com/what-is-journeys)
-{{/partial:admonition}}
-
 Amplitude’s Journeys chart incorporates the power of the legacy Journeys, and Pathfinder Users charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: 
 - By the total number of unique users who took a particular path.
 - By the total number of times they opted for that path.

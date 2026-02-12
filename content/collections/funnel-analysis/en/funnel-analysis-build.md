@@ -10,10 +10,6 @@ landing_blurb: "Build your funnel analysis following Amplitude's best practices"
 academy_course:
   - 7d137320-f0f2-4b00-8f77-2f2adb07de68
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Build a Funnel Analysis chart](https://academy.amplitude.com/build-a-funnel-analysis-chart) · [Diagnose conversion issues with Funnel and Path analyses](https://academy.amplitude.com/path/diagnose-conversion-issues)
-{{/partial:admonition}}
-
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off. 
 
 A common example of a funnel is successfully onboarding. To Amplitude, a converted user is one who triggers the events you specified, in the specified order.

@@ -11,10 +11,6 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691104
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Learn about your data taxonomy using Event Explorer](https://academy.amplitude.com/use-event-explorer-to-learn-about-your-taxonomy)
-{{/partial:admonition}}
-
 Even with clean data, knowing which data to use in an analysis isn't always as straightforward as we would like: taxonomies can sometimes be unclear or counterintuitive; out-of-date events can persist well after the point when they should have been deprecated; events can sometimes break unexpectedly.
 
 {{partial:admonition type='note'}}

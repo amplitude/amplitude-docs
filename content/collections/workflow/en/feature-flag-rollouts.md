@@ -13,10 +13,6 @@ landing: true
 academy_course:
   - 5f36c7a0-1c63-4b31-8f64-620b4752e7e1
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Manage feature flags and rollouts using Amplitude](https://academy.amplitude.com/manage-feature-flags-and-rollouts-using-amplitude)
-{{/partial:admonition}}
-
 In Amplitude Experiment, a flag is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them after you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
 
 This feature is available to users on all Amplitude plans.

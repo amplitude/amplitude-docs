@@ -13,10 +13,6 @@ landing_blurb: 'Create a new experiment in Amplitude.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Getting Started with Amplitude Experiment](https://academy.amplitude.com/path/getting-started-with-amplitude-experiment-learning-path) · [Design robust experiments with detailed test plans](https://academy.amplitude.com/design-robust-experiments-with-detailed-test-plans)
-{{/partial:admonition}}
-
 The decisions you make in the [design](/docs/feature-experiment/workflow/define-goals) phase define your experiment’s success. By putting thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 
 For example, you want to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric should increase by at least 2%. If you change the experiment type to *Do No Harm*, you expect the metric to "not increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.

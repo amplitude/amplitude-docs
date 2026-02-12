@@ -10,10 +10,6 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720214133
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Amplitude Analytics Admin Essentials](https://academy.amplitude.com/amplitude-analytics-admin-essentials)
-{{/partial:admonition}}
-
 User permissions define the level of Amplitude access a user in your organization has. Amplitude bases permissions on a user's role, though [project-level permissions](/docs/admin/account-management/manage-users) and [permission groups](/docs/admin/account-management/manage-permission-groups) are available for Enterprise customers who need more targeted security controls. For more information about permissions in Amplitude Experiment, go to [Project-level user permissions](/docs/feature-experiment/project-level-permissions).
 
 {{partial:admonition type='note'}}

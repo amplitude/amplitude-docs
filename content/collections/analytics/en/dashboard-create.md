@@ -17,10 +17,6 @@ academy_description: "Learn how Dashboards can be used to monitor important metr
 academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---
-{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-[Use dashboards and starter templates to monitor important metrics](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics)
-{{/partial:admonition}}
-
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
 ## Before you begin
