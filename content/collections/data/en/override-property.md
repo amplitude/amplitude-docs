@@ -3,6 +3,9 @@ id: 1259587d-dfcf-4713-a57a-35b9f5660744
 blueprint: data
 title: 'Override a property definition'
 source: 'https://help.amplitude.com/hc/en-us/articles/10831335547035-Override-a-property'
+this_article_will_help_you:
+  - 'Understand the benefits of overriding a property'
+  - 'Teach you how to override a property'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

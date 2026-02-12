@@ -3,6 +3,9 @@ id: 29db4e07-fe88-46f9-8f21-76c7b6d77142
 blueprint: workflow
 title: 'Troubleshoot your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061270832-Troubleshoot-your-experiment'
+this_article_will_help_you:
+  - 'Identify the cause of potentially unanticipated behaviors in Amplitude Experiment'
+  - 'Fix any issues yourself, without contacting Amplitude support'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517153
 ---

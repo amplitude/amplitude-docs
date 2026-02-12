@@ -3,6 +3,8 @@ id: 48014e0e-3130-40cc-ba15-946d6a16b51b
 blueprint: experiment-result
 title: 'Dig deeper into experimentation data with Experiment Results'
 source: 'https://help.amplitude.com/hc/en-us/articles/360062072631-Dig-deeper-into-experimentation-data-with-Experiment-Results'
+this_article_will_help_you:
+  - 'Extend the analytic power of A/B tests you create in Amplitude Experiment'
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

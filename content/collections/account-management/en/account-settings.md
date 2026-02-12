@@ -7,6 +7,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730929932
+this_article_will_help_you:
+  - 'Manage organizational and project-level settings'
 ---
 Any user within your organization can access the Settings page, but only organization admins and managers can edit it. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 

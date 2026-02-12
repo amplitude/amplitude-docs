@@ -3,6 +3,8 @@ id: 3f647a94-edaa-4789-9a50-914274cc9e3d
 blueprint: get-started
 title: 'Start here: Get set up in Amplitude and start generating insights today'
 source: 'https://help.amplitude.com/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today'
+this_article_will_help_you:
+  - 'Navigate the Start Here category of the Amplitude documentation and get up and running quickly'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

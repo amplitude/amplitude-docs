@@ -3,6 +3,8 @@ id: 92dedf61-78f9-45d3-b75f-f400236ef746
 blueprint: event-segmentation
 title: 'Interpret your analysis, part 2: Advanced features'
 source: 'https://help.amplitude.com/hc/en-us/articles/14056975720091-Interpret-your-event-segmentation-analysis-part-2-Advanced-features'
+this_article_will_help_you:
+  - 'Use the features of the Measured As Module to customize your analysis'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632389
 landing: true

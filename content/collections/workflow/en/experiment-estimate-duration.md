@@ -3,6 +3,9 @@ id: 183eec11-905d-4333-afaf-089e46ca0b55
 blueprint: workflow
 title: 'Estimate the duration of your experiments'
 source: 'https://help.amplitude.com/hc/en-us/articles/11502996649371-Estimate-the-duration-of-your-experiments'
+this_article_will_help_you:
+  - 'Understand the components of the duration estimator'
+  - 'Use the duration estimator to plan experiment sample size and run time needed to reach statistical significance'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720718556
 landing: false

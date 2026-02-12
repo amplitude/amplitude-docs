@@ -3,6 +3,8 @@ id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
 blueprint: chart
 title: 'Cart analysis: Use object arrays to drive behavioral insights'
 source: 'https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights'
+this_article_will_help_you:
+  - 'Unlock new insights by analyzing Amplitude data as object arrays'
 academy_course:
   - f69fbb71-d49f-4fe8-aaef-9552a9dd52dc
 landing: false

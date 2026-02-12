@@ -3,6 +3,8 @@ id: e60222af-17b8-480f-98cd-c8c5fbeab897
 blueprint: funnel-analysi
 title: 'Combine funnel events inline'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458351187483-Combine-funnel-events-inline'
+this_article_will_help_you:
+  - 'Combine multiple events into a single event slot in your Funnel Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717014959
 ---

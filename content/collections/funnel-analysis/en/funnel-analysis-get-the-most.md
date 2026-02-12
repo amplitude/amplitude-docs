@@ -3,6 +3,9 @@ id: f69d9c00-3e3a-4bc2-ab22-8693888f3be5
 blueprint: funnel-analysi
 title: "Get the most out of Amplitude's Funnel Analysis chart"
 source: 'https://help.amplitude.com/hc/en-us/articles/115001351507-Get-the-most-out-of-Amplitude-s-Funnel-Analysis-chart'
+this_article_will_help_you:
+  - 'Understand the value of a funnel analysis in Amplitude'
+  - 'Plan and design your Funnel Analysis chart'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632025
 landing: true

@@ -3,6 +3,9 @@ id: 53d28de0-5610-4a79-9935-0fbf2c295e4f
 blueprint: persona
 title: "The Personas chart: Find your product's user personas"
 source: 'https://help.amplitude.com/hc/en-us/articles/235648588-The-Personas-chart-Use-clustering-analysis-to-find-your-product-s-user-personas'
+this_article_will_help_you:
+  - 'Understand how the Personas chart varies from other Amplitude charts'
+  - "Build a cluster analysis of your product's users"
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104268
 partner_maintained: false

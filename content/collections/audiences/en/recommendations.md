@@ -3,6 +3,10 @@ id: 1367ad78-90fa-465b-be63-45e9102cdcec
 blueprint: audience
 title: "Recommendations: Help users reach the goals you've set for them"
 source: 'https://help.amplitude.com/hc/en-us/articles/360059624172-Recommendations-Help-users-reach-the-goals-you-ve-set-for-them'
+this_article_will_help_you:
+  - 'Determine if recommendations are a good fit for your organization'
+  - 'Understand the use-cases best suited to recommendations'
+  - 'Understand the data requirements for recommendations'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

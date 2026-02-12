@@ -3,6 +3,9 @@ id: ca26cfe2-d99f-498a-8581-6485a736d4bb
 blueprint: data
 title: Channels
 source: 'https://help.amplitude.com/hc/en-us/articles/5918635077403-Channels'
+this_article_will_help_you:
+  - 'Understand how adding a channel can help to better track sources of site traffic'
+  - 'Learn how to create channels and compare metrics between them'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

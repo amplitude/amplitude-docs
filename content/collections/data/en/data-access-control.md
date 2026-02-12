@@ -2,6 +2,8 @@
 id: 371fc9ac-cc84-4c44-b058-c6150127ccde
 blueprint: data
 title: 'Manage access to sensitive data with Data Access Control'
+this_article_will_help_you:
+  - 'Easily prevent users from accessing sensitive or restricted information in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

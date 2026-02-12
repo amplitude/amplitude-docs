@@ -3,6 +3,8 @@ id: 6b49a561-a125-4eb2-a1e7-73c37350265e
 blueprint: account-management
 title: 'Manage users and permissions'
 source: 'https://help.amplitude.com/hc/en-us/articles/360058531591-Manage-users-and-permissions'
+this_article_will_help_you:
+  - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
 landing: true
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

@@ -9,6 +9,8 @@ updated_at: 1760632113
 landing: true
 landing_blurb: 'Admins and managers can customize the Home page for each project.'
 exclude_from_sitemap: false
+this_article_will_help_you:
+  - 'Create a custom Home page layout for other users who are members of a specific project'
 academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---

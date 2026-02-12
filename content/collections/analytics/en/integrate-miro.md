@@ -3,6 +3,8 @@ id: 8b6d2f28-1d76-4d2d-9d92-014b5ee7f44d
 blueprint: analytic
 title: 'Integrate Miro with Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/8476297377819-Integrate-Miro-with-Amplitude'
+this_article_will_help_you:
+  - 'Connect Miro to your Amplitude account'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

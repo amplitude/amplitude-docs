@@ -3,6 +3,8 @@ id: 18378ff1-dab9-4f2c-bc42-5f2810cdb0fc
 blueprint: analytic
 title: 'Define a new cohort'
 source: 'https://help.amplitude.com/hc/en-us/articles/19528328446363-Define-a-new-cohort'
+this_article_will_help_you:
+  - 'Learn how to quickly define a new cohort to use in your analyses and charts'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

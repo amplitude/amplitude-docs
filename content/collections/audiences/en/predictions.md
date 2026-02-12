@@ -3,6 +3,10 @@ id: 4271240a-42f6-4303-90a3-f0d6b11b8587
 blueprint: audience
 title: "Predictions: Use Amplitude's AI to help maximize lift"
 source: 'https://help.amplitude.com/hc/en-us/articles/360049161832-Predictions-Use-Amplitude-s-AI-to-help-maximize-lift'
+this_article_will_help_you:
+  - 'Decide if predictions will be right for your organization'
+  - 'Develop a plan for using predictions'
+  - 'Understand the calculations behind predictions'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

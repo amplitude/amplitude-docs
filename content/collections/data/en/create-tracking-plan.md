@@ -3,6 +3,8 @@ id: f01c2196-6c7f-4ec9-9b62-2ed150653399
 blueprint: data
 title: 'Create a tracking plan'
 source: 'https://help.amplitude.com/hc/en-us/articles/19717053646107-Create-a-tracking-plan'
+this_article_will_help_you:
+  - 'Plan your event, event properties, and user properties directly in Amplitude Data'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

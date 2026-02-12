@@ -2,6 +2,10 @@
 id: 51a87950-b35d-4a2f-b919-af92f00f75dd
 blueprint: data
 title: 'Warehouse Metrics Overview'
+this_article_will_help_you:
+  - 'Import precomputed metrics from your data warehouse into Amplitude'
+  - 'Use warehouse-defined metrics in experiments and analytics'
+  - 'Maintain consistency between your warehouse and Amplitude metrics'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

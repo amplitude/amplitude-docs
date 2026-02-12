@@ -3,6 +3,8 @@ id: cb12e5e5-1e15-47b4-aa41-5f9995282e1a
 blueprint: billing-use
 title: 'Monthly tracked users (MTUs) billing guide'
 source: 'https://help.amplitude.com/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide'
+this_article_will_help_you:
+  - 'Understand how Amplitude calculates and charges for MTUs'
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

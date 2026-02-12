@@ -3,6 +3,8 @@ id: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
 blueprint: data
 title: 'Using property groups'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups'
+this_article_will_help_you:
+  - "Update changes you've made to properties across multiple events simultaneously"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

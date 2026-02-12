@@ -3,6 +3,9 @@ id: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
 blueprint: data
 title: 'Plan your taxonomy'
 source: 'https://help.amplitude.com/hc/en-us/articles/115000465251-Data-planning-playbook'
+this_article_will_help_you:
+  - 'Understand the basics of users, events, and properties'
+  - 'Learn techniques for planning your taxonomy'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

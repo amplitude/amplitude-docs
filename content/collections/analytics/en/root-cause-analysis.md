@@ -3,6 +3,8 @@ id: a91da36f-cd02-4cb0-ae6e-c02314c4e74d
 blueprint: analytic
 title: 'Root Cause Analysis: Track down anomalies in your data'
 source: 'https://help.amplitude.com/hc/en-us/articles/360053198271-Root-Cause-Analysis-Track-down-anomalies-in-your-data'
+this_article_will_help_you:
+  - 'Analyze anomalies in your product data'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

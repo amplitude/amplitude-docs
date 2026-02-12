@@ -3,12 +3,20 @@ id: 37e1ab54-da77-4a60-be41-1c1018c4163a
 blueprint: workflow
 title: 'Create a feature flag'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts'
+this_article_will_help_you:
+  - 'Understand the role of flags in Amplitude Experiment'
+  - 'Create a new feature flag'
+  - 'Use a flag to roll out a new feature'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753725753
 landing: true
 academy_course:
   - 5f36c7a0-1c63-4b31-8f64-620b4752e7e1
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Manage feature flags and rollouts using Amplitude](https://academy.amplitude.com/manage-feature-flags-and-rollouts-using-amplitude)
+{{/partial:admonition}}
+
 In Amplitude Experiment, a flag is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them after you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
 
 This feature is available to users on all Amplitude plans.

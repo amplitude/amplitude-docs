@@ -3,6 +3,9 @@ id: cf7c955b-582e-41cd-b864-8c41e82e2b48
 blueprint: impact-analysi
 title: 'Interpret your Impact Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/20962963769499-Interpret-your-Impact-Analysis-chart'
+this_article_will_help_you:
+  - 'Interpret the results of your Impact Analysis chart'
+  - 'Effectively and appropriately use causal inference'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570172
 landing: true

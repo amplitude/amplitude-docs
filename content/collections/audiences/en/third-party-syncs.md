@@ -3,6 +3,8 @@ id: 8cdc1ed2-7236-4312-ae35-1efdb910c563
 blueprint: audience
 title: 'Sync to third-party destinations'
 source: 'https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations'
+this_article_will_help_you:
+  - 'Set up and manage syncs in Amplitude Activation'
 exclude_from_sitemap: false
 landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

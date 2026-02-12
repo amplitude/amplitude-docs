@@ -12,6 +12,10 @@ updated_at: 1743537695
 academy_course:
   - 3161a9ef-14ce-41e6-80d1-9d13e5017d86
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Create, analyze, and activate user groups with behavioral cohorts](https://academy.amplitude.com/create-user-groups-with-behavioral-cohorts)
+{{/partial:admonition}}
+
 In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/data/audiences/predictions) and **behavioral cohorts**. 
 
 

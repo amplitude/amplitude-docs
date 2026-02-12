@@ -3,6 +3,9 @@ id: 8bfa1b80-554b-4ae1-8481-586991e7f726
 blueprint: audience
 title: 'Use prediction-based cohorts in your campaigns'
 source: 'https://help.amplitude.com/hc/en-us/articles/360049642891-Use-prediction-based-cohorts-in-your-campaigns'
+this_article_will_help_you:
+  - 'Set up a campaign based on prediction-derived cohorts, in the channel of your choice'
+  - 'Interpret the results of your campaigns, and act on those results'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

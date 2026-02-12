@@ -4,13 +4,19 @@ blueprint: data
 title: 'Getting set up with Amplitude Data'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data'
 description: 'Data ingestion methods, tracking plans, and best practices.'
+this_article_will_help_you:
+  - 'Decide on the best method for ingesting data into Amplitude'
+  - 'Understand how to decide what you want to track'
+  - 'Follow best practices during the Amplitude Data setup phase'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717612640
-academy_course:
-  - dac76bfe-1d9f-49a5-bc64-7e2f45fb9719
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+[Getting Started with Amplitude Data](https://academy.amplitude.com/getting-started-with-amplitude-data)
+{{/partial:admonition}}
+
 Amplitude Data provides you with a complete set of tools for the entire lifecycle of your data, from planning and instrumentation, maintenance, and deprecation. We've designed the product to be flexible enough to accomodate various workflows, so you can choose which tools you need.
 
 ## Getting data into Amplitude

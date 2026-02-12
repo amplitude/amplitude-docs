@@ -3,6 +3,8 @@ id: 9aa828e6-8ccc-4177-a2eb-1bcd010cb521
 published: false
 blueprint: source-catalog
 title: Stripe
+this_article_will_help_you:
+  - 'Set up and use the Stripe integration for Amplitude'
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

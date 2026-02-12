@@ -3,6 +3,8 @@ id: 43132e17-2269-4a6d-bc69-9066e95dec1d
 blueprint: analytic
 title: 'Anomaly + Forecast: Find anomalies in your data'
 source: 'https://help.amplitude.com/hc/en-us/articles/360044072251-Anomaly-Forecast-Find-anomalies-in-your-data'
+this_article_will_help_you:
+  - 'Distinguish meaningful fluctuations in your core metrics from those caused by statistical noise.'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

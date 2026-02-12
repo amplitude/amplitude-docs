@@ -3,6 +3,9 @@ id: 3c450c92-9e04-4996-82ac-2baf0a741845
 blueprint: get-started
 title: 'Analyze A/B test results in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001580108-Analyze-A-B-test-results-in-Amplitude'
+this_article_will_help_you:
+  - 'Instrument your app for A/B testing (split testing)'
+  - 'Review the results of A/B tests in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

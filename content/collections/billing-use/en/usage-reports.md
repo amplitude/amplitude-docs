@@ -7,6 +7,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715291365
+this_article_will_help_you:
+  - 'Interpret the different charts within usage reports'
 ---
 Amplitude's **usage reports** help you identify trends and patterns of Amplitude usage within your organization. Use it to better understand where your company’s analytics practice is strongest, as well as opportunities to further maximize the value your organization gets from Amplitude. 
 

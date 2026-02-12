@@ -6,6 +6,10 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1730745069
+this_article_will_help_you:
+  - 'Customize the color theme in a chart'
+  - 'Edit color theme presets'
+  - 'Create an organization-level default theme'
 ---
 You can update the color theme of your charts in Amplitude to match your brand's colors or give a chart a different look and feel.
 

@@ -3,6 +3,8 @@ id: 9d5d7274-611b-4be2-9bbe-2a5360fa87df
 blueprint: data-table
 title: 'Multi-dimensional analysis with Data Tables'
 source: 'https://help.amplitude.com/hc/en-us/articles/6797483965083-Multi-dimensional-analysis-with-Data-Tables'
+this_article_will_help_you:
+  - 'Build a custom analysis using multiple metrics in several different dimensions'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538543
 landing: true

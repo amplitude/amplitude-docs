@@ -3,6 +3,8 @@ id: 8fcc98ae-f087-4a96-9317-43d833299638
 blueprint: funnel-analysi
 title: 'A/B testing in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart'
+this_article_will_help_you:
+  - 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632003
 landing: true

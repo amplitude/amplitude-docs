@@ -2,6 +2,8 @@
 id: 06feb1be-15e3-419a-95ea-85a497dc07f5
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native DBT Integration'
+this_article_will_help_you:
+  - 'Efficiently manage multiple models with a DBT integration'
 landing: false
 exclude_from_sitemap: false
 ---

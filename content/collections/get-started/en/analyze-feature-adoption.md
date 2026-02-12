@@ -3,6 +3,8 @@ id: 07fcc029-bad9-40ad-9841-f288943fae48
 blueprint: get-started
 title: 'Analyze the adoption of a feature'
 source: 'https://help.amplitude.com/hc/en-us/articles/16797955580955-Analyze-the-adoption-of-a-feature'
+this_article_will_help_you:
+  - 'Generate a feature adoption report from a pre-built template'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

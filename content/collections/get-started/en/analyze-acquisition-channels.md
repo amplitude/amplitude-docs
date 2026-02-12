@@ -3,6 +3,8 @@ id: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
 blueprint: get-started
 title: 'Analyze your acquisition channels'
 source: 'https://help.amplitude.com/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels'
+this_article_will_help_you:
+  - 'Use a pre-built template to generate a customer acquisition analysis for ecommerce companies'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

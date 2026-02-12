@@ -8,9 +8,13 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328299
 source: /docs/analytics/plan-your-set-up
 academy_course:
-  - 9a1b2c3d-4e5f-4a5b-8c9d-1e2f3a4b5c6d
-  - b6249179-e517-4027-a0ff-619b3bd0106e
+  - 5bdab705-c0c7-40c3-b19d-5d2e28f28b59
 ---
+{{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
+- [Essentials of Data Management](https://academy.amplitude.com/path/essentials-of-data-management-learning-path)
+- [Fundamentals of data taxonomy design](https://academy.amplitude.com/fundamentals-of-data-taxonomy-design)
+{{/partial:admonition}}
+
 This article describes how to successfully set up and get familiar with Amplitude basics.
 
 Amplitude is an event-based analytics tool that tracks the behaviors of users based on in-product interactions and analyzes user behaviors in real-time. 
