@@ -7,6 +7,9 @@ landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632951
+academy_link: 'https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p'
+academy_title: 'Use Dashboards and Starter Templates to Monitor Important Metrics'
+academy_description: "Learn how Dashboards can be used to monitor important metrics at a glance, as well as how to use Amplitude's pre-built Dashboard Starter Templates."
 academy_course:
   - a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d
   - 5679eb5e-37e0-45b2-a18d-d14c6d0bfa7e

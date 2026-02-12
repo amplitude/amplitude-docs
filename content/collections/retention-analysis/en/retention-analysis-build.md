@@ -14,6 +14,10 @@ Amplitude’s **Retention Analysis** chart helps you drive product adoption by s
 
 Amplitude computes retention data by comparing the date of that starting event to the date of the **return event** you’ve specified. The return event is the event that, when triggered, tells you a user has been retained. When building a retention analysis chart, you can choose any event you like for both the starting and return events. You can also opt not to choose a specific event, and instead tell Amplitude to use any active event.
 
+{{partial:admonition type='note'}}
+You may also find [this course on retention analysis](https://academy.amplitude.com/drive-product-adoption-with-retention-analysis) helpful.
+{{/partial:admonition}}
+
 You can select up to two return events for your retention analysis. Each event will have its own analysis, and will appear as a separate segment in the chart.
 
 ![retention_sidecontrols.png](/docs/output/img/retention-analysis/retention-sidecontrols-png.png)

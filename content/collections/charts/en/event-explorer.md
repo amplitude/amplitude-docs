@@ -12,6 +12,9 @@ academy_course:
 ---
 Even with clean data, knowing which data to use in an analysis isn't always as straightforward as we would like: taxonomies can sometimes be unclear or counterintuitive; out-of-date events can persist well after the point when they should have been deprecated; events can sometimes break unexpectedly.
 
+{{partial:admonition type='note'}}
+You may also find [this video](https://academy.amplitude.com/use-event-explorer-to-learn-about-your-taxonomy/1311428) on Event Explorer helpful.
+{{/partial:admonition}}
 
 Amplitude’s Event Explorer helps you overcome these and similar challenges by surfacing events and properties in real time for any user flow, so you can immediately see which data is relevant.
 

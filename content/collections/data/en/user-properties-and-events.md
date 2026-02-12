@@ -17,6 +17,10 @@ In Amplitude, properties are attributes that provide additional context around y
 
 This article describes what user and event properties do, how Amplitude updates and applies them, and how you can hide individual properties in an Amplitude project.
 
+{{partial:admonition type="info" heading=""}}
+For more on events, users and properties, take this course in [the Amplitude Academy](https://academy.amplitude.com/amplitude-getting-started-with-analytics/1092674/scorm/40m548g557cd).
+{{/partial:admonition}}
+
 ## User properties
 
 As mentioned above, a user property is an attribute that describes a useful detail about the user it's attached to. Amplitude sends user properties with every event. 

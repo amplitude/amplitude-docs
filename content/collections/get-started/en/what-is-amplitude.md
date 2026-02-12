@@ -58,4 +58,6 @@ User properties are details about users. For example, use them to keep track of 
 
 A session is the duration a user has your app in the foreground or has your website open. Sessions are useful for understanding the frequency and duration of your users' engagement with your product. Amplitude assigns a session ID to each session, and all events within the same session share the same session ID. To send data, Amplitude SDKs automatically generate and manage session IDs. However, you have to manage session IDs yourself, using HTTP APIs. 
 
-You can learn more about [how Amplitude tracks sessions](/docs/data/sources/instrument-track-sessions). For definitions of key terms, see [Helpful definitions](/docs/get-started/helpful-definitions).
+You can learn more about [how Amplitude tracks sessions](/docs/data/sources/instrument-track-sessions).
+
+If you are new to Amplitude, you should complete [this course](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) to get started and learn more [helpful definitions](/docs/get-started/helpful-definitions).

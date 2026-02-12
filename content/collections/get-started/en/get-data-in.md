@@ -57,3 +57,4 @@ You can send data to Amplitude in different ways: SDKs, HTTP API v2, Batch API, 
 * [Amplitude SDKs](https://www.docs.developers.amplitude.com/data/sources/)
 * [Amplitude Github Repository](https://github.com/amplitude?page=1)
 * [Data Taxonomy Playbook](/docs/data/data-planning-playbook)
+* [Amplitude Academy](https://academy.amplitude.com/)

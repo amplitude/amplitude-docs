@@ -13,7 +13,7 @@ academy_course:
 ---
 **Ampli** dynamically generates a light-weight wrapper for the **Amplitude SDK** based on your analytics tracking plan in **Amplitude Data** making event tracking easier and less error-prone.
 
-This document provides a high-level overview of Ampli.
+This document provides a high-level overview of Ampli. For more information, see [Amplitude Academy](https://academy.amplitude.com/instrumenting-events-with-amplitude-data-and-the-ampli-cli).
 
 ![](statamic://asset::help_center_conversions::ampli-diagram-1726085522.svg)
 
