@@ -11,8 +11,7 @@ academy_course:
   - 498134e3-190a-4b58-b148-2a94ef5bc069
 ---
 {{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-- [Engage your users with Guides and Surveys](https://academy.amplitude.com/engage-your-users-with-guides-and-surveys)
-- [Getting started with Amplitude Guides and Surveys Experimentation](https://academy.amplitude.com/getting-started-with-amplitude-guides-surveys-experimentation)
+[Engage your users with Guides and Surveys](https://academy.amplitude.com/engage-your-users-with-guides-and-surveys) · [Getting started with Amplitude Guides and Surveys Experimentation](https://academy.amplitude.com/getting-started-with-amplitude-guides-surveys-experimentation)
 {{/partial:admonition}}
 
 Before you get started with Guides and Surveys, install one of the available SDKs, depending on where you want to display Guides and Surveys.

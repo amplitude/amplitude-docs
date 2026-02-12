@@ -9,8 +9,7 @@ updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
 updated_at: 1765489396
 ---
 {{partial:admonition type="tip" heading="To learn more, take an Amplitude Academy course!"}}
-- [Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path)
-- [Build your first analysis](https://academy.amplitude.com/build-your-first-analysis)
+[Getting Started with Amplitude Analytics](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) · [Build your first analysis](https://academy.amplitude.com/build-your-first-analysis)
 {{/partial:admonition}}
 
 Get started with the full Amplitude platform in minutes. Which features drive retention? Where do users drop off? What's working and what's not? Traditional analytics implementations can take weeks or months. Amplitude's modern approach gets you from zero to insights in minutes, not months.
