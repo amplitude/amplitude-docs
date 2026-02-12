@@ -15,7 +15,7 @@ The OOTB widgets library includes:
 - **Banner with a button**: A notification or messaging message that also includes a CTA button. This widget combines both a CTA button as well as messaging. Typically, banners with buttons announce a specific action you want your customers to perform. For example, applying a promo code to a shopping cart. 
 - **Modal pop-up**: A pop-up modal that appears on your page after a specified amount of time. Modals typically also include CTA buttons and messaging. A pop-up modal typically appears after a few seconds and encourages your customers to take an action. For example, encouraging new users to sign up for an account. 
 
-You can also save your customized widgets to the library for future use. For example, if you create a notification banner that announces a quarterly sale, you can save that customized message and reuse it as needed. All saved widgets are available to everyone in your organization who has permission to create experiments.
+You can also save your customized widgets to the library for future use. For example, if you create a notification banner that announces a quarterly sale, you can save that customized message and reuse it as needed. Everyone in your organization who has permission to create experiments can access all saved widgets.
 
 {{partial:admonition type="note" heading="Tracked key integrations"}}
 You may need to set up tracking for key integrations. For more information, go to [Autocapture visual labeling](/docs/get-started/autocapture#visual-labeling-for-web). {{/partial:admonition}}
@@ -32,13 +32,13 @@ By default, you can edit the following aspects of any widget:
 - Background color
 - Font
 
-From the element toolbar when a widget is selected, you can delete the widget or save it to the library.
+When you select a widget, the element toolbar lets you delete it or save it to the library.
 
-All changes are visible in real-time through the Visual Editor. 
+The Visual Editor shows all changes in real time. 
 
 ### Customizing placement of your widgets
 
-Banners and buttons are both movable around your website:
+You can move banners and buttons around your website:
 - Banners can appear at the top or bottom of a page. 
 - Buttons can appear almost anywhere on the page. When set, the buttons snap to a grid layout. 
 
@@ -64,6 +64,6 @@ You can use AI Stylizer in the following ways:
 - **Banners:** Make them more prominent, simplify the messaging, and customize for new visitors.
 - **Text blocks:** Simplify and clarify, shift from features to benefits, and customize for mobile users.
 
-You can choose a preset prompt or enter your own, custom, prompt. AI Stylizer generates multiple headline or copy variants in a single interaction so you can pick which one you want. You can also revert to a previous AI-generated version from the AI Stylizer version history. You can contntinue to edit all AI-created styles and copy after you apply them. For example, select a hero headline and ask AI Stylizer to make it more urgent or clearer. Or, select a CTA banner and ask it to simplify the copy and fix spacing so the banner looks balanced and on-brand.
+You can choose a preset prompt or enter your own, custom, prompt. AI Stylizer generates multiple headline or copy variants in a single interaction so you can pick which one you want. You can also revert to a previous AI-generated version from the AI Stylizer version history. You can continue to edit all AI-created styles and copy after you apply them. For example, select a hero headline and ask AI Stylizer to make it more urgent or clearer. Or, select a CTA banner and ask it to simplify the copy and fix spacing so the banner looks balanced and on-brand.
 
-AI Stylizer can't be used on an element that contains an embedded OOTB widget. If you try, the product shows a message explaining that this case isn't supported.
+You can't use AI Stylizer on an element that contains an embedded OOTB widget. If you try, the product shows a message explaining that this case isn't supported.
