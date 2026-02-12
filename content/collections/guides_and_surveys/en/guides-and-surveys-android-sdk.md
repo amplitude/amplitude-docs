@@ -28,7 +28,7 @@ If your app uses the [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analyti
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:2.+")
+    implementation("com.amplitude:amplitude-engagement-android:3.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")

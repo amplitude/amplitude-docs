@@ -36,7 +36,7 @@ If your app uses the [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/io
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 2.0.0'
+pod 'AmplitudeEngagementSwift', '~> 3.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -74,7 +74,7 @@ Next, make sure to initialize the SDK.
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -161,7 +161,7 @@ After adding these lines, clean your build folder and rebuild your project.
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 ```
 
 #### Configuration options
