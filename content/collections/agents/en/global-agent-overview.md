@@ -13,6 +13,7 @@ You can access Amplitude’s Global Agent on every page in Amplitude. It’s acc
 
 - A floating action button in the lower right-hand corner of the screen  
 - The "Chat" option in the left-side navigation bar
+- The keyboard shortcut `⌘+Shift+K` on Mac or `Ctrl+Shift+K` on Windows/Linux.
 
 {{partial:admonition type="note" heading="Don't see Global Agent?"}}
 Contact your Amplitude administrator to see if it’s enabled in your workspace.
