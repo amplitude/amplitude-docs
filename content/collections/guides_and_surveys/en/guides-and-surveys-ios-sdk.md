@@ -214,6 +214,32 @@ To add your application:
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your iOS app users.
 
+### Set a minimum SDK version
+
+`Minimum SDK version` is available for mobile SDK versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Select the **Guides and Surveys** tab.
+4. In the **App Management** section, select your app platform.
+5. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
+
 ## Screen tracking and element targeting
 Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
 
