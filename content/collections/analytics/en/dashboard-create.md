@@ -150,6 +150,10 @@ The *More* menu contains several administrative functions not discussed above:
 * The owner, an invited editor, or an organization admin can delete or archive dashboards. Viewers and members can't delete or archive dashboards.
 * You should archive a dashboard when your organization no longer supports or uses it. Users can still search for archived charts in the Search tab. Archiving a dashboard doesn't archive the charts within the dashboard.
 
+{{partial:admonition type="note" heading=""}}
+Use the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent) to analyze your dashboard's charts. The Dashboard Agent identifies trends, anomalies, and cross-chart correlations, and generates prioritized insights and recommendations.
+{{/partial:admonition}}
+
 ## Dashboard cache times
 
 Amplitude caches chart results. The cache time is dependent on the interval (daily, weekly, monthly) and the length of time covered. [Find cache times for charts here](/docs/analytics/charts/chart-basics). Cache times for dashboards and CSV downloads are twice as long as the times listed.

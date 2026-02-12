@@ -31,6 +31,7 @@ The organizational settings also include tools to help you:
 * View the [usage reports](/docs/admin/billing-use/usage-reports) dashboard
 * Manage [user privacy notifications](/docs/admin/account-management/manage-notifications) (if you're an admin)
 * Manage and update [AI Context and AI Controls](/docs/amplitude-ai/ai-context).
+* Access [Global Agent](/docs/amplitude-ai/global-agent-overview) and configure [AI Agents](/docs/amplitude-ai/setup-and-onboarding).
 
 For more information on each of these tasks, just follow the links to the relevant Help Center articles.
 

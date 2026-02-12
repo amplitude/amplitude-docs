@@ -11,6 +11,10 @@ Marketers use A/B testing to create personalized experiences that resonate. By m
 
 With Amplitude's URL redirect testing feature, you can design, deploy, and analyze A/B tests that involve or require redirecting visitors to another URL, without extensive developer involvement. It's a fast and easy way to assess the effectiveness of redirects for achieving goals like increasing conversions or improving the user experience.
 
+{{partial:admonition type="note" heading=""}}
+The [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent) can analyze your pages, propose conversion optimization strategies, and create draft experiments for you automatically.
+{{/partial:admonition}}
+
 URL redirect testing works well if you're building different versions of your page or site on a CMS like WordPress. In these cases, your different URLs and their associated pages are the variants that Amplitude Experiment tracks.
 
 You can use URL redirect testing with both standard A/B tests and [multi-armed bandits](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).

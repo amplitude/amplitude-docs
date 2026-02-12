@@ -33,6 +33,11 @@ From there, learn how to create and share charts:
 * [Spaces](/docs/get-started/spaces)
 * [Start from a template](/docs/get-started/start-from-template)
 
+You can also use AI to accelerate your analysis:
+
+* [Global Agent](/docs/amplitude-ai/global-agent-overview): Ask natural-language questions about your data and get answers, chart creation, and insights.
+* [AI Agents](/docs/amplitude-ai/setup-and-onboarding): Automate dashboard analysis, session replay insights, and conversion optimization.
+
 Finally, we’ve put together some guidance on how you can generate some quick wins right now, so your company’s investment in Amplitude can begin paying off today:
 
 * [Understand your users’ activity](/docs/get-started/understand-user-activity)

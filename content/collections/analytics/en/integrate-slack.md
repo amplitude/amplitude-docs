@@ -100,3 +100,7 @@ To disconnect your team space from Slack, click the same button which should now
 The Amplitude AskAI feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
 
 The Amplitude AskAI feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
+
+{{partial:admonition type="note" heading=""}}
+You can also use [Global Agent in Slack](/docs/amplitude-ai/slack) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards—all from Slack.
+{{/partial:admonition}}
