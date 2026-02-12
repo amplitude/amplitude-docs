@@ -8,6 +8,29 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 3.0.0 (Android, iOS, React Native) \[2026-02-11\]
+
+### 🚨 Breaking Changes (iOS only)
+- `AmplitudeEngagement` is now an interface rather than a class. New instances (as of 3.0.0) are created using `AmplitudeEngagementFactory.make` rather than the `AmplitudeEngagement` constructor (GSDK-690) \[ios\]
+
+### ✨ Features
+- Feat: add SDK methods `disable` which temporarily hides any displayed guides or surveys and `enable` which shows them again (GSDK-513) \[android,ios,rn\]
+- Feat: add SDK method `shutdown` to React Native SDK binding (GSDK-769) \[rn\]
+- Feat: add `Minimum SDK version` support to App Management so older SDK versions don't initialize Guides and Surveys \[android,ios,rn\]
+
+### 🐛 Fixes
+- Fix: fix theming issues (GSDK-845, GSDK-847) \[android, ios\]
+- Fix: fix tap outside to close behavior for modals (GSDK-850) \[android\]
+
+
+## 2.1.1 (Android, iOS, React Native) \[2026-02-02\]
+
+### 🐛 Fixes
+- Fix: trailing comma issue causing build error on Swift compiler less than version 6.1 \[rn\]
+- Fix: fix keyboard layout bug during iOS 26 device rotation (GSDK-632) \[ios\]
+- Fix: restore nudge keyboard after configuration change (GSDK-831) \[android\]
+
+
 ## 2.1.0 (Android, iOS, React Native) \[2026-02-02\]
 
 ### ✨ Features

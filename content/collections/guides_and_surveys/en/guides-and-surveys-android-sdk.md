@@ -8,10 +8,6 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys Android SDK requires:
@@ -32,7 +28,7 @@ If your app uses the [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analyti
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:2.+")
+    implementation("com.amplitude:amplitude-engagement-android:3.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")
@@ -168,6 +164,33 @@ To add your application:
 5. Select **Android** from the drop-down.
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
+
+### Set a minimum SDK version (when needed)
+
+`Minimum SDK version` is available for versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the dropdown.
+6. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example usage of minimum SDK version
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
 
 ## Screen tracking and element targeting
 ### Enable screen tracking
@@ -394,6 +417,24 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
+
+## Known limitations
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
+
 ## Changelog
 
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

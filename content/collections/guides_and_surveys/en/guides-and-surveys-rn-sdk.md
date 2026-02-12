@@ -5,10 +5,6 @@ title: 'Guides and Surveys React Native SDK'
 ---
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys React Native SDK requires:
@@ -150,6 +146,33 @@ To add your application:
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your React Native app users.
 
+### Set a minimum SDK version (when needed)
+
+`Minimum SDK version` is available for mobile SDK versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **React Native** from the dropdown.
+6. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example usage of minimum SDK version
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
+
 ## Element targeting
 
 Pin and tooltip guides require the ability for the SDK to target specific views on screen. The Engagement SDK uses the "testID" property on an element in the React Native DOM.
@@ -178,11 +201,15 @@ export default function WelcomeBanner() {
 }
 ```
 
-## Configure linking
+## Simulate Guides and Surveys for preview
+Previewing guides and surveys direclty in your application allows you to experience what your users will. Previewing makes it much easier to iterate on copy, targeting rules, trigger logic, etc.
 
-If your app doesn't have deep linking enabled, follow the [React Native instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. **Previewing guides and surveys on a phone, tablet, or simulator requires this configuration.**
+{{partial:admonition type="warning" heading="Deep linking required for preview"}}
+If your app doesn't have deep linking enabled, follow [React Native's instructions](https://reactnative.dev/docs/linking#enabling-deep-links) to add support for deep linking. **Previewing guides and surveys on a phone, tablet, or simulator requires this configuration.**
+{{/partial:admonition}}
 
-### Locate the mobile URL scheme
+### Setting up preview in Xcode (iOS)
+#### Locate the mobile URL scheme
 
 To locate the URL scheme:
 1. Navigate to *Settings > Projects* in Amplitude.
@@ -191,13 +218,87 @@ To locate the URL scheme:
 4. Find the **URL scheme (mobile)** field.
 5. Copy its value, for example, `amp-abcdefgh12345678`.
 
+#### Add the URL scheme in Xcode
+
+1. Open your iOS project in Xcode.
+2. In the Project navigator, select your app's target.
+3. On the **Info** tab, locate or add the **URL Types** section.
+4. Add a new URL type with the following values:
+    * **URL identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
+    * **URL Schemes**: Paste the value you copied from Amplitude, for example `amp-abc123`.
+
+### Setting up preview in Android Studio (Android)
+#### Locate the mobile URL scheme
+
+To locate the URL scheme:
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **General** tab.
+4. Find the **URL scheme (mobile)** field.
+5. Copy its value, for example, `amp-abcdefgh12345678`.
+
+#### Add the URL scheme in Android Studio
+
+Add the following intent filter to the main activity to your project's `AndroidManifest.xml` file:
+
+```xml
+<activity android:name=".MainActivity">
+    <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- Add your URL scheme from Amplitude Dashboard here -->
+    <!-- ex: android:scheme="amp-12345" -->
+    <data android:scheme="<your-unique-scheme-id>" />
+    </intent-filter>
+</activity>
+```
+
+### URL handling for preview links
+The [initialization code snippet](#initialize-the-sdk) already takes care of URL handling for preview links. Specifically, this code:
+
+```js
+Linking.getInitialURL().then(async (url) => {
+    if (url) {
+    const didHandleURL = await handleURL(url);
+    if (didHandleURL) { return; }
+
+    // Handle a non-Amplitude SDK URL
+    }
+});
+
+Linking.addEventListener('url', async ({ url }) => {
+    const didHandleURL = await handleURL(url);
+    if (didHandleURL) { return; }
+
+    // Handle a non-Amplitude SDK URL
+});
+```
+
 ## Known limitations
 
 ### Tab bar element targeting
 
 Pins and tooltips can't target tab bar items in navigation components (such as `@react-navigation/bottom-tabs`). Tab bars use native components that exist outside the standard React Native view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+{{partial:admonition type="tip" heading="Workaround"}}
+Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs. Do not pin directly to tab bar items.
+{{/partial:admonition}}
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
 
 ## Changelog
 

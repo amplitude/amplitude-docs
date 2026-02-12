@@ -13,6 +13,10 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
+{{partial:admonition type="note" heading="Shopify installation"}}
+If you use the [Amplitude Shopify Plugin](/docs/data/amplitude-shopify-plugin), install the Guides and Surveys Web SDK separately. The Shopify plugin includes Amplitude Analytics, Session Replay, and Web Experiment, but doesn't include Guides and Surveys.
+{{/partial:admonition}}
+
 ### Amplitude Browser SDK 2
 
 If you use the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
@@ -777,6 +781,24 @@ const MyComponent = () => {
   }, []);
 };
 ```
+
+```typescript
+// Angular implementation
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({ /* ... */ })
+export class AppComponent {
+  constructor(private router: Router) {
+    window.engagement.setRouter((url: string) => {
+      this.router.navigateByUrl(url);
+    });
+  }
+}
+```
+
+For Angular apps, use the `Router` service with `navigateByUrl` in your root `AppComponent` (or an initializer). This method accepts a full URL string, which matches the `(url: string) => void` signature that `setRouter` expects.
+
 {{partial:admonition type="note" heading="Update URL behavior"}}
 After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
 {{/partial:admonition}}
