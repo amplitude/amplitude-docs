@@ -6,9 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-pag
 landing: false
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1770931668
-this_article_will_help_you:
-  - 'Manage organizational and project-level settings'
+updated_at: 1770933475
 ---
 Any user within your organization can access the Settings page, but only organization admins and managers can edit it. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
