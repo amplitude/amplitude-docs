@@ -5,16 +5,16 @@ title: 'Customer Feedback Agent'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1739404800
 ---
-The Customer Feedback Agent automatically surfaces top customer requests, bugs, complaints, and praises from your [AI Feedback](/docs/amplitude-ai/ai-feedback) sources. It analyzes incoming qualitative feedback---from surveys, support tickets, and sales calls---to identify key themes, sentiment shifts, and emerging issues. The agent pairs these qualitative insights with behavioral data to help you understand not just what users do, but why, and delivers prioritized recommendations asynchronously through email or Slack.
+The Customer Feedback Agent finds common customer requests, bugs, complaints, and praise from your [AI Feedback](/docs/amplitude-ai/ai-feedback) sources. It reviews feedback from surveys, support tickets, and sales calls to spot key themes and changes in sentiment. By combining this feedback with user behavior data, it helps you understand user motivations and sends prioritized recommendations by email or Slack.
 
 {{partial:collapse name="Agent summary"}}
 As you get started with the Customer Feedback Agent, keep the following in mind:
 
-|||
-|--|--|
-| **Target user** | Product managers, customer experience teams, growth teams |
-| **Requires** | [AI Feedback](/docs/amplitude-ai/ai-feedback) (at least one connected source) |
-| **Tools** | Feedback Analysis, Theme Identification, Sentiment Tracking |
+|                 |                                                                               |
+| --------------- | ----------------------------------------------------------------------------- |
+| **Target user** | Product managers, customer experience teams, growth teams                     |
+| **Requires**    | [AI Feedback](/docs/amplitude-ai/ai-feedback) (at least one connected source) |
+| **Tools**       | Feedback Analysis, Theme Identification, Sentiment Tracking                   |
 
 {{/partial:collapse}}
 
