@@ -1,22 +1,22 @@
 ---
 id: b2d0144c-be6b-4f51-95e0-d1c69c559c21
 blueprint: agent
-title: 'AI Controls'
+title: 'AI Settings and Controls'
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1770764884
+updated_at: 1770931598
 ---
-The *AI Controls* page lets you manage Global Agent availability, customize AI context, configure model providers, and set data retention policies.
+The *AI Controls* page lets Organization Admins manage Global Agent availability, customize AI context, configure model providers, and set data retention policies.
 
 ## Overview
 
-Access AI Controls from *Settings > AI Controls* in Organization settings.
+Access organization-level AI Controls from *Settings > AI Controls*.
 
 The *AI Controls* page includes:
 
 - **Global Agent availability**: Show or hide Global Agent and enable or disable it for your organization.
 - **AI context**: Provide instructions and upload reference files that help Global Agent understand your business.
 - **Model providers**: Enable or disable specific AI model providers.
-- **Data retention and privacy**: Configure how long Amplitude stores AI conversation data.
+- **Data retention and privacy**: Configure how long AI conversation data is stored.
 - **Disable all AI**: Turn off all AI features across your organization.
 
 ## Global Agent availability
@@ -32,7 +32,7 @@ These settings affect all users in your organization. Individual users can't ove
 
 ## AI context
 
-Provide custom instructions that teach Global Agent how your business works. For guidance on writing effective context, review [AI context](/docs/agents/ai-context).
+Provide custom instructions that teach Global Agent how your business works. For guidance on writing effective context, see [AI context](/docs/agents/ai-context).
 
 ### Two levels of context
 
@@ -101,15 +101,15 @@ Disabling a provider may degrade performance across certain AI features. Only di
 
 ## Data retention and privacy
 
-Configure how long Amplitude stores AI conversation data.
+Configure how long AI conversation data is stored.
 
 ### Data privacy
 
-Amplitude doesn't send your data to third-party AI providers for storage. Neither Amplitude nor its partners use your data for model training.
+Amplitude doesn't store your data with third-party AI providers. Your data is never used for model training by Amplitude or its partners.
 
 ### Retention period
 
-Set the retention period to control how long Amplitude keeps conversation logs before automatic deletion. Adjust this setting based on your organization's data governance requirements.
+Set the retention period to control how long conversation logs are stored before automatic deletion. Adjust this setting based on your organization's data governance requirements.
 
 For detailed information about AI data handling, privacy, and security, refer to [Privacy and security](/docs/agents/privacy-and-security).
 

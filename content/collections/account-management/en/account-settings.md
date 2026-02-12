@@ -5,8 +5,8 @@ title: 'The Settings page'
 source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1730929932
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1770931668
 this_article_will_help_you:
   - 'Manage organizational and project-level settings'
 ---
@@ -30,8 +30,7 @@ The organizational settings also include tools to help you:
 * [Control access to content](/docs/analytics/share-external) your organization generates in Amplitude (if you're an admin)
 * View the [usage reports](/docs/admin/billing-use/usage-reports) dashboard
 * Manage [user privacy notifications](/docs/admin/account-management/manage-notifications) (if you're an admin)
-* Manage and update [AI Context and AI Controls](/docs/amplitude-ai/ai-context).
-* Access [Global Agent](/docs/amplitude-ai/global-agent-overview) and configure [AI Agents](/docs/amplitude-ai/setup-and-onboarding).
+* Manage and update [AI Controls and Context](/docs/amplitude-ai/ai-controls).
 
 For more information on each of these tasks, just follow the links to the relevant Help Center articles.
 
