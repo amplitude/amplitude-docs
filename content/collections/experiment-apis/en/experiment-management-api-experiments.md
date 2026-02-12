@@ -331,7 +331,6 @@ curl --request GET \
                 }
             ],
             "stickyBucketing": false,
-            "state": "decision-made",
             "startDate": "2023-07-29",
             "endDate": "2023-07-29",
             "experimentType": "a-b-test"
@@ -364,7 +363,6 @@ curl --request GET \
             },
             "targetSegments": [],
             "stickyBucketing": false,
-            "state": "planning",
             "startDate": null,
             "endDate": null,
             "experimentType": "a-b-test"
@@ -397,7 +395,6 @@ curl --request GET \
             },
             "targetSegments": [],
             "stickyBucketing": false,
-            "state": "planning",
             "startDate": null,
             "endDate": null,
             "experimentType": "a-b-test"
@@ -489,7 +486,6 @@ curl --request GET \
             }
         ],
         "stickyBucketing": false,
-        "state": "decision-made",
         "startDate": "2023-07-29",
         "endDate": "2023-07-29",
         "experimentType": "a-b-test"

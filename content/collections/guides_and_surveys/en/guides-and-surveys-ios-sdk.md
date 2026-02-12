@@ -8,10 +8,6 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
@@ -40,14 +36,35 @@ If your app uses the [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/io
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 2.0.0'
+pod 'AmplitudeEngagementSwift', '~> 3.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading=""}}
 Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 
@@ -57,7 +74,7 @@ Next, make sure to initialize the SDK.
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -113,9 +130,30 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tab}}
 {{/partial:tabs}}
 
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading=""}}
 Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
 {{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 
@@ -123,7 +161,7 @@ Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/a
 import AmplitudeEngagementSwift
 
 let API_KEY = "YOUR_API_KEY"
-let amplitudeEngagement = AmplitudeEngagement(API_KEY)
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 ```
 
 #### Configuration options
@@ -175,6 +213,33 @@ To add your application:
 5. Select **iOS** from the dropdown.
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your iOS app users.
+
+### Set a minimum SDK version (when needed)
+
+`Minimum SDK version` is available for versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **iOS** from the dropdown.
+6. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example usage of minimum SDK version
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
 
 ## Screen tracking and element targeting
 Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
@@ -363,7 +428,24 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 Pins and tooltips can't target tab bar items (for example, `UITabBar` elements). Tab bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+{{partial:admonition type="tip" heading="Workaround"}}
+Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs. Do not pin directly to tab bar items.
+{{/partial:admonition}}
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
 
 ## Changelog
 

@@ -36,6 +36,7 @@ If a slack channel id instead of a slack channel name appears, make sure you hav
 You can specify if you want to receive alerts for the following experiment activities:
 
 - Flags created, updated, or deleted
+- Stale flags
 
 ## Setting up an alert
 
