@@ -11,7 +11,7 @@ updated_at: 1750443681
 ## 3.0.0 (Android, iOS, React Native) \[2026-02-11\]
 
 ### 🚨 Breaking Changes (iOS only)
-- `AmplitudeEngagement` is now an interface rather than a class. New instances will be created via `AmplitudeEngagementFactory.make` rather than `AmplitudeEngagement` constructor (GSDK-690) \[ios\]
+- `AmplitudeEngagement` is now an interface rather than a class. New instances (as of 3.0.0) are created using `AmplitudeEngagementFactory.make` rather than the `AmplitudeEngagement` constructor (GSDK-690) \[ios\]
 
 ### ✨ Features
 - Feat: add SDK methods `disable` which temporarily hides any displayed guides or surveys and `enable` which shows them again (GSDK-513) \[android,ios,rn\]
