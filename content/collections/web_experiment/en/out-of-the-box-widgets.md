@@ -55,7 +55,7 @@ AI Stylizer is an AI assistant in the Visual Editor that helps you refine copy, 
 
 When you select a widget or any text-based element in the Visual Editor, the **AI Stylizer** control appears in the element toolbar. Select it to open the AI Stylizer popover. You can describe what you want in plain language. 
 
-For example, you could enter "Make this headline more urgent" or "Shorten this and make it easier to read" or "Make this feel more premium," or "Make the CTA more action-oriented." Stylizer updates the selected element based on your request. 
+For example, you could enter "Make this headline more urgent" or "Create a promotion for summer that contains a 15% discount promocode", or "Make the CTA more action-oriented." Stylizer updates the selected element based on your request. 
 
 You can use AI Stylizer in the following ways: 
 
