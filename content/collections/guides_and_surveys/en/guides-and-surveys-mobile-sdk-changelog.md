@@ -8,6 +8,16 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 3.1.0 (Android, iOS, React Native) \[2026-02-13\]
+
+### ✨ Features
+- Feat: on `boot`, allow "user ID" to be null or blank as long as device ID is specified (GSDK-732) \[android, ios, rn\]
+
+### 🐛 Fixes
+- Fix: fix auto-advance logic (GSDK-859) \[android, ios\]
+- Fix: race condition causing pin nudge to be unable to render until the view hierarchy is updated (GSDK-827, GSDK-844) \[ios\]
+
+
 ## 3.0.0 (Android, iOS, React Native) \[2026-02-11\]
 
 ### 🚨 Breaking Changes (iOS only)
