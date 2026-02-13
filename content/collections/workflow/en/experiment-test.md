@@ -11,6 +11,8 @@ updated_at: 1714517033
 ---
 Before any users view your experiment, make sure the variants you’ve developed look and function exactly the way you intended. Because Experiment allows you to assign specific variants by user ID, device ID, or cohort, you can ensure that Amplitude serves your test devices the relevant variants when they enter your experiment. 
 
+To exclude users from an experiment or flag, add them to the `OFF` variant. 
+
 On the Overview page for your specific experiment, review the Overview, Delivery, Variants, and Targeting sections. Make sure you set everything the way you planned it. 
 
 Click **Test Instrumentation** to send the experiment’s variants to the testers you designated when you [configured the experiment's audience](/docs/feature-experiment/workflow/define-audience).
