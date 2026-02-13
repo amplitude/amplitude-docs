@@ -24,9 +24,11 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 ## Features
 
 - Import all data types, including events, user properties, and group properties.
-- Support for delta sync, to ensure Amplitude imports only new or changed data.
+- Support for delta sync (Append Only Sync and Mirror Sync modes), to ensure Amplitude imports only new or changed data.
   - For **event** data, Amplitude imports rows with an `insert` operation.
   - For **user properties** and **group properties**, Amplitude imports rows with `insert` or `update` operations.
+  - Mirror Sync also imports rows with `delete` operations for all data types.
+  - Append Only Sync ignores rows with `delete` operations for all data types.
 
 ## Limitations
 
@@ -166,7 +168,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
 
 2. If you selected `Event` as the data type, choose the import strategy:
 
-- **Append Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info. Amplitude ignores rows with `delete` operations for all data types in this mode.
+- **Append Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
 - **Mirror Sync**: Directly mirror the data in Databricks with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
 
 3. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
