@@ -20,6 +20,16 @@ landing_page_content:
     type: card
     enabled: true
   -
+    id: mdyannouncements
+    icon: brand-stickers/icon-helpcenter-blue.svg
+    card_title: 'Experiment Announcements'
+    card_content: 'Stay updated with the latest changes and announcements for Amplitude Experiment.'
+    cta: 'View Announcements'
+    external_link: false
+    entries_field: a7f3c8d2-9e4b-4a1c-8d5e-3f6b2a9c1e4d
+    type: card
+    enabled: true
+  -
     id: mdyvno34
     icon: brand-stickers/icon-datastack-blue.svg
     card_title: 'Experiment SDKs'
