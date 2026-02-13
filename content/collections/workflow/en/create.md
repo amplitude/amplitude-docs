@@ -19,6 +19,8 @@ For example, you want to run a hypothesis testing experiment with a direction se
 
 To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or call the [evaluation API](/docs/apis/experiment/experiment-evaluation-api).
 
+Before you launch, estimate run time and viability with the [Duration Estimator](/docs/feature-experiment/workflow/experiment-estimate-duration).
+
 ##### To create a new feature experiment
 
 1. Go to *Create > Experiment*, and select **Feature**.
