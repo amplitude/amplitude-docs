@@ -45,3 +45,7 @@ To implement (or reject) the suggestion for only certain events, check the boxes
 Data Assistant provides automated tasks to help you clean up your data. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking recommendations provided by the Data Assistant and transforming those recommendations into automatic actions.
 
 For more information, go to [Automated Tasks](/docs/data/automated-tasks-in-data-assistant).
+
+{{partial:admonition type="note" heading=""}}
+Data Assistant is one of several AI tools in Amplitude. For analytics insights, chart creation, and natural-language data exploration, refer to [Global Agent](/docs/amplitude-ai/global-agent-overview). For automated dashboard analysis and session replay insights, refer to [AI Agents](/docs/amplitude-ai/setup-and-onboarding).
+{{/partial:admonition}}

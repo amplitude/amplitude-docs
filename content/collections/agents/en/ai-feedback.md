@@ -123,15 +123,13 @@ You can also filter your data sources. For example, you might only want to view 
 
 ### AI Feedback with AI Chat analysis
 
-You can use Amplitude's Ask AI feature to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
+You can use Amplitude's Global Agent to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
 * Summarize all recent feedback.
 * Provide direct user quotes from customers about your website's search experience.
 * Highlight the most talked about bug or complaint from the previous week.
 
-You can also have Ask AI to perform actions such as:
-* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Ask AI can create a PRD to improve your notification system based on feedback about notifications.
-
-To get AI analysis on your feedback, click the **Ask AI** button and type in your request.
+You can also have Global Agent to perform actions such as:
+* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Global Agent can create a PRD to improve your notification system based on feedback about notifications.
 
 ## Working with insights
 

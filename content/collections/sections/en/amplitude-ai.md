@@ -7,11 +7,11 @@ nav_title: agents
 landing_page_content:
   -
     id: mh3nal6h
-    card_title: 'AI Agents'
-    card_content: "Understand and work with Amplitude's AI Agents."
+    card_title: 'Global Agent'
+    card_content: "Understand and work with Amplitude's Global Agent and Specialist Agents."
     cta: 'Work with AI Agents...'
     external_link: false
-    entries_field: adb85d4b-175d-4e9e-bb94-710a6e0b242c
+    entries_field: 72bff997-dcb0-45b1-b85c-a405581b302f
     type: card
     enabled: true
   -
@@ -52,6 +52,6 @@ landing_page_content:
     enabled: true
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1765824937
+updated_at: 1770852344
 template: landing-page-experiment
 ---
