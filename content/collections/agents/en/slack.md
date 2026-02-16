@@ -7,7 +7,7 @@ updated_at: 1770672156
 ---
 The Amplitude Slack app gives your team access to Global Agent, so you can ask questions about product data directly from Slack and get AI-generated answers grounded in your Amplitude data.
 
-Global Agent in Slack uses the same AI assistant as the Amplitude web app. It respects your Amplitude permissions, uses your configured [AI context](/docs/agents/ai-context), and links back to charts and dashboards for deeper analysis. For more about Global Agent's full capabilities, refer to [Global Agent overview](/docs/agents/global-agent-overview).
+Global Agent in Slack uses the same AI assistant as the Amplitude web app. It respects your Amplitude permissions, uses your configured [AI context](/docs/amplitude-ai/ai-context), and links back to charts and dashboards for deeper analysis. For more about Global Agent's full capabilities, refer to [Global Agent overview](/docs/amplitude-ai/global-agent-overview).
 
 ## Prerequisites
 

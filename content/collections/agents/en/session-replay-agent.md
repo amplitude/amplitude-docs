@@ -13,7 +13,7 @@ As you get started with the Session Replay Agent, keep the following in mind:
 |                 |                                                                                                                             |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **Target user** | Product managers, UX Designers, Growth teams                                                                                |
-| **Requires**    | [Session Replay](/docs/agents/session-replay-explorer)                                                                      |
+| **Requires**    | [Session Replay](/docs/amplitude-ai/session-replay-explorer)                                                                      |
 | **Tools**       | Session Replay Analysis, Friction Detection, Navigation Flow Analysis, Content Engagement Analysis, HTML Context Extraction |
 
 {{/partial:collapse}}

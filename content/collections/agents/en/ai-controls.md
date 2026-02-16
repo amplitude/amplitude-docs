@@ -32,7 +32,7 @@ These settings affect all users in your organization. Individual users can't ove
 
 ## AI context
 
-Provide custom instructions that teach Global Agent how your business works. For guidance on writing effective context, see [AI context](/docs/agents/ai-context).
+Provide custom instructions that teach Global Agent how your business works. For guidance on writing effective context, see [AI context](/docs/amplitude-ai/ai-context).
 
 ### Two levels of context
 
@@ -112,7 +112,7 @@ Amplitude doesn't store your data with third-party AI providers. Your data is ne
 
 Set the retention period to control how long conversation logs are stored before automatic deletion. Adjust this setting based on your organization's data governance requirements.
 
-For detailed information about AI data handling, privacy, and security, refer to [Privacy and security](/docs/agents/privacy-and-security).
+For detailed information about AI data handling, privacy, and security, refer to [Privacy and security](/docs/amplitude-ai/privacy-and-security).
 
 ## Disable all AI
 
