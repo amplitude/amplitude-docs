@@ -92,6 +92,10 @@ Global Agent has access to your entire project and can help:
 
 Global Agent finds relevant existing work before creating duplicates. It searches across charts, dashboards, notebooks, and cohorts, and leverages your team's past analyses. It prioritizes “Official” and highly-viewed content in the organization. 
 
+AI-generated content follows the same discoverability rules as search. AI-generated charts, dashboards, and similar content are undiscoverable by default. Global Agent finds AI-generated content you created, and AI-generated content another user explicitly publishes as discoverable.
+
+Amplitude introduced the `isGenerated` flag in November 2025. AI-generated content created before that date doesn't have this flag, so it doesn't appear in generated-content filters.
+
 ### Evidence-based insights
 
 Every claim includes a link to supporting data. Chart links render as visual previews, making Global Agent transparent about data sources and calculations.
