@@ -8,8 +8,8 @@ landing_page_content:
   -
     id: mh3nal6h
     card_title: 'Global Agent'
-    card_content: "Understand and work with Amplitude's Global Agent."
-    cta: 'Work with Global Agent...'
+    card_content: 'An always-on AI analytics agent that runs complex investigations across your Amplitude data'
+    cta: 'Explore Global Agent...'
     external_link: false
     entries_field: 72bff997-dcb0-45b1-b85c-a405581b302f
     type: card
@@ -17,16 +17,25 @@ landing_page_content:
   -
     id: mh3nal7s
     card_title: 'Specialized Agents'
-    card_content: 'Use specialized agents to analyze dashboards, session replays, website conversions, and customer feedback.'
+    card_content: 'Autonomous agents that monitor dashboards, analyze sessions, and surface insights 24/7'
     cta: 'Explore Specialized Agents...'
     external_link: false
     entries_field: e552f2d5-5490-4c51-b779-cf7edb79ec61
     type: card
     enabled: true
   -
+    id: mj7ij717
+    card_title: 'Amplitude MCP'
+    card_content: 'Access behavioral intelligence from external AI clients like Claude, ChatGPT, Cursor, and more'
+    cta: 'Connect through MCP...'
+    external_link: false
+    entries_field: b09c311c-387a-476e-b382-49ce0ca448d6
+    type: card
+    enabled: true
+  -
     id: mh3nbroz
     card_title: 'AI Feedback'
-    card_content: 'Input customer data to generate actionable insights through AI Feedback.'
+    card_content: 'Uncover qualitative insights from feedback, support tickets, sales calls, and other sources'
     cta: 'Generate insights...'
     external_link: false
     entries_field: 61027aa7-267f-479f-b379-912c1fea207f
@@ -35,8 +44,8 @@ landing_page_content:
   -
     id: mh3nd03f
     card_title: 'AI Visibility'
-    card_content: "Learn how to work with and use Amplitude's LLMs."
-    cta: 'Learn about AI...'
+    card_content: 'Track and improve how your brand appears in AI search and outrank competitors.'
+    cta: 'Analyze your brand...'
     external_link: false
     type: card
     enabled: true
@@ -44,19 +53,10 @@ landing_page_content:
   -
     id: mh3ne04g
     card_title: 'AI Context'
-    card_content: 'Provide system context about your business, product, and data taxonomy to improve Amplitude AI.'
+    card_content: 'Add business, product, and taxonomy context so Amplitude Agents can deliver better insights'
     cta: 'Customize AI Context...'
     external_link: false
     entries_field: a3ba8170-140c-4d50-bd37-264878320754
-    type: card
-    enabled: true
-  -
-    id: mj7ij717
-    card_title: 'Amplitude MCP'
-    card_content: 'Analyze your product data, experiments, and user behavior using conversational AI.'
-    cta: 'Connect to Amplitude MCP'
-    external_link: false
-    entries_field: b09c311c-387a-476e-b382-49ce0ca448d6
     type: card
     enabled: true
 exclude_from_sitemap: false

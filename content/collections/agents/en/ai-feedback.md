@@ -100,6 +100,42 @@ Not all sources have additional settings. If your source doesn’t have any sett
 Deleting a source deletes the previously analyzed feedback as well as preventing new feedback from that source. 
 {{/partial:admonition}}
 
+## Supported sources
+
+AI Feedback connects to a variety of feedback sources across four categories.
+
+### Support and service
+
+- **Zendesk**: Import support tickets and customer conversations.
+- **Intercom**: Import customer messaging and support interactions.
+- **Salesforce Service**: Import service cases and customer communications.
+- **Freshdesk**: Import helpdesk tickets and customer responses.
+
+### Sales and success
+
+- **HubSpot**: Import CRM feedback, deal notes, and customer communications.
+- **Gong**: Import sales call transcripts and conversation insights.
+
+### Social and reviews
+
+- **Slack**: Import feedback from specific Slack channels.
+- **App Store**: Import iOS app reviews and ratings.
+- **Google Play Store**: Import Android app reviews and ratings.
+- **G2**: Import software review feedback.
+- **Discord**: Import feedback from Discord server channels.
+- **Trustpilot**: Import customer review feedback.
+- **X**: Import mentions and conversations.
+- **Reddit**: Import subreddit discussions and comments.
+
+### File upload and other
+
+- **CSV**: Upload structured feedback data from CSV files.
+- **DOCX**: Upload feedback documents such as call transcripts or research reports.
+
+{{partial:admonition type="note" heading="Requesting a new source"}}
+If the integration you need isn't listed, select **Request a new source** in the source selection modal.
+{{/partial:admonition}}
+
 ## Viewing Insights
 
 AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback updates with additional insights. These insights align to the following categories:

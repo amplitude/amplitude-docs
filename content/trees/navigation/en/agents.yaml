@@ -15,9 +15,6 @@ tree:
       -
         id: b19ace8a-59c5-4dd8-b12f-1ef64fca94b6
         entry: 8d809aa0-5a61-4b23-9c43-fd99f03a13af
-      -
-        id: 0c3db489-0157-4f7f-b2d8-d71c3eead3cf
-        entry: b2d0144c-be6b-4f51-95e0-d1c69c559c21
   -
     id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
     title: 'Specialized Agents'
@@ -53,6 +50,9 @@ tree:
       -
         id: 5ce7f1e0-fdee-4ec7-9462-0e4e99e5a5d0
         entry: 2ab490ae-fda8-4a9a-8028-218b4b41984a
+  -
+    id: 0c3db489-0157-4f7f-b2d8-d71c3eead3cf
+    entry: b2d0144c-be6b-4f51-95e0-d1c69c559c21
   -
     id: e621d755-109c-4e6e-988f-244a938f97b0
     entry: 66afe4e9-7abf-48c1-8e62-f7cc8691f7ab
