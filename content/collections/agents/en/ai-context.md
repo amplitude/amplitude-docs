@@ -13,7 +13,7 @@ Before you add your context, gather the necessary information and navigate to th
 
 ### Find AI Context
 
-Agents, including Global and Specialized Agents, uses two layers of context: Organization and Project.
+Agents, including Global and Specialized Agents, use two layers of context: Organization and Project.
 
 Access both from *Project Settings > AI Controls*.
 
@@ -372,7 +372,7 @@ We care about growth and revenue.
 ### Use explicit do/don't rules
 
 {{partial:card-grid}}
-{{partial:card style="tip" label="good" caption="Clear instructions with exact property values. Agents knows what to do and avoid."}}
+{{partial:card style="tip" label="good" caption="Clear instructions with exact property values. Agents know what to do and avoid."}}
 ```text
 ## Rules
 DO:
@@ -446,7 +446,7 @@ Keep the following in mind to help maintain context.
 
 - **Assign owners**: Analytics lead for org context. PM or analyst for each project context.
 
-- **Review regularly**: Quarterly, after major launches, or when Agents gives unexpected answers.
+- **Review regularly**: Quarterly, after major launches, or when Agents give unexpected answers.
 
 - **Change carefully**: One change at a time. Test with real questions. Keep backups.
 
@@ -463,7 +463,7 @@ Keep a backup of your old context so you can roll back if needed.
 {{/partial:collapse}}
 
 {{partial:collapse name="What happens if my organization and project contexts conflict?"}}
-Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Agents uses 7 days for that project.
+Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Agents use 7 days for that project.
 
 This is intentional—it lets you set sensible org-wide defaults while allowing projects to override when their needs differ.
 {{/partial:collapse}}

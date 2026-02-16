@@ -36,12 +36,12 @@ Provide custom instructions that teach Agents (both Global and Specialized) how 
 
 ### Two levels of context
 
-Agents uses two layers of context: Organization and Project.
+Agents use two layers of context: Organization and Project.
 
 - **Organization context**: Applies to all projects. Use for company-wide standards like business model, KPI definitions, standard terminology, and global filters. Limit: 10,000 characters.
 - **Project context**: Applies to one project. Use for product-specific events, metrics, segments, and overrides to org defaults. Limit: 10,000 characters.
 
-At runtime, Agent are provided both context sources. Project context overrides organization context when they conflict.
+At runtime, Agents receive both context sources. Project context overrides organization context when they conflict.
 
 ### Text instructions
 
