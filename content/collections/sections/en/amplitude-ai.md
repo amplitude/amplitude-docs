@@ -17,7 +17,7 @@ landing_page_content:
   -
     id: mh3nal7s
     card_title: 'Specialized Agents'
-    card_content: 'Autonomous agents that monitor dashboards, analyze sessions, and surface insights 24/7'
+    card_content: 'Proactive agents that monitor dashboards, analyze sessions, and surface insights 24/7'
     cta: 'Explore Specialized Agents...'
     external_link: false
     entries_field: e552f2d5-5490-4c51-b779-cf7edb79ec61
@@ -27,7 +27,7 @@ landing_page_content:
     id: mj7ij717
     card_title: 'Amplitude MCP'
     card_content: 'Access behavioral intelligence from external AI clients like Claude, ChatGPT, Cursor, and more'
-    cta: 'Connect through MCP...'
+    cta: 'Connect to AI clients using MCP...'
     external_link: false
     entries_field: b09c311c-387a-476e-b382-49ce0ca448d6
     type: card
@@ -36,7 +36,7 @@ landing_page_content:
     id: mh3nbroz
     card_title: 'AI Feedback'
     card_content: 'Uncover qualitative insights from feedback, support tickets, sales calls, and other sources'
-    cta: 'Generate insights...'
+    cta: 'Generate qualitative insights...'
     external_link: false
     entries_field: 61027aa7-267f-479f-b379-912c1fea207f
     type: card
