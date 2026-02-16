@@ -14,7 +14,7 @@ Access organization-level AI Controls from *Settings > AI Controls*.
 The *AI Controls* page includes:
 
 - **Global Agent availability**: Show or hide Global Agent and enable or disable it for your organization.
-- **AI context**: Provide instructions and upload reference files that help Global Agent understand your business.
+- **AI context**: Provide instructions and upload reference files to help Agents understand your business.
 - **Model providers**: Enable or disable specific AI model providers.
 - **Data retention and privacy**: Configure how long AI conversation data is stored.
 - **Disable all AI**: Turn off all AI features across your organization.
@@ -32,20 +32,20 @@ These settings affect all users in your organization. Individual users can't ove
 
 ## AI context
 
-Provide custom instructions that teach Global Agent how your business works. For guidance on writing effective context, see [AI context](/docs/amplitude-ai/ai-context).
+Provide custom instructions that teach Agents (both Global and Specialized) how your business works. For guidance on writing effective context, see [AI context](/docs/amplitude-ai/ai-context).
 
 ### Two levels of context
 
-Global Agent uses two layers of context: Organization and Project.
+Agents uses two layers of context: Organization and Project.
 
 - **Organization context**: Applies to all projects. Use for company-wide standards like business model, KPI definitions, standard terminology, and global filters. Limit: 10,000 characters.
 - **Project context**: Applies to one project. Use for product-specific events, metrics, segments, and overrides to org defaults. Limit: 10,000 characters.
 
-At runtime, Global Agent combines both contexts. Project context overrides organization context when they conflict.
+At runtime, Agent are provided both context sources. Project context overrides organization context when they conflict.
 
 ### Text instructions
 
-Enter your context as structured markdown text. Use headings, bullets, and backticks to make it easy for Global Agent to parse.
+Enter your context as structured markdown text. Use headings, bullets, and backticks to make it easy for Agents to parse.
 
 To add text instructions:
 
@@ -56,7 +56,7 @@ To add text instructions:
 
 ### File uploads
 
-Upload reference files for Global Agent to use alongside your text instructions. Files provide additional context without consuming your 10,000-character instruction limit.
+Upload reference files for Agents to use alongside your text instructions. Files provide additional context without consuming your 10,000-character instruction limit.
 
 Supported file formats:
 
@@ -90,9 +90,9 @@ Enable or disable specific AI model providers for your organization.
 
 | Provider | Models |
 | -------- | ------ |
-| Anthropic | Claude 3.5 Sonnet, Claude 3 Opus |
-| Google | Gemini 1.5 Pro, Gemini Ultra |
-| OpenAI | GPT-4o, GPT-4 Turbo |
+| Anthropic | Claude Sonnet, Claude Opus |
+| Google | Gemini Flash, Gemini Pro |
+| OpenAI | GPT |
 
 Toggle each provider on or off based on your organization's policies. Amplitude recommends keeping all providers enabled for the best experience.
 
