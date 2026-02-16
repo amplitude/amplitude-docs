@@ -17,7 +17,7 @@ Amplitude isolates each customer’s agent context and keeps it separate from ot
 
 ## Third‑party LLM usage 
 
-Agents are powered by third‑party LLMs (OpenAI, Claude via AWS Bedrock and Google Vertex, and Google Gemini). Amplitude’s contracts with these LLMs prohibit them from using your data to train or improve their models. Instead, Amplitude instructs the models with Amplitude‑authored prompts and best practices, and Agents build customer‑specific context that stays within your tenant. Amplitude keeps that context separate and prevents any cross‑customer use.
+Agents are powered by third‑party LLMs (OpenAI, Claude through AWS Bedrock and Google Vertex, and Google Gemini). Amplitude’s contracts with these LLMs prohibit them from using your data to train or improve their models. Instead, Amplitude instructs the models with Amplitude‑authored prompts and best practices, and Agents build customer‑specific context that stays within your tenant. Amplitude keeps that context separate and prevents any cross‑customer use.
 
 ## Data‑flow overview (high‑level)
 
@@ -25,7 +25,7 @@ Agent interactions start in the Agents UI and route through Amplitude’s intern
 
 ## Security and Privacy
 
-Amplitude applies the same enterprise-grade security, privacy, and governance controls to Agents that Amplitude uses across the rest of the platform. The LLMs that Agents uses (OpenAI, Claude via AWS Bedrock and Google Vertex, and Google Gemini) sign enterprise-level agreements with Amplitude and must meet security measures at least as protective as Amplitude's.
+Amplitude applies the same enterprise-grade security, privacy, and governance controls to Agents that Amplitude uses across the rest of the platform. The LLMs that Agents uses (OpenAI, Claude through AWS Bedrock and Google Vertex, and Google Gemini) sign enterprise-level agreements with Amplitude and must meet security measures at least as protective as Amplitude's.
 
 Amplitude’s DPA covers Agents by ensuring that any of your data an agent processes is done in compliance with applicable privacy laws. Amplitude maintains SOC 2 Type 2, ISO 27001, and ISO 27018 certifications that cover platform services used by Agents. 
 
