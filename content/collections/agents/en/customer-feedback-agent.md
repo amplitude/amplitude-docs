@@ -35,7 +35,7 @@ The Customer Feedback Agent requires at least one connected [AI Feedback source]
 1. Select **Create New Agent** on the *AI Agents* tab.
 2. Select **Customer Feedback Agent**.
 3. **Agent Name**: Enter a descriptive name for the agent.
-4. **Product**: Optionally enter a product name to scope the agent's analysis to a specific product area.
+4. **Keywords**: Optionally add one or more keywords to guide the agent toward specific types of feedback insights and comments. For example, add keywords like "onboarding", "pricing", or "mobile app" to focus the agent's analysis and report on those topics.
 5. Define the customer insights you want the agent to identify. Describe the types of feedback, sources, and time ranges you want the agent to monitor. For example, "top bugs from Zendesk this month" or "feature requests from support tickets in the last week."
 
    Use a starter prompt to get started quickly:

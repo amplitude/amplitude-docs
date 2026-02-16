@@ -70,3 +70,11 @@ This simulated product manager perspective helps surface insights you might not 
 ## Limitations
 
 Session Replay analyzes recorded sessions within your retention window, so coverage depends on available replays. Some pages or elements may be missing or obfuscated, and it never surfaces raw session IDs or internal references. Page HTML and selectors come from sampled sessions, so they may not reflect every variant. The agent identifies patterns and correlations and works with your connected product data. Large data requests can be slow or fail, so it may recommend using smaller samples.
+
+## Platform compatibility
+
+The Session Replay Agent analyzes replay data to surface interaction insights and behavioral summaries. Its capabilities depend on the type of replay data available.
+
+- **Web apps**: Fully supported. The agent can reliably analyze clicks, navigation, text interactions, and produce aggregate insights.
+- **Mobile WebView and in-app browsers**: Supported. Web content rendered inside a native app shell is captured the same way as standard web, so the agent works as expected.
+- **Native mobile apps (iOS and Android)**: Not yet supported. Native mobile replays capture visual frames and raw gesture coordinates, but don't include the structured element-level data the agent needs to identify what users interacted with. You can still watch native mobile replays for qualitative review, but agent-powered analysis and aggregates aren't yet available.

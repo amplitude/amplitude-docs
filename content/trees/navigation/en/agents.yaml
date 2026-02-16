@@ -18,22 +18,25 @@ tree:
       -
         id: 0c3db489-0157-4f7f-b2d8-d71c3eead3cf
         entry: b2d0144c-be6b-4f51-95e0-d1c69c559c21
+  -
+    id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
+    title: 'Specialized Agents'
+    children:
       -
-        id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
-        title: 'Specialist Agents'
-        children:
-          -
-            id: 2ccee62f-6cf9-43f3-9c22-8fe2cb68ded4
-            entry: e552f2d5-5490-4c51-b779-cf7edb79ec61
-          -
-            id: 394f5fa1-d188-4eee-8c65-f42925edf9eb
-            entry: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
-          -
-            id: 1691ed50-dc88-42f9-9a83-4fe014e9d5ff
-            entry: 7d0b778f-c493-41c5-b262-b3c9a5eb8cdf
-          -
-            id: c7e9f1a3-5b2d-4f8e-a0c6-3d5b7e9f1a2c
-            entry: f8d2a4c6-3e5b-47a9-b1d0-6c8e0f2a4b6d
+        id: a1f4c830-7e29-4d5a-b8c3-9f6d2e1a5b7c
+        entry: 3bbe3a80-aaff-4930-ae38-1a7219585f35
+      -
+        id: 2ccee62f-6cf9-43f3-9c22-8fe2cb68ded4
+        entry: e552f2d5-5490-4c51-b779-cf7edb79ec61
+      -
+        id: 394f5fa1-d188-4eee-8c65-f42925edf9eb
+        entry: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
+      -
+        id: c7e9f1a3-5b2d-4f8e-a0c6-3d5b7e9f1a2c
+        entry: f8d2a4c6-3e5b-47a9-b1d0-6c8e0f2a4b6d
+      -
+        id: 1691ed50-dc88-42f9-9a83-4fe014e9d5ff
+        entry: 7d0b778f-c493-41c5-b262-b3c9a5eb8cdf
   -
     id: 51b63da1-3fc6-4876-a286-7a35d38af01d
     entry: 61027aa7-267f-479f-b379-912c1fea207f

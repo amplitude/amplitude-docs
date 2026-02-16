@@ -8,10 +8,19 @@ landing_page_content:
   -
     id: mh3nal6h
     card_title: 'Global Agent'
-    card_content: "Understand and work with Amplitude's Global Agent and Specialist Agents."
-    cta: 'Work with AI Agents...'
+    card_content: "Understand and work with Amplitude's Global Agent."
+    cta: 'Work with Global Agent...'
     external_link: false
     entries_field: 72bff997-dcb0-45b1-b85c-a405581b302f
+    type: card
+    enabled: true
+  -
+    id: mh3nal7s
+    card_title: 'Specialized Agents'
+    card_content: 'Use specialized agents to analyze dashboards, session replays, website conversions, and customer feedback.'
+    cta: 'Explore Specialized Agents...'
+    external_link: false
+    entries_field: e552f2d5-5490-4c51-b779-cf7edb79ec61
     type: card
     enabled: true
   -
