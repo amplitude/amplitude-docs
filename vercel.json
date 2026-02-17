@@ -10,7 +10,12 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data ",
+      "source": "/docs/amplitude-ai/agents-overview",
+      "destination": "https://amplitude.com/docs/amplitude-ai",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data",
       "destination": "/docs/feature-experiment/advanced-techniques/winsorization-in-experiment",
       "statusCode": 301
     },
