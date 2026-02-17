@@ -51,13 +51,12 @@ curl -X POST "https://amplitude.com/api/2/audit-logs/76273" \
   }'
 ```
 
-Required Parameters
-- start_date (required): The start of the date range in ISO 8601 format
-- end_date (required): The end of the date range in ISO 8601 format
-All other fields are optional and can be used to refine your query
+#### Required parameters
 
-Please note that when calling the API, there's a 30 day max query range, and we only retain data for 90 days.
+- `start_date` (required): The start of the date range in ISO 8601 format.
+- `end_date` (required): The end of the date range in ISO 8601 format.
 
+All other fields are optional and refine your query. The API supports a maximum query range of 30 days, and Amplitude retains data for 90 days.
 
 ## Common use cases
 
@@ -75,11 +74,11 @@ Review audit events to trace administrative actions and support forensic investi
 
 ## Common questions
 
-### How do I get an Organization Secret Key
+### Get an Organization Secret Key
 
 Contact Amplitude Support and provide your Organization ID. Amplitude Support issues the Organization Secret Key.
 
-### Does this API have an EU endpoint
+### EU endpoint availability
 
 No. The Audit Logs API uses `https://amplitude.com` for all requests.
 
