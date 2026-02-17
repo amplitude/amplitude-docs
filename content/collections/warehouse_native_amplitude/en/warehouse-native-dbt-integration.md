@@ -1,5 +1,6 @@
 ---
 id: 06feb1be-15e3-419a-95ea-85a497dc07f5
+published: false
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native DBT Integration'
 this_article_will_help_you:
