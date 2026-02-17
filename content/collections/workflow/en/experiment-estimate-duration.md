@@ -48,7 +48,7 @@ Common success metrics:
 How to choose:
 - Ask: `If this experiment works, what will more visitors do?`
 - Look for metrics that match that action.
-- If you see similar metrics, choose a conversion metric (marked as `Conversion of...`) or a metric with an official blue badge.
+- If you see similar metrics, choose a conversion metric (which Amplitude marks as `Conversion of...`) or a metric with an official blue badge.
 
 Tip: Choose a metric your team uses often.
 
@@ -78,7 +78,7 @@ If you don't have historical data, select **Enter Manually** to input your own b
 
 After you add your traffic and success metric, the **Estimated Duration** panel shows:
 - Duration: How many days you need to run the test (for example, `~130 days`).
-- Visitors per day: Daily traffic automatically pulled from Analytics.
+- Visitors per day: Daily traffic the tool automatically pulls from Analytics.
 - Lift: Your baseline conversion rate to target conversion rate with your MDE percentage.
 - Summary: Plain-language explanation you can share with stakeholders.
 
@@ -188,7 +188,7 @@ The Duration Scenarios table makes these trade-offs visible, so you can prioriti
 Select **Advanced Settings** to access additional controls:
 - Confidence level: Low (85%), medium (90%), or high (95%).
 - Statistical power: Probability of detecting a true effect (default 80%).
-- Rollout: Percentage of visitors exposed to the experiment (default 100%).
+- Rollout: Percentage of visitors you expose to the experiment (default 100%).
 - Number of variants: Total variants including control.
 - Distribution: How traffic splits between variants (default evenly).
 - Statistical method: T-test.
@@ -270,7 +270,7 @@ Yes. Adjust the MDE percentage in the success metric section, and the estimate u
 
 ### What does `Last 29 days offset by 1` mean
 
-This shows the data timeframe used for calculations. `Offset by 1` means the calculation excludes today because today's data is incomplete, and looks at the previous 29 complete days.
+This shows the data timeframe the tool uses for calculations. `Offset by 1` means the calculation excludes today because today's data is incomplete, and looks at the previous 29 complete days.
 
 ### Should I always aim for high (95%) confidence
 
@@ -278,7 +278,7 @@ No. Many experiments run at medium (90%) confidence, which balances speed and ac
 
 ### I'm stuck choosing a success metric. Which one should I pick
 
-Start by asking `If this experiment works, what will more visitors do?` Then choose a metric that matches that action. Conversion metrics (marked as `Conversion of...`) are often the best choice.
+Start by asking `If this experiment works, what will more visitors do?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
 
 If you're still unsure, search for metrics related to your goal, or select **Enter Manually** to input your own baseline.
 
