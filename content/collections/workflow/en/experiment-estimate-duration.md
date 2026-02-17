@@ -186,12 +186,12 @@ The Duration Scenarios table makes these trade-offs visible, so you can prioriti
 ## Adjust advanced settings (optional)
 
 Select **Advanced Settings** to access additional controls:
-- Confidence level: Low (85%), medium (90%), or high (95%).
-- Statistical power: Probability of detecting a true effect (default 80%).
-- Rollout: Percentage of visitors you expose to the experiment (default 100%).
-- Number of variants: Total variants including control.
-- Distribution: How traffic splits between variants (default evenly).
-- Statistical method: T-test.
+- **Confidence level**: Low (85%), medium (90%), or high (95%).
+- **Statistical power**: Probability of detecting a true effect (default 80%).
+- **Rollout**: Percentage of visitors you expose to the experiment (default 100%).
+- **Number of variants**: Total variants including control.
+- **Distribution**: How traffic splits between variants (default evenly).
+- **Statistical method**: T-test.
 
 Most teams don't need to adjust these settings. The defaults work well for standard A/B tests.
 
@@ -256,7 +256,7 @@ The Duration Estimator helps you make this call before you spend time and resour
 
 ## Common questions
 
-### Why does my estimate say `Long Duration`
+### Why does my estimate say **Long Duration**
 
 Your test takes a long time to reach statistical significance, often because of low traffic or small MDE. Use the Duration Scenarios table to explore faster alternatives.
 
