@@ -20,7 +20,7 @@ landing_page_content:
     card_content: 'Proactive agents that monitor dashboards, analyze sessions, and surface insights 24/7'
     cta: 'Explore Specialized Agents...'
     external_link: false
-    entries_field: e552f2d5-5490-4c51-b779-cf7edb79ec61
+    entries_field: 3bbe3a80-aaff-4930-ae38-1a7219585f35
     type: card
     enabled: true
   -
@@ -61,6 +61,6 @@ landing_page_content:
     enabled: true
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1770852344
+updated_at: 1771286895
 template: landing-page-experiment
 ---
