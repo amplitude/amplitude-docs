@@ -13,11 +13,11 @@ updated_at: 1723653071
 ---
 Using Amplitude effectively requires you to first identify the events and properties you want to track. Designing a solid, scalable taxonomy can help make your analyses easier, avoid data gaps, and prevent future data issues.
 
-This playbook will review the strategy and considerations for creating your tracking plan.
+This playbook reviews the strategy and considerations for creating your tracking plan.
 
 ## What's a taxonomy?
 
-A taxonomy is a set of hierarchical classifications and naming conventions for your data. It's a way to identify and categorize your event and user data so that Amplitude can generate relevant and valuable insights from it. The process of setting up a taxonomy in Amplitude will differ from organization to organization, but the heart of it is selecting the events you want to track, identifying event properties and user properties you want to track, and then naming them.
+A taxonomy is a set of hierarchical classifications and naming conventions for your data. It's a way to identify and categorize your event and user data so that Amplitude can generate relevant and valuable insights from it. The process of setting up a taxonomy in Amplitude differs from organization to organization, but the heart of it is selecting the events you want to track, identifying event properties and user properties you want to track, and then naming them.
 
 ## Users, events, and properties: An introduction
 
@@ -65,7 +65,7 @@ Some typical goals Amplitude customers pursue include:
 * Optimizing conversion
 * Increasing user retention and LTV
 
-Once you've identified your organization's overarching goals, it's easier to break them down into individual metrics and ensure your tracking plan measures your desired outcome.
+After you've identified your organization's overarching goals, it's easier to break them down into individual metrics and ensure your tracking plan measures the outcome you want.
 
 For example, you have an e-commerce app and are looking to increase purchases. You could do this by:
 
@@ -132,13 +132,13 @@ Here, users should count as having converted through the funnel only if they tri
 	* `Product ID` = `3345`
 	* `quantity` = `1`
 
-In this example, you can see how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
+In this example, you can understand how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
 
 ## Next steps
 
 Refer to the steps in this playbook as you add new features or iterate on your product analytics. Amplitude Data provides ways to create and iterate on your plan directly in the product, or by importing a CSV file.
 
-To see more specific examples, check out our industry-specific best practices guides to see sample use cases and business questions, a recommended taxonomy, and complementary dashboards you can use for your implementation, each one tailored to meet the specific needs of the following sectors:
+To findn more specific examples, go to the following industry-specific best practices guides for sample use cases and business questions, a recommended taxonomy, and complementary dashboards you can use for your implementation, each one tailored to meet the specific needs of the following sectors:
 
 * [E-commerce](https://analytics.amplitude.com/share/8f32b20708e743e597b75c99b7a766d5)
 * [Fintech](https://analytics.amplitude.com/share/cbb3827995aa4d03852a3cdf9a3c46b0)
