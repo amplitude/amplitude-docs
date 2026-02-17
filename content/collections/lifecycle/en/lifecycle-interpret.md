@@ -15,6 +15,10 @@ academy_course:
 ---
 This article explains how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 
+{{partial:admonition type="note" heading=""}}
+You can use [Global Agent](/docs/amplitude-ai/global-agent-overview) to interpret Lifecycle charts with natural language. Ask questions like "What's driving the increase in resurrected users?" or "Why did dormant users spike last week?"
+{{/partial:admonition}}
+
 ## Interpret your Lifecycle chart
 
 The Lifecycle chart's default display is a histogram with two buckets for each of your usage intervals. The blue buckets contain active users, while the red bucket contains dormant users.

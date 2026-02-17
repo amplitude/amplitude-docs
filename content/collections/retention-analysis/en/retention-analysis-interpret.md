@@ -16,6 +16,10 @@ academy_course:
 ---
 Amplitude’s **Retention Analysis** chart helps you drive product adoption by showing you how often users return to your product after triggering an initial event. This article describes how the Retention Analysis chart works, and how you should interpret the data it contains.
 
+{{partial:admonition type="note" heading=""}}
+You can use [Global Agent](/docs/amplitude-ai/global-agent-overview) to interpret retention charts with natural language. Ask questions like "Why did week 2 retention drop?" or "Show me 7-day retention for users who signed up last month" to analyze your retention data.
+{{/partial:admonition}}
+
 Analyzing your retention analysis data takes place in the chart area. There, you can:
 
 * Specify the method Amplitude uses to measure retention ([Return On or After](#return-on-or-after-formerly-known-as-unbounded), [Return On](#return-on-formerly-known-as-n-day), or [Return On (Custom)](#return-on-custom-formerly-known-as-custom))

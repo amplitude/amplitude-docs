@@ -33,3 +33,4 @@ Interacting with Agents is simple. Use natural language to guide their work, set
 - Automate reporting with the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent)
 - Discover behavioral insights with the [Session Replay Agent](/docs/amplitude-ai/session-replay-agent)
 - Explore strategies with the [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent)
+- Surface feedback themes with the [Customer Feedback Agent](/docs/amplitude-ai/customer-feedback-agent)

@@ -24,6 +24,10 @@ Session Replay isn't enabled by default and requires instrumentation beyond the 
 
 {{partial:partials/session-replay/sr-retention}}
 
+{{partial:admonition type="note" heading=""}}
+The [Session Replay Agent](/docs/amplitude-ai/session-replay-agent) analyzes session replays at scale to surface friction points, navigation patterns, and engagement insights automatically.
+{{/partial:admonition}}
+
 ## Use Session Replay to review user activity
 
 You can launch a session replay from a user’s event stream, inside a chart, or from your homepage. Replays are generally available for viewing five minutes after a session begins.

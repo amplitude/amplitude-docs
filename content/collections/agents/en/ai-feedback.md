@@ -100,6 +100,42 @@ Not all sources have additional settings. If your source doesn’t have any sett
 Deleting a source deletes the previously analyzed feedback as well as preventing new feedback from that source. 
 {{/partial:admonition}}
 
+## Supported sources
+
+AI Feedback connects to a variety of feedback sources across four categories.
+
+### Support and service
+
+- **Zendesk**: Import support tickets and customer conversations.
+- **Intercom**: Import customer messaging and support interactions.
+- **Salesforce Service**: Import service cases and customer communications.
+- **Freshdesk**: Import helpdesk tickets and customer responses.
+
+### Sales and success
+
+- **HubSpot**: Import CRM feedback, deal notes, and customer communications.
+- **Gong**: Import sales call transcripts and conversation insights.
+
+### Social and reviews
+
+- **Slack**: Import feedback from specific Slack channels.
+- **App Store**: Import iOS app reviews and ratings.
+- **Google Play Store**: Import Android app reviews and ratings.
+- **G2**: Import software review feedback.
+- **Discord**: Import feedback from Discord server channels.
+- **Trustpilot**: Import customer review feedback.
+- **X**: Import mentions and conversations.
+- **Reddit**: Import subreddit discussions and comments.
+
+### File upload and other
+
+- **CSV**: Upload structured feedback data from CSV files.
+- **DOCX**: Upload feedback documents such as call transcripts or research reports.
+
+{{partial:admonition type="note" heading="Requesting a new source"}}
+If the integration you need isn't listed, select **Request a new source** in the source selection modal.
+{{/partial:admonition}}
+
 ## Viewing Insights
 
 AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback updates with additional insights. These insights align to the following categories:
@@ -123,15 +159,13 @@ You can also filter your data sources. For example, you might only want to view 
 
 ### AI Feedback with AI Chat analysis
 
-You can use Amplitude's Ask AI feature to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
+You can use Amplitude's Global Agent to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
 * Summarize all recent feedback.
 * Provide direct user quotes from customers about your website's search experience.
 * Highlight the most talked about bug or complaint from the previous week.
 
-You can also have Ask AI to perform actions such as:
-* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Ask AI can create a PRD to improve your notification system based on feedback about notifications.
-
-To get AI analysis on your feedback, click the **Ask AI** button and type in your request.
+You can also have Global Agent to perform actions such as:
+* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Global Agent can create a PRD to improve your notification system based on feedback about notifications.
 
 ## Working with insights
 

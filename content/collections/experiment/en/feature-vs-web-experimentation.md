@@ -39,3 +39,7 @@ Web Experiment is most useful for digital marketers and growth marketing. These 
 Web experimentation uses a visual editor to create variations of your web site. With the visual editor, you can select directly alter content or element properties. Web experiment lets less technical users, or users with fewer permissions in your system, create experiments without engineering resources. Web experiments use pages to control where your experiments variants apply on your website. This lets you scope experiments to specific URLs without affecting unrelated parts of your site. For more information on how to create experiments with the web editor, go to [Setting up a Web Experiment](/docs/web-experiment/set-up-a-web-experiment).
 
 For a full description of the functional differences between Feature and Web Experiment, go to [Feature and Web Experiment Functional Comparison](/docs/feature-experiment/feature-and-web-experiment-functional-comparison).
+
+{{partial:admonition type="note" heading=""}}
+The [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent) can help you identify high-impact pages and generate experiment strategies to increase conversion, whether you use Feature or Web Experiment.
+{{/partial:admonition}}

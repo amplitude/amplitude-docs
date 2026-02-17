@@ -1,0 +1,18 @@
+{{# 
+  Two-column card grid for displaying side-by-side content comparisons
+  
+  Usage: 
+  {{partial:card-grid}}
+    {{partial:card style="tip" label="good"}}
+    Content here
+    {{/partial:card}}
+    
+    {{partial:card style="warning" label="bad"}}
+    Content here
+    {{/partial:card}}
+  {{/partial:card-grid}}
+#}}
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+  {{ slot }}
+</div>

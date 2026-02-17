@@ -13,15 +13,11 @@ The Amplitude MCP server is listed in the [official MCP servers registry](https:
 
 ## Remote server
 
-{{partial:admonition type="beta" heading="Beta notice"}}
-The Amplitude MCP server is under active development. Some functions and settings may not be available, and you may experience bugs or performance issues during this period. This feature continues to evolve and might be subject to rate limits. 
-{{/partial:admonition}}
-
 ### Who can use this feature
 
 * Available to any existing Amplitude customer.
 
-* You must use a code editor or application that supports MCP servers (for example, VS Code, Cursor, Replit, Claude Code).
+* You must use a code editor or application that supports MCP servers (for example, Cursor, Claude Code, ChatGPT, Lovable, or AWS Kiro).
 
 ## Regions
 
@@ -37,208 +33,299 @@ Use the Standard Server URL unless your Amplitude data resides in the EU region.
 The Amplitude MCP provides comprehensive access to your analytics through these tools:
 
 {{partial:collapse name="Available tools"}}
-| Tool Name                  | Description                                                                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `search`                   | Search for dashboards, charts, notebooks, experiments, and other content in Amplitude with comprehensive filtering and personalization options |
-| `query_chart`              | Query chart data result using the internal dash API to get chart data                                                                          |
-| `query_experiment`         | Query experiment analysis data using the dataset endpoint with proper experiment parameters                                                    |
-| `query_dataset`            | Execute a data query using the dataset endpoint for complex ad-hoc analysis within a project                                                   |
-| `get_context`              | Get context information about the current user, organization, and accessible projects                                                          |
-| `get_charts`               | Retrieve full chart objects by their IDs using the chart service directly                                                                      |
-| `get_dashboard`            | Get specific dashboards and all their charts including chart IDs for individual queries                                                        |
-| `get_experiments`          | Retrieve specific experiments by their IDs with additional information like state and decisions                                                |
-| `get_deployments`          | Retrieve all deployments (Experiment API keys) for the current project                                                                         |
-| `get_events`               | Retrieve events from a project with optional filtering and sorting                                                                             |
-| `get_event_properties`     | Retrieve event properties from a project with filtering options                                                                                |
-| `get_user_properties`      | Retrieve user properties from a project with filtering options                                                                                 |
-| `get_session_replays`      | Search for session replays in the last 30 days, filtered by user properties or events                                                          |
-| `save_chart_edits`         | Save edits to existing charts, enabling you to modify chart configurations and parameters                                                      |
-| `create_dashboard`         | Create new dashboards in your Amplitude project                                                                                                |
-| `create_experiment`        | Create new experiments in your Amplitude project                                                                                               |
-| `create_cohort`            | Create new cohorts based on user properties and behaviors                                                                                      |
-| `get_cohorts`              | Retrieve cohorts from your project with filtering and sorting options                                                                          |
-| `get_users`                | Retrieve user data from your project                                                                                                           |
-| `get_feedback_insights`    | Retrieve customer feedback insights and analysis                                                                                               |
-| `get_feedback_comments`    | Retrieve customer feedback comments                                                                                                            |
-| `get_feedback_mentions`    | Retrieve customer feedback mentions                                                                                                            |
-| `get_feedback_sources`     | Retrieve customer feedback sources and channels                                                                                                |
+| Tool Name                  | Description                                                                                                       |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `search`                   | Search for charts, dashboards, notebooks, experiments, events, properties, cohorts, and other Amplitude content.  |
+| `get_from_url`             | Retrieve the full object definition from any Amplitude URL, including charts, dashboards, and experiments.        |
+| `get_context`              | Get information about the current user, organization, and accessible projects.                                    |
+| `get_charts`               | Retrieve full chart definitions by ID, including events, properties, and configuration.                           |
+| `get_dashboard`            | Retrieve dashboards and all their charts, including chart IDs for individual queries.                             |
+| `get_cohorts`              | Retrieve cohort definitions by ID, including audience criteria and metadata.                                      |
+| `get_experiments`          | Retrieve experiments by ID with state, variant configuration, and decision details.                               |
+| `get_event_properties`     | Retrieve properties for specific events with filtering options.                                                   |
+| `get_session_replays`      | Search for session replays from the last 30 days, filtered by user properties or events.                          |
+| `get_users`                | Retrieve user data from a project.                                                                                |
+| `query_chart`              | Query a single chart by ID and return its data.                                                                   |
+| `query_charts`             | Query up to three charts concurrently by ID and return their data.                                                |
+| `query_dataset`            | Execute ad-hoc data queries for event segmentation, funnels, retention, and session analysis.                     |
+| `query_experiment`         | Query experiment analysis data, including variant performance and statistical significance.                       |
+| `save_chart_edits`         | Save edits to existing charts or convert temporary chart edits into permanent saved charts.                       |
+| `create_chart`             | Create a new chart from a query definition.                                                                       |
+| `create_dashboard`         | Create dashboards with charts, rich text, and custom layouts.                                                     |
+| `create_notebook`          | Create interactive notebooks with charts, rich text, and multi-column layouts.                                    |
+| `create_experiment`        | Create A/B test experiments across one or more projects with custom variants and metrics.                         |
+| `create_cohort`            | Create cohorts based on user properties and behaviors.                                                            |
+| `get_feedback_insights`    | Retrieve processed feedback themes grouped by type: feature requests, bugs, complaints, praise, and pain points.  |
+| `get_feedback_comments`    | Retrieve raw feedback comments from connected sources with search and pagination.                                 |
+| `get_feedback_mentions`    | Retrieve individual user feedback comments associated with a specific insight.                                    |
+| `get_feedback_sources`     | Retrieve connected feedback integrations and their source IDs for filtering.                                      |
 
 {{/partial:collapse}}
 
 ## Implementation instructions
 
-Complete the steps below, depending on the tool you're integrating with. 
+Select your MCP client for setup instructions.
 
-{{partial:tabs tabs="Claude, Claude Code, Cursor, ChatGPT, Gemini CLI, Replit, Other MCP Clients"}}
-{{partial:tab name="Claude"}}
-1. Navigate to [claude.ai](https://claude.ai/) or open Claude desktop app.  
-2. Go to *Settings > Connectors > Add custom connector*.  
-3. Configure the integration:  
-   * **Name:** Amplitude  
-   * **URL:** `https://mcp.amplitude.com/mcp` 
+{{partial:collapse name="Claude Code"}}
+For general MCP setup, refer to the [Claude Code MCP documentation](https://docs.anthropic.com/en/docs/claude-code/mcp).
 
-  {{partial:admonition type="note"}}
-  EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-  {{/partial:admonition}}
-  
-4. Complete Amplitude OAuth authorization when prompted.  
-5. Start asking questions about your Amplitude data.
-{{/partial:tab}}
-{{partial:tab name="Claude Code"}}
-**Best for:** Developers who prefer command-line interfaces.
+1. Add the MCP server globally:
 
-   1. Add the MCP server globally:
+   ```shell
+   claude mcp add -t http -s user Amplitude "https://mcp.amplitude.com/mcp"
+   ```
 
-       ```shell
-       claude mcp add -t http -s user Amplitude "https://mcp.amplitude.com/mcp"
-       ```
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
 
-      {{partial:admonition type="note"}}
-      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-      {{/partial:admonition}}
+2. Start Claude Code:
 
-   2. Start Claude Code:
+   ```shell
+   claude
+   ```
 
-       ```shell
-       claude
-       ```
+3. Authenticate with Amplitude:
 
-   3. Authenticate with Amplitude:
+   ```shell
+   /mcp
+   ```
 
-       ```shell
-       /mcp
-       ```
+4. Follow the authentication flow.
+{{/partial:collapse}}
 
-   4. Follow the authentication flow.
+{{partial:collapse name="Cursor"}}
+For general MCP setup, refer to [Cursor's MCP documentation](https://docs.cursor.com/context/model-context-protocol).
 
-{{/partial:tab}}
-{{partial:tab name="Cursor"}}
+**Quick install (recommended):**
 
-**Quick Install (Recommended):**
-
-**US Server (Default):**
+**US server (default):**
 [Install Amplitude MCP Server deep link (US)](cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
-**EU Server:**
+**EU server:**
 [Install Amplitude MCP Server deep link (EU)](cursor://anysphere.cursor-deeplink/mcp/install?name=Amplitude&config=eyJ1cmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
 
-**Manual Setup:**
+**Manual setup:**
 
-   1. Open Cursor Settings: `Cursor > Settings… > Cursor Settings`. 
-      
-   2. Navigate to: `Tools & Integrations > New MCP Server`.  
+1. Open Cursor Settings: *Cursor > Settings… > Cursor Settings*.
 
-   3. Add this configuration to your `mcp.json`:
+2. Navigate to *Tools & Integrations > New MCP Server*.
 
-        ```json
-        {  
-          "mcpServers": {
-            "Amplitude": {
-              "url": "https://mcp.amplitude.com/mcp",
-              "transport": "streamable-http"
-            }
-          }
-        }
-        ```
+3. Add this configuration to your `mcp.json`:
 
-        {{partial:admonition type="note"}}
-        EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-        {{/partial:admonition}}
+   ```json
+   {
+     "mcpServers": {
+       "Amplitude": {
+         "url": "https://mcp.amplitude.com/mcp",
+         "transport": "streamable-http"
+       }
+     }
+   }
+   ```
 
-   4. Return to Tools & Integration tab and authenticate with Amplitude.
-  
-{{/partial:tab}}
-{{partial:tab name="Replit"}}
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
 
-**Quick Install (Recommended):**
+4. Return to the *Tools & Integrations* tab and authenticate with Amplitude.
+{{/partial:collapse}}
 
-**US Server (Default):**
-[Add Amplitude MCP Server to Replit](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
-
-**EU Server:**
-[Add Amplitude MCP Server to Replit (EU)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
-
-**Manual Setup:**
-
-   1. Navigate to your Replit workspace settings.
-      
-   2. Go to *Integrations > MCP Servers*.
-
-   3. Add a new MCP server with this configuration:
-      * **Name:** Amplitude
-      * **URL:** `https://mcp.amplitude.com/mcp`
-
-      {{partial:admonition type="note"}}
-      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-      {{/partial:admonition}}
-
-   4. Complete Amplitude OAuth authorization when prompted.
-
-   5. Start asking questions about your Amplitude data.
-
-{{/partial:tab}}
-{{partial:tab name="ChatGPT"}}
-
-**Best for:** Users who want to use Amplitude MCP with ChatGPT's developer mode.
+{{partial:collapse name="ChatGPT"}}
+For general MCP setup, refer to the [OpenAI remote MCP documentation](https://platform.openai.com/docs/guides/tools-remote-mcp).
 
 {{partial:admonition type="note"}}
 MCP support in ChatGPT is available through [developer mode](https://community.openai.com/t/mcp-server-tools-now-in-chatgpt-developer-mode/1357233), which provides full Model Context Protocol client support for both read and write operations. OpenAI is working to expand MCP support beyond this beta preview mode, including availability for enterprise organizations.
 {{/partial:admonition}}
 
-   1. Navigate to [ChatGPT](https://chatgpt.com/) or open the ChatGPT desktop app.
-   
-   2. Go to *Settings > Apps & Connectors > Browse Connectors*.
-   
-   3. Select Amplitude then press Connect to start the OAuth connection.
-   
-   4. Complete Amplitude OAuth authorization when prompted.
-   
-   5. For best results with ChatGPT, Amplitude recommends creating a Project specificly for the Amplitude MCP and adding this prompt to the instructions:
+1. Navigate to [ChatGPT](https://chatgpt.com/) or open the ChatGPT desktop app.
 
-      ```text
-      When using Amplitude MCP, follow these rules then act quickly and autonomously:
-      - Use tools to find answers: If you need info (events, properties, chart definitions, cohorts), use tools to discover it rather than asking the user. Trust the Amplitude MCP tools provide access to actual data behind charts, dashboards, and other entities. Always attempt using tools before saying they don't exist.
-      - Try NOT to ask clarifying questions: Make your best judgment with information available but sparingly elicit clarification from users
-      - Resolve ambiguity yourself: When multiple options exist (e.g., which project to use, which saved chart or event matches best, how to define a segment), choose the most reasonable option based on tool results and context. Search saved charts, metrics, and other data before creating something new.
-      - When responding to requests that involve Amplitude objects (charts, dashboards, or any entity), don't stop at referencing IDs and metadata. Retrieve underlying data, run analysis based on it, then share specific metrics as part of your analysis.
-      - Complete the request: Execute the workflow requested, proactively share relevant data when analyzing, don't stop partway to ask for confirmation, then provide data-backed, actionable, and concise answers.
-      - Report what you did: After completing the task, briefly explain key assumptions or data used
-      - Cite your sources: When referencing data from Amplitude, include the link as part of the markdown response (()[])
-      ```
-   
-   6. Start asking questions about your Amplitude data.
+2. Go to *Settings > Apps & Connectors > Browse Connectors*.
 
-{{/partial:tab}}
-{{partial:tab name="Gemini CLI"}}
-   1. Ensure you're authenticated with Gemini.  
-   2. Add this to your `~/.gemini/settings.json`:
+3. Select Amplitude, then select **Connect** to start the OAuth connection.
 
-      ```json
-      {
-        "selectedAuthType": "oauth-personal",
-        "mcpServers": {
-          "amplitude": {
-            "httpUrl": "https://mcp.amplitude.com/mcp"
-          }
-        }
-      }
-      ```
+4. Complete Amplitude OAuth authorization when prompted.
 
-      {{partial:admonition type="note"}}
-      EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
-      {{/partial:admonition}}
+5. For best results, Amplitude recommends creating a ChatGPT project specifically for the Amplitude MCP and adding this prompt to the instructions:
 
-   3. Restart the MCP server and authenticate:
+   ```text
+   When using Amplitude MCP, follow these rules then act quickly and autonomously:
+   - Use tools to find answers: If you need info (events, properties, chart definitions, cohorts), use tools to discover it rather than asking the user. Trust the Amplitude MCP tools provide access to actual data behind charts, dashboards, and other entities. Always attempt using tools before saying they don't exist.
+   - Try NOT to ask clarifying questions: Make your best judgment with information available but sparingly elicit clarification from users
+   - Resolve ambiguity yourself: When multiple options exist (e.g., which project to use, which saved chart or event matches best, how to define a segment), choose the most reasonable option based on tool results and context. Search saved charts, metrics, and other data before creating something new.
+   - When responding to requests that involve Amplitude objects (charts, dashboards, or any entity), don't stop at referencing IDs and metadata. Retrieve underlying data, run analysis based on it, then share specific metrics as part of your analysis.
+   - Complete the request: Execute the workflow requested, proactively share relevant data when analyzing, don't stop partway to ask for confirmation, then provide data-backed, actionable, and concise answers.
+   - Report what you did: After completing the task, briefly explain key assumptions or data used
+   - Cite your sources: When referencing data from Amplitude, include the link as part of the markdown response (()[])
+   ```
 
-      ```shell
-      gemini/mcp auth amplitude
-      ```
-{{/partial:tab}}
-{{partial:tab name="Other MCP Clients"}}
+6. Start asking questions about your Amplitude data.
+{{/partial:collapse}}
 
-**Using with other supported MCP Clients**
+{{partial:collapse name="Claude"}}
+For general MCP connector setup, refer to the [Claude remote MCP server documentation](https://support.anthropic.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers).
 
-For MCP-compatible clients:
+1. Navigate to [claude.ai](https://claude.ai/) or open the Claude desktop app.
+
+2. Go to *Settings > Connectors > Add custom connector*.
+
+3. Configure the integration:
+   * **Name:** Amplitude
+   * **URL:** `https://mcp.amplitude.com/mcp`
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+4. Complete Amplitude OAuth authorization when prompted.
+
+5. Start asking questions about your Amplitude data.
+{{/partial:collapse}}
+
+{{partial:collapse name="Gemini CLI"}}
+For general MCP setup, refer to the [Gemini CLI MCP documentation](https://google-gemini.github.io/gemini-cli/docs/tools/mcp-server.html).
+
+1. Ensure you're authenticated with Gemini.
+
+2. Add this to your `~/.gemini/settings.json`:
+
+   ```json
+   {
+     "selectedAuthType": "oauth-personal",
+     "mcpServers": {
+       "amplitude": {
+         "httpUrl": "https://mcp.amplitude.com/mcp"
+       }
+     }
+   }
+   ```
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+3. Restart the MCP server and authenticate:
+
+   ```shell
+   gemini/mcp auth amplitude
+   ```
+{{/partial:collapse}}
+
+{{partial:collapse name="Replit"}}
+For general MCP setup, refer to the [Replit MCP documentation](https://docs.replit.com/replitai/mcp).
+
+**Quick install (recommended):**
+
+**US server (default):**
+[Add Amplitude MCP Server to Replit](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
+**EU server:**
+[Add Amplitude MCP Server to Replit (EU)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkFtcGxpdHVkZSIsImJhc2VVcmwiOiJodHRwczovL21jcC5ldS5hbXBsaXR1ZGUuY29tL21jcCJ9)
+
+**Manual setup:**
+
+1. Navigate to your Replit workspace settings.
+
+2. Go to *Integrations > MCP Servers*.
+
+3. Add a new MCP server with this configuration:
+   * **Name:** Amplitude
+   * **URL:** `https://mcp.amplitude.com/mcp`
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+4. Complete Amplitude OAuth authorization when prompted.
+
+5. Start asking questions about your Amplitude data.
+{{/partial:collapse}}
+
+{{partial:collapse name="Lovable"}}
+For general MCP setup, refer to the [Lovable MCP documentation](https://docs.lovable.dev/integrations/mcp-servers).
+
+1. Log in to [Lovable](https://lovable.dev/).
+
+2. Select your avatar, then go to *Settings*.
+
+3. Select **Connectors**.
+
+4. Search for `Amplitude` in the search box.
+
+5. Complete Amplitude OAuth authorization when prompted.
+
+6. Start asking questions about your Amplitude data in the Lovable chat.
+{{/partial:collapse}}
+
+{{partial:collapse name="Figma Make"}}
+For general MCP connector setup, refer to the [Figma Make connector documentation](https://help.figma.com/hc/en-us/articles/35440096186007-Connect-external-tools-to-Figma-Make-using-MCP).
+
+1. Open a Figma Make file.
+
+2. Select the **+** icon, then **Connectors**.
+
+3. In the *Partners* tab, find Amplitude and select **Connect**.
+
+4. Complete Amplitude OAuth authorization when prompted.
+
+5. In the chat input, select the **+** icon, then *Connectors*, then **Amplitude** to start using the MCP server.
+
+{{partial:admonition type="note"}}
+Figma Make has a data limit that may cause initial tool calls to fail. They should recover with lower limits.
+{{/partial:admonition}}
+{{/partial:collapse}}
+
+{{partial:collapse name="AWS Kiro"}}
+For general MCP setup, refer to the [Kiro MCP documentation](https://kiro.dev/docs/mcp/configuration).
+
+1. Open the Kiro IDE.
+
+2. Open the Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux) and search for "MCP", or go to *File > Settings* and open the `mcp.json` configuration file.
+
+3. Select the scope for your configuration:
+   * **User settings**: Applies to all projects.
+   * **Workspace Config**: Applies to the current project only.
+
+4. Add this configuration to your `mcp.json`:
+
+   ```json
+   {
+     "mcpServers": {
+       "amplitude-mcp": {
+         "type": "http",
+         "url": "https://mcp.amplitude.com/mcp"
+       }
+     }
+   }
+   ```
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+5. Save the configuration file.
+
+6. In the *MCP Servers* section, verify the status shows **Connected**. If prompted, sign in to Amplitude through your default browser.
+{{/partial:collapse}}
+
+{{partial:collapse name="Codex CLI"}}
+For general MCP setup, refer to the [OpenAI Codex CLI MCP documentation](https://developers.openai.com/codex/mcp/).
+
+1. Add the Amplitude MCP server:
+
+   ```shell
+   codex mcp add amplitude --url https://mcp.amplitude.com/mcp
+   ```
+
+   {{partial:admonition type="note"}}
+   EU customers should use `https://mcp.eu.amplitude.com/mcp` instead.
+   {{/partial:admonition}}
+
+2. Follow the authentication flow when prompted.
+{{/partial:collapse}}
+
+{{partial:collapse name="Other MCP clients"}}
+For MCP-compatible clients not listed above:
 
 1. Configure your client to connect to `https://mcp.amplitude.com/mcp`.
 
@@ -247,12 +334,13 @@ For MCP-compatible clients:
    {{/partial:admonition}}
 
 2. Ensure your client supports OAuth authentication.
-3. Set up the connection according to your client's documentation.
-4. Authenticate with your Amplitude account when prompted.
-5. Select which Amplitude tools to enable based on your needs.
 
-{{/partial:tab}}
-{{/partial:tabs}}
+3. Set up the connection according to your client's documentation.
+
+4. Authenticate with your Amplitude account when prompted.
+
+5. Select which Amplitude tools to enable based on your needs.
+{{/partial:collapse}}
 
 ## Query examples
 
@@ -354,6 +442,36 @@ Example conversation flow:
 > User: Create a cohort of users who completed checkout.
 > AI: [Creates cohort with specified criteria]
 
+## Plugins
+
+The [Amplitude MCP Marketplace](https://github.com/amplitude/mcp-marketplace/) is the official plugin repository for Amplitude MCP. It provides a curated set of reusable skills that extend what you can do with the Amplitude MCP server in Claude Code, Cursor, and Claude.
+
+### Install the plugin
+
+```bash
+# Add the Amplitude marketplace (one-time)
+/plugin marketplace add amplitude/mcp-marketplace
+
+# Install the analysis plugin
+/plugin install amplitude-analysis@amplitude
+```
+
+### Available skills
+
+The `amplitude-analysis` plugin includes the following skills:
+
+| Skill | Description |
+| ----- | ----------- |
+| **analyze-chart** | Deep-dive into a specific chart to explain trends, anomalies, and likely drivers. |
+| **analyze-dashboard** | Synthesize an entire dashboard into talking points, surface concerns, and connect quantitative data to qualitative insights. |
+| **analyze-experiment** | Analyze running or completed A/B tests and interpret results with statistical rigor, including ship and no-ship recommendations. |
+| **analyze-feedback** | Synthesize customer feedback into grouped themes such as feature requests, bugs, pain points, and praise. |
+| **analyze-account-health** | Summarize B2B account health including usage patterns, engagement trends, risk signals, and expansion opportunities. |
+| **create-chart** | Create Amplitude charts from natural language, with automatic event discovery, filters, groupings, and visualization. |
+| **create-dashboard** | Build dashboards from requirements or goals, organizing charts into logical sections with appropriate layouts. |
+
+Skills activate automatically based on your request. For example, asking "Why did this metric spike last week?" triggers the `analyze-chart` skill, and asking "Summarize this dashboard for my exec meeting" triggers `analyze-dashboard`.
+
 ## Security and compliance
 
 ### Data access
@@ -374,7 +492,7 @@ Third parties (for example, Anthropic) develop and maintain the AI models used w
 
 MCP server access is **enabled by default** for all users in your organization. Organization administrators can opt out or restrict access if needed:
 
-1. Navigate to **Settings > Content Access > MCP** in your Amplitude organization settings.
+1. Navigate to *Settings > Content Access > MCP* in your Amplitude organization settings.
 2. Use the content access controls to allow or block the Amplitude MCP server.
 3. Access restrictions apply to all MCP clients across all users in your organization.
 

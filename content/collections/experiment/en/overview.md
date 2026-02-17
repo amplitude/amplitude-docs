@@ -105,3 +105,7 @@ To learn more about how to design, roll out, and learn from experiments, review 
 {{partial:admonition type='note'}}
  Consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
 {{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent) can help you identify high-impact pages, generate experiment strategies, and create draft experiments—all through a guided AI workflow.
+{{/partial:admonition}}

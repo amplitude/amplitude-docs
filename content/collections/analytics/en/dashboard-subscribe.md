@@ -33,4 +33,8 @@ Navigate to *Settings > Organization Settings >* *Content Access > Dashboard Su
 
 Admins can view and delete any dashboard subscriptions in their organization.
 
+{{partial:admonition type="note" heading=""}}
+For automated dashboard analysis with prioritized insights and recommendations, use the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent). You can schedule it to run automatically and push findings to Slack or email.
+{{/partial:admonition}}
+
 ![Screenshot](/docs/output/img/analytics/screenshot.png)

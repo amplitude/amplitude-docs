@@ -1,31 +1,42 @@
 tree:
   -
-    id: 475019ad-c194-4678-b40c-a1ee5d84ca0e
-    entry: adb85d4b-175d-4e9e-bb94-710a6e0b242c
-    title: Agents
+    id: 9fcd7172-f3b7-40b3-868a-3efa4ad2f7e8
+    title: 'Global Agent'
     children:
       -
-        id: 2f0c80b7-e756-48b2-a64e-300d6d358e99
-        entry: 6acdb952-28cc-4a62-996d-e9af7d5e387b
+        id: 9e06964a-8947-4f78-8e45-8c77817c36f5
+        entry: 72bff997-dcb0-45b1-b85c-a405581b302f
       -
-        id: 265fd0df-7569-475d-960e-57c54bc0b2b9
-        entry: 7c399dfd-07f9-4027-9ea6-f57a1ffb474a
+        id: 579a52c7-8f92-453c-8e78-aa290430ea14
+        entry: bc4661be-3813-476c-8d76-7f89fe272407
       -
-        id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
-        title: 'Agent Templates'
-        children:
-          -
-            id: 2ccee62f-6cf9-43f3-9c22-8fe2cb68ded4
-            entry: e552f2d5-5490-4c51-b779-cf7edb79ec61
-          -
-            id: 394f5fa1-d188-4eee-8c65-f42925edf9eb
-            entry: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
-          -
-            id: 1691ed50-dc88-42f9-9a83-4fe014e9d5ff
-            entry: 7d0b778f-c493-41c5-b262-b3c9a5eb8cdf
+        id: 9bb13d19-8d28-459e-a62b-5fa9c3ba9bda
+        entry: 6f1b7c3d-2fb7-4000-bae6-25365a144a79
       -
-        id: c9e925cb-124d-4a70-b482-294f5ef33b38
-        entry: 3c152fc4-e6a1-4a5f-92f6-1bc3ca7073be
+        id: b19ace8a-59c5-4dd8-b12f-1ef64fca94b6
+        entry: 8d809aa0-5a61-4b23-9c43-fd99f03a13af
+  -
+    id: 98265c04-2ca5-4605-ae7c-eb98dacbdaf3
+    title: 'Specialized Agents'
+    children:
+      -
+        id: a1f4c830-7e29-4d5a-b8c3-9f6d2e1a5b7c
+        entry: 3bbe3a80-aaff-4930-ae38-1a7219585f35
+      -
+        id: 2ccee62f-6cf9-43f3-9c22-8fe2cb68ded4
+        entry: e552f2d5-5490-4c51-b779-cf7edb79ec61
+      -
+        id: 394f5fa1-d188-4eee-8c65-f42925edf9eb
+        entry: 90eaef9b-bb06-45b3-8e19-3d1c8d2db1d0
+      -
+        id: c7e9f1a3-5b2d-4f8e-a0c6-3d5b7e9f1a2c
+        entry: f8d2a4c6-3e5b-47a9-b1d0-6c8e0f2a4b6d
+      -
+        id: 1691ed50-dc88-42f9-9a83-4fe014e9d5ff
+        entry: 7d0b778f-c493-41c5-b262-b3c9a5eb8cdf
+  -
+    id: ed1f5410-1c46-4f5e-b1d5-bfbcfa59793d
+    entry: b09c311c-387a-476e-b382-49ce0ca448d6
   -
     id: 51b63da1-3fc6-4876-a286-7a35d38af01d
     entry: 61027aa7-267f-479f-b379-912c1fea207f
@@ -40,8 +51,11 @@ tree:
         id: 5ce7f1e0-fdee-4ec7-9462-0e4e99e5a5d0
         entry: 2ab490ae-fda8-4a9a-8028-218b4b41984a
   -
-    id: 7829ca44-ab9a-44c6-9cac-a3e413b20b58
-    entry: a3ba8170-140c-4d50-bd37-264878320754
-  -  
-    id: ed1f5410-1c46-4f5e-b1d5-bfbcfa59793d
-    entry: b09c311c-387a-476e-b382-49ce0ca448d6
+    id: 0c3db489-0157-4f7f-b2d8-d71c3eead3cf
+    entry: b2d0144c-be6b-4f51-95e0-d1c69c559c21
+  -
+    id: e621d755-109c-4e6e-988f-244a938f97b0
+    entry: 66afe4e9-7abf-48c1-8e62-f7cc8691f7ab
+  -
+    id: e743a0e6-3cda-42a5-843a-1efd4d8e6acd
+    entry: 3c152fc4-e6a1-4a5f-92f6-1bc3ca7073be
