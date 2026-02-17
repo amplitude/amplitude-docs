@@ -139,7 +139,7 @@ Example 3
 
 When you select a property from the *Insert Property* dropdown, Amplitude inserts a property function referencing it directly into the editor for you. You can also manually insert this function wherever you want to reference a different Amplitude property.
 
-Use these functions only within another function.
+These functions are available inside other functions.
 
 | Function                                       | Description                                                                                                    | Example                                | Result                                                                                                                                                                |
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
