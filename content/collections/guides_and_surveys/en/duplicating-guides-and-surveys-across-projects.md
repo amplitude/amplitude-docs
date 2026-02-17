@@ -1,12 +1,11 @@
 ---
 id: 45e19199-60ed-4e35-9998-dc51019b4862
 blueprint: guides_and_survey
-title: 'Duplicating Guides and Surveys Across Projects'
+title: 'Duplicating Across Projects'
 landing: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
-updated_at: 1771352572
+updated_at: 1771358278
 ---
-
 You may have multiple projects within your organization for a variety of reasons. For example, you might want to differentiate between different environments (such as staging or production or to differentiate between different geolocations of customers). Duplicating a guide, survey, or theme across projects lets you from having to recreate the same information for each of your environments. This saves time as well as encourages consistency across your projects. 
 
 {{partial:admonition type="note" heading="Duplication in Experiments"}}
@@ -39,4 +38,4 @@ When you duplicate a guide, survey, or theme to a new project, the project treat
 
 If you duplicate a guide, servey, or theme to a project that already contains the dulicated content, Amplitude overwrites the content in the target project. 
 
-For example, you create a guide (Guide1) in Project A. You duplicate Guide1 to Project B. You then make changes to Guide1 in Project A and want to re-duplicate the guide to Project B again. Amplitude overwrites the original Guide1 in Project B with the newest version. It does not keep both versions of Guide1. 
+For example, you create a guide (Guide1) in Project A. You duplicate Guide1 to Project B. You then make changes to Guide1 in Project A and want to re-duplicate the guide to Project B again. Amplitude overwrites the original Guide1 in Project B with the newest version. It does not keep both versions of Guide1.
