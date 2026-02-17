@@ -109,9 +109,9 @@ The table highlights your selected combination and shows durations for all other
 Your confidence level is the risk you're willing to take with your results. Choose based on what's at stake.
 
 95% confidence: Use when the cost of being wrong is high.
-- Revenue-critical tests (checkout flows, pricing, subscriptions).
-- High-impact placements (homepage hero, above-the-fold content, navigation).
-- Sensitive or costly bets (brand-new features, compliance-heavy areas, high-cost builds).
+- Revenue-critical tests (checkout flows, pricing, and subscriptions).
+- High-impact placements (homepage hero, above-the-fold content, and navigation).
+- Sensitive or costly bets (brand-new features, compliance-heavy areas, and high-cost builds).
 
 90% confidence: Use when you want balance between speed and reliability (default).
 - Medium-stakes decisions where time matters, but the cost of being wrong is manageable.
