@@ -38,4 +38,6 @@ When you duplicate a guide, survey, or theme to a new project, the project treat
 
 If you duplicate a guide, servey, or theme to a project that already contains the dulicated content, Amplitude overwrites the content in the target project. 
 
-For example, you create a guide (Guide1) in Project A. You duplicate Guide1 to Project B. You then make changes to Guide1 in Project A and want to re-duplicate the guide to Project B again. Amplitude overwrites the original Guide1 in Project B with the newest version. It does not keep both versions of Guide1.
+For example, you create a guide (Guide-1) in Project A. You duplicate Guide1 to Project B. You then make changes to Guide-1 in Project A and want to re-duplicate the guide to Project B again. Amplitude overwrites the original Guide-1 in Project B with the newest version. It does not keep both versions of Guide-1.
+
+When you select the project where you want to duplicate your guide, survey, or theme, Amplitude applies a badge to denote whether the entity you're duplicating is new for the project or if it already exists on the target project. You can click into the Preview changes section for more information.
