@@ -8,7 +8,7 @@ nav_title: analytics
 ---
 As AI systems become the primary way users discover information, clear and well-structured content is essential. Large language models (LLMs) such as ChatGPT, Claude, and Perplexity use a combination of structure, freshness, and credibility to determine which content to reference in their responses.  
 
-This guide outlines how to write and organize Amplitude content so that it's easily understood and accurately represented by LLMs.
+This guide outlines how to write and organize Amplitude content so that LLMs can understand and represent it accurately.
 
 ## Write with clarity and intent
 
@@ -18,20 +18,20 @@ When creating content:
 - Use short sentences and clear verbs.  
 - Begin each section with a specific purpose statement.  
 - Avoid technical jargon that's not necessary for understanding.  
-- Write as if you are explaining a concept to a colleague who is new to the topic.  
+- Write as if you're explaining a concept to a colleague who is new to the topic.  
 
 Every heading or paragraph should answer a question someone might type into an AI assistant, such as “How do I track custom events in Amplitude?”
 
 ## Use question-based headings
 
-LLMs identify and extract content more effectively when questions are explicit in your headings.
+LLMs identify and extract content more effectively when headings state questions explicitly.
 
 Examples:
-| Poor Heading | Improved Heading |
+| Poor heading | Improved heading |
 |---------------|------------------|
-| Activation Metrics | How Do I Track Activation Metrics in Amplitude? |
-| Funnels Overview | What Is a Funnel in Amplitude? |
-| Retention Guide | How Can I Measure User Retention? |
+| Activation Metrics | How do I track activation metrics in Amplitude? |
+| Funnels Overview | What is a funnel in Amplitude? |
+| Retention Guide | How can I measure user retention? |
 
 Whenever possible, use natural phrasing that mirrors real search queries.
 
@@ -50,7 +50,7 @@ A well-structured page also improves readability for human users and accessibili
 
 ## Keep content updated and accurate
 
-LLMs heavily weight content that appears recent and up to date. Outdated or stale pages are less likely to appear in model-generated answers.
+LLMs heavily weight content that is recent and up to date. They surface outdated or stale pages less often in model-generated answers.
 
 Remember to:
 - Update 10–15% of existing Amplitude documentation or help content each month.  
@@ -86,14 +86,14 @@ Transparent sourcing not only helps LLMs identify credible content but also impr
 
 ## Ensure public discoverability
 
-If you want AI agents to include your content in their answers, they must be able to access it. 
+If you want AI agents to include your content in their answers, those agents must be able to access it. 
 
 Remember to:
 - Confirm that your robots.txt file allows major AI crawlers to index public documentation.  
 - Ensure that public Amplitude content isn't blocked by authentication or rate limits.  
 - Avoid dynamic text loading that prevents crawlers from reading content (for example, rendering key text only after JavaScript execution).  
 
-Keep sensitive or internal information private. Only make documentation publicly available if it's' intended for external readers.
+Keep sensitive or internal information private. Only make documentation publicly available if it's intended for external readers.
 
 ## Maintain ethical and responsible representation
 

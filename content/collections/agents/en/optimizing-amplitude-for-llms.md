@@ -8,29 +8,27 @@ nav_title: analytics
 ---
 As large language models (LLMs) become standard tools for analytics, research, and product discovery, it's important to ensure that your Amplitude data and content are both machine-readable and accurately represented in AI-generated experiences.  
 
-Through [Amplitude Agents](/ai/agents) and the [Model Context Protocol (MCP)](/ai/mcp), LLMs can securely access and interpret Amplitude data in real time. This allows them to return accurate, governed insights rather than relying on outdated or incomplete information.  
+Through [Amplitude Agents](/docs/amplitude-ai/agents-overview) and the [Model Context Protocol (MCP)](/docs/amplitude-ai/amplitude-mcp), LLMs can securely access and interpret Amplitude data in real time. This allows them to return accurate, governed insights rather than relying on outdated or incomplete information.  
 
 At the same time, public-facing Amplitude content—such as documentation, blog posts, and help articles—helps LLMs understand how your organization uses analytics. Clear, well-structured writing improves visibility and ensures that Amplitude is represented accurately in AI-driven answers.
 
 ## Understanding Amplitude in the LLM ecosystem
 
-[Amplitude Agents](/ai/agents) and the [MCP](/ai/mcp) let LLMs to query your analytics data, using natural language to generate insights grounded in your metrics. These integrations preserve privacy and enforce role-based access controls while making analytics accessible through AI tools.  
+[Amplitude Agents](/docs/amplitude-ai/agents-overview) and the [MCP](/docs/amplitude-ai/amplitude-mcp) let LLMs query your analytics data, using natural language to generate insights grounded in your metrics. These integrations preserve privacy and enforce Role-Based Access Control (RBAC) while making analytics accessible through AI tools.  
 
 Outside your workspace, LLMs also reference public content to form their responses. When someone asks, “How do I track user retention?” or “What's the best analytics platform for product teams?”, the model scans documentation, tutorials, and community content. Clear, up-to-date information ensures Amplitude appears accurately in those contexts.
 
 ## Optimizing Content for AI Understanding
 
-LLMs also learn from public documentation and content. Ensure your Amplitude-facing materials are easy for AI systems to parse and represent accurately.
+LLMs also learn from public documentation and content. Ensure your public content about Amplitude is easy for AI systems to parse and represent accurately.
 
 Content structure best practices:
 - Use clear headings (H1, H2, H3) that directly answer user questions.  
 - Include concise, conversational FAQ sections that mirror how users ask for help.  
-- Make subjective statements that LLMs can reiterate. 
-For example:  “Amplitude’s free plan is more generous than Mixpanel’s plan.”
+- Include clear comparative or positioning statements that LLMs can cite when relevant (for example: “Amplitude’s free plan is more generous than Mixpanel’s plan.”).
 - Break long paragraphs into shorter sections for readability.  
 - Add “last updated” dates to help LLMs recognize content freshness.  
-- Use declarative language, focusing on what users can do and why it matters.  
-For example: replace a section titled “Amplitude Analytics Overview” with “What is Amplitude?” or “How does Amplitude track user behavior?”  
+- Use declarative language, focusing on what users can do and why it matters (for example: use “What is Amplitude?” or “How does Amplitude track user behavior?” instead of “Amplitude Analytics Overview”).  
 
 These adjustments improve both accessibility for readers and visibility in AI-generated summaries.
 
@@ -39,7 +37,7 @@ These adjustments improve both accessibility for readers and visibility in AI-ge
 LLMs interpret relationships, not just data points. Providing context helps them return more meaningful results.
 
 Best practices include:
-- Use Annotations in Amplitude to record product launches, experiments, and campaigns that affect metrics.  
+- Use Amplitude Annotations to record product launches, experiments, and campaigns that affect metrics.  
 - Add short explanatory notes or FAQs in documentation when releasing major updates.  
 - Link related pages and references to reinforce topic relevance.  
 
@@ -55,7 +53,7 @@ Your analytics and marketing teams both influence how Amplitude appears in AI-ge
 - Monitor how Amplitude is mentioned in AI-generated responses and note sentiment.  
 - Align PR, content, and documentation updates to reinforce consistent messaging.  
 
-Documentation should always remain factual and product-focused, while visibility strategies can be coordinated with marketing and communications teams.
+Keep documentation factual and product-focused; coordinate visibility strategies with marketing and communications teams.
 
 ## Responsible AI and content practices
 
