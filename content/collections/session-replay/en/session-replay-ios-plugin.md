@@ -17,6 +17,10 @@ If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) de
 
 If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone-sdk).
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) to access Session Replay along with other Amplitude products (Analytics, Experiment). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:partials/session-replay/sr-ios-performance}}
 
 Session Replay captures changes to an app's view tree, this means the main view and all it's child views recursively. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original view tree in sequential order, to construct the replay. Session replays have no maximum length.
