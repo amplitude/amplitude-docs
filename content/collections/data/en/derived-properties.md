@@ -183,14 +183,25 @@ Perform operations on arrays of data to help perform cart analysis.
 
 | Operator           | Description                                                                                                                                                                                                               |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PARALLEL_SUM`     | Sums the values of the component properties.                                                                                                                                                                              |
-| `PARALLEL_PRODUCT` | Multiplies the values of the component properties. Use this operator to calculate revenue per item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
-| `PARALLEL_MAX`     | Returns the maximum value from the component properties.                                                                                                                                                                                        |
-| `PARALLEL_MIN`     | Returns the minimum value from the component properties.                                                                                                                                                                                        |
+| `PARALLEL_SUM`     | Sums the values of the component properties element-wise.                                                                                                                                                                 |
+| `PARALLEL_PRODUCT` | Multiplies the values of the component properties element-wise. Use this operator to calculate revenue per item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
+| `PARALLEL_MAX`     | Returns the maximum value from the component properties element-wise.                                                                                                                                                     |
+| `PARALLEL_MIN`     | Returns the minimum value from the component properties element-wise.                                                                                                                                                     |
+| `SUM_ARRAY`        | Sums all numeric elements in a single array property. Use this operator to calculate total cart value for filtering or grouping. For example, `SUM_ARRAY([1, 2, 4])` returns `7`.                                         |
 
-Parallel operators require at least one property to be a child cart property, and both properties be under the same parent property.
+Parallel operators require at least one property to be a child cart property, and both properties must be under the same parent property.
 
-For example, `products.price` and `products.quantity` are compatible. `products.price` and `shoppinglist.quantity` aren't compatible due to the different parent properties.
+For example, `products.price` and `products.quantity` are compatible. `products.price` and `shoppinglist.quantity` aren't compatible because they have different parent properties.
+
+When you use a parallel operator with two arrays, it performs element-wise operations. For example, `PARALLEL_SUM([1, 3, 5], [2, 4, 6])` returns `[3, 7, 11]`.
+
+When one input is an array and the other is a scalar (single number), the scalar broadcasts to match the array's length. For example, `PARALLEL_SUM([1, 3, 5], 1)` returns `[2, 4, 6]`, and `PARALLEL_PRODUCT(2, [4, 5, 6])` returns `[8, 10, 12]`.
+
+The derived property that a parallel operator creates becomes a child property of the parent cart property used in the formula. For example, creating a `revenue` derived property with `PARALLEL_PRODUCT(PROPERTY('products.price', 'event'), PROPERTY('products.quantity', 'event'))` makes `revenue` a child property of `products`.
+
+{{partial:admonition type="note" heading=""}}
+To use a derived property created with a parallel operator in a chart, first select the parent cart property (marked with `{:}`). The derived property then appears in the child property selection list.
+{{/partial:admonition}}
 
 #### Parallel operator example
 
@@ -225,6 +236,14 @@ PARALLEL_PRODUCT(
 ```
 
 If you add this property to a chart, group by `Brand` to view revenue by brand.
+
+You can also use `SUM_ARRAY` on the `Revenue` derived property to calculate total cart value:
+
+```
+SUM_ARRAY(PROPERTY('Revenue', 'derived'))
+```
+
+This returns the sum of all revenue values across items in the cart—useful for filtering or grouping by total cart value.
 
 ## Common derived properties formulas
 
