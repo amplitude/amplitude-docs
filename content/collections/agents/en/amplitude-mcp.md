@@ -453,12 +453,12 @@ The [Amplitude MCP Marketplace](https://github.com/amplitude/mcp-marketplace/) i
 /plugin marketplace add amplitude/mcp-marketplace
 
 # Install the analysis plugin
-/plugin install amplitude-analysis@amplitude
+/plugin install amplitude@amplitude
 ```
 
 ### Available skills
 
-The `amplitude-analysis` plugin includes the following skills:
+The `amplitude` plugin includes the following skills:
 
 | Skill | Description |
 | ----- | ----------- |
