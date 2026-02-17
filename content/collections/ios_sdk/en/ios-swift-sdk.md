@@ -21,8 +21,8 @@ platform: iOS
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 
-{{partial:admonition type="info" heading="A simpler way to use multiple Amplitude products"}}
-The new [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) combines Analytics, Experiment, and Session Replay into a single, easy-to-use package.
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
 {{/partial:admonition}}
 
 ## Install the SDK
