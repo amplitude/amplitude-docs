@@ -173,6 +173,8 @@ Once you've made your selection, the list of available replays is limited to eit
 
 You can construct a direct URL to link to a specific session replay. This is useful for sharing replays programmatically or embedding links in external tools.
 
+Using the following URL structure:
+
 ```
 https://app.[eu.]amplitude.com/analytics/<orgUrl>/session-replay/project/<projectId>/search/replay?sessionReplayId=<replayId>
 ```
