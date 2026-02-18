@@ -53,9 +53,9 @@ The right way to initialize the Experiment SDK depends on whether you use an Amp
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
-1. [Initialize the experiment client](#initialize)
-2. [Fetch variants](#fetch)
-3. [Access a flag's variant](#variant)
+1. [Initialize the experiment client](#initialize).
+2. [Fetch variants](#fetch).
+3. [Access a flag's variant](#variant).
 
 ```dart
 import 'package:amplitude_flutter/amplitude.dart';
