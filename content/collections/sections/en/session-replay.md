@@ -224,6 +224,29 @@ Keep in mind that if you apply a filter to exclude replays with a specific prope
 
 The list of results shows a maximum of 100 replays. 
 
+## Link directly to a replay
+
+You can construct a direct URL to link to a specific session replay. This is useful for sharing replays programmatically or embedding links in external tools.
+
+```
+https://app.[eu.]amplitude.com/analytics/<orgUrl>/session-replay/project/<projectId>/search/replay?sessionReplayId=<replayId>
+```
+
+Replace the following placeholders:
+
+| Placeholder | Description | How to find it |
+|---|---|---|
+| `eu.` | Include this subdomain only for EU-based Amplitude accounts. Omit it otherwise. | Check the URL when logged in to Amplitude. EU accounts use `app.eu.amplitude.com`. |
+| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in—for example, `https://app.amplitude.com/analytics/myorg/...`. |
+| `<projectId>` | The numeric ID of the project that captured the replay. | Navigate to *Settings > Projects*, select the project, and copy the ID from the URL or project details page. |
+| `<replayId>` | The session replay ID. | Available as the `[Amplitude] Session Replay ID` event property on `[Amplitude] Replay Captured` events. |
+
+For example:
+
+```
+https://app.amplitude.com/analytics/myorg/session-replay/project/123456/search/replay?sessionReplayId=abc123def456
+```
+
 ## How session replay querying works
 
 When you search for replays by event in Amplitude, Amplitude finds replays that spans those events. This means Amplitude looks for replays that include the time period when your events occurred.
