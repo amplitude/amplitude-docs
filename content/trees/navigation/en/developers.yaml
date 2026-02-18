@@ -59,6 +59,10 @@ tree:
         entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
         title: 'React Native'
       -
+        id: 7a2e4c91-d5b3-4f8a-b6e1-9c3d8f5a2b74
+        entry: bb58c08d-f8a5-476b-89d6-b995ab8a3c94
+        title: Flutter
+      -
         id: 13c912ae-eea3-4f4e-8a4d-d7b68f7552d5
         entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
         title: Node.js

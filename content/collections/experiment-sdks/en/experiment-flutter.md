@@ -1,20 +1,21 @@
 ---
 id: bb58c08d-f8a5-476b-89d6-b995ab8a3c94
 blueprint: experiment-sdk
-title: 'Experiment Flutter SDK'
+title: "Experiment Flutter SDK"
 sdk_status: current
 article_type: core
 supported_languages:
   - dart
 landing: false
-github_link: 'https://github.com/amplitude/experiment-flutter-client'
-releases_url: 'https://github.com/amplitude/experiment-flutter-client/releases'
+github_link: "https://github.com/amplitude/experiment-flutter-client"
+releases_url: "https://github.com/amplitude/experiment-flutter-client/releases"
 package_name: amplitude_experiment
-bundle_url: 'https://pub.dev/packages/amplitude_experiment'
-shields_io_badge: 'https://img.shields.io/pub/v/amplitude_experiment'
+bundle_url: "https://pub.dev/packages/amplitude_experiment"
+shields_io_badge: "https://img.shields.io/pub/v/amplitude_experiment"
 exclude_from_sitemap: false
 logo: icons/flutter.svg
 ---
+
 Official documentation for Amplitude Experiment's Client-side Flutter SDK.
 
 ## Install
@@ -53,6 +54,7 @@ The right way to initialize the Experiment SDK depends on whether you use an Amp
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
+
 1. [Initialize the experiment client](#initialize).
 2. [Fetch variants](#fetch).
 3. [Access a flag's variant](#variant).
@@ -86,6 +88,7 @@ if (variant.value == 'on') {
 
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
+
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants for a user](#fetch)
 3. [Access a flag's variant](#variant)
@@ -129,26 +132,31 @@ The SDK client should be initialized in your application on startup. The [deploy
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
+
 ```dart
 static Future<ExperimentClient> initializeWithAmplitude(String apiKey, ExperimentConfig config)
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
+
 ```dart
 static Future<ExperimentClient> initialize(String apiKey, ExperimentConfig config)
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
-| `config` | required | The client [configuration](#configuration) used to customize SDK client behavior. |
+| Parameter | Requirement | Description                                                                                                                                                        |
+| --------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `apiKey`  | required    | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `config`  | required    | The client [configuration](#configuration) used to customize SDK client behavior.                                                                                  |
 
 The initializer returns a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` [configuration](#configuration).
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
+
 ```dart
 import 'package:amplitude_flutter/amplitude.dart';
 import 'package:amplitude_flutter/configuration.dart';
@@ -164,10 +172,11 @@ final experiment = await Experiment.initializeWithAmplitude(
 ```
 
 {{partial:admonition type="note" heading="Instance name"}}
-If you're using a custom instance name for analytics, you need to set the same value in the `instanceName` [configuration option](#configuration) in the experiment SDK, or vice versa. Both SDKs default to `$default_instance`.
+If you're using a custom instance name for analytics, both the Amplitude Analytics SDK and Experiment SDK must be initialized with the same `instanceName`. This enables them to automatically connect when initializing the client with `initializeWithAmplitude()`. Review more information about the `instanceName` field in the [Analytics SDK docs](https://amplitude.com/docs/sdks/analytics/flutter/flutter-sdk-4#configure-the-sdk).
 {{/partial:admonition}}
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
+
 ```dart
 import 'package:amplitude_experiment/amplitude_experiment.dart';
 
@@ -178,33 +187,33 @@ final experiment = await Experiment.initialize(
   ),
 );
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
-
 
 ### Configuration
 
 SDK client configuration occurs during initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value |
-| --- | --- | --- |
-| `logLevel` | The minimum log level to output. Options: `LogLevel.none`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.info`, `LogLevel.debug`. | `LogLevel.warn` |
-| `fallbackVariant` | The default variant to fall back to if a variant for the provided key doesn't exist. | `null` |
-| `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
-| `source` | The primary source of variants. Set the value to `Source.initialVariants` and configure `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.localStorage` |
-| `serverZone` | Select the Amplitude data center to get flags and variants from, `us` or `eu`. | `ServerZone.us` |
-| `serverUrl` | The host to fetch remote evaluation variants from. For hitting the EU data center, use `serverZone`. | `https://api.lab.amplitude.com` |
-| `flagsServerUrl` | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`. | `https://flag.lab.amplitude.com` |
-| `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000` |
-| `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true` |
-| `automaticExposureTracking` | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `trackingProvider`. If no tracking provider is set, this configuration option does nothing. | `true` |
-| `fetchOnStart` | If true, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
-| `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `false` |
-| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use `initializeWithAmplitude`. If `true`, any change to the user ID, device ID, or user properties from analytics triggers the experiment SDK to fetch variants and update its cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. See [User provider](#user-provider). | `null` |
-| `trackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. See [Exposure tracking provider](#exposure-tracking-provider). | `null` |
-| `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `$default_instance` |
-| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `null` |
+| <div class="big-column">Name</div>        | Description                                                                                                                                                                                               | Default Value                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| `logLevel`                                | The minimum log level to output. Options: `LogLevel.none`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.info`, `LogLevel.debug`.                                                                          | `LogLevel.warn`                  |
+| `fallbackVariant`                         | The default variant to fall back to if a variant for the provided key doesn't exist.                                                                                                                      | `null`                           |
+| `initialVariants`                         | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR).                                       | `{}`                             |
+| `source`                                  | The primary source of variants. Set the value to `Source.initialVariants` and configure `initialVariants` to bootstrap the SDK for SSR or testing purposes.                                               | `Source.localStorage`            |
+| `serverZone`                              | Select the Amplitude data center to get flags and variants from, `us` or `eu`.                                                                                                                            | `ServerZone.us`                  |
+| `serverUrl`                               | The host to fetch remote evaluation variants from. For hitting the EU data center, use `serverZone`.                                                                                                      | `https://api.lab.amplitude.com`  |
+| `flagsServerUrl`                          | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`.                                                                                                          | `https://flag.lab.amplitude.com` |
+| `fetchTimeoutMillis`                      | The timeout for fetching variants in milliseconds.                                                                                                                                                        | `10000`                          |
+| `retryFetchOnFailure`                     | Whether to retry variant fetches in the background if the request doesn't succeed.                                                                                                                        | `true`                           |
+| `automaticExposureTracking`               | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `trackingProvider`. If no tracking provider is set, this configuration option does nothing.                      | `true`                           |
+| `fetchOnStart`                            | If true, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start.                                                                                            | `true`                           |
+| `pollOnStart`                             | Poll for local evaluation flag configuration updates once per minute on [start](#start).                                                                                                                  | `false`                          |
+| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use `initializeWithAmplitude`. If `true`, any change to the user ID, device ID, or user properties from analytics triggers the experiment SDK to fetch variants and update its cache. | `false`                          |
+| `userProvider`                            | An interface used to provide the user object to `fetch()` when called. See [User provider](#user-provider).                                                                                               | `null`                           |
+| `trackingProvider`                        | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. See [Exposure tracking provider](#exposure-tracking-provider).            | `null`                           |
+| `instanceName`                            | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.**                                                                                                          | `$default_instance`              |
+| `initialFlags`                            | A JSON string representing an initial set of flag configurations to use for local evaluation.                                                                                                             | `null`                           |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization to `ServerZone.eu`.
@@ -242,10 +251,10 @@ Fetches variants for a [user](/docs/feature-experiment/data-model#users) and sto
 Future<void> fetch([ExperimentUser? user, FetchOptions? options])
 ```
 
-| Parameter  | Requirement | Description |
-| --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
-| `options` | optional | Fetch options such as a list of specific flag keys to fetch. |
+| Parameter | Requirement | Description                                                                                                                                                                                                                                                                                                                            |
+| --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user`    | optional    | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `options` | optional    | Fetch options such as a list of specific flag keys to fetch.                                                                                                                                                                                                                                                                           |
 
 Amplitude Experiment recommends calling `fetch()` during application start up so that the user gets the most up-to-date variants for the application session. Furthermore, you should wait for the fetch request to return a result before rendering the user experience to avoid the interface "flickering".
 
@@ -287,6 +296,7 @@ await experiment.fetch(
   ),
 );
 ```
+
 {{/partial:collapse}}
 
 ## Start
@@ -301,24 +311,27 @@ Start the Experiment SDK to get flag configurations from the server and fetch re
 Future<void> start(ExperimentUser? user)
 ```
 
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information merges with user information from any [integrations](#integrations) through the [user provider](#user-provider), and prefers properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
+| Parameter | Requirement | Description                                                                                                                                                                                                                                                                                                                                                                        |
+| --------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user`    | optional    | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information merges with user information from any [integrations](#integrations) through the [user provider](#user-provider), and prefers properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
 
 Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned future completes after loading local evaluation flag configurations and fetching remote evaluation variants.
 
 Set `fetchOnStart` in the SDK configuration to control the behavior of `start()` to improve the performance of your application.
 
-* If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
-* If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` and await the future separately.
+- If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
+- If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` and await the future separately.
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
+
 ```dart
 await experiment.start(null);
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
+
 ```dart
 final user = ExperimentUser(
   userId: 'user@company.com',
@@ -327,6 +340,7 @@ final user = ExperimentUser(
 );
 await experiment.start(user);
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -342,10 +356,10 @@ When an [integration](#integrations) is used or a custom [exposure tracking prov
 Future<Variant> variant(String flagKey, [Variant? fallbackVariant])
 ```
 
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `flagKey` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) to access the variant for. |
-| `fallbackVariant` | optional | The value to return if no variant was found for the given `flagKey`. |
+| Parameter         | Requirement | Description                                                                                                                                 |
+| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `flagKey`         | required    | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) to access the variant for. |
+| `fallbackVariant` | optional    | The value to return if no variant was found for the given `flagKey`.                                                                        |
 
 When determining which variant a user has been bucketed into, compare the variant `value` to a well-known string.
 
@@ -367,6 +381,7 @@ if (variant.value == 'on') {
   final payload = variant.payload;
 }
 ```
+
 {{/partial:admonition}}
 
 A `null` variant `value` means that the user hasn't been bucketed into a variant. You may use the built in **fallback** parameter to provide a variant to return if the store doesn't contain a variant for the given flag key.
@@ -413,9 +428,9 @@ Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event
 Future<void> exposure(String flagKey)
 ```
 
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `flagKey` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for. |
+| Parameter | Requirement | Description                                                                                                                                                                                                                        |
+| --------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `flagKey` | required    | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for. |
 
 ```dart
 final variant = await experiment.variant('FLAG_KEY');
