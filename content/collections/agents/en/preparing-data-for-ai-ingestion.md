@@ -14,17 +14,17 @@ Preparing your data for AI isn't a one-time task. As your product evolves, so do
 
 When you define events clearly and maintain them consistently:
 
-- AI-powered answers match how your team measures performance, not how a generic model interprets raw event names.
+- AI agents can clearly analyze and provide insight that's relevant to your business needs, not how a generic model interprets raw event names.
 - Teams spend less time correcting or rebuilding AI-generated analyses.
 - Questions move from ask to insight to action faster, because the first answer is trustworthy.
 
 Align your data to the following best practices for data preparation:
 
-* Make event and property names understandable
-* Clean up ambiguity in your existing data
-* Remove or hide unwanted data
-* Provide business context for your AI
-* Establish conventions to improve data over time
+* [Make event and property names understandable](#make-event-and-property-names-understandable).
+* [Clean up ambiguity in your existing data](#clean-up-ambiguity-in-your-existing-data).
+* [Remove or hide unwanted data](#remove-or-hide-unwanted-data).
+* [Provide business context for your AI](#provide-business-context-for-ai).
+* [Establish conventions to improve data over time](#establish-conventions-to-improve-data-over-time).
 
 Clean data doesn't improve reporting alone. It makes AI a tool your team relies on and strengthens your entire Amplitude experience in the process.
 
@@ -36,44 +36,45 @@ For example, an analyst at your organization asks "How often do customers browse
 
 If your data contains missing information such as:
 
-| **Field** | **Value** |
+| Field | Value |
 | --- | --- |
 | Event name (ingested) | `catSelectClick` |
 | Display name | _(none)_ |
 | Description | _(none)_ |
 
-AI may not connect `catSelectClick` to "browsing categories." Without information within the Display name and Description fields, AI can't guess the context for how your team uses `catSelectClick`. It could return a result using the wrong event or report that it can't find a match. That erodes trust in the AI and your analyst ends up doing the work manually.
+AI may not connect `catSelectClick` to the concept of "browsing categories." Without information within the Display name and Description fields, AI can't guess the context for how your team uses `catSelectClick`. It could return a result using the wrong event or report that it can't find a match. That erodes trust in the AI and your analyst ends up doing the work manually.
 
 However, if your data has complete documentation such as:
 
-| **Field** | **Value** |
+| Field | Value |
 | --- | --- |
 | Event name (ingested) | `catSelectClick` |
 | Display name | Category Selected |
 | Description | Triggered when a customer selects a product category from the navigation menu in the web store. Example categories include Electronics, Apparel, and Home. |
 
-AI can match the question to the right event, return an accurate chart, and suggest follow-up analyses, such as breaking down by category. The analyst spends their time using the insight rather than trying to generate them.
+AI can match the question to the right event, return an accurate chart, and suggest follow-up analyses, such as breaking down by category. The analyst spends their time using insights rather than trying to generate them.
 
 ### How to align your data
 
 Start with your most-queried events and properties. [Data Assistant](/docs/amplitude-ai/agents-overview) helps you identify which ones matter the most. Then, update that subset of your events and properties:
 
-- **Add display names in natural language**: Instead of abbreviations, rename your Display names to something easy for AI and humans to understand. For example, `catSelectClick` becomes "Category Selected" and `pgVw` becomes "Page Viewed."
+- **Add display names in natural language**: Instead of abbreviations, rename your Display names to something easy for AI and humans to understand. For example, `catSelectClick` becomes `Category Selected` and `pgVw` becomes `Page Viewed`.
 - **Write descriptions that explain intent, not implementation**: Update your Descriptions to give context for why the event matters. The description "Fired on click handler for nav component" describes when the event occurs, but doesn't give further context. "Triggered when a customer selects a product category from the navigation menu" gives AI the context it needs for your environment.
-- **Map coded values to human-readable labels**: If a property value is `sku_29881`, AI can't interpret it because that value doesn't carry inherent information. That SKU could relate to anything. Use lookup tables to map these types of values to the actual description of a product or item. For example, `sku_29881` could map to "Women's BrandX Running Shoe." 
+- **Map coded values to human-readable labels**: If a property value is `sku_29881`, AI can't interpret it because that value doesn't carry inherent information. That SKU could relate to anything. Use lookup tables to map these types of values to the actual description of a product or item. For example, `sku_29881` could map to `Women's BrandX Running Shoe`. 
 
 This matters especially for properties used in group-bys or filters.
-- **Categorize events**: Organize your taxonomy and help AI narrow its search when answering questions. Go to [Plan your taxonomy](/docs/data/data-planning-playbook) to design your categorization architecture. Having a defined taxonomy also greatly helps your human colleagues. 
+
+**Categorize events**: Organize your taxonomy and help AI narrow its search when answering questions. Go to [Plan your taxonomy](/docs/data/data-planning-playbook) to design your categorization architecture. Having a defined taxonomy also greatly helps your human colleagues. 
 
 AI uses display names and descriptions to match natural-language questions to the correct events. Without them, it can either select the wrong event or return a No Result message. With them, it resolves ambiguity correctly and your team can trust the output. These same improvements make dashboards more readable and reduce back-and-forth about what an event means.
 
 ## Clean up ambiguity in your existing data
 
-Ambiguity in your data occurs when multiple events capture the same action. Or, it occurs when differences between similar events aren't obvious. That causes confusion when your dashboards and charts report similar or identical information in different way. It affects AI when it selects events to analyze because the AI might not understand how ambiguous data overlaps.
+Ambiguity in your data occurs when multiple events capture the same action. Or, it occurs when differences between similar events aren't obvious. That causes confusion when your dashboards and charts report similar or identical information in different ways. It affects AI when it selects events to analyze because the AI might not understand how ambiguous data overlaps.
 
-For example, you have two events: "played song" and "song played". They both capture when a user streams a song from a playlist. To clean up ambiguity, align the events to the name "played song" to remove duplicate, differently named events.
+For example, you have two events: `played song` and `song played`. They both capture when a user streams a song from a playlist. To clean up ambiguity, align the events to the name `played song` to remove duplicate, differently named events.
 
-This doesn't mean you must rename events purely for the sake of consistency. For example, if an event called "played song" has existed for years and is widely used, changing it to "Played Song" to align with title-case formatting could cause confusion if analysts aren't expecting the change. Clarity of meaning matters more than formatting. Plan to align formatting and naming conventions over time. That ensures consistency during later implementations. 
+This doesn't mean you must rename events purely for the sake of consistency. For example, if an event called `played song` has existed for years and is widely used, changing it to `Played Song` to align with title-case formatting could cause confusion if analysts aren't expecting the change. Clarity of meaning matters more than formatting. Plan to align formatting and naming conventions over time. That ensures consistency during later implementations. 
 
 ### How to align your data
 
@@ -95,7 +96,7 @@ If you wouldn't trust an event enough to build a dashboard around it, Amplitude 
 - **Hide or delete deprecated, stale, or test-related events**: If someone created an event for a QA cycle or it's no longer instrumented, [remove it from the visible taxonomy](/docs/data/remove-invalid-data).
 - **For Enterprise customers:** [Automated Tasks](/docs/data/automated-tasks-in-data-assistant) removes stale events and identifies test data automatically. This shifts manual audits to a recurring, automated cleanup effort.
 
-AI treats every visible event as a potential input when building an analysis. By removing unwanted or irrelevant data, you help it focus only on the events that matter. Fewer, higher-quality, signals mean higher-confidence results. For your team, a smaller and more targeted taxonomy also leads to faster event discovery, cleaner dashboards, and less confusion when exploring data.
+AI treats every visible event as a potential input when building an analysis. By removing unwanted or irrelevant data, you help it focus only on the events that matter. Fewer, higher-quality signals mean higher-confidence results. For your team, a smaller and more targeted taxonomy also leads to faster event discovery, cleaner dashboards, and less confusion when exploring data.
 
 ## Provide business context for AI
 
