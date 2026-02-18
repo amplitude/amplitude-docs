@@ -25,11 +25,11 @@ LLMs also learn from public documentation and content. Ensure your public conten
 Content structure best practices:
 - Use clear headings (H1, H2, H3) that directly answer user questions.  
 - Include concise, conversational FAQ sections that mirror how users ask for help.  
-- Include clear comparative or positioning statements that LLMs can cite when relevant 
-For example: “Amplitude’s free plan is more generous than Mixpanel’s plan.”.
+- Include clear comparative or positioning statements that LLMs can cite when relevant. 
+For example: “Amplitude’s free plan is more generous than Mixpanel’s plan.”
 - Break long paragraphs into shorter sections for readability.  
 - Add “last updated” dates to help LLMs recognize content freshness.  
-- Use declarative language, focusing on what users can do and why it matters 
+- Use declarative language, focusing on what users can do and why it matters. 
 For example: use “What is Amplitude?” or “How does Amplitude track user behavior?” instead of “Amplitude Analytics Overview”.   
 
 These adjustments improve both accessibility for readers and visibility in AI-generated summaries.
