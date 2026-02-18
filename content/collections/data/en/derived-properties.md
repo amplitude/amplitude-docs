@@ -5,7 +5,7 @@ title: 'Derived properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/5874857623707-Derived-properties'
 this_article_will_help_you:
   - 'Understand how derived properties can benefit your analysis'
-  - 'Review the functions and operators that can be used when creating your derived properties'
+  - 'Review the functions and operators available when creating your derived properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -25,7 +25,7 @@ You must be in your project's `main` branch to create a derived property.
 
 To create a derived property, follow these steps:
 
-1. In Amplitude Data, navigate to *Tracking Plan—>Properties* and click the **Derived Properties** tab.
+1. In Amplitude Data, navigate to *Tracking Plan > Properties* and click the **Derived Properties** tab.
 2. Click **Add Derived Property**.
 3. Give your derived property a name.
 4. Add any relevant metadata to your property, including a description (optional, unless you want to use the Suggest feature) and the visibility of the property in charts within this project.
@@ -48,11 +48,11 @@ This formula converts a value like "https://www.google.com/search?q=amplitude" i
 
 `SPLIT(SPLIT(PROPERTY('referrer_url','event'), "/", 2), ".", 1)`
 
-Amplitude also supports math operators. Let’s say you have events that contain subtotal and tip properties, and you want to run some analyses based on the total amount. You can use this formula:
+Amplitude also supports math operators. For example, if you have events that contain subtotal and tip properties and want to run analyses based on the total amount, use this formula:
 
 `SUM(PROPERTY('subtotal','event'), PROPERTY('tip','event'))`
 
-Maybe you're also interested in knowing how many orders you would have given discounts to if the total order size was over $50. This formula tells you whether a particular order would receive a discount:
+To determine whether a particular order receives a discount when the total order size exceeds $50, use this formula:
 
 `IF(SUM(PROPERTY('subtotal','event'), PROPERTY('tip','event')) >= 50, 'true')`
 
@@ -139,7 +139,7 @@ Example 3
 
 When you select a property from the *Insert Property* dropdown, Amplitude inserts a property function referencing it directly into the editor for you. You can also manually insert this function wherever you want to reference a different Amplitude property.
 
-These functions can only be used within another function.
+These functions are available inside other functions.
 
 | Function                                       | Description                                                                                                    | Example                                | Result                                                                                                                                                                |
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -183,14 +183,25 @@ Perform operations on arrays of data to help perform cart analysis.
 
 | Operator           | Description                                                                                                                                                                                                               |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PARALLEL_SUM`     | Sums the values of the component properties.                                                                                                                                                                              |
-| `PARALLEL_PRODUCT` | Multiplies the values of the component properties. Use this operator to calculate revenue per item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
-| `PARALLEL_MAX`     | Returns the maximum value from the component properties.                                                                                                                                                                                        |
-| `PARALLEL_MIN`     | Returns the minimum value from the component properties.                                                                                                                                                                                        |
+| `PARALLEL_SUM`     | Adds corresponding values from two arrays at each position.                                                                                                                                                               |
+| `PARALLEL_PRODUCT` | Multiplies corresponding values from two arrays at each position. Use this operator to calculate revenue for each item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
+| `PARALLEL_MAX`     | Returns the larger of the corresponding values from two arrays at each position.                                                                                                                                          |
+| `PARALLEL_MIN`     | Returns the smaller of the corresponding values from two arrays at each position.                                                                                                                                         |
+| `SUM_ARRAY`        | Sums all numeric elements in a single array property. Use this operator to calculate total cart value for filtering or grouping. For example, `SUM_ARRAY([1, 2, 4])` returns `7`.                                         |
 
-Parallel operators require at least one property to be a child cart property, and both properties be under the same parent property.
+Parallel operators require at least one property to be a child cart property, and both properties must be under the same parent property.
 
-For example, `products.price` and `products.quantity` are compatible. `products.price` and `shoppinglist.quantity` aren't compatible due to the different parent properties.
+For example, `products.price` and `products.quantity` are compatible. `products.price` and `shoppinglist.quantity` aren't compatible because they have different parent properties.
+
+When you use a parallel operator with two arrays, it adds, multiplies, or compares corresponding values at each position. For example, `PARALLEL_SUM([1, 3, 5], [2, 4, 6])` returns `[3, 7, 11]`.
+
+When one input is an array and the other is a scalar (single number), the scalar broadcasts to match the array's length. For example, `PARALLEL_SUM([1, 3, 5], 1)` returns `[2, 4, 6]`, and `PARALLEL_PRODUCT(2, [4, 5, 6])` returns `[8, 10, 12]`.
+
+The derived property that a parallel operator creates becomes a child property of the parent cart property used in the formula. For example, creating a `revenue` derived property with `PARALLEL_PRODUCT(PROPERTY('products.price', 'event'), PROPERTY('products.quantity', 'event'))` makes `revenue` a child property of `products`.
+
+{{partial:admonition type="note" heading=""}}
+To use a derived property created with a parallel operator in a chart, first select the parent cart property (marked with `{:}`). The derived property then appears in the child property selection list.
+{{/partial:admonition}}
 
 #### Parallel operator example
 
@@ -225,6 +236,14 @@ PARALLEL_PRODUCT(
 ```
 
 If you add this property to a chart, group by `Brand` to view revenue by brand.
+
+You can also use `SUM_ARRAY` on the `Revenue` derived property to calculate total cart value:
+
+```
+SUM_ARRAY(PROPERTY('Revenue', 'derived'))
+```
+
+This returns the sum of all revenue values across items in the cart—useful for filtering or grouping by total cart value.
 
 ## Common derived properties formulas
 
