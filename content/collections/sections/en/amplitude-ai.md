@@ -56,11 +56,11 @@ landing_page_content:
     card_content: 'Add business, product, and taxonomy context so Amplitude Agents can deliver better insights'
     cta: 'Customize AI Context...'
     external_link: false
-    entries_field: a3ba8170-140c-4d50-bd37-264878320754
+    entries_field: 66afe4e9-7abf-48c1-8e62-f7cc8691f7ab
     type: card
     enabled: true
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
-updated_at: 1771286895
+updated_at: 1771522563
 template: landing-page-experiment
 ---
