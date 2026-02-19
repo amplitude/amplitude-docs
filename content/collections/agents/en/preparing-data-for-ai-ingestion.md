@@ -74,6 +74,12 @@ Amplitude uses display names and descriptions to match natural-language question
 
 Ambiguity in your data occurs when multiple events capture the same action. Or, it occurs when differences between similar events aren't obvious. That causes confusion when your dashboards and charts report similar or identical information in different ways. It affects AI when it selects events to analyze because the AI might not understand how ambiguous data overlaps.
 
+For example, your taxonomy has two events: `played song` and `song played`. Both events capture when a user streams a song from a playlist. Because they represent the same action, you can transform them into a single event to remove the duplication.
+
+If similarly named events capture slightly different information, for example, `played song` tracks songs played through a website while `song played` tracks songs played through an app, transform them in a slightly different manner. The optimal method is to consolidate them into a single event that contains a property that distinguishes the source. 
+
+However, if your team either doesn't have the time or capacity to make the change, Amplitude recommends adding clear descriptions to the separate events that explain the difference between the similarly named events.
+
 For example, you have two events: `played song` and `song played`. They both capture when a user streams a song from a playlist. To clean up ambiguity, transform the events to the same `played song` formatting. This removes the duplicate event because they capture the exact same information. However, if the similarly named events capture slightly different information (if `played song` captures songs played through a website while `song played` captures songs played through an app), add a description to the event so that you clearly explain how the two events are different.
 
 This doesn't mean you must rename events purely for the sake of consistency. For example, if an event called `played song` has existed for years and is widely used, changing it to `Played Song` to align with title-case formatting could cause confusion if analysts aren't expecting the change. Clarity of meaning matters more than formatting. Plan to align formatting and naming conventions over time. That ensures consistency during later implementations. 
