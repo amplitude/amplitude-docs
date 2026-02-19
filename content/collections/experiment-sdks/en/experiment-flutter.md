@@ -172,7 +172,7 @@ final experiment = await Experiment.initializeWithAmplitude(
 ```
 
 {{partial:admonition type="note" heading="Instance name"}}
-If you're using a custom instance name for analytics, both the Amplitude Analytics SDK and Experiment SDK must be initialized with the same `instanceName`. This enables them to automatically connect when initializing the client with `initializeWithAmplitude()`. Review more information about the `instanceName` field in the [Analytics SDK docs](https://amplitude.com/docs/sdks/analytics/flutter/flutter-sdk-4#configure-the-sdk).
+If you're using a custom instance name for analytics, both the Amplitude Analytics SDK and Experiment SDK must be initialized with the same `instanceName`. This enables them to automatically connect when initializing the client with `initializeWithAmplitude()`. Review more information about the `instanceName` field in the [Analytics SDK docs](/docs/sdks/analytics/flutter/flutter-sdk-4#configure-the-sdk).
 {{/partial:admonition}}
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
@@ -253,7 +253,7 @@ Future<void> fetch([ExperimentUser? user, FetchOptions? options])
 
 | Parameter | Requirement | Description                                                                                                                                                                                                                                                                                                                            |
 | --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user`    | optional    | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user`    | optional    | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional    | Fetch options such as a list of specific flag keys to fetch.                                                                                                                                                                                                                                                                           |
 
 Amplitude Experiment recommends calling `fetch()` during application start up so that the user gets the most up-to-date variants for the application session. Furthermore, you should wait for the fetch request to return a result before rendering the user experience to avoid the interface "flickering".
