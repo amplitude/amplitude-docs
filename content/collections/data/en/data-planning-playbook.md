@@ -138,7 +138,7 @@ In this example, you can understand how often a user adds to their cart after vi
 
 Refer to the steps in this playbook as you add new features or iterate on your product analytics. Amplitude Data provides ways to create and iterate on your plan directly in the product, or by importing a CSV file.
 
-To findn more specific examples, go to the following industry-specific best practices guides for sample use cases and business questions, a recommended taxonomy, and complementary dashboards you can use for your implementation, each one tailored to meet the specific needs of the following sectors:
+To find more specific examples, go to the following industry-specific best practices guides for sample use cases, business questions, taxonomy reccomendations, and complementary dashboards you can use for your implementation. Each of the following guides are tailored to meet the specific needs of the following sectors:
 
 * [E-commerce](https://analytics.amplitude.com/share/8f32b20708e743e597b75c99b7a766d5)
 * [Fintech](https://analytics.amplitude.com/share/cbb3827995aa4d03852a3cdf9a3c46b0)
