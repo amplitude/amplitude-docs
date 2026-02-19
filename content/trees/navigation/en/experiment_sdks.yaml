@@ -33,6 +33,10 @@ tree:
         id: b7d8e9f0-1a2b-3c4d-5e6f-789012345678
         entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
         title: Flutter
+        children:
+          -
+            id: 100cf779-6956-49bb-8027-a3cb5f1cac5e
+            entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
       -
         id: fcc90e0d-b00e-403d-81bc-364604618ef1
         entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
