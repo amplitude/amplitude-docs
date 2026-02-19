@@ -12,7 +12,7 @@ You may have multiple projects within your organization for a variety of reasons
 You can't duplicate a guide or survey across your projects if it's part of an experiment. If you want the same guide or survey in experiments in multiple projects, you must manually recreate it.
 {{/partial:admonition}}
 
-When you duplicate a guide, survey, or theme to a new project, the project treats the duplicated content as a completely new entity. Amplitude dosn't copy previous analytics to the new project. If you want to move a guide, survey, or theme from one project to another, copy it to the desitination project and then delete it from the originating project.
+When you duplicate a guide, survey, or theme to a new project, the project treats the duplicated content as a completely new entity. Amplitude dosn't copy previous analytics to the new project. If you want to move a guide, survey, or theme from one project to another, copy it to the desitination project and then archive it from the originating project.
 
 ##### To duplicate a guide or survey across projects
 
