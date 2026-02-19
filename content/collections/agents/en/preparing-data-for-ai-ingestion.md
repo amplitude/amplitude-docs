@@ -1,8 +1,9 @@
 ---
 id: 7c3e9a2b-4f81-4d6e-b2c8-1a5b9e7d0f3c
 blueprint: agent
-title: 'Preparing data for AI ingestion'
-updated_at: 1739782800
+title: 'Preparing Data for AI ingestion'
+updated_at: 1771537285
+updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
 ---
 AI features in Amplitude help you move faster, uncover insights, and take action. The quality of those results depends on how easily AI can consume and understand your data. You can get the best results possible by preparing your data before it reaches Amplitude's AI. The more context you give the AI, the better it performs. When your data is well-structured, AI interprets questions the way your team would, so you get from question to insight faster. For more information about Amplitude AI, go to [Agents overview](/docs/amplitude-ai/agents-overview).
 
