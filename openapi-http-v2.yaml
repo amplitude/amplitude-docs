@@ -1,0 +1,687 @@
+openapi: 3.1.0
+
+info:
+  title: Amplitude HTTP V2 API
+  version: "2"
+  summary: Send data directly from your server to the HTTP V2 endpoint.
+  description: |
+    Use the HTTP V2 API to send data directly from your server to the HTTP V2 endpoint.
+    The HTTP V2 API replaces the deprecated HTTP API.
+
+    ## Rate limiting
+
+    Amplitude rate limits individual users (by Amplitude ID) that update their user
+    properties more than 1800 times per hour. This limit applies to user property syncing
+    and not event ingestion. Amplitude continues to ingest events, but may drop user
+    property updates for that user.
+
+    ## Upload limits
+
+    **Starter plan:** Maximum 100 batches per second and 1000 events per second. Amplitude
+    recommends no more than 10 events per batch.
+
+    **Growth and Enterprise plans:** Keep request sizes under 1 MB with fewer than 2000
+    events per request. Requests that exceed these limits return a 413 error.
+
+    ## Authentication
+
+    The API key is passed as a required field in the JSON request body (`api_key`). There
+    is no HTTP header-based authentication for this endpoint.
+
+    ## Language normalization
+
+    If the `language` field contains a BCP 47 language tag (for example, `"en-US"`),
+    Amplitude normalizes it to a human-readable language name (for example, `"English"`)
+    before storing the event. Language tags are case-insensitive.
+
+    ## Event deduplication
+
+    Send an `insert_id` with each event to prevent duplicates. Amplitude ignores subsequent
+    events with the same `insert_id` and `device_id` combination within the past 7 days.
+
+    ## Device ID and User ID minimum length
+
+    Device IDs and User IDs must be strings with a minimum length of 5 characters. You can
+    override this default with the `min_id_length` option. Events with IDs that are too
+    short have the ID value removed. If an event has neither a valid `user_id` nor
+    `device_id`, Amplitude may reject it with a 400 status.
+
+    ## Time values
+
+    Send the `time` field as milliseconds since epoch (Unix timestamp). Other formats
+    result in a 400 Bad Request response.
+
+servers:
+  - url: https://api2.amplitude.com
+    description: Standard endpoint
+  - url: https://api.eu.amplitude.com
+    description: EU endpoint
+
+paths:
+  /2/httpapi:
+    post:
+      operationId: uploadEvents
+      summary: Upload events
+      description: Upload one or more events to Amplitude.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UploadRequestBody"
+            examples:
+              simple:
+                summary: Simple request
+                value:
+                  api_key: "YOUR_API_KEY"
+                  events:
+                    - user_id: "12345"
+                      event_type: "watch_tutorial"
+                      user_properties:
+                        Cohort: "Test A"
+                      country: "United States"
+                      ip: "127.0.0.1"
+                      time: 1396381378123
+              withOptions:
+                summary: Request with min_id_length option
+                value:
+                  api_key: "YOUR_API_KEY"
+                  options:
+                    min_id_length: 3
+                  events:
+                    - user_id: "12345"
+                      device_id: "123"
+                      event_type: "watch_tutorial"
+                      time: 1396381378123
+      responses:
+        "200":
+          description: Successful event upload.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+              example:
+                code: 200
+                events_ingested: 50
+                payload_size_bytes: 50
+                server_upload_time: 1396381378123
+        "400":
+          description: |
+            Invalid upload request. Possible reasons:
+            - The request body isn't valid JSON (`"Invalid JSON request body"`).
+            - The request body is missing required fields (`"Request missing required field"`).
+            - The events object has invalid fields.
+            - Some devices are silenced.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/BadRequestInvalidFields"
+                  - $ref: "#/components/schemas/BadRequestSilencedDevices"
+              examples:
+                invalidFields:
+                  summary: Missing required field
+                  value:
+                    code: 400
+                    error: "Request missing required field"
+                    missing_field: "api_key"
+                    events_with_missing_fields:
+                      event_type: [3]
+                silencedDevices:
+                  summary: Silenced devices
+                  value:
+                    code: 400
+                    eps_threshold: 100
+                    error: "Events silenced for device_id"
+                    exceeded_daily_quota_devices: {}
+                    silenced_devices:
+                      - "silenced_device_id_1"
+                      - "silenced_device_id_2"
+                    silenced_events: [5, 6]
+                    throttled_devices:
+                      throttled_device_id_1: 0
+                      throttled_device_id_2: 100
+                    throttled_events: [3, 4]
+        "403":
+          description: |
+            Forbidden. The request was blocked by Amplitude's Web Application Firewall (WAF).
+            Possible reasons: the request contains values that match security filters, or the
+            request originates from a sanctioned region.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenResponse"
+              example:
+                code: 403
+                error: "Forbidden"
+        "413":
+          description: |
+            Payload too large. The request size exceeds 1 MB. Split your events array into
+            multiple requests and retry.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PayloadTooLargeResponse"
+              example:
+                code: 413
+                error: "Payload too large"
+        "429":
+          description: |
+            Too many requests. Amplitude throttles requests for users or devices that exceed
+            30 events per second (measured as an average over a recent time window). Pause
+            sending events for the affected user or device for 30 seconds before retrying.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TooManyRequestsResponse"
+              example:
+                code: 429
+                error: "Too many requests for some devices and users"
+                eps_threshold: 30
+                throttled_devices:
+                  C8F9E604-F01A-4BD9-95C6-8E5357DF265D: 31
+                throttled_users:
+                  "datamonster@amplitude.com": 32
+                throttled_events: [3, 4, 7]
+        "500":
+          description: |
+            Server error. Amplitude encountered an error while handling the request.
+            The request may not have been accepted. If you retry, use `insert_id` to avoid
+            duplicate events.
+        "502":
+          description: Bad gateway. Retry with `insert_id` to avoid duplicate events.
+        "503":
+          description: |
+            Service unavailable due to an internal Amplitude issue. Retrying a 503 response
+            does not risk duplicating events.
+        "504":
+          description: |
+            Gateway timeout. The request may not have been accepted. Retry with `insert_id`
+            to avoid duplicate events.
+
+components:
+  schemas:
+    UploadRequestBody:
+      type: object
+      required:
+        - api_key
+        - events
+      properties:
+        api_key:
+          type: string
+          description: Amplitude project API key.
+          example: "YOUR_API_KEY"
+        events:
+          type: array
+          description: Array of events to upload.
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/Event"
+        options:
+          $ref: "#/components/schemas/UploadOptions"
+
+    UploadOptions:
+      type: object
+      description: Optional upload configuration.
+      properties:
+        min_id_length:
+          type: integer
+          description: >
+            Overrides the default minimum length of 5 for `user_id` and `device_id` fields.
+          example: 3
+
+    Event:
+      type: object
+      description: |
+        An event to track. At least one of `user_id` or `device_id` is required, along
+        with `event_type`.
+
+        **Reserved event types:** `[Amplitude] Start Session`, `[Amplitude] End Session`,
+        `[Amplitude] Revenue`, `[Amplitude] Revenue (Verified)`,
+        `[Amplitude] Revenue (Unverified)`, `[Amplitude] Merged User`.
+
+        **Predefined event types:** `$identify` (user identification),
+        `$groupidentify` (group identification).
+      properties:
+        user_id:
+          type: string
+          minLength: 5
+          description: >
+            Required if `device_id` is not provided. ID for the user. Must have a minimum
+            length of 5 characters unless overridden with `min_id_length`.
+          example: "12345"
+        device_id:
+          type: string
+          minLength: 5
+          description: >
+            Required if `user_id` is not provided. A device-specific identifier, such as
+            the Identifier for Vendor on iOS. If not sent, Amplitude sets it to a hashed
+            version of `user_id`.
+          example: "C8F9E604-F01A-4BD9-95C6-8E5357DF265D"
+        event_type:
+          type: string
+          description: >
+            Required. A unique identifier for your event. See reserved and predefined event
+            types in the schema description.
+          example: "watch_tutorial"
+        user_agent:
+          type: string
+          description: >
+            The unparsed user agent string from the user's device. Amplitude parses this
+            into user properties on the event.
+          example: "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
+        time:
+          type: integer
+          format: int64
+          description: >
+            The timestamp of the event in milliseconds since epoch. If not sent, Amplitude
+            sets it to the request upload time.
+          example: 1396381378123
+        event_properties:
+          type: object
+          additionalProperties: true
+          description: >
+            A dictionary of key-value pairs representing data to send with the event.
+            Property values can be arrays. Date values are converted to strings. Object
+            depth may not exceed 40 layers.
+          example:
+            load_time: 0.8371
+            source: "notification"
+            dates: ["monday", "tuesday"]
+        user_properties:
+          type: object
+          additionalProperties: true
+          description: >
+            A dictionary of key-value pairs representing data tied to the user. Property
+            values can be arrays. Date values are converted to strings. When `event_type`
+            is `$identify`, the user property operations `$set`, `$setOnce`, `$add`,
+            `$append`, and `$unset` are supported. Object depth may not exceed 40 layers.
+          example:
+            age: 25
+            gender: "female"
+            interests: ["chess", "football", "music"]
+        groups:
+          type: object
+          additionalProperties: true
+          description: >
+            Available to Growth or Enterprise customers with the Accounts add-on. A
+            dictionary of key-value pairs representing event-level groups. You can track
+            up to 5 unique group types and 10 total group values per event.
+          example:
+            team_id: "1"
+            company_name: ["Amplitude", "DataMonster"]
+        group_properties:
+          type: object
+          additionalProperties: true
+          description: >
+            Available to customers with the Accounts add-on. When `event_type` is
+            `$groupidentify`, a dictionary of key-value pairs representing properties tied
+            to the groups listed in `groups`. Ignored for other event types. Group property
+            operations `$set`, `$setOnce`, `$add`, `$append`, and `$unset` are supported.
+        $skip_user_properties_sync:
+          type: boolean
+          default: false
+          description: When `true`, user properties are not synced. Defaults to `false`.
+        app_version:
+          type: string
+          description: The current version of your application.
+          example: "2.1.3"
+        platform:
+          type: string
+          description: Platform of the device.
+          example: "iOS"
+        os_name:
+          type: string
+          description: The name of the mobile operating system or browser the user is using.
+          example: "Android"
+        os_version:
+          type: string
+          description: The version of the mobile operating system or browser the user is using.
+          example: "4.2.2"
+        device_brand:
+          type: string
+          description: The device brand the user is using.
+          example: "Verizon"
+        device_manufacturer:
+          type: string
+          description: The device manufacturer the user is using.
+          example: "Apple"
+        device_model:
+          type: string
+          description: The device model the user is using.
+          example: "iPhone 9,1"
+        carrier:
+          type: string
+          description: The carrier the user is using.
+          example: "Verizon"
+        country:
+          type: string
+          description: The current country of the user.
+          example: "United States"
+        region:
+          type: string
+          description: The current region of the user.
+          example: "California"
+        city:
+          type: string
+          description: The current city of the user.
+          example: "San Francisco"
+        dma:
+          type: string
+          description: The current Designated Market Area of the user.
+          example: "San Francisco-Oakland-San Jose, CA"
+        language:
+          type: string
+          description: >
+            The language set by the user. If a BCP 47 language tag is provided (for example,
+            `"en-US"`), Amplitude normalizes it to a human-readable language name (for
+            example, `"English"`) before storing the event.
+          example: "English"
+        price:
+          type: number
+          format: float
+          description: >
+            The price of the item purchased. Required for revenue data if `revenue` is not
+            sent. Use negative values for refunds.
+          example: 4.99
+        quantity:
+          type: integer
+          description: The quantity of the item purchased. Defaults to 1 if not specified.
+          default: 1
+          example: 3
+        revenue:
+          type: number
+          format: float
+          description: >
+            Revenue = price × quantity. If `price`, `quantity`, and `revenue` are all sent,
+            Amplitude uses price × quantity. Use negative values for refunds.
+          example: -1.99
+        productId:
+          type: string
+          description: >
+            An identifier for the item purchased. You must send `price` and `quantity`, or
+            `revenue`, with this field.
+          example: "Google Pay Store Product Id"
+        revenueType:
+          type: string
+          description: >
+            The type of revenue for the item purchased. You must send `price` and `quantity`,
+            or `revenue`, with this field.
+          example: "Refund"
+        currency:
+          type: string
+          pattern: "^[A-Z]{3}$"
+          description: >
+            The currency for the purchased item, specified as a 3-character uppercase ISO 4217
+            currency code.
+          example: "USD"
+        location_lat:
+          type: number
+          format: float
+          description: The current latitude of the user.
+          example: 37.77
+        location_lng:
+          type: number
+          format: float
+          description: The current longitude of the user.
+          example: -122.39
+        ip:
+          type: string
+          description: >
+            The IP address of the user. Use `"$remote"` to use the IP address from the upload
+            request. Amplitude uses this to reverse-lookup user location (city, country,
+            region, DMA).
+          example: "127.0.0.1"
+        idfa:
+          type: string
+          description: "(iOS) Identifier for Advertiser."
+          example: "AEBE52E7-03EE-455A-B3C4-E57283966239"
+        idfv:
+          type: string
+          description: "(iOS) Identifier for Vendor."
+          example: "BCCE52E7-03EE-321A-B3D4-E57123966239"
+        android_app_set_id:
+          type: string
+          description: "(Android) Identifier for vendor+."
+          example: "087e666f-72f3-4d6c-8cce-e8bedce9304e"
+        adid:
+          type: string
+          description: "(Android) Google Play Services advertising ID."
+          example: "AEBE52E7-03EE-455A-B3C4-E57283966239"
+        android_id:
+          type: string
+          description: "(Android) Android ID (not the advertising ID)."
+          example: "BCCE52E7-03EE-321A-B3D4-E57123966239"
+        event_id:
+          type: integer
+          description: >
+            An incrementing counter to distinguish events with the same `user_id` and
+            timestamp. Amplitude recommends sending this value, increasing over time,
+            especially if events may occur simultaneously.
+          example: 23
+        session_id:
+          type: integer
+          format: int64
+          description: >
+            The start time of the session in milliseconds since epoch. Required to associate
+            events with a particular session. A value of `-1` is treated the same as no
+            `session_id`.
+          example: 1396381378123
+        insert_id:
+          type: string
+          description: >
+            A unique identifier for the event. Amplitude deduplicates subsequent events with
+            the same `device_id` and `insert_id` within the past 7 days. Amplitude recommends
+            generating a UUID or combining `device_id`, `user_id`, `event_type`, `event_id`,
+            and `time`.
+          example: "5f0adeff-6668-4427-8d02-57d803a2b841"
+        plan:
+          $ref: "#/components/schemas/Plan"
+      anyOf:
+        - required: [user_id, event_type]
+        - required: [device_id, event_type]
+
+    Plan:
+      type: object
+      description: Tracking plan properties. Amplitude supports only `branch`, `source`, and `version`.
+      properties:
+        branch:
+          type: string
+          description: The tracking plan branch name.
+          example: "main"
+        source:
+          type: string
+          description: The tracking plan source.
+          example: "web"
+        version:
+          type: string
+          description: The tracking plan version.
+          example: "1"
+
+    SuccessResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (200).
+          example: 200
+        events_ingested:
+          type: integer
+          description: The number of events ingested from the upload request.
+          example: 50
+        payload_size_bytes:
+          type: integer
+          description: The size of the upload request payload in bytes.
+          example: 50
+        server_upload_time:
+          type: integer
+          format: int64
+          description: The time in milliseconds since epoch that Amplitude's servers accepted the request.
+          example: 1396381378123
+
+    BadRequestInvalidFields:
+      type: object
+      description: Error response for invalid or missing JSON fields.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (400).
+          example: 400
+        error:
+          type: string
+          description: >
+            Error description. Possible values: `"Invalid request path"`,
+            `"Missing request body"`, `"Invalid JSON request body"`,
+            `"Request missing required field"`, `"Invalid event JSON"`,
+            `"Invalid API key"`, `"Invalid field values on some events"`.
+          example: "Request missing required field"
+        missing_field:
+          type: string
+          description: Indicates which request-level required field is missing.
+          example: "api_key"
+        events_with_invalid_fields:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: integer
+          description: >
+            A map from field names to an array containing the index of the first event
+            that encountered an error.
+          example:
+            event_type: [3]
+        events_with_missing_fields:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: integer
+          description: >
+            A map from field names to an array containing the index of the first event
+            that encountered an error.
+          example:
+            event_type: [3]
+
+    BadRequestSilencedDevices:
+      type: object
+      description: Error response when device IDs are silenced.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (400).
+          example: 400
+        error:
+          type: string
+          description: Error description.
+          example: "Events silenced for device_id"
+        eps_threshold:
+          type: integer
+          description: >
+            The app's current events per second threshold. Requests that exceed this rate
+            are throttled.
+          example: 100
+        exceeded_daily_quota_devices:
+          type: object
+          additionalProperties:
+            type: integer
+          description: >
+            A map from `device_id` to its current number of daily events, for all devices
+            that exceed the app's daily event quota.
+        silenced_devices:
+          type: array
+          items:
+            type: string
+          description: Array of `device_id` values that Amplitude has silenced.
+          example: ["silenced_device_id_1", "silenced_device_id_2"]
+        silenced_events:
+          type: array
+          items:
+            type: integer
+          description: Array of indexes in the events array for events whose `device_id` was silenced.
+          example: [5, 6]
+        throttled_devices:
+          type: object
+          additionalProperties:
+            type: integer
+          description: >
+            A map from `device_id` to its current events per second rate, for all devices
+            that exceed the app's threshold.
+          example:
+            throttled_device_id_1: 0
+            throttled_device_id_2: 100
+        throttled_events:
+          type: array
+          items:
+            type: integer
+          description: >
+            Array of indexes in the events array for events whose `user_id` or `device_id`
+            was throttled.
+          example: [3, 4]
+
+    ForbiddenResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (403).
+          example: 403
+        error:
+          type: string
+          description: Error description.
+          example: "Forbidden"
+
+    PayloadTooLargeResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (413).
+          example: 413
+        error:
+          type: string
+          description: Error description.
+          example: "Payload too large"
+
+    TooManyRequestsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code (429).
+          example: 429
+        error:
+          type: string
+          description: Error description.
+          example: "Too many requests for some devices and users"
+        eps_threshold:
+          type: integer
+          description: >
+            The app's current events per second threshold. Requests that exceed this rate
+            are throttled.
+          example: 30
+        throttled_devices:
+          type: object
+          additionalProperties:
+            type: integer
+          description: >
+            A map from `device_id` to its current events per second rate, for all devices
+            that exceed the app's threshold.
+          example:
+            C8F9E604-F01A-4BD9-95C6-8E5357DF265D: 31
+        throttled_users:
+          type: object
+          additionalProperties:
+            type: integer
+          description: >
+            A map from `user_id` to their current events per second rate, for all users
+            that exceed the app's threshold.
+          example:
+            "datamonster@amplitude.com": 32
+        throttled_events:
+          type: array
+          items:
+            type: integer
+          description: >
+            Array of indexes in the events array for events whose `user_id` or `device_id`
+            was throttled.
+          example: [3, 4, 7]
