@@ -6,7 +6,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains detils about the specifics of user actions, who those users aare, when they performed those ctions, and from where those actions were performed.
+The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains detils about the specifics of user actions, who those users are, when they performed those ctions, and where those actions were performed.
 
 ## Tracked events by category
 The Audit logs tracks the following events: 
@@ -66,7 +66,7 @@ Each audit log entry includes:
 - **Error**: Error information if the action failed.
 
 {{partial:admonition type="note" heading="Availability through the API"}}
-IP address, Org ID, User Agent, and Error metadata are only available through the API endpoint, not in the UI CSV export.
+You can only acceew IP address, Org ID, User Agent, and Error metadata through the API endpoint, not the UI CSV export.
 {{/partial:admonition}}
 
 ## Key behaviors and notes
@@ -117,7 +117,7 @@ For programmatic access to the full and raw audit log, use the REST API endpoint
 
 #### Obtain an org secret key
 
-Before you use the API, request an organization secret key. Contact [Amplitude Customer Support](https://gethelp.amplitude.com/hc/en-us/categories/26943798330267-Amplitude-Technical-Support) and provide your organization ID. After the key is generated, you can use it to authenticate and download audit logs securely.
+Before you use the API, request an organization secret key. Contact [Amplitude Customer Support](https://gethelp.amplitude.com/hc/en-us/categories/26943798330267-Amplitude-Technical-Support) and provide your organization ID. After Support generates your key, you can use it to authenticate and download audit logs securely.
 
 #### Make the API request
 
