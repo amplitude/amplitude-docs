@@ -51,7 +51,6 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
-| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
 | Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
