@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains detils about the specifics of user actions, who those users are, when they performed those ctions, and where those actions were performed.
 
 ## Tracked events by category
-The Audit logs tracks the following events: 
+The Audit Log tracks the following events: 
 
 ### High-risk events
 
