@@ -51,6 +51,10 @@ Install the Amplitude Analytics JavaScript SDK in your project.
 Install the JavaScript SDK using a small snippet of code that you paste on your site to asynchronously load the SDK.
 On every page that you want to install Amplitude analytics, paste the code snippet just before the `</head>` tag, replacing `AMPLITUDE_API_KEY` with your project's API key.
 
+{{partial:admonition type="warning" heading="Load and initialize only when context is ready"}}
+Don't load the Amplitude SDK from third-party scripts that run before the page has fully loaded. In those setups, user identifiers, traits, and page URL or state often aren't available yet, so early events can be sent with missing or incorrect properties. Initialize the SDK only after your app has access to all relevant data (for example, user ID, user properties, and the final page URL).
+{{/partial:admonition}}
+
 You can find your project's API Key in your project's [Settings page](/docs/admin/account-management/manage-orgs-projects).
 
 ```html

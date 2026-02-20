@@ -76,6 +76,10 @@ import * as amplitude from '@amplitude/unified';
 
 ## Initialize the SDK
 
+{{partial:admonition type="warning" heading="Load and initialize only when context is ready"}}
+Don't load the Amplitude SDK from third-party scripts that run before the page has fully loaded. In those setups, user identifiers, traits, and page URL or state often aren't available yet, so early events can be sent with missing or incorrect properties. Initialize the SDK only after your app has access to all relevant data (for example, user ID, user properties, and the final page URL).
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading="Sending events"}}
 This SDK uses the [HTTP V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the HTTP API's constraints on each of those fields.
 
