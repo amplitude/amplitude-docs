@@ -59,7 +59,7 @@ If you upgrade the SDK version but still see unexpected behavior, Xcode may be u
 1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
 2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
 3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
-4. In Xcode, run *File > Packages > Resolve Package Versions*.
+4. Then, run *File > Packages > Resolve Package Versions*.
 
 If the issue persists, try the following to reset the entire cache:
 
@@ -164,7 +164,7 @@ If you upgrade the SDK version but still see unexpected behavior, Xcode may be u
 1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
 2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
 3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
-4. In Xcode, run *File > Packages > Resolve Package Versions*.
+4. Then, run *File > Packages > Resolve Package Versions*.
 
 If the issue persists, try the following to reset the entire cache:
 
