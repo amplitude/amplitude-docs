@@ -340,6 +340,10 @@ Next, on the Tags page, enable Guides and Surveys.
 The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
 {{/partial:admonition}}
 
+{{partial:admonition type="warning" heading="Google Tag Manager isn't the recommended install method"}}
+While Google Tag Manager is a convenient way to test the Guides and Surveys SDK, Amplitude recommends deploying through the Browser SDK v2, the Browser Unified SDK, or one of the code paths above. GTM can cause issues related to timing and sequencing that affect guide and survey delivery. Installing the SDK directly through code gives you greater control over targeting, SDK usage, localization, and access to new features as the product evolves.
+{{/partial:admonition}}
+
 ## Verify installation and initialization
 
 To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
