@@ -6,6 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
 updated_at: 1771546165
+academy_course:
+  - 11f63bb5-58b5-4053-aea9-cf730f11e448
 ---
 {{partial:admonition type="tip" heading="Feature is in Beta"}}
 The Persisted Properties feature is in Beta. 
