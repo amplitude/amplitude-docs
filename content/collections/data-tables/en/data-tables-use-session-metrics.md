@@ -112,12 +112,12 @@ To decide if the example sessions above are a bounce:
 
 ### Entry and exit
 
-Session Entries are defined by the **first** non-null value for the group by's property within the session. Session Exits are defined by the **last** non-null value for the group by's property within the session.
+Session Entries are defined by the first non-null value for the group by's property within the session. Session Exits are defined by the **last** non-null value for the group by's property within the session.
 
 The entry and exit rates are then calculated as a percentage using the following formula:
 
 ```
-the number of entries or exits / the **total** number of sessions
+the number of entries or exits / the total number of sessions
 ```
 
 {{partial:admonition type='note'}}
