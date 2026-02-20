@@ -86,6 +86,9 @@ tree:
         id: fda8c6d0-c61f-459c-8495-7eca228a9287
         entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
         title: 'Evaluation Proxy'
+      -
+        id: 8df42e93-8fa9-4caa-a088-200e64c85772
+        entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
   -
     id: bc3b0d2e-834b-4b0c-9998-138e9702e880
     title: 'Session Replay'
