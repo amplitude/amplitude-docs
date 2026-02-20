@@ -43,7 +43,7 @@ For example:
 | Stored on the user profile. | Not stored on the user profile. |
 | Set at ingest time. | Evaluated at query time (for example, when you use a chart). |
 | Represent user level state. | Apply allocation and expiration rules. |
-| Examples include device type, location, User ID. | Designed for session or time-bounded analysis context. |
+| Examples include device type, location, or User ID. | Designed for session or time-bounded analysis context. |
 
 ## Key concepts
 
