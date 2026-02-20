@@ -44,8 +44,8 @@
         "audit": {
             "ignore": [
                 "PKSA-nr63-r5tp-xby1",
-                "PKSA-vfrr-bp4n-314v",
-     ]
+                "PKSA-vfrr-bp4n-314v"
+            ]
         }
     },
     "extra": {
