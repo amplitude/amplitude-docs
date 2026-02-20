@@ -3,3 +3,4 @@ collections:
   - billing-use
   - account-management
   - single-sign-on
+  - admin
