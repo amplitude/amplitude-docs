@@ -53,6 +53,22 @@ Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/a
 If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
 {{/partial:admonition}}
 
+#### Troubleshoot version upgrade in Swift Package Manager
+
+If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache:
+1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
+2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
+3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
+4. Then, run *File > Packages > Resolve Package Versions*.
+
+If the issue persists, try the following to reset the entire cache:
+
+```bash
+rm -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/org.swift.swiftpm
+rm -rf ~/Library/Developer/Xcode/DerivedData
+```
+
 #### Troubleshoot CocoaPods installation
 
 If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
@@ -141,6 +157,22 @@ Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/a
 {{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
 If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
 {{/partial:admonition}}
+
+#### Troubleshoot version upgrade in Swift Package Manager
+
+If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache:
+1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
+2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
+3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
+4. Then, run *File > Packages > Resolve Package Versions*.
+
+If the issue persists, try the following to reset the entire cache:
+
+```bash
+rm -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/org.swift.swiftpm
+rm -rf ~/Library/Developer/Xcode/DerivedData
+```
 
 #### Troubleshoot CocoaPods installation
 
