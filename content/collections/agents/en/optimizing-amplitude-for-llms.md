@@ -1,5 +1,6 @@
 ---
 id: a9a1b835-7e8d-4652-9e79-8356fb6bd8c9
+published: false
 blueprint: agent
 title: 'Optimizing Amplitude for LLMs'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
