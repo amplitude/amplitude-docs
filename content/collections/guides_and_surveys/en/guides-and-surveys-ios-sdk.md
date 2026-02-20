@@ -156,14 +156,18 @@ Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/a
 If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
 {{/partial:admonition}}
 
-#### Troubleshoot Swift Package Manager installation
+#### Troubleshoot upgrade in Swift Package Manager
 
-If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version.
+If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache, in Xcode
+- Navigate to `~/Library/Caches/org.swift.swiftpm/repositories`
+- Delete the folder and lock file related to the Amplitude Engagement Swift package
+- Then, in Xcode, run File-->Swift Packages-->Reset Package Caches
 
-To clear the SPM cache, in Xcode click *File > Packages > Reset Package Caches*, then rebuild. If the issue persists, delete the DerivedData folder:
+If the issue persists, try the following to reset the entire cache
 
 ```bash
-rm -rf ~/Library/Developer/Xcode/DerivedData
+rm -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/org.swift.swiftpm
 ```
 
 #### Troubleshoot CocoaPods installation
