@@ -52,6 +52,9 @@ tree:
             id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
             entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
       -
+        id: 0915be3a-8539-4d36-9a03-96922605e311
+        entry: 183eec11-905d-4333-afaf-089e46ca0b55
+      -
         id: d891dd22-a7db-4b52-bb00-81c5c9640217
         title: 'Feature Experiments'
         children:
@@ -75,9 +78,6 @@ tree:
             id: 64dc1494-6d29-4baf-8152-3979efa1b480
             entry: 21a670fe-6939-4c52-919c-ff495b3109f3
             title: 'Cohort targeting'
-          -
-            id: 0915be3a-8539-4d36-9a03-96922605e311
-            entry: 183eec11-905d-4333-afaf-089e46ca0b55
           -
             id: 92597bc4-7868-425f-94c8-b399c989b998
             entry: c7210fe3-77ed-43ee-9f76-7ad20736c439

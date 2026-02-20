@@ -4,50 +4,284 @@ blueprint: workflow
 title: 'Estimate the duration of your experiments'
 source: 'https://help.amplitude.com/hc/en-us/articles/11502996649371-Estimate-the-duration-of-your-experiments'
 this_article_will_help_you:
-  - 'Understand the components of the duration estimator'
-  - 'Use the duration estimator to plan experiment sample size and run time needed to reach statistical significance'
+  - Calculate how long your experiment needs to run to reach statistical significance.
+  - Use automated data from Analytics to plan experiments without manual lookups.
+  - Compare different scenarios to prioritize which tests to run first.
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720718556
 landing: false
 ---
-The duration estimator can help you calculate the sample size and experiment run time needed to reach [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) in your Amplitude experiment, and to help you decide if an experiment would be worthwhile.
+The Duration Estimator helps you figure out which experiment ideas are viable before you build anything. Use it to avoid running tests that may never reach statistical significance, and to prioritize experiments that can deliver results in a reasonable timeframe.
 
 {{partial:admonition type='note'}}
- While Amplitude Experiment supports sequential testing, the duration estimator solely supports determining the sample size for a T-test. Go to the [Sequential Test / T-test comparison](https://amplitude.com/blog/sequential-test-vs-t-test) page to read more about the difference between sequential tests and T-tests. 
+The Duration Estimator supports T-tests. Sequential testing, Bayesian methods, and multi-armed bandit methods aren't available in this workflow.
 {{/partial:admonition}}
 
-## Understand the duration estimator
+## Open the duration estimator
 
-This table describes the components involved in generating the duration estimate.
+In your experiment setup, select **Estimate Duration** to open the Duration Estimator.
 
+When you first open it, you see an empty state. After you add your traffic event and success metric, the tool automatically calculates how long your test needs to run.
 
-| Component name and default setting | Definition and data validation | Relation to sample size needed for statistical significance |
-| --- | --- | --- |
-| **Confidence Level**: 95% | The confidence level is a measure of your own tolerance for false positives in the results. For example, if you set the confidence level at 95%, that means that if you were to roll out the same experiment again and again, you would expect to get the same results 95% of the time. For the remaining 5%, you might interpret the results as statistically significant when they're not (in other words, a false positive). Your confidence interval must be between 1% and 99%. Amplitude recommends a minimum of 80%. The experiment's results may no longer be reliable for any level below that. | The larger the confidence level, the larger the sample size. |
-| **Control Mean**: Automatically computed when you select the primary metric | The control mean is the average value of the selected primary metric over the last seven days (not including today) for users who completed the proxy exposure event. Consider adjusting the mean if there was a recent special event or holiday that may have affected the average in the last seven days. This value can't be zero, regardless of metric type. For conversion metrics, it can't be one. For conversion metrics, .5 means 50%, and not .5%. | The smaller the control mean, the larger the sample size. |
-| **Standard Deviation**: Automatically computed for you when you select the primary metric | Standard deviation signifies the variance, or the spread, in the data (average between each data point and the mean). It only shows up for numerical metrics and not for binary or 0-1 conversion rates. The automatic calculation derives from the standard deviation of the primary metric over the last seven (7) days (not including today) for users that completed the proxy exposure event. This value can be any positive number. | The Larger the standard deviation, the larger the sample size. |
-| **Power**: 80% | Power is the percentage of true positives. It can help measure the change's error rate. Think of power as the precision you need in your experiment, or what risk you're willing to take for potential erroneous results. This value must be between 1% and 99%. Don't set this lower than 70%. | The larger the power, the larger the sample size. |
-| **Test Type**: 2-sided | A 1-sided t-test looks for either an increase or a decrease of the change compared to the mean, whereas a 2-sided t-test looks for both an increase and a decrease. | A 2-sided test requires a larger sample size than a 1-sided test. |
-| **Minimum Detectable Effect (MDE)**: 2% | The MDE is relative to the control mean of the primary metric. It's not absolute nor standardized. For example, if the conversion rate for control is 10%, an MDE of 2% means that a change is detectable if the rate moved outside of 9.8% to 10.2%. Use the smallest possible change. This value can be any positive percentage. | The smaller the MDE, the larger the sample size. |
+## Set up your estimate
 
-## Interpret the duration estimator results
+### Step 1: Add your traffic event
 
-After you've entered all the components, the duration estimator displays a result which is the estimated number of days needed to reach statistical significance when conducting your experiment.
+Select **+ Add Event**, and choose the event that represents traffic where you run your experiment.
 
-The duration estimator offers suggestions if your results are greater than the optimal 30 days. These suggestions include removing a variant or two as well as other optimizations. If results are within a reasonable period of time, the duration estimator tells you this.
+For example, if you test your homepage, select `Page Viewed`, and add a filter for your homepage URL.
 
-{{partial:admonition type='note'}}
-For Feature experiments, when your flag is inactive, Experiment uses the proxy exposure event (because of its historical traffic information) to estimate the duration of the experiment.
-{{/partial:admonition}}
+The Duration Estimator automatically pulls the last 29-30 days of traffic data from Analytics, and shows visitors per day in the results panel.
 
-## Reduce experiment run time
+If you don't have the right event, select **Enter Manually** to input your own total daily traffic estimate. Traffic is total traffic, not per variant.
 
-Sometimes, the results of the duration estimator point to a longer run time than you might want. Consider these options to decrease your experiment's run time:
+### Step 2: Add your success metric
 
-* Modify error rates to reduce the sample size needed.
-* Change the primary metric and exposure event.
-* Target more users.
-* Modify the standard deviation so that outliers don't carry as much weight.
-* Decide if the experiment is worth the run time in the first place.
+Select **+ Add Metric**, and choose the conversion metric you want to improve with this experiment.
 
-The value of the duration estimator derives from the unique needs of your business goals and the risks that you're able to take to run them. [Read more about the experiment design phase here](https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals).
+A success metric is the visitor action you're trying to change with your experiment. Think about what you want more visitors to do because of your changes.
+
+Common success metrics:
+- Conversions: Visitor completes a key action, such as signed up, purchased, enrolled, or subscribed.
+- Form completions: Visitor submits a form or completes a flow.
+
+How to choose:
+- Ask: `If this experiment works, what will more visitors do?`
+- Look for metrics that match that action.
+- If you see similar metrics, choose a conversion metric (which Amplitude marks as `Conversion of...`) or a metric with an official blue badge.
+
+Tip: Choose a metric your team uses often.
+
+For example, if you test your homepage hero banner and want more visitors to enroll in a course, select `Conversion of registration: course enrolled`.
+
+The Duration Estimator automatically calculates your current conversion rate from the last 29-30 days of Analytics data and shows it in the results panel (for example, `78.8% -> 82.8%`).
+
+If you don't see the metric you need:
+- Search with the search bar at the top of the dropdown.
+- Select **Create Metric** at the bottom to build a new one.
+- Select **Enter Manually** to input your own baseline conversion rate.
+
+### Step 3: Set your minimum detectable effect (MDE)
+
+The relative MDE is the smallest improvement you want to detect. The default is 5%, which means you test whether you can improve your baseline by 5%.
+
+For example, if your baseline conversion is 78.8% and you set a 5% MDE, you test whether you can reach 82.8%.
+
+How to think about MDE:
+- Big, bold changes (like redesigning a hero banner above the fold): expect a large lift, such as 8%.
+- Small, subtle changes (like changing button text below the fold): expect a small lift, such as 2%.
+- Smaller MDEs require much longer test durations.
+
+If you don't have historical data, select **Enter Manually** to input your own baseline conversion rate.
+
+## Understand your results
+
+After you add your traffic and success metric, the **Estimated Duration** panel shows:
+- Duration: How many days you need to run the test (for example, `~130 days`).
+- Visitors per day: Daily traffic the tool automatically pulls from Analytics.
+- Lift: Your baseline conversion rate to target conversion rate with your MDE percentage.
+- Summary: Plain-language explanation you can share with stakeholders.
+
+If your duration is very long, you see a **Long Duration** warning badge. Use the Duration Scenarios table to explore different scenarios.
+
+## Use the Duration Scenarios table to prioritize
+
+The Duration Scenarios table is the most important part of the Duration Estimator. It shows exactly how your choices affect test duration, so you can make smarter decisions about what to test and when.
+
+### How to read the table
+
+Rows (confidence level):
+- Low (85%): Less certainty your results are real, but faster results.
+- Medium (90%): Balanced approach (default setting).
+- High (95%): More certainty your results are real, but takes longer.
+- Custom %: Enter your own confidence level.
+
+Columns (lift size/MDE):
+- 2%: Small, subtle changes (takes longest to detect).
+- 5%: Medium-sized changes (default setting).
+- 8%: Large, bold changes (fastest to detect).
+- Custom %: Enter your own MDE.
+
+The table highlights your selected combination and shows durations for all other scenarios.
+
+### How to think about confidence level
+
+Your confidence level is the risk you're willing to take with your results. Choose based on what's at stake.
+
+95% confidence: Use when the cost of being wrong is high.
+- Revenue-critical tests (checkout flows, pricing, and subscriptions).
+- High-impact placements (homepage hero, above-the-fold content, and navigation).
+- Sensitive or costly bets (brand-new features, compliance-heavy areas, and high-cost builds).
+
+90% confidence: Use when you want balance between speed and reliability (default).
+- Medium-stakes decisions where time matters, but the cost of being wrong is manageable.
+- Engagement-focused outcomes (click-throughs, mid-funnel steps).
+- Iterative improvements in areas with prior evidence.
+
+85% confidence: Use when you need a directional signal.
+- Early validation (MVPs, prototypes you follow up on).
+- Low-stakes tests (low-traffic pages, below-the-fold changes).
+- Well-understood areas where a topline read is enough.
+
+### How to think about MDE (lift size)
+
+MDE reflects the expected impact of your experiment idea. Ask: `How much lift do I realistically expect this change to drive?`
+
+Large MDE (8%+): Use for bold changes with dramatic impact.
+- Prominent new CTAs at the top of the homepage.
+- Major redesigns of key flows.
+- Revenue-driving promotions.
+- Because the effect is big, the test resolves quickly.
+
+Medium MDE (3-5%): Use for meaningful but not dramatic improvements.
+- UX enhancements.
+- Layout adjustments.
+- Copy changes.
+- This is the most balanced choice for everyday experimentation.
+
+Small MDE (1-2%): Use for subtle tweaks, or when tiny gains are valuable.
+- Microcopy changes.
+- Slight color adjustments.
+- Incremental funnel optimizations.
+- These require the most time and traffic, but can add up in mature, high-volume products.
+
+### How to use the scenario table for prioritization
+
+Scenario 1: Your test takes too long.
+
+If your estimate shows `~130 days` at 5% MDE and 90% confidence, review the table:
+- At 8% MDE (larger change), duration drops to `~51 days`.
+- At 85% confidence (lower certainty), duration drops to `~102 days`.
+
+Decision framework:
+- Can you test a bigger, bolder idea to get results faster?
+- Are the stakes low enough to justify 85% confidence for a quicker read?
+- Or is this a high-stakes test where 90-95% confidence is worth the wait?
+
+Scenario 2: Compare multiple test ideas.
+
+You have three test ideas in your backlog:
+- Homepage hero redesign (expected 8% lift): `~51 days` at 90% confidence.
+- CTA button text change (expected 5% lift): `~130 days` at 90% confidence.
+- Footer link color change (expected 2% lift): `~632 days` at 90% confidence.
+
+Decision: The hero redesign is viable and can deliver results quickly. The CTA change may be worth running if you lower to 85% confidence (`~102 days`). The footer change takes over a year, so it isn't worth testing now.
+
+Scenario 3: Balance your testing portfolio.
+
+Use the Duration Scenarios table to create a balanced mix:
+- Bold bets (8% MDE, 90-95% confidence): One to two major tests for each quarter that resolve in two to four weeks.
+- Everyday optimizations (3-5% MDE, 90% confidence): Regular tests that deliver steady improvements in three to six weeks.
+- Quick validation (5-8% MDE, 85% confidence): Fast directional reads on new ideas before heavier investment.
+
+Scenario 4: Low-traffic pages.
+
+If you test a low-traffic page and durations are very long across all scenarios, you may need to:
+- Test on a higher-traffic page.
+- Wait until you accumulate more traffic.
+- Test something with a larger expected impact.
+
+The Duration Scenarios table makes these trade-offs visible, so you can prioritize experiments that fit your traffic and timeline constraints.
+
+## Adjust advanced settings (optional)
+
+Select **Advanced Settings** to access additional controls:
+- **Confidence level**: Low (85%), medium (90%), or high (95%).
+- **Statistical power**: Probability of detecting a true effect (default 80%).
+- **Rollout**: Percentage of visitors you expose to the experiment (default 100%).
+- **Number of variants**: Total variants including control.
+- **Distribution**: How traffic splits between variants (default evenly).
+- **Statistical method**: T-test.
+
+Most teams don't need to adjust these settings. The defaults work well for standard A/B tests.
+
+## Tips for reducing test duration
+
+If your estimated duration is longer than your timeline allows, use these options.
+
+### 1. Test a bigger idea (increase MDE)
+
+The biggest factor in test duration is the size of the change you're trying to detect. Bold changes produce larger lifts and resolve faster.
+
+For example, moving from 5% MDE to 8% MDE can reduce duration from `~130 days` to `~51 days`.
+
+Ask:
+- Can I test a more impactful variation instead of a subtle tweak?
+- Instead of changing button color, can I redesign the entire CTA section?
+- Instead of tweaking microcopy, can I rewrite the entire headline?
+
+Large-impact ideas resolve faster. Small-impact ideas take longer, but can add up in mature, high-volume products.
+
+### 2. Lower your confidence level (when stakes allow)
+
+Dropping from 90% to 85% confidence reduces duration, but increases false-positive risk (calling a winner when there isn't one).
+
+For example, at 85% confidence, the same 5% MDE test takes `~102 days` instead of `~130 days`.
+
+Ask:
+- What's the cost of being wrong?
+- Is this a low-stakes test (below-the-fold change, well-understood area)?
+- Can I validate results with a follow-up test if needed?
+
+Don't lower confidence for:
+- Revenue-critical tests.
+- High-impact placements.
+- Brand-new features, or unknown customer segments.
+
+### 3. Choose a higher-traffic page or event
+
+Low traffic is a common reason tests take too long.
+
+Ask: Can I run this test on a higher-traffic page, or choose a more frequent conversion event?
+
+### 4. Increase rollout percentage
+
+If you only expose 50% of visitors to the experiment, increasing to 100% can reduce duration by about half.
+
+### 5. Reduce number of variants
+
+Testing four variations takes much longer than testing two. Consider multiple sequential tests instead of one large multi-variant test.
+
+### 6. Decide if the test is worth running
+
+Sometimes a test isn't feasible. If the Duration Scenarios table shows hundreds of days across all scenarios, it probably isn't worth building.
+
+## Common mistakes to avoid
+
+- Defaulting to 95% confidence every time. This makes sense for high-stakes tests, but can slow low-stakes experiments.
+- Chasing only small lifts. Looking for 1-2% MDE improvements can require large traffic and long run times.
+- Skipping a duration check. Even with the right settings, some experiments can't reach significance with available traffic.
+
+The Duration Estimator helps you make this call before you spend time and resources on a test that may never reach significance.
+
+## Common questions
+
+### Why does my estimate say **Long Duration**
+
+Your test takes a long time to reach statistical significance, often because of low traffic or small MDE. Use the Duration Scenarios table to explore faster alternatives.
+
+### What if I don't have 30 days of historical data
+
+Update the timeframe, or select **Enter Manually** to input your own traffic and conversion estimates. Results are most accurate with at least a few weeks of stable data.
+
+### Can I change the MDE after I see the estimate
+
+Yes. Adjust the MDE percentage in the success metric section, and the estimate updates automatically. Use this to explore different scenarios before committing to your test design.
+
+### What does `Last 29 days offset by 1` mean
+
+This shows the data timeframe the tool uses for calculations. `Offset by 1` means the calculation excludes today because today's data is incomplete, and looks at the previous 29 complete days.
+
+### Should I always aim for high (95%) confidence
+
+No. Many experiments run at medium (90%) confidence, which balances speed and accuracy. Use high confidence when stakes are high, or when you need maximum certainty before a decision.
+
+### I'm stuck choosing a success metric. Which one should I pick
+
+Start by asking `If this experiment works, what will more visitors do?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
+
+If you're still unsure, search for metrics related to your goal, or select **Enter Manually** to input your own baseline.
+
+### Where can I learn about live experiment duration estimates
+
+Review [Experiment duration estimates](/docs/faq/experiment-duration-estimates) to understand the duration estimate that Experiment shows while an experiment runs.

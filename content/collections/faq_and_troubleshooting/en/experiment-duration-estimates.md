@@ -7,6 +7,8 @@ category: experiment
 ---
 This article covers frequently asked questions about Amplitude Experiment's duration estimate. 
 
+For setup guidance and pre-launch planning, review [Estimate the duration of your experiments](/docs/feature-experiment/workflow/experiment-estimate-duration).
+
 
 {{partial:collapse name="How does the duration estimate work?"}}
 The experiment duration estimate predicts the length of time your experiment needs to generate statistically significant results. It can only be used with the primary metric and sequential testing. It's not supported in Experiment Results. 
