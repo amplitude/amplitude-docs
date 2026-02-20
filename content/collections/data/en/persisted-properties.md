@@ -1,11 +1,12 @@
 ---
 id: 7a3f2c91-4e5b-4a1d-9f82-1b8c6d3e5a7f
-blueprint: analytic
-title: 'Persisted properties (beta)'
+blueprint: data
+title: 'Persisted Properties'
 landing: false
 exclude_from_sitemap: false
+updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
+updated_at: 1771546165
 ---
-
 {{partial:admonition type="tip" heading="Feature is in Beta"}}
 The Persisted Properties feature is in Beta. 
 This feature may continue to evolve and change as development completes. The documentation may not cover all aspects of the feature. 
@@ -55,7 +56,7 @@ Allocation decides which property value should "stick" across a series of events
 - **First known** (Not incl. in beta): The first observed value applies to all events before and after.
 - **Last known** (Not incl. in beta): The most recent value applies to all events before and after.
 
-The table below displays an example of a user’s activity, from sign-up through page views to purchase. The first column shows the events and property values as they exist in the dataset. The remaining four columns show different allocation methods and how property values change under each method.
+The table below displays an example of a user's activity, from sign-up through page views to purchase. The first column shows the events and property values as they exist in the dataset. The remaining four columns show different allocation methods and how property values change under each method.
 
 | Event | Dataset Value | Original | Most Recent | First Known | Last Known |
 |---|---|---|---|---|---|
