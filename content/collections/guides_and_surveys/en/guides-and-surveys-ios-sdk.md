@@ -161,10 +161,10 @@ If you use CocoaPods, don't commit the `Pods/` directory to version control. Git
 #### Troubleshoot version upgrade in Swift Package Manager
 
 If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache, in Xcode:
-- Navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
-- Delete the folder and lock file related to the Amplitude Engagement Swift package.
-- Then, in Xcode, run *File > Swift Packages > Reset Package Caches*.
-- Then, again in Xcode, run *File > Packages > Resolve Package Versions*.
+1. Navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
+2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
+3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
+4. Then, run *File > Packages > Resolve Package Versions*.
 
 If the issue persists, try the following to reset the entire cache:
 
