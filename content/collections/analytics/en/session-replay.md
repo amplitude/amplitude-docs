@@ -184,7 +184,7 @@ Replace the following placeholders:
 | Placeholder | Description | How to find it |
 |---|---|---|
 | `eu.` | Include this subdomain only for EU-based Amplitude accounts. Omit it otherwise. | Check the URL when logged in to Amplitude. EU accounts use `app.eu.amplitude.com`. |
-| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in—for example, `https://app.amplitude.com/analytics/myorg/...`. |
+| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in. For example, `https://app.amplitude.com/analytics/myorg/...`. |
 | `<projectId>` | The numeric ID of the project that captured the replay. | Navigate to *Settings > Projects*, select the project, and copy the ID from the URL or project details page. |
 | `<replayId>` | The session replay ID. | Available as the `[Amplitude] Session Replay ID` event property on `[Amplitude] Replay Captured` events. |
 
