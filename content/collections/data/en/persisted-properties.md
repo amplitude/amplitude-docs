@@ -36,7 +36,7 @@ For example:
 - Marketing teams can persist page path values across multiple sessions to understand campaign effectiveness over time.
 - Merchandising teams can persist search term with item-level data for enhanced purchase attribution.
 
-## User properties compared to Persisted properties
+## User properties compared to persisted properties
 
 | User properties | Persisted properties |
 |-----------------|----------------------|
@@ -66,7 +66,7 @@ The table below displays an example of a user's activity, from sign-up through p
 | Purchase | page path: not captured | /gift_guide ◌ | /flash_sale ◌ | /gift_guide ◌ | /best_seller ◌ |
 | Page View | page path: /best_seller | /gift_guide ◌ | /best_seller ● | /gift_guide ◌ | /best_seller ● |
 
-● = Property value present on the event &nbsp;&nbsp; ◌ = Property value filled by allocation
+● = Property value present on the event ◌ = Property value filled by allocation
 
 ### Expiration
 
@@ -75,10 +75,10 @@ Expiration defines when a persisted property value stops applying.
 | Expiration type | What it means | Example use case |
 |-----------------|---------------|------------------|
 | Session | Value resets when the session ends. | Attribute product engagement per browsing session. |
-| Custom time | Value expires after a chosen duration. | Maintain campaign context for 7 days or max 30 days. |
+| Custom time | Value expires after a chosen duration. | Maintain campaign context for 7 days or a maximum 30 days. |
 
 ## Setting up persisted properties
-The following section contains examples for using the Persistence and Advanced settings. Review each one as they apply to different ways you can implement persisted properties. 
+The following section contains examples for using the *Persistence and Advanced settings*. Review each one as they apply to different ways you can implement persisted properties. 
 
 ### Step 1: Define persistence in data settings
 
@@ -91,15 +91,15 @@ Go to *Data Settings > Properties > Persisted* and click **Create persisted prop
 
 **Persistence settings:**
 
-1. Navigate to the Properties section of Data Settings and then click to create a new Persisted Property.
-   Give this Persisted Property a name, such as `Entry Page`. In the description, provide some additional information such as the allocation method and expiration. This helps ensure that anyone using this property in a chart or data table understands the configuration.
+1. Navigate to the *Properties* section of Data Settings and then click to create a new persisted property.
+   Give this persisted property a name, such as `Entry Page`. In the description, provide some additional information such as the allocation method and expiration. This helps ensure that anyone using this property in a chart or data table understands the configuration.
 
 2. Select the event property you want to persist.
    For this example, use `Page Path`.
 3. Choose an **Allocation** method.
    In the example, because you want to identify the `Entry Page`, select **Original**. This ensures you include the first touchpoint.
 4. Set the **Expiration**.
-   By default, the Persisted Property expires at the end of the session. 
+   By default, the persisted property expires at the end of the session. 
 
 Before going into how you can use persisted properties in your analysis, review the more advanced example that requires both the persisted setting and the Advanced: Merchandising toggle.
 
@@ -107,13 +107,13 @@ Before going into how you can use persisted properties in your analysis, review 
 
 **Persistence settings:**
 
-1. Create a new Persisted Property called `Most recent Finding Method`.
+1. Create a new persisted property called `Most recent Finding Method`.
 2. Select the event property you want to persist.
    For this Most recent Finding Method example, use `Finding Method`.
-3. Choose an Allocation method. 
+3. Choose an **Allocation** method. 
 Because you want to identify the `Most recent Finding Method`, select **Most recent**. This ensures you include the last touchpoint.
-4. Set the Expiration.
-5. By default, the Persisted Property expires at the end of the session.
+4. Set the **Expiration**.
+   By default, the persisted property expires at the end of the session.
 
 **Advanced: Merchandising use case:**
 
@@ -125,7 +125,7 @@ To set up this effect:
 2. Select one or multiple events that link the persisted property with the product identifier you've selected.
    This ensures Amplitude can run a cross-analysis properly.
 
-In this example, the events you generate that contain both the `Finding Method` and the `product.item_id` properties are `Home Hero Clicked`, `Promotion Clicked` and `Recommendation Clicked`. 
+In this example, the events you generate that contain both the `Finding Method` and the `product.item_id` properties are `Home Hero Clicked`, `Promotion Clicked`, and `Recommendation Clicked`. 
 
 ### Step 2: Use persisted properties across analyses
 
@@ -142,19 +142,19 @@ This means the context you captured earlier is available wherever you analyze ou
 For example:
 
 - **Entry Page (Original, Session)**  
-  A user lands on `/mens-shoes`, browses several pages, then completes a purchase. Even though the Purchase event doesn't include `Page Path`, your persisted Entry Page still displays `/mens-shoes`, letting you group purchases by where sessions originally started.
+  A user lands on `/mens-shoes`, browses several pages, then completes a purchase. Even though the `Purchase` event doesn't include `Page Path`, your persisted `Entry Page` still displays `/mens-shoes`, letting you group purchases by where sessions originally started.
 
 - **Most recent Finding Method (Most recent, Session)**  
-  A user first discovers a product through Search, later clicks a Recommendation, and finally adds the item to cart. Because you set the allocation to Most recent, the persisted value on `Add to Cart` and `Purchase` is `Recommendation`, reflecting the last touchpoint before conversion.
+  A user first discovers a product through `Search`, later clicks a `Recommendation`, and finally adds the item to cart. Because you set the allocation to `Most recent`, the persisted value on `Add to Cart` and `Purchase` is `Recommendation`, reflecting the last touchpoint before conversion.
 
 For merchandising teams using the advanced setup:
 
-- Amplitude carries product-level context (such as Finding Method or homepage module) forward to cart and purchase events using the product identifier you configured.
-- If a cart contains multiple items, each item keeps its own persisted value. Amplitude attributes revenue, AOV, and add-to-cart metrics to the correct source per product.
+- Amplitude carries product-level context (such as `Finding Method` or `homepage module`) forward to cart and purchase events using the product identifier you configured.
+- If a cart contains multiple items, each item keeps its own persisted value. Amplitude attributes revenue, AOV, and add-to-cart metrics to the correct source for each product.
 
 This allows you to:
 
-- Group or filter outcome events (Add to Cart, Purchase, Revenue) by persisted properties in data tables.
+- Group or filter outcome events (`Add to Cart`, `Purchase`, or `Revenue`) by persisted properties in data tables.
 - Measure which entry pages, homepage modules, or recommendation zones drive conversions.
 - Analyze results consistently across charts without rebuilding attribution logic each time.
 
@@ -191,7 +191,7 @@ This means you can combine journey context and event-level attributes in a singl
 - You can use persisted properties in Data Tables and analyses.
 - They don't appear on the user profile.
 - Raw data exports such as BigQuery don't include them.
-- Amplitude computes values at query time; they aren't materialized.
+- Amplitude computes values at query time, they aren't materialized.
 - Cart and array properties aren't supported yet.
 - 30-day time range in data tables.
 
@@ -199,7 +199,7 @@ This means you can combine journey context and event-level attributes in a singl
 
 Persistence controls how long property context remains available, while attribution controls how Amplitude assigns conversion credit. They solve related, but distinct, problems; you configure them independently.
 
-If, after reading this article, the difference between attribution and persistence in Amplitude still isn't clear, here is a recap for you:
+If, after reading this article, the difference between attribution and persistence in Amplitude still isn't clear, review the following summary:
 
 | Concept | Attribution | Property persistence |
 |---------|-------------|----------------------|
