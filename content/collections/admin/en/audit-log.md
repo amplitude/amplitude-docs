@@ -102,10 +102,6 @@ At the top of the Audit Logs view, summary cards show (for the time period selec
 
 A filtered table shows only high-risk security events, such as promoting a user to org admin or updating organization link settings. This table is searchable and sortable.
 
-#### Full audit log table
-
-A comprehensive table shows all tracked events. You can search by user email and sort. Columns include: event name, timestamp, email, IP address, event properties, and description.
-
 #### Controls
 
 - **Refresh**: Reload the latest audit log data.
