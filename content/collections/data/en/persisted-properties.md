@@ -189,10 +189,10 @@ This means you can combine journey context and event-level attributes in a singl
 ## Current availability and limitations
 
 - You can use persisted properties in Data Tables and analyses.
-- They don't appear on the user profile.
-- Raw data exports such as BigQuery don't include them.
+- Persisted properties don't appear on the user profile.
+- Raw data exports such as BigQuery don't include persisted properties.
 - Amplitude computes values at query time, they aren't materialized.
-- Cart and array properties aren't supported yet.
+- Cart and array properties aren't supported.
 - 30-day time range in data tables.
 
 ## Understanding the difference: attribution or persistence
