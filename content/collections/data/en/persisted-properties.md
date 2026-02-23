@@ -53,10 +53,16 @@ For example:
 
 Allocation decides which property value should "stick" across a series of events for the same user. Amplitude provides the following allocation types:
 
-- **Original:** The first value persists and never changes.
-- **Most recent:** The latest value overwrites earlier ones.
-- **First known** (Not incl. in beta): The first observed value applies to all events before and after.
-- **Last known** (Not incl. in beta): The most recent value applies to all events before and after.
+- **Original:** The value of a property captured at the moment the user or entiy was first created. Typically, this occurs at the point of account creation or initial identification. This persists and never changes.
+- **Most recent:** Always the latest value of a property within a defined or active tracking window. Typically, this is tied to the most recent vevent or session. Most recent values are dynamic and shift as Amplitude collects new data.
+- **First known** (Not incl. in beta): The earliest value observed in the available data, regardless of when the entity was created. If data collection starts after the creation date, the first known value can come from a later point in time than the Origial value. Applies to all events before and after.
+- **Last known** (Not incl. in beta): The most recent value of a property at any given point in time. Last known values are dynamic and shift as Amplitude collects new data. However, if data isn't colelcted, the Last known value may differ from the true state of the property. Applies to all events before and after.
+
+{{partial:admonition type="Note" heading="Differences between allocation types"}}
+The Original value is the true first value and occurs as soon as the entity is created. The First Known value is the earliest recorded value. These values can be the same if tracking begins at entity creation. However, if tracking begins later, these values may differ.
+
+The Most recent value is the most recent value and occurs every time Amplitude collects new data about the property. This always reflects the most recent state of the property. The Last known value is the last recorded value of the property. If tracking doesn't occur or Amplitude stops collecting data, the Last known value may not be the current state of the property. If tracking and data collection is current, the Most recent and Last known values are identical.
+{{/partial:admonition}}
 
 The table below displays an example of a user's activity, from sign-up through page views to purchase. The first column shows the events and property values as they exist in the dataset. The remaining four columns show different allocation methods and how property values change under each method.
 
