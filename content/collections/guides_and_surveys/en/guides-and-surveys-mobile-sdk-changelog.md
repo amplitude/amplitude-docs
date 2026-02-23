@@ -8,6 +8,12 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 3.1.1 (Android, iOS, React Native) \[2026-02-23\]
+
+### 🐛 Fixes
+- Fix: reset survey responses on done or dismiss (GSDK-854) \[android, ios\]
+
+
 ## 3.1.0 (Android, iOS, React Native) \[2026-02-13\]
 
 ### ✨ Features
