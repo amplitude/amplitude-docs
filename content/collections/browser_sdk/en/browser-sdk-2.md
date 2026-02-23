@@ -126,7 +126,7 @@ For detailed instructions on integrating Amplitude with Next.js applications, in
 | `flushIntervalMillis`      | `number`. Sets the interval of uploading events to Amplitude in milliseconds.                                                                                                                                                                                                      | 1,000 (1 second)                        |
 | `flushQueueSize`           | `number`. Sets the maximum number of events batched in a single upload attempt.                                                                                                                                                                                                    | 30 events                               |
 | `flushMaxRetries`          | `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that the SDK can retry.                                                                                                                                                 | 5 times.                                |
-| `logLevel`                 | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level.                                                                                                                                                              | `LogLevel.Warn`                         |
+| `logLevel`                 | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level. You can also use numeric values: `0` (None), `1` (Error), `2` (Warn), `3` (Verbose), or `4` (Debug).                                                                                                                                                              | `LogLevel.Warn`                         |
 | `loggerProvider `          | `Logger`. Sets a custom `loggerProvider` class that implements the [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) to emit log messages to a specified destination.                                                                                                                                                                        | [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                      |
 | `minIdLength`              | `number`. Sets the minimum length for the value of `userId` and `deviceId` properties.                                                                                                                                                                                             | `5`                                     |
 | `optOut`                   | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events.                                                                                                                                                       | `false`                                 |
@@ -193,6 +193,27 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   logLevel: amplitude.Types.LogLevel.Warn,
 });
 ```
+
+{{partial:admonition type="note" title="Using numeric values for logLevel"}}
+In environments where you can't import the `LogLevel` enum (such as Google Tag Manager), use numeric values instead:
+
+| Numeric value | Log level | Enum equivalent         |
+|---------------|-----------|-------------------------|
+| `0`           | None      | `LogLevel.None`         |
+| `1`           | Error     | `LogLevel.Error`        |
+| `2`           | Warn      | `LogLevel.Warn`         |
+| `3`           | Verbose   | `LogLevel.Verbose`      |
+| `4`           | Debug     | `LogLevel.Debug`        |
+
+For example, to suppress all logs in GTM, set `logLevel` to `0`:
+
+```js
+// In GTM configuration
+logLevel: 0
+```
+
+Don't use string values like `"LogLevel.None"` in GTM, as these won't work correctly.
+{{/partial:admonition}}
 
 The default logger outputs log to the developer console. You can provide your own logger implementation based on the `Logger` interface for any customization purpose. For example, collecting any error messages from the SDK in a production environment.
 
