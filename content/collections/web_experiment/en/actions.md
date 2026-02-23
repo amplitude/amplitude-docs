@@ -29,7 +29,7 @@ URL redirects retain any query parameters on the original page URL. For example,
 
 ### Set up a URL redirect
 
-You set up URL redirect through the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor) as a variant action. To add a URL redirect to a treatment variant:
+Set up URL redirect through the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor) as a variant action. To add a URL redirect to a treatment variant:
 
 1. [Create a Web Experiment](/docs/web-experiment/set-up-a-web-experiment) and open the Visual Editor.
 2. Click the Treatment **three-dot** menu, select **Edit**, then under **Action** select **URL Redirect**.
