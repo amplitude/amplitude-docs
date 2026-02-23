@@ -67,16 +67,15 @@ Because the treatment flow involves more steps before the impression is logged, 
 
 Researchers have observed similar effects: if treatment slows performance, more users may leave before logs are generated, leading to fewer recorded impressions. Conversely, faster performance can lead to more recorded users in treatment than in control.
 
-**Further reading:**
-* [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
-* [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
-* [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
-
-**What to do**
+To resolve SRM:
 
 * **Reduce latency in evaluation**. The longer the delay before impressions are logged, the more pronounced the SRM effect.
 * **Use local evaluation where possible**. For example, target only on browser properties instead of slower remote attributes like Country. This reduces the chance that users drop off before logging. Here’s a configuration example in Amplitude Experiment.
 
+**Further reading:**
+* [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
+* [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
+* [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
 {{/partial:admonition}}
 
 ### SEO best practices for redirects
