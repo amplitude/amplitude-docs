@@ -34,8 +34,6 @@ Set up URL redirect through the [Visual Editor](/docs/web-experiment/set-up-a-we
 1. [Create a Web Experiment](/docs/web-experiment/set-up-a-web-experiment) and open the Visual Editor.
 2. Click the Treatment **three-dot** menu, select **Edit**, then under **Action** select **URL Redirect**.
 3. In the URL Redirect panel, add each URL you want to test as a separate variant and click **Apply**.
-4. Click **Apply and Exit** to leave the Visual Editor.
-5. Configure [Pages](/docs/web-experiment/pages), [audience targeting](/docs/web-experiment/targeting#audience-targeting), [metrics](/docs/feature-experiment/workflow/define-goals), and any [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) in the Advanced tab.
 
 ### Configuration limits
 
@@ -44,7 +42,7 @@ Visual experimentation and Amplitude's low-code implementation apply the followi
 * **Evaluation mode**: Limited to *local* to optimize test performance and minimize latency impact to end-users.
 * **Bucketing unit**: Limited to *User* because evaluation mode is limited to *local*.
 * **Keys**: Limited to *deviceID* because evaluation mode is limited to *local*.
-* **Audience**: Limited to *all users*, because redirect logic runs before tracking loads on the site.
+* **Audience**: Limited to *all users* because URL redirect logic uses local evaluation mode.
 * **Deployment**: Limited to the project API key to simplify setup requirements.
 
 {{partial:admonition type="note"}}
