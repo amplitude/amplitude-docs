@@ -39,10 +39,10 @@ Set up URL redirect through the [Visual Editor](/docs/web-experiment/set-up-a-we
 
 Visual experimentation and Amplitude's low-code implementation apply the following limits when you use URL redirect:
 
-* **Evaluation mode**: Limited to *local* to optimize test performance and minimize latency impact to end-users.
-* **Bucketing unit**: Limited to *User* because evaluation mode is limited to *local*.
-* **Keys**: Limited to *deviceID* because evaluation mode is limited to *local*.
-* **Audience**: Limited to *all users* because URL redirect logic uses local evaluation mode.
+* **Evaluation mode**: Limited to `local` to optimize test performance and minimize latency impact to end-users.
+* **Bucketing unit**: Limited to `User` because evaluation mode is limited to *local*.
+* **Keys**: Limited to `deviceID` because evaluation mode is limited to *local*.
+* **Audience**: Limited to `all users` because URL redirect logic uses local evaluation mode.
 * **Deployment**: Limited to the project API key to simplify setup requirements.
 
 {{partial:admonition type="note"}}
