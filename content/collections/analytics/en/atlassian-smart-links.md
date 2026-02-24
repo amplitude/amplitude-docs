@@ -3,8 +3,6 @@ id: 731813fe-55f2-40fa-9867-a317f3d19e52
 blueprint: analytic
 title: 'Use Atlassian Smart Links with Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/9121457018907-Use-Atlassian-Smart-Links-with-Amplitude'
-this_article_will_help_you:
-  - 'Include chart previews in Confluence documents and Jira tickets'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

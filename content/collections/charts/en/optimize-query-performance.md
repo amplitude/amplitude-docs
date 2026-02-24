@@ -3,9 +3,6 @@ id: 02a3e7b8-29a0-436e-abdf-e77d118e8263
 blueprint: chart
 title: 'Optimize performance with query time sampling in Amplitude Analytics'
 source: 'https://help.amplitude.com/hc/en-us/articles/14885323242907-Optimize-performance-with-query-time-sampling-in-Amplitude-Analytics'
-this_article_will_help_you:
-  - 'Understand query time sampling'
-  - 'Set query time sampling as the default for all new funnel charts'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

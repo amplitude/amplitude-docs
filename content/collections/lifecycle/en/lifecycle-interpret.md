@@ -3,9 +3,6 @@ id: 0e2e4182-9627-49a1-a313-ed70f3a1076c
 blueprint: lifecycle
 title: 'Interpret your Lifecycle chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/21037113562651-Interpret-your-Lifecycle-chart'
-this_article_will_help_you:
-  - 'Interpret the results of your Lifecycle chart'
-  - 'Switch between chart types'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1761932190
 landing: true

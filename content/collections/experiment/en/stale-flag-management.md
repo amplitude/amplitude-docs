@@ -2,10 +2,6 @@
 id: stale-flag-management
 blueprint: experiment
 title: 'Stale flag management'
-this_article_will_help_you:
-  - 'Understand when feature flags and experiments become stale'
-  - 'Learn how to identify and manage stale flags and experiments'
-  - 'Configure stale dates and receive notifications for cleanup'
 landing: false
 exclude_from_sitemap: false
 ---

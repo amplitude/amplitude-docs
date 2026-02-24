@@ -3,9 +3,6 @@ id: a2ecdb87-b991-4feb-b75a-44cf9f688d9f
 blueprint: stickiness
 title: 'Interpret your stickiness analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/360053681271-Interpret-your-stickiness-analysis'
-this_article_will_help_you:
-  - 'Draw conclusions about user behavior from your Stickiness chart'
-  - 'Set up a behavioral cohort from your stickiness analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538720
 landing: true

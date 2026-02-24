@@ -2,8 +2,6 @@
 id: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
 blueprint: data
 title: 'Visual Labeling'
-this_article_will_help_you:
-  - 'Create and edit labeled events with no new code required'
 landing: true
 source: 'https://help.amplitude.com/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements'
 exclude_from_sitemap: false

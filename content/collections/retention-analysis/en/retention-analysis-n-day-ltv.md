@@ -2,10 +2,6 @@
 id: b3f2a1c4-8e57-4d9a-b6f1-2c3d4e5f6a7b
 blueprint: retention-analysi
 title: 'N-Day LTV in retention analysis'
-this_article_will_help_you:
-  - 'Understand how N-Day LTV measures cumulative revenue for user cohorts'
-  - 'Enable and configure N-Day LTV in a Retention Analysis chart'
-  - 'Interpret N-Day LTV results, including how Amplitude handles immature cohorts'
 landing: false
 exclude_from_sitemap: false
 ---

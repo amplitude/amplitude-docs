@@ -3,8 +3,6 @@ id: 1e47bc76-6edc-4391-afdf-16d74db2fd7a
 blueprint: funnel-analysi
 title: 'How Amplitude computes funnels'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels'
-this_article_will_help_you:
-  - 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632051
 landing: true

@@ -3,9 +3,6 @@ id: a1eb1953-5738-45a4-8a4f-e276692b4089
 blueprint: source
 title: 'Connect to a source'
 source: 'https://help.amplitude.com/hc/en-us/articles/16806069264539-Connect-to-a-source'
-this_article_will_help_you:
-  - 'Gain an understanding of the *Sources* interface that tracks outside data sources, as well as the monitoring of ingested data'
-  - 'Add a source to connect third-party data for analysis in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

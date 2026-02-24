@@ -3,8 +3,6 @@ id: f74a2f4f-6b98-4533-802f-e706987a423e
 blueprint: event-segmentation
 title: 'Create in-line custom events'
 source: 'https://help.amplitude.com/hc/en-us/articles/13321766657947-Create-in-line-custom-events-in-funnel-and-event-segmentation-analyses'
-this_article_will_help_you:
-  - 'Combine multiple existing events into a custom event from within your event segmentation or funnel charts'
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884451

@@ -4,9 +4,6 @@ blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1754501567
-this_article_will_help_you:
-  - 'Understand the difference between a Web Experiment and a feature experiment'
-  - 'Build a Web Experiment using the Visual Editor'
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---

@@ -3,10 +3,6 @@ id: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
 blueprint: workflow
 title: 'Make a decision on your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687611-Test-and-launch-your-experiment'
-this_article_will_help_you:
-  - 'Understand what happens when your experiment ends'
-  - 'Make a decision on your experiment (roll out, roll back, or continue)'
-  - 'Clean up feature flags after your experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517033
 ---
