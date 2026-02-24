@@ -46,7 +46,7 @@ Set up a domain proxy within the affected region that forwards traffic to Amplit
 
 Review [Use domain proxy to relay events](/docs/analytics/domain-proxy) for options.
 
-**How it works**:
+#### Why the solution works
 
 - The SDK sends events to a custom domain you control (for example, `https://analytics.yourdomain.com`).
 - That domain is hosted in that region and resolves without DNS poisoning.
@@ -71,7 +71,7 @@ Review [Use domain proxy to relay events](/docs/analytics/domain-proxy) for opti
 
 Configure your SDK to send all data to your own server endpoint rather than directly to Amplitude. This is similar to deploying a domain proxy to relay events but this solution applies to all your events, not only the affected regions. With this solution, you get more flexibility to store data in your preferred data warehouse and integrate with Amplitude.
 
-How it works:
+#### Why the solution works
 
 - The client SDK sends events to your server (for example, `https://events.yourcompany.com`).
 - Your server ingests the events and stores the data in your infrastructure (for example, in Amazon S3).
