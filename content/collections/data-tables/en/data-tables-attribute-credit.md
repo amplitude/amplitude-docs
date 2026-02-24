@@ -12,12 +12,12 @@ landing_blurb: 'Understand how specific touch points are contributing to your ma
 academy_course:
   - 61b3a9e8-5868-4ec3-8753-4c15b05c71a4
 ---
-It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
+It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the wanted outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 
 
 ### Restrictions
 
-* Starter and Plus plan users can create one channel view
+* Starter and Plus plan users can create a single channel view.
 
 ## Pre-built attribution models
 
@@ -31,9 +31,8 @@ For example, the Last Touch model attributes 100% of the credit to a single prop
   
 Also, when measuring unique users, none of these models generate attribution group totals that sum to the count in the `Overall` row. This is because each unique user can appear in multiple attribution groups. Users may be attributed to multiple channels. This is because attribution applies to events, not unique users. A unique user may perform events attributed to both channel X and channel Y. In this situation, the user appears in rows for both X and Y and there is a potential to double-count the user in summing of the rows. 
 
-* **First Touch**: Gives all credit for the selected metric to the first property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
-* **Last Touch**: Gives all credit for the selected metric to the last property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, will sum to 100%.
-* **Last non direct touch**: Gives all credit for the selected metric to the last property value that wasn't tagged as Direct within the selected lookback window relative to the date the metric occurred. This model reflects common marketing attribution logic by excluding direct traffic from attribution. If using the event totals attribute, will sum to 100%.
+* **First Touch**: Gives all credit for the selected metric to the first property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, sums to 100%.
+* **Last Touch**: Gives all credit for the selected metric to the last property value within the selected lookback window relative to the date the metric occurred. If using the event totals attribute, sums to 100%.
 * **Linear**: Credit for the selected metric is equally distributed for all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 50% credit, and with three properties each would receive 33.3%.
 * **Participation**: Credit for the selected metric is fully allocated to all property values within the selected lookback window relative to the date the metric occurred. For example, with two properties each would receive 100% credit, and with three properties each would receive 100%. It is possible for the total rows to not sum to the overall total. This is because multiple properties from the same event can receive credit, so the sums of the rows are greater than the overall value. 
 * **U-Shaped**: Credit for the selected metrics biases credit to the first and last values for the selected property. With two touch points, the middle 20% is equally added to the first and middle touch points (50%, 50%). With four touch points, the middle two touch points would share the 20% (40%, 10%, 10%, 40%).
@@ -51,9 +50,9 @@ Also, when measuring unique users, none of these models generate attribution gro
 
 Inside a data table, you can configure an attribution model on each metric column by following these steps:
 
-1. On the column, first click *…* , and then *Attribution*.
+1. On the column, first click **…** , and then **Attribution**.
 2. Select an attribution model and configure a lookback window. Optionally, you can choose to apply the attribution model to all columns in the table.
-3. Click *Apply* to confirm the change and see the table results with the attribution model applied.
+3. Click **Apply** to confirm the change and review the table results with the attribution model applied.
 
 ![attribution_sidecontrols.gif](/docs/output/img/data-tables/attribution-sidecontrols-gif.gif)
 
@@ -61,8 +60,8 @@ Inside a data table, you can configure an attribution model on each metric colum
 
 If the pre-built attribution models don't meet your needs, you can also create a custom model. You must be an Admin or Manager to create a custom attribution model. To do so, follow these steps:
 
-1. On the column, click the *…* *options* and click *Attribution*.
-2. Select *Custom* from the model dropdown, which show options for configuring your custom model.
+1. On the column, click the **…** then **options** and click **Attribution**.
+2. Select **Custom** from the model dropdown, which show options for configuring your custom model.
 3. Set a name and description for the model so others know how to interpret it.
 4. Choose a custom weighting for your model.
     * The first weight applies to the first touch.
@@ -71,10 +70,10 @@ If the pre-built attribution models don't meet your needs, you can also create a
     {{partial:admonition type="note" heading=""}}
     Amplitude recommends that all weights should equal 100%, although it's not required.
     {{/partial:admonition}}
-5. Set the default lookback window for the model. Optionally, lock the window to ensure others using this model will only be able to use that lookback window.
+5. Set the default lookback window for the model. Optionally, lock the window to ensure others using this model can only use that lookback window.
 6. Decide whether you want to share the custom model with others in your organization.
-7. If desired, exclude property values from attribution. This may be useful if you don't want to assign credit to a particular value (for example, direct website visits or email).
-8. Click on *Save* to confirm the change, save the model (for yourself and/or others to use in the future), and see the table results with the attribution model applied.  
+7. Optionally, exclude property values from attribution. This may be useful if you don't want to assign credit to a particular value (for example, direct website visits or email).
+8. Click **Save** to confirm the change, save the model (for yourself and/or others to use in the future), and review the table results with the attribution model applied.  
   
 ![image1.png](/docs/output/img/data-tables/image1-png.png)
 
@@ -82,7 +81,7 @@ If the pre-built attribution models don't meet your needs, you can also create a
 
 * **Acquisition channel credit**: When analyzing the effectiveness of all organic and paid investments, you can leverage acquisition channels with a multi-touch attribution model to understand how each channel contributes to driving KPI outcomes. Depending on your business model and user behavior, you can analyze which model of attributing credit makes the most sense and make investment decisions based on the contribution of each of your channels to your target metric.
 * **Comparing attribution models**: In longer conversion cycles with multiple session user flows, you can compare the same metric with different attribution models applied. This data supports discovering which attribution model reflects how to efficiently invest marketing dollars and what stage of the customer buying cycle a campaign impacts. For example, when attributing to advertising campaigns, you can find which campaigns tend to be the first interaction (awareness) that a customer has, the last (high intent), or somewhere between (research).
-* **Content**: Use attribution to see not only how often users viewed content but how that content participated in driving a business KPI outcome. Knowing that content has a low bounce/exit rate or longer time spent on a page can be helpful, but you can clarify the business impact by generating a conversion rate based on different attribution models.
+* **Content**: Use attribution to find not only how often users viewed content but how that content participated in driving a business KPI outcome. Knowing that content has a low bounce/exit rate or longer time spent on a page can be helpful, but you can clarify the business impact by generating a conversion rate based on different attribution models.
 * **Internal campaigns**: Like paid off platform advertising investments, marketing teams invest their time and creative talent to generate offers and brand-building content to drive KPI outcomes. Using attribution on the impact of those marketing efforts can similarly inform your content marketing teams which types of offers and creatives are best at driving both short and long term business value.
 * **Paid channels with LTV**: By combining your attribution model with your behavior-based LTV calculations, you can see a bigger perspective of how much value a paid channel or campaign is driving. This data can unlock potential for greater investments in channels that drive the most long term business value.
 
@@ -93,20 +92,17 @@ Each metric type supports a specific set of attribution types:
 * **Uniques**
     * first touch
     * last touch
-    * last non direct touch
     * participation
     * markov
 
 * **Conversion**
     * first touch
     * last touch
-    * last non direct touch
     * participation
 
 * **Event totals**
     * first touch
     * last touch
-    * last non direct touch
     * participation
     * linear
     * j-shaped
@@ -118,7 +114,6 @@ Each metric type supports a specific set of attribution types:
 * **property sum**, **revenue total**, and **formula** (clauses: uniques, total, propsum)
     * first touch
     * last touch
-    * last non direct touch
     * participation
     * linear
     * j-shaped

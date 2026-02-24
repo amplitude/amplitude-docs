@@ -56,10 +56,6 @@ To set up anomaly detection, follow these steps:
 
 ### Set up automated project alerts
 
-{{partial:admonition type="note" heading="Feature availability"}}
-Automated alerts are available on Enterprise plans.
-{{/partial:admonition}}
-
 You can also request an emailed digest of all anomalies in a project. These digests are fully automated, and you can set them up for multiple projects. After you switch them on, they continue until you turn them off.
 
 To set up automated alerts for anomalies in your projects, navigate to *Organization settings > Projects*, find the project you're interested in, and click it. Then click the *Automatic Alerts* tab and flip the toggle switch to subscribe to project alerts. 

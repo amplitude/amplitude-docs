@@ -17,6 +17,10 @@ Amplitude’s Funnel Analysis chart helps you understand how users are navigati
 
 This article describes how the chart area of the Funnel Analysis chart works, and how you should interpret the data it contains.
 
+{{partial:admonition type="note" heading=""}}
+You can use [Global Agent](/docs/amplitude-ai/global-agent-overview) to interpret funnel charts with natural language. Ask questions like "Why did conversion drop?" or "Compare conversion rates between mobile and web" to analyze your funnel data.
+{{/partial:admonition}}
+
 Analyzing your funnel analysis data takes place in the screen’s lower panel.
 
 ## Before you begin

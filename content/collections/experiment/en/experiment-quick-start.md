@@ -59,12 +59,12 @@ Before you can begin using experiments:
 Install the Amplitude SDK with the Experiment client. For example:
 
 ```bash
-npm install @amplitude/analytics-browser @amplitude/experiment-browser
+npm install @amplitude/analytics-browser @amplitude/experiment-js-client
 ```
 
 ```ts
 import * as amplitude from '@amplitude/analytics-browser'; 
-import { Experiment } from '@amplitude/experiment-browser'; 
+import { Experiment } from '@amplitude/experiment-js-client'; 
 amplitude.init('AMPLITUDE_API_KEY');  
 const experiment = Experiment.initialize('DEPLOYMENT_API_KEY'); 
 await experiment.start();

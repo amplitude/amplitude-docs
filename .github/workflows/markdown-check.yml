@@ -2,8 +2,8 @@ name: Check for Unrendered Markdown
 
 on:
   schedule:
-    # Run daily at 2 AM UTC
-    - cron: '0 13 * * *'
+    # Run every Sunday at 1 AM Pacific Time (9 AM UTC)
+    - cron: '0 9 * * 0'
   workflow_dispatch:  # This enables the "Run workflow" button
 
 jobs:
@@ -49,7 +49,7 @@ jobs:
         status: custom
         custom_payload: |
           {
-            "text": ":mag: Daily Markdown Check Results",
+            "text": ":mag: Weekly Markdown Check Results",
             "attachments": [
               {
                 "color": "${{ steps.crawler.outcome == 'success' && 'good' || 'danger' }}",
@@ -117,7 +117,7 @@ jobs:
               });
               
               const payload = {
-                text: "📋 Daily Markdown Issues Report",
+                text: "📋 Weekly Markdown Issues Report",
                 attachments: [
                   {
                     color: "danger",

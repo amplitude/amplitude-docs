@@ -13,6 +13,10 @@ You may experience unexpected issues with creating and rolling out an experiment
 
 This article assumes that you understand how to set up and run an experiment in Amplitude Experiment. If you don't feel confident in your understanding, review the Help Center articles on [an overview of Amplitude Experiment](/docs/feature-experiment/overview) and [configuring your experiment](/docs/feature-experiment/workflow/configure) before proceeding.
 
+{{partial:admonition type="tip" heading="Use an A/A test to validate your setup"}}
+If you suspect a systemic instrumentation or assignment issue, [run an A/A test](/docs/feature-experiment/aa-testing) to confirm your experimentation platform works correctly before debugging individual experiments.
+{{/partial:admonition}}
+
 ## Experiment troubleshooting checklist
 
 This list of questions acts as a quick troubleshooting checklist for any experiment discrepancies you may be experiencing. If you can answer "yes" to any question, that question is unlikely to be the cause of your issue.

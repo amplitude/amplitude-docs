@@ -14,6 +14,10 @@ academy_course:
 ---
 Any Amplitude analysis begins with selecting the right chart for the job. This article provides a short summary explanation of all Amplitude's chart types and the types of analysis they're best suited for.
 
+{{partial:admonition type="note" heading=""}}
+Not sure which chart to use? [Global Agent](/docs/amplitude-ai/global-agent-overview) can build the right chart for you from a natural-language question. Describe what you want to learn and Global Agent selects the chart type, events, and properties automatically.
+{{/partial:admonition}}
+
 
 ## Know your users
 

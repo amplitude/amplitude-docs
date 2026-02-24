@@ -17,8 +17,6 @@ In Amplitude, a **cohort** is a group of users who share a trait or set of trait
 
 ### Restrictions
 
-This feature is available for users on **Plus** plans. 
-
 * Organizations on the Plus plan have a limit of five behavioral cohorts
 
 Behavioral cohorts are defined by user actions taken within a specific time period. They allow you to group together different users based on the events they've triggered in your product. Once you've created a cohort, you can add them as a segment in many Amplitude charts.

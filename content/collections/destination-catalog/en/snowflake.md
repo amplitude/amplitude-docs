@@ -41,6 +41,7 @@ Load your Amplitude event data into your Snowflake account. You can set up recur
 ## Limits
 
 - Maximum running time for a single Snowflake SQL query is 12 hours.
+- Each project can only have one Snowflake Export destination for each data type. This means one destination for events and one destination for merged IDs per project.
 
 ## Set up a recurring data export to Snowflake
 
@@ -114,6 +115,26 @@ The effectiveness of these recommendations depends on the frequency with which y
 - You can also try reducing the auto suspend time to 60s. This option might not be available within the Snowflake UI, but you can manually set it through a direct Snowflake query.
 
 ## Snowflake export format
+
+### Data locations
+
+Amplitude exports data to your Snowflake account using the following naming convention:
+
+| Component | Format | Description |
+|-----------|--------|-------------|
+| Database | `DB_{org_id}` | Uses your Amplitude organization ID for the database name. |
+| Schema | `SCHEMA_{project_id}` | Uses your Amplitude project ID for the schema name. |
+| Events Table | `EVENTS_{project_id}` | Uses your Amplitude project ID for the events table name. |
+| Merged Users Table | `MERGE_IDS_{project_id}` | Uses your Amplitude project ID for the merged users table name. |
+
+For example, if your organization ID is `12345` and your project ID is `67890`:
+
+- **Events**: `DB_12345.SCHEMA_67890.EVENTS_67890`.
+- **Merged Users**: `DB_12345.SCHEMA_67890.MERGE_IDS_67890`.
+
+{{partial:admonition type="note" heading=""}}
+Each project can only have one Snowflake Export destination for each data type. This means one destination for events and one destination for merged IDs per project.
+{{/partial:admonition}}
 
 ### Event table
 

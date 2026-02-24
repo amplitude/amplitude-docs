@@ -16,27 +16,23 @@ Marketing, SEO, content, and product teams can all benefit—whether monitoring 
 AI Visibility is available directly inside the Amplitude platform and is available to all customers across all plans. Amplitude also provides a limited, free experience to non-customers here.
 
 ## How frequently is AI Visibility updated?
-AI Visibility (logged-in) updates once each week.
+AI Visibility refreshes weekly.
 
-The free version of AI Visibility does not update.
+The free version of AI Visibility doesn't update.
 
 ## Why does AI search matter for my business?
 Consumers are increasingly using AI assistants instead of traditional search engines to research products. If your brand isn’t appearing as a recommendation in AI answers, you risk losing high-intent customers to competitors.
 
 ## How does AI Visibility measure brand performance in AI search?
-AI Visibility provides a customer dashboard that includes your visibility score, competitive rankings, and the sources large language models use to generate responses. 
+AI Visibility provides a customer dashboard that includes a visibility score, competitive rankings, and the source LLMs used to generate responses. 
+
+Your visiblity score quantifies how often a brand appears in AI responses across major LLMs using hundreds of prompts.
 
 ## Can AI Visibility show me where competitors are winning?
 Yes. The competitive rankings feature highlights exactly which prompts and keywords lead to competitor mentions in AI search. It also provides recommendations about how to close the gap.
 
-## What are the usage limits for AI Visibility?
-* 500 prompts for free/Starter users
-* 1000 prompts for Plus
-* 2500 prompts for Growth
-* 5000 prompts for Enterprise
-
-## What platforms and models does AI Visibility track?
-AI Visibility monitors brand performance in ChatGPT and Google AI Overview.
+## Does AI Visibility provide optimization suggestions for specific URLs or copy? 
+Yes. AI Visibility surfaces automated recommendations to boos LLM visibility for specific pages and copy. These suggestions include adding clear headings, breaking long paragraphs into shorter sections, inserting concise FAQ blocks, and more. 
 
 ## Does AI Visibility connect to traffic and conversions?
 Unlike standalone search analysis tools, AI Visibility is built into Amplitude. You can tie AI search visibility to products custom-built to manage customer behavior, conversion, and revenue.
@@ -45,7 +41,7 @@ Unlike standalone search analysis tools, AI Visibility is built into Amplitude. 
 No, OpenAPI, Google, and other companies don't share what users are searching. The prompts Amplitude generates are based on what LLMs know is relevant to your brand. 
 
 ## Is AI Visibility English only? 
-No. In the logged-in version, you can configure a brand's prompts ande responses for any language. However, LLMs may occasionally still use English. 
+No. In the logged-in version, you can configure a brand's prompts and responses for any language. However, LLMs may occasionally still use English. 
 
 ## How does Amplitude’s AI Visibility compare to other AEO-specific tools like Profound and Evertune AI?
 Amplitude’s AI Visibility stands out compared to other AEO tools because of two key differentiators: platform and pricing.
@@ -70,9 +66,9 @@ No.
 ## Can I update my competitors?
 Yes. In the main AI Visibility page, you can make the changes you want.
 
-## Can I identify activity such as sessions and events from LLM or conversational AI tools?  
-You can identify activity referred to an application from an LLM or conversational AI tool through either the referrer or the `utm_source`. There is logic for identifying each to the default channel rules. If you already have existing rules, you can replicate this logic within your own rules.
+## Is AI Visiblity analysis private? 
+Yes. Any URLs you submit for analysis are processed within your authenticated Amplitude organization. When these requests are forwarded to the LLM endpoint, they are covered by contractual controls. By contract, your analysis requests are not retained or used to build public models.    
 
-## Is prompt or citation level data available for referrals? 
-LLM or conversational AI tools don't supply the prompts when users are referred to other applications. You can evaluate entry pages for sessions from LLMs to understand which pages on your site are most commonly receiving direct referrals. 
+## What is Amplitude's default data retention policy?
+Amplitude retains customer data for the duration of the subscription. After contract termination, Amplitude retains your information for a 30-day, data retrieval period. After that, all customer data is deleted unless limited retention is legally required.
 

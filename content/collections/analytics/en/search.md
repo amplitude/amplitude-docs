@@ -28,6 +28,7 @@ Amplitude generates search results in real time as you make changes to your sear
       * **Type** of item (chart, cohort, dashboard, experiment, flag, or notebook)
       * The **editor**, or creator, of the item
       * The **project** the item belongs to
+      * Limiting your search to **generated content** only
       * The **last edited date** in which the item was **last edited** (in the last week, last month, last year, or any time)
 
       ![updated_search.png](/docs/output/img/analytics/updated_search.png)
@@ -36,4 +37,10 @@ Amplitude generates search results in real time as you make changes to your sear
 
 {{partial:admonition type="note" heading=""}}
 If a content owner has set an item to be non-discoverable, it doesn't turn up in search results. This restriction doesn't apply to managers or admins.
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading="AI-generated content in search"}}
+AI-generated content (charts, dashboards, and more) is undiscoverable by default. Search shows AI-generated content you created, and AI-generated content another user explicitly publishes as discoverable.
+
+Amplitude introduced the `isGenerated` flag in November 2025. Content generated before that date doesn't have this flag, so it doesn't appear when you filter by generated content.
 {{/partial:admonition}}

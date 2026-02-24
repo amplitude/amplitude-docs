@@ -13,7 +13,7 @@ jobs:
         with:
           github-token: ${{ secrets.ON_CALL_BOT }}
           script: |
-            const teamSlug = 'dev-docs';  // Your team slug (e.g., 'oncall-reviewers')
+            const teamSlug = 'docs-team';  // Your team slug (e.g., 'oncall-reviewers')
             const org = context.repo.owner;
             const prNumber = context.payload.pull_request.number;
             const prAuthor = context.payload.pull_request.user.login;

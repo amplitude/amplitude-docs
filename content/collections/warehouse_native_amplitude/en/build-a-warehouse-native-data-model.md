@@ -1,5 +1,6 @@
 ---
 id: e4734233-911d-4b24-bea6-570c05955b05
+published: false
 blueprint: warehouse_native_amplitude
 title: 'Build a warehouse-native data model'
 source: 'https://help.amplitude.com/hc/en-us/articles/26004068419995-Build-a-warehouse-native-data-model'

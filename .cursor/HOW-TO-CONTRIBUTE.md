@@ -82,7 +82,7 @@ git push origin docs/your-feature-name
 Create PR on GitHub. Vercel automatically generates a preview.
 
 ### 7. Tag for review
-- Tag `@tech-writers` in the PR
+- Tag `@docs-team` in the PR
 - Or mention in `#amplitude-docs` Slack
 - Tech writers review within 2 days
 

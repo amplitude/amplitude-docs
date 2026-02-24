@@ -28,7 +28,7 @@ There are two categories of experiments:
 
 ## Feature Flags and Web Editor differences
 
-Feature experimentation uses feature flags to create your experimental variants. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](docs/feature-experiment/workflow/feature-flag-rollouts).
+Feature experimentation uses feature flags to create your experimental variants. Flags are switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment. For more information on feature flags, go to [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts).
 
 {{partial:admonition type='note'}}
 Amplitude Experiment defaults to a sequential testing statistical model in all experiments, but you can opt for a [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) instead.
@@ -104,4 +104,8 @@ To learn more about how to design, roll out, and learn from experiments, review 
 
 {{partial:admonition type='note'}}
  Consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent) can help you identify high-impact pages, generate experiment strategies, and create draft experiments—all through a guided AI workflow.
 {{/partial:admonition}}

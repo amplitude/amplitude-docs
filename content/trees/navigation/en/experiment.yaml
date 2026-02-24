@@ -82,6 +82,9 @@ tree:
             id: 92597bc4-7868-425f-94c8-b399c989b998
             entry: c7210fe3-77ed-43ee-9f76-7ad20736c439
           -
+            id: 429dc4fd-7d45-4fe4-8269-6b3384c57c73
+            entry: stale-flag-management
+          -
             id: e9498dd2-3e82-4220-b494-c775bc8f3b6a
             entry: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
             title: 'Experiment templates'
@@ -123,6 +126,9 @@ tree:
       -
         id: 77fcfce6-dc68-4da0-b51d-a7cf7eee38d6
         entry: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
+      -
+        id: dce46451-9ed0-45f2-ad8c-4f4b11de3dc6
+        entry: f2ec214a-e983-47f1-bf4f-7656427b8b14
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'

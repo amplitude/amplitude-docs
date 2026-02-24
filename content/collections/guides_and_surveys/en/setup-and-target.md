@@ -102,7 +102,7 @@ Amplitude provides the following options to trigger an experience.
 | Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
 | Rage click/tap       | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
 | User confusion <br/> {.tag .web .zero}      | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
-| On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
+| On event tracked     | Shows the experience after the user triggers an event that you define. The event has to be fired client-side so it can be observed by the Guides and Surveys SDK. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
 
 #### Session properties
 

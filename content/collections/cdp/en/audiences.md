@@ -53,8 +53,6 @@ All customers on an Amplitude Growth or Enterprise plan have access to unlimited
 
 For example, segmenting your users by the number of purchases they’ve made is possible with cohorts. However, you’d have to create a different cohort to correspond to each possible number of purchases. To streamline the process, you could use computations to create a new, computed property that stores this information as a single integer, for each user. Then segment your users based on their values for this property, taking one step to do what would have taken several before.
 
-All customers on an Activation Growth or Activation Enterprise plan have access to unlimited computed properties.
-
 ## Personalization
 
 In Amplitude Activation, the insightful use of **predictions** and **recommendations** is what enables personalization.
@@ -72,8 +70,6 @@ Predictions are only available to Amplitude Activation customers.
 ### Recommendations
 
 Once you’ve identified a predictive goal for your users, the next step is making the [recommendations](/docs/data/audiences/recommendations) that are most likely to drive users to reach it. Once you’ve specified which event / event property combinations you’re interested in, Amplitude’s AutoML system figures out which items are most likely to maximize each user’s predictive goal, and then get those items in front of the user. The entire process takes minutes instead of weeks, with minimal to no code.
-
-Recommendations are only available to Amplitude Activation customers.
 
 ## Delivery
 

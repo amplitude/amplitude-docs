@@ -1,5 +1,6 @@
 ---
 id: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
+published: false
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Overview'
 this_article_will_help_you:
