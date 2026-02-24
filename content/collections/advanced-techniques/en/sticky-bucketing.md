@@ -3,6 +3,9 @@ id: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
 blueprint: advanced-technique
 title: 'Sticky bucketing'
 source: 'https://help.amplitude.com/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment'
+this_article_will_help_you:
+  - 'Learn when and when not to use sticky bucketing in your experiments'
+  - 'Confirm if sticky bucketing was used for a specified user'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329324

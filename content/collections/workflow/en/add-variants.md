@@ -3,6 +3,9 @@ id: 50d1c589-2a92-427b-84d0-eb664f55678d
 blueprint: workflow
 title: 'Add variants to your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/4405832771995-Add-variants-to-your-experiment'
+this_article_will_help_you:
+  - 'Create new variants, which will be compared to the control (or baseline)'
+  - 'Add additional code to your variants, to create more dynamic user experiences'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514203
 ---

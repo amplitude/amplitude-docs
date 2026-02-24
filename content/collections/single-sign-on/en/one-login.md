@@ -3,6 +3,8 @@ id: 14b08e52-7066-47c7-8b58-afe8ca107555
 blueprint: single-sign-on
 title: 'Set up single sign-on (SSO) for Amplitude using OneLogin'
 source: 'https://help.amplitude.com/hc/en-us/articles/360002583351-Set-up-single-sign-on-SSO-for-Amplitude-using-OneLogin'
+this_article_will_help_you:
+  - 'Set up single sign-on using OneLogin'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363551
 ---

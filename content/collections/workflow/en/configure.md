@@ -3,6 +3,9 @@ id: c33709fd-ba40-43e3-ba18-3b7467d2940c
 blueprint: workflow
 title: 'Configure your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061270372-Configure-your-experiment'
+this_article_will_help_you:
+  - 'Create a deployment to house your experiment'
+  - 'Install the SDK you wish to use for your experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514522
 ---

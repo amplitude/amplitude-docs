@@ -4,6 +4,8 @@ published: false
 blueprint: other-chart
 title: 'Amplitude SQL: Getting started with Query'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001902492-Amplitude-SQL-Getting-started-with-Query'
+this_article_will_help_you:
+  - 'Query your Snowflake database using custom SQL'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1748562108
 landing: true

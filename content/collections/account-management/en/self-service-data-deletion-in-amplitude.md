@@ -2,6 +2,8 @@
 id: 1b48f869-0e38-45ac-a6d5-03184a2ac77d
 blueprint: account-management
 title: 'Self-service data deletion in Amplitude'
+this_article_will_help_you:
+  - 'Delete data from Amplitude permanently'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

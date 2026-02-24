@@ -1,5 +1,6 @@
 ---
 id: 7e4cdb01-8c5f-403d-8553-93395c74ffa1
+published: false
 blueprint: academy_content
 title: 'Get Started with Warehouse-Native Amplitude'
 academy_asset_type: 'Course (Video)'

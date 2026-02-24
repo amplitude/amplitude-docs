@@ -8,8 +8,6 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718901114
-academy_course:
-  - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
 #### This article will help you:
 
@@ -170,6 +168,31 @@ Session replay gives you two options for searching replays: either by date, or t
 3. To narrow the list with a filter, click *+ Add Filter*. You can filter by cohorts, events, event properties, and user properties. You can also use multiple filters to further narrow your list.
 
 Once you've made your selection, the list of available replays is limited to either those replays that took place within your selected timeframe, or those replays that meet your filter specifications.
+
+## Link directly to a replay
+
+You can construct a direct URL to link to a specific session replay. This is useful for sharing replays programmatically or embedding links in external tools.
+
+Using the following URL structure:
+
+```
+https://app.[eu.]amplitude.com/analytics/<orgUrl>/session-replay/project/<projectId>/search/replay?sessionReplayId=<replayId>
+```
+
+Replace the following placeholders:
+
+| Placeholder | Description | How to find it |
+|---|---|---|
+| `eu.` | Include this subdomain only for EU-based Amplitude accounts. Omit it otherwise. | Check the URL when logged in to Amplitude. EU accounts use `app.eu.amplitude.com`. |
+| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in. For example, `https://app.amplitude.com/analytics/myorg/...`. |
+| `<projectId>` | The numeric ID of the project that captured the replay. | Navigate to *Settings > Projects*, select the project, and copy the ID from the URL or project details page. |
+| `<replayId>` | The session replay ID. | Available as the `[Amplitude] Session Replay ID` event property on `[Amplitude] Replay Captured` events. |
+
+For example:
+
+```
+https://app.amplitude.com/analytics/myorg/session-replay/project/123456/search/replay?sessionReplayId=abc123def456
+```
 
 ## Common use cases
 

@@ -39,6 +39,16 @@ As you get started with the Dashboard agent, keep the following in mind:
 
 6. Optionally, schedule the agent to run automatically and proactively monitor key business metrics.
 
+## Week-over-week comparison
+
+When you schedule a Dashboard Agent to run on a recurring basis, it automatically compares the current run against the previous one. This comparison generates a diff that highlights:
+
+* **New insights**: Trends, anomalies, or patterns that didn't appear in the last run.
+* **Key differences**: Metrics or behaviors that changed between runs, with context on what shifted and why it matters.
+* **Consistent findings**: Insights that remained stable week over week, helping you distinguish ongoing trends from one-time changes.
+
+This comparison helps you track how your product metrics evolve over time without manually reviewing past reports.
+
 ## Limitations
 
 The comprehensive dashboard analysis reviews existing dashboards without modifying chart configurations or date ranges. It focuses on pattern recognition and correlation identification rather than predictive modeling. This limitation doesn't apply to the chart deep dive and general analytics capabilities.

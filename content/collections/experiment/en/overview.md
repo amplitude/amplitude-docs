@@ -3,6 +3,9 @@ id: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
 blueprint: experiment
 title: Overview
 source: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
+this_article_will_help_you:
+  - 'Understand the value of experimentation in general, and how Amplitude Experiment can help your company make better decisions and build better products'
+  - 'Familiarize yourself with the concepts and processes involved in creating an experiment or feature flag in Amplitude Experiment'
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -101,4 +104,8 @@ To learn more about how to design, roll out, and learn from experiments, review 
 
 {{partial:admonition type='note'}}
  Consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
+{{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+The [Website Conversion Agent](/docs/amplitude-ai/website-conversion-agent) can help you identify high-impact pages, generate experiment strategies, and create draft experiments—all through a guided AI workflow.
 {{/partial:admonition}}

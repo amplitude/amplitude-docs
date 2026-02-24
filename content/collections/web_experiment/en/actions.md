@@ -23,9 +23,27 @@ The visual editor supports the following element changes:
 
 ## URL redirect
 
-URL redirects load a new URL when a targeted user lands on a targeted page in your experiment. URL redirects happen on the client, and aren't the same as a server redirect with a `3xx` response.
+URL redirects load a new URL when a targeted user lands on a targeted page in your experiment. URL redirects happen on the client, and aren't the same as a server redirect with a `3xx` response. Use URL redirect when your variants are different URLs or pages—for example, when you're testing landing pages or different versions of a page built in a CMS. You can use URL redirect with standard A/B tests and [multi-armed bandits](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
 
 URL redirects retain any query parameters on the original page URL. For example, you create a variant to redirect users from `https://example.com` to `https://example.com/get-started`. If a user clicks a link `https://example.com?utm_source=facebook`, Web Experiment redirects that user to `https://example.com/get-started?utm_source=facebook`.
+
+### Set up a URL redirect
+
+Set up URL redirect through the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor) as a variant action. To add a URL redirect to a treatment variant:
+
+1. [Create a Web Experiment](/docs/web-experiment/set-up-a-web-experiment) and open the Visual Editor.
+2. Click the Treatment **three-dot** menu, select **Edit**, then under **Action** select **URL Redirect**.
+3. In the URL Redirect panel, add each URL you want to test as a separate variant and click **Apply**.
+
+### Configuration limits
+
+Visual experimentation and Amplitude's low-code implementation apply the following limits when you use URL redirect:
+
+* **Evaluation mode**: Limited to `local` to optimize test performance and minimize latency impact to end-users.
+* **Bucketing unit**: Limited to `User` because evaluation mode is limited to *local*.
+* **Keys**: Limited to `deviceID` because evaluation mode is limited to *local*.
+* **Audience**: Limited to `all users` because URL redirect logic uses local evaluation mode.
+* **Deployment**: Limited to the project API key to simplify setup requirements.
 
 {{partial:admonition type="note"}}
 It's possible for the URL redirect test to have a [Sample Ratio Mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch). Redirect tests work by loading the redirected page, ideally as fast as possible. The sequence for this is:
@@ -47,16 +65,15 @@ Because the treatment flow involves more steps before the impression is logged, 
 
 Researchers have observed similar effects: if treatment slows performance, more users may leave before logs are generated, leading to fewer recorded impressions. Conversely, faster performance can lead to more recorded users in treatment than in control.
 
-**Further reading:**
-* [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
-* [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
-* [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
-
-**What to do**
+To resolve SRM:
 
 * **Reduce latency in evaluation**. The longer the delay before impressions are logged, the more pronounced the SRM effect.
 * **Use local evaluation where possible**. For example, target only on browser properties instead of slower remote attributes like Country. This reduces the chance that users drop off before logging. Here’s a configuration example in Amplitude Experiment.
 
+**Further reading:**
+* [Causes of SRM](https://www.lukasvermeer.nl/srm/docs/causes/)
+* [Pitfalls in Metric Interpretation (KDD 2017)](https://exp-platform.com/Documents/2017-08%20KDDMetricInterpretationPitfalls.pdf)
+* [Diagnosing SRM in Online Experiments (KDD 2019)](https://exp-platform.com/Documents/2019_KDDFabijanGupchupFuptaOmhoverVermeerDmitriev.pdf)
 {{/partial:admonition}}
 
 ### SEO best practices for redirects

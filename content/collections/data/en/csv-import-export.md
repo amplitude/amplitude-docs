@@ -3,6 +3,9 @@ id: 39f7be45-463a-469a-a849-e41aa71437b5
 blueprint: data
 title: '.CSV import and export'
 source: 'https://help.amplitude.com/hc/en-us/articles/360055925811--CSV-import-and-export'
+this_article_will_help_you:
+  - 'Manage the events, event properties, and user properties of your tracking plan via .CSV import and export'
+  - 'Understand the data fields and values needed for importing and how they compare to exported files'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

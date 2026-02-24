@@ -3,6 +3,9 @@ id: 81ab19f5-a628-4a08-81f0-97759a5bfa91
 blueprint: audience
 title: 'Build a recommendation'
 source: 'https://help.amplitude.com/hc/en-us/articles/360059625252-Build-a-recommendation'
+this_article_will_help_you:
+  - 'Create a new recommendation and interpret its results'
+  - 'Avoid common mistakes in setting up a recommendation'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

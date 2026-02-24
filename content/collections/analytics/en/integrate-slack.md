@@ -8,6 +8,11 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882676
 ---
+
+{{partial:admonition type="tip" heading="Amplitude Global Agent"}}
+The Amplitude Slack app is updated to support the Amplitude Global Agent. For more information, review [Global Agent in Slack](/docs/amplitude-ai/slack).
+{{/partial:admonition}}
+
 With Amplitude's app for [Slack](https://www.slack.com/), you can:
 
 * Get updates about new comments you receive in Amplitude
@@ -97,3 +102,7 @@ To disconnect your team space from Slack, click the same button which should now
 The Amplitude AskAI feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
 
 The Amplitude AskAI feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
+
+{{partial:admonition type="note" heading=""}}
+You can also use [Global Agent in Slack](/docs/amplitude-ai/slack) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards—all from Slack.
+{{/partial:admonition}}

@@ -8,6 +8,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716572397
+this_article_will_help_you:
+  - 'Identify and understand team roles that are critical to successfully using Amplitude'
 ---
 As you prepare to implement Amplitude, it's important to assign these three roles to the members of your implementation team:
 

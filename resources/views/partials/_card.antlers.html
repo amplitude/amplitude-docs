@@ -1,0 +1,64 @@
+{{# 
+  Card component for displaying styled content blocks
+  
+  Parameters:
+  - style: "plain" | "warning" | "tip" (default: "plain")
+  - label: "good" | "bad" | custom text (optional)
+  - caption: Text to display at bottom of card (optional)
+  
+  Usage: 
+  {{partial:card style="tip" label="good" caption="This is the recommended approach"}}
+  Content here
+  {{/partial:card}}
+#}}
+
+
+{{ label ?= '' }}
+
+{{# Determine border and background colors based on style #}}
+{{ if style == 'warning' }}
+  {{ border_color = 'border-warning-orange' }}
+  {{ bg_color = 'bg-warning-orange-light' }}
+  {{ label_bg = 'bg-warning-orange' }}
+  {{ label_text = 'text-warning-orange' }}
+{{ elseif style == 'tip' }}
+  {{ border_color = 'border-mint-500' }}
+  {{ bg_color = 'bg-mint-100' }}
+  {{ label_bg = 'bg-mint-500' }}
+  {{ label_text = 'text-mint-700' }}
+{{ else }}
+  {{ border_color = 'border-amp-gray-200' }}
+  {{ bg_color = 'bg-white' }}
+  {{ label_bg = 'bg-amp-gray-500' }}
+  {{ label_text = 'text-amp-gray-700' }}
+{{ /if }}
+
+<div class="border {{ border_color }} {{ bg_color }} rounded-lg overflow-hidden shadow-sm flex flex-col min-h-full">
+  {{ if label }}
+    <div class="flex items-center gap-2 px-4 py-2 border-b {{ border_color }} bg-white">
+      {{ if label == 'good' }}
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-mint-600 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+        <span class="font-semibold text-sm text-mint-700">Good</span>
+      {{ elseif label == 'bad' }}
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-error-red flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        <span class="font-semibold text-sm text-error-red">Bad</span>
+      {{ else }}
+        <span class="font-semibold text-sm {{ label_text }}">{{ label | ucfirst }}</span>
+      {{ /if }}
+    </div>
+  {{ /if }}
+  
+  <div class="p-4 prose prose-sm max-w-none flex-grow">
+    {{ slot | antlers | strip_tags('br') | strip_tags('p') }}
+  </div>
+  
+  {{ if caption }}
+    <div class="px-4 pb-4 text-sm text-amp-gray-600 italic border-t {{ border_color }} pt-3 bg-white">
+      {{ caption }}
+    </div>
+  {{ /if }}
+</div>

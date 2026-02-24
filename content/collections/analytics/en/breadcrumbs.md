@@ -4,6 +4,10 @@ published: false
 blueprint: analytic
 title: 'Breadcrumbs: Track, organize, and share your analyses'
 source: 'https://help.amplitude.com/hc/en-us/articles/360050370192-Breadcrumbs-Track-organize-and-share-your-analyses'
+this_article_will_help_you:
+  - 'Organize the various components of a complex analysis in one place'
+  - 'Generate an evolutionary history of your analysis as it grows and changes'
+  - 'Create Notebooks more quickly straight from the chart view'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

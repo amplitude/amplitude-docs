@@ -175,6 +175,13 @@ tabs:
               width: 50
               localizable: false
           -
+            handle: experiment_flutter
+            field:
+              type: text
+              display: 'Experiment Flutter'
+              width: 50
+              localizable: false
+          -
             handle: experiment_node
             field:
               type: text

@@ -3,6 +3,10 @@ id: 9771eb95-0cac-4de7-a34b-c65f7e157f67
 blueprint: data
 title: 'IP address, location, user agent, and device properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/17646803703323-Understand-IP-address-and-location-properties'
+this_article_will_help_you:
+  - 'Understand how Amplitude defines and uses location properties to enhance your analyses'
+  - 'Understand how Amplitude tracks location properties when IP addresses are blocked or filtered out'
+  - 'Understand how Amplitude parses user agent data to determine device and platform information'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

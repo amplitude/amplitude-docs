@@ -2,6 +2,8 @@
 id: c7210fe3-77ed-43ee-9f76-7ad20736c439
 blueprint: experiment
 title: 'Managing flags and experiments with approvals'
+this_article_will_help_you:
+  - 'Learn how to use the approvals workflows for feature flags and experiments'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254

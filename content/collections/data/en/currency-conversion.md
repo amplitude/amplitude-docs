@@ -2,6 +2,10 @@
 id: 188707ef-ad21-464e-a692-a419ed326665
 blueprint: data
 title: 'Currency Conversion'
+this_article_will_help_you:
+  - 'Analyze multi-currency revenue data'
+  - 'Understand how Amplitude converts derived properties'
+  - 'Manage project settings'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

@@ -3,6 +3,8 @@ id: 18b193bc-6806-48f7-997a-595aff1fbf91
 blueprint: compass
 title: "Find your company's inflection metrics with Compass"
 source: 'https://help.amplitude.com/hc/en-us/articles/115001526027-Find-your-company-s-inflection-metrics-with-Compass'
+this_article_will_help_you:
+  - 'Use the Compass chart to identify the moments in the user journey that are critical to driving growth'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103943
 landing: true

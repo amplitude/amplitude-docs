@@ -23,11 +23,8 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 
 ## Features
 
-- Import all data types, including events, user properties, and group properties.
-- Support for delta sync, to ensure Amplitude imports only new or changed data.
-  - For **event** data, Amplitude imports rows with an `insert` operation.
-  - For **user properties** and **group properties**, Amplitude imports rows with `insert` or `update` operations.
-  - Amplitude ignores rows with `delete` operations for all data types.
+- Import events, user properties, profiles, and group properties.
+- Support for delta sync to ensure Amplitude imports only new or changed data.
 
 ## Limitations
 

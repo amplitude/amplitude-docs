@@ -51,7 +51,6 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
-| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
 | Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
@@ -261,7 +260,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
+| Visit link                 | Opens the specified website. For **web** guides and surveys, you can choose: **Same tab** (opens in the current tab/screen), **New tab** (opens in a new browser tab), or **Use router** (uses your configured router; requires [router configuration](/docs/guides-and-surveys/sdk#router-configuration)). For **mobile** guides and surveys, the options are: **Open in In-App Browser** (opens the link within your app), **Open in Device Browser** (opens in the device’s default browser), and **Use router**. |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |

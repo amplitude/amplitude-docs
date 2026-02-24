@@ -3,6 +3,8 @@ id: 18cba191-177e-4f7c-abcb-f5375c155c71
 blueprint: experiment-theory
 title: 'Set the MDE for your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/12785071886875-Set-the-MDE-for-your-experiment'
+this_article_will_help_you:
+  - 'Identify the logic behind setting an MDE so you can more confidently run your experiment'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

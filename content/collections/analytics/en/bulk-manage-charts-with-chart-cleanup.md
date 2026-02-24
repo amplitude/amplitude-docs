@@ -4,6 +4,8 @@ blueprint: analytics
 title: 'Bulk manage charts with Chart Cleanup'
 landing: false
 source: 'https://help.amplitude.com/hc/en-us/articles/25388746170523-Bulk-manage-charts-with-Chart-Cleanup'
+this_article_will_help_you:
+  - 'Track and manage all saved charts in your organization'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718658637

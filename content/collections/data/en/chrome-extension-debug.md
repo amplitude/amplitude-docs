@@ -3,6 +3,8 @@ id: 8160e521-d064-46f7-bf1b-595dc1c56327
 blueprint: data
 title: 'Debug with the Amplitude Chrome extension'
 source: 'https://help.amplitude.com/hc/en-us/articles/360003032451-Debug-with-the-Amplitude-Chrome-extension'
+this_article_will_help_you:
+  - 'Debug your instrumentation in real time, without opening Amplitude Analytics'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

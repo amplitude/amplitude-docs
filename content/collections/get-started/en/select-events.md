@@ -5,6 +5,9 @@ title: 'What events will you need?'
 source: 'https://help.amplitude.com/hc/en-us/articles/16800098709275-What-events-will-you-need-'
 landing: true
 landing_blurb: 'Events and properties are the backbone of every analysis in Amplitude.'
+this_article_will_help_you:
+  - 'Identify promising events to track in Amplitude, based on your specific industry'
+  - "Learn more about Amplitude's industry-specific guides"
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632730

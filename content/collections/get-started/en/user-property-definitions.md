@@ -3,6 +3,8 @@ id: 4d421b64-f9f4-45c7-b0d6-ea0708c21b78
 blueprint: get-started
 title: 'User property definitions'
 source: 'https://help.amplitude.com/hc/en-us/articles/215562387-User-property-definitions'
+this_article_will_help_you:
+  - 'Understand how Amplitude defines user properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

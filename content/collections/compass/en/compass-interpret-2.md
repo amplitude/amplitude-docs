@@ -3,6 +3,9 @@ id: ddf41127-c15a-422c-be5b-9bdc91d6c721
 blueprint: compass
 title: 'Interpret your Compass chart, part 2: Correlation and cohorts'
 source: 'https://help.amplitude.com/hc/en-us/articles/20963736374299-Interpret-your-Compass-chart-part-2-Correlation-and-cohorts'
+this_article_will_help_you:
+  - 'Understand correlation and why Compass uses it'
+  - 'Create a cohort from your Compass chart results'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104023
 landing: true

@@ -4,6 +4,10 @@ blueprint: experiment
 title: 'JSON payloads'
 landing: false
 exclude_from_sitemap: false
+this_article_will_help_you:
+  - 'Understand how JSON payloads work in Amplitude Experiment'
+  - 'Create and configure variants with JSON payloads'
+  - 'Access variant payloads in your application code'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732059600
 ---

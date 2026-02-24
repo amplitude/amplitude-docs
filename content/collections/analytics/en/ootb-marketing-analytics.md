@@ -2,6 +2,8 @@
 id: ec6127d5-1384-41b1-b85a-04d21d0678f1
 blueprint: analytic
 title: 'Out-of-the-box Marketing Analytics'
+this_article_will_help_you:
+  - 'Track industry-standard marketing analytics in one place'
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1761586978

@@ -2,6 +2,9 @@
 title: "How Amplitude computes conversions through funnels"
 source: "https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels"
 id: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
+this_article_will_help_you:
+  - 'Familiarize yourself with conversion computations using funnels'
+  - 'Identify key differences between Funnel and Event Segmentation charts'
 ---
 Identify key differences between Funnel and Event Segmentation charts
 

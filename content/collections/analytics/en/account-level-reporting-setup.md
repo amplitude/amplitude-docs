@@ -3,6 +3,8 @@ id: ceeb59de-e809-445f-82de-197c3f1173d6
 blueprint: analytic
 title: 'Set up account-level reporting'
 source: 'https://help.amplitude.com/hc/en-us/articles/5332668738331-Set-up-account-level-reporting'
+this_article_will_help_you:
+  - 'Correctly instrument account-level reporting in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

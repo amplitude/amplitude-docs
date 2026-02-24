@@ -7,6 +7,9 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715362483
+this_article_will_help_you:
+  - 'View and understand the behavior of your users across multiple products'
+  - 'Reconcile users with multiple user IDs across your products'
 ---
 With Portfolio, you can build a holistic view of how your users interact with your entire product portfolio. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 

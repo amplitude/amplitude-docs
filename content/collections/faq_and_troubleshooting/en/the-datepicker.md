@@ -3,6 +3,8 @@ id: 58d6a33c-545b-44fe-a840-d5df0a1ab748
 blueprint: faq_and_troubleshooting
 title: 'The datepicker'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/18133682827419'
+this_article_will_help_you:
+  - 'Understand nuances in the way the datepicker understands time'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1753204770
 landing: false

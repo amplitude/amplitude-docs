@@ -19,6 +19,10 @@ logo: icons/ios.svg
 ---
 Official documentation for Amplitude Experiment's Client-side iOS SDK implementation.
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 ## Install
 
 {{partial:admonition type="warning" heading="Import statement"}}

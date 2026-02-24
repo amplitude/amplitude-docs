@@ -3,6 +3,9 @@ id: 186f35a4-5184-46c4-8a96-16184ad038bb
 blueprint: data
 title: 'Data Assistant Overview'
 source: 'https://help.amplitude.com/hc/en-us/articles/17321563434267-Streamline-and-improve-your-tracking-plan-with-the-AI-Data-Assistant'
+this_article_will_help_you:
+  - 'Easily identify and understand issues with your tracking plan'
+  - 'Fix those issues quickly'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
@@ -42,3 +45,7 @@ To implement (or reject) the suggestion for only certain events, check the boxes
 Data Assistant provides automated tasks to help you clean up your data. Automated tasks let data governors define conditions and actions that the system then performs automatically. It automates repetitive clean-up workflows by taking recommendations provided by the Data Assistant and transforming those recommendations into automatic actions.
 
 For more information, go to [Automated Tasks](/docs/data/automated-tasks-in-data-assistant).
+
+{{partial:admonition type="note" heading=""}}
+Data Assistant is one of several AI tools in Amplitude. For analytics insights, chart creation, and natural-language data exploration, refer to [Global Agent](/docs/amplitude-ai/global-agent-overview). For automated dashboard analysis and session replay insights, refer to [AI Agents](/docs/amplitude-ai/setup-and-onboarding).
+{{/partial:admonition}}

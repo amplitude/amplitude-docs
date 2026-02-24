@@ -3,6 +3,9 @@ id: 96031a26-9f2e-4c15-b589-bc4425821790
 blueprint: analytic
 title: 'Historical Count, part 1: Track user behavior for different instances of each user action'
 source: 'https://help.amplitude.com/hc/en-us/articles/360040957432-Historical-Count-part-1-Track-user-behavior-for-different-instances-of-each-user-action'
+this_article_will_help_you:
+  - 'Pinpoint the *N*th instance of a user action'
+  - "Identify customer based on the number of times they've performed a critical action"
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

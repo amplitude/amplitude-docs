@@ -340,6 +340,10 @@ Next, on the Tags page, enable Guides and Surveys.
 The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
 {{/partial:admonition}}
 
+{{partial:admonition type="warning" heading="Google Tag Manager isn't the recommended install method"}}
+While Google Tag Manager is a convenient way to test the Guides and Surveys SDK, Amplitude recommends deploying through the Browser SDK v2, the Browser Unified SDK, or one of the code paths above. GTM can cause issues related to timing and sequencing that affect guide and survey delivery. Installing the SDK directly through code gives you greater control over targeting, SDK usage, localization, and access to new features as the product evolves.
+{{/partial:admonition}}
+
 ## Verify installation and initialization
 
 To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
@@ -800,7 +804,7 @@ export class AppComponent {
 For Angular apps, use the `Router` service with `navigateByUrl` in your root `AppComponent` (or an initializer). This method accepts a full URL string, which matches the `(url: string) => void` signature that `setRouter` expects.
 
 {{partial:admonition type="note" heading="Update URL behavior"}}
-After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior from Same tab or New tab to **Use router**. This ensures that the guide or survey uses the custom router function instead of the default browser navigation.
+After you configure the router with `setRouter()`, update the URL behavior setting in the Guides and Surveys interface. For any link actions in your guides or surveys, change the URL behavior to **Use router**. The **Same tab** and **New tab** URL behaviors don't use the configured router - only **Use router** triggers your custom router function.
 {{/partial:admonition}}
 
 ### Set user properties

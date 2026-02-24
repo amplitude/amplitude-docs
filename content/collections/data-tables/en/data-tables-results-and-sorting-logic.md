@@ -7,6 +7,9 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1719958028
 landing: true
 landing_blurb: 'Learn how Amplitude decides what results to display in a Data Table chart'
+this_article_will_help_you:
+  - 'Use the sorting logic behind Data Tables to create elegant and accurate charts'
+  - 'Understand when, why, and how Data Tables limit the amount of data you export'
 ---
 For more complex analyses, it's important to understand how Amplitude Analytics decides what results to display, as well as what happens when you sort on a given column.
 

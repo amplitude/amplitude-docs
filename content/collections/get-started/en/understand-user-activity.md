@@ -3,6 +3,8 @@ id: 6351af1c-e7e9-4488-bbe7-34648487d173
 blueprint: get-started
 title: "Understand your users' activity"
 source: 'https://help.amplitude.com/hc/en-us/articles/16798159501723-Understand-your-users-activity'
+this_article_will_help_you:
+  - 'Use a template to generate a user activity report in Amplitude Analytics'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

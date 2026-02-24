@@ -3,10 +3,15 @@ id: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
 blueprint: workflow
 title: 'Test and launch your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687611-Test-and-launch-your-experiment'
+this_article_will_help_you:
+  - 'QA your experiment before and after rollout'
+  - 'Launch your experiment to your users'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517033
 ---
 Before any users view your experiment, make sure the variants you’ve developed look and function exactly the way you intended. Because Experiment allows you to assign specific variants by user ID, device ID, or cohort, you can ensure that Amplitude serves your test devices the relevant variants when they enter your experiment. 
+
+To exclude users from an experiment or flag, add them to the `OFF` variant. 
 
 On the Overview page for your specific experiment, review the Overview, Delivery, Variants, and Targeting sections. Make sure you set everything the way you planned it. 
 
@@ -45,3 +50,5 @@ Go to *Experiments > your experiment > Activity tab > Diagnostics* to view how m
 This is a useful way to QA the assignment process. If you notice that one variant is enrolling significantly more or significantly fewer users than you expected, it could mean an issue you should investigate.
 
 If you do spot some outliers or anomalies that concern you, click into the chart or information to conduct a deep dive into the potential causes. To learn more about understanding anomalies, review this article on [Root Cause Analysis](/docs/analytics/root-cause-analysis).
+
+For a deeper validation of your experiment's instrumentation and assignment logic, [run an A/A test](/docs/feature-experiment/aa-testing) before launching a full A/B test.

@@ -2,6 +2,8 @@
 id: e34199cd-89b9-4b99-9b66-f0389adca042
 blueprint: user-session
 title: 'Marketing metrics recipes'
+this_article_will_help_you:
+  - 'Use Amplitude charts to analyze common marketing metrics'
 landing: false
 source: /hc/en-us/articles/23990255180443-Marketing-metrics-recipes
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

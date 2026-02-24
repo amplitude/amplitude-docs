@@ -1,0 +1,28 @@
+{{# 
+  Stylized container for procedural steps with numbered circles
+  
+  Parameters:
+  - title: Heading for the procedure (default: "Procedure")
+  
+  Usage: 
+  {{partial:procedure title="Configure your API settings"}}
+  1. Navigate to Settings.
+  2. Click API Keys.
+  3. Copy your key.
+  {{/partial:procedure}}
+#}}
+
+<div class="my-6 border-l-4 border-amp-blue-500 bg-amp-blue-950 rounded-r-lg overflow-hidden shadow-md not-prose">
+  <div class="px-6 py-4 bg-gradient-to-r from-amp-blue-950 to-white border-b border-amp-blue-200">
+    <h3 class="text-lg font-semibold text-amp-blue-600 m-0 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+      {{ title }}
+    </h3>
+  </div>
+  
+  <div class="px-6 py-4 bg-white procedure-content">
+    {{ slot | antlers | strip_tags('br') }}
+  </div>
+</div>

@@ -3,6 +3,9 @@ id: f50ba26f-5561-46a1-99f5-dd6ae795fdb8
 blueprint: retention-analysi
 title: 'Interpret your Retention Analysis chart: Usage interval'
 source: 'https://help.amplitude.com/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval'
+this_article_will_help_you:
+  - 'Read a retention analysis'
+  - "Understand the Retention Analysis chart's usage interval view"
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760631804
 landing: true
