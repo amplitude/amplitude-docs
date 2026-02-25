@@ -40,7 +40,7 @@ If you suspect events are being blocked:
 
 Although you can't directly prevent DNS poisoning, you can use the following strategies so events from the affected region still reach Amplitude.
 
-### 1. Deploy a domain proxy to relay events for impacted regions
+### Deploy a domain proxy to relay events for impacted regions
 
 Set up a domain proxy within the affected region that forwards traffic to Amplitude. Then configure your SDK to send data to this proxy instead of `api.amplitude.com`.
 
@@ -67,7 +67,7 @@ Review [Use domain proxy to relay events](/docs/analytics/domain-proxy) for opti
 {{/partial:card}}
 {{/partial:card-grid}}
 
-### 2. Route events through your own server or API
+### Route events through your own server or API
 
 Configure your SDK to send all data to your own server endpoint rather than directly to Amplitude. This is similar to deploying a domain proxy to relay events but this solution applies to all your events, not only the affected regions. With this solution, you get more flexibility to store data in your preferred data warehouse and integrate with Amplitude.
 
