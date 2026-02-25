@@ -42,7 +42,7 @@ Click the three dot menu to access format settings.
 
 A subtle nudge that appears near a contextually relevant element. Popovers are great for quick tips, or for directing users' attention without interrupting their flow.
 
-Popovers offer the same customization options as modals.
+Popovers offer many of the same customization options as modals.
 
 Click the three dot menu to access format settings.
 
@@ -83,7 +83,6 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advance trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
