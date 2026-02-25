@@ -1,18 +1,18 @@
 ---
 id: b4c5d6e7-f8a9-4b0c-8d1e-2f3a4b5c6d7e
 blueprint: api
-title: 'Events from Certain Regions are Not Reaching Amplitude'
+title: 'Events from Certain Regions are not reaching Amplitude'
 standard_endpoint: none
 api_status: ga
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1730000000
 ---
-If events from users in a specific region have suddenly stopped appearing in Amplitude, the cause usually isn't your SDK setup or Amplitude's ingestion endpoints. The most common cause is DNS poisoning of our API domains. DNS Poisoning is when fake information is entered into the cache of a DNS server. This results in DNS queries producing incorrect replies, which may send users to the wrong website. 
+If events from users in a specific region have suddenly stopped appearing in Amplitude, the cause usually isn't your SDK setup or Amplitude's ingestion endpoints. The most common cause is DNS poisoning of Amplitude's API domains. DNS Poisoning is when attackers inject fake information into the cache of a DNS server. This results in DNS queries producing incorrect replies, which may send users to the wrong website. 
 
 This article explains why this happens, how to confirm it, and how to resolve the issue.
 
 {{partial:admonition type="warning" heading="Important"}}
-DNS poisoning isn't caused by Amplitude and is outside Amplitude's control. It occurs at the network level and depends on where the device is located geographically relative to Amplitude's data centers.
+Amplitude can't control DSN poisoning because the cause is outside Amplitude's control. If it occurs, it happens at the network level. For more information on DNS poisoning, go to [DNS cache poisoning](https://www.cloudflare.com/learning/dns/dns-cache-poisoning/).
 {{/partial:admonition}}
 
 ## Why events stop flowing
@@ -30,7 +30,7 @@ These domains can be subject to DNS poisoning. When that happens:
 
 ## How to confirm DNS poisoning
 
-If you suspect events are being blocked:
+If you suspect events aren't reaching Amplitude:
 
 1. **Check your event logs**: Look for a sudden drop or complete stop in events from a specific region while events from other regions stay normal.
 2. **Test DNS resolution**: Try resolving `api.amplitude.com` from within the affected region. If the domain doesn't resolve correctly or points to an invalid IP, it's likely poisoned.
