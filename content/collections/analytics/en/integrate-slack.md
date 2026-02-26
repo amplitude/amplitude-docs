@@ -74,6 +74,39 @@ To receive these notifications, set up the Amplitude app for Slack for the Ampli
 
 If a shareable link doesn't unfurl when you post it in Slack, you may need to enable link previews in your Slack settings. To do this, review [Slack's documentation](https://get.slack.help/hc/en-us/articles/204399343-Sharing-links-in-Slack).
 
+## Update your Slack connection
+
+As Amplitude adds new features to the Slack integration, the app occasionally requires updated permissions—called "scopes"—to support new functionality. If you installed the Amplitude Slack app before January 1, 2026, you may need to re-authorize the connection to enable the latest features, including Global Agent.
+
+### What are scopes
+
+Scopes are permissions that define what a Slack app can do—for example, posting messages in channels, sending direct messages, or reading channel information. When Amplitude releases new Slack features, those features may require additional scopes that weren't part of the original authorization. Until you re-authorize, those new features don't work correctly.
+
+### When you might need to update
+
+You likely need to update your connection if any of the following apply:
+
+- You installed the Amplitude Slack app before January 1, 2026.
+- New features like Global Agent don't respond as expected in Slack.
+- Your Amplitude profile settings show an **Update Slack** button instead of **Connect to Slack**.
+
+### IT admin approval
+
+Some Slack workspaces require admin approval before granting an app new permissions. If your organization has this policy, the update process automatically sends an approval request to your IT or Slack admin team on your behalf—you don't need to contact them separately.
+
+- Select **Update Slack** in your Amplitude profile settings.
+- Slack displays an authorization screen that lists the new scopes Amplitude requests.
+- If your workspace requires admin approval, Slack automatically submits the request to your IT admin—you don't need to take any other action beyond selecting **Allow**.
+- Your IT admin reviews and approves the scope update—this is typically a fast, routine approval.
+- After approval, Amplitude fully updates your Slack connection, and all new features become available immediately.
+
+### How to update
+
+1. Navigate to *Settings > Personal Settings*, then select *Profile*. You can also go directly to [your profile settings](https://app.amplitude.com/analytics/amplitude/settings/profile).
+2. Select **Update Slack** on your profile page.
+3. In the Slack OAuth screen, select **Allow** to grant the updated permissions. This refreshes your connection and grants any new scopes the latest features require.
+4. Open a direct message with the Amplitude bot in Slack and ask any question to confirm everything works.
+
 ## Receive Amplitude comments directly in Slack
 
 After you connect your Slack account, Amplitude sends notifications when:
