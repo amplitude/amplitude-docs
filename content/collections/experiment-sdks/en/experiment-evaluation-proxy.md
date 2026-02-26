@@ -17,17 +17,13 @@ bundle_url: 'https://hub.docker.com/r/amplitudeinc/evaluation-proxy'
 shields_io_badge: 'https://img.shields.io/docker/v/amplitudeinc/evaluation-proxy?color=blue&label=docker&logo=docker&logoColor=white'
 logo: icons/docker.svg
 ---
-{{partial:admonition type="beta" heading=""}}
-The evaluation proxy is under active development. APIs are unstable and may change before general availability.
-{{/partial:admonition}}
-
 The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/feature-experiment/local-evaluation) running within your infrastructure.
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.svg)
 
 * **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/apis/experiment/experiment-evaluation-api) and [SDKs](/docs/sdks/experiment-sdks) to run local evaluation in your infrastructure.
 
-* **Automatically track assignment events for local evaluations**: Identical assignment events are deduplicated for 24 hours.
+* **Automatically track exposure events for local evaluations**: It deduplicates identical exposure events for 24 hours.
 
 * **Enhance local evaluation with large cohort targeting**: Targeted cohorts are synced hourly to the Evaluation Proxy and added to the user prior to evaluation.
 
@@ -65,7 +61,7 @@ Environment configuration can only configure a single project. Environment varia
 | `AMPLITUDE_REDIS_URI` | Optional. The entire URI to connect to Redis. Include the protocol, host, port, and optional username, password, and path (for example `redis://localhost:6379`). |
 | `AMPLITUDE_REDIS_PREFIX` | Optional. The prefix to connect  |
 | `AMPLITUDE_REDIS_USE_CLUSTER` | Optional. If `AMPLITUDE_REDIS_URI` is a cluster URL, pass this as `true`. It defaults to `false`. |
-| `AMPLITUDE_REDIS_READ_FROM` | Optional. Read routing strategy for Redis Cluster. Options: `ANY` (default, read from any node in the cluster) or `REPLICA_PREFERRED` (prefer replicas). |
+| `AMPLITUDE_REDIS_READ_FROM` | Optional. Read routing strategy for Redis Cluster. Options: `REPLICA_PREFERRED` (default, prefer replicas) or `ANY` (read from any node in the cluster). |
 | `AMPLITUDE_SERVER_URL` | Optional. The server URL, including protocol and host, to fetch flags from. |
 | `AMPLITUDE_COHORT_SERVER_URL` | Optional. The server URL, including protocol and host, to download cohorts from. |
 
@@ -116,7 +112,7 @@ Configure the evaluation proxy to use Redis as a persistent storage. Highly reco
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |
 | `useCluster` | Optional. If `uri` is a cluster URL, set this to `true`. Defaults to `false`. |
-| `readFrom` | Optional. Read routing strategy for **cluster mode only**: `ANY` (default, read from any node in the cluster) or `REPLICA_PREFERRED` (prefer replicas). |
+| `readFrom` | Optional. Read routing strategy for **cluster mode only**: `REPLICA_PREFERRED` (default, prefer replicas) or `ANY` (read from any node in the cluster). |
 | `prefix` | Optional. A prefix for all keys saved by the evaluation proxy. Defaults to `amplitude`. |
 
 ## Deployment
@@ -197,6 +193,15 @@ Configure each pod with 4 CPU cores and 9 GiB RAM for a capacity of approximatel
 
 - **Minimum replicas**: Deploy at least two replicas for high availability.
 - **Horizontal scaling**: Add pods to increase capacity. For example, four pods provide approximately 20,000 requests each second.
+
+#### JVM heap for large cohorts
+
+If you use local evaluation and download large cohorts greater than 5M users, set a 6 GiB max JVM heap size.
+
+```yaml
+- name: JAVA_TOOL_OPTIONS
+  value: "-Xms128m -Xmx6144m"
+```
 
 #### Redis configuration
 
