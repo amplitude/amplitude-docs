@@ -10,6 +10,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/amplitude-ai/slack",
+      "destination": "/docs/amplitude-ai/slack-teams",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/amplitude-ai/agents-overview",
       "destination": "https://amplitude.com/docs/amplitude-ai",
       "statusCode": 301
