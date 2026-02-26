@@ -10,7 +10,6 @@ updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632707
 academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
-  - 7c3d4e5f-6a7b-4c5d-0e1f-3a4b5c6d7e8f
 ---
 **Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create > Chart*, then select a new chart type from the Charts fly-out.
 
