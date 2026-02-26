@@ -3,9 +3,6 @@ id: 662a82d8-e7c8-43c8-8890-6d31587fffd8
 blueprint: retention-analysi
 title: 'How time works in a retention analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/14309817756827-How-time-works-in-a-retention-analysis'
-this_article_will_help_you:
-  - 'Understand the different ways time can affect your Retention Analysis chart'
-  - 'Choose the most appropriate time calculation for your analysis'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632448
 landing: true

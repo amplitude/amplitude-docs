@@ -3,8 +3,6 @@ id: 06fa7873-19a6-47ac-9ae0-f5da83396d11
 blueprint: analytic
 title: 'Historical Count, part 2: Order of operations'
 source: 'https://help.amplitude.com/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations'
-this_article_will_help_you:
-  - "Understand where Historical Counts fall into Amplitude's order of operations"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

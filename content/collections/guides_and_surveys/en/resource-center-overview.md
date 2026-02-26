@@ -5,8 +5,6 @@ title: Overview
 landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760633219
-this_article_will_help_you:
-  - 'Understand the basic concepts of the Resource Center'
 academy_course:
   - 6b5642f5-c271-4855-b834-85ac2eeaa246
 landing_blurb: Learn about Resource Center, a widget that integrates directly with Guides & Surveys, and surfaces content from anywhere on your site.

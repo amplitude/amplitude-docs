@@ -3,9 +3,6 @@ id: 213623de-f09a-461f-aaa0-01186edd7964
 blueprint: analytic
 title: 'Collaborate on your analyses using spaces'
 source: 'https://help.amplitude.com/hc/en-us/articles/360016524911-Collaborate-on-your-analyses-using-spaces'
-this_article_will_help_you:
-  - 'Collaborate with other team members to generate insights by creating and refining analyses together'
-  - 'Organize the content you create in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

@@ -2,9 +2,6 @@
 id: f2ec214a-e983-47f1-bf4f-7656427b8b14
 blueprint: experiment
 title: 'Run an A/A test'
-this_article_will_help_you:
-  - 'Validate your experimentation setup with an A/A test'
-  - 'Interpret A/A test results and troubleshoot issues'
 landing: false
 exclude_from_sitemap: false
 ---

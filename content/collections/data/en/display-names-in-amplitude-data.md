@@ -3,9 +3,6 @@ id: 761569fa-61e0-451b-8c08-4f1d52b8e17e
 blueprint: data
 title: 'Event and property display names'
 source: 'https://help.amplitude.com/hc/en-us/articles/16805727661211-Display-names-in-Amplitude-Data'
-this_article_will_help_you:
-  - 'Understand the benefits to using a display name for an event or user property'
-  - 'Learn how to change the display name of your events or user properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

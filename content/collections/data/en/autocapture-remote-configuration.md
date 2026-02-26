@@ -2,9 +2,6 @@
 id: 8f8e25db-62c1-4492-bf0d-e44dba323d5d
 blueprint: data
 title: 'Autocapture Remote Configuration'
-this_article_will_help_you:
-  - 'Understand what remote configuration is'
-  - 'Set up Autocapture remote configuration'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254

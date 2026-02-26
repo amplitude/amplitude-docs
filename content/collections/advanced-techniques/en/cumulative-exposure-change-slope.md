@@ -3,9 +3,6 @@ id: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
 blueprint: advanced-technique
 title: 'The cumulative exposures graph: Increasing and decreasing slopes'
 source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
-this_article_will_help_you:
-  - 'Understand the cumulative exposures graph in Amplitude Experiment'
-  - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730930146

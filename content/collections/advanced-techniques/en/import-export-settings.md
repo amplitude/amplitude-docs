@@ -4,9 +4,6 @@ published: false
 blueprint: advanced-technique
 title: 'Import or export experiment chart settings as JSON'
 source: 'https://help.amplitude.com/hc/en-us/articles/12347964006555-Import-or-export-experiment-chart-settings-as-JSON'
-this_article_will_help_you:
-  - 'Save experiment chart settings as JSON to your clipboard'
-  - 'Import chart settings as JSON to your experiment results in analytics'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726682933

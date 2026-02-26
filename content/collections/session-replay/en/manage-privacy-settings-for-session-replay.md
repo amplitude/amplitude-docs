@@ -7,8 +7,6 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720719132
 source: 'https://help.amplitude.com/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay'
-this_article_will_help_you:
-  - 'Ensure your use of Session Replay complies with data privacy requirements'
 ---
 For many organizations, data privacy, security, and PII are more pressing concerns than they’ve ever been before. Because the potential for legal exposure varies from jurisdiction to jurisdiction, and because specific business needs vary considerably, no one-size-fits-all solution works for everyone.
 

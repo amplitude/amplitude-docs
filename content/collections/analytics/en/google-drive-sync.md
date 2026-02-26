@@ -7,8 +7,6 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717696633
-this_article_will_help_you:
-  - 'Export chart data to Google Sheets and chart images to Google Slides'
 ---
 Sometimes you need to share refreshable chart data with team members, or sync chart images into presentations. Amplitude's **Sync to Drive and Sheets extension** (downloadable from [Google Workspace Marketplace](https://workspace.google.com/marketplace/app/amplitude_sync_to_drive_and_sheets/998012258772)) lets you easily export your chart data to Google Sheets and your chart images to Google Slides. 
 

@@ -5,8 +5,6 @@ title: 'Mark a step in your funnel as optional'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015624
-this_article_will_help_you:
-  - 'Add an optional step to your Funnel Analysis charts, and compare conversion rates between the two versions'
 ---
 At times you will need to define a conversion where some of the steps are optional. For example, a funnel has steps A, B, C, and D, where B is optional. If a user performs steps A, C, and D, they would still convert.
 

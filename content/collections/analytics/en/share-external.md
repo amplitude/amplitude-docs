@@ -3,8 +3,6 @@ id: cfa39989-0859-4dcc-a689-9f0215ae2657
 blueprint: analytic
 title: 'Share charts, dashboards, and notebooks with stakeholders outside your company'
 source: 'https://help.amplitude.com/hc/en-us/articles/235717108-Share-charts-dashboards-and-notebooks-with-stakeholders-outside-your-company'
-this_article_will_help_you:
-  - "Share analyses with people who do not have full access to your organization's data"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
