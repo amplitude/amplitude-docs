@@ -6,9 +6,9 @@ description: 'Frequently asked questions about migrating from password to key pa
 category: Warehouse
 ---
 
-Snowflake is implementing a phased rollout to deprecate single-factor password authentication, starting in May 2026 and completing by October 2026. This impacts Amplitude's source and destination integrations with Snowflake.
+Snowflake is implementing a phased rollout to deprecate single-factor password authentication, starting in May 2026 and completing by October 2026. This impacts all of Amplitude's Snowflake integrations — both sources (data imports from Snowflake to Amplitude) and destinations (data exports from Amplitude to Snowflake).
 
-For the complete official timeline and enforcement details, review Snowflake's [Planning for the deprecation of single-factor password sign-ins](https://docs.snowflake.com/en/user-guide/security-mfa-rollout) documentation.
+For the complete official timeline and enforcement details, see Snowflake's [Planning for the deprecation of single-factor password sign-ins](https://docs.snowflake.com/en/user-guide/security-mfa-rollout) documentation.
 
 This FAQ addresses common questions about migrating to key pair authentication for your Amplitude integrations.
 
@@ -16,116 +16,162 @@ This FAQ addresses common questions about migrating to key pair authentication f
 
 ### When does this change take effect?
 
-Snowflake's deprecation follows a phased approach:
+Amplitude and Snowflake are following a coordinated timeline:
 
-- **September 2025 - January 2026**: Mandatory MFA for all Snowsight users
-- **May 2026 - July 2026**: Strong authentication required for newly created users
-- **August 2026 - October 2026**: Strong authentication required for all existing users
+**Already in effect:**
 
-The official Snowflake timeline referenced in the introduction provides complete details about each milestone and enforcement dates.
+- **February 1, 2026**: Amplitude removed the password option from the new connection flow for Snowflake sources and destinations. You can't enter new password credentials when creating a Snowflake connection. Existing password-authenticated connections continue to work, and you can still reuse existing password credentials when setting up additional connections.
+
+**Coming soon:**
+
+- **May 2026**: Amplitude begins sending in-product warnings to users with existing password-authenticated connections.
+- **May – July 2026**: Snowflake begins enforcing strong authentication for newly created users.
+- **August – October 2026**: Snowflake enforces strong authentication for all existing users.
+
+Amplitude won't disconnect your Snowflake connections if you don't migrate by these dates. However, Snowflake will eventually block password-based logins, which causes your Amplitude sources and destinations to stop working.
 
 ### What should I do now?
 
-Amplitude recommends migrating to key pair authentication as soon as possible to:
+Migrate all Snowflake connections — both sources and destinations — to key pair authentication as soon as possible to:
 
-- Ensure future compatibility
-- Improve security
-- Avoid any potential service interruptions
+- Avoid service interruptions when Snowflake enforces strong authentication.
+- Improve security.
+- Ensure future compatibility.
 
 ### Where can I get help?
 
 If you encounter issues during migration:
 
 - Contact [Amplitude Support](https://gethelp.amplitude.com) through your usual channels.
-- Reference Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
-- Ensure that your account name follows the `ORGNAME-ACCOUNTNAME` format.
+- See Snowflake's [key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+- Ensure your account name follows the `ORGNAME-ACCOUNTNAME` format.
 
 ## Migration impact
 
+### Does this affect both Snowflake sources and destinations?
+
+Yes. Both Snowflake sources (imports from Snowflake to Amplitude) and Snowflake destinations (exports from Amplitude to Snowflake) require migration to key pair authentication.
+
 ### Will I lose any data during migration?
 
-No. Changing authentication method doesn't affect:
+No. Changing the authentication method doesn't affect:
 
-- Existing imported data
-- Import configurations  
-- Scheduled imports
-- Data mappings
+- Existing imported or exported data.
+- Import and export configurations.
+- Scheduled syncs.
+- Data mappings.
 
 ### Will there be duplicate data if I migrate?
 
-No. Migration only changes authentication method. The source configuration (for example, tables and queries,) remains identical.
+No. Migration only changes the authentication method. Your source and destination configurations remain identical.
 
-### Do I need to recreate my import queries?
+### Do I need to recreate my queries or configurations?
 
-No. All configurations are preserved:
+No. Migration preserves all your configurations:
 
-- SQL queries
-- Table selections
-- Column mappings
-- Import schedules
+- SQL queries.
+- Table selections.
+- Column mappings.
+- Import and export schedules.
 
-### Will my imports stop during migration?
+### Will my imports or exports stop during migration?
 
-There will be no interruptions. In your `Manage Import Setting`, the process is:
+No. The process is designed to be uninterrupted. The general flow when updating an existing connection:
 
-1. Add key pair auth
-2. Verify connection
-3. Remove password
+1. Open the connection settings for your source or destination.
+2. Switch to key pair authentication and generate a key.
+3. Apply the public key in Snowflake.
+4. Verify the connection.
+5. Save.
 
-Your imports will continue throughout the migration process.
+Your imports and exports continue throughout the process.
 
-## Technical Details
+## Technical details
 
 ### Can I use the same Snowflake user?
 
-Yes. Amplitude recommends that you:
+Yes. Amplitude recommends:
 
-- Keep the same user
-- Add key pair auth through the `Manage Import Setting` in your existing Snowflake integration
-- Remove password after verification
+- Keeping the same Snowflake user.
+- Adding key pair authentication through the connection settings for your existing source or destination.
+- Removing password auth after verifying the new credentials work.
 
-### What happens to my warehouse/database settings?
+### Can I share credentials between sources and destinations?
 
-All settings preserved:
+Yes. Amplitude supports credential reuse across all Snowflake connections in your organization:
 
-- Database connections
-- Warehouse configurations
-- Role permissions
-- Custom queries
+- Sources can use credentials from destinations, and vice versa.
+- Connections across different Amplitude projects in the same organization can share credentials.
 
-### Can I migrate sources one at a time?
+This is especially helpful when migrating to key pair auth. Instead of generating a new key pair for each connection, you can create one key pair and reuse it across your Snowflake sources and destinations.
+
+Snowflake sources and destinations require slightly different Snowflake user permissions — sources need read access and destinations need write access. If you share credentials between a source and a destination, ensure your Snowflake user has the permissions required for both.
+
+### What happens when I update credentials shared across multiple connections?
+
+If multiple Snowflake connections share the same credentials, updating the credentials for one connection updates all of them. Amplitude shows you how many connections share the credentials when you view connection settings, so you can confirm the scope of your update before saving.
+
+### Can I migrate connections one at a time?
 
 Yes. You can:
 
-- Migrate sources individually
-- Test each migration
-- Maintain mixed auth temporarily
+- Migrate sources and destinations individually.
+- Test each migration before proceeding to the next.
+- Maintain a mix of password and key pair auth temporarily.
+
+### What are the permission differences between sources and destinations?
+
+Snowflake sources (imports) require read permissions to query your Snowflake data. Snowflake destinations (exports) require write permissions to load data into your warehouse. If you share credentials between a source and destination, ensure your Snowflake user has all the necessary permissions for both read and write operations.
+
+### What about human Snowflake accounts vs service accounts?
+
+Amplitude can't support MFA for Snowflake connections. If your connections use a human Snowflake user account, you need to either:
+
+- Switch to a Snowflake service account and configure key pair authentication.
+- Add key pair authentication to the existing human account (Snowflake allows both MFA and key pair on a single user).
+
+Most Amplitude customers use dedicated service accounts for Snowflake connections.
 
 ## Best practices
 
-### Should I create new users for key pair auth?
+### Should I create new Snowflake users for key pair auth?
 
-This isn't necessary. As a best practice:
+You don't need to. Use your existing Snowflake user and add key pair authentication to it:
 
-- Use existing user
-- Add key pair auth
-- Share key pair across sources
-- Remove password last
+- Use your existing Snowflake user.
+- Generate a single key pair and reuse it across all your Snowflake sources and destinations.
+- Remove password authentication only after verifying all connections work with the new key pair.
 
-### How do I set up key pair authentication?
+### How do I set up key pair authentication for an existing connection?
 
-1. In your existing integration `Manage Import Settings`, select **Key pair** authentication
-2. Click **Generate Key** to create a new key pair
-3. Copy the generated public key
-4. In Snowflake, run the following SQL command to add the public key to your user:
+The process is the same for both sources and destinations:
+
+1. Open the connection settings for your existing Snowflake source or destination.
+   - For sources: navigate to *Data > Sources*, select the source, then open its settings.
+   - For destinations: navigate to *Data > Destinations*, select the destination, then open its settings.
+2. Select **Key pair** authentication.
+3. Click **Generate Key** to create a new key pair.
+4. Copy the generated public key.
+5. In Snowflake, run the following SQL to add the public key to your user:
 
    ```sql
    ALTER USER "your_username" SET rsa_public_key='your_public_key_here';
    ```
 
-5. Provide your organization and account names in the format `ORGNAME-ACCOUNTNAME`
-6. Test the connection to verify it works
-7. After verification, you can remove password authentication
+6. Provide your organization and account names in the format `ORGNAME-ACCOUNTNAME`.
+7. Test the connection to verify it works.
+8. After verification, save your changes.
+
+If other connections share the same credentials, this update applies to all of them.
+
+### How do I reuse existing credentials for a new connection?
+
+When creating a new Snowflake source or destination, you can select previously saved credentials from any connection in your organization:
+
+1. On the credentials step when creating a new source or destination, look for the option to use existing credentials.
+2. Select credentials from an existing connection (source or destination) in your organization, including connections from other projects.
+3. Verify that the Snowflake user has the required permissions for the new connection type.
+4. Complete the connection setup.
 
 ### What format should I use for the account name?
 
@@ -139,12 +185,18 @@ SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();
 
 This error typically occurs when:
 
-- The public key isn't properly set on the user
-- The account name format is incorrect (should be `ORGNAME-ACCOUNTNAME`)
-- There's a mismatch between the public and private keys
+- The public key isn't properly set on the Snowflake user.
+- The account name format is incorrect (should be `ORGNAME-ACCOUNTNAME`).
+- There's a mismatch between the public and private keys.
 
 To resolve:
 
-1. Verify the public key is correctly set on the Snowflake user
-2. Confirm you're using the correct account name format
-3. If needed, regenerate the key pair and update the public key in Snowflake
+1. Verify the public key is correctly set on the Snowflake user. Run the following to confirm:
+
+   ```sql
+   DESC USER "your_username";
+   ```
+
+2. Confirm you're using the correct account name format.
+3. Ensure the Snowflake role you're using has the `ALTER USER` privilege when setting the public key.
+4. If needed, regenerate the key pair and update the public key in Snowflake.
