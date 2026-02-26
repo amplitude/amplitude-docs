@@ -437,9 +437,41 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 | Name | Description |
 |------|-------------|
 | `config.autocapture.attribution.excludeReferrers` | Optional. Type: Array of `string` or `RegExp`. Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
+| `config.autocapture.attribution.excludeInternalReferrers` | @Experimental Optional. Type: `boolean` or `{ condition: 'always' \| 'ifEmptyCampaign' }`. When enabled, the SDK does not track campaign information when the referrer and the current page are on the same domain (internal referrer). Set to `true` or `{ condition: 'always' }` to always skip campaign tracking for internal referrers. Set to `{ condition: 'ifEmptyCampaign' }` to always skip campaign tracking for internal referrers where there are no UTM parameters or click IDs (empty campaign).
 | `config.autocapture.attribution.initialEmptyValue` | Optional. Type: `string`. Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY"`. |
 | `config.autocapture.attribution.resetSessionOnNewCampaign` | Optional. Type: `boolean`. Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`. |
 
+{{/partial:collapse}}
+
+##### Exclude internal referrers
+
+Use `excludeInternalReferrers` when you want to avoid attributing traffic to internal navigation (same domain or subdomain). The SDK treats a referrer as internal when `document.referrer` and `location.hostname` resolve to the same domain.
+
+- **Always exclude:** Set `excludeInternalReferrers: true` or `excludeInternalReferrers: { condition: 'always' }` to never track campaign information for internal referrers.
+- **Exclude only when campaign is empty:** Set `excludeInternalReferrers: { condition: 'ifEmptyCampaign' }` to skip campaign tracking for internal referrers where there are no UTM parameters or click IDs. If the user arrives from an internal page with UTM or click IDs, campaign data is still tracked (if the referrer isn't excluded by `excludeReferrers`)
+
+{{partial:collapse name="Example: always exclude internal referrers"}}
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    attribution: {
+      excludeInternalReferrers: true,
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
+{{partial:collapse name="Example: exclude internal referrers only when campaign is empty"}}
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    attribution: {
+      excludeInternalReferrers: { condition: 'ifEmptyCampaign' },
+    },
+  },
+});
+```
 {{/partial:collapse}}
 
 ##### Exclude referrers
@@ -1872,7 +1904,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers) and [exclude internal referrers](#exclude-internal-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
