@@ -28,7 +28,7 @@ Amplitude and Snowflake are following a coordinated timeline:
 - **May – July 2026**: Snowflake begins enforcing strong authentication for newly created users.
 - **August – October 2026**: Snowflake enforces strong authentication for all existing users.
 
-Amplitude won't disconnect your Snowflake connections if you don't migrate by these dates. However, Snowflake will eventually block password-based logins, which causes your Amplitude sources and destinations to stop working.
+Amplitude won't disconnect your Snowflake connections if you don't migrate by these dates. However, Snowflake intends to eventually block password-based logins, which causes your Amplitude sources and destinations to stop working.
 
 ### What should I do now?
 
