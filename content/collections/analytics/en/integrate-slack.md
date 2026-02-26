@@ -76,11 +76,11 @@ If a shareable link doesn't unfurl when you post it in Slack, you may need to en
 
 ## Update your Slack connection
 
-As Amplitude adds new features to the Slack integration, the app occasionally requires updated permissions—called "scopes"—to support new functionality. If you installed the Amplitude Slack app before January 1, 2026, you may need to re-authorize the connection to enable the latest features, including Global Agent.
+As Amplitude adds new features to the Slack integration, the app occasionally requires updated permissions, called "scopes," to support new functionality. If you installed the Amplitude Slack app before January 1, 2026, you may need to re-authorize the connection to enable the latest features, including Global Agent.
 
-### What are scopes
+### About scopes
 
-Scopes are permissions that define what a Slack app can do—for example, posting messages in channels, sending direct messages, or reading channel information. When Amplitude releases new Slack features, those features may require additional scopes that weren't part of the original authorization. Until you re-authorize, those new features don't work correctly.
+Scopes are permissions that define what a Slack app can do. For example, scopes let the app post messages in channels, send direct messages, or read channel information. When Amplitude releases new Slack features, those features may require additional scopes that weren't part of the original authorization. Until you re-authorize, those new features don't work correctly.
 
 ### When you might need to update
 
@@ -92,12 +92,12 @@ You likely need to update your connection if any of the following apply:
 
 ### IT admin approval
 
-Some Slack workspaces require admin approval before granting an app new permissions. If your organization has this policy, the update process automatically sends an approval request to your IT or Slack admin team on your behalf—you don't need to contact them separately.
+Some Slack workspaces require admin approval before granting an app new permissions. If your organization has this policy, the update process automatically sends an approval request to your IT or Slack admin team on your behalf. You don't need to contact them separately.
 
 - Select **Update Slack** in your Amplitude profile settings.
 - Slack displays an authorization screen that lists the new scopes Amplitude requests.
-- If your workspace requires admin approval, Slack automatically submits the request to your IT admin—you don't need to take any other action beyond selecting **Allow**.
-- Your IT admin reviews and approves the scope update—this is typically a fast, routine approval.
+- If your workspace requires admin approval, Slack automatically submits the request to your IT admin. You don't need to take any other action beyond selecting **Allow**.
+- Your IT admin reviews and approves the scope update. This is typically a fast, routine approval.
 - After approval, Amplitude fully updates your Slack connection, and all new features become available immediately.
 
 ### How to update
@@ -130,12 +130,12 @@ Connect Amplitude team spaces to specific Slack channels to receive notification
 
 To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*
 
-## AskAI requirements
+## Global Agent requirements
 
-The Amplitude AskAI feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
+The Amplitude Global Agent feature requires a paid Slack plan to access within the Slack app container. This is due to Slack's platform requirements for AI-powered features. However, all other Amplitude features continue to work on free Slack plans.
 
-The Amplitude AskAI feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
+The Amplitude Global Agent feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
 
 {{partial:admonition type="note" heading=""}}
-You can also use [Global Agent in Slack](/docs/amplitude-ai/slack) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards—all from Slack.
+You can also use [Global Agent in Slack](/docs/amplitude-ai/slack) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards, all from Slack.
 {{/partial:admonition}}
