@@ -23,7 +23,7 @@ The Evaluation Proxy is a Service to enable, enhance, and optimize [local evalua
 
 * **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/apis/experiment/experiment-evaluation-api) and [SDKs](/docs/sdks/experiment-sdks) to run local evaluation in your infrastructure.
 
-* **Automatically track assignment events for local evaluations**: Identical assignment events are deduplicated for 24 hours.
+* **Automatically track exposure events for local evaluations**: Identical exposure events are deduplicated for 24 hours.
 
 * **Enhance local evaluation with large cohort targeting**: Targeted cohorts are synced hourly to the Evaluation Proxy and added to the user prior to evaluation.
 
