@@ -99,6 +99,8 @@ let amplitude = Amplitude(configuration: configuration)
 amplitude.add(plugin: amplitudeEngagement.getPlugin())
 ```
 
+This call uses the Amplitude Analytics iOS SDK's plugin system to integrate Guides and Surveys with your existing Analytics setup. Adding the plugin means Guides and Surveys initializes alongside Analytics, shares the same API key and user identity, and communicates with it directly. You don't need to call `boot` separately.
+
 #### Configuration options
 
 | Parameter                | Type                                                                                              | Description                                                                                                                                                               |
@@ -126,7 +128,13 @@ After you call `amplitude.add`, you are technically done installing. While scree
 {{/partial:admonition}}
 
 ### Not using Amplitude Analytics Swift SDK 1.13.0+
-In this case, installation is very similar to above; however, you need to manually call `.boot`.
+
+If your app doesn't use the Amplitude Analytics iOS Swift SDK 1.13.0+, you can still install Guides and Surveys, but you need to call `.boot` directly instead of using the Analytics SDK plugin system.
+
+{{partial:admonition type="warning" heading="Required and recommended setup for this installation path"}}
+- **Required**: Include `integrations` in your `boot` call to send Guides and Surveys events to your analytics provider. Without it, guide insights, survey insights, and survey responses won't appear.
+- **Strongly recommended**: Set up event forwarding using `forwardEvent` to enable the *On event tracked* trigger. Without it, you can only trigger guides and surveys on screen load or other non-event conditions.
+{{/partial:admonition}}
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -229,7 +237,7 @@ amplitudeEngagement.boot(options: bootOptions)
 ```
 
 {{partial:admonition type="note" heading=""}}
-After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
 ## Add your application to project settings
@@ -403,7 +411,11 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 
 ### Forward event
 
-If you don't use the plugin, but want to trigger Guides using events.
+If you don't use the Amplitude Analytics iOS SDK plugin (that is, you called `boot` directly), use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers — they're used only for local trigger evaluation.
+
+{{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
+Amplitude strongly recommends setting up event forwarding when not using the Amplitude Analytics iOS SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
+{{/partial:admonition}}
 
 ```swift
 amplitudeEngagement.forwardEvent([
