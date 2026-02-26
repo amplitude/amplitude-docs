@@ -76,7 +76,7 @@ No. Migration preserves all your configurations:
 
 ### Will my imports or exports stop during migration?
 
-No. The process is designed to be uninterrupted. The general flow when updating an existing connection:
+No. Your syncs will continue uninterrupted. The general flow when updating an existing connection:
 
 1. Open the connection settings for your source or destination.
 2. Switch to key pair authentication and generate a key.
@@ -123,7 +123,7 @@ Yes. You can:
 
 Snowflake sources (imports) require read permissions to query your Snowflake data. Snowflake destinations (exports) require write permissions to load data into your warehouse. If you share credentials between a source and destination, ensure your Snowflake user has all the necessary permissions for both read and write operations.
 
-### What about human Snowflake accounts vs service accounts?
+### What about human Snowflake accounts, instead of service accounts?
 
 Amplitude can't support MFA for Snowflake connections. If your connections use a human Snowflake user account, you need to either:
 
