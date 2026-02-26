@@ -18,6 +18,24 @@ tree:
         entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
         title: 'Key terms'
   -
+    id: cc001001-0000-4000-8000-cc0000000001
+    title: 'Core Concepts'
+    children:
+      -
+        id: f1a2b3c4-d5e6-7890-abcd-ef1234567891
+        entry: c4f3a8b2-1d5e-4f9a-b6c7-8d2e1f3a4b5c
+        title: 'Flags vs. experiments'
+      -
+        id: c2d55904-0be9-4466-9640-bcd9f3f63efc
+        entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
+      -
+        id: 5af0708b-e976-453e-8354-3f622b978be5
+        entry: 33d28828-0060-41cf-aad6-ae19df201c6c
+      -
+        id: b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e
+        entry: e7d9f2a3-4b6c-4e8f-a0b2-c3d4e5f6a7b8
+        title: 'Deployments and environments'
+  -
     id: fe2ac0eb-274f-4af5-b146-1d467c9edd0e
     title: 'Creating Experiments'
     children:
@@ -96,11 +114,21 @@ tree:
             id: db7c04f0-c7bf-44c1-9e1f-2526712736bf
             entry: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
           -
+            id: 46abcd22-a45e-4553-b08d-90f16283d013
+            entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+            children:
+              -
+                id: 5a5ff529-ea91-465c-bbc9-a848f5037eb8
+                entry: 7f2e8a4c-9b3d-4e1a-8f5c-2d6e9a1b4c8e
+          -
             id: c29665fd-0a33-49e1-8fc5-0947335a679c
             entry: 3ef0ccc6-5e0f-435b-9184-edb809f19210
           -
             id: 4a16df3a-5401-4d41-ab2d-b15b5f61f7fb
             entry: b87d183d-4b47-4f19-a2cf-e9d31c5faf47
+          -
+            id: 7a6c6807-db60-4f96-bdb1-53d626ad5034
+            entry: 2cc93767-a20b-4741-a07f-1939ec508e79
           -
             id: ee1358c1-c781-451f-aabc-24d0fd201b09
             entry: 671d5f19-2b8a-463a-95be-f81de05e0860
@@ -111,11 +139,11 @@ tree:
             id: 3bd44a68-1b42-42c0-99bd-bffd3a553525
             entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
           -
-            id: 7a6c6807-db60-4f96-bdb1-53d626ad5034
-            entry: 2cc93767-a20b-4741-a07f-1939ec508e79
-          -
             id: a17f92c9-919f-4b50-9d2d-e8317cff3581
             entry: 0740104d-a145-47ed-bfdb-1882b4a81c2d
+          -
+            id: we001001-0000-4000-8000-000000000001
+            entry: 08a5b636-77d0-4671-bf40-3c42444400da
   -
     id: d5b6a5f1-c999-4645-88e6-08fcce202918
     title: 'Testing Experiments'
@@ -185,33 +213,118 @@ tree:
         entry: 982a0f19-3b05-4358-adda-93a5b3c60919
   -
     id: 76e3b608-0781-418a-b014-f0f79086cf32
-    title: 'Instrument Experiment'
+    title: Instrumentation
     children:
       -
         id: 45493c66-cbea-4f55-84b7-9131ef5094c4
         entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
-      -
-        id: 46abcd22-a45e-4553-b08d-90f16283d013
-        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
-        children:
-          -
-            id: 5a5ff529-ea91-465c-bbc9-a848f5037eb8
-            entry: 7f2e8a4c-9b3d-4e1a-8f5c-2d6e9a1b4c8e
       -
         id: 7258b125-7c7c-4299-ba0e-31f188e3517c
         entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
       -
         id: 90ff8151-b864-4782-abdd-65b81d1c26ca
         title: 'Experiment SDKs'
-        url: /docs/sdks/experiment-sdks
         children:
           -
-            id: e2cf6857-5740-4894-8121-e9ff81d9814d
-            entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
+            id: sdk0001-0000-4000-8000-000000000001
+            entry: da42e101-0d3f-4e0f-81cc-83516100e99b
+            title: JavaScript
+          -
+            id: sdk0001-0000-4000-8000-000000000002
+            entry: fd9cb872-7781-46a7-bf79-c1e7bcbdf816
+            title: Android
+          -
+            id: sdk0001-0000-4000-8000-000000000003
+            entry: ecb37544-1701-4bfa-b89c-dd8150fe3451
+            title: iOS
+          -
+            id: sdk0001-0000-4000-8000-000000000004
+            entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
+            title: 'React Native'
+          -
+            id: sdk0001-0000-4000-8000-000000000005
+            entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+            title: Flutter
+          -
+            id: sdk0001-0000-4000-8000-000000000006
+            entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
+            title: 'Node.js'
+          -
+            id: sdk0001-0000-4000-8000-000000000007
+            entry: 1e224b64-c80b-48a2-a408-57a73aa36a33
+            title: Go
+          -
+            id: sdk0001-0000-4000-8000-000000000008
+            entry: 3eab77ce-9efe-46bb-9daf-81bf55876d1c
+            title: JVM
+          -
+            id: sdk0001-0000-4000-8000-000000000009
+            entry: 0939d037-2575-40b4-9c8d-61ed94265af4
+            title: Python
+          -
+            id: sdk0001-0000-4000-8000-000000000010
+            entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
+            title: Ruby
+          -
+            id: sdk0001-0000-4000-8000-000000000011
+            entry: 327f3e9a-ef42-40eb-b42e-19dfd3bea562
+            title: PHP
+          -
+            id: sdk0001-0000-4000-8000-000000000012
+            entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
+            title: 'Evaluation Proxy'
+          -
+            id: sdk0001-0000-4000-8000-000000000013
+            title: Legacy
+            children:
+              -
+                id: sdk0001-0000-4000-8000-000000000014
+                entry: 02f37e03-e7c5-4324-835a-772a79e0963c
+                title: 'React Native (Legacy)'
       -
         id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
         title: 'Experiment APIs'
-        url: /docs/apis/experiment
+        children:
+          -
+            id: api0001-0000-4000-8000-000000000001
+            entry: 599fcf45-81ec-43f9-a3a0-a253fd999a34
+            title: 'Evaluation API'
+          -
+            id: api0001-0000-4000-8000-000000000002
+            entry: f64a356a-2a9a-44e3-a482-f429a565a12c
+            title: 'Management API'
+          -
+            id: api0001-0000-4000-8000-000000000003
+            entry: 223ccb37-444f-430f-8910-0c1d079aca89
+            title: 'Flag endpoints'
+          -
+            id: api0001-0000-4000-8000-000000000004
+            entry: bc8ec21e-a8e1-4857-8557-d24143e42865
+            title: 'Experiment endpoints'
+          -
+            id: api0001-0000-4000-8000-000000000005
+            entry: e082b577-8058-494d-8567-d4ad3ccca149
+            title: 'Deployment endpoints'
+          -
+            id: api0001-0000-4000-8000-000000000006
+            entry: 5db6cfbc-7a6a-4de3-ad8e-b8172866ae05
+            title: 'Holdout group endpoints'
+          -
+            id: api0001-0000-4000-8000-000000000007
+            entry: 81cb131b-7361-41c8-901d-c3d49e1f9dc3
+            title: 'Holdout group endpoints (v2)'
+          -
+            id: api0001-0000-4000-8000-000000000008
+            entry: 3705cc5b-d26c-4a8d-92a3-f3fcb4b8196d
+            title: 'Mutex group endpoints'
+          -
+            id: api0001-0000-4000-8000-000000000009
+            entry: 70779844-30c3-4584-958d-9a630c26fd3c
+            title: 'Mutex group endpoints (v2)'
+          -
+            id: api0001-0000-4000-8000-000000000010
+            entry: 8554f01f-abfc-4669-ae44-f00f5d2b4ccd
+            title: 'Version endpoints'
       -
         id: 46c468de-cab0-4ca9-8bea-2051cfebc553
         title: Evaluation
@@ -220,9 +333,6 @@ tree:
             id: fb405bc3-3370-4046-90e5-9a6145e02a67
             entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
             title: 'How evaluation works'
-          -
-            id: 5af0708b-e976-453e-8354-3f622b978be5
-            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
           -
             id: cafb3429-9567-4a4e-a379-3e253e38a9eb
             entry: b358db28-92d6-458b-9692-d181e0871612
@@ -240,9 +350,6 @@ tree:
     id: eb986f27-1841-4d18-9cea-2edf7c6da4c8
     title: 'Experiment Advanced Concepts'
     children:
-      -
-        id: c2d55904-0be9-4466-9640-bcd9f3f63efc
-        entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
       -
         id: dc769ea2-5ebe-4399-8c0f-95472f52e29a
         entry: 3250ee8b-a6dd-46d0-b46a-1ed5c9f7a4f9
@@ -267,11 +374,7 @@ tree:
       -
         id: 063e2253-5e83-4d2c-838c-5f52fa107add
         entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
-        children:
-          -
-            id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
-            entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
-            title: 'How flag dependencies work'
+        title: 'How flag dependencies work'
   -
     id: 11f27340-72c0-41c0-8027-09dd6ce6be62
     title: 'Statistics Method'

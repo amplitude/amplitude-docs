@@ -13,6 +13,6 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: experiment_sdks
+  nav_title: experiment
 structure:
   root: false
