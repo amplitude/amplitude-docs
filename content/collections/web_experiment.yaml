@@ -17,4 +17,4 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: web_experiment
+  nav_title: experiment

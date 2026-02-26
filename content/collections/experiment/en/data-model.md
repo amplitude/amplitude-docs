@@ -3,142 +3,146 @@ id: a07f325e-1e4a-4b62-a360-d21686c8a8ac
 blueprint: experiment
 title: 'Data model'
 landing: true
-sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/data-model/'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717435427
-landing_blurb: 'See how Amplitude Experiment is structured.'
+updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
+updated_at: 1740528000
+landing_blurb: 'Understand how Amplitude Experiment organizes projects, deployments, flags, and users.'
 ---
-For Amplitude your Organization is the top-most hierarchical level. Within an Organization, Experiment follows the project structure defined by Amplitude Analytics. All Experiment data must be associated with an Analytics project.
+Amplitude Experiment organizes its data in a hierarchy. Understanding this hierarchy helps you set up your integration correctly and avoid common configuration mistakes.
 
-[Flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) are all contained within an Amplitude project.
-
-![An illustration of the hierarchical nature of Feature Experiment with the top-most level being Organization then Project, then Flag/Experiment that contains each variant and the deployments associated with the variants](statamic://asset::help_center_conversions::experiment/data-model.drawio.svg)
+```
+Organization
+  └── Project  (maps 1:1 to an Amplitude Analytics project)
+        └── Deployment  (the API key your SDK uses)
+              └── Flag / Experiment
+                    └── Variant  (the value returned to your code)
+```
 
 ## Projects
 
-Experiment uses the same projects as Amplitude Analytics. As a best practice, create a project for each product and for each environment. Because [flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) only exist within a single project, duplicate these objects across projects for the same product.
+Experiment uses the same projects as Amplitude Analytics. Every flag and experiment lives inside a project. As a best practice, create one project per product and per environment.
 
-{{partial:admonition type="tip" heading="Copy a flag to another project"}}
-When developing a new feature with an experiment, create the experiment in the dev environment project to develop and test that the implementation is correct. Then, copy the experiment into the prod project to run the experiment in prod.
-{{/partial:admonition}}
+Because flags, experiments, and deployments only exist within a single project, you need to duplicate them across projects for the same product. For example, your production flag lives in your prod project and your dev flag lives in your dev project.
 
-A deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. Deployment keys are randomly generated. On creation, experiment deployments are assigned an associated deployment key which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
-
-{{partial:admonition type="note" heading="Client and server deployments"}}
-Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
+{{partial:admonition type='tip' heading="Copy a flag between projects"}}
+When developing a new feature, create the flag in your dev project to test the implementation. When you're ready, copy it to your prod project: open the flag → click the **...** menu → **Copy to project**.
 {{/partial:admonition}}
 
 ## Deployments
 
-Deployments belong to Analytics projects, and a project can have multiple deployments. Name deployments after the platform (client-side) or service (server-side) to which Experiment serves variants (for example: `android`, `ios`, `web`). The default project API key deployment is useful for getting started. However, using explicit deployments for each platform or service is better for larger organizations or teams that may share the same Amplitude project across multiple platforms for the same application.
+A deployment is a named API key that authorizes your SDK to fetch flag configurations. When you call `Experiment.initialize('DEPLOYMENT_KEY')`, that key identifies which flags to serve.
 
-Add deployments to [Flags and Experiments](/docs/feature-experiment/workflow/feature-flag-rollouts#create-a-new-flag) in the same project. When Experiment's evaluation servers receive a request to fetch variants for a user, Experiment uses the deployment key to look up all associated flags and experiments for evaluation.
+Key facts about deployments:
+
+- Every project has a default deployment that uses the project's API key.
+- You can create additional deployments — one per platform or service is a common pattern.
+- Deployments are either **client-side** or **server-side**. Use client-side keys in browser and mobile SDKs; use server-side keys in Node.js, Python, Go, and other backend SDKs.
+- A flag can associate with multiple deployments within the same project.
+
+{{partial:admonition type='warning' heading="Never mix client and server keys"}}
+Server-side deployment keys have broader access and must never be exposed in browser or mobile code. Always use client-side deployment keys for client-side SDKs.
+{{/partial:admonition}}
+
+For full deployment setup guidance, see [Deployments and environments](/docs/feature-experiment/deployments-and-environments).
 
 ## Flags and experiments
 
-Experiment uses feature flags and experiments to serve a variable experience to a user. Flags and experiments are identified by the flag key, are associated with `0-n` [deployments](#deployments), and contain `1-k` [variants](#variants). The evaluation mode (local or remote) determines whether the flag or experiment can be [locally evaluated](/docs/feature-experiment/local-evaluation) and may limit the targeting capabilities for the flag if set to local.
+Flags and experiments share the same underlying data model. You can convert a flag to an experiment at any time, and back again — your evaluation code doesn't change.
 
-Feature flags and experiments share the same underlying data model, and you can migrate from one to the other retroactively. The most visible difference comes in the product interface: experiments guide you through an experiment lifecycle and give you the ability to define success metrics and perform analysis. Flags contain more basic functionality, and don't include special planning and analysis sections.
+Each flag or experiment has:
 
-### Flags
+- A **flag key** — the string your code uses to look up the variant: `experiment.variant('flag-key')`.
+- An **evaluation mode** — local or remote.
+- One or more **deployments** it's associated with.
+- One or more **variants**.
+- **Targeting rules** that determine which users receive each variant.
 
-Used for standard feature flagging without user analysis. When created, comes with a default variant, `on`.
+The most visible difference between flags and experiments is the Amplitude UI: experiments add a planning and analysis layer on top of the same flag infrastructure.
 
-{{partial:admonition type="example" heading="Flag use cases"}}
-- Rolling out a feature to a subset of users (for example, beta customers).
-- Different experience for a behavioral cohort (for example, power users).
-{{/partial:admonition}}
+| | Flag | Experiment |
+| --- | --- | --- |
+| Serves variants to users | ✅ | ✅ |
+| Targeting rules | ✅ | ✅ |
+| JSON payloads | ✅ | ✅ |
+| Metrics and goals | ❌ | ✅ |
+| Statistical significance | ❌ | ✅ |
+| Experiment analysis view | ❌ | ✅ |
 
-### Experiments
-
-Used for feature experimentation on users. When created, comes with two default variants, `control` and `treatment`.
-
-{{partial:admonition type="example" heading="Experiment use cases"}}
-- Run an A/B test for a new feature in your application.
-- Experiment on multiple recommendation algorithms on your server.
-{{/partial:admonition}}
+See [Flags vs. experiments](/docs/feature-experiment/flags-vs-experiments) for a full comparison and guidance on when to use each.
 
 ## Variants
 
-A variant is the part of the experiment that you are changing for the customer. For example, if you are experimenting with the text on a call to action (CTA) button, each version of the text is a variant. Variants can exist within a flag or an experiment. This means that you could have a single variant associated with a single flag, or multiple variants associated with a larger experiment. An experiment requires variants so that you can test your experiment's hypothesis.
+A variant is the value returned to your code. Each flag has at least one variant. Experiments have at least two — `control` and `treatment` by default.
 
-{{partial:admonition type="note" heading="SDK use"}}
-Only the `value` and `payload` are available when accessing a variant from an SDK or the [Evaluation API](/docs/apis/experiment/experiment-evaluation-api).
+| Property | Required | Description |
+| --- | --- | --- |
+| `value` | Yes | The string your code checks. For example: `"control"`, `"treatment"`, `"on"`, `"off"`. Must be lowercase kebab-case or snake_case. |
+| `payload` | No | A JSON object for sending structured data with the variant — for example, UI configuration or algorithm parameters. |
+| `name` | No | A display name for the variant in the Amplitude UI. Doesn't affect your code. |
+| `description` | No | A human-readable description of the user experience for this variant. |
+
+{{partial:admonition type='note' heading="What's available in the SDK"}}
+Only `value` and `payload` are accessible from the SDK or [Evaluation API](/docs/apis/experiment/experiment-evaluation-api). `name` and `description` are UI-only fields.
 {{/partial:admonition}}
 
-| Property  | Requirement  | Description                                                                                                                                                                                                                                                                    |
-| ---------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `value`                                  | Required | A string which identifies the variant in the instrumentation. The value string is checked for equality when a variant is accessed from the SDK or [Evaluation API](/docs/apis/experiment/experiment-evaluation-api). Format must be lowercase, kebab-case, or snake_case. |
-| `payload`                                | Optional     | Dynamic JSON payload for sending arbitrary data down with the variant. For example, you could send down a hex code to change the color of a component in your application.                                                                                                     |
-| `name`                                   | Optional     | Name for the variant. This is like `value`, but doesn't have formatting limitations, and you can change it without breaking the instrumentation in your code base.                                                                                                             |
-| `description`                            | Optional     | A more detailed description of the variant. You can use this to describe what the user experiences when viewing the variable experience in more detail.                                                                                                                        |
+Example variant with a payload:
+
+```typescript
+const variant = experiment.variant('product-card-layout');
+
+if (variant.value === 'v2') {
+  const { columns, showRating, imageSize } = variant.payload;
+  renderProductCard({ columns, showRating, imageSize });
+}
+```
 
 ## Users
 
-Experiment users map to a user within Amplitude Analytics. Alongside flag configurations, users are an input to [evaluation](/docs/feature-experiment/implementation). Flag and experiment targeting rules access user properties.
+A user is the entity being evaluated. Experiment maps users to Amplitude Analytics users through `user_id` and `device_id`. You must include at least one — remote evaluation returns a `400` error if both are null, empty, or missing.
 
-Pass users to evaluation through `fetch` requests for [remote evaluation](/docs/feature-experiment/remote-evaluation), or directly to the `evaluate` function for [local evaluation](/docs/feature-experiment/local-evaluation).
+| Property | Type | Description |
+| --- | --- | --- |
+| `user_id` | `string` | Your system's user identifier. Used for Amplitude ID resolution in remote evaluation and as the default bucketing key. |
+| `device_id` | `string` | A secondary identifier, typically a random UUID generated by the analytics SDK. Required for anonymous user evaluation before login. |
+| `user_properties` | `object` | Custom properties used in targeting rules — for example: `{ plan: "enterprise", beta_tester: true }`. |
+| `groups` | `object` | Group membership for account-level bucketing — for example: `{ "org name": ["Amplitude"] }`. Requires the Accounts add-on. |
 
-{{partial:admonition type="warning" heading=""}}
-You must include either a user ID or device ID in the user object for evaluation to succeed. 
-For example, remote evaluation returns a 400 error if both the User ID and Device ID are null, empty, or missing.
+### Handle anonymous users
 
-{{/partial:admonition}}
-| Property | Type     | Description                                                                                                                                                                                                                                                                                                                                                                   |
-| -------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user_id`                                    | `string` | The [User ID](/docs/get-started/identify-users) is the primary identifier for the user. This value is typically their user ID within your system Experiment uses the User ID when resolving the Amplitude ID on enrichment before [remote evaluation](/docs/feature-experiment/remote-evaluation) where the Amplitude ID is the default bucketing key.                        |
-| `device_id`                                  | `string` | The Device ID is the secondary identifier for the user. This is usually randomly generated by an analytics SDK on the client side or set in a cookie on the server side. The Device ID is also used when resolving the Amplitude ID on enrichment before [remote evaluation](/docs/feature-experiment/remote-evaluation) where the Amplitude ID is the default bucketing key. |
-| `user_properties`                            | `object` | Optional object of custom properties used when evaluating the user during local or remote evaluation.                                                                                                                                                                                                                                                                         |
-| `groups`                                     | `object` | Beta. Optional object that lists groups associated with this user. Format is an object where the key is the group type, and the value is an array of group value strings (for example, `{"org name":["Amplitude"]}`)                                                                                                                                                          |
-| `group_properties`                           | `object` | Beta. Optional object listing group properties associated with this user. Format is an nested object where the key is the group type, and the value is an object where the key is a the group value, and the value is an object of properties (for example,`{"org name":{"Amplitude":{"plan":"enterprise"}}}`)                                                                |
+Before a user logs in, use `device_id` as the identifier. After login, set `user_id` and pass both. This lets Amplitude stitch the anonymous session to the identified user.
 
-{{partial:admonition type="beta" heading=""}}
+```typescript
+// Before login: anonymous user
+await experiment.fetch({ device_id: getDeviceId() });
 
-If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+// After login: call fetch again with the user's ID
+await experiment.fetch({
+  user_id: currentUser.id,
+  device_id: getDeviceId(),
+});
+```
 
-Include Groups with the user when sent with the fetch request (recommended). Alternately identify groups with the user through a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or with [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
-
-All Experiment SDKs support groups, with minimum versions described in the following table:
-
-| SDK                                                                | Minimum version |
-| ------------------------------------------------------------------ | --------------- |
-| [Android](/docs/sdks/experiment-sdks/experiment-android)           | 1.9.0           |
-| [iOS](/docs/sdks/experiment-sdks/experiment-ios)                   | 1.10.0          |
-| [React Native](/docs/sdks/experiment-sdks/experiment-react-native) | 1.1.0           |
-| [JavaScript](/docs/sdks/experiment-sdks/experiment-javascript)     | 1.5.6           |
-| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby)                 | 1.4.0           |
-| [Go](/docs/sdks/experiment-sdks/experiment-go)                     | 1.7.0           |
-| [Python](/docs/sdks/experiment-sdks/experiment-python)             | 1.3.0           |
-| [JVM](/docs/sdks/experiment-sdks/experiment-jvm)                   | 1.3.0           |
-| [Node](/docs/sdks/experiment-sdks/experiment-node-js)              | 1.5.0           |
-| [PHP](/docs/sdks/experiment-sdks/experiment-php)                   | 1.0.0           |
-
-{{/partial:admonition}}
-
-### Full user definition
-
-{{partial:collapse name="Full user definition"}}
+{{partial:collapse name="Full user object definition"}}
 ```json
 {
-    "user_id": string,
-    "device_id": string,
-    "country": string,
-    "region": string,
-    "city": string,
-    "dma": string,
-    "language": string,
-    "platform": string,
-    "version": string,
-    "os": string,
-    "device_manufacturer": string,
-    "device_brand": string,
-    "device_model": string,
-    "carrier": string,
-    "library": string,
-    "user_properties": object,
-    "groups": object,
-    "group_properties": object
+  "user_id": "string",
+  "device_id": "string",
+  "country": "string",
+  "region": "string",
+  "city": "string",
+  "dma": "string",
+  "language": "string",
+  "platform": "string",
+  "version": "string",
+  "os": "string",
+  "device_manufacturer": "string",
+  "device_brand": "string",
+  "device_model": "string",
+  "carrier": "string",
+  "library": "string",
+  "user_properties": {},
+  "groups": {},
+  "group_properties": {}
 }
 ```
 {{/partial:collapse}}
