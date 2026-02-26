@@ -196,7 +196,7 @@ await window.engagement.boot({
 
 #### Forwarding events
 
-To use the **On event tracked** [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers), forward events from your analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to Amplitude — they're used only for local trigger evaluation.
+To use the **On event tracked** [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers), forward events from your analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to Amplitude. The SDK uses them only for local trigger evaluation.
 
 {{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
 Amplitude strongly recommends setting up event forwarding when not using the Amplitude Browser SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
@@ -493,7 +493,7 @@ Using different API keys for Guides & Surveys and Analytics causes the SDK to fe
 
 Set the `locale` option during initialization to localize a guide or survey.
 
-* If you use the Amplitude Browser SDK 2 plugin installation (via `amplitude.add()`), set it in `InitOptions`.
+* If you use the Amplitude Browser SDK 2 plugin installation (using `amplitude.add()`), set it in `InitOptions`.
 * If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
 
 To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.

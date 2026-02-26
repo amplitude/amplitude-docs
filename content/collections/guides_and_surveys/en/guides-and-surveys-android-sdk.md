@@ -370,7 +370,7 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 
 ### Forward event
 
-If you don't use the Amplitude Analytics Android SDK plugin (that is, you called `boot` directly), use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers — they're used only for local trigger evaluation.
+If you don't use the Amplitude Analytics Android SDK plugin (that is, you called `boot` directly), use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers. The SDK uses them only for local trigger evaluation.
 
 {{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
 Amplitude strongly recommends setting up event forwarding when not using the Amplitude Analytics Android SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
