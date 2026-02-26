@@ -21,6 +21,8 @@ If you use the [Amplitude Shopify Plugin](/docs/data/amplitude-shopify-plugin), 
 
 If you use the [Amplitude Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2), install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
+This approach uses the Amplitude Browser SDK's plugin system — an architecture that lets you extend the core Analytics SDK with additional capabilities. Calling `amplitude.add(engagementPlugin())` registers Guides and Surveys as a plugin, which means it initializes alongside Analytics, shares the same API key and user identity, and communicates with it directly. You don't need to call `init` or `boot` separately.
+
 {{partial:tabs tabs="script, npm, yarn"}}
 {{partial:tab name="script"}}
 Place the script tag below your Amplitude script tag.
@@ -73,7 +75,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="No need to call init or boot"}}
-When using the plugin with `amplitude.add(engagementPlugin())`, don't call `engagement.init()` or `engagement.boot()`. The plugin handles initialization automatically.
+When using the Amplitude Browser SDK plugin with `amplitude.add(engagementPlugin())`, don't call `engagement.init()` or `engagement.boot()`. The plugin handles initialization automatically.
 
 Only call `init` and `boot` manually if you need to:
 - Use a proxy (see [Proxy configuration](/docs/guides-and-surveys/proxy))
@@ -99,10 +101,14 @@ initAll('YOUR_API_KEY', {
 
 Enable Guides and Surveys in your Amplitude project settings before guides and surveys can display. Go to [Unified SDK documentation](/docs/sdks/analytics/browser/browser-unified-sdk#guides-and-surveys-options) for details.
 
-### Other Amplitude SDK's and third-party analytics providers
+### Other Amplitude SDKs and third-party analytics providers
 
-If you don't use the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) or the [Amplitude Analytics Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), you can still use Guides and Surveys but you need to configure the SDK to work with your other Amplitude Analytics SDK or third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
-But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
+If you don't use the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) or the [Amplitude Analytics Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk), you can still use Guides and Surveys. Because you're not using the Amplitude Browser SDK plugin system, you need to call `init` and `boot` directly to initialize Guides and Surveys and connect it to your analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+
+{{partial:admonition type="warning" heading="Required and recommended setup for this installation path"}}
+- **Required**: Include `integrations` in your `boot` call to send Guides and Surveys events to your analytics provider. Without it, guide insights, survey insights, and survey responses won't appear.
+- **Strongly recommended**: Set up event forwarding using `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Without it, you can only trigger guides and surveys on page load or other non-event conditions.
+{{/partial:admonition}}
 
 #### Initialize the SDK
 
@@ -190,8 +196,11 @@ await window.engagement.boot({
 
 #### Forwarding events
 
+To use the **On event tracked** [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers), forward events from your analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to Amplitude. The SDK uses them only for local trigger evaluation.
 
-To use the **On event tracked** [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers), forward events from your analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
+{{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
+Amplitude strongly recommends setting up event forwarding when not using the Amplitude Browser SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
+{{/partial:admonition}}
 
 ```js
 analytics.on('track', (event, properties, options) => {
@@ -224,7 +233,7 @@ analytics.ready(() => {
     },
     integrations: [
       {
-        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
+        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provider
         track: (event) => {
           analytics.track(event.event_type, event.event_properties)
         }
@@ -232,7 +241,7 @@ analytics.ready(() => {
     ],
   });
 
-  // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+  // (Strongly recommended) Forward events from Segment to enable event-based triggers for Guides and Surveys. These events aren't sent to Amplitude servers
   analytics.on('track', (event, properties, options) => {
     window.engagement.forwardEvent({ event_type: event, event_properties: properties});
   });
@@ -265,7 +274,7 @@ analytics.ready(() => {
     },
     integrations: [
       {
-        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
+        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provider
         track: (event) => {
           analytics.track(event.event_type, event.event_properties)
         }
@@ -273,7 +282,7 @@ analytics.ready(() => {
     ],
   });
 
-  // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+  // (Strongly recommended) Forward events from Segment to enable event-based triggers for Guides and Surveys. These events aren't sent to Amplitude servers
   analytics.on('track', (event, properties, options) => {
     window.engagement.forwardEvent({ event_type: event, event_properties: properties});
   });
@@ -306,7 +315,7 @@ analytics.ready(() => {
     },
     integrations: [
       {
-        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
+        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provider
         track: (event) => {
           analytics.track(event.event_type, event.event_properties)
         }
@@ -314,7 +323,7 @@ analytics.ready(() => {
     ],
   });
 
-  // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+  // (Strongly recommended) Forward events from Segment to enable event-based triggers for Guides and Surveys. These events aren't sent to Amplitude servers
   analytics.on('track', (event, properties, options) => {
     window.engagement.forwardEvent({ event_type: event, event_properties: properties});
   });
@@ -409,7 +418,7 @@ Use the [Amplitude Chrome extension](/docs/data/chrome-extension-debug) to debug
 {{/partial:admonition}}
 
 1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
-2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the plugin configuration.
+2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the Amplitude Browser SDK plugin configuration.
 3. For additional debugging, enter `window.engagement._debugStatus()`. The output should look like:
 
 ```json
@@ -436,7 +445,7 @@ Verify that:
 - `decideSuccessful` is `true`
 - `num_guides_surveys` is a non-zero integer if a guide or survey should be display on the page.
 
-### Verify plugin configuration
+### Verify Amplitude Browser SDK plugin configuration
 
 If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If there are none, verify that your code matches code provided in the installation instructions. In particular, ensure that  `amplitude.add(window.engagement.plugin())` is present in the code.
 
@@ -484,7 +493,7 @@ Using different API keys for Guides & Surveys and Analytics causes the SDK to fe
 
 Set the `locale` option during initialization to localize a guide or survey.
 
-* If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
+* If you use the Amplitude Browser SDK 2 plugin installation (using `amplitude.add()`), set it in `InitOptions`.
 * If you use a  [third-party analytics provider](#other-amplitude-sdks-and-third-party-analytics-providers), set it in `options` within the `engagement.init()` method.
 
 To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
@@ -590,7 +599,7 @@ engagement.boot(options: BootOptions): Promise<void>
 | Parameter              | Type                           | Description                                                                                                                                                                                                                                                                                                         |
 | ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
-| `options.integrations` | `Array<Integration>`           | Optional but strongly encouraged. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. These events are necessary to receive guide insights, survey insights, and survey responses to populate as expected. Otherwise, content is empty. |
+| `options.integrations` | `Array<Integration>`           | Required when not using the Amplitude Browser SDK plugin. An array of integrations for tracking events. Without integrations, Guides and Surveys can't send events to your analytics provider, and guide insights, survey insights, and survey responses won't appear. |
 
 #### EndUser type
 
