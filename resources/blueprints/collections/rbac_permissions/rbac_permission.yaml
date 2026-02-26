@@ -48,6 +48,9 @@ tabs:
                 -
                   key: admin
                   value: Admin
+                -
+                  key: ai
+                  value: 'AI Features'
               type: select
               display: 'Product Area'
               localizable: false

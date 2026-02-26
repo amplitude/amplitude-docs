@@ -59,6 +59,10 @@ const productAreaConfig = {
   'experiment': { 
     label: 'Experiment', 
     classes: 'bg-[#0066FF] bg-opacity-10 text-[#0066FF] border border-[#0066FF] border-opacity-20' 
+  },
+  'ai': { 
+    label: 'AI Features', 
+    classes: 'bg-[#0066FF] bg-opacity-10 text-[#0066FF] border border-[#0066FF] border-opacity-20' 
   }
 }
 

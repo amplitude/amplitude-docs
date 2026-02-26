@@ -217,7 +217,8 @@ const productAreaMap = {
   'heatmaps': 'Heatmaps',
   'guides-surveys': 'Guides & Surveys',
   'resource-center': 'Resource Center & Content',
-  'experiment': 'Experiment'
+  'experiment': 'Experiment',
+  'ai': 'AI Features'
 }
 
 // Computed

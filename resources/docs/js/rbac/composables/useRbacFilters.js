@@ -17,7 +17,8 @@ export function useRbacFilters() {
     'heatmaps': 'Heatmaps',
     'guides-surveys': 'Guides & Surveys',
     'resource-center': 'Resource Center & Content',
-    'experiment': 'Experiment'
+    'experiment': 'Experiment',
+    'ai': 'AI Features'
   }
 
   const initializeFilters = (permissions) => {
