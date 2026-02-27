@@ -380,7 +380,7 @@ The Amplitude DSAR API returns metadata about session replays, but not the raw r
 
 The [Amplitude] Replay Captured event is automatically created when Session Replay captures a replay. This event includes the [Amplitude] Session Replay ID property, which provides information about the replays collected for replay for the user.
 
-The session replay ID has the format `<deviceId>/<sessionId>`. If you use [custom session definitions](/docs/session-replay/session-matching#requirements-for-custom-session-definitions), the custom session ID value can't contain `/` and must use accepted characters: `a-z A-Z 0-9 _ - . | @ : =`.
+The session replay ID has the format `<deviceId>/<sessionId>`. If you use [custom session definitions](/docs/session-replay/session-matching#requirements-for-custom-session-definitions), the custom session ID value can't contain `/` and must use accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 ```json
 {
