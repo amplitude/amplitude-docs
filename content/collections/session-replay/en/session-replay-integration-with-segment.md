@@ -157,6 +157,10 @@ amplitude.remove('amplitude');
 amplitude.track('event name')
 ```
 
+### Device ID and session ID character constraints
+
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, the `deviceId` value can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. Segment's `anonymousId()` is a UUID, which always complies with these requirements. If you use a custom value for `deviceId`, ensure it follows the accepted character set.
+
 ### Troubleshoot Segment integration
 If the instance returns empty, your Segment middleware may not have populated the values for the Amplitude integration field `payload.obj.integrations['Actions Amplitude']`. If this happens, add the following `setTimeout` wrapper to ensure this field populate with a valid value.
 
