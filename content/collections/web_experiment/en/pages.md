@@ -23,9 +23,17 @@ When you create a new Web Experiment, specify a page by:
 
 After you add the page, continue with experiment setup, or go directly to the Visual Editor.
 
-## Update a page or create another
+## Update a page or create another page
 
-To update a page definition, navigate to the Pages tab of the Experiment Setup flow, or click the pencil icon on the Pages section of the Settings tab. From there, rename the page, update its Visual Editor URL, configure the page trigger, or update the page targeting rules.
+You can update or create another page to any Web experiment.
+
+1. Go to *Experiments* and select the Web experiment you want.
+2. Go to *Settings > Pages* for the Web experiment.
+3. Rename the page, update its Visual Editor URL, configure the page trigger, or update the page targeting rules.
+4. Click **Select a page** to add another page:
+   1. Click **Custom** to open the Page details information for the second page.
+   2. Name the page and enter the Visual Editor URL, Trigger Type, and Triggering Rules.
+5. Click **Save Changes**.
 
 ### Page targeting rules
 
@@ -41,9 +49,14 @@ To update a page definition, navigate to the Pages tab of the Experiment Setup f
 
 ### Page triggers
 
-Page Triggers define when an experiment evaluates a Page's conditions to determine whether the experiment activates on a webpage. While page targeting rules determine where an experiment runs, page triggers determine when variant actions apply.
+{{partial:admonition type="Note" heading="Beta Feature"}}
+Page triggers is a Beta feature.
+During the Beta phase, the feature may evolve and change from this documentation. 
+{{/partial:admonition}}
 
-When you create a new experiment, the default trigger type is **Immediately**, which evaluates the page conditions whenever the URL changes (including initial page load). You can configure different trigger types to control when your experiment activates based on user behavior, page events, or custom conditions.
+Page triggers define when an experiment evaluates a Page's conditions to determine whether the experiment activates on a webpage. Although page targeting rules determine where an experiment runs, page triggers determine when variant actions apply.
+
+When you create a new experiment, the default trigger type is **Immediately**. Immediate triggers evaluate the page conditions whenever the URL changes (including initial page load). You can configure different trigger types to control when your experiment activates based on user behavior, page events, or custom conditions.
 
 #### Trigger types
 
