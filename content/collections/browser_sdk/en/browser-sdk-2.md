@@ -76,6 +76,10 @@ import * as amplitude from '@amplitude/unified';
 
 ## Initialize the SDK
 
+{{partial:admonition type="warning" heading="Load and initialize only when context is ready"}}
+Don't load the Amplitude SDK from third-party scripts that run before the page has fully loaded. In those setups, user identifiers, traits, and page URL or state often aren't available yet, so early events can be sent with missing or incorrect properties. Initialize the SDK only after your app has access to all relevant data (for example, user ID, user properties, and the final page URL).
+{{/partial:admonition}}
+
 {{partial:admonition type="note" heading="Sending events"}}
 This SDK uses the [HTTP V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the HTTP API's constraints on each of those fields.
 
@@ -264,18 +268,18 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 
 
 {{partial:collapse name="Autocapture options"}}
-| Name                                     | Value               | Description                                                                                                                                                                                                                                                                                                                                                                 |
-| ---------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.autocapture.attribution`         | Optional. `boolean` | Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                         |
-| `config.autocapture.pageViews`           | Optional. `boolean` | Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. Default value is `true`. See [Track page views](#track-page-views) for more information. |
-| `config.autocapture.sessions`            | Optional. `boolean` | Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. Default value is `true`. See [Track sessions](#track-sessions) for more information.                                                                |
-| `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
-| `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
-| `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
-| `config.autocapture.frustrationInteractions` | Optional. `boolean` | Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0|
-| `config.autocapture.pageUrlEnrichment` | Optional. `boolean` | Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information.                                                                                                                      |
-| `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
-| `config.autocapture.webVitals` | Optional. `boolean` | Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information. Minimum SDK version 2.27.0.                                                                                                                      |
+| Name | Description |
+|------|-------------|
+| `config.autocapture.attribution` | Optional. Type: `boolean`. Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`. |
+| `config.autocapture.pageViews` | Optional. Type: `boolean`. Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. Default value is `true`. See [Track page views](#track-page-views) for more information. |
+| `config.autocapture.sessions` | Optional. Type: `boolean`. Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. Default value is `true`. See [Track sessions](#track-sessions) for more information. |
+| `config.autocapture.formInteractions` | Optional. Type: `boolean`. Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information. |
+| `config.autocapture.fileDownloads` | Optional. Type: `boolean`. Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information. |
+| `config.autocapture.elementInteractions` | Optional. Type: `boolean`. Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options. |
+| `config.autocapture.frustrationInteractions` | Optional. Type: `boolean`. Enables/disables frustration interaction tracking. If `true`, Amplitude tracks rage clicks and dead clicks. Default value is `false`. Review [Track frustration interactions](#track-frustration-interactions) for more information and configuration options. Minimum SDK version 2.24.0 |
+| `config.autocapture.pageUrlEnrichment` | Optional. Type: `boolean`. Enables/disables page URL enrichment tracking. If `true`, Amplitude automatically adds page URL-related properties to all events, including previous page information and page type classification. Default value is `true`. Go to [Page URL enrichment plugin](#page-url-enrichment-plugin) for more information. |
+| `config.autocapture.networkTracking` | Optional. Type: `boolean`. Enables/disables capturing network request events invoked by [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options. |
+| `config.autocapture.webVitals` | Optional. Type: `boolean`. Enables/disables Core Web Vitals tracking. If `true`, Amplitude automatically captures web performance metrics (INP, LCP, FCP, CLS, TTFB) and sends them as `[Amplitude] Web Vitals` events. Default value is `false`. See [Track web vitals](#track-web-vitals) for more information. Minimum SDK version 2.27.0. |
 
 {{/partial:collapse}}
 
@@ -430,11 +434,11 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 #### Advanced configuration for marketing attribution tracking
 
 {{partial:collapse name="Marketing attribution configuration"}}
-| Name                                                       | Value                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `config.autocapture.attribution.excludeReferrers`          | Optional. Array of `string` or `RegExp` | Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
-| `config.autocapture.attribution.initialEmptyValue`         | Optional. `string`                      | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY"`.                                                                                                                                                                                                                                                                                                |
-| `config.autocapture.attribution.resetSessionOnNewCampaign` | Optional. `boolean`                     | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`.                                                                                                                                                                                                                                                                                                                   |
+| Name | Description |
+|------|-------------|
+| `config.autocapture.attribution.excludeReferrers` | Optional. Type: Array of `string` or `RegExp`. Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
+| `config.autocapture.attribution.initialEmptyValue` | Optional. Type: `string`. Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY"`. |
+| `config.autocapture.attribution.resetSessionOnNewCampaign` | Optional. Type: `boolean`. Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`. |
 
 {{/partial:collapse}}
 
@@ -510,11 +514,11 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 Use the advanced configuration to better control when the SDK sends page view events.
 
 {{partial:collapse name="Tracking page views options"}}
-| Name                                               | Value                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| -------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.autocapture.pageViews.trackOn`             | Optional. `"attribution"` or `() => boolean` | Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria.                                                                                                                                                     |
-| `config.autocapture.pageViews.trackHistoryChanges` | Optional. `"pathOnly"` or `"all"`            | Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
-| `config.autocapture.pageViews.eventType`           | Optional. `string`                           | Customize the event\_type for page view event.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Name | Description |
+|------|-------------|
+| `config.autocapture.pageViews.trackOn` | Optional. Type: `"attribution"` or `() => boolean`. Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria. |
+| `config.autocapture.pageViews.trackHistoryChanges` | Optional. Type: `"pathOnly"` or `"all"`. Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
+| `config.autocapture.pageViews.eventType` | Optional. Type: `string`. Customize the event\_type for page view event. |
 
 {{/partial:collapse}}
 
@@ -537,11 +541,11 @@ Browser SDK tracks the following information in page view events.
 | Name                                         | Description                                                                                                                                         | Default Value                                                     |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `event_type`                                 | `string`. The event type for page view event. Configurable through `autocapture.pageViews.eventType` or enrichment plugin.                          | `[Amplitude] Page Viewed` from version 1.9.1.                     |
-| `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | location.hostname or ''.                                          |
-| `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | location.href or ''.                                              |
-| `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                                              |
-| `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | document.title or ''.                                             |
-| `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
+| `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | `location.hostname`or `''`.                                          |
+| `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | `location.href` or `''`.                                              |
+| `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | `location.path` or `''`.                                              |
+| `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | `document.title` or `''`.                                             |
+| `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | `location.href.split('?')[0]` or `''`.                                |
 | `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
 | `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
@@ -550,9 +554,8 @@ Browser SDK tracks the following information in page view events.
 
 Review [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
-{{partial:admonition type="Warning" heading=""}}
+{{partial:admonition type="warning" heading=""}}
 If you want Autocapture to include page views for multi-step forms that dynamically update and, therefore, don't refresh the URL with each step, you must use hash elements for Single Page Applications (SPAs). Autocapture doesn't capture the individual dynamic components automatically. Tools such as Google Tag Manager (GTM) can help you [apply hashes to the URL](https://support.google.com/tagmanager/answer/7679410?hl=en) of the SPA between steps. Autocapture can then ingest the different steps as users proceed through the form.
-
 {{/partial:admonition}}
 
 #### Page title masking 
@@ -610,12 +613,40 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 </form>
 ```
 
-Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
+#### Disable form interaction tracking
+
+Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
     formInteractions: false, 
+  },
+});
+```
+
+#### Control form submit tracking
+
+{{partial:admonition type="note" heading="Minimum SDK version"}}
+Minimum SDK version 2.34.0.
+{{/partial:admonition}}
+
+You can control when `[Amplitude] Form Submitted` events are tracked by passing a `FormInteractionsOptions` object with a `shouldTrackSubmit` callback. 
+
+By default, Amplitude tracks all form submit events. However, when a form has the [`novalidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/noValidate) attribute set, the browser [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) fires without performing default validation checks. This means the submit event triggers even if the form is empty or contains invalid data. In these cases, use `shouldTrackSubmit` to implement custom validation logic and control when Amplitude tracks the submit event.
+
+The `shouldTrackSubmit` callback receives the form submit event and should return `true` to track the submit event or `false` to skip tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    formInteractions: {
+      shouldTrackSubmit: (event) => {
+        // Only track submit if form is valid
+        const form = event.target;
+        return form.checkValidity();
+      }
+    }
   },
 });
 ```
@@ -656,12 +687,12 @@ Use the advanced configuration to control element interaction tracking.
 
 {{partial:collapse name="Tracking element interaction options"}}
 
-| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.autocapture.elementInteractions.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements on the page should always be tracked. By default, this is set to `['a','button','input','select','textarea','label','video','audio','[contenteditable="true" i]','[data-amp-default-track]','.amp-default-track']`        |
-| `config.autocapture.elementInteractions.actionClickAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define which elements on the page should be tracked when the page changes (for example, a new visual element appears) or the click takes a user to a new page. By default, this is set to `['div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']` |
-| `config.autocapture.elementInteractions.pageUrlAllowlist`     | Optional. `(string\|RegExp)[]` | Defines the URL, URLs, or URL pattern on which Amplitude tracks element click and change events. By default, element interactions will be captured on any URL if undefined.                                                                                                            |
-| `config.autocapture.elementInteractions.dataAttributePrefix`  | Optional. `(string\|RegExp)[]` | Allows the SDK to capture data attributes as an event property. By default, this is set to `data-amp-track`.                                                                                                                                                                           |
+| Name | Description |
+|------|-------------|
+| `config.autocapture.elementInteractions.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define which elements on the page should always be tracked. By default, this is set to `['a','button','input','select','textarea','label','video','audio','[contenteditable="true" i]','[data-amp-default-track]','.amp-default-track']` |
+| `config.autocapture.elementInteractions.actionClickAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define which elements on the page should be tracked when the page changes (for example, a new visual element appears) or the click takes a user to a new page. By default, this is set to `['div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']` |
+| `config.autocapture.elementInteractions.pageUrlAllowlist` | Optional. Type: `(string\|RegExp)[]`. Defines the URL, URLs, or URL pattern on which Amplitude tracks element click and change events. By default, element interactions will be captured on any URL if undefined. |
+| `config.autocapture.elementInteractions.dataAttributePrefix` | Optional. Type: `(string\|RegExp)[]`. Allows the SDK to capture data attributes as an event property. By default, this is set to `data-amp-track`. |
 
 {{/partial:collapse}}
 
@@ -735,8 +766,18 @@ Enable frustration interaction tracking to capture rage clicks and dead clicks. 
 
  * **Rage click**: A user clicks the same element, within 50px, four times in under a second. 
  * **Dead click**: A user clicks an interactable element, but no navigation change happens and the DOM doesn't change.
+ * **Error click**: Experimental. A user clicks an element and a browser error occurs within two seconds of the click.
+ * **Thrashed cursor**: Experimental. A user's cursor moves rapidly back and forth within a short time window, indicating potential frustration.
 
 Set `config.autocapture.frustrationInteractions` to `true` to enable capture of dead clicks and rage clicks.
+
+Set `config.autocapture.frustrationInteractions.rageClicks` to `true` to enable capture of rage clicks.
+
+Set `config.autocapture.frustrationInteractions.deadClicks` to `true` to enable capture of dead clicks.
+
+Set `config.autocapture.frustrationInteractions.errorClicks` to `true` to enable capture of error clicks.
+
+Set `config.autocapture.frustrationInteractions.thrashedCursor` to `true` to enable capture of thrashed cursors.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
@@ -751,12 +792,64 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 Use the advanced configuration to control frustration interaction tracking.
 
 {{partial:collapse name="Tracking frustration interaction options"}}
-| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101)       ||
-| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. `(string)[]`         | Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element.|
+| Name | Description |
+|------|-------------|
+| `config.autocapture.frustrationInteractions.deadClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures dead clicks. By default, this is set to [DEFAULT_DEAD_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/AMP-139424-frustration-interactions-ga/packages/analytics-core/src/types/frustration-interactions.ts#L94-L101) |
+| `config.autocapture.frustrationInteractions.rageClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures rage clicks. By default, this is set to capture on any element. |
+| `config.autocapture.frustrationInteractions.errorClicks.cssSelectorAllowlist` | Optional. Type: `(string)[]`. Accepts one or more CSS selectors that define the elements on which Amplitude captures error clicks. By default, this is set to [DEFAULT_ERROR_CLICK_ALLOWLIST](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/types/frustration-interactions.ts#L129) |
+| `config.autocapture.frustrationInteractions.thrashedCursor.directionChanges` | Optional. Type: `number`. Number of direction changes required to consider a thrashed cursor. X-axis changes and Y-axis changes are counted separately. Default is 10 |
+| `config.autocapture.frustrationInteractions.thrashedCursor.threshold` | Optional. Type: `number`. Time window (in milliseconds) that direction changes need to happen
+for it to be considered a thrashed cursor. Default is 2000 (2 seconds). |
 
 {{/partial:collapse}}
+
+#### Track error clicks
+
+Error clicks is experimental and must be explicitly enabled.
+
+Error click tracking captures when a user clicks an element and a browser error occurs within two seconds of the click. This helps you identify which user interactions may be triggering errors in your application.
+
+Enable error click tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    frustrationInteractions: {
+      errorClicks: true,
+    },
+  },
+});
+```
+
+When you enable error click tracking, it emits an event `[Amplitude] Error Click` that includes these properties:
+
+- `[Amplitude] Kind`: The type of error (one of uncaught exception, console error, unhandled promise rejection).
+- `[Amplitude] Message`: The error message.
+- `[Amplitude] Stack`: The error stack trace.
+- `[Amplitude] Filename`: The filename where the error occurred.
+- `[Amplitude] Line Number`: The line number where the error occurred.
+- `[Amplitude] Column Number`: The column number where the error occurred.
+- Element properties from the clicked element (for example, `[Amplitude] Element Text`, `[Amplitude] Element Tag Name`).
+
+#### Track thrashed cursor
+
+Thrashed cursor tracking is experimental and must be explicitly enabled.
+
+Thrashed cursor tracking captures when a user's cursor moves rapidly back and forth with multiple direction changes within a short time window. This helps identify areas where users may be experiencing frustration or confusion.
+
+Enable thrashed cursor tracking:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    frustrationInteractions: {
+      thrashedCursor: true,
+    },
+  },
+});
+```
+
+It emits an event called `[Amplitude] Thrashed Cursor`
 
 ### Track network requests
 
@@ -1714,9 +1807,9 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 
 
 {{partial:collapse name="User session cookies"}}
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                 |
+| Name | Description                                                                                                                                                                                                                 |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `optOut`                           | <span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user                                                     |
+| `optOut`                           | Required. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user                                                     |
 | `userId`                           | Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64                                               |
 | `deviceId`                         | A randomly generated string. It will persist unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary |
 | `sessionId`                        | A randomly generated string for each session                                                                                                                                                                                |
@@ -1727,7 +1820,7 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 
 
 {{partial:collapse name="Marketing campaign cookies"}}
-| <div class="big-column">Name</div> | Description                                                                                                                      |
+| Name | Description                                                                                                                      |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `utm_campaign`                     | This identifies a specific campaign used (for example, "summer_sale")                                                            |
 | `utm_content`                      | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |

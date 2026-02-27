@@ -8,6 +8,81 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 3.1.1 (Android, iOS, React Native) \[2026-02-23\]
+
+### 🐛 Fixes
+- Fix: reset survey responses on done or dismiss (GSDK-854) \[android, ios\]
+
+
+## 3.1.0 (Android, iOS, React Native) \[2026-02-13\]
+
+### ✨ Features
+- Feat: on `boot`, allow "user ID" to be null or blank as long as device ID is specified (GSDK-732) \[android, ios, rn\]
+
+### 🐛 Fixes
+- Fix: fix auto-advance logic (GSDK-859) \[android, ios\]
+- Fix: race condition causing pin nudge to be unable to render until the view hierarchy is updated (GSDK-827, GSDK-844) \[ios\]
+
+
+## 3.0.0 (Android, iOS, React Native) \[2026-02-11\]
+
+### 🚨 Breaking Changes (iOS only)
+- `AmplitudeEngagement` is now an interface rather than a class. New instances (as of 3.0.0) are created using `AmplitudeEngagementFactory.make` rather than the `AmplitudeEngagement` constructor (GSDK-690) \[ios\]
+
+### ✨ Features
+- Feat: add SDK methods `disable` which temporarily hides any displayed guides or surveys and `enable` which shows them again (GSDK-513) \[android,ios,rn\]
+- Feat: add SDK method `shutdown` to React Native SDK binding (GSDK-769) \[rn\]
+- Feat: add `Minimum SDK version` support to App Management so older SDK versions don't initialize Guides and Surveys \[android,ios,rn\]
+
+### 🐛 Fixes
+- Fix: fix theming issues (GSDK-845, GSDK-847) \[android, ios\]
+- Fix: fix tap outside to close behavior for modals (GSDK-850) \[android\]
+
+
+## 2.1.1 (Android, iOS, React Native) \[2026-02-02\]
+
+### 🐛 Fixes
+- Fix: trailing comma issue causing build error on Swift compiler less than version 6.1 \[rn\]
+- Fix: fix keyboard layout bug during iOS 26 device rotation (GSDK-632) \[ios\]
+- Fix: restore nudge keyboard after configuration change (GSDK-831) \[android\]
+
+
+## 2.1.0 (Android, iOS, React Native) \[2026-02-02\]
+
+### ✨ Features
+- Feat: add support for `autoRefreshIntervalSeconds` option to `AmplitudeBootOptions` to configure the auto-refresh interval for the SDK (GSDK-799) \[android, ios\]
+- Feat: add SDK method `setAutoRefreshInterval` to configure the auto-refresh interval for the SDK on the fly (GSDK-799) \[android, ios\]
+- Feat: add SDK method `refresh` to manually trigger a refresh of targeting data (GSDK-799) \[android, ios\]
+
+### 🐛 Fixes
+
+- Fix: fix theming issues (GSDK-676) \[android, ios\]
+- Fix: ensure Pin guide is displayed when it follows another guide in a Tour (a multi-step guide) (GSDK-827) \[ios\]
+- Fix: reposition nudge when keyboard shows (GSDK-782) \[android\]
+- Fix: fix link appearance and click behavior (GSDK-821) \[android\]
+- Fix: update components to use form control theme (GSDK-835) \[android\]
+- Fix: ensure host app still receives touch events after session/activity changes (GSDK-198) \[android\]
+
+### 🐇 Performance improvements
+
+- Fix: view hierarchy tracking is now "async" and won't interfere with the main thread (GSDK-819) \[ios\]
+
+
+## 2.0.3 (Android, iOS, React Native) \[2026-01-26\]
+
+### 🐛 Fixes
+
+- Fix: persist survey values when step-navigating (GSDK-582) \[android, ios\]
+- Fix: hide buttons until text animation completes, if applicable (GSDK-780) \[android, ios\]
+- Fix: popover overlaps system bars because we were not consuming WindowInsets from host app appropriately (GSDK-784) \[android\]
+- Fix: crash occurring on transition to a new activity that has `enableEdgeToEdge()` by waiting for root view to be attached to window (GSDK-768) \[android\]
+- Fix: ensure Modal Guides & Surveys are properly dismissed when `shutdown()` is called (GSDK-790) \[ios\]
+- Fix: update default content alignment to leading GSDK-796 \[ios\]
+- Fix: identify containerView as EngagementWindow to dismiss keyboard as needed GSDK-797 \[ios\]
+- Fix: expand nudge to show Other textfield without scrolling (GSDK-779) \[ios\]
+- Fix: internal engagement android dependency version is incorrectly set \[rn\]
+
+
 ## 2.0.2 (iOS) \[2026-01-09\]
 
 ### 🐛 Fixes
@@ -96,7 +171,7 @@ updated_at: 1750443681
 - Fix: Guide title incorrectly center-aligned when left alignment was configured (GSDK-701) \[android\]
 - Fix: Allow underscore ("_") separated font files on Android (GSDK-701) \[android\]
 - Fix: Use correct corner radius and outer padding when rendering Guide (GSDK-701) \[android\]
-- Fix: app is unresponsive after displaying StoreKit content (e.g. `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
+- Fix: app is unresponsive after displaying StoreKit content (for example, `manageSubscriptionsSheet`) (GSDK-699) \[ios\]
 
 
 ## 1.6.1 (Android, iOS, React Native) \[2025-11-13\]

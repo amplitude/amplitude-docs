@@ -3,8 +3,6 @@ id: 06fa7873-19a6-47ac-9ae0-f5da83396d11
 blueprint: analytic
 title: 'Historical Count, part 2: Order of operations'
 source: 'https://help.amplitude.com/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations'
-this_article_will_help_you:
-  - "Understand where Historical Counts fall into Amplitude's order of operations"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -42,19 +40,23 @@ This can have important implications for your analyses. Let's use the table belo
 | 2 | walk | walk |
 | 3 |   | run |
 
-If we were to set up an event segmentation analysis that searches for `Any Event` where:
+If you set up an event segmentation analysis that searches for `Any Event` where:
 
-* `Historical Count` = `1st`
-* `Event Name` = `Run`
+* `Historical Count` = `1st`.
+* `Event Name` = `Run`.
 
-This will yield two results: Maya at time 1, and Loc at time 3.
+This yields two results: Maya at time 1, and Loc at time 3.
 
-By contrast, let's consider a similar analysis that searches for `Any Event` where:
+{{partial:admonition type='note'}}
+While you can use "Any Event" or "Any Active Event" with Historical Count in Event Segmentation charts, you can't use these event types with Historical Count when creating dynamic cohorts in Cohort Builder. If you create a cohort using "Any Event where Historical Count = 1", it becomes a static cohort rather than a dynamic one.
+{{/partial:admonition}}
 
-* `Event Historical Count` = `1st`
-* `Event Name` = `Run`
+By contrast, consider a similar analysis that searches for `Any Event` where:
 
-This will give us only one result: Maya at time 1. This is because `Run` is Loc's **second** event, and the Event Historical Count filters out everything but first events.
+* `Event Historical Count` = `1st`.
+* `Event Name` = `Run`.
+
+This gives you only one result: Maya at time 1. This is because `Run` is Loc's **second** event, and the Event Historical Count filters out everything but first events.
 
 ## Historical Count and custom events
 

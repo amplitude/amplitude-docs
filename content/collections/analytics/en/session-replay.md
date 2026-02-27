@@ -135,7 +135,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Event Segmentation**: Session replay is available for all six measures.
 * **Funnel Analysis**: Session replay is only available for the conversion measure.
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
-* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/data/sources/instrument-track-sessions).
+* **User Sessions**: Session replay is available for all six measures.
 
 **NOTE**: For Funnel Analysis charts, the order of events appears in chronological order (oldest to newest).
 
@@ -169,6 +169,31 @@ Session replay gives you two options for searching replays: either by date, or t
 
 Once you've made your selection, the list of available replays is limited to either those replays that took place within your selected timeframe, or those replays that meet your filter specifications.
 
+## Link directly to a replay
+
+You can construct a direct URL to link to a specific session replay. This is useful for sharing replays programmatically or embedding links in external tools.
+
+Using the following URL structure:
+
+```
+https://app.[eu.]amplitude.com/analytics/<orgUrl>/session-replay/project/<projectId>/search/replay?sessionReplayId=<replayId>
+```
+
+Replace the following placeholders:
+
+| Placeholder | Description | How to find it |
+|---|---|---|
+| `eu.` | Include this subdomain only for EU-based Amplitude accounts. Omit it otherwise. | Check the URL when logged in to Amplitude. EU accounts use `app.eu.amplitude.com`. |
+| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in. For example, `https://app.amplitude.com/analytics/myorg/...`. |
+| `<projectId>` | The numeric ID of the project that captured the replay. | Navigate to *Settings > Projects*, select the project, and copy the ID from the URL or project details page. |
+| `<replayId>` | The session replay ID. | Available as the `[Amplitude] Session Replay ID` event property on `[Amplitude] Replay Captured` events. |
+
+For example:
+
+```
+https://app.amplitude.com/analytics/myorg/session-replay/project/123456/search/replay?sessionReplayId=abc123def456
+```
+
 ## Common use cases
 
 Some common use cases for Session Replay include:
@@ -183,7 +208,6 @@ Some common use cases for Session Replay include:
 There are some limitations when using Session Replay:
 
 * Session Replay is available for web-based applications only. This includes mobile web.
-* Session Replay supports standard session definitions only. [Custom](/docs/data/sources/instrument-track-sessions) session definitions aren't supported.
 * You can replay captured sessions for up to three months after they occur.
 * Some HTML elements aren't supported and aren't captured as part of the replay:
 	* Canvas

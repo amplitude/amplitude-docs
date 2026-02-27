@@ -3,8 +3,6 @@ id: d60ded31-18b1-466c-bb81-34e6455ee52a
 blueprint: analytic
 title: 'Track changes in your cohort populations over time'
 source: 'https://help.amplitude.com/hc/en-us/articles/360049309011-Track-changes-in-your-cohort-populations-over-time'
-this_article_will_help_you:
-  - 'Identify and act on trends in the populations of your dynamic cohorts'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

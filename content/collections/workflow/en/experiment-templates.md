@@ -2,11 +2,6 @@
 id: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
 blueprint: workflow
 title: 'Experiment templates'
-this_article_will_help_you:
-  - 'Understand what experiment templates are and when to use them'
-  - 'Create experiment templates from existing experiments'
-  - 'Use templates to quickly create new experiments'
-  - 'Manage and update your experiment templates'
 landing: false
 exclude_from_sitemap: false
 ---

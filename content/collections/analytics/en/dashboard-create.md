@@ -3,10 +3,6 @@ id: 19c03845-d834-4777-af7c-904a6fa82cd7
 blueprint: analytic
 title: 'Create, edit, and manage dashboards'
 source: 'https://help.amplitude.com/hc/en-us/articles/229505188-Create-edit-and-manage-dashboards'
-this_article_will_help_you:
-  - 'Create and edit dashboards'
-  - 'Comment on your dashboards'
-  - 'Manage your dashboards'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
@@ -23,7 +19,7 @@ With dashboards, you can collect all your relevant charts into a single, conveni
 
 You must save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 
-Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths), and that customers on Starter plans can subscribe to a maximum of 50 different dashboards.
+Dashboards don't support [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths). Customers on Starter plans can subscribe to a maximum of 50 different dashboards.
 
 You may also find the following dashboards articles useful:
 
@@ -149,6 +145,10 @@ The *More* menu contains several administrative functions not discussed above:
 * When copying a dashboard, you own the copied version, regardless of whether you own the original version.
 * The owner, an invited editor, or an organization admin can delete or archive dashboards. Viewers and members can't delete or archive dashboards.
 * You should archive a dashboard when your organization no longer supports or uses it. Users can still search for archived charts in the Search tab. Archiving a dashboard doesn't archive the charts within the dashboard.
+
+{{partial:admonition type="note" heading=""}}
+Use the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent) to analyze your dashboard's charts. The Dashboard Agent identifies trends, anomalies, and cross-chart correlations, and generates prioritized insights and recommendations.
+{{/partial:admonition}}
 
 ## Dashboard cache times
 

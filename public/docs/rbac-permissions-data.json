@@ -1,6 +1,6 @@
 {
-    "generated_at": "2025-10-23T17:15:01.288462Z",
-    "permissions_count": 41,
+    "generated_at": "2026-02-26T17:45:16.211666Z",
+    "permissions_count": 46,
     "permissions": [
         {
             "id": "65f10b78-fdb1-449a-a906-6f769e0331e0",
@@ -62,8 +62,9 @@
             "advanced": true,
             "actions": [
                 "view secret key",
-                "view integration api keys",
-                "edit integration api keys"
+                "view integration API keys",
+                "edit integration API keys",
+                "view project API keys"
             ],
             "default_permissions": [
                 "admin",
@@ -394,7 +395,6 @@
                 "change project description",
                 "change project session property",
                 "rename project",
-                "view project key",
                 "create project",
                 "delete project"
             ],
@@ -616,7 +616,6 @@
             "advanced": true,
             "actions": [
                 "change role of user",
-                "edit permission groups",
                 "invite new users to a project",
                 "remove users from a project"
             ],
@@ -792,6 +791,89 @@
                 "viewer"
             ],
             "slug": "view-guides-surveys-objects"
+        },
+        {
+            "id": "d6c7332a-f148-4b01-8691-3e4302375f56",
+            "title": "View chat",
+            "description": "View Chat conversations shared with the user",
+            "product_area": "ai",
+            "advanced": false,
+            "actions": [
+                "View Global Agent"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-chat"
+        },
+        {
+            "id": "d2236da7-478f-408f-9616-86e4557aebee",
+            "title": "Use chat",
+            "description": "Create new conversations and send messages in Chat",
+            "product_area": "ai",
+            "advanced": false,
+            "actions": [
+                "Create Global Agent"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "use-chat"
+        },
+        {
+            "id": "bb1ae0da-1e62-4f38-ae3d-6d9bd171f577",
+            "title": "View agents",
+            "description": "View agents and conversations shared with the user",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "View agents"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-agents"
+        },
+        {
+            "id": "e60ce29e-75c0-453a-9f27-4d64bd6a71d0",
+            "title": "Create agents",
+            "description": "Create and configure AI Agents",
+            "product_area": "ai",
+            "advanced": true,
+            "actions": [
+                "Create agents"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "create-agents"
+        },
+        {
+            "id": "df3d7283-96af-47c5-b04e-c297fa7c29d7",
+            "title": "Manage AI settings",
+            "description": "Update project-level AI context",
+            "product_area": "ai",
+            "advanced": true,
+            "actions": [
+                "Manage settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-ai-settings"
         }
     ]
 }

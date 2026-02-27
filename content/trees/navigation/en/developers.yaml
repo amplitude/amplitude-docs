@@ -86,6 +86,9 @@ tree:
         id: fda8c6d0-c61f-459c-8495-7eca228a9287
         entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
         title: 'Evaluation Proxy'
+      -
+        id: 8df42e93-8fa9-4caa-a088-200e64c85772
+        entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
   -
     id: bc3b0d2e-834b-4b0c-9998-138e9702e880
     title: 'Session Replay'
@@ -139,8 +142,15 @@ tree:
     id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
     entry: cae327ea-be74-4783-ab16-09f2848cebca
   -
-    id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
-    entry: cea4db38-5323-4b0b-b401-8077084a0a0a
+    id: 7910427d-e37c-4da1-9e61-f08f8d21b7d9
+    title: Troubleshooting
+    children:
+      -
+        id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
+        entry: cea4db38-5323-4b0b-b401-8077084a0a0a
+      -
+        id: 5af8e642-fb12-447e-b44c-8563fa23871f
+        entry: b4c5d6e7-f8a9-4b0c-8d1e-2f3a4b5c6d7e
   -
     id: cc8b7515-d6c5-43a5-8d9d-039fbd4740e7
     entry: 18f5ac3b-003a-4386-86a3-1ffad3ca2429

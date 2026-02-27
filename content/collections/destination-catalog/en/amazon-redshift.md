@@ -97,7 +97,7 @@ If the backfill range overlaps with the range of previously exported data, Ampli
 
 The **Event** table schema includes the following columns:
 
-| <div class="big-column">Column</div>| Type | Description |
+| Column| Type | Description |
 |---|---|---|
 | `Adid` | String | (Android) Google Play Services advertising ID (ADID). Example: AEBE52E7-03EE-455A-B3C4-E57283966239 |
 | `amplitude_event_type` | VARCHAR(1677721) | Amplitude specific identifiers based on events Amplitude generates. This is a legacy field so `event_type` should suffice for all queries  |
@@ -150,7 +150,7 @@ The **Event** table schema includes the following columns:
 
 The Merged User table schema contains the following:  
 
-| <div class="big-column">Column</div> |Type| Description  |
+| Column |Type| Description  |
 |---|---|---|
 | `amplitude_id`| NUMBER(38,0) | The Amplitude ID being merged into a user's original Amplitude ID.  |
 | `merge_event_time` |TIMESTAMP | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.  |

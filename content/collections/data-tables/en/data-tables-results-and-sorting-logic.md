@@ -7,9 +7,6 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1719958028
 landing: true
 landing_blurb: 'Learn how Amplitude decides what results to display in a Data Table chart'
-this_article_will_help_you:
-  - 'Use the sorting logic behind Data Tables to create elegant and accurate charts'
-  - 'Understand when, why, and how Data Tables limit the amount of data you export'
 ---
 For more complex analyses, it's important to understand how Amplitude Analytics decides what results to display, as well as what happens when you sort on a given column.
 
@@ -23,6 +20,14 @@ Data Tables apply display limits based on your group-by configuration. These are
 * **Multiple metric types with different limits:** The smallest limit applies
 
 ### Nested group-bys
+
+To add multiple group-bys in a data table, start with one group-by already selected in the first column. Then, look for the icon with three stacked lines that appears when you hover—it says "Add top-level group-by." Click the icon to add another column and a second group-by.
+
+![Add top-level group-by icon](/docs/output/img/data-tables/add-nested-groupby-icon.png)
+
+By default, Amplitude applies the first group-by, then finds the second group-by value within each value of the first, and continues in that order for any additional group-bys you add.
+
+![Multiple group-bys applied in order](/docs/output/img/data-tables/nested-groupby-png.png)
 
 Amplitude applies display limits to each group-by level separately. For example, if you group by `city` (top-level limit: 100 rows), then add a nested group-by for `email`, up to 100 emails display for each city.
 

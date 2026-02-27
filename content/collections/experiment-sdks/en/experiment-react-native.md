@@ -189,7 +189,7 @@ const experiment = Experiment.initialize(
 
 SDK client configuration occurs during initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value                |
+| Name | Description | Default Value                |
 | --- | --- |------------------------------|
 | `debug` | **Deprecated.** When `true`, sets `logLevel` to `Debug`. Use `logLevel` instead. | `false`                      |
 | `logLevel` | The minimum log level to output. Messages below this level are ignored. Options: `Disable`, `Error`, `Warn`, `Info`, `Debug`, `Verbose`. Go to [Custom logging](#custom-logging) for details. | `LogLevel.Error`             |

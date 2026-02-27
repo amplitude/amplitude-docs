@@ -3,10 +3,6 @@ id: 8dfd33d5-b99e-468d-82e9-548bdc2667bc
 blueprint: audience
 title: 'Computations: Create new user properties on the fly'
 source: 'https://help.amplitude.com/hc/en-us/articles/360060044791-Computations-Create-new-user-properties-on-the-fly'
-this_article_will_help_you:
-  - 'Streamline the segmentation process by understanding the difference between computations and cohorts'
-  - 'Create and deploy a computed property from an existing event or event property'
-  - 'Sync your computed properties to an external destination'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

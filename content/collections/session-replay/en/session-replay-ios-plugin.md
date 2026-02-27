@@ -17,6 +17,10 @@ If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) de
 
 If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone-sdk).
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) to access Session Replay along with other Amplitude products (Analytics, Experiment). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:partials/session-replay/sr-ios-performance}}
 
 Session Replay captures changes to an app's view tree, this means the main view and all it's child views recursively. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original view tree in sequential order, to construct the replay. Session replays have no maximum length.
@@ -159,6 +163,8 @@ Pass the following option when you initialize the Session Replay plugin:
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay. |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `quality`                              | `QualityProfile` | No | `.high` | Controls capture and encoding quality (for example, frame rate and image resolution). Use `.low`, `.medium`, or `.high` to balance replay fidelity with performance and storage. Use `QualityProfile.automatic` to let the SDK choose a profile based on the device. |
+| `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -191,6 +197,35 @@ amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(/* session replay option
 ```swift
 // This configuration samples 1% of all sessions
 amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(sampleRate: 0.01))
+```
+
+### Recording quality
+
+Choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution. Higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example: high on newer devices, lower on older ones).
+
+```swift
+// Use automatic profile selection based on device
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    quality: .automatic
+))
+
+// Or set a fixed profile (low, medium, or high)
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    quality: .medium
+))
+```
+
+### Disable uploads on metered networks
+
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
+
+```swift
+amplitude.add(plugin: AmplitudeSwiftSessionReplayPlugin(
+    sampleRate: 0.1,
+    uploadConfig: UploadConfig(disableMeteredUploads: true)
+))
 ```
 
 ### Disable replay collection

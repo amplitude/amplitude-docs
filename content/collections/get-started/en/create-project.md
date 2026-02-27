@@ -9,8 +9,6 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632789
 exclude_from_sitemap: false
-this_article_will_help_you:
-  - 'Create a project in Amplitude'
 academy_course:
   - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
 ---

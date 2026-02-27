@@ -46,7 +46,7 @@ Amplitude Data supports tracking analytics events from iOS apps written in Swift
 
     ```swift
     Ampli.instance.load(LoadOptions(
-      environment: AmpliEnvironment.Production
+      environment: AmpliEnvironment.YourEnvironment
     ))
     ```
 
@@ -86,8 +86,12 @@ Install the Amplitude Analytics iOS SDK with CocoaPods, Carthage, or Swift Packa
 {{partial:tab name="CocoaPods"}}
 1. Add the dependency to your `Podfile`:
 
-    ```bash
-    pod 'AmplitudeSwift', '~> 1.0'
+    ```ruby
+    platform :ios, '16.0'
+    
+    target 'YourApp' do
+      pod 'AmplitudeSwift', '~> 1.0'
+    end
     ```
 2. Run `pod install` in the project directory.
 {{/partial:tab}}
@@ -133,9 +137,21 @@ Run the Ampli CLI `pull` command to log in to Amplitude Data and download the st
 ampli pull
 ```
 
+{{partial:admonition type="important" heading="Attach properties to your source"}}
+After adding new events or properties to your tracking plan, attach them to your source in Amplitude Data. The `ampli pull` command only includes events and properties that are attached to the selected source. If you don't attach new properties to your source, they won't appear in the generated Ampli Wrapper code.
+{{/partial:admonition}}
+
 ## Use Ampli
 
 Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `Ampli.instance.client`. [More details](/docs/sdks/ampli#wrapping-the-amplitude-sdk).
+
+### Import
+
+Import the Amplitude SDK in your Swift file:
+
+```swift
+import AmplitudeSwift
+```
 
 ### Load
 
@@ -144,14 +160,24 @@ Initialize Ampli in your code. The `load()` method accepts configuration option 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
+// Using API key directly
 Ampli.instance.load(LoadOptions(
     client: LoadClientOptions(apiKey: AMPLITUDE_API_KEY)
-));
+))
+
+// Using environment from tracking plan
+Ampli.instance.load(LoadOptions(
+    environment: AmpliEnvironment.YourEnvironment
+))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objectivec
+// Using API key directly
 [Ampli.instance load:[LoadOptions initWithApiKey:AMPLITUDE_API_KEY]];
+
+// Using environment from tracking plan
+[Ampli.instance load:[LoadOptions initWithEnvironment:AmpliEnvironmentYourEnvironment]];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -159,8 +185,9 @@ Ampli.instance.load(LoadOptions(
 | Arg | Description |
 |-|-|
 |`LoadOptions`| Required. Specifies configuration options for the Ampli Wrapper.|
-|`instance`| <span class="required">Required if `apiKey` isn't set</span>. Specifies an Amplitude instance. By default Ampli creates an instance for you.|
-|`apiKey`| <span class="required">Required if `instance` isn't set</span>. Specifies an API Key. This option overrides the default, which is the API Key configured in your tracking plan.|
+|`instance`| Required if `apiKey` isn't set. Specifies an Amplitude instance. By default Ampli creates an instance for you.|
+|`apiKey`| Required if `instance` isn't set. Specifies an API Key. This option overrides the default, which is the API Key configured in your tracking plan.|
+|`environment`| Optional. Specifies the environment name from your tracking plan. Replace `YourEnvironment` with the actual environment name configured in your tracking plan.|
 |`disabled`|Optional. Specifies whether the Ampli Wrapper does any work. When true, all calls to the Ampli Wrapper are no-ops. Useful in local or development environments.|
 
 ### Identify
@@ -177,8 +204,9 @@ For example your tracking plan contains a user property called `userProp`. The p
 {{partial:tab name="Swift"}}
 ```swift
 Ampli.instance.identify("userID", Identify(
-    requiredUserProp: "A trait associated with this user"
-));
+    requiredUserProp: "A trait associated with this user",
+    optionalUserProp: "Another trait"
+))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
@@ -198,7 +226,7 @@ The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
-Ampli.instance.identify("userID", Identify(deviceID: "my_device_id")
+Ampli.instance.identify("userID", Identify(), options: EventOptions(deviceId: "my_device_id"))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}

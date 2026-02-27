@@ -31,6 +31,9 @@ tree:
         id: a978b4c7-f702-4e27-b042-3369a199110e
         entry: bbc8aee8-3cf6-49b1-bcd7-29150092c584
       -
+        id: fb9455d3-d9b2-4559-aca3-4e14096cd3fb
+        entry: e39f9287-bec8-4403-ba60-8b04da56b5f9
+      -
         id: 69a1da4a-f6d2-4aed-af3a-3dad6e046596
         title: 'Experiment Goals'
         children:
@@ -79,6 +82,9 @@ tree:
             id: 92597bc4-7868-425f-94c8-b399c989b998
             entry: c7210fe3-77ed-43ee-9f76-7ad20736c439
           -
+            id: 429dc4fd-7d45-4fe4-8269-6b3384c57c73
+            entry: stale-flag-management
+          -
             id: e9498dd2-3e82-4220-b494-c775bc8f3b6a
             entry: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
             title: 'Experiment templates'
@@ -117,6 +123,12 @@ tree:
       -
         id: 779c43fa-d73c-483c-946d-076ea8b9545f
         entry: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
+      -
+        id: 77fcfce6-dc68-4da0-b51d-a7cf7eee38d6
+        entry: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
+      -
+        id: dce46451-9ed0-45f2-ad8c-4f4b11de3dc6
+        entry: f2ec214a-e983-47f1-bf4f-7656427b8b14
   -
     id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
     title: 'Analyzing Experiments'

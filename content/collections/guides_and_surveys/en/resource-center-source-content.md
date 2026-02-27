@@ -2,11 +2,10 @@
 id: 2d993365-2310-4343-ab54-d864173975eb
 blueprint: guides_and_survey
 title: 'Source Content'
-this_article_will_help_you:
-  - 'Include source content into the Resource Center'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
 updated_at: 1750961154
+landing_blurb: Discover how to add content to Resource Center.
 ---
 The source content you select should be either internal help (documentation) repositories, specific external content, or third-party chat integrations like Intercom. Documentation repositories are typically more useful as they provide a large selection of information that's widely applicable to each page with which your users interact. 
 

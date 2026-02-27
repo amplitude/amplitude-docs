@@ -24,6 +24,10 @@ Session Replay isn't enabled by default and requires instrumentation beyond the 
 
 {{partial:partials/session-replay/sr-retention}}
 
+{{partial:admonition type="note" heading=""}}
+The [Session Replay Agent](/docs/amplitude-ai/session-replay-agent) analyzes session replays at scale to surface friction points, navigation patterns, and engagement insights automatically.
+{{/partial:admonition}}
+
 ## Use Session Replay to review user activity
 
 You can launch a session replay from a user’s event stream, inside a chart, or from your homepage. Replays are generally available for viewing five minutes after a session begins.
@@ -220,6 +224,31 @@ Keep in mind that if you apply a filter to exclude replays with a specific prope
 
 The list of results shows a maximum of 100 replays. 
 
+## Link directly to a replay
+
+You can construct a direct URL to link to a specific session replay. This is useful for sharing replays programmatically or embedding links in external tools.
+
+Using the following URL structure:
+
+```
+https://app.[eu.]amplitude.com/analytics/<orgUrl>/session-replay/project/<projectId>/search/replay?sessionReplayId=<replayId>
+```
+
+Replace the following placeholders:
+
+| Placeholder | Description | How to find it |
+|---|---|---|
+| `eu.` | Include this subdomain only for EU-based Amplitude accounts. Omit it otherwise. | Check the URL when logged in to Amplitude. EU accounts use `app.eu.amplitude.com`. |
+| `<orgUrl>` | Your organization's URL identifier. | Visible in the browser URL when logged in—for example, `https://app.amplitude.com/analytics/myorg/...`. |
+| `<projectId>` | The numeric ID of the project that captured the replay. | Navigate to *Settings > Projects*, select the project, and copy the ID from the URL or project details page. |
+| `<replayId>` | The session replay ID. | Available as the `[Amplitude] Session Replay ID` event property on `[Amplitude] Replay Captured` events. |
+
+For example:
+
+```
+https://app.amplitude.com/analytics/myorg/session-replay/project/123456/search/replay?sessionReplayId=abc123def456
+```
+
 ## How session replay querying works
 
 When you search for replays by event in Amplitude, Amplitude finds replays that spans those events. This means Amplitude looks for replays that include the time period when your events occurred.
@@ -261,7 +290,6 @@ With Session Replay, you can:
 
 There are some limitations when using Session Replay:
 
-* Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) and time-based session definitions aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
 * Session Replay doesn't capture these unsupported HTML elements:

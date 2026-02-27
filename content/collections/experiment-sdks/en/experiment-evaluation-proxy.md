@@ -17,17 +17,13 @@ bundle_url: 'https://hub.docker.com/r/amplitudeinc/evaluation-proxy'
 shields_io_badge: 'https://img.shields.io/docker/v/amplitudeinc/evaluation-proxy?color=blue&label=docker&logo=docker&logoColor=white'
 logo: icons/docker.svg
 ---
-{{partial:admonition type="beta" heading=""}}
-The evaluation proxy is under active development. APIs are unstable and may change before general availability.
-{{/partial:admonition}}
-
 The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/feature-experiment/local-evaluation) running within your infrastructure.
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.svg)
 
 * **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/apis/experiment/experiment-evaluation-api) and [SDKs](/docs/sdks/experiment-sdks) to run local evaluation in your infrastructure.
 
-* **Automatically track assignment events for local evaluations**: Identical assignment events are deduplicated for 24 hours.
+* **Automatically track exposure events for local evaluations**: It deduplicates identical exposure events for 24 hours.
 
 * **Enhance local evaluation with large cohort targeting**: Targeted cohorts are synced hourly to the Evaluation Proxy and added to the user prior to evaluation.
 
@@ -65,6 +61,7 @@ Environment configuration can only configure a single project. Environment varia
 | `AMPLITUDE_REDIS_URI` | Optional. The entire URI to connect to Redis. Include the protocol, host, port, and optional username, password, and path (for example `redis://localhost:6379`). |
 | `AMPLITUDE_REDIS_PREFIX` | Optional. The prefix to connect  |
 | `AMPLITUDE_REDIS_USE_CLUSTER` | Optional. If `AMPLITUDE_REDIS_URI` is a cluster URL, pass this as `true`. It defaults to `false`. |
+| `AMPLITUDE_REDIS_READ_FROM` | Optional. Read routing strategy for Redis Cluster. Options: `REPLICA_PREFERRED` (default, prefer replicas) or `ANY` (read from any node in the cluster). |
 | `AMPLITUDE_SERVER_URL` | Optional. The server URL, including protocol and host, to fetch flags from. |
 | `AMPLITUDE_COHORT_SERVER_URL` | Optional. The server URL, including protocol and host, to download cohorts from. |
 
@@ -77,7 +74,7 @@ Environment configuration can only configure a single project. Environment varia
 
 A required array of objects with the following fields, all which are required.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `id` | The project's ID. Found in the project settings. |
 | `apiKey` | The project's [API key](/docs/apis/keys-and-tokens#api-key). |
@@ -88,7 +85,7 @@ A required array of objects with the following fields, all which are required.
 
 An optional object of extra configuration.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `redis` | Optional (Recommended). See [`redis`](#redis). Configure the proxy to use redis as persistent storage. |
 | `flagSyncIntervalMillis` | Optional. The polling interval to update flag configurations (default `10000`). |
@@ -110,12 +107,13 @@ configuration:
 
 Configure the evaluation proxy to use Redis as a persistent storage. Highly recommended to enable the evaluation proxy to run efficiently.
 
-| <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
+| Field | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `uri` | Required. The full URI to connect to Redis with. Include the protocol, host, port, and optional username, password, and path. |
 | `readOnlyUri` | Optional. Optional URI to connect to read only replicas for high scaling high volume reads to Redis read replicas. |
-| `useCluster` | Optional. If `uri` is a cluster URL, pass this as `true`. It defaults to `false`. |
-| `prefix` | Optional. A prefix for all keys saved by the evaluation proxy (default `amplitude`). |
+| `useCluster` | Optional. If `uri` is a cluster URL, set this to `true`. Defaults to `false`. |
+| `readFrom` | Optional. Read routing strategy for **cluster mode only**: `REPLICA_PREFERRED` (default, prefer replicas) or `ANY` (read from any node in the cluster). |
+| `prefix` | Optional. A prefix for all keys saved by the evaluation proxy. Defaults to `amplitude`. |
 
 ## Deployment
 
@@ -184,3 +182,105 @@ The Evaluation Proxy exposes remote [Evaluation API](/docs/apis/experiment/exper
 {{partial:admonition type="example" heading="Kubernetes"}}
 A Kubernetes deployed Evaluation Proxy service (named `evaluation-proxy`) running within a kubernetes namespace `main` is from within the cluster at: `http://evaluation-proxy.main.svc.cluster.local:3546`
 {{/partial:admonition}}
+
+## Best practices
+
+### Production deployment
+
+#### Resource requirements
+
+Configure each pod with 4 CPU cores and 9 GiB RAM for a capacity of approximately 5,000 requests each second.
+
+- **Minimum replicas**: Deploy at least two replicas for high availability.
+- **Horizontal scaling**: Add pods to increase capacity. For example, four pods provide approximately 20,000 requests each second.
+
+#### JVM heap for large cohorts
+
+If you use local evaluation and download large cohorts greater than 5M users, set a 6 GiB max JVM heap size.
+
+```yaml
+- name: JAVA_TOOL_OPTIONS
+  value: "-Xms128m -Xmx6144m"
+```
+
+#### Redis configuration
+
+##### Option 1: Standalone with replicas
+
+Use for small deployments.
+
+```yaml
+configuration:
+  redis:
+    uri: "rediss://primary:6379"
+    readOnlyUri: "rediss://replica:6379"  # Optional, for high-volume read scaling.
+```
+
+**Recommended specs**: 12+ GiB memory, cache.m7g.xlarge or equivalent.
+
+##### Option 2: Redis Cluster (recommended for high scale)
+
+Use Redis Cluster when you have 10M+ users or many large cohorts.
+
+```yaml
+configuration:
+  redis:
+    uri: "rediss://cluster:6379"
+    useCluster: true
+```
+
+**Recommended specs**: 2-3 shards, 1-2 replicas per shard, 12+ GiB per node.
+
+{{partial:admonition type="tip" heading="Cluster-based approach"}}
+Prefer a cluster-based approach as cohort size and count increase. Test with your data to finalize the configuration.
+{{/partial:admonition}}
+
+### Performance characteristics
+
+#### Latency
+
+- **Normal**: 1-5ms.
+- **During background cohort refresh**: p95 latency can reach up to 50ms. This typically occurs when you add or remove a significant number of users from a cohort, or attach new large cohorts to a flag.
+
+#### Cold start
+
+Initial startup time scales with the number and size of targeted cohorts.
+
+Set the readiness probe `initialDelaySeconds: 600` to prevent pod restarts during startup.
+
+### Monitoring and alerts
+
+The proxy exposes metrics at `http://proxy:9090/metrics`.
+
+Configure these critical alerts:
+
+```promql
+# Error rate > 1%
+rate(http_requests_total{status=~"5.."}[5m]) > 0.01
+
+# P95 latency > 100ms sustained (ignore during cohort refresh spikes)
+histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.1
+
+# Memory > 85%
+container_memory_usage_bytes / container_spec_memory_limit_bytes > 0.85
+
+# Redis errors
+rate(redis_errors_total[5m]) > 0
+```
+
+### Troubleshooting
+
+| Issue | Solution |
+|---|---|
+| High latency (sustained >100ms) | Check Redis latency: `redis-cli --latency -h <host>` |
+| Cohorts not loading | Verify `managementKey`, check logs for sync errors. |
+| Proxy won't start | Verify Redis connectivity, check all API keys. |
+| Cold start taking too long | Normal for large cohorts (5-10 min), increase readiness `initialDelaySeconds`. |
+
+### Capacity planning
+
+| Load | Pods | Redis |
+|---|---|---|
+| <10k req/s | 2 | Standalone + replica |
+| 10-20k req/s | 3-4 | Standalone or 2-shard cluster |
+| >20k req/s | 5+ | 2-3 shard cluster |

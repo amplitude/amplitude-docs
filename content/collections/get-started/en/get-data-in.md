@@ -3,9 +3,6 @@ id: 1473fc96-a097-4045-a6f9-43ad3bf5027e
 blueprint: get-started
 title: 'Get data into Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/17472723888411-Get-data-into-Amplitude'
-this_article_will_help_you:
-  - 'Pull data into Amplitude from your app or a third-party source'
-  - 'Identify valuable resources and APIs to consider during instrumentation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

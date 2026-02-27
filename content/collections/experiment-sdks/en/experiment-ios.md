@@ -19,6 +19,10 @@ logo: icons/ios.svg
 ---
 Official documentation for Amplitude Experiment's Client-side iOS SDK implementation.
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Unified SDK for Swift](/docs/sdks/analytics/ios/unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 ## Install
 
 {{partial:admonition type="warning" heading="Import statement"}}
@@ -182,7 +186,7 @@ let experiment = Experiment.initialize(
 The SDK client can be configured once on initialization.
 
 {{partial:collapse name="Configuration options"}}
-| <div class="big-column">Name</div> | Description | Default Value |
+| Name | Description | Default Value |
 | --- | --- | --- |
 | `debug` | **Deprecated.** When `true`, sets `logLevel` to `.debug`. Use `logLevel` instead. | `false` |
 | `logLevel` | The minimum log level to output. Options: `.off` (no logging), `.error` (errors only), `.warn` (errors and warnings), `.log` (errors, warnings, and logs), `.debug` (all messages including debug). See [Custom logging](#custom-logging). | `.warn` |

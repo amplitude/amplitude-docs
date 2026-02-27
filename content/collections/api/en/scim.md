@@ -73,10 +73,10 @@ Authorization: Bearer {scim-token}
 
 #### Query parameters
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
-|`startIndex`| <span class="optional">Optional</span>. Integer. Defaults to 1. 1-indexed.|
-|`itemsPerPage`| <span class="optional">Optional</span>. Integer. Defaults to 100. 100 is the maximum page size.|
+|`startIndex`| Optional. Integer. Defaults to 1. 1-indexed.|
+|`itemsPerPage`| Optional. Integer. Defaults to 100. 100 is the maximum page size.|
 |`filter`|String. Must follow the [SCIM filter syntax](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2)|
 
 #### Response
@@ -131,9 +131,9 @@ Authorization: Bearer {scim-token}
 
 #### Path variables
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
-|`id`| <span class="required">Required</span>. Must be a valid email address. Not case sensitive.|
+|`id`| Required. Must be a valid email address. Not case sensitive.|
 
 #### Response
 
@@ -298,9 +298,9 @@ Authorization: Bearer {scim-token}
 
 #### Path variables
 
-|<div class="big-column">Name</div>| Description|
+|Name| Description|
 |---|---|
-|`id`| <span class="required">Required</span>. Must be a valid email address. Not case sensitive.|
+|`id`| Required. Must be a valid email address. Not case sensitive.|
 
 #### User response
 
@@ -367,7 +367,7 @@ Authorization: Bearer {scim-token}
 
 |Name| Description|
 |---|---|
-|`id`| <span class="required">Required</span>. Integer. The group ID|
+|`id`| Required. Integer. The group ID|
 
 #### Example response
 
@@ -557,7 +557,7 @@ Authorization: Bearer {{scim-token}}
 
 |Name| Description|
 |---|---|
-|`id`| <span class="required">Required</span>. Integer. The group ID|
+|`id`| Required. Integer. The group ID|
 
 #### Response
 

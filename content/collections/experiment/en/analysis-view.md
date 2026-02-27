@@ -3,8 +3,6 @@ id: c43935f9-32e2-4ac9-82ed-9513d66203b8
 blueprint: experiment
 title: 'The Experiment Analysis view'
 source: 'https://help.amplitude.com/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view'
-this_article_will_help_you:
-  - 'Understand what the *Analysis* view tells you about your experiment, and how to access it'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

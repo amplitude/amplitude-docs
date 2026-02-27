@@ -3,8 +3,6 @@ id: bec01e15-549f-4bce-958c-8530830146ef
 blueprint: analytic
 title: 'Subscribe to a dashboard'
 source: 'https://help.amplitude.com/hc/en-us/articles/19465059724827-Subscribe-to-a-dashboard'
-this_article_will_help_you:
-  - 'Receive updates to a dashboard through email or Slack'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -32,5 +30,9 @@ Dashboard owners can add subscribers to a dashboard and set the update frequency
 Navigate to *Settings > Organization Settings >* *Content Access > Dashboard Subscriptions* to view and manage your dashboards.
 
 Admins can view and delete any dashboard subscriptions in their organization.
+
+{{partial:admonition type="note" heading=""}}
+For automated dashboard analysis with prioritized insights and recommendations, use the [Dashboard Agent](/docs/amplitude-ai/dashboard-agent). You can schedule it to run automatically and push findings to Slack or email.
+{{/partial:admonition}}
 
 ![Screenshot](/docs/output/img/analytics/screenshot.png)

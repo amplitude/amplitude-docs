@@ -3,9 +3,6 @@ id: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
 blueprint: advanced-technique
 title: 'Sticky bucketing'
 source: 'https://help.amplitude.com/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment'
-this_article_will_help_you:
-  - 'Learn when and when not to use sticky bucketing in your experiments'
-  - 'Confirm if sticky bucketing was used for a specified user'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329324
@@ -15,7 +12,7 @@ Sticky bucketing checks whether a user has already experienced a variant of your
 Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/) which is when a user experiences two (2) or more variants for a single flag or experiment. However, simply enabling sticky bucketing doesn't guarantee that users will never experience variant jumping. Variant jumping may occur if your experiment includes both a logged-out and a logged-in experience because a user can have different logged in and logged out Amplitude IDs.
 
 {{partial:admonition type='note'}}
-Sticky bucketing is only available for Feature experiments, not flags or Web experiments.
+Sticky bucketing is only available for Feature experiments and flags, not Web experiments.
 {{/partial:admonition}}
 
 {{partial:admonition type='note'}}

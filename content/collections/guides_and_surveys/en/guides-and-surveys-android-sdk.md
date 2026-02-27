@@ -8,30 +8,27 @@ updated_at: 1750710914
 ---
 Amplitude's Guides and Surveys Android SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your Android applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys Android SDK requires:
 
 * Android API Level 24 (Android 7.0)+
 * Kotlin 1.8.22+
-* [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) 1.0+
+
+You can use Guides and Surveys independently of Amplitude Analytics.
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Analytics Android-Kotlin 1.0+
+### Using Amplitude Analytics Android-Kotlin SDK
 
-Add the following dependencies to your application's `build.gradle.kts` file:
+If your app uses the [Amplitude Analytics Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk), make sure you are using version 1.0 or later. Then add the following dependencies to your application's `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
     // Amplitude Engagement SDK
-    implementation("com.amplitude:amplitude-engagement-android:2.+")
+    implementation("com.amplitude:amplitude-engagement-android:3.+")
 
     // Amplitude Analytics SDK (required dependency)
     implementation("com.amplitude:analytics-android:1.+")
@@ -55,6 +52,8 @@ val amplitudeEngagement = AmplitudeEngagement(
 val amplitude = Amplitude(applicationContext)
 amplitude.add(amplitudeEngagement.getPlugin())
 ```
+
+This call uses the Amplitude Analytics Android SDK's plugin system to integrate Guides and Surveys with your existing Analytics setup. Adding the plugin means Guides and Surveys initializes alongside Analytics, shares the same API key and user identity, and communicates with it directly. You don't need to call `boot` separately.
 
 #### Configuration options
 
@@ -82,8 +81,14 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-android-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Analytics Android-Kotlin 1.0+
-In this case, installation is very similar to above; however, you need to manually call `.boot`.
+### Not using Amplitude Analytics Android-Kotlin SDK 1.0+
+
+If your app doesn't use the Amplitude Analytics Android-Kotlin SDK 1.0+, you can still install Guides and Surveys, but you need to call `.boot` directly instead of using the Analytics SDK plugin system.
+
+{{partial:admonition type="warning" heading="Required and recommended setup for this installation path"}}
+- **Required**: Include `integrations` in your `boot` call to send Guides and Surveys events to your analytics provider. Without it, guide insights, survey insights, and survey responses won't appear.
+- **Strongly recommended**: Set up event forwarding using `forwardEvent` to enable the *On event tracked* trigger. Without it, you can only trigger guides and surveys on screen load or other non-event conditions.
+{{/partial:admonition}}
 
 Add the following dependencies to your application's `build.gradle.kts` file:
 
@@ -168,10 +173,37 @@ To add your application:
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your Android app users.
 
+### Set a minimum SDK version (when needed)
+
+`Minimum SDK version` is available for versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **Android** from the dropdown.
+6. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example usage of minimum SDK version
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
+
 ## Screen tracking and element targeting
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (for example, "HomeScreen") is compared with the string provided in the guide or survey page targeting section.
 
 ```kotlin
 // Track screen views to trigger guides based on screens
@@ -338,7 +370,11 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 
 ### Forward event
 
-If you don't use the plugin, but want to trigger Guides using events, call `forwardEvent` with any events want to use as triggers.
+If you don't use the Amplitude Analytics Android SDK plugin (that is, you called `boot` directly), use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers. The SDK uses them only for local trigger evaluation.
+
+{{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
+Amplitude strongly recommends setting up event forwarding when not using the Amplitude Analytics Android SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
+{{/partial:admonition}}
 
 ```kotlin
 // Forward events from Amplitude to trigger guides
@@ -393,6 +429,24 @@ override fun onNewIntent(intent: Intent?) {
     amplitudeEngagement.handleLinkIntent(intent)
 }
 ```
+
+## Known limitations
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
+
 ## Changelog
 
 You can access the changelog [here](/docs/guides-and-surveys/guides-and-surveys-mobile-sdk-changelog).

@@ -24,7 +24,8 @@ export function useFilters(filterType = 'generic') {
     'heatmaps': 'Heatmaps',
     'guides-surveys': 'Guides & Surveys',
     'resource-center': 'Resource Center & Content',
-    'experiment': 'Experiment'
+    'experiment': 'Experiment',
+    'ai': 'AI Features'
   }
 
   // Platform mapping

@@ -3,15 +3,16 @@ id: 29db4e07-fe88-46f9-8f21-76c7b6d77142
 blueprint: workflow
 title: 'Troubleshoot your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061270832-Troubleshoot-your-experiment'
-this_article_will_help_you:
-  - 'Identify the cause of potentially unanticipated behaviors in Amplitude Experiment'
-  - 'Fix any issues yourself, without contacting Amplitude support'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517153
 ---
 You may experience unexpected issues with creating and rolling out an experiment or flag. This can happen for a few different reasons. This page describes common issues and their workarounds. 
 
 This article assumes that you understand how to set up and run an experiment in Amplitude Experiment. If you don't feel confident in your understanding, review the Help Center articles on [an overview of Amplitude Experiment](/docs/feature-experiment/overview) and [configuring your experiment](/docs/feature-experiment/workflow/configure) before proceeding.
+
+{{partial:admonition type="tip" heading="Use an A/A test to validate your setup"}}
+If you suspect a systemic instrumentation or assignment issue, [run an A/A test](/docs/feature-experiment/aa-testing) to confirm your experimentation platform works correctly before debugging individual experiments.
+{{/partial:admonition}}
 
 ## Experiment troubleshooting checklist
 

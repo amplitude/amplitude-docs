@@ -2,10 +2,6 @@
 id: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
 blueprint: experiment
 title: 'Experiment Quick Start'
-this_article_will_help_you:
-  - 'Setup the SDK and deployment for your experiments'
-  - 'Create feature flags, variants, and payloads'
-  - 'Design and implement the experiment'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
@@ -59,12 +55,12 @@ Before you can begin using experiments:
 Install the Amplitude SDK with the Experiment client. For example:
 
 ```bash
-npm install @amplitude/analytics-browser @amplitude/experiment-browser
+npm install @amplitude/analytics-browser @amplitude/experiment-js-client
 ```
 
 ```ts
 import * as amplitude from '@amplitude/analytics-browser'; 
-import { Experiment } from '@amplitude/experiment-browser'; 
+import { Experiment } from '@amplitude/experiment-js-client'; 
 amplitude.init('AMPLITUDE_API_KEY');  
 const experiment = Experiment.initialize('DEPLOYMENT_API_KEY'); 
 await experiment.start();

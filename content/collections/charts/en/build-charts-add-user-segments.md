@@ -3,10 +3,6 @@ id: 042dfad4-dabb-4fc0-99d1-41da803b50ac
 blueprint: chart
 title: 'Build charts in Amplitude: Add user segments'
 source: 'https://help.amplitude.com/hc/en-us/articles/13650690245915-Build-charts-in-Amplitude-Add-user-segments'
-this_article_will_help_you:
-  - 'Add user segments to your charts'
-  - 'Understand how user properties shape your analyses'
-  - 'Use conditions to fine-tune your analyses'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
@@ -31,6 +27,10 @@ Also, be sure to see our Help Center article on the [advanced features available
 ### Create a user segment
 
 The first step is deciding which category of users your segment will draw from—**any users**, **active users**, or **new users**.
+
+{{partial:admonition type='note' title="Active and New user segmentation"}}
+The **Active Users** and **New Users** options are available in [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build), [Funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-build), [Retention](/docs/analytics/charts/retention-analysis/retention-analysis-build), and [Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts. Other chart types only support **Any Users**.
+{{/partial:admonition}}
 
 ![build_charts_in_amplitude_segment_by_1.png](/docs/output/img/charts/build-charts-in-amplitude-segment-by-1-png.png)
 

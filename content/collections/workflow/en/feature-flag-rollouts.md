@@ -3,10 +3,6 @@ id: 37e1ab54-da77-4a60-be41-1c1018c4163a
 blueprint: workflow
 title: 'Create a feature flag'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts'
-this_article_will_help_you:
-  - 'Understand the role of flags in Amplitude Experiment'
-  - 'Create a new feature flag'
-  - 'Use a flag to roll out a new feature'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1753725753
 landing: true

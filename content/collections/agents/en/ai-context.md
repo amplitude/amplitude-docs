@@ -1,152 +1,518 @@
 ---
-id: a3ba8170-140c-4d50-bd37-264878320754
+id: 66afe4e9-7abf-48c1-8e62-f7cc8691f7ab
 blueprint: agent
 title: 'AI Context'
-this_article_will_help_you:
-  - 'Understand what AI Context is and how it improves Amplitude AI'
-  - 'Configure AI Context for your organization'
-  - 'Write effective context that helps AI understand your business'
-updated_by: cursor-agent
-updated_at: 1734192000
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+updated_at: 1770764884
 ---
-AI Context lets admins provide additional context to Amplitude's AI features. Amplitude's Agents, Ask AI, and other AI features use this context when generating responses, helping them better understand your business context, data conventions, and preferred practices.
+Teach Agents how your business works. Define your metrics, terminology, and preferences to tailor every answer to your organization.
 
-This feature is similar to Claude Projects or Cursor rules—by providing high-level context to Amplitude's AI, you can influence the responses you get and ensure consistency across your team's work.
+## Getting started
 
-## Configure AI Context
+Before you add your context, gather the necessary information and navigate to the right place.
 
-To configure AI Context for your organization:
+### Find AI Context
 
-1. Navigate to *Organization Settings*.
-2. Find *AI Controls* in the sidebar.
-3. Click **Edit** to open the markdown editor.
-4. Add your business context, guidelines, and preferences.
-5. Click **Save** to apply the changes.
+Agents, including Global and Specialized Agents, use two layers of context: Organization and Project.
 
-AI Context is limited to 10,000 characters. You can make changes through the markdown editor or upload markdown files directly. All users can view AI Context, but only admins can edit it.
+Access both from *Project Settings > AI Controls*.
 
-## What to include in AI Context
+![AI Controls settings page in Amplitude organization settings](statamic://asset::help_center_conversions::ai/ai-controls.png){.full-width}
 
-Your AI Context can include any information that helps Amplitude's AI better understand your business context and generate more relevant responses. Examples include:
+### What to gather before you start
 
-**Business context:** Company-specific terminology and definitions, product names and definitions, key metrics and KPIs your team focuses on, business workflows, industry-specific considerations.
+{{partial:card-grid}}
+{{partial:card style="plain" }}
+### Business basics {.js-toc-ignore}
 
-**Data conventions:** Event and property naming conventions, preferred segment definitions, common calculations and formulas, data quality guidelines.
+- Your business model, such as B2B, B2C, or marketplace.
+- North Star metric and how it's defined.
+- Fiscal year start date (if not January).
+- Key customer segments and how to identify them.
+{{/partial:card}}
+{{partial:card style="plain"}}
+### Technical details {.js-toc-ignore}
 
-**Analysis preferences:** Preferred chart types for different scenarios, common analysis patterns and approaches, metric definitions and business logic.
+- Event names for key actions, such as signup and purchase.
+- Property names that define segments (plan type, ARR).
+- Test/internal user identifiers to exclude.
+- Any deprecated events to avoid.
+{{/partial:card}}
+{{/partial:card-grid}}
+
+## Understanding AI context
+
+Context changes how Agents answer questions.
+
+A user asks:
+
+> Show me our activation rate
+
+{{partial:card-grid}}
+{{partial:card style="warning" label="Without context" caption="Agents guess. Use wrong events, wrong timeframe, include test users."}}
+I'll create a chart showing user activation. I'll define activated users as those who completed any event after signing up...
+{{/partial:card}} 
+{{partial:card style="tip" label="With context" caption="Agents know your exact definition, timeframe, and filters."}}
+I'll show activation rate using your definition: users who triggered `first_project_created` within 7 days of signup, excluding @test.com emails...
+{{/partial:card}}
+{{/partial:card-grid}}
+
+### Two levels of context
+
+{{partial:card-grid}}
+{{partial:card style="plain" caption="Limit: 10,000 characters"}}
+### Organization context {.js-toc-ignore}
+Applies to all projects. Use for company-wide standards.
+
+- Business model and KPI definitions.
+- Standard terminology.
+- Global filters (exclude test users).
+- Fiscal calendar rules.
+{{/partial:card}}
+{{partial:card style="plain" caption="Limit: 10,000 characters"}}
+### Project context {.js-toc-ignore}
+Applies to one project. Use for product-specific details.
+
+- Product-specific events and funnels.
+- Metrics unique to this product.
+- Product-specific segments.
+- Override org defaults when needed.
+{{/partial:card}}
+{{/partial:card-grid}}
+
+At runtime, Agents combine both context sources. Project context overrides organization context when they conflict.
+
+### What to write
+
+{{partial:card-grid}}
+{{partial:card style="tip"}}
+### Write this {.js-toc-ignore}
+Amplitude can't infer the following:
+
+- **Business model**: "B2B SaaS, annual subscriptions"
+- **Key segments**: "Enterprise = ARR > $50K"
+- **Metric definitions**: "Activation = first project within 7 days"
+- **Date rules**: "Fiscal year starts April 1"
+- **Exclusions**: "Filter out @test.com emails"
+{{/partial:card}}
+{{partial:card style="plain"}}
+### Skip this {.js-toc-ignore}
+Amplitude understands the following:
+- Your event catalog and properties.
+- Top events by volume.
+- Official dashboards.
+- Saved cohort definitions.
+- Existing chart configurations.
+{{/partial:card}}
+{{/partial:card-grid}}
+
+{{partial:admonition type="note" heading=""}}
+Reference your existing cohorts and dashboards by name in any context you provide. For example:
+
+> Use the 'Power Users' cohort when asked about engaged users.
+
+Amplitude includes their definitions by default.
+{{/partial:admonition}}
+
+## Write good context
+
+Structure your context with markdown so it's easy for Agents to parse.
+
+{{partial:two-column-list-grid}}
+### Formatting {.js-toc-ignore}
+
+- `##` Use headings to separate sections.
+- `-` Use bullets for lists of items.
+- `` `backticks` `` Wrap event and property names.
+- `**bold**` Highlight key terms.
+
+---SPLIT---
+
+### Common sections {.js-toc-ignore}
+
+- **Business Overview**: Your model, North Star metric.
+- **Key Metrics**: Activation, engagement, retention definitions.
+- **Segments**: Customer tiers mapped to properties.
+- **Do/Don't Rules**: Defaults, filters, things to avoid.
+- **Date Rules**: Fiscal year, week start, default ranges.
+{{/partial:two-column-list-grid}}
+
+{{partial:admonition type="warning" heading=""}}
+Keep it under 10,000 characters. That's the limit for both org and project context. Focus on the 20% of information that covers 80% of questions your team asks.
+{{/partial:admonition}}
+
+## Industry templates
+
+Start with a template for your industry and customize it. These are complete examples you can copy and adapt.
+
+{{partial:tabs tabs="B2B SaaS, E-commerce, Media / Content, B2C App"}}
+{{partial:tab name="B2B SaaS"}}
+Copy this template, replace the event and property names with your own, and adjust the definitions to match your business.
+```text
+## Business Overview
+B2B SaaS platform with annual subscriptions.
+North Star: Monthly Active Workspaces (MAW)
+
+## Key Metrics
+- **Activation**: User triggers `workspace_created` within 7 days of `signup_completed`
+- **Engaged**: 3+ sessions in last 7 days with at least one `feature_used` event
+- **Expansion-ready**: `seat_utilization` > 80%
+
+## Segments
+- Enterprise: `plan_tier` = "enterprise" OR `arr` > 50000
+- Mid-Market: `arr` between 10000 and 50000
+- SMB: `plan_tier` in ("starter", "growth")
+- Trial: `subscription_status` = "trial"
+
+## Rules
+DO:
+- Default to last 30 days for time ranges
+- Exclude `email` contains "@test.com" or `is_internal` = true
+- Use `mrr_change` event for revenue analysis
+
+DON'T:
+- Include `environment` = "staging" or "development"
+- Use deprecated: `old_signup`, `legacy_workspace_created`
+
+## Date Rules
+- Fiscal year starts February 1
+- "This quarter" = current fiscal quarter
+- Week starts Monday
+```
+{{/partial:tab}}
+{{partial:tab name="E-commerce"}}
+Copy this template, replace the event and property names with your own, and adjust the definitions to match your business.
+```text
+## Business Overview
+E-commerce marketplace. We sell products directly and via third-party sellers.
+North Star: Gross Merchandise Value (GMV)
+
+## Key Metrics
+- **Conversion**: User triggers `purchase_completed` in same session as `product_viewed`
+- **Repeat buyer**: 2+ `purchase_completed` events lifetime
+- **Cart abandonment**: `cart_add` without `checkout_completed` within 24 hours
+
+## Segments
+- VIP: `lifetime_spend` > 1000 OR `purchase_count` > 10
+- First-time buyer: `purchase_count` = 1
+- Browsers: `session_count` > 5 AND `purchase_count` = 0
+- Mobile shoppers: `platform` = "ios" OR "android"
+
+## Rules
+DO:
+- Default to last 7 days for time ranges (faster purchase cycles)
+- Always show revenue in USD (property: `revenue_usd`)
+- Group by `category` for product analysis
+
+DON'T:
+- Include `order_status` = "cancelled" or "refunded" in revenue
+- Include test orders: `email` contains "+test"
+
+## Key Events
+- `product_viewed` - browsing behavior
+- `cart_add` / `cart_remove` - intent signals
+- `checkout_started` → `purchase_completed` - conversion funnel
+```
+{{/partial:tab}}
+{{partial:tab name="Media / Content"}}\
+Copy this template, replace the event and property names with your own, and adjust the definitions to match your business.
+```text
+## Business Overview
+Subscription media platform with ad-supported free tier.
+North Star: Weekly Active Consumers (WAC)
+
+## Key Metrics
+- **Engaged**: 3+ `content_consumed` events per week
+- **Subscriber conversion**: Free user triggers `subscription_started`
+- **Retention**: Active in 4+ of last 6 weeks
+
+## Segments
+- Subscribers: `subscription_status` = "active"
+- Free users: `subscription_status` = "free" OR null
+- Heavy consumers: `weekly_content_count` > 10
+- At-risk: Was active 30 days ago, not active in last 7 days
+
+## Content Types
+- `article_read` - text content
+- `video_watched` - video (use `watch_time_seconds` for engagement)
+- `podcast_played` - audio (use `listen_time_seconds`)
+
+## Rules
+DO:
+- Default to last 7 days for engagement metrics
+- Use `content_id` and `content_type` for content analysis
+- Count unique content pieces, not total events
+
+DON'T:
+- Include `content_type` = "ad" in engagement metrics
+- Include events where `duration_seconds` < 5 (bounces)
+
+## Date Rules
+- Week starts Sunday (media consumption patterns)
+- "Prime time" = 6pm-10pm local time
+```
+{{/partial:tab}}
+{{partial:tab name="B2C App"}}
+Copy this template, replace the event and property names with your own, and adjust the definitions to match your business.
+```text
+## Business Overview
+Consumer mobile app with freemium model and in-app purchases.
+North Star: Daily Active Users (DAU)
+
+## Key Metrics
+- **Activation**: User completes `onboarding_finished` within 24 hours of install
+- **D1 retention**: Returns day after `first_app_open`
+- **Paying user**: Has any `purchase_completed` event
+
+## Segments
+- Power users: Active 5+ days per week
+- Casual: Active 1-2 days per week
+- Dormant: Last active > 14 days ago
+- Whales: `lifetime_iap_revenue` > 100
+
+## Rules
+DO:
+- Default to last 14 days for time ranges
+- Always segment by `platform` (ios/android) - behavior differs significantly
+- Use `session_start` for DAU/MAU calculations
+
+DON'T:
+- Include `app_version` < "2.0" (legacy, data quality issues)
+- Include `user_id` is null (anonymous sessions)
+
+## Key Funnels
+1. Install → Onboarding → First value moment
+2. Free user → Trial started → Subscription
+3. Browse → Add to cart → Purchase
+
+## Notifications
+- `push_received` → `push_opened` for notification effectiveness
+- `push_opted_out` signals churn risk
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Examples
+
+See what makes AI Context effective and what pitfalls to avoid.
+
+### Be specific
+
+{{partial:card-grid}}
+{{partial:card style="tip" label="good" caption="Defines exact events, timeframes, and thresholds that Agents can use directly."}}
+```text
+## Key Metrics
+- **Activation**: User triggers `project_created` event
+  within 7 days of `signup_completed`
+- **Engaged User**: 3+ sessions in the last 7 days
+- **Churned**: No activity for 30+ days
+```
+{{/partial:card}}
+{{partial:card style="warning" label="bad" caption="No concrete definitions. Agents must guess what 'activation' means and what time ranges are 'appropriate.'"}}
+```text
+Help users understand activation and engagement.
+Show relevant metrics when asked about user behavior.
+Make sure to use appropriate time ranges.
+```
+{{/partial:card}}
+{{/partial:card-grid}}
+
+### Be concise
+
+{{partial:card-grid}}
+{{partial:card style="tip" label="good" caption="Dense, scannable format. Each line is actionable with exact property names."}}
+```text
+## Segments
+- Enterprise: `plan_tier` = "enterprise"
+- SMB: `plan_tier` = "starter" OR "growth"
+- Trial: `subscription_status` = "trial"
+
+## Filters
+- Exclude: `email` contains "@test.com"
+- Exclude: `is_internal` = true
+```
+{{/partial:card}}
+{{partial:card style="warning" label="bad" caption="Same information buried in prose. Wastes tokens and is harder to parse."}}
+```text
+When analyzing our customer base, it's important to
+understand that we have several different types of
+customers. Enterprise customers are our largest accounts
+- they typically have the enterprise plan tier. Small
+and medium businesses (SMBs) are customers who use our
+starter or growth plans. We also have trial users who
+are evaluating the product.
+```
+{{/partial:card}}
+{{/partial:card-grid}}
+
+### Include business context
+
+{{partial:card-grid}}
+{{partial:card style="tip" label="good" caption="Establishes context Amplitude can't infer, like fiscal calendar and business model."}}
+```text
+## Business Model
+B2B SaaS, annual subscriptions.
+North Star: Monthly Active Workspaces (MAW)
+
+## Fiscal Calendar
+- FY starts April 1
+- "This quarter" = current fiscal quarter
+- Week starts Monday
+```
+{{/partial:card}}
+{{partial:card style="warning" label="bad" caption="Generic statements that don't help Agents understand your specific business."}}
+```text
+We are a software company that sells to businesses.
+Our product helps teams collaborate better.
+We care about growth and revenue.
+```
+{{/partial:card}}
+{{/partial:card-grid}}
+
+### Use explicit do/don't rules
+
+{{partial:card-grid}}
+{{partial:card style="tip" label="good" caption="Clear instructions with exact property values. Agents know what to do and avoid."}}
+```text
+## Rules
+DO:
+- Default to last 30 days for time ranges
+- Group by `platform` when comparing mobile vs web
+- Use `Total Revenue` event for revenue metrics
+
+DON'T:
+- Include events where `environment` = "staging"
+- Use deprecated events: `old_signup`, `legacy_purchase`
+```
+{{/partial:card}}
+{{partial:card style="warning" label="bad" caption="Vague guidance that doesn't tell Agents what specific actions to take."}}
+```text
+Be helpful and show relevant data.
+Use appropriate filters when needed.
+Be careful with sensitive information.
+```
+{{/partial:card}}
+{{/partial:card-grid}}
+
+### Define your terminology
+
+{{partial:card-grid}}
+{{partial:card style="tip" label="good" caption="Maps business terms to exact event names. Documents naming conventions."}}
+```text
+## Terminology
+- "Conversion" = `checkout_completed` event
+- "Signup" = `account_created` (not `user_registered`)
+- "Active" = user with 1+ events in last 7 days
+
+## Naming Conventions
+Events: snake_case (`button_clicked`)
+Properties: camelCase (`userId`, `planType`)
+```
+{{/partial:card}}
+{{partial:card style="warning" label="bad" caption="Doesn't specify what the correct terms or conventions actually are."}}
+```text
+Use the correct terminology for our company.
+Events should be named properly.
+Properties follow our naming conventions.
+```
+{{/partial:card}}
+{{/partial:card-grid}}
 
 ## Best practices
 
-**Jargon:** Companies often have terms or phrases that are specific to them. Explain what specific words or phrases mean to give AI the best chance of understanding this terminology.
+{{partial:two-column-list-grid}}
+### Do {.js-toc-ignore}
 
-Example: "P0 feature" refers to a feature in your highest priority tier for the current quarter.
+- Use exact event and property names with correct casing.
+- Be specific: "exclude `email` contains @test.com".
+- Put universal rules at org level, overrides at project level.
+- Test changes by asking questions before saving.
+- Keep a backup in your wiki or version control.
 
-**Synonyms:** Companies sometimes use multiple words to describe the same concept. Giving this context helps AI provide suggestions more consistently.
+---SPLIT---
 
-Example: "Organization," "workspace," and "account" are used interchangeably, but "organization" is the property name in your event taxonomy.
+### Don't {.js-toc-ignore}
 
-AI Context teaches Amplitude's AI your organization's unique context—the tribal knowledge that distinguishes your product team from others. The AI already knows product analytics, experimentation, and funnel analysis. What it needs from you is your business context, your event taxonomy, and your specific ways of working.
+- List events or properties (Amplitude already knows these).
+- Write vague instructions like "be helpful" or "use appropriate filters".
+- Create conflicting rules between org and project context.
+- Add edge-case rules that only apply to rare situations.
+- Make large changes without testing first.
+{{/partial:two-column-list-grid}}
 
-Think of AI Context as onboarding a brilliant new analyst who needs to learn your company's specifics, not how to build a funnel chart. This context passes at the beginning of every AI interaction, so use it for "universal truths" about your data and business.
+### Maintain context over time
 
-### General tips
+Keep the following in mind to help maintain context.
 
-**Keep it concise:** Focus on the most important context that improves AI responses. Including too much context can distract the model.
+- **Assign owners**: Analytics lead for org context. PM or analyst for each project context.
 
-**Focus on general-purpose rules:** Limit the content to context you want included in every prompt. Documentation related to specific events or properties can live in your event taxonomy descriptions.
+- **Review regularly**: Quarterly, after major launches, or when Agents give unexpected answers.
 
-**Test and iterate:** Try different rules and see how they affect AI responses. Changes apply immediately, so you can test in Ask AI right away.
+- **Change carefully**: One change at a time. Test with real questions. Keep backups.
 
-## High-impact categories
+## Frequently asked questions
 
-### 1. Business definitions & logic
+{{partial:collapse name="How do I test my context before I roll it out?"}}
+There's no dedicated preview mode. The best approach is to:
+1. Start with project context on a test project.
+2. Ask questions that should use your new definitions.
+3. Verify Agents respond correctly.
+4. Then apply to org context or your main project.
 
-Define what metrics mean at YOUR company. The AI can calculate retention, but it doesn't know you exclude trial users from the denominator.
+Keep a backup of your old context so you can roll back if needed.
+{{/partial:collapse}}
 
-**Good:**
+{{partial:collapse name="What happens if my organization and project contexts conflict?"}}
+Project context takes precedence. If your org context says "default to 30 days" but project context says "default to 7 days," Agents use 7 days for that project.
 
-* Active user: Triggered 3+ key events in rolling 7 days (not just logged in).
-* Churned: No session events for 30 days after subscription end.
-* Activation: Completed onboarding AND created first project within 7 days.
+This is intentional—it lets you set sensible org-wide defaults while allowing projects to override when their needs differ.
+{{/partial:collapse}}
 
-**Avoid:**
+{{partial:collapse name="Can I reference existing cohorts and dashboards?"}}
+Yes. Amplitude automatically includes your saved cohorts, official dashboards, and chart configurations as system context. You can reference them by name in your custom context:
 
-* Calculate retention properly (too generic).
-* Use appropriate metrics (too vague).
+> When asked about engaged users, use the 'Power Users' cohort.
 
-### 2. Event taxonomy guidance
+> For revenue metrics, reference the 'Executive Dashboard'.
+{{/partial:collapse}}
 
-Map your actual event structure—which events are canonical and which are deprecated.
+{{partial:collapse name="How often should I update my context?"}}
+Review your context:
+- Quarterly as part of regular maintenance.
+- When you add new key metrics or segments.
+- When you notice Agents giving incorrect answers.
+- After major product or tracking changes.
 
-**Good:**
+Assign an owner to each context level so updates don't fall through the cracks.
+{{/partial:collapse}}
 
-* Primary purchase event: purchase_completed (not transaction_success, which is deprecated).
-* Page views: Use screen_viewed for mobile, page_viewed for web.
-* Signup: account_created is the canonical event, ignore signup_started.
+{{partial:collapse name="What if Agents ignore my context?"}}
+If Agents aren't using your context correctly:
+1. Check that your context saves correctly (refresh the settings page).
+2. Make sure you're using exact event/property names with correct casing.
+3. Simplify conflicting or redundant rules.
+4. Be more explicit—instead of "exclude test users," say "exclude where email contains @test.com".
 
-**Avoid:**
+Overly long or complex context can also cause issues. Try trimming to essentials.
+{{/partial:collapse}}
 
-* Use the right events (unhelpful).
-* Check event names (agent does this).
+{{partial:collapse name="What's the character limit?"}}
+10,000 characters each for org context and project context (20,000 total). This is roughly 1,500-2,000 words—plenty for most use cases.
 
-### 3. User & account context
+If you're hitting the limit, you're probably including too much detail. Focus on definitions and rules that apply to the majority of questions, not edge cases.
+{{/partial:collapse}}
 
-Document how you segment users and define key populations.
+{{partial:collapse name="Should I put everything in organization context or split it up?"}}
+Use org context for company-wide standards that apply everywhere:
+- Business model and terminology.
+- Global filters (exclude test users).
+- Fiscal calendar.
+- Core metric definitions.
 
-**Good:**
+Use project context for product-specific details:
+- Product-specific events and funnels.
+- Metrics unique to that product.
+- Overrides to org defaults.
 
-* Enterprise users: plan_type = 'enterprise' OR employee_count > 500.
-* Test accounts: Exclude where email CONTAINS '@yourcompany.com' or is_internal = true.
-* Power users: 20+ sessions in last 30 days with 5+ distinct features used.
-
-**Avoid:**
-
-* Segment users appropriately (too vague).
-* Filter out test data (agent assumes this).
-
-### 4. Domain intelligence
-
-Share industry context and product knowledge the AI couldn't know.
-
-**Good:**
-
-* Seasonality: 60% of new signups occur Mon-Wed, plan experiments accordingly.
-* Benchmarks: Our 40% D7 retention exceeds industry average of 25%.
-* Product context: Feature X launched Oct 2024, expect adoption spike in that cohort.
-
-**Avoid:**
-
-* Consider business context (too generic).
-* Think about product (obvious).
-
-## Writing principles
-
-**Be specific:** Replace "filter appropriately" with "exclude users where is_internal = true".
-
-**Show, don't tell:** Include actual event names, real thresholds, specific examples.
-
-**Explain why when non-obvious:** "Use purchase_completed not checkout_finished (checkout_finished fires before payment confirmation)".
-
-**Front-load critical rules:** User definitions and common pitfalls should appear first.
-
-**Keep it scannable:** Use bullet points, consistent formatting, clear sections.
-
-## Anti-patterns to avoid
-
-### Don't state the obvious
-
-* ❌ "Build good funnels"
-* ❌ "Analyze data properly"
-* ❌ "Consider user behavior"
-
-### Don't overspecify analysis methods
-
-* ❌ Step-by-step instructions for building charts.
-* ❌ Detailed statistical formulas.
-* ❌ UI navigation instructions.
-
-### Don't include secrets
-
-* ❌ API keys or passwords.
-* ❌ Individual customer names or PII.
-* ❌ Confidential revenue targets.
+If you only have one project, org context is fine for everything.
+{{/partial:collapse}}

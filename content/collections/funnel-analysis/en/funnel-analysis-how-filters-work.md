@@ -3,8 +3,6 @@ id: 633a33f0-1242-4c82-9954-b65cdbbd71d1
 blueprint: funnel-analysi
 title: 'How filters work in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/14740839213339-How-filters-work-in-a-Funnel-Analysis-chart'
-this_article_will_help_you:
-  - 'Understand how Amplitude interprets different filters in a Funnel Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015478
 ---

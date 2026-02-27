@@ -42,7 +42,7 @@ Click the three dot menu to access format settings.
 
 A subtle nudge that appears near a contextually relevant element. Popovers are great for quick tips, or for directing users' attention without interrupting their flow.
 
-Popovers offer the same customization options as modals.
+Popovers offer many of the same customization options as modals.
 
 Click the three dot menu to access format settings.
 
@@ -51,7 +51,6 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
-| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
 | Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
@@ -84,7 +83,6 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advance trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
@@ -207,16 +205,22 @@ If you prefer to specify your own selector or need more control, you can manuall
 3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
 4. Test your selector with **Test and Preview** to confirm it targets the correct element
 
-**Examples of custom selectors:**
-
-- CSS Selector: `.header-navigation > .menu-item:first-child`
-- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
-
 {{partial:admonition type='tip' heading='Best practices for custom selectors'}}
 * Use stable attributes like IDs or data attributes that are less likely to change
 * Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
 * Test your selectors across different pages and screen sizes
 * Consider adding data attributes specifically for guide targeting to ensure reliability
+* Use `:is()` to create flexible selectors that work across multiple similar elements
+{{/partial:admonition}}
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+- CSS with multiple elements: `:is([my-class="foo"],[my-class="bar"])`
+
+{{partial:admonition type='tip'}}
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like: `is()`, `:not()`, `:nth-of-type()`, and `:where()`, allowing you to create more expressive and flexible selectors.
 {{/partial:admonition}}
 
 ## Properties
@@ -255,7 +259,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
+| Visit link                 | Opens the specified website. For **web** guides and surveys, you can choose: **Same tab** (opens in the current tab/screen), **New tab** (opens in a new browser tab), or **Use router** (uses your configured router; requires [router configuration](/docs/guides-and-surveys/sdk#router-configuration)). For **mobile** guides and surveys, the options are: **Open in In-App Browser** (opens the link within your app), **Open in Device Browser** (opens in the device’s default browser), and **Use router**. |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |

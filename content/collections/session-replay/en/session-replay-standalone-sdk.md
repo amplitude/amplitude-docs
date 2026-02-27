@@ -120,7 +120,7 @@ const AMPLITUDE_API_KEY = "key"
 // Configure the SDK and begin collecting replays
 await sessionReplay.init(AMPLITUDE_API_KEY, {
  deviceId: "<string>",
- sessionId: "<number>",
+ sessionId: "<string | number>",
  optOut: "<boolean>",
  sampleRate: "<number>"
 }).promise;
@@ -161,7 +161,7 @@ You can also use script tags to instrument Session Replay:
 <script>
 window.sessionReplay.init(AMPLITUDE_API_KEY, {
     deviceId: "<string>",
-    sessionId: "<number>",
+    sessionId: "<string | number>",
     sampleRate: "<number>"
     //...other options
 })
@@ -176,6 +176,8 @@ window.sessionReplay.setSessionId(sessionId);
 Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event includes the `[Amplitude] Session Replay ID` property, which links the replay to your analytics data. No manual instrumentation is required.
 
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session by default.
+
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, `deviceId` and custom session ID string values can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 {{partial:admonition type="info" heading=""}}
 Amplitude links replays with a session replay ID. To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
@@ -196,7 +198,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | Name                        | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                  |
 | --------------------------- | --------- | -------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `deviceId`                  | `string`  | Yes      | `undefined`     | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                                                                                                  |
-| `sessionId`                 | `number`  | Yes      | `undefined`     | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                                                                                            |
+| `sessionId`                 | `string \| number`  | Yes      | `undefined`     | Sets an identifier for the user's current session. Use a Unix timestamp in milliseconds (`number`) for standard session tracking, or a custom string for [custom session definitions](/docs/session-replay/session-matching#requirements-for-custom-session-definitions). Custom string values must follow the [accepted character set](#session-replay-id).                                  |
 | `sampleRate`                | `number`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. Sample rates as small as six decimal places (`0.000001`) are supported. |
 | `optOut`                    | `boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                                                                                 |
 | `flushMaxRetries`           | `number`  | No       | `5`             | Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that Amplitude can retry.                                                                                                                                                                                                                                                                   |
@@ -349,7 +351,7 @@ import 3rdPartyAnalytics from 'example'
 const AMPLITUDE_API_KEY = <...>
 await sessionReplay.init(AMPLITUDE_API_KEY, {
  deviceId: <string>,
- sessionId: <number>,
+ sessionId: <string | number>,
  optOut: <boolean>,
  sampleRate: <number>
 }).promise;
@@ -399,7 +401,6 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports default session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL

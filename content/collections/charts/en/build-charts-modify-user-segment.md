@@ -3,8 +3,6 @@ id: 7a2db517-e19b-4eac-9dfc-02a984a05128
 blueprint: chart
 title: 'Build charts in Amplitude: Modify a user segment'
 source: 'https://help.amplitude.com/hc/en-us/articles/19689507379995-Build-charts-in-Amplitude-Modify-a-user-segment'
-this_article_will_help_you:
-  - 'Use filters to refine your user segments into more powerful analytic tools'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

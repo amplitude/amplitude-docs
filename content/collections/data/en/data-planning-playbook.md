@@ -3,9 +3,6 @@ id: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
 blueprint: data
 title: 'Plan your taxonomy'
 source: 'https://help.amplitude.com/hc/en-us/articles/115000465251-Data-planning-playbook'
-this_article_will_help_you:
-  - 'Understand the basics of users, events, and properties'
-  - 'Learn techniques for planning your taxonomy'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -13,11 +10,11 @@ updated_at: 1723653071
 ---
 Using Amplitude effectively requires you to first identify the events and properties you want to track. Designing a solid, scalable taxonomy can help make your analyses easier, avoid data gaps, and prevent future data issues.
 
-This playbook will review the strategy and considerations for creating your tracking plan.
+This playbook reviews the strategy and considerations for creating your tracking plan.
 
 ## What's a taxonomy?
 
-A taxonomy is a set of hierarchical classifications and naming conventions for your data. It's a way to identify and categorize your event and user data so that Amplitude can generate relevant and valuable insights from it. The process of setting up a taxonomy in Amplitude will differ from organization to organization, but the heart of it is selecting the events you want to track, identifying event properties and user properties you want to track, and then naming them.
+A taxonomy is a set of hierarchical classifications and naming conventions for your data. It's a way to identify and categorize your event and user data so that Amplitude can generate relevant and valuable insights from it. The process of setting up a taxonomy in Amplitude differs from organization to organization, but the heart of it is selecting the events you want to track, identifying event properties and user properties you want to track, and then naming them.
 
 ## Users, events, and properties: An introduction
 
@@ -31,7 +28,7 @@ You can learn how Amplitude tracks unique users, including how to reconcile anon
 
 ### Events
 
-An event is a **distinct action or activity** taken by a user within your product. Events can be **active** when a user has interacted with your app (for example, starting a game or adding to their cart) or they can be **inactive** (the user receives a push notification). 
+An event is a distinct action or activity taken by a user within your product. Events can be active when a user has interacted with your app (for example, starting a game or adding to their cart) or they can be inactive (the user receives a push notification). 
 
 When naming events, Amplitude recommends establishing a consistent naming convention that uses:
 
@@ -43,7 +40,7 @@ Default events are Title Cased from the user's perspective, with a `[Noun]` + `[
 
 ### Properties
 
-Properties are **attributes** that help define details around your events and users. At a high level:
+Properties are attributes that help define details around your events and users. At a high level:
 
 * **Event properties** are attributes that describe details specific to the particular instance of an event. For example, if you had a `Purchase Completed` event, you could specify what the user purchased, the total value of the order, and the payment method used.
 * **User properties** are traits describing the user and apply across all their future events until the properties are modified. Amplitude's SDK captures several user properties by default, and you can also set up your own properties to track.
@@ -65,7 +62,7 @@ Some typical goals Amplitude customers pursue include:
 * Optimizing conversion
 * Increasing user retention and LTV
 
-Once you've identified your organization's overarching goals, it's easier to break them down into individual metrics and ensure your tracking plan measures your desired outcome.
+After you've identified your organization's overarching goals, it's easier to break them down into individual metrics and ensure your tracking plan measures the outcome you want.
 
 For example, you have an e-commerce app and are looking to increase purchases. You could do this by:
 
@@ -105,8 +102,7 @@ Suppose you have two user actions you could capture as two separate events, or a
 For example, perhaps you believe payment method is a critical factor. Should you instrument:
 
 * `Order Completed` as a single event with a `Payment Method` property that captures `Credit Card` or `Apple Pay`, or
-* Separate events for `Credit Card Order Completed` and `Apple Pay Order
- Completed` ?
+* Separate events for `Credit Card Order Completed` and `Apple Pay Order Completed` 
 
 There are a few things to consider:
 
@@ -125,7 +121,7 @@ One typical use case for event properties is tracking values that must be held c
 * Step 1: `Product Details Viewed`
 * Step 2: `Product Added`
 
-Here, users should count as having converted through the funnel **only** if they triggered the event on the **same** product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
+Here, users should count as having converted through the funnel only if they triggered the event on the same product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
 
 * Step 1: `Product Details Viewed`
 	* `Product ID` = `3345`
@@ -133,13 +129,13 @@ Here, users should count as having converted through the funnel **only** if they
 	* `Product ID` = `3345`
 	* `quantity` = `1`
 
-In this example, you can see how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
+In this example, you can understand how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
 
 ## Next steps
 
 Refer to the steps in this playbook as you add new features or iterate on your product analytics. Amplitude Data provides ways to create and iterate on your plan directly in the product, or by importing a CSV file.
 
-To see more specific examples, check out our industry-specific best practices guides to see sample use cases and business questions, a recommended taxonomy, and complementary dashboards you can use for your implementation, each one tailored to meet the specific needs of the following sectors:
+To find more specific examples, go to the following industry-specific best practices guides for sample use cases, business questions, taxonomy reccomendations, and complementary dashboards you can use for your implementation. Each of the following guides is tailored to meet the specific needs of the following sectors:
 
 * [E-commerce](https://analytics.amplitude.com/share/8f32b20708e743e597b75c99b7a766d5)
 * [Fintech](https://analytics.amplitude.com/share/cbb3827995aa4d03852a3cdf9a3c46b0)

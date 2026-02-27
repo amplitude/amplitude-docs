@@ -9,7 +9,7 @@ The Experiment management API can be used to programmatically create and control
 
 ## Endpoints
 
-| <div class="big-column">API</div> | Description |
+| API | Description |
 | --- | --- |
 |[Flag APIs](/docs/apis/experiment/experiment-management-api-flags)| Flag APIs to create, edit, and display flags, and their properties.  |
 |[Experiment APIs](/docs/apis/experiment/experiment-management-api-experiments)| Experiment APIs to create, edit, and display experiments, and their properties.  |

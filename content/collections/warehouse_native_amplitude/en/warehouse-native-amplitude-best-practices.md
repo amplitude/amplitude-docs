@@ -1,5 +1,6 @@
 ---
 id: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
+published: false
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Best Practices'
 source: 'https://help.amplitude.com/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices'

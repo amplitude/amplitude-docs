@@ -4,10 +4,6 @@ blueprint: data
 title: 'Getting set up with Amplitude Data'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data'
 description: 'Data ingestion methods, tracking plans, and best practices.'
-this_article_will_help_you:
-  - 'Decide on the best method for ingesting data into Amplitude'
-  - 'Understand how to decide what you want to track'
-  - 'Follow best practices during the Amplitude Data setup phase'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

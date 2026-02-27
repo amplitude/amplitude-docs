@@ -3,8 +3,6 @@ id: 3f647a94-edaa-4789-9a50-914274cc9e3d
 blueprint: get-started
 title: 'Start here: Get set up in Amplitude and start generating insights today'
 source: 'https://help.amplitude.com/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today'
-this_article_will_help_you:
-  - 'Navigate the Start Here category of the Amplitude documentation and get up and running quickly'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -32,6 +30,11 @@ From there, learn how to create and share charts:
 * [Create a chart](/docs/get-started/create-a-chart)
 * [Spaces](/docs/get-started/spaces)
 * [Start from a template](/docs/get-started/start-from-template)
+
+You can also use AI to accelerate your analysis:
+
+* [Global Agent](/docs/amplitude-ai/global-agent-overview): Ask natural-language questions about your data and get answers, chart creation, and insights.
+* [AI Agents](/docs/amplitude-ai/setup-and-onboarding): Automate dashboard analysis, session replay insights, and conversion optimization.
 
 Finally, we’ve put together some guidance on how you can generate some quick wins right now, so your company’s investment in Amplitude can begin paying off today:
 

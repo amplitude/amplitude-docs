@@ -2,9 +2,6 @@
 id: e39f9287-bec8-4403-ba60-8b04da56b5f9
 blueprint: experiment
 title: 'Notifications through Slack Channel or Webhook'
-this_article_will_help_you:
-  - 'Understand the type of notifications you can set for experiments'
-  - 'Create notification alerts for your experiments'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
@@ -13,11 +10,17 @@ updated_at: 1753814210
 Set up notification alerts for your Web and Feature experiments or for individual feature flags. There are two ways to receive notifications for different types of events:
 
 - **Email / Slack direct messages**: Sends notifications for Experiments (Web and Feature) about to start or end, if a sample-ratio mismatch (SRM) is detected, or a statsig for a recommendation metric reached.
-- **Slack channel notifications / webhooks**: Sends notifications for any changes to an active flag configuration that generates a new history version or when flags are activated or deactivated.
+- **Slack channel notifications / webhooks / Email**: Sends notifications for any changes to an active flag configuration that generates a new history version or when flags are activated or deactivated.
 
-This page discusses setting up and maintaining notification alerts through Slack channels and webhooks. Only notifications created through the Experiment Alerts function are sent in this way. 
+This page discusses setting up and maintaining notification alerts through Slack channels, webhooks, and email. Only notifications created through the Experiment Alerts function are sent in this way. 
 
 All other experiment alerts are sent either through email or Slack direct message. For more information on these other types of notification, go to [Account Settings Notifications](/docs/feature-experiment/workflow/experiment-learnings#interpret-notifications) or [Integrate Slack](/docs/analytics/integrate-slack) to know how to manage your Slack workspace integration. 
+
+If you use Microsoft Teams, send an [email to your teams channel](https://support.microsoft.com/en-us/office/send-an-email-to-a-channel-in-microsoft-teams-d91db004-d9d7-4a47-82e6-fb1b16dfd51e) or a [webhook](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498). 
+
+If you use Google chat, send an [email](https://support.google.com/chat/answer/14929313?hl=en) or [webhook](https://docs.cloud.google.com/workflows/docs/notify-google-chat). 
+
+To integrate your Amplitude flags and experiments with Sentry, refer to [Sentry's documentation](https://docs.sentry.io/organization/integrations/feature-flag/generic/).
 
 {{partial:admonition type="note" heading=""}}
 You must have [Member permissions](/docs/admin/account-management/user-roles-permissions) to create/edit/delete any notification alerts. You don't need any permissions to receive notifications if you also a member of the dedicated slack channel or webhook. However, you must have Viewer permissions to open the notification for more details. Talk to your Admin if you need different permissions.
@@ -39,6 +42,7 @@ If a slack channel id instead of a slack channel name appears, make sure you hav
 You can specify if you want to receive alerts for the following experiment activities:
 
 - Flags created, updated, or deleted
+- Stale flags
 
 ## Setting up an alert
 
@@ -80,5 +84,6 @@ You can also access alerts by going to *Settings > Organization settings > Exper
 5. Choose how you want to receive your notifications:
     - If you're using Slack, click the dropdown to choose the channel for your alerts.
     - If you're using a Webhook, enter the URL and your signing key.
+    - If you're using email, enter an email address.
 6. Name your alert.
 7. Click **Create Alert**.

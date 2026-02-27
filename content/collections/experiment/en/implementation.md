@@ -73,7 +73,7 @@ The all users segment captures all users who don't match a [targeting segment](#
 
 Amplitude Experiment's bucketing is consistent based on the user, bucketing key, bucketing salt, allocation percentage, and variant weights. In other words, given the same inputs, the output remains constant.
 
-| <div class='med-big-column'> Input </div> | Description |
+|  Input  | Description |
 | --- | --- |
 | Bucketing Key | The key which determines which user property value to use as the bucketing value. The bucketing value is what's actually used as input to the [hashing](#hashing) function. By default, the bucketing key is set to bucket by User ID. |
 | Bucketing Salt | A string which is concatenated to the bucketing value before [hashing](#hashing). The bucketing salt is randomly generated when the flag or experiment is created and used indefinitely unless explicitly updated. |

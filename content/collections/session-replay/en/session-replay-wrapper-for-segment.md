@@ -74,6 +74,8 @@ Amplitude automatically creates the `[Amplitude] Replay Captured` event when Ses
 
 Following Segment's documentation, the plugin maps the Segment user ID to the Amplitude device ID. To find the device ID for replay captures, the plugin checks if `userId` is set, and if not, it uses `anonymousId`.
 
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, the device ID value can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. Segment's `userId` and `anonymousId` values are UUIDs, which always comply with these requirements. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
+
 ## Troubleshooting
 
 {{partial:admonition type="warning" heading="Session replay and ad blockers"}}

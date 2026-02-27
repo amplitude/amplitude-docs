@@ -118,7 +118,7 @@ When Amplitude ingests an [exposure event](#exposure-event), it uses the flag ke
 
 The exposure event is simple enough to send through any analytics implementation or customer data platform without the need to manipulate user properties.
 
-| Event Type | <div class='big-column'>Event Property</div> | Requirement | Description |
+| Event Type | Event Property | Requirement | Description |
 | --- | --- | --- | --- |
 | **`$exposure`** | `flag_key` | Required | The flag or experiment key which the user is being exposed to. |
 | | `variant` | Optional | The variant for the flag or experiment that the user has been exposed to. If `null` or missing, the user property for the flag/experiment is unset, and the users is no longer a part of the experiment. |
@@ -154,7 +154,7 @@ When Amplitude ingests an `$exposure` event, it's transformed. The event type 
 Client-side Experiment SDKs support automatic exposure tracking through an exposure tracking provider implementation. Without an integration or custom implementation, exposure events aren't tracked automatically.
 
 <!--vale off-->
-| <div class='big-column'>SDK Integrations</div> | Minimum Version |
+| SDK Integrations | Minimum Version |
 | --- | --- |
 | [JavaScript SDK](/docs/sdks/experiment-sdks/experiment-javascript#integrations) | `1.4.1+` |
 | [Android SDK](/docs/sdks/experiment-sdks/experiment-android#integrations) | `1.5.1+` |

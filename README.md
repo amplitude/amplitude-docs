@@ -25,9 +25,11 @@ Statamic is built on a PHP framework / ecosystem called [Laravel](https://larave
 
 1. Download [Herd](https://herd.laravel.com/) and install it.
 2. In Herd settings, on the **General** tab, add the *parent folder* to `/amplitude-docs`. For example, if the path to your local `amplitude-docs` folder is `/work/amplitude-docs`, add `/work` as a Herd Path.
-3. On the **PHP** tab in Herd's settings, install version `8.2`.
+3. On the **PHP** tab in Herd's settings, install version `8.2+`.
 4. On the **Node** tab in Herd's settings, install version `20`.
 5. Close the Herd settings.
+
+**Important:** If you run DNSmasq or similar, you may see conflicts in the domain that Herd tries to create. To mitigate, quit DNSmasq.
 
 ### Set your .env file
 

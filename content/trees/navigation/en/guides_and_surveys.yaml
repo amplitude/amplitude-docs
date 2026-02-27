@@ -46,6 +46,10 @@ tree:
       -
         id: 4a5b6c7d-8e9f-0123-4567-89abcdef0123
         entry: 8f9e2a1b-3c4d-5e6f-7a8b-9c0d1e2f3a4b
+      -
+        id: a895768a-cc0e-4f42-a65d-2e59670444bd
+        entry: 45e19199-60ed-4e35-9998-dc51019b4862
+        title: 'Duplicating Across Projects'
   -
     id: c7cc0ea8-86ba-41e3-8e65-af6fb5faf35b
     entry: 5db1bc0e-871d-4cc3-b429-9ca7f5f34c2d
