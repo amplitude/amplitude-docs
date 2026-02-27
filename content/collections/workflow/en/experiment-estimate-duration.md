@@ -149,7 +149,7 @@ Small MDE (1-2%): Use for subtle tweaks, or when tiny gains are valuable.
 
 ### Use the scenario table for prioritization
 
-#### Scenario 1: Your test takes too long.
+#### Scenario 1: Your test takes too long
 
 If your estimate shows `~130 days` at 5% MDE and 90% confidence, review the table:
 - At 8% MDE (larger change), duration drops to `~51 days`.
@@ -160,7 +160,7 @@ Decision framework:
 - Are the stakes low enough to justify 85% confidence for a quicker read?
 - Or is this a high-stakes test where 90-95% confidence is worth the wait?
 
-#### Scenario 2: Compare multiple test ideas.
+#### Scenario 2: Compare multiple test ideas
 
 You have three test ideas in your backlog:
 - Homepage hero redesign (expected 8% lift): `~51 days` at 90% confidence.
@@ -169,14 +169,14 @@ You have three test ideas in your backlog:
 
 Decision: The hero redesign is viable and can deliver results quickly. The CTA change may be worth running if you lower to 85% confidence (`~102 days`). The footer change takes over a year, so it isn't worth testing now.
 
-#### Scenario 3: Balance your testing portfolio.
+#### Scenario 3: Balance your testing portfolio
 
 Use the Duration Scenarios table to create a balanced mix:
 - Bold bets (8% MDE, 90-95% confidence): One to two major tests for each quarter that resolve in two to four weeks.
 - Everyday optimizations (3-5% MDE, 90% confidence): Regular tests that deliver steady improvements in three to six weeks.
 - Quick validation (5-8% MDE, 85% confidence): Fast directional reads on new ideas before heavier investment.
 
-#### Scenario 4: Low-traffic pages.
+#### Scenario 4: Low-traffic pages
 
 If you test a low-traffic page and durations are very long across all scenarios, you may need to:
 - Test on a higher-traffic page.
