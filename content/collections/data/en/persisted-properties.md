@@ -11,7 +11,7 @@ academy_course:
 ---
 {{partial:admonition type="tip" heading="Feature is in Beta"}}
 The Persisted Properties feature is in Beta. 
-This feature may continue to evolve and change as development completes. The documentation may not cover all aspects of the feature. 
+This feature may evolve and change as development completes. This documentation may not cover all aspects of the feature until Beta completes. 
 {{/partial:admonition}}
 
 Property persistence helps teams create consistent, reliable reporting across Amplitude by controlling how long event property values like page path or search term remain attached to events. It ensures that context, such as which campaign, channel, or merchandising asset drove engagement, remains available across the entire user journey.
@@ -92,8 +92,8 @@ The following section contains examples for using the *Persistence and Advanced 
 
 Go to *Data Settings > Properties > Persisted* and click **Create persisted property**, select the type of persisted property you want to create:
 
-- **Persistence settings:** The default settings.
-- **Advanced: Merchandising use case:** This advanced setup lets Amplitude define which products should be tied to the persisted property and then attribute carts with multiple items to each merchandising source.
+- **Persistence settings:** Create a persisted property and attaching it to an event. 
+- **Advanced: Merchandising use case:** Create an item-level attribution and define which products are tied to the persisted property and then identify items within a single cart to each merchandising source.
 
 #### Example 1: Product source
 
@@ -101,7 +101,6 @@ Go to *Data Settings > Properties > Persisted* and click **Create persisted prop
 
 1. Navigate to the *Properties* section of Data Settings and then click to create a new persisted property.
    Give this persisted property a name, such as `Entry Page`. In the description, provide some additional information such as the allocation method and expiration. This helps ensure that anyone using this property in a chart or data table understands the configuration.
-
 2. Select the event property you want to persist.
    For this example, use `Page Path`.
 3. Choose an **Allocation** method.
@@ -125,24 +124,32 @@ Because you want to identify the `Most recent Finding Method`, select **Most rec
 
 **Advanced: Merchandising use case:**
 
-This advanced setup lets Amplitude define which products to tie to the persisted property and then attribute carts with multiple items to each merchandising source. It allows you to attribute metrics that are cart related (such as `add to cart`, `AOV`, or `Revenue`) to their correct persisted property.
+The advanced merchandising setup lets Amplitude define which products can be tied to the persisted property. It then attributes items within a single cart to each merchandising source. This called item-level attribution. With item-level attribution, you can attribute metrics such as `add to cart`, `discovery_method`, or `Revenue` to an item's correct persisted property. 
 
-To set up this effect: 
+For example, you have three items in a cart. Each item was added to the cart through a different discovery method: 
 
-1. Select which product identifier you use in the cart-related metrics you want. In this example you've implemented the property called `product.item_id`. 
-2. Select one or multiple events that link the persisted property with the product identifier you've selected.
+* Item 1 was discovered through Search.
+* Item 2 was discovered from the Popular Products display.
+* Item 3 was discovered from Recommendations.
+
+Item-level attribution lets you bind the discovery context to each item in the cart. This, in turn, credits the correct discovery method to each item in the cart. 
+
+##### To set up item-level attribution 
+
+1. Select which product identifier you use in the cart-related metrics you want. Using the previous example, you'd select the `product.item_id` property. 
+2. Select one or more events that link the persisted property with the product identifier you've selected. For example, you'd select the events where both your persisted property value such as `discovery_method` and the item property `product.item_id` are captured. This event could be something like `View Item Details` or `Add to Cart`.
    This ensures Amplitude can run a cross-analysis properly.
 
-In this example, the events you generate that contain both the `Finding Method` and the `product.item_id` properties are `Home Hero Clicked`, `Promotion Clicked`, and `Recommendation Clicked`. 
+In this example, the events you generate that contain both the `discovery_method` and the `product.item_id` properties are `Home Hero Clicked`, `Promotion Clicked`, and `Recommendation Clicked`. 
 
 ### Step 2: Use persisted properties across analyses
 
-After you define a persisted property (such as Entry Page or Most Recent Finding Method), Amplitude automatically applies it to upstream/downstream events based on the allocation and expiration rules you've configured. You don't need to manually re-attribute or ensure the original property exists on every event.
+After you define a persisted property (such as `Entry Page` or `Most Recent Finding Method`), Amplitude automatically applies it to upstream/downstream events based on the allocation and expiration rules you've configured. You don't need to manually re-attribute or ensure the original property exists on every event.
 
 You can find persisted properties directly in Data Tables:
 
 1. Open a Data Table.
-2. In the Group-by selector, look for your persisted properties alongside standard event properties.
+2. In the Group-by selector, find your persisted properties alongside standard event properties.
    They appear under the name you gave them in Data Settings (for example, `Entry Page`).
 
 This means the context you captured earlier is available wherever you analyze outcomes.
