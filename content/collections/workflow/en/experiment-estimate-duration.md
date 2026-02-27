@@ -50,7 +50,9 @@ How to choose:
 - Look for metrics that match that action.
 - If you see similar metrics, choose a conversion metric (which Amplitude marks as `Conversion of...`) or a metric with an official blue badge.
 
-Tip: Choose a metric your team uses often.
+{{partial:admonition type="tip"}}
+Choose a metric your team uses often.
+{{/partial:admonition}}
 
 For example, if you test your homepage hero banner and want more visitors to enroll in a course, select `Conversion of registration: course enrolled`.
 
