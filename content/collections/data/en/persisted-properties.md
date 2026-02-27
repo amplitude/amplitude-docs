@@ -124,7 +124,9 @@ Because you want to identify the `Most recent Finding Method`, select **Most rec
 
 **Advanced: Merchandising use case:**
 
-The advanced merchandising setup lets Amplitude define which products to tie to the persisted property and then attribute carts with multiple items to each merchandising source. This called item-level attribution. With item-level attribution, you can attribute metrics to items within a cart such as `add to cart`, `discovery_method`, or `Revenue` to their correct persisted property. For example, you have three items in a cart. Each item was added to the cart through a different discovery method: 
+The advanced merchandising setup lets Amplitude define which products can be tied to the persisted property. It then attributes items within a single cart to each merchandising source. This called item-level attribution. With item-level attribution, you can attribute metrics such as `add to cart`, `discovery_method`, or `Revenue` to an item's correct persisted property. 
+
+For example, you have three items in a cart. Each item was added to the cart through a different discovery method: 
 
 * Item 1 was discovered through Search.
 * Item 2 was discovered from the Popular Products display.
