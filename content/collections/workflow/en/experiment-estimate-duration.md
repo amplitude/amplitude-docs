@@ -208,9 +208,9 @@ The biggest factor in test duration is the size of the change you're trying to d
 For example, moving from 5% MDE to 8% MDE can reduce duration from `~130 days` to `~51 days`.
 
 Ask:
-- Can I test a more impactful variation instead of a subtle tweak?
-- Instead of changing button color, can I redesign the entire CTA section?
-- Instead of tweaking microcopy, can I rewrite the entire headline?
+- Can you test a more impactful variation instead of a subtle tweak?
+- Instead of changing button color, can you redesign the entire CTA section?
+- Instead of tweaking microcopy, can you rewrite the entire headline?
 
 Large-impact ideas resolve faster. Small-impact ideas take longer, but can add up in mature, high-volume products.
 
@@ -223,7 +223,7 @@ For example, at 85% confidence, the same 5% MDE test takes `~102 days` instead o
 Ask:
 - What's the cost of being wrong?
 - Is this a low-stakes test (below-the-fold change, well-understood area)?
-- Can I validate results with a follow-up test if needed?
+- Can you validate results with a follow-up test if needed?
 
 Don't lower confidence for:
 - Revenue-critical tests.
@@ -234,7 +234,7 @@ Don't lower confidence for:
 
 Low traffic is a common reason tests take too long.
 
-Ask: Can I run this test on a higher-traffic page, or choose a more frequent conversion event?
+Ask: Can you run this test on a higher-traffic page, or choose a more frequent conversion event?
 
 ### Increase rollout percentage
 
