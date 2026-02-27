@@ -36,8 +36,8 @@ If you use a custom session property (a custom session definition in Amplitude),
 - For more details, see [Track sessions](/docs/data/sources/instrument-track-sessions).
 
 **Constraints:**
-- Custom session ID values can't contain the "/" character, as Session Replay uses it as a delimiter in the session replay ID format (`<deviceId>/<sessionId>`).
-- Allowed characters: `a-z A-Z 0-9 _ - . | @ : =`.
+- The session replay ID has the format `<deviceId>/<sessionId>`. Session Replay uses `/` as a delimiter, so neither `deviceId` nor custom session ID values can contain it.
+- Accepted characters for both `deviceId` and custom session IDs: `a-z A-Z 0-9 _ - . | @ : =`.
 - If you need an additional character, contact support.
 
 #### Configure the SDK for custom session definitions
