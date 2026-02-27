@@ -147,9 +147,9 @@ Small MDE (1-2%): Use for subtle tweaks, or when tiny gains are valuable.
 - Incremental funnel optimizations.
 - These require the most time and traffic, but can add up in mature, high-volume products.
 
-### How to use the scenario table for prioritization
+### Use the scenario table for prioritization
 
-Scenario 1: Your test takes too long.
+#### Scenario 1: Your test takes too long.
 
 If your estimate shows `~130 days` at 5% MDE and 90% confidence, review the table:
 - At 8% MDE (larger change), duration drops to `~51 days`.
@@ -160,7 +160,7 @@ Decision framework:
 - Are the stakes low enough to justify 85% confidence for a quicker read?
 - Or is this a high-stakes test where 90-95% confidence is worth the wait?
 
-Scenario 2: Compare multiple test ideas.
+#### Scenario 2: Compare multiple test ideas.
 
 You have three test ideas in your backlog:
 - Homepage hero redesign (expected 8% lift): `~51 days` at 90% confidence.
@@ -169,14 +169,14 @@ You have three test ideas in your backlog:
 
 Decision: The hero redesign is viable and can deliver results quickly. The CTA change may be worth running if you lower to 85% confidence (`~102 days`). The footer change takes over a year, so it isn't worth testing now.
 
-Scenario 3: Balance your testing portfolio.
+#### Scenario 3: Balance your testing portfolio.
 
 Use the Duration Scenarios table to create a balanced mix:
 - Bold bets (8% MDE, 90-95% confidence): One to two major tests for each quarter that resolve in two to four weeks.
 - Everyday optimizations (3-5% MDE, 90% confidence): Regular tests that deliver steady improvements in three to six weeks.
 - Quick validation (5-8% MDE, 85% confidence): Fast directional reads on new ideas before heavier investment.
 
-Scenario 4: Low-traffic pages.
+#### Scenario 4: Low-traffic pages.
 
 If you test a low-traffic page and durations are very long across all scenarios, you may need to:
 - Test on a higher-traffic page.
@@ -201,7 +201,7 @@ Most teams don't need to adjust these settings. The defaults work well for stand
 
 If your estimated duration is longer than your timeline allows, use these options.
 
-### 1. Test a bigger idea (increase MDE)
+### Test a bigger idea (increase MDE)
 
 The biggest factor in test duration is the size of the change you're trying to detect. Bold changes produce larger lifts and resolve faster.
 
@@ -214,7 +214,7 @@ Ask:
 
 Large-impact ideas resolve faster. Small-impact ideas take longer, but can add up in mature, high-volume products.
 
-### 2. Lower your confidence level (when stakes allow)
+### Lower your confidence level (when stakes allow)
 
 Dropping from 90% to 85% confidence reduces duration, but increases false-positive risk (calling a winner when there isn't one).
 
@@ -230,21 +230,21 @@ Don't lower confidence for:
 - High-impact placements.
 - Brand-new features, or unknown customer segments.
 
-### 3. Choose a higher-traffic page or event
+### Choose a higher-traffic page or event
 
 Low traffic is a common reason tests take too long.
 
 Ask: Can I run this test on a higher-traffic page, or choose a more frequent conversion event?
 
-### 4. Increase rollout percentage
+### Increase rollout percentage
 
 If you only expose 50% of visitors to the experiment, increasing to 100% can reduce duration by about half.
 
-### 5. Reduce number of variants
+### Reduce number of variants
 
 Testing four variations takes much longer than testing two. Consider multiple sequential tests instead of one large multi-variant test.
 
-### 6. Decide if the test is worth running
+### Decide if the test is worth running
 
 Sometimes a test isn't feasible. If the Duration Scenarios table shows hundreds of days across all scenarios, it probably isn't worth building.
 
@@ -278,7 +278,7 @@ This shows the data timeframe the tool uses for calculations. `Offset by 1` mean
 
 No. Many experiments run at medium (90%) confidence, which balances speed and accuracy. Use high confidence when stakes are high, or when you need maximum certainty before a decision.
 
-### I'm stuck choosing a success metric. Which one should I pick
+### Choosing a success metric
 
 Start by asking `If this experiment works, what will more visitors do?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
 
