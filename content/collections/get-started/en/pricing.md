@@ -16,7 +16,7 @@ Amplitude offers several pricing tiers:
 
 Each tier offers diffrent levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using. For the most recent information about plan comparison, go to the [Amplitude Pricing](https://amplitude.com/pricing#comparePlans) page.  
 
-## Tiers building functionality
+## Tiers build functionality
 
 Every pricing plan builds on the one before it. This means that the functionality included in the Starter plan is automatically included in the Plus plan. The Plus plan then expands upon the Starter plan functionality substantially. That expansion could be in functionality or it could be expanded volume. 
 
@@ -34,16 +34,16 @@ The Growth and Enterprise plans expand further on the Plus plan. For example:
 
 You can purchase some Amplitude functionality as an add-on. This functionality can only be purchased as an add-on to your existing pricing tier.
 
-The following cards summarize what is included in each add-on:
+Expand each section below to see what is included in each add-on:
 
-{{partial:card-grid}}
-{{partial:card style="plain" label="Session Replay"}}
+{{partial:collapse name="Session Replay"}}
 * Unlimited sessions
 * AI Summary
 * Targeted replay capture
 * Three-month retention
-{{/partial:card}}
-{{partial:card style="plain" label="Feature Experimentation"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="Feature Experimentation"}}
 * Unlimited Active Experiments
 * Approval workflows
 * Stratified sampling
@@ -52,14 +52,16 @@ The following cards summarize what is included in each add-on:
 * Holdout and mutual exclusion groups
 * Multi-armed bandits
 * Flag dependencies
-{{/partial:card}}
-{{partial:card style="plain" label="Web Experimentation"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="Web Experimentation"}}
 * Unlimited Active Experiments
 * Approval workflows
 * Stratified sampling
 * Multi-armed bandits
-{{/partial:card}}
-{{partial:card style="plain" label="Guides & Surveys"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="Guides & Surveys"}}
 * Unlimited Guides & Surveys
 * Advanced, unlimited themes
 * Custom templates
@@ -69,21 +71,23 @@ The following cards summarize what is included in each add-on:
 * Unlimited Resource Center
 * Prioritization
 * RBAC
-{{/partial:card}}
-{{partial:card style="plain" label="Activation"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="Activation"}}
 * Unlimited automated audience syncs
 * 50 real-time cohort syncs
 * Unlimited real-time streaming*
 * Behavioral cohorts API
-{{/partial:card}}
-{{partial:card style="plain" label="AI Feedback"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="AI Feedback"}}
 * Unlimited feedback records*
 * Daily analysis of private sources
-{{/partial:card}}
-{{partial:card style="plain" label="Accounts"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="Accounts"}}
 * Account or Group-level reporting
 * Salesforce and Segment integrations
-{{/partial:card}}
-{{/partial:card-grid}}
+{{/partial:collapse}}
 
-If you have questions about add-ons or specific features or functioanlity, contact [Amplitude Sales](https://amplitude.com/sales-contact?siteLocation=nav).
+If you have questions about add-ons or specific features or functionlity, contact [Amplitude Sales](https://amplitude.com/sales-contact?siteLocation=nav).
