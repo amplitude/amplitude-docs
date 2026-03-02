@@ -64,7 +64,3 @@ Otherwise, declarative statements of intent that use the specific terminology te
 - "Show this as conversion over time."
 - "Group this chart by X."
 - "Filter this by X = Y."
-
-### Can I use Ask Amplitude if I have a BAA in place with Amplitude?
-
-No. For more information, contact your Amplitude representative.

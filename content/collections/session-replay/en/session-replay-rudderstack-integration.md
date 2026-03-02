@@ -69,7 +69,9 @@ Amplitude automatically creates the `[Amplitude] Replay Captured` event when Ses
 
 ## Required field mapping
 
-Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/event-spec/standard-events/identify/#anonymous-id) to the [Amplitude Device ID](/docs/faq/instrumentation#icon-chevron-down), and the [Rudderstack Session ID](https://www.rudderstack.com/docs/sources/event-streams/sdks/session-tracking/) to the [Amplitude Session ID](/docs/data/sources/instrument-track-sessions#how-amplitude-tracks-your-sessions). If you use another field for device ID, contact [Amplitude Support](https://support.amplitude.com). 
+Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/event-spec/standard-events/identify/#anonymous-id) to the [Amplitude Device ID](/docs/faq/instrumentation#icon-chevron-down), and the [Rudderstack Session ID](https://www.rudderstack.com/docs/sources/event-streams/sdks/session-tracking/) to the [Amplitude Session ID](/docs/data/sources/instrument-track-sessions#how-amplitude-tracks-your-sessions). If you use another field for device ID, contact [Amplitude Support](https://support.amplitude.com).
+
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, the `deviceId` value can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. Rudderstack's anonymous ID is a UUID, which always complies with these requirements. If you use a custom value for `deviceId`, ensure it follows the accepted character set. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## Troubleshooting
 
