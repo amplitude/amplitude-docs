@@ -104,9 +104,9 @@ Use gender-neutral pronouns and terms:
 
 When describing UI elements:
 
-- Use "select" or "choose" rather than "click" (to include keyboard and screen reader users).
-- Describe what happens, not just the action: "Select **Save** to save your changes.".
-- Avoid relying solely on color: "Select the blue **Submit** button" → "Select **Submit**".
+- Use "click" for buttons and interactive controls. Use "select" for choosing items from dropdowns, lists, menus, or tabs.
+- Describe what happens, not just the action: "Click **Save** to save your changes."
+- Avoid relying solely on color: "Click the blue **Submit** button" → "Click **Submit**".
 
 ## Examples
 

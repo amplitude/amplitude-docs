@@ -28,8 +28,8 @@ Follow these steps whether you're integrating Amplitude and Microsoft Teams for 
 To connect your Amplitude account to Microsoft Teams:
 
 1. Navigate to *Settings > Personal Settings*.
-2. Select *Profile*, then select **Connect to Microsoft Teams**.
-3. In the new browser tab that opens, select **Allow** to grant Amplitude access to your Microsoft Teams account. If you see the **Consent on behalf of your organization** checkbox, you can optionally select it to grant access for all members of your organization.
+2. Click *Profile*, then click **Connect to Microsoft Teams**.
+3. In the new browser tab that opens, click **Allow** to grant Amplitude access to your Microsoft Teams account. If you see the **Consent on behalf of your organization** checkbox, enable it to grant access for all members of your organization.
 4. The Amplitude bot sends you a Teams message that confirms the connection and explains how to use the integration.
 
 After you authenticate, Teams unfurls any links to Amplitude charts in Teams channels and direct messages. Teams doesn't unfurl Pathfinder, Compass, and Persona charts.
@@ -38,8 +38,8 @@ After you authenticate, Teams unfurls any links to Amplitude charts in Teams cha
 
 After you connect your Amplitude account, install the Amplitude app in your Microsoft Teams workspace.
 
-1. On the *Profile* page in Amplitude (*Settings > Personal Settings > Profile*), select **Install app**. This opens the Amplitude app listing in the Microsoft Teams App Store.
-2. Select **Get it now**, then confirm the installation.
+1. On the *Profile* page in Amplitude (*Settings > Personal Settings > Profile*), click **Install app**. This opens the Amplitude app listing in the Microsoft Teams App Store.
+2. Click **Get it now**, then confirm the installation.
 
 ### Admin approval
 
@@ -55,7 +55,7 @@ There may be a delay before the admin receives the approval request, and another
 
 After you install the Amplitude app and your admin approves it, add the Amplitude bot to the team where you want to use it.
 
-1. In Microsoft Teams, open the team you want to add the bot to. Select **Apps** in the bottom-left corner of the Teams sidebar.
+1. In Microsoft Teams, open the team you want to add the bot to. Click **Apps** in the bottom-left corner of the Teams sidebar.
    - Alternatively, type `@` in the message compose box of any channel and select **Get agents and bots**.
 2. Search for "Amplitude" and follow the on-screen instructions to add the bot to your team.
 
@@ -85,7 +85,7 @@ To receive these notifications, set up the Amplitude app for Microsoft Teams for
 1. In Amplitude, navigate to *Data > Catalog > Integrations*.
 2. If you haven't enabled the Amplitude Microsoft Teams App, grant Amplitude permission to your Teams workspace.
 3. Specify the channel you want Amplitude to send notifications to.
-4. Select **Add** to complete the process.
+4. Click **Add** to complete the process.
 
 ## Turn on link previews
 
@@ -104,9 +104,9 @@ Use this integration to get questions answered about your analysis, share an ins
 
 Connect Amplitude team spaces to specific Teams channels to receive notifications when your team creates new analyses. When someone adds new content to that team space, it appears in the Teams channel.
 
-Select **Connect with Teams** from within a team space to set this up.
+Click **Connect with Teams** from within a team space to set this up.
 
-To disconnect your team space from Teams, select the same button—which reads *Connected to [YourTeamSpaceName]*—and select **Disconnect Teams**.
+To disconnect your team space from Teams, click the same button—which reads *Connected to [YourTeamSpaceName]*—and click **Disconnect Teams**.
 
 ## Global Agent requirements
 

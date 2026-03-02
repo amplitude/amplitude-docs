@@ -42,7 +42,8 @@ This file summarizes the documentation rules in .cursor/rules.
 - Replace blacklist/whitelist with block list/allow list.
 - Replace kill/abort with stop/end/cancel.
 - Use gender-neutral language.
-- Prefer "select" over "click" and avoid color-only instructions.
+- Use "click" for buttons; use "select" for dropdowns, lists, and tabs.
+  Avoid color-only instructions.
 - Avoid Latin terms (e.g., "via", "e.g.", "i.e.").
 
 ## Voice, tone, and point of view
