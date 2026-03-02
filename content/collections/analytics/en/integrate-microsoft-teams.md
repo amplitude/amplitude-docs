@@ -29,12 +29,49 @@ To connect your Amplitude account to Microsoft Teams:
 
 1. Navigate to *Settings > Personal Settings*.
 2. Select *Profile*, then select **Connect to Microsoft Teams**.
-3. In the new browser tab that opens, select **Allow** to grant Amplitude access to your Microsoft Teams account.
+3. In the new browser tab that opens, select **Allow** to grant Amplitude access to your Microsoft Teams account. If you see the **Consent on behalf of your organization** checkbox, you can optionally select it to grant access for all members of your organization.
 4. The Amplitude bot sends you a Teams message that confirms the connection and explains how to use the integration.
 
 After you authenticate, Teams unfurls any links to Amplitude charts in Teams channels and direct messages. Teams doesn't unfurl Pathfinder, Compass, and Persona charts.
 
-### Connect an Amplitude Data project to Microsoft Teams
+## Install the Amplitude app in Microsoft Teams
+
+After you connect your Amplitude account, install the Amplitude app in your Microsoft Teams workspace.
+
+1. On the *Profile* page in Amplitude (*Settings > Personal Settings > Profile*), select **Install app**. This opens the Amplitude app listing in the Microsoft Teams App Store.
+2. Select **Get it now**, then confirm the installation.
+
+### Admin approval
+
+If you're a Microsoft Teams admin, the installation process redirects you to the Microsoft Teams admin center. If you aren't an admin, Teams sends an approval request to your organization's admin.
+
+To approve the app, the admin navigates to the *Manage apps* section of the Microsoft Teams admin center and sets the Amplitude app permission policy to allow **Everyone**.
+
+{{partial:admonition type="note" heading=""}}
+There may be a delay before the admin receives the approval request, and another delay before the app becomes available after approval.
+{{/partial:admonition}}
+
+## Add the Amplitude bot to a team
+
+After you install the Amplitude app and your admin approves it, add the Amplitude bot to the team where you want to use it.
+
+1. In Microsoft Teams, open the team you want to add the bot to. Select **Apps** in the bottom-left corner of the Teams sidebar.
+   - Alternatively, type `@` in the message compose box of any channel and select **Get agents and bots**.
+2. Search for "Amplitude" and follow the on-screen instructions to add the bot to your team.
+
+After you add the bot, a welcome message appears in the team channel. When you type `@Amplitude` in the message compose box, the mention displays as a blue tag, which indicates the bot is active.
+
+### Verify bot availability
+
+To confirm the bot is active in a team, type `@Amplitude hi` in any channel under that team. If the text displays in black instead of as a blue tag, the bot isn't available in that team yet.
+
+You can also check the *Apps* section within the team's settings to verify that Amplitude appears in the list of installed apps.
+
+### Use the Amplitude bot
+
+Tag the bot with `@Amplitude` in any channel where it's active, followed by your question or request. The bot responds in the channel with answers based on your Amplitude data.
+
+## Connect an Amplitude Data project to Microsoft Teams
 
 You can subscribe a Teams channel to real-time notifications of all branch changes or publishing updates within an Amplitude Data project's tracking plan. These include:
 
@@ -43,14 +80,14 @@ You can subscribe a Teams channel to real-time notifications of all branch chang
 
 To receive these notifications, set up the Amplitude app for Microsoft Teams for the Amplitude Data project you want updates from.
 
-#### Configure notifications
+### Configure notifications
 
 1. In Amplitude, navigate to *Data > Catalog > Integrations*.
 2. If you haven't enabled the Amplitude Microsoft Teams App, grant Amplitude permission to your Teams workspace.
 3. Specify the channel you want Amplitude to send notifications to.
 4. Select **Add** to complete the process.
 
-### Turn on link previews
+## Turn on link previews
 
 If a shareable link doesn't unfurl when you post it in a Teams channel, you may need to enable link previews. Ensure the Amplitude Teams app has the necessary message extension permissions in your Teams admin center. Confirm that your organization's Teams policies don't disable link unfurling.
 
