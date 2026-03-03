@@ -104,7 +104,6 @@ The Root Cause Analysis feature can help identify which user segments contribute
 2. Use Root Cause Analysis to identify contributing factors.
 3. Look for patterns in user properties, behaviors, or segments.
 
-To request the ability to filter Root Cause Analysis by experiment properties, contact Amplitude support.
 
 ## Next steps
 
