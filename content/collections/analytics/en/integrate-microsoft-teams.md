@@ -14,12 +14,12 @@ The Amplitude Microsoft Teams app supports the Amplitude Global Agent. You can a
 
 With Amplitude's app for Microsoft Teams, you can:
 
-* Get updates about new comments you receive in Amplitude.
+* Get answers to natural-language questions about your Amplitude data.
 * Unfurl chart and cohort links into detailed previews directly in Teams channels.
-* Add charts to dashboards or pin dashboards to your sidebar without leaving the conversation.
-* Connect Amplitude Team Spaces to specific Teams channels and receive notifications whenever your team creates new analyses.
+* Receive notifications and analysis from Amplitude Agents.
+* Receive notifications and updates about Dashboards you subscribe to.
 
-To connect Amplitude to Microsoft Teams, follow the steps below, or search for "Amplitude" in the Microsoft Teams App Store and install it from there.
+To connect Amplitude to Microsoft Teams, follow the steps below, or search for "Amplitude" in the [Microsoft Marketplace](https://marketplace.microsoft.com/en-us/marketplace/apps?product=teams) and install it from there.
 
 ## Connect to Microsoft Teams
 
@@ -33,7 +33,7 @@ To connect your Amplitude account to Microsoft Teams:
 4. The Amplitude bot sends you a Teams message that confirms the connection and explains how to use the integration.
 
 After you authenticate, Teams unfurls any links to Amplitude charts in Teams channels and direct messages. Teams doesn't unfurl Pathfinder, Compass, and Persona charts.
-
+x
 ## Install the Amplitude app in Microsoft Teams
 
 After you connect your Amplitude account, install the Amplitude app in your Microsoft Teams workspace.
