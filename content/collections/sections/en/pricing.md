@@ -34,6 +34,8 @@ The Growth and Enterprise plans expand further upon the Plus plan:
 * The Growth plan offers advanced behavioral analysis.
 * The Enterprise plan offers advanced behavioral analysis as well as Cross-product analysis.
 
+
+
 ## Add-on functionality
 
 You can purchase some Amplitude functionality as an add-on. This functionality can only be purchased as an add-on to your existing pricing tier.
