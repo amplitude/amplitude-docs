@@ -39,8 +39,8 @@ curl -X POST "https://amplitude.com/api/2/audit-logs/76273" \
     "end_date": "2026-01-10T23:59:59Z",
     "filters": {
       "domain": "auth",
-      "feature": "login",
-      "action": "success"
+      "feature": "auth",
+      "action": "login"
     },
     "pagination": {
       "limit": 100
