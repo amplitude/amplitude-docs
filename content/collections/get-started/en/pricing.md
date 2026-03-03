@@ -8,27 +8,31 @@ exclude_from_sitemap: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
 updated_at: 1770146259
 ---
-Amplitude offers several pricing plans: 
+Amplitude offers several pricing tiers: 
 
 * Starter
 * Plus
 * Growth
 * Enterprise
 
-Each tier offers diffrent levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using. 
+Each tier offers different levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using. 
 
-Every pricing plan builds on the one before it. This means that the functionality included in the Starter plan is automatically included in the Plus plan. The Plus plan then expands upon the Starter plan functionality substantially. That expansion could be in functionality or it could be expanded volume. 
+## Tiers build functionality
+
+Every pricing tier provides more functionality than the previous one. This means that the functionality included in the Starter plan is automatically included in the Plus plan. The Plus plan then expands upon the Starter plan. That expansion is both in functionality and in expanded limits. The Enterprise tier provides the most functionality with the largest monthly limits.  
 
 For example: 
 
-* The Starter plan includes out-of-the-box analytics and templates. The Plus plan includes those analytics and templates and also lets you create unlimited analytics views. You can customize your analytics however you want. 
-* The Starter plan offers 50k MTUs and up to 10M events. The Plus plan expands this volume to 300k MTUs or 25M events.
+* The Starter plan includes out-of-the-box analytics and templates. 
+    * The Plus plan includes those analytics and templates and also lets you create unlimited analytics views. You can customize your analytics however you want. 
+* The Starter plan offers 50k MTUs and up to 10M events. 
+    * The Plus plan expands this volume to 300k MTUs or 25M events.
 
-The Growth and Enterprise plans expand further on the Plus plan: 
+The Growth and Enterprise plans expand further upon the Plus plan: 
 
-* Growth and Enterprise plans both offer custom MTU or event volumes.
+* Growth and Enterprise plans both offer unlimited or custom MTU or event volumes.
 * The Growth plan offers advanced behavioral analysis.
-* The Enterprise plan offers behavioral analysis as well as Cross-product analysis.
+* The Enterprise plan offers advanced behavioral analysis as well as Cross-product analysis.
 
 ## Add-on functionality
 
