@@ -15,7 +15,7 @@ Experiment project-level permissions enable Amplitude admins to manage access to
 * Allowing all team members to keep higher permission levels in their primary apps.
 
 {{partial:admonition type='note'}}
-Setting project-level user permissions in Experiment is only available to Enterprise customers. 
+Setting project-level user permissions in Experiment is only available to Growth or Enterprise customers. 
 {{/partial:admonition}}
 
 ##### To set project-level user permissions in Experiment
