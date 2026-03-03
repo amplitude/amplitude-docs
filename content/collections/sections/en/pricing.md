@@ -40,7 +40,7 @@ The Growth and Enterprise plans expand further upon the Plus plan:
 
 ## Add-on functionality
 
-You can purchase some Amplitude functionality as an add-on. This functionality can only be purchased as an add-on to your existing pricing tier.
+If you're on the Growth or Enterprise plan, you can purchase additional functionality as an add-on.
 
 Expand each section below to understand what is included in each add-on:
 
