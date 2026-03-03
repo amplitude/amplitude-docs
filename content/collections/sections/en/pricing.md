@@ -17,6 +17,10 @@ Amplitude offers several pricing tiers:
 
 Each tier offers different levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using.
 
+{{partial:admonition type="note" heading="Documenting features by tier"}}
+Except in rare cases, the Help documentation doesn't attempt to specify the functionality differences between the tiers. If you have specific questions about whether a feature is included in your tier, check out the [Plan Comparison](https://amplitude.com/pricing#:~:text=Contact%20sales-,Analytics,-Understand%20the%20full) table or contact [Sales](https://amplitude.com/sales-contact).
+{{/partial:admonition}}
+
 ## Tiers build functionality
 
 Every pricing tier provides more functionality than the previous one. This means that the functionality included in the Starter plan is automatically included in the Plus plan. The Plus plan then expands upon the Starter plan. That expansion is both in functionality and in expanded limits. The Enterprise tier provides the most functionality with the largest monthly limits.
@@ -34,13 +38,11 @@ The Growth and Enterprise plans expand further upon the Plus plan:
 * The Growth plan offers advanced behavioral analysis.
 * The Enterprise plan offers advanced behavioral analysis as well as Cross-product analysis.
 
-
-
 ## Add-on functionality
 
 You can purchase some Amplitude functionality as an add-on. This functionality can only be purchased as an add-on to your existing pricing tier.
 
-Expand each section below to see what is included in each add-on:
+Expand each section below to understand what is included in each add-on:
 
 {{partial:collapse name="Session Replay"}}
 * Unlimited sessions
@@ -96,6 +98,4 @@ Expand each section below to see what is included in each add-on:
 * Salesforce and Segment integrations
 {{/partial:collapse}}
 
-For the most recent information about plan comparison, go to the [Amplitude Pricing](https://amplitude.com/pricing#comparePlans) page.
-
-If you have questions about add-ons or specific features or functionality, contact [Amplitude Sales](https://amplitude.com/sales-contact?siteLocation=nav).
+For more information, go to the [Plan Comparison](https://amplitude.com/pricing#:~:text=Contact%20sales-,Analytics,-Understand%20the%20full) table or contact [Sales](https://amplitude.com/sales-contact).
