@@ -44,4 +44,4 @@ Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/split-url
 Route::permanentRedirect('/docs/web-experiment/url-redirect-testing', '/docs/web-experiment/actions#url-redirect');
 Route::permanentRedirect('/docs/feature-experiment', '/docs/experiment-home');
 Route::permanentRedirect('/docs/web-experiment', '/docs/experiment-home');
-Route::permanentRedirect('/docs/pricing', '/docs/get-started/pricing');
+Route::permanentRedirect('/docs/get-started/pricing', '/docs/pricing');

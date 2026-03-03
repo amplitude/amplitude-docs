@@ -55,8 +55,8 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/pricing",
-      "destination": "/docs/get-started/pricing",
+      "source": "/docs/get-started/pricing",
+      "destination": "/docs/pricing",
       "statusCode": 301
     },
     {
