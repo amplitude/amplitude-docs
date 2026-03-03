@@ -29,10 +29,6 @@ The actions above the table should now be selectable in blue.
 
 ## Flag-level access controls
 
-{{partial:admonition type='note'}}
-This feature is only available to users on Enterprise plans.
-{{/partial:admonition}}
-
 With flag-level access controls, you can decide which Experiment users can make changes to specific flags or experiments. 
 
 When flag-level access controls are enabled, users in your organization can't save changes to restricted flags and experiments unless they're specifically designated as an editor for it. 
