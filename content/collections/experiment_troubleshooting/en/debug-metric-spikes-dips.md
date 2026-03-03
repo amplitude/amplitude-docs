@@ -32,7 +32,7 @@ To review recent changes:
 2. Sort by *Last Modified* to see which experiments changed recently.
 3. Check the experiment's configuration history to identify what changed and when.
 
-You can also use the [Experiment Management API](/docs/apis/experiment/experiment-management-api-version-endpoints) to retrieve versions of flag configurations during a specific time period. Compare configurations to identify changes that might explain the metric spike or dip.
+You can use the [Experiment Management API](/docs/apis/experiment/experiment-management-api-version-endpoints) or [Slack Notifications](/docs/feature-experiment/notifications) to retrieve versions of flag configurations during a specific time period. Compare configurations to identify changes that might explain the metric spike or dip.
 
 ## Check for releases and deployments
 
