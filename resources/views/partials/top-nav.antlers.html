@@ -18,7 +18,7 @@
                 </div>
             </div>
         {{ else }}
-            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2 relative{{if segment_1 === slug}} top-nav-active{{/if}}"><a class="no-underline font-normal {{if segment_1 === slug}}text-amp-blue-500 font-medium {{/if}}" href="{{ url }}">{{ title }}</a></div>
+            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2 relative{{ if title == 'Pricing' }}{{ if segment_1 == 'get-started' && segment_2 == 'pricing' }} top-nav-active{{ /if }}{{ else }}{{ if segment_1 === slug }} top-nav-active{{ /if }}{{ /if }}"><a class="no-underline font-normal {{ if title == 'Pricing' }}{{ if segment_1 == 'get-started' && segment_2 == 'pricing' }}text-amp-blue-500 font-medium {{ /if }}{{ else }}{{ if segment_1 === slug }}text-amp-blue-500 font-medium {{ /if }}{{ /if }}" href="{{ title == 'Pricing' ? '/docs/get-started/pricing' : url }}">{{ title }}</a></div>
         {{ /if }}
     {{ /nav:collection:sections }}
 </div>
