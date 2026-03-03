@@ -4,17 +4,26 @@ Welcome to the Claude Code configuration for the Amplitude documentation reposit
 
 ## Quick Start
 
-### For Engineers and Contributors
+### For engineers and contributors
 
 **New to documenting?** Just ask Claude Code for help:
 
-| What You Need | Say This |
-|--------------|----------|
+| What you need | Say this |
+|---|---|
 | Document a new feature | `/document-feature` or "Document new feature: [name]" |
 | Check your writing style | `/edit-doc` or "Apply style rules to this document" |
 | Validate internal links | `/validate-links` or "Check links in this file" |
+| Fix a Jira doc ticket | `/fix-issue DOC-####` |
 
 Claude Code automatically applies Amplitude's documentation standards as you work.
+
+### For tech writers and doc system administrators
+
+| What you need | Say this |
+|---|---|
+| Apply style rules to all docs at scale | `/bulk-edit all` or `/bulk-edit group:developers` |
+| Update nav section labels after a bulk edit | `/taxonomy-nav group:developers branch:bulk-edit/developers` |
+| Check style compliance on a branch | `/validate-style branch:bulk-edit/developers` |
 
 ### What Happens Automatically
 
@@ -29,25 +38,32 @@ Claude Code enforces these standards:
 
 You write naturally, Claude Code formats correctly.
 
-## Directory Structure
+## Directory structure
 
 ```
 .claude/
-├── CLAUDE.md                     # Main configuration (always-active context)
-│                                 # Contains: project overview, all style rules, routing reference
+├── CLAUDE.md                              # Main configuration (always-active context)
+│                                          # Contains: project overview, all 12 style rules, routing reference
 │
-├── skills/                       # Executable workflows (invoke with /skill-name)
-│   ├── document-feature.md      # Interactive wizard for new feature docs
-│   ├── validate-links.md        # Check internal links for correct format
-│   └── edit-doc.md              # Apply all style rules systematically
+├── skills/                                # Executable workflows (invoke with /skill-name)
+│   ├── document-feature/SKILL.md         # Interactive wizard for new feature docs
+│   ├── validate-links/SKILL.md           # Check internal links for correct format
+│   ├── edit-doc/SKILL.md                 # Apply all style rules to one document
+│   ├── fix-issue/SKILL.md                # Resolve a Jira DOC ticket
+│   ├── bulk-edit/SKILL.md                # Apply style rules to all docs at scale
+│   │   └── references/
+│   │       └── collection-groups.md      # Collection → persona group mapping
+│   ├── taxonomy-nav/SKILL.md             # Update nav section labels and audit doc titles
+│   └── validate-style/SKILL.md           # QA compliance sampling for bulk edits
 │
-├── docs/                         # Reference documentation
-│   └── HOW-TO-CONTRIBUTE.md     # Engineer onboarding guide
+├── docs/                                  # Reference documentation
+│   ├── HOW-TO-CONTRIBUTE.md              # Engineer onboarding guide
+│   └── personas.md                       # Reader persona definitions (used by bulk-edit)
 │
-└── README.md                     # This file - navigation hub
+└── README.md                              # This file — navigation hub
 ```
 
-## Available Skills
+## Available skills
 
 ### `/document-feature`
 **Purpose**: Create new feature documentation from scratch
@@ -94,6 +110,59 @@ You write naturally, Claude Code formats correctly.
 - Provides detailed summary of changes
 
 **Example**: "Apply all Amplitude style rules to this document"
+
+---
+
+### `/bulk-edit`
+**Purpose**: Apply style rules to all documentation at scale using parallel agents
+
+**When to use**: Large-scale standardization across one or more persona groups; running the full documentation quality pass
+
+**What it does**:
+- Loads persona definitions from `.claude/docs/personas.md`
+- Groups collections by reader persona (8 groups, ~1,026 files total)
+- Creates a feature branch per persona group (`bulk-edit/<group-name>`)
+- Spawns parallel Collection Editor agents (up to 3 at a time) for 20-file batches
+- After all batches complete, spawns the Taxonomy & Navigation agent
+- Runs the QA Sampler (`/validate-style`) to confirm compliance
+- Creates a PR for tech writer review
+- Tracks progress in `.claude/bulk-edit-state/progress.json` (resumable)
+
+**Examples**:
+- "Run the bulk edit for developer docs" → `/bulk-edit group:developers`
+- "Apply style rules to all collections" → `/bulk-edit all`
+- "Resume the bulk edit from where it stopped" → `/bulk-edit resume`
+
+---
+
+### `/taxonomy-nav`
+**Purpose**: Audit and update navigation section labels and document title structure
+
+**When to use**: After bulk content edits, or any time you want to check that navigation section labels follow style rules
+
+**What it does**:
+- Builds a UUID-to-title map from changed documents' frontmatter
+- Applies sentence case to section group labels in `content/trees/navigation/en/*.yaml`
+- Flags frontmatter `title` violations for tech writer review (does not auto-change them)
+- Reports structural observations — pages that may be misplaced in the nav hierarchy
+
+**Example**: "Update the navigation section titles for the analytics group"
+
+---
+
+### `/validate-style`
+**Purpose**: Spot-check style compliance on a sample of files from a branch
+
+**When to use**: After a bulk edit run, or any time you want to verify that a set of files meets Amplitude style standards
+
+**What it does**:
+- Samples 5 files (or more) from a branch's changed files
+- Runs edit-doc Phase 1 pattern search (read-only — no edits)
+- Calculates a compliance score per rule category
+- Emits PASS / WARN / FAIL for each category and an overall result
+- Recommends whether to merge, flag for review, or re-run editing
+
+**Example**: "Check style compliance on the bulk-edit/developers branch"
 
 ---
 
