@@ -1904,7 +1904,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers) and [exclude internal referrers](#exclude-internal-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](#exclude-referrers) and [exclude internal referrers](#exclude-internal-referrers). After you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
