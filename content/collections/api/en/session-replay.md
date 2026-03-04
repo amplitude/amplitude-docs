@@ -222,6 +222,8 @@ The result is a JSON array of rrweb events:
 
 Version 2 files have an extra packing layer. After the outer gzip decompress and JSON parse, you get an array of **strings** rather than event objects. Each string is a JSON-encoded, zlib-compressed (DEFLATE) binary payload that you need to unpack to get the rrweb event.
 
+{{partial:tabs tabs="JavaScript, Python"}}
+{{partial:tab name="JavaScript"}}
 ```javascript
 const zlib = require('zlib');
 
@@ -242,6 +244,31 @@ async function fetchReplayEventsV2(fileUrl) {
   });
 }
 ```
+{{/partial:tab}}
+{{partial:tab name="Python"}}
+```python
+import gzip
+import json
+import zlib
+import urllib.request
+
+def fetch_replay_events_v2(file_url):
+    with urllib.request.urlopen(file_url) as response:
+        # Step 1: gzip decompress, then JSON parse → list of packed strings
+        packed_strings = json.loads(gzip.decompress(response.read()))
+
+    # Step 2: unpack each string
+    events = []
+    for packed in packed_strings:
+        # Each packed string is a JSON string whose value is a latin1-encoded
+        # binary blob of zlib-compressed event data.
+        compressed_binary = json.loads(packed)
+        buf = compressed_binary.encode('latin1')
+        events.append(json.loads(zlib.decompress(buf)))
+    return events
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ### Playing back events
 
