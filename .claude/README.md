@@ -390,7 +390,7 @@ If you're switching from Cursor to Claude Code:
 
 - ✅ `.claude/` directory created
 - ✅ CLAUDE.md consolidates all style rules
-- ✅ Three essential skills available (/document-feature, /validate-links, /edit-doc)
+- ✅ Seven skills available (/document-feature, /validate-links, /edit-doc, /fix-issue, /bulk-edit, /taxonomy-nav, /validate-style)
 - ✅ HOW-TO-CONTRIBUTE.md adapted for Claude Code
 - ✅ .cursor/ directory preserved for reference (still usable)
 
@@ -398,8 +398,8 @@ Both systems can run in parallel. Choose the AI assistant that fits your workflo
 
 ## Version History
 
-- **MVP (Current)**: Essential skills, consolidated style rules, core workflows
-- **Future enhancements**: Additional skills (Jira integration, GitHub CLI workflows), specialized agents
+- **v1.1 (Current)**: Full bulk-edit system — `/bulk-edit`, `/taxonomy-nav`, `/validate-style`, `/fix-issue` added; persona-based parallel editing for 1,026 files across 8 reader personas
+- **v1.0**: Essential skills — `/document-feature`, `/validate-links`, `/edit-doc`, consolidated style rules, core workflows
 
 ## Contributing to This Configuration
 
