@@ -600,6 +600,7 @@ engagement.boot(options: BootOptions): Promise<void>
 | ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
 | `options.integrations` | `Array<Integration>`           | Required when not using the Amplitude Browser SDK plugin. An array of integrations for tracking events. Without integrations, Guides and Surveys can't send events to your analytics provider, and guide insights, survey insights, and survey responses won't appear. |
+| `options.autoRefreshIntervalSeconds` | `number`           | Optional. Auto-refresh interval in seconds. When enabled, the SDK automatically refreshes (re-fetches decide data, end user store, and reloads config) at this interval. Must be 60 seconds or greater. If not specified, 0, or negative, auto-refresh is disabled. |
 
 #### EndUser type
 
@@ -710,6 +711,45 @@ Re-fetch targeting evaluation from the backend by making a new request to the de
 ```js
 engagement.decide(): Promise<void>
 ```
+
+### Set auto-refresh interval
+
+Configure automatic periodic refreshing of targeting data. When enabled, the SDK automatically re-fetches decide data, end user store, and reloads configuration at the specified interval. This is useful for long-running sessions where user state or targeting rules may change. A common use case is desktop applications, where pages reload less frequently than in browser environments.
+
+```js
+engagement.setAutoRefreshInterval(intervalSeconds?: number): void
+```
+
+| Parameter         | Type     | Description                                                                                                                                                                       |
+| ----------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `intervalSeconds` | `number` | Optional. The interval in seconds for auto-refresh. Must be 60 seconds or greater when enabled. If not specified, 0, or negative, auto-refresh is disabled. |
+
+```js
+// Set auto-refresh to every hour
+window.engagement.setAutoRefreshInterval(3600);
+
+// Set auto-refresh to every 30 minutes
+window.engagement.setAutoRefreshInterval(1800);
+
+// Disable auto-refresh
+window.engagement.setAutoRefreshInterval(0);
+```
+
+You can also enable auto-refresh during boot by setting the `autoRefreshIntervalSeconds` option:
+
+```js
+await window.engagement.boot({
+  user: {
+    user_id: "user123",
+    device_id: "device456"
+  },
+  autoRefreshIntervalSeconds: 3600
+});
+```
+
+{{partial:admonition type="note" heading="Minimum interval"}}
+The auto-refresh interval must be 60 seconds or greater. If you specify a value less than 60 seconds, auto-refresh is disabled and the SDK logs a warning.
+{{/partial:admonition}}
 
 ## Styling SDK methods
 
