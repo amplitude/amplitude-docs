@@ -215,7 +215,25 @@ When all batches for the persona group are complete, invoke `/taxonomy-nav`:
 
 Wait for the Taxonomy agent to complete before proceeding. Review its report.
 
-## Step 7: After taxonomy — run the QA Sampler
+## Step 6.5: After taxonomy — spawn the Nav Layout agent
+
+When the Taxonomy & Navigation agent completes, invoke `/nav-layout`:
+
+```
+/nav-layout group:<group-name> branch:<branch-name>
+```
+
+The Nav Layout agent is **read-only** — it produces a structural analysis report and makes no changes. Save its full report output to post as a PR comment in Step 8.
+
+The report covers:
+- Hierarchy depth (pages buried at depth 4+, single-child sections)
+- Coverage (orphaned pages, stale nav references)
+- URL references (direct URL fields that should use `entry:` UUID instead)
+- Persona-fit analysis (whether the nav structure serves the persona's reading goals)
+
+This agent doesn't produce a PASS/WARN/FAIL signal. Its report is always informational and doesn't block PR creation.
+
+## Step 7: After nav layout — run the QA Sampler
 
 Invoke `/validate-style`:
 
@@ -274,6 +292,15 @@ Automated bulk application of Amplitude documentation style rules to all
 Nav section titles corrected: <N>
 Frontmatter title flags for tech writer review: <N>
 Structural observations: <N> (see Taxonomy agent report in PR comments)
+
+## Nav layout
+
+Pages at depth 4+: <N>
+Single-child sections: <N>
+Orphaned pages: <N>
+Stale nav references: <N>
+Persona layout recommendations: <N>
+(see full Nav Layout Report in PR comments)
 
 ## QA sampling
 
@@ -334,5 +361,6 @@ The orchestrator reads `.claude/bulk-edit-state/progress.json` before every acti
 - `.claude/docs/personas.md` — full persona definitions
 - `.claude/skills/bulk-edit/references/collection-groups.md` — collection-to-group mapping
 - `.claude/skills/taxonomy-nav/SKILL.md` — Taxonomy & Navigation agent
+- `.claude/skills/nav-layout/SKILL.md` — Nav Layout agent (structural analysis per persona)
 - `.claude/skills/validate-style/SKILL.md` — QA sampler
 - `.claude/skills/edit-doc/SKILL.md` — core style rules (Phases 1–4)

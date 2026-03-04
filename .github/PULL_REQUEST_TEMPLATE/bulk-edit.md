@@ -33,6 +33,18 @@
 
 ---
 
+## Nav layout
+
+**Pages at depth 4+:** <!-- number, or "none" -->
+**Single-child sections:** <!-- number, or "none" -->
+**Orphaned pages:** <!-- number, or "none" -->
+**Stale nav references:** <!-- number, or "none" -->
+**Persona layout recommendations:** <!-- number, or "none" -->
+
+<!-- Paste the full Nav Layout Report here, or link to the PR comment where it was posted -->
+
+---
+
 ## QA sampling result
 
 **Files sampled:** <!-- e.g., 5 of 75 -->

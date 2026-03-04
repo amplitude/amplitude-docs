@@ -54,6 +54,7 @@ You write naturally, Claude Code formats correctly.
 │   │   └── references/
 │   │       └── collection-groups.md      # Collection → persona group mapping
 │   ├── taxonomy-nav/SKILL.md             # Update nav section labels and audit doc titles
+│   ├── nav-layout/SKILL.md               # Analyze nav structure and layout per persona
 │   └── validate-style/SKILL.md           # QA compliance sampling for bulk edits
 │
 ├── docs/                                  # Reference documentation
@@ -147,6 +148,23 @@ You write naturally, Claude Code formats correctly.
 - Reports structural observations — pages that may be misplaced in the nav hierarchy
 
 **Example**: "Update the navigation section titles for the analytics group"
+
+---
+
+### `/nav-layout`
+**Purpose**: Analyze navigation structure and layout for a persona group
+
+**When to use**: After bulk content edits, or any time you want to evaluate whether a documentation section's navigation hierarchy actually serves its intended audience
+
+**What it does**:
+- Builds a document UUID index from all files in the persona group's collections
+- Audits nav tree hierarchy for pages buried at depth 4+, and single-child sections that waste a level
+- Identifies orphaned pages (documents not linked from any nav tree) and stale references (nav entries pointing to deleted documents)
+- Flags direct URL references that should use `entry:` UUID references instead
+- Evaluates the top-level section structure against persona-specific reading goals
+- Produces a structured report suitable for PR comments — read-only, no YAML changes
+
+**Example**: "Analyze the navigation structure for the analytics group"
 
 ---
 
@@ -398,7 +416,8 @@ Both systems can run in parallel. Choose the AI assistant that fits your workflo
 
 ## Version History
 
-- **v1.1 (Current)**: Full bulk-edit system — `/bulk-edit`, `/taxonomy-nav`, `/validate-style`, `/fix-issue` added; persona-based parallel editing for 1,026 files across 8 reader personas
+- **v1.2 (Current)**: `/nav-layout` added — per-persona navigation structure analysis covering hierarchy depth, orphaned pages, stale references, and persona-fit evaluation
+- **v1.1**: Full bulk-edit system — `/bulk-edit`, `/taxonomy-nav`, `/validate-style`, `/fix-issue` added; persona-based parallel editing for 1,026 files across 8 reader personas
 - **v1.0**: Essential skills — `/document-feature`, `/validate-links`, `/edit-doc`, consolidated style rules, core workflows
 
 ## Contributing to This Configuration
