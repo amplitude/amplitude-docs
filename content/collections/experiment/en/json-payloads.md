@@ -7,6 +7,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732059600
 ---
+
 JSON payloads let you attach dynamic configuration data to experiment variants. This enables you to remotely change your application's behavior or appearance without redeploying code.
 
 With strongly typed payloads, you can define a schema for those payloads so Amplitude can validate them before they reach your application.
@@ -29,7 +30,7 @@ A typical workflow looks like this:
 
 1. **Create a variant with a payload**: Add a JSON object to a variant that defines the configuration for that experience.
 2. **Activate the flag or experiment**: Deploy the configuration to your users.
-3. **Evaluate in your application**: Use an Experiment SDK (web, mobile, backend) to fetch the variant for each user.
+3. **Evaluate in your application**: Use an Experiment SDK (web, mobile, and backend) to fetch the variant for each user.
 4. **Use the payload**: Read `variant.payload` and apply the configuration to your UI or business logic.
 
 ## Create variants with payloads
@@ -231,7 +232,7 @@ Strongly typed payloads help you:
 
 - Define the exact structure of a payload once per flag or experiment.
 - Have Amplitude validate each variant payload against that structure.
-- Catch configuration issues (missing fields, invalid values, wrong types) before they reach production.
+- Catch configuration issues (missing fields, invalid values, and wrong types) before they reach production.
 
 {{partial:admonition type="note" heading="JSON payload model"}}
 Strongly typed payloads build on the same JSON payload model and SDKs described above. How you access `variant.payload` in code doesn't change; you just gain stronger guarantees about what that payload looks like.
@@ -242,7 +243,7 @@ Strongly typed payloads build on the same JSON payload model and SDKs described 
 Strong typing is especially useful when:
 
 - Multiple teams depend on the same configuration (such as product, engineering, and solutions).
-- Payloads are complex (nested objects, arrays, enums).
+- Payloads are complex (nested objects, arrays, and enums).
 - You use flags as remote config or as layers that many experiments share.
 - You want to reduce runtime errors and make configuration safer.
 
@@ -254,8 +255,8 @@ With strongly typed payloads enabled for a flag or experiment, you can:
 
 - Types: `string`, `number`, `boolean`, `object`, `array`.
 - Allowed values (enums).
-- Required vs. optional fields.
-- Whether additional properties are allowed.
+- Required compared to optional fields.
+- Whether the schema allows additional properties.
 
 **Attach that schema** to the flag or experiment so it applies to all variants.
 
@@ -263,7 +264,7 @@ If a variant payload doesn't match the schema:
 
 - The UI shows an error on that variant.
 - You can't save the change until the payload is valid.
-- This prevents broken configuration from being deployed.
+- This prevents deploying broken configuration
 
 This complements validation in your application code instead of replacing it:
 
@@ -373,7 +374,7 @@ Always provide sensible defaults when accessing payload properties. This ensures
 
 - The user doesn't receive a variant.
 - The payload is missing expected properties.
-- The experiment is turned off.
+- You turn off the experiment.
 
 Examples:
 
@@ -385,7 +386,7 @@ const showDescription = variant?.payload?.showDescription !== false;
 
 ### 2. Validate payload structure
 
-Even with strongly typed payloads, it's a good idea to validate payloads in your application:
+Even with strongly typed payloads, you should validate payloads in your application:
 
 ```javascript
 function validateLayoutPayload(payload: any): boolean {
@@ -506,6 +507,3 @@ When you access a variant from the SDK or Evaluation API, you can use the `value
 The Management API or Amplitude UI provides other variant properties like `name` and `description`.
 
 For more information about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
-
-
-
