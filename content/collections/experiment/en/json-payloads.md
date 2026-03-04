@@ -66,7 +66,7 @@ To add a payload when creating or editing a variant:
 
 {{/partial:admonition}}
 
-For more details on creating variants in the UI, see [Create variations](/docs/feature-experiment/experiment-quick-start#creating-variations).
+For more details on creating variants in the UI, go to [Create variations](/docs/feature-experiment/experiment-quick-start#creating-variations).
 
 ### Through the Management API
 
