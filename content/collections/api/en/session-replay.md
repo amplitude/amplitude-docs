@@ -220,7 +220,10 @@ The result is a JSON array of rrweb events:
 
 ### Version 2
 
-Version 2 files have an extra packing layer. After the outer gzip decompress and JSON parse, you get an array of **strings** rather than event objects. Each string is a JSON-encoded, zlib-compressed (DEFLATE) binary payload that you need to unpack to get the rrweb event.
+Version 2 files require two decompression steps:
+
+1. **gzip decompress** the file, then JSON parse → array of packed strings
+2. **zlib decompress** each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object
 
 {{partial:tabs tabs="JavaScript, Python"}}
 {{partial:tab name="JavaScript"}}
