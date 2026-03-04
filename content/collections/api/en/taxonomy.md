@@ -579,6 +579,7 @@ A successful request returns a `200 OK` status with a JSON body:
                 "name": "Attribution Events"
             },
             "description": null,
+            "display_name": null,
             "is_active": false,
             "is_hidden_from_dropdowns": false,
             "is_hidden_from_persona_results": false,
@@ -593,6 +594,7 @@ A successful request returns a `200 OK` status with a JSON body:
                 "name": "Conversion Events"
             },
             "description": "This event is fired when a user converts.",
+            "display_name": "User Conversion",
             "is_active": false,
             "is_hidden_from_dropdowns": false,
             "is_hidden_from_persona_results": false,
@@ -668,6 +670,7 @@ A successful request returns a `200 OK` status and a JSON body with the event ty
             "name": "Conversion Events"
         },
         "description": null,
+        "display_name": null,
         "is_active": false,
         "is_hidden_from_dropdowns": false,
         "is_hidden_from_persona_results": false,
