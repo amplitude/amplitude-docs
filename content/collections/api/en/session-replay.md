@@ -170,18 +170,22 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 ## Decompress and parse replay files
 
-Each URL in the `files` array points to a gzip-compressed file. Decompress it to get a JSON array of [rrweb](https://github.com/rrweb-io/rrweb) events, which you can pass directly to an rrweb player.
+The format of each file depends on the `version` you requested.
+
+### Version 3
+
+Each file is gzip-compressed. Decompress it to get a JSON array of [rrweb](https://github.com/rrweb-io/rrweb) events ready to pass to an rrweb player.
 
 {{partial:tabs tabs="JavaScript, Python, cURL"}}
 {{partial:tab name="JavaScript"}}
 ```javascript
-const pako = require('pako');
-
 async function fetchReplayEvents(fileUrl) {
   const response = await fetch(fileUrl);
+  // The response is gzip-compressed; fetch decompresses automatically in browsers.
+  // In Node.js 18+, use the DecompressionStream API or the zlib module.
   const buffer = await response.arrayBuffer();
-  const decompressed = pako.inflate(new Uint8Array(buffer), { to: 'string' });
-  return JSON.parse(decompressed); // array of rrweb events
+  const text = new TextDecoder().decode(buffer);
+  return JSON.parse(text); // array of rrweb events
 }
 ```
 {{/partial:tab}}
@@ -199,13 +203,12 @@ def fetch_replay_events(file_url):
 {{/partial:tab}}
 {{partial:tab name="cURL"}}
 ```bash
-# Download and decompress a single file
 curl -s '{presigned_url}' | gunzip | python3 -m json.tool
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The decompressed content is a JSON array of rrweb events:
+The result is a JSON array of rrweb events:
 
 ```json
 [
@@ -215,7 +218,39 @@ The decompressed content is a JSON array of rrweb events:
 ]
 ```
 
-To replay events across multiple files, fetch all files for a replay in order and concatenate the event arrays before passing them to the rrweb player.
+### Version 2
+
+Version 2 files have an extra packing layer. After the outer gzip decompress and JSON parse, you get an array of **strings** rather than event objects. Each string is a JSON-encoded, zlib-compressed (DEFLATE) binary payload that you need to unpack to get the rrweb event.
+
+```javascript
+const zlib = require('zlib');
+
+async function fetchReplayEventsV2(fileUrl) {
+  const response = await fetch(fileUrl);
+  const buffer = Buffer.from(await response.arrayBuffer());
+
+  // Step 1: gzip decompress the file, then JSON parse → array of packed strings
+  const packedStrings = JSON.parse(zlib.gunzipSync(buffer).toString('utf8'));
+
+  // Step 2: unpack each string
+  return packedStrings.map((packed) => {
+    // Each packed string is itself a JSON string whose value is a latin1-encoded
+    // binary blob of zlib-compressed event data.
+    const compressedBinary = JSON.parse(packed);
+    const buf = Buffer.from(compressedBinary, 'latin1');
+    return JSON.parse(zlib.inflateSync(buf).toString('utf8')); // rrweb event
+  });
+}
+```
+
+### Playing back events
+
+To replay a full session, fetch all files for a replay in order, unpack each one, concatenate the event arrays, and pass the result to an rrweb player:
+
+```javascript
+const events = (await Promise.all(fileUrls.map(fetchReplayEvents))).flat();
+rrweb.replay({ events, root: document.getElementById('player') });
+```
 
 ## Status and error codes
 
