@@ -17,7 +17,7 @@ Amplitude's **Pathfinder Users** chart shows you the "paths" your users are taki
 * Read the article about [building charts in Amplitude](/docs/get-started/helpful-definitions). 
 * Learn the difference between active and inactive events, as Pathfinder Users' charts hide inactive events by default.
 
-You should also keep in mind that all paths in Pathfinder Users are tracked in individual sessions. This means that if you're sending Amplitude events via the [HTTP API](/docs/apis/analytics/http-v2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
+You should also keep in mind that all paths in Pathfinder Users are tracked in individual sessions. This means that if you're sending Amplitude events through the [HTTP API](/docs/apis/analytics/http-v2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
 
 ## Set up a Pathfinder Users chart
 
