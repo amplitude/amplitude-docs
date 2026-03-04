@@ -277,7 +277,7 @@ This complements validation in your application code instead of replacing it:
 
 ### Example: blog layout payload schema
 
-Earlier we looked at a free-form blog layout payload:
+In the previous example of free-form blog layout payload:
 
 ```json
 {
