@@ -506,7 +506,7 @@ Test different content approaches:
 When you access a variant from the SDK or Evaluation API, you can use the `value` and `payload` properties:
 
 - `value`: the variant's value (for example, "on" or "off" or "control" or "treatment").
-- `payload` – the attached JSON configuration.
+- `payload`: the attached JSON configuration.
 
 The Management API or Amplitude UI provides other variant properties like `name` and `description`.
 
