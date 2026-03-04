@@ -714,7 +714,7 @@ engagement.decide(): Promise<void>
 
 ### Set auto-refresh interval
 
-Configure automatic periodic refreshing of targeting data. When enabled, the SDK automatically re-fetches decide data, end user store, and reloads configuration at the specified interval. This is useful for long-running sessions where user state or targeting rules may change.
+Configure automatic periodic refreshing of targeting data. When enabled, the SDK automatically re-fetches decide data, end user store, and reloads configuration at the specified interval. This is useful for long-running sessions where user state or targeting rules may change. A common use case is desktop applications, where pages reload less frequently than in browser environments.
 
 ```js
 engagement.setAutoRefreshInterval(intervalSeconds?: number): void
