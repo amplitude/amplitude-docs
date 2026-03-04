@@ -242,7 +242,7 @@ Strongly typed payloads help you:
 Strongly typed payloads build on the same JSON payload model and SDKs described above. How you access `variant.payload` in code doesn't change; you just gain stronger guarantees about what that payload looks like.
 {{/partial:admonition}}
 
-### Why use strongly typed payloads?
+### Strongly typed payloads use cases
 
 Strong typing is especially useful when:
 
