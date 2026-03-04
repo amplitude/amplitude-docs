@@ -2,11 +2,6 @@
 id: a8f9c2d1-5b3e-4a7c-9d2f-1e6b8c4a5d7f
 blueprint: experiment
 title: 'JSON payloads'
-this_article_will_help_you:
-  - 'Attach JSON payloads to variants in the UI and through the Management API'
-  - 'Access payloads from the Experiment SDKs'
-  - 'Apply best practices for using payloads safely'
-  - 'Use strongly typed payloads (advanced) to enforce consistent, validated payload structures'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -14,7 +9,7 @@ updated_at: 1732059600
 ---
 JSON payloads let you attach dynamic configuration data to experiment variants. This enables you to remotely change your application's behavior or appearance without redeploying code.
 
-With strongly typed payloads, you can go a step further and define a schema for those payloads so Amplitude can validate them before they reach your application.
+With strongly typed payloads, you can define a schema for those payloads so Amplitude can validate them before they reach your application.
 
 ## How JSON payloads work
 
