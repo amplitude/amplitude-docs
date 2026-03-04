@@ -88,7 +88,7 @@ Project-level permissions are available to customers on Growth and Enterprise pl
 
 When viewing all members of your organization, Amplitude lists members as either *User* or *Admin*. If you're an Admin or Manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting *Manage Project Access*. Managers can only modify a user's role for the project where they're a Manager.
 
-Reach out to your Customer Success Manager to enable project-level permissions, as this isn't enabled by default.
+Reach out to your Customer Success Manager to enable project-level permissions, as Amplitude doesn't enable this by default.
 
 ### Transfer ownership of content from one user to another
 
@@ -102,7 +102,7 @@ This process can't be reversed, so use it with care.
 
 You can also transfer content when you're removing a user. Check the box on the *Remove Members?* modal, and Amplitude provides the option to transfer each removed user's content to another existing user.
 
-You can only transfer a user's content **before** they're deleted from the organization. The user who receives the content must have logged into Amplitude at least once in the 30 days prior, and you may have to explicitly grant them the permissions they need to access the content you've given them.
+You can only transfer a user's content **before** Amplitude deletes them from the organization. The user who receives the content must have logged into Amplitude at least once in the 30 days prior, and you may have to explicitly grant them the permissions they need to access the content you've given them.
 
 ## Request an email domain change
 
@@ -110,7 +110,7 @@ Before doing an email domain migration:
 
 * **Migrated items**: Permissions levels including App-Level Permissions, Admin Status, Group Membership; and content including Cohorts, Charts, Dashboards, and Notebooks
 * **Non-migrated items**: User spaces and the content contained within these spaces
-* **Active user impact**: Anyone in an active session redirects to an error page. Let your team know they may not have access to Amplitude during the domain change.
+* **Active user impact**: Anyone in an active session gets redirected to an error page. Let your team know they may not have access to Amplitude during the domain change.
 * **Turn off SSO**: If you have SSO enabled in your organization, turn it off before the migration. You have to set up SSO again after the migration.
 
 To request an email domain change, submit a [ticket](https://help.amplitude.com/hc/en-us/requests/new) with the following information:
@@ -119,4 +119,4 @@ To request an email domain change, submit a [ticket](https://help.amplitude.com/
 * The old email domain
 * The new email domain
 
-An admin must request email domain changes. If you aren't an admin of the organization, CC an admin in your request.
+An admin must request email domain changes. If you aren't an admin of the organization, copy an admin on your request.

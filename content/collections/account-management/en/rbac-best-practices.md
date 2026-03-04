@@ -7,7 +7,7 @@ exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1761596446
 ---
-Amplitude’s Role-based Access Controls (RBAC) system unifies permissions across all Amplitude products and features. This guide describes best practices for designing and governing access at the project level, and not separately for each project.
+Amplitude’s Role-based Access Controls (RBAC) system unifies permissions across all Amplitude products and features. This guide describes best practices for designing and governing access at the project level.
 
 ## Projects in Amplitude
 
@@ -29,8 +29,8 @@ Groups are the foundation for managing access at scale. In Amplitude, a group de
 
 All members of a group inherit the same set of permissions for the same projects. This helps simplify onboarding, offboarding, and audits.
 
-{{partial:admonition type="tip" heading="Don’t mix management methods"}}  
-If a user belongs to a group, ensure their permissions derive from that group, and aren’t manually overridden.  
+{{partial:admonition type="tip" heading="Don’t mix management methods"}}
+If a user belongs to a group, ensure their permissions derive from that group, and aren’t manually overridden.
 {{/partial:admonition}}
 
 ### Use direct role assignment only when necessary
@@ -72,14 +72,14 @@ Groups are the foundation of scalable access in Amplitude’s RBAC system. Ampli
 
 #### Anchor groups to both workflow and project scope
 
-As you plan your groups, make sure to design groups that capture:
+As you plan your groups, design groups that capture:
 
-* How teams in your organization use Amplitude.  
+* How teams in your organization use Amplitude.
 * The projects each team should access.
 
-In other words, consider both the team’s function or use case, and the data or product context they need to do their job.
+Consider both the team’s function or use case, and the data or product context they need to do their job.
 
-Ensure each group describes what the members of the group do, and where they do it.
+Ensure each group describes what the members of the group do and where they do it.
 
 #### Keep groups project-scoped and purposeful
 

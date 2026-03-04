@@ -11,11 +11,11 @@ Administrators in your organization can create new roles and update existing rol
 
 Amplitude recommends you follow the principle of least privilege. This states that when you create or edit a role, grant the minimum necessary permissions that enable a user with that role to do their job. Adding “just in case” permissions can open unnecessary security risks. Amplitude’s RBAC system is flexible, so you can update roles to add permissions later, as needed.
 
-## Creating a new role
+## Create a new role
 
 If you’re an org administrator, navigate to *Org Settings > Role Management*. This page lists existing roles in your organization and includes a description, the type of role, and the user who last modified the role.
 
-##### Creating a new role
+##### Create a new role
 
 1. Click **+New Role.**  
 2. Provide a Role Name and Description. Amplitude recommends using a descriptive role name with a maximum of 30 characters, like “Analyst” or “Marketing,” and a short description of the role. 
@@ -35,10 +35,10 @@ After you create a role, it’s immediately available to assign to users or grou
 
 Org administrators can edit and update existing roles following the same flow as creating a new role. Navigate to *Org Settings > Role Management* to begin.
 
-##### Editing a role
+##### Edit a role
 
 1. Click the role to edit.  
 2. Update the permissions on the role.  
 3. Click **Save**.
 
-Upon saving the role, the permissions update applies immediately to users with that role assignment. Before you update a role, Amplitude recommends that you audit where your organization uses that role to help minimize disruption.  
+After you save the role, the permissions update applies immediately to users with that role assignment. Before you update a role, Amplitude recommends that you audit where your organization uses that role to help minimize disruption.

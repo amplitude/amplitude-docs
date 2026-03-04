@@ -8,9 +8,9 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715294338
 ---
-With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization. 
+With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization.
 
-For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. All users assigned to a group receives that group's permissions. You can assign users to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
+For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. All users assigned to a group receive that group's permissions. You can assign users to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
 
 Amplitude grants the highest level of permissions assigned to a user. When you assign a user to a group, they inherit its project permissions. If a user has their own set of project permissions, their new set of permissions are a combination of the two, with projects taking on the highest role.
 
@@ -18,8 +18,8 @@ Amplitude grants the highest level of permissions assigned to a user. When you a
 ## Before you begin
 
 * Only Admins in the organization can edit groups.
-* Permission groups can be managed through the [User Management API](/docs/admin/account-management/scim-provision) (a SCIM API).
-* You should be familiar with Amplitude's [user permissions model](/docs/admin/account-management/user-roles-permissions) before proceeding.
+* Manage permission groups through the [User Management API](/docs/admin/account-management/scim-provision) (a SCIM API).
+* Familiarize yourself with Amplitude's [user permissions model](/docs/admin/account-management/user-roles-permissions) before proceeding.
 
 {{partial:admonition type='note'}}
 Permission groups are different from [team spaces](/docs/analytics/collaborate-with-spaces). Permission groups control project-level access across the organization (Admin-only feature), while team spaces are collaborative workspaces that Members, Managers, and Admins can all create and manage.
@@ -63,7 +63,7 @@ When [inviting new users](/docs/admin/account-management/manage-users) to your o
 
 ## Things to consider when assigning user permissions
 
-You can assign user permissions either through groups, or individually through User Management. Admins should decide on a method for assigning user permissions, whether it's one method over the other or a hybrid of the two. The table below contains information to help decide which method is best suited for your organization. 
+You can assign user permissions either through groups, or individually through User Management. Admins should decide on a method for assigning user permissions, whether it's one method over the other or a hybrid of the two. The table below contains information to help you decide which method is best suited for your organization.
 
 | **Method** | **Pros** | **Cons** |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ You can assign user permissions either through groups, or individually through U
 | User Management | Customized permissions for each user. | Difficult to manage at larger scales. Difficult to keep organized.  |
 | Hybrid | Benefits of both methods - organization and scale along with individually assigned permissions for one-off cases. | Difficult to know which assignment is the source of truth.  |
 
-If your organization uses third-party identity and access management software (for example, Okta, Google Workspace, SailPoint), you can integrate these with Amplitude in the future. Consider setting up groups within Amplitude that align with the company structure and standard sets of permissions and roles in your organization. Access management integrations can only be managed through groups. 
+If your organization uses third-party identity and access management software (for example, Okta, Google Workspace, SailPoint), you can integrate these with Amplitude. Consider setting up groups within Amplitude that align with the company structure and standard sets of permissions and roles in your organization. Amplitude manages access management integrations only through groups. 
 
 ## Example scenarios
 
@@ -82,7 +82,7 @@ When a user has multiple permission levels for a single project (either through 
 * You can individually upgrade Oleg to a higher role through User Management.
 * If you later decide to re-assign Oleg to the lower-level Member role, you can individually downgrade him to that permission level.
 
-If you assign permissions to a user through User Management, those permissions can't be removed, downgraded, or limited through a group's permission levels. Conversely, if you assign permissions to a user through membership in a group, those permissions can't be removed, downgraded, or limited through User Management.
+If you assign permissions to a user through User Management, a group can't remove, downgrade, or limit those permissions. Conversely, if you assign permissions to a user through membership in a group, User Management can't remove, downgrade, or limit those permissions.
 
 **Example B**: Akiko is a Manager of a project through membership in a group with Manager-level permissions.
 
@@ -96,7 +96,7 @@ If you remove a user from a group, Amplitude revokes the permissions granted thr
 * If you remove Marco from the group, he's only a Viewer for Project A.
 * If you add Marco back to the group later, he recovers the union of all the user-specified and group-specified permissions—in this case, he becomes a Manager for Project A and Project B again.
 
-If you don't assign any permissions to a user individually or through group membership, that user can't view any content within your Amplitude organization.
+If you don't assign any permissions to a user individually or through group membership, that user can't view any content in your Amplitude organization.
 
 **Example D**: Tyra doesn't have any individually assigned project permissions but belongs to a group that grants Member permissions for Project A.
 

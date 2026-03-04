@@ -48,7 +48,7 @@ To revoke an API key, follow these steps:
 1. Select the API key.
 2. Confirm that you want to revoke the key.
 
-After you click **Revoke**, the key is permanently unusable. You still retain the API key for your records.
+After you click **Revoke**, the key becomes permanently unusable. You still retain the API key for your records.
 
 ## Secret key (Beta)
 
