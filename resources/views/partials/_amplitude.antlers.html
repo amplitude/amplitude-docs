@@ -7,8 +7,19 @@
     }));
     window.amplitude.init('{{config:app:analytics-key}}', {
         "fetchRemoteConfig": true,
-        "autocapture": true,
-        "optOut": true
+        "optOut": true,
+        "autocapture": {
+            "attribution": {
+                "excludeInternalReferrers": true,
+            },
+            "pageViews": true,
+            "sessions": true,
+            "formInteractions": true,
+            "fileDownloads": true,
+            "elementInteractions": true,
+            "pageUrlEnrichment": true,
+            "webVitals": true,
+        },
     });
      
     window.amplitude.add(window.engagement.plugin())
