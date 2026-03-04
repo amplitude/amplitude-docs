@@ -168,6 +168,55 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 | `files` | Array of presigned S3 URLs. Each URL serves a gzip-compressed JSON array of rrweb events. URLs expire after 15 minutes. |
 | `next_page_token` | Opaque cursor to pass as `page_token` to retrieve the next page. `null` when there are no more files. |
 
+## Decompress and parse replay files
+
+Each URL in the `files` array points to a gzip-compressed file. Decompress it to get a JSON array of [rrweb](https://github.com/rrweb-io/rrweb) events, which you can pass directly to an rrweb player.
+
+{{partial:tabs tabs="JavaScript, Python, cURL"}}
+{{partial:tab name="JavaScript"}}
+```javascript
+const pako = require('pako');
+
+async function fetchReplayEvents(fileUrl) {
+  const response = await fetch(fileUrl);
+  const buffer = await response.arrayBuffer();
+  const decompressed = pako.inflate(new Uint8Array(buffer), { to: 'string' });
+  return JSON.parse(decompressed); // array of rrweb events
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Python"}}
+```python
+import gzip
+import json
+import urllib.request
+
+def fetch_replay_events(file_url):
+    with urllib.request.urlopen(file_url) as response:
+        decompressed = gzip.decompress(response.read())
+    return json.loads(decompressed)  # list of rrweb events
+```
+{{/partial:tab}}
+{{partial:tab name="cURL"}}
+```bash
+# Download and decompress a single file
+curl -s '{presigned_url}' | gunzip | python3 -m json.tool
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The decompressed content is a JSON array of rrweb events:
+
+```json
+[
+  { "type": 4, "data": { "href": "https://example.com", "width": 1440, "height": 900 }, "timestamp": 1700000000000 },
+  { "type": 2, "data": { ... }, "timestamp": 1700000000050 },
+  ...
+]
+```
+
+To replay events across multiple files, fetch all files for a replay in order and concatenate the event arrays before passing them to the rrweb player.
+
 ## Status and error codes
 
 | Code | Description |
