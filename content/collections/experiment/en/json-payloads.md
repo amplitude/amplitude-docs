@@ -510,7 +510,7 @@ When you access a variant from the SDK or Evaluation API, you can use the `value
 
 The Management API or Amplitude UI provides other variant properties like `name` and `description`.
 
-For more information about the variant data model, see [Variants](/docs/feature-experiment/data-model#variants).
+For more information about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
 
 
 
