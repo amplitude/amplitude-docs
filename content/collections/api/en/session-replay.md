@@ -174,7 +174,7 @@ The format of each file depends on the `version` you requested.
 
 ### Version 3
 
-Each file is gzip-compressed. Decompress it to get a JSON array of [rrweb](https://github.com/rrweb-io/rrweb) events ready to pass to an rrweb player.
+Each file is gzip-compressed. Decompress it to get a JSON array of [rrweb](https://github.com/amplitude/rrweb) events ready to pass to an rrweb player.
 
 {{partial:tabs tabs="JavaScript, Python, cURL"}}
 {{partial:tab name="JavaScript"}}
@@ -272,7 +272,7 @@ def fetch_replay_events_v2(file_url):
 
 ### Playing back events
 
-To replay a full session, fetch all files for a replay in order, unpack each one, concatenate the event arrays, and pass the result to an rrweb player:
+To replay a full session, fetch all files for a replay in order, unpack each one, concatenate the event arrays, and pass the result to Amplitude's [rrweb player](https://github.com/amplitude/rrweb). Use Amplitude's fork rather than upstream rrweb, as it includes fixes that may be incompatible with the upstream version.
 
 ```javascript
 const events = (await Promise.all(fileUrls.map(fetchReplayEvents))).flat();
