@@ -41,7 +41,7 @@ After you have connected your Slack workspace to Amplitude, you can create notif
 
 ##### To set up an alert
 
-1. Go to *Settings > Projects*, select your project, then click *Guides & Surveys*.
+1. Go to *Settings > Projects*, select your project, then click **Guides & Surveys**.
 You can also click the bell icon on the *Guides & Surveys* list page and choose **Add Alert**.
 2. Expand the **Alerts** card and click **Add Alert**.
 3. Set the scope. You can select one of:
