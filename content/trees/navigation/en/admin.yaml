@@ -1,7 +1,7 @@
 tree:
   -
     id: fb2b22a3-8b3e-4d8a-a6a6-a4d6aaf3d109
-    title: 'Billing and Use'
+    title: 'Billing and use'
     children:
       -
         id: f2553bce-1855-45a9-a856-797e334a3f4a
@@ -11,7 +11,7 @@ tree:
         entry: f8f8b50e-f22a-4c92-8845-01e630b6f7d6
   -
     id: 4ce1cee2-0a32-4938-a3e6-9b818e524cdb
-    title: 'Account Management'
+    title: 'Account management'
     children:
       -
         id: ec3607bf-554f-4c79-a277-82e552390c08
@@ -54,7 +54,7 @@ tree:
         entry: 64462898-6686-4899-8bbe-4d29d8a97f3f
       -
         id: 3d44e3ee-ae41-4cdf-b8ac-0ceaf55701e6
-        title: 'Role-based Access Controls (RBAC)'
+        title: 'Role-based access controls (RBAC)'
         children:
           -
             id: e60822d8-2a30-45a2-a896-a04bba92aafc
@@ -67,7 +67,7 @@ tree:
             entry: 90fa43b0-481f-49b4-bb5f-55afbb2edf35
   -
     id: b7d5e9b1-b4a2-4d33-a7db-0386a2290ef7
-    title: 'Single Sign-on'
+    title: 'Single sign-on'
     data:
       open_collapsed: true
     children:
