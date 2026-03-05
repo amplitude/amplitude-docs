@@ -49,7 +49,7 @@ You can update or create another page to any Web experiment.
 
 ### Page triggers
 
-{{partial:admonition type="Note" heading="Beta Feature"}}
+{{partial:admonition type="Note" heading="Beta"}}
 Page triggers is a Beta feature.
 During the Beta phase, the feature may evolve and change from this documentation. 
 {{/partial:admonition}}
