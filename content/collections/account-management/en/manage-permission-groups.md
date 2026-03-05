@@ -8,9 +8,9 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715294338
 ---
-With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization. 
+With permission groups, you can assign multiple users sets of permissions in a single step, based on membership in a specific group, streamlining the process of provisioning and managing your Amplitude organization.
 
-For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. All users assigned to a group receives that group's permissions. You can assign users to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
+For example, you might create groups like "Marketing Team" or "Payments Team," add users to them, and assign project permissions to each group, instead of to each individual team member. All users assigned to a group receive that group's permissions. You can assign users to multiple groups, and the only way to change a specific group member's permission level is to remove them from the group.
 
 Amplitude grants the highest level of permissions assigned to a user. When you assign a user to a group, they inherit its project permissions. If a user has their own set of project permissions, their new set of permissions are a combination of the two, with projects taking on the highest role.
 
@@ -63,19 +63,19 @@ When [inviting new users](/docs/admin/account-management/manage-users) to your o
 
 ## Things to consider when assigning user permissions
 
-You can assign user permissions either through groups, or individually through User Management. Admins should decide on a method for assigning user permissions, whether it's one method over the other or a hybrid of the two. The table below contains information to help decide which method is best suited for your organization. 
+You can assign user permissions either through groups, or individually through User Management. Admins should decide on a method for assigning user permissions, whether it's one method over the other or a hybrid of the two. The table below contains information to help decide which method is best suited for your organization.
 
 | **Method** | **Pros** | **Cons** |
 | --- | --- | --- |
 | Groups | Organize permissions and scale. Integrate with other permissions models in the future.  | Harder to manage individual overrides to user permissions. Requires creating a new Group for exceptions. |
-| User Management | Customized permissions for each user. | Difficult to manage at larger scales. Difficult to keep organized.  |
-| Hybrid | Benefits of both methods - organization and scale along with individually assigned permissions for one-off cases. | Difficult to know which assignment is the source of truth.  |
+| User Management | Customized permissions for each user. | Difficult to manage at larger scales. Difficult to keep organized.  |
+| Hybrid | Benefits of both methods - organization and scale along with individually assigned permissions for one-off cases. | Difficult to know which assignment is the source of truth.  |
 
-If your organization uses third-party identity and access management software (for example, Okta, Google Workspace, SailPoint), you can integrate these with Amplitude in the future. Consider setting up groups within Amplitude that align with the company structure and standard sets of permissions and roles in your organization. Access management integrations can only be managed through groups. 
+If your organization uses third-party identity and access management software (for example, Okta, Google Workspace, SailPoint), you can integrate these with Amplitude in the future. Consider setting up groups within Amplitude that align with the company structure and standard sets of permissions and roles in your organization. Access management integrations can only be managed through groups.
 
 ## Example scenarios
 
-When a user has multiple permission levels for a single project (either through group membership or individual assignment), the user enjoys the highest permission level available to them. 
+When a user has multiple permission levels for a single project (either through group membership or individual assignment), the user enjoys the highest permission level available to them.
 
 **Example A**: You assign Oleg to a group that provides Member permissions to a project.
 
@@ -88,7 +88,7 @@ If you assign permissions to a user through User Management, those permissions c
 
 * You can't individually downgrade Akiko to a Member or Viewer through User Management.
 
-If you remove a user from a group, Amplitude revokes the permissions granted through the group. If a user also has project permissions through User Management, those permissions remain intact. 
+If you remove a user from a group, Amplitude revokes the permissions granted through the group. If a user also has project permissions through User Management, those permissions remain intact.
 
 **Example C**: You individually assign Marco Viewer permissions for Project A. Marco also receives Manager permissions for Project A and Project B through group membership.
 

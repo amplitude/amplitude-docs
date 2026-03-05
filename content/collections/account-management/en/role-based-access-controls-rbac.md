@@ -12,14 +12,14 @@ academy_course:
 ---
 Role-based Access Control (RBAC) lets you manage who can access specific areas of Amplitude and the actions they can perform in those areas. By offering granular access controls, your Amplitude administrators can scale Amplitude adoption and prevent unauthorized actions.
 
-RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and is assigned `Analyst`, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
+RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and Amplitude assigns them the `Analyst` role, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
 
-RBAC Provides the following benefits to your enterprise:
+RBAC provides the following benefits to your enterprise:
 
-* **Improved security**: Limit data access based on job responsibilities.  
-* **Operational efficiency**: Simplify user management across large organizations.  
-* **Compliance support**: Supports regulatory requirements around access control and auditing.  
-* **Scalability**: Manages access for growing teams and multiple business units. 
+* **Improved security**: Limit data access based on job responsibilities.
+* **Operational efficiency**: Simplify user management across large organizations.
+* **Compliance support**: Supports regulatory requirements around access control and auditing.
+* **Scalability**: Manages access for growing teams and multiple business units.
 
 {{partial:admonition type="note" heading="Feature availability"}}
 
@@ -37,18 +37,18 @@ Amplitude's RBAC contains three main layers: Roles, Permissions, and Actions. Ro
 
 By default, your Amplitude organization contains four default roles, in order of increasing access:
 
-* Viewer  
-* Member  
-* Manager  
-* Admin
+* Viewer.
+* Member.
+* Manager.
+* Admin.
 
-{{partial:admonition type="tip" heading="Admin role"}}   
-The Administrator (Admin) role is the only default role that doesn’t support updating permissions. If you require administrators to carry different permissions in your org, create a new role to reflect those permissions.  
+{{partial:admonition type="tip" heading="Admin role"}}
+The Administrator (Admin) role is the only default role that doesn't support updating permissions. If you require administrators to carry different permissions in your org, create a new role to reflect those permissions.
 {{/partial:admonition}}
 
-Amplitude’s default roles cover most common use cases, but every organization has unique structures and responsibilities. Custom roles enable your organization to fine tune access for:
+Amplitude's default roles cover most common use cases, but every organization has unique structures and responsibilities. Custom roles enable your organization to fine tune access for:
 
-* Specialized teams, for example Growth Engineering or Data Governance, can have finely scoped permissions.  
+* Specialized teams, for example Growth Engineering or Data Governance, can have finely scoped permissions.
 * Hybrid roles created for employees who straddle functions. For example, a product manager who is also in charge of creating official dashboards and metrics.
 
 This flexibility enables your organization to follow the security best practice of providing the least amount of access that enables users to complete their work.
@@ -59,34 +59,34 @@ The Admin role has special permissions that custom roles don't have.
 
 Admin-only permissions include:
 
-- Modify discovery settings at org level
-- Change the organization's master password
-- Modify organization admin assignments
-- Change the organization's subscription plan
-- Modify query time sampling rules
-- Change event sampling rules
-- Configure Single Sign-On settings
-- Permanently delete the organization
-- Edit permission groups/settings
-- Full administrative access flag
-- Invite users with restrictions
-- Transfer org ownership
+- Modify discovery settings at org level.
+- Change the organization's master password.
+- Modify organization admin assignments.
+- Change the organization's subscription plan.
+- Modify query time sampling rules.
+- Change event sampling rules.
+- Configure Single Sign-On settings.
+- Permanently delete the organization.
+- Edit permission groups/settings.
+- Full administrative access flag.
+- Invite users with restrictions.
+- Transfer org ownership.
 
 ### Permissions
 
-Permissions define the specific actions Amplitude users can perform. They’re the building blocks of RBAC. Most permissions define a user’s ability to create, edit, or delete items in specific areas. Some permissions provide access to a single action, like marking a dashboard or metric as official.
+Permissions define the specific actions Amplitude users can perform. They're the building blocks of RBAC. Most permissions define a user's ability to create, edit, or delete items in specific areas. Some permissions provide access to a single action, like marking a dashboard or metric as official.
 
 Amplitude organizes permissions by product area:
 
-* Administration  
-* Charts & Metrics  
-* Data Management  
-* Audiences  
-* Integrations  
-* Session Replay & Heatmaps  
-* Experiment  
-* Guides & Surveys  
-* Resource Center & Content
+* Administration.
+* Charts & Metrics.
+* Data Management.
+* Audiences.
+* Integrations.
+* Session Replay & Heatmaps.
+* Experiment.
+* Guides & Surveys.
+* Resource Center & Content.
 
 ### Projects
 
@@ -105,7 +105,7 @@ When you try to modify permissions for a user who has group-assigned access, a t
 To change a user's permissions for projects they access through a group:
 
 - Remove the user from the group and assign permissions directly, or
-- Modify the group's permissions for that project
+- Modify the group's permissions for that project.
 
 ### Permission assignment warnings
 
@@ -121,8 +121,8 @@ The **ACCESS VIA** column in the User Overview panel indicates how a user receiv
 
 | Access Via   | Meaning                                                                        |
 | ------------ | ------------------------------------------------------------------------------ |
-| Direct       | Role was assigned to the user directly through the Manage Project Access modal |
-| [Group Name] | Role was assigned to the user through membership in the specified group        |
+| Direct       | Role was assigned to the user directly through the Manage Project Access modal. |
+| [Group Name] | Role was assigned to the user through membership in the specified group.        |
 
 ## RBAC permission reference
 

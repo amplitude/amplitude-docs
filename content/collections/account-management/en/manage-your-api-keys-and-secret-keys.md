@@ -8,7 +8,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721166679
 ---
 
-Amplitude’s self-service key management page helps Managers & Admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
+Amplitude's self-service key management page helps Managers & Admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
 
 You can:
 
@@ -35,7 +35,7 @@ The first time you use API key management, you see the legacy API key in the *AP
 
 To generate an API key, follow these steps:
 
-1. Select the project you’re interested in.
+1. Select the project you're interested in.
 2. Click **Generate API Key**.
 3. Name the API key.
 
@@ -64,7 +64,7 @@ To generate a secret key, follow these steps:
 
 ### Delete a secret key
 
-To delete a secret key, select the secret key you want to delete, then type “DELETE” to confirm your intent.
+To delete a secret key, select the secret key you want to delete, then type "DELETE" to confirm your intent.
 
 You can't use, see, or recover a secret key after deleting it.
 

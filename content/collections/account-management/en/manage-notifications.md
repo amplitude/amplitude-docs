@@ -8,14 +8,14 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715292146
 ---
-In order to comply with GDPR and other user privacy regulations, Amplitude sends emails when it receives and processes user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
+To comply with GDPR and other user privacy regulations, Amplitude sends emails when it receives and processes user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
 
-This feature is **applied at the project level**, and admin privileges are required to use it. Admins can control the following notification types:
+This feature applies at the project level, and you must have admin privileges to use it. Admins can control the following notification types:
 
-* **Job Creation**: confirmation email at the time of request
-* **Job Completion**: confirmation email when the requests are completed
-* **Unset Violation**: email sent when SDK unset is not done
-* **All Notifications**: all of the above
+* **Job Creation**: confirmation email at the time of request.
+* **Job Completion**: confirmation email when the requests are completed.
+* **Unset Violation**: email sent when SDK unset is not done.
+* **All Notifications**: all of the above.
 
 There must be at least one recipient for each notification.
 
