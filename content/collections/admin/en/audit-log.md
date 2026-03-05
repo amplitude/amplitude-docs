@@ -6,10 +6,11 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains detils about the specifics of user actions, who those users are, when they performed those ctions, and where those actions were performed.
+The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It captures details about specific user actions, who performed them, when they occurred, and from where.
 
 ## Tracked events by category
-The Audit Log tracks the following events: 
+
+The Audit Log tracks the following events:
 
 ### High-risk events
 
@@ -66,33 +67,32 @@ Each audit log entry includes:
 - **Error**: Error information if the action failed.
 
 {{partial:admonition type="note" heading="Availability through the API"}}
-You can only acceew IP address, Org ID, User Agent, and Error metadata through the API endpoint, not the UI CSV export.
+You can only access IP address, Org ID, User Agent, and Error metadata through the API endpoint, not the UI CSV export.
 {{/partial:admonition}}
 
-## Key behaviors and notes
+## Key behaviors
 
 - Audit logs retain up to 90 days of data.
 - Audit logging is asynchronous and doesn't block the user's original action.
-- Amplitude captures events automatically; you don't need to add instrumentation.
-- The audit log is scoped to the organization.
-  - Admins can access events across all projects in their org.
+- Amplitude captures events automatically — you don't need to add instrumentation.
+- The audit log is scoped to the organization, so admins can access events across all projects in their organization.
 - You can search audit logs by user email in the UI.
 - Audit logs are available in all production environments, including US and EU.
 
 ## Accessing audit logs
 
-You can access audit logs in two ways: from the Organization Settings page in Amplitude, or through the [Audit Logs API](/docs/apis/audit-logs).
+You can access audit logs two ways: from the *Organization Settings* page in Amplitude, or through the [Audit Logs API](/docs/apis/audit-logs).
 
 ### Access audit logs in the UI
+
+You must have the organization admin role to access the **Audit Logs** tab.
 
 1. Navigate to *Organization Settings*.
 2. Select the **Audit Logs** tab.
 
-Only organization admins can access the Audit Log menu item.
-
 #### Summary cards
 
-At the top of the Audit Logs view, summary cards show (for the time period selected in the datepicker):
+At the top of the Audit Logs view, summary cards show totals for the selected time period:
 
 - **All Events**: Total count of logged events.
 - **High Risk Event**: Total count of high-risk activity.
@@ -109,7 +109,7 @@ A filtered table shows only high-risk security events, such as promoting a user 
 
 ### Access audit logs through the API
 
-For programmatic access to the full and raw audit log, use the REST API endpoint to query and download raw audit logs.
+For programmatic access to the full and raw audit log, use the REST API endpoint to query and download audit logs.
 
 #### Obtain an org secret key
 
@@ -156,4 +156,3 @@ All other fields (`filters`, `pagination`) are optional and refine your query.
 
 - Maximum 30-day query range for each request.
 - 90-day data retention: Only the last 90 days of audit log data are available.
-
