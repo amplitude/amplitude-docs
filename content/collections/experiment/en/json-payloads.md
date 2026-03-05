@@ -249,7 +249,7 @@ Strong typing is especially useful when:
 
 ### Define the expected type for variant payloads
 
-In the UI, by clicking "Set payload type", you choose a **payload type** for the flag or experiment. The type applies to all variants.
+In the UI, by clicking **Set payload type**, you choose a **payload type** for the flag or experiment. The type applies to all variants.
 
 **Payload type options:**
 
@@ -258,11 +258,11 @@ In the UI, by clicking "Set payload type", you choose a **payload type** for the
 - **Number** — `variant.payload` is a number.
 - **Object** — `variant.payload` is an object (no fixed keys or types).
 - **Array** — `variant.payload` is an array.
-- **Custom Schema** — You define an object shape with specific keys and types. You choose the type of each field (string, number, boolean, array, etc.) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
+- **Custom Schema** — You define an object shape with specific keys and types. You choose the type of each field (for example, string, number, boolean, or array) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
 
 If a variant payload doesn't match the selected type:
 
-- The UI shows an error on that variant.
+- The UI shows an error on that variant and indicates what is wrong (for example, a missing required field or an incorrect type).
 - You can't save the change until the payload is valid.
 - This prevents deploying broken configuration.
 
@@ -321,7 +321,7 @@ When you choose **Custom Schema** and define these keys and types, Amplitude use
 }
 ```
 
-You can mark any of the fields as required in the Custom Schema. Payloads that omit a required field or use the wrong type for a key fail validation and block saving until they're fixed.
+You can mark any of the fields as required in the Custom Schema. Payloads that omit a required field or use the wrong type for a key fail validation and block saving until you fix them.
 
 ### Using strongly typed payloads in your code
 
@@ -495,7 +495,7 @@ Test different content approaches:
 
 When you access a variant from the SDK or Evaluation API, you can use the `value` and `payload` properties:
 
-- `value`: the variant's value (for example, "on" or "off" or "control" or "treatment").
+- `value`: the variant's value (for example, "on," "off," "control," or "treatment").
 - `payload`: the attached JSON configuration.
 
 The Management API or Amplitude UI provides other variant properties like `name` and `description`.
