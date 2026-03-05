@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'View agents'
 product_area: session-replay
 advanced: false
-description: 'View agents and conversations shared with the user'
+description: 'View agents and conversations shared with you'
 actions:
   - 'View agents'
 default_permissions:

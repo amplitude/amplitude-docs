@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'View chat'
 product_area: ai
 advanced: false
-description: 'View Chat conversations shared with the user'
+description: 'View Chat conversations shared with you'
 actions:
   - 'View Global Agent'
 default_permissions:
