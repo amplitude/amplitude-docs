@@ -7,13 +7,13 @@ source: 'https://www.docs.developers.amplitude.com/partners/sending-cohorts/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718645920
 ---
-Amplitude lets you group users who take similar actions into behavioral cohorts, such as those who downloaded a song in a music app or added an item to a cart. You can also define behavioral cohorts as customers that don’t take a specific action, like those who downloaded an app, but never finished signing up for a subscription.
+Amplitude lets you group users who take similar actions into behavioral cohorts, such as those who downloaded a song in a music app or added an item to a cart. You can also define behavioral cohorts as customers who don't take a specific action, like those who downloaded an app, but never finished signing up for a subscription.
 
-Amplitude can sync these cohorts to other partner platforms through a series of REST API calls. Amplitude is able to create and update lists of cohort memberships (list-based) or set a user property or trait (property-based) in the Partner's platform.
+Amplitude can sync these cohorts to other partner platforms through a series of REST API calls. Amplitude can create and update lists of cohort memberships (list-based) or set a user property or trait (property-based) in the partner's platform.
 
 ## Authentication
 
-The REST API uses basic authentication. The partner must send across the `api_key` as username and an empty password
+The REST API uses basic authentication. The partner must send across the `api_key` as username and an empty password.
 
 ```bash
 curl -u api_key https://[ INSERT URL ]
@@ -64,7 +64,7 @@ POST https://your.domain/lists/$listId/add
             'name': 'Amplitude Cohort Sync',
             'version': '1.0.0'
         }
-    }  
+    }
 }
 ```
 
@@ -79,13 +79,13 @@ POST https://your.domain/lists/$listId/remove
             'name': 'Amplitude Cohort Sync',
             'version': '1.0.0'
         }
-    }  
+    }
 }
 ```
 
 ## Property-based cohort integration
 
-A property-based cohort integration works best with systems that represent cohort membership as a custom user property, such as a boolean flag or a tag. When cohort membership changes, Amplitude invokes the `updateAPI` to update the user property. Although you don't need list creation API here, some manual setup may be required to create the custom user property.
+A property-based cohort integration works best with systems that represent cohort membership as a custom user property, such as a boolean flag or a tag. When cohort membership changes, Amplitude invokes the `updateAPI` to update the user property. Although you don't need a list creation API here, some manual setup may be required to create the custom user property.
 
 ### Single update
 
@@ -96,7 +96,7 @@ POST https://your.domain/lists/$listId/remove
     'traits': {
         '[Amplitude] {$cohort_name}: {$cohort_id}': True / False
     },
-    'userId': ‘$user_id’,
+    'userId': '$user_id',
     'context': {
         'integration': {
             'name': 'Amplitude Cohort Sync',
@@ -116,7 +116,7 @@ POST https://your.domain/lists/$listId/remove
         'traits': {
             '[Amplitude] {$cohort_name}: {$cohort_id}': True / False
         },
-        'userId': ‘$user_id’,
+        'userId': '$user_id',
         'context': {
             'integration': {
                 'name': 'Amplitude Cohort Sync',
@@ -128,7 +128,7 @@ POST https://your.domain/lists/$listId/remove
         'traits': {
             '[Amplitude] {$cohort_name : {$cohort_id}': True / False
         },
-        'userId': ‘$user_id’,
+        'userId': '$user_id',
         'context': {
             'integration': {
                 'name': 'Amplitude Cohort Sync',
@@ -141,13 +141,13 @@ POST https://your.domain/lists/$listId/remove
 
 **Responses**:
 
-- **200**: Success
-- **400**: Invalid request
-- **401**: Unauthorized (bad `api_key`)
-- **404**: Invalid User ID
-- **429**: Throttling/rate limiting
+- **200**: Success.
+- **400**: Invalid request.
+- **401**: Unauthorized (bad `api_key`).
+- **404**: Invalid User ID.
+- **429**: Throttling/rate limiting.
 
-The property Amplitude passes over for cohort members is set to `true` when a user becomes part of the cohort and it's set to `false` when a user leaves the cohort.
+Amplitude sets the property it passes over for cohort members to `true` when a user becomes part of the cohort and to `false` when a user leaves the cohort.
 
 ## Testing
 
