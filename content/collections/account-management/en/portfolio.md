@@ -24,7 +24,7 @@ Views can't ingest data themselves, but you can change and update them at any po
 
 Amplitude assumes that if it sees the same user ID (or device ID) in different projects, they're attached to the same user. 
 
-However, Amplitude silos user properties on a per-project basis: User properties on events triggered in a particular project are the user property values for that project only.
+However, silos user properties on a per-project basis: User properties on events triggered in a particular project are the user property values for that project, and that project only. 
 
 For example, you have two projects named `iOS` and `Android`. One user has a user property called `Version`, with a value of `1.0` in the iOS project and a value of `2.0` in the Android project. In this case, events triggered by this user in the iOS project have the value of `Version` set to `1.0`, and events triggered in the Android project have the value of `Version` set to 2.0.
 
@@ -32,7 +32,7 @@ For example, you have two projects named `iOS` and `Android`. One user has a use
 If an event type has the same name on two or more projects, Amplitude considers it to be the same event in the dropdown.
 {{/partial:admonition}}
 
-Amplitude supports cohort export for portfolio projects for all destinations, but when you select Amplitude User Property, only `device_id` and `user_id` are available.
+While cohort export for portfolio projects is supported for all destinations, when you select Amplitude User Property, only `device_id` and `user_id` are available.
 
 ## Create a Portfolio view
 
@@ -42,12 +42,12 @@ At this point, you can connect multiple projects into this cross-project view. J
 
 ## User mapping (aliasing)
 
-It's not uncommon for user IDs for the same user to differ across projects within the same organization. The [User Mapping API](/docs/apis/analytics/user-mapping) endpoint lets you merge two users together who Amplitude would otherwise identify by different user IDs. This isn't possible through the UI, and is only available as an API call.
+It's not uncommon for user IDs for the same user to differ across projects within the same organization. The [User Mapping API](/docs/apis/analytics/user-mapping) endpoint allows you to merge two users together who Amplitude would otherwise identify by different user IDs. This isn't possible through the UI, and is only available as an API call.
 
 In the example below, three user records, each with a different users ID, are all merged into the user ID `mike@hooli.com` . This new user ID is that user’s "global" user ID in the cross-project view. This way, you can get an accurate count of the number of unique users across your entire product portfolio.
 
-![User mapping diagram showing three user records merged into a single global user ID](/docs/output/img/account-management/360003724891)
+![](/docs/output/img/account-management/360003724891)
 
 When Amplitude maps users, it doesn't merge user properties. This means the user properties attached to each event are those from the original user who triggered the event in the first place.
 
-For more information about the User Mapping (Aliasing) API, mapping, and unmapping users, refer to [User Mapping (Aliasing) API](/docs/apis/analytics/user-mapping#usage).
+Read more about accessing the User Mapping (Aliasing) API, mapping, and unmapping users in [User Mapping (Aliasing) API](/docs/apis/analytics/user-mapping#usage).

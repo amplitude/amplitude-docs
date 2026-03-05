@@ -12,14 +12,14 @@ academy_course:
 ---
 Role-based Access Control (RBAC) lets you manage who can access specific areas of Amplitude and the actions they can perform in those areas. By offering granular access controls, your Amplitude administrators can scale Amplitude adoption and prevent unauthorized actions.
 
-RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and you assign them the `Analyst` role, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
+RBAC provides administrators a centralized location for assigning permissions to individual users or [groups](/docs/admin/account-management/manage-permission-groups). For example, if your organization has an `Analyst` role, you can assign the same base permissions to that role. When a new analyst joins the team and is assigned `Analyst`, they automatically inherit the same set of permissions as everyone else with the `Analyst` role.
 
-RBAC provides the following benefits to your enterprise:
+RBAC Provides the following benefits to your enterprise:
 
-* **Improved security**: Limit data access based on job responsibilities.
-* **Operational efficiency**: Simplify user management across large organizations.
-* **Compliance support**: Supports regulatory requirements around access control and auditing.
-* **Scalability**: Manages access for growing teams and multiple business units.
+* **Improved security**: Limit data access based on job responsibilities.  
+* **Operational efficiency**: Simplify user management across large organizations.  
+* **Compliance support**: Supports regulatory requirements around access control and auditing.  
+* **Scalability**: Manages access for growing teams and multiple business units. 
 
 {{partial:admonition type="note" heading="Feature availability"}}
 
@@ -31,7 +31,7 @@ To learn more, take the [Manage roles and permissions with RBAC](https://academy
 
 ## Amplitude RBAC concepts
 
-Amplitude's RBAC contains three main layers: roles, permissions, and actions. Roles contain permissions, and permissions contain actions. An action is a singular task, such as editing a metric or creating an annotation.
+Amplitude's RBAC contains three main layers: Roles, Permissions, and Actions. Roles contain permissions, and Permissions contain actions. An action is a singular task, editing a metric, or creating an annotation.
 
 ### Roles
 
@@ -98,9 +98,9 @@ Groups enable you to manage users at scale. They define the projects that a memb
 
 #### Group permission prioritization
 
-When you add a user to a group, admins can't change their permissions at the individual level for projects where the group grants access. This ensures permission consistency and simplifies troubleshooting when determining why a user has certain access levels.
+When you add a user to a group, admins can't change their permissions at the individual level for projects where access is granted through that group. This ensures permission consistency and simplifies troubleshooting when determining why a user has certain access levels.
 
-When you try to modify permissions for a user who has group-assigned access, a tooltip appears stating "User(s) are assigned access to this project through Group(s)".
+When you try to modify permissions for a user who has group-assigned access, a tooltip appears stating "User(s) are assigned access to this project via Group(s)".
 
 To change a user's permissions for projects they access through a group:
 
@@ -121,8 +121,8 @@ The **ACCESS VIA** column in the User Overview panel indicates how a user receiv
 
 | Access Via   | Meaning                                                                        |
 | ------------ | ------------------------------------------------------------------------------ |
-| Direct       | Amplitude assigned the role to the user directly through the Manage Project Access modal. |
-| [Group Name] | Amplitude assigned the role to the user through membership in the specified group.        |
+| Direct       | Role was assigned to the user directly through the Manage Project Access modal |
+| [Group Name] | Role was assigned to the user through membership in the specified group        |
 
 ## RBAC permission reference
 

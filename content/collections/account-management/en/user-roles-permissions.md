@@ -11,10 +11,10 @@ updated_at: 1720214133
 User permissions define the level of Amplitude access a user in your organization has. Amplitude bases permissions on a user's role, though [project-level permissions](/docs/admin/account-management/manage-users) and [permission groups](/docs/admin/account-management/manage-permission-groups) are available for Enterprise customers who need more targeted security controls. For more information about permissions in Amplitude Experiment, go to [Project-level user permissions](/docs/feature-experiment/project-level-permissions).
 
 {{partial:admonition type='note'}}
-[This course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude is also helpful.
+You may also find [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude helpful.
 {{/partial:admonition}}
 
-The **admin** sets user permissions. The admin is the first user of any Amplitude organization, and each organization must have at least one admin. Any admin can designate other users as admins. When you invite new users to an organization, Amplitude assigns them the **viewer** role by default.
+The **admin** sets user permissions. The admin is the first user of any Amplitude organization, and each organization must have at least one admin. Any admin can designate other users as admins. When you invite new users to an organization, they're assigned the **viewer** role by default.
 
 ## User roles and permissions in Amplitude
 
@@ -96,10 +96,6 @@ The Manager role is designed for users who require comprehensive access to conte
 
 The Admin role is the highest-level role, granting extensive control over the organization and its settings. Amplitude recommends limiting the number of users in an organization who are Admins. Only existing administrators can grant or revoke the Admin role.
 
-{{partial:admonition type='warning' heading='Security note'}}
-Limit the Admin role to only those users who require organization-level control. Errors by an Admin can affect the entire organization, including SSO configuration, user provisioning, and data access.
-{{/partial:admonition}}
-
 **Admin permissions:**
 
 * All Manager-level permissions
@@ -177,5 +173,5 @@ Regardless of role, all users have the following restrictions:
 * Can't change the full name of other users
 * Can't change or reset passwords for other users
 * Can't change their own role within the organization
-* Can't remove themselves from the organization (an admin or manager must do this)
+* Can't remove themselves from the organization (an admin or manager must perform this action)
 * Can't permanently delete another user's content (only content owners can delete their content after archiving)
