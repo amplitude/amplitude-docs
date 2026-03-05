@@ -91,6 +91,9 @@ public/docs/js/site.js
 
 
 markdown-issues.json
+
+# Bulk edit runtime state (progress tracking — local only, not for commit)
+.claude/bulk-edit-state/
 .vscode/mcp.json
 public/mix-manifest.json
 public/docs/css/site.css

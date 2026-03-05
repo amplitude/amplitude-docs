@@ -150,7 +150,7 @@
 {{partial:partials/algolia-script}}
 <script src="{{ mix src='/docs/js/site.js' }}"></script>
 <script src="{{ mix src='/docs/js/statuspage.js' }}"></script>
-{{if environment == "production"}}
+{{if environment == "production" || environment == "preview"}}
 {{partial:partials/cookie-control}}
 {{/if}}
 </body>
