@@ -30,10 +30,10 @@ The Audit Log tracks the following events:
 - Access toggles (for example, request access).
 - Bulk access transfers or edits.
 - User deletions.
-
-**Groups and access control**
-
 - Group creation and member updates.
+
+**Access controls**
+
 - SSO configuration changes (settings updates, toggles such as "require SSO").
 
 ### Low-risk events
