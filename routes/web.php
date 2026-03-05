@@ -42,6 +42,5 @@ Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/multiple-
 Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data', '/docs/feature-experiment/advanced-techniques/winsorization-in-experiment');
 Route::permanentRedirect('/docs/feature-experiment/advanced-techniques/split-url-testing', '/docs/web-experiment/actions#url-redirect');
 Route::permanentRedirect('/docs/web-experiment/url-redirect-testing', '/docs/web-experiment/actions#url-redirect');
-Route::permanentRedirect('/docs/feature-experiment', '/docs/experiment-home');
-Route::permanentRedirect('/docs/web-experiment', '/docs/experiment-home');
-Route::permanentRedirect('/docs/get-started/pricing', '/docs/pricing');
+Route::permanentRedirect('/docs/feature-experiment', 'https://amplitude.com/docs/experiment-home');
+Route::permanentRedirect('/docs/web-experiment', 'https://amplitude.com/docs/experiment-home');

@@ -10,7 +10,7 @@ updated_at: 1724882676
 ---
 
 {{partial:admonition type="tip" heading="Amplitude Global Agent"}}
-The Amplitude Slack app is updated to support the Amplitude Global Agent. For more information, review [Global Agent in Slack](/docs/amplitude-ai/slack).
+The Amplitude Slack app supports the Amplitude Global Agent. For more information, refer to [Global Agent in Slack and Microsoft Teams](/docs/amplitude-ai/slack-teams).
 {{/partial:admonition}}
 
 With Amplitude's app for [Slack](https://www.slack.com/), you can:
@@ -137,5 +137,5 @@ The Amplitude Global Agent feature requires a paid Slack plan to access within t
 The Amplitude Global Agent feature uses Large Language Model (LLM) technology to answer questions about your Amplitude data. While designed to be helpful, AI-generated responses may occasionally be inaccurate or incomplete. Always verify critical business insights directly in your Amplitude workspace.
 
 {{partial:admonition type="note" heading=""}}
-You can also use [Global Agent in Slack](/docs/amplitude-ai/slack) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards, all from Slack.
+You can use [Global Agent in Slack and Microsoft Teams](/docs/amplitude-ai/slack-teams) to ask natural-language questions about your product data, create and refine charts, and find existing dashboards—all from your chat platform.
 {{/partial:admonition}}

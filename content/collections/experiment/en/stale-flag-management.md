@@ -33,7 +33,7 @@ Hover over the Stale badge on a flag. Information appears that displays when tha
 
 ### Default stale date
 
-By default, Amplitude marks a flag or experiment stale after 30 days from the date of the last update. For example, you set the rollout of a flag to 50% on March 1. If no other updates occur, Amplitude marks the flag as stale 30 days later, or in this example, March 31. If you deselect the stale value, Amplitude considers the flag permanent and won't mark the flag stale again.
+By default, Amplitude marks a flag or experiment stale after 30 days from the date of the last update. For example, you set the rollout of a flag to 100% on March 1. If no other updates occur, Amplitude marks the flag as stale 30 days later, or in this example, March 31. If you deselect the stale value, Amplitude considers the flag permanent and won't mark the flag stale again.
 
 ### Updating stale dates
 
@@ -45,13 +45,12 @@ If you change the rollout after you set a stale date, you can update the stale d
 
 ## Notifications
 
-You can receive notifications when flags or experiments become stale. If you are an owner of a flag or experiment, Amplitude sends a message about any flag or notification that becomes stale over the previous 24 hours. These notifications are sent once each day.
+You can receive notifications when flags or experiments become stale. If you are an owner of a flag or experiment, Amplitude sends a message about any flag or experiment that becomes stale over the previous 24 hours. These notifications are sent once each day.
 
 You can receive notifications through:
 
 * Email
 * Slack
-* Webhooks
 
 Configure [notification preferences](/docs/feature-experiment/notifications) in your organization settings.
 

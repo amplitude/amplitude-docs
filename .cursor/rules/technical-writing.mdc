@@ -162,7 +162,7 @@ Use bold only for UI literals that users click, select, or interact with:
 
 **Examples:**
 - ✅ "Enter your project name in the **Project Name** field."
-- ✅ "Select **Save** to save your changes."
+- ✅ "Click **Save** to save your changes."
 - ✅ "In the **Region** dropdown, select **US**."
 - ✅ "Select the **Advanced** tab to view more options."
 
@@ -198,8 +198,8 @@ Always use italics for navigation hierarchies with angle brackets (>) to show pa
 
 Sometimes you need both in one instruction:
 
-- ✅ "On the *Settings* page, select **Save Changes**." (page name in italics, button in bold)
-- ✅ "Navigate to *Data > Sources*, then select **Add Source**." (path in italics, button in bold)
+- ✅ "On the *Settings* page, click **Save Changes**." (page name in italics, button in bold)
+- ✅ "Navigate to *Data > Sources*, then click **Add Source**." (path in italics, button in bold)
 - ✅ "In the *API Configuration* section, enter your key in the **API Key** field." (section in italics, field label in bold)
 
 ## Links and References

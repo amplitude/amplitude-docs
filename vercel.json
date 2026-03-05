@@ -10,6 +10,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/amplitude-ai/slack",
+      "destination": "/docs/amplitude-ai/slack-teams",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/amplitude-ai/agents-overview",
       "destination": "https://amplitude.com/docs/amplitude-ai",
       "statusCode": 301
@@ -2565,7 +2570,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/warehouse-native/overview",
+      "destination": "/docs/data/warehouse-metrics",
       "source": "/docs/hc/en-us/articles/26003996242203((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
