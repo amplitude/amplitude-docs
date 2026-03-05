@@ -57,6 +57,8 @@ When you enable Mirror Sync with data mutability:
    - `UPDATE`: Modifies existing events in Amplitude
    - `DELETE`: Removes events from Amplitude
 
+   Amplitude finds matching events based on the combination of `user_id`, `insert_id`, and `event_time`. All three fields must match for Amplitude to identify and modify the correct event.
+
 3. **Data Synchronization**: Changes apply to keep consistency between your warehouse and Amplitude
 
 ## Enrichment services
