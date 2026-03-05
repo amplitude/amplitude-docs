@@ -6,7 +6,7 @@ landing: false
 exclude_from_sitemap: false
 ---
 
-The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains detils about the specifics of user actions, who those users are, when they performed those ctions, and where those actions were performed.
+The Audit Log is a security and compliance feature that lets organization admins monitor and track key security events and user actions across their Amplitude organization. It contains details about the specifics of user actions, who those users are, when they performed those actions, and where those actions were performed.
 
 ## Tracked events by category
 The Audit Log tracks the following events: 
@@ -74,10 +74,10 @@ You can only acceew IP address, Org ID, User Agent, and Error metadata through t
 - Audit logs retain up to 90 days of data.
 - Audit logging is asynchronous and doesn't block the user's original action.
 - Amplitude captures events automatically; you don't need to add instrumentation.
-- The audit log is scoped to the organization.
+- The audit log covers the entire organization.
   - Admins can access events across all projects in their org.
 - You can search audit logs by user email in the UI.
-- Audit logs are available in all production environments, including US and EU.
+- Amplitude provides audit logs in all production environments, including US and EU.
 
 ## Accessing audit logs
 
@@ -155,5 +155,5 @@ All other fields (`filters`, `pagination`) are optional and refine your query.
 #### API limitations
 
 - Maximum 30-day query range for each request.
-- 90-day data retention: Only the last 90 days of audit log data are available.
+- 90-day data retention: Amplitude stores only the last 90 days of audit log data.
 

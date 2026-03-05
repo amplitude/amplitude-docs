@@ -14,21 +14,21 @@ This comprehensive reference lists all available Role-Based Access Control (RBAC
 
 ## Understanding permission types
 
-- **Basic**: Standard permissions that are commonly used and safe for most users
-- **Advanced**: Permissions that require careful consideration and are typically reserved for administrators or power users
+- **Basic**: Standard permissions that most users commonly use and that are safe for general access.
+- **Advanced**: Permissions that require careful consideration, typically for administrators or power users.
 
 ## Product areas
 
-Permissions are organized by product area to help you understand which parts of Amplitude they affect:
+Amplitude organizes permissions by product area to help you understand which parts of Amplitude they affect:
 
-- **Admin**: User management, billing, and organizational settings
-- **Charts & Metrics**: Creating and managing charts, dashboards, and custom metrics
-- **Data Management**: Data sources, tracking plans, and data governance
-- **Audiences**: Cohorts, segments, and audience management
-- **Experiment**: A/B testing and feature flagging
-- **Integrations**: Third-party connections and data syncing
-- **Session Replay**: Recording and analyzing user sessions
-- **Heatmaps**: Visual analytics and user interaction tracking
-- **Guides & Surveys**: In-app messaging and user feedback
-- **Resource Center & Content**: Help documentation and content management
-- **AI Features**: AI Agents and AI-powered features
+- **Admin**: User management, billing, and organizational settings.
+- **Charts & Metrics**: Creating and managing charts, dashboards, and custom metrics.
+- **Data Management**: Data sources, tracking plans, and data governance.
+- **Audiences**: Cohorts, segments, and audience management.
+- **Experiment**: A/B testing and feature flagging.
+- **Integrations**: Third-party connections and data syncing.
+- **Session Replay**: Recording and analyzing user sessions.
+- **Heatmaps**: Visual analytics and user interaction tracking.
+- **Guides & Surveys**: In-app messaging and user feedback.
+- **Resource Center & Content**: Help documentation and content management.
+- **AI Features**: AI Agents and AI-powered features.
