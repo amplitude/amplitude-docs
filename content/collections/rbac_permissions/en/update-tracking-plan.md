@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Update tracking plan'
 product_area: data-management
 advanced: true
-description: 'Make changes to the tracking plan, and gain access to API tokens'
+description: 'Update the tracking plan and access API tokens'
 actions:
   - 'edit event activity'
   - 'edit event display name'

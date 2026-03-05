@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage syncs'
 product_area: integrations
 advanced: true
-description: 'Create, update and delete syncs'
+description: 'Create, update, and delete syncs'
 actions:
   - 'create sync'
   - 'update sync'

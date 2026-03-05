@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage sources'
 product_area: integrations
 advanced: true
-description: 'Create, update and delete sources'
+description: 'Create, update, and delete sources'
 actions:
   - 'view activation sources (CDP Team)'
   - 'create source'

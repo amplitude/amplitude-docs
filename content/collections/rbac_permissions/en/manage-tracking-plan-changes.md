@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage Tracking Plan changes'
 product_area: data-management
 advanced: true
-description: 'Approve change branches, data classifications and manage all tracking plan system settings'
+description: 'Approve change branches, data classifications, and manage all tracking plan system settings'
 actions:
   - 'branch approval'
   - 'edit session replay screenshots'

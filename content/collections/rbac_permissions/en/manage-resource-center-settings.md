@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage Resource Center settings'
 product_area: resource-center
 advanced: true
-description: 'Control the on/off switch for Resource Center, Autopilot, quick links, and other settings.'
+description: 'Control the on/off switch for Resource Center, Autopilot, quick links, and other settings'
 actions:
   - 'update resource center settings'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

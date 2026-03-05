@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage unpublished Guides & Surveys'
 product_area: guides-surveys
 advanced: false
-description: 'Create, update and archive unpublished guides and surveys'
+description: 'Create, update, and archive unpublished guides and surveys'
 actions:
   - 'create guide/survey'
   - 'duplicate guide/survey'

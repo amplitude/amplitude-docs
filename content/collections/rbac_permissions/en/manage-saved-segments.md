@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage saved segments'
 product_area: audiences
 advanced: false
-description: 'Create, update and delete saved segments'
+description: 'Create, update, and delete saved segments'
 actions:
   - 'create saved segment'
   - 'update saved segment'

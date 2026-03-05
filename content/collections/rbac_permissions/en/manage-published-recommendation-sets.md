@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage published recommendation sets'
 product_area: resource-center
 advanced: true
-description: 'Create, update and archive unpublished recommendation sets'
+description: 'Create, update, and archive published recommendation sets'
 actions:
   - 'publish / unpublish recommendation sets'
   - 'edit published recommendation sets'

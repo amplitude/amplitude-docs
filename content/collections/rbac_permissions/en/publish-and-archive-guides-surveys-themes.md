@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Publish and archive Guides & Surveys themes'
 product_area: guides-surveys
 advanced: true
-description: 'Create, update and archive published guide and survey themes'
+description: 'Create, update, and archive published guide and survey themes'
 actions:
   - 'publish theme'
   - 'unpublish theme'
