@@ -11,9 +11,9 @@ landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 An MTU is a unique user who triggers one or more events within a calendar month. This can be either an anonymous user (which Amplitude tracks with device ID) or an identified user (tracked by user ID). If a user appears in two or more projects, they still count as a single MTU.
 
-Amplitude tracks any anonymous users as distinct MTUs, even if they visited before while logged in. If an anonymous user subsequently logs into the site, all events triggered by the user while they were anonymous are merged under their user ID, and count as a single MTU.
+Amplitude tracks anonymous users as distinct MTUs, even if they visited before while logged in. If an anonymous user subsequently logs into the site, Amplitude merges all events they triggered while anonymous under their user ID and counts them as a single MTU.
 
-Amplitude calculates MTU usage daily, with one more, final calculation after the end of the calendar month to accommodate any late-arriving events. At that point, the MTU count is no longer updated to reflect subsequent user merges caused by identify calls on anonymous users. 
+Amplitude calculates MTU usage daily, with one final calculation after the end of the calendar month to accommodate any late-arriving events. After that point, Amplitude no longer updates the MTU count to reflect subsequent user merges caused by identify calls on anonymous users.
 
 Your MTU count doesn't increase due to user mapping, identify calls, or group identifies.
 
@@ -25,29 +25,29 @@ MTU-based pricing is available for all Amplitude plans. Customers who use sampli
 
 ## Track your MTUs
 
-The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users). The best way to ensure accurate counting of MTUs is to support a one-to-one correlation between user IDs and actual users.
+The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users). To ensure accurate counting of MTUs, support a one-to-one correlation between user IDs and actual users.
 
 {{partial:admonition type='note'}}
-If you're using test data and generating fictitious user IDs for testing purposes, each of these test users are also included in your MTU count.
+If you're using test data and generating fictitious user IDs for testing purposes, each of these test users is also included in your MTU count.
 {{/partial:admonition}}
 
 ### Estimate your MTUs
 
-If you haven't implemented tracking yet, you can use your monthly active user (MAU) count to estimate your current MTU usage. These counts should be similar, assuming they account for anonymous visitors identically.
+If you haven't implemented tracking yet, use your monthly active user (MAU) count to estimate your MTU usage. These counts should be similar, assuming they account for anonymous visitors identically.
 
 ## View your MTU use
 
-To view your MTU usage, navigate to *Settings > Organization Settings > Plans & Billing*. MTU statistics are visible in their own panel.
+To view your MTU usage, navigate to *Settings > Organization Settings > Plans & Billing*. MTU statistics appear in their own panel.
 
 {{partial:admonition type='note'}}
 MTU counts aren't available for every plan type.
 {{/partial:admonition}}
 
-Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen for users who log in on their usual device, but then later open the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
+Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen for users who log in on their usual device, then later open the app anonymously on a different device or platform. Because there's no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
 
 It can also happen if a user has two unlinked user IDs and uses both of them in a single month.
 
-There are also instances where a user’s actions can result in a **reduced** MTU count. If a user interacts with your app anonymously and then later logs into their account on that same device, the anonymous usage are  merged with the logged-in usage, resulting in a single MTU.
+There are also instances where a user's actions can result in a **reduced** MTU count. If a user interacts with your app anonymously and then later logs into their account on that same device, Amplitude merges the anonymous usage with the logged-in usage, resulting in a single MTU.
 
 {{partial:admonition type='note'}}
 MTU billing uses UTC time.
@@ -57,24 +57,24 @@ Go to [this post in the Amplitude Community to learn more about investigating yo
 
 ### Discrepancies with counts provided by other tools
 
-No two tools work exactly the same way, or under the exact same conditions. Most ingest and process data differently, which generate different results. Additionally, your MTU count could differ from the results generated by running a query of user count within Amplitude due to the way it calculates MTUs.
+No two tools work exactly the same way, or under the exact same conditions. Most ingest and process data differently, which generates different results. Additionally, your MTU count could differ from the results of running a user count query within Amplitude, due to the way it calculates MTUs.
 
 If you believe there is an error in your MTU count, contact [Amplitude support](http://support.amplitude.com).
 
 ## MTU limits
 
-MTU limits are defined by the plan your organization is on, or the MTU volume you purchased. Amplitude determines whether any you owe overage fees based on:
+MTU limits are defined by the plan your organization is on, or the MTU volume you purchased. Amplitude determines whether you owe overage fees based on:
 
 * Your total MTU volume, and
-* Your events per MTU volume
+* Your events per MTU volume.
 
-These are each calculated on the last day of each calendar month. Exceeding either limit can result in overage charges. Amplitude alerts you when you are approaching your limit so you can take steps to avoid exceeding it.
+Amplitude calculates these on the last day of each calendar month. Exceeding either limit can result in overage charges. Amplitude alerts you when you're approaching your limit so you can take steps to avoid exceeding it.
 
-### Calculate your organization’s limit of events per MTU
+### Calculate your organization's limit of events per MTU
 
-Your organization's limit of events per MTU depends on the Amplitude plan you're on. For organizations on the Starter plan, this limit is 1,000 events per MTU. 
+Your organization's limit of events per MTU depends on the Amplitude plan you're on. For organizations on the Starter plan, this limit is 1,000 events per MTU.
 
-Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count is equal to your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, Amplitude adds **synthetic MTUs** to your monthly MTU count.
+Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count equals your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, Amplitude adds **synthetic MTUs** to your monthly MTU count.
 
 Use this formula to calculate your organization's synthetic MTU count:
 
@@ -86,11 +86,11 @@ To calculate your total MTU count for the month, add your unique MTU count to yo
 
 ### Exceeding limits on a free plan
 
-If you're a non-paying customer, Amplitude blocks your account when you exceed your MTU monthly limit **three times**. You lose access to your charts and dashboards (you keep have access to certain admin functions, like the User API, so you can meet your compliance obligations). Amplitude continues to ingest data **up to and over** your limit; however, unless you upgrade to a paid plan, you can't to access it. If you continue to exceed your monthly limit without upgrading to a paid plan, Amplitude deletes your account six months after it's' first blocked.
+If you're a non-paying customer, Amplitude blocks your account when you exceed your MTU monthly limit **three times**. You lose access to your charts and dashboards, though you retain access to certain admin functions (such as the User API) so you can meet your compliance obligations. Amplitude continues to ingest data up to and over your limit; however, unless you upgrade to a paid plan, you can't access it. If you continue to exceed your monthly limit without upgrading to a paid plan, Amplitude deletes your account six months after it's first blocked.
 
 ## Unexpected usage spikes
 
-Large and sudden increases in MTUs are almost always tied to spikes in usage of your product. If your company recently launched a new marketing campaign, a significant product update, or a change to your instrumentation, that may be the most likely explanation.
+Large and sudden increases in MTUs are almost always tied to spikes in usage of your product. If your company recently launched a new marketing campaign, a significant product update, or a change to your instrumentation, that's the most likely explanation.
 
 MTUs may also increase unexpectedly when you add new event sources that result in either more users, or more events for users active in third-party tools but not necessarily in your product (for example, adding an email platform as a data source).
 
@@ -100,12 +100,12 @@ If you believe your MTUs have spiked in error, contact [Amplitude support](http:
 
 When you add backdated events for previous months, Amplitude adds one MTU for each month in which a distinct user appears.
 
-Amplitude bases MTU usage calculations on the month you add an event to Amplitude. If  backfill data from previous months in February, for example, Amplitude counts all this backfilled usage against February’s MTU quota.
+Amplitude bases MTU usage calculations on the month you add an event to Amplitude. If you backfill data from previous months in February, for example, Amplitude counts all that backfilled usage against February's MTU quota.
 
-Similarly, determining whether a user is unique or not also hinges on the month they trigger the event. For example, if Amplitude records three events for a single user, with one dated today, a second dated one month ago, and a third dated two months ago, the count is one unique MTU, counted in this month.
+Similarly, determining whether a user is unique also depends on the month they trigger the event. For example, if Amplitude records three events for a single user, with one dated today, a second dated one month ago, and a third dated two months ago, the count is one unique MTU, counted in this month.
 
 Because of this, backfilling data is a common cause of spikes in MTU usage.
 
 ## Drop filters and MTUs
 
-When you use a [drop filter](/docs/data/remove-invalid-data), Amplitude  excludes a set of ingested events from your chart, based on the criteria you set. These events aren't returned by your query, but they do still exist: Amplitude doesn't delete them. Because of this, the number of uniques you see on a drop-filtered chart in Amplitude Analytics may not match the number of uniques on the MTU chart in your billing report.
+When you use a [drop filter](/docs/data/remove-invalid-data), Amplitude excludes a set of ingested events from your chart based on the criteria you set. These events aren't returned by your query, but they still exist — Amplitude doesn't delete them. Because of this, the number of uniques you see on a drop-filtered chart in Amplitude Analytics may not match the number of uniques on the MTU chart in your billing report.
