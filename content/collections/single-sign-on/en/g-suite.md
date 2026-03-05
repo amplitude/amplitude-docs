@@ -6,13 +6,13 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360002564052-Set-up-single
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363400
 ---
-Amplitude provides a single sign-on integration with G Suite for customers on Scholarship, Growth, or Enterprise plans.
+Amplitude provides a Single Sign-On (SSO) integration with G Suite for customers on Scholarship, Growth, or Enterprise plans.
 
 ## Before you begin
 
-For some general information about SSO, see [this article on SSO in Amplitude](/docs/admin/single-sign-on/sso).
+For general information about SSO, review [SSO in Amplitude](/docs/admin/single-sign-on/sso).
 
-In order to set up SSO, you must be an org admin for your Amplitude organization. You must also be an administrator for your G Suite organization, and you must configure your own SSO settings, a requirement that is enforced when logging into your org.
+To set up SSO, you must be an organization admin for your Amplitude organization. You must also be an administrator for your G Suite organization and configure your own SSO settings — a requirement enforced when logging into your organization.
 
 ## Set up SSO for Amplitude using G Suite
 
@@ -34,26 +34,26 @@ To configure SSO for Amplitude using G Suite, follow these steps:
 
 ![an_gsuite_4_download_metadata.png](/docs/output/img/single-sign-on/an-gsuite-4-download-metadata-png.png)
 
-5. Upload the metadata file in Amplitude, under *Settings > Organizational settings > Access & SSO Settings*, then save the changes.
+5. Upload the metadata file in Amplitude under *Settings > Organizational settings > Access & SSO Settings*, then save the changes.
 
 ![SSO](/docs/output/img/single-sign-on/sso.png)
 
-6. Go back to G Suite and continue with the app creation process. Enter a name and description and optionally upload the logo for easy recognition.
+6. Go back to G Suite and continue with the app creation process. Enter a name and description, and optionally upload the logo for easy recognition.
 
 ![an_gsuite_6_name.png](/docs/output/img/single-sign-on/an-gsuite-6-name-png.png)
 
-7. Next, you will be prompted for the "ACS URL" and "Entity ID".  
-  
+7. G Suite prompts you for the "ACS URL" and "Entity ID."
+
 ![an_gsuite_7_sp_details.png](/docs/output/img/single-sign-on/an-gsuite-7-sp-details-png.png)
 
-You can find the Entity ID and Assertion Consumer Service URL in the Amplitude SSO settings; just navigate to *Settings > Organizational settings > Access & SSO Settings*:
+Find the Entity ID and Assertion Consumer Service URL in the Amplitude SSO settings by navigating to *Settings > Organizational settings > Access & SSO Settings*:
 
 ![SSO](/docs/output/img/single-sign-on/sso.png)
 
-8. Finally, in Google Admin, click *Finish* to save the app and enable SSO.
+8. In Google Admin, click *Finish* to save the app and enable SSO.
 
 ![an_gsuite_8_attributes.png](/docs/output/img/single-sign-on/an-gsuite-8-attributes-png.png)
 
 {{partial:admonition type='note'}}
- You can review information regarding just-in-time (JIT) provisioning settings for G Suite administration [here](http://cloud.google.com/identity/solutions/automate-user-provisioning). There may be a short "settling period" when setting up and validating the configuration. If users are getting 403 errors, wait a day and try JIT again. 
+For information about just-in-time (JIT) provisioning settings for G Suite administration, review the [Google identity documentation](http://cloud.google.com/identity/solutions/automate-user-provisioning). There may be a short settling period when you set up and validate the configuration. If users get 403 errors, wait a day and try JIT again.
 {{/partial:admonition}}

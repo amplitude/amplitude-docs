@@ -6,13 +6,13 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360002548591-Set-up-single
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363264
 ---
-Amplitude provides a single sign-on integration with Auth0 for customers on Scholarship, Growth, or Enterprise plans.
+Amplitude provides a Single Sign-On (SSO) integration with Auth0 for customers on Scholarship, Growth, or Enterprise plans.
 
 ## Before you begin
 
-For some general information about Single Sign-On (SSO), review [SSO in Amplitude](/docs/admin/single-sign-on/sso).
+For general information about SSO, review [SSO in Amplitude](/docs/admin/single-sign-on/sso).
 
-To set up SSO, you must be an org admin for your Amplitude organization. You must also have the permissions to configure Auth0 for your organization.
+To set up SSO, you must be an organization admin for your Amplitude organization, and you must have permission to configure Auth0 for your organization.
 
 ## Set up SSO for Amplitude using Auth0
 
@@ -27,16 +27,16 @@ To configure SSO for Amplitude using Auth0, follow these steps:
 
 ![an_auth0_2_addons.png](/docs/output/img/single-sign-on/an-auth0-2-addons-png.png)
 
-4. Enter the Application Callback URL in the appropriate field in the modal that appears. 
+4. Enter the Application Callback URL in the appropriate field in the modal that appears.
 
 ![an_auth0_3_saml2.png](/docs/output/img/single-sign-on/an-auth0-3-saml2-png.png)
 
-5. You can find the entity ID and Assertion Consumer Service URL in the Amplitude SSO settings. Just open Amplitude and navigate to *Settings > Organizational settings > Access & SSO Settings*.
+5. Find the entity ID and Assertion Consumer Service URL in the Amplitude SSO settings. Navigate to *Settings > Organizational settings > Access & SSO Settings*.
 
 ![SSO](/docs/output/img/single-sign-on/sso.png)
 
-6. After entering the URL and saving the SAML2 settings, open the *Usage* tab and download the  identity provider certificate metadata file.
-7. Upload the metadata file in Amplitude, under *Settings > Organizational settings > Access & SSO Settings*.
+6. After entering the URL and saving the SAML2 settings, open the *Usage* tab and download the identity provider certificate metadata file.
+7. Upload the metadata file in Amplitude under *Settings > Organizational settings > Access & SSO Settings*.
 
 ![SSO](/docs/output/img/single-sign-on/sso.png)
 

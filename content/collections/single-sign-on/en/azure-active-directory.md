@@ -6,19 +6,19 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360002581311-Set-up-single
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363416
 ---
-Amplitude provides a single sign-on integration with Microsoft Azure Active Directory for customers on Scholarship, Growth, or Enterprise plans.
+Amplitude provides a Single Sign-On (SSO) integration with Microsoft Azure Active Directory for customers on Scholarship, Growth, or Enterprise plans.
 
 ## Before you begin
 
-For some general information about SSO, see [this article on SSO in Amplitude](/docs/admin/single-sign-on/sso).
+For general information about SSO, review [SSO in Amplitude](/docs/admin/single-sign-on/sso).
 
-In order to set up SSO, you must be an org admin for your Amplitude organization. You must also able to configure Azure Active Directory for your organization in Microsoft Azure.
+To set up SSO, you must be an organization admin for your Amplitude organization, and you must have permission to configure Azure Active Directory in Microsoft Azure.
 
 ## Set up SSO for Amplitude using Microsoft Azure Active Directory
 
 To configure SSO for Amplitude using Azure Active Directory, follow these steps:
 
-1. From the Azure [portal,](https://portal.azure.com) navigate to the Azure Active Directory section.
+1. From the Azure [portal,](https://portal.azure.com) navigate to the Azure Active Directory section.
 
 ![an_azure_1_aad.png](/docs/output/img/single-sign-on/an-azure-1-aad-png.png)
 
@@ -34,14 +34,14 @@ To configure SSO for Amplitude using Azure Active Directory, follow these steps:
 
 ![an_azure_4_gallery.png](/docs/output/img/single-sign-on/an-azure-4-gallery-png.png)
 
-5. Click *Single sign-on* to open the SSO app settings. Then enter the identifier and the reply URL in the appropriate text fields.
+5. Click *Single sign-on* to open the SSO app settings. Enter the identifier and the reply URL in the appropriate text fields.
 
 ![an_azure_6_settings.png](/docs/output/img/single-sign-on/an-azure-6-settings-png.png)
 
-These can be found under *Entity ID* and *Assertion Consumer Service URL*, respectively, in Amplitude's SSO settings.
+Find these values under *Entity ID* and *Assertion Consumer Service URL*, respectively, in Amplitude's SSO settings.
 
-![Screen](/docs/output/img/single-sign-on/screen.png)  
-  
+![Screen](/docs/output/img/single-sign-on/screen.png)
+
 6. In the *User identifier* field, select *user.mail* from the drop-down list.
 
 ![an_azure_7_user_identifier.png](/docs/output/img/single-sign-on/an-azure-7-user-identifier-png.png)
@@ -50,5 +50,5 @@ These can be found under *Entity ID* and *Assertion Consumer Service URL*, respe
 
 ![an_azure_8_download_metadata.png](/docs/output/img/single-sign-on/an-azure-8-download-metadata-png.png)
 
-8. In Amplitude, navigate to *Settings > Organization settings > Access & SSO Setting > Single Sign-On Settings* and upload the metadata file. Be sure to choose Microsoft Azure Active Directory as the *Identity Provider*.
+8. In Amplitude, navigate to *Settings > Organization settings > Access & SSO Setting > Single Sign-On Settings* and upload the metadata file. Choose Microsoft Azure Active Directory as the *Identity Provider*.
 9. Save your changes to enable SSO.
