@@ -4,15 +4,15 @@ blueprint: guides_and_survey
 title: 'Notifications'
 exclude_from_sitemap: false
 ---
-Set up notification alerts for your surveys in Guides and Surveys. When someone submits a survey response, Amplitude can send a notification to a **Slack channel** or a **webhook** so your team stays informed in real time.
+Set up notification alerts for your surveys in Guides and Surveys. When someone submits a survey response, Amplitude can send a notification to a Slack channel or a webhook so your team stays informed in real time.
 
-This page covers creating and managing notification alerts through the Guides and Surveys project settings. To learn how to connect your Slack workspace to Amplitude, see [Integrate Slack](/docs/analytics/integrate-slack).
+This page covers creating and managing notification alerts through the Guides and Surveys project settings. To learn how to connect your Slack workspace to Amplitude, go to [Integrate Slack](/docs/analytics/integrate-slack).
 
 If you use Microsoft Teams, you can send notifications to a [Teams webhook](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498).
 
-If you use Google Chat, you can send notifications via [webhook](https://docs.cloud.google.com/workflows/docs/notify-google-chat).
+If you use Google Chat, you can send notifications through a [webhook](https://docs.cloud.google.com/workflows/docs/notify-google-chat).
 
-{{partial:admonition type="note" heading=""}}
+{{partial:admonition type="note" heading="Guides and Surveys permissions*"}}
 You must have Guides and Surveys project settings permissions to create, edit, or delete notification alerts. You don't need any special permissions to receive notifications if you're a member of the Slack channel or webhook endpoint. Talk to your Admin if you need different permissions.
 {{/partial:admonition}}
 
@@ -22,7 +22,7 @@ Before you can send alerts to a Slack channel, connect your Slack workspace to A
 
 ##### To connect a Slack workspace to your survey notifications
 
-1. Go to *Settings > Projects*, select your project, then click *Guides & Surveys*.
+1. Go to *Settings > Projects*, select your project, then click **Guides & Surveys**.
 2. Expand the **Alerts** card.
 3. Click **Connect To Slack**.
 4. Click **Allow** to confirm that you want to connect Amplitude to Slack.
