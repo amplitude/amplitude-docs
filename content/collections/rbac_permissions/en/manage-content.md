@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage content'
 product_area: resource-center
 advanced: true
-description: 'Add, update, and delete the article and video content that can be used by Resource Center.'
+description: 'Add, update, and delete article and video content for Resource Center.'
 actions:
   - 'add content syncs and sources'
   - 'update content sync and sources'

@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage Feature Flags and Feature Experiments'
 product_area: experiment
 advanced: true
-description: 'Create, Update, and Delete Feature Flags and Feature Experiments'
+description: 'Create, update, and delete feature flags and feature experiments'
 actions:
   - 'create feature flags and experiments'
   - 'archive feature flags and experiments'
