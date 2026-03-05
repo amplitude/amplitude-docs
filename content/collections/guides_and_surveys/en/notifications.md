@@ -8,9 +8,9 @@ Set up notification alerts for your surveys in Guides and Surveys. When someone 
 
 This page covers creating and managing notification alerts through the Guides and Surveys project settings. To learn how to connect your Slack workspace to Amplitude, see [Integrate Slack](/docs/analytics/integrate-slack).
 
-If you use Microsoft Teams, you can send notifications to a [Teams channel via email](https://support.microsoft.com/en-us/office/send-an-email-to-a-channel-in-microsoft-teams-d91db004-d9d7-4a47-82e6-fb1b16dfd51e) or a [Teams webhook](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498).
+If you use Microsoft Teams, you can send notifications to a [Teams webhook](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498).
 
-If you use Google Chat, you can send notifications via [email](https://support.google.com/chat/answer/14929313?hl=en) or [webhook](https://docs.cloud.google.com/workflows/docs/notify-google-chat).
+If you use Google Chat, you can send notifications via [webhook](https://docs.cloud.google.com/workflows/docs/notify-google-chat).
 
 {{partial:admonition type="note" heading=""}}
 You must have Guides and Surveys project settings permissions to create, edit, or delete notification alerts. You don't need any special permissions to receive notifications if you're a member of the Slack channel or webhook endpoint. Talk to your Admin if you need different permissions.
