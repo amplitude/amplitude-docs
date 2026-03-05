@@ -8,24 +8,23 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715292146
 ---
-In order to comply with GDPR and other user privacy regulations, Amplitude sends emails when it receives and processes user data deletion requests. You can control the kinds of emails each user receives by managing user privacy notifications.
+To comply with GDPR and other user privacy regulations, Amplitude sends emails when it receives and processes user data deletion requests. You can control which emails each user receives by managing user privacy notifications.
 
-This feature is **applied at the project level**, and admin privileges are required to use it. Admins can control the following notification types:
+You must have Admin privileges to use this feature. This feature applies at the **project level**. Admins can control the following notification types:
 
-* **Job Creation**: confirmation email at the time of request
-* **Job Completion**: confirmation email when the requests are completed
-* **Unset Violation**: email sent when SDK unset is not done
-* **All Notifications**: all of the above
+* **Job Creation**: confirmation email at the time of request.
+* **Job Completion**: confirmation email when requests complete.
+* **Unset Violation**: email sent when SDK unset isn't done.
+* **All Notifications**: all of the above.
 
 There must be at least one recipient for each notification.
-
 
 ## Enable user privacy notifications
 
 To enable specific users to receive notifications:
 
-1. Ensure you are in the project you want to manage and navigate to *Settings* > *Organization settings* > *User Privacy Notifications.*
-2. In the table listing the team members currently set to receive notifications, change their notification types and frequencies by selecting from the appropriate drop-down menus.
+1. Ensure you're in the project you want to manage and navigate to *Settings > Organization settings > User Privacy Notifications.*
+2. In the table listing the team members set to receive notifications, change their notification types and frequencies by selecting from the appropriate dropdown menus.
 3. To add new team members to the notification list, enter their names or email addresses into the text box and click *Add Team Members*.
 4. Repeat this process for each project within your organization, as needed.
 

@@ -17,7 +17,7 @@ Add users to your Amplitude organization before they can access any Amplitude pr
 
 Manage users from the Members page. Navigate to *Settings > Organization settings > Members & Groups*.
 
-At the top of the page, find an overview of users for your organization: the number of total users, joined users, pending users, and users requesting access. 
+At the top of the page, find an overview of users for your organization: the number of total users, joined users, pending users, and users requesting access.
 
 ### Invite new users
 
@@ -26,12 +26,12 @@ Only admins and managers can add or remove users from the organization. Members 
 To invite new users to the organization, follow these steps:
 
 1. From the Members page, click *Invite New Users.* The *Invite New Users* modal appears.
-2. Type the new user’s email address into the text box. You can add more than one email address at a time. Press the Enter key after each email address you type.
+2. Type the new user's email address into the text box. You can add more than one email address at a time. Press the Enter key after each email address you type.
 3. For each email you entered, select the appropriate team. Then click *Next*.
-4. If you are an Enterprise customer with Groups enabled, choose the group or groups this user belongs to from the *Select Groups* drop-down menu. The user inherits all the project permissions of those groups. Then click *Next*.
-5. Select the individual projects the user has access to. For each project, choose the appropriate role from the drop-down menu on the right. If you’ve assigned the user to a group in the previous step, you can't downgrade those permissions here. Then click *Next*.
+4. If you're an Enterprise customer with Groups enabled, choose the group or groups this user belongs to from the *Select Groups* dropdown. The user inherits all the project permissions of those groups. Then click *Next*.
+5. Select the individual projects the user has access to. For each project, choose the appropriate role from the dropdown on the right. If you assigned the user to a group in the previous step, you can't downgrade those permissions here. Then click *Next*.
 6. Specify the user's default project, and select the appropriate team spaces for them. The default project sets the user's dropdown menus to that project when they first log into Amplitude. The team spaces appear under *Team Spaces* in the left-hand rail when the user logs into Amplitude. Then click *Next*.
-7. Review your invitation. If it’s ready to go, click *Send*.
+7. Review your invitation. If it's ready to go, click *Send*.
 
 ### Allow team members to request access
 
@@ -56,7 +56,7 @@ Repeat the process for other users who also need to change their email address.
 
 ## Change user roles and permissions
 
-The *Joined Users* view shows all current users, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise and Growth customers with project-level permissions enabled need to select the checkbox next to a user's name to manage their individual permissions.
+The *Joined Users* view shows all current users, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown in the *Role* column. Enterprise and Growth customers with project-level permissions enabled need to select the checkbox next to a user's name to manage their individual permissions.
 
 To change user permissions in Amplitude, follow these steps:
 
@@ -64,10 +64,10 @@ To change user permissions in Amplitude, follow these steps:
 2. Check the box next to the name of the user whose permissions you want to edit. You can select multiple users at once.
 3. Click *Manage Project Access*.
 4. In the modal that appears, find the project you want to adjust permissions for and check the checkbox next to it. You can select multiple projects at once.
-5. From the *Role* dropdown, choose the new permission level you want to assign to the selected users for each selected project.  
-  
+5. From the *Role* dropdown, choose the new permission level you want to assign to the selected users for each selected project.
+
 {{partial:admonition type='note'}}
-You can't change the role for the only Admin in an organization.
+You can't change the role for the only admin in an organization.
 {{/partial:admonition}}
 
 6. To remove a user's permissions, click *Remove*. This removes the user from the organization and eliminates all access provisions.
@@ -78,7 +78,7 @@ When you remove a user, Amplitude designates all their content (charts, dashboar
 
 ### Project-level permissions
 
-With project-level permissions, a user can have a different role for each project within an organization. This enables multiple teams in your company to operate autonomously and manage their own datasets. For example, a user may have Manager-level permission in one project, but Viewer-level permission in another. Users without access to a project can't view any content that belongs in that project.
+With project-level permissions, a user can have a different role for each project within an organization. This lets multiple teams in your company operate autonomously and manage their own datasets. For example, a user may have Manager-level permission in one project but Viewer-level permission in another. Users without access to a project can't view any content that belongs to that project.
 
 ![mceclip2.png](/docs/output/img/account-management/mceclip2-png.png)
 
@@ -86,7 +86,7 @@ With project-level permissions, a user can have a different role for each projec
 Project-level permissions are available to customers on Growth and Enterprise plans only.
 {{/partial:admonition}}
 
-When viewing all members of your organization, Amplitude lists members as either *User* or *Admin*. If you're an Admin or Manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting *Manage Project Access*. Managers can only modify a user's role for the project where they're a Manager.
+When viewing all members of your organization, Amplitude lists members as either *User* or *Admin*. If you're an admin or manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting *Manage Project Access*. Managers can only modify a user's role for projects where they're a manager.
 
 Reach out to your Customer Success Manager to enable project-level permissions, as this isn't enabled by default.
 
@@ -102,21 +102,21 @@ This process can't be reversed, so use it with care.
 
 You can also transfer content when you're removing a user. Check the box on the *Remove Members?* modal, and Amplitude provides the option to transfer each removed user's content to another existing user.
 
-You can only transfer a user's content **before** they're deleted from the organization. The user who receives the content must have logged into Amplitude at least once in the 30 days prior, and you may have to explicitly grant them the permissions they need to access the content you've given them.
+You can only transfer a user's content **before** Amplitude deletes them from the organization. The user who receives the content must have logged into Amplitude at least once in the 30 days prior, and you may need to explicitly grant them the permissions they need to access the transferred content.
 
 ## Request an email domain change
 
-Before doing an email domain migration:
+Before doing an email domain migration, note the following:
 
-* **Migrated items**: Permissions levels including App-Level Permissions, Admin Status, Group Membership; and content including Cohorts, Charts, Dashboards, and Notebooks
-* **Non-migrated items**: User spaces and the content contained within these spaces
-* **Active user impact**: Anyone in an active session redirects to an error page. Let your team know they may not have access to Amplitude during the domain change.
-* **Turn off SSO**: If you have SSO enabled in your organization, turn it off before the migration. You have to set up SSO again after the migration.
+* **Migrated items**: Permission levels including app-level permissions, admin status, and group membership; and content including cohorts, charts, dashboards, and notebooks.
+* **Non-migrated items**: User spaces and the content contained within those spaces.
+* **Active user impact**: Anyone in an active session is redirected to an error page. Let your team know they may not have access to Amplitude during the domain change.
+* **Turn off SSO**: If you have SSO enabled in your organization, turn it off before the migration. You'll need to set up SSO again after the migration.
 
 To request an email domain change, submit a [ticket](https://help.amplitude.com/hc/en-us/requests/new) with the following information:
 
-* Your org ID
-* The old email domain
-* The new email domain
+* Your org ID.
+* The old email domain.
+* The new email domain.
 
 An admin must request email domain changes. If you aren't an admin of the organization, CC an admin in your request.

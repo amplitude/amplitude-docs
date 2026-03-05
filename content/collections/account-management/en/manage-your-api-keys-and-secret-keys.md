@@ -7,13 +7,12 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721166679
 ---
-
-Amplitude’s self-service key management page helps Managers & Admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
+Amplitude's self-service key management page lets managers and admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
 
 You can:
 
 * Create and name multiple API keys and secret keys.
-* View a log of the creator, and the last action taken on the key.
+* View a log of the creator and the last action taken on the key.
 * Disable API access.
 
 ## Manage your keys
@@ -29,13 +28,13 @@ An API key identifies your project so Amplitude can route ingested data to it. L
 
 ### Legacy API key
 
-The first time you use API key management, you see the legacy API key in the *API Keys* tab. Amplitude created this key when you created the project. You can't disable it but you can click **Rotate** to replace the key.
+The first time you use API key management, you see the legacy API key in the *API Keys* tab. Amplitude created this key when you created the project. You can't disable it, but you can click **Rotate** to replace the key.
 
 ### Generate an API key
 
 To generate an API key, follow these steps:
 
-1. Select the project you’re interested in.
+1. Select the project you're interested in.
 2. Click **Generate API Key**.
 3. Name the API key.
 
@@ -60,11 +59,11 @@ To generate a secret key, follow these steps:
 
 1. Select the appropriate project.
 2. Click **Generate Secret Key**.
-3. Name the secret key and copy it into your records. Amplitude doesn't store secret keys, and there's no way to retrieve it. (The Key ID is a unique identifier for your secret key, but it's not the key itself.)
+3. Name the secret key and copy it into your records. Amplitude doesn't store secret keys, and there's no way to retrieve it later. (The Key ID is a unique identifier for your secret key, but it's not the key itself.)
 
 ### Delete a secret key
 
-To delete a secret key, select the secret key you want to delete, then type “DELETE” to confirm your intent.
+To delete a secret key, select the secret key you want to delete, then type "DELETE" to confirm your intent.
 
 You can't use, see, or recover a secret key after deleting it.
 
