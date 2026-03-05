@@ -226,13 +226,13 @@ app.get('/api/blog-config', async (req, res) => {
 
 ## Strongly typed JSON payloads (advanced)
 
-JSON payloads are flexible by default: you can attach any valid JSON object to a variant and read it from `variant.payload`. For more control, you can make those payloads strongly typed by defining and enforcing a JSON schema.
+JSON payloads are flexible by default: you can attach any valid JSON to a variant and read it from `variant.payload`. For more control, you can define the **expected type** for variant payloads so Amplitude validates each payload before it reaches your application.
 
 Strongly typed payloads help you:
 
-- Define the exact structure of a payload once per flag or experiment.
-- Have Amplitude validate each variant payload against that structure.
-- Catch configuration issues (missing fields, invalid values, and wrong types) before they reach production.
+- Set the expected type once per flag or experiment.
+- Have Amplitude validate each variant payload against that type.
+- Catch configuration issues (wrong types, missing required fields) before they reach production.
 
 {{partial:admonition type="note" heading="JSON payload model"}}
 Strongly typed payloads build on the same JSON payload model and SDKs described above. How you access `variant.payload` in code doesn't change; you just gain stronger guarantees about what that payload looks like.
@@ -243,91 +243,85 @@ Strongly typed payloads build on the same JSON payload model and SDKs described 
 Strong typing is especially useful when:
 
 - Multiple teams depend on the same configuration (such as product, engineering, and solutions).
-- Payloads are complex (nested objects, arrays, and enums).
+- Payloads are complex (nested objects, arrays, and multiple keys).
 - You use flags as remote config or as layers that many experiments share.
 - You want to reduce runtime errors and make configuration safer.
 
-### Defining schemas for payloads
+### Define the expected type for variant payloads
 
-With strongly typed payloads enabled for a flag or experiment, you can:
+In the UI, by clicking "Set payload type", you choose a **payload type** for the flag or experiment. The type applies to all variants.
 
-**Define a JSON schema** that describes the expected payload structure:
+**Payload type options:**
 
-- Types: `string`, `number`, `boolean`, `object`, `array`.
-- Allowed values (enums).
-- Required compared to optional fields.
-- Whether the schema allows additional properties.
+- **None** — No type enforcement; payloads can be any valid JSON.
+- **String** — `variant.payload` is a string.
+- **Number** — `variant.payload` is a number.
+- **Object** — `variant.payload` is an object (no fixed keys or types).
+- **Array** — `variant.payload` is an array.
+- **Custom Schema** — You define an object shape with specific keys and types. You choose the type of each field (string, number, boolean, array, etc.) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
 
-**Attach that schema** to the flag or experiment so it applies to all variants.
-
-If a variant payload doesn't match the schema:
+If a variant payload doesn't match the selected type:
 
 - The UI shows an error on that variant.
 - You can't save the change until the payload is valid.
-- This prevents deploying broken configuration
+- This prevents deploying broken configuration.
 
 This complements validation in your application code instead of replacing it:
 
-- Amplitude enforces structure when you edit payloads.
+- Amplitude enforces the payload type when you edit payloads.
 - Your application can still validate or narrow types at runtime if needed.
 
-### Example: blog layout payload schema
+### Example: Custom Schema
 
-In the previous example of free-form blog layout payload:
+Suppose you want a payload like this, with `headerText` required:
 
 ```json
 {
-  "layout": "cards",
-  "titlePosition": "above",
-  "gradient": false,
-  "showDescription": true,
-  "cardCount": 3
+  "buttonColor": "#4A90D9",
+  "headerText": "Welcome back!",
+  "maxRetries": 3,
+  "features": ["dark_mode", "analytics"],
+  "showBanner": true
 }
 ```
 
-A matching JSON schema might look like this:
+When you choose **Custom Schema** and define these keys and types, Amplitude uses a JSON schema equivalent to:
 
 ```json
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
-    "layout": {
-      "type": "string",
-      "enum": ["list", "cards", "grid"]
+    "buttonColor": {
+      "type": "string"
     },
-    "titlePosition": {
-      "type": "string",
-      "enum": ["above", "below"]
+    "headerText": {
+      "type": "string"
     },
-    "gradient": { "type": "boolean" },
-    "showDescription": { "type": "boolean" },
-    "cardCount": {
-      "type": "number",
-      "minimum": 1,
-      "maximum": 10
+    "maxRetries": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "showBanner": {
+      "type": "boolean"
     }
   },
-  "required": ["layout", "titlePosition", "showDescription", "cardCount"],
-  "additionalProperties": false
+  "required": [
+    "features",
+    "buttonColor",
+    "headerText",
+    "maxRetries",
+    "showBanner"
+  ]
 }
 ```
 
-With this schema:
-
-- All variants must use one of the allowed `layout` and `titlePosition` values.
-- `cardCount` must be a number in the 1–10 range.
-- Amplitude rejects extra fields (because `additionalProperties` is `false`).
-
-If someone accidentally enters:
-
-```json
-{
-  "layout": "unknown",
-  "cardCount": 0
-}
-```
-
-the schema validation fails and the UI blocks the save, instead of shipping an invalid configuration.
+You can mark any of the fields as required in the Custom Schema. Payloads that omit a required field or use the wrong type for a key fail validation and block saving until they're fixed.
 
 ### Using strongly typed payloads in your code
 
