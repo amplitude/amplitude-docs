@@ -33,11 +33,11 @@ If a Slack channel ID appears instead of the channel name, make sure you have co
 
 ## Survey activities that generate alerts
 
-You receive alerts when a survey response is submitted. This includes responses from any active survey that matches the scope you configure for the alert.
+When a customer submits a survey response, you receive an alert. This includes responses from any active survey that matches the scope you configure for the alert.
 
 ## Set up an alert
 
-After you have connected your Slack workspace to Amplitude, you can create notification alerts for your surveys. If you want to send notifications through a webhook, you can provide the URL and signing key when you create the alert.
+After you have connected your Slack workspace to Amplitude, you can create notification alerts for your surveys. If you want to send notifications through a webhook, provide the URL and signing key when you create the alert.
 
 ##### To set up an alert
 
