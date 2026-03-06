@@ -9,15 +9,11 @@ this_article_will_help_you:
   - 'Understand what Zoning is and how it fits with Session Replay'
   - 'Create and use zone maps to analyze defined areas of your product'
 ---
-Zoning is a Session Replay feature that lets you define named areas (zones) on your pages and analyze user engagement within those areas. You create zone maps that overlay your product UI so you can see how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
-
-{{partial:admonition type="note" heading="Information gaps"}}
-This draft was written without access to the staging product UI, Confluence (Technical Zoning SDK/Remote Config, Product Zoning, Technical Zoning DB Schema), or the product spec Google Doc. Sections below call out specifics that still need to be confirmed from those sources.
-{{/partial:admonition}}
+Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. You create zone maps that overlay your product UI so you can see how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
 
 ## Prerequisites
 
-Before you use Zoning, ensure the following.
+Before you use Zoning, ensure the following:
 
 ### Session Replay
 
