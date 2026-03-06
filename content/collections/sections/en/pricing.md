@@ -8,38 +8,42 @@ exclude_from_sitemap: false
 updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
 updated_at: 1772556732
 ---
-Amplitude offers several pricing tiers:
+Amplitude offers the following pricing tiers:
 
 * Starter
 * Plus
 * Growth
 * Enterprise
 
-Each tier offers different levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using.
+Each tier offers different levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality, so you can ensure that you're getting the functionality you need.
 
-Except in rare cases, the Help documentation doesn't attempt to specify the functionality differences between the tiers. If you have specific questions about whether a feature is included in your tier, check out the [Plan Comparison](https://amplitude.com/pricing#:~:text=Contact%20sales-,Analytics,-Understand%20the%20full) table or contact [Sales](https://amplitude.com/sales-contact).
+This documentation usually doesn't specify differences between tiers because most functionality is available, with limits, across all tiers. However, some features may not be available on your tier.
+
+To confirm whether a feature is included in your tier, review the [Plan Comparison](https://amplitude.com/pricing#:~:text=Contact%20sales-,Analytics,-Understand%20the%20full) table or contact [Sales](https://amplitude.com/sales-contact).
 
 
 ## Tiers build functionality
 
-Every pricing tier provides more functionality than the previous one. This means that the functionality included in the Starter plan is automatically included in the Plus plan. The Plus plan then expands upon the Starter plan. That expansion is both in functionality and in expanded limits. The Enterprise tier provides the most functionality with the largest monthly limits.
+Each tier adds more functionality than the one before. The Plus plan includes all Starter functionality and expands on it with more features and higher limits. 
+
+Enterprise tier provides the most functionality and the highest monthly limits.
 
 For example:
 
 * The Starter plan includes out-of-the-box analytics and templates.
-    * The Plus plan includes those analytics and templates and also lets you create unlimited analytics views. You can customize your analytics however you want.
-* The Starter plan offers 50k MTUs and up to 10M events.
-    * The Plus plan expands this volume to 300k MTUs or 25M events.
+    * The Plus plan includes those and lets you create unlimited analytics views and customize your analytics.
+* The Starter plan offers 50K MTUs and up to 10M events.
+    * The Plus plan raises this to 300K MTUs or 25M events.
 
-The Growth and Enterprise plans expand further upon the Plus plan:
+The Growth and Enterprise plans build on the Plus plan:
 
-* Growth and Enterprise plans both offer unlimited or custom MTU or event volumes.
-* The Growth plan offers advanced behavioral analysis.
-* The Enterprise plan offers advanced behavioral analysis as well as Cross-product analysis.
+* Both offer unlimited or custom MTU and event volumes.
+* Growth offers advanced behavioral analysis.
+* Enterprise offers advanced behavioral analysis and cross-product analysis.
 
 ## Enterprise-only functionality
 
-Some functionality is only available for Enterprise customers. Expand the section to understand what parts of Amplitude are Enterprise-only:
+Some functionality is available only on Enterprise. Expand the section below to view which features are Enterprise-only:
 
 {{partial:collapse name="Enterprise-only features"}}
 * [Guides & Surveys MAB](/docs/guides-and-surveys/guides/experiments)
@@ -62,9 +66,9 @@ Some functionality is only available for Enterprise customers. Expand the sectio
 
 ## Add-on functionality
 
-If you're on the Growth or Enterprise plan, you can purchase additional functionality as an add-on.
+On Growth or Enterprise, you can purchase add-on functionality.
 
-Expand each section below to understand what is included in each add-on:
+Expand each section below to view what each add-on includes:
 
 {{partial:collapse name="Session Replay"}}
 * [Unlimited sessions](/docs/session-replay/session-replay-settings)
