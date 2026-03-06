@@ -1,17 +1,21 @@
 ---
 id: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
-published: false
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Overview'
 source: 'https://help.amplitude.com/hc/en-us/articles/26003996242203-Warehouse-native-Amplitude-Run-analyses-from-data-in-your-own-data-warehouse'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328339
+hide_from_search: true
 landing: true
 landing_blurb: 'Your data warehouse stores critical data on every aspect of your business.'
 academy_course:
   - 7e4cdb01-8c5f-403d-8553-93395c74ffa1
 ---
+{{partial:admonition type="warning" heading=""}}
+Warehouse Native is a legacy feature and isn't available to new customers.
+{{/partial:admonition}}
+
 Your data warehouse stores critical data on every aspect of your business. But some of that data never makes its way into Amplitude, making it inaccessible for Amplitude analyses you want to run.
 
 With Warehouse-native Amplitude (WNA), you can create custom analyses using data models based directly on data living in your data warehouse. Because you no longer ingest event and end user data into Amplitude, you can quickly unlock more and newer datasets, especially those that are time-sensitive. And just like standard Amplitude, WNA quickly delivers insights into user behavior, identifies trends, and makes data-driven decisions to improve your business, all based on data sitting in your own data warehouse.
