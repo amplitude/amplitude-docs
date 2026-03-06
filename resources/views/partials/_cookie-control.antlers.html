@@ -88,9 +88,6 @@
                         '_gid', // Google Analytics
                         '_gat*', // Google Analytics
                     ],
-                    onAccept: function () {
-                        amplitude.setOptOut(false)
-                    },
                     onRevoke: function () {
                         amplitude.setOptOut(true)
                     }
