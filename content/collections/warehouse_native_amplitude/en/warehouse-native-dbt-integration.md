@@ -1,11 +1,15 @@
 ---
 id: 06feb1be-15e3-419a-95ea-85a497dc07f5
-published: false
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native DBT Integration'
 landing: false
 exclude_from_sitemap: false
+hide_from_search: true
 ---
+{{partial:admonition type="warning" heading=""}}
+Warehouse Native is a legacy feature and isn't available to new customers.
+{{/partial:admonition}}
+
 The warehouse-native DBT integration helps you manage your warehouse native models.
 Instead of managing one model at a time, create or edit multiple models with the DBT manifest file.
 
