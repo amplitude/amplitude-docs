@@ -91,7 +91,4 @@ tree:
           -
             id: db733662-afc7-4238-8d25-c7dde9b72342
             entry: 8b2c4f1a-9e3d-4c5b-8f7a-1d2e3f4g5h6i
-  -
-    id: 8b62b01c-5555-43f1-8f60-e4acd5ac26e6
-    title: 'Session Replay API'
-    url: /docs/apis/analytics/session-replay
+
