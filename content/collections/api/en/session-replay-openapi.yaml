@@ -7,12 +7,12 @@ info:
 
     ## Authentication
 
-    All endpoints use HTTP Basic authentication. Use your project's API key as the username and secret key as the password. The project is inferred from the authenticated API key — no `project_id` parameter is needed.
+    All endpoints use HTTP Basic authentication. Use your project's API key as the username and secret key as the password. The project is inferred from the authenticated API key, no `project_id` parameter is needed.
 
     ## Considerations
 
     - Presigned file URLs expire after 15 minutes.
-    - Pagination cursors are opaque strings. Don't construct or modify them — use `next_page_token` from the previous response as-is.
+    - Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
     - The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
 
 servers:
@@ -130,7 +130,7 @@ paths:
         - name: page_size
           in: query
           required: false
-          description: Number of results per page. Default is `50`, maximum is `200`.
+          description: Number of results on each page. Default is `50`, maximum is `200`.
           schema:
             type: integer
             default: 50
@@ -202,8 +202,8 @@ paths:
 
         Version 2 files require two decompression steps:
 
-        1. gzip decompress the file, then JSON parse → array of packed strings
-        2. zlib decompress each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object
+        1. gzip decompress the file, then JSON parse → array of packed strings.
+        2. zlib decompress each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object.
 
         ## Playing back events
 
@@ -229,7 +229,7 @@ paths:
         - name: page_size
           in: query
           required: false
-          description: Number of files per page. Default is `100`, maximum is `1000`.
+          description: Number of files on each page. Default is `100`, maximum is `1000`.
           schema:
             type: integer
             default: 100

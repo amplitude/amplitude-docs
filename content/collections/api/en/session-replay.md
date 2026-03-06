@@ -15,9 +15,9 @@ hide_from_search: true
 ## Considerations
 
 - All endpoints use HTTP Basic auth. Use your project's API key as the username and secret key as the password.
-- The project is inferred from the authenticated API key — no `project_id` parameter is needed.
+- No `project_id` parameter is needed because the authenticated API key carries the project inference.
 - Presigned file URLs expire after 15 minutes.
-- Pagination cursors are opaque strings. Don't construct or modify them — use `next_page_token` from the previous response as-is.
+- Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
 - The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
 
 ## List session replays
@@ -223,8 +223,8 @@ The result is a JSON array of rrweb events:
 
 Version 2 files require two decompression steps:
 
-1. **gzip decompress** the file, then JSON parse → array of packed strings
-2. **zlib decompress** each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object
+1. **gzip decompress** the file, then JSON parse → array of packed strings.
+2. **zlib decompress** each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object.
 
 {{partial:tabs tabs="JavaScript, Python"}}
 {{partial:tab name="JavaScript"}}
