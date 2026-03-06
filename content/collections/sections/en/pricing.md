@@ -17,9 +17,8 @@ Amplitude offers several pricing tiers:
 
 Each tier offers different levels of functionality and areas of expansion. Amplitude also lets you purchase add-on functionality to almost every pricing tier, so you can ensure that you're getting the functionality you need and not paying for functionality you're not using.
 
-{{partial:admonition type="note" heading="Documenting features by tier"}}
 Except in rare cases, the Help documentation doesn't attempt to specify the functionality differences between the tiers. If you have specific questions about whether a feature is included in your tier, check out the [Plan Comparison](https://amplitude.com/pricing#:~:text=Contact%20sales-,Analytics,-Understand%20the%20full) table or contact [Sales](https://amplitude.com/sales-contact).
-{{/partial:admonition}}
+
 
 ## Tiers build functionality
 
