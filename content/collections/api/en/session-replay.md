@@ -98,14 +98,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 | `session_replays[].amplitude_id` | The Amplitude user ID. |
 | `session_replays[].start_time` | ISO 8601 timestamp of when the session started. |
 | `session_replays[].end_time` | ISO 8601 timestamp of when the session ended. |
-| `session_replays[].retention_in_days` | Number of days the replay data is retained. |
+| `session_replays[].retention_in_days` | Number of days Amplitude retains the replay data. |
 | `next_page_token` | Opaque cursor to pass as `page_token` to retrieve the next page. `null` when there are no more results. |
 
 ---
 
 ## Get session replay files
 
-Returns a paginated list of presigned S3 URLs for the event files belonging to a specific replay. Each URL points to a gzip-compressed JSON array of rrweb events. Files are ordered by key, which encodes start time.
+Returns a paginated list of presigned S3 URLs for the event files belonging to a specific replay. Each URL points to a gzip-compressed JSON array of rrweb events. Amplitude orders files by key, which encodes start time.
 
 `GET https://amplitude.com/api/1/session-replays/files`
 
@@ -290,4 +290,4 @@ rrweb.replay({ events, root: document.getElementById('player') });
 | `200 OK` | Successful request. |
 | `400 Bad Request` | Invalid parameter value. Check the error message for details. |
 | `401 Unauthorized` | Missing or invalid API credentials. |
-| `404 Not Found` | No data found for the given `replay_id` (only returned on the first page). |
+| `404 Not Found` | No data found for the given `replay_id`. Amplitude only returns this error on the first page. |

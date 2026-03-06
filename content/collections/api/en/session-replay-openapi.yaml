@@ -3,17 +3,15 @@ info:
   title: Session Replay API
   version: beta
   description: |
-    Use the Session Replay API to list session replays and retrieve the event files for a specific replay.
-
-    ## Authentication
+    Session Replay API lets you list session replays and retrieve the event files for a specific replay.
 
     All endpoints use HTTP Basic authentication. Use your project's API key as the username and secret key as the password. The project is inferred from the authenticated API key, no `project_id` parameter is needed.
 
-    ## Considerations
+    Presigned file URLs expire after 15 minutes.
 
-    - Presigned file URLs expire after 15 minutes.
-    - Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
-    - The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
+    Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
+
+    The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
 
 servers:
   - url: https://amplitude.com/api/1
@@ -61,7 +59,7 @@ components:
           example: "2024-01-01T00:05:00Z"
         retention_in_days:
           type: integer
-          description: Number of days the replay data is retained.
+          description: Number of days Amplitude retains the replay data.
           example: 90
 
     ListSessionReplaysResponse:
@@ -190,7 +188,7 @@ paths:
       description: |
         Returns a paginated list of presigned S3 URLs for the event files belonging to a specific replay.
 
-        Each URL points to a gzip-compressed JSON array of rrweb events. Files are ordered by key, which encodes start time.
+        Each URL points to a gzip-compressed JSON array of rrweb events. Amplitude orders files by key, which encodes start time.
 
         ## Decompressing files
 
@@ -267,7 +265,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
         '404':
-          description: No data found for the given `replay_id` (only returned on the first page).
+          description: No data found for the given `replay_id`. Amplitude only returns this error on the first page.
           content:
             application/json:
               schema:
