@@ -60,6 +60,17 @@ amplitude.add(engagementPlugin());
 
 For additional configuration, supply `InitOptions` to the `plugin` function. Go to [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
+For example, use `defaultBootOptions` to configure auto-refresh at plugin time, since the plugin calls `boot()` automatically:
+
+```ts
+import { plugin as engagementPlugin } from '@amplitude/engagement-browser';
+amplitude.add(engagementPlugin({
+  defaultBootOptions: {
+    autoRefreshIntervalSeconds: 3600
+  }
+}));
+```
+
 {{partial:admonition type="note" heading=""}}
 After the installation steps are complete, by default all Guides and Surveys events are sent to your project.
 {{/partial:admonition}}
@@ -129,6 +140,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: s
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                                                                                 |
 | `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                                                                              |
 | `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`                                                           |
+| `initOptions.defaultBootOptions` | `DefaultBootOptions`                                                                                                   | Optional. Default boot options that the SDK shallow-merges into every `boot()` call. Useful in plugin mode where `boot()` runs automatically. Boot-time values override these defaults. Includes all `BootOptions` fields except `user` and `integrations`. Defaults persist across `shutdown()` + `boot()` cycles. |
 
 ##### Example: Basic initialization
 
@@ -599,7 +611,7 @@ engagement.boot(options: BootOptions): Promise<void>
 | Parameter              | Type                           | Description                                                                                                                                                                                                                                                                                                         |
 | ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
-| `options.integrations` | `Array<Integration>`           | Required when not using the Amplitude Browser SDK plugin. An array of integrations for tracking events. Without integrations, Guides and Surveys can't send events to your analytics provider, and guide insights, survey insights, and survey responses won't appear. |
+| `options.integrations` | `Array<Integration>`           | Required. An array of integrations for tracking events. Enables sending Guides and Surveys events to your analytics provider. Without integrations, guide insights, survey insights, and survey responses won't appear. Pass `[{ track: () => {} }]` as a noop if you don't need event forwarding. |
 | `options.autoRefreshIntervalSeconds` | `number`           | Optional. Auto-refresh interval in seconds. When enabled, the SDK automatically refreshes (re-fetches decide data, end user store, and reloads config) at this interval. Must be 60 seconds or greater. If not specified, 0, or negative, auto-refresh is disabled. |
 
 #### EndUser type
@@ -637,7 +649,14 @@ await window.engagement.boot({
       plan: "premium",
       signupDate: "2023-01-15"
     }
-  }
+  },
+  integrations: [
+    {
+      track: (event) => {
+        amplitude.track(event.event_type, event.event_properties);
+      }
+    }
+  ]
 });
 ```
 
@@ -674,16 +693,19 @@ await window.engagement.boot({
   integrations: [
     {
       track: (event) => {
-        ampliutde.track(event.event_type, event.event_properties);
+        amplitude.track(event.event_type, event.event_properties);
       }
     }
   ]
 });
 ```
 
-**Example 4: Simple string user ID**
+**Example 4: Simple user ID**
 ```js
-await window.engagement.boot("user123");
+await window.engagement.boot({
+  user: "user123",
+  integrations: []
+});
 ```
 
 #### Important notes
