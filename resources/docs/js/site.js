@@ -18,6 +18,7 @@ import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-dart';
 import 'prismjs/components/prism-http';
 import 'prismjs/components/prism-ruby';
+import 'prismjs/components/prism-nginx';
 import 'prismjs/plugins/toolbar/prism-toolbar';                 
 import 'prismjs/plugins/show-language/prism-show-language';     
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
