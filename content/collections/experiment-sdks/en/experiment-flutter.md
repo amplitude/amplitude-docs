@@ -23,7 +23,7 @@ Add the `amplitude_experiment` package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  amplitude_experiment: ^0.1.0-alpha.1
+  amplitude_experiment: ^0.1.0-beta.1
 ```
 
 Then run:
