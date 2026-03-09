@@ -31,9 +31,9 @@ Select **+ Add Event**, and choose the event that represents traffic where you r
 
 For example, if you test your homepage, select `Page Viewed`, and add a filter for your homepage URL.
 
-The Duration Estimator automatically pulls the last 29-30 days of traffic data from Analytics, and shows visitors per day in the results panel.
+The Duration Estimator automatically pulls the last 29-30 days of traffic data from Analytics, and shows Users per day in the results panel.
 
-If you don't have the right event, select **Enter Manually** to input your own total daily traffic estimate. Traffic is total traffic, not per variant.
+If you don't have the right event, select **Enter Manually** to input your own total daily traffic estimate. Traffic is total traffic, not for each variant.
 
 ### Step 2: Add your success metric
 
@@ -80,7 +80,7 @@ If you don't have historical data, select **Enter Manually** to input your own b
 
 After you add your traffic and success metric, the **Estimated Duration** panel shows:
 - Duration: How many days you need to run the test (for example, `~130 days`).
-- Visitors per day: Daily traffic the tool automatically pulls from Analytics.
+- Users per day: Daily traffic the tool automatically pulls from Analytics.
 - Lift: Your baseline conversion rate to target conversion rate with your MDE percentage.
 - Summary: Plain-language explanation you can share with stakeholders.
 
