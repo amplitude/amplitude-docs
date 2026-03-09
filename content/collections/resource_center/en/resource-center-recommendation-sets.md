@@ -1,6 +1,6 @@
 ---
 id: 13b804be-b238-462d-9c36-cf406267b312
-blueprint: guides_and_survey
+blueprint: resource_center
 title: 'Recommendation Sets'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6

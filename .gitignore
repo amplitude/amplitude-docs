@@ -102,3 +102,5 @@ public/docs/js/interactive-evaluation-table.js
 public/docs/js/interactive-exposure-table.js
 public/docs/js/interactive-exposure-tracking-table.js
 public/mix-manifest.json
+
+/.local

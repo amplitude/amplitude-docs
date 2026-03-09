@@ -1,6 +1,6 @@
 ---
 id: 05c26116-31bf-4215-bc7b-8bc230655839
-blueprint: guides_and_survey
+blueprint: resource_center
 title: Settings
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
