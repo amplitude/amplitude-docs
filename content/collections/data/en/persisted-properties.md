@@ -88,17 +88,6 @@ Expiration defines when a persisted property value stops applying.
 ## Setting up persisted properties
 The following section contains examples for using the *Persistence and Advanced settings*. Review each one as they apply to different ways you can implement persisted properties. 
 
-### Step 1: Define persistence in data settings
-
-Go to *Data Settings > Properties > Persisted* and click **Create persisted property**, select the type of persisted property you want to create:
-
-- **Persistence settings:** Create a persisted property and attaching it to an event. 
-- **Advanced: Merchandising use case:** Create an item-level attribution and define which products are tied to the persisted property and then identify items within a single cart to each merchandising source.
-
-#### Example 1: Product source
-
-**Persistence settings:**
-
 1. Navigate to the *Properties* section of Data Settings and then click to create a new persisted property.
    Give this persisted property a name, such as `Entry Page`. In the description, provide some additional information such as the allocation method and expiration. This helps ensure that anyone using this property in a chart or data table understands the configuration.
 2. Select the event property you want to persist.
@@ -110,21 +99,9 @@ Go to *Data Settings > Properties > Persisted* and click **Create persisted prop
 
 Before going into how you can use persisted properties in your analysis, review the more advanced example that requires both the persisted setting and the Advanced: Merchandising toggle.
 
-#### Example 2 (Advanced): Merchandising finding method
+## Advanced: Item-level attribution
 
-**Persistence settings:**
-
-1. Create a new persisted property called `Most recent Finding Method`.
-2. Select the event property you want to persist.
-   For this Most recent Finding Method example, use `Finding Method`.
-3. Choose an **Allocation** method. 
-Because you want to identify the `Most recent Finding Method`, select **Most recent**. This ensures you include the last touchpoint.
-4. Set the **Expiration**.
-   By default, the persisted property expires at the end of the session.
-
-**Advanced: Merchandising use case:**
-
-The advanced merchandising setup lets Amplitude define which products can be tied to the persisted property. It then attributes items within a single cart to each merchandising source. This called item-level attribution. With item-level attribution, you can attribute metrics such as `add to cart`, `discovery_method`, or `Revenue` to an item's correct persisted property. 
+Item-level attribution is commonly used for merchandising. This type of attribution lets Amplitude define which products can be tied to the persisted property. It then attributes items within a single cart to each merchandising source. With item-level attribution, you can attribute metrics such as `Revenue` for each item to the merchandising source (such as `search for recommendations`). 
 
 For example, you have three items in a cart. Each item was added to the cart through a different discovery method: 
 
@@ -132,17 +109,31 @@ For example, you have three items in a cart. Each item was added to the cart thr
 * Item 2 was discovered from the Popular Products display.
 * Item 3 was discovered from Recommendations.
 
+If item-level attribution isn't enabled, conversion events for that $19 order would be credited to a single discovery method. With `Original` allocaiton, the on-site search receives all the. credit. With `Most Recent`, recommendations would receive the credit. 
+
 Item-level attribution lets you bind the discovery context to each item in the cart. This, in turn, credits the correct discovery method to each item in the cart. 
+
+##### To set up the persisted property
+
+1. Create a new persisted property called `Most recent Finding Method`.
+2. Select the event property you want to persist.
+   For this Most recent Finding Method example, use `discovery_method`.
+3. Choose an **Allocation** method. 
+Because you want to identify the `Most recent Finding Method`, select **Most recent**. This ensures you include the last touchpoint.
+4. Set the **Expiration**.
+   By default, the persisted property expires at the end of the session.
+
+After the property is created, you can set up item-level attribution.
 
 ##### To set up item-level attribution 
 
-1. Select which product identifier you use in the cart-related metrics you want. Using the previous example, you'd select the `product.item_id` property. 
+1. Select which product identifier you use. Ideally, use the item property in `Obeject Array` such as `product.item_id`. Click for more information about [object arrays](/docs/analytics/charts/cart-analysis). 
 2. Select one or more events that link the persisted property with the product identifier you've selected. For example, you'd select the events where both your persisted property value such as `discovery_method` and the item property `product.item_id` are captured. This event could be something like `View Item Details` or `Add to Cart`.
    This ensures Amplitude can run a cross-analysis properly.
 
 In this example, the events you generate that contain both the `discovery_method` and the `product.item_id` properties are `Home Hero Clicked`, `Promotion Clicked`, and `Recommendation Clicked`. 
 
-### Step 2: Use persisted properties across analyses
+### Using persisted properties across analyses
 
 After you define a persisted property (such as `Entry Page` or `Most Recent Finding Method`), Amplitude automatically applies it to upstream/downstream events based on the allocation and expiration rules you've configured. You don't need to manually re-attribute or ensure the original property exists on every event.
 
