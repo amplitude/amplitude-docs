@@ -1,0 +1,272 @@
+openapi: 3.0.3
+info:
+  title: Session Replay API
+  version: beta
+  description: |
+    Session Replay API lets you list session replays and retrieve the event files for a specific replay.
+
+    All endpoints use HTTP Basic authentication. Use your project's API key as the username and secret key as the password. The project is inferred from the authenticated API key, no `project_id` parameter is needed.
+
+    Presigned file URLs expire after 15 minutes.
+
+    Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
+
+    The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
+
+servers:
+  - url: https://amplitude.com/api/1
+    description: Amplitude API
+
+security:
+  - basicAuth: []
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Use your project's API key as the username and secret key as the password. Credentials must be base64-encoded.
+
+  schemas:
+    SessionReplay:
+      type: object
+      properties:
+        replay_id:
+          type: string
+          description: Unique identifier for the replay, in `device_id/session_id` format. Use this as the `replay_id` parameter when fetching files.
+          example: "abc123/1700000000000"
+        session_id:
+          type: string
+          description: The session identifier.
+          example: "1700000000000"
+        device_id:
+          type: string
+          description: The device identifier.
+          example: "abc123"
+        amplitude_id:
+          type: integer
+          description: The Amplitude user ID.
+          example: 123456
+        start_time:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of when the session started.
+          example: "2024-01-01T00:00:00Z"
+        end_time:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of when the session ended.
+          example: "2024-01-01T00:05:00Z"
+        retention_in_days:
+          type: integer
+          description: Number of days Amplitude retains the replay data.
+          example: 90
+
+    ListSessionReplaysResponse:
+      type: object
+      properties:
+        session_replays:
+          type: array
+          description: Array of session replay objects.
+          items:
+            $ref: '#/components/schemas/SessionReplay'
+        next_page_token:
+          type: string
+          nullable: true
+          description: Opaque cursor to pass as `page_token` to retrieve the next page. `null` when there are no more results.
+          example: "eyJsYXN0X2tleS..."
+
+    GetReplayFilesResponse:
+      type: object
+      properties:
+        files:
+          type: array
+          description: Array of presigned S3 URLs. Each URL serves a gzip-compressed JSON array of rrweb events. URLs expire after 15 minutes.
+          items:
+            type: string
+            format: uri
+          example:
+            - "https://s3.amazonaws.com/...presigned-url-1..."
+            - "https://s3.amazonaws.com/...presigned-url-2..."
+        next_page_token:
+          type: string
+          nullable: true
+          description: Opaque cursor to pass as `page_token` to retrieve the next page. `null` when there are no more files.
+          example: "eyJsYXN0X2tleS..."
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+          example: "Invalid parameter: sort_order must be 'asc' or 'desc'"
+
+paths:
+  /session-replays:
+    get:
+      operationId: listSessionReplays
+      summary: List session replays
+      description: Returns a paginated list of session replays for the authenticated project.
+      parameters:
+        - name: start_time
+          in: query
+          required: false
+          description: ISO 8601 string. Lower bound on replay `start_time`, inclusive.
+          schema:
+            type: string
+            format: date-time
+          example: "2024-01-01T00:00:00Z"
+        - name: end_time
+          in: query
+          required: false
+          description: ISO 8601 string. Upper bound on replay `start_time`, inclusive.
+          schema:
+            type: string
+            format: date-time
+          example: "2024-01-31T23:59:59Z"
+        - name: page_size
+          in: query
+          required: false
+          description: Number of results on each page. Default is `50`, maximum is `200`.
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 200
+          example: 25
+        - name: page_token
+          in: query
+          required: false
+          description: Opaque pagination cursor from a previous response's `next_page_token`.
+          schema:
+            type: string
+        - name: sort_order
+          in: query
+          required: false
+          description: "`asc` returns oldest replays first (default). `desc` returns newest replays first. Must be consistent across pages when using `page_token`."
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: asc
+      responses:
+        '200':
+          description: Successful request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSessionReplaysResponse'
+              example:
+                session_replays:
+                  - replay_id: "abc123/1700000000000"
+                    session_id: "1700000000000"
+                    device_id: "abc123"
+                    amplitude_id: 123456
+                    start_time: "2024-01-01T00:00:00Z"
+                    end_time: "2024-01-01T00:05:00Z"
+                    retention_in_days: 90
+                next_page_token: "eyJsYXN0X2tleS..."
+        '400':
+          description: Invalid parameter value. Check the error message for details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid API credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /session-replays/files:
+    get:
+      operationId: getSessionReplayFiles
+      summary: Get session replay files
+      description: |
+        Returns a paginated list of presigned S3 URLs for the event files belonging to a specific replay.
+
+        Each URL points to a gzip-compressed JSON array of rrweb events. Amplitude orders files by key, which encodes start time.
+
+        ## Decompressing files
+
+        ### Version 3 (default)
+
+        Each file is gzip-compressed. Decompress it to get a JSON array of rrweb events ready to pass to an rrweb player.
+
+        ### Version 2
+
+        Version 2 files require two decompression steps:
+
+        1. gzip decompress the file, then JSON parse → array of packed strings.
+        2. zlib decompress each string: each element is a JSON-encoded, zlib-compressed (DEFLATE) binary payload → rrweb event object.
+
+        ## Playing back events
+
+        To replay a full session, fetch all files for a replay in order, unpack each one, concatenate the event arrays, and pass the result to Amplitude's [rrweb player](https://github.com/amplitude/rrweb).
+      parameters:
+        - name: replay_id
+          in: query
+          required: true
+          description: The replay identifier, in `device_id/session_id` format. URL-encode the `/` separator as `%2F`.
+          schema:
+            type: string
+          example: "abc123%2F1700000000000"
+        - name: version
+          in: query
+          required: false
+          description: Recording format version. `2` or `3`. Default is `3`.
+          schema:
+            type: integer
+            enum:
+              - 2
+              - 3
+            default: 3
+        - name: page_size
+          in: query
+          required: false
+          description: Number of files on each page. Default is `100`, maximum is `1000`.
+          schema:
+            type: integer
+            default: 100
+            minimum: 1
+            maximum: 1000
+          example: 50
+        - name: page_token
+          in: query
+          required: false
+          description: Opaque pagination cursor from a previous response's `next_page_token`.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetReplayFilesResponse'
+              example:
+                files:
+                  - "https://s3.amazonaws.com/...presigned-url-1..."
+                  - "https://s3.amazonaws.com/...presigned-url-2..."
+                next_page_token: "eyJsYXN0X2tleS..."
+        '400':
+          description: Invalid parameter value. Check the error message for details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid API credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No data found for the given `replay_id`. Amplitude only returns this error on the first page.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

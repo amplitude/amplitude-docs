@@ -66,7 +66,7 @@ Each audit log entry includes:
 - **Error**: Error information if the action failed.
 
 {{partial:admonition type="note" heading="Availability through the API"}}
-You can only acceew IP address, Org ID, User Agent, and Error metadata through the API endpoint, not the UI CSV export.
+You can only access IP address, Org ID, User Agent, and Error metadata through the API endpoint, not the UI CSV export.
 {{/partial:admonition}}
 
 ## Key behaviors and notes
