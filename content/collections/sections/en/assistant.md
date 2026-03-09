@@ -1,12 +1,14 @@
 ---
-id: f96daf43-0470-4391-ab2f-14067ee9e2cd
-blueprint: guides_and_survey
-title: 'Assistant Overview'
-section: assistant
-landing: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1772784000
-landing_blurb: Learn how Amplitude Assistant answers questions, recommends content, and launches in-app guides to help your users succeed.
+id: 840d28bb-ee63-408f-aeaf-e3d88f15d124
+blueprint: section
+title: Assistant
+author: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+exclude_from_sitemap: false
+updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76
+nav_title: assistant
+current-collection: assistant
+updated_at: 1773092361
+hide_toc: false
 ---
 Amplitude Assistant is an in-product AI helper that answers questions, recommends content, and can launch in-app guides to walk users through common tasks. It isn't a general-purpose support bot, it helps your users succeed in your product.
 
