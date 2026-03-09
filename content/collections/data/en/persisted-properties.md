@@ -101,7 +101,7 @@ Before going into how you can use persisted properties in your analysis, review 
 
 ## Advanced: Item-level attribution
 
-Item-level attribution is commonly used for merchandising. This type of attribution lets Amplitude define which products can be tied to the persisted property. It then attributes items within a single cart to each merchandising source. With item-level attribution, you can attribute metrics such as `Revenue` for each item to the merchandising source (such as `search for recommendations`). 
+Merchandising teams commonly use item-level attribution. This type of attribution lets Amplitude define which products you can tie to the persisted property. It then attributes items within a single cart to each merchandising source. With item-level attribution, you can attribute metrics such as `Revenue` for each item to the merchandising source (such as `search for recommendations`). 
 
 For example, you have three items in a cart. Each item was added to the cart through a different discovery method: 
 
@@ -109,7 +109,7 @@ For example, you have three items in a cart. Each item was added to the cart thr
 * Item 2 was discovered from the Popular Products display.
 * Item 3 was discovered from Recommendations.
 
-If item-level attribution isn't enabled, conversion events for that $19 order is credited to a single discovery method. With `Original` allocaiton, the on-site search receives all the. credit. With `Most Recent`, recommendations would receive the credit. 
+If item-level attribution isn't enabled, a single discovery method receives credit for that $19 order's conversion events. With **Original** allocation, the on-site search receives all the credit. With **Most recent**, recommendations receive the credit. 
 
 Item-level attribution lets you bind the discovery context to each item in the cart. This, in turn, credits the correct discovery method to each item in the cart. 
 
@@ -123,7 +123,7 @@ Because you want to identify the `Most recent Finding Method`, select **Most rec
 4. Set the **Expiration**.
    By default, the persisted property expires at the end of the session.
 
-After the property is created, you can set up item-level attribution.
+After you create the property, you can set up item-level attribution.
 
 ##### To set up item-level attribution 
 
