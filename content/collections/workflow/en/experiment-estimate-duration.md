@@ -46,7 +46,7 @@ Common success metrics:
 - Form completions: Visitor submits a form or completes a flow.
 
 How to choose:
-- Ask: `If this experiment works, what will more visitors do?`
+- Ask: `What action do you want more visitors to take?`
 - Look for metrics that match that action.
 - If you see similar metrics, choose a conversion metric (which Amplitude marks as `Conversion of...`) or a metric with an official blue badge.
 
@@ -147,7 +147,7 @@ Small MDE (1-2%): Use for subtle tweaks, or when tiny gains are valuable.
 - Incremental funnel optimizations.
 - These require the most time and traffic, but can add up in mature, high-volume products.
 
-### Use the scenario table for prioritization
+### Use the Duration Scenarios table for prioritization
 
 #### Scenario 1: Your test takes too long
 
@@ -280,7 +280,7 @@ No. Many experiments run at medium (90%) confidence, which balances speed and ac
 
 ### Choosing a success metric
 
-Start by asking `If this experiment works, what will more visitors do?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
+Start by asking `What action do you want more visitors to take?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
 
 If you're still unsure, search for metrics related to your goal, or select **Enter Manually** to input your own baseline.
 
