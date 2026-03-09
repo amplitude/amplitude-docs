@@ -109,7 +109,7 @@ For example, you have three items in a cart. Each item was added to the cart thr
 * Item 2 was discovered from the Popular Products display.
 * Item 3 was discovered from Recommendations.
 
-If item-level attribution isn't enabled, conversion events for that $19 order would be credited to a single discovery method. With `Original` allocaiton, the on-site search receives all the. credit. With `Most Recent`, recommendations would receive the credit. 
+If item-level attribution isn't enabled, conversion events for that $19 order is credited to a single discovery method. With `Original` allocaiton, the on-site search receives all the. credit. With `Most Recent`, recommendations would receive the credit. 
 
 Item-level attribution lets you bind the discovery context to each item in the cart. This, in turn, credits the correct discovery method to each item in the cart. 
 
