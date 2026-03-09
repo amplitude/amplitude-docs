@@ -278,7 +278,7 @@ This shows the data timeframe the tool uses for calculations. `Offset by 1` mean
 
 No. Many experiments run at medium (90%) confidence, which balances speed and accuracy. Use high confidence when stakes are high, or when you need maximum certainty before a decision.
 
-### Choosing a success metric
+### How do I choose a success metric
 
 Start by asking `What action do you want more visitors to take?` Then choose a metric that matches that action. Conversion metrics (which Amplitude marks as `Conversion of...`) are often the best choice.
 
