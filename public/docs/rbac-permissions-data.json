@@ -1,6 +1,6 @@
 {
     "generated_at": "2026-02-26T17:45:16.211666Z",
-    "permissions_count": 46,
+    "permissions_count": 49,
     "permissions": [
         {
             "id": "65f10b78-fdb1-449a-a906-6f769e0331e0",
@@ -349,6 +349,56 @@
                 "member"
             ],
             "slug": "manage-heatmaps"
+        },
+        {
+            "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+            "title": "Manage Zoning analyses",
+            "description": "Create, update, and delete any zoning analysis",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "create zoning analysis",
+                "update zoning analysis",
+                "delete zoning analysis"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-zoning-analyses"
+        },
+        {
+            "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+            "title": "Manage own Zoning analyses",
+            "description": "Create, update, and delete your own zoning analyses (cannot edit others')",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "create own zoning analysis",
+                "update own zoning analysis",
+                "delete own zoning analysis"
+            ],
+            "default_permissions": [
+                "member"
+            ],
+            "slug": "manage-own-zoning-analyses"
+        },
+        {
+            "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+            "title": "View Zoning analyses",
+            "description": "View zoning analyses",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "view zoning analysis"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-zoning-analyses"
         },
         {
             "id": "27e50fdd-9e06-4a88-af9d-1c580caacfa7",

@@ -29,6 +29,7 @@ Permissions are organized by product area to help you understand which parts of 
 - **Integrations**: Third-party connections and data syncing
 - **Session Replay**: Recording and analyzing user sessions
 - **Heatmaps**: Visual analytics and user interaction tracking
+- **Zoning**: Defining zones on pages and analyzing engagement within those areas
 - **Guides & Surveys**: In-app messaging and user feedback
 - **Resource Center & Content**: Help documentation and content management
 - **AI Features**: AI Agents and AI-powered features

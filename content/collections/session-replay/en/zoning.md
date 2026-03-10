@@ -9,23 +9,35 @@ this_article_will_help_you:
   - 'Understand what Zoning is and how it fits with Session Replay'
   - 'Create and use zone maps to analyze defined areas of your product'
 ---
-Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. You create zone maps that overlay your product UI so you can see how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
+Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. Create zone maps that overlay your product UI that reveal how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
 
-## Prerequisites
+Zoning requires [auto-captured interaction data](/docs/data/autocapture) (for example, click exposures, or scrolls) to compute element-level metrics directly on your pages. Because Zoning using autocapture to collect page-level click events and interaction data, it can increase event volumes.
 
-Before you use Zoning, ensure the following:
+### Permissions
 
-### Session Replay
+If you have an Admin or Manager role, you can create, update, and delete any zoning analysis. If you have the Member role, you can create, update, or delete your own zoning analyses but can't edit anyone else's. If you have the Viewer role, you can only view zoning analyses. For details, go to [User roles and permissions](/docs/admin/account-management/user-roles-permissions).
 
-Zoning depends on Session Replay. You need Session Replay enabled and collecting data for the pages you want to zone.
+### How Zoning relates to Session Replay and Heatmaps
+
+Zoning is different than either Session Replay or Heatmaps:
+
+- **Session Replay** records user sessions and lets you watch replays and debug behavior.
+- **Heatmaps** aggregate clicks, scrolls, and selector-level interactions on a page without defining custom areas.
+- **Zoning** lets you define custom areas (zones) on a page and analyze engagement within those areas. It complements Session Replay and Heatmaps when you care about specific regions (for example banners, forms, or CTAs) rather than the whole page or raw selectors.
+
+**Unconfirmed:** Whether zone data is derived from the same underlying Session Replay pipeline as Heatmaps and whether Zoning has its own retention or sampling rules.
+
+## Configuring Zoning
+
+Set up zoning by adding a Chrome extension as well as configuring the Browser SDK.
+
+### Installing the Chrome extension
+
+1. In your Chrome browser, go to *chrome://extensions/*. 
+2. Turn on **Developer** mode. 
+3. Click **Load unpacked**.
 
 **Unconfirmed:** Whether Zoning is available only for web (browser) Session Replay—similar to [Heatmaps](/docs/session-replay/heatmaps)—or also for mobile. Confirm in the product or with the team.
-
-**Unconfirmed:** Minimum Session Replay SDK versions required for Zoning (for example, Browser Plugin, Standalone SDK). The Technical Zoning SDK Remote Config Confluence page likely defines this.
-
-### Permissions and plan
-
-**Unconfirmed:** Required [user roles or permissions](/docs/admin/account-management/user-roles-permissions) and any plan or add-on requirements for Zoning. Confirm in the product or with the team.
 
 ## Create a zone map
 
@@ -49,14 +61,6 @@ You create a zone map by defining one or more zones on a page and then viewing a
 After the zone map is saved, you can view metrics or replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). *Exact metrics and views need to be confirmed from the product.*
 
 **Unconfirmed:** Whether zone maps use a background snapshot (like Heatmaps), how retention works for zone data, and whether there is a minimum data threshold before a zone map shows results.
-
-## How Zoning relates to Session Replay and Heatmaps
-
-- **Session Replay** records user sessions so you can watch replays and debug behavior.
-- **Heatmaps** aggregate clicks, scrolls, and selector-level interactions on a page without defining custom areas.
-- **Zoning** lets you define custom areas (zones) on a page and analyze engagement within those areas. It complements Session Replay and Heatmaps when you care about specific regions (e.g. banners, forms, or CTAs) rather than the whole page or raw selectors.
-
-**Unconfirmed:** Whether zone data is derived from the same underlying Session Replay pipeline as Heatmaps and whether Zoning has its own retention or sampling rules.
 
 ## Technical details (unconfirmed)
 
