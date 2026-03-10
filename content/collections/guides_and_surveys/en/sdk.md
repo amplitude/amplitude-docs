@@ -112,7 +112,10 @@ Use this standalone installation path if you:
 If you use Browser SDK 2 with a proxy (custom `serverUrl` in your Analytics initialization), don't use the plugin installation path (`amplitude.add(engagementPlugin())`). The plugin doesn't support proxy configuration. Instead, use this standalone installation path with `init` and `boot` as described below, and configure the Guides and Surveys proxy URLs separately. Review [proxy configuration](/docs/guides-and-surveys/proxy) for details.
 {{/partial:admonition}}
 
-Because you're not using the Amplitude Browser SDK plugin system, you need to call `init` and `boot` directly to initialize Guides and Surveys and connect it to your analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+This installation requires that you:
+
+1. Add the Guides and Surveys SDK with the script tag, or through `npm` or `yarn`. 
+2. Call `init` and `boot` directly to initialize Guides and Surveys and connect it to your analytics provider.
 
 {{partial:admonition type="warning" heading="Required and recommended setup for this installation path"}}
 - **Required**: Include `integrations` in your `boot` call to send Guides and Surveys events to your analytics provider. Without it, guide insights, survey insights, and survey responses won't appear.
