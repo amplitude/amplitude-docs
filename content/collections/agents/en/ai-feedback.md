@@ -203,7 +203,7 @@ A link to the insight is automatically saved to your clipboard. Only colleagues 
 
 Insights on the *New Insights* tab are ephemeral and refresh each time AI Feedback runs its analysis. Saved Trends let you persist insights and track them over time, so important themes don't get lost when new feedback arrives.
 
-When you save an insight as a trend—or create one manually—AI Feedback links new, semantically relevant mentions to that trend daily. This lets you move from "what's new today?" to "how are my top priorities trending over time?" and track results as you fix bugs, implement feature requests, and reduce complaints.
+When you save an insight as a trend, or create one manually, AI Feedback links new, semantically relevant mentions to that trend daily. This lets you move from "what's new today?" to "how are my top priorities trending over time?" and track results as you fix bugs, implement feature requests, and reduce complaints.
 
 The *Saved Trends* tab displays each trend's name, category, total mentions, week-over-week change, and a sparkline that visualizes recent activity.
 
