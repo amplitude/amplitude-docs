@@ -18,7 +18,7 @@ The Guides and Surveys Flutter SDK requires:
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation.
 
 
-#### Initialize the SDK
+### Initialize the SDK
 
 ```dart
 import 'package:amplitude_engagement_flutter/amplitude_engagement_flutter.dart';
@@ -27,7 +27,7 @@ import 'package:amplitude_engagement_flutter/amplitude_engagement_flutter.dart';
 final engagement = AmplitudeEngagement(apiKey: 'YOUR_API_KEY');
 ```
 
-#### Configuration options
+### Configuration options
 
 | Parameter                | Type     | Description                                                                                                                                                               |
 | ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,7 +50,7 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
-After you call `amplitude.add(engagement.getPlugin())`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-flutter-sdk#simulate-guides-and-surveys-for-preview).
+After you call `amplitude.add(engagement.getPlugin())`, you're technically done installing. Screen tracking and element targeting are optional, but Amplitude recommends you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-flutter-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
 Add the engagement package to your `pubspec.yaml` and initialize the SDK, then call `boot` with user identity:
@@ -76,7 +76,7 @@ To avoid analytics mismatches and ensure accurate data collection, use the same 
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
-After you call `engagement.boot()`, you are technically done installing. Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-flutter-sdk#simulate-guides-and-surveys-for-preview).
+After you call `engagement.boot()`, you're technically done installing. Amplitude recommends that you [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-flutter-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
 ## Add your application to project settings
@@ -88,7 +88,7 @@ To add your application:
 1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
 3. Navigate to the **Guides and Surveys** tab.
-4. In the **App Management** section, expand and click **+ Add App**.
+4. In the *App Management* section, expand and click **+ Add App**.
 5. Select **Flutter** from the dropdown.
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This lets you deliver guides and surveys to your Flutter app users.
@@ -102,7 +102,7 @@ To configure a minimum SDK version:
 1. Navigate to *Settings > Projects* in Amplitude.
 2. Select your project.
 3. Navigate to the **Guides and Surveys** tab.
-4. In the **App Management** section, expand and click **+ Add App**.
+4. In the *App Management* section, expand and click **+ Add App**.
 5. Select **Flutter** from the dropdown.
 6. Enter a value in **Minimum SDK version**.
 
@@ -117,7 +117,7 @@ This setting lets you stop guides and surveys on known problematic SDK versions 
 
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. Guides and Surveys compares the screen string (for example, `"HomeScreen"`) with the string you set in the guide or survey page targeting section.
+Call this method to enable screen-based targeting and the Time on Screen trigger. Guides and Surveys compares the screen string (for example, `"HomeScreen"`) with the string you set in the guide or survey page targeting section.
 
 ```dart
 engagement.screen('HomeScreen');
