@@ -9,7 +9,6 @@ lede: 'Use the Session Replay API to list session replays and retrieve the event
 summary: 'List session replays and retrieve replay event files.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1741046400
-hide_from_search: true
 ---
 
 ## Considerations
@@ -175,7 +174,7 @@ The format of each file depends on the `version` you requested.
 
 ### Version 3
 
-Each file is gzip-compressed. Decompress it to get a JSON array of [rrweb](https://github.com/amplitude/rrweb) events ready to pass to an rrweb player.
+Each file uses gzip compression. Decompress it to get a JSON array of [rrweb](https://github.com/amplitude/rrweb) events ready to pass to an rrweb player.
 
 {{partial:tabs tabs="JavaScript, Python, cURL"}}
 {{partial:tab name="JavaScript"}}
