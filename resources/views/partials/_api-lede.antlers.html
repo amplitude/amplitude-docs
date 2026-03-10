@@ -1,3 +1,10 @@
+{{if api_status == "beta" || api_status == "alpha"}}
+<div class="flex items-center gap-2 mb-4 rounded border border-amp-light-purple-300 bg-amp-light-purple-900 px-4 py-3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 fill-amp-light-purple-300"><path d="M5 19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.2-.06-.4-.16-.55L14 10.81V7h1a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2h1v3.81L5.16 18.45c-.1.15-.16.35-.16.55m5.5-6.31L12 10.34l1.5 2.35-.75-.14a6 6 0 0 0-2.25.14l.5-.78v-.77Z"/></svg>
+    <span class="font-semibold text-amp-light-purple-300">{{api_status | ucfirst}}</span>
+    <span class="text-sm text-amp-light-purple-200">This API is in {{api_status}}. Features and endpoints may change before general availability.</span>
+</div>
+{{/if}}
 {{if auth_method}}
 {{lede}}
 <h2>Authentication</h2>
