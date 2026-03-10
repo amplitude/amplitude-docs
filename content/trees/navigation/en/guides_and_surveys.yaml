@@ -1,3 +1,7 @@
+# Option 1: User journey architecture
+# Order: orientation → build (Guides/Surveys) → configure → customize → install → admin
+# Key change: Guides and Surveys promoted to top; orphaned items consolidated into
+# a new "Configuration" group; Instrumentation demoted below content sections.
 tree:
   -
     id: bc033d5b-7be8-4cee-93dd-6250b0e2adac
@@ -28,6 +32,63 @@ tree:
         id: a91c3e52-4b7d-4f6c-bd1d-1c7b4936f8e3
         entry: f47b9d82-8e14-4a53-a6f2-27b1cc5a319a
   -
+    id: 6c5428c2-6e5b-424b-b470-adb40f091f37
+    title: Guides
+    children:
+      -
+        id: d3393061-9c10-4452-861a-cd57eb85452f
+        entry: cb98bf8b-40c9-4dbe-8659-75f4542a5848
+      -
+        id: 4f13279f-65bd-4452-80dc-e279c79caf46
+        entry: 5a11feec-0efc-453c-9bf1-45d36f57ce81
+      -
+        id: 5c29b19a-f3c4-4921-987d-becac26b0a32
+        entry: 850b374e-293f-42d9-9948-728eba5e7b14
+      -
+        id: 6dabbaf7-628a-4c53-8782-64248ebaa4ff
+        entry: 56310b0a-6035-4e22-aaa0-0553a90a6fc9
+  -
+    id: 1d10d45c-1090-46ea-9cc8-46ce8e8eee63
+    title: Surveys
+    children:
+      -
+        id: 682f5985-2b63-406a-9818-036ae5a002ce
+        entry: 67d1376f-4e71-4d5d-9a4b-7ff4631d8684
+      -
+        id: 8a381b2d-1a85-4895-a17f-decc1e5dab9a
+        entry: b321e1a4-7306-48df-a501-f49573d7f897
+      -
+        id: a4e706d9-b14a-4b6d-bc53-78a0acb418f8
+        entry: 62b666ba-914a-4449-8754-142521b44544
+      -
+        id: 29c9fc6c-bfc4-4bdd-b7c5-8f6e681a320b
+        entry: b2cad50c-8d63-4d2f-8b54-57f99e41a919
+  -
+    id: a1000001-0001-4000-a000-000000000001
+    title: Configuration
+    children:
+      -
+        id: c7cc0ea8-86ba-41e3-8e65-af6fb5faf35b
+        entry: 5db1bc0e-871d-4cc3-b429-9ca7f5f34c2d
+      -
+        id: a1ebbd48-a400-4431-b0ba-40102c7679de
+        entry: 7fb2231a-9814-4449-8318-a80e7370c18b
+      -
+        id: ad52c7aa-af7f-4141-aa85-c1953f5f1dc3
+        entry: 3fc426d8-2e6e-4345-83cd-fe4935c330bb
+      -
+        id: 78d24f80-297a-4d50-a6df-4a84b98486b9
+        entry: d402c648-6218-4450-b216-0439206e1206
+      -
+        id: d8ec199c-95a1-4144-a809-c1f9e781ab59
+        entry: dbc8fb29-c647-4b15-b9d5-7467e1acd1f7
+      -
+        id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
+        entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
+      -
+        id: ff19d28f-f54d-4251-ba10-1bace6f96902
+        entry: 51fd1430-6852-4203-9a8d-b0beba4834b7
+  -
     id: 460e8266-7989-4192-a80f-c80355358b43
     title: Customization
     children:
@@ -50,65 +111,13 @@ tree:
         id: a895768a-cc0e-4f42-a65d-2e59670444bd
         entry: 45e19199-60ed-4e35-9998-dc51019b4862
         title: 'Duplicating Across Projects'
-  -
-    id: c7cc0ea8-86ba-41e3-8e65-af6fb5faf35b
-    entry: 5db1bc0e-871d-4cc3-b429-9ca7f5f34c2d
-  -
-    id: ad52c7aa-af7f-4141-aa85-c1953f5f1dc3
-    entry: 3fc426d8-2e6e-4345-83cd-fe4935c330bb
-  -
-    id: a1ebbd48-a400-4431-b0ba-40102c7679de
-    entry: 7fb2231a-9814-4449-8318-a80e7370c18b
-  -
-    id: d8ec199c-95a1-4144-a809-c1f9e781ab59
-    entry: dbc8fb29-c647-4b15-b9d5-7467e1acd1f7
-  -
-    id: 78d24f80-297a-4d50-a6df-4a84b98486b9
-    entry: d402c648-6218-4450-b216-0439206e1206
-  -
-    id: 5f8a9b2c-3d4e-5f67-8901-234567890abc
-    entry: a8b2c3d4-e5f6-4789-a012-3456789abcde
-  -
-    id: 6c5428c2-6e5b-424b-b470-adb40f091f37
-    title: Guides
-    children:
-      -
-        id: d3393061-9c10-4452-861a-cd57eb85452f
-        entry: cb98bf8b-40c9-4dbe-8659-75f4542a5848
-      -
-        id: 6dabbaf7-628a-4c53-8782-64248ebaa4ff
-        entry: 56310b0a-6035-4e22-aaa0-0553a90a6fc9
-      -
-        id: 4f13279f-65bd-4452-80dc-e279c79caf46
-        entry: 5a11feec-0efc-453c-9bf1-45d36f57ce81
-      -
-        id: 5c29b19a-f3c4-4921-987d-becac26b0a32
-        entry: 850b374e-293f-42d9-9948-728eba5e7b14
-  -
-    id: 1d10d45c-1090-46ea-9cc8-46ce8e8eee63
-    title: Surveys
-    children:
-      -
-        id: 682f5985-2b63-406a-9818-036ae5a002ce
-        entry: 67d1376f-4e71-4d5d-9a4b-7ff4631d8684
-      -
-        id: 29c9fc6c-bfc4-4bdd-b7c5-8f6e681a320b
-        entry: b2cad50c-8d63-4d2f-8b54-57f99e41a919
-      -
-        id: 8a381b2d-1a85-4895-a17f-decc1e5dab9a
-        entry: b321e1a4-7306-48df-a501-f49573d7f897
-      -
-        id: a4e706d9-b14a-4b6d-bc53-78a0acb418f8
-        entry: 62b666ba-914a-4449-8754-142521b44544
+
   -
     id: 362fa313-2299-48ba-a0ca-974d292f11b1
     entry: 185ee92c-69ab-465b-84f1-35d4da01c2d7
   -
     id: 45a8ea63-857f-4f7b-aa53-695a8b6abc52
     entry: b0118c93-d3b3-41eb-80fd-f37a53b03340
-  -
-    id: ff19d28f-f54d-4251-ba10-1bace6f96902
-    entry: 51fd1430-6852-4203-9a8d-b0beba4834b7
   -
     id: ef3f247a-faac-4803-97e8-a3c099d8e111
     entry: ba2e2bbb-396d-4f49-9c59-66fab5476120
