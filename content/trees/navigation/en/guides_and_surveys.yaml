@@ -27,6 +27,9 @@ tree:
       -
         id: a91c3e52-4b7d-4f6c-bd1d-1c7b4936f8e3
         entry: f47b9d82-8e14-4a53-a6f2-27b1cc5a319a
+      -
+        id: 287bd3f5-c69a-4caa-a3b5-f55d449d32e0
+        entry: a1b2c3d4-e5f6-4789-a012-3456789abcde
   -
     id: 460e8266-7989-4192-a80f-c80355358b43
     title: Customization
