@@ -109,6 +109,9 @@ Booting the plugin (with a user ID) enables Guides and Surveys to be shown:
 
 ```js
 import {
+  boot,
+} from '@amplitude/plugin-engagement-react-native';
+import {
   track,
   setDeviceId,
   setUserId,
@@ -123,7 +126,12 @@ export default function App() {
     //
     setUserId('rn-test-user-1');
     setDeviceId('test-device-1');
-    getPlugin().boot('rn-test-user-1', 'test-device-1');
+
+    // boot(user_id?: string, device_id?: string, user_properties?: Object): void
+    boot('rn-test-user-1' /* user_id */,
+         'test-device-1' /* device_id */,
+         {} /* user_properties */
+    );
   }, []);
 }
 ```
