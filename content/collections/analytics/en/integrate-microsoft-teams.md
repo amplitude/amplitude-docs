@@ -8,6 +8,10 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1740566400
 ---
 
+{{partial:admonition type="alpha" }}
+This is an Alpha integration. For more information or access, contact your Amplitude account representative.
+{{/partial:admonition}}
+
 {{partial:admonition type="tip" heading="Amplitude Global Agent"}}
 The Amplitude Microsoft Teams app supports the Amplitude Global Agent. You can ask natural-language questions about your Amplitude data, create and refine charts, and find existing dashboards—all from Microsoft Teams. For more information, refer to [Global Agent in Slack and Microsoft Teams](/docs/amplitude-ai/slack-teams).
 {{/partial:admonition}}
