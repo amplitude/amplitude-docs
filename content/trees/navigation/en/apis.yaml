@@ -134,6 +134,13 @@ tree:
         id: 7d949d16-0964-4d64-bc40-3be3be8fbc06
         entry: d55d1726-1779-4479-bd3d-063b71c49f52
   -
+    id: 4548b470-4808-4f6d-9538-e8011f8a32f1
+    title: 'Session Replay APIs'
+    children:
+      -
+        id: ddda9ec5-8436-4266-a591-9555891bb149
+        entry: a850a054-935c-4f90-9142-b950c87e533b
+  -
     id: d92003e5-775e-43f5-af6c-553d4e3e6666
     title: 'Admin APIs'
     children:

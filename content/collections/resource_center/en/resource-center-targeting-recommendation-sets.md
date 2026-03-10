@@ -1,6 +1,6 @@
 ---
 id: a297263e-d953-4a8c-bd42-6194a56459ae
-blueprint: guides_and_survey
+blueprint: resource_center
 title: 'Recommendation Set Targeting'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
