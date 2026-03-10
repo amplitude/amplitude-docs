@@ -1,59 +1,58 @@
 ---
 id: 21a670fe-6939-4c52-919c-ff495b3109f3
 blueprint: experiment
-title: 'Cohort Targeting'
+title: 'Cohort targeting'
 landing: false
 exclude_from_sitemap: false
 updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1723477635
 ---
 
-A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. However, cohorts aren't always the best solution for targeting. Therefore, understanding how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) or [remote](/docs/feature-experiment/remote-evaluation) evaluation is important.
+A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. However, cohorts aren't always the best solution for targeting, so it's important to understand how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) or [remote](/docs/feature-experiment/remote-evaluation) evaluation.
 
 Experiment cohort targeting only supports targeting user cohorts.
 
 ## Remote evaluation
 
-When you target a cohort in a remote evaluation flag, the cohort is automatically synced to the Amplitude Experiment destination. For dynamic cohorts, this sync runs hourly by default. This means that dynamic cohorts targeted in remote evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, users are targeted within an hour of performing the event.
+When you target a cohort in a remote evaluation flag, Experiment automatically syncs the cohort to the Amplitude Experiment destination. For dynamic cohorts, this sync runs hourly by default, which means dynamic cohorts targeted in remote evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, Experiment targets users within an hour of performing the event.
 
-Cohorts targeted for remote evaluation may have a propagation delay on the initial sync or large change, depending on the size of the difference. For example, the first sync of 10-million-user cohort is likely to take a lot more time than later syncs.
+Cohorts targeted for remote evaluation may have a propagation delay on the initial sync or large change, depending on the size of the difference. For example, the first sync of a 10-million-user cohort takes longer than later syncs.
 
 Remote evaluation supports cohorts up to 10 million users.
 
-**Remote evaluation cohort targeting use cases**
+**Use remote evaluation cohort targeting when:**
 
-- You are targeting users based on user behavior or properties that aren't available in Experiment targeting segments.
-- Some targeting delay introduced by cohort sync intervals doesn't interrupt your process.
+- You're targeting users based on user behavior or properties that aren't available in Experiment targeting segments.
+- Some targeting delay from cohort sync intervals doesn't interrupt your process.
 
-Don't use remote evaluation cohort targeting if:
+**Don't use remote evaluation cohort targeting when:**
 
-- Users must be targeted in real-time.
+- Users must be targeted in real time.
 
 ## Local evaluation
 
-Local evaluation flags and experiments that are deployed to up-to-date server-side SDKs can also target cohorts. When you target a cohort in a local evaluation flag, the cohort is automatically synced to the Experiment Local Evaluation destination. For dynamic cohorts, this sync runs hourly. This means that dynamic cohorts targeted in local evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, users are targeted within an hour of performing the event--not immediately after.
+Local evaluation flags and experiments deployed to up-to-date server-side SDKs can also target cohorts. When you target a cohort in a local evaluation flag, Experiment automatically syncs the cohort to the Experiment Local Evaluation destination. For dynamic cohorts, this sync runs hourly, which means dynamic cohorts targeted in local evaluation aren't real-time. For example, if you target a cohort of users who performed a `Sign Up` event, Experiment targets users within an hour of performing the event, not immediately after.
 
 Local evaluation supports cohorts up to 50 million users.
 
-{{partial:admonition type="note" heading="Cohorts only support User IDs"}}
-Local evaluation cohorts only sync user IDs to the SDKs. This means that to target cohorts in local evaluation flags, you must include a user ID in the user object passed to the evaluate function.
+{{partial:admonition type="note" heading="Cohorts only support user IDs"}}
+Local evaluation cohorts only sync user IDs to the SDKs. To target cohorts in local evaluation flags, you must include a user ID in the user object passed to the evaluate function.
 {{/partial:admonition}}
 
-### SDK Support
+### SDK support
 
 Server-side SDKs can target cohorts if configured to do so. Client-side SDKs don't support local evaluation cohort targeting.
 
-On initialization, configure the cohort sync configuration with the project API and secret key to enable local evaluation
-cohort downloading and targeting.
+On initialization, configure the cohort sync configuration with the project API and secret key to enable local evaluation cohort downloading and targeting.
 
-| SDK | Cohort Targeting | Version |
+| SDK | Cohort targeting | Version |
 | --- | :---: | --- |
-| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | `1.10.0+`  |
-| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | `1.5.0+` |
-| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | `1.4.0+` |
-| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | `1.7.0+` |
-| [Python](/docs/sdks/experiment-sdks/experiment-python) |  ✅ | `1.4.0+` |
-| [PHP](/docs/sdks/experiment-sdks/experiment-php) | ❌  | N/A |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) | ✅ | `1.10.0+` |
+| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) | ✅ | `1.5.0+` |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | ✅ | `1.4.0+` |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) | ✅ | `1.7.0+` |
+| [Python](/docs/sdks/experiment-sdks/experiment-python) | ✅ | `1.4.0+` |
+| [PHP](/docs/sdks/experiment-sdks/experiment-php) | ❌ | N/A |
 
 {{partial:tabs tabs="Node.js, Java, Golang, Python, Ruby"}}
 {{partial:tab name="Node.js"}}
@@ -121,11 +120,11 @@ experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Troubleshooting
+## Troubleshoot cohort targeting
 
-Troubleshooting cohort targeting can be challenging due to the asynchronous nature of dynamic cohorts and cohort syncs in general. If you find that your experiment isn't targeting users who should be in the targeted cohort, try one of the following solutions: 
+Troubleshooting cohort targeting can be challenging because of the asynchronous nature of dynamic cohorts and cohort syncs. If your experiment isn't targeting users who should be in the targeted cohort, try one of the following:
 
-- For local evaluation, check that the SDK version supports local evaluation cohort targeting, and that the cohort sync config has been set on initialization.
-- Check that the cohort has the required sync (*Amplitude Experiment* for remote evaluation, *Experiment Local Evaluation* for local evaluation).
-- Check that the cohort contains the expected user. If the user is contained in the current cohort, check the sync history of the cohort -- is it possible that the user was added to the cohort in a sync after the evaluation occurred?
-- Check that the user info passed to `fetch`/`evaluate` is correct.
+- For local evaluation, confirm the SDK version supports local evaluation cohort targeting and that the cohort sync config is set on initialization.
+- Confirm the cohort has the required sync (*Amplitude Experiment* for remote evaluation, *Experiment Local Evaluation* for local evaluation).
+- Confirm the cohort contains the expected user. If the user is in the cohort, check the sync history—the user may have been added to the cohort in a sync after the evaluation occurred.
+- Confirm the user info passed to `fetch`/`evaluate` is correct.

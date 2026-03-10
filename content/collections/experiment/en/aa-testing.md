@@ -20,7 +20,7 @@ A/A tests help you verify that your experimentation infrastructure works correct
 
 A/A tests can reveal several implementation problems:
 
-- **Improper randomization.** The system doesn't evenly distribute users between variants, which creates [sample ratio mismatches](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), or users jump between variants and see different experiences across sessions or page loads. For more on causes and fixes, refer to [Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping).
+- **Improper randomization.** The system doesn't evenly distribute users between variants, which creates [sample ratio mismatches](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), or users jump between variants and see different experiences across sessions or page loads. For more on causes and fixes, go to [Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping).
 - **Tracking inconsistencies.** Events fire differently between variants because of timing issues or conditional logic errors.
 - **Sample pollution.** Pre-exposure bias occurs when users see content before the system properly allocates them to a variant.
 - **Statistical configuration.** Incorrect significance thresholds or multiple testing without proper correction.

@@ -236,7 +236,7 @@ const layout = variant?.payload?.layout || 'list';
 
 ### Validate payload structure
 
-Consider validating the payload structure to catch configuration errors early:
+Validate the payload structure to catch configuration errors early:
 
 ```javascript
 function validateLayoutPayload(payload) {
@@ -344,7 +344,4 @@ Test different content approaches:
 
 When you access a variant from the SDK or Evaluation API, you can use only the `value` and `payload` properties. To access other variant properties like `name` and `description`, use the Management API or the Amplitude UI.
 
-For more information about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
-
-
-
+To learn more about the variant data model, go to [Variants](/docs/feature-experiment/data-model#variants).
