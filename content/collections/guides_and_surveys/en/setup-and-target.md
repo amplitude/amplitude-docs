@@ -144,7 +144,12 @@ Use the priority to rank the importance of a guide or survey relative to others 
 * Low
 
 {{partial:admonition type="note" heading="Prioritization"}}
-When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. Amplitude breaks prioritization ties by the experience that was seen most recently, then by the experience that was created most recently.
+When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. 
+
+Amplitude breaks prioritization ties using these tiebreakers in order:
+
+1. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
+2. **Most recently created**: If neither experience has been seen by the user (or both were seen at the same time), Amplitude shows the experience that was created most recently.
 {{/partial:admonition}}
 
 ## Limits
@@ -197,9 +202,9 @@ If a guide or survey is temporarily hidden, Amplitude doesn't show it to the use
 
 ### Tiebreakers when multiple guides are eligible for display
 
-When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers to decide which experience to show:
+When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers in order to decide which experience to show:
 
-1. Amplitude shows active guides or surveys before inactive.
-2. Priority
-3. Most recently seen (relevant for active guides and surveys only)
-4. Most recently created
+1. **Active vs inactive**: Amplitude shows active guides or surveys before inactive ones.
+2. **Priority**: Higher priority experiences display first (Urgent > High > Medium > Low).
+3. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
+4. **Most recently created**: If neither experience has been seen by the user (or both were seen at the same time), Amplitude shows the experience that was created most recently.
