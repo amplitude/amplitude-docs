@@ -14,7 +14,7 @@ The Resource Center settings option applies to the Resource Center as a whole.
 From the Resource Center main page, click **Settings**. 
 
 ## Targeting
-Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply to either the [source content](/docs/guides-and-surveys/resource-center-source-content) or the [Resource Center sets](/docs/guides-and-surveys/resource-center-targeting-recommendation-sets).
+Targeting done from the Resource Center settings page applies to the entire Resource Center module. This is different from the targeting you can apply to either the [source content](/docs/assistant/resource-center/resource-center-source-content) or the [Resource Center sets](/docs/assistant/resource-center/resource-center-targeting-recommendation-sets).
 
 You would use this targeting if, for example, you only wanted the widget to appear to users in specific geographies or for users with specific job titles. 
 

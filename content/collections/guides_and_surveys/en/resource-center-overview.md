@@ -18,8 +18,8 @@ Resource center is a widget that integrates directly (with no other installation
 Content for your Resource Center can be external or publicly available documentation repositories, articles, videos, or third-party chat modules like Intercom.
 
 Before your users can access the Resource Center to find relevant information, you must first set it up. Setting up the Resource Center includes the following activities:
-- [Specifying the content](/docs/guides-and-surveys/resource-center-source-content) from which the Resource Center pulls information.
-- [Creating the Resource Center links](/docs/guides-and-surveys/resource-center-recommendation-sets).
-- [Setting up targeting and priority](/docs/guides-and-surveys/resource-center-targeting-recommendation-sets) levels for users and pages.
-- [Specifying the Resource Center settings](/docs/guides-and-surveys/resource-center-settings).
-- [Reviewing Best Practices](/docs/guides-and-surveys/resource-center-best-practices) for the Resource Center.
+- [Specifying the content](/docs/assistant/resource-center/resource-center-source-content) from which the Resource Center pulls information.
+- [Creating the Resource Center links](/docs/assistant/resource-center/resource-center-recommendation-sets).
+- [Setting up targeting and priority](/docs/assistant/resource-center/resource-center-targeting-recommendation-sets) levels for users and pages.
+- [Specifying the Resource Center settings](/docs/assistant/resource-center/resource-center-settings).
+- [Reviewing Best Practices](/docs/assistant/resource-center/resource-center-best-practices) for the Resource Center.

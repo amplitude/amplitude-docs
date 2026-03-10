@@ -11,4 +11,4 @@ Autopilot for Resource Center recommendation sets automatically surfaces useful 
 
 Autopilot uses semantic search to power the recommendations it provides from each page. These smart recommendations analyze the page and then scan your content repositories for relevant or useful information. For example, if your users are on a sign-up page, Autopilot might surface a video that illustrates the sign up process. 
 
-Autopilot is enabled by default from the [Resource Center Settings](/docs/guides-and-surveys/resource-center-settings) page.
+Autopilot is enabled by default from the [Resource Center Settings](/docs/assistant/resource-center/resource-center-settings) page.
