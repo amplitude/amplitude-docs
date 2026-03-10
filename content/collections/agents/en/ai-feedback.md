@@ -132,9 +132,15 @@ AI Feedback connects to a variety of feedback sources across four categories.
 If the integration you need isn't listed, select **Request a new source** in the source selection modal.
 {{/partial:admonition}}
 
-## Viewing Insights
+## Viewing insights
 
-AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback updates with additional insights. These insights align to the following categories:
+The *New Insights* tab displays AI-generated insights from your connected feedback sources. AI Feedback regenerates these insights each time it runs its analysis, so insights on this tab are ephemeral - they refresh and may change as new feedback arrives and more relevant clusters emerge. To persist an important insight and track it over time, [save it as a trend](#saved-trends).
+
+AI Feedback counts how many customers share the same feedback for the same feature or functionality. For example, if multiple customers report the same bug, AI Feedback highlights the bug and displays how many mentions it received. Each insight displays its category, mention count, and sources.
+
+You can filter insights by category, source, and time range. For example, filter to only social media sources to see how your products are discussed publicly, or filter to customer service tickets to understand product performance.
+
+Insights align to the following categories:
 
 * **Feature Request**: Additional features your customers want.
 * **Complaint**: Issues and problems your customers experience.
@@ -167,6 +173,7 @@ You can also have Global Agent to perform actions such as:
 
 Insights are useful to understand your customers’ experience with your product. For every insight, AI Feedback offers actions you can take to enhance your customers’ experience. AI Feedback lets you perform the following actions for each insight: 
 
+* **Save as Trend**: Saves the insight as a persistent trend you can track over time. See [Saved Trends](#saved-trends).
 * **Share**: Lets you share the insight with an internal colleague.
 * **Create Survey**: Lets you create a [survey](/docs/guides-and-surveys/surveys/survey-overview) that you can send to customers. Automatically opens the Guide creation tool. Automatically adds the mentioned customers as a cohort for the survey. 
 * **Watch Session Replays**: Lets you watch [session replays](/docs/session-replay) from customers directly related to the insight. 
@@ -190,7 +197,46 @@ Insights are useful to understand your customers’ experience with your product
  
 * Click **Share**. 
 
-A link to the insight is automatically saved to your clipboard. Only colleagues with access to your Amplitude project have access to view.
+A link to the insight is automatically saved to your clipboard. Only colleagues with access to your Amplitude project can view it.
+
+## Saved Trends
+
+Insights on the *New Insights* tab are ephemeral and refresh each time AI Feedback runs its analysis. Saved Trends let you persist insights and track them over time, so important themes don't get lost when new feedback arrives.
+
+When you save an insight as a trend—or create one manually—AI Feedback links new, semantically relevant mentions to that trend daily. This lets you move from "what's new today?" to "how are my top priorities trending over time?" and track results as you fix bugs, implement feature requests, and reduce complaints.
+
+The *Saved Trends* tab displays each trend's name, category, total mentions, week-over-week change, and a sparkline that visualizes recent activity.
+
+##### To save an insight as a trend
+
+1. Go to *AI Feedback > New Insights*.
+2. Find the insight you want to persist.
+3. Click **Save as Trend** on the insight row.
+
+AI Feedback saves the insight as a trend and begins linking new, semantically relevant mentions to it daily.
+
+##### To create a trend manually
+
+You can create a trend from scratch to track a topic that doesn't match an existing insight.
+
+1. Go to *AI Feedback > Saved Trends*.
+2. Click **Track a New Trend**.
+3. Enter a name for the trend in the **Trend Name** field.
+4. Select a category from the **Category** dropdown.
+5. Optionally, add a description to narrow the feedback the trend tracks.
+6. Click **Create Trend**.
+
+##### To view trend details
+
+1. Go to *AI Feedback > Saved Trends*.
+2. Click the trend you want to examine.
+
+The trend detail view displays:
+
+* A chart of weekly mentions over time that shows how the trend's volume changes.
+* The full list of linked mentions with source information, dates, and links to the original feedback.
+
+Use the trend detail view to drill into specific mentions and understand the context behind each data point.
 
 ## Merging existing users from an AI Feedback source
 
