@@ -138,7 +138,7 @@ The *New Insights* tab displays AI-generated insights from your connected feedba
 
 AI Feedback counts how many customers share the same feedback for the same feature or functionality. For example, if multiple customers report the same bug, AI Feedback highlights the bug and displays how many mentions it received. Each insight displays its category, mention count, and sources.
 
-You can filter insights by category, source, and time range. For example, filter to only social media sources to see how your products are discussed publicly, or filter to customer service tickets to understand product performance.
+Filter insights by category, source, and time range. For example, filter to only social media sources to see how your products are discussed publicly, or filter to customer service tickets to understand product performance.
 
 Insights align to the following categories:
 
