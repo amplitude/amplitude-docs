@@ -149,7 +149,7 @@ When you have more than one guide or survey eligible to display to a user, the h
 Amplitude breaks prioritization ties using these tiebreakers in order:
 
 1. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
-2. **Most recently created**: If neither experience has been seen by the user (or both were seen at the same time), Amplitude shows the experience that was created most recently.
+2. **Most recently created**: If the user hasn't seen either experience (or the user saw both at the same time), Amplitude shows the most recently created experience.
 {{/partial:admonition}}
 
 ## Limits
@@ -202,9 +202,9 @@ If a guide or survey is temporarily hidden, Amplitude doesn't show it to the use
 
 ### Tiebreakers when multiple guides are eligible for display
 
-When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers in order to decide which experience to show:
+When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers to decide which experience to show:
 
-1. **Active vs inactive**: Amplitude shows active guides or surveys before inactive ones.
+1. **Active before inactive**: Amplitude shows active guides or surveys before inactive ones.
 2. **Priority**: Higher priority experiences display first (Urgent > High > Medium > Low).
 3. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
-4. **Most recently created**: If neither experience has been seen by the user (or both were seen at the same time), Amplitude shows the experience that was created most recently.
+4. **Most recently created**: If the user hasn't seen either experience (or the user saw both at the same time), Amplitude shows the most recently created experience.
