@@ -35,16 +35,16 @@ final engagement = AmplitudeEngagement(apiKey: 'YOUR_API_KEY');
 | `serverZone`             | `EU` or `US` | Optional. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in the EU data center. Default: `US`                                            |
 | `serverUrl`              | `string` | Optional. Custom server URL for API requests. Useful for [proxy setups](/docs/guides-and-surveys/proxy).                                                                   |
 | `cdnUrl`                 | `string` | Optional. Custom CDN URL for static assets. Useful for [proxy setups](/docs/guides-and-surveys/proxy).                                                                     |
-| `mediaUrl`               | `string` | Optional. Custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when images are blocked.                                         |
+| `mediaUrl`               | `string` | Optional. Custom URL for proxying nudge images. Useful for [proxy setups](/docs/guides-and-surveys/proxy) when firewalls block images.                                      |
 | `logLevel`               | `LogLevel` enum | Optional. Sets the log level. Default: `LogLevel.warn`                                                                                                                    |
-| `locale`                 | `string` | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Not setting a language means the default language is used.                        |
+| `locale`                 | `string` | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Not setting a language means the SDK uses the default language.                    |
 
 {{partial:admonition type="warning" heading="Use the same API key for Guides & Surveys and Analytics"}}
 To avoid analytics mismatches and ensure accurate data collection, use the same API key for both Guides & Surveys and your Analytics SDK. Both should reference the same Amplitude project. Using different API keys can cause:
 
-- The SDK to fetch guides and surveys from the wrong project
-- Analytics data to appear in different projects
-- Insights and survey responses to be incomplete or mismatched
+- The SDK to fetch guides and surveys from the wrong project.
+- Analytics data to appear in different projects.
+- Insights and survey responses to be incomplete or mismatched.
 
 Make sure the API key you provide to Guides & Surveys matches the API key used to initialize your Amplitude Flutter SDK.
 {{/partial:admonition}}
@@ -95,7 +95,7 @@ After you add your application, it appears as a platform option when you create 
 
 ### Set a minimum SDK version (when needed)
 
-`Minimum SDK version` is available for mobile SDK versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+**Minimum SDK version** is available for mobile SDK versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
 
 To configure a minimum SDK version:
 
@@ -185,7 +185,7 @@ engagement.show(key: 'GUIDE_KEY');
 
 ### Forward event
 
-Use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers; the SDK uses them only for local trigger evaluation.
+Use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. The SDK doesn't send forwarded events to Amplitude servers; it uses them only for local trigger evaluation.
 
 ```dart
 engagement.forwardEvent(eventType: 'Button Clicked', eventProperties: {'name': 'Submit'});
@@ -228,7 +228,7 @@ Replace `<your-unique-scheme-id>` with the URL scheme value from Amplitude.
 
 ### Configure deep linking (iOS)
 
-In Xcode, add a URL type with the scheme value you copied from Amplitude (*Info* tab > **URL Types** > **URL Schemes**).
+In Xcode, add a URL type with the scheme value you copied from Amplitude (*Info tab > URL Types > URL Schemes*).
 
 ### Handle preview URLs in Flutter
 
@@ -261,7 +261,7 @@ Scrollable views usually work.
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Workaround"}}
-Use screen-based targeting or event-based triggers to show guides, perhaps with a delay so any animations can complete. Do not pin directly to elements in animated containers or containers that move via user interaction.
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay so any animations can complete. Don't pin directly to elements in animated containers or containers that move through user interaction.
 {{/partial:admonition}}
 
 ## Changelog
