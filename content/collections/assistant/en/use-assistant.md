@@ -1,6 +1,6 @@
 ---
 id: 45b04bd3-f913-4ea0-9e11-8ac201ac630e
-blueprint: guides_and_survey
+blueprint: assistant
 title: 'Use Assistant'
 section: assistant
 landing: false

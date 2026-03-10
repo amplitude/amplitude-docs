@@ -1,6 +1,6 @@
 ---
 id: e5b38789-2785-4fcc-bff1-2c50979c3546
-blueprint: guides_and_survey
+blueprint: resource_center
 title: Autopilot
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6

@@ -1,6 +1,6 @@
 ---
 id: 20749d99-c2d4-4576-80a3-24233897706c
-blueprint: guides_and_survey
+blueprint: resource_center
 title: Overview
 landing: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
