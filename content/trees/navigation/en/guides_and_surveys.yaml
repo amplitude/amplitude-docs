@@ -1,7 +1,3 @@
-# Option 1: User journey architecture
-# Order: orientation → build (Guides/Surveys) → configure → customize → install → admin
-# Key change: Guides and Surveys promoted to top; orphaned items consolidated into
-# a new "Configuration" group; Instrumentation demoted below content sections.
 tree:
   -
     id: bc033d5b-7be8-4cee-93dd-6250b0e2adac
@@ -88,6 +84,10 @@ tree:
       -
         id: ff19d28f-f54d-4251-ba10-1bace6f96902
         entry: 51fd1430-6852-4203-9a8d-b0beba4834b7
+      -
+        id: a895768a-cc0e-4f42-a65d-2e59670444bd
+        entry: 45e19199-60ed-4e35-9998-dc51019b4862
+        title: 'Duplicating Across Projects'
   -
     id: 460e8266-7989-4192-a80f-c80355358b43
     title: Customization
@@ -107,11 +107,6 @@ tree:
       -
         id: 4a5b6c7d-8e9f-0123-4567-89abcdef0123
         entry: 8f9e2a1b-3c4d-5e6f-7a8b-9c0d1e2f3a4b
-      -
-        id: a895768a-cc0e-4f42-a65d-2e59670444bd
-        entry: 45e19199-60ed-4e35-9998-dc51019b4862
-        title: 'Duplicating Across Projects'
-
   -
     id: 362fa313-2299-48ba-a0ca-974d292f11b1
     entry: 185ee92c-69ab-465b-84f1-35d4da01c2d7
