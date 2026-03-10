@@ -1,17 +1,19 @@
-# Option 2: Product-first with shared Platform section
-# Principle: Gestalt similarity — Feature Experiments and Web Experiments are
-# distinct products that users work in separately. Shared cross-product concerns
-# (grouping, evaluation, exposure tracking) live in a Platform section.
+# Option 1: User Journey Architecture
+# Principle: Progressive disclosure — orient users first, then instrument,
+# then create and run experiments, then analyze results.
 #
 # Changes from original:
-#   - Feature Experiments promoted to top-level section (absorbs create workflow steps)
-#   - Web Experiments promoted to top-level section
-#   - Platform (new): consolidates Group experiments, Exposure tracking, Evaluation
-#   - MDE (18cba191) promoted from thin "Experiment Goals" sub-section → Feature Experiments
-#   - Exposure tracking (665e15c4) moved from Feature Experiments sub-section → Platform
-#   - Admin (new): consolidates Permissions, Notifications, Contentful
+#   - Instrument moved to position 2 (was 6): users must instrument before creating
+#   - Exposure tracking (665e15c4) moved from Feature Experiments → Instrument
+#   - MDE (18cba191) promoted from thin "Experiment Goals" sub-section → Create experiments
+#   - Group experiments extracted from Creating Experiments → standalone top-level section
+#   - Web Experiments extracted from Creating Experiments → standalone top-level section
+#   - "Testing Experiments" renamed → "Test & launch" (action-oriented)
+#   - "Analyzing Experiments" renamed → "Analyze results" (action-oriented)
+#   - "Statistics Method" renamed → "Statistics" (drops "Experiment" prefix)
+#   - "Experiment Advanced Concepts" renamed → "Advanced concepts" (drops product prefix)
+#   - Admin & integrations (new): consolidates Permissions, Notifications, Contentful
 #   - Self-referential duplicate child of Flag Dependencies removed
-#   - Thin standalone "Experiment Integrations" (1 item) dissolved into Admin
 
 tree:
   -
@@ -33,8 +35,57 @@ tree:
         entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
         title: 'Key terms'
   -
-    id: d891dd22-a7db-4b52-bb00-81c5c9640217
-    title: 'Feature Experiments'
+    id: 76e3b608-0781-418a-b014-f0f79086cf32
+    title: 'Instrument Experiment'
+    children:
+      -
+        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
+        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+      -
+        id: 46abcd22-a45e-4553-b08d-90f16283d013
+        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+        children:
+          -
+            id: 5a5ff529-ea91-465c-bbc9-a848f5037eb8
+            entry: 7f2e8a4c-9b3d-4e1a-8f5c-2d6e9a1b4c8e
+      -
+        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
+        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
+      -
+        id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
+        entry: 665e15c4-7194-4898-9cca-b58251cc79a2
+      -
+        id: 90ff8151-b864-4782-abdd-65b81d1c26ca
+        title: 'Experiment SDKs'
+        url: /docs/sdks/experiment-sdks
+        children:
+          -
+            id: e2cf6857-5740-4894-8121-e9ff81d9814d
+            entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
+      -
+        id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
+        title: 'Experiment APIs'
+        url: /docs/apis/experiment
+      -
+        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
+        title: Evaluation
+        children:
+          -
+            id: fb405bc3-3370-4046-90e5-9a6145e02a67
+            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
+            title: 'How evaluation works'
+          -
+            id: 5af0708b-e976-453e-8354-3f622b978be5
+            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
+          -
+            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
+            entry: b358db28-92d6-458b-9692-d181e0871612
+          -
+            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
+            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
+  -
+    id: fe2ac0eb-274f-4af5-b146-1d467c9edd0e
+    title: 'Create experiments'
     children:
       -
         id: 4dc0e648-5c61-4088-8f69-e3dc1eccd556
@@ -49,32 +100,47 @@ tree:
         id: 0915be3a-8539-4d36-9a03-96922605e311
         entry: 183eec11-905d-4333-afaf-089e46ca0b55
       -
-        id: 2bda6737-066a-4283-8252-720d24a19573
-        entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
+        id: d891dd22-a7db-4b52-bb00-81c5c9640217
+        title: 'Feature Experiments'
+        children:
+          -
+            id: 2bda6737-066a-4283-8252-720d24a19573
+            entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
+          -
+            id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
+            entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
+            title: 'Create a new feature experiment'
+          -
+            id: 8d0578e2-aca5-4710-bfac-16ddb05d378e
+            entry: f8a65f47-6611-4f85-a5e4-3602c5b5821b
+          -
+            id: 0ed5fec3-c9dd-4d64-9914-68de1adfe369
+            entry: 50d1c589-2a92-427b-84d0-eb664f55678d
+          -
+            id: 64dc1494-6d29-4baf-8152-3979efa1b480
+            entry: 21a670fe-6939-4c52-919c-ff495b3109f3
+            title: 'Cohort targeting'
+          -
+            id: 92597bc4-7868-425f-94c8-b399c989b998
+            entry: c7210fe3-77ed-43ee-9f76-7ad20736c439
+          -
+            id: 429dc4fd-7d45-4fe4-8269-6b3384c57c73
+            entry: stale-flag-management
+          -
+            id: e9498dd2-3e82-4220-b494-c775bc8f3b6a
+            entry: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
+            title: 'Experiment templates'
+  -
+    id: e800f234-086d-4267-91de-cd688afc9bd5
+    title: 'Group experiments'
+    children:
       -
-        id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
-        entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
-        title: 'Create a new feature experiment'
+        id: e580e44e-a2e7-412b-91fd-310f714d3bbf
+        entry: c9856100-2aad-440c-9d2f-505eb008d57b
+        title: 'Mutual exclusion groups'
       -
-        id: 8d0578e2-aca5-4710-bfac-16ddb05d378e
-        entry: f8a65f47-6611-4f85-a5e4-3602c5b5821b
-      -
-        id: 0ed5fec3-c9dd-4d64-9914-68de1adfe369
-        entry: 50d1c589-2a92-427b-84d0-eb664f55678d
-      -
-        id: 64dc1494-6d29-4baf-8152-3979efa1b480
-        entry: 21a670fe-6939-4c52-919c-ff495b3109f3
-        title: 'Cohort targeting'
-      -
-        id: 92597bc4-7868-425f-94c8-b399c989b998
-        entry: c7210fe3-77ed-43ee-9f76-7ad20736c439
-      -
-        id: 429dc4fd-7d45-4fe4-8269-6b3384c57c73
-        entry: stale-flag-management
-      -
-        id: e9498dd2-3e82-4220-b494-c775bc8f3b6a
-        entry: 8f9e2a1c-5d7b-4e3f-9c8a-2b1d6f4e8a3c
-        title: 'Experiment templates'
+        id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
+        entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
   -
     id: ef70f9be-3707-4f15-af65-58ef96899710
     title: 'Web Experiments'
@@ -171,70 +237,6 @@ tree:
         id: e14ec1eb-2ee1-43e0-aca8-895cc1dfd268
         entry: 5b4dadf8-14b7-4669-8636-f3105393214c
   -
-    id: a1000001-0001-4000-a000-000000000001
-    title: Platform
-    children:
-      -
-        id: e800f234-086d-4267-91de-cd688afc9bd5
-        title: 'Group experiments'
-        children:
-          -
-            id: e580e44e-a2e7-412b-91fd-310f714d3bbf
-            entry: c9856100-2aad-440c-9d2f-505eb008d57b
-            title: 'Mutual exclusion groups'
-          -
-            id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
-            entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
-      -
-        id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
-        entry: 665e15c4-7194-4898-9cca-b58251cc79a2
-      -
-        id: 46c468de-cab0-4ca9-8bea-2051cfebc553
-        title: Evaluation
-        children:
-          -
-            id: fb405bc3-3370-4046-90e5-9a6145e02a67
-            entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
-            title: 'How evaluation works'
-          -
-            id: 5af0708b-e976-453e-8354-3f622b978be5
-            entry: 33d28828-0060-41cf-aad6-ae19df201c6c
-          -
-            id: cafb3429-9567-4a4e-a379-3e253e38a9eb
-            entry: b358db28-92d6-458b-9692-d181e0871612
-          -
-            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
-            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
-  -
-    id: 76e3b608-0781-418a-b014-f0f79086cf32
-    title: Instrumentation
-    children:
-      -
-        id: 45493c66-cbea-4f55-84b7-9131ef5094c4
-        entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
-      -
-        id: 46abcd22-a45e-4553-b08d-90f16283d013
-        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
-        children:
-          -
-            id: 5a5ff529-ea91-465c-bbc9-a848f5037eb8
-            entry: 7f2e8a4c-9b3d-4e1a-8f5c-2d6e9a1b4c8e
-      -
-        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
-        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
-      -
-        id: 90ff8151-b864-4782-abdd-65b81d1c26ca
-        title: 'Experiment SDKs'
-        url: /docs/sdks/experiment-sdks
-        children:
-          -
-            id: e2cf6857-5740-4894-8121-e9ff81d9814d
-            entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
-      -
-        id: a0b34e1d-975b-4693-bdc0-6d0e2ab44f20
-        title: 'Experiment APIs'
-        url: /docs/apis/experiment
-  -
     id: eb986f27-1841-4d18-9cea-2edf7c6da4c8
     title: 'Advanced concepts'
     children:
@@ -287,8 +289,8 @@ tree:
         id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
         entry: 982a0f19-3b05-4358-adda-93a5b3c60919
   -
-    id: a1000001-0002-4000-a000-000000000001
-    title: Admin
+    id: a1000001-0001-4000-a000-000000000001
+    title: 'Admin & integrations'
     children:
       -
         id: 3687a9d2-bf40-4280-8220-12b885d702b2
