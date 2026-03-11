@@ -1,6 +1,6 @@
 ---
 id: 13b804be-b238-462d-9c36-cf406267b312
-blueprint: guides_and_survey
+blueprint: resource_center
 title: 'Recommendation Sets'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
@@ -15,7 +15,7 @@ Recommendation sets are customizable, in-time articles and information embedded 
 You can create multiple recommendation sets for specific pages or you can create a single recommendation set for your entire site. It's up to you how detailed you want to be. 
 
 {{partial:admonition type="note" heading=""}}
-If you don’t currently know how detailed you want your recommendation sets, use the Resource Center [Autopilot](/docs/guides-and-surveys/resource-center-autopilot) feature. This lets Amplitude decide which articles may be most relevant for users.
+If you don’t currently know how detailed you want your recommendation sets, use the Resource Center [Autopilot](/docs/assistant/resource-center/resource-center-autopilot) feature. This lets Amplitude decide which articles may be most relevant for users.
 {{/partial:admonition}}
 
 ##### To create a recommendation set

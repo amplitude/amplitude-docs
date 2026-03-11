@@ -1,6 +1,6 @@
 ---
 id: 2d993365-2310-4343-ab54-d864173975eb
-blueprint: guides_and_survey
+blueprint: resource_center
 title: 'Source Content'
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
@@ -11,7 +11,7 @@ The source content you select should be either internal help (documentation) rep
 
 - The Resource Center requires that you add documentation repositories, videos, and chat integrations individually. 
 - Each documentation source requires slightly different information to successfully add it to the Resource Center. Follow the onscreen prompts for required fields.
-- If you don't find your specific documentation repository as an option, select the [Website](/docs/guides-and-surveys/resource-center-website-scraper) option to sync to a public website.
+- If you don't find your specific documentation repository as an option, select the [Website](/docs/assistant/resource-center/resource-center-website-scraper) option to sync to a public website.
 - You can also suggest Resource Center content integrations through a Survey that's sent to Amplitude.
 
 ##### Add documentation content to the Resource Center 
@@ -39,7 +39,7 @@ This title is what your users see in the link.
 5. Enter the video URL.
 6. Click **Add video**.
 
-After you have added your content sources, create your [Resource Center recommendation sets](/docs/guides-and-surveys/resource-center-recommendation-sets).
+After you have added your content sources, create your [Resource Center recommendation sets](/docs/assistant/resource-center/resource-center-recommendation-sets).
 
 ## Managing source content
 As your organization grows and evolves, your source content also grows and changes. For this reason, keep the content that's available in the Resource Center up-to-date with your source repositories. Specify how frequently you want the Resource Center to automatically sync with your source content. Alternately, decide to manually trigger the sync as needed. 

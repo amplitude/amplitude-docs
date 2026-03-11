@@ -8,6 +8,23 @@ updated_at: 1750443681
 ---
 <!-- vale off -->
 
+## 3.2.0 (Android, iOS, React Native) \[2026-03-06\]
+
+### ✨ Features
+- Feat: allow "user_properties" to be passed into "boot" SDK method (GSDK-869) \[rn\]
+- Feat: add theme support for line height (GSDK-820) \[android\]
+- Feat: add theme support for rating button padding (GSDK-822) \[android\]
+- Feat: add theme support form control and button shadows (GSDK-806, GSDK-824) \[android, ios\]
+
+### 🐛 Fixes
+- Fix: update step counter for multi-step pins (GSDK-876) \[android\]
+- Fix: use currentParent instead of view when resolving bar in nav hierarchy (GSDK-874) \[ios\]
+- Fix: defer pin positioning to correct for layout timing (GSDK-868) \[ios\]
+- Fix: fix horizontal pin ui and positioning (GSDK-815) \[android\]
+- Fix: improve in-app support for vimeo and loom videos (GSDK-338, GSDK-861) \[android, ios\]
+- Fix: increase nudge width for number surveys with nps-format buttons (GSDK-833) \[android\]
+
+
 ## 3.1.1 (Android, iOS, React Native) \[2026-02-23\]
 
 ### 🐛 Fixes
