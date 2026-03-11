@@ -9,7 +9,7 @@ landing_blurb: Learn how Resource Center's scraper ingests the content of your s
 ---
 The Website source repository lets you scrape a public-facing website to pull in articles that may be useful for your users. Because there are such a wide variety of websites and rich content that can be included in any specific page, read the following information carefully when using this content source.  
 
-{{partial:admonition type="" heading=""}}
+{{partial:admonition type="note" heading=""}}
 If your documentation repositories are managed through a platform for which there is an integration, use the integration. The dedicated Resource Center integrations offers a better end-to-end experience. The website scraper is a powerful tool, but one that should be considered a fallback option.
 {{/partial:admonition}}
 
