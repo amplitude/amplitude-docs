@@ -184,8 +184,8 @@ To add Databricks as a source in Amplitude, complete the following steps.
     from catalog.schema.table1;
     ```
 
-{{partial:admonition type="note" heading="VARIANT datatype support"}}
-Amplitude supports the `VARIANT` datatype for mapping properties columns. You can use `VARIANT` columns for user properties, event properties, and group properties in your SQL queries. This allows you to import semi-structured or nested JSON data directly from Databricks without needing to explicitly cast or transform the data structure.
+{{partial:admonition type="note" heading="VARIANT data type support"}}
+Amplitude supports the `VARIANT` data type for mapping property columns. You can use `VARIANT` columns for user properties, event properties, and group properties in your SQL queries. This allows you to import semi-structured or nested JSON data directly from Databricks.
 {{/partial:admonition}}
 
 For the `Event` data type and Append-Only Ingestion, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
