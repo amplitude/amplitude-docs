@@ -427,9 +427,9 @@ Don't use periods, question marks, exclamation points, or colons at the end of h
 - ❌ `## Prerequisites:`
 - ✅ `## Prerequisites`
 
-#### Use Sentence Case
+#### Use Sentence Case for Content Headings
 
-Use sentence case (capitalize only the first word and proper nouns) rather than title case.
+Use sentence case (capitalize only the first word and proper nouns) rather than title case for all headings within the body of an article (H2 through H4).
 
 **Examples:**
 - ❌ `## Configure Your API Settings` (title case)
@@ -438,6 +438,17 @@ Use sentence case (capitalize only the first word and proper nouns) rather than 
 **Exception:** Proper nouns and product names retain their capitalization:
 - ✅ `## Configure Amplitude Analytics`
 - ✅ `## Send data to Amazon S3`
+
+#### Use Title Case for Front Matter Titles
+
+The `title` field in an article's front matter must use Title Case (capitalize all major words).
+
+**Examples:**
+- ❌ `title: Configure your API settings` (sentence case)
+- ✅ `title: Configure Your API Settings` (title case)
+- ✅ `title: Send Data to Amazon S3`
+
+This applies only to the `title` field in frontmatter, not to headings in the document body.
 
 #### Use Descriptive, Action-Oriented Headings
 
