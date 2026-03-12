@@ -43,7 +43,7 @@ To add a payload when creating or editing a variant:
 
 1. Navigate to *Experiment > Feature Flags* or *Experiments*.
 2. Select the flag or experiment you want to configure.
-3. In the Variants section, create or edit a variant.
+3. In the **Variants** section, create or edit a variant.
 4. Enter the variant name, value, and description.
 5. In the **Payload** field, add your JSON configuration.
 6. Select **Apply**, then save your changes.
