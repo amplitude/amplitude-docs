@@ -15,7 +15,9 @@ info:
 
 servers:
   - url: https://amplitude.com/api/1
-    description: Amplitude API
+    description: US (default)
+  - url: https://eu.amplitude.com/api/1
+    description: EU data residency
 
 security:
   - basicAuth: []

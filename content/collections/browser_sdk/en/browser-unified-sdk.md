@@ -2,6 +2,7 @@
 id: 9d42e657-b743-4cb3-8e32-1c75c1e8f580
 blueprint: browser_sdk
 title: 'Browser Unified SDK'
+sdk_status: current
 article_type: core
 supported_languages:
   - js
