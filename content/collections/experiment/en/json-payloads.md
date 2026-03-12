@@ -380,7 +380,7 @@ const showDescription = variant?.payload?.showDescription !== false;
 
 ### 2. Validate payload structure
 
-Even with strongly typed payloads, you should validate payloads in your application:
+Even with strongly typed payloads, validate payloads in your application:
 
 ```javascript
 function validateLayoutPayload(payload: any): boolean {
