@@ -43,13 +43,13 @@ If you don't add parameters to Bing Ads' `FinalUrls`, Amplitude infers default v
 Before you begin, ensure you have the following:
 
 * A Bing Ads account
-* A user OAuth account with access to the Ad account in order to configure the integration. 
+* A user OAuth account with access to the Ad account to configure the integration.
 
 ## Amplitude configuration
 
 To enable the integration in Amplitude:
 
-1. Navigate to Data Sources and find **Bing Ads**.
+1. Navigate to *Data Sources* and find **Bing Ads**.
 2. Enter a **Display Name** for the connection.
 3. Select the Bing Ads account from which you want to import data.
 4. Choose to import historical data from a period you specify, up to one year. Amplitude backfills these data, and continues daily imports.
@@ -83,14 +83,14 @@ Bing Ads provides the following event properties.
 
 ### User properties
 
-If your Bing Ad URLs include UTM parameters, Amplitude captures the following user properties. These fields are required to calculate metrics like Customer Acquisition Cost and Return on Ad Spend.
+If your Bing Ad URLs include UTM parameters, Amplitude captures the following user properties. Use these fields to calculate metrics like Customer Acquisition Cost and Return on Ad Spend.
 
 | Property Name | Description                                    |
 | ------------- | ---------------------------------------------- |
-| utm_source    | The source that referred the user.             |
-| utm_medium    | The advertising or marketing medium.           |
-| utm_campaign  | The campaign name from UTM tracking.           |
-| utm_content   | The ad content or variation from UTM tracking. |
+| `utm_source`  | The source that referred the user.             |
+| `utm_medium`  | The advertising or marketing medium.           |
+| `utm_campaign` | The campaign name from UTM tracking.          |
+| `utm_content` | The ad content or variation from UTM tracking. |
 
 ## Common issues
 
@@ -102,7 +102,7 @@ Your Bing Ads Manager account requires administrator privileges. This level of p
 
 ### Daily ad metric discrepancies
 
-Amplitude imports Bing Ads data once per day, and always for the previous calendar day. The import happens as a daily batch, and isn't available in real time or for hour-by-hour analysis
+Amplitude imports Bing Ads data once per day, and always for the previous calendar day. The import happens as a daily batch, and isn't available in real time or for hour-by-hour analysis.
 
 If Bing Ads revises campaign data after Amplitude’s import completes, those changes don't appear automatically. 
 
@@ -112,8 +112,8 @@ For more information, see [Reporting Data Retention Time Periods](https://learn.
 
 ### Ad events don't map to users
 
-Bing Ads doesn't export user level identifiers like device ID, email address, or user ID. As a result, Daily Ad Metrics event's don't link to use profiles in Amplitude, they aren't associated with known users across other product events.
+Bing Ads doesn't export user-level identifiers like device ID, email address, or user ID. As a result, Daily Ad Metrics events don't link to user profiles in Amplitude or to known users across other product events.
 
 While these events may appear in a user stream with a synthetic identifier (like Bing Ads device ID), this doesn't mean identity resolution was successful. Amplitude treats the events as standalone entries, which aren't suitable for user-level reporting.
 
-Daily Ad Metrics events work best for campaign level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
+Daily Ad Metrics events work best for campaign-level analysis. Amplitude recommends excluding them from funnels, cohort definitions, or behavioral journeys that rely on user identity.
