@@ -896,6 +896,36 @@ Use these skills by typing `/skill-name` in the conversation:
 
 ---
 
+## Agent work logging
+
+**REQUIRED**: Any time you perform substantive work on this repository—editing documentation, creating files, fixing issues, or creating pull requests—append an entry to `AGENT_LOG.md` in the repository root. Log your work at the end of each task, before you finish your response.
+
+### Format
+
+Add a new row to the table in `AGENT_LOG.md`:
+
+```
+| YYYY-MM-DD | Claude Code | Short description | PR/commit link or N/A |
+```
+
+### Rules
+
+- Use today's date in `YYYY-MM-DD` format.
+- Set **Submitted By** to `Claude Code`.
+- Keep the **Short Description** to one brief phrase (under 10 words).
+- For **PR Link**: use the full GitHub PR URL if a PR was created, a commit URL if only commits were made, or `N/A` if no commits were made.
+- Always append — never overwrite existing entries.
+- Log once per task, not once per file edit.
+
+### Examples
+
+```
+| 2026-03-12 | Claude Code | Fix session replay sampling docs | https://github.com/amplitude/amplitude-docs/pull/1523 |
+| 2026-03-12 | Claude Code | Apply style rules to SDK docs | N/A |
+```
+
+---
+
 ## Important Files to Never Modify
 
 These files are critical to the system and should not be modified without careful consideration:

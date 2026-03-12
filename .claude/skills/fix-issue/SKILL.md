@@ -104,6 +104,22 @@ Provide a clear summary in this format:
 - Create a PR and tag `@tech-writers` for review.
 ```
 
+## Step 8: Log work to AGENT_LOG.md
+
+After completing the task, append a row to `AGENT_LOG.md` in the repository root:
+
+```
+| YYYY-MM-DD | Claude Code | Short description | PR/commit link or N/A |
+```
+
+- Use today's date.
+- Keep the description brief (under 10 words).
+- Use the full GitHub PR URL if a PR was created, a commit URL if only commits were made, or `N/A` if no commits were made.
+
+This step is required for every work session, not just PRs.
+
+---
+
 ## Important Guardrails
 
 - **Stop if unsure.** If the next step is unclear, stop and ask the user.

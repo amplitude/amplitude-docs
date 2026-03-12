@@ -104,6 +104,12 @@ This file summarizes the documentation rules in .cursor/rules.
   cloudId https://amplitude.atlassian.net, project DOC, issue type Task.
 - Provide the ticket ID and URL, and remind to include the ID in the branch.
 
+## Work logging (required)
+- After any substantive work (editing docs, creating files, fixing issues,
+  or creating PRs), append a row to `AGENT_LOG.md` in the repository root.
+- Format: `| YYYY-MM-DD | Agent Name | Short description | PR/commit link or N/A |`
+- Log once per task. Always append, never overwrite existing entries.
+
 ## No new files rule
 - Do not create new files unless explicitly requested or required to
   complete a user request.
