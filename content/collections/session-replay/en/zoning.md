@@ -19,7 +19,7 @@ If you have an Admin or Manager role, you can create, update, and delete any zon
 
 ### Availability
 
-Zoning is only available on Web and Mobile Web.
+You can use Zoning on Web and Mobile Web.
 
 ### How Zoning relates to Session Replay and Heatmaps
 
@@ -27,7 +27,7 @@ Zoning is different than either Session Replay or Heatmaps:
 
 - **Session Replay** records user sessions and lets you watch replays and debug behavior.
 - **Heatmaps** aggregate clicks, scrolls, and selector-level interactions on a page without defining custom areas.
-- **Zoning** lets you define custom areas (zones) on a page and analyze engagement within those areas. It complements Session Replay and Heatmaps when you care about specific regions (for example banners, forms, or CTAs) rather than the whole page or raw selectors.
+- **Zoning** lets you define custom areas (zones) on a page and analyze engagement within those areas. It complements Session Replay and Heatmaps when you care about specific regions (for example: banners, forms, or CTAs) rather than the whole page or raw selectors.
 
 ## Configuring Zoning
 
@@ -74,6 +74,6 @@ Amplitude needs the screenshot to create the zone map. You need a screenshot for
 
 After you save the zone map, you can view metrics, user journeys, and session replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
-After the zone map is saved, you can view metrics, user journeys, session replays, for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
+After you save the map, view the metrics, user journeys, session replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
 Additionally, you can turn on the **Heatmap** overlay to better understand [heatmap](/docs/session-replay/heatmaps) clicks on your page.
