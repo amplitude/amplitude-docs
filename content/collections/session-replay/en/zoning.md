@@ -64,7 +64,6 @@ Create a zone map by defining one or more zones on a page and then viewing aggre
    * **Pattern match** with wildcards for similar URLs.
    * **Contains** for URLs that include a keyword or segment.
    * **Starts with** for a URL prefix and its subpages.
-   * *Confirm which of these options Zoning supports and any differences in behavior.*
 6. Confirm that you want to create the page screenshot.
 Amplitude needs the screenshot to create the zone map. You need a screenshot for both single pages and page groups.
 7. Confirm that the correct URL is visibile and then click **Take Screenshot**.
