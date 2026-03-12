@@ -5,13 +5,13 @@ title: 'Mobile Autocapture Schema'
 landing: false
 exclude_from_sitemap: false
 ---
-This reference lists Autocapture **event types** and **event property names** for native iOS and Android when you use the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk). Use it when you need a stable contract for pipelines, partners, or validation.
+This reference lists Autocapture event types and event property names for native iOS and Android when you use the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk). Use it when you need a stable contract for pipelines, partners, or validation.
 
-{{partial:admonition type="note" heading=""}}
-Amplitude doesn't ship a separate React Native Autocapture package. React Native apps that need comparable behavior typically instrument events manually or bridge to native SDKs. This schema applies to **native** iOS and Android Autocapture only.
+{{partial:admonition type="note" heading="React Native packages"}}
+Amplitude doesn't ship a separate React Native Autocapture package. React Native apps that need comparable behavior typically instrument events manually or bridge to native SDKs. This schema applies to native iOS and Android Autocapture only.
 {{/partial:admonition}}
 
-For setup steps, go to [Autocapture](/docs/get-started/autocapture). For web Autocapture event properties, go to [Autocapture events and properties](/docs/data/autocapture-events-and-properties).
+For Autocapture setup steps, go to [Autocapture](/docs/get-started/autocapture). For web Autocapture event properties, go to [Autocapture events and properties](/docs/data/autocapture-events-and-properties).
 
 ## Machine-readable schema
 
