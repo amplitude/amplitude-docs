@@ -157,7 +157,9 @@ When you enable Element Interactions, several options appear:
 | Action Click Allowlist | Amplitude tracks the elements in this list only when a user clicks them, and they result in a page or DOM change.                                                                                               |
 | Page URL Allowlist     | Specify URLs or URL patterns (using glob or regular expression) on which Amplitude tracks element click and change events.                                                                                          |
 | Data Attribute Prefix  | Specify a prefix for data attributes, for example `data-amp-track`. Amplitude saves the value of these attributes as event properties.                                                                              |
- 
+
+Element interaction data is also used by [Zoning](/docs/session-replay/zoning) to analyze engagement within defined areas of your pages. To use Zoning, enable element interactions (and optionally configure allowlists) here or in your [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2#track-element-interactions) initialization.
+
 {{partial:admonition type="tip" heading="Lower event volume"}}
 These options can help you control event volume. By ignoring dead clicks, Action Click Allowlist is the most efficient method to reduce volume, while still tracking relevant interactions.
 {{/partial:admonition}}

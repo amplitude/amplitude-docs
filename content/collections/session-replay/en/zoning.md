@@ -11,11 +11,15 @@ this_article_will_help_you:
 ---
 Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. Create zone maps that overlay your product UI that reveal how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
 
-Zoning requires [auto-captured interaction data](/docs/data/autocapture) (for example, click exposures, or scrolls) to compute element-level metrics directly on your pages. Because Zoning using autocapture to collect page-level click events and interaction data, it can increase event volumes.
+Zoning requires [auto-captured interaction data](/docs/data/autocapture) (for example, click exposures, or scrolls) to compute element-level metrics directly on your pages. Because Zoning uses autocapture to collect page-level click events and interaction data, it can increase event volumes.
 
 ### Permissions
 
 If you have an Admin or Manager role, you can create, update, and delete any zoning analysis. If you have the Member role, you can create, update, or delete your own zoning analyses but can't edit anyone else's. If you have the Viewer role, you can only view zoning analyses. For details, go to [User roles and permissions](/docs/admin/account-management/user-roles-permissions).
+
+### Availability
+
+Zoning is only available on Web and Mobile Web.
 
 ### How Zoning relates to Session Replay and Heatmaps
 
@@ -29,15 +33,20 @@ Zoning is different than either Session Replay or Heatmaps:
 
 ## Configuring Zoning
 
-Set up zoning by adding a Chrome extension as well as configuring the Browser SDK.
+Zoning is typically configured through the Autocapture [Remote Configuration](/docs/data/amplitude-data-settings#autocapture) settings in the [Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) by enabling `fetchRemoteConfig`. 
 
-### Installing the Chrome extension
+At minimum, turn on the following Autocapture options: 
 
-1. In your Chrome browser, go to *chrome://extensions/*. 
-2. Turn on **Developer** mode. 
-3. Click **Load unpacked**.
+```
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    pageViews: true,
+    elementInteractions: true,
+  },
+});
+```
 
-**Unconfirmed:** Whether Zoning is available only for web (browser) Session Replay—similar to [Heatmaps](/docs/session-replay/heatmaps)—or also for mobile. Confirm in the product or with the team.
+Optionally, you can include detailed `elementInteractions` settings such as `allowlists` or `viewportContentUpdated.exposureDuration`. 
 
 ## Create a zone map
 
