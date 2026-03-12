@@ -400,8 +400,7 @@ Keep sentences under 30 words when possible. Break long sentences into multiple 
 
 **Capitalization and Punctuation in Lists**:
 - Capitalize the first word of each list item
-- Always use ending punctuation for all list items (periods, question marks, or exclamation points as appropriate)
-- Use periods for both complete sentences and fragments
+- Use ending punctuation for list items that are complete sentences; fragments don't require a period
 
 ---
 
