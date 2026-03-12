@@ -94,6 +94,9 @@ markdown-issues.json
 
 # Bulk edit runtime state (progress tracking — local only, not for commit)
 .claude/bulk-edit-state/
+
+# Claude Code worktrees (local session sandboxes — never commit)
+.claude/worktrees/
 .vscode/mcp.json
 public/mix-manifest.json
 public/docs/css/site.css
