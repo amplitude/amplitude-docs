@@ -4,7 +4,7 @@ blueprint: rbac_permission
 title: 'Manage own Zoning analyses'
 product_area: session-replay
 advanced: false
-description: "Create, update , and delete your own Zoning analyses (cannot edit others')"
+description: "Create, update , and delete your own Zoning analyses (can't edit others')"
 actions:
   - 'create own zoning analysis'
   - 'update own zoning analysis'

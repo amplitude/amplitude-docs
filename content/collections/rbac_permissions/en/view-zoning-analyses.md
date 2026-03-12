@@ -6,7 +6,7 @@ product_area: session-replay
 advanced: false
 description: 'View Zoning analyses'
 actions:
-  - 'view zoning anaysis'
+  - 'view zoning analysis'
 default_permissions:
   - admin
   - manager
