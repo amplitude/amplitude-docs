@@ -53,7 +53,7 @@
   {{ /if }}
   
   <div class="p-4 prose prose-sm max-w-none flex-grow">
-    {{ slot | antlers | strip_tags('br') | strip_tags('p') }}
+    {{ slot | antlers | markdown | strip_tags('br','p','ul','ol','li','a','strong','em') }}
   </div>
   
   {{ if caption }}

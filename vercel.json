@@ -120,6 +120,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/get-started/pricing",
+      "destination": "/docs/pricing",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/articles/115000959052((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/data/data-get-started",
       "statusCode": 301
