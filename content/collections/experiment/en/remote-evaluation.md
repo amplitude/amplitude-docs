@@ -8,15 +8,15 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717439192
 source: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/remote-evaluation/'
 ---
-Remote evaluation involves making a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/feature-experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but may also be used from a server-side environment.
+Remote evaluation makes a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/feature-experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but you can also use it from a server-side environment.
 
 **Client-side**
 
-![](statamic://asset::help_center_conversions::experiment/client-side-overview.drawio.svg)
+![Diagram showing the client-side remote evaluation flow from client SDK through Amplitude Experiment servers](statamic://asset::help_center_conversions::experiment/client-side-overview.drawio.svg)
 
 **Server-side**
 
-![](statamic://asset::help_center_conversions::experiment/server-side-remote-overview.drawio.svg)
+![Diagram showing the server-side remote evaluation flow from server SDK through Amplitude Experiment servers](statamic://asset::help_center_conversions::experiment/server-side-remote-overview.drawio.svg)
 
 ## Targeting capabilities
 
@@ -35,21 +35,21 @@ Remote evaluation targeting and identity resolution both use Amplitude Analytics
 
 Remote evaluation resolves the user within Amplitude and appends additional information to the user before passing the enriched user to the [evaluation implementation](/docs/feature-experiment/implementation).
 
-![](statamic://asset::help_center_conversions::experiment/remote-evaluation.drawio.svg)
+![Diagram showing the remote evaluation implementation flow including ID resolution, user enrichment, and evaluation steps](statamic://asset::help_center_conversions::experiment/remote-evaluation.drawio.svg)
 
 ### Amplitude ID resolution
 
-Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required if [bucketing](/docs/feature-experiment/implementation#consistent-bucketing) by Amplitude ID.
+Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required when [bucketing](/docs/feature-experiment/implementation#consistent-bucketing) by Amplitude ID.
 
-[Learn more about Amplitude's advanced identity resolution.](/docs/data/sources/instrument-track-unique-users)
+Go to [Amplitude's advanced identity resolution](/docs/data/sources/instrument-track-unique-users) to learn more.
 
 ### User enrichment
 
 #### Geolocation
 
-If you use location based targeting in your flags, remote evaluation resolves location based on the client's IP and use a canonical `Country` user property to make targeting consistent and easy.
+If you use location-based targeting in your flags, remote evaluation resolves location based on the client's IP and uses a canonical `Country` user property to make targeting consistent.
 
-The following fields resolve with IP geolocation:
+Remote evaluation resolves the following fields with IP geolocation:
 
 * Country
 * City
@@ -58,9 +58,9 @@ The following fields resolve with IP geolocation:
 
 #### Canonicalization
 
-Remote evaluation canonicalizes inputs to make it easier to segment users by platform, OS, language, country, etc, even if the devices report slightly different values. Canonicalization transforms various known device, language, and country inputs into canonical values which remain consistent even if the client reports different values.
+Remote evaluation canonicalizes inputs to make it easier to segment users by platform, OS, language, and country, even if devices report slightly different values. Canonicalization transforms various known device, language, and country inputs into canonical values that remain consistent even when the client reports different values.
 
-The following fields are canonicalized on remote evaluation:
+Remote evaluation canonicalizes the following fields:
 
 * Platform
 * Device Family
@@ -71,12 +71,12 @@ The following fields are canonicalized on remote evaluation:
 #### User properties
 
 {{partial:admonition type="warning" heading="Race conditions"}}
-Targeting a recently set user property may cause a race between Amplitude Analytics ingesting and applying the user property, and Experiment accessing the user property. To avoid any races between a user property being set, and a remote evaluation accessing the user's properties, explicitly set the user property in the remote fetch request.
+Targeting a recently set user property may cause a race between Amplitude Analytics ingesting and applying the user property, and Experiment accessing it. To avoid races between a user property being set and a remote evaluation accessing the user's properties, explicitly set the user property in the remote fetch request.
 
 When you pass user properties to the remote fetch request, those user properties don't update on associated analytics events.
 {{/partial:admonition}}
 
-The [resolved Amplitude ID](#amplitude-id-resolution) accesses the user's current user properties based on historical analytics data. These user properties are merged with any user properties sent explicitly in the fetch request and which are then passed in for [evaluation](/docs/feature-experiment/implementation).
+The [resolved Amplitude ID](#amplitude-id-resolution) accesses the user's current user properties based on historical analytics data. Experiment merges these user properties with any user properties you explicitly pass in the fetch request, then passes the merged set to [evaluation](/docs/feature-experiment/implementation).
 
 {{partial:admonition type="info" heading="User property merge priority"}}
 Amplitude prioritizes user properties sent explicitly in a remote fetch request over user properties accessed from analytics.
@@ -84,9 +84,8 @@ Amplitude prioritizes user properties sent explicitly in a remote fetch request 
 
 #### Cohort membership
 
-Remote evaluation gets the user's cohort membership from analytics which enables targeting by cohorts in [targeting segments](/docs/feature-experiment/implementation#targeting-segments).
+Remote evaluation gets the user's cohort membership from analytics, which enables targeting by cohorts in [targeting segments](/docs/feature-experiment/implementation#targeting-segments).
 
 {{partial:admonition type="warning" heading="Hourly cohort sync"}}
-Dynamic cohorts sync hourly. Therefore, only use cohort targeting if the bucketing isn't time sensitive. Time sensitive user targeting should use user properties passed explicitly to the remote fetch request.
+Dynamic cohorts sync hourly. Only use cohort targeting when bucketing isn't time-sensitive. For time-sensitive user targeting, explicitly pass user properties to the remote fetch request.
 {{/partial:admonition}}
-

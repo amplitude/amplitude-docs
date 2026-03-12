@@ -8,22 +8,22 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724885595
 ---
-When running an experiment, tracking the [exposure](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) of your users to your feature flag's variable experience is essential. Without it, you can't count on reliable results.
+When running an experiment, tracking the [exposure](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) of your users to your feature flag's variable experience is essential. Without it, your results won't be reliable.
 
 {{partial:admonition type='note'}}
 Exposure tracking is optional for feature flags that don't require analysis.
 {{/partial:admonition}}
 
-### Analytics REST API
+## Analytics REST API
 
-In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events)  to Amplitude with `curl`.
+In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) to Amplitude with `curl`.
 
 {{partial:partials/experiment/interactive-exposure-table}}
 
 When the request succeeds, a user appears in the Exposures chart in Amplitude Experiment.
 
-The flag is now active in your deployment, and your experiment has evaluated a user and shown them the variant.
+The flag is now active in your deployment, and Amplitude Experiment evaluates the user and shows them the variant.
 
-### SDKs
+## SDKs
 
-As with fetching variants, you can simplify exposure tracking using a client-side [Experiment SDK](/docs/sdks/experiment-sdks) in your app. Client-side Amplitude Experiment SDKs can [automatically track exposures](/docs/feature-experiment/under-the-hood/event-tracking#automatic-exposure-tracking) through your installed analytics SDK whenever it accesses a variant from the variant store.
+As with fetching variants, you can simplify exposure tracking using a client-side [Experiment SDK](/docs/sdks/experiment-sdks) in your app. Client-side Amplitude Experiment SDKs automatically track exposures through your installed analytics SDK whenever a user accesses a variant from the variant store. Go to [automatic exposure tracking](/docs/feature-experiment/under-the-hood/event-tracking#automatic-exposure-tracking) to learn more.

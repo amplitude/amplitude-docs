@@ -11,49 +11,49 @@ Improve the governance of your experimentation program and decrease the risk of 
 
 Experiment Approvals is only available to Growth and Enterprise customers.
 
-## Setting up approvals
+## Set up approvals
 
-Turn on approvals by going to _Organization Settings > Experiment > Approvals_. 
+Turn on approvals by going to *Organization Settings > Experiment > Approvals*.
 
-Only users who have manager or admin roles can modify approvals settings.
+Only users with manager or admin roles can modify approvals settings.
 
-Add the individual projects that you would like to require approvals for.
+Add the projects that require approvals.
 
-For each project, you can specify one of the following options: 
+For each project, specify one of the following options:
 
-1. **Peer approvals**: Any users with access can respond to pending approval requests
-2. **Specific approvers**: Only the users designated can respond to pending approval requests
+- **Peer approvals**: Any user with access can respond to pending approval requests.
+- **Specific approvers**: Only the designated users can respond to pending approval requests.
 
-Additionally, admin users can respond to pending approvals.
+Admin users can also respond to pending approvals.
 
-## Requesting and responding to approval requests
+## Request and respond to approvals
 
-### Requiring approvals to activate flags and experiments
+### Require approvals to activate flags and experiments
 
-After approvals are enabled for a project, Amplitude recommends that you follow this approval process: 
+After approvals are enabled for a project, follow this approval process:
 
-1. When starting or scheduling an experiment or activating or scheduling a feature flag, the requestor selects one or more approver to notify.
-2. The experiment displays a “Pending Approval” status until it's approved.
-3. Approvers can review the experiment and either approve the requested changes or reject the changes.
-4. The approval or rejection automatically notifies the original requestor of the response.
+1. When starting or scheduling an experiment, or activating or scheduling a feature flag, the requestor selects one or more approvers to notify.
+2. The experiment displays a "Pending Approval" status until Amplitude approves it.
+3. Approvers can review the experiment and either approve or reject the requested changes.
+4. The approval or rejection automatically notifies the original requestor.
 
-While the approval is pending, users can make additional changes to the flag or experiment configuration, enter or exit testing mode, or cancel the request at any time.
+While approval is pending, users can make additional changes to the flag or experiment configuration, enter or exit testing mode, or cancel the request at any time.
 
-When the scheduled flag or experiment gains approval, the flag or experiment is considered live and requires approvals for critical changes.
+When a scheduled flag or experiment gains approval, Amplitude considers it live and requires approvals for critical changes.
 
-### Requiring approvals for critical changes to live flags and experiments
+### Require approvals for critical changes to live flags and experiments
 
 When a flag or experiment is active, certain updates also require approval:
 
-| Field    | Type of Change    |
+| Field | Type of change |
 | --- | --- |
-| Target Segments | Adding and removing segments, modifying conditions or bucketing.    |
-| Variants | Any changes, including adding, renaming or removing variants.    |
-| Variant Distribution | Any changes |
-| Exposure Event | Any changes |
-| Bucketing Salt | Any changes | 
-| Sticky Bucketing | Enabling / Disabling | 
+| Target segments | Adding and removing segments, or modifying conditions or bucketing. |
+| Variants | Any changes, including adding, renaming, or removing variants. |
+| Variant distribution | Any changes. |
+| Exposure event | Any changes. |
+| Bucketing salt | Any changes. |
+| Sticky bucketing | Enabling or disabling. |
 
 When reviewing these approval requests, users can view the full list of changes in the approval banner.
 
-When approvals are pending, the flag or experiment is locked. This prevents users with access from making other changes until the previous approval request is completed or cancelled.
+When approvals are pending, the flag or experiment is locked. This prevents users from making other changes until the previous approval request resolves or is cancelled.
