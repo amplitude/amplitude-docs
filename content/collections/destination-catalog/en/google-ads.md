@@ -53,25 +53,21 @@ After you create the destination, you must configure the settings.
 9.  Map the `gclid` Amplitude property to the `GCLID` property in Google Ads. This is the [Google Click identifier](https://support.google.com/google-ads/answer/9744275?hl=en).
 10. Save when finished.
 
-### Setup tracking conversion in Google Ads
+### Set up tracking conversion in Google Ads
 
-1. In Google Ads, click *Goals*.
-2. Click *New conversion action*.
-3. Click *Import data from Google Analytics or another source*.
-4. Check *Manual import using API or uploads*.
-5. Check *Track conversions from clicks*.
-6. Choose your goal and action optimization.
-7. Enter your conversion name.
-8. Choose the value setting. This lets you track how much these conversions are worth to your business.
-9. Select the number of conversions to count per click or interaction.
-10. Select your click-through conversion window.
-11. Select your attribution type.
-
-When you configure tracking conversions in Google Ads, select the following options:
-
-- *Import*
-- *Manual import using API or uploads*
-- *Track conversions from clicks*
+1. In Google Ads, click **Goals**.
+2. Click **New conversion action** (or **+ Create conversion action**).
+3. On the *Select conversion goal* screen, choose **Conversions offline**.
+4. Choose an appropriate category for the conversion (for example, **Lead** or **Purchase**).
+5. Edit the conversion settings. At a minimum, configure the following:
+   - **Action optimization.**
+   - **Conversion name.**
+   - **Value.**
+   - **Count.**
+   - **Click-through conversion window.**
+   - **Attribution model.**
+6. Click **Save and continue**.
+7. Click **Finish**.
 
 This enables recording of offline conversions in the *Goals* section of Google Ads. There may be a delay of up to 60 minutes after metrics stream from Amplitude before they appear in Google Ads.
 
