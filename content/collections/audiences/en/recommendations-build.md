@@ -8,7 +8,7 @@ landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121638
 ---
-Amplitude Activation allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities. Read more about the algorithm behind Amplitude's personalization feature in this [blog post](https://amplitude.com/blog/audiences-algorithm).
+Amplitude Activation allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities.
 
 ## Build a new recommendation
 
