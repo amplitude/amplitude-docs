@@ -915,7 +915,7 @@
             "product_area": "session-replay",
             "advanced": false,
             "actions": [
-                "view zoning anaysis"
+                "view zoning analysis"
             ],
             "default_permissions": [
                 "admin",
