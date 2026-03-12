@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-02-26T17:45:16.211666Z",
+    "generated_at": "2026-03-12T22:34:36.635438Z",
     "permissions_count": 49,
     "permissions": [
         {
@@ -349,56 +349,6 @@
                 "member"
             ],
             "slug": "manage-heatmaps"
-        },
-        {
-            "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
-            "title": "Manage Zoning analyses",
-            "description": "Create, update, and delete any zoning analysis",
-            "product_area": "session-replay",
-            "advanced": false,
-            "actions": [
-                "create zoning analysis",
-                "update zoning analysis",
-                "delete zoning analysis"
-            ],
-            "default_permissions": [
-                "admin",
-                "manager"
-            ],
-            "slug": "manage-zoning-analyses"
-        },
-        {
-            "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
-            "title": "Manage own Zoning analyses",
-            "description": "Create, update, and delete your own zoning analyses (cannot edit others')",
-            "product_area": "session-replay",
-            "advanced": false,
-            "actions": [
-                "create own zoning analysis",
-                "update own zoning analysis",
-                "delete own zoning analysis"
-            ],
-            "default_permissions": [
-                "member"
-            ],
-            "slug": "manage-own-zoning-analyses"
-        },
-        {
-            "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
-            "title": "View Zoning analyses",
-            "description": "View zoning analyses",
-            "product_area": "session-replay",
-            "advanced": false,
-            "actions": [
-                "view zoning analysis"
-            ],
-            "default_permissions": [
-                "admin",
-                "manager",
-                "member",
-                "viewer"
-            ],
-            "slug": "view-zoning-analyses"
         },
         {
             "id": "27e50fdd-9e06-4a88-af9d-1c580caacfa7",
@@ -843,13 +793,13 @@
             "slug": "view-guides-surveys-objects"
         },
         {
-            "id": "d6c7332a-f148-4b01-8691-3e4302375f56",
-            "title": "View chat",
-            "description": "View Chat conversations shared with the user",
+            "id": "e60ce29e-75c0-453a-9f27-4d64bd6a71d0",
+            "title": "Create agents",
+            "description": "Create and configure AI Agents",
             "product_area": "ai",
-            "advanced": false,
+            "advanced": true,
             "actions": [
-                "View Global Agent"
+                "Create agents"
             ],
             "default_permissions": [
                 "admin",
@@ -857,7 +807,22 @@
                 "member",
                 "viewer"
             ],
-            "slug": "view-chat"
+            "slug": "create-agents"
+        },
+        {
+            "id": "df3d7283-96af-47c5-b04e-c297fa7c29d7",
+            "title": "Manage AI settings",
+            "description": "Update project-level AI context",
+            "product_area": "ai",
+            "advanced": true,
+            "actions": [
+                "Manage settings"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager"
+            ],
+            "slug": "manage-ai-settings"
         },
         {
             "id": "d2236da7-478f-408f-9616-86e4557aebee",
@@ -894,13 +859,13 @@
             "slug": "view-agents"
         },
         {
-            "id": "e60ce29e-75c0-453a-9f27-4d64bd6a71d0",
-            "title": "Create agents",
-            "description": "Create and configure AI Agents",
+            "id": "d6c7332a-f148-4b01-8691-3e4302375f56",
+            "title": "View chat",
+            "description": "View Chat conversations shared with the user",
             "product_area": "ai",
-            "advanced": true,
+            "advanced": false,
             "actions": [
-                "Create agents"
+                "View Global Agent"
             ],
             "default_permissions": [
                 "admin",
@@ -908,22 +873,57 @@
                 "member",
                 "viewer"
             ],
-            "slug": "create-agents"
+            "slug": "view-chat"
         },
         {
-            "id": "df3d7283-96af-47c5-b04e-c297fa7c29d7",
-            "title": "Manage AI settings",
-            "description": "Update project-level AI context",
-            "product_area": "ai",
-            "advanced": true,
+            "id": "6d04c898-a7d2-4d4b-ab1e-e08c2cf93320",
+            "title": "Manage Zoning analyses",
+            "description": "Create, update, and delete any zoning analysis",
+            "product_area": "session-replay",
+            "advanced": false,
             "actions": [
-                "Manage settings"
+                "create zoning analysis",
+                "update zoning analysis",
+                "delete zoning analysis"
             ],
             "default_permissions": [
                 "admin",
                 "manager"
             ],
-            "slug": "manage-ai-settings"
+            "slug": "manage-zoning-analyses"
+        },
+        {
+            "id": "84e76d42-da34-4236-b3cb-270f4094cd24",
+            "title": "Manage own Zoning analyses",
+            "description": "Create, update , and delete your own Zoning analyses (cannot edit others')",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "create own zoning analysis",
+                "update own zoning analysis",
+                "delete own zoning analysis"
+            ],
+            "default_permissions": [
+                "member"
+            ],
+            "slug": "manage-own-zoning-analyses"
+        },
+        {
+            "id": "786aaf70-775a-4e64-99d5-789404e23e51",
+            "title": "View Zoning analyses",
+            "description": "View Zoning analyses",
+            "product_area": "session-replay",
+            "advanced": false,
+            "actions": [
+                "view zoning anaysis"
+            ],
+            "default_permissions": [
+                "admin",
+                "manager",
+                "member",
+                "viewer"
+            ],
+            "slug": "view-zoning-analyses"
         }
     ]
 }

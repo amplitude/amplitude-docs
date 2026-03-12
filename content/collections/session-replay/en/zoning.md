@@ -72,12 +72,10 @@ Create a zone map by defining one or more zones on a page and then viewing aggre
 6. Confirm that you want to create the page screenshot.
 Amplitude needs the screenshot to create the zone map. You need a screenshot for both single pages and page groups.
 7. Confirm that the correct URL is visibile and then click **Take Screenshot**.
-8. Name the screenshot, describe it, and then save it.
+8. Name the screenshot, describe it, and save it.
 9. Click each zone to turn it on or off.
 10. Save or apply the zone map so Amplitude can aggregate data for the defined zones.
 
-After you save the zone map, you can view metrics, user journeys, and session replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
-
 After you save the map, view the metrics, user journeys, session replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
-Additionally, you can turn on the **Heatmap** overlay to better understand [heatmap](/docs/session-replay/heatmaps) clicks on your page.
+Additionally, you can turn on the Heatmap overlay to better understand [heatmap](/docs/session-replay/heatmaps) clicks on your page.
