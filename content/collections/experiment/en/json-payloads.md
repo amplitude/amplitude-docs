@@ -249,7 +249,7 @@ Strong typing is especially useful when:
 
 ### Define the expected type for variant payloads
 
-In the UI, by clicking **Set payload type**, you choose a **payload type** for the flag or experiment. The type applies to all variants.
+In the UI, by clicking **Set payload type**, you choose a payload type for the flag or experiment. The type applies to all variants.
 
 **Payload type options:**
 
