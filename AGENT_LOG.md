@@ -7,3 +7,5 @@ Tracks all pull requests submitted by AI agents (Claude Code and Cursor).
 | 2026-03-12 | Cursor | Enforce admonition type default | https://github.com/amplitude/amplitude-docs/pull/1522 |
 | 2026-03-12 | Claude Code | Add admonition type rule to CLAUDE.md | https://github.com/amplitude/amplitude-docs/pull/1522 |
 | 2026-03-12 | Claude Code | Update Google Ads conversion setup steps | https://github.com/amplitude/amplitude-docs/pull/1523 |
+| 2026-03-12 | Cursor | Add work logging to workflow rules | N/A |
+| 2026-03-12 | Cursor | Update AGENTS work logging section | N/A |
