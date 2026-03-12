@@ -11,7 +11,7 @@ this_article_will_help_you:
 ---
 
 {{partial:admonition type="note" heading="Feature in Beta"}}
-Zoning is in Beta. Because the feature is still evolving, the documentation may not reflect the latest state.
+Zoning is in Beta. Because the feature is still evolving, the documentation may not reflect the latest state of the functionality.
 {{/partial:admonition}}
 
 Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. Create zone maps that overlay your product UI that reveal how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
