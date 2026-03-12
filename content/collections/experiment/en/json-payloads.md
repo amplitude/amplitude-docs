@@ -226,7 +226,7 @@ app.get('/api/blog-config', async (req, res) => {
 
 ## Strongly typed JSON payloads (advanced)
 
-JSON payloads are flexible by default: you can attach any valid JSON to a variant and read it from `variant.payload`. For more control, you can define the **expected type** for variant payloads so Amplitude validates each payload before it reaches your application.
+JSON payloads are flexible by default: you can attach any valid JSON to a variant and read it from `variant.payload`. For more control, you can define the expected type for variant payloads so Amplitude validates each payload before it reaches your application.
 
 Strongly typed payloads help you:
 
