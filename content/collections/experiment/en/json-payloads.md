@@ -94,8 +94,8 @@ curl --request POST \
 
 Refer to the full API docs for:
 
-- [Create variant for flags](/docs/apis/experiment/experiment-management-api-flags#create-variant)
-- [Create variant for experiments](/docs/apis/experiment/experiment-management-api-experiments#create-variant)
+- [Create variant for flags](/docs/apis/experiment/experiment-management-api-flags#create-variant).
+- [Create variant for experiments](/docs/apis/experiment/experiment-management-api-experiments#create-variant).
 
 ## Access payloads in your application
 
@@ -238,7 +238,7 @@ Strongly typed payloads help you:
 Strongly typed payloads build on the same JSON payload model and SDKs described above. How you access `variant.payload` in code doesn't change; you just gain stronger guarantees about what that payload looks like.
 {{/partial:admonition}}
 
-### Strongly typed payloads use cases
+### Strongly typed payload use cases
 
 Strong typing is especially useful when:
 
@@ -253,7 +253,7 @@ In the UI, by clicking **Set payload type**, you choose a **payload type** for t
 
 **Payload type options:**
 
-- **None** — No type enforcement; payloads can be any valid JSON.
+- **None** — No type enforcement; you can use any valid JSON as a payload.
 - **String** — `variant.payload` is a string.
 - **Number** — `variant.payload` is a number.
 - **Object** — `variant.payload` is an object (no fixed keys or types).
