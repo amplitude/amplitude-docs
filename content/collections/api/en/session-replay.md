@@ -4,6 +4,7 @@ blueprint: api
 title: 'Session Replay API'
 auth_method: http_basic
 standard_endpoint: 'https://amplitude.com/api/1/session-replays'
+eu_endpoint: 'https://eu.amplitude.com/api/1/session-replays'
 api_status: beta
 lede: 'Use the Session Replay API to list session replays and retrieve the event files for a specific replay.'
 summary: 'List session replays and retrieve replay event files.'
@@ -18,6 +19,13 @@ updated_at: 1741046400
 - Presigned file URLs expire after 15 minutes.
 - Pagination cursors are opaque strings. Don't construct or modify them. Use `next_page_token` from the previous response as-is.
 - The `sort_order` parameter must be consistent across all pages of a paginated request. Passing a `page_token` from an `asc` request with `sort_order=desc` returns a 400 error.
+
+## EU data residency
+
+For EU data residency, use `https://eu.amplitude.com` as the base URL instead of `https://amplitude.com`. For example:
+
+- List session replays: `GET https://eu.amplitude.com/api/1/session-replays`
+- Get session replay files: `GET https://eu.amplitude.com/api/1/session-replays/files`
 
 ## List session replays
 

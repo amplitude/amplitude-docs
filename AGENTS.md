@@ -104,6 +104,31 @@ This file summarizes the documentation rules in .cursor/rules.
   cloudId https://amplitude.atlassian.net, project DOC, issue type Task.
 - Provide the ticket ID and URL, and remind to include the ID in the branch.
 
+## Work logging (required)
+
+Any time you perform substantive work on this repository—editing documentation, creating files, fixing issues, or creating pull requests—append an entry to `AGENT_LOG.md` in the repository root.
+
+**When to log**
+
+Log immediately after the action that generates the link:
+- Creating a PR: Run `gh pr create`, capture the URL from its final line of output, then append to `AGENT_LOG.md` in the same step. Never log before the PR exists.
+- Committing without a PR: Capture the commit hash from `git commit` output, then log.
+- No commit made: Log with `N/A` as the link.
+
+**How to capture the PR URL**
+
+`gh pr create` prints the PR URL as its final line of output. Capture it like this:
+
+PR_URL=$(gh pr create --title "..." --body "..." 2>&1 | tail -1)
+
+Then use $PR_URL in the log entry.
+
+**Format**
+
+| YYYY-MM-DD | Cursor | Short description (under 10 words) | PR or commit URL |
+
+Rules: always append, never overwrite, log once per task not once per file edit.
+
 ## No new files rule
 - Do not create new files unless explicitly requested or required to
   complete a user request.
