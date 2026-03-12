@@ -9,6 +9,11 @@ this_article_will_help_you:
   - 'Understand what Zoning is and how it fits with Session Replay'
   - 'Create and use zone maps to analyze defined areas of your product'
 ---
+
+{{partial:admonition type="note" heading="Feature in Beta"}}
+Zoning is in Beta. Because the feature is still evolving, the documentation may not reflect the latest state.
+{{/partial:admonition}}
+
 Zoning lets you define named areas (zones) on your pages and analyze user engagement within those areas. Create zone maps that overlay your product UI that reveal how users interact with specific regions, such as hero sections, navigation bars, or call-to-action blocks.
 
 Zoning requires [auto-captured interaction data](/docs/data/autocapture) (for example, click exposures, or scrolls) to compute element-level metrics directly on your pages. Because Zoning uses autocapture to collect page-level click events and interaction data, it can increase event volumes.
