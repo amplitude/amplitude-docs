@@ -112,7 +112,7 @@ For more information, see [Visual labeling](/docs/data/visual-labeling).
 
 ## Autocapture for iOS
 
-The latest version of Amplitude's [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk) includes Autocapture capabilities. For a full list of event types and properties (for example, for partners or ETL), go to [Mobile Autocapture schema](/docs/data/mobile-autocapture-schema).
+The latest version of Amplitude's [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk) includes Autocapture capabilities.
 
 ### Install the SDK
 
@@ -165,7 +165,7 @@ Amplitude attaches [User Properties](/docs/get-started/user-property-definitions
 
 ## Autocapture for Android
 
-The latest version of Amplitude's [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk) includes Autocapture capabilities. For a full list of event types and properties, go to [Mobile Autocapture schema](/docs/data/mobile-autocapture-schema).
+The latest version of Amplitude's [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk) includes Autocapture capabilities.
 
 ### Install the SDK
 
