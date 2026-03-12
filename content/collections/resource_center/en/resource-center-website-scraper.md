@@ -33,7 +33,7 @@ If you click the **Advanced** link beneath the URL section, you can access the f
 - **Exclude these URL paths**: Lets you filter the source repository even further by specifically excluding certain URLs from the source repository. This is useful if, for example, you want to exclude your company’s blog posts from the source repository. 
 - **Override default selectors**: Lets you specify only the content selectors that you want to include or lets you ignore website elements. For more information review the following sections:
 
-{{partial:tabs tabs="Content selectors, Ignore elements "}}
+{{partial:tabs tabs="Content selectors, Ignore elements"}}
 {{partial:tab name="Content selectors"}}
 The website scraper, by default, pulls in all information about a page, not just the main content. This can include the page header, metadata, and other information. This means that not only is the main content of a page pulled into a Resource Center article, but extraneous content can also appear in the Resource Center articles. Amplitude does use heuristics to identify and remove as much extraneous content as possible, but some content may still be visible in the article. You can use the content selectors to help target and identify content to add to the Resource Center article. 
 
