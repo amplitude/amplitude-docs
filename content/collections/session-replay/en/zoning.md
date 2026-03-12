@@ -29,11 +29,9 @@ Zoning is different than either Session Replay or Heatmaps:
 - **Heatmaps** aggregate clicks, scrolls, and selector-level interactions on a page without defining custom areas.
 - **Zoning** lets you define custom areas (zones) on a page and analyze engagement within those areas. It complements Session Replay and Heatmaps when you care about specific regions (for example banners, forms, or CTAs) rather than the whole page or raw selectors.
 
-**Unconfirmed:** Whether zone data is derived from the same underlying Session Replay pipeline as Heatmaps and whether Zoning has its own retention or sampling rules.
-
 ## Configuring Zoning
 
-Zoning is typically configured through the Autocapture [Remote Configuration](/docs/data/amplitude-data-settings#autocapture) settings in the [Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) by enabling `fetchRemoteConfig`. 
+Configure Zoning through the Autocapture [Remote Configuration](/docs/data/amplitude-data-settings#autocapture) settings in the [Browser SDK v2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) by enabling `fetchRemoteConfig`. 
 
 At minimum, turn on the following Autocapture options: 
 
@@ -58,8 +56,8 @@ Create a zone map by defining one or more zones on a page and then viewing aggre
    * **Page group**
 3. Select the Amplitude space where you want the zone map saved and click **Continue**.
 4. If you're creating a new zone map for a group of pages do the following:
-   a. Click **Create new page group** and enter a name the group.
-   b. Set a condition or rule for the group. For example, setting the URL to begin with a specific domain such as *amplitude.com/*.
+   a. Click **Create new page group** and enter a name for the group.
+   b. Set a condition or rule for the group. For example, set the URL to begin with a specific domain such as *amplitude.com/*.
    c. Finish adding rules and click **Create URL group**.
 5. Specify the URL(s) to analyze. If your product supports the same URL matching options as [Heatmaps](/docs/session-replay/heatmaps), you can use:
    * **Exact match** for a single URL.
@@ -72,7 +70,9 @@ Amplitude needs the screenshot to create the zone map. You need a screenshot for
 7. Confirm that the correct URL is visibile and then click **Take Screenshot**.
 8. Name the screenshot, describe it, and then save it.
 9. Click each zone to turn it on or off.
-6. Save or apply the zone map so Amplitude can aggregate data for the defined zones.
+10. Save or apply the zone map so Amplitude can aggregate data for the defined zones.
+
+After you save the zone map, you can view metrics, user journeys, and session replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
 After the zone map is saved, you can view metrics, user journeys, session replays, for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
