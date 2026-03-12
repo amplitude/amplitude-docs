@@ -145,8 +145,6 @@ glossary:
           3. On the last step of a pin, the user clicks a button, the target element, or the advance target element.
           4. On a survey, the user clicks **Complete** or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
-
-          This event doesn't fire on Tooltips.
       -
         id: marao0ds
         event_name: 'Guide Rage Closed'
@@ -250,8 +248,6 @@ glossary:
           3. On the last step of a pin, the user clicks a button, the target element, or the advance trigger element.
           4. On a survey, the user clicks _Complete_ or finishes the last step.
           5. On a list or rating survey with no question on the last step, the user selects any option.
-
-          This event doesn't fire on Tooltips.
       -
         id: m6zdxj4f
         event_name: 'Survey Rage Closed'
