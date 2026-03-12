@@ -547,6 +547,20 @@ Use gender-neutral pronouns and terms:
 
 Follow these guidelines when documenting technical concepts, code, and APIs.
 
+#### Admonition partial parameters
+
+When you use the Statamic admonition partial, always include a non-empty `type` parameter.
+
+- Required format: `{{partial:admonition type="note"}}`.
+- If `type` is missing, add `type="note"`.
+- If `type` exists but is empty (for example, `type=""`), set it to `type="note"`.
+
+**Examples:**
+- ✅ `{{partial:admonition type="tip"}}`
+- ✅ `{{partial:admonition type="note"}}`
+- ❌ `{{partial:admonition}}`
+- ❌ `{{partial:admonition type=""}}`
+
 #### Code Formatting
 
 Use backticks for all code-related elements:

@@ -12,7 +12,7 @@ bundle_url: 'https://chrome.google.com/webstore/detail/amplitude-event-explorer/
 ---
 The Amplitude Event Explorer extension in the Google Chrome Web Store helps you examine and debug your Amplitude JS SDK instrumentation by interacting with your product. It captures each Amplitude event you trigger and displays it in the extension popup. Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/amplitude-instrumentation/acehfjhnmhbmgkedjmjlobpgdicnhkbp).
 
-{{partial:admonition type="" title=""}}
+{{partial:admonition type="note" title=""}}
 The Event Explorer displays the `event_type`, even when it has a different display name.
 {{/partial:admonition}}
 
