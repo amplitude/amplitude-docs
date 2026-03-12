@@ -43,7 +43,7 @@ yarn add @amplitude/segment-session-replay-plugin
 
 ## Use
 
-For information about the `sessionReplayOptions`, see the [Session Replay Standalone SDK configuration](/docs/session-replay/session-replay-standalone-sdk#configuration) section.
+For information about the `sessionReplayOptions`, go to the [Session Replay Standalone SDK configuration](/docs/session-replay/session-replay-standalone-sdk#configuration) section.
 
 ```js
 import { AnalyticsBrowser } from '@segment/analytics-next';
@@ -68,11 +68,13 @@ segmentAnalytics.register(segmentActionsPlugin);
 
 ## Segment plugin architecture
 
-This plugin uses Segment's plugin architecture, which ensures that all `track` and `page` events include the required `Session Replay ID` event property. 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## User ID to Device ID mapping
 
 Following Segment's documentation, the plugin maps the Segment user ID to the Amplitude device ID. To find the device ID for replay captures, the plugin checks if `userId` is set, and if not, it uses `anonymousId`.
+
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, the device ID value can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. Segment's `userId` and `anonymousId` values are UUIDs, which always comply with these requirements. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new).
 
 ## Troubleshooting
 
@@ -80,4 +82,4 @@ Following Segment's documentation, the plugin maps the Segment user ID to the Am
 Session Replay isn't compatible with ad blocking software.
 {{/partial:admonition}}
 
-For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)
+For troubleshooting information, go to [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)

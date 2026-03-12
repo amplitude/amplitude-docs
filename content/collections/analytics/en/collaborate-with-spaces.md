@@ -3,9 +3,6 @@ id: 213623de-f09a-461f-aaa0-01186edd7964
 blueprint: analytic
 title: 'Collaborate on your analyses using spaces'
 source: 'https://help.amplitude.com/hc/en-us/articles/360016524911-Collaborate-on-your-analyses-using-spaces'
-this_article_will_help_you:
-  - 'Collaborate with other team members to generate insights by creating and refining analyses together'
-  - 'Organize the content you create in Amplitude'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -18,7 +15,7 @@ This article explains how to take advantage of the different features offered by
 
 ## Join an existing space
 
-To subscribe to an existing space, click the *Spaces* drop-down, then click *View all Spaces*. Scroll down until you find the space you're looking for, and click *Join*.
+To subscribe to an existing space, click the **Spaces** drop-down, then click **View all Spaces**. Scroll down until you find the space you're looking for, and click **Join**.
 
 When you join a space, Amplitude stars it automatically and adds it to your list of joined spaces. You can un-star a space and remove it from your list by clicking the star icon on the space itself.
 
@@ -27,8 +24,8 @@ When you join a space, Amplitude stars it automatically and adds it to your list
 You can save each piece of content to just a single space. Follow these steps to move content to a new space:
 
 1. Navigate to the space where the content is. Check the box next to its name.
-2. In the menu bar above the content list, click *Move*. A navigational flyout panel opens.
-3. Navigate to the space or folder you want, or create a new space or folder. Then click *Move*.
+2. In the menu bar above the content list, click **Move**. A navigational flyout panel opens.
+3. Navigate to the space or folder you want, or create a new space or folder. Then click **Move**.
 
 ## Create a shortcut
 
@@ -36,13 +33,13 @@ A shortcut is a way to add content to multiple spaces and folders. Anyone can cr
 
 1. Open a piece of content you'd like to share to multiple spaces.
 2. Navigate to *More > Add Shortcut*.
-3. Navigate to the space or folder you want, or create a new space or folder. Then click *Add Shortcut*.
+3. Navigate to the space or folder you want, or create a new space or folder. Then click **Add Shortcut**.
 
 ## Manage space members
 
-You can add new members to your space, or manage the access permissions of current space members, through the *Manage Members* button. 
+You can add new members to your space, or manage the access permissions of current space members, through the **Manage Members** button. 
 
-When you add a member to a space as a viewer or editor, they can view or edit all content within that space. The only exception is when the member lacks permissions for a particular project with content stored in the space. **Project permissions always take priority over space-level permissions.**
+When you add a member to a space as a viewer or editor, they can view or edit all content within that space. The only exception is when the member lacks permissions for a particular project with content stored in the space. Project permissions always take priority over space-level permissions.
 
 There are three levels of permissions:
 

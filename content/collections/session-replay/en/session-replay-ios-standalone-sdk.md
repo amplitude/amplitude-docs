@@ -121,6 +121,8 @@ Pass the following configuration options when you initialize the Session Replay 
 | `serverUrl`           | `string`  | No       | `null`           | Explicitly set the server URL. Use this setting for proxy configuration.                                                                                                                                                                                                                                             |
 | `recordLogOptions.logCountThreshold`    | `Int` | No       | `1000`            | Use this option to configure the maximum number of logs per session. |
 | `recordLogOptions.maxMessageLength`    | `Int` | No       | `2000`            | Use this option to configure the maximum length of a log message. |
+| `quality`                              | `QualityProfile` | No | `.high` | Controls capture and encoding quality (for example, frame rate and image resolution). Use `.low`, `.medium`, or `.high` to balance replay fidelity with performance and storage. Use `QualityProfile.automatic` to let the SDK choose a profile based on the device. |
+| `uploadConfig`                         | `UploadConfig` | No | `UploadConfig()` | Controls when Session Replay uploads data. Use `UploadConfig(disableMeteredUploads: true)` to pause uploads on metered networks (for example, cellular). |
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 
@@ -155,6 +157,38 @@ let sessionReplay = SessionReplay(apiKey: API_KEY,
                                      /* other session replay options */)
 ```
 
+### Recording quality
+
+Choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution. Higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example: high on newer devices, lower on older ones).
+
+```swift
+// Use automatic profile selection based on device
+let sessionReplay = SessionReplay(apiKey: API_KEY,
+                                     deviceId: DEVICE_ID,
+                                     sessionId: SESSION_ID,
+                                     quality: .automatic,
+                                     /* other session replay options */)
+
+// Or set a fixed profile (low, medium, or high)
+let sessionReplay = SessionReplay(apiKey: API_KEY,
+                                     deviceId: DEVICE_ID,
+                                     sessionId: SESSION_ID,
+                                     quality: .medium,
+                                     /* other session replay options */)
+```
+                                     
+### Disable uploads on metered networks
+
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
+
+```swift
+let sessionReplay = SessionReplay(apiKey: API_KEY,
+                                     deviceId: DEVICE_ID,
+                                     sessionId: SESSION_ID,
+                                     uploadConfig: UploadConfig(disableMeteredUploads: true),
+                                     /* other session replay options */)
+```
+
 ### Disable replay collection
 
 Once enabled, Session Replay runs on your app until either:
@@ -166,7 +200,7 @@ Call `sessionReplay.stop()` before a user navigates to a restricted area of your
 
 Create a new instance `sessionReplay.start()` to re-enable replay collection when the return to an unrestricted area of your app.
 
-You can also use a feature flag product like [Amplitude Experiment](/docs/experiment) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
+You can also use a feature flag product like [Amplitude Experiment](/docs/feature-experiment/overview) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
 
 ```swift
 import AmplitudeSessionReplay

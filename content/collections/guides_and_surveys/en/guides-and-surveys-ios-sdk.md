@@ -8,45 +8,79 @@ updated_at: 1750710877
 ---
 Amplitude's Guides and Surveys iOS SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) in your iOS applications.
 
-{{partial:admonition type="beta" heading="This SDK is in Open Beta"}}
-This feature is in open beta and under active development.
-{{/partial:admonition}}
-
 ## Requirements
 
 The Guides and Surveys iOS SDK requires:
 
 * User devices on iOS 15 or higher
 * Swift 5.9+
-* [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk): 1.13.0+
+
+You can use Guides and Surveys independently of Amplitude Analytics.
 
 ## Install and initialize the SDK
 
 Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
 
-### Using Amplitude Analytics iOS Swift 1.13.0+
+### Using Amplitude Analytics iOS SDK
 
-First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
+If your app uses the [Amplitude Analytics iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk), make sure you are using version 1.13.0 or later. Then install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
 {{partial:tabs tabs="Swift Package Manager, CocoaPods"}}
 {{partial:tab name="Swift Package Manager"}}
-1. In Xcode, click *File > Add Packages...*
+1. In Xcode, click *File > Add Package Dependencies...*
 2. Enter the repository URL `https://github.com/amplitude/Amplitude-Engagement-Swift`
-3. Select the `Amplitude-Engagement-Swift` package, version `1.6.0`.
+3. Select the `amplitude-engagement-swift` package
 4. Click **Add Package**.
 {{/partial:tab}}
 {{partial:tab name="CocoaPods"}}
 Add the following line to your Podfile, then run `pod install`.
 
 ```T
-pod 'AmplitudeEngagementSwift', '~> 1.6.0'
+pod 'AmplitudeEngagementSwift', '~> 3.0.0'
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-{{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
 {{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot version upgrade in Swift Package Manager
+
+If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache:
+1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
+2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
+3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
+4. Then, run *File > Packages > Resolve Package Versions*.
+
+If the issue persists, try the following to reset the entire cache:
+
+```bash
+rm -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/org.swift.swiftpm
+rm -rf ~/Library/Developer/Xcode/DerivedData
+```
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 
@@ -55,7 +89,8 @@ Next, make sure to initialize the SDK.
 ```swift
 import AmplitudeEngagementSwift
 
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 
 let configuration = Configuration(
   apiKey: API_KEY
@@ -63,6 +98,8 @@ let configuration = Configuration(
 let amplitude = Amplitude(configuration: configuration)
 amplitude.add(plugin: amplitudeEngagement.getPlugin())
 ```
+
+This call uses the Amplitude Analytics iOS SDK's plugin system to integrate Guides and Surveys with your existing Analytics setup. Adding the plugin means Guides and Surveys initializes alongside Analytics, shares the same API key and user identity, and communicates with it directly. You don't need to call `boot` separately.
 
 #### Configuration options
 
@@ -90,8 +127,14 @@ Make sure the API key you provide to Guides & Surveys matches the API key used t
 After you call `amplitude.add`, you are technically done installing. While screen tracking and element targeting are optional, it's highly recommended to [set up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
-### Not using Amplitude Analytics Swift 1.13.0+
-In this case, installation is very similar to above; however, you need to manually call `.boot`.
+### Not using Amplitude Analytics Swift SDK 1.13.0+
+
+If your app doesn't use the Amplitude Analytics iOS Swift SDK 1.13.0+, you can still install Guides and Surveys, but you need to call `.boot` directly instead of using the Analytics SDK plugin system.
+
+{{partial:admonition type="warning" heading="Required and recommended setup for this installation path"}}
+- **Required**: Include `integrations` in your `boot` call to send Guides and Surveys events to your analytics provider. Without it, guide insights, survey insights, and survey responses won't appear.
+- **Strongly recommended**: Set up event forwarding using `forwardEvent` to enable the *On event tracked* trigger. Without it, you can only trigger guides and surveys on screen load or other non-event conditions.
+{{/partial:admonition}}
 
 First, install the Guides and Surveys iOS SDK with Swift Package Manager or CocoaPods.
 
@@ -111,20 +154,54 @@ pod 'AmplitudeEngagementSwift', '~> 1.6.0'
 {{/partial:tab}}
 {{/partial:tabs}}
 
-{{partial:admonition type="note" heading=""}}
-We don't update our docs on each release. You can check for the latest version here: https://github.com/amplitude/Amplitude-Engagement-Swift
+{{partial:admonition type="tip" heading="Amplitude recommends Swift Package Manager"}}
+Use Swift Package Manager rather than CocoaPods for the most reliable installation experience. Swift Package Manager avoids potential issues with line endings and build configurations.
 {{/partial:admonition}}
+
+{{partial:admonition type="note" heading=""}}
+Find the latest release in the [Amplitude-Engagement-Swift](https://github.com/amplitude/Amplitude-Engagement-Swift) repository.
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Don't commit Pods directory to Git"}}
+If you use CocoaPods, don't commit the `Pods/` directory to version control. Git applies line-ending normalization rules that can cause build errors. Add `Pods/` to your `.gitignore` file.
+{{/partial:admonition}}
+
+#### Troubleshoot version upgrade in Swift Package Manager
+
+If you upgrade the SDK version but still see unexpected behavior, Xcode may be using cached build artifacts from the previous version. To clear the SPM cache:
+1. In your command-line interface (for example, Terminal) or file management app (for example, Finder), navigate to `~/Library/Caches/org.swift.swiftpm/repositories`.
+2. Delete the folder and lock file related to the Amplitude Engagement Swift package.
+3. In Xcode, run *File > Swift Packages > Reset Package Caches*.
+4. Then, run *File > Packages > Resolve Package Versions*.
+
+If the issue persists, try the following to reset the entire cache:
+
+```bash
+rm -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/org.swift.swiftpm
+rm -rf ~/Library/Developer/Xcode/DerivedData
+```
+
+#### Troubleshoot CocoaPods installation
+
+If you see the error `Error extracting version from module interface` when importing `AmplitudeEngagementSwift` with CocoaPods, the issue is likely caused by incorrect line endings in `.swiftinterface` files. Git configurations such as `core.autocrlf` may rewrite these files from LF to CRLF line endings.
+
+To fix this issue, add these lines to your `.gitattributes` file in your project root:
+
+```
+*.swiftinterface text eol=lf
+Pods/** -text
+```
+
+After adding these lines, clean your build folder and rebuild your project.
 
 #### Initialize the SDK
 
 ```swift
 import AmplitudeEngagementSwift
 
-let amplitudeEngagement = AmplitudeEngagement("YOUR_API_KEY")
-
-let configuration = Configuration(
-  apiKey: API_KEY
-)
+let API_KEY = "YOUR_API_KEY"
+let amplitudeEngagement = AmplitudeEngagementFactory.make(API_KEY)
 ```
 
 #### Configuration options
@@ -160,7 +237,7 @@ amplitudeEngagement.boot(options: bootOptions)
 ```
 
 {{partial:admonition type="note" heading=""}}
-After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, we highly recommend [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
+After you call `amplitudeEngagement.boot`, you are technically done installing. While screen tracking and element targeting are optional, Amplitude recommends [setting up URL handling for preview mode](/docs/guides-and-surveys/guides-and-surveys-ios-sdk#simulate-guides-and-surveys-for-preview).
 {{/partial:admonition}}
 
 ## Add your application to project settings
@@ -177,12 +254,39 @@ To add your application:
 
 After you add your application, it appears as a platform option when you create or edit guides and surveys. This enables you to deliver guides and surveys to your iOS app users.
 
+### Set a minimum SDK version (when needed)
+
+`Minimum SDK version` is available for versions `3.0.0` and later. Use this setting as a safety control when you identify a critical issue in an older SDK release.
+
+To configure a minimum SDK version:
+
+1. Navigate to *Settings > Projects* in Amplitude.
+2. Select your project.
+3. Navigate to the **Guides and Surveys** tab.
+4. In the **App Management** section, expand and click **+ Add App**.
+5. Select **iOS** from the dropdown.
+6. Enter a value in **Minimum SDK version**.
+
+When you set this value, Guides and Surveys compares the configured minimum with the SDK version in each app build:
+
+- If an app build uses an older SDK version, the SDK doesn't initialize in that build.
+- If an app build uses the same or newer SDK version, the SDK initializes as expected.
+
+This setting lets you stop guides and surveys on known problematic SDK versions without rolling back your application release.
+
+#### Example usage of minimum SDK version
+
+Suppose app version `120` uses Guides and Surveys SDK `3.0.2`, and app version `121` uses Guides and Surveys SDK `3.1.0` with a bug fix. If you set **Minimum SDK version** to `3.1.0`:
+
+- App version `120` no longer loads Guides and Surveys.
+- App version `121` continues to load Guides and Surveys.
+
 ## Screen tracking and element targeting
 Screen tracking and element targeting are technically optional, but can be very helpful for making your guides and surveys feel more targeted.
 
 ### Enable screen tracking
 
-Required for screen-based targeting and the Time on Screen trigger. The screen string (eg "HomeScreen" in the example below) is compared with the string provided in the guide or survey page targeting section.
+Required for screen-based targeting and the Time on Screen trigger. The screen string (for example, "HomeScreen") is compared with the string provided in the guide or survey page targeting section.
 
 ```swift
 // Track screen views to trigger guides based on screens
@@ -307,7 +411,11 @@ amplitudeEngagement.show(key = "GUIDE_KEY")
 
 ### Forward event
 
-If you don't use the plugin, but want to trigger Guides using events.
+If you don't use the Amplitude Analytics iOS SDK plugin (that is, you called `boot` directly), use `forwardEvent` to enable the *On event tracked* trigger in Guides and Surveys. Forwarded events aren't sent to Amplitude servers. The SDK uses them only for local trigger evaluation.
+
+{{partial:admonition type="tip" heading="Strongly recommended for this installation path"}}
+Amplitude strongly recommends setting up event forwarding when not using the Amplitude Analytics iOS SDK plugin. Without it, you can't use the *On event tracked* trigger, which limits your ability to show guides and surveys based on user behavior in your app.
+{{/partial:admonition}}
 
 ```swift
 amplitudeEngagement.forwardEvent([
@@ -340,9 +448,9 @@ To locate the URL scheme:
 
 1. Open your iOS project in Xcode.
 2. In the Project navigator, select your app's target.
-3. On the **Info** tab, locate the **URL Types** section.
+3. On the **Info** tab, locate or add the **URL Types** section.
 4. Add a new URL type with the following values:
-    * **Identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
+    * **URL identifier**: Provide a descriptive name, like `AmplitudeURLScheme`.
     * **URL Schemes**: Paste the value you copied from Amplitude, for example `amp-abc123`.
 
 ### Configure URL handling for preview links
@@ -364,7 +472,24 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 Pins and tooltips can't target tab bar items (for example, `UITabBar` elements). Tab bars use system-level components that exist outside the standard view hierarchy, which prevents the SDK from reliably locating and attaching guides to these elements.
 
-**Workaround:** Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs, rather than pinning directly to tab bar items.
+{{partial:admonition type="tip" heading="Workaround"}}
+Use screen-based targeting or event-based triggers to show guides when users navigate to specific tabs. Do not pin directly to tab bar items.
+{{/partial:admonition}}
+
+### Targeting animated elements and elements inside moving containers
+
+Pins and tooltips can't target views or elements that are:
+
+- Animated or in an animated container (they move around the screen).
+- In a container that can move based on user interaction.
+
+{{partial:admonition type="note" heading="Note"}}
+Scrollviews usually work.
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading="Workaround"}} 
+Use screen-based targeting or event-based triggers to show guides, perhaps with a delay to ensure any animations have completed. Do not pin directly to elements in animated containers or containers which can be moved via user interaction.
+{{/partial:admonition}}
 
 ## Changelog
 

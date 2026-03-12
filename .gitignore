@@ -91,6 +91,9 @@ public/docs/js/site.js
 
 
 markdown-issues.json
+
+# Bulk edit runtime state (progress tracking — local only, not for commit)
+.claude/bulk-edit-state/
 .vscode/mcp.json
 public/mix-manifest.json
 public/docs/css/site.css
@@ -99,3 +102,6 @@ public/docs/js/interactive-evaluation-table.js
 public/docs/js/interactive-exposure-table.js
 public/docs/js/interactive-exposure-tracking-table.js
 public/mix-manifest.json
+
+/.local
+switch-nav.sh

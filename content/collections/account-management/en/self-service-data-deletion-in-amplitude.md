@@ -2,8 +2,6 @@
 id: 1b48f869-0e38-45ac-a6d5-03184a2ac77d
 blueprint: account-management
 title: 'Self-service data deletion in Amplitude'
-this_article_will_help_you:
-  - 'Delete data from Amplitude permanently'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -18,11 +16,6 @@ If want to comply with end-user data deletion requests mandated by global privac
 {{/partial:admonition}}
 
 ## Before you begin
-
-This feature is available to users on Growth and Enterprise plans.
-
-* Accounts on the Growth plan can scan up to one billion (1,000,000,000) events per month.
-* Accounts on the Enterprise plan can scan up to ten billion (10,000,000,000) events per month.
 
 Self-service data deletion requires Administrator privileges.
 

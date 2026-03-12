@@ -3,9 +3,6 @@ id: f8a65f47-6611-4f85-a5e4-3602c5b5821b
 blueprint: workflow
 title: "Define your experiment's goals"
 source: 'https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals'
-this_article_will_help_you:
-  - 'Add primary and secondary metrics to your experiment'
-  - 'Create new metrics from scratch, and edit existing metrics'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ---
@@ -30,16 +27,11 @@ One common mistake is defaulting to a revenue metric. This happens when your var
 1. Either open an existing experiment or go through the process of [creating an experiment](/docs/feature-experiment/workflow/create) and then scroll to the Metrics section and click the **edit** icon.
 2. Click **Add metric** and then select the metric you want from the drop-down list. 
 Alternately, click **Create a custom metric** to define your own metric.
-1. Select the metric you want. 
-Typical metrics are:
-   * Event segmentation
-   * Retention
-   * Funnel analysis
 1. Specify if the metric **should** or **should not** **Increase** or **Decrease** and by how many percentages.
 2. (*Optional*) For primary metrics, set the minimally acceptable goal for the experiment. This is the smallest relative distance between the control and the variant needed to determine if the experiment was a success or failure. 
 3. To add secondary metrics, click ***Add Metric*** and repeat this process.
 
-After you add your metrics, set your [varients](/docs/workflow/add-variants).
+After you add your metrics, set your [varients](/docs/feature-experiment/workflow/add-variants).
 
 ### Examples of success and guardrail metrics
 

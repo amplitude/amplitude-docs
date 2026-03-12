@@ -29,9 +29,6 @@ tree:
         id: 01fcdf37-aa52-472c-abbe-80885ecf7976
         entry: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
       -
-        id: b50df020-c7e3-4e2b-88e7-ea6e6a8a633d
-        entry: a856a44d-9cc7-4964-bf6b-7c15e69b0f2c
-      -
         id: c08061ee-b6d3-4874-be1e-d5b2514195cd
         entry: 8160e521-d064-46f7-bf1b-595dc1c56327
       -
@@ -160,6 +157,9 @@ tree:
       -
         id: 5d795727-8fee-4d68-8ad2-ad9ae27c7572
         entry: ca26cfe2-d99f-498a-8581-6485a736d4bb
+      -
+        id: 360c185b-5ded-49e9-ba65-84d590530dde
+        entry: 7a3f2c91-4e5b-4a1d-9f82-1b8c6d3e5a7f
   -
     id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
     entry: 59306913-18a3-4948-87c4-877316da591c
@@ -173,25 +173,6 @@ tree:
       -
         id: 8ecb2732-3648-4d1f-a279-8851bada72c0
         entry: d8d5e604-10a9-40e7-9d76-752e02df08fd
-  -
-    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
-    title: 'Warehouse-native Amplitude'
-    children:
-      -
-        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
-        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
-      -
-        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
-        entry: e4734233-911d-4b24-bea6-570c05955b05
-      -
-        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
-        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
-      -
-        id: 1eb96abd-be8c-4f76-8034-4845bc346a9f
-        entry: 131771f8-ba6f-4492-a6bd-a0105e6a71ff
-      -
-        id: d4986b6d-1800-4495-b26a-27c9c97485e2
-        entry: 06feb1be-15e3-419a-95ea-85a497dc07f5
   -
     id: 7318ab4d-f08a-4c62-8dc1-bd1c642934dc
     title: Activation

@@ -3,8 +3,6 @@ id: c95282cf-bb15-4d13-82a4-530f5b8f1d8c
 blueprint: analytic
 title: 'Share dashboards within your company'
 source: 'https://help.amplitude.com/hc/en-us/articles/11314104312859-Share-dashboards-within-your-company'
-this_article_will_help_you:
-  - 'Easily get your analyses in front of the people within your organization who need to see them'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -23,11 +21,11 @@ To share the dashboard directly, follow these steps:
       
 	Adding co-owners to individual charts is a one-by-one process. There is no way to bulk-add a new co-owner to multiple charts at once.
     
-3. To create a live, public link that's usable by others without an Amplitude account, click Manage Public Links. For more information, see the article on [public links in Amplitude](/docs/analytics/share-external).
+3. To create a live, public link that's usable by others without an Amplitude account, click **Manage Public Links**. For more information, go to the article on [public links in Amplitude](/docs/analytics/share-external).
 
 	Public links are only available to customers on a Scholarship, Growth, or Enterprise plan.
     
-6. Click _Save_.
+6. Click **Save**.
 
 ## Embed a dashboard
 

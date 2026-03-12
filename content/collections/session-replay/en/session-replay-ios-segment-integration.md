@@ -119,6 +119,32 @@ amplitude.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_K
                                                               sampleRate: 0.01))
 ```
 
+### Recording quality
+
+Choose a quality profile to balance replay fidelity with performance and storage. Lower profiles use a lower capture frame rate and lower image resolution. Higher profiles use a higher frame rate and higher resolution. Use `QualityProfile.automatic` to let the SDK select a profile based on the device (for example: high on newer devices, lower on older ones).
+
+```swift
+// Use automatic profile selection based on device
+analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_KEY,
+                                                              sampleRate: 0.1,
+                                                              quality: .automatic))
+
+// Or set a fixed profile (low, medium, or high)
+analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_KEY,
+                                                              sampleRate: 0.1,
+                                                              quality: .medium))
+ ```
+ 
+### Disable uploads on metered networks
+
+Avoid using the user's cellular data by pausing Session Replay uploads while the device is on a metered network. Session Replay still records data locally. Uploads resume when the device reconnects to Wi‑Fi or another non-metered connection.
+
+```swift
+analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_KEY,
+                                                              sampleRate: 0.1,
+                                                              uploadConfig: UploadConfig(disableMeteredUploads: true)))
+```
+
 ### Disable replay collection
 
 Once enabled, Session Replay runs on your app until either:
@@ -134,7 +160,7 @@ This requires keeping a reference to the SessionReplayPlugin instance `let ampli
 
 Call `amplitude.add(plugin: amplitudeSegmentSessionReplayPlugin)` to re-enable replay collection when the return to an unrestricted area of your app.
 
-You can also use a feature flag product like [Amplitude Experiment](/docs/experiment) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
+You can also use a feature flag product like [Amplitude Experiment](/docs/feature-experiment/overview) to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
 
 ```swift
 import AmplitudeSwift

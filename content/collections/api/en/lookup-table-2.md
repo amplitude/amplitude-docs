@@ -33,15 +33,15 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 ### Parameters
 
 
-| <div class="big-column">Name</div> | Type   | Description                                                                                    |
-| ---------------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
-| `name`                             | String | <span class="required">Required.</span> Name of the table.                                     |
-| `file`                             | File   | <span class="required">Required.</span> A CSV representation of the mappings.                  |
-| `key`                              | String | <span class="required">Required.</span> Column in CSV to use as key of lookup table.           |
-| `property`                         | JSON   | <span class="required">Required.</span> Property in Amplitude to map to the key column in CSV. |
-| `property.value`                   | String | <span class="required">Required.</span> Name of property in Amplitude.                         |
-| `property.type`                    | String | <span class="required">Required.</span> Type of property in Amplitude.                         |
-| `property.groupType`               | String | Required only if property is a group property.                                                 |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. Name of the table. |
+| `file` | Required. Type: `file`. A CSV representation of the mappings. |
+| `key` | Required. Type: `string`. Column in CSV to use as key of lookup table. |
+| `property` | Required. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | Required. Type: `string`. Name of property in Amplitude. |
+| `property.type` | Required. Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | Optional. Type: `string`. Required only if property is a group property. |
 
 ### Example request
 
@@ -119,9 +119,9 @@ Retrieve a Lookup Table by its name.
 
 ### Parameters
 
-| <div class="big-column">Name</div> | Type   | Description                                                |
-| ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. Name of the table. |
 
 ### Example request
 
@@ -174,9 +174,9 @@ Download the lookup table object as a CSV. Any incremental changes are applied i
 
 ### Parameters
 
-| <div class="big-column">Name</div> | Type   | Description                                                |
-| ---------------------------------- | ------ | ---------------------------------------------------------- |  
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. Name of the table. |
 
 ### Example request
 
@@ -202,14 +202,14 @@ Override a Lookup Table object by uploading a CSV that replaces the CSV already 
 
 ### Parameters
 
-| <div class="big-column">Name</div> | Type   | Description                                                |
-| ---------------------------------- | ------ | ---------------------------------------------------------- |  
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
-| `file`                             | File   | A CSV representation of the mappings.                      |
-| `property`                         | JSON   | Property in Amplitude to map to the key column in CSV.     |
-| `property.value`                   | String | Name of property in Amplitude.                             |
-| `property.type`                    | String | Type of property in Amplitude.                             |
-| `property.groupType`               | String | Required only if property is a group property.             |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. Name of the table. |
+| `file` | Optional. Type: `file`. A CSV representation of the mappings. |
+| `property` | Optional. Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | Optional. Type: `string`. Name of property in Amplitude. |
+| `property.type` | Optional. Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | Optional. Type: `string`. Required only if property is a group property. |
 
 ### Example request
 
@@ -278,15 +278,14 @@ Update a Lookup Table's columns and data. If you provide a CSV file, the file is
 
 ### Parameters
 
-
-| <div class="big-column">Name</div> | Type   | Description                                                |
-| ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
-| `file`                             | File   | A CSV representation of the mappings.                      |
-| `property`                         | JSON   | Property in Amplitude to map to the key column in CSV.     |
-| `property.value`                   | String | Name of property in Amplitude.                             |
-| `property.type`                    | String | Type of property in Amplitude.                             |
-| `property.groupType`               | String | Required only if property is a group property.             |
+| Name | Description |
+|------|-------------|
+| `name` | Type: `string`. Name of the table. |
+| `file` | Type: `file`. A CSV representation of the mappings. |
+| `property` | Type: `JSON`. Property in Amplitude to map to the key column in CSV. |
+| `property.value` | Type: `string`. Name of property in Amplitude. |
+| `property.type` | Type: `string`. Type of property in Amplitude. |
+| `property.groupType` | Type: `string`. Required only if property is a group property. |
 ### Example request
 
 {{partial:tabs tabs="cURL, HTTP"}}
@@ -354,9 +353,9 @@ Delete a Lookup Table.
 
 ### Parameters
 
-| <div class="big-column">Name</div> | Type   | Description                                                |
-| ---------------------------------- | ------ | ---------------------------------------------------------- | 
-| `name`                             | String | <span class="required">Required</span>. Name of the table. |
+| Name | Description |
+|------|-------------|
+| `name` | Required. Type: `string`. Name of the table. |
 
 ### Example request
 
@@ -465,7 +464,7 @@ All the above lookup table APIs share common error codes as described below.
 
 ### Structure
 
-| <div class="big-column">Name</div> | Description                                                                                                   |
+| Name | Description                                                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `statusCode`                       | Http status code of error. 400, 409, 413                                                                      |
 | `message`                          | Human readable message describing the error                                                                   |
@@ -474,7 +473,7 @@ All the above lookup table APIs share common error codes as described below.
 
 ### Types
 
-| <div class="big-column">Code</div>       | Description                                                                        |
+| Code       | Description                                                                        |
 | ---------------------------------------- | ---------------------------------------------------------------------------------- |
 | `LOOKUP_TABLE_INVALID_FILE_COUNT `         | Attempted to upload more than 1 file for a single lookup table.                    |
 | `LOOKUP_TABLE_INVALID_FILE_SIZE  `         | Created/Edited a lookup table using a file bigger than 100mb.                      |

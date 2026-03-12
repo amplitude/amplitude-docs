@@ -9,7 +9,7 @@ summary: Programmatically import and export translation files for your guides an
 
 The Guides and Surveys Localization API allows you to programmatically import and export translation files for your guides and surveys in XLIFF 1.2 format. This enables integration with external translation management systems and workflows.
 
-| <div class="big-column">Name</div>          | Description                                                                       |
+| Name          | Description                                                                       |
 | ------------------------------------------- | --------------------------------------------------------------------------------- |
 | [Import Translations](#import-translations) | Imports an XLIFF file to add or update translations for one or more Nudges.       |
 | [Export Translations](#export-translations) | Exports translations for specified Nudges (by `flag_key`) into an XLIFF 1.2 file. |

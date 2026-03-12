@@ -10,6 +10,86 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides-and-surveys/assistant/assistant-overview",
+      "destination": "/docs/assistant/assistant-overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/assistant/configure-assistant",
+      "destination": "/docs/assistant/configure-assistant",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/assistant/use-assistant",
+      "destination": "/docs/assistant/use-assistant",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center",
+      "destination": "/docs/assistant/resource-center/resource-center",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-autopilot",
+      "destination": "/docs/assistant/resource-center/resource-center-autopilot",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-best-practices",
+      "destination": "/docs/assistant/resource-center/resource-center-best-practices",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-overview",
+      "destination": "/docs/assistant/resource-center/resource-center-overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-recommendation-sets",
+      "destination": "/docs/assistant/resource-center/resource-center-recommendation-sets",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-settings",
+      "destination": "/docs/assistant/resource-center/resource-center-settings",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-source-content",
+      "destination": "/docs/assistant/resource-center/resource-center-source-content",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-targeting-recommendation-sets",
+      "destination": "/docs/assistant/resource-center/resource-center-targeting-recommendation-sets",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides-and-surveys/resource-center-website-scraper",
+      "destination": "/docs/assistant/resource-center/resource-center-website-scraper",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/amplitude-ai/slack",
+      "destination": "/docs/amplitude-ai/slack-teams",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/amplitude-ai/agents-overview",
+      "destination": "https://amplitude.com/docs/amplitude-ai",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data",
+      "destination": "/docs/feature-experiment/advanced-techniques/winsorization-in-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing",
+      "destination": "/docs/feature-experiment/advanced-techniques/bonferroni-correction",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/amplitude-mcp",
       "destination": "/docs/amplitude-ai/amplitude-mcp",
       "statusCode": 301
@@ -2545,7 +2625,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/warehouse-native/overview",
+      "destination": "/docs/data/warehouse-metrics",
       "source": "/docs/hc/en-us/articles/26003996242203((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
@@ -3312,6 +3392,21 @@
     {
       "source": "/docs/experiment/:path*",
       "destination": "/docs/feature-experiment/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/feature-experiment/remote-evaluaiton",
+      "destination": "/docs/feature-experiment/remote-evaluation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments",
+      "destination": "/docs/web-experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/web-experiments/(.*)",
+      "destination": "/docs/web-experiment/$1",
       "statusCode": 301
     }
   ]

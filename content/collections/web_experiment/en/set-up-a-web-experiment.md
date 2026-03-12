@@ -4,9 +4,6 @@ blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1754501567
-this_article_will_help_you:
-  - 'Understand the difference between a Web Experiment and a feature experiment'
-  - 'Build a Web Experiment using the Visual Editor'
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
@@ -18,7 +15,7 @@ Web Experiments use [Pages](/docs/web-experiment/pages) to precisely control whe
 
 Before setting up a web experiment, you must [implement](/docs/web-experiment/implementation) the Web Experiment script on your site.
 
-Be aware that creating and running a web experiment is different than in [Feature Experiment](/docs/workflow/configure), though there is some overlap.
+Be aware that creating and running a web experiment is different than in [Feature Experiment](/docs/feature-experiment/workflow/create), though there is some overlap.
 
 ## Setting up a web experiment
 

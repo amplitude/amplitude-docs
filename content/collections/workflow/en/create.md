@@ -3,9 +3,6 @@ id: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
 blueprint: workflow
 title: 'Create a new experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687551-Create-a-new-experiment'
-this_article_will_help_you:
-  - 'Create and initialize a new experiment'
-  - 'Add context to your experiment description, so other stakeholders will understand it'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538242
 landing: true
@@ -18,6 +15,8 @@ The decisions you make in the [design](/docs/feature-experiment/workflow/define-
 For example, you want to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric should increase by at least 2%. If you change the experiment type to *Do No Harm*, you expect the metric to "not increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.
 
 To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or call the [evaluation API](/docs/apis/experiment/experiment-evaluation-api).
+
+Before you launch, estimate run time and viability with the [Duration Estimator](/docs/feature-experiment/workflow/experiment-estimate-duration).
 
 ##### To create a new feature experiment
 
@@ -35,4 +34,4 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
    - **Bucketing Unit**: Select the unit Amplitude uses to assign variants, either `User` or `Group`.
 4. Click **Create**.
 
-After the experiment has been created, you must configure additional aspects of the experiment. Go to [Define your experiment's goals](/docs/workflow/define-goals) for next steps. 
+After the experiment has been created, you must configure additional aspects of the experiment. Go to [Define your experiment's goals](/docs/feature-experiment/workflow/define-goals) for next steps. 

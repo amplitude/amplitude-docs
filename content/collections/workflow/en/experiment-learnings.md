@@ -3,9 +3,6 @@ id: 2e357f69-a007-4912-8603-5e568d6ddcb8
 blueprint: workflow
 title: 'Learn from your experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687631-Learn-from-your-experiment'
-this_article_will_help_you:
-  - 'See your experimental results'
-  - 'Understand and interpret those results'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1758580175
 landing: false
@@ -140,7 +137,7 @@ For more control, open any of these charts in the Analysis Chart modality.
 
 ## Enable notifications
 
-You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/experiment/notifications) to set up these notification alerts. 
+You can receive notifications about your experiments and have them sent to either a dedicated Slack channel or to a unique webhook. Go to [Integrate Slack](/docs/analytics/integrate-slack) and then [Experiment Notifications](/docs/feature-experiment/notifications) to set up these notification alerts. 
 
 You can set up a notification for the following events:
 

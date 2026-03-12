@@ -57,30 +57,7 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
             sessionId: rudderAnalytics.getSessionId(),
             sampleRate: .1 // 10% of sessions will be captured 
         }).promise;
-   
-        // Update track method to include sessionReplayProperties
-        const rudderAnalyticsTrack = rudderAnalytics.track;
-        rudderAnalytics.track = function (eventName, eventProperties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          eventProperties = {
-            ...eventProperties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsTrack(eventName, eventProperties, options, callback);
-        };
-   
-        // Update page method to include sessionReplayProperties
-        const rudderAnalyticsPage = rudderAnalytics.page;
-        rudderAnalytics.page = function (category, name, properties, options, callback) {
-          const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
-          properties = {
-            ...properties,
-            ...sessionReplayProperties,
-          };
-          rudderAnalyticsPage(category, name, properties, options, callback);
-        };
-
-        sessionReplay.set(rudderAnalytics.getSessionId())
+        sessionReplay.set(rudderAnalytics.getSessionId());
       });
     }
 );
@@ -88,11 +65,13 @@ amplitude.init(AMPLITUDE_API_KEY, user_id, config).promise.then(() => {
 
 ## Rudderstack integration
 
-This integration updates Rudderstack's request architecture, which ensures that all `track` and `page` events include the required Amplitude `Session Replay ID` event property. 
+Amplitude automatically creates the `[Amplitude] Replay Captured` event when Session Replay captures a session. This event is sent directly to Amplitude to link replays with your analytics data. If you don't see this event in Amplitude, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## Required field mapping
 
-Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/event-spec/standard-events/identify/#anonymous-id) to the [Amplitude Device ID](/docs/faq/instrumentation#icon-chevron-down), and the [Rudderstack Session ID](https://www.rudderstack.com/docs/sources/event-streams/sdks/session-tracking/) to the [Amplitude Session ID](/docs/data/sources/instrument-track-sessions#how-amplitude-tracks-your-sessions). If you use another field for device ID, contact [Amplitude Support](https://support.amplitude.com). 
+Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/event-spec/standard-events/identify/#anonymous-id) to the [Amplitude Device ID](/docs/faq/instrumentation#icon-chevron-down), and the [Rudderstack Session ID](https://www.rudderstack.com/docs/sources/event-streams/sdks/session-tracking/) to the [Amplitude Session ID](/docs/data/sources/instrument-track-sessions#how-amplitude-tracks-your-sessions). If you use another field for device ID, contact [Amplitude Support](https://support.amplitude.com).
+
+The session replay ID has the format `<deviceId>/<sessionId>`. Because Session Replay uses `/` as a delimiter, the `deviceId` value can't contain `/`. Accepted characters: `a-z A-Z 0-9 _ - . | @ : =`. Rudderstack's anonymous ID is a UUID, which always complies with these requirements. If you use a custom value for `deviceId`, ensure it follows the accepted character set. If you need an additional character, contact [Amplitude support](https://gethelp.amplitude.com/hc/en-us/requests/new). 
 
 ## Troubleshooting
 
@@ -100,4 +79,4 @@ Amplitude maps the [Rudderstack Anonymous ID](https://www.rudderstack.com/docs/e
 Session Replay isn't compatible with ad blocking software.
 {{/partial:admonition}}
 
-For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)
+For troubleshooting information, go to [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)

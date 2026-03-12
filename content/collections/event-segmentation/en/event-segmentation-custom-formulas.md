@@ -3,8 +3,6 @@ id: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
 blueprint: event-segmentation
 title: 'Custom formulas: Syntax and definitions'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions'
-this_article_will_help_you:
-  - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632354
 landing: true
@@ -332,7 +330,7 @@ For example, the following setup shows the number of `Page Viewed` events across
 
 ### SESSIONTOTALS
 
-Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
+Returns the number of sessions. This formula metric is available in both the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts.
 
 The value you pass to `SESSIONTOTALS` depends on the chart you're using:
 

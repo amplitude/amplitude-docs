@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 updated_by: 8b3cc0f4-f0bb-4156-90b4-90317d4c2d8a
 updated_at: 1736278630
 ---
-| <div class="big-column">Name</div> | Description |
+| Name | Description |
 | --- | --- |
 | [List](#list) | List of mutex groups including their configuration details. |
 | [Edit Mutex Group](#edit-mutex-group) | Edit mutex group. |
@@ -177,11 +177,11 @@ Edit a mutex group.
 
 ### Request body
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-|`name`| Optional | string | The mutex group name. |
-|`description`| Optional | string | The mutex group description. |
-|`archive`| Optional | boolean | Property to archive or unarchive mutex group. If true, all other arguments are ignored and the mutex group will be set as deleted and removed from all child experiments’ parent dependencies.  |
+| Name | Description |
+|------|-------------|
+| `name` | Optional. Type: `string`. The mutex group name. |
+| `description` | Optional. Type: `string`. The mutex group description. |
+| `archive` | Optional. Type: `boolean`. Property to archive or unarchive mutex group. If true, all other arguments are ignored and the mutex group will be set as deleted and removed from all child experiments' parent dependencies. |
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json
@@ -225,11 +225,11 @@ Edit an mutex group slot.
 
 ### Request body
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-|`experiments`| Optional | number array | List of experiment ids to be included. |
-|`holdouts`| Optional | number array | List of holdout group ids to be included. |
-|`individuals`| Optional | string array | List of user ids or device ids to be included. |
+| Name | Description |
+|------|-------------|
+| `experiments` | Optional. Type: `number array`. List of experiment ids to be included. |
+| `holdouts` | Optional. Type: `number array`. List of holdout group ids to be included. |
+| `individuals` | Optional. Type: `string array`. List of user ids or device ids to be included. |
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json
@@ -265,14 +265,14 @@ Create a new mutex group.
 
 ### Request body
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-| `projectId` | Required | number | Project id of the mutex group. |
-| `name` | Required | string | The mutex group name. |
-| `key` | Optional | string | The mutex group key. Must be unique across all flags, experiments, holdout groups, and mutex groups. If not specified, one will be generated. |
-| `description` | Optional | string | Description for the mutex group. |
-| `evaluationMode` | Optional | string | Mutex group evaluation mode; options include `local` or `remote`. Defaulted to `remote`. |
-| `bucketingKey` | Optional | string | The user property to bucket the user by. Defaulted to "amplitude_id" |
+| Name | Description |
+|------|-------------|
+| `projectId` | Required. Type: `number`. Project id of the mutex group. |
+| `name` | Required. Type: `string`. The mutex group name. |
+| `key` | Optional. Type: `string`. The mutex group key. Must be unique across all flags, experiments, holdout groups, and mutex groups. If not specified, one will be generated. |
+| `description` | Optional. Type: `string`. Description for the mutex group. |
+| `evaluationMode` | Optional. Type: `string`. Mutex group evaluation mode; options include `local` or `remote`. Defaulted to `remote`. |
+| `bucketingKey` | Optional. Type: `string`. The user property to bucket the user by. Defaulted to "amplitude_id" |
 | `bucketingSalt` | Optional | string | Mutex Group bucketing salt. Defaulted to a randomized string. |
 | `slots` | Required | object array | Array of [`slots`](#slots). Up to 20 slots. Order matters. |
 
@@ -280,12 +280,12 @@ Create a new mutex group.
 
 The `slots` field contains these objects.
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-| `percentage` | Required | number | The percentage of traffic to this slot. An integer between 1 and 100, inclusively. The sum of percentages in all slots must adds up to 100. |
-| `experiments` | Optional | string array | List of experiment ids to be included. |
-| `holdouts` | Optional | number array | List of holdout group id to be included. |
-| `individuals` | Optional | number array | List of user ids or device ids to be included. |
+| Name | Description |
+|------|-------------|
+| `percentage` | Required. Type: `number`. The percentage of traffic to this slot. An integer between 1 and 100, inclusively. The sum of percentages in all slots must adds up to 100. |
+| `experiments` | Optional. Type: `string array`. List of experiment ids to be included. |
+| `holdouts` | Optional. Type: `number array`. List of holdout group id to be included. |
+| `individuals` | Optional. Type: `number array`. List of user ids or device ids to be included. |
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json

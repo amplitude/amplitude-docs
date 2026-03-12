@@ -142,17 +142,6 @@ const sessionId = await getSessionId();
 console.log('Current session ID:', sessionId);
 ```
 
-### getSessionReplayProperties
-
-Get session replay properties that should be attached to Amplitude events. These properties help correlate events with session recordings.
-
-```js
-import { getSessionReplayProperties } from '@amplitude/session-replay-react-native';
-
-const properties = await getSessionReplayProperties();
-console.log('Session replay properties:', properties);
-```
-
 ### flush
 
 Flush any pending session replay data to the server. Forces immediate upload of recorded session data that may be buffered locally.

@@ -3,8 +3,6 @@ id: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
 blueprint: get-started
 title: 'Spaces: Keep your work organized'
 source: 'https://help.amplitude.com/hc/en-us/articles/16797746722203-Spaces-Keep-your-work-organized'
-this_article_will_help_you:
-  - 'Organize your analyses in multiple **spaces**'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

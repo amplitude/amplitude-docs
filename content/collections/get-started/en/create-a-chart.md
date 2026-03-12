@@ -5,8 +5,6 @@ title: 'Create a chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/16797281362843-Create-a-chart'
 landing: true
 landing_blurb: 'Charts are the heart of any Amplitude analysis. Learn how to create your first chart.'
-this_article_will_help_you:
-  - 'Create a chart in Amplitude and understand the components that make it work'
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632707

@@ -62,7 +62,7 @@ The configurations related to the Event payload.
 
 In the table, add rows for each event name you want to map to an Amplitude Event Type. If you check `Block events that are not mapped`, Amplitude sends only Event Data keys included in this table with the request, and excludes events not in the table.
 
-| <div class="big-column">Name</div> | Description                                                                                                               |
+| Name | Description                                                                                                               |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `Event Name`                       | Required. `string`.  The `event_name` this tag has received.                                                              |
 | `Send As Event Type`               | Required. `string`. The event type you want to map the event name to. This will be the name shown in Amplitude dashboard. |
@@ -71,7 +71,7 @@ In the table, add rows for each event name you want to map to an Amplitude Event
 
 Map keys in the Event Data object to event properties you want to send to Amplitude. If you don't specify an Event Property name, Amplitude uses the Event Data key instead.
 
-| <div class="big-column">Name</div> | Description                                                                                                                                              |
+| Name | Description                                                                                                                                              |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Event Data Key`                   | Required. `string`.  They key, value pair in the Event Data object you want to include as an event property in the Amplitude event payload.              |
 | `Send As Event Property`           | Optional. `string`.  This event's property name, displays in the Amplitude dashboard. If it's empty, Amplitude uses `Event Data Key` as event type instead. |
@@ -80,7 +80,7 @@ Map keys in the Event Data object to event properties you want to send to Amplit
 
 Use this table to add completely new event properties to the hit sent to Amplitude servers. Each property needs a key and a value.
 
-| <div class="big-column">Name</div> | Description                                                     |
+| Name | Description                                                     |
 | ---------------------------------- | --------------------------------------------------------------- |
 | `Event Property Key`               | Required. `string`.  The `event_name` in the Event Data object. |
 | `Event Property Value`             | Optional. `string`. The value of the event property key.        |
@@ -99,7 +99,7 @@ Check the box to collect all UTM parameters, including `utm_source`, `utm_medium
 
 Map keys in the Event Data object to user properties you want to send to Amplitude. If you don't specify a User Property name, Amplitude uses the Event Data key instead. Only Event Data keys included in this table are with the Amplitude request.
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                |
+| Name | Description                                                                                                                                                                                |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Event Data Key`                   | Required. `string`. They key in the Event Data object you want to include as a user property to send to Amplitude.                                                                         |
 | `Send As User Property`            | Optional. `string`. The user property name you want to. This will be the name shown in Amplitude dashboard. If it's empty, `Event Data Key` will be used as the user property key instead. |
@@ -108,7 +108,7 @@ Map keys in the Event Data object to user properties you want to send to Amplitu
 
 Use this table to add completely new event properties to the hit sent to Amplitude servers. Each property needs a key and a value.
 
-| <div class="big-column">Name</div> | Description                                                                                                        |
+| Name | Description                                                                                                        |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `User Property Key`                | Required. `string`. They key in the Event Data object you want to include as a user property to send to Amplitude. |
 | `User Property Value`              | Required. `string`. The value of a specific user property key.                                                     |
@@ -117,14 +117,14 @@ Use this table to add completely new event properties to the hit sent to Amplitu
 
 Use this feature to add extra event properties. In case of any overlap, the new addition will replace the previous value. Each property needs a key and a value.
 
-| <div class="big-column">Name</div> | Description                                                 |
+| Name | Description                                                 |
 | ---------------------------------- | ----------------------------------------------------------- |
 | `Additional Property Key`          | Required. `string`. They key of the event property.         |
 | `Additional Property Value`        | Required. `string`. The property value of the property key. |
 
 ### Other info come along with tracking an event
 
-| <div class="big-column">Name</div> | Description                                                      | Default Value                                                                                              |
+| Name | Description                                                      | Default Value                                                                                              |
 | ---------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `user_id`                          | The user Id.                                                     | The value of `user_id` or `x-ga-mp2-user_properties.user_id` from the Event Object or `undefined`.         |
 | `device_id`                        | The device Id.                                                   | The value of `client_id` from the Event Object.                                                            |

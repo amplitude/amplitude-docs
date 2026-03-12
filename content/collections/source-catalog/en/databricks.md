@@ -23,11 +23,8 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 
 ## Features
 
-- Import all data types, including events, user properties, and group properties.
-- Support for delta sync, to ensure Amplitude imports only new or changed data.
-  - For **event** data, Amplitude imports rows with an `insert` operation.
-  - For **user properties** and **group properties**, Amplitude imports rows with `insert` or `update` operations.
-  - Amplitude ignores rows with `delete` operations for all data types.
+- Import events, user properties, profiles, and group properties.
+- Support for delta sync to ensure Amplitude imports only new or changed data.
 
 ## Limitations
 
@@ -186,6 +183,11 @@ To add Databricks as a source in Amplitude, complete the following steps.
         named_struct('group_property', "group_property_value")                 as group_properties
     from catalog.schema.table1;
     ```
+
+{{partial:admonition type="note" heading="VARIANT data type support"}}
+Amplitude supports the `VARIANT` data type for mapping property columns. You can use `VARIANT` columns for user properties, event properties, and group properties in your SQL queries. This allows you to import semi-structured or nested JSON data directly from Databricks.
+{{/partial:admonition}}
+
 For the `Event` data type and Append-Only Ingestion, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
 4. After you add the SQL, click *Test SQL*. Amplitude runs a test against your Databricks instance to ensure the SQL is valid. Click *Next*.
@@ -193,7 +195,16 @@ For the `Event` data type and Append-Only Ingestion, optionally select *Sync Use
 5. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
-6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks. Daily syncs can run at  a specific hour in the day. Weekly and Monthly syncs can run at a specific day and hour.
+6. Set the sync frequency. You can configure the sync frequency when setting up a source. This frequency determines the interval at which Amplitude pulls data from Databricks.
+    
+    The available sync frequency options vary depending on the data type you're importing, such as Events, User Properties, Group Properties, and Profiles.
+    Examples:
+    
+    - **Daily sync**: Runs once each day at a specified hour.
+    - **Hourly sync**: Runs once each hour.
+    
+    Amplitude runs syncs on a best-effort basis. Syncs typically run at the configured frequency but may run less frequently.
+
 7. Enter a descriptive name for this instance of the source.
 8. The source appears in the Sources list for your workspace.
 

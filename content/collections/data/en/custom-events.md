@@ -7,9 +7,6 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717621393
-this_article_will_help_you:
-  - 'Understand how creating a custom event can support your analysis'
-  - 'Learn how to create a custom event'
 landing: false
 ---
 Sometimes, you may need to create an analysis in which a particular step of the process can be any of a selection of specific events. 

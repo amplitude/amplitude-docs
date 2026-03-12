@@ -3,14 +3,12 @@ id: cfa39989-0859-4dcc-a689-9f0215ae2657
 blueprint: analytic
 title: 'Share charts, dashboards, and notebooks with stakeholders outside your company'
 source: 'https://help.amplitude.com/hc/en-us/articles/235717108-Share-charts-dashboards-and-notebooks-with-stakeholders-outside-your-company'
-this_article_will_help_you:
-  - "Share analyses with people who do not have full access to your organization's data"
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882858
 ---
-Sometimes, you may need to share your Amplitude analyses with people who aren't in your organization, or who shouldn't have full access to your data. You can create **public links** to charts, dashboards, and notebooks and send them to **any** person, even if they're not registered under your Amplitude organization.
+Sometimes, you may need to share your Amplitude analyses with people who aren't in your organization, or who shouldn't have full access to your data. You can create public links to charts, dashboards, and notebooks and send them to any person, even if they're not registered under your Amplitude organization.
 
 
 ## Before you begin
@@ -44,9 +42,16 @@ To generate this embed code, follow these steps:
 
 ## Copy, edit, or delete a public link
 
-To manage your public links, navigate to *Settings > Organization Settings > Content Access*.
+You can manage public links from two locations:
 
-Public links aren't editable from the *Manage Content Access* page, but you can remove them from there. Hover over the public link to bring up the *Remove* button. To edit the link's password or change its expiration date, click on the name of the chart to open it, then click *Share* to begin making those changes.
+**From the Share modal:**
+1. Click **Share** in the top right corner.
+2. Navigate to the **Public Link** tab.
+3. Click the three-dot menu (kebab menu) next to your public link.
+4. Select **Copy URL**, **Edit**, or **Delete** from the dropdown.
+
+**From Organization Settings:**
+Navigate to *Settings > Organization Settings > Content Access*. You can remove public links from this page by hovering over the link and selecting the **Remove** button. To edit a link's password or expiration date, open the chart and use the Share modal.
 
 ## Set public link permissions
 

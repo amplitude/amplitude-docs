@@ -3,8 +3,6 @@ id: 8160e521-d064-46f7-bf1b-595dc1c56327
 blueprint: data
 title: 'Debug with the Amplitude Chrome extension'
 source: 'https://help.amplitude.com/hc/en-us/articles/360003032451-Debug-with-the-Amplitude-Chrome-extension'
-this_article_will_help_you:
-  - 'Debug your instrumentation in real time, without opening Amplitude Analytics'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -14,7 +12,7 @@ bundle_url: 'https://chrome.google.com/webstore/detail/amplitude-event-explorer/
 ---
 The Amplitude Event Explorer extension in the Google Chrome Web Store helps you examine and debug your Amplitude JS SDK instrumentation by interacting with your product. It captures each Amplitude event you trigger and displays it in the extension popup. Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/amplitude-instrumentation/acehfjhnmhbmgkedjmjlobpgdicnhkbp).
 
-{{partial:admonition type="" title=""}}
+{{partial:admonition type="note" title=""}}
 The Event Explorer displays the `event_type`, even when it has a different display name.
 {{/partial:admonition}}
 

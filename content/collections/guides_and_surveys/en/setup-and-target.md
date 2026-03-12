@@ -68,13 +68,13 @@ You can exclude users on the cohort or the segment level. However, the process i
 
 To exclude a cohort of users, set up the `where` statement to be `does not equal` the cohort you want to exclude. The screenshot above displays a segment where users in the United States are excluded from the guide or survey.
 
-### Send a link to a guide {.tag .web}
+### Send a link to a guide
 
 Send users a link to your guide or survey to target them more directly. From the guide or survey builder, expand the menu next to the Save button, and click **Share link**.
 
-In the resulting modal, copy the query parameter, and append it to a page on your site that's instrumented with Guides and Surveys.
-
-When the recipient clicks the link with the query parameter attached, the guide displays.
+In the resulting modal:
+- For web, copy the query parameter and append it to a page on your site that's instrumented with Guides and Surveys. When the recipient clicks the link with the query parameter attached, the guide displays.
+- For mobile, scan the QR code or open the share link URL on a device with your app installed. The guide displays in the app.
 
 {{partial:admonition type="note" heading="User and page targeting"}}
 When you send a direct link to a guide or survey, Amplitude overrides any audience or user targeting you set on the guide.
@@ -102,7 +102,7 @@ Amplitude provides the following options to trigger an experience.
 | Smart delay          | Show the experience after the user completes their current task.                                                                                                                                 |
 | Rage click/tap       | Shows the experience after a rage click by the user. Amplitude considers a rage click to be rapid successive clicking or tapping in the same location.                                           |
 | User confusion <br/> {.tag .web .zero}      | Shows the experience when Amplitude detects user confusion, as signaled by the user's mouse movement.                                                                                            |
-| On event tracked     | Shows the experience after the user triggers an event that you define. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
+| On event tracked     | Shows the experience after the user triggers an event that you define. The event has to be fired client-side so it can be observed by the Guides and Surveys SDK. Guide and Surveys doesn't support using [Labeled Events](/docs/data/visual-labeling) or [Custom events](/docs/data/custom-events) as triggers.  
 
 #### Session properties
 
@@ -144,7 +144,12 @@ Use the priority to rank the importance of a guide or survey relative to others 
 * Low
 
 {{partial:admonition type="note" heading="Prioritization"}}
-When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. Amplitude breaks prioritization ties by the experience that was seen most recently, then by the experience that was created most recently.
+When you have more than one guide or survey eligible to display to a user, the highest priority experience displays. 
+
+Amplitude breaks prioritization ties using these tiebreakers in order:
+
+1. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
+2. **Most recently created**: If the user hasn't seen either experience (or the user saw both at the same time), Amplitude shows the most recently created experience.
 {{/partial:admonition}}
 
 ## Limits
@@ -199,7 +204,7 @@ If a guide or survey is temporarily hidden, Amplitude doesn't show it to the use
 
 When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers to decide which experience to show:
 
-1. Amplitude shows active guides or surveys before inactive.
-2. Priority
-3. Most recently seen (relevant for active guides and surveys only)
-4. Most recently created
+1. **Active before inactive**: Amplitude shows active guides or surveys before inactive ones.
+2. **Priority**: Higher priority experiences display first (Urgent > High > Medium > Low).
+3. **Most recently seen**: If the user has seen one or more of the tied experiences before, Amplitude shows the one they saw most recently.
+4. **Most recently created**: If the user hasn't seen either experience (or the user saw both at the same time), Amplitude shows the most recently created experience.

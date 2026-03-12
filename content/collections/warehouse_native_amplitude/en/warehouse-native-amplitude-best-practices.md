@@ -4,9 +4,14 @@ blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Best Practices'
 source: 'https://help.amplitude.com/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices'
 exclude_from_sitemap: false
+hide_from_search: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717541658
 ---
+{{partial:admonition type="warning" heading=""}}
+Warehouse Native is a legacy feature and isn't available to new customers.
+{{/partial:admonition}}
+
 Warehouse-native Amplitude enables you to bring your own models to your analyses. However, to get the most out of your data as quickly as possible, you should consider these best practices:
 
 ## Clustering key

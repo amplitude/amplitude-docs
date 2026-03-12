@@ -6,6 +6,7 @@ academy_asset_type: 'Course (Video)'
 academy_cta: 'Learn about Warehouse-native Amplitude'
 academy_url: 'https://academy.amplitude.com/get-started-with-warehouse-native-amplitude'
 academy_short_description: 'Set up a warehouse-native project that lets you directly query your data warehouse, empower users with self-serve analytics, and streamline data management.'
+hide_from_search: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742327808
 ---

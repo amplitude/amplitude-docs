@@ -1,0 +1,62 @@
+# No New File Creation
+
+**Critical Rule:** Cursor's purpose in this repository is to edit existing content only. Don't create new files unless explicitly requested by the user.
+
+## Never Create These Files
+
+**Absolutely forbidden:**
+- README files in any directory (README.md, README.txt, etc.)
+- Documentation files (*.md) unless explicitly requested
+- Configuration files unless explicitly requested
+- Any file the user didn't specifically ask for
+
+## Default Behavior
+
+When the user asks you to work on content:
+- ✅ Edit existing files
+- ✅ Update existing documentation
+- ✅ Modify existing code
+- ❌ Create new README files
+- ❌ Create supplementary documentation
+- ❌ Create example files
+- ❌ Create test files (unless explicitly requested)
+
+## Exceptions
+
+You may create new files ONLY when:
+1. The user explicitly requests a new file: "Create a new file called X"
+2. The user explicitly requests new documentation: "Write new documentation for X"
+3. It's absolutely necessary to complete the user's explicit request
+
+## Examples
+
+### ❌ Don't Do This
+
+User: "Update the SDK documentation"
+Cursor: Creates README.md in the SDK folder with overview information
+**Wrong!** - Edit the existing SDK documentation file instead
+
+User: "Fix the API integration guide"
+Cursor: Creates CONTRIBUTING.md with contribution guidelines
+**Wrong!** - Only edit the API integration guide as requested
+
+### ✅ Do This Instead
+
+User: "Update the SDK documentation"
+Cursor: Edits the existing SDK documentation file directly
+**Correct!** - Focus on the existing content
+
+User: "Create a new migration guide for PostgreSQL"
+Cursor: Creates the new migration guide file
+**Correct!** - User explicitly requested a new file
+
+## When in Doubt
+
+If you're considering creating a new file, ask yourself:
+- Did the user explicitly request this new file?
+- Is this file absolutely necessary to complete the user's request?
+- Am I trying to be helpful by adding supplementary documentation?
+
+If the answer to the third question is "yes," **DON'T CREATE THE FILE**.
+
+Your job is to update existing content, not to add new content unless explicitly requested.

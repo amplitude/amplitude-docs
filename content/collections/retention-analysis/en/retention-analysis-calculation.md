@@ -3,9 +3,6 @@ id: de3797df-f955-4db9-9813-c392edd83a4c
 blueprint: retention-analysi
 title: 'How the Retention Analysis chart calculates retention'
 source: 'https://help.amplitude.com/hc/en-us/articles/14310206381595-How-the-Retention-Analysis-chart-calculates-retention'
-this_article_will_help_you:
-  - 'Understand the differences between retention types'
-  - 'Understand how Amplitude calculates retention for different cohorts'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760631770
 landing: true

@@ -2,10 +2,6 @@
 id: 1dc8fb12-66f4-4ff0-bf73-e2e52fcd78b1
 blueprint: experiment
 title: 'Experiment Quick Start'
-this_article_will_help_you:
-  - 'Setup the SDK and deployment for your experiments'
-  - 'Create feature flags, variants, and payloads'
-  - 'Design and implement the experiment'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
@@ -24,14 +20,14 @@ With Experiment, you can modify and configure product experiences for unique aud
 Experiment enables experimentation through either Feature Experiment or Web Experiment: 
 
 * Feature Experiment enables experimentation through [feature flags](/docs/feature-experiment/workflow/feature-flag-rollouts). Feature flags are switches that let you modify your product's experience without having to change code.
-* Web Experiment enables experimentation through the [Visual Editor](docs/web-experiment/set-up-a-web-experiment#the-visual-editor). The Visual Editor places a dynamic, customizable layer over your existing website. Through the Visual Editor, you can customize any element of your website without having to make changes directly to the site's underlying code or structure.  
+* Web Experiment enables experimentation through the [Visual Editor](/docs/web-experiment/set-up-a-web-experiment#the-visual-editor). The Visual Editor places a dynamic, customizable layer over your existing website. Through the Visual Editor, you can customize any element of your website without having to make changes directly to the site's underlying code or structure.  
 
 For more information about the use cases for each type of experimentation, go to [Feature and Web Experiment Use Cases](/docs/feature-experiment/feature-vs-web-experimentation).
 
 This page is divided into quick start information for Feature and for Web Experiment. Click the tab for the experiment type you want to set up.
 
 {{partial:admonition type="warning" heading=""}}
-This quick start guide contains only the basic information needed to implement Experiment. Review the entire set of [Experiment documentation](docs/feature-experiment) to understand the full complexity of the product.
+This quick start guide contains only the basic information needed to implement Experiment. Review the entire set of [Experiment documentation](/docs/feature-experiment/overview) to understand the full complexity of the product.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Feature Experiment, Web Experiment"}}
@@ -59,12 +55,12 @@ Before you can begin using experiments:
 Install the Amplitude SDK with the Experiment client. For example:
 
 ```bash
-npm install @amplitude/analytics-browser @amplitude/experiment-browser
+npm install @amplitude/analytics-browser @amplitude/experiment-js-client
 ```
 
 ```ts
 import * as amplitude from '@amplitude/analytics-browser'; 
-import { Experiment } from '@amplitude/experiment-browser'; 
+import { Experiment } from '@amplitude/experiment-js-client'; 
 amplitude.init('AMPLITUDE_API_KEY');  
 const experiment = Experiment.initialize('DEPLOYMENT_API_KEY'); 
 await experiment.start();

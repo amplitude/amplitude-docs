@@ -2,10 +2,6 @@
 id: 61027aa7-267f-479f-b379-912c1fea207f
 blueprint: agent
 title: 'AI Feedback'
-this_article_will_help_you:
-  - 'Understand what AI Feedback is'
-  - 'Link your data sources to AI Feedback'
-  - 'Create actions based on the insights provided by AI Feedback'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1761239369
 ---
@@ -19,7 +15,7 @@ Feedback events collect information about use cases such as:
 * Key takeaways
 
 {{partial:admonition type="note" heading="Additional use cases"}}
-The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/agents/ai-feedback#viewing-insights)
+The use cases listed above are examples only. For a full description of all the categories that AI feedback tracks, go to [Viewing insights](/docs/amplitude-ai/ai-feedback#viewing-insights)
 {{/partial:admonition}}
 
 For insight as to how AI uses your data and other compliance information go to [Trust in Amplitude AI](https://amplitude.com/trust#:~:text=Trust%20in%20Amplitude%20AI).
@@ -100,9 +96,51 @@ Not all sources have additional settings. If your source doesn’t have any sett
 Deleting a source deletes the previously analyzed feedback as well as preventing new feedback from that source. 
 {{/partial:admonition}}
 
-## Viewing Insights
+## Supported sources
 
-AI Feedback automatically generates its insights. As your data sources update with new content, AI Feedback updates with additional insights. These insights align to the following categories:
+AI Feedback connects to a variety of feedback sources across four categories.
+
+### Support and service
+
+- **Zendesk**: Import support tickets and customer conversations.
+- **Intercom**: Import customer messaging and support interactions.
+- **Salesforce Service**: Import service cases and customer communications.
+- **Freshdesk**: Import helpdesk tickets and customer responses.
+
+### Sales and success
+
+- **HubSpot**: Import CRM feedback, deal notes, and customer communications.
+- **Gong**: Import sales call transcripts and conversation insights.
+
+### Social and reviews
+
+- **Slack**: Import feedback from specific Slack channels.
+- **App Store**: Import iOS app reviews and ratings.
+- **Google Play Store**: Import Android app reviews and ratings.
+- **G2**: Import software review feedback.
+- **Discord**: Import feedback from Discord server channels.
+- **Trustpilot**: Import customer review feedback.
+- **X**: Import mentions and conversations.
+- **Reddit**: Import subreddit discussions and comments.
+
+### File upload and other
+
+- **CSV**: Upload structured feedback data from CSV files.
+- **DOCX**: Upload feedback documents such as call transcripts or research reports.
+
+{{partial:admonition type="note" heading="Requesting a new source"}}
+If the integration you need isn't listed, select **Request a new source** in the source selection modal.
+{{/partial:admonition}}
+
+## Viewing insights
+
+The *New Insights* tab displays AI-generated insights from your connected feedback sources. AI Feedback regenerates these insights each time it runs its analysis, so insights on this tab are ephemeral - they refresh and may change as new feedback arrives and more relevant clusters emerge. To persist an important insight and track it over time, [save it as a trend](#saved-trends).
+
+AI Feedback counts how many customers share the same feedback for the same feature or functionality. For example, if multiple customers report the same bug, AI Feedback highlights the bug and displays how many mentions it received. Each insight displays its category, mention count, and sources.
+
+Filter insights by category, source, and time range. For example, filter to only social media sources to see how your products are discussed publicly, or filter to customer service tickets to understand product performance.
+
+Insights align to the following categories:
 
 * **Feature Request**: Additional features your customers want.
 * **Complaint**: Issues and problems your customers experience.
@@ -123,20 +161,19 @@ You can also filter your data sources. For example, you might only want to view 
 
 ### AI Feedback with AI Chat analysis
 
-You can use Amplitude's Ask AI feature to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
+You can use Amplitude's Global Agent to analyze your Feedback data, perform semantic searches on feedback or insights, and answer requests such as:
 * Summarize all recent feedback.
 * Provide direct user quotes from customers about your website's search experience.
 * Highlight the most talked about bug or complaint from the previous week.
 
-You can also have Ask AI to perform actions such as:
-* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Ask AI can create a PRD to improve your notification system based on feedback about notifications.
-
-To get AI analysis on your feedback, click the **Ask AI** button and type in your request.
+You can also have Global Agent to perform actions such as:
+* Create a product requirements doc (PRD) to improve your company's product functionality based on feedback. For example, Global Agent can create a PRD to improve your notification system based on feedback about notifications.
 
 ## Working with insights
 
 Insights are useful to understand your customers’ experience with your product. For every insight, AI Feedback offers actions you can take to enhance your customers’ experience. AI Feedback lets you perform the following actions for each insight: 
 
+* **Save as Trend**: Saves the insight as a persistent trend you can track over time. See [Saved Trends](#saved-trends).
 * **Share**: Lets you share the insight with an internal colleague.
 * **Create Survey**: Lets you create a [survey](/docs/guides-and-surveys/surveys/survey-overview) that you can send to customers. Automatically opens the Guide creation tool. Automatically adds the mentioned customers as a cohort for the survey. 
 * **Watch Session Replays**: Lets you watch [session replays](/docs/session-replay) from customers directly related to the insight. 
@@ -160,7 +197,46 @@ Insights are useful to understand your customers’ experience with your product
  
 * Click **Share**. 
 
-A link to the insight is automatically saved to your clipboard. Only colleagues with access to your Amplitude project have access to view.
+A link to the insight is automatically saved to your clipboard. Only colleagues with access to your Amplitude project can view it.
+
+## Saved Trends
+
+Insights on the *New Insights* tab are ephemeral and refresh each time AI Feedback runs its analysis. Saved Trends let you persist insights and track them over time, so important themes don't get lost when new feedback arrives.
+
+When you save an insight as a trend, or create one manually, AI Feedback links new, semantically relevant mentions to that trend daily. This lets you move from "what's new today?" to "how are my top priorities trending over time?" and track results as you fix bugs, implement feature requests, and reduce complaints.
+
+The *Saved Trends* tab displays each trend's name, category, total mentions, week-over-week change, and a sparkline that visualizes recent activity.
+
+##### To save an insight as a trend
+
+1. Go to *AI Feedback > New Insights*.
+2. Find the insight you want to persist.
+3. Click **Save as Trend** on the insight row.
+
+AI Feedback saves the insight as a trend and begins linking new, semantically relevant mentions to it daily.
+
+##### To create a trend manually
+
+You can create a trend from scratch to track a topic that doesn't match an existing insight.
+
+1. Go to *AI Feedback > Saved Trends*.
+2. Click **Track a New Trend**.
+3. Enter a name for the trend in the **Trend Name** field.
+4. Select a category from the **Category** dropdown.
+5. Optionally, add a description to narrow the feedback the trend tracks.
+6. Click **Create Trend**.
+
+##### To view trend details
+
+1. Go to *AI Feedback > Saved Trends*.
+2. Click the trend you want to examine.
+
+The trend detail view displays:
+
+* A chart of weekly mentions over time that shows how the trend's volume changes.
+* The full list of linked mentions with source information, dates, and links to the original feedback.
+
+Use the trend detail view to drill into specific mentions and understand the context behind each data point.
 
 ## Merging existing users from an AI Feedback source
 
@@ -175,7 +251,7 @@ After Amplitude receives that event for a user, AI Feedback can merge that user 
 
 ## Deleting information based on user ID or Amplitude ID
 
-When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/agents/ai-feedback#merging-existing-users-from-an-AI-Feedback-source) with users from your supported AI Feedback sources, the User Privacy API can't match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
+When a deletion request is submitted to Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy) for a specific user ID or Amplitude ID,  as long as you have merged your existing users with users from your supported AI Feedback sources, all AI Feedback data associated with that user ID or Amplitude ID is also deleted. If you haven't [merged your existing users](/docs/amplitude-ai/ai-feedback#merging-existing-users-from-an-ai-feedback-source) with users from your supported AI Feedback sources, the User Privacy API can't match any Feedback data with the user ID or Amplitude ID that have been submitted with the deletion request.
 
 To ensure that the deletion is permanent and complete: 
 * Delete Upstream first: You must first delete the data from the original source (such as Zendesk or Gong) before submitting your request to Amplitude. If you don't do this, the data syncs back into Amplitude. 

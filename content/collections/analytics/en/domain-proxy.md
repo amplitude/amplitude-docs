@@ -108,7 +108,7 @@ After the proxy is working correctly, configure your SDK. Amplitude’s SDKs are
 
 The SDKs point to special endpoints for their custom payloads. Find the endpoint for your SDK in this table: 
 
-| <div class="big-column">SDK</div>                        | Endpoint                               | Set server url                                               |
+| SDK                        | Endpoint                               | Set server url                                               |
 | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | [Amplitude-JavaScript](/docs/sdks/analytics/browser/javascript-sdk) | `https://api.amplitude.com`            | Set the `apiEndpoint` option when initializing the SDK.      |
 | [Amplitude-Node](/docs/sdks/analytics/node/node-js-sdk)             | `https://api2.amplitude.com/2/httpapi` | Set the `serverUrl` option when initializing the SDK.        |

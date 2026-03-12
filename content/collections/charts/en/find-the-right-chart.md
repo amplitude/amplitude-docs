@@ -3,8 +3,6 @@ id: 03d0d848-57df-4530-bd40-c305ed2e298e
 blueprint: chart
 title: 'Find the right chart for your analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001816407-Amplitude-s-charts-Find-the-right-one-for-your-analysis'
-this_article_will_help_you:
-  - 'Identify the best Amplitude chart to answer your questions'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
@@ -13,6 +11,10 @@ academy_course:
   - caa26d9a-e585-492c-afa1-f6571125252f
 ---
 Any Amplitude analysis begins with selecting the right chart for the job. This article provides a short summary explanation of all Amplitude's chart types and the types of analysis they're best suited for.
+
+{{partial:admonition type="note" heading=""}}
+Not sure which chart to use? [Global Agent](/docs/amplitude-ai/global-agent-overview) can build the right chart for you from a natural-language question. Describe what you want to learn and Global Agent selects the chart type, events, and properties automatically.
+{{/partial:admonition}}
 
 
 ## Know your users

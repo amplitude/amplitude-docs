@@ -3,9 +3,6 @@ id: 0e2e4182-9627-49a1-a313-ed70f3a1076c
 blueprint: lifecycle
 title: 'Interpret your Lifecycle chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/21037113562651-Interpret-your-Lifecycle-chart'
-this_article_will_help_you:
-  - 'Interpret the results of your Lifecycle chart'
-  - 'Switch between chart types'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1761932190
 landing: true
@@ -14,6 +11,10 @@ academy_course:
   - def740af-68f5-484d-95c4-0b84edc128b5
 ---
 This article explains how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
+
+{{partial:admonition type="note" heading=""}}
+You can use [Global Agent](/docs/amplitude-ai/global-agent-overview) to interpret Lifecycle charts with natural language. Ask questions like "What's driving the increase in resurrected users?" or "Why did dormant users spike last week?"
+{{/partial:admonition}}
 
 ## Interpret your Lifecycle chart
 

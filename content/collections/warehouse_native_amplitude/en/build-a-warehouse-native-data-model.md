@@ -4,9 +4,14 @@ blueprint: warehouse_native_amplitude
 title: 'Build a warehouse-native data model'
 source: 'https://help.amplitude.com/hc/en-us/articles/26004068419995-Build-a-warehouse-native-data-model'
 exclude_from_sitemap: false
+hide_from_search: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717541636
 ---
+{{partial:admonition type="warning" heading=""}}
+Warehouse Native is a legacy feature and isn't available to new customers.
+{{/partial:admonition}}
+
 Data models are the foundation for creating analyses within Warehouse-native Amplitude. Understanding how to structure your data is crucial for optimal performance and accurate insights.
 
 While the following data types are like those used by traditional Amplitude, think of Warehouse-native events as a [fact table](https://en.wikipedia.org/wiki/Fact_table) and Warehouse-native properties (user, group, and event) as [dimensional tables](https://en.wikipedia.org/wiki/Dimension_(data_warehouse)).

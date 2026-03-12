@@ -3,9 +3,6 @@ id: 96031a26-9f2e-4c15-b589-bc4425821790
 blueprint: analytic
 title: 'Historical Count, part 1: Track user behavior for different instances of each user action'
 source: 'https://help.amplitude.com/hc/en-us/articles/360040957432-Historical-Count-part-1-Track-user-behavior-for-different-instances-of-each-user-action'
-this_article_will_help_you:
-  - 'Pinpoint the *N*th instance of a user action'
-  - "Identify customer based on the number of times they've performed a critical action"
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -26,16 +23,19 @@ Historical Count is not the same as Amplitude's behavioral cohorts. However, you
 
 ## Before you begin
 
-Before you get started using the Historical Count feature, there are some things you should know. If you're new to Amplitude, you'll need to complete the instrumentation process in order for your events to appear in any Amplitude charts. We recommend you start exploring the [Event Segmentation chart](/docs/analytics/charts/event-segmentation) first.
+Before you get started using the Historical Count feature, there are some things you should know. If you're new to Amplitude, you'll need to complete the instrumentation process for your events to appear in any Amplitude charts. We recommend you start exploring the [Event Segmentation chart](/docs/analytics/charts/event-segmentation) first.
 
 Other important things to note about this feature:
 
-* The following operators are currently supported: `=` (is), `≠` (is not), `<` (less), `≤` (less or equal), `>` (greater), `≥`(greater or equal)
+* The following operators are supported: `=` (is), `≠` (is not), `<` (less), `≤` (less or equal), `>` (greater), `≥`(greater or equal).
 * Only one Historical Count property can be selected at a time.
-* Historical Count is an event property available on the **Event Segmentation**, **Funnel** **Analysis**, **Pathfinder**, and **Retention Analysis** Charts.
+* Historical Count is an event property available on the **Event Segmentation**, **Funnel Analysis**, **Pathfinder**, and **Retention Analysis** charts.
 	* In a funnel analysis, Historical Count works only on funnels set to *in this order*.
 	* You can apply an Historical Count filter only to the first event in the Pathfinder and Retention Analysis charts.
 	* However, you can apply it to multiple events when doing event segmentation and funnel analyses.
+* Historical Count is also available in behavioral cohorts, with limitations:
+	* You can't use "Any Event" or "Any Active Event" with Historical Count in dynamic cohorts.
+	* If you create a cohort using "Any Event where Historical Count = 1", it becomes a static cohort.
 
 This article is part 1 of a series on Historical Count. Be sure to read the next Help Center articles in the series: 
 

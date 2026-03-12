@@ -65,7 +65,7 @@ Without session tracking:
 
 - Events have a session ID of -1, so events triggered by a user during the same session aren't grouped together when viewing that [user's timeline](/docs/analytics/user-data-lookup) in Amplitude. 
 - Session length calculations aren't available in Amplitude, so the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart doesn't display any data.
-- Amplitude's Pathfinder and [Pathfinder Users](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts aren't able to display out-of-session events alongside events within a session. 
+- Amplitude's Pathfinder and [Pathfinder Users](/docs/analytics/charts/journeys) charts aren't able to display out-of-session events alongside events within a session. 
 - You can't perform [session-based Funnel Analysis](/docs/analytics/charts/funnel-analysis) effectively.
 
 Without Amplitude's SDKs, you have to map user properties such as device type and operating system manually to track them, as described in [Segment's docs](https://segment.com/docs/integrations/amplitude/#special-properties).

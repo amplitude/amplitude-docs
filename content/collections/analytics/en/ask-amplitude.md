@@ -3,6 +3,10 @@ id: 10d36278-7030-497c-acce-46469b415a93
 blueprint: analytic
 title: 'Ask Amplitude'
 ---
+{{partial:admonition type="note" heading=""}}
+For Amplitude's full AI assistant experience, refer to [Global Agent](/docs/amplitude-ai/global-agent-overview). Global Agent understands what you're viewing, creates charts, and provides data-grounded answers across your Amplitude project.
+{{/partial:admonition}}
+
 Ask Amplitude is a conversational interface for using Amplitude. Intended primarily for Amplitude users with minimal experience using analytics tools, or with limited understanding of the data taxonomy, Ask Amplitude helps you express Amplitude-related concepts and questions in natural language.
 
 With Ask Amplitude, you can:
@@ -60,7 +64,3 @@ Otherwise, declarative statements of intent that use the specific terminology te
 - "Show this as conversion over time."
 - "Group this chart by X."
 - "Filter this by X = Y."
-
-### Can I use Ask Amplitude if I have a BAA in place with Amplitude?
-
-No. For more information, contact your Amplitude representative.

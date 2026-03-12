@@ -55,7 +55,7 @@ When generating links, always use this mapping:
 | account-management | `/docs/admin/account-management/{slug}` |
 | admin | `/docs/admin/{slug}` |
 | advanced-techniques | `/docs/feature-experiment/advanced-techniques/{slug}` |
-| agents | `/docs/agents/{slug}` |
+| agents | `/docs/amplitude-ai/{slug}` |
 | ampli | `/docs/sdks/ampli/{slug}` |
 | analytics | `/docs/analytics/{slug}` |
 | android_sdk | `/docs/sdks/analytics/android/{slug}` |

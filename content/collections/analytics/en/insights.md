@@ -3,9 +3,6 @@ id: 460e81bb-f27a-4e8b-a427-478147415c71
 blueprint: analytic
 title: 'Insights: Spot anomalies in your metrics quickly with alerts'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts'
-this_article_will_help_you:
-  - 'Set up and manage alerts to monitor the performance of your important project metrics'
-  - 'Send alerts directly to a Slack channel'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

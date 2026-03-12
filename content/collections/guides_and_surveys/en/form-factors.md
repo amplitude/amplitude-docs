@@ -9,11 +9,11 @@ section: guides
 landing: true
 landing_blurb: 'Learn about the form factors available to guides, and the customization properties they contain.'
 ---
-Guides and Surveys include five form factors you can chose from. Each form factor has a set of properties that control how it behaves to the end user.
+Guides and Surveys include six form factors you can choose from. Each form factor has a set of properties that control how it behaves to the end user.
 
 ## Form factors
 
-Guides provide five form factors you can use to engage your users. Each form factor shares a similar set of [properties](#properties).
+Guides provide six form factors you can use to engage your users. Each form factor shares a similar set of [properties](#properties).
 
 ### Modal
 
@@ -42,7 +42,7 @@ Click the three dot menu to access format settings.
 
 A subtle nudge that appears near a contextually relevant element. Popovers are great for quick tips, or for directing users' attention without interrupting their flow.
 
-Popovers offer the same customization options as modals.
+Popovers offer many of the same customization options as modals.
 
 Click the three dot menu to access format settings.
 
@@ -51,7 +51,6 @@ Click the three dot menu to access format settings.
 | Content layout <br/> {.tag .web .zero} | Updates the visual ordering of the guide's content.                |
 | Title and content alignment            | Changes the alignment of the title and body text.                 |
 | Actions bar <br/> {.tag .web .zero}    | Updates the placement and layout of the guide's buttons.           |
-| Click/Tap outside to close             | Enables users to click or tap outside of the modal to dismiss it.  |
 | Z-index <br/> {.tag .web .zero}        | Specify a custom z-index value for the popover.                    |
 | Text animation                         | Enables the popover's text to animate in with a typewriter effect. |
 
@@ -84,7 +83,6 @@ Click the three dot menu for the pin to access format settings.
 | Content layout <br/> {.tag .web .zero}   | Updates the visual ordering of the guide's content.                                                        |
 | Title and content alignment              | Changes the alignment of the title and body text.                                                          |
 | Actions bar <br/> {.tag .web .zero}      | Updates the placement and layout of the guide's buttons.                                                   |
-| Tap outside to close <br/> {.tag .mobile .zero}              | Enables users to click or tap outside of the modal to dismiss it.                                          |
 | Z-index <br/> {.tag .web .zero}          | Specify a custom z-index value for the popover.                                                            |
 | Text animation                           | Enables the pin's text to animate in with a typewriter effect.                                             |
 | Advance trigger <br/> {.tag .web .zero} | Enables advancing the guide to another step when the the user interacts with the element you specify.      |
@@ -110,6 +108,10 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                    |
 | Show on hover/click <br/> {.tag .web .zero}                                 | Select the trigger that causes the tooltip message to appear.                                                 |
 
+{{partial:admonition type="note" heading=""}}
+Tooltips bypass cooldowns and remain visible even after a user completes them. For tooltip surveys, users can fill out the survey again as a new submission.
+{{/partial:admonition}}
+
 ### Banner
 
 {{partial:admonition type="tip" heading=""}}
@@ -128,7 +130,7 @@ Banners are full-width blocks that show on either the top or bottom of the page.
 
 ### Checklist {.tag .web}
 
-Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions
+Checklists provide a form that helps users track progress toward a goal. They contain one header and one or more checklist items. Use checklist items to trigger actions.
 
 | Setting                                | Description                                                                                                  |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -142,10 +144,36 @@ Checklist items compose a checklist.
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Skippable | If enabled, the user can complete the checklist item via a "Skip" button. |
 
+### Card embed {.tag .web}
+
+Card embeds render content directly into your page's DOM, embedding guides and surveys as native-feeling elements within your UI. Use card embeds for persistent content that should feel like part of your application rather than an overlay.
+
+Card embeds require a target element selector that specifies where to place the card. Select from these position options to control how the card relates to the target element:
+
+| Position                          | Description                                                      |
+| --------------------------------- | ---------------------------------------------------------------- |
+| Append to children (last child)   | Inserts the card as the last child element within the target.   |
+| Prepend to children (first child) | Inserts the card as the first child element within the target.  |
+| Before element                    | Places the card immediately before the target element.           |
+| After element                     | Places the card immediately after the target element.            |
+| Replace element                   | Replaces the target element with the card.                       |
+
+Click the **three dot menu** to access format settings.
+
+| Setting                     | Description                                                                      |
+| --------------------------- | -------------------------------------------------------------------------------- |
+| Width                       | Choose **Auto** to let the card size to its content, **Fixed** to specify a pixel width, or **Full** to fill the container width. |
+| Alignment                   | When width isn't set to Full, align the card to the **Left**, **Center**, or **Right** of its container. |
+| Height                      | Choose **Auto** to let the card size to its content, **Fixed** to specify a pixel height, or **Full** to fill the container height. |
+| Content layout              | Updates the visual ordering of the guide's content.                              |
+| Title and content alignment | Changes the alignment of the title and body text.                                |
+| Actions bar                 | Updates the placement and layout of the guide's buttons.                         |
+| Z-index                     | Specify a custom z-index value for the card.                                     |
+| Text animation              | Enables the card's text to animate in with a typewriter effect.                  |
 
 ## Element selector {.tag .web}
 
-When you configure guides with pins, tooltips, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
+When you configure guides with pins, tooltips, card embeds, or element-based triggers, you need to specify which element on your page to target. The element selector helps you identify and target specific page elements.
 
 ### How the element selector works
 
@@ -181,16 +209,22 @@ If you prefer to specify your own selector or need more control, you can manuall
 3. Optionally, add fallback text that Amplitude uses if the selector doesn't find a match
 4. Test your selector with **Test and Preview** to confirm it targets the correct element
 
-**Examples of custom selectors:**
-
-- CSS Selector: `.header-navigation > .menu-item:first-child`
-- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
-
 {{partial:admonition type='tip' heading='Best practices for custom selectors'}}
 * Use stable attributes like IDs or data attributes that are less likely to change
 * Avoid selectors that depend on specific positioning (like `:nth-child`) unless necessary
 * Test your selectors across different pages and screen sizes
 * Consider adding data attributes specifically for guide targeting to ensure reliability
+* Use `:is()` to create flexible selectors that work across multiple similar elements
+{{/partial:admonition}}
+
+**Examples of custom selectors:**
+
+- CSS Selector: `.header-navigation > .menu-item:first-child`
+- XPath: `//div[@class='container']//button[contains(text(), 'Submit')]`
+- CSS with multiple elements: `:is([my-class="foo"],[my-class="bar"])`
+
+{{partial:admonition type='tip'}}
+Amplitude supports most modern CSS selector features, including functional pseudo-classes like: `is()`, `:not()`, `:nth-of-type()`, and `:where()`, allowing you to create more expressive and flexible selectors.
 {{/partial:admonition}}
 
 ## Properties
@@ -203,11 +237,12 @@ Position controls where the guide appears on screen.
 
 | Form factor                              | Options                                                                                                                                                                                                                                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Modal                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
-| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center |
+| Modal                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center. |
+| Popover                                  | Top right, top center, top left, right center, bottom right, bottom center, bottom left, left center, center. |
 | Pins                                     | Controls position of the pin relative to the target element. Select the position and the alignment of the guide. For example, Position: `Bottom of target` and Alignment: `Left` places the guide below the target element, and aligns the guide's left side with the target's left side. |
 | Tooltip                                  | Specify the side of the target element that the info marker appears. Add additional vertical or horizontal offset as necessary.                                                                                                                                                           |
 | Banner                                   | Top or bottom of the page. Set the **Sticky** option to keep the banner visible while the user scrolls. Choose the Display style: **Inline** to display the banner within the contents of the page, or **Overlay** to float the banner on top of the page contents.                       |
+| Card embed <br/> {.tag .web .zero}       | Controls position relative to the target element. Select from **Append, Prepend, Before, After**, or **Replace**. Configure Width (**Auto, Fixed**, or **Full**), Alignment (**Left, Center**, or **Right**) when width isn't Full, and Height (Auto, Fixed, or Full).                                               |
 | Checklist header <br/> {.tag .web .zero} | Bottom left or Bottom right, in relation to the page.                                                                                                                                                                                                                                     |
 
 ### Steps
@@ -228,7 +263,7 @@ When you add a Button, you can choose what happens when users click or tap that 
 
 | Action                     | Description                                                                                                                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visit link                 | A link to the specified website opens in a new tab. (web) or browser (mobile)                                                                                                                      |
+| Visit link                 | Opens the specified website. For **web** guides and surveys, you can choose: **Same tab** (opens in the current tab/screen), **New tab** (opens in a new browser tab), or **Use router** (uses your configured router; requires [router configuration](/docs/guides-and-surveys/sdk#router-configuration)). For **mobile** guides and surveys, the options are: **Open in In-App Browser** (opens the link within your app), **Open in Device Browser** (opens in the device’s default browser), and **Use router**. |
 | Click/Tap element          | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
 | Show guide                 | Launch another guide.                                                                                                                                                             |
 | Show survey                | Launch a survey.                                                                                                                                                                  |

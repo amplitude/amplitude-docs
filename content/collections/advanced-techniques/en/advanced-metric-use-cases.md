@@ -3,9 +3,6 @@ id: e05c2f18-2f1f-4391-ae18-cc1248444688
 blueprint: advanced-technique
 title: 'Advanced metric use cases'
 source: 'https://help.amplitude.com/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment'
-this_article_will_help_you:
-  - "Learn how to use your experiment's metrics in a funnel analysis"
-  - 'Analyze your experiment results based on a subset of users'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329332
@@ -55,7 +52,7 @@ This method filters both the numerator and the denominator of the mean values so
 
 Be cautious of analyzing your experiment's results based on just one subset. You may encounter a false positive when looking for true statistically significant results.
 
-Remember that when you run a [multiple hypothesis test](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing) in this situation, you're actually running a separate hypothesis test for each segment. You may find a positive lift with one subset and a negative decline with another subset. Your decision whether to roll out or roll back in these situations isn't always entirely clear. One option is to roll out only to the group that shows positive lift.
+Remember that when you run a [multiple hypothesis test](/docs/feature-experiment/advanced-techniques/bonferroni-correction) in this situation, you're actually running a separate hypothesis test for each segment. You may find a positive lift with one subset and a negative decline with another subset. Your decision whether to roll out or roll back in these situations isn't always entirely clear. One option is to roll out only to the group that shows positive lift.
 #}}
 
 ## Case 2: Threshold Metrics

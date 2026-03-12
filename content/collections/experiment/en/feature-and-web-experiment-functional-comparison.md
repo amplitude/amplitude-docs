@@ -49,7 +49,7 @@ The following tables describe which Experiment functionality is available for Fe
 | **When to Run**|  |   |
 | When to start | ✅  | ✅  |
 | When to end | ✅  | ✅ |
-| Traffic estimate, Control mean estimator, Power duration estimator for each day | ✅ | ❌ |
+| Traffic estimate, Control mean estimator, Power duration estimator for each day | ✅ | ✅ |
 | OOTB web editor widgets | ❌ |  ✅ |
 | Project-level user permissions | ✅ | ✅  |
 | Notifications through Slack channel or webhook | ✅ | ✅  |
