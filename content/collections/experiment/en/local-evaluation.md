@@ -14,7 +14,14 @@ Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation
 
 Local evaluation runs outside of Amplitude, which means it doesn't support the advanced targeting and identity resolution powered by Amplitude Analytics. However, local evaluation supports consistent bucketing with target segments, which is often enough.
 
-For a comparison of targeting capabilities, go to [Remote evaluation](/docs/feature-experiment/remote-evaluation#targeting-capabilities).
+| Feature | Remote evaluation | Local evaluation |
+| --- | --- | --- |
+| [Consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) | ✅ | ✅ |
+| [Individual inclusions](/docs/feature-experiment/implementation#individual-inclusions) | ✅ | ✅ |
+| [Targeting segments](/docs/feature-experiment/implementation#targeting-segments) | ✅ | ✅ |
+| [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution) | ✅ | ❌ |
+| [User enrichment](/docs/feature-experiment/remote-evaluation#user-enrichment) | ✅ | ❌ |
+| [Sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing) | ✅ | ❌ |
 
 {{partial:admonition type="warning" heading="Client-side local evaluation"}}
 When you use client-side local evaluation, all data used in targeting is included in the flag configuration loaded on the client side. For example, if you target a specific user by their email, that email is visible to all clients, regardless of user.
