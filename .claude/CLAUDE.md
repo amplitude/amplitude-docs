@@ -911,7 +911,14 @@ Use these skills by typing `/skill-name` in the conversation:
 
 ## Agent work logging
 
-**REQUIRED**: Any time you perform substantive work on this repository—editing documentation, creating files, fixing issues, or creating pull requests—append an entry to `AGENT_LOG.md` in the repository root. Log your work at the end of each task, before you finish your response.
+**REQUIRED**: Any time you perform substantive work on this repository—editing documentation, creating files, fixing issues, or creating pull requests—append an entry to `AGENT_LOG.md` in the repository root.
+
+### When to log
+
+Log **immediately after** the action that generates the link:
+- **Creating a PR**: Run `gh pr create`, capture the URL from its output, then append to `AGENT_LOG.md` in the same step. Never log before the PR exists.
+- **Committing without a PR**: Capture the commit hash from `git commit` output, then log.
+- **No commit made**: Log with `N/A` as the link.
 
 ### Format
 
@@ -920,6 +927,16 @@ Add a new row to the table in `AGENT_LOG.md`:
 ```
 | YYYY-MM-DD | Claude Code | Short description | PR/commit link or N/A |
 ```
+
+### How to capture the PR URL
+
+`gh pr create` prints the PR URL as its final line of output. Capture it like this:
+
+```bash
+PR_URL=$(gh pr create --title "..." --body "..." 2>&1 | tail -1)
+```
+
+Then use `$PR_URL` in the log entry.
 
 ### Rules
 

@@ -104,19 +104,23 @@ Provide a clear summary in this format:
 - Create a PR and tag `@tech-writers` for review.
 ```
 
-## Step 8: Log work to AGENT_LOG.md
+## Step 8: Create the PR and log it to AGENT_LOG.md
 
-After completing the task, append a row to `AGENT_LOG.md` in the repository root:
+Run `gh pr create` and capture the URL it prints, then immediately append to `AGENT_LOG.md`. Do both in the same step — never log before the PR exists.
+
+```bash
+PR_URL=$(gh pr create --title "DOC-#### description" --body "Resolves DOC-####. See issue for details." 2>&1 | tail -1)
+```
+
+Then append to `AGENT_LOG.md`:
 
 ```
-| YYYY-MM-DD | Claude Code | Short description | PR/commit link or N/A |
+| YYYY-MM-DD | Claude Code | Short description | $PR_URL |
 ```
 
 - Use today's date.
 - Keep the description brief (under 10 words).
-- Use the full GitHub PR URL if a PR was created, a commit URL if only commits were made, or `N/A` if no commits were made.
-
-This step is required for every work session, not just PRs.
+- If the user creates the PR manually, ask them for the URL and add it to the log before finishing.
 
 ---
 
