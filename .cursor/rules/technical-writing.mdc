@@ -12,6 +12,20 @@ Follow these guidelines when documenting technical concepts, code, and APIs.
 
 Use backticks for all code-related elements:
 
+## Admonition partial parameters
+
+When you use the Statamic admonition partial, always include a non-empty `type` parameter.
+
+- Required format: `{{partial:admonition type="note"}}`.
+- If `type` is missing, add `type="note"`.
+- If `type` exists but is empty (for example, `type=""`), set it to `type="note"`.
+
+**Examples:**
+- ✅ `{{partial:admonition type="tip"}}`
+- ✅ `{{partial:admonition type="note"}}`
+- ❌ `{{partial:admonition}}`
+- ❌ `{{partial:admonition type=""}}`
+
 ### Inline Code Elements
 - File names and paths: `config.json`, `/etc/amplitude/settings`.
 - Function and method names: `logEvent()`, `setUserId()`.

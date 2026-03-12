@@ -78,7 +78,7 @@ To integrate Tealium with Amplitude, follow these steps:
 Tealium iQ uses data layers, which are a spec of the data that flow from a company's digital products and identifies events containing certain event attributes. After you define the data layer, you can install it across all your digital products and use that data for tag vendor configurations like Amplitude. The data layer is vendor-neutral, so you can instrument a data layer and then send it to many different vendor tags.
 
 
-{{partial:admonition type="" title=""}}
+{{partial:admonition type="note" title=""}}
 Include every data layer variable on your app in the *Data Layer* tab.
 {{/partial:admonition}}
 
