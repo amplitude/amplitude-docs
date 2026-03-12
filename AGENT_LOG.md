@@ -7,3 +7,4 @@ Tracks all pull requests submitted by AI agents (Claude Code and Cursor).
 | 2026-03-12 | Cursor | Enforce admonition type default | N/A |
 | 2026-03-12 | Claude Code | Add admonition type rule to CLAUDE.md | N/A |
 | 2026-03-12 | Claude Code | Update Google Ads conversion setup steps | N/A |
+| 2026-03-12 | Claude Code | Remove broken blog post link from recommendations | N/A |
