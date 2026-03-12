@@ -39,8 +39,8 @@ Enable options through `AutocaptureOptions` as described in [Autocapture (iOS)](
 | `[Amplitude] Deep Link Opened` | Deep link opens | URL and referrer-related properties. |
 | `[Amplitude] Network Request` | Captured HTTP traffic (per SDK rules) | `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] Completion Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`, plus optional experimental body and header properties when configured. |
 | `[Amplitude] Element Interacted` | `UIControl` / gesture interaction | `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Target Accessibility Label`, `[Amplitude] Target Accessibility Identifier`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. |
-| `[Amplitude] Rage Click` | Frustration (rage click) | See [Track frustration interactions](/docs/sdks/analytics/ios/ios-swift-sdk#track-frustration-interactions). |
-| `[Amplitude] Dead Click` | Frustration (dead click) | Same section as Rage Click. |
+| `[Amplitude] Rage Click` | Frustration (rage click) | Go to [Track frustration interactions](/docs/sdks/analytics/ios/ios-swift-sdk#track-frustration-interactions) for more information. |
+| `[Amplitude] Dead Click` | Frustration (dead click) | Same as [Rage Click](/docs/sdks/analytics/ios/ios-swift-sdk#track-frustration-interactions). |
 
 ## Android (Kotlin SDK)
 
@@ -59,11 +59,6 @@ Enable options through `AutocaptureOption` as described in [Autocapture (Android
 | `[Amplitude] Deep Link Opened` | Deep link opens | `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. |
 | `[Amplitude] Network Request` | Captured HTTP traffic (plugin) | `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] Completion Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. |
 | `[Amplitude] Element Interacted` | Clickable view or Compose | `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Text`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. |
-| `[Amplitude] Rage Click` | Frustration (optional) | See [Track frustration interactions](/docs/sdks/analytics/android/android-kotlin-sdk#track-frustration-interactions). |
-| `[Amplitude] Dead Click` | Frustration (optional) | Same section as Rage Click. |
+| `[Amplitude] Rage Click` | Frustration (optional) | Go to [Track frustration interactions](/docs/sdks/analytics/android/android-kotlin-sdk#track-frustration-interactions) for more information. |
+| `[Amplitude] Dead Click` | Frustration (optional) | Same as [Rage Click](/docs/sdks/analytics/android/android-kotlin-sdk#track-frustration-interactions). |
 
-## Related resources
-
-- [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk)
-- [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk)
-- [Autocapture events and properties (web)](/docs/data/autocapture-events-and-properties)
