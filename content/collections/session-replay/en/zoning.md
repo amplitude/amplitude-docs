@@ -48,56 +48,32 @@ amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
 
 Optionally, you can include detailed `elementInteractions` settings such as `allowlists` or `viewportContentUpdated.exposureDuration`. 
 
-## Create a zone map
+## Creating a zone map
 
-You create a zone map by defining one or more zones on a page and then viewing aggregated behavior within those zones.
+Create a zone map by defining one or more zones on a page and then viewing aggregated behavior within those zones.
 
-1. Navigate to the Zoning area in Amplitude (exact location in the left navigation is unconfirmed—for example, under *Session Replay* or a dedicated *Zoning* item).
-2. Click the control to create a new zone map (for example, **+ New Zone Map** or **Create zone map**). *Label to be confirmed from the product.*
-3. Select or specify the URL(s) to analyze. If the product supports the same URL matching options as [Heatmaps](/docs/session-replay/heatmaps), you can use:
+1. Navigate to the *Zoning* section from the Amplitude navigation. 
+2. Click **Create Overlay** and select either:
+   * **Single page**
+   * **Page group**
+3. Select the Amplitude space where you want the zone map saved and click **Continue**.
+4. If you're creating a new zone map for a group of pages do the following:
+   a. Click **Create new page group** and enter a name the group.
+   b. Set a condition or rule for the group. For example, setting the URL to begin with a specific domain such as *amplitude.com/*.
+   c. Finish adding rules and click **Create URL group**.
+5. Specify the URL(s) to analyze. If your product supports the same URL matching options as [Heatmaps](/docs/session-replay/heatmaps), you can use:
    * **Exact match** for a single URL.
    * **Pattern match** with wildcards for similar URLs.
    * **Contains** for URLs that include a keyword or segment.
    * **Starts with** for a URL prefix and its subpages.
    * *Confirm which of these options Zoning supports and any differences in behavior.*
-4. Define zones on the page. *The exact flow is unconfirmed.* For example:
-   * You may draw or select rectangular areas on a page snapshot or live view.
-   * You may assign a name or label to each zone (for example, "Hero CTA" or "Nav bar").
-   * You may be able to add, edit, or remove zones before saving the zone map.
-5. Optionally, apply a segment (user properties or cohorts) to limit the zone map to a specific set of users. *Confirm whether segments are supported and where they are configured.*
+6. Confirm that you want to create the page screenshot.
+Amplitude needs the screenshot to create the zone map. You need a screenshot for both single pages and page groups.
+7. Confirm that the correct URL is visibile and then click **Take Screenshot**.
+8. Name the screenshot, describe it, and then save it.
+9. Click each zone to turn it on or off.
 6. Save or apply the zone map so Amplitude can aggregate data for the defined zones.
 
-After the zone map is saved, you can view metrics or replays for each zone (for example, clicks, scrolls, or sessions that touched a zone). *Exact metrics and views need to be confirmed from the product.*
+After the zone map is saved, you can view metrics, user journeys, session replays, for each zone (for example, clicks, scrolls, or sessions that touched a zone). You can also create segments for each zone.
 
-**Unconfirmed:** Whether zone maps use a background snapshot (like Heatmaps), how retention works for zone data, and whether there is a minimum data threshold before a zone map shows results.
-
-## Technical details (unconfirmed)
-
-The following are likely defined in internal technical docs; they were not verified for this draft:
-
-- **SDK and remote config:** The Technical Zoning SDK Remote Config Confluence page likely describes how zones are configured or delivered (e.g. remote config) and any SDK changes needed for Zoning.
-- **Data model:** The Technical Zoning DB Schema Confluence page likely describes how zone definitions and zone-level events or metrics are stored.
-- **Instrumentation:** Whether you must add any instrumentation (e.g. zone IDs or metadata) in your app for Zoning, or whether zones are defined only in the Amplitude UI and applied to existing Session Replay data.
-
-Update this section once those sources are available.
-
-## Common questions
-
-### What is a zone?
-
-A zone is a named, defined area on a page (for example, a rectangle over a hero section or a CTA). Zone maps let you analyze user behavior within those areas instead of only at the full-page or selector level.
-
-### Can I use Zoning with mobile Session Replay?
-
-*Unconfirmed.* Heatmaps are web-only. Confirm whether Zoning supports mobile (iOS/Android) or is web-only.
-
-### How is Zoning different from Heatmaps?
-
-Heatmaps show aggregated clicks, scrolls, and selector interactions across the whole page. Zoning lets you define custom regions (zones) and analyze behavior within those regions. Use Zoning when you care about specific areas you define; use Heatmaps for page-wide patterns.
-
-## Related resources
-
-- [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin)
-- [Heatmaps](/docs/session-replay/heatmaps)
-- [Session Replay settings](/docs/session-replay/session-replay-settings)
-- [User roles and permissions](/docs/admin/account-management/user-roles-permissions)
+Additionally, you can turn on the **Heatmap** overlay to better understand [heatmap](/docs/session-replay/heatmaps) clicks on your page.
