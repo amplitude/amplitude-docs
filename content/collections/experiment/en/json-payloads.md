@@ -258,7 +258,7 @@ In the UI, by clicking **Set payload type**, you choose a payload type for the f
 - **Number**: `variant.payload` is a number.
 - **Object**: `variant.payload` is an object (no fixed keys or types).
 - **Array**: `variant.payload` is an array.
-- **Custom Schema** — You define an object shape with specific keys and types. You choose the type of each field (for example, string, number, boolean, or array) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
+- **Custom Schema**: You define an object shape with specific keys and types. You choose the type of each field (for example, string, number, boolean, or array) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
 
 If a variant payload doesn't match the selected type:
 
