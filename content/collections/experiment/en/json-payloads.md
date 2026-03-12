@@ -254,7 +254,7 @@ In the UI, by clicking **Set payload type**, you choose a payload type for the f
 **Payload type options:**
 
 - **None**: No type enforcement. You can use any valid JSON as a payload.
-- **String** — `variant.payload` is a string.
+- **String**: `variant.payload` is a string.
 - **Number**: `variant.payload` is a number.
 - **Object**: `variant.payload` is an object (no fixed keys or types).
 - **Array**: `variant.payload` is an array.
