@@ -59,7 +59,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/14911842524827'
 
 ## CSVにエクスポートする
 
-内訳表を以下のファイルとして![export_to_CSV.png](/docs/output/img/jp/export-to-csv-png.png)エクスポートするためにクリックします。.CSVファイル[使用するチャートとグループ化の種類によって](https://help.amplitude.com/hc/en-us/articles/115002923888#h_23368329-5147-4369-9d91-6a1d552eab36)、CSVダウンロードには制限があります。
+内訳表を以下のファイルとして![export_to_CSV.png](/docs/output/img/jp/export-to-csv-png.png)エクスポートするためにクリックします。.CSVファイル[使用するチャートとグループ化の種類によって](https://amplitude.com/docs/faq/limits#h_23368329-5147-4369-9d91-6a1d552eab36)、CSVダウンロードには制限があります。
 
 ## 値の検索
 

@@ -14,7 +14,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360049164712'
 
 この記事は、予測を構築して分析するステップを概説します。
 
-**注意：**予測に関する他の記事を必ずチェックしてください - [予測：AmplitudeのAIを使用して、リフトを最大化する](https://help.amplitude.com/hc/en-us/articles/360049161832)、および[キャンペーンで予測を使用する](https://help.amplitude.com/hc/en-us/articles/360049642891)。
+**注意：**予測に関する他の記事を必ずチェックしてください - [予測：AmplitudeのAIを使用して、リフトを最大化する](https://amplitude.com/docs/cdp/audiences/predictions)、および[キャンペーンで予測を使用する](https://amplitude.com/docs/cdp/audiences/predictions-use)。
 
 ## 予測を構築する
 

@@ -2,7 +2,7 @@
 id: b4a5295b-e1dd-4c26-89cc-e8f1ed51e0a1
 blueprint: analytic
 title: 'Customize the Home page'
-source: 'https://help.amplitude.com/hc/en-us/articles/21150695006747-Customize-the-Home-page'
+source: 'https://amplitude.com/docs/analytics/customize-home-page'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632113

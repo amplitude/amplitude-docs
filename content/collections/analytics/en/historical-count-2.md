@@ -2,7 +2,7 @@
 id: 06fa7873-19a6-47ac-9ae0-f5da83396d11
 blueprint: analytic
 title: 'Historical Count, part 2: Order of operations'
-source: 'https://help.amplitude.com/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations'
+source: 'https://amplitude.com/docs/analytics/historical-count-2'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -76,4 +76,4 @@ If we apply the Historical Count filter of 1 to `custom_event_c` within the time
 
 When we apply the Historical Count filter of 2 for `custom_event_c`, the Historical Count will register **Day 3** as the day on which `custom_event_c` was triggered for the second time. 
 
-Continue on with the third article in the Historical Count series: [Historical Count, part 3: Funnels and behavioral cohorts](https://help.amplitude.com/hc/en-us/articles/21065498729243).
+Continue on with the third article in the Historical Count series: [Historical Count, part 3: Funnels and behavioral cohorts](https://amplitude.com/docs/analytics/historical-count-3).

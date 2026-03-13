@@ -2,7 +2,7 @@
 id: 2dd552bc-c1cb-4ca8-884e-543332a380f5
 blueprint: funnel-analysi
 title: 'Compare multiple funnel events in a single step'
-source: 'https://help.amplitude.com/hc/en-us/articles/19458267203099-Compare-multiple-funnel-events-in-a-single-step'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-compare-multiple'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015094
 ---

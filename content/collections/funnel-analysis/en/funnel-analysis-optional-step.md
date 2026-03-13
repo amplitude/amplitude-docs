@@ -2,7 +2,7 @@
 id: 45aaaf38-62c7-49d9-9817-bfc8d765a0ff
 blueprint: funnel-analysi
 title: 'Mark a step in your funnel as optional'
-source: 'https://help.amplitude.com/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-optional-step'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015624
 ---

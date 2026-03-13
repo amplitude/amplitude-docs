@@ -96,7 +96,7 @@ After you deploy the application update, you can sync cohorts.
 
 To sync cohorts between Amplitude and Airship, follow these steps:
 
-1. Create a [behavioral cohort](https://help.amplitude.com/hc/en-us/articles/231881448-Behavioral-Cohorts) in Amplitude. Make sure your cohort contains at least one user.
+1. Create a [behavioral cohort](https://amplitude.com/docs/analytics/behavioral-cohorts) in Amplitude. Make sure your cohort contains at least one user.
 2. In the behavioral cohort, click **Sync** in the menu, and select **Airship**. Your Airship dashboard begins processing this cohort as a new tag under the "Amplitude" tag group.
 
 After the tag finishes processing, compose your message in Airship's Message Composer. The Amplitude-defined tags are in the search bar, under the Amplitude tag group. The tags created in Airship have **[Amplitude]** as a prefix.

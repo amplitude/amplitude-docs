@@ -2,7 +2,7 @@
 id: 0b5fb0a0-d720-4cc4-ad1d-072be91a710f
 blueprint: funnel-analysi
 title: 'Interpret your funnel analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538359
 landing: true

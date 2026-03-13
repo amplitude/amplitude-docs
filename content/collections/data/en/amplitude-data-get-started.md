@@ -2,7 +2,7 @@
 id: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
 blueprint: data
 title: 'Getting set up with Amplitude Data'
-source: 'https://help.amplitude.com/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data'
+source: 'https://amplitude.com/docs/data/amplitude-data-get-started'
 description: 'Data ingestion methods, tracking plans, and best practices.'
 landing: false
 exclude_from_sitemap: false

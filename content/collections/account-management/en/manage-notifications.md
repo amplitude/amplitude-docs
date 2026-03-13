@@ -2,7 +2,7 @@
 id: 1f4c1ebb-ff86-488d-9971-5f5295a00295
 blueprint: account-management
 title: 'Manage user privacy notifications in Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/360031965572-Manage-user-privacy-notifications-in-Amplitude'
+source: 'https://amplitude.com/docs/admin/account-management/manage-notifications'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

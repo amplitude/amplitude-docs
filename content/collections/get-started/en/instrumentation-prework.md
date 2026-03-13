@@ -2,7 +2,7 @@
 id: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
 blueprint: get-started
 title: 'Instrumentation pre-work'
-source: 'https://help.amplitude.com/hc/en-us/articles/206404618-Instrumentation-pre-work'
+source: 'https://amplitude.com/docs/get-started/instrumentation-prework'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -2,7 +2,7 @@
 id: e0d409b0-6eeb-4234-a99c-f8e69e3554c9
 blueprint: analytic
 title: 'Turn your dashboard into a template'
-source: 'https://help.amplitude.com/hc/en-us/articles/19464806559131-Turn-your-dashboard-into-a-template'
+source: 'https://amplitude.com/docs/analytics/dashboard-create-template'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

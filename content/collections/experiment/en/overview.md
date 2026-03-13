@@ -2,12 +2,12 @@
 id: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
 blueprint: experiment
 title: Overview
-source: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
+source: 'https://amplitude.com/docs/experiment/overview'
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538273
-sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
+sourxe: 'https://amplitude.com/docs/experiment/overview'
 landing_blurb: 'Learn the value of experimentation in your product.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab

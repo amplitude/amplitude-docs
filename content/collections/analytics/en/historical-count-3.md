@@ -2,7 +2,7 @@
 id: a4bddb42-4981-4ea5-b915-5ae66fd19031
 blueprint: analytic
 title: 'Historical Count, part 3: Funnels and behavioral cohorts'
-source: 'https://help.amplitude.com/hc/en-us/articles/21065498729243-Historical-Count-part-3-Funnels-and-behavioral-cohorts'
+source: 'https://amplitude.com/docs/analytics/historical-count-3'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

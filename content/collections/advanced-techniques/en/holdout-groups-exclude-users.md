@@ -2,7 +2,7 @@
 id: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
 blueprint: advanced-technique
 title: 'Holdout groups'
-source: 'https://help.amplitude.com/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/holdout-groups-exclude-users'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730484258

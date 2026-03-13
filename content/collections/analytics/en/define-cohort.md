@@ -2,7 +2,7 @@
 id: 18378ff1-dab9-4f2c-bc42-5f2810cdb0fc
 blueprint: analytic
 title: 'Define a new cohort'
-source: 'https://help.amplitude.com/hc/en-us/articles/19528328446363-Define-a-new-cohort'
+source: 'https://amplitude.com/docs/analytics/define-cohort'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
@@ -24,7 +24,7 @@ To define a new [cohort](/docs/analytics/behavioral-cohorts), follow these steps
 
     First, tell Amplitude how you want it to count events. You have six options, all of which are accessible from the **with** dropdown:
 
-    * **Count**. The basis of your cohort is the number of times users trigger your event. For example, all users who triggered Favorite Song or Video more than five times during the last 30 days. See our [Behavioral cohorts FAQ](https://help.amplitude.com/hc/en-us/articles/4402840043789) to learn more about how to create a cohort of users who lack user properties or didn't perform an event.
+    * **Count**. The basis of your cohort is the number of times users trigger your event. For example, all users who triggered Favorite Song or Video more than five times during the last 30 days. See our [Behavioral cohorts FAQ](https://amplitude.com/docs/faq/behavioral-cohorts) to learn more about how to create a cohort of users who lack user properties or didn't perform an event.
     * **Relative count.** Amplitude compares two different event frequencies. For example, all users who triggered Play Song or Video at a greater frequency than Favorite Song or Video during the last 30 days. You have the option to add "where" clauses for both events under comparison.
     * **Total sum of property**. Filters for users who triggered events with a particular event or user property sum. These event or user properties must have numerical values. For example, all users in the last 30 days who triggered Play or Search Song with total Duration value greater than 60 seconds.
     * **Distinct values of property.** Filter for event or user properties down to a specific value or set of values you are analyzing. For example, only those users who favorited a song or video on more than one device.

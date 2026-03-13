@@ -1,6 +1,6 @@
 ---
 title: "Pathfinder: Find the paths your users take on their way to conversion"
-source: "https://help.amplitude.com/hc/en-us/articles/360042951571-Pathfinder-Find-the-paths-your-users-take-on-their-way-to-conversion"
+source: "https://amplitude.com/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder"
 id: 2037ff67-3e51-4a1b-bdbc-faaefa063867
 ---
 

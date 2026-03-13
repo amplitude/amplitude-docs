@@ -2,7 +2,7 @@
 id: 1e47bc76-6edc-4391-afdf-16d74db2fd7a
 blueprint: funnel-analysi
 title: 'How Amplitude computes funnels'
-source: 'https://help.amplitude.com/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632051
 landing: true

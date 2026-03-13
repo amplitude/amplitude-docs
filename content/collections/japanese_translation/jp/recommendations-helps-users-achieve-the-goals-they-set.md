@@ -46,4 +46,4 @@ Amplitude Activationは、アカウントベースではなく、ユーザーベ
 
 これらの条件を満たしていることを確認するために、Amplitude CSMと緊密に連携することをおすすめします。
 
-詳細については、[推奨を構築する方法](https://help.amplitude.com/hc/en-us/articles/360059625252)と[パーソナライゼーションキャンペーンで推奨を使用する方法](https://help.amplitude.com/hc/en-us/articles/360059626072)をお読みください。
+詳細については、[推奨を構築する方法](https://amplitude.com/docs/cdp/audiences/recommendations-build)と[パーソナライゼーションキャンペーンで推奨を使用する方法](https://amplitude.com/docs/cdp/audiences/recommendations-use)をお読みください。

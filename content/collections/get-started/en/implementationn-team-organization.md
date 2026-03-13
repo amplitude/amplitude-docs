@@ -2,7 +2,7 @@
 id: 67184865-248e-4d6c-9a46-3e7495c2e072
 blueprint: get-started
 title: 'How to organize your team for implementation'
-source: 'https://help.amplitude.com/hc/en-us/articles/360039862012-How-to-organize-your-team-for-implementation'
+source: 'https://amplitude.com/docs/get-started/implementationn-team-organization'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 landing: false
 exclude_from_sitemap: false

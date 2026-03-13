@@ -2,7 +2,7 @@
 id: 1683dae2-34bd-4da2-9d02-007416a1836b
 blueprint: funnel-analysi
 title: 'Build a funnel analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/360052745632-Build-a-funnel-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-build'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538336
 landing: true

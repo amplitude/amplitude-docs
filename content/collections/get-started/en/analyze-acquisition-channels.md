@@ -2,7 +2,7 @@
 id: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
 blueprint: get-started
 title: 'Analyze your acquisition channels'
-source: 'https://help.amplitude.com/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels'
+source: 'https://amplitude.com/docs/get-started/analyze-acquisition-channels'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

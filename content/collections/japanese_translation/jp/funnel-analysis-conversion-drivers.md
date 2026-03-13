@@ -28,7 +28,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360039976551'
 ## 始める前に:
 
 * この機能は、エンタープライズ、グロース、スカラーシップのプランにのみ使用できます。
-* まだ[ファネル分析](https://help.amplitude.com/hc/en-us/articles/360039976531-Funnel-Analysis-Getting-Started)チャートに慣れていない場合は、慣れてください。
+* まだ[ファネル分析](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most)チャートに慣れていない場合は、慣れてください。
 * **相互関係は原因と同じではない**ことは常に留意してください。
 * この機能は、コンバージョン指標に設定されるファネルチャートにのみ有効で、イベントの順序は「この順序」に設定されています。
 

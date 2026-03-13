@@ -23,7 +23,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/14994145774875'
 | SOC2レポート | <https://trust.amplitude.com/>へどうぞ |
 | DPAレポート | <https://trust.amplitude.com/>へどうぞ |
 | ロケーションプロパティ（IPアドレス、DMA、市町村など）の無効化 | 今後、イベントの特定のロケーションプロパティを無効にしたい場合 |
-| [オリジナルのユーザープロパティ値の保持](https://help.amplitude.com/hc/en-us/articles/115003135607#h_79012f18-3d1c-41d4-a001-eb09ef036375) | ユーザーがプロパティを統合した後に、最も古いユーザープロパティ値を保持したい場合 |
+| [オリジナルのユーザープロパティ値の保持](https://amplitude.com/docs/data/sources/instrument-track-unique-users#h_79012f18-3d1c-41d4-a001-eb09ef036375) | ユーザーがプロパティを統合した後に、最も古いユーザープロパティ値を保持したい場合 |
 | シークレットキーの交換 | Amplitudeプロジェクトのシークレットキーを交換／変更／更新したい場合 |
 | プロジェクトの削除取り消し／復元 | Amplitudeプロジェクトを復元したい場合 |
 | 組織のURL／名称を忘れてしまった場合 | Amplitude組織に紐づけられている組織のURLを忘れてしまい、ログインができない場合 |

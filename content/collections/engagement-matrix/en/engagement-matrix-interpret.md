@@ -2,7 +2,7 @@
 id: cb0f9cfb-2c99-424d-948a-3a4ee6c9802a
 blueprint: engagement-matrix
 title: 'Interpret your Engagement Matrix'
-source: 'https://help.amplitude.com/hc/en-us/articles/21037634182299-Interpret-your-Engagement-Matrix'
+source: 'https://amplitude.com/docs/analytics/charts/engagement-matrix/engagement-matrix-interpret'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632239
 landing: true

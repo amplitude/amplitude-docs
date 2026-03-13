@@ -3,7 +3,7 @@ id: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
 blueprint: data
 title: 'Visual Labeling'
 landing: true
-source: 'https://help.amplitude.com/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements'
+source: 'https://amplitude.com/docs/data/visual-labeling'
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632626

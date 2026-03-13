@@ -13,7 +13,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360049642891'
 
 予測に基づくコホートは、どのユーザーがコンバージョンする可能性が最も高いかを判断できますが、メールや広告キャンペーンでターゲットを絞り込まない場合、またはエクスペリエンスをパーソナライズしない場合は、メリットがありません。そのため、コホートを予測から保存したら、次のステップはターゲティングキャンペーンにつなげることです。
 
-**注意：**予測に関する他の記事を必ずチェックしてください—[予測：AmplitudeのAIを使用してリフト値を最大化](https://help.amplitude.com/hc/en-us/articles/360049161832-Predictive-cohorts-use-Amplitude-s-AI-to-help-maximize-lift)して、[予測を構築する](https://help.amplitude.com/hc/en-us/articles/360049164712)。
+**注意：**予測に関する他の記事を必ずチェックしてください—[予測：AmplitudeのAIを使用してリフト値を最大化](https://amplitude.com/docs/cdp/audiences/predictions)して、[予測を構築する](https://amplitude.com/docs/cdp/audiences/predictions-build)。
 
 予測に基づくコホートは、次の3つの一般的なキャンペーンタイプで最も役立ちます。
 

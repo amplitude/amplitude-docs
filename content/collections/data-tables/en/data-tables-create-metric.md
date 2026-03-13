@@ -2,7 +2,7 @@
 id: ba7cc6cb-a012-4124-8d8b-87f1ad793a04
 blueprint: data-table
 title: 'Create a metric'
-source: 'https://help.amplitude.com/hc/en-us/articles/10249480038043-Create-a-metric'
+source: 'https://amplitude.com/docs/analytics/charts/data-tables/data-tables-create-metric'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632522
 landing: true

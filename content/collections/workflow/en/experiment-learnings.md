@@ -2,7 +2,7 @@
 id: 2e357f69-a007-4912-8603-5e568d6ddcb8
 blueprint: workflow
 title: 'Learn from your experiment'
-source: 'https://help.amplitude.com/hc/en-us/articles/360061687631-Learn-from-your-experiment'
+source: 'https://amplitude.com/docs/experiment/workflow/experiment-learnings'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1758580175
 landing: false

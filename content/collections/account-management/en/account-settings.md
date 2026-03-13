@@ -2,7 +2,7 @@
 id: aa69523a-2f70-40bb-b904-f478b24d6587
 blueprint: account-management
 title: 'The Settings page'
-source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
+source: 'https://amplitude.com/docs/admin/account-management/account-settings'
 landing: false
 exclude_from_sitemap: false
 updated_by: ac74a6d2-0226-45a6-aaa4-c33675b8ca76

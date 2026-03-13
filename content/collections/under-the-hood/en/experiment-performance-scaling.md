@@ -2,7 +2,7 @@
 id: cd959cf2-2c2e-4672-9616-a5aa254e17c6
 blueprint: under-the-hood
 title: 'Performance and scaling'
-source: 'https://help.amplitude.com/hc/en-us/articles/360061687371-Performance-and-scaling-in-Amplitude-Experiment'
+source: 'https://amplitude.com/docs/experiment/under-the-hood/experiment-performance-scaling'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329160
 ---

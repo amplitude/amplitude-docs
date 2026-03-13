@@ -2,7 +2,7 @@
 id: 32b704e4-319e-4386-9e63-afbd109bc359
 blueprint: retention-analysi
 title: 'Interpret your retention analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/360050153551-Interpret-your-retention-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/retention-analysis/retention-analysis-interpret'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538493
 landing: true

@@ -2,7 +2,7 @@
 id: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Best Practices'
-source: 'https://help.amplitude.com/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices'
+source: 'https://amplitude.com/docs/data/warehouse-native/warehouse-native-amplitude-best-practices'
 exclude_from_sitemap: false
 hide_from_search: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

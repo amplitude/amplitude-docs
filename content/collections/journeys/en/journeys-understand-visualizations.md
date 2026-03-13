@@ -2,7 +2,7 @@
 id: 6e3ae686-82af-453e-b76c-c8253519a8cd
 blueprint: journey
 title: 'Understand and use the Journeys visualizations'
-source: 'https://help.amplitude.com/hc/en-us/articles/16427848208539-Understand-and-use-the-Journeys-visualizations'
+source: 'https://amplitude.com/docs/analytics/charts/journeys/journeys-understand-visualizations'
 landing: true
 landing_blurb: 'Learn the difference between the three different Journey visualizations'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

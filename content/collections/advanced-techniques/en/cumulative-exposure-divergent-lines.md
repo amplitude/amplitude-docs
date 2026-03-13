@@ -2,7 +2,7 @@
 id: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
 blueprint: advanced-technique
 title: 'The cumulative exposures graph: Divergent lines'
-source: 'https://help.amplitude.com/hc/en-us/articles/20722853103643-Interpret-the-cumulative-exposures-graph-Divergent-lines'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/cumulative-exposure-divergent-lines'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329410

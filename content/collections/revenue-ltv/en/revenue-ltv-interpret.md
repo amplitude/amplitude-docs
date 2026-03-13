@@ -2,7 +2,7 @@
 id: 41c34948-571c-4a59-b522-90d2206def5b
 blueprint: revenue-ltv
 title: 'Interpret your revenue analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/14453697446043-Interpret-your-revenue-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/revenue-ltv/revenue-ltv-interpret'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570433
 landing: true

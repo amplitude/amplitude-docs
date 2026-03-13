@@ -2,7 +2,7 @@
 id: df37755a-32f0-4c3b-9589-dd2c71b26a9a
 blueprint: get-started
 title: 'Optimize your Amplitude workflow to improve user engagement'
-source: 'https://help.amplitude.com/hc/en-us/articles/115002661452-Optimize-your-Amplitude-workflow-to-improve-user-engagement'
+source: 'https://amplitude.com/docs/get-started/optimize-amplitude-workflow'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -2,7 +2,7 @@
 id: 52bfe4df-5034-4e5d-bfce-81736bf4face
 blueprint: data
 title: 'Planning and instrumentation workflow'
-source: 'https://help.amplitude.com/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow'
+source: 'https://amplitude.com/docs/data/data-planning-workflow'
 landing: true
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

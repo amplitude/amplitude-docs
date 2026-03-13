@@ -2,7 +2,7 @@
 id: b8a605c9-d9fa-44ee-8508-12991ce72e74
 blueprint: journey
 title: 'Understand the paths users take, and why they convert'
-source: 'https://help.amplitude.com/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert'
+source: 'https://amplitude.com/docs/analytics/charts/journeys/journeys-understand-paths'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538616
 landing: true

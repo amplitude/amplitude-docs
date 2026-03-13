@@ -2,7 +2,7 @@
 id: 186f35a4-5184-46c4-8a96-16184ad038bb
 blueprint: data
 title: 'Data Assistant Overview'
-source: 'https://help.amplitude.com/hc/en-us/articles/17321563434267-Streamline-and-improve-your-tracking-plan-with-the-AI-Data-Assistant'
+source: 'https://amplitude.com/docs/data/use-ai-data-assistant'
 landing: false
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254

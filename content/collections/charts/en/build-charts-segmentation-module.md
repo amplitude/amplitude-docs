@@ -1,6 +1,6 @@
 ---
 title: "Build charts in Amplitude: the Segmentation Module's advanced features"
-source: "https://help.amplitude.com/hc/en-us/articles/360035354552-Build-charts-in-Amplitude-the-Segmentation-Module-s-advanced-features"
+source: "https://amplitude.com/docs/analytics/charts/build-charts-segmentation-module"
 id: b953c7f6-0f2c-4772-ae8f-7b4d2c8a8eb5
 ---
 

@@ -2,7 +2,7 @@
 id: 1d5fc65e-6fbf-4324-8da3-50b2497b3786
 blueprint: analytic
 title: 'Filter your dashboards'
-source: 'https://help.amplitude.com/hc/en-us/articles/19465004411803-Filter-your-dashboards'
+source: 'https://amplitude.com/docs/analytics/dashboard-filter'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

@@ -3,7 +3,7 @@ id: b0dbd2cc-9051-4a25-aaf3-5fd9219686b3
 blueprint: other-chart
 published: false
 title: 'Amplitude SQL: Table schema and field shortcuts'
-source: 'https://help.amplitude.com/hc/en-us/articles/20460581705243-Amplitude-SQL-Table-schema-and-field-shortcuts'
+source: 'https://amplitude.com/docs/analytics/charts/other-charts/other-charts-amplitude-sql-schema'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1748562078
 landing: true
@@ -11,7 +11,7 @@ landing_blurb: 'Use field shortcuts to query your Snowflake database in Amplitud
 ---
 ## Special field shortcuts
 
-Because [Amplitude SQL](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) is built directly into the Amplitude chart experience, you can leverage much of the same familiar Amplitude user interface, such as the [datepicker](https://help.amplitude.com/hc/en-us/articles/18133682827419-The-datepicker) chart saving experience. You can do this by using Amplitude SQL's special fields for powerful shortcuts:
+Because [Amplitude SQL](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) is built directly into the Amplitude chart experience, you can leverage much of the same familiar Amplitude user interface, such as the [datepicker](https://amplitude.com/docs/faq/the-datepicker) chart saving experience. You can do this by using Amplitude SQL's special fields for powerful shortcuts:
 
 * **`$date`:** When using this shortcut, the time range chosen by the datepicker is automatically applied and will update the query over time. It refers to the event time on the event and will respect the timezone the project has been set to. Otherwise, Amplitude SQL will return data in UTC. This must be used in conjunction with **`$events`**.
 * **`$events`:** The shorthand used to refer to the table in your current project. When using this table, [merged users](/docs/data/sources/instrument-track-unique-users) are automatically handled. Note: This must be used in conjunction with **`$date`**.

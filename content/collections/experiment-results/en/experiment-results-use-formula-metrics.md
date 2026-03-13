@@ -2,7 +2,7 @@
 id: 787229f3-9b4a-4819-a7cb-41554a29fd8b
 blueprint: experiment-result
 title: 'Using formula metrics in Experiment Results'
-source: 'https://help.amplitude.com/hc/en-us/articles/13885412065179-Using-formula-metrics-in-Experiment-Results'
+source: 'https://amplitude.com/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics'
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

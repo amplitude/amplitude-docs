@@ -2,7 +2,7 @@
 id: 0df24254-7a86-4733-a65c-08b41eb4d5cf
 blueprint: analytic
 title: 'Embed Amplitude charts in Notion documents'
-source: 'https://help.amplitude.com/hc/en-us/articles/5786072827291-Embed-Amplitude-charts-in-Notion-documents'
+source: 'https://amplitude.com/docs/analytics/chart-embed-notion'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

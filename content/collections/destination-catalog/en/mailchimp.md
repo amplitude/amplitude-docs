@@ -40,7 +40,7 @@ Send Amplitude cohorts to Mailchimp to create targeted audiences for your email 
 4. Authorize Amplitude access to your account. Mailchimp redirects back to Amplitude. 
 5. Enter the Mailchimp audience ID and select an Amplitude user property to export from the drop down. This user property **must** contain an email address; without one, the mapping to Mailchimp fails.
 6. Save your work. 
-7. Open or create the [cohort](https://help.amplitude.com/hc/en-us/articles/231881448-Behavioral-Cohorts) of users you wish to export from Amplitude to Mailchimp and click **Sync** . This opens the *Select Sync Type* modal.
+7. Open or create the [cohort](https://amplitude.com/docs/analytics/behavioral-cohorts) of users you wish to export from Amplitude to Mailchimp and click **Sync** . This opens the *Select Sync Type* modal.
 8. From Sync Type, select **Messaging**, and then under Select Destination, select **Mailchimp**. Click **Next**.
 9. Select your destination from the **API Target** dropdown. Under Define Cadence, select either a one-time or scheduled sync. Then click **Sync** and wait for Amplitude to sync your cohort to Mailchimp.
 

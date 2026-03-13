@@ -2,7 +2,7 @@
 id: 849868aa-1ae1-4e02-be90-2d2f2a4a17af
 blueprint: user-session
 title: 'Interpret your User Sessions chart'
-source: 'https://help.amplitude.com/hc/en-us/articles/20997387039387-Interpret-your-User-Sessions-chart'
+source: 'https://amplitude.com/docs/analytics/charts/user-sessions/user-sessions-interpret'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538792
 landing: true
@@ -33,7 +33,7 @@ Using the example from above, the breakdown table's results have been segmented 
 ![userSessionsBreakdownTable.png](/docs/output/img/user-sessions/usersessionsbreakdowntable-png.png)
 
 {{partial:admonition type='note'}}
- Sometimes users will be counted as `(none)` if the segmented property values are not available at the time the events are triggered. [Read more about `(none)` or unexpected values in this FAQ article](https://help.amplitude.com/hc/en-us/articles/360016257391#Event-Properties). 
+ Sometimes users will be counted as `(none)` if the segmented property values are not available at the time the events are triggered. [Read more about `(none)` or unexpected values in this FAQ article](https://amplitude.com/docs/faq/unexpected-values-in-user-counts#Event-Properties). 
 {{/partial:admonition}}
 
 ## The three ways Amplitude records sessions

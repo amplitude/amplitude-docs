@@ -2,7 +2,7 @@
 id: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
 blueprint: workflow
 title: 'Test and launch your experiment'
-source: 'https://help.amplitude.com/hc/en-us/articles/360061687611-Test-and-launch-your-experiment'
+source: 'https://amplitude.com/docs/experiment/workflow/experiment-test'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517033
 ---

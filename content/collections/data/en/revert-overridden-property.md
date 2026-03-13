@@ -2,7 +2,7 @@
 id: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
 blueprint: data
 title: 'Revert an overridden property definition'
-source: 'https://help.amplitude.com/hc/en-us/articles/10831709352987-Revert-an-overridden-property'
+source: 'https://amplitude.com/docs/data/revert-overridden-property'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

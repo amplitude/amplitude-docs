@@ -2,7 +2,7 @@
 id: 7f411988-132d-4623-89d3-730f4bc54d52
 blueprint: funnel-analysi
 title: 'How Amplitude handles simultaneous events in a funnel'
-source: 'https://help.amplitude.com/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-simultaneous-events'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015451
 ---

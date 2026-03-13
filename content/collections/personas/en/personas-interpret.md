@@ -2,7 +2,7 @@
 id: 21fd5184-cff2-4c81-9ca5-1a67c8901894
 blueprint: persona
 title: 'Interpret your Personas chart'
-source: 'https://help.amplitude.com/hc/en-us/articles/20719767917083-Interpret-your-Personas-chart'
+source: 'https://amplitude.com/docs/analytics/charts/personas/personas-interpret'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104252
 landing: true

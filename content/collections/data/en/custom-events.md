@@ -2,7 +2,7 @@
 id: c2c4ceb7-94ab-44f8-967a-99ff8f07e800
 blueprint: data
 title: 'Custom events'
-source: 'https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events'
+source: 'https://amplitude.com/docs/data/custom-events'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

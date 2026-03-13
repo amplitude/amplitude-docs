@@ -2,7 +2,7 @@
 id: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
 blueprint: data
 title: 'About user properties and event properties'
-source: 'https://help.amplitude.com/hc/en-us/articles/115002380567-Overview-of-user-properties-and-event-properties-in-Amplitude'
+source: 'https://amplitude.com/docs/data/user-properties-and-events'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

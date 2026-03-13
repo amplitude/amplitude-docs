@@ -2,7 +2,7 @@
 id: 4f8ff2b3-3a37-4d4e-82db-9de672b7149f
 blueprint: account-management
 title: 'Manage permissions at scale with permission groups'
-source: 'https://help.amplitude.com/hc/en-us/articles/360044588191-Manage-permissions-at-scale-with-permission-groups'
+source: 'https://amplitude.com/docs/admin/account-management/manage-permission-groups'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

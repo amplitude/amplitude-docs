@@ -2,7 +2,7 @@
 id: 18b193bc-6806-48f7-997a-595aff1fbf91
 blueprint: compass
 title: "Find your company's inflection metrics with Compass"
-source: 'https://help.amplitude.com/hc/en-us/articles/115001526027-Find-your-company-s-inflection-metrics-with-Compass'
+source: 'https://amplitude.com/docs/analytics/charts/compass/compass-find-inflection-metrics'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103943
 landing: true
@@ -109,4 +109,4 @@ These inflection metrics tend to balance all five of the detailed statistics des
 
 It's also important to check that the sample size is enough to draw conclusions. There's no magic number for this, as it depends on your total user volume, but you can see the effect of sample size by clicking on the blue +- number (the 95% confidence interval) next to the correlation. Change the date range to increase  Sample size can: You can use up to 90 days of data.
 
-Understand that Compass exposes **correlations** from your data—hypotheses you can now test by making changes to your product and/or lifecycle marketing. The only way to prove a causal relationship is to run an A/B or split test to isolate those changes. Read more about how you can [analyze A/B test results on Amplitude](https://help.amplitude.com/hc/en-us/articles/115001580108).
+Understand that Compass exposes **correlations** from your data—hypotheses you can now test by making changes to your product and/or lifecycle marketing. The only way to prove a causal relationship is to run an A/B or split test to isolate those changes. Read more about how you can [analyze A/B test results on Amplitude](https://amplitude.com/docs/get-started/analyze-a-b-test-results).

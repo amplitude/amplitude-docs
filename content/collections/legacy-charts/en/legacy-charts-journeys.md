@@ -1,6 +1,6 @@
 ---
 title: "Journeys: Discover what's making your users convert or drop off"
-source: "https://help.amplitude.com/hc/en-us/articles/360050769531-Journeys-Discover-what-s-making-your-users-convert-or-drop-off"
+source: "https://amplitude.com/docs/analytics/charts/legacy-charts/legacy-charts-journeys"
 id: 660ff7f2-c116-4841-8473-fe7a7ab95462
 ---
 

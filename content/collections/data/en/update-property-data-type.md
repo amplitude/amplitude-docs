@@ -2,7 +2,7 @@
 id: 09910eae-5073-45e2-9f8b-5b8cdb11806a
 blueprint: data
 title: 'Property types'
-source: 'https://help.amplitude.com/hc/en-us/articles/17050314884635-Set-or-change-a-property-s-data-type'
+source: 'https://amplitude.com/docs/data/update-property-data-type'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

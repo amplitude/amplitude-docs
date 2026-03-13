@@ -119,7 +119,7 @@ If you want to view the report for an existing event, go to **My Workspace** \> 
 5. To save the chart, click **Save**.
 
    {{partial:admonition type="note" heading=""}}
-   If you notice a visitor's event property or custom user property getting counted under *none* or showing an unexpected value, refer to [Unexpected values in user counts](https://help.amplitude.com/hc/en-us/articles/360016257391-FAQ-User-counted-under-none-or-an-unexpected-value).
+   If you notice a visitor's event property or custom user property getting counted under *none* or showing an unexpected value, refer to [Unexpected values in user counts](https://amplitude.com/docs/faq/unexpected-values-in-user-counts).
    {{/partial:admonition}}
 
 ## Send VWO Insights (Surveys) data to Amplitude

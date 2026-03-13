@@ -5,7 +5,7 @@ title: 'Questions your engineer might ask you'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-source: https://help.amplitude.com/hc/en-us/articles/16798497073947-Questions-your-engineer-may-ask-you
+source: https://amplitude.com/docs/get-started/engineer-questions
 updated_at: 1718660315
 ---
 Sometimes, your engineer may have questions for you about how you want to use and classify data in Amplitude. Here are some common ones, along with some resources to help you answer them.

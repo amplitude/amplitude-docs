@@ -2,7 +2,7 @@
 id: e60222af-17b8-480f-98cd-c8c5fbeab897
 blueprint: funnel-analysi
 title: 'Combine funnel events inline'
-source: 'https://help.amplitude.com/hc/en-us/articles/19458351187483-Combine-funnel-events-inline'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-combine-events'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717014959
 ---

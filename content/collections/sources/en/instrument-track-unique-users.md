@@ -2,7 +2,7 @@
 id: e5e8c350-b75d-4c43-83a0-833ff186a0be
 blueprint: source
 title: 'Track unique users'
-source: 'https://help.amplitude.com/hc/en-us/articles/115003135607-Track-unique-users'
+source: 'https://amplitude.com/docs/data/sources/instrument-track-unique-users'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

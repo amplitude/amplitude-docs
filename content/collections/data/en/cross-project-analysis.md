@@ -2,7 +2,7 @@
 id: 6389c912-154c-42fe-afea-07db4a295404
 blueprint: data
 title: 'Cross-project analysis with Portfolios'
-source: 'https://help.amplitude.com/hc/en-us/articles/14909802992283-Cross-project-analysis-in-Amplitude-Data'
+source: 'https://amplitude.com/docs/data/cross-project-analysis'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

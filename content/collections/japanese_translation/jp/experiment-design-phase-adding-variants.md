@@ -16,9 +16,9 @@ source: 'https://help.amplitude.com/hc/ja/articles/4405832771995'
 
 バリアントは、*[設定]*タブで追加されます。
 
-実験設定を指定することから始めます。 [設定]**パネルの***[デプロイメント]*ドロップダウンメニューから、実験のデプロイメント（単数または複数）を選択します。導入の作業の詳細については、[Amplitude Experimentの設定に関するこちらの記事を参照してください](https://help.amplitude.com/hc/en-us/articles/360061270372)。
+実験設定を指定することから始めます。 [設定]**パネルの***[デプロイメント]*ドロップダウンメニューから、実験のデプロイメント（単数または複数）を選択します。導入の作業の詳細については、[Amplitude Experimentの設定に関するこちらの記事を参照してください](https://amplitude.com/docs/experiment/workflow/configure)。
 
-次に、実験を排除グループに追加するオプションがあります。Amplitude Experimentでは、その集団の他の実験に相互排反となります。排除グループで1つの実験を表示するユーザーには、グループの他の実験が表示されません。排除グループに実験を追加するには、[Amplitude Experimentの相互排反の実験](https://help.amplitude.com/hc/en-us/articles/360061270712)に関するヘルプセンターの記事のステップに従ってください。
+次に、実験を排除グループに追加するオプションがあります。Amplitude Experimentでは、その集団の他の実験に相互排反となります。排除グループで1つの実験を表示するユーザーには、グループの他の実験が表示されません。排除グループに実験を追加するには、[Amplitude Experimentの相互排反の実験](https://amplitude.com/docs/experiment/advanced-techniques/mutually-exclusive-experiments)に関するヘルプセンターの記事のステップに従ってください。
 
 ![variants.gif](/docs/output/img/jp/variants-gif.gif)
 
@@ -26,7 +26,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/4405832771995'
 
 * **スティッキーバケット。**実験を開始した後に、割り当てを変更する場合があります。これにより、ユーザーが既に見たものと違うバリアントに割り当てられます。スティッキーバケットを有効にすると、ユーザーが割り当てられたら、同じバリアントを継続することができます。 *スティッキーバケット*トグルを[有効]に切り替えることで、実行します。1つの実験の勝利バリアントを、すべてのユーザーにロールアウトする場合、Amplitudeがすべてのユーザーをそのバリアントに再度割り当てられるように、スティッキーバケットを**無効**にする必要があります。詳細については、[Amplitude開発者センター](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#sticky-bucketing)のこの記事を参照してください。
 * **評価モード**。実験のリモートまたはローカル評価を選択するのに、このドロップダウンを使用します。詳細については、[Amplitude開発者センター](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/)のこちらの記事を参照してください。
-* **バケットソルト。**これを変更すると、実験でユーザーがバリアントを切り替える可能性があります。そのため、**理解するまで、**これを変更しないことを推奨します。詳細については、[Amplitude Experimentでランダム化がどのように機能するか](https://help.amplitude.com/hc/en-us/articles/360061687351)についてのヘルプセンターの記事を参照してください。
+* **バケットソルト。**これを変更すると、実験でユーザーがバリアントを切り替える可能性があります。そのため、**理解するまで、**これを変更しないことを推奨します。詳細については、[Amplitude Experimentでランダム化がどのように機能するか](https://amplitude.com/docs/experiment/under-the-hood/experiment-randomization)についてのヘルプセンターの記事を参照してください。
 
 ## 実験にバリアントを追加する
 
@@ -36,7 +36,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/4405832771995'
 
 該当するフィールドにバリアントの名前と説明を記入します。Amplitude Experimentは、入力した名前から**バリアント値**を自動的に生成します。バリアント値は、コードベースで**フラグ**として使用する文字列です。完了したら、*[バリアントを作成する]*をクリックします。
 
-実験に**追加できるバリアントの数に**制限はありませんが、追加し過ぎると、[実験が統計的有意性に達することが難しくなります](https://help.amplitude.com/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment)。多くても実験のバリアントを一握りに限定してください。
+実験に**追加できるバリアントの数に**制限はありませんが、追加し過ぎると、[実験が統計的有意性に達することが難しくなります](https://amplitude.com/docs/experiment/advanced-techniques/multiple-hypothesis-testing)。多くても実験のバリアントを一握りに限定してください。
 
 デフォルトでは、Amplitude Experimentは、追加した最初のバリアントをコントロールとして使用します。 これを変更するには、別のバリアントを*[バリアント]*セクションの上部にドラッグします。実験が起動したときに*A*と表示されたバリアントがコントロールになります。
 
@@ -52,4 +52,4 @@ source: 'https://help.amplitude.com/hc/ja/articles/4405832771995'
 
 必ず**変更を定期的に**保存してください。
 
-次に、[実験のトラフィックを割り当てます](https://help.amplitude.com/hc/en-us/articles/9795802005019)。
+次に、[実験のトラフィックを割り当てます](https://amplitude.com/docs/experiment/workflow/define-audience)。

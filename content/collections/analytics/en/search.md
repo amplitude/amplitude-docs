@@ -2,7 +2,7 @@
 id: 60d62f7b-944a-4b94-a2ae-ca02f15615c7
 blueprint: analytic
 title: 'Search: Find charts, dashboards, cohorts, and notebooks'
-source: 'https://help.amplitude.com/hc/en-us/articles/236051328-Search-Find-charts-dashboards-cohorts-and-notebooks'
+source: 'https://amplitude.com/docs/analytics/search'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

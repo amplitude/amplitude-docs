@@ -2,7 +2,7 @@
 id: 936ddb55-b2b1-4519-87d2-22aa7cfba76a
 blueprint: analytic
 title: "Change your dashboard's display preferences"
-source: 'https://help.amplitude.com/hc/en-us/articles/19464952104475-Change-your-dashboard-s-display-preferences'
+source: 'https://amplitude.com/docs/analytics/dashboard-preferences'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

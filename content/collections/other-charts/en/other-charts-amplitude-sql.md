@@ -3,7 +3,7 @@ id: c7cb6e27-26b0-4f01-a613-3debe6f94fff
 published: false
 blueprint: other-chart
 title: 'Amplitude SQL: Getting started with Query'
-source: 'https://help.amplitude.com/hc/en-us/articles/115001902492-Amplitude-SQL-Getting-started-with-Query'
+source: 'https://amplitude.com/docs/analytics/charts/other-charts/other-charts-amplitude-sql'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1748562108
 landing: true

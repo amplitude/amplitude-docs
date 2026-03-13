@@ -15,7 +15,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/206404618'
 5. [プラットフォーム](/docs/get-started/cross-platform-vs-separate-platform)：両者の違いと、どちらの方法を選ぶべきかの説明
 6. [AmplitudeとSnowflakeで実際に強力なリソースを体験：](https://help.amplitude.com/hc/en-us/articles/206404718)SnowflakeとAmplitudeを併用し、SQLを介して重要な質問に回答
 
-（Amplitudeのインストルメンテーションを担当される開発者やプロダクトマネージャーの方は、[開発者向けスタートガイド](https://help.amplitude.com/hc/en-us/articles/115000959052-For-Developers-Getting-Started)も合わせてお読みください。）
+（Amplitudeのインストルメンテーションを担当される開発者やプロダクトマネージャーの方は、[開発者向けスタートガイド](https://amplitude.com/docs/data/data-get-started)も合わせてお読みください。）
 
 インストルメンテーションプロセスに進む前に、いくつか行う必要があることがあります。
 

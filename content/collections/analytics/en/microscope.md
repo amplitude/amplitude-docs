@@ -2,7 +2,7 @@
 id: a78497a9-734e-4d88-9e3c-1c2a8d1cb102
 blueprint: analytic
 title: 'Microscope: Explore individual data points in your charts'
-source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
+source: 'https://amplitude.com/docs/analytics/microscope'
 landing: false
 exclude_from_sitemap: false
 updated_by: 1e99c1bd-1813-4b3d-a934-2cd98b423c0d

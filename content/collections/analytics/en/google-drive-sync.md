@@ -2,7 +2,7 @@
 id: e8751734-3ee9-4d9e-aaaf-a0e840d88c29
 blueprint: analytic
 title: 'Sync your Amplitude data to Google Drive and Sheets'
-source: 'https://help.amplitude.com/hc/en-us/articles/17787338689307-Sync-your-Amplitude-data-to-Google-Drive-and-Sheets'
+source: 'https://amplitude.com/docs/analytics/google-drive-sync'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

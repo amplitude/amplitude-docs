@@ -2,7 +2,7 @@
 id: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
 blueprint: data
 title: 'Object management'
-source: 'https://help.amplitude.com/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses'
+source: 'https://amplitude.com/docs/data/object-management'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

@@ -2,7 +2,7 @@
 id: 6d16855b-8236-4455-9383-d4c537bf7a32
 blueprint: event-segmentation
 title: 'Choose the right measurement'
-source: 'https://help.amplitude.com/hc/en-us/articles/19688391224731-Choose-the-right-measurement-for-your-Event-Segmentation-chart'
+source: 'https://amplitude.com/docs/analytics/charts/event-segmentation/event-segmentation-choose-measurement'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632414
 landing: true

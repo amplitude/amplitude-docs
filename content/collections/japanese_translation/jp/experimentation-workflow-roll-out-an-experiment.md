@@ -53,4 +53,4 @@ source: 'https://help.amplitude.com/hc/ja/articles/360061687611'
 
 実験を続ける場合、新しい終了日を入力できます。
 
-実験をロールアウトした後、次のステップは[実験から学ぶ](https://help.amplitude.com/hc/en-us/articles/360061687631)ことです。
+実験をロールアウトした後、次のステップは[実験から学ぶ](https://amplitude.com/docs/experiment/workflow/experiment-learnings)ことです。

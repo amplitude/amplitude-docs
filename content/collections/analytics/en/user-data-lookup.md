@@ -2,7 +2,7 @@
 id: aefa5d79-7782-4b2c-a7dd-35b129a7f35e
 blueprint: analytic
 title: 'Look up event data for individual users'
-source: 'https://help.amplitude.com/hc/en-us/articles/229313067-Look-up-event-data-for-individual-users'
+source: 'https://amplitude.com/docs/analytics/user-data-lookup'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

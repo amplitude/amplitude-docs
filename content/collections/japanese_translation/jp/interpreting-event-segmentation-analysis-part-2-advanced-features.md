@@ -102,4 +102,4 @@ source: 'https://help.amplitude.com/hc/ja/articles/14056975720091'
 
 ![解釈](/docs/output/img/jp/jie-shi.png)
 
-また、イベントセグメンテーションチャートについてのFAQは[こちら](https://help.amplitude.com/hc/en-us/articles/360052734691)です。
+また、イベントセグメンテーションチャートについてのFAQは[こちら](https://amplitude.com/docs/faq/event-segmentation)です。

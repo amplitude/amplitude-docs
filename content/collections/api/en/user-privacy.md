@@ -21,7 +21,7 @@ summary: 'Programmatically submit requests to delete all data for a set of known
 Keep these considerations in mind when using the User Privacy API.
 
 - You may delete all data tied to an end user across your entire organization or across a particular project. By default, deletion requests submitted through the User Privacy API create jobs for a particular project within your organization. The API key provided in the request identifies this project. To delete a user across your entire organization, follow the guidelines below in "JSON body parameter" and set the `delete_from_org` parameter to `true` in your request. In this case, the `ignore_invalid_ids` parameter is ignored and treated as `true`. The API then creates one deletion job per project across your entire organization that contains information on the requested users.
-- When you make a deletion request, Amplitude [emails all account admins](https://help.amplitude.com/hc/en-us/articles/360031965572-Manage-user-privacy-notifications-in-Amplitude) with the deletion details.
+- When you make a deletion request, Amplitude [emails all account admins](https://amplitude.com/docs/admin/account-management/manage-notifications) with the deletion details.
 - Amplitude deletes all events and user properties added up until the time that job runs for each Amplitude ID in a deletion job.
 - Running a deletion job for a user doesn't block new events for that user. Amplitude accepts new events from a deleted user.
 - If Amplitude receives events for a deleted user, then it counts the deleted user as a new user.

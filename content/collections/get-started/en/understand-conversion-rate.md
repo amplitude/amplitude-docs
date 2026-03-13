@@ -2,7 +2,7 @@
 id: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
 blueprint: get-started
 title: 'Understand the conversion rate of an important flow'
-source: 'https://help.amplitude.com/hc/en-us/articles/16797878206747-Understand-the-conversion-rate-of-an-important-flow'
+source: 'https://amplitude.com/docs/get-started/understand-conversion-rate'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

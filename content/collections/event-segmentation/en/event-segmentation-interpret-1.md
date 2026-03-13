@@ -2,7 +2,7 @@
 id: 5aca2f50-8212-432f-b161-41319f88d8ac
 blueprint: event-segmentation
 title: 'Interpret your analysis, part 1'
-source: 'https://help.amplitude.com/hc/en-us/articles/360035355132-Interpret-your-event-segmentation-analysis-part-1'
+source: 'https://amplitude.com/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632469
 landing: true

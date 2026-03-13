@@ -1,6 +1,6 @@
 ---
 title: "Change the description of an event or property"
-source: "https://help.amplitude.com/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property"
+source: "https://amplitude.com/docs/data/change-event-description"
 id: acd3a1dc-ad94-4730-b859-280c46747eb7
 ---
 You can change the description for an **event** to help other members of your organization understand what an event represents. To do so, follow these steps:

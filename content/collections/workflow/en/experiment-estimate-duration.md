@@ -2,7 +2,7 @@
 id: 183eec11-905d-4333-afaf-089e46ca0b55
 blueprint: workflow
 title: 'Estimate the duration of your experiments'
-source: 'https://help.amplitude.com/hc/en-us/articles/11502996649371-Estimate-the-duration-of-your-experiments'
+source: 'https://amplitude.com/docs/experiment/workflow/experiment-estimate-duration'
 this_article_will_help_you:
   - Calculate how long your experiment needs to run to reach statistical significance.
   - Use automated data from Analytics to plan experiments without manual lookups.

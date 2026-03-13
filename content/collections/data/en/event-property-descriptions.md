@@ -2,7 +2,7 @@
 id: eabe8de8-fe63-42b8-a93d-eb1d10884b43
 blueprint: data
 title: 'Event and property descriptions'
-source: 'https://help.amplitude.com/hc/en-us/articles/16805655718939-Event-and-property-descriptions'
+source: 'https://amplitude.com/docs/data/event-property-descriptions'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -2,7 +2,7 @@
 id: 1912398b-4b46-42ce-b63e-44d4f0f01881
 blueprint: data
 title: 'Work with branches'
-source: 'https://help.amplitude.com/hc/en-us/articles/5078713391387-Work-with-branches'
+source: 'https://amplitude.com/docs/data/work-with-branches'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

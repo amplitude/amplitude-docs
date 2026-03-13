@@ -22,7 +22,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713478534
 ---
 
-This integration enables you to create [custom audiences](https://www.facebook.com/business/help/381385302004628) from your first-party behavioral data to drive new user acquisition and conversions. With this integration, you can upload and sync [behavioral cohorts](https://help.amplitude.com/hc/en-us/articles/231881448) directly to Facebook for campaign targeting throughout the Facebook ad network.  
+This integration enables you to create [custom audiences](https://www.facebook.com/business/help/381385302004628) from your first-party behavioral data to drive new user acquisition and conversions. With this integration, you can upload and sync [behavioral cohorts](https://amplitude.com/docs/analytics/behavioral-cohorts) directly to Facebook for campaign targeting throughout the Facebook ad network.  
 
 ## Considerations
 

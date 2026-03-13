@@ -23,7 +23,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/11502996649371'
 期間推定ツールは、実験の理想的な段取りを判断するために、計画段階と構成段階で使用することができます。期間推定ツールを使用する前に、少なくとも次の設定を行ってください。
 
 * 実験の主要指標を選択する
-* デフォルトの方向（増加）とデフォルトの[MDE](https://help.amplitude.com/hc/en-us/articles/12785071886875)（2％）を確認し、必要に応じて変更する
+* デフォルトの方向（増加）とデフォルトの[MDE](https://amplitude.com/docs/experiment/experiment-theory/experiment-set-mde)（2％）を確認し、必要に応じて変更する
 * ゼロ以外のロールアウトパーセンテージを設定する
 
 実験の設定を増やすほど、推定が正確になります。*[Plan]*（計画）タブと*[Configure]*（設定）タブの項目をすべて完了すると、より良い見積もりを得ることができます。

@@ -1,6 +1,6 @@
 ---
 title: "The Pathfinder Users chart: see the paths your users take through your product"
-source: "https://help.amplitude.com/hc/en-us/articles/235777567-The-Pathfinder-Users-chart-see-the-paths-your-users-take-through-your-product"
+source: "https://amplitude.com/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users"
 id: 8a84c13d-eec2-4ad3-a0f8-2d5242390af9
 published: false
 ---

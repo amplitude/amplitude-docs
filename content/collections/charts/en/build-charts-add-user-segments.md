@@ -2,7 +2,7 @@
 id: 042dfad4-dabb-4fc0-99d1-41da803b50ac
 blueprint: chart
 title: 'Build charts in Amplitude: Add user segments'
-source: 'https://help.amplitude.com/hc/en-us/articles/13650690245915-Build-charts-in-Amplitude-Add-user-segments'
+source: 'https://amplitude.com/docs/analytics/charts/build-charts-add-user-segments'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

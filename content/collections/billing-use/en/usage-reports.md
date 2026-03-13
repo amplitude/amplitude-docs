@@ -2,7 +2,7 @@
 id: f8f8b50e-f22a-4c92-8845-01e630b6f7d6
 blueprint: billing-use
 title: 'Usage reports: Understand how your organization uses Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude'
+source: 'https://amplitude.com/docs/admin/billing-use/usage-reports'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

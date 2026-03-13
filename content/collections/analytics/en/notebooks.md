@@ -2,7 +2,7 @@
 id: e729223d-747e-44b5-b0ba-ed96f15acb60
 blueprint: analytic
 title: 'Notebooks: Explain important insights to teammates and stakeholders'
-source: 'https://help.amplitude.com/hc/en-us/articles/360016281172-Notebooks-Explain-important-insights-to-teammates-and-stakeholders'
+source: 'https://amplitude.com/docs/analytics/notebooks'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

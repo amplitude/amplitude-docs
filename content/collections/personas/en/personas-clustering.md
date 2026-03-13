@@ -2,7 +2,7 @@
 id: 53d28de0-5610-4a79-9935-0fbf2c295e4f
 blueprint: persona
 title: "The Personas chart: Find your product's user personas"
-source: 'https://help.amplitude.com/hc/en-us/articles/235648588-The-Personas-chart-Use-clustering-analysis-to-find-your-product-s-user-personas'
+source: 'https://amplitude.com/docs/analytics/charts/personas/personas-clustering'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104268
 partner_maintained: false
@@ -27,7 +27,7 @@ If you're already familiar with Amplitude, the first thing you'll notice about t
 Instead, there is the Cluster Generation Module, the Cluster Count Module, and the Target Cohort Module.  
 
 {{partial:admonition type='note'}}
- Be sure to check out the FAQ article on [how Amplitude calculates clusters](https://help.amplitude.com/hc/en-us/articles/360053937572).
+ Be sure to check out the FAQ article on [how Amplitude calculates clusters](https://amplitude.com/docs/faq/personas).
 {{/partial:admonition}}
 
 ## Set up a Personas chart

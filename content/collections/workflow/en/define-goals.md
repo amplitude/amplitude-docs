@@ -2,7 +2,7 @@
 id: f8a65f47-6611-4f85-a5e4-3602c5b5821b
 blueprint: workflow
 title: "Define your experiment's goals"
-source: 'https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals'
+source: 'https://amplitude.com/docs/experiment/workflow/define-goals'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ---

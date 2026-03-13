@@ -2,7 +2,7 @@
 id: f32acaba-cdc9-45cb-8305-9b3def454ac4
 blueprint: compass
 title: "The Compass chart: discover your users' 'a-ha' moments"
-source: 'https://help.amplitude.com/hc/en-us/articles/235147347-The-Compass-chart-discover-your-users-a-ha-moments'
+source: 'https://amplitude.com/docs/analytics/charts/compass/compass-aha-moment'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732569584
 landing: true

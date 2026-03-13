@@ -2,7 +2,7 @@
 id: f31f1b7a-09ee-40fd-ba66-7128a4a05be0
 blueprint: single-sign-on
 title: 'Set up single sign-on (SSO) for Amplitude using Microsoft Azure Active Directory'
-source: 'https://help.amplitude.com/hc/en-us/articles/360002581311-Set-up-single-sign-on-SSO-for-Amplitude-using-Microsoft-Azure-Active-Directory'
+source: 'https://amplitude.com/docs/admin/single-sign-on/azure-active-directory'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363416
 ---

@@ -2,7 +2,7 @@
 id: e1b61782-4ec1-47a2-a803-0b6385477026
 blueprint: audience
 title: 'Build a prediction'
-source: 'https://help.amplitude.com/hc/en-us/articles/360049164712-Build-a-prediction'
+source: 'https://amplitude.com/docs/cdp/audiences/predictions-build'
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

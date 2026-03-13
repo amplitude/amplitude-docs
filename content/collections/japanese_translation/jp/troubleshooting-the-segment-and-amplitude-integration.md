@@ -7,7 +7,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360044886071'
 ---
 この記事では、Amplitudeで新規イベントタイプまたはプロパティが表示されない場合のトラブルシューティング方法について説明します。これは、多くの場合、次の問題のいずれかが原因となって起こります。
 
-* プロジェクトが[計測上限](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#h_8d90ca72-bf91-4161-88b2-01b5448b0859)に達した。
+* プロジェクトが[計測上限](https://amplitude.com/docs/faq/limits#h_8d90ca72-bf91-4161-88b2-01b5448b0859)に達した。
 * そのイベントタイプまたはプロパティが、Amplitudeプロジェクトでブロックまたは削除された。
 * Amplitudeのリクエストに対して、ステータスコード200が返されなかった。
 

@@ -2,7 +2,7 @@
 id: aaef4714-72e1-470d-a8e0-87de6001daf3
 blueprint: source
 title: 'Track sessions'
-source: 'https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions'
+source: 'https://amplitude.com/docs/data/sources/instrument-track-sessions'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -2,7 +2,7 @@
 id: 17fb8743-12c4-4b7f-ab11-238dd5498658
 blueprint: analytic
 title: 'Templates: Re-use your analyses'
-source: 'https://help.amplitude.com/hc/en-us/articles/360043053552-Templates-Re-use-your-analyses'
+source: 'https://amplitude.com/docs/analytics/templates'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

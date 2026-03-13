@@ -22,7 +22,7 @@ Amplitude Experimentは、実験結果を分析する際にデフォルトの統
 
 結果を確認して、デフォルト設定を1つ以上変更することが実験にメリットをもたらしそうな場合は、*[Plan]*（計画）タブで、*[Statistical Settings]*（統計設定）を表示してデフォルト設定を変更します。
 
-**注**：この記事は、ヘルプセンターの記事[「Learning from your experiment」](https://help.amplitude.com/hc/en-us/articles/360061687631)（実験から得られる知見）の続きです。まだお読みになっていない場合は、そちらの記事からお読みください。
+**注**：この記事は、ヘルプセンターの記事[「Learning from your experiment」](https://amplitude.com/docs/experiment/workflow/experiment-learnings)（実験から得られる知見）の続きです。まだお読みになっていない場合は、そちらの記事からお読みください。
 
 ## CUPED
 
@@ -32,7 +32,7 @@ CUPEDと、実験結果にどのように影響する可能性があるかにつ
 
 ## ボンフェローニ補正
 
-Amplitude Experimentは、[多重仮説検定](https://help.amplitude.com/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment#bonferroni-correction)の潜在的な問題に対処するためにボンフェローニ補正を使用します。信頼できる統計手法ですが、実験結果を分析する方法として適当でない場合もあります。実験結果を、ボンフェローニ法に対応していない内部システムによって生成された結果と比較したい場合などです。この場合、偽陽性率が高くなってもよければ、*ボンフェローニ補正*のトグルをオフにします。
+Amplitude Experimentは、[多重仮説検定](https://amplitude.com/docs/experiment/advanced-techniques/multiple-hypothesis-testing#bonferroni-correction)の潜在的な問題に対処するためにボンフェローニ補正を使用します。信頼できる統計手法ですが、実験結果を分析する方法として適当でない場合もあります。実験結果を、ボンフェローニ法に対応していない内部システムによって生成された結果と比較したい場合などです。この場合、偽陽性率が高くなってもよければ、*ボンフェローニ補正*のトグルをオフにします。
 
 ## カスタム露出設定
 
@@ -42,7 +42,7 @@ Amplitude Experimentは、[多重仮説検定](https://help.amplitude.com/hc/en-
 
 実験を分析する際に、[逐次検定とT検定のどちらかを選択](https://amplitude.com/blog/sequential-test-vs-t-test)できます。逐次検定を選択した方がよい場合が多いですが、必ずしもそうではありません。例えば、逐次検定を行うにはサンプルサイズが小さすぎる場合があります。
 
-[Amplitude ExperimentのT検定](https://help.amplitude.com/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test)で、使用方法の詳細をご覧ください
+[Amplitude ExperimentのT検定](https://amplitude.com/docs/experiment/experiment-theory/analyze-with-t-test)で、使用方法の詳細をご覧ください
 
 ## 信頼度
 
@@ -54,4 +54,4 @@ Amplitude Experimentは、[多重仮説検定](https://help.amplitude.com/hc/en-
 
 ![exp_stat_settings.png](/docs/output/img/jp/exp-stat-settings-png.png)
 
-*[Samples Per Variant Needed]*（バリアントごとに必要なサンプル数）に入力するサンプルサイズが分からない場合は、Amplitudeの期間推定ツールを使用します。詳細は、ヘルプセンターの記事[「期間推定ツールを使用して実験を計画する」](https://help.amplitude.com/hc/en-us/articles/11502996649371-Plan-experiments-with-help-from-the-sample-size-calculator)をご覧ください。
+*[Samples Per Variant Needed]*（バリアントごとに必要なサンプル数）に入力するサンプルサイズが分からない場合は、Amplitudeの期間推定ツールを使用します。詳細は、ヘルプセンターの記事[「期間推定ツールを使用して実験を計画する」](https://amplitude.com/docs/experiment/workflow/experiment-estimate-duration)をご覧ください。

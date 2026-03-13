@@ -2,7 +2,7 @@
 id: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
 blueprint: advanced-technique
 title: 'Holdout groups: Advanced use cases'
-source: 'https://help.amplitude.com/hc/en-us/articles/20085827191963-Holdout-groups-Advanced-use-cases'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/holdout-groups-advanced-use-cases'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714079443

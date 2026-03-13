@@ -2,7 +2,7 @@
 id: b7e71edd-424f-41a0-8206-a787c75349e4
 blueprint: funnel-analysi
 title: 'Hold properties constant in a Funnel Analysis chart'
-source: 'https://help.amplitude.com/hc/en-us/articles/19466646450203-Hold-properties-constant-in-a-Funnel-Analysis-chart'
+source: 'https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015220
 ---

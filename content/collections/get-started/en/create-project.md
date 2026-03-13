@@ -2,7 +2,7 @@
 id: a64c1c43-88d3-415d-b895-d27bb6decfd9
 blueprint: get-started
 title: 'Create a project in Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/16796780525339-Create-a-project-in-Amplitude'
+source: 'https://amplitude.com/docs/get-started/create-project'
 landing: true
 landing_blurb: 'After you create and add users to your organization, create a project.'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

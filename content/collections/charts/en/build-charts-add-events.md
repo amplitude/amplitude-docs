@@ -2,7 +2,7 @@
 id: 783ea30b-4de1-4910-acdb-ca114cbe1058
 blueprint: chart
 title: 'Build charts in Amplitude: Add events'
-source: 'https://help.amplitude.com/hc/en-us/articles/360051775171-Build-charts-in-Amplitude-Add-events'
+source: 'https://amplitude.com/docs/analytics/charts/build-charts-add-events'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

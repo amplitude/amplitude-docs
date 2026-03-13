@@ -2,7 +2,7 @@
 id: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
 blueprint: workflow
 title: 'Create a new experiment'
-source: 'https://help.amplitude.com/hc/en-us/articles/360061687551-Create-a-new-experiment'
+source: 'https://amplitude.com/docs/experiment/workflow/create'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538242
 landing: true

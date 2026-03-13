@@ -2,7 +2,7 @@
 id: 03d0d848-57df-4530-bd40-c305ed2e298e
 blueprint: chart
 title: 'Find the right chart for your analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/115001816407-Amplitude-s-charts-Find-the-right-one-for-your-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/find-the-right-chart'
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b

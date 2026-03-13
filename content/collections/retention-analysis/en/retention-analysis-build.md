@@ -2,7 +2,7 @@
 id: 6fa8fdca-74d6-4e5b-894d-fed42807a8e8
 blueprint: retention-analysi
 title: 'Build a retention analysis'
-source: 'https://help.amplitude.com/hc/en-us/articles/360050153151-Build-a-retention-analysis'
+source: 'https://amplitude.com/docs/analytics/charts/retention-analysis/retention-analysis-build'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538471
 landing: true

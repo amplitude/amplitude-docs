@@ -2,7 +2,7 @@
 id: 48014e0e-3130-40cc-ba15-946d6a16b51b
 blueprint: experiment-result
 title: 'Dig deeper into experimentation data with Experiment Results'
-source: 'https://help.amplitude.com/hc/en-us/articles/360062072631-Dig-deeper-into-experimentation-data-with-Experiment-Results'
+source: 'https://amplitude.com/docs/analytics/charts/experiment-results/experiment-results-dig-deeper'
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
@@ -66,7 +66,7 @@ Amplitude calculates your statistical results as they're available and displays 
 
 While the specifics may vary depending on the metric types you’re using, four charts depict your results:
 
-* **Confidence interval of absolute performance over time**: This chart is for [sequential testing](https://help.amplitude.com/hc/en-us/articles/17767898439835) only. It can help you identify when the experiment reaches statistical significance; which occurs when the confidence interval no longer includes zero.
+* **Confidence interval of absolute performance over time**: This chart is for [sequential testing](https://amplitude.com/docs/faq/sequential-testing) only. It can help you identify when the experiment reaches statistical significance; which occurs when the confidence interval no longer includes zero.
 * [**Cumulative exposure**](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope): This chart details the number of users who receive your experiment over time. The x-axis displays the first date of a user's exposure, and the y-axis displays a cumulative, running total of users exposed to the experiment.
 * **Performance by variant**: The title of this chart is the metric you're focused on. The chart shows the number of users who did each step of a funnel, or the means of each variant if the metric isn't a funnel.
 * **Mean over time** (cumulative or non-cumulative): On the x-axis, find the date the user was first exposed. On the y-axis is the mean of the selected metric. Click the dropdown under the metric table to select a metric. Amplitude selects the recommendation metric by default for each variant. This chart is like the conversion over time chart except that it also works for non-conversion metrics. From this chart, you can understand if there is any seasonality, novelty effects, or trends over time. Usually, the mean for days near the start of the experiment is larger than the mean for days near the end of the experiment because users at the start of the experiment have had more time to do the metric. This is less of a concern if you use the exposure attribution window. You can look at the cumulative or the non-cumulative view of this chart. The cumulative view can help smooth out some daily noise and make it easier to interpret the chart.

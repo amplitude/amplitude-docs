@@ -2,7 +2,7 @@
 id: 26102630-8a48-4f72-bafe-35060873335b
 blueprint: analytic
 title: 'Behavior offset: Segment users over two distinct time periods'
-source: 'https://help.amplitude.com/hc/en-us/articles/360040965352-Behavior-offset-Segment-users-over-two-distinct-time-periods'
+source: 'https://amplitude.com/docs/analytics/behavior-offset'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

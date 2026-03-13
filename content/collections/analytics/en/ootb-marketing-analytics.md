@@ -5,7 +5,7 @@ title: 'Out-of-the-box Marketing Analytics'
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1761586978
-source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics'
+source: 'https://amplitude.com/docs/analytics/web-analytics'
 landing: false
 academy_course:
   - cafa90d0-f101-4234-bdf3-c9525c221850

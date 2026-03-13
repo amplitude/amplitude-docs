@@ -2,7 +2,7 @@
 id: dc96227b-0ac7-4206-ab5f-b92d020f88b6
 blueprint: experiment-theory
 title: 'Analyze your experiment data with the T-test'
-source: 'https://help.amplitude.com/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test'
+source: 'https://amplitude.com/docs/experiment/experiment-theory/analyze-with-t-test'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

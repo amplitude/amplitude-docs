@@ -2,7 +2,7 @@
 id: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
 blueprint: event-segmentation
 title: 'Custom formulas: Syntax and definitions'
-source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions'
+source: 'https://amplitude.com/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632354
 landing: true
@@ -163,7 +163,7 @@ Returns the distribution of the event frequency per unique user over the selecte
 
 We can see that in the last 30 days, 22,075 users completed purchases five times.
 
-The syntax for HIST varies slightly for the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration) as sessions are the focus of the metrics. 
+The syntax for HIST varies slightly for the [User Sessions chart](https://amplitude.com/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) as sessions are the focus of the metrics. 
 
 **Syntax**: HIST(session)
 
@@ -263,7 +263,7 @@ Returns the sum of the property values you are grouping the specified event by. 
 
 ![c_f_propsum.png](/docs/output/img/event-segmentation/c-f-propsum-png.png)
 
-The syntax for PROPSUM varies slightly for the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration) as sessions are the focus of the metrics. 
+The syntax for PROPSUM varies slightly for the [User Sessions chart](https://amplitude.com/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) as sessions are the focus of the metrics. 
 
 **Syntax**: PROPSUM(session)
 
@@ -306,7 +306,7 @@ Returns the number of unique users who triggered the event. For example, the fol
 
 ![custom_formulas_uniques.png](/docs/output/img/event-segmentation/custom-formulas-uniques-png.png)
 
-The syntax for UNIQUES varies slightly for the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration) as sessions are the focus of the metrics. 
+The syntax for UNIQUES varies slightly for the [User Sessions chart](https://amplitude.com/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) as sessions are the focus of the metrics. 
 
 **Syntax**: UNIQUES(session)
 
@@ -322,7 +322,7 @@ Returns the number of unique users who engaged in sessions defined by the specif
 
 * **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Sessions card.
 
-This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). Returns the total number of events triggered during each session.
+This formula metric is **only** available in the [User Sessions chart](https://amplitude.com/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency). Returns the total number of events triggered during each session.
 
 For example, the following setup shows the number of `Page Viewed` events across all sessions.
 
@@ -387,7 +387,7 @@ For example, this chart shows a daily [cumulative sum](/docs/analytics/charts/ev
 * **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals:** The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling average](https://help.amplitude.com/hc/en-us/articles/14056975720091) over the interval selected. For example, the following chart shows you your weekly rolling average superimposed on top of your daily active users.
+Returns the metric for the event selected with a [rolling average](https://amplitude.com/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2) over the interval selected. For example, the following chart shows you your weekly rolling average superimposed on top of your daily active users.
 
 ![rollavg_sidecontrols.png](/docs/output/img/event-segmentation/rollavg-sidecontrols-png.png)
 

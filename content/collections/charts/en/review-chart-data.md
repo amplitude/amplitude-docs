@@ -2,7 +2,7 @@
 id: fb6b3cc0-b405-414f-b53e-59bc7aae1cbc
 blueprint: chart
 title: 'Review chart data with the breakdown table'
-source: 'https://help.amplitude.com/hc/en-us/articles/14911842524827-Review-chart-data-with-the-breakdown-table'
+source: 'https://amplitude.com/docs/analytics/charts/review-chart-data'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

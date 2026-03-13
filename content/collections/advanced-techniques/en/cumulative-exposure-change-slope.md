@@ -2,7 +2,7 @@
 id: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
 blueprint: advanced-technique
 title: 'The cumulative exposures graph: Increasing and decreasing slopes'
-source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/cumulative-exposure-change-slope'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730930146
@@ -41,7 +41,7 @@ Mathematically speaking, the slope of each line is the change in the y-axis divi
 Additional aspects of this graph:
 
 * It’s cumulative, which means the y-axis doesn't decrease. The slope of the line is the number of new users exposed to your experiment every day. The line may slow down, or even stop growing completely. But there isn't a cumulative exposures graph where the line peaks and then drops.
-* There’s a dotted line at the end, which means there is incomplete data for those dates. Review [this article](https://help.amplitude.com/hc/en-us/articles/360043977571) for more information.
+* There’s a dotted line at the end, which means there is incomplete data for those dates. Review [this article](https://amplitude.com/docs/faq/the-dotted-line-in-amplitude-charts) for more information.
 * The two lines don't track each other seamlessly. That’s because each line represents a unique variant, and exposures can differ slightly between variants, even when they’re set to receive the same amount of traffic.
 * Both variants are on a steady growth path. This means there is no seasonality. If, for example, users were more likely to engage with your product (and therefore more likely to be exposed to an experiment) on weekdays, this is would appear in the chart. On weekends, the y-axis value would increase more slowly.
 

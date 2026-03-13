@@ -2,7 +2,7 @@
 id: 9996cae3-403c-44be-9b25-61efb780a3e9
 blueprint: data
 title: 'Block bot web traffic'
-source: 'https://help.amplitude.com/hc/en-us/articles/14884769332507-Block-bot-web-traffic'
+source: 'https://amplitude.com/docs/data/block-bot-traffic'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

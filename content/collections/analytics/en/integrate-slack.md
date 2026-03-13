@@ -2,7 +2,7 @@
 id: 4be51454-e583-4b1f-93b1-de647114ea68
 blueprint: analytic
 title: 'Integrate Slack with Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/227613388-Integrate-Slack-with-Amplitude'
+source: 'https://amplitude.com/docs/analytics/integrate-slack'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -2,7 +2,7 @@
 id: 3da7e352-3754-41f3-b6a7-9e054e038130
 blueprint: account-management
 title: 'Set up SCIM provisioning in Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/360058399851-Set-up-SCIM-provisioning-in-Amplitude'
+source: 'https://amplitude.com/docs/admin/account-management/scim-provision'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

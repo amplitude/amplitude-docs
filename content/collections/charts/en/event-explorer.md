@@ -2,7 +2,7 @@
 id: f4d3ad91-b9c5-4271-b06d-3ac81d3dba0f
 blueprint: chart
 title: 'Event Explorer: View event streams in real time'
-source: 'https://help.amplitude.com/hc/en-us/articles/360050836071-Event-Explorer-View-event-streams-in-real-time'
+source: 'https://amplitude.com/docs/analytics/charts/event-explorer'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

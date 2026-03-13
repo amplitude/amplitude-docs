@@ -3,7 +3,7 @@ id: a8dcb2f4-7dd9-49dd-9a20-4ae79a92646c
 published: false
 blueprint: advanced-technique
 title: 'Sample ratio mismatches: Debug issues with experiment allocations'
-source: 'https://help.amplitude.com/hc/en-us/articles/8043418569371-Sample-ratio-mismatches-Debug-issues-with-experiment-allocations'
+source: 'https://amplitude.com/docs/experiment/troubleshooting/sample-ratio-mismatch'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717179385

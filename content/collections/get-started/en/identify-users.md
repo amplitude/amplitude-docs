@@ -2,7 +2,7 @@
 id: 0540d355-59be-49fc-b93d-ac1a256c38af
 blueprint: get-started
 title: 'How Amplitude identifies your users'
-source: 'https://help.amplitude.com/hc/en-us/articles/206404628-How-will-you-identify-your-users-'
+source: 'https://amplitude.com/docs/get-started/identify-users'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

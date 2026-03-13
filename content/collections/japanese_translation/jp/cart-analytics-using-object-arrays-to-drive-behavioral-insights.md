@@ -72,7 +72,7 @@ products: [
 
 分割を停止するには、ステップ1〜3を再トレースし、*分割を停止*をクリックします。
 
-この変更は、新しいデータ摂取に有効になります。 ただし、データは以前に分割されたイベントに保持されます。 分割プロパティの非表示または削除の詳細については、[Amplitudeのイベント管理](https://help.amplitude.com/hc/en-us/articles/360047138392-Manage-events-and-properties#change-visibility-status-for-an-event-or-property)に関する記事を参照してください。
+この変更は、新しいデータ摂取に有効になります。 ただし、データは以前に分割されたイベントに保持されます。 分割プロパティの非表示または削除の詳細については、[Amplitudeのイベント管理](https://amplitude.com/docs/data/display-names-in-amplitude-data#change-visibility-status-for-an-event-or-property)に関する記事を参照してください。
 
 ## イベントセグメンテーションとファネル分析チャートでオブジェクト配列を使用する
 

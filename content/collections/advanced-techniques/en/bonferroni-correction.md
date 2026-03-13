@@ -2,7 +2,7 @@
 id: cf260863-11d8-434d-a2de-22c8256e83b6
 blueprint: advanced-technique
 title: 'Bonferroni Correction'
-source: 'https://help.amplitude.com/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/multiple-hypothesis-testing'
 exclude_from_sitemap: false
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1757367769

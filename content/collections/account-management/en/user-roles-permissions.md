@@ -2,7 +2,7 @@
 id: 9dc3e28c-3335-4026-a3d0-6c5dd011b2bc
 blueprint: account-management
 title: 'User roles and permissions in Amplitude'
-source: 'https://help.amplitude.com/hc/en-us/articles/229672228-User-roles-and-permissions-in-Amplitude'
+source: 'https://amplitude.com/docs/admin/account-management/user-roles-permissions'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

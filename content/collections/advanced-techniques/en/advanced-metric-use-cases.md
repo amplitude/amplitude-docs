@@ -2,7 +2,7 @@
 id: e05c2f18-2f1f-4391-ae18-cc1248444688
 blueprint: advanced-technique
 title: 'Advanced metric use cases'
-source: 'https://help.amplitude.com/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment'
+source: 'https://amplitude.com/docs/experiment/advanced-techniques/advanced-metric-use-cases'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329332
@@ -32,7 +32,7 @@ For example, a funnel analysis includes all users who meet its filter requiremen
 
 Amplitude Analytics offers metrics that Amplitude Experiment doesn't. Alternately, use the steps in the previous section to analyze time to convert or [return on or after retention](/docs/analytics/charts/retention-analysis/retention-analysis-build). 
 
-Read this [Help Center article on funnel analysis' FAQs](https://help.amplitude.com/hc/en-us/articles/360054203872) to learn more.
+Read this [Help Center article on funnel analysis' FAQs](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work#applying-group-by-filters) to learn more.
 
 {{#
 ## Case 2: Analyze your experiment's results based on a subset of users

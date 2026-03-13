@@ -9,7 +9,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360041885332'
 
 ![events_in_this_order.png](/docs/output/img/jp/events-in-this-order-png.png)
 
-Amplitudeのデフォルトでは、[イベントモジュール]で複数のステップを直接選択することはできません。ここでは、使用できる`OR`句がありません。ただし、`OR`句で結合された2つの別々のイベントで構成される[カスタムイベント](https://help.amplitude.com/hc/en-us/articles/360047138392#create-a-custom-event-from-existing-events)を作成することは可能です。そして、フローでこの新しいカスタムイベントを使用します。
+Amplitudeのデフォルトでは、[イベントモジュール]で複数のステップを直接選択することはできません。ここでは、使用できる`OR`句がありません。ただし、`OR`句で結合された2つの別々のイベントで構成される[カスタムイベント](https://amplitude.com/docs/data/display-names-in-amplitude-data#create-a-custom-event-from-existing-events)を作成することは可能です。そして、フローでこの新しいカスタムイベントを使用します。
 
 上の画像の`[曲を再生または検索]`は、`[曲を再生]`イベントと`[曲を検索]`イベント、そしてその2つを連結する`OR`句からなるカスタムイベントです。`[曲を再生]`イベント**または**`[曲を検索]`の**いずれか**のイベントをトリガーしたユーザーは、**その2番目のステップに**コンバージョンしたと見なされます。
 

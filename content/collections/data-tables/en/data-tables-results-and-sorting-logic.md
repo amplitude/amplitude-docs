@@ -2,7 +2,7 @@
 id: ce073128-d6a9-48e8-8d07-c7afaa128254
 blueprint: data-table
 title: 'Results limits and sorting logic in Data Tables charts'
-source: 'https://help.amplitude.com/hc/en-us/articles/19466947066651-Results-limits-and-sorting-logic-in-Data-Tables-charts'
+source: 'https://amplitude.com/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1719958028
 landing: true

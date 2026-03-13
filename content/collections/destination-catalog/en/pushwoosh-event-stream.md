@@ -50,7 +50,7 @@ To configure an Event Streaming integration from Amplitude to Pushwoosh, you mus
 6. Select an Amplitude user property that corresponds to your Pushwoosh User_ID, from the left dropdown.
 7. (Optional) Under **Create & Update users**, make sure the toggle is enabled if you want to send over users and their properties in real-time whenever Amplitude creates a user or updates the user property.
 8. Under **Send Events**, make sure the toggle is enabled ("Events are sent to Pushwoosh") if you want to stream events to Pushwoosh. When enabled, events are automatically forwarded to Pushwoosh when they're ingested in Amplitude. Events aren't sent on a schedule or on demand using this integration.
-9. In **Select and filter events** choose which events you want to send. Choose only the events you need in Pushwoosh. [Transformed events](https://www.google.com/url?q=https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure%23:~:text%3DAmplitude%2520Data%27s%2520transformations%2520feature%2520allows,them%2520to%2520all%2520historical%2520data.&sa=D&source=docs&ust=1692341974637179&usg=AOvVaw1BdAYfjzWTy1y9u94STUaQ) aren't supported.
+9. In **Select and filter events** choose which events you want to send. Choose only the events you need in Pushwoosh. [Transformed events](https://www.google.com/url?q=https://amplitude.com/docs/data/transformations%23:~:text%3DAmplitude%2520Data%27s%2520transformations%2520feature%2520allows,them%2520to%2520all%2520historical%2520data.&sa=D&source=docs&ust=1692341974637179&usg=AOvVaw1BdAYfjzWTy1y9u94STUaQ) aren't supported.
 10. When finished, enable the destination and **Save**.
 
 ### Use cases

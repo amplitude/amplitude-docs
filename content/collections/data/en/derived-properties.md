@@ -2,7 +2,7 @@
 id: 66b1d5fc-c05b-4418-9cff-0be3286e437f
 blueprint: data
 title: 'Derived properties'
-source: 'https://help.amplitude.com/hc/en-us/articles/5874857623707-Derived-properties'
+source: 'https://amplitude.com/docs/data/derived-properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

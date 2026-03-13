@@ -2,7 +2,7 @@
 id: f4787d6d-6142-4045-8c0b-0801932322b9
 blueprint: analytic
 title: 'Workspace: Find your charts and track your work'
-source: 'https://help.amplitude.com/hc/en-us/articles/360028260251-Workspace-Find-your-charts-and-track-your-work'
+source: 'https://amplitude.com/docs/analytics/workspace'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

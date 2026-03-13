@@ -82,7 +82,7 @@ analytics.ready(function() {     var groupIdentify = new amplitude.Identify().se
 
 | パラメータ | **説明** |
 | --- | --- |
-| api\_key **(必須)** | プロジェクトの[設定ページ](https://help.amplitude.com/hc/en-us/articles/235649848#project-general-settings)からのAPIキー。
+| api\_key **(必須)** | プロジェクトの[設定ページ](https://amplitude.com/docs/admin/account-management/account-settings#project-general-settings)からのAPIキー。
 "040062a5d38552315b98302ba4f2f" |
 | 識別**（必須）** | 単一のJSON識別オブジェクト（フィールドについては、下記を参照してください）。 |
 

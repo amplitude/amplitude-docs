@@ -2,7 +2,7 @@
 id: a47ad425-cbf2-4408-bd10-17f889025d70
 blueprint: data
 title: 'Lookup Tables'
-source: 'https://help.amplitude.com/hc/en-us/articles/8634149673627-Add-more-data-to-event-and-user-properties-with-Lookup-Tables'
+source: 'https://amplitude.com/docs/data/lookup-tables'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae

@@ -1,7 +1,7 @@
 ---
 title: "How Amplitude handles segmenting on a user property in a Funnel Analysis chart"
 published: false
-source: "https://help.amplitude.com/hc/en-us/articles/19458172443931-How-Amplitude-handles-segmenting-on-a-user-property-in-a-Funnel-Analysis-chart"
+source: "https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-segmenting"
 id: 43f380ea-7e18-462f-ba73-e7ce7366dfdb
 ---
 

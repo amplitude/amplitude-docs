@@ -15,7 +15,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360061687631'
 
 *[分析]*パネルでは、実験が**統計的に重要な**結果をもたらしたかどうか、そしてそれらの結果が実際に何であるかを一目で知ることができます。Amplitude Experimentは、デザインとロールアウトフェーズで提供した情報を取り出し、自動的にプラグインします。そのため、労力が節約できます。バリアントごとに結果を分解し、便利で詳細なテーブルの内訳を提供します。
 
-**注：**この記事は、[実験をロールアウトするヘルプセンターの記事に直接続きます](https://help.amplitude.com/hc/en-us/articles/360061687611)。まだお読みでなく、説明されているプロセスに従って進んでいない場合は、次のステップに進む前に必ずお読みください。
+**注：**この記事は、[実験をロールアウトするヘルプセンターの記事に直接続きます](https://amplitude.com/docs/experiment/workflow/experiment-test)。まだお読みでなく、説明されているプロセスに従って進んでいない場合は、次のステップに進む前に必ずお読みください。
 
 各バリアントが100人の訪問**および**25のコンバージョンに達するまで、Amplitudeは、バイナリ指標（固有のコンバージョン）を使用する実験の統計計算を生成しません。非バイナリ指標を使用する実験は、バリアントごとに100人の訪問に到達する必要があります。
 
@@ -47,12 +47,12 @@ source: 'https://help.amplitude.com/hc/ja/articles/360061687631'
 *[アナリティクスで開く]*をクリックして、この実験からAmplitude Analyticsでチャートを作成することができます。  
   
 **注：**A/B/nテストを実行している場合、Amplitude Experimentは各処置に対するコントロールの信頼区間/P値を表示します。その代わりに2つの非制御処置の比較を表示するには、コントロールバリアントを変更する（*[設定]*タブから）、またはアナリティクスで検定を開き、対象の2つの処置を使用してチャートを作成します。
-3. *[プラン]*タブの統計設定で、実験の**信頼レベル**を設定します。デフォルトは95%です。[逐次検定とt検定](https://amplitude.com/blog/sequential-test-vs-t-test)から選択することもできます。通常は、逐次検定のほうが優れた選択です。*統計設定*の変更の詳細は[こちらから](https://help.amplitude.com/hc/en-us/articles/13448368364187)お読みいただけます。  
+3. *[プラン]*タブの統計設定で、実験の**信頼レベル**を設定します。デフォルトは95%です。[逐次検定とt検定](https://amplitude.com/blog/sequential-test-vs-t-test)から選択することもできます。通常は、逐次検定のほうが優れた選択です。*統計設定*の変更の詳細は[こちらから](https://amplitude.com/docs/experiment/workflow/finalize-statistical-preferences)お読みいただけます。  
   
 **注：**実験の信頼度レベルを下げると、実験が統計的な有意性を達成する可能性は高くなりますが、その反面、実験の偽陽性の可能性も高まります。
 4. 事前に設定された**期間**の選択または日付選択ツールを開いてカスタムの日付範囲を選択し、実験の分析時間の枠組みを設定します。
 
-[分析]セクションに表示される表、グラフ、チャートは、Amplitude Experimentの[[実験分析]表示の理解](https://help.amplitude.com/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view)と、[累積露出グラフの解釈に関するヘルプセンターの記事](https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-in-Amplitude-Experiment)で、詳しく説明されています。
+[分析]セクションに表示される表、グラフ、チャートは、Amplitude Experimentの[[実験分析]表示の理解](https://amplitude.com/docs/experiment/analysis-view)と、[累積露出グラフの解釈に関するヘルプセンターの記事](https://amplitude.com/docs/experiment/advanced-techniques/cumulative-exposure-change-slope)で、詳しく説明されています。
 
 **注：**Amplitude Experimentは、結果を生成するためにコントロールを比較する何かが必要です。コントロールと**少なくとも1つの**バリアントの**両方**を含めないと、チャートは表示されません。
 

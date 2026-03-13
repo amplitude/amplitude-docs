@@ -2,7 +2,7 @@
 id: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
 blueprint: warehouse_native_amplitude
 title: 'Warehouse-native Amplitude: Overview'
-source: 'https://help.amplitude.com/hc/en-us/articles/26003996242203-Warehouse-native-Amplitude-Run-analyses-from-data-in-your-own-data-warehouse'
+source: 'https://amplitude.com/docs/data/warehouse-metrics'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328339

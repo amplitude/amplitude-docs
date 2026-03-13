@@ -2,7 +2,7 @@
 id: 17ec9033-f51e-4b77-ad1d-47beebe9471a
 blueprint: data-table
 title: 'Attribute credit to multiple acquisition touch points'
-source: 'https://help.amplitude.com/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points'
+source: 'https://amplitude.com/docs/analytics/charts/data-tables/data-tables-attribute-credit'
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1760632550
 landing: true

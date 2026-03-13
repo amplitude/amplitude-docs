@@ -60,7 +60,7 @@ If you've already disabled IP, it's still possible to see the IP in your user lo
 
 ## `Client Event Time` shows unexpected value
 
-`Client Event Time` is the local timestamp (UTC) when the device logged the event. Check [here](https://help.amplitude.com/hc/en-us/articles/229313067#Raw-Data-Fields) for different timestamps explanations at Amplitude.
+`Client Event Time` is the local timestamp (UTC) when the device logged the event. Check [here](https://amplitude.com/docs/analytics/user-data-lookup#Raw-Data-Fields) for different timestamps explanations at Amplitude.
 
 * `Client Event Time` shows a future time
 Check this section if you're seeing `client_upload_time` appearing as a time in the future. The `client_upload_time` is determined by the customer's device. It's possible that it may show a time in the future if the customer's clock is incorrectly set. You can remove the time in the Event payload via the Enrichment Plugin if you are using latest SDK. This will stop using the customer's device clock and instead rely on server_upload_time. However, be aware that this approach has a downside. If events are not uploaded immediately, the recorded event time can differ significantly from the original time the event was fired.

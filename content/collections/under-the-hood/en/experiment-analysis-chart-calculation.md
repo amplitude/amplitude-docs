@@ -3,7 +3,7 @@ id: c3d4aec1-92db-4f44-b847-19d6f31f1add
 published: true
 blueprint: under-the-hood
 title: 'Value calculation in Experiment Analysis charts'
-source: 'https://help.amplitude.com/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts'
+source: 'https://amplitude.com/docs/experiment/under-the-hood/experiment-analysis-chart-calculation'
 updated_by: 3f7c2286-b7da-4443-a04f-7c225af40254
 updated_at: 1757350329
 landing: false
