@@ -1,9 +1,12 @@
 ---
 id: f4a8b2c1-9e3d-4f6a-8b1c-2d5e7f9a0b3c
+published: false
 blueprint: data
 title: 'Mobile Autocapture Schema'
 landing: false
 exclude_from_sitemap: false
+updated_by: 83fbb88a-75e7-45dc-aed3-39c10967893c
+updated_at: 1773424835
 ---
 This reference lists Autocapture event types and event property names for native iOS and Android when you use the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk). Use it when you need a stable contract for pipelines, partners, or validation.
 
@@ -61,4 +64,3 @@ Enable options through `AutocaptureOption` as described in [Autocapture (Android
 | `[Amplitude] Element Interacted` | Clickable view or Compose | `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Text`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. |
 | `[Amplitude] Rage Click` | Frustration (optional) | Go to [Track frustration interactions](/docs/sdks/analytics/android/android-kotlin-sdk#track-frustration-interactions) for more information. |
 | `[Amplitude] Dead Click` | Frustration (optional) | Same as [Rage Click](/docs/sdks/analytics/android/android-kotlin-sdk#track-frustration-interactions). |
-
