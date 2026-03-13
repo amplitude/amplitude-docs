@@ -21,7 +21,11 @@ This article explains how to use this feature and interpret the information prov
 
 ## Distributions
 
-For distributions, Amplitude provides the [PDF](https://en.wikipedia.org/wiki/Probability_density_function) and [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function). The PDF and CDF are useful when you want to compare two distributions that don't have the same sample size because they are normalized. If you are comparing two distributions that have different sample sizes by counts, some of the bars in one distribution may be taller than the bars in the other distirbution not because the value is more likely to occur but because the sample size is larger. This can mislead analysis because you should look at a normalized histogram. The other information the CDF gives is that you can get approximations to other percentiles. For example, in the time to convert chart Amplitude shows a vertical dashed line for the median time to convert. To find the approximate 75th percentile, you can find the smallest bin with a `CDF >= 75%`. To make the approximation better, use smaller bin widths.
+For distributions, Amplitude provides the [Probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) and [Cumulative distribution function (CDF)](https://en.wikipedia.org/wiki/Cumulative_distribution_function). Use PDF and CDF when comparing distributions with different sample sizes. Amplitude normalizes them, making the comparison fair.
+
+When comparing by counts, taller bars in one distribution may reflect a larger sample size rather than a more likely value, which can mislead your analysis. Use a normalized histogram to avoid this.
+
+The CDF also approximates other percentiles. For example, in the time to convert chart, Amplitude shows a vertical dashed line for the median. To find the approximate 75th percentile, find the smallest bin with a `CDF >= 75%`. Use smaller bin widths for a better approximation.
 
 ## Use Microscope
 
