@@ -10,4 +10,5 @@ Tracks all pull requests submitted by AI agents (Claude Code and Cursor).
 | 2026-03-12 | Claude Code | Mark Browser Unified SDK as GA | https://github.com/amplitude/amplitude-docs/compare/claude/slack-update-sdk-ga-docs-EodUD |
 | 2026-03-12 | Claude Code | Fix Ignore elements tab not loading (DOC-1166) | https://github.com/amplitude/amplitude-docs/pull/new/DOC-1166 |
 | 2026-03-13 | Cursor | Revert remaining DOC-1107 artifacts from main | https://github.com/amplitude/amplitude-docs/compare/revert-doc1107-remnants |
+| 2026-03-13 | Claude Code | Fix legacy help.amplitude.com links | https://github.com/amplitude/amplitude-docs/compare/claude/slack-fix-amplitude-help-links-L3kCp |
 
