@@ -19,6 +19,10 @@ This article explains how to use this feature and interpret the information prov
 * *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](/docs/analytics/account-level-reporting).
 * **Custom formula charts don't support Microscope.** If you use [custom formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) in Event Segmentation or Data Table charts, Microscope functionality isn't available for those data points.
 
+## Distributions
+
+For distributions, we provide the [PDF](https://en.wikipedia.org/wiki/Probability_density_function) and [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function). THe PDF and CDF are useful when you wan to compare two distributions that do not have the same sample size because they are normalized. If you are comparing two distributions that have different sample sizes by counts, some of the bars in one distribution may be taller than the bars in the other distirbution not because the value is more likely to occur but because the sample size is larger. This can mislead analysis and you should look at a normalized histogram. The other information the CDF gives is that you can get approxmations to other percentiles. For example, the time to convert chart we show a vertical dashed line for the median time to convert. You may also be interested in what is the 75h percentile. To find the approximate 75th percentile, you can find the smallest bin with a CDF >= 75%. 
+
 ## Use Microscope
 
 To bring up the Microscope menu, simply click on a data point in any supported chart.
