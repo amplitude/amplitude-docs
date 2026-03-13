@@ -19,6 +19,14 @@ This article explains how to use this feature and interpret the information prov
 * *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](/docs/analytics/account-level-reporting).
 * **Custom formula charts don't support Microscope.** If you use [custom formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) in Event Segmentation or Data Table charts, Microscope functionality isn't available for those data points.
 
+## Distributions
+
+For distributions, Amplitude provides the [Probability density function (PDF)](https://en.wikipedia.org/wiki/Probability_density_function) and [Cumulative distribution function (CDF)](https://en.wikipedia.org/wiki/Cumulative_distribution_function). Use PDF and CDF when comparing distributions with different sample sizes. Amplitude normalizes them, making the comparison fair.
+
+When comparing by counts, taller bars in one distribution may reflect a larger sample size rather than a more likely value, which can mislead your analysis. Use a normalized histogram to avoid this.
+
+The CDF also approximates other percentiles. For example, in the time to convert chart, Amplitude shows a vertical dashed line for the median. To find the approximate 75th percentile, find the smallest bin with a `CDF >= 75%`. Use smaller bin widths for a better approximation.
+
 ## Use Microscope
 
 To bring up the Microscope menu, simply click on a data point in any supported chart.
