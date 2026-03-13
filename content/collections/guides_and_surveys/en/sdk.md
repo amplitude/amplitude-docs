@@ -60,14 +60,12 @@ amplitude.add(engagementPlugin());
 
 For additional configuration, supply `InitOptions` to the `plugin` function. Go to [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
-For example, use `defaultBootOptions` to configure auto-refresh at plugin time, since the plugin calls `boot()` automatically:
+For example, use `autoRefreshIntervalSeconds` to configure auto-refresh at plugin time, since the plugin calls `boot()` automatically:
 
 ```ts
 import { plugin as engagementPlugin } from '@amplitude/engagement-browser';
 amplitude.add(engagementPlugin({
-  defaultBootOptions: {
-    autoRefreshIntervalSeconds: 3600
-  }
+  autoRefreshIntervalSeconds: 3600
 }));
 ```
 
@@ -126,7 +124,7 @@ If you don't use the [Amplitude Analytics Browser SDK 2](/docs/sdks/analytics/br
 Call `init` to fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, mediaUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: string, cdnUrl: string, mediaUrl: string, logger: Logger, logLevel: LogLevel, locale: string, nonce: string, autoRefreshIntervalSeconds: number }): void
 ```
 
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                                                                                            |
@@ -140,7 +138,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", serverUrl: s
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                                                                                                 |
 | `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.                                                                              |
 | `initOptions.nonce`      | `string`                                                                                                                     | Optional. Sets a nonce value for Content Security Policy (CSP) compliance. This allows inline styles required by Guides and Surveys to be executed when CSP is enabled. Default: `undefined`                                                           |
-| `initOptions.defaultBootOptions` | `DefaultBootOptions`                                                                                                   | Optional. Default boot options that the SDK shallow-merges into every `boot()` call. Useful in plugin mode where `boot()` runs automatically. Boot-time values override these defaults. Includes all `BootOptions` fields except `user` and `integrations`. Defaults persist across `shutdown()` + `boot()` cycles. |
+| `initOptions.autoRefreshIntervalSeconds` | `number`                                                                                                         | Optional. Auto-refresh interval in seconds. The SDK automatically refreshes (re-fetches targeting data and reloads configuration) at this interval. Must be 60 seconds or greater. If not specified, 0, or negative, auto-refresh is disabled. In plugin mode, set this at init time since the plugin manages `boot()` automatically. |
 
 ##### Example: Basic initialization
 
@@ -174,6 +172,16 @@ For Content Security Policy (CSP) compliance, include a nonce value:
 ```js
 engagement.init("YOUR_API_KEY", {
   nonce: "YOUR_NONCE"
+});
+```
+
+##### Example: Initialization with auto-refresh
+
+Enable auto-refresh to periodically re-fetch targeting data and reload configuration:
+
+```js
+engagement.init("YOUR_API_KEY", {
+  autoRefreshIntervalSeconds: 3600
 });
 ```
 
@@ -612,7 +620,7 @@ engagement.boot(options: BootOptions): Promise<void>
 | ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options.user`         | `EndUser`, `(() => EndUser)`, or `string` | Required. User information in one of these formats: an `EndUser` object, a function that returns a user object (useful for dynamic user data), or a simple user ID string. You must provide at least `user_id` or `device_id` in the user object. If neither is provided, the method logs an error and returns early. |
 | `options.integrations` | `Array<Integration>`           | Required. An array of integrations for tracking events. Enables sending Guides and Surveys events to your analytics provider. Without integrations, guide insights, survey insights, and survey responses won't appear. Pass `[{ track: () => {} }]` as a noop if you don't need event forwarding. |
-| `options.autoRefreshIntervalSeconds` | `number`           | Optional. Auto-refresh interval in seconds. When enabled, the SDK automatically refreshes (re-fetches decide data, end user store, and reloads config) at this interval. Must be 60 seconds or greater. If not specified, 0, or negative, auto-refresh is disabled. |
+| `options.autoRefreshIntervalSeconds` | `number`           | Deprecated. Use `autoRefreshIntervalSeconds` in `InitOptions` instead. Auto-refresh interval in seconds. When enabled, the SDK automatically refreshes (re-fetches targeting data and reloads configuration) at this interval. Must be 60 seconds or greater. If not specified, 0, or negative, auto-refresh is disabled. If both init and boot values are set, the boot-time value takes precedence. |
 
 #### EndUser type
 
