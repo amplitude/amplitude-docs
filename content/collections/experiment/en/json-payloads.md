@@ -235,7 +235,7 @@ Strongly typed payloads help you:
 - Catch configuration issues (wrong types, missing required fields) before they reach production.
 
 {{partial:admonition type="note" heading="JSON payload model"}}
-Strongly typed payloads build on the same JSON payload model and SDKs described above. How you access `variant.payload` in code doesn't change, you just gain stronger guarantees about what that payload looks like.
+Strongly typed payloads build on the same JSON payload model and SDKs this page covers. How you access `variant.payload` in code doesn't change, you just gain stronger guarantees about what that payload looks like.
 {{/partial:admonition}}
 
 ### Strongly typed payload use cases
@@ -260,7 +260,7 @@ In the UI, by clicking **Set payload type**, you choose a payload type for the f
 - **Array**: `variant.payload` is an array.
 - **Custom Schema**: You define an object shape with specific keys and types. You choose the type of each field (for example, string, number, boolean, or array) and can mark any of the fields as required. Amplitude represents this as a JSON schema and validates every variant payload against it.
 
-If a variant payload doesn't match the selected type:
+If a variant payload doesn't match the type you select:
 
 - The UI shows an error on that variant and indicates what is wrong (for example, a missing required field or an incorrect type).
 - You can't save the change until the payload is valid.
@@ -325,7 +325,7 @@ You can mark any of the fields as required in the Custom Schema. Payloads that o
 
 ### Using strongly typed payloads in your code
 
-Even with strong typing enabled, the SDK interaction stays the same: you still read payloads from `variant.payload` and apply your own types in code.
+Even when you enable strong typing, the SDK interaction stays the same: you still read payloads from `variant.payload` and apply your own types in code.
 
 In TypeScript, you can define a matching type:
 
@@ -496,7 +496,7 @@ Test different content approaches:
 When you access a variant from the SDK or Evaluation API, you can use the `value` and `payload` properties:
 
 - `value`: the variant's value (for example, "on," "off," "control," or "treatment").
-- `payload`: the attached JSON configuration.
+- `payload`: the JSON configuration you attach.
 
 The Management API or Amplitude UI provides other variant properties like `name` and `description`.
 
