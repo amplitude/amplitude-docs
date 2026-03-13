@@ -1673,6 +1673,14 @@ Retrieves all user properties in your account. This call doesn't have any requir
 
 `GET https://amplitude.com/api/2/taxonomy/user-property`
 
+{{partial:admonition type="note" heading=""}}
+Hidden user properties, those that have a visibility other than "Visible", don't appear in the response.
+
+By default, this endpoint excludes deleted user properties. Add the `showDeleted` query parameter to include them:
+
+`GET https://amplitude.com/api/2/taxonomy/user-property?showDeleted=true`
+{{/partial:admonition}}
+
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
@@ -1705,7 +1713,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": ["PII"]
+            "classifications": ["PII"],
+            "deleted": false
         }, 
         {
             "user_property": "event_id",
@@ -1715,7 +1724,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "amplitude_id",
@@ -1725,7 +1735,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "location_lat",
@@ -1735,7 +1746,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "location_lng",
@@ -1745,7 +1757,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "server_upload_time",
@@ -1755,7 +1768,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "session_id",
@@ -1765,7 +1779,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden":false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         },
         {
             "user_property": "user_id",
@@ -1775,7 +1790,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "regex": null,
             "is_array_type": false,
             "is_hidden": false,
-            "classifications": []
+            "classifications": [],
+            "deleted": false
         } 
     ]
 }
@@ -1786,6 +1802,12 @@ A successful request returns a `200 OK` response and a JSON body with user prope
 Retrieves a single user property, by name.
 
 `GET https://amplitude.com/api/2/taxonomy/user-property/:user_property`
+
+{{partial:admonition type="note" heading=""}}
+This endpoint doesn't return deleted user properties by default. Add the `showDeleted` query parameter to include them:
+
+`GET https://amplitude.com/api/2/taxonomy/user-property/:user_property?showDeleted=true`
+{{/partial:admonition}}
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -1847,7 +1869,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
         "regex": null,
         "is_array_type": false,
         "is_hidden": false,
-        "classifications": ["PII"]
+        "classifications": ["PII"],
+        "deleted": false
     }
 }
 ```

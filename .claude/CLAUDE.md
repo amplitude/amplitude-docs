@@ -400,8 +400,7 @@ Keep sentences under 30 words when possible. Break long sentences into multiple 
 
 **Capitalization and Punctuation in Lists**:
 - Capitalize the first word of each list item
-- Always use ending punctuation for all list items (periods, question marks, or exclamation points as appropriate)
-- Use periods for both complete sentences and fragments
+- Use ending punctuation for list items that are complete sentences; fragments don't require a period
 
 ---
 
@@ -427,9 +426,9 @@ Don't use periods, question marks, exclamation points, or colons at the end of h
 - ❌ `## Prerequisites:`
 - ✅ `## Prerequisites`
 
-#### Use Sentence Case
+#### Use Sentence Case for Content Headings
 
-Use sentence case (capitalize only the first word and proper nouns) rather than title case.
+Use sentence case (capitalize only the first word and proper nouns) rather than title case for all headings within the body of an article (H2 through H4).
 
 **Examples:**
 - ❌ `## Configure Your API Settings` (title case)
@@ -438,6 +437,17 @@ Use sentence case (capitalize only the first word and proper nouns) rather than 
 **Exception:** Proper nouns and product names retain their capitalization:
 - ✅ `## Configure Amplitude Analytics`
 - ✅ `## Send data to Amazon S3`
+
+#### Use Title Case for Front Matter Titles
+
+The `title` field in an article's front matter must use Title Case (capitalize all major words).
+
+**Examples:**
+- ❌ `title: Configure your API settings` (sentence case)
+- ✅ `title: Configure Your API Settings` (title case)
+- ✅ `title: Send Data to Amazon S3`
+
+This applies only to the `title` field in frontmatter, not to headings in the document body.
 
 #### Use Descriptive, Action-Oriented Headings
 
@@ -535,6 +545,20 @@ Use gender-neutral pronouns and terms:
 ### 10. Technical Writing
 
 Follow these guidelines when documenting technical concepts, code, and APIs.
+
+#### Admonition partial parameters
+
+When you use the Statamic admonition partial, always include a non-empty `type` parameter.
+
+- Required format: `{{partial:admonition type="note"}}`.
+- If `type` is missing, add `type="note"`.
+- If `type` exists but is empty (for example, `type=""`), set it to `type="note"`.
+
+**Examples:**
+- ✅ `{{partial:admonition type="tip"}}`
+- ✅ `{{partial:admonition type="note"}}`
+- ❌ `{{partial:admonition}}`
+- ❌ `{{partial:admonition type=""}}`
 
 #### Code Formatting
 
@@ -882,6 +906,53 @@ Use these skills by typing `/skill-name` in the conversation:
 1. Use `/edit-doc` to catch style issues
 2. Use `/validate-links` to verify links
 3. Review the changes and commit
+
+---
+
+## Agent work logging
+
+**REQUIRED**: Any time you perform substantive work on this repository—editing documentation, creating files, fixing issues, or creating pull requests—append an entry to `AGENT_LOG.md` in the repository root.
+
+### When to log
+
+Log **immediately after** the action that generates the link:
+- **Creating a PR**: Run `gh pr create`, capture the URL from its output, then append to `AGENT_LOG.md` in the same step. Never log before the PR exists.
+- **Committing without a PR**: Capture the commit hash from `git commit` output, then log.
+- **No commit made**: Log with `N/A` as the link.
+
+### Format
+
+Add a new row to the table in `AGENT_LOG.md`:
+
+```
+| YYYY-MM-DD | Claude Code | Short description | PR/commit link or N/A |
+```
+
+### How to capture the PR URL
+
+`gh pr create` prints the PR URL as its final line of output. Capture it like this:
+
+```bash
+PR_URL=$(gh pr create --title "..." --body "..." 2>&1 | tail -1)
+```
+
+Then use `$PR_URL` in the log entry.
+
+### Rules
+
+- Use today's date in `YYYY-MM-DD` format.
+- Set **Submitted By** to `Claude Code`.
+- Keep the **Short Description** to one brief phrase (under 10 words).
+- For **PR Link**: use the full GitHub PR URL if a PR was created, a commit URL if only commits were made, or `N/A` if no commits were made.
+- Always append — never overwrite existing entries.
+- Log once per task, not once per file edit.
+
+### Examples
+
+```
+| 2026-03-12 | Claude Code | Fix session replay sampling docs | https://github.com/amplitude/amplitude-docs/pull/1523 |
+| 2026-03-12 | Claude Code | Apply style rules to SDK docs | N/A |
+```
 
 ---
 

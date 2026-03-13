@@ -17,7 +17,7 @@ This site requires the following:
 
 You can use whichever method is more comfortable to interact with the repository, command line or [GitHub Desktop](https://desktop.github.com/). Once you have access to the `amplitude/amplitude-docs` repository, clone the repository locally to your machine.
 
-Once cloned, rename the file `.env.example` to `.env`.
+Once cloned, rename contact the docs team for the content you need to add to your `.env` file.
 
 ### Laravel Herd
 

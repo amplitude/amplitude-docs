@@ -1,6 +1,6 @@
 ---
 id: 9d6bb290-f46f-4a43-8fda-86c49a0f0886
-blueprint: guides_and_survey
+blueprint: resource_center
 title: Scraper
 landing: false
 updated_by: 15756874-6eaf-4a8c-8779-bd4081ba41b6
@@ -9,7 +9,7 @@ landing_blurb: Learn how Resource Center's scraper ingests the content of your s
 ---
 The Website source repository lets you scrape a public-facing website to pull in articles that may be useful for your users. Because there are such a wide variety of websites and rich content that can be included in any specific page, read the following information carefully when using this content source.  
 
-{{partial:admonition type="" heading=""}}
+{{partial:admonition type="note" heading=""}}
 If your documentation repositories are managed through a platform for which there is an integration, use the integration. The dedicated Resource Center integrations offers a better end-to-end experience. The website scraper is a powerful tool, but one that should be considered a fallback option.
 {{/partial:admonition}}
 
@@ -33,7 +33,7 @@ If you click the **Advanced** link beneath the URL section, you can access the f
 - **Exclude these URL paths**: Lets you filter the source repository even further by specifically excluding certain URLs from the source repository. This is useful if, for example, you want to exclude your company’s blog posts from the source repository. 
 - **Override default selectors**: Lets you specify only the content selectors that you want to include or lets you ignore website elements. For more information review the following sections:
 
-{{partial:tabs tabs="Content selectors, Ignore elements "}}
+{{partial:tabs tabs="Content selectors, Ignore elements"}}
 {{partial:tab name="Content selectors"}}
 The website scraper, by default, pulls in all information about a page, not just the main content. This can include the page header, metadata, and other information. This means that not only is the main content of a page pulled into a Resource Center article, but extraneous content can also appear in the Resource Center articles. Amplitude does use heuristics to identify and remove as much extraneous content as possible, but some content may still be visible in the article. You can use the content selectors to help target and identify content to add to the Resource Center article. 
 

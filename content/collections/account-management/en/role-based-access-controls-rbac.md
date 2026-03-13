@@ -84,6 +84,7 @@ Amplitude organizes permissions by product area:
 * Audiences  
 * Integrations  
 * Session Replay & Heatmaps  
+* Zoning  
 * Experiment  
 * Guides & Surveys  
 * Resource Center & Content

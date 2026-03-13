@@ -104,6 +104,26 @@ Provide a clear summary in this format:
 - Create a PR and tag `@tech-writers` for review.
 ```
 
+## Step 8: Create the PR and log it to AGENT_LOG.md
+
+Run `gh pr create` and capture the URL it prints, then immediately append to `AGENT_LOG.md`. Do both in the same step — never log before the PR exists.
+
+```bash
+PR_URL=$(gh pr create --title "DOC-#### description" --body "Resolves DOC-####. See issue for details." 2>&1 | tail -1)
+```
+
+Then append to `AGENT_LOG.md`:
+
+```
+| YYYY-MM-DD | Claude Code | Short description | $PR_URL |
+```
+
+- Use today's date.
+- Keep the description brief (under 10 words).
+- If the user creates the PR manually, ask them for the URL and add it to the log before finishing.
+
+---
+
 ## Important Guardrails
 
 - **Stop if unsure.** If the next step is unclear, stop and ask the user.

@@ -81,7 +81,7 @@ const sessionReplayConfig = {
 await segmentClient.add({ plugin: new AmplitudeSessionPlugin() });
 
 // Add the session replay plugin to Segment
-await segmentClient.add(createSegmentSessionReplayPlugin(sessionReplayConfig));
+await segmentClient.add({ plugin: createSegmentSessionReplayPlugin(sessionReplayConfig) });
 ```
 
 ## Configuration

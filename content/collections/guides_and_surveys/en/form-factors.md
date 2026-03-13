@@ -108,6 +108,10 @@ Tooltips are like pins, but reveal only when a user clicks, taps, or hovers thei
 | Text animation                           | Enables the tooltip's text to animate in with a typewriter effect.                                    |
 | Show on hover/click <br/> {.tag .web .zero}                                 | Select the trigger that causes the tooltip message to appear.                                                 |
 
+{{partial:admonition type="note" heading=""}}
+Tooltips bypass cooldowns and remain visible even after a user completes them. For tooltip surveys, users can fill out the survey again as a new submission.
+{{/partial:admonition}}
+
 ### Banner
 
 {{partial:admonition type="tip" heading=""}}
