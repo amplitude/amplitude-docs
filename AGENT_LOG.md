@@ -11,3 +11,4 @@ Tracks all pull requests submitted by AI agents (Claude Code and Cursor).
 | 2026-03-12 | Claude Code | Fix Ignore elements tab not loading (DOC-1166) | https://github.com/amplitude/amplitude-docs/pull/new/DOC-1166 |
 | 2026-03-13 | Cursor | Revert remaining DOC-1107 artifacts from main | https://github.com/amplitude/amplitude-docs/compare/revert-doc1107-remnants |
 
+| 2026-03-14 | Claude Code | Add FAQ section to Alerts docs | https://github.com/amplitude/amplitude-docs/pull/1532 |
