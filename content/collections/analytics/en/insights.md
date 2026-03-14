@@ -85,7 +85,7 @@ If you haven't set up the [Slack integration](/docs/analytics/integrate-slack), 
 Several factors can cause alert notifications to arrive later than expected:
 
 - **Alerts evaluate on a fixed schedule, not in real-time.** Amplitude evaluates daily chart alerts at a scheduled time. Hourly chart alerts evaluate once per hour. Amplitude doesn't evaluate alerts continuously, so there's always a window between when an anomaly occurs and when Amplitude detects it.
-- **Alerts on Funnel charts wait for the conversion window to close.** If your Funnel analysis chart has a conversion window (for example, "Completed within 1 day"), Amplitude waits until that window closes before it evaluates the alert. This ensures Amplitude uses complete data but adds delay equal to the length of the conversion window.
+- **Alerts on Funnel charts wait for the conversion window to close.** If your Funnel Analysis chart has a conversion window (for example, "Completed within 1 day"), Amplitude waits until that window closes before it evaluates the alert. This ensures Amplitude uses complete data but adds delay equal to the length of the conversion window.
 - **Date offsets on charts shift alert evaluation.** If your chart uses a calendar offset in the datepicker (for example, "Last 30 days offset by 3"), Amplitude evaluates the alert on the shifted date. This adds delay equal to the offset amount, and stacks with other delays such as funnel conversion windows.
 
 ### Why are my alerts based on incomplete data?
