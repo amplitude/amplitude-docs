@@ -80,7 +80,7 @@ If you haven't set up the [Slack integration](/docs/analytics/integrate-slack), 
 
 ## Frequently asked questions
 
-### Why are my alert notifications delayed?
+### Alert notification delays
 
 Several factors can cause alert notifications to arrive later than expected:
 
@@ -88,9 +88,9 @@ Several factors can cause alert notifications to arrive later than expected:
 - **Alerts on Funnel charts wait for the conversion window to close.** If your Funnel Analysis chart has a conversion window (for example, "Completed within 1 day"), Amplitude waits until that window closes before it evaluates the alert. This ensures Amplitude uses complete data but adds delay equal to the length of the conversion window.
 - **Date offsets on charts shift alert evaluation.** If your chart uses a calendar offset in the datepicker (for example, "Last 30 days offset by 3"), Amplitude evaluates the alert on the shifted date. This adds delay equal to the offset amount, and stacks with other delays such as funnel conversion windows.
 
-### Why are my alerts based on incomplete data?
+### Alerts based on incomplete data
 
-If your system sends events to Amplitude after the event occurs (for example, by batching events and uploading them hours or days later), Amplitude may evaluate alerts before it receives all event data for that time period. This is called *server upload delay* and it can cause alerts to fire on incomplete data or miss anomalies that only become visible after all events arrive.
+If your system sends events to Amplitude after the event occurs (for example, by batching events and uploading them hours or days later), Amplitude may evaluate alerts before it receives all event data for that time period. This *server upload delay* can cause alerts to fire on incomplete data or miss anomalies that only become visible after all events arrive.
 
 To reduce the impact of server upload delay:
 
@@ -98,6 +98,6 @@ To reduce the impact of server upload delay:
 - **Add a date offset to your chart.** Use the datepicker to add an offset (for example, "Last 30 days offset by 1") that shifts the alert evaluation window back. This gives Amplitude more time to receive late-arriving events before it evaluates the alert. The offset should match the typical delay in your event ingestion.
 - **Contact Amplitude support to configure an evaluation delay.** Amplitude can add an evaluation delay at the organization level for hourly or daily alerts, or adjust your project's alert evaluation time. This shifts when Amplitude evaluates your alerts without requiring changes to your charts.
 
-### Why does the alert email show a different value than my chart?
+### Alert email values differ from chart
 
 Alert emails may include a `server_upload_time` filter that shows the data point's value at the exact time the alert triggered. Depending on when additional events arrive, the value in the alert email may differ from the data point's end-of-day or final value. This is expected behavior and doesn't indicate an error.
