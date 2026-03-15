@@ -202,7 +202,7 @@ Choose from the following options:
 | `flushIntervalMillis` | `number`. Sets the interval of uploading events to Amplitude in milliseconds.                                                                                                                                                                                                  | 1,000 (1 second)                        |
 | `flushQueueSize`      | `number`. Sets the maximum number of events that are batched in a single upload attempt.                                                                                                                                                                                       | 30 events                               |
 | `flushMaxRetries`     | `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to retryable errors.                                                                                                                                                          | 5 times.                                |
-| `logLevel`            | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level.                                                                                                                                                          | `LogLevel.Warn`                         |
+| `logLevel`            | `number`. Sets the log level. Use numeric values: `0` (None), `1` (Error), `2` (Warn), `3` (Verbose), or `4` (Debug). Don't use string values like `"LogLevel.None"`.                                                                                                                                                          | `2` (Warn)                         |
 | `loggerProvider `     | `Logger`. Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination.                                                                                                                                                                    | `Amplitude Logger`                      |
 | `minIdLength`         | `number`. Sets the minimum length for the value of `userId` and `deviceId` properties.                                                                                                                                                                                         | `5`                                     |
 | `optOut`              | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events.                                                                                                                                                   | `false`                                 |
@@ -225,6 +225,17 @@ Choose from the following options:
 
 {{/partial:collapse}}
 
+{{partial:admonition type="note" title="Setting logLevel in GTM"}}
+In GTM, you can't import the `LogLevel` enum like you would in a TypeScript or JavaScript project. Use numeric values to set the log level:
+
+- `0` - None (suppresses all logs)
+- `1` - Error (error messages only)
+- `2` - Warn (error and warning messages, default)
+- `3` - Verbose (informative messages)
+- `4` - Debug (all messages including function context)
+
+For example, to suppress all Amplitude SDK console logs, set `logLevel` to `0` in the Configuration section. Don't use string values like `"LogLevel.None"` or `"LogLevel.Warn"`, as these won't work in GTM.
+{{/partial:admonition}}
 
 {{partial:collapse name="GTM configuration options"}}
 | Name                  | Description                                                                                                                                                       | Default Value                           |
@@ -232,7 +243,7 @@ Choose from the following options:
 | `flushIntervalMillis` | `number`. The amount of time waiting to upload the event to the server in milliseconds.                                                                           | 1 second.                               |
 | `flushQueueSize`      | `number`. The maximum number of events that can be stored locally before forcing an upload.                                                                       | 30 events.                              |
 | `flushMaxRetries`     | `number`. The max retry limits.                                                                                                                                   | 5 times.                                |
-| `logLevel`            | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. The log level.                                                  | `LogLevel.Warn`                         |
+| `logLevel`            | `number`. Sets the log level. Use numeric values: `0` (None), `1` (Error), `2` (Warn), `3` (Verbose), or `4` (Debug). Don't use string values like `"LogLevel.None"`.                                                  | `2` (Warn)                         |
 | `minIdLength`         | `number`. Overrides the minimum length of `user_id` & `device_id` fields.                                                                                         | `5`                                     |
 | `optOut`              | `boolean`. If `optOut` is `true`, the event isn't sent to Amplitude's servers.                                                                                    | `false`                                 |
 | `serverUrl`           | `string`. The server URL events upload to.                                                                                                                        | `https://api2.amplitude.com/2/httpapi`  |
